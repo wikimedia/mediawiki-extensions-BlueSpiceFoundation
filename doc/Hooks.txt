@@ -1,0 +1,4 @@
+'BS:UserPageSettings':
+$oUser: The current MediaWiki User object
+$oTitle: The current MediaWiki Title object
+&$aSettingViews: A list of View objects

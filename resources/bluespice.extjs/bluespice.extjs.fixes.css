@@ -1,0 +1,55 @@
+.x-combo-list-inner {
+	text-align: left;
+}
+
+.x-tree-node {
+	margin-right: 25px;
+}
+.x-grid3-hd {
+	background-color: #ebf3fd;
+	/*@embed*/
+	background-image: url('../../vendor/ExtJS/resources/images/default/grid/grid3-hrow.gif');
+	background-position: left bottom;
+	background-repeat: repeat-x
+}
+
+ul.x-menu-list {
+	margin: 0;
+}
+#content ol {
+	list-style: decimal !important;
+}
+
+/*Fix underlining by commonElements.css*/
+a.x-btn-over, 
+a.x4-btn-over {
+	text-decoration: none;
+}
+
+a.x-btn-over, 
+a.x4-btn-over,
+a.x-btn-focus, 
+a.x4-btn-focus {
+	text-decoration: none;
+}
+
+/* Fix blue background from general.css */
+input:focus.x-field-form-focus, 
+textarea:focus.x-field-form-focus, 
+input:focus.x4-field-form-focus, 
+textarea:focus.x4-field-form-focus {
+	background-color: #FFF;
+}
+
+/*Fix ExtJS RESET*/
+.x4-body {
+	font-family: Arial,Verdana,Geneva,sans-serif; /* BlueSpice default */
+}
+
+.x4-layer {
+	font-family: tahoma,arial,verdana,sans-serif;
+}
+
+.x4-panel-body-default {
+	background-color: #DFE8F6; /* This may change with different skin! */
+}

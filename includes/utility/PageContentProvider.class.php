@@ -1,0 +1,404 @@
+<?php
+/**
+ * This class provides the rendered content of different kinds of pages, including SpecialPage, CategoryPage, ImagePage and Article.
+ * @package BlueSpice_AdapterMW
+ * @subpackage Utility
+ */
+class BsPageContentProvider {
+	protected $oOriginalGlobalOutputPage = null;
+	protected $oOriginalGlobalParser     = null;
+	protected $oOriginalGlobalTitle      = null;
+	public    $oParserOptions            = null;
+	protected $sTemplate                 = ''; // TODO RBV (21.01.11 17:09): Better templating...
+	public    $bEncapsulateContent       = true;
+	protected $oTidy                     = null;
+	public    $aTidyConfig               = array();
+
+	public static $oInstance             = null;
+
+
+	/**
+	 * Contructor of BsPageContentProvider
+	 */
+	public function __construct() {
+		global $wgUser;
+
+		//Default ParserOptions
+		$this->oParserOptions = ParserOptions::newFromUser( $wgUser );
+		$this->oParserOptions->setEditSection( false ); //Does not work...
+		$this->oParserOptions->mEditSection = false;    //Does not work either...
+		$this->oParserOptions->setTidy( true );
+		$this->oParserOptions->setRemoveComments( true );
+
+		//Default Template
+		$sTemplate = array();
+		$sTemplate[] = '<div class="bs-page-content">';
+		$sTemplate[] = '<a name="%s"></a>'; //jump-anchor
+		$sTemplate[] = '<h1 class="firstHeading">%s</h1>';
+		$sTemplate[] = '<div class="bodyContent">';
+		$sTemplate[] = '%s';
+		$sTemplate[] = '</div>';
+		$sTemplate[] = '</div>';
+
+		$this->sTemplate = implode( '', $sTemplate ); //no concat with \n, because in DOM this will be a TextNode, making it more difficult to traverse DOM
+
+		$this->aTidyConfig = array(
+				'output-xhtml'     => true,
+				'numeric-entities' => true,
+				'hide-comments'    => true,
+				'wrap'             => 0,
+				'show-body-only'   => true
+		);
+
+		$this->oTidy = new Tidy();
+	}
+
+	/**
+	 * Return a instance of BsPageContentProvider.
+	 * @return BsPageContentProvider Instance of BsPageContentProvider
+	 */
+	public static function getInstance() {
+		wfProfileIn( 'BS::'.__METHOD__ );
+		if ( self::$oInstance === null ) {
+			self::$oInstance = new self();
+		}
+
+		wfProfileOut( 'BS::'.__METHOD__ );
+		return self::$oInstance;
+	}
+
+	/**
+	 * Returns content form a given Title
+	 * @param Title $oTitle Title Obejct
+	 * @return String Content
+	 */
+	public function getContentFromTitle( Title $oTitle, $iAudience = Revision::FOR_PUBLIC, User $oUser = null ) {
+		if ( !$oTitle->exists() ) return '';
+		$oRevision = Revision::newFromTitle( $oTitle );
+
+		return $this->getContentFromRevision( $oRevision, $iAudience, $oUser );
+	}
+
+	/**
+	 * Returns content form a given Revision ID
+	 * @param Title $oTitle Title Obejct
+	 * @return String Content
+	 */
+	public function getContentFromID( $iRevId, $iAudience = Revision::FOR_PUBLIC, User $oUser = null ) {
+		if ( !is_int( $iRevId ) ) return '';
+		$oRevision = Revision::newFromId( $iRevId );
+
+		return $this->getContentFromRevision( $oRevision, $iAudience, $oUser );
+	}
+
+	/**
+	 * Gets content form a given Revision object
+	 * @param Title $oTitle Title Obejct
+	 * @return String Content
+	 */
+	public function getContentFromRevision( Revision $oRevision, $iAudience = Revision::FOR_PUBLIC, User $oUser = null ) {
+		if ( is_null( $oRevision ) || !is_object( $oRevision ) ) return '';
+		global $wgVersion;
+		$sContent = '';
+		if ( version_compare( $wgVersion, '1.21.0', '>=' ) ) {
+			$sContent = $oRevision->getContent( $iAudience, $oUser )->mText;
+		} else {
+			$sContent = $oRevision->getText( $iAudience, $oUser );
+		}
+
+		return $sContent;
+	}
+
+	/**
+	 * This method returns a DOMDocument with the HTML of a Wiki page usually located in the '<div id="bodyContent">'. It supports Title objects of normal Articles, CategoryPages, ImagePages ans SpecialPages
+	 * @param Title $oTitle The MediaWiki Title object from which the html output should be extracted
+	 * @param Array $aParams Contains processing information, like the requested revision id (oldid) and wether to follow redirects or not.
+	 * @return DOMDocument The Articles HTML output, wrapped in a '<div class="bs-page-content">' and with the title and the "bodyContent" in a DOMDocument.
+	 */
+	public function getDOMDocumentContentFor( $oTitle, $aParams = array() ) {
+		$oDOMDoc = new DOMDocument();
+
+		$bOldValueOfEncapsulateContent = $this->bEncapsulateContent;
+		$this->bEncapsulateContent     = true;
+
+		$sHtmlContent = $this->getHTMLContentFor( $oTitle, $aParams );
+
+		//To avoid strange errors... should never happen.
+		if ( !mb_check_encoding( $sHtmlContent, 'utf8') ) {
+			$sHtmlContent = utf8_encode( $sHtmlContent );
+			wfDebugLog( 'BS::AdapterMW', 'BsPageContentProvider::getDOMDocumentContentFor: Content of Title "'.$oTitle->getPrefixedText().'" was not UTF8 encoded.' );
+		}
+
+		$this->bEncapsulateContent = $bOldValueOfEncapsulateContent;
+
+		$oDOMDoc->loadXML( $sHtmlContent );
+
+		//Fixing Tidy bug: http://sourceforge.net/tracker/index.php?func=detail&aid=1532698&group_id=27659&atid=390963
+		// TODO RBV (06.03.12 15:14): Find better solution than http://stackoverflow.com/questions/3834319/trim-only-the-first-and-last-occurrence-of-a-character-in-a-string-php/3834391#3834391
+		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
+		foreach( $oPreTags as $oPreTag ) {
+			if( !($oPreTag->firstChild instanceof DOMText ) ) continue;
+			if( $oPreTag->firstChild->nodeValue[0] == "\n") 
+				$oPreTag->firstChild->nodeValue = substr($oPreTag->firstChild->nodeValue,1);
+
+			if( !($oPreTag->lastChild instanceof DOMText ) ) continue;
+			if( $oPreTag->lastChild->nodeValue[strlen($oPreTag->lastChild->nodeValue)-1] == "\n" )
+				$oPreTag->lastChild->nodeValue = 
+					substr($oPreTag->lastChild->nodeValue,0,strlen($oPreTag->lastChild->nodeValue)-1);
+		}
+
+		return $oDOMDoc;
+	}
+
+	/**
+	 * This method returns the HTML of a Wiki page usually located in the '<div id="bodyContent">'. It supports Title objects of normal Articles, CategoryPages, ImagePages and SpecialPages
+	 * @param Title $oTitle The MediaWiki Title object from which the html output should be extracted
+	 * @param Array $aParams Contains processing information, like the requested revision id (oldid) and wether to follow redirects or not.
+	 * @return String The Articles HTML output, wrapped in a '<div class="bs-page-content">' and with the title and the "bodyContent", if $this->bEncapsulateContent was not false.
+	 * @global WebRequest $wgRequest
+	 * @global User $wgUser
+	 * @global OutputPage $wgOut
+	 * @global string $wgVersion
+	 */
+	public function getHTMLContentFor( $oTitle, $aParams = array() ){
+		global $wgRequest, $wgUser, $wgOut, $wgVersion;
+		$aParams = array_merge(
+			array(
+				'oldid'            => 0,
+				'follow-redirects' => false,
+				'entropy'          => 0,
+			),
+			$aParams
+		);
+
+		$oRedirectTarget = null;
+		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
+			$oRedirectTarget = $this->getRedirectTargetRecursiveFrom( $oTitle, $aParams );
+			$aParams['oldid'] = 0; //This is not the right place... at least we need a hook or something
+		}
+
+		$oTitle = ( $oRedirectTarget == null ) ? $oTitle : $oRedirectTarget;
+
+		$context = null;
+		if( $wgVersion >= '1.18' ) {
+			$context = new RequestContext();
+			$context->setRequest( 
+				new FauxRequest( //TODO: Use DerivativeRequest in MW 1.19+
+					$wgRequest->getValues() + $aParams, //$_REQUEST + i.e. oldid //TODO: Check if all params are necessary
+					$wgRequest->wasPosted() )
+			);
+			$context->setTitle( $oTitle );
+			$context->setUser( $wgUser );
+			$context->setSkin( $wgOut->getSkin() );
+		}
+		if( $wgVersion < '1.20' ) {
+			$this->overrideGlobals( $oTitle, $context );
+		}
+
+		$sHTML = '';
+		switch( $oTitle->getNamespace() ) {
+			case NS_IMAGE:
+				if( $wgVersion < '1.18' ) {
+					$oImagePage = new ImagePage( $oTitle, $aParams['oldid'] );
+				}
+				else {
+					$oImagePage = ImagePage::newFromTitle($oTitle, $context);
+				}
+				$oImagePage->view(); //Parse to OutputPage
+				break;
+
+			case NS_CATEGORY:
+				if( $wgVersion < '1.18' ) {
+					$oCategoryPage = new CategoryPage( $oTitle, $aParams['oldid'] );//new Article( $oTitle, $aParams['oldid'] );
+				}
+				else {
+					$oCategoryPage = CategoryPage::newFromTitle($oTitle, $context);
+				}
+				$oCategoryPage->view(); //Parse to OutputPage
+				break;
+
+			case NS_SPECIAL:
+				//Querystring parameters like "?from=B&namespace=6" that are needed by the special page (i.e. All Pages) have to be present in $wgRequest / the context
+				if( $wgVersion < '1.18' ) {
+					SpecialPage::executePath( $oTitle ); //Parse to OutputPage
+				}
+				else {
+					SpecialPage::executePath( $oTitle, $context );
+					$sHTML = $context->getOutput()->getHTML();
+				}
+				break;
+
+			default:
+				if( $wgVersion < '1.18' ) {
+					$oArticle = new Article( $oTitle, $aParams['oldid'] );
+				}
+				else {
+					$oArticle = Article::newFromTitle($oTitle, $context);
+				}
+				$oArticle->view();
+				break;
+		}
+
+		//HW#2012062710000041 — Bookshelf, PDF Export: HTTP 404 wenn nicht extistierende Artikel beinhaltet sind
+		if( !$oTitle->isKnown() ) { //Because in this case MW sets 404 Header in Article::view()
+			global $wgRequest;
+			$wgRequest->response()->header( "HTTP/1.1 200 OK", true ); //Therefore we will have to reset it
+			wfDebugLog( 'BS::AdapterMW', 'BsPageContentProvider::getHTMLContentFor: Title "'.$oTitle->getPrefixedText().'" does not exist and caused MW to set HTTP 404 Header.' );
+		}
+		$sHTML = empty( $sHTML ) ? $wgOut->getHTML() : $sHTML; //This would be the case with normal articles and imagepages
+		if( $wgVersion < '1.20' ) {
+			$this->restoreGlobals();
+		}
+		if( $wgVersion >= '1.18' ) {
+			$sHTML = empty( $sHTML ) ? $context->getOutput()->getHTML() : $sHTML;
+		}
+
+		$this->makeInternalAnchorNamesUnique( $sHTML, $oTitle, $aParams );
+
+		if( $this->bEncapsulateContent ) {
+			$sHTML = sprintf(
+				$this->sTemplate,
+				'bs-ue-jumpmark-'.md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
+				$oTitle->getPrefixedText(),
+				$sHTML
+			);
+		}
+
+		return $this->oTidy->repairString( $sHTML, $this->aTidyConfig, 'utf8' );
+	}
+
+	/**
+	 * This method returns the WikiText of a Wiki page as seen in the edit view. Currently, it supports Title objects of normal Articles.
+	 * @param Title $oTitle The MediaWiki Title object from which the html output should be extracted
+	 * @param Array $aParams Contains processing information, like the requested revision id (oldid) and wether to follow redirects or not.
+	 * @return String WikiText of the desired Article
+	 */
+	public function getWikiTextContentFor( Title $oTitle, $aParams = array() ) {
+		//TODO: Dispatch for different types [SpecialPage?, CategoryPage?, ImagePage? --> What WikiText could be received?]
+		return $this->getWikiTextContentForArticle( $oTitle, $aParams );
+	}
+
+	private function getWikiTextContentForArticle( Title $oTitle, $aParams = array() ) {
+		$aParams = array_merge(
+			array(
+				'oldid'            => 0,
+				'follow-redirects' => false,
+				'entropy'          => 0,
+			),
+			$aParams
+		);
+		
+		$oRevision = Revision::newFromTitle($oTitle, $aParams['oldid']);
+
+		//TODO PW (16.01.2013): Use $this->mAdapter->getTitleFromRedirectRecurse($oTitle);
+		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
+			$oTitle = Title::newFromRedirectRecurse(
+				$this->getContentFromRevision($oRevision)
+			);
+			//TODO: This migth bypass FlaggedRevs! Test and fix if necessary!
+			$oRevision = Revision::newFromTitle($oTitle);
+		}
+		if (is_null($oRevision)) return '';
+		return $this->getContentFromRevision($oRevision);
+	}
+
+	/**
+	 *
+	 * @param Title $oTitle
+	 * @param Array $aParams
+	 * @return Title
+	 */
+	public function getRedirectTargetRecursiveFrom( Title $oTitle, $aParams = array() ) {
+		return Title::newFromRedirectRecurse( $this->getWikiTextContentFor( $oTitle, $aParams ) );
+	}
+
+	/**
+	 *
+	 * @param Title $oTitle
+	 * @param Array $aParams
+	 * @return Array_of_Title
+	 */
+	public function getRedirectChainRecursiveFrom( Title $oTitle, $aParams = array() ) {
+		return Title::newFromRedirectArray( $this->getWikiTextContentFor( $oTitle, $aParams ) );
+	}
+
+	/**
+	 *
+	 * @param Title $oTitle
+	 * @param Array $aParams
+	 * @return Title
+	 */
+	public function getRedirectTargetFrom( Title $oTitle, $aParams = array() ) {
+		return Title::newFromRedirect( $this->getWikiTextContentFor( $oTitle, $aParams ) );
+	}
+
+	//<editor-fold desc="Save, override and restore OutputPage and Parser" defaultstate="collapsed">
+	private function overrideGlobals( $oTitle, $context = null ) {
+		global $wgParser, $wgOut, $wgTitle, $wgVersion;
+		
+		$this->oOriginalGlobalOutputPage = $wgOut;
+		$this->oOriginalGlobalParser     = $wgParser;
+		$this->oOriginalGlobalTitle      = $wgTitle; //This is neccessary for other extensions that may rely on $wgTitle, i.e for checking permissions during rendering
+
+		$wgParser = new Parser();
+		$wgParser->Options( $this->oParserOptions );
+
+		if( $wgVersion < '1.18' ) {
+			$wgOut = new OutputPage();
+		}
+		else {
+			$wgOut = new OutputPage( $context );
+		}
+		
+		$wgOut->setArticleBodyOnly( true );
+		//$wgOut->disable(); //Necessary?
+		
+		$wgTitle = $oTitle;
+	}
+
+	private function restoreGlobals() {
+		global $wgParser, $wgOut, $wgTitle;
+
+		$wgOut    = $this->oOriginalGlobalOutputPage;
+		$wgParser = $this->oOriginalGlobalParser;
+		$wgTitle  = $this->oOriginalGlobalTitle;
+
+		$this->oOriginalGlobalTitle= null;
+	}
+
+	private function makeInternalAnchorNamesUnique( &$sHTML, $oTitle, $aParams ) {
+		$aMatches = array();
+		// TODO RBV (19.07.12 09:29): Use DOM!
+		// TODO RBV (09.09.11 11:48): What if there is no TOC?
+		preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber">)|si', $sHTML, $aMatches ); //Finds all TOC links
+
+		$aPatterns     = array();
+		$aReplacements = array();
+
+		$sPatternQuotedArticleTitle = preg_quote( str_replace( ' ', '_', $oTitle->getPrefixedText() ) );
+
+		foreach( $aMatches[2] as $sAnchorName ) {
+			$sUniqueAnchorName = md5( $oTitle->getPrefixedText().$sAnchorName.$aParams['oldid'].$aParams['entropy']);
+
+			$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
+			//In TOC
+			$aPatterns[]     = '|<a href="#'.$sPatternQuotedAnchorName.'"><span class="tocnumber">|si';
+			$aReplacements[] =  '<a href="#'.$sUniqueAnchorName.'"><span class="tocnumber">';
+			
+			//Every single headline
+			$aPatterns[]     = '|<a name="'.$sPatternQuotedAnchorName.'" id="'.$sPatternQuotedAnchorName.'"></a>|si';
+			$aReplacements[] =  '<a name="'.$sUniqueAnchorName.'" id="'.$sUniqueAnchorName.'"></a>';
+			
+			//In text
+			$aPatterns[]     = '|<a href="(/index\.php/'.$sPatternQuotedArticleTitle.')?#'.$sPatternQuotedAnchorName.'"|si'; //TODO: What about index.php?title=abc links?
+			$aReplacements[] =  '<a href="#'.$sUniqueAnchorName.'"';
+			
+			//Every single headline new
+			$aPatterns[]     = '|<span class="mw-headline" id="'.$sPatternQuotedAnchorName.'"|si';
+			$aReplacements[] =  '<span class="mw-headline" id="'.$sUniqueAnchorName.'"';
+		}
+
+		$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
+	}
+	//</editor-fold>
+}
