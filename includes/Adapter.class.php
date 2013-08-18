@@ -388,6 +388,7 @@ class BsAdapterMW extends BsAdapter {
 		$oUser = self::loadCurrentUser();
 		if ($oUser->isAllowed($sPermission))
 			return true;
+		// Give grep a chance to find the usages: bs-not_allowed
 		if (!$bSilent)
 			echo wfMsg('bs-' . $sI18NMessageKey);
 		return false;
