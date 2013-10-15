@@ -35,27 +35,6 @@ var BlueSpice = {
 		return false;
 	},
 
-	// TODO MRG (21.09.10 14:46): toggle heisst, dass ich sie auch wieder ausschalten kann. das seh ich hier nicht.
-	// ansonsten würde ich createMessage bevorzugen
-	/**
-	 * Shows a message window
-	 * @param {String} url The url providing the content for the window
-	 * @param {String} title The title of the window
-	 * @param {Int} width The width of the window
-	 * @param {Int} height The height of the window
-	 * @return {Void}
-	 */
-	toggleMessage: function( url, title, width, height ) {
-		var win = new Ext.Window({
-			id: 'winToggleMsg',
-			autoLoad: url,
-			width:width,
-			title:title,
-			closeAction: 'close'
-		});
-		win.show();
-	},
-
 	/**
 	 * Builds an url string to access the BlueSpice RemoteHandler modules
 	 * @param {String} extension The name of the extension the module belongs to
@@ -391,171 +370,14 @@ var BlueSpice = {
 		}
 		return sValue;
 	},
-	
-	timestampToAgeString: function ( unixTimestamp ) {
-		//This is a js version of "adapter/Utility/FormatConverter.class.php" -> timestampToAgeString
-		//TODO: use PLURAL (probably wont work in mw 1.17)
-		var start = (new Date(unixTimestamp));
-		var now = (new Date());
-		var diff = now - start;
-		
-		var sDateTimeOut = '';
-		var sYears = '';
-		var sMonths = '';
-		var sWeeks = '';
-		var sDays = '';
-		var sHrs = '';
-		var sMins = '';
-		var sSecs = '';
-
-		var sTsPast =  BsArticleInfo.lastEditTimestamp;
-		var sTsNow = Math.round((new Date()).getTime() / 1000);
-		var iDuration = sTsNow - sTsPast;
-
-		var iYears=Math.floor(iDuration/(60*60*24*365)); iDuration%=60*60*24*365;
-		var iMonths=Math.floor(iDuration/(60*60*24*30.5)); iDuration%=60*60*24*30.5;
-		var iWeeks=Math.floor(iDuration/(60*60*24*7)); iDuration%=60*60*24*7;
-		var iDays=Math.floor(iDuration/(60*60*24)); iDuration%=60*60*24;
-		var iHrs=Math.floor(iDuration/(60*60)); iDuration%=60*60;
-		var iMins=Math.floor(iDuration/60);
-		var iSecs=iDuration%60;
-
-
-		if (iYears == 1) { sYears = mw.msg('bs-year-duration', iYears); }
-		if (iYears > 1) { sYears = mw.msg('bs-years-duration', iYears); }
-		
-		if (iMonths == 1) { sMonths = mw.msg('bs-month-duration', iMonths); }
-		if (iMonths > 1) { sMonths = mw.msg('bs-months-duration', iMonths); }
-
-		if (iWeeks == 1) { sWeeks = mw.msg('bs-week-duration', iWeeks); }
-		if (iWeeks > 1) { sWeeks = mw.msg('bs-weeks-duration', iWeeks); }
-
-		if (iDays == 1) { sDays = mw.msg('bs-day-duration', iDays); }
-		if (iDays > 1) { sDays = mw.msg('bs-days-duration', iDays); }
-
-		if (iHrs == 1) { sHrs = mw.msg('bs-hour-duration', iHrs); }
-		if (iHrs > 1) { sHrs = mw.msg('bs-hours-duration', iHrs); }
-
-		if (iMins == 1) { sMins = mw.msg('bs-min-duration', iMins); }
-		if (iMins > 1) { sMins = mw.msg('bs-mins-duration', iMins); }
-
-		if (iSecs == 1) { sSecs = mw.msg('bs-sec-duration', iSecs); }
-		if (iSecs > 1) { sSecs = mw.msg('bs-secs-duration', iSecs); }
-
-		if (iYears > 0) sDateTimeOut = sMonths ? mw.msg( 'bs-two-units-ago', sYears, sMonths) : mw.msg( 'bs-one-unit-ago', sYears);
-		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.msg( 'bs-two-units-ago', sMonths, sWeeks) : mw.msg( 'bs-one-unit-ago', sMonths);
-		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.msg( 'bs-two-units-ago', sWeeks ,sDays) : mw.msg( 'bs-one-unit-ago', sWeeks)
-		else if (iDays > 0) sDateTimeOut = sHrs ? mw.msg( 'bs-two-units-ago', sDays, sHrs) : mw.msg( 'bs-one-unit-ago', sDays);
-		else if (iHrs > 0) sDateTimeOut = sMins ? mw.msg( 'bs-two-units-ago', sHrs, sMins) : mw.msg( 'bs-one-unit-ago', sHrs);
-		else if (iMins > 0) sDateTimeOut = sSecs ? mw.msg( 'bs-two-units-ago', sMins, sSecs) : mw.msg( 'bs-one-unit-ago', sMins);
-		else if (iSecs > 0) sDateTimeOut = mw.msg( 'bs-one-unit-ago', sSecs);
-		else if (iSecs == 0) sDateTimeOut = mw.msg( 'bs-now' );
-		
-		return sDateTimeOut;
-	},
 
 	init: function() {
-		$( '.multiselectsortlist' ).sortable( {
-			update: function( event, ui ) { 
-				$( this ).next().children().remove(); //Remove all "option" tags from the hidden "select" element
-				$( this ).children().each( function( index, element ) {
-					$( this ).parent().next() //The "select" element
-					.append( '<option selected="selected" value="' + $(this).attr( 'data-value' ) + '">' + $(this).html() + '</option>' );
-					//We have to use .attr( 'data-value' ) instead of .data('value' ) because of some jQuery version issues. Maybe correct this in future versions.
-				});
-			}
-		});
+		
 	}
 };
 
 //Alias for BlueSpice
 BsCore = BlueSpice;
-
-BSPing = {
-	interval: 0,
-	aListeners:[],
-
-	init: function() {
-		this.interval = bsPingInterval*1000;
-		if( this.interval < 1000 ) return;
-
-		this.ping();
-	},
-	ping: function() {
-		var aListenersToGo = this.calculateInterval();
-		if( aListenersToGo.length < 1 ) {
-			BSPing.timeout = setTimeout("BSPing.ping()", BSPing.interval);
-			return;
-		}
-
-		//do this or getJSON will auto call given callbacks (would make BSPing totally freak out)
-		var BsPingData = [];
-		for( var i = 0; i < aListenersToGo.length; i++) {
-			BsPingData.push({
-				sRef:aListenersToGo[i].sRef,
-				aData:aListenersToGo[i].aData
-			});
-		}
-
-		$.post(
-			wgScriptPath + '/index.php',
-			{
-				action:'ajax',
-				rs:'BsAdapterMW::ajaxBSPing',
-				iArticleID: wgArticleId,
-				sTitle: wgTitle,
-				iNamespace: wgNamespaceNumber,
-				iRevision: wgCurRevisionId,
-				BsPingData: BsPingData
-			},
-			this.pingCallback( aListenersToGo )
-		);
-	},
-	registerListener: function( sRef, iInterval, aData, callback) {
-		if( typeof sRef == "undefined") return false;
-
-		var o = {
-			sRef:		sRef,
-			iInterval:	( typeof iInterval	== "undefined" ? 10000	: iInterval ),
-			aData:		( typeof aData		== "undefined" ? []		: aData ),
-			callback:	( typeof callback	== "undefined" ? false	: callback )
-		}
-		this.aListeners.push(o);
-		return true;
-	},
-	calculateInterval: function() {
-		var aReturn = [];
-		if(BSPing.aListeners.length < 1) return aReturn;
-		var currTMPListeners = [];
-
-		for( var i = 0; i < BSPing.aListeners.length; i++) {
-			BSPing.aListeners[i].iInterval = (BSPing.aListeners[i].iInterval - BSPing.interval);
-			if( BSPing.aListeners[i].iInterval > 0 ) {
-				currTMPListeners.push( BSPing.aListeners[i] );
-				continue;
-			}
-			aReturn.push(BSPing.aListeners[i]);
-		}
-
-		BSPing.aListeners = currTMPListeners;
-
-		return aReturn
-	},
-	pingCallback : function( aListenersToGo ) {
-		return function( result ) {
-			result = JSON.parse( result );
-			if( result['success'] !== true) return;
-
-			for( var i = 0; i < aListenersToGo.length; i++) {
-				if(aListenersToGo[i].callback !== false && typeof(aListenersToGo[i].callback) == "function") {
-					aListenersToGo[i].callback( result[aListenersToGo[i].sRef], aListenersToGo[i] );
-				}
-			}
-
-			BSPing.timeout = setTimeout("BSPing.ping()", BSPing.interval);
-		}
-	}
-}
 
 mw.loader.using( 'ext.bluespice', function(){
 	BsCore.init();
@@ -582,5 +404,6 @@ mw.loader.using( 'ext.bluespice', function(){
 		}
 	});
 
-	BSPing.init();
 });
+
+window.selected_text = '';

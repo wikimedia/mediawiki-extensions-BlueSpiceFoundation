@@ -9,7 +9,7 @@
  * $LastChangedDate: 2013-06-12 15:58:22 +0200 (Mi, 12 Jun 2013) $
  * $LastChangedBy: rvogel $
  * $Rev: 9700 $
- * $Id: StringHelper.class.php 9700 2013-06-12 13:58:22Z rvogel $
+
  */
 class BsStringHelper {
 

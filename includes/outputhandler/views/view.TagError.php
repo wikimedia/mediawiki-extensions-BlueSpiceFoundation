@@ -5,7 +5,7 @@
  * Part of BlueSpice for MediaWiki
  *
  * @author     Markus Glaser <glaser@hallowelt.biz>, Sebastian Ulbricht
- * @version    $Id: view.TagError.php 6479 2012-09-12 13:49:54Z smuggli $
+
  * @package    BlueSpice_Core
  * @subpackage Views
  * @copyright  Copyright (C) 2011 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.

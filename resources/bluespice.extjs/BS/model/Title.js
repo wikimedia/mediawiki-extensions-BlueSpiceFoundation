@@ -1,5 +1,5 @@
-Ext4.define('BS.model.Title', {
-	extend: 'Ext4.data.Model',
+Ext.define('BS.model.Title', {
+	extend: 'Ext.data.Model',
 
 	fields: [
 		{ name: 'articleId', type: 'int' },

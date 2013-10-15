@@ -9,7 +9,7 @@
  * $LastChangedDate: 2013-06-13 10:32:52 +0200 (Do, 13 Jun 2013) $
  * $LastChangedBy: rvogel $
  * $Rev: 9719 $
- * $Id: Exception.class.php 9719 2013-06-13 08:32:52Z rvogel $
+
  */
 
 // Last Review: MRG20100813

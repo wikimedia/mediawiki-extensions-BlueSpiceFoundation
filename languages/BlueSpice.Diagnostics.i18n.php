@@ -5,7 +5,7 @@
  * Part of BlueSpice for MediaWiki
  *
  * @author     Stephan Muggli <muggli@hallowelt.biz>
- * @version    $Id: BlueSpice.i18n.php 6435 2012-09-10 07:50:33Z smuggli $
+
  * @package    BlueSpice_Core
  * @subpackage BlueSpice
  * @copyright  Copyright (C) 2012 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.

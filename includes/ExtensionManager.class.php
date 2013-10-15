@@ -5,24 +5,21 @@
  *
  * @abstract
  * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
- * @author Sebastian Ulbricht, Robert Vogel
- * @version 0.1.0 beta
- *
- * $LastChangedDate: 2013-06-19 15:20:31 +0200 (Mi, 19 Jun 2013) $
- * $LastChangedBy: rvogel $
- * $Rev: 9812 $
- * $Id: ExtensionManager.class.php 9812 2013-06-19 13:20:31Z rvogel $
+ * @author Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
+ * @author Robert Vogel <vogel@hallowelt.biz>
+ * @author Stephan Muggli <muggli@hallowelt.biz>
+ * @version 1.22.0 
  */
 // Last Review: MRG20100813
 
 class BsExtensionManager {
 
-	protected static $prRegisteredExtensions = array( );
-	protected static $prRunlevelRegister = array( );
-	protected static $prRunningExtensions = array( );
-	protected static $aContexts = array( );
-	protected static $aActiveContexts = array( );
-	protected static $aIncludedClasses = array( );
+	protected static $prRegisteredExtensions = array();
+	protected static $prRunlevelRegister = array();
+	protected static $prRunningExtensions = array();
+	protected static $aContexts = array();
+	protected static $aActiveContexts = array();
+	protected static $aIncludedClasses = array();
 
 	public static function addContext ( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
@@ -63,155 +60,50 @@ class BsExtensionManager {
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
-	public static function addScriptFileToContext ( $sKey, $sGroup, $sPath, $sFile, $iOptions = 0, $bLanguage = false ) {
-		wfProfileIn( 'Performance: ' . __METHOD__ );
-		$sKey = self::addContext( $sKey );
-		self::$aContexts[ $sKey ][ 'scripts' ][ ] = array( $sGroup, $sPath, $sFile, $iOptions, $bLanguage );
-		wfProfileOut( 'Performance: ' . __METHOD__ );
-	}
-
-	public static function addStyleSheetToContext ( $sKey, $sGroup, $sFile, $iOptions = 0 ) {
-		wfProfileIn( 'Performance: ' . __METHOD__ );
-		$sKey = self::addContext( $sKey );
-		self::$aContexts[ $sKey ][ 'styles' ][ ] = array( $sGroup, $sFile, $iOptions );
-		wfProfileOut( 'Performance: ' . __METHOD__ );
-	}
-
-	public static function loadAllScriptFiles () {
-		wfProfileIn( 'Performance: ' . __METHOD__ );
-		foreach ( self::$aActiveContexts as $sKey => $bActive ) {
-			if ( $bActive && BsScriptManager::needsExtJs( $sKey ) ) {
-				BsCore::loadExtJs();
-			}
-		}
-		global $wgLang;
-		$sLanguageCode = $wgLang->getCode();
-		foreach ( self::$aActiveContexts as $sKey => $bActive ) {
-			if ( $bActive && array_key_exists( $sKey, self::$aContexts ) ) {
-				foreach ( self::$aContexts[ $sKey ][ 'scripts' ] as $aScript ) {
-					BsScriptManager::add( $aScript[ 0 ], $aScript[ 1 ] . '/' . $aScript[ 2 ] . '.js', $aScript[ 3 ] );
-					if ( $aScript[ 4 ] && $sLanguageCode != 'en' ) {
-						BsScriptManager::add( $aScript[ 0 ], $aScript[ 1 ] . '/i18n/' . $aScript[ 2 ] . '.' . $sLanguageCode . '.js', $aScript[ 3 ] );
-					}
-				}
-			}
-		}
-		wfProfileOut( 'Performance: ' . __METHOD__ );
-	}
-
-	public static function loadAllStyleSheets () {
-		wfProfileIn( 'Performance: ' . __METHOD__ );
-		foreach ( self::$aActiveContexts as $sKey => $bActive ) {
-			if ( $bActive && array_key_exists( $sKey, self::$aContexts ) ) {
-				foreach ( self::$aContexts[ $sKey ][ 'styles' ] as $aStyle ) {
-					BsStyleManager::add( $aStyle[ 0 ], $aStyle[ 1 ], $aStyle[ 2 ] );
-				}
-			}
-		}
-		wfProfileOut( 'Performance: ' . __METHOD__ );
-	}
-
 	public static function registerExtension ( $name, $runlevel = BsRUNLEVEL::FULL, $action = BsACTION::NONE, $baseDir = 'ext' ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
-		self::$prRegisteredExtensions[ 0 ][ $name ] = array( 'runlevel' => $runlevel,
-			'action' => $action,
-			'baseDir' => $baseDir );
-		self::$prRunlevelRegister[ $runlevel ][ $name ] = & self::$prRegisteredExtensions[ 0 ][ $name ];
+		self::$prRegisteredExtensions[ $name ] = array( 
+			'runlevel' => $runlevel,
+			'action'   => $action,
+			'baseDir'  => $baseDir
+		);
+		self::$prRunlevelRegister[ $runlevel ][ $name ] = & self::$prRegisteredExtensions[ $name ];
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
+	
+	public static function getRegisteredExtenions() {
+		return self::$prRegisteredExtensions;
+	}
 
-	public static function includeExtentionFiles ( $oAdapter ) {
-		global $IP;
+	public static function includeExtensionFiles ( $oCore ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
-
-		$sAction = BsCore::getParam( 'action', 'view' );
-		switch ( $sAction ) {
-			case 'remote':
-				$runlevel = BsRUNLEVEL::REMOTE;
-				break;
-			default:
-				$runlevel = BsRUNLEVEL::FULL;
-				break;
-		}
+		global $IP;
 
 		$path = "$IP/extensions/BlueSpiceExtensions";
-		$registers = array( );
-		if ( $runlevel ) {
-			foreach ( self::$prRunlevelRegister as $_runlevel => $_register ) {
-				if ( $runlevel & $_runlevel ) {
-					$registers[ ] = & self::$prRunlevelRegister[ $_runlevel ];
-				}
-			}
-		} else {
-			// TODO MRG20100813: Was passiert hier?
-			$registers[ ] = self::$prRegisteredExtensions[ 0 ];
-		}
-		foreach ( $registers as $register ) {
+
+		foreach ( self::$prRunlevelRegister as $runlevel => $register ) {
 			foreach ( $register as $name => $attributes ) {
-				if( $attributes['baseDir'] != 'ext' ) {
-					require($attributes['baseDir'] . DS . $name . '.class.php');
+				if ( $attributes['baseDir'] != 'ext' ) {
+					require( $attributes['baseDir'] . DS . $name . '.class.php' );
 				} else {
-					require($path . DS . $name . DS . $name . '.class.php');
+					require( $path . DS . $name . DS . $name . '.class.php' );
 				}
-				if ( BsACTION::LOAD_SPECIALPAGE|BsACTION::LOAD_ON_API & $attributes[ 'action' ] ) {
-					self::$aIncludedClasses[ $name ] = true;
-				} else {
-					self::$aIncludedClasses[ $name ] = false;
-				}
+				self::$aIncludedClasses[] = $name;
+
 			}
 		}
 
-		global $wgCommandLineMode;
-		$bRunOnSpecialPage = ( bool ) BsAdapterMW::isSpecial();
-		if ( $bRunOnSpecialPage || $wgCommandLineMode ) {
-			foreach ( self::$aIncludedClasses as $name => $early_load ) {
-				if ( class_exists( 'Bs' . $name, false ) ) {
-					$class = 'Bs' . $name;
-				} else {
-					$class = $name;
-				}
-				self::$prRunningExtensions[ $name ] = new $class();
-				self::$prRunningExtensions[ $name ]->setAdapter( $oAdapter );
-				self::$prRunningExtensions[ $name ]->setup();
-			}
-		} else {
-			foreach ( self::$aIncludedClasses as $name => $early_load ) {
-				if ( $early_load ) {
-					if ( class_exists( 'Bs' . $name, false ) ) {
-						$class = 'Bs' . $name;
-					} else {
-						$class = $name;
-					}
-					self::$prRunningExtensions[ $name ] = new $class();
-					self::$prRunningExtensions[ $name ]->setAdapter( $oAdapter );
-					self::$prRunningExtensions[ $name ]->setup();
-				}
-			}
-		}
-
-		wfProfileOut( 'Performance: ' . __METHOD__ );
-	}
-
-	public static function loadExtensions ( $runlevel = BsRUNLEVEL::FULL, $adapter = NULL ) {
-		global $wgCommandLineMode;
-		$bRunOnSpecialPage = ( bool ) BsAdapterMW::isSpecial();
-		if ( $bRunOnSpecialPage || $wgCommandLineMode ) {
-			return;
-		}
-		wfProfileIn( 'Performance: ' . __METHOD__ );
-		foreach ( self::$aIncludedClasses as $name => $early_load ) {
-			if ( $early_load ) {
-				continue;
-			}
-			if ( class_exists( 'Bs' . $name, false ) ) {
-				$class = 'Bs' . $name;
+		foreach ( self::$aIncludedClasses as $key => $value ) {
+			if ( class_exists( 'Bs' . $value, false ) ) {
+				$class = 'Bs' . $value;
 			} else {
-				$class = $name;
+				$class = $value;
 			}
-			self::$prRunningExtensions[ $name ] = new $class();
-			self::$prRunningExtensions[ $name ]->setAdapter( $adapter );
-			self::$prRunningExtensions[ $name ]->setup();
+			self::$prRunningExtensions[ $value ] = new $class();
+			self::$prRunningExtensions[ $value ]->setCore( $oCore );
+			self::$prRunningExtensions[ $value ]->setup();
 		}
+
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
@@ -219,27 +111,29 @@ class BsExtensionManager {
 	public static function &getExtension ( $name ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		$oExtension = null;
-		if( isset(self::$prRunningExtensions[ $name ] ) )
+		if ( isset( self::$prRunningExtensions[ $name ] ) )
 			$oExtension = self::$prRunningExtensions[ $name ];
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 		return $oExtension;
 	}
-	
+
 	public static function getExtensionNames() {
-		return array_keys(self::$prRegisteredExtensions[0]);
+		return array_keys( self::$prRegisteredExtensions );
 	}
 
-	// TODO MRG20100813: Bitte in getExtensionInformation umbenennen
-	public static function getExtensionInformations () {
+	/**
+	 * Provides an array of inforation sets about all registered extensions
+	 * @return array
+	 */
+	public static function getExtensionInformation() {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
-		$informations = array( );
-		foreach ( self::$prRegisteredExtensions[ 0 ] as $name => $attributes ) {
+		$aInformation = array();
+		foreach ( self::$prRegisteredExtensions as $name => $attributes ) {
 			if ( !class_exists( $name, false ) && !class_exists( 'Bs' . $name, false ) ) {
-				if( isset($attributes[ 'baseDir' ]) ) {
-					require($attributes[ 'baseDir' ] . DS . $name . DS . $name . '.class.php');
-				}
-				else {
-					require(BsConfig::get( 'CORE::BlueSpiceAdapterPath' ) . DS . $name . DS . $name . '.class.php');
+				if ( isset( $attributes[ 'baseDir' ] ) ) {
+					require( $attributes[ 'baseDir' ] . DS . $name . DS . $name . '.class.php' );
+				} else {
+					require( BsConfig::get( 'MW::ScriptPath' ) . DS . 'extensions' . DS . 'BlueSpiceExtensions' . DS . $name . DS . $name . '.class.php' );
 				}
 			}
 			if ( class_exists( 'Bs' . $name, false ) ) {
@@ -248,10 +142,40 @@ class BsExtensionManager {
 				$class = $name;
 			}
 			$tmp = new $class();
-			$informations[ $name ] = $tmp->getInfo();
+			$aInformation[ $name ] = $tmp->getInfo();
 		}
+
 		wfProfileOut( 'Performance: ' . __METHOD__ );
-		return $informations;
+		return $aInformation;
 	}
 
+	/**
+	 * Creates a namespace AND a corresponding talk namespace with respect of 
+	 * an potential offest. You will need to register a 
+	 * "Extension.namespaces.php" file with "$wgExtensionMessagesFiles" as 
+	 * described on https://www.mediawiki.org/wiki/Localisation#Namespaces
+	 * 
+	 * @global array $wgExtraNamespaces
+	 * @param string $sCanonicalName
+	 * @param int $iBaseIndex
+	 */
+	public static function registerNamespace( $sCanonicalName, $iBaseIndex ) {
+		global $wgExtraNamespaces;
+		
+		$sConstantName = 'NS_'.strtoupper( $sCanonicalName );
+		$iCalculatedNSId = BS_NS_OFFSET + $iBaseIndex;
+
+		if( !defined( $sConstantName ) ) {
+			define( $sConstantName, $iCalculatedNSId );
+			$wgExtraNamespaces[$iCalculatedNSId] = $sCanonicalName;
+		}
+		
+		//Talk namespace
+		$sConstantName .= '_TALK';
+		$iCalculatedNSId++;
+		if( !defined( $sConstantName ) ) {
+			define( $sConstantName, $iCalculatedNSId );
+			$wgExtraNamespaces[$iCalculatedNSId] = $sCanonicalName.'_talk';
+		}
+	}
 }

@@ -1,5 +1,5 @@
-Ext4.define('BS.model.Namespace', {
-	extend: 'Ext4.data.Model',
+Ext.define('BS.model.Namespace', {
+	extend: 'Ext.data.Model',
 
 	fields: [
 		{ name: 'namespaceId', type: 'int' },

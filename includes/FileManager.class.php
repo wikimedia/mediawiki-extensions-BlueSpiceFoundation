@@ -10,7 +10,7 @@
  * $LastChangedDate: 2010-02-26 11:10:57 +0100 (Fr, 26 Feb 2010) $
  * $LastChangedBy: mscheer $
  * $Rev: 131 $
- * $Id: BsScriptManager.class.php 131 2010-02-26 10:10:57Z mscheer $
+
  */
 
 // Last Review: MRG20100813

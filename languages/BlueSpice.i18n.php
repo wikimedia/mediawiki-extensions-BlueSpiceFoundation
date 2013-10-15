@@ -5,7 +5,7 @@
  * Part of BlueSpice for MediaWiki
  *
  * @author     Stephan Muggli <muggli@hallowelt.biz>
- * @version    $Id: BlueSpice.i18n.php 6435 2012-09-10 07:50:33Z smuggli $
+
  * @package    BlueSpice_Core
  * @subpackage BlueSpice
  * @copyright  Copyright (C) 2012 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
@@ -96,7 +96,20 @@ $messages['de'] = array(
 	'bs-viewtagerrorlist-legend'                    => '$1 - Fehler',
 	'bs-readonly'                                   => 'Die Datenbank ist vorübergehend für Neueinträge und Änderungen gesperrt. Bitte versuche es später noch einmal. <br /><br />Grund der Sperrung: $1. ',
 	'bs-imageofotheruser'                           => 'Du bist nicht berechtigt ein Bild für einen anderen Benutzer hochzuladen.',
-	'bs-pref-sortalph'                              => 'Namensräume alphabetisch sortieren'
+	'bs-pref-sortalph'                              => 'Namensräume alphabetisch sortieren',
+	'bs-permissionerror'                            => 'Berechtigungsfehler!',
+	'bs-filesystemhelper-no-directory'              => '$1 ist kein gültiges Verzeichnis!',
+	'bs-filesystemhelper-has-path-traversal'        => 'Path traversal entdeckt!',
+	'bs-filesystemhelper-file-not-exists'           => 'Die Datei $1 existiert nicht!',
+	'bs-filesystemhelper-file-copy-error'           => 'Die Datei $1 konnte nicht kopiert werden.',
+	'bs-filesystemhelper-file-already-exists'       => 'Die Datei $1 existiert bereits.',
+	'bs-filesystemhelper-file-delete-error'         => 'Die Datei $1 konnte nicht gelöscht werden.',
+	'bs-filesystemhelper-folder-already-exists'     => 'Der Ordner $1 existiert bereits.',
+	'bs-filesystemhelper-folder-copy-error'         => 'Der Ordner $1 konnte nicht umbenannt werden.',
+	'bs-filesystemhelper-folder-not-exists'         => 'Der Ordner $1 existiert nicht.',
+	'bs-filesystemhelper-upload-no-file'            => 'Es wurde keine Datei hochgeladen.',
+	'bs-filesystemhelper-upload-err-code'           => 'Die Datei konnte nicht hochgeladen werden. (Fehlercode: "$1")',
+	'bs-filesystemhelper-upload-wrong-ext'          => 'Die Datei hat nicht die angeforderte Erweiterung "$1"'
 );
 
 $messages['de-formal'] = array(
@@ -189,7 +202,20 @@ $messages['en'] = array(
 	'bs-viewtagerrorlist-legend'                    => '$1 - Error',
 	'bs-readonly'                                   => 'The database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal. <br /><br />The administrator who locked it offered this explanation: $1',
 	'bs-imageofotheruser'                           => 'You are not allowed to upload an image for another user.',
-	'bs-pref-sortalph'                              => 'Sort namespaces alphabetically'
+	'bs-pref-sortalph'                              => 'Sort namespaces alphabetically',
+	'bs-permissionerror'                            => 'Permission error!',
+	'bs-filesystemhelper-no-directory'              => '$1 is not a valid directory!',
+	'bs-filesystemhelper-has-path-traversal'        => 'Path traversal detected!',
+	'bs-filesystemhelper-file-not-exists'           => 'The file $1 does not exist!',
+	'bs-filesystemhelper-file-copy-error'           => 'The file $1 could not be copied.',
+	'bs-filesystemhelper-file-already-exists'       => 'The file $1 already exists.',
+	'bs-filesystemhelper-file-delete-error'         => 'The file could not be deleted.',
+	'bs-filesystemhelper-folder-already-exists'     => 'The folder $1 already exists.',
+	'bs-filesystemhelper-folder-copy-error'         => 'The folder $1 could not be renamed.',
+	'bs-filesystemhelper-folder-not-exists'         => 'The foler $1 does not exist',
+	'bs-filesystemhelper-upload-no-file'            => 'No file was uploaded.',
+	'bs-filesystemhelper-upload-err-code'           => 'The file could not be uploaded. (Errorcode: "$1")',
+	'bs-filesystemhelper-upload-wrong-ext'          => 'The file does not have the required extension "$1"'
 );
 
 $messages['qqq'] = array();

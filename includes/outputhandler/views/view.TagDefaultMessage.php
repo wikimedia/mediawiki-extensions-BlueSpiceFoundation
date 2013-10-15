@@ -10,7 +10,7 @@
  * $LastChangedDate: 2011-05-05 15:40:25 +0200 (Do, 05 Mai 2011) $
  * $LastChangedBy: mglaser $
  * $Rev: 1851 $
- * $Id: view.TagDefaultMessage.php 1851 2011-05-05 13:40:25Z mglaser $
+
  */
 
 class ViewTagDefaultMessage extends ViewBaseElement {

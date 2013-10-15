@@ -1,6 +1,6 @@
 <?php
 
-$IP = dirname(dirname(dirname(__FILE__)));
+$IP = dirname(dirname(__DIR__));
 
 //TODO: rework all maintenance scripts to just use Maintenance.php
 require_once( "$IP/maintenance/commandLine.inc" );

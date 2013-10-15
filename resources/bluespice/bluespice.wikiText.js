@@ -1,12 +1,109 @@
 ( function ( mw, bs, $, undefined ) {
 	"use strict";
-	
+
 	bs.wikiText = {};
+
+	bs.wikiText.ExternalLink = function( cfg ) {
+		var me = this;
+
+		this.properties = {
+			displayText: '',
+			target: '',
+			protocol: '//'
+		};
+
+		if( typeof(cfg) == 'object' ) {
+			this.properties = $.extend( this.properties, cfg );
+		}
+		else{
+			parsePropertiesFromString(cfg);
+		}
+
+		function parsePropertiesFromString( wikiText ) {
+			if( wikiText == '' ) return;
+
+			//Trim left and right everything (including linebreaks) that is not a starting or ending link code
+			wikiText = wikiText.replace(/(^.*?\[|\].*?$|\r\n|\r|\n)/gm,'');
+			//wikiText = wikiText.substring(2, wikiText.length -2 ); //trim "[[" and "]]"
+
+			var parts = wikiText.split(" ");
+			me.properties.target = parts[0]
+			if( parts.length > 1 ) {
+				parts.shift();
+				me.properties.displayText = parts.join(' ');
+			}
+
+			var protocols = [
+				'http://',
+				'https://',
+				'mailto:',
+				'file:///',
+				'//'
+			];
+
+			for( var i = 0; i < protocols.length; i++) {
+				if( me.properties.target.indexOf(protocols[i]) === 0 ) {
+					me.properties.protocol = protocols[i];
+					me.properties.target = me.properties.target.substring(  
+						protocols[i].length
+					);
+					break;
+				}
+			}
+		}
+
+		this.toString = function() {
+			//Build wikitext
+			return '[' +
+				this.properties.protocol + 
+				this.properties.target + 
+				( this.properties.displayText != '' ? ' ' + this.properties.displayText : '') + 
+				']'
+			;
+		}
+		this.toLink = function() {
+			return this.properties.protocol + this.properties.target;
+		}
+		this.getProtocol = function(){
+			return this.properties.protocol;
+		}
+		this.getTarget = function(){
+			return this.properties.target;
+		}
+		this.getDisplayText = function(){
+			return this.properties.displayText;
+		}
+	}
 
 	//HINT: http://www.bolinfest.com/javascript/inheritance.php
 	//HINT: http://ejohn.org/blog/simple-javascript-inheritance/
 	bs.wikiText.Link = function( cfg ) {
 		var me = this;
+		
+		//HINT: http://www.mediawiki.org/wiki/Help:Images#Syntax
+		//Format: border|frameless|frame|thumb
+		//Resizing: {width}px|x{height}px|{width}x{height}px|upright
+		//Horizontal alignment: left|right|center|none
+		//Vertical alignment: baseline|sub|super|top|text-top|middle|bottom|text-bottom
+		//Link: link={target}|link='' - {target} = URL/WikiPage
+		//Other specific options: alt={alternative text} & page={number} & class={html class}
+		//Caption: only if thumb|frame
+		
+		var wikiLinkFlags = [
+			'border', 'frameless', 'frame', 'thumb', //Format
+			'upright', //Resizing
+			'left', ' right', 'center', 'none'//, //Horizontal alignment
+			//'baseline', 'sub', 'super', 'top', 'text-top', 'middle', 'bottom', 'text-bottom' //Vertical alignment (UNSUPPORTED)
+		];
+		var wikiLinkProperties = [
+			'alt', 'link'
+		]
+		
+		var additionalProperties = [
+			'escaped', 'title', 'prefixedTitle', 'nsText', 'nsId', 'thumbsize',
+			/*'align',*/ 'displayText'/*, 'caption', 'sizewidth', 'sizeheight'*/
+			//'displayText' and 'caption' are somehow the same.
+		]
 		
 		//TODO: make private?
 		this.properties = {
@@ -14,6 +111,7 @@
 			title: '',
 			prefixedTitle: '',
 			nsText: '',
+			nsId: 0,
 			thumb: false,
 			thumbsize: 120,
 			right: false,
@@ -34,6 +132,9 @@
 		
 		if( typeof(cfg) == 'object' ) {
 			this.properties = $.extend( this.properties, cfg );
+			if( this.properties.title == '' && this.properties.prefixedTitle !== '' ) {
+				parseTitle( this.properties.prefixedTitle )
+			}
 		}
 		else{
 			parsePropertiesFromString(cfg);
@@ -51,18 +152,25 @@
 			if( titleParts.length > 1 ) {
 				me.properties.nsText = titleParts.shift();
 				me.properties.title = titleParts.join(':');
+				
+				var namespaceIds = mw.config.get('wgNamespaceIds');
+				me.properties.nsId = namespaceIds[me.properties.nsText.toLocaleLowerCase()];
 			}
 		}
 		
 		function parsePropertiesFromString( wikiText ) {
-			wikiText = wikiText.substring(2, wikiText.length -2 ); //trim "[[" and "]]"
+			//Trim left and right everything (including linebreaks) that is not a starting or ending link code
+			wikiText = wikiText.replace(/(^.*?\[\[|\]\].*?$|\r\n|\r|\n)/gm,'');
 
 			var parts = wikiText.split("|");
-			parseTitle( parts[0] );
+			parseTitle( parts[0] ); //First token is prefixed title
 
+			//Process the rest
 			for( var i = 1; i < parts.length; i++ ) {
 				var part = parts[i];
-				if( part.endsWith('px') ) { //Dependency BlueSpiceFramework.js
+				if(part == '') continue;
+				
+				if( part.endsWith('px') ) { //Dependency bluespice.string.js
 					var unsuffixedValue = part.substr( 0, part.length - 2 ); //"100x100px" --> "100x100"
 					me.properties.sizewidth= unsuffixedValue;
 					var dimensions = unsuffixedValue.split('x'); //"100x100"
@@ -70,7 +178,7 @@
 						me.properties.sizewidth = dimensions[0] == '' ? false : dimensions[0]; //"x100"
 						me.properties.sizeheight= dimensions[1];
 					}
-					me.properties.frame = false; //Only size _or_ frame: see MW doc
+					//me.properties.frame = false; //Only size _or_ frame: see MW doc
 					continue;
 				}
 
@@ -114,7 +222,8 @@
 
 				var kvpair = part.split('=');
 				if( kvpair.length == 1 ) {
-					me.properties.displayText = part; //hopefully
+					me.properties.displayText = part; 
+					me.properties.caption = part; //hopefully
 					continue;
 				}
 
@@ -150,12 +259,23 @@
 			}
 			wikiText.push( prefix + this.properties.title );
 			for( var property in this.properties ) {
-				if( $.inArray(property, ['title','thumbsize'])  != -1 ) continue; //Filter non-wiki data
-				if( $.inArray(property, ['left','right', 'center']) != -1 ) continue; //Not used stuff
-				var value = this.properties[property];
-				if( value == "" || typeof value == "undefined" ) continue;
+				if( $.inArray(property, additionalProperties) != -1 ) continue; //Filter non-wikitext data
+				if( $.inArray(property, ['left','right', 'center']) != -1 ) continue; //Not yet used. Instead 'align' is set.
 
-				if( property == 'sizewidth' ) {
+				var value = this.properties[property];
+				//"link" may be intentionally empty. Therefore we have to 
+				//check it _before_ "value is empty?"
+				if (property == 'link' && ( value !== null 
+					&& value !== 'false' && value !== false 
+					&& typeof value == "undefined") ) {
+					wikiText.push(property + '=' + value);
+					continue;
+				}
+
+				if( value == null ||value == false 
+					|| value == "" || typeof value == "undefined" ) continue;
+
+				if( property == 'sizewidth' || property == 'sizeheight' ) {
 					var size = '';
 					if( this.properties.sizewidth && this.properties.sizewidth != "false" ) {
 						size = this.properties.sizewidth;
@@ -164,20 +284,24 @@
 						size += 'x' + this.properties.sizeheight;
 					}
 					if( size.length > 0 ) size += 'px';
+					if( $.inArray( size, wikiText ) !== -1 ) continue;
 					wikiText.push(size);
 					continue;
 				}
-				if( $.inArray( property, [ 'alt', 'link' ] ) != -1 ) {
+				if( property == 'alt' ) {
 					wikiText.push(property +'='+value);
 					continue;
 				}
-				if( $.inArray( property, ['caption', 'align'] ) != -1 ) {
+				if( $.inArray( property, ['caption', 'align' /*, 'displayText'*/ ] ) != -1 ) {
 					wikiText.push( value );
 					continue;
 				}
-				if( value == "true" ) {
+				if( value == "true" || value == true ) {
 					wikiText.push( property ); //frame, border, thumb, left, right...
+					continue;
 				}
+				
+				wikiText.push( value ); //i.e. displayText
 			}
 
 			return '[[' + wikiText.join('|') + ']]';
@@ -207,6 +331,9 @@
 		}
 		this.setNsText = function(){
 			return this.properties.nsText;
+		}
+		this.getNsId = function(){
+			return this.properties.nsId;
 		}
 		this.isThumb = function( newValue ){
 			if( newValue == undefined ) { //Getter
@@ -275,10 +402,10 @@
 			return this.properties.alt;
 		}
 		this.getDisplayText = function(){
-			return this.properties.displaytext;
+			return this.properties.displayText;
 		}
 		this.setDisplayText = function(){
-			return this.properties.displaytext;
+			return this.properties.displayText;
 		}
 		this.getCaption = function(){
 			return this.getDisplayText();
@@ -298,6 +425,10 @@
 		this.setSize = function(){
 			return this.properties.title;
 		}
+		
+		this.getRawProperties = function() {
+			return this.properties;
+		}
 	}
 
 	bs.wikiText.Template = function( cfg, title ) {
@@ -315,7 +446,10 @@
 		}
 		
 		function parseParamsFromString( wikiText ) {
-			wikiText = wikiText.substring(2, wikiText.length -2 ); //trim "{{" and "}}"
+			//Trim left and right everything that is not a starting or ending template code
+			wikiText = wikiText.replace(/(^.*?\{\{|\}\}.*?$)/gm,'');
+			//wikiText = wikiText.substring(2, wikiText.length -2 );
+
 			//TODO: What about linebreaks?
 			var parts = wikiText.split("|");
 			this.title = parts[0];
@@ -343,6 +477,10 @@
 		this.set = function( keyOrCfg, value ) {
 			//TODO: implement
 		}
+	}
+	
+	bs.wikiText.Tag = function( cfg, title ) {
+		
 	}
 	
 }( mediaWiki, blueSpice, jQuery ) );

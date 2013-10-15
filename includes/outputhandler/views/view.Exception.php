@@ -9,7 +9,7 @@
  * $LastChangedDate: 2012-09-12 16:55:09 +0200 (Mi, 12 Sep 2012) $
  * $LastChangedBy: smuggli $
  * $Rev: 6486 $
- * $Id: view.Exception.php 6486 2012-09-12 14:55:09Z smuggli $
+
  */
 
 class ViewException extends ViewBaseElement {

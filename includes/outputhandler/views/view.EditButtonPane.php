@@ -10,7 +10,7 @@
  * $LastChangedDate: 2013-06-17 10:18:53 +0200 (Mo, 17 Jun 2013) $
  * $LastChangedBy: pwirth $
  * $Rev: 9757 $
- * $Id: view.EditButtonPane.php 9757 2013-06-17 08:18:53Z pwirth $
+
  */
 
 class ViewEditButtonPane extends ViewBaseElement {

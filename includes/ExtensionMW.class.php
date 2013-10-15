@@ -1,18 +1,15 @@
 <?php
 
 abstract class BsExtensionMW extends ContextSource {
-	
+
 	//<editor-fold desc="Former BsExtension implementation">
 	protected $mExtensionFile   = NULL;
 	protected $mExtensionType   = NULL;
 
 	protected $mInfo            = NULL;
 	protected $mExtensionKey    = NULL;
-	/**
-	 *
-	 * @var BsAdapter
-	 */
-	public    $mAdapter         = NULL;
+
+	protected $mCore = null;
 
 	protected $aStandardContext = array('*', '*', '*');
 
@@ -22,51 +19,8 @@ abstract class BsExtensionMW extends ContextSource {
 	 * Save a reference to current adapter instance.
 	 * @param BsAdapter $adapter
 	 */
-	public function setAdapter( $adapter ) {
-		$this->mAdapter = $adapter;
-	}
-
-	/**
-	 *
-	 * @param string $sExtensionDirectory
-	 * @param string $sScriptFileName
-	 * @param boolean $bLoadOnDemand
-	 * @param boolean $bNeedExtJs
-	 * @param boolean $bAvoidLanguageFile
-	 */
-	public function registerScriptFiles( $sExtensionDirectory, $sScriptFileName, $bLoadOnDemand = true, $bNeedExtJs = false, $bAvoidLanguageFile = false, $sContext = false ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		if ( !$sContext ) {
-			$sContext = $this->mExtensionKey;
-			BsExtensionManager::setContext($this->mExtensionKey);
-		}
-		if ( $bNeedExtJs ) {
-			BsScriptManager::addNeedsExtJs( $sContext );
-			//BsCore::loadExtJs();
-			//BsExtensionManager::addScriptFileToContext( $sContext, $this->mInfo[EXTINFO::NAME], 'Ext', BsFileManager::ORDER_IF_LOADED );
-		}
-		$options = ( $bLoadOnDemand ) ? BsFileManager::LOAD_ON_DEMAND : 0;
-
-		BsExtensionManager::addScriptFileToContext( $sContext, $this->mInfo[EXTINFO::NAME], $sExtensionDirectory, $sScriptFileName, $options, !$bAvoidLanguageFile );
-		wfProfileOut( 'BS::'.__METHOD__ );
-	}
-
-	/**
-	 *
-	 * @param string $sStyleSheetPath
-	 * @param boolean $bLoadOnDemand
-	 * @param string $sContext
-	 */
-	public function registerStyleSheet($sStyleSheetPath, $bLoadOnDemand = true, $sContext = false) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		if ( !$sContext ) {
-			$sContext = $this->mExtensionKey;
-			BsExtensionManager::setContext($this->mExtensionKey);
-		}
-		$options = ($bLoadOnDemand) ? BsFileManager::LOAD_ON_DEMAND : 0;
-
-		BsExtensionManager::addStyleSheetToContext($sContext, $this->mInfo[EXTINFO::NAME], $sStyleSheetPath, $options);
-		wfProfileOut( 'BS::'.__METHOD__ );
+	public function setCore( $oCore ) {
+		$this->mCore = $oCore;
 	}
 
 	/**
@@ -86,25 +40,6 @@ abstract class BsExtensionMW extends ContextSource {
 	public function getExtensionKey() {
 		return $this->mExtensionKey;
 	}
-
-	// TODO MRG (19.12.10 19:28): Was macht denn das?
-	public function runPreferencePlugin( $sAdapterName, $oVariable ) {
-		switch($sAdapterName) {
-			case 'MW':
-			case 'MW115':
-			case 'CORE':
-				return array();
-		}
-	}
-
-	// TODO MRG (01.09.10 23:05): Kommentar
-	public function registerView( $viewName ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		$innerViewFile = str_replace( "View", "", $viewName );
-		BsCore::registerClass( $viewName, dirname( $this->mExtensionFile ).DS.'views', 'view.'.$innerViewFile.'.php' );
-		wfProfileOut( 'BS::'.__METHOD__ );
-	}
-	//</editor-fold>
 
 	protected static $aExtensionInstances = array();
 
@@ -161,11 +96,12 @@ abstract class BsExtensionMW extends ContextSource {
 	 * @return string
 	 */
 	public function getImagePath( $bResources = false ) {
+		global $wgScriptPath;
 		// TODO: ScriptPath should be more abstract.
 		// TODO: Bluespice-mw should be abstraced
 		// CR MRG (30.06.11 10:23): Lokal cachen
 		// PW(24.06.2013) added $bResources due to compatibility
-		return BsConfig::get( 'MW::ScriptPath' )
+		return $wgScriptPath
 				.'/extensions/BlueSpiceExtensions/'
 				.$this->mInfo[EXTINFO::NAME]
 				.( $bResources ? '/resources' : '' )
@@ -185,17 +121,15 @@ abstract class BsExtensionMW extends ContextSource {
 	public function registerExtensionSchemaUpdate( $sDatabaseTableName, $sSchemaFileName ) {
 		global $wgDBtype;
 		// TODO RBV (01.03.11 11:26): Change method to support different update types (i.e. modification)
-		$aBaseSettings = BsConfig::get( 'Core::Database' );
+
 		if ( $wgDBtype == 'postgres' ) {
 			$sSchemaFileName = substr( $sSchemaFileName, 0, -4 ).'.pg.sql';
-		}
-		elseif ( $wgDBtype == 'oracle' ) {
+		} elseif ( $wgDBtype == 'oracle' ) {
 			$sSchemaFileName = substr( $sSchemaFileName, 0, -4 ).'.oci.sql';
 		}
 		$this->aExtensionSchemes[$sDatabaseTableName] = $sSchemaFileName;
 		// register mediawiki hook only once
-		if ( $this->bExtensionSchemaHookRegistered )
-			return;
+		if ( $this->bExtensionSchemaHookRegistered ) return;
 		global $wgHooks;
 		$wgHooks['LoadExtensionSchemaUpdates'][] = array( $this, 'onLoadExtensionSchemaUpdates' );
 		$this->bExtensionSchemaHookRegistered = true;
@@ -207,9 +141,9 @@ abstract class BsExtensionMW extends ContextSource {
 	 * @return boolean Always true to keep the hook running
 	 */
 	public function onLoadExtensionSchemaUpdates( $updater ) {
-		$aNewTables = & BsCore::getInstance( 'MW' )->getAdapter()->ExtNewTables;
+		global $wgExtNewTables;
 		foreach ( $this->aExtensionSchemes as $sDatabaseTableName => $sSchemaFileName ) {
-			$aNewTables[] = array( $sDatabaseTableName, $sSchemaFileName );
+			$wgExtNewTables[] = array( $sDatabaseTableName, $sSchemaFileName );
 		}
 		return true;
 	}

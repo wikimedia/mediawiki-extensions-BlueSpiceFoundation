@@ -4,7 +4,7 @@
  * @package BlueSpice
  * @copyright Copyright 2011 by Hallo Welt! Medienwerkstatt GmbH
  * @author Marc Reymann
- * @version $Id: installcheck.php 9809 2013-06-19 11:33:17Z rvogel $
+
  *
  * Install check for BlueSpice.
  * This file checks several values and settings on a
@@ -104,14 +104,14 @@ class MagicWord{
 function wfProfileIn() { return true; }; // dummy function
 function wfProfileOut() { return true; }; // dummy function
 $GLOBALS['wgGroupPermissions'] = array(); // dummy var
-$GLOBALS['IP'] = dirname(__FILE__); // dummy var
-$IP = dirname(__FILE__); // dummy var
+$GLOBALS['IP'] = __DIR__; // dummy var
+$IP = __DIR__; // dummy var
 define( 'NS_FILE', 0 ); // dummy constant
 define( 'NS_MEDIAWIKI', 0 ); // dummy constant
 define( 'NS_SPECIAL', 0 ); // dummy constant
 define( 'NS_MEDIA', 0 ); // dummy constant
-require_once( dirname(__FILE__).'/bluespice-core/index.php' );
-BsCore::getInstance('MW')->setup();
+require_once( __DIR__.'/bluespice-core/index.php' );
+BsCore::getInstance()->setup();
 
 // Tomcat services (SOLR & BN2PDF)
 
@@ -477,8 +477,8 @@ else {
 echo( "<h3>\$_SERVER['DOCUMENT_ROOT']:</h3>" );
 echo '$_SERVER[\'DOCUMENT_ROOT\'] = ' . $_SERVER['DOCUMENT_ROOT'];
 
-echo( "<h3>dirname(__FILE__):</h3>" );
-echo 'dirname(__FILE__) = ' . dirname(__FILE__);
+echo( "<h3>__DIR__:</h3>" );
+echo '__DIR__ = ' . __DIR__;
 
 echo( "<h3>PHP modules:</h3>" );
 echo( "<pre>" );

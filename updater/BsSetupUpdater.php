@@ -14,11 +14,10 @@ global $argv;
 $argv = array('--quick');
 
 if ( $sVersion >= "1.17"){
-	require_once(dirname(dirname(dirname(__FILE__))) . "/maintenance/Maintenance.php");
+	require_once(dirname(dirname(__DIR__)) . "/maintenance/Maintenance.php");
 
 	class BsSetupUpdater extends Maintenance{
 		function execute() {
-		error_log(__LINE__);
 			global $wgVersion, $wgTitle, $wgLang;
 			$db = wfGetDB( DB_MASTER );
 

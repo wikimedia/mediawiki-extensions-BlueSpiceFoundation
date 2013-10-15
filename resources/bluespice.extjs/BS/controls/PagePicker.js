@@ -1,7 +1,7 @@
 //http://stackoverflow.com/questions/6153362/how-to-create-custom-extjs-form-field-component
 //http://www.sencha.com/forum/showthread.php?11686-Chained-Combobox-%28Remote%29
-Ext4.define( "BS.controls.PagePicker", {
-	extend: "Ext4.form.FieldContainer",
+Ext.define( "BS.controls.PagePicker", {
+	extend: "Ext.form.FieldContainer",
 	requires: [
 		'BS.model.Namespace',
 		'BS.model.Title'
@@ -11,7 +11,7 @@ Ext4.define( "BS.controls.PagePicker", {
 	},
 	//width: 400,
 	initComponent: function(){
-		this.jstrNamespaces = Ext4.create('Ext4.data.Store',{
+		this.jstrNamespaces = Ext.create('Ext.data.Store',{
 				model: 'BS.model.Namespace',
 				proxy: {
 					type: 'ajax',
@@ -23,7 +23,7 @@ Ext4.define( "BS.controls.PagePicker", {
 				}
 			}
 		});
-		this.cbNamespaces = Ext4.create('Ext4.form.ComboBox', {
+		this.cbNamespaces = Ext.create('Ext.form.ComboBox', {
 			store: this.jstrNamespaces,
 			displayField: 'namespaceName',
 			typeAhead: true,
@@ -31,7 +31,7 @@ Ext4.define( "BS.controls.PagePicker", {
 		});
 		this.cbNamespaces.on( 'select', this.cbNamespacesSelect, this );
 
-		this.jstrTitles = Ext4.create('Ext4.data.Store',{
+		this.jstrTitles = Ext.create('Ext.data.Store',{
 			model: 'BS.model.Title',
 			proxy: {
 				type: 'ajax',
@@ -43,7 +43,7 @@ Ext4.define( "BS.controls.PagePicker", {
 				}
 			}
 		});
-		this.cbTitles = Ext4.create('Ext4.form.ComboBox', {
+		this.cbTitles = Ext.create('Ext.form.ComboBox', {
 			store: this.jstrTitles,
 			displayField: 'titleText',
 			typeAhead: true,

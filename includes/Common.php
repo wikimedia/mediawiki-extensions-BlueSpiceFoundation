@@ -22,7 +22,7 @@
  * @author     Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
  * @author     Robert Vogel <vogel@hallowelt.biz>
  * @version    1.1.0
- * @version    $Id: Common.php 9720 2013-06-13 08:52:37Z rvogel $
+
  * @package    Bluespice_Core
  * @copyright  Copyright (C) 2011 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later

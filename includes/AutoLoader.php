@@ -1,118 +1,117 @@
 <?php
 
-$sDir = __DIR__;
+$wgAutoloadClasses['BsCore'] = __DIR__."/Core.class.php";
+$wgAutoloadClasses['BsCoreHooks'] = __DIR__."/CoreHooks.php";
 
-$wgAutoloadClasses['BsCoreHooks']  = $sDir."/CoreHooks.php";
-$wgAutoloadClasses['LCStore_BSDB'] = $sDir."/cache/LCStore_BSDB.php";
-$wgAutoloadClasses['LCStore_SHM']  = $sDir."/cache/LCStore_SHM.php";
+$wgAutoloadClasses['BsPARAM']       = __DIR__."/Common.php";
+$wgAutoloadClasses['BsPARAMTYPE']   = __DIR__."/Common.php";
+$wgAutoloadClasses['BsPARAMOPTION'] = __DIR__."/Common.php";
+$wgAutoloadClasses['BsPATHTYPE']    = __DIR__."/Common.php";
+$wgAutoloadClasses['BsRUNLEVEL']    = __DIR__."/Common.php";
+$wgAutoloadClasses['BsACTION']      = __DIR__."/Common.php";
+$wgAutoloadClasses['BsSTYLEMEDIA']  = __DIR__."/Common.php";
+$wgAutoloadClasses['EXTINFO']       = __DIR__."/Common.php";
+$wgAutoloadClasses['EXTTYPE']       = __DIR__."/Common.php";
 
-$wgAutoloadClasses['BsOutputHandler']   = $sDir."/outputhandler/OutputHandler.class.php";
-$wgAutoloadClasses['BsValidator']       = $sDir."/validator/Validator.class.php";
-$wgAutoloadClasses['BsValidatorPlugin'] = $sDir."/validator/Validator.class.php";
+$wgAutoloadClasses['LCStore_BSDB'] = __DIR__."/cache/LCStore_BSDB.php";
+$wgAutoloadClasses['LCStore_SHM']  = __DIR__."/cache/LCStore_SHM.php";
 
-$wgAutoloadClasses['BsAdapter']           = $sDir."/Adapter.class.php";
-$wgAutoloadClasses['BsAdapterMW']         = $sDir."/Adapter.class.php";
-$wgAutoloadClasses['BsSpecialPage']       = $sDir."/SpecialPage.class.php";
-$wgAutoloadClasses['BsConfig']            = $sDir."/Config.class.php";
-$wgAutoloadClasses['BsDatabase']          = $sDir."/Database.class.php";
-$wgAutoloadClasses['BSDebug']             = $sDir."/Debug.php";
-$wgAutoloadClasses['BsException']         = $sDir."/Exception.class.php";
-$wgAutoloadClasses['BsExtensionManager']  = $sDir."/ExtensionManager.class.php";
-$wgAutoloadClasses['BsFileManager']       = $sDir."/FileManager.class.php";
-$wgAutoloadClasses['BsMailer']            = $sDir."/Mailer.class.php";
-$wgAutoloadClasses['BsScriptManager']     = $sDir."/ScriptManager.class.php";
-$wgAutoloadClasses['BsStyleManager']      = $sDir."/StyleManager.class.php";
-$wgAutoloadClasses['BsXHRBaseResponse']   = $sDir."/XHRBaseResponse.class.php";
-$wgAutoloadClasses['BsXHRJSONResponse']   = $sDir."/XHRBaseResponse.class.php";
-$wgAutoloadClasses['BsXHRResponseStatus'] = $sDir."/XHRBaseResponse.class.php";
-$wgAutoloadClasses['BsCommonAJAXInterface'] = $sDir."/CommonAJAXInterface.php";
-$wgAutoloadClasses['BsCommonAjaxInterfaceContext'] = $sDir."/CommonAJAXInterface.php";
-$wgAutoloadClasses['BsExtJSStoreParams'] = $sDir."/ExtJSStoreParams.php";
+$wgAutoloadClasses['BsValidator']       = __DIR__."/validator/Validator.class.php";
+$wgAutoloadClasses['BsValidatorPlugin'] = __DIR__."/validator/Validator.class.php";
 
-//actions
-$wgAutoloadClasses['BsRemoteAction'] = $sDir."/actions/RemoteAction.class.php";
+$wgAutoloadClasses['BsSpecialPage']       = __DIR__."/SpecialPage.class.php";
+$wgAutoloadClasses['BsConfig']            = __DIR__."/Config.class.php";
+$wgAutoloadClasses['BSDebug']             = __DIR__."/Debug.php";
+$wgAutoloadClasses['BsException']         = __DIR__."/Exception.class.php";
+$wgAutoloadClasses['BsExtensionManager']  = __DIR__."/ExtensionManager.class.php";
+$wgAutoloadClasses['BsFileManager']       = __DIR__."/FileManager.class.php";
+$wgAutoloadClasses['BsMailer']            = __DIR__."/Mailer.class.php";
+$wgAutoloadClasses['BsXHRBaseResponse']   = __DIR__."/XHRBaseResponse.class.php";
+$wgAutoloadClasses['BsXHRJSONResponse']   = __DIR__."/XHRBaseResponse.class.php";
+$wgAutoloadClasses['BsXHRResponseStatus'] = __DIR__."/XHRBaseResponse.class.php";
+$wgAutoloadClasses['BsCommonAJAXInterface'] = __DIR__."/CommonAJAXInterface.php";
+$wgAutoloadClasses['BsCAI']                 = __DIR__."/CommonAJAXInterface.php";
+$wgAutoloadClasses['BsCAContext']           = __DIR__."/CAContext.php";
+$wgAutoloadClasses['BsCAResponse']          = __DIR__."/CAResponse.php";
+$wgAutoloadClasses['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams.php";
 
 //adapter
-$wgAutoloadClasses['BsExtensionMW']                 = $sDir."/ExtensionMW.class.php";
-$wgAutoloadClasses['BsInvalidNamespaceException']   = $sDir."/InvalidNamespaceException.class.php";
-$wgAutoloadClasses['UserPreferencesCompatibleForm'] = $sDir."/UserPreferencesCompatibleForm.php";
+$wgAutoloadClasses['BsExtensionMW']                 = __DIR__."/ExtensionMW.class.php";
+$wgAutoloadClasses['BsInvalidNamespaceException']   = __DIR__."/InvalidNamespaceException.class.php";
 
 //htmlform and htmlformfields
-$wgAutoloadClasses['HTMLFormEx']                   = $sDir."/html/htmlformfields/HTMLFormFieldOverrides.php";
-$wgAutoloadClasses['HTMLInfoFieldOverride']        = $sDir."/html/htmlformfields/HTMLFormFieldOverrides.php";
-$wgAutoloadClasses['HTMLTextFieldOverride']        = $sDir."/html/htmlformfields/HTMLFormFieldOverrides.php";
-$wgAutoloadClasses['HTMLIntFieldOverride']         = $sDir."/html/htmlformfields/HTMLFormFieldOverrides.php";
-$wgAutoloadClasses['HTMLStaticImageFieldOverride'] = $sDir."/html/htmlformfields/HTMLFormFieldOverrides.php";
-$wgAutoloadClasses['HTMLMultiSelectEx']            = $sDir."/html/htmlformfields/HTMLMultiSelectEx.php";
-$wgAutoloadClasses['HTMLMultiSelectPlusAdd']       = $sDir."/html/htmlformfields/HTMLMultiSelectPlusAdd.php";
-$wgAutoloadClasses['HTMLMultiSelectSortList']      = $sDir."/html/htmlformfields/HTMLMultiSelectSortList.php";
+$wgAutoloadClasses['HTMLFormEx']                   = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
+$wgAutoloadClasses['HTMLInfoFieldOverride']        = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
+$wgAutoloadClasses['HTMLTextFieldOverride']        = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
+$wgAutoloadClasses['HTMLIntFieldOverride']         = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
+$wgAutoloadClasses['HTMLStaticImageFieldOverride'] = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
+$wgAutoloadClasses['HTMLMultiSelectEx']            = __DIR__."/html/htmlformfields/HTMLMultiSelectEx.php";
+$wgAutoloadClasses['HTMLMultiSelectPlusAdd']       = __DIR__."/html/htmlformfields/HTMLMultiSelectPlusAdd.php";
+$wgAutoloadClasses['HTMLMultiSelectSortList']      = __DIR__."/html/htmlformfields/HTMLMultiSelectSortList.php";
 
 //utility
-$wgAutoloadClasses['BsArticleHelper']       = $sDir."/utility/ArticleHelper.class.php";
-$wgAutoloadClasses['BsConnectionHelper']    = $sDir."/utility/ConnectionHelper.class.php";
-$wgAutoloadClasses['BsDOMHelper']           = $sDir."/utility/DOMHelper.class.php";
-$wgAutoloadClasses['BsExtJSHelper']         = $sDir."/utility/ExtJSHelper.class.php";
-$wgAutoloadClasses['BsFormatConverter']     = $sDir."/utility/FormatConverter.class.php";
-$wgAutoloadClasses['BsFileSystemHelper']    = $sDir."/utility/FileSystemHelper.class.php";
-$wgAutoloadClasses['BsLinkProvider']        = $sDir."/utility/LinkProvider.class.php";
-$wgAutoloadClasses['BsNamespaceHelper']     = $sDir."/utility/NamespaceHelper.class.php";
-$wgAutoloadClasses['BsPageContentProvider'] = $sDir."/utility/PageContentProvider.class.php";
-$wgAutoloadClasses['BsStringHelper']        = $sDir."/utility/StringHelper.class.php";
-$wgAutoloadClasses['BsTagFinder']           = $sDir."/utility/TagFinder.class.php";
-$wgAutoloadClasses['BsWidgetListHelper']    = $sDir."/utility/WidgetListHelper.class.php";
+$wgAutoloadClasses['BsArticleHelper']       = __DIR__."/utility/ArticleHelper.class.php";
+$wgAutoloadClasses['BsConnectionHelper']    = __DIR__."/utility/ConnectionHelper.class.php";
+$wgAutoloadClasses['BsDOMHelper']           = __DIR__."/utility/DOMHelper.class.php";
+$wgAutoloadClasses['BsExtJSHelper']         = __DIR__."/utility/ExtJSHelper.class.php";
+$wgAutoloadClasses['BsFormatConverter']     = __DIR__."/utility/FormatConverter.class.php";
+$wgAutoloadClasses['BsFileSystemHelper']    = __DIR__."/utility/FileSystemHelper.class.php";
+$wgAutoloadClasses['BsGroupHelper']     = __DIR__."/utility/GroupHelper.class.php";
+$wgAutoloadClasses['BsLinkProvider']        = __DIR__."/utility/LinkProvider.class.php";
+$wgAutoloadClasses['BsNamespaceHelper']     = __DIR__."/utility/NamespaceHelper.class.php";
+$wgAutoloadClasses['BsPageContentProvider'] = __DIR__."/utility/PageContentProvider.class.php";
+$wgAutoloadClasses['BsStringHelper']        = __DIR__."/utility/StringHelper.class.php";
+$wgAutoloadClasses['BsTagFinder']           = __DIR__."/utility/TagFinder.class.php";
+$wgAutoloadClasses['BsWidgetListHelper']    = __DIR__."/utility/WidgetListHelper.class.php";
 
 // Outputhandler views
-$wgAutoloadClasses['ViewBaseElement'] = $sDir . '/outputhandler/views/view.BaseElement.php';
-$wgAutoloadClasses['ViewBaseForm'] = $sDir . '/outputhandler/views/view.BaseForm.php';
-$wgAutoloadClasses['ViewBaseMessage'] = $sDir . '/outputhandler/views/view.BaseMessage.php';
-$wgAutoloadClasses['ViewEditButton'] = $sDir . '/outputhandler/views/view.EditButton.php';
-$wgAutoloadClasses['ViewEditButtonPane'] = $sDir . '/outputhandler/views/view.EditButtonPane.php';
-$wgAutoloadClasses['ViewErrorMessage'] = $sDir . '/outputhandler/views/view.ErrorMessage.php';
-$wgAutoloadClasses['ViewErrorMessageInline'] = $sDir . '/outputhandler/views/view.ErrorMessageInline.php';
-$wgAutoloadClasses['ViewException'] = $sDir . '/outputhandler/views/view.Exception.php';
-$wgAutoloadClasses['ViewFormElement'] = $sDir . '/outputhandler/views/view.FormElement.php';
-$wgAutoloadClasses['ViewFormElementButton'] = $sDir . '/outputhandler/views/view.FormElementButton.php';
-$wgAutoloadClasses['ViewFormElementCheckbox'] = $sDir . '/outputhandler/views/view.FormElementCheckbox.php';
-$wgAutoloadClasses['ViewFormElementCheckboxGroup'] = $sDir . '/outputhandler/views/view.FormElementCheckboxGroup.php';
-$wgAutoloadClasses['ViewFormElementCommonGroup'] = $sDir . '/outputhandler/views/view.FormElementCommonGroup.php';
-$wgAutoloadClasses['ViewFormElementFieldset'] = $sDir . '/outputhandler/views/view.FormElementFieldset.php';
-$wgAutoloadClasses['ViewFormElementInput'] = $sDir . '/outputhandler/views/view.FormElementInput.php';
-$wgAutoloadClasses['ViewFormElementLabel'] = $sDir . '/outputhandler/views/view.FormElementLabel.php';
-$wgAutoloadClasses['ViewFormElementRadiobutton'] = $sDir . '/outputhandler/views/view.FormElementRadiobutton.php';
-$wgAutoloadClasses['ViewFormElementRadioGroup'] = $sDir . '/outputhandler/views/view.FormElementRadioGroup.php';
-$wgAutoloadClasses['ViewFormElementSelectbox'] = $sDir . '/outputhandler/views/view.FormElementSelectbox.php';
-$wgAutoloadClasses['ViewFormElementTextarea'] = $sDir . '/outputhandler/views/view.FormElementTextarea.php';
-$wgAutoloadClasses['ViewNoticeMessage'] = $sDir . '/outputhandler/views/view.NoticeMessage.php';
-$wgAutoloadClasses['ViewNoticeMessageInline'] = $sDir . '/outputhandler/views/view.NoticeMessageInline.php';
-$wgAutoloadClasses['ViewTagDefaultMessage'] = $sDir . '/outputhandler/views/view.TagDefaultMessage.php';
-$wgAutoloadClasses['ViewTagElement'] = $sDir . '/outputhandler/views/view.TagElement.php';
-$wgAutoloadClasses['ViewTagError'] = $sDir . '/outputhandler/views/view.TagError.php';
-$wgAutoloadClasses['ViewTagErrorList'] = $sDir . '/outputhandler/views/view.TagErrorList.php';
-$wgAutoloadClasses['ViewUserBarElement'] = $sDir . '/outputhandler/views/view.UserBarElement.php';
-$wgAutoloadClasses['ViewUserMiniProfile'] = $sDir . '/outputhandler/views/view.UserMiniProfile.php';
+$wgAutoloadClasses['ViewBaseElement'] = __DIR__ . '/outputhandler/views/view.BaseElement.php';
+$wgAutoloadClasses['ViewBaseForm'] = __DIR__ . '/outputhandler/views/view.BaseForm.php';
+$wgAutoloadClasses['ViewBaseMessage'] = __DIR__ . '/outputhandler/views/view.BaseMessage.php';
+$wgAutoloadClasses['ViewEditButton'] = __DIR__ . '/outputhandler/views/view.EditButton.php';
+$wgAutoloadClasses['ViewEditButtonPane'] = __DIR__ . '/outputhandler/views/view.EditButtonPane.php';
+$wgAutoloadClasses['ViewErrorMessage'] = __DIR__ . '/outputhandler/views/view.ErrorMessage.php';
+$wgAutoloadClasses['ViewErrorMessageInline'] = __DIR__ . '/outputhandler/views/view.ErrorMessageInline.php';
+$wgAutoloadClasses['ViewException'] = __DIR__ . '/outputhandler/views/view.Exception.php';
+$wgAutoloadClasses['ViewFormElement'] = __DIR__ . '/outputhandler/views/view.FormElement.php';
+$wgAutoloadClasses['ViewFormElementButton'] = __DIR__ . '/outputhandler/views/view.FormElementButton.php';
+$wgAutoloadClasses['ViewFormElementCheckbox'] = __DIR__ . '/outputhandler/views/view.FormElementCheckbox.php';
+$wgAutoloadClasses['ViewFormElementCheckboxGroup'] = __DIR__ . '/outputhandler/views/view.FormElementCheckboxGroup.php';
+$wgAutoloadClasses['ViewFormElementCommonGroup'] = __DIR__ . '/outputhandler/views/view.FormElementCommonGroup.php';
+$wgAutoloadClasses['ViewFormElementFieldset'] = __DIR__ . '/outputhandler/views/view.FormElementFieldset.php';
+$wgAutoloadClasses['ViewFormElementInput'] = __DIR__ . '/outputhandler/views/view.FormElementInput.php';
+$wgAutoloadClasses['ViewFormElementLabel'] = __DIR__ . '/outputhandler/views/view.FormElementLabel.php';
+$wgAutoloadClasses['ViewFormElementRadiobutton'] = __DIR__ . '/outputhandler/views/view.FormElementRadiobutton.php';
+$wgAutoloadClasses['ViewFormElementRadioGroup'] = __DIR__ . '/outputhandler/views/view.FormElementRadioGroup.php';
+$wgAutoloadClasses['ViewFormElementSelectbox'] = __DIR__ . '/outputhandler/views/view.FormElementSelectbox.php';
+$wgAutoloadClasses['ViewFormElementTextarea'] = __DIR__ . '/outputhandler/views/view.FormElementTextarea.php';
+$wgAutoloadClasses['ViewNoticeMessage'] = __DIR__ . '/outputhandler/views/view.NoticeMessage.php';
+$wgAutoloadClasses['ViewNoticeMessageInline'] = __DIR__ . '/outputhandler/views/view.NoticeMessageInline.php';
+$wgAutoloadClasses['ViewTagDefaultMessage'] = __DIR__ . '/outputhandler/views/view.TagDefaultMessage.php';
+$wgAutoloadClasses['ViewTagElement'] = __DIR__ . '/outputhandler/views/view.TagElement.php';
+$wgAutoloadClasses['ViewTagError'] = __DIR__ . '/outputhandler/views/view.TagError.php';
+$wgAutoloadClasses['ViewTagErrorList'] = __DIR__ . '/outputhandler/views/view.TagErrorList.php';
+$wgAutoloadClasses['ViewUserBarElement'] = __DIR__ . '/outputhandler/views/view.UserBarElement.php';
+$wgAutoloadClasses['ViewUserMiniProfile'] = __DIR__ . '/outputhandler/views/view.UserMiniProfile.php';
 
 //Overrides
 // Replace Mediawikis ApiFormatJson class with our own to prevent some errors with the application/json header.
-$wgAutoloadClasses['ApiFormatJson'] = $sDir."/api/ApiFormatJsonMW.php";
+$wgAutoloadClasses['ApiFormatJson'] = __DIR__."/api/ApiFormatJsonMW.php";
 
 /**
  * Behebt einen Bug in Oracle Datenbank-Abstraction der die update.php abstürzen lässt.
  */
-$wgAutoloadClasses['DatabaseOracleBase'] = $sDir."/db/DatabaseOracleBase.php";
+$wgAutoloadClasses['DatabaseOracleBase'] = __DIR__."/db/DatabaseOracleBase.php";
 if ($wgVersion > "1.19") {
-	$wgAutoloadClasses['DatabaseOracle'] = $sDir."/db/DatabaseOraclePost120.php";
-	$wgAutoloadClasses['OracleUpdater']  = $sDir."/db/OracleUpdater.php";
+	$wgAutoloadClasses['DatabaseOracle'] = __DIR__."/db/DatabaseOraclePost120.php";
+	$wgAutoloadClasses['OracleUpdater']  = __DIR__."/db/OracleUpdater.php";
 } else {
-	$wgAutoloadClasses['DatabaseOracle'] = $sDir."/db/DatabaseOraclePre120.php";
+	$wgAutoloadClasses['DatabaseOracle'] = __DIR__."/db/DatabaseOraclePre120.php";
 }
-$wgAutoloadClasses['BSOracleHooks']  = $sDir."/db/BSOracleHooks.php";
+$wgAutoloadClasses['BSOracleHooks']  = __DIR__."/db/BSOracleHooks.php";
 
-//TODO: WHERE ARE THOSE FILES?
-$wgAutoloadClasses['ORAField']  = $sDir."/db/DatabaseOracle.php";
-$wgAutoloadClasses['ORAResult'] = $sDir."/db/DatabaseOracle.php";
+$wgAutoloadClasses['ORAField']  = __DIR__."/db/DatabaseOracleBase.php";
+$wgAutoloadClasses['ORAResult'] = __DIR__."/db/DatabaseOracleBase.php";
 
 //diagnostics special page
-$wgAutoloadClasses['SpecialDiagnostics'] = $sDir . '/specials/SpecialDiagnostics.class.php'; # Location of the SpecialMyExtension class (Tell MediaWiki to load this file)
-$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
-$wgExtensionMessagesFiles['DiagnosticsAlias'] = $sDir . '../languages/BlueSpice.Diagnostics.alias.php'; # Location of an aliases file (Tell MediaWiki to load this file)
-$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics'; # Tell MediaWiki about the new special page and its class name
+$wgAutoloadClasses['SpecialDiagnostics'] = __DIR__ . '/specials/SpecialDiagnostics.class.php';

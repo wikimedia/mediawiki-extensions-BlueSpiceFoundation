@@ -1,0 +1,16 @@
+
+Ext.ux.form.field.BoxSelect
+===========================
+
+This repository is for the ExtJS4 user extension featured on this post:
+http://www.sencha.com/forum/showthread.php?134751-Ext.ux.form.field.BoxSelect-Intuitive-Multi-Select-ComboBox
+
+Thanks to all those out there in the community that have contributed their patches or bug reports.
+
+Hosted on github at https://github.com/kveeiv/extjs-boxselect
+
+IMPORTANT: using fork of sonata (branch extjs-4.2.1)
+git clone https://github.com/sonata82/extjs-boxselect.git 	
+
+
+

@@ -2,10 +2,10 @@
 
 /**
  * BlueSpice for MediaWiki
- * Description:
+ * Description: Adds functionality for business needs
  * Authors: Markus Glaser
  *
- * Copyright (C) 2010 Hallo Welt! – Medienwerkstatt GmbH, All rights reserved.
+ * Copyright (C) 2013 Hallo Welt! – Medienwerkstatt GmbH, All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,11 +24,6 @@
  *
  * For further information visit http://www.blue-spice.org
  *
- * Version information
- * $LastChangedDate: 2013-06-24 15:24:05 +0200 (Mo, 24 Jun 2013) $
- * $LastChangedBy: rvogel $
- * $Rev: 9876 $
- * $Id: bluespice-core.php 9876 2013-06-24 13:24:05Z rvogel $
  */
 /* Changelog
  */
@@ -43,12 +38,10 @@ $wgBlueSpiceExtInfo = array(
 );
 
 $wgExtensionCredits['other'][] = array(
-	'name' => 'BlueSpice for MediaWiki ' . $wgBlueSpiceExtInfo['version'],
-	'svn-date' => '$LastChangedDate: 2013-06-24 15:24:05 +0200 (Mo, 24 Jun 2013) $',
-	'svn-revision' => '$LastChangedRevision: 9876 $',
+	'name'        => 'BlueSpice for MediaWiki ' . $wgBlueSpiceExtInfo['version'],
 	'description' => $wgBlueSpiceExtInfo['desc'],
-	'author' => $wgBlueSpiceExtInfo['author'],
-	'url' => $wgBlueSpiceExtInfo['url'],
+	'author'      => $wgBlueSpiceExtInfo['author'],
+	'url'         => $wgBlueSpiceExtInfo['url'],
 );
 
 $wgFooterIcons['poweredby']['bluespice'] = array(
@@ -58,96 +51,65 @@ $wgFooterIcons['poweredby']['bluespice'] = array(
 );
 
 require_once( __DIR__."/includes/AutoLoader.php");
+require_once( __DIR__."/includes/Defines.php" );
+require_once( __DIR__."/includes/DefaultSettings.php" );
 require_once( __DIR__."/resources/Resources.php");
 
-//Setup
-$wgExtensionFunctions[] = 'BsCoreHooks::setup';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getTitleStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getNamespaceStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getUserStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getCategoryStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getAsyncCategoryTreeStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
+$wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
-//Hooks
+//I18N
+$wgExtensionMessagesFiles += array(
+	'BlueSpice'              => __DIR__."/languages/BlueSpice.i18n.php",
+	'Validator'              => __DIR__."/languages/Validator.i18n.php",
+	'BlueSpice.ExtJS'        => __DIR__."/languages/BlueSpice.ExtJS.i18n.php",
+	'BlueSpice.ExtJS.Portal' => __DIR__."/languages/BlueSpice.ExtJS.Portal.i18n.php",
+	'BlueSpiceDiagnostics'   => __DIR__."/languages/BlueSpice.Diagnostics.i18n.php",
+	'DiagnosticsAlias'       => __DIR__."/languages/BlueSpice.Diagnostics.alias.php"
+);
+
+//$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
+//$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
+
+$oCore = BsCore::getInstance();
+$wgHooks['SetupAfterCache'][]           = 'BsCoreHooks::onSetupAfterCache';
 $wgHooks['SoftwareInfo'][]              = 'BsCoreHooks::onSoftwareInfo';
 $wgHooks['BeforePageDisplay'][]         = 'BsCoreHooks::onBeforePageDisplay';
 $wgHooks['MakeGlobalVariablesScript'][] = 'BsCoreHooks::onMakeGlobalVariablesScript';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'BsCoreHooks::onLoadExtensionSchemaUpdates';
-//$wgHooks['MediaWikiPerformAction'][]     = 'BsCoreHooks::doSetup'; //TODO: Move adapter hook handler
+$wgHooks['ApiCheckCanExecute'][] = 'BsCoreHooks::onApiCheckCanExecute';
+$wgHooks['UserGetRights'][] = array( $oCore, 'onUserGetRights' );
+$wgHooks['userCan'][]       = array( $oCore, 'onUserCan' );
+$wgHooks['FormDefaults'][]  = array( $oCore, 'onFormDefaults' );
+$wgHooks['UserAddGroup'][]  = array( $oCore, 'addTemporaryGroupToUserHelper' );
+$wgHooks['UploadVerification'][] = array( $oCore, 'onUploadVerification' );
+$wgHooks['ArticleAfterFetchContent'][] = array( $oCore, 'behaviorSwitches' );
+$wgHooks['ParserBeforeStrip'][] = array( $oCore, 'hideBehaviorSwitches' );
+$wgHooks['ParserBeforeTidy'][]  = array( $oCore, 'recoverBehaviorSwitches' );
+if( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
+	$wgHooks['EditPage::showEditForm:initial'] = array();
+}
+array_unshift(
+	$wgHooks['EditPage::showEditForm:initial'], 
+	array( $oCore, 'lastChanceBehaviorSwitches' )
+);
 
-$wgAjaxExportList[] = 'BSCommonAJAXInterface::getTitleStoreData';
-$wgAjaxExportList[] = 'BSCommonAJAXInterface::getNamespaceStoreData';
+//BlueSpice specific hooks
+$wgHooks['BSBlueSpiceSkinAfterArticleContent'][] = array( $oCore, 'onBlueSpiceSkinAfterArticleContent' );
 
-if( $wgDBtype == 'oracle' ) {
+if ( $wgDBtype == 'oracle' ) {
 	$wgHooks['ArticleDelete'][] = 'BSOracleHooks::onArticleDelete';
 }
 
-//Default settings needed for BlueSpice
-$wgNamespacesWithSubpages[NS_MAIN] = true;
-$wgActions['remote'] = 'BsRemoteAction';
-$wgApiFrameOptions = 'SAMEORIGIN';
-$wgUseAjax = true;
-
-//I18N
-$wgExtensionMessagesFiles['BlueSpice'] = __DIR__."/languages/BlueSpice.i18n.php";
-$wgExtensionMessagesFiles['Validator'] = __DIR__."/languages/Validator.i18n.php";
-$wgExtensionMessagesFiles['BlueSpice.ExtJS'] = __DIR__."/languages/BlueSpice.ExtJS.i18n.php";
-$wgExtensionMessagesFiles['BlueSpiceDiagnostics'] = __DIR__."/languages/BlueSpice.Diagnostics.i18n.php";
-$wgExtensionMessagesFiles['DiagnosticsAlias'] = __DIR__ . '/languages/BlueSpice.Diagnostics.alias.php'; # Location of an aliases file (Tell MediaWiki to load this file)
-$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
-$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics'; # Tell MediaWiki about the new special page and its class name
-
-if (!defined('DS'))
-	define('DS', DIRECTORY_SEPARATOR);
-elseif (DS != DIRECTORY_SEPARATOR) {
-	$message = 'Constant "DS" already in use but unequal "DIRECTORY_SEPARATOR", namely: DS == "' . DS . '"';
-	//throw new Exception($message);
-	exit($message . ' in ' . __FILE__ . ', line ' . __LINE__);
-}
-
-// TODO MRG20100724: Ist das ok beim Hosting (index.php ist hier symlinked)
-/* Lilu:
- * Bei Symlinks wird es Probleme geben, da __FILE__ den absoluten Pfad inkl. aufgelöster Symlinks enthält.
- * Lösung wäre für das Hosting ein gemeinsam genutzter Core mit separater Konfiguration pro Präsenz.
- * Dies sollte sich ohne Probleme umsetzen lassen, da BlueSpice ja so designed ist, dass der Core in einem
- * separaten Verzeichnis liegen kann.
- */
-wfProfileIn('Performance: Core - Defines');
-if (!defined('WIKI_FARMING')) {
-	define('BSROOTDIR', dirname(__FILE__));
-	define('BSCONFIGDIR', BSROOTDIR . DS . 'config');
-	define('BSVENDORDIR', BSROOTDIR . DS . 'vendor');
-	define('BSDATADIR', BSROOTDIR . DS . 'data'); //Present
-	//define('BSDATADIR', "{$wgUploadDirectory}/bluespice"); //Future
-	define('BSCACHEDIR', "{$wgFileCacheDirectory}/bluespice"); //$wgCacheDirectory?
-}
-wfProfileOut('Performance: Core - Defines');
-
-wfProfileIn('Performance: Core - Includes');
-require(BSROOTDIR . DS . 'includes' . DS . 'Core.class.php');
-require(BSROOTDIR . DS . 'includes' . DS . 'Common.php');
-wfProfileOut('Performance: Core - Includes');
-
-/*
- * spl_autoload_register( $autoload_function, $throw, $prepend )
- * Changelog: The $prepend parameter was added with PHP 5.3.0
- */
-spl_autoload_register(array('BsCore', 'autoload'), true, true);
-
-BsCore::getInstance('MW')->setup();
-$oAdapterMW = BsCore::getInstance('MW')->getAdapter();
-$wgHooks['MediaWikiPerformAction'][] = array( $oAdapterMW, 'doSetup' );
-$wgHooks['UserGetRights'][] = array( $oAdapterMW, 'onUserGetRights' );
-$wgHooks['userCan'][]       = array( $oAdapterMW, 'onUserCan' );
-$wgHooks['FormDefaults'][]  = array($oAdapterMW, 'onFormDefaults');
-$wgHooks['UserAddGroup'][]  = array( $oAdapterMW, 'addTemporaryGroupToUserHelper' );
-$wgHooks['UploadVerification'][] = array($oAdapterMW, 'onUploadVerification');
-$wgHooks['EditPage::showEditForm:initial'][] = array($oAdapterMW, 'onEditPageShowEditFormInitial');
-array_unshift(
-	$wgHooks['EditPage::showEditForm:initial'], 
-	array($oAdapterMW, 'lastChanceBehaviorSwitches')
-);
-$wgHooks['ArticleAfterFetchContent'][] = array($oAdapterMW, 'behaviorSwitches');
-$wgHooks['ParserBeforeStrip'][] = array($oAdapterMW, 'hideBehaviorSwitches');
-$wgHooks['ParserBeforeTidy'][]  = array($oAdapterMW, 'recoverBehaviorSwitches');
-
-//BlueSpice specific hooks
-$wgHooks['BSBlueSpiceSkinAfterArticleContent'][] = array($oAdapterMW, 'onBlueSpiceSkinAfterArticleContent');
-
+//Setup
+$wgExtensionFunctions[] = 'BsCoreHooks::setup';
 // initalise BlueSpice as first extension in a fully initialised environment
-array_unshift($wgExtensionFunctions, array( BsCore::getInstance('MW')->getAdapter(), 'doInitialise' ));
+array_unshift(
+	$wgExtensionFunctions, 
+	array( $oCore, 'doInitialise' )
+);

@@ -31,12 +31,20 @@ class BSDebug {
 		return $sLine;
 	}
 	
-	public function logVar( $mVar, $aParams = array() ) {
+	public static function logVar( $mVar, $aParams = array() ) {
 		if( empty( $aParams['mark'] ) ) {
 			$aBackTrace = debug_backtrace();
 			$sLine = self::formatLine( $aBackTrace[2] );
 			error_log($sLine);
 		}
-		error_log( var_export($mVar, true) );
+		
+		if( isset( $aParams['format'] ) && strtolower( $aParams['format'] ) == 'json') {
+			$sOut = FormatJson::encode( $mVar, true );
+		}
+		else {
+			$sOut = var_export($mVar, true);
+		}
+		
+		error_log( $sOut );
 	}
 }

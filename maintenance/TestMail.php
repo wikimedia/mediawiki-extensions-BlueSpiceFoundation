@@ -63,7 +63,7 @@ class TestMail extends Maintenance {
 
 		if( $sFramework == 'BS' ) {
 			if( $sTestMode == 'true' ) {
-				BsConfig::set('Core::TestMode', true); //is not saved so it doesn't need to be reverted
+				BsConfig::set( 'MW::TestMode', true ); //is not saved so it doesn't need to be reverted
 			}
 
 			$vTo = $oRecipient; //BsMailer needs User object or String, but not MailAddress object.

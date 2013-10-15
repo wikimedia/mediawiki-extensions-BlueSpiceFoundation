@@ -22,34 +22,56 @@ ul.x-menu-list {
 
 /*Fix underlining by commonElements.css*/
 a.x-btn-over, 
-a.x4-btn-over {
+a.x-btn-over {
 	text-decoration: none;
 }
 
 a.x-btn-over, 
-a.x4-btn-over,
+a.x-btn-over,
 a.x-btn-focus, 
-a.x4-btn-focus {
+a.x-btn-focus {
 	text-decoration: none;
 }
 
 /* Fix blue background from general.css */
 input:focus.x-field-form-focus, 
 textarea:focus.x-field-form-focus, 
-input:focus.x4-field-form-focus, 
-textarea:focus.x4-field-form-focus {
+input:focus.x-field-form-focus, 
+textarea:focus.x-field-form-focus {
 	background-color: #FFF;
 }
 
 /*Fix ExtJS RESET*/
-.x4-body {
+.x-body {
 	font-family: Arial,Verdana,Geneva,sans-serif; /* BlueSpice default */
 }
 
-.x4-layer {
+.x-layer {
 	font-family: tahoma,arial,verdana,sans-serif;
 }
 
-.x4-panel-body-default {
-	background-color: #DFE8F6; /* This may change with different skin! */
+.x-tool-img {
+	height: 20px;
+}
+
+
+/* BS.CRUDGridPanel */
+.bs-extjs-crud-grid tr.x-grid-row ul.bs-extjs-list {
+	list-style-type: none;
+	list-style-image: none;
+	font-size: 11px;
+	margin: 0;
+}
+
+.bs-extjs-crud-grid tr.x-grid-row .bs-extjs-actioncloumn-icon {
+	display: none;
+	height: 24px;
+	width: 24px
+}
+
+.bs-extjs-crud-grid tr.x-grid-row:hover .bs-extjs-actioncloumn-icon {
+	display: inline-block;
+}
+.bs-extjs-crud-grid tr.x-grid-row {
+	height: 34px;
 }

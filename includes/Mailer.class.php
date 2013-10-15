@@ -9,7 +9,7 @@
  * $LastChangedDate: 2013-06-13 10:32:52 +0200 (Do, 13 Jun 2013) $
  * $LastChangedBy: rvogel $
  * $Rev: 9719 $
- * $Id: Mailer.class.php 9719 2013-06-13 08:32:52Z rvogel $
+
  */
 
 /**
@@ -32,7 +32,7 @@ class BsMailer {
 	 * @return BsMailer The BsMailer instance for the provided 'name'
 	 */
 	public static function &getInstance( $name, $path = false ) {
-		if(!isset(self::$prInstances[$name]) || self::$prInstances[$name] === NULL) {
+		if ( !isset( self::$prInstances[$name] ) || self::$prInstances[$name] === null ) {
 			self::$prInstances[$name] = new BsMailer();
 		}
 		return self::$prInstances[$name];
@@ -60,17 +60,13 @@ class BsMailer {
 			$sHeaders = 'text/html; charset=utf-8';
 		}
 
-		$oAdapterMW = BsCore::getInstance('MW')->getAdapter();
-		$sSiteName       = $oAdapterMW->get( 'Sitename' );
-		$sPasswortSender = $oAdapterMW->get( 'PasswordSender' );
-		$sReplyTo        = $oAdapterMW->get( 'EmergencyContact' );
-		$bReplyToUser    = $oAdapterMW->get( 'UserEmailUseReplyTo' );
+		global $wgSitename, $wgPasswordSender,$wgEmergencyContact,$wgUserEmailUseReplyTo;
 
-		$oFromAddress = new MailAddress( $sPasswortSender, $sSiteName, $sSiteName );
+		$oFromAddress = new MailAddress( $wgPasswordSender, $wgSitename, $wgSitename );
 		$oReplyToAddress = null;
 		if ( $oFrom instanceof User ) {
 			$oFromAddress = new MailAddress( $oFrom );
-			if( $bReplyToUser ) $oReplyToAddress = $oFromAddress;
+			if( $wgUserEmailUseReplyTo ) $oReplyToAddress = $oFromAddress;
 		}
 
 		// Perpare recipients
@@ -83,7 +79,7 @@ class BsMailer {
 				if ( $vReceiver->getEmail() ) {
 					$aEmailTo[] = array(
 							'mail' => new MailAddress($vReceiver),
-							'greeting' => BsAdapterMW::getUserDisplayName($vReceiver)
+							'greeting' => BsCore::getUserDisplayName($vReceiver)
 					);
 				}
 			} else if ( strpos($vReceiver, '@' ) !== false ) {
@@ -102,17 +98,17 @@ class BsMailer {
 				if ( $oUser->getEmail() ) {
 					$aEmailTo[] = array(
 						'mail' => new MailAddress($oUser),
-						'greeting' => BsAdapterMW::getUserDisplayName($oUser)
+						'greeting' => BsCore::getUserDisplayName($oUser)
 					);
 				}
 			}
 		}
 
 		//Prepare subject
-		$sCombinedSubject = '['.$sSiteName.'] '.$sSubject;
+		$sCombinedSubject = '['.$wgSitename.'] '.$sSubject;
 
 		//Prepare message
-		$sFooter = $this->bSendHTML ? wfMessage( 'bs-mail-footer-html', $sSiteName )->plain() : wfMessage( 'bs-mail-footer', $sSiteName )->plain() ;
+		$sFooter = $this->bSendHTML ? wfMessage( 'bs-mail-footer-html', $wgSitename )->plain() : wfMessage( 'bs-mail-footer', $wgSitename )->plain() ;
 		$sCombinedMsg = $sMsg.$sFooter;
 
 		foreach ( $aEmailTo as $aReceiver ) {
@@ -126,7 +122,7 @@ class BsMailer {
 			$sLocalCombinedMsg = $sGreeting.$sCombinedMsg;
 			$sLocalCombinedMsg = str_replace($sReplLF, $sCurLF, $sLocalCombinedMsg);
 
-			if ( BsConfig::get('Core::TestMode') ) {
+			if ( BsConfig::get( 'MW::TestMode' ) ) {
 				$sLog = var_export(
 					array(
 						'to'      => $aReceiver['mail']->toString(),

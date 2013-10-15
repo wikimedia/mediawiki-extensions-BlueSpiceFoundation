@@ -11,7 +11,7 @@
  * $LastChangedDate: 2013-06-24 10:45:07 +0200 (Mo, 24 Jun 2013) $
  * $LastChangedBy: rvogel $
  * $Rev: 9863 $
- * $Id: Validator.class.php 9863 2013-06-24 08:45:07Z rvogel $
+
  */
 
 /* Changelog

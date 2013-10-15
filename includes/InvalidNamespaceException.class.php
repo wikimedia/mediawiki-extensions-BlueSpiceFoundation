@@ -9,7 +9,7 @@
  * $LastChangedDate: 2013-06-13 09:29:57 +0200 (Do, 13 Jun 2013) $
  * $LastChangedBy: rvogel $
  * $Rev: 9715 $
- * $Id: InvalidNamespaceException.class.php 9715 2013-06-13 07:29:57Z rvogel $
+
  */
 
 class BsInvalidNamespaceException extends BsException {

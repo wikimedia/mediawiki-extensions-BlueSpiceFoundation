@@ -9,27 +9,16 @@ class BsPageContentProvider {
 	protected $oOriginalGlobalParser     = null;
 	protected $oOriginalGlobalTitle      = null;
 	public    $oParserOptions            = null;
-	protected $sTemplate                 = ''; // TODO RBV (21.01.11 17:09): Better templating...
+	protected $sTemplate                 = false; // TODO RBV (21.01.11 17:09): Better templating...
 	public    $bEncapsulateContent       = true;
 	protected $oTidy                     = null;
 	public    $aTidyConfig               = array();
 
 	public static $oInstance             = null;
 
-
-	/**
-	 * Contructor of BsPageContentProvider
-	 */
-	public function __construct() {
-		global $wgUser;
-
-		//Default ParserOptions
-		$this->oParserOptions = ParserOptions::newFromUser( $wgUser );
-		$this->oParserOptions->setEditSection( false ); //Does not work...
-		$this->oParserOptions->mEditSection = false;    //Does not work either...
-		$this->oParserOptions->setTidy( true );
-		$this->oParserOptions->setRemoveComments( true );
-
+	protected function getTemplate() {
+		if( $this->sTemplate !== false ) return $this->sTemplate;
+				
 		//Default Template
 		$sTemplate = array();
 		$sTemplate[] = '<div class="bs-page-content">';
@@ -40,8 +29,20 @@ class BsPageContentProvider {
 		$sTemplate[] = '</div>';
 		$sTemplate[] = '</div>';
 
-		$this->sTemplate = implode( '', $sTemplate ); //no concat with \n, because in DOM this will be a TextNode, making it more difficult to traverse DOM
+		$this->sTemplate = implode( '', $sTemplate ); //no concat with \n, 
+		//because in DOM this will be a TextNode, making it more 
+		//difficult to traverse DOM
 
+		return $this->sTemplate;
+	}
+	
+	/**
+	 * Lazy instantiation of Tidy
+	 * @return Tidy
+	 */
+	protected function getTidy() {
+		if( $this->oTidy !== null ) return $this->oTidy;
+		
 		$this->aTidyConfig = array(
 				'output-xhtml'     => true,
 				'numeric-entities' => true,
@@ -51,6 +52,27 @@ class BsPageContentProvider {
 		);
 
 		$this->oTidy = new Tidy();
+		return $this->oTidy;
+	}
+	
+	/**
+	 * Lazy instantiation of ParserOptions
+	 * @global User $wgUser
+	 * @return ParserOptions
+	 */
+	protected function getParserOptions() {
+		if ( $this->oParserOptions !== null ) return $this->oParserOptions;
+		
+		global $wgUser;
+
+		//Default ParserOptions
+		$this->oParserOptions = ParserOptions::newFromUser( $wgUser );
+		$this->oParserOptions->setEditSection( false ); //Does not work...
+		$this->oParserOptions->mEditSection = false;    //Does not work either...
+		$this->oParserOptions->setTidy( true );
+		$this->oParserOptions->setRemoveComments( true );
+		
+		return $this->oParserOptions;
 	}
 
 	/**
@@ -257,14 +279,14 @@ class BsPageContentProvider {
 
 		if( $this->bEncapsulateContent ) {
 			$sHTML = sprintf(
-				$this->sTemplate,
+				$this->getTemplate(),
 				'bs-ue-jumpmark-'.md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
 				$oTitle->getPrefixedText(),
 				$sHTML
 			);
 		}
 
-		return $this->oTidy->repairString( $sHTML, $this->aTidyConfig, 'utf8' );
+		return $this->getTidy()->repairString( $sHTML, $this->aTidyConfig, 'utf8' );
 	}
 
 	/**
@@ -341,7 +363,7 @@ class BsPageContentProvider {
 		$this->oOriginalGlobalTitle      = $wgTitle; //This is neccessary for other extensions that may rely on $wgTitle, i.e for checking permissions during rendering
 
 		$wgParser = new Parser();
-		$wgParser->Options( $this->oParserOptions );
+		$wgParser->Options( $this->getParserOptions() );
 
 		if( $wgVersion < '1.18' ) {
 			$wgOut = new OutputPage();

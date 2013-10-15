@@ -1,4 +1,4 @@
-Ext4.define( 'BS.ConfirmDialog', {
+Ext.define( 'BS.ConfirmDialog', {
 	extend: 'BS.AlertDialog',
 
 	afterInitComponent: function() {

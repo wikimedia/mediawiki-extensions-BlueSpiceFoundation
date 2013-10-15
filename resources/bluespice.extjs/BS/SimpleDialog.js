@@ -1,7 +1,7 @@
-Ext4.define( 'BS.SimpleDialog', {
-	extend: 'Ext4.Window',
+Ext.define( 'BS.SimpleDialog', {
+	extend: 'Ext.Window',
 	requires: [
-		'Ext4.Button'
+		'Ext.Button'
 	],
 	width: 300,
 	minHeight: 100,
@@ -16,7 +16,7 @@ Ext4.define( 'BS.SimpleDialog', {
 			this.setTitle( mw.message(this.titleMsg).plain() );
 		}
 		
-		this.cntMain = Ext4.create('Ext4.Container',{
+		this.cntMain = Ext.create('Ext.Container',{
 			id: this.idPrefix + '-cnt-main',
 			padding: 5
 		});
@@ -25,13 +25,13 @@ Ext4.define( 'BS.SimpleDialog', {
 			this.cntMain
 		];
 		
-		this.btnOK = Ext4.create('Ext4.Button',{
+		this.btnOK = Ext.create('Ext.Button',{
 			text: mw.message('bs-extjs-ok').plain(),
 			id: this.idPrefix + '-btn-ok'
 		});
 		this.btnOK.on( 'click', this.btnOKClicked, this );
 		
-		this.btnCancel = Ext4.create('Ext4.Button',{
+		this.btnCancel = Ext.create('Ext.Button',{
 			text: mw.message('bs-extjs-cancel').plain(),
 			id: this.idPrefix + '-btn-cancel'
 		});

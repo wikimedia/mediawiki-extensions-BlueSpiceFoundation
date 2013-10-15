@@ -10,7 +10,7 @@
  * $LastChangedDate: 2013-06-13 11:09:22 +0200 (Do, 13 Jun 2013) $
  * $LastChangedBy: rvogel $
  * $Rev: 9725 $
- * $Id: view.EditButton.php 9725 2013-06-13 09:09:22Z rvogel $
+
  */
 
 class ViewEditButton extends ViewBaseElement {
@@ -46,15 +46,16 @@ class ViewEditButton extends ViewBaseElement {
 	}
 
 	protected function renderButton() {
+		global $wgScriptPath;
 		$aOut = array();
 
 		$aOut[] = '<div style="float:left">';
 		$aOut[] = '  <div id="'.$this->mId.'" class="hw-button-a" onclick="'.$this->mOnClick.'">';
 		$aOut[] = '    <div class="hw-button-left">';
-		$aOut[] = '      <img src="'.BsCore::getInstance('MW')->getAdapter()->get('ScriptPath').$this->mImage.'" class="hw-button-img" alt="'.$this->mMsg.'">';
+		$aOut[] = '      <img src="'.$wgScriptPath.$this->mImage.'" class="hw-button-img" alt="'.$this->mMsg.'">';
 		$aOut[] ='     </div>';
 		$aOut[] = '    <div class="hw-button-middle">'.$this->mMsg.'</div>';
-		$aOut[] = '    <img src="'.BsCore::getInstance('MW')->getAdapter()->get('ScriptPath').'/extensions/BlueSpiceFoundation/resources/bluespice/images/btn_right.gif" class="hw-button-right" alt="'.$this->mMsg.'">';
+		$aOut[] = '    <img src="'.$wgScriptPath.'/extensions/BlueSpiceFoundation/resources/bluespice/images/btn_right.gif" class="hw-button-right" alt="'.$this->mMsg.'">';
 		$aOut[] = '  </div>';
 		$aOut[] = '</div>';
 

@@ -131,4 +131,14 @@ class BsArticleHelper {
 
 		$this->bIsLoaded = true;;
 	}
+
+	/**
+	 * Returns redirect target title or null if there is no redirect
+	 * @return Title - returns redirect target title or null
+	 */
+	public function getTitleFromRedirectRecurse() {
+		$oWikiPage = WikiPage::newFromID( $this->oTitle->getArticleID() );
+		return $oWikiPage->getRedirectTarget();
+	}
+
 }

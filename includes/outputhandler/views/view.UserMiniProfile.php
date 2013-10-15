@@ -69,7 +69,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$this->sUserDisplayName = 
 			isset( $this->mOptions['userdisplayname'] )
 				? $this->mOptions['userdisplayname']
-				: BsAdapterMW::getUserDisplayName( $oUser );
+				: BsCore::getUserDisplayName( $oUser );
 
 		//Get the link href
 		$this->sLinkTargetHref = 

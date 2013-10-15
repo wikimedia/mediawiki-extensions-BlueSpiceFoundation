@@ -1,4 +1,4 @@
-Ext4.define( 'BS.AlertDialog', {
+Ext.define( 'BS.AlertDialog', {
 	extend: 'BS.SimpleDialog',
 
 	//Custom Settings

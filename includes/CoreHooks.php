@@ -1,6 +1,29 @@
 <?php
 class BsCoreHooks {
 	
+	public static function onSetupAfterCache() {
+		global $wgExtensionFunctions, $wgGroupPermissions, $wgWhitelistRead, $wgMaxUploadSize,
+		$wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown, $wgNonincludableNamespaces,
+		$wgExtraNamespaces, $wgContentNamespaces, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault,
+		$wgLocalisationCacheConf, $wgAutoloadLocalClasses, $wgFlaggedRevsNamespaces, $wgNamespaceAliases, $wgVersion;
+
+		$sConfigPath = BSROOTDIR . DS . 'config';
+		$aConfigFiles = array( 
+			'nm-settings.php', 
+			'gm-settings.php', 
+			'pm-settings.php' 
+		);
+		
+		foreach( $aConfigFiles as $sConfigFile) {
+			$sConfigFilePath = $sConfigPath . DS . $sConfigFile;
+			if ( file_exists( $sConfigFilePath ) ) {
+				include( $sConfigFilePath );
+			}
+		}
+
+		return true;
+	}
+
 	/**
 	 * Called by Special:Version for returning information about the software
 	 * @param Array $aSoftware: The array of software in format 'name' => 'version'.
@@ -30,51 +53,28 @@ class BsCoreHooks {
 	* @return boolean
 	*/
 	public static function onBeforePageDisplay( $out, $skin) {
-		global $wgFavicon, $wgScriptPath, $wgLang, 
-				$wgStyleDirectory, $wgResourceLoaderDebug; //TODO: $out->getRequest() for modern MW
+		global $IP,$wgFavicon, $wgExtensionAssetsPath,
+			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
+		
 		$out->addModules('ext.bluespice');
 		$out->addModules('ext.bluespice.extjs');
 
-		$sSP = BsConfig::get('Core::BlueSpiceScriptPath');
+		$sSP = BsConfig::get('MW::BlueSpiceScriptPath');
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
 
-		$out->addStyle( $sSP.'/vendor/ExtJS/resources/css/ext-all-notheme.css' );
-		$out->addStyle( $sSP.'/vendor/ExtJS/resources/css/xtheme-gray.css' );
-		$out->addStyle( $sSP.'/resources/extjs/resources/ext-theme-classic-sandbox/ext-theme-classic-sandbox-all.css' ); //ExtJS 4: Classic Theme
-		//$out->addStyle( $sSP.'/resources/extjs/resources/ext-theme-neptune/ext-theme-neptune-all-sandbox-debug.css' ); //ExtJS 4: Neptune Theme
-
-		if( $out->getRequest()->getVal('debug', 'false') != 'false' || $wgResourceLoaderDebug ) { //DEBUG Mode
-			$out->addScriptFile( $sSP.'/vendor/ExtJS/adapter/ext/ext-base-debug.js' );
-			$out->addScriptFile( $sSP.'/vendor/ExtJS/ext-all-debug-w-comments.js' );
-			$out->addStyle( $sSP.'/vendor/ExtJS/resources/css/debug.css' );
-
-			$out->addScriptFile( $sSP.'/resources/extjs/builds/ext-all-sandbox-debug-w-comments.js' ); //ExtJS 4
-			//$out->addScriptFile( $sSP.'/resources/extjs/resources/ext-theme-neptune/ext-theme-neptune-sandbox-debug.js' ); //ExtJS 4: Neptune Theme
-		}
-		else { 
-			$out->addScriptFile( $sSP.'/vendor/ExtJS/adapter/ext/ext-base.js' );
-			$out->addScriptFile( $sSP.'/vendor/ExtJS/ext-all.js' );
-			
-			$out->addScriptFile( $sSP.'/resources/extjs/builds/ext-all-sandbox.js' ); //ExtJS 4
-			//$out->addScriptFile( $sSP.'/resources/extjs/resources/ext-theme-neptune/ext-theme-neptune-sandbox.js' ); //ExtJS 4: Neptune Theme
-		}
-
-		$sLangCode = preg_replace('/(-|_).*$/', '', $wgLang->getCode());
+		//Add ExtJS Files
+		self::addNonRLResources($out, $bsgExtJSFiles, 'extjs');
+		//Add ExtJS Theme files
+		$sTheme = isset($bsgExtJSThemes[$bsgExtJSTheme]) ? $bsgExtJSTheme :'bluespice' ;
+		self::addNonRLResources($out, $bsgExtJSThemes[$sTheme], $sTheme);
+		
+		//Use ExtJS's built-in i18n. This may fail for some languages...
+		$sLangCode = preg_replace('/(-|_).*$/', '', $out->getLanguage()->getCode());
 		if ($sLangCode != 'en') {
-			$out->addScriptFile( $sSP.'/vendor/ExtJS/src/locale/ext-lang-' . $sLangCode . '.js' );
 			$out->addScriptFile( $sSP.'/resources/extjs/locale/ext-lang-' . $sLangCode . '.js' ); //ExtJS 4
 		}
-		$out->addScriptFile( $sSP.'/resources/bluespice/BsInitExt.js' );
-		$out->addScriptFile( $sSP.'/resources/bluespice/BlueSpiceFramework.js' );
 
-
-		BsExtensionManager::loadAllScriptFiles();
-		$aScriptFiles = BsScriptManager::getFileRegister();
-		foreach( $aScriptFiles as $sFile => $iOptions ) {
-			$out->addScriptFile($sFile);
-		}
-
-		$aScriptBlocks = BsScriptManager::getClientScriptBlocks();
+		$aScriptBlocks = BsCore::getClientScriptBlocks();
 		foreach( $aScriptBlocks as $sKey => $aClientScriptBlock ) {
 			$aOutput[] = '<script type="text/javascript">';
 			$aOutput[] = '//'.$aClientScriptBlock[0].' ('.$sKey.')';
@@ -83,25 +83,110 @@ class BsCoreHooks {
 			$out->addScript(implode("\n", $aOutput));
 		}
 
-		//TODO: Resolve dependency to "BlueSpiceFrameWork" and move to module "ext.bluespice.skin"
-		if( strpos( $wgStyleDirectory, 'bluespice-skin' ) ) {
-			$out->addScriptFile( $wgScriptPath.'/bluespice-skin/bluespice/main.js' );
-		}
+		//Make some variables available on client side:
+		global $wgEnableUploads, $wgMaxUploadSize;
+		$iMaxPhpUploadSize = (int) ini_get('upload_max_filesize');
+		$aMaxUploadSize = array(
+			'php'       => 1024*1024*$iMaxPhpUploadSize,
+			'mediawiki' => $wgMaxUploadSize
+		);
+		
+		//We cannot use BsConfig::RENDER_AS_JAVASCRIPT because we want to 
+		//normalize the content to lower case:
+		$aFileExtensions  = self::lcNormalizeArray( BsConfig::get( 'MW::FileExtensions' ) );
+		$aImageExtensions = self::lcNormalizeArray( BsConfig::get( 'MW::ImageExtensions' ) );
+		
+		$out->addJsConfigVars( 'bsMaxUploadSize', $aMaxUploadSize );
+		$out->addJsConfigVars( 'bsEnableUploads', $wgEnableUploads ); //Was: 'MW::InsertFile::EnableUploads' --> 'bsInsertFileEnableUploads'
+		$out->addJsConfigVars( 'bsFileExtensions', $aFileExtensions );
+		$out->addJsConfigVars( 'bsImageExtensions', $aImageExtensions );
+		$out->addJsConfigVars( 'bsIsWindows', wfIsWindows() );
+		
+		$aExtensionConfs = BsExtensionManager::getRegisteredExtenions();
+		$aAssetsPaths = array(
+			'BlueSpiceFoundation' => $wgExtensionAssetsPath.'/BlueSpiceFoundation'
+		);
+		$aExtJSPaths = array();
 
+		foreach( $aExtensionConfs as $sName => $aConf ) {
+			$sAssetsPath = '';
+			if( $aConf['baseDir'] == 'ext' ) {
+				$sAssetsPath = '/BlueSpiceExtensions/'.$sName;
+			} else {
+				//TODO: User MWInit::extSetupPath() or similar
+				$sAssetsPath = str_replace( $IP.DS.'extensions', '', $aConf['baseDir'] );
+				$sAssetsPath = str_replace( "\\", "/", $sAssetsPath );
+			}
+			$sAssetsPath = $wgExtensionAssetsPath.$sAssetsPath;
+			$aAssetsPaths[$sName] = $sAssetsPath;
 
-		BsExtensionManager::loadAllStyleSheets();
-		$aStyleFiles = BsStyleManager::getFileRegister();
-		foreach( $aStyleFiles as $sFile => $iOptions) {
-			$out->addStyle($sFile, BsStyleManager::getMediaTypes( $iOptions ) );
+			//Build (potential) ExtJS Autoloader paths
+			$sExtJSNamespace = "BS.$sName";
+			$aExtJSPaths[$sExtJSNamespace] = "$sAssetsPath/resources/$sExtJSNamespace";
 		}
-		$aInlineStyles = BsStyleManager::getInlineStyles();
-		foreach( $aInlineStyles as $media => $styletexts ) {
-			$out->addInlineStyle($styletexts);
-		}
+		//TODO: Implement as RL Module: see ResourceLoaderUserOptionsModule
+		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
+		$sExtJS = 'Ext.BLANK_IMAGE_URL = mw.config.get("wgScriptPath")+"/extensions/BlueSpiceFoundation/resources/bluespice.extjs/images/s.gif";';
+		$sExtJS.= 'Ext.Loader.setPath('.FormatJson::encode( $aExtJSPaths).');';
+		
+		$out->addScript(
+			Html::inlineScript( $sExtJS )
+		);
 
 		return true;
 	}
 	
+	/**
+	 * Performs lower case transformation on every item of an array and removes 
+	 * duplicates
+	 * @param array $aData One dimensional array of strings
+	 * @return array
+	 */
+	protected static function lcNormalizeArray( $aData ) {
+		$aNormalized = array();
+		foreach( $aData as $sItem ) {
+			$aNormalized[] = strtolower( $sItem );
+		}
+		return array_unique( $aNormalized );
+	}
+	
+	/**
+	 * Adds styles and scripts to document head without using MediaWikis 
+	 * resourceloader
+	 * HINT: IE 8/9 Issues
+	 * http://stackoverflow.com/questions/8092261/extjs-4-load-mask-giving-errors-in-ie8-and-ie9-when-used-while-opening-a-windo
+	 * @param OutputPage $out
+	 * @param array $aFiles
+	 * @param string $sKey Allows HeadItem override
+	 */
+	protected static function addNonRLResources($out, $aFiles, $sKey) {
+		global $wgResourceLoaderDebug, $wgScriptPath;
+		
+		$aScripts = isset( $aFiles['scripts'] ) ? $aFiles['scripts'] : array();
+		$aStyles  = isset( $aFiles['styles'] )  ? $aFiles['styles']  : array();
+
+		if( $out->getRequest()->getVal('debug', 'false') != 'false' 
+				|| $wgResourceLoaderDebug ) { //DEBUG Mode
+			if( isset($aFiles['debug-scripts']) ) {
+				$aScripts = $aFiles['debug-scripts'];
+			}
+			if( isset($aFiles['debug-styles']) ) {
+				$aStyles = $aFiles['debug-styles'];
+			}
+		}
+		$iScriptCount = 0;
+		foreach( $aScripts as $sScript ) {
+			
+			$out->addHeadItem( 
+				$sKey.'-'.$iScriptCount, 
+				Html::linkedScript( $wgScriptPath.$sScript)
+			);
+			$iScriptCount++;
+		}
+		foreach( $aStyles as $sStyle ) {
+			$out->addStyle( $wgScriptPath.$sStyle );
+		}
+	}
 	
 	/**
 	 * 
@@ -127,6 +212,7 @@ class BsCoreHooks {
 			// true = $sValue
 			$vars['bs'.$oVar->getExtension().$oVar->getName()] = $mValue;
 		}
+
 		return true;
 	}
 	
@@ -137,85 +223,52 @@ class BsCoreHooks {
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
 		global $wgDBtype, $wgScriptPath;
-		
-		echo "Ensure availability of BSCACHEDIR \n";
-		BsFileSystemHelper::ensureCacheDirectory();
-		
-		echo "Ensure availability of BSDATADIR \n";
-		BsFileSystemHelper::ensureDataDirectory();
-		
+
 		$dbw = wfGetDB( DB_WRITE );
 		$table = $dbw->tableName( 'bs_settings' );
 		$scriptpath = serialize( "{$wgScriptPath}/extensions/BlueSpiceFoundation" );
 
-		if( $dbw->tableExists( 'bs_settings' ) ) return true;
+		if ( $dbw->tableExists( 'bs_settings' ) ) {
+			$res = $dbw->query("SELECT * FROM {$table} WHERE `key` = 'MW::BlueSpiceScriptPath'");
+			if ( $dbw->numRows( $res ) < 1 ) {
+				$dbw->query("INSERT INTO {$table} (`key`, `value`) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
+			}
+			return true;
+		}
 
-		if( $wgDBtype == 'mysql' ) {
+		if ( $wgDBtype == 'mysql' ) {
 			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (`key` varchar(255) NOT NULL, `value` text)");
 			$dbw->query("CREATE UNIQUE INDEX `key` ON {$table} (`key`)");
-			$dbw->query("INSERT INTO {$table} (`key`, `value`) VALUES ('Core::BlueSpiceScriptPath', '{$scriptpath}')");
-		} 
-		elseif( $wgDBtype == 'postgres' ) {
+			$dbw->query("INSERT INTO {$table} (`key`, `value`) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
+		} elseif ( $wgDBtype == 'postgres' ) {
 			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (key varchar(255) NOT NULL, value text)");
 			$dbw->query("CREATE UNIQUE INDEX key ON {$table} (key)");
-			$dbw->query("INSERT INTO {$table} (key, value) VALUES ('Core::BlueSpiceScriptPath', '{$scriptpath}')");
-		} 
-		elseif( $wgDBtype == 'oracle' ) {
+			$dbw->query("INSERT INTO {$table} (key, value) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
+		} elseif ( $wgDBtype == 'oracle' ) {
 			$dbw->query("CREATE TABLE {$table} (key VARCHAR2(255) NOT NULL, value LONG NOT NULL)");
 			$dbw->query("CREATE UNIQUE INDEX {$dbw->tableName('settings_u01')} ON {$table} (key)");
-			$dbw->query("INSERT INTO {$table} (key, value) VALUES ('Core::BlueSpiceScriptPath', '{$scriptpath}')");
+			$dbw->query("INSERT INTO {$table} (key, value) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
 		}
 		
-		//Stuff from AdapterMW::onLoadExtensionSchemaUpdates
-		//TODO: Still needed?
-		$aDBConf = BsConfig::get('Core::Database');
-		$sDBName = $aDBConf['core']['dbname'];
-		$sDBPrefix = $aDBConf['core']['prefix'];
-		$sDBType = $aDBConf['core']['type'];
-
-		$aTables = array(
-			//old                       => new
-			"{$sDBPrefix}settings" => "{$sDBPrefix}bs_settings",
-			"{$sDBPrefix}user_settings" => "{$sDBPrefix}bs_user_settings",
-		);
-
-		echo "Updating BlueSpice Core tables...\n";
-		$db = BsDatabase::getInstance('CORE');
-
-		foreach ($aTables as $sOldName => $sNewName) {
-			if ($sDBType == 'MySQL') {
-				$query =
-						"SELECT COUNT(*) AS cnt 
-			 FROM INFORMATION_SCHEMA.TABLES 
-			 WHERE TABLE_SCHEMA = '{$sDBName}' AND TABLE_NAME = '{$sOldName}';";
-				$res = $db->query($query);
-				$row = $res->fetchObject();
-				$res->free();
-
-				if ($row->cnt == 1) {
-					echo " Table '{$sOldName}' detected. Renaming to '{$sNewName}' ...";
-					$res = $db->query("ALTER TABLE {$sOldName} RENAME TO {$sNewName};");
-					$row = $res->fetchObject();
-					$res->free();
-					echo " done.\n";
-				} else {
-					echo " Table '{$sOldName}' not found. No renaming needed.\n";
-				}
-			} else {
-				/* try {
-					echo " Try to rename table '{$sOldName}' to '{$sNewName}' ...";
-					$res = $db->query( "ALTER TABLE {$sOldName} RENAME TO {$sNewName};" );
-					$row = $res->fetchObject();
-					$res->free();
-					echo " done.\n";
-					} catch ( Exception $e ) {
-					echo " abort.\n Table '{$sOldName}' not found. No renaming needed.\n";
-				} */
-			}
+		return true;
+	}
+	
+	/**
+	 * Called during ApiMain::checkCanExecute(), prevents user getting text when lacking permissions
+	 * @param ApiBase $module
+	 * @param User $user
+	 * @param String $message
+	 * @return boolean
+	 */
+	public static function onApiCheckCanExecute( $module, $user, &$message ){
+		if (!$module instanceof ApiParse)
+			return true;
+		if (Title::newFromText($module->getRequest()->getVal('page'))->userCan('read') == false){
+			$message = wfMessage('loginreqpagetext', wfMessage('loginreqlink')->plain())->plain();
+			return false;
 		}
-
 		return true;
 	}
 }

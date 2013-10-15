@@ -90,7 +90,7 @@ class BsWidgetListHelper {
 		$oCustomListView    = new ViewBaseElement();
 		$oCustomListView->setTemplate('*[[{TITLE}|{DESCRIPTION}]]' . "\n");
 
-		$oAdapterMW = BsCore::getInstance('MW')->getAdapter();
+		$oCore = BsCore::getInstance();
 
 		foreach( $aLines as $sLine ){
 			$iDepth = 0;
@@ -110,7 +110,7 @@ class BsWidgetListHelper {
 
 				if ( $oCurrentWidgetView !== null ) {
 					$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-							$oAdapterMW->parseWikiText($oCustomListView->execute())
+							$oCore->parseWikiText($oCustomListView->execute())
 					);
 					$oCurrentWidgetView = null;
 				}
@@ -122,7 +122,7 @@ class BsWidgetListHelper {
 			if ( $iDepth == 1 ) {
 				if ($oCurrentWidgetView !== null) {
 					$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-							$oAdapterMW->parseWikiText($oCustomListView->execute())
+							$oCore->parseWikiText($oCustomListView->execute())
 					);
 					$oCurrentWidgetView = null;
 				}
@@ -156,7 +156,7 @@ class BsWidgetListHelper {
 		}
 		if ($oCurrentWidgetView !== null) { // TODO RBV (23.02.11 14:45): This is just a workaround. At given time: review logic!
 			$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-					$oAdapterMW->parseWikiText($oCustomListView->execute())
+					$oCore->parseWikiText($oCustomListView->execute())
 			);
 		}
 

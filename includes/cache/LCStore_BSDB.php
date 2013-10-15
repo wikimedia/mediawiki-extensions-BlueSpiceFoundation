@@ -9,7 +9,7 @@
  * $LastChangedDate: 2011-09-06 17:46:46 +0800 (Tue, 06 Sep 2011) $
  * $LastChangedBy: rvogel $
  * $Rev: 3072 $
- * $Id: LoggerAppenderMW.php 3072 2011-09-06 09:46:46Z rvogel $
+
  */
 class LCStore_BSDB implements LCStore {
 

@@ -1,4 +1,4 @@
-Ext4.define( 'BS.PromptDialog', {
+Ext.define( 'BS.PromptDialog', {
 	extend: 'BS.ConfirmDialog',
 
 	afterInitComponent: function() {
@@ -7,7 +7,7 @@ Ext4.define( 'BS.PromptDialog', {
 		this.btnOK.setText( mw.message('bs-extjs-ok').plain() );
 		this.btnCancel.setText( mw.message('bs-extjs-cancel').plain() );
 		
-		this.tfPrompt = Ext4.create( 'Ext4.form.TextField', {
+		this.tfPrompt = Ext.create( 'Ext.form.TextField', {
 			width: '100%'
 		} );
 		

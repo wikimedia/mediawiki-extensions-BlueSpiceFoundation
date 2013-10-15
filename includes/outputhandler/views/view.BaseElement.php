@@ -10,7 +10,7 @@
  * $LastChangedDate: 2010-07-18 01:13:04 +0200 (So, 18 Jul 2010) $
  * $LastChangedBy: mglaser $
  * $Rev: 314 $
- * $Id: ViewManager.class.php 314 2010-07-17 23:13:04Z mglaser $
+
  */
 
 // Last review MRG20100816
@@ -194,7 +194,7 @@ class ViewBaseElement {
 	 */
 	public function addItem( $item, $key = false ) {
 		if ( !( $item instanceof ViewBaseElement ) ) {
-			$item = BsOutputHandler::createElement( $item );
+			return false;
 		}
 		// better: if( empty( $item ) ), see second note on http://www.php.net/manual/en/types.comparisons.php
 		if ( !$item ) {

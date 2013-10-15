@@ -1,15 +1,15 @@
 //http://stackoverflow.com/questions/6153362/how-to-create-custom-extjs-form-field-component
-Ext4.define( "BS.WikiPagePicker", {
-	extend: "Ext4.form.field.Base",
+Ext.define( "BS.WikiPagePicker", {
+	extend: "Ext.form.field.Base",
 	initComponent: function() {
-		this.jstrNamespaces = /*Ext.create('Ext4.data.JsonStore',*/ new Ext4.data.JsonStore( {
+		this.jstrNamespaces = /*Ext.create('Ext.data.JsonStore',*/ new Ext.data.JsonStore( {
 			proxy: {
 				type: 'ajax',
 				url: wgScript,
 				extraParams: {
 					'action' : 'ajax',
 					'rs': 'BSCommonAJAXInterface::getNamespaces',
-					'rsargs[]': Ext4.JSON.encode({ contentNamespaces:true })
+					'rsargs[]': Ext.JSON.encode({ contentNamespaces:true })
 				},
 				reader: {
 					type: 'json',
@@ -23,12 +23,12 @@ Ext4.define( "BS.WikiPagePicker", {
 		this.jstrNamespaces.load();
 		//this.jstrPages = Ext.create('Ext.data.JsonStore');
 	
-		this.cbNamespace = Ext4.create( "Ext4.form.field.ComboBox", {
+		this.cbNamespace = Ext.create( "Ext.form.field.ComboBox", {
 			store: this.jstrNamespaces
 		});
 		this.cbNamespace.on( 'select', this.cbNamespaceSelected, this );
 		
-		//this.cbPageTitle = Ext4.create( "Ext4.form.field.ComboBox" );
+		//this.cbPageTitle = Ext.create( "Ext.form.field.ComboBox" );
 		this.items = [
 			this.cbNamespace//,
 			//this.cbPageTitle
