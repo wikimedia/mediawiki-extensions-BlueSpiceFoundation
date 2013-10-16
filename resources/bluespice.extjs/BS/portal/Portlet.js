@@ -28,29 +28,23 @@ Ext.define('BS.portal.Portlet', {
 			type: 'gear'
 		});
 		this.tlSettings.on( 'click', this.onTlSettingsClick, this );
-		
+
 		this.pcConfig = false; //The config component is instantiated ony if needed within the config tool callback
-		
+
 		this.tools = this.tools || [];
 		this.tools.push(this.tlSettings);
-		
 		this.addEvents( 'configchange' );
-		
 		this.afterInitComponent(arguments);
-		
 		this.callParent(arguments);
 	},
-	
+
 	//Allow subclasses to modify child component configs
-	beforeInitCompontents: function() {
-		
+	beforeInitComponent: function() {
 	},
-	
 	//Allow subclasses to change tools or contents
 	afterInitComponent: function() {
-		
 	},
-	
+
 	onTlSettingsClick: function( tool, event, eventOpts ) {
 		if( !this.pcConfig ) {
 			this.pcConfig = Ext.create(this.portletConfigClass, {
@@ -59,7 +53,6 @@ Ext.define('BS.portal.Portlet', {
 		}
 		this.pcConfig.show();
 	},
-	
 	//Subclasses may add further config data to feed their child components
 	getPortletConfig: function() {
 		//There is no method like Panel::getTitle()!
@@ -67,18 +60,18 @@ Ext.define('BS.portal.Portlet', {
 			title: this.title,
 			height: this.height || 0,
 			portletItemCount: this.portletItemCount,
+			portletTimeSpan: this.portletTimeSpan,
 			collapsed: this.getCollapsed()
 		};
 	},
-	
 	//Subclasses can use this to refresh their content!
 	setPortletConfig: function( oConfig ) {
 		this.setTitle( oConfig.title );
 		this.setHeight( oConfig.height );
 		this.portletItemCount = oConfig.portletItemCount;
+		this.portletTimeSpan = oConfig.portletTimeSpan;
 		this.fireEvent( 'configchange', this, oConfig );
 	},
-
 	// Override Panel's default doClose to provide a custom fade out effect
 	// when a portlet is removed from the portal
 	doClose: function() {

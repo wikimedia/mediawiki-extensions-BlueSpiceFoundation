@@ -36,7 +36,7 @@ Ext.define('BS.portal.GridPortlet', {
 			}]
 		}
 		
-		this.beforeInitCompontents();
+		this.beforeInitComponent();
 
 		
 		this.gdMain = Ext.create('Ext.grid.Panel', {

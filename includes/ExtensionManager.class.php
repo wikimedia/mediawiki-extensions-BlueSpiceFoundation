@@ -8,7 +8,7 @@
  * @author Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
  * @author Robert Vogel <vogel@hallowelt.biz>
  * @author Stephan Muggli <muggli@hallowelt.biz>
- * @version 1.22.0 
+ * @version 2.22.0 
  */
 // Last Review: MRG20100813
 

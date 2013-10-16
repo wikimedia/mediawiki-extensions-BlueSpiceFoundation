@@ -111,9 +111,6 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
-	'styles' => array(
-		'bluespice.extjs/bluespice.extjs.BS.portal.css'
-	),
 	'dependencies' => array(
 		'ext.bluespice.extjs'
 	),
@@ -126,6 +123,15 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 		'bs-extjs-portal-timespan',
 		'bs-extjs-portal-timespan-month',
 		'bs-extjs-portal-timespan-alltime'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs.BS.portal.css'] = array(
+	'styles' => array(
+		'bluespice.extjs/bluespice.extjs.BS.portal.css'
+	),
+	'dependencies' => array(
+		'ext.bluespice.extjs'
 	)
 ) + $aResourceModuleTemplate;
 

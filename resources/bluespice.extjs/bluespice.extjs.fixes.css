@@ -20,6 +20,12 @@ ul.x-menu-list {
 	list-style: decimal !important;
 }
 
+#content form input[type=text].x-form-field {
+	border: none;
+	background: none;
+	margin: 0;
+}
+
 /*Fix underlining by commonElements.css*/
 a.x-btn-over, 
 a.x-btn-over {

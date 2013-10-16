@@ -412,7 +412,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
      */
     removeAll : function () {
         if(this.filters){
-            Ext.destroy.apply(Ext4, this.filters.items);
+            Ext.destroy.apply(Ext, this.filters.items);
             // remove all items from the collection
             this.filters.clear();
         }
