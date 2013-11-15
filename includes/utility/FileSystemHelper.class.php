@@ -272,7 +272,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 * Deletes a folder with all it's content
+	 * Deletes a folder with all its content
 	 * @param String $sDir
 	 * @return Status good on success, otherwise fatal with message
 	 */
@@ -318,7 +318,7 @@ class BsFileSystemHelper {
 		$oUploadFromFile->initialize($wgRequest->getVal('name'), $oWebRequestUpload);
 		$aStatus = $oUploadFromFile->verifyUpload();
 		if ($aStatus['status'] != 0) {
-			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', $aStatus['status'])->plain());
+			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
 		}
 		$sRemoteFileName = $oWebRequestUpload->getName();
 		$sRemoteFileExt = pathinfo($sRemoteFileName, PATHINFO_EXTENSION);
@@ -338,11 +338,79 @@ class BsFileSystemHelper {
 	}
 
 	/**
+	 * Converts uploaded image to PNG
+	 * @global type $wgRequest
+	 * @param type $sName
+	 * @param type $sDir
+	 * @param type $sFileName
+	 * @return type
+	 */
+	public static function uploadAndConvertImage($sName, $sDir, $sFileName = '') {
+		global $wgRequest;
+		$oWebRequest = new WebRequest();
+		$oWebRequestUpload = $oWebRequest->getUpload($sName);
+		$oUploadFromFile = new UploadFromFile();
+		$oUploadFromFile->initialize($wgRequest->getVal('name'), $oWebRequestUpload);
+		$aStatus = $oUploadFromFile->verifyUpload();
+
+		if ($aStatus['status'] != 0) {
+			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
+		}
+
+		$sRemoteFileName = $oWebRequestUpload->getName();
+		/*
+		  $sRemoteFileExt = pathinfo($sRemoteFileName, PATHINFO_EXTENSION);
+		  if ($sRequiredExtension && strtolower($sRemoteFileExt) != strtolower($sRequiredExtension)) {
+		  return Status::newFatal(wfMessage('bs-filesystemhelper-upload-wrong-ext', $sRequiredExtension));
+		  }
+		 */
+
+		$oStatus = self::ensureDataDirectory($sDir);
+		if (!$oStatus->isGood())
+			return $oStatus;
+
+		$sTmpName = BS_DATA_DIR . DS . $sDir . DS;
+		$sTmpName .= ($sFileName) ? $sFileName : $sRemoteFileName;
+		if (self::hasTraversal($sTmpName, true))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
+		$sUploadPath = $oWebRequestUpload->getTempName();
+		list($iWidth, $iHeight, $iType) = getimagesize($sUploadPath);
+		switch ($iType) {
+			case IMAGETYPE_GIF:
+				$rImage = imagecreatefromgif($sUploadPath);
+				break;
+			case IMAGETYPE_JPEG:
+				$rImage = imagecreatefromjpeg($sUploadPath);
+				break;
+			case IMAGETYPE_PNG:
+				$rImage = imagecreatefrompng($sUploadPath);
+				break;
+			default:
+				return Status::newFatal(wfMessage('bs-filesystemhelper-upload-unsupported-type')->plain());
+		}
+
+		$iNewWidth = $iNewHeight = BsConfig::get('MW::Avatars::DefaultSize');
+		$fRatio = $iWidth / $iHeight;
+		if ($fRatio < 1) {
+			$iNewWidth = $iNewHeight * $fRatio; # portrait
+		} else {
+			$iNewHeight = $iNewWidth / $fRatio; # landscape
+		}
+		$rNewImage = imagecreatetruecolor($iNewWidth, $iNewHeight);
+		imagecopyresampled($rNewImage, $rImage, 0, 0, 0, 0, $iNewWidth, $iNewHeight, $iWidth, $iHeight);
+		imagepng($rNewImage, $sTmpName);
+		imagedestroy($rNewImage);
+
+		#move_uploaded_file($oWebRequestUpload->getTempName(), $sTmpName);
+		return Status::newGood($oWebRequestUpload->getName());
+	}
+
+	/**
 	 * Do a proper traversal check if $sPath exists, a string check otherwise
 	 * @param string $sPath Filepath
 	 * @return bool
 	 */
-	public static function hasTraversal($sPath, $bIsAbsolute=false) {
+	public static function hasTraversal($sPath, $bIsAbsolute = false) {
 		if (!$sPath)
 			return true; // BS_DATA_DIR without trailing DS. Bail out.
 		$sCheckPath = ($bIsAbsolute ? '' : BS_DATA_DIR . DS) . $sPath;

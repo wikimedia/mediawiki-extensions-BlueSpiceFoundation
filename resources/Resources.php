@@ -121,6 +121,7 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 		'bs-extjs-portal-height',
 		'bs-extjs-portal-count',
 		'bs-extjs-portal-timespan',
+		'bs-extjs-portal-timespan-week',
 		'bs-extjs-portal-timespan-month',
 		'bs-extjs-portal-timespan-alltime'
 	)

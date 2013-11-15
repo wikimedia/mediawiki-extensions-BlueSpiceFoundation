@@ -28,8 +28,9 @@ Ext.define('BS.portal.PortletConfig', {
 		this.strTime = Ext.create( 'Ext.data.Store', {
 			fields: [ 'time', 'label' ],
 			data: [
-				{ 'time': 'month', 'label': mw.message( 'bs-extjs-portal-timespan-month' ).plain() },
-				{ 'time': 'alltime', 'label': mw.message( 'bs-extjs-portal-timespan-alltime' ).plain() }
+				{ 'time': 7, 'label': mw.message( 'bs-extjs-portal-timespan-week' ).plain() },
+				{ 'time': 30, 'label': mw.message( 'bs-extjs-portal-timespan-month' ).plain() },
+				{ 'time': 0, 'label': mw.message( 'bs-extjs-portal-timespan-alltime' ).plain() }
 			]
 		});
 		this.cbTimeSpan = Ext.create( 'Ext.form.ComboBox',{

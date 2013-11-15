@@ -34,7 +34,7 @@ class BSDebug {
 	public static function logVar( $mVar, $aParams = array() ) {
 		if( empty( $aParams['mark'] ) ) {
 			$aBackTrace = debug_backtrace();
-			$sLine = self::formatLine( $aBackTrace[2] );
+			$sLine = self::formatLine( $aBackTrace[1] );
 			error_log($sLine);
 		}
 		

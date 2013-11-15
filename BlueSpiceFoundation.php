@@ -38,10 +38,10 @@ $wgBlueSpiceExtInfo = array(
 );
 
 $wgExtensionCredits['other'][] = array(
-	'name'        => 'BlueSpice for MediaWiki ' . $wgBlueSpiceExtInfo['version'],
+	'name' => 'BlueSpice for MediaWiki ' . $wgBlueSpiceExtInfo['version'],
 	'description' => $wgBlueSpiceExtInfo['desc'],
-	'author'      => $wgBlueSpiceExtInfo['author'],
-	'url'         => $wgBlueSpiceExtInfo['url'],
+	'author' => $wgBlueSpiceExtInfo['author'],
+	'url' => $wgBlueSpiceExtInfo['url'],
 );
 
 $wgFooterIcons['poweredby']['bluespice'] = array(
@@ -65,32 +65,37 @@ $wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
 //I18N
 $wgExtensionMessagesFiles += array(
-	'BlueSpice'              => __DIR__."/languages/BlueSpice.i18n.php",
-	'Validator'              => __DIR__."/languages/Validator.i18n.php",
-	'BlueSpice.ExtJS'        => __DIR__."/languages/BlueSpice.ExtJS.i18n.php",
+	'BlueSpice' => __DIR__."/languages/BlueSpice.i18n.php",
+	'Validator' => __DIR__."/languages/Validator.i18n.php",
+	'BlueSpice.ExtJS' => __DIR__."/languages/BlueSpice.ExtJS.i18n.php",
 	'BlueSpice.ExtJS.Portal' => __DIR__."/languages/BlueSpice.ExtJS.Portal.i18n.php",
-	'BlueSpiceDiagnostics'   => __DIR__."/languages/BlueSpice.Diagnostics.i18n.php",
-	'DiagnosticsAlias'       => __DIR__."/languages/BlueSpice.Diagnostics.alias.php"
+	'BlueSpiceDiagnostics' => __DIR__."/languages/BlueSpice.Diagnostics.i18n.php",
+	'DiagnosticsAlias' => __DIR__."/languages/BlueSpice.Diagnostics.alias.php",
+	'BlueSpiceCredits' => __DIR__."/languages/BlueSpice.Credits.i18n.php",
+	'CreditsAlias' => __DIR__."/languages/BlueSpice.Credits.alias.php"
 );
 
-//$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
-//$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
+#$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
+#$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
+$wgSpecialPageGroups['Credits'] = 'bluespice';
+$wgSpecialPages['Credits'] = 'SpecialCredits';
 
 $oCore = BsCore::getInstance();
-$wgHooks['SetupAfterCache'][]           = 'BsCoreHooks::onSetupAfterCache';
-$wgHooks['SoftwareInfo'][]              = 'BsCoreHooks::onSoftwareInfo';
-$wgHooks['BeforePageDisplay'][]         = 'BsCoreHooks::onBeforePageDisplay';
+$wgHooks['SetupAfterCache'][] = 'BsCoreHooks::onSetupAfterCache';
+$wgHooks['SoftwareInfo'][] = 'BsCoreHooks::onSoftwareInfo';
+$wgHooks['BeforePageDisplay'][] = 'BsCoreHooks::onBeforePageDisplay';
+$wgHooks['LinkEnd'][] = 'BsCoreHooks::LinkEnd';
 $wgHooks['MakeGlobalVariablesScript'][] = 'BsCoreHooks::onMakeGlobalVariablesScript';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'BsCoreHooks::onLoadExtensionSchemaUpdates';
 $wgHooks['ApiCheckCanExecute'][] = 'BsCoreHooks::onApiCheckCanExecute';
 $wgHooks['UserGetRights'][] = array( $oCore, 'onUserGetRights' );
-$wgHooks['userCan'][]       = array( $oCore, 'onUserCan' );
-$wgHooks['FormDefaults'][]  = array( $oCore, 'onFormDefaults' );
-$wgHooks['UserAddGroup'][]  = array( $oCore, 'addTemporaryGroupToUserHelper' );
+$wgHooks['userCan'][] = array( $oCore, 'onUserCan' );
+$wgHooks['FormDefaults'][] = array( $oCore, 'onFormDefaults' );
+$wgHooks['UserAddGroup'][] = array( $oCore, 'addTemporaryGroupToUserHelper' );
 $wgHooks['UploadVerification'][] = array( $oCore, 'onUploadVerification' );
 $wgHooks['ArticleAfterFetchContent'][] = array( $oCore, 'behaviorSwitches' );
 $wgHooks['ParserBeforeStrip'][] = array( $oCore, 'hideBehaviorSwitches' );
-$wgHooks['ParserBeforeTidy'][]  = array( $oCore, 'recoverBehaviorSwitches' );
+$wgHooks['ParserBeforeTidy'][] = array( $oCore, 'recoverBehaviorSwitches' );
 if( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
 	$wgHooks['EditPage::showEditForm:initial'] = array();
 }

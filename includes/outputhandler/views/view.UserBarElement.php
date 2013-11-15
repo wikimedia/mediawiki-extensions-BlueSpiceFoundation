@@ -39,8 +39,8 @@ class ViewUserBarElement extends ViewBaseElement {
 		$aOut[] = '<div id="'.$this->sId.'">';
 		$aOut[] = '  <a title="'.$this->sTooltip.'" href="'.$this->sLink.'">';
 		$aOut[] = '    <img alt="'.$this->sTooltip.'" src="'.$this->sIcon.'">';
-		$aOut[] = '  </a>';
 		$aOut[] = $this->sText;
+		$aOut[] = '  </a>';
 		$aOut[] = '</div>';
 		return join("\n", $aOut);
 	}

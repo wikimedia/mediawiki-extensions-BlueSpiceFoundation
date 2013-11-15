@@ -108,8 +108,9 @@ $messages['de'] = array(
 	'bs-filesystemhelper-folder-copy-error'         => 'Der Ordner $1 konnte nicht umbenannt werden.',
 	'bs-filesystemhelper-folder-not-exists'         => 'Der Ordner $1 existiert nicht.',
 	'bs-filesystemhelper-upload-no-file'            => 'Es wurde keine Datei hochgeladen.',
-	'bs-filesystemhelper-upload-err-code'           => 'Die Datei konnte nicht hochgeladen werden. (Fehlercode: "$1")',
-	'bs-filesystemhelper-upload-wrong-ext'          => 'Die Datei hat nicht die angeforderte Erweiterung "$1"'
+	'bs-filesystemhelper-upload-err-code'           => 'Die Datei konnte nicht hochgeladen werden. Grund: $1',
+	'bs-filesystemhelper-upload-wrong-ext'          => 'Die Datei hat nicht die angeforderte Erweiterung "$1"',
+	'bs-filesystemhelper-upload-unsupported-type'   => 'Dieser Dateityp wird nicht unterstützt.'
 );
 
 $messages['de-formal'] = array(
@@ -214,8 +215,9 @@ $messages['en'] = array(
 	'bs-filesystemhelper-folder-copy-error'         => 'The folder $1 could not be renamed.',
 	'bs-filesystemhelper-folder-not-exists'         => 'The foler $1 does not exist',
 	'bs-filesystemhelper-upload-no-file'            => 'No file was uploaded.',
-	'bs-filesystemhelper-upload-err-code'           => 'The file could not be uploaded. (Errorcode: "$1")',
-	'bs-filesystemhelper-upload-wrong-ext'          => 'The file does not have the required extension "$1"'
+	'bs-filesystemhelper-upload-err-code'           => 'The file could not be uploaded. Reason: $1',
+	'bs-filesystemhelper-upload-wrong-ext'          => 'The file does not have the required extension "$1"',
+	'bs-filesystemhelper-upload-unsupported-type'   => 'This file type is not supported.'
 );
 
 $messages['qqq'] = array();

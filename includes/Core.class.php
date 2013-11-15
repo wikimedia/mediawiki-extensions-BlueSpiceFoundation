@@ -210,7 +210,7 @@ class BsCore {
 			if (is_int($handover)) {
 				return $handover;
 			}
-			return intval($handover); // TODO RBV (06.12.10 09:55): If $handover is 'abc' intval() will return 0. This is not desired. The default value should be returned!
+			return intval($handover);
 		}
 		if ($options & BsPARAMTYPE::FLOAT) {
 			if (is_float($handover)) {
@@ -229,24 +229,28 @@ class BsCore {
 			if (is_bool($handover)) {
 				return $handover;
 			}
-			return (bool) $handover;
+			return (bool)$handover;
 		}
 		if ($options & BsPARAMTYPE::STRING) {
-			if (is_string($handover)) {
+			if ( is_string( $handover ) ) {
 				if ($options & BsPARAMOPTION::CLEANUP_STRING) {
-					return addslashes(strip_tags($handover));
+					return addslashes( strip_tags( $handover ) );
 				}
 				return $handover;
 			}
 		}
 		if ($options & BsPARAMTYPE::SQL_STRING) {
 			if (is_string($handover)) {
-				return addslashes($handover);
-				// TODO: real_escape_string needs an oben database connection. We need a different method here.
-				/* Lilu:
-				 * Eine offene Datenbankverbindung sollte ab jetzt immer existieren, da der BlueSpice-Core seine Datenbankverbindung ziemlich frÃ¼h initialisiert.
-				 */
-				return mysqli_real_escape_string($handover);
+				global $wgDBtype;
+
+				if ( $wgDBtype == 'postgres' ) {
+					$handover = pg_escape_string( $handover );
+				} elseif ( $wgDBtype == 'oracle' ) {
+					$handover = addslashes( $handover );
+				} else {
+					$handover = mysql_real_escape_string( $handover );
+				}
+				return $handover;
 			}
 		}
 		if ($options & BsPARAMTYPE::ARRAY_NUMERIC && is_array($handover)) {
@@ -352,8 +356,6 @@ class BsCore {
 			BsConfig::loadSettings();
 		}
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load Settings');
-
-		BsValidator::registerPluginPath( 'validator' . DS . 'plugins' . DS . 'BsValidator' );
 
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
 		BsExtensionManager::includeExtensionFiles( $this );
@@ -486,11 +488,10 @@ class BsCore {
 			$parserOptions->setNumberHeadings( true );
 
 		// TODO MRG20110707: Check it this cannot be unified
-		global $wgVersion;
-		if ( version_compare( $wgVersion, '1.17.0', '>' ) ) {
-			if ( $nocache )
-				self::$oLocalParser->disableCache(); // TODO RBV (19.10.10 15:57): --> Strict Standards: Creating default object from empty value in ...\includes\parser\Parser.php  on line 4433
-		}
+
+		if ( $nocache )
+			self::$oLocalParser->disableCache(); // TODO RBV (19.10.10 15:57): --> Strict Standards: Creating default object from empty value in ...\includes\parser\Parser.php  on line 4433
+
 
 		global $wgTitle;
 		if ( !( $wgTitle instanceof Title ) ) {
@@ -706,7 +707,7 @@ class BsCore {
 	public function registerPermission( $sPermissionName, $aUserGroups = array() ) {
 		wfProfileIn('BS::' . __METHOD__);
 
-		global $wgGroupPermissions;
+		global $wgGroupPermissions, $wgAvailableRights;
 		$wgGroupPermissions['sysop'][$sPermissionName] = true;
 
 		foreach ( $aUserGroups as $sGroup ) {
@@ -716,11 +717,12 @@ class BsCore {
 			}
 		}
 
+		$wgAvailableRights[] = $sPermissionName;
+
 		wfProfileOut('BS::' . __METHOD__);
 	}
 
 	/**
-	 * @global String $wgVersion
 	 * @global Array $wgGroupPermissions
 	 * @param User $oUser
 	 * @param String $sGroupName
@@ -854,16 +856,15 @@ class BsCore {
 
 	/**
 	 * Needed for edit and sumbit (preview) mode
-	 * @global <type> $wgArticle
 	 * @param <type> $editPage
 	 * @return <type> 
 	 */
 	public function lastChanceBehaviorSwitches( $editPage ) {
 		// TODO SW(05.01.12 15:39): Profiling
-		global $wgArticle;
+		$sContent = BsPageContentProvider::getInstance()->getContentFromTitle( RequestContext::getMain()->getTitle() );
 		if ( !isset( $this->aBehaviorSwitches ) ) return true;
 
-		$sNowikistripped = preg_replace( "/<nowiki>.*?<\/nowiki>/mi", "", $wgArticle->getContent() );
+		$sNowikistripped = preg_replace( "/<nowiki>.*?<\/nowiki>/mi", "", $sContent );
 		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
 			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
 				call_user_func( $sCallback );

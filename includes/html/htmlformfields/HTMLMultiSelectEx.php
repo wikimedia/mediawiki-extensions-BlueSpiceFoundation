@@ -79,18 +79,15 @@ class XmlMultiSelect extends XmlSelect {
 	public function addOption( $name, $value = false ) {
 		global $wgVersion;
 		$value = ( $value !== false ) ? $value : $name;
-		
-		//PW: Version switch to ensure compatibility with MW1.17
-		$this->options[] = $wgVersion < '1.18.0' 
-			? Xml::option( $name, $value, ( array_search( $value, $this->default ) !== false ) ) 
-			: array($name => $value);
+
+		$this->options[] = array($name => $value);
 	}
-	
+
 	public static function formatOptions( $options, $default = false ) {
 		$data = '';
 
 		if ( !is_array( $default ) ) $default = array();
-		
+
 		foreach( $options as $label => $value ) {
 			if ( is_array( $value ) ) {
 				$contents = self::formatOptions( $value, $default );
@@ -102,16 +99,11 @@ class XmlMultiSelect extends XmlSelect {
 
 		return $data;
 	}
-	
+
 	/**
 	 * @return string
 	 */
 	public function getHTML() {
-		global $wgVersion;
-		if( $wgVersion < '1.18.0' ) {
-			return Xml::tags( 'select', $this->attributes, implode( "\n", $this->options ) );
-		}
-
 		$contents = '';
 		foreach ( $this->options as $options ) {
 			$contents .= self::formatOptions( $options, $this->default );

@@ -7,11 +7,6 @@
  * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
  * @author Mathias Scheer
  * @version 0.1.0 beta
- *
- * $LastChangedDate: 2013-06-24 10:45:07 +0200 (Mo, 24 Jun 2013) $
- * $LastChangedBy: rvogel $
- * $Rev: 9863 $
-
  */
 
 /* Changelog
@@ -54,7 +49,6 @@ interface BsValidatorPlugin {
 
 class BsValidator {
 
-	protected static $prPluginPaths = null;
 	protected static $prKnownPlugins = array();
 
 	/**
@@ -78,7 +72,7 @@ class BsValidator {
 		$plugin = "BsValidator{$type}Plugin";
 		// TODO MRG20100816: Sollte man hier nicht den Autoloader verwenden?
 		if ( !class_exists( $plugin, false ) ) {
-			self::loadMissingPluginClass( $plugin, $type );
+			throw new BsException( "BsValidatorPlugin of type: $plugin does not exist." );
 		}
 		// TODO MRG20100816: entweder $prKnownPlugins initialisieren oder hier auf is_array testen
 		if ( !in_array( $type, self::$prKnownPlugins ) ) {
@@ -87,9 +81,8 @@ class BsValidator {
 				throw new BsException( "BsValidatorPlugin of type: $type does not implement 'BsValidatorPlugin'." );
 			self::$prKnownPlugins[] = $type;
 		}
-		// use array(class, method) for static method calls instead of class::method, due to backwards compatibiliy
-		// was changed in PHP 5.2.3
-		$validationResult = call_user_func( array( $plugin, 'isValid' ), $validateThis, $options );
+
+		$validationResult = call_user_func( $plugin.'::isValid', $validateThis, $options );
 
 		if ( is_object( $validationResult ) && ( $validationResult instanceof BsValidatorResponse ) ) {
 			wfProfileOut( 'BS::'.__METHOD__ );
@@ -101,82 +94,6 @@ class BsValidator {
 		throw new BsException( "$plugin did not return a BsValidatorResponse-object." ); // todo: throw new BsException
 	}
 
-	// TODO MRG20100816: Bitte kommentieren, v.a. unused und glob
-	protected static function loadAllPlugins() {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		self::initializePrPluginPaths();
-		foreach ( self::$prPluginPaths as $path ) {
-			$pluginFiles = glob( $path.DIRECTORY_SEPARATOR.'BsValidator*Plugin.class.php' );
-			foreach ( $pluginFiles as $file )
-				include_once( $file );
-		}
-		wfProfileOut( 'BS::'.__METHOD__ );
-	}
-
-	/**
-	 * First includes php-files of all BsValidator-plugins from registered paths.
-	 * @return array All names of classes  named BsValidator* implementing BsValidatorPlugin-Interface.
-	 */
-	public static function getAvailablePlugins() {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		self::loadAllPlugins();
-
-		$declaredClasses = get_declared_classes();
-		$availablePlugins = array();
-		foreach ( $declaredClasses as $value ) {
-			if ( strpos( $value, 'BsValidator ') === 0 ) {
-				$test = new ReflectionClass( $value );
-				if ( $test->implementsInterface( 'BsValidatorPlugin' ) )
-					$availablePlugins[] = $value;
-			}
-		}
-		wfProfileOut( 'BS::'.__METHOD__ );
-		return $availablePlugins;
-	}
-
-	/**
-	 * BsValidator can be extended with Plugins. The naming convention is
-	 * "BsValidator{$type}Plugin", e.g. "BsValidatorEmailPlugin. Each of the plugins
-	 * has to implement interface BsValidatorPlugin. The function registers the path
-	 * where the new plugin can be found. If needed the file is loaded automagically.
-	 * @param string $path dirname where classes implementing interface BsValidatorPlugin can be found
-	 * @return bool true on success
-	 */
-	public static function registerPluginPath( $path ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		self::initializePrPluginPaths();
-		$path = realpath( $path );
-		if ( $path !== false ) {
-			// TODO MRG20100816: Hier wird zweimal realpath auf $path angewendet. ist das Absicht?
-			self::$prPluginPaths[$path] = true; // stored as key and not as value because key is unique!
-		}
-		wfProfileOut( 'BS::'.__METHOD__ );
-		return (bool)$path;
-	}
-
-	protected static function initializePrPluginPaths() {
-		if ( is_null( self::$prPluginPaths ) )
-			self::$prPluginPaths = array( BSROOTDIR.DS.'includes' => true ); // stored as key and not as value because key is unique!
-	}
-
-	protected static function loadMissingPluginClass( $plugin, $type ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		self::initializePrPluginPaths();
-		foreach ( self::$prPluginPaths as $path ) {
-			$pluginFile = $path.DIRECTORY_SEPARATOR.$plugin.'.class.php';
-			if ( file_exists( $pluginFile ) ) {
-				// TODO MRG20100816: _once ist performanceintensiv. brauchen wir das? Ich hätte zudem gern
-				// ein try-catch mit Exception drumrum, wenn wir beispielsweise keine leserechte haben.
-				include_once( $pluginFile );
-				break; // break the foreach-loop
-			}
-		}
-
-		if ( !class_exists( $plugin, false ) ) {
-			throw new BsException("BsValidatorPlugin of type: $type not found.");
-		}
-		wfProfileOut( 'BS::'.__METHOD__ );
-	}
 }
 
 class BsValidatorResponse {
@@ -221,9 +138,9 @@ class BsValidatorResponse {
 
 		if ( is_null( $this->mI18NRenderedString ) ) {
 			$this->mI18NRenderedString = ( is_null( $this->mI18NTokens ) )
-				? wfMsg( $this->mI18NMessageKey )
+				? wfMessage( $this->mI18NMessageKey )->plain()
 				// TODO MRG (08.02.11 00:08): msg wurde modifiziert, $default gibts nicht mehr. @Robert: macht Tokens von $default Gebrauch?
-				: wfMsg( $this->mI18NMessageKey, $this->mI18NTokens );
+				: wfMessage( $this->mI18NMessageKey, $this->mI18NTokens )->plain();
 		}
 		wfProfileOut( 'BS::'.__METHOD__ );
 		return $this->mI18NRenderedString;
@@ -384,43 +301,11 @@ class BsValidatorCategoryPlugin implements BsValidatorPlugin {
 }
 
 // TODO MRG20100816: Kommentar
-class BsValidatorIpPlugin implements BsValidatorPlugin {
-
-	public static function isValid( $ipAdress, $options ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-
-		/*
-		 * Have a look at the php filter functions if the implemented function is no longer sufficient
-		 * http://www.php.net/manual/en/filter.filters.validate.php
-		 * filter_var($ip,FILTER_VALIDATE_IP, FILTER_FLAG_IPV4|FILTER_FLAG_IPV6|FILTER_FLAG_NO_PRIV_RANGE|FILTER_FLAG_NO_RES_RANGE)
-		 * Validates value as IP address, optionally only IPv4 or IPv6 or not from private or reserved ranges
-		*/
-
-		$approved = 0;
-		$blocks = explode('.', $ipAdress);
-
-		if ( count( $blocks ) == 4 ) {
-			foreach ( $blocks as $block ) {
-				if ( preg_match( '#\d{1,3}#', $block ) ) {
-					$intBlock = (int)$block;
-					if ( $intBlock >= 0 && $intBlock <= 255 ) $approved++;
-					else break;
-				}
-			}
-		}
-		wfProfileOut( 'BS::'.__METHOD__ );
-		return ( $approved === 4 )
-			? new BsValidatorResponse( 0, 'Validator', 'bs-validator-ip-validation-approved' )
-			: new BsValidatorResponse( 1, 'Validator', 'bs-validator-ip-validation-not-approved' );
-	}
-}
-
-// TODO MRG20100816: Kommentar
 class BsValidatorSetItemPlugin implements BsValidatorPlugin {
 
 	public static function isValid( $validateThis, $options ) {
 		return ( !in_array( $validateThis , $options['set'] ) )
-			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-set-validation-not-approved', array( $options['setname'], join(',', $options['set'] ) ) )
+			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-set-validation-not-approved', array( $options['setname'], implode( ',', $options['set'] ) ) )
 			: new BsValidatorResponse( 0, 'Validator', 'bs-validator-set-validation-approved' );
 	}
 

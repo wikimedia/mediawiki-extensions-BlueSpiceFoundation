@@ -17,8 +17,8 @@ class BsPageContentProvider {
 	public static $oInstance             = null;
 
 	protected function getTemplate() {
-		if( $this->sTemplate !== false ) return $this->sTemplate;
-				
+		if ( $this->sTemplate !== false ) return $this->sTemplate;
+
 		//Default Template
 		$sTemplate = array();
 		$sTemplate[] = '<div class="bs-page-content">';
@@ -35,14 +35,14 @@ class BsPageContentProvider {
 
 		return $this->sTemplate;
 	}
-	
+
 	/**
 	 * Lazy instantiation of Tidy
 	 * @return Tidy
 	 */
 	protected function getTidy() {
-		if( $this->oTidy !== null ) return $this->oTidy;
-		
+		if ( $this->oTidy !== null ) return $this->oTidy;
+
 		$this->aTidyConfig = array(
 				'output-xhtml'     => true,
 				'numeric-entities' => true,
@@ -54,7 +54,7 @@ class BsPageContentProvider {
 		$this->oTidy = new Tidy();
 		return $this->oTidy;
 	}
-	
+
 	/**
 	 * Lazy instantiation of ParserOptions
 	 * @global User $wgUser
@@ -71,7 +71,7 @@ class BsPageContentProvider {
 		$this->oParserOptions->mEditSection = false;    //Does not work either...
 		$this->oParserOptions->setTidy( true );
 		$this->oParserOptions->setRemoveComments( true );
-		
+
 		return $this->oParserOptions;
 	}
 
@@ -119,7 +119,6 @@ class BsPageContentProvider {
 	 * @return String Content
 	 */
 	public function getContentFromRevision( Revision $oRevision, $iAudience = Revision::FOR_PUBLIC, User $oUser = null ) {
-		if ( is_null( $oRevision ) || !is_object( $oRevision ) ) return '';
 		global $wgVersion;
 		$sContent = '';
 		if ( version_compare( $wgVersion, '1.21.0', '>=' ) ) {
@@ -146,7 +145,7 @@ class BsPageContentProvider {
 		$sHtmlContent = $this->getHTMLContentFor( $oTitle, $aParams );
 
 		//To avoid strange errors... should never happen.
-		if ( !mb_check_encoding( $sHtmlContent, 'utf8') ) {
+		if ( !mb_check_encoding( $sHtmlContent, 'UTF-8') ) {
 			$sHtmlContent = utf8_encode( $sHtmlContent );
 			wfDebugLog( 'BS::AdapterMW', 'BsPageContentProvider::getDOMDocumentContentFor: Content of Title "'.$oTitle->getPrefixedText().'" was not UTF8 encoded.' );
 		}
@@ -158,13 +157,13 @@ class BsPageContentProvider {
 		//Fixing Tidy bug: http://sourceforge.net/tracker/index.php?func=detail&aid=1532698&group_id=27659&atid=390963
 		// TODO RBV (06.03.12 15:14): Find better solution than http://stackoverflow.com/questions/3834319/trim-only-the-first-and-last-occurrence-of-a-character-in-a-string-php/3834391#3834391
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
-		foreach( $oPreTags as $oPreTag ) {
-			if( !($oPreTag->firstChild instanceof DOMText ) ) continue;
-			if( $oPreTag->firstChild->nodeValue[0] == "\n") 
+		foreach ( $oPreTags as $oPreTag ) {
+			if ( !($oPreTag->firstChild instanceof DOMText ) ) continue;
+			if ( $oPreTag->firstChild->nodeValue[0] == "\n") 
 				$oPreTag->firstChild->nodeValue = substr($oPreTag->firstChild->nodeValue,1);
 
-			if( !($oPreTag->lastChild instanceof DOMText ) ) continue;
-			if( $oPreTag->lastChild->nodeValue[strlen($oPreTag->lastChild->nodeValue)-1] == "\n" )
+			if ( !($oPreTag->lastChild instanceof DOMText ) ) continue;
+			if ( $oPreTag->lastChild->nodeValue[strlen($oPreTag->lastChild->nodeValue)-1] == "\n" )
 				$oPreTag->lastChild->nodeValue = 
 					substr($oPreTag->lastChild->nodeValue,0,strlen($oPreTag->lastChild->nodeValue)-1);
 		}
@@ -173,10 +172,12 @@ class BsPageContentProvider {
 	}
 
 	/**
-	 * This method returns the HTML of a Wiki page usually located in the '<div id="bodyContent">'. It supports Title objects of normal Articles, CategoryPages, ImagePages and SpecialPages
+	 * This method returns the HTML of a Wiki page usually located in the 
+	 * '<div id="bodyContent">'. It supports Title objects of normal Articles, 
+	 * CategoryPages, ImagePages and SpecialPages
 	 * @param Title $oTitle The MediaWiki Title object from which the html output should be extracted
 	 * @param Array $aParams Contains processing information, like the requested revision id (oldid) and wether to follow redirects or not.
-	 * @return String The Articles HTML output, wrapped in a '<div class="bs-page-content">' and with the title and the "bodyContent", if $this->bEncapsulateContent was not false.
+	 * @return string The pages HTML output, wrapped in a '<div class="bs-page-content">' and with the title and the "bodyContent", if $this->bEncapsulateContent was not false.
 	 * @global WebRequest $wgRequest
 	 * @global User $wgUser
 	 * @global OutputPage $wgOut
@@ -194,90 +195,65 @@ class BsPageContentProvider {
 		);
 
 		$oRedirectTarget = null;
-		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
+		if ( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
 			$oRedirectTarget = $this->getRedirectTargetRecursiveFrom( $oTitle, $aParams );
 			$aParams['oldid'] = 0; //This is not the right place... at least we need a hook or something
 		}
 
 		$oTitle = ( $oRedirectTarget == null ) ? $oTitle : $oRedirectTarget;
 
-		$context = null;
-		if( $wgVersion >= '1.18' ) {
-			$context = new RequestContext();
-			$context->setRequest( 
-				new FauxRequest( //TODO: Use DerivativeRequest in MW 1.19+
-					$wgRequest->getValues() + $aParams, //$_REQUEST + i.e. oldid //TODO: Check if all params are necessary
-					$wgRequest->wasPosted() )
-			);
-			$context->setTitle( $oTitle );
-			$context->setUser( $wgUser );
-			$context->setSkin( $wgOut->getSkin() );
-		}
-		if( $wgVersion < '1.20' ) {
+		$context = new RequestContext();
+		$context->setRequest( 
+			new FauxRequest( //TODO: Use DerivativeRequest in MW 1.19+
+				$wgRequest->getValues() + $aParams, //$_REQUEST + i.e. oldid //TODO: Check if all params are necessary
+				$wgRequest->wasPosted() )
+		);
+		$context->setTitle( $oTitle );
+		$context->setUser( $wgUser );
+		$context->setSkin( $wgOut->getSkin() );
+
+		if ( $wgVersion < '1.20' ) {
 			$this->overrideGlobals( $oTitle, $context );
 		}
 
 		$sHTML = '';
-		switch( $oTitle->getNamespace() ) {
+		switch ( $oTitle->getNamespace() ) {
 			case NS_IMAGE:
-				if( $wgVersion < '1.18' ) {
-					$oImagePage = new ImagePage( $oTitle, $aParams['oldid'] );
-				}
-				else {
-					$oImagePage = ImagePage::newFromTitle($oTitle, $context);
-				}
+				$oImagePage = ImagePage::newFromTitle($oTitle, $context);
 				$oImagePage->view(); //Parse to OutputPage
 				break;
-
 			case NS_CATEGORY:
-				if( $wgVersion < '1.18' ) {
-					$oCategoryPage = new CategoryPage( $oTitle, $aParams['oldid'] );//new Article( $oTitle, $aParams['oldid'] );
-				}
-				else {
-					$oCategoryPage = CategoryPage::newFromTitle($oTitle, $context);
-				}
+				$oCategoryPage = CategoryPage::newFromTitle($oTitle, $context);
 				$oCategoryPage->view(); //Parse to OutputPage
 				break;
-
 			case NS_SPECIAL:
 				//Querystring parameters like "?from=B&namespace=6" that are needed by the special page (i.e. All Pages) have to be present in $wgRequest / the context
-				if( $wgVersion < '1.18' ) {
-					SpecialPage::executePath( $oTitle ); //Parse to OutputPage
-				}
-				else {
-					SpecialPage::executePath( $oTitle, $context );
-					$sHTML = $context->getOutput()->getHTML();
-				}
+				SpecialPageFactory::executePath( $oTitle, $context );
+				$sHTML = $context->getOutput()->getHTML();
 				break;
-
 			default:
-				if( $wgVersion < '1.18' ) {
-					$oArticle = new Article( $oTitle, $aParams['oldid'] );
-				}
-				else {
-					$oArticle = Article::newFromTitle($oTitle, $context);
-				}
+				$oArticle = Article::newFromTitle($oTitle, $context);
 				$oArticle->view();
 				break;
 		}
 
 		//HW#2012062710000041 — Bookshelf, PDF Export: HTTP 404 wenn nicht extistierende Artikel beinhaltet sind
-		if( !$oTitle->isKnown() ) { //Because in this case MW sets 404 Header in Article::view()
+		if ( !$oTitle->isKnown() ) { //Because in this case MW sets 404 Header in Article::view()
 			global $wgRequest;
 			$wgRequest->response()->header( "HTTP/1.1 200 OK", true ); //Therefore we will have to reset it
 			wfDebugLog( 'BS::AdapterMW', 'BsPageContentProvider::getHTMLContentFor: Title "'.$oTitle->getPrefixedText().'" does not exist and caused MW to set HTTP 404 Header.' );
 		}
 		$sHTML = empty( $sHTML ) ? $wgOut->getHTML() : $sHTML; //This would be the case with normal articles and imagepages
-		if( $wgVersion < '1.20' ) {
+
+		if ( $wgVersion < '1.20' ) {
 			$this->restoreGlobals();
 		}
-		if( $wgVersion >= '1.18' ) {
-			$sHTML = empty( $sHTML ) ? $context->getOutput()->getHTML() : $sHTML;
-		}
+
+		$sHTML = empty( $sHTML ) ? $context->getOutput()->getHTML() : $sHTML;
 
 		$this->makeInternalAnchorNamesUnique( $sHTML, $oTitle, $aParams );
 
-		if( $this->bEncapsulateContent ) {
+		if ( $this->bEncapsulateContent ) {
 			$sHTML = sprintf(
 				$this->getTemplate(),
 				'bs-ue-jumpmark-'.md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
@@ -306,22 +282,22 @@ class BsPageContentProvider {
 				'oldid'            => 0,
 				'follow-redirects' => false,
 				'entropy'          => 0,
+				'expand-templates' => false
 			),
 			$aParams
 		);
-		
-		$oRevision = Revision::newFromTitle($oTitle, $aParams['oldid']);
 
-		//TODO PW (16.01.2013): Use $this->mAdapter->getTitleFromRedirectRecurse($oTitle);
-		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
+		$oRevision = Revision::newFromTitle( $oTitle, $aParams['oldid'] );
+
+		if ( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
 			$oTitle = Title::newFromRedirectRecurse(
-				$this->getContentFromRevision($oRevision)
+				$this->getContentFromRevision( $oRevision )
 			);
 			//TODO: This migth bypass FlaggedRevs! Test and fix if necessary!
-			$oRevision = Revision::newFromTitle($oTitle);
+			$oRevision = Revision::newFromTitle( $oTitle );
 		}
-		if (is_null($oRevision)) return '';
-		return $this->getContentFromRevision($oRevision);
+		if ( is_null( $oRevision ) ) return '';
+		return $this->getContentFromRevision( $oRevision );
 	}
 
 	/**
@@ -356,8 +332,7 @@ class BsPageContentProvider {
 
 	//<editor-fold desc="Save, override and restore OutputPage and Parser" defaultstate="collapsed">
 	private function overrideGlobals( $oTitle, $context = null ) {
-		global $wgParser, $wgOut, $wgTitle, $wgVersion;
-		
+		global $wgParser, $wgOut, $wgTitle;
 		$this->oOriginalGlobalOutputPage = $wgOut;
 		$this->oOriginalGlobalParser     = $wgParser;
 		$this->oOriginalGlobalTitle      = $wgTitle; //This is neccessary for other extensions that may rely on $wgTitle, i.e for checking permissions during rendering
@@ -365,13 +340,8 @@ class BsPageContentProvider {
 		$wgParser = new Parser();
 		$wgParser->Options( $this->getParserOptions() );
 
-		if( $wgVersion < '1.18' ) {
-			$wgOut = new OutputPage();
-		}
-		else {
-			$wgOut = new OutputPage( $context );
-		}
-		
+		$wgOut = new OutputPage( $context );
+
 		$wgOut->setArticleBodyOnly( true );
 		//$wgOut->disable(); //Necessary?
 		
@@ -399,7 +369,7 @@ class BsPageContentProvider {
 
 		$sPatternQuotedArticleTitle = preg_quote( str_replace( ' ', '_', $oTitle->getPrefixedText() ) );
 
-		foreach( $aMatches[2] as $sAnchorName ) {
+		foreach ( $aMatches[2] as $sAnchorName ) {
 			$sUniqueAnchorName = md5( $oTitle->getPrefixedText().$sAnchorName.$aParams['oldid'].$aParams['entropy']);
 
 			$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );

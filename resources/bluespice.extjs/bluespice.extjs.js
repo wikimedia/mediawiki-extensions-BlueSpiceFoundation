@@ -1,5 +1,25 @@
 ( function ( mw, bs, $, d,undefined ) {
 	"use strict";
+	
+	//Ext.QuickTips.init(); //This is not needed but it allows us to place 
+	//anchortags with special data attributes
+
+	//Experimental feature. May be improved in the future
+	$('a.mw-userlink').each(function(){
+		 Ext.create('Ext.tip.ToolTip', {
+			title: $(this).data('bs-username'),
+			target: this,
+			anchor: 'right',
+			/*autoLoad: {
+				url: mw.util.wikiScript('api')
+			},
+			height: 200,*/
+			width: 200,
+			autoHide: false,
+			closable: true,
+			showDelay: 1000
+		 });
+	});
 
 	var basePath = mw.config.get('wgScriptPath') 
 		+ '/extensions/BlueSpiceFoundation/resources/bluespice.extjs';

@@ -403,6 +403,105 @@
 		}
 		return data;
 	}
+	
+	var _tempAnchor = null;
+	/**
+	 * Gets all GET parameters from an url.
+	 * @param {Mixed} param [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
+	 * @return {Object}
+	 */
+	function _getUrlParams( param ) {
+		// Handle BlueSpice::getUrlParams(), BlueSpice::getUrlParams(""), BlueSpice::getUrlParams(null), or BlueSpice::getUrlParams(undefined)
+		if ( !param ) {
+			return _getUrlParams( window.location );
+		}
+
+		// Handle BlueSpice::getUrlParams(Anchor DOMElement)
+		if ( param.nodeType ) {
+			return _getUrlParams( param );
+		}
+
+		// Handle string urls
+		if ( typeof param === "string" ) {
+			_tempAnchor = document.createElement( 'a' );
+			_tempAnchor.href = param;
+			return __getUrlParams( _tempAnchor );
+		}
+
+		return {};
+	};
+
+	// TODO RBV (31.07.12 15:11): Check for full browser compatibility as the location-Object has no official standard.
+	function __getUrlParams( loc ) {
+		var oKeyValuePairs = {};
+		if(loc.search === '') return oKeyValuePairs;
+		var sParams = loc.search.substr(1);
+		var aParams = sParams.split('&');
+
+		for ( var i = 0; i < aParams.length; i++ ) {
+			var aKeyValuePair = aParams[i].split('=');
+			var key   = decodeURIComponent( aKeyValuePair[0] );
+			var value = decodeURIComponent( aKeyValuePair[1] ); //With "?param1=val1&param2" oKeyValuePairs['param2'] will be "undefined". That's okay, but can be discussed.
+			oKeyValuePairs[key] = value;
+		}
+		return oKeyValuePairs;
+	};
+
+	/**
+	 * Gets a GET parameter from an url.
+	 * @param {String} sParamName The requested parameters name
+	 * @param {String} sDefaultValue [optional] A default value if the param is not available. Default ist an empty string.
+	 * @param {Mixed} url [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
+	 * @return {String} The parameters value or the default value if parameter not set.
+	 */
+	function _getUrlParam( sParamName, sDefaultValue, url ) {
+		var sValue = sDefaultValue || '';
+		var oParams = _getUrlParams( url );
+
+		for( var key in oParams ) {
+			if( key == sParamName ) sValue = oParams[key];
+		}
+		return sValue;
+	};
+		/**
+	 * Shows an input dialog and adds provided value to an ExtJS MulitSelect field
+	 * @param {object} oSrc The ExtJS MulitSelect field
+	 * @return {Void}
+	 */
+	function _addEntryToMultiSelect( oSrc ) {
+		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring(2);
+		var sTitle = oSrc.getAttribute( 'title' );
+		var sMessage = oSrc.getAttribute( 'msg' );
+		Ext.Msg.prompt( sTitle, sMessage, function( btn, text ){
+			if ( btn == 'ok' ){
+				var oSelect = document.getElementById( 'mw-input-' + sFieldName );
+				if(oSelect == null) {
+					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
+				}
+
+				oSelect.options[oSelect.options.length] = new Option( text, text, false, false );
+			}
+		});
+	};
+
+	/**
+	 * Removes an entry from an ExtJS MulitSelect field
+	 * @param {object} oSrc The ExtJS MulitSelect field
+	 * @return {Void}
+	 */
+	function _deleteEntryFromMultiSelect( oSrc ) {
+		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring(2);
+		var elSel = document.getElementById( 'mw-input-' + sFieldName );
+		if( elSel == null ) {
+			elSel = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
+		}
+		var i;
+		for ( i = elSel.length - 1; i>=0; i-- ) {
+			if ( elSel.options[i].selected ) {
+				elSel.remove(i);
+			}
+		}
+	};
 
 	var util = {
 		getNamespaceText: _getNamespaceText,
@@ -419,7 +518,11 @@
 		makeDataAttributeObject: _makeDataAttributeObject,
 		unprefixDataAttributeObject: _unprefixDataAttributeObject,
 		makeAttributeObject: _makeAttributeObject,
-		selection: new _selection()
+		selection: new _selection(),
+		getUrlParam: _getUrlParam,
+		getUrlParams: _getUrlParams,
+		addEntryToMultiSelect: _addEntryToMultiSelect,
+		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect
 	};
 
 	$(document).on('click', 'a.bs-confirm-nav', function(e) {
