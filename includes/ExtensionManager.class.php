@@ -161,19 +161,20 @@ class BsExtensionManager {
 	 */
 	public static function registerNamespace( $sCanonicalName, $iBaseIndex ) {
 		global $wgExtraNamespaces;
-		
-		$sConstantName = 'NS_'.strtoupper( $sCanonicalName );
+
+		$sConstantName = 'NS_'.mb_strtoupper( $sCanonicalName );
 		$iCalculatedNSId = BS_NS_OFFSET + $iBaseIndex;
 
-		if( !defined( $sConstantName ) ) {
+		if ( !defined( $sConstantName ) ) {
 			define( $sConstantName, $iCalculatedNSId );
 			$wgExtraNamespaces[$iCalculatedNSId] = $sCanonicalName;
 		}
-		
+
 		//Talk namespace
 		$sConstantName .= '_TALK';
 		$iCalculatedNSId++;
-		if( !defined( $sConstantName ) ) {
+
+		if ( !defined( $sConstantName ) ) {
 			define( $sConstantName, $iCalculatedNSId );
 			$wgExtraNamespaces[$iCalculatedNSId] = $sCanonicalName.'_talk';
 		}

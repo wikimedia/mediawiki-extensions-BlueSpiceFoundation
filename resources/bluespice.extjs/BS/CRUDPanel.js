@@ -59,11 +59,7 @@ Ext.define( 'BS.CRUDPanel', {
 				backgroundColor: '#FFFFFF',
 				backgroundImage: 'none'
 			},
-			items: [
-				this.btnAdd,
-				this.btnEdit,
-				this.btnRemove
-			]
+			items: this.makeTbarItems()
 		});
 
 		this.addEvents( 'button-add','button-edit','button-delete' );
@@ -71,6 +67,14 @@ Ext.define( 'BS.CRUDPanel', {
 		this.afterInitComponent( arguments );
 
 		this.callParent(arguments);
+	},
+	
+	makeTbarItems: function() {
+		return [
+			this.btnAdd,
+			this.btnEdit,
+			this.btnRemove
+		];
 	},
 
 	afterInitComponent: function( arguments ) {

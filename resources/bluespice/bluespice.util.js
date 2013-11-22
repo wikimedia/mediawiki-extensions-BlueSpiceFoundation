@@ -9,6 +9,7 @@
 	function _prepareSimpleDialogWindowCfg(idPrefix, cfg) {
 		cfg = cfg || {};
 		return Ext.applyIf(cfg, {
+			id : idPrefix,
 			idPrefix: idPrefix,
 			title: 'SimpleDialog',
 			text: 'SimpleDialog Text'
@@ -38,7 +39,7 @@
 			return alerts[idPrefix];
 		
 		if(!windowCfg.title && !windowCfg.titleMsg ) {
-			windowCfg.titleMsg = 'bs-extjs-hint'
+			windowCfg.titleMsg = 'bs-extjs-hint';
 		}
 
 		windowCfg = _prepareSimpleDialogWindowCfg(idPrefix, windowCfg);
@@ -46,7 +47,7 @@
 
 		var alertWindow = Ext.create('BS.AlertDialog', windowCfg);
 		alertWindow.on('close', function() {
-			alerts[idPrefix] = undefined
+			alerts[idPrefix] = undefined;
 		}, this);
 		alertWindow.on('ok', callbackCfg.ok, callbackCfg.scope);
 		alertWindow.show();
@@ -68,7 +69,7 @@
 
 		var confirmWindow = Ext.create('BS.ConfirmDialog', windowCfg);
 		confirmWindow.on('close', function() {
-			confirms[idPrefix] = undefined
+			confirms[idPrefix] = undefined;
 		}, this);
 		confirmWindow.on('ok', callbackCfg.ok, callbackCfg.scope);
 		confirmWindow.on('cancel', callbackCfg.cancel, callbackCfg.scope);
@@ -87,7 +88,7 @@
 
 		var promptWindow = Ext.create('BS.PromptDialog', windowCfg);
 		promptWindow.on('close', function() {
-			prompts[idPrefix] = undefined
+			prompts[idPrefix] = undefined;
 		}, this);
 		promptWindow.on('ok', callbackCfg.ok, callbackCfg.scope);
 		promptWindow.on('cancel', callbackCfg.cancel, callbackCfg.scope);

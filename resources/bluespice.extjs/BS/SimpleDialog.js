@@ -6,6 +6,7 @@ Ext.define( 'BS.SimpleDialog', {
 	width: 300,
 	minHeight: 100,
 	modal:true,
+	//closeAction: 'destroy',
 	buttonAlign: 'center',
 
 	//Custom Settings

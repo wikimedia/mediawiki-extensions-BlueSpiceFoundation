@@ -1,0 +1,20 @@
+design.txt
+
+This is a brief overview of the new design of BlueSpice 2.0.
+
+==General==
+With BlueSpice 2 we tried to be more MediaWiki compliant. Therefore most of the
+folders you know from MediaWiki appear in the BlueSpice* extensions. We now 
+make use of ResourceLoader and populate the client side with a lot of useful 
+information.
+
+One core component is the ExtJS Rich Internet Applications JavaScript Framework
+by Sencha.
+
+In resouces/bluespice.extjs/BS you can find additional reusable components.
+
+==TODO==
+* Refactor the "outputhandler/views" files.
+** Or better: replace usage of these with config arrays and "Html" class
+* Redesign "BsConfig" mechanism
+** Maybe rely on MediaWiki "SiteConfig"

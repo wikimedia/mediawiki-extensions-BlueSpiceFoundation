@@ -31,8 +31,10 @@ Ext.define( 'BS.Window', {
 		labelAlign: 'right'
 	},
 	bodyPadding:5,
+
 	//Custom Setting
 	currentData: {},
+
 	initComponent: function() {
 		this.btnOK = Ext.create( 'Ext.Button', {
 			text: mw.message('bs-extjs-ok').plain(),

@@ -114,9 +114,9 @@ class BsMailer {
 		foreach ( $aEmailTo as $aReceiver ) {
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
-				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-receiver-html', $aReceiver['greeting'] )->plain()  : wfMessage( 'bs-mail-greeting-receiver', $aReceiver['greeting'] )->plain() ;
+				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-receiver-html', $aReceiver['greeting'] )->plain()  : wfMessage( 'bs-mail-greeting-receiver', $aReceiver['greeting'] )->plain();
 			} else {
-				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-no-receiver-html' )->plain()  : wfMessage( 'bs-mail-greeting-no-receiver' )->plain() ;
+				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-no-receiver-html' )->plain()  : wfMessage( 'bs-mail-greeting-no-receiver' )->plain();
 			}
 
 			$sLocalCombinedMsg = $sGreeting.$sCombinedMsg;

@@ -1,14 +1,15 @@
 Ext.define('BS.portal.PortletConfig', {
 	extend: 'BS.Window',
 	modal: true,
+	defaults: {
+		labelAlign: 'right'
+	},
+	
 
 	//Custom Settings
 	portletToConfig: null,
 	showItemCount: false,
 	showTimeSpan: false,
-	defaults: {
-		labelAlign: 'right'
-	},
 
 	afterInitComponent: function() {
 		this.tfTitle = Ext.create( 'Ext.form.TextField',{

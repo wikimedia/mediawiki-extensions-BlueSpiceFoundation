@@ -13,8 +13,9 @@
  */
 
 Ext.define( 'BS.CRUDGridPanel', {
-	//Custom
 	extend: 'BS.CRUDPanel',
+
+	//Custom
 	pageSize: 20,
 	smMain: null,
 	bbMain: null,
@@ -26,11 +27,10 @@ Ext.define( 'BS.CRUDGridPanel', {
 	},
 
 	afterInitComponent: function( arguments ) {
-
 		this.smMain = this.smMain || Ext.create( 'Ext.selection.RowModel', {
 			mode: "SINGLE"
 		});
-				
+		
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete_tn.png',
 			iconCls: 'bs-extjs-actioncloumn-icon',
@@ -107,7 +107,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 					flex: 1
 				}
 			},
-			sm:       this.smMain,
+			selModel: this.smMain,
 			bbar:     this.bbMain
 		};
 

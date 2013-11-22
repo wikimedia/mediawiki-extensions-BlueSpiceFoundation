@@ -35,6 +35,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 //Default settings needed for BlueSpice
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgApiFrameOptions = 'SAMEORIGIN';
+$wgRSSUrlWhitelist = array( "*" );
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
