@@ -18,7 +18,6 @@ if ( $sVersion >= "1.17"){
 
 	class BsSetupUpdater extends Maintenance{
 		function execute() {
-			global $wgVersion, $wgTitle, $wgLang;
 			$db = wfGetDB( DB_MASTER );
 
 			$updates = array('core','extensions');
