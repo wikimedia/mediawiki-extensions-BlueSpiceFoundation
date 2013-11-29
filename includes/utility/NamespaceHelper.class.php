@@ -160,8 +160,8 @@ class BsNamespaceHelper {
 			return array_keys( $wgContLang->getNamespaces() );
 		}
 
-		$aAmbiguousNS = array_map( 'trim', $aAmbiguousNS );
 		$aAmbiguousNS = explode( ',', $sCSV );
+		$aAmbiguousNS = array_map( 'trim', $aAmbiguousNS );
 		$aValidNamespaceIntIndexes = array();
 		$aInvalidNamespaces = array();
 

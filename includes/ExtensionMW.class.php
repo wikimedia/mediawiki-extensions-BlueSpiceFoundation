@@ -9,6 +9,10 @@ abstract class BsExtensionMW extends ContextSource {
 	protected $mInfo            = NULL;
 	protected $mExtensionKey    = NULL;
 
+	/**
+	 *
+	 * @var BsCore 
+	 */
 	protected $mCore = null;
 
 	protected $aStandardContext = array('*', '*', '*');

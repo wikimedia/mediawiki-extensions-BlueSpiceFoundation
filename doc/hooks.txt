@@ -9,3 +9,7 @@ own user page.
 $oUser: The current MediaWiki User object
 $oTitle: The current MediaWiki Title object
 &$aSettingViews: A list of View objects
+
+'BsFoundationBeforeMakeGlobalVariablesScript': Allows last minute manipulation of the RENDER_AS_JAVASCRIPT config vars
+$oUser: The current MediaWiki User object
+&$aScriptSettings: Array of script settings (BsConfig::getScriptSettings())

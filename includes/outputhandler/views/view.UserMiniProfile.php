@@ -80,12 +80,10 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		//Get the image src
 		if( isset( $this->mOptions['userimagesrc'] ) ) {
 			$this->sUserImageSrc = $this->mOptions['userimagesrc'];
-		}
-		else if( $oUser->isAnon() ){
+		} else if( $oUser->isAnon() ){
 			$this->sUserImageSrc = BsConfig::get( 'MW::AnonUserImage' );
 			$this->sLinkTargetHref = '';
-		}
-		else {
+		} else {
 			$sUserImageName = BsConfig::getVarForUser('MW::UserImage', $oUser);
 			$this->sUserImageSrc = BsConfig::get( 'MW::DefaultUserImage' );
 			if( !empty( $sUserImageName ) ) {
@@ -96,14 +94,13 @@ class ViewUserMiniProfile extends ViewBaseElement {
 					$aPathInfo = pathinfo( $aParsedUrl['path'] );
 					$aFileExtWhitelist = array( 'gif', 'jpg', 'jpeg', 'png' );
 					$this->sUserImageSrc = $aParsedUrl['scheme'].'://'.$aParsedUrl['host'].$aParsedUrl['path'];
-					
-					if( !in_array(strtolower( $aPathInfo['extension']), $aFileExtWhitelist) )
+
+					if ( !in_array( mb_strtolower( $aPathInfo['extension'] ), $aFileExtWhitelist ) )
 						$this->sUserImageSrc = BsConfig::get( 'MW::AnonUserImage' );
-				}
-				else {
+				} else {
 					$oUserImageFile = RepoGroup::singleton()->findFile( Title::newFromText( $sUserImageName, NS_FILE ) );
 					$oUserThumbnail = false;
-					if( $oUserImageFile !== false ) {
+					if ( $oUserImageFile !== false ) {
 						$oUserThumbnail = $oUserImageFile->transform( 
 							array( 
 								'width' => $this->mOptions['width'], 
@@ -111,7 +108,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 							)
 						);
 					}
-					if( $oUserThumbnail !== false ) {
+					if ( $oUserThumbnail !== false ) {
 						$this->sUserImageSrc = $oUserThumbnail->getUrl();
 						$this->mOptions['width']  = $oUserThumbnail->getWidth();
 						$this->mOptions['height'] = $oUserThumbnail->getHeight();

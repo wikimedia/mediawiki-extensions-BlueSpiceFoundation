@@ -9,7 +9,7 @@ Ext.define('BS.form.UploadPanel', {
 
 		this.ffFile = Ext.create('Ext.form.field.File', {
 			xtype: 'filefield',
-			name: this.uploadUploadFormName,
+			name: this.uploadFormName,
 			fieldLabel: this.uploadFieldLabel,
 			labelWidth: this.uploadLabelWidth,
 			msgTarget: 'side',
@@ -19,14 +19,14 @@ Ext.define('BS.form.UploadPanel', {
 		});
 
 		this.btnReset = Ext.create("Ext.button.Button", {
-			id: "bs-extjs-uploadCombo-" + this.uploadUploadFormName + "-reset-btn",
+			id: "bs-extjs-uploadCombo-" + this.uploadFormName + "-reset-btn",
 			text: mw.message('bs-extjs-reset').plain(),
 			handler: this.onBtnResetClick,
 			flex: 0.5,
 			scope: this
 		});
 		this.btnUpload = Ext.create("Ext.button.Button", {
-			id: "bs-extjs-uploadCombo-" + this.uploadUploadFormName + "-upload-btn",
+			id: "bs-extjs-uploadCombo-" + this.uploadFormName + "-upload-btn",
 			text: mw.message('bs-extjs-upload').plain(),
 			handler: this.onBtnUploadClick,
 			flex: 0.5,
@@ -36,7 +36,7 @@ Ext.define('BS.form.UploadPanel', {
 		this.items = [
 			Ext.create('Ext.form.field.Hidden', {
 				name: this.uploadUploadFormName + '-hidden-field',
-				id: "bs-extjs-uploadCombo-" + this.uploadUploadFormName + "-hidden-field"
+				id: "bs-extjs-uploadCombo-" + this.uploadFormName + "-hidden-field"
 			})
 		];
 		if (this.uploadButtonsInline) {

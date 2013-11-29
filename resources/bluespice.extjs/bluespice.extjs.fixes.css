@@ -43,7 +43,6 @@ textarea:focus.x-field-form-focus {
 /*Fix ExtJS RESET*/
 .x-body {
 	font-family: Arial,Verdana,Geneva,sans-serif; /* BlueSpice default */
-	font-size: inherit;
 }
 
 .x-layer {

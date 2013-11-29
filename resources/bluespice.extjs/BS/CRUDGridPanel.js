@@ -54,6 +54,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 			//cls: 'hideAction',
 			items: this.colMainConf.actions,
 			menuDisabled: true,
+                        hideable: false,
 			sortable: false
 		});
 

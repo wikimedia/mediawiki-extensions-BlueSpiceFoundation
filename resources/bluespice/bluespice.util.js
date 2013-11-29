@@ -220,7 +220,7 @@
 				range.text = 'bs_selection';
 
 				_origText = _textbox.value.replace(/\r\n/g, "\n");
-				_startPos = origText.indexOf('bs_selection');
+				_startPos = _origText.indexOf('bs_selection');
 				_textbox.value = tempText;
 			} else {
 				_startPos = _textbox.selectionStart;

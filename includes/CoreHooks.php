@@ -187,7 +187,7 @@ class BsCoreHooks {
 			$out->addStyle( $wgScriptPath.$sStyle );
 		}
 	}
-	
+
 	/**
 	 * 
 	 * @param array $vars
@@ -196,10 +196,12 @@ class BsCoreHooks {
 	 */
 	public static function onMakeGlobalVariablesScript(&$vars, $out) {
 		// Necessary otherwise values are not correctly loaded
+		$oUser = $out->getUser();
 		BsConfig::loadSettings();
-		BsConfig::loadUserSettings( $out->getUser()->getName() );
+		BsConfig::loadUserSettings( $oUser->getName() );
 
 		$aScriptSettings = BsConfig::getScriptSettings();
+		wfRunHooks('BsFoundationBeforeMakeGlobalVariablesScript', array( $oUser, &$aScriptSettings ) );
 
 		foreach ( $aScriptSettings as $oVar ) {
 			$mValue = $oVar->getValue();
@@ -215,7 +217,7 @@ class BsCoreHooks {
 
 		return true;
 	}
-	
+
 	/**
 	 * 
 	 * @param DatabaseUpdater $updater

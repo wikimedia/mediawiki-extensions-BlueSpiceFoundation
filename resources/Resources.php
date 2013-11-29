@@ -90,6 +90,8 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-no',
 		'bs-extjs-save',
 		'bs-extjs-delete',
+		'bs-extjs-add',
+		'bs-extjs-remove',
 		'bs-extjs-hint',
 		'bs-extjs-error',
 		'bs-extjs-confirm',

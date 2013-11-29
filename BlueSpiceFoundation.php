@@ -30,10 +30,10 @@
 $wgBlueSpiceExtInfo = array(
 	'name' => 'BlueSpice for MediaWiki',
 	'version' => '2.22.0',
-	'status' => 'beta',
+	'status' => 'stable',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
 	'url' => 'http://www.blue-spice.org',
-	'desc' => 'Extension for MediaWiki to make it more suitable for business needs',
+	'desc' => 'Makes MediaWiki enterprise ready.',
 	'author' => array(
 		'[http://www.hallowelt.biz Hallo Welt! Medienwerkstatt GmbH]',
 	)

@@ -9,6 +9,8 @@ $messages['en'] = array(
 	'bs-extjs-no' => 'No',
 	'bs-extjs-save' => 'Save',
 	'bs-extjs-delete' => 'Delete',
+	'bs-extjs-add' => 'Add',
+	'bs-extjs-remove' => 'Remove',
 	'bs-extjs-hint' => 'Hint',
 	'bs-extjs-error' => 'Error',
 	'bs-extjs-confirm' => 'Confirm',
@@ -20,14 +22,13 @@ $messages['en'] = array(
 	'bs-extjs-reset' => 'Reset',
 	'bs-extjs-close' => 'Close',
 	'bs-extjs-label-user' => 'User',
-    'bs-extjs-upload' => 'Upload',
-    'bs-extjs-browse' => 'Browse',
-    'bs-extjs-uploading' => 'Uploading...',
-	'bs-extjs-labelUpload' => '',
-	
+	'bs-extjs-upload' => 'Upload',
+	'bs-extjs-browse' => 'Browse',
+	'bs-extjs-uploading' => 'Uploading...',
+
 	'bs-extjs-confirmNavigationTitle'=> 'Follow link',
 	'bs-extjs-confirmNavigationText'=> 'Do you really want to follow this link? All dynamic settings, like filtering or sorting, on the current page will get lost.',
-	'bs-extjs-allns'                    => '(all)'
+	'bs-extjs-allns' => '(all)'
 );
 
 $messages['de'] = array(
@@ -37,6 +38,8 @@ $messages['de'] = array(
 	'bs-extjs-no' => 'Nein',
 	'bs-extjs-save' => 'Speichern',
 	'bs-extjs-delete' => 'Löschen',
+	'bs-extjs-add' => 'Hinzufügen',
+	'bs-extjs-remove' => 'Entfernen',
 	'bs-extjs-hint' => 'Hinweis',
 	'bs-extjs-error' => 'Fehler',
 	'bs-extjs-confirm' => 'Bestätigen',
@@ -48,13 +51,13 @@ $messages['de'] = array(
 	'bs-extjs-reset' => 'Zurücksetzen',
 	'bs-extjs-close' => 'Schließen',
 	'bs-extjs-label-user' => 'Benutzer',
-    'bs-extjs-upload' => 'Hochladen',
-    'bs-extjs-browse'=>'Durchsuchen',
-    'bs-extjs-uploading' => 'Lädt hoch...',
-	
+	'bs-extjs-upload' => 'Hochladen',
+	'bs-extjs-browse'=>'Durchsuchen',
+	'bs-extjs-uploading' => 'Lädt hoch...',
+
 	'bs-extjs-confirmNavigationTitle'=> 'Dem Link folgen',
 	'bs-extjs-confirmNavigationText'=> 'Möchtest du wirklich diesem Link folgen? Alle dynamischen Einstellungen, wie Filter und Sortierung, auf dieser Seite gehen dabei verloren.',
-	'bs-extjs-allns'                    => '(alle)'
+	'bs-extjs-allns' => '(alle)'
 );
 
 $messages['de-formal'] = array(

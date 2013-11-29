@@ -125,7 +125,7 @@
 			upright: false,
 			alt: '',
 			displayText: '',
-			link: '',
+			link: false,
 			sizewidth: false,
 			sizeheight: false
 		}

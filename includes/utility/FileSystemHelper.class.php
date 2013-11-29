@@ -232,6 +232,35 @@ class BsFileSystemHelper {
 			return Status::newFatal(wfMessage("bs-filesystemhelper-file-copy-error", $sFileName)->plain());
 	}
 
+	public static function copyFolder($sFolderName, $sSource, $sDestination, $bOverwrite = true) {
+		if (self::hasTraversal($sSource . DS . $sFolderName) || self::hasTraversal($sDestination . DS . $sFolderName))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
+		if (!is_dir(BS_DATA_DIR . DS . $sSource))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sSource)->plain());
+		if (!is_dir(BS_DATA_DIR . DS . $sDestination))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sDestination)->plain());
+		if (!file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFolderName))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-file-not-exists", $sFolderName)->plain());
+		if (file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFolderName) && !$bOverwrite)
+			return Status::newFatal(wfMessage("bs-filesystemhelper-file-already-exists", $sFolderName)->plain());
+		$it = new RecursiveDirectoryIterator(BS_DATA_DIR . DS . $sSource . DS . $sFolderName);
+		BsFileSystemHelper::ensureDataDirectory($sDestination . DS . $sFolderName);
+		$files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
+		foreach ($files as $file) {
+			if ($file->getFilename() === '.' || $file->getFilename() === '..') {
+				continue;
+			}
+			if ($file->isDir())
+				mkdir($file->getRealPath(), 0777);
+			if ($file->isFile()) {
+				$bStatus = copy(BS_DATA_DIR . DS . $sSource . DS . $sFolderName . DS . $file->getFileName(), BS_DATA_DIR . DS . $sDestination . DS . $sFolderName . DS . $file->getFileName());
+				if (!$bStatus)
+					return Status::newFatal(wfMessage("bs-filesystemhelper-file-copy-error", $file->getFileName())->plain());
+			}
+		}
+		return Status::newGood();
+	}
+
 	/**
 	 * Rename a folder
 	 * @param String $sSource
