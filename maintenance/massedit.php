@@ -145,10 +145,10 @@ while ($row = mysql_fetch_array($res->result))
 	}
 
 	// Fetch text
-	$wgArticle = new Article( $wgTitle );
+	$article = new Article( $wgTitle );
 
-	$wgArticle->fetchContent();
-	$text = $wgArticle->getContent() ;
+	$article->fetchContent();
+	$text = $article->getContent() ;
 	if ($text == '') echo 'empty!';
 
 	// Text conditions
@@ -201,7 +201,7 @@ while ($row = mysql_fetch_array($res->result))
 		}
 
 		// Actual modification
-		$success = $wgArticle->doEdit( $text, $summary,
+		$success = $article->doEdit( $text, $summary,
 			( $minor ? EDIT_MINOR : 0 ) |
 			( $bot ? EDIT_FORCE_BOT : 0 ) |
 			( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
