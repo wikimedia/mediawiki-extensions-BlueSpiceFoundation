@@ -2,7 +2,7 @@ Ext.define('BS.model.Category', {
 	extend: 'Ext.data.Model',
 
 	fields: [
-		{ name: 'text', type: 'string' },
+		{ name: 'text', type: 'string' }
 //		{ name: 'cat_title', type: 'string' },
 //		{ name: 'cat_pages', type: 'int' },
 //		{ name: 'cat_subcats', type: 'int' },

@@ -230,9 +230,17 @@ class BsCommonAJAXInterface {
 		$oResult->categories = array();
 
 		$dbr = wfGetDB( DB_SLAVE );
+		// category table also tracks all deleted categories. So we need to double
+		// check with categorylinks and page table. Use case for this is a category
+		// name that had a spelling mistake.
+		// From category table:
+		// -- Track all existing categories.  Something is a category if 1) it has an en-
+		// -- try somewhere in categorylinks, or 2) it once did.  Categories might not
+		// -- have corresponding pages, so they need to be tracked separately.
 		$res = $dbr->select(
-			'category',
-			array( 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' )
+			array( 'category', 'categorylinks', 'page' ),
+			array( 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ),
+			array( 'cat_title = cl_to OR ( cat_title = page_title AND page_namespace = '.NS_CATEGORY.' )' )
 		);
 
 		foreach( $res as $row ) {

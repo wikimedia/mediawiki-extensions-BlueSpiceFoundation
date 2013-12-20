@@ -63,3 +63,32 @@ $messages['de'] = array(
 $messages['de-formal'] = array(
 	'bs-extjs-confirmNavigationText'=> 'Möchten Sie wirklich diesem Link folgen? Alle dynamischen Einstellungen, wie Filter und Sortierung, auf dieser Seite gehen dabei verloren.',
 );
+
+$messages['qqq'] = array(
+	'bs-extjs-ok' => 'Label for submit button used in dialogues, alerts and prompts',
+	'bs-extjs-cancel' => 'Label for cancel button used in dialogues, alerts and prompts',
+	'bs-extjs-yes' => 'Label for accept button used in dialogues, alerts and prompts',
+	'bs-extjs-no' => 'Label for reject button used in dialogues, alerts and prompts',
+	'bs-extjs-save' => 'Label for save button used in dialogues, alerts and prompts',
+	'bs-extjs-delete' => 'Label for delete button used in dialogues, alerts and prompts',
+//unused	'bs-extjs-add' => 'Label for add button used in dialogues, alerts and prompts',
+//unused	'bs-extjs-remove' => 'Label for remove button used in dialogues, alerts and prompts',
+	'bs-extjs-hint' => 'Title for hint prompts',
+	'bs-extjs-error' => 'Title for error prompts',
+	'bs-extjs-confirm' => 'Title for confirm prompts',
+	'bs-extjs-loading' => 'Label for elements that are shown when waiting for ajax data',
+	'bs-extjs-pageSize' => 'Label for the input box that changes the number of lines in a grid',
+	'bs-extjs-actions-column-header' => 'Label for the grid cloumn that shows the action buttons',
+	'bs-extjs-warning' => 'Title for warning prompts',
+	'bs-extjs-saving' => 'Label for elements that are shown when saving data from a dialogue via ajax',
+	'bs-extjs-reset' => 'Label for reset button used in dialogues, alerts and prompts',
+	'bs-extjs-close' => 'Label for close button used in dialogues, alerts and prompts',
+	'bs-extjs-label-user' => 'Label for combo boxes that select users',
+	'bs-extjs-upload' => 'Label for upload button used in dialogues, alerts and prompts',
+	'bs-extjs-browse' => 'Label for browse button used in dialogues, alerts and prompts',
+	'bs-extjs-uploading' => 'Label for elements that are shown when uploading files from a dialogue',
+
+	'bs-extjs-confirmNavigationTitle'=> 'Title for prompt that warns you if you want to follow a link but have unsaved changes',
+	'bs-extjs-confirmNavigationText'=> 'Text for prompt that warns you if you want to follow a link but have unsaved changes',
+	'bs-extjs-allns' => 'Selector for all namespaces in namespace combo boxes'
+);

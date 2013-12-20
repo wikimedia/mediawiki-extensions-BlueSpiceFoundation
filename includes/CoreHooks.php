@@ -30,7 +30,7 @@ class BsCoreHooks {
 	 */
 	public static function onSoftwareInfo( &$aSoftware ) {
 		global $wgBlueSpiceExtInfo;
-		$aSoftware['[http://www.blue-spice.org/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'Credits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
+		$aSoftware['[http://www.blue-spice.org/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
 		return true;
 	}
 	
@@ -56,8 +56,11 @@ class BsCoreHooks {
 		global $IP,$wgFavicon, $wgExtensionAssetsPath,
 			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
 		
-		$out->addModules('ext.bluespice');
-		$out->addModules('ext.bluespice.extjs');
+		$out->addModuleScripts( 'ext.bluespice.scripts' );
+		$out->addModuleStyles( 'ext.bluespice.styles' );
+		$out->addModuleMessages( 'ext.bluespice.messages' );
+		$out->addModules( 'ext.bluespice.extjs' );
+		$out->addModuleStyles( 'ext.bluespice.extjs.styles' );
 
 		$sSP = BsConfig::get('MW::BlueSpiceScriptPath');
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );

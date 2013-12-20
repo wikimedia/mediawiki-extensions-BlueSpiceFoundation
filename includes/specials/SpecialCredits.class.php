@@ -15,7 +15,7 @@
 class SpecialCredits extends BsSpecialPage {
 
 	public function __construct() {
-		parent::__construct( 'Credits' );
+		parent::__construct( 'SpecialCredits' );
 	}
 
 	public function execute( $par ) {

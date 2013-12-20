@@ -5,12 +5,13 @@
  * @subpackage Utility
  */
 class BsArticleHelper {
+
 	protected $oTitle = null;
 	protected $aPageProps = array();
 	protected $bIsLoaded = false;
-	
+
 	protected static $aInstances = array();
-	
+
 	/**
 	 * Protected constructor. Instances can be obtained through the factory 
 	 * method of this class
@@ -19,7 +20,7 @@ class BsArticleHelper {
 	protected function __construct( $oTitle ) {
 		$this->oTitle = $oTitle;
 	}
-	
+
 	/**
 	 * N-glton implementation
 	 * @param Title $oTitle
@@ -53,7 +54,7 @@ class BsArticleHelper {
 		$iCount = $dbr->numRows( $res );
 		return $iCount;
 	}
-	
+
 	/**
 	 * 
 	 * @param string $sPropName
@@ -71,7 +72,7 @@ class BsArticleHelper {
 
 		return $this->aPageProps[$sPropName];
 	}
-	
+
 	/**
 	 * 
 	 * @param string $sPropName
@@ -83,7 +84,6 @@ class BsArticleHelper {
 			$this->getPageProp( $sPropName, $bDoLoad )
 		);
 	}
-
 
 	public function getPageProps( $bDoLoad = false ) {
 		if( $bDoLoad ) {
@@ -129,7 +129,7 @@ class BsArticleHelper {
 			$this->aPageProps[$row->pp_propname] = $row->pp_value;
 		}
 
-		$this->bIsLoaded = true;;
+		$this->bIsLoaded = true;
 	}
 
 	/**

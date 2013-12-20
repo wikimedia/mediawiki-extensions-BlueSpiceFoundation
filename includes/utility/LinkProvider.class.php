@@ -84,10 +84,10 @@ class BsLinkProvider {
 	 */
 	public static function makeWikiLinkForTitle( Title $oTitle, $sLabel = '', $sJumpMark = '' )
 	{
-        $sTitle = $oTitle->getText();
-        $sNamespaceText = $oTitle->getNsText();
+		$sTitle = $oTitle->getText();
+		$sNamespaceText = $oTitle->getNsText();
 
-        $sWikiLink = BsLinkProvider::makeWikiLinkForTitleString($sTitle, $sNamespaceText, $sLabel, $sJumpMark);
+		$sWikiLink = BsLinkProvider::makeWikiLinkForTitleString($sTitle, $sNamespaceText, $sLabel, $sJumpMark);
 
 		return $sWikiLink;
 	}
@@ -96,28 +96,28 @@ class BsLinkProvider {
 	/**
 	 * Creates a WikiText link to the provided Title.
 	 * @param Title $sTitle The title string a wikilink should be created for.
-     * @param String $sNamespace The namespace text string for the wikilink title.
+	 * @param String $sNamespace The namespace text string for the wikilink title.
 	 * @param String $sLabel If the link should have a alternative name instead of the title name, this parameter can contain it. I.e. $sLabel = 'Giant spider in Mordor'
 	 * @param String $sJumpMark You can add a jumpmark to the link to go to a specific section of the page. I.e. $sJumpMark = 'vita'
 	 * @return String Something like [[Mordor#Shelob|Giant spider in Mordor]]
 	 */
 	public static function makeWikiLinkForTitleString( $sTitle, $sNamespaceText = '', $sLabel = '', $sJumpMark = '' )
 	{
-        $sWikiLink = "[[";
+		$sWikiLink = "[[";
 	// TODO MRG (21.09.10 12:54): Es gibt noch den Fall, dass ich explizit in den Main-Space verlinken möchte,
 	// so: [[:Test]]. Wichtiger noch: auf eine Kategorie-Seite verlinken (nicht eine Kategorie zuordnen) geht so:
 	// [[:Kategorie:Test]]. Das sollte hier berücksichtigt werden könnnen.
-        if ( trim($sNamespaceText) != '' ) {
-            $sWikiLink .= "$sNamespaceText:";
-        }
-        $sWikiLink .= $sTitle;
-        if ( trim($sJumpMark) != '' ) {
-            $sWikiLink .= "#$sJumpMark";
-        }
-        if ( trim($sLabel) != '' ) {
-            $sWikiLink .= "|$sLabel";
-        }
-        $sWikiLink .= "]]";
+		if ( trim($sNamespaceText) != '' ) {
+			$sWikiLink .= "$sNamespaceText:";
+		}
+		$sWikiLink .= $sTitle;
+		if ( trim($sJumpMark) != '' ) {
+			$sWikiLink .= "#$sJumpMark";
+		}
+		if ( trim($sLabel) != '' ) {
+			$sWikiLink .= "|$sLabel";
+		}
+		$sWikiLink .= "]]";
 
 		return $sWikiLink;
 	}
@@ -154,7 +154,7 @@ class BsLinkProvider {
 		// TODO MRG (21.09.10 12:53): ich würde generell das Vorgehen über Option-Arrays bevorzugen. Warum sollten Klassen
 		// und Styles eine Sonderstellung haben?
 		$sAttributes = '';
-		
+
 		if ( !empty( $aClasses ) ) {
 			$sAttributes .= 'class="';
 
@@ -179,7 +179,7 @@ class BsLinkProvider {
 	}
 
 	/**
-	 * Provides a linker link from MW 1.16+
+	 * Provides a linker link
 	 * @param Title $oTitle
 	 * @param String $sHtml
 	 * @param Array $aCustomAttribs

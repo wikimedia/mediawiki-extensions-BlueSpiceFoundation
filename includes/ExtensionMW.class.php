@@ -8,6 +8,8 @@ abstract class BsExtensionMW extends ContextSource {
 
 	protected $mInfo            = NULL;
 	protected $mExtensionKey    = NULL;
+	
+	protected $mResourcePath    = NULL;
 
 	/**
 	 *
@@ -94,22 +96,33 @@ abstract class BsExtensionMW extends ContextSource {
 			$wgHooks[$hook][] = & $register;
 		}
 	}
+	
+	/**
+	 * Returns the resource path for the current extension
+	 * @global string $IP
+	 * @global string $wgScriptPath
+	 * @return string
+	 */
+	public function getResourcePath() {
+		if(is_null($this->mResourcePath)) {
+			global $IP, $wgScriptPath;
+			$sExtensionPath = dirname(str_replace($IP, '', $this->mExtensionFile));
+			$sExtensionPath = str_replace( '\\', '/', $sExtensionPath );
+			$this->mResourcePath = $wgScriptPath.$sExtensionPath.'/resources';
+		}
+		return $this->mResourcePath;
+	}
 
 	/**
-	 * returns standard image path for extensions
+	 * Returns the image path for the current extension
+	 * @param boolean $bResources Whether or not the image directory is located inside the resources directory
 	 * @return string
 	 */
 	public function getImagePath( $bResources = false ) {
-		global $wgScriptPath;
-		// TODO: ScriptPath should be more abstract.
-		// TODO: Bluespice-mw should be abstraced
-		// CR MRG (30.06.11 10:23): Lokal cachen
-		// PW(24.06.2013) added $bResources due to compatibility
-		return $wgScriptPath
-				.'/extensions/BlueSpiceExtensions/'
-				.$this->mInfo[EXTINFO::NAME]
-				.( $bResources ? '/resources' : '' )
-				.'/images/';
+		if($bResources) {
+			return $this->getResourcePath().'/images/';
+		}
+		return dirname($this->getResourcePath()).'/images/';
 	}
 
 	/**

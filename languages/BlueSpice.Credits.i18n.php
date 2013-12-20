@@ -15,15 +15,22 @@
 $messages = array();
 
 $messages['de'] = array(
-	'credits' => 'BlueSpice Credits',
+	'specialcredits' => 'BlueSpice Credits',
 	'bs-credits-programmers' => 'Programmierer',
 	'bs-credits-dnt' => 'Design und Testing',
 	'bs-credits-contributors' => 'Contributors'
 );
 
 $messages['en'] = array(
-	'credits' => 'BlueSpice credits',
+	'specialcredits' => 'BlueSpice credits',
 	'bs-credits-programmers' => 'Programmers',
 	'bs-credits-dnt' => 'Design and testing',
 	'bs-credits-contributors' => 'Contributors'
+);
+
+$messages['qqq'] = array(
+	'specialcredits' => 'Special page title',
+	'bs-credits-programmers' => 'Heading for column listing programmers',
+	'bs-credits-dnt' => 'Heading for column with designers listing testers',
+	'bs-credits-contributors' => 'Headings for column listing contributors'
 );

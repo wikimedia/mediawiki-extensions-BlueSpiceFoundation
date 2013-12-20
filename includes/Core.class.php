@@ -249,7 +249,7 @@ class BsCore {
 				} elseif ( $wgDBtype == 'oracle' ) {
 					$handover = addslashes( $handover );
 				} else {
-					$handover = mysql_real_escape_string( $handover );
+					$handover = addslashes( $handover );
 				}
 				return $handover;
 			}

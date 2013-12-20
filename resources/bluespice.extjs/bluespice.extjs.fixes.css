@@ -19,7 +19,7 @@ ul.x-menu-list {
 	margin: 0;
 }
 
-/*Fix underlining by commonElements.css*/
+/* Fix underlining by commonElements.css */
 a.x-btn-over, 
 a.x-btn-over {
 	text-decoration: none;
@@ -40,13 +40,20 @@ textarea:focus.x-field-form-focus {
 	background-color: #FFF;
 }
 
-/*Fix ExtJS RESET*/
-.x-body {
-	font-family: Arial,Verdana,Geneva,sans-serif; /* BlueSpice default */
+/* Fix ExtJS RESET */
+body.x-body {
+	font-family: sans-serif; /* MediaWiki default */
+	/*
+		This is disabled because the default BlueSpiceSkin has issues we cannot 
+		resolve right now. As soon as the BlueSpiceSkin is Vector compatible 
+		we can add this line to prevent BSF from breaking Vector based skins.
+	*/
+	/*font-size: 1em;*/ /* MediaWiki default */
 }
 
+/* Override font from BlueSpiceSkin */
 .x-layer {
-	font-family: tahoma,arial,verdana,sans-serif;
+	font-family: tahoma,arial,verdana,sans-serif; /* ExtJS default */
 }
 
 .x-tool-img {
@@ -62,13 +69,15 @@ textarea:focus.x-field-form-focus {
 	margin: 0;
 }
 
-.bs-extjs-crud-grid tr.x-grid-row .bs-extjs-actioncloumn-icon {
+.bs-extjs-crud-grid tr.x-grid-row .bs-extjs-actioncloumn-icon, /*TYPO*/
+.bs-extjs-crud-grid tr.x-grid-row .bs-extjs-actioncolumn-icon {
 	display: none;
 	height: 24px;
 	width: 24px
 }
 
-.bs-extjs-crud-grid tr.x-grid-row:hover .bs-extjs-actioncloumn-icon {
+.bs-extjs-crud-grid tr.x-grid-row:hover .bs-extjs-actioncloumn-icon,/*TYPO*/
+.bs-extjs-crud-grid tr.x-grid-row:hover .bs-extjs-actioncolumn-icon {
 	display: inline-block;
 }
 .bs-extjs-crud-grid tr.x-grid-row {

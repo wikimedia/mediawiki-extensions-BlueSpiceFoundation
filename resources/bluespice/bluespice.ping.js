@@ -3,6 +3,7 @@ BSPing = {
 	aListeners:[],
 
 	init: function() {
+		$(document).triggerHandler('BSPingInit', [this]);
 		this.interval = bsPingInterval*1000;
 		if( this.interval < 1000 ) return;
 

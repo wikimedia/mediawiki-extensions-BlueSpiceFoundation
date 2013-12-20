@@ -7,7 +7,8 @@
 class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 
 	function getInputHTML( $value ) {
-		
+		$this->mParent->getOutput()->addModules('ext.bluespice.html.formfields');
+
 		$aValidated = $this->reValidate($value, $this->mParams['options']);
 		
 		$aOptions = array();

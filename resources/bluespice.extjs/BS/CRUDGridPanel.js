@@ -33,7 +33,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 		
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete_tn.png',
-			iconCls: 'bs-extjs-actioncloumn-icon',
+			iconCls: 'bs-extjs-actioncolumn-icon',
 			tooltip: mw.message('bs-extjs-action-remove-tooltip').plain(),
 			handler: this.onActionRemoveClick,
 			scope: this
@@ -41,7 +41,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config_tn.png',
-			iconCls: 'bs-extjs-actioncloumn-icon',
+			iconCls: 'bs-extjs-actioncolumn-icon',
 			tooltip: mw.message('bs-extjs-action-edit-tooltip').plain(),
 			handler: this.onActionEditClick,
 			scope: this
@@ -50,11 +50,11 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.colActions = Ext.create( 'Ext.grid.column.Action', {
 			header: mw.message('bs-extjs-actions-column-header').plain(),
 			flex: 0,
-			width: 120,
+			//width: 120,
 			//cls: 'hideAction',
 			items: this.colMainConf.actions,
 			menuDisabled: true,
-                        hideable: false,
+			hideable: false,
 			sortable: false
 		});
 

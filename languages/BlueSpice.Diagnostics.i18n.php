@@ -22,3 +22,7 @@ $messages['de'] = array(
 $messages['en'] = array(
 	'diagnostics'                                   => 'System diagnostics'
 );
+
+$messages['qqq'] = array(
+	'diagnostics'                                   => 'Special page title'
+);

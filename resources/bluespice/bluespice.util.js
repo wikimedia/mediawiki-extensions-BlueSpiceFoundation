@@ -61,7 +61,7 @@
 			return confirms[idPrefix];
 		
 		if(!windowCfg.title && !windowCfg.titleMsg ) {
-			windowCfg.titleMsg = 'bs-extjs-confirm'
+			windowCfg.titleMsg = 'bs-extjs-confirm';
 		}
 
 		windowCfg = _prepareSimpleDialogWindowCfg(idPrefix, windowCfg);
@@ -142,7 +142,7 @@
 		var params = {
 			'action': 'ajax',
 			'rs': rs
-		}
+		};
 		if (rsargs) {
 			params.rsargs = rsargs;
 		}
@@ -304,36 +304,22 @@
 		var iMins=Math.floor(iDuration/60);
 		var iSecs=iDuration%60;
 
-		//TODO: User mw.message() and user PLURAL-Features of jQueryMsg
-		if (iYears == 1) { sYears = mw.msg('bs-year-duration', iYears); }
-		if (iYears > 1) { sYears = mw.msg('bs-years-duration', iYears); }
-		
-		if (iMonths == 1) { sMonths = mw.msg('bs-month-duration', iMonths); }
-		if (iMonths > 1) { sMonths = mw.msg('bs-months-duration', iMonths); }
+		if ( iYears > 0 ) sYears = mw.message( 'bs-years-duration', iYears ).text();
+		if ( iMonths > 0 ) sMonths = mw.message('bs-months-duration', iMonths).text();
+		if ( iWeeks > 0 ) sWeeks = mw.message('bs-weeks-duration', iWeeks).text();
+		if ( iDays > 0 ) sDays = mw.message('bs-days-duration', iDays).text();
+		if ( iHrs > 0 ) sHrs = mw.message('bs-hours-duration', iHrs).text();
+		if ( iMins > 0 ) sMins = mw.message('bs-mins-duration', iMins).text();
+		if ( iSecs > 0 ) sSecs = mw.message('bs-secs-duration', iSecs).text();
 
-		if (iWeeks == 1) { sWeeks = mw.msg('bs-week-duration', iWeeks); }
-		if (iWeeks > 1) { sWeeks = mw.msg('bs-weeks-duration', iWeeks); }
-
-		if (iDays == 1) { sDays = mw.msg('bs-day-duration', iDays); }
-		if (iDays > 1) { sDays = mw.msg('bs-days-duration', iDays); }
-
-		if (iHrs == 1) { sHrs = mw.msg('bs-hour-duration', iHrs); }
-		if (iHrs > 1) { sHrs = mw.msg('bs-hours-duration', iHrs); }
-
-		if (iMins == 1) { sMins = mw.msg('bs-min-duration', iMins); }
-		if (iMins > 1) { sMins = mw.msg('bs-mins-duration', iMins); }
-
-		if (iSecs == 1) { sSecs = mw.msg('bs-sec-duration', iSecs); }
-		if (iSecs > 1) { sSecs = mw.msg('bs-secs-duration', iSecs); }
-
-		if (iYears > 0) sDateTimeOut = sMonths ? mw.msg( 'bs-two-units-ago', sYears, sMonths) : mw.msg( 'bs-one-unit-ago', sYears);
-		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.msg( 'bs-two-units-ago', sMonths, sWeeks) : mw.msg( 'bs-one-unit-ago', sMonths);
-		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.msg( 'bs-two-units-ago', sWeeks ,sDays) : mw.msg( 'bs-one-unit-ago', sWeeks)
-		else if (iDays > 0) sDateTimeOut = sHrs ? mw.msg( 'bs-two-units-ago', sDays, sHrs) : mw.msg( 'bs-one-unit-ago', sDays);
-		else if (iHrs > 0) sDateTimeOut = sMins ? mw.msg( 'bs-two-units-ago', sHrs, sMins) : mw.msg( 'bs-one-unit-ago', sHrs);
-		else if (iMins > 0) sDateTimeOut = sSecs ? mw.msg( 'bs-two-units-ago', sMins, sSecs) : mw.msg( 'bs-one-unit-ago', sMins);
-		else if (iSecs > 0) sDateTimeOut = mw.msg( 'bs-one-unit-ago', sSecs);
-		else if (iSecs == 0) sDateTimeOut = mw.msg( 'bs-now' );
+		if (iYears > 0) sDateTimeOut = sMonths ? mw.message( 'bs-two-units-ago', sYears, sMonths).text() : mw.message( 'bs-one-unit-ago', sYears).text();
+		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.message( 'bs-two-units-ago', sMonths, sWeeks).text() : mw.message( 'bs-one-unit-ago', sMonths).text();
+		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.message( 'bs-two-units-ago', sWeeks ,sDays).text() : mw.message( 'bs-one-unit-ago', sWeeks).text();
+		else if (iDays > 0) sDateTimeOut = sHrs ? mw.message( 'bs-two-units-ago', sDays, sHrs).text() : mw.message( 'bs-one-unit-ago', sDays).text();
+		else if (iHrs > 0) sDateTimeOut = sMins ? mw.message( 'bs-two-units-ago', sHrs, sMins).text() : mw.message( 'bs-one-unit-ago', sHrs).text();
+		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).text() : mw.message( 'bs-one-unit-ago', sMins).text();
+		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).text();
+		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).text();
 		
 		return sDateTimeOut;
 	}
@@ -412,7 +398,8 @@
 	 * @return {Object}
 	 */
 	function _getUrlParams( param ) {
-		// Handle BlueSpice::getUrlParams(), BlueSpice::getUrlParams(""), BlueSpice::getUrlParams(null), or BlueSpice::getUrlParams(undefined)
+		// Handle getUrlParams(), getUrlParams(""), getUrlParams(null) 
+		// or getUrlParams(undefined) calls
 		if ( !param ) {
 			return _getUrlParams( window.location );
 		}
@@ -464,7 +451,8 @@
 		}
 		return sValue;
 	};
-		/**
+
+	/**
 	 * Shows an input dialog and adds provided value to an ExtJS MulitSelect field
 	 * @param {object} oSrc The ExtJS MulitSelect field
 	 * @return {Void}
@@ -503,6 +491,15 @@
 			}
 		}
 	};
+	
+	function _wikiGetlink( params, str ) {
+		var pageName = str || mw.config.get( 'wgPageName' );
+		var params = params || {};
+		params.title = pageName;
+		
+		var url = mw.util.wikiScript() + '?' + $.param(params);
+		return url;
+	};
 
 	var util = {
 		getNamespaceText: _getNamespaceText,
@@ -523,9 +520,12 @@
 		getUrlParam: _getUrlParam,
 		getUrlParams: _getUrlParams,
 		addEntryToMultiSelect: _addEntryToMultiSelect,
-		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect
+		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect,
+		wikiGetlink: _wikiGetlink
 	};
 
+	//This allows us to have a confirm dialog be displayed 
+	//by just adding a class to a link
 	$(document).on('click', 'a.bs-confirm-nav', function(e) {
 		e.preventDefault();
 
@@ -544,18 +544,6 @@
 			util.selection.autoSelection = '';
 		});
 	}
-	
-	//TODO: Find better place for this.
-	$( '.multiselectsortlist' ).sortable( {
-		update: function( event, ui ) { 
-			$( this ).next().children().remove(); //Remove all "option" tags from the hidden "select" element
-			$( this ).children().each( function( index, element ) {
-				$( this ).parent().next() //The "select" element
-				.append( '<option selected="selected" value="' + $(this).attr( 'data-value' ) + '">' + $(this).html() + '</option>' );
-				//We have to use .attr( 'data-value' ) instead of .data('value' ) because of some jQuery version issues. Maybe correct this in future versions.
-			});
-		}
-	});
 
 	bs.util = util;
 

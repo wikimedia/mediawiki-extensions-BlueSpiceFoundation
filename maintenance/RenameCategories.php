@@ -222,9 +222,9 @@ while ($row = mysql_fetch_array($res->result))
 	}
 	
 	// Fetch text
-	$article = new Article( $wgTitle );
-	$article->fetchContent();
-	$text = $article->getContent() ;
+	$wgArticle = new Article( $wgTitle );
+	$wgArticle->fetchContent();
+	$text = $wgArticle->getContent() ;
 	if ($text == '') echo 'empty!';
 
 	// Text conditions
@@ -278,7 +278,7 @@ while ($row = mysql_fetch_array($res->result))
 		}
 		
 		// Actual modification
-		$success = $article->doEdit( $text, $summary,
+		$success = $wgArticle->doEdit( $text, $summary, 
 			( $minor ? EDIT_MINOR : 0 ) |
 			( $bot ? EDIT_FORCE_BOT : 0 ) | 
 			( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |

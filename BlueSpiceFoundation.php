@@ -79,8 +79,8 @@ $wgExtensionMessagesFiles += array(
 
 #$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
 #$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
-$wgSpecialPageGroups['Credits'] = 'bluespice';
-$wgSpecialPages['Credits'] = 'SpecialCredits';
+$wgSpecialPageGroups['SpecialCredits'] = 'bluespice';
+$wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
 
 $oCore = BsCore::getInstance();
 $wgHooks['SetupAfterCache'][] = 'BsCoreHooks::onSetupAfterCache';

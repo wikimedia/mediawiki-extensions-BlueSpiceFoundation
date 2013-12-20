@@ -18,29 +18,20 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.extensionManager.js',
 		'bluespice/bluespice.util.js',
 		'bluespice/bluespice.wikiText.js',
-
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
-		
 		'bluespice/bluespice.ping.js',
-
 		'bluespice.libs/slimScroll.min.js',
 	),
-	'styles' => array(
-		'bluespice/bluespice.css',
-		'bluespice.extjs/bluespice.extjs.fixes.css'
-	),
 	'dependencies' => array(
-		'jquery', 'jquery.ui.core',
+		'jquery',
+		'jquery.ui.core',
 		'jquery.ui.dialog',
 		'jquery.ui.tabs',
 		'jquery.cookie',
 		'jquery.ui.sortable',
 		'jquery.ui.autocomplete',
-		'jquery.effects.core',
-		'mediawiki.legacy.shared',
-		'mediawiki.action.history.diff',
-		'mediawiki.page.ready'
+		'jquery.effects.core'
 	),
 	'messages' => array(
 		'largefileserver',
@@ -61,24 +52,22 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bs-two-units-ago',
 		'bs-one-unit-ago',
 		'bs-now',
-		
+
 		'blanknamespace', //MediaWiki
 	),
-	'position' => 'top' // available since r85616
+	'position' => 'bottom' // available since r85616
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.styles'] = array(
+	'styles' => array(
+		'bluespice/bluespice.css'
+	),
+	'position' => 'top'
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs'] = array(
 	'scripts' => array(
 		'bluespice.extjs/bluespice.extjs.js',
-	),
-	//Those are mainly Ext.ux styles that are not part of ext-all.css or the 
-	//theme
-	'styles' => array(
-		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',
-		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
-		'bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css',
-		'bluespice.extjs/Ext.ux/css/TabScrollerMenu.css',
-		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css'
 	),
 	'dependencies' => array(
 		'ext.bluespice'
@@ -109,8 +98,22 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-upload',
 		'bs-extjs-browse',
 		'bs-extjs-uploading'
-	)
+	),
+	'position' => 'bottom'
 ) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs.styles'] = array(
+	//Those are mainly Ext.ux styles that are not part of ext-all.css or the 
+	//theme
+	'styles' => array(
+		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',
+		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
+		'bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css',
+		'bluespice.extjs/Ext.ux/css/TabScrollerMenu.css',
+		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css',
+		'bluespice.extjs/bluespice.extjs.fixes.css'
+	)
+	) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 	'dependencies' => array(
@@ -118,7 +121,7 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 	),
 	'messages' => array(
 		'bs-extjs-portal-config',
-		'bs-extjs-portal-portlets',
+//unused		'bs-extjs-portal-portlets',
 		'bs-extjs-portal-title',
 		'bs-extjs-portal-height',
 		'bs-extjs-portal-count',
@@ -137,5 +140,16 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal.css'] = array(
 		'ext.bluespice.extjs'
 	)
 ) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.html.formfields'] = array(
+	'scripts' => array(
+		'bluespice/bluespice.html.formfields.js'
+	),
+	'dependencies' => array(
+		'ext.bluespice.extjs'
+	)
+) + $aResourceModuleTemplate;
+
+
 
 unset( $aResourceModuleTemplate );
