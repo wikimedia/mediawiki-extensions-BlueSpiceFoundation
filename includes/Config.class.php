@@ -382,7 +382,7 @@ class BsConfig {
 		} else {
 			$aConditions = array( 'up_property' => $sKey );
 			if( $sSingleValFromMultiple ) {
-				$aConditions[] = 'up_value like "%'.$sValue.'%"';
+				$aConditions[] = 'up_value like "%'.$vValue.'%"';
 			} else {
 					$aConditions['up_value'] = ( $bSerialized ) ? serialize( $vValue ) : $vValue;
 			}
@@ -396,7 +396,7 @@ class BsConfig {
 		while ( $oRow = $rRes->fetchObject () ) {
 			if( $sSingleValFromMultiple ) {
 				foreach( unserialize( $oRow->up_value ) as $value ) {
-					if( $value === $sValue ) {
+					if( $value === $vValue ) {
 						$aUsers[] = User::newFromId($oRow->up_user);
 					}
 				}

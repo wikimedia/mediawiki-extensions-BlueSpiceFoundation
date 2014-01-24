@@ -27,13 +27,19 @@ Ext.define( 'BS.Window', {
 	closeAction: 'hide',
 	layout: 'form',
 	title: '',
-	fieldDefaults: {
-		labelAlign: 'right'
-	},
+	
 	bodyPadding:5,
 
-	//Custom Setting
-	currentData: {},
+	constructor: function(config) {
+		var cfg = config || {};
+		this.fieldDefaults = cfg.fieldDefaults || {
+			labelAlign: 'right'
+		};
+
+		//Custom Settings
+		this.currentData = {};
+		this.callParent(arguments);
+	},
 
 	initComponent: function() {
 		this.btnOK = Ext.create( 'Ext.Button', {

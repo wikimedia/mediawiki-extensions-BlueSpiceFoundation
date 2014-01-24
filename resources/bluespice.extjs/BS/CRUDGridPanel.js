@@ -17,13 +17,19 @@ Ext.define( 'BS.CRUDGridPanel', {
 
 	//Custom
 	pageSize: 20,
-	smMain: null,
-	bbMain: null,
-	colMain: null,
-	gpMainConf: {},
-	colMainConf: {
-		columns: [],
-		actions: [] //Custom; Used for ActionColumn
+
+	constructor: function() {
+		this.colMainConf = {
+			columns: [],
+			actions: [] //Custom; Used for ActionColumn
+		};
+		
+		this.smMain = null;
+		this.bbMain = null;
+		this.colMain = null;
+		this.gpMainConf = {};
+		
+		this.callParent(arguments);
 	},
 
 	afterInitComponent: function( arguments ) {
@@ -34,7 +40,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete_tn.png',
 			iconCls: 'bs-extjs-actioncolumn-icon',
-			tooltip: mw.message('bs-extjs-action-remove-tooltip').plain(),
+			tooltip: mw.message('bs-extjs-delete').plain(),
 			handler: this.onActionRemoveClick,
 			scope: this
 		});
@@ -42,7 +48,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config_tn.png',
 			iconCls: 'bs-extjs-actioncolumn-icon',
-			tooltip: mw.message('bs-extjs-action-edit-tooltip').plain(),
+			tooltip: mw.message('bs-extjs-edit').plain(),
 			handler: this.onActionEditClick,
 			scope: this
 		});

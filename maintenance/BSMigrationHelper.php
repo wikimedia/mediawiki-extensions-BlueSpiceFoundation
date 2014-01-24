@@ -91,6 +91,7 @@ class BSMigrationHelper{
 	}
 	
 	public function processWordSectionElement( $oWSElement, &$sWikiText ) {
+		//$sWikiText = preg_replace('/&#x.*?;/', '', $sWikiText);
 		if( $oWSElement instanceof DOMElement == false ) return;
 		if( in_array( $oWSElement->nodeName, array('h1', 'h2', 'h3', 'h4', 'h5', 'h6') ) ) {
 			$sHeading = str_replace( array("\n", "\r" ), array(' ', ''), $oWSElement->nodeValue);
@@ -98,9 +99,15 @@ class BSMigrationHelper{
 			$sHeading = str_replace("\xc2\xa0", '', $sHeading);
 			$sHeading = trim( $sHeading );
 //			$count = 0;
-			file_put_contents( '/tmp/headline', $sHeading."\n" );
-			$sHeading = preg_replace( '# ?(\d+)?\. #', '', $sHeading, FILE_APPEND );
-			file_put_contents( '/tmp/headline', $sHeading."\n" , FILE_APPEND);
+//			file_put_contents( '/tmp/headline.txt', $sHeading."\n\n" , FILE_APPEND);
+			//file_put_contents( '/tmp/headline', $sHeading."\n" );
+			$sHeading = preg_replace( '# ?(\d+)?\.(\d+) #', '', $sHeading );
+			$sHeading = preg_replace( '#^[0-9]+ #', '', $sHeading );
+			$sHeading = preg_replace( '#^\d. |^\. #', '', $sHeading );
+			
+			
+			if( empty( $sHeading ) ) return;
+//			file_put_contents( '/tmp/headline.txt', $sHeading."\n\n" , FILE_APPEND);
 //			if( !$count )	$sHeading = preg_replace( '#^(-|§)[ \x{00A0}]+#u', '', $sHeading );
 
 			$this->output('Processing headline "'.$sHeading.'"');
@@ -140,13 +147,18 @@ class BSMigrationHelper{
 				$sListItem = str_replace( array("\n", "\r", '&nbsp;'), ' ', $oWSElement->nodeValue);
 				$sReplace = '*';
 				$count = 0;
+				//file_put_contents( '/tmp/listitem.txt', $sListItem."\n", FILE_APPEND );
 				$sListItem = preg_replace( '#^\d+\.[ \x{00A0}]+#u', '', $sListItem, -1, $count );
+				$sListItem = preg_replace( '#^ +.[ \x{00A0}]+#u', '', $sListItem );
+//				$sListItem = preg_replace( '#[\x{00A0}]+#u', '', $sListItem );
 				if( $count ) {
 					$sReplace = '#';
 				} else {
-					$sListItem = preg_replace( '#^(-|§)[ \x{00A0}]+#u', '', $sListItem);
+					$sListItem = preg_replace( '#^(-|§|  -)[ \x{00A0}]+#u', '', $sListItem);
+					$sListItem = preg_replace( '#^ +.[ \x{00A0}]+#u', '', $sListItem);
+//					$sListItem = preg_replace( '#[\x{00A0}]+#u', '', $sListItem );
 				}
-				$sWikiText .= "$sReplace ".$sListItem."\n";
+				$sWikiText .= "\n$sReplace ".$sListItem."";
 				return;
 			}
 
@@ -167,7 +179,8 @@ class BSMigrationHelper{
 
 			$this->processInline( $oWSElement, $sWikiText );
 			//$sWikiText .= "\n";
-
+			$sWikiText = trim( $sWikiText );
+			
 			if( $sClass == 'MsoNormal' 
 					|| strpos( $sClass, 'Deckblatt') !== false 
 					|| strpos( $sClass, 'MsoListBullet') !== false ) {
@@ -181,10 +194,16 @@ class BSMigrationHelper{
 	}
 	
 	public function processInline( $oWSElement, &$sWikiText ) {
+		$sWikiText = str_replace( "\n ", "\n", $sWikiText );
+
 		foreach( $oWSElement->childNodes as $oChild ){
 			if( $oChild instanceof DOMText ) {
 				$sNodeValue = str_replace( array("\n", "\r"), array(' ', ''), $oChild->nodeValue );
 				$sNodeValue = str_replace("\xc2\xa0", '', $sNodeValue);
+				$sNodeValue = str_replace("\xa0", '', $sNodeValue);
+//				$sNodeValue = str_replace("\xb7", '', $sNodeValue);
+//				$sNodeValue = preg_replace('/[\x00-\x1f]/', '?', $sNodeValue);
+				$sNodeValue = preg_replace('/&#x.*?;/', '', $sNodeValue);
 				//$sNodeValue = str_replace("\xc2\xa7", '§', $sNodeValue);
 				//$sNodeValue = str_replace("\xa7 ", '§', $sNodeValue);
 				$sNodeValue = trim( $sNodeValue, '·');
@@ -195,7 +214,7 @@ class BSMigrationHelper{
 			$sStartingTag = '';
 			$sClosingTag = '';
 
-			switch( $oChild->nodeName ) {
+			switch( strtolower( $oChild->nodeName ) ) {
 				case 'b':
 				case 'strong':
 					$sStartingTag = "''";
@@ -268,7 +287,7 @@ class BSMigrationHelper{
 		foreach( $oWSElement->childNodes as $oTableRow ) {
 			$this->processTableRow($oTableRow, $sWikiText);
 		}
-		$sWikiText .= '|}'."\n\n";
+		$sWikiText .= "\n".'|}'."\n\n";
 		wfRunHooks( 'BSMigrationHelperAfterProcessingTable', array( $this, $oWSElement, &$sWikiText) );
 	}
 	
@@ -286,7 +305,8 @@ class BSMigrationHelper{
 		}
 		
 		if( $oTableRow->nodeName != 'tr' ) return;
-		$sWikiText .= '|-'."\n";
+		$sWikiText .= "\n".'|-'."\n";
+//		$sWikiText .= '|-';
 		
 		foreach( $oTableRow->childNodes as $oChild ) { //td
 			$this->processTableData($oChild, $sWikiText);
@@ -301,14 +321,19 @@ class BSMigrationHelper{
 	public function processTableData($oChild, &$sWikiText){
 		if( $oChild instanceof DOMElement == false ) return;
 		if( $oChild->nodeName != 'td' ) return false;
-		$sWikiText .= '|';
+//		$sWikiText .= "\n".'|'."\n";
+		$sWikiText .= "\n";
 		if( $oChild->hasAttributes() ) {
-			//colspan
-			//etc
+			if( $oChild->getAttribute( 'colspan')  ) {
+				$iColspan = (int) $oChild->getAttribute( 'colspan');
+				$sWikiText .= '| colspan="'.$iColspan.'"';
+			}
 		}
+		$sWikiText .= '|'."\n";
 
 		foreach( $oChild->childNodes as $oCellData ) {
 			$this->processWordSectionElement($oCellData, $sWikiText);
+			$sWikiText = trim($sWikiText, "\n");
 		}
 	}
 	
@@ -339,7 +364,7 @@ class BSMigrationHelper{
 		if( !empty( $this->sBookTitle ) ) {
 			$sText = $this->prependString( '<bs:bookshelf src="'.$this->sBookTitle.'" />'."\n", $sText );
 		}
-		
+
 		$resultPageElement = $this->oResultDocument->createElement('page');
 		$resultPageTitleElement = $this->oResultDocument->createElement('title');
 		// http://stackoverflow.com/questions/17027043/unterminated-entity-reference-php
@@ -348,7 +373,7 @@ class BSMigrationHelper{
 		$resultPageElement->appendChild( $resultPageTitleElement );
 		$resultPageRevisonElement = $this->oResultDocument->createElement('revision');
 		$resultPageRevisonTextElement = $this->oResultDocument->createElement('text');
-		$resultPageRevisonTextElement->nodeValue = htmlspecialchars( $sText );
+		$resultPageRevisonTextElement->nodeValue = htmlspecialchars( $sText, ENT_IGNORE );
 		//$resultPageContentCDATA = $resultDoc->createCDATASection( $pageContent );
 		$resultPageRevisonTextElement->setAttribute( 'xml:space', 'preserve' );
 		//$resultPageRevisonTextElement->appendChild($resultPageContentCDATA);
@@ -414,10 +439,14 @@ class BSMigrationHelper{
 	}
 	
 	public function saveDocumentFiles( $sPath = '/tmp/images' ) {
+		return;
 		if( !file_exists( $sPath ) ) {
 			mkdir( '/tmp/images' );
 		}
 		foreach( $this->aFiles as $sFilePath => $sWikiFilename ) {
+			// avoid double urlencode problems %2520 = urlencoded( '%20' )
+			$sFilePath = str_replace( '%2520', '%20', $sFilePath );
+			$sFilePath = urldecode( $sFilePath );
 			$result = copy( $sFilePath, $sPath.'/'.$sWikiFilename );
 			if( $result === true ) {
 				$this->aFilesCreated[] = $sWikiFilename;

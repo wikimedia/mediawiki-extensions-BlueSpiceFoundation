@@ -7,7 +7,6 @@ if( !defined( 'MEDIAWIKI' ) ) {
 $aResourceModuleTemplate = array(
 	'localBasePath' => $IP . '/extensions/BlueSpiceFoundation/resources',
 	'remoteExtPath' => 'BlueSpiceFoundation/resources',
-	//'remoteBasePath' => &$GLOBALS['wgScriptPath'],
 	'group' => 'ext.bluespice',
 );
 
@@ -79,6 +78,7 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-no',
 		'bs-extjs-save',
 		'bs-extjs-delete',
+		'bs-extjs-edit',
 		'bs-extjs-add',
 		'bs-extjs-remove',
 		'bs-extjs-hint',
@@ -110,6 +110,8 @@ $wgResourceModules['ext.bluespice.extjs.styles'] = array(
 		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
 		'bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css',
 		'bluespice.extjs/Ext.ux/css/TabScrollerMenu.css',
+		'bluespice.extjs/Ext.ux/grid/css/GridFilters.css',
+		'bluespice.extjs/Ext.ux/grid/css/RangeMenu.css',
 		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css',
 		'bluespice.extjs/bluespice.extjs.fixes.css'
 	)
@@ -149,7 +151,5 @@ $wgResourceModules['ext.bluespice.html.formfields'] = array(
 		'ext.bluespice.extjs'
 	)
 ) + $aResourceModuleTemplate;
-
-
 
 unset( $aResourceModuleTemplate );

@@ -69,7 +69,11 @@ $messages['de'] = array(
 	'bs-filesystemhelper-folder-not-exists'         => 'Der Ordner $1 existiert nicht.',
 	'bs-filesystemhelper-upload-err-code'           => 'Die Datei konnte nicht hochgeladen werden. Grund: $1',
 	'bs-filesystemhelper-upload-wrong-ext'          => 'Die Datei hat nicht die angeforderte Erweiterung "$1"',
-	'bs-filesystemhelper-upload-unsupported-type'   => 'Dieser Dateityp wird nicht unterstützt.'
+	'bs-filesystemhelper-upload-unsupported-type'   => 'Dieser Dateityp wird nicht unterstützt.',
+	'bs-filesystemhelper-save-base64-error'         => 'Die Datei konnte nicht gespeichert werden.',
+	'bs-filesystemhelper-upload-base64-error'       => 'Die Datei konnte nicht hochgeladen werden.',
+	'bs-filesystemhelper-upload-local-error-stash-file'=>'Die Datei konnte nicht in den Uploadstash verschoben werden.',
+	'bs-filesystemhelper-upload-local-error-create' => 'Die Datei konnte im Wiki nicht angelegt werden.'
 );
 
 $messages['de-formal'] = array(
@@ -135,7 +139,11 @@ $messages['en'] = array(
 	'bs-filesystemhelper-folder-not-exists'         => 'The folder $1 does not exist',
 	'bs-filesystemhelper-upload-err-code'           => 'The file could not be uploaded. Reason: $1',
 	'bs-filesystemhelper-upload-wrong-ext'          => 'The file does not have the required extension "$1"',
-	'bs-filesystemhelper-upload-unsupported-type'   => 'This file type is not supported.'
+	'bs-filesystemhelper-upload-unsupported-type'   => 'This file type is not supported.',
+	'bs-filesystemhelper-save-base64-error'         => 'The file could not be saved.',
+	'bs-filesystemhelper-upload-base64-error'       => 'The file could not be uploaded.',
+	'bs-filesystemhelper-upload-local-error-stash-file'=>'The file could not be moved to the upload stash.',
+	'bs-filesystemhelper-upload-local-error-create' => 'The file could not be created in the wiki.'
 );
 
 $messages['qqq'] = array(

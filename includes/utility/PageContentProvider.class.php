@@ -42,7 +42,7 @@ class BsPageContentProvider {
 	 */
 	protected function getTidy() {
 		if( $this->oTidy !== null ) return $this->oTidy;
-		
+
 		$this->aTidyConfig = array(
 				'output-xhtml'     => true,
 				'numeric-entities' => true,
@@ -126,13 +126,13 @@ class BsPageContentProvider {
 		} else {
 			$sContent = $oRevision->getText( $iAudience, $oUser );
 		}
-		
+
 		//FIX for #HW20130072210000028
 		//Manually expand templates to allow bookshelf tags via template
 		$oParser = new Parser();
 		$oParser->Options( $this->getParserOptions() ); //TODO: needed? below
-		$sContent = $oParser->preprocess( 
-			$sContent, 
+		$sContent = $oParser->preprocess(
+			$sContent,
 			$oRevision->getTitle(),
 			$this->getParserOptions()
 		);
@@ -238,43 +238,23 @@ class BsPageContentProvider {
 		$sHTML = '';
 		switch( $oTitle->getNamespace() ) {
 			case NS_IMAGE:
-				if( $wgVersion < '1.18' ) {
-					$oImagePage = new ImagePage( $oTitle, $aParams['oldid'] );
-				}
-				else {
-					$oImagePage = ImagePage::newFromTitle($oTitle, $context);
-				}
+				$oImagePage = ImagePage::newFromTitle( $oTitle, $context );
 				$oImagePage->view(); //Parse to OutputPage
 				break;
 
 			case NS_CATEGORY:
-				if( $wgVersion < '1.18' ) {
-					$oCategoryPage = new CategoryPage( $oTitle, $aParams['oldid'] );//new Article( $oTitle, $aParams['oldid'] );
-				}
-				else {
-					$oCategoryPage = CategoryPage::newFromTitle($oTitle, $context);
-				}
+				$oCategoryPage = CategoryPage::newFromTitle( $oTitle, $context );
 				$oCategoryPage->view(); //Parse to OutputPage
 				break;
 
 			case NS_SPECIAL:
 				//Querystring parameters like "?from=B&namespace=6" that are needed by the special page (i.e. All Pages) have to be present in $wgRequest / the context
-				if( $wgVersion < '1.18' ) {
-					SpecialPage::executePath( $oTitle ); //Parse to OutputPage
-				}
-				else {
-					SpecialPage::executePath( $oTitle, $context );
-					$sHTML = $context->getOutput()->getHTML();
-				}
+				SpecialPageFactory::executePath( $oTitle, $context );
+				$sHTML = $context->getOutput()->getHTML();
 				break;
 
 			default:
-				if( $wgVersion < '1.18' ) {
-					$oArticle = new Article( $oTitle, $aParams['oldid'] );
-				}
-				else {
-					$oArticle = Article::newFromTitle($oTitle, $context);
-				}
+				$oArticle = Article::newFromTitle($oTitle, $context);
 				$oArticle->view();
 				break;
 		}

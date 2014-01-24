@@ -2,10 +2,10 @@
 
 /**
  * This file contains the BsCore class.
- * 
+ *
  * The BsCore class is the main class of the BlueSpice framework.
  * It controlls the whole life sequence of the framework.
- * 
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
- * 
+ *
  * This file is part of BlueSpice for MediaWiki
  * For further information visit http://www.blue-spice.org
  *
@@ -78,7 +78,7 @@ class BsCore {
 	protected static $prCurrentUser = null;
 	/**
 	 * Simple caching mechanism for UserMiniProfiles
-	 * @var array 
+	 * @var array
 	 */
 	protected static $aUserMiniProfiles = array();
 
@@ -129,7 +129,6 @@ class BsCore {
 		BsConfig::registerVar( 'MW::UserImage', '', BsConfig::LEVEL_USER | BsConfig::TYPE_STRING | BsConfig::NO_DEFAULT, 'bs-authors-pref-UserImage' );
 		BsConfig::registerVar( 'MW::PingInterval', 2, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-BSPingInterval' );
 		BsConfig::registerVar( 'MW::SortAlph', false, BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER | BsConfig::TYPE_BOOL, 'bs-pref-sortalph', 'toggle' );
-		BsConfig::registerVar( 'MW::BlueSpiceScriptPath', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING | BsConfig::RENDER_AS_JAVASCRIPT, 'bs-pref-BlueSpiceScriptPath' );
 		BsConfig::registerVar( 'MW::Applications', $aRegisteredApplications, BsConfig::LEVEL_PRIVATE | BsConfig::TYPE_ARRAY_MIXED, 'bs-Applications' );
 		BsConfig::registerVar( 'MW::ApplicationContext', '', BsConfig::LEVEL_PRIVATE | BsConfig::TYPE_STRING | BsConfig::RENDER_AS_JAVASCRIPT, 'bs-pref-ApplicationContext' );
 		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-TestMode', 'toggle' );
@@ -140,7 +139,7 @@ class BsCore {
 
 	/**
 	 * Tells BsScriptManager to load ExtJS
-	 * 
+	 *
 	 * If a request param 'debugExtJs' is set, the ExtJs debug file will be loaded.
 	 * This method also loads the language file if needed.
 	 * @deprecated since version 1.22+ This is now handeled in index.php
@@ -371,7 +370,7 @@ class BsCore {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param User $oUser
 	 * @param array $aRights
 	 * @return boolean
@@ -402,8 +401,8 @@ class BsCore {
 	}
 
 	/**
-	 * This function triggers User::isAllowed when userCanRead is called. This 
-	 * leads to an early initialization of $user object, which is needed in 
+	 * This function triggers User::isAllowed when userCanRead is called. This
+	 * leads to an early initialization of $user object, which is needed in
 	 * order to have correct permission sets in BlueSpice.
 	 * @param Title $title
 	 * @param User $user
@@ -530,7 +529,7 @@ class BsCore {
 
 		/**
 	 * Determines the request URI for Apache and IIS
-	 * 
+	 *
 	 * @param bool $getUrlEncoded set to true to get URI url encoded
 	 * @return string the requested URI
 	 */
@@ -858,7 +857,7 @@ class BsCore {
 	/**
 	 * Needed for edit and sumbit (preview) mode
 	 * @param <type> $editPage
-	 * @return <type> 
+	 * @return <type>
 	 */
 	public function lastChanceBehaviorSwitches( $editPage ) {
 		// TODO SW(05.01.12 15:39): Profiling
@@ -920,7 +919,7 @@ class BsCore {
 	}
 
 	/**
-	 * Make the page being parsed have a dependency on $page via the templatelinks table. 
+	 * Make the page being parsed have a dependency on $page via the templatelinks table.
 	 * http://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
 	 * @param Parser $oParser
 	 * @param String $sTitle
@@ -931,7 +930,7 @@ class BsCore {
 	}
 
 	/**
-	 * Make the page being parsed have a dependency on $page via the templatelinks table. 
+	 * Make the page being parsed have a dependency on $page via the templatelinks table.
 	 * http://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
 	 * @param Parser $oParser
 	 * @param Title $oTitle
@@ -941,7 +940,7 @@ class BsCore {
 		$iPageId = $oRevision ? $oRevision->getPage() : 0;
 		$iRevId  = $oRevision ? $oRevision->getId()   : 0;
 
-		$oParser->getOutput()->addTemplate( 
+		$oParser->getOutput()->addTemplate(
 			$oTitle,
 			$iPageId,
 			$iRevId

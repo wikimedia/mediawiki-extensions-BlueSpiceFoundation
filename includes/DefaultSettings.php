@@ -36,6 +36,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgApiFrameOptions = 'SAMEORIGIN';
 $wgRSSUrlWhitelist = array( "*" );
+$wgExternalLinkTarget = '_blank';
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
@@ -100,3 +101,12 @@ $bsgExtJSThemes = array(
 $bsgExtJSTheme = 'bluespice';
 
 unset($sResourcesPath);
+
+/**
+ * Allows extensions to distinguish between normal content NS, that can be 
+ * renamed of deleted and system NS that can not be modified. Used in 
+ * BlueSpiceExtensions/NamespaceManager and NamespaceHelper
+ */
+$bsgSystemNamespaces = array(
+	//1599 => 'NS_COOL_STUFF'
+);

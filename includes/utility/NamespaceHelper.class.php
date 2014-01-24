@@ -1,14 +1,6 @@
 <?php
 
 class BsNamespaceHelper {
-	//TODO: Use this logic for contants mapping
-	/*
-	$aConsts = get_defined_constants(true);
-	foreach($aConsts['user'] as $sContantName => $sContantValue ) {
-		if(substr($sContantName, 0, 3) != 'NS_' ) continue;
-		error_log($sContantValue.' -> '.$sContantName);
-	}
-	 */
 	
 	protected static $aNamespaceMap = array(
 		-2 => 'NS_MEDIA',
@@ -45,11 +37,20 @@ class BsNamespaceHelper {
 	}
 
 	/**
-	 * returns array with MW NS Mapping
+	 * Returns array with MW NS Mapping
 	 * @return Array 
 	 */
 	public static function getMwNamespaceConstants() {
-		return self::$aNamespaceMap;
+		//TODO: Use this logic for contants mapping
+		/*
+		$aConsts = get_defined_constants(true);
+		foreach($aConsts['user'] as $sContantName => $sContantValue ) {
+			if(substr($sContantName, 0, 3) != 'NS_' ) continue;
+			//$sContantValue -> $sContantName;
+		}
+		*/
+		global $bsgSystemNamespaces;
+		return self::$aNamespaceMap + $bsgSystemNamespaces;
 	}
 
 	/**

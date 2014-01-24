@@ -18,8 +18,11 @@ Ext.define( 'BS.CRUDPanel', {
 	hideBorder: true,
 	tbarHeight: 44,
 
-	//Custom Settings
-	currentData: {},
+	constructor: function() {
+		//Custom Settings
+		this.currentData = {};
+		this.callParent(arguments);
+	},
 
 	initComponent: function() {
 		this.btnAdd = Ext.create( 'Ext.Button', {

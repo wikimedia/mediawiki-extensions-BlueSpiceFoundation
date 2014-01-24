@@ -1,8 +1,13 @@
 ( function ( mw, bs, $, d,undefined ) {
 	"use strict";
 	
-	//Ext.QuickTips.init(); //This is not needed but it allows us to place 
-	//anchortags with special data attributes
+	//This allows us to place anchortags with special data attributes
+	Ext.QuickTips.init();
+	
+	//Allows to have stateful ExtJS components
+	Ext.state.Manager.setProvider(new Ext.state.CookieProvider({
+		expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30))
+	}));
 
 	//Experimental feature. May be improved in the future
 	$('a.mw-userlink').each(function(){

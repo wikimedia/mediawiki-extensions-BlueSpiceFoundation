@@ -72,6 +72,11 @@ class BsExtensionManager {
 	}
 	
 	public static function getRegisteredExtenions() {
+		wfDeprecated( __METHOD__ );
+		return self::$prRegisteredExtensions;
+	}
+	
+	public static function getRegisteredExtensions() {
 		return self::$prRegisteredExtensions;
 	}
 
@@ -159,8 +164,8 @@ class BsExtensionManager {
 	 * @param string $sCanonicalName
 	 * @param int $iBaseIndex
 	 */
-	public static function registerNamespace( $sCanonicalName, $iBaseIndex ) {
-		global $wgExtraNamespaces;
+	public static function registerNamespace( $sCanonicalName, $iBaseIndex, $isSystemNamespace = true ) {
+		global $wgExtraNamespaces, $bsgSystemNamespaces;
 
 		$sConstantName = 'NS_'.mb_strtoupper( $sCanonicalName );
 		$iCalculatedNSId = BS_NS_OFFSET + $iBaseIndex;
@@ -168,6 +173,10 @@ class BsExtensionManager {
 		if ( !defined( $sConstantName ) ) {
 			define( $sConstantName, $iCalculatedNSId );
 			$wgExtraNamespaces[$iCalculatedNSId] = $sCanonicalName;
+		}
+		
+		if ( $isSystemNamespace ) {
+			$bsgSystemNamespaces[$iCalculatedNSId] = $sConstantName;
 		}
 
 		//Talk namespace
@@ -177,6 +186,10 @@ class BsExtensionManager {
 		if ( !defined( $sConstantName ) ) {
 			define( $sConstantName, $iCalculatedNSId );
 			$wgExtraNamespaces[$iCalculatedNSId] = $sCanonicalName.'_talk';
+		}
+		
+		if ( $isSystemNamespace ) {
+			$bsgSystemNamespaces[$iCalculatedNSId] = $sConstantName;
 		}
 	}
 }

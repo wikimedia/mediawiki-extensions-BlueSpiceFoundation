@@ -478,4 +478,46 @@ class BsFileSystemHelper {
 		return $path;
 	}
 
+	public static function saveBase64ToTmp($sFileName, $sFileContent){
+		$sFileName = wfTempDir() . DS . basename($sFileName);
+		
+		$sFileContent = preg_replace("#data:.*;base64,#", "", $sFileContent);
+		$sFileContent = str_replace(' ', '+', $sFileContent);
+		$sFileContent = base64_decode($sFileContent);
+		$bFile = file_put_contents($sFileName, $sFileContent);
+		if ($bFile === 0 || $bFile === false)
+			return Status::newFatal(wfMessage('bs-filesystemhelper-save-base64-error')->plain());
+		else
+			return Status::newGood($sFileName);
+	}
+	
+	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false){
+		global $wgLocalFileRepo, $wgUser;
+		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo));
+		$oFile = $oUploadStash->stashFile($sFilename, "file");
+		if ($oFile === false)
+			return Status::newFailure(wfMessage('bs-filesystemhelper-upload-local-error-stash-file')->plain());
+		$oUploadFromStash = new UploadFromStash($wgUser, $oUploadStash, $wgLocalFileRepo);
+		$oUploadFromStash->initialize($oFile->getFileKey(), basename($sFilename));
+		$aStatus = $oUploadFromStash->verifyUpload();
+		if ($aStatus['status'] != UploadBase::OK) {
+			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
+		}
+		$status = $oUploadFromStash->performUpload($sComment, $sPageText, $bWatch, $wgUser);
+		$oUploadFromStash->cleanupTempFile();
+		
+		if (file_exists($sFilename) && $bDeleteSrc)
+			unlink($sFilename);
+		$oFile = wfFindFile(basename($sFilename));
+		if ($status->isGood() && $oFile !== false){
+			if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
+				return Status::newGood(SecureFileStore::secureStuff($oFile->getUrl(), true));
+			}
+			else
+				return Status::newGood($oFile->getUrl(), true);
+		}
+		else
+			return Status::newFatal (wfMessage('bs-filesystemhelper-upload-local-error-create')->plain());
+	}
+	
 }
