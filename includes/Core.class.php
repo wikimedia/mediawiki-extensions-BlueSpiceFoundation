@@ -41,6 +41,11 @@
 class BsCore {
 
 	public $aBehaviorSwitches = array();
+
+	protected $aEditButtons = array();
+
+	protected $aEditButtonRanking = array();
+
 	/**
 	 * Array of illegal chars in article title
 	 * @var array
@@ -82,24 +87,12 @@ class BsCore {
 	 */
 	protected static $aUserMiniProfiles = array();
 
-	protected $bUserFetchRights = false;
-
-	protected $loggedInByHash = false;
-
-	protected $aEditButtons = array();
-
-	protected $aEditButtonRanking = array();
-
 	protected static $aClientScriptBlocks = array();
 
-	private $sTempGroup = '';
-
+	protected static $bHtmlFormClassLoaded = false;
 
 	/**
-	 * The constructor is protected because of the singleton pattern. Use the
-	 * static BsCore::getInstance( $adapter ) method to retrieve a instance.
-	 * @param string $adapter Name of requested adapter. For example "MW", "WP",
-	 *  "ELGG".
+	 * The constructor is protected because of the singleton pattern.
 	 */
 	protected function __construct() {
 		wfProfileIn('Performance: ' . __METHOD__);
@@ -188,107 +181,101 @@ class BsCore {
 		 * Eine Trennung zwischen getParam und sanitize besteht, da man bei getParam angeben kann, ob man im Fehlerfall
 		 * Default-Werte verwenden mÃ¶chte oder versucht werden soll, die Daten mit sanitize zu bereinigen.
 		 * Ich denke, das jeder Programmierer seinen Extensions passende Default-Werte liefern sollte.
-		 * Beim Sanitizen der Default-Werte entsteht sonst ggf. das Problem, das wir keinen gÃ¼ltigen Wert zurÃ¼ckgeben kÃ¶nnen. (NULL?)
+		 * Beim Sanitizen der Default-Werte entsteht sonst ggf. das Problem, das wir keinen gÃ¼ltigen Wert zurÃ¼ckgeben kÃ¶nnen. (null?)
 		 * Das wÃ¼rde einen groÃŸen Vorteil des Sanitizers (die nicht mehr benÃ¶tigte GÃ¼ltigkeitsprÃ¼fung) wieder aushebeln.
 		 */
-		if ($options & BsPARAMTYPE::RAW) {
+		if ( $options & BsPARAMTYPE::RAW ) {
 			return $handover;
 		}
-		if ($options & BsPARAMTYPE::ARRAY_MIXED) {
-			if (is_array($handover)) {
+		if ( $options & BsPARAMTYPE::ARRAY_MIXED ) {
+			if ( is_array( $handover ) ) {
 				return $handover;
 			}
-			return array($handover);
+			return array( $handover );
 		}
-		if ($options & BsPARAMTYPE::NUMERIC) {
-			if (is_numeric($handover)) {
+		if ( $options & BsPARAMTYPE::NUMERIC ) {
+			if ( is_numeric( $handover ) ) {
 				return $handover;
 			}
-			return floatval($handover);
+			return floatval( $handover );
 		}
-		if ($options & BsPARAMTYPE::INT) {
-			if (is_int($handover)) {
+		if ( $options & BsPARAMTYPE::INT ) {
+			if ( is_int( $handover ) ) {
 				return $handover;
 			}
-			return intval($handover);
+			return intval( $handover );
 		}
-		if ($options & BsPARAMTYPE::FLOAT) {
-			if (is_float($handover)) {
+		if ( $options & BsPARAMTYPE::FLOAT ) {
+			if ( is_float( $handover ) ) {
 				return $handover;
 			}
-			return floatval($handover);
+			return floatval( $handover );
 		}
-		if ($options & BsPARAMTYPE::BOOL) {
-			if ($handover == 'false'
-					|| $handover == '0'
-					|| $handover == '')
+		if ( $options & BsPARAMTYPE::BOOL ) {
+			if ( $handover == 'false' || $handover == '0' || $handover == '' ) {
 				$handover = false;
-			if ($handover == 'true'
-					|| $handover == '1')
+			}
+			if ( $handover == 'true' || $handover == '1' ) {
 				$handover = true;
-			if (is_bool($handover)) {
+			}
+			if ( is_bool( $handover ) ) {
 				return $handover;
 			}
 			return (bool)$handover;
 		}
-		if ($options & BsPARAMTYPE::STRING) {
+		if ( $options & BsPARAMTYPE::STRING ) {
 			if ( is_string( $handover ) ) {
-				if ($options & BsPARAMOPTION::CLEANUP_STRING) {
+				if ( $options & BsPARAMOPTION::CLEANUP_STRING ) {
 					return addslashes( strip_tags( $handover ) );
 				}
 				return $handover;
 			}
 		}
-		if ($options & BsPARAMTYPE::SQL_STRING) {
-			if (is_string($handover)) {
-				global $wgDBtype;
+		if ( $options & BsPARAMTYPE::SQL_STRING ) {
+			if ( is_string( $handover ) ) {
+				$oDb = wfGetDB( DB_SLAVE );
+				// Use database specific escape methods
+				$handover = $oDb->strencode( $handover );
 
-				if ( $wgDBtype == 'postgres' ) {
-					$handover = pg_escape_string( $handover );
-				} elseif ( $wgDBtype == 'oracle' ) {
-					$handover = addslashes( $handover );
-				} else {
-					$handover = addslashes( $handover );
-				}
 				return $handover;
 			}
 		}
-		if ($options & BsPARAMTYPE::ARRAY_NUMERIC && is_array($handover)) {
-			foreach ($handover as $k => $v) {
-				if (!is_numeric($v)) {
-					$handover[$k] = NULL;
+		if ( $options & BsPARAMTYPE::ARRAY_NUMERIC && is_array( $handover ) ) {
+			foreach ( $handover as $k => $v ) {
+				if ( !is_numeric( $v ) ) {
+					$handover[$k] = null;
 				}
 			}
 			return $handover;
 		}
-		if ($options & BsPARAMTYPE::ARRAY_INT && is_array($handover)) {
-			foreach ($handover as $key => $v) {
-				if (!is_int($v)) {
-					$handover[$key] = NULL;
+		if ( $options & BsPARAMTYPE::ARRAY_INT && is_array( $handover ) ) {
+			foreach ( $handover as $key => $v ) {
+				if ( !is_int( $v ) ) {
+					$handover[$key] = null;
 				}
 			}
 			return $handover;
 		}
-		if ($options & BsPARAMTYPE::ARRAY_FLOAT && is_array($handover)) {
-			foreach ($handover as $key => $v) {
-				if (!is_float($v)) {
-					$handover[$key] = NULL;
+		if ( $options & BsPARAMTYPE::ARRAY_FLOAT && is_array( $handover ) ) {
+			foreach ( $handover as $key => $v ) {
+				if ( !is_float( $v ) ) {
+					$handover[$key] = null;
 				}
 			}
 			return $handover;
 		}
-		if ($options & BsPARAMTYPE::ARRAY_BOOL && is_array($handover)) {
+		if ( $options & BsPARAMTYPE::ARRAY_BOOL && is_array( $handover ) ) {
 			foreach ($handover as $key => $v) {
 				if (!is_bool($v)) {
-					$handover[$key] = NULL;
+					$handover[$key] = null;
 				}
 			}
 			return $handover;
 		}
-		if ($options & BsPARAMTYPE::ARRAY_STRING && is_array($handover)) {
-			foreach ($handover as $key => $v) {
-				if (!is_string($v)) {
-					$handover[$key] = NULL;
+		if ( $options & BsPARAMTYPE::ARRAY_STRING && is_array( $handover ) ) {
+			foreach ( $handover as $key => $v ) {
+				if ( !is_string( $v ) ) {
+					$handover[$key] = null;
 				}
 			}
 			return $handover;
@@ -350,7 +337,11 @@ class BsCore {
 		return $sTreeJSON;
 	}
 
-	public function doInitialise() {
+	public static function doInitialise() {
+		wfProfileIn('Performance: ' . __METHOD__ . ' - Initialize Core');
+		self::$oInstance = new BsCore();
+		wfProfileIn('Performance: ' . __METHOD__ . ' - Initialize Core');
+
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load Settings');
 		if ( !defined( 'DO_MAINTENANCE' ) ) {
 			BsConfig::loadSettings();
@@ -358,8 +349,18 @@ class BsCore {
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load Settings');
 
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
-		BsExtensionManager::includeExtensionFiles( $this );
+		BsExtensionManager::includeExtensionFiles( self::$oInstance );
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
+
+		global $wgHooks;
+		$wgHooks['ArticleAfterFetchContent'][] = array( self::$oInstance, 'behaviorSwitches' );
+		$wgHooks['ParserBeforeStrip'][] = array( self::$oInstance, 'hideBehaviorSwitches' );
+		$wgHooks['ParserBeforeTidy'][] = array( self::$oInstance, 'recoverBehaviorSwitches' );
+
+		array_unshift(
+			$wgHooks['EditPage::showEditForm:initial'],
+			array( self::$oInstance, 'lastChanceBehaviorSwitches' )
+		);
 
 		//TODO: This does not seem to be the right place for stuff like this.
 		global $wgFileExtensions;
@@ -369,79 +370,6 @@ class BsCore {
 		$wgFileExtensions = array_values( array_unique( $wgFileExtensions ) );
 	}
 
-	/**
-	 *
-	 * @param User $oUser
-	 * @param array $aRights
-	 * @return boolean
-	 */
-	public function onUserGetRights( $oUser, &$aRights ) {
-		wfProfileIn('BS::' . __METHOD__);
-		if ( $oUser->isAnon() ) {
-			$oRequest = RequestContext::getMain()->getRequest();
-			$iUserId = $oRequest->getVal( 'u', '' );
-			$sUserHash = $oRequest->getVal( 'h', '' );
-
-			if ( !empty( $iUserId ) && !empty( $sUserHash ) ) {
-				$this->loggedInByHash = true;
-				$_user = User::newFromName( $iUserId );
-				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
-					$result = $_user->isAllowed( 'read' );
-					$oUser = $_user;
-				}
-			}
-		}
-		if ( $this->bUserFetchRights == false ) {
-			$aRights = User::getGroupPermissions( $oUser->getEffectiveGroups( true ) );
-			# The flag is deactivated to prevent some bugs with the loading of the actual users rights.
-			# $this->bUserFetchRights = true;
-		}
-		wfProfileOut('BS::' . __METHOD__);
-		return true;
-	}
-
-	/**
-	 * This function triggers User::isAllowed when userCanRead is called. This
-	 * leads to an early initialization of $user object, which is needed in
-	 * order to have correct permission sets in BlueSpice.
-	 * @param Title $title
-	 * @param User $user
-	 * @param string $action
-	 * @param boolean $result
-	 */
-	public function onUserCan( &$title, &$user, $action, &$result ) {
-		//wfProfileIn('BS::' . __METHOD__);
-		if ( !$this->loggedInByHash ) {
-			wfProfileIn('--BS::' . __METHOD__ . 'if !$this->loggedInByHash');
-			$oRequest = RequestContext::getMain()->getRequest();
-			$iUserId = $oRequest->getVal( 'u', '' );
-			$sUserHash = $oRequest->getVal( 'h', '' );
-
-			if ( empty( $iUserId ) || empty( $sUserHash ) ) {
-				wfProfileOut('--BS::' . __METHOD__ . 'if !$this->loggedInByHash');
-				return true;
-			}
-
-			$user->mGroups = array();
-			$user->getEffectiveGroups( true );
-			if ( $iUserId && $sUserHash ) {
-				$this->loggedInByHash = true;
-				$_user = User::newFromName( $iUserId );
-				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
-					$result = $_user->isAllowed( 'read' );
-					$user = $_user;
-				}
-			}
-			wfProfileOut('--BS::' . __METHOD__ . 'if !$this->loggedInByHash');
-		}
-
-		if ( $action == 'read' ) {
-			$result = $user->isAllowed( $action );
-		}
-		//wfProfileOut('BS::' . __METHOD__);
-		return true;
-	}
-
 	/* Returns the filesystem path of the core installation
 	 * @return String Filesystempath to the core installation
 	 */
@@ -449,8 +377,6 @@ class BsCore {
 	public static function getFileSystemPath() {
 		return BSROOTDIR;
 	}
-
-	protected static $bHtmlFormClassLoaded = false;
 
 	/**
 	 * Depending on the MediaWiki version, this method try to load the HtmlForm class.
@@ -611,62 +537,6 @@ class BsCore {
 	}
 
 	/**
-	 * Adds the default values for the searchbox.
-	 * @param Object $callingInstance. Object of the calling Instance
-	 * @param Array $aSearchBoxKeyValues. A reference of the form value array.
-	 * @return bool Always true to keep hook running.
-	 */
-	public function onFormDefaults( $callingInstance, &$aSearchBoxKeyValues ) {
-		wfProfileIn('BS::' . __METHOD__);
-		$aLocalUrl = explode( '?', SpecialPage::getTitleFor( 'Search' )->getLocalUrl() );
-
-		$aSearchBoxKeyValues['SubmitButtonTitle'] = wfMessage('bs-extended-search-tooltip-title', 'Search for titles' )->plain();
-		$aSearchBoxKeyValues['SubmitButtonFulltext'] = wfMessage('bs-extended-search-tooltip-fulltext', 'Search inside articles' )->plain();
-		$aSearchBoxKeyValues['SearchTextFieldTitle'] = wfMessage('bs-extended-search-textfield-tooltip', 'Search BlueSpice for Mediawiki [alt-shift-f]' )->plain();
-		$aSearchBoxKeyValues['SearchTextFieldDefaultText'] = wfMessage('bs-extended-search-textfield-defaultvalue', 'Search...' )->plain();
-
-		if ( isset( $aSearchBoxKeyValues['SearchDestination'] ) ) return true;
-
-		//$searchBoxKeyValues['SearchDestination'] = SpecialPage::getTitleFor('SpecialExtendedSearch')->getLocalUrl(); //BsConfig::get( 'MW::ScriptPath' ).'/index.php/Special:SpecialExtendedSearch';
-		$aSearchBoxKeyValues['SearchDestination'] = $aLocalUrl[0];
-		if ( isset( $aLocalUrl[1] ) && strpos( $aLocalUrl[1], '=' ) !== false ) {
-			$aTitle = explode( '=', $aLocalUrl[1] );
-			$aSearchBoxKeyValues['HiddenFields']['title'] = $aTitle[1];
-		}
-		$aSearchBoxKeyValues['SearchTextFieldName'] = 'search';
-		$aSearchBoxKeyValues['DefaultKeyValuePair'] = array( 'button', '' );
-		$aSearchBoxKeyValues['TitleKeyValuePair'] = array( 'button', '' );
-		$aSearchBoxKeyValues['FulltextKeyValuePair'] = array( 'fulltext', 'Search' );
-		$aSearchBoxKeyValues['method'] = 'post'; // mediawiki's default
-		wfProfileOut('BS::' . __METHOD__);
-		return true;
-	}
-
-	/**
-	 * additional chances to reject an uploaded file
-	 * @param string $saveName: destination file name
-	 * @param string $tempName: filesystem path to the temporary file for checks
-	 * @param string &$error: output: message key for message to show if upload canceled by returning false. May also be an array, where the first element
-										is the message key and the remaining elements are used as parameters to the message.
-	 * @return bool true on success , false on failure
-	 */
-	public function onUploadVerification( $saveName, $tempName, &$error ) {
-		$aParts = explode( '.', $saveName );
-		if ( !empty( $aParts[0] ) ) {
-			$oUser = User::newFromName( $aParts[0] );
-			if ( $oUser->getId() != 0 ) {
-				global $wgUser;
-				if ( strcasecmp( $oUser->getName(), $wgUser->getName() ) != 0 ) {
-					$error = 'bs-imageofotheruser';
-					return false;
-				}
-			}
-		}
-
-		return true;
-	}
-
-	/**
 	 * Creates a miniprofile for a user. It consists if the useres profile image
 	 * and links to his userpage. In future versions it should also have a
 	 * little menu with his mail adress, and other profile information.
@@ -676,19 +546,24 @@ class BsCore {
 	 */
 	public function getUserMiniProfile( $oUser, $aParams = array() ) {
 		wfProfileIn('BS::' . __METHOD__);
-		$sParamsHash = md5(serialize($aParams));
+		$sParamsHash = md5( serialize( $aParams ) );
 		$sViewHash = $oUser->getName() . $sParamsHash;
+
 		if ( isset( self::$aUserMiniProfiles[$sViewHash] ) ) {
 			wfProfileOut('BS::' . __METHOD__);
 			return self::$aUserMiniProfiles[$sViewHash];
 		}
+
 		$oUserMiniProfileView = new ViewUserMiniProfile();
 		$oUserMiniProfileView->setOptions( $aParams );
 		$oUserMiniProfileView->setOption( 'user', $oUser );
+
 		wfRunHooks( 'BSAdapterGetUserMiniProfileBeforeInit', array( $oUserMiniProfileView, $oUser, $aParams ) );
+
 		$oUserMiniProfileView->init();
 
 		self::$aUserMiniProfiles[$sViewHash] = $oUserMiniProfileView;
+
 		wfProfileOut('BS::' . __METHOD__);
 		return $oUserMiniProfileView;
 	}
@@ -720,89 +595,6 @@ class BsCore {
 		$wgAvailableRights[] = $sPermissionName;
 
 		wfProfileOut('BS::' . __METHOD__);
-	}
-
-	/**
-	 * @global Array $wgGroupPermissions
-	 * @param User $oUser
-	 * @param String $sGroupName
-	 * @param Array $aPermissions
-	 * @return boolean alway true - keeps the hook system running
-	 */
-	public function addTemporaryGroupToUser( $oUser, $sGroupName, $aPermissions ) {
-		global $wgGroupPermissions;
-
-		foreach( $aPermissions as $sPermission ) {
-			$wgGroupPermissions[$sGroupName][$sPermission]	= true;
-		}
-
-		$this->sTempGroup = $sGroupName;
-
-		$oUser->addGroup($sGroupName);
-
-		return true;
-	}
-
-	/**
-	 * Hook-Handler for MediaWiki hook UserAddGroup
-	 * @param User $user
-	 * @param String $group
-	 * @return boolean - returns false to skip saving group into db
-	 */
-	public function addTemporaryGroupToUserHelper( $user, &$group ) {
-		if( empty( $this->sTempGroup ) || $this->sTempGroup !== $group ) return true;
-		$this->sTempGroup = '';
-		return false;
-	}
-
-	/**
-	 * Hook-Handler for 'BSBlueSpiceSkinAfterArticleContent'. Creates a settings toolbox on the users own page.
-	 * @param array $aViews Array of views to be rendered in skin
-	 * @param User $oUser Current user object
-	 * @param Title $oTitle Current title object
-	 * @return bool Always true to keep hook running.
-	 */
-	public function onBlueSpiceSkinAfterArticleContent(&$aViews, $oUser, $oTitle) {
-		global $wgScriptPath;
-		if ( !$oTitle->equals( $oUser->getUserPage() ) )
-			return true; //Run only if on current users profile/userpage
-		wfProfileIn('BS::' . __METHOD__);
-		$aSettingViews = array();
-		wfRunHooks( 'BS:UserPageSettings', array( $oUser, $oTitle, &$aSettingViews ) );
-
-		$oUserPageSettingsView = new ViewBaseElement();
-		$oUserPageSettingsView->setAutoWrap( '<div id="bs-usersidebar-settings" class="bs-userpagesettings-item">###CONTENT###</div>' );
-		$oUserPageSettingsView->setTemplate(
-				'<a href="{URL}" title="{TITLE}"><img alt="{IMGALT}" src="{IMGSRC}" /><div class="bs-user-label">{TEXT}</div></a>'
-		);
-		$oUserPageSettingsView->addData(
-				array(
-					'URL' => htmlspecialchars( Title::newFromText('Special:Preferences')->getLinkURL() ),
-					'TITLE' => wfMessage('bs-userpreferences-link-title')->plain(),
-					'TEXT' => wfMessage('bs-userpreferences-link-text')->plain(),
-					'IMGALT' => wfMessage('bs-userpreferences-link-title')->plain(),
-					'IMGSRC' => $wgScriptPath . '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-userpage-settings.png',
-				)
-		);
-
-		$aSettingViews[] = $oUserPageSettingsView;
-
-		$oProfilePageSettingsView = new ViewBaseElement();
-		$oProfilePageSettingsView->setId('bs-userpagesettings');
-
-		$oProfilePageSettingsFieldsetView = new ViewFormElementFieldset();
-		$oProfilePageSettingsFieldsetView->setLabel(
-				wfMessage('bs-userpagesettings-legend')->plain()
-		);
-
-		foreach ($aSettingViews as $oSettingsView) {
-			$oProfilePageSettingsFieldsetView->addItem($oSettingsView);
-		}
-
-		$oProfilePageSettingsView->addItem($oProfilePageSettingsFieldsetView);
-		$aViews[] = $oProfilePageSettingsView;
-		wfProfileOut('BS::' . __METHOD__);
-		return true;
 	}
 
 	public function registerBehaviorSwitch( $sMagicWord, $aCallback = null ) {

@@ -1,6 +1,10 @@
 <?php
 class BsCoreHooks {
 
+	protected static $bUserFetchRights = false;
+
+	protected static $loggedInByHash = false;
+
 	public static function onSetupAfterCache() {
 		global $wgExtensionFunctions, $wgGroupPermissions, $wgWhitelistRead, $wgMaxUploadSize,
 		$wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown, $wgNonincludableNamespaces,
@@ -14,7 +18,7 @@ class BsCoreHooks {
 			'pm-settings.php'
 		);
 
-		foreach( $aConfigFiles as $sConfigFile) {
+		foreach ( $aConfigFiles as $sConfigFile) {
 			$sConfigFilePath = $sConfigPath . DS . $sConfigFile;
 			if ( file_exists( $sConfigFilePath ) ) {
 				include( $sConfigFilePath );
@@ -53,7 +57,7 @@ class BsCoreHooks {
 	* @return boolean
 	*/
 	public static function onBeforePageDisplay( $out, $skin) {
-		global $IP,$wgFavicon, $wgExtensionAssetsPath,
+		global $IP, $wgFavicon, $wgExtensionAssetsPath,
 			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
 
 		$out->addModuleScripts( 'ext.bluespice.scripts' );
@@ -89,19 +93,19 @@ class BsCoreHooks {
 		}
 
 		$aScriptBlocks = BsCore::getClientScriptBlocks();
-		foreach( $aScriptBlocks as $sKey => $aClientScriptBlock ) {
+		foreach ( $aScriptBlocks as $sKey => $aClientScriptBlock ) {
 			$aOutput[] = '<script type="text/javascript">';
 			$aOutput[] = '//'.$aClientScriptBlock[0].' ('.$sKey.')';
 			$aOutput[] = $aClientScriptBlock[1];
 			$aOutput[] = '</script>';
-			$out->addScript(implode("\n", $aOutput));
+			$out->addScript( implode( "\n", $aOutput ) );
 		}
 
 		//Make some variables available on client side:
 		global $wgEnableUploads, $wgMaxUploadSize;
 		$iMaxPhpUploadSize = (int) ini_get('upload_max_filesize');
 		$aMaxUploadSize = array(
-			'php'       => 1024*1024*$iMaxPhpUploadSize,
+			'php' => 1024*1024*$iMaxPhpUploadSize,
 			'mediawiki' => $wgMaxUploadSize
 		);
 
@@ -313,4 +317,192 @@ class BsCoreHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * @param User $oUser
+	 * @param array $aRights
+	 * @return boolean
+	 */
+	public static function onUserGetRights( $oUser, &$aRights ) {
+		wfProfileIn('BS::' . __METHOD__);
+
+		if ( $oUser->isAnon() ) {
+			$oRequest = RequestContext::getMain()->getRequest();
+			$iUserId = $oRequest->getVal( 'u', '' );
+			$sUserHash = $oRequest->getVal( 'h', '' );
+
+			if ( !empty( $iUserId ) && !empty( $sUserHash ) ) {
+				$this->loggedInByHash = true;
+				$_user = User::newFromName( $iUserId );
+				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
+					$result = $_user->isAllowed( 'read' );
+					$oUser = $_user;
+				}
+			}
+		}
+
+		if ( self::$bUserFetchRights == false ) {
+			$aRights = User::getGroupPermissions( $oUser->getEffectiveGroups( true ) );
+			# The flag is deactivated to prevent some bugs with the loading of the actual users rights.
+			# $this->bUserFetchRights = true;
+		}
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * This function triggers User::isAllowed when userCanRead is called. This
+	 * leads to an early initialization of $user object, which is needed in
+	 * order to have correct permission sets in BlueSpice.
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param boolean $result
+	 */
+	public static function onUserCan( &$title, &$user, $action, &$result ) {
+		wfProfileIn('BS::' . __METHOD__);
+		if ( !self::$loggedInByHash ) {
+			wfProfileIn('--BS::' . __METHOD__ . 'if !$this->loggedInByHash');
+			$oRequest = RequestContext::getMain()->getRequest();
+			$iUserId = $oRequest->getVal( 'u', '' );
+			$sUserHash = $oRequest->getVal( 'h', '' );
+
+			if ( empty( $iUserId ) || empty( $sUserHash ) ) {
+				wfProfileOut('--BS::' . __METHOD__ . 'if !self::$loggedInByHash');
+				return true;
+			}
+
+			$user->mGroups = array();
+			$user->getEffectiveGroups( true );
+			if ( $iUserId && $sUserHash ) {
+				self::$loggedInByHash = true;
+				$_user = User::newFromName( $iUserId );
+				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
+					$result = $_user->isAllowed( 'read' );
+					$user = $_user;
+				}
+			}
+			wfProfileOut('--BS::' . __METHOD__ . 'if !self::$loggedInByHash');
+		}
+
+		if ( $action == 'read' ) {
+			$result = $user->isAllowed( $action );
+		}
+
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * Adds the default values for the searchbox.
+	 * @param Object $callingInstance. Object of the calling Instance
+	 * @param Array $aSearchBoxKeyValues. A reference of the form value array.
+	 * @return bool Always true to keep hook running.
+	 */
+	public static function onFormDefaults( $callingInstance, &$aSearchBoxKeyValues ) {
+		wfProfileIn('BS::' . __METHOD__);
+		$aLocalUrl = explode( '?', SpecialPage::getTitleFor( 'Search' )->getLocalUrl() );
+
+		$aSearchBoxKeyValues['SubmitButtonTitle'] = wfMessage('bs-extended-search-tooltip-title', 'Search for titles' )->plain();
+		$aSearchBoxKeyValues['SubmitButtonFulltext'] = wfMessage('bs-extended-search-tooltip-fulltext', 'Search inside articles' )->plain();
+		$aSearchBoxKeyValues['SearchTextFieldTitle'] = wfMessage('bs-extended-search-textfield-tooltip', 'Search BlueSpice for Mediawiki [alt-shift-f]' )->plain();
+		$aSearchBoxKeyValues['SearchTextFieldDefaultText'] = wfMessage('bs-extended-search-textfield-defaultvalue', 'Search...' )->plain();
+
+		if ( isset( $aSearchBoxKeyValues['SearchDestination'] ) ) return true;
+
+		$aSearchBoxKeyValues['SearchDestination'] = $aLocalUrl[0];
+
+		if ( isset( $aLocalUrl[1] ) && strpos( $aLocalUrl[1], '=' ) !== false ) {
+			$aTitle = explode( '=', $aLocalUrl[1] );
+			$aSearchBoxKeyValues['HiddenFields']['title'] = $aTitle[1];
+		}
+
+		$aSearchBoxKeyValues['SearchTextFieldName'] = 'search';
+		$aSearchBoxKeyValues['DefaultKeyValuePair'] = array( 'button', '' );
+		$aSearchBoxKeyValues['TitleKeyValuePair'] = array( 'button', '' );
+		$aSearchBoxKeyValues['FulltextKeyValuePair'] = array( 'fulltext', 'Search' );
+		$aSearchBoxKeyValues['method'] = 'post'; // mediawiki's default
+
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * Additional chances to reject an uploaded file
+	 * @param string $saveName: destination file name
+	 * @param string $tempName: filesystem path to the temporary file for checks
+	 * @param string &$error: output: message key for message to show if upload canceled by returning false. May also be an array, where the first element
+										is the message key and the remaining elements are used as parameters to the message.
+	 * @return bool true on success , false on failure
+	 */
+	public static function onUploadVerification( $sSaveName, $sTempName, &$sError ) {
+		$aParts = explode( '.', $sSaveName );
+
+		if ( !empty( $aParts[0] ) ) {
+			$oUser = User::newFromName( $aParts[0] );
+
+			if ( $oUser->getId() != 0 ) {
+				$oCurrUser = RequestContext::getMain()->getUser();
+
+				if ( strcasecmp( $oUser->getName(), $oCurrUser->getName() ) !== 0 ) {
+					$sError = 'bs-imageofotheruser';
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Hook-Handler for 'BSBlueSpiceSkinAfterArticleContent'. Creates a settings toolbox on the users own page.
+	 * @param array $aViews Array of views to be rendered in skin
+	 * @param User $oUser Current user object
+	 * @param Title $oTitle Current title object
+	 * @return bool Always true to keep hook running.
+	 */
+	public static function onBlueSpiceSkinAfterArticleContent( &$aViews, $oUser, $oTitle ) {
+		if ( !$oTitle->equals( $oUser->getUserPage() ) ) return true; //Run only if on current users profile/userpage
+
+		wfProfileIn('BS::' . __METHOD__);
+		$aSettingViews = array();
+		wfRunHooks( 'BS:UserPageSettings', array( $oUser, $oTitle, &$aSettingViews ) );
+
+		$oUserPageSettingsView = new ViewBaseElement();
+		$oUserPageSettingsView->setAutoWrap( '<div id="bs-usersidebar-settings" class="bs-userpagesettings-item">###CONTENT###</div>' );
+		$oUserPageSettingsView->setTemplate(
+				'<a href="{URL}" title="{TITLE}"><img alt="{IMGALT}" src="{IMGSRC}" /><div class="bs-user-label">{TEXT}</div></a>'
+		);
+
+		global $wgScriptPath;
+		$oUserPageSettingsView->addData(
+				array(
+					'URL' => htmlspecialchars( Title::newFromText('Special:Preferences')->getLinkURL() ),
+					'TITLE' => wfMessage('bs-userpreferences-link-title')->plain(),
+					'TEXT' => wfMessage('bs-userpreferences-link-text')->plain(),
+					'IMGALT' => wfMessage('bs-userpreferences-link-title')->plain(),
+					'IMGSRC' => $wgScriptPath . '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-userpage-settings.png',
+				)
+		);
+
+		$aSettingViews[] = $oUserPageSettingsView;
+
+		$oProfilePageSettingsView = new ViewBaseElement();
+		$oProfilePageSettingsView->setId('bs-userpagesettings');
+
+		$oProfilePageSettingsFieldsetView = new ViewFormElementFieldset();
+		$oProfilePageSettingsFieldsetView->setLabel(
+				wfMessage('bs-userpagesettings-legend')->plain()
+		);
+
+		foreach ( $aSettingViews as $oSettingsView ) {
+			$oProfilePageSettingsFieldsetView->addItem($oSettingsView);
+		}
+
+		$oProfilePageSettingsView->addItem( $oProfilePageSettingsFieldsetView );
+		$aViews[] = $oProfilePageSettingsView;
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
 }

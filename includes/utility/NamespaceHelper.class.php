@@ -1,7 +1,7 @@
 <?php
 
 class BsNamespaceHelper {
-	
+
 	protected static $aNamespaceMap = array(
 		-2 => 'NS_MEDIA',
 		-1 => 'NS_SPECIAL',
@@ -22,7 +22,7 @@ class BsNamespaceHelper {
 		14 => 'NS_CATEGORY',
 		15 => 'NS_CATEGORY_TALK'
 	);
-	
+
 	/**
 	 * returns the constantname for MW NS like 0 => NS_MAIN
 	 * @param type $iNamespaceId
@@ -235,7 +235,7 @@ class BsNamespaceHelper {
 		wfProfileIn( 'BS::' . __METHOD__ );
 		if ( !is_numeric( $iID ) ) return false;
 
-		if ( ( $iID == 998 ||  $iID == 999 ) ) {
+		if ( ( $iID == 998 || $iID == 999 ) ) {
 			global $wgUser;
 			if ( $wgUser->isAllowed( 'searchfiles' ) ) {
 				wfProfileOut('BS::' . __METHOD__);

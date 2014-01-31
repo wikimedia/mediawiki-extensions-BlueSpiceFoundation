@@ -138,7 +138,7 @@ class BsFileSystemHelper {
 	 * @return string URL 
 	 */
 	public static function getDataPath($sSubDirName = '') {
-		$sDataPath = ( $sSubDirName ) ? BS_DATA_PATH . DS . $sSubDirName : BS_DATA_PATH;
+		$sDataPath = ( $sSubDirName ) ? BS_DATA_PATH . '/' . $sSubDirName : BS_DATA_PATH;
 		return $sDataPath;
 	}
 

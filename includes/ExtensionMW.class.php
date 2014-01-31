@@ -96,7 +96,7 @@ abstract class BsExtensionMW extends ContextSource {
 			$wgHooks[$hook][] = & $register;
 		}
 	}
-	
+
 	/**
 	 * Returns the resource path for the current extension
 	 * @global string $IP
@@ -125,43 +125,4 @@ abstract class BsExtensionMW extends ContextSource {
 		return dirname($this->getResourcePath()).'/images/';
 	}
 
-	/**
-	 * If your BlueSpice extension for MediaWiki is in need of a certain
-	 * database table just register it's schema file here. Next time update.php
-	 * is run from command line the table will automagically be created!
-	 * See http://www.mediawiki.org/wiki/Manual:Hooks/LoadExtensionSchemaUpdates for details.
-	 * @param string $sSchemaFileName Full path + filename to (.sql) file with create statement
-	 */
-	protected $aExtensionSchemes = array();
-	protected $bExtensionSchemaHookRegistered = false;
-
-	public function registerExtensionSchemaUpdate( $sDatabaseTableName, $sSchemaFileName ) {
-		global $wgDBtype;
-		// TODO RBV (01.03.11 11:26): Change method to support different update types (i.e. modification)
-
-		if ( $wgDBtype == 'postgres' ) {
-			$sSchemaFileName = substr( $sSchemaFileName, 0, -4 ).'.pg.sql';
-		} elseif ( $wgDBtype == 'oracle' ) {
-			$sSchemaFileName = substr( $sSchemaFileName, 0, -4 ).'.oci.sql';
-		}
-		$this->aExtensionSchemes[$sDatabaseTableName] = $sSchemaFileName;
-		// register mediawiki hook only once
-		if ( $this->bExtensionSchemaHookRegistered ) return;
-		global $wgHooks;
-		$wgHooks['LoadExtensionSchemaUpdates'][] = array( $this, 'onLoadExtensionSchemaUpdates' );
-		$this->bExtensionSchemaHookRegistered = true;
-	}
-
-	/**
-	 * This method gets called by the MediaWiki Framework
-	 * @param DatabaseUpdater $updater Provided by MediaWikis update.php
-	 * @return boolean Always true to keep the hook running
-	 */
-	public function onLoadExtensionSchemaUpdates( $updater ) {
-		global $wgExtNewTables;
-		foreach ( $this->aExtensionSchemes as $sDatabaseTableName => $sSchemaFileName ) {
-			$wgExtNewTables[] = array( $sDatabaseTableName, $sSchemaFileName );
-		}
-		return true;
-	}
 }

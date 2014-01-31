@@ -82,7 +82,6 @@ $wgExtensionMessagesFiles += array(
 $wgSpecialPageGroups['SpecialCredits'] = 'bluespice';
 $wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
 
-$oCore = BsCore::getInstance();
 $wgHooks['SetupAfterCache'][] = 'BsCoreHooks::onSetupAfterCache';
 $wgHooks['SoftwareInfo'][] = 'BsCoreHooks::onSoftwareInfo';
 $wgHooks['BeforePageDisplay'][] = 'BsCoreHooks::onBeforePageDisplay';
@@ -90,24 +89,19 @@ $wgHooks['LinkEnd'][] = 'BsCoreHooks::LinkEnd';
 $wgHooks['MakeGlobalVariablesScript'][] = 'BsCoreHooks::onMakeGlobalVariablesScript';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'BsCoreHooks::onLoadExtensionSchemaUpdates';
 $wgHooks['ApiCheckCanExecute'][] = 'BsCoreHooks::onApiCheckCanExecute';
-$wgHooks['UserGetRights'][] = array( $oCore, 'onUserGetRights' );
-$wgHooks['userCan'][] = array( $oCore, 'onUserCan' );
-$wgHooks['FormDefaults'][] = array( $oCore, 'onFormDefaults' );
-$wgHooks['UserAddGroup'][] = array( $oCore, 'addTemporaryGroupToUserHelper' );
-$wgHooks['UploadVerification'][] = array( $oCore, 'onUploadVerification' );
-$wgHooks['ArticleAfterFetchContent'][] = array( $oCore, 'behaviorSwitches' );
-$wgHooks['ParserBeforeStrip'][] = array( $oCore, 'hideBehaviorSwitches' );
-$wgHooks['ParserBeforeTidy'][] = array( $oCore, 'recoverBehaviorSwitches' );
-if( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
+$wgHooks['UserGetRights'][] = 'BsCoreHooks::onUserGetRights';
+$wgHooks['userCan'][] = 'BsCoreHooks::onUserCan';
+$wgHooks['FormDefaults'][] = 'BsCoreHooks::onFormDefaults';
+$wgHooks['UploadVerification'][] = 'BsCoreHooks::onUploadVerification';
+
+$wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
+
+if ( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
 	$wgHooks['EditPage::showEditForm:initial'] = array();
 }
-array_unshift(
-	$wgHooks['EditPage::showEditForm:initial'], 
-	array( $oCore, 'lastChanceBehaviorSwitches' )
-);
 
 //BlueSpice specific hooks
-$wgHooks['BSBlueSpiceSkinAfterArticleContent'][] = array( $oCore, 'onBlueSpiceSkinAfterArticleContent' );
+$wgHooks['BSBlueSpiceSkinAfterArticleContent'][] = 'BsCoreHooks::onBlueSpiceSkinAfterArticleContent';
 
 if ( $wgDBtype == 'oracle' ) {
 	$wgHooks['ArticleDelete'][] = 'BSOracleHooks::onArticleDelete';
@@ -115,8 +109,9 @@ if ( $wgDBtype == 'oracle' ) {
 
 //Setup
 $wgExtensionFunctions[] = 'BsCoreHooks::setup';
+
 // initalise BlueSpice as first extension in a fully initialised environment
 array_unshift(
-	$wgExtensionFunctions, 
-	array( $oCore, 'doInitialise' )
+	$wgExtensionFunctions,
+	'BsCore::doInitialise'
 );
