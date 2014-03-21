@@ -73,7 +73,10 @@ $messages['de'] = array(
 	'bs-filesystemhelper-save-base64-error'         => 'Die Datei konnte nicht gespeichert werden.',
 	'bs-filesystemhelper-upload-base64-error'       => 'Die Datei konnte nicht hochgeladen werden.',
 	'bs-filesystemhelper-upload-local-error-stash-file'=>'Die Datei konnte nicht in den Uploadstash verschoben werden.',
-	'bs-filesystemhelper-upload-local-error-create' => 'Die Datei konnte im Wiki nicht angelegt werden.'
+	'bs-filesystemhelper-upload-local-error-create' => 'Die Datei konnte im Wiki nicht angelegt werden.',
+	'bs-navigation-instructions' => 'Anleitung',
+	'bs-navigation-support' => 'Support',
+	'bs-navigation-contact' => 'Kontakt'
 );
 
 $messages['de-formal'] = array(
@@ -143,7 +146,10 @@ $messages['en'] = array(
 	'bs-filesystemhelper-save-base64-error'         => 'The file could not be saved.',
 	'bs-filesystemhelper-upload-base64-error'       => 'The file could not be uploaded.',
 	'bs-filesystemhelper-upload-local-error-stash-file'=>'The file could not be moved to the upload stash.',
-	'bs-filesystemhelper-upload-local-error-create' => 'The file could not be created in the wiki.'
+	'bs-filesystemhelper-upload-local-error-create' => 'The file could not be created in the wiki.',
+	'bs-navigation-instructions' => 'Instructions',
+	'bs-navigation-support' => 'Support',
+	'bs-navigation-contact' => 'Contact'
 );
 
 $messages['qqq'] = array(
@@ -271,5 +277,8 @@ Parameters:
 		
 Parameters:
 * $1 - the required file extension',
-	'bs-filesystemhelper-upload-unsupported-type'   => 'Error message given when an uploaded file has a file type that is not supported'
+	'bs-filesystemhelper-upload-unsupported-type'   => 'Error message given when an uploaded file has a file type that is not supported',
+	'bs-navigation-instructions' => 'Used in navigation for instuctions link',
+	'bs-navigation-support' => 'Used in navigation for support link',
+	'bs-navigation-contact' => 'Used in navigation for contact link'
 );

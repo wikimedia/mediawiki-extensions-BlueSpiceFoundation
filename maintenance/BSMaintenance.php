@@ -1,12 +1,11 @@
 <?php
 
-$IP = dirname(dirname(__DIR__));
+$IP = dirname(dirname(dirname(__DIR__)));
 
 //TODO: rework all maintenance scripts to just use Maintenance.php
-require_once( "$IP/maintenance/commandLine.inc" );
 require_once( "$IP/maintenance/Maintenance.php" );
 
-class BSMaintenance extends Maintenance {
+abstract class BSMaintenance extends Maintenance {
 
 	/**
 	 * Throw an error to the user. Doesn't respect --quiet, so don't use

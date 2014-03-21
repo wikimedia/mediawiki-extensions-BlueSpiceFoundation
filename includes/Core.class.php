@@ -77,6 +77,11 @@ class BsCore {
 	 */
 	protected static $oLocalParser = false;
 	/**
+	 * Local Parser
+	 * @var object
+	 */
+	protected static $oLocalParserOptions = false;
+	/**
 	 * Current User Object
 	 * @var object
 	 */
@@ -398,39 +403,30 @@ class BsCore {
 		wfProfileOut('BS::' . __METHOD__);
 	}
 
-		// todo msc 2011-04-27 wiederholter Aufruf führt schnell zu einem Speicherüberlauf (>128MB bei Indexierung)
+	// todo msc 2011-04-27 wiederholter Aufruf führt schnell zu einem Speicherüberlauf (>128MB bei Indexierung)
 	// scheinbar wird ausserhalb der Methode gecacht! Aufruf mit adapter->parseWikiText($text, true) schafft KEINE Abhilfe.
-	public function parseWikiText($text, $nocache = false, $numberheadings = null) {
+	public function parseWikiText( $sText, $oTitle, $nocache = false, $numberheadings = null ) {
 		wfProfileIn('BS::' . __METHOD__);
 
-		if ( !self::$oLocalParser )
-			self::$oLocalParser = new Parser(); // msc 2011-04-27 vorschlag: als member-Objekt im Adapter anlegen
+		if ( !self::$oLocalParser ) self::$oLocalParser = new Parser();
+		if ( !self::$oLocalParserOptions ) self::$oLocalParserOptions = new ParserOptions();
 
-		$parserOptions = new ParserOptions();
-
-		if ( $numberheadings === false )
-			$parserOptions->setNumberHeadings( false );
-		else if ( $numberheadings === true )
-			$parserOptions->setNumberHeadings( true );
+		if ( $numberheadings === false ) {
+			self::$oLocalParserOptions->setNumberHeadings( false );
+		} elseif ( $numberheadings === true ) {
+			self::$oLocalParserOptions->setNumberHeadings( true );
+		}
 
 		// TODO MRG20110707: Check it this cannot be unified
 
-		if ( $nocache )
-			self::$oLocalParser->disableCache(); // TODO RBV (19.10.10 15:57): --> Strict Standards: Creating default object from empty value in ...\includes\parser\Parser.php  on line 4433
+		if ( $nocache ) self::$oLocalParser->disableCache();
 
+		if ( !( $oTitle instanceof Title ) ) return '';
 
-		global $wgTitle;
-		if ( !( $wgTitle instanceof Title ) ) {
-			return '';
-		}
-
-		$output = self::$oLocalParser->parse(
-				$text, $wgTitle, // todo msc 2011-04-27 welches Title-Objekt wird hier verwendet? Kann das parametriert werden?
-				$parserOptions, true
-		);
+		$output = self::$oLocalParser->parse( $sText, $oTitle, self::$oLocalParserOptions, true )->getText();
 
 		wfProfileOut('BS::' . __METHOD__);
-		return $output->getText();
+		return $output;
 	}
 
 	public static function getUserDisplayName( $oUser = null ) {

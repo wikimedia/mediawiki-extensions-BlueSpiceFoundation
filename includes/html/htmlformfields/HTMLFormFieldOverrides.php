@@ -6,7 +6,7 @@
  */
 class HTMLFormEx extends HTMLForm {
 
-	function displaySection( $fields, $sectionName = '', $fieldsetIDPrefix = '' ) {
+	function displaySection( $fields, $sectionName = '', $fieldsetIDPrefix = '', &$hasUserVisibleFields = false ) {
 		$tableHtml = '';
 		$subsectionHtml = '';
 		$hasLeftColumn = false;

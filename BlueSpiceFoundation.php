@@ -29,7 +29,7 @@
  */
 $wgBlueSpiceExtInfo = array(
 	'name' => 'BlueSpice for MediaWiki',
-	'version' => '2.22.0',
+	'version' => '2.22.1',
 	'status' => 'stable',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
 	'url' => 'http://www.blue-spice.org',

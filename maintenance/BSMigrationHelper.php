@@ -15,7 +15,7 @@ class BSMigrationHelper{
 		public $aFiles     = array();
 		public $sBookTitle = '';
 		public $sSourceFolderRealPath = '';
-		public $sSavePath = '';
+		public $sSavePath = null;
 //		public $sCurrentSourceFileName = '';
 		public $sCurrentTargetArticleName = '';
 		public $numberOfArticlesCreated = 0;
@@ -23,6 +23,9 @@ class BSMigrationHelper{
 		public $aFilesCreated = array();
 		public $aFilesNotCreated = array();
 		public $iImageCount = 0;
+		public $aSkipHeadlines = array( // values only lowercase
+			'inhaltsverzeichnis',
+		);
 //		public $sourceFolderBaseName = '';
 	
 	public function __construct () {
@@ -107,6 +110,10 @@ class BSMigrationHelper{
 			
 			
 			if( empty( $sHeading ) ) return;
+			if( in_array( strtolower( $sHeading ), $this->aSkipHeadlines ) ) {
+				$this->output('Skipping headline "'.$sHeading.'" found in Array >>SkipHeadlines<<');
+				return;
+			}
 //			file_put_contents( '/tmp/headline.txt', $sHeading."\n\n" , FILE_APPEND);
 //			if( !$count )	$sHeading = preg_replace( '#^(-|§)[ \x{00A0}]+#u', '', $sHeading );
 
@@ -145,6 +152,7 @@ class BSMigrationHelper{
 
 			if( $sClass == 'MsoListParagraphCxSpMiddle' ) {
 				$sListItem = str_replace( array("\n", "\r", '&nbsp;'), ' ', $oWSElement->nodeValue);
+var_dump( $sListItem );
 				$sReplace = '*';
 				$count = 0;
 				//file_put_contents( '/tmp/listitem.txt', $sListItem."\n", FILE_APPEND );
@@ -156,7 +164,7 @@ class BSMigrationHelper{
 				} else {
 					$sListItem = preg_replace( '#^(-|§|  -)[ \x{00A0}]+#u', '', $sListItem);
 					$sListItem = preg_replace( '#^ +.[ \x{00A0}]+#u', '', $sListItem);
-//					$sListItem = preg_replace( '#[\x{00A0}]+#u', '', $sListItem );
+					$sListItem = preg_replace( '#^([\x{00A0}]|[\x{00B7}])+#u', '', $sListItem );
 				}
 				$sWikiText .= "\n$sReplace ".$sListItem."";
 				return;
@@ -164,13 +172,14 @@ class BSMigrationHelper{
 
 			if( $sClass == 'MsoListParagraphCxSpMiddle2' ) {
 				$sListItem = str_replace( array("\n", "\r", '&nbsp;'), array('', ' '), $oWSElement->nodeValue);
+
 				$sReplace = '**';
 				$count = 0;
 				$sListItem = preg_replace( '#^\d+\.[ \x{00A0}]+#u', '', $sListItem, -1, $count );
 				if( $count ) {
 					$sReplace = '##';
 				} else {
-					$sListItem = preg_replace( '#^(-|§)[ \x{00A0}]+#u', '', $sListItem);
+					$sListItem = preg_replace( '#^(-|§| -)[ \x{00A0}]+#u', '', $sListItem);
 				}
 				$sWikiText .= "$sReplace ".$sListItem."\n";
 
@@ -388,8 +397,11 @@ class BSMigrationHelper{
 	 * save the given data to a xml file
 	 * @param string $sPath | Path to the xml file you want to create
 	 */
-	public function saveDocument( $sPath  = '/tmp/result.xml') {
-		$this->oResultDocument->save( $sPath );
+	public function saveDocument( $sPath  = null ) {
+		if( $sPath === null ) {
+			$sPath = $this->sSavePath;
+		}
+		$this->oResultDocument->save( $sPath.'/result.xml' );
 	}
 	
 	public function output( $sOutput ) {
@@ -438,10 +450,13 @@ class BSMigrationHelper{
 		$this->sSavePath = $sSavePath;
 	}
 	
-	public function saveDocumentFiles( $sPath = '/tmp/images' ) {
-		return;
+	public function saveDocumentFiles( $sPath = null ) {
+		if( $sPath === null ) {
+			$sPath = $this->sSavePath.'/images';
+		}
+		//return;
 		if( !file_exists( $sPath ) ) {
-			mkdir( '/tmp/images' );
+			mkdir( $sPath );
 		}
 		foreach( $this->aFiles as $sFilePath => $sWikiFilename ) {
 			// avoid double urlencode problems %2520 = urlencoded( '%20' )

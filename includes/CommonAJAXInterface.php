@@ -102,7 +102,8 @@ class BsCommonAJAXInterface {
 			$oUserData = new stdClass();
 
 			//DB fields
-			$oUserData->user_id = $oUser->getId();
+			//PW: user_id needs to be casted to int or ExtJs can not search the store by id property!
+			$oUserData->user_id = (int) $oUser->getId(); 
 			$oUserData->user_name = $oUser->getName();
 
 			//Calculated fields

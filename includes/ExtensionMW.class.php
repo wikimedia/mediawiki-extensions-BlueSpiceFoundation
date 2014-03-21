@@ -59,12 +59,15 @@ abstract class BsExtensionMW extends ContextSource {
 	 * Initializes the extension.
 	 */
 	public function setup() {
-		global $wgExtensionCredits;
+		global $wgExtensionCredits, $wgBlueSpiceExtInfo;
 		// Extension credits that will show up on Special:Version
+		$sVersion = str_replace( 'default', $wgBlueSpiceExtInfo['version'], $this->mInfo[EXTINFO::VERSION] );
+		$sStatus = str_replace( 'default', $wgBlueSpiceExtInfo['status'], $this->mInfo[EXTINFO::STATUS] );
+
 		$wgExtensionCredits[$this->mExtensionType][] = array(
 			'path'        => $this->mExtensionFile,
 			'name'        => $this->mInfo[EXTINFO::NAME],
-			'version'     => str_replace( "$", "", $this->mInfo[EXTINFO::VERSION] ) . ' (' . $this->mInfo[EXTINFO::STATUS] . ')',
+			'version'     => $sVersion . ' (' . $sStatus . ')',
 			'author'      => $this->mInfo[EXTINFO::AUTHOR],
 			'url'         => $this->mInfo[EXTINFO::URL],
 			'description' => $this->mInfo[EXTINFO::DESCRIPTION]

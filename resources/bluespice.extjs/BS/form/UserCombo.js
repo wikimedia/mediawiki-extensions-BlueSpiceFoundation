@@ -8,6 +8,7 @@ Ext.define( 'BS.form.UserCombo', {
 	triggerAction: 'all',
 	queryMode: 'local',
 	typeAhead: true,
+	anyMatch: true,
 	
 	deferredSetValueConf: false,
 	
@@ -23,10 +24,16 @@ Ext.define( 'BS.form.UserCombo', {
 					idProperty: 'user_id'
 				}
 			},
-			model: 'BS.model.User'//,
+			model: 'BS.model.User',
 			//autoLoad: true //We need to load manually to have the store 
 			//loading before rendering. This allows setting values at an early
-			//time
+			//time,
+			sorters: [{
+				property: this.displayField,
+				direction: 'ASC'
+			}],
+			sortOnLoad: true,
+			remoteSort: false
 		});
 		this.store.load();
 		
@@ -84,6 +91,6 @@ Ext.define( 'BS.form.UserCombo', {
 		this.deferredSetValueConf = {
 			callback: callback,
 			value: value
-		}
+		};
 	}
 });

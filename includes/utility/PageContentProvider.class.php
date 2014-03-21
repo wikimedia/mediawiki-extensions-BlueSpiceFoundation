@@ -8,6 +8,10 @@ class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
 	protected $oOriginalGlobalParser     = null;
 	protected $oOriginalGlobalTitle      = null;
+	
+	protected $oOriginalMainRequestContextTitle = null;
+	protected $oOriginalMainRequestContextOutputPage = null;
+	
 	public    $oParserOptions            = null;
 	protected $sTemplate                 = false; // TODO RBV (21.01.11 17:09): Better templating...
 	public    $bEncapsulateContent       = true;
@@ -158,8 +162,7 @@ class BsPageContentProvider {
 		//To avoid strange errors... should never happen.
 		if ( !mb_check_encoding( $sHtmlContent, 'utf8') ) {
 			$sHtmlContent = utf8_encode( $sHtmlContent );
-			wfDebugLog( 
-				'BS::Foundation',
+			wfDebug( 
 				'BsPageContentProvider::getDOMDocumentContentFor: Content of '
 				.'Title "'.$oTitle->getPrefixedText().'" was not UTF8 encoded.'
 			);
@@ -169,18 +172,33 @@ class BsPageContentProvider {
 
 		$oDOMDoc->loadXML( $sHtmlContent );
 
-		//Fixing Tidy bug: http://sourceforge.net/tracker/index.php?func=detail&aid=1532698&group_id=27659&atid=390963
-		// TODO RBV (06.03.12 15:14): Find better solution than http://stackoverflow.com/questions/3834319/trim-only-the-first-and-last-occurrence-of-a-character-in-a-string-php/3834391#3834391
+		/*
+		 * Fixing Tidy bug: http://sourceforge.net/tracker/index.php?func=detail&aid=1532698&group_id=27659&atid=390963
+		 * TODO RBV (06.03.12 15:14): Find better solution than 
+		 * http://stackoverflow.com/questions/3834319/trim-only-the-first-and-last-occurrence-of-a-character-in-a-string-php/3834391#3834391
+		 */
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
 		foreach( $oPreTags as $oPreTag ) {
-			if( !($oPreTag->firstChild instanceof DOMText ) ) continue;
-			if( $oPreTag->firstChild->nodeValue[0] == "\n") 
-				$oPreTag->firstChild->nodeValue = substr($oPreTag->firstChild->nodeValue,1);
+			if( !($oPreTag->firstChild instanceof DOMText ) ){
+				continue;
+			}
+			//Cut off a leading linebreak in <PRE>
+			if( $oPreTag->firstChild->nodeValue[0] == "\n") {
+				$oPreTag->firstChild->nodeValue = 
+					substr( $oPreTag->firstChild->nodeValue, 1 );
+			}
 
-			if( !($oPreTag->lastChild instanceof DOMText ) ) continue;
-			if( $oPreTag->lastChild->nodeValue[strlen($oPreTag->lastChild->nodeValue)-1] == "\n" )
+			if( !($oPreTag->lastChild instanceof DOMText ) ) {
+				continue;
+			}
+			
+			//Cut off a tailing linebreak in <PRE>
+			$sLastIndex = strlen( $oPreTag->lastChild->nodeValue ) -1 ;
+			$sNodeValue = $oPreTag->lastChild->nodeValue;
+			if( $oPreTag->lastChild->nodeValue[$sLastIndex] == "\n" ) {
 				$oPreTag->lastChild->nodeValue = 
-					substr($oPreTag->lastChild->nodeValue,0,strlen($oPreTag->lastChild->nodeValue)-1);
+					substr( $sNodeValue, 0, $sLastIndex );
+			}
 		}
 
 		return $oDOMDoc;
@@ -210,7 +228,7 @@ class BsPageContentProvider {
 		);
 
 		$oRedirectTarget = null;
-		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
+		if( true || $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
 			$oRedirectTarget = $this->getRedirectTargetRecursiveFrom( $oTitle, $aParams );
 			$aParams['oldid'] = 0; //This is not the right place... at least we need a hook or something
 		}
@@ -229,48 +247,80 @@ class BsPageContentProvider {
 		$context->setUser( $wgUser );
 		$context->setSkin( $wgOut->getSkin() );
 		//Prevent "BeforePageDisplay" hook
-		$context->getOutput()->setArticleBodyOnly( true );
+		$context->getOutput()->setArticleBodyOnly( true ); //TODO: redundant?
 
-		if( $wgVersion < '1.20' ) {
-			$this->overrideGlobals( $oTitle, $context );
-		}
+		$this->overrideGlobals( $oTitle, $context );
 
 		$sHTML = '';
-		switch( $oTitle->getNamespace() ) {
-			case NS_IMAGE:
-				$oImagePage = ImagePage::newFromTitle( $oTitle, $context );
-				$oImagePage->view(); //Parse to OutputPage
-				break;
+		$sError = '';
+		try {
+			switch( $oTitle->getNamespace() ) {
+				case NS_IMAGE:
+					$oImagePage = ImagePage::newFromTitle( $oTitle, $context );
+					$oImagePage->view(); //Parse to OutputPage
+					break;
 
-			case NS_CATEGORY:
-				$oCategoryPage = CategoryPage::newFromTitle( $oTitle, $context );
-				$oCategoryPage->view(); //Parse to OutputPage
-				break;
+				case NS_CATEGORY:
+					$oCategoryPage = CategoryPage::newFromTitle( $oTitle, $context );
+					$oCategoryPage->view(); //Parse to OutputPage
+					break;
 
-			case NS_SPECIAL:
-				//Querystring parameters like "?from=B&namespace=6" that are needed by the special page (i.e. All Pages) have to be present in $wgRequest / the context
-				SpecialPageFactory::executePath( $oTitle, $context );
-				$sHTML = $context->getOutput()->getHTML();
-				break;
+				case NS_SPECIAL:
+					/* 
+					 * Querystring parameters like "?from=B&namespace=6" that 
+					 * are needed by the special page (i.e. All Pages) have to 
+					 * be present in $wgRequest / the context
+					 */
+					SpecialPageFactory::executePath( $oTitle, $context );
+					$sHTML = $context->getOutput()->getHTML();
+					break;
 
-			default:
-				$oArticle = Article::newFromTitle($oTitle, $context);
-				$oArticle->view();
-				break;
+				default:
+					$oArticle = Article::newFromTitle($oTitle, $context);
+					$oArticle->view();
+					break;
+			}
+		}
+		catch( Exception $e ) {
+			if( $e instanceof PermissionsError ) {
+				$wgOut->showPermissionsErrorPage( $e->errors, $e->permission );
+			} else if( $e instanceof ErrorPageError ) {
+				$wgOut->showErrorPage( $e->title, $e->msg, $e->params );
+			} else {
+				$sError = $e->getMessage();
+			}
+			wfDebug( 
+				'BsPageContentProvider::getHTMLContentFor: Exception of type '
+					.get_class($e)
+					.' thrown on title '
+					.$oTitle->getPrefixedText()
+					.'. Continuing happily.'
+			);
 		}
 
 		//HW#2012062710000041 — Bookshelf, PDF Export: HTTP 404 wenn nicht extistierende Artikel beinhaltet sind
-		if( !$oTitle->isKnown() ) { //Because in this case MW sets 404 Header in Article::view()
-			global $wgRequest;
-			$wgRequest->response()->header( "HTTP/1.1 200 OK", true ); //Therefore we will have to reset it
-			wfDebugLog( 'BS::AdapterMW', 'BsPageContentProvider::getHTMLContentFor: Title "'.$oTitle->getPrefixedText().'" does not exist and caused MW to set HTTP 404 Header.' );
+		//Because in this case MW sets 404 Header in Article::view()
+		if( !$oTitle->isKnown() ) {
+			//Therefore we will have to reset it
+			$wgRequest->response()->header( "HTTP/1.1 200 OK", true );
+			wfDebug( 
+				'BsPageContentProvider::getHTMLContentFor: Title "'
+					.$oTitle->getPrefixedText()
+					.'" does not exist and caused MW to set HTTP 404 Header.'
+			);
 		}
-		$sHTML = empty( $sHTML ) ? $wgOut->getHTML() : $sHTML; //This would be the case with normal articles and imagepages
-		if( $wgVersion < '1.20' ) {
-			$this->restoreGlobals();
-		}
+		
+		//This would be the case with normal articles and imagepages
+		$sHTML = empty( $sHTML ) ? $wgOut->getHTML() : $sHTML;
+		
+		$this->restoreGlobals();
+
 		if( $wgVersion >= '1.18' ) {
 			$sHTML = empty( $sHTML ) ? $context->getOutput()->getHTML() : $sHTML;
+		}
+
+		if( !empty($sError)) {
+			$sHTML .= '<div class="bs-error">'.$sError.'</div>';
 		}
 
 		$this->makeInternalAnchorNamesUnique( $sHTML, $oTitle, $aParams );
@@ -278,13 +328,18 @@ class BsPageContentProvider {
 		if( $this->bEncapsulateContent ) {
 			$sHTML = sprintf(
 				$this->getTemplate(),
-				'bs-ue-jumpmark-'.md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
+				'bs-ue-jumpmark-'.
+					md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
 				$oTitle->getPrefixedText(),
 				$sHTML
 			);
 		}
 
-		return $this->getTidy()->repairString( $sHTML, $this->aTidyConfig, 'utf8' );
+		return $this->getTidy()->repairString( 
+			$sHTML, 
+			$this->aTidyConfig, 
+			'utf8'
+		);
 	}
 
 	/**
@@ -357,9 +412,22 @@ class BsPageContentProvider {
 	private function overrideGlobals( $oTitle, $context = null ) {
 		global $wgParser, $wgOut, $wgTitle, $wgVersion;
 		
+		//This is neccessary for other extensions that may rely on $wgTitle, 
+		//i.e for checking permissions during rendering
 		$this->oOriginalGlobalOutputPage = $wgOut;
 		$this->oOriginalGlobalParser     = $wgParser;
-		$this->oOriginalGlobalTitle      = $wgTitle; //This is neccessary for other extensions that may rely on $wgTitle, i.e for checking permissions during rendering
+		$this->oOriginalGlobalTitle      = $wgTitle;
+		
+		/* 
+		 * New MediaWiki RequestContext mechanism. More or less redundant but 
+		 * will replace "globals" in near future. As many extensions use
+		 * RequestContext::getMain() instead of a passed instance of 
+		 * IContextSource, we need to adapt it too...
+		 */
+		$this->oOriginalMainRequestContextTitle 
+			= RequestContext::getMain()->getTitle();
+		$this->oOriginalMainRequestContextOutputPage 
+			= RequestContext::getMain()->getOutput();
 
 		$wgParser = new Parser();
 		$wgParser->Options( $this->getParserOptions() );
@@ -370,11 +438,12 @@ class BsPageContentProvider {
 		else {
 			$wgOut = new OutputPage( $context );
 		}
-		
+
 		$wgOut->setArticleBodyOnly( true );
-		//$wgOut->disable(); //Necessary?
+		RequestContext::getMain()->setOutput( $wgOut );
 		
 		$wgTitle = $oTitle;
+		RequestContext::getMain()->setTitle( $oTitle );
 	}
 
 	private function restoreGlobals() {
@@ -383,6 +452,13 @@ class BsPageContentProvider {
 		$wgOut    = $this->oOriginalGlobalOutputPage;
 		$wgParser = $this->oOriginalGlobalParser;
 		$wgTitle  = $this->oOriginalGlobalTitle;
+		
+		RequestContext::getMain()->setTitle( 
+			$this->oOriginalMainRequestContextTitle
+		);
+		RequestContext::getMain()->setOutput(
+			$this->oOriginalMainRequestContextOutputPage
+		);
 
 		$this->oOriginalGlobalTitle= null;
 	}

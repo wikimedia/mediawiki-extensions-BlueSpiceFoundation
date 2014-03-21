@@ -332,10 +332,9 @@ class BsCoreHooks {
 			$sUserHash = $oRequest->getVal( 'h', '' );
 
 			if ( !empty( $iUserId ) && !empty( $sUserHash ) ) {
-				$this->loggedInByHash = true;
+				self::$loggedInByHash = true;
 				$_user = User::newFromName( $iUserId );
 				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
-					$result = $_user->isAllowed( 'read' );
 					$oUser = $_user;
 				}
 			}
