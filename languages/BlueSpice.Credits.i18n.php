@@ -14,13 +14,6 @@
 
 $messages = array();
 
-$messages['de'] = array(
-	'specialcredits' => 'BlueSpice Credits',
-	'bs-credits-programmers' => 'Programmierer',
-	'bs-credits-dnt' => 'Design und Testing',
-	'bs-credits-contributors' => 'Contributors'
-);
-
 $messages['en'] = array(
 	'specialcredits' => 'BlueSpice credits',
 	'bs-credits-programmers' => 'Programmers',
@@ -31,6 +24,13 @@ $messages['en'] = array(
 $messages['qqq'] = array(
 	'specialcredits' => 'Special page title',
 	'bs-credits-programmers' => 'Heading for column listing programmers',
-	'bs-credits-dnt' => 'Heading for column with designers listing testers',
+	'bs-credits-dnt' => 'Heading for column with listing designers and testers',
 	'bs-credits-contributors' => 'Headings for column listing contributors'
+);
+
+$messages['de'] = array(
+	'specialcredits' => 'BlueSpice Credits',
+	'bs-credits-programmers' => 'Programmierer',
+	'bs-credits-dnt' => 'Design und Testing',
+	'bs-credits-contributors' => 'Contributors'
 );
