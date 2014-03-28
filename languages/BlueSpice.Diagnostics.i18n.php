@@ -5,7 +5,6 @@
  * Part of BlueSpice for MediaWiki
  *
  * @author     Stephan Muggli <muggli@hallowelt.biz>
-
  * @package    BlueSpice_Core
  * @subpackage BlueSpice
  * @copyright  Copyright (C) 2012 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
@@ -15,14 +14,14 @@
 
 $messages = array();
 
-$messages['de'] = array(
-	'diagnostics'                                   => 'Systemdiagnose'
-);
-
 $messages['en'] = array(
-	'diagnostics'                                   => 'System diagnostics'
+	'diagnostics' => 'System diagnostics'
 );
 
 $messages['qqq'] = array(
-	'diagnostics'                                   => 'Special page title'
+	'diagnostics' => 'Special page title'
+);
+
+$messages['de'] = array(
+	'diagnostics' => 'Systemdiagnose'
 );
