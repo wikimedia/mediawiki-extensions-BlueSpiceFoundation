@@ -74,6 +74,8 @@ $messages['en'] = array(
 	'bs-navigation-contact' => 'Contact'
 );
 
+/** Message documentation (Message documentation)
+ */
 $messages['qqq'] = array(
 	'bs-ns_main' => 'Label used in namespace dropdown lists for NS_MAIN',
 	'bs-ns_all' => 'Label used in namespace dropdown lists for all namespaces',
@@ -119,18 +121,17 @@ Parameters:
 Parameters:
 * $1 - a duration
 * $2 - a duration one unit smaller than $1',
-
 	'bs-one-unit-ago' => 'Text shown when indicating how long ago an event was
 
 Parameters:
 * $1 - a duration',
 	'bs-now' => 'Text shown for "now" when indicating how long ago an event was',
-	'bs-email-greeting-receiver' => "Used in plain text mails as first line in body to greet the reveiver, $1 is the current user name for GENDER distinction (depends on sex setting)
+	'bs-email-greeting-receiver' => 'Used in plain text mails as first line in body to greet the reveiver, $1 is the current user name for GENDER distinction (depends on sex setting)
 
 Parameters:
-* $1 - name of the receiver",
-	'bs-email-greeting-no-receiver' => "Used in plain text mails as first line in body to greet the reveiver",
-	'bs-email-footer' => "Used in plain text mails as last line",
+* $1 - name of the receiver',
+	'bs-email-greeting-no-receiver' => 'Used in plain text mails as first line in body to greet the reveiver',
+	'bs-email-footer' => 'Used in plain text mails as last line',
 	'bs-userpagesettings-legend' => 'Label for section with links to special user related settings',
 	'bs-userpreferences-link-text' => 'Label for link to user preferences on user page',
 	'bs-userpreferences-link-title' => 'Title (shown as flyout) for link to user preferences on user page',
@@ -194,9 +195,12 @@ Parameters:
 	'bs-filesystemhelper-upload-unsupported-type' => 'Error message given when an uploaded file has a file type that is not supported',
 	'bs-navigation-instructions' => 'Used in navigation for instuctions link',
 	'bs-navigation-support' => 'Used in navigation for support link',
-	'bs-navigation-contact' => 'Used in navigation for contact link'
+	'bs-navigation-contact' => 'Used in navigation for contact link',
 );
 
+/** German (Deutsch)
+ * @author Metalhead64
+ */
 $messages['de'] = array(
 	'bs-ns_main' => '(Seiten)',
 	'bs-ns_all' => '(alle)',
@@ -219,9 +223,9 @@ $messages['de'] = array(
 	'bs-two-units-ago' => 'vor $1 und $2',
 	'bs-one-unit-ago' => 'vor $1',
 	'bs-now' => 'jetzt',
-	'bs-email-greeting-receiver' => "{{GENDER:$1|Hallo Herr $1|Hallo Frau $1|Hallo $1}},",
-	'bs-email-greeting-no-receiver' => "Hallo,",
-	'bs-email-footer' => "Dies ist eine automatisch generierte E-Mail. Bitte antworte nicht auf diese E-Mail!",
+	'bs-email-greeting-receiver' => '{{GENDER:$1|Hallo Herr $1|Hallo Frau $1|Hallo $1}},',
+	'bs-email-greeting-no-receiver' => 'Hallo,',
+	'bs-email-footer' => 'Dies ist eine automatisch generierte E-Mail. Bitte antworte nicht auf diese E-Mail!',
 	'bs-userpagesettings-legend' => 'Benutzereinstellungen',
 	'bs-userpreferences-link-text' => 'Weitere Benutzereinstellungen',
 	'bs-userpreferences-link-title' => 'Zeigt deine persönlichen Benutzereinstellungen an',
@@ -230,8 +234,9 @@ $messages['de'] = array(
 	'bs-exception-view-admin-hint' => 'Bitte kontaktiere Deinen Administrator.',
 	'bs-exception-view-stacktrace-toggle-show-text' => 'Fehlerdetails anzeigen',
 	'bs-exception-view-stacktrace-toggle-hide-text' => 'Fehlerdetails verbergen',
+	'action-responsibleeditors-viewspecialpage' => 'Seiten anzusehen, die mit dem responsibleeditors-viewspecialpage-Recht geschützt sind',
 	'bs-viewtagerrorlist-legend' => '$1 - Fehler',
-	'bs-readonly' => 'Die Datenbank ist vorübergehend für Neueinträge und Änderungen gesperrt. Bitte versuche es später noch einmal. Grund der Sperrung: $1. ',
+	'bs-readonly' => 'Die Datenbank ist vorübergehend für Neueinträge und Änderungen gesperrt. Bitte versuche es später noch einmal. Grund der Sperrung: $1.',
 	'bs-imageofotheruser' => 'Du bist nicht berechtigt ein Bild für einen anderen Benutzer hochzuladen.',
 	'bs-pref-sortalph' => 'Namensräume alphabetisch sortieren',
 	'bs-permissionerror' => 'Berechtigungsfehler!',
@@ -249,16 +254,144 @@ $messages['de'] = array(
 	'bs-filesystemhelper-upload-unsupported-type' => 'Dieser Dateityp wird nicht unterstützt.',
 	'bs-filesystemhelper-save-base64-error' => 'Die Datei konnte nicht gespeichert werden.',
 	'bs-filesystemhelper-upload-base64-error' => 'Die Datei konnte nicht hochgeladen werden.',
-	'bs-filesystemhelper-upload-local-error-stash-file'=>'Die Datei konnte nicht in den Uploadstash verschoben werden.',
+	'bs-filesystemhelper-upload-local-error-stash-file' => 'Die Datei konnte nicht in den Uploadstash verschoben werden.',
 	'bs-filesystemhelper-upload-local-error-create' => 'Die Datei konnte im Wiki nicht angelegt werden.',
 	'bs-navigation-instructions' => 'Anleitung',
 	'bs-navigation-support' => 'Support',
-	'bs-navigation-contact' => 'Kontakt'
+	'bs-navigation-contact' => 'Kontakt',
 );
 
+/** German (formal address) (Deutsch (Sie-Form)‎)
+ */
 $messages['de-formal'] = array(
-	'bs-email-footer' => "Dies ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht auf diese E-Mail!",
+	'bs-email-footer' => 'Dies ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht auf diese E-Mail!',
 	'bs-userpreferences-link-title' => 'Zeigt Ihre persönlichen Benutzereinstellungen an.',
 	'bs-exception-view-admin-hint' => 'Bitte kontaktieren Sie Ihren Administrator.',
-	'bs-imageofotheruser' => 'Sie sind nicht berechtigt, ein Bild für einen anderen Benutzer hochzuladen.'
+	'bs-imageofotheruser' => 'Sie sind nicht berechtigt, ein Bild für einen anderen Benutzer hochzuladen.',
+);
+
+/** French (français)
+ * @author Gomoko
+ */
+$messages['fr'] = array(
+	'bs-ns_main' => '(Pages)',
+	'bs-ns_all' => '(tous)',
+	'bs-tab_navigation' => 'Navigation',
+	'bs-tab_focus' => 'Centre d’intérêt',
+	'bs-tab_admin' => 'Admin',
+	'bs-userbar_loginswitch_logout' => 'Déconnexion',
+	'bs-userbar_loginswitch_login' => 'Connexion',
+	'bs-extended-search-tooltip-fulltext' => 'Recherche en texte intégral',
+	'bs-extended-search-textfield-defaultvalue' => 'Recherche en cours…',
+	'bs-extended-search-textfield-tooltip' => 'Rechercher dans le wiki',
+	'bs-no-information-available' => 'Aucune information disponible',
+	'bs-years-duration' => '{{PLURAL:$1|une année|$1 années}}',
+	'bs-months-duration' => '{{PLURAL:$1|un mois|$1 mois}}',
+	'bs-weeks-duration' => '{{PLURAL:$1|une semaine|$1 semaines}}',
+	'bs-days-duration' => '{{PLURAL:$1|un jour|$1 jours}}',
+	'bs-hours-duration' => '{{PLURAL:$1|une heure|$1 heures}}',
+	'bs-mins-duration' => '{{PLURAL:$1|une minute|$1 minutes}}',
+	'bs-secs-duration' => '{{PLURAL:$1|une seconde|$1 secondes}}',
+	'bs-two-units-ago' => 'il y a $1 et $2',
+	'bs-one-unit-ago' => 'il y a $1',
+	'bs-now' => 'maintenant',
+	'bs-email-greeting-receiver' => '{{GENDER:$1|Bonjour M. $1|Bonjour Mme $1|Bonjour $1}},',
+	'bs-email-greeting-no-receiver' => 'Bonjour,',
+	'bs-email-footer' => 'Ce message a été généré automatiquement. Veuillez ne pas répondre à ce courriel.',
+	'bs-userpagesettings-legend' => 'Paramètres utilisateur',
+	'bs-userpreferences-link-text' => 'Paramètres utilisateurs avancés',
+	'bs-userpreferences-link-title' => 'Afficher vos paramètres utilisateur personnels',
+	'bs-exception-view-heading' => 'Une erreur s’est produite',
+	'bs-exception-view-text' => 'Lors du traitement de votre requête, l’erreur suivante s’est produite :',
+	'bs-exception-view-admin-hint' => 'Veuillez contacter votre administrateur système.',
+	'bs-exception-view-stacktrace-toggle-show-text' => 'Afficher les détails de l’erreur',
+	'bs-exception-view-stacktrace-toggle-hide-text' => 'Masquer les détails de l’erreur',
+	'action-responsibleeditors-viewspecialpage' => 'afficher les pages qui sont protégées avec le droit « ResponsibleEditors-Viewspecialpage »',
+	'bs-viewtagerrorlist-legend' => '$1 - Erreur',
+	'bs-readonly' => 'La base de données est actuellement verrouillée pour de nouvelles entrées et d’autres modifications, probablement par une routine de maintenance de la base de données, après laquelle tout reviendra à la normale. L’administrateur qui l’a verrouillée a offert l’explication suivante : $1',
+	'bs-imageofotheruser' => 'Vous n’êtes pas autorisé à importer une image pour un autre utilisateur.',
+	'bs-pref-sortalph' => 'Trier les espaces de nom par ordre alphabétique',
+	'bs-permissionerror' => 'Erreur de droit !',
+	'bs-filesystemhelper-no-directory' => '<code>$1</code> n’est pas un répertoire valide.',
+	'bs-filesystemhelper-has-path-traversal' => 'Traversée de chemin détectée !',
+	'bs-filesystemhelper-file-not-exists' => 'Le fichier <code>$1</code> n’existe pas.',
+	'bs-filesystemhelper-file-copy-error' => 'Le fichier <code>$1</code> n’a pas pu être copié.',
+	'bs-filesystemhelper-file-already-exists' => 'Le fichier <code>$1</code> existe déjà.',
+	'bs-filesystemhelper-file-delete-error' => 'Le fichier <code>$1</code> n’a pas pu être supprimé.',
+	'bs-filesystemhelper-folder-already-exists' => 'Le répertoire <code>$1</code> existe déjà.',
+	'bs-filesystemhelper-folder-copy-error' => 'Le répertoire <code>$1</code> n’a pas pu être renommé.',
+	'bs-filesystemhelper-folder-not-exists' => 'Le répertoire <code>$1</code> n’existe pas.',
+	'bs-filesystemhelper-upload-err-code' => 'Le fichier n’a pas pu être téléchargé : $1',
+	'bs-filesystemhelper-upload-wrong-ext' => 'Le fichier n’a pas l’extension requise : $1.',
+	'bs-filesystemhelper-upload-unsupported-type' => 'Ce type de fichier n’est pas pris en charge.',
+	'bs-filesystemhelper-save-base64-error' => 'Le fichier n’a pas pu être enregistré.',
+	'bs-filesystemhelper-upload-base64-error' => 'Le fichier n’a pas pu être téléchargé.',
+	'bs-filesystemhelper-upload-local-error-stash-file' => 'Le fichier n’a pas pu être déplacé vers la réserve de téléchargement.',
+	'bs-filesystemhelper-upload-local-error-create' => 'Le fichier n’a pas pu être créé dans le wiki.',
+	'bs-navigation-instructions' => 'Instructions',
+	'bs-navigation-support' => 'Soutien',
+	'bs-navigation-contact' => 'Contact',
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'bs-ns_main' => '(Страници)',
+	'bs-ns_all' => '(сите)',
+	'bs-tab_navigation' => 'Навигација',
+	'bs-tab_focus' => 'Задршка',
+	'bs-tab_admin' => 'Админ',
+	'bs-userbar_loginswitch_logout' => 'Одјава',
+	'bs-userbar_loginswitch_login' => 'Најава',
+	'bs-extended-search-tooltip-fulltext' => 'Пребарување по цел текст',
+	'bs-extended-search-textfield-defaultvalue' => 'Пребарување...',
+	'bs-extended-search-textfield-tooltip' => 'Пребарајте го викито',
+	'bs-no-information-available' => 'Нема информации на располагање',
+	'bs-years-duration' => '{{PLURAL:$1|една година|$1 години}}',
+	'bs-months-duration' => '{{PLURAL:$1|еден месец|$1 месеци}}',
+	'bs-weeks-duration' => '{{PLURAL:$1|$1 недела|$1 недели}}',
+	'bs-days-duration' => '{{PLURAL:$1|еден ден|$1 дена}}',
+	'bs-hours-duration' => '{{PLURAL:$1|еден час|$1 часа}}',
+	'bs-mins-duration' => '{{PLURAL:$1|една минута|$1 минути}}',
+	'bs-secs-duration' => '{{PLURAL:$1|една секунда|$1 секунди}}',
+	'bs-two-units-ago' => 'пред $1 и $2',
+	'bs-one-unit-ago' => 'пред $1',
+	'bs-now' => 'сега',
+	'bs-email-greeting-receiver' => '{{GENDER:$1|Здраво г-дине $1|Здраво г-ѓо $1|Здраво $1}},',
+	'bs-email-greeting-no-receiver' => 'Здраво,',
+	'bs-email-footer' => 'Писмово е автоматски создадено. Не одговарајте на него.',
+	'bs-userpagesettings-legend' => 'Кориснички нагодувања',
+	'bs-userpreferences-link-text' => 'Уште кориснички нагодувања',
+	'bs-userpreferences-link-title' => 'Прикажи мои лични кориснички нагодувања',
+	'bs-exception-view-heading' => 'Се појави грешка',
+	'bs-exception-view-text' => 'Обработувајќи го барањето, се појави следнава грешка:',
+	'bs-exception-view-admin-hint' => 'Обратете се кај администраторот.',
+	'bs-exception-view-stacktrace-toggle-show-text' => 'Прикажи пордобности за грешката',
+	'bs-exception-view-stacktrace-toggle-hide-text' => 'Скриј подробности за грешката',
+	'action-responsibleeditors-viewspecialpage' => 'прегледај страници заштитени со правото „ResponsibleEditors-Viewspecialpage“',
+	'bs-viewtagerrorlist-legend' => '$1 — Грешка',
+	'bs-readonly' => 'Базата е моментално заклучена за нови статии и други измени, најверојатно како рутинска проверка, по што ќе се врати во нормална состојба. Администраторот кој ја заклучи го понуди следното образложение: $1',
+	'bs-imageofotheruser' => 'Не ви е дозволено да подигате слики во име на друг корисник.',
+	'bs-pref-sortalph' => 'Подреди ги именските простори по азбучен редослед',
+	'bs-permissionerror' => 'Грешка со дозволите!',
+	'bs-filesystemhelper-no-directory' => '<code>$1</code> не претставува важечка папка.',
+	'bs-filesystemhelper-has-path-traversal' => 'Утврдено е пресекување на патеката.',
+	'bs-filesystemhelper-file-not-exists' => 'Податотеката <code>$1</code> не постои.',
+	'bs-filesystemhelper-file-copy-error' => 'Не можев да ја ископирам податотеката <code>$1</code>.',
+	'bs-filesystemhelper-file-already-exists' => 'Податотеката <code>$1</code> веќе постои.',
+	'bs-filesystemhelper-file-delete-error' => 'Не можам да ја избришам податотеката <code>$1</code>.',
+	'bs-filesystemhelper-folder-already-exists' => 'Папката <code>$1</code> веќе постои.',
+	'bs-filesystemhelper-folder-copy-error' => 'Не можев да ја преименувам папката <code>$1</code>.',
+	'bs-filesystemhelper-folder-not-exists' => 'Папката <code>$1</code> не постои.',
+	'bs-filesystemhelper-upload-err-code' => 'Не можев да ја подигнам податотеката: $1',
+	'bs-filesystemhelper-upload-wrong-ext' => 'Податотеката ја нема потребната наставка: $1.',
+	'bs-filesystemhelper-upload-unsupported-type' => 'Овој податотечен тип не е поддржан.',
+	'bs-filesystemhelper-save-base64-error' => 'Не можев да ја зачувам податотеката.',
+	'bs-filesystemhelper-upload-base64-error' => 'Не можев да ја подигнам податотеката.',
+	'bs-filesystemhelper-upload-local-error-stash-file' => 'Не можев да ја преместан податотеката во оставата на подигања.',
+	'bs-filesystemhelper-upload-local-error-create' => 'Не можев да ја создадам податотеката на викито.',
+	'bs-navigation-instructions' => 'Напатствија',
+	'bs-navigation-support' => 'Поддршка',
+	'bs-navigation-contact' => 'Контакт',
 );
