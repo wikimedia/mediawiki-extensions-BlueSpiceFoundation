@@ -27,6 +27,7 @@ $messages['en'] = array(
 
 /** Message documentation (Message documentation)
  * @author Robby
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
 	'bs-extjs-portal-config' => 'Title of configuration dialogues for dashboard portlets. Followed by the name of the portlet, hence the colon.',
@@ -39,7 +40,8 @@ $messages['qqq'] = array(
 {{Identical|Week}}',
 	'bs-extjs-portal-timespan-month' => 'Label for timespan option "month"
 {{Identical|Month}}',
-	'bs-extjs-portal-timespan-alltime' => 'Label for timespan option "unlimited"',
+	'bs-extjs-portal-timespan-alltime' => 'Label for timespan option "unlimited".
+{{Identical|All time}}',
 );
 
 /** German (Deutsch)
@@ -128,6 +130,42 @@ $messages['oc'] = array(
 	'bs-extjs-portal-timespan-alltime' => 'Tot lo temps',
 );
 
+/** Polish (polski)
+ * @author Chrumps
+ */
+$messages['pl'] = array(
+	'bs-extjs-portal-timespan-week' => 'Tydzień',
+	'bs-extjs-portal-timespan-month' => 'Miesiąc',
+);
+
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'bs-extjs-portal-config' => 'Настройка портлета:',
+	'bs-extjs-portal-title' => 'Заголовок портлета',
+	'bs-extjs-portal-height' => 'Высота',
+	'bs-extjs-portal-count' => 'Записи',
+	'bs-extjs-portal-timespan' => 'Промежуток времени',
+	'bs-extjs-portal-timespan-week' => 'Неделя',
+	'bs-extjs-portal-timespan-month' => 'Месяц',
+	'bs-extjs-portal-timespan-alltime' => 'За всё время',
+);
+
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'bs-extjs-portal-config' => 'Confeegur the portlet:',
+	'bs-extjs-portal-title' => 'The Portlet title',
+	'bs-extjs-portal-height' => 'Heicht',
+	'bs-extjs-portal-count' => 'The Entries',
+	'bs-extjs-portal-timespan' => 'The Timespan',
+	'bs-extjs-portal-timespan-week' => 'Week',
+	'bs-extjs-portal-timespan-month' => 'Month',
+	'bs-extjs-portal-timespan-alltime' => 'Aw time',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
@@ -140,4 +178,18 @@ $messages['vi'] = array(
 	'bs-extjs-portal-timespan-week' => 'Tuần',
 	'bs-extjs-portal-timespan-month' => 'Tháng',
 	'bs-extjs-portal-timespan-alltime' => 'Từ trước đến nay',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Liuxinyu970226
+ */
+$messages['zh-hans'] = array(
+	'bs-extjs-portal-config' => '配置门户组件：',
+	'bs-extjs-portal-title' => '门户组件标题',
+	'bs-extjs-portal-height' => '高',
+	'bs-extjs-portal-count' => '入口',
+	'bs-extjs-portal-timespan' => '时间间隔',
+	'bs-extjs-portal-timespan-week' => '周',
+	'bs-extjs-portal-timespan-month' => '月',
+	'bs-extjs-portal-timespan-alltime' => '所有时间',
 );

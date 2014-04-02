@@ -22,12 +22,14 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
 	'specialcredits' => 'Special page title',
 	'bs-credits-programmers' => 'Heading for column listing programmers',
 	'bs-credits-dnt' => 'Heading for column with listing designers and testers',
-	'bs-credits-contributors' => 'Headings for column listing contributors',
+	'bs-credits-contributors' => 'Headings for column listing contributors.
+{{Identical|Contributor}}',
 );
 
 /** German (Deutsch)
@@ -59,6 +61,14 @@ $messages['he'] = array(
 	'bs-credits-contributors' => 'תורמים',
 );
 
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'bs-credits-programmers' => 'プログラマー',
+	'bs-credits-dnt' => 'デザインおよびテスト',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
@@ -69,6 +79,25 @@ $messages['mk'] = array(
 	'bs-credits-contributors' => 'Учесници',
 );
 
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'bs-credits-programmers' => 'Программисты',
+	'bs-credits-dnt' => 'Проектирование и тестирование',
+	'bs-credits-contributors' => 'Авторы',
+);
+
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'specialcredits' => 'BlueSpice creedits',
+	'bs-credits-programmers' => 'Programmers',
+	'bs-credits-dnt' => 'Design n testin',
+	'bs-credits-contributors' => 'Contreebuters',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
@@ -77,4 +106,14 @@ $messages['vi'] = array(
 	'bs-credits-programmers' => 'Lập trình viên',
 	'bs-credits-dnt' => 'Thiết kế và thử nghiệm',
 	'bs-credits-contributors' => 'Người đóng góp',
+);
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Liuxinyu970226
+ */
+$messages['zh-hans'] = array(
+	'specialcredits' => 'BlueSpice学分',
+	'bs-credits-programmers' => '程序员',
+	'bs-credits-dnt' => '设计与测试',
+	'bs-credits-contributors' => '贡献者',
 );

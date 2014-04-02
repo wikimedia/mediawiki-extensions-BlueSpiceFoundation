@@ -75,15 +75,20 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Robby
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
 	'bs-ns_main' => 'Label used in namespace dropdown lists for NS_MAIN',
-	'bs-ns_all' => 'Label used in namespace dropdown lists for all namespaces',
+	'bs-ns_all' => 'Label used in namespace dropdown lists for all namespaces.
+{{Identical|All}}',
 	'bs-tab_navigation' => 'Label for "nagivation" tab in left sidebar',
 	'bs-tab_focus' => 'Label for "focus" tab in left sidebar',
 	'bs-tab_admin' => 'Label for "admin" tab in left sidebar',
-	'bs-userbar_loginswitch_logout' => 'Label for logout button in personal toolbar',
-	'bs-userbar_loginswitch_login' => 'Label for login button in personal toolbar',
+	'bs-userbar_loginswitch_logout' => 'Label for logout button in personal toolbar.
+{{Identical|Log out}}',
+	'bs-userbar_loginswitch_login' => 'Label for login button in personal toolbar.
+{{Identical|Log in}}',
 	'bs-extended-search-tooltip-fulltext' => 'Tooltip shown on mouse over the button at the corner of the search field on every page when in fulltext mode',
 	'bs-extended-search-textfield-defaultvalue' => 'Default text of the search field shown on every page',
 	'bs-extended-search-textfield-tooltip' => 'Tootip shown on mouse over the search field on every page',
@@ -195,7 +200,8 @@ Parameters:
 	'bs-filesystemhelper-upload-unsupported-type' => 'Error message given when an uploaded file has a file type that is not supported',
 	'bs-navigation-instructions' => 'Used in navigation for instuctions link',
 	'bs-navigation-support' => 'Used in navigation for support link',
-	'bs-navigation-contact' => 'Used in navigation for contact link',
+	'bs-navigation-contact' => 'Used in navigation for contact link
+{{Identical|Contact}}',
 );
 
 /** German (Deutsch)
@@ -333,6 +339,55 @@ $messages['fr'] = array(
 	'bs-navigation-contact' => 'Contact',
 );
 
+/** Japanese (日本語)
+ * @author Shirayuki
+ */
+$messages['ja'] = array(
+	'bs-ns_main' => '(ページ)',
+	'bs-ns_all' => '(すべて)',
+	'bs-userbar_loginswitch_logout' => 'ログアウト',
+	'bs-userbar_loginswitch_login' => 'ログイン',
+	'bs-extended-search-tooltip-fulltext' => '全文検索',
+	'bs-viewtagerrorlist-legend' => '$1 - エラー',
+);
+
+/** Kazakh (Cyrillic script) (қазақша (кирил)‎)
+ * @author Габдулгани НИШ ХБН
+ */
+$messages['kk-cyrl'] = array(
+	'bs-ns_main' => 'Беттер',
+	'bs-tab_focus' => 'орталығы',
+	'bs-userbar_loginswitch_logout' => 'шығу',
+	'bs-userbar_loginswitch_login' => 'Кіру',
+	'bs-no-information-available' => 'Мәлімет жоқ',
+	'bs-days-duration' => '{{PLURAL:$1|бір күн|$1 күндер}}',
+	'bs-hours-duration' => '{{PLURAL:$1|бір сағат|$1 сағаттар}}',
+	'bs-mins-duration' => '{{PLURAL:$1|бір минут| $1 минуттар}}',
+	'bs-two-units-ago' => '$1 -$2 ден кем',
+	'bs-email-greeting-receiver' => '{{GENDER:$1|Сәлем, $1 мырза|Сәлем, $1 ханым| Сәлем , $1}}',
+	'bs-email-greeting-no-receiver' => 'сәлем,',
+	'bs-email-footer' => 'Бұл хабарлау автоматты түрінде жасалған. Жауап бермеңіз',
+	'bs-userpreferences-link-title' => 'Сіздің жеке деректеріңізді көрсету',
+	'bs-exception-view-text' => 'Сіздің сауалыңызды ондегенде келесі қате табылды:',
+	'bs-imageofotheruser' => 'Сен басқа қатысушының орнына  суретті жүктей алмайсын',
+	'bs-filesystemhelper-file-copy-error' => 'Бұл файлдың <code>$1</code> көшірмесін алуға болмайды',
+	'bs-filesystemhelper-upload-err-code' => 'Файлдың жүктеле алмайды, себебі:', # Fuzzy
+	'bs-filesystemhelper-upload-base64-error' => 'Файл жүктеле алмайды',
+	'bs-filesystemhelper-upload-local-error-create' => 'Бұл файл  уики-де жасалынбайды',
+);
+
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'bs-ns_main' => '(Säiten)',
+	'bs-weeks-duration' => '{{PLURAL:$1|eng Woch|$1 Wochen}}',
+	'bs-mins-duration' => '{{PLURAL:$1|eng Minutt|$1 Minutten}}',
+	'bs-now' => 'elo',
+	'bs-userpagesettings-legend' => 'Benotzerastellungen',
+	'bs-navigation-contact' => 'Kontakt',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
@@ -394,4 +449,148 @@ $messages['mk'] = array(
 	'bs-navigation-instructions' => 'Напатствија',
 	'bs-navigation-support' => 'Поддршка',
 	'bs-navigation-contact' => 'Контакт',
+);
+
+/** Dutch (Nederlands)
+ * @author SPQRobin
+ */
+$messages['nl'] = array(
+	'bs-ns_main' => "(Pagina's)",
+);
+
+/** Polish (polski)
+ * @author Chrumps
+ */
+$messages['pl'] = array(
+	'bs-ns_main' => '(Strony)',
+	'bs-ns_all' => '(wszystkie)',
+	'bs-tab_navigation' => 'Nawigacja',
+	'bs-userbar_loginswitch_logout' => 'Wyloguj',
+	'bs-userbar_loginswitch_login' => 'Zaloguj się',
+	'bs-extended-search-tooltip-fulltext' => 'Wyszukiwanie pełnotekstowe',
+	'bs-extended-search-textfield-defaultvalue' => 'Wyszukiwanie...',
+	'bs-no-information-available' => 'Brak informacji',
+	'bs-years-duration' => '{{PLURAL:$1|1 rok|$1 lata|$1 lat}}',
+	'bs-months-duration' => '{{PLURAL:$1|1 miesiąc|$1 miesiące|$1 miesięcy}}',
+	'bs-weeks-duration' => '{{PLURAL:$1|1 tydzień|$1 tygodnie|$1 tygodni}}',
+	'bs-days-duration' => '{{PLURAL:$1|1 dzień|$1 dni}}',
+	'bs-hours-duration' => '{{PLURAL:$1|1 godzina|$1 godziny|$1 godzin}}',
+	'bs-mins-duration' => '{{PLURAL:$1|1 minuta|$1 minuty|$1 minut}}',
+	'bs-secs-duration' => '{{PLURAL:$1|1 sekunda|$1 sekundy|$1 sekund}}',
+	'bs-two-units-ago' => '$1 i $2 temu',
+	'bs-one-unit-ago' => '$1 temu',
+	'bs-now' => 'teraz',
+	'bs-userpagesettings-legend' => 'Ustawienia użytkownika',
+	'bs-exception-view-heading' => 'Wystąpił błąd',
+	'bs-exception-view-text' => 'Podczas przetwarzania żądania wystąpił następujący błąd:',
+	'bs-exception-view-admin-hint' => 'Skontaktuj się z administratorem systemu.',
+	'bs-viewtagerrorlist-legend' => '$1 - Błąd',
+	'bs-pref-sortalph' => 'Alfabetycznie sortowanie przestrzeni nazw',
+	'bs-permissionerror' => 'Błąd uprawnień!',
+	'bs-filesystemhelper-file-not-exists' => 'Plik <code>$1</code> nie istnieje.',
+	'bs-filesystemhelper-file-already-exists' => 'Plik <code>$1</code> już istnieje.',
+	'bs-filesystemhelper-folder-already-exists' => 'Folder <code>$1</code> już istnieje.',
+	'bs-filesystemhelper-folder-not-exists' => 'Folder <code>$1</code> nie istnieje.',
+	'bs-navigation-instructions' => 'Instrukcje',
+);
+
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'bs-ns_main' => '(Страницы)',
+	'bs-ns_all' => '(все)',
+	'bs-tab_navigation' => 'Навигация',
+	'bs-tab_admin' => 'Админ',
+	'bs-userbar_loginswitch_logout' => 'Выйти',
+	'bs-userbar_loginswitch_login' => 'Войти',
+	'bs-extended-search-tooltip-fulltext' => 'Полнотекстовый поиск',
+	'bs-extended-search-textfield-defaultvalue' => 'Поиск…',
+	'bs-no-information-available' => 'Информация отсутствует',
+	'bs-years-duration' => '{{PLURAL:$1|один год|$1 лет|$1 года}}',
+	'bs-months-duration' => '{{PLURAL:$1|один месяц|$1 месяцев|$1 месяца}}',
+	'bs-weeks-duration' => '{{PLURAL:$1|одну неделю|$1 недель|$1 недели}}',
+	'bs-days-duration' => '{{PLURAL:$1|один день|$1 дней|$1 дня}}',
+	'bs-hours-duration' => '{{PLURAL:$1|один час|$1 часов|$1 часа}}',
+	'bs-mins-duration' => '{{PLURAL:$1|одну минуту|$1 минут|$1 минуты}}',
+	'bs-secs-duration' => '{{PLURAL:$1|одну секунду|$1 секунд|$1 секунды}}',
+	'bs-two-units-ago' => '$1 и $2 назад',
+	'bs-one-unit-ago' => '$1 назад',
+	'bs-now' => 'только что',
+	'bs-email-greeting-no-receiver' => 'Привет,',
+	'bs-email-footer' => 'Это сообщение было создано автоматически. Пожалуйста, не отвечайте на это письмо.',
+	'bs-userpagesettings-legend' => 'Настройки пользователя',
+	'bs-userpreferences-link-text' => 'Дополнительные настройки пользователя',
+	'bs-exception-view-heading' => 'Произошла ошибка',
+	'bs-exception-view-stacktrace-toggle-show-text' => 'Показать сведения об ошибке',
+	'bs-exception-view-stacktrace-toggle-hide-text' => 'Скрыть сведения об ошибке',
+	'bs-filesystemhelper-upload-unsupported-type' => 'Этот тип файла не поддерживается.',
+	'bs-filesystemhelper-save-base64-error' => 'Файл не может быть сохранён.',
+	'bs-filesystemhelper-upload-base64-error' => 'Файл не может быть загружен.',
+	'bs-filesystemhelper-upload-local-error-create' => 'Файл не может быть создан в вики.',
+	'bs-navigation-instructions' => 'Инструкции',
+	'bs-navigation-support' => 'Поддержка',
+);
+
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'bs-ns_main' => '(Pages)',
+	'bs-ns_all' => '(aw)',
+	'bs-tab_navigation' => 'Naveegation',
+	'bs-tab_focus' => 'Focus',
+	'bs-tab_admin' => 'Admeen',
+	'bs-userbar_loginswitch_logout' => 'Log oot',
+	'bs-userbar_loginswitch_login' => 'Log in',
+	'bs-extended-search-tooltip-fulltext' => 'Fultex rake',
+	'bs-extended-search-textfield-defaultvalue' => 'Rake...',
+	'bs-extended-search-textfield-tooltip' => 'Rake the wiki',
+	'bs-no-information-available' => 'Nae information available',
+	'bs-years-duration' => '{{PLURAL:$1|yin year|$1 years}}',
+	'bs-months-duration' => '{{PLURAL:$1|yin month|$1 months}}',
+	'bs-weeks-duration' => '{{PLURAL:$1|yin week|$1 weeks}}',
+	'bs-days-duration' => '{{PLURAL:$1|yin day|$1 days}}',
+	'bs-hours-duration' => '{{PLURAL:$1|yin hoor|$1 hoors}}',
+	'bs-mins-duration' => '{{PLURAL:$1|yin minute|$1 minutes}}',
+	'bs-secs-duration' => '{{PLURAL:$1|yin seicont|$1 seiconts}}',
+	'bs-two-units-ago' => '$1 n $2 syne',
+	'bs-one-unit-ago' => '$1 syne',
+	'bs-now' => 'nou',
+	'bs-email-greeting-receiver' => '{{GENDER:$1|Hallo Mr $1|Hallo Mrs $1|Hallo $1}},',
+	'bs-email-greeting-no-receiver' => 'Hallo,',
+	'bs-email-footer' => 'This message wis generatit autæmateecallie. Please dinna replie til this email.',
+	'bs-userpagesettings-legend' => 'Uiser settins',
+	'bs-userpreferences-link-text' => 'Mair uiser settins',
+	'bs-userpreferences-link-title' => 'Displey yer personal uiser settins',
+	'bs-exception-view-heading' => 'Ae mistak happent',
+	'bs-exception-view-text' => 'While processin yer request the follaein mistak happent:',
+	'bs-exception-view-admin-hint' => 'Please contact yer system admeenistrater.',
+	'bs-exception-view-stacktrace-toggle-show-text' => 'Shaw the mistak details',
+	'bs-exception-view-stacktrace-toggle-hide-text' => 'Skauk the mistak details',
+	'action-responsibleeditors-viewspecialpage' => 'see the pages that ar protectit wi the "ResponsibleEediters-Seebyordinairpage" richt',
+	'bs-viewtagerrorlist-legend' => '$1 - Mistak',
+	'bs-readonly' => 'The database is nou lockit til new entries n ither modifeecations, proably fer routine database maintenance, after this it will be back til normal. The admeenistrater that lockt it affered this explanation: $1',
+	'bs-imageofotheruser' => "Ye'r na permitit tae uplaid aen eemage fer anither uiser.",
+	'bs-pref-sortalph' => 'Sort namespaces alphabeticlie',
+	'bs-permissionerror' => 'Permission mistak!',
+	'bs-filesystemhelper-no-directory' => '<code>$1</code> isna ae valid directerie.',
+	'bs-filesystemhelper-has-path-traversal' => 'Path traversal detectit!',
+	'bs-filesystemhelper-file-not-exists' => 'The file <code>$1</code> disna exeest.',
+	'bs-filesystemhelper-file-copy-error' => 'The file <code>$1</code> coud na be copied.',
+	'bs-filesystemhelper-file-already-exists' => 'The file <code>$1</code> awreadie exeests.',
+	'bs-filesystemhelper-file-delete-error' => 'The file <code>$1</code> coudna be delytit.',
+	'bs-filesystemhelper-folder-already-exists' => 'The fauder <code>$1</code> awreadie exeests.',
+	'bs-filesystemhelper-folder-copy-error' => 'The fauder <code>$1</code> coudna be renamed.',
+	'bs-filesystemhelper-folder-not-exists' => 'The fauder <code>$1</code> disna exeest.',
+	'bs-filesystemhelper-upload-err-code' => 'The file coudna be uplaidit: $1',
+	'bs-filesystemhelper-upload-wrong-ext' => 'The file disna hae the needit extension: $1.',
+	'bs-filesystemhelper-upload-unsupported-type' => 'This file type isna supportit.',
+	'bs-filesystemhelper-save-base64-error' => 'The file coudna be hained.',
+	'bs-filesystemhelper-upload-base64-error' => 'The file coudna be uplaidit.',
+	'bs-filesystemhelper-upload-local-error-stash-file' => 'The file coudna be muived til the uplaid stash.',
+	'bs-filesystemhelper-upload-local-error-create' => 'The file coud na be cræftit in the wiki.',
+	'bs-navigation-instructions' => 'Instructions',
+	'bs-navigation-support' => 'Support',
+	'bs-navigation-contact' => 'Contact',
 );
