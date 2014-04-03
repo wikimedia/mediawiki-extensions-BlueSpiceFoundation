@@ -1,7 +1,7 @@
 {
     "@metadata": {
         "authors": [
-            "    Stephan Muggli <muggli@hallowelt.biz>"
+            "Stephan Muggli <muggli@hallowelt.biz>"
         ]
     },
     "bs-validator-email-validation-approved": "The email address has been successfully validated.",
