@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Amire80"
+        ]
+    },
+    "bs-extjs-portal-config": "הגדרת תיבות",
+    "bs-extjs-portal-title": "כותרת תיבה",
+    "bs-extjs-portal-height": "גובה",
+    "bs-extjs-portal-count": "עיולים",
+    "bs-extjs-portal-timespan": "פרק זמן",
+    "bs-extjs-portal-timespan-week": "שבוע",
+    "bs-extjs-portal-timespan-month": "חודש",
+    "bs-extjs-portal-timespan-alltime": "תמיד"
+}

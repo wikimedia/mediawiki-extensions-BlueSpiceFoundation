@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "John Reid"
+        ]
+    },
+    "bs-extjs-portal-config": "Confeegur the portlet:",
+    "bs-extjs-portal-title": "The Portlet title",
+    "bs-extjs-portal-height": "Heicht",
+    "bs-extjs-portal-count": "The Entries",
+    "bs-extjs-portal-timespan": "The Timespan",
+    "bs-extjs-portal-timespan-week": "Week",
+    "bs-extjs-portal-timespan-month": "Month",
+    "bs-extjs-portal-timespan-alltime": "Aw time"
+}

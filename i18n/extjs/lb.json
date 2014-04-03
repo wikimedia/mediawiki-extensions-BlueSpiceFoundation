@@ -1,0 +1,24 @@
+{
+    "@metadata": {
+        "authors": [
+            "Robby"
+        ]
+    },
+    "bs-extjs-ok": "OK",
+    "bs-extjs-cancel": "Ofbriechen",
+    "bs-extjs-yes": "Jo",
+    "bs-extjs-no": "Neen",
+    "bs-extjs-save": "Späicheren",
+    "bs-extjs-delete": "Läschen",
+    "bs-extjs-edit": "Änneren",
+    "bs-extjs-hint": "Tipp",
+    "bs-extjs-error": "Feeler",
+    "bs-extjs-confirm": "Confirméieren",
+    "bs-extjs-actions-column-header": "Aktiounen",
+    "bs-extjs-warning": "Warnung",
+    "bs-extjs-saving": "späicheren...",
+    "bs-extjs-reset": "Zrécksetzen",
+    "bs-extjs-close": "Zoumaachen",
+    "bs-extjs-label-user": "Benotzer",
+    "bs-extjs-uploading": "Eroplueden..."
+}

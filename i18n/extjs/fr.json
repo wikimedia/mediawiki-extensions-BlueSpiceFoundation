@@ -1,0 +1,33 @@
+{
+    "@metadata": {
+        "authors": [
+            "Gomoko"
+        ]
+    },
+    "bs-extjs-ok": "Ok",
+    "bs-extjs-cancel": "Annuler",
+    "bs-extjs-yes": "Oui",
+    "bs-extjs-no": "Non",
+    "bs-extjs-save": "Enregistrer",
+    "bs-extjs-delete": "Supprimer",
+    "bs-extjs-add": "Ajouter",
+    "bs-extjs-remove": "Supprimer",
+    "bs-extjs-edit": "Modifier",
+    "bs-extjs-hint": "Astuce",
+    "bs-extjs-error": "Erreur",
+    "bs-extjs-confirm": "Confirmer",
+    "bs-extjs-loading": "Chargement en cours…",
+    "bs-extjs-pageSize": "Taille de la page",
+    "bs-extjs-actions-column-header": "Actions",
+    "bs-extjs-warning": "Avertissement",
+    "bs-extjs-saving": "enregistrement en cours…",
+    "bs-extjs-reset": "Réinitialiser",
+    "bs-extjs-close": "Fermer",
+    "bs-extjs-label-user": "Utilisateur",
+    "bs-extjs-upload": "Télécharger",
+    "bs-extjs-browse": "Naviguer",
+    "bs-extjs-uploading": "Téléchargement en cours…",
+    "bs-extjs-confirmNavigationTitle": "Suivre le lien",
+    "bs-extjs-confirmNavigationText": "Voulez-vous vraiment suivre ce lien ? Tous les paramètres dynamiques comme le filtrage ou le tri sur la page actuelle seront perdus.",
+    "bs-extjs-allns": "(tous)"
+}

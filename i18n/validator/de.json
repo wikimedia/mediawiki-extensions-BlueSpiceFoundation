@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "    Stephan Muggli <muggli@hallowelt.biz>"
+        ]
+    },
+    "bs-validator-email-validation-approved": "Die Email-Adresse wurde erfolgreich validiert.",
+    "bs-validator-email-validation-not-approved": "Die Email-Adresse konnte nicht validiert werden.",
+    "bs-validator-url-validation-approved": "Die URL wurde erfolgreich validiert.",
+    "bs-validator-url-validation-not-approved": "Die URL konnte nicht validiert werden.",
+    "bs-validator-arg-count-validation-approved": "Das Attribut \"count\" wurde erfolgreich validiert.",
+    "bs-validator-arg-count-validation-not-approved": "Das Attribut \"count\" muss einen positiven Wert haben.",
+    "bs-validator-set-validation-approved": "$1 wurde erfolgreich validiert.",
+    "bs-validator-set-validation-not-approved": "Für $1 ist nur {{PLURAL:$3|der folgende Wert|einer der folgenden Werte}} erlaubt: $2.",
+    "bs-validator-integer-range-validation-too-low": "Der angegebene Wert ist zu klein. Er darf nicht kleiner als $1 sein.",
+    "bs-validator-integer-range-validation-too-high": "Der angegebene Wert ist zu groß. Er darf nicht größer als $1 sein."
+}

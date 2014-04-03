@@ -29,7 +29,7 @@
  */
 $wgBlueSpiceExtInfo = array(
 	'name' => 'BlueSpice for MediaWiki',
-	'version' => '2.22.1',
+	'version' => '2.23.0',
 	'status' => 'stable',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
 	'url' => 'http://www.blue-spice.org',
@@ -66,6 +66,13 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
 $wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
 //I18N
+$wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
+$wgMessagesDirs['BlueSpiceCredits'] = __DIR__ . '/i18n/credits';
+$wgMessagesDirs['BlueSpiceDiagnostics'] = __DIR__ . '/i18n/diagnostics';
+$wgMessagesDirs['BlueSpice.ExtJS'] = __DIR__ . '/i18n/extjs';
+$wgMessagesDirs['BlueSpice.ExtJS.Portal'] = __DIR__ . '/i18n/extjs-portal';
+$wgMessagesDirs['Validator'] = __DIR__ . '/i18n/validator';
+
 $wgExtensionMessagesFiles += array(
 	'BlueSpice' => __DIR__."/languages/BlueSpice.i18n.php",
 	'Validator' => __DIR__."/languages/Validator.i18n.php",

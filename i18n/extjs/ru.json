@@ -1,0 +1,33 @@
+{
+    "@metadata": {
+        "authors": [
+            "Amire80",
+            "Okras",
+            "Габдулгани НИШ ХБН"
+        ]
+    },
+    "bs-extjs-ok": "OK",
+    "bs-extjs-cancel": "Отмена",
+    "bs-extjs-yes": "Да",
+    "bs-extjs-no": "Нет",
+    "bs-extjs-save": "Сохранить",
+    "bs-extjs-delete": "Удалить",
+    "bs-extjs-add": "Добавить",
+    "bs-extjs-remove": "Удалить",
+    "bs-extjs-edit": "Редактировать",
+    "bs-extjs-hint": "Подсказка",
+    "bs-extjs-error": "Ошибка",
+    "bs-extjs-confirm": "Подтвердить",
+    "bs-extjs-loading": "Загрузка…",
+    "bs-extjs-pageSize": "Размер страницы",
+    "bs-extjs-actions-column-header": "Действия",
+    "bs-extjs-warning": "Внимание",
+    "bs-extjs-saving": "үнемдей отыра...",
+    "bs-extjs-reset": "Сбросить",
+    "bs-extjs-close": "Закрыть",
+    "bs-extjs-label-user": "Участник",
+    "bs-extjs-upload": "Загрузить",
+    "bs-extjs-browse": "Обзор",
+    "bs-extjs-uploading": "Загрузка…",
+    "bs-extjs-allns": "(все)"
+}

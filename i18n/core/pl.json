@@ -1,0 +1,37 @@
+{
+    "@metadata": {
+        "authors": [
+            "Chrumps"
+        ]
+    },
+    "bs-ns_main": "(Strony)",
+    "bs-ns_all": "(wszystkie)",
+    "bs-tab_navigation": "Nawigacja",
+    "bs-userbar_loginswitch_logout": "Wyloguj",
+    "bs-userbar_loginswitch_login": "Zaloguj się",
+    "bs-extended-search-tooltip-fulltext": "Wyszukiwanie pełnotekstowe",
+    "bs-extended-search-textfield-defaultvalue": "Wyszukiwanie...",
+    "bs-no-information-available": "Brak informacji",
+    "bs-years-duration": "{{PLURAL:$1|1 rok|$1 lata|$1 lat}}",
+    "bs-months-duration": "{{PLURAL:$1|1 miesiąc|$1 miesiące|$1 miesięcy}}",
+    "bs-weeks-duration": "{{PLURAL:$1|1 tydzień|$1 tygodnie|$1 tygodni}}",
+    "bs-days-duration": "{{PLURAL:$1|1 dzień|$1 dni}}",
+    "bs-hours-duration": "{{PLURAL:$1|1 godzina|$1 godziny|$1 godzin}}",
+    "bs-mins-duration": "{{PLURAL:$1|1 minuta|$1 minuty|$1 minut}}",
+    "bs-secs-duration": "{{PLURAL:$1|1 sekunda|$1 sekundy|$1 sekund}}",
+    "bs-two-units-ago": "$1 i $2 temu",
+    "bs-one-unit-ago": "$1 temu",
+    "bs-now": "teraz",
+    "bs-userpagesettings-legend": "Ustawienia użytkownika",
+    "bs-exception-view-heading": "Wystąpił błąd",
+    "bs-exception-view-text": "Podczas przetwarzania żądania wystąpił następujący błąd:",
+    "bs-exception-view-admin-hint": "Skontaktuj się z administratorem systemu.",
+    "bs-viewtagerrorlist-legend": "$1 - Błąd",
+    "bs-pref-sortalph": "Alfabetycznie sortowanie przestrzeni nazw",
+    "bs-permissionerror": "Błąd uprawnień!",
+    "bs-filesystemhelper-file-not-exists": "Plik <code>$1</code> nie istnieje.",
+    "bs-filesystemhelper-file-already-exists": "Plik <code>$1</code> już istnieje.",
+    "bs-filesystemhelper-folder-already-exists": "Folder <code>$1</code> już istnieje.",
+    "bs-filesystemhelper-folder-not-exists": "Folder <code>$1</code> nie istnieje.",
+    "bs-navigation-instructions": "Instrukcje"
+}

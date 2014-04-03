@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "Okras"
+        ]
+    },
+    "bs-extjs-portal-config": "Настройка портлета:",
+    "bs-extjs-portal-title": "Заголовок портлета",
+    "bs-extjs-portal-height": "Высота",
+    "bs-extjs-portal-count": "Записи",
+    "bs-extjs-portal-timespan": "Промежуток времени",
+    "bs-extjs-portal-timespan-week": "Неделя",
+    "bs-extjs-portal-timespan-month": "Месяц",
+    "bs-extjs-portal-timespan-alltime": "За всё время"
+}

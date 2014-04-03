@@ -1,0 +1,15 @@
+{
+    "@metadata": {
+        "authors": [
+            "    Stephan Muggli <muggli@hallowelt.biz>"
+        ]
+    },
+    "bs-extjs-portal-config": "Configure portlet:",
+    "bs-extjs-portal-title": "Portlet title",
+    "bs-extjs-portal-height": "Height",
+    "bs-extjs-portal-count": "Entries",
+    "bs-extjs-portal-timespan": "Timespan",
+    "bs-extjs-portal-timespan-week": "Week",
+    "bs-extjs-portal-timespan-month": "Month",
+    "bs-extjs-portal-timespan-alltime": "All time"
+}

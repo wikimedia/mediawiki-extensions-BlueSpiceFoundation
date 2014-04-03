@@ -1,0 +1,13 @@
+{
+    "@metadata": {
+        "authors": [
+            "Robby"
+        ]
+    },
+    "bs-ns_main": "(Säiten)",
+    "bs-weeks-duration": "{{PLURAL:$1|eng Woch|$1 Wochen}}",
+    "bs-mins-duration": "{{PLURAL:$1|eng Minutt|$1 Minutten}}",
+    "bs-now": "elo",
+    "bs-userpagesettings-legend": "Benotzerastellungen",
+    "bs-navigation-contact": "Kontakt"
+}

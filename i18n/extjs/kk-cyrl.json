@@ -1,0 +1,18 @@
+{
+    "@metadata": {
+        "authors": [
+            "Габдулгани НИШ ХБН"
+        ]
+    },
+    "bs-extjs-yes": "Ия",
+    "bs-extjs-delete": "алыстату",
+    "bs-extjs-hint": "тұспал",
+    "bs-extjs-confirm": "құптау",
+    "bs-extjs-loading": "Күте тұр...",
+    "bs-extjs-pageSize": "бөлім өлшемі",
+    "bs-extjs-actions-column-header": "Әрекеттер",
+    "bs-extjs-saving": "сақтай отыра...",
+    "bs-extjs-close": "жабу",
+    "bs-extjs-label-user": "Қатысушы",
+    "bs-extjs-allns": "бәрі"
+}

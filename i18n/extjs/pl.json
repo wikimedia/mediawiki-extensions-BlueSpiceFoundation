@@ -1,0 +1,21 @@
+{
+    "@metadata": {
+        "authors": [
+            "Chrumps"
+        ]
+    },
+    "bs-extjs-cancel": "Anuluj",
+    "bs-extjs-yes": "Tak",
+    "bs-extjs-no": "Nie",
+    "bs-extjs-save": "Zapisz",
+    "bs-extjs-delete": "Usuń",
+    "bs-extjs-add": "Dodaj",
+    "bs-extjs-remove": "Usuń",
+    "bs-extjs-error": "Błąd",
+    "bs-extjs-loading": "Ładowanie...",
+    "bs-extjs-warning": "Ostrzeżenie",
+    "bs-extjs-saving": "zapisywanie...",
+    "bs-extjs-close": "Zamknij",
+    "bs-extjs-label-user": "Użytkownik",
+    "bs-extjs-uploading": "Przesyłanie..."
+}

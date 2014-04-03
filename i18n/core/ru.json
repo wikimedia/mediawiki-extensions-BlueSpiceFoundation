@@ -1,0 +1,39 @@
+{
+    "@metadata": {
+        "authors": [
+            "Okras"
+        ]
+    },
+    "bs-ns_main": "(Страницы)",
+    "bs-ns_all": "(все)",
+    "bs-tab_navigation": "Навигация",
+    "bs-tab_admin": "Админ",
+    "bs-userbar_loginswitch_logout": "Выйти",
+    "bs-userbar_loginswitch_login": "Войти",
+    "bs-extended-search-tooltip-fulltext": "Полнотекстовый поиск",
+    "bs-extended-search-textfield-defaultvalue": "Поиск…",
+    "bs-no-information-available": "Информация отсутствует",
+    "bs-years-duration": "{{PLURAL:$1|один год|$1 лет|$1 года}}",
+    "bs-months-duration": "{{PLURAL:$1|один месяц|$1 месяцев|$1 месяца}}",
+    "bs-weeks-duration": "{{PLURAL:$1|одну неделю|$1 недель|$1 недели}}",
+    "bs-days-duration": "{{PLURAL:$1|один день|$1 дней|$1 дня}}",
+    "bs-hours-duration": "{{PLURAL:$1|один час|$1 часов|$1 часа}}",
+    "bs-mins-duration": "{{PLURAL:$1|одну минуту|$1 минут|$1 минуты}}",
+    "bs-secs-duration": "{{PLURAL:$1|одну секунду|$1 секунд|$1 секунды}}",
+    "bs-two-units-ago": "$1 и $2 назад",
+    "bs-one-unit-ago": "$1 назад",
+    "bs-now": "только что",
+    "bs-email-greeting-no-receiver": "Привет,",
+    "bs-email-footer": "Это сообщение было создано автоматически. Пожалуйста, не отвечайте на это письмо.",
+    "bs-userpagesettings-legend": "Настройки пользователя",
+    "bs-userpreferences-link-text": "Дополнительные настройки пользователя",
+    "bs-exception-view-heading": "Произошла ошибка",
+    "bs-exception-view-stacktrace-toggle-show-text": "Показать сведения об ошибке",
+    "bs-exception-view-stacktrace-toggle-hide-text": "Скрыть сведения об ошибке",
+    "bs-filesystemhelper-upload-unsupported-type": "Этот тип файла не поддерживается.",
+    "bs-filesystemhelper-save-base64-error": "Файл не может быть сохранён.",
+    "bs-filesystemhelper-upload-base64-error": "Файл не может быть загружен.",
+    "bs-filesystemhelper-upload-local-error-create": "Файл не может быть создан в вики.",
+    "bs-navigation-instructions": "Инструкции",
+    "bs-navigation-support": "Поддержка"
+}

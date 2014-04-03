@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Габдулгани НИШ ХБН"
+        ]
+    },
+    "bs-ns_main": "Беттер",
+    "bs-tab_focus": "орталығы",
+    "bs-userbar_loginswitch_logout": "шығу",
+    "bs-userbar_loginswitch_login": "Кіру",
+    "bs-no-information-available": "Мәлімет жоқ",
+    "bs-days-duration": "{{PLURAL:$1|бір күн|$1 күндер}}",
+    "bs-hours-duration": "{{PLURAL:$1|бір сағат|$1 сағаттар}}",
+    "bs-mins-duration": "{{PLURAL:$1|бір минут| $1 минуттар}}",
+    "bs-two-units-ago": "$1 -$2 ден кем",
+    "bs-email-greeting-receiver": "{{GENDER:$1|Сәлем, $1 мырза|Сәлем, $1 ханым| Сәлем , $1}}",
+    "bs-email-greeting-no-receiver": "сәлем,",
+    "bs-email-footer": "Бұл хабарлау автоматты түрінде жасалған. Жауап бермеңіз",
+    "bs-userpreferences-link-title": "Сіздің жеке деректеріңізді көрсету",
+    "bs-exception-view-text": "Сіздің сауалыңызды ондегенде келесі қате табылды:",
+    "bs-imageofotheruser": "Сен басқа қатысушының орнына  суретті жүктей алмайсын",
+    "bs-filesystemhelper-file-copy-error": "Бұл файлдың <code>$1</code> көшірмесін алуға болмайды",
+    "bs-filesystemhelper-upload-err-code": "Файлдың жүктеле алмайды, себебі:",
+    "bs-filesystemhelper-upload-base64-error": "Файл жүктеле алмайды",
+    "bs-filesystemhelper-upload-local-error-create": "Бұл файл  уики-де жасалынбайды"
+}
