@@ -1,0 +1,37 @@
+{
+    "@metadata": {
+        "authors": [
+            "Inkbug"
+        ]
+    },
+    "bs-ns_main": "(ראשי)",
+    "bs-ns_all": "(הכול)",
+    "bs-tab_navigation": "ניווט",
+    "bs-tab_admin": "מפעיל מערכת",
+    "bs-userbar_loginswitch_logout": "יציאה",
+    "bs-userbar_loginswitch_login": "כניסה",
+    "bs-extended-search-textfield-defaultvalue": "חיפוש...",
+    "bs-years-duration": "{{PLURAL:$1|שנה אחת|$1 שנים}}",
+    "bs-months-duration": "{{PLURAL:$1|חודש אחד|$1 חודשים}}",
+    "bs-weeks-duration": "{{PLURAL:$1|שבוע אחד|$1 שבועות}}",
+    "bs-days-duration": "{{PLURAL:$1|יום אחד|$1 ימים}}",
+    "bs-hours-duration": "{{PLURAL:$1|שעה אחת|$1 שעות}}",
+    "bs-mins-duration": "{{PLURAL:$1|דקה אחת|$1 דקות}}",
+    "bs-secs-duration": "{{PLURAL:$1|שניה אחת|$1 שניות}}",
+    "bs-two-units-ago": "לפני $1 ו$2",
+    "bs-one-unit-ago": "לפני $1",
+    "bs-now": "עכשיו",
+    "bs-email-greeting-receiver": "{{GENDER:$1|שלום מר $1|שלום גברת $1|שלום $1}},",
+    "bs-email-greeting-no-receiver": "שלום,",
+    "bs-email-footer": "הודעה זו נוצרה באופן אוטמטי. נא לא להשיב לאימייל זה.",
+    "bs-filesystemhelper-file-not-exists": "הקובץ <code>$1</code> אינו קיים.",
+    "bs-filesystemhelper-file-copy-error": "לא הייתה אפשרות להעתיק את הקובץ <code>$1</code>.",
+    "bs-filesystemhelper-file-already-exists": "הקובץ <code>$1</code> כבר קיים.",
+    "bs-filesystemhelper-file-delete-error": "לא הייתה אפשרות למחוק את הקובץ <code>$1</code>.",
+    "bs-filesystemhelper-folder-already-exists": "התיקיה <code>$1</code> כבר קיימת.",
+    "bs-filesystemhelper-folder-copy-error": "לא הייתה אפשרות לשנות את שם התיקיה <code>$1</code>.",
+    "bs-filesystemhelper-folder-not-exists": "התיקיה <code>$1</code> אינה קיימת.",
+    "bs-navigation-instructions": "הוראות",
+    "bs-navigation-support": "תמיכה",
+    "bs-navigation-contact": "יצירת קשר"
+}

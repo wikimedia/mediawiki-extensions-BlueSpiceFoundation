@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "Minh Nguyen"
+        ]
+    },
+    "bs-validator-email-validation-approved": "Đã xác nhận địa chỉ thư điện tử thành công.",
+    "bs-validator-email-validation-not-approved": "Không thể xác nhận địa chỉ thư điện tử.",
+    "bs-validator-url-validation-approved": "Đã xác nhận URL thành công.",
+    "bs-validator-url-validation-not-approved": "Không thể xác nhận URL.",
+    "bs-validator-arg-count-validation-approved": "Đã xác nhận thuộc tính “count” thành công.",
+    "bs-validator-arg-count-validation-not-approved": "Không thể xác nhận thuộc tính “count”.",
+    "bs-validator-set-validation-approved": "Đã xác nhận $1 thành công.",
+    "bs-validator-set-validation-not-approved": "Chỉ cho phép {{PLURAL:$3|giá trị|các giá trị}} sau cho $1: $2.",
+    "bs-validator-integer-range-validation-too-low": "Đã cung cấp giá trị quá thấp. Nó phải ít nhất $1.",
+    "bs-validator-integer-range-validation-too-high": "Đã cung cấp giá trị quá cao. Nó phải ít hơn $1."
+}

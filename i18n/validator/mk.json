@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "Bjankuloski06"
+        ]
+    },
+    "bs-validator-email-validation-approved": "Е-поштата е успешно потврдена.",
+    "bs-validator-email-validation-not-approved": "Не можев да ја потврдам е-поштата.",
+    "bs-validator-url-validation-approved": "URL-адресата е успешно потврдена.",
+    "bs-validator-url-validation-not-approved": "Не можев да ја потврдам URL-адресата.",
+    "bs-validator-arg-count-validation-approved": "Атрибутот „count“ е успешно потврден.",
+    "bs-validator-arg-count-validation-not-approved": "Не можев да го потврдам атрибутот „count“.",
+    "bs-validator-set-validation-approved": "$1 е успешно потврдено.",
+    "bs-validator-set-validation-not-approved": "{{PLURAL:$3|За $1 е допуштена само следнава вредност|За $1 се допуштени само следниве вредности}}: $2.",
+    "bs-validator-integer-range-validation-too-low": "Укажаната вредност е прениска. Не треба да биде помала од $1.",
+    "bs-validator-integer-range-validation-too-high": "Укажаната вредност е превисока. Не треба да биде поголема од $1."
+}

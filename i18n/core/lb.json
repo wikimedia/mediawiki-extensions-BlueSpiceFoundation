@@ -5,9 +5,16 @@
         ]
     },
     "bs-ns_main": "(Säiten)",
+    "bs-tab_navigation": "Navigatioun",
+    "bs-userbar_loginswitch_login": "Aloggen",
+    "bs-years-duration": "{{PLURAL:$1|ee Joer|$1 Joer}}",
     "bs-weeks-duration": "{{PLURAL:$1|eng Woch|$1 Wochen}}",
+    "bs-days-duration": "{{PLURAL:$1|een Dag|$1 Deeg}}",
     "bs-mins-duration": "{{PLURAL:$1|eng Minutt|$1 Minutten}}",
+    "bs-secs-duration": "{{PLURAL:$1|eng Sekonn|$1 Sekonnen}}",
     "bs-now": "elo",
     "bs-userpagesettings-legend": "Benotzerastellungen",
+    "bs-exception-view-heading": "Et ass e Feeler geschitt",
+    "bs-exception-view-stacktrace-toggle-show-text": "Detailer vum Feeler weisen",
     "bs-navigation-contact": "Kontakt"
 }

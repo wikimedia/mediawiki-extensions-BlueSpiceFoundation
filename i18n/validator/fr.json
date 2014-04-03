@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "Gomoko"
+        ]
+    },
+    "bs-validator-email-validation-approved": "L’adresse électronique a bien été validée.",
+    "bs-validator-email-validation-not-approved": "L’adresse électronique n’a pas pu être validée.",
+    "bs-validator-url-validation-approved": "L’URL a bien été validée.",
+    "bs-validator-url-validation-not-approved": "L’URL n’a pas pu être validée.",
+    "bs-validator-arg-count-validation-approved": "L’attribut « count » a bien été validé.",
+    "bs-validator-arg-count-validation-not-approved": "L’attribut « count » n’a pas pu être validé.",
+    "bs-validator-set-validation-approved": "$1 a bien été validé.",
+    "bs-validator-set-validation-not-approved": "{{PLURAL:$3|Seule la valeur suivante est autorisée pour $1|Pour $1, seule une des valeurs suivantes est autorisée}} : $2.",
+    "bs-validator-integer-range-validation-too-low": "La valeur fournie est trop basse. Elle ne doit pas être inférieure à $1.",
+    "bs-validator-integer-range-validation-too-high": "La valeur fournie est trop haute. Elle ne doit pas être supérieure à $1."
+}

@@ -29,5 +29,7 @@
     "bs-extjs-upload": "Загрузить",
     "bs-extjs-browse": "Обзор",
     "bs-extjs-uploading": "Загрузка…",
+    "bs-extjs-confirmNavigationTitle": "Перейти по ссылке",
+    "bs-extjs-confirmNavigationText": "Вы действительно хотите перейти по этой ссылке? Все динамические параметры, такие как фильтрация или сортировка на текущей странице, будут потеряны.",
     "bs-extjs-allns": "(все)"
 }

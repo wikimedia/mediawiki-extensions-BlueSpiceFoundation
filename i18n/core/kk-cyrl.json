@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Габдулгани НИШ ХБН"
+            "Габдулгани НИШ ХБН",
+            "Arystanbek"
         ]
     },
     "bs-ns_main": "Беттер",
@@ -20,7 +21,7 @@
     "bs-exception-view-text": "Сіздің сауалыңызды ондегенде келесі қате табылды:",
     "bs-imageofotheruser": "Сен басқа қатысушының орнына  суретті жүктей алмайсын",
     "bs-filesystemhelper-file-copy-error": "Бұл файлдың <code>$1</code> көшірмесін алуға болмайды",
-    "bs-filesystemhelper-upload-err-code": "Файлдың жүктеле алмайды, себебі:",
+    "bs-filesystemhelper-upload-err-code": "Файл жүктелмеді:$1",
     "bs-filesystemhelper-upload-base64-error": "Файл жүктеле алмайды",
     "bs-filesystemhelper-upload-local-error-create": "Бұл файл  уики-де жасалынбайды"
 }

@@ -14,11 +14,14 @@
     "bs-extjs-hint": "Tipp",
     "bs-extjs-error": "Feeler",
     "bs-extjs-confirm": "Confirméieren",
+    "bs-extjs-loading": "Lueden...",
+    "bs-extjs-pageSize": "Gréisst vun der Säit",
     "bs-extjs-actions-column-header": "Aktiounen",
     "bs-extjs-warning": "Warnung",
     "bs-extjs-saving": "späicheren...",
     "bs-extjs-reset": "Zrécksetzen",
     "bs-extjs-close": "Zoumaachen",
     "bs-extjs-label-user": "Benotzer",
+    "bs-extjs-upload": "Eroplueden",
     "bs-extjs-uploading": "Eroplueden..."
 }

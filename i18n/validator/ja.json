@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Dude1717"
+        ]
+    },
+    "bs-validator-email-validation-approved": "メール アドレスが正常に検証されました。",
+    "bs-validator-email-validation-not-approved": "メール アドレスを検証できませんでした。",
+    "bs-validator-url-validation-not-approved": "URL を検証できませんでした。",
+    "bs-validator-integer-range-validation-too-high": "指定された値が高すぎます。$1に大きくしないでください 。"
+}

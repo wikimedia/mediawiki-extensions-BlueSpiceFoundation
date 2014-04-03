@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+        "authors": [
+            "SPQRobin"
+        ]
+    },
+    "bs-extjs-cancel": "Annuleren",
+    "bs-extjs-yes": "Ja",
+    "bs-extjs-no": "Nee",
+    "bs-extjs-error": "Fout",
+    "bs-extjs-warning": "Waarschuwing",
+    "bs-extjs-close": "Sluiten",
+    "bs-extjs-label-user": "Gebruiker"
+}

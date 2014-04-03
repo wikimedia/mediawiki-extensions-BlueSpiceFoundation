@@ -1,7 +1,5 @@
 {
-    "@metadata": {
-        "authors": []
-    },
+    "@metadata": [],
     "bs-extjs-ok": "OK",
     "bs-extjs-cancel": "Abbrechen",
     "bs-extjs-yes": "Ja",

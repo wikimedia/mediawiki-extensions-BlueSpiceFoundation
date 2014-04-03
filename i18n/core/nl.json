@@ -4,5 +4,12 @@
             "SPQRobin"
         ]
     },
-    "bs-ns_main": "(Pagina's)"
+    "bs-ns_main": "(Pagina's)",
+    "bs-userbar_loginswitch_logout": "Afmelden",
+    "bs-userbar_loginswitch_login": "Aanmelden",
+    "bs-no-information-available": "Geen informatie beschikbaar",
+    "bs-two-units-ago": "$1 en $2 geleden",
+    "bs-one-unit-ago": "$1 geleden",
+    "bs-now": "nu",
+    "bs-userpagesettings-legend": "Gebruikersinstellingen"
 }
