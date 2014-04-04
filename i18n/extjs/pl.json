@@ -11,6 +11,7 @@
     "bs-extjs-delete": "Usuń",
     "bs-extjs-add": "Dodaj",
     "bs-extjs-remove": "Usuń",
+    "bs-extjs-hint": "Wskazówka",
     "bs-extjs-error": "Błąd",
     "bs-extjs-loading": "Ładowanie...",
     "bs-extjs-warning": "Ostrzeżenie",

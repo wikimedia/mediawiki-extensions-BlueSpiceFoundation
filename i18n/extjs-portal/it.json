@@ -1,0 +1,12 @@
+{
+    "@metadata": {
+        "authors": [
+            "Beta16"
+        ]
+    },
+    "bs-extjs-portal-height": "Altezza",
+    "bs-extjs-portal-timespan": "Intervallo temporale",
+    "bs-extjs-portal-timespan-week": "Settimana",
+    "bs-extjs-portal-timespan-month": "Mese",
+    "bs-extjs-portal-timespan-alltime": "Intero periodo"
+}

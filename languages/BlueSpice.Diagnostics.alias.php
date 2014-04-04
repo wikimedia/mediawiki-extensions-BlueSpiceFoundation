@@ -13,7 +13,7 @@ $specialPageAliases['en'] = array(
 
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
-	'Diagnostics' => array( 'Diagnose' ),
+	'Diagnostics' => array( 'BlueSpice-Diagnose' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */

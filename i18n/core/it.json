@@ -1,0 +1,26 @@
+{
+    "@metadata": {
+        "authors": [
+            "Beta16"
+        ]
+    },
+    "bs-ns_main": "(Pagine)",
+    "bs-ns_all": "(tutti)",
+    "bs-tab_navigation": "Navigazione",
+    "bs-userbar_loginswitch_logout": "Esci",
+    "bs-userbar_loginswitch_login": "Entra",
+    "bs-no-information-available": "Nessuna informazione disponibile",
+    "bs-years-duration": "{{PLURAL:$1|un anno|$1 anni}}",
+    "bs-months-duration": "{{PLURAL:$1|un mese|$1 mesi}}",
+    "bs-weeks-duration": "{{PLURAL:$1|una settimana|$1 settimane}}",
+    "bs-days-duration": "{{PLURAL:$1|un giorno|$1 giorni}}",
+    "bs-hours-duration": "{{PLURAL:$1|un'ora|$1 ore}}",
+    "bs-mins-duration": "{{PLURAL:$1|un minuto|$1 minuti}}",
+    "bs-secs-duration": "{{PLURAL:$1|un secondo|$1 secondi}}",
+    "bs-two-units-ago": "$1 e $2 fa",
+    "bs-one-unit-ago": "$1 fa",
+    "bs-now": "ora",
+    "bs-navigation-instructions": "Istruzioni",
+    "bs-navigation-support": "Supporto",
+    "bs-navigation-contact": "Contatti"
+}

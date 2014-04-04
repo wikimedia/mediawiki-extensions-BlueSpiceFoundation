@@ -1,0 +1,18 @@
+{
+    "@metadata": {
+        "authors": [
+            "관인생략"
+        ]
+    },
+    "bs-userbar_loginswitch_logout": "로그아웃",
+    "bs-userbar_loginswitch_login": "로그인",
+    "bs-years-duration": "$1년",
+    "bs-months-duration": "$1개월",
+    "bs-weeks-duration": "$1주",
+    "bs-days-duration": "$1일",
+    "bs-hours-duration": "$1시간",
+    "bs-mins-duration": "$1분",
+    "bs-secs-duration": "$1초",
+    "bs-one-unit-ago": "$1 전",
+    "bs-email-greeting-no-receiver": "안녕하세요,"
+}

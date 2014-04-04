@@ -1,8 +1,15 @@
 {
     "@metadata": {
         "authors": [
-            "Toadino2"
+            "Toadino2",
+            "Beta16"
         ]
     },
-    "bs-validator-email-validation-not-approved": "L'indirizzo email non può essere convalidato."
+    "bs-validator-email-validation-approved": "L'indirizzo email è stato convalidato correttamente.",
+    "bs-validator-email-validation-not-approved": "L'indirizzo email non può essere convalidato.",
+    "bs-validator-url-validation-approved": "L'URL è stato convalidato correttamente.",
+    "bs-validator-url-validation-not-approved": "L'URL non può essere convalidato.",
+    "bs-validator-arg-count-validation-approved": "L'attributo \"count\" è stato convalidato correttamente.",
+    "bs-validator-arg-count-validation-not-approved": "L'attributo \"count\" non può essere convalidato.",
+    "bs-validator-set-validation-approved": "$1 è stato convalidato correttamente."
 }

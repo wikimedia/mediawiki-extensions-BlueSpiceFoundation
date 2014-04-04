@@ -13,7 +13,7 @@ $specialPageAliases['en'] = array(
 
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
-	'SpecialCredits' => array( 'Credits' ),
+	'SpecialCredits' => array( 'Danksagungen' ),
 );
 
 /** Italian (italiano) */

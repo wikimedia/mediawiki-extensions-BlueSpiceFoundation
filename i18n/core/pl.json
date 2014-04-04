@@ -26,6 +26,7 @@
     "bs-exception-view-heading": "Wystąpił błąd",
     "bs-exception-view-text": "Podczas przetwarzania żądania wystąpił następujący błąd:",
     "bs-exception-view-admin-hint": "Skontaktuj się z administratorem systemu.",
+    "bs-exception-view-stacktrace-toggle-show-text": "Pokaż szczegóły błędu",
     "bs-viewtagerrorlist-legend": "$1 - Błąd",
     "bs-pref-sortalph": "Alfabetycznie sortowanie przestrzeni nazw",
     "bs-permissionerror": "Błąd uprawnień!",

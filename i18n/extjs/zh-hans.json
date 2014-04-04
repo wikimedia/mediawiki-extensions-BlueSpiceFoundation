@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+        "authors": [
+            "Xiaomingyan"
+        ]
+    },
+    "bs-extjs-ok": "确定",
+    "bs-extjs-cancel": "取消",
+    "bs-extjs-yes": "是",
+    "bs-extjs-no": "否",
+    "bs-extjs-save": "保存",
+    "bs-extjs-delete": "删除",
+    "bs-extjs-add": "添加"
+}

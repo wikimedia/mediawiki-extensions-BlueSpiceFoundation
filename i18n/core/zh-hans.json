@@ -1,0 +1,29 @@
+{
+    "@metadata": {
+        "authors": [
+            "Xiaomingyan"
+        ]
+    },
+    "bs-tab_navigation": "导航",
+    "bs-userbar_loginswitch_logout": "退出",
+    "bs-userbar_loginswitch_login": "登录",
+    "bs-extended-search-tooltip-fulltext": "全文搜索",
+    "bs-extended-search-textfield-defaultvalue": "搜索...",
+    "bs-extended-search-textfield-tooltip": "搜索wiki",
+    "bs-no-information-available": "没有可用的信息",
+    "bs-years-duration": "{{PLURAL:$1|$1年}}",
+    "bs-months-duration": "{{PLURAL:$1|$1个月}}",
+    "bs-weeks-duration": "{{PLURAL:$1|$1周}}",
+    "bs-days-duration": "{{PLURAL:$1|$1天}}",
+    "bs-hours-duration": "{{PLURAL:$1|$1小时}}",
+    "bs-mins-duration": "{{PLURAL:$1|$1分}}",
+    "bs-secs-duration": "{{PLURAL:$1|$1秒}}",
+    "bs-two-units-ago": "$1$2前",
+    "bs-one-unit-ago": "$1前",
+    "bs-email-greeting-receiver": "{{GENDER:$1|$1先生|$1女士|$1}}：\n\n你好",
+    "bs-email-greeting-no-receiver": "你好，",
+    "bs-exception-view-stacktrace-toggle-show-text": "显示错误详情",
+    "bs-exception-view-stacktrace-toggle-hide-text": "隐藏错误详情",
+    "bs-permissionerror": "权限错误！",
+    "bs-navigation-support": "支持"
+}

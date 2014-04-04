@@ -10,6 +10,8 @@
     "bs-extjs-no": "Neen",
     "bs-extjs-save": "Späicheren",
     "bs-extjs-delete": "Läschen",
+    "bs-extjs-add": "Derbäisetzen",
+    "bs-extjs-remove": "Ewechhuelen",
     "bs-extjs-edit": "Änneren",
     "bs-extjs-hint": "Tipp",
     "bs-extjs-error": "Feeler",

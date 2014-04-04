@@ -54,7 +54,7 @@
     "bs-filesystemhelper-upload-err-code": "Error message given when a file could not be uploaded, full stop included in $1\n\nParameters:\n* $1 - a string indicating the reason",
     "bs-filesystemhelper-upload-wrong-ext": "Error message given when an uploaded file does not have the required file extension\n\nParameters:\n* $1 - the required file extension",
     "bs-filesystemhelper-upload-unsupported-type": "Error message given when an uploaded file has a file type that is not supported",
-    "bs-navigation-instructions": "Used in navigation for instuctions link",
+    "bs-navigation-instructions": "Used in navigation for instuctions link\n{{Identical|Instructions}}",
     "bs-navigation-support": "Used in navigation for support link",
     "bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}"
 }

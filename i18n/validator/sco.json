@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "John Reid"
+        ]
+    },
+    "bs-validator-email-validation-approved": "The email address haes been successfulie validatit.",
+    "bs-validator-email-validation-not-approved": "The email address coudna be validatit.",
+    "bs-validator-url-validation-approved": "The URL wis successfulie validatit.",
+    "bs-validator-url-validation-not-approved": "The URL coudna be validatit.",
+    "bs-validator-arg-count-validation-approved": "The attreebute \"coont\" haes been successfulie validatit.",
+    "bs-validator-arg-count-validation-not-approved": "The attreebute \"coont\" coudna be validatit.",
+    "bs-validator-set-validation-approved": "$1 wis successfulie validatit.",
+    "bs-validator-set-validation-not-approved": "{{PLURAL:$3|Yinlie the follaein value is alloued fer $1|Fer $1 yinlie yin o the follaein values is alloued}}: $2.",
+    "bs-validator-integer-range-validation-too-low": "The providit vailyie is ower law. It shidna be less than $1.",
+    "bs-validator-integer-range-validation-too-high": "The providit vailyie is ower hei. It shidna be muckler than $1."
+}

@@ -1,14 +1,24 @@
 {
     "@metadata": {
         "authors": [
-            "SPQRobin"
+            "SPQRobin",
+            "Southparkfan"
         ]
     },
     "bs-extjs-cancel": "Annuleren",
     "bs-extjs-yes": "Ja",
     "bs-extjs-no": "Nee",
+    "bs-extjs-save": "Opslaan",
+    "bs-extjs-delete": "Verwijderen",
+    "bs-extjs-remove": "Verwijderen",
+    "bs-extjs-edit": "Bewerken",
     "bs-extjs-error": "Fout",
+    "bs-extjs-confirm": "Bevestigen",
+    "bs-extjs-loading": "Bezig met laden…",
     "bs-extjs-warning": "Waarschuwing",
     "bs-extjs-close": "Sluiten",
-    "bs-extjs-label-user": "Gebruiker"
+    "bs-extjs-label-user": "Gebruiker",
+    "bs-extjs-upload": "Uploaden",
+    "bs-extjs-uploading": "Bezig met uploaden...",
+    "bs-extjs-allns": "(alle)"
 }
