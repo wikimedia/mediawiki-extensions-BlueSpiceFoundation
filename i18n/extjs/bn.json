@@ -1,0 +1,27 @@
+{
+    "@metadata": {
+        "authors": [
+            "Aftab1995"
+        ]
+    },
+    "bs-extjs-ok": "ঠিক আছে",
+    "bs-extjs-cancel": "বাতিল",
+    "bs-extjs-yes": "হ্যাঁ",
+    "bs-extjs-no": "না",
+    "bs-extjs-save": "সংরক্ষণ",
+    "bs-extjs-delete": "অপসারণ",
+    "bs-extjs-add": "যোগ",
+    "bs-extjs-edit": "সম্পাদনা",
+    "bs-extjs-error": "ত্রুটি",
+    "bs-extjs-confirm": "নিশ্চিত করুন",
+    "bs-extjs-loading": "লোড করা হচ্ছে...",
+    "bs-extjs-actions-column-header": "অ্যাকশন",
+    "bs-extjs-warning": "সতর্কীকরণ",
+    "bs-extjs-saving": "সংরক্ষণ করা হচ্ছে ...",
+    "bs-extjs-close": "বন্ধ",
+    "bs-extjs-label-user": "ব্যবহারকারী",
+    "bs-extjs-upload": "আপলোড",
+    "bs-extjs-browse": "ব্রাউজ",
+    "bs-extjs-uploading": "আপলোড হচ্ছে...",
+    "bs-extjs-allns": "(সকল)"
+}

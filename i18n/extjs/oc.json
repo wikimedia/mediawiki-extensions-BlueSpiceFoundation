@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "Cedric31"
+        ]
+    },
+    "bs-extjs-ok": "D'acòrdi",
+    "bs-extjs-cancel": "Anullar",
+    "bs-extjs-yes": "Òc",
+    "bs-extjs-no": "Non",
+    "bs-extjs-save": "Enregistrar",
+    "bs-extjs-delete": "Suprimir",
+    "bs-extjs-add": "Apondre",
+    "bs-extjs-remove": "Suprimir",
+    "bs-extjs-edit": "Modificar",
+    "bs-extjs-error": "Error",
+    "bs-extjs-confirm": "Confirmar",
+    "bs-extjs-loading": "Cargament en cors...",
+    "bs-extjs-pageSize": "Talha de la pagina",
+    "bs-extjs-actions-column-header": "Accions",
+    "bs-extjs-warning": "Avertiment",
+    "bs-extjs-saving": "enregistrament en cors…",
+    "bs-extjs-reset": "Reïnicializar",
+    "bs-extjs-close": "Tampar",
+    "bs-extjs-label-user": "Utilizaire",
+    "bs-extjs-upload": "Telecargar",
+    "bs-extjs-browse": "Percórrer",
+    "bs-extjs-uploading": "Telecargament en cors...",
+    "bs-extjs-confirmNavigationTitle": "Seguir lo ligam",
+    "bs-extjs-allns": "(totes)"
+}

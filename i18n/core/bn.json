@@ -1,0 +1,20 @@
+{
+    "@metadata": {
+        "authors": [
+            "Aftab1995"
+        ]
+    },
+    "bs-userbar_loginswitch_logout": "প্রস্থান",
+    "bs-userbar_loginswitch_login": "প্রবেশ",
+    "bs-extended-search-textfield-defaultvalue": "অনুসন্ধান...",
+    "bs-no-information-available": "কোন তথ্য উপলব্ধ নেই",
+    "bs-years-duration": "{{PLURAL:$1|এক বছর|$1 বছর}}",
+    "bs-months-duration": "{{PLURAL:$1|এক মাস|$1 মাস}}",
+    "bs-weeks-duration": "{{PLURAL:$1|এক সপ্তাহ|$1 সপ্তাহ}}",
+    "bs-one-unit-ago": "$1 আগে",
+    "bs-now": "বর্তমানে",
+    "bs-email-greeting-no-receiver": "হ্যালো,",
+    "bs-viewtagerrorlist-legend": "$1 - ত্রুটি",
+    "bs-pref-sortalph": "বর্ণানুক্রমে নামস্থান সাজান",
+    "bs-navigation-contact": "যোগাযোগ"
+}

@@ -1,10 +1,15 @@
 {
     "@metadata": {
         "authors": [
-            "Xiaomingyan"
+            "Xiaomingyan",
+            "Liuxinyu970226"
         ]
     },
+    "bs-ns_main": "（页面）",
+    "bs-ns_all": "（所有）",
     "bs-tab_navigation": "导航",
+    "bs-tab_focus": "焦点",
+    "bs-tab_admin": "管理员",
     "bs-userbar_loginswitch_logout": "退出",
     "bs-userbar_loginswitch_login": "登录",
     "bs-extended-search-tooltip-fulltext": "全文搜索",
@@ -20,10 +25,27 @@
     "bs-secs-duration": "{{PLURAL:$1|$1秒}}",
     "bs-two-units-ago": "$1$2前",
     "bs-one-unit-ago": "$1前",
+    "bs-now": "现在",
     "bs-email-greeting-receiver": "{{GENDER:$1|$1先生|$1女士|$1}}：\n\n你好",
     "bs-email-greeting-no-receiver": "你好，",
+    "bs-userpagesettings-legend": "用户设置",
+    "bs-userpreferences-link-text": "更多用户设置",
+    "bs-userpreferences-link-title": "显示您的个人用户设置",
+    "bs-exception-view-heading": "发生错误",
     "bs-exception-view-stacktrace-toggle-show-text": "显示错误详情",
     "bs-exception-view-stacktrace-toggle-hide-text": "隐藏错误详情",
+    "bs-viewtagerrorlist-legend": "$1——错误",
     "bs-permissionerror": "权限错误！",
-    "bs-navigation-support": "支持"
+    "bs-filesystemhelper-no-directory": "<code>$1</code>不是一个有效的目录。",
+    "bs-filesystemhelper-file-not-exists": "文件<code>$1</code>不存在。",
+    "bs-filesystemhelper-file-copy-error": "文件<code>$1</code>无法复制。",
+    "bs-filesystemhelper-file-already-exists": "文件<code>$1</code>已存在。",
+    "bs-filesystemhelper-file-delete-error": "文件<code>$1</code>无法删除。",
+    "bs-filesystemhelper-folder-already-exists": "文件夹<code>$1</code>已存在。",
+    "bs-filesystemhelper-folder-copy-error": "文件夹<code>$1</code>无法重命名。",
+    "bs-filesystemhelper-folder-not-exists": "文件夹<code>$1</code>不存在。",
+    "bs-filesystemhelper-upload-err-code": "无法上传此文件：$1",
+    "bs-navigation-instructions": "说明",
+    "bs-navigation-support": "支持",
+    "bs-navigation-contact": "联系"
 }

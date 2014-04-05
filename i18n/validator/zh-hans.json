@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+        "authors": [
+            "Liuxinyu970226"
+        ]
+    },
+    "bs-validator-email-validation-approved": "此电子邮件地址已成功验证。",
+    "bs-validator-email-validation-not-approved": "此电子邮件地址无法验证。",
+    "bs-validator-url-validation-approved": "此URL已成功验证。",
+    "bs-validator-url-validation-not-approved": "此URL无法验证。",
+    "bs-validator-arg-count-validation-approved": "属性“计数”已成功验证。",
+    "bs-validator-arg-count-validation-not-approved": "属性“计数”无法验证。",
+    "bs-validator-set-validation-approved": "$1已成功验证。"
+}
