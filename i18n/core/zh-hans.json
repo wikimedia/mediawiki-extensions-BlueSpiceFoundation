@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Xiaomingyan",
-            "Liuxinyu970226"
+            "Liuxinyu970226",
+            "Zhangjintao"
         ]
     },
     "bs-ns_main": "（页面）",
@@ -28,13 +29,18 @@
     "bs-now": "现在",
     "bs-email-greeting-receiver": "{{GENDER:$1|$1先生|$1女士|$1}}：\n\n你好",
     "bs-email-greeting-no-receiver": "你好，",
+    "bs-email-footer": "此消息是由MediaWiki自动生成的。请不要回复这封电子邮件。",
     "bs-userpagesettings-legend": "用户设置",
     "bs-userpreferences-link-text": "更多用户设置",
     "bs-userpreferences-link-title": "显示您的个人用户设置",
     "bs-exception-view-heading": "发生错误",
+    "bs-exception-view-text": "处理您的请求时出现以下错误：",
+    "bs-exception-view-admin-hint": "请联系您所在Wiki的系统管理员。",
     "bs-exception-view-stacktrace-toggle-show-text": "显示错误详情",
     "bs-exception-view-stacktrace-toggle-hide-text": "隐藏错误详情",
     "bs-viewtagerrorlist-legend": "$1——错误",
+    "bs-readonly": "数据库当前被锁定，不能添加新条目或进行其他修改，锁定可能是因为例行的数据库维护，完成后即可恢复正常。\n\n锁定数据库的管理员提供的解释：$1",
+    "bs-imageofotheruser": "您不能为另一个用户上传图像。",
     "bs-permissionerror": "权限错误！",
     "bs-filesystemhelper-no-directory": "<code>$1</code>不是一个有效的目录。",
     "bs-filesystemhelper-file-not-exists": "文件<code>$1</code>不存在。",
@@ -45,6 +51,11 @@
     "bs-filesystemhelper-folder-copy-error": "文件夹<code>$1</code>无法重命名。",
     "bs-filesystemhelper-folder-not-exists": "文件夹<code>$1</code>不存在。",
     "bs-filesystemhelper-upload-err-code": "无法上传此文件：$1",
+    "bs-filesystemhelper-upload-wrong-ext": "该文件不具有所需的扩展名：  $1 。",
+    "bs-filesystemhelper-upload-unsupported-type": "不支持此文件类型。",
+    "bs-filesystemhelper-save-base64-error": "该文件无法保存。",
+    "bs-filesystemhelper-upload-base64-error": "无法上传此文件。",
+    "bs-filesystemhelper-upload-local-error-create": "不能在 wiki 中创建该文件。",
     "bs-navigation-instructions": "说明",
     "bs-navigation-support": "支持",
     "bs-navigation-contact": "联系"

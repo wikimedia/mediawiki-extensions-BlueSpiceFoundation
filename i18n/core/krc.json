@@ -1,0 +1,19 @@
+{
+    "@metadata": {
+        "authors": [
+            "Iltever"
+        ]
+    },
+    "bs-ns_all": "(бютеу)",
+    "bs-tab_navigation": "Навигация",
+    "bs-tab_focus": "Фокус",
+    "bs-tab_admin": "Админ",
+    "bs-userbar_loginswitch_logout": "Чыгъыу",
+    "bs-userbar_loginswitch_login": "Кириу",
+    "bs-extended-search-textfield-defaultvalue": "Излеу…",
+    "bs-years-duration": "{{PLURAL:$1|бир джыл|$1 джыл}}",
+    "bs-one-unit-ago": "$1 алгъа",
+    "bs-now": "бусагъатда",
+    "bs-email-greeting-no-receiver": "Салам,",
+    "bs-navigation-contact": "Контакт информация"
+}

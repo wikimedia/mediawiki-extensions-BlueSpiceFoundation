@@ -1,0 +1,33 @@
+{
+    "@metadata": {
+        "authors": [
+            "Fitoschido",
+            "Frammm"
+        ]
+    },
+    "bs-extjs-ok": "Aceptar",
+    "bs-extjs-cancel": "Cancelar",
+    "bs-extjs-yes": "Sí",
+    "bs-extjs-no": "No",
+    "bs-extjs-save": "Guardar",
+    "bs-extjs-delete": "Eliminar",
+    "bs-extjs-add": "Añadir",
+    "bs-extjs-remove": "Quitar",
+    "bs-extjs-edit": "Editar",
+    "bs-extjs-hint": "Sugerencia.",
+    "bs-extjs-error": "Error",
+    "bs-extjs-confirm": "Confirmar",
+    "bs-extjs-loading": "Cargando…",
+    "bs-extjs-pageSize": "Tamaño de página",
+    "bs-extjs-actions-column-header": "Acciones",
+    "bs-extjs-warning": "Aviso",
+    "bs-extjs-saving": "guardando…",
+    "bs-extjs-reset": "Restablecer",
+    "bs-extjs-close": "Cerrar",
+    "bs-extjs-label-user": "Usuario",
+    "bs-extjs-upload": "Subir",
+    "bs-extjs-browse": "Explorar",
+    "bs-extjs-uploading": "Cargando",
+    "bs-extjs-confirmNavigationTitle": "Seguir el link",
+    "bs-extjs-allns": "(todos)"
+}

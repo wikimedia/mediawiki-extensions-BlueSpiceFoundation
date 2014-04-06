@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Liuxinyu970226"
+            "Liuxinyu970226",
+            "Zhangjintao"
         ]
     },
     "bs-validator-email-validation-approved": "此电子邮件地址已成功验证。",
@@ -10,5 +11,7 @@
     "bs-validator-url-validation-not-approved": "此URL无法验证。",
     "bs-validator-arg-count-validation-approved": "属性“计数”已成功验证。",
     "bs-validator-arg-count-validation-not-approved": "属性“计数”无法验证。",
-    "bs-validator-set-validation-approved": "$1已成功验证。"
+    "bs-validator-set-validation-approved": "$1已成功验证。",
+    "bs-validator-integer-range-validation-too-low": "提供的值太小。请输入大于 $1 的值。",
+    "bs-validator-integer-range-validation-too-high": "提供的值太大。请输入小于 $1 的值。"
 }

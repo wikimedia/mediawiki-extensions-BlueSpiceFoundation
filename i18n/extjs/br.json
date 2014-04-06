@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "Y-M D"
+        ]
+    },
+    "bs-extjs-ok": "Mat eo",
+    "bs-extjs-cancel": "Nullañ",
+    "bs-extjs-yes": "Ya",
+    "bs-extjs-no": "Ket",
+    "bs-extjs-save": "Enrollañ",
+    "bs-extjs-delete": "Diverkañ",
+    "bs-extjs-add": "Ouzhpennañ",
+    "bs-extjs-remove": "Dilemel",
+    "bs-extjs-edit": "Aozañ",
+    "bs-extjs-error": "Fazi",
+    "bs-extjs-confirm": "Kadarnaat",
+    "bs-extjs-loading": "O kargañ...",
+    "bs-extjs-pageSize": "Ment ar bajenn",
+    "bs-extjs-actions-column-header": "Oberoù",
+    "bs-extjs-warning": "Diwallit",
+    "bs-extjs-saving": "oc'h enrollañ...",
+    "bs-extjs-reset": "Adderaouekaat",
+    "bs-extjs-close": "Serriñ",
+    "bs-extjs-label-user": "Implijer",
+    "bs-extjs-upload": "Enporzhiañ",
+    "bs-extjs-browse": "Furchal",
+    "bs-extjs-uploading": "Ocʼh enporzhiañ…",
+    "bs-extjs-confirmNavigationTitle": "Heuliañ al liamm",
+    "bs-extjs-allns": "(pep tra)"
+}

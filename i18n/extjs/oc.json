@@ -13,6 +13,7 @@
     "bs-extjs-add": "Apondre",
     "bs-extjs-remove": "Suprimir",
     "bs-extjs-edit": "Modificar",
+    "bs-extjs-hint": "Astúcia",
     "bs-extjs-error": "Error",
     "bs-extjs-confirm": "Confirmar",
     "bs-extjs-loading": "Cargament en cors...",

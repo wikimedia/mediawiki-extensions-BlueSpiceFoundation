@@ -25,5 +25,6 @@
     "bs-extjs-close": "Zoumaachen",
     "bs-extjs-label-user": "Benotzer",
     "bs-extjs-upload": "Eroplueden",
-    "bs-extjs-uploading": "Eroplueden..."
+    "bs-extjs-uploading": "Eroplueden...",
+    "bs-extjs-confirmNavigationTitle": "Dem Link nogoen"
 }
