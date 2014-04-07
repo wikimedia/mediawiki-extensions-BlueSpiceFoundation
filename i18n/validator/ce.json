@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Умар"
+        ]
+    },
+    "bs-validator-email-validation-approved": "Электронан почтан адрес кхиамца теллина.",
+    "bs-validator-url-validation-approved": "URL-адрес кхиамца теллина.",
+    "bs-validator-set-validation-approved": "$1 кхиамца теллина."
+}

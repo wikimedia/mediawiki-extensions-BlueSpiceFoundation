@@ -11,5 +11,8 @@
     "bs-validator-url-validation-not-approved": "L'URL non può essere convalidato.",
     "bs-validator-arg-count-validation-approved": "L'attributo \"count\" è stato convalidato correttamente.",
     "bs-validator-arg-count-validation-not-approved": "L'attributo \"count\" non può essere convalidato.",
-    "bs-validator-set-validation-approved": "$1 è stato convalidato correttamente."
+    "bs-validator-set-validation-approved": "$1 è stato convalidato correttamente.",
+    "bs-validator-set-validation-not-approved": "Per $1 è consentito {{PLURAL:$3|solo il seguente valore|solo uno di seguenti valori}}: $2.",
+    "bs-validator-integer-range-validation-too-low": "Il valore fornito è troppo basso. Non dovrebbe essere minore di $1.",
+    "bs-validator-integer-range-validation-too-high": "Il valore fornito è troppo alto. Non dovrebbe essere maggiore di $1."
 }

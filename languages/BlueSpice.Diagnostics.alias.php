@@ -18,10 +18,10 @@ $specialPageAliases['de'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
-	'Diagnostics' => array( '诊断学' ),
+	'Diagnostics' => array( '诊断程序' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'Diagnostics' => array( '診斷學' ),
+	'Diagnostics' => array( '診斷程式' ),
 );

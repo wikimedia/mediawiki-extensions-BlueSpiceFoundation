@@ -1,0 +1,11 @@
+{
+    "@metadata": {
+        "authors": [
+            "Josve05a"
+        ]
+    },
+    "bs-validator-email-validation-approved": "E-postadressen har validerats.",
+    "bs-validator-email-validation-not-approved": "E-postadressen kan inte verifieras.",
+    "bs-validator-url-validation-approved": "URL-adressen verifierades framgångsrikt.",
+    "bs-validator-url-validation-not-approved": "URL-adressen kunde inte verifieras."
+}

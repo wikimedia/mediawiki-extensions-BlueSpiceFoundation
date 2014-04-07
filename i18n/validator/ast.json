@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "Xuacu"
+        ]
+    },
+    "bs-validator-email-validation-approved": "La direición de corréu electrónicu validóse correutamente.",
+    "bs-validator-email-validation-not-approved": "Nun pudo validase la direición de corréu electrónicu.",
+    "bs-validator-url-validation-approved": "La URL validóse correutamente.",
+    "bs-validator-url-validation-not-approved": "Nun pudo validase la URL.",
+    "bs-validator-arg-count-validation-approved": "L'atributu «count» validóse correutamente.",
+    "bs-validator-arg-count-validation-not-approved": "Nun pudo validase l'atributu «count».",
+    "bs-validator-set-validation-approved": "$1 validóse correutamente.",
+    "bs-validator-set-validation-not-approved": "Sólo se {{PLURAL:$3|permite'l siguiente valor|permite unu de los siguientes valores}} pa $1: $2.",
+    "bs-validator-integer-range-validation-too-low": "El valor proporcionáu ye baxu enforma. Nun tien de ser menor que $1.",
+    "bs-validator-integer-range-validation-too-high": "El valor proporcionáu ye altu enforma. Nun tien de ser mayor que $1."
+}

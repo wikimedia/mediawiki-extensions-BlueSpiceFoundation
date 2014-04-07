@@ -14,7 +14,7 @@
     "bs-extjs-add": "Añadir",
     "bs-extjs-remove": "Quitar",
     "bs-extjs-edit": "Editar",
-    "bs-extjs-hint": "Sugerencia.",
+    "bs-extjs-hint": "Sugerencia",
     "bs-extjs-error": "Error",
     "bs-extjs-confirm": "Confirmar",
     "bs-extjs-loading": "Cargando…",
@@ -27,7 +27,7 @@
     "bs-extjs-label-user": "Usuario",
     "bs-extjs-upload": "Subir",
     "bs-extjs-browse": "Explorar",
-    "bs-extjs-uploading": "Cargando",
-    "bs-extjs-confirmNavigationTitle": "Seguir el link",
+    "bs-extjs-uploading": "Subiendo…",
+    "bs-extjs-confirmNavigationTitle": "Seguir el enlace",
     "bs-extjs-allns": "(todos)"
 }

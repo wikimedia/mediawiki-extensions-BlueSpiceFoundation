@@ -9,6 +9,7 @@
     "bs-extjs-portal-title": "Título de portlet",
     "bs-extjs-portal-height": "Altura",
     "bs-extjs-portal-count": "Entradas",
+    "bs-extjs-portal-timespan": "Intervalo de tiempo",
     "bs-extjs-portal-timespan-week": "Semana",
     "bs-extjs-portal-timespan-month": "Mes",
     "bs-extjs-portal-timespan-alltime": "Todo el tiempo"
