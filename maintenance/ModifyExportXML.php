@@ -87,7 +87,7 @@ class ModifyExportXML extends Maintenance {
 		//$vWrittenBytes = file_put_contents( $sOutputFilePath, html_entity_decode( $sXML ) );
 
 		if( $vWrittenBytes === false ){
-			echo 'An error occured. Output file could not be saved.'."\n";
+			echo 'An error occurred. Output file could not be saved.'."\n";
 		}
 		else {
 			echo 'Success. '.$vWrittenBytes.' Bytes have been written to "'.$sOutputFilePath.'".'."\n";

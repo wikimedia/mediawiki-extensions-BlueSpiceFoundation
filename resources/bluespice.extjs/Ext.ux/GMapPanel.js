@@ -77,7 +77,7 @@ Ext.define('Ext.ux.GMapPanel', {
     
     onLookupComplete: function(data, response, marker){
         if (response != 'OK') {
-            Ext.MessageBox.alert('Error', 'An error occured: "' + response + '"');
+            Ext.MessageBox.alert('Error', 'An error occurred: "' + response + '"');
             return;
         }
         this.createMap(data[0].geometry.location, marker);

@@ -27,7 +27,7 @@ This is a patch and maintenance release.
 * Fix to stay compatible with MW 1.23
 * Fixed several bugs in InsertFile in combination with VisualEditor and getCategoryStoreData
 * Now using ExtJS StateManager
-* Fixed a bug in getCategoryStoreData which occured, when a category title could not be created
+* Fixed a bug in getCategoryStoreData which occurred, when a category title could not be created
 * Fixed bug that categories which did not exist anymore were displayed
 * Improved code of CommonAJAXInterface
 * Fixed inheritance issues with CRUDGridPanel
