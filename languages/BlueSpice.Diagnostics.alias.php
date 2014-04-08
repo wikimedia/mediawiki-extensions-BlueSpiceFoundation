@@ -16,6 +16,11 @@ $specialPageAliases['de'] = array(
 	'Diagnostics' => array( 'BlueSpice-Diagnose' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'Diagnostics' => array( 'Diagnostica' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Diagnostics' => array( '诊断程序' ),

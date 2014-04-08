@@ -13,6 +13,7 @@
     "bs-extjs-add": "追加",
     "bs-extjs-remove": "除去",
     "bs-extjs-edit": "編集",
+    "bs-extjs-hint": "ヒント",
     "bs-extjs-error": "エラー",
     "bs-extjs-loading": "読み込み中...",
     "bs-extjs-warning": "警告",

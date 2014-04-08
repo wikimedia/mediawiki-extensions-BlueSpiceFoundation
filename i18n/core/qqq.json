@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "Robby",
-            "Shirayuki"
+            "Shirayuki",
+            "Beta16"
         ]
     },
     "bs-ns_main": "Label used in namespace dropdown lists for NS_MAIN",
@@ -37,6 +38,7 @@
     "bs-exception-view-admin-hint": "Text in error message with additional hints, e.g. contact the administrator",
     "bs-exception-view-stacktrace-toggle-show-text": "Label for toggler that shows the complete stack trace (normally hidden)",
     "bs-exception-view-stacktrace-toggle-hide-text": "Label for toggler that hides the complete stack trace (when shown)",
+    "action-responsibleeditors-viewspecialpage": "{{Doc-action|responsibleeditors-viewspecialpage}}",
     "bs-viewtagerrorlist-legend": "Used in inline error messages produced by tags\n\nParameters:\n* $1 - name of the tag",
     "bs-readonly": "Shown in various messages when database is in readonly mode and a write operation is requested.\n\nParameters:\n* $1 - explanation as given in $wgReadOnly",
     "bs-imageofotheruser": "Error message when user tries to upload an avatar for another user",

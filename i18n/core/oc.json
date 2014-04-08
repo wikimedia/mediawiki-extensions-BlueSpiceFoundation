@@ -30,6 +30,7 @@
     "bs-userpagesettings-legend": "Paramètres de l'utilizaire",
     "bs-userpreferences-link-text": "Paramètres utilizaires avançats",
     "bs-exception-view-heading": "Una error s'es producha",
+    "bs-exception-view-stacktrace-toggle-show-text": "Afichar los detalhs de l’error",
     "bs-exception-view-stacktrace-toggle-hide-text": "Amagar los detalhs de l’error",
     "bs-viewtagerrorlist-legend": "$1 - Error",
     "bs-permissionerror": "Error de drech !",

@@ -9,5 +9,6 @@
     "bs-userbar_loginswitch_logout": "ログアウト",
     "bs-userbar_loginswitch_login": "ログイン",
     "bs-extended-search-tooltip-fulltext": "全文検索",
+    "bs-exception-view-heading": "エラーが発生しました",
     "bs-viewtagerrorlist-legend": "$1 - エラー"
 }
