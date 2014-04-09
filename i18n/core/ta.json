@@ -1,0 +1,32 @@
+{
+    "@metadata": {
+        "authors": [
+            "ElangoRamanujam"
+        ]
+    },
+    "bs-ns_main": "(பக்கங்கள்)",
+    "bs-ns_all": "(அனைத்து)",
+    "bs-tab_admin": "நிர்வாகி",
+    "bs-userbar_loginswitch_logout": "விடுபதிகை",
+    "bs-userbar_loginswitch_login": "புகுபதிகை",
+    "bs-extended-search-textfield-defaultvalue": "தேடுக...",
+    "bs-extended-search-textfield-tooltip": "விக்கியில் தேடுக",
+    "bs-no-information-available": "தகவல் ஏதும் கிடைக்கவில்லை",
+    "bs-years-duration": "{{PLURAL:$1|ஒரு வருடம்|$1 வருடங்கள்}}",
+    "bs-hours-duration": "{{PLURAL:$1|ஒரு மணி|$1 மணிகள்}}",
+    "bs-mins-duration": "{{PLURAL:$1|ஒரு நிமிடம்|$1 நிமிடங்கள்}}",
+    "bs-one-unit-ago": "$1 முன்பு",
+    "bs-now": "இப்பொழுது",
+    "bs-email-greeting-no-receiver": "வணக்கம்",
+    "bs-email-footer": "இந்தத் தகவல் தானாக உருவாக்கப்பட்டுள்ளது.  இந்த மின்னஞ்சலுக்கு பதிலளிக்கத்தேவையில்லை.",
+    "bs-exception-view-stacktrace-toggle-show-text": "பிழை விபரங்களைக் காட்டுக",
+    "bs-exception-view-stacktrace-toggle-hide-text": "பிழை விபரங்களை மறைக்கவும்",
+    "bs-viewtagerrorlist-legend": "$1 - பிழை",
+    "bs-readonly": "தரவுத்தளம் தற்போது புதிய பதிவுகளோ மற்ற திருத்தங்களோ செய்ய இயலாவண்ணம் வழமையான பராமரிப்புக்காக பூட்டப்பட்டுள்ளது.  இதன் பின்னர் இயல்பு நிலைக்குக் கொண்டுவரப்படும்.  இந்த விளக்கத்தை இதனைப் பூட்டிய நிர்வாகி வழங்கியுள்ளார்: $1",
+    "bs-permissionerror": "அனுமதிப் பிழை!",
+    "bs-filesystemhelper-upload-err-code": "கோப்பினை பதிவேற்றம் செய்ய இயலாது: $1",
+    "bs-filesystemhelper-save-base64-error": "கோப்பினை சேமிக்க இயலாது.",
+    "bs-filesystemhelper-upload-base64-error": "கோப்பினை பதிவேற்றம் செய்ய இயலாது",
+    "bs-navigation-support": "உதவி",
+    "bs-navigation-contact": "அணுகவும்"
+}

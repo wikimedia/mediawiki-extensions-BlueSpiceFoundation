@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Y-M D"
+            "Y-M D",
+            "Fohanno"
         ]
     },
     "bs-ns_main": "(Pajennoù)",
@@ -27,9 +28,12 @@
     "bs-email-greeting-no-receiver": "Demat,",
     "bs-userpagesettings-legend": "Arventennoù implijer",
     "bs-exception-view-heading": "Ur fazi zo bet",
+    "bs-exception-view-admin-hint": "Kit e darempred gant merour ho reizhiad, mar plij.",
     "bs-exception-view-stacktrace-toggle-show-text": "Diskouez munudoù ar fazi",
     "bs-exception-view-stacktrace-toggle-hide-text": "Kuzhat munudoù ar fazi",
     "bs-viewtagerrorlist-legend": "$1 - Fazi",
     "bs-permissionerror": "Fazi aotre !",
+    "bs-filesystemhelper-save-base64-error": "N'eus ket bet gallet enrollañ ar restr.",
+    "bs-navigation-instructions": "Kemennadurioù",
     "bs-navigation-contact": "Darempred"
 }

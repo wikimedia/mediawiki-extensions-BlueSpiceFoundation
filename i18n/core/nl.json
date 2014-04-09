@@ -2,7 +2,8 @@
     "@metadata": {
         "authors": [
             "SPQRobin",
-            "Southparkfan"
+            "Southparkfan",
+            "Siebrand"
         ]
     },
     "bs-ns_main": "(Pagina's)",
@@ -13,10 +14,10 @@
     "bs-years-duration": "{{PLURAL:$1|een jaar|$1 jaren}}",
     "bs-months-duration": "{{PLURAL:$1|een maand|$1 maanden}}",
     "bs-weeks-duration": "{{PLURAL:$1|een week|$1 weken}}",
-    "bs-days-duration": "{{PLURAL:$1|een dag|$1 dagen}}",
-    "bs-hours-duration": "{{PLURAL:$1|een uur|$1 uren}}",
-    "bs-mins-duration": "{{PLURAL:$1|een minuut|$1 minuten}}",
-    "bs-secs-duration": "{{PLURAL:$1|een seconde|$1 seconden}}",
+    "bs-days-duration": "{{PLURAL:$1|één dag|$1 dagen}}",
+    "bs-hours-duration": "{{PLURAL:$1|één uur|$1 uren}}",
+    "bs-mins-duration": "{{PLURAL:$1|één minuut|$1 minuten}}",
+    "bs-secs-duration": "{{PLURAL:$1|één seconde|$1 seconden}}",
     "bs-two-units-ago": "$1 en $2 geleden",
     "bs-one-unit-ago": "$1 geleden",
     "bs-now": "nu",

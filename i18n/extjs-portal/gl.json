@@ -1,0 +1,10 @@
+{
+    "@metadata": {
+        "authors": [
+            "Vivaelcelta"
+        ]
+    },
+    "bs-extjs-portal-timespan-week": "Semana",
+    "bs-extjs-portal-timespan-month": "Mes",
+    "bs-extjs-portal-timespan-alltime": "Desde sempre"
+}

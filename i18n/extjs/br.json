@@ -1,7 +1,8 @@
 {
     "@metadata": {
         "authors": [
-            "Y-M D"
+            "Y-M D",
+            "Fohanno"
         ]
     },
     "bs-extjs-ok": "Mat eo",
@@ -13,6 +14,7 @@
     "bs-extjs-add": "Ouzhpennañ",
     "bs-extjs-remove": "Dilemel",
     "bs-extjs-edit": "Aozañ",
+    "bs-extjs-hint": "Titourig",
     "bs-extjs-error": "Fazi",
     "bs-extjs-confirm": "Kadarnaat",
     "bs-extjs-loading": "O kargañ...",

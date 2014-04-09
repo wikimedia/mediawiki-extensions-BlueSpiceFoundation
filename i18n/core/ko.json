@@ -1,11 +1,14 @@
 {
     "@metadata": {
         "authors": [
-            "관인생략"
+            "관인생략",
+            "Keysuck"
         ]
     },
     "bs-userbar_loginswitch_logout": "로그아웃",
     "bs-userbar_loginswitch_login": "로그인",
+    "bs-extended-search-textfield-tooltip": "위키 검색",
+    "bs-no-information-available": "사용 가능한 정보가 없음",
     "bs-years-duration": "$1년",
     "bs-months-duration": "$1개월",
     "bs-weeks-duration": "$1주",
@@ -14,5 +17,18 @@
     "bs-mins-duration": "$1분",
     "bs-secs-duration": "$1초",
     "bs-one-unit-ago": "$1 전",
-    "bs-email-greeting-no-receiver": "안녕하세요,"
+    "bs-email-greeting-no-receiver": "안녕하세요,",
+    "bs-userpreferences-link-text": "추가 사용자 설정",
+    "bs-userpreferences-link-title": "개인 사용자 설정 표시",
+    "bs-exception-view-heading": "오류가 발생함",
+    "bs-exception-view-stacktrace-toggle-show-text": "오류 세부 정보 표시",
+    "bs-exception-view-stacktrace-toggle-hide-text": "오류 정보 숨기기",
+    "bs-permissionerror": "권한 오류!",
+    "bs-filesystemhelper-no-directory": "<code>$1</code>은(는) 유효한 디렉터리가 아닙니다.",
+    "bs-filesystemhelper-upload-unsupported-type": "이 파일 형식이 지원 되지 않습니다.",
+    "bs-filesystemhelper-save-base64-error": "파일을 저장할 수 없습니다.",
+    "bs-filesystemhelper-upload-base64-error": "파일을 업로드할 수 없습니다.",
+    "bs-navigation-instructions": "지침",
+    "bs-navigation-support": "지원",
+    "bs-navigation-contact": "연락처"
 }

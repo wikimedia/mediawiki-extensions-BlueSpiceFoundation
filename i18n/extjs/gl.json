@@ -1,0 +1,31 @@
+{
+    "@metadata": {
+        "authors": [
+            "Vivaelcelta"
+        ]
+    },
+    "bs-extjs-ok": "Aceptar",
+    "bs-extjs-cancel": "Cancelar",
+    "bs-extjs-yes": "Si",
+    "bs-extjs-no": "Non",
+    "bs-extjs-save": "Gardar",
+    "bs-extjs-delete": "Borrar",
+    "bs-extjs-add": "Engadir",
+    "bs-extjs-remove": "Eliminar",
+    "bs-extjs-edit": "Editar",
+    "bs-extjs-hint": "Suxestión",
+    "bs-extjs-error": "Erro",
+    "bs-extjs-confirm": "Confirmar",
+    "bs-extjs-loading": "Cargando...",
+    "bs-extjs-pageSize": "Tamaño da páxina",
+    "bs-extjs-actions-column-header": "Accións",
+    "bs-extjs-warning": "Aviso",
+    "bs-extjs-saving": "gardando...",
+    "bs-extjs-reset": "Restablecer",
+    "bs-extjs-close": "Pechar",
+    "bs-extjs-label-user": "Usuario",
+    "bs-extjs-upload": "Subir",
+    "bs-extjs-browse": "Navegar",
+    "bs-extjs-uploading": "Subindo...",
+    "bs-extjs-confirmNavigationTitle": "Sigue a ligazón"
+}

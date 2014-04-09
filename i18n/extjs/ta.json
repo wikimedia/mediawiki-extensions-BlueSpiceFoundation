@@ -1,0 +1,29 @@
+{
+    "@metadata": {
+        "authors": [
+            "ElangoRamanujam"
+        ]
+    },
+    "bs-extjs-ok": "சரி",
+    "bs-extjs-cancel": "இரத்து செய்க",
+    "bs-extjs-yes": "ஆம்",
+    "bs-extjs-no": "இல்லை",
+    "bs-extjs-save": "சேமிக்கவும்",
+    "bs-extjs-delete": "நீக்குக",
+    "bs-extjs-add": "சேர்க்கவும்",
+    "bs-extjs-remove": "நீக்குக",
+    "bs-extjs-edit": "தொகு",
+    "bs-extjs-error": "பிழை",
+    "bs-extjs-confirm": "உறுதிப்படுத்துக",
+    "bs-extjs-loading": "ஏற்றுகிறது...",
+    "bs-extjs-pageSize": "பக்க அளவு",
+    "bs-extjs-actions-column-header": "செயல்கள்",
+    "bs-extjs-warning": "எச்சரிக்கை",
+    "bs-extjs-saving": "சேமிக்கிறது...",
+    "bs-extjs-reset": "மீட்டமைக்கவும்",
+    "bs-extjs-close": "மூடுக",
+    "bs-extjs-label-user": "பயனர்",
+    "bs-extjs-upload": "பதிவேற்றுக",
+    "bs-extjs-uploading": "பதிவேற்றப்படுகிறது...",
+    "bs-extjs-allns": "(அனைத்து)"
+}

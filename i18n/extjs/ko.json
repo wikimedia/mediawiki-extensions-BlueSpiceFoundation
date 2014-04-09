@@ -1,12 +1,31 @@
 {
     "@metadata": {
         "authors": [
-            "관인생략"
+            "관인생략",
+            "Keysuck"
         ]
     },
+    "bs-extjs-ok": "확인",
+    "bs-extjs-cancel": "취소",
     "bs-extjs-yes": "예",
     "bs-extjs-no": "아니오",
     "bs-extjs-save": "저장",
     "bs-extjs-delete": "삭제",
-    "bs-extjs-add": "추가"
+    "bs-extjs-add": "추가",
+    "bs-extjs-remove": "제거",
+    "bs-extjs-edit": "편집",
+    "bs-extjs-hint": "힌트",
+    "bs-extjs-error": "오류",
+    "bs-extjs-confirm": "확인",
+    "bs-extjs-loading": "불러오는 중...",
+    "bs-extjs-pageSize": "용지 크기",
+    "bs-extjs-actions-column-header": "동작",
+    "bs-extjs-warning": "경고",
+    "bs-extjs-saving": "저장 중...",
+    "bs-extjs-reset": "초기화",
+    "bs-extjs-close": "닫기",
+    "bs-extjs-label-user": "사용자",
+    "bs-extjs-upload": "업로드",
+    "bs-extjs-browse": "찾아보기",
+    "bs-extjs-uploading": "업로드 중..."
 }
