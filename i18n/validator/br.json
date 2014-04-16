@@ -1,9 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fohanno"
-        ]
-    },
-    "bs-validator-url-validation-not-approved": "N'eus ket bet gallet gwiriekaat an URL.",
-    "bs-validator-set-validation-approved": "Gwiriekaet eo bet $1."
+	"@metadata": {
+		"authors": [
+			"Fohanno"
+		]
+	},
+	"bs-validator-email-validation-approved": "Gwiriekaet eo bet ar chomlec'h postel.",
+	"bs-validator-email-validation-not-approved": "N'eus ket bet gallet gwiriekaat ar chomlec'h postel.",
+	"bs-validator-url-validation-approved": "Gwiriekaet eo bet an URL.",
+	"bs-validator-url-validation-not-approved": "N'eus ket bet gallet gwiriekaat an URL.",
+	"bs-validator-set-validation-approved": "Gwiriekaet eo bet $1."
 }

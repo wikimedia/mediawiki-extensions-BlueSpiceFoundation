@@ -1,33 +1,33 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "bs-extjs-ok": "Ок",
-    "bs-extjs-cancel": "Откажи",
-    "bs-extjs-yes": "Да",
-    "bs-extjs-no": "Не",
-    "bs-extjs-save": "Зачувај",
-    "bs-extjs-delete": "Избриши",
-    "bs-extjs-add": "Додај",
-    "bs-extjs-remove": "Отстрани",
-    "bs-extjs-edit": "Уреди",
-    "bs-extjs-hint": "Совет",
-    "bs-extjs-error": "Грешка",
-    "bs-extjs-confirm": "Потврди",
-    "bs-extjs-loading": "Вчитувам...",
-    "bs-extjs-pageSize": "Големина на страницата",
-    "bs-extjs-actions-column-header": "Дејства",
-    "bs-extjs-warning": "Предупредување",
-    "bs-extjs-saving": "зачувувам...",
-    "bs-extjs-reset": "Одново",
-    "bs-extjs-close": "Затвори",
-    "bs-extjs-label-user": "Корисник",
-    "bs-extjs-upload": "Подигни",
-    "bs-extjs-browse": "Прелистај",
-    "bs-extjs-uploading": "Подигам...",
-    "bs-extjs-confirmNavigationTitle": "Проследување на врската",
-    "bs-extjs-confirmNavigationText": "Дали навистина сакате да ја проследите врскава? Така ќе се изгуват динамички поставки или подредување на тековната страница.",
-    "bs-extjs-allns": "(сите)"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"bs-extjs-ok": "Ок",
+	"bs-extjs-cancel": "Откажи",
+	"bs-extjs-yes": "Да",
+	"bs-extjs-no": "Не",
+	"bs-extjs-save": "Зачувај",
+	"bs-extjs-delete": "Избриши",
+	"bs-extjs-add": "Додај",
+	"bs-extjs-remove": "Отстрани",
+	"bs-extjs-edit": "Уреди",
+	"bs-extjs-hint": "Совет",
+	"bs-extjs-error": "Грешка",
+	"bs-extjs-confirm": "Потврди",
+	"bs-extjs-loading": "Вчитувам...",
+	"bs-extjs-pageSize": "Големина на страницата",
+	"bs-extjs-actions-column-header": "Дејства",
+	"bs-extjs-warning": "Предупредување",
+	"bs-extjs-saving": "зачувувам...",
+	"bs-extjs-reset": "Одново",
+	"bs-extjs-close": "Затвори",
+	"bs-extjs-label-user": "Корисник",
+	"bs-extjs-upload": "Подигни",
+	"bs-extjs-browse": "Прелистај",
+	"bs-extjs-uploading": "Подигам...",
+	"bs-extjs-confirmNavigationTitle": "Проследување на врската",
+	"bs-extjs-confirmNavigationText": "Дали навистина сакате да ја проследите врскава? Така ќе се изгуват динамички поставки или подредување на тековната страница.",
+	"bs-extjs-allns": "(сите)"
 }

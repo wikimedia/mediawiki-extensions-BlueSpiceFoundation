@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Minh Nguyen"
-        ]
-    },
-    "specialcredits": "Ghi công BlueSpice",
-    "bs-credits-programmers": "Lập trình viên",
-    "bs-credits-dnt": "Thiết kế và thử nghiệm",
-    "bs-credits-contributors": "Người đóng góp"
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"specialcredits": "Ghi công BlueSpice",
+	"bs-credits-programmers": "Lập trình viên",
+	"bs-credits-dnt": "Thiết kế và thử nghiệm",
+	"bs-credits-contributors": "Người đóng góp"
 }

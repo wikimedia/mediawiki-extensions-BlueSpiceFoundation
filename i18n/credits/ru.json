@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Okras"
-        ]
-    },
-    "specialcredits": "Создатели BlueSpice",
-    "bs-credits-programmers": "Программисты",
-    "bs-credits-dnt": "Проектирование и тестирование",
-    "bs-credits-contributors": "Авторы"
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"specialcredits": "Создатели BlueSpice",
+	"bs-credits-programmers": "Программисты",
+	"bs-credits-dnt": "Проектирование и тестирование",
+	"bs-credits-contributors": "Авторы"
 }

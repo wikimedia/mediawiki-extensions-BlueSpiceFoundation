@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany."
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany."
 }

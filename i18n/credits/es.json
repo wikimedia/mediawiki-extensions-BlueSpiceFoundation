@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fitoschido"
-        ]
-    },
-    "specialcredits": "Créditos de BlueSpice",
-    "bs-credits-programmers": "Programadores",
-    "bs-credits-dnt": "Diseño y pruebas",
-    "bs-credits-contributors": "Colaboradores"
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"specialcredits": "Créditos de BlueSpice",
+	"bs-credits-programmers": "Programadores",
+	"bs-credits-dnt": "Diseño y pruebas",
+	"bs-credits-contributors": "Colaboradores"
 }

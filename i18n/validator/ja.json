@@ -1,16 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "Dude1717",
-            "Shirayuki"
-        ]
-    },
-    "bs-validator-email-validation-approved": "メール アドレスが正常に検証されました。",
-    "bs-validator-email-validation-not-approved": "メール アドレスを検証できませんでした。",
-    "bs-validator-url-validation-approved": "URL を検証しました。",
-    "bs-validator-url-validation-not-approved": "URL を検証できませんでした。",
-    "bs-validator-arg-count-validation-approved": "「count」属性を検証しました。",
-    "bs-validator-arg-count-validation-not-approved": "「count」属性を検証できませんでした。",
-    "bs-validator-set-validation-approved": "$1 を検証しました。",
-    "bs-validator-integer-range-validation-too-high": "指定した値は大きすぎます。$1 以下の値にしてください。"
+	"@metadata": {
+		"authors": [
+			"Dude1717",
+			"Shirayuki"
+		]
+	},
+	"bs-validator-email-validation-approved": "メール アドレスが正常に検証されました。",
+	"bs-validator-email-validation-not-approved": "メール アドレスを検証できませんでした。",
+	"bs-validator-url-validation-approved": "URL を検証しました。",
+	"bs-validator-url-validation-not-approved": "URL を検証できませんでした。",
+	"bs-validator-arg-count-validation-approved": "「count」属性を検証しました。",
+	"bs-validator-arg-count-validation-not-approved": "「count」属性を検証できませんでした。",
+	"bs-validator-set-validation-approved": "$1 を検証しました。",
+	"bs-validator-integer-range-validation-too-high": "指定した値は大きすぎます。$1 以下の値にしてください。"
 }

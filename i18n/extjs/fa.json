@@ -1,32 +1,32 @@
 {
-    "@metadata": {
-        "authors": [
-            "Reza1615"
-        ]
-    },
-    "bs-extjs-ok": "تأیید",
-    "bs-extjs-cancel": "انصراف",
-    "bs-extjs-yes": "بله",
-    "bs-extjs-no": "خیر",
-    "bs-extjs-save": "ذخیره",
-    "bs-extjs-delete": "حذف",
-    "bs-extjs-add": "افزودن",
-    "bs-extjs-remove": "حذف",
-    "bs-extjs-edit": "ویرایش",
-    "bs-extjs-hint": "راهنمایی",
-    "bs-extjs-error": "خطا",
-    "bs-extjs-confirm": "تأیید",
-    "bs-extjs-loading": "در حال بارگیری...",
-    "bs-extjs-pageSize": "حجم صفحه",
-    "bs-extjs-actions-column-header": "فعالیت‌ها",
-    "bs-extjs-warning": "هشدار",
-    "bs-extjs-saving": "در حال ذخیره‌سازی...",
-    "bs-extjs-reset": "از نو",
-    "bs-extjs-close": "بستن",
-    "bs-extjs-label-user": "کاربر",
-    "bs-extjs-upload": "بارگذاری",
-    "bs-extjs-browse": "مرور",
-    "bs-extjs-uploading": "در حال بارگذاری...",
-    "bs-extjs-confirmNavigationTitle": "به دنبال پیوند",
-    "bs-extjs-allns": "(همه)"
+	"@metadata": {
+		"authors": [
+			"Reza1615"
+		]
+	},
+	"bs-extjs-ok": "تأیید",
+	"bs-extjs-cancel": "انصراف",
+	"bs-extjs-yes": "بله",
+	"bs-extjs-no": "خیر",
+	"bs-extjs-save": "ذخیره",
+	"bs-extjs-delete": "حذف",
+	"bs-extjs-add": "افزودن",
+	"bs-extjs-remove": "حذف",
+	"bs-extjs-edit": "ویرایش",
+	"bs-extjs-hint": "راهنمایی",
+	"bs-extjs-error": "خطا",
+	"bs-extjs-confirm": "تأیید",
+	"bs-extjs-loading": "در حال بارگیری...",
+	"bs-extjs-pageSize": "حجم صفحه",
+	"bs-extjs-actions-column-header": "فعالیت‌ها",
+	"bs-extjs-warning": "هشدار",
+	"bs-extjs-saving": "در حال ذخیره‌سازی...",
+	"bs-extjs-reset": "از نو",
+	"bs-extjs-close": "بستن",
+	"bs-extjs-label-user": "کاربر",
+	"bs-extjs-upload": "بارگذاری",
+	"bs-extjs-browse": "مرور",
+	"bs-extjs-uploading": "در حال بارگذاری...",
+	"bs-extjs-confirmNavigationTitle": "به دنبال پیوند",
+	"bs-extjs-allns": "(همه)"
 }

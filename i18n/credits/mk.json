@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "specialcredits": "Заслужни за BlueSpice",
-    "bs-credits-programmers": "Програмери",
-    "bs-credits-dnt": "Дизајн и испробување",
-    "bs-credits-contributors": "Учесници"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"specialcredits": "Заслужни за BlueSpice",
+	"bs-credits-programmers": "Програмери",
+	"bs-credits-dnt": "Дизајн и испробување",
+	"bs-credits-contributors": "Учесници"
 }

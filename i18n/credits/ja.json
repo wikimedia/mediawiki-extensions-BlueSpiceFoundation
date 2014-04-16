@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki",
-            "Dude1717"
-        ]
-    },
-    "bs-credits-programmers": "プログラマー",
-    "bs-credits-dnt": "デザインとテスト"
+	"@metadata": {
+		"authors": [
+			"Shirayuki",
+			"Dude1717"
+		]
+	},
+	"bs-credits-programmers": "プログラマー",
+	"bs-credits-dnt": "デザインとテスト"
 }

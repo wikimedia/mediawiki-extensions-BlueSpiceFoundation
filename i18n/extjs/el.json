@@ -1,24 +1,24 @@
 {
-    "@metadata": {
-        "authors": [
-            "Indoril"
-        ]
-    },
-    "bs-extjs-ok": "Ok",
-    "bs-extjs-yes": "Ναι",
-    "bs-extjs-no": "Όχι",
-    "bs-extjs-delete": "Διαγραφή",
-    "bs-extjs-edit": "Επεξεργασία",
-    "bs-extjs-hint": "Υπόδειξη",
-    "bs-extjs-error": "Σφάλμα",
-    "bs-extjs-confirm": "Επιβεβαίωση",
-    "bs-extjs-loading": "Φόρτωση...",
-    "bs-extjs-pageSize": "Μέγεθος σελίδας",
-    "bs-extjs-actions-column-header": "Ενέργειες",
-    "bs-extjs-saving": "αποθήκευση...",
-    "bs-extjs-reset": "Επαναφορά",
-    "bs-extjs-close": "Κλείσιμο",
-    "bs-extjs-label-user": "Χρήστης",
-    "bs-extjs-confirmNavigationTitle": "Ακολουθήστε το σύνδεσμο",
-    "bs-extjs-allns": "(όλα)"
+	"@metadata": {
+		"authors": [
+			"Indoril"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-yes": "Ναι",
+	"bs-extjs-no": "Όχι",
+	"bs-extjs-delete": "Διαγραφή",
+	"bs-extjs-edit": "Επεξεργασία",
+	"bs-extjs-hint": "Υπόδειξη",
+	"bs-extjs-error": "Σφάλμα",
+	"bs-extjs-confirm": "Επιβεβαίωση",
+	"bs-extjs-loading": "Φόρτωση...",
+	"bs-extjs-pageSize": "Μέγεθος σελίδας",
+	"bs-extjs-actions-column-header": "Ενέργειες",
+	"bs-extjs-saving": "αποθήκευση...",
+	"bs-extjs-reset": "Επαναφορά",
+	"bs-extjs-close": "Κλείσιμο",
+	"bs-extjs-label-user": "Χρήστης",
+	"bs-extjs-confirmNavigationTitle": "Ακολουθήστε το σύνδεσμο",
+	"bs-extjs-allns": "(όλα)"
 }

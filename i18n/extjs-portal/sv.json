@@ -1,10 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "Josve05a"
-        ]
-    },
-    "bs-extjs-portal-timespan-week": "Vecka",
-    "bs-extjs-portal-timespan-month": "Månad",
-    "bs-extjs-portal-timespan-alltime": "Hela tiden"
+	"@metadata": {
+		"authors": [
+			"Josve05a"
+		]
+	},
+	"bs-extjs-portal-timespan-week": "Vecka",
+	"bs-extjs-portal-timespan-month": "Månad",
+	"bs-extjs-portal-timespan-alltime": "Hela tiden"
 }

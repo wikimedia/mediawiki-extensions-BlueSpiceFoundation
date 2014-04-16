@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Gomoko"
-        ]
-    },
-    "diagnostics": "Diagnostics du système"
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"diagnostics": "Diagnostics du système"
 }

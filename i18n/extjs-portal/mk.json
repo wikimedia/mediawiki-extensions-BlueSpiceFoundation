@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bjankuloski06"
-        ]
-    },
-    "bs-extjs-portal-config": "Поставка на поделокот:",
-    "bs-extjs-portal-title": "Наслов на поделокот",
-    "bs-extjs-portal-height": "Висина",
-    "bs-extjs-portal-count": "Ставки",
-    "bs-extjs-portal-timespan": "Временски опсег",
-    "bs-extjs-portal-timespan-week": "Недела",
-    "bs-extjs-portal-timespan-month": "Месец",
-    "bs-extjs-portal-timespan-alltime": "На сите времиња"
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"bs-extjs-portal-config": "Поставка на поделокот:",
+	"bs-extjs-portal-title": "Наслов на поделокот",
+	"bs-extjs-portal-height": "Висина",
+	"bs-extjs-portal-count": "Ставки",
+	"bs-extjs-portal-timespan": "Временски опсег",
+	"bs-extjs-portal-timespan-week": "Недела",
+	"bs-extjs-portal-timespan-month": "Месец",
+	"bs-extjs-portal-timespan-alltime": "На сите времиња"
 }

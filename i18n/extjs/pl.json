@@ -1,23 +1,24 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "bs-extjs-ok": "Ok",
-    "bs-extjs-cancel": "Anuluj",
-    "bs-extjs-yes": "Tak",
-    "bs-extjs-no": "Nie",
-    "bs-extjs-save": "Zapisz",
-    "bs-extjs-delete": "Usuń",
-    "bs-extjs-add": "Dodaj",
-    "bs-extjs-remove": "Usuń",
-    "bs-extjs-hint": "Wskazówka",
-    "bs-extjs-error": "Błąd",
-    "bs-extjs-loading": "Ładowanie...",
-    "bs-extjs-warning": "Ostrzeżenie",
-    "bs-extjs-saving": "zapisywanie...",
-    "bs-extjs-close": "Zamknij",
-    "bs-extjs-label-user": "Użytkownik",
-    "bs-extjs-uploading": "Przesyłanie..."
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Anuluj",
+	"bs-extjs-yes": "Tak",
+	"bs-extjs-no": "Nie",
+	"bs-extjs-save": "Zapisz",
+	"bs-extjs-delete": "Usuń",
+	"bs-extjs-add": "Dodaj",
+	"bs-extjs-remove": "Usuń",
+	"bs-extjs-hint": "Wskazówka",
+	"bs-extjs-error": "Błąd",
+	"bs-extjs-loading": "Ładowanie...",
+	"bs-extjs-pageSize": "Rozmiar strony",
+	"bs-extjs-warning": "Ostrzeżenie",
+	"bs-extjs-saving": "zapisywanie...",
+	"bs-extjs-close": "Zamknij",
+	"bs-extjs-label-user": "Użytkownik",
+	"bs-extjs-uploading": "Przesyłanie..."
 }

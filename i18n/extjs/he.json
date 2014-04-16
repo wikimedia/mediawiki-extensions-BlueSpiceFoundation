@@ -1,33 +1,33 @@
 {
-    "@metadata": {
-        "authors": [
-            "Amire80"
-        ]
-    },
-    "bs-extjs-ok": "אישור",
-    "bs-extjs-cancel": "ביטול",
-    "bs-extjs-yes": "כן",
-    "bs-extjs-no": "לא",
-    "bs-extjs-save": "שמירה",
-    "bs-extjs-delete": "מחיקה",
-    "bs-extjs-add": "הוספה",
-    "bs-extjs-remove": "הסרה",
-    "bs-extjs-edit": "עריכה",
-    "bs-extjs-hint": "רמז",
-    "bs-extjs-error": "שגיאה",
-    "bs-extjs-confirm": "אימות",
-    "bs-extjs-loading": "טעינה...",
-    "bs-extjs-pageSize": "גודל דף",
-    "bs-extjs-actions-column-header": "פעולות",
-    "bs-extjs-warning": "אזהרה",
-    "bs-extjs-saving": "שמירה...",
-    "bs-extjs-reset": "איפוס",
-    "bs-extjs-close": "סגירה",
-    "bs-extjs-label-user": "משתמש",
-    "bs-extjs-upload": "העלאה",
-    "bs-extjs-browse": "עיון",
-    "bs-extjs-uploading": "מתבצעת העלאה...",
-    "bs-extjs-confirmNavigationTitle": "לעבור אל הקישור",
-    "bs-extjs-confirmNavigationText": "האם באמת לעבור אל הקישר הזה? כל ההגדרות הדינמיות, כגון סינון או מיון של הדף הנוכחי יאבדו.",
-    "bs-extjs-allns": "(הכול)"
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"bs-extjs-ok": "אישור",
+	"bs-extjs-cancel": "ביטול",
+	"bs-extjs-yes": "כן",
+	"bs-extjs-no": "לא",
+	"bs-extjs-save": "שמירה",
+	"bs-extjs-delete": "מחיקה",
+	"bs-extjs-add": "הוספה",
+	"bs-extjs-remove": "הסרה",
+	"bs-extjs-edit": "עריכה",
+	"bs-extjs-hint": "רמז",
+	"bs-extjs-error": "שגיאה",
+	"bs-extjs-confirm": "אימות",
+	"bs-extjs-loading": "טעינה...",
+	"bs-extjs-pageSize": "גודל דף",
+	"bs-extjs-actions-column-header": "פעולות",
+	"bs-extjs-warning": "אזהרה",
+	"bs-extjs-saving": "שמירה...",
+	"bs-extjs-reset": "איפוס",
+	"bs-extjs-close": "סגירה",
+	"bs-extjs-label-user": "משתמש",
+	"bs-extjs-upload": "העלאה",
+	"bs-extjs-browse": "עיון",
+	"bs-extjs-uploading": "מתבצעת העלאה...",
+	"bs-extjs-confirmNavigationTitle": "לעבור אל הקישור",
+	"bs-extjs-confirmNavigationText": "האם באמת לעבור אל הקישר הזה? כל ההגדרות הדינמיות, כגון סינון או מיון של הדף הנוכחי יאבדו.",
+	"bs-extjs-allns": "(הכול)"
 }

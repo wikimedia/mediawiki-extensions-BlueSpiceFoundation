@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Cedric31"
-        ]
-    },
-    "specialcredits": "Crèdits BlueSpice",
-    "bs-credits-programmers": "Programaires",
-    "bs-credits-dnt": "Concepcion e tèst",
-    "bs-credits-contributors": "Contributors"
+	"@metadata": {
+		"authors": [
+			"Cedric31"
+		]
+	},
+	"specialcredits": "Crèdits BlueSpice",
+	"bs-credits-programmers": "Programaires",
+	"bs-credits-dnt": "Concepcion e tèst",
+	"bs-credits-contributors": "Contributors"
 }

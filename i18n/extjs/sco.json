@@ -1,33 +1,33 @@
 {
-    "@metadata": {
-        "authors": [
-            "John Reid"
-        ]
-    },
-    "bs-extjs-ok": "Ok",
-    "bs-extjs-cancel": "Cancel",
-    "bs-extjs-yes": "Ay",
-    "bs-extjs-no": "Nae",
-    "bs-extjs-save": "Hain",
-    "bs-extjs-delete": "Delyte",
-    "bs-extjs-add": "Eik",
-    "bs-extjs-remove": "Remuiv",
-    "bs-extjs-edit": "Eedit",
-    "bs-extjs-hint": "Hint",
-    "bs-extjs-error": "Mistak",
-    "bs-extjs-confirm": "Confirm",
-    "bs-extjs-loading": "Laidin...",
-    "bs-extjs-pageSize": "Page size",
-    "bs-extjs-actions-column-header": "Actions",
-    "bs-extjs-warning": "Warnisment",
-    "bs-extjs-saving": "hainin...",
-    "bs-extjs-reset": "Reset",
-    "bs-extjs-close": "Claise",
-    "bs-extjs-label-user": "Uiser",
-    "bs-extjs-upload": "Uplaid",
-    "bs-extjs-browse": "Brouse",
-    "bs-extjs-uploading": "Uplaidin...",
-    "bs-extjs-confirmNavigationTitle": "Follae the airtin",
-    "bs-extjs-confirmNavigationText": "Dae ye reallie want tae follae this airtin? Aw o the dynameec settins like filterin or sortin oan the nou page will be loast.",
-    "bs-extjs-allns": "(aw)"
+	"@metadata": {
+		"authors": [
+			"John Reid"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Cancel",
+	"bs-extjs-yes": "Ay",
+	"bs-extjs-no": "Nae",
+	"bs-extjs-save": "Hain",
+	"bs-extjs-delete": "Delyte",
+	"bs-extjs-add": "Eik",
+	"bs-extjs-remove": "Remuiv",
+	"bs-extjs-edit": "Eedit",
+	"bs-extjs-hint": "Hint",
+	"bs-extjs-error": "Mistak",
+	"bs-extjs-confirm": "Confirm",
+	"bs-extjs-loading": "Laidin...",
+	"bs-extjs-pageSize": "Page size",
+	"bs-extjs-actions-column-header": "Actions",
+	"bs-extjs-warning": "Warnisment",
+	"bs-extjs-saving": "hainin...",
+	"bs-extjs-reset": "Reset",
+	"bs-extjs-close": "Claise",
+	"bs-extjs-label-user": "Uiser",
+	"bs-extjs-upload": "Uplaid",
+	"bs-extjs-browse": "Brouse",
+	"bs-extjs-uploading": "Uplaidin...",
+	"bs-extjs-confirmNavigationTitle": "Follae the airtin",
+	"bs-extjs-confirmNavigationText": "Dae ye reallie want tae follae this airtin? Aw o the dynameec settins like filterin or sortin oan the nou page will be loast.",
+	"bs-extjs-allns": "(aw)"
 }

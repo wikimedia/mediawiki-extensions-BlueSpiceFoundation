@@ -1,8 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Keysuck"
-        ]
-    },
-    "diagnostics": "시스템 진단 프로그램"
+	"@metadata": {
+		"authors": [
+			"Keysuck",
+			"아라"
+		]
+	},
+	"diagnostics": "시스템 진단"
 }

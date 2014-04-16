@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "John Reid"
-        ]
-    },
-    "specialcredits": "BlueSpice creedits",
-    "bs-credits-programmers": "Programmers",
-    "bs-credits-dnt": "Design n testin",
-    "bs-credits-contributors": "Contreebuters"
+	"@metadata": {
+		"authors": [
+			"John Reid"
+		]
+	},
+	"specialcredits": "BlueSpice creedits",
+	"bs-credits-programmers": "Programmers",
+	"bs-credits-dnt": "Design n testin",
+	"bs-credits-contributors": "Contreebuters"
 }

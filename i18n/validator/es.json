@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fitoschido",
-            "Frammm"
-        ]
-    },
-    "bs-validator-email-validation-approved": "La dirección de correo electrónico se validó correctamente.",
-    "bs-validator-email-validation-not-approved": "No se pudo validar la dirección de correo electrónico.",
-    "bs-validator-url-validation-approved": "El URL se validó correctamente.",
-    "bs-validator-url-validation-not-approved": "No se pudo validar el URL.",
-    "bs-validator-arg-count-validation-approved": "El atributo «count» se validó correctamente.",
-    "bs-validator-arg-count-validation-not-approved": "No se pudo valorar el atributo «count».",
-    "bs-validator-set-validation-approved": "$1 se validó correctamente.",
-    "bs-validator-integer-range-validation-too-low": "El valor proporcionado es demasiado bajo. No debe ser menor que $1.",
-    "bs-validator-integer-range-validation-too-high": "El valor proporcionado es demasiado alto. No debe ser mayor que $1."
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"Frammm"
+		]
+	},
+	"bs-validator-email-validation-approved": "La dirección de correo electrónico se validó correctamente.",
+	"bs-validator-email-validation-not-approved": "No se pudo validar la dirección de correo electrónico.",
+	"bs-validator-url-validation-approved": "El URL se validó correctamente.",
+	"bs-validator-url-validation-not-approved": "No se pudo validar el URL.",
+	"bs-validator-arg-count-validation-approved": "El atributo «count» se validó correctamente.",
+	"bs-validator-arg-count-validation-not-approved": "No se pudo valorar el atributo «count».",
+	"bs-validator-set-validation-approved": "$1 se validó correctamente.",
+	"bs-validator-integer-range-validation-too-low": "El valor proporcionado es demasiado bajo. No debe ser menor que $1.",
+	"bs-validator-integer-range-validation-too-high": "El valor proporcionado es demasiado alto. No debe ser mayor que $1."
 }

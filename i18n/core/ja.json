@@ -1,15 +1,18 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "bs-ns_main": "(ページ)",
-    "bs-ns_all": "(すべて)",
-    "bs-userbar_loginswitch_logout": "ログアウト",
-    "bs-userbar_loginswitch_login": "ログイン",
-    "bs-extended-search-tooltip-fulltext": "全文検索",
-    "bs-exception-view-heading": "エラーが発生しました",
-    "action-responsibleeditors-viewspecialpage": "「ResponsibleEditors-Viewspecialpage」権限で保護されたページの閲覧",
-    "bs-viewtagerrorlist-legend": "$1 - エラー"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"bs-ns_main": "(ページ)",
+	"bs-ns_all": "(すべて)",
+	"bs-userbar_loginswitch_logout": "ログアウト",
+	"bs-userbar_loginswitch_login": "ログイン",
+	"bs-extended-search-tooltip-fulltext": "全文検索",
+	"bs-exception-view-heading": "エラーが発生しました",
+	"action-responsibleeditors-viewspecialpage": "「ResponsibleEditors-Viewspecialpage」権限で保護されたページの閲覧",
+	"bs-viewtagerrorlist-legend": "$1 - エラー",
+	"bs-filesystemhelper-save-base64-error": "ファイルを保存できませんでした。",
+	"bs-filesystemhelper-upload-base64-error": "ファイルをアップロードできませんでした。",
+	"bs-filesystemhelper-upload-local-error-create": "ファイルをウィキ内に作成できませんでした。"
 }

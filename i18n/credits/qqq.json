@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "specialcredits": "Special page title",
-    "bs-credits-programmers": "Heading for column listing programmers",
-    "bs-credits-dnt": "Heading for column with listing designers and testers",
-    "bs-credits-contributors": "Headings for column listing contributors.\n{{Identical|Contributor}}"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"specialcredits": "Special page title",
+	"bs-credits-programmers": "Heading for column listing programmers",
+	"bs-credits-dnt": "Heading for column with listing designers and testers",
+	"bs-credits-contributors": "Headings for column listing contributors.\n{{Identical|Contributor}}"
 }

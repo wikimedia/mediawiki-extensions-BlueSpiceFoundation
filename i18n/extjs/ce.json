@@ -1,32 +1,32 @@
 {
-    "@metadata": {
-        "authors": [
-            "Умар"
-        ]
-    },
-    "bs-extjs-ok": "OK",
-    "bs-extjs-cancel": "Цаоьшу",
-    "bs-extjs-yes": "ХӀаъ",
-    "bs-extjs-no": "Яц",
-    "bs-extjs-save": "Ӏалашдан",
-    "bs-extjs-delete": "ДӀаяккха",
-    "bs-extjs-add": "ТӀетоха",
-    "bs-extjs-remove": "ДӀаяккха",
-    "bs-extjs-edit": "Тае",
-    "bs-extjs-hint": "Хьехар",
-    "bs-extjs-error": "ГӀалат",
-    "bs-extjs-confirm": "Бакъдан",
-    "bs-extjs-loading": "Чуйолуш…",
-    "bs-extjs-pageSize": "АгӀона барам",
-    "bs-extjs-actions-column-header": "Дийраш",
-    "bs-extjs-warning": "Тергам бе",
-    "bs-extjs-saving": "Ӏалаш еш ю...",
-    "bs-extjs-reset": "Кхоссар",
-    "bs-extjs-close": "ДӀачӀагӀа",
-    "bs-extjs-label-user": "Декъашхо",
-    "bs-extjs-upload": "Чуяккха",
-    "bs-extjs-browse": "Гучé",
-    "bs-extjs-uploading": "Чуйолуш…",
-    "bs-extjs-confirmNavigationTitle": "Хьажорган дихьа гӀо",
-    "bs-extjs-allns": "(массо)"
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-extjs-ok": "OK",
+	"bs-extjs-cancel": "Цаоьшу",
+	"bs-extjs-yes": "ХӀаъ",
+	"bs-extjs-no": "Яц",
+	"bs-extjs-save": "Ӏалашдан",
+	"bs-extjs-delete": "ДӀаяккха",
+	"bs-extjs-add": "ТӀетоха",
+	"bs-extjs-remove": "ДӀаяккха",
+	"bs-extjs-edit": "Тае",
+	"bs-extjs-hint": "Хьехар",
+	"bs-extjs-error": "ГӀалат",
+	"bs-extjs-confirm": "Бакъдан",
+	"bs-extjs-loading": "Чуйолуш…",
+	"bs-extjs-pageSize": "АгӀона барам",
+	"bs-extjs-actions-column-header": "Дийраш",
+	"bs-extjs-warning": "Тергам бе",
+	"bs-extjs-saving": "Ӏалаш еш ю...",
+	"bs-extjs-reset": "Кхоссар",
+	"bs-extjs-close": "ДӀачӀагӀа",
+	"bs-extjs-label-user": "Декъашхо",
+	"bs-extjs-upload": "Чуяккха",
+	"bs-extjs-browse": "Гучé",
+	"bs-extjs-uploading": "Чуйолуш…",
+	"bs-extjs-confirmNavigationTitle": "Хьажорган дихьа гӀо",
+	"bs-extjs-allns": "(массо)"
 }

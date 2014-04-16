@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Servien"
+		]
+	},
+	"bs-years-duration": "{{PLURAL:$1|één jaor|$1 jaor}}"
+}

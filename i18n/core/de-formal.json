@@ -1,7 +1,7 @@
 {
-    "@metadata": [],
-    "bs-email-footer": "Dies ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht auf diese E-Mail!",
-    "bs-userpreferences-link-title": "Zeigt Ihre persönlichen Benutzereinstellungen an.",
-    "bs-exception-view-admin-hint": "Bitte kontaktieren Sie Ihren Administrator.",
-    "bs-imageofotheruser": "Sie sind nicht berechtigt, ein Bild für einen anderen Benutzer hochzuladen."
+	"@metadata": [],
+	"bs-email-footer": "Dies ist eine automatisch generierte E-Mail. Bitte antworten Sie nicht auf diese E-Mail!",
+	"bs-userpreferences-link-title": "Zeigt Ihre persönlichen Benutzereinstellungen an.",
+	"bs-exception-view-admin-hint": "Bitte kontaktieren Sie Ihren Administrator.",
+	"bs-imageofotheruser": "Sie sind nicht berechtigt, ein Bild für einen anderen Benutzer hochzuladen."
 }

@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Okras"
-        ]
-    },
-    "bs-validator-email-validation-approved": "Адрес электронной почты был успешно проверен.",
-    "bs-validator-email-validation-not-approved": "Адрес электронной почты не смог быть проверен.",
-    "bs-validator-url-validation-approved": "URL-адрес был успешно проверен.",
-    "bs-validator-url-validation-not-approved": "URL-адрес не может быть проверен.",
-    "bs-validator-arg-count-validation-approved": "Атрибут «количество» успешно проверен.",
-    "bs-validator-arg-count-validation-not-approved": "Атрибут «количество» не может быть проверен.",
-    "bs-validator-set-validation-approved": "$1 был успешно проверен.",
-    "bs-validator-set-validation-not-approved": "Для $1 {{PLURAL:$3|разрешены только следующие значения|разрешено только одно из следующих значений}}: $2.",
-    "bs-validator-integer-range-validation-too-low": "Указанное значение является слишком маленьким. Оно не должно быть меньше $1.",
-    "bs-validator-integer-range-validation-too-high": "Указанное значение является слишком большое. Оно не должно быть больше $1."
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"bs-validator-email-validation-approved": "Адрес электронной почты был успешно проверен.",
+	"bs-validator-email-validation-not-approved": "Адрес электронной почты не смог быть проверен.",
+	"bs-validator-url-validation-approved": "URL-адрес был успешно проверен.",
+	"bs-validator-url-validation-not-approved": "URL-адрес не может быть проверен.",
+	"bs-validator-arg-count-validation-approved": "Атрибут «количество» успешно проверен.",
+	"bs-validator-arg-count-validation-not-approved": "Атрибут «количество» не может быть проверен.",
+	"bs-validator-set-validation-approved": "$1 был успешно проверен.",
+	"bs-validator-set-validation-not-approved": "Для $1 {{PLURAL:$3|разрешены только следующие значения|разрешено только одно из следующих значений}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Указанное значение является слишком маленьким. Оно не должно быть меньше $1.",
+	"bs-validator-integer-range-validation-too-high": "Указанное значение является слишком большое. Оно не должно быть больше $1."
 }

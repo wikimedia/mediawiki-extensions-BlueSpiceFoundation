@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Szonja"
-        ]
-    },
-    "bs-extjs-portal-timespan-week": "Kurko",
-    "bs-extjs-portal-timespan-month": "Tšoon"
+	"@metadata": {
+		"authors": [
+			"Szonja"
+		]
+	},
+	"bs-extjs-portal-timespan-week": "Kurko",
+	"bs-extjs-portal-timespan-month": "Tšoon"
 }

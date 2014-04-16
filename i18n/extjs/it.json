@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "Beta16"
-        ]
-    },
-    "bs-extjs-ok": "Ok",
-    "bs-extjs-cancel": "Annulla",
-    "bs-extjs-yes": "Sì",
-    "bs-extjs-no": "No",
-    "bs-extjs-save": "Salva",
-    "bs-extjs-delete": "Cancella",
-    "bs-extjs-add": "Aggiungi",
-    "bs-extjs-remove": "Rimuovi",
-    "bs-extjs-edit": "Modifica",
-    "bs-extjs-hint": "Suggerimento",
-    "bs-extjs-error": "Errore",
-    "bs-extjs-confirm": "Conferma",
-    "bs-extjs-loading": "Caricamento...",
-    "bs-extjs-pageSize": "Dimensioni pagina",
-    "bs-extjs-actions-column-header": "Azioni",
-    "bs-extjs-warning": "Attenzione",
-    "bs-extjs-saving": "salvataggio...",
-    "bs-extjs-reset": "Reimposta",
-    "bs-extjs-close": "Chiudi",
-    "bs-extjs-label-user": "Utente",
-    "bs-extjs-upload": "Carica",
-    "bs-extjs-browse": "Esplora",
-    "bs-extjs-uploading": "Caricamento in corso…",
-    "bs-extjs-allns": "(tutti)"
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Annulla",
+	"bs-extjs-yes": "Sì",
+	"bs-extjs-no": "No",
+	"bs-extjs-save": "Salva",
+	"bs-extjs-delete": "Cancella",
+	"bs-extjs-add": "Aggiungi",
+	"bs-extjs-remove": "Rimuovi",
+	"bs-extjs-edit": "Modifica",
+	"bs-extjs-hint": "Suggerimento",
+	"bs-extjs-error": "Errore",
+	"bs-extjs-confirm": "Conferma",
+	"bs-extjs-loading": "Caricamento...",
+	"bs-extjs-pageSize": "Dimensioni pagina",
+	"bs-extjs-actions-column-header": "Azioni",
+	"bs-extjs-warning": "Attenzione",
+	"bs-extjs-saving": "salvataggio...",
+	"bs-extjs-reset": "Reimposta",
+	"bs-extjs-close": "Chiudi",
+	"bs-extjs-label-user": "Utente",
+	"bs-extjs-upload": "Carica",
+	"bs-extjs-browse": "Esplora",
+	"bs-extjs-uploading": "Caricamento in corso…",
+	"bs-extjs-allns": "(tutti)"
 }

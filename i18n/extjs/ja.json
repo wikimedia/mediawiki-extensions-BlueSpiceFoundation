@@ -1,26 +1,26 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "bs-extjs-ok": "OK",
-    "bs-extjs-cancel": "キャンセル",
-    "bs-extjs-yes": "はい",
-    "bs-extjs-no": "いいえ",
-    "bs-extjs-save": "保存",
-    "bs-extjs-delete": "削除",
-    "bs-extjs-add": "追加",
-    "bs-extjs-remove": "除去",
-    "bs-extjs-edit": "編集",
-    "bs-extjs-hint": "ヒント",
-    "bs-extjs-error": "エラー",
-    "bs-extjs-loading": "読み込み中...",
-    "bs-extjs-warning": "警告",
-    "bs-extjs-saving": "保存中...",
-    "bs-extjs-close": "閉じる",
-    "bs-extjs-label-user": "利用者",
-    "bs-extjs-upload": "アップロード",
-    "bs-extjs-uploading": "アップロード中...",
-    "bs-extjs-allns": "(すべて)"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"bs-extjs-ok": "OK",
+	"bs-extjs-cancel": "キャンセル",
+	"bs-extjs-yes": "はい",
+	"bs-extjs-no": "いいえ",
+	"bs-extjs-save": "保存",
+	"bs-extjs-delete": "削除",
+	"bs-extjs-add": "追加",
+	"bs-extjs-remove": "除去",
+	"bs-extjs-edit": "編集",
+	"bs-extjs-hint": "ヒント",
+	"bs-extjs-error": "エラー",
+	"bs-extjs-loading": "読み込み中...",
+	"bs-extjs-warning": "警告",
+	"bs-extjs-saving": "保存中...",
+	"bs-extjs-close": "閉じる",
+	"bs-extjs-label-user": "利用者",
+	"bs-extjs-upload": "アップロード",
+	"bs-extjs-uploading": "アップロード中...",
+	"bs-extjs-allns": "(すべて)"
 }

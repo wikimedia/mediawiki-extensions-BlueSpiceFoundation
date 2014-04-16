@@ -1,30 +1,30 @@
 {
-    "@metadata": {
-        "authors": [
-            "Indoril"
-        ]
-    },
-    "bs-ns_main": "(Σελίδες)",
-    "bs-ns_all": "(όλα)",
-    "bs-tab_navigation": "Πλοήγηση",
-    "bs-tab_admin": "Διαχειριστής",
-    "bs-userbar_loginswitch_logout": "Αποσύνδεση",
-    "bs-userbar_loginswitch_login": "Σύνδεση",
-    "bs-no-information-available": "Δεν υπάρχουν διαθέσιμες πληροφορίες",
-    "bs-weeks-duration": "{{PLURAL:$1|μία εβδομάδα|$1 εβδομάδες}}",
-    "bs-days-duration": "{{PLURAL:$1|μια μέρα|$1 μέρες}}",
-    "bs-hours-duration": "{{PLURAL:$1|μια ώρα|$1 ώρες}}",
-    "bs-mins-duration": "{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}",
-    "bs-secs-duration": "{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}",
-    "bs-now": "τώρα",
-    "bs-email-greeting-receiver": "{{GENDER:$1|Γεια σας κύριε $1 |Γεια σας κυρία $1 |Γεια σας $1 }},",
-    "bs-email-greeting-no-receiver": "Γεια σας,",
-    "bs-email-footer": "Αυτό το μήνυμα δημιουργήθηκε αυτόματα. Παρακαλούμε μην απαντήσετε σε αυτό το email.",
-    "bs-userpagesettings-legend": "Ρυθμίσεις χρήστη",
-    "bs-userpreferences-link-title": "Εμφανίσετε τις προσωπικές σας ρυθμίσεις",
-    "bs-exception-view-text": "Κατά την επεξεργασία του ερωτήματός σας παρουσιάστηκε το ακόλουθο σφάλμα:",
-    "bs-exception-view-stacktrace-toggle-show-text": "Εμφάνιση λεπτομερειών σφάλματος",
-    "bs-imageofotheruser": "Δεν επιτρέπεται να ανεβάσετε μια εικόνα για άλλο χρήστη.",
-    "bs-filesystemhelper-file-copy-error": "Δεν ήταν δυνατή η αντιγραφή του αρχείου <code>$1</code>.",
-    "bs-filesystemhelper-folder-already-exists": "Ο φάκελος <code>$1</code> υπάρχει ήδη."
+	"@metadata": {
+		"authors": [
+			"Indoril"
+		]
+	},
+	"bs-ns_main": "(Σελίδες)",
+	"bs-ns_all": "(όλα)",
+	"bs-tab_navigation": "Πλοήγηση",
+	"bs-tab_admin": "Διαχειριστής",
+	"bs-userbar_loginswitch_logout": "Αποσύνδεση",
+	"bs-userbar_loginswitch_login": "Σύνδεση",
+	"bs-no-information-available": "Δεν υπάρχουν διαθέσιμες πληροφορίες",
+	"bs-weeks-duration": "{{PLURAL:$1|μία εβδομάδα|$1 εβδομάδες}}",
+	"bs-days-duration": "{{PLURAL:$1|μια μέρα|$1 μέρες}}",
+	"bs-hours-duration": "{{PLURAL:$1|μια ώρα|$1 ώρες}}",
+	"bs-mins-duration": "{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}",
+	"bs-secs-duration": "{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}",
+	"bs-now": "τώρα",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Γεια σας κύριε $1 |Γεια σας κυρία $1 |Γεια σας $1 }},",
+	"bs-email-greeting-no-receiver": "Γεια σας,",
+	"bs-email-footer": "Αυτό το μήνυμα δημιουργήθηκε αυτόματα. Παρακαλούμε μην απαντήσετε σε αυτό το email.",
+	"bs-userpagesettings-legend": "Ρυθμίσεις χρήστη",
+	"bs-userpreferences-link-title": "Εμφανίσετε τις προσωπικές σας ρυθμίσεις",
+	"bs-exception-view-text": "Κατά την επεξεργασία του ερωτήματός σας παρουσιάστηκε το ακόλουθο σφάλμα:",
+	"bs-exception-view-stacktrace-toggle-show-text": "Εμφάνιση λεπτομερειών σφάλματος",
+	"bs-imageofotheruser": "Δεν επιτρέπεται να ανεβάσετε μια εικόνα για άλλο χρήστη.",
+	"bs-filesystemhelper-file-copy-error": "Δεν ήταν δυνατή η αντιγραφή του αρχείου <code>$1</code>.",
+	"bs-filesystemhelper-folder-already-exists": "Ο φάκελος <code>$1</code> υπάρχει ήδη."
 }

@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Keysuck"
+		]
+	},
+	"bs-validator-email-validation-approved": "이메일 주소가 성공적으로 검증되었습니다.",
+	"bs-validator-email-validation-not-approved": "이메일 주소를 검증할 수 없습니다.",
+	"bs-validator-url-validation-approved": "URL이 성공적으로 검증되었습니다.",
+	"bs-validator-url-validation-not-approved": "URL을 검증할 수 없습니다.",
+	"bs-validator-set-validation-approved": "$1(이)가 성공적으로 검증되었습니다."
+}

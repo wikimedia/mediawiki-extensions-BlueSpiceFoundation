@@ -1,31 +1,31 @@
 {
-    "@metadata": {
-        "authors": [
-            "Josve05a"
-        ]
-    },
-    "bs-extjs-ok": "Ok",
-    "bs-extjs-cancel": "Avbryt",
-    "bs-extjs-yes": "Ja",
-    "bs-extjs-no": "Nej",
-    "bs-extjs-save": "Spara",
-    "bs-extjs-delete": "Radera",
-    "bs-extjs-add": "Lägg till",
-    "bs-extjs-remove": "Ta bort",
-    "bs-extjs-edit": "Redigera",
-    "bs-extjs-hint": "Tips",
-    "bs-extjs-error": "Fel",
-    "bs-extjs-confirm": "Bekräfta",
-    "bs-extjs-loading": "Läser in...",
-    "bs-extjs-pageSize": "Sidstorlek",
-    "bs-extjs-warning": "Varning",
-    "bs-extjs-saving": "sparar...",
-    "bs-extjs-reset": "Återställ",
-    "bs-extjs-close": "Stäng",
-    "bs-extjs-label-user": "Användare",
-    "bs-extjs-upload": "Ladda upp",
-    "bs-extjs-browse": "Bläddra",
-    "bs-extjs-uploading": "Laddar upp...",
-    "bs-extjs-confirmNavigationTitle": "Följ länken",
-    "bs-extjs-allns": "(alla)"
+	"@metadata": {
+		"authors": [
+			"Josve05a"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Avbryt",
+	"bs-extjs-yes": "Ja",
+	"bs-extjs-no": "Nej",
+	"bs-extjs-save": "Spara",
+	"bs-extjs-delete": "Radera",
+	"bs-extjs-add": "Lägg till",
+	"bs-extjs-remove": "Ta bort",
+	"bs-extjs-edit": "Redigera",
+	"bs-extjs-hint": "Tips",
+	"bs-extjs-error": "Fel",
+	"bs-extjs-confirm": "Bekräfta",
+	"bs-extjs-loading": "Läser in...",
+	"bs-extjs-pageSize": "Sidstorlek",
+	"bs-extjs-warning": "Varning",
+	"bs-extjs-saving": "sparar...",
+	"bs-extjs-reset": "Återställ",
+	"bs-extjs-close": "Stäng",
+	"bs-extjs-label-user": "Användare",
+	"bs-extjs-upload": "Ladda upp",
+	"bs-extjs-browse": "Bläddra",
+	"bs-extjs-uploading": "Laddar upp...",
+	"bs-extjs-confirmNavigationTitle": "Följ länken",
+	"bs-extjs-allns": "(alla)"
 }

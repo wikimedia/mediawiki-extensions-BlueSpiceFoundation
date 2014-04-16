@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "    Stephan Muggli <muggli@hallowelt.biz>"
-        ]
-    },
-    "bs-validator-email-validation-approved": "Used for confirmation message in dialogs and tags if the email address given is syntactically correct",
-    "bs-validator-email-validation-not-approved": "Used for error message in dialogs and tags if the email address given contains syntax errors",
-    "bs-validator-url-validation-approved": "Used for confirmation message in dialogs and tags if the URL given is syntactically correct",
-    "bs-validator-url-validation-not-approved": "Used for error message in dialogs and tags if the URL given contains syntax errors",
-    "bs-validator-arg-count-validation-approved": "Used for confirmation message in dialogs and tags if the tag attribute \"count\" is syntactically correct",
-    "bs-validator-arg-count-validation-not-approved": "Used for error message in dialogs and tags if the tag attribute \"count\" contains syntax errors",
-    "bs-validator-set-validation-approved": "Used for confirmation message in dialogs and tags if the value given is found in a set of options.\n\nParameters:\n* $1 - name of the set of options",
-    "bs-validator-set-validation-not-approved": "Used for error message in dialogs and tags if the value given is not found in a set of options.\n\nParameters:\n* $1 - name of the set of options\n* $2 - list of values that are in the set of options\n* $3 - count of values that are in the set of options, use for PLURAL",
-    "bs-validator-integer-range-validation-too-low": "Used for error message in dialogs and tags if the value given is below a certain integer value.\n\nParameters:\n* $1 - lower boundary of the value range (included).",
-    "bs-validator-integer-range-validation-too-high": "Used for error message in dialogs and tags if the value given is above a certain integer value.\n\nParameters:\n* $1 - upper boundary of the value range (included)."
+	"@metadata": {
+		"authors": [
+			"    Stephan Muggli <muggli@hallowelt.biz>"
+		]
+	},
+	"bs-validator-email-validation-approved": "Used for confirmation message in dialogs and tags if the email address given is syntactically correct",
+	"bs-validator-email-validation-not-approved": "Used for error message in dialogs and tags if the email address given contains syntax errors",
+	"bs-validator-url-validation-approved": "Used for confirmation message in dialogs and tags if the URL given is syntactically correct",
+	"bs-validator-url-validation-not-approved": "Used for error message in dialogs and tags if the URL given contains syntax errors",
+	"bs-validator-arg-count-validation-approved": "Used for confirmation message in dialogs and tags if the tag attribute \"count\" is syntactically correct",
+	"bs-validator-arg-count-validation-not-approved": "Used for error message in dialogs and tags if the tag attribute \"count\" contains syntax errors",
+	"bs-validator-set-validation-approved": "Used for confirmation message in dialogs and tags if the value given is found in a set of options.\n\nParameters:\n* $1 - name of the set of options",
+	"bs-validator-set-validation-not-approved": "Used for error message in dialogs and tags if the value given is not found in a set of options.\n\nParameters:\n* $1 - name of the set of options\n* $2 - list of values that are in the set of options\n* $3 - count of values that are in the set of options, use for PLURAL",
+	"bs-validator-integer-range-validation-too-low": "Used for error message in dialogs and tags if the value given is below a certain integer value.\n\nParameters:\n* $1 - lower boundary of the value range (included).",
+	"bs-validator-integer-range-validation-too-high": "Used for error message in dialogs and tags if the value given is above a certain integer value.\n\nParameters:\n* $1 - upper boundary of the value range (included)."
 }

@@ -1,12 +1,12 @@
 {
-    "@metadata": {
-        "authors": [
-            "Dude1717"
-        ]
-    },
-    "bs-extjs-portal-height": "高さ",
-    "bs-extjs-portal-count": "エントリ",
-    "bs-extjs-portal-timespan-week": "週",
-    "bs-extjs-portal-timespan-month": "月",
-    "bs-extjs-portal-timespan-alltime": "すべての時間"
+	"@metadata": {
+		"authors": [
+			"Dude1717"
+		]
+	},
+	"bs-extjs-portal-height": "高さ",
+	"bs-extjs-portal-count": "エントリ",
+	"bs-extjs-portal-timespan-week": "週",
+	"bs-extjs-portal-timespan-month": "月",
+	"bs-extjs-portal-timespan-alltime": "すべての時間"
 }

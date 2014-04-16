@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Bishnu Saikia"
-        ]
-    },
-    "bs-weeks-duration": "{{PLURAL:$1|$1 সপ্তাহ}}"
+	"@metadata": {
+		"authors": [
+			"Bishnu Saikia"
+		]
+	},
+	"bs-weeks-duration": "{{PLURAL:$1|$1 সপ্তাহ}}"
 }

@@ -1,34 +1,34 @@
 {
-    "@metadata": {
-        "authors": [
-            "Robby",
-            "Shirayuki"
-        ]
-    },
-    "bs-extjs-ok": "Label for submit button used in dialogues, alerts and prompts.\n{{Identical|OK}}",
-    "bs-extjs-cancel": "Label for cancel button used in dialogues, alerts and prompts.\n{{Identical|Cancel}}",
-    "bs-extjs-yes": "Label for accept button used in dialogues, alerts and prompts.\n{{Identical|Yes}}",
-    "bs-extjs-no": "Label for reject button used in dialogues, alerts and prompts.\n{{Identical|No}}",
-    "bs-extjs-save": "Label for save button used in dialogues, alerts and prompts.\n{{Identical|Save}}",
-    "bs-extjs-delete": "Label for delete button used in dialogues, alerts and prompts.\n{{Identical|Delete}}",
-    "bs-extjs-add": "{{Identical|Add}}",
-    "bs-extjs-remove": "{{Identical|Remove}}",
-    "bs-extjs-edit": "{{Identical|Edit}}",
-    "bs-extjs-hint": "Title for hint prompts.\n{{Identical|Hint}}",
-    "bs-extjs-error": "Title for error prompts.\n{{Identical|Error}}",
-    "bs-extjs-confirm": "Title for confirm prompts\n{{Identical|Confirm}}",
-    "bs-extjs-loading": "Label for elements that are shown when waiting for Ajax data.\n{{Identical|Loading}}",
-    "bs-extjs-pageSize": "Label for the input box that changes the number of lines in a grid.\n{{Identical|Page size}}",
-    "bs-extjs-actions-column-header": "Label for the grid cloumn that shows the action buttons",
-    "bs-extjs-warning": "Title for warning prompts.\n{{Identical|Warning}}",
-    "bs-extjs-saving": "Label for elements that are shown when saving data from a dialogue via Ajax.\n{{Identical|Saving}}",
-    "bs-extjs-reset": "Label for reset button used in dialogues, alerts and prompts.\n{{Identical|Reset}}",
-    "bs-extjs-close": "Label for close button used in dialogues, alerts and prompts.\n{{Identical|Close}}",
-    "bs-extjs-label-user": "Label for combo boxes that select users.\n{{Identical|User}}",
-    "bs-extjs-upload": "Label for upload button used in dialogues, alerts and prompts.\n{{Identical|Upload}}",
-    "bs-extjs-browse": "Label for browse button used in dialogues, alerts and prompts",
-    "bs-extjs-uploading": "Label for elements that are shown when uploading files from a dialogue.\n{{Identical|Uploading}}",
-    "bs-extjs-confirmNavigationTitle": "Title for prompt that warns you if you want to follow a link but have unsaved changes",
-    "bs-extjs-confirmNavigationText": "Text for prompt that warns you if you want to follow a link but have unsaved changes",
-    "bs-extjs-allns": "Selector for all namespaces in namespace combo boxes.\n{{Identical|All}}"
+	"@metadata": {
+		"authors": [
+			"Robby",
+			"Shirayuki"
+		]
+	},
+	"bs-extjs-ok": "Label for submit button used in dialogues, alerts and prompts.\n{{Identical|OK}}",
+	"bs-extjs-cancel": "Label for cancel button used in dialogues, alerts and prompts.\n{{Identical|Cancel}}",
+	"bs-extjs-yes": "Label for accept button used in dialogues, alerts and prompts.\n{{Identical|Yes}}",
+	"bs-extjs-no": "Label for reject button used in dialogues, alerts and prompts.\n{{Identical|No}}",
+	"bs-extjs-save": "Label for save button used in dialogues, alerts and prompts.\n{{Identical|Save}}",
+	"bs-extjs-delete": "Label for delete button used in dialogues, alerts and prompts.\n{{Identical|Delete}}",
+	"bs-extjs-add": "{{Identical|Add}}",
+	"bs-extjs-remove": "{{Identical|Remove}}",
+	"bs-extjs-edit": "{{Identical|Edit}}",
+	"bs-extjs-hint": "Title for hint prompts.\n{{Identical|Hint}}",
+	"bs-extjs-error": "Title for error prompts.\n{{Identical|Error}}",
+	"bs-extjs-confirm": "Title for confirm prompts\n{{Identical|Confirm}}",
+	"bs-extjs-loading": "Label for elements that are shown when waiting for Ajax data.\n{{Identical|Loading}}",
+	"bs-extjs-pageSize": "Label for the input box that changes the number of lines in a grid.\n{{Identical|Page size}}",
+	"bs-extjs-actions-column-header": "Label for the grid cloumn that shows the action buttons",
+	"bs-extjs-warning": "Title for warning prompts.\n{{Identical|Warning}}",
+	"bs-extjs-saving": "Label for elements that are shown when saving data from a dialogue via Ajax.\n{{Identical|Saving}}",
+	"bs-extjs-reset": "Label for reset button used in dialogues, alerts and prompts.\n{{Identical|Reset}}",
+	"bs-extjs-close": "Label for close button used in dialogues, alerts and prompts.\n{{Identical|Close}}",
+	"bs-extjs-label-user": "Label for combo boxes that select users.\n{{Identical|User}}",
+	"bs-extjs-upload": "Label for upload button used in dialogues, alerts and prompts.\n{{Identical|Upload}}",
+	"bs-extjs-browse": "Label for browse button used in dialogues, alerts and prompts",
+	"bs-extjs-uploading": "Label for elements that are shown when uploading files from a dialogue.\n{{Identical|Uploading}}",
+	"bs-extjs-confirmNavigationTitle": "Title for prompt that warns you if you want to follow a link but have unsaved changes",
+	"bs-extjs-confirmNavigationText": "Text for prompt that warns you if you want to follow a link but have unsaved changes",
+	"bs-extjs-allns": "Selector for all namespaces in namespace combo boxes.\n{{Identical|All}}"
 }

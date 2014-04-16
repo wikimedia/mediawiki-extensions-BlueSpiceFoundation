@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Gomoko"
-        ]
-    },
-    "specialcredits": "Crédits BlueSpice",
-    "bs-credits-programmers": "Programmeurs",
-    "bs-credits-dnt": "Conception et test",
-    "bs-credits-contributors": "Contributeurs"
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"specialcredits": "Crédits BlueSpice",
+	"bs-credits-programmers": "Programmeurs",
+	"bs-credits-dnt": "Conception et test",
+	"bs-credits-contributors": "Contributeurs"
 }

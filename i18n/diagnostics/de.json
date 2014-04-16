@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "    Stephan Muggli <muggli@hallowelt.biz>"
-        ]
-    },
-    "diagnostics": "Systemdiagnose"
+	"@metadata": {
+		"authors": [
+			"    Stephan Muggli <muggli@hallowelt.biz>"
+		]
+	},
+	"diagnostics": "Systemdiagnose"
 }
