@@ -16,6 +16,11 @@ $specialPageAliases['de'] = array(
 	'Diagnostics' => array( 'BlueSpice-Diagnose' ),
 );
 
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'Diagnostics' => array( 'Teşhiskerden' ),
+);
+
 /** Persian (فارسی) */
 $specialPageAliases['fa'] = array(
 	'Diagnostics' => array( 'عیب‌یابی‌ها' ),

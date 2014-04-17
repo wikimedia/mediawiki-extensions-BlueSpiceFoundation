@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Marmase"
+		]
+	},
+	"bs-extjs-ok": "Temam",
+	"bs-extjs-cancel": "Bıtexelne",
+	"bs-extjs-yes": "E",
+	"bs-extjs-no": "Nê",
+	"bs-extjs-save": "Qeyd ke",
+	"bs-extjs-delete": "Bestere",
+	"bs-extjs-add": "De ke",
+	"bs-extjs-remove": "Bere",
+	"bs-extjs-edit": "Bıvurne",
+	"bs-extjs-error": "Xırab",
+	"bs-extjs-confirm": "Testiq ke",
+	"bs-extjs-loading": "Bar beno...",
+	"bs-extjs-pageSize": "Ebata perer",
+	"bs-extjs-actions-column-header": "Kerdışi",
+	"bs-extjs-warning": "İğtar",
+	"bs-extjs-saving": "Beno qeyd...",
+	"bs-extjs-reset": "Reset kerê",
+	"bs-extjs-close": "Racnê",
+	"bs-extjs-label-user": "Karber",
+	"bs-extjs-upload": "Bar ke",
+	"bs-extjs-browse": "Mirirger",
+	"bs-extjs-uploading": "Bar beno...",
+	"bs-extjs-allns": "(pêro)"
+}

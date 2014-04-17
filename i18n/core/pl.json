@@ -25,11 +25,14 @@
 	"bs-one-unit-ago": "$1 temu",
 	"bs-now": "teraz",
 	"bs-email-greeting-no-receiver": "Witaj,",
+	"bs-email-footer": "Ten komunikat został wygenerowany automatycznie. Prosimy nie odpowiadać na ten e-mail.",
 	"bs-userpagesettings-legend": "Ustawienia użytkownika",
+	"bs-userpreferences-link-text": "Dodatkowe ustawienia użytkownika",
 	"bs-exception-view-heading": "Wystąpił błąd",
 	"bs-exception-view-text": "Podczas przetwarzania żądania wystąpił następujący błąd:",
 	"bs-exception-view-admin-hint": "Skontaktuj się z administratorem systemu.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Pokaż szczegóły błędu",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Ukryj szczegóły błędu",
 	"bs-viewtagerrorlist-legend": "$1 - Błąd",
 	"bs-pref-sortalph": "Alfabetycznie sortowanie przestrzeni nazw",
 	"bs-permissionerror": "Błąd uprawnień!",
@@ -38,5 +41,6 @@
 	"bs-filesystemhelper-file-already-exists": "Plik <code>$1</code> już istnieje.",
 	"bs-filesystemhelper-folder-already-exists": "Folder <code>$1</code> już istnieje.",
 	"bs-filesystemhelper-folder-not-exists": "Folder <code>$1</code> nie istnieje.",
-	"bs-navigation-instructions": "Instrukcje"
+	"bs-navigation-instructions": "Instrukcje",
+	"bs-navigation-contact": "Kontakt"
 }

@@ -16,6 +16,11 @@ $specialPageAliases['de'] = array(
 	'SpecialCredits' => array( 'Danksagungen' ),
 );
 
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'SpecialCredits' => array( 'Qrediy' ),
+);
+
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'SpecialCredits' => array( 'Crediti' ),
