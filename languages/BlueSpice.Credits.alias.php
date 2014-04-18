@@ -26,6 +26,11 @@ $specialPageAliases['it'] = array(
 	'SpecialCredits' => array( 'Crediti' ),
 );
 
+/** Luxembourgish (Lëtzebuergesch) */
+$specialPageAliases['lb'] = array(
+	'SpecialCredits' => array( 'Merci_un' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'SpecialCredits' => array( '积分' ),
