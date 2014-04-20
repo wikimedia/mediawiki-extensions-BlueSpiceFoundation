@@ -27,7 +27,7 @@
 	"bs-two-units-ago": "$1 $2 전",
 	"bs-one-unit-ago": "$1 전",
 	"bs-now": "지금",
-	"bs-email-greeting-receiver": "{{GENDER:$1|안녕하세요 $1씨|안녕하세요 $1양|안녕하세요 $1님}},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|$1님 안녕하세요|$1님 안녕하세요|$1님 안녕하세요}},",
 	"bs-email-greeting-no-receiver": "안녕하세요,",
 	"bs-email-footer": "이 메시지는 자동으로 생성되었습니다. 이 이메일에 답변하지 마세요.",
 	"bs-userpagesettings-legend": "사용자 설정",

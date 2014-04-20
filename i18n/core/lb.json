@@ -30,6 +30,8 @@
 	"bs-userpreferences-link-text": "Méi Benotzerastellungen",
 	"bs-userpreferences-link-title": "Är perséinlech Astellunge weisen",
 	"bs-exception-view-heading": "Et ass e Feeler geschitt",
+	"bs-exception-view-text": "Beim Verschaffe vun Ärer Ufro ass dëse Feeler geschitt:",
+	"bs-exception-view-admin-hint": "Kontaktéiert w.e.g. Äre System-Administrateur.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Detailer vum Feeler weisen",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Detailer vum Feeler verstoppen",
 	"bs-viewtagerrorlist-legend": "$1-Feeler",

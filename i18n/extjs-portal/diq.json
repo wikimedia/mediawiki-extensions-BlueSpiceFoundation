@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Marmase"
+			"Marmase",
+			"Mirzali"
 		]
 	},
-	"bs-extjs-portal-height": "Dergi",
-	"bs-extjs-portal-count": "De kerdışi",
+	"bs-extjs-portal-height": "Berziye",
+	"bs-extjs-portal-count": "Cıkerdışi",
 	"bs-extjs-portal-timespan-week": "Hefte",
 	"bs-extjs-portal-timespan-month": "Aşme"
 }
