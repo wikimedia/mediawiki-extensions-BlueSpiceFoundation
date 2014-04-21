@@ -1,15 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"PeppeAeco"
 		]
 	},
 	"bs-ns_main": "(Pagine)",
 	"bs-ns_all": "(tutti)",
 	"bs-tab_navigation": "Navigazione",
+	"bs-tab_focus": "Messa a fuoco",
 	"bs-tab_admin": "Amministrazione",
 	"bs-userbar_loginswitch_logout": "Esci",
 	"bs-userbar_loginswitch_login": "Entra",
+	"bs-extended-search-tooltip-fulltext": "Ricerca full-text",
+	"bs-extended-search-textfield-defaultvalue": "Cerca...",
+	"bs-extended-search-textfield-tooltip": "Ricerca wiki",
 	"bs-no-information-available": "Nessuna informazione disponibile",
 	"bs-years-duration": "{{PLURAL:$1|un anno|$1 anni}}",
 	"bs-months-duration": "{{PLURAL:$1|un mese|$1 mesi}}",
@@ -32,6 +37,7 @@
 	"bs-exception-view-admin-hint": "Contatta l'amministratore di sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostra i dettagli dell'errore",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Nascondi i dettagli dell'errore",
+	"action-responsibleeditors-viewspecialpage": "Mostra pagine protette con il diritto \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - Errore",
 	"bs-imageofotheruser": "Non ti è consentito caricare un'immagine per un altro utente.",
 	"bs-pref-sortalph": "Ordina alfabeticamente namespace",
@@ -49,6 +55,8 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Questo tipo di file non è supportato.",
 	"bs-filesystemhelper-save-base64-error": "Il file non può essere salvato.",
 	"bs-filesystemhelper-upload-base64-error": "Il file non può essere caricato.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "Impossibile spostare il file per il caricamento stash.",
+	"bs-filesystemhelper-upload-local-error-create": "Il file non può essere creato in wiki.",
 	"bs-navigation-instructions": "Istruzioni",
 	"bs-navigation-support": "Supporto",
 	"bs-navigation-contact": "Contatti"

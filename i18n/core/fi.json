@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stryn"
+		]
+	},
+	"bs-ns_main": "(Sivut)",
+	"bs-ns_all": "(kaikki)",
+	"bs-tab_navigation": "Valikko",
+	"bs-tab_admin": "Ylläpitäjä",
+	"bs-userbar_loginswitch_logout": "Kirjaudu ulos",
+	"bs-userbar_loginswitch_login": "Kirjaudu sisään",
+	"bs-no-information-available": "Ei tietoa saatavilla",
+	"bs-now": "nyt",
+	"bs-navigation-instructions": "Ohjeet",
+	"bs-navigation-support": "Tuki",
+	"bs-navigation-contact": "Ota yhteyttä"
+}

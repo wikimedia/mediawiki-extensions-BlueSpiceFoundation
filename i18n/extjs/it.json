@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"PeppeAeco"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -27,5 +28,6 @@
 	"bs-extjs-upload": "Carica",
 	"bs-extjs-browse": "Esplora",
 	"bs-extjs-uploading": "Caricamento in corso…",
+	"bs-extjs-confirmNavigationTitle": "Segui il link",
 	"bs-extjs-allns": "(tutti)"
 }

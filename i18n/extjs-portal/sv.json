@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Josve05a"
+			"Josve05a",
+			"WikiPhoenix"
 		]
 	},
+	"bs-extjs-portal-height": "Höjd",
+	"bs-extjs-portal-count": "Poster",
 	"bs-extjs-portal-timespan-week": "Vecka",
 	"bs-extjs-portal-timespan-month": "Månad",
 	"bs-extjs-portal-timespan-alltime": "Hela tiden"

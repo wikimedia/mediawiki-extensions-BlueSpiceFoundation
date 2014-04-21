@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Josve05a"
+			"Josve05a",
+			"WikiPhoenix"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -18,6 +19,7 @@
 	"bs-extjs-confirm": "Bekräfta",
 	"bs-extjs-loading": "Läser in...",
 	"bs-extjs-pageSize": "Sidstorlek",
+	"bs-extjs-actions-column-header": "Åtgärder",
 	"bs-extjs-warning": "Varning",
 	"bs-extjs-saving": "sparar...",
 	"bs-extjs-reset": "Återställ",
@@ -27,5 +29,6 @@
 	"bs-extjs-browse": "Bläddra",
 	"bs-extjs-uploading": "Laddar upp...",
 	"bs-extjs-confirmNavigationTitle": "Följ länken",
+	"bs-extjs-confirmNavigationText": "Vill du verkligen att följa denna länk? Alla dynamiska inställningar, som filtrering och sortering, på den aktuella sidan kommer att försvinna.",
 	"bs-extjs-allns": "(alla)"
 }
