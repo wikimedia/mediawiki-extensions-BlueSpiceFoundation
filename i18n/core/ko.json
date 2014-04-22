@@ -18,7 +18,7 @@
 	"bs-extended-search-textfield-tooltip": "위키 검색",
 	"bs-no-information-available": "사용할 수 있는 정보가 없습니다",
 	"bs-years-duration": "{{PLURAL:$1|1년|$1년}}",
-	"bs-months-duration": "{{PLURAL:$1|1달|$1달}}",
+	"bs-months-duration": "{{PLURAL:$1|1개월|$1개월}}",
 	"bs-weeks-duration": "{{PLURAL:$1|1주|$1주}}",
 	"bs-days-duration": "{{PLURAL:$1|1일|$1일}}",
 	"bs-hours-duration": "{{PLURAL:$1|1시간|$1시간}}",

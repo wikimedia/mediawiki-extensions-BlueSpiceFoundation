@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Toliño"
 		]
 	},
 	"bs-ns_main": "(Páxinas)",
@@ -9,23 +10,23 @@
 	"bs-tab_navigation": "Navegación",
 	"bs-tab_focus": "Foco",
 	"bs-tab_admin": "Administración",
-	"bs-userbar_loginswitch_logout": "Pechar sesión",
-	"bs-userbar_loginswitch_login": "Iniciar sesión",
+	"bs-userbar_loginswitch_logout": "Saír",
+	"bs-userbar_loginswitch_login": "Acceder ao sistema",
 	"bs-extended-search-tooltip-fulltext": "Busca de texto completo",
-	"bs-extended-search-textfield-defaultvalue": "Buscar…",
+	"bs-extended-search-textfield-defaultvalue": "Procurar...",
 	"bs-extended-search-textfield-tooltip": "Buscar no wiki",
 	"bs-no-information-available": "Non hai información dispoñible",
-	"bs-years-duration": "{{PLURAL:$1|$1 ano|$1 anos}}",
+	"bs-years-duration": "{{PLURAL:$1|un ano|$1 anos}}",
 	"bs-months-duration": "{{PLURAL:$1|un mes|$1 meses}}",
 	"bs-weeks-duration": "{{PLURAL:$1|unha semana|$1 semanas}}",
 	"bs-days-duration": "{{PLURAL:$1|un día|$1 días}}",
 	"bs-hours-duration": "{{PLURAL:$1|unha hora|$1 horas}}",
 	"bs-mins-duration": "{{PLURAL:$1|un minuto|$1 minutos}}",
 	"bs-secs-duration": "{{PLURAL:$1|un segundo|$1 segundos}}",
-	"bs-two-units-ago": "Fai $1 e $2",
+	"bs-two-units-ago": "Hai $1 e $2",
 	"bs-one-unit-ago": "hai $1",
 	"bs-now": "agora",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Ola, Sr. $1|Ola, Sra. $1|Ola, $1}}:",
-	"bs-email-greeting-no-receiver": "Ola:",
-	"bs-email-footer": "Esta mensaxe xerouse automaticamente. Por favor, non respondas a este correo electrónico."
+	"bs-email-greeting-receiver": "{{GENDER:$1|Boas, Sr. $1|Boas, Sra. $1|Boas, $1}}:",
+	"bs-email-greeting-no-receiver": "Boas:",
+	"bs-email-footer": "Esta mensaxe xerouse automaticamente. Por favor, non responda a este correo electrónico."
 }

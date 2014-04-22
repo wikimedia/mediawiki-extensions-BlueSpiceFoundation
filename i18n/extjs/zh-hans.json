@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Xiaomingyan",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Kuailong"
 		]
 	},
 	"bs-extjs-ok": "确定",
@@ -29,5 +30,6 @@
 	"bs-extjs-browse": "浏览",
 	"bs-extjs-uploading": "上传中...",
 	"bs-extjs-confirmNavigationTitle": "跟随链接",
+	"bs-extjs-confirmNavigationText": "确认要打开该链接？所有在当前页面下进行的动态设置，如筛选或排序都会丢失。",
 	"bs-extjs-allns": "（所有）"
 }

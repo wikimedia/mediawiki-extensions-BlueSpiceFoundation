@@ -4,7 +4,8 @@
 			"Xiaomingyan",
 			"Liuxinyu970226",
 			"Zhangjintao",
-			"Hudafu"
+			"Hudafu",
+			"Kuailong"
 		]
 	},
 	"bs-ns_main": "（页面）",
@@ -59,6 +60,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "不支持此文件类型。",
 	"bs-filesystemhelper-save-base64-error": "该文件无法保存。",
 	"bs-filesystemhelper-upload-base64-error": "无法上传此文件。",
+	"bs-filesystemhelper-upload-local-error-stash-file": "无法将该文档移动到上传堆栈中。",
 	"bs-filesystemhelper-upload-local-error-create": "不能在 wiki 中创建该文件。",
 	"bs-navigation-instructions": "说明",
 	"bs-navigation-support": "支持",
