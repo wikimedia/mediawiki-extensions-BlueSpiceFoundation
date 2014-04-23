@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Alan ffm"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -12,13 +13,17 @@
 	"bs-extjs-delete": "Usuń",
 	"bs-extjs-add": "Dodaj",
 	"bs-extjs-remove": "Usuń",
+	"bs-extjs-edit": "Edytuj",
 	"bs-extjs-hint": "Wskazówka",
 	"bs-extjs-error": "Błąd",
+	"bs-extjs-confirm": "Potwierdź",
 	"bs-extjs-loading": "Ładowanie...",
 	"bs-extjs-pageSize": "Rozmiar strony",
 	"bs-extjs-warning": "Ostrzeżenie",
 	"bs-extjs-saving": "zapisywanie...",
 	"bs-extjs-close": "Zamknij",
 	"bs-extjs-label-user": "Użytkownik",
+	"bs-extjs-upload": "Prześlij",
+	"bs-extjs-browse": "Przeglądaj",
 	"bs-extjs-uploading": "Przesyłanie..."
 }

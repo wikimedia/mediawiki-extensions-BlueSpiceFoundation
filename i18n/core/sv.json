@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Josve05a",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Fader"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -12,6 +13,7 @@
 	"bs-tab_admin": "Administratör",
 	"bs-userbar_loginswitch_logout": "Logga ut",
 	"bs-userbar_loginswitch_login": "Logga in",
+	"bs-extended-search-tooltip-fulltext": "Fulltextsökning",
 	"bs-extended-search-textfield-defaultvalue": "Söker...",
 	"bs-extended-search-textfield-tooltip": "Sök wiki",
 	"bs-no-information-available": "Ingen information tillgänglig",

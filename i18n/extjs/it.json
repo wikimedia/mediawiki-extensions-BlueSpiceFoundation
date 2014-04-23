@@ -29,5 +29,6 @@
 	"bs-extjs-browse": "Esplora",
 	"bs-extjs-uploading": "Caricamento in corso…",
 	"bs-extjs-confirmNavigationTitle": "Segui il collegamento",
+	"bs-extjs-confirmNavigationText": "Vuoi davvero seguire questo collegamento? Tutte le impostazioni dinamiche, come i filtri o l'ordinamento, nella pagina attuale andrà perso.",
 	"bs-extjs-allns": "(tutti)"
 }

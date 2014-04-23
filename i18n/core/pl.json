@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Alan ffm"
 		]
 	},
 	"bs-ns_main": "(Strony)",
@@ -28,6 +29,7 @@
 	"bs-email-footer": "Ten komunikat został wygenerowany automatycznie. Prosimy nie odpowiadać na ten e-mail.",
 	"bs-userpagesettings-legend": "Ustawienia użytkownika",
 	"bs-userpreferences-link-text": "Dodatkowe ustawienia użytkownika",
+	"bs-userpreferences-link-title": "Wyświetlanie ustawień osobistych użytkownika",
 	"bs-exception-view-heading": "Wystąpił błąd",
 	"bs-exception-view-text": "Podczas przetwarzania żądania wystąpił następujący błąd:",
 	"bs-exception-view-admin-hint": "Skontaktuj się z administratorem systemu.",
@@ -42,5 +44,6 @@
 	"bs-filesystemhelper-folder-already-exists": "Folder <code>$1</code> już istnieje.",
 	"bs-filesystemhelper-folder-not-exists": "Folder <code>$1</code> nie istnieje.",
 	"bs-navigation-instructions": "Instrukcje",
+	"bs-navigation-support": "Wsparcie",
 	"bs-navigation-contact": "Kontakt"
 }

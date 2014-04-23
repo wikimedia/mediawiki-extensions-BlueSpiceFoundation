@@ -4,6 +4,8 @@
 			"Beta16"
 		]
 	},
+	"bs-extjs-portal-config": "Configura portlet:",
+	"bs-extjs-portal-title": "Titolo del portlet",
 	"bs-extjs-portal-height": "Altezza",
 	"bs-extjs-portal-timespan": "Intervallo temporale",
 	"bs-extjs-portal-timespan-week": "Settimana",
