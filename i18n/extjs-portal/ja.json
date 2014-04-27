@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dude1717"
+			"Dude1717",
+			"Shirayuki"
 		]
 	},
 	"bs-extjs-portal-height": "高さ",
-	"bs-extjs-portal-count": "エントリ",
+	"bs-extjs-portal-count": "項目数",
+	"bs-extjs-portal-timespan": "期間",
 	"bs-extjs-portal-timespan-week": "週",
 	"bs-extjs-portal-timespan-month": "月",
-	"bs-extjs-portal-timespan-alltime": "すべての時間"
+	"bs-extjs-portal-timespan-alltime": "すべての期間"
 }

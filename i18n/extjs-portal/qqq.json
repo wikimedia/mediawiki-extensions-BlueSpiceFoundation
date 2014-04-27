@@ -8,9 +8,9 @@
 	"bs-extjs-portal-config": "Title of configuration dialogues for dashboard portlets. Followed by the name of the portlet, hence the colon.",
 	"bs-extjs-portal-title": "Label for title input field",
 	"bs-extjs-portal-height": "Label for height input field\n{{Identical|Height}}",
-	"bs-extjs-portal-count": "Label for input field that counts number of items shown",
-	"bs-extjs-portal-timespan": "Label for timespan dropdown",
+	"bs-extjs-portal-count": "Label for input field that counts number of items shown.\n{{Identical|Entry}}",
+	"bs-extjs-portal-timespan": "Label for timespan dropdown.\n\nThe dropdown has the following items:\n* {{msg-mw|Bs-extjs-portal-timespan-week}}\n* {{msg-mw|Bs-extjs-portal-timespan-month}}\n* {{msg-mw|Bs-extjs-portal-timespan-alltime}}",
 	"bs-extjs-portal-timespan-week": "Label for timespan option \"week\"\n{{Identical|Week}}",
 	"bs-extjs-portal-timespan-month": "Label for timespan option \"month\"\n{{Identical|Month}}",
-	"bs-extjs-portal-timespan-alltime": "Label for timespan option \"unlimited\".\n{{Identical|All time}}"
+	"bs-extjs-portal-timespan-alltime": "Label for timespan option \"unlimited\" (\"entire period\").\n{{Identical|All time}}"
 }

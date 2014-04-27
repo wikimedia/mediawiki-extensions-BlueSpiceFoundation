@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cwlin0416"
+		]
+	},
+	"bs-validator-email-validation-approved": "電子郵件地址已驗證成功。",
+	"bs-validator-email-validation-not-approved": "無法驗證電子郵件地址。",
+	"bs-validator-url-validation-approved": "URL 網址已驗證成功。",
+	"bs-validator-url-validation-not-approved": "無法驗證 URL 網址。"
+}

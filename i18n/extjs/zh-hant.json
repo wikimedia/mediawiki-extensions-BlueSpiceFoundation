@@ -1,0 +1,33 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cwlin0416"
+		]
+	},
+	"bs-extjs-ok": "確定",
+	"bs-extjs-cancel": "取消",
+	"bs-extjs-yes": "是",
+	"bs-extjs-no": "否",
+	"bs-extjs-save": "儲存",
+	"bs-extjs-delete": "刪除",
+	"bs-extjs-add": "新增",
+	"bs-extjs-remove": "移除",
+	"bs-extjs-edit": "編輯",
+	"bs-extjs-hint": "提示",
+	"bs-extjs-error": "錯誤",
+	"bs-extjs-confirm": "確認",
+	"bs-extjs-loading": "讀取中…",
+	"bs-extjs-pageSize": "頁面大小",
+	"bs-extjs-actions-column-header": "操作",
+	"bs-extjs-warning": "警告",
+	"bs-extjs-saving": "儲存中...",
+	"bs-extjs-reset": "重置",
+	"bs-extjs-close": "關閉",
+	"bs-extjs-label-user": "使用者",
+	"bs-extjs-upload": "上傳",
+	"bs-extjs-browse": "瀏覽",
+	"bs-extjs-uploading": "上傳中...",
+	"bs-extjs-confirmNavigationTitle": "跟隨連結",
+	"bs-extjs-confirmNavigationText": "你真的想要跟隨此連結？ 所有在目前頁面上的動態設定如：搜尋或排序的狀態將會遺失。",
+	"bs-extjs-allns": "(全部)"
+}
