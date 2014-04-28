@@ -12,5 +12,6 @@
 	"bs-validator-arg-count-validation-approved": "「count」属性を検証しました。",
 	"bs-validator-arg-count-validation-not-approved": "「count」属性を検証できませんでした。",
 	"bs-validator-set-validation-approved": "$1 を検証しました。",
+	"bs-validator-integer-range-validation-too-low": "指定した値は小さすぎます。$1 以上の値にしてください。",
 	"bs-validator-integer-range-validation-too-high": "指定した値は大きすぎます。$1 以下の値にしてください。"
 }
