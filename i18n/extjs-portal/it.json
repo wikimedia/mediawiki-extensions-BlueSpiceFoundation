@@ -7,6 +7,7 @@
 	"bs-extjs-portal-config": "Configura portlet:",
 	"bs-extjs-portal-title": "Titolo del portlet",
 	"bs-extjs-portal-height": "Altezza",
+	"bs-extjs-portal-count": "Elementi",
 	"bs-extjs-portal-timespan": "Intervallo temporale",
 	"bs-extjs-portal-timespan-week": "Settimana",
 	"bs-extjs-portal-timespan-month": "Mese",

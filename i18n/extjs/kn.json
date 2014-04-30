@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"VASANTH S.N."
+		]
+	},
+	"bs-extjs-cancel": "ರದ್ದು ಮಾಡು",
+	"bs-extjs-yes": "ಹೌದು",
+	"bs-extjs-no": "ಇಲ್ಲ",
+	"bs-extjs-save": "ಉಳಿಸಿ",
+	"bs-extjs-delete": "ಅಳಿಸು",
+	"bs-extjs-add": "ಸೇರಿಸು",
+	"bs-extjs-remove": "ತೆಗೆ",
+	"bs-extjs-edit": "ಸಂಪಾದಿಸಿ",
+	"bs-extjs-hint": "ಸೂಚನೆ",
+	"bs-extjs-error": "ದೋಷ",
+	"bs-extjs-confirm": "ಧೃಡಪಡಿಸು",
+	"bs-extjs-loading": "ತುಂಬಿಸಲಾಗುತ್ತಿದೆ....",
+	"bs-extjs-pageSize": "ಪುಟದ ಗಾತ್ರ",
+	"bs-extjs-actions-column-header": "ಕ್ರಿಯೆಗಳು",
+	"bs-extjs-warning": "ಎಚ್ಚರಿಕೆ",
+	"bs-extjs-saving": "ಉಳಿಸಲಾಗುತ್ತಿದೆ....",
+	"bs-extjs-reset": "ಮರುಹೊಂದಿಸು",
+	"bs-extjs-close": "ಮುಚ್ಚಿ",
+	"bs-extjs-label-user": "ಸದಸ್ಯ",
+	"bs-extjs-upload": "ನಕಲೇರಿಸು",
+	"bs-extjs-browse": "ವಿಹರಿಸಿ",
+	"bs-extjs-uploading": "ನಕಲೇರಿಸಲಾಗುತ್ತಿದೆ...",
+	"bs-extjs-confirmNavigationTitle": "ಕೊಂಡಿಯನ್ನು ಅನುಸರಿಸಿ",
+	"bs-extjs-allns": "(ಎಲ್ಲವೂ)"
+}
