@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kenrick95"
+		]
+	},
+	"bs-ns_main": "(Halaman)",
+	"bs-ns_all": "(semua)",
+	"bs-tab_navigation": "Navigasi",
+	"bs-tab_focus": "Fokus",
+	"bs-tab_admin": "Pengurus",
+	"bs-userbar_loginswitch_logout": "Keluar log",
+	"bs-userbar_loginswitch_login": "Masuk log",
+	"bs-extended-search-tooltip-fulltext": "Pencarian seluruh teks",
+	"bs-extended-search-textfield-defaultvalue": "Cari...",
+	"bs-extended-search-textfield-tooltip": "Cari wiki",
+	"bs-no-information-available": "Tidak ada informasi tersedia",
+	"bs-years-duration": "{{PLURAL:$1|setahun|$1 tahun}}",
+	"bs-months-duration": "{{PLURAL:$1|sebulan|$1 bulan}}",
+	"bs-weeks-duration": "{{PLURAL:$1|seminggu|$1 minggu}}",
+	"bs-days-duration": "{{PLURAL:$1|sehari|$1 hari}}",
+	"bs-hours-duration": "{{PLURAL:$1|sejam|$1 jam}}",
+	"bs-mins-duration": "{{PLURAL:$1|semenit|$1 menit}}",
+	"bs-secs-duration": "{{PLURAL:$1|sedetik|$1 detik}}",
+	"bs-two-units-ago": "$1 $2 yang lalu",
+	"bs-one-unit-ago": "$1 yang lalu",
+	"bs-now": "sekarang",
+	"bs-email-greeting-no-receiver": "Halo,"
+}

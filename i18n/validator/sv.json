@@ -1,11 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Josve05a"
+			"Josve05a",
+			"WikiPhoenix"
 		]
 	},
 	"bs-validator-email-validation-approved": "E-postadressen har validerats.",
 	"bs-validator-email-validation-not-approved": "E-postadressen kan inte verifieras.",
 	"bs-validator-url-validation-approved": "URL-adressen verifierades framgångsrikt.",
-	"bs-validator-url-validation-not-approved": "URL-adressen kunde inte verifieras."
+	"bs-validator-url-validation-not-approved": "URL-adressen kunde inte verifieras.",
+	"bs-validator-arg-count-validation-approved": "Attributen \"count\" har bekräftats.",
+	"bs-validator-arg-count-validation-not-approved": "Attributen \"count\" kunde inte bekräftas.",
+	"bs-validator-set-validation-approved": "$1 bekräftades.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Endast följande värde är tillåtet för $1|För $1 är endast ett av följande värden tillåtna}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Det angivna värdet är för lågt. Det bör inte vara mindre än $1.",
+	"bs-validator-integer-range-validation-too-high": "Det angivna värdet är för högt. Det bör inte vara högre än $1."
 }
