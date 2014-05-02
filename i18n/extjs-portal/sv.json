@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Josve05a",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Jopparn"
 		]
 	},
+	"bs-extjs-portal-config": "Konfigurera portlet:",
+	"bs-extjs-portal-title": "Portlet-titeln",
 	"bs-extjs-portal-height": "Höjd",
 	"bs-extjs-portal-count": "Poster",
 	"bs-extjs-portal-timespan": "Tidsomfattning",

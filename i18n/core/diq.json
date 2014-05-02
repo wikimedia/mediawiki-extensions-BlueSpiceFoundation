@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gorizon"
+			"Gorizon",
+			"Mirzali"
 		]
 	},
 	"bs-ns_main": "(Peli)",
@@ -16,7 +17,7 @@
 	"bs-years-duration": "{{PLURAL:$1|yew serre|$1 serran}}",
 	"bs-months-duration": "{{PLURAL:$1|yew aşme|$1 aşman}}",
 	"bs-weeks-duration": "{{PLURAL:$1|yew hefte|$1 hefteyan}}",
-	"bs-days-duration": "{{PLURAL:$1|yew roce|$1 rocan}}",
+	"bs-days-duration": "{{PLURAL:$1|yew roce|$1 roci}}",
 	"bs-hours-duration": "{{PLURAL:$1|yew seate|$1 seatan}}",
 	"bs-mins-duration": "{{PLURAL:$1|yew deqa|$1 deqan de}}",
 	"bs-secs-duration": "{{PLURAL:$1|yew saniye|$1 saniyan}}",
@@ -27,5 +28,5 @@
 	"bs-email-greeting-no-receiver": "Merheba,",
 	"bs-viewtagerrorlist-legend": "$1 - Xeta",
 	"bs-navigation-support": "Destek",
-	"bs-navigation-contact": "İrtibat"
+	"bs-navigation-contact": "İrtıbat"
 }

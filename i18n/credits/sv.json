@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Josve05a"
+			"Josve05a",
+			"Jopparn"
 		]
 	},
+	"specialcredits": "BlueSpice medverkande",
 	"bs-credits-programmers": "Programmerare",
 	"bs-credits-dnt": "Design och tester",
 	"bs-credits-contributors": "Bidragsgivare"

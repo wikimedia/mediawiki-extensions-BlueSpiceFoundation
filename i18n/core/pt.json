@@ -1,9 +1,41 @@
 {
 	"@metadata": {
 		"authors": [
-			"Imperadeiro98"
+			"Imperadeiro98",
+			"Fúlvio"
 		]
 	},
+	"bs-ns_main": "(Páginas)",
+	"bs-ns_all": "(todos)",
+	"bs-tab_navigation": "Navegação",
+	"bs-tab_focus": "Foco",
+	"bs-tab_admin": "Administrador",
+	"bs-userbar_loginswitch_logout": "Sair",
+	"bs-userbar_loginswitch_login": "Autenticação",
+	"bs-extended-search-tooltip-fulltext": "Pesquisa de texto completo",
+	"bs-extended-search-textfield-defaultvalue": "Pesquisar...",
+	"bs-extended-search-textfield-tooltip": "Pesquisar na wiki",
+	"bs-no-information-available": "Não há informação disponível",
+	"bs-years-duration": "{{PLURAL:$1|um ano|$1 anos}}",
+	"bs-months-duration": "{{PLURAL:$1|um mês|$1 meses}}",
+	"bs-weeks-duration": "{{PLURAL:$1|uma semana|$1 semanas}}",
+	"bs-days-duration": "{{PLURAL:$1|um dia|$1 dias}}",
+	"bs-hours-duration": "{{PLURAL:$1|uma hora|$1 horas}}",
+	"bs-mins-duration": "{{PLURAL:$1|um minuto|$1 minutos}}",
+	"bs-secs-duration": "{{PLURAL:$1|um segundo|$1 segundos}}",
+	"bs-two-units-ago": "Há $1 e $2 atrás",
+	"bs-one-unit-ago": "Há $1 atrás",
+	"bs-now": "agora",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Olá, Sr. $1|Olá, Srª $1|Olá, $1}}",
+	"bs-email-greeting-no-receiver": "Olá,",
+	"bs-email-footer": "Esta mensagem foi gerada automaticamente. Por favor, não responda a este e-mail.",
+	"bs-userpagesettings-legend": "Configurações do utilizador",
+	"bs-userpreferences-link-text": "Mais configurações do utilizador",
+	"bs-userpreferences-link-title": "Mostrar suas configurações de utilizador",
 	"bs-exception-view-heading": "Ocorreu um erro",
-	"bs-exception-view-text": "Durante o processamento do seu pedido ocorreu o seguinte erro:"
+	"bs-exception-view-text": "Durante o processamento do seu pedido ocorreu o seguinte erro:",
+	"bs-exception-view-admin-hint": "Por favor, contacte o seu administrador do sistema.",
+	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar detalhes do erro",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Esconder detalhes do erro",
+	"action-responsibleeditors-viewspecialpage": "Visualizar as páginas protegidas pelo direito \"ResponsibleEditors-Viewspecialpage\""
 }
