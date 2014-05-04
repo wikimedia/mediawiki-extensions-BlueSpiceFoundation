@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Southparkfan"
+			"Southparkfan",
+			"Niknetniko"
 		]
 	},
+	"specialcredits": "BlueSpice-kredieten",
+	"bs-credits-programmers": "Ontwikkelaars",
+	"bs-credits-dnt": "Ontwerpen en testen",
 	"bs-credits-contributors": "Bijdragers"
 }
