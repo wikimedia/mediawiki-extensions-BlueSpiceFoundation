@@ -37,5 +37,6 @@
 	"bs-exception-view-admin-hint": "Por favor, contacte o seu administrador do sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar detalhes do erro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Esconder detalhes do erro",
-	"action-responsibleeditors-viewspecialpage": "Visualizar as páginas protegidas pelo direito \"ResponsibleEditors-Viewspecialpage\""
+	"action-responsibleeditors-viewspecialpage": "Visualizar as páginas protegidas pelo direito \"ResponsibleEditors-Viewspecialpage\"",
+	"bs-viewtagerrorlist-legend": "$1 - Erro"
 }
