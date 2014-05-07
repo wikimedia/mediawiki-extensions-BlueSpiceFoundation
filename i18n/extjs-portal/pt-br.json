@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luckas"
+		]
+	},
+	"bs-extjs-portal-height": "Altura",
+	"bs-extjs-portal-count": "Entradas",
+	"bs-extjs-portal-timespan-week": "Semana",
+	"bs-extjs-portal-timespan-month": "Mês",
+	"bs-extjs-portal-timespan-alltime": "Todo o tempo"
+}

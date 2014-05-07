@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Servien"
+		]
+	},
+	"bs-extjs-portal-timespan-week": "Weke",
+	"bs-extjs-portal-timespan-month": "Maond",
+	"bs-extjs-portal-timespan-alltime": "De heeltied"
+}
