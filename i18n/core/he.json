@@ -1,16 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Inkbug"
+			"Inkbug",
+			"Matanya"
 		]
 	},
 	"bs-ns_main": "(ראשי)",
 	"bs-ns_all": "(הכול)",
 	"bs-tab_navigation": "ניווט",
+	"bs-tab_focus": "מיקוד",
 	"bs-tab_admin": "מפעיל מערכת",
 	"bs-userbar_loginswitch_logout": "יציאה",
 	"bs-userbar_loginswitch_login": "כניסה",
+	"bs-extended-search-tooltip-fulltext": "חיפוש בכל הטקסט",
 	"bs-extended-search-textfield-defaultvalue": "חיפוש...",
+	"bs-extended-search-textfield-tooltip": "חיפוש בוויקי",
+	"bs-no-information-available": "אין מידע זמין",
 	"bs-years-duration": "{{PLURAL:$1|שנה אחת|$1 שנים}}",
 	"bs-months-duration": "{{PLURAL:$1|חודש אחד|$1 חודשים}}",
 	"bs-weeks-duration": "{{PLURAL:$1|שבוע אחד|$1 שבועות}}",
@@ -24,6 +29,14 @@
 	"bs-email-greeting-receiver": "{{GENDER:$1|שלום מר $1|שלום גברת $1|שלום $1}},",
 	"bs-email-greeting-no-receiver": "שלום,",
 	"bs-email-footer": "הודעה זו נוצרה באופן אוטמטי. נא לא להשיב לאימייל זה.",
+	"bs-userpagesettings-legend": "העדפות",
+	"bs-userpreferences-link-text": "העדפות נוספות",
+	"bs-userpreferences-link-title": "הצגת העדפות אישיות",
+	"bs-exception-view-heading": "אירעה שגיאה.",
+	"bs-exception-view-text": "בעת עיבוד בקשתך אירעה השגיאה הבאה:",
+	"bs-exception-view-admin-hint": "נא לפנות אל מנהל המערכת.",
+	"bs-exception-view-stacktrace-toggle-show-text": "הצגת פרטי השגיאה",
+	"bs-exception-view-stacktrace-toggle-hide-text": "הסתרת פרטי השגיאה",
 	"bs-filesystemhelper-file-not-exists": "הקובץ <code>$1</code> אינו קיים.",
 	"bs-filesystemhelper-file-copy-error": "לא הייתה אפשרות להעתיק את הקובץ <code>$1</code>.",
 	"bs-filesystemhelper-file-already-exists": "הקובץ <code>$1</code> כבר קיים.",
