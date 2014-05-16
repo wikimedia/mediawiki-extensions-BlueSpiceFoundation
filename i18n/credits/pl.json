@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Vengir"
 		]
 	},
-	"bs-credits-programmers": "Programiści"
+	"bs-credits-programmers": "Programiści",
+	"bs-credits-dnt": "Projekt i testy",
+	"bs-credits-contributors": "Autorzy"
 }

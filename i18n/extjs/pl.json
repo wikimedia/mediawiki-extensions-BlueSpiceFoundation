@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Alan ffm"
+			"Alan ffm",
+			"Vengir"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -19,11 +20,16 @@
 	"bs-extjs-confirm": "Potwierdź",
 	"bs-extjs-loading": "Ładowanie...",
 	"bs-extjs-pageSize": "Rozmiar strony",
+	"bs-extjs-actions-column-header": "Operacje",
 	"bs-extjs-warning": "Ostrzeżenie",
 	"bs-extjs-saving": "zapisywanie...",
+	"bs-extjs-reset": "Resetuj",
 	"bs-extjs-close": "Zamknij",
 	"bs-extjs-label-user": "Użytkownik",
 	"bs-extjs-upload": "Prześlij",
 	"bs-extjs-browse": "Przeglądaj",
-	"bs-extjs-uploading": "Przesyłanie..."
+	"bs-extjs-uploading": "Przesyłanie...",
+	"bs-extjs-confirmNavigationTitle": "Opuszczanie strony",
+	"bs-extjs-confirmNavigationText": "Czy na pewno chcesz opuścić tę stronę? Wszelkie niezapisane ustawienia takie jak filtry i sortowania zostaną utracone.",
+	"bs-extjs-allns": "(wszystkie)"
 }

@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Максим Підліснюк"
+		]
+	},
+	"bs-extjs-yes": "Так",
+	"bs-extjs-no": "Ні",
+	"bs-extjs-save": "Зберегти",
+	"bs-extjs-delete": "Видалити",
+	"bs-extjs-add": "Додати",
+	"bs-extjs-remove": "Видалити",
+	"bs-extjs-edit": "Редагувати",
+	"bs-extjs-hint": "Підказка",
+	"bs-extjs-error": "Помилка",
+	"bs-extjs-confirm": "Підтвердити",
+	"bs-extjs-loading": "Завантаження…",
+	"bs-extjs-pageSize": "Розмір сторінки",
+	"bs-extjs-actions-column-header": "Дії",
+	"bs-extjs-warning": "Попередження",
+	"bs-extjs-saving": "збереження...",
+	"bs-extjs-reset": "Скинути",
+	"bs-extjs-close": "Закрити",
+	"bs-extjs-label-user": "Користувач",
+	"bs-extjs-upload": "Завантажити",
+	"bs-extjs-browse": "Огляд",
+	"bs-extjs-uploading": "Завантаження…",
+	"bs-extjs-confirmNavigationTitle": "Перейдіть за посиланням",
+	"bs-extjs-confirmNavigationText": "Ви дійсно хочете цим посиланням? Всі динамічні параметри, такі як фільтрація та сортування на поточній сторінці будуть втрачені.",
+	"bs-extjs-allns": "(всі)"
+}
