@@ -38,5 +38,8 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar detalhes do erro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Esconder detalhes do erro",
 	"action-responsibleeditors-viewspecialpage": "Visualizar as páginas protegidas pelo direito \"ResponsibleEditors-Viewspecialpage\"",
-	"bs-viewtagerrorlist-legend": "$1 - Erro"
+	"bs-viewtagerrorlist-legend": "$1 - Erro",
+	"bs-navigation-instructions": "Instruções",
+	"bs-navigation-support": "Suporte",
+	"bs-navigation-contact": "Contacto"
 }
