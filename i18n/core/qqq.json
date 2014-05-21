@@ -62,5 +62,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "Used as fatal error message.",
 	"bs-navigation-instructions": "Used in navigation for instuctions link\n{{Identical|Instructions}}",
 	"bs-navigation-support": "Used in navigation for support link\n{{Identical|Support}}",
-	"bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}"
+	"bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}",
+	"bs-imagepage-download-text" => "Button label for download\n{{Identical|download}}"
 }
