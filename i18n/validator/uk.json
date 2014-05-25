@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Base"
+		]
+	},
+	"bs-validator-email-validation-approved": "Адресу електронної пошти було успішно підтверджено.",
+	"bs-validator-email-validation-not-approved": "Неможливо підтвердити адресу електронної пошти."
+}

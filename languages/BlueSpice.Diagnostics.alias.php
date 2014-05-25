@@ -31,6 +31,11 @@ $specialPageAliases['it'] = array(
 	'Diagnostics' => array( 'Diagnostica' ),
 );
 
+/** Malayalam (മലയാളം) */
+$specialPageAliases['ml'] = array(
+	'Diagnostics' => array( 'പരിശോധന' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Diagnostics' => array( '诊断程序' ),

@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Максим Підліснюк"
+			"Максим Підліснюк",
+			"Base"
 		]
 	},
+	"bs-extjs-ok": "Гаразд",
+	"bs-extjs-cancel": "Скасувати",
 	"bs-extjs-yes": "Так",
 	"bs-extjs-no": "Ні",
 	"bs-extjs-save": "Зберегти",

@@ -31,6 +31,11 @@ $specialPageAliases['lb'] = array(
 	'SpecialCredits' => array( 'Merci_un' ),
 );
 
+/** Malayalam (മലയാളം) */
+$specialPageAliases['ml'] = array(
+	'SpecialCredits' => array( 'കടപ്പാടുകൾ' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'SpecialCredits' => array( '积分' ),

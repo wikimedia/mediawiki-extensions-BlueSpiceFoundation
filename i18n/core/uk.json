@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Andriykopanytsia"
+			"Andriykopanytsia",
+			"Base"
 		]
 	},
 	"bs-ns_main": "(Сторінки)",
@@ -55,5 +56,9 @@
 	"bs-filesystemhelper-upload-wrong-ext": "Файл не має необхідне розширення: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Цей тип файлу не підтримується.",
 	"bs-filesystemhelper-save-base64-error": "Не вдалося зберегти файл.",
-	"bs-filesystemhelper-upload-base64-error": "Файл не може бути завантажений."
+	"bs-filesystemhelper-upload-base64-error": "Файл не може бути завантажений.",
+	"bs-filesystemhelper-upload-local-error-create": "Файл не може бути створено у вікі.",
+	"bs-navigation-instructions": "Інструкції",
+	"bs-navigation-support": "Підтримка",
+	"bs-navigation-contact": "Контакт"
 }
