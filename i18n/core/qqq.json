@@ -3,7 +3,8 @@
 		"authors": [
 			"Robby",
 			"Shirayuki",
-			"Beta16"
+			"Beta16",
+			"Mar(c)"
 		]
 	},
 	"bs-ns_main": "Label used in namespace dropdown lists for NS_MAIN",
@@ -27,7 +28,7 @@
 	"bs-two-units-ago": "Text shown when indicating how long ago an event was.\n\nUses {{msg-mw|Bs-years-duration}}, {{msg-mw|Bs-months-duration}}, {{msg-mw|Bs-weeks-duration}}, {{msg-mw|Bs-days-duration}}, {{msg-mw|Bs-hours-duration}}, {{msg-mw|Bs-mins-duration}}, {{msg-mw|Bs-secs-duration}} for parameters\n\nParameters:\n* $1 - a duration, e.g. {{msg-mw|Bs-weeks-duration}}\n* $2 - a duration one unit smaller than $1, e.g. {{msg-mw|Bs-days-duration}}",
 	"bs-one-unit-ago": "Text shown when indicating how long ago an event was\n\nParameters:\n* $1 - a duration; any one of the following messages:\n** {{msg-mw|Bs-years-duration}}\n** {{msg-mw|Bs-months-duration}}\n** {{msg-mw|Bs-weeks-duration}}\n** {{msg-mw|Bs-days-duration}}\n** {{msg-mw|Bs-hours-duration}}\n** {{msg-mw|Bs-mins-duration}}\n** {{msg-mw|Bs-secs-duration}}\n{{Identical|Ago}}",
 	"bs-now": "Text shown for \"now\" when indicating how long ago an event was.\n{{Identical|Now}}",
-	"bs-email-greeting-receiver": "Used in plain text mails as first line in body to greet the reveiver, $1 is the current user name for GENDER distinction (depends on sex setting)\n\nParameters:\n* $1 - name of the receiver",
+	"bs-email-greeting-receiver": "Used in plain text mails as first line in body to greet the receiver, $1 is the current user name for GENDER distinction (depends on sex setting)\n\nParameters:\n* $1 - name of the receiver",
 	"bs-email-greeting-no-receiver": "Used in plain text mails as first line in body to greet the reveiver",
 	"bs-email-footer": "Used in plain text mails as last line",
 	"bs-userpagesettings-legend": "Label for section with links to special user related settings",
