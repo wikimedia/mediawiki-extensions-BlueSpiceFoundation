@@ -1,5 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Stephan Muggli <muggli@hallowelt.biz>"
+		]
+	},
 	"bs-extjs-ok": "OK",
 	"bs-extjs-cancel": "Abbrechen",
 	"bs-extjs-yes": "Ja",
@@ -25,5 +29,12 @@
 	"bs-extjs-uploading": "Lädt hoch...",
 	"bs-extjs-confirmNavigationTitle": "Dem Link folgen",
 	"bs-extjs-confirmNavigationText": "Möchtest du wirklich diesem Link folgen? Alle dynamischen Einstellungen, wie Filter und Sortierung, auf dieser Seite gehen dabei verloren.",
-	"bs-extjs-allns": "(alle)"
+	"bs-extjs-allns": "(alle)",
+	"bs-extjs-filters": "Filter",
+	"bs-extjs-filter-equals": "ist",
+	"bs-extjs-filter-equals-not": "ist nicht",
+	"bs-extjs-filter-contains": "enthält",
+	"bs-extjs-filter-contains-not": "enthält nicht",
+	"bs-extjs-filter-starts-with": "beginnt mit",
+	"bs-extjs-filter-ends-with": "endet mit"
 }

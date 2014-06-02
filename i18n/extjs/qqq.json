@@ -30,5 +30,12 @@
 	"bs-extjs-uploading": "Label for elements that are shown when uploading files from a dialogue.\n{{Identical|Uploading}}",
 	"bs-extjs-confirmNavigationTitle": "Title for prompt that warns you if you want to follow a link but have unsaved changes.\n\nFollowed by the following prompt:\n* {{msg-mw|Bs-extjs-confirmNavigationText}}",
 	"bs-extjs-confirmNavigationText": "Text for prompt that warns you if you want to follow a link but have unsaved changes.\n\nPreceded by the title {{msg-mw|Bs-extjs-confirmNavigationTitle}}.",
-	"bs-extjs-allns": "Selector for all namespaces in namespace combo boxes.\n{{Identical|All}}"
+	"bs-extjs-allns": "Selector for all namespaces in namespace combo boxes.\n{{Identical|All}}",
+	"bs-extjs-filters": "Label for filters\n{{Identical|filters}}",
+	"bs-extjs-filter-equals": "Label for equals\n{{Identical|equals}}",
+	"bs-extjs-filter-equals-not": "Label for equals not\n{{Identical|equals not}}",
+	"bs-extjs-filter-contains": "Label for contains\n{{Identical|contains}}",
+	"bs-extjs-filter-contains-not": "Label for contains not\n{{Identical|contains not}}",
+	"bs-extjs-filter-starts-with": "Label for starts with\n{{Identical|starts with}}",
+	"bs-extjs-filter-ends-with": "Label for ends with\n{{Identical|ends with}}"
 }
