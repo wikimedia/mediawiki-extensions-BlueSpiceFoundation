@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kenrick95"
+			"Kenrick95",
+			"Raynasution"
 		]
 	},
 	"bs-ns_main": "(Halaman)",
@@ -25,5 +26,6 @@
 	"bs-two-units-ago": "$1 $2 yang lalu",
 	"bs-one-unit-ago": "$1 yang lalu",
 	"bs-now": "sekarang",
-	"bs-email-greeting-no-receiver": "Halo,"
+	"bs-email-greeting-no-receiver": "Halo,",
+	"bs-imagepage-download-text": "Unduh"
 }

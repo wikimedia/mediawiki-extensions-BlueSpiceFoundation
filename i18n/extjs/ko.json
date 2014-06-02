@@ -4,7 +4,8 @@
 			"관인생략",
 			"Keysuck",
 			"아라",
-			"Namoroka"
+			"Namoroka",
+			"Miri-Nae"
 		]
 	},
 	"bs-extjs-ok": "확인",
@@ -32,5 +33,6 @@
 	"bs-extjs-uploading": "올리는 중...",
 	"bs-extjs-confirmNavigationTitle": "링크 따라가기",
 	"bs-extjs-confirmNavigationText": "정말로 이 링크를 따라가겠습니까? 이 문서의 필터링이나 정렬과 같은 동적인 설정이 모두 사라집니다.",
-	"bs-extjs-allns": "(모두)"
+	"bs-extjs-allns": "(모두)",
+	"bs-extjs-filters": "필터"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Imperadeiro98",
-			"Fúlvio"
+			"Fúlvio",
+			"Vitorvicentevalente"
 		]
 	},
 	"bs-ns_main": "(Páginas)",
@@ -41,5 +42,6 @@
 	"bs-viewtagerrorlist-legend": "$1 - Erro",
 	"bs-navigation-instructions": "Instruções",
 	"bs-navigation-support": "Suporte",
-	"bs-navigation-contact": "Contacto"
+	"bs-navigation-contact": "Contacto",
+	"bs-imagepage-download-text": "Descarregar"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fúlvio"
+			"Fúlvio",
+			"Vitorvicentevalente"
 		]
 	},
 	"bs-extjs-ok": "Aceitar",
@@ -29,5 +30,12 @@
 	"bs-extjs-uploading": "A carregar...",
 	"bs-extjs-confirmNavigationTitle": "Seguir link",
 	"bs-extjs-confirmNavigationText": "Você deseja realmente seguir este link? Todas as configurações dinâmicas, como os filtros e a classificação, serão perdidas.",
-	"bs-extjs-allns": "(todos)"
+	"bs-extjs-allns": "(todos)",
+	"bs-extjs-filters": "Filtros",
+	"bs-extjs-filter-equals": "iguala",
+	"bs-extjs-filter-equals-not": "não iguala",
+	"bs-extjs-filter-contains": "contém",
+	"bs-extjs-filter-contains-not": "não contém",
+	"bs-extjs-filter-starts-with": "começa com",
+	"bs-extjs-filter-ends-with": "termina com"
 }

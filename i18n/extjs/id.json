@@ -1,9 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"C5st4wr6ch"
+			"C5st4wr6ch",
+			"Raynasution"
 		]
 	},
 	"bs-extjs-yes": "Ya",
-	"bs-extjs-no": "Tidak"
+	"bs-extjs-no": "Tidak",
+	"bs-extjs-filters": "Saringan",
+	"bs-extjs-filter-equals": "sama dengan",
+	"bs-extjs-filter-equals-not": "tidak sama dengan",
+	"bs-extjs-filter-contains": "berisi",
+	"bs-extjs-filter-contains-not": "tidak berisi",
+	"bs-extjs-filter-starts-with": "dimulai dengan",
+	"bs-extjs-filter-ends-with": "berakhir dengan"
 }

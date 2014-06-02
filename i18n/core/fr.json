@@ -60,5 +60,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "Le fichier n’a pas pu être créé dans le wiki.",
 	"bs-navigation-instructions": "Instructions",
 	"bs-navigation-support": "Soutien",
-	"bs-navigation-contact": "Contact"
+	"bs-navigation-contact": "Contact",
+	"bs-imagepage-download-text": "Télécharger"
 }

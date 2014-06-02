@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ElangoRamanujam"
+			"ElangoRamanujam",
+			"Kalyanasundar"
 		]
 	},
 	"bs-extjs-ok": "சரி",
@@ -25,5 +26,12 @@
 	"bs-extjs-label-user": "பயனர்",
 	"bs-extjs-upload": "பதிவேற்றுக",
 	"bs-extjs-uploading": "பதிவேற்றப்படுகிறது...",
-	"bs-extjs-allns": "(அனைத்து)"
+	"bs-extjs-allns": "(அனைத்து)",
+	"bs-extjs-filters": "வடிப்பான்கள்",
+	"bs-extjs-filter-equals": "சமமானது",
+	"bs-extjs-filter-equals-not": "நிகரானதல்ல, சமமானதல்ல",
+	"bs-extjs-filter-contains": "உள்ளடக்கியது",
+	"bs-extjs-filter-contains-not": "உட்கொள்ளவில்லை",
+	"bs-extjs-filter-starts-with": "அத்துடன் ஆரம்பம் ,தொடக்கம்",
+	"bs-extjs-filter-ends-with": "முடிவடைகிறது ,(அத்துடன் ,இத்துடன் ) முடிகிறது"
 }

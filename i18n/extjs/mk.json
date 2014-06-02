@@ -29,5 +29,12 @@
 	"bs-extjs-uploading": "Подигам...",
 	"bs-extjs-confirmNavigationTitle": "Проследување на врската",
 	"bs-extjs-confirmNavigationText": "Дали навистина сакате да ја проследите врскава? Така ќе се изгуват динамички поставки или подредување на тековната страница.",
-	"bs-extjs-allns": "(сите)"
+	"bs-extjs-allns": "(сите)",
+	"bs-extjs-filters": "Филтри",
+	"bs-extjs-filter-equals": "е",
+	"bs-extjs-filter-equals-not": "не е",
+	"bs-extjs-filter-contains": "содржи",
+	"bs-extjs-filter-contains-not": "не содржи",
+	"bs-extjs-filter-starts-with": "почнува со",
+	"bs-extjs-filter-ends-with": "завршува со"
 }

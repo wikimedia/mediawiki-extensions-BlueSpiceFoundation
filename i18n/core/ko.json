@@ -3,7 +3,8 @@
 		"authors": [
 			"관인생략",
 			"Keysuck",
-			"아라"
+			"아라",
+			"Miri-Nae"
 		]
 	},
 	"bs-ns_main": "(문서)",
@@ -59,5 +60,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "파일을 위키에서 만들 수 없습니다.",
 	"bs-navigation-instructions": "지침",
 	"bs-navigation-support": "지원",
-	"bs-navigation-contact": "연락하기"
+	"bs-navigation-contact": "연락하기",
+	"bs-imagepage-download-text": "다운로드"
 }

@@ -60,5 +60,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "Не можев да ја создадам податотеката на викито.",
 	"bs-navigation-instructions": "Напатствија",
 	"bs-navigation-support": "Поддршка",
-	"bs-navigation-contact": "Контакт"
+	"bs-navigation-contact": "Контакт",
+	"bs-imagepage-download-text": "Преземи"
 }

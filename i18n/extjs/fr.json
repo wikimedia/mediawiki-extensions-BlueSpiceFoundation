@@ -29,5 +29,12 @@
 	"bs-extjs-uploading": "Téléchargement en cours…",
 	"bs-extjs-confirmNavigationTitle": "Suivre le lien",
 	"bs-extjs-confirmNavigationText": "Voulez-vous vraiment suivre ce lien ? Tous les paramètres dynamiques comme le filtrage ou le tri sur la page actuelle seront perdus.",
-	"bs-extjs-allns": "(tous)"
+	"bs-extjs-allns": "(tous)",
+	"bs-extjs-filters": "Filtres",
+	"bs-extjs-filter-equals": "égal",
+	"bs-extjs-filter-equals-not": "différent",
+	"bs-extjs-filter-contains": "contient",
+	"bs-extjs-filter-contains-not": "ne contient pas",
+	"bs-extjs-filter-starts-with": "commence par",
+	"bs-extjs-filter-ends-with": "finit par"
 }
