@@ -60,5 +60,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "Die Datei konnte im Wiki nicht angelegt werden.",
 	"bs-navigation-instructions": "Anleitung",
 	"bs-navigation-support": "Support",
-	"bs-navigation-contact": "Kontakt"
+	"bs-navigation-contact": "Kontakt",
+	"bs-imagepage-download-text" => "Herunterladen"
 }
