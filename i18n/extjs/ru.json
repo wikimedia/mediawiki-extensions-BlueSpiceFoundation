@@ -31,5 +31,12 @@
 	"bs-extjs-uploading": "Загрузка…",
 	"bs-extjs-confirmNavigationTitle": "Перейти по ссылке",
 	"bs-extjs-confirmNavigationText": "Вы действительно хотите перейти по этой ссылке? Все динамические параметры, такие как фильтрация или сортировка на текущей странице, будут потеряны.",
-	"bs-extjs-allns": "(все)"
+	"bs-extjs-allns": "(все)",
+	"bs-extjs-filters": "Фильтры",
+	"bs-extjs-filter-equals": "равно",
+	"bs-extjs-filter-equals-not": "не равно",
+	"bs-extjs-filter-contains": "содержит",
+	"bs-extjs-filter-contains-not": "не содержит",
+	"bs-extjs-filter-starts-with": "начинается с",
+	"bs-extjs-filter-ends-with": "заканчивается"
 }

@@ -60,5 +60,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "Файл не может быть создан в вики.",
 	"bs-navigation-instructions": "Инструкции",
 	"bs-navigation-support": "Поддержка",
-	"bs-navigation-contact": "Обратная связь"
+	"bs-navigation-contact": "Обратная связь",
+	"bs-imagepage-download-text": "Загрузить"
 }

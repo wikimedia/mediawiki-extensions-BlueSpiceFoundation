@@ -5,7 +5,10 @@
 		]
 	},
 	"bs-extjs-filters": "Filtros",
+	"bs-extjs-filter-equals": "equala",
 	"bs-extjs-filter-equals-not": "non equala",
+	"bs-extjs-filter-contains": "contine",
 	"bs-extjs-filter-contains-not": "non contine",
+	"bs-extjs-filter-starts-with": "comencia per",
 	"bs-extjs-filter-ends-with": "fini per"
 }

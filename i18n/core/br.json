@@ -35,9 +35,12 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "Kuzhat munudoù ar fazi",
 	"bs-viewtagerrorlist-legend": "$1 - Fazi",
 	"bs-permissionerror": "Fazi aotre !",
+	"bs-filesystemhelper-file-already-exists": "Ar restr <code>$1</code> zo anezhi dija.",
+	"bs-filesystemhelper-file-delete-error": "N'eus ket bet gallet dilemel ar restr <code>$1</code>.",
 	"bs-filesystemhelper-upload-err-code": "N'eus ket bet gallet ezporzhiañ ar restr : $1",
 	"bs-filesystemhelper-save-base64-error": "N'eus ket bet gallet enrollañ ar restr.",
 	"bs-filesystemhelper-upload-base64-error": "N'eus ket bet gallet ezporzhiañ ar restr.",
 	"bs-navigation-instructions": "Kemennadurioù",
-	"bs-navigation-contact": "Darempred"
+	"bs-navigation-contact": "Darempred",
+	"bs-imagepage-download-text": "Pellgargañ"
 }

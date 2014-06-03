@@ -64,5 +64,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "不能在 wiki 中创建该文件。",
 	"bs-navigation-instructions": "说明",
 	"bs-navigation-support": "支持",
-	"bs-navigation-contact": "联系"
+	"bs-navigation-contact": "联系",
+	"bs-imagepage-download-text": "下载"
 }

@@ -30,5 +30,12 @@
 	"bs-extjs-uploading": "Caricamento in corso…",
 	"bs-extjs-confirmNavigationTitle": "Segui il collegamento",
 	"bs-extjs-confirmNavigationText": "Vuoi davvero seguire questo collegamento? Tutte le impostazioni dinamiche, come i filtri o l'ordinamento, nella pagina attuale andrà perso.",
-	"bs-extjs-allns": "(tutti)"
+	"bs-extjs-allns": "(tutti)",
+	"bs-extjs-filters": "Filtri",
+	"bs-extjs-filter-equals": "è uguale a",
+	"bs-extjs-filter-equals-not": "non è uguale a",
+	"bs-extjs-filter-contains": "contiene",
+	"bs-extjs-filter-contains-not": "non contiene",
+	"bs-extjs-filter-starts-with": "inizia con",
+	"bs-extjs-filter-ends-with": "termina con"
 }
