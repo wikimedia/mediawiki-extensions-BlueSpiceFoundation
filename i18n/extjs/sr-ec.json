@@ -24,5 +24,6 @@
 	"bs-extjs-close": "Затвори",
 	"bs-extjs-label-user": "Корисник",
 	"bs-extjs-uploading": "Отпремање...",
-	"bs-extjs-allns": "(сви)"
+	"bs-extjs-allns": "(сви)",
+	"bs-extjs-filters": "Филтери"
 }

@@ -16,5 +16,6 @@
 	"bs-filesystemhelper-file-already-exists": "Датотека <code>$1</code> већ постоји.",
 	"bs-filesystemhelper-folder-already-exists": "Фасцикла <code>$1</code> већ постоји.",
 	"bs-navigation-support": "Подршка",
-	"bs-navigation-contact": "Контакт"
+	"bs-navigation-contact": "Контакт",
+	"bs-imagepage-download-text": "Преузми"
 }

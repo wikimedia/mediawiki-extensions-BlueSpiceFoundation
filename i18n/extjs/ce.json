@@ -28,5 +28,12 @@
 	"bs-extjs-browse": "Гучé",
 	"bs-extjs-uploading": "Чуйолуш…",
 	"bs-extjs-confirmNavigationTitle": "Хьажорган дихьа гӀо",
-	"bs-extjs-allns": "(массо)"
+	"bs-extjs-allns": "(массо)",
+	"bs-extjs-filters": "Литтарш:",
+	"bs-extjs-filter-equals": "нийса",
+	"bs-extjs-filter-equals-not": "нийса яц",
+	"bs-extjs-filter-contains": "чулацам",
+	"bs-extjs-filter-contains-not": "чулацам бац",
+	"bs-extjs-filter-starts-with": "йола ло тӀера",
+	"bs-extjs-filter-ends-with": "чекхйолу"
 }
