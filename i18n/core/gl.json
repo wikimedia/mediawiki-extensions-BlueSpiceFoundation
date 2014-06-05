@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Vivaelcelta",
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"bs-ns_main": "(Páxinas)",
@@ -28,5 +29,39 @@
 	"bs-now": "agora",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Boas, Sr. $1|Boas, Sra. $1|Boas, $1}}:",
 	"bs-email-greeting-no-receiver": "Boas:",
-	"bs-email-footer": "Esta mensaxe xerouse automaticamente. Por favor, non responda a este correo electrónico."
+	"bs-email-footer": "Esta mensaxe xerouse automaticamente. Por favor, non responda a este correo electrónico.",
+	"bs-userpagesettings-legend": "Configuración do usuario",
+	"bs-userpreferences-link-text": "Máis axustes do usuario",
+	"bs-userpreferences-link-title": "Mostrar a súa configuración de usuario",
+	"bs-exception-view-heading": "Houbo un erro",
+	"bs-exception-view-text": "Durante o procesamento da súa petición ocorreu o seguinte erro:",
+	"bs-exception-view-admin-hint": "Por favor, contacte co seu administrador do sistema.",
+	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar detalles do erro",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Ocultar detalles do erro",
+	"action-responsibleeditors-viewspecialpage": "Ver as páxinas que están protexidas polo dereito \"ResponsibleEditors-Viewspecialpage\"",
+	"bs-viewtagerrorlist-legend": "$1 - Erro",
+	"bs-readonly": "Nestes intres a base de datos está pechada a novas entradas e outras modificacións, probabelmente debido a procesos de mantemento, tras as que volverá á normalidade.\n\nO administrador que a pechou deu esta explicación: $1",
+	"bs-imageofotheruser": "Non ten autorización para subir unha imaxe para outro usuario.",
+	"bs-pref-sortalph": "Ordenar alfabéticamente os espazos de nomes",
+	"bs-permissionerror": "Erro de permisos!",
+	"bs-filesystemhelper-no-directory": "<code>$1</code> non é un directorio válido.",
+	"bs-filesystemhelper-has-path-traversal": "Detectouse un traspaso de rutas!",
+	"bs-filesystemhelper-file-not-exists": "O ficheiro <code>$1</code> non existe.",
+	"bs-filesystemhelper-file-copy-error": "Non se puido copiar o ficheiro <code>$1</code>.",
+	"bs-filesystemhelper-file-already-exists": "O ficheiro <code>$1</code> xa existe.",
+	"bs-filesystemhelper-file-delete-error": "O ficheiro <code>$1</code> non puido borrarse.",
+	"bs-filesystemhelper-folder-already-exists": "A carpeta <code>$1</code> xa existe.",
+	"bs-filesystemhelper-folder-copy-error": "A carpeta <code>$1</code> non pode ser renomeada.",
+	"bs-filesystemhelper-folder-not-exists": "A carpeta <code>$1</code> non existe.",
+	"bs-filesystemhelper-upload-err-code": "Non se puido cargar o ficheiro: $1",
+	"bs-filesystemhelper-upload-wrong-ext": "O ficheiro non ten a extensión requerida: $1.",
+	"bs-filesystemhelper-upload-unsupported-type": "No se admite este tipo de ficheiro.",
+	"bs-filesystemhelper-save-base64-error": "Non se piudo gardar o ficheiro.",
+	"bs-filesystemhelper-upload-base64-error": "No se puido cargar o ficheiro.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "O ficheiro non se puido mover á cola de subida.",
+	"bs-filesystemhelper-upload-local-error-create": "Non se puido crear o ficheiro no wiki.",
+	"bs-navigation-instructions": "Instrucións",
+	"bs-navigation-support": "Axuda",
+	"bs-navigation-contact": "Contacto",
+	"bs-imagepage-download-text": "Descargar"
 }
