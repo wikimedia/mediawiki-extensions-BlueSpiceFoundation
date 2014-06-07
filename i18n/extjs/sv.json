@@ -30,5 +30,9 @@
 	"bs-extjs-uploading": "Laddar upp...",
 	"bs-extjs-confirmNavigationTitle": "Följ länken",
 	"bs-extjs-confirmNavigationText": "Vill du verkligen att följa denna länk? Alla dynamiska inställningar, som filtrering och sortering, på den aktuella sidan kommer att försvinna.",
-	"bs-extjs-allns": "(alla)"
+	"bs-extjs-allns": "(alla)",
+	"bs-extjs-filters": "Filter",
+	"bs-extjs-filter-equals-not": "motsvarar inte",
+	"bs-extjs-filter-contains-not": "innehåller inte",
+	"bs-extjs-filter-ends-with": "slutar med"
 }

@@ -31,6 +31,11 @@ $specialPageAliases['it'] = array(
 	'Diagnostics' => array( 'Diagnostica' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'Diagnostics' => array( '진단하기' ),
+);
+
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
 	'Diagnostics' => array( 'പരിശോധന' ),

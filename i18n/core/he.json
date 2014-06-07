@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Inkbug",
-			"Matanya"
+			"Matanya",
+			"Gregra"
 		]
 	},
 	"bs-ns_main": "(ראשי)",
@@ -37,6 +38,11 @@
 	"bs-exception-view-admin-hint": "נא לפנות אל מנהל המערכת.",
 	"bs-exception-view-stacktrace-toggle-show-text": "הצגת פרטי השגיאה",
 	"bs-exception-view-stacktrace-toggle-hide-text": "הסתרת פרטי השגיאה",
+	"bs-viewtagerrorlist-legend": "$1-שגיאה",
+	"bs-imageofotheruser": "אינך מורשה להעלות תמונה עבור משתמש אחר",
+	"bs-pref-sortalph": "מיין מרחבי שם לפי א\"ב",
+	"bs-permissionerror": "שגיאה בהרשאות!",
+	"bs-filesystemhelper-no-directory": "<code>$1</code> היא לא תיקיה חוקית.",
 	"bs-filesystemhelper-file-not-exists": "הקובץ <code>$1</code> אינו קיים.",
 	"bs-filesystemhelper-file-copy-error": "לא הייתה אפשרות להעתיק את הקובץ <code>$1</code>.",
 	"bs-filesystemhelper-file-already-exists": "הקובץ <code>$1</code> כבר קיים.",
@@ -44,6 +50,7 @@
 	"bs-filesystemhelper-folder-already-exists": "התיקיה <code>$1</code> כבר קיימת.",
 	"bs-filesystemhelper-folder-copy-error": "לא הייתה אפשרות לשנות את שם התיקיה <code>$1</code>.",
 	"bs-filesystemhelper-folder-not-exists": "התיקיה <code>$1</code> אינה קיימת.",
+	"bs-filesystemhelper-upload-err-code": "לא הייתה אפשרות להעלות את הקובץ: $1",
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
 	"bs-navigation-contact": "יצירת קשר"

@@ -26,6 +26,11 @@ $specialPageAliases['it'] = array(
 	'SpecialCredits' => array( 'Crediti' ),
 );
 
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'SpecialCredits' => array( '제작진' ),
+);
+
 /** Luxembourgish (Lëtzebuergesch) */
 $specialPageAliases['lb'] = array(
 	'SpecialCredits' => array( 'Merci_un' ),

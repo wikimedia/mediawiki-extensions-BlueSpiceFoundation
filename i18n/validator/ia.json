@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-validator-email-validation-approved": "Le adresse de e-mail ha essite validate con successo.",
+	"bs-validator-email-validation-not-approved": "Le adresse de e-mail non pote esser validate.",
+	"bs-validator-url-validation-approved": "Le URL ha essite validate con successo.",
+	"bs-validator-url-validation-not-approved": "Le URL non pote esser validate.",
+	"bs-validator-arg-count-validation-approved": "Le attributo \"count\" ha essite validate con successo.",
+	"bs-validator-arg-count-validation-not-approved": "Le attributo \"count\" non pote esser validate.",
+	"bs-validator-set-validation-approved": "$1 ha essite validate con successo.",
+	"bs-validator-set-validation-not-approved": "Pro $1, solmente {{PLURAL:$3|le sequente valor|un del sequente valores}} es permittite: $2.",
+	"bs-validator-integer-range-validation-too-low": "Le valor fornite es troppo basse. Illo non debe esser inferior a $1.",
+	"bs-validator-integer-range-validation-too-high": "Le valor fornite es troppo alte. Illo non debe esser superior a $1."
+}
