@@ -3,7 +3,8 @@
 		"authors": [
 			"Inkbug",
 			"Matanya",
-			"Gregra"
+			"Gregra",
+			"Ronel1"
 		]
 	},
 	"bs-ns_main": "(ראשי)",
@@ -38,6 +39,7 @@
 	"bs-exception-view-admin-hint": "נא לפנות אל מנהל המערכת.",
 	"bs-exception-view-stacktrace-toggle-show-text": "הצגת פרטי השגיאה",
 	"bs-exception-view-stacktrace-toggle-hide-text": "הסתרת פרטי השגיאה",
+	"action-responsibleeditors-viewspecialpage": "דפי תצוגה אשר מוגנים עם ימין \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1-שגיאה",
 	"bs-imageofotheruser": "אינך מורשה להעלות תמונה עבור משתמש אחר",
 	"bs-pref-sortalph": "מיין מרחבי שם לפי א\"ב",
@@ -53,5 +55,6 @@
 	"bs-filesystemhelper-upload-err-code": "לא הייתה אפשרות להעלות את הקובץ: $1",
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
-	"bs-navigation-contact": "יצירת קשר"
+	"bs-navigation-contact": "יצירת קשר",
+	"bs-imagepage-download-text": "להורדה"
 }

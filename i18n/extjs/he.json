@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"Ronel1"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -29,5 +30,12 @@
 	"bs-extjs-uploading": "מתבצעת העלאה...",
 	"bs-extjs-confirmNavigationTitle": "לעבור אל הקישור",
 	"bs-extjs-confirmNavigationText": "האם באמת לעבור אל הקישר הזה? כל ההגדרות הדינמיות, כגון סינון או מיון של הדף הנוכחי יאבדו.",
-	"bs-extjs-allns": "(הכול)"
+	"bs-extjs-allns": "(הכול)",
+	"bs-extjs-filters": "מסננים",
+	"bs-extjs-filter-equals": "שווה ל-",
+	"bs-extjs-filter-equals-not": "שווה ללא",
+	"bs-extjs-filter-contains": "מכיל",
+	"bs-extjs-filter-contains-not": "מכיל לא",
+	"bs-extjs-filter-starts-with": "מתחיל עם",
+	"bs-extjs-filter-ends-with": "מסתיים"
 }

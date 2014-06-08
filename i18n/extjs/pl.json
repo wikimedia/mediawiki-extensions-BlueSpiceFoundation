@@ -31,5 +31,12 @@
 	"bs-extjs-uploading": "Przesyłanie...",
 	"bs-extjs-confirmNavigationTitle": "Opuszczanie strony",
 	"bs-extjs-confirmNavigationText": "Czy na pewno chcesz opuścić tę stronę? Wszelkie niezapisane ustawienia takie jak filtry i sortowania zostaną utracone.",
-	"bs-extjs-allns": "(wszystkie)"
+	"bs-extjs-allns": "(wszystkie)",
+	"bs-extjs-filters": "Filtry",
+	"bs-extjs-filter-equals": "jest równe",
+	"bs-extjs-filter-equals-not": "nie jest równe",
+	"bs-extjs-filter-contains": "zawiera",
+	"bs-extjs-filter-contains-not": "nie zawiera",
+	"bs-extjs-filter-starts-with": "zaczyna się od",
+	"bs-extjs-filter-ends-with": "kończy się"
 }
