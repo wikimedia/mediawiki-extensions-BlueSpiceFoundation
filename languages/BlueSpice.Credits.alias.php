@@ -43,7 +43,7 @@ $specialPageAliases['ml'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
-	'SpecialCredits' => array( '积分' ),
+	'SpecialCredits' => array( '制作组' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
