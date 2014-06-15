@@ -40,5 +40,6 @@
 	"bs-filesystemhelper-upload-err-code": "ファイルをアップロードできませんでした: $1",
 	"bs-filesystemhelper-save-base64-error": "ファイルを保存できませんでした。",
 	"bs-filesystemhelper-upload-base64-error": "ファイルをアップロードできませんでした。",
-	"bs-filesystemhelper-upload-local-error-create": "ファイルをウィキ内に作成できませんでした。"
+	"bs-filesystemhelper-upload-local-error-create": "ファイルをウィキ内に作成できませんでした。",
+	"bs-imagepage-download-text": "ダウンロード"
 }
