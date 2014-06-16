@@ -21,6 +21,11 @@ $specialPageAliases['diq'] = array(
 	'SpecialCredits' => array( 'Qrediy' ),
 );
 
+/** Upper Sorbian (hornjoserbsce) */
+$specialPageAliases['hsb'] = array(
+	'SpecialCredits' => array( 'Dźakprajenja' ),
+);
+
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'SpecialCredits' => array( 'Crediti' ),
@@ -39,6 +44,11 @@ $specialPageAliases['lb'] = array(
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
 	'SpecialCredits' => array( 'കടപ്പാടുകൾ' ),
+);
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'SpecialCredits' => array( 'Ghi_công' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */
