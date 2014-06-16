@@ -3,27 +3,27 @@
 abstract class BsExtensionMW extends ContextSource {
 
 	//<editor-fold desc="Former BsExtension implementation">
-	protected $mExtensionFile   = NULL;
-	protected $mExtensionType   = NULL;
+	protected $mExtensionFile = null;
+	protected $mExtensionType = null;
 
-	protected $mInfo            = NULL;
-	protected $mExtensionKey    = NULL;
-	
-	protected $mResourcePath    = NULL;
+	protected $mInfo = null;
+	protected $mExtensionKey = null;
+
+	protected $mResourcePath = null;
 
 	/**
 	 *
-	 * @var BsCore 
+	 * @var BsCore
 	 */
 	protected $mCore = null;
 
-	protected $aStandardContext = array('*', '*', '*');
+	protected $aStandardContext = array( '*', '*', '*' );
 
 	protected function initExt() {}
 
 	/**
 	 * Save a reference to current adapter instance.
-	 * @param BsAdapter $adapter
+	 * @param BsCore $oCore
 	 */
 	public function setCore( $oCore ) {
 		$this->mCore = $oCore;
@@ -47,14 +47,6 @@ abstract class BsExtensionMW extends ContextSource {
 		return $this->mExtensionKey;
 	}
 
-	protected static $aExtensionInstances = array();
-
-	public static function getInstanceFor( $sExtensionKey ) {
-		return isset( BsExtensionMW::$aExtensionInstances[$sExtensionKey] ) ? BsExtensionMW::$aExtensionInstances[$sExtensionKey] : false;
-		// TODO MRG (29.01.11 23:58): false oder null? als Programmierrichtlinien festlegen
-		// TODO RBV (19.05.11 08:49): Ich bin für null. Weil wir ja eigendlich ein Objekt erwarten. Und null ist einem Objekt zumindest ähnlicher als false.
-	}
-
 	/**
 	 * Initializes the extension.
 	 */
@@ -65,15 +57,14 @@ abstract class BsExtensionMW extends ContextSource {
 		$sStatus = str_replace( 'default', $wgBlueSpiceExtInfo['status'], $this->mInfo[EXTINFO::STATUS] );
 
 		$wgExtensionCredits[$this->mExtensionType][] = array(
-			'path'        => $this->mExtensionFile,
-			'name'        => $this->mInfo[EXTINFO::NAME],
-			'version'     => $sVersion . ' (' . $sStatus . ')',
-			'author'      => $this->mInfo[EXTINFO::AUTHOR],
-			'url'         => $this->mInfo[EXTINFO::URL],
+			'path' => $this->mExtensionFile,
+			'name' => $this->mInfo[EXTINFO::NAME],
+			'version' => $sVersion . ' (' . $sStatus . ')',
+			'author' => $this->mInfo[EXTINFO::AUTHOR],
+			'url' => $this->mInfo[EXTINFO::URL],
 			'description' => $this->mInfo[EXTINFO::DESCRIPTION]
 		);
 		$this->initExt();
-		BsExtensionMW::$aExtensionInstances[$this->mExtensionKey] = &$this;
 	}
 
 	/**
@@ -90,7 +81,7 @@ abstract class BsExtensionMW extends ContextSource {
 		// handle $method === 'on'.$hook as if $method == false
 		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( &$this, $method ) : $this;
 		// do not set same hook twice
-		if ( isset( $wgHooks ) && isset( $wgHooks[$hook] ) 
+		if ( isset( $wgHooks ) && isset( $wgHooks[$hook] )
 			&& is_array( $wgHooks[$hook] ) && in_array( $register, $wgHooks[$hook] ) )
 			return;
 		if ( $bExecuteFirst && isset( $wgHooks[$hook] ) ) {
@@ -107,9 +98,9 @@ abstract class BsExtensionMW extends ContextSource {
 	 * @return string
 	 */
 	public function getResourcePath() {
-		if(is_null($this->mResourcePath)) {
+		if ( is_null( $this->mResourcePath ) ) {
 			global $IP, $wgScriptPath;
-			$sExtensionPath = dirname(str_replace($IP, '', $this->mExtensionFile));
+			$sExtensionPath = dirname( str_replace( $IP, '', $this->mExtensionFile ) );
 			$sExtensionPath = str_replace( '\\', '/', $sExtensionPath );
 			$this->mResourcePath = $wgScriptPath.$sExtensionPath.'/resources';
 		}
@@ -122,10 +113,10 @@ abstract class BsExtensionMW extends ContextSource {
 	 * @return string
 	 */
 	public function getImagePath( $bResources = false ) {
-		if($bResources) {
+		if ( $bResources ) {
 			return $this->getResourcePath().'/images/';
 		}
-		return dirname($this->getResourcePath()).'/images/';
+		return dirname( $this->getResourcePath() ).'/images/';
 	}
 
 }

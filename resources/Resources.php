@@ -20,6 +20,7 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
 		'bluespice/bluespice.ping.js',
+		'bluespice/bluespice.multiselect.js',
 		'bluespice.libs/slimScroll.min.js',
 	),
 	'dependencies' => array(
@@ -92,18 +93,26 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-reset',
 		'bs-extjs-close',
 		'bs-extjs-label-user',
+		'bs-extjs-label-namespace',
 		'bs-extjs-confirmNavigationTitle',
 		'bs-extjs-confirmNavigationText',
 		'bs-extjs-allns',
 		'bs-extjs-upload',
 		'bs-extjs-browse',
-		'bs-extjs-uploading'
+		'bs-extjs-uploading',
+		'bs-extjs-filters',
+		'bs-extjs-filter-equals',
+		'bs-extjs-filter-equals-not',
+		'bs-extjs-filter-contains',
+		'bs-extjs-filter-contains-not',
+		'bs-extjs-filter-starts-with',
+		'bs-extjs-filter-ends-with'
 	),
 	'position' => 'bottom'
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.styles'] = array(
-	//Those are mainly Ext.ux styles that are not part of ext-all.css or the 
+	//Those are mainly Ext.ux styles that are not part of ext-all.css or the
 	//theme
 	'styles' => array(
 		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',

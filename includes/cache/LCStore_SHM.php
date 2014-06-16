@@ -14,12 +14,13 @@
  */
 class LCStore_SHM implements LCStore {
 
+	protected static
+			$_sCurrentLanguage,
+			$_aLoadedLanguages,
+			$_aData = array();
 	protected
 	$readOnly = true,
-	$_sDirectory,
-	$_sCurrentLanguage,
-	$_aLoadedLanguages,
-	$_aData = array( );
+	$_sDirectory;
 
 	public function __construct( $aConf ) {
 		global $wgCacheDirectory;
@@ -31,28 +32,28 @@ class LCStore_SHM implements LCStore {
 	}
 
 	public function get( $code, $key ) {
-		if ( !isset( $this->_aLoadedLanguages[ $code ] ) || !$this->_aLoadedLanguages[ $code ] ) {
+		if ( !isset( self::$_aLoadedLanguages[ $code ] ) || !self::$_aLoadedLanguages[ $code ] ) {
 			$this->loadLanguage( $code );
 		}
-		if ( !isset( $this->_aData[ $code ][ $key ] ) ) {
+		if ( !isset( self::$_aData[ $code ] ) || !isset( self::$_aData[ $code ][ $key ] ) ) {
 			return null;
 		}
-		return $this->_aData[ $code ][ $key ];
+		return self::$_aData[ $code ][ $key ];
 	}
 
 	public function startWrite( $code ) {
 		$this->readOnly = false;
-		$this->_sCurrentLanguage = $code;
-		$this->_aData = array();
-		$this->_aData[ $this->_sCurrentLanguage ] = array( );
+		self::$_sCurrentLanguage = $code;
+		self::$_aData = array();
+		self::$_aData[ self::$_sCurrentLanguage ] = array( );
 	}
 
 	public function finishWrite() {
 		if ( $this->readOnly ) {
 			return;
 		}
-		$sFilename = $this->_sDirectory . DS . $this->_sCurrentLanguage . '.bscache';
-		$sSerializedData = serialize( $this->_aData[ $this->_sCurrentLanguage ] );
+		$sFilename = $this->_sDirectory . DS . self::$_sCurrentLanguage . '.bscache';
+		$sSerializedData = serialize( $this->_aData[ self::$_sCurrentLanguage ] );
 		file_put_contents( $sFilename, $sSerializedData, LOCK_EX );
 		if ( is_callable( 'ftok' ) ) {
 			$iShmKey = ftok( $sFilename, 'b' );
@@ -66,7 +67,7 @@ class LCStore_SHM implements LCStore {
 				shm_detach( $rShmResource );
 			}
 		}
-		unset( $this->_aData[ $this->_sCurrentLanguage ] );
+		unset( self::$_aData[ self::$_sCurrentLanguage ] );
 	}
 
 	public function loadLanguage( $code ) {
@@ -83,18 +84,18 @@ class LCStore_SHM implements LCStore {
 				} else {
 					$sData = shm_get_var( $rShmResource, 1 );
 					if ( $sData ) {
-						$this->_aData[ $code ] = unserialize( $sData );
+						self::$_aData[ $code ] = unserialize( $sData );
 					}
 				}
 			}
 		}
-		if ( !isset( $this->_aData[ $code ] ) || !is_array( $this->_aData[ $code ] ) || !count( $this->_aData[ $code ] ) ) {
+		if ( !isset( self::$_aData[ $code ] ) || !is_array( self::$_aData[ $code ] ) || !count( self::$_aData[ $code ] ) ) {
 			$sData = file_get_contents( $sFilename );
 			if ( $sData ) {
-				$this->_aData[ $code ] = unserialize( $sData );
+				self::$_aData[ $code ] = unserialize( $sData );
 			}
 		}
-		$this->_aLoadedLanguages[ $code ] = true;
+		self::$_aLoadedLanguages[ $code ] = true;
 	}
 
 	public function set( $key, $value ) {
@@ -102,7 +103,7 @@ class LCStore_SHM implements LCStore {
 			return;
 		}
 
-		$this->_aData[ $this->_sCurrentLanguage ][ $key ] = $value;
+		self::$_aData[ self::$_sCurrentLanguage ][ $key ] = $value;
 	}
 
 }

@@ -6,15 +6,18 @@ Ext.define( 'BS.store.LocalNamespaces', {
 	
 	//Custom settings
 	includeAll: false,
+	excludeIds: [],
 
 	constructor: function( config ){
+		this.includeAll = config.includeAll;
+		this.excludeIds = config.excludeIds;
 		this.data = this.getLocalNamespaces();
 		this.callParent(arguments);
 	},
 	getLocalNamespaces: function() {
 		var namespaces = [];
 
-		if ( !this.includeAll ) {
+		if ( this.includeAll ) {
 			namespaces.push( {
 				id: -99,
 				namespace: mw.message( 'bs-extjs-allns' ).plain()
@@ -22,6 +25,9 @@ Ext.define( 'BS.store.LocalNamespaces', {
 		}
 
 		for ( var id in wgFormattedNamespaces ) {
+			if( this.excludeIds.indexOf( +id ) !== -1 ) {
+				continue;
+			}
 			var namespace = {};
 			namespace.id = +id;
 			if ( namespace.id === 0 ) {

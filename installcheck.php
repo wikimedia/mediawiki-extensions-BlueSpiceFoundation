@@ -4,13 +4,15 @@
  * @package BlueSpice
  * @copyright Copyright 2011 by Hallo Welt! Medienwerkstatt GmbH
  * @author Marc Reymann
-
+ * @version $Id: $
  *
  * Install check for BlueSpice.
  * This file checks several values and settings on a
  * LAMP/WAMP machine which are needed to run BlueSpice.
  */
 
+//TODO: Check if BlueSpiceExtensions.php.template was renamed
+//TODO: Check if Windows users use 127.0.0.1 instead of localhost
 //TODO: UTF-8 check via post to PHP_SELF
 //DONE: Make this work on IIS without modifications
 //TODO: Restrict access to localhost by default?
@@ -61,7 +63,7 @@ if (!file_exists("LocalSettings.php")) exit("This file must be placed where your
 <body onload="document.getElementById('waitbox').style.display='none';">
 <div id="waitbox">Now checking your system...<br/>This may take a few seconds.</div>
 <?php flush(); ?>
-<div id="infobox">BlueSpice Installation Checker<br/>Hallo Welt! Medienwerkstatt GmbH<br/>$Revision: 9809 $</div>
+<div id="infobox">BlueSpice Installation Checker<br/>Hallo Welt! Medienwerkstatt GmbH</div>
 <div id="wrapper">
 <?php
 $d = DIRECTORY_SEPARATOR;
@@ -88,108 +90,28 @@ echo( "\n<br /><hr /><br />\n" );
 function action_diag() {
 // #########################  diagnostics  ##############################
 
-if( !file_exists ("bluespice-core/config/base-settings.php") )
+if( !file_exists ("extensions/BlueSpiceFoundation/config/nm-settings.php") )
 {
 	echo( "<span class=\"warn\">WARNING!</span> BlueSpice seems not to be installed yet. Skipping BlueSpice diags." );
 }
 else
 {
-// diagnostics that require bs to be installed
-
-// Startup BlueSpice and fetch params
-class LogPage{} // dummy classes
-class MagicWord{
-	static $mDoubleUnderscoreIDs = ''; 
-}
-function wfProfileIn() { return true; }; // dummy function
-function wfProfileOut() { return true; }; // dummy function
-$GLOBALS['wgGroupPermissions'] = array(); // dummy var
-$GLOBALS['IP'] = __DIR__; // dummy var
-$IP = __DIR__; // dummy var
-define( 'NS_FILE', 0 ); // dummy constant
-define( 'NS_MEDIAWIKI', 0 ); // dummy constant
-define( 'NS_SPECIAL', 0 ); // dummy constant
-define( 'NS_MEDIA', 0 ); // dummy constant
-require_once( __DIR__.'/bluespice-core/index.php' );
-BsCore::getInstance()->setup();
-
-// Tomcat services (SOLR & BN2PDF)
-
-echo( "<h2>Checking Tomcat Services:</h2>" );
-
-	// check solr
-	$aSolrParams = array(
-		'protocol'    => BsConfig::get( 'Core::Search::SolrProtocol' ),
-		'host'        => BsConfig::get( 'Core::Search::SolrHost' ),
-		'port'        => BsConfig::get( 'Core::Search::SolrPort' ),
-		'path'        => BsConfig::get( 'Core::Search::SolrPath' ),
-		'pingTime'    => BsConfig::get( 'Core::Search::SolrPingTime' ),
-		'solrversion' => BsConfig::get( 'MW::ExtendedSearch::SolrVersion' )
-	);
-
-	if (!isset($aSolrParams['protocol'])){
-		echo("Solr protocol is not set. Assuming <i>http</i>!<br/>\n");
-		$aSolrParams['protocol'] = "http";
+	// Mail server
+	$smtp_host = ini_get( "SMTP" );
+	$smtp_port = ini_get( "smtp_port" );
+	echo( "<h2>Checking mail server:</h2>" );
+	echo( "Trying $smtp_host at port $smtp_port.<br/>" );
+	$smtp = @fsockopen( "tcp://$smtp_host", $smtp_port, $errno, $errstr, 3 ); // last value is timeout in sec.
+	if( !$smtp )
+	{
+		echo( "<span class=\"warn\">WARNING!</span> Mail will not work. Error message: <i>" . $errno . ": " . $errstr . "</i><br/>" );
 	}
-	$url = $aSolrParams['protocol'] . "://" . $aSolrParams['host'] . ":" . $aSolrParams['port'] . $aSolrParams['path'];
-	echo( "Checking URL $url: " );
-	if (urlExists($url,3)) {
-		echo("<span class=\"ok\">OK</span><br/>\n");
-		/*
-		# now check solr version
-		$solrinfo = file_get_contents("$url/admin/registry.jsp");
-		preg_match_all('|<solr-spec-version>(.*?)</solr-spec-version>|', $solrinfo, $solrinfoparts);
-		if (!empty($solrinfoparts[1][0])) {
-			$solrversion = substr( $solrinfoparts[1][0], 0, 3 );
-			echo "Detected Solr version $solrversion "; // to be continued ...
-			$bssolrversion = $aSolrParams['solrversion'];
-			if ( $solrversion != $bssolrversion ) {
-				echo "doesn't match configured Solr version: $bssolrversion. <span class=\"fail\">FAILED!</span><br/>\n";
-			}
-			else {
-				echo "matches configured Solr version: <span class=\"ok\">OK</span><br/>\n";
-
-			}
-		}
-		else {
-			echo "<span class=\"warn\">WARNING!</span> Solr version could not be determined<br/>\n";
-		}
-		 */
-	}
-	else {
-		echo("<span class=\"fail\">FAILED!</span> No response from service. Search will not work!<br/>\n");
-	};
-
-	// check hw2pdf
-	$url = BsConfig::get( 'MW::UEModulePDF::PdfServiceURL' );
-	echo( "Checking URL $url: " );
-	if (urlExists($url,3)) {
-		echo("<span class=\"ok\">OK</span><br/>\n");
-	}
-	else {
-		echo("<span class=\"fail\">FAILED!</span> No response from service. PDF export will not work!<br/>\n");
-	};
-	
-}
-
-// diagnostics that don't require bs to be installed
-
-// Mail server
-$smtp_host = ini_get( "SMTP" );
-$smtp_port = ini_get( "smtp_port" );
-echo( "<h2>Checking mail server:</h2>" );
-echo( "Trying $smtp_host at port $smtp_port.<br/>" );
-$smtp = @fsockopen( "tcp://$smtp_host", $smtp_port, $errno, $errstr, 3 ); // last value is timeout in sec.
-if( !$smtp )
-{
-	echo( "<span class=\"warn\">WARNING!</span> Mail will not work. Error message: <i>" . $errno . ": " . $errstr . "</i><br/>" );
-}
 else
 {
 	echo( "<span class=\"ok\">OK</span> - " . htmlspecialchars(fread( $smtp, 256 )) . "<br/>" ); 
 	fclose( $smtp );
 }
-
+}
 } // action_diag end
 
 
@@ -279,7 +201,7 @@ else {
 	echo( "<span class=\"fail\">FAILED!</span> session.save_path is not set. Set <tt>session.save_path</tt> to point to a path writable by the web server in your php.ini." );
 }
 
-
+/*
 // PHP error logging
 echo( "<h2>Checking PHP error log:</h2>" );
 $errlog = ini_get('error_log');
@@ -295,7 +217,7 @@ if( $errlog ) {
 else {
 	echo( "<span class=\"warn\">WARNING!</span> error_log is not set. Set <tt>error_log</tt> to point to a path writable by the web server in your php.ini." );
 }
-
+ */
 
 
 // PHP check php.ini's numeric, bool values (TODO: string)
@@ -315,22 +237,17 @@ checkVal( $requiredVal );
 
 // Files and directories writable by web server
 echo( "<h2>Checking write access:</h2>" );
-$reqWrite = array(	"images/",
-			"bluespice-core/config/",
-			"bluespice-core/data/",
-			"bluespice-mw/config/" );
+$reqWrite = array(	"cache/" ,"images/",
+			"extensions/BlueSpiceFoundation/config/",
+			"extensions/BlueSpiceFoundation/data/" );
 checkWrite( $reqWrite );
 
-// Check for "common" dir in bluespice-skin
-echo( "<h2>Checking for \"common\" directory:</h2>" );
-$commondir = 'bluespice-skin/common';
-echo "Looking for $commondir - ";
-if ( file_exists( $commondir ) ) {
-	echo( "<span class=\"ok\">OK</span>\n" );
-}
-else {
-	echo( "<span class=\"fail\">FAILED!</span> Please copy the <tt>skins/common</tt> directory into <tt>bluespice-skin</tt>.\n" );
-}
+
+// Check template renaming
+echo( "<h2>Checking for necessary files</h2>" );
+$reqMove = array(	"extensions/BlueSpiceExtensions/BlueSpiceExtensions.php",
+			"extensions/BlueSpiceDistribution/BlueSpiceDistribution.php" );
+checkMove( $reqMove );
 
 
 // Check if display_errors is on and displays warnings (which breaks some stuff)
@@ -389,6 +306,22 @@ else
 	echo( "<span class=\"warn\">WARNING!</span> The location of your php.ini could not be determined automatically" );
 }
 
+// PHP error logging
+echo( "<h3>PHP Error Log:</h3>" );
+$errlog = ini_get('error_log');
+if( $errlog ) {
+	echo "Logging to ";
+	if ( strtolower($errlog) == "syslog" ) {
+		echo( "syslog / event log." );
+	}
+	else {
+		echo "<tt>$errlog</tt>. Current size: ";
+		if (is_readable($errlog)) echo ( format_bytes(filesize($errlog)) );
+	}
+}
+else {
+	echo( "Setting \"error_log\" is not set. Are you logging to Apache's log?" );
+}
 
 echo( "<h3>Single-Sign-On:</h3>" );
 if (!empty($_SERVER['AUTH_TYPE'])) echo( "\$_SERVER['AUTH_TYPE']): ".$_SERVER['AUTH_TYPE']."<br />" );
@@ -447,7 +380,7 @@ else {
 	}
 	echo(implode(",", $foundcaches).')');
 	echo("<br />\n");
-	echo('For optimal performance make sure you set <tt>$wgMainCacheType = CACHE_ACCEL;</tt> <a href="http://www.mediawiki.org/wiki/Manual:$wgMainCacheType">(more info)</a>'); // CACHE_ACCEL & WinCache need at least MW 1.17 :-(
+	echo('For optimal performance make sure you set <tt>$wgMainCacheType = CACHE_ACCEL;</tt> <a href="http://www.mediawiki.org/wiki/Manual:$wgMainCacheType">(more info)</a>'); // TODO: CACHE_ACCEL & WinCache are BROKEN with BS! :-(
 }
 
 echo( "<h3>PHP Thread Safety:</h3>" );
@@ -477,8 +410,8 @@ else {
 echo( "<h3>\$_SERVER['DOCUMENT_ROOT']:</h3>" );
 echo '$_SERVER[\'DOCUMENT_ROOT\'] = ' . $_SERVER['DOCUMENT_ROOT'];
 
-echo( "<h3>__DIR__:</h3>" );
-echo '__DIR__ = ' . __DIR__;
+echo( "<h3>dirname(__FILE__):</h3>" );
+echo 'dirname(__FILE__) = ' . dirname(__FILE__);
 
 echo( "<h3>PHP modules:</h3>" );
 echo( "<pre>" );
@@ -675,6 +608,29 @@ function checkWrite( $reqWrite )
                 }
                 else
                 {
+                    echo( "<span class=\"fail\">FAILED!</span> " );
+                    echo( "File or directory not found." );
+		    if ( file_exists( rtrim( $path, '/') . ".template" ) ) echo( " Remember to rename the template files!" );
+		    echo( "<br />\n" );
+                }
+
+	}
+}
+
+/**
+ * Check if template files were renamed correctly
+ * @param array $reqMove
+ * @return void
+ */
+function checkMove( $reqMove )
+{
+	foreach( $reqMove as $path)
+	{
+		echo( "Checking $path - " );
+                if (file_exists( $path ) ) {
+                       echo( "<span class=\"ok\">OK</span><br/>" );
+                }
+                else {
                     echo( "<span class=\"fail\">FAILED!</span> " );
                     echo( "File or directory not found." );
 		    if ( file_exists( rtrim( $path, '/') . ".template" ) ) echo( " Remember to rename the template files!" );

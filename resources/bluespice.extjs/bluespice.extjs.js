@@ -25,12 +25,6 @@
 			showDelay: 1000
 		 });
 	});
-
-	var basePath = mw.config.get('wgScriptPath') 
-		+ '/extensions/BlueSpiceFoundation/resources/bluespice.extjs';
-
-	Ext.Loader.setPath( 'BS',     basePath + '/BS');
-	Ext.Loader.setPath( 'Ext.ux', basePath + '/Ext.ux');
 	
 	//Be nice to older browsers
 	//HINT: http://stackoverflow.com/questions/2581302/globally-disable-ext-js-animations

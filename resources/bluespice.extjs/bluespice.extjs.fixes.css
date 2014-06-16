@@ -57,7 +57,7 @@ body.x-body {
 }
 
 .x-tool-img {
-	height: 20px;
+	margin-top: -3px !important;
 }
 
 

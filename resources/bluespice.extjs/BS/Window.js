@@ -100,6 +100,7 @@ Ext.define( 'BS.Window', {
 	},
 	setTitle: function( title ){
 		this.title = title;
+		this.callParent( arguments );
 	},
 	makeId: function( part ) {
 		return this.getId() + '-' + part;

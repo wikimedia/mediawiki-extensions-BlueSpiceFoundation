@@ -22,7 +22,7 @@ class SpecialCredits extends BsSpecialPage {
 		parent::execute( $par );
 		$aProgrammers = array(
 			'Markus Glaser', 'Radovan Kubani', 'Sebastian Ulbricht', 'Marc Reymann',
-			'Mathias Scheer', 'Thomas Lorenz', 'Tobias Weichart', 'Robert Vogel', 
+			'Mathias Scheer', 'Thomas Lorenz', 'Tobias Weichart', 'Robert Vogel',
 			'Erwin Forster', 'Karl Waldmannstetter', 'Daniel Lynge', 'Tobias Davids',
 			'Patric Wirth', 'Stephan Muggli', 'Stefan Widmann'
 		);
@@ -32,7 +32,8 @@ class SpecialCredits extends BsSpecialPage {
 			'Angelika Müller', 'Jan Göttlich', 'Karl Skodnik'
 		);
 		$aContributors = array(
-			'Bartosz Dziewoski', 'Chad Horohoe'
+			'Bartosz Dziewoski', 'Chad Horohoe', 'Raimond Spekking', 'Siebrand Mazeland',
+			'Yuki Shira', 'TGC'
 		);
 
 		$sLiProgrammers = '';

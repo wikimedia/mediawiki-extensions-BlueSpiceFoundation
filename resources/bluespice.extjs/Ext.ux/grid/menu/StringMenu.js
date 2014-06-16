@@ -73,12 +73,12 @@ Ext.define('Ext.ux.grid.menu.StringMenu', {
      }</pre>
      */
     fieldLabels: {
-        eq: mw.messages.get('bs-superlist-labelEquals'),
-        neq: mw.messages.get('bs-superlist-labelEqualsNot'),
-        ct: mw.messages.get('bs-superlist-labelContains'),
-        nct: mw.messages.get('bs-superlist-labelContainsNot'),
-        sw: mw.messages.get('bs-superlist-labelStartsWith'),
-        ew: mw.messages.get('bs-superlist-labelEndsWith')
+        eq: mw.messages.get('bs-extjs-filter-equals'),
+        neq: mw.messages.get('bs-extjs-filter-equals-not'),
+        ct: mw.messages.get('bs-extjs-filter-contains'),
+        nct: mw.messages.get('bs-extjs-filter-contains-not'),
+        sw: mw.messages.get('bs-extjs-filter-starts-with'),
+        ew: mw.messages.get('bs-extjs-filter-ends-with')
     },
     /**
      * @cfg {Object} menuItemCfgs
@@ -243,8 +243,8 @@ Ext.define('Ext.ux.grid.menu.StringMenu', {
                 lt.setValue(null);
             }
         }
-        else {
-            eq.setValue(null);
+        else if (eq) {
+                eq.setValue(null);
         }
 
         // restart the timer

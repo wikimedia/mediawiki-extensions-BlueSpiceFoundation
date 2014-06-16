@@ -18,7 +18,7 @@
 
 /*
  * == left2do ==
- * 
+ *
  * Validators that check
  *     # Existencies (e.g. Namespaces, Groups, Usernames, ...)
  *     # Article-names
@@ -138,9 +138,9 @@ class BsValidatorResponse {
 
 		if ( is_null( $this->mI18NRenderedString ) ) {
 			$this->mI18NRenderedString = ( is_null( $this->mI18NTokens ) )
-				? wfMessage( $this->mI18NMessageKey )->plain()
+				? wfMessage( $this->mI18NMessageKey )->text()
 				// TODO MRG (08.02.11 00:08): msg wurde modifiziert, $default gibts nicht mehr. @Robert: macht Tokens von $default Gebrauch?
-				: wfMessage( $this->mI18NMessageKey, $this->mI18NTokens )->plain();
+				: wfMessage( $this->mI18NMessageKey, $this->mI18NTokens )->text();
 		}
 		wfProfileOut( 'BS::'.__METHOD__ );
 		return $this->mI18NRenderedString;
@@ -304,8 +304,9 @@ class BsValidatorCategoryPlugin implements BsValidatorPlugin {
 class BsValidatorSetItemPlugin implements BsValidatorPlugin {
 
 	public static function isValid( $validateThis, $options ) {
+		$iCount = count( $options['set'] );
 		return ( !in_array( $validateThis , $options['set'] ) )
-			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-set-validation-not-approved', array( $options['setname'], implode( ',', $options['set'] ) ) )
+			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-set-validation-not-approved', array( $options['setname'], implode( ',', $options['set'], $iCount ) ) )
 			: new BsValidatorResponse( 0, 'Validator', 'bs-validator-set-validation-approved', array( $options['setname']) );
 	}
 

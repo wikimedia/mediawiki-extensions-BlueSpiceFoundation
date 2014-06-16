@@ -56,7 +56,7 @@ class BsCoreHooks {
 	* @param Skin $skin
 	* @return boolean
 	*/
-	public static function onBeforePageDisplay( $out, $skin) {
+	public static function onBeforePageDisplay( $out, $skin ) {
 		global $IP, $wgFavicon, $wgExtensionAssetsPath,
 			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
 
@@ -144,7 +144,11 @@ class BsCoreHooks {
 		}
 		//TODO: Implement as RL Module: see ResourceLoaderUserOptionsModule
 		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
+		$sBasePath = $wgExtensionAssetsPath.'/BlueSpiceFoundation/resources/bluespice.extjs';
+
 		$sExtJS = 'Ext.BLANK_IMAGE_URL = mw.config.get("wgScriptPath")+"/extensions/BlueSpiceFoundation/resources/bluespice.extjs/images/s.gif";';
+		$sExtJS.= "Ext.Loader.setPath( 'BS',     '$sBasePath' + '/BS');";
+		$sExtJS.= "Ext.Loader.setPath( 'Ext.ux', '$sBasePath' + '/Ext.ux');";
 		$sExtJS.= 'Ext.Loader.setPath('.FormatJson::encode( $aExtJSPaths).');';
 
 		$out->addScript(
@@ -215,8 +219,6 @@ class BsCoreHooks {
 	public static function onMakeGlobalVariablesScript(&$vars, $out) {
 		// Necessary otherwise values are not correctly loaded
 		$oUser = $out->getUser();
-		BsConfig::loadSettings();
-		BsConfig::loadUserSettings( $oUser->getName() );
 
 		$aScriptSettings = BsConfig::getScriptSettings();
 		wfRunHooks('BsFoundationBeforeMakeGlobalVariablesScript', array( $oUser, &$aScriptSettings ) );
@@ -501,6 +503,27 @@ class BsCoreHooks {
 		$oProfilePageSettingsView->addItem( $oProfilePageSettingsFieldsetView );
 		$aViews[] = $oProfilePageSettingsView;
 		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * 
+	 * @param Skin $skin
+	 * @param SkinTemplate $template
+	 * @return boolean - always true
+	 */
+	public static function onSkinTemplateOutputPageBeforeExec(&$skin, &$template){
+		if( $skin->getTitle()->getNamespace() != NS_FILE || !$oFile = wfFindFile($skin->getTitle()) )
+			return true;
+
+		if( $oFile->getHandler() instanceof BitmapHandler ) return true;
+
+		array_unshift( $template->data['bs_title_actions'], array(
+			'id' => 'filedownload',
+			'href' => $oFile->getFullUrl(),
+			'title' => $oFile->getName(),
+			'text' => wfMessage('bs-imagepage-download-text')->plain()
+		));
 		return true;
 	}
 

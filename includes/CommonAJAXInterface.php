@@ -103,7 +103,7 @@ class BsCommonAJAXInterface {
 
 			//DB fields
 			//PW: user_id needs to be casted to int or ExtJs can not search the store by id property!
-			$oUserData->user_id = (int) $oUser->getId(); 
+			$oUserData->user_id = (int) $oUser->getId();
 			$oUserData->user_name = $oUser->getName();
 
 			//Calculated fields
@@ -199,7 +199,7 @@ class BsCommonAJAXInterface {
 			$aOptions = array( '' );
 			$aJoinConds = array( 'categorylinks' => array( 'INNER JOIN', 'page_id=cl_from') );
 
-			$resSubCategories = $dbr->select( 
+			$resSubCategories = $dbr->select(
 				$aTables,
 				$aFields,
 				$aConditions,
@@ -231,8 +231,8 @@ class BsCommonAJAXInterface {
 	public static function getCategoryStoreData( $sOptions = '{}' ) {
 		// $sOptions will be used... maybe
 		$oResult = new stdClass();
-		$oResult->categories = array();
 
+		$aCategories = array();
 		$dbr = wfGetDB( DB_SLAVE );
 		// category table also tracks all deleted categories. So we need to double
 		// check with categorylinks and page table. Use case for this is a category
@@ -269,7 +269,7 @@ class BsCommonAJAXInterface {
 
 			$oCategoryData->prefixed_text = $oCategoryTitle->getPrefixedText();
 
-			$oResult->categories[] = $oCategoryData;
+			$aCategories[$row->cat_title] = $oCategoryData;
 		}
 
 		$res = $dbr->select(
@@ -295,9 +295,13 @@ class BsCommonAJAXInterface {
 
 			$oCategoryData->prefixed_text = $oCategoryTitle->getPrefixedText();
 
-			$oResult->categories[] = $oCategoryData;
+			$aCategories[$row->cat_title] = $oCategoryData;
 		}
 
+		ksort( $aCategories );
+		$aCategories = array_values( $aCategories );
+
+		$oResult->categories = $aCategories;
 		return FormatJson::encode( $oResult );
 	}
 
@@ -309,7 +313,7 @@ class BsCommonAJAXInterface {
 	 */
 	public static function getFileUrl( $file ) {
 		$url = self::imageUrl( $file );
-		//TODO: This is not good. We should use API and SecureFileStore should 
+		//TODO: This is not good. We should use API and SecureFileStore should
 		//alter API response via Hook
 		if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
 			$url = SecureFileStore::secureStuff( $url, true );
