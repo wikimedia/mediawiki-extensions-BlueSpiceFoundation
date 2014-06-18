@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sayginer"
+		]
+	},
+	"bs-userbar_loginswitch_logout": "Oturumu kapat",
+	"bs-userbar_loginswitch_login": "Oturum aç",
+	"bs-years-duration": "{{PLURAL:$1|$1 yıl|$1 yıl}}",
+	"bs-months-duration": "{{PLURAL:$1|$1 ay|$1 ay}}",
+	"bs-weeks-duration": "{{PLURAL:$1|$1 hafta|$1 hafta}}",
+	"bs-days-duration": "{{PLURAL:$1|1 gün|$1 gün}}",
+	"bs-hours-duration": "{{PLURAL:$1|1 saat|$1 saat}}",
+	"bs-mins-duration": "{{PLURAL:$1|1 dakika|$1 dakika}}",
+	"bs-secs-duration": "{{PLURAL:$1|$1 saniye|$1 saniye}}",
+	"bs-email-greeting-no-receiver": "Merhaba,",
+	"bs-userpagesettings-legend": "Kullanıcı ayarları",
+	"bs-userpreferences-link-text": "Daha fazla kullanıcı ayarı",
+	"bs-userpreferences-link-title": "Kişisel kullanıcı ayarlarını görüntüle",
+	"bs-exception-view-heading": "Bir hata oluştu",
+	"bs-exception-view-text": "İsteğiniz gerçekleştirilirken aşağıdaki hata oluştu:",
+	"bs-exception-view-admin-hint": "Lütfen sistem yöneticinize başvurun.",
+	"bs-exception-view-stacktrace-toggle-show-text": "Hata ayrıntılarını göster",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Hata ayrıntılarını gizle"
+}

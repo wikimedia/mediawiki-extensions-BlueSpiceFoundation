@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sayginer"
+		]
+	},
+	"bs-extjs-cancel": "İptal",
+	"bs-extjs-yes": "Evet",
+	"bs-extjs-no": "Hayır",
+	"bs-extjs-save": "Kaydet",
+	"bs-extjs-delete": "Sil",
+	"bs-extjs-add": "Ekle",
+	"bs-extjs-error": "Hata",
+	"bs-extjs-confirm": "Onayla",
+	"bs-extjs-loading": "Yükleniyor...",
+	"bs-extjs-pageSize": "Sayfa boyutu",
+	"bs-extjs-warning": "Uyarı",
+	"bs-extjs-saving": "kaydediliyor..."
+}

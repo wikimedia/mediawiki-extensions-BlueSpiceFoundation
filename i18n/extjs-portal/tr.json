@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sayginer"
+		]
+	},
+	"bs-extjs-portal-timespan-week": "Hafta",
+	"bs-extjs-portal-timespan-month": "Ay",
+	"bs-extjs-portal-timespan-alltime": "Tüm zamanlar"
+}

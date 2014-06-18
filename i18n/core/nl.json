@@ -5,7 +5,8 @@
 			"Southparkfan",
 			"Siebrand",
 			"Niknetniko",
-			"Mar(c)"
+			"Mar(c)",
+			"Ribert"
 		]
 	},
 	"bs-ns_main": "(Pagina's)",
@@ -61,5 +62,6 @@
 	"bs-filesystemhelper-upload-local-error-create": "Het bestand kon niet worden aangemaakt in de wiki.",
 	"bs-navigation-instructions": "Instructies",
 	"bs-navigation-support": "Ondersteuning",
-	"bs-navigation-contact": "Contact"
+	"bs-navigation-contact": "Contact",
+	"bs-imagepage-download-text": "download"
 }
