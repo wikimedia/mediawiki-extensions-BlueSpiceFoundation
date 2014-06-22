@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"DCLXVI"
+		]
+	},
+	"bs-extjs-cancel": "Отказване",
+	"bs-extjs-yes": "Да",
+	"bs-extjs-no": "Не",
+	"bs-extjs-save": "Съхраняване",
+	"bs-extjs-delete": "Изтриване",
+	"bs-extjs-add": "Добавяне",
+	"bs-extjs-remove": "Премахване",
+	"bs-extjs-edit": "Редактиране"
+}
