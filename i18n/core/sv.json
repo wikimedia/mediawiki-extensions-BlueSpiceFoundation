@@ -3,7 +3,8 @@
 		"authors": [
 			"Josve05a",
 			"WikiPhoenix",
-			"Fader"
+			"Fader",
+			"Lokal Profil"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -38,6 +39,7 @@
 	"bs-exception-view-admin-hint": "Vänligen kontakta din systemadministratör.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Visa felinformation",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Visa felinformation",
+	"action-responsibleeditors-viewspecialpage": "visa sidor som skyddas av \"ResponsibleEditors-Viewspecialpage\"-behörigheten",
 	"bs-viewtagerrorlist-legend": "$1 - Fel",
 	"bs-readonly": "Databasen är tillfälligt låst för nya inlägg och andra modifieringar, förmodligen på grund av rutinmässigt underhåll, efter vilket den kommer den att återgå till normalläge.\n\nDen administratör som låste den har angivit följande förklaring: $1",
 	"bs-imageofotheruser": "Du får inte ladda upp en bild för en annan användare.",
@@ -52,6 +54,7 @@
 	"bs-filesystemhelper-folder-copy-error": "Mappen <code>$1</code> kunde inte döpas om.",
 	"bs-filesystemhelper-folder-not-exists": "Mappen <code>$1</code> finns inte.",
 	"bs-filesystemhelper-upload-err-code": "Filen kunde inte laddas upp: $1",
+	"bs-filesystemhelper-upload-wrong-ext": "Filen har inte det krävda filformatet: $1",
 	"bs-filesystemhelper-upload-unsupported-type": "Denna filtyp stöds inte.",
 	"bs-filesystemhelper-save-base64-error": "Filen kunde inte sparas.",
 	"bs-filesystemhelper-upload-base64-error": "Filen kunde inte laddas upp.",

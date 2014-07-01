@@ -58,5 +58,5 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'SpecialCredits' => array( '積分' ),
+	'SpecialCredits' => array( '製造群組' ),
 );
