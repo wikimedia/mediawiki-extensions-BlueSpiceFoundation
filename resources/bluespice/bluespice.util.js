@@ -312,14 +312,14 @@
 		if ( iMins > 0 ) sMins = mw.message('bs-mins-duration', iMins).text();
 		if ( iSecs > 0 ) sSecs = mw.message('bs-secs-duration', iSecs).text();
 
-		if (iYears > 0) sDateTimeOut = sMonths ? mw.message( 'bs-two-units-ago', sYears, sMonths).text() : mw.message( 'bs-one-unit-ago', sYears).text();
-		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.message( 'bs-two-units-ago', sMonths, sWeeks).text() : mw.message( 'bs-one-unit-ago', sMonths).text();
-		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.message( 'bs-two-units-ago', sWeeks ,sDays).text() : mw.message( 'bs-one-unit-ago', sWeeks).text();
-		else if (iDays > 0) sDateTimeOut = sHrs ? mw.message( 'bs-two-units-ago', sDays, sHrs).text() : mw.message( 'bs-one-unit-ago', sDays).text();
-		else if (iHrs > 0) sDateTimeOut = sMins ? mw.message( 'bs-two-units-ago', sHrs, sMins).text() : mw.message( 'bs-one-unit-ago', sHrs).text();
-		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).text() : mw.message( 'bs-one-unit-ago', sMins).text();
-		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).text();
-		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).text();
+if (iYears > 0) sDateTimeOut = sMonths ? mw.message( 'bs-two-units-ago', sYears, sMonths).plain() : mw.message( 'bs-one-unit-ago', sYears).plain();
+		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.message( 'bs-two-units-ago', sMonths, sWeeks).plain() : mw.message( 'bs-one-unit-ago', sMonths).plain();
+		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.message( 'bs-two-units-ago', sWeeks ,sDays).plain() : mw.message( 'bs-one-unit-ago', sWeeks).plain();
+		else if (iDays > 0) sDateTimeOut = sHrs ? mw.message( 'bs-two-units-ago', sDays, sHrs).plain() : mw.message( 'bs-one-unit-ago', sDays).plain();
+		else if (iHrs > 0) sDateTimeOut = sMins ? mw.message( 'bs-two-units-ago', sHrs, sMins).plain() : mw.message( 'bs-one-unit-ago', sHrs).plain();
+		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).plain() : mw.message( 'bs-one-unit-ago', sMins).plain();
+		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).plain();
+		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).plain();
 
 		return sDateTimeOut;
 	}
