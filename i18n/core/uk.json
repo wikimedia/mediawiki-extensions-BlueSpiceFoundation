@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Andriykopanytsia",
-			"Base"
+			"Base",
+			"Ата"
 		]
 	},
 	"bs-ns_main": "(Сторінки)",
@@ -57,8 +58,10 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Цей тип файлу не підтримується.",
 	"bs-filesystemhelper-save-base64-error": "Не вдалося зберегти файл.",
 	"bs-filesystemhelper-upload-base64-error": "Файл не може бути завантажений.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "Файл не може бути переміщений у «схованку завантаження».",
 	"bs-filesystemhelper-upload-local-error-create": "Файл не може бути створено у вікі.",
 	"bs-navigation-instructions": "Інструкції",
 	"bs-navigation-support": "Підтримка",
-	"bs-navigation-contact": "Контакт"
+	"bs-navigation-contact": "Контакт",
+	"bs-imagepage-download-text": "Завантажити"
 }
