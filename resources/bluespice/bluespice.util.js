@@ -37,7 +37,7 @@
 	function _alert(idPrefix, windowCfg, callbackCfg) {
 		if (alerts[idPrefix])
 			return alerts[idPrefix];
-		
+
 		if(!windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-hint';
 		}
@@ -59,7 +59,7 @@
 	function _confirm(idPrefix, windowCfg, callbackCfg) {
 		if (confirms[idPrefix])
 			return confirms[idPrefix];
-		
+
 		if(!windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-confirm';
 		}
@@ -190,7 +190,7 @@
 			_startPos;
 
 		this.autoSelection = '';
-		
+
 		this.reset = function() {
 			_selectedText = false;
 			_startPos = 0;
@@ -274,15 +274,15 @@
 			this.autoSelection = '';
 		};
 	}
-	
-	
+
+
 	function _timestampToAgeString( unixTimestamp ) {
 		//This is a js version of "adapter/Utility/FormatConverter.class.php" -> timestampToAgeString
 		//TODO: use PLURAL (probably wont work in mw 1.17)
 		var start = (new Date(unixTimestamp));
 		var now = (new Date());
 		var diff = now - start;
-		
+
 		var sDateTimeOut = '';
 		var sYears = '';
 		var sMonths = '';
@@ -320,10 +320,10 @@
 		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).text() : mw.message( 'bs-one-unit-ago', sMins).text();
 		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).text();
 		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).text();
-		
+
 		return sDateTimeOut;
 	}
-	
+
 	/**
 	 * Shows a message window
 	 * @param {String} url The url providing the content for the window
@@ -343,11 +343,11 @@
 		win.show();
 		return win;
 	}
-	
+
 	/**
-	 * Creates a new value object with all the properties of "obj" but prefixed 
+	 * Creates a new value object with all the properties of "obj" but prefixed
 	 * "data-bs-" to allow easy embedding in HTML elements
-	 * @param {Object} obj 
+	 * @param {Object} obj
 	 * @return {Object}
 	 */
 	function _makeDataAttributeObject( obj ) {
@@ -357,10 +357,10 @@
 		}
 		return data;
 	}
-	
+
 	/**
-	 * Creates a new value object with all the properties of "obj" but without 
-	 * "data-bs-" prefixes. Leaves unprefixed properties untouched. May 
+	 * Creates a new value object with all the properties of "obj" but without
+	 * "data-bs-" prefixes. Leaves unprefixed properties untouched. May
 	 * override unprefixed doublets.
 	 * @param {Object} obj
 	 * @return {Object}
@@ -376,7 +376,7 @@
 		}
 		return data;
 	}
-	
+
 	/**
 	 * Creates a new value object from a DOMNode object.
 	 * @param {Object} node
@@ -390,7 +390,7 @@
 		}
 		return data;
 	}
-	
+
 	var _tempAnchor = null;
 	/**
 	 * Gets all GET parameters from an url.
@@ -398,7 +398,7 @@
 	 * @return {Object}
 	 */
 	function _getUrlParams( param ) {
-		// Handle getUrlParams(), getUrlParams(""), getUrlParams(null) 
+		// Handle getUrlParams(), getUrlParams(""), getUrlParams(null)
 		// or getUrlParams(undefined) calls
 		if ( !param ) {
 			return _getUrlParams( window.location );
@@ -491,15 +491,42 @@
 			}
 		}
 	};
-	
+
 	function _wikiGetlink( params, str ) {
 		var pageName = str || mw.config.get( 'wgPageName' );
 		var params = params || {};
 		params.title = pageName;
-		
+
 		var url = mw.util.wikiScript() + '?' + $.param(params);
 		return url;
 	};
+
+	function _auditCssSelectors() {
+		var links = [], rules = [], unmatched = [], selectors = { total:0, matched:0 };
+
+		$.each( document.getElementsByTagName( 'link' ), function( index, link ) {
+			if ( link.sheet !== null ) {
+				links.push( link.sheet );
+			}
+		});
+
+		$.each( links, function( index, linkSheet ) {
+			$.each( linkSheet.rules, function ( index, rule ) {
+			selectors.total++;
+			if ( document.querySelector( rule.selectorText ) !== null ) {
+				selectors.matched++;
+			} else {
+				unmatched.push( rule.selectorText );
+			}
+		} );
+		});
+
+		console.log( selectors.matched + ' / ' + selectors.total + ' = ' + selectors.matched / selectors.total );
+
+		$.each( unmatched, function( index, unmatched ) {
+			console.log( unmatched );
+		} );
+	}
 
 	var util = {
 		getNamespaceText: _getNamespaceText,
@@ -521,10 +548,11 @@
 		getUrlParams: _getUrlParams,
 		addEntryToMultiSelect: _addEntryToMultiSelect,
 		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect,
-		wikiGetlink: _wikiGetlink
+		wikiGetlink: _wikiGetlink,
+		auditCssSelectors: _auditCssSelectors
 	};
 
-	//This allows us to have a confirm dialog be displayed 
+	//This allows us to have a confirm dialog be displayed
 	//by just adding a class to a link
 	$(document).on('click', 'a.bs-confirm-nav', function(e) {
 		e.preventDefault();
@@ -539,8 +567,8 @@
 			util.selection.autoSelection = document.selection.createRange();
 		})
 		.on( 'keyup', '#wpTextbox1', function() {
-			// IE also creates a selection if you are typing ... 
-			// and you will get it as description in InsertLink -> not wanted 
+			// IE also creates a selection if you are typing ...
+			// and you will get it as description in InsertLink -> not wanted
 			util.selection.autoSelection = '';
 		});
 	}

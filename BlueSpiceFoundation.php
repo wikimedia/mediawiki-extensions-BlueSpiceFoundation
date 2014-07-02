@@ -99,7 +99,6 @@ $wgHooks['LoadExtensionSchemaUpdates'][] = 'BsCoreHooks::onLoadExtensionSchemaUp
 $wgHooks['ApiCheckCanExecute'][] = 'BsCoreHooks::onApiCheckCanExecute';
 $wgHooks['UserGetRights'][] = 'BsCoreHooks::onUserGetRights';
 $wgHooks['userCan'][] = 'BsCoreHooks::onUserCan';
-$wgHooks['FormDefaults'][] = 'BsCoreHooks::onFormDefaults';
 $wgHooks['UploadVerification'][] = 'BsCoreHooks::onUploadVerification';
 $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'BsCoreHooks::onSkinTemplateOutputPageBeforeExec';
 
@@ -108,9 +107,6 @@ $wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
 if ( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
 	$wgHooks['EditPage::showEditForm:initial'] = array();
 }
-
-//BlueSpice specific hooks
-$wgHooks['BSBlueSpiceSkinAfterArticleContent'][] = 'BsCoreHooks::onBlueSpiceSkinAfterArticleContent';
 
 if ( $wgDBtype == 'oracle' ) {
 	$wgHooks['ArticleDelete'][] = 'BSOracleHooks::onArticleDelete';

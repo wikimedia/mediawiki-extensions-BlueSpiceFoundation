@@ -46,6 +46,9 @@ class BsCoreHooks {
 		HTMLForm::$typeMappings['multiselectex'] = 'HTMLMultiSelectEx';
 		HTMLForm::$typeMappings['multiselectplusadd'] = 'HTMLMultiSelectPlusAdd';
 		HTMLForm::$typeMappings['multiselectsort'] = 'HTMLMultiSelectSortList';
+
+		global $wgLogo;
+		$wgLogo = BsConfig::get('MW::LogoPath');
 	}
 
 	/**
@@ -196,6 +199,7 @@ class BsCoreHooks {
 				$aStyles = $aFiles['debug-styles'];
 			}
 		}
+
 		$iScriptCount = 0;
 		foreach( $aScripts as $sScript ) {
 
@@ -205,6 +209,7 @@ class BsCoreHooks {
 			);
 			$iScriptCount++;
 		}
+
 		foreach( $aStyles as $sStyle ) {
 			$out->addStyle( $wgScriptPath.$sStyle );
 		}
@@ -395,40 +400,6 @@ class BsCoreHooks {
 	}
 
 	/**
-	 * Adds the default values for the searchbox.
-	 * @param Object $callingInstance. Object of the calling Instance
-	 * @param Array $aSearchBoxKeyValues. A reference of the form value array.
-	 * @return bool Always true to keep hook running.
-	 */
-	public static function onFormDefaults( $callingInstance, &$aSearchBoxKeyValues ) {
-		wfProfileIn('BS::' . __METHOD__);
-		$aLocalUrl = explode( '?', SpecialPage::getTitleFor( 'Search' )->getLocalUrl() );
-
-		$aSearchBoxKeyValues['SubmitButtonTitle'] = wfMessage('bs-extended-search-tooltip-title', 'Search for titles' )->plain();
-		$aSearchBoxKeyValues['SubmitButtonFulltext'] = wfMessage('bs-extended-search-tooltip-fulltext', 'Search inside articles' )->plain();
-		$aSearchBoxKeyValues['SearchTextFieldTitle'] = wfMessage('bs-extended-search-textfield-tooltip', 'Search BlueSpice for Mediawiki [alt-shift-f]' )->plain();
-		$aSearchBoxKeyValues['SearchTextFieldDefaultText'] = wfMessage('bs-extended-search-textfield-defaultvalue', 'Search...' )->plain();
-
-		if ( isset( $aSearchBoxKeyValues['SearchDestination'] ) ) return true;
-
-		$aSearchBoxKeyValues['SearchDestination'] = $aLocalUrl[0];
-
-		if ( isset( $aLocalUrl[1] ) && strpos( $aLocalUrl[1], '=' ) !== false ) {
-			$aTitle = explode( '=', $aLocalUrl[1] );
-			$aSearchBoxKeyValues['HiddenFields']['title'] = $aTitle[1];
-		}
-
-		$aSearchBoxKeyValues['SearchTextFieldName'] = 'search';
-		$aSearchBoxKeyValues['DefaultKeyValuePair'] = array( 'button', '' );
-		$aSearchBoxKeyValues['TitleKeyValuePair'] = array( 'button', '' );
-		$aSearchBoxKeyValues['FulltextKeyValuePair'] = array( 'fulltext', 'Search' );
-		$aSearchBoxKeyValues['method'] = 'post'; // mediawiki's default
-
-		wfProfileOut('BS::' . __METHOD__);
-		return true;
-	}
-
-	/**
 	 * Additional chances to reject an uploaded file
 	 * @param string $saveName: destination file name
 	 * @param string $tempName: filesystem path to the temporary file for checks
@@ -456,34 +427,85 @@ class BsCoreHooks {
 	}
 
 	/**
-	 * Hook-Handler for 'BSBlueSpiceSkinAfterArticleContent'. Creates a settings toolbox on the users own page.
-	 * @param array $aViews Array of views to be rendered in skin
-	 * @param User $oUser Current user object
-	 * @param Title $oTitle Current title object
-	 * @return bool Always true to keep hook running.
+	 * Adds context dependent data to the skintemplate
+	 * @param Skin $skin
+	 * @param BaseTemplate $template
+	 * @return boolean - always true
 	 */
-	public static function onBlueSpiceSkinAfterArticleContent( &$aViews, $oUser, $oTitle ) {
-		if ( !$oTitle->equals( $oUser->getUserPage() ) ) return true; //Run only if on current users profile/userpage
+	public static function onSkinTemplateOutputPageBeforeExec(&$skin, &$template){
 
-		wfProfileIn('BS::' . __METHOD__);
+		self::addDownloadTitleAction($skin, $template);
+		self::addProfilePageSettings($skin, $template);
+
+		return true;
+	}
+
+	/**
+	 * Adds a download action icon to File-pages
+	 * @param Skin $skin
+	 * @param BaseTemplate $template
+	 */
+	protected static function addDownloadTitleAction(&$skin, &$template) {
+		if( $skin->getTitle()->getNamespace() != NS_FILE ) {
+			return;
+		}
+
+		$oFile = wfFindFile($skin->getTitle());
+		if( $oFile === false ) {
+			return;
+		}
+
+		if( $oFile->getHandler() instanceof BitmapHandler ) {
+			return;
+		}
+
+		array_unshift( $template->data['bs_title_actions'], array(
+			'id' => 'filedownload',
+			'href' => $oFile->getFullUrl(),
+			'title' => $oFile->getName(),
+			'text' => wfMessage('bs-imagepage-download-text')->plain()
+		));
+	}
+
+	/**
+	 * Adds the settings panel on the current user's page
+	 * @global string $wgScriptPath
+	 * @param Skin $skin
+	 * @param BaseTemplate $template
+	 */
+	protected static function addProfilePageSettings(&$skin, &$template) {
+		if ( !$skin->getTitle()->equals( $skin->getUser()->getUserPage() ) ) {
+			return; //Run only if on current users profile/userpage
+		}
+
+		$oUser = $skin->getUser();
+		$oTitle = $skin->getTitle();
+
 		$aSettingViews = array();
 		wfRunHooks( 'BS:UserPageSettings', array( $oUser, $oTitle, &$aSettingViews ) );
 
 		$oUserPageSettingsView = new ViewBaseElement();
-		$oUserPageSettingsView->setAutoWrap( '<div id="bs-usersidebar-settings" class="bs-userpagesettings-item">###CONTENT###</div>' );
+		$oUserPageSettingsView->setAutoWrap(
+			'<div id="bs-usersidebar-settings" class="bs-userpagesettings-item">'.
+				'###CONTENT###'.
+			'</div>'
+		);
 		$oUserPageSettingsView->setTemplate(
-				'<a href="{URL}" title="{TITLE}"><img alt="{IMGALT}" src="{IMGSRC}" /><div class="bs-user-label">{TEXT}</div></a>'
+			'<a href="{URL}" title="{TITLE}">'.
+				'<img alt="{IMGALT}" src="{IMGSRC}" />'.
+				'<div class="bs-user-label">{TEXT}</div>'.
+			'</a>'
 		);
 
 		global $wgScriptPath;
 		$oUserPageSettingsView->addData(
-				array(
-					'URL' => htmlspecialchars( Title::newFromText('Special:Preferences')->getLinkURL() ),
-					'TITLE' => wfMessage('bs-userpreferences-link-title')->plain(),
-					'TEXT' => wfMessage('bs-userpreferences-link-text')->plain(),
-					'IMGALT' => wfMessage('bs-userpreferences-link-title')->plain(),
-					'IMGSRC' => $wgScriptPath . '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-userpage-settings.png',
-				)
+			array(
+				'URL' => htmlspecialchars( Title::newFromText('Special:Preferences')->getLinkURL() ),
+				'TITLE' => wfMessage('bs-userpreferences-link-title')->plain(),
+				'TEXT' => wfMessage('bs-userpreferences-link-text')->plain(),
+				'IMGALT' => wfMessage('bs-userpreferences-link-title')->plain(),
+				'IMGSRC' => $wgScriptPath . '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-userpage-settings.png',
+			)
 		);
 
 		$aSettingViews[] = $oUserPageSettingsView;
@@ -493,7 +515,7 @@ class BsCoreHooks {
 
 		$oProfilePageSettingsFieldsetView = new ViewFormElementFieldset();
 		$oProfilePageSettingsFieldsetView->setLabel(
-				wfMessage('bs-userpagesettings-legend')->plain()
+			wfMessage('bs-userpagesettings-legend')->plain()
 		);
 
 		foreach ( $aSettingViews as $oSettingsView ) {
@@ -501,30 +523,6 @@ class BsCoreHooks {
 		}
 
 		$oProfilePageSettingsView->addItem( $oProfilePageSettingsFieldsetView );
-		$aViews[] = $oProfilePageSettingsView;
-		wfProfileOut('BS::' . __METHOD__);
-		return true;
+		$template->data['bs_dataAfterContent']['profilepagesettings'] = $oProfilePageSettingsView;
 	}
-
-	/**
-	 * 
-	 * @param Skin $skin
-	 * @param SkinTemplate $template
-	 * @return boolean - always true
-	 */
-	public static function onSkinTemplateOutputPageBeforeExec(&$skin, &$template){
-		if( $skin->getTitle()->getNamespace() != NS_FILE || !$oFile = wfFindFile($skin->getTitle()) )
-			return true;
-
-		if( $oFile->getHandler() instanceof BitmapHandler ) return true;
-
-		array_unshift( $template->data['bs_title_actions'], array(
-			'id' => 'filedownload',
-			'href' => $oFile->getFullUrl(),
-			'title' => $oFile->getName(),
-			'text' => wfMessage('bs-imagepage-download-text')->plain()
-		));
-		return true;
-	}
-
 }

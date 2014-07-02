@@ -491,8 +491,8 @@ class BsFileSystemHelper {
 
 	public static function saveBase64ToTmp($sFileName, $sFileContent){
 		$sFileName = wfTempDir() . DS . basename($sFileName);
-
-		$sFileContent = preg_replace("#data:.*;base64,#", "", $sFileContent);
+		
+		$sFileContent = preg_replace("#^data:.*?;base64,#", "", $sFileContent);
 		$sFileContent = str_replace(' ', '+', $sFileContent);
 		$sFileContent = base64_decode($sFileContent);
 		$bFile = file_put_contents($sFileName, $sFileContent);

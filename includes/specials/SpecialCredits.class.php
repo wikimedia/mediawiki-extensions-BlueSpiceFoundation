@@ -32,7 +32,7 @@ class SpecialCredits extends BsSpecialPage {
 			'Angelika Müller', 'Jan Göttlich', 'Karl Skodnik'
 		);
 		$aContributors = array(
-			'Bartosz Dziewoski', 'Chad Horohoe', 'Raimond Spekking', 'Siebrand Mazeland',
+			'Aude', 'Chad Horohoe', 'Raimond Spekking', 'Siebrand Mazeland',
 			'Yuki Shira', 'TGC'
 		);
 

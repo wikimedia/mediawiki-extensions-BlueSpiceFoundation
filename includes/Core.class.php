@@ -112,30 +112,17 @@ class BsCore {
 	protected function __construct() {
 		wfProfileIn('Performance: ' . __METHOD__);
 
-		global $wgStylePath, $wgScriptPath, $wgServer, $oMobileDetect;
-		$sStylePath = ( $wgStylePath ? $wgStylePath : $wgScriptPath ) . "/BlueSpiceSkin/resources/images/";
-		$sStylePath .= is_object( $oMobileDetect ) && $oMobileDetect->isMobile() ? "mobile" : "desktop";
-
-		$aRegisteredApplications[] = array(
-			'name' => 'Wiki',
-			'displaytitle' => 'Wiki',
-			'url' => $wgServer . $wgScriptPath
-		);
-
 		BsConfig::registerVar( 'MW::FileExtensions', array('doc', 'docx', 'pdf', 'xls'), BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-FileExtensions', 'multiselectplusadd' );
 		BsConfig::registerVar( 'MW::ImageExtensions', array('png', 'gif', 'jpg', 'jpeg'), BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-ImageExtensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::LogoPath', $sStylePath . '/bs-logo.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-LogoPath' );
-		BsConfig::registerVar( 'MW::FaviconPath', $sStylePath . '/favicon.ico', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-FaviconPath' );
-		BsConfig::registerVar( 'MW::DefaultUserImage', $sStylePath . '/bs-user-default-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DefaultUserImage' );
+		BsConfig::registerVar( 'MW::LogoPath','', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-LogoPath' );
+		BsConfig::registerVar( 'MW::FaviconPath', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-FaviconPath' );
+		BsConfig::registerVar( 'MW::DefaultUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DefaultUserImage' );
 		BsConfig::registerVar( 'MW::MiniProfileEnforceHeight', true, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-MiniProfileEnforceHeight', 'toggle' );
-		BsConfig::registerVar( 'MW::AnonUserImage', $sStylePath . '/bs-user-anon-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-AnonUserImage' );
-		BsConfig::registerVar( 'MW::DeletedUserImage', $sStylePath . '/bs-user-deleted-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DeletedUserImage' );
-		BsConfig::registerVar( 'MW::RekursionBreakLevel', 20, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_INT, 'bs-pref-RekursionBreakLevel' );
+		BsConfig::registerVar( 'MW::AnonUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-AnonUserImage' );
+		BsConfig::registerVar( 'MW::DeletedUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DeletedUserImage' );
 		BsConfig::registerVar( 'MW::UserImage', '', BsConfig::LEVEL_USER | BsConfig::TYPE_STRING | BsConfig::NO_DEFAULT, 'bs-authors-profileimage' );
 		BsConfig::registerVar( 'MW::PingInterval', 2, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-BSPingInterval' );
 		BsConfig::registerVar( 'MW::SortAlph', false, BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER | BsConfig::TYPE_BOOL, 'bs-pref-sortalph', 'toggle' );
-		BsConfig::registerVar( 'MW::Applications', $aRegisteredApplications, BsConfig::LEVEL_PRIVATE | BsConfig::TYPE_ARRAY_MIXED, 'bs-Applications' );
-		BsConfig::registerVar( 'MW::ApplicationContext', '', BsConfig::LEVEL_PRIVATE | BsConfig::TYPE_STRING | BsConfig::RENDER_AS_JAVASCRIPT, 'bs-pref-ApplicationContext' );
 		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-TestMode', 'toggle' );
 
 		BsConfig::set( 'MW::ApplicationContext', 'Wiki' );
@@ -323,19 +310,6 @@ class BsCore {
 			return $default;
 		}
 		return self::sanitize($array[$key], $default, $options);
-	}
-
-	/**
-	 * Build an json-object for Ext.tree with the given nodes.
-	 * @param array $nodes
-	 * @return string
-	 * @deprecated since version 1.22 Use ExtJSHelper class instead
-	 */
-	public static function buildTree($nodes) {
-		wfProfileIn('Performance: ' . __METHOD__);
-		$sTreeJSON = BsExtJSHelper::buildTree($nodes);
-		wfProfileOut('Performance: ' . __METHOD__);
-		return $sTreeJSON;
 	}
 
 	public static function doInitialise() {
@@ -530,7 +504,7 @@ class BsCore {
 		$oUserMiniProfileView->setOptions( $aParams );
 		$oUserMiniProfileView->setOption( 'user', $oUser );
 
-		wfRunHooks( 'BSAdapterGetUserMiniProfileBeforeInit', array( $oUserMiniProfileView, $oUser, $aParams ) );
+		wfRunHooks( 'BSCoreGetUserMiniProfileBeforeInit', array( &$oUserMiniProfileView, &$oUser, &$aParams ) );
 
 		$oUserMiniProfileView->init();
 
