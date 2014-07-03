@@ -36,7 +36,9 @@ $GLOBALS['wgAutoloadClasses']['BsXHRResponseStatus'] = __DIR__."/XHRBaseResponse
 $GLOBALS['wgAutoloadClasses']['BsCommonAJAXInterface'] = __DIR__."/CommonAJAXInterface.php";
 $GLOBALS['wgAutoloadClasses']['BsCAI'] = __DIR__."/CommonAJAXInterface.php";
 $GLOBALS['wgAutoloadClasses']['BsCAContext'] = __DIR__."/CAContext.php";
+$GLOBALS['wgAutoloadClasses']['BsCAIContext'] = __DIR__."/CAContext.php";
 $GLOBALS['wgAutoloadClasses']['BsCAResponse'] = __DIR__."/CAResponse.php";
+$GLOBALS['wgAutoloadClasses']['BsCAIResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams.php";
 
 //adapter
