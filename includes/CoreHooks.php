@@ -459,12 +459,13 @@ class BsCoreHooks {
 			return;
 		}
 
-		array_unshift( $template->data['bs_title_actions'], array(
-			'id' => 'filedownload',
+		$template->data['bs_title_actions'][5] = array(
+			'id' => 'bs-ta-filedownload',
 			'href' => $oFile->getFullUrl(),
 			'title' => $oFile->getName(),
-			'text' => wfMessage('bs-imagepage-download-text')->plain()
-		));
+			'text' => wfMessage('bs-imagepage-download-text')->plain(),
+			'class' => 'icon-download'
+		);
 	}
 
 	/**
@@ -486,7 +487,7 @@ class BsCoreHooks {
 
 		$oUserPageSettingsView = new ViewBaseElement();
 		$oUserPageSettingsView->setAutoWrap(
-			'<div id="bs-usersidebar-settings" class="bs-userpagesettings-item">'.
+			'<div id="bs-userpreferences-settings" class="bs-userpagesettings-item">'.
 				'###CONTENT###'.
 			'</div>'
 		);
@@ -512,17 +513,20 @@ class BsCoreHooks {
 
 		$oProfilePageSettingsView = new ViewBaseElement();
 		$oProfilePageSettingsView->setId('bs-userpagesettings');
+		$sLabel = wfMessage('bs-userpagesettings-legend')->plain();
 
 		$oProfilePageSettingsFieldsetView = new ViewFormElementFieldset();
-		$oProfilePageSettingsFieldsetView->setLabel(
-			wfMessage('bs-userpagesettings-legend')->plain()
-		);
+		$oProfilePageSettingsFieldsetView->setLabel( $sLabel );
 
 		foreach ( $aSettingViews as $oSettingsView ) {
 			$oProfilePageSettingsFieldsetView->addItem($oSettingsView);
 		}
 
 		$oProfilePageSettingsView->addItem( $oProfilePageSettingsFieldsetView );
-		$template->data['bs_dataAfterContent']['profilepagesettings'] = $oProfilePageSettingsView;
+		$template->data['bs_dataAfterContent']['profilepagesettings'] = array(
+			'position' => 5,
+			'label' => $sLabel,
+			'content' =>  $oProfilePageSettingsView
+		);
 	}
 }

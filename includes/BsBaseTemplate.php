@@ -180,6 +180,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$this->sortDataArrayByPosition($this->data['bs_dataAfterContent']);
 
 		$aDACList = array();
+		$aDACList[] = '<ul id="bs-data-after-content-tabs">';
 		$aDACContents = array();
 		foreach( $this->data['bs_dataAfterContent'] as $key => $item ) {
 			if ( $item instanceof ViewBaseElement ) {
@@ -210,10 +211,7 @@ class BsBaseTemplate extends BaseTemplate {
 				);
 			}
 		}
-		if ( RequestContext::getMain()->getTitle()->getNamespace() !== NS_USER ) {
-			array_unshift( $aDACList, '<ul id="bs-data-after-content-tabs">' );
-			$aDACList[] = '</ul>';
-		}
+		$aDACList[] = '</ul>';
 
 		$this->set(
 			'dataAfterContent',
