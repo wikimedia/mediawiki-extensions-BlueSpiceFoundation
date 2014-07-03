@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Максим Підліснюк",
-			"Base"
+			"Base",
+			"Ата"
 		]
 	},
 	"bs-extjs-ok": "Гаразд",
@@ -30,5 +31,12 @@
 	"bs-extjs-uploading": "Завантаження…",
 	"bs-extjs-confirmNavigationTitle": "Перейдіть за посиланням",
 	"bs-extjs-confirmNavigationText": "Ви дійсно хочете цим посиланням? Всі динамічні параметри, такі як фільтрація та сортування на поточній сторінці будуть втрачені.",
-	"bs-extjs-allns": "(всі)"
+	"bs-extjs-allns": "(всі)",
+	"bs-extjs-filters": "Фільтри",
+	"bs-extjs-filter-equals": "дорівнює",
+	"bs-extjs-filter-equals-not": "не дорівнює",
+	"bs-extjs-filter-contains": "містить",
+	"bs-extjs-filter-contains-not": "не містить",
+	"bs-extjs-filter-starts-with": "починається з",
+	"bs-extjs-filter-ends-with": "закінчується на"
 }
