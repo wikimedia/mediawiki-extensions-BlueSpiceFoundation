@@ -4,6 +4,8 @@
 			"McDutchie"
 		]
 	},
+	"bs-extjs-portal-config": "Configurar portlet:",
+	"bs-extjs-portal-title": "Titulo del portlet",
 	"bs-extjs-portal-height": "Altitude",
 	"bs-extjs-portal-count": "Entratas",
 	"bs-extjs-portal-timespan": "Durata",
