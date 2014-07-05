@@ -6,7 +6,8 @@
 			"Siebrand",
 			"Niknetniko",
 			"Mar(c)",
-			"Ribert"
+			"Ribert",
+			"McDutchie"
 		]
 	},
 	"bs-ns_main": "(Pagina's)",
@@ -35,14 +36,14 @@
 	"bs-email-footer": "Dit bericht is automatisch gegenereerd. Gelieve niet te antwoorden op deze e-mail.",
 	"bs-userpagesettings-legend": "Gebruikersinstellingen",
 	"bs-userpreferences-link-text": "Meer gebruikersinstellingen",
-	"bs-userpreferences-link-title": "Uw persoonlijke gebruikersinstellingen weergegevn",
+	"bs-userpreferences-link-title": "Uw persoonlijke gebruikersinstellingen weergegeven",
 	"bs-exception-view-heading": "Er is een fout opgetreden",
 	"bs-exception-view-text": "Tijdens het verwerken van uw verzoek is de volgende fout opgetreden:",
 	"bs-exception-view-admin-hint": "Neem contact op met uw systeembeheerder.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Foutdetails weergeven",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Foutdetails verbergen",
 	"bs-viewtagerrorlist-legend": "$1 - fout",
-	"bs-readonly": "De database is op het moment geblokkeerd voor nieuwe gegevens en andere bewerkingen, waarschijnlijk voor regulier databaseonderhoud. Na afronding wordt de functionaliteit hersteld.\n\nDe beheerder heeft de volgende reden opgegeven: $1",
+	"bs-readonly": "De database is op het moment geblokkeerd voor nieuwe gegevens en andere bewerkingen, waarschijnlijk voor regulier databaseonderhoud. Na afronding wordt de functionaliteit hersteld. De beheerder heeft de volgende reden opgegeven: $1",
 	"bs-imageofotheruser": "Het is u niet toegestaan om een afbeelding te uploaden voor een andere gebruiker.",
 	"bs-pref-sortalph": "Naamruimten alfabetisch sorteren",
 	"bs-permissionerror": "Fouten in rechten!",

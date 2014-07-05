@@ -22,7 +22,7 @@
 	"bs-hours-duration": "{{PLURAL:$1|цхьа сахьат|$1 сахьат}}",
 	"bs-mins-duration": "{{PLURAL:$1|цхьа минут|$1 минут}}",
 	"bs-secs-duration": "{{PLURAL:$1|цхьа секунд|$1 секунд}}",
-	"bs-two-units-ago": "$1 тӀакха $2 юха",
+	"bs-two-units-ago": "$1 а $2 а хьалха",
 	"bs-one-unit-ago": "$1 хьалха",
 	"bs-now": "хӀинца",
 	"bs-email-greeting-receiver": "Маршалла ду хьоьга, {{GENDER:$1|лараме $1|$1}}.",
