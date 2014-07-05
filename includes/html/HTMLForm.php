@@ -400,7 +400,7 @@ class HTMLForm {
 		global $wgUser;
 		$html = '';
 
-		$html .= Html::hidden('wpEditToken', $wgUser->editToken(), array('id' => 'wpEditToken')) . "\n";
+		$html .= Html::hidden('wpEditToken', $wgUser->getEditToken(), array('id' => 'wpEditToken')) . "\n";
 		$html .= Html::hidden('title', $this->getTitle()->getPrefixedText()) . "\n";
 
 		foreach ($this->mHiddenFields as $name => $value) {
