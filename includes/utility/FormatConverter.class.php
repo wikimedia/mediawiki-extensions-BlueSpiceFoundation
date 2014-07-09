@@ -155,26 +155,13 @@ class BsFormatConverter {
 		$iMins=floor($iDuration/60);$iSecs=$iDuration%60;
 
 
-		if ($iYears == 1) { $sYears = wfMsg( 'bs-year-duration', $iYears ); }
-		if ($iYears > 1) { $sYears = wfMsg( 'bs-years-duration', $iYears ); }
-		
-		if ($iMonths == 1) { $sMonths = wfMsg( 'bs-month-duration', $iMonths ); }
-		if ($iMonths > 1) { $sMonths = wfMsg( 'bs-months-duration', $iMonths ); }
-
-		if ($iWeeks == 1) { $sWeeks = wfMsg( 'bs-week-duration', $iWeeks ); }
-		if ($iWeeks > 1) { $sWeeks = wfMsg( 'bs-weeks-duration', $iWeeks ); }
-
-		if ($iDays == 1) { $sDays = wfMsg( 'bs-day-duration', $iDays ); }
-		if ($iDays > 1) { $sDays = wfMsg( 'bs-days-duration', $iDays ); }
-
-		if ($iHrs == 1) { $sHrs = wfMsg( 'bs-hour-duration', $iHrs ); }
-		if ($iHrs > 1) { $sHrs = wfMsg( 'bs-hours-duration', $iHrs ); }
-
-		if ($iMins == 1) { $sMins = wfMsg( 'bs-min-duration', $iMins ); }
-		if ($iMins > 1) { $sMins = wfMsg( 'bs-mins-duration', $iMins ); }
-
-		if ($iSecs == 1) { $sSecs = wfMsg( 'bs-sec-duration', $iSecs ); }
-		if ($iSecs > 1) { $sSecs = wfMsg( 'bs-secs-duration', $iSecs ); }
+		if ( $iYears > 0 ) $sYears = wfMessage( 'bs-years-duration', $iYears )->text();
+		if ( $iMonths > 0 ) $sMonths = wfMessage( 'bs-months-duration', $iMonths )->text();
+		if ( $iWeeks > 0 ) $sWeeks = wfMessage( 'bs-weeks-duration', $iWeeks )->text();
+		if ( $iDays > 0 ) $sDays = wfMessage( 'bs-days-duration', $iDays )->text();
+		if ( $iHrs > 0 ) $sHrs = wfMessage( 'bs-hours-duration', $iHrs )->text();
+		if ( $iMins > 0 ) $sMins = wfMessage( 'bs-mins-duration', $iMins )->text();
+		if ( $iSecs > 0 ) $sSecs =wfMessage( 'bs-secs-duration', $iSecs )->text();
 
 		if ($iYears > 0) $sDateTimeOut = $sMonths ? wfMsg( 'bs-two-units-ago', $sYears, $sMonths ) : wfMsg( 'bs-one-unit-ago', $sYears );
 		else if ($iMonths > 0) $sDateTimeOut = $sWeeks ? wfMsg( 'bs-two-units-ago', $sMonths, $sWeeks ) : wfMsg( 'bs-one-unit-ago', $sMonths );

@@ -18,8 +18,11 @@ Ext.define( 'BS.CRUDPanel', {
 	hideBorder: true,
 	tbarHeight: 44,
 
-	//Custom Settings
-	currentData: {},
+	constructor: function() {
+		//Custom Settings
+		this.currentData = {};
+		this.callParent(arguments);
+	},
 
 	initComponent: function() {
 		this.btnAdd = Ext.create( 'Ext.Button', {
@@ -59,11 +62,7 @@ Ext.define( 'BS.CRUDPanel', {
 				backgroundColor: '#FFFFFF',
 				backgroundImage: 'none'
 			},
-			items: [
-				this.btnAdd,
-				this.btnEdit,
-				this.btnRemove
-			]
+			items: this.makeTbarItems()
 		});
 
 		this.addEvents( 'button-add','button-edit','button-delete' );
@@ -71,6 +70,14 @@ Ext.define( 'BS.CRUDPanel', {
 		this.afterInitComponent( arguments );
 
 		this.callParent(arguments);
+	},
+	
+	makeTbarItems: function() {
+		return [
+			this.btnAdd,
+			this.btnEdit,
+			this.btnRemove
+		];
 	},
 
 	afterInitComponent: function( arguments ) {

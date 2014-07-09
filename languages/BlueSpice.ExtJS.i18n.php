@@ -9,6 +9,9 @@ $messages['en'] = array(
 	'bs-extjs-no' => 'No',
 	'bs-extjs-save' => 'Save',
 	'bs-extjs-delete' => 'Delete',
+	'bs-extjs-add' => 'Add',
+	'bs-extjs-remove' => 'Remove',
+	'bs-extjs-edit' => 'Edit',
 	'bs-extjs-hint' => 'Hint',
 	'bs-extjs-error' => 'Error',
 	'bs-extjs-confirm' => 'Confirm',
@@ -20,14 +23,60 @@ $messages['en'] = array(
 	'bs-extjs-reset' => 'Reset',
 	'bs-extjs-close' => 'Close',
 	'bs-extjs-label-user' => 'User',
-    'bs-extjs-upload' => 'Upload',
-    'bs-extjs-browse' => 'Browse',
-    'bs-extjs-uploading' => 'Uploading...',
-	'bs-extjs-labelUpload' => '',
-	
+	'bs-extjs-upload' => 'Upload',
+	'bs-extjs-browse' => 'Browse',
+	'bs-extjs-uploading' => 'Uploading...',
+
 	'bs-extjs-confirmNavigationTitle'=> 'Follow link',
 	'bs-extjs-confirmNavigationText'=> 'Do you really want to follow this link? All dynamic settings, like filtering or sorting, on the current page will get lost.',
-	'bs-extjs-allns'                    => '(all)'
+	'bs-extjs-allns' => '(all)',
+	'bs-extjs-namespace' => 'Namespace',
+
+	'bs-extjs-filters' => 'Filters',
+	'bs-extjs-filter-equals' => 'Equals',
+	'bs-extjs-filter-equals-not' => 'Equals not',
+	'bs-extjs-filter-contains' => 'Contains',
+	'bs-extjs-filter-contains-not' => 'Contains not',
+	'bs-extjs-filter-starts-with' => 'Starts with',
+	'bs-extjs-filter-ends-with' => 'Ends with'
+);
+
+$messages['qqq'] = array(
+	'bs-extjs-ok' => 'Label for submit button used in dialogues, alerts and prompts',
+	'bs-extjs-cancel' => 'Label for cancel button used in dialogues, alerts and prompts',
+	'bs-extjs-yes' => 'Label for accept button used in dialogues, alerts and prompts',
+	'bs-extjs-no' => 'Label for reject button used in dialogues, alerts and prompts',
+	'bs-extjs-save' => 'Label for save button used in dialogues, alerts and prompts',
+	'bs-extjs-delete' => 'Label for delete button used in dialogues, alerts and prompts',
+//unused	'bs-extjs-add' => 'Label for add button used in dialogues, alerts and prompts',
+//unused	'bs-extjs-remove' => 'Label for remove button used in dialogues, alerts and prompts',
+	'bs-extjs-hint' => 'Title for hint prompts',
+	'bs-extjs-error' => 'Title for error prompts',
+	'bs-extjs-confirm' => 'Title for confirm prompts',
+	'bs-extjs-loading' => 'Label for elements that are shown when waiting for ajax data',
+	'bs-extjs-pageSize' => 'Label for the input box that changes the number of lines in a grid',
+	'bs-extjs-actions-column-header' => 'Label for the grid cloumn that shows the action buttons',
+	'bs-extjs-warning' => 'Title for warning prompts',
+	'bs-extjs-saving' => 'Label for elements that are shown when saving data from a dialogue via ajax',
+	'bs-extjs-reset' => 'Label for reset button used in dialogues, alerts and prompts',
+	'bs-extjs-close' => 'Label for close button used in dialogues, alerts and prompts',
+	'bs-extjs-label-user' => 'Label for combo boxes that select users',
+	'bs-extjs-upload' => 'Label for upload button used in dialogues, alerts and prompts',
+	'bs-extjs-browse' => 'Label for browse button used in dialogues, alerts and prompts',
+	'bs-extjs-uploading' => 'Label for elements that are shown when uploading files from a dialogue',
+
+	'bs-extjs-confirmNavigationTitle'=> 'Title for prompt that warns you if you want to follow a link but have unsaved changes',
+	'bs-extjs-confirmNavigationText'=> 'Text for prompt that warns you if you want to follow a link but have unsaved changes',
+	'bs-extjs-allns' => 'Selector for all namespaces in namespace combo boxes',
+	'bs-extjs-namespace' => 'Label/Text for namespace field',
+
+	'bs-extjs-filters' => 'Label for menu entry in grid filter menu.',
+	'bs-extjs-filter-equals' => 'Label for a filter input box that fitlers for datasets where the value of the field equals to the entered value',
+	'bs-extjs-filter-equals-not' => 'Label for a filter input box that fitlers for datasets where the value of the field is not equal to the entered value',
+	'bs-extjs-filter-contains' => 'Label for a filter input box that fitlers for datasets where the value of the field contains the entered value',
+	'bs-extjs-filter-contains-not' => 'Label for a filter input box that fitlers for datasets where the value of the field does not contain the entered value',
+	'bs-extjs-filter-starts-with' => 'Label for a filter input box that fitlers for datasets where the value of the field starts with the entered value',
+	'bs-extjs-filter-ends-with' => 'Label for a filter input box that fitlers for datasets where the value of the field ends with the entered value'
 );
 
 $messages['de'] = array(
@@ -37,6 +86,9 @@ $messages['de'] = array(
 	'bs-extjs-no' => 'Nein',
 	'bs-extjs-save' => 'Speichern',
 	'bs-extjs-delete' => 'Löschen',
+	'bs-extjs-add' => 'Hinzufügen',
+	'bs-extjs-remove' => 'Entfernen',
+	'bs-extjs-edit' => 'Bearbeiten',
 	'bs-extjs-hint' => 'Hinweis',
 	'bs-extjs-error' => 'Fehler',
 	'bs-extjs-confirm' => 'Bestätigen',
@@ -48,13 +100,22 @@ $messages['de'] = array(
 	'bs-extjs-reset' => 'Zurücksetzen',
 	'bs-extjs-close' => 'Schließen',
 	'bs-extjs-label-user' => 'Benutzer',
-    'bs-extjs-upload' => 'Hochladen',
-    'bs-extjs-browse'=>'Durchsuchen',
-    'bs-extjs-uploading' => 'Lädt hoch...',
-	
+	'bs-extjs-upload' => 'Hochladen',
+	'bs-extjs-browse'=>'Durchsuchen',
+	'bs-extjs-uploading' => 'Lädt hoch...',
+
 	'bs-extjs-confirmNavigationTitle'=> 'Dem Link folgen',
 	'bs-extjs-confirmNavigationText'=> 'Möchtest du wirklich diesem Link folgen? Alle dynamischen Einstellungen, wie Filter und Sortierung, auf dieser Seite gehen dabei verloren.',
-	'bs-extjs-allns'                    => '(alle)'
+	'bs-extjs-allns' => '(alle)',
+	'bs-extjs-namespace' => 'Namensraum',
+
+	'bs-extjs-filters' => 'Filter',
+	'bs-extjs-filter-equals' => 'Gleich',
+	'bs-extjs-filter-equals-not' => 'Ungleich',
+	'bs-extjs-filter-contains' => 'Enthält',
+	'bs-extjs-filter-contains-not' => 'Enthält nicht',
+	'bs-extjs-filter-starts-with' => 'Beginnt mit',
+	'bs-extjs-filter-ends-with' => 'Endet mit'
 );
 
 $messages['de-formal'] = array(

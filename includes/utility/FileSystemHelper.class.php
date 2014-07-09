@@ -138,7 +138,7 @@ class BsFileSystemHelper {
 	 * @return string URL 
 	 */
 	public static function getDataPath($sSubDirName = '') {
-		$sDataPath = ( $sSubDirName ) ? BS_DATA_PATH . DS . $sSubDirName : BS_DATA_PATH;
+		$sDataPath = ( $sSubDirName ) ? BS_DATA_PATH . '/' . $sSubDirName : BS_DATA_PATH;
 		return $sDataPath;
 	}
 
@@ -232,6 +232,35 @@ class BsFileSystemHelper {
 			return Status::newFatal(wfMessage("bs-filesystemhelper-file-copy-error", $sFileName)->plain());
 	}
 
+	public static function copyFolder($sFolderName, $sSource, $sDestination, $bOverwrite = true) {
+		if (self::hasTraversal($sSource . DS . $sFolderName) || self::hasTraversal($sDestination . DS . $sFolderName))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
+		if (!is_dir(BS_DATA_DIR . DS . $sSource))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sSource)->plain());
+		if (!is_dir(BS_DATA_DIR . DS . $sDestination))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sDestination)->plain());
+		if (!file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFolderName))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-folder-not-exists", $sFolderName)->plain());
+		if (file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFolderName) && !$bOverwrite)
+			return Status::newFatal(wfMessage("bs-filesystemhelper-folder-already-exists", $sFolderName)->plain());
+		$it = new RecursiveDirectoryIterator(BS_DATA_DIR . DS . $sSource . DS . $sFolderName);
+		BsFileSystemHelper::ensureDataDirectory($sDestination . DS . $sFolderName);
+		$files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
+		foreach ($files as $file) {
+			if ($file->getFilename() === '.' || $file->getFilename() === '..') {
+				continue;
+			}
+			if ($file->isDir())
+				mkdir($file->getRealPath(), 0777);
+			if ($file->isFile()) {
+				$bStatus = copy(BS_DATA_DIR . DS . $sSource . DS . $sFolderName . DS . $file->getFileName(), BS_DATA_DIR . DS . $sDestination . DS . $sFolderName . DS . $file->getFileName());
+				if (!$bStatus)
+					return Status::newFatal(wfMessage("bs-filesystemhelper-folder-copy-error", $file->getFileName())->plain());
+			}
+		}
+		return Status::newGood();
+	}
+
 	/**
 	 * Rename a folder
 	 * @param String $sSource
@@ -272,7 +301,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 * Deletes a folder with all it's content
+	 * Deletes a folder with all its content
 	 * @param String $sDir
 	 * @return Status good on success, otherwise fatal with message
 	 */
@@ -318,7 +347,7 @@ class BsFileSystemHelper {
 		$oUploadFromFile->initialize($wgRequest->getVal('name'), $oWebRequestUpload);
 		$aStatus = $oUploadFromFile->verifyUpload();
 		if ($aStatus['status'] != 0) {
-			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', $aStatus['status'])->plain());
+			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
 		}
 		$sRemoteFileName = $oWebRequestUpload->getName();
 		$sRemoteFileExt = pathinfo($sRemoteFileName, PATHINFO_EXTENSION);
@@ -338,11 +367,83 @@ class BsFileSystemHelper {
 	}
 
 	/**
+	 * Converts uploaded image to PNG
+	 * @global type $wgRequest
+	 * @param type $sName
+	 * @param type $sDir
+	 * @param type $sFileName
+	 * @return type
+	 */
+	public static function uploadAndConvertImage($sName, $sDir, $sFileName = '') {
+		global $wgRequest;
+		$oWebRequest = new WebRequest();
+		$oWebRequestUpload = $oWebRequest->getUpload($sName);
+		$oUploadFromFile = new UploadFromFile();
+		$oUploadFromFile->initialize($wgRequest->getVal('name'), $oWebRequestUpload);
+		$aStatus = $oUploadFromFile->verifyUpload();
+
+		if ($aStatus['status'] != 0) {
+			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
+		}
+
+		$sRemoteFileName = $oWebRequestUpload->getName();
+		/*
+		  $sRemoteFileExt = pathinfo($sRemoteFileName, PATHINFO_EXTENSION);
+		  if ($sRequiredExtension && strtolower($sRemoteFileExt) != strtolower($sRequiredExtension)) {
+		  return Status::newFatal(wfMessage('bs-filesystemhelper-upload-wrong-ext', $sRequiredExtension));
+		  }
+		 */
+
+		$oStatus = self::ensureDataDirectory($sDir);
+		if (!$oStatus->isGood())
+			return $oStatus;
+
+		$sTmpName = BS_DATA_DIR . DS . $sDir . DS;
+		$sTmpName .= ($sFileName) ? $sFileName : $sRemoteFileName;
+		if (self::hasTraversal($sTmpName, true))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
+		$sUploadPath = $oWebRequestUpload->getTempName();
+		list($iWidth, $iHeight, $iType) = getimagesize($sUploadPath);
+		switch ($iType) {
+			case IMAGETYPE_GIF:
+				$rImage = imagecreatefromgif($sUploadPath);
+				break;
+			case IMAGETYPE_JPEG:
+				$rImage = imagecreatefromjpeg($sUploadPath);
+				break;
+			case IMAGETYPE_PNG:
+				$rImage = imagecreatefrompng($sUploadPath);
+				break;
+			default:
+				return Status::newFatal(wfMessage('bs-filesystemhelper-upload-unsupported-type')->plain());
+		}
+
+		$iNewWidth = $iNewHeight = BsConfig::get('MW::Avatars::DefaultSize');
+		$fRatio = $iWidth / $iHeight;
+		if ($fRatio < 1) {
+			$iNewWidth = $iNewHeight * $fRatio; # portrait
+		} else {
+			$iNewHeight = $iNewWidth / $fRatio; # landscape
+		}
+		$rNewImage = imagecreatetruecolor($iNewWidth, $iNewHeight);
+		imagealphablending($rNewImage, false);
+		imagesavealpha($rNewImage,true);
+		$iTransparent = imagecolorallocatealpha($rNewImage, 255, 255, 255, 127);
+		imagefilledrectangle($rNewImage, 0, 0, $iNewWidth, $iNewHeight, $iTransparent);
+		imagecopyresampled($rNewImage, $rImage, 0, 0, 0, 0, $iNewWidth, $iNewHeight, $iWidth, $iHeight);
+		imagepng($rNewImage, $sTmpName);
+		imagedestroy($rNewImage);
+
+		#move_uploaded_file($oWebRequestUpload->getTempName(), $sTmpName);
+		return Status::newGood($oWebRequestUpload->getName());
+	}
+
+	/**
 	 * Do a proper traversal check if $sPath exists, a string check otherwise
 	 * @param string $sPath Filepath
 	 * @return bool
 	 */
-	public static function hasTraversal($sPath, $bIsAbsolute=false) {
+	public static function hasTraversal($sPath, $bIsAbsolute = false) {
 		if (!$sPath)
 			return true; // BS_DATA_DIR without trailing DS. Bail out.
 		$sCheckPath = ($bIsAbsolute ? '' : BS_DATA_DIR . DS) . $sPath;
@@ -381,4 +482,46 @@ class BsFileSystemHelper {
 		return $path;
 	}
 
+	public static function saveBase64ToTmp($sFileName, $sFileContent){
+		$sFileName = wfTempDir() . DS . basename($sFileName);
+		
+		$sFileContent = preg_replace("#^data:.*?;base64,#", "", $sFileContent);
+		$sFileContent = str_replace(' ', '+', $sFileContent);
+		$sFileContent = base64_decode($sFileContent);
+		$bFile = file_put_contents($sFileName, $sFileContent);
+		if ($bFile === 0 || $bFile === false)
+			return Status::newFatal(wfMessage('bs-filesystemhelper-save-base64-error')->plain());
+		else
+			return Status::newGood($sFileName);
+	}
+	
+	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false){
+		global $wgLocalFileRepo, $wgUser;
+		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo));
+		$oFile = $oUploadStash->stashFile($sFilename, "file");
+		if ($oFile === false)
+			return Status::newFailure(wfMessage('bs-filesystemhelper-upload-local-error-stash-file')->plain());
+		$oUploadFromStash = new UploadFromStash($wgUser, $oUploadStash, $wgLocalFileRepo);
+		$oUploadFromStash->initialize($oFile->getFileKey(), basename($sFilename));
+		$aStatus = $oUploadFromStash->verifyUpload();
+		if ($aStatus['status'] != UploadBase::OK) {
+			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
+		}
+		$status = $oUploadFromStash->performUpload($sComment, $sPageText, $bWatch, $wgUser);
+		$oUploadFromStash->cleanupTempFile();
+		
+		if (file_exists($sFilename) && $bDeleteSrc)
+			unlink($sFilename);
+		$oFile = wfFindFile(basename($sFilename));
+		if ($status->isGood() && $oFile !== false){
+			if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
+				return Status::newGood(SecureFileStore::secureStuff($oFile->getUrl(), true));
+			}
+			else
+				return Status::newGood($oFile->getUrl(), true);
+		}
+		else
+			return Status::newFatal (wfMessage('bs-filesystemhelper-upload-local-error-create')->plain());
+	}
+	
 }

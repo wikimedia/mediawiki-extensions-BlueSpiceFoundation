@@ -9,6 +9,7 @@
 	function _prepareSimpleDialogWindowCfg(idPrefix, cfg) {
 		cfg = cfg || {};
 		return Ext.applyIf(cfg, {
+			id : idPrefix,
 			idPrefix: idPrefix,
 			title: 'SimpleDialog',
 			text: 'SimpleDialog Text'
@@ -38,7 +39,7 @@
 			return alerts[idPrefix];
 		
 		if(!windowCfg.title && !windowCfg.titleMsg ) {
-			windowCfg.titleMsg = 'bs-extjs-hint'
+			windowCfg.titleMsg = 'bs-extjs-hint';
 		}
 
 		windowCfg = _prepareSimpleDialogWindowCfg(idPrefix, windowCfg);
@@ -46,7 +47,7 @@
 
 		var alertWindow = Ext.create('BS.AlertDialog', windowCfg);
 		alertWindow.on('close', function() {
-			alerts[idPrefix] = undefined
+			alerts[idPrefix] = undefined;
 		}, this);
 		alertWindow.on('ok', callbackCfg.ok, callbackCfg.scope);
 		alertWindow.show();
@@ -60,7 +61,7 @@
 			return confirms[idPrefix];
 		
 		if(!windowCfg.title && !windowCfg.titleMsg ) {
-			windowCfg.titleMsg = 'bs-extjs-confirm'
+			windowCfg.titleMsg = 'bs-extjs-confirm';
 		}
 
 		windowCfg = _prepareSimpleDialogWindowCfg(idPrefix, windowCfg);
@@ -68,7 +69,7 @@
 
 		var confirmWindow = Ext.create('BS.ConfirmDialog', windowCfg);
 		confirmWindow.on('close', function() {
-			confirms[idPrefix] = undefined
+			confirms[idPrefix] = undefined;
 		}, this);
 		confirmWindow.on('ok', callbackCfg.ok, callbackCfg.scope);
 		confirmWindow.on('cancel', callbackCfg.cancel, callbackCfg.scope);
@@ -87,7 +88,7 @@
 
 		var promptWindow = Ext.create('BS.PromptDialog', windowCfg);
 		promptWindow.on('close', function() {
-			prompts[idPrefix] = undefined
+			prompts[idPrefix] = undefined;
 		}, this);
 		promptWindow.on('ok', callbackCfg.ok, callbackCfg.scope);
 		promptWindow.on('cancel', callbackCfg.cancel, callbackCfg.scope);
@@ -141,7 +142,7 @@
 		var params = {
 			'action': 'ajax',
 			'rs': rs
-		}
+		};
 		if (rsargs) {
 			params.rsargs = rsargs;
 		}
@@ -219,7 +220,7 @@
 				range.text = 'bs_selection';
 
 				_origText = _textbox.value.replace(/\r\n/g, "\n");
-				_startPos = origText.indexOf('bs_selection');
+				_startPos = _origText.indexOf('bs_selection');
 				_textbox.value = tempText;
 			} else {
 				_startPos = _textbox.selectionStart;
@@ -303,36 +304,22 @@
 		var iMins=Math.floor(iDuration/60);
 		var iSecs=iDuration%60;
 
-		//TODO: User mw.message() and user PLURAL-Features of jQueryMsg
-		if (iYears == 1) { sYears = mw.msg('bs-year-duration', iYears); }
-		if (iYears > 1) { sYears = mw.msg('bs-years-duration', iYears); }
-		
-		if (iMonths == 1) { sMonths = mw.msg('bs-month-duration', iMonths); }
-		if (iMonths > 1) { sMonths = mw.msg('bs-months-duration', iMonths); }
+		if ( iYears > 0 ) sYears = mw.message( 'bs-years-duration', iYears ).text();
+		if ( iMonths > 0 ) sMonths = mw.message('bs-months-duration', iMonths).text();
+		if ( iWeeks > 0 ) sWeeks = mw.message('bs-weeks-duration', iWeeks).text();
+		if ( iDays > 0 ) sDays = mw.message('bs-days-duration', iDays).text();
+		if ( iHrs > 0 ) sHrs = mw.message('bs-hours-duration', iHrs).text();
+		if ( iMins > 0 ) sMins = mw.message('bs-mins-duration', iMins).text();
+		if ( iSecs > 0 ) sSecs = mw.message('bs-secs-duration', iSecs).text();
 
-		if (iWeeks == 1) { sWeeks = mw.msg('bs-week-duration', iWeeks); }
-		if (iWeeks > 1) { sWeeks = mw.msg('bs-weeks-duration', iWeeks); }
-
-		if (iDays == 1) { sDays = mw.msg('bs-day-duration', iDays); }
-		if (iDays > 1) { sDays = mw.msg('bs-days-duration', iDays); }
-
-		if (iHrs == 1) { sHrs = mw.msg('bs-hour-duration', iHrs); }
-		if (iHrs > 1) { sHrs = mw.msg('bs-hours-duration', iHrs); }
-
-		if (iMins == 1) { sMins = mw.msg('bs-min-duration', iMins); }
-		if (iMins > 1) { sMins = mw.msg('bs-mins-duration', iMins); }
-
-		if (iSecs == 1) { sSecs = mw.msg('bs-sec-duration', iSecs); }
-		if (iSecs > 1) { sSecs = mw.msg('bs-secs-duration', iSecs); }
-
-		if (iYears > 0) sDateTimeOut = sMonths ? mw.msg( 'bs-two-units-ago', sYears, sMonths) : mw.msg( 'bs-one-unit-ago', sYears);
-		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.msg( 'bs-two-units-ago', sMonths, sWeeks) : mw.msg( 'bs-one-unit-ago', sMonths);
-		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.msg( 'bs-two-units-ago', sWeeks ,sDays) : mw.msg( 'bs-one-unit-ago', sWeeks)
-		else if (iDays > 0) sDateTimeOut = sHrs ? mw.msg( 'bs-two-units-ago', sDays, sHrs) : mw.msg( 'bs-one-unit-ago', sDays);
-		else if (iHrs > 0) sDateTimeOut = sMins ? mw.msg( 'bs-two-units-ago', sHrs, sMins) : mw.msg( 'bs-one-unit-ago', sHrs);
-		else if (iMins > 0) sDateTimeOut = sSecs ? mw.msg( 'bs-two-units-ago', sMins, sSecs) : mw.msg( 'bs-one-unit-ago', sMins);
-		else if (iSecs > 0) sDateTimeOut = mw.msg( 'bs-one-unit-ago', sSecs);
-		else if (iSecs == 0) sDateTimeOut = mw.msg( 'bs-now' );
+		if (iYears > 0) sDateTimeOut = sMonths ? mw.message( 'bs-two-units-ago', sYears, sMonths).text() : mw.message( 'bs-one-unit-ago', sYears).text();
+		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.message( 'bs-two-units-ago', sMonths, sWeeks).text() : mw.message( 'bs-one-unit-ago', sMonths).text();
+		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.message( 'bs-two-units-ago', sWeeks ,sDays).text() : mw.message( 'bs-one-unit-ago', sWeeks).text();
+		else if (iDays > 0) sDateTimeOut = sHrs ? mw.message( 'bs-two-units-ago', sDays, sHrs).text() : mw.message( 'bs-one-unit-ago', sDays).text();
+		else if (iHrs > 0) sDateTimeOut = sMins ? mw.message( 'bs-two-units-ago', sHrs, sMins).text() : mw.message( 'bs-one-unit-ago', sHrs).text();
+		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).text() : mw.message( 'bs-one-unit-ago', sMins).text();
+		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).text();
+		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).text();
 		
 		return sDateTimeOut;
 	}
@@ -403,6 +390,116 @@
 		}
 		return data;
 	}
+	
+	var _tempAnchor = null;
+	/**
+	 * Gets all GET parameters from an url.
+	 * @param {Mixed} param [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
+	 * @return {Object}
+	 */
+	function _getUrlParams( param ) {
+		// Handle getUrlParams(), getUrlParams(""), getUrlParams(null) 
+		// or getUrlParams(undefined) calls
+		if ( !param ) {
+			return _getUrlParams( window.location );
+		}
+
+		// Handle BlueSpice::getUrlParams(Anchor DOMElement)
+		if ( param.nodeType ) {
+			return _getUrlParams( param );
+		}
+
+		// Handle string urls
+		if ( typeof param === "string" ) {
+			_tempAnchor = document.createElement( 'a' );
+			_tempAnchor.href = param;
+			return __getUrlParams( _tempAnchor );
+		}
+
+		return {};
+	};
+
+	// TODO RBV (31.07.12 15:11): Check for full browser compatibility as the location-Object has no official standard.
+	function __getUrlParams( loc ) {
+		var oKeyValuePairs = {};
+		if(loc.search === '') return oKeyValuePairs;
+		var sParams = loc.search.substr(1);
+		var aParams = sParams.split('&');
+
+		for ( var i = 0; i < aParams.length; i++ ) {
+			var aKeyValuePair = aParams[i].split('=');
+			var key   = decodeURIComponent( aKeyValuePair[0] );
+			var value = decodeURIComponent( aKeyValuePair[1] ); //With "?param1=val1&param2" oKeyValuePairs['param2'] will be "undefined". That's okay, but can be discussed.
+			oKeyValuePairs[key] = value;
+		}
+		return oKeyValuePairs;
+	};
+
+	/**
+	 * Gets a GET parameter from an url.
+	 * @param {String} sParamName The requested parameters name
+	 * @param {String} sDefaultValue [optional] A default value if the param is not available. Default ist an empty string.
+	 * @param {Mixed} url [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
+	 * @return {String} The parameters value or the default value if parameter not set.
+	 */
+	function _getUrlParam( sParamName, sDefaultValue, url ) {
+		var sValue = sDefaultValue || '';
+		var oParams = _getUrlParams( url );
+
+		for( var key in oParams ) {
+			if( key == sParamName ) sValue = oParams[key];
+		}
+		return sValue;
+	};
+
+	/**
+	 * Shows an input dialog and adds provided value to an ExtJS MulitSelect field
+	 * @param {object} oSrc The ExtJS MulitSelect field
+	 * @return {Void}
+	 */
+	function _addEntryToMultiSelect( oSrc ) {
+		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring(2);
+		var sTitle = oSrc.getAttribute( 'title' );
+		var sMessage = oSrc.getAttribute( 'msg' );
+		Ext.Msg.prompt( sTitle, sMessage, function( btn, text ){
+			if ( btn == 'ok' ){
+				var oSelect = document.getElementById( 'mw-input-' + sFieldName );
+				if(oSelect == null) {
+					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
+				}
+
+				oSelect.options[oSelect.options.length] = new Option( text, text, false, false );
+			}
+		});
+	};
+
+	/**
+	 * Removes an entry from an ExtJS MulitSelect field
+	 * @param {object} oSrc The ExtJS MulitSelect field
+	 * @return {Void}
+	 */
+	function _deleteEntryFromMultiSelect( oSrc ) {
+		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring(2);
+		var elSel = document.getElementById( 'mw-input-' + sFieldName );
+		if( elSel == null ) {
+			elSel = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
+		}
+		var i;
+		for ( i = elSel.length - 1; i>=0; i-- ) {
+			if ( elSel.options[i].selected ) {
+				elSel.remove(i);
+			}
+		}
+	};
+	
+	function _wikiGetlink( params, str ) {
+		var pageName = str || mw.config.get( 'wgPageName' );
+		var params = params || {};
+		params.title = pageName;
+		
+		var url = mw.util.wikiScript() + '?' + $.param(params);
+		return url;
+	};
 
 	var util = {
 		getNamespaceText: _getNamespaceText,
@@ -419,9 +516,16 @@
 		makeDataAttributeObject: _makeDataAttributeObject,
 		unprefixDataAttributeObject: _unprefixDataAttributeObject,
 		makeAttributeObject: _makeAttributeObject,
-		selection: new _selection()
+		selection: new _selection(),
+		getUrlParam: _getUrlParam,
+		getUrlParams: _getUrlParams,
+		addEntryToMultiSelect: _addEntryToMultiSelect,
+		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect,
+		wikiGetlink: _wikiGetlink
 	};
 
+	//This allows us to have a confirm dialog be displayed 
+	//by just adding a class to a link
 	$(document).on('click', 'a.bs-confirm-nav', function(e) {
 		e.preventDefault();
 
@@ -440,18 +544,6 @@
 			util.selection.autoSelection = '';
 		});
 	}
-	
-	//TODO: Find better place for this.
-	$( '.multiselectsortlist' ).sortable( {
-		update: function( event, ui ) { 
-			$( this ).next().children().remove(); //Remove all "option" tags from the hidden "select" element
-			$( this ).children().each( function( index, element ) {
-				$( this ).parent().next() //The "select" element
-				.append( '<option selected="selected" value="' + $(this).attr( 'data-value' ) + '">' + $(this).html() + '</option>' );
-				//We have to use .attr( 'data-value' ) instead of .data('value' ) because of some jQuery version issues. Maybe correct this in future versions.
-			});
-		}
-	});
 
 	bs.util = util;
 

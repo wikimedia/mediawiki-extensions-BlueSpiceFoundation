@@ -110,7 +110,7 @@ class BsWidgetListHelper {
 
 				if ( $oCurrentWidgetView !== null ) {
 					$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-							$oCore->parseWikiText($oCustomListView->execute())
+							$oCore->parseWikiText( $oCustomListView->execute(), RequestContext::getMain()->getTitle() )
 					);
 					$oCurrentWidgetView = null;
 				}
@@ -122,7 +122,7 @@ class BsWidgetListHelper {
 			if ( $iDepth == 1 ) {
 				if ($oCurrentWidgetView !== null) {
 					$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-							$oCore->parseWikiText($oCustomListView->execute())
+							$oCore->parseWikiText( $oCustomListView->execute(), RequestContext::getMain()->getTitle() )
 					);
 					$oCurrentWidgetView = null;
 				}
@@ -156,7 +156,7 @@ class BsWidgetListHelper {
 		}
 		if ($oCurrentWidgetView !== null) { // TODO RBV (23.02.11 14:45): This is just a workaround. At given time: review logic!
 			$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-					$oCore->parseWikiText($oCustomListView->execute())
+					$oCore->parseWikiText( $oCustomListView->execute(), RequestContext::getMain()->getTitle() )
 			);
 		}
 

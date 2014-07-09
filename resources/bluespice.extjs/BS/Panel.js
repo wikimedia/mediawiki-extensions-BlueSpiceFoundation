@@ -6,8 +6,11 @@ Ext.define( 'BS.Panel', {
 	},
 	bodyPadding:5,
 
-	//Custom Setting
-	currentData: {},
+	constructor: function() {
+		//Custom Settings
+		this.currentData = {};
+		this.callParent(arguments);
+	},
 	
 	initComponent: function() {
 		

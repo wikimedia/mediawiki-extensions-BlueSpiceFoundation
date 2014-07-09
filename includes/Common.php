@@ -324,6 +324,7 @@ class EXTINFO {
 	const STATUS      = 4;
 	const DEPS        = 5;
 	const URL         = 6;
+	const PACKAGE     = 7;
 }
 
 // TODO MRG20100810: Die Typen sind eigentlich Mediawiki-spezifisch. Ebenso die Actions weiter oben.

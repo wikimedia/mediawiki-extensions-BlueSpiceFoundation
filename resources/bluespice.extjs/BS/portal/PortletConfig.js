@@ -1,14 +1,15 @@
 Ext.define('BS.portal.PortletConfig', {
 	extend: 'BS.Window',
 	modal: true,
+	defaults: {
+		labelAlign: 'right'
+	},
+	
 
 	//Custom Settings
 	portletToConfig: null,
 	showItemCount: false,
 	showTimeSpan: false,
-	defaults: {
-		labelAlign: 'right'
-	},
 
 	afterInitComponent: function() {
 		this.tfTitle = Ext.create( 'Ext.form.TextField',{
@@ -28,8 +29,9 @@ Ext.define('BS.portal.PortletConfig', {
 		this.strTime = Ext.create( 'Ext.data.Store', {
 			fields: [ 'time', 'label' ],
 			data: [
-				{ 'time': 'month', 'label': mw.message( 'bs-extjs-portal-timespan-month' ).plain() },
-				{ 'time': 'alltime', 'label': mw.message( 'bs-extjs-portal-timespan-alltime' ).plain() }
+				{ 'time': 7, 'label': mw.message( 'bs-extjs-portal-timespan-week' ).plain() },
+				{ 'time': 30, 'label': mw.message( 'bs-extjs-portal-timespan-month' ).plain() },
+				{ 'time': 0, 'label': mw.message( 'bs-extjs-portal-timespan-alltime' ).plain() }
 			]
 		});
 		this.cbTimeSpan = Ext.create( 'Ext.form.ComboBox',{

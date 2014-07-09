@@ -46,21 +46,14 @@ class BsConfig {
 	 * configuration level = hardcodet or file
 	 */
 	const LEVEL_PRIVATE = 1;
-
 	/**
 	 * configuration level = systemwide (configurable and saved in the database)
 	 */
 	const LEVEL_PUBLIC = 2;
-
 	/**
 	 * configuration level = userspecific (configurable and saved in the database)
 	 */
 	const LEVEL_USER = 4;
-
-	/**
-	 * configuration level = managed by the adapter and the specific system
-	 */
-	const LEVEL_ADAPTER = 8; // implemented by adapter
 	/**
 	 * the variable should be rendered as a javascript variable
 	 */
@@ -69,12 +62,11 @@ class BsConfig {
 	 * configuration for LEVEL_USER if only user specified without default value
 	 */
 	const NO_DEFAULT = 262144;
-
 	/**
 	 * the variable will be set write protected and cannot be changed in this instance
 	 */
 	const SET_WRITE_PROTECTED = 32768;
-	
+
 	// TODO MRG20100810: Diese Typen sollten mit denen aus BsCommon vereinheitlicht werden.
 	const TYPE_BOOL = 32;
 
@@ -122,7 +114,7 @@ class BsConfig {
 	 * @var array
 	 */
 	protected static $prRegisterJavascript = array ();
-	
+
 	// TODO MRG20100810: was ist mit path gemeint? bitte im kommentar erklÃ¤ren und ggf. besser benennen.
 	/**
 	 * Use this method to register a configurable variable.
@@ -131,18 +123,17 @@ class BsConfig {
 	 *        	The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
 	 * @param mixed $default
 	 *        	The default value of the variable if not set by user.
-	 * @param int $options        	
+	 * @param int $options
 	 * @param string $i18n
 	 *        	string for proper labeling in the webinterface
 	 * @param string $sFormFieldMappingName
 	 *        	The type for the input rendering. I.e.
 	 */
-	public static function registerVar( $path, $default = NULL, $options = 0, $i18n = '', $sFormFieldMappingName = 'text' ) {
-
+	public static function registerVar( $path, $default = null, $options = 0, $i18n = '', $sFormFieldMappingName = 'text' ) {
 		$var = self::getSettingObject ( $path );
-		$var->setDefault ( $default );
+		$var->setDefault( $default );
 		if ( $options ) {
-			$var->setOptions ( $options );
+			$var->setOptions( $options );
 		}
 		if ( $i18n ) {
 			$var->setI18N ( $i18n );
@@ -155,7 +146,7 @@ class BsConfig {
 	/**
 	 * This method switch the config class to deliver the bluespice basesettings or the users own settings
 	 *
-	 * @param bool $bFlag        	
+	 * @param bool $bFlag
 	 */
 	public static function deliverUsersSettings( $bFlag ) {
 
@@ -176,12 +167,11 @@ class BsConfig {
 	 * @return bool true if the action was successful
 	 */
 	public static function set( $path, $value, $bUserValue = false ) {
-
-		$oSetting = self::getSettingObject ( $path );
+		$oSetting = self::getSettingObject( $path );
 		if ( $bUserValue ) {
-			return $oSetting->_setUserValue ( $value );
+			return $oSetting->_setUserValue( $value );
 		}
-		return $oSetting->_set ( $value );
+		return $oSetting->_set( $value );
 	}
 
 	/**
@@ -245,39 +235,38 @@ class BsConfig {
 	 * @return BsConfig
 	 */
 	protected static function getSettingObject( $path ) {
-
-		if ( ! is_string ( $path ) ) {
+		if ( !is_string( $path ) ) {
 			// @todo Fehlermeldung Falsches Pfad-Format (ADAPTER::[EXTENSION::]VARIABLE)
 			return false;
 		}
-		$key = strtolower ( $path );
-		if ( isset ( self::$prSettings [ $key ] ) ) {
-			return self::$prSettings [ $key ];
+		$key = strtolower( $path );
+		if ( isset( self::$prSettings[$key] ) ) {
+			return self::$prSettings[$key];
 		}
 		$_path = explode ( '::', $path );
-		$adapter = NULL;
-		$extension = NULL;
-		$varname = NULL;
+		$adapter = null;
+		$extension = null;
+		$varname = null;
 		$len = count ( $_path );
-		
+
 		if ( $len < 2 || $len > 3 ) {
 			// @todo Fehlermeldung Falsches Pfad-Format (ADAPTER::[EXTENSION::]VARIABLE)
 			return false;
 		}
-		
+
 		$adapter = array_shift ( $_path );
 		$len--;
 		if ( $len == 2 ) {
 			$extension = array_shift ( $_path );
 		}
 		$varname = array_shift ( $_path );
-		
+
 		$tmp = new BsConfig ();
 		$tmp->setKey ( $path );
 		$tmp->setAdapter ( $adapter );
 		$tmp->setExtension ( $extension );
 		$tmp->setName ( $varname );
-		self::$prSettings [ $key ] = $tmp;
+		self::$prSettings[$key] = $tmp;
 		return $tmp;
 	}
 
@@ -285,7 +274,6 @@ class BsConfig {
 	 * loads all settings from the database and saves the instances for every variable internal.
 	 */
 	public static function loadSettings() {
-
 		$dbr = wfGetDB ( DB_READ );
 		# query the settings from bs_settings
 		$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
@@ -301,13 +289,12 @@ class BsConfig {
 	 * @return bool false if an error occurs
 	 */
 	public static function saveSettings() {
-
 		$dbw = wfGetDB ( DB_WRITE );
-		
+
 		$dbw->delete('bs_settings', '*');
-		
+
 		$aSettings = array();
-		
+
 		foreach ( self::$prSettings as $setting ) {
 			# if the the setting is not a public or a user setting
 			# go to the next setting
@@ -328,16 +315,16 @@ class BsConfig {
 				$value = $setting->getValue ();
 			}
 			# save the setting in the settings array
-			$aSettings[] = array( 
+			$aSettings[] = array(
 				$dbw->addIdentifierQuotes('key') => $setting->getKey(),
 				$dbw->addIdentifierQuotes('value') => serialize ( $value )
 			);
 		}
-		
+
 		# write the settings array to the database
 		return $dbw->insert('bs_settings', $aSettings);
 	}
-	
+
 	// TODO RBV (02.06.11 16:06): Core-Kontamination! Keine MediaWiki Funktionen im Core!
 	public static function getVarForUser( $sKey, $mUser ) {
 
@@ -362,27 +349,27 @@ class BsConfig {
 		} else {
 			$mReturn = $oSettingsObject->getValue ();
 		}
-		
+
 		BsConfig::deliverUsersSettings ( $bOrigDeliverFlag );
 		return $mReturn;
 	}
-	
+
 	// TODO RBV (02.06.11 16:06): Core-Kontamination! Keine MediaWiki Funktionen im Core!
 	public static function getUsersForVar( $sKey, $vValue, $sSingleValFromMultiple = false, $bSerialized = true ) {
 
 		global $wgDBtype;
 		$oDb = wfGetDB ( DB_SLAVE );
 		$aUsers = array ();
-		
+
 		if ( $wgDBtype == 'oracle' ) {
-			$rRes = $oDb->select ( 'user_properties', '*', 
-					array ( 'up_property' => $sKey, 
+			$rRes = $oDb->select ( 'user_properties', '*',
+					array ( 'up_property' => $sKey,
 							'up_value like \'' . serialize ( $vValue ) . '\'' )			//TODO WP: HACKY oracle patch - find a better way!
 				);
 		} else {
 			$aConditions = array( 'up_property' => $sKey );
 			if( $sSingleValFromMultiple ) {
-				$aConditions[] = 'up_value like "%'.$sValue.'%"';
+				$aConditions[] = 'up_value like "%'.$vValue.'%"';
 			} else {
 					$aConditions['up_value'] = ( $bSerialized ) ? serialize( $vValue ) : $vValue;
 			}
@@ -396,7 +383,7 @@ class BsConfig {
 		while ( $oRow = $rRes->fetchObject () ) {
 			if( $sSingleValFromMultiple ) {
 				foreach( unserialize( $oRow->up_value ) as $value ) {
-					if( $value === $sValue ) {
+					if( $value === $vValue ) {
 						$aUsers[] = User::newFromId($oRow->up_user);
 					}
 				}
@@ -406,32 +393,31 @@ class BsConfig {
 		}
 		return $aUsers;
 	}
-	
+
 	// TODO SU (27.06.11 14:48): Core-Kontamination! Keine MediaWiki Funktionen im Core!
 	// TODO SU (27.06.11 14:48): Core-Kontamination! Keine MediaWiki Funktionen im Core!
 	// TODO SU (27.06.11 14:48): Core-Kontamination! Keine MediaWiki Funktionen im Core!
 	public static function loadUserSettings( $user ) {
-
-	if ( ! is_object ( $user ) ) {
-		$user = User::newFromName ( $user );
-		if ( ! is_object ( $user ) ) {
+	if ( !is_object( $user ) ) {
+		$user = User::newFromName( $user );
+		if ( !is_object( $user ) ) {
 			return false;
 		}
 	}
-	
-	$vars = BsConfig::getRegisteredVars ();
+
+	$vars = BsConfig::getRegisteredVars();
 	foreach ( $vars as $var ) {
-		$iOptions = $var->getOptions ();
+		$iOptions = $var->getOptions();
 		if ( ! ( $iOptions & ( BsConfig::LEVEL_USER ) ) ) {
 			continue;
 		}
-		$options = $var->getOptions ();
+		$options = $var->getOptions();
 		if ( ! ( $options & ( BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER ) ) ) {
 			continue;
 		}
-		$mValue = $user->getOption ( $var->_mKey, null );
-		if ( ! is_null ( $mValue ) && $mValue != '' ) {
-			$var->_setUserValue ( $mValue );
+		$mValue = $user->getOption( $var->_mKey, null );
+		if ( ! is_null( $mValue ) && $mValue != '' ) {
+			$var->_setUserValue( $mValue );
 		}
 	}
 }
@@ -444,19 +430,18 @@ class BsConfig {
 	 * @return bool returns always true since we save the settings with mediawiki methods
 	 */
 	public static function saveUserSettings( $user ) {
-
 		if ( ! is_object ( $user ) ) {
 			$user = User::newFromName ( $user );
 		}
-		
+
 		$orig_deliver = self::deliverUsersSettings ( true );
-		
+
 		foreach ( self::$prSettings as $setting ) {
 			if ( ! ( $setting->getOptions () & ( self::LEVEL_USER ) ) ) {
 				continue;
 			}
 			if ( $setting->getOptions () & self::TYPE_BOOL ) {
-				$user->setOption ( $setting->getKey (), 
+				$user->setOption ( $setting->getKey (),
 						( int ) $setting->getValue () );
 			} else {
 				$user->setOption ( $setting->getKey (), $setting->getValue () );
@@ -473,7 +458,6 @@ class BsConfig {
 	 * @return array
 	 */
 	public static function getRegisteredVars() {
-
 		return self::$prSettings;
 	}
 
@@ -482,61 +466,61 @@ class BsConfig {
 	 *
 	 * @var string
 	 */
-	protected $_mKey = NULL;
+	protected $_mKey = null;
 
 	/**
 	 * the name of the variables adapter
 	 *
 	 * @var string
 	 */
-	protected $_mAdapter = NULL;
+	protected $_mAdapter = null;
 
 	/**
 	 * the name of the variables extension
 	 *
 	 * @var string
 	 */
-	protected $_mExtension = NULL;
+	protected $_mExtension = null;
 
 	/**
 	 * the name of the variable
 	 *
 	 * @var string
 	 */
-	protected $_mName = NULL;
+	protected $_mName = null;
 
 	/**
 	 * a bitmask which represents the variables options
 	 *
 	 * @var int
 	 */
-	protected $_mOptions = NULL;
+	protected $_mOptions = null;
 
 	/**
 	 * the default value of the variable
 	 *
 	 * @var mixed
 	 */
-	protected $_mDefault = NULL;
+	protected $_mDefault = null;
 
 	/**
 	 * the set value of the variable
 	 *
 	 * @var mixed
 	 */
-	protected $_mValue = NULL;
+	protected $_mValue = null;
 
 	/**
 	 * the set user value of the variable
 	 *
 	 * @var mixed
 	 */
-	protected $_mUserValue = NULL;
+	protected $_mUserValue = null;
 
 	/**
 	 * the i18n key for this variable
 	 */
-	protected $_mI18n = NULL;
+	protected $_mI18n = null;
 
 	/**
 	 * a mapping descriptor which represents a class of a form element for the preference forms
@@ -545,7 +529,7 @@ class BsConfig {
 	 *
 	 * @var string
 	 */
-	protected $_mFieldMapping = NULL;
+	protected $_mFieldMapping = null;
 
 	/**
 	 * the constructor
@@ -562,17 +546,15 @@ class BsConfig {
 	 *        	(normally ADAPTER::EXTENSION::NAME or ADAPTER::NAME)
 	 */
 	protected function setKey( $key ) {
-
 		$this->_mKey = $key;
 	}
 
 	/**
 	 * sets the adapter name for this variable
 	 *
-	 * @param string $adapter        	
+	 * @param string $adapter
 	 */
 	protected function setAdapter( $adapter ) {
-
 		$this->_mAdapter = $adapter;
 		self::$prRegisterAdapter [ strtolower ( $adapter ) ] = $this;
 	}
@@ -580,10 +562,9 @@ class BsConfig {
 	/**
 	 * sets the extension name for this variable
 	 *
-	 * @param string $extension        	
+	 * @param string $extension
 	 */
 	protected function setExtension( $extension ) {
-
 		$this->_mExtension = $extension;
 		self::$prRegisterExtension [ strtolower ( $extension ) ] = $this;
 	}
@@ -591,38 +572,29 @@ class BsConfig {
 	/**
 	 * sets the name for this variable
 	 *
-	 * @param string $name        	
+	 * @param string $name
 	 */
 	protected function setName( $name ) {
-
 		$this->_mName = $name;
 	}
 
 	/**
 	 * sets the i18n instance for this variable
 	 *
-	 * @param String $i18n        	
+	 * @param String $i18n
 	 */
 	protected function setI18N( $i18n ) {
-
 		$this->_mI18n = $i18n;
 	}
 
 	/**
 	 * sets the option bitmask for this variable
-	 *
-	 * If the option BsConfig::LEVEL_ADAPTER is set, this method force the variables adapter
-	 * to set the value of the adapters variable to the same value.
-	 *
-	 * @param int $options        	
+	 * @param int $options
 	 */
 	protected function setOptions( $options ) {
 		$this->_mOptions = $options;
 		if ( $options & self::RENDER_AS_JAVASCRIPT ) {
 			self::$prRegisterJavascript [ strtolower ( $this->_mKey ) ] = $this;
-		}
-		if ( $options & self::LEVEL_ADAPTER ) {
-			$this->_mValue = NULL;
 		}
 	}
 
@@ -630,20 +602,18 @@ class BsConfig {
 	 * sets the mapping descriptor for this variable
 	 *
 	 * @see $_mFieldMapping
-	 * @param string $sFormFieldMappingName        	
+	 * @param string $sFormFieldMappingName
 	 */
 	protected function setFieldMapping( $sFormFieldMappingName ) {
-
 		$this->_mFieldMapping = $sFormFieldMappingName;
 	}
 
 	/**
 	 * sets the default value for this variable
 	 *
-	 * @param mixed $default        	
+	 * @param mixed $default
 	 */
 	protected function setDefault( $default ) {
-
 		$this->_mDefault = $default;
 	}
 
@@ -653,25 +623,19 @@ class BsConfig {
 	 * @return mixed
 	 */
 	public function getDefault() {
-
 		return $this->_mDefault;
 	}
 
 	/**
 	 * sets the value of this variable
 	 *
-	 * @param mixed $value        	
+	 * @param mixed $value
 	 */
 	protected function _set( $value ) {
-
-		if ( $this->_mOptions & self::LEVEL_ADAPTER ) {
-			return;
-		}
 		$this->_mValue = $value;
 	}
 
 	protected function _setUserValue( $value ) {
-
 		$this->_mUserValue = $value;
 	}
 
@@ -683,17 +647,13 @@ class BsConfig {
 	 * If the type is string, the given value will extend the set value.
 	 * If the type is bool, the result is the same as you would set the value.
 	 *
-	 * @param mixed $value        	
+	 * @param mixed $value
 	 * @return mixed the value after the addition
 	 */
 	protected function _add( $value ) {
-
 		if ( $this->_mOptions & self::TYPE_OBJECT ) {
 			//@todo Fehlermeldung Typ unterstÃ¼tzt kein ADD
 			return null;
-		}
-		if ( $this->_mOptions & self::LEVEL_ADAPTER ) {
-			return;
 		}
 		if ( $this->_mOptions & self::TYPE_INT ||
 				 $this->_mOptions & self::TYPE_FLOAT ) {
@@ -715,14 +675,6 @@ class BsConfig {
 	 * @return mixed
 	 */
 	protected function _get() {
-
-		if ( $this->_mOptions & self::LEVEL_ADAPTER ) {
-			$tmp = '$wg'.$this->_mName;
-			global $$tmp;
-			if ( ! is_null ( $$tmp ) ) {
-				return $$tmp;
-			}
-		}
 		if ( self::$prGetUsersSettings ) {
 			if ( ! is_null ( $this->_mUserValue ) ) {
 				return $this->_mUserValue;
@@ -742,7 +694,7 @@ class BsConfig {
 	 */
 	public function getValue() {
 
-		return $this->_get ();
+		return $this->_get();
 	}
 
 	/**

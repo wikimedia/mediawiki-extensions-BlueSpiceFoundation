@@ -311,66 +311,6 @@ var BlueSpice = {
 		while( oCurrentDate - oStartDate < iMilliseconds );
 	},
 
-	tempAnchor: null,
-	/**
-	 * Gets all GET parameters from an url.
-	 * @param {Mixed} param [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
-	 * @return {Object}
-	 */
-	getUrlParams: function( param ) {
-		// Handle BlueSpice::getUrlParams(), BlueSpice::getUrlParams(""), BlueSpice::getUrlParams(null), or BlueSpice::getUrlParams(undefined)
-		if ( !param ) {
-			return this._getUrlParams( window.location );
-		}
-
-		// Handle BlueSpice::getUrlParams(Anchor DOMElement)
-		if ( param.nodeType ) {
-			return this._getUrlParams( param );
-		}
-
-		// Handle string urls
-		if ( typeof param === "string" ) {
-			this.tempAnchor = document.createElement( 'a' );
-			this.tempAnchor.href = param;
-			return this._getUrlParams( this.tempAnchor );
-		}
-
-		return {};
-	},
-
-	// TODO RBV (31.07.12 15:11): Check for full browser compatibility as the location-Object has no official standard.
-	_getUrlParams: function( loc ) {
-		var oKeyValuePairs = {};
-		if(loc.search == '') return oKeyValuePairs;
-		var sParams = loc.search.substr(1);
-		var aParams = sParams.split('&');
-
-		for ( var i = 0; i < aParams.length; i++ ) {
-			var aKeyValuePair = aParams[i].split('=');
-			var key   = decodeURIComponent( aKeyValuePair[0] );
-			var value = decodeURIComponent( aKeyValuePair[1] ); //With "?param1=val1&param2" oKeyValuePairs['param2'] will be "undefined". That's okay, but can be discussed.
-			oKeyValuePairs[key] = value;
-		}
-		return oKeyValuePairs;
-	},
-
-	/**
-	 * Gets a GET parameter from an url.
-	 * @param {String} sParamName The requested parameters name
-	 * @param {String} sDefaultValue [optional] A default value if the param is not available. Default ist an empty string.
-	 * @param {Mixed} url [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
-	 * @return {String} The parameters value or the default value if parameter not set.
-	 */
-	getUrlParam: function( sParamName, sDefaultValue, url ) {
-		var sValue = sDefaultValue || '';
-		var oParams = this.getUrlParams( url );
-
-		for( var key in oParams ) {
-			if( key == sParamName ) sValue = oParams[key];
-		}
-		return sValue;
-	},
-
 	init: function() {
 		
 	}

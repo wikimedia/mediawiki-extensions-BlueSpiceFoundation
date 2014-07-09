@@ -1,0 +1,38 @@
+design.txt
+
+This is a brief overview of the new design of BlueSpice 2.0.
+
+==General==
+With BlueSpice 2 we tried to be more MediaWiki compliant. Therefore most of the
+folders you know from MediaWiki appear in the BlueSpice* extensions. We now 
+make use of ResourceLoader and populate the client side with a lot of useful 
+information.
+
+==ExtJS==
+One core component is the ExtJS Rich Internet Applications JavaScript Framework
+by Sencha [http://www.sencha.com/]. This allows us to create a very good user 
+experience especially in business/enterprize wiki installations.
+
+===ExtJS customizations/hacks===
+Unforunately ExtJS comes with a very mean CSS reset. Is applies "x-body" class 
+to the "body" HTML element on load and sets all the font to a size of 13px. 
+This causes the standard Vector-Skin to have very tiny font sizes.
+
+At the time of writing there was no posibility to prevent ExtJS from doing 
+that. Therefore a hack was applied in the files
+
+ resources/bluespice.extjs/bluespice-theme/bluespice-theme-all-debug.css
+ resources/bluespice.extjs/bluespice-theme/bluespice-theme-all.css
+
+that removes the CSS statement. As it is only applied in the custon ExtJS theme
+"bluespice" this should not have any side effects. But if one wants to use the 
+original "neptune" theme there might be troubles with font sizing.
+
+===MediaWiki ExtJS Components===
+In "resouces/bluespice.extjs/BS" you can find additional reusable components.
+
+==TODO==
+* Refactor the "outputhandler/views" files.
+** Or better: replace usage of these with config arrays and "Html" class
+* Redesign "BsConfig" mechanism
+** Maybe rely on MediaWiki "SiteConfig"

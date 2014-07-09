@@ -1,15 +1,7 @@
 <?php
 
 class BsNamespaceHelper {
-	//TODO: Use this logic for contants mapping
-	/*
-	$aConsts = get_defined_constants(true);
-	foreach($aConsts['user'] as $sContantName => $sContantValue ) {
-		if(substr($sContantName, 0, 3) != 'NS_' ) continue;
-		error_log($sContantValue.' -> '.$sContantName);
-	}
-	 */
-	
+
 	protected static $aNamespaceMap = array(
 		-2 => 'NS_MEDIA',
 		-1 => 'NS_SPECIAL',
@@ -30,7 +22,7 @@ class BsNamespaceHelper {
 		14 => 'NS_CATEGORY',
 		15 => 'NS_CATEGORY_TALK'
 	);
-	
+
 	/**
 	 * returns the constantname for MW NS like 0 => NS_MAIN
 	 * @param type $iNamespaceId
@@ -45,11 +37,20 @@ class BsNamespaceHelper {
 	}
 
 	/**
-	 * returns array with MW NS Mapping
+	 * Returns array with MW NS Mapping
 	 * @return Array 
 	 */
 	public static function getMwNamespaceConstants() {
-		return self::$aNamespaceMap;
+		//TODO: Use this logic for contants mapping
+		/*
+		$aConsts = get_defined_constants(true);
+		foreach($aConsts['user'] as $sContantName => $sContantValue ) {
+			if(substr($sContantName, 0, 3) != 'NS_' ) continue;
+			//$sContantValue -> $sContantName;
+		}
+		*/
+		global $bsgSystemNamespaces;
+		return self::$aNamespaceMap + $bsgSystemNamespaces;
 	}
 
 	/**
@@ -80,16 +81,14 @@ class BsNamespaceHelper {
 	 * @param bool $bReturnNamesForMainAndAll
 	 * @return string name of namespace internationalized
 	 */
-	public static function getNamespaceName($iNamespaceId, $bReturnNamesForMainAndAll = true) {
+	public static function getNamespaceName( $iNamespaceId, $bReturnNamesForMainAndAll = true ) {
 		global $wgContLang;
 		// TODO SW(05.01.12 15:21): Profiling
-		if ($bReturnNamesForMainAndAll) {
-			if ($iNamespaceId == 0)
-				return wfMsg('bs-ns_main');
-			if ($iNamespaceId == -99)
-				return wfMsg('bs-ns_all');
+		if ( $bReturnNamesForMainAndAll ) {
+			if ( $iNamespaceId == 0 ) return wfMessage( 'bs-ns_main' )->plain();
+			if ( $iNamespaceId == -99 ) return wfMessage( 'bs-ns_all' )->plain();
 		}
-		return $wgContLang->getNsText($iNamespaceId);
+		return $wgContLang->getNsText( $iNamespaceId );
 	}
 
 	/**
@@ -108,15 +107,14 @@ class BsNamespaceHelper {
 		// get canonical name
 		$aAliases[] = $wgCanonicalNamespaceNames[$iNamespaceId];
 		// get localized namespace name
-		$aAliases[] = self::getNamespaceName($iNamespaceId);
+		$aAliases[] = self::getNamespaceName( $iNamespaceId );
 		// get canonical aliases (used for image/file namespace)
-		$aAliases = array_merge(array_keys($wgNamespaceAliases, $iNamespaceId), $aAliases);
+		$aAliases = array_merge( array_keys( $wgNamespaceAliases, $iNamespaceId ), $aAliases );
 		// get localized aliases
 		$aTmpAliases = $wgContLang->getNamespaceAliases();
-		if ($aTmpAliases) {
-			$aAliases = array_merge(array_keys($aTmpAliases, $iNamespaceId), $aAliases);
+		if ( $aTmpAliases ) {
+			$aAliases = array_merge( array_keys( $aTmpAliases, $iNamespaceId ), $aAliases );
 		}
-
 
 		wfProfileOut('BS::' . __METHOD__);
 		return $aAliases;
@@ -127,14 +125,13 @@ class BsNamespaceHelper {
 	 * @param mixed $vNamespace Integer id or string name
 	 * @return int The  NamespaceId.
 	 */
-	public static function getNamespaceIndex($vNamespace) {
-		global $wgContLang;//TODO: CR RBV (12.11.10 09:11): ContLang or (User)Lang?
+	public static function getNamespaceIndex( $vNamespace ) {
 		wfProfileIn('BS::' . __METHOD__);
-		if (is_numeric($vNamespace))
-			return $vNamespace;
-		$iIndex = $wgContLang->getNsIndex($vNamespace);
+		if ( is_numeric( $vNamespace ) ) return $vNamespace;
+		global $wgContLang;
+
 		wfProfileOut('BS::' . __METHOD__);
-		return $iIndex;
+		return $wgContLang->getNsIndex( $vNamespace );
 	}
 
 	/**
@@ -144,7 +141,7 @@ class BsNamespaceHelper {
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given 
 	 */
 	public static function getNamespaceIdsFromAmbiguousArray($aNamespaces) {
-		return self::getNamespaceIdsFromAmbiguousCSVString(implode(',', $aNamespaces));
+		return self::getNamespaceIdsFromAmbiguousCSVString( implode( ',', $aNamespaces ) );
 	}
 
 	/**
@@ -153,61 +150,59 @@ class BsNamespaceHelper {
 	 * @return array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */
-	public static function getNamespaceIdsFromAmbiguousCSVString($sCSV = '') {
+	public static function getNamespaceIdsFromAmbiguousCSVString( $sCSV = '' ) {
 		global $wgContLang;
 		wfProfileIn('BS::' . __METHOD__);
-		$sCSV = trim($sCSV);
-		$sCSV = strtolower($sCSV); // make namespaces case insensitive
+		$sCSV = trim( $sCSV );
+		$sCSV = mb_strtolower( $sCSV ); // make namespaces case insensitive
 
-		if (in_array($sCSV, array('all', '-', ''))) { //for compatibility reason the '-' is equivalent to 'all'
+		if ( in_array( $sCSV, array( 'all', '-', '' ) ) ) { //for compatibility reason the '-' is equivalent to 'all'
 			wfProfileOut('BS::' . __METHOD__);
-			return array_keys($wgContLang->getNamespaces());
+			return array_keys( $wgContLang->getNamespaces() );
 		}
 
-		$aAmbiguousNS = explode(',', $sCSV);
+		$aAmbiguousNS = explode( ',', $sCSV );
+		$aAmbiguousNS = array_map( 'trim', $aAmbiguousNS );
 		$aValidNamespaceIntIndexes = array();
 		$aInvalidNamespaces = array();
 
-		foreach ($aAmbiguousNS as $vAmbiguousNS) {
-			$vAmbiguousNS = trim($vAmbiguousNS);
-
-			if (( is_numeric($vAmbiguousNS))) { //Given value is a namespace id.
-				if ($wgContLang->getNsText($vAmbiguousNS) === false) { //Does a namespace with the given id exist?
+		foreach ( $aAmbiguousNS as $vAmbiguousNS ) {
+			if ( is_numeric( $vAmbiguousNS ) ) { //Given value is a namespace id.
+				if ( $wgContLang->getNsText( $vAmbiguousNS ) === false ) { //Does a namespace with the given id exist?
 					$aInvalidNamespaces[] = $vAmbiguousNS;
-				}
-				else
+				} else {
 					$aValidNamespaceIntIndexes[] = $vAmbiguousNS;
-			}
-			else {
-				if ($vAmbiguousNS == wfMsg('bs-ns_main')
-						|| strcmp($vAmbiguousNS, "main") == 0
-				) {
+				}
+			} else {
+				if ( $vAmbiguousNS == wfMessage( 'bs-ns_main' )->plain()
+					|| strcmp( $vAmbiguousNS, "main" ) === 0 ) {
 					$iNamespaceIdFromText = 0;
-				} else if ($vAmbiguousNS == '') {
+				} else if ( $vAmbiguousNS == '' ) {
 					$iNamespaceIdFromText = 0;
 				} else {
 					//Given value is a namespace text.
-					$vAmbiguousNS = str_replace(' ', '_', $vAmbiguousNS); //'Bluespice talk' -> 'Bluespice_talk'
+					$vAmbiguousNS = str_replace( ' ', '_', $vAmbiguousNS ); //'Bluespice talk' -> 'Bluespice_talk'
 					//Does a namespace id for the given namespace text exist?
-					$iNamespaceIdFromText = $wgContLang->getNsIndex($vAmbiguousNS);
+					$iNamespaceIdFromText = $wgContLang->getNsIndex( $vAmbiguousNS );
 				}
-				if ($iNamespaceIdFromText === false) {
+				if ( $iNamespaceIdFromText === false ) {
 					$aInvalidNamespaces[] = $vAmbiguousNS;
-				}
-				else
+				} else {
 					$aValidNamespaceIntIndexes[] = $iNamespaceIdFromText;
+				}
 			}
 		}
 
 		//Does the given CSV list contain any invalid namespaces?
-		if (!empty($aInvalidNamespaces)) {
+		if ( !empty( $aInvalidNamespaces ) ) {
 			$oInvalidNamespaceException = new BsInvalidNamespaceException();
-			$oInvalidNamespaceException->setListOfInvalidNamespaces($aInvalidNamespaces);
-			$oInvalidNamespaceException->setListOfValidNamespaces($aValidNamespaceIntIndexes);
+			$oInvalidNamespaceException->setListOfInvalidNamespaces( $aInvalidNamespaces );
+			$oInvalidNamespaceException->setListOfValidNamespaces( $aValidNamespaceIntIndexes );
 			throw $oInvalidNamespaceException;
 		}
 		wfProfileOut('BS::' . __METHOD__);
-		return array_values(array_unique($aValidNamespaceIntIndexes)); //minify the Array, rearrange indexes and return it
+
+		return array_values( array_unique( $aValidNamespaceIntIndexes ) ); //minify the Array, rearrange indexes and return it
 	}
 
 	/**
@@ -216,16 +211,15 @@ class BsNamespaceHelper {
 	 * @param array $aExcludeIds
 	 * @return array 
 	 */
-	public static function getNamespacesForSelectOptions($aExcludeIds = array()) {
+	public static function getNamespacesForSelectOptions( $aExcludeIds = array() ) {
 		wfProfileIn('BS::' . __METHOD__);
 		global $wgContLang;
 		$aNamespaces = array();
 
-		foreach ($wgContLang->getNamespaces() as $sNamespace) {
-			$iNsIndex = $wgContLang->getNsIndex($sNamespace);
-			if (in_array($iNsIndex, $aExcludeIds))
-				continue; //Filter namespaces
-			$aNamespaces[$iNsIndex] = self::getNamespaceName($iNsIndex);
+		foreach ( $wgContLang->getNamespaces() as $sNamespace ) {
+			$iNsIndex = $wgContLang->getNsIndex( $sNamespace );
+			if ( in_array( $iNsIndex, $aExcludeIds ) ) continue; //Filter namespaces
+			$aNamespaces[$iNsIndex] = self::getNamespaceName( $iNsIndex );
 		}
 		wfProfileOut('BS::' . __METHOD__);
 		return $aNamespaces;
@@ -241,7 +235,7 @@ class BsNamespaceHelper {
 		wfProfileIn( 'BS::' . __METHOD__ );
 		if ( !is_numeric( $iID ) ) return false;
 
-		if ( ( $iID == 998 ||  $iID == 999 ) ) {
+		if ( ( $iID == 998 || $iID == 999 ) ) {
 			global $wgUser;
 			if ( $wgUser->isAllowed( 'searchfiles' ) ) {
 				wfProfileOut('BS::' . __METHOD__);

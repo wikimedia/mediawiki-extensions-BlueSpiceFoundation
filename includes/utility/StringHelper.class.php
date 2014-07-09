@@ -36,11 +36,11 @@ class BsStringHelper {
 	 *          '... lazy dog' (<code>'position' => 'start'</code>)
 	 */
 	public static function shorten( $sString, $aOptions ) {
-		//wfProfileIn( 'BS::'.__METHOD__ );
+		wfProfileIn( 'BS::'.__METHOD__ );
 
-		$iMaxLength         = BsCore::sanitizeArrayEntry( $aOptions, 'max-length',          15,    BsPARAMTYPE::INT );
+		$iMaxLength = BsCore::sanitizeArrayEntry( $aOptions, 'max-length', 15, BsPARAMTYPE::INT );
 		$bIgnoreWordBorders = BsCore::sanitizeArrayEntry( $aOptions, 'ignore-word-borders', true,  BsPARAMTYPE::BOOL );
-		$sPosition          = BsCore::sanitizeArrayEntry( $aOptions, 'position',            'end', BsPARAMTYPE::STRING );
+		$sPosition = BsCore::sanitizeArrayEntry( $aOptions, 'position', 'end', BsPARAMTYPE::STRING );
 		$sEllipsisCharaters = BsCore::sanitizeArrayEntry( $aOptions, 'ellipsis-characters', '...', BsPARAMTYPE::STRING );
 
 		if ( $iMaxLength <= 0 ) return $sString;
@@ -50,7 +50,7 @@ class BsStringHelper {
 
 		$iEllipsisCharactersLength = mb_strlen( $sEllipsisCharaters );
 		$iMaxLengthWithoutEllipsis = $iMaxLength - $iEllipsisCharactersLength;
-		$sShortendString           = '';
+		$sShortendString = '';
 
 		if ( $bIgnoreWordBorders === true ) {
 			switch ( $sPosition ) {
@@ -70,8 +70,7 @@ class BsStringHelper {
 					$sShortendString .= $sEllipsisCharaters;
 					break;
 			}
-		}
-		else {
+		} else {
 			switch ( $sPosition ) {
 				case 'start': // TODO RBV (12.10.10 12:18): implement
 					break;
@@ -89,7 +88,40 @@ class BsStringHelper {
 					break;
 			}
 		}
-		//wfProfileOut( 'BS::'.__METHOD__ );
+
+		wfProfileOut( 'BS::'.__METHOD__ );
 		return $sShortendString;
+	}
+
+	/**
+	 * Source: http://stackoverflow.com/questions/1369936/check-to-see-if-a-string-is-serialized
+	 * Verifies if a variable is potentially serialized (stumbled upon this in wordpress) -- seems to work
+	 * @param type $data
+	 * @return boolean
+	 */
+	public static function isSerialized( $data ) {
+		// if it isn't a string, it isn't serialized
+		if ( !is_string( $data ) )
+			return false;
+		$data = trim( $data );
+		if ( 'N;' == $data )
+			return true;
+		if ( !preg_match( '/^([adObis]):/', $data, $badions ) )
+			return false;
+		switch ( $badions[1] ) {
+			case 'a' :
+			case 'O' :
+			case 's' :
+				if ( preg_match( "/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $data ) )
+					return true;
+				break;
+			case 'b' :
+			case 'i' :
+			case 'd' :
+				if ( preg_match( "/^{$badions[1]}:[0-9.E-]+;\$/", $data ) )
+					return true;
+				break;
+		}
+		return false;
 	}
 }

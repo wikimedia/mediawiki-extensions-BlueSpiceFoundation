@@ -2,13 +2,9 @@
 /**
  * This class contains helpful methods to find and process tags within a text (string).
  *
- * @copyright Copyright (c) 2007-2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (c) 2013, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
  * @author Thomas Lorenz, Robert Vogel
  * @version 0.2.0 beta
- *
- * $LastChangedDate: 2013-06-12 15:58:22 +0200 (Mi, 12 Jun 2013) $
- * $LastChangedBy: rvogel $
- * $Rev: 9700 $
 
  */
 class BsTagFinder {
@@ -36,22 +32,18 @@ class BsTagFinder {
 		wfSuppressWarnings();
 		$aResult = array();
 
-		$oTidy = new Tidy();
+		$sXML = '<?xml encoding="UTF-8">'
+				. '<html xmlns:bs="http://www.blue-spice.org/XML/Schema-2011-09">'
+				. '<body>'
+				.$sText
+				. '</body>'
+				. '</html>';
+		$sXML = UtfNormal::cleanUp($sXML);
+
 		$oDOMDoc = new DOMDocument();
 		$oDOMDoc->recover = true;
-		$oDOMDoc->loadXML(
-			// TODO RBV (13.10.11 17:48): Is tidy necessary?
-			$oTidy->repairString(
-				'<xml xmlns:bs="http://www.blue-spice.org/XML/Schema-2011-09">'.$sText.'</xml>',
-				array(
-					'output-xml'       => true,
-					'input-xml'        => true,
-					'numeric-entities' => true,
-					'input-encoding'   => 'utf8',
-					'output-encoding'  => 'utf8'
-					)
-				)
-			);
+		$oDOMDoc->loadHTML( $sXML ); //Formerly was loadXML but that caused a
+		//lot of warnings. Also the input is propbably more HTML than XML.
 
 		foreach( $aTagnames as $aTagname ) {
 			$oElements = $oDOMDoc->getElementsByTagName( $aTagname );

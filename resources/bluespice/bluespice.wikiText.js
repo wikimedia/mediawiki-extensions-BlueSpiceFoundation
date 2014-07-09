@@ -12,7 +12,7 @@
 			protocol: '//'
 		};
 
-		if( typeof(cfg) == 'object' ) {
+		if( typeof(cfg) === 'object' ) {
 			this.properties = $.extend( this.properties, cfg );
 		}
 		else{
@@ -20,7 +20,7 @@
 		}
 
 		function parsePropertiesFromString( wikiText ) {
-			if( wikiText == '' ) return;
+			if( wikiText === '' ) return;
 
 			//Trim left and right everything (including linebreaks) that is not a starting or ending link code
 			wikiText = wikiText.replace(/(^.*?\[|\].*?$|\r\n|\r|\n)/gm,'');
@@ -57,7 +57,7 @@
 			return '[' +
 				this.properties.protocol + 
 				this.properties.target + 
-				( this.properties.displayText != '' ? ' ' + this.properties.displayText : '') + 
+				( this.properties.displayText !== '' ? ' ' + this.properties.displayText : '') + 
 				']'
 			;
 		}
@@ -125,14 +125,14 @@
 			upright: false,
 			alt: '',
 			displayText: '',
-			link: '',
+			link: false,
 			sizewidth: false,
 			sizeheight: false
 		}
 		
-		if( typeof(cfg) == 'object' ) {
+		if( typeof(cfg) === 'object' ) {
 			this.properties = $.extend( this.properties, cfg );
-			if( this.properties.title == '' && this.properties.prefixedTitle !== '' ) {
+			if( this.properties.title === '' && this.properties.prefixedTitle !== '' ) {
 				parseTitle( this.properties.prefixedTitle )
 			}
 		}
@@ -141,7 +141,7 @@
 		}
 		
 		function parseTitle( title ) {
-			if( title.charAt( 0 ) == ':' ) {
+			if( title.charAt( 0 ) === ':' ) {
 				me.properties.escaped = true;
 				title = title.substring( 1, title.length ); //remove leading ":""
 			}
@@ -168,60 +168,60 @@
 			//Process the rest
 			for( var i = 1; i < parts.length; i++ ) {
 				var part = parts[i];
-				if(part == '') continue;
+				if(part === '') continue;
 				
 				if( part.endsWith('px') ) { //Dependency bluespice.string.js
 					var unsuffixedValue = part.substr( 0, part.length - 2 ); //"100x100px" --> "100x100"
 					me.properties.sizewidth= unsuffixedValue;
 					var dimensions = unsuffixedValue.split('x'); //"100x100"
-					if( dimensions.length == 2 ) {
-						me.properties.sizewidth = dimensions[0] == '' ? false : dimensions[0]; //"x100"
+					if( dimensions.length === 2 ) {
+						me.properties.sizewidth = dimensions[0] === '' ? false : dimensions[0]; //"x100"
 						me.properties.sizeheight= dimensions[1];
 					}
 					//me.properties.frame = false; //Only size _or_ frame: see MW doc
 					continue;
 				}
 
-				if( $.inArray( part, ['thumb', 'mini', 'miniatur'] ) != -1 ) {
+				if( $.inArray( part, ['thumb', 'mini', 'miniatur'] ) !== -1 ) {
 					me.properties.thumb = true;
 					continue;
 				}
-				if( $.inArray( part, ['right', 'rechts'] ) != -1 ) {
+				if( $.inArray( part, ['right', 'rechts'] ) !== -1 ) {
 					me.properties.right = true;
 					me.properties.align = 'right';
 					continue;
 				}
-				if( $.inArray( part, ['left', 'links'] ) != -1 ) {
+				if( $.inArray( part, ['left', 'links'] ) !== -1 ) {
 					me.properties.left = true;
 					me.properties.align = 'left';
 					continue;
 				}
-				if( $.inArray( part, ['center', 'zentriert'] ) != -1 ) {
+				if( $.inArray( part, ['center', 'zentriert'] ) !== -1 ) {
 					me.properties.center = true;
 					me.properties.align = 'center';
 					continue;
 				}
-				if( $.inArray( part, ['none', 'ohne'] ) != -1 ) {
+				if( $.inArray( part, ['none', 'ohne'] ) !== -1 ) {
 					me.properties.none = true;
 					continue;
 				}
-				if( $.inArray( part, ['frame', 'gerahmt'] ) != -1 ) {
+				if( $.inArray( part, ['frame', 'gerahmt'] ) !== -1 ) {
 					me.properties.frame = true;
 					me.properties.sizewidth  = false;
 					me.properties.sizeheight = false; //Only size _or_ frame: see MW doc
 					continue;
 				}
-				if( $.inArray( part, ['frameless', 'rahmenlos'] ) != -1 ) {
+				if( $.inArray( part, ['frameless', 'rahmenlos'] ) !== -1 ) {
 					me.properties.frameless = true;
 					continue;
 				}
-				if( $.inArray( part, ['border', 'rand'] ) != -1 ) {
+				if( $.inArray( part, ['border', 'rand'] ) !== -1 ) {
 					me.properties.border = true;
 					continue;
 				}
 
 				var kvpair = part.split('=');
-				if( kvpair.length == 1 ) {
+				if( kvpair.length === 1 ) {
 					me.properties.displayText = part; 
 					me.properties.caption = part; //hopefully
 					continue;
@@ -230,17 +230,17 @@
 				var key   = kvpair[0];
 				var value = kvpair[1];
 
-				if( $.inArray( key, ['link', 'verweis'] ) != -1 ) {
+				if( $.inArray( key, ['link', 'verweis'] ) !== -1 ) {
 					me.properties.link = value;
 					continue;
 				}
 
-				if( $.inArray( key, ['upright', 'hochkant'] ) != -1 ) {
+				if( $.inArray( key, ['upright', 'hochkant'] ) !== -1 ) {
 					me.properties.upright = value;
 					continue;
 				}
 
-				if( key == 'alt' ) {
+				if( key === 'alt' ) {
 					me.properties.alt = value;
 					continue;
 				}
@@ -254,33 +254,33 @@
 			if( this.properties.escaped ) {
 				prefix += ':';
 			}
-			if( this.properties.nsText != '' ) {
+			if( this.properties.nsText !== '' ) {
 				prefix += this.properties.nsText + ':';
 			}
 			wikiText.push( prefix + this.properties.title );
 			for( var property in this.properties ) {
-				if( $.inArray(property, additionalProperties) != -1 ) continue; //Filter non-wikitext data
-				if( $.inArray(property, ['left','right', 'center']) != -1 ) continue; //Not yet used. Instead 'align' is set.
+				if( $.inArray(property, additionalProperties) !== -1 ) continue; //Filter non-wikitext data
+				if( $.inArray(property, ['left','right', 'center']) !== -1 ) continue; //Not yet used. Instead 'align' is set.
 
 				var value = this.properties[property];
 				//"link" may be intentionally empty. Therefore we have to 
 				//check it _before_ "value is empty?"
-				if (property == 'link' && ( value !== null 
+				if (property === 'link' && ( value !== null 
 					&& value !== 'false' && value !== false 
-					&& typeof value == "undefined") ) {
+					&& typeof value !== "undefined") ) {
 					wikiText.push(property + '=' + value);
 					continue;
 				}
 
-				if( value == null ||value == false 
-					|| value == "" || typeof value == "undefined" ) continue;
+				if( value === null ||value === false 
+					|| value === "" || typeof value === "undefined" ) continue;
 
-				if( property == 'sizewidth' || property == 'sizeheight' ) {
+				if( property === 'sizewidth' || property === 'sizeheight' ) {
 					var size = '';
-					if( this.properties.sizewidth && this.properties.sizewidth != "false" ) {
+					if( this.properties.sizewidth && this.properties.sizewidth !== "false" ) {
 						size = this.properties.sizewidth;
 					}
-					if( this.properties.sizeheight && this.properties.sizeheight != "false" ) {
+					if( this.properties.sizeheight && this.properties.sizeheight !== "false" ) {
 						size += 'x' + this.properties.sizeheight;
 					}
 					if( size.length > 0 ) size += 'px';
@@ -288,15 +288,15 @@
 					wikiText.push(size);
 					continue;
 				}
-				if( property == 'alt' ) {
+				if( property === 'alt' ) {
 					wikiText.push(property +'='+value);
 					continue;
 				}
-				if( $.inArray( property, ['caption', 'align' /*, 'displayText'*/ ] ) != -1 ) {
+				if( $.inArray( property, ['caption', 'align' /*, 'displayText'*/ ] ) !== -1 ) {
 					wikiText.push( value );
 					continue;
 				}
-				if( value == "true" || value == true ) {
+				if( value === "true" || value === true ) {
 					wikiText.push( property ); //frame, border, thumb, left, right...
 					continue;
 				}
@@ -308,7 +308,7 @@
 		}
 		
 		this.isEscaped = function( newValue ){
-			if( newValue == undefined ) { //Getter
+			if( newValue === undefined ) { //Getter
 				return this.properties.escaped;
 			}
 			this.properties.escaped = newValue ? true : false; //Setter
@@ -336,7 +336,7 @@
 			return this.properties.nsId;
 		}
 		this.isThumb = function( newValue ){
-			if( newValue == undefined ) { //Getter
+			if( newValue === undefined ) { //Getter
 				return this.properties.thumb;
 			}
 			this.properties.thumb = newValue ? true : false; //Setter
@@ -361,35 +361,35 @@
 			return this.properties.align;
 		}
 		this.isNone = function( newValue ){
-			if( newValue == undefined ) { //Getter
+			if( newValue === undefined ) { //Getter
 				return this.properties.none;
 			}
 			this.properties.none = newValue ? true : false; //Setter
 			return this.properties.none;
 		}
 		this.isFrameless = function( newValue ){
-			if( newValue == undefined ) { //Getter
+			if( newValue === undefined ) { //Getter
 				return this.properties.frameless;
 			}
 			this.properties.frameless = newValue ? true : false; //Setter
 			return this.properties.frameless;
 		}
 		this.hasFrame = function( newValue ){
-			if( newValue == undefined ) { //Getter
+			if( newValue === undefined ) { //Getter
 				return this.properties.frame;
 			}
 			this.properties.frame = newValue ? true : false; //Setter
 			return this.properties.frame;
 		}
 		this.hasBorder = function( newValue ){
-			if( newValue == undefined ) { //Getter
+			if( newValue === undefined ) { //Getter
 				return this.properties.border;
 			}
 			this.properties.border = newValue ? true : false; //Setter
 			return this.properties.border;
 		}
 		this.isUpright = function( newValue ){
-			if( newValue == undefined ) { //Getter
+			if( newValue === undefined ) { //Getter
 				return this.properties.upright;
 			}
 			this.properties.upright = newValue ? true : false; //Setter
@@ -437,7 +437,7 @@
 		this.params = {};
 		this.title = '';
 
-		if( typeof(cfg) == 'object' ) { //"{ with: 'param' }"
+		if( typeof(cfg) === 'object' ) { //"{ with: 'param' }"
 			this.title = title; //"Some Template"
 			this.params = $.extend( this.params, cfg );
 		}

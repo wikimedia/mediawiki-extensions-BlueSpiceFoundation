@@ -5,18 +5,15 @@
  * @author Robert Vogel <vogel@hallowelt.biz>
  */
 
-/*
- */
-
 //HINT: http://www.mediawiki.org/wiki/Manual:Writing_maintenance_scripts
 require_once( 'BSMaintenance.php' );
 
-class TestMail extends Maintenance {
+class TestMail extends BSMaintenance {
 	
 	protected $defaultSubject = '204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden.';
 	protected $defaultText = ' Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden. 
 		Nichteinhaltung wird mit bis zu 245 € oder 368 $ bestraft.
-		приложениях, шрифтах, верстке и многоязычных компьютерных системах.
+		தமிழ்மொழி. テスト. የከፈተውን.
 ';
 
 	public function __construct() {

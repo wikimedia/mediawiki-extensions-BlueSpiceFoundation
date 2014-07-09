@@ -17,7 +17,7 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 			'msg' => wfMsgExt( $this->mParams['message'], 'parseinline' ),
 			'targetField' => $this->mName,
 			'class' => 'bsMultiSelectAddButton',
-			'onclick' => 'BsCore.addEntryToMultiSelect(this);',
+			'onclick' => 'bs.util.addEntryToMultiSelect(this);',
 			'value' => '+'
 		);
 		$button = Html::element( 'input', $attrs );
@@ -27,7 +27,7 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 			'id' => $this->mName . '-delete',
 			'targetField' => $this->mName,
 			'class' => 'bsMultiSelectDeleteButton',
-			'onclick' => 'BsCore.deleteEntryFromMultiSelect(this);',
+			'onclick' => 'bs.util.deleteEntryFromMultiSelect(this);',
 			'value' => '-'
 		);
 		$button .= Html::element( 'input', $attrs );

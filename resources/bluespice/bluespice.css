@@ -48,3 +48,24 @@
 	margin-bottom:2px;
 	margin-right:2px;
 }
+
+.bs-actions-filedownload {
+	width: 116px;
+	text-align: center;
+}
+.bs-actions-filedownload a{
+	/*@embed*/
+	background-image:url("images/download-file_btn.png");
+	background-repeat: no-repeat;
+	width: 116px !important;
+	color: #FFFFFF !important;
+	text-align: center;
+	padding-top: 1px;
+	vertical-align: middle;
+	text-decoration: none;
+}
+.bs-actions-filedownload a:hover{
+	/*@embed*/
+	background-image:url("images/download-file_btn-hover.png");
+	text-decoration: none;
+}

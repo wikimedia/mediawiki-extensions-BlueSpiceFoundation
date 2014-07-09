@@ -141,7 +141,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
      * @cfg {String} menuFilterText
      * defaults to <tt>'Filters'</tt>.
      */
-    menuFilterText : 'Filters',
+    menuFilterText : mw.messages.get('bs-extjs-filters'),
     /**
      * @cfg {String} paramPrefix
      * The url parameter prefix for the filters.
@@ -218,7 +218,7 @@ Ext.define('Ext.ux.grid.FiltersFeature', {
             hadFilters = me.filters.getCount(),
             grid = me.getGridPanel(),
             filters = me.createFiltersCollection(),
-            model = grid.store.model,
+            model = grid.store.model || grid.store.proxy.model,
             fields = model.prototype.fields,
             field,
             filter,

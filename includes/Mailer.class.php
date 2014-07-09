@@ -111,12 +111,23 @@ class BsMailer {
 		$sFooter = $this->bSendHTML ? wfMessage( 'bs-mail-footer-html', $wgSitename )->plain() : wfMessage( 'bs-mail-footer', $wgSitename )->plain() ;
 		$sCombinedMsg = $sMsg.$sFooter;
 
+		if( $this->bSendHTML ) {
+			//http(s)://link -> <a href="http(s)://link>http(s)://link</a>"
+			//! already followed by </a>
+			//last char ! "."
+			$sCombinedMsg = preg_replace(
+				"#(\s|/>)(https?://[^\s]+?)\.?([\s|<])#",
+				'<a href="$2">$2</a>',
+				$sCombinedMsg
+			);
+		}
+
 		foreach ( $aEmailTo as $aReceiver ) {
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
-				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-receiver-html', $aReceiver['greeting'] )->plain()  : wfMessage( 'bs-mail-greeting-receiver', $aReceiver['greeting'] )->plain() ;
+				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-receiver-html', $aReceiver['greeting'] )->plain()  : wfMessage( 'bs-mail-greeting-receiver', $aReceiver['greeting'] )->plain();
 			} else {
-				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-no-receiver-html' )->plain()  : wfMessage( 'bs-mail-greeting-no-receiver' )->plain() ;
+				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-no-receiver-html' )->plain()  : wfMessage( 'bs-mail-greeting-no-receiver' )->plain();
 			}
 
 			$sLocalCombinedMsg = $sGreeting.$sCombinedMsg;

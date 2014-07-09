@@ -334,6 +334,9 @@ class ViewBaseElement {
 		if ( isset( $options['title'] ) ) {
 			$out .= 'title="'.$options['title'].'" ';
 		}
+		if ( isset( $options['class'] ) ) {
+			$out .= 'class="'.$options['class'].'" ';
+		}
 		if (isset($options['openInNewWindow'])) {
 			$out .= 'target="_blank" ';
 		}

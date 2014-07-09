@@ -13,36 +13,42 @@
  */
 
 Ext.define( 'BS.CRUDGridPanel', {
-	//Custom
 	extend: 'BS.CRUDPanel',
+
+	//Custom
 	pageSize: 20,
-	smMain: null,
-	bbMain: null,
-	colMain: null,
-	gpMainConf: {},
-	colMainConf: {
-		columns: [],
-		actions: [] //Custom; Used for ActionColumn
+
+	constructor: function() {
+		this.colMainConf = {
+			columns: [],
+			actions: [] //Custom; Used for ActionColumn
+		};
+		
+		this.smMain = null;
+		this.bbMain = null;
+		this.colMain = null;
+		this.gpMainConf = {};
+		
+		this.callParent(arguments);
 	},
 
 	afterInitComponent: function( arguments ) {
-
 		this.smMain = this.smMain || Ext.create( 'Ext.selection.RowModel', {
 			mode: "SINGLE"
 		});
-				
+		
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete_tn.png',
-			iconCls: 'bs-extjs-actioncloumn-icon',
-			tooltip: mw.message('bs-extjs-action-remove-tooltip').plain(),
+			iconCls: 'bs-extjs-actioncolumn-icon',
+			tooltip: mw.message('bs-extjs-delete').plain(),
 			handler: this.onActionRemoveClick,
 			scope: this
 		});
 
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config_tn.png',
-			iconCls: 'bs-extjs-actioncloumn-icon',
-			tooltip: mw.message('bs-extjs-action-edit-tooltip').plain(),
+			iconCls: 'bs-extjs-actioncolumn-icon',
+			tooltip: mw.message('bs-extjs-edit').plain(),
 			handler: this.onActionEditClick,
 			scope: this
 		});
@@ -50,10 +56,11 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.colActions = Ext.create( 'Ext.grid.column.Action', {
 			header: mw.message('bs-extjs-actions-column-header').plain(),
 			flex: 0,
-			width: 120,
+			//width: 120,
 			//cls: 'hideAction',
 			items: this.colMainConf.actions,
 			menuDisabled: true,
+			hideable: false,
 			sortable: false
 		});
 
@@ -107,7 +114,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 					flex: 1
 				}
 			},
-			sm:       this.smMain,
+			selModel: this.smMain,
 			bbar:     this.bbMain
 		};
 

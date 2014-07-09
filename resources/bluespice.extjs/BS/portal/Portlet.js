@@ -17,11 +17,11 @@ Ext.define('BS.portal.Portlet', {
 	},
 	cls: 'x-portlet',
 	title: '',
-	
+
 	//Custom Settings
 	portletConfigClass : 'BS.portal.PortletConfig',
 	portletItemCount: 10,
-	portletTimeSpan: 'alltime',
+	portletTimeSpan: 0,
 
 	initComponent: function() {
 		this.tlSettings = Ext.create('Ext.panel.Tool', {

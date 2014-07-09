@@ -1,436 +1,150 @@
-## BlueSpice Core / BlueSpice for MediaWiki
-## Copyright 2012 by Hallo Welt! Medienwerkstatt GmbH
-## http://www.blue-spice.org
-## http://www.hallowelt.biz
+BlueSpice for MediaWiki<br />
+Copyright 2014 by Hallo Welt! - Medienwerkstatt GmbH<br />
+http://www.blue-spice.org<br />
+http://www.hallowelt.biz<br />
 
-= BlueSpice release notes =
+== BlueSpice for MediaWiki 2.22.2 ==
+Date: 2014-05-07
+This is a patch and maintenance release.
 
-== BlueSpice Core 1.20 / BlueSpice for MediaWiki 1.20 ==
-Date: 2012-12-21
-This is a major release (rev 7909).
+=== Changes since 2.22.1 ===
+==== extensions/BlueSpiceDistribution ====
+* Renamed BlueSpiceDistribution.php to BlueSpiceDistribution.php.template
 
-=== Changes since BlueSpice Core 1.1.1 / BlueSpice for MediaWiki 1.1.1 ===
-=== BlueSpice Framework (Core) ===
-* Added support for MediaWiki ResourceLoader
-* Removed old I18N files
-* Added jQuery effects core
-* Added new scrollable AJAX tooltip
-* Information on Special:Version and ExtensionInfo are now the same
-* Completely removed vendor/SymfonyComponents
-* Completely removed BsEvent and BsEventDispatcher
-* Completely removed BsI18N
-* BsConfig: "getOption" on User object returns none serialized values
-* Fixed infinite recursion in ExtJS-Trees (i.e. InsertCategory)
-* Depth of recursion is now configurable
-* Refactored ExtendedSearch components
-* Added Validator I18N
-* Fixed path issues in Database.class.php
-* Added filearchive trigger for oracle
-* BsException does not return the message key anymore
-* Added I18N for RemoteHandler errors
-* Added debug mode for BsMailer
-* Fixed error when no User object could be created
-* Fixed $wgOutputEncoding issue for MediaWiki 1.19 (UTF-8 Support)
-* Added RemoteAction implementation to fix errors in RemoteHandler
-* Added MediaWiki style wfSuppressWarnings() to BsTagFinder
-* Setup: droppend support for MediaWiki < 1.17
-* Updated all jQuery and jQuery UI components
-* Added "sortable" functionality to jQuery UI
-* Removed jQuery Tools as they are no longer needed.
+==== extensions/BlueSpiceFoundation ====
+* i18n: fix spelling "occurred" (thanks to Yuki Shira)
+* Userbox now has anyMatch as default to make it easyer to work with real names
+* Fixed BSMaintenance and TestMail
+* Little work on maintenance scripts
+* Fixed Fatal error: Using $this when not in object context
+* Implemented isSerialized method to StringHelper to avoid notice and warning
+* Code cleanup in CoreHooks and StringHelper
+* Added Title object as param to parseWikiText
+* Added ParserOptions as a member of Core
+* UserCombo now dies client sort on display_name
+* Added fake RequestContext for current ContextSource implementation
+* Fixed issue with overridden OutputPage
+* Use options array of ViewBaseElement that options can be edited after initialization
+* Added public getter to avoid PermissionManager JSON from breaking
+* Keep transparency in uploaded user pictures
+* Fixed sorting of getCategoryStoreData
+* Added contributors
+* Deleted copy of Html class
+* Removed unnecessary code
+* Deleted param in if statement in PageContentProvider
+* Fixed ExtJS x-body font-size bug
+* Fixed issue with bs user preferences that false or 0 values were treated wrong because of none type prove check
+* Removed oudated installcheck.php
+* Added js code from skin for multiselect
+* Behaviour switch regex now uses 'si' modifier to allow multiple magicwords in one nowiki tag
 
-/bluespice-core/data/PDFTemplates
-* Created a "common" asset location
-* Added fonts.css
-* Adding new landscape orientation PDFTemplate
-* Added styles for <thead> and <tbody>
-* Added .wikitable stylings
-* Added more MediaWiki styles
-* Added new page-break rules
+==== extensions/BlueSpiceExtension ====
+* i18n: Fix spelling: occurred (thanks to Siebrand Mazeland)
+* Authors: Do not display IP Authors
+* Authors: Changed display order of authors
+* Authors: Fixed display of authors, more were displayed than limit
+* Blog: Fixed bug that blog article was created in main ns when adding cat param
+* CSyntaxHighlight: Added brush for lilypond
+* ExtendedSearch: Renamed facet typ into format
+* ExtendedSearch: Added patch for stats_scope column because size was to small
+* ExtendedSearch: Removed instancing of own parser for each document that is indexed
+* ExtendedSearch: Fixed search for non standard chars EdgeNGramFilterFactory used by default LowerCaseTokenizer so all other chars were removed
+* ExtendedSearch: Improved search query only add exclude tags if tags exist in faceting
+* ExtendedSearch: Some more improvements to the query if no faceting is wanted so no tagging is required
+* ExtendedSearch: Fixed bug that section results were not highlighted and removed unused fields from query
+* ExtendedSearch: Fixed bug that repo files were linked as file links
+* ExtendedSearch: Added search in titleWord to autocomplete to ensure direct match is ranked first
+* ExtendedSearch: Updating solr to version 4.7.2
+* ExtendedSearch: Fixed fatal error while indexing when main cache type is not set to none
+* ExtendedSearch: Don't set time limit on cmd - this is php deafult and also done in Maintenance.php
+* ExtendedSearch: Fixed bug with direct search in namespace
+* ExtendedSearch: Removed exception which was thrown if redirected to existing article
+* ExtendedSearch: Made some config improvements to solr
+* ExtendedSearch: Removed sentence check
+* ExtendedSearch: Made unique id more unique
+* ExtendedSearch: Fixed bug that file was not deleted when its article was deleted
+* ExtendedSearch: Added minor mime types from office files with marcros, matlab and mathcab
+* ExtendedSearch: Fixed deletion of index, query needed to be adjusted
+* ExtendedSearch: Fixed bug that no results were found when file type facet was added.
+* ExtendedSearch: Dont set namespace filter in filter query when all namespaces would be added
+* InsertFile: Search now supports left truncate
+* InsertFile: Fixed imagepath in file existance warning
+* InsertFile: Fixed bug that image was resized while editing when option framed was added
+* InsertLink: File tab is only added if wgUrlProtocols include file now
+* InsertLink: Fixed wrong treatment of : in article title (in case it does not indicate an namespace)
+* InsertLink: Fixed bug that link was set as description if no description was provided
+* InsertLink: Fixed some bugs with description
+* InsertLink: Fixed namespace combobox issue
+* InsertLink: Added support for numbered external links
+* InsertMagic: Fixed bug that tags, switches ... could not be added
+* NamespaceCss: Fixed notice when a namespace, a title refers to, does not exists anymore
+* Notifications: Changed wrong i18n key for shoutbox notification
+* PageTemplates: Removed some deprecated calls
+* PermissionManager: Resolved class name conflict
+* PermissionManager: Fixed selection bug
+* Readers: Small code improvements
+* Readers: Use class property core
+* ResponsibleEditors: Fixed condition for ResponsibleEditor dialog
+* ResponsibleEditors: Fix for ResponsibleEditors Special Page
+* ResponsibleEditors: Removed old method to get instance of extension
+* Preferences:  Added js code from skin
+* Review: I18N fixes, minor fixes
+* Review: Initial comments are now preserved
+* Review: Unsequential review save the vote response now at the step, which belongs to the current user.
+* SaferEdit: Fixed several bugs so SaferEdit works again
+* SecureFileStore: Added Cache-Control for IE
+* SmartList: Fixed arg new
+* SmartList: Removed display of redirect title
+* SmartList: Made some query improvements to recentchanges query
+* SmartList: Fixed bug recentchanges widget list was broken
+* SmartList: Fixed notice if no period is set
+* SmartList: Added fix for param order to stay compatible with old versions
+* Statebar: Moved clearfix to the right position
+* Statebar: Now uses page_props mechanism for MagicWords
+* Statistics: Fixed js errors for IE10 in Statistics
+* UEModulePDF: Added debug.css to PDFTemplates
+* UEModulePDF: Removed patrol link from pdf
+* UEModulePDF: BShtml2PDF now cleans up tmp dir on error
+* UEModulePDF: BShtml2Pdf now has better error reporting
+* UniversalExport: Now loads the css file
+* UniversalExport: Tewaked styling
+* UniversalExport: Content level headings are translated to bookmarks in proper hierarchy
+* UserManager: Removed unnecessary preference
+* UserPreferences: Use of isSerialized method in UserPreferences to avoid notice and warning
+* UserPreferences: Fixed issue that flag was not set that the received options should be set as user options
+* UserPreferences: Fixed run time issue with serialized bs user settings.
+* UserSidebar: Show default when empty artcile
+* VisualEditor: Fixed issue with AJAX LOADER size instead of original image size on slow machines
+* VisualEditor: Added some missing semicolons and removed weird assignment line
+* VisualEditor: Table cells can now be vertically aligned
+* VisualEditor: Vertical table alignment now uses style instead of classes
+* VisualEditor: Fixed __NOEDITOR__ issue
+* VisualEditor: Fix for wrong positioning when using thumb|none
+* VisualEditor: Links are now URI encoded
+* VisualEditor: Added support for pipe at end of link syntax
+* VisualEditor: Removed unused plugins
+* VisualEditor: Added support for numbered external links
+* VisualEditor: Improved support for nested templates
+* VisualEditor: Fixed bug with external links
+* VisualEditor: Fixed handling of copied external links
+* WidgetBar: Show default when empty artcile
+* WikiAdmin: Removed unnecessary reference
 
-=== BlueSpice Framework (Adapter) ===
-* Added HTMLMultiSelectSortList
-* Added HTMLLink
-* Added reValidate for real sort list in HTMLMultiSelectSortList
-* Added selected="selected" on update in HTMLMultiSelectSortList
-* Fixed compatibilty of HTMLMultiSelectEx
-* Removed differentiation of extension-settings for DBtype
-* Added BlueSpice to Special:version
-* Implemented legacy mode for OutputPage->errorpage/showErrorPage
-* Updated SpecialPage alias system
-* Added new way to control caching of a page: set dummy template
-* Changed RemoteHandler behavior in case of an error. It has been very ambiguous before (Returning a whole HTML document on error).
-* BlueSpice SpecialPages are now displayed on Special:Specialpages
-* Added "addTemporaryGroupToUser" functionality
-* Number of founds is also correct now
-* Added two functions to get the namespace constant(s) for MediaWiki namespaces
-* Added Hook BSAdapterGetUserMiniProfileBeforeInit in method getUserMiniProfile
-* Integrated WIKI_FARMING_INSTANCE_ROOT to allow loading of config files in symlinked directories
-* Added MW 1.17+ compatible Linker::link method in LinkProvider
-* Implemented conditional use of ContextSource in PageContentProvider
-* Removed link to UserPage of deleted user in UserMiniProfile
-* Added UserPreference for WidgetBar and UsersideBar
+==== skins/BlueSpiceSkin ====
+* IE9/10 fix for viewtoggler of Statebar
+* Fix for tables and footer beeing too big
+* External image removed for https
+* Removed redundant code in main.js
+* Merge patch for missing translations in sidebar (thanks to TGC)
+* Added style for #mw-missingsummary
+* Fixxed bug that notifications doesn't show when usermenu is open
+* Fixed typo
+* Fix for floating ul img
+* Moved code for preferences and multiselect fields into extension and foundation
+* Fixed check for value comparsion in search fields
 
-/bluespice-mw/adapter/scripts/BlueSpiceFramework.js
-* Added URL helper methods (for future: maybe use URL.js or similar)
-* Added .format() to prototype of String
-
-/bluespice-mw/config/extension-settings.php
-* MailChanges are now loaded on REMOTE to make ShoueBox mails work
-* Added SmartList
-* Added BSProjectFeedbackHelper
-* Added InsertMagic
-* Added CSyntaxHighlight
-
-/bluespice-mw/config/pm-settings.php
-* Removed secure group
-* Reset default permissions. BlueSpice should not impose a permission model on existing wikis
-* Group sysop is allowed to searchfiles by default
-
-=== BlueSpice Extensions ===
-* New extension: InsertMagic
-* New extension: NamespaceCss
-* New extension: PageAccess
-
-/bluespice-mw/ext/ArticleInfo
-* Added new Hook to support Vector Skin
-* Rearranged StateBarBody 
-* Added __NOARTICLEINFO__ behaviour switch
-* Added StateBar sort functionality
-* Replaced wfMsgExt with wfMsg
-* Now follows redirects
-* Added ArticleInfo.js
-* Last edited now gets updated by JavaScript
-* Added invalidateCache on parent pages
-* Improved display of categories in view mode
-
-/bluespice-mw/ext/Authors
-* Added __NOAUTHORS__ behaviour switch
-* Replaced userCan( 'read' ) with userCanRead() because it has a bug. https://bugzilla.wikimedia.org/show_bug.cgi?id=38709
-* Now authors uses plural I18N
-* UserImage setting is now inserted into db without savesettings
-* Replaced userCanRead with userCan( 'read' )
-* Added qqq messages
-* I18N UTF-8 encoding.
-
-/bluespice-mw/ext/Blog
-* Added show blog insert form on blog tag for not registered users
-* Blog tag now is injected into InsertMagic
-
-/bluespice-mw/ext/BlueSpiceProjectFeedbackHelper
-* MediaWiki I18N
-* Only show to Sysops
-* Added Link to feedback form
-* Added param toggle
-* Added confirm dialog for disabling
-* Removed "Beta" state
-
-/bluespice-mw/ext/CountThings
-* Added InsertMagic hook handler
-* Replacing wfMsg with wfMessage
-* ParserCache in hook disabled
-* Added I18N for countThings tags
-
-/bluespice-mw/ext/ExtendedSearch
-* Fixed results from "titleEdge"
-* External Repos can be indexed now.
-* Fixed wrong message that was shown while indexing
-* Added create and suggest link in autocomplete
-* CostumerId gets initialized earlier
-* Spellchecker has own view now
-* Added I18N for Settings and Specialpage
-* Added option to delete lock file
-* Added option to disable create/suggest links in autocomplete
-* New BlueSpice search plugin for Firefox. If you want to use it, you have to change the urls at the moment.
-* SearchForm on Specialpage is now just created once
-* Added Hooks before indexing
-* Added fetchContent by explicit article id
-* Improved hit highlighting
-* Delay is now 300ms
-* Title is shorted in the middle now ... also works with highlighting
-* Removed whitespaces around ellipses
-* No more create/suggest links will be displayed if title exists
-* Fixed missing preference label
-* Autocomplete Box will disappear if no results where found
-* Added client-side global event "BSExtendedSearchAutocompleteItemSelect"
-* Removed WantedArticle dependencies
-* Added better mechanism to add classes to result items
-* Implemented better logic to read in files from external repo
-* Just "application" files will be indexed now. Now it works like BuildIndexMWReopsiotry
-* Results from textWord (index field with ReversedWildcard) are highlighted, too.
-* If you open Special:SpecialExtendedSearch no error message will be thrown.
-* Improved code of link creation
-* No more empty facets will be displayed
-* Normal Article link is now made by LinkProvider
-* No spellchecker if title does not exist
-* Fixed fuzzy search searching in the wrong fields
-* In BSExtendedSearchAdditionalActions hook just the links are added now
-
-/bluespice-mw/ext/ExtensionInfo
-* Added ExtensionInfo specialpage
-* Added new HelpdeskBaseUrl
-* Moved urls into I18N-files
-* Added BlueSpice Version to ExtensionInfo
-* Fixed formatting
-
-/bluespice-mw/ext/FormattingHelp
-* FormattingHelp is now hidden if in VisualEditor mode
-
-/bluespice-mw/ext/GroupManager
-* Changed icons
-
-/bluespice-mw/ext/HideTitle/HideTitle.class.php
-* Disabled parser to remove title
-* Removing <h1> with JS
-
-/bluespice-mw/ext/SmartList (aka /bluespice-mw/ext/InfoBox)
-* Renamed InfoBox to SmartList
-* Renamed bsTop10 to bsMostViewedPages
-* Added ability to show the most viewed pages in a category
-* Added ability to show comments and date (in mode 'recent changes'), configuration in user preferences
-* Added BsTop10 tag which provides a list of pages sorted by how often they have been watched
-* Added aditional params hook
-* Modified tag attributes handling
-* Fixed Widget heading
-* Added possibility to add parameter time="month". In this case bs_whoisonline is used and you will get different scores, but the order is the same.
-* Added possibility to get the most viewed pages for more categories
-* Now the behavior of the comparison works much better
-* Renamed mostviewedpages to toplist. cat and ns not working at the moment.
-* Improved Toplist. Namespaces are working now
-* No more results with zero views will be displayed
-* Toplist does not display pages which a user is not allowed to read anymore
-* Fixed "count" param
-* Added INFOBOX Widget keyword for compatibility reasons
-
-/bluespice-mw/ext/InsertCategory
-* Changed case of file names
-* Added event handler for "hwactions-init" to add button and command
-* Removed table aliases for better cross DB compatibility
-* Category tag depends now to system language
-* Fixed error that prevented deletion of all categories in view mode
-* Disabled/Enabled state
-* Added "hideHeaders" to GridPanel
-* Added LoadMask to TreePanel
-
-/bluespice-mw/ext/InsertFile
-* Added licence chooser
-* Improved paging mechanism and performance
-* Fixed bug with height/width of images when in edit mode
-* Added reset on filter
-* Fixed trimming error of unicode-no-break-spaces (&#160;)
-* Added global clientside hook "BSInsertFileAfterInitWindow"
-* Added loadMask for DataView container panel
-
-/bluespice-mw/ext/InsertLink
-* ComboBox allows only existing namespaces
-* Internal links to pages are now correctly read in and displayed
-
-/bluespice-mw/ext/InterWikiLinks
-* Fixed paging for oracle
-
-/bluespice-mw/ext/MailChanges
-* Now sends mails in user language
-* Mails on Shouts are only sent if user watches article
-
-/bluespice-mw/ext/NamespaceManager
-* Fixed I18N
-* "id" and "name" columns are now sortable
-* Added paging toolbar
-* New delete button
-* Talk namespace will be deleted with associated namespace
-* Running check on case
-* Added OracleDB switch for ns_bak_text
-* Moved delete page query after delete revision because of ON DELETE CASCADE
-
-/bluespice-mw/ext/PagesVisited
-* Works with oracle now
-
-/bluespice-mw/ext/PageTemplates
-* Now completely sortable over serveral pages
-* Tag is rendered alphabetical
-
-/bluespice-mw/ext/PermissionManager
-* Fixed IE 8 render errors
-* Templates now have tooltips with description
-* Removed restriction level check because it was unnecessary. Now it is the original MediaWiki behavior
-
-/bluespice-mw/ext/ResponsibleEditors
-* New mail notifications on article move/edit/delete 
-* Article is now added to editors watchlist
-* SpecialPage: implemented dynamic pageSize
-* SpecialPage: set grid to autoHeight
-* SpecialPage: now lists multiple editors for each page
-* SpecialPage: added hideHeaders to GridPanel
-* SpecialPage: added loadMask to GridPanel
-* Added options for automatic rights assignment
-* Disabled AutoPermissions for ResponsibleEditors (for packaging)
-* Added invalidateCache on delete all responsible editors
-* Added invalidateCache when responsible editors change
-
-/bluespice-mw/ext/Review
-* Added updatepatches for oracle
-* Fixed crash on postgresql update.php
-* Fixed oracle
-* Fixed notifiations
-
-/bluespice-mw/ext/RSSFeeder
-* Added own hook "BSRSSFeederGetRegisteredFeeds" that replaces "MediaWikiPerformAction". Because "MediaWikiPerformAction" isn´t called on specialpages anymore
-
-/bluespice-mw/ext/SaferEdit
-* Added flag to prevent requests if no backup has been created
-* No more backup will be created if WYS is active by default and no changes have been made
-* Restored edit warning
-* SaferEdit warning is now cancelled on save, cancel and preview
-
-/bluespice-mw/ext/SecureFileStore
-* Now also replaces image links in single quotes.
-* No more fatal error will be thrown with mw 1.19+ because Image class has been removed
-
-/bluespice-mw/ext/ShoutBox
-* Added "deleteshoutbox" permission to allow users to delete their shouts
-* Deleted shouts get archived
-* Fixed long text overflow
-* Fixed Oracle and PostGreSQL
-* Added clientside I18N
-* Added BSShoutBoxBeforeAddViewAfterArticleContent hook
-* Implemented __NO_SHOUTBOX__ behavior switch
-* Added "archiveshoutbox" permission
-* Added maxlength to ShoutBox insert form
-
-/bluespice-mw/ext/StateBar
-* Added option for disable statusbar on comma separated page list
-* Added sort options for top/body sort
-* Added reorder functionality
-* Added support for underscored entrys in StateBar hide on pages pref
-* Added possibility to set data attributes to top elements
-
-/bluespice-mw/ext/Statistics
-* Fixed value labels
-* NumberOfEdits now counts correctly
-* Value label with one digit after comma
-* Removed brackets in filter text
-* added OracleDbReader - draft
-* Statistics Searchstats now works for oracle
-* Modified DB-Switch for DBReader.class
-
-/bluespice-mw/ext/TagSearch
-* Changed the style. Now it is a little bit smaller and it looks better
-* Added operator param
-
-/bluespice-mw/ext/UEModulePDF
-* Added param override from page props
-* Added page props to some important tags
-* Allowed overriding of template param from page props and URL
-* Added feature "Suppress namespace"
-* Now saving PDF if in debug mode
-* Added new implementation for SOAP-less PDFWebservice
-* Added backward compat. for old PDFTemplates
-* Changed temp dir setting
-* Added WikiId to requests
-* Added timeout of 2 minutes
-* Using Repo instead of LocalRepo for images
-* Implemented thumbnail detection
-* Reintroduced rel="nofollow"
-
-/bluespice-mw/ext/UniversalExport
-* Added StateBar sort functionality to UniversalExport
-* ExcludeArticleTag and HideTitleTag now will be shown in content instead of statebar
-* Reenabled export of not existing pages
-* Removed "default" template entry in ParamsDefaults
-
-/bluespice-mw/ext/UserManager
-* Added page size field in paging toolbar for dynamic page sizes
-* User name links now to user page
-* Paging now works for oracle
-* Now throws error if username == pw
-* Edit password works again with mw1.18+
-* Removed userid as salt ... MediaWiki generates a random number
-* Additionally show internal group names in Groups tab.
-* Added internal groupnames to edit groups dialog
-
-/bluespice-mw/ext/UserSidebar
-* Now also the default will be shown
-
-/bluespice-mw/ext/VisualEditor
-* Updated TinyMCE to 3.5.8
-* Added language files
-* Added advimagescale plugin
-* Linking across tags is no longer possible
-* Removed timestamp after image links
-* Added wikitable style
-* Added jQuery events on document object
-* Decoupled buttons
-* Added AJAX save
-* Added classes to tags and magicwords to hwcode/editor_plugin.js
-* Added hook to hwbehaviour/editor_plugin.js
-* Added parser code for behavior switches
-* Fixed <br style="clear:both;"/> - error
-* Implemented new image parsing
-* Added dedicated directory for custom plugins
-* Disabled switch to wiki code in full screen, as it breaks the view.
-* Paragraph style is now indicated (heading, paragraph, etc.)
-* Disabled RETURN key in special tags
-* Allow for multiple table headings in one row
-* Added LoadMask
-* Reestablished mailto links
-* Improved entity handling
-* Added spaces before and after single line break in order to make it possible to add text without gray background
-* Remove all nonalphanumeric characters from comments so parser won't apply.
-* Rollback newline after comments patch
-* Clean up empty divs
-* Added I18N for Magic word __NO_EDITOR__
-* Now using hwcontextmenu
-* Fullscreen editing enabled
-* Now works in language variants
-* Fixed paths for main.css and general.css
-* Added new list plugin by TinyMCE. Should improve list experience.
-* Changed CSS to better meet overall BS design
-* Added sortable list image
-
-/bluespice-mw/ext/WantedArticle
-* Added events for modification of given title
-* Changed $.on() to $.live() due jQuery version issues in MW < 1.19
-* Added <bs:wantedarticleform/> tag
-* Added wanted article tag to InsertMagic
-
-/bluespice-mw/ext/WikiAdmin
-* Replaced deprecated parent::SpecialPage by parent::__construct
-* WikiAdmin is using MediaWiki I18N now
-* Added wrapping <div> to main panel
-
-=== BlueSpice Extensions (Dist) ===
-* New extension: Calendar
-* Calendar: Replaced deprecated split with explode
-* CategoryTree: query limited by row_number on oracle
-* CategoryTree: added rumnow instead of limit for oracle
-* Updated DynamiPageList. We are using the Wikimedia Version (http://www.mediawiki.org/wiki/Extension:DynamicPageList_%28Wikimedia%29) ... not the major risk one. (tested on 1.16 & 1.17)
-* LDAPAuthentication: fixed $wgVersion bug
-* LDAPAuthentication: fixed $_SESSION['wpDomain'] bug
-* Updated Math
-* Updated Nuke: Now has much better functionality. Works with 1.17 and 1.16
-* Updated ParserFunctions
-* Updated RSS: v1.90 solves issues with umlauts
-* New extension:  SocialProfile
-* Updated SyntaxHighlight_GeSHi: Newest version of geshi does not work with mw1.19+ so syntaxhighlight tag was added
-* New extension: WikiCategoryTagCloud
-
-=== BlueSpice Webservices ===
-/webservices/BShtml2PDF
-* Added new BShtml2PDF.war
-* Added linkable attachments
-
-/webservices/SOLR
-* Separated the index that each field has just it's own filterfactory
-* Removed titleEdge field
-* Removed copyfield for titleEdge
-* Removed titleEdge 
-* Added TextReverse
-* Added missing sort field
-* Updated spellchecker component and index field or spellchecker
-* Removed velocity because it has a bug in solr 3.5
-* Spellchecker index is no more rebuild when commit is triggered because this is a performance killer
-
-== The Team ==
-=== Programmers ===
+=== The Team ===
+==== Programmers ====
 * Markus Glaser
 * Radovan Kubani
 * Sebastian Ulbricht
@@ -443,11 +157,11 @@ This is a major release (rev 7909).
 * Karl Waldmannstetter
 * Daniel Lynge
 * Tobias Davids
-* Stefan Widmann
 * Patric Wirth
 * Stephan Muggli
+* Stefan Widmann
 
-=== Design & Testing ===
+==== Design & Testing ====
 * Anja Ebersbach
 * Richard Heigl
 * Nathalie Köpff
@@ -456,7 +170,18 @@ This is a major release (rev 7909).
 * Dardan Diugan
 * Christina Glaser
 * Christian Graf
+* Angelika Müller
+* Jan Göttlich
+* Karl Skodnik
 
-== Standing on the shoulders of giants ==
-We would like to thank all the people around MediaWiki. You've created a 
-wonderful piece of software. Thanks a lot!
+==== Contributors ====
+* Bartosz Dziewoski
+* Chad Horohoe
+* Raimond Spekking
+* Siebrand Mazeland
+* Yuki Shira
+* TGC
+
+
+=== Standing on the shoulders of giants ===
+We would like to thank all the people around MediaWiki. You've created a wonderful piece of software. Thanks a lot!

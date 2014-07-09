@@ -4,19 +4,21 @@
 //index.php?action=ajax&rs=BSCommonAJAXInterface::getNamespaceStoreData&rsargs[]={}
 
 class BsCommonAJAXInterface {
+
 	public static function getTitleStoreData( $sOptions = '{}' ) {
 		//TODO: Reflect $options ans WebRequest::getVal('start|limit|...')
 		$aOptions = FormatJson::decode($sOptions, true);
-		
+
 		$aConditions = array();
-		
+
 		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select( 'page', '*', $aConditions );
+		$res = $dbr->select( 'page', 'page_id', $aConditions );
 		$oResult = new stdClass();
 		$oResult->titles = array();
-		foreach( $res as $row ){
-			$oTitle = Title::newFromRow($row);
-			if( $oTitle->userCan( 'read') == false ) continue; //TODO: Maybe reflect in PAGING!
+
+		foreach ( $res as $row ){
+			$oTitle = Title::newFromID( $row->page_id );
+			if ( $oTitle->userCan( 'read' ) == false ) continue; //TODO: Maybe reflect in PAGING!
 
 			$oClientTitle = new stdClass();
 			$oClientTitle->articleId = $oTitle->getArticleID();
@@ -26,19 +28,19 @@ class BsCommonAJAXInterface {
 			$oClientTitle->namespaceText = $oTitle->getNsText();
 			$oClientTitle->isRedirect = $oTitle->isRedirect();
 			$oClientTitle->isSubpage = $oTitle->isSubpage();
-			
+
 			$oResult->titles[] = $oClientTitle;
 		}
-		
+
 		$aSpecialPages = SpecialPageFactory::getList();
-		$aSP = array();
-		foreach( $aSpecialPages as $sSpecialPageName => $sSpecialPageAlias ) {
+
+		foreach ( $aSpecialPages as $sSpecialPageName => $sSpecialPageAlias ) {
 			$oSpecialPage = SpecialPage::getPage( $sSpecialPageName );
-			if( $oSpecialPage instanceof SpecialPage == false ){
+			if ( !( $oSpecialPage instanceof SpecialPage ) ){
 				wfDebug( __METHOD__.': "'.$sSpecialPageName.'" is not a valid SpecialPage' );
 				continue;
 			}
-			
+
 			$oTitle = $oSpecialPage->getTitle();
 
 			$oClientTitle = new stdClass();
@@ -49,21 +51,22 @@ class BsCommonAJAXInterface {
 			$oClientTitle->namespaceText = $oTitle->getNsText();
 			$oClientTitle->isRedirect = false;
 			$oClientTitle->isSubpage = false;
-			
+
 			$oResult->titles[] = $oClientTitle;
 		}
-		
-		return FormatJson::encode($oResult);
+
+		return FormatJson::encode( $oResult );
 	}
-	
+
 	public static function getNamespaceStoreData( $sOptions = '{}' ) {
 		//TODO: Reflect $options ans WebRequest::getVal('start|limit|...')
-		$aOptions = FormatJson::decode($sOptions, true);
+		//$aOptions = FormatJson::decode( $sOptions, true );
 
 		$aNamespaces = BsNamespaceHelper::getNamespacesForSelectOptions();
 		$oResult = new stdClass();
 		$oResult->namespaces = array();
-		foreach( $aNamespaces as $iNSid => $sNSName ){
+
+		foreach ( $aNamespaces as $iNSid => $sNSName ){
 			$oNamespace = new stdClass();
 			$oNamespace->namespaceId = $iNSid;
 			$oNamespace->namespaceName = $sNSName;
@@ -72,54 +75,69 @@ class BsCommonAJAXInterface {
 
 			$oResult->namespaces[] = $oNamespace;
 		}
-		
+
 		return FormatJson::encode($oResult);
 	}
-	
+
 	public static function getUserStoreData( $sOptions = '{}' ) {
 		$aDefaultOptions = array(
 			'group' => '', //TODO: make array? How to operate them? AND / OR
 			'permission' => '', //TODO: see above
 		);
-		
-		$aOptions = FormatJson::decode($sOptions, true);
+
+		//$aOptions = FormatJson::decode($sOptions, true);
 		//TODO: recursive merge with $aDefaultOptions
 
 		$oResult = new stdClass();
 		$oResult->users = array();
-		
+
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'user',
-			array( 'user_id', 'user_name', 'user_real_name' )
+			'user_id'
 		);
-		
+
 		foreach( $res as $row ) {
 			$oUser = User::newFromId( $row->user_id );
 			$oUserData = new stdClass();
-			
+
 			//DB fields
-			$oUserData->user_id = (int)$row->user_id;
-			$oUserData->user_name = $row->user_name;
-			
+			//PW: user_id needs to be casted to int or ExtJs can not search the store by id property!
+			$oUserData->user_id = (int) $oUser->getId();
+			$oUserData->user_name = $oUser->getName();
+
 			//Calculated fields
 			$oUserData->display_name = BsCore::getUserDisplayName( $oUser );
 			$oUserData->page_prefixed_text = $oUser->getUserPage()->getPrefixedText();
-			
+
 			$oResult->users[] = $oUserData;
 		}
-		
-		return FormatJson::encode($oResult);
+
+		return FormatJson::encode( $oResult );
 	}
-	
+
 	public static function getAsyncCategoryTreeStoreData( $sOptions = '{}' ) {
 		global $wgRequest;
 		$aResult = array();
 		$sNode = $wgRequest->getVal( 'node' );
 		$dbr = wfGetDB( DB_SLAVE );
-		
-		if( $sNode == 'src' ) {
+
+		if ( $sNode == 'src' ) {
 			$aCategories = array();
+			$aSubCategories = array();
+
+			$resSubcats = $dbr->select(
+				array( 'page', 'categorylinks' ),
+				array( 'page_title AS cat_title' ),
+				array( 'page_namespace' => NS_CATEGORY ),
+				__METHOD__,
+				array( 'ORDER BY page_title' ),
+				array( 'categorylinks' => array( 'INNER JOIN', 'page_id = cl_from' ), )
+			);
+
+			foreach ( $resSubcats as $row ) {
+				$aSubCategories[] = $row->cat_title;
+			}
 
 			$aTables = array( 'page' );
 			$aFields = array( '*' );
@@ -128,31 +146,42 @@ class BsCommonAJAXInterface {
 			$aOptions = array( '');
 			$aJoinConds = array();
 
+			$aConditions[] = 'page_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')';
+
 			$resPageTable = $dbr->select(
 				$aTables,
 				$aFields,
 				$aConditions,
 				$sMethod,
 				$aOptions,
-				$aJoinConds			
+				$aJoinConds
 			);
 
-			foreach( $resPageTable as $row ) {
+			foreach ( $resPageTable as $row ) {
 				$aCategories[] = $row->page_title;
 			}
 
-			$resCategoryTable = $dbr->select( 'category', '*' );
+			$resCategoryTable = $dbr->select(
+				array( 'category', 'categorylinks' ),
+				'cat_title',
+				array(
+					'cat_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')',
+					'cat_title = cl_to'
+				),
+				__METHOD__,
+				array( 'GROUP BY cat_title' )
+			);
 
-			foreach( $resCategoryTable as $row ) {
+			foreach ( $resCategoryTable as $row ) {
 				$aCategories[] = $row->cat_title;
 			}
 
 			$aCategories = array_unique( $aCategories );
 			asort( $aCategories );
 
-			foreach( $aCategories as $sCategory ) {
+			foreach ( $aCategories as $sCategory ) {
 				$oTmpCat = Category::newFromName( $sCategory );
-				if( $oTmpCat instanceof Category ){}
+				if ( $oTmpCat instanceof Category ){}
 				$oCategory = new stdClass();
 				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
 				$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
@@ -162,15 +191,15 @@ class BsCommonAJAXInterface {
 		} else {
 			$aNodes = explode( '/', $sNode );
 			$sCatTitle = str_replace( '+', '/', str_replace( ' ', '_', array_pop( $aNodes ) ) );
-			
+
 			$aTables = array( 'page', 'categorylinks' );
 			$aFields = array( 'page_title' );
-			$aConditions = array( 'cl_to' => $sCatTitle );
+			$aConditions = array( 'cl_to' => $sCatTitle, 'page_namespace' => NS_CATEGORY );
 			$sMethod = __METHOD__;
-			$aOptions = array( '');
-			$aJoinConds = array( 'categorylinks' => array( 'JOIN', 'page_id=cl_from') );
+			$aOptions = array( '' );
+			$aJoinConds = array( 'categorylinks' => array( 'INNER JOIN', 'page_id=cl_from') );
 
-			$resSubCategories = $dbr->select( 
+			$resSubCategories = $dbr->select(
 				$aTables,
 				$aFields,
 				$aConditions,
@@ -180,13 +209,13 @@ class BsCommonAJAXInterface {
 			);
 
 			$aSubCategories = array();
-			
-			foreach( $resSubCategories as $row ) {
+
+			foreach ( $resSubCategories as $row ) {
 				$aSubCategories[] = $row->page_title;
 			}
 			asort( $aSubCategories );
-			
-			foreach( $aSubCategories as $sCategory ) {
+
+			foreach ( $aSubCategories as $sCategory ) {
 				$oTmpCat = Category::newFromName( $sCategory );
 				$oCategory = new stdClass();
 				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
@@ -196,21 +225,39 @@ class BsCommonAJAXInterface {
 			}
 		}
 
-		return FormatJson::encode($aResult);
+		return FormatJson::encode( $aResult );
 	}
-	
+
 	public static function getCategoryStoreData( $sOptions = '{}' ) {
 		// $sOptions will be used... maybe
 		$oResult = new stdClass();
-		$oResult->categories = array();
-		
+
+		$aCategories = array();
 		$dbr = wfGetDB( DB_SLAVE );
+		// category table also tracks all deleted categories. So we need to double
+		// check with categorylinks and page table. Use case for this is a category
+		// name that had a spelling mistake.
+		// From category table:
+		// -- Track all existing categories.  Something is a category if 1) it has an en-
+		// -- try somewhere in categorylinks, or 2) it once did.  Categories might not
+		// -- have corresponding pages, so they need to be tracked separately.
+
+		// (31.01.14) STM: Query had to be seperated into two quieres because it was to expensive
+
 		$res = $dbr->select(
-			'category',
-			array( 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' )
+			array( 'category', 'categorylinks' ),
+			array( 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ),
+			array( 'cat_title = cl_to' ),
+			__METHOD__,
+			array( 'GROUP BY' => 'cat_title' )
 		);
-		
-		foreach( $res as $row ) {
+
+		foreach ( $res as $row ) {
+			$oCategoryTitle = Title::newFromText( $row->cat_title, NS_CATEGORY );
+			if ( !is_object( $oCategoryTitle ) ) {
+				continue;
+			}
+
 			$oCategoryData = new stdClass();
 
 			$oCategoryData->cat_id = (int)$row->cat_id;
@@ -219,16 +266,45 @@ class BsCommonAJAXInterface {
 			$oCategoryData->cat_pages = (int)$row->cat_pages;
 			$oCategoryData->cat_subcats = (int)$row->cat_subcats;
 			$oCategoryData->cat_files = (int)$row->cat_files;
-			
-			$oCategoryData->prefixed_text = Title::newFromText( $row->cat_title, NS_CATEGORY )->getPrefixedText();
-			
-			$oResult->categories[] = $oCategoryData;
+
+			$oCategoryData->prefixed_text = $oCategoryTitle->getPrefixedText();
+
+			$aCategories[$row->cat_title] = $oCategoryData;
 		}
-		
-		return FormatJson::encode($oResult);
+
+		$res = $dbr->select(
+			array( 'category', 'page' ),
+			array( 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ),
+			array( 'cat_title = page_title AND page_namespace = '.NS_CATEGORY )
+		);
+
+		foreach ( $res as $row ) {
+			$oCategoryTitle = Title::newFromText( $row->cat_title, NS_CATEGORY );
+			if ( !is_object( $oCategoryTitle ) ) {
+				continue;
+			}
+
+			$oCategoryData = new stdClass();
+
+			$oCategoryData->cat_id = (int)$row->cat_id;
+			$oCategoryData->cat_title = $row->cat_title;
+			$oCategoryData->text = $row->cat_title;
+			$oCategoryData->cat_pages = (int)$row->cat_pages;
+			$oCategoryData->cat_subcats = (int)$row->cat_subcats;
+			$oCategoryData->cat_files = (int)$row->cat_files;
+
+			$oCategoryData->prefixed_text = $oCategoryTitle->getPrefixedText();
+
+			$aCategories[$row->cat_title] = $oCategoryData;
+		}
+
+		ksort( $aCategories );
+		$aCategories = array_values( $aCategories );
+
+		$oResult->categories = $aCategories;
+		return FormatJson::encode( $oResult );
 	}
-	
-	
+
 	/**
 	 * Calculate the real file path of an image to show an preview.
 	 * @deprecated Use MW API with query prop "imageinfo" and iiprop "url"
@@ -237,7 +313,7 @@ class BsCommonAJAXInterface {
 	 */
 	public static function getFileUrl( $file ) {
 		$url = self::imageUrl( $file );
-		//TODO: This is not good. We should use API and SecureFileStore should 
+		//TODO: This is not good. We should use API and SecureFileStore should
 		//alter API response via Hook
 		if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
 			$url = SecureFileStore::secureStuff( $url, true );
@@ -249,6 +325,7 @@ class BsCommonAJAXInterface {
 			)
 		);
 	}
+
 	/**
 	 * Helper method for self::getFileRealLink
 	 * @deprecated Use MW API with query prop "imageinfo" and iiprop "url"
@@ -259,10 +336,10 @@ class BsCommonAJAXInterface {
 	 */
 	protected static function imageUrl( $name, $fromSharedDirectory = false ) {
 		$image = null;
-		if( $fromSharedDirectory ) {
+		if ( $fromSharedDirectory ) {
 			$image = wfFindFile( $name );
 		}
-		if( !$image ) {
+		if ( !$image ) {
 			$image = wfLocalFile( $name );
 		}
 		return $image->getUrl();

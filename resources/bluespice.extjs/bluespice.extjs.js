@@ -1,11 +1,30 @@
 ( function ( mw, bs, $, d,undefined ) {
 	"use strict";
+	
+	//This allows us to place anchortags with special data attributes
+	Ext.QuickTips.init();
+	
+	//Allows to have stateful ExtJS components
+	Ext.state.Manager.setProvider(new Ext.state.CookieProvider({
+		expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30))
+	}));
 
-	var basePath = mw.config.get('wgScriptPath') 
-		+ '/extensions/BlueSpiceFoundation/resources/bluespice.extjs';
-
-	Ext.Loader.setPath( 'BS',     basePath + '/BS');
-	Ext.Loader.setPath( 'Ext.ux', basePath + '/Ext.ux');
+	//Experimental feature. May be improved in the future
+	$('a.mw-userlink').each(function(){
+		 Ext.create('Ext.tip.ToolTip', {
+			title: $(this).data('bs-username'),
+			target: this,
+			anchor: 'right',
+			/*autoLoad: {
+				url: mw.util.wikiScript('api')
+			},
+			height: 200,*/
+			width: 200,
+			autoHide: false,
+			closable: true,
+			showDelay: 1000
+		 });
+	});
 	
 	//Be nice to older browsers
 	//HINT: http://stackoverflow.com/questions/2581302/globally-disable-ext-js-animations

@@ -15,10 +15,14 @@
 
 $messages = array();
 
-$messages['de'] = array(
-	'diagnostics'                                   => 'Systemdiagnose'
+$messages['en'] = array(
+	'diagnostics' => 'System diagnostics'
 );
 
-$messages['en'] = array(
-	'diagnostics'                                   => 'System diagnostics'
+$messages['qqq'] = array(
+	'diagnostics' => 'Special page title'
+);
+
+$messages['de'] = array(
+	'diagnostics' => 'Systemdiagnose'
 );

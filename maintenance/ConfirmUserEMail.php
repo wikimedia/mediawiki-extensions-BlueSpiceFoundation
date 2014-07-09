@@ -22,16 +22,16 @@ class ConfirmUserEMail extends Maintenance {
 	
 	public function execute() {
 		
-		$siUser   	= $this->getOption( 'user' );
-		$bExecute   = $this->getOption( 'execute' );
-		$bForce		= $this->getOption( 'force' );
+		$siUser = $this->getOption( 'user' );
+		$bExecute = (bool)$this->getOption( 'execute', false );
+		$bForce = (bool)$this->getOption( 'force', false );
 		
 		$aUserStore = $this->getUser( $siUser, $bForce );
 		if( empty( $aUserStore ) ) {
-			echo "User does not exist!";
+			$this->output( "User does not exist!" );
 			return;
 		}
-		$aUserStore = $this->ConfirmUser($aUserStore, $bExecute, $bForce);
+		$aUserStore = $this->confirmUser($aUserStore, $bExecute, $bForce);
 		
 		$this->displayResult($aUserStore);
 	}
@@ -57,12 +57,13 @@ class ConfirmUserEMail extends Maintenance {
 		
 		$aUser = array();
 		while( $aRow = $oDbr->fetchRow( $rRes ) ) {
-			$aUser[] = array(	'id'	=> $aRow['user_id'],
-								'name'	=> $aRow['user_name'],
-								'email' => $aRow['user_email'],
-								'setvalue' => $aRow['user_email_authenticated'],
-								'value'	=> 'authentification'
-							);
+			$aUser[] = array(
+				'id'	=> $aRow['user_id'],
+				'name'	=> $aRow['user_name'],
+				'email' => $aRow['user_email'],
+				'setvalue' => $aRow['user_email_authenticated'],
+				'value'	=> 'authentification'
+			);
 		}
 		
 		return $aUser;
@@ -81,11 +82,10 @@ class ConfirmUserEMail extends Maintenance {
 			}
 			if( empty($aUserStore[$i]['setvalue']) ) {
 				if( $bExecute ) {
-
 					$oDbw->update( 'user',
-									array('user_email_authenticated' => date('YmdHis')),
-									array('user_id' => $aUserStore[$i]['id'])
-								);
+						array('user_email_authenticated' => date('YmdHis')),
+						array('user_id' => $aUserStore[$i]['id'])
+					);
 				}
 				$aUserStore[$i]['setvalue'] = ' => confirmed';
 			}
@@ -97,7 +97,7 @@ class ConfirmUserEMail extends Maintenance {
 	
 	private function displayResult( $aUserStore ) {
 		foreach( $aUserStore as $aUser) {
-			echo $aUser["name"].": ".$aUser["value"].$aUser["setvalue"]."\n";
+			$this->output( $aUser["name"].": ".$aUser["value"].$aUser["setvalue"]."\n" );
 		}
 	}
 	

@@ -1,6 +1,10 @@
 <?php
 class BsCoreHooks {
-	
+
+	protected static $bUserFetchRights = false;
+
+	protected static $loggedInByHash = false;
+
 	public static function onSetupAfterCache() {
 		global $wgExtensionFunctions, $wgGroupPermissions, $wgWhitelistRead, $wgMaxUploadSize,
 		$wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown, $wgNonincludableNamespaces,
@@ -8,13 +12,13 @@ class BsCoreHooks {
 		$wgLocalisationCacheConf, $wgAutoloadLocalClasses, $wgFlaggedRevsNamespaces, $wgNamespaceAliases, $wgVersion;
 
 		$sConfigPath = BSROOTDIR . DS . 'config';
-		$aConfigFiles = array( 
-			'nm-settings.php', 
-			'gm-settings.php', 
-			'pm-settings.php' 
+		$aConfigFiles = array(
+			'nm-settings.php',
+			'gm-settings.php',
+			'pm-settings.php'
 		);
-		
-		foreach( $aConfigFiles as $sConfigFile) {
+
+		foreach ( $aConfigFiles as $sConfigFile) {
 			$sConfigFilePath = $sConfigPath . DS . $sConfigFile;
 			if ( file_exists( $sConfigFilePath ) ) {
 				include( $sConfigFilePath );
@@ -30,10 +34,10 @@ class BsCoreHooks {
 	 */
 	public static function onSoftwareInfo( &$aSoftware ) {
 		global $wgBlueSpiceExtInfo;
-		$aSoftware['[http://www.blue-spice.org/ ' . $wgBlueSpiceExtInfo['name'] . ']'] = $wgBlueSpiceExtInfo['version'];
+		$aSoftware['[http://www.blue-spice.org/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
 		return true;
 	}
-	
+
 	public static function setup() {
 		HTMLForm::$typeMappings['staticimage'] = 'HTMLStaticImageFieldOverride';
 		HTMLForm::$typeMappings['link'] = 'HTMLInfoFieldOverride';
@@ -43,7 +47,7 @@ class BsCoreHooks {
 		HTMLForm::$typeMappings['multiselectplusadd'] = 'HTMLMultiSelectPlusAdd';
 		HTMLForm::$typeMappings['multiselectsort'] = 'HTMLMultiSelectSortList';
 	}
-	
+
 	/**
 	* Adds the 'ext.bluespice' module to the OutputPage.
 	* Adds all Scripts and Styles from BsScriptManager and BsStyleManager
@@ -52,14 +56,16 @@ class BsCoreHooks {
 	* @param Skin $skin
 	* @return boolean
 	*/
-	public static function onBeforePageDisplay( $out, $skin) {
-		global $IP,$wgFavicon, $wgExtensionAssetsPath,
+	public static function onBeforePageDisplay( $out, $skin ) {
+		global $IP, $wgFavicon, $wgExtensionAssetsPath,
 			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
-		
-		$out->addModules('ext.bluespice');
-		$out->addModules('ext.bluespice.extjs');
 
-		$sSP = BsConfig::get('MW::BlueSpiceScriptPath');
+		$out->addModuleScripts( 'ext.bluespice.scripts' );
+		$out->addModuleStyles( 'ext.bluespice.styles' );
+		$out->addModuleMessages( 'ext.bluespice.messages' );
+		$out->addModules( 'ext.bluespice.extjs' );
+		$out->addModuleStyles( 'ext.bluespice.extjs.styles' );
+
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
 
 		//Add ExtJS Files
@@ -67,42 +73,54 @@ class BsCoreHooks {
 		//Add ExtJS Theme files
 		$sTheme = isset($bsgExtJSThemes[$bsgExtJSTheme]) ? $bsgExtJSTheme :'bluespice' ;
 		self::addNonRLResources($out, $bsgExtJSThemes[$sTheme], $sTheme);
-		
+
 		//Use ExtJS's built-in i18n. This may fail for some languages...
 		$sLangCode = preg_replace('/(-|_).*$/', '', $out->getLanguage()->getCode());
-		if ($sLangCode != 'en') {
-			$out->addScriptFile( $sSP.'/resources/extjs/locale/ext-lang-' . $sLangCode . '.js' ); //ExtJS 4
+		//TODO: make a mapping between MW-LangCodes and ExtJS files!
+		$aExtJSLangs = array(
+			'af', 'el_GR', 'fa', 'hr', 'lt', 'pl', 'sk', 'tr', 'bg', 'en',
+			'fi', 'hu', 'lv', 'pt', 'sl', 'ukr', 'ca', 'en_AU', 'fr', 'id',
+			'mk', 'pt_BR', 'sr',  'vn', 'cs', 'en_GB', 'fr_CA', 'it', 'nl',
+			'pt_PT', 'sr_RS', 'zh_CN','da', 'es', 'gr', 'ja', 'no_NB', 'ro',
+			'sv_SE', 'zh_TW', 'de', 'et', 'he', 'ko', 'no_NN', 'ru', 'th'
+		);
+
+		if ($sLangCode != 'en' && in_array( $sLangCode, $aExtJSLangs ) ) {
+			$out->addScriptFile(
+				$wgExtensionAssetsPath
+					.'/BlueSpiceFoundation/resources/extjs/locale/ext-lang-' . $sLangCode . '.js'
+			);
 		}
 
 		$aScriptBlocks = BsCore::getClientScriptBlocks();
-		foreach( $aScriptBlocks as $sKey => $aClientScriptBlock ) {
+		foreach ( $aScriptBlocks as $sKey => $aClientScriptBlock ) {
 			$aOutput[] = '<script type="text/javascript">';
 			$aOutput[] = '//'.$aClientScriptBlock[0].' ('.$sKey.')';
 			$aOutput[] = $aClientScriptBlock[1];
 			$aOutput[] = '</script>';
-			$out->addScript(implode("\n", $aOutput));
+			$out->addScript( implode( "\n", $aOutput ) );
 		}
 
 		//Make some variables available on client side:
 		global $wgEnableUploads, $wgMaxUploadSize;
 		$iMaxPhpUploadSize = (int) ini_get('upload_max_filesize');
 		$aMaxUploadSize = array(
-			'php'       => 1024*1024*$iMaxPhpUploadSize,
+			'php' => 1024*1024*$iMaxPhpUploadSize,
 			'mediawiki' => $wgMaxUploadSize
 		);
-		
-		//We cannot use BsConfig::RENDER_AS_JAVASCRIPT because we want to 
+
+		//We cannot use BsConfig::RENDER_AS_JAVASCRIPT because we want to
 		//normalize the content to lower case:
 		$aFileExtensions  = self::lcNormalizeArray( BsConfig::get( 'MW::FileExtensions' ) );
 		$aImageExtensions = self::lcNormalizeArray( BsConfig::get( 'MW::ImageExtensions' ) );
-		
+
 		$out->addJsConfigVars( 'bsMaxUploadSize', $aMaxUploadSize );
 		$out->addJsConfigVars( 'bsEnableUploads', $wgEnableUploads ); //Was: 'MW::InsertFile::EnableUploads' --> 'bsInsertFileEnableUploads'
 		$out->addJsConfigVars( 'bsFileExtensions', $aFileExtensions );
 		$out->addJsConfigVars( 'bsImageExtensions', $aImageExtensions );
 		$out->addJsConfigVars( 'bsIsWindows', wfIsWindows() );
-		
-		$aExtensionConfs = BsExtensionManager::getRegisteredExtenions();
+
+		$aExtensionConfs = BsExtensionManager::getRegisteredExtensions();
 		$aAssetsPaths = array(
 			'BlueSpiceFoundation' => $wgExtensionAssetsPath.'/BlueSpiceFoundation'
 		);
@@ -126,18 +144,22 @@ class BsCoreHooks {
 		}
 		//TODO: Implement as RL Module: see ResourceLoaderUserOptionsModule
 		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
+		$sBasePath = $wgExtensionAssetsPath.'/BlueSpiceFoundation/resources/bluespice.extjs';
+
 		$sExtJS = 'Ext.BLANK_IMAGE_URL = mw.config.get("wgScriptPath")+"/extensions/BlueSpiceFoundation/resources/bluespice.extjs/images/s.gif";';
+		$sExtJS.= "Ext.Loader.setPath( 'BS',     '$sBasePath' + '/BS');";
+		$sExtJS.= "Ext.Loader.setPath( 'Ext.ux', '$sBasePath' + '/Ext.ux');";
 		$sExtJS.= 'Ext.Loader.setPath('.FormatJson::encode( $aExtJSPaths).');';
-		
+
 		$out->addScript(
 			Html::inlineScript( $sExtJS )
 		);
 
 		return true;
 	}
-	
+
 	/**
-	 * Performs lower case transformation on every item of an array and removes 
+	 * Performs lower case transformation on every item of an array and removes
 	 * duplicates
 	 * @param array $aData One dimensional array of strings
 	 * @return array
@@ -149,9 +171,9 @@ class BsCoreHooks {
 		}
 		return array_unique( $aNormalized );
 	}
-	
+
 	/**
-	 * Adds styles and scripts to document head without using MediaWikis 
+	 * Adds styles and scripts to document head without using MediaWikis
 	 * resourceloader
 	 * HINT: IE 8/9 Issues
 	 * http://stackoverflow.com/questions/8092261/extjs-4-load-mask-giving-errors-in-ie8-and-ie9-when-used-while-opening-a-windo
@@ -161,11 +183,11 @@ class BsCoreHooks {
 	 */
 	protected static function addNonRLResources($out, $aFiles, $sKey) {
 		global $wgResourceLoaderDebug, $wgScriptPath;
-		
+
 		$aScripts = isset( $aFiles['scripts'] ) ? $aFiles['scripts'] : array();
 		$aStyles  = isset( $aFiles['styles'] )  ? $aFiles['styles']  : array();
 
-		if( $out->getRequest()->getVal('debug', 'false') != 'false' 
+		if( $out->getRequest()->getVal('debug', 'false') != 'false'
 				|| $wgResourceLoaderDebug ) { //DEBUG Mode
 			if( isset($aFiles['debug-scripts']) ) {
 				$aScripts = $aFiles['debug-scripts'];
@@ -176,9 +198,9 @@ class BsCoreHooks {
 		}
 		$iScriptCount = 0;
 		foreach( $aScripts as $sScript ) {
-			
-			$out->addHeadItem( 
-				$sKey.'-'.$iScriptCount, 
+
+			$out->addHeadItem(
+				$sKey.'-'.$iScriptCount,
 				Html::linkedScript( $wgScriptPath.$sScript)
 			);
 			$iScriptCount++;
@@ -187,19 +209,19 @@ class BsCoreHooks {
 			$out->addStyle( $wgScriptPath.$sStyle );
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param array $vars
 	 * @param OutputPage $out
 	 * @return boolean Always true to keep hook running
 	 */
 	public static function onMakeGlobalVariablesScript(&$vars, $out) {
 		// Necessary otherwise values are not correctly loaded
-		BsConfig::loadSettings();
-		BsConfig::loadUserSettings( $out->getUser()->getName() );
+		$oUser = $out->getUser();
 
 		$aScriptSettings = BsConfig::getScriptSettings();
+		wfRunHooks('BsFoundationBeforeMakeGlobalVariablesScript', array( $oUser, &$aScriptSettings ) );
 
 		foreach ( $aScriptSettings as $oVar ) {
 			$mValue = $oVar->getValue();
@@ -215,24 +237,19 @@ class BsCoreHooks {
 
 		return true;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param DatabaseUpdater $updater
 	 * @return boolean Always true to keep hook running
 	 */
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
-		global $wgDBtype, $wgScriptPath;
+		global $wgDBtype;
 
 		$dbw = wfGetDB( DB_WRITE );
 		$table = $dbw->tableName( 'bs_settings' );
-		$scriptpath = serialize( "{$wgScriptPath}/extensions/BlueSpiceFoundation" );
 
 		if ( $dbw->tableExists( 'bs_settings' ) ) {
-			$res = $dbw->query("SELECT * FROM {$table} WHERE `key` = 'MW::BlueSpiceScriptPath'");
-			if ( $dbw->numRows( $res ) < 1 ) {
-				$dbw->query("INSERT INTO {$table} (`key`, `value`) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
-			}
 			return true;
 		}
 
@@ -240,21 +257,18 @@ class BsCoreHooks {
 			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (`key` varchar(255) NOT NULL, `value` text)");
 			$dbw->query("CREATE UNIQUE INDEX `key` ON {$table} (`key`)");
-			$dbw->query("INSERT INTO {$table} (`key`, `value`) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
 		} elseif ( $wgDBtype == 'postgres' ) {
 			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (key varchar(255) NOT NULL, value text)");
 			$dbw->query("CREATE UNIQUE INDEX key ON {$table} (key)");
-			$dbw->query("INSERT INTO {$table} (key, value) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
 		} elseif ( $wgDBtype == 'oracle' ) {
 			$dbw->query("CREATE TABLE {$table} (key VARCHAR2(255) NOT NULL, value LONG NOT NULL)");
 			$dbw->query("CREATE UNIQUE INDEX {$dbw->tableName('settings_u01')} ON {$table} (key)");
-			$dbw->query("INSERT INTO {$table} (key, value) VALUES ('MW::BlueSpiceScriptPath', '{$scriptpath}')");
 		}
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Called during ApiMain::checkCanExecute(), prevents user getting text when lacking permissions
 	 * @param ApiBase $module
@@ -271,4 +285,246 @@ class BsCoreHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * Adds additional data to links generated by the framework. This allows us
+	 * to add more functionality to the UI.
+	 * @param SkinTemplate $skin
+	 * @param Title $target
+	 * @param array $options
+	 * @param string $html
+	 * @param array $attribs
+	 * @param string $ret
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function LinkEnd( $skin, $target, $options, &$html, &$attribs, &$ret ) {
+		//We add the original title to a link. This may be the same content as
+		//"title" attribute, but it doesn't have to. I.e. in rea links
+		$attribs['data-bs-title'] = $target->getPrefixedText();
+
+		if( $target->getNamespace() == NS_USER && $target->isSubpage() === false ) {
+			//Linker::userLink adds class "mw-userlink" by default
+			/*if( !isset($attribs['class']) ) {
+				$attribs['class'] = '';
+			}
+			$attribs['class'] .= ' user';*/
+			if( $target->getText() == $html ) {
+				$html = htmlspecialchars(
+					BsCore::getUserDisplayName(
+						User::newFromName($target->getText())
+					)
+				);
+				$attribs['data-bs-username'] = $target->getText();
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * @param User $oUser
+	 * @param array $aRights
+	 * @return boolean
+	 */
+	public static function onUserGetRights( $oUser, &$aRights ) {
+		wfProfileIn('BS::' . __METHOD__);
+
+		if ( $oUser->isAnon() ) {
+			$oRequest = RequestContext::getMain()->getRequest();
+			$iUserId = $oRequest->getVal( 'u', '' );
+			$sUserHash = $oRequest->getVal( 'h', '' );
+
+			if ( !empty( $iUserId ) && !empty( $sUserHash ) ) {
+				self::$loggedInByHash = true;
+				$_user = User::newFromName( $iUserId );
+				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
+					$oUser = $_user;
+				}
+			}
+		}
+
+		if ( self::$bUserFetchRights == false ) {
+			$aRights = User::getGroupPermissions( $oUser->getEffectiveGroups( true ) );
+			# The flag is deactivated to prevent some bugs with the loading of the actual users rights.
+			# $this->bUserFetchRights = true;
+		}
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * This function triggers User::isAllowed when userCanRead is called. This
+	 * leads to an early initialization of $user object, which is needed in
+	 * order to have correct permission sets in BlueSpice.
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param boolean $result
+	 */
+	public static function onUserCan( &$title, &$user, $action, &$result ) {
+		wfProfileIn('BS::' . __METHOD__);
+		if ( !self::$loggedInByHash ) {
+			wfProfileIn('--BS::' . __METHOD__ . 'if !$this->loggedInByHash');
+			$oRequest = RequestContext::getMain()->getRequest();
+			$iUserId = $oRequest->getVal( 'u', '' );
+			$sUserHash = $oRequest->getVal( 'h', '' );
+
+			if ( empty( $iUserId ) || empty( $sUserHash ) ) {
+				wfProfileOut('--BS::' . __METHOD__ . 'if !self::$loggedInByHash');
+				return true;
+			}
+
+			$user->mGroups = array();
+			$user->getEffectiveGroups( true );
+			if ( $iUserId && $sUserHash ) {
+				self::$loggedInByHash = true;
+				$_user = User::newFromName( $iUserId );
+				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
+					$result = $_user->isAllowed( 'read' );
+					$user = $_user;
+				}
+			}
+			wfProfileOut('--BS::' . __METHOD__ . 'if !self::$loggedInByHash');
+		}
+
+		if ( $action == 'read' ) {
+			$result = $user->isAllowed( $action );
+		}
+
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * Adds the default values for the searchbox.
+	 * @param Object $callingInstance. Object of the calling Instance
+	 * @param Array $aSearchBoxKeyValues. A reference of the form value array.
+	 * @return bool Always true to keep hook running.
+	 */
+	public static function onFormDefaults( $callingInstance, &$aSearchBoxKeyValues ) {
+		wfProfileIn('BS::' . __METHOD__);
+		$aLocalUrl = explode( '?', SpecialPage::getTitleFor( 'Search' )->getLocalUrl() );
+
+		$aSearchBoxKeyValues['SubmitButtonTitle'] = wfMessage('bs-extended-search-tooltip-title', 'Search for titles' )->plain();
+		$aSearchBoxKeyValues['SubmitButtonFulltext'] = wfMessage('bs-extended-search-tooltip-fulltext', 'Search inside articles' )->plain();
+		$aSearchBoxKeyValues['SearchTextFieldTitle'] = wfMessage('bs-extended-search-textfield-tooltip', 'Search BlueSpice for Mediawiki [alt-shift-f]' )->plain();
+		$aSearchBoxKeyValues['SearchTextFieldDefaultText'] = wfMessage('bs-extended-search-textfield-defaultvalue', 'Search...' )->plain();
+
+		if ( isset( $aSearchBoxKeyValues['SearchDestination'] ) ) return true;
+
+		$aSearchBoxKeyValues['SearchDestination'] = $aLocalUrl[0];
+
+		if ( isset( $aLocalUrl[1] ) && strpos( $aLocalUrl[1], '=' ) !== false ) {
+			$aTitle = explode( '=', $aLocalUrl[1] );
+			$aSearchBoxKeyValues['HiddenFields']['title'] = $aTitle[1];
+		}
+
+		$aSearchBoxKeyValues['SearchTextFieldName'] = 'search';
+		$aSearchBoxKeyValues['DefaultKeyValuePair'] = array( 'button', '' );
+		$aSearchBoxKeyValues['TitleKeyValuePair'] = array( 'button', '' );
+		$aSearchBoxKeyValues['FulltextKeyValuePair'] = array( 'fulltext', 'Search' );
+		$aSearchBoxKeyValues['method'] = 'post'; // mediawiki's default
+
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * Additional chances to reject an uploaded file
+	 * @param string $saveName: destination file name
+	 * @param string $tempName: filesystem path to the temporary file for checks
+	 * @param string &$error: output: message key for message to show if upload canceled by returning false. May also be an array, where the first element
+										is the message key and the remaining elements are used as parameters to the message.
+	 * @return bool true on success , false on failure
+	 */
+	public static function onUploadVerification( $sSaveName, $sTempName, &$sError ) {
+		$aParts = explode( '.', $sSaveName );
+
+		if ( !empty( $aParts[0] ) ) {
+			$oUser = User::newFromName( $aParts[0] );
+
+			if ( $oUser->getId() != 0 ) {
+				$oCurrUser = RequestContext::getMain()->getUser();
+
+				if ( strcasecmp( $oUser->getName(), $oCurrUser->getName() ) !== 0 ) {
+					$sError = 'bs-imageofotheruser';
+					return false;
+				}
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Hook-Handler for 'BSBlueSpiceSkinAfterArticleContent'. Creates a settings toolbox on the users own page.
+	 * @param array $aViews Array of views to be rendered in skin
+	 * @param User $oUser Current user object
+	 * @param Title $oTitle Current title object
+	 * @return bool Always true to keep hook running.
+	 */
+	public static function onBlueSpiceSkinAfterArticleContent( &$aViews, $oUser, $oTitle ) {
+		if ( !$oTitle->equals( $oUser->getUserPage() ) ) return true; //Run only if on current users profile/userpage
+
+		wfProfileIn('BS::' . __METHOD__);
+		$aSettingViews = array();
+		wfRunHooks( 'BS:UserPageSettings', array( $oUser, $oTitle, &$aSettingViews ) );
+
+		$oUserPageSettingsView = new ViewBaseElement();
+		$oUserPageSettingsView->setAutoWrap( '<div id="bs-usersidebar-settings" class="bs-userpagesettings-item">###CONTENT###</div>' );
+		$oUserPageSettingsView->setTemplate(
+				'<a href="{URL}" title="{TITLE}"><img alt="{IMGALT}" src="{IMGSRC}" /><div class="bs-user-label">{TEXT}</div></a>'
+		);
+
+		global $wgScriptPath;
+		$oUserPageSettingsView->addData(
+				array(
+					'URL' => htmlspecialchars( Title::newFromText('Special:Preferences')->getLinkURL() ),
+					'TITLE' => wfMessage('bs-userpreferences-link-title')->plain(),
+					'TEXT' => wfMessage('bs-userpreferences-link-text')->plain(),
+					'IMGALT' => wfMessage('bs-userpreferences-link-title')->plain(),
+					'IMGSRC' => $wgScriptPath . '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-userpage-settings.png',
+				)
+		);
+
+		$aSettingViews[] = $oUserPageSettingsView;
+
+		$oProfilePageSettingsView = new ViewBaseElement();
+		$oProfilePageSettingsView->setId('bs-userpagesettings');
+
+		$oProfilePageSettingsFieldsetView = new ViewFormElementFieldset();
+		$oProfilePageSettingsFieldsetView->setLabel(
+				wfMessage('bs-userpagesettings-legend')->plain()
+		);
+
+		foreach ( $aSettingViews as $oSettingsView ) {
+			$oProfilePageSettingsFieldsetView->addItem($oSettingsView);
+		}
+
+		$oProfilePageSettingsView->addItem( $oProfilePageSettingsFieldsetView );
+		$aViews[] = $oProfilePageSettingsView;
+		wfProfileOut('BS::' . __METHOD__);
+		return true;
+	}
+
+	/**
+	 * 
+	 * @param Skin $skin
+	 * @param SkinTemplate $template
+	 * @return boolean - always true
+	 */
+	public static function onSkinTemplateOutputPageBeforeExec(&$skin, &$template){
+		if( $skin->getTitle()->getNamespace() != NS_FILE || !$oFile = wfFindFile($skin->getTitle()) )
+			return true;
+
+		if( $oFile->getHandler() instanceof BitmapHandler ) return true;
+
+		array_unshift( $template->data['bs_title_actions'], array(
+			'id' => 'filedownload',
+			'href' => $oFile->getFullUrl(),
+			'title' => $oFile->getName(),
+			'text' => wfMessage('bs-imagepage-download-text')->plain()
+		));
+		return true;
+	}
+
 }
