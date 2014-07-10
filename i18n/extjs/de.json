@@ -36,5 +36,7 @@
 	"bs-extjs-filter-contains": "enthält",
 	"bs-extjs-filter-contains-not": "enthält nicht",
 	"bs-extjs-filter-starts-with": "beginnt mit",
-	"bs-extjs-filter-ends-with": "endet mit"
+	"bs-extjs-filter-ends-with": "endet mit",
+	"bs-extjs-title-success": "Erfolg",
+	"bs-extjs-title-warning": "Warnung"
 }

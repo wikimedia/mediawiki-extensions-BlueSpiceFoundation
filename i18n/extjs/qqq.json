@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Shirayuki"
+			"Shirayuki",
+			"Stephan Muggli <muggli@hallowelt.biz>"
 		]
 	},
 	"bs-extjs-ok": "Label for submit button used in dialogues, alerts and prompts.\n{{Identical|OK}}",
@@ -38,4 +39,6 @@
 	"bs-extjs-filter-contains-not": "Label for contains not\n{{Identical|contains not}}",
 	"bs-extjs-filter-starts-with": "Label for starts with\n{{Identical|starts with}}",
 	"bs-extjs-filter-ends-with": "Label for ends with\n{{Identical|ends with}}"
+	"bs-extjs-title-success": "Window title for success\n{{Identical|Success}}",
+	"bs-extjs-title-warning": "Window title for warning\n{{Identical|Warning}}"
 }

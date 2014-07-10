@@ -106,7 +106,9 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-filter-contains',
 		'bs-extjs-filter-contains-not',
 		'bs-extjs-filter-starts-with',
-		'bs-extjs-filter-ends-with'
+		'bs-extjs-filter-ends-with',
+		'bs-extjs-title-success',
+		'bs-extjs-title-warning'
 	),
 	'position' => 'bottom'
 ) + $aResourceModuleTemplate;
