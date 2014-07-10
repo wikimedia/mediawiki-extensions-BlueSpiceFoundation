@@ -60,7 +60,7 @@ class BsCoreHooks {
 	* @return boolean
 	*/
 	public static function onBeforePageDisplay( $out, $skin ) {
-		global $IP, $wgFavicon, $wgExtensionAssetsPath,
+		global $IP, $wgFavicon, $wgExtensionAssetsPath, $wgResourceLoaderDebug,
 			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
 
 		$out->addModuleScripts( 'ext.bluespice.scripts' );
@@ -71,11 +71,14 @@ class BsCoreHooks {
 
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
 
+		$bIsDebug = $out->getRequest()->getVal('debug', 'false') != 'false'
+						|| $wgResourceLoaderDebug;
+
 		//Add ExtJS Files
-		self::addNonRLResources($out, $bsgExtJSFiles, 'extjs');
+		self::addNonRLResources($out, $bsgExtJSFiles, 'extjs', $bIsDebug);
 		//Add ExtJS Theme files
 		$sTheme = isset($bsgExtJSThemes[$bsgExtJSTheme]) ? $bsgExtJSTheme :'bluespice' ;
-		self::addNonRLResources($out, $bsgExtJSThemes[$sTheme], $sTheme);
+		self::addNonRLResources($out, $bsgExtJSThemes[$sTheme], $sTheme, $bIsDebug);
 
 		//Use ExtJS's built-in i18n. This may fail for some languages...
 		$sLangCode = preg_replace('/(-|_).*$/', '', $out->getLanguage()->getCode());
@@ -89,9 +92,11 @@ class BsCoreHooks {
 		);
 
 		if ($sLangCode != 'en' && in_array( $sLangCode, $aExtJSLangs ) ) {
-			$out->addScriptFile(
-				$wgExtensionAssetsPath
+			$out->addHeadItem(
+				'extjs-lang',
+				Html::linkedScript( $wgExtensionAssetsPath
 					.'/BlueSpiceFoundation/resources/extjs/locale/ext-lang-' . $sLangCode . '.js'
+				)
 			);
 		}
 
@@ -149,10 +154,14 @@ class BsCoreHooks {
 		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
 		$sBasePath = $wgExtensionAssetsPath.'/BlueSpiceFoundation/resources/bluespice.extjs';
 
-		$sExtJS = 'Ext.BLANK_IMAGE_URL = mw.config.get("wgScriptPath")+"/extensions/BlueSpiceFoundation/resources/bluespice.extjs/images/s.gif";';
-		$sExtJS.= "Ext.Loader.setPath( 'BS',     '$sBasePath' + '/BS');";
-		$sExtJS.= "Ext.Loader.setPath( 'Ext.ux', '$sBasePath' + '/Ext.ux');";
-		$sExtJS.= 'Ext.Loader.setPath('.FormatJson::encode( $aExtJSPaths).');';
+		$sExtJS = '$(function(){';
+		$sExtJS.= '  Ext.BLANK_IMAGE_URL = mw.config.get("wgScriptPath") '
+				. '    + "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/images/s.gif";';
+		$sExtJS.= '  Ext.Loader.setConfig({ enabled: true, disableCaching: '.FormatJson::encode($bIsDebug).' });';
+		$sExtJS.= "  Ext.Loader.setPath( 'BS',     '$sBasePath' + '/BS');";
+		$sExtJS.= "  Ext.Loader.setPath( 'Ext.ux', '$sBasePath' + '/Ext.ux');";
+		$sExtJS.= '  Ext.Loader.setPath('.FormatJson::encode( $aExtJSPaths).');';
+		$sExtJS.= '});';
 
 		$out->addScript(
 			Html::inlineScript( $sExtJS )
@@ -183,15 +192,15 @@ class BsCoreHooks {
 	 * @param OutputPage $out
 	 * @param array $aFiles
 	 * @param string $sKey Allows HeadItem override
+	 * @param boolean $bIsDebug Wether or not to include debug files
 	 */
-	protected static function addNonRLResources($out, $aFiles, $sKey) {
-		global $wgResourceLoaderDebug, $wgScriptPath;
+	protected static function addNonRLResources($out, $aFiles, $sKey, $bIsDebug) {
+		global $wgScriptPath;
 
 		$aScripts = isset( $aFiles['scripts'] ) ? $aFiles['scripts'] : array();
 		$aStyles  = isset( $aFiles['styles'] )  ? $aFiles['styles']  : array();
 
-		if( $out->getRequest()->getVal('debug', 'false') != 'false'
-				|| $wgResourceLoaderDebug ) { //DEBUG Mode
+		if( $bIsDebug ) { //DEBUG Mode
 			if( isset($aFiles['debug-scripts']) ) {
 				$aScripts = $aFiles['debug-scripts'];
 			}
@@ -282,8 +291,9 @@ class BsCoreHooks {
 	 * @return boolean
 	 */
 	public static function onApiCheckCanExecute( $module, $user, &$message ){
-		if (!$module instanceof ApiParse)
+		if (!$module instanceof ApiParse) {
 			return true;
+		}
 		if (Title::newFromText($module->getRequest()->getVal('page'))->userCan('read') == false){
 			$message = wfMessage('loginreqpagetext', wfMessage('loginreqlink')->plain())->plain();
 			return false;

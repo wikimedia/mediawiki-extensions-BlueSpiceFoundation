@@ -24,6 +24,8 @@
 	"bs-extjs-reset": "Reset",
 	"bs-extjs-close": "Close",
 	"bs-extjs-label-user": "User",
+	"bs-extjs-label-namespace": "Namespace",
+	"bs-extjs-label-page": "Page",
 	"bs-extjs-upload": "Upload",
 	"bs-extjs-browse": "Browse",
 	"bs-extjs-uploading": "Uploading...",

@@ -25,6 +25,8 @@
 	"bs-extjs-reset": "Label for reset button used in dialogues, alerts and prompts.\n{{Identical|Reset}}",
 	"bs-extjs-close": "Label for close button used in dialogues, alerts and prompts.\n{{Identical|Close}}",
 	"bs-extjs-label-user": "Label for combo boxes that select users.\n{{Identical|User}}",
+	"bs-extjs-label-namespace": "Label for combo boxes that select namespaces.\n{{Identical|Namespace}}",
+	"bs-extjs-label-page": "Label for combo boxes that select pages.\n{{Identical|Page}}",
 	"bs-extjs-upload": "Label for upload button used in dialogues, alerts and prompts.\n{{Identical|Upload}}",
 	"bs-extjs-browse": "Label for \"Browse\" button used in \"Upload file\" dialogues, alerts and prompts.\n{{Identical|Browse}}",
 	"bs-extjs-uploading": "Label for elements that are shown when uploading files from a dialogue.\n{{Identical|Uploading}}",

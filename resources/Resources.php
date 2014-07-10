@@ -94,6 +94,7 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-close',
 		'bs-extjs-label-user',
 		'bs-extjs-label-namespace',
+		'bs-extjs-label-page',
 		'bs-extjs-confirmNavigationTitle',
 		'bs-extjs-confirmNavigationText',
 		'bs-extjs-allns',
@@ -106,7 +107,9 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-filter-contains',
 		'bs-extjs-filter-contains-not',
 		'bs-extjs-filter-starts-with',
-		'bs-extjs-filter-ends-with'
+		'bs-extjs-filter-ends-with',
+		'bs-extjs-title-success',
+		'bs-extjs-title-warning'
 	),
 	'position' => 'bottom'
 ) + $aResourceModuleTemplate;

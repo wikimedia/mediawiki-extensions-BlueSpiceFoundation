@@ -24,6 +24,8 @@
 	"bs-extjs-reset": "Zurücksetzen",
 	"bs-extjs-close": "Schließen",
 	"bs-extjs-label-user": "Benutzer",
+	"bs-extjs-label-namespace": "Namensraum",
+	"bs-extjs-label-page": "Seite",
 	"bs-extjs-upload": "Hochladen",
 	"bs-extjs-browse": "Durchsuchen",
 	"bs-extjs-uploading": "Lädt hoch...",
