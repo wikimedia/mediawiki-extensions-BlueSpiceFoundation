@@ -38,7 +38,7 @@
 	"bs-extjs-filter-contains": "Label for contains\n{{Identical|contains}}",
 	"bs-extjs-filter-contains-not": "Label for contains not\n{{Identical|contains not}}",
 	"bs-extjs-filter-starts-with": "Label for starts with\n{{Identical|starts with}}",
-	"bs-extjs-filter-ends-with": "Label for ends with\n{{Identical|ends with}}"
+	"bs-extjs-filter-ends-with": "Label for ends with\n{{Identical|ends with}}",
 	"bs-extjs-title-success": "Window title for success\n{{Identical|Success}}",
 	"bs-extjs-title-warning": "Window title for warning\n{{Identical|Warning}}"
 }
