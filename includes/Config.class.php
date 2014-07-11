@@ -779,6 +779,29 @@ class BsConfig {
 	}
 
 	/**
+	 * Returns a field description/definition array for preferences
+	 * @param string $sSection
+	 * @return array
+	 */
+	public function getFieldDefinition( $sSection) {
+		$aField = array(
+			'type' => $this->getFieldMapping(),
+			'label-message' => $this->getI18nName(), // a system message
+			'section' => strtolower( $sSection ),
+			'default' => $this->getValue()
+		);
+
+		// Field message and title for dialog
+		if ( $this->getFieldMapping() == 'multiselectplusadd' ) {
+			$field['options'] = $this->getValue();
+			$field['title'] = 'toc-' . $this->getName() . '-title';
+			$field['message'] = 'toc-' . $this->getName() . '-message';
+		}
+
+		return $aField;
+	}
+
+	/**
 	 * returns an id for this variable, which can be used in html
 	 *
 	 * @return string

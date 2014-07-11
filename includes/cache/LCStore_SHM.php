@@ -53,7 +53,7 @@ class LCStore_SHM implements LCStore {
 			return;
 		}
 		$sFilename = $this->_sDirectory . DS . self::$_sCurrentLanguage . '.bscache';
-		$sSerializedData = serialize( $this->_aData[ self::$_sCurrentLanguage ] );
+		$sSerializedData = serialize( self::$_aData[ self::$_sCurrentLanguage ] );
 		file_put_contents( $sFilename, $sSerializedData, LOCK_EX );
 		if ( is_callable( 'ftok' ) ) {
 			$iShmKey = ftok( $sFilename, 'b' );
