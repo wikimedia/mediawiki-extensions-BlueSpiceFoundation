@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Fany"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -36,5 +37,6 @@
 	"bs-extjs-filter-contains": "contient",
 	"bs-extjs-filter-contains-not": "ne contient pas",
 	"bs-extjs-filter-starts-with": "commence par",
-	"bs-extjs-filter-ends-with": "finit par"
+	"bs-extjs-filter-ends-with": "finit par",
+	"bs-extjs-title-warning": "Avertissement"
 }
