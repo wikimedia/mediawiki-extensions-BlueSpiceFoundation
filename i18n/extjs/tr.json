@@ -15,5 +15,6 @@
 	"bs-extjs-loading": "Yükleniyor...",
 	"bs-extjs-pageSize": "Sayfa boyutu",
 	"bs-extjs-warning": "Uyarı",
-	"bs-extjs-saving": "kaydediliyor..."
+	"bs-extjs-saving": "kaydediliyor...",
+	"bs-extjs-title-warning": "Uyarı"
 }

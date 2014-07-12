@@ -36,5 +36,7 @@
 	"bs-extjs-filter-contains": "содржи",
 	"bs-extjs-filter-contains-not": "не содржи",
 	"bs-extjs-filter-starts-with": "почнува со",
-	"bs-extjs-filter-ends-with": "завршува со"
+	"bs-extjs-filter-ends-with": "завршува со",
+	"bs-extjs-title-success": "Успеа",
+	"bs-extjs-title-warning": "Предупредување"
 }
