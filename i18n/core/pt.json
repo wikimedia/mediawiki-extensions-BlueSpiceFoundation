@@ -40,7 +40,7 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "Esconder detalhes do erro",
 	"action-responsibleeditors-viewspecialpage": "Visualizar as páginas protegidas pelo direito \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - Erro",
-	"bs-readonly": "O banco de dados está actualmente bloqueado para novas entradas e outras modificações, provavelmente para manutenção de rotina, depois do qual voltará à sua normalidade. O administrador responsável pelo bloqueio justifica-o a seguir: $1",
+	"bs-readonly": "A base de dados está atualmente bloqueada para novas entradas e outras modificações, provavelmente para manutenção de rotina, depois da qual voltará à sua normalidade. O administrador responsável pelo bloqueio deu a seguinte explicação: $1",
 	"bs-imageofotheruser": "Não possui permissão para carregar uma imagem para outro(a) utilizador(a).",
 	"bs-pref-sortalph": "Ordenar alfabeticamente os domínios",
 	"bs-permissionerror": "Erro de permissão!",
