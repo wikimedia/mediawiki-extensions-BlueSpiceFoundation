@@ -122,13 +122,6 @@ class BsBaseTemplate extends BaseTemplate {
 	//TODO: Maybe do this in a 'SkinTemplateOutputPageBeforeExec' hook
 	//handler in BSF. Would need to be run as last handler
 	protected function prepareData() {
-		// adding link to Allpages
-		$oAllPages = SpecialPageFactory::getPage( 'Allpages' );
-		$this->data['nav_urls']['specialpageallpages'] = array(
-			'href' => $oAllPages->getTitle()->getLinkURL(),
-			'text' => $oAllPages->getDescription()
-		);
-
 		//Add the default print link to a title
 		$this->data['bs_title_actions'][10] = array(
 			'id' => 'bs-ta-print',
@@ -362,25 +355,9 @@ class BsBaseTemplate extends BaseTemplate {
 	}
 
 	protected function getToolboxMarkUp( $bRenderHeading = true ) {
-
-		$aToolboxExcludeList = array( 'mainpage' );
 		$aToolboxLinkList = array();
-		foreach ( $this->data['nav_urls'] as $sKey => $aLink ) {
-			if ( empty( $aLink['href'] ) || in_array( $sKey, $aToolboxExcludeList ) ) continue;
-
-			$aLink['href'] = str_replace( '&', '&amp;', $aLink['href'] );
-			$vTooltip = $this->tooltipAndAccesskeyAttribs( 't-' . $sKey );
-			$sAttr = '';
-			if ( is_array( $vTooltip ) ) {
-				$sAttr = ' title="' . $vTooltip['title'] . '" accesskey="' . $vTooltip['accesskey'] . '"';
-			} else {
-				$sAttr = $vTooltip;
-			}
-			$aToolboxLinkList[] = '<li id="t-' . htmlspecialchars( $sKey ) . '">';
-			$aToolboxLinkList[] = '  <a href="' . $aLink['href'] . '"' . $sAttr . '>';
-			$aToolboxLinkList[] = empty( $aLink['text'] ) ? htmlspecialchars( $this->translator->translate( $sKey ) ) : $aLink['text'];
-			$aToolboxLinkList[] = '  </a>';
-			$aToolboxLinkList[] = '</li>';
+		foreach ( $this->getToolbox() as $key => $tbitem ) {
+			$aToolboxLinkList[] = $this->makeListItem( $key, $tbitem );
 		}
 
 		$sToolboxLinkList = implode("\n", $aToolboxLinkList);
@@ -402,8 +379,32 @@ class BsBaseTemplate extends BaseTemplate {
 		$aOut[] = '    </ul>';
 		$aOut[] = '  </div>';
 		$aOut[] = '</div>';
+		$aOut[] = $this->getAfterPortlet( 'tb' );
 
 		return implode( "\n", $aOut );
+	}
+
+	public function getToolbox() {
+		$baseToolbox = parent::getToolbox();
+
+		// adding link to Allpages
+		$oAllPages = SpecialPageFactory::getPage( 'Allpages' );
+		$baseToolbox['specialpageallpages'] = array(
+			'href' => $oAllPages->getTitle()->getLinkURL(),
+			'text' => $oAllPages->getDescription(),
+			'id' => 't-allpages'
+		);
+
+		return $baseToolbox;
+	}
+
+	protected function getAfterPortlet($name) {
+		ob_start();
+		$this->renderAfterPortlet($name);
+		$sAfterPortlet = ob_get_contents();
+		ob_end_clean();
+
+		return $sAfterPortlet;
 	}
 
 	protected function printToolBox() {
@@ -485,6 +486,8 @@ class BsBaseTemplate extends BaseTemplate {
 				}
 				$aOut[] = '</ul>';
 				$aOut[] = '</div>';
+				$aOut[] = $this->getAfterPortlet( $bar );
+
 				$aPortlets[$bar] = implode("\n", $aOut);
 			}
 		}
