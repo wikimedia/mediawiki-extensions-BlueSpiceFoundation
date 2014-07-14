@@ -38,5 +38,7 @@
 	"bs-extjs-filter-contains": "包含",
 	"bs-extjs-filter-contains-not": "不包含",
 	"bs-extjs-filter-starts-with": "起始于",
-	"bs-extjs-filter-ends-with": "届满于"
+	"bs-extjs-filter-ends-with": "届满于",
+	"bs-extjs-title-success": "成功",
+	"bs-extjs-title-warning": "警告"
 }

@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arifin.wijaya"
+		]
+	},
+	"bs-extjs-portal-config": "Konfigurasi portlet:",
+	"bs-extjs-portal-title": "Judul portlet",
+	"bs-extjs-portal-height": "Tinggi",
+	"bs-extjs-portal-count": "Entri",
+	"bs-extjs-portal-timespan": "Jangka waktu",
+	"bs-extjs-portal-timespan-week": "Minggu",
+	"bs-extjs-portal-timespan-month": "Bulan",
+	"bs-extjs-portal-timespan-alltime": "Sepanjang masa"
+}

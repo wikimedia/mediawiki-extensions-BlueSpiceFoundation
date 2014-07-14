@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"C5st4wr6ch"
+			"C5st4wr6ch",
+			"Arifin.wijaya"
 		]
 	},
+	"specialcredits": "Kredit BlueSpice",
+	"bs-credits-programmers": "Pemrogram",
+	"bs-credits-dnt": "Desain dan pengujian",
 	"bs-credits-contributors": "Kontributor"
 }
