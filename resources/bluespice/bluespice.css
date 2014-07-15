@@ -25,3 +25,16 @@
 	font-size: 80%;
 	text-align: center;
 }
+
+.bs-tooltip-link {
+	cursor: pointer;
+}
+
+.bs-tooltip {
+	display:none;
+}
+
+.bs-tooltip-body > ul {
+	list-style: none;
+	margin: 0;
+}
