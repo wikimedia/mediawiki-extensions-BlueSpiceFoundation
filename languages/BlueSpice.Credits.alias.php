@@ -11,6 +11,16 @@ $specialPageAliases['en'] = array(
 	'SpecialCredits' => array( 'Credits' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'SpecialCredits' => array( 'ائتمانات' ),
+);
+
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'SpecialCredits' => array( 'ائتمانات' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'SpecialCredits' => array( 'Danksagungen' ),

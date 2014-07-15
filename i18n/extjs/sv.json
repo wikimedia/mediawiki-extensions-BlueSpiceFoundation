@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Josve05a",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Jopparn"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -37,5 +38,6 @@
 	"bs-extjs-filter-contains": "innehåller",
 	"bs-extjs-filter-contains-not": "innehåller inte",
 	"bs-extjs-filter-starts-with": "börjar med",
-	"bs-extjs-filter-ends-with": "slutar med"
+	"bs-extjs-filter-ends-with": "slutar med",
+	"bs-extjs-title-warning": "Varning"
 }

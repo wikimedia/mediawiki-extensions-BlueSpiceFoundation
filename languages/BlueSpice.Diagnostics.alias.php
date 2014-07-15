@@ -11,6 +11,16 @@ $specialPageAliases['en'] = array(
 	'Diagnostics' => array( 'Diagnostics' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'Diagnostics' => array( 'تشخيصات' ),
+);
+
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'Diagnostics' => array( 'تشخيصات' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Diagnostics' => array( 'BlueSpice-Diagnose' ),
