@@ -20,8 +20,7 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
 		'bluespice/bluespice.ping.js',
-		'bluespice/bluespice.multiselect.js',
-		'bluespice.libs/slimScroll.min.js',
+		'bluespice/bluespice.multiselect.js'
 	),
 	'dependencies' => array(
 		'jquery',
