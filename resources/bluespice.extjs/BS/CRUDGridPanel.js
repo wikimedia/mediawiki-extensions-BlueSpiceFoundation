@@ -23,20 +23,18 @@ Ext.define( 'BS.CRUDGridPanel', {
 			columns: [],
 			actions: [] //Custom; Used for ActionColumn
 		};
-		
+
 		this.smMain = null;
 		this.bbMain = null;
 		this.colMain = null;
 		this.gpMainConf = {};
-		
+
 		this.callParent(arguments);
 	},
 
 	afterInitComponent: function( arguments ) {
-		this.smMain = this.smMain || Ext.create( 'Ext.selection.RowModel', {
-			mode: "SINGLE"
-		});
-		
+		this.smMain = this.makeSelModel();
+
 		this.colMainConf.actions.unshift({
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete_tn.png',
 			iconCls: 'bs-extjs-actioncolumn-icon',
@@ -52,7 +50,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 			handler: this.onActionEditClick,
 			scope: this
 		});
-		
+
 		this.colActions = Ext.create( 'Ext.grid.column.Action', {
 			header: mw.message('bs-extjs-actions-column-header').plain(),
 			flex: 0,
@@ -108,7 +106,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 				scrollOffset: 1
 			},
 			store: this.strMain,
-			columns: { 
+			columns: {
 				items: this.colMainConf.columns,
 				defaults: {
 					flex: 1
@@ -129,6 +127,12 @@ Ext.define( 'BS.CRUDGridPanel', {
 		];
 
 		this.callParent(arguments);
+	},
+
+	makeSelModel: function(){
+		return this.smMain || Ext.create( 'Ext.selection.RowModel', {
+			mode: "SINGLE"
+		});
 	},
 
 	getSingleSelection: function() {
