@@ -89,6 +89,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 		//TODO: Fix Pagesize
 		this.smMain.pageSize = this.pageSize;
 
+		var columns = this.makeGridColumns();
 		var gridDefaultConf = {
 			cls: 'bs-extjs-crud-grid',
 			//Simple
@@ -106,12 +107,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 				scrollOffset: 1
 			},
 			store: this.strMain,
-			columns: {
-				items: this.colMainConf.columns,
-				defaults: {
-					flex: 1
-				}
-			},
+			columns: columns,
 			selModel: this.smMain,
 			bbar:     this.bbMain
 		};
@@ -127,6 +123,15 @@ Ext.define( 'BS.CRUDGridPanel', {
 		];
 
 		this.callParent(arguments);
+	},
+
+	makeGridColumns: function(){
+		return {
+			items: this.colMainConf.columns,
+			defaults: {
+				flex: 1
+			}
+		};
 	},
 
 	makeSelModel: function(){

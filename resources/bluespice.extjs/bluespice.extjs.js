@@ -1,9 +1,9 @@
 ( function ( mw, bs, $, d,undefined ) {
 	"use strict";
-	
+
 	//This allows us to place anchortags with special data attributes
 	Ext.QuickTips.init();
-	
+
 	//Allows to have stateful ExtJS components
 	Ext.state.Manager.setProvider(new Ext.state.CookieProvider({
 		expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30))
@@ -25,7 +25,7 @@
 			showDelay: 1000
 		 });
 	});
-	
+
 	//Be nice to older browsers
 	//HINT: http://stackoverflow.com/questions/2581302/globally-disable-ext-js-animations
 	if( Ext.isIE9m ) {
@@ -39,9 +39,18 @@
 			}
 		});
 	}
+	//CRUDGridPanel defines flex:1 for all columns.
+	//no need for flex:1 for the selModel Checkbox
+	Ext.override(Ext.selection.CheckboxModel, {
+		getHeaderConfig: function() {
+			var obj = this.callParent(arguments);
+			obj.flex = 0;
+			return obj;
+		},
+	});
 
 	/*
-	//TODO: Find a way to have BS.Window and BS.Panel shorthands for 
+	//TODO: Find a way to have BS.Window and BS.Panel shorthands for
 	//mw.message.plain() and this.getId()+'-SubComponent'
 	Ext.define('BS.mixins.MediaWiki', {
 		mw: {
