@@ -793,9 +793,9 @@ class BsConfig {
 
 		// Field message and title for dialog
 		if ( $this->getFieldMapping() == 'multiselectplusadd' ) {
-			$field['options'] = $this->getValue();
-			$field['title'] = 'toc-' . $this->getName() . '-title';
-			$field['message'] = 'toc-' . $this->getName() . '-message';
+			$aField['options'] = $this->getValue();
+			$aField['title'] = 'toc-' . $this->getName() . '-title';
+			$aField['message'] = 'toc-' . $this->getName() . '-message';
 		}
 
 		return $aField;
