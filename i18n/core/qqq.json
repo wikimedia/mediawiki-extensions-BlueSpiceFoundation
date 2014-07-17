@@ -65,5 +65,6 @@
 	"bs-navigation-instructions": "Used in navigation for instuctions link\n{{Identical|Instructions}}",
 	"bs-navigation-support": "Used in navigation for support link\n{{Identical|Support}}",
 	"bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}",
-	"bs-imagepage-download-text": "{{Identical|Download}}"
+	"bs-imagepage-download-text": "Text message for download used on image pages\n{{Identical|Download}}",
+	"bs-ns": "Text message for namespace used multiple times in different situations\n{{Identical|Namespace}}"
 }
