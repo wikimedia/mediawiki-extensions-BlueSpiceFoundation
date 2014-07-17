@@ -24,6 +24,8 @@
 	"bs-extjs-reset": "Одново",
 	"bs-extjs-close": "Затвори",
 	"bs-extjs-label-user": "Корисник",
+	"bs-extjs-label-namespace": "Именски простор",
+	"bs-extjs-label-page": "Страница",
 	"bs-extjs-upload": "Подигни",
 	"bs-extjs-browse": "Прелистај",
 	"bs-extjs-uploading": "Подигам...",

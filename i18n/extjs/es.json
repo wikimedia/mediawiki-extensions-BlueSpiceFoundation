@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"Frammm"
+			"Frammm",
+			"Macofe"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",
@@ -25,6 +26,8 @@
 	"bs-extjs-reset": "Restablecer",
 	"bs-extjs-close": "Cerrar",
 	"bs-extjs-label-user": "Usuario",
+	"bs-extjs-label-namespace": "Espacio de nombres",
+	"bs-extjs-label-page": "Página",
 	"bs-extjs-upload": "Subir",
 	"bs-extjs-browse": "Explorar",
 	"bs-extjs-uploading": "Subiendo…",
@@ -37,5 +40,7 @@
 	"bs-extjs-filter-contains": "contiene",
 	"bs-extjs-filter-contains-not": "no contiene",
 	"bs-extjs-filter-starts-with": "inicia con",
-	"bs-extjs-filter-ends-with": "termina con"
+	"bs-extjs-filter-ends-with": "termina con",
+	"bs-extjs-title-success": "Éxito",
+	"bs-extjs-title-warning": "Advertencia"
 }

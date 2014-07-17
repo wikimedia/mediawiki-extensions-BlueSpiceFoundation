@@ -4,7 +4,7 @@
 			"Cwlin0416"
 		]
 	},
-	"bs-ns_main": "(頁)",
+	"bs-ns_main": "(頁面)",
 	"bs-ns_all": "(全部)",
 	"bs-tab_navigation": "導覽",
 	"bs-tab_focus": "焦點",
@@ -27,7 +27,7 @@
 	"bs-now": "現在",
 	"bs-email-greeting-receiver": "{{GENDER:$1|$1 先生您好|$1 小姐您好|$1 您好}}，",
 	"bs-email-greeting-no-receiver": "您好，",
-	"bs-email-footer": "此訊息為系統自動產生，請勿回覆此信件。",
+	"bs-email-footer": "此訊息為系統自動產生，請勿回覆此電子郵件。",
 	"bs-userpagesettings-legend": "使用者設定",
 	"bs-userpreferences-link-text": "更多使用者設定",
 	"bs-userpreferences-link-title": "顯示您的個人使用者設定",
@@ -38,7 +38,12 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "隱藏錯誤詳細資訊",
 	"action-responsibleeditors-viewspecialpage": "檢視被 \"ResponsibleEditors-Viewspecialpage\" 權限保護的頁面",
 	"bs-viewtagerrorlist-legend": "$1 - 錯誤",
+	"bs-readonly": "資料庫目前已鎖定無法執行新增及修改動作，可能在做例行性的資料庫維護，維護過後會恢復正常狀況。鎖定資料庫的管理員說明：$1",
+	"bs-imageofotheruser": "您未被允許上傳圖片給其他使用者。",
+	"bs-pref-sortalph": "依字母順序排序命名空間",
 	"bs-permissionerror": "權限錯誤！",
+	"bs-filesystemhelper-no-directory": "<code>$1</code> 不是有效的目錄。",
+	"bs-filesystemhelper-has-path-traversal": "已偵測到目錄走訪，可能受到攻擊！",
 	"bs-filesystemhelper-file-not-exists": "檔案 <code>$1</code> 不存在。",
 	"bs-filesystemhelper-file-copy-error": "檔案 <code>$1</code> 無法被複製。",
 	"bs-filesystemhelper-file-already-exists": "檔案 <code>$1</code> 早已存在。",
@@ -51,7 +56,10 @@
 	"bs-filesystemhelper-upload-unsupported-type": "不支援此檔案類型。",
 	"bs-filesystemhelper-save-base64-error": "檔案無法儲存。",
 	"bs-filesystemhelper-upload-base64-error": "檔案無法上傳。",
+	"bs-filesystemhelper-upload-local-error-stash-file": "檔案無法移動至上傳儲藏庫。",
+	"bs-filesystemhelper-upload-local-error-create": "檔案無法在 Wiki 中建立。",
 	"bs-navigation-instructions": "操作說明",
 	"bs-navigation-support": "技術支援",
-	"bs-navigation-contact": "聯絡我們"
+	"bs-navigation-contact": "聯絡我們",
+	"bs-imagepage-download-text": "下載"
 }

@@ -25,6 +25,8 @@
 	"bs-extjs-reset": "Redefinir",
 	"bs-extjs-close": "Fechar",
 	"bs-extjs-label-user": "Utilizador(a)",
+	"bs-extjs-label-namespace": "Domínio",
+	"bs-extjs-label-page": "Página",
 	"bs-extjs-upload": "Carregar",
 	"bs-extjs-browse": "Procurar",
 	"bs-extjs-uploading": "A carregar...",
