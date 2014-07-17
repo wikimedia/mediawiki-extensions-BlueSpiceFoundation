@@ -38,6 +38,6 @@ Ext.define('BS.model.Namespace', {
 	 */
 	isTalk: function() {
 		//TODO: replace 0 with somethin similar to NS_MAIN
-		return this.get('namespaceId') > 0 && this.get('namespaceId') % 2
+		return this.get('namespaceId') > 0 && this.get('namespaceId') % 2;
 	}
 });

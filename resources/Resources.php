@@ -93,6 +93,7 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-close',
 		'bs-extjs-label-user',
 		'bs-extjs-label-namespace',
+		'bs-extjs-label-page',
 		'bs-extjs-confirmNavigationTitle',
 		'bs-extjs-confirmNavigationText',
 		'bs-extjs-allns',

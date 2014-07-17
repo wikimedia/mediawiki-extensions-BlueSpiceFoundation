@@ -74,7 +74,6 @@ class BsMailer {
 		if ( !is_array($vTo) ) $vTo = array( $vTo );
 
 		foreach ( $vTo as $vReceiver ) {
-			//error_log(var_export($vReceiver,true));
 			if ( $vReceiver instanceof User ) {
 				if ( $vReceiver->getEmail() ) {
 					$aEmailTo[] = array(
