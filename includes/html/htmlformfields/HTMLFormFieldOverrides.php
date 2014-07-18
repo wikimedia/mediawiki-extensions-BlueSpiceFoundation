@@ -12,7 +12,8 @@ class HTMLFormEx extends HTMLForm {
 		$hasLeftColumn = false;
 		$map = array();
 		foreach( $fields as $key => $value ) {
-			$map[$key] = wfMsg( "{$this->mMessagePrefix}-$key" );
+			$sKey = $this->mMessagePrefix . '-' . strtolower( $key );
+			$map[$key] = wfMessage( $sKey )->plain();
 		}
 
 		asort($map);
@@ -37,9 +38,9 @@ class HTMLFormEx extends HTMLForm {
 		if( !$hasLeftColumn ) // Avoid strange spacing when no labels exist
 			$classes[] = 'mw-htmlform-nolabel';
 		$attribs = array(
-			'class' => implode( ' ', $classes ), 
+			'class' => implode( ' ', $classes ),
 		);
-		if ( $sectionName ) 
+		if ( $sectionName )
 			$attribs['id'] = Sanitizer::escapeId( "mw-htmlform-$sectionName" );
 
 		$tableHtml = Html::rawElement( 'table', $attribs,
@@ -72,15 +73,15 @@ class HTMLIntFieldOverride extends HTMLIntField {
 
 		if ( $p !== true ) return $p;
 		if ( !is_numeric( $value ) ) {
-			return wfMsgExt( 'htmlform-int-invalid', 'parse' );
+			return $this->msg( 'htmlform-int-invalid')->parseAsBlock();
 		}
 
 		if ( isset( $this->options['range_min'] ) && $value < $this->options['range_min'] ) {
-			return wfMsgExt( 'htmlform-int-outofrange', 'parse' );
+			return $this->msg( 'htmlform-int-outofrange')->parseAsBlock();
 		}
 
 		if ( isset( $this->options['range_max'] ) && $value > $this->options['range_max'] ) {
-			return wfMsgExt( 'htmlform-int-outofrange', 'parse' );
+			return $this->msg( 'htmlform-int-outofrange')->parseAsBlock();
 		}
 
 		return true;
@@ -96,11 +97,11 @@ class HTMLTextFieldOverride extends HTMLTextField {
 		if ( $p !== true ) return $p;
 
 		if ( isset( $this->options['range_min'] ) && $value < $this->options['range_min'] ) {
-			return wfMsgExt( 'htmlform-text-outofrange', 'parse' );
+			return $this->msg( 'htmlform-text-outofrange')->parseAsBlock();
 		}
 
 		if ( isset( $this->options['range_max'] ) && $value > $this->options['range_max'] ) {
-			return wfMsgExt( 'htmlform-text-outofrange', 'parse' );
+			return $this->msg( 'htmlform-text-outofrange' )->parseAsBlock();
 		}
 
 		return true;
@@ -114,7 +115,7 @@ class HTMLCheckFieldOverride extends HTMLCheckField {
 		if ( !empty( $this->mParams['invert'] ) )
 			$value = !$value;
 
-		$attr = $this->getTooltipAndAccessKey(); 
+		$attr = $this->getTooltipAndAccessKey();
 		$attr['id'] = $this->mID;
 		if( !empty( $this->mParams['disabled'] ) ) {
 			$attr['disabled'] = 'disabled';
