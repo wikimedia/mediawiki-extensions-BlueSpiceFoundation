@@ -4,7 +4,8 @@
 			"Inkbug",
 			"Matanya",
 			"Gregra",
-			"Ronel1"
+			"Ronel1",
+			"Eladk"
 		]
 	},
 	"bs-ns_main": "(ראשי)",
@@ -56,5 +57,6 @@
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
 	"bs-navigation-contact": "יצירת קשר",
-	"bs-imagepage-download-text": "להורדה"
+	"bs-imagepage-download-text": "להורדה",
+	"bs-ns": "מרחב שם"
 }

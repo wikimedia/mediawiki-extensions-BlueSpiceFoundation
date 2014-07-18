@@ -3,7 +3,8 @@
 		"authors": [
 			"Fitoschido",
 			"Frammm",
-			"Ihojose"
+			"Ihojose",
+			"ProtoplasmaKid"
 		]
 	},
 	"bs-ns_main": "(Páginas)",
@@ -63,5 +64,6 @@
 	"bs-navigation-instructions": "Instrucciones",
 	"bs-navigation-support": "Asistencia",
 	"bs-navigation-contact": "Contacto",
-	"bs-imagepage-download-text": "Descargar"
+	"bs-imagepage-download-text": "Descargar",
+	"bs-ns": "Espacio de nombre"
 }

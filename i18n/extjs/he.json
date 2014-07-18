@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Ronel1"
+			"Ronel1",
+			"Eladk"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -25,6 +26,8 @@
 	"bs-extjs-reset": "איפוס",
 	"bs-extjs-close": "סגירה",
 	"bs-extjs-label-user": "משתמש",
+	"bs-extjs-label-namespace": "מרחב שם",
+	"bs-extjs-label-page": "דף",
 	"bs-extjs-upload": "העלאה",
 	"bs-extjs-browse": "עיון",
 	"bs-extjs-uploading": "מתבצעת העלאה...",

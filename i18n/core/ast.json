@@ -60,5 +60,7 @@
 	"bs-filesystemhelper-upload-local-error-create": "El ficheru nun pudo crease na wiki.",
 	"bs-navigation-instructions": "Instrucciones",
 	"bs-navigation-support": "Sofitu",
-	"bs-navigation-contact": "Contautu"
+	"bs-navigation-contact": "Contautu",
+	"bs-imagepage-download-text": "Descargar",
+	"bs-ns": "Espaciu de nomes"
 }

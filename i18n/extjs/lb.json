@@ -24,6 +24,8 @@
 	"bs-extjs-reset": "Zrécksetzen",
 	"bs-extjs-close": "Zoumaachen",
 	"bs-extjs-label-user": "Benotzer",
+	"bs-extjs-label-namespace": "Nummraum",
+	"bs-extjs-label-page": "Säit",
 	"bs-extjs-upload": "Eroplueden",
 	"bs-extjs-uploading": "Eroplueden...",
 	"bs-extjs-confirmNavigationTitle": "Dem Link nogoen",

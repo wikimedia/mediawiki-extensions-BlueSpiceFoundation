@@ -3,7 +3,8 @@
 		"authors": [
 			"Josve05a",
 			"WikiPhoenix",
-			"Jopparn"
+			"Jopparn",
+			"Lokal Profil"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -26,6 +27,8 @@
 	"bs-extjs-reset": "Återställ",
 	"bs-extjs-close": "Stäng",
 	"bs-extjs-label-user": "Användare",
+	"bs-extjs-label-namespace": "Namnrymd",
+	"bs-extjs-label-page": "Sida",
 	"bs-extjs-upload": "Ladda upp",
 	"bs-extjs-browse": "Bläddra",
 	"bs-extjs-uploading": "Laddar upp...",
@@ -39,5 +42,6 @@
 	"bs-extjs-filter-contains-not": "innehåller inte",
 	"bs-extjs-filter-starts-with": "börjar med",
 	"bs-extjs-filter-ends-with": "slutar med",
+	"bs-extjs-title-success": "Lyckades",
 	"bs-extjs-title-warning": "Varning"
 }
