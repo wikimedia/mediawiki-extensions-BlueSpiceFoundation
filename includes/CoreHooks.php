@@ -367,9 +367,9 @@ class BsCoreHooks {
 	}
 
 	/**
-	 * This function triggers User::isAllowed when userCanRead is called. This
-	 * leads to an early initialization of $user object, which is needed in
-	 * order to have correct permission sets in BlueSpice.
+	 * This function triggers User::isAllowed when checkPermissionHooks is run
+	 * from Title.php. This leads to an early initialization of $user object,
+	 * which is needed in order to have correct permission sets in BlueSpice.
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action
