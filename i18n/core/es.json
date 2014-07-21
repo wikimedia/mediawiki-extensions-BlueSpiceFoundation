@@ -4,7 +4,8 @@
 			"Fitoschido",
 			"Frammm",
 			"Ihojose",
-			"ProtoplasmaKid"
+			"ProtoplasmaKid",
+			"Macofe"
 		]
 	},
 	"bs-ns_main": "(Páginas)",
@@ -65,5 +66,5 @@
 	"bs-navigation-support": "Asistencia",
 	"bs-navigation-contact": "Contacto",
 	"bs-imagepage-download-text": "Descargar",
-	"bs-ns": "Espacio de nombre"
+	"bs-ns": "Espacio de nombres"
 }

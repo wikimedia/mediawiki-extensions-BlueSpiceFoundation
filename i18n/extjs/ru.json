@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Okras",
-			"Габдулгани НИШ ХБН"
+			"Габдулгани НИШ ХБН",
+			"SuperPuperSteve"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -26,6 +27,7 @@
 	"bs-extjs-reset": "Сбросить",
 	"bs-extjs-close": "Закрыть",
 	"bs-extjs-label-user": "Участник",
+	"bs-extjs-label-page": "Страница",
 	"bs-extjs-upload": "Загрузить",
 	"bs-extjs-browse": "Обзор",
 	"bs-extjs-uploading": "Загрузка…",

@@ -26,6 +26,8 @@
 	"bs-extjs-reset": "Скинути",
 	"bs-extjs-close": "Закрити",
 	"bs-extjs-label-user": "Користувач",
+	"bs-extjs-label-namespace": "Простір назв",
+	"bs-extjs-label-page": "Сторінка",
 	"bs-extjs-upload": "Завантажити",
 	"bs-extjs-browse": "Огляд",
 	"bs-extjs-uploading": "Завантаження…",
@@ -38,5 +40,7 @@
 	"bs-extjs-filter-contains": "містить",
 	"bs-extjs-filter-contains-not": "не містить",
 	"bs-extjs-filter-starts-with": "починається з",
-	"bs-extjs-filter-ends-with": "закінчується на"
+	"bs-extjs-filter-ends-with": "закінчується на",
+	"bs-extjs-title-success": "Успіх",
+	"bs-extjs-title-warning": "Застереження"
 }
