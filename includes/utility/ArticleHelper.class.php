@@ -13,7 +13,7 @@ class BsArticleHelper {
 	protected static $aInstances = array();
 
 	/**
-	 * Protected constructor. Instances can be obtained through the factory 
+	 * Protected constructor. Instances can be obtained through the factory
 	 * method of this class
 	 * @param Title $oTitle
 	 */
@@ -43,20 +43,32 @@ class BsArticleHelper {
 		$oTalkPage   = $this->oTitle->getTalkPage();
 		$iTalkPageId = $oTalkPage->getArticleID();
 
-		$dbr = wfGetDB( DB_SLAVE );
-		// a new revision (rev_id) is also created on page move. So use rev_text_id
-		$res = $dbr->select(
-			'revision',
-			'DISTINCT rev_text_id',
-			array( 'rev_page' => $iTalkPageId ),
-			__METHOD__
-		);
-		$iCount = $dbr->numRows( $res );
+		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'getDiscussionAmount', $iTalkPageId );
+		$aData = BsCacheHelper::get( $sKey );
+
+		if( $aData !== false ) {
+			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching discussion amounts from cache' );
+			$iCount = $aData['iCount'];
+		} else {
+			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching discussion amounts from cache' );
+			$dbr = wfGetDB( DB_SLAVE );
+			// a new revision (rev_id) is also created on page move. So use rev_text_id
+			$res = $dbr->select(
+				'revision',
+				'DISTINCT rev_text_id',
+				array( 'rev_page' => $iTalkPageId ),
+				__METHOD__
+			);
+			$iCount = $dbr->numRows( $res );
+
+			BsCacheHelper::set( $sKey, array( 'iCount' =>  $iCount ) );
+		}
+
 		return $iCount;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
 	 * @return string|null
@@ -74,13 +86,13 @@ class BsArticleHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
 	 * @return sdtClass|true|false|null See PHP documentation for json_decode()
 	 */
 	public function getJSONPageProp( $sPropName, $bDoLoad = false ) {
-		return json_decode( 
+		return json_decode(
 			$this->getPageProp( $sPropName, $bDoLoad )
 		);
 	}
@@ -117,18 +129,28 @@ class BsArticleHelper {
 	 */
 	public function loadPageProps() {
 		$iArticleId = $this->oTitle->getArticleID();
-		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select(
-			'page_props',
-			array('pp_propname', 'pp_value'),
-			array('pp_page' => $iArticleId ),
-			__METHOD__
-		);
 
-		foreach( $res as $row ) {
-			$this->aPageProps[$row->pp_propname] = $row->pp_value;
+		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'loadPageProps', $iArticleId );
+		$aData = BsCacheHelper::get( $sKey );
+
+		if( $aData !== false ) {
+			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching page props from cache' );
+			$this->aPageProps = $aData;
+		} else {
+			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching page props from DB' );
+			$dbr = wfGetDB( DB_SLAVE );
+			$res = $dbr->select(
+				'page_props',
+				array('pp_propname', 'pp_value'),
+				array('pp_page' => $iArticleId ),
+				__METHOD__
+			);
+
+			foreach( $res as $row ) {
+				$this->aPageProps[$row->pp_propname] = $row->pp_value;
+			}
+			BsCacheHelper::set( $sKey, $this->aPageProps, 60*15 );// invalidates cache after 15 minutes
 		}
-
 		$this->bIsLoaded = true;
 	}
 

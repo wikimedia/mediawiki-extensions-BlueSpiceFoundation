@@ -70,7 +70,7 @@ Ext.define('Ext.ux.form.ItemSelector', {
                 return null;
             },
             getModelData: function(){
-                return null;    
+                return null;
             },
             flex: 1,
             dragGroup: me.ddGroup,
@@ -137,11 +137,11 @@ Ext.define('Ext.ux.form.ItemSelector', {
 
     /**
      * Get the selected records from the specified list.
-     * 
+     *
      * Records will be returned *in store order*, not in order of selection.
      * @param {Ext.view.BoundList} list The list to read selections from.
      * @return {Ext.data.Model[]} The selected records in store order.
-     * 
+     *
      */
     getSelections: function(list) {
         var store = list.getStore();
@@ -169,7 +169,7 @@ Ext.define('Ext.ux.form.ItemSelector', {
         store.insert(0, selected);
         store.resumeEvents();
         list.refresh();
-        this.syncValue(); 
+        this.syncValue();
         list.getSelectionModel().select(selected);
     },
 
@@ -270,7 +270,7 @@ Ext.define('Ext.ux.form.ItemSelector', {
 
     // Synchronizes the submit value with the current state of the toStore
     syncValue: function() {
-        var me = this; 
+        var me = this;
         me.mixins.field.setValue.call(me, me.setupValue(me.toField.store.getRange()));
     },
 
@@ -327,7 +327,7 @@ Ext.define('Ext.ux.form.ItemSelector', {
         Ext.suspendLayouts();
         fromField.boundList.refresh();
         toField.boundList.refresh();
-        Ext.resumeLayouts(true);        
+        Ext.resumeLayouts(true);
     },
 
     onBindStore: function(store, initial) {
