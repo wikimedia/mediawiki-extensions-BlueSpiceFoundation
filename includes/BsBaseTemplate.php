@@ -379,7 +379,8 @@ class BsBaseTemplate extends BaseTemplate {
 		$aOut[] = '    </ul>';
 		$aOut[] = '  </div>';
 		$aOut[] = '</div>';
-		$aOut[] = $this->getAfterPortlet( 'tb' );
+		//getAfterPortlet runs BaseTamplate::renderAfterPortlet which is introduced in MediaWiki 1.23
+		//$aOut[] = $this->getAfterPortlet( 'tb' );
 
 		return implode( "\n", $aOut );
 	}
@@ -398,14 +399,15 @@ class BsBaseTemplate extends BaseTemplate {
 		return $baseToolbox;
 	}
 
-	protected function getAfterPortlet($name) {
-		ob_start();
-		$this->renderAfterPortlet($name);
-		$sAfterPortlet = ob_get_contents();
-		ob_end_clean();
-
-		return $sAfterPortlet;
-	}
+	// introduced in MediaWiki 1.23
+//	protected function getAfterPortlet($name) {
+//		ob_start();
+//		$this->renderAfterPortlet($name);
+//		$sAfterPortlet = ob_get_contents();
+//		ob_end_clean();
+//
+//		return $sAfterPortlet;
+//	}
 
 	protected function printToolBox() {
 		echo $this->getToolboxMarkUp();
@@ -486,7 +488,8 @@ class BsBaseTemplate extends BaseTemplate {
 				}
 				$aOut[] = '</ul>';
 				$aOut[] = '</div>';
-				$aOut[] = $this->getAfterPortlet( $bar );
+				//getAfterPortlet runs BaseTamplate::renderAfterPortlet which is introduced in MediaWiki 1.23
+				//$aOut[] = $this->getAfterPortlet( $bar );
 
 				$aPortlets[$bar] = implode("\n", $aOut);
 			}
