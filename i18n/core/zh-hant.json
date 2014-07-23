@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cwlin0416"
+			"Cwlin0416",
+			"S8321414"
 		]
 	},
 	"bs-ns_main": "(頁面)",
@@ -61,5 +62,6 @@
 	"bs-navigation-instructions": "操作說明",
 	"bs-navigation-support": "技術支援",
 	"bs-navigation-contact": "聯絡我們",
-	"bs-imagepage-download-text": "下載"
+	"bs-imagepage-download-text": "下載",
+	"bs-ns": "名字空間"
 }
