@@ -24,12 +24,7 @@ class BsBaseTemplate extends BaseTemplate {
 				'content' => '' //Gets filled in "execute"
 			)
 		);
-		$this->data['bs_navigation_sites'] = array(
-			10 => array(
-				'id' => 'nt-wiki',
-			)
-		);
-		$this->data['bs_navigation_sites_active'] = 'nt-wiki';
+		$this->data['bs_navigation_sites'] = '';
 	}
 
 	/**
@@ -142,20 +137,6 @@ class BsBaseTemplate extends BaseTemplate {
 		$this->data['bs_navigation_main']['navigation']['class'] = 'icon-menu2';
 		$this->sortDataArrayByPosition( $this->data['bs_navigation_main'] );
 
-		if( is_array($this->data['bs_navigation_sites'][10]) ) {
-			$this->data['bs_navigation_sites'][10] += array(
-				'href' => $this->data['nav_urls']['mainpage']['href'],
-				'text' => $this->data['sitename']
-			);
-			foreach( $this->data['bs_navigation_sites'] as &$site ) {
-				$site['active'] = false;
-				if( $site['id'] === $this->data['bs_navigation_sites_active']) {
-					$site['active'] = true;
-				}
-			}
-		}
-
-		ksort( $this->data['bs_navigation_sites'] );
 		ksort( $this->data['bs_personal_info'] );
 	}
 
@@ -588,9 +569,9 @@ class BsBaseTemplate extends BaseTemplate {
 	protected function printNavigationSites() {
 		$aOut = array();
 		$aOut[] = '<div id="bs-apps">';
-		$aOut[] = '  <ul>';
-		$aOut[] = $this->processData( $this->data['bs_navigation_sites'], true );
-		$aOut[] = '  </ul>';
+		if($this->data['bs_navigation_sites']) {
+			$aOut[] = $this->data['bs_navigation_sites'];
+		}
 		$aOut[] = '</div>';
 		echo implode("\n", $aOut);
 	}
