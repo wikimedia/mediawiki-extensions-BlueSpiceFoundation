@@ -66,5 +66,6 @@
 	"bs-navigation-support": "Used in navigation for support link\n{{Identical|Support}}",
 	"bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}",
 	"bs-imagepage-download-text": "Text message for download used on image pages\n{{Identical|Download}}",
-	"bs-ns": "Text message for namespace used multiple times in different situations\n{{Identical|Namespace}}"
+	"bs-ns": "Text message for namespace used multiple times in different situations\n{{Identical|Namespace}}",
+	"bs-from-something": "This is a suffix for a couple of messages. The meaning of this message is to show the origin of something.\n*$1 is the origin for example a namespace"
 }
