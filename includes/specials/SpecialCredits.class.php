@@ -33,42 +33,89 @@ class SpecialCredits extends BsSpecialPage {
 		);
 		$aContributors = array(
 			'Aude', 'Chad Horohoe', 'Raimond Spekking', 'Siebrand Mazeland',
-			'Yuki Shira', 'TGC'
+			'Yuki Shira', 'TGC', 'Umherirrender'
+		);
+		$aTranslation = array(
+			'Siebrand Mazeland', 'Raimond Spekking', 'Stephan Muggli'
 		);
 
 		$sLiProgrammers = '';
 		foreach ( $aProgrammers as $sProgrammer ) {
-			$sLiProgrammers .= Html::element( 'li', array(), $sProgrammer );
+			$sLiProgrammers .= '<li>' . $sProgrammer . '</li>';
 		}
 
 		$sLiDnT = '';
 		foreach ( $aDesignAndTesting as $sDnT ) {
-			$sLiDnT .= Html::element( 'li', array(), $sDnT );
+			$sLiDnT .= '<li>' . $sDnT . '</li>';
 		}
 
 		$sLiContributors = '';
 		foreach ( $aContributors as $sContributor ) {
-			$sLiContributors .= Html::element( 'li', array(), $sContributor );
+			$sLiContributors .= '<li>' . $sContributor . '</li>';
 		}
 
-		$sProgramerHeadline = Html::element( 'h3', array(), wfMessage( 'bs-credits-programmers' )->plain() );
-		$sOlProgrammers = Html::openElement( 'ul' ) . $sLiProgrammers . Html::closeElement( 'ul' );
+		$sLiTranslation = '';
+		foreach ( $aTranslation as $sTl ) {
+			$sLiTranslation .= '<li>' . $sTl . '</li>';
+		}
 
-		$sDnTHeadline = Html::element( 'h3', array(), wfMessage( 'bs-credits-dnt' )->plain() );
-		$sOlDnT = Html::openElement( 'ul' ) . $sLiDnT . Html::closeElement( 'ul' );
+		$sOlProgrammers = '<ul>' . $sLiProgrammers . '</ul>';
+		$sOlDnT = '<ul>' . $sLiDnT . '</ul>';
+		$sOlContributors = '<ul>' . $sLiContributors . '</ul>';
+		$sOlTl = '<ul>' . $sLiTranslation . '</ul>';
 
-		$sContributorsHeadline = Html::element( 'h3', array(), wfMessage( 'bs-credits-contributors' )->plain() );
-		$sOlContributors = Html::openElement( 'ul' ) . $sLiContributors . Html::closeElement( 'ul' );
+		$aTranslators = $this->generateTranslatorsList();
 
-		$sOut = Html::openElement( 'table', array( 'width' => 600 ) ) .
-				Html::openElement( 'tr' ) .
-					Html::openElement( 'td', array( 'style' => 'vertical-align: top;' ) ). $sProgramerHeadline. $sOlProgrammers . Html::closeElement( 'td' ).
-					Html::openElement( 'td', array( 'style' => 'vertical-align: top;' ) ) . $sDnTHeadline .$sOlDnT . Html::closeElement( 'td' ).
-					Html::openElement( 'td', array( 'style' => 'vertical-align: top;' ) ) . $sContributorsHeadline . $sOlContributors . Html::closeElement( 'td' ).
-				Html::closeElement( 'tr' ).
-				Html::closeElement( 'table' );
+		$sLink = '<a href="https://translatewiki.net">translatewiki.net</a>';
+		$aOut = array();
+		$aOut[] = '<table class="wikitable">';
+		$aOut[] = '<tr>';
+		$aOut[] = '<th>' . wfMessage( 'bs-credits-programmers' )->plain() . '</th>';
+		$aOut[] = '<th>' . wfMessage( 'bs-credits-dnt' )->plain() . '</th>';
+		$aOut[] = '<th>' . wfMessage( 'bs-credits-contributors' )->plain() . '</th>';
+		$aOut[] = '</tr>';
+		$aOut[] = '<tr style="vertical-align: top;">';
+		$aOut[] = '<td style="vertical-align: top;">' . $sOlProgrammers . '</td>';
+		$aOut[] = '<td style="vertical-align: top;">' . $sOlDnT . '</td>';
+		$aOut[] = '<td>' . $sOlContributors . '</td>';
+		$aOut[] = '</tr>';
+		$aOut[] = '</table>';
 
-		$this->getOutput()->addHtml( $sOut );
+		$aOut[] = '<table class="wikitable">';
+		$aOut[] = '<tr>';
+		$aOut[] = '<th>'. wfMessage( 'bs-credits-translators' )->plain() .'</th>';
+		$aOut[] = '<th>'. wfMessage( 'bs-credits-translation' )->plain() .'</th>';
+		$aOut[] = '</tr>';
+		$aOut[] = '<tr>';
+		$aOut[] = '<td style="vertical-align: top;">';
+		$aOut[] = '<i><h6>' . wfMessage( 'bs-credits-th', $sLink )->text() . '</h6></i>';
+		$aOut[] = '<ul><li>'. implode( '</li><li>', $aTranslators['translators'] ) .'</li></ul>';
+		$aOut[] = '<br />'. wfMessage( 'bs-credits-createdon', $aTranslators['ts'] )->plain();
+		$aOut[] = '</td>';
+		$aOut[] = '<td style="vertical-align: top;">'. $sOlTl .'</td>';
+		$aOut[] = '</tr>';
+		$aOut[] = '</table>';
+
+		$this->getOutput()->addHtml(implode( "\n", $aOut ) );
 	}
 
+	public function generateTranslatorsList() {
+		$vTranslators = file_get_contents( BSROOTDIR . '/includes/specials/translators.json' );
+		$vTranslators = FormatJson::decode( $vTranslators );
+		$aTranslators = array();
+		$vTs = 0;
+
+		foreach ( $vTranslators as $aData ) {
+			if ( $aData instanceof StdClass ) {
+				foreach ( $aData as $key => $sTranslator ) {
+					$aTranslators['translators'][] = $sTranslator;
+				}
+			}
+			if ( is_numeric( $aData ) ) {
+				$vTs = RequestContext::getMain()->getLanguage()->date( $aData );
+				$aTranslators['ts'] = $vTs;
+			}
+		}
+		return $aTranslators;
+	}
 }
