@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ssola"
+			"Ssola",
+			"Edustus"
 		]
 	},
-	"bs-extjs-no": "No"
+	"bs-extjs-no": "No",
+	"bs-extjs-label-page": "Pàgina",
+	"bs-extjs-title-warning": "Advertència"
 }
