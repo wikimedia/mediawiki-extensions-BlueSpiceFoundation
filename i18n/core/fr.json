@@ -62,5 +62,6 @@
 	"bs-navigation-support": "Soutien",
 	"bs-navigation-contact": "Contact",
 	"bs-imagepage-download-text": "Télécharger",
-	"bs-ns": "Espace de noms"
+	"bs-ns": "Espace de noms",
+	"bs-from-something": "(depuis $1)"
 }
