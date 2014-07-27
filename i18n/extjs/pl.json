@@ -26,6 +26,8 @@
 	"bs-extjs-reset": "Resetuj",
 	"bs-extjs-close": "Zamknij",
 	"bs-extjs-label-user": "Użytkownik",
+	"bs-extjs-label-namespace": "Przestrzeń nazw",
+	"bs-extjs-label-page": "Strona",
 	"bs-extjs-upload": "Prześlij",
 	"bs-extjs-browse": "Przeglądaj",
 	"bs-extjs-uploading": "Przesyłanie...",

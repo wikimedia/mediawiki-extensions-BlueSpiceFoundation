@@ -63,5 +63,6 @@
 	"bs-navigation-support": "Поддержка",
 	"bs-navigation-contact": "Обратная связь",
 	"bs-imagepage-download-text": "Загрузить",
-	"bs-ns": "Пространство имён"
+	"bs-ns": "Пространство имён",
+	"bs-from-something": "(из $1)"
 }

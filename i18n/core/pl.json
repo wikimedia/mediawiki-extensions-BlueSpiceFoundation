@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Alan ffm"
+			"Alan ffm",
+			"Pio387"
 		]
 	},
 	"bs-ns_main": "(Strony)",
@@ -47,5 +48,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Ten typ pliku nie jest obsługiwany.",
 	"bs-navigation-instructions": "Instrukcje",
 	"bs-navigation-support": "Wsparcie",
-	"bs-navigation-contact": "Kontakt"
+	"bs-navigation-contact": "Kontakt",
+	"bs-ns": "Przestrzeń nazw",
+	"bs-from-something": "(z $1)"
 }

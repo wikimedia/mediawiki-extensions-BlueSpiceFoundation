@@ -62,5 +62,6 @@
 	"bs-navigation-support": "Поддршка",
 	"bs-navigation-contact": "Контакт",
 	"bs-imagepage-download-text": "Преземи",
-	"bs-ns": "Именски простор"
+	"bs-ns": "Именски простор",
+	"bs-from-something": "(од $1)"
 }

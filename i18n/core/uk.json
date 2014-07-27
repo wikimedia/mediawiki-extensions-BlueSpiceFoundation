@@ -64,5 +64,6 @@
 	"bs-navigation-support": "Підтримка",
 	"bs-navigation-contact": "Контакт",
 	"bs-imagepage-download-text": "Завантажити",
-	"bs-ns": "Простір назв"
+	"bs-ns": "Простір назв",
+	"bs-from-something": "(з $1)"
 }

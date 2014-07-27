@@ -4,5 +4,6 @@
 			"Csega"
 		]
 	},
-	"bs-ns": "Névtér"
+	"bs-ns": "Névtér",
+	"bs-from-something": "(innen: $1)"
 }
