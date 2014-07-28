@@ -50,7 +50,7 @@ class BsWidgetListHelper {
 	/**
 	 * N-glton pattern implementation to prevent multiple parsing.
 	 * @param Title $oTitle
-	 * @return BsWidgetListHelper 
+	 * @return BsWidgetListHelper
 	 */
 	public static function getInstanceForTitle( $oTitle ){
 		$sTitleKey = $oTitle->getPrefixedDBkey();
@@ -76,11 +76,21 @@ class BsWidgetListHelper {
 			return $this->aWidgetList;
 		}
 
-		// TODO MRG (01.07.11 02:20): Maybe this could be stored in an object cache. Question is, however, when to invalidate.
-		$oArticle           = new Article( $this->oTitle, 0 ); //New: Fetch current revision
-		$sArticleContent    = $oArticle->fetchContent( 0 ); //Old (<1.18): Fetch current revision
-		// TODO MRG (01.07.11 02:16): Careful: this does not allow nested noincludes. However, these dont make sense anyways
-		$sArticleContent    = preg_replace( '#<noinclude>.*?<\/noinclude>#si', '', $sArticleContent );
+		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'WidgetListHelper', $this->oTitle->getPrefixedDBkey() );
+		$aData = BsCacheHelper::get( $sKey );
+
+		if( $aData !== false ) {
+			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching WidgetList page content from cache' );
+			$sArticleContent = $aData;
+		} else {
+			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching WidgetList page content from DB' );
+			$oWikiPage = WikiPage::factory( $this->oTitle );
+			$sArticleContent = $oWikiPage->getContent()->getNativeData();
+			$sArticleContent    = preg_replace( '#<noinclude>.*?<\/noinclude>#si', '', $sArticleContent );
+
+			BsCacheHelper::set( $sKey, $sArticleContent );
+		}
+
 		if( empty ( $sArticleContent ) ) {
 			$this->aWidgetList = array();
 			return $this->aWidgetList;

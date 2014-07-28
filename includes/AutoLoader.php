@@ -14,7 +14,8 @@ $GLOBALS['wgAutoloadClasses']['EXTINFO'] = __DIR__."/Common.php";
 $GLOBALS['wgAutoloadClasses']['EXTTYPE'] = __DIR__."/Common.php";
 
 $GLOBALS['wgAutoloadClasses']['LCStore_BSDB'] = __DIR__."/cache/LCStore_BSDB.php";
-$GLOBALS['wgAutoloadClasses']['LCStore_SHM']  = __DIR__."/cache/LCStore_SHM.php";
+$GLOBALS['wgAutoloadClasses']['LCStore_SHM'] = __DIR__."/cache/LCStore_SHM.php";
+$GLOBALS['wgAutoloadClasses']['LCStore_MC'] = __DIR__."/cache/LCStore_MC.php";
 
 $GLOBALS['wgAutoloadClasses']['BsValidator'] = __DIR__."/validator/Validator.class.php";
 $GLOBALS['wgAutoloadClasses']['BsValidatorPlugin'] = __DIR__."/validator/Validator.class.php";
@@ -57,6 +58,7 @@ $GLOBALS['wgAutoloadClasses']['HTMLMultiSelectSortList'] = __DIR__."/html/htmlfo
 
 //utility
 $GLOBALS['wgAutoloadClasses']['BsArticleHelper'] = __DIR__."/utility/ArticleHelper.class.php";
+$GLOBALS['wgAutoloadClasses']['BsCacheHelper'] = __DIR__."/utility/CacheHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsConnectionHelper'] = __DIR__."/utility/ConnectionHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsDOMHelper'] = __DIR__."/utility/DOMHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsFormatConverter'] = __DIR__."/utility/FormatConverter.class.php";

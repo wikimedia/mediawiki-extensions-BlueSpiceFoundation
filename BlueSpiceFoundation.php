@@ -90,29 +90,10 @@ $wgExtensionMessagesFiles += array(
 $wgSpecialPageGroups['SpecialCredits'] = 'bluespice';
 $wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
 
-$wgHooks['SetupAfterCache'][] = 'BsCoreHooks::onSetupAfterCache';
-$wgHooks['SoftwareInfo'][] = 'BsCoreHooks::onSoftwareInfo';
-$wgHooks['BeforePageDisplay'][] = 'BsCoreHooks::onBeforePageDisplay';
-$wgHooks['LinkEnd'][] = 'BsCoreHooks::LinkEnd';
-$wgHooks['MakeGlobalVariablesScript'][] = 'BsCoreHooks::onMakeGlobalVariablesScript';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'BsCoreHooks::onLoadExtensionSchemaUpdates';
-$wgHooks['ApiCheckCanExecute'][] = 'BsCoreHooks::onApiCheckCanExecute';
-$wgHooks['UserGetRights'][] = 'BsCoreHooks::onUserGetRights';
-$wgHooks['userCan'][] = 'BsCoreHooks::onUserCan';
-$wgHooks['UploadVerification'][] = 'BsCoreHooks::onUploadVerification';
-$wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'BsCoreHooks::onSkinTemplateOutputPageBeforeExec';
-
-$wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
-
-if ( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
-	$wgHooks['EditPage::showEditForm:initial'] = array();
-}
-
-if ( $wgDBtype == 'oracle' ) {
-	$wgHooks['ArticleDelete'][] = 'BSOracleHooks::onArticleDelete';
-}
-
+// Register hooks
+require_once( 'BlueSpice.hooks.php' );
 //Setup
+
 $wgExtensionFunctions[] = 'BsCoreHooks::setup';
 
 // initalise BlueSpice as first extension in a fully initialised environment

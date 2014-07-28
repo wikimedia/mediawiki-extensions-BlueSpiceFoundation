@@ -273,11 +273,28 @@ class BsConfig {
 	 * loads all settings from the database and saves the instances for every variable internal.
 	 */
 	public static function loadSettings() {
-		$dbr = wfGetDB ( DB_READ );
-		# query the settings from bs_settings
-		$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
+		$oCache = wfGetCache( CACHE_ANYTHING );
+		$sKey = wfMemcKey( 'BlueSpice', 'BsConfig', 'loadSettings' );
+		$aData = $oCache->get( $sKey );
+
+		if( $aData !== false ) {
+			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from cache' );
+			$aRows = $aData;
+		} else {
+			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from DB' );
+			$dbr = wfGetDB ( DB_READ );
+			# query the settings from bs_settings
+			$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
+			$aRows = array();
+
+			while( $row = $res->fetchObject() ) {
+				$aRows[] = $row;
+			}
+
+			$oCache->set( $sKey, $aRows, 60*1440 );//max cache time 24h
+		}
 		# unserialize and save every setting in the config class
-		while ( $row = $res->fetchObject () ) {
+		foreach( $aRows as $row ) {
 			self::set ( $row->key, unserialize ( $row->value ) );
 		}
 	}
@@ -321,7 +338,10 @@ class BsConfig {
 		}
 
 		# write the settings array to the database
-		return $dbw->insert('bs_settings', $aSettings);
+		wfRunHooks( 'BsSettingsBeforeSaveSettings', array( $this, &$aSettings ) );
+		$bReturn = $dbw->insert('bs_settings', $aSettings);
+		wfRunHooks( 'BsSettingsAfterSaveSettings', array( $this, $aSettings ) );
+		return $bReturn;
 	}
 
 	// TODO RBV (02.06.11 16:06): Core-Kontamination! Keine MediaWiki Funktionen im Core!
