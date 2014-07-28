@@ -315,7 +315,7 @@ class BsCore {
 	public static function doInitialise() {
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Initialize Core');
 		self::$oInstance = new BsCore();
-		wfProfileIn('Performance: ' . __METHOD__ . ' - Initialize Core');
+		wfProfileOut('Performance: ' . __METHOD__ . ' - Initialize Core');
 
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load Settings');
 		if ( !defined( 'DO_MAINTENANCE' ) ) {
