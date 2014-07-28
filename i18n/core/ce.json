@@ -20,7 +20,7 @@
 	"bs-weeks-duration": "{{PLURAL:$1|цхьа кӀира|$1 кӀира}}",
 	"bs-days-duration": "{{PLURAL:$1|цхьа де|$1 де}}",
 	"bs-hours-duration": "{{PLURAL:$1|цхьа сахьат|$1 сахьат}}",
-	"bs-mins-duration": "{{PLURAL:$1|цхьа минут|$1 минут}}",
+	"bs-mins-duration": "{{PLURAL:$1|цхьа минот|$1 минот}}",
 	"bs-secs-duration": "{{PLURAL:$1|цхьа секунд|$1 секунд}}",
 	"bs-two-units-ago": "$1 а $2 а хьалха",
 	"bs-one-unit-ago": "$1 хьалха",
@@ -42,5 +42,6 @@
 	"bs-navigation-support": "ГӀo дан",
 	"bs-navigation-contact": "Юха зӀе",
 	"bs-imagepage-download-text": "Чуяккха",
-	"bs-ns": "ЦӀерийн ана"
+	"bs-ns": "ЦӀерийн ана",
+	"bs-from-something": "($1 чура)"
 }

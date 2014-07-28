@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"EagerLin"
+			"EagerLin",
+			"LNDDYL"
 		]
 	},
 	"bs-extjs-ok": "確定",
@@ -22,7 +23,7 @@
 	"bs-extjs-actions-column-header": "操作",
 	"bs-extjs-warning": "警告",
 	"bs-extjs-saving": "儲存中...",
-	"bs-extjs-reset": "重置",
+	"bs-extjs-reset": "重設",
 	"bs-extjs-close": "關閉",
 	"bs-extjs-label-user": "使用者",
 	"bs-extjs-upload": "上傳",
