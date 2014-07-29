@@ -36,7 +36,6 @@
 	"bs-exception-view-admin-hint": "Please contact your system administrator.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Show error details",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Hide error details",
-	"action-responsibleeditors-viewspecialpage": "view pages which are protected with the \"ResponsibleEditors-Viewspecialpage\" right",
 	"bs-viewtagerrorlist-legend": "$1 - Error",
 	"bs-readonly": "The database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal. The administrator who locked it offered this explanation: $1",
 	"bs-imageofotheruser": "You are not allowed to upload an image for another user.",
