@@ -41,7 +41,6 @@
 	"bs-exception-view-admin-hint": "请联系您所在Wiki的系统管理员。",
 	"bs-exception-view-stacktrace-toggle-show-text": "显示错误详情",
 	"bs-exception-view-stacktrace-toggle-hide-text": "隐藏错误详情",
-	"action-responsibleeditors-viewspecialpage": "查看以“ResponsibleEditors-Viewspecialpage”权限保护的页面",
 	"bs-viewtagerrorlist-legend": "$1——错误",
 	"bs-readonly": "数据库当前被锁定，不能添加新条目或进行其他修改，锁定可能是因为例行的数据库维护，完成后即可恢复正常。\n\n锁定数据库的管理员提供的解释：$1",
 	"bs-imageofotheruser": "您不能为另一个用户上传图像。",

@@ -36,7 +36,6 @@
 	"bs-exception-view-admin-hint": "Обратете се кај администраторот.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Прикажи пордобности за грешката",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Скриј подробности за грешката",
-	"action-responsibleeditors-viewspecialpage": "прегледај страници заштитени со правото „ResponsibleEditors-Viewspecialpage“",
 	"bs-viewtagerrorlist-legend": "$1 — Грешка",
 	"bs-readonly": "Базата е моментално заклучена за нови статии и други измени, најверојатно како рутинска проверка, по што ќе се врати во нормална состојба. Администраторот кој ја заклучи го понуди следното образложение: $1",
 	"bs-imageofotheruser": "Не ви е дозволено да подигате слики во име на друг корисник.",

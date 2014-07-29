@@ -38,7 +38,6 @@
 	"bs-exception-view-admin-hint": "Por favor, contacte o seu administrador do sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar detalhes do erro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Esconder detalhes do erro",
-	"action-responsibleeditors-viewspecialpage": "Visualizar as páginas protegidas pelo direito \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - Erro",
 	"bs-readonly": "A base de dados está atualmente bloqueada para novas entradas e outras modificações, provavelmente para manutenção de rotina, depois da qual voltará à sua normalidade. O administrador responsável pelo bloqueio deu a seguinte explicação: $1",
 	"bs-imageofotheruser": "Não possui permissão para carregar uma imagem para outro(a) utilizador(a).",
@@ -63,5 +62,6 @@
 	"bs-navigation-support": "Suporte",
 	"bs-navigation-contact": "Contacto",
 	"bs-imagepage-download-text": "Descarregar",
-	"bs-ns": "Domínio"
+	"bs-ns": "Domínio",
+	"bs-from-something": "(de $1)"
 }

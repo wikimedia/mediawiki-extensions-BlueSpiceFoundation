@@ -40,7 +40,6 @@
 	"bs-exception-view-admin-hint": "Por favor, contacta tu administrador de sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar detalles del error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Ocultar detalles del error",
-	"action-responsibleeditors-viewspecialpage": "Ver las paginas que están protegidas por el \"ResponsibleEditors-Viewspecialpage\" derecho",
 	"bs-viewtagerrorlist-legend": "$1 - Error",
 	"bs-readonly": "La base de datos está bloqueada temporalmente —probablemente por mantenimiento programado— y no permite entradas nuevas u otras modificaciones.\nEl motivo proporcionado por el administrador que la bloqueó es: $1",
 	"bs-imageofotheruser": "No tienes autorización para subir una imagen para otro usuario.",
@@ -66,5 +65,6 @@
 	"bs-navigation-support": "Asistencia",
 	"bs-navigation-contact": "Contacto",
 	"bs-imagepage-download-text": "Descargar",
-	"bs-ns": "Espacio de nombres"
+	"bs-ns": "Espacio de nombres",
+	"bs-from-something": "(de $1)"
 }

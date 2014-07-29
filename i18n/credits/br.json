@@ -4,5 +4,8 @@
 			"Fohanno"
 		]
 	},
-	"bs-credits-programmers": "Programmourien"
+	"bs-credits-programmers": "Programmourien",
+	"bs-credits-translators": "Troerien",
+	"bs-credits-translation": "Troidigezh",
+	"bs-credits-createdon": "Roll krouet d'an : $1"
 }

@@ -36,7 +36,6 @@
 	"bs-exception-view-admin-hint": "Veuillez contacter votre administrateur système.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Afficher les détails de l’erreur",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Masquer les détails de l’erreur",
-	"action-responsibleeditors-viewspecialpage": "afficher les pages qui sont protégées avec le droit « ResponsibleEditors-Viewspecialpage »",
 	"bs-viewtagerrorlist-legend": "$1 - Erreur",
 	"bs-readonly": "La base de données est actuellement verrouillée pour de nouvelles entrées et d’autres modifications, probablement par une routine de maintenance de la base de données, après laquelle tout reviendra à la normale. L’administrateur qui l’a verrouillée a offert l’explication suivante : $1",
 	"bs-imageofotheruser": "Vous n’êtes pas autorisé à importer une image pour un autre utilisateur.",

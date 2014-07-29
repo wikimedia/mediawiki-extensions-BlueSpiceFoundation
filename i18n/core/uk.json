@@ -38,7 +38,6 @@
 	"bs-exception-view-admin-hint": "Будь ласка, зверніться до системного адміністратора.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Показати відомості про помилку",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Приховати відомості про помилку",
-	"action-responsibleeditors-viewspecialpage": "перегляд сторінок, які охороняються з правом \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - помилка",
 	"bs-readonly": "Додавання нових статей та інші зміни бази даних у даний момент заблоковані, ймовірно, через планове сервісне обслуговування бази даних, після закінчення якого буде відновлено нормальний стан. Адміністратор, що заблокував базу, дав наступне пояснення: $1",
 	"bs-imageofotheruser": "Вам не дозволено завантажувати зображення для іншого користувача.",

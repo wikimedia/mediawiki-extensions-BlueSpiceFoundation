@@ -2,11 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Josve05a",
-			"Jopparn"
+			"Jopparn",
+			"WikiPhoenix"
 		]
 	},
 	"specialcredits": "BlueSpice medverkande",
 	"bs-credits-programmers": "Programmerare",
 	"bs-credits-dnt": "Design och tester",
-	"bs-credits-contributors": "Bidragsgivare"
+	"bs-credits-contributors": "Bidragsgivare",
+	"bs-credits-translators": "Översättare",
+	"bs-credits-translation": "Översättning",
+	"bs-credits-th": "Tack till alla översättare på $1.",
+	"bs-credits-createdon": "Lista skapades: $1"
 }

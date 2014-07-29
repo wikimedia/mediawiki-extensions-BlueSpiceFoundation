@@ -37,7 +37,6 @@
 	"bs-exception-view-admin-hint": "Пожалуйста, обратитесь к системному администратору.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Показать сведения об ошибке",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Скрыть сведения об ошибке",
-	"action-responsibleeditors-viewspecialpage": "просмотр страниц, которые защищены правом «ResponsibleEditors-Viewspecialpage»",
 	"bs-viewtagerrorlist-legend": "$1 — Ошибка",
 	"bs-readonly": "Добавление новых записей и другие изменения базы данных сейчас заблокированы: вероятно, в связи с плановым обслуживанием (после которого всё вернётся в нормальное состояние).\nЗаблокировавший её администратор оставил следующее разъяснение: $1",
 	"bs-imageofotheruser": "Вы не можете загрузить изображение для другого участника.",
