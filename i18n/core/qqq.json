@@ -8,7 +8,7 @@
 			"Liuxinyu970226"
 		]
 	},
-	"bs-ns_main": "Label used in namespace dropdown lists for NS_MAIN",
+	"bs-ns_main": "Label used in namespace dropdown lists for NS_MAIN\n{{Identical|Page}}",
 	"bs-ns_all": "Label used in namespace dropdown lists for all namespaces.\n{{Identical|All}}",
 	"bs-tab_navigation": "Label for \"nagivation\" tab in left sidebar\n{{Identical|Navigation}}",
 	"bs-tab_focus": "Label for \"focus\" tab in left sidebar",
@@ -66,5 +66,5 @@
 	"bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}",
 	"bs-imagepage-download-text": "Text message for download used on image pages\n{{Identical|Download}}",
 	"bs-ns": "Text message for namespace used multiple times in different situations\n{{Identical|Namespace}}",
-	"bs-from-something": "This is a suffix for a couple of messages. The meaning of this message is to show the origin of something.\n*$1 is the origin for example a namespace"
+	"bs-from-something": "This is a suffix for a couple of messages. The meaning of this message is to show the origin of something.\n*$1 is the origin for example a namespace\n{{Identical|From}}"
 }
