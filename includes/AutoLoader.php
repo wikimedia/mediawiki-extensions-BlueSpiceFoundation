@@ -42,6 +42,9 @@ $GLOBALS['wgAutoloadClasses']['BsCAResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsCAIResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams.php";
 
+//api
+$GLOBALS['wgAutoloadClasses']['BsApiBase'] = __DIR__."/api/BsApiBase.php";
+
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";
 $GLOBALS['wgAutoloadClasses']['BsInvalidNamespaceException'] = __DIR__."/InvalidNamespaceException.class.php";
