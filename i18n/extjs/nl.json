@@ -3,7 +3,8 @@
 		"authors": [
 			"SPQRobin",
 			"Southparkfan",
-			"Niknetniko"
+			"Niknetniko",
+			"Sjoerddebruin"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -26,10 +27,20 @@
 	"bs-extjs-reset": "Opnieuw instellen",
 	"bs-extjs-close": "Sluiten",
 	"bs-extjs-label-user": "Gebruiker",
+	"bs-extjs-label-namespace": "Naamruimte",
+	"bs-extjs-label-page": "Pagina",
 	"bs-extjs-upload": "Uploaden",
 	"bs-extjs-browse": "Bladeren",
 	"bs-extjs-uploading": "Bezig met uploaden...",
 	"bs-extjs-confirmNavigationTitle": "Link volgen",
 	"bs-extjs-confirmNavigationText": "Wilt u deze link echt volgen? Alle dynamische instellingen zoals filters of sortering op de huidige pagina zullen verloren gaan.",
-	"bs-extjs-allns": "(alle)"
+	"bs-extjs-allns": "(alle)",
+	"bs-extjs-filters": "Filters",
+	"bs-extjs-filter-equals": "gelijk aan",
+	"bs-extjs-filter-equals-not": "niet gelijk aan",
+	"bs-extjs-filter-contains": "bevat",
+	"bs-extjs-filter-contains-not": "bevat niet",
+	"bs-extjs-filter-starts-with": "begint met",
+	"bs-extjs-filter-ends-with": "eindigt met",
+	"bs-extjs-title-warning": "Waarschuwing"
 }
