@@ -294,7 +294,7 @@ class BsBaseTemplate extends BaseTemplate {
 				<ul>
 					<?php if ( count( $actions ) > 0 ) { ?>
 					<li id="bs-cactions-button" class="">
-						<a href="#" class="icon-plus-after"><span><?php $this->msg( 'bs-tools-button' ) ?></span></a>
+						<a href="#" class="icon-arrow-down9-after"><span><?php $this->msg( 'bs-tools-button' ) ?></span></a>
 						<div class="menu">
 							<ul<?php $this->html( 'userlangattributes' ) ?>>
 							<?php foreach ( $actions as $key => $item){
