@@ -294,7 +294,7 @@ class BsBaseTemplate extends BaseTemplate {
 				<ul>
 					<?php if ( count( $actions ) > 0 ) { ?>
 					<li id="bs-cactions-button" class="">
-						<a href="#" class="icon-stack"><span><?php $this->msg( 'bs-tools-button' ) ?></span></a>
+						<a href="#" class="icon-plus-after"><span><?php $this->msg( 'bs-tools-button' ) ?></span></a>
 						<div class="menu">
 							<ul<?php $this->html( 'userlangattributes' ) ?>>
 							<?php foreach ( $actions as $key => $item){
@@ -582,11 +582,11 @@ class BsBaseTemplate extends BaseTemplate {
 	<h3<?php $this->html( 'userlangattributes' ) ?>><label for="searchInput"><?php $this->msg( 'search' ) ?></label></h3>
 	<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
 		<?php if ( $this->data['rtl'] ) { ?>
-		<?php echo $this->makeSearchButton( 'image', array( 'id' => 'searchButton', 'src' => $this->getSkin()->getSkinStylePath( 'resources/images/search-rtl.png' ), 'width' => '12', 'height' => '13' ) ); ?>
+		<?php echo $this->makeSearchButton( 'image', array( 'id' => 'searchButton', 'src' => $this->getSkin()->getSkinStylePath( 'resources/images/search-rtl.png' ), 'width' => '12', 'height' => '13', 'class' => 'icon-search-light' ) ); ?>
 		<?php } ?>
 		<?php echo $this->makeSearchInput( $this->data['bs_search_input'] ); ?>
 		<?php if ( !$this->data['rtl'] ) { ?>
-		<?php echo $this->makeSearchButton( 'image', array( 'id' => 'searchButton', 'src' => $this->getSkin()->getSkinStylePath( 'resources/images/search-ltr.png' ), 'width' => '12', 'height' => '13' ) ); ?>
+		<?php echo $this->makeSearchButton( 'image', array( 'id' => 'searchButton', 'src' => $this->getSkin()->getSkinStylePath( 'resources/images/search-ltr.png' ), 'width' => '12', 'height' => '13', 'class' => 'icon-search-light' ) ); ?>
 		<?php } ?>
 		<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
 		<?php
