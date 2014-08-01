@@ -518,20 +518,14 @@ class BsBaseTemplate extends BaseTemplate {
 		$aOut[] = '<div id="bs-user-container">';
 		$aOut[] = '  <div id="bs-button-user">';
 		$aOut[] = '    <h3 id="p-personal-label">'.$this->getMsg( 'personaltools' )->text().'</h3>';
+		if ( !$oUser->isAnon() ) {
+			$aOut[] = "<div id='bs-personal-name'>";
+			$aOut[] = BsCore::getUserDisplayName();
+			$aOut[] = "</div>";
+		}
+
 		$aOut[] = BsCore::getInstance()->getUserMiniProfile( $oUser, array( "width" => "24", "height" => "24" ) )->execute();
 
-		if ( !$oUser->isAnon() ) {
-			$aOut[] = BsCore::getUserDisplayName();
-		}
-
-		$personalTools = $this->getPersonalTools();
-		$aOut[] = '    <ul id="bs-personal-menu" '.$this->data['userlangattributes'].'>';
-		foreach ( $personalTools as $key => $item ) {
-			$aOut[] = $this->makeListItem( $key, $item );
-		}
-		$aOut[] = '    </ul>';
-		$aOut[] = '  </div>';
-		$aOut[] = '</div>';
 		$aOut[] = '<ul id="bs-personal-info">';
 		foreach( $this->data['bs_personal_info'] as $item ) {
 			$sActiveClass = $item['active'] ? 'active' : '';
@@ -552,6 +546,17 @@ class BsBaseTemplate extends BaseTemplate {
 			);
 		}
 		$aOut[] = '</ul>';
+
+		$personalTools = $this->getPersonalTools();
+		$aOut[] = '    <div id="bs-personal-menu-container">';
+		$aOut[] = '      <ul id="bs-personal-menu" '.$this->data['userlangattributes'].'>';
+		foreach ( $personalTools as $key => $item ) {
+			$aOut[] = $this->makeListItem( $key, $item );
+		}
+		$aOut[] = '      </ul>';
+		$aOut[] = '    </div>';
+		$aOut[] = '  </div>';
+		$aOut[] = '</div>';
 
 		echo implode("\n", $aOut);
 	}
