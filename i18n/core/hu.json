@@ -1,9 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Csega"
+			"Csega",
+			"Misibacsi"
 		]
 	},
+	"bs-userbar_loginswitch_logout": "Kijelentkezés",
+	"bs-userbar_loginswitch_login": "Bejelentkezés",
+	"bs-extended-search-textfield-defaultvalue": "Keresés...",
+	"bs-email-footer": "Ez egy automatikus üzenet. Kérjük ne válaszoljon rá.",
+	"bs-userpagesettings-legend": "Felhasználói beállítások",
+	"bs-userpreferences-link-text": "További felhasználói beállítások",
+	"bs-userpreferences-link-title": "A személyes felhasználói beállításokat jeleníti meg",
+	"bs-exception-view-heading": "Hiba történt",
+	"bs-exception-view-text": "A kérés feldolgozása során a következő hiba történt:",
+	"bs-exception-view-admin-hint": "Kérjük, forduljon a rendszergazdához.",
+	"bs-exception-view-stacktrace-toggle-show-text": "Hiba részleteinek megjelenítése",
+	"bs-permissionerror": "Engedélyezési hiba",
+	"bs-navigation-support": "Támogatás",
+	"bs-navigation-contact": "Kapcsolatfelvétel",
+	"bs-imagepage-download-text": "Letöltés",
 	"bs-ns": "Névtér",
 	"bs-from-something": "(innen: $1)"
 }

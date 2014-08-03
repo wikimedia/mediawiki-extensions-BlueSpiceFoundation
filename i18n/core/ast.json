@@ -36,7 +36,6 @@
 	"bs-exception-view-admin-hint": "Por favor, comuníquese col alministrador de sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Ver los detalles del error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Anubrir los detalles del error",
-	"action-responsibleeditors-viewspecialpage": "Ver les páxines que tan protexíes col permisu «ResponsibleEditors-Viewspecialpage»",
 	"bs-viewtagerrorlist-legend": "$1 - Error",
 	"bs-readonly": "Nestos momentos la base de datos ta candada pa nueves entraes y otros cambios, probablemente por un mantenimientu rutinariu, y volverá a la normalidá en acabando esti. L'alministrador que la candó dio esti motivu: $1",
 	"bs-imageofotheruser": "Nun tien permisu pa xubir una imaxe pa otru usuariu.",
@@ -62,5 +61,6 @@
 	"bs-navigation-support": "Sofitu",
 	"bs-navigation-contact": "Contautu",
 	"bs-imagepage-download-text": "Descargar",
-	"bs-ns": "Espaciu de nomes"
+	"bs-ns": "Espaciu de nomes",
+	"bs-from-something": "(de $1)"
 }
