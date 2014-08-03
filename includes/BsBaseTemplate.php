@@ -245,6 +245,7 @@ class BsBaseTemplate extends BaseTemplate {
 	}
 
 	protected function printDataBeforeContent() {
+		//tbd get data from prebodyhtml, no need for a switch then
 		if ( $this->data['bs_dataBeforeContent'] ) {
 			echo Html::rawElement(
 				'div',

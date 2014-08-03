@@ -49,6 +49,10 @@ class ViewBaseElement {
 		wfProfileOut( 'BS::'.__METHOD__ );
 	}
 
+	public function __toString(){
+		return $this->execute();
+	}
+
 	/**
 	 * Set up the element type (HTML-Tag) for this element.
 	 * The AutoElement is used to enclose the datasets if no template is defined
@@ -286,7 +290,7 @@ class ViewBaseElement {
 		if ( count( $tokens ) ) {
 			$params = array();
 			foreach ( $tokens as $token ) {
-				if ( isset( $this->_mPresentDataset[$token] ) 
+				if ( isset( $this->_mPresentDataset[$token] )
 				) {
 					$params[$token] = $this->_mPresentDataset[$token];
 				}
