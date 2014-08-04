@@ -525,7 +525,10 @@ class BsBaseTemplate extends BaseTemplate {
 			$aOut[] = "</div>";
 		}
 
-		$aOut[] = BsCore::getInstance()->getUserMiniProfile( $oUser, array( "width" => "32", "height" => "32" ) )->execute();
+		if ($oUser->isLoggedIn())
+			$aOut[] = BsCore::getInstance()->getUserMiniProfile($oUser, array("width" => "32", "height" => "32"))->execute();
+		else
+			$aOut[] = "<span class='bs-personal-not-loggedin'>" . Linker::link(SpecialPage::getTitleFor('login'), wfMessage("login")->plain()) . "</span>";
 
 		$aOut[] = '<ul id="bs-personal-info">';
 		foreach( $this->data['bs_personal_info'] as $item ) {
