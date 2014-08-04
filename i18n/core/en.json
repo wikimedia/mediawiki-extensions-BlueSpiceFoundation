@@ -62,5 +62,16 @@
 	"bs-navigation-contact": "Contact",
 	"bs-imagepage-download-text": "Download",
 	"bs-ns": "Namespace",
-	"bs-from-something": "(from $1)"
+	"bs-from-something": "(from $1)",
+	"prefs-base": "BlueSpice",
+	"bs-pref-fileextensions": "Allowed file extensions:",
+	"bs-pref-imageextensions": "Allowed image extensions:",
+	"bs-pref-logopath": "Logo path:",
+	"bs-pref-faviconpath": "Favicon path:",
+	"bs-pref-defaultuserimage": "Default user avatar:",
+	"bs-pref-miniprofileenforceheight": "Force height of user avatar",
+	"bs-pref-anonuserimage": "Anonymous user avatar:",
+	"bs-pref-deleteduserimage": "Deleted user avatar:",
+	"bs-pref-bspinginterval": "Ping interval (in seconds):",
+	"bs-pref-testmode": "Activate test mode"
 }

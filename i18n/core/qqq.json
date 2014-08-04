@@ -66,5 +66,16 @@
 	"bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}",
 	"bs-imagepage-download-text": "Text message for download used on image pages\n{{Identical|Download}}",
 	"bs-ns": "Text message for namespace used multiple times in different situations\n{{Identical|Namespace}}",
-	"bs-from-something": "This is a suffix for a couple of messages. The meaning of this message is to show the origin of something.\n*$1 is the origin for example a namespace\n{{Identical|From}}"
+	"bs-from-something": "This is a suffix for a couple of messages. The meaning of this message is to show the origin of something.\n*$1 is the origin for example a namespace\n{{Identical|From}}",
+	"prefs-base": "Used in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], headline for bluespice section in preferences\n{{Identical|BlueSpice}}",
+	"bs-pref-fileextensions": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for allowed file extensions",
+	"bs-pref-imageextensions": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for allowed image extensions",
+	"bs-pref-logopath": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for the path to logo",
+	"bs-pref-faviconpath": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for the path to favicon",
+	"bs-pref-defaultuserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for default user avatar",
+	"bs-pref-miniprofileenforceheight": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for force height of user avatar",
+	"bs-pref-anonuserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for anonymous user avatar",
+	"bs-pref-deleteduserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for deleted user avatar",
+	"bs-pref-bspinginterval": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for ping interval (in seconds)",
+	"bs-pref-testmode": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for activate test mode"
 }
