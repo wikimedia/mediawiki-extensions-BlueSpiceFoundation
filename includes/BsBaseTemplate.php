@@ -525,7 +525,7 @@ class BsBaseTemplate extends BaseTemplate {
 			$aOut[] = "</div>";
 		}
 
-		$aOut[] = BsCore::getInstance()->getUserMiniProfile( $oUser, array( "width" => "24", "height" => "24" ) )->execute();
+		$aOut[] = BsCore::getInstance()->getUserMiniProfile( $oUser, array( "width" => "32", "height" => "32" ) )->execute();
 
 		$aOut[] = '<ul id="bs-personal-info">';
 		foreach( $this->data['bs_personal_info'] as $item ) {
