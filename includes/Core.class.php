@@ -112,18 +112,18 @@ class BsCore {
 	protected function __construct() {
 		wfProfileIn('Performance: ' . __METHOD__);
 
-		BsConfig::registerVar( 'MW::FileExtensions', array('doc', 'docx', 'pdf', 'xls'), BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-FileExtensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::ImageExtensions', array('png', 'gif', 'jpg', 'jpeg'), BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-ImageExtensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::LogoPath','', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-LogoPath' );
-		BsConfig::registerVar( 'MW::FaviconPath', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-FaviconPath' );
-		BsConfig::registerVar( 'MW::DefaultUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DefaultUserImage' );
-		BsConfig::registerVar( 'MW::MiniProfileEnforceHeight', true, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-MiniProfileEnforceHeight', 'toggle' );
-		BsConfig::registerVar( 'MW::AnonUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-AnonUserImage' );
-		BsConfig::registerVar( 'MW::DeletedUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DeletedUserImage' );
+		BsConfig::registerVar( 'MW::FileExtensions', array('doc', 'docx', 'pdf', 'xls'), BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
+		BsConfig::registerVar( 'MW::ImageExtensions', array('png', 'gif', 'jpg', 'jpeg'), BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-imageextensions', 'multiselectplusadd' );
+		BsConfig::registerVar( 'MW::LogoPath','', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-logopath' );
+		BsConfig::registerVar( 'MW::FaviconPath', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-faviconpath' );
+		BsConfig::registerVar( 'MW::DefaultUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-defaultuserimage' );
+		BsConfig::registerVar( 'MW::MiniProfileEnforceHeight', true, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-miniprofileenforceheight', 'toggle' );
+		BsConfig::registerVar( 'MW::AnonUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-anonuserimage' );
+		BsConfig::registerVar( 'MW::DeletedUserImage', '', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-deleteduserimage' );
 		BsConfig::registerVar( 'MW::UserImage', '', BsConfig::LEVEL_USER | BsConfig::TYPE_STRING | BsConfig::NO_DEFAULT, 'bs-authors-profileimage' );
-		BsConfig::registerVar( 'MW::PingInterval', 2, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-BSPingInterval' );
+		BsConfig::registerVar( 'MW::PingInterval', 2, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-bspinginterval' );
 		BsConfig::registerVar( 'MW::SortAlph', false, BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER | BsConfig::TYPE_BOOL, 'bs-pref-sortalph', 'toggle' );
-		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-TestMode', 'toggle' );
+		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-testmode', 'toggle' );
 
 		BsConfig::set( 'MW::ApplicationContext', 'Wiki' );
 		wfProfileOut('Performance: ' . __METHOD__);

@@ -62,5 +62,15 @@
 	"bs-navigation-contact": "Kontakt",
 	"bs-imagepage-download-text": "Herunterladen",
 	"bs-ns": "Namensraum",
-	"bs-from-something": "(von $1)"
+	"bs-from-something": "(von $1)",
+	"bs-pref-fileextensions": "Erlaubte Dateiendungen:",
+	"bs-pref-imageextensions": "Erlaubte Bilddateiendungen:",
+	"bs-pref-logopath": "Logo Pfad:",
+	"bs-pref-faviconpath": "Favicon Pfad:",
+	"bs-pref-defaultuserimage": "Standard Avatar für Benutzer:",
+	"bs-pref-miniprofileenforceheight": "Avatar Bildhöhe erzwingen",
+	"bs-pref-anonuserimage": "Avatar für anonyme Benutzer:",
+	"bs-pref-deleteduserimage": "Avatar für gelöschte Benutzer:",
+	"bs-pref-bspinginterval": "Ping-Intervall (in Sekunden):",
+	"bs-pref-testmode": "Testmodus aktivieren"
 }
