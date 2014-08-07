@@ -273,9 +273,8 @@ class BsConfig {
 	 * loads all settings from the database and saves the instances for every variable internal.
 	 */
 	public static function loadSettings() {
-		$oCache = wfGetCache( CACHE_ANYTHING );
-		$sKey = wfMemcKey( 'BlueSpice', 'BsConfig', 'loadSettings' );
-		$aData = $oCache->get( $sKey );
+		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'loadSettings' );
+		$aData = BsCacheHelper::get( $sKey );
 
 		if( $aData !== false ) {
 			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from cache' );
@@ -291,7 +290,7 @@ class BsConfig {
 				$aRows[] = $row;
 			}
 
-			$oCache->set( $sKey, $aRows, 60*1440 );//max cache time 24h
+			BsCacheHelper::set( $sKey, $aRows, 60*1440 );//max cache time 24h
 		}
 		# unserialize and save every setting in the config class
 		foreach( $aRows as $row ) {
@@ -338,9 +337,9 @@ class BsConfig {
 		}
 
 		# write the settings array to the database
-		wfRunHooks( 'BsSettingsBeforeSaveSettings', array( $this, &$aSettings ) );
+		wfRunHooks( 'BsSettingsBeforeSaveSettings', array( &$aSettings ) );
 		$bReturn = $dbw->insert('bs_settings', $aSettings);
-		wfRunHooks( 'BsSettingsAfterSaveSettings', array( $this, $aSettings ) );
+		wfRunHooks( 'BsSettingsAfterSaveSettings', array( $aSettings ) );
 		return $bReturn;
 	}
 

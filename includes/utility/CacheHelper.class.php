@@ -116,11 +116,10 @@ class BsCacheHelper {
 	}
 
 	/**
-	 *
-	 * @param BsConfig $oBsConfig
+	 * Invalidates bs settings cache
 	 * @param type $aSettings
 	 */
-	public static function onBsSettingsAfterSaveSettings( $oBsConfig, $aSettings ) {
+	public static function onBsSettingsAfterSaveSettings( $aSettings ) {
 		$aKeys = array(
 			BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'loadSettings' )
 		);
