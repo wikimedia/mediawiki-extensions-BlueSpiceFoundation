@@ -312,9 +312,9 @@ class BsCoreHooks {
 	 * @param string $ret
 	 * @return boolean Always true to keep hook running
 	 */
-	public static function LinkEnd( $skin, $target, $options, &$html, &$attribs, &$ret ) {
+	public static function onLinkEnd( $skin, $target, $options, &$html, &$attribs, &$ret ) {
 		//We add the original title to a link. This may be the same content as
-		//"title" attribute, but it doesn't have to. I.e. in rea links
+		//"title" attribute, but it doesn't have to. I.e. in red links
 		$attribs['data-bs-title'] = $target->getPrefixedText();
 
 		if( $target->getNamespace() == NS_USER && $target->isSubpage() === false ) {
