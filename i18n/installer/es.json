@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"Macofe"
+		]
+	},
+	"config-install-renamefandf": "Renombrar archivos y carpetas de la plantilla",
+	"bs-installer-title": "Instalación de MediaWiki $1 y BlueSpice $2",
+	"bs-installer-could-not-rename": "No se {{PLURAL:$1|pudo renombrar el siguiente elemento|pudieron renombrar los siguientes elementos}}. Hazlo manualmente. $2"
+}

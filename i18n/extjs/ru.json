@@ -42,5 +42,6 @@
 	"bs-extjs-filter-contains-not": "не содержит",
 	"bs-extjs-filter-starts-with": "начинается с",
 	"bs-extjs-filter-ends-with": "заканчивается",
+	"bs-extjs-title-success": "Успешно",
 	"bs-extjs-title-warning": "Предупреждение"
 }

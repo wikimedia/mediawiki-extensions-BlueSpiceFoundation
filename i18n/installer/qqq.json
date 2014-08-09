@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stephan Muggli <muggli@hallowelt.biz>"
+			"Stephan Muggli <muggli@hallowelt.biz>",
+			"Shirayuki"
 		]
 	},
 	"config-install-renamefandf": "Message for install step",
 	"bs-installer-title": "Headline of installer\n*$1 is the version of MediaWiki which will be installed\n*$2 is the version of BlueSpice which will be installed",
-	"bs-installer-could-not-rename": "Error message that one or more elements could not be renamed and that it should be done manually.\n*$1 is the number of elements that could not be renamed - use for PLURAL distinction\n*$2 is a comma seperated list of elements which could not be renamed"
+	"bs-installer-could-not-rename": "Error message that one or more elements could not be renamed and that it should be done manually.\n\nParameters:\n* $1 - the number of elements that could not be renamed - use for PLURAL distinction\n* $2 - a comma seperated list of elements which could not be renamed"
 }

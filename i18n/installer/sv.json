@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lokal Profil"
+		]
+	},
+	"config-install-renamefandf": "Byter namn på mallmappar och -filer",
+	"bs-installer-title": "Installation av MediaWiki $1 och BlueSpice $2",
+	"bs-installer-could-not-rename": "Följande {{PLURAL:$1|element}} kunde inte döpas om. Byt namn på {{PLURAL:$1|det|dem}} manuellt. $2"
+}

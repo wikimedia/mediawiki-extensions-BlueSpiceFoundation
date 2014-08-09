@@ -64,5 +64,15 @@
 	"bs-navigation-contact": "Контакт",
 	"bs-imagepage-download-text": "Завантажити",
 	"bs-ns": "Простір назв",
-	"bs-from-something": "(з $1)"
+	"bs-from-something": "(з $1)",
+	"bs-pref-fileextensions": "Дозволені розширення файлів:",
+	"bs-pref-imageextensions": "Дозволені розширення зображень:",
+	"bs-pref-logopath": "Шлях до логотипу:",
+	"bs-pref-faviconpath": "Шлях до фавікону:",
+	"bs-pref-defaultuserimage": "Аватар користувача за замовчуванням:",
+	"bs-pref-miniprofileenforceheight": "Обов'язкова висота аватара користувача",
+	"bs-pref-anonuserimage": "Аватар анонімного користувача:",
+	"bs-pref-deleteduserimage": "Аватар видаленого користувача:",
+	"bs-pref-bspinginterval": "Інтервал пінгу (у секундах):",
+	"bs-pref-testmode": "Активувати тестовий режим"
 }

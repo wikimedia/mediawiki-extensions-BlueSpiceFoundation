@@ -67,5 +67,15 @@
 	"bs-navigation-contact": "联系",
 	"bs-imagepage-download-text": "下载",
 	"bs-ns": "命名空间",
-	"bs-from-something": "（来自$1）"
+	"bs-from-something": "（来自$1）",
+	"bs-pref-fileextensions": "允许的文件扩展名：",
+	"bs-pref-imageextensions": "允许的图片扩展名：",
+	"bs-pref-logopath": "标志路径：",
+	"bs-pref-faviconpath": "图标路径：",
+	"bs-pref-defaultuserimage": "默认用户头像：",
+	"bs-pref-miniprofileenforceheight": "用户头像的强制高度",
+	"bs-pref-anonuserimage": "匿名用户头像：",
+	"bs-pref-deleteduserimage": "删除的用户头像：",
+	"bs-pref-bspinginterval": "Ping时间间隔（秒）：",
+	"bs-pref-testmode": "激活测试模式"
 }

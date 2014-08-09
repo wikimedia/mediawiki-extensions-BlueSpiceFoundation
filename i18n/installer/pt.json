@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente"
+		]
+	},
+	"bs-installer-title": "Instalação de MediaWiki $1 e BlueSpice $2",
+	"bs-installer-could-not-rename": "{{PLURAL:$1|O seguinte elemento não pôde ser renomeado|Os seguintes elementos não puderam ser renomados}}. Por favor, {{PLURAL:$1|renomei-o|renomei-os}} manualmente. $2"
+}

@@ -45,5 +45,6 @@
 	"bs-navigation-instructions": "Talimatlar",
 	"bs-navigation-support": "Destek",
 	"bs-navigation-contact": "İletişim",
-	"bs-imagepage-download-text": "İndir"
+	"bs-imagepage-download-text": "İndir",
+	"bs-pref-imageextensions": "İzin verilen resim uzantıları:"
 }

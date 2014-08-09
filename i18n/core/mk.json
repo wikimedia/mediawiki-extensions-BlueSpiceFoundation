@@ -62,5 +62,15 @@
 	"bs-navigation-contact": "Контакт",
 	"bs-imagepage-download-text": "Преземи",
 	"bs-ns": "Именски простор",
-	"bs-from-something": "(од $1)"
+	"bs-from-something": "(од $1)",
+	"bs-pref-fileextensions": "Допуштени податотечни наставки",
+	"bs-pref-imageextensions": "Допуштени наставки за слики:",
+	"bs-pref-logopath": "Патека на логото:",
+	"bs-pref-faviconpath": "Патека на иконката:",
+	"bs-pref-defaultuserimage": "Стандарден кориснички аватар:",
+	"bs-pref-miniprofileenforceheight": "Наметни висина на корисничкиот аватар",
+	"bs-pref-anonuserimage": "Аватар на анонимен корисник:",
+	"bs-pref-deleteduserimage": "Аватар на избришан корисник:",
+	"bs-pref-bspinginterval": "Ping-интервал (во секунди):",
+	"bs-pref-testmode": "Вклучи пробен режим"
 }

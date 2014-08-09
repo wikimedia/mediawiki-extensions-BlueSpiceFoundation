@@ -66,5 +66,11 @@
 	"bs-navigation-contact": "Contacto",
 	"bs-imagepage-download-text": "Descargar",
 	"bs-ns": "Espacio de nombres",
-	"bs-from-something": "(de $1)"
+	"bs-from-something": "(de $1)",
+	"bs-pref-fileextensions": "Extensiones de archivos permitidas:",
+	"bs-pref-imageextensions": "Extensiones de imágenes permitidas:",
+	"bs-pref-logopath": "Ruta del logo:",
+	"bs-pref-faviconpath": "Ruta del «favicon»:",
+	"bs-pref-bspinginterval": "Intervalo de ping (en segundos)ː",
+	"bs-pref-testmode": "Activar el modo de prueba"
 }

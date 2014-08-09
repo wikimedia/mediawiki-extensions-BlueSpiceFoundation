@@ -63,5 +63,7 @@
 	"bs-navigation-contact": "Contacto",
 	"bs-imagepage-download-text": "Descarregar",
 	"bs-ns": "Domínio",
-	"bs-from-something": "(de $1)"
+	"bs-from-something": "(de $1)",
+	"bs-pref-defaultuserimage": "Imagem de perfil padrão:",
+	"bs-pref-anonuserimage": "Imagem de perfil de utilizador anónimo:"
 }
