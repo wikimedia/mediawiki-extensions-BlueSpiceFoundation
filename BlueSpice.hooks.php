@@ -2,7 +2,7 @@
 $wgHooks['SetupAfterCache'][] = 'BsCoreHooks::onSetupAfterCache';
 $wgHooks['SoftwareInfo'][] = 'BsCoreHooks::onSoftwareInfo';
 $wgHooks['BeforePageDisplay'][] = 'BsCoreHooks::onBeforePageDisplay';
-$wgHooks['LinkEnd'][] = 'BsCoreHooks::LinkEnd';
+$wgHooks['LinkEnd'][] = 'BsCoreHooks::onLinkEnd';
 $wgHooks['MakeGlobalVariablesScript'][] = 'BsCoreHooks::onMakeGlobalVariablesScript';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'BsCoreHooks::onLoadExtensionSchemaUpdates';
 $wgHooks['ApiCheckCanExecute'][] = 'BsCoreHooks::onApiCheckCanExecute';
