@@ -53,5 +53,9 @@
 	"bs-navigation-support": "Wsparcie",
 	"bs-navigation-contact": "Kontakt",
 	"bs-ns": "Przestrzeń nazw",
-	"bs-from-something": "(z $1)"
+	"bs-from-something": "(z $1)",
+	"bs-pref-fileextensions": "Dozwolone rozszerzenia nazw plików:",
+	"bs-pref-imageextensions": "Dozwolone rozszerzenia obrazów:",
+	"bs-pref-logopath": "Ścieżka do logo:",
+	"bs-pref-testmode": "Uaktywnij tryb testowy"
 }
