@@ -5,7 +5,8 @@
 			"Matanya",
 			"Gregra",
 			"Ronel1",
-			"Eladk"
+			"Eladk",
+			"ערן"
 		]
 	},
 	"bs-ns_main": "(ראשי)",
@@ -40,7 +41,6 @@
 	"bs-exception-view-admin-hint": "נא לפנות אל מנהל המערכת.",
 	"bs-exception-view-stacktrace-toggle-show-text": "הצגת פרטי השגיאה",
 	"bs-exception-view-stacktrace-toggle-hide-text": "הסתרת פרטי השגיאה",
-	"action-responsibleeditors-viewspecialpage": "דפי תצוגה אשר מוגנים עם ימין \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1-שגיאה",
 	"bs-imageofotheruser": "אינך מורשה להעלות תמונה עבור משתמש אחר",
 	"bs-pref-sortalph": "מיין מרחבי שם לפי א\"ב",
@@ -54,9 +54,12 @@
 	"bs-filesystemhelper-folder-copy-error": "לא הייתה אפשרות לשנות את שם התיקיה <code>$1</code>.",
 	"bs-filesystemhelper-folder-not-exists": "התיקיה <code>$1</code> אינה קיימת.",
 	"bs-filesystemhelper-upload-err-code": "לא הייתה אפשרות להעלות את הקובץ: $1",
+	"bs-filesystemhelper-upload-local-error-create": "לא הייתה אפשרות ליצור את הקובץ בוויקי.",
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
 	"bs-navigation-contact": "יצירת קשר",
 	"bs-imagepage-download-text": "להורדה",
-	"bs-ns": "מרחב שם"
+	"bs-ns": "מרחב שם",
+	"bs-pref-fileextensions": "סיומות קבצים מותרות:",
+	"bs-pref-imageextensions": "סיומות תמונות מותרות:"
 }

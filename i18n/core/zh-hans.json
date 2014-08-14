@@ -25,7 +25,7 @@
 	"bs-weeks-duration": "{{PLURAL:$1|$1周}}",
 	"bs-days-duration": "{{PLURAL:$1|$1天}}",
 	"bs-hours-duration": "{{PLURAL:$1|$1小时}}",
-	"bs-mins-duration": "{{PLURAL:$1|$1分}}",
+	"bs-mins-duration": "{{PLURAL:$1|$1分钟}}",
 	"bs-secs-duration": "{{PLURAL:$1|$1秒}}",
 	"bs-two-units-ago": "$1$2前",
 	"bs-one-unit-ago": "$1前",

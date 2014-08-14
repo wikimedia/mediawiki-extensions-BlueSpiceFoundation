@@ -5,7 +5,8 @@
 			"Frammm",
 			"Ihojose",
 			"ProtoplasmaKid",
-			"Macofe"
+			"Macofe",
+			"Amitie 10g"
 		]
 	},
 	"bs-ns_main": "(Páginas)",
@@ -71,6 +72,10 @@
 	"bs-pref-imageextensions": "Extensiones de imágenes permitidas:",
 	"bs-pref-logopath": "Ruta del logo:",
 	"bs-pref-faviconpath": "Ruta del «favicon»:",
+	"bs-pref-defaultuserimage": "Avatar de usuario por defecto:",
+	"bs-pref-miniprofileenforceheight": "Forzar altura para este avatar",
+	"bs-pref-anonuserimage": "Avatar de usuario anónimo:",
+	"bs-pref-deleteduserimage": "Avatar de usuario eliminado:",
 	"bs-pref-bspinginterval": "Intervalo de ping (en segundos)ː",
 	"bs-pref-testmode": "Activar el modo de prueba"
 }
