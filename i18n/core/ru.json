@@ -63,5 +63,15 @@
 	"bs-navigation-contact": "Обратная связь",
 	"bs-imagepage-download-text": "Загрузить",
 	"bs-ns": "Пространство имён",
-	"bs-from-something": "(из $1)"
+	"bs-from-something": "(из $1)",
+	"bs-pref-fileextensions": "Допустимые расширения файлов:",
+	"bs-pref-imageextensions": "Допустимые расширения изображений:",
+	"bs-pref-logopath": "Путь к логотипу:",
+	"bs-pref-faviconpath": "Путь к иконке:",
+	"bs-pref-defaultuserimage": "Аватар участника по умолчанию:",
+	"bs-pref-miniprofileenforceheight": "Принудительная высота аватара участника",
+	"bs-pref-anonuserimage": "Аватар анонимного участника:",
+	"bs-pref-deleteduserimage": "Аватар удалённого участника:",
+	"bs-pref-bspinginterval": "Интервал пинга (в секундах):",
+	"bs-pref-testmode": "Включить тестовый режим"
 }
