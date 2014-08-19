@@ -77,5 +77,6 @@
 	"bs-pref-anonuserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for anonymous user avatar",
 	"bs-pref-deleteduserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for deleted user avatar",
 	"bs-pref-bspinginterval": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for ping interval (in seconds)",
-	"bs-pref-testmode": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for activate test mode"
+	"bs-pref-testmode": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for activate test mode",
+	"specialpages-group-bluespice": "Used in [[Special:SpecialPages]], headline of BlueSpice section. Message is referenced to message of BlueSpice preference section."
 }

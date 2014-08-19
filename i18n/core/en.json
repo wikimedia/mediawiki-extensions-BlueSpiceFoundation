@@ -73,5 +73,6 @@
 	"bs-pref-anonuserimage": "Anonymous user avatar:",
 	"bs-pref-deleteduserimage": "Deleted user avatar:",
 	"bs-pref-bspinginterval": "Ping interval (in seconds):",
-	"bs-pref-testmode": "Activate test mode"
+	"bs-pref-testmode": "Activate test mode",
+	"specialpages-group-bluespice": "{{int:prefs-base}}"
 }
