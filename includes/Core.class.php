@@ -521,7 +521,7 @@ class BsCore {
 		$sParamsHash = md5( serialize( $aParams ) );
 		$sViewHash = $oUser->getName() . $sParamsHash;
 
-		if ( isset( self::$aUserMiniProfiles[$sViewHash] ) ) {
+		if ( count (self::$aUserMiniProfiles) > 1 && isset( self::$aUserMiniProfiles[$sViewHash] ) ) {
 			wfProfileOut('BS::' . __METHOD__);
 			return self::$aUserMiniProfiles[$sViewHash];
 		}
@@ -529,7 +529,6 @@ class BsCore {
 		$oUserMiniProfileView = new ViewUserMiniProfile();
 		$oUserMiniProfileView->setOptions( $aParams );
 		$oUserMiniProfileView->setOption( 'user', $oUser );
-
 		wfRunHooks( 'BSCoreGetUserMiniProfileBeforeInit', array( &$oUserMiniProfileView, &$oUser, &$aParams ) );
 
 		$oUserMiniProfileView->init();
