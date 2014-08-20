@@ -68,6 +68,10 @@
 	"bs-pref-imageextensions": "Tillåtna bildfilstyper:",
 	"bs-pref-logopath": "Logotyp-sökväg:",
 	"bs-pref-faviconpath": "Favicon-sökväg:",
+	"bs-pref-defaultuserimage": "Avatar för standardanvändare:",
+	"bs-pref-miniprofileenforceheight": "Bestämd höjd på användaravatar",
+	"bs-pref-anonuserimage": "Avatar för anonym användare:",
+	"bs-pref-deleteduserimage": "Avatar för raderad användare:",
 	"bs-pref-bspinginterval": "Ping-intervall (i sekunder):",
 	"bs-pref-testmode": "Aktivera testläge"
 }
