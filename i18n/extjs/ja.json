@@ -24,10 +24,14 @@
 	"bs-extjs-reset": "リセット",
 	"bs-extjs-close": "閉じる",
 	"bs-extjs-label-user": "利用者",
+	"bs-extjs-label-namespace": "名前空間",
+	"bs-extjs-label-page": "ページ",
 	"bs-extjs-upload": "アップロード",
 	"bs-extjs-browse": "参照",
 	"bs-extjs-uploading": "アップロード中...",
 	"bs-extjs-confirmNavigationTitle": "リンクの確認",
 	"bs-extjs-confirmNavigationText": "このリンクを本当にたどりますか? 現在のページでのフィルタリングや並べ替えのような動的な設定がすべて失われます。",
-	"bs-extjs-allns": "(すべて)"
+	"bs-extjs-allns": "(すべて)",
+	"bs-extjs-title-success": "成功",
+	"bs-extjs-title-warning": "警告"
 }

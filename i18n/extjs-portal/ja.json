@@ -5,6 +5,8 @@
 			"Shirayuki"
 		]
 	},
+	"bs-extjs-portal-config": "ポートレットの設定:",
+	"bs-extjs-portal-title": "ポートレット名",
 	"bs-extjs-portal-height": "高さ",
 	"bs-extjs-portal-count": "項目数",
 	"bs-extjs-portal-timespan": "期間",

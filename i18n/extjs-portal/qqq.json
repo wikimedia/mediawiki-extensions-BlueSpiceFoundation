@@ -5,7 +5,7 @@
 			"Shirayuki"
 		]
 	},
-	"bs-extjs-portal-config": "Title of configuration dialogues for dashboard portlets. Followed by the name of the portlet, hence the colon.",
+	"bs-extjs-portal-config": "Title of configuration dialogues for dashboard portlets.\n\nFollowed by the name of the portlet, hence the colon. e.g. \"Configure portlet: RSS feed\"",
 	"bs-extjs-portal-title": "Label for title input field",
 	"bs-extjs-portal-height": "Label for height input field\n{{Identical|Height}}",
 	"bs-extjs-portal-count": "Label for input field that counts number of items shown.\n{{Identical|Entry}}",

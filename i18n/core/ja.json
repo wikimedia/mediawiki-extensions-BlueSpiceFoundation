@@ -25,7 +25,6 @@
 	"bs-exception-view-admin-hint": "システム管理者にお問い合わせください。",
 	"bs-exception-view-stacktrace-toggle-show-text": "エラーの詳細を表示",
 	"bs-exception-view-stacktrace-toggle-hide-text": "エラーの詳細を非表示",
-	"action-responsibleeditors-viewspecialpage": "「ResponsibleEditors-Viewspecialpage」権限で保護されたページの閲覧",
 	"bs-viewtagerrorlist-legend": "$1 - エラー",
 	"bs-pref-sortalph": "名前空間を辞書順に並べ替える",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> は有効なディレクトリではありません。",
@@ -41,5 +40,6 @@
 	"bs-filesystemhelper-save-base64-error": "ファイルを保存できませんでした。",
 	"bs-filesystemhelper-upload-base64-error": "ファイルをアップロードできませんでした。",
 	"bs-filesystemhelper-upload-local-error-create": "ファイルをウィキ内に作成できませんでした。",
-	"bs-imagepage-download-text": "ダウンロード"
+	"bs-imagepage-download-text": "ダウンロード",
+	"prefs-base": "BlueSpice"
 }
