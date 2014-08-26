@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Reza1615",
-			"Rtemis"
+			"Rtemis",
+			"Alirezaaa"
 		]
 	},
 	"bs-ns_main": "(صفحات)",
@@ -38,9 +39,38 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "نمایش جزئیات خطا",
 	"bs-exception-view-stacktrace-toggle-hide-text": "پنهان کردن جزئیات خطا",
 	"bs-viewtagerrorlist-legend": "$1 - خطا",
+	"bs-pref-sortalph": "مرتب‌کردن فضاهای نام بر اساس حروف الفبا",
 	"bs-permissionerror": "خطای سطح دسترسی",
+	"bs-filesystemhelper-no-directory": "<code>$1</code> شاخه‌ای معتبر نیست.",
+	"bs-filesystemhelper-has-path-traversal": "پیمایش مسیر تشخیص داده شد!",
+	"bs-filesystemhelper-file-not-exists": "این پرونده <code>$1</code> وجود ندارد.",
+	"bs-filesystemhelper-file-copy-error": "این پرونده <code>$1</code> نمی‌تواند نسخه‌برداری شود.",
+	"bs-filesystemhelper-file-already-exists": "این پرونده <code>$1</code> پیش از این وجود دارد.",
+	"bs-filesystemhelper-file-delete-error": "این پرونده <code>$1</code> نمی‌تواند پاک شود.",
+	"bs-filesystemhelper-folder-already-exists": "این پوشه <code>$1</code> پیش از این وجود دارد.",
+	"bs-filesystemhelper-folder-copy-error": "این پوشه <code>$1</code> نمی‌تواند تغییر نام داده شود.",
+	"bs-filesystemhelper-folder-not-exists": "این پوشه <code>$1</code> وجود ندارد.",
+	"bs-filesystemhelper-upload-err-code": "این پرونده نمی‌تواند بارگذاری شود: $1",
+	"bs-filesystemhelper-upload-wrong-ext": "این پرونده افزونه لازم را ندارد: $1.",
+	"bs-filesystemhelper-upload-unsupported-type": "این نوع پرونده پشتیبانی نمی‌شود.",
+	"bs-filesystemhelper-save-base64-error": "این پرونده نمی‌تواند ذخیره شود.",
+	"bs-filesystemhelper-upload-base64-error": "این پرونده نمی‌تواند بارگذاری شود.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "این پرونده نمی‌تواند به پنهان‌گاه بارگذاری منتقل شود.",
+	"bs-filesystemhelper-upload-local-error-create": "این پرونده نمی‌تواند در ویکی ساخته شود.",
 	"bs-navigation-instructions": "دستورالعمل",
 	"bs-navigation-support": "پشتیبانی",
 	"bs-navigation-contact": "تماس",
-	"bs-imagepage-download-text": "بارگیری"
+	"bs-imagepage-download-text": "بارگیری",
+	"bs-ns": "فضای نام",
+	"bs-from-something": "(از $1)",
+	"bs-pref-fileextensions": "پسوندهای معتبر پرونده:",
+	"bs-pref-imageextensions": "پسوندهای معتبر تصویر:",
+	"bs-pref-logopath": "مسیر نشان:",
+	"bs-pref-faviconpath": "مسیر فاوآیکن:",
+	"bs-pref-defaultuserimage": "نماد پیش‌فرض کاربر:",
+	"bs-pref-miniprofileenforceheight": "مجبورکردن ارتفاع نماد کاربر",
+	"bs-pref-anonuserimage": "نماد کاربر ناشناس:",
+	"bs-pref-deleteduserimage": "نماد کاربر پاک‌شده:",
+	"bs-pref-bspinginterval": "بازه پینگ (به ثانیه):",
+	"bs-pref-testmode": "فعال‌کردن حالت آزمایش"
 }

@@ -12,5 +12,5 @@
 	"bs-credits-translators": "Headings for column listing translators\n{{Identical|Translator}}",
 	"bs-credits-translation": "Headings for column listing translation\n{{Identical|Translation}}",
 	"bs-credits-th": "Message to say thank you to all translators from translatewiki.\n*$1 is a link to translatewiki with the text \"translatewiki.net\".",
-	"bs-credits-createdon": "Message that shows on which date the translators list was created.\n*$1 is the date when the list was created"
+	"bs-credits-createdon": "Message that shows on which date the translators list was created.\n\nParameters:\n* $1 - the date when the list was created (localized)"
 }
