@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615"
+			"Reza1615",
+			"Alirezaaa"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -24,9 +25,21 @@
 	"bs-extjs-reset": "از نو",
 	"bs-extjs-close": "بستن",
 	"bs-extjs-label-user": "کاربر",
+	"bs-extjs-label-namespace": "فضای نام",
+	"bs-extjs-label-page": "صفحه",
 	"bs-extjs-upload": "بارگذاری",
 	"bs-extjs-browse": "مرور",
 	"bs-extjs-uploading": "در حال بارگذاری...",
 	"bs-extjs-confirmNavigationTitle": "به دنبال پیوند",
-	"bs-extjs-allns": "(همه)"
+	"bs-extjs-confirmNavigationText": "آیا واقعاً می‌خواهید این پیوند را دنبال کنید؟ همه تنظیمات پویا مانند پالودن یا مرتب‌کردن در صفحه جاری از دست خواهند رفت.",
+	"bs-extjs-allns": "(همه)",
+	"bs-extjs-filters": "پالایه‌ها",
+	"bs-extjs-filter-equals": "برابر است با",
+	"bs-extjs-filter-equals-not": "برابر نیست با",
+	"bs-extjs-filter-contains": "شامل",
+	"bs-extjs-filter-contains-not": "شامل نیست",
+	"bs-extjs-filter-starts-with": "شروع می‌شود با",
+	"bs-extjs-filter-ends-with": "پایان می‌یابد با",
+	"bs-extjs-title-success": "موفق",
+	"bs-extjs-title-warning": "هشدار"
 }

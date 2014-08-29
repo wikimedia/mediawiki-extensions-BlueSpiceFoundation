@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615"
+			"Reza1615",
+			"Alirezaaa"
 		]
 	},
+	"bs-extjs-portal-config": "پیکربندی پورتلت:",
+	"bs-extjs-portal-title": "عنوان پورتلت",
 	"bs-extjs-portal-height": "ارتفاع",
 	"bs-extjs-portal-count": "نوشته‌ها",
+	"bs-extjs-portal-timespan": "محدوده زمانی",
 	"bs-extjs-portal-timespan-week": "هفته",
 	"bs-extjs-portal-timespan-month": "ماه",
 	"bs-extjs-portal-timespan-alltime": "تمام وقت"

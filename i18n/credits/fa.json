@@ -5,9 +5,12 @@
 			"Alirezaaa"
 		]
 	},
+	"specialcredits": "دست‌اندرکاران BlueSpice",
 	"bs-credits-programmers": "برنامه‌نویسان",
 	"bs-credits-dnt": "طراحی و تست",
 	"bs-credits-contributors": "مشارکت‌کنندگان",
 	"bs-credits-translators": "مترجمان",
-	"bs-credits-translation": "ترجمه"
+	"bs-credits-translation": "ترجمه",
+	"bs-credits-th": "به لطف همه مترجمان $1.",
+	"bs-credits-createdon": "فهرست ایجاد شده‌است در: $1."
 }

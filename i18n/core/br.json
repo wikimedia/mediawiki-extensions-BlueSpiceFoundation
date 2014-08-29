@@ -45,9 +45,14 @@
 	"bs-filesystemhelper-upload-err-code": "N'eus ket bet gallet ezporzhiañ ar restr : $1",
 	"bs-filesystemhelper-save-base64-error": "N'eus ket bet gallet enrollañ ar restr.",
 	"bs-filesystemhelper-upload-base64-error": "N'eus ket bet gallet ezporzhiañ ar restr.",
+	"bs-filesystemhelper-upload-local-error-create": "N'eus ket bet gallet krouiñ ar restr er wiki.",
 	"bs-navigation-instructions": "Kemennadurioù",
 	"bs-navigation-support": "Skoazell",
 	"bs-navigation-contact": "Darempred",
 	"bs-imagepage-download-text": "Pellgargañ",
-	"bs-from-something": "(eus $1)"
+	"bs-from-something": "(eus $1)",
+	"bs-pref-defaultuserimage": "Avatar implijer dre ziouer :",
+	"bs-pref-anonuserimage": "Avatar implijer dizanv :",
+	"bs-pref-deleteduserimage": "Avatar implijer dilamet :",
+	"bs-pref-testmode": "Gweredekaat ar mod amprouiñ"
 }
