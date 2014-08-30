@@ -64,5 +64,6 @@
 	"bs-pref-fileextensions": "Dozwolone rozszerzenia nazw plików:",
 	"bs-pref-imageextensions": "Dozwolone rozszerzenia obrazów:",
 	"bs-pref-logopath": "Ścieżka do logo:",
+	"bs-pref-faviconpath": "Ścieżka ikony ulubionych:",
 	"bs-pref-testmode": "Uaktywnij tryb testowy"
 }

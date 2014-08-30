@@ -39,6 +39,7 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "نمایش جزئیات خطا",
 	"bs-exception-view-stacktrace-toggle-hide-text": "پنهان کردن جزئیات خطا",
 	"bs-viewtagerrorlist-legend": "$1 - خطا",
+	"bs-imageofotheruser": "شما مجاز به بارگذاری تصویر برای کاربری دیگر نیستید.",
 	"bs-pref-sortalph": "مرتب‌کردن فضاهای نام بر اساس حروف الفبا",
 	"bs-permissionerror": "خطای سطح دسترسی",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> شاخه‌ای معتبر نیست.",
