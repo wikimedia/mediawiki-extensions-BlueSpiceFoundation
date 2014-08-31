@@ -62,5 +62,15 @@
 	"bs-navigation-contact": "Contautu",
 	"bs-imagepage-download-text": "Descargar",
 	"bs-ns": "Espaciu de nomes",
-	"bs-from-something": "(de $1)"
+	"bs-from-something": "(de $1)",
+	"bs-pref-fileextensions": "Estensiones de ficheru permitíes:",
+	"bs-pref-imageextensions": "Estensiones d'imaxe permitíes:",
+	"bs-pref-logopath": "Camín al logo:",
+	"bs-pref-faviconpath": "Camín al «favicon»:",
+	"bs-pref-defaultuserimage": "Avatar d'usuariu predetermináu:",
+	"bs-pref-miniprofileenforceheight": "Forzar altura del avatar d'usuariu",
+	"bs-pref-anonuserimage": "Avatar d'usuariu anónimu:",
+	"bs-pref-deleteduserimage": "Avatar d'usuariu desaniciáu:",
+	"bs-pref-bspinginterval": "Intervalu de ping (en segundos):",
+	"bs-pref-testmode": "Activar el mou de prueba"
 }

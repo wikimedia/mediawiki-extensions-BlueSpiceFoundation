@@ -16,7 +16,7 @@
 	"bs-extended-search-textfield-defaultvalue": "Recèrca en cors...",
 	"bs-extended-search-textfield-tooltip": "Recercar dins lo wiki",
 	"bs-no-information-available": "Cap d'informacion pas disponibla",
-	"bs-years-duration": "{{PLURAL:$1|una ora|$1 oras}}",
+	"bs-years-duration": "{{PLURAL:$1|una annada|$1 annadas}}",
 	"bs-months-duration": "{{PLURAL:$1|un mes|$1 meses}}",
 	"bs-weeks-duration": "{{PLURAL:$1|una setmana|$1 setmanas}}",
 	"bs-days-duration": "{{PLURAL:$1|un jorn|$1 jorns}}",
