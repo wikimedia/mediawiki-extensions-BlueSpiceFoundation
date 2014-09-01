@@ -24,9 +24,20 @@
 	"bs-extjs-reset": "Reïnicializar",
 	"bs-extjs-close": "Tampar",
 	"bs-extjs-label-user": "Utilizaire",
+	"bs-extjs-label-namespace": "Espaci de noms",
+	"bs-extjs-label-page": "Pagina",
 	"bs-extjs-upload": "Telecargar",
 	"bs-extjs-browse": "Percórrer",
 	"bs-extjs-uploading": "Telecargament en cors...",
 	"bs-extjs-confirmNavigationTitle": "Seguir lo ligam",
-	"bs-extjs-allns": "(totes)"
+	"bs-extjs-allns": "(totes)",
+	"bs-extjs-filters": "Filtres",
+	"bs-extjs-filter-equals": "es egal a",
+	"bs-extjs-filter-equals-not": "es pas egal a",
+	"bs-extjs-filter-contains": "conten",
+	"bs-extjs-filter-contains-not": "conten pas",
+	"bs-extjs-filter-starts-with": "comença per",
+	"bs-extjs-filter-ends-with": "s'acaba amb",
+	"bs-extjs-title-success": "Capitat",
+	"bs-extjs-title-warning": "Avertiment"
 }

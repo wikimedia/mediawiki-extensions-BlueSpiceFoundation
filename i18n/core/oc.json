@@ -45,5 +45,18 @@
 	"bs-filesystemhelper-save-base64-error": "Lo fichièr a pas pogut èsser enregistrat.",
 	"bs-navigation-instructions": "Instruccions",
 	"bs-navigation-support": "Sosten",
-	"bs-navigation-contact": "Contacte"
+	"bs-navigation-contact": "Contacte",
+	"bs-imagepage-download-text": "Telecargar",
+	"bs-ns": "Espaci de noms",
+	"bs-from-something": "(dempuèi $1)",
+	"bs-pref-fileextensions": "Extensions de fichièr autorizadas :",
+	"bs-pref-imageextensions": "Extensions d’imatge autorizadas :",
+	"bs-pref-logopath": "Camin del lògo :",
+	"bs-pref-faviconpath": "Camin del favicon :",
+	"bs-pref-defaultuserimage": "Avatar d’utilizaire per defaut :",
+	"bs-pref-miniprofileenforceheight": "Forçar la nautor de l’avatar de l’utilizaire",
+	"bs-pref-anonuserimage": "Avatar d’utilizaire anonim :",
+	"bs-pref-deleteduserimage": "Avatar d’utilizaire suprimit :",
+	"bs-pref-bspinginterval": "Interval de Ping (en segondas) :",
+	"bs-pref-testmode": "Activar lo mòde de tèst"
 }
