@@ -9,6 +9,7 @@
 class BsCacheHelper {
 
 	protected static $aCacheKeys = array();
+
 	protected static $oCache = null;
 
 	/**
@@ -16,7 +17,7 @@ class BsCacheHelper {
 	 * @return BagOStuff
 	 */
 	public static function getCache() {
-		if( self::$oCache === null ) {
+		if ( self::$oCache === null ) {
 			self::$oCache = wfGetCache( CACHE_ANYTHING );
 		}
 
@@ -38,8 +39,8 @@ class BsCacheHelper {
 
 	/**
 	 * Get the value of a given key or returns false
-	 * @param type $sKey
-	 * @return type
+	 * @param string $sKey
+	 * @return mixed
 	 */
 	public static function get( $sKey ) {
 		return self::getCache()->get( $sKey );
@@ -47,10 +48,10 @@ class BsCacheHelper {
 
 	/**
 	 * Sets the value to the given key
-	 * @param type $sKey
-	 * @param type $mData
-	 * @param type $iExpiryTime
-	 * @return type
+	 * @param string $sKey
+	 * @param mixed $mData
+	 * @param int $iExpiryTime Either an interval in seconds or a unix timestamp for expiry
+	 * @return bool
 	 */
 	public static function set( $sKey, $mData, $iExpiryTime = 0 ) {
 		return self::getCache()->set( $sKey, $mData, $iExpiryTime );
