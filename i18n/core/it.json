@@ -37,7 +37,6 @@
 	"bs-exception-view-admin-hint": "Contatta l'amministratore di sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostra i dettagli dell'errore",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Nascondi i dettagli dell'errore",
-	"action-responsibleeditors-viewspecialpage": "vedere pagine protette con il diritto \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - Errore",
 	"bs-readonly": "In questo momento il database è bloccato e non sono possibili aggiunte o modifiche agli elementi. Il blocco è di solito legato a operazioni di manutenzione ordinaria, al termine delle quali il database è di nuovo accessibile.\n\nL'amministratore di sistema che ha imposto il blocco ha fornito questa spiegazione: $1",
 	"bs-imageofotheruser": "Non ti è consentito caricare un'immagine per un altro utente.",
@@ -62,5 +61,13 @@
 	"bs-navigation-instructions": "Istruzioni",
 	"bs-navigation-support": "Supporto",
 	"bs-navigation-contact": "Contatti",
-	"bs-imagepage-download-text": "Scarica"
+	"bs-imagepage-download-text": "Scarica",
+	"bs-ns": "Namespace",
+	"bs-from-something": "(da $1)",
+	"bs-pref-fileextensions": "Estensioni dei file consentite:",
+	"bs-pref-imageextensions": "Estensioni delle immagini consentite:",
+	"bs-pref-logopath": "Percorso del logo:",
+	"bs-pref-faviconpath": "Percorso della favicon:",
+	"bs-pref-bspinginterval": "Intervallo di ping (in secondi):",
+	"bs-pref-testmode": "Attiva modalità test"
 }

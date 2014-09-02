@@ -35,6 +35,7 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "Kuzhat munudoù ar fazi",
 	"bs-viewtagerrorlist-legend": "$1 - Fazi",
 	"bs-permissionerror": "Fazi aotre !",
+	"bs-filesystemhelper-has-path-traversal": "Hent a-dreuz dinoet !",
 	"bs-filesystemhelper-file-not-exists": "N'eus ket eus ar restr <code>$1</code>.",
 	"bs-filesystemhelper-file-copy-error": "N'eus ket bet gallet eilañ ar restr <code>$1</code>.",
 	"bs-filesystemhelper-file-already-exists": "Ar restr <code>$1</code> zo anezhi dija.",

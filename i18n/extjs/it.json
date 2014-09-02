@@ -25,6 +25,8 @@
 	"bs-extjs-reset": "Reimposta",
 	"bs-extjs-close": "Chiudi",
 	"bs-extjs-label-user": "Utente",
+	"bs-extjs-label-namespace": "Namespace",
+	"bs-extjs-label-page": "Pagina",
 	"bs-extjs-upload": "Carica",
 	"bs-extjs-browse": "Esplora",
 	"bs-extjs-uploading": "Caricamento in corso…",
@@ -37,5 +39,6 @@
 	"bs-extjs-filter-contains": "contiene",
 	"bs-extjs-filter-contains-not": "non contiene",
 	"bs-extjs-filter-starts-with": "inizia con",
-	"bs-extjs-filter-ends-with": "termina con"
+	"bs-extjs-filter-ends-with": "termina con",
+	"bs-extjs-title-warning": "Attenzione"
 }
