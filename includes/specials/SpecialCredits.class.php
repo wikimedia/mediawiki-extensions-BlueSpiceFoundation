@@ -14,6 +14,8 @@
 
 class SpecialCredits extends BsSpecialPage {
 
+	private $aTranslators = array();
+
 	public function __construct() {
 		parent::__construct( 'SpecialCredits' );
 	}
@@ -64,7 +66,23 @@ class SpecialCredits extends BsSpecialPage {
 		$sOlContributors = '<ul>' . $sLiContributors . '</ul>';
 		$sOlTl = '<ul>' . $sLiTranslation . '</ul>';
 
-		$aTranslators = $this->generateTranslatorsList();
+		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'Credits', 'Translators' );
+		$aData = BsCacheHelper::get( $sKey );
+
+		if ( $aData !== false ) {
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching translators from cache' );
+			$this->aTranslators = $aData;
+		} else {
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching translators from DB' );
+			$this->generateTranslatorsList();
+			// Keep list for one day
+			BsCacheHelper::set( $sKey, $this->aTranslators, 86400 );
+		}
+
+		$sLiTranslators = '';
+		foreach ( $this->aTranslators as $sTranslator ) {
+			$sLiTranslators .= Html::element( 'li', array(), $sTranslator );
+		}
 
 		$sLink = '<a href="https://translatewiki.net">translatewiki.net</a>';
 		$aOut = array();
@@ -89,8 +107,7 @@ class SpecialCredits extends BsSpecialPage {
 		$aOut[] = '<tr>';
 		$aOut[] = '<td style="vertical-align: top;">';
 		$aOut[] = '<i><h6>' . wfMessage( 'bs-credits-th', $sLink )->text() . '</h6></i>';
-		$aOut[] = '<ul><li>'. implode( '</li><li>', $aTranslators['translators'] ) .'</li></ul>';
-		$aOut[] = '<br />'. wfMessage( 'bs-credits-createdon', $aTranslators['ts'] )->plain();
+		$aOut[] = '<ul>'. $sLiTranslators .'</ul>';
 		$aOut[] = '</td>';
 		$aOut[] = '<td style="vertical-align: top;">'. $sOlTl .'</td>';
 		$aOut[] = '</tr>';
@@ -99,23 +116,43 @@ class SpecialCredits extends BsSpecialPage {
 		$this->getOutput()->addHtml(implode( "\n", $aOut ) );
 	}
 
-	public function generateTranslatorsList() {
-		$vTranslators = file_get_contents( BSROOTDIR . '/includes/specials/translators.json' );
-		$vTranslators = FormatJson::decode( $vTranslators );
-		$aTranslators = array();
-		$vTs = 0;
+	private function generateTranslatorsList() {
+		global $IP;
+		$aPaths = array(
+			$IP . '/extensions/BlueSpiceExtensions/',
+			$IP . '/extensions/BlueSpiceFoundation/',
+			$IP . '/skins/BlueSpiceSkin/'
+		);
 
-		foreach ( $vTranslators as $aData ) {
-			if ( $aData instanceof StdClass ) {
-				foreach ( $aData as $key => $sTranslator ) {
-					$aTranslators['translators'][] = $sTranslator;
+		foreach ( $aPaths as $sPath ) {
+			$this->readInTranslators( $sPath );
+		}
+
+		$this->aTranslators = array_map( 'trim', $this->aTranslators );
+		$this->aTranslators = array_unique( $this->aTranslators );
+		asort( $this->aTranslators );
+	}
+
+	private function readInTranslators( $sDir ) {
+		$oCurrentDirectory = new DirectoryIterator( $sDir );
+		foreach ( $oCurrentDirectory as $oFileinfo ) {
+			if ( $oFileinfo->isFile() && strpos( $oFileinfo->getFilename(), '.json' ) !== false ) {
+				$sContent = json_decode(
+					file_get_contents( $oFileinfo->getPath() .DS. $oFileinfo->getFilename() )
+				);
+				foreach ( $sContent as $aData ) {
+					if ( $aData instanceof StdClass && isset( $aData->authors ) ) {
+						foreach ( $aData->authors as $Author ) {
+							$Author = preg_replace( '#\<([0-9a-zA-Z]+)@(\w+)\.(\w+)\>#', '', $Author );
+							$this->aTranslators[] = $Author;
+						}
+					}
 				}
+				continue;
 			}
-			if ( is_numeric( $aData ) ) {
-				$vTs = RequestContext::getMain()->getLanguage()->date( $aData );
-				$aTranslators['ts'] = $vTs;
+			if ( $oFileinfo->isDir() && !$oFileinfo->isDot() && $oFileinfo->getFilename() != $sDir ) {
+				$this->readInTranslators( $oFileinfo->getPath() .DS. $oFileinfo->getFilename() );
 			}
 		}
-		return $aTranslators;
 	}
 }
