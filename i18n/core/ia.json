@@ -36,7 +36,6 @@
 	"bs-exception-view-admin-hint": "Per favor, contacta tu administrator de systema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Monstrar le detalios del error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Celar le detalios del error",
-	"action-responsibleeditors-viewspecialpage": "vider le paginas protegite con le derecto \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - Error",
 	"bs-readonly": "Al momento, le base de datos es blocate contra nove entratas e altere modificationes, probabilemente pro mantenentia routinari del base de datos, post le qual illo retornara al normal. Le administrator responsabile dava iste explication: $1",
 	"bs-imageofotheruser": "Tu non es autorisate a incargar un imagine pro un altere usator.",
@@ -61,5 +60,11 @@
 	"bs-navigation-instructions": "Instructiones",
 	"bs-navigation-support": "Assistentia",
 	"bs-navigation-contact": "Contacto",
-	"bs-imagepage-download-text": "Discargar"
+	"bs-imagepage-download-text": "Discargar",
+	"bs-ns": "Spatio de nomines",
+	"bs-from-something": "(de $1)",
+	"bs-pref-fileextensions": "Extensiones de file permittite:",
+	"bs-pref-imageextensions": "Extensiones de imagine permittite:",
+	"bs-pref-logopath": "Cammino del logo:",
+	"bs-pref-faviconpath": "Cammino del favicon:"
 }
