@@ -7,7 +7,7 @@ String.prototype.ellipse = function( maxLength ) {
 };
 
 String.prototype.trim = function() {
-	// TODO MRG (21.09.10 16:29): warum \xA0? könnte man auch einen u-flag verwenden? 
+	// TODO MRG (21.09.10 16:29): warum \xA0? kÃ¶nnte man auch einen u-flag verwenden?
 	var newString = this.replace(/^[\s\xA0]+/, "");
 	newString = this.replace(/[\s\xA0]+$/, "");
 	return newString;
@@ -25,7 +25,30 @@ String.prototype.endsWith = function( endString ) {
 
 String.prototype.format = function() {
 	var args = arguments;
-	return this.replace(/{(\d+)}/g, function(match, number) { 
+	return this.replace(/{(\d+)}/g, function(match, number) {
 		return typeof args[number] != 'undefined' ? args[number] : match;
 	});
 };
+//hint: http://stackoverflow.com/questions/3629183/why-doesnt-indexof-work-on-an-array-ie8/3629211#3629211
+if ( !Array.prototype.indexOf )
+{
+	Array.prototype.indexOf = function( elt /*, from*/ )
+	{
+		var len = this.length >>> 0;
+
+		var from = Number( arguments[1] ) || 0;
+		from = ( from < 0 )
+				? Math.ceil( from )
+				: Math.floor( from );
+		if ( from < 0 )
+			from += len;
+
+		for ( ; from < len; from++ )
+		{
+			if ( from in this &&
+					this[from] === elt )
+				return from;
+		}
+		return -1;
+	};
+}
