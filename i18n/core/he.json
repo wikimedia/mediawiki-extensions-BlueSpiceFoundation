@@ -6,7 +6,8 @@
 			"Gregra",
 			"Ronel1",
 			"Eladk",
-			"ערן"
+			"ערן",
+			"Guycn2"
 		]
 	},
 	"bs-ns_main": "(ראשי)",
@@ -42,6 +43,7 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "הצגת פרטי השגיאה",
 	"bs-exception-view-stacktrace-toggle-hide-text": "הסתרת פרטי השגיאה",
 	"bs-viewtagerrorlist-legend": "$1-שגיאה",
+	"bs-readonly": "בסיס הנתונים נעול כרגע להוספת ערכים חדשים ושינויים אחרים, כנראה לצורך תחזוקה שוטפת, שלאחריה יחזור האתר לפעולתו הרגילה. מנהל המערכת שנעל את בסיס הנתונים סיפק את ההסבר הבא: $1",
 	"bs-imageofotheruser": "אינך מורשה להעלות תמונה עבור משתמש אחר",
 	"bs-pref-sortalph": "מיין מרחבי שם לפי א\"ב",
 	"bs-permissionerror": "שגיאה בהרשאות!",
@@ -54,12 +56,21 @@
 	"bs-filesystemhelper-folder-copy-error": "לא הייתה אפשרות לשנות את שם התיקיה <code>$1</code>.",
 	"bs-filesystemhelper-folder-not-exists": "התיקיה <code>$1</code> אינה קיימת.",
 	"bs-filesystemhelper-upload-err-code": "לא הייתה אפשרות להעלות את הקובץ: $1",
+	"bs-filesystemhelper-upload-wrong-ext": "לקובץ זה אין את הסיומת הדרושה: $1.",
+	"bs-filesystemhelper-upload-unsupported-type": "סוג קובץ זה אינו נתמך.",
+	"bs-filesystemhelper-save-base64-error": "לא ניתן היה לשמור את הקובץ.",
+	"bs-filesystemhelper-upload-base64-error": "לא ניתן היה להעלות את הקובץ.",
 	"bs-filesystemhelper-upload-local-error-create": "לא הייתה אפשרות ליצור את הקובץ בוויקי.",
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
 	"bs-navigation-contact": "יצירת קשר",
 	"bs-imagepage-download-text": "להורדה",
 	"bs-ns": "מרחב שם",
+	"bs-from-something": "(מתוך $1)",
 	"bs-pref-fileextensions": "סיומות קבצים מותרות:",
-	"bs-pref-imageextensions": "סיומות תמונות מותרות:"
+	"bs-pref-imageextensions": "סיומות תמונות מותרות:",
+	"bs-pref-logopath": "נתיב הלוגו:",
+	"bs-pref-faviconpath": "נתיב סמל מועדפים:",
+	"bs-pref-defaultuserimage": "דמות ברירת המחדל של המשתמש:",
+	"bs-pref-testmode": "הפעלת מצב בדיקה"
 }

@@ -32,6 +32,9 @@
 	"bs-extjs-confirmNavigationTitle": "Heuliañ al liamm",
 	"bs-extjs-allns": "(pep tra)",
 	"bs-extjs-filters": "Siloù",
+	"bs-extjs-filter-equals": "zo par da",
+	"bs-extjs-filter-starts-with": "a grog gant",
+	"bs-extjs-filter-ends-with": "a echu gant",
 	"bs-extjs-title-success": "Berzh",
 	"bs-extjs-title-warning": "Diwallit"
 }
