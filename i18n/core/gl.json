@@ -38,7 +38,6 @@
 	"bs-exception-view-admin-hint": "Por favor, póñase en contacto co administrador do sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar os detalles do erro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Agochar os detalles do erro",
-	"action-responsibleeditors-viewspecialpage": "ver as páxinas que están protexidas co dereito \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - Erro",
 	"bs-readonly": "Nestes intres a base de datos está pechada a novas entradas e outras modificacións, probablemente debido a procesos de mantemento, tras os que volverá á normalidade. O administrador que a pechou deu esta explicación: $1",
 	"bs-imageofotheruser": "Non ten os permisos necesarios para subir unha imaxe por outro usuario.",
@@ -63,5 +62,17 @@
 	"bs-navigation-instructions": "Instrucións",
 	"bs-navigation-support": "Axuda",
 	"bs-navigation-contact": "Contacto",
-	"bs-imagepage-download-text": "Descargar"
+	"bs-imagepage-download-text": "Descargar",
+	"bs-ns": "Espazo de nomes",
+	"bs-from-something": "(de $1)",
+	"bs-pref-fileextensions": "Extensións de arquivos permitidas:",
+	"bs-pref-imageextensions": "Extensións de imaxes permitidas:",
+	"bs-pref-logopath": "Ruta do logo:",
+	"bs-pref-faviconpath": "Ruta do «favicon»:",
+	"bs-pref-defaultuserimage": "Imaxe de perfil predeterminado:",
+	"bs-pref-miniprofileenforceheight": "Forzar altura de perfil de usuario",
+	"bs-pref-anonuserimage": "Imaxe de perfil de usuario anónimo:",
+	"bs-pref-deleteduserimage": "Imaxe de perfil eliminado:",
+	"bs-pref-bspinginterval": "Intervalo de ping (en segundos)ː",
+	"bs-pref-testmode": "Activar o modo de proba"
 }

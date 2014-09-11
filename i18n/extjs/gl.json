@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Vivaelcelta",
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",
@@ -25,8 +26,21 @@
 	"bs-extjs-reset": "Restablecer",
 	"bs-extjs-close": "Pechar",
 	"bs-extjs-label-user": "Usuario",
+	"bs-extjs-label-namespace": "Espazo de nomes",
+	"bs-extjs-label-page": "Páxina",
 	"bs-extjs-upload": "Subir",
 	"bs-extjs-browse": "Navegar",
 	"bs-extjs-uploading": "Subindo...",
-	"bs-extjs-confirmNavigationTitle": "Seguir a ligazón"
+	"bs-extjs-confirmNavigationTitle": "Seguir a ligazón",
+	"bs-extjs-confirmNavigationText": "¿Está seguro de que quere seguir esta ligazón? Toda a configuración dinámica, coma filtros ou ordenación, da páxina actual será perdida.",
+	"bs-extjs-allns": "(todos)",
+	"bs-extjs-filters": "Filtros",
+	"bs-extjs-filter-equals": "é igual a",
+	"bs-extjs-filter-equals-not": "non é igual a",
+	"bs-extjs-filter-contains": "contén",
+	"bs-extjs-filter-contains-not": "non contén",
+	"bs-extjs-filter-starts-with": "comeza con",
+	"bs-extjs-filter-ends-with": "remata con",
+	"bs-extjs-title-success": "Todo correcto",
+	"bs-extjs-title-warning": "Aviso"
 }
