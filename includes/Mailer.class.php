@@ -125,7 +125,7 @@ class BsMailer {
 		foreach ( $aEmailTo as $aReceiver ) {
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
-				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-receiver-html', $aReceiver['greeting'] )->plain()  : wfMessage( 'bs-mail-greeting-receiver', $aReceiver['greeting'] )->plain();
+				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-receiver-html', $aReceiver['greeting'] )->parse()  : wfMessage( 'bs-mail-greeting-receiver', $aReceiver['greeting'] )->parse();
 			} else {
 				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-no-receiver-html' )->plain()  : wfMessage( 'bs-mail-greeting-no-receiver' )->plain();
 			}
