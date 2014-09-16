@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Raynasution"
+			"Raynasution",
+			"Bennylin"
 		]
 	},
-	"bs-extjs-filters": "Saringan",
-	"bs-extjs-filter-contains-not": "tidak berisi",
-	"bs-extjs-filter-ends-with": "berakhir dengan"
+	"bs-extjs-filters": "Filters",
+	"bs-extjs-filter-contains-not": "contains not",
+	"bs-extjs-filter-ends-with": "ends with"
 }
