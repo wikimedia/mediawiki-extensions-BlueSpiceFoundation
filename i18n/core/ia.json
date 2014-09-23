@@ -66,5 +66,11 @@
 	"bs-pref-fileextensions": "Extensiones de file permittite:",
 	"bs-pref-imageextensions": "Extensiones de imagine permittite:",
 	"bs-pref-logopath": "Cammino del logo:",
-	"bs-pref-faviconpath": "Cammino del favicon:"
+	"bs-pref-faviconpath": "Cammino del favicon:",
+	"bs-pref-defaultuserimage": "Avatar predefinite pro usatores:",
+	"bs-pref-miniprofileenforceheight": "Fortiar le altitude del avatar de usator",
+	"bs-pref-anonuserimage": "Avatar pro usator anonyme:",
+	"bs-pref-deleteduserimage": "Avatar pro usator delite:",
+	"bs-pref-bspinginterval": "Intervallo de ping (in secundas):",
+	"bs-pref-testmode": "Activar le modo de test"
 }
