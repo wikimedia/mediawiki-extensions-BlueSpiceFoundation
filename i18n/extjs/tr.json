@@ -4,6 +4,7 @@
 			"Sayginer"
 		]
 	},
+	"bs-extjs-ok": "Tamam",
 	"bs-extjs-cancel": "İptal",
 	"bs-extjs-yes": "Evet",
 	"bs-extjs-no": "Hayır",
@@ -16,5 +17,8 @@
 	"bs-extjs-pageSize": "Sayfa boyutu",
 	"bs-extjs-warning": "Uyarı",
 	"bs-extjs-saving": "kaydediliyor...",
+	"bs-extjs-close": "Kapat",
+	"bs-extjs-upload": "Yükle",
+	"bs-extjs-uploading": "Yükleniyor...",
 	"bs-extjs-title-warning": "Uyarı"
 }

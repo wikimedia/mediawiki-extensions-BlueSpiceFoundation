@@ -6,6 +6,7 @@
 	},
 	"bs-userbar_loginswitch_logout": "Oturumu kapat",
 	"bs-userbar_loginswitch_login": "Oturum aç",
+	"bs-extended-search-textfield-defaultvalue": "Arama...",
 	"bs-no-information-available": "Herhangi bir bilgi bulunmamaktadır",
 	"bs-years-duration": "{{PLURAL:$1|$1 yıl|$1 yıl}}",
 	"bs-months-duration": "{{PLURAL:$1|$1 ay|$1 ay}}",
