@@ -4,7 +4,7 @@
 			"Beta16"
 		]
 	},
-	"config-install-renamefandf": "Ridenominazione di cartelle e file template",
+	"config-install-renamefandf": "Rinomina di cartelle e file template",
 	"bs-installer-title": "Installazione di MediaWiki $1 e BlueSpice $2",
 	"bs-installer-could-not-rename": "{{PLURAL:$1|Il seguente elemento non può essere rinominato|I seguenti elementi non possono essere rinominati}}. Procedi manualmente con la rinomina. $2"
 }

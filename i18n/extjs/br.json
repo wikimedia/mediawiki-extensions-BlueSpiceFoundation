@@ -33,6 +33,8 @@
 	"bs-extjs-allns": "(pep tra)",
 	"bs-extjs-filters": "Siloù",
 	"bs-extjs-filter-equals": "zo par da",
+	"bs-extjs-filter-equals-not": "n'eo ket par da",
+	"bs-extjs-filter-contains": "zo ennañ",
 	"bs-extjs-filter-starts-with": "a grog gant",
 	"bs-extjs-filter-ends-with": "a echu gant",
 	"bs-extjs-title-success": "Berzh",
