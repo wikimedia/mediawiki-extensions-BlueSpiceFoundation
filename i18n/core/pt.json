@@ -57,6 +57,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Este tipo de ficheiro não é suportado.",
 	"bs-filesystemhelper-save-base64-error": "O ficheiro não pode ser salvo.",
 	"bs-filesystemhelper-upload-base64-error": "O ficheiro não pode ser carregado.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "O ficheiro não pode ser movido ao esconderijo de carregamento.",
 	"bs-filesystemhelper-upload-local-error-create": "O ficheiro não pode ser criado na wiki.",
 	"bs-navigation-instructions": "Instruções",
 	"bs-navigation-support": "Suporte",
