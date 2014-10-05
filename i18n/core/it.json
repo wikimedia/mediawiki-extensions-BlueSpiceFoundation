@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"PeppeAeco"
+			"PeppeAeco",
+			"Baffo"
 		]
 	},
 	"bs-ns_main": "(Pagine)",
@@ -68,6 +69,7 @@
 	"bs-pref-imageextensions": "Estensioni delle immagini consentite:",
 	"bs-pref-logopath": "Percorso del logo:",
 	"bs-pref-faviconpath": "Percorso della favicon:",
+	"bs-pref-defaultuserimage": "Avatar di utente predefinito:",
 	"bs-pref-bspinginterval": "Intervallo di ping (in secondi):",
 	"bs-pref-testmode": "Attiva modalità test"
 }

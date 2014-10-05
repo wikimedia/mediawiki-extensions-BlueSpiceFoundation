@@ -67,5 +67,6 @@
 	"bs-navigation-contact": "Contact",
 	"bs-imagepage-download-text": "Downloaden",
 	"bs-ns": "Naamruimte",
-	"bs-from-something": "(van $1)"
+	"bs-from-something": "(van $1)",
+	"bs-pref-fileextensions": "Toegelaten bestandsextensies:"
 }
