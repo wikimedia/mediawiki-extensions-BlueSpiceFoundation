@@ -1,6 +1,6 @@
 <?php
 /**
- * Output handler for the web installer.
+ * BlueSpice Output handler for the web installer.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,15 +22,12 @@
  */
 
 /**
- * Output class modelled on OutputPage.
- *
- * I've opted to use a distinct class rather than derive from OutputPage here in
- * the interests of separation of concerns: if we used a subclass, there would be
- * quite a lot of things you could do in OutputPage that would break the installer,
- * that wouldn't be immediately obvious.
+ * BlueSpice output class modelled on OutputPage.
  *
  * @ingroup Deployment
- * @since 1.17
+ * @since 2.23
+ *
+ * @author Stephan Muggli <muggli@hallowelt.biz>
  */
 class BsWebInstallerOutput extends WebInstallerOutput {
 

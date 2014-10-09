@@ -22,10 +22,12 @@
  */
 
 /**
- * Class for generating LocalSettings.php file.
+ * Class for generating BlueSpice LocalSettings.php file.
  *
  * @ingroup Deployment
- * @since 1.17
+ * @since 2.23
+ *
+ * @author Stephan Muggli <muggli@hallowelt.biz>
  */
 class BsLocalSettingsGenerator extends LocalSettingsGenerator {
 

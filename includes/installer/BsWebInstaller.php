@@ -22,10 +22,12 @@
  */
 
 /**
- * Class for the core installer web interface.
+ * Class for the core and BlueSpice installer web interface.
  *
  * @ingroup Deployment
- * @since 1.17
+ * @since 2.23
+ *
+ * @author Stephan Muggli <muggli@hallowelt.biz>
  */
 class BsWebInstaller extends WebInstaller {
 
@@ -120,8 +122,7 @@ class BsWebInstaller extends WebInstaller {
 			array( 'name' => 'stats', 'callback' => array( $this, 'populateSiteStats' ) ),
 			array( 'name' => 'keys', 'callback' => array( $this, 'generateKeys' ) ),
 			array( 'name' => 'sysop', 'callback' => array( $this, 'createSysop' ) ),
-			array( 'name' => 'mainpage', 'callback' => array( $this, 'createMainpage' ) ),
-			array( 'name' => 'renamefandf', 'callback' => array( $this, 'renameFoldersAndFiles' ) ) // BlueSpice
+			array( 'name' => 'mainpage', 'callback' => array( $this, 'createMainpage' ) )
 		);
 
 		// Build the array of install steps starting from the core install list,
@@ -154,41 +155,10 @@ class BsWebInstaller extends WebInstaller {
 			'callback' => array( $installer, 'createExtensionTables' )
 		);
 
+
+		#BsConfig::saveSettings();
+		error_log(var_export(BsConfig::getRegisteredVars(),1));
 		return $this->installSteps;
 	}
 
-	/**
-	 * Renames BlueSpice template folders and files
-	 *
-	 * @return status
-	 */
-	protected function renameFoldersAndFiles() {
-		$status = Status::newGood();
-		global $IP;
-		$aElems = array(
-			$IP . '/extensions/BlueSpiceFoundation/data.template',
-			$IP . '/extensions/BlueSpiceFoundation/config.template',
-			$IP . '/extensions/BlueSpiceExtensions/BlueSpiceExtensions.php.template',
-			$IP . '/extensions/BlueSpiceDistribution/BlueSpiceDistribution.php.template'
-		);
-
-		$aErrors = array();
-		foreach ( $aElems as $sElem ) {
-			$sNewName = str_replace( '.template', '', $sElem );
-			if ( !file_exists( $sNewName ) ) {
-				if ( is_writable( $sElem ) ) {
-					rename( $sElem, $sNewName );
-				} else {
-					$aErrors[] = $sElem;
-				}
-			}
-		}
-
-		if ( !empty( $aErrors ) ) {
-			$sFolders = implode( ", " , $aErrors );
-			$status->warning( 'bs-installer-could-not-rename', count( $aErrors['folders'] ), $sFolders );
-		}
-
-		return $status;
-	}
 }

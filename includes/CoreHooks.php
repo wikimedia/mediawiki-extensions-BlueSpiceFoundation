@@ -261,12 +261,12 @@ class BsCoreHooks {
 		global $wgDBtype;
 
 		$dbw = wfGetDB( DB_WRITE );
-		$table = $dbw->tableName( 'bs_settings' );
 
 		if ( $dbw->tableExists( 'bs_settings' ) ) {
 			return true;
 		}
 
+		$table = $dbw->tableName( 'bs_settings' );
 		if ( $wgDBtype == 'mysql' ) {
 			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (`key` varchar(255) NOT NULL, `value` text)");
