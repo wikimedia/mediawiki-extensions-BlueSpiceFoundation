@@ -3,7 +3,8 @@
 		"authors": [
 			"Vivaelcelta",
 			"Toliño",
-			"Elisardojm"
+			"Elisardojm",
+			"Fitoschido"
 		]
 	},
 	"bs-ns_main": "(Páxinas)",
@@ -73,6 +74,6 @@
 	"bs-pref-miniprofileenforceheight": "Forzar altura de perfil de usuario",
 	"bs-pref-anonuserimage": "Imaxe de perfil de usuario anónimo:",
 	"bs-pref-deleteduserimage": "Imaxe de perfil eliminado:",
-	"bs-pref-bspinginterval": "Intervalo de ping (en segundos)ː",
+	"bs-pref-bspinginterval": "Intervalo de ''ping'' (en segundos):",
 	"bs-pref-testmode": "Activar o modo de proba"
 }

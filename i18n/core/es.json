@@ -76,6 +76,6 @@
 	"bs-pref-miniprofileenforceheight": "Forzar altura de avatar de usuario",
 	"bs-pref-anonuserimage": "Avatar de usuario anónimo:",
 	"bs-pref-deleteduserimage": "Avatar de usuario eliminado:",
-	"bs-pref-bspinginterval": "Intervalo de ping (en segundos)ː",
+	"bs-pref-bspinginterval": "Intervalo de ''ping'' (en segundos):",
 	"bs-pref-testmode": "Activar el modo de prueba"
 }
