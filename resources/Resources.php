@@ -23,7 +23,6 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.multiselect.js'
 	),
 	'dependencies' => array(
-		'jquery',
 		'jquery.ui.core',
 		'jquery.ui.dialog',
 		'jquery.ui.tabs',
