@@ -84,7 +84,3 @@ body.x-body {
 .x-window {
 	line-height: normal;
 }
-
-.x-window .x-header-text, .x-window .x-btn-inner {
-	color: white !important;
-}
