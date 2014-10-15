@@ -108,19 +108,19 @@ class BsMailer {
 		$sCombinedSubject = '['.$wgSitename.'] '.$sSubject;
 
 		//Prepare message
-		$sFooter = $this->bSendHTML ? wfMessage( 'bs-mail-footer-html', $wgSitename )->plain() : wfMessage( 'bs-mail-footer', $wgSitename )->plain() ;
-		$sCombinedMsg = $sMsg.$sFooter;
-
 		if( $this->bSendHTML ) {
 			//http(s)://link -> <a href="http(s)://link>http(s)://link</a>"
 			//! already followed by </a>
 			//last char ! "."
-			$sCombinedMsg = preg_replace(
+			$sMsg = preg_replace(
 				"#(\s|/>)(https?://[^\s]+?)\.?([\s|<])#",
 				'<a href="$2">$2</a>',
-				$sCombinedMsg
+				$sMsg
 			);
 		}
+
+		$sFooter = $this->bSendHTML ? wfMessage( 'bs-mail-footer-html', $wgSitename )->plain() : wfMessage( 'bs-mail-footer', $wgSitename )->plain() ;
+		$sCombinedMsg = $sMsg.$sFooter;
 
 		foreach ( $aEmailTo as $aReceiver ) {
 			//Prepare message
