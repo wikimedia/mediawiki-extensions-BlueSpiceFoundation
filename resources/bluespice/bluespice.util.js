@@ -468,7 +468,7 @@ if (iYears > 0) sDateTimeOut = sMonths ? mw.message( 'bs-two-units-ago', sYears,
 					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
 				}
 
-				oSelect.options[oSelect.options.length] = new Option( text, text, false, false );
+				oSelect.options[oSelect.options.length] = new Option( text, text, false, true );
 			}
 		});
 	};

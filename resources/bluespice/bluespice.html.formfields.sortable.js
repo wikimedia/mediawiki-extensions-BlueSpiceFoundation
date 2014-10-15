@@ -1,7 +1,6 @@
-$(document).ready(function(){
-	
+( function ( mw, bs, $, undefined ) {
 	$( '.multiselectsortlist' ).sortable( {
-		update: function( event, ui ) { 
+		update: function( event, ui ) {
 			$( this ).next().children().remove(); //Remove all "option" tags from the hidden "select" element
 			$( this ).children().each( function( index, element ) {
 				$( this ).parent().next() //The "select" element
@@ -10,5 +9,4 @@ $(document).ready(function(){
 			});
 		}
 	});
-
-});
+}( mediaWiki, blueSpice, jQuery ) );

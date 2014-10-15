@@ -13,8 +13,8 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 		$attrs = array(
 			'type' => 'button',
 			'id' => $this->mName . '-add',
-			'title' => wfMessage( strtolower($this->mParams['title']) )->plain(),
-			'msg' => wfMessage( strtolower( $this->mParams['title'] ) )->plain(),
+			'title' => wfMessage( 'bs-extjs-add' )->text(),
+			'msg' => '',
 			'targetField' => $this->mName,
 			'class' => 'bsMultiSelectAddButton',
 			'onclick' => 'bs.util.addEntryToMultiSelect(this);',
