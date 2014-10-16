@@ -125,7 +125,7 @@ class BsCore {
 		BsConfig::registerVar( 'MW::AnonUserImage', $sPath . 'bs-user-anon-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-anonuserimage' );
 		BsConfig::registerVar( 'MW::DeletedUserImage', $sPath . 'bs-user-deleted-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-deleteduserimage' );
 		BsConfig::registerVar( 'MW::UserImage', '', BsConfig::LEVEL_USER | BsConfig::TYPE_STRING | BsConfig::NO_DEFAULT, 'bs-authors-profileimage' );
-		BsConfig::registerVar( 'MW::PingInterval', 2, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-bspinginterval' );
+		BsConfig::registerVar( 'MW::PingInterval', 10, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-bspinginterval' );
 		BsConfig::registerVar( 'MW::SortAlph', false, BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER | BsConfig::TYPE_BOOL, 'bs-pref-sortalph', 'toggle' );
 		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-testmode', 'toggle' );
 
