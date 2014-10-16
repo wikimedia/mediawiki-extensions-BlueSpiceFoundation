@@ -114,8 +114,10 @@ class BsCore {
 		global $wgScriptPath;
 		$sPath = $wgScriptPath . "/extensions/BlueSpiceFoundation/resources/bluespice/images/";
 
-		BsConfig::registerVar( 'MW::FileExtensions', array('doc', 'docx', 'pdf', 'xls'), BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::ImageExtensions', array('png', 'gif', 'jpg', 'jpeg'), BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-imageextensions', 'multiselectplusadd' );
+		$aFiles = array( 'doc', 'docx', 'pdf', 'xls', 'xlsx' );
+		$aImages = array( 'png', 'gif', 'jpg', 'jpeg' );
+		BsConfig::registerVar( 'MW::FileExtensions', $aFiles, BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
+		BsConfig::registerVar( 'MW::ImageExtensions', $aImages, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-imageextensions', 'multiselectplusadd' );
 		BsConfig::registerVar( 'MW::LogoPath', $sPath . 'bs-logo.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-logopath' );
 		BsConfig::registerVar( 'MW::FaviconPath', $sPath . 'favicon.ico', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-faviconpath' );
 		BsConfig::registerVar( 'MW::DefaultUserImage', $sPath . 'bs-user-default-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-defaultuserimage' );

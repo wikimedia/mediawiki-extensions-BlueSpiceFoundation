@@ -243,9 +243,6 @@ class BsConfig {
 			return self::$prSettings[$key];
 		}
 		$_path = explode ( '::', $path );
-		$adapter = null;
-		$extension = null;
-		$varname = null;
 		$len = count ( $_path );
 
 		if ( $len < 2 || $len > 3 ) {
@@ -253,9 +250,10 @@ class BsConfig {
 			return false;
 		}
 
+		$extension = null;
 		$adapter = array_shift ( $_path );
 		$len--;
-		if ( $len == 2 ) {
+		if ( $len === 2 ) {
 			$extension = array_shift ( $_path );
 		}
 		$varname = array_shift ( $_path );
@@ -306,7 +304,7 @@ class BsConfig {
 	public static function saveSettings() {
 		$dbw = wfGetDB ( DB_WRITE );
 
-		$dbw->delete('bs_settings', '*');
+		$dbw->delete( 'bs_settings', '*' );
 
 		$aSettings = array();
 
