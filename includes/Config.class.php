@@ -271,10 +271,10 @@ class BsConfig {
 	 * loads all settings from the database and saves the instances for every variable internal.
 	 */
 	public static function loadSettings() {
-		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'loadSettings' );
+		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' );
 		$aData = BsCacheHelper::get( $sKey );
 
-		if( $aData !== false ) {
+		if ( $aData !== false ) {
 			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from cache' );
 			$aRows = $aData;
 		} else {
@@ -323,7 +323,7 @@ class BsConfig {
 			# if the setting is a boolean type then make sure, it
 			# gets saved as boolean type
 			if ( $setting->getOptions () & self::TYPE_BOOL ) {
-				$value = ( bool ) $setting->getValue ();
+				$value = (bool) $setting->getValue ();
 			} else {
 				$value = $setting->getValue ();
 			}
@@ -334,10 +334,17 @@ class BsConfig {
 			);
 		}
 
-		# write the settings array to the database
 		wfRunHooks( 'BsSettingsBeforeSaveSettings', array( &$aSettings ) );
+
+		# write the settings array to the database
 		$bReturn = $dbw->insert('bs_settings', $aSettings);
+
 		wfRunHooks( 'BsSettingsAfterSaveSettings', array( $aSettings ) );
+
+		BsCacheHelper::invalidateCache(
+			BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' )
+		);
+
 		return $bReturn;
 	}
 
