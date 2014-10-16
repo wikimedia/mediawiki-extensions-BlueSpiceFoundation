@@ -3,14 +3,14 @@ BSPing = {
 	aListeners:[],
 
 	init: function() {
-		$(document).triggerHandler('BSPingInit', [this]);
-		this.interval = bsPingInterval*1000;
-		if ( this.interval < 1000 ) return;
+		$(document).triggerHandler('BSPingInit', [BSPing]);
+		BSPing.interval = bsPingInterval*1000;
+		if ( BSPing.interval < 1000 ) return;
 
-		this.ping();
+		BSPing.ping();
 	},
 	ping: function() {
-		var aListenersToGo = this.calculateInterval();
+		var aListenersToGo = BSPing.calculateInterval();
 		if ( aListenersToGo.length < 1 ) {
 			BSPing.timeout = setTimeout( BSPing.ping, BSPing.interval);
 			return;
@@ -36,7 +36,7 @@ BSPing = {
 				iRevision: wgCurRevisionId,
 				BsPingData: BsPingData
 			},
-			this.pingCallback( aListenersToGo )
+			BSPing.pingCallback( aListenersToGo )
 		);
 	},
 	registerListener: function( sRef, iInterval, aData, callback) {
@@ -48,7 +48,7 @@ BSPing = {
 			aData: ( typeof aData == "undefined" ? [] : aData ),
 			callback: ( typeof callback == "undefined" ? false : callback )
 		};
-		this.aListeners.push(o);
+		BSPing.aListeners.push(o);
 		return true;
 	},
 	calculateInterval: function() {

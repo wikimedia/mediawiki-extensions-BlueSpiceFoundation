@@ -275,10 +275,7 @@
 	function _timestampToAgeString( unixTimestamp ) {
 		//This is a js version of "adapter/Utility/FormatConverter.class.php" -> timestampToAgeString
 		//TODO: use PLURAL (probably wont work in mw 1.17)
-		var start = ( new Date( unixTimestamp ) ),
-			now = ( new Date() ),
-			diff = now - start,
-			sDateTimeOut = '',
+		var sDateTimeOut = '',
 			sYears = '',
 			sMonths = '',
 			sWeeks = '',
@@ -286,16 +283,21 @@
 			sHrs = '',
 			sMins = '',
 			sSecs = '',
-			sTsPast = BsArticleInfo.lastEditTimestamp,
+			sTsPast = unixTimestamp,
 			sTsNow = Math.round( ( new Date() ).getTime() / 1000 ),
 			iDuration = sTsNow - sTsPast;
 
-		var iYears = Math.floor( iDuration / ( 60 * 60 * 24 * 365 ) ); iDuration %= 60 * 60 * 24 * 365,
-			iMonths = Math.floor( iDuration / ( 60 * 60 * 24 * 30.5 ) ); iDuration %= 60 * 60 * 24 * 30.5,
-			iWeeks = Math.floor( iDuration / ( 60 * 60 * 24 * 7) ); iDuration %= 60 * 60 * 24 * 7,
-			iDays = Math.floor( iDuration / ( 60 * 60 * 24 ) ); iDuration %= 60 * 60 * 24,
-			iHrs = Math.floor( iDuration / ( 60 * 60 ) ); iDuration %= 60 * 60,
-			iMins = Math.floor( iDuration / 60 );
+		var iYears = Math.floor( iDuration / ( 60 * 60 * 24 * 365 ) );
+			iDuration %= 60 * 60 * 24 * 365;
+		var iMonths = Math.floor( iDuration / ( 60 * 60 * 24 * 30.5 ) );
+			iDuration %= 60 * 60 * 24 * 30.5;
+		var iWeeks = Math.floor( iDuration / ( 60 * 60 * 24 * 7) );
+			iDuration %= 60 * 60 * 24 * 7;
+		var iDays = Math.floor( iDuration / ( 60 * 60 * 24 ) );
+			iDuration %= 60 * 60 * 24;
+		var iHrs = Math.floor( iDuration / ( 60 * 60 ) );
+			iDuration %= 60 * 60;
+		var iMins = Math.floor( iDuration / 60 ),
 			iSecs = iDuration % 60;
 
 		if ( iYears > 0 ) sYears = mw.message( 'bs-years-duration', iYears ).text();
