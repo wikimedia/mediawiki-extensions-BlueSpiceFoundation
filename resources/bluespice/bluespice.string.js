@@ -11,17 +11,15 @@ String.prototype.trim = function() {
 	var newString = this.replace(/^[\s\xA0]+/, "");
 	newString = this.replace(/[\s\xA0]+$/, "");
 	return newString;
-}
+};
 
 String.prototype.startsWith = function( startString ) {
-	var doesStartWith = ( this.match( "^" + startString ) == startString );
-	return doesStartWith;
-}
+	return ( this.match( "^" + startString ) == startString );
+};
 
 String.prototype.endsWith = function( endString ) {
-	var doesEndWith = ( this.match( endString + "$" ) == endString );
-	return doesEndWith;
-}
+	return ( this.match( endString + "$" ) == endString );
+};
 
 String.prototype.format = function() {
 	var args = arguments;
@@ -30,8 +28,7 @@ String.prototype.format = function() {
 	});
 };
 //hint: http://stackoverflow.com/questions/3629183/why-doesnt-indexof-work-on-an-array-ie8/3629211#3629211
-if ( !Array.prototype.indexOf )
-{
+if ( !Array.prototype.indexOf ) {
 	Array.prototype.indexOf = function( elt /*, from*/ )
 	{
 		var len = this.length >>> 0;
