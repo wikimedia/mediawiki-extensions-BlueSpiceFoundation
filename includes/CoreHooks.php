@@ -260,9 +260,31 @@ class BsCoreHooks {
 	public static function onLoadExtensionSchemaUpdates( $updater ) {
 		global $wgDBtype;
 
-		$dbw = wfGetDB( DB_WRITE );
+		$dbw = wfGetDB( DB_MASTER );
 
 		if ( $dbw->tableExists( 'bs_settings' ) ) {
+			/* Update routine for incorrect images paths. Some not skin realted images were located
+			 * in BlueSpiceSkin and move into Foundation. That an update does not effect any functionality
+			 * the following steps were adeded
+			 * https://gerrit.wikimedia.org/r/#/c/166979/
+			 */
+			BsConfig::loadSettings();
+			if ( preg_match( '#.*?BlueSpiceSkin.*?bs-logo.png#', BsConfig::get( 'MW::LogoPath' ) ) ) {
+				$dbw->delete( 'bs_settings', array( $dbw->addIdentifierQuotes( 'key' ) => 'MW::LogoPath' ) );
+			}
+			if ( preg_match( '#.*?BlueSpiceSkin.*?favicon.ico#', BsConfig::get( 'MW::FaviconPath' ) ) ) {
+				$dbw->delete( 'bs_settings', array( $dbw->addIdentifierQuotes( 'key' ) => 'MW::FaviconPath' ) );
+			}
+			if ( preg_match( '#.*?BlueSpiceSkin.*?bs-user-default-image.png#', BsConfig::get( 'MW::DefaultUserImage' ) ) ) {
+				$dbw->delete( 'bs_settings', array( $dbw->addIdentifierQuotes( 'key' ) => 'MW::DefaultUserImage' ) );
+			}
+			if ( preg_match( '#.*?BlueSpiceSkin.*?bs-user-anon-image.png#', BsConfig::get( 'MW::AnonUserImage' ) ) ) {
+				$dbw->delete( 'bs_settings', array( $dbw->addIdentifierQuotes( 'key' ) => 'MW::AnonUserImage' ) );
+			}
+			if ( preg_match( '#.*?BlueSpiceSkin.*?bs-user-deleted-image.png#', BsConfig::get( 'MW::DeletedUserImage' ) ) ) {
+				$dbw->delete( 'bs_settings', array( $dbw->addIdentifierQuotes( 'key' ) => 'MW::DeletedUserImage' ) );
+			}
+
 			return true;
 		}
 
