@@ -15,7 +15,6 @@ $wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
 
 // START cache invalidation hooks
 $wgHooks['PageContentSaveComplete'][] = 'BsCacheHelper::onPageContentSaveComplete';
-$wgHooks['BsSettingsAfterSaveSettings'][] = 'BsCacheHelper::onBsSettingsAfterSaveSettings';
 // END cache invalidation hooks
 
 if ( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
