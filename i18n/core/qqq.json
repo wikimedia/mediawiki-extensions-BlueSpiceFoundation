@@ -61,7 +61,7 @@
 	"bs-filesystemhelper-upload-base64-error": "Unused at this time.\n\nSee also:\n* {{msg-mw|Bs-filesystemhelper-upload-err-code}}\n* {{msg-mw|Bs-filesystemhelper-save-base64-error}}",
 	"bs-filesystemhelper-upload-local-error-stash-file": "Used as failure message.",
 	"bs-filesystemhelper-upload-local-error-create": "Used as fatal error message.",
-	"bs-navigation-instructions": "Used in navigation for instuctions link\n{{Identical|Instructions}}",
+	"bs-navigation-instructions": "Used in navigation for instuctions link\n{{Identical|Instruction}}",
 	"bs-navigation-support": "Used in navigation for support link\n{{Identical|Support}}",
 	"bs-navigation-contact": "Used in navigation for contact link\n{{Identical|Contact}}",
 	"bs-imagepage-download-text": "Text message for download used on image pages\n{{Identical|Download}}",
