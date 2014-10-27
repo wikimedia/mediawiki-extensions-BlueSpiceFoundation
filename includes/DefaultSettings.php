@@ -37,6 +37,7 @@ $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgApiFrameOptions = 'SAMEORIGIN';
 $wgRSSUrlWhitelist = array( "*" );
 $wgExternalLinkTarget = '_blank';
+$wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
