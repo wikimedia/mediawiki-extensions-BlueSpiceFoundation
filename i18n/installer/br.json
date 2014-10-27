@@ -4,7 +4,5 @@
 			"Fohanno"
 		]
 	},
-	"config-install-renamefandf": "Adenvel ar renkelloù hag ar restroù patromoù",
-	"bs-installer-title": "Staliañ MediaWiki $1 ha BlueSpice $2",
-	"bs-installer-could-not-rename": "N'eus ket bet gallet adenvel an {{PLURAL:$1|elfenn|elfennoù}}-mañ. Adanvit {{PLURAL:$1|anezhi|anezho}} gant an dorn, mar plij. $2"
+	"bs-installer-title": "Staliañ MediaWiki $1 ha BlueSpice $2"
 }

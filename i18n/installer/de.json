@@ -4,7 +4,5 @@
 			"Stephan Muggli <muggli@hallowelt.biz>"
 		]
 	},
-	"config-install-renamefandf": "Umbenennung von Vorlagen Ordner und Dateien",
-	"bs-installer-title": "Installation von MediaWiki $1 und BlueSpice $2",
-	"bs-installer-could-not-rename": "{{PLURAL:$1|Folgendes Element konnte|Folgende Elemente konnten}} nicht umbenannt werden, bitte benenne {{PLURAL:$1|dieses|diese}} händisch um. $2"
+	"bs-installer-title": "Installation von MediaWiki $1 und BlueSpice $2"
 }

@@ -36,7 +36,6 @@
 	"bs-exception-view-admin-hint": "Please contact yer system admeenistrater.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Shaw the mistak details",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Skauk the mistak details",
-	"action-responsibleeditors-viewspecialpage": "see the pages that ar protectit wi the \"ResponsibleEediters-Seebyordinairpage\" richt",
 	"bs-viewtagerrorlist-legend": "$1 - Mistak",
 	"bs-readonly": "The database is nou lockit til new entries n ither modifeecations, proably fer routine database maintenance, after this it will be back til normal. The admeenistrater that lockt it affered this explanation: $1",
 	"bs-imageofotheruser": "Ye'r na permitit tae uplaid aen eemage fer anither uiser.",

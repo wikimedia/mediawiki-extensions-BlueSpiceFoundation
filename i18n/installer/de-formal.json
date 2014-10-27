@@ -3,6 +3,5 @@
 		"authors": [
 			"Stephan Muggli <muggli@hallowelt.biz>"
 		]
-	},
-	"bs-installer-could-not-rename": "{{PLURAL:$1|Folgendes Element konnte|Folgende Elemente konnten}} nicht umbenannt werden, bitte benennen Sie {{PLURAL:$1|dieses|diese}} händisch um: $2"
+	}
 }

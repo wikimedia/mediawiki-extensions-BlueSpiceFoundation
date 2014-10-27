@@ -4,7 +4,5 @@
 			"Alirezaaa"
 		]
 	},
-	"config-install-renamefandf": "تغییرنام پوشه قالب‌ها و پرونده‌ها",
-	"bs-installer-title": "نصب مدیاویکی $1 و BlueSpice $2",
-	"bs-installer-could-not-rename": "نام {{PLURAL:$1|عنصر|عناصر}} زیر نمی‌تواند تغییر یابد. لطفاً نام {{PLURAL:$1|آن|آنها}} را دستی تغییر دهید. $2"
+	"bs-installer-title": "نصب مدیاویکی $1 و BlueSpice $2"
 }

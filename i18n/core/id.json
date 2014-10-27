@@ -38,7 +38,6 @@
 	"bs-exception-view-admin-hint": "Silakan hubungi administrator sistem Anda.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Tampilkan rincian kesalahan",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Sembunyikan rincian kesalahan",
-	"action-responsibleeditors-viewspecialpage": "lihat halaman yang dilindungi dengan hak \"ResponsibleEditors-Viewspecialpage\"",
 	"bs-viewtagerrorlist-legend": "$1 - Kesalahan",
 	"bs-readonly": "Basis data sedang dikunci untuk entri baru dan modifikasi lainnya, mungkin untuk pemeliharaan database rutin, setelah itu akan kembali normal. Administrator yang terkunci itu menawarkan penjelasan ini: $1",
 	"bs-imageofotheruser": "Anda tidak diizinkan untuk mengunggah gambar untuk pengguna lain.",

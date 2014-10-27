@@ -4,7 +4,5 @@
 			"Liuxinyu970226"
 		]
 	},
-	"config-install-renamefandf": "重命名模板文件夹和文件",
-	"bs-installer-title": "MediaWiki $1和BlueSpice $2安装版本",
-	"bs-installer-could-not-rename": "以下$1个元素不能重命名。请手动重命名{{PLURAL:$1|它|它们}}。$2"
+	"bs-installer-title": "MediaWiki $1和BlueSpice $2安装版本"
 }

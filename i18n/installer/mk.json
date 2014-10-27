@@ -4,7 +4,5 @@
 			"Bjankuloski06"
 		]
 	},
-	"config-install-renamefandf": "Преименување на шаблонските папки и податотеки",
-	"bs-installer-title": "Воспоставка на МедијаВики $1 и BlueSpice $2",
-	"bs-installer-could-not-rename": "Не можев да {{PLURAL:$1|го преименувам следниов елемент|ги преименувам следниве елементи}}. Преименувајте {{PLURAL:$1|го|ги}}  рачно. $2"
+	"bs-installer-title": "Воспоставка на МедијаВики $1 и BlueSpice $2"
 }

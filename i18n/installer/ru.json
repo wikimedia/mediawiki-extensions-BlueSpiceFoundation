@@ -4,7 +4,5 @@
 			"Nirovulf"
 		]
 	},
-	"config-install-renamefandf": "Переименование шаблонных папок и файлов",
-	"bs-installer-title": "Установка MediaWiki $1 и BlueSpice $2",
-	"bs-installer-could-not-rename": "Следующие {{PLURAL:$1|элемент|элементы}} не могут быть переименованы. Переименуйте {{PLURAL:$1|его|их}} вручную. $2"
+	"bs-installer-title": "Установка MediaWiki $1 и BlueSpice $2"
 }

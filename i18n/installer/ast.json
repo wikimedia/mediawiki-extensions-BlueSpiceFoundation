@@ -4,7 +4,5 @@
 			"Xuacu"
 		]
 	},
-	"config-install-renamefandf": "Renomando ficheros y carpetes de plantía",
-	"bs-installer-title": "Instalación de MediaWiki $1 y BlueSpice $2",
-	"bs-installer-could-not-rename": "Nun pudo cambiase'l nome {{PLURAL:$1|del siguiente elementu|los siguientes elementos}}. Cambia-{{PLURAL:$1|y|yos}} el nome manualmente. $2"
+	"bs-installer-title": "Instalación de MediaWiki $1 y BlueSpice $2"
 }

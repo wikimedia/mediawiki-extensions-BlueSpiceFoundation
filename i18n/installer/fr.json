@@ -4,7 +4,5 @@
 			"Gomoko"
 		]
 	},
-	"config-install-renamefandf": "Renommage des répertoires et fichiers modèle",
-	"bs-installer-title": "Installation de MédiaWiki $1 et BlueSpice $2",
-	"bs-installer-could-not-rename": "{{PLURAL:$1|L’élément suivant n’a pas pu être renommé|Les éléments suivants n’ont pas pu être renommés}}. Veuillez {{PLURAL:$1|le|les}} renommer manuellement. $2"
+	"bs-installer-title": "Installation de MédiaWiki $1 et BlueSpice $2"
 }

@@ -4,7 +4,5 @@
 			"Ата"
 		]
 	},
-	"config-install-renamefandf": "Перейменування шаблонних папок і файлів",
-	"bs-installer-title": "Встановлення MediaWiki $1 і BlueSpice $2",
-	"bs-installer-could-not-rename": "{{PLURAL:$1|Наступний елемент|Наступні елементи}} не вдалося перейменувати. Будь ласка, перейменуйте {{PLURAL:$1|його|їх}} вручну. $2"
+	"bs-installer-title": "Встановлення MediaWiki $1 і BlueSpice $2"
 }

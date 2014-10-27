@@ -4,6 +4,5 @@
 			"Chrumps"
 		]
 	},
-	"bs-installer-title": "Instalacja MediaWiki $1 i BlueSpice $2",
-	"bs-installer-could-not-rename": "{{PLURAL:$1|Następującemu elementowi nie może było zmienić nazwy|Następującym elementom nie może było zmienić nazw}}. Proszę zmienić {{PLURAL:$1|ją|je}} ręcznie. $2"
+	"bs-installer-title": "Instalacja MediaWiki $1 i BlueSpice $2"
 }
