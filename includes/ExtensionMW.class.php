@@ -119,4 +119,16 @@ abstract class BsExtensionMW extends ContextSource {
 		return dirname( $this->getResourcePath() ).'/images/';
 	}
 
+	/**
+	 * Returns the cache key for this particlular extension
+	 * @param string $sSubKey
+	 * @return string
+	 */
+	public function getCacheKey( $sSubKey = 'default' ) {
+		return BsCacheHelper::getCacheKey(
+			'BlueSpice',
+			$this->getName(),
+			$sSubKey
+		);
+	}
 }
