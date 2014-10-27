@@ -38,6 +38,7 @@ $wgApiFrameOptions = 'SAMEORIGIN';
 $wgRSSUrlWhitelist = array( "*" );
 $wgExternalLinkTarget = '_blank';
 $wgCapitalLinkOverrides[ NS_FILE ] = false;
+$wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
