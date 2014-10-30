@@ -304,9 +304,8 @@ class BsValidatorCategoryPlugin implements BsValidatorPlugin {
 class BsValidatorSetItemPlugin implements BsValidatorPlugin {
 
 	public static function isValid( $validateThis, $options ) {
-		$iCount = count( $options['set'] );
 		return ( !in_array( $validateThis , $options['set'] ) )
-			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-set-validation-not-approved', array( $options['setname'], implode( ',', $options['set'], $iCount ) ) )
+			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-set-validation-not-approved', array( $options['setname'], implode( ',', $options['set'] ) ) )
 			: new BsValidatorResponse( 0, 'Validator', 'bs-validator-set-validation-approved', array( $options['setname']) );
 	}
 
