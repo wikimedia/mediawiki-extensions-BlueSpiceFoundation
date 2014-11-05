@@ -25,6 +25,17 @@
 		 });
 	});
 
+	Ext.override(Ext.data.proxy.Server, {
+		buildRequest: function(){
+			this._lastRequest = this.callParent( arguments );
+			return this._lastRequest;
+		},
+		_lastRequest: null,
+		getLastRequest: function() {
+			return this._lastRequest;
+		}
+	});
+
 	//Be nice to older browsers
 	//HINT: http://stackoverflow.com/questions/2581302/globally-disable-ext-js-animations
 	if( Ext.isIE9m ) {
@@ -45,7 +56,7 @@
 			var obj = this.callParent(arguments);
 			obj.flex = 0;
 			return obj;
-		},
+		}
 	});
 
 	/*
