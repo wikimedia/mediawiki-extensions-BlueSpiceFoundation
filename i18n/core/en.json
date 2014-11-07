@@ -25,7 +25,7 @@
 	"bs-two-units-ago": "$1 and $2 ago",
 	"bs-one-unit-ago": "$1 ago",
 	"bs-now": "now",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hello Mr $1|Hello Mrs $1|Hello $1}},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hello Mr $2|Hello Mrs $2|Hello $2}},",
 	"bs-email-greeting-no-receiver": "Hello,",
 	"bs-email-footer": "This message was generated automatically. Please do not reply to this email.",
 	"bs-userpagesettings-legend": "User settings",

@@ -128,14 +128,20 @@ class BsMailer {
 		foreach ( $aEmailTo as $aReceiver ) {
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
-				$sGreeting = wfMessage( 'bs-email-greeting-receiver', $aReceiver['greeting'] )->text() . ( $this->bSendHTML )
-					? "<br /><br />"
-					: "\n\n";
+				$oUser = User::newFromName( $aReceiver['greeting'] );
+				$sRealname = $oUser->getRealName();
+				if ( empty( $sRealname ) ) {
+					$sRealname = $aReceiver['greeting'];
+				}
+				$sGreeting = wfMessage( 'bs-email-greeting-receiver', $aReceiver['greeting'], $sRealname )
+					->inLanguage( $oUser->getOption( 'language' ) )
+					->text();
 			} else {
-				$sGreeting = wfMessage( 'bs-email-greeting-no-receiver' )->text() . ( $this->bSendHTML )
-					? "<br /><br />"
-					: "\n\n";
+				$sGreeting = wfMessage( 'bs-email-greeting-no-receiver' )->text();
 			}
+			$sGreeting .= ( $this->bSendHTML )
+				? "<br /><br />"
+				: "\n\n";
 
 			$sLocalCombinedMsg = $sGreeting.$sCombinedMsg;
 			$sLocalCombinedMsg = str_replace( $sReplLF, $sCurLF, $sLocalCombinedMsg );
@@ -163,8 +169,9 @@ class BsMailer {
 				);
 			}
 		}
-		return $oStatus;
+
 		wfProfileOut( 'BS::'.__METHOD__ );
+		return $oStatus;
 	}
 
 	public function getSendHTML() {
