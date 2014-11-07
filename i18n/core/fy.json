@@ -14,5 +14,6 @@
 	"bs-mins-duration": "{{PLURAL:$1|ien minút|$1 minuten}}",
 	"bs-secs-duration": "{{PLURAL:$1|ien sekonde|$1 sekonden}}",
 	"bs-one-unit-ago": "$1 lyn",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hallo menear $2|Hallo mefrou $2|Hallo $2}},",
 	"bs-viewtagerrorlist-legend": "$1 - Flater"
 }

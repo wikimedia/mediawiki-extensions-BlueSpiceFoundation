@@ -32,7 +32,7 @@
 	"bs-two-units-ago": "$1 en $2 geleden",
 	"bs-one-unit-ago": "$1 geleden",
 	"bs-now": "nu",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hallo meneer $1|Hallo mevrouw $1|Hallo $1}},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hallo meneer $2|Hallo mevrouw $2|Hallo $2}},",
 	"bs-email-greeting-no-receiver": "Hallo,",
 	"bs-email-footer": "Dit bericht is automatisch gegenereerd. Gelieve niet te antwoorden op deze e-mail.",
 	"bs-userpagesettings-legend": "Gebruikersinstellingen",

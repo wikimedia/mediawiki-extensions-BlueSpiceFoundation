@@ -27,7 +27,7 @@
 	"bs-two-units-ago": "Há $1 e $2 atrás",
 	"bs-one-unit-ago": "Há $1 atrás",
 	"bs-now": "agora",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Olá, Sr. $1|Olá, Srª $1|Olá, $1}}",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Olá Sr. $2|Olá Srª $2|Olá $2}},",
 	"bs-email-greeting-no-receiver": "Olá,",
 	"bs-email-footer": "Esta mensagem foi gerada automaticamente. Por favor, não responda a este e-mail.",
 	"bs-userpagesettings-legend": "Configurações do utilizador",
