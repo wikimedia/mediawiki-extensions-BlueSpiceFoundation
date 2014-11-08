@@ -6,7 +6,8 @@
 			"Zhangjintao",
 			"Hudafu",
 			"Kuailong",
-			"Fengchao"
+			"Fengchao",
+			"御坂美琴"
 		]
 	},
 	"bs-ns_main": "（页面）",
@@ -30,7 +31,7 @@
 	"bs-two-units-ago": "$1$2前",
 	"bs-one-unit-ago": "$1前",
 	"bs-now": "现在",
-	"bs-email-greeting-receiver": "{{GENDER:$1|$1先生|$1女士|$1}}：\n\n你好",
+	"bs-email-greeting-receiver": "{{GENDER:$1|$2先生|$2女士|$2}}：\n\n你好",
 	"bs-email-greeting-no-receiver": "你好，",
 	"bs-email-footer": "此消息是由MediaWiki自动生成的。请不要回复这封电子邮件。",
 	"bs-userpagesettings-legend": "用户设置",
