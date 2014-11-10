@@ -1,5 +1,4 @@
 ( function( mw, bs, $, undefined ) {
-	"use strict";
 
 	/*N-glton-pattern*/
 	var alerts = {},

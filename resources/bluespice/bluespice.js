@@ -3,7 +3,6 @@
  */
 
 var bs = ( function ( mw, $, undefined ) {
-	"use strict";
 
 	var bs = {
 		//TODO: maybe own file "bluespice.ns.js"?

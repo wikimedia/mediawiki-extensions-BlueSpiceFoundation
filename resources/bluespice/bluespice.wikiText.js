@@ -1,5 +1,4 @@
 ( function ( mw, bs, $, undefined ) {
-	"use strict";
 
 	bs.wikiText = {};
 
