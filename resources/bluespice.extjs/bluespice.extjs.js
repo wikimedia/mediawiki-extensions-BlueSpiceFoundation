@@ -1,5 +1,4 @@
 ( function ( mw, bs, $, d,undefined ) {
-	"use strict";
 
 	//This allows us to place anchortags with special data attributes
 	Ext.QuickTips.init();

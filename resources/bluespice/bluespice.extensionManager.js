@@ -3,7 +3,6 @@
  */
 
 ( function ( mw, bs, $, undefined ) {
-	"use strict";
 
 	/**
 	 * ExtensionManager object

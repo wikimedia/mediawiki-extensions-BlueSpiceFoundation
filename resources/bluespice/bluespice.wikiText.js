@@ -1,5 +1,4 @@
 ( function ( mw, bs, $, undefined ) {
-	"use strict";
 
 	bs.wikiText = {};
 
@@ -44,7 +43,7 @@
 			for( var i = 0; i < protocols.length; i++) {
 				if( me.properties.target.indexOf(protocols[i]) === 0 ) {
 					me.properties.protocol = protocols[i];
-					me.properties.target = me.properties.target.substring(  
+					me.properties.target = me.properties.target.substring(
 						protocols[i].length
 					);
 					break;
@@ -55,9 +54,9 @@
 		this.toString = function() {
 			//Build wikitext
 			return '[' +
-				this.properties.protocol + 
-				this.properties.target + 
-				( this.properties.displayText !== '' ? ' ' + this.properties.displayText : '') + 
+				this.properties.protocol +
+				this.properties.target +
+				( this.properties.displayText !== '' ? ' ' + this.properties.displayText : '') +
 				']'
 			;
 		}
@@ -79,7 +78,7 @@
 	//HINT: http://ejohn.org/blog/simple-javascript-inheritance/
 	bs.wikiText.Link = function( cfg ) {
 		var me = this;
-		
+
 		//HINT: http://www.mediawiki.org/wiki/Help:Images#Syntax
 		//Format: border|frameless|frame|thumb
 		//Resizing: {width}px|x{height}px|{width}x{height}px|upright
@@ -88,7 +87,7 @@
 		//Link: link={target}|link='' - {target} = URL/WikiPage
 		//Other specific options: alt={alternative text} & page={number} & class={html class}
 		//Caption: only if thumb|frame
-		
+
 		var wikiLinkFlags = [
 			'border', 'frameless', 'frame', 'thumb', //Format
 			'upright', //Resizing
@@ -98,13 +97,13 @@
 		var wikiLinkProperties = [
 			'alt', 'link'
 		]
-		
+
 		var additionalProperties = [
 			'escaped', 'title', 'prefixedTitle', 'nsText', 'nsId', 'thumbsize',
 			/*'align',*/ 'displayText'/*, 'caption', 'sizewidth', 'sizeheight'*/
 			//'displayText' and 'caption' are somehow the same.
 		]
-		
+
 		//TODO: make private?
 		this.properties = {
 			escaped: false,
@@ -129,7 +128,7 @@
 			sizewidth: false,
 			sizeheight: false
 		}
-		
+
 		if( typeof(cfg) === 'object' ) {
 			this.properties = $.extend( this.properties, cfg );
 			if( this.properties.title === '' && this.properties.prefixedTitle !== '' ) {
@@ -139,25 +138,25 @@
 		else{
 			parsePropertiesFromString(cfg);
 		}
-		
+
 		function parseTitle( title ) {
 			if( title.charAt( 0 ) === ':' ) {
 				me.properties.escaped = true;
 				title = title.substring( 1, title.length ); //remove leading ":""
 			}
-			
+
 			me.properties.title = title;
-			
+
 			var titleParts = title.split( ':' );
 			if( titleParts.length > 1 ) {
 				me.properties.nsText = titleParts.shift();
 				me.properties.title = titleParts.join(':');
-				
+
 				var namespaceIds = mw.config.get('wgNamespaceIds');
 				me.properties.nsId = namespaceIds[me.properties.nsText.toLocaleLowerCase()];
 			}
 		}
-		
+
 		function parsePropertiesFromString( wikiText ) {
 			//Trim left and right everything (including linebreaks) that is not a starting or ending link code
 			wikiText = wikiText.replace(/(^.*?\[\[|\]\].*?$|\r\n|\r|\n)/gm,'');
@@ -169,7 +168,7 @@
 			for( var i = 1; i < parts.length; i++ ) {
 				var part = parts[i];
 				if(part === '') continue;
-				
+
 				if( part.endsWith('px') ) { //Dependency bluespice.string.js
 					var unsuffixedValue = part.substr( 0, part.length - 2 ); //"100x100px" --> "100x100"
 					me.properties.sizewidth= unsuffixedValue;
@@ -222,7 +221,7 @@
 
 				var kvpair = part.split('=');
 				if( kvpair.length === 1 ) {
-					me.properties.displayText = part; 
+					me.properties.displayText = part;
 					me.properties.caption = part; //hopefully
 					continue;
 				}
@@ -263,16 +262,16 @@
 				if( $.inArray(property, ['left','right', 'center']) !== -1 ) continue; //Not yet used. Instead 'align' is set.
 
 				var value = this.properties[property];
-				//"link" may be intentionally empty. Therefore we have to 
+				//"link" may be intentionally empty. Therefore we have to
 				//check it _before_ "value is empty?"
-				if (property === 'link' && ( value !== null 
-					&& value !== 'false' && value !== false 
+				if (property === 'link' && ( value !== null
+					&& value !== 'false' && value !== false
 					&& typeof value !== "undefined") ) {
 					wikiText.push(property + '=' + value);
 					continue;
 				}
 
-				if( value === null ||value === false 
+				if( value === null ||value === false
 					|| value === "" || typeof value === "undefined" ) continue;
 
 				if( property === 'sizewidth' || property === 'sizeheight' ) {
@@ -300,13 +299,13 @@
 					wikiText.push( property ); //frame, border, thumb, left, right...
 					continue;
 				}
-				
+
 				wikiText.push( value ); //i.e. displayText
 			}
 
 			return '[[' + wikiText.join('|') + ']]';
 		}
-		
+
 		this.isEscaped = function( newValue ){
 			if( newValue === undefined ) { //Getter
 				return this.properties.escaped;
@@ -425,7 +424,7 @@
 		this.setSize = function(){
 			return this.properties.title;
 		}
-		
+
 		this.getRawProperties = function() {
 			return this.properties;
 		}
@@ -433,7 +432,7 @@
 
 	bs.wikiText.Template = function( cfg, title ) {
 		var me = this;
-		
+
 		this.params = {};
 		this.title = '';
 
@@ -444,7 +443,7 @@
 		else{ //WikiText "{{Some Template|with=param}}"
 			parseParamsFromString(cfg);
 		}
-		
+
 		function parseParamsFromString( wikiText ) {
 			//Trim left and right everything that is not a starting or ending template code
 			wikiText = wikiText.replace(/(^.*?\{\{|\}\}.*?$)/gm,'');
@@ -453,21 +452,21 @@
 			//TODO: What about linebreaks?
 			var parts = wikiText.split("|");
 			this.title = parts[0];
-			
+
 			for( var i = 1; i < parts.length; i++ ) {
 				//TODO: implement
 			}
 		}
-		
+
 		this.toString = function() {
 			//Build wikitext
 			var wikiText = [];
 			wikiText.push( this.title );
 
 			for( var param in this.params ) {
-				
+
 				var keyValuePair = param + "=";
-				
+
 				//TODO: handle nested "bs.wikiText.Template" objects
 				keyValuePair += this.params[param];
 			}
@@ -478,9 +477,9 @@
 			//TODO: implement
 		}
 	}
-	
+
 	bs.wikiText.Tag = function( cfg, title ) {
-		
+
 	}
-	
+
 }( mediaWiki, blueSpice, jQuery ) );
