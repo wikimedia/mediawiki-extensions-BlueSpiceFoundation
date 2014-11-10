@@ -234,7 +234,7 @@ class BsBaseTemplate extends BaseTemplate {
 			<?php
 			foreach( $this->data['bs_navigation_main'] as $key => $data ) {
 				?>
-			<div id="bs-nav-section-<?php echo $key; ?>">
+			<div id="bs-nav-section-<?php echo $key; ?>" class="bs-nav-tab">
 			<?php echo $data['content']; ?>
 			</div>
 				<?php
