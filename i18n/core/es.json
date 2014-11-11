@@ -30,7 +30,7 @@
 	"bs-two-units-ago": "Hace $1 y $2",
 	"bs-one-unit-ago": "Hace $1",
 	"bs-now": "ahora mismo",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hola, Sr. $1|Hola, Sra. $1|Hola, $1}}:",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hola, Sr. $2|Hola, Sra. $2|Hola, $2}}:",
 	"bs-email-greeting-no-receiver": "Hola:",
 	"bs-email-footer": "Este mensaje se generó automáticamente. No responda a este mensaje.",
 	"bs-userpagesettings-legend": "Configuración del usuario",

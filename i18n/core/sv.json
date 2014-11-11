@@ -57,6 +57,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Denna filtyp stöds inte.",
 	"bs-filesystemhelper-save-base64-error": "Filen kunde inte sparas.",
 	"bs-filesystemhelper-upload-base64-error": "Filen kunde inte laddas upp.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "Filen kunde inte flyttas till den temporära lagringsytan för uppladdningar.",
 	"bs-filesystemhelper-upload-local-error-create": "Filen kunde inte skapas i wikin.",
 	"bs-navigation-instructions": "Instruktioner",
 	"bs-navigation-support": "Support",
