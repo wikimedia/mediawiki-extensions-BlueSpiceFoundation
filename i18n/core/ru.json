@@ -26,7 +26,7 @@
 	"bs-two-units-ago": "$1 и $2 назад",
 	"bs-one-unit-ago": "$1 назад",
 	"bs-now": "только что",
-	"bs-email-greeting-receiver": "Здравствуйте, {{GENDER:$1|уважаемый $1|уважаемая $1|$1}}.",
+	"bs-email-greeting-receiver": "Здравствуйте, {{GENDER:$2|уважаемый|уважаемая|}} $2.",
 	"bs-email-greeting-no-receiver": "Привет,",
 	"bs-email-footer": "Это сообщение было создано автоматически. Пожалуйста, не отвечайте на это письмо.",
 	"bs-userpagesettings-legend": "Настройки пользователя",

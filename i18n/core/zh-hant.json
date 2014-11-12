@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"S8321414"
+			"S8321414",
+			"LNDDYL"
 		]
 	},
 	"bs-ns_main": "(頁面)",
@@ -62,7 +63,7 @@
 	"bs-navigation-support": "技術支援",
 	"bs-navigation-contact": "聯絡我們",
 	"bs-imagepage-download-text": "下載",
-	"bs-ns": "名字空間",
+	"bs-ns": "命名空間",
 	"bs-from-something": "(來自 $1)",
 	"bs-pref-fileextensions": "允許的檔案副檔名：",
 	"bs-pref-imageextensions": "允許的影像副檔名：",
