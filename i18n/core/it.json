@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"PeppeAeco",
-			"Baffo"
+			"Baffo",
+			"Macofe"
 		]
 	},
 	"bs-ns_main": "(Pagine)",
@@ -27,7 +28,7 @@
 	"bs-two-units-ago": "$1 e $2 fa",
 	"bs-one-unit-ago": "$1 fa",
 	"bs-now": "ora",
-	"bs-email-greeting-receiver": "Ciao {{GENDER:$1|Sig. $1|Sig.ra $1|$1}},",
+	"bs-email-greeting-receiver": "Ciao {{GENDER:$1|Sig. $2|Sig.ra $2|$2}},",
 	"bs-email-greeting-no-receiver": "Ciao,",
 	"bs-email-footer": "Questo messaggio è stato generato automaticamente. Si prega di non rispondere a questa email.",
 	"bs-userpagesettings-legend": "Impostazioni utente",

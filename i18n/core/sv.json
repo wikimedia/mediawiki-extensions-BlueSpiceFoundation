@@ -4,7 +4,8 @@
 			"Josve05a",
 			"WikiPhoenix",
 			"Fader",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Warrakkk"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -28,7 +29,7 @@
 	"bs-two-units-ago": "$1 och $2 sedan",
 	"bs-one-unit-ago": "$1 sedan",
 	"bs-now": "nu",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hej, herr $1|Hej, fru $1|Hej $1}}.",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hej, herr $2|Hej, fru $2|Hej $2}}.",
 	"bs-email-greeting-no-receiver": "Hallå,",
 	"bs-email-footer": "Det här meddelandet genererades automatiskt. Svara inte på detta mail.",
 	"bs-userpagesettings-legend": "Användarinställningar",
