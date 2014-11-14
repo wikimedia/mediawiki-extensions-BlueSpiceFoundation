@@ -3,7 +3,8 @@
 		"authors": [
 			"Cwlin0416",
 			"EagerLin",
-			"LNDDYL"
+			"LNDDYL",
+			"Liuxinyu970226"
 		]
 	},
 	"bs-extjs-ok": "確定",
@@ -33,7 +34,7 @@
 	"bs-extjs-uploading": "上傳中...",
 	"bs-extjs-confirmNavigationTitle": "跟隨連結",
 	"bs-extjs-confirmNavigationText": "你真的想要跟隨此連結？ 所有在目前頁面上的動態設定如：搜尋或排序的狀態將會遺失。",
-	"bs-extjs-allns": "(全部)",
+	"bs-extjs-allns": "（全部）",
 	"bs-extjs-filters": "篩選器",
 	"bs-extjs-filter-equals": "等於",
 	"bs-extjs-filter-equals-not": "不等於",
