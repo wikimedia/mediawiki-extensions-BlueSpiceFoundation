@@ -235,7 +235,11 @@ class ViewBaseElement {
 		elseif ( count( $this->_mItems ) ) {
 			if ( $this->_mTemplate != '' ) {
 				$output = $this->_mTemplate;
-				$output = preg_replace( '/###([-_|A-Za-z0-9]*?)###/e', "\$this->processItem('\\1')", $output );
+				$output = preg_replace_callback(
+					'/###([-_|A-Za-z0-9]*?)###/',
+					array( $this, 'processItem' ),
+					$output
+				);
 			}
 			else {
 				$output .= $this->getAutoElementOpener();
@@ -261,7 +265,11 @@ class ViewBaseElement {
 		$this->_mPresentDataset = $dataSet;
 		if($this->_mTemplate != '') {
 			$output = $this->_mTemplate;
-			$output = preg_replace( '/###([-_|A-Za-z0-9]*?)###/e', "\$this->processItem('\\1')", $output ); // TODO RBV (12.10.10 16:37): Könnte man das nicht etwas ansehnlicher mit preg_replace_callback gestalten?
+			$output = preg_replace_callback(
+				'/###([-_|A-Za-z0-9]*?)###/',
+				array( $this, 'processItem' ),
+				$output
+			);
 			foreach( $dataSet as $key => $value ) {
 				$output = str_replace('{'.$key.'}', $value, $output);
 			}
@@ -280,6 +288,8 @@ class ViewBaseElement {
 	}
 
 	protected function processItem( $request ) {
+		$request = $matches[1];
+
 		// TODO MRG20100816: Ist diese Token-Syntax irgendwo beschrieben? Ausserdem müssen wir sicherstellen, dass
 		// | nicht anderweitig verwendet wird.
 		$tokens = explode( '|', $request );
