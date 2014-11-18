@@ -11,7 +11,7 @@ class BsCommonAJAXInterface {
 	public static function getTitleStoreData( $sOptions = '{}' ) {
 		global $wgContLang;
 		$oResponse = BsCAResponse::newFromPermission( 'read' );
-		if( $oResponse->isSuccess() === false ) {
+		if ( $oResponse->isSuccess() === false ) {
 			return $oResponse;
 		}
 
@@ -39,23 +39,23 @@ class BsCommonAJAXInterface {
 
 		//Step 1: Collect namespaces
 		$aNamespaces = $wgContLang->getNamespaces();
-		asort($aNamespaces);
-		foreach( $aNamespaces as $iNsId => $sNamespaceText ) {
-			if( empty($sNamespaceText) ) {
+		asort( $aNamespaces );
+		foreach ( $aNamespaces as $iNsId => $sNamespaceText ) {
+			if ( empty( $sNamespaceText ) ) {
 				continue;
 			}
 
-			if( !in_array($iNsId, $aOptions['namespaces']) ) {
+			if ( !in_array( $iNsId, $aOptions['namespaces'] ) ) {
 				continue;
 			}
 
-			$sNormNSText = strtolower( $sNamespaceText);
-			$sNormNSText = str_replace( '_', ' ', $sNormNSText);
+			$sNormNSText = strtolower( $sNamespaceText );
+			$sNormNSText = str_replace( '_', ' ', $sNormNSText );
 
-			if( empty($sQuery) || strpos($sNormNSText, $sQuery) === 0) {
+			if ( empty( $sQuery ) || strpos( $sNormNSText, $sQuery ) === 0) {
 
 				//Only namespaces a user has the read permission for
-				$oDummyTitle =Title::newFromText($sNamespaceText.':X');
+				$oDummyTitle = Title::newFromText($sNamespaceText.':X');
 				if( $oDummyTitle->userCan('read') === false ) {
 					continue;
 				}
@@ -67,7 +67,7 @@ class BsCommonAJAXInterface {
 			}
 		}
 
-		if( empty($sQuery) ) {
+		if ( empty( $sQuery ) ) {
 			$oResponse->setPayload( $aPayload );
 			return $oResponse;
 		}
@@ -75,7 +75,7 @@ class BsCommonAJAXInterface {
 		//Step 2: Find pages
 		$oQueryTitle = Title::newFromText( $oParams->getQuery() );
 
-		if( $oQueryTitle instanceof Title === false ) {
+		if ( $oQueryTitle instanceof Title === false ) {
 			$oResponse->setPayload( $aPayload );
 			return $oResponse;
 		}
@@ -89,17 +89,28 @@ class BsCommonAJAXInterface {
 		//(https://www.mediawiki.org/wiki/Extension:TitleKey) to have a
 		//consistent case insensitive search behavior.
 		//The current approach has a major disadvantage: It does not find
-		//anything when the query contains a hyphen!
+		//anything when the query contains a hyphen! Also be careful
+		//the PrefixSearch returns SpecialPages with their aliases.
 
-		$dbr = wfGetDB(DB_SLAVE);
+		$dbr = wfGetDB( DB_SLAVE );
+
+		// We want LIKE operator behind every term,
+		// so multi term queries also bring results
+		$aLike = array();
+		$sOp = $dbr->anyString();
+		$sParams = explode( ' ', strtolower( $oQueryTitle->getText() ) );
+		foreach ( $sParams as $sParam ) {
+			$aLike[] = $sParam;
+			$aLike[] = $sOp;
+		}
+
 		$res = $dbr->select(
 			array( 'page', 'searchindex' ),
-			array( 'page_namespace', 'page_title' ),
+			array( 'page_id' ),
 			array(
 				'page_id = si_page',
 				'si_title '. $dbr->buildLike(
-					strtolower( $oQueryTitle->getText() ),
-					$dbr->anyString()
+					$aLike
 				),
 				'page_namespace' => $oQueryTitle->getNamespace()
 			),
@@ -110,36 +121,25 @@ class BsCommonAJAXInterface {
 		);
 
 		$aTitles = array();
-		foreach( $res as $row ) {
-			$aTitles[] = Title::makeTitle(
-				$row->page_namespace,
-				$row->page_title
-			);
+		foreach ( $res as $row ) {
+			$oTitle = Title::newFromID( $row->page_id );
+			if ( $oTitle->userCan( 'read' ) === false ) continue;
+
+			$aTitles[] = $oTitle;
 		}
 
-		if( $aOptions['returnQuery'] === true ) {
+		if ( $aOptions['returnQuery'] === true ) {
 			//We prepend the query title to the list of titles
 			array_unshift( $aTitles, $oQueryTitle );
 		}
 
-		foreach( $aTitles as $oTitle ) {
+		foreach ( $aTitles as $oTitle ) {
 			//If we return the query itself we have to filter out a potential
 			//match found by the search
-			if( $aOptions['returnQuery'] === true ) {
-				if( $oQueryTitle !== $oTitle && $oQueryTitle->equals( $oTitle ) ) {
+			if ( $aOptions['returnQuery'] === true ) {
+				if ( $oQueryTitle !== $oTitle && $oQueryTitle->equals( $oTitle ) ) {
 					continue;
 				}
-			}
-
-			//MediaWiki *PrefixSearch also finds SpecialPages! This is cool.
-			//Unforunately it also finds multiple aliases... therefore we
-			//filter them out and add SpecialPages at the end of the method
-			if( $oTitle->isSpecialPage() ) {
-				continue;
-			}
-
-			if( $oTitle->userCan( 'read') === false ) {
-				continue;
 			}
 
 			$sPrefixedText = $oTitle->getPrefixedText();
@@ -171,7 +171,7 @@ class BsCommonAJAXInterface {
 		foreach ( $aSpecialPages as $sSpecialPageName => $sClassName ) {
 
 			//Prevent double listing
-			if(in_array($sClassName, $aClassNames) ) {
+			if ( in_array( $sClassName, $aClassNames ) ) {
 				continue;
 			}
 
@@ -189,16 +189,16 @@ class BsCommonAJAXInterface {
 				NS_SPECIAL, wfMessage($sMsgKey)->inContentLanguage()->plain()
 			)->getPrefixedText();
 
-			if( strpos(strtolower($sSPDisplayText), $sQuery) !== 0 ) {
+			if ( strpos( strtolower( $sSPDisplayText ), $sQuery ) !== 0 ) {
 				continue;
 			}
 
-			if( $oSpecialPage->isListed() == false ) {
+			if ( $oSpecialPage->isListed() == false ) {
 				continue;
 			}
 
 			//Filter out SpecialPages that the current user may not execute
-			if( !$oSpecialPage->userCanExecute( $oContext->getUser() ) ) {
+			if ( !$oSpecialPage->userCanExecute( $oContext->getUser() ) ) {
 				continue;
 			}
 
@@ -214,7 +214,7 @@ class BsCommonAJAXInterface {
 		}
 
 		//We want the result to be sorted by its display text!
-		array_multisort($aSortHelper, SORT_NATURAL, $aSPDataSets);
+		array_multisort( $aSortHelper, SORT_NATURAL, $aSPDataSets );
 
 		$aPayload += $aSPDataSets;
 
