@@ -155,9 +155,6 @@ class BsWebInstaller extends WebInstaller {
 			'callback' => array( $installer, 'createExtensionTables' )
 		);
 
-
-		#BsConfig::saveSettings();
-		error_log(var_export(BsConfig::getRegisteredVars(),1));
 		return $this->installSteps;
 	}
 
