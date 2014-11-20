@@ -84,3 +84,7 @@ body.x-body {
 .x-window {
 	line-height: normal;
 }
+
+.x-btn-toolbar {
+	text-decoration: none !important;
+}
