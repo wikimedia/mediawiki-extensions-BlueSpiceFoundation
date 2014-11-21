@@ -13,7 +13,7 @@ class BsFileSystemHelper {
 			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
 		if (!empty($sSubDirName) && !preg_match('#^[a-zA-Z/\\\]+#', $sSubDirName)) {
 			wfProfileOut(__METHOD__);
-			return Status::newFatal('Requested subdirectory of ' . BS_DATA_DIR . ' contains illegal chars');
+			return Status::newFatal('Requested subdirectory of ' . BS_CACHE_DIR . ' contains illegal chars');
 		}
 		if (!is_dir(BS_CACHE_DIR)) {
 			if (!mkdir(BS_CACHE_DIR, 0777, true)) {
@@ -33,6 +33,8 @@ class BsFileSystemHelper {
 			wfProfileOut(__METHOD__);
 			return Status::newFatal(BS_CACHE_DIR . ' is not accessible');
 		}
+
+		return Status::newGood(BS_CACHE_DIR . '/' . $sSubDirName);
 	}
 
 	/**
