@@ -10,5 +10,8 @@
 	"bs-extjs-no": "Nee",
 	"bs-extjs-edit": "Bewurkje",
 	"bs-extjs-error": "Flater",
-	"bs-extjs-browse": "Blêdzje"
+	"bs-extjs-warning": "Warskôging",
+	"bs-extjs-label-namespace": "Nammeromte",
+	"bs-extjs-browse": "Blêdzje",
+	"bs-extjs-title-warning": "Warskôging"
 }
