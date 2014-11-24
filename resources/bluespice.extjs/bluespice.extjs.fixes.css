@@ -81,7 +81,8 @@ body.x-body {
 	height: 34px;
 }
 
-.x-window {
+#content .x-window, .x-window,
+#content .x-panel, .x-panel {
 	line-height: normal;
 }
 
