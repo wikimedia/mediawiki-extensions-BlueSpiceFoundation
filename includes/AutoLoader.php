@@ -29,7 +29,6 @@ $GLOBALS['wgAutoloadClasses']['BsConfig'] = __DIR__."/Config.class.php";
 $GLOBALS['wgAutoloadClasses']['BSDebug'] = __DIR__."/Debug.php";
 $GLOBALS['wgAutoloadClasses']['BsException'] = __DIR__."/Exception.class.php";
 $GLOBALS['wgAutoloadClasses']['BsExtensionManager'] = __DIR__."/ExtensionManager.class.php";
-$GLOBALS['wgAutoloadClasses']['BsFileManager'] = __DIR__."/FileManager.class.php";
 $GLOBALS['wgAutoloadClasses']['BsMailer'] = __DIR__."/Mailer.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRBaseResponse'] = __DIR__."/XHRBaseResponse.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRJSONResponse'] = __DIR__."/XHRBaseResponse.class.php";
