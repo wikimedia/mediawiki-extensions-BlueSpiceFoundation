@@ -68,6 +68,7 @@ class BsCoreHooks {
 		$out->addModuleMessages( 'ext.bluespice.messages' );
 		$out->addModules( 'ext.bluespice.extjs' );
 		$out->addModuleStyles( 'ext.bluespice.extjs.styles' );
+		$out->addModuleStyles( 'ext.bluespice.compat.vector.styles' );
 
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
 
@@ -469,6 +470,37 @@ class BsCoreHooks {
 		self::addDownloadTitleAction($skin, $template);
 		self::addProfilePageSettings($skin, $template);
 
+		//Compatibility to non-BsBaseTemplate skins
+		//This is pretty hacky because Skin-object won't expose Template-object
+		//in 'SkinAfterContent' hook (see below)
+		if( $template instanceof BsBaseTemplate === false ) {
+			self::$oCurrentTemplate = $template; //save for later use
+		}
+
+		return true;
+	}
+
+	protected static $oCurrentTemplate = null;
+
+	/**
+	 * At the moment this is just for compatibility to MediaWiki default
+	 * Vector skin. Unfortunately this is too late to add ResourceLoader
+	 * modules. Therefore the "ext.bluespice.compat.vector.styles" module get's
+	 * always added in "BeforePageDisplay"
+	 * @param string $data
+	 * @param Skin $skin
+	 * @return boolean
+	 */
+	public static function onSkinAfterContent(  &$data, $skin ) {
+		if( self::$oCurrentTemplate == null ) {
+			return false;
+		}
+
+		foreach( self::$oCurrentTemplate->data['bs_dataAfterContent'] as $sExtKey => $aData ) {
+			$data .= '<!-- '.$sExtKey.' BEGIN -->';
+			$data .= $aData['content'];
+			$data .= '<!-- '.$sExtKey.' END -->';
+		}
 		return true;
 	}
 
@@ -558,7 +590,7 @@ class BsCoreHooks {
 		$template->data['bs_dataAfterContent']['profilepagesettings'] = array(
 			'position' => 5,
 			'label' => $sLabel,
-			'content' =>  $oProfilePageSettingsView
+			'content' => $oProfilePageSettingsView
 		);
 	}
 }

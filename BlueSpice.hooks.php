@@ -10,7 +10,7 @@ $wgHooks['UserGetRights'][] = 'BsCoreHooks::onUserGetRights';
 $wgHooks['userCan'][] = 'BsCoreHooks::onUserCan';
 $wgHooks['UploadVerification'][] = 'BsCoreHooks::onUploadVerification';
 $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'BsCoreHooks::onSkinTemplateOutputPageBeforeExec';
-
+$wgHooks['SkinAfterContent'][] = 'BsCoreHooks::onSkinAfterContent';
 $wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
 
 // START cache invalidation hooks
