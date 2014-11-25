@@ -27,14 +27,14 @@ class BSMigrationHelper{
 			'inhaltsverzeichnis',
 		);
 //		public $sourceFolderBaseName = '';
-	
+
 	public function __construct () {
 		$this->oResultDocument = new DOMDocument();
 		$this->oResultDocument->loadXML('<mediawiki></mediawiki>');
 		$this->oResultDocument->formatOutput = true;
 	}
-		
-		public function processDocument( $oDOC, &$sWikiText ) {
+
+	public function processDocument( $oDOC, &$sWikiText ) {
 		//Collect some MetaData
 		$oXPath = new DOMXPath($oDOC);
 		//$oBookNameNode = $oXPath->query( '/html/body/div/p[3]')->item(0);
@@ -64,12 +64,12 @@ class BSMigrationHelper{
 		//$this->output( $oRevisionNode->nodeValue);
 		//$oDateNode = $oXPath->query( '/html/body/div/p[17]')->item(0);
 		//$this->output( $oDateNode->nodeValue);
-		
+
 		//Process the body content
 		$oBody = $oDOC->getElementsByTagName('body')->item(0);
 		foreach( $oBody->childNodes as $oBodyElement ) {
 			if( $oBodyElement instanceof DOMElement == false ) continue;
-			
+
 			if( strpos( $oBodyElement->getAttribute('class'), 'WordSection' ) !== false ){
 				$this->output('Processing WordSection "'.$oBodyElement->getAttribute('class') ).'"';
 				$this->processWordSection( $oBodyElement, $sWikiText );
@@ -79,9 +79,9 @@ class BSMigrationHelper{
 			}
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param DOMElement $oBodyElement
 	 * @param string $sWikiText
 	 */
@@ -92,7 +92,7 @@ class BSMigrationHelper{
 			$this->processWordSectionElement( $oWSElement, $sWikiText );
 		}
 	}
-	
+
 	public function processWordSectionElement( $oWSElement, &$sWikiText ) {
 		//$sWikiText = preg_replace('/&#x.*?;/', '', $sWikiText);
 		if( $oWSElement instanceof DOMElement == false ) return;
@@ -107,8 +107,8 @@ class BSMigrationHelper{
 			$sHeading = preg_replace( '# ?(\d+)?\.(\d+) #', '', $sHeading );
 			$sHeading = preg_replace( '#^[0-9]+ #', '', $sHeading );
 			$sHeading = preg_replace( '#^\d. |^\. #', '', $sHeading );
-			
-			
+
+
 			if( empty( $sHeading ) ) return;
 			if( in_array( strtolower( $sHeading ), $this->aSkipHeadlines ) ) {
 				$this->output('Skipping headline "'.$sHeading.'" found in Array >>SkipHeadlines<<');
@@ -189,9 +189,9 @@ var_dump( $sListItem );
 			$this->processInline( $oWSElement, $sWikiText );
 			//$sWikiText .= "\n";
 			$sWikiText = trim( $sWikiText );
-			
-			if( $sClass == 'MsoNormal' 
-					|| strpos( $sClass, 'Deckblatt') !== false 
+
+			if( $sClass == 'MsoNormal'
+					|| strpos( $sClass, 'Deckblatt') !== false
 					|| strpos( $sClass, 'MsoListBullet') !== false ) {
 				$sWikiText .= "\n\n";
 			}
@@ -201,7 +201,7 @@ var_dump( $sListItem );
 			$this->processTable( $oWSElement, $sWikiText );
 		}
 	}
-	
+
 	public function processInline( $oWSElement, &$sWikiText ) {
 		$sWikiText = str_replace( "\n ", "\n", $sWikiText );
 
@@ -273,19 +273,19 @@ var_dump( $sListItem );
 					}
 					break;
 			}
-			
+
 			$sWikiText .= $sStartingTag;
-			
+
 			if( $oChild->hasChildNodes() ) {
 				$this->processInline($oChild, $sWikiText);
 			}
-			
+
 			$sWikiText .= $sClosingTag;
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param DOMElement $oWSElement
 	 * @param string $sWikiText
 	 */
@@ -299,9 +299,9 @@ var_dump( $sListItem );
 		$sWikiText .= "\n".'|}'."\n\n";
 		wfRunHooks( 'BSMigrationHelperAfterProcessingTable', array( $this, $oWSElement, &$sWikiText) );
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param DOMElement $oWSElement
 	 * @param string $sWikiText
 	 */
@@ -312,18 +312,18 @@ var_dump( $sListItem );
 			}
 			return;
 		}
-		
+
 		if( $oTableRow->nodeName != 'tr' ) return;
 		$sWikiText .= "\n".'|-'."\n";
 //		$sWikiText .= '|-';
-		
+
 		foreach( $oTableRow->childNodes as $oChild ) { //td
 			$this->processTableData($oChild, $sWikiText);
 		}
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @param DOMElement $oChild "TD"
 	 * @param string $sWikiText
 	 */
@@ -345,7 +345,7 @@ var_dump( $sListItem );
 			$sWikiText = trim($sWikiText, "\n");
 		}
 	}
-	
+
 	/**
 	 * !!!!!!!unused so far!!!!!!!!!!!!!
 	 * @param type $pageName
@@ -354,16 +354,16 @@ var_dump( $sListItem );
 	private function addPageToResultWikiText( $pageName, $sText ) {
 		$this->output( 'Creating article "'.$pageName.'"...'."\n" );
 
-		file_put_contents( 
+		file_put_contents(
 			$this->sTarget.'/'.
 			str_replace(
-				array(' ', ':'), 
+				array(' ', ':'),
 				'_', utf8_decode($pageName)
-			).'.wiki', 
+			).'.wiki',
 			$sText
 		);
 	}
-	
+
 	/**
 	 * adds content to the import xml file
 	 * @param array $aArtcles | array( 'Articlename' => 'Wikitext' );
@@ -390,9 +390,9 @@ var_dump( $sListItem );
 		$resultPageElement->appendChild( $resultPageRevisonElement );
 		$this->oResultDocument->documentElement->appendChild($resultPageElement);
 		$this->numberOfArticlesCreated++;
-		
+
 	}
-	
+
 	/**
 	 * save the given data to a xml file
 	 * @param string $sPath | Path to the xml file you want to create
@@ -403,11 +403,11 @@ var_dump( $sListItem );
 		}
 		$this->oResultDocument->save( $sPath.'/result.xml' );
 	}
-	
+
 	public function output( $sOutput ) {
 		echo "\n".$sOutput;
 	}
-	
+
 	/**
 	 * if you want to create a bookshelf tag automatically on every article
 	 * you need to set a booktitle
@@ -416,7 +416,7 @@ var_dump( $sListItem );
 	public function setBookTitle( $sBookTitle ) {
 		$this->sBookTitle = $sBookTitle;
 	}
-	
+
 	/**
 	 * this mthod just prepends a given string to another string
 	 * @param string $sPrependText
@@ -426,7 +426,7 @@ var_dump( $sListItem );
 	public function prependString( $sPrependText, $sText ) {
 		return $sPrependText.$sText;
 	}
-	
+
 	/**
 	 * returns an array of all files that are processed
 	 * i. e. array( 'filesource' => 'mediawiki filename' )
@@ -435,7 +435,7 @@ var_dump( $sListItem );
 	public function getAllFiles() {
 		return $this->aFiles;
 	}
-	
+
 	/**
 	 * If you want to extract images of this document you should set the source folder where the
 	 * image is referenced i. e. /foo/bar/mysite.htm contains a link to images/myimage.jpg
@@ -445,11 +445,11 @@ var_dump( $sListItem );
 	public function setSourceFolderRealPath( $sPath ) {
 		$this->sSourceFolderRealPath = $sPath;
 	}
-	
+
 	public function setSavePath( $sSavePath ) {
 		$this->sSavePath = $sSavePath;
 	}
-	
+
 	public function saveDocumentFiles( $sPath = null ) {
 		if( $sPath === null ) {
 			$sPath = $this->sSavePath.'/images';
@@ -472,7 +472,7 @@ var_dump( $sListItem );
 			}
 		}
 	}
-	
+
 	public function printFileCreateErrors() {
 		if( count( $this->aFilesNotCreated ) ) {
 			echo "\n\nFollowing files/images had issues creating:\n";
@@ -483,7 +483,7 @@ var_dump( $sListItem );
 			echo "\n* ".$sFilename;
 		}
 	}
-	
+
 	public function printFileCreateSuccess() {
 		if( count( $this->aFilesCreated ) ) {
 			echo "\n\nFollowing files/images were created";
@@ -492,11 +492,11 @@ var_dump( $sListItem );
 			echo "\n* ".$sFilename;
 		}
 	}
-	
+
 	public function setCurrentTargetArticleName( $sArticleName ) {
 		$this->sCurrentTargetArticleName = $sArticleName;
 	}
-	
+
 	public function setMainArticleName( $sArticleName ) {
 		$this->sMainArticleName = $sArticleName;
 	}
