@@ -33,9 +33,8 @@ class BsWebInstaller extends WebInstaller {
 
 	public function __construct( \WebRequest $request ) {
 		 // BlueSpice
-		global $wgMessagesDirs, $wgExtensionMessagesFiles;
+		global $wgMessagesDirs;
 		$wgMessagesDirs['BlueSpiceInstaller'] = dirname( dirname( __DIR__ ) ) . '/i18n/installer';
-		$wgExtensionMessagesFiles['BlueSpiceInstaller'] = dirname( dirname( __DIR__ ) ) . '/languages/BlueSpice.Installer.i18n.php';
 
 		parent::__construct( $request );
 		$this->output = new BsWebInstallerOutput( $this );
