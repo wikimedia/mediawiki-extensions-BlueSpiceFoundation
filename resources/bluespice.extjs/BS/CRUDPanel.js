@@ -67,6 +67,8 @@ Ext.define( 'BS.CRUDPanel', {
 
 		this.addEvents( 'button-add','button-edit','button-delete' );
 
+		$(document).trigger('BSCRUDPanelInitComponent', [this] );
+
 		this.afterInitComponent( arguments );
 
 		this.callParent(arguments);
