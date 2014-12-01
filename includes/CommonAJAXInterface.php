@@ -96,8 +96,8 @@ class BsCommonAJAXInterface {
 
 		// We want LIKE operator behind every term,
 		// so multi term queries also bring results
-		$aLike = array();
 		$sOp = $dbr->anyString();
+		$aLike = array( '', $sOp );
 		$sParams = explode( ' ', strtolower( $oQueryTitle->getText() ) );
 		foreach ( $sParams as $sParam ) {
 			$aLike[] = $sParam;

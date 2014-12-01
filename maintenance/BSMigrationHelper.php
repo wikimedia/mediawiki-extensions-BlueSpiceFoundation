@@ -152,7 +152,7 @@ class BSMigrationHelper{
 
 			if( $sClass == 'MsoListParagraphCxSpMiddle' ) {
 				$sListItem = str_replace( array("\n", "\r", '&nbsp;'), ' ', $oWSElement->nodeValue);
-var_dump( $sListItem );
+
 				$sReplace = '*';
 				$count = 0;
 				//file_put_contents( '/tmp/listitem.txt', $sListItem."\n", FILE_APPEND );
