@@ -589,21 +589,35 @@ class BsBaseTemplate extends BaseTemplate {
 		?>
 <div id="p-search" role="search">
 	<h3<?php $this->html( 'userlangattributes' ) ?>><label for="searchInput"><?php $this->msg( 'search' ) ?></label></h3>
-	<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
-		<?php if ( $this->data['rtl'] ) { ?>
-		<?php echo $this->makeSearchButton( 'image', array( 'id' => 'searchButton', 'src' => $this->getSkin()->getSkinStylePath( 'resources/images/search-rtl.png' ), 'width' => '12', 'height' => '13', 'class' => 'icon-search-light' ) ); ?>
-		<?php } ?>
-		<?php echo $this->makeSearchInput( $this->data['bs_search_input'] ); ?>
-		<?php if ( !$this->data['rtl'] ) { ?>
-		<?php echo $this->makeSearchButton( 'image', array( 'id' => 'searchButton', 'src' => $this->getSkin()->getSkinStylePath( 'resources/images/search-ltr.png' ), 'width' => '12', 'height' => '13', 'class' => 'icon-search-light' ) ); ?>
-		<?php } ?>
-		<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
-		<?php
-		foreach( $this->data['bs_search_hidden_fields'] as $key => $value ) {
-			echo Html::hidden($key, $value);
-		}
-		?>
-	</form>
+		<form action="<?php $this->text( 'wgScript' ) ?>" id="searchform">
+			<?php
+			$class = $this->data['rtl'] ? "search-rtl" : "search-ltr";
+			$attrs = array(
+				'id' => 'searchButton',
+				'type' => 'submit',
+				'name' => 'button',
+				'alt' => wfMessage( "searchbutton" )->plain(),
+				'width' => '12',
+				'height' => '13',
+				'class' => $class . ' icon-search-light'
+			);
+			$attrs += Linker::tooltipAndAccesskeyAttribs( 'search-fulltext' );
+
+			if ( $this->data['rtl'] ) {
+				echo HTML::element( 'button', $attrs );
+			}
+			echo $this->makeSearchInput( $this->data['bs_search_input'] );
+			if ( !$this->data['rtl'] ) {
+				echo HTML::element( 'button', $attrs );
+			}
+			?>
+			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
+			<?php
+			foreach ( $this->data['bs_search_hidden_fields'] as $key => $value ) {
+				echo Html::hidden( $key, $value );
+			}
+			?>
+		</form>
 </div>
 <?php
 	}
