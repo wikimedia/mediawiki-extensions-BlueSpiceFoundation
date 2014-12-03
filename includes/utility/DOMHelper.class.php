@@ -5,7 +5,7 @@
  * @subpackage Utility
  */
 class BsDOMHelper {
-	
+
 	/**
 	 * Finds the previous DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
@@ -21,7 +21,7 @@ class BsDOMHelper {
 		}
 		return static::getPreviousDOMElementSibling( $oNode->previousSibling, $aElementNames );
 	}
-	
+
 	/**
 	 * Finds the next DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
@@ -37,7 +37,7 @@ class BsDOMHelper {
 		}
 		return static::getNextDOMElementSibling( $oNode->nextSibling, $aElementNames );
 	}
-	
+
 	/**
 	 * Finds the previous DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
@@ -53,7 +53,7 @@ class BsDOMHelper {
 		}
 		return static::getParentDOMElement( $oNode->parentNode, $aElementNames );
 	}
-	
+
 	/**
 	 * Finds the previous DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
@@ -69,9 +69,9 @@ class BsDOMHelper {
 		}
 		return static::getNextDOMElementSibling( $oNode->firstChild, $aElementNames );
 	}
-	
+
 	/**
-	 * Adds one or more entries to the "class" attribute of all childNodes in a 
+	 * Adds one or more entries to the "class" attribute of all childNodes in a
 	 * recursive manner
 	 * @param DOMElement $oNode
 	 * @param array $aClasses
@@ -80,7 +80,7 @@ class BsDOMHelper {
 	public static function addClassesRecursive( $oNode, $aClasses, $bOverrideExisting = false ) {
 		$sNodesClasses = $oNode->getAttribute('class');
 		$aNodesClasses = explode( ' ', $sNodesClasses );
-		$oNode->setAttribute( 
+		$oNode->setAttribute(
 			'class',
 			implode( ' ', array_unique( array_merge( $aNodesClasses, $aClasses ) ) )
 		);
@@ -91,9 +91,9 @@ class BsDOMHelper {
 			static::addClassesRecursive($oChild, $aClasses, $bOverrideExisting);
 		}
 	}
-	
+
 	/**
-	 * 
+	 * Inserts a DOMNode after another DOMNode in the DOM tree
 	 * @param DOMNode $oNode
 	 * @param DOMNode $oRefNode
 	 */
@@ -105,4 +105,69 @@ class BsDOMHelper {
 			$oRefNode->parentNode->appendChild($oNode);
 		}
 	}
+
+	/**
+	 * HINT: http://stackoverflow.com/questions/1604471/how-can-i-find-an-element-by-css-class-with-xpath
+	 * @param DOMDocument $oDOMDoc
+	 * @param array $aClassNames
+	 * @return array of DOMElement
+	 */
+	public static function getElementsByClassNames( $oDOMDoc, $aClassNames ) {
+		$oDOMXPath = new DOMXPath( $oDOMDoc );
+		$aClassQuery = array();
+		foreach( $aClassNames as $sClassName ) {
+			# //*[contains(concat(' ', normalize-space(@class), ' '), ' Test ')]
+			$aClassQuery[] = "contains(concat(' ', normalize-space(@class), ' '), ' $sClassName ')";
+		}
+		$sQuery = '//*['.implode( ' or ', $aClassQuery ).']';
+		$oElements = $oDOMXPath->query( $sQuery );
+
+		$aElements = array();
+		foreach( $oElements as $oElement ) {
+			$aElements[] = $oElement;
+		}
+
+		return $aElements;
+	}
+
+	/**
+	 * Returns an array of DOMElements of given tag names. The returned array
+	 * is ordered according to the provided tag name array
+	 * @param DOMDocument $oDOMDoc
+	 * @param array $aTagnames
+	 * @return array of DOMElements Empty array if no tags of the specified
+	 * names were found of provided list was no array
+	 */
+	public static function getElementsByTagNames( $oDOMDoc, $aTagnames ) {
+		$aElements = array();
+		if( !is_array( $aTagnames ) ) {
+			return $aElements;
+		}
+		foreach( $aTagnames as $sTagname ) {
+			$oElements = $oDOMDoc->getElementsByTagName( $sTagname );
+			foreach( $oElements as $oElement ) {
+				$aElements[] = $oElement;
+			}
+		}
+		return $aElements;
+	}
+
+	/**
+	 * Tries to remove a DOMElement from the DOM tree.
+	 * @param DOMElement $oEl
+	 * @return boolean true on success, false if the operation could not be
+	 * performed
+	 */
+	public static function removeElement($oEl) {
+		if( !is_object( $oEl ) ) {
+			return false;
+		}
+		$oParent = $oEl->parentNode;
+		if( $oParent instanceof DOMNode === false ) {
+			return false;
+		}
+		$oParent->removeChild( $oEl );
+		return true;
+	}
+
 }
