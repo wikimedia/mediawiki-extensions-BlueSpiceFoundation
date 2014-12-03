@@ -496,11 +496,16 @@ class BsCoreHooks {
 			return false;
 		}
 
-		foreach( self::$oCurrentTemplate->data['bs_dataAfterContent'] as $sExtKey => $aData ) {
-			$data .= '<!-- '.$sExtKey.' BEGIN -->';
-			$data .= $aData['content'];
-			$data .= '<!-- '.$sExtKey.' END -->';
+		if ( isset( self::$oCurrentTemplate->data['bs_dataAfterContent'] ) ) {
+			$aData = self::$oCurrentTemplate->data['bs_dataAfterContent'];
+
+			foreach ( $aData as $sExtKey => $aData ) {
+				$data .= '<!-- '.$sExtKey.' BEGIN -->';
+				$data .= $aData['content'];
+				$data .= '<!-- '.$sExtKey.' END -->';
+			}
 		}
+
 		return true;
 	}
 
