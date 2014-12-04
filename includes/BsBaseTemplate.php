@@ -530,6 +530,23 @@ class BsBaseTemplate extends BaseTemplate {
 		else
 			$aOut[] = "<span class='bs-personal-not-loggedin'>" . Linker::link(SpecialPage::getTitleFor('login'), wfMessage("login")->plain()) . "</span>";
 
+		$this->printPersonalInfo($aOut);
+
+		$personalTools = $this->getPersonalTools();
+		$aOut[] = '    <div id="bs-personal-menu-container">';
+		$aOut[] = '      <ul id="bs-personal-menu" '.$this->data['userlangattributes'].'>';
+		foreach ( $personalTools as $key => $item ) {
+			$aOut[] = $this->makeListItem( $key, $item );
+		}
+		$aOut[] = '      </ul>';
+		$aOut[] = '    </div>';
+		$aOut[] = '  </div>';
+		$aOut[] = '</div>';
+
+		echo implode("\n", $aOut);
+	}
+
+	protected function printPersonalInfo(&$aOut){
 		$aOut[] = '<ul id="bs-personal-info">';
 		foreach( $this->data['bs_personal_info'] as $item ) {
 			$sActiveClass = $item['active'] ? 'active' : '';
@@ -550,19 +567,7 @@ class BsBaseTemplate extends BaseTemplate {
 			);
 		}
 		$aOut[] = '</ul>';
-
-		$personalTools = $this->getPersonalTools();
-		$aOut[] = '    <div id="bs-personal-menu-container">';
-		$aOut[] = '      <ul id="bs-personal-menu" '.$this->data['userlangattributes'].'>';
-		foreach ( $personalTools as $key => $item ) {
-			$aOut[] = $this->makeListItem( $key, $item );
-		}
-		$aOut[] = '      </ul>';
-		$aOut[] = '    </div>';
-		$aOut[] = '  </div>';
-		$aOut[] = '</div>';
-
-		echo implode("\n", $aOut);
+		return true;
 	}
 
 	protected function printSkyScraper() {
