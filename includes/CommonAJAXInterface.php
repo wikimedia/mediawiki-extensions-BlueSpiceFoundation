@@ -507,6 +507,9 @@ class BsCommonAJAXInterface {
 		if ( !$image ) {
 			$image = wfLocalFile( $name );
 		}
+		if ( !$image ) {
+			return $image;
+		}
 		return $image->getUrl();
 	}
 }
