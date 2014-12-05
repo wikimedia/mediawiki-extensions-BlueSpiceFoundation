@@ -297,7 +297,8 @@ class BsBaseTemplate extends BaseTemplate {
 					<li id="bs-cactions-button" class="">
 						<a href="#" class="icon-arrow-down9-after"><span><?php $this->msg( 'bs-tools-button' ) ?></span></a>
 						<div class="menu">
-							<ul<?php $this->html( 'userlangattributes' ) ?>>
+							<div class="bs-personal-menu-top"></div>
+							<ul<?php $this->html( 'userlangattributes' ) ?> class="bs-personal-menu">
 							<?php foreach ( $actions as $key => $item){
 								echo $this->makeListItem( $key, $item );
 							}?>

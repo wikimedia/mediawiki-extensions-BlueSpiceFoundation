@@ -79,6 +79,10 @@ class BsWidgetListHelper {
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'WidgetListHelper', $this->oTitle->getPrefixedDBkey() );
 		$aData = BsCacheHelper::get( $sKey );
 
+		if (is_null(BsExtensionManager::getExtension( "WidgetBar" ))){
+			return array();
+		}
+
 		if( $aData !== false ) {
 			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching WidgetList page content from cache' );
 			$sArticleContent = $aData;
