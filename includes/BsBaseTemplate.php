@@ -499,14 +499,16 @@ class BsBaseTemplate extends BaseTemplate {
 		}
 
 		$aOut = array();
-		foreach ($aPortlets as $sKey => $vPortlet) {
-			if ($vPortlet instanceof ViewBaseElement) {
-				$aOut[] = $vPortlet->execute();
-			} else {
-				$aOut[] = $vPortlet; //Check for string?
+		if ( wfRunHooks( "BSBaseTemplateGetNavigationSidebar", array( $this, &$aPortlets, &$aOut ) ) ) {
+			foreach ( $aPortlets as $sKey => $vPortlet ) {
+				if ( $vPortlet instanceof ViewBaseElement ) {
+					$aOut[] = $vPortlet->execute();
+				} else {
+					$aOut[] = $vPortlet; //Check for string?
+				}
 			}
 		}
-		return implode("\n", $aOut);
+		return implode( "\n", $aOut );
 	}
 
 	/**
