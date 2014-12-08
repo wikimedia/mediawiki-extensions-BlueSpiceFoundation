@@ -38,7 +38,7 @@
 	"bs-extjs-filters": "Label for filters\n{{Identical|Filter}}",
 	"bs-extjs-filter-equals": "Label for equals\n{{Identical|equals}}",
 	"bs-extjs-filter-equals-not": "Label for equals not\n{{Identical|equals not}}",
-	"bs-extjs-filter-contains": "Label for contains\n{{Identical|contains}}",
+	"bs-extjs-filter-contains": "Label for contains\n{{Identical|Contain}}",
 	"bs-extjs-filter-contains-not": "Label for contains not\n{{Identical|contains not}}",
 	"bs-extjs-filter-starts-with": "Label for starts with\n{{Identical|starts with}}",
 	"bs-extjs-filter-ends-with": "Label for ends with\n{{Identical|ends with}}",
