@@ -102,6 +102,7 @@ $GLOBALS['wgAutoloadClasses']['ViewTagError'] = __DIR__ . '/outputhandler/views/
 $GLOBALS['wgAutoloadClasses']['ViewTagErrorList'] = __DIR__ . '/outputhandler/views/view.TagErrorList.php';
 $GLOBALS['wgAutoloadClasses']['ViewUserBarElement'] = __DIR__ . '/outputhandler/views/view.UserBarElement.php';
 $GLOBALS['wgAutoloadClasses']['ViewUserMiniProfile'] = __DIR__ . '/outputhandler/views/view.UserMiniProfile.php';
+$GLOBALS['wgAutoloadClasses']['ViewWidget'] = __DIR__ . '/outputhandler/views/view.Widget.php';
 
 //Overrides
 // Replace Mediawikis ApiFormatJson class with our own to prevent some errors with the application/json header.
