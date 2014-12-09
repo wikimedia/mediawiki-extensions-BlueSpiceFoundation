@@ -5,138 +5,118 @@
 
 = BlueSpice release notes =
 
-== BlueSpice for MediaWiki 2.22.1a ==
-Date: 2014-02-19
-This is a patch of the patch release
+==BlueSpice 2.23.0 beta==
+'''DO NOT USE THIS IN PRODUCTION.'''
 
-=== Changes since 2.22.1 ===
-* VisualEditor: Fixed resize error in Firefox and Chrome
+BlueSpice 2.23.0 is a minor and maintenance release.
 
-== BlueSpice for MediaWiki 2.22.1 ==
-Date: 2014-02-13
-This is a patch and maintenance release.
+===New features===
+* BlueSpice is translated by the [https://translatewiki.net translatewiki.net] community
+* Completely revised English and German localisation
+* Added memcached support
+* Rewrite of BlueSpice skin
+* Added compatibility to vector skin
+* Added package installer for MediaWiki and BlueSpice
+* Redesign of user and BlueSpice preferences layout
+* Added support to delete multiple rows in some managers
+* Updated TinyMCE to version 4.1.3
+* Files can be found by their category in InsertFile
 
-=== Changes since 2.22.0 ===
-==== extensions/BlueSpiceFoundation ====
-* Fixes & changes to support MW updater
-* Use database specific escape methods to escape string for sql
-* Moved some messages from BSFoundation to respective extensions
-* Function for uploading base to tmp added
-* Had to separate the query in getCategoryStoreData because it was to expensive - ended in dead lock
-* Removed legacy code
-* Fix to stay compatible with MW 1.23
-* Fixed several bugs in InsertFile in combination with VisualEditor and getCategoryStoreData
-* Now using ExtJS StateManager
-* Fixed a bug in getCategoryStoreData which occurred, when a category title could not be created
-* Fixed bug that categories which did not exist anymore were displayed
-* Improved code of CommonAJAXInterface
-* Fixed inheritance issues with CRUDGridPanel
-* Improved list formatting
-* Added $wgExternalLinkTarget = '_blank'; as default
-* Changed wrong variable name in getUsersForVar
-* Added subpage check before rewrite links to user subpages
-* Removed MW::BlueSpiceScriptPath
-* Fixed methods args in HTMLFormFieldOverrides
-* Fixed display of extension version & status on Special:Version
+===Change log===
+====BlueSpiceFoundation====
+* Added download button to file pages
+* Removed support for mw < 1.21
+* Added audit method for CSS selectors to find out which do not match
+* PasteImage fix for preg_match overflow
+* Added BsBaseTemplate class
+* Don't show username when user is not logged in
+* Changed searchbox ID to avoid issues with MW searchSuggest
+* Resized profile image
+* New API base class for use with ExtJS stores
+* Minor profiling fix
+* Restored compatiblity to mw 1.22
+* Fixed action buttons in CRUDGridPanel
+* Added TitleCombo for dialogs
+* Removed strict mode, reset caller to null in some cases
+* Added make method to create selModel
+* Config class change for preferences
+* Fixed UTF-8 issue in BsTagFinder
+* Replaced deprecated User::editToken call (thanks to umherirrender)
 
-==== extensions/BlueSpiceExtension ====
-* Fixes & changes to support MW updater
-* Remove some easily removed $wgTitles from BlueSpiceExtensions (thanks to Chad Horohoe)
+====BlueSpiceExtensions====
+=====Changes affecting some or all extensions=====
+* Removed hardcoded alert window titles
+* Removed use of deprecated wfMsg, wfMsgForContent, wfMsgExt
+* Added cache support to some extensions
 
-* Authors: Don't link to deleted users' user pages.
-* Dashboards: Fixed bug that portlets which were closed are still present after reload
-* ExtendedSearch: Index specialpages by default
-* ExtendedSearch: Added possibility to search for dots and improved basic searching
-* ExtendedSearch: Tags are no longer parsed to prevent errors while indexing
-* ExtendedSearch: Added use of sanitizer for logging of search
-* ExtendedSearch: Added new text field type for autocomplete. WordDelimiterFilterFactory does its job but is not made for it so changed to EdgeNGramFilterFactory
-* ExtendedSearch: getLang is deprecated so user getLanguage instead
-* ExtendedSearch: If Solr does not respond extendedsearch still crashed when some actions are performed
-* ExtendedSearch: All behaviour switches are removed from search index
-* ExtendedSearch: Surrounded result head with a table to ensure if the title is very long that it is not displayed below icon
-* ExtendedSearch: If a redirect to an article exists ExtendedSearch more like this returned the redirect as first result
-* ExtendedSearch: Fixed spellchecker returned strange results because of wrong tokenizer
-* ExtendedSearch: No more output in index_prog.txt file while indexing on cmd
-* Flexiskin: Fix for Flexiskin to make the logo work again
-* Flexiskin: Add skin validation
-* InsertCategory: Force InsertCategory to request a reload from server not from cache
-* InsertCategory: Show InsertCategory link in more menu on all namespaces expect special
-* InsertFile: Page link is set now when image selected text is read in
-* InsertFile: Fix for image insertion, now inserts at cursor position (ie)
-* InsertFile: Fix for bug that buttons are sometimes not loaded
-* InsertFile: Fixes for picture selection and insert in article
-* InsertFile: Fixed several bugs in InsertFile in combination with VisualEditor and getCategoryStoreData
-* InsertFile: Fixed API upload for IE9
-* InsertFile: File warnings work with mw 1.22 now
-* InsertLink: Fixed double icon
-* InsertLink: Re-activated file link tab in InsertLink dialog for IE9
-* InsertLink: Fixed URI format in file links
-* InterWikiLinks: Fixed trailing comma. Now InsertLink works in IE8
-* NamespaceManager: Places MetaFields-Hook outside of ::getData
-* NamespaceManager: Reimplemented hooks for new fields
-* NamespaceManager: Fixed issues with system-namespaces and extension-namespaces
-* NamespaceManager: Added ids to namespacemanager dialogs
-* Notifications: Improved messages in flyout and email
-* PageTemplates: Added two column layout for page templates
-* PageTempaltes: Fixed bad preload param
-* PageTemplates: Fixed bug that only last templates of each section was shown instead of all
-* PageTemplates: Fixed bug that templates for all namespaces were not shown
-* PermissionManager: Introduced new setting that allows to disable reality check
-* PermissionManager: Fixed path to database schema file
-* Readers: SpecialPage Readers is now unlisted
-* Readers: Implemented own replace for Readers to ensure the database does not grow unlimited
-* Readers: Removed revision based Readers for every article now just article based
-* Readers: Fixed fatal error on user subpages when Readers are opened up
-* Review: Fixed 'undefined index' notice in vector skin
-* Review: Fixed wrong enddate on specialpage
-* Review: Minor boolean operator fix
-* Review: Changed accept/reject buddon order
-* RSSFeeder: Bug in the watchlist feed got fixed. Even with an empty watchlist, the feed will now produce a valid output. The subscription process in Outlook and similar software should work now.
-* RSSStandards: Don't lie about what function makes a query (thanks to Chad Horohoe)
-* SaferEdit: Changed initialization time of SaferEdit so IE8/9 will not crash anymore
-* ShoutBox: Fixed BSShoutBoxGetShoutsBeforeQuery hook handling
-* ShoutBox: Added "characters left" counter to shoutbox
-* Smartlist: Fixed toplist month portlet results were not sorted
-* StateBar: Removed unused css property
-* StateBar: Removed padding so statebar and nav head have the same height
-* StateBar: Rearanged hook in Statebar JS
-* StateBar: If article redirects to none existing article you don't get redirected so show statebar
-* Statsitics: Fixed statistics portlets resources for UserDashboard
-* Statsitics: Removed loadMask from chart export
-* UEModulePDF: Enabled PDFPageProvider::getPage to consume 'title'-key-arrays
-* UEModulePDF: Removed some old code from UEModulePDF
-* UserManager: Own user can not be deleted any more
-* VisualEditor: Fix for wrong spacings in tables
-* VisualEditor: Can move cursor out of tables now
-* VisualEditor: Language fix
-* VisualEditor: Fix for wrong img sizes after editor switch
-* VisualEditor: Fixed bug with image resizing
-* VisualEditor: Fixed JS error after TinyMCE was removed
-* VisualEditor: Explicitly include RL modules. This is one step to make VE run under IE8
-* VisualEditor: Bind startup of VE on documentready. Otherwise, the function is called twice
-* VisualEditor: Image sizes are now processed correctly and survive roundtrip
-* VisualEditor: Added clientside dependency management to VisualEditor
-* VisualEditor: Moved calls to mw-object into jQuery ready handler
-* VisualEditor: Fixed minor bug with quicksave on not existing pages
-* VisualEditor: Colored links now pass roundtrip
-* VisualEditor: Improved table cells. This fixes a bug where mixed th and td tags would lead to data loss
-* VisualEditor: Reenabled noneditable elements
-* VisualEditor: Keep empty divs with ids or classes
-* VisualEditor: Insert image at cursor position
-* VisualEditor: Images now keep no link / link status on edit
+=====Changes affecting specific extension=====
+* Authors: No authors on new page
+* Avatars: Added a maintenance script for means of debugging
+* Avatars: Fixed avatars updated hook name and method signature
+* ExtendedSearch: Fixed bug in facet editor query
+* ExtendedSearch: Removed unused vars
+* ExtendedSearch: Added @embed statement for resourceloader
+* ExtendedSearch: CSS more skin agnostic
+* ExtendedSearch: Improved file indexing
+* ExtendedSearch: Readded escaping of highlight snippets
+* ExtendedSearch: Fixed method name
+* ExtendedSearch: Changed event listener
+* ExtendedSearch: Removed undefinded property from check
+* ExtensionInfo: Improved styling of table
+* ExtensionInfo: Seperated modules so styles are loaded at the right time
+* ExtensionInfo: Added jqueryMsg dependency for Plural support
+* InsertCategory: Fixed bug that categories where removed from parser functions/SMW syntax
+* InsertCategory: Fixed regex with i18n namespaces
+* InsertFile: Inserting a document now results in an insertion at the cursor, inserted at the start of the document before (ie11)
+* UniversalExport: Fixed bookmark tree in PDF Export
+* StateBar: Removed unneccessary styling
+* StateBar: Fixed line break
+* SmartList: Fixed issue with installer
+* SmartList: Added missing options for preference
+* Notifications: PHP 5.3 compatibility
+* UEModulePDF: Fixed double encoding issue in link
+* WantedArtilce: Escaped searchstring
+* ResponsibleEditors: Added missing comma to invalid syntax
+* WhoIsOnline: Reworked tooltip mechanism
+* WikiAdmin: Sort content of admin tab in navigation alphabetically
+* VisualEditor: Updated TinyMCE to 4.1.3
+* VisualEditor: Harden handling of BR tags
+* VisualEdior: Remove unparsable anchor tags from word content
+* VisualEdior: Fixed handling of wikicode in image labels
+* VisualEditor: Fixed issue when inserting a link with a space as title the link disappeared
 
-==== skins/BlueSpiceSkin ====
-* Moved skyScraper method call
-* Fix to stay compatible with MW 1.23
-* Fixed MW warnings because of wrong aliases
-* Added missing mw hook for language urls
-* Increased size of images for login buttons in mw 1.22+
-* Fixed position of widget container
-* Removed unused fb-* values
-* Prevent fatal error if user uses "** mainpage|Hauptseite|[[Trainings.png]]" in MediaWiki:Sidebar
+====BlueSpiceSkin====
+* Removed softwaretable style
+* Fix for wrong jquery selectors
+* ViewBaseElement was treated as array
+* Fixes for IE and FF
+* Now using BsBaseTemplate
+* Changed flickering of jquery.ui.tabs
+* Added ajax discussion amount
+* Minor bugfix for jQuery/Firefox issue
+* Moved border styling to make it visible on specialpages
+* Removed reset CSS because it collides with ExtJS reset CSS
+* Only get discussion amount for pages
+* Refactored filenames and directories accroding to current Vector layout
+* Minor CSS fixes
+* Standard line height and maring in all content HTML texts.
+* Don't query discussion amount on non existing pages
+* Added semantic CSS classes for icon set
+* CSS Fix for Firefox
+* Fixed 404 call to jQuery UI theme resource
+* Worked on proportions, font sizes and flickering
 
-=== The Team ===
-==== Programmers ====
+===Combatibility===
+* MediaWiki 1.22 or 1.23
+* PHP 5.3.2 or later.
+* MySQL 5.0.2 or later
+
+====Webservices====
+* Java 6, 7 or 8
+* Tomcat 6, 7 or 8
+
+===The Team===
+====Programmers====
 * Markus Glaser
 * Radovan Kubani
 * Sebastian Ulbricht
@@ -149,11 +129,11 @@ This is a patch and maintenance release.
 * Karl Waldmannstetter
 * Daniel Lynge
 * Tobias Davids
-* Stefan Widmann
 * Patric Wirth
 * Stephan Muggli
+* Stefan Widmann
 
-==== Design & Testing ====
+====Design & Testing====
 * Anja Ebersbach
 * Richard Heigl
 * Nathalie Köpff
@@ -166,219 +146,14 @@ This is a patch and maintenance release.
 * Jan Göttlich
 * Karl Skodnik
 
-=== Contributors ===
-* Bartosz Dziewoski
+====Contributors====
+* Aude
 * Chad Horohoe
+* Raimond Spekking
+* Siebrand Mazeland
+* Yuki Shira
+* TGC
+* Umherirrender
 
-=== Standing on the shoulders of giants ===
-We would like to thank all the people around MediaWiki. You've created a wonderful piece of software. Thanks a lot!
-
-== BlueSpice for MediaWiki 2.22 ==
-Date: 2013-11-27
-This is a major release.
-
-=== New Features ===
-* Avatars: Show autogenerated images for users.
-* Checklist: Provides Checklist functionality
-* Dashboard: A lot of relevant information at a glance
-* Flexiskin: Skin your wiki
-* Notification: Improved messaging
-* Readers: See all readers of a page
-* Skin: Completely reworked skin
-
-=== Major improvements ===
-* ExtendedSearch: now finds special pages in autocomplete
-* InsertCategory: autocomplete / add new categories
-* InsertImage: add category on upload
-* InsertImage: new interface layout
-* Permissionmanager: completely reworked interface
-* Permissionmanager: rights per wiki and rights per namespaces are now separated
-* Permissionmanager: lock mode removes all inherited rights from groups
-* Review: improved commenting and discard handling
-* Smartlist: show new users with "newbies"
-* Smartlist: show new articles with "new" attribute
-* Skin: supports all MediaWiki hooks
-* Statebar: updates data via AJAX
-* Statistics: based on ExtJS 4 graphs
-* Usermanager: filters for user and display name
-* VisualEditor: new version of TinyMCE with major improvements
-
-=== Architectural changes ===
-* Removed abstraction layer between BlueSpice and MediaWiki
-* Removed BlueSpice Database abstraction. Now only using MediaWiki's DBAL
-* All dialogues are now based on ExtJS 4
-* Dropped Oracle and Postgres support in free version
-* Namespaces are now in own range from 1500 and 3000 for custom namespaces
-
-=== Changes since 2.22 beta ===
-* Architecture: Added position bottom for more modules
-* Architecture: Honour $wgReadOnly
-* Arcitecture: Added position bottom for script module
-* Authors: Don't link to deleted users' user pages.
-* Authors: Removed MoreImage setting
-* Authors: Show "anon" image for deleted users.
-* Authors: fixed noauthors magic word
-* Avatars: Beautification: Only upload section is uncollapsed.
-* Avatars: Changed default avatar size to 40 px.
-* Avatars: IP users have there own user image now - public wikis
-* Avatars: images can now be JPG, GIF and PNG.
-* Blog: Removed ShowTagFormWhenNotLoggedIn and MoreAteEndOfEntry setting
-* BlueSpiceProjectFeedbackHelper: Added social media channels to Feedback helper
-* BlueSpiceProjectFeedbackHelper: Feedback url points into sf
-* Checklist: Added Checklist to context menu
-* Checklist: Checklist button now remembers last command
-* Dashboard: Added responsible editors portlet
-* Dashboard: Renamed german Cockpit to Dashboard
-* Dashboard: SearchTerm portlet query had wrong timestamp field in query
-* Emoticons: Removed PathToEmoticons setting
-* ExtendedEditButtons: Rearranged buttons
-* ExtendedSearch: Added message if no similar articles are found
-* ExtendedSearch: Added pref for solr core instance
-* ExtendedSearch: All text fieldtypes had the wrong tokenizer. Standardtokenizer removed some extraneous characters from tokens. It is recommended to use whitespacetokenizer
-* ExtendedSearch: Fixed some strange search query bugs. You could not search inside user ns because of some reason negativ ns where in.
-* ExtendedSearch: Made customerid absolutely unique
-* ExtendedSearch: Mlt namespaces can be configured via preferences
-* ExtendedSearch: Removed option to show percentage in ExtendedSearch ... just confuses users
-* ExtendedSearch: Updating solr to version 4.5
-* ExtendedSearch: fixed bugh when search from body is triggered all created ns where not searched in
-* ExtensionInfo: Added Credits
-* ExtensionInfo: now with packagename. added default values for extinfo
-* Flexiskin: introduced custom color
-* Flexiskin: removed Complete color
-* Flexiskin: uses md5 hashes as folder names
-* Foundation: IP users have there own user image now - public wikis
-* Foundation: added HOOK 'BsFoundationBeforeMakeGlobalVariablesScript' and its description
-* Foundation: Whitelist all URLs for RSS
-* Foundation: Make namespace registration mb safe
-* Foundation: Links now render class attribute
-* Foundation: Added ids to all bs confirm, alert and prompt dialoges
-* Foundation: added default values (e.g. packages, version, status) for extensioninfo)
-* Foundation: Upload button can now be rendered inline.
-* Foundation: Added docs/design.txt 
-* Foundation: Added ExtJS 3 CSS RESET reset to avoid breaking foreign skins
-* Foundation: Added portlets to User DashboardPanel 
-* Foundation: multiselect dialogs
-* Foundation: Added uploadAndConvertImage() for avatar uploads.
-* Foundation: added permissions to $wgAvailableRights on registration
-* Foundation: Removed use of $wgArticle because it is removed in MW 1.23 see this https://gerrit.wikimedia.org/r/#/c/93106/
-* Foundation: Refactored Validator - remove autoloader and ip validation check (unused and just IPv4 ... use MWs ip check instead)
-* GroupManager: Deleting groups now also triggers PermissionManager
-* GroupManager: reenabled paging
-* InsertCategory: Category escaping with : now works
-* InsertCategory: Changed default of WithParents to false and scope to public
-* InsertCategory: now inserts localized namespace name
-* InsertImage: Added category support in upload panel
-* InsertImage: Added context menu for insert image
-* InsertImage: Changed default sorting to last modified
-* InsertImage: Fixed 'licences can not be selected' error 
-* InsertImage: Fixed 'url in wikilink' error 
-* InsertImage: Fixed selection issue If no dimensions are in wikitext the source dimensions will be fetched from server Fixed w/h calculation
-* InsertLink: Context menu unlink now only enabled when there is a link
-* InsertLink: File links now work again
-* InsertLink: Hide remove link in context menu when not on a link
-* InsertLink: Now excapes category links with : in order not to assign a category
-* InsertMagic: Fixed I18N and some icons Added __NOEDITOR__ switch to InsertMagic
-* InsertMagic: Improved i18n. Thanks Nathalie
-* InsertMagic: Magic words are now sorted by name
-* NamespaceManager: Fixed possible sql injection in NamespaceManager and NamespaceNuker.
-* NamespaceManager: sorting the columns is working again
-* NamespaceManager: the action column now cannot be hidden anymore and is also not shown in the hide menu
-* Notifications: changed color of icons; set wgDefaultUserOptions for notifications
-* PageTemplates: Removed HideLinesAfterEmptyPage setting
-* PermissionManager: description and translation of the permissions are now shown as a tooltip if one hovers the permission in the first column
-* PermissionManager: grid is now stateful and remembers activated columns in the grid
-* PermissionManager: group names are translated now - all tables have now the same width
-* PermissionManager: the groups in the second table are now sorted in the following order: *, user, sysop and then the rest in alphabetical order
-* PermissionManager: the second table indicates the available rights per group and namespace by a green color now, too 
-* RSSFeeder: Removed RSSWhitelist
-* Readers: Enabled reader tracking by default
-* Readers: Fixed display of timestamp on Readers specialpage
-* Review: SpecialReview: user filter works now 
-* Review: added comment appending for review vote
-* Review: added permission workflowview to user group by default
-* Review: comment feature
-* Review: filter by real_name is now possible
-* Review: fixed sorting in review step dialog
-* Review: re-added accept/decline text to icons in statebar
-* Review: removed show assessor settings
-* Review: user in AssignmentPanel are sorted
-* SecureFileStore: Changed FileExtensionWhitelist to empty
-* SecureFileStore: If file is not in MW's repo try to guess MIME type instead of giving up and sending "unknown/unknown".
-* SecureFileStore: fixed authorization denied: used SecureFileStore::secureStuff when SecureFileStore is enabled
-* Shoutbox: Changed permission system: users can now always delete their own posts, people with archiveshoutbox can always delete all shouts
-* Shoutbox: added message when shouting too often
-* Skin: Added many new stylings, fonts ... Fixed and improved styling
-* Skin: fixed bug where CSS file was included twice
-* Skin: Added new default bluespice profile images
-* Skin: Navigation icons now have tooltips
-* Skin: added plural message key for echo
-* Skin: added dependency for ext.echo.overlay
-* Skin: watch/unwatch star now colored
-* Skin: authors now tabbed
-* SmartList: Added Week option
-* SmartList: Added portlets to User DashboardPanel
-* SmartList: Fixed and improved toplist query a lot
-* SmartList: changed tag argument new default to false
-* Statebar: styling for multiline
-* Statistics: added grid for list view 
-* Statistics: disabled export for list view
-* Statistics: fixed period of time config
-* Statistics: set week as default grain
-* TopBarMenuCustomizer: fixed number of (sub-) entries config
-* UserManager: changed userManager filter from start with to contains
-* VisualEditor: Added Headings button
-* VisualEditor: Added context menu support and context menu for InsertLink
-* VisualEditor: Added table properties to context menu
-* VisualEditor: Adjustments for undo/redo
-* VisualEditor: Context menu: table actions are only shown when a table is selected
-* VisualEditor: Fixed toolbar position in preview mode
-* VisualEditor: Fullscreen now has scrollbars again
-* VisualEditor: Improved newline feature
-* VisualEditor: Introduced own save button instead of plugin
-* VisualEditor: It's now possible to move links via drag and drop. Also fixed an insert issue with IE, where everything would be inserted at the very beginning of a text
-* VisualEditor: Rearranged buttons: table is now last. Table buttons only show up when a table is selected
-* VisualEditor: Removed Reduced editor gui settings as this is not used anymore
-* VisualEditor: Upgraded Tiny to 4.0.11 in order to regain IE9 compatibility
-* VisualEditor: adapted format dropdown, has now headings and table classes
-* VisualEditor: changed buttons
-* VisualEditor: disabled buttons in pre sections
-* WhoIsOnline: removed LinkUsers setting
-* WidgetBar: Removed DataSourceTitle setting
-
-=== The Team ===
-==== Programmers ====
-* Markus Glaser
-* Radovan Kubani
-* Sebastian Ulbricht
-* Marc Reymann
-* Mathias Scheer
-* Thomas Lorenz
-* Tobias Weichart
-* Robert Vogel
-* Erwin Forster
-* Karl Waldmannstetter
-* Daniel Lynge
-* Tobias Davids
-* Stefan Widmann
-* Patric Wirth
-* Stephan Muggli
-
-==== Design & Testing ====
-* Anja Ebersbach
-* Richard Heigl
-* Nathalie Köpff
-* Michael Rödl
-* Michael Scherm
-* Dardan Diugan
-* Christina Glaser
-* Christian Graf
-* Angelika Müller
-* Jan Göttlich
-* Karl Skodnik
-
-=== Contributors ===
-* Bartosz Dziewoski
-* Chad Horohoe
-
-=== Standing on the shoulders of giants ===
+===Standing on the shoulders of giants===
 We would like to thank all the people around MediaWiki. You've created a wonderful piece of software. Thanks a lot!
