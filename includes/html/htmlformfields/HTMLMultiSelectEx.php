@@ -17,6 +17,7 @@ class HTMLMultiSelectEx extends HTMLFormField {
 	}
 
 	function getInputHTML( $value ) {
+		$this->mParent->getOutput()->addModules( 'ext.bluespice.html.formfields.multiselect');
 		$aOptions = ( isset( $this->mParams['options'] ) ) ? $this->mParams['options'] : array();
 		$html = $this->formatOptions( $aOptions, $value );
 

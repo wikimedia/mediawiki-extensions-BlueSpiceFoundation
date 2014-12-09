@@ -161,4 +161,13 @@ $wgResourceModules['ext.bluespice.html.formfields'] = array(
 	)
 ) + $aResourceModuleTemplate;
 
+$wgResourceModules['ext.bluespice.html.formfields.multiselect'] = array(
+	'scripts' => array(
+		'bluespice/bluespice.html.formfields.multiselect.js'
+	),
+	'dependencies' => array(
+		'ext.bluespice.extjs'
+	)
+) + $aResourceModuleTemplate;
+
 unset( $aResourceModuleTemplate );
