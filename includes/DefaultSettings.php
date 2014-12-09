@@ -35,7 +35,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 //Default settings needed for BlueSpice
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgApiFrameOptions = 'SAMEORIGIN';
-$wgRSSUrlWhitelist = array( "*" );
+$wgRSSUrlWhitelist = array( "http://blog.blue-spice.org/feed/" );
 $wgExternalLinkTarget = '_blank';
 $wgCapitalLinkOverrides[ NS_FILE ] = false;
 $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed

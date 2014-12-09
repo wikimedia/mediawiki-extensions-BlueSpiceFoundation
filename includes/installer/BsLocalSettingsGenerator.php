@@ -53,9 +53,9 @@ class BsLocalSettingsGenerator extends LocalSettingsGenerator {
 		}
 
 		// BlueSpice
+		$localSettings .= "require_once \"\$IP/extensions/BlueSpiceDistribution/BlueSpiceDistribution.php\";\n";
 		$localSettings .= "require_once \"\$IP/extensions/BlueSpiceFoundation/BlueSpiceFoundation.php\";\n";
 		$localSettings .= "require_once \"\$IP/extensions/BlueSpiceExtensions/BlueSpiceExtensions.php\";\n";
-		$localSettings .= "require_once \"\$IP/extensions/BlueSpiceDistribution/BlueSpiceDistribution.php\";\n";
 		$localSettings .= "require_once \"\$IP/skins/BlueSpiceSkin/BlueSpiceSkin.php\";\n";
 
 		$localSettings .= "\n\n# End of automatically generated settings.
