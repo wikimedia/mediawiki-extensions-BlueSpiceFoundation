@@ -65,7 +65,7 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getAsyncCategoryTreeStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
 $wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
-//I18N
+//I18N MW1.23+
 $wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
 $wgMessagesDirs['BlueSpiceCredits'] = __DIR__ . '/i18n/credits';
 $wgMessagesDirs['BlueSpiceDiagnostics'] = __DIR__ . '/i18n/diagnostics';
@@ -73,6 +73,7 @@ $wgMessagesDirs['BlueSpice.ExtJS'] = __DIR__ . '/i18n/extjs';
 $wgMessagesDirs['BlueSpice.ExtJS.Portal'] = __DIR__ . '/i18n/extjs-portal';
 $wgMessagesDirs['Validator'] = __DIR__ . '/i18n/validator';
 
+//I18N Backwards compatibility
 $wgExtensionMessagesFiles += array(
 	'BlueSpice' => __DIR__."/languages/BlueSpice.i18n.php",
 	'Validator' => __DIR__."/languages/Validator.i18n.php",
@@ -89,32 +90,10 @@ $wgExtensionMessagesFiles += array(
 $wgSpecialPageGroups['SpecialCredits'] = 'bluespice';
 $wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
 
-$wgHooks['SetupAfterCache'][] = 'BsCoreHooks::onSetupAfterCache';
-$wgHooks['SoftwareInfo'][] = 'BsCoreHooks::onSoftwareInfo';
-$wgHooks['BeforePageDisplay'][] = 'BsCoreHooks::onBeforePageDisplay';
-$wgHooks['LinkEnd'][] = 'BsCoreHooks::LinkEnd';
-$wgHooks['MakeGlobalVariablesScript'][] = 'BsCoreHooks::onMakeGlobalVariablesScript';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'BsCoreHooks::onLoadExtensionSchemaUpdates';
-$wgHooks['ApiCheckCanExecute'][] = 'BsCoreHooks::onApiCheckCanExecute';
-$wgHooks['UserGetRights'][] = 'BsCoreHooks::onUserGetRights';
-$wgHooks['userCan'][] = 'BsCoreHooks::onUserCan';
-$wgHooks['FormDefaults'][] = 'BsCoreHooks::onFormDefaults';
-$wgHooks['UploadVerification'][] = 'BsCoreHooks::onUploadVerification';
-
-$wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
-
-if ( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
-	$wgHooks['EditPage::showEditForm:initial'] = array();
-}
-
-//BlueSpice specific hooks
-$wgHooks['BSBlueSpiceSkinAfterArticleContent'][] = 'BsCoreHooks::onBlueSpiceSkinAfterArticleContent';
-
-if ( $wgDBtype == 'oracle' ) {
-	$wgHooks['ArticleDelete'][] = 'BSOracleHooks::onArticleDelete';
-}
-
+// Register hooks
+require_once( 'BlueSpice.hooks.php' );
 //Setup
+
 $wgExtensionFunctions[] = 'BsCoreHooks::setup';
 
 // initalise BlueSpice as first extension in a fully initialised environment

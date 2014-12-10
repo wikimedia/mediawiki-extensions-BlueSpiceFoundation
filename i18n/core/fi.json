@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stryn"
+		]
+	},
+	"bs-ns_main": "(Sivut)",
+	"bs-ns_all": "(kaikki)",
+	"bs-tab_navigation": "Valikko",
+	"bs-tab_admin": "Ylläpitäjä",
+	"bs-userbar_loginswitch_logout": "Kirjaudu ulos",
+	"bs-userbar_loginswitch_login": "Kirjaudu sisään",
+	"bs-no-information-available": "Ei tietoa saatavilla",
+	"bs-now": "nyt",
+	"bs-email-greeting-no-receiver": "Hei,",
+	"bs-email-footer": "Tämä viesti on luotu automaattisesti. Älä vastaa tähän viestiin.",
+	"bs-userpagesettings-legend": "Käyttäjäasetukset",
+	"bs-userpreferences-link-text": "Lisää käyttäjäasetuksia",
+	"bs-userpreferences-link-title": "Näytä henkilökohtaiset käyttäjäasetuksesi",
+	"bs-exception-view-heading": "Tapahtui virhe",
+	"bs-exception-view-text": "Pyyntöäsi käsiteltäessä tapahtui seuraava virhe:",
+	"bs-exception-view-admin-hint": "Ota yhteyttä järjestelmänvalvojaan.",
+	"bs-exception-view-stacktrace-toggle-show-text": "Näytä virhetiedot",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Piilota virhetiedot",
+	"bs-viewtagerrorlist-legend": "$1 - Virhe",
+	"bs-navigation-instructions": "Ohjeet",
+	"bs-navigation-support": "Tuki",
+	"bs-navigation-contact": "Ota yhteyttä"
+}

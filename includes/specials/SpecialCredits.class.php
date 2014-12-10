@@ -14,6 +14,8 @@
 
 class SpecialCredits extends BsSpecialPage {
 
+	private $aTranslators = array();
+
 	public function __construct() {
 		parent::__construct( 'SpecialCredits' );
 	}
@@ -22,7 +24,7 @@ class SpecialCredits extends BsSpecialPage {
 		parent::execute( $par );
 		$aProgrammers = array(
 			'Markus Glaser', 'Radovan Kubani', 'Sebastian Ulbricht', 'Marc Reymann',
-			'Mathias Scheer', 'Thomas Lorenz', 'Tobias Weichart', 'Robert Vogel', 
+			'Mathias Scheer', 'Thomas Lorenz', 'Tobias Weichart', 'Robert Vogel',
 			'Erwin Forster', 'Karl Waldmannstetter', 'Daniel Lynge', 'Tobias Davids',
 			'Patric Wirth', 'Stephan Muggli', 'Stefan Widmann'
 		);
@@ -32,42 +34,125 @@ class SpecialCredits extends BsSpecialPage {
 			'Angelika Müller', 'Jan Göttlich', 'Karl Skodnik'
 		);
 		$aContributors = array(
-			'Bartosz Dziewoski', 'Chad Horohoe'
+			'Aude', 'Chad Horohoe', 'Raimond Spekking', 'Siebrand Mazeland',
+			'Yuki Shira', 'TGC', 'Umherirrender'
+		);
+		$aTranslation = array(
+			'Siebrand Mazeland', 'Raimond Spekking', 'Stephan Muggli'
 		);
 
 		$sLiProgrammers = '';
 		foreach ( $aProgrammers as $sProgrammer ) {
-			$sLiProgrammers .= Html::element( 'li', array(), $sProgrammer );
+			$sLiProgrammers .= '<li>' . $sProgrammer . '</li>';
 		}
 
 		$sLiDnT = '';
 		foreach ( $aDesignAndTesting as $sDnT ) {
-			$sLiDnT .= Html::element( 'li', array(), $sDnT );
+			$sLiDnT .= '<li>' . $sDnT . '</li>';
 		}
 
 		$sLiContributors = '';
 		foreach ( $aContributors as $sContributor ) {
-			$sLiContributors .= Html::element( 'li', array(), $sContributor );
+			$sLiContributors .= '<li>' . $sContributor . '</li>';
 		}
 
-		$sProgramerHeadline = Html::element( 'h3', array(), wfMessage( 'bs-credits-programmers' )->plain() );
-		$sOlProgrammers = Html::openElement( 'ul' ) . $sLiProgrammers . Html::closeElement( 'ul' );
+		$sLiTranslation = '';
+		foreach ( $aTranslation as $sTl ) {
+			$sLiTranslation .= '<li>' . $sTl . '</li>';
+		}
 
-		$sDnTHeadline = Html::element( 'h3', array(), wfMessage( 'bs-credits-dnt' )->plain() );
-		$sOlDnT = Html::openElement( 'ul' ) . $sLiDnT . Html::closeElement( 'ul' );
+		$sOlProgrammers = '<ul>' . $sLiProgrammers . '</ul>';
+		$sOlDnT = '<ul>' . $sLiDnT . '</ul>';
+		$sOlContributors = '<ul>' . $sLiContributors . '</ul>';
+		$sOlTl = '<ul>' . $sLiTranslation . '</ul>';
 
-		$sContributorsHeadline = Html::element( 'h3', array(), wfMessage( 'bs-credits-contributors' )->plain() );
-		$sOlContributors = Html::openElement( 'ul' ) . $sLiContributors . Html::closeElement( 'ul' );
+		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'Credits', 'Translators' );
+		$aData = BsCacheHelper::get( $sKey );
 
-		$sOut = Html::openElement( 'table', array( 'width' => 600 ) ) .
-				Html::openElement( 'tr' ) .
-					Html::openElement( 'td', array( 'style' => 'vertical-align: top;' ) ). $sProgramerHeadline. $sOlProgrammers . Html::closeElement( 'td' ).
-					Html::openElement( 'td', array( 'style' => 'vertical-align: top;' ) ) . $sDnTHeadline .$sOlDnT . Html::closeElement( 'td' ).
-					Html::openElement( 'td', array( 'style' => 'vertical-align: top;' ) ) . $sContributorsHeadline . $sOlContributors . Html::closeElement( 'td' ).
-				Html::closeElement( 'tr' ).
-				Html::closeElement( 'table' );
+		if ( $aData !== false ) {
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching translators from cache' );
+			$this->aTranslators = $aData;
+		} else {
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching translators from DB' );
+			$this->generateTranslatorsList();
+			// Keep list for one day
+			BsCacheHelper::set( $sKey, $this->aTranslators, 86400 );
+		}
 
-		$this->getOutput()->addHtml( $sOut );
+		$sLiTranslators = '';
+		foreach ( $this->aTranslators as $sTranslator ) {
+			$sLiTranslators .= Html::element( 'li', array(), $sTranslator );
+		}
+
+		$sLink = '<a href="https://translatewiki.net">translatewiki.net</a>';
+		$aOut = array();
+		$aOut[] = '<table class="wikitable">';
+		$aOut[] = '<tr>';
+		$aOut[] = '<th>' . wfMessage( 'bs-credits-programmers' )->plain() . '</th>';
+		$aOut[] = '<th>' . wfMessage( 'bs-credits-dnt' )->plain() . '</th>';
+		$aOut[] = '<th>' . wfMessage( 'bs-credits-contributors' )->plain() . '</th>';
+		$aOut[] = '</tr>';
+		$aOut[] = '<tr style="vertical-align: top;">';
+		$aOut[] = '<td style="vertical-align: top;">' . $sOlProgrammers . '</td>';
+		$aOut[] = '<td style="vertical-align: top;">' . $sOlDnT . '</td>';
+		$aOut[] = '<td>' . $sOlContributors . '</td>';
+		$aOut[] = '</tr>';
+		$aOut[] = '</table>';
+
+		$aOut[] = '<table class="wikitable">';
+		$aOut[] = '<tr>';
+		$aOut[] = '<th>'. wfMessage( 'bs-credits-translators' )->plain() .'</th>';
+		$aOut[] = '<th>'. wfMessage( 'bs-credits-translation' )->plain() .'</th>';
+		$aOut[] = '</tr>';
+		$aOut[] = '<tr>';
+		$aOut[] = '<td style="vertical-align: top;">';
+		$aOut[] = '<i><h6>' . wfMessage( 'bs-credits-th', $sLink )->text() . '</h6></i>';
+		$aOut[] = '<ul>'. $sLiTranslators .'</ul>';
+		$aOut[] = '</td>';
+		$aOut[] = '<td style="vertical-align: top;">'. $sOlTl .'</td>';
+		$aOut[] = '</tr>';
+		$aOut[] = '</table>';
+
+		$this->getOutput()->addHtml(implode( "\n", $aOut ) );
 	}
 
+	private function generateTranslatorsList() {
+		global $IP;
+		$aPaths = array(
+			$IP . '/extensions/BlueSpiceExtensions/',
+			$IP . '/extensions/BlueSpiceFoundation/',
+			$IP . '/skins/BlueSpiceSkin/'
+		);
+
+		foreach ( $aPaths as $sPath ) {
+			$this->readInTranslators( $sPath );
+		}
+
+		$this->aTranslators = array_map( 'trim', $this->aTranslators );
+		$this->aTranslators = array_unique( $this->aTranslators );
+		asort( $this->aTranslators );
+	}
+
+	private function readInTranslators( $sDir ) {
+		$oCurrentDirectory = new DirectoryIterator( $sDir );
+		foreach ( $oCurrentDirectory as $oFileinfo ) {
+			if ( $oFileinfo->isFile() && strpos( $oFileinfo->getFilename(), '.json' ) !== false ) {
+				$sContent = json_decode(
+					file_get_contents( $oFileinfo->getPath() .DS. $oFileinfo->getFilename() )
+				);
+				foreach ( $sContent as $aData ) {
+					if ( $aData instanceof StdClass && isset( $aData->authors ) ) {
+						foreach ( $aData->authors as $Author ) {
+							$Author = preg_replace( '#\<([0-9a-zA-Z]+)@(\w+)\.(\w+)\>#', '', $Author );
+							$this->aTranslators[] = $Author;
+						}
+					}
+				}
+				continue;
+			}
+			if ( $oFileinfo->isDir() && !$oFileinfo->isDot() && $oFileinfo->getFilename() != $sDir ) {
+				$this->readInTranslators( $oFileinfo->getPath() .DS. $oFileinfo->getFilename() );
+			}
+		}
+	}
 }

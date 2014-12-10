@@ -11,8 +11,8 @@
  * This shim maintains compatibility back to MediaWiki 1.17.
  */
 $messages = array();
-if ( !function_exists( 'wfJsonI18nShimf3b998effdbd2830' ) ) {
-	function wfJsonI18nShimf3b998effdbd2830( $cache, $code, &$cachedData ) {
+if ( !function_exists( 'wfJsonI18nShim5a61b28be339bd38' ) ) {
+	function wfJsonI18nShim5a61b28be339bd38( $cache, $code, &$cachedData ) {
 		$codeSequence = array_merge( array( $code ), $cachedData['fallbackSequence'] );
 		foreach ( $codeSequence as $csCode ) {
 			$fileName = dirname( __FILE__ ) . "/../i18n/credits/$csCode.json";
@@ -31,5 +31,5 @@ if ( !function_exists( 'wfJsonI18nShimf3b998effdbd2830' ) ) {
 		return true;
 	}
 
-	$GLOBALS['wgHooks']['LocalisationCacheRecache'][] = 'wfJsonI18nShimf3b998effdbd2830';
+	$GLOBALS['wgHooks']['LocalisationCacheRecache'][] = 'wfJsonI18nShim5a61b28be339bd38';
 }

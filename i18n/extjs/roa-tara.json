@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-extjs-filters": "Filtre",
+	"bs-extjs-filter-equals": "uguale",
+	"bs-extjs-filter-equals-not": "non g'è uguale",
+	"bs-extjs-filter-contains": "tène",
+	"bs-extjs-filter-contains-not": "non ge tène",
+	"bs-extjs-filter-starts-with": "accumenze cu",
+	"bs-extjs-filter-ends-with": "spicce cu"
+}

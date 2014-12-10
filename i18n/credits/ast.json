@@ -1,11 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xuacu"
-        ]
-    },
-    "specialcredits": "Créditos de BlueSpice",
-    "bs-credits-programmers": "Programadores",
-    "bs-credits-dnt": "Diseñu y pruebes",
-    "bs-credits-contributors": "Collaboradores"
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"specialcredits": "Créditos de BlueSpice",
+	"bs-credits-programmers": "Programadores",
+	"bs-credits-dnt": "Diseñu y pruebes",
+	"bs-credits-contributors": "Collaboradores",
+	"bs-credits-translators": "Traductores",
+	"bs-credits-translation": "Traducción",
+	"bs-credits-th": "Gracies a tolos traductores de $1."
 }

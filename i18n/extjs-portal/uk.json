@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Максим Підліснюк",
+			"Base"
+		]
+	},
+	"bs-extjs-portal-config": "Налаштувати портлет:",
+	"bs-extjs-portal-title": "Заголовок портлета",
+	"bs-extjs-portal-height": "Висота",
+	"bs-extjs-portal-count": "Записи",
+	"bs-extjs-portal-timespan": "Проміжок часу",
+	"bs-extjs-portal-timespan-week": "Тиждень",
+	"bs-extjs-portal-timespan-month": "Місяць",
+	"bs-extjs-portal-timespan-alltime": "Увесь час"
+}

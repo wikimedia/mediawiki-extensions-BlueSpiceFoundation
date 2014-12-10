@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Minh Nguyen"
-        ]
-    },
-    "bs-extjs-portal-config": "Cấu hình hộp tiện ích:",
-    "bs-extjs-portal-title": "Tên hộp tiện ích",
-    "bs-extjs-portal-height": "Chiều cao",
-    "bs-extjs-portal-count": "Số mục",
-    "bs-extjs-portal-timespan": "Khoảng thời gian",
-    "bs-extjs-portal-timespan-week": "Tuần",
-    "bs-extjs-portal-timespan-month": "Tháng",
-    "bs-extjs-portal-timespan-alltime": "Từ trước đến nay"
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"bs-extjs-portal-config": "Cấu hình hộp tiện ích:",
+	"bs-extjs-portal-title": "Tên hộp tiện ích",
+	"bs-extjs-portal-height": "Chiều cao",
+	"bs-extjs-portal-count": "Số mục",
+	"bs-extjs-portal-timespan": "Khoảng thời gian",
+	"bs-extjs-portal-timespan-week": "Tuần",
+	"bs-extjs-portal-timespan-month": "Tháng",
+	"bs-extjs-portal-timespan-alltime": "Từ trước đến nay"
 }

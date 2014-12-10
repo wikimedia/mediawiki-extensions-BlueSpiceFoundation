@@ -1,28 +1,29 @@
 {
-    "@metadata": {
-        "authors": [
-            "Milicevic01"
-        ]
-    },
-    "bs-extjs-ok": "У реду",
-    "bs-extjs-cancel": "Откажи",
-    "bs-extjs-yes": "Да",
-    "bs-extjs-no": "Не",
-    "bs-extjs-save": "Сачувај",
-    "bs-extjs-delete": "Обриши",
-    "bs-extjs-add": "Додај",
-    "bs-extjs-remove": "Уклони",
-    "bs-extjs-edit": "Уреди",
-    "bs-extjs-hint": "Савет",
-    "bs-extjs-error": "Грешка",
-    "bs-extjs-confirm": "Потврди",
-    "bs-extjs-loading": "Учитавање...",
-    "bs-extjs-pageSize": "Величина странице",
-    "bs-extjs-actions-column-header": "Радње",
-    "bs-extjs-warning": "Упозорење",
-    "bs-extjs-saving": "чување...",
-    "bs-extjs-close": "Затвори",
-    "bs-extjs-label-user": "Корисник",
-    "bs-extjs-uploading": "Отпремање...",
-    "bs-extjs-allns": "(сви)"
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"bs-extjs-ok": "У реду",
+	"bs-extjs-cancel": "Откажи",
+	"bs-extjs-yes": "Да",
+	"bs-extjs-no": "Не",
+	"bs-extjs-save": "Сачувај",
+	"bs-extjs-delete": "Обриши",
+	"bs-extjs-add": "Додај",
+	"bs-extjs-remove": "Уклони",
+	"bs-extjs-edit": "Уреди",
+	"bs-extjs-hint": "Савет",
+	"bs-extjs-error": "Грешка",
+	"bs-extjs-confirm": "Потврди",
+	"bs-extjs-loading": "Учитавање...",
+	"bs-extjs-pageSize": "Величина странице",
+	"bs-extjs-actions-column-header": "Радње",
+	"bs-extjs-warning": "Упозорење",
+	"bs-extjs-saving": "чување...",
+	"bs-extjs-close": "Затвори",
+	"bs-extjs-label-user": "Корисник",
+	"bs-extjs-uploading": "Отпремање...",
+	"bs-extjs-allns": "(сви)",
+	"bs-extjs-filters": "Филтери"
 }

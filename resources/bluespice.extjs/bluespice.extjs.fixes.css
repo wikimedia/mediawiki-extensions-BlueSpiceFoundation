@@ -20,22 +20,19 @@ ul.x-menu-list {
 }
 
 /* Fix underlining by commonElements.css */
-a.x-btn-over, 
-a.x-btn-over {
-	text-decoration: none;
-}
-
-a.x-btn-over, 
 a.x-btn-over,
-a.x-btn-focus, 
-a.x-btn-focus {
+a.x-btn-over:hover,
+a.x-btn-focus,
+a.x-btn-focus:focus
+a.x-btn-disabled,
+a.x-btn-disabled:hover{
 	text-decoration: none;
 }
 
 /* Fix blue background from general.css */
-input:focus.x-field-form-focus, 
-textarea:focus.x-field-form-focus, 
-input:focus.x-field-form-focus, 
+input:focus.x-field-form-focus,
+textarea:focus.x-field-form-focus,
+input:focus.x-field-form-focus,
 textarea:focus.x-field-form-focus {
 	background-color: #FFF;
 }
@@ -44,8 +41,8 @@ textarea:focus.x-field-form-focus {
 body.x-body {
 	font-family: sans-serif; /* MediaWiki default */
 	/*
-		This is disabled because the default BlueSpiceSkin has issues we cannot 
-		resolve right now. As soon as the BlueSpiceSkin is Vector compatible 
+		This is disabled because the default BlueSpiceSkin has issues we cannot
+		resolve right now. As soon as the BlueSpiceSkin is Vector compatible
 		we can add this line to prevent BSF from breaking Vector based skins.
 	*/
 	/*font-size: 1em;*/ /* MediaWiki default */
@@ -57,7 +54,7 @@ body.x-body {
 }
 
 .x-tool-img {
-	height: 20px;
+	margin-top: -3px !important;
 }
 
 
@@ -82,4 +79,13 @@ body.x-body {
 }
 .bs-extjs-crud-grid tr.x-grid-row {
 	height: 34px;
+}
+
+#content .x-window, .x-window,
+#content .x-panel, .x-panel {
+	line-height: normal;
+}
+
+.x-btn-toolbar {
+	text-decoration: none !important;
 }

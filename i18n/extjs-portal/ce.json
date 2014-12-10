@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Умар"
-        ]
-    },
-    "bs-extjs-portal-title": "Портлетан корта",
-    "bs-extjs-portal-height": "Локхалла",
-    "bs-extjs-portal-count": "ДӀаяздарш",
-    "bs-extjs-portal-timespan-month": "Бутт"
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-extjs-portal-title": "Портлетан корта",
+	"bs-extjs-portal-height": "Локхалла",
+	"bs-extjs-portal-count": "ДӀаяздарш",
+	"bs-extjs-portal-timespan-month": "Бутт"
 }

@@ -3,6 +3,14 @@
 class BsGroupHelper {
 
 	protected static $sLockModeGroup = 'lockmode';
+	
+	/**
+	 * Public getter for lockmode group. This is needed by some extensions.
+	 * @return string
+	 */
+	public static function getLockModeGroup() {
+		return self::$sLockModeGroup;
+	}
 
 	protected static $aGroups = array();
 

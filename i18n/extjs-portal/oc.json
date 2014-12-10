@@ -1,14 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Cedric31"
-        ]
-    },
-    "bs-extjs-portal-config": "Configurar lo portlet :",
-    "bs-extjs-portal-height": "Nautor",
-    "bs-extjs-portal-count": "Entradas",
-    "bs-extjs-portal-timespan": "Durada",
-    "bs-extjs-portal-timespan-week": "Setmana",
-    "bs-extjs-portal-timespan-month": "Mes",
-    "bs-extjs-portal-timespan-alltime": "Tot lo temps"
+	"@metadata": {
+		"authors": [
+			"Cedric31"
+		]
+	},
+	"bs-extjs-portal-config": "Configurar lo portlet :",
+	"bs-extjs-portal-title": "Títol del portlet",
+	"bs-extjs-portal-height": "Nautor",
+	"bs-extjs-portal-count": "Entradas",
+	"bs-extjs-portal-timespan": "Durada",
+	"bs-extjs-portal-timespan-week": "Setmana",
+	"bs-extjs-portal-timespan-month": "Mes",
+	"bs-extjs-portal-timespan-alltime": "Tot lo temps"
 }

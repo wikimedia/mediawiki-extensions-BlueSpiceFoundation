@@ -5,7 +5,7 @@ class BsFileSystemHelper {
 	/**
 	 *
 	 * @param string $sSubDirName
-	 * @return Status 
+	 * @return Status
 	 */
 	public static function ensureCacheDirectory($sSubDirName = '') {
 		wfProfileIn(__METHOD__);
@@ -13,7 +13,7 @@ class BsFileSystemHelper {
 			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
 		if (!empty($sSubDirName) && !preg_match('#^[a-zA-Z/\\\]+#', $sSubDirName)) {
 			wfProfileOut(__METHOD__);
-			return Status::newFatal('Requested subdirectory of ' . BS_DATA_DIR . ' contains illegal chars');
+			return Status::newFatal('Requested subdirectory of ' . BS_CACHE_DIR . ' contains illegal chars');
 		}
 		if (!is_dir(BS_CACHE_DIR)) {
 			if (!mkdir(BS_CACHE_DIR, 0777, true)) {
@@ -24,21 +24,24 @@ class BsFileSystemHelper {
 		if (empty($sSubDirName)) {
 			wfProfileOut(__METHOD__);
 			return Status::newGood(BS_CACHE_DIR);
-		} elseif (is_dir(BS_CACHE_DIR . '/' . $sSubDirName)) {
+		} elseif (is_dir(BS_CACHE_DIR . DS . $sSubDirName)) {
 			wfProfileOut(__METHOD__);
-			return Status::newGood(BS_CACHE_DIR . '/' . $sSubDirName);
+			return Status::newGood(BS_CACHE_DIR . DS . $sSubDirName);
 		}
 
-		if (!mkdir(BS_CACHE_DIR . '/' . $sSubDirName, 0777, true)) {
+		if (!mkdir(BS_CACHE_DIR . DS . $sSubDirName, 0777, true)) {
 			wfProfileOut(__METHOD__);
 			return Status::newFatal(BS_CACHE_DIR . ' is not accessible');
 		}
+
+		wfProfileOut(__METHOD__);
+		return Status::newGood(BS_CACHE_DIR . DS . $sSubDirName);
 	}
 
 	/**
 	 *
 	 * @param string $sSubDirName
-	 * @return Status 
+	 * @return Status
 	 */
 	public static function ensureDataDirectory($sSubDirName = '') {
 		wfProfileIn(__METHOD__);
@@ -58,24 +61,24 @@ class BsFileSystemHelper {
 		if (empty($sSubDirName)) {
 			wfProfileOut(__METHOD__);
 			return Status::newGood(BS_DATA_DIR);
-		} elseif (is_dir(BS_DATA_DIR . '/' . $sSubDirName)) {
+		} elseif (is_dir(BS_DATA_DIR . DS . $sSubDirName)) {
 			wfProfileOut(__METHOD__);
-			return Status::newGood(BS_DATA_DIR . '/' . $sSubDirName);
+			return Status::newGood(BS_DATA_DIR . DS . $sSubDirName);
 		}
-		if (!mkdir(BS_DATA_DIR . '/' . $sSubDirName, 0777, true)) {
+		if (!mkdir(BS_DATA_DIR . DS . $sSubDirName, 0777, true)) {
 			wfProfileOut(__METHOD__);
 			return Status::newFatal(BS_DATA_DIR . ' is not accessible');
 		}
 
 		wfProfileOut(__METHOD__);
-		return Status::newGood(BS_DATA_DIR . '/' . $sSubDirName);
+		return Status::newGood(BS_DATA_DIR . DS . $sSubDirName);
 	}
 
 	/**
 	 *
 	 * @param string $sSubDirName
 	 * @param mixed $data
-	 * @return Status 
+	 * @return Status
 	 */
 	public static function saveToCacheDirectory($sFileName, $data, $sSubDirName = '') {
 		wfProfileIn(__METHOD__);
@@ -89,7 +92,7 @@ class BsFileSystemHelper {
 
 		if (!file_put_contents($oStatus->getValue() . DS . $sFileName, $data)) {
 			wfProfileOut(__METHOD__);
-			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . '/' . $sFileName);
+			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . DS . $sFileName);
 		}
 
 		wfProfileOut(__METHOD__);
@@ -100,7 +103,7 @@ class BsFileSystemHelper {
 	 *
 	 * @param string $sSubDirName
 	 * @param mixed $data
-	 * @return Status 
+	 * @return Status
 	 */
 	public static function saveToDataDirectory($sFileName, $data, $sSubDirName = '') {
 		wfProfileIn(__METHOD__);
@@ -115,7 +118,7 @@ class BsFileSystemHelper {
 		//todo: via FileRepo
 		if (!file_put_contents($oStatus->getValue() . DS . $sFileName, $data)) {
 			wfProfileOut(__METHOD__);
-			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . '/' . $sFileName);
+			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . DS . $sFileName);
 		}
 
 		wfProfileOut(__METHOD__);
@@ -125,31 +128,28 @@ class BsFileSystemHelper {
 	/**
 	 *
 	 * @param string $sSubDirName
-	 * @return string Filepath 
+	 * @return string Filepath
 	 */
 	public static function getDataDirectory($sSubDirName = '') {
-		$sDataDir = ( $sSubDirName ) ? BS_DATA_DIR . DS . $sSubDirName : BS_DATA_DIR;
-		return $sDataDir;
+		return empty( $sSubDirName ) ? BS_DATA_DIR : BS_DATA_DIR . DS . $sSubDirName;
 	}
 
 	/**
 	 *
 	 * @param string $sSubDirName
-	 * @return string URL 
+	 * @return string URL
 	 */
-	public static function getDataPath($sSubDirName = '') {
-		$sDataPath = ( $sSubDirName ) ? BS_DATA_PATH . '/' . $sSubDirName : BS_DATA_PATH;
-		return $sDataPath;
+	public static function getDataPath( $sSubDirName = '' ) {
+		return empty( $sSubDirName ) ? BS_DATA_PATH : BS_DATA_PATH . '/' . $sSubDirName;
 	}
 
 	/**
 	 *
 	 * @param string $sSubDirName
-	 * @return string Filepath 
+	 * @return string Filepath
 	 */
-	public static function getCacheDirectory($sSubDirName = '') {
-		$sCacheDir = ( $sSubDirName ) ? BS_CACHE_DIR . '/' . $sSubDirName : BS_CACHE_DIR;
-		return $sCacheDir;
+	public static function getCacheDirectory( $sSubDirName = '' ) {
+		return empty( $sSubDirName ) ? BS_CACHE_DIR : BS_CACHE_DIR . DS . $sSubDirName;
 	}
 
 	/**
@@ -164,10 +164,10 @@ class BsFileSystemHelper {
 		wfMkdirParents($sDestination);
 		while (false !== ( $sFileName = readdir($rDir))) {
 			if (( $sFileName != '.' ) && ( $sFileName != '..' )) {
-				if (is_dir($sSource . '/' . $sFileName)) {
-					self::copyRecursive($sSource . '/' . $sFileName, $sDestination . '/' . $sFileName);
+				if (is_dir($sSource . DS . $sFileName)) {
+					self::copyRecursive($sSource . DS . $sFileName, $sDestination . DS . $sFileName);
 				} else {
-					copy($sSource . '/' . $sFileName, $sDestination . '/' . $sFileName);
+					copy($sSource . DS . $sFileName, $sDestination . DS . $sFileName);
 				}
 			}
 		}
@@ -191,10 +191,10 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 * Get the content of a file
+	 * Get the content of a file in data directory
 	 * @param String $sFileName
 	 * @param String $sDir
-	 * @return String The file's content.
+	 * @return Status (->getValue() for the file's content).
 	 */
 	public static function getFileContent($sFileName, $sDir) {
 		if (self::hasTraversal($sDir . DS . $sFileName))
@@ -204,6 +204,23 @@ class BsFileSystemHelper {
 		if (!file_exists(BS_DATA_DIR . DS . $sDir . DS . $sFileName))
 			return Status::newFatal(wfMessage("bs-filesystemhelper-file-not-exists", $sFileName)->plain());
 		$sFile = file_get_contents(BS_DATA_DIR . DS . $sDir . DS . $sFileName);
+		return Status::newGood($sFile);
+	}
+
+	/**
+	 * Get the content of a file in cache directory
+	 * @param String $sFileName
+	 * @param String $sDir
+	 * @return Status (->getValue() for the file's content).
+	 */
+	public static function getCacheFileContent($sFileName, $sDir) {
+		if (self::hasTraversal($sDir . DS . $sFileName))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
+		if (!is_dir(BS_CACHE_DIR . DS . $sDir))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-no-directory", $sDir)->plain());
+		if (!file_exists(BS_CACHE_DIR . DS . $sDir . DS . $sFileName))
+			return Status::newFatal(wfMessage("bs-filesystemhelper-file-not-exists", $sFileName)->plain());
+		$sFile = file_get_contents(BS_CACHE_DIR . DS . $sDir . DS . $sFileName);
 		return Status::newGood($sFile);
 	}
 
@@ -330,7 +347,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 * 
+	 *
 	 * @global type $wgRequest
 	 * @param type $sName
 	 * @param type $sDir
@@ -339,31 +356,38 @@ class BsFileSystemHelper {
 	 * @return type
 	 * @throws MWException
 	 */
-	public static function uploadFile($sName, $sDir, $sFileName = '', $sRequiredExtension = '') {
-		global $wgRequest;
+	public static function uploadFile( $sName, $sDir, $sFileName = '', $sRequiredExtension = '' ) {
 		$oWebRequest = new WebRequest();
-		$oWebRequestUpload = $oWebRequest->getUpload($sName);
+		$oWebRequestUpload = $oWebRequest->getUpload( $sName );
 		$oUploadFromFile = new UploadFromFile();
-		$oUploadFromFile->initialize($wgRequest->getVal('name'), $oWebRequestUpload);
+		$oUploadFromFile->initialize( RequestContext::getMain()->getRequest()->getVal( 'name' ), $oWebRequestUpload );
 		$aStatus = $oUploadFromFile->verifyUpload();
-		if ($aStatus['status'] != 0) {
-			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
+		if ( $aStatus['status'] != 0 ) {
+			return Status::newFatal(
+				wfMessage(
+					'bs-filesystemhelper-upload-err-code',
+					'{{int:' . UploadBase::getVerificationErrorCode( $aStatus['status'] ) . '}}'
+				)->parse()
+			);
 		}
+
 		$sRemoteFileName = $oWebRequestUpload->getName();
-		$sRemoteFileExt = pathinfo($sRemoteFileName, PATHINFO_EXTENSION);
-		if ($sRequiredExtension && strtolower($sRemoteFileExt) != strtolower($sRequiredExtension)) {
-			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-wrong-ext', $sRequiredExtension));
+		$sRemoteFileExt = pathinfo( $sRemoteFileName, PATHINFO_EXTENSION );
+		if ( $sRequiredExtension && ( strtolower( $sRemoteFileExt ) != strtolower( $sRequiredExtension ) ) ) {
+			return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-wrong-ext', $sRequiredExtension )->plain() );
 		}
-		$oStatus = self::ensureDataDirectory($sDir);
-		if (!$oStatus->isGood())
+
+		$oStatus = self::ensureDataDirectory( $sDir );
+		if ( !$oStatus->isGood() )
 			return $oStatus;
 
 		$sTmpName = BS_DATA_DIR . DS . $sDir . DS;
-		$sTmpName .= ($sFileName) ? $sFileName : $sRemoteFileName;
-		if (self::hasTraversal($sTmpName, true))
-			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
-		move_uploaded_file($oWebRequestUpload->getTempName(), $sTmpName);
-		return Status::newGood($oWebRequestUpload->getName());
+		$sTmpName .= ( $sFileName ) ? $sFileName : $sRemoteFileName;
+		if ( self::hasTraversal( $sTmpName, true ) )
+			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" )->plain() );
+
+		move_uploaded_file( $oWebRequestUpload->getTempName(), $sTmpName );
+		return Status::newGood( $oWebRequestUpload->getName() );
 	}
 
 	/**
@@ -383,7 +407,7 @@ class BsFileSystemHelper {
 		$aStatus = $oUploadFromFile->verifyUpload();
 
 		if ($aStatus['status'] != 0) {
-			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
+			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode( $aStatus['status'] ) . '}}')->parse());
 		}
 
 		$sRemoteFileName = $oWebRequestUpload->getName();
@@ -426,6 +450,10 @@ class BsFileSystemHelper {
 			$iNewHeight = $iNewWidth / $fRatio; # landscape
 		}
 		$rNewImage = imagecreatetruecolor($iNewWidth, $iNewHeight);
+		imagealphablending($rNewImage, false);
+		imagesavealpha($rNewImage,true);
+		$iTransparent = imagecolorallocatealpha($rNewImage, 255, 255, 255, 127);
+		imagefilledrectangle($rNewImage, 0, 0, $iNewWidth, $iNewHeight, $iTransparent);
 		imagecopyresampled($rNewImage, $rImage, 0, 0, 0, 0, $iNewWidth, $iNewHeight, $iWidth, $iHeight);
 		imagepng($rNewImage, $sTmpName);
 		imagedestroy($rNewImage);
@@ -442,11 +470,18 @@ class BsFileSystemHelper {
 	public static function hasTraversal($sPath, $bIsAbsolute = false) {
 		if (!$sPath)
 			return true; // BS_DATA_DIR without trailing DS. Bail out.
-		$sCheckPath = ($bIsAbsolute ? '' : BS_DATA_DIR . DS) . $sPath;
-		if (file_exists($sCheckPath)) {
-			return (strpos(realpath($sCheckPath), BS_DATA_DIR . DS) !== 0);
+		$sCheckDataPath = ($bIsAbsolute ? '' : BS_DATA_DIR . DS) . $sPath;
+		$sCheckCachePath = ($bIsAbsolute ? '' : BS_CACHE_DIR . DS) . $sPath;
+		if (file_exists($sCheckDataPath)) {
+			return (strpos(realpath($sCheckDataPath), BS_DATA_DIR . DS) !== 0);
+		} elseif (file_exists($sCheckCachePath)) {
+			return (strpos(realpath($sCheckCachePath), BS_CACHE_DIR . DS) !== 0);
 		} else {
-			return (self::normalizePath($sCheckPath) === null);
+			$sPath = self::normalizePath($sCheckDataPath);
+			if( $sPath  === null ) {
+				$sPath = self::normalizePath($sCheckCachePath);
+			}
+			return ($sPath === null);
 		}
 	}
 
@@ -481,7 +516,7 @@ class BsFileSystemHelper {
 	public static function saveBase64ToTmp($sFileName, $sFileContent){
 		$sFileName = wfTempDir() . DS . basename($sFileName);
 		
-		$sFileContent = preg_replace("#data:.*;base64,#", "", $sFileContent);
+		$sFileContent = preg_replace("#^data:.*?;base64,#", "", $sFileContent);
 		$sFileContent = str_replace(' ', '+', $sFileContent);
 		$sFileContent = base64_decode($sFileContent);
 		$bFile = file_put_contents($sFileName, $sFileContent);
@@ -490,7 +525,7 @@ class BsFileSystemHelper {
 		else
 			return Status::newGood($sFileName);
 	}
-	
+
 	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false){
 		global $wgLocalFileRepo, $wgUser;
 		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo));
@@ -505,7 +540,7 @@ class BsFileSystemHelper {
 		}
 		$status = $oUploadFromStash->performUpload($sComment, $sPageText, $bWatch, $wgUser);
 		$oUploadFromStash->cleanupTempFile();
-		
+
 		if (file_exists($sFilename) && $bDeleteSrc)
 			unlink($sFilename);
 		$oFile = wfFindFile(basename($sFilename));
@@ -519,5 +554,5 @@ class BsFileSystemHelper {
 		else
 			return Status::newFatal (wfMessage('bs-filesystemhelper-upload-local-error-create')->plain());
 	}
-	
+
 }

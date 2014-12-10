@@ -50,17 +50,17 @@ class BsMailer {
 		wfProfileIn( 'BS::'.__METHOD__ );
 		$oStatus = Status::newGood(); // TODO RBV (01.03.12 12:59): Use fatal...?
 
-		$sCurLF   = "\n";
-		$sReplLF  = '<br />'."\n";
+		$sCurLF = "\n";
+		$sReplLF = '<br />'."\n";
 		$sHeaders = null;
 
 		if ( $this->bSendHTML ) {
-			$sCurLF   = '<br/>'."\n";
-			$sReplLF  = "\n";
+			$sCurLF = '<br/>'."\n";
+			$sReplLF = "\n";
 			$sHeaders = 'text/html; charset=utf-8';
 		}
 
-		global $wgSitename, $wgPasswordSender,$wgEmergencyContact,$wgUserEmailUseReplyTo;
+		global $wgSitename, $wgPasswordSender,$wgUserEmailUseReplyTo;
 
 		$oFromAddress = new MailAddress( $wgPasswordSender, $wgSitename, $wgSitename );
 		$oReplyToAddress = null;
@@ -74,18 +74,17 @@ class BsMailer {
 		if ( !is_array($vTo) ) $vTo = array( $vTo );
 
 		foreach ( $vTo as $vReceiver ) {
-			//error_log(var_export($vReceiver,true));
 			if ( $vReceiver instanceof User ) {
 				if ( $vReceiver->getEmail() ) {
 					$aEmailTo[] = array(
 							'mail' => new MailAddress($vReceiver),
-							'greeting' => BsCore::getUserDisplayName($vReceiver)
+							'greeting' => $vReceiver->getName()
 					);
 				}
-			} else if ( strpos($vReceiver, '@' ) !== false ) {
+			} elseif ( strpos( $vReceiver, '@' ) !== false ) {
 				$aEmailTo[] = array(
-						'mail' => new MailAddress($vReceiver),
-						'greeting' => false
+					'mail' => new MailAddress( $vReceiver ),
+					'greeting' => false
 				);
 			} else {
 				$oUser = User::newFromName( $vReceiver );
@@ -97,8 +96,8 @@ class BsMailer {
 
 				if ( $oUser->getEmail() ) {
 					$aEmailTo[] = array(
-						'mail' => new MailAddress($oUser),
-						'greeting' => BsCore::getUserDisplayName($oUser)
+						'mail' => new MailAddress( $oUser ),
+						'greeting' => $vReceiver->getName()
 					);
 				}
 			}
@@ -108,57 +107,71 @@ class BsMailer {
 		$sCombinedSubject = '['.$wgSitename.'] '.$sSubject;
 
 		//Prepare message
-		$sFooter = $this->bSendHTML ? wfMessage( 'bs-mail-footer-html', $wgSitename )->plain() : wfMessage( 'bs-mail-footer', $wgSitename )->plain() ;
-		$sCombinedMsg = $sMsg.$sFooter;
-
-		if( $this->bSendHTML ) {
+		if ( $this->bSendHTML ) {
 			//http(s)://link -> <a href="http(s)://link>http(s)://link</a>"
 			//! already followed by </a>
 			//last char ! "."
-			$sCombinedMsg = preg_replace(
+			$sMsg = preg_replace(
 				"#(\s|/>)(https?://[^\s]+?)\.?([\s|<])#",
 				'<a href="$2">$2</a>',
-				$sCombinedMsg
+				$sMsg
 			);
 		}
+
+		$sFooter = ( $this->bSendHTML ) ? "<br /><br />---------------------<br /><br />" : "\n\n---------------------\n\n";
+		$sFooter .= wfMessage( 'bs-email-footer', $wgSitename )->plain() . ( $this->bSendHTML )
+			? "<br /><br />---------------------"
+			: "\n\n---------------------";
+
+		$sCombinedMsg = $sMsg.$sFooter;
 
 		foreach ( $aEmailTo as $aReceiver ) {
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
-				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-receiver-html', $aReceiver['greeting'] )->plain()  : wfMessage( 'bs-mail-greeting-receiver', $aReceiver['greeting'] )->plain();
+				$oUser = User::newFromName( $aReceiver['greeting'] );
+				$sRealname = $oUser->getRealName();
+				if ( empty( $sRealname ) ) {
+					$sRealname = $aReceiver['greeting'];
+				}
+				$sGreeting = wfMessage( 'bs-email-greeting-receiver', $aReceiver['greeting'], $sRealname )
+					->inLanguage( $oUser->getOption( 'language' ) )
+					->text();
 			} else {
-				$sGreeting = $this->bSendHTML ? wfMessage( 'bs-mail-greeting-no-receiver-html' )->plain()  : wfMessage( 'bs-mail-greeting-no-receiver' )->plain();
+				$sGreeting = wfMessage( 'bs-email-greeting-no-receiver' )->text();
 			}
+			$sGreeting .= ( $this->bSendHTML )
+				? "<br /><br />"
+				: "\n\n";
 
 			$sLocalCombinedMsg = $sGreeting.$sCombinedMsg;
-			$sLocalCombinedMsg = str_replace($sReplLF, $sCurLF, $sLocalCombinedMsg);
+			$sLocalCombinedMsg = str_replace( $sReplLF, $sCurLF, $sLocalCombinedMsg );
 
 			if ( BsConfig::get( 'MW::TestMode' ) ) {
 				$sLog = var_export(
 					array(
-						'to'      => $aReceiver['mail']->toString(),
+						'to' => $aReceiver['mail']->toString(),
 						'subject' => $sCombinedSubject,
-						'body'    => $sLocalCombinedMsg,
+						'body' => $sLocalCombinedMsg,
 						'replyto' => $oReplyToAddress,
-						'from'    => $oFromAddress->toString()
+						'from' => $oFromAddress->toString()
 					),
 					true
 				);
 				wfDebugLog( 'BS::Mailer', $sLog );
-			}
-			else {
+			} else {
 				$oStatus = UserMailer::send(
-					$aReceiver['mail'], 
-					$oFromAddress, 
-					$sCombinedSubject, 
-					$sLocalCombinedMsg, 
+					$aReceiver['mail'],
+					$oFromAddress,
+					$sCombinedSubject,
+					$sLocalCombinedMsg,
 					$oReplyToAddress,
 					$sHeaders
 				);
 			}
 		}
-		return $oStatus;
+
 		wfProfileOut( 'BS::'.__METHOD__ );
+		return $oStatus;
 	}
 
 	public function getSendHTML() {

@@ -19,11 +19,9 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.wikiText.js',
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
-		'bluespice/bluespice.ping.js',
-		'bluespice.libs/slimScroll.min.js',
+		'bluespice/bluespice.ping.js'
 	),
 	'dependencies' => array(
-		'jquery',
 		'jquery.ui.core',
 		'jquery.ui.dialog',
 		'jquery.ui.tabs',
@@ -51,7 +49,6 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bs-two-units-ago',
 		'bs-one-unit-ago',
 		'bs-now',
-
 		'blanknamespace', //MediaWiki
 	),
 	'position' => 'bottom' // available since r85616
@@ -92,19 +89,29 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-reset',
 		'bs-extjs-close',
 		'bs-extjs-label-user',
+		'bs-extjs-label-namespace',
+		'bs-extjs-label-page',
 		'bs-extjs-confirmNavigationTitle',
 		'bs-extjs-confirmNavigationText',
 		'bs-extjs-allns',
 		'bs-extjs-upload',
 		'bs-extjs-browse',
-		'bs-extjs-uploading'
+		'bs-extjs-uploading',
+		'bs-extjs-filters',
+		'bs-extjs-filter-equals',
+		'bs-extjs-filter-equals-not',
+		'bs-extjs-filter-contains',
+		'bs-extjs-filter-contains-not',
+		'bs-extjs-filter-starts-with',
+		'bs-extjs-filter-ends-with',
+		'bs-extjs-title-success',
+		'bs-extjs-title-warning'
 	),
 	'position' => 'bottom'
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.styles'] = array(
-	//Those are mainly Ext.ux styles that are not part of ext-all.css or the 
-	//theme
+	//Those are mainly Ext.ux styles that are not part of ext-all.css or the theme
 	'styles' => array(
 		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',
 		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
@@ -123,7 +130,6 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 	),
 	'messages' => array(
 		'bs-extjs-portal-config',
-//unused		'bs-extjs-portal-portlets',
 		'bs-extjs-portal-title',
 		'bs-extjs-portal-height',
 		'bs-extjs-portal-count',
@@ -143,12 +149,30 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal.css'] = array(
 	)
 ) + $aResourceModuleTemplate;
 
-$wgResourceModules['ext.bluespice.html.formfields'] = array(
+$wgResourceModules['ext.bluespice.html.formfields.sortable'] = array(
 	'scripts' => array(
-		'bluespice/bluespice.html.formfields.js'
+		'bluespice/bluespice.html.formfields.sortable.js'
+	),
+	'styles' => array(
+		'bluespice/bluespice.html.formfields.sortable.css'
 	),
 	'dependencies' => array(
-		'ext.bluespice.extjs'
+		'ext.bluespice'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.html.formfields.multiselect'] = array(
+	'scripts' => array(
+		'bluespice/bluespice.html.formfields.multiselect.js'
+	),
+	'dependencies' => array(
+		'ext.bluespice'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.compat.vector.styles'] = array(
+	'styles' => array(
+		'bluespice.compat/bluespice.compat.vector.fixes.css'
 	)
 ) + $aResourceModuleTemplate;
 

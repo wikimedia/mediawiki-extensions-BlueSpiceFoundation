@@ -23,16 +23,16 @@ class ViewException extends ViewBaseElement {
 	function execute( $params = false ) {
 		$aOut = array();
 		$aOut[] = '<div class="bs-exception">';
-		$aOut[] = '  <h3>' . wfMsg( 'bs-exception-view-heading' ) . '</h3>';
-		$aOut[] = '  <p>' . wfMsg( 'bs-exception-view-text' ) . '</p>';
+		$aOut[] = '  <h3>' . wfMessage( 'bs-exception-view-heading' )->plain() . '</h3>';
+		$aOut[] = '  <p>' . wfMessage( 'bs-exception-view-text' )->text() . '</p>';
 		$aOut[] = '  <div class="bs-exception-message">';
-		$aOut[] = wfMsg( $this->oException->getMessage() );
+		$aOut[] = wfMessage( $this->oException->getMessage() )->text();
 		$aOut[] = '  </div>';
-		$aOut[] = '  <p>' . wfMsg( 'bs-exception-view-admin-hint' ) . '</p>';
+		$aOut[] = '  <p>' . wfMessage( 'bs-exception-view-admin-hint' )->text() . '</p>';
 		$aOut[] = '  <hr />';
 		$aOut[] = '  <span class="bs-exception-stacktrace-toggle">';
-		$aOut[] = '    <span style="display:none;">' . wfMsg( 'bs-exception-view-stacktrace-toggle-show-text' ) . '</span>';
-		$aOut[] = '    <span style="display:none;">' . wfMsg( 'bs-exception-view-stacktrace-toggle-hide-text' ) . '</span>';
+		$aOut[] = '    <span style="display:none;">' . wfMessage( 'bs-exception-view-stacktrace-toggle-show-text' )->text() . '</span>';
+		$aOut[] = '    <span style="display:none;">' . wfMessage( 'bs-exception-view-stacktrace-toggle-hide-text' )->text() . '</span>';
 		$aOut[] = '  </span>';
 		$aOut[] = '  <div class="bs-exception-stacktrace">';
 		$aOut[] = '   <pre>';

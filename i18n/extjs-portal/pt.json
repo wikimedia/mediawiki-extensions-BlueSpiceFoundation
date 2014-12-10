@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fúlvio"
+		]
+	},
+	"bs-extjs-portal-config": "Configurar portlet:",
+	"bs-extjs-portal-title": "Título do portlet",
+	"bs-extjs-portal-height": "Altura",
+	"bs-extjs-portal-count": "Entradas",
+	"bs-extjs-portal-timespan": "Intervalo de tempo",
+	"bs-extjs-portal-timespan-week": "Semana",
+	"bs-extjs-portal-timespan-month": "Mês",
+	"bs-extjs-portal-timespan-alltime": "Todo o tempo"
+}

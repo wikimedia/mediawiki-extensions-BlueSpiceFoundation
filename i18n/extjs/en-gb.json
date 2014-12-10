@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Raynasution",
+			"Bennylin"
+		]
+	},
+	"bs-extjs-filters": "Filters",
+	"bs-extjs-filter-contains-not": "contains not",
+	"bs-extjs-filter-ends-with": "ends with"
+}

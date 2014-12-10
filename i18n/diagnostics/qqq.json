@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "    Stephan Muggli <muggli@hallowelt.biz>",
-            "Shirayuki"
-        ]
-    },
-    "diagnostics": "{{doc-special|Diagnostics}}"
+	"@metadata": {
+		"authors": [
+			"    Stephan Muggli <muggli@hallowelt.biz>",
+			"Shirayuki"
+		]
+	},
+	"diagnostics": "{{doc-special|Diagnostics}}"
 }

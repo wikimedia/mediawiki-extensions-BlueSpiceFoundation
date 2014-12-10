@@ -1,11 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Liuxinyu970226"
-        ]
-    },
-    "specialcredits": "BlueSpice学分",
-    "bs-credits-programmers": "程序员",
-    "bs-credits-dnt": "设计与测试",
-    "bs-credits-contributors": "贡献者"
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"specialcredits": "BlueSpice制作组",
+	"bs-credits-programmers": "程序员",
+	"bs-credits-dnt": "设计与测试",
+	"bs-credits-contributors": "贡献者",
+	"bs-credits-translators": "译者",
+	"bs-credits-translation": "翻译",
+	"bs-credits-th": "感谢所有来自$1的译者。"
 }

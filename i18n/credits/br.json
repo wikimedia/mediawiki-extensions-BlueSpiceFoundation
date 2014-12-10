@@ -1,8 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fohanno"
-        ]
-    },
-    "bs-credits-programmers": "Programmourien"
+	"@metadata": {
+		"authors": [
+			"Fohanno"
+		]
+	},
+	"specialcredits": "Kredoù BlueSpice",
+	"bs-credits-programmers": "Programmourien",
+	"bs-credits-contributors": "Kenlabourerien",
+	"bs-credits-translators": "Troerien",
+	"bs-credits-translation": "Troidigezh",
+	"bs-credits-th": "Trugarez d'an holl droerien eus $1."
 }

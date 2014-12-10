@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sanlinnaing"
+		]
+	},
+	"bs-email-greeting-receiver": "{{GENDER:$1|မင်္ဂလာပါ ဦး $2|မင်္ဂလာပါ ဒေါ်|မင်္ဂလာပါ}}"
+}

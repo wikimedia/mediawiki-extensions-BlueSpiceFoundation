@@ -11,9 +11,24 @@ $specialPageAliases['en'] = array(
 	'Diagnostics' => array( 'Diagnostics' ),
 );
 
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'Diagnostics' => array( 'تشخيصات' ),
+);
+
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'Diagnostics' => array( 'تشخيصات' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Diagnostics' => array( 'BlueSpice-Diagnose' ),
+);
+
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'Diagnostics' => array( 'Teşhiskerden' ),
 );
 
 /** Persian (فارسی) */
@@ -24,6 +39,21 @@ $specialPageAliases['fa'] = array(
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'Diagnostics' => array( 'Diagnostica' ),
+);
+
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'Diagnostics' => array( '진단하기' ),
+);
+
+/** Macedonian (македонски) */
+$specialPageAliases['mk'] = array(
+	'Diagnostics' => array( 'Дијагностика' ),
+);
+
+/** Malayalam (മലയാളം) */
+$specialPageAliases['ml'] = array(
+	'Diagnostics' => array( 'പരിശോധന' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */

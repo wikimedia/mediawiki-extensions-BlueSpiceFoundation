@@ -1,8 +1,16 @@
 {
-    "@metadata": {
-        "authors": [
-            "Southparkfan"
-        ]
-    },
-    "bs-credits-contributors": "Bijdragers"
+	"@metadata": {
+		"authors": [
+			"Southparkfan",
+			"Niknetniko",
+			"Sjoerddebruin"
+		]
+	},
+	"specialcredits": "BlueSpice-kredieten",
+	"bs-credits-programmers": "Ontwikkelaars",
+	"bs-credits-dnt": "Ontwerpen en testen",
+	"bs-credits-contributors": "Bijdragers",
+	"bs-credits-translators": "Vertalers",
+	"bs-credits-translation": "Vertaling",
+	"bs-credits-th": "Dankzij alle vertalers van $1."
 }

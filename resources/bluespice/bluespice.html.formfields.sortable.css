@@ -1,0 +1,11 @@
+.bs-multiselect-sortable {
+	display: none;
+}
+.bs-multiselect-item {
+	border: 1px solid #d3d3d3;
+	background: #e6e6e6;
+	padding: 2px 5px;
+	margin: 5px 0;
+	list-style-type: none;
+	cursor: pointer;
+}

@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"VASANTH S.N."
+		]
+	},
+	"bs-ns_main": "(ಪುಟಗಳು)",
+	"bs-ns_all": "(ಎಲ್ಲವೂ)",
+	"bs-tab_navigation": "ಸಂಚರಣೆ",
+	"bs-tab_focus": "ಕೇಂದ್ರಬಿಂದು",
+	"bs-tab_admin": "ನಿರ್ವಾಹಕ",
+	"bs-userbar_loginswitch_logout": "ನಿರ್ಗಮಿಸು",
+	"bs-userbar_loginswitch_login": "ಲಾಗ್ ಇನ್",
+	"bs-extended-search-tooltip-fulltext": "ಪೂರ್ಣಪಠ್ಯ ಶೋಧನೆ",
+	"bs-extended-search-textfield-defaultvalue": "ಶೋಧಿಸು...",
+	"bs-extended-search-textfield-tooltip": "ವಿಕಿಯನ್ನು ಶೋಧಿಸು",
+	"bs-no-information-available": "ಯಾವುದೇ ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ",
+	"bs-secs-duration": "$1 {{PLURAL:$1|ಕ್ಷಣ|ಕ್ಷಣಗಳು}}",
+	"bs-now": "ಈಗ",
+	"bs-email-greeting-no-receiver": "ನಮಸ್ಕಾರ.",
+	"bs-userpagesettings-legend": "ಬಳಕೆದಾರರ ಆಯ್ಕೆಗಳು",
+	"bs-userpreferences-link-text": "ಹೆಚ್ಚಿನ ಬಳಕೆದಾರರ ಆಯ್ಕೆಗಳು",
+	"bs-userpreferences-link-title": "ನಿಮ್ಮ ವಯುಕ್ತಿಕ ಬಳಕೆದಾರ ಆಯ್ಕೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸಿ",
+	"bs-exception-view-heading": "ಒಂದು ದೋಷ ಸಂಭವಿಸಿದೆ",
+	"bs-exception-view-stacktrace-toggle-show-text": "ದೋಷದ ವಿವರವನ್ನು ತೋರಿಸಿ",
+	"bs-exception-view-stacktrace-toggle-hide-text": "ದೋಷದ ವಿವರವನ್ನು ಅಡಗಿಸಿ",
+	"bs-viewtagerrorlist-legend": "$1: ದೋಷ",
+	"bs-readonly": "ಹೊಸ ಸೇರ್ಪಡೆಗಳನ್ನು ಮತ್ತು ಇತರ ಬದಲಾವಣೆಗಳನ್ನು ಮಾಡಲಾಗದಂತೆ ಡೇಟಾಬೇಸ್ ಅನ್ನು ಸದ್ಯಕ್ಕೆ ಮುಚ್ಚಲಾಗಿದೆ. ಇದು ಪ್ರಾಯಶಃ ನಿಯತಕಾಲಿಕೆ ದುರಸ್ತಿಗೆ ಇರಬಹುದು ಮತ್ತು ಅದರ ನಂತರ ಸಾಮಾನ್ಯ ಸ್ಥಿತಿಗೆ ಹಿಂದಿರುಗುತ್ತದೆ.\n\nಡೇಟಾಬೇಸ್ ಅನ್ನು ಮುಚ್ಚಿದ ನಿರ್ವಾಹಕ ನೀಡಿರುವ ಕಾರಣ: $1",
+	"bs-imageofotheruser": "ನೀವು ಇನ್ನೊಬ್ಬ ಬಳಕೆದಾರನಿಗೆ ಕಳುಹಿಸಲು ಚಿತ್ರಗಳನ್ನು ನಕಲೇರಿಸಲು ಅನುಮತಿ ಇಲ್ಲ.",
+	"bs-permissionerror": "ಅನುಮತಿ ದೋಷ!",
+	"bs-filesystemhelper-upload-unsupported-type": "ಈ ಮಾದರಿಯ ಕಡತವು ಆದರಿಸಲ್ಪಟ್ಟಿಲ್ಲ",
+	"bs-filesystemhelper-save-base64-error": "ಕಡತವನ್ನು ಉಳಿಸಲಾಗಿಲ್ಲ.",
+	"bs-filesystemhelper-upload-base64-error": "ಕಡತವನ್ನು ನಕಲೇರಿಸಲಾಗಿಲ್ಲ.",
+	"bs-filesystemhelper-upload-local-error-create": "ಕಡತವನ್ನು ವಿಕಿಯಲ್ಲಿ ಸೃಜಿಸಲು ಸಾದ್ಯವಾಗಿಲ್ಲ.",
+	"bs-navigation-instructions": "ಸೂಚನೆಗಳು",
+	"bs-navigation-support": "ಬೆಂಬಲ",
+	"bs-navigation-contact": "ಸಂಪರ್ಕ"
+}

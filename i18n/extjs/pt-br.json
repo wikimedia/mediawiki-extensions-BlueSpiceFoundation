@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Luckas"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Cancelar",
+	"bs-extjs-yes": "Sim",
+	"bs-extjs-no": "Não",
+	"bs-extjs-save": "Salvar",
+	"bs-extjs-delete": "Apagar",
+	"bs-extjs-add": "Adicionar",
+	"bs-extjs-remove": "Remover",
+	"bs-extjs-edit": "Editar",
+	"bs-extjs-hint": "Sugestão",
+	"bs-extjs-error": "Erro",
+	"bs-extjs-confirm": "Confirmar",
+	"bs-extjs-loading": "Carregando...",
+	"bs-extjs-pageSize": "Tamanho da página",
+	"bs-extjs-actions-column-header": "Ações",
+	"bs-extjs-warning": "Aviso",
+	"bs-extjs-saving": "salvando...",
+	"bs-extjs-reset": "Reiniciar",
+	"bs-extjs-close": "Fechar",
+	"bs-extjs-label-user": "Usuário",
+	"bs-extjs-upload": "Enviar",
+	"bs-extjs-browse": "Explorar"
+}

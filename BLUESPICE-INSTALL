@@ -1,5 +1,9 @@
 ---
-Installing BlueSpice free 2.22 for MediaWiki
+Installing BlueSpice free 2.23 for MediaWiki
 ---
 
-English install manual: http://help.blue-spice.org/index.php/BlueSpice_2.22/Installation_Manual
+==Without Installer==
+* English installation manual: http://help.blue-spice.org/index.php/BlueSpice_2.23/Installation_Manual/Without_Installer
+
+==With Installer==
+* English installation manual: http://help.blue-spice.org/index.php/BlueSpice_2.23/Installation_Manual/Installer

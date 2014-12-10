@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kiranmayee"
+		]
+	},
+	"bs-extjs-filters": "వడపోతలు",
+	"bs-extjs-filter-equals": "సమానమయిన",
+	"bs-extjs-filter-equals-not": "సరి సమానమవ్వని",
+	"bs-extjs-filter-contains": "కలిగిన",
+	"bs-extjs-filter-contains-not": "కలిగి వుండదు",
+	"bs-extjs-filter-starts-with": "తో మొదలయ్యిన",
+	"bs-extjs-filter-ends-with": "తో ముగుస్తుంది"
+}

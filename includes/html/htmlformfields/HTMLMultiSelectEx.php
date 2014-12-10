@@ -17,7 +17,10 @@ class HTMLMultiSelectEx extends HTMLFormField {
 	}
 
 	function getInputHTML( $value ) {
-		$html = $this->formatOptions( $this->mParams['options'], $value );
+		$this->mParent->getOutput()->addModules( 'ext.bluespice.html.formfields.multiselect' );
+
+		$aOptions = ( isset( $this->mParams['options'] ) ) ? $this->mParams['options'] : array();
+		$html = $this->formatOptions( $aOptions, $value );
 
 		return $html;
 	}
@@ -32,7 +35,7 @@ class HTMLMultiSelectEx extends HTMLFormField {
 			$bIsAssoc = true;
 			if ( array_values($options) === $options ) {
 				$bIsAssoc = false;
-			};
+			}
 
 			foreach ( $options as $key => $value ) {
 				// find a better way to identify associative array

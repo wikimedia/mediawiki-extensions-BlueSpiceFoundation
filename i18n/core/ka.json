@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"David1010"
+		]
+	},
+	"bs-ns_main": "(გვერდები)",
+	"bs-ns_all": "(ყველა)",
+	"bs-tab_navigation": "ნავიგაცია",
+	"bs-tab_focus": "ფოკუსი",
+	"bs-tab_admin": "ადმინი",
+	"bs-userbar_loginswitch_logout": "გასვლა",
+	"bs-userbar_loginswitch_login": "შესვლა",
+	"bs-extended-search-textfield-defaultvalue": "ძიება...",
+	"bs-extended-search-textfield-tooltip": "ვიკის ძიება",
+	"bs-years-duration": "{{PLURAL:$1|ერთი წელი|$1 წელი}}",
+	"bs-months-duration": "{{PLURAL:$1|ერთი თვე|$1 თვე}}",
+	"bs-weeks-duration": "{{PLURAL:$1|ერთი კვირა|$1 კვირა}}",
+	"bs-days-duration": "{{PLURAL:$1|ერთი დღე|$1 დღე}}",
+	"bs-hours-duration": "{{PLURAL:$1|ერთი საათი|$1 საათი}}",
+	"bs-mins-duration": "{{PLURAL:$1|ერთი წუთი|$1 წუთი}}",
+	"bs-secs-duration": "{{PLURAL:$1|ერთი წამი|$1 წამი}}",
+	"bs-two-units-ago": "$1 და $2 წინ",
+	"bs-one-unit-ago": "$1 წინ",
+	"bs-now": "ახლა",
+	"bs-email-greeting-receiver": "{{GENDER:$1|გამარჯობა ბ-ნო $1|გამარჯობა ქ-ნო $1|გამარჯობა $1}},",
+	"bs-email-greeting-no-receiver": "გამარჯობა,"
+}

@@ -1,30 +1,36 @@
 {
-    "@metadata": {
-        "authors": [
-            "Robby"
-        ]
-    },
-    "bs-extjs-ok": "OK",
-    "bs-extjs-cancel": "Ofbriechen",
-    "bs-extjs-yes": "Jo",
-    "bs-extjs-no": "Neen",
-    "bs-extjs-save": "Späicheren",
-    "bs-extjs-delete": "Läschen",
-    "bs-extjs-add": "Derbäisetzen",
-    "bs-extjs-remove": "Ewechhuelen",
-    "bs-extjs-edit": "Änneren",
-    "bs-extjs-hint": "Tipp",
-    "bs-extjs-error": "Feeler",
-    "bs-extjs-confirm": "Confirméieren",
-    "bs-extjs-loading": "Lueden...",
-    "bs-extjs-pageSize": "Gréisst vun der Säit",
-    "bs-extjs-actions-column-header": "Aktiounen",
-    "bs-extjs-warning": "Warnung",
-    "bs-extjs-saving": "späicheren...",
-    "bs-extjs-reset": "Zrécksetzen",
-    "bs-extjs-close": "Zoumaachen",
-    "bs-extjs-label-user": "Benotzer",
-    "bs-extjs-upload": "Eroplueden",
-    "bs-extjs-uploading": "Eroplueden...",
-    "bs-extjs-confirmNavigationTitle": "Dem Link nogoen"
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-extjs-ok": "OK",
+	"bs-extjs-cancel": "Ofbriechen",
+	"bs-extjs-yes": "Jo",
+	"bs-extjs-no": "Neen",
+	"bs-extjs-save": "Späicheren",
+	"bs-extjs-delete": "Läschen",
+	"bs-extjs-add": "Derbäisetzen",
+	"bs-extjs-remove": "Ewechhuelen",
+	"bs-extjs-edit": "Änneren",
+	"bs-extjs-hint": "Tipp",
+	"bs-extjs-error": "Feeler",
+	"bs-extjs-confirm": "Confirméieren",
+	"bs-extjs-loading": "Lueden...",
+	"bs-extjs-pageSize": "Gréisst vun der Säit",
+	"bs-extjs-actions-column-header": "Aktiounen",
+	"bs-extjs-warning": "Warnung",
+	"bs-extjs-saving": "späicheren...",
+	"bs-extjs-reset": "Zrécksetzen",
+	"bs-extjs-close": "Zoumaachen",
+	"bs-extjs-label-user": "Benotzer",
+	"bs-extjs-label-namespace": "Nummraum",
+	"bs-extjs-label-page": "Säit",
+	"bs-extjs-upload": "Eroplueden",
+	"bs-extjs-uploading": "Eroplueden...",
+	"bs-extjs-confirmNavigationTitle": "Dem Link nogoen",
+	"bs-extjs-allns": "(all)",
+	"bs-extjs-filters": "Filteren",
+	"bs-extjs-filter-starts-with": "fänkt u mat",
+	"bs-extjs-title-warning": "Warnung"
 }

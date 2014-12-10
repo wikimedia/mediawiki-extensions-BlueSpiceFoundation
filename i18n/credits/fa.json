@@ -1,10 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Reza1615"
-        ]
-    },
-    "bs-credits-programmers": "برنامه‌نویسان",
-    "bs-credits-dnt": "طراحی و تست",
-    "bs-credits-contributors": "مشارکت‌کنندگان"
+	"@metadata": {
+		"authors": [
+			"Reza1615",
+			"Alirezaaa"
+		]
+	},
+	"specialcredits": "دست‌اندرکاران BlueSpice",
+	"bs-credits-programmers": "برنامه‌نویسان",
+	"bs-credits-dnt": "طراحی و تست",
+	"bs-credits-contributors": "مشارکت‌کنندگان",
+	"bs-credits-translators": "مترجمان",
+	"bs-credits-translation": "ترجمه",
+	"bs-credits-th": "به لطف همه مترجمان $1."
 }

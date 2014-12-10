@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-extjs-ok": "OK",
+	"bs-extjs-cancel": "Cancellar",
+	"bs-extjs-yes": "Si",
+	"bs-extjs-no": "No",
+	"bs-extjs-save": "Salveguardar",
+	"bs-extjs-delete": "Deler",
+	"bs-extjs-add": "Adder",
+	"bs-extjs-remove": "Remover",
+	"bs-extjs-edit": "Modificar",
+	"bs-extjs-hint": "Consilio",
+	"bs-extjs-error": "Error",
+	"bs-extjs-confirm": "Confirmar",
+	"bs-extjs-loading": "Cargamento…",
+	"bs-extjs-pageSize": "Dimension del pagina",
+	"bs-extjs-actions-column-header": "Actiones",
+	"bs-extjs-warning": "Advertimento",
+	"bs-extjs-saving": "salveguarda…",
+	"bs-extjs-reset": "Reinitialisar",
+	"bs-extjs-close": "Clauder",
+	"bs-extjs-label-user": "Usator",
+	"bs-extjs-upload": "Incargar",
+	"bs-extjs-browse": "Explorar",
+	"bs-extjs-uploading": "Incargamento…",
+	"bs-extjs-confirmNavigationTitle": "Sequer ligamine",
+	"bs-extjs-confirmNavigationText": "Vole tu vermente sequer iste ligamine? Tote le parametros dynamic, como le filtros e le ordinamento, in le pagina actual essera perdite.",
+	"bs-extjs-allns": "(totes)",
+	"bs-extjs-filters": "Filtros",
+	"bs-extjs-filter-equals": "equala",
+	"bs-extjs-filter-equals-not": "non equala",
+	"bs-extjs-filter-contains": "contine",
+	"bs-extjs-filter-contains-not": "non contine",
+	"bs-extjs-filter-starts-with": "comencia per",
+	"bs-extjs-filter-ends-with": "fini per"
+}

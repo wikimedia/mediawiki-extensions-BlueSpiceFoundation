@@ -1,12 +1,11 @@
-(function(mw, bs, $, undefined) {
-	"use strict";
+( function( mw, bs, $, undefined ) {
 
 	/*N-glton-pattern*/
-	var alerts = {};
-	var confirms = {};
-	var prompts = {};
+	var alerts = {},
+		confirms = {},
+		prompts = {};
 
-	function _prepareSimpleDialogWindowCfg(idPrefix, cfg) {
+	function _prepareSimpleDialogWindowCfg( idPrefix, cfg ) {
 		cfg = cfg || {};
 		return Ext.applyIf(cfg, {
 			id : idPrefix,
@@ -16,13 +15,11 @@
 		});
 	}
 
-	function _prepareSimpleDialogCallbackCfg(cfg) {
+	function _prepareSimpleDialogCallbackCfg( cfg ) {
 		cfg = cfg || {};
 		return Ext.applyIf(cfg, {
-			ok: function() {
-			},
-			cancel: function() {
-			},
+			ok: function() {},
+			cancel: function() {},
 			scope: this
 		});
 	}
@@ -34,11 +31,11 @@
 	 * @param {Object} callbackCfg: Allowes parameters "ok" with type {Function}
 	 * @return {BS.AlertDialog}: The BS.AlertDialog instance
 	 */
-	function _alert(idPrefix, windowCfg, callbackCfg) {
+	function _alert( idPrefix, windowCfg, callbackCfg ) {
 		if (alerts[idPrefix])
 			return alerts[idPrefix];
-		
-		if(!windowCfg.title && !windowCfg.titleMsg ) {
+
+		if (!windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-hint';
 		}
 
@@ -56,10 +53,10 @@
 		return alertWindow;
 	}
 
-	function _confirm(idPrefix, windowCfg, callbackCfg) {
+	function _confirm( idPrefix, windowCfg, callbackCfg ) {
 		if (confirms[idPrefix])
 			return confirms[idPrefix];
-		
+
 		if(!windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-confirm';
 		}
@@ -79,7 +76,7 @@
 		return confirmWindow;
 	}
 
-	function _prompt(idPrefix, windowCfg, callbackCfg) {
+	function _prompt( idPrefix, windowCfg, callbackCfg ) {
 		if (prompts[idPrefix])
 			return prompts[idPrefix];
 
@@ -98,30 +95,29 @@
 		return promptWindow;
 	}
 
-	function _confirmNavigation(anchor) {
+	function _confirmNavigation( anchor ) {
 		return _confirm(
 			'bs-confirm-link',
 			{
 				title: mw.message('bs-extjs-confirmNavigationTitle').plain(),
 				text: mw.message('bs-extjs-confirmNavigationText').plain()
 			},
-		{
-			ok: function() {
-				window.location = anchor;
+			{
+				ok: function() {
+					window.location = anchor;
+				}
 			}
-		}
 		);
 	}
 
-	function _getRemoteHandlerUrl(extension, method, params) {
+	function _getRemoteHandlerUrl( extension, method, params ) {
 		if (typeof(params) == 'undefined') {
 			params = {};
 		}
 		var obj = {};
 		if (typeof(params) == 'object') {
 			obj = params;
-		}
-		else {
+		} else {
 			obj = {};
 			for (i in params) {
 				obj[i] = params[i];
@@ -131,8 +127,7 @@
 		obj.mod = extension;
 		obj.rf = method;
 
-		var querystring = $.param(obj);
-		var script = mw.util.wikiScript();
+		var querystring = $.param(obj), script = mw.util.wikiScript();
 
 		return [script, querystring].join('?');
 	}
@@ -190,7 +185,7 @@
 			_startPos;
 
 		this.autoSelection = '';
-		
+
 		this.reset = function() {
 			_selectedText = false;
 			_startPos = 0;
@@ -274,56 +269,56 @@
 			this.autoSelection = '';
 		};
 	}
-	
-	
+
+
 	function _timestampToAgeString( unixTimestamp ) {
 		//This is a js version of "adapter/Utility/FormatConverter.class.php" -> timestampToAgeString
 		//TODO: use PLURAL (probably wont work in mw 1.17)
-		var start = (new Date(unixTimestamp));
-		var now = (new Date());
-		var diff = now - start;
-		
-		var sDateTimeOut = '';
-		var sYears = '';
-		var sMonths = '';
-		var sWeeks = '';
-		var sDays = '';
-		var sHrs = '';
-		var sMins = '';
-		var sSecs = '';
+		var sDateTimeOut = '',
+			sYears = '',
+			sMonths = '',
+			sWeeks = '',
+			sDays = '',
+			sHrs = '',
+			sMins = '',
+			sSecs = '',
+			sTsPast = unixTimestamp,
+			sTsNow = Math.round( ( new Date() ).getTime() / 1000 ),
+			iDuration = sTsNow - sTsPast;
 
-		var sTsPast =  BsArticleInfo.lastEditTimestamp;
-		var sTsNow = Math.round((new Date()).getTime() / 1000);
-		var iDuration = sTsNow - sTsPast;
-
-		var iYears=Math.floor(iDuration/(60*60*24*365)); iDuration%=60*60*24*365;
-		var iMonths=Math.floor(iDuration/(60*60*24*30.5)); iDuration%=60*60*24*30.5;
-		var iWeeks=Math.floor(iDuration/(60*60*24*7)); iDuration%=60*60*24*7;
-		var iDays=Math.floor(iDuration/(60*60*24)); iDuration%=60*60*24;
-		var iHrs=Math.floor(iDuration/(60*60)); iDuration%=60*60;
-		var iMins=Math.floor(iDuration/60);
-		var iSecs=iDuration%60;
+		var iYears = Math.floor( iDuration / ( 60 * 60 * 24 * 365 ) );
+			iDuration %= 60 * 60 * 24 * 365;
+		var iMonths = Math.floor( iDuration / ( 60 * 60 * 24 * 30.5 ) );
+			iDuration %= 60 * 60 * 24 * 30.5;
+		var iWeeks = Math.floor( iDuration / ( 60 * 60 * 24 * 7) );
+			iDuration %= 60 * 60 * 24 * 7;
+		var iDays = Math.floor( iDuration / ( 60 * 60 * 24 ) );
+			iDuration %= 60 * 60 * 24;
+		var iHrs = Math.floor( iDuration / ( 60 * 60 ) );
+			iDuration %= 60 * 60;
+		var iMins = Math.floor( iDuration / 60 ),
+			iSecs = iDuration % 60;
 
 		if ( iYears > 0 ) sYears = mw.message( 'bs-years-duration', iYears ).text();
-		if ( iMonths > 0 ) sMonths = mw.message('bs-months-duration', iMonths).text();
-		if ( iWeeks > 0 ) sWeeks = mw.message('bs-weeks-duration', iWeeks).text();
-		if ( iDays > 0 ) sDays = mw.message('bs-days-duration', iDays).text();
-		if ( iHrs > 0 ) sHrs = mw.message('bs-hours-duration', iHrs).text();
-		if ( iMins > 0 ) sMins = mw.message('bs-mins-duration', iMins).text();
-		if ( iSecs > 0 ) sSecs = mw.message('bs-secs-duration', iSecs).text();
+		if ( iMonths > 0 ) sMonths = mw.message( 'bs-months-duration', iMonths ).text();
+		if ( iWeeks > 0 ) sWeeks = mw.message( 'bs-weeks-duration', iWeeks ).text();
+		if ( iDays > 0 ) sDays = mw.message( 'bs-days-duration', iDays ).text();
+		if ( iHrs > 0 ) sHrs = mw.message( 'bs-hours-duration', iHrs ).text();
+		if ( iMins > 0 ) sMins = mw.message( 'bs-mins-duration', iMins ).text();
+		if ( iSecs > 0 ) sSecs = mw.message( 'bs-secs-duration', iSecs ).text();
 
-		if (iYears > 0) sDateTimeOut = sMonths ? mw.message( 'bs-two-units-ago', sYears, sMonths).text() : mw.message( 'bs-one-unit-ago', sYears).text();
-		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.message( 'bs-two-units-ago', sMonths, sWeeks).text() : mw.message( 'bs-one-unit-ago', sMonths).text();
-		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.message( 'bs-two-units-ago', sWeeks ,sDays).text() : mw.message( 'bs-one-unit-ago', sWeeks).text();
-		else if (iDays > 0) sDateTimeOut = sHrs ? mw.message( 'bs-two-units-ago', sDays, sHrs).text() : mw.message( 'bs-one-unit-ago', sDays).text();
-		else if (iHrs > 0) sDateTimeOut = sMins ? mw.message( 'bs-two-units-ago', sHrs, sMins).text() : mw.message( 'bs-one-unit-ago', sHrs).text();
-		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).text() : mw.message( 'bs-one-unit-ago', sMins).text();
-		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).text();
-		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).text();
-		
+		if (iYears > 0) sDateTimeOut = sMonths ? mw.message( 'bs-two-units-ago', sYears, sMonths).plain() : mw.message( 'bs-one-unit-ago', sYears).plain();
+		else if (iMonths > 0) sDateTimeOut = sWeeks ? mw.message( 'bs-two-units-ago', sMonths, sWeeks).plain() : mw.message( 'bs-one-unit-ago', sMonths).plain();
+		else if (iWeeks > 0) sDateTimeOut = sDays ? mw.message( 'bs-two-units-ago', sWeeks ,sDays).plain() : mw.message( 'bs-one-unit-ago', sWeeks).plain();
+		else if (iDays > 0) sDateTimeOut = sHrs ? mw.message( 'bs-two-units-ago', sDays, sHrs).plain() : mw.message( 'bs-one-unit-ago', sDays).plain();
+		else if (iHrs > 0) sDateTimeOut = sMins ? mw.message( 'bs-two-units-ago', sHrs, sMins).plain() : mw.message( 'bs-one-unit-ago', sHrs).plain();
+		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).plain() : mw.message( 'bs-one-unit-ago', sMins).plain();
+		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).plain();
+		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).plain();
+
 		return sDateTimeOut;
 	}
-	
+
 	/**
 	 * Shows a message window
 	 * @param {String} url The url providing the content for the window
@@ -343,31 +338,31 @@
 		win.show();
 		return win;
 	}
-	
+
 	/**
-	 * Creates a new value object with all the properties of "obj" but prefixed 
+	 * Creates a new value object with all the properties of "obj" but prefixed
 	 * "data-bs-" to allow easy embedding in HTML elements
-	 * @param {Object} obj 
+	 * @param {Object} obj
 	 * @return {Object}
 	 */
 	function _makeDataAttributeObject( obj ) {
 		var data = {};
-		for( var property in obj ) {
+		for ( var property in obj ) {
 			data['data-bs-'+property] = obj[property];
 		}
 		return data;
 	}
-	
+
 	/**
-	 * Creates a new value object with all the properties of "obj" but without 
-	 * "data-bs-" prefixes. Leaves unprefixed properties untouched. May 
+	 * Creates a new value object with all the properties of "obj" but without
+	 * "data-bs-" prefixes. Leaves unprefixed properties untouched. May
 	 * override unprefixed doublets.
 	 * @param {Object} obj
 	 * @return {Object}
 	 */
 	function _unprefixDataAttributeObject( obj ) {
 		var data = {}, newProperty = '';
-		for( var property in obj ) {
+		for ( var property in obj ) {
 			newProperty = property;
 			if (property.startsWith('data-bs-') !== false) {
 				newProperty = property.substr(8, property.length);
@@ -376,7 +371,7 @@
 		}
 		return data;
 	}
-	
+
 	/**
 	 * Creates a new value object from a DOMNode object.
 	 * @param {Object} node
@@ -384,13 +379,13 @@
 	 */
 	function _makeAttributeObject( node ) {
 		var data = {}, attribute;
-		for( var i = 0; i < node.attributes.length; i++ ) {
+		for ( var i = 0; i < node.attributes.length; i++ ) {
 			attribute = node.attributes[i].name;
 			data[attribute] = node.attributes[i].value;
 		}
 		return data;
 	}
-	
+
 	var _tempAnchor = null;
 	/**
 	 * Gets all GET parameters from an url.
@@ -398,7 +393,7 @@
 	 * @return {Object}
 	 */
 	function _getUrlParams( param ) {
-		// Handle getUrlParams(), getUrlParams(""), getUrlParams(null) 
+		// Handle getUrlParams(), getUrlParams(""), getUrlParams(null)
 		// or getUrlParams(undefined) calls
 		if ( !param ) {
 			return _getUrlParams( window.location );
@@ -417,23 +412,23 @@
 		}
 
 		return {};
-	};
+	}
 
 	// TODO RBV (31.07.12 15:11): Check for full browser compatibility as the location-Object has no official standard.
 	function __getUrlParams( loc ) {
 		var oKeyValuePairs = {};
-		if(loc.search === '') return oKeyValuePairs;
+		if ( loc.search === '' ) return oKeyValuePairs;
 		var sParams = loc.search.substr(1);
 		var aParams = sParams.split('&');
 
 		for ( var i = 0; i < aParams.length; i++ ) {
 			var aKeyValuePair = aParams[i].split('=');
-			var key   = decodeURIComponent( aKeyValuePair[0] );
+			var key = decodeURIComponent( aKeyValuePair[0] );
 			var value = decodeURIComponent( aKeyValuePair[1] ); //With "?param1=val1&param2" oKeyValuePairs['param2'] will be "undefined". That's okay, but can be discussed.
 			oKeyValuePairs[key] = value;
 		}
 		return oKeyValuePairs;
-	};
+	}
 
 	/**
 	 * Gets a GET parameter from an url.
@@ -450,7 +445,7 @@
 			if( key == sParamName ) sValue = oParams[key];
 		}
 		return sValue;
-	};
+	}
 
 	/**
 	 * Shows an input dialog and adds provided value to an ExtJS MulitSelect field
@@ -464,14 +459,14 @@
 		Ext.Msg.prompt( sTitle, sMessage, function( btn, text ){
 			if ( btn == 'ok' ){
 				var oSelect = document.getElementById( 'mw-input-' + sFieldName );
-				if(oSelect == null) {
+				if ( oSelect === null ) {
 					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
 				}
 
-				oSelect.options[oSelect.options.length] = new Option( text, text, false, false );
+				oSelect.options[oSelect.options.length] = new Option( text, text, false, true );
 			}
 		});
-	};
+	}
 
 	/**
 	 * Removes an entry from an ExtJS MulitSelect field
@@ -481,7 +476,7 @@
 	function _deleteEntryFromMultiSelect( oSrc ) {
 		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring(2);
 		var elSel = document.getElementById( 'mw-input-' + sFieldName );
-		if( elSel == null ) {
+		if ( elSel === null ) {
 			elSel = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
 		}
 		var i;
@@ -490,16 +485,43 @@
 				elSel.remove(i);
 			}
 		}
-	};
-	
+	}
+
 	function _wikiGetlink( params, str ) {
 		var pageName = str || mw.config.get( 'wgPageName' );
 		var params = params || {};
 		params.title = pageName;
-		
+
 		var url = mw.util.wikiScript() + '?' + $.param(params);
 		return url;
-	};
+	}
+
+	function _auditCssSelectors() {
+		var links = [], rules = [], unmatched = [], selectors = { total:0, matched:0 };
+
+		$.each( document.getElementsByTagName( 'link' ), function( index, link ) {
+			if ( link.sheet !== null ) {
+				links.push( link.sheet );
+			}
+		} );
+
+		$.each( links, function( index, linkSheet ) {
+			$.each( linkSheet.rules, function ( index, rule ) {
+				selectors.total++;
+				if ( document.querySelector( rule.selectorText ) !== null ) {
+					selectors.matched++;
+				} else {
+					unmatched.push( rule.selectorText );
+				}
+			} );
+		} );
+
+		console.log( selectors.matched + ' / ' + selectors.total + ' = ' + selectors.matched / selectors.total );
+
+		$.each( unmatched, function( index, unmatched ) {
+			console.log( unmatched );
+		} );
+	}
 
 	var util = {
 		getNamespaceText: _getNamespaceText,
@@ -521,10 +543,11 @@
 		getUrlParams: _getUrlParams,
 		addEntryToMultiSelect: _addEntryToMultiSelect,
 		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect,
-		wikiGetlink: _wikiGetlink
+		wikiGetlink: _wikiGetlink,
+		auditCssSelectors: _auditCssSelectors
 	};
 
-	//This allows us to have a confirm dialog be displayed 
+	//This allows us to have a confirm dialog be displayed
 	//by just adding a class to a link
 	$(document).on('click', 'a.bs-confirm-nav', function(e) {
 		e.preventDefault();
@@ -539,8 +562,8 @@
 			util.selection.autoSelection = document.selection.createRange();
 		})
 		.on( 'keyup', '#wpTextbox1', function() {
-			// IE also creates a selection if you are typing ... 
-			// and you will get it as description in InsertLink -> not wanted 
+			// IE also creates a selection if you are typing ...
+			// and you will get it as description in InsertLink -> not wanted
 			util.selection.autoSelection = '';
 		});
 	}

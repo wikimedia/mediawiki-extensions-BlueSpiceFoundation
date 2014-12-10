@@ -1,23 +1,45 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "bs-extjs-ok": "Ok",
-    "bs-extjs-cancel": "Anuluj",
-    "bs-extjs-yes": "Tak",
-    "bs-extjs-no": "Nie",
-    "bs-extjs-save": "Zapisz",
-    "bs-extjs-delete": "Usuń",
-    "bs-extjs-add": "Dodaj",
-    "bs-extjs-remove": "Usuń",
-    "bs-extjs-hint": "Wskazówka",
-    "bs-extjs-error": "Błąd",
-    "bs-extjs-loading": "Ładowanie...",
-    "bs-extjs-warning": "Ostrzeżenie",
-    "bs-extjs-saving": "zapisywanie...",
-    "bs-extjs-close": "Zamknij",
-    "bs-extjs-label-user": "Użytkownik",
-    "bs-extjs-uploading": "Przesyłanie..."
+	"@metadata": {
+		"authors": [
+			"Chrumps",
+			"Alan ffm",
+			"Vengir"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Anuluj",
+	"bs-extjs-yes": "Tak",
+	"bs-extjs-no": "Nie",
+	"bs-extjs-save": "Zapisz",
+	"bs-extjs-delete": "Usuń",
+	"bs-extjs-add": "Dodaj",
+	"bs-extjs-remove": "Usuń",
+	"bs-extjs-edit": "Edytuj",
+	"bs-extjs-hint": "Wskazówka",
+	"bs-extjs-error": "Błąd",
+	"bs-extjs-confirm": "Potwierdź",
+	"bs-extjs-loading": "Pobieranie...",
+	"bs-extjs-pageSize": "Rozmiar strony",
+	"bs-extjs-actions-column-header": "Operacje",
+	"bs-extjs-warning": "Ostrzeżenie",
+	"bs-extjs-saving": "zapisywanie...",
+	"bs-extjs-reset": "Resetuj",
+	"bs-extjs-close": "Zamknij",
+	"bs-extjs-label-user": "Użytkownik",
+	"bs-extjs-label-namespace": "Przestrzeń nazw",
+	"bs-extjs-label-page": "Strona",
+	"bs-extjs-upload": "Prześlij",
+	"bs-extjs-browse": "Przeglądaj",
+	"bs-extjs-uploading": "Przesyłanie...",
+	"bs-extjs-confirmNavigationTitle": "Opuszczanie strony",
+	"bs-extjs-confirmNavigationText": "Czy na pewno chcesz opuścić tę stronę? Wszelkie niezapisane ustawienia takie jak filtry i sortowania zostaną utracone.",
+	"bs-extjs-allns": "(wszystkie)",
+	"bs-extjs-filters": "Filtry",
+	"bs-extjs-filter-equals": "jest równe",
+	"bs-extjs-filter-equals-not": "nie jest równe",
+	"bs-extjs-filter-contains": "zawiera",
+	"bs-extjs-filter-contains-not": "nie zawiera",
+	"bs-extjs-filter-starts-with": "zaczyna się od",
+	"bs-extjs-filter-ends-with": "kończy się",
+	"bs-extjs-title-warning": "Ostrzeżenie"
 }

@@ -1,10 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki",
-            "Dude1717"
-        ]
-    },
-    "bs-credits-programmers": "プログラマー",
-    "bs-credits-dnt": "デザインとテスト"
+	"@metadata": {
+		"authors": [
+			"Shirayuki",
+			"Dude1717"
+		]
+	},
+	"specialcredits": "BlueSpice のクレジット",
+	"bs-credits-programmers": "プログラマー",
+	"bs-credits-dnt": "デザインとテスト",
+	"bs-credits-contributors": "貢献者",
+	"bs-credits-translators": "翻訳者",
+	"bs-credits-translation": "翻訳"
 }

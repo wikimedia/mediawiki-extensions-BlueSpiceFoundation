@@ -1,50 +1,44 @@
-
-.hw-button-a {
-	margin-right:2px;
-	margin-bottom:2px;
-	cursor:pointer;
+.bs-actions-filedownload {
+	width: 116px;
+	text-align: center;
 }
-
-.hw-button-left {
-	float:left;
-	padding:0px;
-	margin:0px;
-	border:0px;
-	height:22px;
-	margin-bottom:2px;
+.bs-actions-filedownload a{
 	/*@embed*/
-	background: url("images/btn_left.gif");
+	background-image:url("images/download-file_btn.png");
+	background-repeat: no-repeat;
+	width: 116px !important;
+	color: #FFFFFF !important;
+	text-align: center;
+	padding-top: 1px;
+	vertical-align: middle;
+	text-decoration: none;
 }
-
-.hw-button-img {
-	padding:0px;
-	padding-left:3px;
-	margin:0px;
-	border:0px;
-	float:left;
-}
-
-.hw-button-middle {
+.bs-actions-filedownload a:hover{
 	/*@embed*/
-	background-image:url("images/btn_middle.gif");
-	float:left;
-	padding:0px;
-	padding-left:3px;
-	padding-top:2px;
-	background-repeat:repeat-x;
-	margin:0px;
-	border:0px;
-	height:22px;
-	margin-bottom:2px;
-	font-size:11px;
+	background-image:url("images/download-file_btn-hover.png");
+	text-decoration: none;
 }
 
-.hw-button-right {
-	padding:0px;
-	margin:0px;
-	border:0px;
-	float:left;
-	height:22px;
-	margin-bottom:2px;
-	margin-right:2px;
+.bs-userpagesettings-item {
+	float: left;
+	margin-right: 2em;
+	font-size: 80%;
+	text-align: center;
+}
+
+.bs-tooltip-link {
+	cursor: pointer;
+}
+
+.bs-tooltip {
+	display:none;
+}
+
+.bs-tooltip-body > ul {
+	list-style: none;
+	margin: 0;
+}
+.btn44 {
+	height:44px!important;
+	width:44px!important;
 }

@@ -31,13 +31,18 @@ class BsTagFinder {
 		wfProfileIn( 'BS::'.__METHOD__ );
 		wfSuppressWarnings();
 		$aResult = array();
-		
-		$sXML = '<xml xmlns:bs="http://www.blue-spice.org/XML/Schema-2011-09">'.$sText.'</xml>';
+
+		$sXML = '<?xml encoding="UTF-8">'
+				. '<html xmlns:bs="http://www.blue-spice.org/XML/Schema-2011-09">'
+				. '<body>'
+				.$sText
+				. '</body>'
+				. '</html>';
 		$sXML = UtfNormal::cleanUp($sXML);
 
 		$oDOMDoc = new DOMDocument();
 		$oDOMDoc->recover = true;
-		$oDOMDoc->loadHTML( $sXML ); //Formerly was loadXML but that caused a 
+		$oDOMDoc->loadHTML( $sXML ); //Formerly was loadXML but that caused a
 		//lot of warnings. Also the input is propbably more HTML than XML.
 
 		foreach( $aTagnames as $aTagname ) {

@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Xuacu"
-        ]
-    },
-    "bs-extjs-portal-config": "Configurar portlet:",
-    "bs-extjs-portal-title": "Títulu del portlet",
-    "bs-extjs-portal-height": "Altor",
-    "bs-extjs-portal-count": "Entraes",
-    "bs-extjs-portal-timespan": "Intervalu de tiempu",
-    "bs-extjs-portal-timespan-week": "Selmana",
-    "bs-extjs-portal-timespan-month": "Mes",
-    "bs-extjs-portal-timespan-alltime": "De tolos tiempos"
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"bs-extjs-portal-config": "Configurar portlet:",
+	"bs-extjs-portal-title": "Títulu del portlet",
+	"bs-extjs-portal-height": "Altor",
+	"bs-extjs-portal-count": "Entraes",
+	"bs-extjs-portal-timespan": "Intervalu de tiempu",
+	"bs-extjs-portal-timespan-week": "Selmana",
+	"bs-extjs-portal-timespan-month": "Mes",
+	"bs-extjs-portal-timespan-alltime": "De tolos tiempos"
 }

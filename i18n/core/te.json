@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kiranmayee"
+		]
+	},
+	"bs-ns_main": "(ప్రతులు)",
+	"bs-ns_all": "(అన్నీ)",
+	"bs-tab_navigation": "మార్గదర్శకం",
+	"bs-tab_admin": "నిర్వహణాధికారి",
+	"bs-userbar_loginswitch_logout": "నిష్క్రమించు",
+	"bs-userbar_loginswitch_login": "ప్రవేశించండి",
+	"bs-extended-search-textfield-defaultvalue": "వెతుకుతున్నాం...",
+	"bs-years-duration": "{{PLURAL:$1|ఒక సంవత్సరం|$1 సంవత్సరాల}}",
+	"bs-months-duration": "{{PLURAL:$1|ఒక నెల|$1 నెలల}}",
+	"bs-weeks-duration": "{{PLURAL:$1|$1 వారం|$1 వారాలు}}",
+	"bs-days-duration": "{{PLURAL:$1|ఒక రోజు|$1 రోజుల}}",
+	"bs-hours-duration": "{{PLURAL:$1|ఒక గంట|$1 గంటల}}",
+	"bs-mins-duration": "{{PLURAL:$1|ఒక నిమిషం|$1 నిమిషాల}}",
+	"bs-secs-duration": "{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}",
+	"bs-two-units-ago": "$1 మరియు $2 క్రితం",
+	"bs-one-unit-ago": "$1 క్రితం",
+	"bs-now": "ఇప్పుడు",
+	"bs-email-greeting-no-receiver": "నమస్కారం,",
+	"bs-viewtagerrorlist-legend": "$1 - తప్పు",
+	"bs-readonly": "డేటాబేసు ప్రస్తుతం లాకు చేయబడింది. మార్పులు, చేర్పులు ప్రస్తుతం చెయ్యలేరు. మామూలుగా జరిగే నిర్వహణ కొరకు ఇది జరిగి ఉండవచ్చు; అది పూర్తి కాగానే తిరిగి మామూలుగా పనిచేస్తుంది.\n\nదీనిని లాకు చేసిన నిర్వాహకుడు ఇలా తెలియజేస్తున్నాడు: $1",
+	"bs-navigation-support": "సహాయకుడు",
+	"bs-navigation-contact": "సంప్రదించండి",
+	"bs-imagepage-download-text": "దింపుకోండి"
+}

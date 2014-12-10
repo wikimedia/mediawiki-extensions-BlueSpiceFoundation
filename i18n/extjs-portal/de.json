@@ -1,11 +1,11 @@
 {
-    "@metadata": [],
-    "bs-extjs-portal-config": "Portlet konfigurieren:",
-    "bs-extjs-portal-title": "Portlettitel",
-    "bs-extjs-portal-height": "Höhe",
-    "bs-extjs-portal-count": "Anzahl",
-    "bs-extjs-portal-timespan": "Zeitraum",
-    "bs-extjs-portal-timespan-week": "Woche",
-    "bs-extjs-portal-timespan-month": "Monat",
-    "bs-extjs-portal-timespan-alltime": "Unbegrenzt"
+	"@metadata": [],
+	"bs-extjs-portal-config": "Portlet konfigurieren:",
+	"bs-extjs-portal-title": "Portlettitel",
+	"bs-extjs-portal-height": "Höhe",
+	"bs-extjs-portal-count": "Anzahl",
+	"bs-extjs-portal-timespan": "Zeitraum",
+	"bs-extjs-portal-timespan-week": "Woche",
+	"bs-extjs-portal-timespan-month": "Monat",
+	"bs-extjs-portal-timespan-alltime": "Unbegrenzt"
 }

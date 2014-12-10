@@ -1,11 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Gomoko"
-        ]
-    },
-    "specialcredits": "Crédits BlueSpice",
-    "bs-credits-programmers": "Programmeurs",
-    "bs-credits-dnt": "Conception et test",
-    "bs-credits-contributors": "Contributeurs"
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"specialcredits": "Crédits BlueSpice",
+	"bs-credits-programmers": "Programmeurs",
+	"bs-credits-dnt": "Conception et test",
+	"bs-credits-contributors": "Contributeurs",
+	"bs-credits-translators": "Traducteurs",
+	"bs-credits-translation": "Traduction",
+	"bs-credits-th": "Merci à tous les traducteurs de $1."
 }

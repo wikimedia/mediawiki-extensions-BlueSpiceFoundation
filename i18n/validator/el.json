@@ -1,17 +1,17 @@
 {
-    "@metadata": {
-        "authors": [
-            "Indoril"
-        ]
-    },
-    "bs-validator-email-validation-approved": "Η διεύθυνση ηλεκτρονικού ταχυδρομείου έχει επικυρωθεί με επιτυχία.",
-    "bs-validator-email-validation-not-approved": "Δεν ήταν δυνατή η επικύρωση της διεύθυνσης ηλεκτρονικού ταχυδρομείου.",
-    "bs-validator-url-validation-approved": "Η διεύθυνση URL επικυρώθηκε με επιτυχία.",
-    "bs-validator-url-validation-not-approved": "Δεν ήταν δυνατή η επικύρωση της διεύθυνσης URL.",
-    "bs-validator-arg-count-validation-approved": "Το χαρακτηριστικό \"πλήθος\" επικυρώθηκε με επιτυχία.",
-    "bs-validator-arg-count-validation-not-approved": "Δεν ήταν δυνατή η επικύρωση του χαρακτηριστικού \"πλήθος\".",
-    "bs-validator-set-validation-approved": "$1 επικυρώθηκε με επιτυχία.",
-    "bs-validator-set-validation-not-approved": "{{PLURAL:$3|Επιτρέπεται μόνο η ακόλουθη τιμή για $1 |Για $1  επιτρέπεται μόνο μία από τις ακόλουθες τιμές}}:  $2 .",
-    "bs-validator-integer-range-validation-too-low": "Η παρεχόμενη τιμή είναι πολύ χαμηλή. Δεν πρέπει να είναι χαμηλότερη από $1 .",
-    "bs-validator-integer-range-validation-too-high": "Η παρεχόμενη τιμή είναι πολύ υψηλή. Δεν πρέπει να είναι μεγαλύτερη από  $1 ."
+	"@metadata": {
+		"authors": [
+			"Indoril"
+		]
+	},
+	"bs-validator-email-validation-approved": "Η διεύθυνση ηλεκτρονικού ταχυδρομείου έχει επικυρωθεί με επιτυχία.",
+	"bs-validator-email-validation-not-approved": "Δεν ήταν δυνατή η επικύρωση της διεύθυνσης ηλεκτρονικού ταχυδρομείου.",
+	"bs-validator-url-validation-approved": "Η διεύθυνση URL επικυρώθηκε με επιτυχία.",
+	"bs-validator-url-validation-not-approved": "Δεν ήταν δυνατή η επικύρωση της διεύθυνσης URL.",
+	"bs-validator-arg-count-validation-approved": "Το χαρακτηριστικό \"πλήθος\" επικυρώθηκε με επιτυχία.",
+	"bs-validator-arg-count-validation-not-approved": "Δεν ήταν δυνατή η επικύρωση του χαρακτηριστικού \"πλήθος\".",
+	"bs-validator-set-validation-approved": "$1 επικυρώθηκε με επιτυχία.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Επιτρέπεται μόνο η ακόλουθη τιμή για $1 |Για $1  επιτρέπεται μόνο μία από τις ακόλουθες τιμές}}:  $2 .",
+	"bs-validator-integer-range-validation-too-low": "Η παρεχόμενη τιμή είναι πολύ χαμηλή. Δεν πρέπει να είναι χαμηλότερη από $1 .",
+	"bs-validator-integer-range-validation-too-high": "Η παρεχόμενη τιμή είναι πολύ υψηλή. Δεν πρέπει να είναι μεγαλύτερη από  $1 ."
 }

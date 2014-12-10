@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "diagnostics": "Diagnostyka systemu"
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"diagnostics": "Diagnostyka systemu"
 }

@@ -26,15 +26,14 @@
  * @author     Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
  * @author     Robert Vogel <vogel@hallowelt.biz>
  * @author     Stephan Muggli <muggli@hallowelt.biz>
- * @version    0.1.0
  * @package    Bluespice_Core
- * @copyright  Copyright (C) 2011 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2014 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
 
 /**
- * the BsCore
+ * The BsCore
  * @package BlueSpice_Core
  * @subpackage Core
  */
@@ -42,8 +41,18 @@ class BsCore {
 
 	public $aBehaviorSwitches = array();
 
+	/**
+	 *
+	 * @var array
+	 * @deprecated since version 2.22
+	 */
 	protected $aEditButtons = array();
 
+	/**
+	 *
+	 * @var array
+	 * @deprecated since version 2.22
+	 */
 	protected $aEditButtonRanking = array();
 
 	/**
@@ -59,6 +68,7 @@ class BsCore {
 	/**
 	 * a state flag if ExtJs is already loaded
 	 * @var bool
+	 * @deprecated since version 2.22
 	 */
 	protected static $bExtJsLoaded = false;
 	/**
@@ -101,49 +111,26 @@ class BsCore {
 	 */
 	protected function __construct() {
 		wfProfileIn('Performance: ' . __METHOD__);
+		global $wgScriptPath;
+		$sPath = $wgScriptPath . "/extensions/BlueSpiceFoundation/resources/bluespice/images/";
 
-		global $wgStylePath, $wgScriptPath, $wgServer, $oMobileDetect;
-		$sStylePath = ( $wgStylePath ? $wgStylePath : $wgScriptPath ) . "/BlueSpiceSkin/resources/images/";
-		$sStylePath .= is_object( $oMobileDetect ) && $oMobileDetect->isMobile() ? "mobile" : "desktop";
-
-		$aRegisteredApplications[] = array(
-			'name' => 'Wiki',
-			'displaytitle' => 'Wiki',
-			'url' => $wgServer . $wgScriptPath
-		);
-
-		BsConfig::registerVar( 'MW::CanonicalNamespaceNames', array(), BsConfig::LEVEL_ADAPTER );
-		BsConfig::registerVar( 'MW::LanguageNames', array(), BsConfig::LEVEL_ADAPTER );
-		BsConfig::registerVar( 'MW::ScriptPath', $wgScriptPath, BsConfig::LEVEL_ADAPTER );
-		BsConfig::registerVar( 'MW::FileExtensions', array('doc', 'docx', 'pdf', 'xls'), BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-FileExtensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::ImageExtensions', array('png', 'gif', 'jpg', 'jpeg'), BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-ImageExtensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::LogoPath', $sStylePath . '/bs-logo.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-LogoPath' );
-		BsConfig::registerVar( 'MW::FaviconPath', $sStylePath . '/favicon.ico', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-FaviconPath' );
-		BsConfig::registerVar( 'MW::DefaultUserImage', $sStylePath . '/bs-user-default-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DefaultUserImage' );
-		BsConfig::registerVar( 'MW::MiniProfileEnforceHeight', true, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-MiniProfileEnforceHeight', 'toggle' );
-		BsConfig::registerVar( 'MW::AnonUserImage', $sStylePath . '/bs-user-anon-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-AnonUserImage' );
-		BsConfig::registerVar( 'MW::DeletedUserImage', $sStylePath . '/bs-user-deleted-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-DeletedUserImage' );
-		BsConfig::registerVar( 'MW::RekursionBreakLevel', 20, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_INT, 'bs-pref-RekursionBreakLevel' );
-		BsConfig::registerVar( 'MW::UserImage', '', BsConfig::LEVEL_USER | BsConfig::TYPE_STRING | BsConfig::NO_DEFAULT, 'bs-authors-pref-UserImage' );
-		BsConfig::registerVar( 'MW::PingInterval', 2, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-BSPingInterval' );
+		$aFiles = array( 'doc', 'docx', 'pdf', 'xls', 'xlsx' );
+		$aImages = array( 'png', 'gif', 'jpg', 'jpeg' );
+		BsConfig::registerVar( 'MW::FileExtensions', $aFiles, BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
+		BsConfig::registerVar( 'MW::ImageExtensions', $aImages, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-imageextensions', 'multiselectplusadd' );
+		BsConfig::registerVar( 'MW::LogoPath', $sPath . 'bs-logo.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-logopath' );
+		BsConfig::registerVar( 'MW::FaviconPath', $sPath . 'favicon.ico', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-faviconpath' );
+		BsConfig::registerVar( 'MW::DefaultUserImage', $sPath . 'bs-user-default-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-defaultuserimage' );
+		BsConfig::registerVar( 'MW::MiniProfileEnforceHeight', true, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-miniprofileenforceheight', 'toggle' );
+		BsConfig::registerVar( 'MW::AnonUserImage', $sPath . 'bs-user-anon-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-anonuserimage' );
+		BsConfig::registerVar( 'MW::DeletedUserImage', $sPath . 'bs-user-deleted-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-deleteduserimage' );
+		BsConfig::registerVar( 'MW::UserImage', '', BsConfig::LEVEL_USER | BsConfig::TYPE_STRING | BsConfig::NO_DEFAULT, 'bs-authors-profileimage' );
+		BsConfig::registerVar( 'MW::PingInterval', 10, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-bspinginterval' );
 		BsConfig::registerVar( 'MW::SortAlph', false, BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER | BsConfig::TYPE_BOOL, 'bs-pref-sortalph', 'toggle' );
-		BsConfig::registerVar( 'MW::Applications', $aRegisteredApplications, BsConfig::LEVEL_PRIVATE | BsConfig::TYPE_ARRAY_MIXED, 'bs-Applications' );
-		BsConfig::registerVar( 'MW::ApplicationContext', '', BsConfig::LEVEL_PRIVATE | BsConfig::TYPE_STRING | BsConfig::RENDER_AS_JAVASCRIPT, 'bs-pref-ApplicationContext' );
-		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-TestMode', 'toggle' );
+		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-testmode', 'toggle' );
 
 		BsConfig::set( 'MW::ApplicationContext', 'Wiki' );
 		wfProfileOut('Performance: ' . __METHOD__);
-	}
-
-	/**
-	 * Tells BsScriptManager to load ExtJS
-	 *
-	 * If a request param 'debugExtJs' is set, the ExtJs debug file will be loaded.
-	 * This method also loads the language file if needed.
-	 * @deprecated since version 1.22+ This is now handeled in index.php
-	 */
-	public static function loadExtJs() {
-		return;
 	}
 
 	public static function getForbiddenCharsInArticleTitle() {
@@ -329,23 +316,10 @@ class BsCore {
 		return self::sanitize($array[$key], $default, $options);
 	}
 
-	/**
-	 * Build an json-object for Ext.tree with the given nodes.
-	 * @param array $nodes
-	 * @return string
-	 * @deprecated since version 1.22 Use ExtJSHelper class instead
-	 */
-	public static function buildTree($nodes) {
-		wfProfileIn('Performance: ' . __METHOD__);
-		$sTreeJSON = BsExtJSHelper::buildTree($nodes);
-		wfProfileOut('Performance: ' . __METHOD__);
-		return $sTreeJSON;
-	}
-
 	public static function doInitialise() {
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Initialize Core');
 		self::$oInstance = new BsCore();
-		wfProfileIn('Performance: ' . __METHOD__ . ' - Initialize Core');
+		wfProfileOut('Performance: ' . __METHOD__ . ' - Initialize Core');
 
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load Settings');
 		if ( !defined( 'DO_MAINTENANCE' ) ) {
@@ -381,26 +355,6 @@ class BsCore {
 
 	public static function getFileSystemPath() {
 		return BSROOTDIR;
-	}
-
-	/**
-	 * Depending on the MediaWiki version, this method try to load the HtmlForm class.
-	 * Everytime you want to use this class, you should call this method.
-	 */
-	public static function loadHtmlFormClass() {
-		wfProfileIn('BS::' . __METHOD__);
-		if (!self::$bHtmlFormClassLoaded) {
-			self::$bHtmlFormClassLoaded = true;
-			$compat = false;
-			if (!class_exists('Html', true)) {
-				include(__DIR__ . DS . 'Html.php');
-			}
-			if (!class_exists('HTMLForm', true)) {
-				include(__DIR__ . DS . 'HTMLForm.php');
-				$compat = true;
-			}
-		}
-		wfProfileOut('BS::' . __METHOD__);
 	}
 
 	// todo msc 2011-04-27 wiederholter Aufruf führt schnell zu einem Speicherüberlauf (>128MB bei Indexierung)
@@ -554,7 +508,7 @@ class BsCore {
 		$oUserMiniProfileView->setOptions( $aParams );
 		$oUserMiniProfileView->setOption( 'user', $oUser );
 
-		wfRunHooks( 'BSAdapterGetUserMiniProfileBeforeInit', array( $oUserMiniProfileView, $oUser, $aParams ) );
+		wfRunHooks( 'BSCoreGetUserMiniProfileBeforeInit', array( &$oUserMiniProfileView, &$oUser, &$aParams ) );
 
 		$oUserMiniProfileView->init();
 
@@ -564,8 +518,8 @@ class BsCore {
 		return $oUserMiniProfileView;
 	}
 
-		/**
-	 * Registeres a permission with the MediaWiki Framework.
+	/**
+	 * Registers a permission with the MediaWiki Framework.
 	 * object for proper internationalisation of your permission. Every
 	 * permission is granted automatically to the user group 'sysop'. You can
 	 * specify additional groups through the third parameter.
@@ -574,15 +528,14 @@ class BsCore {
 	 * pemission. I.e. array( 'user', 'bureaucrats' )
 	 * @return void
 	 */
-	// TODO MRG (05.02.11 19:24): @Sebastian Ist der dritte Parameter im PermissionsManager berücksichtigt?
 	public function registerPermission( $sPermissionName, $aUserGroups = array() ) {
+		// TODO MRG (05.02.11 19:24): @Sebastian Ist der dritte Parameter im PermissionsManager berücksichtigt?
 		wfProfileIn('BS::' . __METHOD__);
 
 		global $wgGroupPermissions, $wgAvailableRights;
 		$wgGroupPermissions['sysop'][$sPermissionName] = true;
 
 		foreach ( $aUserGroups as $sGroup ) {
-			// check if it is not set already
 			if ( !isset( $wgGroupPermissions[$sGroup][$sPermissionName] ) ) {
 				$wgGroupPermissions[$sGroup][$sPermissionName] = true;
 			}
@@ -593,6 +546,14 @@ class BsCore {
 		wfProfileOut('BS::' . __METHOD__);
 	}
 
+	/**
+	 * Register a callback for a MagicWord
+	 * @param string $sMagicWord The MagicWord in upper case and without
+	 * surrounding double underscores. OR: if $callback == null this may be a
+	 * lower case identifier that gets written to the page_props table by the
+	 * parser.
+	 * @param callable $aCallback or null to use MediaWiki page_props mechanism
+	 */
 	public function registerBehaviorSwitch( $sMagicWord, $aCallback = null ) {
 		if ( is_callable( $aCallback ) ) {
 			$this->aBehaviorSwitches[$sMagicWord] = $aCallback;
@@ -601,13 +562,18 @@ class BsCore {
 		}
 	}
 
-	// TODO MRG (01.12.10 00:07): Ich bezweifle, dass wir diese Funktion brauchen
+	/**
+	 * Hook-handler for "ArticleAfterFetchContent"
+	 * @param WikiPage $article
+	 * @param string $content
+	 * @return boolean Always true to keep hook running
+	 */
 	public function behaviorSwitches( &$article, &$content ) {
-		// TODO SW(05.01.12 15:37): Profiling
-		if ( !isset( $this->aBehaviorSwitches ) )
+		if ( !isset( $this->aBehaviorSwitches ) ) {
 			return true;
+		}
 
-		$sNowikistripped = preg_replace( "/<nowiki>.*?<\/nowiki>/i", "", $content );
+		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $content );
 		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
 			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
 				call_user_func( $sCallback );
@@ -616,24 +582,40 @@ class BsCore {
 		return true;
 	}
 
+	/**
+	 * Hook-handler for "ParserBeforeStrip"
+	 * @param Parser $parser
+	 * @param string $text
+	 * @return boolean Always true to keep hook running
+	 * @deprecated since version 2.22
+	 */
 	public function hideBehaviorSwitches( &$parser, &$text ) {
-		// TODO SW(05.01.12 15:37): Profiling
-		if ( !isset( $this->aBehaviorSwitches ) ) return true;
+		if ( !isset( $this->aBehaviorSwitches ) ) {
+			return true;
+		}
 
-		$sNowikistripped = preg_replace( "/<nowiki>.*?<\/nowiki>/i", "", $text );
+		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $text );
 		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
 			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
 				call_user_func( $sCallback );
 			}
-			// TODO MRG (01.12.10 00:08): Wahrscheinlich kann man das auch gleich beim ersten preg_replace machen
+
 			$text = preg_replace( "/(<nowiki>.*?)__{$sSwitch}__(.*?<\/nowiki>)/i", "$1@@{$sSwitch}@@$2", $text );
 		}
 		return true;
 	}
 
+	/**
+	 * Hook-handler for "ParserBeforeTidy"
+	 * @param Parser $parser
+	 * @param string $text
+	 * @return boolean Always true to keep hook running
+	 * @deprecated since version 2.22
+	 */
 	public function recoverBehaviorSwitches( &$parser, &$text ) {
-		// TODO SW(05.01.12 15:38): Profiling
-		if ( !isset( $this->aBehaviorSwitches ) ) return true;
+		if ( !isset( $this->aBehaviorSwitches ) ) {
+			return true;
+		}
 
 		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
 			$text = str_replace( '__' . $sSwitch . '__', "", $text );
@@ -643,16 +625,17 @@ class BsCore {
 	}
 
 	/**
+	 * Hook-handler for "EditPage::showEditForm:initial"
 	 * Needed for edit and sumbit (preview) mode
-	 * @param <type> $editPage
-	 * @return <type>
+	 * @param EditPage $editPage
+	 * @return boolean Always true to keep hook running
 	 */
 	public function lastChanceBehaviorSwitches( $editPage ) {
 		// TODO SW(05.01.12 15:39): Profiling
 		$sContent = BsPageContentProvider::getInstance()->getContentFromTitle( RequestContext::getMain()->getTitle() );
 		if ( !isset( $this->aBehaviorSwitches ) ) return true;
 
-		$sNowikistripped = preg_replace( "/<nowiki>.*?<\/nowiki>/mi", "", $sContent );
+		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $sContent );
 		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
 			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
 				call_user_func( $sCallback );
@@ -662,7 +645,7 @@ class BsCore {
 		//$editPage->editFormTextTop = "Der Editor wurde deaktiviert <br/>";
 		if ( isset( $editPage->textbox1 ) ) {
 			foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
-				$sNowikistripped = preg_replace( "/<nowiki>.*?<\/nowiki>/mi", "", $editPage->textbox1 );
+				$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $editPage->textbox1 );
 				if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
 					call_user_func( $sCallback );
 				}
@@ -671,6 +654,11 @@ class BsCore {
 		return true;
 	}
 
+	/**
+	 * Handles requests to the BS-AJAX-PING-BUS (BSAPB)
+	 * TODO: Move to seperate class
+	 * @return String JSON encoded data
+	 */
 	public static function ajaxBSPing() {
 		$aResult = array(
 			"success" => false,
@@ -699,11 +687,15 @@ class BsCore {
 				"message" => '',
 			);
 			//if hook returns false - overall success is false
-			$aResult['success'] = wfRunHooks('BsAdapterAjaxPingResult', array( $aSinglePing['sRef'], $aSinglePing['aData'], $iArticleId, $sTitle, $iNamespace, $iRevision, &$aSingleResult ));
+			$aResult['success'] = wfRunHooks( 'BsAdapterAjaxPingResult',
+				array( $aSinglePing['sRef'], $aSinglePing['aData'],
+					$iArticleId, $sTitle, $iNamespace, $iRevision,
+					&$aSingleResult )
+			);
 			$aResult[$aSinglePing['sRef']] = $aSingleResult;
 		}
 
-		return json_encode( $aResult );
+		return FormatJson::encode( $aResult );
 	}
 
 	/**
@@ -776,5 +768,4 @@ class BsCore {
 			self::$aClientScriptBlocks[] = array( $sExtensionKey, $sCode );
 		}
 	}
-
 }

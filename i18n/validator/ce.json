@@ -1,10 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Умар"
-        ]
-    },
-    "bs-validator-email-validation-approved": "Электронан почтан адрес кхиамца теллина.",
-    "bs-validator-url-validation-approved": "URL-адрес кхиамца теллина.",
-    "bs-validator-set-validation-approved": "$1 кхиамца теллина."
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-validator-email-validation-approved": "Электронан почтан адрес кхиамца теллина.",
+	"bs-validator-url-validation-approved": "URL-адрес кхиамца теллина.",
+	"bs-validator-set-validation-approved": "$1 кхиамца теллина.",
+	"bs-validator-set-validation-not-approved": "Цу $1 {{PLURAL:$3|магийна хӀара маьӀнаш|магийна хӀокхарах цхьа маьӀна}}: $2."
 }

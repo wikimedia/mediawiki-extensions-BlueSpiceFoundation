@@ -35,8 +35,10 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 //Default settings needed for BlueSpice
 $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgApiFrameOptions = 'SAMEORIGIN';
-$wgRSSUrlWhitelist = array( "*" );
+$wgRSSUrlWhitelist = array( "http://blog.blue-spice.org/feed/" );
 $wgExternalLinkTarget = '_blank';
+$wgCapitalLinkOverrides[ NS_FILE ] = false;
+$wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
@@ -52,7 +54,7 @@ $bsgExtJSFiles = array(
 $bsgExtJSThemes = array(
 	'bluespice' => array(
 		'scripts' => array(
-			//As bluespice-theme is derived from ext-theme-neptune we need 
+			//As bluespice-theme is derived from ext-theme-neptune we need
 			//these JS modifications
 			$sResourcesPath.'/extjs/ext-theme-neptune.js'
 		),
@@ -103,8 +105,8 @@ $bsgExtJSTheme = 'bluespice';
 unset($sResourcesPath);
 
 /**
- * Allows extensions to distinguish between normal content NS, that can be 
- * renamed of deleted and system NS that can not be modified. Used in 
+ * Allows extensions to distinguish between normal content NS, that can be
+ * renamed of deleted and system NS that can not be modified. Used in
  * BlueSpiceExtensions/NamespaceManager and NamespaceHelper
  */
 $bsgSystemNamespaces = array(

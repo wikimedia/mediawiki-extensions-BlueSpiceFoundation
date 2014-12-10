@@ -1,15 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Gomoko"
-        ]
-    },
-    "bs-extjs-portal-config": "Configurer le portlet :",
-    "bs-extjs-portal-title": "Titre du portlet",
-    "bs-extjs-portal-height": "Hauteur",
-    "bs-extjs-portal-count": "Entrées",
-    "bs-extjs-portal-timespan": "Durée",
-    "bs-extjs-portal-timespan-week": "Semaine",
-    "bs-extjs-portal-timespan-month": "Mois",
-    "bs-extjs-portal-timespan-alltime": "Tout le temps"
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"bs-extjs-portal-config": "Configurer le portlet :",
+	"bs-extjs-portal-title": "Titre du portlet",
+	"bs-extjs-portal-height": "Hauteur",
+	"bs-extjs-portal-count": "Entrées",
+	"bs-extjs-portal-timespan": "Durée",
+	"bs-extjs-portal-timespan-week": "Semaine",
+	"bs-extjs-portal-timespan-month": "Mois",
+	"bs-extjs-portal-timespan-alltime": "Tout le temps"
 }

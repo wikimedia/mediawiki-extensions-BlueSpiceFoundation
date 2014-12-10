@@ -1,9 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "bs-extjs-portal-timespan-week": "Tydzień",
-    "bs-extjs-portal-timespan-month": "Miesiąc"
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-extjs-portal-height": "Wysokość",
+	"bs-extjs-portal-timespan": "Przedział czasowy",
+	"bs-extjs-portal-timespan-week": "Tydzień",
+	"bs-extjs-portal-timespan-month": "Miesiąc"
 }

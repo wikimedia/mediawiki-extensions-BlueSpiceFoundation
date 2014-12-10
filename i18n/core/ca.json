@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"Alvaro Vidal-Abarca"
+		]
+	},
+	"bs-ns_main": "(Pàgines)",
+	"bs-ns_all": "(tots)",
+	"bs-tab_navigation": "Navegació",
+	"bs-userbar_loginswitch_logout": "Finalitza la sessió",
+	"bs-userbar_loginswitch_login": "Inicia la sessió",
+	"bs-extended-search-tooltip-fulltext": "Cerca de text complet",
+	"bs-extended-search-textfield-defaultvalue": "Cerca…",
+	"bs-extended-search-textfield-tooltip": "Cerca en el wiki",
+	"bs-no-information-available": "No hi ha informació disponible",
+	"bs-years-duration": "{{PLURAL:$1|un any|$1 anys}}",
+	"bs-months-duration": "{{PLURAL:$1|un mes|$1 mesos}}",
+	"bs-weeks-duration": "{{PLURAL:$1|una setmana|$1 setmanes}}",
+	"bs-days-duration": "{{PLURAL:$1|un dia|$1 dies}}",
+	"bs-hours-duration": "{{PLURAL:$1|una hora|$1 hores}}",
+	"bs-mins-duration": "{{PLURAL:$1|un minut|$1 minuts}}",
+	"bs-secs-duration": "{{PLURAL:$1|un segon|$1 segons}}",
+	"bs-now": "ara",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hola, Sr. $2|Hola, Sra. $2|Hola, $2}},",
+	"bs-email-greeting-no-receiver": "Hola:",
+	"bs-email-footer": "Aquest missatge ha estat generat automàticament. No respongueu a aquest missatge.",
+	"bs-userpagesettings-legend": "Paràmetres de l’usuari",
+	"bs-exception-view-heading": "S’ha produït un error",
+	"bs-exception-view-stacktrace-toggle-show-text": "Mostra els detalls de l’error",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Amaga els detalls de l’error",
+	"bs-navigation-instructions": "Instruccions",
+	"bs-navigation-support": "Assistència",
+	"bs-navigation-contact": "Contacte",
+	"bs-imagepage-download-text": "Baixa",
+	"bs-pref-fileextensions": "Extensions de fitxers permesses:"
+}

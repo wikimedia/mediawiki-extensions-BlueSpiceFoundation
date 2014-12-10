@@ -1,11 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Robby"
-        ]
-    },
-    "bs-validator-email-validation-approved": "D'E-Mmail-Adress gouf validéiert.",
-    "bs-validator-email-validation-not-approved": "D'E-Mail-Adress konnt net validéiert ginn.",
-    "bs-validator-url-validation-approved": "D'URL gouf validéiert.",
-    "bs-validator-set-validation-approved": "$1 gouf validéiert."
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-validator-email-validation-approved": "D'E-Mmail-Adress gouf validéiert.",
+	"bs-validator-email-validation-not-approved": "D'E-Mail-Adress konnt net validéiert ginn.",
+	"bs-validator-url-validation-approved": "D'URL gouf validéiert.",
+	"bs-validator-url-validation-not-approved": "D'URL konnt net validéiert ginn.",
+	"bs-validator-set-validation-approved": "$1 gouf validéiert.",
+	"bs-validator-integer-range-validation-too-low": "De Wäert deen uginn ass ass ze niddreg. En däerf net méi kleng si wéi $1.",
+	"bs-validator-integer-range-validation-too-high": "De Wäert deen uginn ass ass ze héich. En däerf net méi grouss si wéi $1."
 }

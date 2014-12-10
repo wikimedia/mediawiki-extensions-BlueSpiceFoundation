@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Servien"
+		]
+	},
+	"bs-extjs-ok": "Okee",
+	"bs-extjs-cancel": "Aofbreken",
+	"bs-extjs-yes": "Ja",
+	"bs-extjs-no": "Nee",
+	"bs-extjs-save": "Opslaon",
+	"bs-extjs-delete": "Vortdoon",
+	"bs-extjs-add": "Derbie doon",
+	"bs-extjs-remove": "Vortdoon",
+	"bs-extjs-edit": "Bewarken",
+	"bs-extjs-hint": "Tip",
+	"bs-extjs-error": "Foutmelding",
+	"bs-extjs-confirm": "Bevestigen",
+	"bs-extjs-loading": "An t laojen...",
+	"bs-extjs-pageSize": "Papierformaot",
+	"bs-extjs-actions-column-header": "Maotregels",
+	"bs-extjs-warning": "Waorschuwing"
+}

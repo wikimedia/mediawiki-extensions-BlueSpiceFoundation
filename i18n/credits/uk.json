@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Base",
+			"Ата"
+		]
+	},
+	"specialcredits": "Створювачі BlueSpice",
+	"bs-credits-programmers": "Програмісти",
+	"bs-credits-dnt": "Дизайнери та тестувальники",
+	"bs-credits-contributors": "Автори",
+	"bs-credits-translators": "Перекладачі",
+	"bs-credits-translation": "Переклад",
+	"bs-credits-th": "Дякуємо усім перекладачам з $1."
+}

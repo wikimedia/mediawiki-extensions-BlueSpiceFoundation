@@ -1,11 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Stephan Muggli <muggli@hallowelt.biz>"
-        ]
-    },
-    "specialcredits": "BlueSpice credits",
-    "bs-credits-programmers": "Programmers",
-    "bs-credits-dnt": "Design and testing",
-    "bs-credits-contributors": "Contributors"
+	"@metadata": {
+		"authors": [
+			"Stephan Muggli <muggli@hallowelt.biz>"
+		]
+	},
+	"specialcredits": "BlueSpice credits",
+	"bs-credits-programmers": "Programmers",
+	"bs-credits-dnt": "Design and testing",
+	"bs-credits-contributors": "Contributors",
+	"bs-credits-translators": "Translators",
+	"bs-credits-translation": "Translation",
+	"bs-credits-th": "Thanks to all translators from $1."
 }

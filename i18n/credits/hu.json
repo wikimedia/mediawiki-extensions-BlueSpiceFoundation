@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Csega",
+			"Misibacsi"
+		]
+	},
+	"bs-credits-programmers": "Programozók",
+	"bs-credits-dnt": "Tervezés, tesztelés",
+	"bs-credits-contributors": "Közreműködők",
+	"bs-credits-translators": "Fordítók",
+	"bs-credits-translation": "Fordítás",
+	"bs-credits-th": "Köszönet az összes fordítónak innen: $1."
+}

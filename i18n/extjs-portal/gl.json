@@ -1,10 +1,15 @@
 {
-    "@metadata": {
-        "authors": [
-            "Vivaelcelta"
-        ]
-    },
-    "bs-extjs-portal-timespan-week": "Semana",
-    "bs-extjs-portal-timespan-month": "Mes",
-    "bs-extjs-portal-timespan-alltime": "Desde sempre"
+	"@metadata": {
+		"authors": [
+			"Vivaelcelta",
+			"Toliño",
+			"Elisardojm"
+		]
+	},
+	"bs-extjs-portal-height": "Altura",
+	"bs-extjs-portal-count": "Entradas",
+	"bs-extjs-portal-timespan": "Intervalo de tempo",
+	"bs-extjs-portal-timespan-week": "Semana",
+	"bs-extjs-portal-timespan-month": "Mes",
+	"bs-extjs-portal-timespan-alltime": "Todo o tempo"
 }

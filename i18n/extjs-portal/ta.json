@@ -1,11 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "ElangoRamanujam"
-        ]
-    },
-    "bs-extjs-portal-height": "உயரம்",
-    "bs-extjs-portal-count": "பதிவுகள்",
-    "bs-extjs-portal-timespan-week": "வாரம்",
-    "bs-extjs-portal-timespan-month": "மாதம்"
+	"@metadata": {
+		"authors": [
+			"ElangoRamanujam"
+		]
+	},
+	"bs-extjs-portal-height": "உயரம்",
+	"bs-extjs-portal-count": "பதிவுகள்",
+	"bs-extjs-portal-timespan-week": "வாரம்",
+	"bs-extjs-portal-timespan-month": "மாதம்"
 }

@@ -1,20 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "Milicevic01"
-        ]
-    },
-    "bs-ns_main": "(Странице)",
-    "bs-ns_all": "(сви)",
-    "bs-tab_navigation": "Навигација",
-    "bs-tab_admin": "Админ",
-    "bs-userbar_loginswitch_logout": "Одјави ме",
-    "bs-userbar_loginswitch_login": "Пријави ме",
-    "bs-one-unit-ago": "пре $1",
-    "bs-now": "сада",
-    "bs-viewtagerrorlist-legend": "$1 — Грешка",
-    "bs-filesystemhelper-file-already-exists": "Датотека <code>$1</code> већ постоји.",
-    "bs-filesystemhelper-folder-already-exists": "Фасцикла <code>$1</code> већ постоји.",
-    "bs-navigation-support": "Подршка",
-    "bs-navigation-contact": "Контакт"
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"bs-ns_main": "(Странице)",
+	"bs-ns_all": "(сви)",
+	"bs-tab_navigation": "Навигација",
+	"bs-tab_admin": "Админ",
+	"bs-userbar_loginswitch_logout": "Одјави ме",
+	"bs-userbar_loginswitch_login": "Пријави ме",
+	"bs-one-unit-ago": "пре $1",
+	"bs-now": "сада",
+	"bs-viewtagerrorlist-legend": "$1 — Грешка",
+	"bs-filesystemhelper-file-already-exists": "Датотека <code>$1</code> већ постоји.",
+	"bs-filesystemhelper-folder-already-exists": "Фасцикла <code>$1</code> већ постоји.",
+	"bs-navigation-support": "Подршка",
+	"bs-navigation-contact": "Контакт",
+	"bs-imagepage-download-text": "Преузми"
 }

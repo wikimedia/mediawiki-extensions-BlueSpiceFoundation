@@ -1,10 +1,11 @@
 {
-    "@metadata": {
-        "authors": [
-            "Robby"
-        ]
-    },
-    "bs-extjs-portal-height": "Héicht",
-    "bs-extjs-portal-timespan-week": "Woch",
-    "bs-extjs-portal-timespan-month": "Mount"
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-extjs-portal-height": "Héicht",
+	"bs-extjs-portal-timespan-week": "Woch",
+	"bs-extjs-portal-timespan-month": "Mount",
+	"bs-extjs-portal-timespan-alltime": "Ëmmer"
 }

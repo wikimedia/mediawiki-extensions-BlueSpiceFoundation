@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Okras"
-        ]
-    },
-    "diagnostics": "Диагностика системы"
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"diagnostics": "Диагностика системы"
 }

@@ -1,12 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Y-M D",
-            "Fohanno"
-        ]
-    },
-    "bs-extjs-portal-height": "Uhelder",
-    "bs-extjs-portal-timespan-week": "Sizhun",
-    "bs-extjs-portal-timespan-month": "Miz",
-    "bs-extjs-portal-timespan-alltime": "A-viskoazh"
+	"@metadata": {
+		"authors": [
+			"Y-M D",
+			"Fohanno"
+		]
+	},
+	"bs-extjs-portal-height": "Uhelder",
+	"bs-extjs-portal-timespan": "Pad",
+	"bs-extjs-portal-timespan-week": "Sizhun",
+	"bs-extjs-portal-timespan-month": "Miz",
+	"bs-extjs-portal-timespan-alltime": "A-viskoazh"
 }

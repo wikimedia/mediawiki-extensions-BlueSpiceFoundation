@@ -14,7 +14,8 @@ $GLOBALS['wgAutoloadClasses']['EXTINFO'] = __DIR__."/Common.php";
 $GLOBALS['wgAutoloadClasses']['EXTTYPE'] = __DIR__."/Common.php";
 
 $GLOBALS['wgAutoloadClasses']['LCStore_BSDB'] = __DIR__."/cache/LCStore_BSDB.php";
-$GLOBALS['wgAutoloadClasses']['LCStore_SHM']  = __DIR__."/cache/LCStore_SHM.php";
+$GLOBALS['wgAutoloadClasses']['LCStore_SHM'] = __DIR__."/cache/LCStore_SHM.php";
+$GLOBALS['wgAutoloadClasses']['LCStore_MC'] = __DIR__."/cache/LCStore_MC.php";
 
 $GLOBALS['wgAutoloadClasses']['BsValidator'] = __DIR__."/validator/Validator.class.php";
 $GLOBALS['wgAutoloadClasses']['BsValidatorPlugin'] = __DIR__."/validator/Validator.class.php";
@@ -23,11 +24,11 @@ $GLOBALS['wgAutoloadClasses']['BsValidatorMwNamespacePlugin'] = __DIR__."/valida
 $GLOBALS['wgAutoloadClasses']['BsValidatorMwUsernamePlugin']  = __DIR__."/validator/plugins/BsValidator/BsValidatorMwUsernamePlugin.class.php";
 
 $GLOBALS['wgAutoloadClasses']['BsSpecialPage'] = __DIR__."/SpecialPage.class.php";
+$GLOBALS['wgAutoloadClasses']['BsBaseTemplate'] = __DIR__."/BsBaseTemplate.php";
 $GLOBALS['wgAutoloadClasses']['BsConfig'] = __DIR__."/Config.class.php";
 $GLOBALS['wgAutoloadClasses']['BSDebug'] = __DIR__."/Debug.php";
 $GLOBALS['wgAutoloadClasses']['BsException'] = __DIR__."/Exception.class.php";
 $GLOBALS['wgAutoloadClasses']['BsExtensionManager'] = __DIR__."/ExtensionManager.class.php";
-$GLOBALS['wgAutoloadClasses']['BsFileManager'] = __DIR__."/FileManager.class.php";
 $GLOBALS['wgAutoloadClasses']['BsMailer'] = __DIR__."/Mailer.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRBaseResponse'] = __DIR__."/XHRBaseResponse.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRJSONResponse'] = __DIR__."/XHRBaseResponse.class.php";
@@ -35,8 +36,13 @@ $GLOBALS['wgAutoloadClasses']['BsXHRResponseStatus'] = __DIR__."/XHRBaseResponse
 $GLOBALS['wgAutoloadClasses']['BsCommonAJAXInterface'] = __DIR__."/CommonAJAXInterface.php";
 $GLOBALS['wgAutoloadClasses']['BsCAI'] = __DIR__."/CommonAJAXInterface.php";
 $GLOBALS['wgAutoloadClasses']['BsCAContext'] = __DIR__."/CAContext.php";
+$GLOBALS['wgAutoloadClasses']['BsCAIContext'] = __DIR__."/CAContext.php";
 $GLOBALS['wgAutoloadClasses']['BsCAResponse'] = __DIR__."/CAResponse.php";
+$GLOBALS['wgAutoloadClasses']['BsCAIResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams.php";
+
+//api
+$GLOBALS['wgAutoloadClasses']['BsApiBase'] = __DIR__."/api/BsApiBase.php";
 
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";
@@ -54,9 +60,9 @@ $GLOBALS['wgAutoloadClasses']['HTMLMultiSelectSortList'] = __DIR__."/html/htmlfo
 
 //utility
 $GLOBALS['wgAutoloadClasses']['BsArticleHelper'] = __DIR__."/utility/ArticleHelper.class.php";
+$GLOBALS['wgAutoloadClasses']['BsCacheHelper'] = __DIR__."/utility/CacheHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsConnectionHelper'] = __DIR__."/utility/ConnectionHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsDOMHelper'] = __DIR__."/utility/DOMHelper.class.php";
-$GLOBALS['wgAutoloadClasses']['BsExtJSHelper'] = __DIR__."/utility/ExtJSHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsFormatConverter'] = __DIR__."/utility/FormatConverter.class.php";
 $GLOBALS['wgAutoloadClasses']['BsFileSystemHelper'] = __DIR__."/utility/FileSystemHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsGroupHelper'] = __DIR__."/utility/GroupHelper.class.php";
@@ -96,6 +102,7 @@ $GLOBALS['wgAutoloadClasses']['ViewTagError'] = __DIR__ . '/outputhandler/views/
 $GLOBALS['wgAutoloadClasses']['ViewTagErrorList'] = __DIR__ . '/outputhandler/views/view.TagErrorList.php';
 $GLOBALS['wgAutoloadClasses']['ViewUserBarElement'] = __DIR__ . '/outputhandler/views/view.UserBarElement.php';
 $GLOBALS['wgAutoloadClasses']['ViewUserMiniProfile'] = __DIR__ . '/outputhandler/views/view.UserMiniProfile.php';
+$GLOBALS['wgAutoloadClasses']['ViewWidget'] = __DIR__ . '/outputhandler/views/view.Widget.php';
 
 //Overrides
 // Replace Mediawikis ApiFormatJson class with our own to prevent some errors with the application/json header.

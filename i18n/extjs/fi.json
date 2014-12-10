@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stryn"
+		]
+	},
+	"bs-extjs-cancel": "Peruuta",
+	"bs-extjs-yes": "Kyllä",
+	"bs-extjs-save": "Tallenna",
+	"bs-extjs-delete": "Poista",
+	"bs-extjs-add": "Lisää",
+	"bs-extjs-edit": "Muokkaa",
+	"bs-extjs-hint": "Vihje",
+	"bs-extjs-error": "Virhe",
+	"bs-extjs-confirm": "Vahvista",
+	"bs-extjs-loading": "Ladataan...",
+	"bs-extjs-pageSize": "Sivun koko",
+	"bs-extjs-actions-column-header": "Toiminnot",
+	"bs-extjs-warning": "Varoitus",
+	"bs-extjs-saving": "tallennetaan..."
+}

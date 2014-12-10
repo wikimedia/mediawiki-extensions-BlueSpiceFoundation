@@ -1,25 +1,25 @@
 {
-    "@metadata": {
-        "authors": [
-            "Iltever"
-        ]
-    },
-    "bs-extjs-ok": "OK",
-    "bs-extjs-yes": "Хоу",
-    "bs-extjs-no": "Огъай",
-    "bs-extjs-save": "Сакъла",
-    "bs-extjs-delete": "Кетер",
-    "bs-extjs-add": "Къош",
-    "bs-extjs-remove": "Кетер",
-    "bs-extjs-edit": "Тюрлендириу",
-    "bs-extjs-error": "Халат",
-    "bs-extjs-loading": "Джюклениу...",
-    "bs-extjs-actions-column-header": "Этимле",
-    "bs-extjs-reset": "Ариула",
-    "bs-extjs-close": "Джаб",
-    "bs-extjs-label-user": "Къошулуучу",
-    "bs-extjs-upload": "Джюкле",
-    "bs-extjs-browse": "Къарау",
-    "bs-extjs-uploading": "Джюклениу...",
-    "bs-extjs-allns": "(бютеу)"
+	"@metadata": {
+		"authors": [
+			"Iltever"
+		]
+	},
+	"bs-extjs-ok": "OK",
+	"bs-extjs-yes": "Хоу",
+	"bs-extjs-no": "Огъай",
+	"bs-extjs-save": "Сакъла",
+	"bs-extjs-delete": "Кетер",
+	"bs-extjs-add": "Къош",
+	"bs-extjs-remove": "Кетер",
+	"bs-extjs-edit": "Тюрлендириу",
+	"bs-extjs-error": "Халат",
+	"bs-extjs-loading": "Джюклениу...",
+	"bs-extjs-actions-column-header": "Этимле",
+	"bs-extjs-reset": "Ариула",
+	"bs-extjs-close": "Джаб",
+	"bs-extjs-label-user": "Къошулуучу",
+	"bs-extjs-upload": "Джюкле",
+	"bs-extjs-browse": "Къарау",
+	"bs-extjs-uploading": "Джюклениу...",
+	"bs-extjs-allns": "(бютеу)"
 }

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"DCLXVI"
+		]
+	},
+	"bs-ns_main": "(Страници)",
+	"bs-ns_all": "(всички)",
+	"bs-tab_navigation": "Навигация",
+	"bs-tab_admin": "Админ",
+	"bs-userbar_loginswitch_logout": "Излизане",
+	"bs-userbar_loginswitch_login": "Влизане",
+	"bs-extended-search-textfield-defaultvalue": "Търсене..."
+}

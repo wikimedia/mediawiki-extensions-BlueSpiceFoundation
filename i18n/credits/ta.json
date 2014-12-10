@@ -1,8 +1,10 @@
 {
-    "@metadata": {
-        "authors": [
-            "ElangoRamanujam"
-        ]
-    },
-    "bs-credits-contributors": "பங்களிப்பாளர்கள்"
+	"@metadata": {
+		"authors": [
+			"ElangoRamanujam"
+		]
+	},
+	"bs-credits-contributors": "பங்களிப்பாளர்கள்",
+	"bs-credits-translators": "மொழிபெயர்ப்பாளர்கள்",
+	"bs-credits-translation": "மொழிபெயர்ப்பு"
 }

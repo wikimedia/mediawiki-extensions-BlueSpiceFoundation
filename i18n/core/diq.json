@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gorizon",
+			"Mirzali"
+		]
+	},
+	"bs-ns_main": "(Peli)",
+	"bs-ns_all": "(pêro)",
+	"bs-tab_navigation": "Pusula",
+	"bs-tab_focus": "Fokus",
+	"bs-tab_admin": "İdare",
+	"bs-userbar_loginswitch_logout": "Veciyayış",
+	"bs-userbar_loginswitch_login": "Cıkewtış",
+	"bs-extended-search-textfield-defaultvalue": "Geyreno...",
+	"bs-extended-search-textfield-tooltip": "Wiki de cı geyre",
+	"bs-years-duration": "{{PLURAL:$1|yew serre|$1 serri}}",
+	"bs-months-duration": "{{PLURAL:$1|yew aşme|$1 aşmi}}",
+	"bs-weeks-duration": "{{PLURAL:$1|yew hefte|$1 heftey}}",
+	"bs-days-duration": "{{PLURAL:$1|yew roce|$1 roci}}",
+	"bs-hours-duration": "{{PLURAL:$1|yew saete|$1 saeti}}",
+	"bs-mins-duration": "{{PLURAL:$1|yew deqa|$1 deqey}}",
+	"bs-secs-duration": "{{PLURAL:$1|yew saniya|$1 saniyey}}",
+	"bs-two-units-ago": "$1 û $2 raver",
+	"bs-one-unit-ago": "$1 raver",
+	"bs-now": "nıka",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Merheba bıra $1|Merheba waya $1|Merheba $1}},",
+	"bs-email-greeting-no-receiver": "Merheba,",
+	"bs-viewtagerrorlist-legend": "$1 - Xeta",
+	"bs-navigation-support": "Destek",
+	"bs-navigation-contact": "İrtıbat"
+}

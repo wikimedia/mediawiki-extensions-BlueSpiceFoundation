@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Keysuck",
+			"아라"
+		]
+	},
+	"bs-extjs-portal-config": "포틀릿 구성:",
+	"bs-extjs-portal-title": "포틀릿 제목",
+	"bs-extjs-portal-height": "높이",
+	"bs-extjs-portal-count": "항목",
+	"bs-extjs-portal-timespan": "기간",
+	"bs-extjs-portal-timespan-week": "주",
+	"bs-extjs-portal-timespan-month": "월",
+	"bs-extjs-portal-timespan-alltime": "항상"
+}

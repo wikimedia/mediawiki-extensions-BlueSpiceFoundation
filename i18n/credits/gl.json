@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"specialcredits": "Créditos de BlueSpice",
+	"bs-credits-programmers": "Programadores",
+	"bs-credits-dnt": "Deseño e probas",
+	"bs-credits-contributors": "Colaboradores",
+	"bs-credits-translators": "Tradutores",
+	"bs-credits-translation": "Tradución",
+	"bs-credits-th": "Grazas a tódolos tradutores de $1."
+}

@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Base",
+			"Ата"
+		]
+	},
+	"bs-validator-email-validation-approved": "Адресу електронної пошти було успішно підтверджено.",
+	"bs-validator-email-validation-not-approved": "Неможливо підтвердити адресу електронної пошти.",
+	"bs-validator-url-validation-approved": "URL-адреса успішно перевірена.",
+	"bs-validator-url-validation-not-approved": "Не вдалося перевірити URL-адресу.",
+	"bs-validator-arg-count-validation-approved": "Атрибут «кількість» успішно перевірено.",
+	"bs-validator-arg-count-validation-not-approved": "Атрибут «кількість» не може бути перевірений.",
+	"bs-validator-set-validation-approved": "$1 було успішно перевірено.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Лише подане значення дозволене для $1|Для $1 дозволене лише одне з поданих значень}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Вказано надто мале значення. Воно не повинно бути менше, ніж $1.",
+	"bs-validator-integer-range-validation-too-high": "Вказано надто велике значення. Воно не повинно бути більше, ніж $1."
+}

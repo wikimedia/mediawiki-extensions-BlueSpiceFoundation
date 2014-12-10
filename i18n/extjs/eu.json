@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Subi"
+		]
+	},
+	"bs-extjs-yes": "Bai",
+	"bs-extjs-no": "Ez",
+	"bs-extjs-save": "Gorde",
+	"bs-extjs-delete": "Ezabatu",
+	"bs-extjs-add": "Gehitu",
+	"bs-extjs-remove": "Kendu",
+	"bs-extjs-edit": "Aldatu",
+	"bs-extjs-saving": "gordetzen...",
+	"bs-extjs-close": "Itxi",
+	"bs-extjs-filters": "Iragazkiak"
+}

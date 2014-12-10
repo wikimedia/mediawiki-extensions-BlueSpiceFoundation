@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"XXN"
+		]
+	},
+	"bs-filesystemhelper-folder-copy-error": "Dosarul <code>$1</code> nu poate fi redenumit."
+}
