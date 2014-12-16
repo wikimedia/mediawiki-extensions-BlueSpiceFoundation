@@ -66,11 +66,13 @@ class BsGroupHelper {
 	 * @param Array $aPermissions
 	 * @return boolean alway true - keeps the hook system running
 	 */
-	public static function addTemporaryGroupToUser( $oUser, $sGroupName, $aPermissions ) {
+	public static function addTemporaryGroupToUser( $oUser, $sGroupName, $aPermissions, Title $oTitle = null ) {
 		global $wgGroupPermissions;
 
 		foreach ( $aPermissions as $sPermission ) {
 			$wgGroupPermissions[$sGroupName][$sPermission] = true;
+			if( is_null($oTitle) || !isset($GLOBALS['wgNamespacePermissionLockdown'])) continue;
+			$GLOBALS['wgNamespacePermissionLockdown'][$oTitle->getNamespace()][$sPermission][] = $sGroupName;
 		}
 
 		self::$sTempGroup = $sGroupName;
