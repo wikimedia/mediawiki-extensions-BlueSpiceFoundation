@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Indoril"
+			"Indoril",
+			"Geraki"
 		]
 	},
 	"bs-ns_main": "(Σελίδες)",
@@ -17,7 +18,7 @@
 	"bs-mins-duration": "{{PLURAL:$1|ένα λεπτό|$1 λεπτά}}",
 	"bs-secs-duration": "{{PLURAL:$1|ένα δευτερόλεπτο|$1 δευτερόλεπτα}}",
 	"bs-now": "τώρα",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Γεια σας κύριε $1 |Γεια σας κυρία $1 |Γεια σας $1 }},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Γεια σας κύριε $2|Γεια σας κυρία $2|Γεια σας $2}},",
 	"bs-email-greeting-no-receiver": "Γεια σας,",
 	"bs-email-footer": "Αυτό το μήνυμα δημιουργήθηκε αυτόματα. Παρακαλούμε μην απαντήσετε σε αυτό το email.",
 	"bs-userpagesettings-legend": "Ρυθμίσεις χρήστη",

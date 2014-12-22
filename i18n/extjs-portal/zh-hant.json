@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Cwlin0416"
 		]
 	},
-	"bs-extjs-portal-config": "配置portlet：",
-	"bs-extjs-portal-title": "Portlet標題",
+	"bs-extjs-portal-config": "設定 portlet：",
+	"bs-extjs-portal-title": "Portlet 標題",
 	"bs-extjs-portal-height": "高度",
 	"bs-extjs-portal-count": "入口",
 	"bs-extjs-portal-timespan": "時間跨度",
