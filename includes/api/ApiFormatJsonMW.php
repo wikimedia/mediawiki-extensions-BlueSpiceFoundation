@@ -36,10 +36,19 @@ class ApiFormatJson extends ApiFormatBase {
 			$prefix = preg_replace( "/[^][.\\'\\\"_A-Za-z0-9]/", '', $callback ) . '(';
 			$suffix = ')';
 		}
+
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$data = $this->getResult()->getResultData();
+			$data = ApiResult::transformForBC( $data );
+			$data = ApiResult::transformForTypes( $data, array( 'BC' => true ) );
+			$data = ApiResult::removeMetadata( $data );
+		} else {
+			$data = $this->getResultData();
+		}
  
 		$this->printText(
 			$prefix .
-			FormatJson::encode( $this->getResultData(), $this->getIsHtml() ) .
+			FormatJson::encode( $data, $this->getIsHtml() ) .
 			$suffix
 		);
 	}
