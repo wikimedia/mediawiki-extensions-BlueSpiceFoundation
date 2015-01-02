@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"C5st4wr6ch",
-			"Arifin.wijaya"
+			"Arifin.wijaya",
+			"Macofe"
 		]
 	},
 	"specialcredits": "Kredit BlueSpice",
 	"bs-credits-programmers": "Pemrogram",
 	"bs-credits-dnt": "Desain dan pengujian",
-	"bs-credits-contributors": "Kontributor"
+	"bs-credits-contributors": "Kontributor",
+	"bs-credits-translation": "Terjemahan"
 }
