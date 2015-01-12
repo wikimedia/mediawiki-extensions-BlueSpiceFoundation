@@ -290,7 +290,7 @@ class BsCoreHooks {
 		}
 
 		$table = $dbw->tableName( 'bs_settings' );
-		if ( $wgDBtype == 'mysql' ) {
+		if ( $wgDBtype == 'mysql' || $wgDBtype == 'sqlite') {
 			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (`key` varchar(255) NOT NULL, `value` text)");
 			$dbw->query("CREATE UNIQUE INDEX `key` ON {$table} (`key`)");
