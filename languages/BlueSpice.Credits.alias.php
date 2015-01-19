@@ -61,6 +61,11 @@ $specialPageAliases['ml'] = array(
 	'SpecialCredits' => array( 'കടപ്പാടുകൾ' ),
 );
 
+/** Dutch (Nederlands) */
+$specialPageAliases['nl'] = array(
+	'SpecialCredits' => array( 'Naamsvermeldingen' ),
+);
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'SpecialCredits' => array( 'Ghi_công' ),

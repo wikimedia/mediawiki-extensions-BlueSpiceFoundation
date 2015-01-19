@@ -56,6 +56,11 @@ $specialPageAliases['ml'] = array(
 	'Diagnostics' => array( 'പരിശോധന' ),
 );
 
+/** Dutch (Nederlands) */
+$specialPageAliases['nl'] = array(
+	'Diagnostics' => array( 'Diagnostiek' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Diagnostics' => array( '诊断程序' ),
