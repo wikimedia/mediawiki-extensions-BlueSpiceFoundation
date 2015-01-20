@@ -54,6 +54,7 @@
 	"bs-filesystemhelper-folder-already-exists": "Error message given when a folder already exists, put $1 in code tags\n\nParameters:\n* $1 - name of the folder",
 	"bs-filesystemhelper-folder-copy-error": "Error message given when a folder could not be copied, put $1 in code tags\n\nParameters:\n* $1 - name of the folder",
 	"bs-filesystemhelper-folder-not-exists": "Error message given when a folder does not exists, put $1 in code tags\n\nParameters:\n* $1 - name of the folder",
+	"bs-filesystemhelper-folder-rename-error": "Error message given when a folder could not be renamed, put $1 and $2 in code tags\n\nParameters:\n* $1 - name of the folder to be renamed\n* $2 - name of the folder to be renamed to",
 	"bs-filesystemhelper-upload-err-code": "Error message given when a file could not be uploaded, full stop included in $1.\n\nParameters:\n* $1 - a string indicating the reason\nSee also:\n* {{msg-mw|Bs-filesystemhelper-upload-base64-error}}",
 	"bs-filesystemhelper-upload-wrong-ext": "Error message given when an uploaded file does not have the required file extension\n\nParameters:\n* $1 - the required file extension",
 	"bs-filesystemhelper-upload-unsupported-type": "Error message given when an uploaded file has a file type that is not supported",

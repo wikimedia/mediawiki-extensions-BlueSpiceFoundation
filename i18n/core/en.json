@@ -50,6 +50,7 @@
 	"bs-filesystemhelper-folder-already-exists": "The folder <code>$1</code> already exists.",
 	"bs-filesystemhelper-folder-copy-error": "The folder <code>$1</code> could not be renamed.",
 	"bs-filesystemhelper-folder-not-exists": "The folder <code>$1</code> does not exist.",
+	"bs-filesystemhelper-folder-rename-error": "The folder <code>$1</code> could not be renamed to <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "The file could not be uploaded: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "The file does not have the required extension: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "This file type is not supported.",
