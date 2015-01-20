@@ -35,7 +35,7 @@ Ext.define('BS.form.UploadPanel', {
 
 		this.items = [
 			Ext.create('Ext.form.field.Hidden', {
-				name: this.uploadUploadFormName + '-hidden-field',
+				name: this.uploadFormName + '-hidden-field',
 				id: "bs-extjs-uploadCombo-" + this.uploadFormName + "-hidden-field"
 			})
 		];
