@@ -50,6 +50,7 @@
 	"bs-filesystemhelper-folder-already-exists": "Папката <code>$1</code> веќе постои.",
 	"bs-filesystemhelper-folder-copy-error": "Не можев да ја преименувам папката <code>$1</code>.",
 	"bs-filesystemhelper-folder-not-exists": "Папката <code>$1</code> не постои.",
+	"bs-filesystemhelper-folder-rename-error": "Не можев да ја преименувам папката <code>$1</code> во <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "Не можев да ја подигнам податотеката: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Податотеката ја нема потребната наставка: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Овој податотечен тип не е поддржан.",

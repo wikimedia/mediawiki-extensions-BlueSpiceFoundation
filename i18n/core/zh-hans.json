@@ -7,7 +7,8 @@
 			"Hudafu",
 			"Kuailong",
 			"Fengchao",
-			"御坂美琴"
+			"御坂美琴",
+			"Yfdyh000"
 		]
 	},
 	"bs-ns_main": "（页面）",
@@ -56,6 +57,7 @@
 	"bs-filesystemhelper-folder-already-exists": "文件夹<code>$1</code>已存在。",
 	"bs-filesystemhelper-folder-copy-error": "文件夹<code>$1</code>无法重命名。",
 	"bs-filesystemhelper-folder-not-exists": "文件夹<code>$1</code>不存在。",
+	"bs-filesystemhelper-folder-rename-error": "文件夹<code>$1</code>不能被重命名为<code>$2</code>。",
 	"bs-filesystemhelper-upload-err-code": "无法上传此文件：$1",
 	"bs-filesystemhelper-upload-wrong-ext": "该文件不具有所需的扩展名：  $1 。",
 	"bs-filesystemhelper-upload-unsupported-type": "不支持此文件类型。",
