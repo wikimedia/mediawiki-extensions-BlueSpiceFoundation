@@ -296,7 +296,7 @@ class BsFileSystemHelper {
 		if ($bStatus)
 			return Status::newGood();
 		else
-			return Status::newFatal(wfMessage("bs-filesystemhelper-folder-rename-error", $sSource)->plain());
+			return Status::newFatal(wfMessage("bs-filesystemhelper-folder-rename-error", $sSource, $sDestination));
 	}
 
 	/**
@@ -515,7 +515,7 @@ class BsFileSystemHelper {
 
 	public static function saveBase64ToTmp($sFileName, $sFileContent){
 		$sFileName = wfTempDir() . DS . basename($sFileName);
-		
+
 		$sFileContent = preg_replace("#^data:.*?;base64,#", "", $sFileContent);
 		$sFileContent = str_replace(' ', '+', $sFileContent);
 		$sFileContent = base64_decode($sFileContent);
