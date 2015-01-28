@@ -60,26 +60,68 @@ class BsGroupHelper {
 	}
 
 	/**
-	 * @global Array $wgGroupPermissions
 	 * @param User $oUser
 	 * @param String $sGroupName
-	 * @param Array $aPermissions
-	 * @return boolean alway true - keeps the hook system running
+	 * @return boolean
 	 */
-	public static function addTemporaryGroupToUser( $oUser, $sGroupName, $aPermissions, Title $oTitle = null ) {
-		global $wgGroupPermissions;
-
-		foreach ( $aPermissions as $sPermission ) {
-			$wgGroupPermissions[$sGroupName][$sPermission] = true;
-			if( is_null($oTitle) || !isset($GLOBALS['wgNamespacePermissionLockdown'])) continue;
-			$GLOBALS['wgNamespacePermissionLockdown'][$oTitle->getNamespace()][$sPermission][] = $sGroupName;
-		}
+	public static function addTempGroupToUser( $oUser, $sGroupName ) {
 
 		self::$sTempGroup = $sGroupName;
-
 		$oUser->addGroup( $sGroupName );
 
 		return true;
+	}
+
+	/**
+	 * @global Array $wgGroupPermissions
+	 * @param String $sGroupName
+	 * @param Array $aPermissions
+	 * @param Array $aNamespaces
+	 */
+	public static function addPermissionsToGroup( $sGroupName, $aPermissions, $aNamespaces = array() ) {
+		global $wgGroupPermissions;
+
+		$aNamespaces = array_diff(
+			$aNamespaces,
+			array( NS_MEDIA, NS_SPECIAL )
+		);
+
+		foreach ( $aPermissions as $sPermission ) {
+			$wgGroupPermissions[$sGroupName][$sPermission] = true;
+
+			//Check if Lockdown is in use
+			if( empty($aNamespaces) || !isset($GLOBALS['wgNamespacePermissionLockdown'])) {
+				continue;
+			}
+			foreach( $aNamespaces as $iNs) {
+				if( in_array( $sGroupName, $GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission] )) {
+					continue;
+				}
+				$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission][] = $sGroupName;
+			}
+		}
+	}
+
+	/**
+	 * DEPRECATED!
+	 * Use GroupHelper::addTempGroupToUser and GroupHelper::addPermissionsToGroup
+	 * @deprecated since 2.23.1
+	 * @param User $oUser
+	 * @param String $sGroupName
+	 * @param Array $aPermissions
+	 * @param Title $oTitle
+	 * @return NULL
+	 */
+	public static function addTemporaryGroupToUser( $oUser, $sGroupName, $aPermissions, Title $oTitle = null ) {
+		//Deprecated, use GroupHelper::addTempGroupToUser and GroupHelper::addPermissionsToGroup
+
+		$aNamespaces = array();
+		if( !is_null($oTitle) ) {
+			$aNamespaces[] = $oTitle->getNamespace();
+		}
+
+		self::addPermissionsToGroup( $sGroupName, $aPermissions, $aNamespaces );
+		self::addTempGroupToUser($oUser, $sGroupName);
 	}
 
 	/**
