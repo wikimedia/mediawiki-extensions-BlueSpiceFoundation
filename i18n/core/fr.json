@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Macofe"
+			"Macofe",
+			"Benjozork"
 		]
 	},
 	"bs-ns_main": "(Pages)",
@@ -51,6 +52,7 @@
 	"bs-filesystemhelper-folder-already-exists": "Le répertoire <code>$1</code> existe déjà.",
 	"bs-filesystemhelper-folder-copy-error": "Le répertoire <code>$1</code> n’a pas pu être renommé.",
 	"bs-filesystemhelper-folder-not-exists": "Le répertoire <code>$1</code> n’existe pas.",
+	"bs-filesystemhelper-folder-rename-error": "Le dossier <code>$1</code> ne peut pas être renommé en <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "Le fichier n’a pas pu être téléchargé : $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Le fichier n’a pas l’extension requise : $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Ce type de fichier n’est pas pris en charge.",
