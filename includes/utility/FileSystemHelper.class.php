@@ -576,6 +576,8 @@ class BsFileSystemHelper {
 
 		$oRepoFile = wfFindFile( $sTargetFileName );
 		if ($status->isGood() && $oRepoFile !== false){
+			$oPage = WikiPage::factory( $oRepoFile->getTitle() );
+			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
 			if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
 				return Status::newGood(SecureFileStore::secureStuff($oRepoFile->getUrl(), true));
 			}
