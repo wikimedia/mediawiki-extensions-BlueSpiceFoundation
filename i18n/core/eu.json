@@ -38,5 +38,6 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Fitxategi mota hau ez da onartzen.",
 	"bs-filesystemhelper-save-base64-error": "Ezin izan da fitxategia gorde.",
 	"bs-filesystemhelper-upload-base64-error": "Ezin izan da fitxategia igo.",
-	"bs-navigation-instructions": "Jarraibideak"
+	"bs-navigation-instructions": "Jarraibideak",
+	"bs-imagepage-download-text": "Jaitsi"
 }
