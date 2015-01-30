@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Subi"
+		]
+	},
+	"bs-extjs-portal-timespan-week": "Astea",
+	"bs-extjs-portal-timespan-month": "Hilabetea",
+	"bs-extjs-portal-timespan-alltime": "Denbora guztia"
+}
