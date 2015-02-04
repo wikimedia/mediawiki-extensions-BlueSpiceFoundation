@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Baloch Afghanistan"
+		]
+	},
+	"bs-extjs-ok": "جووان اینت",
+	"bs-extjs-cancel": "کنسیل",
+	"bs-extjs-yes": "هان",
+	"bs-extjs-no": "نه",
+	"bs-extjs-save": "ذخیره",
+	"bs-extjs-delete": "پاک کورتین",
+	"bs-extjs-add": "اڈ\t کورتین",
+	"bs-extjs-remove": "پاک کورتین",
+	"bs-extjs-edit": "ایڈیٹ",
+	"bs-extjs-error": "خطا",
+	"bs-extjs-confirm": "تأیید کورتین",
+	"bs-extjs-loading": "لودینگ...",
+	"bs-extjs-warning": "هشدار",
+	"bs-extjs-saving": "بئ ذخیره کورتینی حالا...",
+	"bs-extjs-reset": "شه نوک",
+	"bs-extjs-close": "بستین",
+	"bs-extjs-label-user": "کار زوروک",
+	"bs-extjs-label-namespace": "نامی فضا",
+	"bs-extjs-label-page": "تاکدیم",
+	"bs-extjs-upload": "بُرز کورتین",
+	"bs-extjs-browse": "مرور",
+	"bs-extjs-allns": "(موچین)",
+	"bs-extjs-filters": "فیلتر ئان",
+	"bs-extjs-filter-contains": "شامل",
+	"bs-extjs-filter-starts-with": "شرۆ ئه بیئت گۆ",
+	"bs-extjs-filter-ends-with": "الاس ئه بیئت گۆ",
+	"bs-extjs-title-success": "کامیاب",
+	"bs-extjs-title-warning": "هشدار"
+}
