@@ -63,8 +63,4 @@ class ApiFormatJson extends ApiFormatBase {
 			return 'Output data in JSON format' . parent::getDescription();
 		}
 	}
-
-	public function getVersion() {
-		return __CLASS__;
-	}
 }
