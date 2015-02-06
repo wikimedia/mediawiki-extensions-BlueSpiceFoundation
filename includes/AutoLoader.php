@@ -19,6 +19,14 @@ $GLOBALS['wgAutoloadClasses']['LCStore_MC'] = __DIR__."/cache/LCStore_MC.php";
 
 $GLOBALS['wgAutoloadClasses']['BsValidator'] = __DIR__."/validator/Validator.class.php";
 $GLOBALS['wgAutoloadClasses']['BsValidatorPlugin'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorResponse'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorEmailPlugin'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorUrlPlugin'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorPositiveIntegerPlugin'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorIntegerRangePlugin'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorArgCountPlugin'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorCategoryPlugin'] = __DIR__."/validator/Validator.class.php";
+$GLOBALS['wgAutoloadClasses']['BsValidatorSetItemPlugin'] = __DIR__."/validator/Validator.class.php";
 $GLOBALS['wgAutoloadClasses']['BsValidatorMwGroupnamePlugin'] = __DIR__."/validator/plugins/BsValidator/BsValidatorMwGroupnamePlugin.class.php";
 $GLOBALS['wgAutoloadClasses']['BsValidatorMwNamespacePlugin'] = __DIR__."/validator/plugins/BsValidator/BsValidatorMwNamespacePlugin.class.php";
 $GLOBALS['wgAutoloadClasses']['BsValidatorMwUsernamePlugin']  = __DIR__."/validator/plugins/BsValidator/BsValidatorMwUsernamePlugin.class.php";
@@ -40,6 +48,7 @@ $GLOBALS['wgAutoloadClasses']['BsCAIContext'] = __DIR__."/CAContext.php";
 $GLOBALS['wgAutoloadClasses']['BsCAResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsCAIResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams.php";
+$GLOBALS['wgAutoloadClasses']['BsExtJSSortParam'] = __DIR__."/ExtJSStoreParams.php";
 
 //api
 $GLOBALS['wgAutoloadClasses']['BsApiBase'] = __DIR__."/api/BsApiBase.php";
@@ -54,7 +63,9 @@ $GLOBALS['wgAutoloadClasses']['HTMLInfoFieldOverride'] = __DIR__."/html/htmlform
 $GLOBALS['wgAutoloadClasses']['HTMLTextFieldOverride'] = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
 $GLOBALS['wgAutoloadClasses']['HTMLIntFieldOverride'] = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
 $GLOBALS['wgAutoloadClasses']['HTMLStaticImageFieldOverride'] = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
+$GLOBALS['wgAutoloadClasses']['HTMLCheckFieldOverride'] = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
 $GLOBALS['wgAutoloadClasses']['HTMLMultiSelectEx'] = __DIR__."/html/htmlformfields/HTMLMultiSelectEx.php";
+$GLOBALS['wgAutoloadClasses']['XmlMultiSelect'] = __DIR__."/html/htmlformfields/HTMLMultiSelectEx.php";
 $GLOBALS['wgAutoloadClasses']['HTMLMultiSelectPlusAdd'] = __DIR__."/html/htmlformfields/HTMLMultiSelectPlusAdd.php";
 $GLOBALS['wgAutoloadClasses']['HTMLMultiSelectSortList'] = __DIR__."/html/htmlformfields/HTMLMultiSelectSortList.php";
 
@@ -119,9 +130,6 @@ if ( version_compare( $wgVersion, '1.19.0', '>' ) ) {
 	$GLOBALS['wgAutoloadClasses']['DatabaseOracle'] = __DIR__."/db/DatabaseOraclePre120.php";
 }
 $GLOBALS['wgAutoloadClasses']['BSOracleHooks']  = __DIR__."/db/BSOracleHooks.php";
-
-$GLOBALS['wgAutoloadClasses']['ORAField']  = __DIR__."/db/DatabaseOracleBase.php";
-$GLOBALS['wgAutoloadClasses']['ORAResult'] = __DIR__."/db/DatabaseOracleBase.php";
 
 //Special pages
 $GLOBALS['wgAutoloadClasses']['SpecialDiagnostics'] = __DIR__ . '/specials/SpecialDiagnostics.class.php';
