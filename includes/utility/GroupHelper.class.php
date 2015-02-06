@@ -94,10 +94,14 @@ class BsGroupHelper {
 				continue;
 			}
 			foreach( $aNamespaces as $iNs) {
-				if( in_array( $sGroupName, $GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission] )) {
-					continue;
+				if( isset($GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission]) ) {
+					if( in_array(
+						$sGroupName,
+						$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission]
+					)) continue;
 				}
-				$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission][] = $sGroupName;
+				$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission][]
+					= $sGroupName;
 			}
 		}
 	}
