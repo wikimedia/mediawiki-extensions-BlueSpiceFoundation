@@ -11,7 +11,7 @@ class BsCoreHooks {
 		$wgExtraNamespaces, $wgContentNamespaces, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault,
 		$wgLocalisationCacheConf, $wgAutoloadLocalClasses, $wgFlaggedRevsNamespaces, $wgNamespaceAliases, $wgVersion;
 
-		$sConfigPath = BSROOTDIR . DS . 'config';
+		$sConfigPath = BSCONFIGDIR;
 		$aConfigFiles = array(
 			'nm-settings.php',
 			'gm-settings.php',
