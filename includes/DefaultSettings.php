@@ -39,6 +39,7 @@ $wgRSSUrlWhitelist = array( "http://blog.blue-spice.org/feed/" );
 $wgExternalLinkTarget = '_blank';
 $wgCapitalLinkOverrides[ NS_FILE ] = false;
 $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
+$wgUrlProtocols[] = "file://";
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
