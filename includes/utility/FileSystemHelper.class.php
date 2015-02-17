@@ -513,46 +513,78 @@ class BsFileSystemHelper {
 		return $path;
 	}
 
+	public static $aFSCharMap = array(
+		':' => '_COLON_' //MediaWiki NSFileRepo makes it possible to have filenames with colons. Unfortunately we cannot have a colon in a filesystem path
+	);
+	protected static function makeTmpFileName( $sFileName ) {
+		$sTmpFileName = $sFileName;
+		foreach( self::$aFSCharMap as $search => $replace ) {
+			$sTmpFileName = str_replace($search, $replace, $sTmpFileName);
+		}
+		return $sTmpFileName;
+	}
+
+	protected static function restoreFileName( $sTmpFileName ) {
+		$sFileName = $sTmpFileName;
+		foreach( self::$aFSCharMap as $replace => $search ) {
+			$sFileName = str_replace($search, $replace, $sFileName);
+		}
+		return $sFileName;
+	}
+
 	public static function saveBase64ToTmp($sFileName, $sFileContent){
+		$sFileName = self::makeTmpFileName($sFileName);
 		$sFileName = wfTempDir() . DS . basename($sFileName);
 
 		$sFileContent = preg_replace("#^data:.*?;base64,#", "", $sFileContent);
 		$sFileContent = str_replace(' ', '+', $sFileContent);
 		$sFileContent = base64_decode($sFileContent);
+
 		$bFile = file_put_contents($sFileName, $sFileContent);
-		if ($bFile === 0 || $bFile === false)
+		if ($bFile === 0 || $bFile === false) {
 			return Status::newFatal(wfMessage('bs-filesystemhelper-save-base64-error')->plain());
-		else
+		}
+		else {
 			return Status::newGood($sFileName);
+		}
 	}
 
 	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false){
 		global $wgLocalFileRepo, $wgUser;
 		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo));
-		$oFile = $oUploadStash->stashFile($sFilename, "file");
-		if ($oFile === false)
+		$oUploadFile = $oUploadStash->stashFile( $sFilename, "file" );
+		$sTargetFileName = basename( self::restoreFileName( $sFilename ) );
+
+		if ($oUploadFile === false) {
 			return Status::newFailure(wfMessage('bs-filesystemhelper-upload-local-error-stash-file')->plain());
-		$oUploadFromStash = new UploadFromStash($wgUser, $oUploadStash, $wgLocalFileRepo);
-		$oUploadFromStash->initialize($oFile->getFileKey(), basename($sFilename));
+		}
+
+		$oUploadFromStash = new UploadFromStash( $wgUser, $oUploadStash, $wgLocalFileRepo );
+		$oUploadFromStash->initialize( $oUploadFile->getFileKey(), $sTargetFileName );
 		$aStatus = $oUploadFromStash->verifyUpload();
 		if ($aStatus['status'] != UploadBase::OK) {
-			return Status::newFatal(wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse());
+			return Status::newFatal(
+				wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse()
+			);
 		}
 		$status = $oUploadFromStash->performUpload($sComment, $sPageText, $bWatch, $wgUser);
 		$oUploadFromStash->cleanupTempFile();
 
-		if (file_exists($sFilename) && $bDeleteSrc)
+		if (file_exists($sFilename) && $bDeleteSrc) {
 			unlink($sFilename);
-		$oFile = wfFindFile(basename($sFilename));
-		if ($status->isGood() && $oFile !== false){
-			if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
-				return Status::newGood(SecureFileStore::secureStuff($oFile->getUrl(), true));
-			}
-			else
-				return Status::newGood($oFile->getUrl(), true);
 		}
-		else
-			return Status::newFatal (wfMessage('bs-filesystemhelper-upload-local-error-create')->plain());
-	}
 
+		$oRepoFile = wfFindFile( $sTargetFileName );
+		if ($status->isGood() && $oRepoFile !== false){
+			if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
+				return Status::newGood(SecureFileStore::secureStuff($oRepoFile->getUrl(), true));
+			}
+			else{
+				return Status::newGood($oRepoFile->getUrl(), true);
+			}
+		}
+		else{
+			return Status::newFatal (wfMessage('bs-filesystemhelper-upload-local-error-create')->plain());
+		}
+	}
 }
