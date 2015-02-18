@@ -287,7 +287,7 @@ class ViewBaseElement {
 		return $output;
 	}
 
-	protected function processItem( $request ) {
+	protected function processItem( $matches ) {
 		$request = $matches[1];
 
 		// TODO MRG20100816: Ist diese Token-Syntax irgendwo beschrieben? Ausserdem müssen wir sicherstellen, dass
