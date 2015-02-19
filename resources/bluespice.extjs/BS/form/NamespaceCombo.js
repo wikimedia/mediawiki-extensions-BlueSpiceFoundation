@@ -6,7 +6,6 @@ Ext.define( 'BS.form.NamespaceCombo', {
 	queryMode: 'local',
 	typeAhead: true,
 	triggerAction: 'all',
-	value: 0,
 	fieldLabel: mw.message('bs-extjs-namespace').plain(),
 	
 	//Custom Settings
