@@ -38,7 +38,9 @@ $messages['en'] = array(
 	'bs-extjs-filter-contains' => 'Contains',
 	'bs-extjs-filter-contains-not' => 'Contains not',
 	'bs-extjs-filter-starts-with' => 'Starts with',
-	'bs-extjs-filter-ends-with' => 'Ends with'
+	'bs-extjs-filter-ends-with' => 'Ends with',
+	'bs-extjs-filter-greater-than' => 'Greater than',
+	'bs-extjs-filter-less-than' => 'Less than',
 );
 
 $messages['qqq'] = array(
@@ -76,7 +78,9 @@ $messages['qqq'] = array(
 	'bs-extjs-filter-contains' => 'Label for a filter input box that fitlers for datasets where the value of the field contains the entered value',
 	'bs-extjs-filter-contains-not' => 'Label for a filter input box that fitlers for datasets where the value of the field does not contain the entered value',
 	'bs-extjs-filter-starts-with' => 'Label for a filter input box that fitlers for datasets where the value of the field starts with the entered value',
-	'bs-extjs-filter-ends-with' => 'Label for a filter input box that fitlers for datasets where the value of the field ends with the entered value'
+	'bs-extjs-filter-ends-with' => 'Label for a filter input box that fitlers for datasets where the value of the field ends with the entered value',
+	'bs-extjs-filter-greater-than' => 'Label for a filter input box that fitlers for datasets where the value of the field is greater than the entered value',
+	'bs-extjs-filter-less-than' => 'Label for a filter input box that fitlers for datasets where the value of the field is less than the entered value',
 );
 
 $messages['de'] = array(
@@ -115,7 +119,9 @@ $messages['de'] = array(
 	'bs-extjs-filter-contains' => 'Enthält',
 	'bs-extjs-filter-contains-not' => 'Enthält nicht',
 	'bs-extjs-filter-starts-with' => 'Beginnt mit',
-	'bs-extjs-filter-ends-with' => 'Endet mit'
+	'bs-extjs-filter-ends-with' => 'Endet mit',
+	'bs-extjs-filter-greater-than' => 'Größer als',
+	'bs-extjs-filter-less-than' => 'Kleiner als',
 );
 
 $messages['de-formal'] = array(
