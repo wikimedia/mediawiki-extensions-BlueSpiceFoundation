@@ -526,23 +526,27 @@ class BsCore {
 	 * @param String $sPermissionName I.e. 'myextension-dosomething'
 	 * @param Array $aUserGroups User groups that get preinitialized with the new
 	 * pemission. I.e. array( 'user', 'bureaucrats' )
+	 * @param Array $aConfig set configs for permissions i.e. array('type'=>'global').
+	 * The default here is ('type' = 'namespace')
 	 * @return void
 	 */
-	public function registerPermission( $sPermissionName, $aUserGroups = array() ) {
-		// TODO MRG (05.02.11 19:24): @Sebastian Ist der dritte Parameter im PermissionsManager berücksichtigt?
+	public function registerPermission( $sPermissionName, $aUserGroups = array(), $aConfig = array() ) {
 		wfProfileIn('BS::' . __METHOD__);
-
-		global $wgGroupPermissions, $wgAvailableRights;
+		global $wgGroupPermissions, $wgAvailableRights, $bsgPermissionConfig;
 		$wgGroupPermissions['sysop'][$sPermissionName] = true;
-
+		if(!isset($bsgPermissionConfig[$sPermissionName])){
+			if ( isset( $aConfig ) ) {
+				$bsgPermissionConfig[$sPermissionName] = $aConfig;
+			} else {
+				$bsgPermissionConfig[$sPermissionName] = array( 'type' => 'namespace' );
+			}
+		}
 		foreach ( $aUserGroups as $sGroup ) {
 			if ( !isset( $wgGroupPermissions[$sGroup][$sPermissionName] ) ) {
 				$wgGroupPermissions[$sGroup][$sPermissionName] = true;
 			}
 		}
-
 		$wgAvailableRights[] = $sPermissionName;
-
 		wfProfileOut('BS::' . __METHOD__);
 	}
 
