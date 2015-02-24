@@ -42,6 +42,8 @@
 	"bs-extjs-filter-contains-not": "Label for contains not\n{{Identical|contains not}}",
 	"bs-extjs-filter-starts-with": "Label for starts with\n{{Identical|starts with}}",
 	"bs-extjs-filter-ends-with": "Label for ends with\n{{Identical|ends with}}",
+	"bs-extjs-filter-greater-than": "Label for a filter input box that fitlers for datasets where the value of the field is greater than the entered value",
+	"bs-extjs-filter-less-than": "Label for a filter input box that fitlers for datasets where the value of the field is less than the entered value",
 	"bs-extjs-title-success": "Window title for success\n{{Identical|Success}}",
 	"bs-extjs-title-warning": "Window title for warning\n{{Identical|Warning}}"
 }
