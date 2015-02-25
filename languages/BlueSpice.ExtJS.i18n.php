@@ -41,6 +41,9 @@ $messages['en'] = array(
 	'bs-extjs-filter-ends-with' => 'Ends with',
 	'bs-extjs-filter-greater-than' => 'Greater than',
 	'bs-extjs-filter-less-than' => 'Less than',
+	'bs-extjs-filter-on' => 'On',
+	'bs-extjs-filter-after' => 'After',
+	'bs-extjs-filter-before' => 'Before',
 );
 
 $messages['qqq'] = array(
@@ -81,6 +84,9 @@ $messages['qqq'] = array(
 	'bs-extjs-filter-ends-with' => 'Label for a filter input box that fitlers for datasets where the value of the field ends with the entered value',
 	'bs-extjs-filter-greater-than' => 'Label for a filter input box that fitlers for datasets where the value of the field is greater than the entered value',
 	'bs-extjs-filter-less-than' => 'Label for a filter input box that fitlers for datasets where the value of the field is less than the entered value',
+	'bs-extjs-filter-on' => 'Label for a filter input box that fitlers for datasets where the value of the field on a specific date',
+	'bs-extjs-filter-after' => 'Label for a filter input box that fitlers for datasets where the value of the field after a specific date',
+	'bs-extjs-filter-before' => 'Label for a filter input box that fitlers for datasets where the value of the field before a specific date',
 );
 
 $messages['de'] = array(
@@ -122,6 +128,9 @@ $messages['de'] = array(
 	'bs-extjs-filter-ends-with' => 'Endet mit',
 	'bs-extjs-filter-greater-than' => 'Größer als',
 	'bs-extjs-filter-less-than' => 'Kleiner als',
+	'bs-extjs-filter-on' => 'Am',
+	'bs-extjs-filter-after' => 'Nach dem',
+	'bs-extjs-filter-before' => 'Vor dem',
 );
 
 $messages['de-formal'] = array(
