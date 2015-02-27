@@ -62,7 +62,7 @@ abstract class BsExtensionMW extends ContextSource {
 			'version' => $sVersion . ' (' . $sStatus . ')',
 			'author' => $this->mInfo[EXTINFO::AUTHOR],
 			'url' => $this->mInfo[EXTINFO::URL],
-			'description' => $this->mInfo[EXTINFO::DESCRIPTION]
+			'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION]
 		);
 		$this->initExt();
 	}
