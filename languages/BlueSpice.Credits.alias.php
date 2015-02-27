@@ -28,7 +28,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'SpecialCredits' => array( 'Qrediy' ),
+	'SpecialCredits' => array( 'Krediyi' ),
 );
 
 /** Upper Sorbian (hornjoserbsce) */
