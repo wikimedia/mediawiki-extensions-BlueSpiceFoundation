@@ -94,7 +94,7 @@
 			//'baseline', 'sub', 'super', 'top', 'text-top', 'middle', 'bottom', 'text-bottom' //Vertical alignment (UNSUPPORTED)
 		];
 		var wikiLinkProperties = [
-			'alt', 'link'
+			'alt', 'link', 'nolink'
 		];
 
 		var additionalProperties = [
@@ -125,7 +125,8 @@
 			displayText: '',
 			link: false,
 			sizewidth: false,
-			sizeheight: false
+			sizeheight: false,
+			nolink: false
 		};
 
 		if ( typeof(cfg) === 'object' ) {
@@ -227,7 +228,12 @@
 				var key = kvpair[0], value = kvpair[1];
 
 				if( $.inArray( key, ['link', 'verweis'] ) !== -1 ) {
-					me.properties.link = value;
+					if (value === ""){
+						me.properties.nolink = true;
+					}
+					else{
+						me.properties.link = value;
+					}
 					continue;
 				}
 
@@ -260,11 +266,16 @@
 				if ( $.inArray(property, ['left','right', 'center']) !== -1 ) continue; //Not yet used. Instead 'align' is set.
 
 				var value = this.properties[property];
+				if (property === 'noLink' && value === true){
+					wikiText.push('link=');
+					continue;
+				}
 				//"link" may be intentionally empty. Therefore we have to
 				//check it _before_ "value is empty?"
 				if ( property === 'link' && ( value !== null &&
 					value !== 'false' && value !== false &&
-					typeof value !== "undefined" ) ) {
+					typeof value !== "undefined" && value !== "" &&
+					this.properties['nolink'] === false) ) {
 					wikiText.push(property + '=' + value);
 					continue;
 				}
