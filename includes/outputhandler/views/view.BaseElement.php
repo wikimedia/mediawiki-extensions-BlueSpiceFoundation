@@ -2,6 +2,19 @@
 /**
  * This file is part of blue spice for MediaWiki.
  *
+ * Template Guide
+ *
+ * A template is a string and can be saved in a plain text file or an html
+ * file. It contains some placeholders as minimum requirement.
+ * The template typically contains comprehensive markup code which is reusable.
+ * There are two kinds of placeholders:
+ *    databound placeholders
+ *       There form is {name_of_key} for associative datasets or {0}, {1}
+ *       and so on for non-associative datasets.
+ *    itembound placeholders
+ *       If items are added to this element with an explicite key, placeholders
+ *       in the form of ###name_of_item### are replaced with item's output.
+ *
  * @abstract
  * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
  * @author Markus Glaser, Sebastian Ulbricht
@@ -10,9 +23,7 @@
  * $LastChangedDate: 2010-07-18 01:13:04 +0200 (So, 18 Jul 2010) $
  * $LastChangedBy: mglaser $
  * $Rev: 314 $
-
  */
-
 // Last review MRG20100816
 
 // TODO MRG20100816: Changelog
@@ -96,41 +107,34 @@ class ViewBaseElement {
 		return $this->_mId;
 	}
 
-	/**
-	 * Template Guide
-	 *
-	 * A template is a string and can be saved in a plain text file or an html
-	 * file. It contains some placeholders as minimum requirement.
-	 * The template typically contains comprehensive markup code which is reusable.
-	 * There are two kinds of placeholders:
-	 *    databound placeholders
-	 *       There form is {name_of_key} for associative datasets or {0}, {1}
-	 *       and so on for non-associative datasets.
-	 *    itembound placeholders
-	 *       If items are added to this element with an explicite key, placeholders
-	 *       in the form of ###name_of_item### are replaced with item's output.
-	 */
 
 	/**
 	 * Set a string as template for this element.
 	 * @param String $template
+	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
 	public function setTemplate( $template ) {
 		$this->_mTemplate = $template;
+		return $this;
 	}
 
 	/**
 	 * Set the content of given file as template for this element.
 	 * @param String $path the absolute path to the template file
-	 * @return Mixed returns the content of the template file on success and false otherwise.
+	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
+	 * @throws Exception
 	 */
 	public function setTemplateFile( $path ) {
 		if ( !is_file( $path ) ) {
-			// @todo Error File not found
-			return false;
+			throw new Exception('template file' . $path . ' not found');
 		}
-		// TODO MRG20100816: Hier ein try_catch (z.B. wenn nicht lesbar) und eine BsException
-		return $this->_mTemplate = file_get_contents( $path );
+
+		$this->_mTemplate = file_get_contents( $path );
+		if($this->_mTemplate === false) {
+			throw new Exception('Failed reading template file ' . $path);
+		}
+
+		return $this;
 	}
 
 	/**
