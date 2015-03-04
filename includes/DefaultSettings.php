@@ -40,6 +40,8 @@ $wgExternalLinkTarget = '_blank';
 $wgCapitalLinkOverrides[ NS_FILE ] = false;
 $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
 $wgUrlProtocols[] = "file://";
+$wgVerifyMimeType = false;
+$wgAllowJavaUploads = true;
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
