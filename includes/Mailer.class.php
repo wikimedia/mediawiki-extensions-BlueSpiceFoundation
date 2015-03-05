@@ -78,7 +78,7 @@ class BsMailer {
 				if ( $vReceiver->getEmail() ) {
 					$aEmailTo[] = array(
 							'mail' => new MailAddress($vReceiver),
-							'greeting' => $vReceiver->getName()
+							'greeting' => BsCore::getUserDisplayName( $vReceiver ),
 					);
 				}
 			} elseif ( strpos( $vReceiver, '@' ) !== false ) {
@@ -97,7 +97,7 @@ class BsMailer {
 				if ( $oUser->getEmail() ) {
 					$aEmailTo[] = array(
 						'mail' => new MailAddress( $oUser ),
-						'greeting' => $vReceiver->getName()
+						'greeting' => BsCore::getUserDisplayName( $vReceiver ),
 					);
 				}
 			}
