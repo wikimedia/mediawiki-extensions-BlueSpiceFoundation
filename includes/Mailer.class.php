@@ -77,8 +77,8 @@ class BsMailer {
 			if ( $vReceiver instanceof User ) {
 				if ( $vReceiver->getEmail() ) {
 					$aEmailTo[] = array(
-							'mail' => new MailAddress($vReceiver),
-							'greeting' => BsCore::getUserDisplayName( $vReceiver ),
+						'mail' => new MailAddress($vReceiver),
+						'greeting' => $vReceiver->getName(),
 					);
 				}
 			} elseif ( strpos( $vReceiver, '@' ) !== false ) {
@@ -97,7 +97,7 @@ class BsMailer {
 				if ( $oUser->getEmail() ) {
 					$aEmailTo[] = array(
 						'mail' => new MailAddress( $oUser ),
-						'greeting' => BsCore::getUserDisplayName( $vReceiver ),
+						'greeting' => $vReceiver->getName(),
 					);
 				}
 			}
@@ -129,10 +129,7 @@ class BsMailer {
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
 				$oUser = User::newFromName( $aReceiver['greeting'] );
-				$sRealname = $oUser->getRealName();
-				if ( empty( $sRealname ) ) {
-					$sRealname = $aReceiver['greeting'];
-				}
+				$sRealname = BsCore::getUserDisplayName( $oUser );
 				$sGreeting = wfMessage( 'bs-email-greeting-receiver', $aReceiver['greeting'], $sRealname )
 					->inLanguage( $oUser->getOption( 'language' ) )
 					->text();
