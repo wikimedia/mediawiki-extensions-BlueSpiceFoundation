@@ -118,10 +118,13 @@ class BsMailer {
 			);
 		}
 
-		$sFooter = ( $this->bSendHTML ) ? "<br /><br />---------------------<br /><br />" : "\n\n---------------------\n\n";
-		$sFooter .= wfMessage( 'bs-email-footer', $wgSitename )->plain() . ( $this->bSendHTML )
-			? "<br /><br />---------------------"
-			: "\n\n---------------------";
+		//Note that this is system lang!
+		$sNL = $this->bSendHTML ? "<br />" : "\n";
+		$sFooter =
+			"$sNL$sNL---------------------$sNL$sNL"
+			.wfMessage( 'bs-email-footer', $wgSitename )->text()
+			."$sNL$sNL---------------------"
+		;
 
 		$sCombinedMsg = $sMsg.$sFooter;
 
@@ -139,9 +142,8 @@ class BsMailer {
 			} else {
 				$sGreeting = wfMessage( 'bs-email-greeting-no-receiver' )->text();
 			}
-			$sGreeting .= ( $this->bSendHTML )
-				? "<br /><br />"
-				: "\n\n";
+			//double new line
+			$sGreeting .= $sNL.$sNL;
 
 			$sLocalCombinedMsg = $sGreeting.$sCombinedMsg;
 			$sLocalCombinedMsg = str_replace( $sReplLF, $sCurLF, $sLocalCombinedMsg );
