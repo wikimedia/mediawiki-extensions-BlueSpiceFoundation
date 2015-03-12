@@ -4,7 +4,8 @@
 			"Vivaelcelta",
 			"Toliño",
 			"Elisardojm",
-			"Fitoschido"
+			"Fitoschido",
+			"Banjo"
 		]
 	},
 	"bs-ns_main": "(Páxinas)",
@@ -30,7 +31,7 @@
 	"bs-now": "agora",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Boas, Sr. $2|Boas, Sra. $2|Boas, $2}}:",
 	"bs-email-greeting-no-receiver": "Boas:",
-	"bs-email-footer": "Esta mensaxe xerouse automaticamente. Por favor, non responda a este correo electrónico.",
+	"bs-email-footer": "Esta mensaxe foi xerada automaticamente por $1. Por favor, non responda a este correo electrónico.",
 	"bs-userpagesettings-legend": "Configuración de usuario",
 	"bs-userpreferences-link-text": "Máis axustes de usuario",
 	"bs-userpreferences-link-title": "Mostrar a súa configuración de usuario",
@@ -53,6 +54,7 @@
 	"bs-filesystemhelper-folder-already-exists": "O cartafol <code>$1</code> xa existe.",
 	"bs-filesystemhelper-folder-copy-error": "Non se puido renomear o cartafol <code>$1</code>.",
 	"bs-filesystemhelper-folder-not-exists": "O cartafol <code>$1</code> non existe.",
+	"bs-filesystemhelper-folder-rename-error": "O cartafol <code>$1</code> non puido ser renomeada a <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "Non se puido cargar o ficheiro: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "O ficheiro non ten a extensión necesaria: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Non se admite este tipo de ficheiro.",
