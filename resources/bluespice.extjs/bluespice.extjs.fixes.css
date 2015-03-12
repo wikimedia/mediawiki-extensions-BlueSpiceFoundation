@@ -96,3 +96,7 @@ body.x-body {
 	background-repeat: no-repeat !important;
 	background-position: calc(100% - 5px) 3px !important;
 }
+
+.x-boundlist-item {
+	font-size: 13px;
+}
