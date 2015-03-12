@@ -31,7 +31,7 @@
 	"bs-now": "Text shown for \"now\" when indicating how long ago an event was.\n{{Identical|Now}}",
 	"bs-email-greeting-receiver": "Used in emails as first line in body to greet the receiver.\n\nParameters:\n* $1 is the username of the receiver - use for GENDER distinction \n*$2 is real name of the receiver, if the receiver has not set a real name it is the username",
 	"bs-email-greeting-no-receiver": "Used in emails as first line in body to greet the reveiver\n{{Identical|Hello}}",
-	"bs-email-footer": "Used in plain text mails as last line",
+	"bs-email-footer": "Used in mails as last line\n* $1 is the site name ($wgSitename)",
 	"bs-userpagesettings-legend": "Label for section with links to special user related settings",
 	"bs-userpreferences-link-text": "Label for link to user preferences on user page",
 	"bs-userpreferences-link-title": "Title (shown as flyout) for link to user preferences on user page",
