@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"PeppeAeco"
+			"PeppeAeco",
+			"LACLARETTA"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -40,6 +41,7 @@
 	"bs-extjs-filter-contains-not": "non contiene",
 	"bs-extjs-filter-starts-with": "inizia con",
 	"bs-extjs-filter-ends-with": "termina con",
+	"bs-extjs-filter-greater-than": "più importante di",
 	"bs-extjs-title-success": "Successo",
 	"bs-extjs-title-warning": "Attenzione"
 }

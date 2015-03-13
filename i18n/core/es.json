@@ -32,7 +32,7 @@
 	"bs-now": "ahora mismo",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hola, Sr. $2|Hola, Sra. $2|Hola, $2}}:",
 	"bs-email-greeting-no-receiver": "Hola:",
-	"bs-email-footer": "Este mensaje se generó automáticamente. No responda a este mensaje.",
+	"bs-email-footer": "Este mensaje se generó automáticamente por $1. No respondas a este mensaje.",
 	"bs-userpagesettings-legend": "Configuración del usuario",
 	"bs-userpreferences-link-text": "Más ajustes del usuario",
 	"bs-userpreferences-link-title": "Mostrar tu configuración de usuario",
