@@ -26,7 +26,7 @@
 	"bs-now": "elo",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Bonjour M. $2|Bonjour Mme $2|Bonjour $2}},",
 	"bs-email-greeting-no-receiver": "Salut,",
-	"bs-email-footer": "Dëse Message gouf automatesch geréiert. Äntwert w.e.g. net op dës E-Mail.",
+	"bs-email-footer": "Dëse Message gouf automatesch vum $1 geréiert. Äntwert w.e.g. net op dës E-Mail.",
 	"bs-userpagesettings-legend": "Benotzerastellungen",
 	"bs-userpreferences-link-text": "Méi Benotzerastellungen",
 	"bs-userpreferences-link-title": "Är perséinlech Astellunge weisen",
