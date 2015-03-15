@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Inkowik"
 		]
 	},
 	"bs-ns_main": "(Seiten)",
@@ -27,7 +28,7 @@
 	"bs-now": "jetzt",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hallo Herr $2|Hallo Frau $2|Hallo $2}},",
 	"bs-email-greeting-no-receiver": "Hallo,",
-	"bs-email-footer": "Dies ist eine automatisch generierte E-Mail aus $1. Bitte antworte nicht auf diese E-Mail!",
+	"bs-email-footer": "Dies ist eine automatisch generierte E-Mail aus $1. Bitte antworte nicht auf diese E-Mail.",
 	"bs-userpagesettings-legend": "Benutzereinstellungen",
 	"bs-userpreferences-link-text": "Weitere Benutzereinstellungen",
 	"bs-userpreferences-link-title": "Zeigt deine persönlichen Benutzereinstellungen an",
