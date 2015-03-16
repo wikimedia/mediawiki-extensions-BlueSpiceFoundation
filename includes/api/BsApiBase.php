@@ -20,7 +20,6 @@
  * For further information visit http://www.blue-spice.org
  *
  * @author     Patric Wirth <wirth@hallowelt.biz>
- * @version    2.23.0
  * @package    Bluespice_Foundation
  * @copyright  Copyright (C) 2011 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
