@@ -29,7 +29,7 @@
 	"bs-now": "maintenant",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Bonjour M. $2|Bonjour Mme $2|Bonjour $2}},",
 	"bs-email-greeting-no-receiver": "Bonjour,",
-	"bs-email-footer": "Ce message a été généré automatiquement. Veuillez ne pas répondre à ce courriel.",
+	"bs-email-footer": "Ce message a été généré automatiquement par $1. Veuillez ne pas répondre à ce courriel.",
 	"bs-userpagesettings-legend": "Paramètres utilisateur",
 	"bs-userpreferences-link-text": "Paramètres utilisateurs avancés",
 	"bs-userpreferences-link-title": "Afficher vos paramètres utilisateur personnels",
