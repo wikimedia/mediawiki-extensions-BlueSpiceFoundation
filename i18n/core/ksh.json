@@ -4,5 +4,5 @@
 			"Purodha"
 		]
 	},
-	"bs-email-footer": "Heh di Meddeijlong kütt automattesch {{GRAMMAR:Genitive vom|{{ucfirst:{{SITENAME}}}}}}. Bes esu johd un donn nit drobb antwoote."
+	"bs-email-footer": "Heh di Meddeijlong kütt automattesch {{GRAMMAR:Genitive vom|{{ucfirst:{{$1}}}}}}. Bes esu johd un donn nit drobb antwoote."
 }
