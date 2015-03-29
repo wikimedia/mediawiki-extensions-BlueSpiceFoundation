@@ -51,6 +51,7 @@
 	"bs-filesystemhelper-folder-already-exists": "Папка <code>$1</code> уже существует.",
 	"bs-filesystemhelper-folder-copy-error": "Папка <code>$1</code> не может быть переименована.",
 	"bs-filesystemhelper-folder-not-exists": "Папка <code>$1</code> не существует.",
+	"bs-filesystemhelper-folder-rename-error": "Папка <code>$1</code> не может быть переименована в <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "Файл не может быть загружен: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "У файла нет необходимого расширения: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Этот тип файла не поддерживается.",

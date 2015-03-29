@@ -40,6 +40,8 @@
 	"bs-extjs-filter-contains-not": "شامل نیست",
 	"bs-extjs-filter-starts-with": "شروع می‌شود با",
 	"bs-extjs-filter-ends-with": "پایان می‌یابد با",
+	"bs-extjs-filter-greater-than": "بزرگتر از",
+	"bs-extjs-filter-less-than": "کمتر از",
 	"bs-extjs-title-success": "موفق",
 	"bs-extjs-title-warning": "هشدار"
 }
