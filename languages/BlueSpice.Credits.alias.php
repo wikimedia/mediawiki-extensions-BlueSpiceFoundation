@@ -66,6 +66,11 @@ $specialPageAliases['nl'] = array(
 	'SpecialCredits' => array( 'Naamsvermeldingen' ),
 );
 
+/** Brazilian Portuguese (português do Brasil) */
+$specialPageAliases['pt-br'] = array(
+	'SpecialCredits' => array( 'Créditos' ),
+);
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'SpecialCredits' => array( 'Ghi_công' ),

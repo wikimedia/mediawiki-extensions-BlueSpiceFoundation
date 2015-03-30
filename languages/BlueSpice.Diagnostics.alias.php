@@ -61,6 +61,11 @@ $specialPageAliases['nl'] = array(
 	'Diagnostics' => array( 'Diagnostiek' ),
 );
 
+/** Brazilian Portuguese (português do Brasil) */
+$specialPageAliases['pt-br'] = array(
+	'Diagnostics' => array( 'Diagnósticos' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Diagnostics' => array( '诊断程序' ),
