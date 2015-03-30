@@ -7,7 +7,8 @@
 			"Hudafu",
 			"Kuailong",
 			"Fengchao",
-			"御坂美琴"
+			"御坂美琴",
+			"Yfdyh000"
 		]
 	},
 	"bs-ns_main": "（页面）",
@@ -33,7 +34,7 @@
 	"bs-now": "现在",
 	"bs-email-greeting-receiver": "{{GENDER:$1|$2先生|$2女士|$2}}：\n\n你好",
 	"bs-email-greeting-no-receiver": "你好，",
-	"bs-email-footer": "此消息是由MediaWiki自动生成的。请不要回复这封电子邮件。",
+	"bs-email-footer": "此消息由$1自动生成。请不要回复这封电子邮件。",
 	"bs-userpagesettings-legend": "用户设置",
 	"bs-userpreferences-link-text": "更多用户设置",
 	"bs-userpreferences-link-title": "显示您的个人用户设置",
@@ -56,6 +57,7 @@
 	"bs-filesystemhelper-folder-already-exists": "文件夹<code>$1</code>已存在。",
 	"bs-filesystemhelper-folder-copy-error": "文件夹<code>$1</code>无法重命名。",
 	"bs-filesystemhelper-folder-not-exists": "文件夹<code>$1</code>不存在。",
+	"bs-filesystemhelper-folder-rename-error": "文件夹<code>$1</code>不能被重命名为<code>$2</code>。",
 	"bs-filesystemhelper-upload-err-code": "无法上传此文件：$1",
 	"bs-filesystemhelper-upload-wrong-ext": "该文件不具有所需的扩展名：  $1 。",
 	"bs-filesystemhelper-upload-unsupported-type": "不支持此文件类型。",

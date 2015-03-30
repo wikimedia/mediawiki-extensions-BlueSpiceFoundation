@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Габдулгани НИШ ХБН"
+			"Габдулгани НИШ ХБН",
+			"Arystanbek"
 		]
 	},
 	"bs-extjs-yes": "Ия",
@@ -11,7 +12,7 @@
 	"bs-extjs-loading": "Күте тұр...",
 	"bs-extjs-pageSize": "бөлім өлшемі",
 	"bs-extjs-actions-column-header": "Әрекеттер",
-	"bs-extjs-saving": "сақтай отыра...",
+	"bs-extjs-saving": "сақталуда...",
 	"bs-extjs-close": "жабу",
 	"bs-extjs-label-user": "Қатысушы",
 	"bs-extjs-allns": "бәрі"

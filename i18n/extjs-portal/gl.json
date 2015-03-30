@@ -6,6 +6,8 @@
 			"Elisardojm"
 		]
 	},
+	"bs-extjs-portal-config": "Configurar portlet:",
+	"bs-extjs-portal-title": "Título de portlet",
 	"bs-extjs-portal-height": "Altura",
 	"bs-extjs-portal-count": "Entradas",
 	"bs-extjs-portal-timespan": "Intervalo de tempo",

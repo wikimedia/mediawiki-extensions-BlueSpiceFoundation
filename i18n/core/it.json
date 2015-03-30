@@ -4,7 +4,8 @@
 			"Beta16",
 			"PeppeAeco",
 			"Baffo",
-			"Macofe"
+			"Macofe",
+			"LACLARETTA"
 		]
 	},
 	"bs-ns_main": "(Pagine)",
@@ -30,7 +31,7 @@
 	"bs-now": "ora",
 	"bs-email-greeting-receiver": "Ciao {{GENDER:$1|Sig. $2|Sig.ra $2|$2}},",
 	"bs-email-greeting-no-receiver": "Ciao,",
-	"bs-email-footer": "Questo messaggio è stato generato automaticamente. Si prega di non rispondere a questa email.",
+	"bs-email-footer": "Questo messaggio è stato inviato automaticamente. Si prega di non rispondere a questa email.",
 	"bs-userpagesettings-legend": "Impostazioni utente",
 	"bs-userpreferences-link-text": "Ulteriori impostazioni utente",
 	"bs-userpreferences-link-title": "Visualizzare le impostazioni personali del tuo utente",

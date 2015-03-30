@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Baloch Afghanistan"
+		]
+	},
+	"bs-ns_main": "(تاکدیمان)",
+	"bs-ns_all": "(موچین)",
+	"bs-tab_navigation": "ناوبری",
+	"bs-tab_focus": "تمرکز",
+	"bs-tab_admin": "اڈمین",
+	"bs-userbar_loginswitch_logout": "در بوتین",
+	"bs-userbar_loginswitch_login": "داخل بوتین",
+	"bs-extended-search-textfield-defaultvalue": "گشتین...",
+	"bs-extended-search-textfield-tooltip": "ویکی ئی گشتین",
+	"bs-now": "انون",
+	"bs-email-greeting-no-receiver": "سلام،",
+	"bs-navigation-support": "پُشتیوانی",
+	"bs-navigation-contact": "تماس",
+	"bs-imagepage-download-text": "ائیر کورتین",
+	"bs-from-something": "(شه $1)"
+}

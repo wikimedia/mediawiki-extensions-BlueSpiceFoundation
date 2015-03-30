@@ -82,8 +82,12 @@ abstract class BsExtensionMW extends ContextSource {
 		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( &$this, $method ) : $this;
 		// do not set same hook twice
 		if ( isset( $wgHooks ) && isset( $wgHooks[$hook] )
-			&& is_array( $wgHooks[$hook] ) && in_array( $register, $wgHooks[$hook] ) )
+			&& is_array( $wgHooks[$hook] )
+			&& !(count($wgHooks[$hook]) && is_object($wgHooks[$hook][0])
+			&& ($wgHooks[$hook][0] instanceof Closure))
+			&& in_array( $register, $wgHooks[$hook] ) ) {
 			return;
+		};
 		if ( $bExecuteFirst && isset( $wgHooks[$hook] ) ) {
 			array_unshift( $wgHooks[$hook], $register );
 		} else {

@@ -4,6 +4,8 @@
 			"Subi"
 		]
 	},
+	"bs-extjs-ok": "Ados",
+	"bs-extjs-cancel": "Utzi",
 	"bs-extjs-yes": "Bai",
 	"bs-extjs-no": "Ez",
 	"bs-extjs-save": "Gorde",
@@ -11,7 +13,12 @@
 	"bs-extjs-add": "Gehitu",
 	"bs-extjs-remove": "Kendu",
 	"bs-extjs-edit": "Aldatu",
+	"bs-extjs-error": "Errorea",
+	"bs-extjs-loading": "Kargatzen...",
 	"bs-extjs-saving": "gordetzen...",
 	"bs-extjs-close": "Itxi",
+	"bs-extjs-upload": "Igo",
+	"bs-extjs-browse": "Arakatu",
+	"bs-extjs-uploading": "Igotzen...",
 	"bs-extjs-filters": "Iragazkiak"
 }

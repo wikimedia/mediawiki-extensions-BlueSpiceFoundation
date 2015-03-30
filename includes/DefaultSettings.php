@@ -39,6 +39,9 @@ $wgRSSUrlWhitelist = array( "http://blog.blue-spice.org/feed/" );
 $wgExternalLinkTarget = '_blank';
 $wgCapitalLinkOverrides[ NS_FILE ] = false;
 $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
+$wgUrlProtocols[] = "file://";
+$wgVerifyMimeType = false;
+$wgAllowJavaUploads = true;
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
@@ -97,6 +100,111 @@ $bsgExtJSThemes = array(
 		'debug-styles' => array(
 			$sResourcesPath.'/extjs/resources/ext-theme-gray/ext-theme-gray-all-debug.css'
 		)
+	)
+);
+
+$bsgPermissionConfig = array(
+	'read' => array(
+		'type' => 'namespace',
+		'preventLockout' => true
+	),
+	'siteadmin' => array(
+		'type' => 'global',
+		'preventLockout' => true
+	),
+	'wikiadmin' => array(
+		'type' => 'global',
+		'preventLockout' => true
+	),
+	"apihighlimits" => array(
+		'type' => 'global'
+	),
+	"autoconfirmed" => array(
+		'type' => 'global'
+	),
+	"autopatrol" => array(
+		'type' => 'global'
+	),
+	"bigdelete" => array(
+		'type' => 'global'
+	),
+	"block" => array(
+		'type' => 'global'
+	),
+	"blockemail" => array(
+		'type' => 'global'
+	),
+	"bot" => array(
+		'type' => 'global'
+	),
+	"browsearchive" => array(
+		'type' => 'global'
+	),
+	"createaccount" => array(
+		'type' => 'global'
+	),
+	"editinterface" => array(
+		'type' => 'global'
+	),
+	"editusercssjs" => array(
+		'type' => 'global'
+	),
+	"editusercss" => array(
+		'type' => 'global'
+	),
+	"edituserjs" => array(
+		'type' => 'global'
+	),
+	"hideuser" => array(
+		'type' => 'global'
+	),
+	"import" => array(
+		'type' => 'global'
+	),
+	"importupload" => array(
+		'type' => 'global'
+	),
+	"ipblock-exempt" => array(
+		'type' => 'global'
+	),
+	"move-rootuserpages" => array(
+		'type' => 'global'
+	),
+	"override-export-depth" => array(
+		'type' => 'global'
+	),
+	"passwordreset" => array(
+		'type' => 'global'
+	),
+	"proxyunbannable" => array(
+		'type' => 'global'
+	),
+	"sendemail" => array(
+		'type' => 'global'
+	),
+	"unblockself" => array(
+		'type' => 'global'
+	),
+	"userrights" => array(
+		'type' => 'global'
+	),
+	"userrights-interwiki" => array(
+		'type' => 'global'
+	),
+	"writeapi" => array(
+		'type' => 'global'
+	),
+	"skipcaptcha" => array(
+		'type' => 'global'
+	),
+	"renameuser" => array(
+		'type' => 'global'
+	),
+	"viewfiles" => array(
+		'type' => 'global'
+	),
+	"searchfiles"=> array(
+		'type' => 'global'
 	)
 );
 

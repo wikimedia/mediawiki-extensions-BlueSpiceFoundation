@@ -28,7 +28,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'SpecialCredits' => array( 'Qrediy' ),
+	'SpecialCredits' => array( 'Krediyi' ),
 );
 
 /** Upper Sorbian (hornjoserbsce) */
@@ -59,6 +59,11 @@ $specialPageAliases['mk'] = array(
 /** Malayalam (മലയാളം) */
 $specialPageAliases['ml'] = array(
 	'SpecialCredits' => array( 'കടപ്പാടുകൾ' ),
+);
+
+/** Dutch (Nederlands) */
+$specialPageAliases['nl'] = array(
+	'SpecialCredits' => array( 'Naamsvermeldingen' ),
 );
 
 /** Vietnamese (Tiếng Việt) */

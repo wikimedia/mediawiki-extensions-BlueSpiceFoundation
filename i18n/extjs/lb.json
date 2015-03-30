@@ -32,5 +32,7 @@
 	"bs-extjs-allns": "(all)",
 	"bs-extjs-filters": "Filteren",
 	"bs-extjs-filter-starts-with": "fänkt u mat",
+	"bs-extjs-filter-greater-than": "méi grouss wéi",
+	"bs-extjs-filter-less-than": "méi kleng wéi",
 	"bs-extjs-title-warning": "Warnung"
 }

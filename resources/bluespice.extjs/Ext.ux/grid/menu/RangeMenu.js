@@ -73,9 +73,9 @@ fieldLabels : {
 }</pre>
      */
     fieldLabels: {
-        gt: 'Greater Than',
-        lt: 'Less Than',
-        eq: 'Equal To'
+        gt: mw.messages.get('bs-extjs-filter-greater-than'),
+        lt: mw.messages.get('bs-extjs-filter-less-than'),
+        eq: mw.messages.get('bs-extjs-filter-equals')
     },
 
     /**
@@ -90,7 +90,6 @@ menuItemCfgs : {
      * </pre>
      */
     menuItemCfgs : {
-        emptyText: 'Enter Number...',
         selectOnFocus: false,
         width: 155
     },
@@ -137,6 +136,7 @@ menuItemCfgs : {
                     labelCls: 'ux-rangemenu-icon ' + me.itemIconCls[item],
                     labelSeparator: '',
                     labelWidth: 29,
+                    emptyText: me.fieldLabels[item],
                     listeners: {
                         scope: me,
                         change: me.onInputChange,

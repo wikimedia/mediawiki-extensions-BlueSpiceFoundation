@@ -89,3 +89,14 @@ body.x-body {
 .x-btn-toolbar {
 	text-decoration: none !important;
 }
+
+.ux-filtered-column {
+	/*@embed*/
+	background-image:url("images/icon_filter.png");
+	background-repeat: no-repeat !important;
+	background-position: calc(100% - 5px) 3px !important;
+}
+
+.x-boundlist-item {
+	font-size: 13px;
+}

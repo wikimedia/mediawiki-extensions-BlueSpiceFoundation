@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"Subi"
+		]
+	},
+	"bs-ns_main": "(Orrialdeak)",
+	"bs-ns_all": "(denak)",
+	"bs-userbar_loginswitch_login": "Saioa hasi",
+	"bs-years-duration": "{{PLURAL:$1|urte bat|$1 urte}}",
+	"bs-months-duration": "{{PLURAL:$1|hilabete bat|$1 hilabete}}",
+	"bs-weeks-duration": "{{PLURAL:$1|aste bat|$1 aste}}",
+	"bs-days-duration": "{{PLURAL:$1|egun bat|$1 egun}}",
+	"bs-hours-duration": "{{PLURAL:$1|ordu bat|$1 ordu}}",
+	"bs-mins-duration": "{{PLURAL:$1|minutu bat|$1 minutu}}",
+	"bs-secs-duration": "{{PLURAL:$1|segundo bat|$1 segundo}}",
+	"bs-two-units-ago": "Duela $1 eta $2",
+	"bs-one-unit-ago": "Duela $1",
+	"bs-now": "orain",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Kaixo $2 Jauna|Kaixo $2 Andrea|Kaixo $2}},",
+	"bs-email-greeting-no-receiver": "Kaixo,",
+	"bs-exception-view-heading": "Errore bat gertatu da",
+	"bs-exception-view-text": "Zure eskaera prozesatzean ondorengo errorea gertatu da:",
+	"bs-exception-view-admin-hint": "Mesedez, jar zaitez harremanetan zure sistemaren administratzailearekin.",
+	"bs-exception-view-stacktrace-toggle-show-text": "Erakutsi errorearen xehetasunak",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Ezkutatu errorearen xehetasunak",
+	"bs-viewtagerrorlist-legend": "$1 - Errorea",
+	"bs-permissionerror": "Baimen-errorea!",
+	"bs-filesystemhelper-no-directory": "<code>$1</code> ez da baliozko direktorioa.",
+	"bs-filesystemhelper-file-not-exists": "<code>$1</code> fitxategia ez da existitzen.",
+	"bs-filesystemhelper-file-copy-error": "<code>$1</code> fitxategia ezin izan da kopiatu.",
+	"bs-filesystemhelper-file-already-exists": "<code>$1</code> fitxategia dagoeneko existitzen da.",
+	"bs-filesystemhelper-file-delete-error": "<code>$1</code> fitxategia ezin izan da ezabatu.",
+	"bs-filesystemhelper-folder-already-exists": "<code>$1</code> karpeta dagoeneko existitzen da.",
+	"bs-filesystemhelper-folder-not-exists": "<code>$1</code> karpeta ez da existitzen.",
+	"bs-filesystemhelper-upload-err-code": "Ezin izan da fitxategia igo: $1",
+	"bs-filesystemhelper-upload-wrong-ext": "Fitxategi honek ez du beharrezko luzapena: $1",
+	"bs-filesystemhelper-upload-unsupported-type": "Fitxategi mota hau ez da onartzen.",
+	"bs-filesystemhelper-save-base64-error": "Ezin izan da fitxategia gorde.",
+	"bs-filesystemhelper-upload-base64-error": "Ezin izan da fitxategia igo.",
+	"bs-navigation-instructions": "Jarraibideak",
+	"bs-imagepage-download-text": "Jaitsi"
+}

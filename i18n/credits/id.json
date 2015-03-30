@@ -2,11 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"C5st4wr6ch",
-			"Arifin.wijaya"
+			"Arifin.wijaya",
+			"Macofe",
+			"William Surya Permana"
 		]
 	},
 	"specialcredits": "Kredit BlueSpice",
 	"bs-credits-programmers": "Pemrogram",
 	"bs-credits-dnt": "Desain dan pengujian",
-	"bs-credits-contributors": "Kontributor"
+	"bs-credits-contributors": "Kontributor",
+	"bs-credits-translators": "Penerjemah",
+	"bs-credits-translation": "Terjemahan",
+	"bs-credits-th": "Terima kasih kepada semua penerjemah dari $1."
 }

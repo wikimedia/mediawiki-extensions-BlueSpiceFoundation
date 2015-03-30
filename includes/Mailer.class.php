@@ -77,8 +77,8 @@ class BsMailer {
 			if ( $vReceiver instanceof User ) {
 				if ( $vReceiver->getEmail() ) {
 					$aEmailTo[] = array(
-							'mail' => new MailAddress($vReceiver),
-							'greeting' => BsCore::getUserDisplayName( $vReceiver ),
+						'mail' => new MailAddress($vReceiver),
+						'greeting' => $vReceiver->getName(),
 					);
 				}
 			} elseif ( strpos( $vReceiver, '@' ) !== false ) {
@@ -97,7 +97,7 @@ class BsMailer {
 				if ( $oUser->getEmail() ) {
 					$aEmailTo[] = array(
 						'mail' => new MailAddress( $oUser ),
-						'greeting' => BsCore::getUserDisplayName( $vReceiver ),
+						'greeting' => $vReceiver->getName(),
 					);
 				}
 			}
@@ -118,10 +118,13 @@ class BsMailer {
 			);
 		}
 
-		$sFooter = ( $this->bSendHTML ) ? "<br /><br />---------------------<br /><br />" : "\n\n---------------------\n\n";
-		$sFooter .= wfMessage( 'bs-email-footer', $wgSitename )->plain() . ( $this->bSendHTML )
-			? "<br /><br />---------------------"
-			: "\n\n---------------------";
+		//Note that this is system lang!
+		$sNL = $this->bSendHTML ? "<br />" : "\n";
+		$sFooter =
+			"$sNL$sNL---------------------$sNL$sNL"
+			.wfMessage( 'bs-email-footer', $wgSitename )->text()
+			."$sNL$sNL---------------------"
+		;
 
 		$sCombinedMsg = $sMsg.$sFooter;
 
@@ -129,19 +132,15 @@ class BsMailer {
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
 				$oUser = User::newFromName( $aReceiver['greeting'] );
-				$sRealname = $oUser->getRealName();
-				if ( empty( $sRealname ) ) {
-					$sRealname = $aReceiver['greeting'];
-				}
+				$sRealname = BsCore::getUserDisplayName( $oUser );
 				$sGreeting = wfMessage( 'bs-email-greeting-receiver', $aReceiver['greeting'], $sRealname )
 					->inLanguage( $oUser->getOption( 'language' ) )
 					->text();
 			} else {
 				$sGreeting = wfMessage( 'bs-email-greeting-no-receiver' )->text();
 			}
-			$sGreeting .= ( $this->bSendHTML )
-				? "<br /><br />"
-				: "\n\n";
+			//double new line
+			$sGreeting .= $sNL.$sNL;
 
 			$sLocalCombinedMsg = $sGreeting.$sCombinedMsg;
 			$sLocalCombinedMsg = str_replace( $sReplLF, $sCurLF, $sLocalCombinedMsg );
