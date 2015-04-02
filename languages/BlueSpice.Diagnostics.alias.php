@@ -46,6 +46,11 @@ $specialPageAliases['ko'] = array(
 	'Diagnostics' => array( '진단하기' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'Diagnostics' => array( 'امکانات_دیارکاری_عیو' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'Diagnostics' => array( 'Дијагностика' ),

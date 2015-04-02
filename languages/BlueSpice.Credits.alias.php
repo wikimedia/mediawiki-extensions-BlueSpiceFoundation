@@ -51,6 +51,11 @@ $specialPageAliases['lb'] = array(
 	'SpecialCredits' => array( 'Merci_un' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'SpecialCredits' => array( 'اعتواریا' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'SpecialCredits' => array( 'Заслуги' ),
