@@ -21,6 +21,11 @@ $specialPageAliases['arz'] = array(
 	'SpecialCredits' => array( 'ائتمانات' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'SpecialCredits' => array( 'Credits' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'SpecialCredits' => array( 'Danksagungen' ),

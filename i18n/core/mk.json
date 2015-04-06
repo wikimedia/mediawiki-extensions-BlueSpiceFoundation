@@ -27,7 +27,7 @@
 	"bs-now": "сега",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Здраво г-дине $2|Здраво г-ѓо $2|Здраво $2}},",
 	"bs-email-greeting-no-receiver": "Здраво,",
-	"bs-email-footer": "Писмово е автоматски создадено. Не одговарајте на него.",
+	"bs-email-footer": "Писмово е автоматски создадено од  $1. Не одговарајте на него.",
 	"bs-userpagesettings-legend": "Кориснички нагодувања",
 	"bs-userpreferences-link-text": "Уште кориснички нагодувања",
 	"bs-userpreferences-link-title": "Прикажи мои лични кориснички нагодувања",

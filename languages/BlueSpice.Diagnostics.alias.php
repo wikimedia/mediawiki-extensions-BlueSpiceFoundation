@@ -21,6 +21,11 @@ $specialPageAliases['arz'] = array(
 	'Diagnostics' => array( 'تشخيصات' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'Diagnostics' => array( 'ئیب_ودی_کنۆک' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Diagnostics' => array( 'BlueSpice-Diagnose' ),
