@@ -435,6 +435,16 @@ class BsBaseTemplate extends BaseTemplate {
 				$aOut[] = '  <h5>' . $sTitle . '</h5>';
 				$aOut[] = '  <ul>';
 				foreach ($cont as $key => $val) {
+					/* $val is created in Skin::addToSidebarPlain and contains
+					 * the following:
+					 * 'id' -> ID for list item
+					 * 'active' -> Flag for list item class 'active'
+					 * 'text' -> Text for anchor
+					 * 'href' -> Href for anchot
+					 * 'rel' -> Rel for anchor
+					 * 'target' -> Target for anchor
+					 */
+
 					if ( strpos( $val['text'], "|" ) !== false ) {
 						$aVal = explode( '|', $val['text'] );
 						$val['id'] = 'n-' . $aVal[0];
@@ -443,12 +453,20 @@ class BsBaseTemplate extends BaseTemplate {
 					$sCssClass = (!isset($val['active']) ) ? ' class="active"' : '';
 					$sTarget = ( isset($val['target']) ) ? ' target="' . $val['target'] . '"' : '';
 					$sRel = ( isset($val['rel']) ) ? ' rel="' . $val['rel'] . '"' : '';
+
 					$aOut[] = '<li id="' . Sanitizer::escapeId($val['id']) . '"' . $sCssClass . ' class="clearfix">';
+
+					$sTitle = htmlspecialchars($val['text']);
+					$sText = htmlspecialchars($val['text']);
+					$sHref = htmlspecialchars($val['href']);
+					$sIcon = '<span class="icon24"></span>';
 					if ( !empty( $aVal ) ) {
 						$oFile = wfFindFile( $aVal[1] );
 						if ( strpos( $lang = $this->translator->translate( $aVal[0] ), "&lt;" ) === false ) {
 							$aVal[0] = $lang;
 						}
+						$sTitle = htmlspecialchars($aVal[0]);
+						$sText = htmlspecialchars($aVal[0]);
 
 						if ( is_object( $oFile ) && $oFile->exists() ) {
 							if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
@@ -456,16 +474,13 @@ class BsBaseTemplate extends BaseTemplate {
 							} else {
 								$sUrl = $oFile->getUrl();
 							}
-							$aOut[] = '<div style="background:url(' . $sUrl . ') center no-repeat; width:24px; height:24px;" class="left_navigation_icon" ></div>';
-						} else {
-							//default
-							$aOut[] = '<div class="left_navigation_icon"></div>';
+							$sIcon = '<span class="icon24" style="background-image:url(' . $sUrl . ')"></span>';
 						}
-						$aOut[] = '<a href="' . htmlspecialchars($val['href']) . '" title="' . htmlspecialchars($aVal[0]) .'" ' . $sTarget . $sRel . '>' . htmlspecialchars($aVal[0]) . '</a>';
-					} else {
-						$aOut[] = '<div class="left_navigation_icon"></div>';
-						$aOut[] = '<a href="' . htmlspecialchars($val['href']) . '" title="' . htmlspecialchars($val['text']) .'" ' . $sTarget . $sRel . '>' . htmlspecialchars($val['text']) . '</a>';
 					}
+					$aOut[] = '<a href="' . $sHref . '" title="' . $sTitle .'" ' . $sTarget . $sRel . '>';
+					$aOut[] = $sIcon;
+					$aOut[] = '<span class="bs-nav-item-text">' . $sText . '</span>';
+					$aOut[] = '</a>';
 					$aOut[] = '</li>';
 					unset( $aVal );
 				}
