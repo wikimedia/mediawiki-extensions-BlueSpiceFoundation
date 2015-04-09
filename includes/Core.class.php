@@ -383,24 +383,13 @@ class BsCore {
 		return $output;
 	}
 
+	/**
+	 * @deprecated since version 2.23.2
+	 * @param User $oUser
+	 * @return String
+	 */
 	public static function getUserDisplayName( $oUser = null ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		global $wgUser;
-		if ( $oUser === null ) {
-			$oUser = $wgUser;
-		}
-		if ( !( $oUser instanceof User ) ) {
-			wfProfileOut( 'BS::'.__METHOD__ );
-			return false;
-		}
-		$sRealname = $oUser->getRealName();
-		if ( $sRealname ) {
-			wfProfileOut( 'BS::'.__METHOD__ );
-			return $sRealname;
-		} else {
-			wfProfileOut( 'BS::'.__METHOD__ );
-			return $oUser->getName();
-		}
+		return BsUserHelper::getUserDisplayName($oUser);
 	}
 
 		/**
