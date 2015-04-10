@@ -28,7 +28,7 @@ class LCStore_BSDB implements LCStore {
 			} else {
 				$db = wfGetDB( DB_SLAVE );
 			}
-			
+
 			$res = $db->select( 'l10n_cache', array( 'lc_key', 'lc_value' ), array( 'lc_lang' => $code ), __METHOD__);
 			while($row = $res->fetchRow()) {
 				$this->cache[$code][$row['lc_key']] = $row['lc_value'];
@@ -40,7 +40,7 @@ class LCStore_BSDB implements LCStore {
 		}
 		wfProfileOut( 'LocalisationCache: ' . __METHOD__ );
 		return unserialize($this->cache[$code][$key]);
-		
+
 		$row = $db->selectRow( 'l10n_cache', array( 'lc_value' ), array( 'lc_lang' => $code, 'lc_key' => $key ), __METHOD__ );
 		if ( $row ) {
 			wfProfileOut( 'LocalisationCache: ' . __METHOD__ );
@@ -66,7 +66,9 @@ class LCStore_BSDB implements LCStore {
 			if ( $this->dbw->wasReadOnlyError() ) {
 				$this->readOnly = true;
 				$this->dbw->rollback();
-				$this->dbw->ignoreErrors( false );
+				if ( is_callable( array( $this->dbw, 'ignoreErrors' ) ) ) {
+					$this->dbw->ignoreErrors( false );
+				}
 				return;
 			} else {
 				throw $e;
