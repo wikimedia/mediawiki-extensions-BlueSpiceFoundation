@@ -26,6 +26,11 @@ $specialPageAliases['bgn'] = array(
 	'SpecialCredits' => array( 'Credits' ),
 );
 
+/** Czech (čeština) */
+$specialPageAliases['cs'] = array(
+	'SpecialCredits' => array( 'Zásluhy', 'Zasluhy' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'SpecialCredits' => array( 'Danksagungen' ),

@@ -26,6 +26,11 @@ $specialPageAliases['bgn'] = array(
 	'Diagnostics' => array( 'ئیب_ودی_کنۆک' ),
 );
 
+/** Czech (čeština) */
+$specialPageAliases['cs'] = array(
+	'Diagnostics' => array( 'Diagnostika' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Diagnostics' => array( 'BlueSpice-Diagnose' ),
