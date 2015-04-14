@@ -141,4 +141,31 @@ class BsGroupHelper {
 		return false;
 	}
 
+	/**
+	 * Returns an array of User being in one or all groups given
+	 * @param mixed $aGroups
+	 * @return array Array of User objects
+	 */
+	public static function getUserInGroups( $aGroups ) {
+		$dbr = wfGetDB( DB_SLAVE );
+		if ( !is_array( $aGroups ) ) {
+			$aGroups = array ( $aGroups );
+		}
+		$aUser = array ();
+		$res = $dbr->select(
+			'user_groups',
+			array ( 'ug_user' ),
+			array ( 'ug_group' => $aGroups ),
+			__METHOD__,
+			array ( 'DISTINCT' )
+			);
+		if ( !$res ) {
+			return $aUser;
+		}
+		while ( $row = $res->fetchObject() ) {
+			$aUser [] = User::newFromId( $row->ug_user );
+		}
+		return $aUser;
+	}
+
 }
