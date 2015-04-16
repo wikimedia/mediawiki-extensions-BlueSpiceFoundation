@@ -77,6 +77,7 @@ $GLOBALS['wgAutoloadClasses']['BsDOMHelper'] = __DIR__."/utility/DOMHelper.class
 $GLOBALS['wgAutoloadClasses']['BsFormatConverter'] = __DIR__."/utility/FormatConverter.class.php";
 $GLOBALS['wgAutoloadClasses']['BsFileSystemHelper'] = __DIR__."/utility/FileSystemHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsGroupHelper'] = __DIR__."/utility/GroupHelper.class.php";
+$GLOBALS['wgAutoloadClasses']['BsUserHelper'] = __DIR__."/utility/UserHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsLinkProvider'] = __DIR__."/utility/LinkProvider.class.php";
 $GLOBALS['wgAutoloadClasses']['BsNamespaceHelper'] = __DIR__."/utility/NamespaceHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsPageContentProvider'] = __DIR__."/utility/PageContentProvider.class.php";
