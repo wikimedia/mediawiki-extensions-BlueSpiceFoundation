@@ -99,8 +99,13 @@ class BsPageContentProvider {
 	 * @return String Content
 	 */
 	public function getContentFromTitle( Title $oTitle, $iAudience = Revision::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
-		if ( !$oTitle->exists() ) return '';
+		if ( !$oTitle->exists() ) {
+			return '';
+		}
 		$oRevision = Revision::newFromTitle( $oTitle );
+		if ( is_null( $oRevision ) ) {
+			return '';
+		}
 
 		return $this->getContentFromRevision( $oRevision, $iAudience, $oUser, $bHTML );
 	}
