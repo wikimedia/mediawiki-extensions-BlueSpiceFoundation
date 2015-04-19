@@ -39,6 +39,8 @@
 	"bs-extjs-filter-contains-not": "nun contién",
 	"bs-extjs-filter-starts-with": "principia por",
 	"bs-extjs-filter-ends-with": "acaba por",
+	"bs-extjs-filter-greater-than": "mayor que",
+	"bs-extjs-filter-less-than": "Menor que",
 	"bs-extjs-title-success": "Correuto",
 	"bs-extjs-title-warning": "Avisu"
 }
