@@ -38,14 +38,15 @@ class ApiFormatJson extends ApiFormatBase {
 		}
 
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$data = $this->getResult()->getResultData();
-			$data = ApiResult::transformForBC( $data );
-			$data = ApiResult::transformForTypes( $data, array( 'BC' => true ) );
-			$data = ApiResult::removeMetadata( $data );
+			$data = $this->getResult()->getResultData( null, array(
+				'BC' => array(),
+				'Types' => array(),
+				'Strip' => 'all',
+			) );
 		} else {
 			$data = $this->getResultData();
 		}
- 
+
 		$this->printText(
 			$prefix .
 			FormatJson::encode( $data, $this->getIsHtml() ) .
