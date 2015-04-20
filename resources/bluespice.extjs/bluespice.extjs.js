@@ -9,21 +9,21 @@
 	}));
 
 	//Experimental feature. May be improved in the future
-	$('a.mw-userlink').each(function(){
+	/*$('a.mw-userlink').each(function(){
 		 Ext.create('Ext.tip.ToolTip', {
 			title: $(this).data('bs-username'),
 			target: this,
 			anchor: 'right',
-			/*autoLoad: {
+			autoLoad: {
 				url: mw.util.wikiScript('api')
 			},
-			height: 200,*/
+			height: 200,
 			width: 200,
 			autoHide: false,
 			closable: true,
 			showDelay: 1000
 		 });
-	});
+	});*/
 
 	Ext.override(Ext.data.proxy.Server, {
 		buildRequest: function(){
