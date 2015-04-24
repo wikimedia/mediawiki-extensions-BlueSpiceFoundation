@@ -317,7 +317,8 @@ class BsCoreHooks {
 		if (!$module instanceof ApiParse) {
 			return true;
 		}
-		if (Title::newFromText($module->getRequest()->getVal('page'))->userCan('read') == false){
+		$oTitle = Title::newFromText( $module->getRequest()->getVal( 'page' ) );
+		if ( !is_null( $oTitle ) && $oTitle->userCan( 'read' ) == false ) {
 			$message = wfMessage('loginreqpagetext', wfMessage('loginreqlink')->plain())->plain();
 			return false;
 		}
