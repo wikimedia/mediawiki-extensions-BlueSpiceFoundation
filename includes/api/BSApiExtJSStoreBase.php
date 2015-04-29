@@ -176,7 +176,10 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return array
 	 */
 	public function postProcessData( $aData ) {
-		wfRunHooks( 'BSApiExtJSStoreBaseBeforePostProcessData', array( $this, &$aData ) );
+		if( !wfRunHooks( 'BSApiExtJSStoreBaseBeforePostProcessData', array( $this, &$aData ) ) ) {
+			return $aData;
+		}
+
 		$aProcessedData = array();
 
 		//First, apply filter
@@ -184,7 +187,8 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		wfRunHooks( 'BSApiExtJSStoreBaseAfterFilterData', array( $this, &$aProcessedData ) );
 
 		//Next, apply sort
-		usort($aProcessedData, array( $this, 'sortCallback') );
+		//usort($aProcessedData, array( $this, 'sortCallback') ); <-- had some performance issues
+		$aProcessedData = $this->sortData( $aProcessedData );
 
 		//Before we trim, we save the count
 		$this->iFinalDataSetCount = count( $aProcessedData );
@@ -197,6 +201,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	/**
 	 * Applies all sorters provided by the store
+	 * --> has performance issues on large dataset; Code kept for documentation
 	 * @param object $oA
 	 * @param object $oB
 	 * @return int
@@ -210,16 +215,21 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 			if( $oA->$sProperty !== $oB->$sProperty ) {
 				if( $sDirection === 'ASC' ) {
-					return $oA->$sProperty > $oB->$sProperty ? -1 : 1;
+					return $oA->$sProperty < $oB->$sProperty ? -1 : 1;
 				}
 				else { //'DESC'
-					return $oA->$sProperty < $oB->$sProperty ? -1 : 1;
+					return $oA->$sProperty > $oB->$sProperty ? -1 : 1;
 				}
 			}
 		}
 		return 0;
 	}
 
+	/**
+	 *
+	 * @param object $aDataSet
+	 * @return boolean
+	 */
 	public function filterCallback( $aDataSet ) {
 		$aFilter = $this->getParameter('filter');
 		foreach( $aFilter as $oFilter ) {
@@ -239,6 +249,12 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		return true;
 	}
 
+	/**
+	 * Performs string filtering based on given filter of type string on a dataset
+	 * @param object $oFilter
+	 * @param oject $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
 	public function filterString($oFilter, $aDataSet) {
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$sFilterValue = $oFilter->value;
@@ -264,10 +280,16 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		}
 	}
 
+	/**
+	 * Applies pagination on the result
+	 * @param array $aProcessedData The filtered result
+	 * @return array a trimmed version of the result
+	 */
 	public function trimData($aProcessedData) {
 		$iStart = $this->getParameter('start');
 		$iEnd = $this->getParameter('limit') + $iStart;
-		if( $iEnd >= $this->iFinalDataSetCount ) {
+
+		if( $iEnd >= $this->iFinalDataSetCount || $iEnd === 0 ) {
 			$iEnd = $this->iFinalDataSetCount - 1;
 		}
 
@@ -278,4 +300,36 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 		return $aTrimmedData;
 	}
+
+	/**
+	 * Performs fast sorting on the results. Thanks at user "pigpen"
+	 * @param array $aProcessedData
+	 * @return array The sorted results
+	 */
+	public function sortData($aProcessedData) {
+		$aSort = $this->getParameter('sort');
+		$iCount = count( $aSort );
+		for( $i = 0; $i < $iCount; $i++ ) {
+			$sProperty = $aSort[$i]->property;
+			$sDirection = strtoupper( $aSort[$i]->direction );
+			$a{$sProperty} = array();
+			foreach( $aProcessedData as $iKey => $aDataSet ) {
+				$a{$sProperty}[$iKey] = $aDataSet->{$sProperty};
+			}
+
+			$aParams[] = $a{$sProperty};
+			$aParams[] = SORT_NATURAL; //We might tweak this depending on the data type of the field. Mabye we should make some "getSort( $fieldName )" method
+			if( $sDirection === 'ASC' ) {
+				$aParams[] = SORT_ASC;
+			}
+			else {
+				$aParams[] = SORT_DESC;
+			}
+		}
+		$aParams[] = &$aProcessedData;
+
+		call_user_func_array( 'array_multisort', $aParams );
+		return $aProcessedData;
+	}
+
 }

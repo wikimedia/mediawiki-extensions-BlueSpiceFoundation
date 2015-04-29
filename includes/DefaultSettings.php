@@ -42,6 +42,7 @@ $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the s
 $wgUrlProtocols[] = "file://";
 $wgVerifyMimeType = false;
 $wgAllowJavaUploads = true;
+$wgThumbnailScriptPath = "{$wgScriptPath}/thumb{$wgScriptExtension}"; //Enable on demand thumb rendering
 
 //wgScriptPath relative paths
 $sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
