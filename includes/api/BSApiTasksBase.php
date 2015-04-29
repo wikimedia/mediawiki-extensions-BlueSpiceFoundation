@@ -27,26 +27,16 @@
  */
 
 /**
- * Api base class for BlueSpice
+ * Api base class for simple tasks in BlueSpice
  * @package BlueSpice_Foundation
  */
-abstract class BsApiBase extends ApiBase {
+abstract class BSApiTasksBase extends BSApiBase {
 
 	/**
 	 * Methods that can be called by task param
 	 * @var array
 	 */
-	protected static $aTasks = array();
-
-	/**
-	 * Constructor
-	 * @param $mainModule ApiMain object
-	 * @param string $moduleName Name of this module
-	 * @param string $modulePrefix Prefix to use for parameter names
-	 */
-	public function __construct( $query, $moduleName, $modulePrefix = '' ) {
-		parent::__construct( $query, $moduleName, $modulePrefix );
-	}
+	protected $aTasks = array();
 
 	/**
 	 * The execute() method will be invoked directly by ApiMain immediately
@@ -62,33 +52,31 @@ abstract class BsApiBase extends ApiBase {
 		//Avoid API warning: register the parameter used to bust browser cache
 		$this->getMain()->getVal( '_' );
 
-		if( !isset($aParams['task']) ) return;
+		$sMethod = 'task_'.$aParams['task'];
 
-		if( in_array($aParams['task'], static::$aTasks) ) {
-			$oResult = call_user_func(
-				array($this, $aParams['task']),
-				$aParams
-			);
+		if( !is_callable( array( $this, $sMethod ) ) ) {
+			$oResult = $this->makeStandardReturn();
+			$oResult->errors['task'] = 'Task '.$aParams['task'].' not implemented';
+		}
+		else {
+			$oResult = $this->$sMethod( $this->getParameter('taskData'), $aParams );
 		}
 
-		$this->getResult()->addValue(null, 'bs', $oResult);
+		foreach( $oResult as $sFieldName => $mFieldValue ) {
+			if( $mFieldValue === null ) {
+				continue; //MW Api doesn't like NULL values
+			}
+			$this->getResult()->addValue(null, $sFieldName, $mFieldValue);
+		}
 	}
 
 	/**
 	 * Standard return object
 	 * Every task should return this!
-	 * @return object
+	 * @return BSStandardAPIResponse
 	 */
-	protected static function stdReturn() {
-		return $oReturn = (object) array(
-			'result' => array(
-				'payload' => null,
-				'success' => false,
-				'message' => '',
-				'errors' => array(),
-				'payload_count' => 0,
-			)
-		);
+	protected function makeStandardReturn() {
+		return new BSStandardAPIResponse();
 	}
 
 	/**
@@ -99,13 +87,30 @@ abstract class BsApiBase extends ApiBase {
 		return array(
 			'task' => array(
 				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => 'string'
+				ApiBase::PARAM_TYPE => $this->aTasks,
+			),
+			'taskData' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => false,
+				ApiBase::PARAM_DFLT => '{}'
 			),
 			'format' => array(
 				ApiBase::PARAM_DFLT => 'json',
 				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
 			)
 		);
+	}
+
+	protected function getParameterFromSettings($paramName, $paramSettings, $parseLimit) {
+		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
+		//Unfortunately there is no way to register custom types for parameters
+		if( $paramName === 'taskData' ) {
+			$value = FormatJson::decode($value);
+			if( empty($value) ) {
+				return array();
+			}
+		}
+		return $value;
 	}
 
 	/**
@@ -115,40 +120,9 @@ abstract class BsApiBase extends ApiBase {
 	public function getParamDescription() {
 		return array(
 			'task' => 'The task you would like to execute',
+			'taskData' => 'JSON string encoded object with arbitrary data for the task',
 			'format' => 'The format of the result',
 		);
-	}
-
-	/**
-	 * Default to false
-	 * @return boolean
-	 */
-	public function needsToken() {
-		return false;
-	}
-
-	/**
-	 * Default to empty string
-	 * @return string
-	 */
-	public function getTokenSalt() {
-		return '';
-	}
-
-	/**
-	 * Default to true
-	 * @return boolean
-	 */
-	public function mustBePosted() {
-		return true;
-	}
-
-	/**
-	 * Default to false
-	 * @return boolean
-	 */
-	public function isWriteMode() {
-		return false;
 	}
 
 	/**
@@ -157,7 +131,7 @@ abstract class BsApiBase extends ApiBase {
 	 */
 	public function getDescription() {
 		return array(
-			'BsApiBase: This should be implemented by subclass'
+			'BSApiTasksBase: This should be implemented by subclass'
 		);
 	}
 
@@ -167,7 +141,7 @@ abstract class BsApiBase extends ApiBase {
 	 */
 	public function getExamples() {
 		return array(
-			'api.php?action=<childapimodule>&task=<taskofchildapimodule>',
+			'api.php?action='.$this->getModuleName().'&task='.$this->aTasks[0].'&taskData={someKey:"someValue",isFalse:true}',
 		);
 	}
 }

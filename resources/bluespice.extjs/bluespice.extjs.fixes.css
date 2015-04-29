@@ -77,7 +77,8 @@ body.x-body {
 .bs-extjs-crud-grid tr.x-grid-row:hover .bs-extjs-actioncolumn-icon {
 	display: inline-block;
 }
-.bs-extjs-crud-grid tr.x-grid-row {
+.bs-extjs-crud-grid tr.x-grid-row,
+.bs-extjs-crud-grid tr.x-grid-data-row {
 	height: 34px;
 }
 

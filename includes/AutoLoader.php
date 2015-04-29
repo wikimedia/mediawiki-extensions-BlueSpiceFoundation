@@ -51,7 +51,10 @@ $GLOBALS['wgAutoloadClasses']['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams
 $GLOBALS['wgAutoloadClasses']['BsExtJSSortParam'] = __DIR__."/ExtJSStoreParams.php";
 
 //api
-$GLOBALS['wgAutoloadClasses']['BsApiBase'] = __DIR__."/api/BsApiBase.php";
+$GLOBALS['wgAutoloadClasses']['BSStandardAPIResponse'] = __DIR__."/api/BSStandardAPIResponse.php";
+$GLOBALS['wgAutoloadClasses']['BSApiBase'] = __DIR__."/api/BSApiBase.php";
+$GLOBALS['wgAutoloadClasses']['BSApiTasksBase'] = __DIR__."/api/BSApiTasksBase.php";
+$GLOBALS['wgAutoloadClasses']['BSApiExtJSStoreBase'] = __DIR__."/api/BSApiExtJSStoreBase.php";
 
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";
