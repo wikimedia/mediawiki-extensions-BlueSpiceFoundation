@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Skalcaa"
+		]
+	},
+	"bs-extjs-portal-config": "Nastavite portlet:",
+	"bs-extjs-portal-title": "Naslov portleta",
+	"bs-extjs-portal-height": "Višina",
+	"bs-extjs-portal-count": "Vnosi",
+	"bs-extjs-portal-timespan": "Obdobje",
+	"bs-extjs-portal-timespan-week": "Teden",
+	"bs-extjs-portal-timespan-month": "Mesec",
+	"bs-extjs-portal-timespan-alltime": "Neomejeno"
+}
