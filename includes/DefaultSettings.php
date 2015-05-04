@@ -147,13 +147,34 @@ $bsgPermissionConfig = array(
 	"editinterface" => array(
 		'type' => 'global'
 	),
+	"editmywatchlist" => array(
+		'type' => 'global'
+	),
+	"viewmywatchlist" => array(
+		'type' => 'global'
+	),
+	"editmyprivateinfo" => array(
+		'type' => 'global'
+	),
+	"viewmyprivateinfo" => array(
+		'type' => 'global'
+	),
+	"editmyoptions" => array(
+		'type' => 'global'
+	),
 	"editusercssjs" => array(
 		'type' => 'global'
 	),
 	"editusercss" => array(
 		'type' => 'global'
 	),
+	"editmyusercss" => array(
+		'type' => 'global'
+	),
 	"edituserjs" => array(
+		'type' => 'global'
+	),
+	"editmyuserjs" => array(
 		'type' => 'global'
 	),
 	"hideuser" => array(
