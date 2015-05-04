@@ -114,7 +114,15 @@ class BsCore {
 		global $wgScriptPath;
 		$sPath = $wgScriptPath . "/extensions/BlueSpiceFoundation/resources/bluespice/images/";
 
-		$aFiles = array( 'doc', 'docx', 'pdf', 'xls', 'xlsx' );
+		$aFiles = array(
+			'txt', 'rtf',
+			'doc', 'dot', 'docx', 'dotx', 'dotm',
+			'xls', 'xlt', 'xlm', 'xlsx', 'xlsm', 'xltm', 'xltx',
+			'ppt', 'pot', 'pps', 'pptx', 'pptm', 'potx', 'potm', 'ppsx', 'ppsm', 'sldx', 'sldm',
+			'odt', 'fodt', 'ods', 'fods', 'odp', 'fodp',
+			'pdf',
+			'zip', 'rar', 'tar', 'tgz', 'gz', 'bzip2', '7zip'
+		);
 		$aImages = array( 'png', 'gif', 'jpg', 'jpeg' );
 		BsConfig::registerVar( 'MW::FileExtensions', $aFiles, BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
 		BsConfig::registerVar( 'MW::ImageExtensions', $aImages, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-imageextensions', 'multiselectplusadd' );
