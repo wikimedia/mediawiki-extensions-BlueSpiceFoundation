@@ -1,9 +1,32 @@
 <?php
-
 /**
  *  This class serves as a backend for ExtJS stores. It allows all
  * necessary parameters and provides convenience methods and a standard ouput
  * format
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ * This file is part of BlueSpice for MediaWiki
+ * For further information visit http://www.blue-spice.org
+ *
+ * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
+ * @package    Bluespice_Foundation
+ * @copyright  Copyright (C) 2011 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
+ * @filesource
  *
  * Example request parameters of an ExtJS store
 
@@ -161,12 +184,17 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
 		//Unfortunately there is no way to register custom types for parameters
 		if( in_array( $paramName, array( 'sort', 'group', 'filter' ) ) ) {
-			$value = FormatJson::decode($value);
+			$value = FormatJson::decode( $value );
 			if( empty($value) ) {
 				return array();
 			}
 		}
 		return $value;
+	}
+
+	public function getParameter( $paramName, $parseLimit = true ) {
+		//Make this public, so hook handler could get the params
+		return parent::getParameter( $paramName, $parseLimit );
 	}
 
 	/**
@@ -242,8 +270,19 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 					return false;
 				}
 			}
+			if( $oFilter->type == 'list' ) {
+				$bFilterApplies = $this->filterList($oFilter, $aDataSet);
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
+			if( $oFilter->type == 'numeric' ) {
+				$bFilterApplies = $this->filterNumberic($oFilter, $aDataSet);
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
 			//TODO: Implement for type 'date', 'datetime', 'boolean' and 'numeric'
-			//... and even maybe 'list'
 		}
 
 		return true;
@@ -256,6 +295,10 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return boolean true if filter applies, false if not
 	 */
 	public function filterString($oFilter, $aDataSet) {
+		if( !is_string($oFilter->value) ) {
+			//TODO: Warning
+			return false;
+		}
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$sFilterValue = $oFilter->value;
 
@@ -278,6 +321,56 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			case 'neq':
 				return $sFieldValue !== $sFilterValue;
 		}
+	}
+
+	/**
+	 * Performs numeric filtering based on given filter of type integer on a
+	 * dataset
+	 * @param object $oFilter
+	 * @param oject $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
+	public function filterNumeric( $oFilter, $aDataSet ) {
+		if( !is_numeric($oFilter->value) ) {
+			//TODO: Warning
+			return false;
+		}
+		$sFieldValue = $aDataSet->{$oFilter->field};
+		$iFilterValue = (int) $oFilter->value;
+
+		switch( $oFilter->comparison ) {
+			case 'gt':
+				return $sFieldValue < $iFilterValue;
+			case 'lt':
+				return $sFieldValue > $iFilterValue;
+			case 'eq':
+				return $sFieldValue === $iFilterValue;
+			case 'neq':
+				return $sFieldValue !== $iFilterValue;
+		}
+	}
+
+	/**
+	 * Performs list filtering based on given filter of type array on a dataset
+	 * @param object $oFilter
+	 * @param oject $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
+	public function filterList($oFilter, $aDataSet) {
+		if( !is_array($oFilter->value) ) {
+			//TODO: Warning
+			return false;
+		}
+		$aFieldValues = $aDataSet->{$oFilter->field};
+		if( empty( $aFieldValues ) ) {
+			return false;
+		}
+		$aFilterValues = $oFilter->value;
+		$aTemp = array_intersect( $aFieldValues, $aFilterValues );
+		if( empty( $aTemp ) ) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
