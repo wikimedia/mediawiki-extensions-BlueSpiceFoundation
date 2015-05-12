@@ -16,7 +16,7 @@ $specialPageAliases['ar'] = array(
 	'Diagnostics' => array( 'تشخيصات' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'Diagnostics' => array( 'تشخيصات' ),
 );
@@ -56,7 +56,7 @@ $specialPageAliases['ko'] = array(
 	'Diagnostics' => array( '진단하기' ),
 );
 
-/** لوری (لوری) */
+/** لوری مینجایی (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'Diagnostics' => array( 'امکانات_دیارکاری_عیو' ),
 );

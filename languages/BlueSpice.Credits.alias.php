@@ -16,7 +16,7 @@ $specialPageAliases['ar'] = array(
 	'SpecialCredits' => array( 'ائتمانات' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'SpecialCredits' => array( 'ائتمانات' ),
 );
@@ -61,7 +61,7 @@ $specialPageAliases['lb'] = array(
 	'SpecialCredits' => array( 'Merci_un' ),
 );
 
-/** لوری (لوری) */
+/** لوری مینجایی (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'SpecialCredits' => array( 'اعتواریا' ),
 );
