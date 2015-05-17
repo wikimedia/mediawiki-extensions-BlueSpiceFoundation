@@ -55,6 +55,7 @@
 	"bs-filesystemhelper-folder-already-exists": "La carpeta <code>$1</code> ya existe.",
 	"bs-filesystemhelper-folder-copy-error": "La carpeta <code>$1</code> no se puede renombrar",
 	"bs-filesystemhelper-folder-not-exists": "La carpeta <code>$1</code> no existe.",
+	"bs-filesystemhelper-folder-rename-error": "No se pudo renombrar la carpeta <code>$1</code> a <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "No se pudo cargar el archivo: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "El archivo no tiene la extensión requerida: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "No se admite este tipo de archivo.",
