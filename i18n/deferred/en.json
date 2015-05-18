@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robert Vogel <vogel@hallowelt.biz>"
+		]
+	},
+	"bs-deferred-action-status-pending": "Pending.",
+	"bs-deferred-action-status-running": "Running...",
+	"bs-deferred-action-status-done": "Done.",
+	"bs-deferred-action-status-error": "Failed.",
+	"bs-deferred-action-apicopypage-description": "Copy \"$1\" to \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Edit \"$1\".",
+	"bs-deferred-batch-title": "Batch processing",
+	"bs-deferred-batch-progress-desc": "Progress",
+	"bs-deferred-batch-actions": "Actions",
+	"bs-deferred-batch-description": "Description",
+	"bs-deferred-batch-status": "Status"
+}

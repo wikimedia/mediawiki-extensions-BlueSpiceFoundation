@@ -16,6 +16,7 @@
 	"bs-extjs-add": "{{Identical|Add}}",
 	"bs-extjs-remove": "{{Identical|Remove}}",
 	"bs-extjs-edit": "{{Identical|Edit}}",
+	"bs-extjs-copy": "Label for copy action controls used in dialogues, alerts and prompts.\n{{Identical|Copy}}",
 	"bs-extjs-hint": "Title for hint prompts.\n{{Identical|Hint}}",
 	"bs-extjs-error": "Title for error prompts.\n{{Identical|Error}}",
 	"bs-extjs-confirm": "Title for confirm prompts\n{{Identical|Confirm}}",
