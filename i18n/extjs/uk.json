@@ -41,6 +41,8 @@
 	"bs-extjs-filter-contains-not": "не містить",
 	"bs-extjs-filter-starts-with": "починається з",
 	"bs-extjs-filter-ends-with": "закінчується на",
+	"bs-extjs-filter-greater-than": "більше, ніж",
+	"bs-extjs-filter-less-than": "менше, ніж",
 	"bs-extjs-title-success": "Успіх",
 	"bs-extjs-title-warning": "Застереження"
 }
