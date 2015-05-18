@@ -24,7 +24,7 @@
  * @author     Robert Vogel <vogel@hallowelt.com>
  * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    Bluespice_Foundation
- * @copyright  Copyright (C) 2011 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2015 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  *
@@ -82,12 +82,20 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	protected $totalProperty = 'total';
 
 	public function execute() {
-		$aData = $this->makeData();
+		$sQuery = $this->getParameter( 'query' );
+		$aData = $this->makeData( $sQuery );
 		$FinalData = $this->postProcessData( $aData );
 		$this->returnData( $FinalData );
 	}
 
-	protected abstract function makeData();
+	/**
+	 * @param string $sQuery Potential query provided by ExtJS component.
+	 * This is some kind of preliminary filtering. Subclass has to decide if
+	 * and how to process it
+	 * @return array - Full list of of data objects. Filters, paging, sorting
+	 * will be done by the base class
+	 */
+	protected abstract function makeData( $sQuery = '' );
 
 	/**
 	 * Creates a proper output format based on the classes properties
@@ -259,30 +267,30 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return boolean
 	 */
 	public function filterCallback( $aDataSet ) {
-		$aFilter = $this->getParameter('filter');
+		$aFilter = $this->getParameter( 'filter' );
 		foreach( $aFilter as $oFilter ) {
 			//If just one of these filters does not apply, the dataset needs
 			//to be removed
 
 			if( $oFilter->type == 'string' ) {
-				$bFilterApplies = $this->filterString($oFilter, $aDataSet);
+				$bFilterApplies = $this->filterString( $oFilter, $aDataSet );
 				if( !$bFilterApplies ) {
 					return false;
 				}
 			}
 			if( $oFilter->type == 'list' ) {
-				$bFilterApplies = $this->filterList($oFilter, $aDataSet);
+				$bFilterApplies = $this->filterList( $oFilter, $aDataSet );
 				if( !$bFilterApplies ) {
 					return false;
 				}
 			}
 			if( $oFilter->type == 'numeric' ) {
-				$bFilterApplies = $this->filterNumberic($oFilter, $aDataSet);
+				$bFilterApplies = $this->filterNumeric( $oFilter, $aDataSet );
 				if( !$bFilterApplies ) {
 					return false;
 				}
 			}
-			//TODO: Implement for type 'date', 'datetime', 'boolean' and 'numeric'
+			//TODO: Implement for type 'date', 'datetime' and 'boolean'
 		}
 
 		return true;
@@ -294,10 +302,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @param oject $aDataSet
 	 * @return boolean true if filter applies, false if not
 	 */
-	public function filterString($oFilter, $aDataSet) {
-		if( !is_string($oFilter->value) ) {
-			//TODO: Warning
-			return false;
+	public function filterString( $oFilter, $aDataSet ) {
+		if( !is_string( $oFilter->value ) ) {
+			return false; //TODO: Warning
 		}
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$sFilterValue = $oFilter->value;
@@ -331,9 +338,8 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return boolean true if filter applies, false if not
 	 */
 	public function filterNumeric( $oFilter, $aDataSet ) {
-		if( !is_numeric($oFilter->value) ) {
-			//TODO: Warning
-			return false;
+		if( !is_numeric( $oFilter->value ) ) {
+			return false; //TODO: Warning
 		}
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$iFilterValue = (int) $oFilter->value;
@@ -356,10 +362,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @param oject $aDataSet
 	 * @return boolean true if filter applies, false if not
 	 */
-	public function filterList($oFilter, $aDataSet) {
-		if( !is_array($oFilter->value) ) {
-			//TODO: Warning
-			return false;
+	public function filterList( $oFilter, $aDataSet ) {
+		if( !is_array( $oFilter->value ) ) {
+			return false; //TODO: Warning
 		}
 		$aFieldValues = $aDataSet->{$oFilter->field};
 		if( empty( $aFieldValues ) ) {
@@ -378,16 +383,16 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @param array $aProcessedData The filtered result
 	 * @return array a trimmed version of the result
 	 */
-	public function trimData($aProcessedData) {
-		$iStart = $this->getParameter('start');
-		$iEnd = $this->getParameter('limit') + $iStart;
+	public function trimData( $aProcessedData ) {
+		$iStart = $this->getParameter( 'start' );
+		$iEnd = $this->getParameter( 'limit' ) + $iStart;
 
-		if( $iEnd >= $this->iFinalDataSetCount || $iEnd === 0 ) {
-			$iEnd = $this->iFinalDataSetCount - 1;
+		if( $iEnd > $this->iFinalDataSetCount || $iEnd === 0 ) {
+			$iEnd = $this->iFinalDataSetCount;
 		}
 
 		$aTrimmedData = array();
-		for( $i = $iStart; $i <= $iEnd; $i++ ) {
+		for( $i = $iStart; $i < $iEnd; $i++ ) {
 			$aTrimmedData[] = $aProcessedData[$i];
 		}
 
