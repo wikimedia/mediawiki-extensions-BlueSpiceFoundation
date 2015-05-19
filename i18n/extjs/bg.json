@@ -11,5 +11,18 @@
 	"bs-extjs-delete": "Изтриване",
 	"bs-extjs-add": "Добавяне",
 	"bs-extjs-remove": "Премахване",
-	"bs-extjs-edit": "Редактиране"
+	"bs-extjs-edit": "Редактиране",
+	"bs-extjs-hint": "Съвет",
+	"bs-extjs-error": "Грешка",
+	"bs-extjs-loading": "Зареждане...",
+	"bs-extjs-actions-column-header": "Действия",
+	"bs-extjs-warning": "Предупреждение",
+	"bs-extjs-saving": "съхраняване...",
+	"bs-extjs-close": "Затваряне",
+	"bs-extjs-label-user": "Потребител",
+	"bs-extjs-label-namespace": "Именно пространство",
+	"bs-extjs-label-page": "Страница",
+	"bs-extjs-browse": "Преглеждане",
+	"bs-extjs-uploading": "Качване...",
+	"bs-extjs-allns": "(всички)"
 }
