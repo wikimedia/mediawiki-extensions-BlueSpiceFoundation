@@ -304,7 +304,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	public function filterString( $oFilter, $aDataSet ) {
 		if( !is_string( $oFilter->value ) ) {
-			return false; //TODO: Warning
+			return true; //TODO: Warning
 		}
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$sFilterValue = $oFilter->value;
@@ -339,7 +339,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	public function filterNumeric( $oFilter, $aDataSet ) {
 		if( !is_numeric( $oFilter->value ) ) {
-			return false; //TODO: Warning
+			return true; //TODO: Warning
 		}
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$iFilterValue = (int) $oFilter->value;
@@ -364,7 +364,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	public function filterList( $oFilter, $aDataSet ) {
 		if( !is_array( $oFilter->value ) ) {
-			return false; //TODO: Warning
+			return true; //TODO: Warning
 		}
 		$aFieldValues = $aDataSet->{$oFilter->field};
 		if( empty( $aFieldValues ) ) {
