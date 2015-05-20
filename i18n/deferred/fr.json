@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"bs-deferred-action-status-done": "Fait.",
+	"bs-deferred-action-apieditpage-description": "Modifier « $1 ».",
+	"bs-deferred-batch-progress-desc": "Progrès",
+	"bs-deferred-batch-actions": "Actions",
+	"bs-deferred-batch-description": "Description",
+	"bs-deferred-batch-status": "Statut"
+}

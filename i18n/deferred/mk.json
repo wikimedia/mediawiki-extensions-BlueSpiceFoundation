@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"bs-deferred-action-status-pending": "Во исчекување.",
+	"bs-deferred-action-status-running": "Во тек...",
+	"bs-deferred-action-status-done": "Готово.",
+	"bs-deferred-action-status-error": "Не успеа.",
+	"bs-deferred-action-apicopypage-description": "Прекопирај го „$1“ во „$2“.",
+	"bs-deferred-action-apieditpage-description": "Уреди „$1“.",
+	"bs-deferred-batch-title": "Збирна обработка",
+	"bs-deferred-batch-progress-desc": "Напредок",
+	"bs-deferred-batch-actions": "Дејства",
+	"bs-deferred-batch-description": "Опис",
+	"bs-deferred-batch-status": "Статус"
+}
