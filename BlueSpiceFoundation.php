@@ -73,6 +73,7 @@ $wgMessagesDirs['BlueSpiceCredits'] = __DIR__ . '/i18n/credits';
 $wgMessagesDirs['BlueSpiceDiagnostics'] = __DIR__ . '/i18n/diagnostics';
 $wgMessagesDirs['BlueSpice.ExtJS'] = __DIR__ . '/i18n/extjs';
 $wgMessagesDirs['BlueSpice.ExtJS.Portal'] = __DIR__ . '/i18n/extjs-portal';
+$wgMessagesDirs['BlueSpice.Deferred'] = __DIR__ . '/i18n/deferred';
 $wgMessagesDirs['Validator'] = __DIR__ . '/i18n/validator';
 
 //I18N Backwards compatibility
@@ -81,6 +82,7 @@ $wgExtensionMessagesFiles += array(
 	'Validator' => __DIR__."/languages/Validator.i18n.php",
 	'BlueSpice.ExtJS' => __DIR__."/languages/BlueSpice.ExtJS.i18n.php",
 	'BlueSpice.ExtJS.Portal' => __DIR__."/languages/BlueSpice.ExtJS.Portal.i18n.php",
+	'BlueSpice.Deferred' => __DIR__.'/languages/BlueSpice.Deferred.i18n.php',
 	'BlueSpiceDiagnostics' => __DIR__."/languages/BlueSpice.Diagnostics.i18n.php",
 	'DiagnosticsAlias' => __DIR__."/languages/BlueSpice.Diagnostics.alias.php",
 	'BlueSpiceCredits' => __DIR__."/languages/BlueSpice.Credits.i18n.php",

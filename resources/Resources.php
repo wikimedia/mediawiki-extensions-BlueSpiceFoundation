@@ -78,6 +78,7 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-edit',
 		'bs-extjs-add',
 		'bs-extjs-remove',
+		'bs-extjs-copy',
 		'bs-extjs-hint',
 		'bs-extjs-error',
 		'bs-extjs-confirm',
@@ -139,6 +140,25 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 		'bs-extjs-portal-timespan-week',
 		'bs-extjs-portal-timespan-month',
 		'bs-extjs-portal-timespan-alltime'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs.BS.deferred'] = array(
+	'dependencies' => array(
+		'ext.bluespice.extjs'
+	),
+	'messages' => array(
+		'bs-deferred-action-status-pending',
+		'bs-deferred-action-status-running',
+		'bs-deferred-action-status-done',
+		'bs-deferred-action-status-error',
+		'bs-deferred-action-apicopypage-description',
+		'bs-deferred-action-apieditpage-description',
+		'bs-deferred-batch-title',
+		'bs-deferred-batch-progress-desc',
+		'bs-deferred-batch-actions',
+		'bs-deferred-batch-description',
+		'bs-deferred-batch-status'
 	)
 ) + $aResourceModuleTemplate;
 
