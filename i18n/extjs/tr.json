@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sayginer"
+			"Sayginer",
+			"Captantrips"
 		]
 	},
 	"bs-extjs-ok": "Tamam",
@@ -11,6 +12,7 @@
 	"bs-extjs-save": "Kaydet",
 	"bs-extjs-delete": "Sil",
 	"bs-extjs-add": "Ekle",
+	"bs-extjs-copy": "Kopya",
 	"bs-extjs-error": "Hata",
 	"bs-extjs-confirm": "Onayla",
 	"bs-extjs-loading": "Yükleniyor...",

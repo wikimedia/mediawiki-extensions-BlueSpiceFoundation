@@ -13,6 +13,7 @@
 	"bs-extjs-add": "Aggiunge",
 	"bs-extjs-remove": "Live",
 	"bs-extjs-edit": "Cange",
+	"bs-extjs-copy": "Copie",
 	"bs-extjs-hint": "Consiglie",
 	"bs-extjs-error": "Errore",
 	"bs-extjs-confirm": "Conferme",

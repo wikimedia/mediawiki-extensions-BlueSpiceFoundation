@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Emir Mujadzic"
+		]
+	},
+	"bs-deferred-action-status-pending": "Neriješen",
+	"bs-deferred-action-status-running": "Pokreni",
+	"bs-deferred-action-status-done": "Završeno.",
+	"bs-deferred-action-status-error": "Neuspjelo.",
+	"bs-deferred-action-apicopypage-description": "Kopiraj \"$1\" u \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Uređivanje \"$1\"",
+	"bs-deferred-batch-title": "Zbirna obrada",
+	"bs-deferred-batch-progress-desc": "Napredak",
+	"bs-deferred-batch-actions": "Akcije",
+	"bs-deferred-batch-description": "Opis",
+	"bs-deferred-batch-status": "Status"
+}

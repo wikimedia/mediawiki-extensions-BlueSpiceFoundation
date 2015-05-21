@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-deferred-action-status-pending": "Oczekujące.",
+	"bs-deferred-action-status-running": "Działanie...",
+	"bs-deferred-action-status-done": "Gotowe.",
+	"bs-deferred-action-apicopypage-description": "Kopiowanie „$1” do „$2”.",
+	"bs-deferred-action-apieditpage-description": "Edycja „$1”.",
+	"bs-deferred-batch-actions": "Operacje",
+	"bs-deferred-batch-description": "Opis",
+	"bs-deferred-batch-status": "Status"
+}

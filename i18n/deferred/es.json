@@ -1,15 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Fitoschido"
 		]
 	},
 	"bs-deferred-action-status-pending": "Pendiente.",
 	"bs-deferred-action-status-running": "Ejecutándose...",
 	"bs-deferred-action-status-done": "Hecho.",
 	"bs-deferred-action-status-error": "Falló.",
-	"bs-deferred-action-apicopypage-description": "Copiar \"$1\" a \"$2\".",
-	"bs-deferred-action-apieditpage-description": "Editar \"$1\".",
+	"bs-deferred-action-apicopypage-description": "Copiar «$1» en «$2».",
+	"bs-deferred-action-apieditpage-description": "Editar «$1».",
 	"bs-deferred-batch-title": "Procesamiento por lotes",
 	"bs-deferred-batch-progress-desc": "Progreso",
 	"bs-deferred-batch-actions": "Acciones",

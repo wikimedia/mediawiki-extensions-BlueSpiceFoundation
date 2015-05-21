@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Reza1615"
+		]
+	},
+	"bs-deferred-action-status-pending": "در انتظار.",
+	"bs-deferred-action-status-done": "انجام شد.",
+	"bs-deferred-action-status-error": "ناموفق بود.",
+	"bs-deferred-action-apieditpage-description": "ویرایش «$1».",
+	"bs-deferred-batch-actions": "عملکردها",
+	"bs-deferred-batch-description": "توضیح",
+	"bs-deferred-batch-status": "وضعیت"
+}
