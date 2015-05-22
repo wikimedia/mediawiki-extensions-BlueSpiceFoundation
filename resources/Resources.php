@@ -8,6 +8,7 @@ $aResourceModuleTemplate = array(
 	'localBasePath' => $IP . '/extensions/BlueSpiceFoundation/resources',
 	'remoteExtPath' => 'BlueSpiceFoundation/resources',
 	'group' => 'ext.bluespice',
+	'targets' => array( 'mobile', 'desktop' )
 );
 
 $wgResourceModules['ext.bluespice'] = array(
@@ -20,15 +21,6 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
 		'bluespice/bluespice.ping.js'
-	),
-	'dependencies' => array(
-		'jquery.ui.core',
-		'jquery.ui.dialog',
-		'jquery.ui.tabs',
-		'jquery.cookie',
-		'jquery.ui.sortable',
-		'jquery.ui.autocomplete',
-		'jquery.effects.core'
 	),
 	'messages' => array(
 		'largefileserver',
