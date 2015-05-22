@@ -135,6 +135,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$this->data['bs_navigation_main']['navigation']['label'] = $this->getMsg( 'bs-tab_navigation' )->text();
 		$this->data['bs_navigation_main']['navigation']['content'] = $this->getNavigationSidebar();
 		$this->data['bs_navigation_main']['navigation']['class'] = 'icon-menu2';
+
 		$this->sortDataArrayByPosition( $this->data['bs_navigation_main'] );
 
 		ksort( $this->data['bs_personal_info'] );
@@ -419,6 +420,10 @@ class BsBaseTemplate extends BaseTemplate {
 	}
 
 	protected function getNavigationSidebar() {
+		if( !$this->getSkin()->getUser()->isAllowed( 'read' ) ) {
+			return '';
+		}
+
 		$aPortlets = array();
 
 		foreach ($this->data['sidebar'] as $bar => $cont) {
