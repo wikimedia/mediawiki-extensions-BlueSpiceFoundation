@@ -7,6 +7,7 @@
 	"bs-deferred-action-status-pending": "Pendent.",
 	"bs-deferred-action-status-done": "Fet.",
 	"bs-deferred-action-status-error": "Ha fallat.",
+	"bs-deferred-action-apicopypage-description": "Còpia «$1» a «$2».",
 	"bs-deferred-action-apieditpage-description": "Edita \"$1\".",
 	"bs-deferred-batch-title": "Processament per lots",
 	"bs-deferred-batch-progress-desc": "Progrés",

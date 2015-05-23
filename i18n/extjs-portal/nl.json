@@ -2,10 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"SPQRobin",
-			"Niknetniko"
+			"Niknetniko",
+			"Siebrand"
 		]
 	},
+	"bs-extjs-portal-config": "Portlet instellen:",
+	"bs-extjs-portal-title": "Portletnaam",
 	"bs-extjs-portal-height": "Hoogte",
+	"bs-extjs-portal-count": "Regels",
+	"bs-extjs-portal-timespan": "Tijd",
 	"bs-extjs-portal-timespan-week": "Week",
-	"bs-extjs-portal-timespan-month": "Maand"
+	"bs-extjs-portal-timespan-month": "Maand",
+	"bs-extjs-portal-timespan-alltime": "Alle versies"
 }

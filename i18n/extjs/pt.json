@@ -14,6 +14,7 @@
 	"bs-extjs-add": "Adicionar",
 	"bs-extjs-remove": "Remover",
 	"bs-extjs-edit": "Editar",
+	"bs-extjs-copy": "Copiar",
 	"bs-extjs-hint": "Dica",
 	"bs-extjs-error": "Erro",
 	"bs-extjs-confirm": "Confirmar",

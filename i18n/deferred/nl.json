@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Siebrand"
 		]
 	},
 	"bs-deferred-action-status-error": "Mislukt.",
+	"bs-deferred-batch-progress-desc": "Voortgang",
+	"bs-deferred-batch-actions": "Handelingen",
 	"bs-deferred-batch-description": "Beschrijving",
 	"bs-deferred-batch-status": "Status"
 }

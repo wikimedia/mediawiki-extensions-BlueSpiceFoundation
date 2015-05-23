@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"bs-deferred-action-status-pending": "Aam wahde.",
+	"bs-deferred-action-status-running": "Aam Loufe …",
+	"bs-deferred-action-status-done": "\nJedonn.",
+	"bs-deferred-action-status-error": "Donävvejejange.",
+	"bs-deferred-action-apicopypage-description": "Koppehr vun „$1“ noh „$2“.",
+	"bs-deferred-action-apieditpage-description": "Ännder „$1“.",
+	"bs-deferred-batch-title": "Opdrähsch affärbeijde",
+	"bs-deferred-batch-progress-desc": "Fottschret",
+	"bs-deferred-batch-actions": "Akßjuhne",
+	"bs-deferred-batch-description": "Beschrieve als",
+	"bs-deferred-batch-status": "Zohschtand"
+}

@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Ssola",
-			"Edustus"
+			"Edustus",
+			"Macofe"
 		]
 	},
 	"bs-extjs-no": "No",
+	"bs-extjs-copy": "Còpia",
 	"bs-extjs-label-page": "Pàgina",
 	"bs-extjs-title-warning": "Advertència"
 }

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"bs-deferred-action-status-pending": "待處理。",
+	"bs-deferred-action-status-error": "失敗。",
+	"bs-deferred-action-apieditpage-description": "編輯 \"$1\"。",
+	"bs-deferred-batch-actions": "操作"
+}
