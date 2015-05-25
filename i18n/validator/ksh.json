@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"bs-validator-email-validation-approved": "De Adräß för de <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"„de eläktrohnesche Poß“\">e-mail</i> es beschtähtesch.",
+	"bs-validator-email-validation-not-approved": "De Adräß för de <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"„de eläktrohnesche Poß“\">e-mail</i> kunnt nit beschtähtesch wähde.",
+	"bs-validator-url-validation-approved": "Dä <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Uniform Ressource Locator\">URL</i> es beschtähtesch.",
+	"bs-validator-url-validation-not-approved": "Dä <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Uniform Ressource Locator\">URL</i> kunnt nit beschtähtesch wähde.",
+	"bs-validator-arg-count-validation-approved": "De Adräß för de <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"„de eläktrohnesche Poß“\">e-mail</i> kunnt nit beschtähtesch wähde.",
+	"bs-validator-arg-count-validation-not-approved": "De Eijeschaff „Aanzahl“ kunnt nit beschtähtesch wähde.",
+	"bs-validator-set-validation-approved": "$1 es beschtähtesch.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Blohß eine Wääd es zojelohße för $1|För $1 es blohß eine vun dä Wääte zojelohße|Nix es för $1 zojelohße}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Dä aanjejovve Wääd es zoh klein. Hä sullt winneschßdens $1 sin.",
+	"bs-validator-integer-range-validation-too-high": "Dä aanjejovve Wääd es zoh huh . Hä sullt nit mih wi $1 sin."
+}

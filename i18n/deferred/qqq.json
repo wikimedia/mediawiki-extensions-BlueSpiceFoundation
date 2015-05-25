@@ -7,7 +7,7 @@
 	},
 	"bs-deferred-action-status-pending": "Value of a cell in an overview table that tells that a particular action has not started yet\n{{Identical|Pending}}",
 	"bs-deferred-action-status-running": "Value of a cell in an overview table that tells that a particular action has started\n{{Identical|Running}}",
-	"bs-deferred-action-status-done": "Value of a cell in an overview table that tells that a particular action has been completed without errors",
+	"bs-deferred-action-status-done": "Value of a cell in an overview table that tells that a particular action has been completed without errors\n{{Identical|Done}}",
 	"bs-deferred-action-status-error": "Value of a cell in an overview table that tells that a particular action has failed during execution\n{{Identical|Failed}}",
 	"bs-deferred-action-apicopypage-description": "Description of an action that copies the content of a page to another one.\n\nParameters:\n* $1 - The source page title to be copied from\n* $2 - The target page title to be copied to",
 	"bs-deferred-action-apieditpage-description": "Description of an action that edits the contents of a page.\n\nParameters:\n* $1 - The title of the page that will be edited\n{{Identical|Edit}}",
