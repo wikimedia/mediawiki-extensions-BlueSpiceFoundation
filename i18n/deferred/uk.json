@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ата"
+		]
+	},
+	"bs-deferred-action-status-pending": "Очікування.",
+	"bs-deferred-action-status-running": "У процесі…",
+	"bs-deferred-action-status-done": "Готово.",
+	"bs-deferred-action-status-error": "Не вдалося.",
+	"bs-deferred-action-apicopypage-description": "Скопіювати «$1» у «$2».",
+	"bs-deferred-action-apieditpage-description": "Редагувати «$1».",
+	"bs-deferred-batch-title": "Пакетна обробка",
+	"bs-deferred-batch-progress-desc": "Прогрес",
+	"bs-deferred-batch-actions": "Дії",
+	"bs-deferred-batch-description": "Опис",
+	"bs-deferred-batch-status": "Статус"
+}
