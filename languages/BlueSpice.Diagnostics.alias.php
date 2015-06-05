@@ -58,7 +58,7 @@ $specialPageAliases['ko'] = array(
 
 /** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
-	'Diagnostics' => array( 'امکانات_دیارکاری_عیو' ),
+	'Diagnostics' => array( 'ئمکانات_دیارکاری_ئیڤ' ),
 );
 
 /** Macedonian (македонски) */
