@@ -494,7 +494,7 @@ class BsCoreHooks {
 	 */
 	public static function onSkinAfterContent(  &$data, $skin ) {
 		if( self::$oCurrentTemplate == null ) {
-			return false;
+			return true;
 		}
 
 		if ( isset( self::$oCurrentTemplate->data['bs_dataAfterContent'] ) ) {
