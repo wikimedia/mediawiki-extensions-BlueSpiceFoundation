@@ -13,7 +13,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 	forceSelection: false,
 	createNewOnEnter: true,
 	queryMode: 'local',
-	emptyText: 'Add a category',
+	emptyText: mw.message('bs-extjs-categoryboxselect-emptytext').plain(),
 	delimiter: ',',
 	deferredSetValueConf: false,
 	initComponent: function() {
@@ -30,7 +30,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 			model: 'BS.model.Category'
 		});
 		this.store.load();
-		
+
 		this.store.on( 'load', this.onStoreLoad, this );
 
 		this.callParent(arguments);
@@ -38,7 +38,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 	onStoreLoad: function( store, records, successful, eOpts ) {
 		//this.setValue( "0, 1" );
 //		if( this.deferredSetValueConf ) {
-//			this.deferredSetValueConf.callback.apply( 
+//			this.deferredSetValueConf.callback.apply(
 //				this, [this.deferredSetValueConf.value]
 //			);
 //			this.deferredSetValueConf = false;
@@ -69,7 +69,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 		}, this );
 
 		this.setValue( indexes.join(',') + "" );
-		
+
 	},
 	deferSetValue: function( callback, value ) {
 		this.deferredSetValueConf = {
