@@ -56,7 +56,7 @@ $specialPageAliases['ko'] = array(
 	'Diagnostics' => array( '진단하기' ),
 );
 
-/** Northern Luri (لوری مینجایی) */
+/** Northern Luri (لۊری شومالی) */
 $specialPageAliases['lrc'] = array(
 	'Diagnostics' => array( 'ئمکانات_دیارکاری_ئیڤ' ),
 );
