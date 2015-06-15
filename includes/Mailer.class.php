@@ -49,14 +49,22 @@ class BsMailer {
 	public function send( $vTo, $sSubject, $sMsg, $oFrom = null ) {
 		wfProfileIn( 'BS::'.__METHOD__ );
 		$oStatus = Status::newGood(); // TODO RBV (01.03.12 12:59): Use fatal...?
+		# found in mw 1.23 UserMailer.php ln 250
+		# Line endings need to be different on Unix and Windows due to
+		# the bug described at http://trac.wordpress.org/ticket/2603
+		if ( wfIsWindows() ) {
+			$sEndl = "\r\n";
+		} else {
+			$sEndl = "\n";
+		}
 
-		$sCurLF = "\n";
-		$sReplLF = '<br />'."\n";
+		$sCurLF = $sEndl;
+		$sReplLF = '<br />' . $sEndl;
 		$sHeaders = null;
 
 		if ( $this->bSendHTML ) {
-			$sCurLF = '<br/>'."\n";
-			$sReplLF = "\n";
+			$sCurLF = '<br/>' . $sEndl;
+			$sReplLF = $sEndl;
 			$sHeaders = 'text/html; charset=utf-8';
 		}
 
@@ -119,7 +127,7 @@ class BsMailer {
 		}
 
 		//Note that this is system lang!
-		$sNL = $this->bSendHTML ? "<br />" : "\n";
+		$sNL = $this->bSendHTML ? "<br />" : $sEndl;
 		$sFooter =
 			"$sNL$sNL---------------------$sNL$sNL"
 			.wfMessage( 'bs-email-footer', $wgSitename )->text()
