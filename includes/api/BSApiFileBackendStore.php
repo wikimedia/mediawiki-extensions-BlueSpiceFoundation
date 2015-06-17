@@ -66,8 +66,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			$sThumb = $oImg->createThumb( 48, 48 );
 			$sUrl = $oImg->getUrl();
 			if( $bUseSecureFileStore ) { //TODO: Remove
-				$sThumb = SecureFileStore::secureStuff( $sThumb, true );
-				$sUrl = SecureFileStore::secureStuff( $sUrl, true );
+				$sThumb = html_entity_decode( SecureFileStore::secureStuff( $sThumb, true ) );
+				$sUrl = html_entity_decode( SecureFileStore::secureStuff( $sUrl, true ) );
 			}
 
 			$aReturn[ $oRow->page_id ] = (object) array(
