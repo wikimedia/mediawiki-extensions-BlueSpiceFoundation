@@ -89,9 +89,7 @@ $wgExtensionMessagesFiles += array(
 	'CreditsAlias' => __DIR__."/languages/BlueSpice.Credits.alias.php"
 );
 
-#$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
 #$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
-$wgSpecialPageGroups['SpecialCredits'] = 'bluespice';
 $wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
 
 // Register hooks

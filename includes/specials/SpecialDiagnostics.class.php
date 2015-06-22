@@ -25,4 +25,8 @@ class SpecialDiagnostics extends BsSpecialPage {
 
 		$oOutputPage->addHtml( "<b>Not implemented yet</b>" );
 	}
+
+	protected function getGroupName() {
+		return 'bluespice';
+	}
 }
