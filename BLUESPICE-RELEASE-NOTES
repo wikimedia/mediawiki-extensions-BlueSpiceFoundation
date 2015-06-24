@@ -7,6 +7,10 @@ http://www.hallowelt.biz<br />
 Date: 2014-05-07
 This is a patch and maintenance release.
 
+===Note===
+This release includes the security fix committed on 24.06.2015.
+For details see https://gerrit.wikimedia.org/r/#/c/220413/
+
 === Changes since 2.22.1 ===
 ==== extensions/BlueSpiceDistribution ====
 * Renamed BlueSpiceDistribution.php to BlueSpiceDistribution.php.template
