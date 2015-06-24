@@ -7,6 +7,10 @@ http://www.hallowelt.com<br />
 
 BlueSpice 2.23.1 is a minor and maintenance release.
 
+===Note===
+This release includes the security fix commited on 24.06.2015.
+For details see https://gerrit.wikimedia.org/r/#/c/220410/
+
 ===New features===
 * Database: added experimental SQLite compatibility
 * ExtensionInfo: Added link to Mediawiki version page
