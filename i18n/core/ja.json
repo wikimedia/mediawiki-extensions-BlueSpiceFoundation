@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Sujiniku"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -20,7 +21,7 @@
 	"bs-secs-duration": "{{PLURAL:$1|$1秒}}",
 	"bs-two-units-ago": "$1$2前",
 	"bs-one-unit-ago": "$1前",
-	"bs-email-footer": "このメッセージは自動的に生成されました。このメールには返信なさらないようお願いします。",
+	"bs-email-footer": "このメッセージは$1によって自動的に生成されました。このメールには返信なさらないようお願いします。",
 	"bs-userpagesettings-legend": "利用者設定",
 	"bs-userpreferences-link-text": "その他の利用者設定",
 	"bs-exception-view-heading": "エラーが発生しました",
