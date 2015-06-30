@@ -3,6 +3,19 @@ Copyright 2015 by Hallo Welt! - Medienwerkstatt GmbH<br />
 http://www.blue-spice.org<br />
 http://www.hallowelt.com<br />
 
+==BlueSpice 2.23.1.1==
+
+BlueSpice 2.23.1.1 is a security release.
+
+===Note===
+This release indends to fix a security vulnerability in the shoutbox extension.
+For details see https://gerrit.wikimedia.org/r/#/c/220410/
+
+===Changelog===
+
+====BlueSpiceExtensions====
+* Shoutbox: XSS Security fix
+
 ==BlueSpice 2.23.1==
 
 BlueSpice 2.23.1 is a minor and maintenance release.
@@ -134,6 +147,7 @@ For details see https://gerrit.wikimedia.org/r/#/c/220410/
 * Yuki Shira
 * TGC
 * Umherirrender
+* Frederic Mohr
 
 ===Standing on the shoulders of giants===
 We would like to thank all the people around MediaWiki. You've created a wonderful piece of software. Thanks a lot!
