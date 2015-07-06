@@ -56,6 +56,7 @@ $GLOBALS['wgAutoloadClasses']['BSApiBase'] = __DIR__."/api/BSApiBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiTasksBase'] = __DIR__."/api/BSApiTasksBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiExtJSStoreBase'] = __DIR__."/api/BSApiExtJSStoreBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiFileBackendStore'] = __DIR__."/api/BSApiFileBackendStore.php";
+$GLOBALS['wgAutoloadClasses']['BSApiUserStore'] = __DIR__."/api/BSApiUserStore.php";
 
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";

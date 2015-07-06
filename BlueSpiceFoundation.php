@@ -66,6 +66,7 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
 $wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
 $wgAPIModules['bs-filebackend-store'] = 'BSApiFileBackendStore';
+$wgAPIModules['bs-user-store'] = 'BSApiUserStore';
 
 //I18N MW1.23+
 $wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
