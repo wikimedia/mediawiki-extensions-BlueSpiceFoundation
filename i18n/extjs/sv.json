@@ -43,6 +43,8 @@
 	"bs-extjs-filter-contains-not": "innehåller inte",
 	"bs-extjs-filter-starts-with": "börjar med",
 	"bs-extjs-filter-ends-with": "slutar med",
+	"bs-extjs-filter-greater-than": "större än",
+	"bs-extjs-filter-less-than": "mindre än",
 	"bs-extjs-title-success": "Lyckades",
 	"bs-extjs-title-warning": "Varning"
 }
