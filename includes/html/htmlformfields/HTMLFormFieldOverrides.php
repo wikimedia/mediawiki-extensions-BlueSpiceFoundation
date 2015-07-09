@@ -72,9 +72,6 @@ class HTMLIntFieldOverride extends HTMLIntField {
 		$p = parent::validate( $value, $alldata );
 
 		if ( $p !== true ) return $p;
-		if ( !is_numeric( $value ) ) {
-			return $this->msg( 'htmlform-int-invalid')->parseAsBlock();
-		}
 
 		if ( isset( $this->options['range_min'] ) && $value < $this->options['range_min'] ) {
 			return $this->msg( 'htmlform-int-outofrange')->parseAsBlock();
