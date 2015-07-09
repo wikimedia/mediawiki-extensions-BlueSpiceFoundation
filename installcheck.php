@@ -368,14 +368,19 @@ echo( "<h3>PHP Bytecode Caches:</h3>" );
 $apc = function_exists('apc_fetch');
 $xcache = function_exists( 'xcache_get' );
 $eaccel = function_exists( 'eaccelerator_get' );
+$opcache = false;
+if ( function_exists( 'opcache_get_configuration' ) ) {
+	$opcache = opcache_get_configuration();
+	$opcache = $opcache["directives"]["opcache.enable"];
+}
 $wincache = function_exists( 'wincache_ucache_get' );
-if( !( $eaccel || $apc || $xcache || $wincache ) ) {
-	echo('No bytecode cache detected. Consider using <a href="http://eaccelerator.sourceforge.net">eAccelerator</a>, <a href="http://www.php.net/apc">APC</a>, <a href="http://trac.lighttpd.net/xcache/">XCache</a> or <a href="http://www.iis.net/download/wincacheforphp">Windows Cache Extension</a> if you\'re on IIS.');
+if ( !( $eaccel || $apc || $xcache || $opcache || $wincache ) ) {
+	echo('No bytecode cache detected. Consider using <a href="http://eaccelerator.sourceforge.net">eAccelerator</a>, <a href="http://www.php.net/apc">APC</a>, <a href="http://trac.lighttpd.net/xcache/">XCache</a>, <a href="http://php.net/manual/en/book.opcache.php">OPCache</a> or <a href="http://www.iis.net/download/wincacheforphp">Windows Cache Extension</a> if you\'re on IIS.');
 }
 else {
 	echo('Nice, found a bytecode cache! (detected: ');
 	$foundcaches = array();
-	foreach(array("apc","xcache","eaccel","wincache") as $cachetype) {
+	foreach ( array ( "apc", "xcache", "eaccel", "opcache", "wincache" ) as $cachetype ) {
 		if($$cachetype) $foundcaches[] = $cachetype; 
 	}
 	echo(implode(",", $foundcaches).')');
