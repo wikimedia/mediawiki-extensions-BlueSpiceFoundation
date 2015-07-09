@@ -359,6 +359,30 @@ class BsCoreHooks {
 		return true;
 	}
 
+
+	/**
+	 * Adds data attributes to media link tags
+	 * THIS IS FOR FUTURE USE: The hook is available starting with MW 1.24!
+	 * @param Title $title
+	 * @param File $file The File object
+	 * @param string $html The content of the resulting  anchor tag
+	 * @param array $attribs An array of attributes that will be used in the resulting anchor tag
+	 * @param string $ret The HTML output in case the handler returns false
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function onLinkerMakeMediaLinkFile( $title, $file, &$html, &$attribs, &$ret ) {
+
+		$attribs['data-bs-title'] = $title->getPrefixedText();
+		if( $file instanceof File ) {
+			$attribs['data-bs-filename'] = $file->getName();
+		}
+		else {
+			$attribs['data-bs-filename'] = $title->getText();
+		}
+
+		return true;
+	}
+
 	/**
 	 * @param User $oUser
 	 * @param array $aRights
