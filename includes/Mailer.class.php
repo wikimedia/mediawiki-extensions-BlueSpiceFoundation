@@ -1,5 +1,6 @@
 <?php
 /**
+ * DEPRECATED!
  * This file is part of BlueSpice for MediaWiki.
  *
  * @copyright Copyright (c) 2012, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
@@ -14,6 +15,7 @@
 
 /**
  * BlueSpice Mailer Component
+ * @deprecated since 2.23.2
  * @package BlueSpice_Core
  * @subpackage Mailer
  */
@@ -26,6 +28,7 @@ class BsMailer {
 	function __construct() {}
 
 	/**
+	 * @deprecated since 2.23.2
 	 * N-glton implementation for BsMailer
 	 * @param string $name
 	 * @param mixed $path Not used.
@@ -40,6 +43,7 @@ class BsMailer {
 
 	/**
 	 * Sends mail(s). It makes sure that all mails sent by BlueSpice are formatted in similar matter.
+	 * @deprecated since 2.23.2
 	 * @param mixed $vTo Either a Username, an email address or a User object. Or an array of those.
 	 * @param string $sSubject The plain subject. Will be prepended with sitename.
 	 * @param string $sMsg The plain message. Will be surrounded with salutation and complementary close.
@@ -48,6 +52,7 @@ class BsMailer {
 	 */
 	public function send( $vTo, $sSubject, $sMsg, $oFrom = null ) {
 		wfProfileIn( 'BS::'.__METHOD__ );
+		wfDeprecated( __METHOD__, '2.23.2' );
 		$oStatus = Status::newGood(); // TODO RBV (01.03.12 12:59): Use fatal...?
 		# found in mw 1.23 UserMailer.php ln 250
 		# Line endings need to be different on Unix and Windows due to
@@ -181,10 +186,16 @@ class BsMailer {
 		return $oStatus;
 	}
 
+	/*
+	 * @deprecated since 2.23.2
+	 */
 	public function getSendHTML() {
 		return $this->bSendHTML;
 	}
 
+	/*
+	 * @deprecated since 2.23.2
+	 */
 	public function setSendHTML( $bSendHTML ) {
 		$this->bSendHTML = $bSendHTML;
 	}
