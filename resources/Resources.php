@@ -101,6 +101,7 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-filter-less-than',
 		'bs-extjs-title-success',
 		'bs-extjs-title-warning',
+		'bs-extjs-categoryboxselect-emptytext'
 	),
 	'position' => 'bottom'
 ) + $aResourceModuleTemplate;
