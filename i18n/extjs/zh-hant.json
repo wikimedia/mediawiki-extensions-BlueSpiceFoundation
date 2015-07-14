@@ -16,6 +16,7 @@
 	"bs-extjs-add": "新增",
 	"bs-extjs-remove": "移除",
 	"bs-extjs-edit": "編輯",
+	"bs-extjs-copy": "複製",
 	"bs-extjs-hint": "提示",
 	"bs-extjs-error": "錯誤",
 	"bs-extjs-confirm": "確認",

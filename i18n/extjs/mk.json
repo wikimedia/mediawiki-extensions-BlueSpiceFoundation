@@ -43,5 +43,6 @@
 	"bs-extjs-filter-greater-than": "поголемо од",
 	"bs-extjs-filter-less-than": "помало од",
 	"bs-extjs-title-success": "Успеа",
-	"bs-extjs-title-warning": "Предупредување"
+	"bs-extjs-title-warning": "Предупредување",
+	"bs-extjs-categoryboxselect-emptytext": "Додај категорија"
 }

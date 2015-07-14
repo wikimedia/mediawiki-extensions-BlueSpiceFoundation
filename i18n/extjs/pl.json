@@ -42,5 +42,6 @@
 	"bs-extjs-filter-contains-not": "nie zawiera",
 	"bs-extjs-filter-starts-with": "zaczyna się od",
 	"bs-extjs-filter-ends-with": "kończy się",
-	"bs-extjs-title-warning": "Ostrzeżenie"
+	"bs-extjs-title-warning": "Ostrzeżenie",
+	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorię"
 }
