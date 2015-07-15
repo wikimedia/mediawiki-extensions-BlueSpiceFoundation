@@ -175,24 +175,20 @@ class BsConfig {
 	}
 
 	/**
-	 * gets the value of the variable, which is specified by the path
-	 *
-	 * @param string $path
-	 *        	The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
+	 * Gets the value of the variable, which is specified by the path
+	 * @param string $sPath The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
 	 * @return mixed the value
 	 */
-	public static function get( $path ) {
-
+	public static function get( $sPath ) {
 		wfProfileIn ( 'BS::Core::ConfigGet' );
 
-		if ( function_exists ( 'wfRunHooks' ) ) {
-			$bChanged = false;
-			wfRunHooks ( "BSCoreConfigGet", array ( &$path, &$bChanged ) );
-			if ( $bChanged === true ) {
-				return $path;
-			}
+		$mReturn = null;
+		if( !wfRunHooks ( "BSCoreConfigGet", array ( $sPath, &$mReturn ) ) ) {
+			wfProfileOut ( 'BS::Core::ConfigGet' );
+			return $mReturn;
 		}
-		$oSetting = self::getSettingObject ( $path );
+
+		$oSetting = self::getSettingObject ( $sPath );
 
 		wfProfileOut ( 'BS::Core::ConfigGet' );
 
