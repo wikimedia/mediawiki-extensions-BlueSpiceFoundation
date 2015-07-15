@@ -14,7 +14,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 	createNewOnEnter: true,
 	queryMode: 'local',
 	emptyText: 'Add a category',
-	delimiter: ',',
+	delimiter: '|',
 	deferredSetValueConf: false,
 	initComponent: function() {
 		this.store = Ext.create( 'Ext.data.JsonStore', {
