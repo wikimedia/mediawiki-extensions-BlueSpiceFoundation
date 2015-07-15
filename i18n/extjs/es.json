@@ -45,5 +45,6 @@
 	"bs-extjs-filter-greater-than": "mayor que",
 	"bs-extjs-filter-less-than": "menor que",
 	"bs-extjs-title-success": "Éxito",
-	"bs-extjs-title-warning": "Advertencia"
+	"bs-extjs-title-warning": "Advertencia",
+	"bs-extjs-categoryboxselect-emptytext": "Añadir una categoría"
 }

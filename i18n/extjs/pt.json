@@ -42,5 +42,6 @@
 	"bs-extjs-filter-starts-with": "começa com",
 	"bs-extjs-filter-ends-with": "termina com",
 	"bs-extjs-title-success": "Sucesso",
-	"bs-extjs-title-warning": "Aviso"
+	"bs-extjs-title-warning": "Aviso",
+	"bs-extjs-categoryboxselect-emptytext": "Adicionar categoria"
 }
