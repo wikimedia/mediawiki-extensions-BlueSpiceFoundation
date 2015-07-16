@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"TomT0m"
+			"TomT0m",
+			"Wladek92"
 		]
 	},
 	"bs-deferred-action-status-pending": "En attente.",
@@ -11,7 +12,7 @@
 	"bs-deferred-action-status-error": "Échec.",
 	"bs-deferred-action-apicopypage-description": "Copier «$1» vers «$2».",
 	"bs-deferred-action-apieditpage-description": "Modifier « $1 ».",
-	"bs-deferred-batch-title": "Traitement du lot",
+	"bs-deferred-batch-title": "Traitement par lot",
 	"bs-deferred-batch-progress-desc": "Progrès",
 	"bs-deferred-batch-actions": "Actions",
 	"bs-deferred-batch-description": "Description",
