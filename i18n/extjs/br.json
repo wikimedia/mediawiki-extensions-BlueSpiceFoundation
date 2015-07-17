@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Y-M D",
-			"Fohanno"
+			"Fohanno",
+			"Ash Crow"
 		]
 	},
 	"bs-extjs-ok": "Mat eo",
@@ -39,5 +40,6 @@
 	"bs-extjs-filter-starts-with": "a grog gant",
 	"bs-extjs-filter-ends-with": "a echu gant",
 	"bs-extjs-title-success": "Berzh",
-	"bs-extjs-title-warning": "Diwallit"
+	"bs-extjs-title-warning": "Diwallit",
+	"bs-extjs-categoryboxselect-emptytext": "Ouzhpennañ ur rummad"
 }
