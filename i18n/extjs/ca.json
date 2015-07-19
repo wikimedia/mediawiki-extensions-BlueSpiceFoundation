@@ -3,11 +3,13 @@
 		"authors": [
 			"Ssola",
 			"Edustus",
-			"Macofe"
+			"Macofe",
+			"F3RaN"
 		]
 	},
 	"bs-extjs-no": "No",
 	"bs-extjs-copy": "Còpia",
 	"bs-extjs-label-page": "Pàgina",
-	"bs-extjs-title-warning": "Advertència"
+	"bs-extjs-title-warning": "Advertència",
+	"bs-extjs-categoryboxselect-emptytext": "Afegir una categoria"
 }

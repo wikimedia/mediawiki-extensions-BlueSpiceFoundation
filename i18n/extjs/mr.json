@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"V.narsikar"
+			"V.narsikar",
+			"Anuragbihani94"
 		]
 	},
 	"bs-extjs-filters": "गाळण्या",
 	"bs-extjs-filter-equals": "च्या बरोबर",
 	"bs-extjs-filter-contains": "यात आहे",
-	"bs-extjs-filter-starts-with": "ने सुरुवात"
+	"bs-extjs-filter-starts-with": "ने सुरुवात",
+	"bs-extjs-categoryboxselect-emptytext": "वर्ग जोडा"
 }
