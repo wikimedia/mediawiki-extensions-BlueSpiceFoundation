@@ -46,5 +46,6 @@
 	"bs-extjs-filter-greater-than": "större än",
 	"bs-extjs-filter-less-than": "mindre än",
 	"bs-extjs-title-success": "Lyckades",
-	"bs-extjs-title-warning": "Varning"
+	"bs-extjs-title-warning": "Varning",
+	"bs-extjs-categoryboxselect-emptytext": "Lägg till en kategori"
 }
