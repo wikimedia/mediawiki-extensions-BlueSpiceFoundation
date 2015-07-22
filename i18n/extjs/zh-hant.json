@@ -46,5 +46,6 @@
 	"bs-extjs-filter-greater-than": "大於",
 	"bs-extjs-filter-less-than": "小於",
 	"bs-extjs-title-success": "成功",
-	"bs-extjs-title-warning": "警告"
+	"bs-extjs-title-warning": "警告",
+	"bs-extjs-categoryboxselect-emptytext": "加入分類"
 }
