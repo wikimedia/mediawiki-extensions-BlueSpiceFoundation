@@ -1,13 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Cwlin0416"
 		]
 	},
 	"bs-deferred-action-status-pending": "待處理。",
+	"bs-deferred-action-status-running": "執行中...",
 	"bs-deferred-action-status-done": "完成。",
 	"bs-deferred-action-status-error": "失敗。",
+	"bs-deferred-action-apicopypage-description": "複製 \"$1\" 至 \"$2\"。",
 	"bs-deferred-action-apieditpage-description": "編輯 \"$1\"。",
+	"bs-deferred-batch-title": "批次處理中",
+	"bs-deferred-batch-progress-desc": "進度",
 	"bs-deferred-batch-actions": "操作",
 	"bs-deferred-batch-description": "描述",
 	"bs-deferred-batch-status": "狀態"

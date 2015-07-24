@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Sator"
 		]
 	},
 	"bs-extjs-ok": "Ados",
@@ -13,6 +14,7 @@
 	"bs-extjs-add": "Gehitu",
 	"bs-extjs-remove": "Kendu",
 	"bs-extjs-edit": "Aldatu",
+	"bs-extjs-copy": "Kopiatu",
 	"bs-extjs-error": "Errorea",
 	"bs-extjs-loading": "Kargatzen...",
 	"bs-extjs-saving": "gordetzen...",
