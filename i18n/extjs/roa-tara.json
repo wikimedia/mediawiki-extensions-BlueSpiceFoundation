@@ -43,5 +43,6 @@
 	"bs-extjs-filter-greater-than": "cchiù granne de",
 	"bs-extjs-filter-less-than": "cchiù piccinne de",
 	"bs-extjs-title-success": "Tutte apposte",
-	"bs-extjs-title-warning": "Avvertimende"
+	"bs-extjs-title-warning": "Avvertimende",
+	"bs-extjs-categoryboxselect-emptytext": "Aggiunge 'na categorije"
 }

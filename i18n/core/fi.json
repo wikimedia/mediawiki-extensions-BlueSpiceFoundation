@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stryn"
+			"Stryn",
+			"SMAUG"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -11,6 +12,7 @@
 	"bs-userbar_loginswitch_logout": "Kirjaudu ulos",
 	"bs-userbar_loginswitch_login": "Kirjaudu sisään",
 	"bs-no-information-available": "Ei tietoa saatavilla",
+	"bs-years-duration": "{{PLURAL:$1|yksi vuosi|$1 vuotta}}",
 	"bs-now": "nyt",
 	"bs-email-greeting-no-receiver": "Hei,",
 	"bs-email-footer": "Tämä viesti on luotu automaattisesti. Älä vastaa tähän viestiin.",
