@@ -43,5 +43,6 @@
 	"bs-extjs-filter-greater-than": "mayor que",
 	"bs-extjs-filter-less-than": "Menor que",
 	"bs-extjs-title-success": "Correuto",
-	"bs-extjs-title-warning": "Avisu"
+	"bs-extjs-title-warning": "Avisu",
+	"bs-extjs-categoryboxselect-emptytext": "Amestar una categoría"
 }
