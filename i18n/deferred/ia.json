@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-deferred-action-status-pending": "Pendente.",
+	"bs-deferred-action-status-running": "In execution...",
+	"bs-deferred-action-status-done": "\nFinite.",
+	"bs-deferred-action-status-error": "Fallite."
+}
