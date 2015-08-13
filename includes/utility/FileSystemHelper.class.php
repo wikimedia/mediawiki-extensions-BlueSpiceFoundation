@@ -58,20 +58,21 @@ class BsFileSystemHelper {
 			}
 		}
 
-		if (empty($sSubDirName)) {
+		$sFullPath = strpos( $sSubDirName, BS_DATA_DIR ) === 0 ? $sSubDirName : BS_DATA_DIR . DS . $sSubDirName;
+		if ( empty( $sFullPath ) ) {
 			wfProfileOut(__METHOD__);
 			return Status::newGood(BS_DATA_DIR);
-		} elseif (is_dir(BS_DATA_DIR . DS . $sSubDirName)) {
+		} elseif ( is_dir( $sFullPath ) ) {
 			wfProfileOut(__METHOD__);
-			return Status::newGood(BS_DATA_DIR . DS . $sSubDirName);
+			return Status::newGood( $sFullPath );
 		}
-		if (!mkdir(BS_DATA_DIR . DS . $sSubDirName, 0777, true)) {
+		if ( !mkdir( $sFullPath, 0777, true ) ) {
 			wfProfileOut(__METHOD__);
 			return Status::newFatal(BS_DATA_DIR . ' is not accessible');
 		}
 
 		wfProfileOut(__METHOD__);
-		return Status::newGood(BS_DATA_DIR . DS . $sSubDirName);
+		return Status::newGood( $sFullPath );
 	}
 
 	/**
