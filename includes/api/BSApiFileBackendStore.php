@@ -79,7 +79,9 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'file_width' => $oImg->getWidth(),
 				'file_height' => $oImg->getHeight(),
 				'file_mimetype' => $oImg->getMimeType(), # major/minor
-				'file_metadata' => unserialize( $oImg->getMetadata() ),
+				'file_metadata' => $oImg->getMetadata()
+					? unserialize( $oImg->getMetadata() )
+					: array(),
 				'file_user_text' => $oImg->getUser( 'text' ),
 				'file_extension' => $oImg->getExtension(),
 				'file_timestamp' => $oImg->getTimestamp(),
