@@ -76,6 +76,17 @@ BSPing = {
 
 			for ( var i = 0; i < aListenersToGo.length; i++) {
 				if ( aListenersToGo[i].callback !== false && typeof(aListenersToGo[i].callback) == "function" ) {
+					var skip = false;
+					$(document).trigger('BSPingBeforeSingleCallback', [
+						this,
+						aListenersToGo[i].callback,
+						result[aListenersToGo[i].sRef],
+						aListenersToGo[i],
+						skip
+					]);
+					if( skip ) {
+						continue;
+					}
 					aListenersToGo[i].callback( result[aListenersToGo[i].sRef], aListenersToGo[i] );
 				}
 			}
