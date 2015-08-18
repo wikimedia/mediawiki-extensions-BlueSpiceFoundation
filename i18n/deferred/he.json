@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"LaG roiL"
+		]
+	},
+	"bs-deferred-action-status-running": "פועל...",
+	"bs-deferred-action-status-done": "בוצע.",
+	"bs-deferred-action-status-error": "כשל.",
+	"bs-deferred-action-apicopypage-description": "העתקת \"$1\" ל-\"$2\".",
+	"bs-deferred-action-apieditpage-description": "עריכת \"$1\"",
+	"bs-deferred-batch-progress-desc": "התקדמות",
+	"bs-deferred-batch-actions": "פעולות",
+	"bs-deferred-batch-description": "תיאור",
+	"bs-deferred-batch-status": "מצב"
+}
