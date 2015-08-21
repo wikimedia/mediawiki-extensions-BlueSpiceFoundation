@@ -24,7 +24,8 @@ Ext.define( 'BS.store.LocalNamespaces', {
 			});
 		}
 
-		for ( var id in wgFormattedNamespaces ) {
+		var aFormattedNamespaces = mw.config.get( "wgFormattedNamespaces" );
+		for ( var id in aFormattedNamespaces ) {
 			if( this.excludeIds.indexOf( +id ) !== -1 ) {
 				continue;
 			}
@@ -33,7 +34,7 @@ Ext.define( 'BS.store.LocalNamespaces', {
 			if ( namespace.id === 0 ) {
 				namespace.namespace = mw.message( 'blanknamespace' ).plain();
 			} else {
-				namespace.namespace = wgFormattedNamespaces[id];
+				namespace.namespace = mw.config.get( "wgFormattedNamespaces" )[id];
 			}
 
 			namespaces.push( namespace );
