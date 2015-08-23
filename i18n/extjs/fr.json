@@ -3,7 +3,8 @@
 		"authors": [
 			"Gomoko",
 			"Fany",
-			"TomT0m"
+			"TomT0m",
+			"Urhixidur"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -29,7 +30,7 @@
 	"bs-extjs-label-user": "Utilisateur",
 	"bs-extjs-label-namespace": "Espace de noms",
 	"bs-extjs-label-page": "Page",
-	"bs-extjs-upload": "Télécharger",
+	"bs-extjs-upload": "Téléverser",
 	"bs-extjs-browse": "Naviguer",
 	"bs-extjs-uploading": "Téléchargement en cours…",
 	"bs-extjs-confirmNavigationTitle": "Suivre le lien",
