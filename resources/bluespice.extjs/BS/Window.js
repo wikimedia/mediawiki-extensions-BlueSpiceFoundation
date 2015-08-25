@@ -70,9 +70,15 @@ Ext.define( 'BS.Window', {
 	afterInitComponent: function() {
 		
 	},
-	onBtnOKClick: function() {
-		this.fireEvent( 'ok', this, this.getData() );
-		this.close();
+	show: function () {
+		this.setLoading( false );
+		this.callParent( arguments );
+	},
+	onBtnOKClick: function () {
+		this.setLoading( true );
+		if ( this.fireEvent( 'ok', this, this.getData() ) ) {
+			this.close();
+		}
 	},
 	onBtnCancelClick: function() {
 		this.resetData();
