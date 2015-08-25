@@ -27,7 +27,7 @@ Ext.define( 'BS.form.NamespaceCombo', {
 		//from text to id.
 		if( Ext.isString(value) ) {
 			var normText = value.toLowerCase().replace(' ', '_');
-			var id = wgNamespaceIds[normText];
+			var id = mw.config.get( "wgNamespaceIds" )[normText];
 			if( id ) {
 				value = id;
 			}

@@ -26,14 +26,14 @@ BSPing = {
 		}
 
 		$.post(
-			wgScriptPath + '/index.php',
+			mw.config.get( "wgScriptPath" ) + '/index.php',
 			{
 				action:'ajax',
 				rs:'BsCore::ajaxBSPing',
-				iArticleID: wgArticleId,
-				sTitle: wgTitle,
-				iNamespace: wgNamespaceNumber,
-				iRevision: wgCurRevisionId,
+				iArticleID: mw.config.get( "wgArticleId" ),
+				sTitle: mw.config.get( "wgTitle" ),
+				iNamespace: mw.config.get( "wgNamespaceNumber" ),
+				iRevision: mw.config.get( "wgCurRevisionId" ),
 				BsPingData: BsPingData
 			},
 			BSPing.pingCallback( aListenersToGo )
