@@ -63,6 +63,20 @@ class BsCoreHooks {
 		global $IP, $wgFavicon, $wgExtensionAssetsPath, $wgResourceLoaderDebug,
 			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
 
+		// Append CSS  for icon font support
+		$out->addHeadItem(
+			'icomoon-style',
+			"\n<link rel=\"stylesheet\" href=\"" .
+				htmlspecialchars( $wgExtensionAssetsPath ) .
+				"/BlueSpiceFoundation/resources/icomoon/icomoon.icons.css\">\n"
+			."<!--[if lt IE 8]>\n<link rel=\"stylesheet\" href=\"" .
+				htmlspecialchars( $wgExtensionAssetsPath ) .
+				"/BlueSpiceFoundation/resources/icomoon/icomoon.icons.ie7.css\">\n<![endif]-->\n"
+			. "<!--[if lt IE 8]>\n<script src=\"" .
+				htmlspecialchars( $wgExtensionAssetsPath ) .
+				"/BlueSpiceFoundation/resources/icomoon/icomoon.icons.ie7.js\"></script>\n<![endif]-->\n"
+		);
+
 		$out->addModuleScripts( 'ext.bluespice.scripts' );
 		$out->addModuleStyles( 'ext.bluespice.styles' );
 		$out->addModuleMessages( 'ext.bluespice.messages' );

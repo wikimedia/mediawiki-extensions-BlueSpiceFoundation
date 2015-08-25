@@ -48,7 +48,8 @@ $wgResourceModules['ext.bluespice'] = array(
 
 $wgResourceModules['ext.bluespice.styles'] = array(
 	'styles' => array(
-		'bluespice/bluespice.css'
+		'bluespice/bluespice.css',
+		'bluespice/bluespice.icons.css'
 	),
 	'position' => 'top'
 ) + $aResourceModuleTemplate;
