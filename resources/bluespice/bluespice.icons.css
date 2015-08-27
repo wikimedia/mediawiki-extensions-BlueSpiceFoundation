@@ -1,0 +1,119 @@
+.icon-create:before {
+	content: "\e624";
+}
+
+.icon-copy:before {
+	content: "\e627";
+}
+
+.icon-paste:before {
+	content: "\e628";
+}
+
+.icon-save:before {
+	content: "\e660";
+}
+
+.icon-search:before {
+	content: "\e67f";
+}
+
+.icon-edit:before {
+	content: "\e605";
+}
+
+.icon-settings:before {
+	content: "\e690";
+}
+
+.icon-rate:before {
+	content: "\e6d0";
+}
+
+.icon-home:before {
+	content: "\e600";
+}
+
+.icon-tools:before {
+	content: "\e68b";
+}
+
+.icon-upload:before {
+	content: "\e65f";
+}
+
+.icon-history:before {
+	content: "\e647";
+}
+
+.icon-delete:before {
+	content: "\e6a7";
+}
+
+.icon-menu:before {
+	content: "\e6b8";
+}
+
+.icon-print:before {
+	content: "\e650";
+}
+
+.icon-user:before {
+	content: "\e670";
+}
+
+.icon-pdf:before {
+	content: "\e7b2";
+}
+
+.icon-notification:before {
+	content: "\e64b";
+}
+
+.icon-message:before {
+	content: "\e760";
+}
+
+.icon-watch:before {
+	content: "\e6c6";
+}
+
+.icon-focus:before {
+	content: "\e6ae";
+}
+
+.icon-login:before {
+	content: "\e6b1";
+}
+
+.icon-comment:before {
+	content: "\e66a";
+}
+
+.icon-dashboard:before {
+	content: "\e6a2";
+}
+
+.icon-cut:before {
+	content: "\e73e";
+}
+
+.icon-filter:before {
+	content: "\e73f";
+}
+
+.icon-help:before {
+	content: "\e63b";
+}
+
+.icon-download:before {
+	content: "\e65e";
+}
+
+.icon-books:before {
+	content: "\e620";
+}
+
+.icon-admin:before {
+	content: "\e675";
+}
