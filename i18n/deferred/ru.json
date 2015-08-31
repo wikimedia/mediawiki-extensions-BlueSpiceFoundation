@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ghiutun"
+		]
+	},
+	"bs-deferred-action-status-pending": "Ожидание.",
+	"bs-deferred-action-status-done": "Готово.",
+	"bs-deferred-action-status-error": "Ошибка загрузки.",
+	"bs-deferred-action-apicopypage-description": "Скопировать «$1» в «$2».",
+	"bs-deferred-action-apieditpage-description": "Изменить «$1».",
+	"bs-deferred-batch-title": "Пакетная обработка",
+	"bs-deferred-batch-progress-desc": "Прогресс",
+	"bs-deferred-batch-actions": "Действия",
+	"bs-deferred-batch-description": "Описание",
+	"bs-deferred-batch-status": "Состояние"
+}
