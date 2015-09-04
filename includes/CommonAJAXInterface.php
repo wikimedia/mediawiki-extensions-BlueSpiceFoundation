@@ -98,9 +98,10 @@ class BsCommonAJAXInterface {
 		// so multi term queries also bring results
 		$sOp = $dbr->anyString();
 		$aLike = array( '', $sOp );
-		$sParams = explode( ' ', strtolower( $oQueryTitle->getText() ) );
-		foreach ( $sParams as $sParam ) {
-			$aLike[] = $sParam;
+		$aParams = explode( ' ', $oQueryTitle->getText() );
+		$oSearchEngine = SearchEngine::create();
+		foreach ( $aParams as $sParam ) {
+			$aLike[] = $oSearchEngine->normalizeText( $sParam );
 			$aLike[] = $sOp;
 		}
 
