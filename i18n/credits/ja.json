@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"Dude1717"
+			"Dude1717",
+			"Otokoume"
 		]
 	},
 	"specialcredits": "BlueSpice のクレジット",
@@ -10,5 +11,6 @@
 	"bs-credits-dnt": "デザインとテスト",
 	"bs-credits-contributors": "貢献者",
 	"bs-credits-translators": "翻訳者",
-	"bs-credits-translation": "翻訳"
+	"bs-credits-translation": "翻訳",
+	"bs-credits-th": "$1 からすべての翻訳者に感謝します。"
 }
