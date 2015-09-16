@@ -79,7 +79,7 @@ class BsCoreHooks {
 
 		$out->addModuleScripts( 'ext.bluespice.scripts' );
 		$out->addModuleStyles( 'ext.bluespice.styles' );
-		$out->addModuleMessages( 'ext.bluespice.messages' );
+		$out->addModules( 'ext.bluespice.messages' );
 		$out->addModules( 'ext.bluespice.extjs' );
 		$out->addModuleStyles( 'ext.bluespice.extjs.styles' );
 		$out->addModuleStyles( 'ext.bluespice.compat.vector.styles' );
