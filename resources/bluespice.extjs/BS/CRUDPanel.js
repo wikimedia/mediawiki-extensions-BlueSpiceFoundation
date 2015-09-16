@@ -14,6 +14,7 @@
 
 Ext.define( 'BS.CRUDPanel', {
 	extend: 'Ext.Panel',
+	requires: [ 'Ext.Toolbar', 'Ext.Button' ],
 	border: false,
 	hideBorder: true,
 	tbarHeight: 44,
@@ -25,7 +26,32 @@ Ext.define( 'BS.CRUDPanel', {
 	},
 
 	initComponent: function() {
-		this.btnAdd = Ext.create( 'Ext.Button', {
+		this.tbar = this.makeTbar();
+		this.items = this.makeItems();
+
+		$(document).trigger('BSCRUDPanelInitComponent', [this] );
+
+		this.afterInitComponent( arguments );
+
+		this.callParent(arguments);
+	},
+
+	makeItems: function() {
+		return [];
+	},
+
+	makeTbar: function() {
+		return new Ext.Toolbar({
+			style: {
+				backgroundColor: '#FFFFFF',
+				backgroundImage: 'none'
+			},
+			items: this.makeTbarItems()
+		});
+	},
+
+	makeTbarItems: function() {
+		this.btnAdd = new Ext.Button({
 			id: this.getId()+'-btn-add',
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_add.png',
 			iconCls: 'btn'+this.tbarHeight,
@@ -35,7 +61,7 @@ Ext.define( 'BS.CRUDPanel', {
 		});
 		this.btnAdd.on( 'click', this.onBtnAddClick, this );
 
-		this.btnEdit = Ext.create( 'Ext.Button', {
+		this.btnEdit = new Ext.Button({
 			id: this.getId()+'-btn-edit',
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config.png',
 			iconCls: 'btn'+this.tbarHeight,
@@ -46,7 +72,7 @@ Ext.define( 'BS.CRUDPanel', {
 		});
 		this.btnEdit.on( 'click', this.onBtnEditClick, this );
 
-		this.btnRemove = Ext.create( 'Ext.Button', {
+		this.btnRemove = new Ext.Button({
 			id: this.getId()+'-btn-remove',
 			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete.png',
 			iconCls: 'btn'+this.tbarHeight,
@@ -57,24 +83,8 @@ Ext.define( 'BS.CRUDPanel', {
 		});
 		this.btnRemove.on( 'click', this.onBtnRemoveClick, this );
 
-		this.tbar = Ext.create( 'Ext.Toolbar', {
-			style: {
-				backgroundColor: '#FFFFFF',
-				backgroundImage: 'none'
-			},
-			items: this.makeTbarItems()
-		});
-
 		this.addEvents( 'button-add','button-edit','button-delete' );
 
-		$(document).trigger('BSCRUDPanelInitComponent', [this] );
-
-		this.afterInitComponent( arguments );
-
-		this.callParent(arguments);
-	},
-
-	makeTbarItems: function() {
 		return [
 			this.btnAdd,
 			this.btnEdit,
