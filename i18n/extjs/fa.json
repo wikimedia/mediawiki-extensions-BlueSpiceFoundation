@@ -44,5 +44,6 @@
 	"bs-extjs-filter-greater-than": "بزرگتر از",
 	"bs-extjs-filter-less-than": "کمتر از",
 	"bs-extjs-title-success": "موفق",
-	"bs-extjs-title-warning": "هشدار"
+	"bs-extjs-title-warning": "هشدار",
+	"bs-extjs-categoryboxselect-emptytext": "افزودن رده"
 }
