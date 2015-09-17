@@ -1,0 +1,51 @@
+BlueSpice comes with the ExtJS JavaScript Framework by Sencha Inc.
+We use version 4.2.1.883, which is the lastest build from the V4 line released
+under the GPL licence.
+
+==Using it in extensions==
+When developing an extension create a "base namespace" folder in your
+extensions "resources/" or "modules/" directory. The "base namespace" should be
+a unique identifier for your extension. E.g. "BS.MyExtension". Within this
+directory you can place your class definitions ('Ext.define' calls). If you
+seperate your code into subnamespaces, every portion of the namespace should be
+a subfolder. E.g for class 'BS.MyExtension.dialog.EditRow' the structure would
+be:
+
+ <mediawiki>/extensions/MyExtension/resources/
+     BS.MyExtension/
+         dialog/
+             EditRow.js
+
+By using this convention ExtJS will load the class files on demand. There is no
+need to add the files from the "base namespace" folder to a dedicated RL module.
+
+You can also modify the ExtJS autoloader by calling 'setPath' on 'Ext.Loader':
+
+Ext.Loader.setPath( 'BS.NotMyExtension.something', mw.config.get('wgScriptPath')
+ + '/extensions/MyExtension/resources/BS.NotMyExtension.something'
+);
+
+Don't forget to run this code only when 'ext.bluespice.extjs' is loaded
+('mw.loader.using')!
+
+==API documentation==
+For a complete documentation of the ExtJS framework see
+http://docs.sencha.com/extjs/4.2.1
+
+==Themes==
+By default the "bluespice" theme is used. It it a custom build based on ExtJS's
+'neptune' theme, created with SenchaCmd.
+
+Please refer to the official ExtJS documentation to learn how to create your
+own themes: http://docs.sencha.com/extjs/4.2.1/#!/guide/theming
+
+If you want to use a different theme (e.g. on a custom BlueSpice/MediaWiki skin)
+you can do so by redefining the 'ext.bluespice.extjs.theme' module in your
+skin's setup file or in the LocalSettings.php:
+
+ $wgResourceModules['ext.bluespice.extjs.theme'] = array(
+     //...
+ );
+
+==Hints==
+* IE 8/9 Issues: http://stackoverflow.com/questions/8092261/extjs-4-load-mask-giving-errors-in-ie8-and-ie9-when-used-while-opening-a-windo

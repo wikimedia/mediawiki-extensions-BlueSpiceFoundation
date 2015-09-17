@@ -60,10 +60,9 @@ class BsCoreHooks {
 	* @return boolean
 	*/
 	public static function onBeforePageDisplay( $out, $skin ) {
-		global $IP, $wgFavicon, $wgExtensionAssetsPath, $wgResourceLoaderDebug,
-			$bsgExtJSFiles, $bsgExtJSThemes, $bsgExtJSTheme;
+		global $IP, $wgFavicon, $wgExtensionAssetsPath;
 
-		// Append CSS  for icon font support
+		// Append CSS for icon font support
 		$out->addHeadItem(
 			'icomoon-style',
 			"\n<link rel=\"stylesheet\" href=\"" .
@@ -79,41 +78,10 @@ class BsCoreHooks {
 
 		$out->addModuleScripts( 'ext.bluespice.scripts' );
 		$out->addModuleStyles( 'ext.bluespice.styles' );
-		$out->addModules( 'ext.bluespice.messages' );
-		$out->addModules( 'ext.bluespice.extjs' );
-		$out->addModuleStyles( 'ext.bluespice.extjs.styles' );
+		$out->addModuleMessages( 'ext.bluespice.messages' );
 		$out->addModuleStyles( 'ext.bluespice.compat.vector.styles' );
 
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
-
-		$bIsDebug = $out->getRequest()->getVal('debug', 'false') != 'false'
-						|| $wgResourceLoaderDebug;
-
-		//Add ExtJS Files
-		self::addNonRLResources($out, $bsgExtJSFiles, 'extjs', $bIsDebug);
-		//Add ExtJS Theme files
-		$sTheme = isset($bsgExtJSThemes[$bsgExtJSTheme]) ? $bsgExtJSTheme :'bluespice' ;
-		self::addNonRLResources($out, $bsgExtJSThemes[$sTheme], $sTheme, $bIsDebug);
-
-		//Use ExtJS's built-in i18n. This may fail for some languages...
-		$sLangCode = preg_replace('/(-|_).*$/', '', $out->getLanguage()->getCode());
-		//TODO: make a mapping between MW-LangCodes and ExtJS files!
-		$aExtJSLangs = array(
-			'af', 'el_GR', 'fa', 'hr', 'lt', 'pl', 'sk', 'tr', 'bg', 'en',
-			'fi', 'hu', 'lv', 'pt', 'sl', 'ukr', 'ca', 'en_AU', 'fr', 'id',
-			'mk', 'pt_BR', 'sr',  'vn', 'cs', 'en_GB', 'fr_CA', 'it', 'nl',
-			'pt_PT', 'sr_RS', 'zh_CN','da', 'es', 'gr', 'ja', 'no_NB', 'ro',
-			'sv_SE', 'zh_TW', 'de', 'et', 'he', 'ko', 'no_NN', 'ru', 'th'
-		);
-
-		if ($sLangCode != 'en' && in_array( $sLangCode, $aExtJSLangs ) ) {
-			$out->addHeadItem(
-				'extjs-lang',
-				Html::linkedScript( $wgExtensionAssetsPath
-					.'/BlueSpiceFoundation/resources/extjs/locale/ext-lang-' . $sLangCode . '.js'
-				)
-			);
-		}
 
 		$aScriptBlocks = BsCore::getClientScriptBlocks();
 		foreach ( $aScriptBlocks as $sKey => $aClientScriptBlock ) {
@@ -147,41 +115,20 @@ class BsCoreHooks {
 		$aAssetsPaths = array(
 			'BlueSpiceFoundation' => $wgExtensionAssetsPath.'/BlueSpiceFoundation'
 		);
-		$aExtJSPaths = array();
 
 		foreach( $aExtensionConfs as $sName => $aConf ) {
 			$sAssetsPath = '';
 			if( $aConf['baseDir'] == 'ext' ) {
 				$sAssetsPath = '/BlueSpiceExtensions/'.$sName;
 			} else {
-				//TODO: User MWInit::extSetupPath() or similar
 				$sAssetsPath = str_replace( $IP.DS.'extensions', '', $aConf['baseDir'] );
 				$sAssetsPath = str_replace( "\\", "/", $sAssetsPath );
 			}
 			$sAssetsPath = $wgExtensionAssetsPath.$sAssetsPath;
 			$aAssetsPaths[$sName] = $sAssetsPath;
-
-			//Build (potential) ExtJS Autoloader paths
-			$sExtJSNamespace = "BS.$sName";
-			$aExtJSPaths[$sExtJSNamespace] = "$sAssetsPath/resources/$sExtJSNamespace";
 		}
 		//TODO: Implement as RL Module: see ResourceLoaderUserOptionsModule
 		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
-		$sBasePath = $wgExtensionAssetsPath.'/BlueSpiceFoundation/resources/bluespice.extjs';
-
-		$sExtJS = '$(function(){';
-		$sExtJS.= '  Ext.BLANK_IMAGE_URL = mw.config.get("wgScriptPath") '
-				. '    + "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/images/s.gif";';
-		$sExtJS.= '  Ext.Loader.setConfig({ enabled: true, disableCaching: '.FormatJson::encode($bIsDebug).' });';
-		$sExtJS.= "  Ext.Loader.setPath( 'BS',     '$sBasePath' + '/BS');";
-		$sExtJS.= "  Ext.Loader.setPath( 'Ext.ux', '$sBasePath' + '/Ext.ux');";
-		$sExtJS.= '  Ext.Loader.setPath('.FormatJson::encode( $aExtJSPaths).');';
-		$sExtJS.= '});';
-
-		$out->addScript(
-			Html::inlineScript( $sExtJS )
-		);
-
 		return true;
 	}
 
@@ -197,46 +144,6 @@ class BsCoreHooks {
 			$aNormalized[] = strtolower( $sItem );
 		}
 		return array_unique( $aNormalized );
-	}
-
-	/**
-	 * Adds styles and scripts to document head without using MediaWikis
-	 * resourceloader
-	 * HINT: IE 8/9 Issues
-	 * http://stackoverflow.com/questions/8092261/extjs-4-load-mask-giving-errors-in-ie8-and-ie9-when-used-while-opening-a-windo
-	 * @param OutputPage $out
-	 * @param array $aFiles
-	 * @param string $sKey Allows HeadItem override
-	 * @param boolean $bIsDebug Wether or not to include debug files
-	 */
-	protected static function addNonRLResources($out, $aFiles, $sKey, $bIsDebug) {
-		global $wgScriptPath;
-
-		$aScripts = isset( $aFiles['scripts'] ) ? $aFiles['scripts'] : array();
-		$aStyles  = isset( $aFiles['styles'] )  ? $aFiles['styles']  : array();
-
-		if( $bIsDebug ) { //DEBUG Mode
-			if( isset($aFiles['debug-scripts']) ) {
-				$aScripts = $aFiles['debug-scripts'];
-			}
-			if( isset($aFiles['debug-styles']) ) {
-				$aStyles = $aFiles['debug-styles'];
-			}
-		}
-
-		$iScriptCount = 0;
-		foreach( $aScripts as $sScript ) {
-
-			$out->addHeadItem(
-				$sKey.'-'.$iScriptCount,
-				Html::linkedScript( $wgScriptPath.$sScript)
-			);
-			$iScriptCount++;
-		}
-
-		foreach( $aStyles as $sStyle ) {
-			$out->addStyle( $wgScriptPath.$sStyle );
-		}
 	}
 
 	/**

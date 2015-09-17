@@ -1,6 +1,21 @@
 ( function ( mw, bs, $, d,undefined ) {
+	var basePath = mw.config.get("wgExtensionAssetsPath") + '/BlueSpiceFoundation/resources/bluespice.extjs';
 
-	//This allows us to place anchortags with special data attributes
+	Ext.BLANK_IMAGE_URL = mw.config.get( "wgScriptPath" ) + "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/images/s.gif";
+	Ext.Loader.setConfig({
+		enabled: true,
+		disableCaching: mw.config.get("debug")
+	});
+	Ext.Loader.setPath( 'BS',     basePath + '/BS');
+	Ext.Loader.setPath( 'Ext.ux', basePath + '/Ext.ux');
+	var bsExtensionManagerAssetsPaths = mw.config.get( 'bsExtensionManagerAssetsPaths' );
+	var extNamespace;
+	for( var extName in bsExtensionManagerAssetsPaths ) {
+		extNamespace = 'BS.' + extName;
+		Ext.Loader.setPath( extNamespace, bsExtensionManagerAssetsPaths[extName] + '/resources/' + extNamespace );
+	}
+
+	//This allows us to place elements with special data attributes
 	Ext.QuickTips.init();
 
 	//Allows to have stateful ExtJS components
@@ -98,7 +113,6 @@
 	};
 
 	bs.extjs = extjs;
-	//TODO: not nice... find better way.
 	$(d).trigger( 'BSExtJSReady', [ bs.extjs ] );
 
 }( mediaWiki, blueSpice, jQuery, document ) );

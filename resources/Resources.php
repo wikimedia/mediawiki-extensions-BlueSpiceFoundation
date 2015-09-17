@@ -54,12 +54,50 @@ $wgResourceModules['ext.bluespice.styles'] = array(
 	'position' => 'top'
 ) + $aResourceModuleTemplate;
 
-$wgResourceModules['ext.bluespice.extjs'] = array(
+$wgResourceModules['ext.bluespice.extjs.base'] = array(
+	'class' => 'ResourceLoaderExtJSModule' //Provides framesork JS and I18N
+) + $aResourceModuleTemplate;
+
+//TODO: Implement as subclass of ResourceLoaderFileModule to provide RTL support
+$wgResourceModules['ext.bluespice.extjs.theme'] = array(
 	'scripts' => array(
-		'bluespice.extjs/bluespice.extjs.js',
+		//Some skin specific overrides. As "bluespice-theme" derives from
+		//ExtJS's "neptune" we need to include this framework file
+		'extjs/ext-theme-neptune-debug.js'
+	),
+	'styles' => array(
+		//Custom build ot ExtJS's "neptune" theme
+		'bluespice.extjs/bluespice-theme/bluespice-theme-all-debug.css',
 	),
 	'dependencies' => array(
-		'ext.bluespice'
+		//Yes, the theme depends on the framework, not the other way round.
+		//This is because the theme may have JS that depends on the framework.
+		//If we didn't have it this way we would need to specify a seperate
+		//'scripts' RL module for the theme.
+		'ext.bluespice.extjs.base'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs.theme.ux'] = array(
+	'styles' => array(
+		//Mainly Ext.ux styles that are not part of the theme
+		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',
+		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
+		'bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css',
+		'bluespice.extjs/Ext.ux/css/TabScrollerMenu.css',
+		'bluespice.extjs/Ext.ux/grid/css/GridFilters.css',
+		'bluespice.extjs/Ext.ux/grid/css/RangeMenu.css',
+		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs'] = array(
+	'scripts' => array(
+		'bluespice.extjs/bluespice.extjs.js'
+	),
+	'styles' => array(
+		//There are some weird legacy CSS fixes. Don't know if they still apply
+		'bluespice.extjs/bluespice.extjs.fixes.css',
 	),
 	'messages' => array(
 		'bs-extjs-ok',
@@ -104,22 +142,11 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-title-warning',
 		'bs-extjs-categoryboxselect-emptytext'
 	),
-	'position' => 'bottom'
-) + $aResourceModuleTemplate;
-
-$wgResourceModules['ext.bluespice.extjs.styles'] = array(
-	//Those are mainly Ext.ux styles that are not part of ext-all.css or the theme
-	'styles' => array(
-		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',
-		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
-		'bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css',
-		'bluespice.extjs/Ext.ux/css/TabScrollerMenu.css',
-		'bluespice.extjs/Ext.ux/grid/css/GridFilters.css',
-		'bluespice.extjs/Ext.ux/grid/css/RangeMenu.css',
-		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css',
-		'bluespice.extjs/bluespice.extjs.fixes.css'
+	'dependencies' => array(
+		'ext.bluespice.extjs.theme.ux',
+		'ext.bluespice.extjs.theme'
 	)
-	) + $aResourceModuleTemplate;
+) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 	'dependencies' => array(

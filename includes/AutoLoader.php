@@ -125,6 +125,8 @@ $GLOBALS['wgAutoloadClasses']['ViewWidget'] = __DIR__ . '/outputhandler/views/vi
 // Replace Mediawikis ApiFormatJson class with our own to prevent some errors with the application/json header.
 $GLOBALS['wgAutoloadClasses']['ApiFormatJson'] = __DIR__."/api/ApiFormatJsonMW.php";
 
+$GLOBALS['wgAutoloadClasses']['ResourceLoaderExtJSModule'] = __DIR__."/resourceloader/ResourceLoaderExtJSModule.php";
+
 /**
  * Behebt einen Bug in Oracle Datenbank-Abstraction der die update.php abstürzen lässt.
  */
