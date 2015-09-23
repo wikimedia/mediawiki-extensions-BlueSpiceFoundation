@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Okras",
-			"Agilight"
+			"Agilight",
+			"Kaganer"
 		]
 	},
 	"bs-ns_main": "(Страницы)",
@@ -42,7 +43,7 @@
 	"bs-imageofotheruser": "Вы не можете загрузить изображение для другого участника.",
 	"bs-pref-sortalph": "Сортировать пространства имён в алфавитном порядке",
 	"bs-permissionerror": "Ошибка прав доступа!",
-	"bs-filesystemhelper-no-directory": "<code>$1</code> не является правильным каталога.",
+	"bs-filesystemhelper-no-directory": "<code>$1</code> — некорректный каталог.",
 	"bs-filesystemhelper-has-path-traversal": "Обнаружен обход пути!",
 	"bs-filesystemhelper-file-not-exists": "Файл <code>$1</code> не существует.",
 	"bs-filesystemhelper-file-copy-error": "Файл <code>$1</code> не может быть скопирован.",
