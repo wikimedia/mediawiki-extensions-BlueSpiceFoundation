@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Skalcaa"
+			"Skalcaa",
+			"Dbc334"
 		]
 	},
 	"bs-extjs-ok": "V redu",
@@ -13,6 +14,7 @@
 	"bs-extjs-add": "Dodaj",
 	"bs-extjs-remove": "Odstrani",
 	"bs-extjs-edit": "Uredi",
+	"bs-extjs-copy": "Kopiraj",
 	"bs-extjs-hint": "Namig",
 	"bs-extjs-error": "Napaka",
 	"bs-extjs-confirm": "Potrdi",
@@ -42,5 +44,6 @@
 	"bs-extjs-filter-greater-than": "večji kot",
 	"bs-extjs-filter-less-than": "manjši kot",
 	"bs-extjs-title-success": "Uspeh",
-	"bs-extjs-title-warning": "Opozorilo"
+	"bs-extjs-title-warning": "Opozorilo",
+	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorijo"
 }
