@@ -45,5 +45,6 @@
 	"bs-extjs-filter-greater-than": "більше, ніж",
 	"bs-extjs-filter-less-than": "менше, ніж",
 	"bs-extjs-title-success": "Успіх",
-	"bs-extjs-title-warning": "Застереження"
+	"bs-extjs-title-warning": "Застереження",
+	"bs-extjs-categoryboxselect-emptytext": "Додати категорію"
 }
