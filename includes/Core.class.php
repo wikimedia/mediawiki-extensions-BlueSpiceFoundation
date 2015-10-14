@@ -357,8 +357,14 @@ class BsCore {
 		return BSROOTDIR;
 	}
 
-	// todo msc 2011-04-27 wiederholter Aufruf führt schnell zu einem Speicherüberlauf (>128MB bei Indexierung)
-	// scheinbar wird ausserhalb der Methode gecacht! Aufruf mit adapter->parseWikiText($text, true) schafft KEINE Abhilfe.
+	/**
+	 * Parses WikiText into HTML
+	 * @param string $sText WikiText
+	 * @param Title $oTitle
+	 * @param bool $nocache DISFUNCTIONAL and therefore DEPRECATED. There is no chaching anyway.
+	 * @param bool $numberheadings
+	 * @return string The HTML result
+	 */
 	public function parseWikiText( $sText, $oTitle, $nocache = false, $numberheadings = null ) {
 		wfProfileIn('BS::' . __METHOD__);
 
@@ -373,7 +379,9 @@ class BsCore {
 
 		// TODO MRG20110707: Check it this cannot be unified
 
-		if ( $nocache ) self::$oLocalParser->disableCache();
+		if ( $nocache ) {
+			wfDebug( __METHOD__.': Use of $nocache parameter is deprecated. There is no caching anyway.' );
+		}
 
 		if ( !( $oTitle instanceof Title ) ) return '';
 
