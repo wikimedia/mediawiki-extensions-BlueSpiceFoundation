@@ -1,11 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Beta16"
 		]
 	},
+	"bs-deferred-action-status-pending": "In attesa.",
+	"bs-deferred-action-status-running": "In esecuzione...",
 	"bs-deferred-action-status-done": "Fatto.",
+	"bs-deferred-action-status-error": "Non riuscito.",
+	"bs-deferred-action-apicopypage-description": "Copia \"$1\" in \"$2\".",
 	"bs-deferred-action-apieditpage-description": "Modifica \"$1\".",
+	"bs-deferred-batch-progress-desc": "Avanzamento",
 	"bs-deferred-batch-actions": "Azioni",
 	"bs-deferred-batch-description": "Descrizione",
 	"bs-deferred-batch-status": "Stato"
