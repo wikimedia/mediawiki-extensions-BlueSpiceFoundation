@@ -614,7 +614,7 @@ class BsBaseTemplate extends BaseTemplate {
 			echo Html::rawElement(
 				'div',
 				array( 'id' => 'bs-skyscraper' ),
-				$this->html( 'bs_skyscraper' )
+				$this->data['bs_skyscraper']
 			);
 		}
 	}
