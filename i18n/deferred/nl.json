@@ -6,13 +6,13 @@
 			"Esketti"
 		]
 	},
-	"bs-deferred-action-status-pending": "In behandeling",
-	"bs-deferred-action-status-running": "Het uitvoeren van...",
+	"bs-deferred-action-status-pending": "In behandeling.",
+	"bs-deferred-action-status-running": "Bezig met uitvoeren...",
 	"bs-deferred-action-status-done": "Uitgevoerd.",
 	"bs-deferred-action-status-error": "Mislukt.",
-	"bs-deferred-action-apicopypage-description": "Kopiëren \"$1\" \"$2\".",
-	"bs-deferred-action-apieditpage-description": "\"$1\" bewerken",
-	"bs-deferred-batch-title": "Batch-verwerking",
+	"bs-deferred-action-apicopypage-description": "\"$1\" kopiëren naar \"$2\".",
+	"bs-deferred-action-apieditpage-description": "\"$1\" bewerken.",
+	"bs-deferred-batch-title": "Batchverwerking",
 	"bs-deferred-batch-progress-desc": "Voortgang",
 	"bs-deferred-batch-actions": "Handelingen",
 	"bs-deferred-batch-description": "Beschrijving",
