@@ -474,9 +474,9 @@ class BsFileSystemHelper {
 		$sCheckDataPath = ($bIsAbsolute ? '' : BS_DATA_DIR . DS) . $sPath;
 		$sCheckCachePath = ($bIsAbsolute ? '' : BS_CACHE_DIR . DS) . $sPath;
 		if (file_exists($sCheckDataPath)) {
-			return (strpos(realpath($sCheckDataPath), BS_DATA_DIR . DS) !== 0);
+			return (strpos(realpath($sCheckDataPath), realpath(BS_DATA_DIR . DS)) !== 0);
 		} elseif (file_exists($sCheckCachePath)) {
-			return (strpos(realpath($sCheckCachePath), BS_CACHE_DIR . DS) !== 0);
+			return (strpos(realpath($sCheckCachePath), realpath(BS_CACHE_DIR . DS)) !== 0);
 		} else {
 			$sPath = self::normalizePath($sCheckDataPath);
 			if( $sPath  === null ) {
