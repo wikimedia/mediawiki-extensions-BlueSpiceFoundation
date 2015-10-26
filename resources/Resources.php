@@ -42,8 +42,7 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bs-one-unit-ago',
 		'bs-now',
 		'blanknamespace', //MediaWiki
-	),
-	'position' => 'bottom' // available since r85616
+	)
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.styles'] = array(

@@ -14,6 +14,8 @@ $(function(){
 			overflowY: 'auto'
 		};
 
-		Ext.create('Ext.tip.ToolTip', conf);
+		mw.using( 'ext.bluespice.extjs' ).done(function() {
+			Ext.create( 'Ext.tip.ToolTip', conf );
+		});
 	});
 });
