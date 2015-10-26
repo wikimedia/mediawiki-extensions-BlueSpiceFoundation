@@ -42,3 +42,78 @@
 	height:44px!important;
 	width:44px!important;
 }
+
+.bluebox,
+.box-blue {
+	border:1px solid #6093D2;
+	background-color:#AEC8E8;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.beigebox,
+.box-beige {
+	border:1px solid #000;
+	background-color:#E0B978;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.greenbox,
+.box-green {
+	border:1px solid #237E14;
+	background-color:#DEFEBB;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.yellowbox,
+.box-yellow {
+	border:1px solid #DDDD00;
+	background-color:#FFFFAA;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.redbox,
+.box-red {
+	border:1px solid #DD0000;
+	background-color:#FFAAAA;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.blueborder,
+.border-blue {
+	border:1px solid #AEC8E8;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.beigeborder,
+.border-beige {
+	border:1px solid #E0B978;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.greenborder,
+.border-green {
+	border:1px solid #237E14;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.yellowborder,
+.border-yellow {
+	border:1px solid #DDDD00;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
+
+.redborder,
+.border-red {
+	border:1px solid #DD0000;
+	margin:0 0 10px;
+	padding:.3em .6em;
+}
