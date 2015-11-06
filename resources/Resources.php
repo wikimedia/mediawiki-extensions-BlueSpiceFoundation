@@ -7,20 +7,19 @@ if( !defined( 'MEDIAWIKI' ) ) {
 $aResourceModuleTemplate = array(
 	'localBasePath' => $IP . '/extensions/BlueSpiceFoundation/resources',
 	'remoteExtPath' => 'BlueSpiceFoundation/resources',
-	'group' => 'ext.bluespice',
 	'targets' => array( 'mobile', 'desktop' )
 );
 
 $wgResourceModules['ext.bluespice'] = array(
 	'scripts' => array(
-		'bluespice/bs.tools.js',
 		'bluespice/bluespice.js',
 		'bluespice/bluespice.extensionManager.js',
 		'bluespice/bluespice.util.js',
 		'bluespice/bluespice.wikiText.js',
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
-		'bluespice/bluespice.ping.js'
+		'bluespice/bluespice.ping.js',
+		'bluespice/bluespice.tooltip.js'
 	),
 	'messages' => array(
 		'largefileserver',

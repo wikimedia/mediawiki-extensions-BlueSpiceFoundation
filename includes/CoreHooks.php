@@ -76,9 +76,8 @@ class BsCoreHooks {
 				"/BlueSpiceFoundation/resources/icomoon/icomoon.icons.ie7.js\"></script>\n<![endif]-->\n"
 		);
 
-		$out->addModuleScripts( 'ext.bluespice.scripts' );
+		$out->addModules( 'ext.bluespice' );
 		$out->addModuleStyles( 'ext.bluespice.styles' );
-		$out->addModuleMessages( 'ext.bluespice.messages' );
 		$out->addModuleStyles( 'ext.bluespice.compat.vector.styles' );
 
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
