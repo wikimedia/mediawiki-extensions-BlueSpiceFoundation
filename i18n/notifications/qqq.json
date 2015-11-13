@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Markus Glaser <glaser@hallowelt.com>"
+			"Markus Glaser <glaser@hallowelt.com>",
+			"Raymond"
 		]
 	},
 	"bs-notifications-addacount": "Short message that a user was created. Parameters:\n* $1 username of the created user",
