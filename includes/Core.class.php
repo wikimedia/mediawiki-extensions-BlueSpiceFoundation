@@ -335,6 +335,8 @@ class BsCore {
 		}
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load Settings');
 
+		BSNotifications::init();
+
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
 		BsExtensionManager::includeExtensionFiles( self::$oInstance );
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');

@@ -76,6 +76,7 @@ $wgMessagesDirs['BlueSpice.ExtJS'] = __DIR__ . '/i18n/extjs';
 $wgMessagesDirs['BlueSpice.ExtJS.Portal'] = __DIR__ . '/i18n/extjs-portal';
 $wgMessagesDirs['BlueSpice.Deferred'] = __DIR__ . '/i18n/deferred';
 $wgMessagesDirs['Validator'] = __DIR__ . '/i18n/validator';
+$wgMessagesDirs['Notifications'] = __DIR__ . '/i18n/notifications';
 
 //I18N Backwards compatibility
 $wgExtensionMessagesFiles += array(

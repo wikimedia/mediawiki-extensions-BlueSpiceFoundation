@@ -37,7 +37,7 @@ $GLOBALS['wgAutoloadClasses']['BsConfig'] = __DIR__."/Config.class.php";
 $GLOBALS['wgAutoloadClasses']['BSDebug'] = __DIR__."/Debug.php";
 $GLOBALS['wgAutoloadClasses']['BsException'] = __DIR__."/Exception.class.php";
 $GLOBALS['wgAutoloadClasses']['BsExtensionManager'] = __DIR__."/ExtensionManager.class.php";
-$GLOBALS['wgAutoloadClasses']['BsMailer'] = __DIR__."/Mailer.class.php";
+$GLOBALS['wgAutoloadClasses']['BsMailer'] = __DIR__."/Mailer.class.php";//Deprecated
 $GLOBALS['wgAutoloadClasses']['BsXHRBaseResponse'] = __DIR__."/XHRBaseResponse.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRJSONResponse'] = __DIR__."/XHRBaseResponse.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRResponseStatus'] = __DIR__."/XHRBaseResponse.class.php";
@@ -49,6 +49,11 @@ $GLOBALS['wgAutoloadClasses']['BsCAResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsCAIResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSSortParam'] = __DIR__."/ExtJSStoreParams.php";
+
+//notifications
+$GLOBALS['wgAutoloadClasses']['BSNotifications'] = __DIR__."/Notifications.class.php";
+$GLOBALS['wgAutoloadClasses']['BSNotificationHandlerInterface'] = __DIR__."/notifications/NotificationHandler.php";
+$GLOBALS['wgAutoloadClasses']['BSNotificationHandler'] = __DIR__."/notifications/NotificationHandler.php";
 
 //api
 $GLOBALS['wgAutoloadClasses']['BSStandardAPIResponse'] = __DIR__."/api/BSStandardAPIResponse.php";
