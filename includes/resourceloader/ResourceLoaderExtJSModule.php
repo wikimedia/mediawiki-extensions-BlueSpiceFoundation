@@ -1,6 +1,9 @@
 <?php
 
-class ResourceLoaderExtJSModule extends ResourceLoaderFileModule {
+class ResourceLoaderExtJSModule extends ResourceLoaderModule {
+
+	protected $targets = array( 'desktop', 'mobile' );
+
 	public function getScript(\ResourceLoaderContext $context) {
 		$aContents = array();
 
