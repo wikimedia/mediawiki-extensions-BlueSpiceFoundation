@@ -29,13 +29,13 @@
  */
 $wgBlueSpiceExtInfo = array(
 	'name' => 'BlueSpice for MediaWiki',
-	'version' => '2.23.1.1',
-	'status' => 'stable',
+	'version' => '2.23.2-beta',
+	'status' => 'beta',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
 	'url' => 'http://www.blue-spice.org',
 	'desc' => 'Makes MediaWiki enterprise ready.',
 	'author' => array(
-		'[http://www.hallowelt.biz Hallo Welt! Medienwerkstatt GmbH]',
+		'[http://www.hallowelt.com Hallo Welt! Medienwerkstatt GmbH]',
 	)
 );
 
@@ -48,7 +48,7 @@ $wgExtensionCredits['other'][] = array(
 
 $wgFooterIcons['poweredby']['bluespice'] = array(
 	"src" => "$wgScriptPath/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
-	"url" => "http://blue-spice.org",
+	"url" => "http://bluespice.com",
 	"alt" => "Powered by BlueSpice",
 );
 

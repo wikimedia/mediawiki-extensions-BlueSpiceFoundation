@@ -5,6 +5,155 @@
 
 = BlueSpice release notes =
 
+==BlueSpice 2.23.1.1==
+
+BlueSpice 2.23.1.1 is a security release.
+
+===Note===
+This release indends to fix a security vulnerability in the shoutbox extension.
+For details see https://gerrit.wikimedia.org/r/#/c/220410/
+
+===Changelog===
+
+====BlueSpiceExtensions====
+* Shoutbox: XSS Security fix
+
+==BlueSpice 2.23.1==
+
+BlueSpice 2.23.1 is a minor and maintenance release.
+
+===Note===
+This release includes the security fix commited on 24.06.2015.
+For details see https://gerrit.wikimedia.org/r/#/c/220410/
+
+===New features===
+* Database: added experimental SQLite compatibility
+* ExtensionInfo: Added link to Mediawiki version page
+* Shoutbox: mentions of users with @ now possible and with ajax autocomplete
+* SmartList: Added mode "whatlinkshere"
+
+===Changelog===
+====BlueSpiceFoundation====
+* Configuration: Allow all file types to be uploaded. This is fine in an intranet environment
+* Configuration: Added file protocol to DefaultSettings
+* Configuration: Changed RSS whitelist
+* Configuration: Removed a hardcoded path for the BlueSpice config files
+* Database: added experimental SQLite compatibility
+* General: Changed include order of BlueSpice
+* General: Added new global $bsgPermissionConfig for adding some configs to every permission
+* General: Added missing query param returnto to login link
+* MediaWiki compatibility: Update ApiResult handling for mediawiki/core change I7b37295e
+* MediaWiki compatibility: Remove long-deprecated ApiBase::getVersion()
+* BsFileSystemHelper: Allow upload of namespace prefixed files. Quickfix to support NSFileRepo
+* BsGroupHelper: Temporary user group now compatible with Lockdown extension
+* BsMailer: Mail footer message gets actually rendered now
+* GridFilter: An icon is shown when a filter is active on a grid column
+* NamespaceCombo: Removed defaultValue
+* ViewBaseElement: Fixed handling of DATA
+
+====BlueSpiceExtensions====
+* Avatars: Fixed warning if no user image was set
+* Blog: Added bs:blog:time tag
+* Blog: Prevent overlapping when thumbnails are used
+* Checklist: Fixed checkbox insert in IE
+* ExtensionInfo: Added link to MediaWiki version page
+* InsertCategory: Make it possible to remove categories in view mode
+* InsertFile: Fix for empty window after inserting a file
+* InsertImage: Fix when no links are present
+* InsertImage: Fixes in error handling
+* Notifications: Fixed bug with notifications badges in non-BlueSpice skins
+* PageTemplates: Added message parsing
+* PermissionManager: Notifications and warning fix
+* PermissionManager: Fixed errors on activation permission templates
+* PermissionManager: Fixed un-editable new groups
+* ResponsibleEditors: Fixed missing permissions in ajax context
+* ResponsibleEditors: Added string filters to WikiExplorer
+* Review: Improved notifications
+* Review: Set review counter to active if open review is present
+* Review: Separated from statebar
+* Review: Added hook AfterMakeJSDataObject
+* Review: Added hook handler to overwrite with FRCRevisionReview
+* Shoutbox: Mentions of users with @ now possible and with ajax autocomplete
+* Sidebar: Added link to MediaWiki Special:SpecialPages to admin tab
+* SmartList: Added mode 'whatlinkshere'
+* SmartList: 'whatlinkshere' now supports categories
+* StateBar: Fixed fatal when redirect article does not exist
+* Statistics: Fixed interval error message
+* Statistics: Fixed bug where multiple months didn't show the right statistics
+* UEModulePDF: Fixed bug when proxy is set
+* UniversalExport: Added PDF export link to toolbox
+* VisualEditor: Added code tag to list of tags special tags
+* VisualEditor: Mask templates in table style definitions
+* VisualEditor: Fixed table property dialog
+* VisualEditor: Make sure image caption is always at the end of image parameters
+* VisualEditor: Fixed umlaut handling in links without caption
+* VisualEditor: Prevent loading when not in edit mode
+
+====BlueSpiceDistribution====
+* LdapAuthentication: Added recent version with "underscore fix"
+* Connector: Created BSDistConnector to configure extensions
+* Removals: Cite, InputBox, Poem, SyntaxHighlight_GeSHi because those are part of MW standard release
+* Additions: NSFileRepo and TitleKey
+
+====BlueSpiceSkin====
+* Now using $wgResourceLoaderLESSVars for most LESS vars
+* Small fix for underlying elements of personal tools menu
+* Changed hard to read font color
+
+===Combatibility===
+* MediaWiki 1.22 - 1.24
+* PHP 5.3.2 or later.
+* MySQL 5.0.2 or later
+
+====Webservices====
+* Java 6, 7 or 8
+* Tomcat 6, 7 or 8
+
+===The Team===
+====Programmers====
+* Markus Glaser
+* Radovan Kubani
+* Sebastian Ulbricht
+* Marc Reymann
+* Mathias Scheer
+* Thomas Lorenz
+* Tobias Weichart
+* Robert Vogel
+* Erwin Forster
+* Karl Waldmannstetter
+* Daniel Lynge
+* Tobias Davids
+* Patric Wirth
+* Stephan Muggli
+* Stefan Widmann
+* Manfred Dennerlein
+
+====Design & Testing====
+* Anja Ebersbach
+* Richard Heigl
+* Nathalie Köpff
+* Michael Rödl
+* Michael Scherm
+* Dardan Diugan
+* Christina Glaser
+* Christian Graf
+* Angelika Müller
+* Jan Göttlich
+* Karl Skodnik
+
+====Contributors====
+* Aude
+* Chad Horohoe
+* Raimond Spekking
+* Siebrand Mazeland
+* Yuki Shira
+* TGC
+* Umherirrender
+* Frederic Mohr
+
+===Standing on the shoulders of giants===
+We would like to thank all the people around MediaWiki. You've created a wonderful piece of software. Thanks a lot!
+
 ==BlueSpice 2.23.0==
 BlueSpice 2.23.0 is a minor and maintenance release.
 
