@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"bs-notifications-email-edit-body": "$6 {{GENDER:$2|editó}} la páxina «$1».\n\nComentariu:\n $3 \nPuedes visitar la páxina siguiendo esti enllaz:\n$4.\n\nSi sólo quies ver los cambios, sigui esti enllaz:\n$5"
+}
