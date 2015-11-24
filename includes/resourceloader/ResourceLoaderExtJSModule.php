@@ -34,6 +34,10 @@ class ResourceLoaderExtJSModule extends ResourceLoaderModule {
 		);
 	}
 
+	public function getGroup() {
+		return 'bsextjs';
+	}
+
 	/**
 	 * https://www.mediawiki.org/wiki/Manual:Language#/media/File:MediaWiki_fallback_chains.svg
 	 * @return array

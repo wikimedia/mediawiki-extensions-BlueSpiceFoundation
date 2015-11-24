@@ -53,7 +53,7 @@ $wgResourceModules['ext.bluespice.styles'] = array(
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.base'] = array(
-	'class' => 'ResourceLoaderExtJSModule' //Provides framesork JS and I18N
+	'class' => 'ResourceLoaderExtJSModule' //Provides framework JS and I18N
 ) + $aResourceModuleTemplate;
 
 //TODO: Implement as subclass of ResourceLoaderFileModule to provide RTL support
@@ -73,7 +73,8 @@ $wgResourceModules['ext.bluespice.extjs.theme'] = array(
 		//If we didn't have it this way we would need to specify a seperate
 		//'scripts' RL module for the theme.
 		'ext.bluespice.extjs.base'
-	)
+	),
+	'group' => 'bsextjs'
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.theme.ux'] = array(
@@ -86,7 +87,8 @@ $wgResourceModules['ext.bluespice.extjs.theme.ux'] = array(
 		'bluespice.extjs/Ext.ux/grid/css/GridFilters.css',
 		'bluespice.extjs/Ext.ux/grid/css/RangeMenu.css',
 		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css'
-	)
+	),
+	'group' => 'bsextjs'
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs'] = array(
@@ -143,7 +145,8 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 	'dependencies' => array(
 		'ext.bluespice.extjs.theme.ux',
 		'ext.bluespice.extjs.theme'
-	)
+	),
+	'group' => 'bsextjs'
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
