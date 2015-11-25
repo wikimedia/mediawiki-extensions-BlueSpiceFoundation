@@ -341,18 +341,18 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		if( !is_numeric( $oFilter->value ) ) {
 			return true; //TODO: Warning
 		}
-		$sFieldValue = $aDataSet->{$oFilter->field};
+		$iFieldValue = (int) $aDataSet->{$oFilter->field};
 		$iFilterValue = (int) $oFilter->value;
 
 		switch( $oFilter->comparison ) {
 			case 'gt':
-				return $sFieldValue < $iFilterValue;
+				return $iFieldValue > $iFilterValue;
 			case 'lt':
-				return $sFieldValue > $iFilterValue;
+				return $iFieldValue < $iFilterValue;
 			case 'eq':
-				return $sFieldValue === $iFilterValue;
+				return $iFieldValue === $iFilterValue;
 			case 'neq':
-				return $sFieldValue !== $iFilterValue;
+				return $iFieldValue !== $iFilterValue;
 		}
 	}
 
