@@ -56,8 +56,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 	},
 	setValueByNames: function( names ) {
 		this.setValue( names );
-		return;
-		if( this.store.isLoading() ) {
+		/*if( this.store.isLoading() ) {
 			this.deferSetValue( this.setValueByNames, names );
 			return;
 		}
@@ -68,8 +67,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 			indexes.push( record.get( 'cat_id' ) );
 		}, this );
 
-		this.setValue( indexes.join(',') + "" );
-
+		this.setValue( indexes.join(',') + "" );*/
 	},
 	deferSetValue: function( callback, value ) {
 		this.deferredSetValueConf = {

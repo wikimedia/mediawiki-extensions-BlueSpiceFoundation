@@ -84,7 +84,7 @@ Ext.define('BS.portal.Portlet', {
 					this.closing = false;
 					this.fireEvent('close', this);
 					this[closeAction]();
-					if (closeAction == 'hide') {
+					if (closeAction === 'hide') {
 						this.el.setOpacity(1);
 					}
 				},
