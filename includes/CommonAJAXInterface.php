@@ -105,16 +105,18 @@ class BsCommonAJAXInterface {
 			$aLike[] = $sOp;
 		}
 
+		$aConditions = array(
+			'page_id = si_page',
+			'si_title '. $dbr->buildLike( $aLike ),
+		);
+
+		if( $oQueryTitle->getNamespace() !== NS_MAIN ) {
+			$aConditions['page_namespace'] = $oQueryTitle->getNamespace();
+		}
 		$res = $dbr->select(
 			array( 'page', 'searchindex' ),
 			array( 'page_id' ),
-			array(
-				'page_id = si_page',
-				'si_title '. $dbr->buildLike(
-					$aLike
-				),
-				'page_namespace' => $oQueryTitle->getNamespace()
-			),
+			$aConditions,
 			__METHOD__,
 			array(
 				'LIMIT' => $aOptions['limit']
