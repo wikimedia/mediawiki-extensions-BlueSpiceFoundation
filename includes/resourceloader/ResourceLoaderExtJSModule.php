@@ -28,7 +28,12 @@ class ResourceLoaderExtJSModule extends ResourceLoaderModule {
 		return implode( ";\n", $aContents );
 	}
 
-	public function getDependencies() {
+	/**
+	 *
+	 * @param ResourceLoaderContext $context
+	 * @return array
+	 */
+	public function getDependencies( ResourceLoaderContext $context = null ) {
 		return array(
 			'ext.bluespice'
 		);

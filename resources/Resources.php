@@ -217,7 +217,8 @@ $wgResourceModules['ext.bluespice.html.formfields.multiselect'] = array(
 $wgResourceModules['ext.bluespice.compat.vector.styles'] = array(
 	'styles' => array(
 		'bluespice.compat/bluespice.compat.vector.fixes.css'
-	)
+	),
+	'position' => 'top'
 ) + $aResourceModuleTemplate;
 
 unset( $aResourceModuleTemplate );
