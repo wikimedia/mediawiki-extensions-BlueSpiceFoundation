@@ -29,7 +29,6 @@ Ext.define('BS.model.File', {
 		{ name: 'file_width', type: 'int', defaultValue: 0 },
 		{ name: 'file_height', type: 'int', defaultValue: 0 },
 		{ name: 'file_mimetype', type: 'string', defaultValue: 'unknown/unknown' },
-		{ name: 'file_metadata', type: 'object', defaultValue: {} },
 		{ name: 'file_user_text', type: 'string' },
 		{ name: 'file_extension', type: 'string', defaultValue: '' },
 		{ name: 'file_timestamp', type: 'date', defaultValue: '19700101000000', dateFormat: 'YmdHis' },
