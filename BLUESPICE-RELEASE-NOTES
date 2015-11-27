@@ -3,18 +3,147 @@ Copyright 2015 by Hallo Welt! - Medienwerkstatt GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
 
-==BlueSpice 2.23.2-beta==
+==BlueSpice 2.23.2==
 
-This is a beta release! Do not use in production!
-BlueSpice 2.23.2-beta is a minor and maintenance release.
+BlueSpice 2.23.2 is a minor and maintenance release.
 
 ===Notable new features===
 * Update of notification system.
 * Improved logging of actions, e.g. assign responsibility or changes in rights setup
 * Added ImageMapEdit to Distribution.
+* Added EmbedVideo to Distribution
 * Improved integration of Semantic MediaWiki and BlueSpice.
 * BlueSpice is now compatible with MeidaWiki's VisualEditor.
 * New functionality: "About BlueSpice" with information and first steps in the software.
+
+=== BlueSpiceFoundation ===
+* ExtJS ResourceLoader Module: Changed base class
+* Improve ExtJS ResourceLoader module caching
+* BSApiExtJSStoreBase: Fixed nummeric filtering
+* Model/File: Added fields
+* BsCommonAPIInterface: Search in all ns if no ns prefix was given for TitleStoreData
+
+=== BlueSpiceExtensions ===
+* Blog: Changed query assembly to restore cat attribute
+* Checklist: Made sure there is always on option selected
+* ExtendedSearch: Fixed Fatal in indexCrawledDocuments
+* ExtendedSearch: Fix: Add Path Replacement on multiple External Repos
+* Flexiskin: Fixed issue with preview
+* Flexiskin: Fixed issue with JS menus header and position
+* Flexiskin: Fixed deletion of skin
+* Flexiskin: Fixed skin usage for anonymous users
+* InsertFile/VisualEditor: Fixes 'nolink'
+* InsertFile: Fixed image source
+* NavigationSites: Added is allowed read check
+* PermissionManager: Improvements
+* SaferEdit: SomeOneIsEditing - warning works again
+* UEModulePDF: Improvment of page-break behavior
+* UniversalExport: Fixed issue with infobox overlapping toc
+* UserSidebar: Check if user is logged in before show user specific stuff
+* VisualEditor: Fixed "framed" and "center" behavior
+* VisualEditor: Improved "images in table" handling
+* VisualEditor: Added support for underline
+* VisualEditor: Activate save button in BSVisualEditor on content change in MW Plaintext Editor
+
+=== BlueSpiceSkin ===
+* Skin: Data after content - show first tab as default
+
+=== BlueSpiceDistribution ===
+* DistributionConnector: Added CategoryTree tag to InsertMagic list
+* DistributionConnector: Added cite tags to insertMagic
+* DistributionConnector: Added quiz tag to InsertMagic
+* DistributionConnector: Added EmbedVideo tag to InsertMagic
+* DistributionConnector: Added DynamicPageList tag to InsertMagic
+* Notifications: Fix Notifications for admin task add user
+
+=== BlueSpice Pro ===
+* Bookmaker: Fixed PDF file attachment logic to get correct paths
+* Bookmaker: Removed UEModuleBookHTML due to its instability
+* Bookmaker: Fix for chapter navigation tree not being displayed when not in book context
+* Bookmaker: New class BS.Bookshelf.tree.NumberedNodeColumn, that allows clientside calculation of numbers in a tree
+* Bookmaker: Removed template dependency in bookshelf tag; Did not work as expected and lead to issues in conjunction with FlaggedRevs
+* Bookmaker: Fixed re-numbering issue on tree drag and drop
+* Bookmaker: Removed NavigationPopups - ReleaseConference 2015-05-06
+* Bookmaker: Fixes context menu integration
+* Bookmaker: Made interface compatible with new base class
+* Bookmaker: Workaround for attachments using spaces
+* Bookmaker: Started work on "booknode" implementation
+* Bookmaker: Removed ImageMapEdit, moved to Dist
+* Bookmaker: UEModuleDOCX: Added PHP 5.6 compatibility
+* Bookmaker: Fixed hook; Added fallback for absence of data-bs-title
+* Bookmaker: Fixed error in fallback
+* Bookmaker: Added two new APIs: One for and aysnc tree store and one for info about specific node (Not yet implemented)
+* Bookmaker: Fixed sorting
+* Bookmaker: Fixed part of the 'no horizontal scrollbar' issue
+* Bookmaker: Added RL dependency
+* Bookmaker: Fixed BookManager and BookEditor that were broken due to a change in the base classes
+* Bookmaker: Bugfix onBSUEModulePDFBeforeAddingContent
+* Bookmaker: Added PHP 5.6 compatibility
+* Bookmaker: Added dependency to ExtJS
+* GuidedEditing: PageTemplates work again in non-GuidedEditing-namespaces
+* GuidedEditing: Compatibility fix for mw 1.24
+* GuidedEditing: No longer activated for NS_MAIN by default
+* GuidedEditing: Removed long deprecated calls to wfMsg
+* PasteImage: Fix for empty input field
+* PasteImage: Fix for copy & paste in VisualEditor
+* PasteImage: Changed default java enbled
+* PasteImage: Added RL dependency
+* Rating: Implemented grid filters to SpecialRating
+* Rating: Added missing order by for filters
+* Rating: Rating SchemaUpdate now works for installer too
+* Semantic: TagNode integration for Bookshelf
+* Semantic: Basic integration of BS VisualEditor into SF
+* Semantic: Added PageSchemas
+* Semantic: Improved integration of insert* extensions
+* Semantic: VE support of standard input 'free text'
+* Semantic: Rudimentary ResultFormat with ExtJS-Grid
+* Semantic: Using SMW 2.3
+* Semantic: Integration into NamespaceManager
+* Semantic: Updated default configuration according to recommendations
+* ServiceCenter: Rewrite of TagSearch
+* ServiceCenter: Removed legacy files; Added styling
+* ServiceCenter: Now uses ExtJS
+* ServiceCenter: Switching from Ext.form.field.ComboBox to Ext.ux.form.field.GridPicker
+* ServiceCenter: Fixed selection and onEnter behavior
+* ServiceCenter: Enabled searchfiles option
+* ServiceCenter: Added CategoryCheck
+* ServiceCenter: Minor fixes for TagSearch
+* ServiceCenter: Added standard templates
+* ServiceCenter: Added code templates
+* ServiceCenter: Own file for template
+* ServiceCenter: Added vendor folder
+* ServiceCenter: Fixed path error while execution of update.php
+* ServiceCenter: Added support for NamespaceManager
+* ServiceCenter: Added dependenca to ext.bluespice.extjs
+* ServiceCenter: TagSearch dependencies updated
+* Teamwork: Fixed issue with FRC history page
+* Teamwork: Fixed Notificator
+* Teamwork: Now the same query is in use for the result and counting total
+* Teamwork: Reworked reminder / expiry
+* Teamwork: Minimum doc + bugfix for unexpire + statebar
+* Teamwork: Show user names in panel view if user wants to see others reminders
+* Teamwork: Fixing for paging + notifications tab in user menu
+* Teamwork: Don't show 'review' link in statebar if user is not allowed
+* Teamwork: Fix for SMW compatibility: avoid namespace collision
+* Teamwork: User adjust for timestamp
+* Teamwork: Sqlite support added
+* Teamwork: "Fixed" query for open remiders in personal info
+* Teamwork: Removed statebar draft if in history mode
+* Teamwork: Added mysql update for upgrade to BS 2.23
+* Teamwork: Index stable revisions only works again
+* Teamwork: Added first structure of Autoreminder (after FlaggedRevs)
+* Teamwork: Reminder: fixed typo in method call
+* Teamwork: Fix for expiry, small logical mistake
+* Teamwork: Fixed broken hook handler
+* Teamwork: Fix for $sBaseDir in symlinks
+* Teamwork: Removed FlaggedRevsOCI 1.17 and 1.20; Added FlaggedRevs 1.23
+* Teamwork: Fixed require statement; Added history view implementation;
+* Teamwork: Removed long deprecated calls to wfMsg
+* Teamwork: Fixed canonical special page name
+* Teamwork: Fixed invalid ns handling for smartlist custom type
+* VisualDiff: Added PHP 5.6 compatibility
+
+==BlueSpice 2.23.2-beta==
 
 === BlueSpiceFoundation ===
 * API base classes: ExtJS store and Tasks
