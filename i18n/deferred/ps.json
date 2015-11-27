@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ahmed-Najib-Biabani-Ibrahimkhel"
+		]
+	},
+	"bs-deferred-action-status-done": "ترسره شو.",
+	"bs-deferred-action-status-error": "نابريال شو.",
+	"bs-deferred-action-apieditpage-description": "\"$1\" سمول.",
+	"bs-deferred-batch-progress-desc": "پرمختگ",
+	"bs-deferred-batch-actions": "کړنې",
+	"bs-deferred-batch-description": "څرگندونه",
+	"bs-deferred-batch-status": "دريځ"
+}
