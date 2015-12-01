@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe",
+			"Vitorvicentevalente"
+		]
+	},
+	"bs-deferred-action-status-pending": "Pendente.",
+	"bs-deferred-action-status-done": "Feito.",
+	"bs-deferred-action-status-error": "Falhou.",
+	"bs-deferred-action-apicopypage-description": "Copiar \"$1\" para \"$2\"",
+	"bs-deferred-action-apieditpage-description": "Editar \"$1\".",
+	"bs-deferred-batch-title": "Processamento em lote",
+	"bs-deferred-batch-progress-desc": "Progresso",
+	"bs-deferred-batch-actions": "Ações",
+	"bs-deferred-batch-description": "Descrição",
+	"bs-deferred-batch-status": "Estado"
+}

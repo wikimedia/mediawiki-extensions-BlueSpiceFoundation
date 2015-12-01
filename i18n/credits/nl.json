@@ -3,14 +3,15 @@
 		"authors": [
 			"Southparkfan",
 			"Niknetniko",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Siebrand"
 		]
 	},
-	"specialcredits": "BlueSpice-kredieten",
+	"specialcredits": "Naamsvermeldingen voor BlueSpice",
 	"bs-credits-programmers": "Ontwikkelaars",
-	"bs-credits-dnt": "Ontwerpen en testen",
+	"bs-credits-dnt": "Ontwerp en testen",
 	"bs-credits-contributors": "Bijdragers",
 	"bs-credits-translators": "Vertalers",
 	"bs-credits-translation": "Vertaling",
-	"bs-credits-th": "Dankzij alle vertalers van $1."
+	"bs-credits-th": "We bedanken alle vertalers van $1."
 }

@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dbc334",
+			"Skalcaa"
+		]
+	},
+	"bs-notifications-addacount": "Uporabnik $1 je bil ustvarjen.",
+	"bs-notifications-email-addaccount-subject": "Uporabni{{GENDER:$1|k $2 ustvarjen|ca $2 ustvarjena}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|Uporabnik|Uporabnica}} $3 {{GENDER:$2|ustvarjen|ustvarjena}}.\n\nUporabniško stran {{GENDER:$2|uporabnika|uporabnice}} lahko obiščete tako, da sledite tej povezavi:\n$1",
+	"bs-notifications-edit": "Stran [[:$1]] je bila spremenjena",
+	"bs-notifications-email-edit-subject": "Stran $1 je {{GENDER:$2|uredil|uredila}} $3.",
+	"bs-notifications-email-edit-body": "Stran \"$1\" je {{GENDER:$2|uredil|uredila}} $6.\n\nKomentar:\n $3\nStran lahko prikažete tako, da sledite tej povezavi:\n$4.\n\nČe želite prikazati le spremembe, sledite tej povezavi:\n$5",
+	"bs-notifications-create": "Stran [[:$1]] je bila ustvarjena",
+	"bs-notifications-email-create-subject": "Stran $1 je {{GENDER:$2|ustvaril|ustvarila}} $3",
+	"bs-notifications-email-create-body": "Stran \"$1\" je {{GENDER:$2|ustvaril|ustvarila}} $6.\n\nKomentar:\n $3\nStran lahko prikažete tako, da sledite tej povezavi:\n$4.",
+	"bs-notifications-delete": "Stran [[:$1]] je bila izbrisana",
+	"bs-notifications-email-delete-subject": "Stran $1 je izbrisal{{GENDER:$2:||a}} $3",
+	"bs-notifications-email-delete-body": "Stran »$4« je {{GENDER:$2|izbrisal|izbrisala}} $5.\n\nRazlog izbrisa:\n$3",
+	"bs-notifications-move": "Stran [[:$1]] je bila prestavljena",
+	"bs-notifications-email-move-subject": "Stran $1 je {{GENDER:$2|premaknil|premaknila}} $4",
+	"bs-notifications-email-move-body": "Stran »$1« je na $3 {{GENDER:$2|premaknil|premaknila}} $5. Stran lahko obiščete, če sledite tej povezavi:\n$4"
+}

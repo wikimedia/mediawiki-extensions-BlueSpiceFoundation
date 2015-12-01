@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"bs-deferred-action-status-pending": "Laukiama.",
+	"bs-deferred-action-status-running": "Veikia...",
+	"bs-deferred-action-status-done": "Atlikta.",
+	"bs-deferred-action-status-error": "Nepavyko.",
+	"bs-deferred-action-apicopypage-description": "Nukopijuoti \"$1\" į \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Redaguoti \"$1\".",
+	"bs-deferred-batch-title": "Partija apdorojama",
+	"bs-deferred-batch-progress-desc": "Progresas",
+	"bs-deferred-batch-actions": "Veiksmai",
+	"bs-deferred-batch-description": "Aprašymas",
+	"bs-deferred-batch-status": "Statusas"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"bs-deferred-action-status-error": "Gagal.",
+	"bs-deferred-batch-actions": "Tindakan",
+	"bs-deferred-batch-description": "Keterangan",
+	"bs-deferred-batch-status": "Status"
+}

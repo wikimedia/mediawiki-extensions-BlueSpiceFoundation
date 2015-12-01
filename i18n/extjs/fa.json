@@ -14,6 +14,7 @@
 	"bs-extjs-add": "افزودن",
 	"bs-extjs-remove": "حذف",
 	"bs-extjs-edit": "ویرایش",
+	"bs-extjs-copy": "رونوشت",
 	"bs-extjs-hint": "راهنمایی",
 	"bs-extjs-error": "خطا",
 	"bs-extjs-confirm": "تأیید",
@@ -43,5 +44,6 @@
 	"bs-extjs-filter-greater-than": "بزرگتر از",
 	"bs-extjs-filter-less-than": "کمتر از",
 	"bs-extjs-title-success": "موفق",
-	"bs-extjs-title-warning": "هشدار"
+	"bs-extjs-title-warning": "هشدار",
+	"bs-extjs-categoryboxselect-emptytext": "افزودن رده"
 }

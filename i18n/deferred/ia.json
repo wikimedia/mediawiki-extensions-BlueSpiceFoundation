@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-deferred-action-status-pending": "Pendente.",
+	"bs-deferred-action-status-running": "In execution...",
+	"bs-deferred-action-status-done": "\nFinite.",
+	"bs-deferred-action-status-error": "Fallite.",
+	"bs-deferred-action-apicopypage-description": "Copiar \"$1\" a \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Modificar \"$1\".",
+	"bs-deferred-batch-title": "Tractamento per lotes",
+	"bs-deferred-batch-progress-desc": "Progresso",
+	"bs-deferred-batch-actions": "Actiones",
+	"bs-deferred-batch-description": "Description",
+	"bs-deferred-batch-status": "Stato"
+}

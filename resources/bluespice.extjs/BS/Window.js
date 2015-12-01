@@ -14,10 +14,7 @@
 
 Ext.define( 'BS.Window', {
 	extend: 'Ext.Window',
-	requires: [
-		'Ext.Button',
-		'Ext.form.Label'
-	],
+	requires: [ 'Ext.Button', 'Ext.form.Label', 'Ext.toolbar.Toolbar' ],
 	/*
 		mixins: {
 		mediaWiki: 'BS.mixins.MediaWiki'
@@ -27,7 +24,7 @@ Ext.define( 'BS.Window', {
 	closeAction: 'hide',
 	layout: 'form',
 	title: '',
-	
+
 	bodyPadding:5,
 
 	constructor: function(config) {
@@ -42,37 +39,25 @@ Ext.define( 'BS.Window', {
 	},
 
 	initComponent: function() {
-		this.btnOK = Ext.create( 'Ext.Button', {
-			text: mw.message('bs-extjs-ok').plain(),
-			id: this.getId()+'-btn-ok'
-		});
-		this.btnOK.on( 'click', this.onBtnOKClick, this );
-
-		this.btnCancel = Ext.create( 'Ext.Button', {
-			text: mw.message('bs-extjs-cancel').plain(),
-			id: this.getId()+'-btn-cancel'
-		});
-		this.btnCancel.on( 'click', this.onBtnCancelClick, this );
-
-		this.items = [];
-
-		this.buttons = [
-			this.btnOK,
-			this.btnCancel
-		];
-
-		this.addEvents( 'ok', 'cancel' );
+		this.items = this.makeItems();
+		this.dockedItems = this.makeDockedItems();
 
 		this.afterInitComponent( arguments );
 
 		this.callParent( arguments );
 	},
 	afterInitComponent: function() {
-		
+
 	},
-	onBtnOKClick: function() {
-		this.fireEvent( 'ok', this, this.getData() );
-		this.close();
+	show: function () {
+		this.setLoading( false );
+		this.callParent( arguments );
+	},
+	onBtnOKClick: function () {
+		this.setLoading( true );
+		if ( this.fireEvent( 'ok', this, this.getData() ) ) {
+			this.close();
+		}
 	},
 	onBtnCancelClick: function() {
 		this.resetData();
@@ -104,13 +89,52 @@ Ext.define( 'BS.Window', {
 	},
 	makeId: function( part ) {
 		return this.getId() + '-' + part;
-	}
-	/*,
-	
+	},
+
+	/*
 	statics: {
 		instances: {},
 		getInstance: function( key ) {
-			
+
 		}
 	}*/
+
+	makeItems: function() {
+		return [];
+	},
+
+	makeButtons: function() {
+		this.btnOK = Ext.create( 'Ext.Button', {
+			text: mw.message('bs-extjs-ok').plain(),
+			id: this.getId()+'-btn-ok'
+		});
+		this.btnOK.on( 'click', this.onBtnOKClick, this );
+
+		this.btnCancel = Ext.create( 'Ext.Button', {
+			text: mw.message('bs-extjs-cancel').plain(),
+			id: this.getId()+'-btn-cancel'
+		});
+		this.btnCancel.on( 'click', this.onBtnCancelClick, this );
+
+		this.addEvents( 'ok', 'cancel' );
+
+		return [
+			'->',
+			this.btnOK,
+			this.btnCancel
+		];
+	},
+
+	makeDockedItems: function() {
+		return [
+			new Ext.toolbar.Toolbar({
+				dock: 'bottom',
+				ui: 'footer',
+				defaults: {
+					minWidth: this.minButtonWidth
+				},
+				items: this.makeButtons()
+			})
+		];
+	}
 });

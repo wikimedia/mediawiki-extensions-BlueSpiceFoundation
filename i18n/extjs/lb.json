@@ -13,6 +13,7 @@
 	"bs-extjs-add": "Derbäisetzen",
 	"bs-extjs-remove": "Ewechhuelen",
 	"bs-extjs-edit": "Änneren",
+	"bs-extjs-copy": "Kopéieren",
 	"bs-extjs-hint": "Tipp",
 	"bs-extjs-error": "Feeler",
 	"bs-extjs-confirm": "Confirméieren",
@@ -34,5 +35,6 @@
 	"bs-extjs-filter-starts-with": "fänkt u mat",
 	"bs-extjs-filter-greater-than": "méi grouss wéi",
 	"bs-extjs-filter-less-than": "méi kleng wéi",
-	"bs-extjs-title-warning": "Warnung"
+	"bs-extjs-title-warning": "Warnung",
+	"bs-extjs-categoryboxselect-emptytext": "Eng Kategorie derbäisetzen"
 }

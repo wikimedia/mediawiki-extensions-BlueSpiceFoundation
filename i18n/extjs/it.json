@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"PeppeAeco",
-			"LACLARETTA"
+			"LACLARETTA",
+			"Macofe"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -43,5 +44,6 @@
 	"bs-extjs-filter-ends-with": "termina con",
 	"bs-extjs-filter-greater-than": "più importante di",
 	"bs-extjs-title-success": "Successo",
-	"bs-extjs-title-warning": "Attenzione"
+	"bs-extjs-title-warning": "Attenzione",
+	"bs-extjs-categoryboxselect-emptytext": "Aggiungi una categoria"
 }

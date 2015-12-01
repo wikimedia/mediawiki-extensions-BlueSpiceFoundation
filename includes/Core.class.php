@@ -114,7 +114,15 @@ class BsCore {
 		global $wgScriptPath;
 		$sPath = $wgScriptPath . "/extensions/BlueSpiceFoundation/resources/bluespice/images/";
 
-		$aFiles = array( 'doc', 'docx', 'pdf', 'xls', 'xlsx' );
+		$aFiles = array(
+			'txt', 'rtf',
+			'doc', 'dot', 'docx', 'dotx', 'dotm',
+			'xls', 'xlt', 'xlm', 'xlsx', 'xlsm', 'xltm', 'xltx',
+			'ppt', 'pot', 'pps', 'pptx', 'pptm', 'potx', 'potm', 'ppsx', 'ppsm', 'sldx', 'sldm',
+			'odt', 'fodt', 'ods', 'fods', 'odp', 'fodp',
+			'pdf',
+			'zip', 'rar', 'tar', 'tgz', 'gz', 'bzip2', '7zip'
+		);
 		$aImages = array( 'png', 'gif', 'jpg', 'jpeg' );
 		BsConfig::registerVar( 'MW::FileExtensions', $aFiles, BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
 		BsConfig::registerVar( 'MW::ImageExtensions', $aImages, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-imageextensions', 'multiselectplusadd' );
@@ -327,6 +335,8 @@ class BsCore {
 		}
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load Settings');
 
+		BSNotifications::init();
+
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
 		BsExtensionManager::includeExtensionFiles( self::$oInstance );
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
@@ -391,24 +401,13 @@ class BsCore {
 		return $output;
 	}
 
+	/**
+	 * @deprecated since version 2.23.2
+	 * @param User $oUser
+	 * @return String
+	 */
 	public static function getUserDisplayName( $oUser = null ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-		global $wgUser;
-		if ( $oUser === null ) {
-			$oUser = $wgUser;
-		}
-		if ( !( $oUser instanceof User ) ) {
-			wfProfileOut( 'BS::'.__METHOD__ );
-			return false;
-		}
-		$sRealname = $oUser->getRealName();
-		if ( $sRealname ) {
-			wfProfileOut( 'BS::'.__METHOD__ );
-			return $sRealname;
-		} else {
-			wfProfileOut( 'BS::'.__METHOD__ );
-			return $oUser->getName();
-		}
+		return BsUserHelper::getUserDisplayName($oUser);
 	}
 
 		/**

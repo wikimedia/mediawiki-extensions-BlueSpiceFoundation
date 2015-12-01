@@ -41,11 +41,6 @@ class BSImportUsers extends BSMaintenance {
 				$oUser->setEmail( $sUserEmail );
 			}
 
-			$sUserPassword = $this->getOption( 'defaultpw', '' );
-			if( !empty ( $sUserPassword ) ) {
-				$oUser->setPassword( $sUserPassword );
-			}
-
 			//TODO: maybe write 'touched', 'registration', etc. directly to DB?
 
 			$oProperties = $oUserNode->getElementsByTagName('property');
@@ -63,6 +58,12 @@ class BSImportUsers extends BSMaintenance {
 			else {
 				$this->error( $oUser->getName().' could not be added to database. Message '.$oStatus->getMessage()->plain() );
 				continue;
+			}
+
+			$sUserPassword = $this->getOption( 'defaultpw', '' );
+			if( !empty ( $sUserPassword ) ) {
+				$oUser->setPassword( $sUserPassword );
+				$oUser->saveSettings();
 			}
 
 			$oGroups = $oUserNode->getElementsByTagName('group');

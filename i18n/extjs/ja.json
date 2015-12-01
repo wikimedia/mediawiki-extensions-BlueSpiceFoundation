@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"2nd-player"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -33,5 +34,6 @@
 	"bs-extjs-confirmNavigationText": "このリンクを本当にたどりますか? 現在のページでのフィルタリングや並べ替えのような動的な設定がすべて失われます。",
 	"bs-extjs-allns": "(すべて)",
 	"bs-extjs-title-success": "成功",
-	"bs-extjs-title-warning": "警告"
+	"bs-extjs-title-warning": "警告",
+	"bs-extjs-categoryboxselect-emptytext": "カテゴリを追加"
 }

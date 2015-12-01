@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hwangjy9",
+			"Kurousagi"
+		]
+	},
+	"bs-deferred-action-status-done": "완료.",
+	"bs-deferred-action-status-error": "실패.",
+	"bs-deferred-action-apicopypage-description": "\"$1\"을(를) \"$2\"로 복사합니다.",
+	"bs-deferred-action-apieditpage-description": "\"$1\"을(를) 편집합니다.",
+	"bs-deferred-batch-description": "설명",
+	"bs-deferred-batch-status": "상태"
+}

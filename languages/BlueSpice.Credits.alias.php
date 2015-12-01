@@ -16,9 +16,19 @@ $specialPageAliases['ar'] = array(
 	'SpecialCredits' => array( 'ائتمانات' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'SpecialCredits' => array( 'ائتمانات' ),
+);
+
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'SpecialCredits' => array( 'Credits' ),
+);
+
+/** Czech (čeština) */
+$specialPageAliases['cs'] = array(
+	'SpecialCredits' => array( 'Zásluhy', 'Zasluhy' ),
 );
 
 /** German (Deutsch) */
@@ -51,6 +61,11 @@ $specialPageAliases['lb'] = array(
 	'SpecialCredits' => array( 'Merci_un' ),
 );
 
+/** Northern Luri (لۊری شومالی) */
+$specialPageAliases['lrc'] = array(
+	'SpecialCredits' => array( 'ئتئڤاریا' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'SpecialCredits' => array( 'Заслуги' ),
@@ -64,6 +79,11 @@ $specialPageAliases['ml'] = array(
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'SpecialCredits' => array( 'Naamsvermeldingen' ),
+);
+
+/** Brazilian Portuguese (português do Brasil) */
+$specialPageAliases['pt-br'] = array(
+	'SpecialCredits' => array( 'Créditos' ),
 );
 
 /** Vietnamese (Tiếng Việt) */

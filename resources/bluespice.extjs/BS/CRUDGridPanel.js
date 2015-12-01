@@ -14,6 +14,8 @@
 
 Ext.define( 'BS.CRUDGridPanel', {
 	extend: 'BS.CRUDPanel',
+	requires: [ 'Ext.PagingToolbar', 'Ext.selection.RowModel',
+		'Ext.grid.GridPanel', 'Ext.grid.column.Action' ],
 
 	//Custom
 	pageSize: 20,
@@ -32,47 +34,19 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.callParent(arguments);
 	},
 
-	afterInitComponent: function( arguments ) {
-		this.smMain = this.makeSelModel();
+	makeItems: function() {
+		return [
+			this.makeMainGrid()
+		];
+	},
 
-		this.colMainConf.actions.unshift({
-			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete_tn.png',
-			iconCls: 'bs-extjs-actioncolumn-icon',
-			tooltip: mw.message('bs-extjs-delete').plain(),
-			handler: this.onActionRemoveClick,
-			scope: this
-		});
+	makeMainStore: function() {
+		this.strMain.on( 'load', this.onStrMainLoadBase, this );
+		return this.strMain;
+	},
 
-		this.colMainConf.actions.unshift({
-			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config_tn.png',
-			iconCls: 'bs-extjs-actioncolumn-icon',
-			tooltip: mw.message('bs-extjs-edit').plain(),
-			handler: this.onActionEditClick,
-			scope: this
-		});
-
-		this.colActions = Ext.create( 'Ext.grid.column.Action', {
-			header: mw.message('bs-extjs-actions-column-header').plain(),
-			flex: 0,
-			//width: 120,
-			//cls: 'hideAction',
-			items: this.colMainConf.actions,
-			menuDisabled: true,
-			hideable: false,
-			sortable: false
-		});
-
-		this.colMainConf.columns.push( this.colActions );
-/*
-		this.tfPageSize = Ext.create( 'Ext.form.TextField', {
-			width: 30,
-			style: 'text-align: right',
-			value: this.pageSize,
-			enableKeyEvents: true
-		});
-		this.tfPageSize.on( 'keydown', this.onTfPageSizeKeyDown, this );
-*/
-		this.bbMain = this.bbMain || Ext.create( 'Ext.PagingToolbar', {
+	makeBBar: function() {
+		this.bbMain = this.bbMain || new Ext.PagingToolbar({
 			store : this.strMain,
 			displayInfo : true//,
 			//displayMsg    : mw.message('bs-extjs-displayMsg').plain(),
@@ -86,10 +60,11 @@ Ext.define( 'BS.CRUDGridPanel', {
 			]*/
 		});
 
-		//TODO: Fix Pagesize
-		this.smMain.pageSize = this.pageSize;
+		return this.bbMain;
+	},
 
-		var columns = this.makeGridColumns();
+	makeMainGrid: function() {
+
 		var gridDefaultConf = {
 			cls: 'bs-extjs-crud-grid',
 			//Simple
@@ -106,26 +81,22 @@ Ext.define( 'BS.CRUDGridPanel', {
 				//forceFit: true,
 				scrollOffset: 1
 			},
-			store: this.strMain,
-			columns: columns,
-			selModel: this.smMain,
-			bbar:     this.bbMain
+			store: this.makeMainStore(),
+			columns: this.makeGridColumns(),
+			selModel: this.makeSelModel(),
+			bbar: this.makeBBar()
 		};
 
 		var gridConf = Ext.applyIf( this.gpMainConf, gridDefaultConf );
-
-		this.grdMain = Ext.create( 'Ext.grid.GridPanel', gridConf );
+		this.grdMain = new Ext.grid.GridPanel( gridConf );
 		this.grdMain.on( 'select', this.onGrdMainRowClick, this );
-		this.strMain.on( 'load', this.onStrMainLoadBase, this );
 
-		this.items = [
-			this.grdMain
-		];
-
-		this.callParent(arguments);
+		return this.grdMain;
 	},
 
 	makeGridColumns: function(){
+		this.colActions = this.makeActionColumn( this.colMainConf.columns );
+
 		return {
 			items: this.colMainConf.columns,
 			defaults: {
@@ -134,10 +105,49 @@ Ext.define( 'BS.CRUDGridPanel', {
 		};
 	},
 
+	makeActionColumn: function( cols ) {
+		var actionColumn = new Ext.grid.column.Action({
+			header: mw.message('bs-extjs-actions-column-header').plain(),
+			flex: 0,
+			//width: 120,
+			//cls: 'hideAction',
+			items: this.makeRowActions(),
+			menuDisabled: true,
+			hideable: false,
+			sortable: false
+		});
+
+		cols.push( actionColumn );
+		return actionColumn;
+	},
+
+	makeRowActions: function() {
+		this.colMainConf.actions.unshift({
+			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete_tn.png',
+			iconCls: 'bs-extjs-actioncolumn-icon',
+			tooltip: mw.message('bs-extjs-delete').plain(),
+			handler: this.onActionRemoveClick,
+			scope: this
+		});
+
+		this.colMainConf.actions.unshift({
+			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config_tn.png',
+			iconCls: 'bs-extjs-actioncolumn-icon',
+			tooltip: mw.message('bs-extjs-edit').plain(),
+			handler: this.onActionEditClick,
+			scope: this
+		});
+
+		return this.colMainConf.actions;
+	},
+
 	makeSelModel: function(){
-		return this.smMain || Ext.create( 'Ext.selection.RowModel', {
+		this.smMain = this.smMain || new Ext.selection.RowModel({
 			mode: "SINGLE"
 		});
+		//TODO: Fix Pagesize
+		this.smMain.pageSize = this.pageSize;
+		return this.smMain;
 	},
 
 	getSingleSelection: function() {

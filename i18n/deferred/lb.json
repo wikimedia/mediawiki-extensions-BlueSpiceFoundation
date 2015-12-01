@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-deferred-action-status-pending": "Am Suspens.",
+	"bs-deferred-action-status-done": "Fäerdeg.",
+	"bs-deferred-action-status-error": "Huet net funktionéiert.",
+	"bs-deferred-action-apicopypage-description": "\"$1\" op \"$2\" kopéieren.",
+	"bs-deferred-action-apieditpage-description": "\"$1\" änneren.",
+	"bs-deferred-batch-progress-desc": "Fortschrëtt",
+	"bs-deferred-batch-actions": "Aktiounen",
+	"bs-deferred-batch-description": "Beschreiwung",
+	"bs-deferred-batch-status": "Status"
+}

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nirjal stha",
+			"बिप्लब आनन्द"
+		]
+	},
+	"bs-deferred-action-status-running": "चालू...",
+	"bs-deferred-action-status-done": "सम्पन्न ।",
+	"bs-deferred-action-status-error": "असफल।",
+	"bs-deferred-action-apicopypage-description": "\"$1\" लाई \"$2\"मा कपि गर्ने।",
+	"bs-deferred-action-apieditpage-description": "\"$1\" सम्पादन गर्ने।",
+	"bs-deferred-batch-progress-desc": "प्रगति",
+	"bs-deferred-batch-actions": "कार्यहरू",
+	"bs-deferred-batch-description": "विवरण",
+	"bs-deferred-batch-status": "स्थिति"
+}

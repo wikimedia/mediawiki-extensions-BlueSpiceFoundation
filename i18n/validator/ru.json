@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras"
+			"Okras",
+			"Kaganer"
 		]
 	},
 	"bs-validator-email-validation-approved": "Адрес электронной почты был успешно проверен.",
@@ -12,6 +13,6 @@
 	"bs-validator-arg-count-validation-not-approved": "Атрибут «количество» не может быть проверен.",
 	"bs-validator-set-validation-approved": "$1 был успешно проверен.",
 	"bs-validator-set-validation-not-approved": "Для $1 {{PLURAL:$3|разрешены только следующие значения|разрешено только одно из следующих значений}}: $2.",
-	"bs-validator-integer-range-validation-too-low": "Указанное значение является слишком маленьким. Оно не должно быть меньше $1.",
-	"bs-validator-integer-range-validation-too-high": "Указанное значение является слишком большое. Оно не должно быть больше $1."
+	"bs-validator-integer-range-validation-too-low": "Указано слишком маленькое значение. Оно не должно быть меньше $1.",
+	"bs-validator-integer-range-validation-too-high": "Указано слишком большое значение. Оно не должно быть больше $1."
 }

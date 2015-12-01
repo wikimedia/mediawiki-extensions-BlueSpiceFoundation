@@ -4,7 +4,8 @@
 			"관인생략",
 			"Keysuck",
 			"아라",
-			"Miri-Nae"
+			"Miri-Nae",
+			"Hwangjy9"
 		]
 	},
 	"bs-ns_main": "(문서)",
@@ -28,9 +29,9 @@
 	"bs-two-units-ago": "$1 $2 전",
 	"bs-one-unit-ago": "$1 전",
 	"bs-now": "지금",
-	"bs-email-greeting-receiver": "{{GENDER:$1|$1님 안녕하세요|$1님 안녕하세요|$1님 안녕하세요}},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|$2님 안녕하세요}},",
 	"bs-email-greeting-no-receiver": "안녕하세요,",
-	"bs-email-footer": "이 메시지는 자동으로 생성되었습니다. 이 이메일에 답변하지 마세요.",
+	"bs-email-footer": "이 메시지는 $1이(가) 자동으로 생성했습니다. 이 이메일에 답변하지 마세요.",
 	"bs-userpagesettings-legend": "사용자 설정",
 	"bs-userpreferences-link-text": "사용자 설정 더 보기",
 	"bs-userpreferences-link-title": "개인 사용자 설정 보기",
@@ -61,5 +62,14 @@
 	"bs-navigation-instructions": "지침",
 	"bs-navigation-support": "지원",
 	"bs-navigation-contact": "연락하기",
-	"bs-imagepage-download-text": "다운로드"
+	"bs-imagepage-download-text": "다운로드",
+	"bs-ns": "이름공간",
+	"bs-pref-fileextensions": "허가된 파일 확장자:",
+	"bs-pref-imageextensions": "허가된 이메일 확장자:",
+	"bs-pref-logopath": "로고 경로:",
+	"bs-pref-faviconpath": "패비콘 경로:",
+	"bs-pref-defaultuserimage": "기본 사용자 아바타:",
+	"bs-pref-anonuserimage": "익명 사용자 아바타:",
+	"bs-pref-deleteduserimage": "삭제된 사용자 아바타:",
+	"bs-pref-bspinginterval": "핑 간격 (초):"
 }

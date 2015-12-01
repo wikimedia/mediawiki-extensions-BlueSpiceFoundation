@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Markus Glaser <glaser@hallowelt.com>"
+		]
+	},
+	"bs-notifications-addacount": "The user $1 was created.",
+	"bs-notifications-email-addaccount-subject": "User $2 {{GENDER:$1|created}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|The user}} $3 was created.\n\nYou can visit {{GENDER:$2|his|her|the}} user page following this link:\n$1",
+	"bs-notifications-edit": "The page [[:$1]] has been changed",
+	"bs-notifications-email-edit-subject": "Page $1 {{GENDER:$2|edited}} by $3",
+	"bs-notifications-email-edit-body": "The page \"$1\" was {{GENDER:$2|edited}} by $6.\n\nComment:\n $3 \nYou can visit the page following this link:\n$4.\n\nIf you only want to see the changes, follow this link:\n$5\n",
+	"bs-notifications-create": "The page [[:$1]] was created",
+	"bs-notifications-email-create-subject": "Page $1 {{GENDER:$2|created}} by $3",
+	"bs-notifications-email-create-body": "The page \"$1\" was {{GENDER:$2|created}} by $6.\n\nComment:\n $3 \nYou can visit the page following this link:\n$4\n",
+	"bs-notifications-delete": "The page [[:$1]] has been deleted",
+	"bs-notifications-email-delete-subject": "Page $1 {{GENDER:$2|deleted}} by $3",
+	"bs-notifications-email-delete-body": "The page \"$4\" was {{GENDER:$2|deleted}} by $5.\n\nThis was the reason:\n$3",
+	"bs-notifications-move": "The page [[:$1]] has been moved",
+	"bs-notifications-email-move-subject": "Page $1 {{GENDER:$2|moved}} by $4",
+	"bs-notifications-email-move-body": "The page \"$1\" was {{GENDER:$2|moved}} to $3 by $5. You can visit the page following this link:\n$4\n"
+}

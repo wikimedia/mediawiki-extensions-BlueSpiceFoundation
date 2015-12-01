@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robert Vogel <vogel@hallowelt.biz>",
+			"Liuxinyu970226"
+		]
+	},
+	"bs-deferred-action-status-pending": "Value of a cell in an overview table that tells that a particular action has not started yet\n{{Identical|Pending}}",
+	"bs-deferred-action-status-running": "Value of a cell in an overview table that tells that a particular action has started\n{{Identical|Running}}",
+	"bs-deferred-action-status-done": "Value of a cell in an overview table that tells that a particular action has been completed without errors\n{{Identical|Done}}",
+	"bs-deferred-action-status-error": "Value of a cell in an overview table that tells that a particular action has failed during execution\n{{Identical|Failed}}",
+	"bs-deferred-action-apicopypage-description": "Description of an action that copies the content of a page to another one.\n\nParameters:\n* $1 - The source page title to be copied from\n* $2 - The target page title to be copied to",
+	"bs-deferred-action-apieditpage-description": "Description of an action that edits the contents of a page.\n\nParameters:\n* $1 - The title of the page that will be edited\n{{Identical|Edit}}",
+	"bs-deferred-batch-title": "Title of a dialog or panel that shows a list of actions to be processed",
+	"bs-deferred-batch-progress-desc": "Title of a fieldset that displays the progress of the running batch process\n{{Identical|Progress}}",
+	"bs-deferred-batch-actions": "Title of the column that shows the names of the actions on the batch\n{{Identical|Action}}",
+	"bs-deferred-batch-description": "Title of the column that shows a short description of the actions on the batch\n{{Identical|Description}}",
+	"bs-deferred-batch-status": "Title of the column that shows the current state of the actions on the batch\n{{Identical|Status}}"
+}

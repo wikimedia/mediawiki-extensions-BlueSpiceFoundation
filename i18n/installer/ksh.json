@@ -4,5 +4,5 @@
 			"Purodha"
 		]
 	},
-	"bs-installer-title": "MedijaWikki $1 un <i lang=\"en\" xml:lang=\"en\">BlueSpice</i> $2 enreeschte"
+	"bs-installer-title": "MedijaWikki $1 un {{int:bluespice}} $2 enreeschte"
 }

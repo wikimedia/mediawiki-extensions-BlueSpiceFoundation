@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"bs-deferred-action-status-pending": "Pendent.",
+	"bs-deferred-action-status-done": "Fet.",
+	"bs-deferred-action-status-error": "Ha fallat.",
+	"bs-deferred-action-apicopypage-description": "Còpia «$1» a «$2».",
+	"bs-deferred-action-apieditpage-description": "Edita \"$1\".",
+	"bs-deferred-batch-title": "Processament per lots",
+	"bs-deferred-batch-progress-desc": "Progrés",
+	"bs-deferred-batch-actions": "Accions",
+	"bs-deferred-batch-description": "Descripció",
+	"bs-deferred-batch-status": "Estat"
+}

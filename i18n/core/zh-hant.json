@@ -8,7 +8,7 @@
 		]
 	},
 	"bs-ns_main": "(頁面)",
-	"bs-ns_all": "（全部）",
+	"bs-ns_all": "(全部)",
 	"bs-tab_navigation": "導覽",
 	"bs-tab_focus": "焦點",
 	"bs-tab_admin": "管理",
@@ -28,7 +28,7 @@
 	"bs-two-units-ago": "$1 又 $2 之前",
 	"bs-one-unit-ago": "$1 之前",
 	"bs-now": "現在",
-	"bs-email-greeting-receiver": "{{GENDER:$1|$1 先生您好|$1 小姐您好|$1 您好}}，",
+	"bs-email-greeting-receiver": "{{GENDER:$1|$2 先生您好|$2 小姐您好|$2 您好}}，",
 	"bs-email-greeting-no-receiver": "您好，",
 	"bs-email-footer": "此訊息為系統自動產生，請勿回覆此電子郵件。",
 	"bs-userpagesettings-legend": "使用者設定",

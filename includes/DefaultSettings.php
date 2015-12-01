@@ -45,66 +45,7 @@ $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the s
 $wgUrlProtocols[] = "file://";
 $wgVerifyMimeType = false;
 $wgAllowJavaUploads = true;
-
-//wgScriptPath relative paths
-$sResourcesPath = '/extensions/BlueSpiceFoundation/resources';
-$bsgExtJSFiles = array(
-	'scripts' => array(
-		$sResourcesPath.'/extjs/ext-all.js', //This allows us to switch to bootstrap.js
-	),
-	'debug-scripts' => array(
-		$sResourcesPath.'/extjs/ext-all-debug-w-comments.js',
-	)
-);
-
-$bsgExtJSThemes = array(
-	'bluespice' => array(
-		'scripts' => array(
-			//As bluespice-theme is derived from ext-theme-neptune we need
-			//these JS modifications
-			$sResourcesPath.'/extjs/ext-theme-neptune.js'
-		),
-		'styles' => array(
-			$sResourcesPath.'/bluespice.extjs/bluespice-theme/bluespice-theme-all.css'
-		),
-		'debug-scripts' => array(
-			$sResourcesPath.'/extjs/ext-theme-neptune-debug.js'
-		),
-		'debug-styles' => array(
-			$sResourcesPath.'/bluespice.extjs/bluespice-theme/bluespice-theme-all-debug.css'
-		)
-	),
-	'neptune' => array(
-		'scripts' => array(
-			$sResourcesPath.'/extjs/ext-theme-neptune.js'
-		),
-		'styles' => array(
-			$sResourcesPath.'/extjs/resources/ext-theme-neptune/ext-theme-neptune-all.css'
-		),
-		'debug-scripts' => array(
-			$sResourcesPath.'/extjs/ext-theme-neptune-debug.js'
-		),
-		'debug-styles' => array(
-			$sResourcesPath.'/extjs/resources/ext-theme-neptune/ext-theme-neptune-all-debug.css'
-		)
-	),
-	'classic' => array(
-		'styles' => array(
-			$sResourcesPath.'/extjs/resources/ext-theme-classic/ext-theme-classic-all.css'
-		),
-		'debug-styles' => array(
-			$sResourcesPath.'/extjs/resources/ext-theme-classic/ext-theme-classic-all-debug.css'
-		)
-	),
-	'gray' => array(
-		'styles' => array(
-			$sResourcesPath.'/extjs/resources/ext-theme-gray/ext-theme-gray-all.css'
-		),
-		'debug-styles' => array(
-			$sResourcesPath.'/extjs/resources/ext-theme-gray/ext-theme-gray-all-debug.css'
-		)
-	)
-);
+$wgThumbnailScriptPath = "{$wgScriptPath}/thumb{$wgScriptExtension}"; //Enable on demand thumb rendering
 
 $bsgPermissionConfig = array(
 	'read' => array(
@@ -231,10 +172,6 @@ $bsgPermissionConfig = array(
 		'type' => 'global'
 	)
 );
-
-$bsgExtJSTheme = 'bluespice';
-
-unset($sResourcesPath);
 
 /**
  * Allows extensions to distinguish between normal content NS, that can be

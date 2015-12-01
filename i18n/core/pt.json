@@ -29,7 +29,7 @@
 	"bs-now": "agora",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Olá Sr. $2|Olá Srª $2|Olá $2}},",
 	"bs-email-greeting-no-receiver": "Olá,",
-	"bs-email-footer": "Esta mensagem foi gerada automaticamente. Por favor, não responda a este e-mail.",
+	"bs-email-footer": "Esta mensagem foi gerada automaticamente por $1. Por favor, não responda a este e-mail.",
 	"bs-userpagesettings-legend": "Configurações do utilizador",
 	"bs-userpreferences-link-text": "Mais configurações do utilizador",
 	"bs-userpreferences-link-title": "Mostrar suas configurações de utilizador",
@@ -66,6 +66,14 @@
 	"bs-imagepage-download-text": "Descarregar",
 	"bs-ns": "Domínio",
 	"bs-from-something": "(de $1)",
+	"bs-pref-fileextensions": "Extensões de ficheiros permitidas:",
+	"bs-pref-imageextensions": "Extensões de imagens permitidas:",
+	"bs-pref-logopath": "Caminho da logo:",
+	"bs-pref-faviconpath": "Caminho da favicon:",
 	"bs-pref-defaultuserimage": "Imagem de perfil padrão:",
-	"bs-pref-anonuserimage": "Imagem de perfil de utilizador anónimo:"
+	"bs-pref-miniprofileenforceheight": "Forçar altura do avatar do(a) utilizador(a):",
+	"bs-pref-anonuserimage": "Imagem de perfil de utilizador anónimo:",
+	"bs-pref-deleteduserimage": "Avatar do(a) utilizador(a) eliminado:",
+	"bs-pref-bspinginterval": "Intervalo de ping (em segundos):",
+	"bs-pref-testmode": "Activar o modo de teste"
 }

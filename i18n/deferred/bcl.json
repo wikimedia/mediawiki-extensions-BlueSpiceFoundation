@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Geopoet"
+		]
+	},
+	"bs-deferred-action-status-pending": "Nakauntok.",
+	"bs-deferred-action-status-running": "Nagdadalagan...",
+	"bs-deferred-action-status-done": "Tapos na.",
+	"bs-deferred-action-status-error": "Nagpalya.",
+	"bs-deferred-action-apicopypage-description": "Kopyahon an \"$1\" pasiring sa \"$2\"",
+	"bs-deferred-action-apieditpage-description": "Liwaton an \"$1\"",
+	"bs-deferred-batch-title": "Pinoproseso an batch",
+	"bs-deferred-batch-progress-desc": "Progreso",
+	"bs-deferred-batch-actions": "Mga aksyon",
+	"bs-deferred-batch-description": "Deskripsyon",
+	"bs-deferred-batch-status": "Kamugtakan"
+}

@@ -7,20 +7,19 @@ if( !defined( 'MEDIAWIKI' ) ) {
 $aResourceModuleTemplate = array(
 	'localBasePath' => $IP . '/extensions/BlueSpiceFoundation/resources',
 	'remoteExtPath' => 'BlueSpiceFoundation/resources',
-	'group' => 'ext.bluespice',
 	'targets' => array( 'mobile', 'desktop' )
 );
 
 $wgResourceModules['ext.bluespice'] = array(
 	'scripts' => array(
-		'bluespice/bs.tools.js',
 		'bluespice/bluespice.js',
 		'bluespice/bluespice.extensionManager.js',
 		'bluespice/bluespice.util.js',
 		'bluespice/bluespice.wikiText.js',
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
-		'bluespice/bluespice.ping.js'
+		'bluespice/bluespice.ping.js',
+		'bluespice/bluespice.tooltip.js'
 	),
 	'messages' => array(
 		'largefileserver',
@@ -42,23 +41,63 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bs-one-unit-ago',
 		'bs-now',
 		'blanknamespace', //MediaWiki
-	),
-	'position' => 'bottom' // available since r85616
+	)
 ) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.styles'] = array(
 	'styles' => array(
-		'bluespice/bluespice.css'
+		'bluespice/bluespice.css',
+		'bluespice/bluespice.icons.css'
 	),
 	'position' => 'top'
 ) + $aResourceModuleTemplate;
 
-$wgResourceModules['ext.bluespice.extjs'] = array(
+$wgResourceModules['ext.bluespice.extjs.base'] = array(
+	'class' => 'ResourceLoaderExtJSModule' //Provides framework JS and I18N
+) + $aResourceModuleTemplate;
+
+//TODO: Implement as subclass of ResourceLoaderFileModule to provide RTL support
+$wgResourceModules['ext.bluespice.extjs.theme'] = array(
 	'scripts' => array(
-		'bluespice.extjs/bluespice.extjs.js',
+		//Some skin specific overrides. As "bluespice-theme" derives from
+		//ExtJS's "neptune" we need to include this framework file
+		'extjs/ext-theme-neptune-debug.js'
+	),
+	'styles' => array(
+		//Custom build ot ExtJS's "neptune" theme
+		'bluespice.extjs/bluespice-theme/bluespice-theme-all-debug.css',
 	),
 	'dependencies' => array(
-		'ext.bluespice'
+		//Yes, the theme depends on the framework, not the other way round.
+		//This is because the theme may have JS that depends on the framework.
+		//If we didn't have it this way we would need to specify a seperate
+		//'scripts' RL module for the theme.
+		'ext.bluespice.extjs.base'
+	),
+	'group' => 'bsextjs'
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs.theme.ux'] = array(
+	'styles' => array(
+		//Mainly Ext.ux styles that are not part of the theme
+		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',
+		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
+		'bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css',
+		'bluespice.extjs/Ext.ux/css/TabScrollerMenu.css',
+		'bluespice.extjs/Ext.ux/grid/css/GridFilters.css',
+		'bluespice.extjs/Ext.ux/grid/css/RangeMenu.css',
+		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css'
+	),
+	'group' => 'bsextjs'
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs'] = array(
+	'scripts' => array(
+		'bluespice.extjs/bluespice.extjs.js'
+	),
+	'styles' => array(
+		//There are some weird legacy CSS fixes. Don't know if they still apply
+		'bluespice.extjs/bluespice.extjs.fixes.css',
 	),
 	'messages' => array(
 		'bs-extjs-ok',
@@ -70,6 +109,7 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-edit',
 		'bs-extjs-add',
 		'bs-extjs-remove',
+		'bs-extjs-copy',
 		'bs-extjs-hint',
 		'bs-extjs-error',
 		'bs-extjs-confirm',
@@ -102,22 +142,12 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-title-warning',
 		'bs-extjs-categoryboxselect-emptytext'
 	),
-	'position' => 'bottom'
+	'dependencies' => array(
+		'ext.bluespice.extjs.theme.ux',
+		'ext.bluespice.extjs.theme'
+	),
+	'group' => 'bsextjs'
 ) + $aResourceModuleTemplate;
-
-$wgResourceModules['ext.bluespice.extjs.styles'] = array(
-	//Those are mainly Ext.ux styles that are not part of ext-all.css or the theme
-	'styles' => array(
-		'bluespice.extjs/Ext.ux/css/GroupTabPanel.css',
-		'bluespice.extjs/Ext.ux/css/ItemSelector.css',
-		'bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css',
-		'bluespice.extjs/Ext.ux/css/TabScrollerMenu.css',
-		'bluespice.extjs/Ext.ux/grid/css/GridFilters.css',
-		'bluespice.extjs/Ext.ux/grid/css/RangeMenu.css',
-		'bluespice.extjs/Ext.ux/form/field/BoxSelect.css',
-		'bluespice.extjs/bluespice.extjs.fixes.css'
-	)
-	) + $aResourceModuleTemplate;
 
 $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 	'dependencies' => array(
@@ -132,6 +162,25 @@ $wgResourceModules['ext.bluespice.extjs.BS.portal'] = array(
 		'bs-extjs-portal-timespan-week',
 		'bs-extjs-portal-timespan-month',
 		'bs-extjs-portal-timespan-alltime'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs.BS.deferred'] = array(
+	'dependencies' => array(
+		'ext.bluespice.extjs'
+	),
+	'messages' => array(
+		'bs-deferred-action-status-pending',
+		'bs-deferred-action-status-running',
+		'bs-deferred-action-status-done',
+		'bs-deferred-action-status-error',
+		'bs-deferred-action-apicopypage-description',
+		'bs-deferred-action-apieditpage-description',
+		'bs-deferred-batch-title',
+		'bs-deferred-batch-progress-desc',
+		'bs-deferred-batch-actions',
+		'bs-deferred-batch-description',
+		'bs-deferred-batch-status'
 	)
 ) + $aResourceModuleTemplate;
 
@@ -168,7 +217,8 @@ $wgResourceModules['ext.bluespice.html.formfields.multiselect'] = array(
 $wgResourceModules['ext.bluespice.compat.vector.styles'] = array(
 	'styles' => array(
 		'bluespice.compat/bluespice.compat.vector.fixes.css'
-	)
+	),
+	'position' => 'top'
 ) + $aResourceModuleTemplate;
 
 unset( $aResourceModuleTemplate );

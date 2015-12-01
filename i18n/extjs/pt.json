@@ -14,6 +14,7 @@
 	"bs-extjs-add": "Adicionar",
 	"bs-extjs-remove": "Remover",
 	"bs-extjs-edit": "Editar",
+	"bs-extjs-copy": "Copiar",
 	"bs-extjs-hint": "Dica",
 	"bs-extjs-error": "Erro",
 	"bs-extjs-confirm": "Confirmar",
@@ -41,5 +42,6 @@
 	"bs-extjs-filter-starts-with": "começa com",
 	"bs-extjs-filter-ends-with": "termina com",
 	"bs-extjs-title-success": "Sucesso",
-	"bs-extjs-title-warning": "Aviso"
+	"bs-extjs-title-warning": "Aviso",
+	"bs-extjs-categoryboxselect-emptytext": "Adicionar categoria"
 }

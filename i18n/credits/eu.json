@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Sator"
 		]
 	},
 	"bs-credits-programmers": "Programatzaileak",
+	"bs-credits-contributors": "Lankideak",
 	"bs-credits-translators": "Itzultzaileak",
 	"bs-credits-translation": "Itzulpena"
 }

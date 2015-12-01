@@ -155,4 +155,8 @@ class SpecialCredits extends BsSpecialPage {
 			}
 		}
 	}
+
+	protected function getGroupName() {
+		return 'bluespice';
+	}
 }

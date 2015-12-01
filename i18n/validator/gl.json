@@ -1,8 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Elisardojm"
 		]
 	},
-	"bs-validator-email-validation-approved": "O enderezo de correo electrónico validouse correctamente."
+	"bs-validator-email-validation-approved": "O enderezo de correo electrónico validouse correctamente.",
+	"bs-validator-email-validation-not-approved": "Non se puido validar a dirección de correo electrónico.",
+	"bs-validator-url-validation-approved": "O URL validouse correctamente.",
+	"bs-validator-url-validation-not-approved": "No se puido validar o URL.",
+	"bs-validator-arg-count-validation-approved": "O atributo «count» validouse correctamente.",
+	"bs-validator-arg-count-validation-not-approved": "Non se puido valorar o atributo «count».",
+	"bs-validator-set-validation-approved": "$1 validouse correctamente.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Só está permitido o seguinte valor para $1|Para $1 só está permitido un dos seguintes valores }}: $2.",
+	"bs-validator-integer-range-validation-too-low": "O valor proporcionado é demasiado baixo. Non debe ser menor que $1.",
+	"bs-validator-integer-range-validation-too-high": "O valor proporcionado é demasiado alto. Non debe ser superior que $1."
 }

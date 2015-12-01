@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"bs-deferred-action-status-done": "Hotovo.",
+	"bs-deferred-action-apieditpage-description": "Editovat „$1“.",
+	"bs-deferred-batch-actions": "Akce",
+	"bs-deferred-batch-description": "Popis",
+	"bs-deferred-batch-status": "Stav"
+}

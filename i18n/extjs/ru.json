@@ -16,6 +16,7 @@
 	"bs-extjs-add": "Добавить",
 	"bs-extjs-remove": "Удалить",
 	"bs-extjs-edit": "Редактировать",
+	"bs-extjs-copy": "Копировать",
 	"bs-extjs-hint": "Подсказка",
 	"bs-extjs-error": "Ошибка",
 	"bs-extjs-confirm": "Подтвердить",
@@ -42,6 +43,9 @@
 	"bs-extjs-filter-contains-not": "не содержит",
 	"bs-extjs-filter-starts-with": "начинается с",
 	"bs-extjs-filter-ends-with": "заканчивается",
+	"bs-extjs-filter-greater-than": "больше",
+	"bs-extjs-filter-less-than": "менее",
 	"bs-extjs-title-success": "Успешно",
-	"bs-extjs-title-warning": "Предупреждение"
+	"bs-extjs-title-warning": "Предупреждение",
+	"bs-extjs-categoryboxselect-emptytext": "Добавить категорию"
 }

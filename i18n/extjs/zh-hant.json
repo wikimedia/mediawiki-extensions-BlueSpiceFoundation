@@ -16,6 +16,7 @@
 	"bs-extjs-add": "新增",
 	"bs-extjs-remove": "移除",
 	"bs-extjs-edit": "編輯",
+	"bs-extjs-copy": "複製",
 	"bs-extjs-hint": "提示",
 	"bs-extjs-error": "錯誤",
 	"bs-extjs-confirm": "確認",
@@ -42,6 +43,9 @@
 	"bs-extjs-filter-contains-not": "不包含",
 	"bs-extjs-filter-starts-with": "開始於",
 	"bs-extjs-filter-ends-with": "屆滿於",
+	"bs-extjs-filter-greater-than": "大於",
+	"bs-extjs-filter-less-than": "小於",
 	"bs-extjs-title-success": "成功",
-	"bs-extjs-title-warning": "警告"
+	"bs-extjs-title-warning": "警告",
+	"bs-extjs-categoryboxselect-emptytext": "加入分類"
 }

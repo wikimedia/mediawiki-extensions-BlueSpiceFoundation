@@ -3,7 +3,8 @@
 		"authors": [
 			"Fitoschido",
 			"Frammm",
-			"Ihojose"
+			"Ihojose",
+			"Macofe"
 		]
 	},
 	"bs-validator-email-validation-approved": "La dirección de correo electrónico se validó correctamente.",
@@ -11,7 +12,7 @@
 	"bs-validator-url-validation-approved": "El URL se validó correctamente.",
 	"bs-validator-url-validation-not-approved": "No se pudo validar el URL.",
 	"bs-validator-arg-count-validation-approved": "El atributo «count» se validó correctamente.",
-	"bs-validator-arg-count-validation-not-approved": "No se pudo valorar el atributo «count».",
+	"bs-validator-arg-count-validation-not-approved": "No se pudo validar el atributo «count».",
 	"bs-validator-set-validation-approved": "$1 se validó correctamente.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Sólo el siguiente valor es permitido para $1|Para $1 sólo uno de los siguientes valores es permitido}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "El valor proporcionado es demasiado bajo. No debe ser menor que $1.",

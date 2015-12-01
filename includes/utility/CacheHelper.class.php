@@ -18,7 +18,7 @@ class BsCacheHelper {
 	 */
 	public static function getCache() {
 		if ( self::$oCache === null ) {
-			self::$oCache = wfGetCache( CACHE_ANYTHING );
+			self::$oCache = wfGetMainCache();
 		}
 
 		return self::$oCache;

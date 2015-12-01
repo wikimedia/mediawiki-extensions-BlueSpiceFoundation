@@ -31,7 +31,7 @@
 	"bs-now": "ora",
 	"bs-email-greeting-receiver": "Ciao {{GENDER:$1|Sig. $2|Sig.ra $2|$2}},",
 	"bs-email-greeting-no-receiver": "Ciao,",
-	"bs-email-footer": "Questo messaggio è stato inviato automaticamente. Si prega di non rispondere a questa email.",
+	"bs-email-footer": "Questo messaggio è stato inviato automaticamente da $1. Si prega di non rispondere a questa email.",
 	"bs-userpagesettings-legend": "Impostazioni utente",
 	"bs-userpreferences-link-text": "Ulteriori impostazioni utente",
 	"bs-userpreferences-link-title": "Visualizzare le impostazioni personali del tuo utente",
@@ -54,6 +54,7 @@
 	"bs-filesystemhelper-folder-already-exists": "La cartella <code>$1</code> esiste già.",
 	"bs-filesystemhelper-folder-copy-error": "La cartella <code>$1</code> non può essere rinominata.",
 	"bs-filesystemhelper-folder-not-exists": "La cartella <code>$1</code> non esiste.",
+	"bs-filesystemhelper-folder-rename-error": "La cartella <code>$1</code> non può essere rinominata in <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "Il file non può essere caricato: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Il file non ha l'estensione richiesta: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Questo tipo di file non è supportato.",
@@ -72,6 +73,9 @@
 	"bs-pref-logopath": "Percorso del logo:",
 	"bs-pref-faviconpath": "Percorso della favicon:",
 	"bs-pref-defaultuserimage": "Avatar predefinito dell'utente:",
+	"bs-pref-miniprofileenforceheight": "Forza l'altezza dell'avatar utente",
+	"bs-pref-anonuserimage": "Avatar utenti anonimi:",
+	"bs-pref-deleteduserimage": "Avatar utenti cancellati:",
 	"bs-pref-bspinginterval": "Intervallo di ping (in secondi):",
 	"bs-pref-testmode": "Attiva modalità test"
 }

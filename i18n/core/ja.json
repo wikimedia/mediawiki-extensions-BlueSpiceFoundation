@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Shirayuki"
+			"Shirayuki",
+			"Sujiniku",
+			"2nd-player"
 		]
 	},
 	"bs-ns_main": "(ページ)",
 	"bs-ns_all": "(すべて)",
+	"bs-tab_admin": "管理",
 	"bs-userbar_loginswitch_logout": "ログアウト",
 	"bs-userbar_loginswitch_login": "ログイン",
 	"bs-extended-search-tooltip-fulltext": "全文検索",
@@ -20,7 +23,7 @@
 	"bs-secs-duration": "{{PLURAL:$1|$1秒}}",
 	"bs-two-units-ago": "$1$2前",
 	"bs-one-unit-ago": "$1前",
-	"bs-email-footer": "このメッセージは自動的に生成されました。このメールには返信なさらないようお願いします。",
+	"bs-email-footer": "このメッセージは$1によって自動的に生成されました。このメールには返信なさらないようお願いします。",
 	"bs-userpagesettings-legend": "利用者設定",
 	"bs-userpreferences-link-text": "その他の利用者設定",
 	"bs-exception-view-heading": "エラーが発生しました",
@@ -30,6 +33,7 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "エラーの詳細を非表示",
 	"bs-viewtagerrorlist-legend": "$1 - エラー",
 	"bs-pref-sortalph": "名前空間を辞書順に並べ替える",
+	"bs-permissionerror": "権限エラー!",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> は有効なディレクトリではありません。",
 	"bs-filesystemhelper-has-path-traversal": "ディレクトリ トラバーサルを検出しました!",
 	"bs-filesystemhelper-file-not-exists": "ファイル <code>$1</code> は存在しません。",

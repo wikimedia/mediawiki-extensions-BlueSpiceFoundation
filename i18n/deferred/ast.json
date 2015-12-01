@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"bs-deferred-action-status-pending": "Pendiente.",
+	"bs-deferred-action-status-running": "Executándose...",
+	"bs-deferred-action-status-done": "Fecho.",
+	"bs-deferred-action-status-error": "Falló.",
+	"bs-deferred-action-apicopypage-description": "Copiar «$1» a «$2».",
+	"bs-deferred-action-apieditpage-description": "Editar \"$1\".",
+	"bs-deferred-batch-title": "Procesamientu por llotes",
+	"bs-deferred-batch-progress-desc": "Progresu",
+	"bs-deferred-batch-actions": "Aiciones",
+	"bs-deferred-batch-description": "Descripción",
+	"bs-deferred-batch-status": "Estáu"
+}

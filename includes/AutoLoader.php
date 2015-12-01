@@ -37,7 +37,7 @@ $GLOBALS['wgAutoloadClasses']['BsConfig'] = __DIR__."/Config.class.php";
 $GLOBALS['wgAutoloadClasses']['BSDebug'] = __DIR__."/Debug.php";
 $GLOBALS['wgAutoloadClasses']['BsException'] = __DIR__."/Exception.class.php";
 $GLOBALS['wgAutoloadClasses']['BsExtensionManager'] = __DIR__."/ExtensionManager.class.php";
-$GLOBALS['wgAutoloadClasses']['BsMailer'] = __DIR__."/Mailer.class.php";
+$GLOBALS['wgAutoloadClasses']['BsMailer'] = __DIR__."/Mailer.class.php";//Deprecated
 $GLOBALS['wgAutoloadClasses']['BsXHRBaseResponse'] = __DIR__."/XHRBaseResponse.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRJSONResponse'] = __DIR__."/XHRBaseResponse.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRResponseStatus'] = __DIR__."/XHRBaseResponse.class.php";
@@ -50,12 +50,18 @@ $GLOBALS['wgAutoloadClasses']['BsCAIResponse'] = __DIR__."/CAResponse.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSStoreParams'] = __DIR__."/ExtJSStoreParams.php";
 $GLOBALS['wgAutoloadClasses']['BsExtJSSortParam'] = __DIR__."/ExtJSStoreParams.php";
 
+//notifications
+$GLOBALS['wgAutoloadClasses']['BSNotifications'] = __DIR__."/Notifications.class.php";
+$GLOBALS['wgAutoloadClasses']['BSNotificationHandlerInterface'] = __DIR__."/notifications/NotificationHandler.php";
+$GLOBALS['wgAutoloadClasses']['BSNotificationHandler'] = __DIR__."/notifications/NotificationHandler.php";
+
 //api
 $GLOBALS['wgAutoloadClasses']['BSStandardAPIResponse'] = __DIR__."/api/BSStandardAPIResponse.php";
 $GLOBALS['wgAutoloadClasses']['BSApiBase'] = __DIR__."/api/BSApiBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiTasksBase'] = __DIR__."/api/BSApiTasksBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiExtJSStoreBase'] = __DIR__."/api/BSApiExtJSStoreBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiFileBackendStore'] = __DIR__."/api/BSApiFileBackendStore.php";
+$GLOBALS['wgAutoloadClasses']['BSApiUserStore'] = __DIR__."/api/BSApiUserStore.php";
 
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";
@@ -81,6 +87,8 @@ $GLOBALS['wgAutoloadClasses']['BsDOMHelper'] = __DIR__."/utility/DOMHelper.class
 $GLOBALS['wgAutoloadClasses']['BsFormatConverter'] = __DIR__."/utility/FormatConverter.class.php";
 $GLOBALS['wgAutoloadClasses']['BsFileSystemHelper'] = __DIR__."/utility/FileSystemHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsGroupHelper'] = __DIR__."/utility/GroupHelper.class.php";
+$GLOBALS['wgAutoloadClasses']['BsCategoryHelper'] = __DIR__."/utility/CategoryHelper.class.php";
+$GLOBALS['wgAutoloadClasses']['BsUserHelper'] = __DIR__."/utility/UserHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsLinkProvider'] = __DIR__."/utility/LinkProvider.class.php";
 $GLOBALS['wgAutoloadClasses']['BsNamespaceHelper'] = __DIR__."/utility/NamespaceHelper.class.php";
 $GLOBALS['wgAutoloadClasses']['BsPageContentProvider'] = __DIR__."/utility/PageContentProvider.class.php";
@@ -122,6 +130,8 @@ $GLOBALS['wgAutoloadClasses']['ViewWidget'] = __DIR__ . '/outputhandler/views/vi
 //Overrides
 // Replace Mediawikis ApiFormatJson class with our own to prevent some errors with the application/json header.
 $GLOBALS['wgAutoloadClasses']['ApiFormatJson'] = __DIR__."/api/ApiFormatJsonMW.php";
+
+$GLOBALS['wgAutoloadClasses']['ResourceLoaderExtJSModule'] = __DIR__."/resourceloader/ResourceLoaderExtJSModule.php";
 
 /**
  * Behebt einen Bug in Oracle Datenbank-Abstraction der die update.php abstürzen lässt.

@@ -23,6 +23,6 @@
 	"bs-two-units-ago": "$1 და $2 წინ",
 	"bs-one-unit-ago": "$1 წინ",
 	"bs-now": "ახლა",
-	"bs-email-greeting-receiver": "{{GENDER:$1|გამარჯობა ბ-ნო $1|გამარჯობა ქ-ნო $1|გამარჯობა $1}},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|გამარჯობა ბ-ნო $2|გამარჯობა ქ-ნო $2|გამარჯობა $2}},",
 	"bs-email-greeting-no-receiver": "გამარჯობა,"
 }

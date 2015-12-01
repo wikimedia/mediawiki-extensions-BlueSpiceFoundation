@@ -4,5 +4,6 @@
 			"Sociologist"
 		]
 	},
-	"bs-userbar_loginswitch_login": "Kirish"
+	"bs-userbar_loginswitch_login": "Kirish",
+	"bs-permissionerror": "Ruxsat yoʻq!"
 }

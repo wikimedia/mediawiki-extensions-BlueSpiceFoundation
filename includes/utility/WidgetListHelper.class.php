@@ -106,7 +106,7 @@ class BsWidgetListHelper {
 			$iDepth = 0;
 			$bIsIndentCharacter = true;
 			do {
-				if ( $sLine[$iDepth] == '*' ) $iDepth++;
+				if ( isset( $sLine[$iDepth] ) && $sLine[$iDepth] == '*' ) $iDepth++;
 				else $bIsIndentCharacter = false;
 			}
 			while ($bIsIndentCharacter);

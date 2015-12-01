@@ -16,9 +16,19 @@ $specialPageAliases['ar'] = array(
 	'Diagnostics' => array( 'تشخيصات' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'Diagnostics' => array( 'تشخيصات' ),
+);
+
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'Diagnostics' => array( 'ئیب_ودی_کنۆک' ),
+);
+
+/** Czech (čeština) */
+$specialPageAliases['cs'] = array(
+	'Diagnostics' => array( 'Diagnostika' ),
 );
 
 /** German (Deutsch) */
@@ -28,7 +38,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'Diagnostics' => array( 'Teşhiskerden' ),
+	'Diagnostics' => array( 'Teşhiskerdene' ),
 );
 
 /** Persian (فارسی) */
@@ -46,6 +56,11 @@ $specialPageAliases['ko'] = array(
 	'Diagnostics' => array( '진단하기' ),
 );
 
+/** Northern Luri (لۊری شومالی) */
+$specialPageAliases['lrc'] = array(
+	'Diagnostics' => array( 'ئمکانات_دیارکاری_ئیڤ' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'Diagnostics' => array( 'Дијагностика' ),
@@ -59,6 +74,11 @@ $specialPageAliases['ml'] = array(
 /** Dutch (Nederlands) */
 $specialPageAliases['nl'] = array(
 	'Diagnostics' => array( 'Diagnostiek' ),
+);
+
+/** Brazilian Portuguese (português do Brasil) */
+$specialPageAliases['pt-br'] = array(
+	'Diagnostics' => array( 'Diagnósticos' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */

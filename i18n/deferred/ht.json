@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tisave"
+		]
+	},
+	"bs-deferred-action-status-done": "Fini.",
+	"bs-deferred-action-status-error": "Echèk.",
+	"bs-deferred-batch-progress-desc": "Pwogrè",
+	"bs-deferred-batch-actions": "Aksyon",
+	"bs-deferred-batch-description": "Deskripsyon"
+}

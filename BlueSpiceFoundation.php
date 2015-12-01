@@ -29,13 +29,13 @@
  */
 $wgBlueSpiceExtInfo = array(
 	'name' => 'BlueSpice for MediaWiki',
-	'version' => '2.23.1.1',
+	'version' => '2.23.2',
 	'status' => 'stable',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
 	'url' => 'http://www.blue-spice.org',
 	'desc' => 'Makes MediaWiki enterprise ready.',
 	'author' => array(
-		'[http://www.hallowelt.biz Hallo Welt! Medienwerkstatt GmbH]',
+		'[http://www.hallowelt.com Hallo Welt! Medienwerkstatt GmbH]',
 	)
 );
 
@@ -48,7 +48,7 @@ $wgExtensionCredits['other'][] = array(
 
 $wgFooterIcons['poweredby']['bluespice'] = array(
 	"src" => "$wgScriptPath/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
-	"url" => "http://blue-spice.org",
+	"url" => "http://bluespice.com",
 	"alt" => "Powered by BlueSpice",
 );
 
@@ -66,6 +66,7 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
 $wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
 $wgAPIModules['bs-filebackend-store'] = 'BSApiFileBackendStore';
+$wgAPIModules['bs-user-store'] = 'BSApiUserStore';
 
 //I18N MW1.23+
 $wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
@@ -73,7 +74,9 @@ $wgMessagesDirs['BlueSpiceCredits'] = __DIR__ . '/i18n/credits';
 $wgMessagesDirs['BlueSpiceDiagnostics'] = __DIR__ . '/i18n/diagnostics';
 $wgMessagesDirs['BlueSpice.ExtJS'] = __DIR__ . '/i18n/extjs';
 $wgMessagesDirs['BlueSpice.ExtJS.Portal'] = __DIR__ . '/i18n/extjs-portal';
+$wgMessagesDirs['BlueSpice.Deferred'] = __DIR__ . '/i18n/deferred';
 $wgMessagesDirs['Validator'] = __DIR__ . '/i18n/validator';
+$wgMessagesDirs['Notifications'] = __DIR__ . '/i18n/notifications';
 
 //I18N Backwards compatibility
 $wgExtensionMessagesFiles += array(
@@ -81,15 +84,14 @@ $wgExtensionMessagesFiles += array(
 	'Validator' => __DIR__."/languages/Validator.i18n.php",
 	'BlueSpice.ExtJS' => __DIR__."/languages/BlueSpice.ExtJS.i18n.php",
 	'BlueSpice.ExtJS.Portal' => __DIR__."/languages/BlueSpice.ExtJS.Portal.i18n.php",
+	'BlueSpice.Deferred' => __DIR__.'/languages/BlueSpice.Deferred.i18n.php',
 	'BlueSpiceDiagnostics' => __DIR__."/languages/BlueSpice.Diagnostics.i18n.php",
 	'DiagnosticsAlias' => __DIR__."/languages/BlueSpice.Diagnostics.alias.php",
 	'BlueSpiceCredits' => __DIR__."/languages/BlueSpice.Credits.i18n.php",
 	'CreditsAlias' => __DIR__."/languages/BlueSpice.Credits.alias.php"
 );
 
-#$wgSpecialPageGroups['Diagnostics'] = 'bluespice';
 #$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
-$wgSpecialPageGroups['SpecialCredits'] = 'bluespice';
 $wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
 
 // Register hooks

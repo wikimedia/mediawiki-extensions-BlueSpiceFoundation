@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80"
+			"Amire80",
+			"LaG roiL"
 		]
 	},
 	"specialcredits": "היוצרים של בלוספייס",
 	"bs-credits-programmers": "מתכנתים",
 	"bs-credits-dnt": "עיצוב ובדיקות",
-	"bs-credits-contributors": "תורמים"
+	"bs-credits-contributors": "תורמים",
+	"bs-credits-translators": "מתרגמים",
+	"bs-credits-translation": "תרגום",
+	"bs-credits-th": "תודה לכל המתרגמים מ$1."
 }

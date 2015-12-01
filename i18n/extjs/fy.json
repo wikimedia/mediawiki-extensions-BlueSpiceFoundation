@@ -8,9 +8,13 @@
 	"bs-extjs-cancel": "Annulearje",
 	"bs-extjs-yes": "Ja",
 	"bs-extjs-no": "Nee",
+	"bs-extjs-save": "Bewarje",
+	"bs-extjs-delete": "Fuortsmite",
 	"bs-extjs-edit": "Bewurkje",
 	"bs-extjs-error": "Flater",
 	"bs-extjs-warning": "Warskôging",
+	"bs-extjs-close": "Slute",
+	"bs-extjs-label-user": "Brûker",
 	"bs-extjs-label-namespace": "Nammeromte",
 	"bs-extjs-browse": "Blêdzje",
 	"bs-extjs-title-warning": "Warskôging"

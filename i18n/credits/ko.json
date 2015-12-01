@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Keysuck",
-			"아라"
+			"아라",
+			"Hwangjy9"
 		]
 	},
 	"bs-credits-programmers": "프로그래머",
 	"bs-credits-dnt": "설계와 테스트",
-	"bs-credits-contributors": "기여자"
+	"bs-credits-contributors": "기여자",
+	"bs-credits-translators": "번역자",
+	"bs-credits-translation": "번역"
 }

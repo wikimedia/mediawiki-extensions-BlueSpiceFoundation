@@ -17,6 +17,7 @@
 	"bs-extjs-add": "Toevoegen",
 	"bs-extjs-remove": "Verwijderen",
 	"bs-extjs-edit": "Bewerken",
+	"bs-extjs-copy": "Kopiëren",
 	"bs-extjs-hint": "Tip",
 	"bs-extjs-error": "Fout",
 	"bs-extjs-confirm": "Bevestigen",
@@ -43,5 +44,8 @@
 	"bs-extjs-filter-contains-not": "bevat niet",
 	"bs-extjs-filter-starts-with": "begint met",
 	"bs-extjs-filter-ends-with": "eindigt met",
+	"bs-extjs-filter-greater-than": "groter dan",
+	"bs-extjs-filter-less-than": "kleiner dan",
+	"bs-extjs-title-success": "Afgerond",
 	"bs-extjs-title-warning": "Waarschuwing"
 }

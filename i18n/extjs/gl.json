@@ -15,6 +15,7 @@
 	"bs-extjs-add": "Engadir",
 	"bs-extjs-remove": "Eliminar",
 	"bs-extjs-edit": "Editar",
+	"bs-extjs-copy": "Copiar",
 	"bs-extjs-hint": "Suxestión",
 	"bs-extjs-error": "Erro",
 	"bs-extjs-confirm": "Confirmar",
@@ -32,7 +33,7 @@
 	"bs-extjs-browse": "Navegar",
 	"bs-extjs-uploading": "Subindo...",
 	"bs-extjs-confirmNavigationTitle": "Seguir a ligazón",
-	"bs-extjs-confirmNavigationText": "¿Está seguro de que quere seguir esta ligazón? Toda a configuración dinámica, coma filtros ou ordenación, da páxina actual será perdida.",
+	"bs-extjs-confirmNavigationText": "Está seguro de querer seguir esta ligazón? Perderá toda a configuración dinámica, como os filtros ou a ordenación da páxina actual.",
 	"bs-extjs-allns": "(todos)",
 	"bs-extjs-filters": "Filtros",
 	"bs-extjs-filter-equals": "é igual a",
@@ -44,5 +45,6 @@
 	"bs-extjs-filter-greater-than": "maior que",
 	"bs-extjs-filter-less-than": "menor que",
 	"bs-extjs-title-success": "Todo correcto",
-	"bs-extjs-title-warning": "Aviso"
+	"bs-extjs-title-warning": "Aviso",
+	"bs-extjs-categoryboxselect-emptytext": "Engada unha categoría"
 }

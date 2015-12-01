@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps",
+			"Matma Rex"
+		]
+	},
+	"bs-notifications-addacount": "Użytkownik $1 został utworzony.",
+	"bs-notifications-edit": "Strona [[:$1]] została zmieniona",
+	"bs-notifications-email-edit-body": "Strona „$1” była {{GENDER:$2|edytowana}} przez $6.\n\nKomantarz:\n $3 \nMożesz zobaczyć stronę po tym linkiem:\n$4.\n\nJeśli chcesz tylko zobaczyć zmiany, kliknij na ten link:\n$5",
+	"bs-notifications-create": "Strona [[:$1]] została utworzona",
+	"bs-notifications-email-create-subject": "Strona $1 {{GENDER:$2|utworzona}} przez $3",
+	"bs-notifications-delete": "Strona [[:$1]] została skasowana",
+	"bs-notifications-email-delete-subject": "Strona $1 {{GENDER:$2|usunięta}} przez $3",
+	"bs-notifications-email-delete-body": "Strona „$4” została {{GENDER:$2|usunięta}} przez $5.\n\nPowód usunięcia to:\n$3",
+	"bs-notifications-move": "Strona [[:$1]] została przeniesiona",
+	"bs-notifications-email-move-subject": "Strona $1 {{GENDER:$2|przeniesiona}} przez $4"
+}

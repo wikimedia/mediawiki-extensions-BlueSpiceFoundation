@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"bs-notifications-addacount": "Участник $1 был создан.",
+	"bs-notifications-email-addaccount-subject": "Участник $2 {{GENDER:$1|создан}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|Участник $3 был создан|Участница $3 была создана}}.\n\nВы можете посетить {{GENDER:$2|его|её}} страницу, перейдя по этой ссылке:\n$1",
+	"bs-notifications-edit": "Страница [[:$1]] была изменена",
+	"bs-notifications-email-edit-subject": "Страница $1 {{GENDER:$2|отредактирована}} $3",
+	"bs-notifications-email-edit-body": "Страница «$1» была отредактирована {{GENDER:$2|участником|участницей}} $6.\n\nКомментарий:\n$3\nЧтобы посетить страницу, перейдите по этой ссылке:\n$4\n\nЧтобы посмотреть изменения, перейдите по этой ссылке:\n$5",
+	"bs-notifications-create": "Страница [[:$1]] была создана",
+	"bs-notifications-email-create-subject": "Страница $1 {{GENDER:$2|создана}} $3",
+	"bs-notifications-email-create-body": "Страница «$1» была {{GENDER:$2|создана}} $6.\n\nКомментарий:\n$3\nЧтобы посетить страницу, перейдите по этой ссылке:\n$4",
+	"bs-notifications-delete": "Страница [[:$1]] была удалена",
+	"bs-notifications-email-delete-subject": "Страница $1 удалена {{GENDER:$2|участником|участницей}} $3",
+	"bs-notifications-email-delete-body": "Страница «$4» удалена {{GENDER:$2|участником|участницей}} $5.\n\nПричина:\n$3",
+	"bs-notifications-move": "Страница [[:$1]] была перемещена",
+	"bs-notifications-email-move-subject": "Страница $1 {{GENDER:$2|перемещена}} $4",
+	"bs-notifications-email-move-body": "Страница «$1» была перемещена $3 {{GENDER:$2|участником|участницей}} $5. Чтобы посетить страницу, перейдите по ссылке:\n$4"
+}

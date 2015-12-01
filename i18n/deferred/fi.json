@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"bs-deferred-action-status-done": "Valmis.",
+	"bs-deferred-action-status-error": "Epäonnistui.",
+	"bs-deferred-batch-actions": "Toiminnot",
+	"bs-deferred-batch-description": "Kuvaus",
+	"bs-deferred-batch-status": "Tila"
+}

@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-deferred-action-status-pending": "Appese.",
+	"bs-deferred-action-status-running": "Stoche a esegue...",
+	"bs-deferred-action-status-done": "Fatte.",
+	"bs-deferred-action-status-error": "Fallite.",
+	"bs-deferred-action-apicopypage-description": "Copie \"$1\" jndr'à \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Cange \"$1\".",
+	"bs-deferred-batch-title": "Processe automateche",
+	"bs-deferred-batch-progress-desc": "Progresse",
+	"bs-deferred-batch-actions": "Aziune",
+	"bs-deferred-batch-description": "Descrizione",
+	"bs-deferred-batch-status": "State"
+}
