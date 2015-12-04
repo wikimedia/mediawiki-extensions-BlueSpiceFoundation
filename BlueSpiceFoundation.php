@@ -22,17 +22,17 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * For further information visit http://www.blue-spice.org
+ * For further information visit http://bluespice.com
  *
  */
 /* Changelog
  */
 $wgBlueSpiceExtInfo = array(
-	'name' => 'BlueSpice for MediaWiki',
+	'name' => 'BlueSpice',
 	'version' => '2.23.2',
 	'status' => 'stable',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
-	'url' => 'http://www.blue-spice.org',
+	'url' => 'http://bluespice.com',
 	'desc' => 'Makes MediaWiki enterprise ready.',
 	'author' => array(
 		'[http://www.hallowelt.com Hallo Welt! Medienwerkstatt GmbH]',
@@ -40,7 +40,8 @@ $wgBlueSpiceExtInfo = array(
 );
 
 $wgExtensionCredits['other'][] = array(
-	'name' => 'BlueSpice for MediaWiki ' . $wgBlueSpiceExtInfo['version'],
+	'name' => 'BlueSpice',
+	'version' => $wgBlueSpiceExtInfo['version'] . ' (' . $wgBlueSpiceExtInfo['status'] . ')',
 	'description' => $wgBlueSpiceExtInfo['desc'],
 	'author' => $wgBlueSpiceExtInfo['author'],
 	'url' => $wgBlueSpiceExtInfo['url'],
