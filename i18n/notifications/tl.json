@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Leeheonjin"
+		]
+	},
+	"bs-notifications-email-create-body": "{{GENDER:$2|Nilikha}} ni $6 ang pahinang \"$1\".\n\nKomentaryo:\n$3\nMaaari mong bisitahin ang pahina sa pagsunod sa kawing na ito:\n$4"
+}

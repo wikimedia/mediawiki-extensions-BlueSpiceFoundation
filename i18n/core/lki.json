@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Lakzon"
+			"Lakzon",
+			"Hosseinblue"
 		]
 	},
-	"bs-ns_main": "(وةڵگةل)"
+	"bs-ns_main": "(وةڵگةل)",
+	"bs-userbar_loginswitch_logout": "دةرچئن/خروج"
 }
