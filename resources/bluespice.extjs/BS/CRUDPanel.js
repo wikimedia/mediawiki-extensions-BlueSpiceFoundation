@@ -11,6 +11,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
+/*jshint -W024 */
 
 Ext.define( 'BS.CRUDPanel', {
 	extend: 'Ext.Panel',

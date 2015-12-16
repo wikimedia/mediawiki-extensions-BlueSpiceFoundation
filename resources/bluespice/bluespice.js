@@ -19,7 +19,7 @@ var bs = ( function ( mw, $, undefined ) {
 
 		var namespaceId = namespaceIds[lcNamespaceName];
 		var ucNamespaceName = lcNamespaceName.toUpperCase();
-		if( namespaceId == 0 ) {
+		if( namespaceId === 0 ) {
 			ucNamespaceName = 'MAIN';
 		}
 		bs.ns['NS_'+ucNamespaceName] = namespaceId;
@@ -29,7 +29,7 @@ var bs = ( function ( mw, $, undefined ) {
 			bs.ns.filter.ONLY_CONTENT_NS.push( namespaceId );
 		}
 
-		if( namespaceId > 0 && namespaceId % 2 != 0 ) {
+		if( namespaceId > 0 && namespaceId % 2 !== 0 ) {
 			bs.ns.filter.NO_TALK.push( namespaceId );
 		}
 

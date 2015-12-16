@@ -1,4 +1,4 @@
-( function( mw, bs, $, undefined ) {
+( function( mw, bs, $, Ext, undefined ) {
 
 	/*N-glton-pattern*/
 	var alerts = {},
@@ -26,14 +26,16 @@
 
 	/**
 	 * Shows an ExtJS 4 alert window to the user
+	 *
 	 * @param {String} idPrefix: A {String} that allowes to identify the dialogs controls
 	 * @param {Object} windowCfg: Allowes parameters "title" and "text" with type {String}
 	 * @param {Object} callbackCfg: Allowes parameters "ok" with type {Function}
 	 * @return {BS.AlertDialog}: The BS.AlertDialog instance
 	 */
 	function _alert( idPrefix, windowCfg, callbackCfg ) {
-		if (alerts[idPrefix])
-			return alerts[idPrefix];
+		if (alerts[idPrefix]) {
+			return alerts[ idPrefix ];
+		}
 
 		if (!windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-hint';
@@ -111,16 +113,16 @@
 	}
 
 	function _getRemoteHandlerUrl( extension, method, params ) {
-		if (typeof(params) == 'undefined') {
+		if ( typeof( params ) === 'undefined' ) {
 			params = {};
 		}
 		var obj = {};
-		if (typeof(params) == 'object') {
+		if ( typeof( params ) === 'object' ) {
 			obj = params;
 		} else {
-			obj = {};
-			for (i in params) {
-				obj[i] = params[i];
+			var i;
+			for ( i in params ) {
+				obj[ i ] = params[ i ];
 			}
 		}
 		obj.action = 'remote';
@@ -223,9 +225,9 @@
 
 				_selectedText = _textbox.value.substring(_startPos, endPos);
 				tempText = _textbox.value;
-				_textbox.value = _textbox.value.substring(0, _startPos)
-					+ 'bs_selection'
-					+ _textbox.value.substring(endPos, _textbox.value.length);
+				_textbox.value = _textbox.value.substring(0, _startPos) +
+					'bs_selection' +
+					_textbox.value.substring(endPos, _textbox.value.length);
 
 				_origText = _textbox.value;
 				_textbox.value = tempText;
@@ -314,7 +316,7 @@
 		else if (iHrs > 0) sDateTimeOut = sMins ? mw.message( 'bs-two-units-ago', sHrs, sMins).plain() : mw.message( 'bs-one-unit-ago', sHrs).plain();
 		else if (iMins > 0) sDateTimeOut = sSecs ? mw.message( 'bs-two-units-ago', sMins, sSecs).plain() : mw.message( 'bs-one-unit-ago', sMins).plain();
 		else if (iSecs > 0) sDateTimeOut = mw.message( 'bs-one-unit-ago', sSecs).plain();
-		else if (iSecs == 0) sDateTimeOut = mw.message( 'bs-now' ).plain();
+		else if (iSecs === 0) sDateTimeOut = mw.message( 'bs-now' ).plain();
 
 		return sDateTimeOut;
 	}
@@ -357,6 +359,7 @@
 	 * Creates a new value object with all the properties of "obj" but without
 	 * "data-bs-" prefixes. Leaves unprefixed properties untouched. May
 	 * override unprefixed doublets.
+	 *
 	 * @param {Object} obj
 	 * @return {Object}
 	 */
@@ -374,6 +377,7 @@
 
 	/**
 	 * Creates a new value object from a DOMNode object.
+	 *
 	 * @param {Object} node
 	 * @return {Object}
 	 */
@@ -387,8 +391,10 @@
 	}
 
 	var _tempAnchor = null;
+
 	/**
 	 * Gets all GET parameters from an url.
+	 *
 	 * @param {Mixed} param [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
 	 * @return {Object}
 	 */
@@ -432,6 +438,7 @@
 
 	/**
 	 * Gets a GET parameter from an url.
+	 *
 	 * @param {String} sParamName The requested parameters name
 	 * @param {String} sDefaultValue [optional] A default value if the param is not available. Default ist an empty string.
 	 * @param {Mixed} url [optional] The url to parse. May be a string, a anchor DOMElement or undefined. Default uses window.location.
@@ -440,17 +447,20 @@
 	function _getUrlParam( sParamName, sDefaultValue, url ) {
 		var sValue = sDefaultValue || '';
 		var oParams = _getUrlParams( url );
+		var key;
 
-		for( var key in oParams ) {
-			if( key == sParamName ) sValue = oParams[key];
+		for( key in oParams ) {
+			if( key === sParamName ) {
+				sValue = oParams[ key ];
+			}
 		}
 		return sValue;
 	}
 
 	/**
 	 * Shows an input dialog and adds provided value to an ExtJS MulitSelect field
-	 * @param {object} oSrc The ExtJS MulitSelect field
-	 * @return {Void}
+	 *
+	 * @param {Object} oSrc The ExtJS MulitSelect field
 	 */
 	function _addEntryToMultiSelect( oSrc ) {
 		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring(2);
@@ -470,8 +480,8 @@
 
 	/**
 	 * Removes an entry from an ExtJS MulitSelect field
-	 * @param {object} oSrc The ExtJS MulitSelect field
-	 * @return {Void}
+	 *
+	 * @param {Object} oSrc The ExtJS MulitSelect field
 	 */
 	function _deleteEntryFromMultiSelect( oSrc ) {
 		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring(2);
@@ -489,7 +499,7 @@
 
 	function _wikiGetlink( params, str ) {
 		var pageName = str || mw.config.get( 'wgPageName' );
-		var params = params || {};
+		params = params || {};
 		params.title = pageName;
 
 		var url = mw.util.wikiScript() + '?' + $.param(params);
@@ -570,4 +580,4 @@
 
 	bs.util = util;
 
-}(mediaWiki, blueSpice, jQuery));
+}( mediaWiki, blueSpice, jQuery, Ext ) );

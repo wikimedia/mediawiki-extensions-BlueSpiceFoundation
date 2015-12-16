@@ -3,7 +3,7 @@ Ext.define('BS.portal.GridPortlet', {
 	height: 300,
 
 	initComponent: function(){
-		
+
 		//Some simple fixtures
 		this.gdMainConfig = {
 			store: Ext.create('Ext.data.ArrayStore', {
@@ -34,11 +34,10 @@ Ext.define('BS.portal.GridPortlet', {
 				},
 				dataIndex: 'change'
 			}]
-		}
-		
+		};
+
 		this.beforeInitComponent();
 
-		
 		this.gdMain = Ext.create('Ext.grid.Panel', {
 			height: this.height,
 			store: this.gdMainConfig.store,
@@ -46,11 +45,11 @@ Ext.define('BS.portal.GridPortlet', {
 			columnLines: true,
 			columns: this.gdMainConfig.columns
 		});
-		
+
 		this.items = [
 			this.gdMain
 		];
-		
+
 		this.afterInitComponent();
 
 		this.callParent(arguments);
