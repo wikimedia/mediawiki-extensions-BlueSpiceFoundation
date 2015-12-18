@@ -1,4 +1,4 @@
-( function ( mw, $, bs, d, Ext, undefined ){
+( function ( mw, $, bs, d, undefined ){
 
 	//We only want the code to run (and therefore the resources to be loaded)
 	//when a user actually hovers an appropriate element!
@@ -30,4 +30,4 @@
 			});
 		}
 	});
-}( mediaWiki, jQuery, blueSpice, Ext, document ) );
+}( mediaWiki, jQuery, blueSpice, document ) );

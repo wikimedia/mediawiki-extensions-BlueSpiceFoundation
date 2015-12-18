@@ -10,7 +10,7 @@
 			target: '',
 			protocol: '//'
 		};
-		
+
 		function parsePropertiesFromString( wikiText ) {
 			if ( wikiText === '' ) {
 				return;
@@ -130,7 +130,7 @@
 			sizeheight: false,
 			nolink: false
 		};
-		
+
 		function parsePropertiesFromString( wikiText ) {
 			//Trim left and right everything (including linebreaks) that is not a starting or ending link code
 			wikiText = wikiText.replace(/(^.*?\[\[|\]\].*?$|\r\n|\r|\n)/gm,'');
@@ -222,7 +222,7 @@
 				}
 			}
 		}
-		
+
 		function parseTitle( title ) {
 			if ( title.charAt( 0 ) === ':' ) {
 				me.properties.escaped = true;

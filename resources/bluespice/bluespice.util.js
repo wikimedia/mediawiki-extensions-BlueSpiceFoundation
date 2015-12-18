@@ -1,4 +1,4 @@
-( function( mw, bs, $, Ext, undefined ) {
+( function( mw, bs, $, undefined ) {
 
 	/*N-glton-pattern*/
 	var alerts = {},
@@ -580,4 +580,4 @@
 
 	bs.util = util;
 
-}( mediaWiki, blueSpice, jQuery, Ext ) );
+}( mediaWiki, blueSpice, jQuery ) );
