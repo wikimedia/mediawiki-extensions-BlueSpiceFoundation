@@ -1,10 +1,19 @@
 {
-	"require-dev": {
-		"jakub-onderka/php-parallel-lint": "0.9"
-	},
-	"scripts": {
-		"test": [
-			"parallel-lint . --exclude vendor"
-		]
-	}
+    "name": "hallowelt/bluespice-foundation",
+    "description": "This package contains basic classes/functions/resources of BlueSpice for MediaWiki",
+    "authors": [
+        {
+            "name": "Hallo Welt! Medienwerkstatt GmbH",
+            "email": "info@hallowelt.com",
+            "homepage": "http://www.hallowelt.com"
+        }
+    ],
+    "require-dev": {
+        "jakub-onderka/php-parallel-lint": "0.9"
+    },
+    "scripts": {
+        "test": [
+            "parallel-lint . --exclude vendor"
+        ]
+    }
 }
