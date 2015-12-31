@@ -1,6 +1,10 @@
 {
     "name": "hallowelt/bluespice-foundation",
     "description": "This package contains basic classes/functions/resources of BlueSpice for MediaWiki",
+    "keywords": ["mediawiki", "wiki"],
+    "license": "GPL-2.0+",
+    "type": "mediawiki-extension",
+    "homepage": "https://www.bluespice.com",
     "authors": [
         {
             "name": "Hallo Welt! Medienwerkstatt GmbH",
@@ -15,5 +19,9 @@
         "test": [
             "parallel-lint . --exclude vendor"
         ]
+    },
+    "support": {
+        "issues": "https://sourceforge.net/projects/bluespice/support",
+        "wiki": "https://help.bluespice.com"
     }
 }
