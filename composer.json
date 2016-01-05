@@ -1,27 +1,30 @@
 {
-    "name": "hallowelt/bluespice-foundation",
-    "description": "This package contains basic classes/functions/resources of BlueSpice for MediaWiki",
-    "keywords": ["mediawiki", "wiki"],
-    "license": "GPL-2.0+",
-    "type": "mediawiki-extension",
-    "homepage": "https://www.bluespice.com",
-    "authors": [
-        {
-            "name": "Hallo Welt! Medienwerkstatt GmbH",
-            "email": "info@hallowelt.com",
-            "homepage": "http://www.hallowelt.com"
-        }
-    ],
-    "require-dev": {
-        "jakub-onderka/php-parallel-lint": "0.9"
-    },
-    "scripts": {
-        "test": [
-            "parallel-lint . --exclude vendor"
-        ]
-    },
-    "support": {
-        "issues": "https://sourceforge.net/projects/bluespice/support",
-        "wiki": "https://help.bluespice.com"
-    }
+	"name": "hallowelt/bluespice-foundation",
+	"description": "This package contains basic classes/functions/resources of BlueSpice for MediaWiki",
+	"keywords": [
+		"mediawiki",
+		"wiki"
+	],
+	"license": "GPL-2.0+",
+	"type": "mediawiki-extension",
+	"homepage": "https://www.bluespice.com",
+	"authors": [
+		{
+			"name": "Hallo Welt! Medienwerkstatt GmbH",
+			"email": "info@hallowelt.com",
+			"homepage": "http://www.hallowelt.com"
+		}
+	],
+	"require-dev": {
+		"jakub-onderka/php-parallel-lint": "0.9.2"
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor"
+		]
+	},
+	"support": {
+		"issues": "https://sourceforge.net/projects/bluespice/support",
+		"wiki": "https://help.bluespice.com"
+	}
 }
