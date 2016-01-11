@@ -5,7 +5,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $aResourceModuleTemplate = array(
-	'localBasePath' => $IP . '/extensions/BlueSpiceFoundation/resources',
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'BlueSpiceFoundation/resources',
 	'targets' => array( 'mobile', 'desktop' )
 );
