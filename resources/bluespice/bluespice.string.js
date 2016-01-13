@@ -13,12 +13,13 @@ String.prototype.trim = function () {
 	return newString;
 };
 
+// taken from http://stackoverflow.com/questions/646628/how-to-check-if-a-string-startswith-another-string
 String.prototype.startsWith = function ( startString ) {
-	return ( this.match( "^" + startString ) === startString );
+	return this.slice( 0, startString.length ) === startString;
 };
 
 String.prototype.endsWith = function ( endString ) {
-	return ( this.match( endString + "$" ) === endString );
+	return endString === '' || this.slice( -endString.length ) === endString;
 };
 
 String.prototype.format = function () {
