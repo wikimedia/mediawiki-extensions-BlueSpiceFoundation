@@ -290,7 +290,13 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 					return false;
 				}
 			}
-			//TODO: Implement for type 'date', 'datetime' and 'boolean'
+			if( $oFilter->type == 'boolean' ) {
+				$bFilterApplies = $this->filterBoolean( $oFilter, $aDataSet );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
+			//TODO: Implement for type 'date' and 'datetime'
 		}
 
 		return true;
@@ -376,6 +382,16 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * Performs filtering based on given filter of type bool on a dataset
+	 * @param object $oFilter
+	 * @param object $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
+	public function filterBoolean( $oFilter, $aDataSet ) {
+		return $oFilter->value == $aDataSet->{ $oFilter->field };
 	}
 
 	/**
