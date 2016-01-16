@@ -27,7 +27,7 @@
 	"bs-now": "agora",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hola, Sr. $2|Hola, Sra. $2|Hola, $2}}:",
 	"bs-email-greeting-no-receiver": "Hola,",
-	"bs-email-footer": "Esti mensaxe xeneróse automáticamente. Por favor, nun conteste esti corréu.",
+	"bs-email-footer": "Esti mensaxe xeneróse automáticamente por $1. Nun respuendas a esti mensaxe.",
 	"bs-userpagesettings-legend": "Preferencies del usuariu",
 	"bs-userpreferences-link-text": "Más preferencies del usuariu",
 	"bs-userpreferences-link-title": "Ver la configuración personal d'usuariu",
