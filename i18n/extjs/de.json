@@ -42,6 +42,8 @@
 	"bs-extjs-filter-ends-with": "endet mit",
 	"bs-extjs-filter-greater-than": "größer als",
 	"bs-extjs-filter-less-than": "kleiner als",
+	"bs-extjs-filter-bool-yes": "ja",
+	"bs-extjs-filter-bool-no": "nein",
 	"bs-extjs-title-success": "Erfolg",
 	"bs-extjs-title-warning": "Warnung",
 	"bs-extjs-categoryboxselect-emptytext": "Kategorie hinzufügen"
