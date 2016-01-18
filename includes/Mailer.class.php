@@ -176,8 +176,7 @@ class BsMailer {
 					$oFromAddress,
 					$sCombinedSubject,
 					$sLocalCombinedMsg,
-					$oReplyToAddress,
-					$sHeaders
+					array ( 'replyTo' => $oReplyToAddress, 'headers' => $sHeaders )
 				);
 			}
 		}
