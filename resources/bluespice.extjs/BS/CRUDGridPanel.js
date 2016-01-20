@@ -15,7 +15,9 @@
 Ext.define( 'BS.CRUDGridPanel', {
 	extend: 'BS.CRUDPanel',
 	requires: [ 'Ext.PagingToolbar', 'Ext.selection.RowModel',
-		'Ext.grid.GridPanel', 'Ext.grid.column.Action' ],
+		'Ext.grid.GridPanel', 'Ext.grid.column.Action',
+		'Ext.ux.grid.FiltersFeature'
+	],
 
 	//Custom
 	pageSize: 20,
@@ -84,6 +86,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 			store: this.makeMainStore(),
 			columns: this.makeGridColumns(),
 			selModel: this.makeSelModel(),
+			features: this.makeFeatures(),
 			bbar: this.makeBBar()
 		};
 
@@ -148,6 +151,14 @@ Ext.define( 'BS.CRUDGridPanel', {
 		//TODO: Fix Pagesize
 		this.smMain.pageSize = this.pageSize;
 		return this.smMain;
+	},
+
+	makeFeatures: function() {
+		return [
+			new Ext.ux.grid.FiltersFeature({
+				encode: true
+			})
+		];
 	},
 
 	getSingleSelection: function() {
