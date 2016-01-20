@@ -140,6 +140,8 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-filter-less-than',
 		'bs-extjs-title-success',
 		'bs-extjs-title-warning',
+		'bs-extjs-filter-bool-yes',
+		'bs-extjs-filter-bool-no',
 		'bs-extjs-categoryboxselect-emptytext'
 	),
 	'dependencies' => array(
