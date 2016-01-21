@@ -31,6 +31,8 @@
 	"bs-extjs-allns": "(ټول)",
 	"bs-extjs-filters": "چاڼگران",
 	"bs-extjs-filter-less-than": "لږ له",
+	"bs-extjs-filter-bool-yes": "هو",
+	"bs-extjs-filter-bool-no": "نه",
 	"bs-extjs-title-warning": "گواښنه",
 	"bs-extjs-categoryboxselect-emptytext": "يوه وېشنيزه ورگډول"
 }

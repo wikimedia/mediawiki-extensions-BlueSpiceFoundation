@@ -3,7 +3,8 @@
 		"authors": [
 			"Fitoschido",
 			"Frammm",
-			"Macofe"
+			"Macofe",
+			"Joaquin1001"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",
@@ -44,6 +45,8 @@
 	"bs-extjs-filter-ends-with": "termina con",
 	"bs-extjs-filter-greater-than": "mayor que",
 	"bs-extjs-filter-less-than": "menor que",
+	"bs-extjs-filter-bool-yes": "Si",
+	"bs-extjs-filter-bool-no": "No",
 	"bs-extjs-title-success": "Éxito",
 	"bs-extjs-title-warning": "Advertencia",
 	"bs-extjs-categoryboxselect-emptytext": "Añadir una categoría"

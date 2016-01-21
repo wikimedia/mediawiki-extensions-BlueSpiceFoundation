@@ -42,6 +42,8 @@
 	"bs-extjs-filter-ends-with": "завршува со",
 	"bs-extjs-filter-greater-than": "поголемо од",
 	"bs-extjs-filter-less-than": "помало од",
+	"bs-extjs-filter-bool-yes": "да",
+	"bs-extjs-filter-bool-no": "не",
 	"bs-extjs-title-success": "Успеа",
 	"bs-extjs-title-warning": "Предупредување",
 	"bs-extjs-categoryboxselect-emptytext": "Додај категорија"

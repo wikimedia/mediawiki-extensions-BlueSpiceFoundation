@@ -46,6 +46,8 @@
 	"bs-extjs-filter-ends-with": "eindigt met",
 	"bs-extjs-filter-greater-than": "groter dan",
 	"bs-extjs-filter-less-than": "kleiner dan",
+	"bs-extjs-filter-bool-yes": "ja",
+	"bs-extjs-filter-bool-no": "nee",
 	"bs-extjs-title-success": "Afgerond",
 	"bs-extjs-title-warning": "Waarschuwing"
 }

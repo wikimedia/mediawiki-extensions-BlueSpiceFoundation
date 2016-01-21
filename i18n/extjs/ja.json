@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shirayuki",
-			"2nd-player"
+			"2nd-player",
+			"Otokoume"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -33,6 +34,8 @@
 	"bs-extjs-confirmNavigationTitle": "リンクの確認",
 	"bs-extjs-confirmNavigationText": "このリンクを本当にたどりますか? 現在のページでのフィルタリングや並べ替えのような動的な設定がすべて失われます。",
 	"bs-extjs-allns": "(すべて)",
+	"bs-extjs-filter-bool-yes": "はい",
+	"bs-extjs-filter-bool-no": "いいえ",
 	"bs-extjs-title-success": "成功",
 	"bs-extjs-title-warning": "警告",
 	"bs-extjs-categoryboxselect-emptytext": "カテゴリを追加"
