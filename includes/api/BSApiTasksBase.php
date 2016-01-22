@@ -88,15 +88,18 @@ abstract class BSApiTasksBase extends BSApiBase {
 			'task' => array(
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => $this->aTasks,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-task',
 			),
 			'taskData' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '{}'
+				ApiBase::PARAM_DFLT => '{}',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-taskdata',
 			),
 			'format' => array(
 				ApiBase::PARAM_DFLT => 'json',
 				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-format',
 			)
 		);
 	}
@@ -119,7 +122,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	public function getParamDescription() {
 		return array(
-			'task' => 'The task you would like to execute',
+			'task' => 'The task that should be executed',
 			'taskData' => 'JSON string encoded object with arbitrary data for the task',
 			'format' => 'The format of the result',
 		);
