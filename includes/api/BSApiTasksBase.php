@@ -39,6 +39,13 @@ abstract class BSApiTasksBase extends BSApiBase {
 	protected $aTasks = array();
 
 	/**
+	 * Methods that can be executed even when the wiki is in read-mode, as
+	 * they do not alter the state/content of the wiki
+	 * @var array
+	 */
+	protected $aReadTasks = array();
+
+	/**
 	 * The execute() method will be invoked directly by ApiMain immediately
 	 * before the result of the module is output. Aside from the
 	 * constructor, implementations should assume that no other methods
@@ -51,16 +58,23 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 		//Avoid API warning: register the parameter used to bust browser cache
 		$this->getMain()->getVal( '_' );
+		$sTask = $aParams['task'];
 
-		$sMethod = 'task_'.$aParams['task'];
+		$sMethod = 'task_'.$sTask;
+		$oResult = $this->makeStandardReturn();
 
 		if( !is_callable( array( $this, $sMethod ) ) ) {
-			$oResult = $this->makeStandardReturn();
-			$oResult->errors['task'] = 'Task '.$aParams['task'].' not implemented';
+			$oResult->errors['task'] = 'Task '.$sTask.' not implemented';
 		}
 		else {
-			$this->checkTaskPermission( $aParams['task'] );
-			$oResult = $this->$sMethod( $this->getParameter('taskData'), $aParams );
+			$this->checkTaskPermission( $sTask );
+			if( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
+				global $wgReadOnly;
+				$oResult->message = wfMessage( 'bs-readonly', $wgReadOnly )->plain();
+			}
+			else {
+				$oResult = $this->$sMethod( $this->getParameter('taskData'), $aParams );
+			}
 		}
 
 		foreach( $oResult as $sFieldName => $mFieldValue ) {
@@ -111,7 +125,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 		if( $paramName === 'taskData' ) {
 			$value = FormatJson::decode($value);
 			if( empty($value) ) {
-				return array();
+				return new stdClass();
 			}
 		}
 		return $value;
@@ -130,7 +144,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	}
 
 	/**
-	 * Returns the bsic description for this module
+	 * Returns the basic description for this module
 	 * @return type
 	 */
 	public function getDescription() {
