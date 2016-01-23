@@ -25,5 +25,7 @@
 	"bs-extjs-label-user": "Корисник",
 	"bs-extjs-uploading": "Отпремање...",
 	"bs-extjs-allns": "(сви)",
-	"bs-extjs-filters": "Филтери"
+	"bs-extjs-filters": "Филтери",
+	"bs-extjs-filter-bool-yes": "да",
+	"bs-extjs-filter-bool-no": "не"
 }

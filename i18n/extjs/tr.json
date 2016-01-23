@@ -22,5 +22,7 @@
 	"bs-extjs-close": "Kapat",
 	"bs-extjs-upload": "Yükle",
 	"bs-extjs-uploading": "Yükleniyor...",
+	"bs-extjs-filter-bool-yes": "evet",
+	"bs-extjs-filter-bool-no": "hayır",
 	"bs-extjs-title-warning": "Uyarı"
 }
