@@ -37,5 +37,7 @@
 	"bs-extjs-filter-contains": "чулацам",
 	"bs-extjs-filter-contains-not": "чулацам бац",
 	"bs-extjs-filter-starts-with": "йола ло тӀера",
-	"bs-extjs-filter-ends-with": "чекхйолу"
+	"bs-extjs-filter-ends-with": "чекхйолу",
+	"bs-extjs-filter-bool-yes": "хӀаъ",
+	"bs-extjs-filter-bool-no": "хӀахӀа"
 }

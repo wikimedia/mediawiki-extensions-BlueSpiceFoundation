@@ -45,6 +45,8 @@
 	"bs-extjs-filter-ends-with": "slutar med",
 	"bs-extjs-filter-greater-than": "större än",
 	"bs-extjs-filter-less-than": "mindre än",
+	"bs-extjs-filter-bool-yes": "ja",
+	"bs-extjs-filter-bool-no": "nej",
 	"bs-extjs-title-success": "Lyckades",
 	"bs-extjs-title-warning": "Varning",
 	"bs-extjs-categoryboxselect-emptytext": "Lägg till en kategori"
