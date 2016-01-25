@@ -42,6 +42,8 @@
 	"bs-extjs-filter-ends-with": "acaba por",
 	"bs-extjs-filter-greater-than": "mayor que",
 	"bs-extjs-filter-less-than": "Menor que",
+	"bs-extjs-filter-bool-yes": "sí",
+	"bs-extjs-filter-bool-no": "non",
 	"bs-extjs-title-success": "Correuto",
 	"bs-extjs-title-warning": "Avisu",
 	"bs-extjs-categoryboxselect-emptytext": "Amestar una categoría"
