@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"बिप्लब आनन्द"
+			"बिप्लब आनन्द",
+			"जनक राज भट्ट"
 		]
 	},
-	"bs-extjs-copy": "कपि"
+	"bs-extjs-copy": "कपि",
+	"bs-extjs-filter-bool-yes": "हो",
+	"bs-extjs-filter-bool-no": "होइन"
 }
