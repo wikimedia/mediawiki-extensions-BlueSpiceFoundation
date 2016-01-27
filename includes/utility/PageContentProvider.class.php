@@ -251,9 +251,10 @@ class BsPageContentProvider {
 
 		$oTitle = ( $oRedirectTarget == null ) ? $oTitle : $oRedirectTarget;
 
-		$context = new RequestContext(); //TODO: Use DerivativeContext?
+		$context = new DerivativeContext( RequestContext::getMain() );
 		$context->setRequest(
-			new FauxRequest( //TODO: Use DerivativeRequest in MW 1.19+
+			new DerivativeRequest(
+				$wgRequest,
 				//$_REQUEST + i.e. oldid
 				//TODO: Check if all params are necessary
 				$wgRequest->getValues() + $aParams,
