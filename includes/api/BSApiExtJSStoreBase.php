@@ -125,64 +125,74 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			'sort' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]'
+				ApiBase::PARAM_DFLT => '[]',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-sort',
 			),
 			'group' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]'
+				ApiBase::PARAM_DFLT => '[]',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-group',
 			),
 			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]'
+				ApiBase::PARAM_DFLT => '[]',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-filter',
 			),
 			'page' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 0
+				ApiBase::PARAM_DFLT => 0,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-page',
 			),
 			'limit' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 25
+				ApiBase::PARAM_DFLT => 25,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-limit',
 			),
 			'start' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 0
+				ApiBase::PARAM_DFLT => 0,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-start',
 			),
 
 			'callback' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false
+				ApiBase::PARAM_REQUIRED => false,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-callback',
 			),
 
 			'query' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false
+				ApiBase::PARAM_REQUIRED => false,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-query',
 			),
 			'_dc' => array(
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => false
+				ApiBase::PARAM_REQUIRED => false,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-dc',
 			),
 			'format' => array(
 				ApiBase::PARAM_DFLT => 'json',
-				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' )
+				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-format',
 			)
 		);
 	}
 
 	public function getParamDescription() {
 		return array(
-			'sort' => 'JSON string with sorting info; deserializes to array of objects that hold filed name and direction for each sorting option',
-			'group' => 'JSON string with grouping info; deserializes to array of objects that hold filed name and direction for each grouping option',
-			'filter' => 'JSON string with filter info; deserializes to array of objects that hold filed name, filter type, and filter value for each sorting option',
+			'sort' => 'JSON string with sorting info; deserializes to "array of objects" that hold field name and direction for each sorting option',
+			'group' => 'JSON string with grouping info; deserializes to "array of objects" that hold field name and direction for each grouping option',
+			'filter' => 'JSON string with filter info; deserializes to "array of objects" that hold field name, filter type, and filter value for each filtering option',
 			'page' => 'Allows server side calculation of start/limit',
 			'limit' => 'Number of results to return',
 			'start' => 'The offset to start the result list from',
-			'query' => 'This is similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
-			'callback' => 'The offset to start the result list from',
+			'query' => 'Similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
+			'callback' => 'A method name in the client code that should be called in the response (JSONP)',
 			'_dc' => '"Disable cache" flag',
 			'format' => 'The format of the output (only JSON or formatted JSON)'
 		);

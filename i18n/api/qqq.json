@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robert Vogel <vogel@hallowelt.biz>"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Describes the API endpoint that lists uploaded files",
+	"apihelp-bs-user-store-description": "Describes the API endpoint that lists users",
+	"apihelp-bs-store-param-sort": "Describes the <var>sort</var> parameter of the API module",
+	"apihelp-bs-store-param-group": "Describes the <var>group</var> parameter of the API module",
+	"apihelp-bs-store-param-filter": "Describes the <var>filter</var> parameter of the API module",
+	"apihelp-bs-store-param-page": "Describes the <var>page</var> parameter of the API module",
+	"apihelp-bs-store-param-limit": "Describes the <var>limit</var> parameter of the API module",
+	"apihelp-bs-store-param-start": "Describes the <var>start</var> parameter of the API module",
+	"apihelp-bs-store-param-callback": "Describes the <var>callback</var> parameter of the API module",
+	"apihelp-bs-store-param-query": "Describes the <var>query</var> parameter of the API module",
+	"apihelp-bs-store-param-dc": "Describes the <var>_dc</var> parameter of the API module",
+	"apihelp-bs-store-param-format": "Describes the <var>format</var> parameter of the API module",
+	"apihelp-bs-task-param-task": "Describes the <var>task</var> parameter of the API module",
+	"apihelp-bs-task-param-taskdata": "Describes the <var>taskData</var> parameter of the API module",
+	"apihelp-bs-task-param-format": "Describes the <var>format</var> parameter of the API module\n\n{{msg-mw|Bs-store-param-format}}"
+}
