@@ -181,3 +181,18 @@ $bsgPermissionConfig = array(
 $bsgSystemNamespaces = array(
 	//1599 => 'NS_COOL_STUFF'
 );
+
+/**
+ * PHP config files registered here will be included on "SetupAfterCache"
+ * time. Access to all global config variables need to be in the form of
+ * $GLOBALS['wg...'] as the inclusion will be done in callback function scope
+ * rather than in global scope.
+ */
+$bsgConfigFiles = array(
+	//'extensionname' => 'path/to/file.php'
+
+	//Pre-registering for BC; Should be removed in future releases
+	'GroupManager' => BSCONFIGDIR . DS . 'gm-settings.php',
+	'NamespaceManager' => BSCONFIGDIR . DS . 'nm-settings.php',
+	'PermissionManager' => BSCONFIGDIR . DS . 'pm-settings.php',
+);
