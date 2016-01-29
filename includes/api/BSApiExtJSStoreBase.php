@@ -81,11 +81,18 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	protected $totalProperty = 'total';
 
+	/**
+	 * May be overwritten by subclass
+	 * @var string
+	 */
+	protected $metaData = 'metadata';
+
 	public function execute() {
 		$sQuery = $this->getParameter( 'query' );
 		$aData = $this->makeData( $sQuery );
+		$aMetaData = $this->makeMetaData( $sQuery );
 		$FinalData = $this->postProcessData( $aData );
-		$this->returnData( $FinalData );
+		$this->returnData( $FinalData, $aMetaData );
 	}
 
 	/**
@@ -98,15 +105,30 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	protected abstract function makeData( $sQuery = '' );
 
 	/**
+	 * @param string $sQuery Potential query provided by ExtJS component.
+	 * This is some kind of preliminary filtering. Subclass has to decide if
+	 * and how to process it
+	 * @return array - Full list of of data objects. Filters, paging, sorting
+	 * will be done by the base class
+	 */
+	protected function makeMetaData( $sQuery = '' ) {
+		return array();
+	}
+
+	/**
 	 * Creates a proper output format based on the classes properties
 	 * @param array $aData An array of plain old data objects
+	 * @param array $aMetaData An array of meta data items
 	 */
-	public function returnData($aData) {
-		wfRunHooks( 'BSApiExtJSStoreBaseBeforeReturnData', array( $this, &$aData ) );
+	public function returnData( $aData, $aMetaData = array() ) {
+		wfRunHooks( 'BSApiExtJSStoreBaseBeforeReturnData', array( $this, &$aData, &$aMetaData ) );
 		$result = $this->getResult();
 		$result->setIndexedTagName( $aData, $this->root );
 		$result->addValue( null, $this->root, $aData );
 		$result->addValue( null, $this->totalProperty, $this->iFinalDataSetCount );
+		if( !empty( $aMetaData ) ) {
+			$result->addValue( null, $this->metaData, $aMetaData );
+		}
 	}
 
 	/**
@@ -445,5 +467,4 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		call_user_func_array( 'array_multisort', $aParams );
 		return $aProcessedData;
 	}
-
 }
