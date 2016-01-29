@@ -733,4 +733,40 @@ class BsBaseTemplate extends BaseTemplate {
 
 		return $ptools;
 	}
+
+	public function printFooter() {
+		?>
+		<div id="footer" role="contentinfo" <?php $this->html('userlangattributes') ?>>
+		<?php
+		$aFooterIcons = $this->getFooterIcons("icononly");
+		$aFooterLinks = $this->getFooterLinks();
+		foreach ($aFooterLinks as $sCategory => $aLinks):
+			?>
+			<ul id="footer-<?php echo $sCategory ?>">
+			<?php
+				foreach ($aLinks as $sLink) {
+				?>
+				<li id="footer-<?php echo $sCategory ?>-<?php echo $sLink ?>"><?php $this->html( $sLink ) ?></li>
+				<?php
+				}
+			?>
+			</ul>
+		<?php endforeach; ?>
+		<?php
+		if (count($aFooterIcons) > 0):
+			?>
+			<ul id="footer-icons" class="noprint">
+				<?php foreach ( $aFooterIcons as $blockName => $aFooterIconBlock ): ?>
+				<li id="footer-<?php echo htmlspecialchars($blockName); ?>ico">
+					<?php foreach ( $aFooterIconBlock as $icon ): ?>
+						<?php echo $this->getSkin()->makeFooterIcon($icon); ?>
+					<?php endforeach; ?>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+			<div style="clear:both"></div>
+		</div>
+	<?php
+	}
 }
