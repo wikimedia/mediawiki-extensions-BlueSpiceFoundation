@@ -59,6 +59,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 			$oResult->errors['task'] = 'Task '.$aParams['task'].' not implemented';
 		}
 		else {
+			$this->checkTaskPermission( $aParams['task'] );
 			$oResult = $this->$sMethod( $this->getParameter('taskData'), $aParams );
 		}
 
@@ -146,5 +147,28 @@ abstract class BSApiTasksBase extends BSApiBase {
 		return array(
 			'api.php?action='.$this->getModuleName().'&task='.$this->aTasks[0].'&taskData={someKey:"someValue",isFalse:true}',
 		);
+	}
+
+	public function checkTaskPermission( $sTask ) {
+		$aTaskPermissions = $this->getRequiredTaskPermissions();
+		if( empty($aTaskPermissions[$sTask]) ) {
+			return;
+		}
+		foreach( $aTaskPermissions[$sTask] as $sPermission ) {
+			if( $this->getUser()->isAllowed( $sPermission ) ) {
+				continue;
+			}
+			//TODO: Reflect permission in error message
+			$this->dieUsageMsg( 'badaccess-groups' );
+		}
+	}
+
+	/**
+	 * Returns an array of tasks and their required permissions
+	 * array('taskname' => array('read', 'edit'))
+	 * @return type
+	 */
+	protected function getRequiredTaskPermissions() {
+		return array();
 	}
 }
