@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"apihelp-bs-store-param-limit": "Numero di risultati da restituire",
+	"apihelp-bs-task-param-format": "Il formato del risultato"
+}
