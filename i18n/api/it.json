@@ -1,9 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Wikitoni"
 		]
 	},
+	"apihelp-bs-filebackend-store-description": "Elenca tutti gli utenti del database. Autorizza ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
+	"apihelp-bs-user-store-description": "Elenca tutti gli utenti del database. Autorizza ordinamento, filtraggio e impaginazione. Implementa ExtJS e memorizza i parametri.",
+	"apihelp-bs-store-param-sort": "Una stringa JSON con informazioni filtro; deserializza al <code>array di oggetti</code> che hanno nome del campo e direzione per ogni opzione di filtro",
+	"apihelp-bs-store-param-group": "Una stringa JSON con informazioni filtro; deserializza al <code>array di oggetti</code> che hanno nome del campo, il tipo di filtro, e il valore di filtro per ogni opzione di filtro",
+	"apihelp-bs-store-param-filter": "Una stringa JSON con informazioni filtro; deserializza al <code>array di oggetti</code> che hanno nome del campo, il tipo di filtro, e il valore di filtro per ogni opzione di filtro",
+	"apihelp-bs-store-param-page": "Consente il calcolo del start/limit dal lato del server",
 	"apihelp-bs-store-param-limit": "Numero di risultati da restituire",
+	"apihelp-bs-store-param-start": "L'offset per avviare l'elenco dei risultati da",
+	"apihelp-bs-store-param-callback": "Il nome di un metodo nel codice client che deve essere chiamato in risposta (JSONP)",
+	"apihelp-bs-store-param-dc": "<code>Disabilitare la cache</code> flag",
+	"apihelp-bs-store-param-format": "Il formato di output (solo JSON o formattato JSON)",
+	"apihelp-bs-task-param-task": "Il task che deve essere eseguito",
+	"apihelp-bs-task-param-taskdata": "Un oggetto stringa JSON  codificato con dati arbitrari per l'attività",
 	"apihelp-bs-task-param-format": "Il formato del risultato"
 }
