@@ -145,9 +145,9 @@ BsCategoryChooser = Ext.extend(Ext.form.Field,  {
 	
 	btnAddCategoryClicked: function( btn, event ) {
 		var textValue = this.tfNewCategory.getValue().replace(' ', '_');
-		if( textValue == '' ) return;
+		if( textValue === '' ) return;
 		var existingIndex = this.chosenCategoriesStore.findExact( 'text', textValue );
-		if(existingIndex != -1){
+		if ( existingIndex !== -1 ) {
 			this.tfNewCategory.setValue('');
 			return; //Prevent duplicates
 		}
@@ -169,7 +169,9 @@ BsCategoryChooser = Ext.extend(Ext.form.Field,  {
 		var existingIndex = this.chosenCategoriesStore.findExact( 
 			'text', node.attributes.text.replace('_', ' ')
 		);
-		if(existingIndex != -1) return; //Prevent duplicates
+		if ( existingIndex !== -1 ) {
+			return; //Prevent duplicates
+		}
 
 		var newIndex = this.chosenCategoriesStore.getCount();
 		var newRecordData = { 

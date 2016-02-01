@@ -89,7 +89,7 @@ Ext.define('BS.portal.ChartPortlet', {
 		
 		this.items = [
 			this.ctMain
-		]
+		];
 
 		this.callParent(arguments);
 	}

@@ -50,10 +50,10 @@ Ext.define('BS.portal.PortalPanel', {
 		for (i = 0; i < len; i++) {
 			item = items[i];
 			item.columnWidth = 1 / len;
-			last = (i == len-1);
+			last = (i === len-1);
 
-			if (!i) { // if (first)
-				if (last) {
+			if ( !i ) { // if (first)
+				if ( last ) {
 					item.addCls(firstAndLast);
 				} else {
 					item.addCls('x-portal-column-first');

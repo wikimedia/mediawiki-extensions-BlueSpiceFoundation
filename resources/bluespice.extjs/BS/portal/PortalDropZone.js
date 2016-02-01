@@ -46,10 +46,10 @@ Ext.define('BS.portal.PortalDropZone', {
 
 		// handle case scroll where scrollbars appear during drag
 		var cw = portal.body.dom.clientWidth;
-		if (!this.lastCW) {
+		if ( !this.lastCW ) {
 			// set initial client width
 			this.lastCW = cw;
-		} else if (this.lastCW != cw) {
+		} else if ( this.lastCW !== cw ) {
 			// client width has changed, so refresh layout & grid calcs
 			this.lastCW = cw;
 			//portal.doLayout();

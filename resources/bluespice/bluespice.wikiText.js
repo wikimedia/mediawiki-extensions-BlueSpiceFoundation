@@ -11,21 +11,17 @@
 			protocol: '//'
 		};
 
-		if ( typeof(cfg) === 'object' ) {
-			this.properties = $.extend( this.properties, cfg );
-		} else{
-			parsePropertiesFromString(cfg);
-		}
-
 		function parsePropertiesFromString( wikiText ) {
-			if ( wikiText === '' ) return;
+			if ( wikiText === '' ) {
+				return;
+			}
 
 			//Trim left and right everything (including linebreaks) that is not a starting or ending link code
 			wikiText = wikiText.replace(/(^.*?\[|\].*?$|\r\n|\r|\n)/gm,'');
 			//wikiText = wikiText.substring(2, wikiText.length -2 ); //trim "[[" and "]]"
 
-			var parts = wikiText.split(" ");
-			me.properties.target = parts[0];
+			var parts = wikiText.split( " " );
+			me.properties.target = parts[ 0 ];
 			if( parts.length > 1 ) {
 				parts.shift();
 				me.properties.displayText = parts.join(' ');
@@ -39,8 +35,8 @@
 				'//'
 			];
 
-			for ( var i = 0; i < protocols.length; i++) {
-				if( me.properties.target.indexOf(protocols[i]) === 0 ) {
+			for ( var i = 0; i < protocols.length; i++ ) {
+				if( me.properties.target.indexOf( protocols[ i ] ) === 0 ) {
 					me.properties.protocol = protocols[i];
 					me.properties.target = me.properties.target.substring(
 						protocols[i].length
@@ -48,6 +44,12 @@
 					break;
 				}
 			}
+		}
+
+		if ( typeof(cfg) === 'object' ) {
+			this.properties = $.extend( this.properties, cfg );
+		} else{
+			parsePropertiesFromString(cfg);
 		}
 
 		this.toString = function() {
@@ -129,39 +131,12 @@
 			nolink: false
 		};
 
-		if ( typeof(cfg) === 'object' ) {
-			this.properties = $.extend( this.properties, cfg );
-			if ( this.properties.title === '' && this.properties.prefixedTitle !== '' ) {
-				parseTitle( this.properties.prefixedTitle );
-			}
-		} else{
-			parsePropertiesFromString(cfg);
-		}
-
-		function parseTitle( title ) {
-			if ( title.charAt( 0 ) === ':' ) {
-				me.properties.escaped = true;
-				title = title.substring( 1, title.length ); //remove leading ":""
-			}
-
-			me.properties.title = title;
-
-			var titleParts = title.split( ':' );
-			if ( titleParts.length > 1 ) {
-				me.properties.nsText = titleParts.shift();
-				me.properties.title = titleParts.join(':');
-
-				var namespaceIds = mw.config.get( 'wgNamespaceIds' );
-				me.properties.nsId = namespaceIds[me.properties.nsText.toLocaleLowerCase()];
-			}
-		}
-
 		function parsePropertiesFromString( wikiText ) {
 			//Trim left and right everything (including linebreaks) that is not a starting or ending link code
 			wikiText = wikiText.replace(/(^.*?\[\[|\]\].*?$|\r\n|\r|\n)/gm,'');
 
 			var parts = wikiText.split( "|" );
-			parseTitle( parts[0] ); //First token is prefixed title
+			parseTitle( parts[ 0 ] ); //First token is prefixed title
 
 			//Process the rest
 			for ( var i = 1; i < parts.length; i++ ) {
@@ -225,13 +200,12 @@
 					continue;
 				}
 
-				var key = kvpair[0], value = kvpair[1];
+				var key = kvpair[ 0 ], value = kvpair[ 1 ];
 
-				if( $.inArray( key, ['link', 'verweis'] ) !== -1 ) {
-					if (value === ""){
+				if ( $.inArray( key, [ 'link', 'verweis' ] ) !== -1 ) {
+					if ( value === "" ){
 						me.properties.nolink = true;
-					}
-					else{
+					} else{
 						me.properties.link = value;
 					}
 					continue;
@@ -247,6 +221,33 @@
 					continue;
 				}
 			}
+		}
+
+		function parseTitle( title ) {
+			if ( title.charAt( 0 ) === ':' ) {
+				me.properties.escaped = true;
+				title = title.substring( 1, title.length ); //remove leading ":""
+			}
+
+			me.properties.title = title;
+
+			var titleParts = title.split( ':' );
+			if ( titleParts.length > 1 ) {
+				me.properties.nsText = titleParts.shift();
+				me.properties.title = titleParts.join(':');
+
+				var namespaceIds = mw.config.get( 'wgNamespaceIds' );
+				me.properties.nsId = namespaceIds[me.properties.nsText.toLocaleLowerCase()];
+			}
+		}
+
+		if ( typeof( cfg ) === 'object' ) {
+			this.properties = $.extend( this.properties, cfg );
+			if ( this.properties.title === '' && this.properties.prefixedTitle !== '' ) {
+				parseTitle( this.properties.prefixedTitle );
+			}
+		} else{
+			parsePropertiesFromString(cfg);
 		}
 
 		this.toString = function() {
@@ -275,7 +276,7 @@
 				if ( property === 'link' && ( value !== null &&
 					value !== 'false' && value !== false &&
 					typeof value !== "undefined" && value !== "" &&
-					this.properties['nolink'] === false) ) {
+					this.properties.nolink === false) ) {
 					wikiText.push(property + '=' + value);
 					continue;
 				}
@@ -445,13 +446,6 @@
 		this.params = {};
 		this.title = '';
 
-		if ( typeof(cfg) === 'object' ) { //"{ with: 'param' }"
-			this.title = title; //"Some Template"
-			this.params = $.extend( this.params, cfg );
-		} else{ //WikiText "{{Some Template|with=param}}"
-			parseParamsFromString(cfg);
-		}
-
 		function parseParamsFromString( wikiText ) {
 			//Trim left and right everything that is not a starting or ending template code
 			wikiText = wikiText.replace(/(^.*?\{\{|\}\}.*?$)/gm,'');
@@ -464,6 +458,13 @@
 			for ( var i = 1; i < parts.length; i++ ) {
 				//TODO: implement
 			}
+		}
+
+		if ( typeof(cfg) === 'object' ) { //"{ with: 'param' }"
+			this.title = title; //"Some Template"
+			this.params = $.extend( this.params, cfg );
+		} else{ //WikiText "{{Some Template|with=param}}"
+			parseParamsFromString(cfg);
 		}
 
 		this.toString = function() {
