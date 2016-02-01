@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Liste tous les fichiers du serveur de fichiers. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
+	"apihelp-bs-user-store-description": "Liste tous les utilisateurs de la base de données. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
+	"apihelp-bs-store-param-sort": "Chaîne JSON avec les informations de tri ; se désérialise en <code>tableau d’objets</code> qui contiennent le nom du champ et la direction de chaque option de tri",
+	"apihelp-bs-store-param-group": "Chaîne JSON avec les informations de regroupement ; se désérialise en <code>tableau d’objets</code> qui contiennent le nom et la direction de chaque option de groupement",
+	"apihelp-bs-store-param-filter": "Chaîne JSON avec les informations de filtrage ; se désérialise en <code>tableau d’objets</code> qui contiennent le nom du champ, le type de filtre et sa valeur, pour chaque option de filtrage",
+	"apihelp-bs-store-param-page": "Permet le calcul du début et de la limite du côté serveur",
+	"apihelp-bs-store-param-limit": "Nombre de résultats à renvoyer",
+	"apihelp-bs-store-param-start": "Le décalage auquel commencer la liste de résultats",
+	"apihelp-bs-store-param-callback": "Un nom de méthode dans le code client qui devrait être appelée dans la réponse (JSONP)",
+	"apihelp-bs-store-param-query": "Similaire à <var>filter</var>, mais la valeur fournie sert de filtre uniquement pour le champ <var>value</var> d’un composant ExtJS",
+	"apihelp-bs-store-param-dc": "Marque <code>Désactivation du cache</code>",
+	"apihelp-bs-store-param-format": "Le format de la sortie (uniquement JSON ou JSON mis en forme)",
+	"apihelp-bs-task-param-task": "La tâche qui doit être exécutée",
+	"apihelp-bs-task-param-taskdata": "Objet encodé en chaîne JSON avec des données arbitraires pour la tâche",
+	"apihelp-bs-task-param-format": "Le format du résultat"
+}
