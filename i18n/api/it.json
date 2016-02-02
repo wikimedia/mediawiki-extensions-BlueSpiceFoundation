@@ -14,6 +14,7 @@
 	"apihelp-bs-store-param-limit": "Numero di risultati da restituire",
 	"apihelp-bs-store-param-start": "L'offset da cui avviare l'elenco dei risultati",
 	"apihelp-bs-store-param-callback": "Il nome di un metodo nel codice client che deve essere chiamato in risposta (JSONP)",
+	"apihelp-bs-store-param-query": "Simile a <var>filter</var>, ma il valore fornito serve come un filtro solo per il campo <var>value</var> di un componente ExtJS",
 	"apihelp-bs-store-param-dc": "Indicatore <code>disabilita cache</code>",
 	"apihelp-bs-store-param-format": "Il formato di output (solo JSON o JSON formattato)",
 	"apihelp-bs-task-param-task": "L'attività che deve essere eseguita",
