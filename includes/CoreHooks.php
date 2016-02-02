@@ -10,16 +10,14 @@ class BsCoreHooks {
 		$wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown, $wgNonincludableNamespaces,
 		$wgExtraNamespaces, $wgContentNamespaces, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault,
 		$wgLocalisationCacheConf, $wgAutoloadLocalClasses, $wgFlaggedRevsNamespaces, $wgNamespaceAliases, $wgVersion;
+		/*
+		 * TODO: All those globals above can be removed once all included
+		 * settings files use $GLOBALS['wg...'] to access them
+		 */
 
-		$sConfigPath = BSCONFIGDIR;
-		$aConfigFiles = array(
-			'nm-settings.php',
-			'gm-settings.php',
-			'pm-settings.php'
-		);
+		global $bsgConfigFiles;
 
-		foreach ( $aConfigFiles as $sConfigFile) {
-			$sConfigFilePath = $sConfigPath . DS . $sConfigFile;
+		foreach( $bsgConfigFiles as $sConfigFileKey => $sConfigFilePath ) {
 			if ( file_exists( $sConfigFilePath ) ) {
 				include( $sConfigFilePath );
 			}
