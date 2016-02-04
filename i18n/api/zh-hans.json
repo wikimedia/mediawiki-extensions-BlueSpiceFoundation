@@ -7,5 +7,6 @@
 	"apihelp-bs-store-param-limit": "返回的结果数",
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code>标记",
 	"apihelp-bs-store-param-format": "输出格式（仅JSON或格式化JSON）",
+	"apihelp-bs-task-param-task": "应执行的任务",
 	"apihelp-bs-task-param-format": "结果的格式"
 }

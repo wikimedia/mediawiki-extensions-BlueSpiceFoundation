@@ -4,5 +4,7 @@
 			"Milicevic01"
 		]
 	},
-	"bs-extjs-filters": "Filteri"
+	"bs-extjs-filters": "Filteri",
+	"bs-extjs-filter-bool-yes": "da",
+	"bs-extjs-filter-bool-no": "ne"
 }

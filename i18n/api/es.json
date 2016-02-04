@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"YoViajo"
+		]
+	},
+	"apihelp-bs-store-param-limit": "Número de resultados a devolver",
+	"apihelp-bs-task-param-format": "El formato del resultado"
+}
