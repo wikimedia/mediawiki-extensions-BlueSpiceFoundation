@@ -6,6 +6,7 @@
 	},
 	"apihelp-bs-filebackend-store-description": "Lists all files from the file backend. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-user-store-description": "Lists all users from the database. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
+	"apihelp-bs-group-store-description": "Lists all groups except $wgImplicitGroups. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-store-param-sort": "JSON string with sorting info; deserializes to <code>array of objects</code> that hold field name and direction for each sorting option",
 	"apihelp-bs-store-param-group": "JSON string with grouping info; deserializes to <code>array of objects</code> that hold field name and direction for each grouping option",
 	"apihelp-bs-store-param-filter": "JSON string with filter info; deserializes to <code>array of objects</code> that hold field name, filter type, and filter value for each filtering option",
