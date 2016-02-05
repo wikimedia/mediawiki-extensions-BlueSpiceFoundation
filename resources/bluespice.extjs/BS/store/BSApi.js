@@ -3,7 +3,7 @@ Ext.define('BS.store.BSApi', {
 	apiAction: null,
 
 	constructor: function( cfg ) {
-		cfg = Ext.apply({
+		cfg = Ext.merge({
 			proxy: {
 				type: 'ajax',
 				url: mw.util.wikiScript('api'),

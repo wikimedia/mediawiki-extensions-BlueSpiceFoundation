@@ -65,6 +65,7 @@ $GLOBALS['wgAutoloadClasses']['BSApiUserStore'] = __DIR__."/api/BSApiUserStore.p
 $GLOBALS['wgAutoloadClasses']['BSApiGroupStore'] = __DIR__ . '/api/BSApiGroupStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiInterwikiStore'] = __DIR__ . '/api/BSApiInterwikiStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiWikiPageTasks'] = __DIR__ . '/api/BSApiWikiPageTasks.php';
+$GLOBALS['wgAutoloadClasses']['BSApiTitleQueryStore'] = __DIR__ . '/api/BSApiTitleQueryStore.php';
 
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";
