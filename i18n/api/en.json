@@ -7,6 +7,7 @@
 	"apihelp-bs-filebackend-store-description": "Lists all files from the file backend. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-user-store-description": "Lists all users from the database. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-group-store-description": "Lists all groups except $wgImplicitGroups. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
+	"apihelp-bs-wikipage-tasks-description": "Provides common operations for WikiPages",
 	"apihelp-bs-store-param-sort": "JSON string with sorting info; deserializes to <code>array of objects</code> that hold field name and direction for each sorting option",
 	"apihelp-bs-store-param-group": "JSON string with grouping info; deserializes to <code>array of objects</code> that hold field name and direction for each grouping option",
 	"apihelp-bs-store-param-filter": "JSON string with filter info; deserializes to <code>array of objects</code> that hold field name, filter type, and filter value for each filtering option",
@@ -19,5 +20,11 @@
 	"apihelp-bs-store-param-format": "The format of the output (only JSON or formatted JSON)",
 	"apihelp-bs-task-param-task": "The task that should be executed",
 	"apihelp-bs-task-param-taskdata": "JSON string encoded object with arbitrary data for the task",
-	"apihelp-bs-task-param-format": "The format of the result"
+	"apihelp-bs-task-param-format": "The format of the result",
+	"bs-wikipage-tasks-error-contentmodel" : "The task could not be perfomed with the content model of the provided page.",
+	"bs-wikipage-tasks-error-page-not-valid" : "The provided page is not valid.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Changed categories.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "You are not allowed to edit page '$1'.",
+	"bs-wikipage-tasks-error-categories-not-valid": "Invalid {{PLURAL:$2|category|categories}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Categories have successfully been set."
 }
