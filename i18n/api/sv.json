@@ -4,5 +4,7 @@
 			"WikiPhoenix"
 		]
 	},
-	"apihelp-bs-store-param-limit": "Antal resultat att returnera"
+	"apihelp-bs-group-store-description": "Listar alla grupper förutom $wgImplicitGroups. Tillåter sortering, filtrering och sidnumrering. Implementerar parametrar för ExtJS Store.",
+	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
+	"apihelp-bs-task-param-format": "Format för resultatet"
 }

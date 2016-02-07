@@ -4,6 +4,7 @@
 			"Liuxinyu970226"
 		]
 	},
+	"apihelp-bs-group-store-description": "列举除$wgImplicitGroups以外的所有组。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-store-param-limit": "返回的结果数",
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code>标记",
 	"apihelp-bs-store-param-format": "输出格式（仅JSON或格式化JSON）",

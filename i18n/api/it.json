@@ -7,6 +7,7 @@
 	},
 	"apihelp-bs-filebackend-store-description": "Elenca tutti i file dal backend. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-user-store-description": "Elenca tutti gli utenti del database. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
+	"apihelp-bs-group-store-description": "Elenca tutti i gruppi ad eccezione di wgImplicitGroups. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-store-param-sort": "Una stringa JSON con informazioni di ordinamento; deserializzata in <code>array di oggetti</code> che contengono il nome del campo e la direzione per ogni ordinamento",
 	"apihelp-bs-store-param-group": "Una stringa JSON con informazioni di raggruppamento; deserializzata in <code>array di oggetti</code> che contengono il nome del campo e la direzione per ogni gruppo",
 	"apihelp-bs-store-param-filter": "Una stringa JSON con informazioni di filtraggio; deserializzata in <code>array di oggetti</code> che contengono il nome del campo, il tipo ed il valore del filtro per ogni filtraggio",
