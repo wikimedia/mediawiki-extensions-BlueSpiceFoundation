@@ -4,6 +4,8 @@
 			"Liuxinyu970226"
 		]
 	},
+	"apihelp-bs-filebackend-store-description": "列举来自文件后端的所有文件。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-user-store-description": "列举来自数据库的所有用户。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-group-store-description": "列举除$wgImplicitGroups以外的所有组。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-store-param-limit": "返回的结果数",
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code>标记",
