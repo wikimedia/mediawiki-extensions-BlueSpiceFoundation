@@ -328,7 +328,14 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 					return false;
 				}
 			}
-			//TODO: Implement for type 'date' and 'datetime'
+
+			if( $oFilter->type == 'date' ) {
+				$bFilterApplies = $this->filterDate( $oFilter, $aDataSet );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
+			//TODO: Implement for type 'datetime'
 		}
 
 		return true;
@@ -424,6 +431,31 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	public function filterBoolean( $oFilter, $aDataSet ) {
 		return $oFilter->value == $aDataSet->{ $oFilter->field };
+	}
+
+	/**
+	 * Performs filtering based on given filter of type date on a dataset
+	 * "Ext.ux.grid.filter.DateFilter" by default sends filter value in format
+	 * of m/d/Y
+	 * @param object $oFilter
+	 * @param object $aDataSet
+	 */
+	public function filterDate( $oFilter, $aDataSet ) {
+		$iFilterValue = strtotime( $oFilter->value ); // Format: "m/d/Y"
+		$iFieldValue = strtotime( $aDataSet->{$oFilter->field} ); // Format "YmdHis", or something else...
+
+		switch( $oFilter->comparison ) {
+			case 'gt':
+				return $iFieldValue > $iFilterValue;
+			case 'lt':
+				return $iFieldValue < $iFilterValue;
+			case 'eq':
+				//We need to normalise the date on day-level
+				$iFieldValue = strtotime(
+					date( 'm/d/Y', $iFieldValue )
+				);
+				return $iFieldValue === $iFilterValue;
+		}
 	}
 
 	/**
