@@ -33,6 +33,13 @@
 abstract class BSApiTasksBase extends BSApiBase {
 
 	/**
+	 * This is the default log the API writes to. It needs to be registered
+	 * in $wgLogTypes
+	 * @var string
+	 */
+	protected $sTaskLogType = null;
+
+	/**
 	 * Methods that can be called by task param
 	 * @var array
 	 */
@@ -92,6 +99,90 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	protected function makeStandardReturn() {
 		return new BSStandardAPIResponse();
+	}
+
+	/**
+	 * Creates a log entry for Special:Log, based on $this->sTaskLogType or
+	 * $aOptions['type']. See https://www.mediawiki.org/wiki/Manual:Logging_to_Special:Log
+	 * @param string $sAction
+	 * @param array $aParams for the log entry
+	 * @param array $aOptions <br/>
+	 * 'performer' of type User<br/>
+	 * 'target' of type Title<br/>
+	 * 'timestamp' of type string<br/>
+	 * 'relations of type array<br/>
+	 * 'deleted' of type int<br/>
+	 * 'type' of type string; to allow overriding of class default
+	 * @param bool $bDoPublish
+	 * @return int Id of the newly created log entry or -1 on error
+	 */
+	protected function logTaskAction( $sAction, $aParams, $aOptions = array(), $bDoPublish = false ) {
+		$aOptions += array(
+			'performer' => null,
+			'target' => null,
+			'timestamp' => null,
+			'relations' => null,
+			'comment' => null,
+			'deleted' =>  null,
+			'publish' => null,
+			'type' => null //To allow overriding of class default
+		);
+
+		$oTarget = $aOptions['target'];
+		if ( $oTarget === null ) {
+			$oTarget = $this->makeDefaultLogTarget();
+		}
+
+		$oPerformer = $aOptions['performer'];
+		if ( $oPerformer === null ) {
+			$oPerformer = $this->getUser();
+		}
+
+		$sType = $this->sTaskLogType;
+		if ( $aOptions['type'] !== null ) {
+			$sType = $aOptions['type'];
+		}
+
+		if ( $sType === null ) { //Not set on class, not set as call option
+			return -1;
+		}
+
+		$oLogger = new ManualLogEntry( $sType, $sAction );
+		$oLogger->setPerformer( $oPerformer );
+		$oLogger->setTarget( $oTarget );
+		$oLogger->setParameters( $aParams );
+
+		if ( $aOptions['timestamp'] !== null ) {
+			$oLogger->setTimestamp( $aOptions['timestamp'] );
+		}
+
+		if ( $aOptions['relations'] !== null ) {
+			$oLogger->setRelations( $aOptions['relations'] );
+		}
+
+		if ( $aOptions['comment'] !== null ) {
+			$oLogger->setComment( $aOptions['comment'] );
+		}
+
+		if ( $aOptions['deleted'] !== null ) {
+			$oLogger->setDeleted( $aOptions['deleted'] );
+		}
+
+		$iLogEntryId = $oLogger->insert();
+
+		if ( $bDoPublish ) {
+			$oLogger->publish();
+		}
+
+		return $iLogEntryId;
+	}
+
+	/**
+	 *
+	 * @return Title
+	 */
+	protected function makeDefaultLogTarget() {
+		return $this->getTitle();
 	}
 
 	/**
