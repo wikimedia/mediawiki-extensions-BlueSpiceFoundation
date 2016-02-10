@@ -439,55 +439,61 @@ class BsBaseTemplate extends BaseTemplate {
 				$aOut[] = '<div id="p-' . Sanitizer::escapeId( $bar ) . '" class="bs-nav-links">';
 				$aOut[] = '  <h5>' . $sTitle . '</h5>';
 				$aOut[] = '  <ul>';
-				foreach ($cont as $key => $val) {
-					/* $val is created in Skin::addToSidebarPlain and contains
-					 * the following:
-					 * 'id' -> ID for list item
-					 * 'active' -> Flag for list item class 'active'
-					 * 'text' -> Text for anchor
-					 * 'href' -> Href for anchot
-					 * 'rel' -> Rel for anchor
-					 * 'target' -> Target for anchor
-					 */
 
-					if ( strpos( $val['text'], "|" ) !== false ) {
-						$aVal = explode( '|', $val['text'] );
-						$val['id'] = 'n-' . $aVal[0];
-					}
+				if( !is_array( $cont ) ) {
+					$aOut[] = $cont;
+				}
+				else {
+					foreach ( $cont as $key => $val ) {
+						/* $val is created in Skin::addToSidebarPlain and contains
+						 * the following:
+						 * 'id' -> ID for list item
+						 * 'active' -> Flag for list item class 'active'
+						 * 'text' -> Text for anchor
+						 * 'href' -> Href for anchot
+						 * 'rel' -> Rel for anchor
+						 * 'target' -> Target for anchor
+						 */
 
-					$sCssClass = (!isset($val['active']) ) ? ' class="active"' : '';
-					$sTarget = ( isset($val['target']) ) ? ' target="' . $val['target'] . '"' : '';
-					$sRel = ( isset($val['rel']) ) ? ' rel="' . $val['rel'] . '"' : '';
-
-					$aOut[] = '<li id="' . Sanitizer::escapeId($val['id']) . '"' . $sCssClass . ' class="clearfix">';
-
-					$sTitle = htmlspecialchars($val['text']);
-					$sText = htmlspecialchars($val['text']);
-					$sHref = htmlspecialchars($val['href']);
-					$sIcon = '<span class="icon24"></span>';
-					if ( !empty( $aVal ) ) {
-						$oFile = wfFindFile( $aVal[1] );
-						if ( strpos( $lang = $this->translator->translate( $aVal[0] ), "&lt;" ) === false ) {
-							$aVal[0] = $lang;
+						if ( strpos( $val['text'], "|" ) !== false ) {
+							$aVal = explode( '|', $val['text'] );
+							$val['id'] = 'n-' . $aVal[0];
 						}
-						$sTitle = htmlspecialchars($aVal[0]);
-						$sText = htmlspecialchars($aVal[0]);
 
-						if ( is_object( $oFile ) && $oFile->exists() ) {
-							if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
-								$sUrl = SecureFileStore::secureStuff( $oFile->getUrl(), true );
-							} else {
-								$sUrl = $oFile->getUrl();
+						$sCssClass = (!isset($val['active']) ) ? ' class="active"' : '';
+						$sTarget = ( isset($val['target']) ) ? ' target="' . $val['target'] . '"' : '';
+						$sRel = ( isset($val['rel']) ) ? ' rel="' . $val['rel'] . '"' : '';
+
+						$aOut[] = '<li id="' . Sanitizer::escapeId($val['id']) . '"' . $sCssClass . ' class="clearfix">';
+
+						$sTitle = htmlspecialchars($val['text']);
+						$sText = htmlspecialchars($val['text']);
+						$sHref = htmlspecialchars($val['href']);
+						$sIcon = '<span class="icon24"></span>';
+						if ( !empty( $aVal ) ) {
+							$oFile = wfFindFile( $aVal[1] );
+							if ( strpos( $lang = $this->translator->translate( $aVal[0] ), "&lt;" ) === false ) {
+								$aVal[0] = $lang;
 							}
-							$sIcon = '<span class="icon24" style="background-image:url(' . $sUrl . ')"></span>';
+							$sTitle = htmlspecialchars($aVal[0]);
+							$sText = htmlspecialchars($aVal[0]);
+
+							if ( is_object( $oFile ) && $oFile->exists() ) {
+								if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
+									$sUrl = SecureFileStore::secureStuff( $oFile->getUrl(), true );
+								} else {
+									$sUrl = $oFile->getUrl();
+								}
+								$sIcon = '<span class="icon24" style="background-image:url(' . $sUrl . ')"></span>';
+							}
 						}
+						$aOut[] = '<a href="' . $sHref . '" title="' . $sTitle .'" ' . $sTarget . $sRel . '>';
+						$aOut[] = $sIcon;
+						$aOut[] = '<span class="bs-nav-item-text">' . $sText . '</span>';
+						$aOut[] = '</a>';
+						$aOut[] = '</li>';
+						unset( $aVal );
 					}
-					$aOut[] = '<a href="' . $sHref . '" title="' . $sTitle .'" ' . $sTarget . $sRel . '>';
-					$aOut[] = $sIcon;
-					$aOut[] = '<span class="bs-nav-item-text">' . $sText . '</span>';
-					$aOut[] = '</a>';
-					$aOut[] = '</li>';
-					unset( $aVal );
 				}
 				$aOut[] = '</ul>';
 				$aOut[] = '</div>';
