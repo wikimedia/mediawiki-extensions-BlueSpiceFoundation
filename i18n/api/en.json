@@ -21,6 +21,7 @@
 	"apihelp-bs-task-param-task": "The task that should be executed",
 	"apihelp-bs-task-param-taskdata": "JSON string encoded object with arbitrary data for the task",
 	"apihelp-bs-task-param-format": "The format of the result",
+	"apihelp-bs-task-param-token": "The token required to access the API module",
 	"bs-wikipage-tasks-error-contentmodel" : "The task could not be perfomed with the content model of the provided page.",
 	"bs-wikipage-tasks-error-page-not-valid" : "The provided page is not valid.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Changed categories.",

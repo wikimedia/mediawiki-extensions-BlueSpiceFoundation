@@ -80,7 +80,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 				$oResult->message = wfMessage( 'bs-readonly', $wgReadOnly )->plain();
 			}
 			else {
-				$oResult = $this->$sMethod( $this->getParameter('taskData'), $aParams );
+				$oTaskData = $this->getParameter( 'taskData' );
+				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', array( $this, $sTask, &$oTaskData , &$aParams ) );
+				$oResult = $this->$sMethod( $oTaskData , $aParams );
+				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', array( $this, $sTask, &$oResult, $oTaskData , $aParams ) );
 			}
 		}
 
@@ -206,6 +209,11 @@ abstract class BSApiTasksBase extends BSApiBase {
 				ApiBase::PARAM_DFLT => 'json',
 				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
 				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-format',
+			),
+			'token' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => true,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-token',
 			)
 		);
 	}
@@ -275,5 +283,13 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	protected function getRequiredTaskPermissions() {
 		return array();
+	}
+
+	/**
+	 * General protection
+	 * @return boolean
+	 */
+	public function needsToken() {
+		return true;
 	}
 }

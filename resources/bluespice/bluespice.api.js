@@ -28,8 +28,7 @@
 		var $dfd = $.Deferred();
 
 		var api = new mw.Api();
-		//api.postWithToken( cfg.token, { //If Change https://gerrit.wikimedia.org/r/#/c/127589/ gets merged this needs to be enabled
-		api.post( {
+		api.postWithToken( cfg.token, {
 			action: 'bs-'+ module +'-tasks',
 			task: task,
 			taskData: JSON.stringify( data )
