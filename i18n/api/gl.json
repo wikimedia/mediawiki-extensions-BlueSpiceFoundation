@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
-	"apihelp-bs-store-param-limit": "Número de resultados a devolver."
+	"apihelp-bs-wikipage-tasks-description": "Proporciona operacións comúns para WikiPages",
+	"apihelp-bs-store-param-page": "Permite o cálculo no lado do servidor do comezo/límite",
+	"apihelp-bs-store-param-limit": "Número de resultados a devolver.",
+	"apihelp-bs-task-param-format": "Formato do resultado",
+	"bs-wikipage-tasks-error-page-not-valid": "A páxina especificada non é válida.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Non lle está permitido editar a páxina '$1'.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría non valida|Categorías non válidas}}: $1"
 }
