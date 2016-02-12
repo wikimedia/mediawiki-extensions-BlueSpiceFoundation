@@ -347,25 +347,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$sFilterValue = $oFilter->value;
 
-		//TODO: Add string functions to BsStringHelper
-		//HINT: http://stackoverflow.com/a/10473026 + Case insensitive
-		switch( $oFilter->comparison ) {
-			case 'sw':
-				return $sFilterValue === '' ||
-					strripos($sFieldValue, $sFilterValue, -strlen($sFieldValue)) !== false;
-			case 'ew':
-				return $sFilterValue === '' ||
-					(($temp = strlen($sFieldValue) - strlen($sFilterValue)) >= 0
-					&& stripos($sFieldValue, $sFilterValue, $temp) !== false);
-			case 'ct':
-				return stripos($sFieldValue, $sFilterValue) !== false;
-			case 'nct':
-				return stripos($sFieldValue, $sFilterValue) === false;
-			case 'eq':
-				return $sFieldValue === $sFilterValue;
-			case 'neq':
-				return $sFieldValue !== $sFilterValue;
-		}
+		return BsStringHelper::filter( $oFilter->comparison, $sFieldValue, $sFilterValue );
 	}
 
 	/**
