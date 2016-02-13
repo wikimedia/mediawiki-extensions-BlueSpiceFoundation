@@ -8,6 +8,7 @@
 	"apihelp-bs-filebackend-store-description": "Elenca tutti i file dal backend. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-user-store-description": "Elenca tutti gli utenti del database. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-group-store-description": "Elenca tutti i gruppi ad eccezione di wgImplicitGroups. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
+	"apihelp-bs-wikipage-tasks-description": "Fornisce operazioni comuni per WikiPages",
 	"apihelp-bs-store-param-sort": "Una stringa JSON con informazioni di ordinamento; deserializzata in <code>array di oggetti</code> che contengono il nome del campo e la direzione per ogni ordinamento",
 	"apihelp-bs-store-param-group": "Una stringa JSON con informazioni di raggruppamento; deserializzata in <code>array di oggetti</code> che contengono il nome del campo e la direzione per ogni gruppo",
 	"apihelp-bs-store-param-filter": "Una stringa JSON con informazioni di filtraggio; deserializzata in <code>array di oggetti</code> che contengono il nome del campo, il tipo ed il valore del filtro per ogni filtraggio",
@@ -20,5 +21,11 @@
 	"apihelp-bs-store-param-format": "Il formato di output (solo JSON o JSON formattato)",
 	"apihelp-bs-task-param-task": "L'attività che deve essere eseguita",
 	"apihelp-bs-task-param-taskdata": "Un oggetto stringa JSON codificata con dati arbitrari per l'attività",
-	"apihelp-bs-task-param-format": "Il formato del risultato"
+	"apihelp-bs-task-param-format": "Il formato del risultato",
+	"bs-wikipage-tasks-error-contentmodel": "L'attività non può essere eseguita con il modello di contenuto della pagina indicata.",
+	"bs-wikipage-tasks-error-page-not-valid": "La pagina indicata non è valida.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Categorie modificate.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Non è consentito modificare la pagina '$1'.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoria non valida|Categorie non valide}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Le categorie sono state impostate correttamente."
 }
