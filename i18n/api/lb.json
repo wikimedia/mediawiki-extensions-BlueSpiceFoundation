@@ -4,5 +4,10 @@
 			"Robby"
 		]
 	},
-	"apihelp-bs-task-param-format": "De Format vum Resultat."
+	"apihelp-bs-task-param-format": "De Format vum Resultat.",
+	"bs-wikipage-tasks-error-page-not-valid": "Déi spezifizéiert Säit ass net valabel.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Kategorie geännert.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Dir däerft d'Säit '$1' net änneren.",
+	"bs-wikipage-tasks-error-categories-not-valid": "Net-valabel {{PLURAL:$2|Kategorie|Kategorien}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "D'Kategorie goufe festgeluecht."
 }

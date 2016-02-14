@@ -11,6 +11,7 @@
 	"apihelp-bs-store-param-page": "允许开始/限制服务器端计算",
 	"apihelp-bs-store-param-limit": "返回的结果数",
 	"apihelp-bs-store-param-start": "开始结果列表的抵消",
+	"apihelp-bs-store-param-callback": "客户端代码中应在响应（JSONP）中被调用的方法名称",
 	"apihelp-bs-store-param-query": "与<var>filter</var>类似，但提供的值只保留作过滤ExtJS组件的<var>value</var>字段之用",
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code>标记",
 	"apihelp-bs-store-param-format": "输出格式（仅JSON或格式化JSON）",

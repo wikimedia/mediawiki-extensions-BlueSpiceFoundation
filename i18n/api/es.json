@@ -1,9 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"YoViajo"
+			"YoViajo",
+			"Macofe"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Número de resultados a devolver",
-	"apihelp-bs-task-param-format": "El formato del resultado"
+	"apihelp-bs-task-param-format": "El formato del resultado",
+	"bs-wikipage-tasks-error-contentmodel": "No se pudo realizar la tarea con el modelo de contenido de la página proporcionada.",
+	"bs-wikipage-tasks-error-page-not-valid": "La página proporcionada no es válida.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Se cambiaron categorías.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "No tienes permitido editar la página '$1'.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría no válida|Categorías no válidas}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Se establecieron las categorías con éxito."
 }
