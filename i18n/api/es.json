@@ -5,6 +5,7 @@
 			"Macofe"
 		]
 	},
+	"apihelp-bs-wikipage-tasks-description": "Proporciona operaciones comunes para páginas wiki",
 	"apihelp-bs-store-param-limit": "Número de resultados a devolver",
 	"apihelp-bs-task-param-format": "El formato del resultado",
 	"bs-wikipage-tasks-error-contentmodel": "No se pudo realizar la tarea con el modelo de contenido de la página proporcionada.",

@@ -33,7 +33,7 @@
 	"bs-one-unit-ago": "$1前",
 	"bs-now": "现在",
 	"bs-email-greeting-receiver": "{{GENDER:$1|$2先生|$2女士|$2}}：\n\n你好",
-	"bs-email-greeting-no-receiver": "你好，",
+	"bs-email-greeting-no-receiver": "您好，",
 	"bs-email-footer": "此消息由$1自动生成。请不要回复这封电子邮件。",
 	"bs-userpagesettings-legend": "用户设置",
 	"bs-userpreferences-link-text": "更多用户设置",

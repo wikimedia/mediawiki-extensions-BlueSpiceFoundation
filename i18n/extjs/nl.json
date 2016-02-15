@@ -35,7 +35,7 @@
 	"bs-extjs-browse": "Bladeren",
 	"bs-extjs-uploading": "Bezig met uploaden...",
 	"bs-extjs-confirmNavigationTitle": "Koppeling volgen",
-	"bs-extjs-confirmNavigationText": "Wilt u deze koppeling echt volgen? Alle dynamische instellingen zoals filters of sortering op de huidige pagina zullen verloren gaan.",
+	"bs-extjs-confirmNavigationText": "Wilt u deze koppeling echt volgen? Alle dynamische instellingen zoals filters of sortering op de huidige pagina gaan verloren.",
 	"bs-extjs-allns": "(alle)",
 	"bs-extjs-filters": "Filters",
 	"bs-extjs-filter-equals": "gelijk aan",
