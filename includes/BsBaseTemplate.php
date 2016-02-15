@@ -654,11 +654,11 @@ class BsBaseTemplate extends BaseTemplate {
 			$attrs += Linker::tooltipAndAccesskeyAttribs( 'search-fulltext' );
 
 			if ( $this->data['rtl'] ) {
-				echo HTML::element( 'button', $attrs );
+				echo Html::element( 'button', $attrs );
 			}
 			echo $this->makeSearchInput( $this->data['bs_search_input'] );
 			if ( !$this->data['rtl'] ) {
-				echo HTML::element( 'button', $attrs );
+				echo Html::element( 'button', $attrs );
 			}
 			?>
 			<input type='hidden' name="title" value="<?php $this->text( 'searchtitle' ) ?>"/>
