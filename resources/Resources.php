@@ -19,7 +19,8 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
 		'bluespice/bluespice.ping.js',
-		'bluespice/bluespice.tooltip.js'
+		'bluespice/bluespice.tooltip.js',
+		'bluespice/bluespice.api.js'
 	),
 	'messages' => array(
 		'largefileserver',
