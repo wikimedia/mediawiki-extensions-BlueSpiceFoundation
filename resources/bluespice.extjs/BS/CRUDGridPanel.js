@@ -109,12 +109,17 @@ Ext.define( 'BS.CRUDGridPanel', {
 	},
 
 	makeActionColumn: function( cols ) {
+		var items = this.makeRowActions();
+		var width =  items.length * 26; //A standard icon is 24px in width. We add some padding
+		if( width < 72 ) {
+			width = 72; //We want a minimal width so the header label is not being truncated
+		}
 		var actionColumn = new Ext.grid.column.Action({
 			header: mw.message('bs-extjs-actions-column-header').plain(),
 			flex: 0,
-			//width: 120,
+			width: width,
 			//cls: 'hideAction',
-			items: this.makeRowActions(),
+			items: items,
 			menuDisabled: true,
 			hideable: false,
 			sortable: false
