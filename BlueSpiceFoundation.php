@@ -69,6 +69,7 @@ $wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 $wgAPIModules['bs-filebackend-store'] = 'BSApiFileBackendStore';
 $wgAPIModules['bs-user-store'] = 'BSApiUserStore';
 $wgAPIModules['bs-group-store'] = 'BSApiGroupStore';
+$wgAPIModules['bs-interwiki-store'] = 'BSApiInterwikiStore';
 $wgAPIModules['bs-wikipage-tasks'] = 'BSApiWikiPageTasks';
 
 //I18N MW1.23+

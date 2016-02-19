@@ -7,6 +7,7 @@
 	"apihelp-bs-filebackend-store-description": "Describes the API endpoint that lists uploaded files",
 	"apihelp-bs-user-store-description": "Describes the API endpoint that lists users",
 	"apihelp-bs-group-store-description": "Describes the API endpoint that lists groups",
+	"apihelp-bs-interwiki-store-description": "Describes the API endpoint that lists Interwiki links",
 	"apihelp-bs-wikipage-tasks-description": "Describes the API endpoint that allows manipulation of wikipages",
 	"apihelp-bs-store-param-sort": "Describes the <var>sort</var> parameter of the API module",
 	"apihelp-bs-store-param-group": "Describes the <var>group</var> parameter of the API module",
