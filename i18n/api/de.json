@@ -20,6 +20,7 @@
 	"apihelp-bs-task-param-task": "Die Aufgabe die ausgeführt werden soll",
 	"apihelp-bs-task-param-taskdata": "JSON Zeichenkette, die zusätzliche Daten für die Aufgabe enthält",
 	"apihelp-bs-task-param-format": "Das Ausgabeformat",
+	"apihelp-bs-task-param-token": "Der erforderliche Token, um auf das API-Modul zuzugreifen",
 	"bs-wikipage-tasks-error-contentmodel": "Die Aufgabe konnte nicht mit dem Inhaltsmodell der angegebenen Seite ausgeführt werden.",
 	"bs-wikipage-tasks-error-page-not-valid": "Die angegebene Seite ist nicht gültig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Kategorien geändert.",
