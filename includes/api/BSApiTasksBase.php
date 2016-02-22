@@ -53,6 +53,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 	protected $aReadTasks = array();
 
 	/**
+	 * Holds the context of the API call.
+	 * @var BSExtendedApiContext
+	 */
+	protected $oExtendedContext = null;
+
+	/**
 	 * The execute() method will be invoked directly by ApiMain immediately
 	 * before the result of the module is output. Aside from the
 	 * constructor, implementations should assume that no other methods
@@ -62,6 +68,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	public function execute() {
 		$aParams = $this->extractRequestParams();
+		$this->initContext();
 
 		//Avoid API warning: register the parameter used to bust browser cache
 		$this->getMain()->getVal( '_' );
@@ -205,6 +212,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 				ApiBase::PARAM_DFLT => '{}',
 				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-taskdata',
 			),
+			'context' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => false,
+				ApiBase::PARAM_DFLT => '{}',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-context',
+			),
 			'format' => array(
 				ApiBase::PARAM_DFLT => 'json',
 				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
@@ -221,7 +234,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	protected function getParameterFromSettings($paramName, $paramSettings, $parseLimit) {
 		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
 		//Unfortunately there is no way to register custom types for parameters
-		if( $paramName === 'taskData' ) {
+		if ( in_array( $paramName, array( 'taskData', 'context' ) ) ) {
 			$value = FormatJson::decode($value);
 			if( empty($value) ) {
 				return new stdClass();
@@ -238,6 +251,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 		return array(
 			'task' => 'The task that should be executed',
 			'taskData' => 'JSON string encoded object with arbitrary data for the task',
+			'context' => 'JSON string encoded object with context data for the task',
 			'format' => 'The format of the result',
 		);
 	}
@@ -291,5 +305,56 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	public function needsToken() {
 		return true;
+	}
+
+	/**
+	 * Initializes the context of the API call
+	 */
+	public function initContext() {
+		$this->oExtendedContext = BSExtendedApiContext::newFromRequest( $this->getRequest() );
+		$this->getContext()->setTitle( $this->oExtendedContext->getTitle() );
+		if( $this->getTitle()->getArticleID() > 0 ) {
+			//TODO: Check for subtypes like WikiFilePage or WikiCategoryPage
+			$this->getContext()->setWikiPage(
+				WikiPage::factory( $this->getTitle() )
+			);
+		}
+	}
+
+	/**
+	 * MediaWiki initializes all calls to 'api.php' with a Title of 'API'.
+	 * By setting the Title object that is provided by our own context
+	 * source (the client, e.g. in 'bluespice.api.js/_getContext') we
+	 * allow the subclasses of BSApiTaskBase to access '$this->getTitle()'
+	 * and retrieve the correct one (e.g "Main_page").
+	 * When the context contains a real WikiPage (Article, CategoryPage,
+	 * ImagePage, ...), we can also provide the subclass with the correct
+	 * object by letting it access '$this->getWikiPage()'.
+	 * When there is no valid WikiPage object (e.g. when the context is set
+	 * to a SpecialPage) we should make '$this->getWikiPage()' return NULL.
+	 * Unfortunately the 'DerivativeContext' used by 'ApiMain' does not
+	 * allow this so using '$this->getContext()->setWikiPage( null )' would
+	 * crash.
+	 * Therefore we just override the relevant methods and do our own checks.
+	 *
+	 * Returns the current WikiPage object or NULL if not in WikiPage context
+	 *
+	 * @return WikiPage|null
+	 */
+	public function getWikiPage() {
+		if( $this->getTitle()->getNamespace() < 0 ) {
+			return null;
+		}
+		return parent::getWikiPage();
+	}
+
+	/**
+	 * @see BSApiTasksBase::getWikiPage
+	 */
+	public function canUseWikiPage() {
+		if( $this->getWikiPage() === null ) {
+			return false;
+		}
+		return parent::canUseWikiPage();
 	}
 }

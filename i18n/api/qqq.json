@@ -20,6 +20,7 @@
 	"apihelp-bs-store-param-format": "Describes the <var>format</var> parameter of the API module",
 	"apihelp-bs-task-param-task": "Describes the <var>task</var> parameter of the API module",
 	"apihelp-bs-task-param-taskdata": "Describes the <var>taskData</var> parameter of the API module",
+	"apihelp-bs-task-param-context": "Describes the <var>context</var> parameter of the API module",
 	"apihelp-bs-task-param-format": "Describes the <var>format</var> parameter of the API module\n\n{{msg-mw|Bs-store-param-format}}",
 	"apihelp-bs-task-param-token": "Describes the <var>token</var> parameter of the API module",
 	"bs-wikipage-tasks-error-contentmodel": "An error message in case that the task was not supported by the content model of the provided page",

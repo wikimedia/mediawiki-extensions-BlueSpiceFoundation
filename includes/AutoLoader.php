@@ -57,6 +57,7 @@ $GLOBALS['wgAutoloadClasses']['BSNotificationHandler'] = __DIR__."/notifications
 
 //api
 $GLOBALS['wgAutoloadClasses']['BSStandardAPIResponse'] = __DIR__."/api/BSStandardAPIResponse.php";
+$GLOBALS['wgAutoloadClasses']['BSExtendedApiContext'] = __DIR__."/api/BSExtendedApiContext.php";
 $GLOBALS['wgAutoloadClasses']['BSApiBase'] = __DIR__."/api/BSApiBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiTasksBase'] = __DIR__."/api/BSApiTasksBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiExtJSStoreBase'] = __DIR__."/api/BSApiExtJSStoreBase.php";
