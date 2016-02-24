@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"Умар",
+			"Исмаил Садуев"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -17,7 +18,7 @@
 	"bs-extjs-error": "ГӀалат",
 	"bs-extjs-confirm": "Бакъдан",
 	"bs-extjs-loading": "Чуйолуш…",
-	"bs-extjs-pageSize": "АгӀона барам",
+	"bs-extjs-pageSize": "АгӀонан барам",
 	"bs-extjs-actions-column-header": "Дийраш",
 	"bs-extjs-warning": "Тергам бе",
 	"bs-extjs-saving": "Ӏалашъеш ю...",
