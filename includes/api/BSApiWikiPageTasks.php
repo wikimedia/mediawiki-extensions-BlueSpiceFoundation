@@ -118,4 +118,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 		return $oResponse;
 	}
+
+	public function needsToken() {
+		return parent::needsToken();
+	}
 }
