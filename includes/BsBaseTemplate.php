@@ -261,7 +261,7 @@ class BsBaseTemplate extends BaseTemplate {
 
 	protected function printDataAfterContent() {
 		if ( $this->data['dataAfterContent'] ) { //MW standard
-			echo $this->html( 'dataAfterContent' );
+			$this->html( 'dataAfterContent' );
 		}
 	}
 
