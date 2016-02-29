@@ -287,9 +287,9 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 	/**
 	 * General protection
-	 * @return boolean
+	 * @return string
 	 */
 	public function needsToken() {
-		return true;
+		return 'edit';
 	}
 }
