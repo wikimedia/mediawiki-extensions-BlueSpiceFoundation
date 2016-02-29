@@ -121,7 +121,8 @@ class BsCore {
 			'ppt', 'pot', 'pps', 'pptx', 'pptm', 'potx', 'potm', 'ppsx', 'ppsm', 'sldx', 'sldm',
 			'odt', 'fodt', 'ods', 'fods', 'odp', 'fodp',
 			'pdf',
-			'zip', 'rar', 'tar', 'tgz', 'gz', 'bzip2', '7zip'
+			'zip', 'rar', 'tar', 'tgz', 'gz', 'bzip2', '7zip',
+			'xml', 'svg'
 		);
 		$aImages = array( 'png', 'gif', 'jpg', 'jpeg' );
 		BsConfig::registerVar( 'MW::FileExtensions', $aFiles, BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
