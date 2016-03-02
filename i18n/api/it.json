@@ -22,6 +22,7 @@
 	"apihelp-bs-task-param-task": "L'attività che deve essere eseguita",
 	"apihelp-bs-task-param-taskdata": "Un oggetto stringa JSON codificata con dati arbitrari per l'attività",
 	"apihelp-bs-task-param-format": "Il formato del risultato",
+	"apihelp-bs-task-param-token": "Il token necessario per accedere al modulo API",
 	"bs-wikipage-tasks-error-contentmodel": "L'attività non può essere eseguita con il modello di contenuto della pagina indicata.",
 	"bs-wikipage-tasks-error-page-not-valid": "La pagina indicata non è valida.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorie modificate.",
