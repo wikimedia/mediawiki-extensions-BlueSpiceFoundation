@@ -290,6 +290,6 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 * @return string
 	 */
 	public function needsToken() {
-		return 'edit';
+		return 'csrf';
 	}
 }
