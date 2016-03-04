@@ -20,7 +20,7 @@
 		cfg = cfg || {};
 		cfg = $.extend( {
 			token: 'edit',
-			context: {}, //TODO: Implement context as in CommonAjaxInterface
+			context: {},
 			success: _msgSuccess,
 			failure: _msgFailure
 		}, cfg );
@@ -31,7 +31,13 @@
 		api.postWithToken( cfg.token, {
 			action: 'bs-'+ module +'-tasks',
 			task: task,
-			taskData: JSON.stringify( data )
+			taskData: JSON.stringify( data ),
+			context: JSON.stringify(
+				$.extend (
+					_getContext(),
+					cfg.context
+				)
+			)
 		})
 		.done(function( response ){
 			if ( response.success === true ) {
@@ -97,10 +103,62 @@
 		);
 	}
 
+	function _makeTaskUrl( module, task, data, additionalParams ) {
+
+		var params = $.extend( {
+			task: task,
+			taskData: JSON.stringify( data ),
+			token: mw.user.tokens.get( 'editToken' )
+		}, additionalParams );
+
+		return _makeUrl(
+			'bs-'+ module +'-tasks',
+			params,
+			true
+		);
+	}
+
+	function _makeUrl( action, params, sendContext ) {
+		var baseParams = {
+			'action': action
+		};
+
+		if ( sendContext ) {
+			baseParams.context = JSON.stringify( _getContext() );
+		}
+
+		var script = mw.util.wikiScript( 'api' );
+		var callParams = params || {};
+
+		return script + "?" + $.param(
+			$.extend( baseParams, callParams )
+		);
+	}
+
+	function _getContext() {
+		//HINT: http://www.mediawiki.org/wiki/Manual:Interface/JavaScript
+		//Sync with serverside implementation of 'BSExtendedApiContext::newFromRequest'
+		return {
+			wgAction: mw.config.get( 'wgAction' ),
+			wgArticleId: mw.config.get( 'wgArticleId' ),
+			wgCanonicalNamespace: mw.config.get( 'wgCanonicalNamespace' ),
+			wgCanonicalSpecialPageName: mw.config.get( 'wgCanonicalSpecialPageName' ),
+			wgRevisionId: mw.config.get( 'wgRevisionId' ),
+			//wgIsArticle: mw.config.get('wgIsArticle'),
+			wgNamespaceNumber: mw.config.get( 'wgNamespaceNumber' ),
+			wgPageName: mw.config.get( 'wgPageName' ),
+			wgRedirectedFrom: mw.config.get( 'wgRedirectedFrom' ), //maybe null
+			wgRelevantPageName: mw.config.get( 'wgRelevantPageName' ),
+			wgTitle: mw.config.get( 'wgTitle' )
+		};
+	}
+
 	bs.api = {
 		tasks: {
-			exec: _execTask
-		}
+			exec: _execTask,
+			makeUrl: _makeTaskUrl
+		},
+		makeUrl: _makeUrl
 	};
 
 }( mediaWiki, blueSpice, jQuery ) );
