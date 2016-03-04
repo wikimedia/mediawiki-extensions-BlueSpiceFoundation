@@ -8,6 +8,7 @@
 	"apihelp-bs-filebackend-store-description": "Liste tous les fichiers du serveur de fichiers. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
 	"apihelp-bs-user-store-description": "Liste tous les utilisateurs de la base de données. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
 	"apihelp-bs-group-store-description": "Liste tous les groupes sauf $wgImplicitGroups. Permet le tri, le filtrage et la pagination. Implémente les paramètres de stockage ExtJS.",
+	"apihelp-bs-interwiki-store-description": "Liste tous les liens interwiki. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Fournit des opérations communes pour les WikiPages",
 	"apihelp-bs-store-param-sort": "Chaîne JSON avec les informations de tri ; se désérialise en <code>tableau d’objets</code> qui contiennent le nom du champ et la direction de chaque option de tri",
 	"apihelp-bs-store-param-group": "Chaîne JSON avec les informations de regroupement ; se désérialise en <code>tableau d’objets</code> qui contiennent le nom et la direction de chaque option de groupement",
