@@ -22,6 +22,7 @@
 	"apihelp-bs-store-param-format": "Le format de la sortie (uniquement JSON ou JSON mis en forme)",
 	"apihelp-bs-task-param-task": "La tâche qui doit être exécutée",
 	"apihelp-bs-task-param-taskdata": "Objet encodé en chaîne JSON avec des données arbitraires pour la tâche",
+	"apihelp-bs-task-param-context": "Objet encodé en chaîne JSON avec des données contextuelles pour la tâche",
 	"apihelp-bs-task-param-format": "Le format du résultat",
 	"apihelp-bs-task-param-token": "Le jeton nécessaire pour accéder au module de l’API",
 	"bs-wikipage-tasks-error-contentmodel": "La tâche n'a pas pu être effectuées avec le modèle de contenu de la page fournie.",
