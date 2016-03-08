@@ -85,6 +85,11 @@ class BsExtensionManager {
 		$path = "$IP/extensions/BlueSpiceExtensions";
 
 		foreach ( self::$prRegisteredExtensions as $extension => $attributes ) {
+				//if possible, load by autoloader
+				if( class_exists( 'Bs' . $extension ) || class_exists( $extension ) ) {
+					continue;
+				}
+
 				if ( $attributes['baseDir'] != 'ext' ) {
 					require( $attributes['baseDir'] . DS . $extension . '.class.php' );
 				} else {
