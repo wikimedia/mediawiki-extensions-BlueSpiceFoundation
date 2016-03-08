@@ -71,6 +71,7 @@ $wgAPIModules['bs-user-store'] = 'BSApiUserStore';
 $wgAPIModules['bs-group-store'] = 'BSApiGroupStore';
 $wgAPIModules['bs-interwiki-store'] = 'BSApiInterwikiStore';
 $wgAPIModules['bs-wikipage-tasks'] = 'BSApiWikiPageTasks';
+$wgAPIModules['bs-titlequery-store'] = 'BSApiTitleQueryStore';
 
 //I18N MW1.23+
 $wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
