@@ -18,7 +18,6 @@ class BsExtensionManager {
 	protected static $prRunningExtensions = array();
 	protected static $aContexts = array();
 	protected static $aActiveContexts = array();
-	protected static $aIncludedClasses = array();
 
 	public static function addContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
@@ -85,29 +84,30 @@ class BsExtensionManager {
 		$path = "$IP/extensions/BlueSpiceExtensions";
 
 		foreach ( self::$prRegisteredExtensions as $extension => $attributes ) {
-				/* -- reverted, this doesn't work
-				//if possible, load by autoloader
-				if( class_exists( 'Bs' . $extension ) || class_exists( $extension ) ) {
-					continue;
-				}
-				*/
-				if ( $attributes['baseDir'] != 'ext' ) {
-					require( $attributes['baseDir'] . DS . $extension . '.class.php' );
-				} else {
-					require( $path . DS . $extension . DS . $extension . '.class.php' );
-				}
-				self::$aIncludedClasses[] = $extension;
-		}
+			$sClassName = $extension;
 
-		foreach ( self::$aIncludedClasses as $key => $value ) {
-			if ( class_exists( 'Bs' . $value, false ) ) {
-				$class = 'Bs' . $value;
-			} else {
-				$class = $value;
+			//Check if autoloader knows class with extension name and if it
+			//is of type 'BsExtensionMW'
+			if ( !is_subclass_of( $sClassName, 'BsExtensionMW' ) ) {
+				//Check if autoloader knows a prefixed class name
+				$sClassName = 'Bs'.$sClassName;
+				if ( !is_subclass_of( $sClassName, 'BsExtensionMW' ) ) {
+					if ( $attributes['baseDir'] != 'ext' ) {
+						require( $attributes['baseDir'] . DS . $extension . '.class.php' );
+					} else {
+						require( $path . DS . $extension . DS . $extension . '.class.php' );
+					}
+					//Now we only need to check whether to use the prefixed or
+					//the unprefixed extension name as class name for instantiation
+					if( !class_exists( $sClassName, false ) ) {
+						$sClassName = $extension;
+					}
+				}
 			}
-			self::$prRunningExtensions[$value] = new $class();
-			self::$prRunningExtensions[$value]->setCore( $oCore );
-			self::$prRunningExtensions[$value]->setup();
+
+			self::$prRunningExtensions[$extension] = new $sClassName();
+			self::$prRunningExtensions[$extension]->setCore( $oCore );
+			self::$prRunningExtensions[$extension]->setup();
 		}
 
 		wfProfileOut( 'Performance: ' . __METHOD__ );
