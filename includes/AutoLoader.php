@@ -132,10 +132,7 @@ $GLOBALS['wgAutoloadClasses']['ViewUserBarElement'] = __DIR__ . '/outputhandler/
 $GLOBALS['wgAutoloadClasses']['ViewUserMiniProfile'] = __DIR__ . '/outputhandler/views/view.UserMiniProfile.php';
 $GLOBALS['wgAutoloadClasses']['ViewWidget'] = __DIR__ . '/outputhandler/views/view.Widget.php';
 
-//Overrides
-// Replace Mediawikis ApiFormatJson class with our own to prevent some errors with the application/json header.
-$GLOBALS['wgAutoloadClasses']['ApiFormatJson'] = __DIR__."/api/ApiFormatJsonMW.php";
-
+//Resourceloader modules
 $GLOBALS['wgAutoloadClasses']['ResourceLoaderExtJSModule'] = __DIR__."/resourceloader/ResourceLoaderExtJSModule.php";
 
 /**
