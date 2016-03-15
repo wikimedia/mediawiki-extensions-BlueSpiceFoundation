@@ -21,6 +21,7 @@
 		"bs-interwiki-store": "BSApiInterwikiStore",
 		"bs-wikipage-tasks": "BSApiWikiPageTasks",
 		"bs-wikipage-store": "BSApiWikiPageStore",
+		"bs-wikisubpage-treestore": "BSApiWikiSubPageTreeStore",
 		"bs-titlequery-store": "BSApiTitleQueryStore",
 		"bs-ping-tasks": "BSApiPingTasks"
 	},
@@ -152,6 +153,7 @@
 		"BSApiInterwikiStore": "includes/api/BSApiInterwikiStore.php",
 		"BSApiWikiPageTasks": "includes/api/BSApiWikiPageTasks.php",
 		"BSApiWikiPageStore": "includes/api/BSApiWikiPageStore.php",
+		"BSApiWikiSubPageTreeStore": "includes/api/BSApiWikiSubPageTreeStore.php",
 		"BSApiTitleQueryStore": "includes/api/BSApiTitleQueryStore.php",
 		"BSApiPingTasks": "includes/api/BSApiPingTasks.php",
 		"BsExtensionMW": "includes/ExtensionMW.class.php",

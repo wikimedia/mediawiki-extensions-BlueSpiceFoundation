@@ -1,0 +1,189 @@
+<?php
+
+class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
+	protected $root = 'children';
+
+	public function makeData($sQuery = '') {
+		$sNode = $this->getParameter( 'node' );
+		$aOptions = $this->getParameter( 'options' );
+
+		if( empty( $sNode ) ) {
+			return $this->makeNamespaceNodes( $sQuery, $aOptions );
+		}
+
+		$aNodeTextParts = explode( ':', $sNode, 2 );
+		if( empty( $aNodeTextParts[1] ) ) {
+			return $this->makeRootPageNodes( $aNodeTextParts[0], $sQuery, $aOptions );
+		}
+
+		$oParent = Title::newFromText( $sNode );
+		return $this->makePageNodes( $oParent, $sQuery, $aOptions );
+	}
+
+	public function sortData($aProcessedData) {
+		return $aProcessedData; //Otherwise there is a strange default sorting
+		//TODO: Implement reasonable sorting for tree
+	}
+
+	public function getAllowedParams() {
+		return parent::getAllowedParams() + array(
+			'node' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '',
+			)
+		);
+	}
+
+	/**
+	 *
+	 * @param string $sQuery
+	 * @param array $aOptions
+	 * @return array of objects
+	 */
+	public function makeNamespaceNodes( $sQuery, $aOptions ) {
+		$aNamespaceIds = $this->getLanguage()->getNamespaceIds();
+		$aDataSets = array();
+		foreach( $aNamespaceIds as $iNamespaceId ) {
+			if( $iNamespaceId < 0 ) {
+				continue;
+			}
+
+			$oDummyTitle = Title::makeTitle( $iNamespaceId, 'X' );
+			if( !$oDummyTitle->userCan( 'read' ) ) {
+				continue;
+			}
+
+			$sNodeText = $oDummyTitle->getNsText();
+			if( $iNamespaceId === NS_MAIN ) {
+				$sNodeText = wfMessage( 'bs-ns_main' )->plain();
+			}
+
+			$oDataSet = new stdClass();
+			$oDataSet->text = $sNodeText;
+			$oDataSet->id = $oDummyTitle->getNsText().':'; // != $sNodeText
+			$oDataSet->isNamespaceNode = true;
+			$oDataSet->leaf = false;
+			$oDataSet->expanded = false;
+			$oDataSet->loaded = false;
+
+			$aDataSets[] = $oDataSet;
+		}
+
+		return $aDataSets;
+	}
+
+	/**
+	 *
+	 * @param string $sNamespacePrefix
+	 * @param string $sQuery
+	 * @param array $aOptions
+	 * @return array of objects
+	 */
+	public function makeRootPageNodes( $sNamespacePrefix, $sQuery, $aOptions ) {
+		$aDataSets = array();
+
+		$oDummyTitle = Title::newFromText( $sNamespacePrefix.':X' );
+		$iNamespaceId = $oDummyTitle->getNamespace();
+		$res = $this->getDB()->select(
+			'page',
+			'*',
+			array(
+				'page_namespace' => $iNamespaceId
+			)
+		);
+
+		foreach( $res as $row ) {
+			//Unfortunately there is not "NOT LIKE" in MW DBAL, therefore we
+			//filter out subpages manually
+			if( strpos( $row->page_title, '/' ) !== false ) {
+				continue;
+			}
+
+			$this->addDataSet( $aDataSets, $row );
+		}
+
+		return $aDataSets;
+	}
+
+	/**
+	 *
+	 * @param Title $oParent
+	 * @param string $sQuery
+	 * @param array $aOptions
+	 * @return array of objects
+	 */
+	public function makePageNodes( $oParent, $sQuery, $aOptions ) {
+		$aDataSets = array();
+
+		$res = $this->getDB()->select(
+			'page',
+			'*',
+			array(
+				'page_title '.$this->getDB()->buildLike(
+					$oParent->getDBkey() .'/' ,
+					$this->getDB()->anyString()
+				),
+				'page_namespace' => $oParent->getNamespace()
+			)
+		);
+
+		foreach( $res as $row ) {
+			$this->addDataSet( $aDataSets, $row, $oParent );
+		}
+
+		return $aDataSets;
+	}
+
+	/**
+	 *
+	 * @param array $aDataSets
+	 * @param stdClass $row
+	 * @param Title $oParent
+	 * @return void
+	 */
+	public function addDataSet( &$aDataSets, $row, $oParent = null ) {
+		$oTitle = Title::newFromRow( $row );
+		if( $oParent instanceof Title ) {
+			$oBaseTitle = $oTitle->getBaseTitle();
+
+			/*
+			 * Handle gaps
+			 * There could be the case that only the following pages are in DB
+			 *  - A
+			 *  - A/B/C
+			 *  - A/B/D
+			 */
+			while( !$oBaseTitle->exists() && !$oTitle->getBaseTitle()->equals( $oParent ) ) {
+				$oTitle = $oBaseTitle;
+				$oBaseTitle = $oTitle->getBaseTitle();
+			}
+			if( !$oBaseTitle->equals( $oParent ) ) {
+				return; //We want only direct children
+			}
+		}
+
+		if( !$oTitle->userCan( 'read' ) ) {
+			return;
+		}
+
+		$oDataSet = new stdClass();
+		$oDataSet->text = $oTitle->getSubpageText();
+		$oDataSet->id = $oTitle->getPrefixedDBkey();
+		if( $oTitle->getNamespace() === NS_MAIN ) {
+			$oDataSet->id = ':'.$oDataSet->id; //Rebuild full qualified path
+		}
+		$oDataSet->page_link = Linker::link( $oTitle, $oTitle->getSubpageText() );
+		$oDataSet->leaf = true;
+		$oDataSet->expanded = true;
+		$oDataSet->loaded = true;
+
+		if( $oTitle->hasSubpages() ) {
+			$oDataSet->leaf = false;
+			$oDataSet->expanded = false;
+			$oDataSet->loaded = false;
+		}
+
+		$aDataSets[] = $oDataSet;
+	}
+
+}
