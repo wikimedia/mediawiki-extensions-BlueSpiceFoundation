@@ -45,6 +45,8 @@
 	"bs-extjs-filter-ends-with": "заканчивается",
 	"bs-extjs-filter-greater-than": "больше",
 	"bs-extjs-filter-less-than": "менее",
+	"bs-extjs-filter-bool-yes": "да",
+	"bs-extjs-filter-bool-no": "нет",
 	"bs-extjs-title-success": "Успешно",
 	"bs-extjs-title-warning": "Предупреждение",
 	"bs-extjs-categoryboxselect-emptytext": "Добавить категорию"
