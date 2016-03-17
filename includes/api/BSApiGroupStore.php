@@ -58,7 +58,7 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 	}
 
 	public function getRequiredPermissions() {
-		parent::getRequiredPermissions() + array(
+		return parent::getRequiredPermissions() + array(
 			'wikiadmin'
 		);
 	}
