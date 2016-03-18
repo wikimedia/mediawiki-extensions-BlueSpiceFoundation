@@ -15,6 +15,10 @@
 class BsExtensionManager {
 
 	protected static $prRegisteredExtensions = array();
+	/**
+	 *
+	 * @var BsExtensionMW[]
+	 */
 	protected static $prRunningExtensions = array();
 	protected static $aContexts = array();
 	protected static $aActiveContexts = array();
@@ -68,13 +72,30 @@ class BsExtensionManager {
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
+	/**
+	 *
+	 * @return array
+	 * @deprecated since version 2.23
+	 */
 	public static function getRegisteredExtenions() {
 		wfDeprecated( __METHOD__ );
 		return self::$prRegisteredExtensions;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public static function getRegisteredExtensions() {
 		return self::$prRegisteredExtensions;
+	}
+
+	/**
+	 *
+	 * @return BsExtensionMW[]
+	 */
+	public static function getRunningExtensions() {
+		return self::$prRunningExtensions;
 	}
 
 	public static function includeExtensionFiles( $oCore ) {

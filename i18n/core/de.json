@@ -74,5 +74,13 @@
 	"bs-pref-anonuserimage": "Avatar für anonyme Benutzer:",
 	"bs-pref-deleteduserimage": "Avatar für gelöschte Benutzer:",
 	"bs-pref-bspinginterval": "Ping-Intervall (in Sekunden):",
-	"bs-pref-testmode": "Testmodus aktivieren"
+	"bs-pref-testmode": "Testmodus aktivieren",
+	"bs-tag-input-desc": "Wert des Elementinhalts",
+	"bs-tag-param-desc": "Wert der Elementeigenschaft '$1'",
+	"bs-parser-error-invalid-namespace": "Ungültiger Namensraum: $1",
+	"bs-parser-error-invalid-title": "Ungültiger Titel: $1",
+	"bs-validator-error-namespace-does-not-exist": "Namensraum existiert nicht: $1",
+	"bs-validator-error-namespace-on-blacklist": "Namensraum nicht erlaubt: $1",
+	"bs-validator-error-title-does-not-exist": "Seite existiert nicht: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Seite nicht erlaubt: $1"
 }

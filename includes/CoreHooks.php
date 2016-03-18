@@ -539,4 +539,38 @@ class BsCoreHooks {
 			'content' => $oProfilePageSettingsView
 		);
 	}
+
+	/**
+	 *
+	 * @param Parser $parser
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function onParserFirstCallInit( $parser ) {
+		BsGenericTagExtensionHandler::setupHandlers(
+			BsExtensionManager::getRunningExtensions(),
+			$parser
+		);
+		return true;
+	}
+
+	/**
+	 * Register PHP Unit Tests with MediaWiki framework
+	 * @param array $files
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function onUnitTestsList( &$files ) {
+		$oIterator = new RecursiveIteratorIterator(
+			new RecursiveDirectoryIterator( dirname( __DIR__ ) . '/tests/' )
+		);
+		/**
+		 * @var SplFileInfo $oFileInfo
+		 */
+		foreach ( $oIterator as $oFileInfo ) {
+			if ( substr( $oFileInfo->getFilename(), -8 ) === 'Test.php' ) {
+				$files[] = $oFileInfo->getPathname();
+			}
+		}
+
+		return true;
+	}
 }

@@ -135,4 +135,12 @@ abstract class BsExtensionMW extends ContextSource {
 			$sSubKey
 		);
 	}
+
+	/**
+	 * Returns an array of tag extension definitions
+	 * @return array
+	 */
+	public function makeTagExtensionDefinitions() {
+		return array();
+	}
 }

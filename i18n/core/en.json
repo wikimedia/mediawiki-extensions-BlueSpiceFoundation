@@ -78,5 +78,13 @@
 	"bs-pref-deleteduserimage": "Deleted user avatar:",
 	"bs-pref-bspinginterval": "Ping interval (in seconds):",
 	"bs-pref-testmode": "Activate test mode",
-	"specialpages-group-bluespice": "{{int:prefs-base}}"
+	"specialpages-group-bluespice": "{{int:prefs-base}}",
+	"bs-tag-input-desc": "Value of element content",
+	"bs-tag-param-desc": "Value of element attribute '$1'",
+	"bs-parser-error-invalid-namespace": "Invalid namespace: $1",
+	"bs-parser-error-invalid-title": "Invalid title: $1",
+	"bs-validator-error-namespace-does-not-exist": "Namespace does not exist: $1",
+	"bs-validator-error-namespace-on-blacklist": "Namespace not allowed: $1",
+	"bs-validator-error-title-does-not-exist": "Page does not exist: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Page not allowed: $1"
 }
