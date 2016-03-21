@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sagan"
+		]
+	},
+	"bs-extjs-portal-config": "Портлет көйләүе:",
+	"bs-extjs-portal-title": "Портлет башлығы",
+	"bs-extjs-portal-height": "Бейеклек",
+	"bs-extjs-portal-count": "Яҙмалар",
+	"bs-extjs-portal-timespan": "Ваҡыт арауығы",
+	"bs-extjs-portal-timespan-week": "Аҙна",
+	"bs-extjs-portal-timespan-month": "Ай",
+	"bs-extjs-portal-timespan-alltime": "Билдәле ваҡыт эсендә"
+}
