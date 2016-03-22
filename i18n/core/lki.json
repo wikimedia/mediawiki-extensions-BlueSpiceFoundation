@@ -25,7 +25,7 @@
 	"bs-secs-duration": "{{PLURAL:$1|یک ثانیه|$1 ثانیه}}",
 	"bs-two-units-ago": "$1 و  $2  پیش",
 	"bs-one-unit-ago": "$1 دؤماتر",
-	"bs-now": "هم‌اکنون/ایسة",
+	"bs-now": "ایسگە(ایسە)",
 	"bs-email-greeting-receiver": "{{GENDER:$1|درود آقای $2|درود خانوم $2|درود $2}}،",
 	"bs-email-greeting-no-receiver": "سڵام",
 	"bs-userpagesettings-legend": "تنظیمات کاربر",
