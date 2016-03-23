@@ -196,3 +196,19 @@ $bsgConfigFiles = array(
 	'NamespaceManager' => BSCONFIGDIR . DS . 'nm-settings.php',
 	'PermissionManager' => BSCONFIGDIR . DS . 'pm-settings.php',
 );
+
+
+$wgResourceLoaderLESSVars += array(
+	'bs-color-primary' => '#3e5389', //blue
+	'bs-color-secondary' => '#ffae00', //orange
+	'bs-color-tertiary' => '#b73a3a', //red
+	'bs-color-neutral' => '#929292', //grey
+	'bs-color-neutral2' => '#ABABAB', //lighten(@bs-color-neutral1, 10%); - LESS / RL issue
+	'bs-color-neutral3' => '#C4C4C4', //lighten(@bs-color-neutral1, 20%)',
+	'bs-color-neutral4' => '#787878', //darken(@bs-color-neutral1, 10%)'
+
+	//From http://tools.wmflabs.org/styleguide/desktop/section-2.html
+	'bs-color-progressive' => '#347bff',
+	'bs-color-contructive' => '#00af89',
+	'bs-color-destructive' => '#d11d13'
+);
