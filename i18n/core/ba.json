@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Рустам Нурыев",
-			"З. ӘЙЛЕ"
+			"З. ӘЙЛЕ",
+			"Ilmira",
+			"Азат Хәлилов"
 		]
 	},
 	"bs-ns_main": "(Биттәр)",
@@ -28,18 +30,30 @@
 	"bs-now": "әле генә",
 	"bs-email-greeting-receiver": "Һаумыһығыҙ, {{GENDER:$1|хөрмәтле||}} $2.",
 	"bs-email-greeting-no-receiver": "Сәләм",
-	"bs-email-footer": "Был хәбәр $1 сайты тарафынан автоматик рәүештә яҙылды. Зинһар, уға яуап бирмәгеҙ.",
+	"bs-email-footer": "Был хәбәр $1 сайты тарафынан автоматик рәүештә яҙылды.  Уға яуап бирмәгеҙ.",
 	"bs-userpagesettings-legend": "Ҡулланыусы көйләүҙәре",
 	"bs-userpreferences-link-text": "Ҡулланыусының өҫтәмә көйләүҙәре",
 	"bs-userpreferences-link-title": "Үҙегеҙҙең шәхси ҡулланыусы көйләүҙәрен күрһәтегеҙ",
 	"bs-exception-view-heading": "Хата",
 	"bs-exception-view-text": "Һеҙҙең һорауығыҙҙы эшкәрткәндә түбәндәге хата сыҡты:",
-	"bs-exception-view-admin-hint": "Зинһар, система хакимына мөрәжәғәт итегеҙ.",
+	"bs-exception-view-admin-hint": "Система хакимына мөрәжәғәт итегеҙ.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Хата тураһындағы мәғлүмәтте йәшерергә",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Хата тураһындағы мәғлүмәтте йәшерергә",
 	"bs-viewtagerrorlist-legend": "$1: Хата",
 	"bs-readonly": "Яңы мәҡәләләр өҫтәү һәм мәғлүмәттәр базаһындағы башҡа үҙгәртеүҙәр хәҙер тыйылған. Был планлы хеҙмәтләндереү сәбәпле булыуы мөмкин, аҙаҡтан ғәҙәти хәлгә ҡайтасаҡ.\n\nЯбыусы хаким ҡалдырған аңлатма:\n$1",
 	"bs-imageofotheruser": "Һеҙ икенсе ҡатнашыусы өсөн һүрәт ҡуя алмайһығыҙ.",
 	"bs-pref-sortalph": "исемдәрҙе алфавит тәртибендә айырырға",
-	"bs-permissionerror": "Инеү хоҡуғы хатаһы"
+	"bs-permissionerror": "Инеү хоҡуғы хатаһы",
+	"bs-navigation-instructions": "Тасуирлама",
+	"bs-navigation-support": "Ярҙам",
+	"bs-navigation-contact": "Бәйләнеш",
+	"bs-imagepage-download-text": "Тейәргә",
+	"bs-ns": "Исемдәр тупланмаһы",
+	"bs-from-something": "$1 базаһынан",
+	"bs-pref-logopath": "Логотипҡа юл:",
+	"bs-pref-faviconpath": "Иконкаға юл:",
+	"bs-pref-anonuserimage": "Аноним ҡатнашыусының аватары:",
+	"bs-pref-deleteduserimage": "Алыҫтағы ҡатнашыусыны аватары:",
+	"bs-pref-bspinginterval": "Пинг интервалы (секундтарҙа):",
+	"bs-pref-testmode": "Тест режимын индереү"
 }
