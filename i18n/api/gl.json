@@ -8,6 +8,7 @@
 	"apihelp-bs-wikipage-tasks-description": "Proporciona operacións comúns para WikiPages",
 	"apihelp-bs-store-param-page": "Permite o cálculo no lado do servidor do comezo/límite",
 	"apihelp-bs-store-param-limit": "Número de resultados a devolver.",
+	"apihelp-bs-store-param-dc": "Marca <code>Desactivación de caché</code>",
 	"apihelp-bs-task-param-task": "Tarefa que vai executar",
 	"apihelp-bs-task-param-format": "Formato do resultado",
 	"bs-wikipage-tasks-error-page-not-valid": "A páxina especificada non é válida.",
