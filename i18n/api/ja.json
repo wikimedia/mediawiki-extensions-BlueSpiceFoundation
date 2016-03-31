@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otokoume",
+			"2nd-player"
+		]
+	},
+	"apihelp-bs-interwiki-store-description": "すべてのインターウィキリンクを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store引数を実装します。",
+	"apihelp-bs-store-param-limit": "返す結果の数",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "あなたはページ「$1」での編集が許可されていません。",
+	"bs-wikipage-tasks-error-categories-not-valid": "無効な{{PLURAL:$2|カテゴリ}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "カテゴリを設定しました。"
+}

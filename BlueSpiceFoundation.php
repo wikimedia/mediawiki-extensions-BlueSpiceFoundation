@@ -67,6 +67,7 @@ $wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
 $wgAPIModules['bs-filebackend-store'] = 'BSApiFileBackendStore';
 $wgAPIModules['bs-user-store'] = 'BSApiUserStore';
+$wgAPIModules['bs-wikipage-tasks'] = 'BSApiWikiPageTasks';
 
 //I18N MW1.23+
 $wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
@@ -77,6 +78,7 @@ $wgMessagesDirs['BlueSpice.ExtJS.Portal'] = __DIR__ . '/i18n/extjs-portal';
 $wgMessagesDirs['BlueSpice.Deferred'] = __DIR__ . '/i18n/deferred';
 $wgMessagesDirs['Validator'] = __DIR__ . '/i18n/validator';
 $wgMessagesDirs['Notifications'] = __DIR__ . '/i18n/notifications';
+$wgMessagesDirs['BlueSpice.API'] = __DIR__ . '/i18n/api';
 
 //I18N Backwards compatibility
 $wgExtensionMessagesFiles += array(

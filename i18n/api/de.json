@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robert Vogel <vogel@hallowelt.biz>",
+			"Metalhead64"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Listet alle Dateien im FileBackend. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert ExtJS Store Parameter.",
+	"apihelp-bs-user-store-description": "Listet alle Benutzer aus der Datenbank. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert ExtJS Store Parameter.",
+	"apihelp-bs-interwiki-store-description": "Listet alle Interwiki-Links auf. Erlaubt die Sortierung, Filterung und Seitennummerierung. Implementiert „ExtJS Store“-Parameter.",
+	"apihelp-bs-titlequery-store-description": "Listet Seitentitel und (optionale) Namensraumpräfixe basierend auf einem Abfragebegriff aus. Implementiert die Parameter „ExtJS Store“.",
+	"apihelp-bs-store-param-sort": "JSON Zeichenkette mit Informationen zur Sortierung; Wird in ein <code>array of objects</code> deserialisiert welches den Feldnamen und die Richtung für jede Sortieranweisung enthält",
+	"apihelp-bs-store-param-group": "JSON Zeichenkette mit Informationen zur Gruppierung; Wird in ein <code>array of objects</code> deserialisiert welches den Feldnamen und die Richtung für jede Gruppierungsanweisung enthält",
+	"apihelp-bs-store-param-filter": "JSON Zeichenkette mit Informationen zur Filterung; Wird in ein <code>array of objects</code> deserialisiert welches den Feldnamen, Filtertyp und Filterwert für jede Filterungsanweisung enthält",
+	"apihelp-bs-store-param-page": "Ermöglicht die serverseitige Berechnung von start/limit",
+	"apihelp-bs-store-param-limit": "Länge der Ergebnisliste",
+	"apihelp-bs-store-param-start": "Offset für die Ergebnisliste",
+	"apihelp-bs-store-param-callback": "Ein Methodenname aus dem Clientcode, der in der Serverantwort aufgerufen werden soll (JSONP)",
+	"apihelp-bs-store-param-query": "Ähnlich zu <var>filter</var>, allerdings dient der angegebene Wert nur zur Filterung des <var>value</var> Feldes einer ExtJS Komponente",
+	"apihelp-bs-store-param-dc": "<code>Disable cache<code> Parameter",
+	"apihelp-bs-store-param-format": "Das Ausgabeformat (nur JSON oder formatiertes JSON)",
+	"apihelp-bs-store-param-options": "Beliebige Optionen zur Konfiguration des Speichers im Format einer JSON-Zeichenfolge",
+	"apihelp-bs-task-param-task": "Die Aufgabe die ausgeführt werden soll",
+	"apihelp-bs-task-param-taskdata": "JSON Zeichenkette, die zusätzliche Daten für die Aufgabe enthält",
+	"apihelp-bs-task-param-context": "Mit einer JSON-Zeichenfolge kodiertes Objekt mit Kontextdaten für die Aufgabe",
+	"apihelp-bs-task-param-format": "Das Ausgabeformat",
+	"apihelp-bs-task-param-token": "Der erforderliche Token, um auf das API-Modul zuzugreifen",
+	"bs-wikipage-tasks-error-contentmodel": "Die Aufgabe konnte nicht mit dem Inhaltsmodell der angegebenen Seite ausgeführt werden.",
+	"bs-wikipage-tasks-error-page-not-valid": "Die angegebene Seite ist nicht gültig.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Kategorien geändert.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du bist nicht berechtigt, die Seite „$1“ zu bearbeiten.",
+	"bs-wikipage-tasks-error-categories-not-valid": "Ungültige {{PLURAL:$2|Kategorie|Kategorien}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Die Kategorien wurden erfolgreich festgelegt."
+}

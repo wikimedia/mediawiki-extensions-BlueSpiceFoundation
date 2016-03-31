@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "列举来自文件后端的所有文件。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-user-store-description": "列举来自数据库的所有用户。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-group-store-description": "列举除$wgImplicitGroups以外的所有组。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-interwiki-store-description": "列举所有跨wiki链接。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-wikipage-tasks-description": "为WikiPages提供常用操作",
+	"apihelp-bs-store-param-page": "允许开始/限制服务器端计算",
+	"apihelp-bs-store-param-limit": "返回的结果数",
+	"apihelp-bs-store-param-start": "开始结果列表的抵消",
+	"apihelp-bs-store-param-callback": "客户端代码中应在响应（JSONP）中被调用的方法名称",
+	"apihelp-bs-store-param-query": "与<var>filter</var>类似，但提供的值只保留作过滤ExtJS组件的<var>value</var>字段之用",
+	"apihelp-bs-store-param-dc": "<code>Disable cache</code>标记",
+	"apihelp-bs-store-param-format": "输出格式（仅JSON或格式化JSON）",
+	"apihelp-bs-store-param-options": "要将库配置为JSON字符串格式的任意选项",
+	"apihelp-bs-task-param-task": "应执行的任务",
+	"apihelp-bs-task-param-taskdata": "JSON字符串编码的对象，带用于任务的任意数据",
+	"apihelp-bs-task-param-context": "JSON字符串编码的对象，带用于任务的环境数据",
+	"apihelp-bs-task-param-format": "结果的格式",
+	"apihelp-bs-task-param-token": "访问API模块需要的令牌",
+	"bs-wikipage-tasks-error-contentmodel": "任务不能与提供页面的内容模型一起执行。",
+	"bs-wikipage-tasks-error-page-not-valid": "提供的页面无效。",
+	"bs-wikipage-tasks-setcategories-edit-summary": "更改的分类。",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "您不被允许编辑页面“$1”。",
+	"bs-wikipage-tasks-error-categories-not-valid": "无效{{PLURAL:$2|分类}}：$1",
+	"bs-wikipage-tasks-setcategories-success": "分类已成功设置。"
+}

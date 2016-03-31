@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Перелічує всі файли з файлового backend'у. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
+	"apihelp-bs-user-store-description": "Перелічує всіх користувачів із бази даних. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
+	"apihelp-bs-group-store-description": "Перелічує всі групи, за винятком $wgImplicitGroups. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
+	"apihelp-bs-interwiki-store-description": "Перелічує усіх інтервікі-посилання. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Перелічує назви статей та (необов'язково) префікси просторів назв на основі терміна запиту. Реалізує параметри ExtJS Store.",
+	"apihelp-bs-wikipage-tasks-description": "Забезпечує загальні операції для WikiPages",
+	"apihelp-bs-store-param-sort": "Рядок JSON із сортувальною інформацією; десеріалізує до <code>array of objects</code> — ряду об'єктів, що містять назву поля та напрямок для кожної сортувальної опції",
+	"apihelp-bs-store-param-group": "Рядок JSON із групувальною інформацією; десеріалізує до <code>array of objects</code> — ряду об'єктів, що містять назву поля та напрямок для кожної групувальної опції",
+	"apihelp-bs-store-param-filter": "Рядок JSON із фільтрувальною інформацією; десеріалізує до <code>array of objects</code> — ряду об'єктів, що містять назву поля, тип фільтра та значення фільтра для кожної фільтрувальної опції",
+	"apihelp-bs-store-param-page": "Дозволяє виконувати розрахунки початок/ліміт (start/limit) зі сторони сервера",
+	"apihelp-bs-store-param-limit": "Кількість результатів, які мають бути виведені",
+	"apihelp-bs-store-param-start": "Зміщення, з якого треба почати список результатів",
+	"apihelp-bs-store-param-callback": "Назва методу в коді клієнта, що має бути викликаний у відповіді (JSONP)",
+	"apihelp-bs-store-param-query": "Подібний до <var>filter</var>, але вказане значення служить як фільтр лише для поля <var>value</var> компонента ExtJS",
+	"apihelp-bs-store-param-dc": "Прапорець <code>Disable cache</code> (вимкнути кеш)",
+	"apihelp-bs-store-param-format": "Формат виводу (лише JSON або форматований JSON)",
+	"apihelp-bs-store-param-options": "Допоміжні опції для налаштування store в форматі JSON string",
+	"apihelp-bs-task-param-task": "Завдання, яке має бути виконане",
+	"apihelp-bs-task-param-taskdata": "Об'єкт із допоміжними даними для завдання, закодований у форматі рядка JSON",
+	"apihelp-bs-task-param-context": "Об'єкт із контекстними даними для завдання, закодований у форматі рядка JSON",
+	"apihelp-bs-task-param-format": "Формат результату",
+	"apihelp-bs-task-param-token": "Токен, необхідний для доступу до модуля API",
+	"bs-wikipage-tasks-error-contentmodel": "Це завдання неможливо виконати з контентною моделлю заданої сторінки.",
+	"bs-wikipage-tasks-error-page-not-valid": "Подана сторінка недійсна.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Змінені категорії.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Ви не маєте дозволу на редагування сторінки «$1».",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Недійсна категорія|Недійсні категорії}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Категорії успішно встановлено."
+}

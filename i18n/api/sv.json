@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"apihelp-bs-group-store-description": "Listar alla grupper förutom $wgImplicitGroups. Tillåter sortering, filtrering och sidnumrering. Implementerar parametrar för ExtJS Store.",
+	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
+	"apihelp-bs-task-param-format": "Format för resultatet",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan '$1'.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ogiltig kategori|Ogiltig kategorier}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Kategorier har lagts till."
+}

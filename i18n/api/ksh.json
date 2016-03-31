@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Purodha"
+		]
+	},
+	"apihelp-bs-store-param-options": "Öhns en Aanjahbe öm dat Jeschäff övver ene Täx em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"JavaScript Object Notation\">JSON</i>-Fommaht ennzeschtälle.",
+	"bs-wikipage-tasks-error-page-not-valid": "Di aanjejovve Sigg es nit jöltesch.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Do hä keij Rääsch, di Sigg „$1“ ze änndere.",
+	"bs-wikipage-tasks-error-categories-not-valid": "Dat {{PLURAL:$2|es en onjölltejje Saachjropp|sin onjölltejje Saachjroppe|sin kein onjölltejje Saachjroppe}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Si Saachjroppe sin ennjedrahre."
+}

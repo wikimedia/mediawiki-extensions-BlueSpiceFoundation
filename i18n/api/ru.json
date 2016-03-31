@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Краснорядцева Елена"
+		]
+	},
+	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)"
+}

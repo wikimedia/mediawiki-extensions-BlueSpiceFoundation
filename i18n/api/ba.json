@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Айсар",
+			"Ilmira",
+			"З. ӘЙЛЕ"
+		]
+	},
+	"apihelp-bs-store-param-format": "Сығарыу форматы (бары JSON йәки  форматлаштырылған JSON өсөн генә)",
+	"apihelp-bs-store-param-options": "Һаҡлағысты JSON юл форматында көйләү өсөн ирекле дәүмәлдәр",
+	"apihelp-bs-task-param-format": "Мәғлүмәттәр сығарыу форматы.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Кәрәкле категориялар",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|=Йәшерен категория|Йәшерен категориялар}}$1"
+}
