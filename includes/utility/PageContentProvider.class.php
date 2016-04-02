@@ -403,7 +403,11 @@ class BsPageContentProvider {
 	 * @return Title
 	 */
 	public function getRedirectTargetRecursiveFrom( Title $oTitle, $aParams = array() ) {
-		return Title::newFromRedirectRecurse( $this->getWikiTextContentFor( $oTitle, $aParams ) );
+		return ContentHandler::makeContent(
+			$this->getWikiTextContentFor( $oTitle, $aParams ),
+			null,
+			CONTENT_MODEL_WIKITEXT
+		)->getUltimateRedirectTarget();
 	}
 
 	/**
