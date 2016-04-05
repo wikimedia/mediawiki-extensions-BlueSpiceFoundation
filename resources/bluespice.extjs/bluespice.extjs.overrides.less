@@ -1,0 +1,52 @@
+/* FROM http://stackoverflow.com/questions/32688206/icomoon-glyph-on-group-grid-extjs-action-column-not-working */
+.x-action-col-glyph {
+	font-size:16px;
+	line-height:16px;
+	color:#9BC8E9;
+	width:20px
+}
+
+#content .bs-form-field-itemlist,
+.bs-form-field-itemlist {
+	.x-grid-row-over .x-action-col-cell {
+		.icon-cross3:before {
+			color: red;
+		}
+	}
+}
+
+.icon-user:before {
+	content: "\e7d1";
+}
+.icon-group:before {
+	content: "\e7d2";
+}
+
+.x-list-plain li span[class='icon-*'] {
+	margin-right: 0.1em;
+}
+
+.bs-typeicon {
+	margin-right: 0.5em;
+}
+
+body.mediawiki #content {
+	.bs-extjs-actioncolumn-icon {
+		&[class*='icon-']:after,
+		&[class*='icon-']:before {
+			color: #999;
+		}
+
+		&.progressive:before {
+			color: @bs-color-progressive
+		}
+
+		&.contructive:before {
+			color: @bs-color-contructive
+		}
+
+		&.destructive:before {
+			color: @bs-color-destructive
+		}
+	}
+}

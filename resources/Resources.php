@@ -94,11 +94,13 @@ $wgResourceModules['ext.bluespice.extjs.theme.ux'] = array(
 
 $wgResourceModules['ext.bluespice.extjs'] = array(
 	'scripts' => array(
-		'bluespice.extjs/bluespice.extjs.js'
+		'bluespice.extjs/bluespice.extjs.js',
+		'bluespice.extjs/BS/override/grid/column/Action.js'
 	),
 	'styles' => array(
 		//There are some weird legacy CSS fixes. Don't know if they still apply
 		'bluespice.extjs/bluespice.extjs.fixes.css',
+		'bluespice.extjs/bluespice.extjs.overrides.less'
 	),
 	'messages' => array(
 		'bs-extjs-ok',
