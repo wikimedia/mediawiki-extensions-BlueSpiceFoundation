@@ -142,6 +142,7 @@ class BsMailer {
 		$sCombinedMsg = $sMsg.$sFooter;
 
 		foreach ( $aEmailTo as $aReceiver ) {
+			global $wgVersion;
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
 				$oUser = User::newFromName( $aReceiver['greeting'] );
