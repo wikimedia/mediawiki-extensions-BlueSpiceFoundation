@@ -171,16 +171,28 @@ class BsMailer {
 				);
 				wfDebugLog( 'BS::Mailer', $sLog );
 			} else {
-				$oStatus = UserMailer::send(
+				if( version_compare( $wgVersion, "1.25", '<=')){
+					$oStatus = UserMailer::send(
+						$aReceiver['mail'],
+						$oFromAddress,
+						$sCombinedSubject,
+						$sLocalCombinedMsg,
+						$oReplyToAddress,
+						$sHeaders
+					);
+				} else {
+					$oStatus = UserMailer::send(
 					$aReceiver['mail'],
 					$oFromAddress,
 					$sCombinedSubject,
 					$sLocalCombinedMsg,
-					array ( 'replyTo' => $oReplyToAddress, 'headers' => $sHeaders )
-				);
+					array(
+						'replyTo' => $oReplyToAddress,
+						'headers' => $sHeaders
+					));
+				}
 			}
 		}
-
 		wfProfileOut( 'BS::'.__METHOD__ );
 		return $oStatus;
 	}
