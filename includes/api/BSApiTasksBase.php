@@ -89,7 +89,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 			else {
 				$oTaskData = $this->getParameter( 'taskData' );
 				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', array( $this, $sTask, &$oTaskData , &$aParams ) );
-				$oResult = $this->$sMethod( $oTaskData , $aParams );
+
+				$oResult = $this->validateTaskData( $oTaskData );
+				if( empty( $oResult->errors ) && empty( $oResult->message ) ) {
+					$oResult = $this->$sMethod( $oTaskData , $aParams );
+				}
+
 				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', array( $this, $sTask, &$oResult, $oTaskData , $aParams ) );
 			}
 		}
@@ -297,6 +302,41 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	protected function getRequiredTaskPermissions() {
 		return array();
+	}
+
+	/**
+	 * NOT IMPLEMENTED YET
+	 * Return the param definition for each task
+	 * array(
+	 *    taskname => array(
+	 *       paramname => array(
+	 *           type => string,
+	 *           required => true,
+	 *           default => '',
+	 *       )
+	 *    )
+	 * );
+	 * @return array - or false to skip validation
+	 */
+	public function getTaskDataDefinitions() {
+		return false;
+	}
+
+	/**
+	 * NOT IMPLEMENTED YET
+	 * Use ParamProcessor to validate taskData params
+	 * @param stdClass $oTaskData
+	 * @return stdClass - Standard return
+	 */
+	public function validateTaskData( $oTaskData ) {
+		$aDefinitions = $this->getTaskDataDefinitions();
+		$oReturn = $this->makeStandardReturn();
+		if( $aDefinitions === false ) {
+			return $oReturn;
+		}
+		//TODO: Use ParamProcessor to validate params defined by
+		//$this->getTaskDataDefinitions().
+		return $oReturn;
 	}
 
 	/**
