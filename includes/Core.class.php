@@ -667,50 +667,6 @@ class BsCore {
 	}
 
 	/**
-	 * Handles requests to the BS-AJAX-PING-BUS (BSAPB)
-	 * TODO: Move to seperate class
-	 * @return String JSON encoded data
-	 */
-	public static function ajaxBSPing() {
-		$aResult = array(
-			"success" => false,
-			"errors" => array(),
-			"message" => '',
-		);
-
-		$oRequest = RequestContext::getMain()->getRequest();
-		$iArticleId  = $oRequest->getInt( 'iArticleID', 0 );
-		$iNamespace  = $oRequest->getInt( 'iNamespace', 0 );
-		$sTitle      = $oRequest->getVal( 'sTitle', '' );
-		$iRevision   = $oRequest->getInt( 'iRevision', 0 );
-		$aBSPingData = $oRequest->getArray( 'BsPingData', array() );
-
-		$aResult['success'] = true;
-		foreach ( $aBSPingData as $aSinglePing ) {
-			if ( empty( $aSinglePing['sRef'] ) ) continue;
-			if ( !$aResult['success'] ) break;
-
-			if ( !isset( $aSinglePing['aData'] ) )
-				$aSinglePing['aData'] = array();
-
-			$aSingleResult = array(
-				"success" => false,
-				"errors" => array(),
-				"message" => '',
-			);
-			//if hook returns false - overall success is false
-			$aResult['success'] = wfRunHooks( 'BsAdapterAjaxPingResult',
-				array( $aSinglePing['sRef'], $aSinglePing['aData'],
-					$iArticleId, $sTitle, $iNamespace, $iRevision,
-					&$aSingleResult )
-			);
-			$aResult[$aSinglePing['sRef']] = $aSingleResult;
-		}
-
-		return FormatJson::encode( $aResult );
-	}
-
-	/**
 	 * Make the page being parsed have a dependency on $page via the templatelinks table.
 	 * http://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
 	 * @param Parser $oParser

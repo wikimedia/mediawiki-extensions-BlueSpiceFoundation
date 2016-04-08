@@ -26,20 +26,13 @@ BSPing = {
 				aData:aListenersToGo[i].aData
 			});
 		}
-
-		$.post(
-			mw.config.get( "wgScriptPath" ) + '/index.php',
-			{
-				action:'ajax',
-				rs:'BsCore::ajaxBSPing',
+		bs.api.tasks.exec( 'ping', 'ping', {
 				iArticleID: mw.config.get( "wgArticleId" ),
 				sTitle: mw.config.get( "wgTitle" ),
 				iNamespace: mw.config.get( "wgNamespaceNumber" ),
 				iRevision: mw.config.get( "wgCurRevisionId" ),
 				BsPingData: BsPingData
-			},
-			BSPing.pingCallback( aListenersToGo )
-		);
+		}).done( BSPing.pingCallback( aListenersToGo ) );
 	},
 	registerListener: function( sRef, iInterval, aData, callback) {
 		if ( typeof sRef === "undefined" ) {
@@ -75,7 +68,6 @@ BSPing = {
 	},
 	pingCallback : function( aListenersToGo ) {
 		return function( result ) {
-			result = JSON.parse( result );
 			if ( result.success !== true ) {
 				return;
 			}
@@ -86,14 +78,17 @@ BSPing = {
 					$(document).trigger('BSPingBeforeSingleCallback', [
 						this,
 						aListenersToGo[i].callback,
-						result[aListenersToGo[i].sRef],
+						result.payload[aListenersToGo[i].sRef],
 						aListenersToGo[i],
 						skip
 					]);
 					if ( skip ) {
 						continue;
 					}
-					aListenersToGo[i].callback( result[aListenersToGo[i].sRef], aListenersToGo[i] );
+					aListenersToGo[i].callback(
+						result.payload[aListenersToGo[i].sRef],
+						aListenersToGo[i]
+					);
 				}
 			}
 
