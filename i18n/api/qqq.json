@@ -31,5 +31,6 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "The summary of an edit made by the <code>bs-wikipage-tasks</code> API <code>setCategories</code> task",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "An error message that occurs if a user is not allowed to edit page with name '$1'.\n\nParameters:\n* $1 - a page title",
 	"bs-wikipage-tasks-error-categories-not-valid": "An error message that tells if the category names in $1 are invalid.\n\nParameters:\n* $1 - a comma seperated list of provided invalid category names\n* $2 - a positive number for the plural rule",
-	"bs-wikipage-tasks-setcategories-success": "A success message that indicated that the categories have successfully been set"
+	"bs-wikipage-tasks-setcategories-success": "A success message that indicated that the categories have successfully been set",
+	"apihelp-bs-wikipage-store-description": "Describes the API endpoint that list wiki pages"
 }

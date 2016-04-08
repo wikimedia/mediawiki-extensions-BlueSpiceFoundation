@@ -62,11 +62,13 @@ $GLOBALS['wgAutoloadClasses']['BSApiFormatJson'] = __DIR__."/api/BSApiFormatJson
 $GLOBALS['wgAutoloadClasses']['BSApiBase'] = __DIR__."/api/BSApiBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiTasksBase'] = __DIR__."/api/BSApiTasksBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiExtJSStoreBase'] = __DIR__."/api/BSApiExtJSStoreBase.php";
+$GLOBALS['wgAutoloadClasses']['BSApiExtJSDBTableStoreBase'] = __DIR__."/api/BSApiExtJSDBTableStoreBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiFileBackendStore'] = __DIR__."/api/BSApiFileBackendStore.php";
 $GLOBALS['wgAutoloadClasses']['BSApiUserStore'] = __DIR__."/api/BSApiUserStore.php";
 $GLOBALS['wgAutoloadClasses']['BSApiGroupStore'] = __DIR__ . '/api/BSApiGroupStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiInterwikiStore'] = __DIR__ . '/api/BSApiInterwikiStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiWikiPageTasks'] = __DIR__ . '/api/BSApiWikiPageTasks.php';
+$GLOBALS['wgAutoloadClasses']['BSApiWikiPageStore'] = __DIR__ . '/api/BSApiWikiPageStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiTitleQueryStore'] = __DIR__ . '/api/BSApiTitleQueryStore.php';
 
 //adapter
