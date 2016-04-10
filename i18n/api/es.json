@@ -15,5 +15,6 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Se cambiaron categorías.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "No tienes permitido editar la página '$1'.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría no válida|Categorías no válidas}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Se establecieron las categorías con éxito."
+	"bs-wikipage-tasks-setcategories-success": "Se establecieron las categorías con éxito.",
+	"apihelp-bs-wikipage-store-description": "Lista todas las páginas del wiki. Permite ordenar, filtrar y paginar. Implementa parámetros de almacenamiento ExtJS."
 }
