@@ -45,7 +45,6 @@ $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the s
 $wgUrlProtocols[] = "file://";
 $wgVerifyMimeType = false;
 $wgAllowJavaUploads = true;
-$wgThumbnailScriptPath = "{$wgScriptPath}/thumb{$wgScriptExtension}"; //Enable on demand thumb rendering
 
 $bsgPermissionConfig = array(
 	'read' => array(
