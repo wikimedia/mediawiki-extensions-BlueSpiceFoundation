@@ -5,11 +5,11 @@
 			"Banjo"
 		]
 	},
-	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paxinar. Implementa os parámetros ExtJS Store.",
-	"apihelp-bs-user-store-description": "Lista todos os usuarios da base de datos. Permite ordenar, filtrar e paxinar. Implementa os parámetros ExtJS Store.",
-	"apihelp-bs-group-store-description": "Lista todos os grupos excepto $wgImplicitGroups. Permite ordenar, filtrar e paxinar. Implementa os parámetros ExtJS Store.",
-	"apihelp-bs-interwiki-store-description": "Lista todas as ligazóns interwiki. Permite ordenar, filtrar e paxinar. Implementa os parámetros ExtJS Store.",
-	"apihelp-bs-titlequery-store-description": "Lista os títulos de páxina e (opcionalmente) os prefixos de espazo de nomes baseándose nun termo de busca. Implementa os parámetros ExtJS Store.",
+	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
+	"apihelp-bs-user-store-description": "Lista todos os usuarios da base de datos. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
+	"apihelp-bs-group-store-description": "Lista todos os grupos excepto $wgImplicitGroups. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
+	"apihelp-bs-interwiki-store-description": "Lista todas as ligazóns interwiki. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Lista os títulos de páxina e (opcionalmente) os prefixos de espazo de nomes baseándose nun termo de busca. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Proporciona operacións comúns para WikiPages",
 	"apihelp-bs-store-param-sort": "Cadea JSON con información de orde; deserialízase a <code>matriz de obxectos</code> que contén o nome do campo e a dirección para cada opción de ordenación",
 	"apihelp-bs-store-param-group": "Cadea JSON con información de agrupamento; deserialízase a <code>matriz de obxectos</code> que contén o nome do campo e a dirección para cada opción de agrupamento",
@@ -32,5 +32,6 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Cambiáronse categorías.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Non lle está permitido editar a páxina '$1'.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría non valida|Categorías non válidas}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Establecéronse as categorías con éxito."
+	"bs-wikipage-tasks-setcategories-success": "Establecéronse as categorías con éxito.",
+	"apihelp-bs-wikipage-store-description": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS."
 }
