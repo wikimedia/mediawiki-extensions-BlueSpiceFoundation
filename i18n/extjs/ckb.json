@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pirehelokan"
+			"Pirehelokan",
+			"Sarchia"
 		]
 	},
+	"bs-extjs-upload": "بارکردن",
+	"bs-extjs-uploading": "بارکردن...",
 	"bs-extjs-categoryboxselect-emptytext": "پۆلێک زیاد بکە"
 }
