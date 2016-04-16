@@ -24,7 +24,12 @@
 	"bs-exception-view-text": "A kérés feldolgozása során a következő hiba történt:",
 	"bs-exception-view-admin-hint": "Kérjük, fordulj a rendszergazdához.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Hiba részleteinek megjelenítése",
+	"bs-viewtagerrorlist-legend": "$1 - Hiba",
+	"bs-readonly": "Az adatbázis karbantartás miatt jelenleg le van zárva; nemsokára minden a régi lesz. A lezáró adminisztrátor indoklása: $1",
+	"bs-imageofotheruser": "Nem tölthetsz fel képet más felhasználónak.",
+	"bs-pref-sortalph": "Névterek rendezése betűrend szerint",
 	"bs-permissionerror": "Engedélyezési hiba!",
+	"bs-filesystemhelper-no-directory": "A(z) <code>$1</code> érvénytelen könyvtár.",
 	"bs-filesystemhelper-upload-unsupported-type": "Ez a fájltípus nem támogatott.",
 	"bs-filesystemhelper-save-base64-error": "A fájl mentése nem sikerült.",
 	"bs-filesystemhelper-upload-base64-error": "Nem sikerült a fájl feltöltése.",
@@ -32,5 +37,7 @@
 	"bs-navigation-contact": "Kapcsolatfelvétel",
 	"bs-imagepage-download-text": "Letöltés",
 	"bs-ns": "Névtér",
-	"bs-from-something": "(innen: $1)"
+	"bs-from-something": "(innen: $1)",
+	"bs-pref-logopath": "Logó útvonala:",
+	"bs-pref-defaultuserimage": "Alapértelmezett avatar:"
 }
