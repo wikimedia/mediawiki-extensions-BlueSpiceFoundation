@@ -5,7 +5,8 @@
 			"Southparkfan",
 			"Niknetniko",
 			"Sjoerddebruin",
-			"Siebrand"
+			"Siebrand",
+			"Jeleniccz"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -49,5 +50,6 @@
 	"bs-extjs-filter-bool-yes": "ja",
 	"bs-extjs-filter-bool-no": "nee",
 	"bs-extjs-title-success": "Afgerond",
-	"bs-extjs-title-warning": "Waarschuwing"
+	"bs-extjs-title-warning": "Waarschuwing",
+	"bs-extjs-categoryboxselect-emptytext": "Categorie toevoegen"
 }
