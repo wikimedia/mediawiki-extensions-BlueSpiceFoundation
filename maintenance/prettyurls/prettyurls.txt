@@ -1,0 +1,5 @@
+Use ''web.config'' in an IIS-Website with subfolder "w/".
+
+== LocalSettings.php ==
+$wgScriptPath = '/w';
+$wgArticlePath = $wgScriptPath."/$1";
