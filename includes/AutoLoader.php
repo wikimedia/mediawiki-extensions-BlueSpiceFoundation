@@ -70,6 +70,7 @@ $GLOBALS['wgAutoloadClasses']['BSApiInterwikiStore'] = __DIR__ . '/api/BSApiInte
 $GLOBALS['wgAutoloadClasses']['BSApiWikiPageTasks'] = __DIR__ . '/api/BSApiWikiPageTasks.php';
 $GLOBALS['wgAutoloadClasses']['BSApiWikiPageStore'] = __DIR__ . '/api/BSApiWikiPageStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiTitleQueryStore'] = __DIR__ . '/api/BSApiTitleQueryStore.php';
+$GLOBALS['wgAutoloadClasses']['BSApiPingTasks'] = __DIR__ . '/api/BSApiPingTasks.php';
 
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";

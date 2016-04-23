@@ -64,7 +64,6 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getUserStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getCategoryStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getAsyncCategoryTreeStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
-$wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
 $wgAPIModules['bs-filebackend-store'] = 'BSApiFileBackendStore';
 $wgAPIModules['bs-user-store'] = 'BSApiUserStore';
@@ -73,6 +72,7 @@ $wgAPIModules['bs-interwiki-store'] = 'BSApiInterwikiStore';
 $wgAPIModules['bs-wikipage-tasks'] = 'BSApiWikiPageTasks';
 $wgAPIModules['bs-wikipage-store'] = 'BSApiWikiPageStore';
 $wgAPIModules['bs-titlequery-store'] = 'BSApiTitleQueryStore';
+$wgAPIModules['bs-ping-tasks'] = 'BSApiPingTasks';
 
 //I18N MW1.23+
 $wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
