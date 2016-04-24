@@ -32,5 +32,6 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "您不被允许编辑页面“$1”。",
 	"bs-wikipage-tasks-error-categories-not-valid": "无效{{PLURAL:$2|分类}}：$1",
 	"bs-wikipage-tasks-setcategories-success": "分类已成功设置。",
-	"apihelp-bs-wikipage-store-description": "列举所有wiki页面。允许排序、过滤和分页。执行ExtJS存储的参数。"
+	"apihelp-bs-wikipage-store-description": "列举所有wiki页面。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-ping-tasks-description": "提供连续数据交换的Ping任务"
 }
