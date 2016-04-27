@@ -336,6 +336,20 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 				}
 			}
 			//TODO: Implement for type 'datetime'
+
+			if( $oFilter->type == 'title' ) {
+				$bFilterApplies = $this->filterTitle( $oFilter, $aDataSet );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
+
+			if( $oFilter->type == 'templatetitle' ) {
+				$bFilterApplies = $this->filterTitle( $oFilter, $aDataSet, NS_TEMPLATE );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
 		}
 
 		return true;
@@ -437,6 +451,31 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 					date( 'm/d/Y', $iFieldValue )
 				);
 				return $iFieldValue === $iFilterValue;
+		}
+	}
+
+	/**
+	 * Performs string filtering based on given filter of type title on a dataset
+	 * @param object $oFilter
+	 * @param oject $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
+	public function filterTitle( $oFilter, $aDataSet, $iDefaultNs = NS_MAIN ) {
+		if( !is_string( $oFilter->value ) ) {
+			return true; //TODO: Warning
+		}
+		$oFieldValue = Title::newFromText( $aDataSet->{$oFilter->field}, $iDefaultNs );
+		$oFilterValue = Title::newFromText( $oFilter->value, $iDefaultNs  );
+
+		switch( $oFilter->comparison ) {
+			case 'gt':
+				return Title::compare( $oFieldValue, $oFilterValue ) > 0;
+			case 'lt':
+				return Title::compare( $oFieldValue, $oFilterValue ) < 0;
+			case 'eq':
+				return Title::compare( $oFieldValue, $oFilterValue ) == 0;
+			case 'neq':
+				return Title::compare( $oFieldValue, $oFilterValue ) != 0;
 		}
 	}
 
