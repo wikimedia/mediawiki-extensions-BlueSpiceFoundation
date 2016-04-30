@@ -209,5 +209,11 @@ $wgResourceLoaderLESSVars += array(
 	//From http://tools.wmflabs.org/styleguide/desktop/section-2.html
 	'bs-color-progressive' => '#347bff',
 	'bs-color-contructive' => '#00af89',
-	'bs-color-destructive' => '#d11d13'
+	'bs-color-destructive' => '#d11d13',
+
+	//Message boxes
+	'bs-color-success' => '#dff0d8',
+	'bs-color-warning' => '#fcf8e3',
+	'bs-color-error' => '#f2dede',
+	'bs-color-info' => '#d9edf7',
 );

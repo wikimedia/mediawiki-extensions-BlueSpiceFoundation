@@ -82,5 +82,13 @@
 	"bs-pref-deleteduserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for deleted user avatar",
 	"bs-pref-bspinginterval": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for ping interval (in seconds)",
 	"bs-pref-testmode": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for activate test mode",
-	"specialpages-group-bluespice": "Used in [[Special:SpecialPages]], headline of BlueSpice section. Message is referenced to message of BlueSpice preference section.\n\nRefers to {{msg-mw|Prefs-base}}."
+	"specialpages-group-bluespice": "Used in [[Special:SpecialPages]], headline of BlueSpice section. Message is referenced to message of BlueSpice preference section.\n\nRefers to {{msg-mw|Prefs-base}}.",
+	"bs-tag-input-desc": "Description of the 'input' part of a tag extension. The 'input' is everything that is placed between the opening and the closing element of the tag extension",
+	"bs-tag-param-desc": "Description of a 'parameter' part of a tag extension. A 'parameter' is everything that is defined using attributes of the tag extension's element.\n\nParameters:\n* $1 - the name of the attribute",
+	"bs-parser-error-invalid-namespace": "Error message in case a string could not be parsed into a valid namespace id.\n\nParameters:\n* $1 - the original string value",
+	"bs-parser-error-invalid-title": "Error message in case a string could not be parsed into a valid Title object.\n\nParameters:\n* $1 - the original string value",
+	"bs-validator-error-namespace-does-not-exist": "Error message in case a given namespace id does not exist.\n\nParameters:\n* $1 - the namespace id",
+	"bs-validator-error-namespace-on-blacklist": "Error message in case a given namespace id is on the blacklist.\n\nParameters:\n* $1 - the namespace id",
+	"bs-validator-error-title-does-not-exist": "Error message in case a given Title object does not exist.\n\nParameters:\n* $1 - the prefixed text of the Title",
+	"bs-validator-error-title-namespace-on-blacklist": "Error message in case the namespace of a given Title object is on the blacklist.\n\nParameters:\n* $1 - the prefixed text of the Title"
 }

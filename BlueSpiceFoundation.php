@@ -53,6 +53,10 @@ $wgFooterIcons['poweredby']['bluespice'] = array(
 	"alt" => "Powered by BlueSpice",
 );
 
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+	include_once( __DIR__ . '/vendor/autoload.php' );
+}
+
 require_once( __DIR__."/includes/AutoLoader.php");
 require_once( __DIR__."/includes/Defines.php" );
 require_once( __DIR__."/includes/DefaultSettings.php" );
@@ -100,6 +104,26 @@ $wgExtensionMessagesFiles += array(
 
 #$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
 $wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
+
+if( !isset( $GLOBALS['wgParamDefinitions'] ) ) {
+	$GLOBALS['wgParamDefinitions'] = array();
+}
+
+$GLOBALS['wgParamDefinitions'] += array(
+	'titlelist' => array(
+		'definition' => 'BSTitleListParam',
+		'string-parser' => 'BSTitleParser',
+		'validator' => 'BSTitleValidator',
+	),
+	'namespacelist' => array(
+		'definition' => 'BSNamespaceListParam',
+		'string-parser' => 'BSNamespaceParser',
+		'validator' => 'BSNamespaceValidator',
+	)
+	//TODO:
+	//'title', 'category', 'user', 'usergroup'
+	//'categorylist', 'userlist', 'usergrouplist'
+);
 
 // Register hooks
 require_once( 'BlueSpice.hooks.php' );

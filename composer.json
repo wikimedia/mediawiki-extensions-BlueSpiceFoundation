@@ -15,6 +15,9 @@
 			"homepage": "http://www.hallowelt.com"
 		}
 	],
+	"require": {
+		"param-processor/param-processor": "~1.2"
+	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2"
 	},
