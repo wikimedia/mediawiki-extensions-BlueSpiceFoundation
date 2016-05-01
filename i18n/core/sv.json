@@ -76,5 +76,7 @@
 	"bs-pref-anonuserimage": "Avatar för anonym användare:",
 	"bs-pref-deleteduserimage": "Avatar för raderad användare:",
 	"bs-pref-bspinginterval": "Ping-intervall (i sekunder):",
-	"bs-pref-testmode": "Aktivera testläge"
+	"bs-pref-testmode": "Aktivera testläge",
+	"bs-parser-error-invalid-namespace": "Ogiltig namnrymd: $1",
+	"bs-validator-error-title-does-not-exist": "Sidan finns inte: $1"
 }

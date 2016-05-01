@@ -63,5 +63,12 @@
 	"bs-from-something": "($1 पासून)",
 	"bs-pref-fileextensions": "प्रमाणिकृत संचिका विस्तारके:",
 	"bs-pref-imageextensions": "प्रमाणिकृत चित्र विस्तारके:",
-	"bs-pref-logopath": "प्रतीक-चिन्ह मार्गक्रम:"
+	"bs-pref-logopath": "प्रतीक-चिन्ह मार्गक्रम:",
+	"bs-tag-input-desc": "घटक आशयाची किंमत",
+	"bs-parser-error-invalid-namespace": "अवैध नामविश्व: $1",
+	"bs-parser-error-invalid-title": "अवैध शीर्षक: $1",
+	"bs-validator-error-namespace-does-not-exist": "नामविश्व अस्तित्वात नाही: $1",
+	"bs-validator-error-namespace-on-blacklist": "नामविश्वाची परवानगी नाही: $1",
+	"bs-validator-error-title-does-not-exist": "पान अस्तित्वात नाही: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "पानास तयार करण्याची परवानगी नाही: $1"
 }

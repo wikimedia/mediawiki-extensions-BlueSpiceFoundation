@@ -78,5 +78,11 @@
 	"bs-pref-anonuserimage": "Avatar de usuario anónimo:",
 	"bs-pref-deleteduserimage": "Avatar de usuario eliminado:",
 	"bs-pref-bspinginterval": "Intervalo de ''ping'' (en segundos):",
-	"bs-pref-testmode": "Activar el modo de prueba"
+	"bs-pref-testmode": "Activar el modo de prueba",
+	"bs-parser-error-invalid-namespace": "Espacio de nombres no válido: $1",
+	"bs-parser-error-invalid-title": "Título no válido: $1",
+	"bs-validator-error-namespace-does-not-exist": "El espacio de nombres no existe: $1",
+	"bs-validator-error-namespace-on-blacklist": "Espacio de nombres no permitido: $1",
+	"bs-validator-error-title-does-not-exist": "La página no existe: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Página no permitida: $1"
 }

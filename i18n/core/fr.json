@@ -3,7 +3,8 @@
 		"authors": [
 			"Gomoko",
 			"Macofe",
-			"Benjozork"
+			"Benjozork",
+			"Wladek92"
 		]
 	},
 	"bs-ns_main": "(Pages)",
@@ -75,5 +76,8 @@
 	"bs-pref-anonuserimage": "Avatar d’utilisateur anonyme :",
 	"bs-pref-deleteduserimage": "Avatar d’utilisateur supprimé :",
 	"bs-pref-bspinginterval": "Intervalle de Ping (en secondes) :",
-	"bs-pref-testmode": "Activer le mode de test"
+	"bs-pref-testmode": "Activer le mode de test",
+	"bs-parser-error-invalid-namespace": "Espace de noms invalide: $1",
+	"bs-validator-error-title-does-not-exist": "La page n’existe pas: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Page non autorisée: $1"
 }

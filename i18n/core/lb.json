@@ -65,5 +65,7 @@
 	"bs-pref-miniprofileenforceheight": "Héicht vum Benotzer-Avatar forcéieren",
 	"bs-pref-anonuserimage": "Avatar fir anonym Benotzer:",
 	"bs-pref-deleteduserimage": "Avatar fir geläscht Benotzer:",
-	"bs-pref-bspinginterval": "Ping-Intervall (a Sekonnen):"
+	"bs-pref-bspinginterval": "Ping-Intervall (a Sekonnen):",
+	"bs-validator-error-title-does-not-exist": "Säit gëtt et net: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Säit net erlaabt: $1"
 }
