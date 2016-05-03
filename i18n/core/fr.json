@@ -77,7 +77,12 @@
 	"bs-pref-deleteduserimage": "Avatar d’utilisateur supprimé :",
 	"bs-pref-bspinginterval": "Intervalle de Ping (en secondes) :",
 	"bs-pref-testmode": "Activer le mode de test",
+	"bs-tag-input-desc": "Valeur du contenu de l’élément",
+	"bs-tag-param-desc": "Valeur de l’attribut '$1' de l’élément",
 	"bs-parser-error-invalid-namespace": "Espace de noms invalide: $1",
+	"bs-parser-error-invalid-title": "Titre non valide : $1",
+	"bs-validator-error-namespace-does-not-exist": "L’espace de noms n’existe pas : $1",
+	"bs-validator-error-namespace-on-blacklist": "Espace de noms non autorisé : $1",
 	"bs-validator-error-title-does-not-exist": "La page n’existe pas: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Page non autorisée: $1"
 }

@@ -77,5 +77,13 @@
 	"bs-pref-anonuserimage": "Imaxe de perfil de usuario anónimo:",
 	"bs-pref-deleteduserimage": "Imaxe de perfil eliminado:",
 	"bs-pref-bspinginterval": "Intervalo de ''ping'' (en segundos):",
-	"bs-pref-testmode": "Activar o modo de proba"
+	"bs-pref-testmode": "Activar o modo de proba",
+	"bs-tag-input-desc": "Valor do contido do elemento",
+	"bs-tag-param-desc": "Valor do atributo '$1' de elemento",
+	"bs-parser-error-invalid-namespace": "Espazo de nomes non válido: $1",
+	"bs-parser-error-invalid-title": "Título non válido: $1",
+	"bs-validator-error-namespace-does-not-exist": "O espazo de nomes non existe: $1",
+	"bs-validator-error-namespace-on-blacklist": "Espazo de nomes non permitido: $1",
+	"bs-validator-error-title-does-not-exist": "A páxina non existe: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Páxina non permitida: $1"
 }
