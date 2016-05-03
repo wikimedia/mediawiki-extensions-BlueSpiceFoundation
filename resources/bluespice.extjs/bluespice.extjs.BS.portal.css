@@ -47,6 +47,7 @@
 }
 .x-portlet .x-panel-body {
 	background: #fff;
+	padding: 5px;
 }
 .portlet-content {
 	padding: 10px;
