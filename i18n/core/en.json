@@ -7,8 +7,6 @@
 	"bs-ns_main": "(Pages)",
 	"bs-ns_all": "(all)",
 	"bs-tab_navigation": "Navigation",
-	"bs-tab_focus": "Focus",
-	"bs-tab_admin": "Admin",
 	"bs-userbar_loginswitch_logout": "Log out",
 	"bs-userbar_loginswitch_login": "Log in",
 	"bs-extended-search-tooltip-fulltext": "Fulltext search",

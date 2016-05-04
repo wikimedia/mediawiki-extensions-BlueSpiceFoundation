@@ -11,8 +11,6 @@
 	"bs-ns_main": "Label used in namespace dropdown lists for NS_MAIN.\n\nUsed in:\n* {{msg-mw|Bs-namespacemanager-willmove}}\n* {{msg-mw|Bs-namespacemanager-willmovesuffix}}\n{{Identical|Page}}",
 	"bs-ns_all": "Label used in namespace dropdown lists for all namespaces.\n{{Identical|All}}",
 	"bs-tab_navigation": "Label for \"nagivation\" tab in left sidebar\n{{Identical|Navigation}}",
-	"bs-tab_focus": "Label for \"focus\" tab in left sidebar\n{{Identical|Focus}}",
-	"bs-tab_admin": "Label for \"admin\" tab in left sidebar\n{{Identical|Admin}}",
 	"bs-userbar_loginswitch_logout": "Label for logout button in personal toolbar.\n{{Identical|Log out}}",
 	"bs-userbar_loginswitch_login": "Label for login button in personal toolbar.\n{{Identical|Log in}}",
 	"bs-extended-search-tooltip-fulltext": "Tooltip shown on mouse over the button at the corner of the search field on every page when in fulltext mode",
