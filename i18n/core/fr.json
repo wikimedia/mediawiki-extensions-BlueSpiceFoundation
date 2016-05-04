@@ -10,8 +10,6 @@
 	"bs-ns_main": "(Pages)",
 	"bs-ns_all": "(tous)",
 	"bs-tab_navigation": "Navigation",
-	"bs-tab_focus": "Centre d’intérêt",
-	"bs-tab_admin": "Admin",
 	"bs-userbar_loginswitch_logout": "Déconnexion",
 	"bs-userbar_loginswitch_login": "Connexion",
 	"bs-extended-search-tooltip-fulltext": "Recherche en texte intégral",
