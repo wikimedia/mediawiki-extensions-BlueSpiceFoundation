@@ -72,6 +72,7 @@ $GLOBALS['wgAutoloadClasses']['BSApiExtJSStoreBase'] = __DIR__."/api/BSApiExtJSS
 $GLOBALS['wgAutoloadClasses']['BSApiExtJSDBTableStoreBase'] = __DIR__."/api/BSApiExtJSDBTableStoreBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiFileBackendStore'] = __DIR__."/api/BSApiFileBackendStore.php";
 $GLOBALS['wgAutoloadClasses']['BSApiUserStore'] = __DIR__."/api/BSApiUserStore.php";
+$GLOBALS['wgAutoloadClasses']['BSApiAdminUserStore'] = __DIR__."/api/BSApiAdminUserStore.php";
 $GLOBALS['wgAutoloadClasses']['BSApiGroupStore'] = __DIR__ . '/api/BSApiGroupStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiInterwikiStore'] = __DIR__ . '/api/BSApiInterwikiStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiWikiPageTasks'] = __DIR__ . '/api/BSApiWikiPageTasks.php';

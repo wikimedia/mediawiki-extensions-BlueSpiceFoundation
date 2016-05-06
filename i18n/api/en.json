@@ -6,6 +6,7 @@
 	},
 	"apihelp-bs-filebackend-store-description": "Lists all files from the file backend. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-user-store-description": "Lists all users from the database. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
+	"apihelp-bs-adminuser-store-description": "Lists all users from the database with additional sensitive data. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-group-store-description": "Lists all groups except $wgImplicitGroups. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-interwiki-store-description": "Lists all interwiki links. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
 	"apihelp-bs-titlequery-store-description": "Lists page titles and (optionally) namespace prefixes based on a query term. Implements ExtJS Store parameters.",

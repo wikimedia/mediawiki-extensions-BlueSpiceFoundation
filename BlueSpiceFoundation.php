@@ -71,6 +71,7 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
 
 $wgAPIModules['bs-filebackend-store'] = 'BSApiFileBackendStore';
 $wgAPIModules['bs-user-store'] = 'BSApiUserStore';
+$wgAPIModules['bs-adminuser-store'] = 'BSApiAdminUserStore';
 $wgAPIModules['bs-group-store'] = 'BSApiGroupStore';
 $wgAPIModules['bs-interwiki-store'] = 'BSApiInterwikiStore';
 $wgAPIModules['bs-wikipage-tasks'] = 'BSApiWikiPageTasks';
