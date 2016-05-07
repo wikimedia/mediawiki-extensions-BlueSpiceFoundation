@@ -64,6 +64,10 @@
 	"bs-pref-anonuserimage": "Avatar fir anonym Benotzer:",
 	"bs-pref-deleteduserimage": "Avatar fir geläscht Benotzer:",
 	"bs-pref-bspinginterval": "Ping-Intervall (a Sekonnen):",
+	"bs-parser-error-invalid-namespace": "Net valabelen Nummraum: $1",
+	"bs-parser-error-invalid-title": "Net valabelen Titel: $1",
+	"bs-validator-error-namespace-does-not-exist": "Nummraum gëtt et net: $1",
+	"bs-validator-error-namespace-on-blacklist": "Nummraum net erlaabt: $1",
 	"bs-validator-error-title-does-not-exist": "Säit gëtt et net: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Säit net erlaabt: $1"
 }
