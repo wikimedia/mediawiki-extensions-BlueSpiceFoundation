@@ -7,6 +7,7 @@
 	},
 	"apihelp-bs-filebackend-store-description": "Liste tous les fichiers du serveur de fichiers. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
 	"apihelp-bs-user-store-description": "Liste tous les utilisateurs de la base de données. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
+	"apihelp-bs-adminuser-store-description": "Liste tous les utilisateurs de la base de données avec les données sensibles supplémentaires. Permet de trier, de filtrer et de mettre en forme. Implémente les paramètres ExtJS Store.",
 	"apihelp-bs-group-store-description": "Liste tous les groupes sauf $wgImplicitGroups. Permet le tri, le filtrage et la pagination. Implémente les paramètres de stockage ExtJS.",
 	"apihelp-bs-interwiki-store-description": "Liste tous les liens interwiki. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
 	"apihelp-bs-titlequery-store-description": "Liste les titres de page et (facultativement) les préfixes d’espaces de nom basés sur un terme de recherche. Implémente les paramètres de ExtJS Store.",

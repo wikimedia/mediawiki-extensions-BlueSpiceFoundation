@@ -6,6 +6,7 @@
 	},
 	"apihelp-bs-filebackend-store-description": "列举来自文件后端的所有文件。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-user-store-description": "列举来自数据库的所有用户。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-adminuser-store-description": "列举来自数据库的所有用户，并带有额外的敏感数据。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-group-store-description": "列举除$wgImplicitGroups以外的所有组。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-interwiki-store-description": "列举所有跨wiki链接。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-titlequery-store-description": "基于查询关键字列举页面标题和（可选）名字空间前缀。执行ExtJS存储的参数。",
