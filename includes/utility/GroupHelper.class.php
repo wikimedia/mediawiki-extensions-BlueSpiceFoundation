@@ -138,6 +138,10 @@ class BsGroupHelper {
 		if ( empty( self::$sTempGroup ) || self::$sTempGroup !== $group ) return true;
 		self::$sTempGroup = '';
 
+		//Mw 1.27 compatibility
+		$user->mGroups[] = $group;
+		$user->mGroups = array_unique( $user->mGroups );
+
 		return false;
 	}
 
