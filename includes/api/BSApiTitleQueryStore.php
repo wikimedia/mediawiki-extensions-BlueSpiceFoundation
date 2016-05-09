@@ -62,10 +62,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 					continue;
 				}
 
-				$aData[] = array(
+				$aData[] = (object)(array(
 					'type' => 'namespace',
 					'displayText' => $sNamespaceText.':'
-				) + $aDataSet;
+				) + $aDataSet);
 			}
 		}
 
@@ -147,14 +147,14 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			}
 
 			$sPrefixedText = $oTitle->getPrefixedText();
-			$aData[] = array(
+			$aData[] = (object)(array(
 				'type' => 'wikipage',
 				'page_id' => $oTitle->getArticleId(),
 				'page_namespace' => $oTitle->getNamespace(),
 				'page_title' => $oTitle->getText(),
 				'prefixedText' => $sPrefixedText,
 				'displayText' => $sPrefixedText
-			) + $aDataSet;
+			) + $aDataSet);
 		}
 
 		//Step 3: Find Specialpages
@@ -208,11 +208,11 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 			$sSPText = $oSpecialPage->getPageTitle()->getPrefixedText();
 
-			$aSPDataSets[] = array(
+			$aSPDataSets[] = (object)(array(
 				'type' => 'specialpage',
 				'prefixedText' => $sSPText,
 				'displayText' => $sSPDisplayText
-			) + $aDataSet;
+			) + $aDataSet);
 
 			$aSortHelper[] = $sSPDisplayText;
 		}
