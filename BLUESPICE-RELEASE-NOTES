@@ -3,346 +3,215 @@ Copyright 2015 by Hallo Welt! - Medienwerkstatt GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
 
-== BlueSpice 2.23.2 ==
+== BlueSpice 2.23.3-beta ==
 
-BlueSpice 2.23.2 is a minor and maintenance release.
+BlueSpice 2.23.3-beta is a minor and maintenance release.
+This is a beta release and not recommende for use in production
 
 === Notable new features ===
-* Update of notification system
-* Improved logging of actions, e.g. assign responsibility or change rights setup
-* Added ImageMapEdit to Distribution
-* Added EmbedVideo to Distribution
-* Added WikiCategoryTag to distribution
-* Improved integration of Semantic MediaWiki and BlueSpice
-* BlueSpice is now compatible with MeidaWiki's VisualEditor
-* New functionality: "About BlueSpice" with information and first steps
+
 
 === BlueSpice Foundation ===
-* ExtJS ResourceLoader Module: Changed base class
-* Improve ExtJS ResourceLoader module caching
-* BSApiExtJSStoreBase: Fixed nummeric filtering
-* Model/File: Added fields
-* BsCommonAPIInterface: Search in all ns if no ns prefix was given for
-  TitleStoreData
+* API: Added a generic group store API backend
+* API: Added a generic WikiPage store
+* API: Added BS.store.BSApi
+* API: Added BSApiAdminUserStore
+* API: Added Interwiki ExtJS store API module
+* API: Added title filter to store api
+* API: API I18N
+* API: ApiExtJSStoreBase/BS.GRUDGridPanel: Filter
+* API: ApiExtJSStoreBase/StringHelper: String filter
+* API: ApiExtJSStoreBase: Implemted 'date' filter
+* API: ApiGroupStore: Fixed return value
+* API: ApiTasksBase: Added support for logging
+* API: ApiTasksBase: Fixed token return value
+* API: ApiTasksBase: needToken by default + hooks
+* API: ApiTasksBase: read-only check
+* API: ApiTasksBase: token mechanism for MW 1.24+
+* API: BSApiFileBackendStore: userAdjust of timestamp
+* API: BSApiTasksBase: stub implementation of task data param processing
+* API: BsCommonAjaxInterface --> API
+* API: BSTasksAPI: Added permission check
+* API: Metadata node and data in ExtJSStoreBase
+* API: New 'bs.api.tasks.exec'
+* API: New BSApiWikiPageTasks
+* API: Removed legacy override
+* API: TasksAPI: Added context
+* API: TitleQueryStore: return objects, not arrays
+* Appearance: added padding to dashboard panel content
+* Appearance: bluespice.extjs.fixes: Fixed tool icon alignment
+* Appearance: BS.CRUDPanel: dynamic calculation of action column
+* Appearance: BsBaseTemplate: Introduced printFooter method.
+* Appearance: BsBaseTemplate: Removed double echo
+* Appearance: BSUserMiniProfile: Replaced spaces in HTML output
+* Appearance: Compress PNGs with zopflipng
+* Appearance: extjs themes: Reverting images
+* Appearance: getHTMLContentFor: fixed issue with PDF export
+* Appearance: getNavigationSidebar: allows html-string injection from extensions
+* Appearance: Icomoon font icons in BS.CRUDGridPanel
+* Appearance: Show BlueSpice Version in the appropriate column
+* Architecture: Added config file registry
+* Compatibility: Compat. REL1_27: Custom JSON format
+* Compatibility: Remove usage of Title::newFromRedirect()
+* Compatibility: Remove usage of Title::newFromRedirectArray()
+* Compatibility: Remove usage of Title::newFromRedirectRecurse()
+* Compatibility: Stop using $wgTitle, no need to be the global
+* Compatibility: Use __METHOD__ for DB begin/commit calls
+* Compatiblity: Fix case of Html class
+* DefaultSettings: Added xml and svg as default allowed file types
+* DefaultSettings: disabled thumb.php
+* Documentation: Pretty urls on IIS
+* ExtensionManager: Invoke autoloader if possible
+* General: Added some info to composer.json
+* General: build: Updating development dependencies
+* General: build: Updating development dependencies
+* General: Composer.json: Added more information
+* General: Fix jenkins tests
+* General: Fix jslint errors, Add npm and composer tests
+* General: Restored startsWith / endsWith functionality
+* GenericTagExtensionHandler: Basic impl.
+* GroupHelper: MW1.27 compatibility - Fixed TMP user groups
+* Hooks: DROP TABLE in LoadExtensionSchemaUpdates
+* I18N: Added language specific support and contact URLs
+* I18N: Added messages for BooleanFilter
+* I18n: Removed i18n keys
+* Installcheck: removed old requirements
+* Mailer: Call UserMailer::send() correctly
+* Mailer: Changed Variables
+* Mailer: Remove Bug where Version is not being checked
+* Maintenance: importImagesRecursive: delete obsolete files
+* Ping: Suppress all messages and warings
+* Ping: Used API instead of AjaxExportList
+* ResourceLoader: 'ext.bluespice' Bad reference to ExtJS
+* ResourceLoader: ExtJS Runtime errors due to missing/late css
 
 === BlueSpice Extensions ===
-* Blog: Changed query assembly to restore cat attribute
-* Checklist: Made sure there is always on option selected
-* ExtendedSearch: Fixed Fatal in indexCrawledDocuments
-* ExtendedSearch: Fix: Add Path Replacement on multiple External Repos
-* Flexiskin: Fixed issue with preview
-* Flexiskin: Fixed issue with JS menus header and position
-* Flexiskin: Fixed deletion of skin
-* Flexiskin: Fixed skin usage for anonymous users
-* InsertFile/VisualEditor: Fixes 'nolink'
-* InsertFile: Fixed image source
-* NavigationSites: Added is allowed read check
-* PermissionManager: Improvements
-* SaferEdit: SomeOneIsEditing - warning works again
-* UEModulePDF: Improvment of page-break behavior
-* UniversalExport: Fixed issue with infobox overlapping toc
-* UserSidebar: Check if user is logged in before show user specific stuff
-* VisualEditor: Fixed "framed" and "center" behavior
-* VisualEditor: Improved "images in table" handling
-* VisualEditor: Added support for underline
-* VisualEditor: Activate save button in BSVisualEditor on content change in
-  MediaWiki plaintext editor
+* ArticleInfo: makeStateBarTopLastEdited: fixed issue with PDF Export
+* Avatars: Remove use of "successful" in strings
+* BlueSpiceProjectFeedbackHelper: Fixed issue with quotation marks
+* BSPFeedbackHelper: Refactoring
+* Checklist: changed filter for list options to give more flexibility
+* Checklist: Fallback list options when list template is corrupt
+* Checklist: Fixed file path issue
+* Checklist: Use API instead of AJAX
+* ContextMenu: Now enabled by default
+* CountThings: Uses GenericTagExtensionHandler
+* Dashboard: Add page article widget
+* Dashboard: Use API instead of ajax
+* Dashboards: ExtJS/ResourceLoader: Fixes in manager components
+* Extended Search: Enable "open in new tab" in autocomplete
+* ExtendedEditBar: Enable only in certain contexts
+* ExtendedSearch: Keep facet operator when changing facets
+* ExtendedSearch: Use categories from file page
+* ExtendenSearch: Facet settings: choose AND or OR as logical operator
+* Flexiskin: Add checkbox "Use background image"
+* Flexiskin: New RL implementation
+* Flexiskin: now works with WikiFarming
+* Flexiskin: Use BSApiTasksBase
+* FomattingHelp: Removed need of token for read only API module
+* FormattingHelp: Use API instead of AjaxExportList
+* General: *Manager: Now using config file registry from BSF
+* General: Add npm entry point
+* General: Add phplint to composer
+* General: Adding composer.json
+* General: Composer.json: Added more information
+* General: Compress PNGs with zopflipng
+* General: Don't use User::getSkin()
+* General: Fix BlueSpiceExtensions jenkins tests
+* General: Fix composer.json since hallowelt/bluespice-foundation is not
+  released in version 2
+* General: Replace wfMsg* calls
+* GroupManager: Raised group name character limit
+* GroupManager: Use task API instead of AjaxExportList
+* GroupManager: Used edit tokens for all task API calls
+* InserMagic: Used API instead of AjaxExportList
+* InsertCategory: Added button classes for VisualEditor
+* InsertCategory: Fixed runtime errors when visual editor is not activated
+* InsertCategory: Use API instead of AjaxExportList
+* InsertCategory: Use post instead of get
+* InsertFile: Use API instead of AjaxExportList
+* InsertLink: Removed AjaxExportList
+* InsertLink: Replace applet with jnlp loader, no chrome support so far
+* InsertMagic: Improve tag description mechanism
+* InsertMagic: Simplify insertmagic-desc message
+* InsertMagic: Switched description and text field
+* InterWikiLinks: Use API instead of AjaxExportList
+* NamespaceManager: API and further development
+* NamespaceManager: Fixed action confirmation
+* NamespaceManager: System namespaces can no longer be deleted
+* NamespaceManager: Token must be posted
+* NamespaceManager: Used API instead of AjaxExportList
+* PageTemplates: use API instead of ajax
+* PageTemplates: Use strict array search for linker options
+* PermissionManager: add config and handler for max num of backups
+* PermissionManager: Add hint flyout for every right
+* PermissionManager: Fallback when canonical ns name is different from
+  constant name
+* PermissionManager: Now easier extendable and has a getHTMLTable method
+* PermissionManager: Use API instead of AjaxExportList
+* Preferences: Fixed autoloader entry
+* ResponsibleEditors: Resolve code invoking Title::newFromURL
+* ResponsibleEditors: Use API instead of AjaxExportList
+* RSSStandards: resolved ExtJS dependency
+* SaferEdit: Fixed interval and param handling
+* SaferEdit: Fixed textbox id and return of undefined value
+* ShoutBox: Add autogenerated id to return payload
+* ShoutBox: Use correct message key for mail
+* ShoutBox: Used API instead of AjaxExportList
+* SmartList: getCustomList: modified exclude namespace argument
+* TopMenuBarCustomizer: Fix case of Html class
+* UEModulePDF: Added lost compatibility for php <= 5.5
+* UEModulePDF: Added stylings for pdf export
+* UEModulePDF: Correction of missing quotation marks
+* UEModulePDF: findFiles: fixed issue with pdf export
+* UEModulePDF: Improved styling rues for xhtmlrenderer PDF
+* UserManager: Add hook BSUserManagerAfterSetGroups
+* UserManager: Added hook after user deletion and edit
+* UserManager: Fixed error display for group change
+* UserManager: Use API instead of AjaxExportList
+* UserSidebar: "special" navigation tab + wiki wide widget
+* VisualEditor: Compatibility REL1_27: Use of 'addModules'
+* VisualEditor: Do not auto focus when in preview node
+* VisualEditor: EditToolbar button is disabled until VE can be loaded
+* VisualEditor: Replace Article::replaceSection usage with
+  Article::replaceSectionAtRev
+* VisualEditor: Set default style for table to contenttable
+* VisualEditor: Use API instead of AJAX
+* VisualEditor: Wait for dependencies to be loaded before enabling
+* WantedArticle: Dixed issue with html class
+* WantedArticle: Fix JS and removed unused resources
+* WantedArticle: Use API instead of AjaxExportList
 
 === BlueSpice Skin ===
-* Skin: Data after content - show first tab as default
+* Improved edit section icon in vector skin
+* Make support URLs language specific
+* Moved basic LESS vars to BlueSpiceFoundation
+* Removed footer code and introduced printFooter method
+* Replace Title::userIsWatching
 
 === BlueSpice Distribution ===
-* DistributionConnector: Added CategoryTree tag to InsertMagic list
-* DistributionConnector: Added cite tags to insertMagic
-* DistributionConnector: Added quiz tag to InsertMagic
-* DistributionConnector: Added EmbedVideo tag to InsertMagic
-* DistributionConnector: Added DynamicPageList tag to InsertMagic
-* Notifications: Fix Notifications for admin task add user
-
-=== BlueSpice Pro ===
-* Bookmaker: Fixed PDF file attachment logic to get correct paths
-* Bookmaker: Removed UEModuleBookHTML due to its instability
-* Bookmaker: Fix for chapter navigation tree not being displayed when not in
-  book context
-* Bookmaker: New class BS.Bookshelf.tree.NumberedNodeColumn, that allows
-  clientside calculation of numbers in a tree
-* Bookmaker: Removed template dependency in bookshelf tag; Did not work as
-  expected and lead to issues in conjunction with FlaggedRevs
-* Bookmaker: Fixed re-numbering issue on tree drag and drop
-* Bookmaker: Removed NavigationPopups - ReleaseConference 2015-05-06
-* Bookmaker: Fixes context menu integration
-* Bookmaker: Made interface compatible with new base class
-* Bookmaker: Workaround for attachments using spaces
-* Bookmaker: Started work on "booknode" implementation
-* Bookmaker: Removed ImageMapEdit, moved to Dist
-* Bookmaker: UEModuleDOCX: Added PHP 5.6 compatibility
-* Bookmaker: Fixed hook; Added fallback for absence of data-bs-title
-* Bookmaker: Fixed error in fallback
-* Bookmaker: Added two new APIs: One for and aysnc tree store and one for info
-  about specific node (Not yet implemented)
-* Bookmaker: Fixed sorting
-* Bookmaker: Fixed part of the 'no horizontal scrollbar' issue
-* Bookmaker: Added RL dependency
-* Bookmaker: Fixed BookManager and BookEditor that were broken due to a change
-  in the base classes
-* Bookmaker: Bugfix onBSUEModulePDFBeforeAddingContent
-* Bookmaker: Added PHP 5.6 compatibility
-* Bookmaker: Added dependency to ExtJS
-* GuidedEditing: PageTemplates work again in non-GuidedEditing-namespaces
-* GuidedEditing: Compatibility fix for mw 1.24
-* GuidedEditing: No longer activated for NS_MAIN by default
-* GuidedEditing: Removed long deprecated calls to wfMsg
-* PasteImage: Fix for empty input field
-* PasteImage: Fix for copy & paste in VisualEditor
-* PasteImage: Changed default java enbled
-* PasteImage: Added RL dependency
-* Rating: Implemented grid filters to SpecialRating
-* Rating: Added missing order by for filters
-* Rating: Rating SchemaUpdate now works for installer too
-* Semantic: TagNode integration for Bookshelf
-* Semantic: Basic integration of BS VisualEditor into SF
-* Semantic: Added PageSchemas
-* Semantic: Improved integration of insert* extensions
-* Semantic: VE support of standard input 'free text'
-* Semantic: Rudimentary ResultFormat with ExtJS-Grid
-* Semantic: Using SMW 2.3
-* Semantic: Integration into NamespaceManager
-* Semantic: Updated default configuration according to recommendations
-* ServiceCenter: Rewrite of TagSearch
-* ServiceCenter: Removed legacy files; Added styling
-* ServiceCenter: Now uses ExtJS
-* ServiceCenter: Switching from Ext.form.field.ComboBox to
-  Ext.ux.form.field.GridPicker
-* ServiceCenter: Fixed selection and onEnter behavior
-* ServiceCenter: Enabled searchfiles option
-* ServiceCenter: Added CategoryCheck
-* ServiceCenter: Minor fixes for TagSearch
-* ServiceCenter: Added standard templates
-* ServiceCenter: Added code templates
-* ServiceCenter: Own file for template
-* ServiceCenter: Added vendor folder
-* ServiceCenter: Fixed path error while execution of update.php
-* ServiceCenter: Added support for NamespaceManager
-* ServiceCenter: Added dependenca to ext.bluespice.extjs
-* ServiceCenter: TagSearch dependencies updated
-* Teamwork: Fixed issue with FRC history page
-* Teamwork: Fixed Notificator
-* Teamwork: Now the same query is in use for the result and counting total
-* Teamwork: Reworked reminder / expiry
-* Teamwork: Minimum doc + bugfix for unexpire + statebar
-* Teamwork: Show user names in panel view if user wants to see others reminders
-* Teamwork: Fixing for paging + notifications tab in user menu
-* Teamwork: Don't show 'review' link in statebar if user is not allowed
-* Teamwork: Fix for SMW compatibility: avoid namespace collision
-* Teamwork: User adjust for timestamp
-* Teamwork: Sqlite support added
-* Teamwork: "Fixed" query for open remiders in personal info
-* Teamwork: Removed statebar draft if in history mode
-* Teamwork: Added MySQL update for upgrade to BS 2.23
-* Teamwork: Index stable revisions only works again
-* Teamwork: Added first structure of Autoreminder (after FlaggedRevs)
-* Teamwork: Reminder: fixed typo in method call
-* Teamwork: Fix for expiry, small logical mistake
-* Teamwork: Fixed broken hook handler
-* Teamwork: Fix for $sBaseDir in symlinks
-* Teamwork: Removed FlaggedRevsOCI 1.17 and 1.20; Added FlaggedRevs 1.23
-* Teamwork: Fixed require statement; Added history view implementation;
-* Teamwork: Removed long deprecated calls to wfMsg
-* Teamwork: Fixed canonical special page name
-* Teamwork: Fixed invalid ns handling for smartlist custom type
-* VisualDiff: Added PHP 5.6 compatibility
-
-==BlueSpice 2.23.2-beta==
-
-=== BlueSpice Foundation ===
-* API base classes: ExtJS store and Tasks
-* Added categoryhelper
-* Added deferred actions
-* Added method getUserInGroups
-* Added missing resources
-* Added userhelper
-* Avoid calling User::setPassword() on users not in database
-* Avoid calling ignoreErrors if not available
-* BSApiExtJSStoreBase: changed behavior when filter value is invalid
-* BSApiFileBackendStore/BSApiExtJSStoreBase: Further development
-* BSApiFileBackendStore: Changes due to extendability and param handling
-* BSApiFileBackendStore: Fixed SecureFileStore call
-* BSCategoryBoxSelect: Changed delimiter from ',' to '|'
-* BSF DefaultSettings: Added blog.hallowelt.com to $wgRSSUrlWhitelist
-* BSPing: Added trigger
-* BsBaseTemplate: Hide sidebar navigation if user cannot read
-* BsBaseTemplate: Restored custom sidebar icon mechanism
-* BsCommonAJAXInterface: Fixed issue with special Characters
-* Check for input, happens to be a full path already
-* Core::parseWikiText - Removed $nocache parameter
-* Css styling for boxes and borders
-* DefaultSettings: Added default file formats
-* DefaultSettings: Added permission configs
-* Exchange deprecated function addModuleMessages with addModules as requested
-  in T112435
-* ExtJS CSS fixes: Combobox flyout font-size
-* ExtJS RL module implementation
-* ExtJS base classes: Added more 'make*' methods
-* ExtJS: CategoryBoxSelect component I18N
-* FileBackendStore: Fixed notice
-* Fix for mail ln
-* Fix for new ExtJS RL implementation
-* Fix for required options on api call
-* Fix for wrong path on realpath against path comparison
-* Fix for wrong validation
-* Fixed fatal for non-object
-* Fixed double echo for bs_skyscraper
-* Further cleanup for core API change
-* Improved BSCoreConfigGet Hook
-* Installcheck now also checks for OPCode cache
-* Maintenance: Added user im- and export scripts
-* Moved IcoMoon icon set from BlueSpiceSkin
-* Moved link data attributes from BSE/ContextMenu
-* New API: UserStore
-* ResourceLoader: Fixed tooltips and minor ResourceLoader tweaks
-* Remove access to protected field
-* Remove direct ParserOptions field access
-* Replace deprecated $wgSpecialPageGroups
-* Replaced js wg vars with mw.config.get due to deprecation
-* Resources.php: Removed unnecessary dependencies & added 'mobile' as target
-* SkinAfterContent / Vector compatibility
-* Sortable: Added ResourceLoader dependency
-* Temporary disabling box for user name, may be useful later
-* Update indentation to use tabs
-* Updated release notes for security fix
-* Updated version number + release notes
-* Using mw.config.get/set to access JavaScript vars
-* Window now sets the component to loading when ok is clicked
-
-=== BlueSpice Extensions ===
-* AboutBlueSpice: New URL for landing page
-* AboutBlueSpice: Updated helpdesk url
-* ArticleInfo: Update identation to use tabs
-* ArticleInfo: Using mw.config.get/set to access JavaScript vars
-* ArticleInfo: Replaced JavaScript wg* vars with mw.config.get
-* BSApiFileBackendStore: Changes due to extendability and param handling
-* Blog: Cache invalidation
-* Blog: Invalidate cache on changes in BLOG_TALK
-* BlueSpiceProjectFeedbackHelper: added missing dependency
-* BsVisualEditor: Fixed error handling for save button
-* Checklist: Load 'ext.bluespice.extjs' ResourceLoader module on demand
-* ContextMenu: Fixed NullPointerException
-* ContextMenu: Moved link data attributes to BSF
-* ContextMenu: Some fiexes for ExtJS RL implementation
-* Dashboards: Replace deprecated $wgSpecialPageGroups
-* ExtendedEditBar: Changed selector for better match, was overwritten in
-  MediaWiki 1.24
-* ExtendedSearch: Add SQLite Compatability in SQL Install Script
-* ExtendedSearch: Add custom url field for External Repository
-* ExtendedSearch: Added hook to PreproccessSearchString
-* ExtendedSearch: Fixed fatal
-* ExtendedSearch: Fix for search scope on special page, buttons were ignored
-* ExtensionInfo: Added dependency ext.bluespice.extjs
-* FlexiSkin: Changed RL module dependencies
-* FlexiSkin: Fix for preview
-* Flexiskin: API changes
-* Flexiskin: Background image can now be reset to default
-* GroupManager: Modifiy user <-> group relationships
-* InsertCategory: Changed delimiter from ',' to '|'
-* InsertFile: Clientside buffering
-* InsertImage: Categories can now be added in view mode even if the page
-  is not created
-* InsertImage: Now uses BSApiFileBackendStore
-* InsertLink: Made java applet optional
-* Notifications: Fixed de-/activating of user setting
-* Notifications: Fixes/Improvements/Standardizations
-* PermissionManager: Bugfix for deleting unsaved templates
-* PermissionManager: LockMode & pm-settings.php Backup
-* PermissionManager: Prevent lockout of all users
-* PermissionManager: Quickfix for "pm-settings.php" amok
-* Readers: Fixed grid sorting
-* Readers: Fixed i18n
-* Review/ResponsibleEditors: Added missing keys for I18N
-* Review: Fix for special:review, now works again
-* Review: Fixed i18n message call
-* Review: Removed misplaced return in foreach
-* SaferEdit: Deactivated by default
-* SaferEdit: Changed event binding to properly work if submit button is clicked
-* SaferEdit: Removed unsafed work dialogue
-* SaferEdit: Small fix, now checks for unsaved changes in ajax ping
-* Shoutbox: SECURITY Fixed XSS vulnerability in Shoutbox - This was also
-  released in BlueSpice 2.23.1.1
-* Shoutbox: Small changes for shoutbox mentions
-* SmartList: Added page properties
-* SmartList: Allow variables/parserfunctions as args
-* SmartList: Fixed issue with unescaped revision comment
-* SmartList: Fixed issue with whitspace on category filter
-* SmartList: Fixed whitespace error in toplist
-* StateBar: Fix for jumping to the top of the page on click
-* TopBarMenu: Small change for hook result
-* TopMenuBarCustomizer: Added anchor ids to output + fixes/improvements
-* UEModulePDF/PDFTemplate: Headings clear float by default
-* UEModulePDF: Added PHP 5.6 compatibility
-* UEModulePDF: Fix for templates, backend and upload
-* UEModulePDF: Fixed 'landscape' format
-* UEModulePDF: Fixed hook parameters
-* UEModulePDF: Fixed resource path resolving on win
-* UEModulePDF: Improved styling and layout
-* UEModulePDF: Support for target name in upload
-* UEModulePDF: Fix for page-break issues in PDF
-* UEModulePDF: Fixed bug with tables on first page
-* UserSidebar: Hide settings from admin settings for WidgetBar and UserSidebar
-* VisualEditor: Added support for various MS Word stylings
-* VisualEditor: Changed config generation
-* VisualEditor: Fix for line break in p tag
-* VisualEditor: Fixed config I18N
-* VisualEditor: Fixed image crispness on resize
-* VisualEditor: Fixed internal link check
-* VisualEditor: Erroneously interwikilinks existence check
-* VisualEditor: Fix for umlaut problem
-* VisualEditor: Now uses newline after blockquote
-* WhoIsOnline: Fixed non-object issue
-* WikiAdmin: Fixed markup
-* WikiAdmin: New hook for adding admin menu items
-* WikiAdmin: Special pages anchor tag was not a list element
-
-=== BlueSpice Skin ===
-* Added "scroll to top" link
-* Added dependency to 'ext.bluspice' RL module
-* Added missing dependency
-* Build: Configure banana-checker and jsonlint
-* Changes styling for atom icon to be displayed correctly in left navigation
-* Compatibility to WMF VisualEditor
-* End float after li
-* Fix for end of li, next lines will break
-* Fix for flexiskin display
-* Fix for jumping to the top of the page on click
-* Fix for minor overlapping bug
-* Fixed LESS variable
-* Fixed title tooltip for watch content action
-* H5 format with 110% fontsize added in css/less
-* Icons: Added hover state for sidebar icons
-* Moved IcoMoon icon set to BlueSpiceFoundation
-* Removed LESS include path
-* Skin JavaScript components are loaded earlier
-
-=== BlueSpice Distribution ===
-* CategoryTree: Updated version of Category Tree
-* DistributionConnector: Change to reinclude mobile.css
-* DistributionConnector: Changes for domain switch
-* DistributionConnector: Change to display domain selection for ldap
-  authentication + possibility to display additional links in MobileFrontend
-* DistributionConnector: Fix for bs navigation image parameter, not supported
-  in mobile
-* Echo: Updated to REL1_25
-* EchoConnector: Integrate BlueSpice-Notifications with Echo extension
-* EmbedVideo: Added to distribution
-* ImageMapEdit: (Quick-)Fixed internationalisation
-* ImageMapEdit: Added to distribution
-* ImageMapEdit: Now using ResourceLoader to load ImageMapEdit script
-* LdapAuthenticationConnector: Added Connector for LdapAuthentication
-* LdapAuthenticationConnector: Changed logout button to change user button
-* MobileFrontend: Change for nan after upload
-* NSFileRepo: Fix for invalid file upload
-* WikiCategoryTag: Added to distribution
+* DynamicPageList: Update to DPL version 3
+* Echo: Fixed paths that got broken by our 'Distribution' folder
+* EchoConnector: Add processing of unknown params in processParams on
+  BSNotifications::notify call
+* EchoConnector: BsNotificationsFormatter is easier extensible. See
+  https://gerrit.wikimedia.org/r/#/c/279089/
+* EchoConnector: Fixed access to event extra params
+* EchoConnector: Fixed error with diff param
+* EchoConnector: Implemented default behavior for 'affected-users' and
+  'affected-groups' extra data of an Echo event
+* ImageMapEdit: Added to template file
+* LdapAuthentication: Updated version (Bug fixes)
+* LdapAuthenticationConnector: Removed unimplemented methods
+* LdapAuthenticationConnector: completely hide domain selection when there is
+  only one domain
+* LdapAuthenticationConnector: fixed RenameMergeUser
+* Lockdown: updated from Gerrit master
+* UserMerge: Added extension
+* UserMergeConnector: Fixes
 
 ===Compatibility===
-* MediaWiki 1.22 - 1.24
+* MediaWiki 1.23 - 1.27
 * PHP 5.4 or later.
 * MySQL 5.0 or later
 
@@ -386,17 +255,32 @@ BlueSpice 2.23.2 is a minor and maintenance release.
 * Karl Skodnik
 
 ====Contributors====
+* Aaron Schulz
+* Albert221
+* Antoine Musso
 * Aude
+* Brad Jorsch
 * Chad Horohoe
+* Demon
+* Florian
+* Florianschmidtwelzow
+* Frederic Mohr
+* Gergő Tisza
+* Justin Du
+* Legoktm
+* MaxSem
+* Ori Livneh
+* Paladox
 * Raimond Spekking
+* Reedy
 * Siebrand Mazeland
-* Yuki Shira
 * TGC
 * Umherirrender
-* Frederic Mohr
+* Yuki Shira
 
 ====Translation====
 BlueSpice is translated at translatewiki.net. Many, many thanks for your contributions!
+Special thanks go out to Raimond Spekking and Siebrand Mazeland for all the i18n review.
 
 ===Standing on the shoulders of giants===
 We would like to thank all the people around MediaWiki. You've created a wonderful piece of software. Thanks a lot!
