@@ -5,5 +5,6 @@
 		]
 	},
 	"bs-exception-view-heading": "Notika kļūda",
-	"bs-exception-view-text": "Apstrādājot jūsu pieprasījumu, radās šāda kļūda:"
+	"bs-exception-view-text": "Apstrādājot jūsu pieprasījumu, radās šāda kļūda:",
+	"bs-validator-error-title-does-not-exist": "Lapa nepastāv: $1"
 }
