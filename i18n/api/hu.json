@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wolf Rex"
+		]
+	},
+	"apihelp-bs-store-param-limit": "Megjelenítendő találatok száma",
+	"bs-wikipage-tasks-error-categories-not-valid": "Érvénytelen {{PLURAL:$2|kategória|kategóriák}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Kategóriák sikeresen beállítva."
+}
