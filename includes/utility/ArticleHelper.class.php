@@ -160,6 +160,9 @@ class BsArticleHelper {
 	 */
 	public function getTitleFromRedirectRecurse() {
 		$oWikiPage = WikiPage::newFromID( $this->oTitle->getArticleID() );
+		if( !$oWikiPage ) {
+			return null;
+		}
 		return $oWikiPage->getRedirectTarget();
 	}
 
