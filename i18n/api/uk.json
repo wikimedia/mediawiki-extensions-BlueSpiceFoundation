@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Piramidion",
-			"Alex Khimich"
+			"Alex Khimich",
+			"Ата"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Перелічує всі файли з файлового backend'у. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
@@ -34,5 +35,6 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Ви не маєте дозволу на редагування сторінки «$1».",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Недійсна категорія|Недійсні категорії}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Категорії успішно встановлено.",
-	"apihelp-bs-wikipage-store-description": "Перелічує всі сторінки у вікі. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store."
+	"apihelp-bs-wikipage-store-description": "Перелічує всі сторінки у вікі. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
+	"apihelp-bs-ping-tasks-description": "Пінгувати завдання, що забезпечує безперервний обмін даними"
 }
