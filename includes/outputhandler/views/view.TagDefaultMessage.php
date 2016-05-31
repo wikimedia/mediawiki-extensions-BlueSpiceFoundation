@@ -3,7 +3,7 @@
  * This file is part of blue spice for MediaWiki.
  *
  * @abstract
- * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Markus Glaser
  * @version 0.1.0 alpha
  *

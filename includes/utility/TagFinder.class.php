@@ -2,7 +2,7 @@
 /**
  * This class contains helpful methods to find and process tags within a text (string).
  *
- * @copyright Copyright (c) 2013, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Thomas Lorenz, Robert Vogel
  * @version 0.2.0 beta
 

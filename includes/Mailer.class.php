@@ -3,7 +3,7 @@
  * DEPRECATED!
  * This file is part of BlueSpice for MediaWiki.
  *
- * @copyright Copyright (c) 2012, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Sebastian Ulbricht, Robert Vogel
  * @version 1.1.0
  *

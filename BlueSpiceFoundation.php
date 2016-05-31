@@ -5,7 +5,7 @@
  * Description: Adds functionality for business needs
  * Authors: Markus Glaser
  *
- * Copyright (C) 2013 Hallo Welt! – Medienwerkstatt GmbH, All rights reserved.
+ * Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ $wgBlueSpiceExtInfo = array(
 	'url' => 'http://bluespice.com',
 	'desc' => 'Makes MediaWiki enterprise ready.',
 	'author' => array(
-		'[http://www.hallowelt.com Hallo Welt! Medienwerkstatt GmbH]',
+		'[http://www.hallowelt.com Hallo Welt! GmbH]',
 	)
 );
 

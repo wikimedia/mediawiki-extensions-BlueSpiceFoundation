@@ -2,7 +2,7 @@
 /**
  * Hallo Welt! MediaWiki Distribution
  * @package BlueSpice
- * @copyright Copyright 2011 by Hallo Welt! Medienwerkstatt GmbH
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH
  * @author Marc Reymann
  * @version $Id: $
  *
@@ -63,7 +63,7 @@ if (!file_exists("LocalSettings.php")) exit("This file must be placed where your
 <body onload="document.getElementById('waitbox').style.display='none';">
 <div id="waitbox">Now checking your system...<br/>This may take a few seconds.</div>
 <?php flush(); ?>
-<div id="infobox">BlueSpice Installation Checker<br/>Hallo Welt! Medienwerkstatt GmbH</div>
+<div id="infobox">BlueSpice Installation Checker<br/>Hallo Welt! GmbH</div>
 <div id="wrapper">
 <?php
 $d = DIRECTORY_SEPARATOR;

@@ -2,7 +2,7 @@
 /**
  * This file is part of blue spice for MediaWiki.
  *
- * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Sebastian Ulbricht <sebastian.ulbricht@dragon-network.hk>
  * @version 0.1.0 beta
  *

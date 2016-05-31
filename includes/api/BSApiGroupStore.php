@@ -21,7 +21,7 @@
  *
  * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    Bluespice_Foundation
- * @copyright  Copyright (C) 2015 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  *
  * Example request parameters of an ExtJS store

@@ -4,7 +4,7 @@
  *
  * Call BsValidator::isValid() to validate several types of user input (Email, username, URLs, ...)
  * Can be extended with plugin-classes of name: "BsValidator{$type}Plugin" that implement interface BsValidatorPlugin
- * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Mathias Scheer
  * @version 0.1.0 beta
  */

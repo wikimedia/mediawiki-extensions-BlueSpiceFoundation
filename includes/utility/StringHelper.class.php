@@ -2,7 +2,7 @@
 /**
  * This class contains helpful methods for processing strings.
  *
- * @copyright Copyright (c) 2007-2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Robert Vogel
  * @version 0.1.0 beta
  *

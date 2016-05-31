@@ -16,7 +16,7 @@
  *       in the form of ###name_of_item### are replaced with item's output.
  *
  * @abstract
- * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Markus Glaser, Sebastian Ulbricht
  * @version 0.1.0 alpha
  *

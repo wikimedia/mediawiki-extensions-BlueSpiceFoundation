@@ -2,7 +2,7 @@
 /**
  * This class is the basetype for Exceptions within the BlueSpice framework.
  *
- * @copyright Copyright (c) 2016, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Robert Vogel
  */
 

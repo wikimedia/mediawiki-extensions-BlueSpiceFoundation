@@ -2,7 +2,7 @@
 /**
  * This class contains methods working with mediawiki's cache .
  *
- * @copyright Copyright (c) 2007-2014, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Stefan Widmann <widmann@hallowelt.biz>
  * @version 0.1.0 beta
  */
