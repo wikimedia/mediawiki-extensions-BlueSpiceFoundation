@@ -29,7 +29,7 @@
  */
 $wgBlueSpiceExtInfo = array(
 	'name' => 'BlueSpice',
-	'version' => '2.23.3-beta',
+	'version' => '2.23.3',
 	'status' => 'stable',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
 	'url' => 'http://bluespice.com',
