@@ -4,7 +4,7 @@
  * This file is part of blue spice for MediaWiki.
  *
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
- * @author Stefan Widmann <widmann@hallowelt.biz>
+ * @author Stefan Widmann <widmann@hallowelt.com>
  * @version 0.1.0 beta
   */
 /**

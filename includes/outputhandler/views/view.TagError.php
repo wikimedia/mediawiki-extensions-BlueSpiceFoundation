@@ -4,7 +4,7 @@
  *
  * Part of BlueSpice for MediaWiki
  *
- * @author     Markus Glaser <glaser@hallowelt.biz>, Sebastian Ulbricht
+ * @author     Markus Glaser <glaser@hallowelt.com>, Sebastian Ulbricht
 
  * @package    BlueSpice_Core
  * @subpackage Views

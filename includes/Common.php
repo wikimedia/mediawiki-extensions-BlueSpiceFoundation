@@ -20,7 +20,7 @@
  * For further information visit http://www.blue-spice.org
  *
  * @author     Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
- * @author     Robert Vogel <vogel@hallowelt.biz>
+ * @author     Robert Vogel <vogel@hallowelt.com>
  * @version    1.1.0
 
  * @package    Bluespice_Core
