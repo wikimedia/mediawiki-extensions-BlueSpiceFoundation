@@ -17,7 +17,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  * This file is part of BlueSpice for MediaWiki
- * For further information visit http://www.blue-spice.org
+ * For further information visit http://bluespice.com
  *
  * @author     Robert Vogel <vogel@hallowelt.com>
  * @author     Patric Wirth <wirth@hallowelt.com>
