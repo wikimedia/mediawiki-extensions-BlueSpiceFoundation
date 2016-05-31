@@ -24,8 +24,8 @@
  * For further information visit http://www.blue-spice.org
  *
  * @author     Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
- * @author     Robert Vogel <vogel@hallowelt.biz>
- * @author     Stephan Muggli <muggli@hallowelt.biz>
+ * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Stephan Muggli <muggli@hallowelt.com>
  * @package    Bluespice_Core
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later

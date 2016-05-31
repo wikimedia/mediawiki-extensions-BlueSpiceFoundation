@@ -4,7 +4,7 @@
  *
  * Part of BlueSpice for MediaWiki
  *
- * @author     Marc Reymann <reymann@hallowelt.biz>
+ * @author     Marc Reymann <reymann@hallowelt.com>
  * @version    $Id$
  * @package    BlueSpice_Diagnostics
  * @subpackage Diagnostics

@@ -2,7 +2,7 @@
 
 /**
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH
- * @author Robert Vogel <vogel@hallowelt.biz>
+ * @author Robert Vogel <vogel@hallowelt.com>
  */
 
 require_once( 'BSMaintenance.php' );

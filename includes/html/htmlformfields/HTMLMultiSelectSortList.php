@@ -2,7 +2,7 @@
 /**
  * Description of HTMLMultiSelectSortList
  *
- * @author Patric Wirth <wirth@hallowelt.biz>
+ * @author Patric Wirth <wirth@hallowelt.com>
  */
 class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 

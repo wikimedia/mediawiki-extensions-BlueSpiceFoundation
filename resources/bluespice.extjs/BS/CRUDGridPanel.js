@@ -3,8 +3,8 @@
  *
  * Part of BlueSpice for MediaWiki
  *
- * @author     Robert Vogel <vogel@hallowelt.biz>
- * @author     Stephan Muggli <muggli@hallowelt.biz>
+ * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Stephan Muggli <muggli@hallowelt.com>
  * @package    Bluespice_Extensions
  * @subpackage Foundation
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.

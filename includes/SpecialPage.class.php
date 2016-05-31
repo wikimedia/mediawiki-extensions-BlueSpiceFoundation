@@ -4,7 +4,7 @@
  *
  * Part of BlueSpice for MediaWiki
  *
- * @author     Stephan Muggli <muggli@hallowelt.biz>
+ * @author     Stephan Muggli <muggli@hallowelt.com>
  * @package    BlueSpice_Extensions
  * @subpackage BlueSpice
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
