@@ -37,6 +37,7 @@ $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgApiFrameOptions = 'SAMEORIGIN';
 $wgRSSUrlWhitelist = array(
 	"http://blog.blue-spice.org/feed/",
+	"http://blog.bluespice.com/feed/",
 	"http://blog.hallowelt.com/feed/",
 );
 $wgExternalLinkTarget = '_blank';
