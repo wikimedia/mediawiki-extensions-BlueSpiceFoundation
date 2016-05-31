@@ -32,7 +32,7 @@ class BsCoreHooks {
 	 */
 	public static function onSoftwareInfo( &$aSoftware ) {
 		global $wgBlueSpiceExtInfo;
-		$aSoftware['[http://www.blue-spice.org/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
+		$aSoftware['[http://bluespice.com/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
 		return true;
 	}
 
