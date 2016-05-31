@@ -1,15 +1,203 @@
-BlueSpice for MediaWiki
-Copyright 2015 by Hallo Welt! - Medienwerkstatt GmbH
+BlueSpice
+Copyright 2016 by Hallo Welt! GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
+
+== BlueSpice 2.23.3 ==
+
+BlueSpice 2.23.3 is a minor and maintenance release.
+This is a stable release.
+
+=== Notable new features ===
+* BlueSpice API: There is now a standardized API for many BlueSpice actions.
+* Compatibility: BlueSpice can now be used with MediaWiki 1.27.
+* ContextMenu: The extension is now enabled by default.
+* Dashboards: There is a wiki page portlet, which allows you to use any wiki
+  page as a dashboard item.
+* ExtendedSearch: Introduces facet operators, which indicated whether multiple
+  selections in a facet should be combined using AND or OR logic.
+* ExtendedSearch: It is possible to open articles in the autocomplete list in
+  new windows or tabs.
+* Flexiskin: It is now possible to disable the background image.
+* GroupManager: Raised group name character limit to 255 (was 16).
+* InsertMagic: Tag descriptions are now much more descriptive.
+* PermissionManager: Add hint flyout for every right.
+* Upload: XML and SVG files can now be uploaded by default.
+* UserMerge: Added extension to Distribution.
+* UserSidebar: There is now a "global actions" navigation tab for every user.
+* VisualEditor: Set default style for table to contenttable. This makes nicer
+  tables.
+
+=== BlueSpice Foundation ===
+* General: ArticleHelper: Fixed fatal getRedirectTarget call on null
+* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
+  company name.
+
+=== BlueSpice Extensions ===
+* ArticleInfo: Stop using deprecated Skin::link
+* Checklist: Fixed error when inserting checklists several times
+* Checklist: Improved tag documentation
+* ContextMenu: Added dependencies to fix runtime errors
+* CountThings: Improved tag documentation
+* Dashboards: Fixed Notice
+* Dashboards: Fixed wikipage portlet error messages
+* Flexiskin: Add some hook points
+* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
+  company name.
+* InsertCategory: Removed wrong user information
+* InsertLink: use user config var instead of browser settings to trigger java
+  applet for file links
+* InsertMagic: Added examples to description and reference implementation
+* InsertMagic: Improve example code line wrapping
+* PageAccess: Improved tag documentation
+* PageTemplates: Remove loadmask workaround
+* PagesVisited: Improved tag documentation
+* ResponsibleEditors: Remove loadmask workaround
+* Review: Added dependencies to fix runtime errors
+* SmartList: Added exception for getToplist for mw > 1.24
+* Smartlist: Improved tag documentation
+* UniversalExport: Improved tag documentation
+* WantedArticle: Improved tag documentation
+* Watchlist: Improved tag documentation
+* WhoIsOnline: Improved tag documentation
+
+=== BlueSpice Skin ===
+* Fix for different line height since mw 1.27
+* Development: Upgrade jsonlint to report file/line
+* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
+  company name.
+
+=== BlueSpice Distribution ===
+* General: Improved tag documentation
+* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
+  company name.
+* RSS: Updated RSS to 1.26 - works for 1.23 - 1.27
+
+=== BlueSpice Pro ===
+* Bookmaker: ExtJS/RL runtime issues
+* Bookmaker: New global navigation implementation
+* Bookmaker: Color book icon when inside a book
+* Bookmaker: Switch to book navigation when inside a book
+* Bookmaker: Added special page to global actions widget
+* Bookmaker: used mw.config.get( 'wgScriptPath') instead of global wgScriptPath
+* Bookmaker: Fixed link for module pdf in UI manager
+* Bookmaker: Improved tag descriptions
+* ExportTables: Added to BlueSpice pro. This allows to export tables as xls
+  file
+* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
+  company name.
+* GuidedEditing: ExtJS/RL fixed runtime issues
+* GuidedEditing: Modified insertCategory button id
+* PasteImage: Intermediate save, base64 image in var, base64 img replaced with
+  replacebin, next fix dialog and replace replacebin with uploaded version
+* PasteImage: Re-implementation of ie11/edge, ff und chrome version, pure
+  javascript, no java used anymore
+* PasteImage: Change response header type for ie11 compatability
+* PasteImage: Add ie11 workaround, load xml instead of json
+* PasteImage: Test on ignore filetype parsing
+* PasteImage: Remove bsae64 preview, while most browsers will hang on base64
+  image show
+* PasteImage: Prevent default action only on images
+* PasteImage: Remove java files, replaced by native tinymce paste functions
+* PasteImage: Fix: Image Description not set
+* ProDistribution: Added extension Drawio
+* ProDistribution: Added extension Duplicator
+* ProDistribution: Added extension HeaderTabs
+* ProDistribution: Added extension Math
+* ProDistribution: Added extension MultimediaViewer
+* ProDistribution: Added extension ReplaceText
+* ProDistribution: Added extension Scribunto
+* ProDistribution: Added extension Widgets
+* RatedComments: BS2.23.3 Create / Update / Delete Works
+* RatedComments: Changed use of deprecated jQuery.live to jQuery.on to be
+  compatible with current MW Versions
+* RatedComments: Fixed Fatal
+* RatedComments: Fixed redirect context
+* RatedComments: Got rid of some old globals (mw 1.27 copatibility)
+* RatedComments: MW1.27 compatibility
+* RatedComments: RL: Added dependencies
+* RatedComments: Replaced deprecated wfMsg with wfMessage
+* RatedComments: Restored compatiblilty with rating api
+* RatedComments: Use mw.config.get( 'wgScriptPath') instead of global
+  wgScriptPath
+* Rating: Add more context related stuff - context is not supported by default
+* Rating: Add special page to global actions widget
+* Rating: Add use of token
+* Rating: Added dependencies
+* Rating: Enabled rating in context
+* Rating: Fix rating icon path
+* Rating: Fix typo
+* Rating: Fixed Fatal
+* Rating: Fixed context
+* Rating: Fixed redirect context
+* Rating: Fixes for api
+* Rating: MW1.27 compatibility
+* Rating: Use mw.config.get( 'wgScriptPath') instead of global wgScriptPath
+* Rating: Use of Rating tasks api instead of deprecated ajaxExport
+* Reminder: Added API classes for Expiry
+* Reminder: Added API description and fixed typo
+* Reminder: Added comment for updating from BSP 2.23.2
+* Reminder: Added gitignore for local settings file
+* Reminder: Added special page to global actions widget
+* Reminder: Added table prefixes
+* Reminder: All Reminder ajax function now use API calls
+* Reminder: Breaking change: new database schema for Reminder and Expiry
+* Reminder: Changed default sorting
+* Reminder: Changed menu entry in personal tools to match the other entries
+* Reminder: Correctly adding rem_comment
+* Reminder: Expiry is now a standalone extension
+* Reminder: Expiry now uses API for deletion
+* Reminder: Expiry: adjusted callback function
+* Reminder: Expiry: reworked i18n messages
+* Reminder: ExtJS/RL runtime issues
+* Reminder: Fixed paths after package name change
+* Reminder: Moved Reminder and Expiry out of BSTeamwork and now in BSReminder
+* Reminder: Reminder: Added filter for title and date
+* Reminder: Reminder: Adopted afterDelete to new hook signature
+* Reminder: Reminder: Created ApiReminderStore to serve grid data
+* Reminder: Reminder: Enabled multiple deletion
+* Reminder: Reminder: delete user reminder on user deletion
+* Reminder: Removed Expiry from Reminder API
+* Reminder: Removed dependencies on Expiry
+* Semantic: Added filtering to NamespaceManager integration
+* Semantic: Added use of format table instead of datatable when pdf export
+* Semantic: Deactivated help boxes in edit mode
+* Semantic: ExtJS/RL runtime issues
+* Semantic: Fixed removal of qtips
+* Semantic: Removed all qtip divs (semantic bootstrap popups for tooltips)
+* Semantic: Removed bswiki editor button
+* Semantic: Require smw to be in /extension base dir, copied from _base
+* Semantic: Update semanticforms and semanticformsinputs to master branch for
+  mw1.27 compatability
+* Semantic: Use bssemantic delivered semantic extensions
+* ServiceCenter: Added TagSearch/vendor
+* ServiceCenter: Added filtering to NamespaceManager integration
+* ServiceCenter: Added search string escaping
+* ServiceCenter: Fixed hardcoded core
+* ServiceCenter: Removed debug statement
+* ServiceCenter: TagSearch: Improved tag documentation
+* ServiceCenter: Used method POST and action fullUrl cause jquery could not
+  handle the form action for some reason
+* ServiceCenter: Used mw.config.get( 'wgScriptPath') instead of global
+  wgScriptPath
+* Teamwork: Added filtering to NamespaceManager integration
+* Teamwork: Added stylings for pdf export
+* Teamwork: Expiry and Reminder are now in the BlueSpiceReminder Repo
+* TagCloud: Added to BlueSpice pro. This creates a tag cloud.
+* VisualDiff: BugFix: PDF export only working correctly by using the more menu
+* VisualDiff: ExtJS/RL runtime issues
+* VisualDiff: Fixed fatal in mw > 1.23 | Config is needed
+* VisualDiff: Forgot to use getCss() on parser
+* VisualDiff: Modified css for pdf export
+* VisualDiff: More mw 1.27 compatibility changes ResourceLoader -.-
+* WikiExplorer: Added special page to global actions widget
+* WikiExplorer: ExtJS/RL runtime issues
+
 
 == BlueSpice 2.23.3-beta ==
 
 BlueSpice 2.23.3-beta is a minor and maintenance release.
 This is a beta release and not recommende for use in production
-
-=== Notable new features ===
-
 
 === BlueSpice Foundation ===
 * API: Added a generic group store API backend
@@ -253,6 +441,10 @@ This is a beta release and not recommende for use in production
 * Angelika Müller
 * Jan Göttlich
 * Karl Skodnik
+* Astrid Scheffler
+* Sabine Gürtler
+* Thomas Schnakenberg
+* Sabrina Dürr
 
 ====Contributors====
 * Aaron Schulz
@@ -280,7 +472,7 @@ This is a beta release and not recommende for use in production
 
 ====Translation====
 BlueSpice is translated at translatewiki.net. Many, many thanks for your contributions!
-Special thanks go out to Raimond Spekking and Siebrand Mazeland for all the i18n review.
+Special thanks go out to Raimond Spekking and Siebrand Mazeland for all the i18n reviews.
 
 ===Standing on the shoulders of giants===
 We would like to thank all the people around MediaWiki. You've created a wonderful piece of software. Thanks a lot!
