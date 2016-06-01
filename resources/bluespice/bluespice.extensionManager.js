@@ -16,6 +16,6 @@
 
 	bs.extensionManager = new ExtensionManager();
 	bs.em = bs.extensionManager;
-	bs.em.paths.set(mw.config.get('bsExtensionManagerAssetsPaths'));
+	bs.em.paths.set( mw.config.get( 'bsExtensionManagerAssetsPaths' ) );
 
 }(  mediaWiki, blueSpice, jQuery ) );

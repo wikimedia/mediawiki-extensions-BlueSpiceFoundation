@@ -2,7 +2,7 @@
 /**
  * This file is part of blue spice for MediaWiki.
  *
- * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Sebastian Ulbricht <sebastian.ulbricht@dragon-network.hk>
  * @version 0.1.0 beta
  *
@@ -60,12 +60,12 @@ class LCStore_BSDB implements LCStore {
 		}
 		$this->dbw = wfGetDB( DB_MASTER );
 		try {
-			$this->dbw->begin();
+			$this->dbw->begin( __METHOD__ );
 			$this->dbw->delete( 'l10n_cache', array( 'lc_lang' => $code ), __METHOD__ );
 		} catch ( DBQueryError $e ) {
 			if ( $this->dbw->wasReadOnlyError() ) {
 				$this->readOnly = true;
-				$this->dbw->rollback();
+				$this->dbw->rollback( __METHOD__ );
 				if ( is_callable( array( $this->dbw, 'ignoreErrors' ) ) ) {
 					$this->dbw->ignoreErrors( false );
 				}
@@ -85,7 +85,7 @@ class LCStore_BSDB implements LCStore {
 		if ( $this->batch ) {
 			$this->dbw->insert( 'l10n_cache', $this->batch, __METHOD__ );
 		}
-		$this->dbw->commit();
+		$this->dbw->commit( __METHOD__ );
 		$this->currentLang = null;
 		$this->dbw = null;
 		$this->batch = array( );

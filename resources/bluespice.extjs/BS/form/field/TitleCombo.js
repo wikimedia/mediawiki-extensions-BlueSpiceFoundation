@@ -1,6 +1,6 @@
 Ext.define('BS.form.field.TitleCombo', {
 	extend: 'Ext.ux.form.field.GridPicker',
-	requires:[ 'BS.model.Title' ],
+	requires:[ 'BS.model.Title', 'BS.store.BSApi' ],
 
 	//This is necessary to make the ComboBox retrun a Model
 	//instance if input is less then 4 chars
@@ -53,16 +53,11 @@ Ext.define('BS.form.field.TitleCombo', {
 	},
 
 	makeStore: function() {
-		var store = new Ext.data.JsonStore({
+		var store = new BS.store.BSApi({
+			apiAction: 'bs-titlequery-store',
 			proxy: {
-				type: 'ajax',
-				url: bs.util.getCAIUrl('getTitleStoreData'),
-				reader: {
-					type: 'json',
-					root: 'payload'
-				},
 				extraParams: {
-					'rsargs[]': Ext.encode({
+					options: Ext.encode({
 						namespaces: bs.ns.filter.allBut( this.excludeIds ),
 						returnQuery: true
 					})

@@ -78,12 +78,12 @@ var_dump($newtitlepatterns);
 # The following part is copied from hw_massedit.php
 # ---------------------- snip ---------------------
 
-/* 
-This script is used to do mass edits on Mediawiki articles. Articles are selected via 
+/*
+This script is used to do mass edits on Mediawiki articles. Articles are selected via
 - namespace
 - content via exclusion or inclusion regex
 - title via regex
-( 
+(
   - category
 )
 Article text can be appended or replaced based on regular expressions.
@@ -115,14 +115,14 @@ $bot = true;
 $autoSummary = false;
 $noRC = true;
 
-//$text_exclude = array(	
-// 					'/\[\[Kategorie:Englisch\]\]/', 
+//$text_exclude = array(
+// 					'/\[\[Kategorie:Englisch\]\]/',
 //					'/\[\[Category:Translation\]\]/'
 //				 );
 //$text_include = array(
 //					'/test test/'
 //				);
-//$namespace_include = array( 10 );				 
+//$namespace_include = array( 10 );
 //$namespace_exclude = array( NS_IMAGE, NS_IMAGE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 //$title_include = array( '/Datev/', '/Hauptseite/' );
 //$title_include = array( '|NZ/.*?|' );
@@ -181,7 +181,7 @@ $qry_ns = '';
 $namespace = array();
 if (isset($namespace_include)) { $token = 'IN '; $namespace = $namespace_include; }
 if (isset($namespace_exclude)) { $token = 'NOT IN '; $namespace = $namespace_exclude; }
-if ($token) $qry_ns = 'page_namespace '.$token.' ("'.implode('","', $namespace).'")'; 
+if ($token) $qry_ns = 'page_namespace '.$token.' ("'.implode('","', $namespace).'")';
 
 $dbw =& wfGetDB( DB_MASTER );
 $res = $dbw->select('page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', array('order by' => 'page_title'));
@@ -195,34 +195,34 @@ $inarticlematches = 0;
 
 while ($row = mysql_fetch_array($res->result))
 {
-		
+
 	$cur_title = $row['page_title'];
 	$cur_title_ns = MWNamespace::getCanonicalName($row['page_namespace']);
-	$cur_title_ns = ($cur_title_ns) ? "$cur_title_ns:" : ""; 
+	$cur_title_ns = ($cur_title_ns) ? "$cur_title_ns:" : "";
 	print "$cur_title_ns$cur_title\n=======================================================\n";
 
 	// Title conditions
 	$title_conds = array();
 	if (isset($title_include)) { $title_conds = $title_include; $match = true; }
-	if (isset($title_exclude)) { $title_conds = $title_exclude; $match = false; }	
+	if (isset($title_exclude)) { $title_conds = $title_exclude; $match = false; }
 	$skip = true;
 	foreach ($title_conds as $cond)
 		if (preg_match($cond, $cur_title)==$match) $skip = false;
 	if ((isset($title_include) || isset($title_exclude)) && ($skip))
 	{
 		print "Skipped based on title exclude condition.\n";
-		continue;		
+		continue;
 	}
-	
+
 	// Check title for validity
-	$wgTitle = Title::makeTitle( $row['page_namespace'], $cur_title );
-	if ( !$wgTitle ) {
+	$title = Title::makeTitle( $row['page_namespace'], $cur_title );
+	if ( !$title ) {
 		print "Invalid title\n";
 		continue;
 	}
-	
+
 	// Fetch text
-	$article = new Article( $wgTitle );
+	$article = new Article( $title );
 	$article->fetchContent();
 	$text = $article->getContent() ;
 	if ($text == '') echo 'empty!';
@@ -241,14 +241,14 @@ while ($row = mysql_fetch_array($res->result))
 	}
 
 	// this part is for text modification only (append, prefix, delete, replace)
-	if (in_array($mode, array('append','prefix','delete','replace'))) 
+	if (in_array($mode, array('append','prefix','delete','replace')))
 	{
 		# Modify the text
 		$old_text = $text;
-		
-		if ($mode == 'append') 
+
+		if ($mode == 'append')
 			$text .= $append_text;
-		else if ($mode == 'prefix') 
+		else if ($mode == 'prefix')
 			$text = $prefix_text.$text;
 		else if ($mode == 'delete')
 		{
@@ -258,7 +258,7 @@ while ($row = mysql_fetch_array($res->result))
 		{
 			$text = preg_replace($replace_search, $replace_with, $text, -1, $repcount);
 		}
-		
+
 		if ($old_text == $text)
 		{
 			print "No modification neccessary.\n";
@@ -268,19 +268,19 @@ while ($row = mysql_fetch_array($res->result))
 		# Do the edit
 		print "Modifying $cur_title_ns$cur_title ... ($repcount matches) ";
 		$inarticlematches += $repcount;
-		
+
 		// Only testing
-		if ($testing) 
+		if ($testing)
 		{
 			print "testing.\n";
 			if ($verbose) print $text."\n--------------------------------------------------------------------------------\n\n";
 			continue;
 		}
-		
+
 		// Actual modification
 		$success = $article->doEdit( $text, $summary,
 			( $minor ? EDIT_MINOR : 0 ) |
-			( $bot ? EDIT_FORCE_BOT : 0 ) | 
+			( $bot ? EDIT_FORCE_BOT : 0 ) |
 			( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
 			( $noRC ? EDIT_SUPPRESS_RC : 0 ) );
 		if ( $success ) {
@@ -294,23 +294,23 @@ while ($row = mysql_fetch_array($res->result))
 	switch ($mode)
 	{
 		case 'move':
-			$ns = $wgTitle->getNamespace();
+			$ns = $title->getNamespace();
 			$new_title = preg_replace($move_from, $move_to, $cur_title);
 
 			if ($new_title == $cur_title) continue;
-		
+
 			echo "Moving title \"$cur_title\" to \"$new_title\" (NS:$ns): ";
 
 			// Only testing
-			if ($testing) 
+			if ($testing)
 			{
 				echo "testing\n";
 				continue;
 			}
-		
+
 			// Actual modification
 			$new_title_obj = Title::newFromText( $new_title );
-			$success = $wgTitle->moveTo( $new_title_obj, false, '', false );
+			$success = $title->moveTo( $new_title_obj, false, '', false );
 			echo $success ? "done\n" : "failed\n";
 			break;
 
@@ -356,18 +356,18 @@ foreach ($res as $row) {
 		if (!$testing) {
 			$newtitle = Title::newFromText($newtitletext, NS_CATEGORY);
 			$newarticle = new Article($newtitle);
-			$savestat = $newarticle->doEdit( $oldarticlecontent, $summary, 
+			$savestat = $newarticle->doEdit( $oldarticlecontent, $summary,
 					( $minor ? EDIT_MINOR : 0 ) |
-					( $bot ? EDIT_FORCE_BOT : 0 ) | 
+					( $bot ? EDIT_FORCE_BOT : 0 ) |
 					( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
 					( $noRC ? EDIT_SUPPRESS_RC : 0 ) );
 		        if ($savestat->isGood()) echo "moved successfully\n";
 			else echo "failed moving\n";
 			/*
 			echo "Creating redirect from $oldtitletext to $newtitletext : ";
-			$redirstat = $oldarticle->doEdit( "#REDIRECT [[:$newtitle]]", $summary, 
+			$redirstat = $oldarticle->doEdit( "#REDIRECT [[:$newtitle]]", $summary,
 					( $minor ? EDIT_MINOR : 0 ) |
-					( $bot ? EDIT_FORCE_BOT : 0 ) | 
+					( $bot ? EDIT_FORCE_BOT : 0 ) |
 					( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
 					( $noRC ? EDIT_SUPPRESS_RC : 0 ) );
 		        if ($redirstat->isGood()) echo "successful\n";

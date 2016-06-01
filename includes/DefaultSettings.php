@@ -37,6 +37,7 @@ $wgNamespacesWithSubpages[NS_MAIN] = true;
 $wgApiFrameOptions = 'SAMEORIGIN';
 $wgRSSUrlWhitelist = array(
 	"http://blog.blue-spice.org/feed/",
+	"http://blog.bluespice.com/feed/",
 	"http://blog.hallowelt.com/feed/",
 );
 $wgExternalLinkTarget = '_blank';
@@ -45,7 +46,6 @@ $wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the s
 $wgUrlProtocols[] = "file://";
 $wgVerifyMimeType = false;
 $wgAllowJavaUploads = true;
-$wgThumbnailScriptPath = "{$wgScriptPath}/thumb{$wgScriptExtension}"; //Enable on demand thumb rendering
 
 $bsgPermissionConfig = array(
 	'read' => array(
@@ -180,4 +180,41 @@ $bsgPermissionConfig = array(
  */
 $bsgSystemNamespaces = array(
 	//1599 => 'NS_COOL_STUFF'
+);
+
+/**
+ * PHP config files registered here will be included on "SetupAfterCache"
+ * time. Access to all global config variables need to be in the form of
+ * $GLOBALS['wg...'] as the inclusion will be done in callback function scope
+ * rather than in global scope.
+ */
+$bsgConfigFiles = array(
+	//'extensionname' => 'path/to/file.php'
+
+	//Pre-registering for BC; Should be removed in future releases
+	'GroupManager' => BSCONFIGDIR . DS . 'gm-settings.php',
+	'NamespaceManager' => BSCONFIGDIR . DS . 'nm-settings.php',
+	'PermissionManager' => BSCONFIGDIR . DS . 'pm-settings.php',
+);
+
+
+$wgResourceLoaderLESSVars += array(
+	'bs-color-primary' => '#3e5389', //blue
+	'bs-color-secondary' => '#ffae00', //orange
+	'bs-color-tertiary' => '#b73a3a', //red
+	'bs-color-neutral' => '#929292', //grey
+	'bs-color-neutral2' => '#ABABAB', //lighten(@bs-color-neutral1, 10%); - LESS / RL issue
+	'bs-color-neutral3' => '#C4C4C4', //lighten(@bs-color-neutral1, 20%)',
+	'bs-color-neutral4' => '#787878', //darken(@bs-color-neutral1, 10%)'
+
+	//From http://tools.wmflabs.org/styleguide/desktop/section-2.html
+	'bs-color-progressive' => '#347bff',
+	'bs-color-contructive' => '#00af89',
+	'bs-color-destructive' => '#d11d13',
+
+	//Message boxes
+	'bs-color-success' => '#dff0d8',
+	'bs-color-warning' => '#fcf8e3',
+	'bs-color-error' => '#f2dede',
+	'bs-color-info' => '#d9edf7',
 );

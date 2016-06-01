@@ -35,6 +35,8 @@
 	"bs-extjs-filter-starts-with": "fänkt u mat",
 	"bs-extjs-filter-greater-than": "méi grouss wéi",
 	"bs-extjs-filter-less-than": "méi kleng wéi",
+	"bs-extjs-filter-bool-yes": "jo",
+	"bs-extjs-filter-bool-no": "neen",
 	"bs-extjs-title-warning": "Warnung",
 	"bs-extjs-categoryboxselect-emptytext": "Eng Kategorie derbäisetzen"
 }

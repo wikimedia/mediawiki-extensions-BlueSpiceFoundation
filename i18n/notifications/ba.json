@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sagan"
+		]
+	},
+	"bs-notifications-addacount": "$1 ҡатнашыусы раҫланды",
+	"bs-notifications-email-addaccount-subject": " $2ҡатнашыусы {{GENDER:$1|раҫланды}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|Ҡатнашыусы $3 раҫланды}}.\n\n$1 һылтанмаһы буйынса күсеп {{GENDER:$2|уны}} ғарай алаһығыҙ :",
+	"bs-notifications-edit": " [[:$1]] бите үҙгәртелде",
+	"bs-notifications-email-edit-subject": " $1 бите {{GENDER:$2|мөхәррирләнде}} $3",
+	"bs-notifications-email-edit-body": " «$1» битен {{GENDER:$2|ҡатнашыусы}} төҙәтте $6.\n\nКомментарий:\n$3\nБитте ҡарау өсөн һылтанма буйынса күсегеҙ:\n$4\n\nҮҙгәртеүҙәрҙе ҡарау өсөн һылтанма буйынса күсегеҙ:\n$5",
+	"bs-notifications-create": "[[:$1]] бите булдырылды",
+	"bs-notifications-email-create-subject": " $1 бите {{GENDER:$2|булдырылды}} $3",
+	"bs-notifications-email-create-body": "Страница «$1» была {{GENDER:$2|создана}} $6.\n\nКомментарий:\n$4$3",
+	"bs-notifications-delete": " [[:$1]] бите юйылды",
+	"bs-notifications-email-delete-subject": "$1 битен {{GENDER:$2|ҡатнашыусы}} юйҙы $3",
+	"bs-notifications-email-delete-body": "«$4» бите {{GENDER:$2|ҡатнашыусы}} юйҙы $5.\n\nСәбәбе:\n$3",
+	"bs-notifications-move": " [[:$1]] бите күсерелде",
+	"bs-notifications-email-move-subject": "$1 бите {{GENDER:$2|күсерелде}} $4",
+	"bs-notifications-email-move-body": "«$1» битен $3 {{GENDER:$2|ҡатнашыусы}} күсерҙе $5. Битте ҡарау өсөн һылтанма буйынса күсегеҙ:\n$4"
+}

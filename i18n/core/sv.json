@@ -11,8 +11,6 @@
 	"bs-ns_main": "(Sidor)",
 	"bs-ns_all": "(alla)",
 	"bs-tab_navigation": "Navigering",
-	"bs-tab_focus": "Fokus",
-	"bs-tab_admin": "Administratör",
 	"bs-userbar_loginswitch_logout": "Logga ut",
 	"bs-userbar_loginswitch_login": "Logga in",
 	"bs-extended-search-tooltip-fulltext": "Fulltextsökning",
@@ -76,5 +74,7 @@
 	"bs-pref-anonuserimage": "Avatar för anonym användare:",
 	"bs-pref-deleteduserimage": "Avatar för raderad användare:",
 	"bs-pref-bspinginterval": "Ping-intervall (i sekunder):",
-	"bs-pref-testmode": "Aktivera testläge"
+	"bs-pref-testmode": "Aktivera testläge",
+	"bs-parser-error-invalid-namespace": "Ogiltig namnrymd: $1",
+	"bs-validator-error-title-does-not-exist": "Sidan finns inte: $1"
 }

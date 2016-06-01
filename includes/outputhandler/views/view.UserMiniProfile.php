@@ -29,15 +29,15 @@ class ViewUserMiniProfile extends ViewBaseElement {
 
 		$aOut = array();
 		$aOut[] = '<div class="'.  implode( ' ', $aClasses ).'" title="'.$this->mOptions['userdisplayname'].'">';
-		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' :' <a class="bs-block" href="'.$this->mOptions['linktargethref'].'">';
-		$aOut[] = '  <img alt="'.$this->mOptions['userdisplayname'].'"';
-		$aOut[] = '       src="'.$this->mOptions['userimagesrc'].'"';
-		$aOut[] = '       width="'.$this->mOptions['width'].'"';
+		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' :'<a class="bs-block" href="'.$this->mOptions['linktargethref'].'">';
+		$aOut[] =   '<img alt="'.$this->mOptions['userdisplayname'].'"';
+		$aOut[] =        'src="'.$this->mOptions['userimagesrc'].'"';
+		$aOut[] =        'width="'.$this->mOptions['width'].'"';
 		if ( BsConfig::get( 'MW::MiniProfileEnforceHeight' ) ) {
-			$aOut[] = '       height="'.$this->mOptions['height'].'"';
+			$aOut[] =        'height="'.$this->mOptions['height'].'"';
 		}
-		$aOut[] = '  />';
-		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '</span>' :' </a>';
+		$aOut[] =   '/>';
+		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '</span>' : '</a>';
 		$aOut[] = '</div>';
 
 		$sOut = implode( "\n", $aOut );

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sanlinnaing"
+			"Sanlinnaing",
+			"Ninjastrikers"
 		]
 	},
-	"bs-email-greeting-receiver": "{{GENDER:$1|မင်္ဂလာပါ ဦး $2|မင်္ဂလာပါ ဒေါ်|မင်္ဂလာပါ}}"
+	"bs-extended-search-textfield-defaultvalue": "ရှာဖွေရန်...",
+	"bs-email-greeting-receiver": "{{GENDER:$1|မင်္ဂလာပါ ကို $2|မင်္ဂလာပါ မ|မင်္ဂလာပါ}}"
 }

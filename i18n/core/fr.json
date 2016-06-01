@@ -3,14 +3,13 @@
 		"authors": [
 			"Gomoko",
 			"Macofe",
-			"Benjozork"
+			"Benjozork",
+			"Wladek92"
 		]
 	},
 	"bs-ns_main": "(Pages)",
 	"bs-ns_all": "(tous)",
 	"bs-tab_navigation": "Navigation",
-	"bs-tab_focus": "Centre d’intérêt",
-	"bs-tab_admin": "Admin",
 	"bs-userbar_loginswitch_logout": "Déconnexion",
 	"bs-userbar_loginswitch_login": "Connexion",
 	"bs-extended-search-tooltip-fulltext": "Recherche en texte intégral",
@@ -75,5 +74,13 @@
 	"bs-pref-anonuserimage": "Avatar d’utilisateur anonyme :",
 	"bs-pref-deleteduserimage": "Avatar d’utilisateur supprimé :",
 	"bs-pref-bspinginterval": "Intervalle de Ping (en secondes) :",
-	"bs-pref-testmode": "Activer le mode de test"
+	"bs-pref-testmode": "Activer le mode de test",
+	"bs-tag-input-desc": "Valeur du contenu de l’élément",
+	"bs-tag-param-desc": "Valeur de l’attribut '$1' de l’élément",
+	"bs-parser-error-invalid-namespace": "Espace de noms invalide: $1",
+	"bs-parser-error-invalid-title": "Titre non valide : $1",
+	"bs-validator-error-namespace-does-not-exist": "L’espace de noms n’existe pas : $1",
+	"bs-validator-error-namespace-on-blacklist": "Espace de noms non autorisé : $1",
+	"bs-validator-error-title-does-not-exist": "La page n’existe pas: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Page non autorisée: $1"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"Умар",
+			"Исмаил Садуев"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -17,14 +18,14 @@
 	"bs-extjs-error": "ГӀалат",
 	"bs-extjs-confirm": "Бакъдан",
 	"bs-extjs-loading": "Чуйолуш…",
-	"bs-extjs-pageSize": "АгӀона барам",
+	"bs-extjs-pageSize": "АгӀонан барам",
 	"bs-extjs-actions-column-header": "Дийраш",
 	"bs-extjs-warning": "Тергам бе",
 	"bs-extjs-saving": "Ӏалашъеш ю...",
 	"bs-extjs-reset": "Кхоссар",
 	"bs-extjs-close": "ДӀачӀагӀа",
 	"bs-extjs-label-user": "Декъашхо",
-	"bs-extjs-label-namespace": "ЦӀерийн ана",
+	"bs-extjs-label-namespace": "ЦӀерийн меттигаш",
 	"bs-extjs-label-page": "АгӀо",
 	"bs-extjs-upload": "Чуяккха",
 	"bs-extjs-browse": "Гучé",
@@ -37,5 +38,7 @@
 	"bs-extjs-filter-contains": "чулацам",
 	"bs-extjs-filter-contains-not": "чулацам бац",
 	"bs-extjs-filter-starts-with": "йола ло тӀера",
-	"bs-extjs-filter-ends-with": "чекхйолу"
+	"bs-extjs-filter-ends-with": "чекхйолу",
+	"bs-extjs-filter-bool-yes": "хӀаъ",
+	"bs-extjs-filter-bool-no": "хӀан-хӀа"
 }

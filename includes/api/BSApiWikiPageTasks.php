@@ -17,11 +17,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  * This file is part of BlueSpice for MediaWiki
- * For further information visit http://www.blue-spice.org
+ * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.biz>
+ * @author     Robert Vogel <vogel@hallowelt.com>
  * @package    Bluespice_Foundation
- * @copyright  Copyright (C) 2016 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */

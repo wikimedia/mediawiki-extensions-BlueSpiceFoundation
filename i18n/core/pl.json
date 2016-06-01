@@ -9,7 +9,6 @@
 	"bs-ns_main": "(Strony)",
 	"bs-ns_all": "(wszystkie)",
 	"bs-tab_navigation": "Nawigacja",
-	"bs-tab_admin": "Administrator",
 	"bs-userbar_loginswitch_logout": "Wyloguj",
 	"bs-userbar_loginswitch_login": "Zaloguj się",
 	"bs-extended-search-tooltip-fulltext": "Wyszukiwanie pełnotekstowe",
@@ -65,5 +64,9 @@
 	"bs-pref-imageextensions": "Dozwolone rozszerzenia obrazów:",
 	"bs-pref-logopath": "Ścieżka do logo:",
 	"bs-pref-faviconpath": "Ścieżka ikony ulubionych:",
-	"bs-pref-testmode": "Uaktywnij tryb testowy"
+	"bs-pref-testmode": "Uaktywnij tryb testowy",
+	"bs-parser-error-invalid-namespace": "Nieprawidłowa przestrzeń nazw: $1",
+	"bs-parser-error-invalid-title": "Niepoprawny tytuł: $1",
+	"bs-validator-error-namespace-does-not-exist": "Przestrzeń nazw nie istnieje: $1",
+	"bs-validator-error-title-does-not-exist": "Strona nie istnieje: $1"
 }

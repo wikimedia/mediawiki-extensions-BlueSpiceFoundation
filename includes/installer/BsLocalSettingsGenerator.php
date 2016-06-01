@@ -27,7 +27,7 @@
  * @ingroup Deployment
  * @since 2.23
  *
- * @author Stephan Muggli <muggli@hallowelt.biz>
+ * @author Stephan Muggli <muggli@hallowelt.com>
  */
 class BsLocalSettingsGenerator extends LocalSettingsGenerator {
 

@@ -5,5 +5,7 @@
 		]
 	},
 	"bs-ns_all": "(ټول)",
-	"bs-extended-search-textfield-defaultvalue": "پلټل..."
+	"bs-extended-search-textfield-defaultvalue": "پلټل...",
+	"bs-parser-error-invalid-title": "ناسم سرليک: $1",
+	"bs-validator-error-title-does-not-exist": "پدې نوم مخ نشته: $1"
 }

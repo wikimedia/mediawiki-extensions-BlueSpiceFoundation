@@ -2,7 +2,7 @@
 /**
  * This class contains helpful methods for processing strings.
  *
- * @copyright Copyright (c) 2007-2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Robert Vogel
  * @version 0.1.0 beta
  *
@@ -124,4 +124,49 @@ class BsStringHelper {
 		}
 		return false;
 	}
+
+	const FILTER_STARTSWITH = 'sw';
+	const FILTER_ENDSWITH = 'ew';
+	const FILTER_CONTAINS = 'ct';
+	const FILTER_CONTAINSNOT = 'nct';
+	const FILTER_EQUALS = 'eq';
+	const FILTER_EQUALSNOT = 'neq';
+
+	/**
+	 * HINT: http://stackoverflow.com/a/10473026
+	 * @param string $sOp ExtJS filter conformant operator<br/>
+	 * 'sw' --> 'Starts with' <br/>
+	 * 'ew' --> 'Ends with' <br/>
+	 * 'ct' --> 'Contains' <br/>
+	 * 'nct' --> 'Contains not' <br/>
+	 * 'eq' --> 'Equals' <br/>
+	 * 'neq' --> 'Not equals' <br/>
+	 * @param string $sHaystack
+	 * @param string $sNeedle
+	 * @return bool
+	 */
+	public static function filter( $sOp, $sHaystack, $sNeedle, $bCaseSensitive = false ) {
+		if( !$bCaseSensitive ) {
+			$sHaystack = mb_strtolower( $sHaystack );
+			$sNeedle = mb_strtolower( $sNeedle );
+		}
+		switch( $sOp ) {
+			case self::FILTER_STARTSWITH:
+				return $sNeedle === '' ||
+					strrpos( $sHaystack, $sNeedle, - strlen( $sHaystack ) ) !== false;
+			case self::FILTER_ENDSWITH:
+				return $sNeedle === '' ||
+					( ( $temp = strlen( $sHaystack ) - strlen( $sNeedle ) ) >= 0
+					&& strpos( $sHaystack, $sNeedle, $temp ) !== false);
+			case self::FILTER_CONTAINS:
+				return strpos( $sHaystack, $sNeedle ) !== false;
+			case self::FILTER_CONTAINSNOT:
+				return strpos( $sHaystack, $sNeedle ) === false;
+			case self::FILTER_EQUALS:
+				return $sHaystack === $sNeedle;
+			case self::FILTER_EQUALSNOT:
+				return $sHaystack !== $sNeedle;
+		}
+	}
+
 }

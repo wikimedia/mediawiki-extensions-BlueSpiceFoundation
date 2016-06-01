@@ -43,6 +43,8 @@
 	"bs-extjs-filter-ends-with": "se konča z",
 	"bs-extjs-filter-greater-than": "večji kot",
 	"bs-extjs-filter-less-than": "manjši kot",
+	"bs-extjs-filter-bool-yes": "da",
+	"bs-extjs-filter-bool-no": "ne",
 	"bs-extjs-title-success": "Uspeh",
 	"bs-extjs-title-warning": "Opozorilo",
 	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorijo"

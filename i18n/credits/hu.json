@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Csega",
-			"Misibacsi"
+			"Misibacsi",
+			"Wolf Rex"
 		]
 	},
+	"specialcredits": "BluesSpice stáb",
 	"bs-credits-programmers": "Programozók",
-	"bs-credits-dnt": "Tervezés, tesztelés",
+	"bs-credits-dnt": "Tervezés és tesztelés",
 	"bs-credits-contributors": "Közreműködők",
 	"bs-credits-translators": "Fordítók",
 	"bs-credits-translation": "Fordítás",

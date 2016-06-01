@@ -44,6 +44,8 @@
 	"bs-extjs-filter-ends-with": "届满于",
 	"bs-extjs-filter-greater-than": "大于",
 	"bs-extjs-filter-less-than": "小于",
+	"bs-extjs-filter-bool-yes": "是",
+	"bs-extjs-filter-bool-no": "否",
 	"bs-extjs-title-success": "成功",
 	"bs-extjs-title-warning": "警告",
 	"bs-extjs-categoryboxselect-emptytext": "添加分类"

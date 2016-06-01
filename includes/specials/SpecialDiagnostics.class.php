@@ -4,11 +4,11 @@
  *
  * Part of BlueSpice for MediaWiki
  *
- * @author     Marc Reymann <reymann@hallowelt.biz>
+ * @author     Marc Reymann <reymann@hallowelt.com>
  * @version    $Id$
  * @package    BlueSpice_Diagnostics
  * @subpackage Diagnostics
- * @copyright  Copyright (C) 2013 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */

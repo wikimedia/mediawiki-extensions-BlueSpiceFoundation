@@ -50,7 +50,7 @@ body.x-body {
 
 /* Override font from BlueSpiceSkin */
 .x-layer {
-	font-family: tahoma,arial,verdana,sans-serif; /* ExtJS default */
+	font-family: helvetica, arial, verdana, sans-serif; /* ExtJS default */
 }
 
 .x-tool-img {

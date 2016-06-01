@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sfic"
+		]
+	},
+	"bs-parser-error-invalid-namespace": "अमान्य नामस्थान: $1",
+	"bs-parser-error-invalid-title": "अमान्य शीर्षक: $1",
+	"bs-validator-error-title-does-not-exist": "पृष्ठ बना नहीं है: $1"
+}

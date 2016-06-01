@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @copyright Hallo Welt! Medienwerkstatt GmbH
- * @author Robert Vogel <vogel@hallowelt.biz>
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH
+ * @author Robert Vogel <vogel@hallowelt.com>
  */
 
 require_once( 'BSMaintenance.php' );

@@ -4,10 +4,10 @@
  * This file is part of blue spice for MediaWiki.
  *
  * @abstract
- * @copyright Copyright (c) 2010, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
- * @author Robert Vogel <vogel@hallowelt.biz>
- * @author Stephan Muggli <muggli@hallowelt.biz>
+ * @author Robert Vogel <vogel@hallowelt.com>
+ * @author Stephan Muggli <muggli@hallowelt.com>
  * @version 2.22.0
  */
 // Last Review: MRG20100813
@@ -15,10 +15,13 @@
 class BsExtensionManager {
 
 	protected static $prRegisteredExtensions = array();
+	/**
+	 *
+	 * @var BsExtensionMW[]
+	 */
 	protected static $prRunningExtensions = array();
 	protected static $aContexts = array();
 	protected static $aActiveContexts = array();
-	protected static $aIncludedClasses = array();
 
 	public static function addContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
@@ -69,13 +72,30 @@ class BsExtensionManager {
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
+	/**
+	 *
+	 * @return array
+	 * @deprecated since version 2.23
+	 */
 	public static function getRegisteredExtenions() {
 		wfDeprecated( __METHOD__ );
 		return self::$prRegisteredExtensions;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public static function getRegisteredExtensions() {
 		return self::$prRegisteredExtensions;
+	}
+
+	/**
+	 *
+	 * @return BsExtensionMW[]
+	 */
+	public static function getRunningExtensions() {
+		return self::$prRunningExtensions;
 	}
 
 	public static function includeExtensionFiles( $oCore ) {
@@ -85,23 +105,30 @@ class BsExtensionManager {
 		$path = "$IP/extensions/BlueSpiceExtensions";
 
 		foreach ( self::$prRegisteredExtensions as $extension => $attributes ) {
-				if ( $attributes['baseDir'] != 'ext' ) {
-					require( $attributes['baseDir'] . DS . $extension . '.class.php' );
-				} else {
-					require( $path . DS . $extension . DS . $extension . '.class.php' );
-				}
-				self::$aIncludedClasses[] = $extension;
-		}
+			$sClassName = $extension;
 
-		foreach ( self::$aIncludedClasses as $key => $value ) {
-			if ( class_exists( 'Bs' . $value, false ) ) {
-				$class = 'Bs' . $value;
-			} else {
-				$class = $value;
+			//Check if autoloader knows class with extension name and if it
+			//is of type 'BsExtensionMW'
+			if ( !is_subclass_of( $sClassName, 'BsExtensionMW' ) ) {
+				//Check if autoloader knows a prefixed class name
+				$sClassName = 'Bs'.$sClassName;
+				if ( !is_subclass_of( $sClassName, 'BsExtensionMW' ) ) {
+					if ( $attributes['baseDir'] != 'ext' ) {
+						require( $attributes['baseDir'] . DS . $extension . '.class.php' );
+					} else {
+						require( $path . DS . $extension . DS . $extension . '.class.php' );
+					}
+					//Now we only need to check whether to use the prefixed or
+					//the unprefixed extension name as class name for instantiation
+					if( !class_exists( $sClassName, false ) ) {
+						$sClassName = $extension;
+					}
+				}
 			}
-			self::$prRunningExtensions[$value] = new $class();
-			self::$prRunningExtensions[$value]->setCore( $oCore );
-			self::$prRunningExtensions[$value]->setup();
+
+			self::$prRunningExtensions[$extension] = new $sClassName();
+			self::$prRunningExtensions[$extension]->setCore( $oCore );
+			self::$prRunningExtensions[$extension]->setup();
 		}
 
 		wfProfileOut( 'Performance: ' . __METHOD__ );

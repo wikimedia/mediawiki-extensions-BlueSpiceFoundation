@@ -384,9 +384,11 @@ class BsPageContentProvider {
 
 		//TODO PW (16.01.2013): Use $this->mAdapter->getTitleFromRedirectRecurse($oTitle);
 		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
-			$oTitle = Title::newFromRedirectRecurse(
-				$this->getContentFromRevision($oRevision)
-			);
+			$oTitle = ContentHandler::makeContent(
+				$this->getContentFromRevision($oRevision),
+				null,
+				CONTENT_MODEL_WIKITEXT
+			)->getRedirectTarget();
 			//TODO: This migth bypass FlaggedRevs! Test and fix if necessary!
 			$oRevision = Revision::newFromTitle($oTitle);
 		}
@@ -401,7 +403,11 @@ class BsPageContentProvider {
 	 * @return Title
 	 */
 	public function getRedirectTargetRecursiveFrom( Title $oTitle, $aParams = array() ) {
-		return Title::newFromRedirectRecurse( $this->getWikiTextContentFor( $oTitle, $aParams ) );
+		return ContentHandler::makeContent(
+			$this->getWikiTextContentFor( $oTitle, $aParams ),
+			null,
+			CONTENT_MODEL_WIKITEXT
+		)->getUltimateRedirectTarget();
 	}
 
 	/**
@@ -411,7 +417,11 @@ class BsPageContentProvider {
 	 * @return Array_of_Title
 	 */
 	public function getRedirectChainRecursiveFrom( Title $oTitle, $aParams = array() ) {
-		return Title::newFromRedirectArray( $this->getWikiTextContentFor( $oTitle, $aParams ) );
+		return ContentHandler::makeContent(
+			$this->getWikiTextContentFor( $oTitle, $aParams ),
+			null,
+			CONTENT_MODEL_WIKITEXT
+		)->getRedirectChain();
 	}
 
 	/**

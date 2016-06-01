@@ -19,12 +19,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  * This file is part of BlueSpice for MediaWiki
- * For further information visit http://www.blue-spice.org
+ * For further information visit http://bluespice.com
  *
  * @author     Robert Vogel <vogel@hallowelt.com>
  * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    Bluespice_Foundation
- * @copyright  Copyright (C) 2015 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  *
@@ -81,11 +81,18 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	protected $totalProperty = 'total';
 
+	/**
+	 * May be overwritten by subclass
+	 * @var string
+	 */
+	protected $metaData = 'metadata';
+
 	public function execute() {
 		$sQuery = $this->getParameter( 'query' );
 		$aData = $this->makeData( $sQuery );
+		$aMetaData = $this->makeMetaData( $sQuery );
 		$FinalData = $this->postProcessData( $aData );
-		$this->returnData( $FinalData );
+		$this->returnData( $FinalData, $aMetaData );
 	}
 
 	/**
@@ -98,15 +105,30 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	protected abstract function makeData( $sQuery = '' );
 
 	/**
+	 * @param string $sQuery Potential query provided by ExtJS component.
+	 * This is some kind of preliminary filtering. Subclass has to decide if
+	 * and how to process it
+	 * @return array - Full list of of data objects. Filters, paging, sorting
+	 * will be done by the base class
+	 */
+	protected function makeMetaData( $sQuery = '' ) {
+		return array();
+	}
+
+	/**
 	 * Creates a proper output format based on the classes properties
 	 * @param array $aData An array of plain old data objects
+	 * @param array $aMetaData An array of meta data items
 	 */
-	public function returnData($aData) {
-		wfRunHooks( 'BSApiExtJSStoreBaseBeforeReturnData', array( $this, &$aData ) );
+	public function returnData( $aData, $aMetaData = array() ) {
+		wfRunHooks( 'BSApiExtJSStoreBaseBeforeReturnData', array( $this, &$aData, &$aMetaData ) );
 		$result = $this->getResult();
 		$result->setIndexedTagName( $aData, $this->root );
 		$result->addValue( null, $this->root, $aData );
 		$result->addValue( null, $this->totalProperty, $this->iFinalDataSetCount );
+		if( !empty( $aMetaData ) ) {
+			$result->addValue( null, $this->metaData, $aMetaData );
+		}
 	}
 
 	/**
@@ -125,64 +147,74 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			'sort' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]'
+				ApiBase::PARAM_DFLT => '[]',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-sort',
 			),
 			'group' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]'
+				ApiBase::PARAM_DFLT => '[]',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-group',
 			),
 			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]'
+				ApiBase::PARAM_DFLT => '[]',
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-filter',
 			),
 			'page' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 0
+				ApiBase::PARAM_DFLT => 0,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-page',
 			),
 			'limit' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 25
+				ApiBase::PARAM_DFLT => 25,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-limit',
 			),
 			'start' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 0
+				ApiBase::PARAM_DFLT => 0,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-start',
 			),
 
 			'callback' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false
+				ApiBase::PARAM_REQUIRED => false,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-callback',
 			),
 
 			'query' => array(
 				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false
+				ApiBase::PARAM_REQUIRED => false,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-query',
 			),
 			'_dc' => array(
 				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => false
+				ApiBase::PARAM_REQUIRED => false,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-dc',
 			),
 			'format' => array(
 				ApiBase::PARAM_DFLT => 'json',
-				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' )
+				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-format',
 			)
 		);
 	}
 
 	public function getParamDescription() {
 		return array(
-			'sort' => 'JSON string with sorting info; deserializes to array of objects that hold filed name and direction for each sorting option',
-			'group' => 'JSON string with grouping info; deserializes to array of objects that hold filed name and direction for each grouping option',
-			'filter' => 'JSON string with filter info; deserializes to array of objects that hold filed name, filter type, and filter value for each sorting option',
+			'sort' => 'JSON string with sorting info; deserializes to "array of objects" that hold field name and direction for each sorting option',
+			'group' => 'JSON string with grouping info; deserializes to "array of objects" that hold field name and direction for each grouping option',
+			'filter' => 'JSON string with filter info; deserializes to "array of objects" that hold field name, filter type, and filter value for each filtering option',
 			'page' => 'Allows server side calculation of start/limit',
 			'limit' => 'Number of results to return',
 			'start' => 'The offset to start the result list from',
-			'query' => 'This is similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
-			'callback' => 'The offset to start the result list from',
+			'query' => 'Similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
+			'callback' => 'A method name in the client code that should be called in the response (JSONP)',
 			'_dc' => '"Disable cache" flag',
 			'format' => 'The format of the output (only JSON or formatted JSON)'
 		);
@@ -290,7 +322,34 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 					return false;
 				}
 			}
-			//TODO: Implement for type 'date', 'datetime' and 'boolean'
+			if( $oFilter->type == 'boolean' ) {
+				$bFilterApplies = $this->filterBoolean( $oFilter, $aDataSet );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
+
+			if( $oFilter->type == 'date' ) {
+				$bFilterApplies = $this->filterDate( $oFilter, $aDataSet );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
+			//TODO: Implement for type 'datetime'
+
+			if( $oFilter->type == 'title' ) {
+				$bFilterApplies = $this->filterTitle( $oFilter, $aDataSet );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
+
+			if( $oFilter->type == 'templatetitle' ) {
+				$bFilterApplies = $this->filterTitle( $oFilter, $aDataSet, NS_TEMPLATE );
+				if( !$bFilterApplies ) {
+					return false;
+				}
+			}
 		}
 
 		return true;
@@ -309,25 +368,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$sFilterValue = $oFilter->value;
 
-		//TODO: Add string functions to BsStringHelper
-		//HINT: http://stackoverflow.com/a/10473026 + Case insensitive
-		switch( $oFilter->comparison ) {
-			case 'sw':
-				return $sFilterValue === '' ||
-					strripos($sFieldValue, $sFilterValue, -strlen($sFieldValue)) !== false;
-			case 'ew':
-				return $sFilterValue === '' ||
-					(($temp = strlen($sFieldValue) - strlen($sFilterValue)) >= 0
-					&& stripos($sFieldValue, $sFilterValue, $temp) !== false);
-			case 'ct':
-				return stripos($sFieldValue, $sFilterValue) !== false;
-			case 'nct':
-				return stripos($sFieldValue, $sFilterValue) === false;
-			case 'eq':
-				return $sFieldValue === $sFilterValue;
-			case 'neq':
-				return $sFieldValue !== $sFilterValue;
-		}
+		return BsStringHelper::filter( $oFilter->comparison, $sFieldValue, $sFilterValue );
 	}
 
 	/**
@@ -376,6 +417,66 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * Performs filtering based on given filter of type bool on a dataset
+	 * @param object $oFilter
+	 * @param object $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
+	public function filterBoolean( $oFilter, $aDataSet ) {
+		return $oFilter->value == $aDataSet->{ $oFilter->field };
+	}
+
+	/**
+	 * Performs filtering based on given filter of type date on a dataset
+	 * "Ext.ux.grid.filter.DateFilter" by default sends filter value in format
+	 * of m/d/Y
+	 * @param object $oFilter
+	 * @param object $aDataSet
+	 */
+	public function filterDate( $oFilter, $aDataSet ) {
+		$iFilterValue = strtotime( $oFilter->value ); // Format: "m/d/Y"
+		$iFieldValue = strtotime( $aDataSet->{$oFilter->field} ); // Format "YmdHis", or something else...
+
+		switch( $oFilter->comparison ) {
+			case 'gt':
+				return $iFieldValue > $iFilterValue;
+			case 'lt':
+				return $iFieldValue < $iFilterValue;
+			case 'eq':
+				//We need to normalise the date on day-level
+				$iFieldValue = strtotime(
+					date( 'm/d/Y', $iFieldValue )
+				);
+				return $iFieldValue === $iFilterValue;
+		}
+	}
+
+	/**
+	 * Performs string filtering based on given filter of type title on a dataset
+	 * @param object $oFilter
+	 * @param oject $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
+	public function filterTitle( $oFilter, $aDataSet, $iDefaultNs = NS_MAIN ) {
+		if( !is_string( $oFilter->value ) ) {
+			return true; //TODO: Warning
+		}
+		$oFieldValue = Title::newFromText( $aDataSet->{$oFilter->field}, $iDefaultNs );
+		$oFilterValue = Title::newFromText( $oFilter->value, $iDefaultNs  );
+
+		switch( $oFilter->comparison ) {
+			case 'gt':
+				return Title::compare( $oFieldValue, $oFilterValue ) > 0;
+			case 'lt':
+				return Title::compare( $oFieldValue, $oFilterValue ) < 0;
+			case 'eq':
+				return Title::compare( $oFieldValue, $oFilterValue ) == 0;
+			case 'neq':
+				return Title::compare( $oFieldValue, $oFilterValue ) != 0;
+		}
 	}
 
 	/**
@@ -429,5 +530,4 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		call_user_func_array( 'array_multisort', $aParams );
 		return $aProcessedData;
 	}
-
 }

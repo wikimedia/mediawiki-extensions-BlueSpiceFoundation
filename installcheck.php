@@ -2,7 +2,7 @@
 /**
  * Hallo Welt! MediaWiki Distribution
  * @package BlueSpice
- * @copyright Copyright 2011 by Hallo Welt! Medienwerkstatt GmbH
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH
  * @author Marc Reymann
  * @version $Id: $
  *
@@ -63,7 +63,7 @@ if (!file_exists("LocalSettings.php")) exit("This file must be placed where your
 <body onload="document.getElementById('waitbox').style.display='none';">
 <div id="waitbox">Now checking your system...<br/>This may take a few seconds.</div>
 <?php flush(); ?>
-<div id="infobox">BlueSpice Installation Checker<br/>Hallo Welt! Medienwerkstatt GmbH</div>
+<div id="infobox">BlueSpice Installation Checker<br/>Hallo Welt! GmbH</div>
 <div id="wrapper">
 <?php
 $d = DIRECTORY_SEPARATOR;
@@ -144,14 +144,11 @@ $requiredExt[] = array( "dom",      "<span class=\"warn\">WARNING!</span> This e
 $requiredExt[] = array( "gd",       "<span class=\"fail\">FAILED!</span>" );
 $requiredExt[] = array( "json",     "<span class=\"fail\">FAILED!</span>" );
 $requiredExt[] = array( "mbstring", "<span class=\"fail\">FAILED!</span>" );
-$requiredExt[] = array( "mysql",    "<span class=\"fail\">FAILED!</span>" );
 $requiredExt[] = array( "mysqli",    "<span class=\"fail\">FAILED!</span>" );
 $requiredExt[] = array( "pcre",     "<span class=\"fail\">FAILED!</span>" );
-#$requiredExt[] = array( "soap",     "<span class=\"fail\">FAILED!</span> This extension is needed if you want to export PDF files." ); // for PDF service - not needed anymore
 $requiredExt[] = array( "tidy",     "<span class=\"fail\">FAILED!</span>" );
 #$requiredExt[] = array( "openssl",  "<span class=\"warn\">WARNING!</span> This extension is needed if you want to connect to SSL/TLS secured services." );
 #$requiredExt[] = array( "ldap",     "<span class=\"warn\">WARNING!</span> This extension is needed if you want to connect to an LDAP/AD server." );
-#$requiredExt[] = array( "xmlrpc",     "<span class=\"warn\">WARNING!</span> This extension is needed if you want to want to single-sign-on to our ELGG module.</tt>" );
 
 checkExt( $requiredExt );
 

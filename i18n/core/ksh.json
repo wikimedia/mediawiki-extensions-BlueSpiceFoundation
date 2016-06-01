@@ -7,7 +7,6 @@
 	"bs-ns_main": "(Sigge)",
 	"bs-ns_all": "(jeede)",
 	"bs-tab_navigation": "Menüh",
-	"bs-tab_admin": "Wiki_Köhbes",
 	"bs-userbar_loginswitch_logout": "Ußlogge",
 	"bs-userbar_loginswitch_login": "Ennlogge",
 	"bs-extended-search-tooltip-fulltext": "Em jannze Täx söhke",
@@ -58,5 +57,8 @@
 	"bs-ns": "Appachtemang",
 	"bs-from-something": "(us/vun/fröhjer/uew. $1)\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Bs-from-something/ksh\n-->",
 	"bs-pref-fileextensions": "Zohjelohße Ändonge vun de Dateinahme:",
-	"bs-pref-imageextensions": "Zohjelohße Ändonge vun de Dateinahme för Bellder:"
+	"bs-pref-imageextensions": "Zohjelohße Ändonge vun de Dateinahme för Bellder:",
+	"bs-parser-error-invalid-title": "Di Övverschreff för di Sigg jeiht nit: $1",
+	"bs-validator-error-namespace-does-not-exist": "Dadd Appachtemang jidd_et nit: $1",
+	"bs-validator-error-title-does-not-exist": "Di Sigg jidd_et nit: $1"
 }

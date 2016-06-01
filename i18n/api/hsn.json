@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"SolidBlock"
+		]
+	},
+	"apihelp-bs-wikipage-store-description": "列出哈wiki页面。允许排序、过滤和分页。要搞ExtJS存的参数。"
+}

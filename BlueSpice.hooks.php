@@ -12,7 +12,9 @@ $wgHooks['userCan'][] = 'BsCoreHooks::onUserCan';
 $wgHooks['UploadVerification'][] = 'BsCoreHooks::onUploadVerification';
 $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'BsCoreHooks::onSkinTemplateOutputPageBeforeExec';
 $wgHooks['SkinAfterContent'][] = 'BsCoreHooks::onSkinAfterContent';
+$wgHooks['ParserFirstCallInit'][] = 'BsCoreHooks::onParserFirstCallInit';
 $wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
+#$wgHooks['UnitTestsList'][] = 'BsCoreHooks::onUnitTestsList';
 
 // START cache invalidation hooks
 $wgHooks['PageContentSaveComplete'][] = 'BsCacheHelper::onPageContentSaveComplete';

@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wolf Rex"
+		]
+	},
+	"bs-extjs-portal-height": "Magasság",
+	"bs-extjs-portal-count": "Bejegyzések",
+	"bs-extjs-portal-timespan": "Idővonal",
+	"bs-extjs-portal-timespan-week": "Hét",
+	"bs-extjs-portal-timespan-month": "Hónap",
+	"bs-extjs-portal-timespan-alltime": "Összes szerkesztés"
+}

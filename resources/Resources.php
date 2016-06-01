@@ -5,7 +5,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 }
 
 $aResourceModuleTemplate = array(
-	'localBasePath' => $IP . '/extensions/BlueSpiceFoundation/resources',
+	'localBasePath' => __DIR__,
 	'remoteExtPath' => 'BlueSpiceFoundation/resources',
 	'targets' => array( 'mobile', 'desktop' )
 );
@@ -19,7 +19,8 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bluespice/bluespice.string.js',
 		'bluespice/bluespice.xhr.js',
 		'bluespice/bluespice.ping.js',
-		'bluespice/bluespice.tooltip.js'
+		'bluespice/bluespice.tooltip.js',
+		'bluespice/bluespice.api.js'
 	),
 	'messages' => array(
 		'largefileserver',
@@ -47,7 +48,8 @@ $wgResourceModules['ext.bluespice'] = array(
 $wgResourceModules['ext.bluespice.styles'] = array(
 	'styles' => array(
 		'bluespice/bluespice.css',
-		'bluespice/bluespice.icons.css'
+		'bluespice/bluespice.icons.css',
+		'bluespice/bluespice.ui.basic.less'
 	),
 	'position' => 'top'
 ) + $aResourceModuleTemplate;
@@ -93,11 +95,13 @@ $wgResourceModules['ext.bluespice.extjs.theme.ux'] = array(
 
 $wgResourceModules['ext.bluespice.extjs'] = array(
 	'scripts' => array(
-		'bluespice.extjs/bluespice.extjs.js'
+		'bluespice.extjs/bluespice.extjs.js',
+		'bluespice.extjs/BS/override/grid/column/Action.js'
 	),
 	'styles' => array(
 		//There are some weird legacy CSS fixes. Don't know if they still apply
 		'bluespice.extjs/bluespice.extjs.fixes.css',
+		'bluespice.extjs/bluespice.extjs.overrides.less'
 	),
 	'messages' => array(
 		'bs-extjs-ok',
@@ -140,6 +144,8 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-filter-less-than',
 		'bs-extjs-title-success',
 		'bs-extjs-title-warning',
+		'bs-extjs-filter-bool-yes',
+		'bs-extjs-filter-bool-no',
 		'bs-extjs-categoryboxselect-emptytext'
 	),
 	'dependencies' => array(

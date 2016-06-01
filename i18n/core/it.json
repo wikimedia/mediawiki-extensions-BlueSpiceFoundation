@@ -11,8 +11,6 @@
 	"bs-ns_main": "(Pagine)",
 	"bs-ns_all": "(tutti)",
 	"bs-tab_navigation": "Navigazione",
-	"bs-tab_focus": "Messa a fuoco",
-	"bs-tab_admin": "Amministrazione",
 	"bs-userbar_loginswitch_logout": "Esci",
 	"bs-userbar_loginswitch_login": "Entra",
 	"bs-extended-search-tooltip-fulltext": "Ricerca nell'intero testo",
@@ -77,5 +75,13 @@
 	"bs-pref-anonuserimage": "Avatar utenti anonimi:",
 	"bs-pref-deleteduserimage": "Avatar utenti cancellati:",
 	"bs-pref-bspinginterval": "Intervallo di ping (in secondi):",
-	"bs-pref-testmode": "Attiva modalità test"
+	"bs-pref-testmode": "Attiva modalità test",
+	"bs-tag-input-desc": "Valore del contenuto dell'elemento",
+	"bs-tag-param-desc": "Valore dell'attributo '$1' dell'elemento",
+	"bs-parser-error-invalid-namespace": "Namespace non valido: $1",
+	"bs-parser-error-invalid-title": "Titolo non valido: $1",
+	"bs-validator-error-namespace-does-not-exist": "Namespace non esiste: $1",
+	"bs-validator-error-namespace-on-blacklist": "Namespace non consentito: $1",
+	"bs-validator-error-title-does-not-exist": "Pagina non esiste: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Pagina non consentita: $1"
 }

@@ -6,9 +6,14 @@
 	},
 	"apihelp-bs-filebackend-store-description": "列举来自文件后端的所有文件。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-user-store-description": "列举来自数据库的所有用户。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-adminuser-store-description": "列举来自数据库的所有用户，并带有额外的敏感数据。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-group-store-description": "列举除$wgImplicitGroups以外的所有组。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-interwiki-store-description": "列举所有跨wiki链接。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-titlequery-store-description": "基于查询关键字列举页面标题和（可选）名字空间前缀。执行ExtJS存储的参数。",
 	"apihelp-bs-wikipage-tasks-description": "为WikiPages提供常用操作",
+	"apihelp-bs-store-param-sort": "带排序信息的JSON字符串；反序列化至<code>array of objects</code>，其为每个排序选项保留字段名称和方向",
+	"apihelp-bs-store-param-group": "带分组信息的JSON字符串；反序列化至<code>array of objects</code>，其为每个分组选项保留字段名称和方向",
+	"apihelp-bs-store-param-filter": "带过滤器信息的JSON字符串；反序列化至<code>array of objects</code>，其为每个过滤选项保留字段名称、过滤器类型和过滤器值",
 	"apihelp-bs-store-param-page": "允许开始/限制服务器端计算",
 	"apihelp-bs-store-param-limit": "返回的结果数",
 	"apihelp-bs-store-param-start": "开始结果列表的抵消",
@@ -27,5 +32,7 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "更改的分类。",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "您不被允许编辑页面“$1”。",
 	"bs-wikipage-tasks-error-categories-not-valid": "无效{{PLURAL:$2|分类}}：$1",
-	"bs-wikipage-tasks-setcategories-success": "分类已成功设置。"
+	"bs-wikipage-tasks-setcategories-success": "分类已成功设置。",
+	"apihelp-bs-wikipage-store-description": "列举所有wiki页面。允许排序、过滤和分页。执行ExtJS存储的参数。",
+	"apihelp-bs-ping-tasks-description": "提供连续数据交换的Ping任务"
 }

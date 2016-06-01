@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion"
+			"Piramidion",
+			"Alex Khimich",
+			"Ата"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Перелічує всі файли з файлового backend'у. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
 	"apihelp-bs-user-store-description": "Перелічує всіх користувачів із бази даних. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
+	"apihelp-bs-adminuser-store-description": "Складає список всіх користувачів із бази з додатковими чутливими даними. Дає можливість сортування, фільтрування та пагінації. Імплементує параметри ExtJS Store.",
 	"apihelp-bs-group-store-description": "Перелічує всі групи, за винятком $wgImplicitGroups. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
 	"apihelp-bs-interwiki-store-description": "Перелічує усіх інтервікі-посилання. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
 	"apihelp-bs-titlequery-store-description": "Перелічує назви статей та (необов'язково) префікси просторів назв на основі терміна запиту. Реалізує параметри ExtJS Store.",
@@ -31,5 +34,7 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Змінені категорії.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Ви не маєте дозволу на редагування сторінки «$1».",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Недійсна категорія|Недійсні категорії}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Категорії успішно встановлено."
+	"bs-wikipage-tasks-setcategories-success": "Категорії успішно встановлено.",
+	"apihelp-bs-wikipage-store-description": "Перелічує всі сторінки у вікі. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
+	"apihelp-bs-ping-tasks-description": "Пінгувати завдання, що забезпечує безперервний обмін даними"
 }

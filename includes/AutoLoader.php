@@ -37,6 +37,13 @@ $GLOBALS['wgAutoloadClasses']['BsConfig'] = __DIR__."/Config.class.php";
 $GLOBALS['wgAutoloadClasses']['BSDebug'] = __DIR__."/Debug.php";
 $GLOBALS['wgAutoloadClasses']['BsException'] = __DIR__."/Exception.class.php";
 $GLOBALS['wgAutoloadClasses']['BsExtensionManager'] = __DIR__."/ExtensionManager.class.php";
+$GLOBALS['wgAutoloadClasses']['BsGenericTagExtensionHandler'] = __DIR__."/GenericTagExtensionHandler.php";
+$GLOBALS['wgAutoloadClasses']['BSTitleListParam'] = __DIR__."/paramdefinition/BSTitleListParam.php";
+$GLOBALS['wgAutoloadClasses']['BSTitleParser'] = __DIR__."/parser/BSTitleParser.php";
+$GLOBALS['wgAutoloadClasses']['BSTitleValidator'] = __DIR__."/validator/BSTitleValidator.php";
+$GLOBALS['wgAutoloadClasses']['BSNamespaceListParam'] = __DIR__."/paramdefinition/BSNamespaceListParam.php";
+$GLOBALS['wgAutoloadClasses']['BSNamespaceParser'] = __DIR__."/parser/BSNamespaceParser.php";
+$GLOBALS['wgAutoloadClasses']['BSNamespaceValidator'] = __DIR__."/validator/BSNamespaceValidator.php";
 $GLOBALS['wgAutoloadClasses']['BsMailer'] = __DIR__."/Mailer.class.php";//Deprecated
 $GLOBALS['wgAutoloadClasses']['BsXHRBaseResponse'] = __DIR__."/XHRBaseResponse.class.php";
 $GLOBALS['wgAutoloadClasses']['BsXHRJSONResponse'] = __DIR__."/XHRBaseResponse.class.php";
@@ -57,16 +64,26 @@ $GLOBALS['wgAutoloadClasses']['BSNotificationHandler'] = __DIR__."/notifications
 
 //api
 $GLOBALS['wgAutoloadClasses']['BSStandardAPIResponse'] = __DIR__."/api/BSStandardAPIResponse.php";
+$GLOBALS['wgAutoloadClasses']['BSExtendedApiContext'] = __DIR__."/api/BSExtendedApiContext.php";
+$GLOBALS['wgAutoloadClasses']['BSApiFormatJson'] = __DIR__."/api/BSApiFormatJson.php";
 $GLOBALS['wgAutoloadClasses']['BSApiBase'] = __DIR__."/api/BSApiBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiTasksBase'] = __DIR__."/api/BSApiTasksBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiExtJSStoreBase'] = __DIR__."/api/BSApiExtJSStoreBase.php";
+$GLOBALS['wgAutoloadClasses']['BSApiExtJSDBTableStoreBase'] = __DIR__."/api/BSApiExtJSDBTableStoreBase.php";
 $GLOBALS['wgAutoloadClasses']['BSApiFileBackendStore'] = __DIR__."/api/BSApiFileBackendStore.php";
 $GLOBALS['wgAutoloadClasses']['BSApiUserStore'] = __DIR__."/api/BSApiUserStore.php";
+$GLOBALS['wgAutoloadClasses']['BSApiAdminUserStore'] = __DIR__."/api/BSApiAdminUserStore.php";
+$GLOBALS['wgAutoloadClasses']['BSApiGroupStore'] = __DIR__ . '/api/BSApiGroupStore.php';
+$GLOBALS['wgAutoloadClasses']['BSApiInterwikiStore'] = __DIR__ . '/api/BSApiInterwikiStore.php';
 $GLOBALS['wgAutoloadClasses']['BSApiWikiPageTasks'] = __DIR__ . '/api/BSApiWikiPageTasks.php';
+$GLOBALS['wgAutoloadClasses']['BSApiWikiPageStore'] = __DIR__ . '/api/BSApiWikiPageStore.php';
+$GLOBALS['wgAutoloadClasses']['BSApiTitleQueryStore'] = __DIR__ . '/api/BSApiTitleQueryStore.php';
+$GLOBALS['wgAutoloadClasses']['BSApiPingTasks'] = __DIR__ . '/api/BSApiPingTasks.php';
 
 //adapter
 $GLOBALS['wgAutoloadClasses']['BsExtensionMW'] = __DIR__."/ExtensionMW.class.php";
-$GLOBALS['wgAutoloadClasses']['BsInvalidNamespaceException'] = __DIR__."/InvalidNamespaceException.class.php";
+$GLOBALS['wgAutoloadClasses']['BsInvalidNamespaceException'] = __DIR__."/exception/InvalidNamespaceException.class.php";
+$GLOBALS['wgAutoloadClasses']['BSInvalidParamException'] = __DIR__."/exception/BSInvalidParamException.php";
 
 //htmlform and htmlformfields
 $GLOBALS['wgAutoloadClasses']['HTMLFormEx'] = __DIR__."/html/htmlformfields/HTMLFormFieldOverrides.php";
@@ -128,10 +145,7 @@ $GLOBALS['wgAutoloadClasses']['ViewUserBarElement'] = __DIR__ . '/outputhandler/
 $GLOBALS['wgAutoloadClasses']['ViewUserMiniProfile'] = __DIR__ . '/outputhandler/views/view.UserMiniProfile.php';
 $GLOBALS['wgAutoloadClasses']['ViewWidget'] = __DIR__ . '/outputhandler/views/view.Widget.php';
 
-//Overrides
-// Replace Mediawikis ApiFormatJson class with our own to prevent some errors with the application/json header.
-$GLOBALS['wgAutoloadClasses']['ApiFormatJson'] = __DIR__."/api/ApiFormatJsonMW.php";
-
+//Resourceloader modules
 $GLOBALS['wgAutoloadClasses']['ResourceLoaderExtJSModule'] = __DIR__."/resourceloader/ResourceLoaderExtJSModule.php";
 
 /**

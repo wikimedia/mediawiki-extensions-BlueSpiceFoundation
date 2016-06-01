@@ -6,7 +6,8 @@
 			"아라",
 			"Namoroka",
 			"Miri-Nae",
-			"Hwangjy9"
+			"Hwangjy9",
+			"SeoJeongHo"
 		]
 	},
 	"bs-extjs-ok": "확인",
@@ -39,5 +40,7 @@
 	"bs-extjs-confirmNavigationText": "정말로 이 링크를 따라가겠습니까? 이 문서의 필터링이나 정렬과 같은 동적인 설정이 모두 사라집니다.",
 	"bs-extjs-allns": "(모두)",
 	"bs-extjs-filters": "필터",
+	"bs-extjs-filter-bool-yes": "예",
+	"bs-extjs-filter-bool-no": "아니오",
 	"bs-extjs-categoryboxselect-emptytext": "분류 추가"
 }

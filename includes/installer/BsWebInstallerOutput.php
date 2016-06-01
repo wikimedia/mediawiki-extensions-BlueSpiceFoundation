@@ -27,13 +27,13 @@
  * @ingroup Deployment
  * @since 2.23
  *
- * @author Stephan Muggli <muggli@hallowelt.biz>
+ * @author Stephan Muggli <muggli@hallowelt.com>
  */
 class BsWebInstallerOutput extends WebInstallerOutput {
 
 	 // BlueSpice
 	public function outputTitle() {
 		global $wgVersion;
-		echo wfMessage( 'bs-installer-title', $wgVersion, '2.23.2' )->plain();
+		echo wfMessage( 'bs-installer-title', $wgVersion, '2.23.3' )->plain();
 	}
 }

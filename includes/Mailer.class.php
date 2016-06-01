@@ -3,7 +3,7 @@
  * DEPRECATED!
  * This file is part of BlueSpice for MediaWiki.
  *
- * @copyright Copyright (c) 2012, HalloWelt! Medienwerkstatt GmbH, All rights reserved.
+ * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Sebastian Ulbricht, Robert Vogel
  * @version 1.1.0
  *
@@ -142,6 +142,7 @@ class BsMailer {
 		$sCombinedMsg = $sMsg.$sFooter;
 
 		foreach ( $aEmailTo as $aReceiver ) {
+			global $wgVersion;
 			//Prepare message
 			if ( $aReceiver['greeting'] ) {
 				$oUser = User::newFromName( $aReceiver['greeting'] );
@@ -171,17 +172,28 @@ class BsMailer {
 				);
 				wfDebugLog( 'BS::Mailer', $sLog );
 			} else {
-				$oStatus = UserMailer::send(
+				if( version_compare( $wgVersion, "1.25", '<=')){
+					$oStatus = UserMailer::send(
+						$aReceiver['mail'],
+						$oFromAddress,
+						$sCombinedSubject,
+						$sLocalCombinedMsg,
+						$oReplyToAddress,
+						$sHeaders
+					);
+				} else {
+					$oStatus = UserMailer::send(
 					$aReceiver['mail'],
 					$oFromAddress,
 					$sCombinedSubject,
 					$sLocalCombinedMsg,
-					$oReplyToAddress,
-					$sHeaders
-				);
+					array(
+						'replyTo' => $oReplyToAddress,
+						'headers' => $sHeaders
+					));
+				}
 			}
 		}
-
 		wfProfileOut( 'BS::'.__METHOD__ );
 		return $oStatus;
 	}

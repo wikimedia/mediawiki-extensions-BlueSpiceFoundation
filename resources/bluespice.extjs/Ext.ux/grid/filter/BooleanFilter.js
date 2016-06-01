@@ -30,12 +30,12 @@ Ext.define('Ext.ux.grid.filter.BooleanFilter', {
 	 * @cfg {String} yesText
 	 * Defaults to 'Yes'.
 	 */
-	yesText : 'Yes',
+	yesText : mw.message( 'bs-extjs-filter-bool-yes' ).plain(),
 	/**
 	 * @cfg {String} noText
 	 * Defaults to 'No'.
 	 */
-	noText : 'No',
+	noText : mw.message( 'bs-extjs-filter-bool-no' ).plain(),
 
     /**
      * @private

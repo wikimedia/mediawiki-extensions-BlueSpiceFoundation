@@ -21,13 +21,13 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  * This file is part of BlueSpice for MediaWiki
- * For further information visit http://www.blue-spice.org
+ * For further information visit http://bluespice.com
  *
  * @author     Sebastian Ulbricht <sebastian.ulbricht@dragon-design.hk>
- * @author     Robert Vogel <vogel@hallowelt.biz>
- * @author     Stephan Muggli <muggli@hallowelt.biz>
+ * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Stephan Muggli <muggli@hallowelt.com>
  * @package    Bluespice_Core
- * @copyright  Copyright (C) 2014 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
@@ -664,50 +664,6 @@ class BsCore {
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * Handles requests to the BS-AJAX-PING-BUS (BSAPB)
-	 * TODO: Move to seperate class
-	 * @return String JSON encoded data
-	 */
-	public static function ajaxBSPing() {
-		$aResult = array(
-			"success" => false,
-			"errors" => array(),
-			"message" => '',
-		);
-
-		$oRequest = RequestContext::getMain()->getRequest();
-		$iArticleId  = $oRequest->getInt( 'iArticleID', 0 );
-		$iNamespace  = $oRequest->getInt( 'iNamespace', 0 );
-		$sTitle      = $oRequest->getVal( 'sTitle', '' );
-		$iRevision   = $oRequest->getInt( 'iRevision', 0 );
-		$aBSPingData = $oRequest->getArray( 'BsPingData', array() );
-
-		$aResult['success'] = true;
-		foreach ( $aBSPingData as $aSinglePing ) {
-			if ( empty( $aSinglePing['sRef'] ) ) continue;
-			if ( !$aResult['success'] ) break;
-
-			if ( !isset( $aSinglePing['aData'] ) )
-				$aSinglePing['aData'] = array();
-
-			$aSingleResult = array(
-				"success" => false,
-				"errors" => array(),
-				"message" => '',
-			);
-			//if hook returns false - overall success is false
-			$aResult['success'] = wfRunHooks( 'BsAdapterAjaxPingResult',
-				array( $aSinglePing['sRef'], $aSinglePing['aData'],
-					$iArticleId, $sTitle, $iNamespace, $iRevision,
-					&$aSingleResult )
-			);
-			$aResult[$aSinglePing['sRef']] = $aSingleResult;
-		}
-
-		return FormatJson::encode( $aResult );
 	}
 
 	/**

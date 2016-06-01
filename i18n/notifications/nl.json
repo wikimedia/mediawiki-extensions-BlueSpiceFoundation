@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Esketti",
+			"Sjoerddebruin",
+			"Romaine"
+		]
+	},
+	"bs-notifications-addacount": "De gebruikersnaam $1 is aangemaakt.",
+	"bs-notifications-email-addaccount-subject": "Gebruikersnaam $2 {{GENDER:$1|aangemaakt}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|gebruikersnaam}} $3 was aangemaakt.\n\nU kunt een bezoek brengen aan {{GENDER:$2|zijn|haar|de}} gebruikerspagina via de volgende link:\n$1",
+	"bs-notifications-edit": "De pagina [[:$1]] is gewijzigd",
+	"bs-notifications-email-edit-subject": "Pagina $1 is {{GENDER:$2|bewerkt}} door $3",
+	"bs-notifications-email-edit-body": "De pagina \"$1\" is {{GENDER:$2|bewerkt}} door $6.\n!\nOpmerking:\n $3 \nU de pagina bezoeken via de volgende link:\n$4.\n!\nAls u alleen de wijzigingen wilt zien, klik dan op deze link:\n$5",
+	"bs-notifications-create": "De pagina [[:$1]] is aangemaakt",
+	"bs-notifications-email-create-subject": "Pagina $1 {{GENDER:$2|is aangemaakt}} door $3",
+	"bs-notifications-email-create-body": "De pagina \"$1\" is {{GENDER:$2|aangemaakt}} door $6.\n!\nOpmerking:\n $3 \nU kunt de pagina bezoeken via de volgende link:\n$4",
+	"bs-notifications-delete": "De pagina [[:$1]] is verwijderd",
+	"bs-notifications-email-delete-subject": "Pagina $1 is {{GENDER:$2|verwijderd}} door $3",
+	"bs-notifications-email-delete-body": "De pagina \"$4\" werd {{GENDER:$2|verwijderd}} door $5.\n\nDe volgende reden is opgegeven:\n$3",
+	"bs-notifications-move": "De pagina [[:$1]] is verplaatst",
+	"bs-notifications-email-move-subject": "Pagina $1 is {{GENDER:$2|verplaatst}} door $4",
+	"bs-notifications-email-move-body": "De pagina \"$1\" is {{GENDER:$2|verplaatst}} naar $3 door $5. U kunt de pagina bezoeken via de volgende link:\n$4"
+}

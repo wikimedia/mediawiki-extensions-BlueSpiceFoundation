@@ -43,6 +43,8 @@
 	"bs-extjs-filter-starts-with": "inizia con",
 	"bs-extjs-filter-ends-with": "termina con",
 	"bs-extjs-filter-greater-than": "più importante di",
+	"bs-extjs-filter-bool-yes": "sì",
+	"bs-extjs-filter-bool-no": "no",
 	"bs-extjs-title-success": "Successo",
 	"bs-extjs-title-warning": "Attenzione",
 	"bs-extjs-categoryboxselect-emptytext": "Aggiungi una categoria"

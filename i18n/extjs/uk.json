@@ -3,7 +3,8 @@
 		"authors": [
 			"Максим Підліснюк",
 			"Base",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"bs-extjs-ok": "Гаразд",
@@ -44,6 +45,8 @@
 	"bs-extjs-filter-ends-with": "закінчується на",
 	"bs-extjs-filter-greater-than": "більше, ніж",
 	"bs-extjs-filter-less-than": "менше, ніж",
+	"bs-extjs-filter-bool-yes": "так",
+	"bs-extjs-filter-bool-no": "ні",
 	"bs-extjs-title-success": "Успіх",
 	"bs-extjs-title-warning": "Застереження",
 	"bs-extjs-categoryboxselect-emptytext": "Додати категорію"

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yekrats"
+			"Yekrats",
+			"Robin van der Vliet"
 		]
 	},
+	"bs-extjs-cancel": "Nuligi",
 	"bs-extjs-label-namespace": "Nomspaco"
 }

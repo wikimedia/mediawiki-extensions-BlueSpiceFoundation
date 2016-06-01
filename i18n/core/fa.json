@@ -4,7 +4,8 @@
 			"Reza1615",
 			"Rtemis",
 			"Alirezaaa",
-			"Ebraminio"
+			"Ebraminio",
+			"Huji"
 		]
 	},
 	"bs-ns_main": "(صفحات)",
@@ -30,7 +31,7 @@
 	"bs-now": "هم‌اکنون",
 	"bs-email-greeting-receiver": "{{GENDER:$1|درود آقای $2|درود خانوم $2|درود $2}}،",
 	"bs-email-greeting-no-receiver": "سلام،",
-	"bs-email-footer": "این پیام به طور خودکار ایجاد شد. لطفاً به این ایمیل پاسخ ندهید.",
+	"bs-email-footer": "این پیام به طور خودکار توسط $1 ایجاد شد. لطفاً به این نامه الکترونیکی پاسخ ندهید.",
 	"bs-userpagesettings-legend": "تنظیمات کاربر",
 	"bs-userpreferences-link-text": "بیشتر تنظیمات کاربر",
 	"bs-userpreferences-link-title": "نمایش تنظیمات شخصی کاربر",

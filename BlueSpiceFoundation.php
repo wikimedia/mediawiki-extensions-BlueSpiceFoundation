@@ -5,7 +5,7 @@
  * Description: Adds functionality for business needs
  * Authors: Markus Glaser
  *
- * Copyright (C) 2013 Hallo Welt! – Medienwerkstatt GmbH, All rights reserved.
+ * Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,25 +22,26 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  * http://www.gnu.org/copyleft/gpl.html
  *
- * For further information visit http://www.blue-spice.org
+ * For further information visit http://bluespice.com
  *
  */
 /* Changelog
  */
 $wgBlueSpiceExtInfo = array(
-	'name' => 'BlueSpice for MediaWiki',
-	'version' => '2.23.2',
+	'name' => 'BlueSpice',
+	'version' => '2.23.3',
 	'status' => 'stable',
 	'package' => 'BlueSpice Free', //default value for BS free extensions
-	'url' => 'http://www.blue-spice.org',
+	'url' => 'http://bluespice.com',
 	'desc' => 'Makes MediaWiki enterprise ready.',
 	'author' => array(
-		'[http://www.hallowelt.com Hallo Welt! Medienwerkstatt GmbH]',
+		'[http://www.hallowelt.com Hallo Welt! GmbH]',
 	)
 );
 
 $wgExtensionCredits['other'][] = array(
-	'name' => 'BlueSpice for MediaWiki ' . $wgBlueSpiceExtInfo['version'],
+	'name' => 'BlueSpice',
+	'version' => $wgBlueSpiceExtInfo['version'] . ' (' . $wgBlueSpiceExtInfo['status'] . ')',
 	'description' => $wgBlueSpiceExtInfo['desc'],
 	'author' => $wgBlueSpiceExtInfo['author'],
 	'url' => $wgBlueSpiceExtInfo['url'],
@@ -51,6 +52,10 @@ $wgFooterIcons['poweredby']['bluespice'] = array(
 	"url" => "http://bluespice.com",
 	"alt" => "Powered by BlueSpice",
 );
+
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+	include_once( __DIR__ . '/vendor/autoload.php' );
+}
 
 require_once( __DIR__."/includes/AutoLoader.php");
 require_once( __DIR__."/includes/Defines.php" );
@@ -63,11 +68,16 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getUserStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getCategoryStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getAsyncCategoryTreeStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
-$wgAjaxExportList[] = 'BsCore::ajaxBSPing';
 
 $wgAPIModules['bs-filebackend-store'] = 'BSApiFileBackendStore';
 $wgAPIModules['bs-user-store'] = 'BSApiUserStore';
+$wgAPIModules['bs-adminuser-store'] = 'BSApiAdminUserStore';
+$wgAPIModules['bs-group-store'] = 'BSApiGroupStore';
+$wgAPIModules['bs-interwiki-store'] = 'BSApiInterwikiStore';
 $wgAPIModules['bs-wikipage-tasks'] = 'BSApiWikiPageTasks';
+$wgAPIModules['bs-wikipage-store'] = 'BSApiWikiPageStore';
+$wgAPIModules['bs-titlequery-store'] = 'BSApiTitleQueryStore';
+$wgAPIModules['bs-ping-tasks'] = 'BSApiPingTasks';
 
 //I18N MW1.23+
 $wgMessagesDirs['BlueSpice'] = __DIR__ . '/i18n/core';
@@ -95,6 +105,26 @@ $wgExtensionMessagesFiles += array(
 
 #$wgSpecialPages['Diagnostics'] = 'SpecialDiagnostics';
 $wgSpecialPages['SpecialCredits'] = 'SpecialCredits';
+
+if( !isset( $GLOBALS['wgParamDefinitions'] ) ) {
+	$GLOBALS['wgParamDefinitions'] = array();
+}
+
+$GLOBALS['wgParamDefinitions'] += array(
+	'titlelist' => array(
+		'definition' => 'BSTitleListParam',
+		'string-parser' => 'BSTitleParser',
+		'validator' => 'BSTitleValidator',
+	),
+	'namespacelist' => array(
+		'definition' => 'BSNamespaceListParam',
+		'string-parser' => 'BSNamespaceParser',
+		'validator' => 'BSNamespaceValidator',
+	)
+	//TODO:
+	//'title', 'category', 'user', 'usergroup'
+	//'categorylist', 'userlist', 'usergrouplist'
+);
 
 // Register hooks
 require_once( 'BlueSpice.hooks.php' );

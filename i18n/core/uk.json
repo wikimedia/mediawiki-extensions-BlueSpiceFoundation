@@ -9,8 +9,6 @@
 	"bs-ns_main": "(Сторінки)",
 	"bs-ns_all": "(всі)",
 	"bs-tab_navigation": "Навігація",
-	"bs-tab_focus": "Фокус",
-	"bs-tab_admin": "Адміністратор",
 	"bs-userbar_loginswitch_logout": "Вихід",
 	"bs-userbar_loginswitch_login": "Вхід",
 	"bs-extended-search-tooltip-fulltext": "Повнотекстовий пошук",
@@ -75,5 +73,13 @@
 	"bs-pref-anonuserimage": "Аватар анонімного користувача:",
 	"bs-pref-deleteduserimage": "Аватар видаленого користувача:",
 	"bs-pref-bspinginterval": "Інтервал пінгу (у секундах):",
-	"bs-pref-testmode": "Активувати тестовий режим"
+	"bs-pref-testmode": "Активувати тестовий режим",
+	"bs-tag-input-desc": "Значення вмісту елемента",
+	"bs-tag-param-desc": "Значення атрибуту елемента «$1»",
+	"bs-parser-error-invalid-namespace": "Неправильний простір назв: $1",
+	"bs-parser-error-invalid-title": "Неприпустима назва: $1",
+	"bs-validator-error-namespace-does-not-exist": "Простору назв не існує: $1",
+	"bs-validator-error-namespace-on-blacklist": "Недозволений простір назв: $1",
+	"bs-validator-error-title-does-not-exist": "Сторінка не існує: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Сторінка не дозволена: $1"
 }

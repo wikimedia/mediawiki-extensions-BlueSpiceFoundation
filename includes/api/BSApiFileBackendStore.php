@@ -19,12 +19,12 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  * This file is part of BlueSpice for MediaWiki
- * For further information visit http://www.blue-spice.org
+ * For further information visit http://bluespice.com
  *
  * @author     Robert Vogel <vogel@hallowelt.com>
  * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    Bluespice_Foundation
- * @copyright  Copyright (C) 2015 Hallo Welt! - Medienwerkstatt GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
@@ -81,7 +81,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'file_mimetype' => $oImg->getMimeType(), # major/minor
 				'file_user_text' => $oImg->getUser( 'text' ),
 				'file_extension' => $oImg->getExtension(),
-				'file_timestamp' => $oImg->getTimestamp(),
+				'file_timestamp' => $this->getLanguage()->userAdjust( $oImg->getTimestamp() ),
 				'file_mediatype' => $oImg->getMediaType(),
 				'file_description' => $oImg->getDescription(),
 				'file_display_text' => $oImg->getName(),

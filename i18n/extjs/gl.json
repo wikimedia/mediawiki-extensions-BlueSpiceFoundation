@@ -44,6 +44,8 @@
 	"bs-extjs-filter-ends-with": "remata con",
 	"bs-extjs-filter-greater-than": "maior que",
 	"bs-extjs-filter-less-than": "menor que",
+	"bs-extjs-filter-bool-yes": "si",
+	"bs-extjs-filter-bool-no": "non",
 	"bs-extjs-title-success": "Todo correcto",
 	"bs-extjs-title-warning": "Aviso",
 	"bs-extjs-categoryboxselect-emptytext": "Engada unha categoría"

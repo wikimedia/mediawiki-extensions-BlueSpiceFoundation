@@ -13,8 +13,6 @@
 	"bs-ns_main": "(ראשי)",
 	"bs-ns_all": "(הכול)",
 	"bs-tab_navigation": "ניווט",
-	"bs-tab_focus": "מיקוד",
-	"bs-tab_admin": "מפעיל מערכת",
 	"bs-userbar_loginswitch_logout": "יציאה",
 	"bs-userbar_loginswitch_login": "כניסה",
 	"bs-extended-search-tooltip-fulltext": "חיפוש בכל הטקסט",
@@ -72,5 +70,11 @@
 	"bs-pref-logopath": "נתיב הלוגו:",
 	"bs-pref-faviconpath": "נתיב סמל מועדפים:",
 	"bs-pref-defaultuserimage": "דמות ברירת המחדל של המשתמש:",
-	"bs-pref-testmode": "הפעלת מצב בדיקה"
+	"bs-pref-testmode": "הפעלת מצב בדיקה",
+	"bs-parser-error-invalid-namespace": "מרחב שם בלתי תקין: $1",
+	"bs-parser-error-invalid-title": "כותרת בלתי תקינה: $1",
+	"bs-validator-error-namespace-does-not-exist": "מרחב שם לא קיים: $1",
+	"bs-validator-error-namespace-on-blacklist": "מרחב שם לא מאופשר: $1",
+	"bs-validator-error-title-does-not-exist": "דף לא קיים: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "דף לא מאופשר: $1"
 }

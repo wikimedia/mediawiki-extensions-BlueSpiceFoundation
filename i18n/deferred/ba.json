@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sagan"
+		]
+	},
+	"bs-deferred-action-status-pending": "Көтөү",
+	"bs-deferred-action-status-running": "Эшләнә",
+	"bs-deferred-action-status-done": "Әҙер",
+	"bs-deferred-action-status-error": "Тейәү хатаһы",
+	"bs-deferred-action-apicopypage-description": "Копияһын алырға «$1» в «$2».",
+	"bs-deferred-action-apieditpage-description": "Мөхәрирләү \"$1\"",
+	"bs-deferred-batch-title": "Пакетлы эшкәртеү",
+	"bs-deferred-batch-progress-desc": "Прогресс",
+	"bs-deferred-batch-actions": "Ғәмәлдәр",
+	"bs-deferred-batch-description": "Тасуирлау",
+	"bs-deferred-batch-status": "Статус"
+}

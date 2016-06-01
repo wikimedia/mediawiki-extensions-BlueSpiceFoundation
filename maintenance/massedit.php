@@ -138,14 +138,14 @@ while ($row = mysql_fetch_array($res->result))
 	}
 
 	// Check title for validity
-	$wgTitle = Title::makeTitle( $row['page_namespace'], $cur_title );
-	if ( !$wgTitle ) {
+	$title = Title::makeTitle( $row['page_namespace'], $cur_title );
+	if ( !$title ) {
 		print "Invalid title\n";
 		continue;
 	}
 
 	// Fetch text
-	$article = new Article( $wgTitle );
+	$article = new Article( $title );
 
 	$article->fetchContent();
 	$text = $article->getContent() ;
@@ -217,7 +217,7 @@ while ($row = mysql_fetch_array($res->result))
 	switch ($mode)
 	{
 		case 'move':
-			$ns = $wgTitle->getNamespace();
+			$ns = $title->getNamespace();
 			$new_title = preg_replace($move_from, $move_to, $cur_title);
 
 			if ($new_title == $cur_title) continue;
@@ -233,7 +233,7 @@ while ($row = mysql_fetch_array($res->result))
 
 			// Actual modification
 			$new_title_obj = Title::newFromText( $new_title );
-			$success = $wgTitle->moveTo( $new_title_obj, false, '', false );
+			$success = $title->moveTo( $new_title_obj, false, '', false );
 			echo $success ? "done\n" : "failed\n";
 			$hits++;
 			break;

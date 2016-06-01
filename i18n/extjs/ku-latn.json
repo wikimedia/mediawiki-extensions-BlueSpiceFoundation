@@ -32,5 +32,7 @@
 	"bs-extjs-filter-starts-with": "dest pê dike bi",
 	"bs-extjs-filter-ends-with": "bi dawî dibe bi",
 	"bs-extjs-filter-greater-than": "mezintir ji",
+	"bs-extjs-filter-bool-yes": "erê",
+	"bs-extjs-filter-bool-no": "na",
 	"bs-extjs-title-warning": "Hişyarî"
 }

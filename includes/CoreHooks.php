@@ -10,16 +10,14 @@ class BsCoreHooks {
 		$wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown, $wgNonincludableNamespaces,
 		$wgExtraNamespaces, $wgContentNamespaces, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault,
 		$wgLocalisationCacheConf, $wgAutoloadLocalClasses, $wgFlaggedRevsNamespaces, $wgNamespaceAliases, $wgVersion;
+		/*
+		 * TODO: All those globals above can be removed once all included
+		 * settings files use $GLOBALS['wg...'] to access them
+		 */
 
-		$sConfigPath = BSCONFIGDIR;
-		$aConfigFiles = array(
-			'nm-settings.php',
-			'gm-settings.php',
-			'pm-settings.php'
-		);
+		global $bsgConfigFiles;
 
-		foreach ( $aConfigFiles as $sConfigFile) {
-			$sConfigFilePath = $sConfigPath . DS . $sConfigFile;
+		foreach( $bsgConfigFiles as $sConfigFileKey => $sConfigFilePath ) {
 			if ( file_exists( $sConfigFilePath ) ) {
 				include( $sConfigFilePath );
 			}
@@ -34,7 +32,7 @@ class BsCoreHooks {
 	 */
 	public static function onSoftwareInfo( &$aSoftware ) {
 		global $wgBlueSpiceExtInfo;
-		$aSoftware['[http://www.blue-spice.org/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
+		$aSoftware['[http://bluespice.com/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
 		return true;
 	}
 
@@ -211,11 +209,9 @@ class BsCoreHooks {
 
 		$table = $dbw->tableName( 'bs_settings' );
 		if ( $wgDBtype == 'mysql' || $wgDBtype == 'sqlite') {
-			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (`key` varchar(255) NOT NULL, `value` text)");
 			$dbw->query("CREATE UNIQUE INDEX `key` ON {$table} (`key`)");
 		} elseif ( $wgDBtype == 'postgres' ) {
-			$dbw->query("DROP TABLE IF EXISTS {$table}");
 			$dbw->query("CREATE TABLE {$table} (key varchar(255) NOT NULL, value text)");
 			$dbw->query("CREATE UNIQUE INDEX key ON {$table} (key)");
 		} elseif ( $wgDBtype == 'oracle' ) {
@@ -542,5 +538,39 @@ class BsCoreHooks {
 			'label' => $sLabel,
 			'content' => $oProfilePageSettingsView
 		);
+	}
+
+	/**
+	 *
+	 * @param Parser $parser
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function onParserFirstCallInit( $parser ) {
+		BsGenericTagExtensionHandler::setupHandlers(
+			BsExtensionManager::getRunningExtensions(),
+			$parser
+		);
+		return true;
+	}
+
+	/**
+	 * Register PHP Unit Tests with MediaWiki framework
+	 * @param array $files
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function onUnitTestsList( &$files ) {
+		$oIterator = new RecursiveIteratorIterator(
+			new RecursiveDirectoryIterator( dirname( __DIR__ ) . '/tests/' )
+		);
+		/**
+		 * @var SplFileInfo $oFileInfo
+		 */
+		foreach ( $oIterator as $oFileInfo ) {
+			if ( substr( $oFileInfo->getFilename(), -8 ) === 'Test.php' ) {
+				$files[] = $oFileInfo->getPathname();
+			}
+		}
+
+		return true;
 	}
 }

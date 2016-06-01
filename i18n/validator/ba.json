@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Айбикә"
+		]
+	},
+	"bs-validator-email-validation-approved": "Электрон почтаның адресы уңышлы тикшерелде",
+	"bs-validator-email-validation-not-approved": "Электрон почтаның адресын тикшереп булмай",
+	"bs-validator-url-validation-approved": "URL-адрес уңышлы тикшерелдә",
+	"bs-validator-url-validation-not-approved": "URL-адресты тикшереп булмай",
+	"bs-validator-arg-count-validation-approved": "«Иҫәп» атрибуты уңышлы тикшерелде",
+	"bs-validator-arg-count-validation-not-approved": "\"Иҫәп\" атрибутын тикшереп булмай",
+	"bs-validator-set-validation-approved": "$1 уңышлы тикшерелде",
+	"bs-validator-set-validation-not-approved": "$1 {{PLURAL:$3|өсөн түбәндәге билдәләр рөхсәт ителә|түбәндәге билдәләрҙең бер нисәһе генә рөхсәт ителә}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Бигерәк бәләкәй билдә күрһәтелгән. Ул $1 бәләкәй була алмай",
+	"bs-validator-integer-range-validation-too-high": "Бигерәк ҙур билдә күрһәтелгән. Ул $1 ҙурыраҡ була алмай"
+}
