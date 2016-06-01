@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Marmase",
-			"Mirzali"
+			"Mirzali",
+			"Kumkumuk"
 		]
 	},
 	"bs-extjs-ok": "Temam",
@@ -12,7 +13,7 @@
 	"bs-extjs-save": "Qeyd ke",
 	"bs-extjs-delete": "Bestere",
 	"bs-extjs-add": "Cı ke",
-	"bs-extjs-remove": "Bere",
+	"bs-extjs-remove": "Wegi",
 	"bs-extjs-edit": "Bıvurne",
 	"bs-extjs-error": "Xeta",
 	"bs-extjs-confirm": "Tesdiq ke",
