@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wolf Rex"
+		]
+	},
+	"bs-deferred-action-status-pending": "Függőben.",
+	"bs-deferred-action-status-running": "Futtatás...",
+	"bs-deferred-action-status-done": "Kész.",
+	"bs-deferred-action-status-error": "Sikertelen.",
+	"bs-deferred-action-apicopypage-description": "\"$1\" másolása ide: \"$2\"",
+	"bs-deferred-action-apieditpage-description": "\"$1\" szerkesztése.",
+	"bs-deferred-batch-progress-desc": "Folyamat",
+	"bs-deferred-batch-actions": "Műveletek",
+	"bs-deferred-batch-description": "Leírás",
+	"bs-deferred-batch-status": "Állapot"
+}
