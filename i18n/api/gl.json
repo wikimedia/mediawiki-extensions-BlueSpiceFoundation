@@ -7,6 +7,7 @@
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-user-store-description": "Lista todos os usuarios da base de datos. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
+	"apihelp-bs-adminuser-store-description": "Lista todos os usuarios da base de datos con datos sensibles adicionais. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-group-store-description": "Lista todos os grupos excepto $wgImplicitGroups. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-interwiki-store-description": "Lista todas as ligazóns interwiki. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-titlequery-store-description": "Lista os títulos de páxina e (opcionalmente) os prefixos de espazo de nomes baseándose nun termo de busca. Proporciona os parámetros ExtJS Store.",
