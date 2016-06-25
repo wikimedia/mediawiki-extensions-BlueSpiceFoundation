@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hwangjy9",
+			"Ykhwong"
+		]
+	},
+	"bs-notifications-addacount": "$1 사용자가 만들어졌습니다.",
+	"bs-notifications-email-addaccount-subject": "사용자 $2가 {{GENDER:$1|만들어졌습니다}}",
+	"bs-notifications-edit": "[[:$1]] 문서가 바뀌었습니다",
+	"bs-notifications-email-edit-subject": "$3 사용자가 $1 문서를 {{GENDER:$2|편집함}}",
+	"bs-notifications-create": "[[:$1]] 문서가 만들어졌습니다",
+	"bs-notifications-email-create-subject": "$3 사용자가 $1 문서를 {{GENDER:$2|만듦}}",
+	"bs-notifications-delete": "[[:$1]] 문서가 삭제되었습니다",
+	"bs-notifications-email-delete-subject": "$3 사용자가 $1 문서를 {{GENDER:$2|삭제함}}",
+	"bs-notifications-move": "[[:$1]] 문서가 옮겨졌습니다",
+	"bs-notifications-email-move-subject": "$4 사용자가 $1 문서를 {{GENDER:$2|옮김}}"
+}
