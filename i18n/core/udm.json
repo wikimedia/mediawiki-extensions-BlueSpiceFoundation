@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"AlnashPiyash2"
+			"AlnashPiyash2",
+			"Kaganer"
 		]
 	},
-	"bs-userbar_loginswitch_logout": "Потыны"
+	"bs-userbar_loginswitch_logout": "Потыны",
+	"bs-userbar_loginswitch_login": "Пырон"
 }
