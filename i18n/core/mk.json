@@ -7,8 +7,6 @@
 	"bs-ns_main": "(Страници)",
 	"bs-ns_all": "(сите)",
 	"bs-tab_navigation": "Навигација",
-	"bs-tab_focus": "Задршка",
-	"bs-tab_admin": "Админ",
 	"bs-userbar_loginswitch_logout": "Одјава",
 	"bs-userbar_loginswitch_login": "Најава",
 	"bs-extended-search-tooltip-fulltext": "Пребарување по цел текст",
@@ -73,5 +71,13 @@
 	"bs-pref-anonuserimage": "Аватар на анонимен корисник:",
 	"bs-pref-deleteduserimage": "Аватар на избришан корисник:",
 	"bs-pref-bspinginterval": "Ping-интервал (во секунди):",
-	"bs-pref-testmode": "Вклучи пробен режим"
+	"bs-pref-testmode": "Вклучи пробен режим",
+	"bs-tag-input-desc": "Вредност на содржината на елементот",
+	"bs-tag-param-desc": "Вредност на атрибутот на елементот „$1“",
+	"bs-parser-error-invalid-namespace": "Неважечки именски простор: $1",
+	"bs-parser-error-invalid-title": "Нважечки наслов: $1",
+	"bs-validator-error-namespace-does-not-exist": "Именскиот простор не постои: $1",
+	"bs-validator-error-namespace-on-blacklist": "Именскиот простор не е допуштен: $1",
+	"bs-validator-error-title-does-not-exist": "Страницата не постои: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Страницата не е допуштена: $1"
 }
