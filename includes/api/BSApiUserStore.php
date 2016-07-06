@@ -42,11 +42,11 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	protected function makeResultRow( $row, $aGroups = array() ) {
 		$oUserPageTitle = Title::makeTitle( NS_USER, $row->user_name );
 		return array(
-			'user_id' => $row->user_id,
+			'user_id' => (int) $row->user_id,
 			'user_name' => $row->user_name,
 			'user_real_name' => $row->user_real_name,
 			'user_registration' => $row->user_registration,
-			'user_editcount' => $row->user_editcount,
+			'user_editcount' => (int) $row->user_editcount,
 			'groups' => isset( $aGroups[$row->user_id] ) ? $aGroups[$row->user_id] : array(),
 			'page_link' => Linker::link( $oUserPageTitle, $row->user_name.' ' ), //The whitespace is to aviod automatic rewrite to user_real_name by BSF
 

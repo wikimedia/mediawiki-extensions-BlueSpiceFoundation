@@ -9,32 +9,38 @@ Ext.define( 'BS.form.UserCombo', {
 	queryMode: 'local',
 	typeAhead: true,
 	anyMatch: true,
-	
+	store: null,
+	extraParams: {},
+
 	deferredSetValueConf: false,
 	
 	initComponent: function() {
 		this.setFieldLabel( mw.message('bs-extjs-label-user').plain() );
-		this.store = Ext.create( 'Ext.data.JsonStore', {
-			proxy: {
-				type: 'ajax',
-				url: bs.util.getCAIUrl( 'getUserStoreData' ),
-				reader: {
-					type: 'json',
-					root: 'users',
-					idProperty: 'user_id'
-				}
-			},
-			model: 'BS.model.User',
-			//autoLoad: true //We need to load manually to have the store 
-			//loading before rendering. This allows setting values at an early
-			//time,
-			sorters: [{
-				property: this.displayField,
-				direction: 'ASC'
-			}],
-			sortOnLoad: true,
-			remoteSort: false
-		});
+		if( !this.store ) {
+			this.store = Ext.create( 'BS.store.BSApi', {
+				apiAction: 'bs-user-store',
+				proxy: {
+					type: 'ajax',
+					url: mw.util.wikiScript( 'api' ),
+					reader: {
+						type: 'json',
+						root: 'results',
+						idProperty: 'user_id'
+					}
+				},
+				extraParams: this.extraParams,
+				model: 'BS.model.User',
+				//autoLoad: true //We need to load manually to have the store
+				//loading before rendering. This allows setting values at an early
+				//time,
+				sorters: [{
+					property: this.displayField,
+					direction: 'ASC'
+				}],
+				sortOnLoad: true,
+				remoteSort: false
+			});
+		}
 		this.store.load();
 		
 		this.store.on( 'load', this.onStoreLoad, this );
