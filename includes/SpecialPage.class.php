@@ -33,4 +33,7 @@ class BsSpecialPage extends SpecialPage {
 		$this->outputHeader();
 	}
 
+	protected function getGroupName() {
+		return 'bluespice';
+	}
 }
