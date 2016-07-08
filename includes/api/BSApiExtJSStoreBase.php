@@ -304,6 +304,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			//If just one of these filters does not apply, the dataset needs
 			//to be removed
 
+			if( empty( $oFilter->type ) ) {
+				continue;
+			}
 			if( $oFilter->type == 'string' ) {
 				$bFilterApplies = $this->filterString( $oFilter, $aDataSet );
 				if( !$bFilterApplies ) {
