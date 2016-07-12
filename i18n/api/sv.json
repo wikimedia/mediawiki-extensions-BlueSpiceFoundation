@@ -6,6 +6,7 @@
 	},
 	"apihelp-bs-group-store-description": "Listar alla grupper förutom $wgImplicitGroups. Tillåter sortering, filtrering och sidnumrering. Implementerar parametrar för ExtJS Store.",
 	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
+	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
 	"apihelp-bs-task-param-format": "Format för resultatet",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan '$1'.",
