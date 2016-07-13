@@ -3,7 +3,8 @@
 		"authors": [
 			"Stryn",
 			"SMAUG",
-			"Silvonen"
+			"Silvonen",
+			"01miki10"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -11,6 +12,8 @@
 	"bs-tab_navigation": "Valikko",
 	"bs-userbar_loginswitch_logout": "Kirjaudu ulos",
 	"bs-userbar_loginswitch_login": "Kirjaudu sisään",
+	"bs-extended-search-textfield-defaultvalue": "Etsi...",
+	"bs-extended-search-textfield-tooltip": "Etsi wikistä",
 	"bs-no-information-available": "Ei tietoa saatavilla",
 	"bs-years-duration": "{{PLURAL:$1|yksi vuosi|$1 vuotta}}",
 	"bs-months-duration": "{{PLURAL:$1|yksi kuukausi|$1 kuukautta}}",
@@ -33,11 +36,31 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "Näytä virhetiedot",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Piilota virhetiedot",
 	"bs-viewtagerrorlist-legend": "$1 - Virhe",
+	"bs-filesystemhelper-file-not-exists": "Tiedostoa <code>$1</code> ei ole.",
+	"bs-filesystemhelper-file-copy-error": "Tiedostoa <code>$1</code> ei voitu kopioida.",
+	"bs-filesystemhelper-file-already-exists": "Tiedosto <code>$1</code> on jo olemassa.",
+	"bs-filesystemhelper-file-delete-error": "Tiedostoa <code>$1</code> ei voitu poistaa.",
+	"bs-filesystemhelper-folder-already-exists": "Kansio <code>$1</code> on jo olemassa.",
+	"bs-filesystemhelper-folder-copy-error": "Kansiota <code>$1</code> ei voitu nimetä uudelleen.",
+	"bs-filesystemhelper-folder-not-exists": "Kansiota <code>$1</code> ei ole.",
+	"bs-filesystemhelper-folder-rename-error": "Kansion <code>$1</code> nimeksi ei voitu vaihtaa <code>$2</code>.",
+	"bs-filesystemhelper-upload-err-code": "Tiedostoa ei voitu tallentaa: $1",
 	"bs-filesystemhelper-upload-unsupported-type": "Tätä tiedostotyyppiä ei tueta.",
+	"bs-filesystemhelper-save-base64-error": "Tiedostoa ei voitu tallentaa.",
+	"bs-filesystemhelper-upload-base64-error": "Tiedostoa ei voitu tallentaa.",
 	"bs-navigation-instructions": "Ohjeet",
 	"bs-navigation-support": "Tuki",
 	"bs-navigation-contact": "Ota yhteyttä",
 	"bs-imagepage-download-text": "Lataa",
 	"bs-ns": "Nimiavaruus",
-	"bs-parser-error-invalid-namespace": "Virheellinen nimiavaruus: $1"
+	"bs-from-something": "(kohteesta $1)",
+	"bs-pref-fileextensions": "Sallitut tiedostopäätteet:",
+	"bs-pref-logopath": "Logon sijainti:",
+	"bs-pref-faviconpath": "Faviconin sijainti:",
+	"bs-parser-error-invalid-namespace": "Virheellinen nimiavaruus: $1",
+	"bs-parser-error-invalid-title": "Virheellinen otsikko: $1",
+	"bs-validator-error-namespace-does-not-exist": "Nimiavaruutta ei ole olemassa: $1",
+	"bs-validator-error-namespace-on-blacklist": "Nimiavaruus ei ole sallittu: $1",
+	"bs-validator-error-title-does-not-exist": "Sivua ei ole olemassa: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Sivu ei ole sallittu: $1"
 }
