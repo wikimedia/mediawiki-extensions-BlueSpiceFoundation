@@ -387,7 +387,7 @@ class BsCoreHooks {
 
 		$sUser = substr( $sSaveName, 0, $iFileExt );
 		$oUser = User::newFromName( $sUser );
-		if( is_null( $oUser ) || $oUser->getId() == 0 ) {
+		if( $oUser instanceof User === false || $oUser->getId() == 0 ) {
 			return true;
 		}
 
