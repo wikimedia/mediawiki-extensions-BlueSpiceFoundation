@@ -25,6 +25,7 @@ class BsExtensionManager {
 
 	public static function addContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
+		wfDeprecated( __METHOD__, '2.27.0' );
 		$sKey = strtoupper( $sKey );
 		if ( !array_key_exists( $sKey, self::$aContexts ) ) {
 			self::$aContexts[ $sKey ] = array(
@@ -38,6 +39,7 @@ class BsExtensionManager {
 
 	public static function setContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
+		wfDeprecated( __METHOD__, '2.27.0' );
 		$sKey = self::addContext( $sKey );
 		if ( !array_key_exists( $sKey, self::$aActiveContexts ) ) {
 			self::$aActiveContexts[ $sKey ] = true;
@@ -47,6 +49,7 @@ class BsExtensionManager {
 
 	public static function isContextActive( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
+		wfDeprecated( __METHOD__, '2.27.0' );
 		$bResult = array_key_exists( strtoupper( $sKey ), self::$aActiveContexts );
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 		return $bResult;
@@ -54,6 +57,7 @@ class BsExtensionManager {
 
 	public static function removeContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
+		wfDeprecated( __METHOD__, '2.27.0' );
 		$sKey = strtoupper( $sKey );
 		if ( array_key_exists( $sKey, self::$aContexts ) ) {
 			unset( self::$aContexts[ $sKey ] );
@@ -62,24 +66,50 @@ class BsExtensionManager {
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
-	public static function registerExtension( $name, $runlevel = BsRUNLEVEL::FULL, $action = BsACTION::NONE, $baseDir = 'ext' ) {
+	/**
+	 * DEPRECATED: Use global $bsgBSExtensions instead.
+	 * Define $bsgBSExtensions in extension.json
+	 * "bsgBSExtensions": {
+	 *    "ExtName": {
+	 *        "className": "ExtClass",
+	 *        "extPath": "/PackagePath/ExtDir",
+	 *        "status" => "stable", //optional
+	 *        "package" => "BlueSpice free", //optional
+	 *     }
+	 * },
+	 * @deprecated since version 2.27.0
+	 * @param string $name
+	 * @param integer $runlevel
+	 * @param integer $action
+	 * @param string $extPath
+	 */
+	public static function registerExtension( $name, $runlevel = BsRUNLEVEL::FULL, $action = BsACTION::NONE, $extPath = 'ext' ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
-		self::$prRegisteredExtensions[$name] = array(
-			'runlevel' => $runlevel,
-			'action' => $action,
-			'baseDir' => $baseDir
+		wfDeprecated( __METHOD__, '2.27.0' );
+
+		if( empty( $extPath ) || $extPath == 'ext' ) {
+			$extPath = "/BlueSpiceExtensions/$name";
+		}
+		//HACKY: Old dir 2 ext path calculations can finally be removed with
+		//this method, yay!
+		global $IP;
+		$extPath = str_replace( '\\', '/', $extPath );
+		$sIPPath = str_replace( '\\', '/', $IP );
+		$extPath = str_replace( "$sIPPath/extensions", '', $extPath );
+
+		//Hacky, but the Preferences extension has the prefix Bs to not
+		//having the same name as the MW class.
+		$sClassName = $name;
+		if( $name == 'Preferences' ) {
+			$sClassName = "Bs$sClassName";
+		}
+
+		$GLOBALS['bsgBSExtensions'][$name] = array(
+			'className' => $sClassName,
+			'extPath' => $extPath,
+			'deprecatedSince' => '2.27.0',
 		);
 		wfProfileOut( 'Performance: ' . __METHOD__ );
-	}
-
-	/**
-	 *
-	 * @return array
-	 * @deprecated since version 2.23
-	 */
-	public static function getRegisteredExtenions() {
-		wfDeprecated( __METHOD__ );
-		return self::$prRegisteredExtensions;
 	}
 
 	/**
@@ -98,37 +128,62 @@ class BsExtensionManager {
 		return self::$prRunningExtensions;
 	}
 
-	public static function includeExtensionFiles( $oCore ) {
+	protected static function makeExtensionConfig( $sExtName = "", $aConfig = array() ) {
+		global $wgBlueSpiceExtInfo;
+		if( !isset( $aConfig['className'] ) ) {
+			$aConfig['className'] = $sExtName;
+		}
+		if( !isset( $aConfig['extPath'] ) ) {
+			$aConfig['extPath'] = "";
+		}
+		if( !isset( $aConfig['status'] ) ) {
+			$aConfig['status'] = "default";
+		}
+		if( !isset( $aConfig['package'] ) ) {
+			$aConfig['package'] = "default";
+		}
+		$aConfig['status'] = str_replace(
+			'default',
+			$wgBlueSpiceExtInfo['status'],
+			$aConfig['status']
+		);
+		$aConfig['package'] = str_replace(
+			'default',
+			$wgBlueSpiceExtInfo['package'],
+			$aConfig['package']
+		);
+		return $aConfig;
+	}
+
+	public static function initialiseExtensions( $oCore ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
-		global $IP;
+		$aBSExtFromJSON = ExtensionRegistry::getInstance()->getAttribute(
+			'bsgBSExtensions'
+		);
+		if( !empty( $aBSExtFromJSON ) ) {
+			$GLOBALS['bsgBSExtensions'] = array_merge_recursive(
+				$GLOBALS['bsgBSExtensions'],
+				$aBSExtFromJSON
+			);
+		}
 
-		$path = "$IP/extensions/BlueSpiceExtensions";
+		foreach( $GLOBALS['bsgBSExtensions'] as $sExtName => $aConfig ) {
+			self::$prRegisteredExtensions[$sExtName]
+				= self::makeExtensionConfig( $sExtName, $aConfig );
+		}
 
-		foreach ( self::$prRegisteredExtensions as $extension => $attributes ) {
-			$sClassName = $extension;
+		foreach ( self::$prRegisteredExtensions as $sExtName => $aConfig ) {
+			$sClassName = $aConfig['className'];
 
-			//Check if autoloader knows class with extension name and if it
-			//is of type 'BsExtensionMW'
-			if ( !is_subclass_of( $sClassName, 'BsExtensionMW' ) ) {
-				//Check if autoloader knows a prefixed class name
-				$sClassName = 'Bs'.$sClassName;
-				if ( !is_subclass_of( $sClassName, 'BsExtensionMW' ) ) {
-					if ( $attributes['baseDir'] != 'ext' ) {
-						require( $attributes['baseDir'] . DS . $extension . '.class.php' );
-					} else {
-						require( $path . DS . $extension . DS . $extension . '.class.php' );
-					}
-					//Now we only need to check whether to use the prefixed or
-					//the unprefixed extension name as class name for instantiation
-					if( !class_exists( $sClassName, false ) ) {
-						$sClassName = $extension;
-					}
-				}
+			if( !class_exists( $sClassName ) ) {
+				throw new BsException(
+					"Class $sClassName for Extension $sExtName not found!"
+				);
 			}
 
-			self::$prRunningExtensions[$extension] = new $sClassName();
-			self::$prRunningExtensions[$extension]->setCore( $oCore );
-			self::$prRunningExtensions[$extension]->setup();
+			self::$prRunningExtensions[$sExtName] = new $sClassName();
+			self::$prRunningExtensions[$sExtName]->setCore( $oCore );
+			self::$prRunningExtensions[$sExtName]->setup( $sExtName, $aConfig );
 		}
 
 		wfProfileOut( 'Performance: ' . __METHOD__ );
@@ -151,24 +206,10 @@ class BsExtensionManager {
 	 * @return array
 	 */
 	public static function getExtensionInformation() {
-		global $wgScriptPath;
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		$aInformation = array();
-		foreach ( self::$prRegisteredExtensions as $name => $attributes ) {
-			if ( !class_exists( $name, false ) && !class_exists( 'Bs' . $name, false ) ) {
-				if ( isset( $attributes[ 'baseDir' ] ) ) {
-					require( $attributes[ 'baseDir' ] . DS . $name . DS . $name . '.class.php' );
-				} else {
-					require( $wgScriptPath . DS . 'extensions' . DS . 'BlueSpiceExtensions' . DS . $name . DS . $name . '.class.php' );
-				}
-			}
-			if ( class_exists( 'Bs' . $name, false ) ) {
-				$class = 'Bs' . $name;
-			} else {
-				$class = $name;
-			}
-			$tmp = new $class();
-			$aInformation[$name] = $tmp->getInfo();
+		foreach ( self::$prRunningExtensions as $sExtName => $oExt ) {
+			$aInformation[$sExtName] = $oExt->getInfo();
 		}
 
 		wfProfileOut( 'Performance: ' . __METHOD__ );
@@ -186,6 +227,7 @@ class BsExtensionManager {
 	 * @param int $iBaseIndex
 	 */
 	public static function registerNamespace( $sCanonicalName, $iBaseIndex, $isSystemNamespace = true ) {
+		wfDeprecated( __METHOD__, '2.27.0' );
 		global $wgExtraNamespaces, $bsgSystemNamespaces;
 
 		$sConstantName = 'NS_'.mb_strtoupper( $sCanonicalName );

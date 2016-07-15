@@ -114,16 +114,9 @@ class BsCoreHooks {
 		);
 
 		foreach( $aExtensionConfs as $sName => $aConf ) {
-			$sAssetsPath = '';
-			if( $aConf['baseDir'] == 'ext' ) {
-				$sAssetsPath = '/BlueSpiceExtensions/'.$sName;
-			} else {
-				$sAssetsPath = str_replace( $IP.DS.'extensions', '', $aConf['baseDir'] );
-				$sAssetsPath = str_replace( "\\", "/", $sAssetsPath );
-			}
-			$sAssetsPath = $wgExtensionAssetsPath.$sAssetsPath;
-			$aAssetsPaths[$sName] = $sAssetsPath;
+			$aAssetsPaths[$sName] = $wgExtensionAssetsPath.$aConf['extPath'];
 		}
+
 		//TODO: Implement as RL Module: see ResourceLoaderUserOptionsModule
 		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
 		return true;
