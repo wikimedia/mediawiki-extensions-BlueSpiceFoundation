@@ -92,14 +92,7 @@ $wgMessagesDirs['BlueSpice.API'] = __DIR__ . '/i18n/api';
 
 //I18N Backwards compatibility
 $wgExtensionMessagesFiles += array(
-	'BlueSpice' => __DIR__."/languages/BlueSpice.i18n.php",
-	'Validator' => __DIR__."/languages/Validator.i18n.php",
-	'BlueSpice.ExtJS' => __DIR__."/languages/BlueSpice.ExtJS.i18n.php",
-	'BlueSpice.ExtJS.Portal' => __DIR__."/languages/BlueSpice.ExtJS.Portal.i18n.php",
-	'BlueSpice.Deferred' => __DIR__.'/languages/BlueSpice.Deferred.i18n.php',
-	'BlueSpiceDiagnostics' => __DIR__."/languages/BlueSpice.Diagnostics.i18n.php",
 	'DiagnosticsAlias' => __DIR__."/languages/BlueSpice.Diagnostics.alias.php",
-	'BlueSpiceCredits' => __DIR__."/languages/BlueSpice.Credits.i18n.php",
 	'CreditsAlias' => __DIR__."/languages/BlueSpice.Credits.alias.php"
 );
 
