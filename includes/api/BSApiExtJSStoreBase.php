@@ -504,7 +504,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	}
 
 	/**
-	 * Performs fast sorting on the results. Thanks at user "pigpen"
+	 * Performs fast sorting on the results. Thanks to user "pigpen"
 	 * @param array $aProcessedData
 	 * @return array The sorted results
 	 */
@@ -515,22 +515,67 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			$sProperty = $aSort[$i]->property;
 			$sDirection = strtoupper( $aSort[$i]->direction );
 			$a{$sProperty} = array();
-			foreach( $aProcessedData as $iKey => $aDataSet ) {
-				$a{$sProperty}[$iKey] = $aDataSet->{$sProperty};
+			foreach( $aProcessedData as $iKey => $oDataSet ) {
+				$a{$sProperty}[$iKey] = $this->getSortValue( $oDataSet, $sProperty );
 			}
 
 			$aParams[] = $a{$sProperty};
-			$aParams[] = SORT_NATURAL; //We might tweak this depending on the data type of the field. Mabye we should make some "getSort( $fieldName )" method
 			if( $sDirection === 'ASC' ) {
 				$aParams[] = SORT_ASC;
 			}
 			else {
 				$aParams[] = SORT_DESC;
 			}
+			$aParams[] = $this->getSortFlags( $sProperty );
 		}
 		$aParams[] = &$aProcessedData;
 
 		call_user_func_array( 'array_multisort', $aParams );
 		return $aProcessedData;
 	}
+
+	/**
+	 * Returns the flags for PHP 'array_multisort' function
+	 * May be overridden by subclasses to provide different sort flags
+	 * depending on the property
+	 * @param string $sProperty
+	 * @return int see http://php.net/manual/en/array.constants.php for details
+	 */
+	protected function getSortFlags( $sProperty ) {
+		return SORT_NATURAL;
+	}
+
+	/**
+	 * Returns the value a for a field a dataset is being sorted by.
+	 * May be overridden by subclass to allow custom sorting
+	 * @param stdClass $oDataSet
+	 * @param string $sProperty
+	 * @return string
+	 */
+	protected function getSortValue( $oDataSet, $sProperty ) {
+		$mValue = $oDataSet->{$sProperty};
+		if( is_array( $mValue ) ) {
+			return $this->getSortValueFromList( $mValue, $oDataSet, $sProperty );
+		}
+
+		return $mValue;
+	}
+
+	/**
+	 * Normalizes an array to a string value that can be used in sort logic.
+	 * May be overridden by subclass to customize sorting.
+	 * Assumes that array entries can be casted to string.
+	 * @param array $aValues
+	 * @param stdClass $oDataSet
+	 * @param string $sProperty
+	 * @return string
+	 */
+	protected function getSortValueFromList( $aValues, $oDataSet, $sProperty ) {
+		$sCombinedValue = '';
+		foreach( $aValues as $sValue ) {
+			$sCombinedValue .= (string)$sValue;
+		}
+		return $sCombinedValue;
+	}
+
 }
