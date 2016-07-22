@@ -88,5 +88,6 @@
 	"bs-validator-error-namespace-does-not-exist": "Error message in case a given namespace id does not exist.\n\nParameters:\n* $1 - the namespace id",
 	"bs-validator-error-namespace-on-blacklist": "Error message in case a given namespace id is on the blacklist.\n\nParameters:\n* $1 - the namespace id",
 	"bs-validator-error-title-does-not-exist": "Error message in case a given Title object does not exist.\n\nParameters:\n* $1 - the prefixed text of the Title",
-	"bs-validator-error-title-namespace-on-blacklist": "Error message in case the namespace of a given Title object is on the blacklist.\n\nParameters:\n* $1 - the prefixed text of the Title"
+	"bs-validator-error-title-namespace-on-blacklist": "Error message in case the namespace of a given Title object is on the blacklist.\n\nParameters:\n* $1 - the prefixed text of the Title",
+	"bs-exttype-bluespice": "This is the name of the extension group on [[Special:Version]]."
 }

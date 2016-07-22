@@ -14,6 +14,7 @@ $wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'BsCoreHooks::onSkinTemplateOut
 $wgHooks['SkinAfterContent'][] = 'BsCoreHooks::onSkinAfterContent';
 $wgHooks['ParserFirstCallInit'][] = 'BsCoreHooks::onParserFirstCallInit';
 $wgHooks['UserAddGroup'][] = 'BsGroupHelper::addTemporaryGroupToUserHelper';
+$wgHooks['ExtensionTypes'][] = 'BsCoreHooks::onExtensionTypes';
 #$wgHooks['UnitTestsList'][] = 'BsCoreHooks::onUnitTestsList';
 
 // START cache invalidation hooks

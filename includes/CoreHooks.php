@@ -547,6 +547,15 @@ class BsCoreHooks {
 	}
 
 	/**
+	 * Register 'bluespice' as extension type
+	 * @param array $extTypes
+	 */
+	public static function onExtensionTypes( &$extTypes ) {
+		$extTypes['bluespice'] = wfMessage( "bs-exttype-bluespice" )->plain();
+		return true;
+	}
+
+	/**
 	 * Register PHP Unit Tests with MediaWiki framework
 	 * @param array $files
 	 * @return boolean Always true to keep hook running
