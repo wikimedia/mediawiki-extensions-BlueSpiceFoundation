@@ -11,6 +11,10 @@ abstract class BsExtensionMW extends ContextSource {
 
 	protected $mResourcePath = null;
 
+	protected $sName = '';
+	protected $sStatus = '';
+	protected $sPackage = '';
+
 	/**
 	 *
 	 * @var BsCore
@@ -34,12 +38,34 @@ abstract class BsExtensionMW extends ContextSource {
 	 * @return array
 	 */
 	public function getInfo() {
-		return $this->mInfo;
+		if( !empty( $this->deprecatedSince ) ) {
+			return array(
+				'path' => $this->mExtensionFile,
+				'name' => $this->mInfo[EXTINFO::NAME],
+				'version' => $this->mInfo[EXTINFO::VERSION],
+				'author' => $this->mInfo[EXTINFO::AUTHOR],
+				'url' => $this->mInfo[EXTINFO::URL],
+				'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION],
+				'status' => $this->sStatus,
+				'package' => $this->sPackage,
+			);
+		}
+		$aExtensions = ExtensionRegistry::getInstance()->getAllThings();
+		if( empty( $aExtensions[$this->sName] ) ) {
+			return array(
+				'status' => $this->sStatus,
+				'package' => $this->sPackage,
+			);
+		}
+		return $aExtensions[$this->sName] + array(
+			'status' => $this->sStatus,
+			'package' => $this->sPackage,
+		);
 	}
 
 	// TODO MRG (01.09.10 01:57): Kommentar
 	public function getName() {
-		return $this->mInfo[EXTINFO::NAME];
+		return $this->sName;
 	}
 
 	// TODO MRG (01.09.10 01:57): Kommentar
@@ -50,21 +76,35 @@ abstract class BsExtensionMW extends ContextSource {
 	/**
 	 * Initializes the extension.
 	 */
-	public function setup() {
-		global $wgExtensionCredits, $wgBlueSpiceExtInfo;
-		// Extension credits that will show up on Special:Version
-		$sVersion = str_replace( 'default', $wgBlueSpiceExtInfo['version'], $this->mInfo[EXTINFO::VERSION] );
-		$sStatus = str_replace( 'default', $wgBlueSpiceExtInfo['status'], $this->mInfo[EXTINFO::STATUS] );
+	public function setup( $sExtName = "", $aConfig = array() ) {
+		wfProfileIn( 'Performance: ' . __METHOD__ );
 
-		$wgExtensionCredits[$this->mExtensionType][] = array(
-			'path' => $this->mExtensionFile,
-			'name' => $this->mInfo[EXTINFO::NAME],
-			'version' => $sVersion . ' (' . $sStatus . ')',
-			'author' => $this->mInfo[EXTINFO::AUTHOR],
-			'url' => $this->mInfo[EXTINFO::URL],
-			'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION]
-		);
+		global $wgExtensionCredits, $wgBlueSpiceExtInfo;
+			// Extension credits that will show up on Special:Version
+		if( !empty( $aConfig['deprecatedSince'] ) ) {
+			$sVersion = str_replace(
+				'default',
+				$wgBlueSpiceExtInfo['version'],
+				$this->mInfo[EXTINFO::VERSION]
+			);
+
+			$wgExtensionCredits[$this->mExtensionType][] = array(
+				'path' => $this->mExtensionFile,
+				'name' => $this->mInfo[EXTINFO::NAME],
+				'version' => $sVersion,
+				'author' => $this->mInfo[EXTINFO::AUTHOR],
+				'url' => $this->mInfo[EXTINFO::URL],
+				'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION]
+			);
+			$this->deprecatedSince = $aConfig['deprecatedSince'];
+		}
+		$this->sPackage = $aConfig['package'];
+		$this->sStatus = $aConfig['status'];
+		$this->mExtensionKey = "MW::$sExtName";
+		$this->sName = $sExtName;
 		$this->initExt();
+
+		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
 	/**

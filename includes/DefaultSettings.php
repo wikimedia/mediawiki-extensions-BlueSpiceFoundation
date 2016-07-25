@@ -218,3 +218,8 @@ $wgResourceLoaderLESSVars += array(
 	'bs-color-error' => '#f2dede',
 	'bs-color-info' => '#d9edf7',
 );
+
+/**
+ * BsExtensionManager extension registration
+ */
+$bsgBSExtensions = array();
