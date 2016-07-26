@@ -14,6 +14,6 @@
 	"bs-notifications-email-create-subject": "$3 사용자가 $1 문서를 {{GENDER:$2|만듦}}",
 	"bs-notifications-delete": "[[:$1]] 문서가 삭제되었습니다",
 	"bs-notifications-email-delete-subject": "$3 사용자가 $1 문서를 {{GENDER:$2|삭제함}}",
-	"bs-notifications-move": "[[:$1]] 문서가 옮겨졌습니다",
-	"bs-notifications-email-move-subject": "$4 사용자가 $1 문서를 {{GENDER:$2|옮김}}"
+	"bs-notifications-move": "[[:$1]] 문서가 이동되었습니다",
+	"bs-notifications-email-move-subject": "$4님이 $1 문서를 {{GENDER:$2|이동했습니다}}"
 }
