@@ -86,5 +86,6 @@
 	"bs-validator-error-namespace-does-not-exist": "名字空间不存在：$1",
 	"bs-validator-error-namespace-on-blacklist": "名字空间不被允许：$1",
 	"bs-validator-error-title-does-not-exist": "页面不存在：$1",
-	"bs-validator-error-title-namespace-on-blacklist": "页面不被允许：$1"
+	"bs-validator-error-title-namespace-on-blacklist": "页面不被允许：$1",
+	"bs-exttype-bluespice": "BlueSpice扩展"
 }

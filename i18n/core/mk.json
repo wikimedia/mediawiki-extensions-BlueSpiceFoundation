@@ -79,5 +79,6 @@
 	"bs-validator-error-namespace-does-not-exist": "Именскиот простор не постои: $1",
 	"bs-validator-error-namespace-on-blacklist": "Именскиот простор не е допуштен: $1",
 	"bs-validator-error-title-does-not-exist": "Страницата не постои: $1",
-	"bs-validator-error-title-namespace-on-blacklist": "Страницата не е допуштена: $1"
+	"bs-validator-error-title-namespace-on-blacklist": "Страницата не е допуштена: $1",
+	"bs-exttype-bluespice": "Додатоци за BlueSpice"
 }

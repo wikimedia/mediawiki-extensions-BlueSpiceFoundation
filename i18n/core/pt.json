@@ -9,8 +9,6 @@
 	"bs-ns_main": "(Páginas)",
 	"bs-ns_all": "(todos)",
 	"bs-tab_navigation": "Navegação",
-	"bs-tab_focus": "Foco",
-	"bs-tab_admin": "Administrador",
 	"bs-userbar_loginswitch_logout": "Sair",
 	"bs-userbar_loginswitch_login": "Autenticação",
 	"bs-extended-search-tooltip-fulltext": "Pesquisa de texto completo",
@@ -75,5 +73,6 @@
 	"bs-pref-anonuserimage": "Imagem de perfil de utilizador anónimo:",
 	"bs-pref-deleteduserimage": "Avatar do(a) utilizador(a) eliminado:",
 	"bs-pref-bspinginterval": "Intervalo de ping (em segundos):",
-	"bs-pref-testmode": "Activar o modo de teste"
+	"bs-pref-testmode": "Activar o modo de teste",
+	"bs-exttype-bluespice": "Extensões BlueSpice"
 }

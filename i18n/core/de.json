@@ -80,5 +80,6 @@
 	"bs-validator-error-namespace-does-not-exist": "Namensraum existiert nicht: $1",
 	"bs-validator-error-namespace-on-blacklist": "Namensraum nicht erlaubt: $1",
 	"bs-validator-error-title-does-not-exist": "Seite existiert nicht: $1",
-	"bs-validator-error-title-namespace-on-blacklist": "Seite nicht erlaubt: $1"
+	"bs-validator-error-title-namespace-on-blacklist": "Seite nicht erlaubt: $1",
+	"bs-exttype-bluespice": "BlueSpice-Erweiterungen"
 }
