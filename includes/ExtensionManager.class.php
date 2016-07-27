@@ -67,9 +67,9 @@ class BsExtensionManager {
 	}
 
 	/**
-	 * DEPRECATED: Use global $bsgBSExtensions instead.
-	 * Define $bsgBSExtensions in extension.json
-	 * "bsgBSExtensions": {
+	 * DEPRECATED: Use global $bsgExtensions instead.
+	 * Define $bsgExtensions in extension.json
+	 * "bsgExtensions": {
 	 *    "ExtName": {
 	 *        "className": "ExtClass",
 	 *        "extPath": "/PackagePath/ExtDir",
@@ -104,7 +104,7 @@ class BsExtensionManager {
 			$sClassName = "Bs$sClassName";
 		}
 
-		$GLOBALS['bsgBSExtensions'][$name] = array(
+		$GLOBALS['bsgExtensions'][$name] = array(
 			'className' => $sClassName,
 			'extPath' => $extPath,
 			'deprecatedSince' => '2.27.0',
@@ -158,16 +158,16 @@ class BsExtensionManager {
 	public static function initialiseExtensions( $oCore ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		$aBSExtFromJSON = ExtensionRegistry::getInstance()->getAttribute(
-			'bsgBSExtensions'
+			'bsgExtensions'
 		);
 		if( !empty( $aBSExtFromJSON ) ) {
-			$GLOBALS['bsgBSExtensions'] = array_merge_recursive(
-				$GLOBALS['bsgBSExtensions'],
+			$GLOBALS['bsgExtensions'] = array_merge_recursive(
+				$GLOBALS['bsgExtensions'],
 				$aBSExtFromJSON
 			);
 		}
 
-		foreach( $GLOBALS['bsgBSExtensions'] as $sExtName => $aConfig ) {
+		foreach( $GLOBALS['bsgExtensions'] as $sExtName => $aConfig ) {
 			self::$prRegisteredExtensions[$sExtName]
 				= self::makeExtensionConfig( $sExtName, $aConfig );
 		}

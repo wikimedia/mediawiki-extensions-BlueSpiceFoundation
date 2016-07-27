@@ -222,4 +222,4 @@ $wgResourceLoaderLESSVars += array(
 /**
  * BsExtensionManager extension registration
  */
-$bsgBSExtensions = array();
+$bsgExtensions = array();
