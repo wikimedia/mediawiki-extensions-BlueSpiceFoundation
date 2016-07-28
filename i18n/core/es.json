@@ -82,5 +82,6 @@
 	"bs-validator-error-namespace-does-not-exist": "El espacio de nombres no existe: $1",
 	"bs-validator-error-namespace-on-blacklist": "Espacio de nombres no permitido: $1",
 	"bs-validator-error-title-does-not-exist": "La página no existe: $1",
-	"bs-validator-error-title-namespace-on-blacklist": "Página no permitida: $1"
+	"bs-validator-error-title-namespace-on-blacklist": "Página no permitida: $1",
+	"bs-exttype-bluespice": "Extensiones de BlueSpice"
 }
