@@ -98,6 +98,10 @@ abstract class BsExtensionMW extends ContextSource {
 			);
 			$this->deprecatedSince = $aConfig['deprecatedSince'];
 		}
+
+		$this->mResourcePath = $GLOBALS['wgScriptPath']."/extensions"
+			.$aConfig['extPath'].'/resources';
+
 		$this->sPackage = $aConfig['package'];
 		$this->sStatus = $aConfig['status'];
 		$this->mExtensionKey = "MW::$sExtName";
@@ -142,12 +146,6 @@ abstract class BsExtensionMW extends ContextSource {
 	 * @return string
 	 */
 	public function getResourcePath() {
-		if ( is_null( $this->mResourcePath ) ) {
-			global $IP, $wgScriptPath;
-			$sExtensionPath = dirname( str_replace( $IP, '', $this->mExtensionFile ) );
-			$sExtensionPath = str_replace( '\\', '/', $sExtensionPath );
-			$this->mResourcePath = $wgScriptPath.$sExtensionPath.'/resources';
-		}
 		return $this->mResourcePath;
 	}
 
