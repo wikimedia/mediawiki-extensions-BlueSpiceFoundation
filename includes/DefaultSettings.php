@@ -141,9 +141,6 @@ $bsgPermissionConfig = array(
 	"passwordreset" => array(
 		'type' => 'global'
 	),
-	"proxyunbannable" => array(
-		'type' => 'global'
-	),
 	"sendemail" => array(
 		'type' => 'global'
 	),
