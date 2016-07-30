@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"SeoJeongHo",
-			"Ykhwong"
+			"Ykhwong",
+			"아라"
 		]
 	},
-	"bs-wikipage-tasks-setcategories-edit-summary": "변경된 목록들",
+	"bs-wikipage-tasks-setcategories-edit-summary": "바뀐 분류입니다.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "당신은 '$1' 페이지를 수정할 권한이 없습니다.",
 	"bs-wikipage-tasks-setcategories-success": "목차가 성공적으로 설정되었습니다."
 }

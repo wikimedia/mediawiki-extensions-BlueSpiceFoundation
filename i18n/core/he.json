@@ -76,5 +76,6 @@
 	"bs-validator-error-namespace-does-not-exist": "מרחב שם לא קיים: $1",
 	"bs-validator-error-namespace-on-blacklist": "מרחב שם לא מאופשר: $1",
 	"bs-validator-error-title-does-not-exist": "דף לא קיים: $1",
-	"bs-validator-error-title-namespace-on-blacklist": "דף לא מאופשר: $1"
+	"bs-validator-error-title-namespace-on-blacklist": "דף לא מאופשר: $1",
+	"bs-exttype-bluespice": "הרחבות BlueSpice"
 }

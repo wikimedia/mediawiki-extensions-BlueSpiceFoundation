@@ -2,14 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Gorizon",
-			"Mirzali"
+			"Mirzali",
+			"Kumkumuk"
 		]
 	},
 	"bs-ns_main": "(Peli)",
 	"bs-ns_all": "(pêro)",
 	"bs-tab_navigation": "Pusula",
-	"bs-tab_focus": "Fokus",
-	"bs-tab_admin": "İdare",
 	"bs-userbar_loginswitch_logout": "Veciyayış",
 	"bs-userbar_loginswitch_login": "Cıkewtış",
 	"bs-extended-search-textfield-defaultvalue": "Geyreno...",
@@ -24,9 +23,14 @@
 	"bs-two-units-ago": "$1 û $2 raver",
 	"bs-one-unit-ago": "$1 raver",
 	"bs-now": "nıka",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Merheba bıra $1|Merheba waya $1|Merheba $1}},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Merheba bıra $2|Merheba waya $2|Merheba $2}},",
 	"bs-email-greeting-no-receiver": "Merheba,",
+	"bs-userpagesettings-legend": "Eyarê karberi",
+	"bs-userpreferences-link-text": "Vêşi eyarê karberi",
+	"bs-userpreferences-link-title": "Bağse eyaranê karberi bıasne",
+	"bs-exception-view-heading": "Yew xeta bı",
 	"bs-viewtagerrorlist-legend": "$1 - Xeta",
 	"bs-navigation-support": "Destek",
-	"bs-navigation-contact": "İrtıbat"
+	"bs-navigation-contact": "İrtıbat",
+	"bs-exttype-bluespice": "Derganeyê BlueSpice"
 }
