@@ -1,0 +1,226 @@
+{
+	"name": "BlueSpice",
+	"version": "2.27.0",
+	"author": [
+		"[http://www.hallowelt.com Hallo Welt! GmbH]"
+	],
+	"url": "http://bluespice.com",
+	"description": "Makes MediaWiki enterprise ready.",
+	"type": "other",
+	"ExtensionFunctions": [
+		"BsCoreHooks::setup"
+	],
+	"SpecialPages": {
+		"SpecialCredits": "SpecialCredits"
+	},
+	"APIModules": {
+		"bs-filebackend-store": "BSApiFileBackendStore",
+		"bs-user-store": "BSApiUserStore",
+		"bs-adminuser-store": "BSApiAdminUserStore",
+		"bs-group-store": "BSApiGroupStore",
+		"bs-interwiki-store": "BSApiInterwikiStore",
+		"bs-wikipage-tasks": "BSApiWikiPageTasks",
+		"bs-wikipage-store": "BSApiWikiPageStore",
+		"bs-titlequery-store": "BSApiTitleQueryStore",
+		"bs-ping-tasks": "BSApiPingTasks"
+	},
+	"MessagesDirs": {
+		"BlueSpice": [
+			"i18n/core"
+		],
+		"BlueSpiceCredits": [
+			"i18n/credits"
+		],
+		"BlueSpiceDiagnostics": [
+			"i18n/diagnostics"
+		],
+		"BlueSpice.ExtJS": [
+			"i18n/extjs"
+		],
+		"BlueSpice.ExtJS.Portal": [
+			"i18n/extjs-portal"
+		],
+		"BlueSpice.Deferred": [
+			"i18n/deferred"
+		],
+		"Validator": [
+			"i18n/validator"
+		],
+		"Notifications": [
+			"i18n/notifications"
+		],
+		"BlueSpice.API": [
+			"i18n/api"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"DiagnosticsAlias": "languages/BlueSpice.Diagnostics.alias.php",
+		"CreditsAlias": "languages/BlueSpice.Credits.alias.php"
+	},
+	"Hooks": {
+		"SetupAfterCache": "BsCoreHooks::onSetupAfterCache",
+		"SoftwareInfo": "BsCoreHooks::onSoftwareInfo",
+		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
+		"LinkEnd": "BsCoreHooks::onLinkEnd",
+		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
+		"MakeGlobalVariablesScript": "BsCoreHooks::onMakeGlobalVariablesScript",
+		"LoadExtensionSchemaUpdates": "BsCoreHooks::onLoadExtensionSchemaUpdates",
+		"ApiCheckCanExecute": "BsCoreHooks::onApiCheckCanExecute",
+		"UserGetRights": "BsCoreHooks::onUserGetRights",
+		"userCan": "BsCoreHooks::onUserCan",
+		"UploadVerification": "BsCoreHooks::onUploadVerification",
+		"SkinTemplateOutputPageBeforeExec": "BsCoreHooks::onSkinTemplateOutputPageBeforeExec",
+		"SkinAfterContent": "BsCoreHooks::onSkinAfterContent",
+		"ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
+		"UserAddGroup": "BsGroupHelper::addTemporaryGroupToUserHelper",
+		"ExtensionTypes": "BsCoreHooks::onExtensionTypes"
+	},
+	"config": {
+		"BlueSpiceExtInfo": {
+			"name": "BlueSpice",
+			"version": "2.27.0",
+			"status": "alpha",
+			"package": "BlueSpice Free",
+			"url": "http://bluespice.com",
+			"desc": "Makes MediaWiki enterprise ready.",
+			"author": [
+				"[http://www.hallowelt.com Hallo Welt! GmbH]"
+			]
+		},
+		"AjaxExportList": [
+			"BsCommonAJAXInterface::getTitleStoreData",
+			"BsCommonAJAXInterface::getNamespaceStoreData",
+			"BsCommonAJAXInterface::getUserStoreData",
+			"BsCommonAJAXInterface::getCategoryStoreData",
+			"BsCommonAJAXInterface::getAsyncCategoryTreeStoreData",
+			"BsCommonAJAXInterface::getFileUrl"
+		]
+	},
+	"AutoloadClasses": {
+		"BsCore": "includes/Core.class.php",
+		"BsCoreHooks": "includes/CoreHooks.php",
+		"LCStore_BSDB": "includes/cache/LCStore_BSDB.php",
+		"LCStore_SHM": "includes/cache/LCStore_SHM.php",
+		"LCStore_MC": "includes/cache/LCStore_MC.php",
+		"BsValidator": "includes/validator/Validator.class.php",
+		"BsValidatorPlugin": "includes/validator/Validator.class.php",
+		"BsValidatorResponse": "includes/validator/Validator.class.php",
+		"BsValidatorEmailPlugin": "includes/validator/Validator.class.php",
+		"BsValidatorUrlPlugin": "includes/validator/Validator.class.php",
+		"BsValidatorPositiveIntegerPlugin": "includes/validator/Validator.class.php",
+		"BsValidatorIntegerRangePlugin": "includes/validator/Validator.class.php",
+		"BsValidatorArgCountPlugin": "includes/validator/Validator.class.php",
+		"BsValidatorCategoryPlugin": "includes/validator/Validator.class.php",
+		"BsValidatorSetItemPlugin": "includes/validator/Validator.class.php",
+		"BsValidatorMwGroupnamePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwGroupnamePlugin.class.php",
+		"BsValidatorMwNamespacePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwNamespacePlugin.class.php",
+		"BsValidatorMwUsernamePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwUsernamePlugin.class.php",
+		"BsSpecialPage": "includes/SpecialPage.class.php",
+		"BsBaseTemplate": "includes/BsBaseTemplate.php",
+		"BsConfig": "includes/Config.class.php",
+		"BSDebug": "includes/Debug.php",
+		"BsException": "includes/Exception.class.php",
+		"BsGenericTagExtensionHandler": "includes/GenericTagExtensionHandler.php",
+		"BSTitleListParam": "includes/paramdefinition/BSTitleListParam.php",
+		"BSTitleParser": "includes/parser/BSTitleParser.php",
+		"BSTitleValidator": "includes/validator/BSTitleValidator.php",
+		"BSNamespaceListParam": "includes/paramdefinition/BSNamespaceListParam.php",
+		"BSNamespaceParser": "includes/parser/BSNamespaceParser.php",
+		"BSNamespaceValidator": "includes/validator/BSNamespaceValidator.php",
+		"BsMailer": "includes/Mailer.class.php",
+		"BsXHRBaseResponse": "includes/XHRBaseResponse.class.php",
+		"BsXHRJSONResponse": "includes/XHRBaseResponse.class.php",
+		"BsXHRResponseStatus": "includes/XHRBaseResponse.class.php",
+		"BsCommonAJAXInterface": "includes/CommonAJAXInterface.php",
+		"BsCAI": "includes/CommonAJAXInterface.php",
+		"BsCAContext": "includes/CAContext.php",
+		"BsCAIContext": "includes/CAContext.php",
+		"BsCAResponse": "includes/CAResponse.php",
+		"BsCAIResponse": "includes/CAResponse.php",
+		"BsExtJSStoreParams": "includes/ExtJSStoreParams.php",
+		"BsExtJSSortParam": "includes/ExtJSStoreParams.php",
+		"BSNotifications": "includes/Notifications.class.php",
+		"BSNotificationHandlerInterface": "includes/notifications/NotificationHandler.php",
+		"BSNotificationHandler": "includes/notifications/NotificationHandler.php",
+		"BSStandardAPIResponse": "includes/api/BSStandardAPIResponse.php",
+		"BSExtendedApiContext": "includes/api/BSExtendedApiContext.php",
+		"BSApiFormatJson": "includes/api/BSApiFormatJson.php",
+		"BSApiBase": "includes/api/BSApiBase.php",
+		"BSApiTasksBase": "includes/api/BSApiTasksBase.php",
+		"BSApiExtJSStoreBase": "includes/api/BSApiExtJSStoreBase.php",
+		"BSApiExtJSDBTableStoreBase": "includes/api/BSApiExtJSDBTableStoreBase.php",
+		"BSApiFileBackendStore": "includes/api/BSApiFileBackendStore.php",
+		"BSApiUserStore": "includes/api/BSApiUserStore.php",
+		"BSApiAdminUserStore": "includes/api/BSApiAdminUserStore.php",
+		"BSApiGroupStore": "includes/api/BSApiGroupStore.php",
+		"BSApiInterwikiStore": "includes/api/BSApiInterwikiStore.php",
+		"BSApiWikiPageTasks": "includes/api/BSApiWikiPageTasks.php",
+		"BSApiWikiPageStore": "includes/api/BSApiWikiPageStore.php",
+		"BSApiTitleQueryStore": "includes/api/BSApiTitleQueryStore.php",
+		"BSApiPingTasks": "includes/api/BSApiPingTasks.php",
+		"BsExtensionMW": "includes/ExtensionMW.class.php",
+		"BsInvalidNamespaceException": "includes/exception/InvalidNamespaceException.class.php",
+		"BSInvalidParamException": "includes/exception/BSInvalidParamException.php",
+		"HTMLFormEx": "includes/html/htmlformfields/HTMLFormFieldOverrides.php",
+		"HTMLInfoFieldOverride": "includes/html/htmlformfields/HTMLFormFieldOverrides.php",
+		"HTMLTextFieldOverride": "includes/html/htmlformfields/HTMLFormFieldOverrides.php",
+		"HTMLIntFieldOverride": "includes/html/htmlformfields/HTMLFormFieldOverrides.php",
+		"HTMLStaticImageFieldOverride": "includes/html/htmlformfields/HTMLFormFieldOverrides.php",
+		"HTMLCheckFieldOverride": "includes/html/htmlformfields/HTMLFormFieldOverrides.php",
+		"HTMLMultiSelectEx": "includes/html/htmlformfields/HTMLMultiSelectEx.php",
+		"XmlMultiSelect": "includes/html/htmlformfields/HTMLMultiSelectEx.php",
+		"HTMLMultiSelectPlusAdd": "includes/html/htmlformfields/HTMLMultiSelectPlusAdd.php",
+		"HTMLMultiSelectSortList": "includes/html/htmlformfields/HTMLMultiSelectSortList.php",
+		"BsArticleHelper": "includes/utility/ArticleHelper.class.php",
+		"BsCacheHelper": "includes/utility/CacheHelper.class.php",
+		"BsConnectionHelper": "includes/utility/ConnectionHelper.class.php",
+		"BsDOMHelper": "includes/utility/DOMHelper.class.php",
+		"BsFormatConverter": "includes/utility/FormatConverter.class.php",
+		"BsFileSystemHelper": "includes/utility/FileSystemHelper.class.php",
+		"BsGroupHelper": "includes/utility/GroupHelper.class.php",
+		"BsCategoryHelper": "includes/utility/CategoryHelper.class.php",
+		"BsUserHelper": "includes/utility/UserHelper.class.php",
+		"BsLinkProvider": "includes/utility/LinkProvider.class.php",
+		"BsNamespaceHelper": "includes/utility/NamespaceHelper.class.php",
+		"BsPageContentProvider": "includes/utility/PageContentProvider.class.php",
+		"BsStringHelper": "includes/utility/StringHelper.class.php",
+		"BsTagFinder": "includes/utility/TagFinder.class.php",
+		"BsWidgetListHelper": "includes/utility/WidgetListHelper.class.php",
+		"ViewBaseElement": "includes/outputhandler/views/view.BaseElement.php",
+		"ViewBaseForm": "includes/outputhandler/views/view.BaseForm.php",
+		"ViewBaseMessage": "includes/outputhandler/views/view.BaseMessage.php",
+		"ViewEditButton": "includes/outputhandler/views/view.EditButton.php",
+		"ViewEditButtonPane": "includes/outputhandler/views/view.EditButtonPane.php",
+		"ViewErrorMessage": "includes/outputhandler/views/view.ErrorMessage.php",
+		"ViewErrorMessageInline": "includes/outputhandler/views/view.ErrorMessageInline.php",
+		"ViewException": "includes/outputhandler/views/view.Exception.php",
+		"ViewFormElement": "includes/outputhandler/views/view.FormElement.php",
+		"ViewFormElementButton": "includes/outputhandler/views/view.FormElementButton.php",
+		"ViewFormElementCheckbox": "includes/outputhandler/views/view.FormElementCheckbox.php",
+		"ViewFormElementCheckboxGroup": "includes/outputhandler/views/view.FormElementCheckboxGroup.php",
+		"ViewFormElementCommonGroup": "includes/outputhandler/views/view.FormElementCommonGroup.php",
+		"ViewFormElementFieldset": "includes/outputhandler/views/view.FormElementFieldset.php",
+		"ViewFormElementInput": "includes/outputhandler/views/view.FormElementInput.php",
+		"ViewFormElementLabel": "includes/outputhandler/views/view.FormElementLabel.php",
+		"ViewFormElementRadiobutton": "includes/outputhandler/views/view.FormElementRadiobutton.php",
+		"ViewFormElementRadioGroup": "includes/outputhandler/views/view.FormElementRadioGroup.php",
+		"ViewFormElementSelectbox": "includes/outputhandler/views/view.FormElementSelectbox.php",
+		"ViewFormElementTextarea": "includes/outputhandler/views/view.FormElementTextarea.php",
+		"ViewNoticeMessage": "includes/outputhandler/views/view.NoticeMessage.php",
+		"ViewNoticeMessageInline": "includes/outputhandler/views/view.NoticeMessageInline.php",
+		"ViewTagDefaultMessage": "includes/outputhandler/views/view.TagDefaultMessage.php",
+		"ViewTagElement": "includes/outputhandler/views/view.TagElement.php",
+		"ViewTagError": "includes/outputhandler/views/view.TagError.php",
+		"ViewTagErrorList": "includes/outputhandler/views/view.TagErrorList.php",
+		"ViewUserBarElement": "includes/outputhandler/views/view.UserBarElement.php",
+		"ViewUserMiniProfile": "includes/outputhandler/views/view.UserMiniProfile.php",
+		"ViewWidget": "includes/outputhandler/views/view.Widget.php",
+		"ResourceLoaderExtJSModule": "includes/resourceloader/ResourceLoaderExtJSModule.php",
+		"DatabaseOracleBase": "includes/db/DatabaseOracleBase.php",
+		"BSOracleHooks": "includes/db/BSOracleHooks.php",
+		"SpecialDiagnostics": "includes/specials/SpecialDiagnostics.class.php",
+		"SpecialCredits": "includes/specials/SpecialCredits.class.php"
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 1
+}
