@@ -1,6 +1,6 @@
 <?php
 
-//TODO: Move this after BsExtensionManager::registerExtension is not in use
+//TODO: Remove this after BsExtensionManager::registerExtension is not in use
 //anymore
 $GLOBALS['wgAutoloadClasses']['BsPARAM'] = __DIR__."/Common.php";
 $GLOBALS['wgAutoloadClasses']['BsPARAMTYPE'] = __DIR__."/Common.php";

@@ -120,6 +120,7 @@
 		"BsConfig": "includes/Config.class.php",
 		"BSDebug": "includes/Debug.php",
 		"BsException": "includes/Exception.class.php",
+		"BsExtensionManager" : "includes/ExtensionManager.class.php",
 		"BsGenericTagExtensionHandler": "includes/GenericTagExtensionHandler.php",
 		"BSTitleListParam": "includes/paramdefinition/BSTitleListParam.php",
 		"BSTitleParser": "includes/parser/BSTitleParser.php",
@@ -219,7 +220,16 @@
 		"DatabaseOracleBase": "includes/db/DatabaseOracleBase.php",
 		"BSOracleHooks": "includes/db/BSOracleHooks.php",
 		"SpecialDiagnostics": "includes/specials/SpecialDiagnostics.class.php",
-		"SpecialCredits": "includes/specials/SpecialCredits.class.php"
+		"SpecialCredits": "includes/specials/SpecialCredits.class.php",
+		"BsPARAM": "includes/Common.php",
+		"BsPARAMTYPE": "includes/Common.php",
+		"BsPARAMOPTION": "includes/Common.php",
+		"BsPATHTYPE": "includes/Common.php",
+		"BsRUNLEVEL": "includes/Common.php",
+		"BsACTION": "includes/Common.php",
+		"BsSTYLEMEDIA": "includes/Common.php",
+		"EXTINFO": "includes/Common.php",
+		"EXTTYPE": "includes/Common.php"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 1
