@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dinhxuanduyet"
+			"Dinhxuanduyet",
+			"Minh Nguyen"
 		]
 	},
 	"bs-email-greeting-receiver": "{{Thể loại:$1|Xin chào ông $2|Xinh chào bà $2|Xin chào $2}},",
-	"bs-imagepage-download-text": "Tải xuống",
+	"bs-imagepage-download-text": "Tải về",
 	"bs-ns": "Không gian tên"
 }
