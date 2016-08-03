@@ -67,7 +67,7 @@ $wgResourceModules['ext.bluespice.extjs.theme'] = array(
 	),
 	'styles' => array(
 		//Custom build ot ExtJS's "neptune" theme
-		'bluespice.extjs/bluespice-theme/bluespice-theme-all-debug.css',
+		'bluespice.extjs/bluespice-theme/bluespice-theme-all.css',
 	),
 	'dependencies' => array(
 		//Yes, the theme depends on the framework, not the other way round.

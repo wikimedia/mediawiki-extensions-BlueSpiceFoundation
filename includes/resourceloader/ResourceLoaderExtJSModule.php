@@ -6,19 +6,11 @@ class ResourceLoaderExtJSModule extends ResourceLoaderModule {
 
 	public function getScript(\ResourceLoaderContext $context) {
 		$aContents = array();
+		$aContents[] = file_get_contents( BSROOTDIR .'/resources/extjs/ext-all-debug.js' );
 
-		if( $context->getDebug() ) {
-			$aContents[] = file_get_contents( BSROOTDIR .'/resources/extjs/ext-all-debug-w-comments.js' );
-		}
-		else {
-			$aContents[] = file_get_contents( BSROOTDIR .'/resources/extjs/ext-all.js' );
-		}
-
-		//Use ExtJS's built-in i18n. This may fail for some languages...
-		$aLangCodeMap = $this->makeLanguageCodeMap();
-		$sLangCode = $context->getLanguage() === null ? 'en' : $context->getLanguage();
-		if( isset( $aLangCodeMap[$sLangCode] ) ) {
-			$aContents[] =  file_get_contents( BSROOTDIR .'/resources/extjs/locale/'.$aLangCodeMap[$sLangCode] );
+		$sLangFile = $this->getLanguageFile( $context );
+		if( !empty( $sLangFile ) ) {
+			$aContents[] = file_get_contents( BSROOTDIR .'/resources/extjs/locale/' . $sLangFile );
 		}
 
 		//Since ExtJS gets loaded by RL it may bot be in global scope.
@@ -26,6 +18,37 @@ class ResourceLoaderExtJSModule extends ResourceLoaderModule {
 		$aContents[] = 'window.Ext = Ext;';
 
 		return implode( ";\n", $aContents );
+	}
+
+	public function getScriptURLsForDebug( \ResourceLoaderContext $context ) {
+		$extAssetsPath = $this->getConfig()->get( 'ExtensionAssetsPath' );
+		$aUrls = array(
+			"$extAssetsPath/BlueSpiceFoundation/resources/extjs/ext-all-debug.js"
+		);
+
+		$sLangFile = $this->getLanguageFile( $context );
+		if( !empty( $sLangFile ) ) {
+			$aUrls[] = "$extAssetsPath/BlueSpiceFoundation/resources/extjs/locale/$sLangFile";
+		}
+
+		return $aUrls;
+	}
+
+	/**
+	 *
+	 * @param ResourceLoaderContext $context
+	 * @return string
+	 */
+	protected function getLanguageFile( $context ) {
+		//Use ExtJS's built-in i18n. This may fail for some languages...
+		$aLangCodeMap = $this->makeLanguageCodeMap();
+		$sLangCode = $context->getLanguage() === null ? 'en' : $context->getLanguage();
+
+		if( isset( $aLangCodeMap[$sLangCode] ) ) {
+			return $aLangCodeMap[$sLangCode];
+		}
+
+		return '';
 	}
 
 	/**
