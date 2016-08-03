@@ -5,6 +5,26 @@
 ( function ( mw, bs, $, undefined ) {
 
 	/**
+	 * e.g. bs.api.tasks.execSilent(...).done(...);
+	 * @param string module
+	 * @param string taskname
+	 * @param object data
+	 * @returns jQuery.Promise
+	 */
+	function _execTaskSilent( module, task, data, cfg ) {
+		cfg = cfg || {};
+		cfg = $.extend( {
+			success: function( response, module, task, $dfd, cfg ) {
+				$dfd.resolve( response );
+			},
+			failure: function( response, module, task, $dfd, cfg ) {
+				$dfd.resolve( response );
+			}
+		}, cfg );
+
+		return _execTask( module, task, data, cfg );
+	}
+	/**
 	 * e.g. bs.api.tasks.exec(
 			'wikipage',
 			'setCategories',
@@ -156,6 +176,7 @@
 	bs.api = {
 		tasks: {
 			exec: _execTask,
+			execSilent: _execTaskSilent,
 			makeUrl: _makeTaskUrl
 		},
 		makeUrl: _makeUrl
