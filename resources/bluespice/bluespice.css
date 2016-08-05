@@ -117,3 +117,7 @@
 	margin:0 0 10px;
 	padding:.3em .6em;
 }
+
+.bs-tab-content {
+	clear: both;
+}
