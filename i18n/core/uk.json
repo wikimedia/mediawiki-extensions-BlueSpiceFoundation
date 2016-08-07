@@ -3,7 +3,8 @@
 		"authors": [
 			"Andriykopanytsia",
 			"Base",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"bs-ns_main": "(Сторінки)",
@@ -81,5 +82,6 @@
 	"bs-validator-error-namespace-does-not-exist": "Простору назв не існує: $1",
 	"bs-validator-error-namespace-on-blacklist": "Недозволений простір назв: $1",
 	"bs-validator-error-title-does-not-exist": "Сторінка не існує: $1",
-	"bs-validator-error-title-namespace-on-blacklist": "Сторінка не дозволена: $1"
+	"bs-validator-error-title-namespace-on-blacklist": "Сторінка не дозволена: $1",
+	"bs-exttype-bluespice": "Розширення BlueSpice"
 }

@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-notifications-addacount": "De Benotzer $1 gouf ugeluecht.",
+	"bs-notifications-email-addaccount-subject": "Benotzer $2 gouf {{GENDER:$1|ugeluecht}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|De Benotzer}} $3 gouf ugeluecht.\n\nDir kënnt {{GENDER:$2|seng|hir|d'}} Benotzersäit besiche wann Dir dëse Link benotzt: $1",
+	"bs-notifications-edit": "D'Säit [[:$1]] gouf geännert",
+	"bs-notifications-email-edit-subject": "Säit $1 {{GENDER:$2|geännert}} vum $3",
+	"bs-notifications-email-edit-body": "D'Säit \"$1\" gouf vum $6 {{GENDER:$2|geännert}}.\n\nBemierkung:\n$3\nDir kënnt d'Säit op dësem Link besichen:\n$4.\n\nWann Dir nëmmen d'Ännerunge gesi wëllt, da gitt op dëse Link:\n$5",
+	"bs-notifications-create": "D'Säit [[:$1]] gouf ugeluecht",
+	"bs-notifications-email-create-subject": "Säit $1 {{GENDER:$2|ugeluecht}} vum $3",
+	"bs-notifications-email-create-body": "D'Säit \"$1\" gouf {{GENDER:$2|vum}} $6 ugeluecht-\n\nBemierkung:\n$3\nDir kënnt d'Säit op dësem Link $4 fannen",
+	"bs-notifications-delete": "D'Säit [[:$1]] gouf geläscht",
+	"bs-notifications-email-delete-subject": "Säit $1 {{GENDER:$2|geläscht}} vum $3",
+	"bs-notifications-email-delete-body": "D'Säit \"$4\" gouf vum $5 {{GENDER:$2|geläscht}}.\n\nDe Grond war:\n$3",
+	"bs-notifications-move": "D'Säit [[:$1]] gouf geréckelt",
+	"bs-notifications-email-move-subject": "Säit $1 {{GENDER:$2|geréckelt}} vum $4",
+	"bs-notifications-email-move-body": "D'Säit \"$1\" gouf vum $5 op $3 {{GENDER:$2|geréckelt}}. Dir kënnt d'Säit op dësem Link fannen: $4"
+}
