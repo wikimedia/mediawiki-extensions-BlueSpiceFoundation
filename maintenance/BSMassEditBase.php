@@ -13,7 +13,7 @@ class BSMassEditBase extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addOption( 'dry', 'Do not really modify contents' );
-		$this->addOption( 'output', 'Save outputs to file', false, true );
+		$this->addOption( 'verbose', 'Whether or not to output additional information', false, false );
 	}
 
 	public function execute() {
@@ -110,11 +110,17 @@ class BSMassEditBase extends BSMaintenance {
 	 * @return string
 	 */
 	protected function modifyTextContent( $sContent, $oWikiPage ) {
-		return preg_replace_callback(
+		$sNewContent = preg_replace_callback(
 			$this->getTextModificationRegexPatterns(),
 			array( $this, 'textModificationCallback' ),
 			$sContent
 		);
+
+		if( $this->isVerbose() ) {
+			$this->outputDiff( $sContent, $sNewContent );
+		}
+
+		return $sNewContent;
 	}
 
 	/**
@@ -123,23 +129,7 @@ class BSMassEditBase extends BSMaintenance {
 	 * @return string
 	 */
 	protected function getEditSummay( $oWikiPage ) {
-		return "Modified by script '".__CLASS__."'";
-	}
-
-	public function output($out, $channel = null) {
-		$sOutFile = $this->getOption( 'output', false );
-		if( $sOutFile ) {
-			file_put_contents( $sOutFile, "$out\n", FILE_APPEND );
-		}
-		parent::output($out, $channel);
-	}
-
-	public function error($err, $die = 0) {
-		$sOutFile = $this->getOption( 'output', false );
-		if( $sOutFile ) {
-			file_put_contents( $sOutFile, "$err\n", FILE_APPEND );
-		}
-		parent::error($err, $die);
+		return "Modified by script '".  get_class( $this )."'";
 	}
 
 	/**
@@ -162,4 +152,23 @@ class BSMassEditBase extends BSMaintenance {
 		//Just a dummy: returns unmodified
 		return $aMatches[0];
 	}
+
+	protected function outputDiff( $sContent, $sNewContent ) {
+		$oDiff = new Diff(
+			explode( "\n", $sContent ),
+			explode( "\n", $sNewContent )
+		);
+		if( !$oDiff->isEmpty() ) {
+			$oDiffFormatter = new UnifiedDiffFormatter();
+			$this->output(
+				$oDiffFormatter->format( $oDiff )
+			);
+			$this->output( "---\n" );
+		}
+	}
+
+	public function isVerbose() {
+		return (bool)$this->getOption( 'verbose', false );
+	}
+
 }
