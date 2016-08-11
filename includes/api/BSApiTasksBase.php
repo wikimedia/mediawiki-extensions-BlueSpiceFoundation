@@ -96,6 +96,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 				}
 
 				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', array( $this, $sTask, &$oResult, $oTaskData , $aParams ) );
+
+				//trigger data update flag after content change over api
+				if( $this->isWriteMode() ) {
+					$oWikiPage = WikiPage::factory( $this->getTitle() );
+					DataUpdate::runUpdates( $oWikiPage->getContent()->getSecondaryDataUpdates( $this->getTitle() ) );
+				}
 			}
 		}
 
@@ -396,5 +402,13 @@ abstract class BSApiTasksBase extends BSApiBase {
 			return false;
 		}
 		return parent::canUseWikiPage();
+	}
+
+	/*
+	 * Indicates whether this module requires write mode
+	 * @return bool
+	 */
+	public function isWriteMode() {
+		return true;
 	}
 }
