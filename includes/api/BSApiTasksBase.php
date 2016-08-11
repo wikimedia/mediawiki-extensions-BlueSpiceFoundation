@@ -46,6 +46,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 	protected $aTasks = array();
 
 	/**
+	 * Global available bs api tasks, can be called by task param, extends $aTasks
+	 * @var array
+	 */
+	protected $aGlobalTasks = array( 'getUserTaskPermissions' );
+
+	/**
 	 * Methods that can be executed even when the wiki is in read-mode, as
 	 * they do not alter the state/content of the wiki
 	 * @var array
@@ -81,7 +87,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 			$oResult->errors['task'] = 'Task '.$sTask.' not implemented';
 		}
 		else {
-			$this->checkTaskPermission( $sTask );
+			$res = $this->checkTaskPermission( $sTask );
+			if( !$res ) {
+				$this->dieUsageMsg( 'badaccess-groups' );
+			}
 			if( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
 				global $wgReadOnly;
 				$oResult->message = wfMessage( 'bs-readonly', $wgReadOnly )->plain();
@@ -218,6 +227,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 * @return array
 	 */
 	protected function getAllowedParams() {
+		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		return array(
 			'task' => array(
 				ApiBase::PARAM_REQUIRED => true,
@@ -294,18 +304,56 @@ abstract class BSApiTasksBase extends BSApiBase {
 		);
 	}
 
+	/**
+	 *
+	 * @param string $sTask
+	 * @return boolean null if requested task not in list
+	 * true if allowed
+	 * false if not found in permission table of current user -> set in permission manager, group based
+	 */
 	public function checkTaskPermission( $sTask ) {
-		$aTaskPermissions = $this->getRequiredTaskPermissions();
+		$aTaskPermissions = array_merge(
+		  $this->getRequiredTaskPermissions(),
+		  $this->getGlobalRequiredTaskPermissions()
+		);
+
 		if( empty($aTaskPermissions[$sTask]) ) {
 			return;
 		}
+		//lookup permission for given task
 		foreach( $aTaskPermissions[$sTask] as $sPermission ) {
+			//check if user have needed permission
 			if( $this->getUser()->isAllowed( $sPermission ) ) {
 				continue;
 			}
 			//TODO: Reflect permission in error message
-			$this->dieUsageMsg( 'badaccess-groups' );
+			return false;
 		}
+
+		return true;
+	}
+
+	/**
+	 * Check user permisson on each task and return boolean array like "taskName" => true/false
+	 * This can be used to show / hide ui elements
+	 *
+	 * @param Array $oTaskData can be empty, default param for task
+	 * @return Array Elements of $oTasks with boolean attributes for grant / deny on each task provided by called api-class
+	 */
+	public function task_getUserTaskPermissions( $oTaskData ){
+		$oResponse = $this->makeStandardReturn();
+
+		$aTaskPermissions = $this->getRequiredTaskPermissions();
+		$arrReturn = array();
+		while( list( $sTask, $val ) = each( $aTaskPermissions ) ){
+			$arrReturn[$sTask] = $this->checkTaskPermission( $sTask );
+		}
+
+		$oResponse->payload = $arrReturn;
+		$oResponse->success = true;
+
+		return $oResponse;
+
 	}
 
 	/**
@@ -417,5 +465,16 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	public function isWriteMode() {
 		return true;
+	}
+
+	/**
+	 * Returns an array of global tasks and their required permissions
+	 * array( 'taskname' => array('read', 'edit') )
+	 * @return array
+	 */
+	protected function getGlobalRequiredTaskPermissions() {
+		return array(
+			'getUserTaskPermissions' => array( 'read' )
+		);
 	}
 }
