@@ -153,48 +153,12 @@ class BsBaseTemplate extends BaseTemplate {
 		}
 
 		$this->sortDataArrayByPosition($this->data['bs_dataAfterContent']);
-
-		$aDACList = array();
-		$aDACList[] = '<ul id="bs-data-after-content-tabs">';
-		$aDACContents = array();
-		foreach( $this->data['bs_dataAfterContent'] as $key => $item ) {
-			if ( $item instanceof ViewBaseElement ) {
-				$aDACList[] = $item->execute();
-			} else {
-				$aDACList[] = Html::rawElement(
-					'li',
-					array(),
-					Html::element(
-						'a',
-						array(
-							'href' => '#'.$key
-						),
-						$item['label']
-					)
-				);
-				$content = $item['content'];
-				if( $item['content'] instanceof ViewBaseElement ) {
-					$content = $item['content']->execute();
-				}
-
-				$aDACContents[] = Html::rawElement(
-					'div',
-					array(
-						'id' => $key
-					),
-					$content
-				);
-			}
-		}
-		$aDACList[] = '</ul>';
+		$oDataAfterContentTabs = new BSSkinDataAfterContentTabs( $this, null, 0 );
 
 		$this->set(
 			'dataAfterContent',
 			$this->data['dataAfterContent'].
-			'<div id="bs-data-after-content">'.
-			implode( "\n", $aDACList ).
-			implode( "\n", $aDACContents ).
-			'</div>'
+			$oDataAfterContentTabs->getHTML()
 		);
 
 		return true;
@@ -212,37 +176,8 @@ class BsBaseTemplate extends BaseTemplate {
 	}
 
 	protected function printNavigationMain() {
-		?>
-		<div id="bs-nav-sections">
-			<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
-			<ul id ="bs-nav-tabs">
-				<?php
-				foreach( $this->data['bs_navigation_main'] as $key => $data ) {
-					?>
-				<li>
-					<a id="bs-tab-<?php echo $key;
-						?>" href="#bs-nav-section-<?php echo $key;
-						?>" title="<?php echo $data['label'];
-						?>" class="bs-nav-tab-icon <?php echo $data['class']
-						?>">
-						<span><?php echo $data['label'] ?></span>
-					</a>
-				</li>
-					<?php
-				}
-				?>
-			</ul>
-			<?php
-			foreach( $this->data['bs_navigation_main'] as $key => $data ) {
-				?>
-			<div id="bs-nav-section-<?php echo $key; ?>" class="bs-nav-tab">
-			<?php echo $data['content']; ?>
-			</div>
-				<?php
-			}
-			?>
-		</div>
-		<?php
+		$oNavigationMainTabs = new BSSkinNavigationMainTabs( $this, null, 0 );
+		echo $oNavigationMainTabs->getHTML();
 	}
 
 	protected function printDataBeforeContent() {
