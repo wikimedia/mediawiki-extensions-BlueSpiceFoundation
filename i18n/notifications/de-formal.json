@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Markus Glaser <glaser@hallowelt.com>"
+			"Markus Glaser <glaser@hallowelt.com>",
+			"Osnard"
 		]
 	},
-	"bs-notifications-email-addaccount-body": "{{GENDER:$2|Der Benutzer|Die Benutzerin}} $3 wurde erstellt.\n\nSie können{{GENDER:$2|seine|ihre|die}} Benutzerseite über diese URL aufrufen:\n$1",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|Der Benutzer|Die Benutzerin}} $3 wurde erstellt.\n\nSie können {{GENDER:$2|seine|ihre|die}} Benutzerseite über diese URL aufrufen:\n$1",
 	"bs-notifications-email-edit-body": "Die Seite „$1“ wurde von $6 {{GENDER:$2|geändert}}.\n\nKommentar:\n $3 \nSie können die Seite über diese URL aufrufen:\n$4.\n\nUm nur die Änderungen zu sehen, folgen sie diesem Link:\n$5",
 	"bs-notifications-email-create-body": "Die Seite \"$1\" wurde von $6 neu {{GENDER:$2|angelegt}}.\n\nKommentar:\n $3 \nSie können die Seite über diesen Link aufrufen:\n$4",
 	"bs-notifications-email-delete-body": "Die Seite \"$4\" wurde von $5 {{GENDER:$2|gelöscht}}.\n\nAls Grund wurde angegeben:\n$3\n\nSie können die Seite über diese URL aufrufen:\n$4",
