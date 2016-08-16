@@ -98,10 +98,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', array( $this, $sTask, &$oResult, $oTaskData , $aParams ) );
 
 				//trigger data update flag after content change over api
-				if( $this->isWriteMode() && $this->getTitle()->getNamespace() >= NS_MAIN) {
-					$oWikiPage = WikiPage::factory( $this->getTitle() );
-					DataUpdate::runUpdates( $oWikiPage->getContent()->getSecondaryDataUpdates( $this->getTitle() ) );
-				}
+				$this->runUpdates();
 			}
 		}
 
@@ -110,6 +107,16 @@ abstract class BSApiTasksBase extends BSApiBase {
 				continue; //MW Api doesn't like NULL values
 			}
 			$this->getResult()->addValue(null, $sFieldName, $mFieldValue);
+		}
+	}
+
+	//trigger data update flag after content change over api
+	protected function runUpdates() {
+		if ( $this->isWriteMode() && $this->getTitle()->getNamespace() >= NS_MAIN ) {
+			$oWikiPage = WikiPage::factory( $this->getTitle() );
+			if ( $oWikiPage->getContent() != null ) {
+				DataUpdate::runUpdates( $oWikiPage->getContent()->getSecondaryDataUpdates( $this->getTitle() ) );
+			}
 		}
 	}
 
