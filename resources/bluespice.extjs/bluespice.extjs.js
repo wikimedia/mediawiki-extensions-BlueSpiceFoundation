@@ -113,34 +113,4 @@
 	};
 
 	bs.extjs = extjs;
-
-	//Wait for the CSS dependencies to be loaded or ExtJS wont have important
-	//dimensions for calculating. mw.loader ignores CSS dependencies. See:
-	//https://phabricator.wikimedia.org/T63852
-	mw.loader.state( 'ext.bluespice.extjs', 'loading' );
-
-	var deferred = $.Deferred();
-	$.when( deferred ).then( function () {
-		//CSS is loaded, ExtJS is ready
-		mw.loader.state( 'ext.bluespice.extjs', 'ready' );
-		$(d).trigger( 'BSExtJSReady', [ bs.extjs ] );
-	});
-
-	var bsextjsisCSSReady = function( deferred ) {
-		var $dummy = $( '<div class="bs-extjs-cssisready">' )
-			.appendTo( $( document.body ) );
-		//bluespice.extjs.fixes.css:bs-extjs-cssisready
-		if ( $dummy.css( 'display' ) === 'inline' ) {
-			$dummy.remove();
-			deferred.resolve();
-			return;
-		}
-		$dummy.remove();
-		setTimeout( function () {
-			bsextjsisCSSReady( deferred );
-		}, 100 );
-	};
-
-	bsextjsisCSSReady( deferred );
-
 }( mediaWiki, blueSpice, jQuery, document ) );
