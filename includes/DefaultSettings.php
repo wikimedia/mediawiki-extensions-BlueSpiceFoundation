@@ -47,6 +47,17 @@ $wgUrlProtocols[] = "file://";
 $wgVerifyMimeType = false;
 $wgAllowJavaUploads = true;
 
+/*
+ * If this global is set to an array like
+ * $bsgTestSystem = array(
+ *	'color' => 'yellow', (or color code)
+ *	'text' => 'Testsystem' (string that is shown in the colored box above the header)
+ * );
+ * the color will determine a div that is placed above the bs-wrapper
+ * with the text element as a headline in it
+ */
+$bsgTestSystem = false;
+
 $bsgPermissionConfig = array(
 	'read' => array(
 		'type' => 'namespace',

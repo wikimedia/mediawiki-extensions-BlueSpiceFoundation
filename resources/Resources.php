@@ -227,4 +227,8 @@ $wgResourceModules['ext.bluespice.compat.vector.styles'] = array(
 	'position' => 'top'
 ) + $aResourceModuleTemplate;
 
+$wgResourceModules['ext.bluespice.testsystem'] = array(
+	'scripts'=>'bluespice/bluespice.testsystem.js'
+) + $aResourceModuleTemplate;
+
 unset( $aResourceModuleTemplate );

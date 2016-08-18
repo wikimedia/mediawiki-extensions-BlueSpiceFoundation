@@ -119,6 +119,7 @@ class BsCoreHooks {
 
 		//TODO: Implement as RL Module: see ResourceLoaderUserOptionsModule
 		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
+		self::addTestSystem( $out );
 		return true;
 	}
 
@@ -575,4 +576,19 @@ class BsCoreHooks {
 
 		return true;
 	}
+
+	/**
+	 * @global array $bsgTestSystem
+	 * @param OutputPage $out
+	 * @return void
+	 */
+	protected static function addTestSystem( $out ) {
+		global $bsgTestSystem;
+		if( $bsgTestSystem === false ){
+			return;
+		}
+		$out->addModules( 'ext.bluespice.testsystem' );
+		$out->addJsConfigVars( 'bsgTestSystem',$bsgTestSystem );
+	}
+
 }
