@@ -110,7 +110,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 
 	makeActionColumn: function( cols ) {
 		var items = this.makeRowActions();
-		var width =  items.length * 26; //A standard icon is 24px in width. We add some padding
+		var width =  items.length * 28; //A standard icon is 24px in width. We add some padding
 		if( width < 72 ) {
 			width = 72; //We want a minimal width so the header label is not being truncated
 		}
