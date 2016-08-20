@@ -463,8 +463,8 @@ class BsCoreHooks {
 			return;
 		}
 
-		$template->data['bs_title_actions'][5] = array(
-			'id' => 'bs-ta-filedownload',
+		$template->data['bs_export_menu'][5] = array(
+			'id' => 'bs-em-filedownload',
 			'href' => $oFile->getFullUrl(),
 			'title' => $oFile->getName(),
 			'text' => wfMessage('bs-imagepage-download-text')->plain(),
