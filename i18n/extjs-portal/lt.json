@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"bs-extjs-portal-height": "Aukštis",
+	"bs-extjs-portal-count": "įrašai",
+	"bs-extjs-portal-timespan": "Laikas",
+	"bs-extjs-portal-timespan-week": "Savaitė",
+	"bs-extjs-portal-timespan-month": "Mėnesis",
+	"bs-extjs-portal-timespan-alltime": "Visas laikas"
+}

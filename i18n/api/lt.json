@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"apihelp-bs-task-param-format": "Rezultato formatas",
+	"apihelp-bs-task-param-token": "Raktas reikalingas prieigai prie API modulio",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Kategorijos pakeistos.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Jūs negalite redaguoti puslapio „$1“.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Negalima kategorija|Negalimos kategorijos}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Kategorijos buvo sėkmingai nustatytos."
+}

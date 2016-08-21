@@ -1,9 +1,51 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pofka"
+			"Pofka",
+			"Eitvys200"
 		]
 	},
+	"bs-extjs-ok": "Gerai",
+	"bs-extjs-cancel": "Atšaukti",
+	"bs-extjs-yes": "Taip",
+	"bs-extjs-no": "Ne",
+	"bs-extjs-save": "Išsaugoti",
+	"bs-extjs-delete": "Ištrinti",
+	"bs-extjs-add": "Pridėti",
+	"bs-extjs-remove": "Pašalinti",
+	"bs-extjs-edit": "Redaguoti",
+	"bs-extjs-copy": "Kopijuoti",
+	"bs-extjs-hint": "Užuomina",
+	"bs-extjs-error": "Klaida",
+	"bs-extjs-confirm": "Patvirtinti",
+	"bs-extjs-loading": "Įkeliama…",
+	"bs-extjs-pageSize": "Puslapio dydis",
+	"bs-extjs-actions-column-header": "Veiksmai",
+	"bs-extjs-warning": "Įspėjimas",
+	"bs-extjs-saving": "išsaugoma....",
+	"bs-extjs-reset": "Atstatyti",
+	"bs-extjs-close": "Uždaryti",
+	"bs-extjs-label-user": "Vartotojas",
+	"bs-extjs-label-namespace": "Vardų sritis",
+	"bs-extjs-label-page": "Puslapis",
+	"bs-extjs-upload": "Įkelti",
+	"bs-extjs-browse": "Naršyti",
+	"bs-extjs-uploading": "Įkeliama…",
+	"bs-extjs-confirmNavigationTitle": "Sekti nuorodą",
+	"bs-extjs-confirmNavigationText": "Ar tikrai norite sekti šią nuorodą? Visi dinaminiai nustatymai, kaip filtravimas ir rūšiavimas, šiame puslapyje bus prarasti.",
+	"bs-extjs-allns": "(visi)",
+	"bs-extjs-filters": "Filtrai",
+	"bs-extjs-filter-equals": "lygus",
+	"bs-extjs-filter-equals-not": "nelygus",
+	"bs-extjs-filter-contains": "turi",
+	"bs-extjs-filter-contains-not": "neturi",
+	"bs-extjs-filter-starts-with": "prasideda",
+	"bs-extjs-filter-ends-with": "baigiasi",
 	"bs-extjs-filter-greater-than": "didesnis negu",
-	"bs-extjs-filter-less-than": "mažiau negu"
+	"bs-extjs-filter-less-than": "mažiau negu",
+	"bs-extjs-filter-bool-yes": "taip",
+	"bs-extjs-filter-bool-no": "ne",
+	"bs-extjs-title-success": "Sėkmė",
+	"bs-extjs-title-warning": "Įspėjimas",
+	"bs-extjs-categoryboxselect-emptytext": "Pridėti kategoriją"
 }

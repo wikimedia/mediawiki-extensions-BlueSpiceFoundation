@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"bs-validator-email-validation-approved": "El. pašto adresas buvo sėkmingai patvirtintas.",
+	"bs-validator-email-validation-not-approved": "Nepavyko patvirtinti el. pašto adreso.",
+	"bs-validator-url-validation-approved": "URL buvo sėkmingai patvirtintas.",
+	"bs-validator-url-validation-not-approved": "Nepavyko patvirtinti URL.",
+	"bs-validator-set-validation-approved": "$1 buvo sėkmingai patvirtintas.",
+	"bs-validator-integer-range-validation-too-low": "Pateikta reikšmė yra per maža. Ji turėtų būti nemažesnė nei $1.",
+	"bs-validator-integer-range-validation-too-high": "Pateikta reikšmė yra per aukšta. Ji turėtų būti nedidesnė nei $1."
+}
