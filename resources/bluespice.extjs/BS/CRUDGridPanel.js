@@ -130,21 +130,25 @@ Ext.define( 'BS.CRUDGridPanel', {
 	},
 
 	makeRowActions: function() {
-		this.colMainConf.actions.unshift({
-			iconCls: 'bs-extjs-actioncolumn-icon icon-cross3 destructive',
-			glyph: true, //Needed to have the "BS.override.grid.column.Action" render an <span> instead of an <img>,
-			tooltip: mw.message('bs-extjs-delete').plain(),
-			handler: this.onActionRemoveClick,
-			scope: this
-		});
+		if( this.opPermitted( 'delete' ) ) {
+			this.colMainConf.actions.unshift({
+				iconCls: 'bs-extjs-actioncolumn-icon icon-cross3 destructive',
+				glyph: true, //Needed to have the "BS.override.grid.column.Action" render an <span> instead of an <img>,
+				tooltip: mw.message('bs-extjs-delete').plain(),
+				handler: this.onActionRemoveClick,
+				scope: this
+			});
+		}
 
-		this.colMainConf.actions.unshift({
-			iconCls: 'bs-extjs-actioncolumn-icon icon-wrench progressive',
-			glyph: true,
-			tooltip: mw.message('bs-extjs-edit').plain(),
-			handler: this.onActionEditClick,
-			scope: this
-		});
+		if( this.opPermitted( 'update' ) ) {
+			this.colMainConf.actions.unshift({
+				iconCls: 'bs-extjs-actioncolumn-icon icon-wrench progressive',
+				glyph: true,
+				tooltip: mw.message('bs-extjs-edit').plain(),
+				handler: this.onActionEditClick,
+				scope: this
+			});
+		}
 
 		return this.colMainConf.actions;
 	},
