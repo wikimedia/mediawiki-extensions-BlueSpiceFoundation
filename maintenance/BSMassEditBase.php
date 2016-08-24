@@ -84,7 +84,11 @@ class BSMassEditBase extends BSMaintenance {
 	 * @return Content
 	 */
 	protected function modifyContent( $oContent, $oWikiPage ) {
-		$sTextContent = $oContent->getContentHandler()->getContentText( $oContent );
+		$sTextContent = '';
+		if( $oContent instanceof Content ) {
+			$sTextContent = $oContent->getContentHandler()->getContentText( $oContent );
+		}
+
 		$sNewTextContent = $this->modifyTextContent(
 			$sTextContent,
 			$oWikiPage
