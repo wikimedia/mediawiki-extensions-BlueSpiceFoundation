@@ -97,17 +97,19 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		// We want LIKE operator behind every term,
 		// so multi term queries also bring results
 		$sOp = $dbr->anyString();
-		$aLike = array( '', $sOp );
-		$aParams = explode( ' ', $oQueryTitle->getText() );
+		$aLike = $aNormalLike = array( '', $sOp );
+		$aParams = explode( ' ', str_replace( '/', ' ', $oQueryTitle->getText() ) );
 		$oSearchEngine = SearchEngine::create();
 		foreach ( $aParams as $sParam ) {
-			$aLike[] = $oSearchEngine->normalizeText( $sParam );
+			$aLike[] = $sParam;
 			$aLike[] = $sOp;
+			$aNormalLike[] = $oSearchEngine->normalizeText( $sParam );
+			$aNormalLike[] = $sOp;
 		}
 
 		$aConditions = array(
 			'page_id = si_page',
-			'si_title '. $dbr->buildLike( $aLike ),
+			'si_title '. $dbr->buildLike( $aLike ) . ' OR si_title ' . $dbr->buildLike( $aNormalLike ),
 		);
 
 		if ( $oQueryTitle->getNamespace() !== NS_MAIN || strpos( $sQuery, ':' ) === 0 ) {
