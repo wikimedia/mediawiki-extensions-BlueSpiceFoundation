@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"VASANTH S.N."
+		]
+	},
+	"bs-deferred-action-status-pending": "ಬಾಕಿ",
+	"bs-deferred-action-status-done": "ಆಂಡ್.",
+	"bs-deferred-batch-progress-desc": "ಪ್ರಗತಿ",
+	"bs-deferred-batch-actions": "ಕ್ರಿಯೆಕ್ಕುಲು",
+	"bs-deferred-batch-description": "ವಿವರಣೆ",
+	"bs-deferred-batch-status": "ಸ್ಥಿತಿ"
+}

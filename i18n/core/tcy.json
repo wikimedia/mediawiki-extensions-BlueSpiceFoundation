@@ -1,8 +1,27 @@
 {
 	"@metadata": {
 		"authors": [
-			"BHARATHESHA ALASANDEMAJALU"
+			"BHARATHESHA ALASANDEMAJALU",
+			"VASANTH S.N."
 		]
 	},
+	"bs-ns_main": "(ಪುಟೊಕುಲು)",
+	"bs-ns_all": "(ಮಾತಾ)",
+	"bs-tab_navigation": "ಸಂಚಾರೊ",
+	"bs-userbar_loginswitch_logout": "ಲಾಗ್ ಔಟ್",
+	"bs-userbar_loginswitch_login": "ಲಾಗಿನ್ ಆಲೆ",
+	"bs-extended-search-tooltip-fulltext": "ಪೂರ್ಣಪಠ್ಯ ಶೋಧನೆ",
+	"bs-no-information-available": "ಒವ್ವೇ ಮಾಹಿತಿ ಇಜ್ಜಿ",
+	"bs-now": "ಇತ್ತೆ",
+	"bs-exception-view-heading": "ಒಂಜಿ ದೋಷ ಆತ್‍ಂಡ್",
+	"bs-exception-view-stacktrace-toggle-show-text": "ದೋಷದ ವಿವರ ತೋಜಾಲೆ",
+	"bs-exception-view-stacktrace-toggle-hide-text": "ದೋಷದ ವಿವರ ದೆಂಗಾಲೆ",
+	"bs-viewtagerrorlist-legend": "$1 - ದೋಷ",
+	"bs-permissionerror": "ಅನುಮತಿ ದೋಷ!",
+	"bs-navigation-instructions": "ಸೂಚನೆಲು",
+	"bs-navigation-support": "ಬೆರಿಸಾಯೊ",
+	"bs-navigation-contact": "ಸಂಪರ್ಕ",
+	"bs-imagepage-download-text": "ಡೌನ್‍ಲೋಡ್",
+	"bs-ns": "ಪುದರ್‍ದ ವರ್ಗೊಲು",
 	"bs-validator-error-title-does-not-exist": "ಇಂಚಿತ್ತಿನ ಪುಟೋ ಇಜ್ಜಿ:$1"
 }
