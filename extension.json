@@ -86,15 +86,7 @@
 			"author": [
 				"[http://www.hallowelt.com Hallo Welt! GmbH]"
 			]
-		},
-		"AjaxExportList": [
-			"BsCommonAJAXInterface::getTitleStoreData",
-			"BsCommonAJAXInterface::getNamespaceStoreData",
-			"BsCommonAJAXInterface::getUserStoreData",
-			"BsCommonAJAXInterface::getCategoryStoreData",
-			"BsCommonAJAXInterface::getAsyncCategoryTreeStoreData",
-			"BsCommonAJAXInterface::getFileUrl"
-		]
+		}
 	},
 	"AutoloadClasses": {
 		"BsCore": "includes/Core.class.php",
