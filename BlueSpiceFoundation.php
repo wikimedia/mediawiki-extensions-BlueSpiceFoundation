@@ -53,3 +53,11 @@ array_unshift(
 	$wgExtensionFunctions,
 	'BsCore::doInitialise'
 );
+
+//make old ajax functions available, remove this after replacement implemented
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getTitleStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getNamespaceStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getUserStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getCategoryStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getAsyncCategoryTreeStoreData';
+$wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
