@@ -28,6 +28,19 @@ String.prototype.format = function () {
 		return typeof args[ number ] !== 'undefined' ? args[number] : match;
 	});
 };
+
+//from http://locutus.io/php/strings/ucfirst/
+String.prototype.ucFirst = function() {
+	//  discuss at: http://locutus.io/php/ucfirst/
+	// original by: Kevin van Zonneveld (http://kvz.io)
+	// bugfixed by: Onno Marsman (https://twitter.com/onnomarsman)
+	// improved by: Brett Zamir (http://brett-zamir.me)
+	//   example 1: ucfirst('kevin van zonneveld')
+	//   returns 1: 'Kevin van zonneveld'
+	var f = this.charAt( 0 ).toUpperCase();
+	return f + this.substr( 1 );
+};
+
 //hint: http://stackoverflow.com/questions/3629183/why-doesnt-indexof-work-on-an-array-ie8/3629211#3629211
 if ( !Array.prototype.indexOf ) {
 	Array.prototype.indexOf = function( elt /*, from*/ )
