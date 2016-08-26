@@ -91,8 +91,8 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		$sQuery = $this->getParameter( 'query' );
 		$aData = $this->makeData( $sQuery );
 		$aMetaData = $this->makeMetaData( $sQuery );
-		$FinalData = $this->postProcessData( $aData );
-		$this->returnData( $FinalData, $aMetaData );
+		$aFinalData = $this->postProcessData( $aData );
+		$this->returnData( $aFinalData, $aMetaData );
 	}
 
 	/**
@@ -508,6 +508,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	public function sortData($aProcessedData) {
 		$aSort = $this->getParameter('sort');
 		$iCount = count( $aSort );
+		$aParams = array();
 		for( $i = 0; $i < $iCount; $i++ ) {
 			$sProperty = $aSort[$i]->property;
 			$sDirection = strtoupper( $aSort[$i]->direction );
@@ -525,9 +526,10 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			}
 			$aParams[] = $this->getSortFlags( $sProperty );
 		}
-		$aParams[] = &$aProcessedData;
-
-		call_user_func_array( 'array_multisort', $aParams );
+		if( !empty( $aParams ) ) {
+			$aParams[] = &$aProcessedData;
+			call_user_func_array( 'array_multisort', $aParams );
+		}
 		return $aProcessedData;
 	}
 
