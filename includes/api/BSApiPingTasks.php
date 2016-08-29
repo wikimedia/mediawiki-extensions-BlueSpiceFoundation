@@ -39,7 +39,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 	 * Configures the global permission requirements
 	 * @return array
 	 */
-	protected function getRequiredPermissions() {
+	protected function getRequiredTaskPermissions() {
 		return array(
 			'ping' => array( 'read' )
 		);

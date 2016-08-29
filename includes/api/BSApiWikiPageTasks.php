@@ -37,7 +37,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * Configures the global permission requirements
 	 * @return array
 	 */
-	protected function getRequiredPermissions() {
+	protected function getRequiredTaskPermissions() {
 		return array(
 			'setCategories' => array( 'edit' )
 		);
