@@ -3,7 +3,12 @@
 class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	protected $root = 'children';
 
-	public function makeData($sQuery = '') {
+	/**
+	 *
+	 * @param string $sQuery
+	 * @return stdClass[]
+	 */
+	public function makeData( $sQuery = '' ) {
 		$sNode = $this->getParameter( 'node' );
 		$aOptions = $this->getParameter( 'options' );
 
@@ -20,16 +25,12 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 		return $this->makePageNodes( $oParent, $sQuery, $aOptions );
 	}
 
-	public function sortData($aProcessedData) {
-		return $aProcessedData; //Otherwise there is a strange default sorting
-		//TODO: Implement reasonable sorting for tree
-	}
-
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + array(
 			'node' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-wikisubpage-treestore-param-node',
 			)
 		);
 	}
@@ -38,9 +39,9 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 *
 	 * @param string $sQuery
 	 * @param array $aOptions
-	 * @return array of objects
+	 * @return stdClass[]
 	 */
-	public function makeNamespaceNodes( $sQuery, $aOptions ) {
+	protected function makeNamespaceNodes( $sQuery, $aOptions ) {
 		$aNamespaceIds = $this->getLanguage()->getNamespaceIds();
 		$aDataSets = array();
 		foreach( $aNamespaceIds as $iNamespaceId ) {
@@ -77,9 +78,9 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 * @param string $sNamespacePrefix
 	 * @param string $sQuery
 	 * @param array $aOptions
-	 * @return array of objects
+	 * @return stdClass[]
 	 */
-	public function makeRootPageNodes( $sNamespacePrefix, $sQuery, $aOptions ) {
+	protected function makeRootPageNodes( $sNamespacePrefix, $sQuery, $aOptions ) {
 		$aDataSets = array();
 
 		$oDummyTitle = Title::newFromText( $sNamespacePrefix.':X' );
@@ -112,7 +113,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 * @param array $aOptions
 	 * @return array of objects
 	 */
-	public function makePageNodes( $oParent, $sQuery, $aOptions ) {
+	protected function makePageNodes( $oParent, $sQuery, $aOptions ) {
 		$aDataSets = array();
 
 		$res = $this->getDB()->select(
@@ -136,12 +137,12 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 
 	/**
 	 *
-	 * @param array $aDataSets
+	 * @param stdClass[] $aDataSets
 	 * @param stdClass $row
 	 * @param Title $oParent
 	 * @return void
 	 */
-	public function addDataSet( &$aDataSets, $row, $oParent = null ) {
+	protected function addDataSet( &$aDataSets, $row, $oParent = null ) {
 		$oTitle = Title::newFromRow( $row );
 		if( $oParent instanceof Title ) {
 			$oBaseTitle = $oTitle->getBaseTitle();
@@ -185,5 +186,4 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 
 		$aDataSets[] = $oDataSet;
 	}
-
 }
