@@ -228,6 +228,7 @@
 		"EXTINFO": "includes/Common.php",
 		"EXTTYPE": "includes/Common.php"
 	},
+	"bsgConfigFiles": [],
 	"load_composer_autoloader": true,
 	"manifest_version": 1
 }
