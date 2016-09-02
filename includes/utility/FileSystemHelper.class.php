@@ -552,7 +552,7 @@ class BsFileSystemHelper {
 
 	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false){
 		global $wgLocalFileRepo, $wgUser;
-		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo));
+		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo), $wgUser);
 		$oUploadFile = $oUploadStash->stashFile( $sFilename, "file" );
 		$sTargetFileName = basename( self::restoreFileName( $sFilename ) );
 
