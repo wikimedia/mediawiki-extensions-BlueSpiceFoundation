@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Moud hosny"
+		]
+	},
+	"apihelp-bs-wikisubpage-treestore-description": "قوائم بالمواقع الفرعية في صفحة wiki محددة",
+	"apihelp-bs-wikisubpage-treestore-param-node": "بادئة عنوان صفحة wiki"
+}
