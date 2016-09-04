@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"apihelp-bs-wikisubpage-treestore-description": "एखाद्या विशिष्ट विकिपानाच्या उपपानांची यादी करते",
+	"apihelp-bs-wikisubpage-treestore-param-node": "विकिपानाचे उपसर्ग असलेले शीर्षक"
+}
