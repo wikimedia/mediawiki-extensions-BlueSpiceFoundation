@@ -109,18 +109,23 @@
 				message = message + '<br />' + response.errors[i].message;
 			}
 		}
-		bs.util.alert(
-			module + '-' + task + '-fail',
-			{
-				titleMsg: 'bs-extjs-title-warning',
-				text: message
-			},
-			{
-				ok: function() {
-					$dfd.reject( response );
+		if ( message.length ) {
+			bs.util.alert(
+				module + '-' + task + '-fail',
+				{
+					titleMsg: 'bs-extjs-title-warning',
+					text: message
+				},
+				{
+					ok: function() {
+						$dfd.reject( response );
+					}
 				}
-			}
-		);
+			);
+		}
+		else {
+			$dfd.reject( response );
+		}
 	}
 
 	function _makeTaskUrl( module, task, data, additionalParams ) {
