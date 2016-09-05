@@ -81,20 +81,8 @@
 
 	function _msgSuccess( response, module, task, $dfd, cfg ) {
 		if ( response.message.length ) {
-			//TODO: Dependency to 'ext.bluespice.extjs'?
-			bs.util.alert(
-				module + '-' + task + '-success',
-				{
-
-					titleMsg: 'bs-extjs-title-success',
-					text: response.message
-				},
-				{
-					ok: function() {
-						$dfd.resolve( response );
-					}
-				}
-			);
+			mw.notify( response.message, { title: mw.msg( 'bs-extjs-title-success' ) } );
+			$dfd.resolve( response );
 		}
 		else {
 			$dfd.resolve( response );
