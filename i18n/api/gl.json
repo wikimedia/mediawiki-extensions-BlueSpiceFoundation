@@ -34,5 +34,7 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Non lle está permitido editar a páxina '$1'.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría non valida|Categorías non válidas}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Establecéronse as categorías con éxito.",
-	"apihelp-bs-wikipage-store-description": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS."
+	"apihelp-bs-wikipage-store-description": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS.",
+	"apihelp-bs-wikisubpage-treestore-description": "Lista as subpáxinas dunha wikipáxina específica",
+	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki"
 }
