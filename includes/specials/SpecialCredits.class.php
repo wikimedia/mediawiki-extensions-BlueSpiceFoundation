@@ -26,16 +26,23 @@ class SpecialCredits extends BsSpecialPage {
 			'Markus Glaser', 'Radovan Kubani', 'Sebastian Ulbricht', 'Marc Reymann',
 			'Mathias Scheer', 'Thomas Lorenz', 'Tobias Weichart', 'Robert Vogel',
 			'Erwin Forster', 'Karl Waldmannstetter', 'Daniel Lynge', 'Tobias Davids',
-			'Patric Wirth', 'Stephan Muggli', 'Stefan Widmann'
+			'Patric Wirth', 'Stephan Muggli', 'Stefan Widmann', 'Jan Göttlich',
+			'Benedikt Hofmann', 'Daniel Vogel', 'Leon Verhovskji', 'Gerhard Diller',
+			'Mannfred Dennerlein', 
+			
 		);
 		$aDesignAndTesting = array(
 			'Anja Ebersbach', 'Richard Heigl', 'Nathalie Köpff', 'Michael Rödl',
 			'Michael Scherm', 'Dardan Diugan', 'Christina Glaser', 'Christian Graf',
-			'Angelika Müller', 'Jan Göttlich', 'Karl Skodnik'
+			'Angelika Müller',  'Karl Skodnik', 'Astrid Scheffler', 'Sabine Gürtler',
+			'Thomas Schnakenberg', 'Sabrina Dürr', 'Tobias Kornprobst'
 		);
 		$aContributors = array(
-			'Aude', 'Chad Horohoe', 'Raimond Spekking', 'Siebrand Mazeland',
-			'Yuki Shira', 'TGC', 'Umherirrender'
+			'Aaron Schulz','Albert221','Antoine Musso','Aude', 'Brad Jorsch',
+			'Chad Horohoe', 'Demon','Florian','Florianschmidtwelzow',
+			'Frederic Mohr','Gergő Tisza','Justin Du','Legoktm','MaxSem',
+			'Ori Livneh','Paladox','Raimond Spekking', 'Reedy',
+			'Siebrand Mazeland', 'Yuki Shira', 'TGC', 'Umherirrender'
 		);
 		$aTranslation = array(
 			'Siebrand Mazeland', 'Raimond Spekking', 'Stephan Muggli'
