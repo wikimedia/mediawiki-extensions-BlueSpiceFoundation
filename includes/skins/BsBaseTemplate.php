@@ -13,7 +13,7 @@ class BsBaseTemplate extends BaseTemplate {
 			'type' => 'text'
 		);
 		$this->data['bs_search_hidden_fields'] = array();
-		$this->data['bs_title_actions'] = array();
+		$this->data['bs_export_menu'] = array();
 		$this->data['bs_personal_info'] = array();
 		$this->data['bs_dataBeforeContent'] = array();
 		$this->data['bs_dataAfterContent'] = array();
@@ -118,12 +118,12 @@ class BsBaseTemplate extends BaseTemplate {
 	//handler in BSF. Would need to be run as last handler
 	protected function prepareData() {
 		//Add the default print link to a title
-		$this->data['bs_title_actions'][10] = array(
-			'id' => 'bs-ta-print',
+		$this->data['bs_export_menu'][10] = array(
+			'id' => 'bs-em-print',
 			'href' => $this->getSkin()->getTitle()
 				->getLocalURL( array( 'printable' => 'yes' ) ),
-			'title' => $this->getMsg('bs-title-actions-print-title')->text(),
-			'text' => $this->getMsg('bs-title-actions-print-text')->text(),
+			'title' => $this->getMsg('bs-export-menu-print-title')->text(),
+			'text' => $this->getMsg('bs-export-menu-print-text')->text(),
 			'class' => 'icon-print'
 		);
 
@@ -225,6 +225,10 @@ class BsBaseTemplate extends BaseTemplate {
 						echo $this->makeListItem( $key, $item );
 					}?>
 				</ul>
+			</div>
+			<div id="p-cexport" role="navigation" aria-labelledby="p-cexport-label">
+				<h3 id="p-cexport-label"><?php $this->msg( 'export' ) ?></h3>
+				<?php $this->printExportMenu(); ?>
 			</div>
 			<div id="p-cactions" role="navigation" aria-labelledby="p-cactions-label">
 				<h3 id="p-cactions-label"><?php $this->msg( 'actions' ) ?></h3>
@@ -612,15 +616,29 @@ class BsBaseTemplate extends BaseTemplate {
 	}
 
 	public function printTitleActions() {
+		if ( !empty( $this->data['bs_title_actions'] ) ) {
+			wfDeprecated( "data['bs_title_actions']", "2.27.0" );
+		}
+		wfDeprecated( __METHOD__, "2.27.0" );
+	}
+
+	public function printExportMenu() {
 		$sAction = $this->getSkin()->getRequest()->getVal( 'action', 'view' );
 
-		$aContentActions = $this->data['bs_title_actions'];
+		$aContentActions = $this->data['bs_export_menu'];
 		if ( count( $aContentActions ) < 1 || $sAction != 'view'
 				|| $this->getSkin()->getTitle()->isSpecialPage()) {
 			return;
 		}
 		$aOut = array();
-		$aOut[] = '<ul id="bs-title-actions">';
+		$aOut[] = '<ul id="bs-export-menu-anchor">';
+		$aOut[] = '<li id="bs-cexport-button" class="bs-cexport-button">';
+		$aOut[] = '<a href="#" class="icon-arrow-down9-after icon-print">';
+		$aOut[] = '</a>';
+		$aOut[] = '<div class="menu">';
+		$aOut[] = '<div class="bs-export-menu-top"></div>';
+		$aOut[] = '<ul ' . $this->data[ 'userlangattributes' ] . ' class="bs-export-menu">';
+
 		foreach ($aContentActions as $aContentAction) {
 			$aOut[] = '<li class="' . $aContentAction['id'] . '">';
 			$aOut[] = Html::rawElement(
@@ -633,12 +651,24 @@ class BsBaseTemplate extends BaseTemplate {
 				),
 				Html::element(
 					'span',
-					array(),
+					array(
+						'class' => 'bs-export-menu-icon',
+					),
+					''
+				) .
+				Html::element(
+					'span',
+					array(
+						'class' => 'bs-export-menu-item',
+					),
 					$aContentAction['text']
 				)
 			);
 			$aOut[] = "</li>";
 		}
+		$aOut[] = '</ul>';
+		$aOut[] = '</div>';
+		$aOut[] = "</li>";
 		$aOut[] = '</ul>';
 		echo implode("\n", $aOut);
 	}
