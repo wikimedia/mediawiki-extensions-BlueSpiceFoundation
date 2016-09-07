@@ -1,14 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"Crucifunked"
 		]
 	},
 	"bs-ns_main": "(Páxines)",
 	"bs-ns_all": "(toos)",
 	"bs-tab_navigation": "Navegación",
-	"bs-tab_focus": "Focu",
-	"bs-tab_admin": "Alministración",
 	"bs-userbar_loginswitch_logout": "Salir",
 	"bs-userbar_loginswitch_login": "Aniciar sesión",
 	"bs-extended-search-tooltip-fulltext": "Guetar testu completu",
@@ -73,5 +72,7 @@
 	"bs-pref-anonuserimage": "Avatar d'usuariu anónimu:",
 	"bs-pref-deleteduserimage": "Avatar d'usuariu desaniciáu:",
 	"bs-pref-bspinginterval": "Intervalu de ping (en segundos):",
-	"bs-pref-testmode": "Activar el mou de prueba"
+	"bs-pref-testmode": "Activar el mou de prueba",
+	"bs-export-menu-print-text": "Imprentar",
+	"bs-export-menu-print-title": "Amuesa la versión imprentable de la páxina"
 }

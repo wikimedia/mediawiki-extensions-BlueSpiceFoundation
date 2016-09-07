@@ -7,7 +7,6 @@
 	"bs-ns_main": "(Странице)",
 	"bs-ns_all": "(сви)",
 	"bs-tab_navigation": "Навигација",
-	"bs-tab_admin": "Админ",
 	"bs-userbar_loginswitch_logout": "Одјави ме",
 	"bs-userbar_loginswitch_login": "Пријави ме",
 	"bs-one-unit-ago": "пре $1",
@@ -17,5 +16,6 @@
 	"bs-filesystemhelper-folder-already-exists": "Фасцикла <code>$1</code> већ постоји.",
 	"bs-navigation-support": "Подршка",
 	"bs-navigation-contact": "Контакт",
-	"bs-imagepage-download-text": "Преузми"
+	"bs-imagepage-download-text": "Преузми",
+	"bs-export-menu-print-text": "Штампај"
 }
