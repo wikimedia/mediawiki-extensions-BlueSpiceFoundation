@@ -84,5 +84,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Namespace non consentito: $1",
 	"bs-validator-error-title-does-not-exist": "Pagina non esiste: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Pagina non consentita: $1",
-	"bs-exttype-bluespice": "Estensioni BlueSpice"
+	"bs-exttype-bluespice": "Estensioni BlueSpice",
+	"bs-export-menu-print-text": "Stampa",
+	"bs-export-menu-print-title": "Mostra la versione stampabile della pagina"
 }

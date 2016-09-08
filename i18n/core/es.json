@@ -83,5 +83,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Espacio de nombres no permitido: $1",
 	"bs-validator-error-title-does-not-exist": "La página no existe: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Página no permitida: $1",
-	"bs-exttype-bluespice": "Extensiones de BlueSpice"
+	"bs-exttype-bluespice": "Extensiones de BlueSpice",
+	"bs-export-menu-print-text": "Imprimir",
+	"bs-export-menu-print-title": "Muestra la versión para imprimir de la página"
 }
