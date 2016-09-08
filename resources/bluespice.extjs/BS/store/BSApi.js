@@ -24,7 +24,7 @@ Ext.define('BS.store.BSApi', {
 				direction: 'ASC'
 			}
 		}, cfg);
-		cfg.proxy.extraParams.action = cfg.apiAction;
+		cfg.proxy.extraParams.action = cfg.apiAction || this.apiAction;
 		this.callParent([cfg]);
 		this.on( 'load', this.checkForEmptyPage, this );
 	},

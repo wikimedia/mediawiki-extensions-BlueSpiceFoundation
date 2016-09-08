@@ -3,16 +3,18 @@ Ext.define( 'BS.store.LocalNamespaces', {
 	fields: [ 'id', 'namespace' ],
 	data: [],
 	autoLoad: false,
-	
+
 	//Custom settings
 	includeAll: false,
 	excludeIds: [],
 
 	constructor: function( config ){
-		this.includeAll = config.includeAll;
-		this.excludeIds = config.excludeIds;
-		this.data = this.getLocalNamespaces();
-		this.callParent(arguments);
+		config = Ext.merge({
+			includeAll: false,
+			excludeIds: [],
+			data: this.getLocalNamespaces()
+		}, config );
+		this.callParent( [config] );
 	},
 	getLocalNamespaces: function() {
 		var namespaces = [];
