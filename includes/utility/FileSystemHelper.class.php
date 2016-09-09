@@ -3,7 +3,7 @@
 class BsFileSystemHelper {
 
 	/**
-	 *
+	 * Checks if given directory within BS_CACHE_DIR exists and creates it if not
 	 * @param string $sSubDirName
 	 * @return Status
 	 */
@@ -39,7 +39,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
+	 * Checks if given directory within BS_DATA_DIR exists and creates it if not
 	 * @param string $sSubDirName
 	 * @return Status
 	 */
@@ -76,7 +76,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
+	 * Saves a file to a subdirectory of BS_CACHE_DIR
 	 * @param string $sSubDirName
 	 * @param mixed $data
 	 * @return Status
@@ -101,7 +101,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
+	 * Saves a file to a subdirectory of BS_DATA_DIR
 	 * @param string $sSubDirName
 	 * @param mixed $data
 	 * @return Status
@@ -127,7 +127,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
+	 * Returns an absolute filesystem path to a subdirecotry of BS_DATA_DIR
 	 * @param string $sSubDirName
 	 * @return string Filepath
 	 */
@@ -136,7 +136,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
+	 * Returns a web path to a subdirecotry of BS_DATA_PATH
 	 * @param string $sSubDirName
 	 * @return string URL
 	 */
@@ -145,7 +145,7 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
+	 * Returns an absolute filesystem path to a subdirecotry of BS_CACHE_DIR
 	 * @param string $sSubDirName
 	 * @return string Filepath
 	 */
@@ -156,7 +156,8 @@ class BsFileSystemHelper {
 	/**
 	 * HINT: http://fr2.php.net/manual/en/function.copy.php#91010
 	 * @param string $sSource
-	 * @param type $sDestination
+	 * @param string $sDestination
+	 * @return Status
 	 */
 	public static function copyRecursive($sSource, $sDestination) {
 		if (self::hasTraversal($sSource) || self::hasTraversal($sDestination))
@@ -173,6 +174,7 @@ class BsFileSystemHelper {
 			}
 		}
 		closedir($rDir);
+		return Status::newGood();
 	}
 
 	/**
@@ -250,6 +252,14 @@ class BsFileSystemHelper {
 			return Status::newFatal(wfMessage("bs-filesystemhelper-file-copy-error", $sFileName)->plain());
 	}
 
+	/**
+	 * Copies a folder with its contents
+	 * @param string $sFolderName
+	 * @param string $sSource
+	 * @param string $sDestination
+	 * @param boolean $bOverwrite
+	 * @return Status
+	 */
 	public static function copyFolder($sFolderName, $sSource, $sDestination, $bOverwrite = true) {
 		if (self::hasTraversal($sSource . DS . $sFolderName) || self::hasTraversal($sDestination . DS . $sFolderName))
 			return Status::newFatal(wfMessage("bs-filesystemhelper-has-path-traversal")->plain());
@@ -348,13 +358,12 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
-	 * @global type $wgRequest
-	 * @param type $sName
-	 * @param type $sDir
-	 * @param type $sFileName
-	 * @param type $sRequiredExtension
-	 * @return type
+	 * Uploads a file to the local file repository
+	 * @param string $sName
+	 * @param string $sDir
+	 * @param string $sFileName
+	 * @param string $sRequiredExtension
+	 * @return Status
 	 * @throws MWException
 	 */
 	public static function uploadFile( $sName, $sDir, $sFileName = '', $sRequiredExtension = '' ) {
@@ -393,11 +402,11 @@ class BsFileSystemHelper {
 
 	/**
 	 * Converts uploaded image to PNG
-	 * @global type $wgRequest
-	 * @param type $sName
-	 * @param type $sDir
-	 * @param type $sFileName
-	 * @return type
+	 * @global WebRequest $wgRequest
+	 * @param string $sName
+	 * @param string $sDir
+	 * @param string $sFileName
+	 * @return Status
 	 */
 	public static function uploadAndConvertImage($sName, $sDir, $sFileName = '') {
 		global $wgRequest;
@@ -514,9 +523,14 @@ class BsFileSystemHelper {
 		return $path;
 	}
 
+	/**
+	 * Maps invalid FS chars to placeholders
+	 * @var array
+	 */
 	public static $aFSCharMap = array(
 		':' => '_COLON_' //MediaWiki NSFileRepo makes it possible to have filenames with colons. Unfortunately we cannot have a colon in a filesystem path
 	);
+
 	protected static function makeTmpFileName( $sFileName ) {
 		$sTmpFileName = $sFileName;
 		foreach( self::$aFSCharMap as $search => $replace ) {
@@ -533,6 +547,12 @@ class BsFileSystemHelper {
 		return $sFileName;
 	}
 
+	/**
+	 * Takes base64 encoded file content and saves it to a temporary location
+	 * @param string $sFileName
+	 * @param string $sFileContent
+	 * @return Status
+	 */
 	public static function saveBase64ToTmp($sFileName, $sFileContent){
 		$sFileName = self::makeTmpFileName($sFileName);
 		$sFileName = wfTempDir() . DS . basename($sFileName);
@@ -550,6 +570,17 @@ class BsFileSystemHelper {
 		}
 	}
 
+	/**
+	 * Saves a file from the server filesystem to the local file repo
+	 * @global FileRepo $wgLocalFileRepo
+	 * @global User $wgUser
+	 * @param string $sFilename
+	 * @param boolean $bDeleteSrc
+	 * @param string $sComment
+	 * @param string $sPageText
+	 * @param boolean $bWatch
+	 * @return Status
+	 */
 	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false){
 		global $wgLocalFileRepo, $wgUser;
 		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo), $wgUser);
