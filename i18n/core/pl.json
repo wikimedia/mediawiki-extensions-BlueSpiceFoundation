@@ -69,5 +69,6 @@
 	"bs-parser-error-invalid-title": "Niepoprawny tytuł: $1",
 	"bs-validator-error-namespace-does-not-exist": "Przestrzeń nazw nie istnieje: $1",
 	"bs-validator-error-title-does-not-exist": "Strona nie istnieje: $1",
-	"bs-exttype-bluespice": "Rozszerzenia BlueSpice"
+	"bs-exttype-bluespice": "Rozszerzenia BlueSpice",
+	"bs-export-menu-print-text": "Drukuj"
 }

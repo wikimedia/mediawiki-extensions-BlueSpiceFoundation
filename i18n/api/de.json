@@ -7,6 +7,7 @@
 	},
 	"apihelp-bs-filebackend-store-description": "Listet alle Dateien im FileBackend. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert ExtJS Store Parameter.",
 	"apihelp-bs-user-store-description": "Listet alle Benutzer aus der Datenbank. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert ExtJS Store Parameter.",
+	"apihelp-bs-category-store-description": "Listet alle Kategorien auf. Erlaubt die Sortierung, Filterung und Nummerierung. Implementiert die Parameter „ExtJS Store“.",
 	"apihelp-bs-adminuser-store-description": "Liste aller Benutzer von der Datenbank mit zusätzlichen sensiblen Daten. Erlaubt die Sortierung, Filterung und Nummerierung. Implementiert die „ExtJS Store“-Parameter.",
 	"apihelp-bs-interwiki-store-description": "Listet alle Interwiki-Links auf. Erlaubt die Sortierung, Filterung und Seitennummerierung. Implementiert „ExtJS Store“-Parameter.",
 	"apihelp-bs-titlequery-store-description": "Listet Seitentitel und (optionale) Namensraumpräfixe basierend auf einem Abfragebegriff aus. Implementiert die Parameter „ExtJS Store“.",
