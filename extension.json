@@ -16,6 +16,7 @@
 	"APIModules": {
 		"bs-filebackend-store": "BSApiFileBackendStore",
 		"bs-user-store": "BSApiUserStore",
+		"bs-category-store":"BSApiCategoryStore",
 		"bs-adminuser-store": "BSApiAdminUserStore",
 		"bs-group-store": "BSApiGroupStore",
 		"bs-interwiki-store": "BSApiInterwikiStore",
@@ -148,6 +149,7 @@
 		"BSApiExtJSDBTableStoreBase": "includes/api/BSApiExtJSDBTableStoreBase.php",
 		"BSApiFileBackendStore": "includes/api/BSApiFileBackendStore.php",
 		"BSApiUserStore": "includes/api/BSApiUserStore.php",
+		"BSApiCategoryStore": "includes/api/BSApiCategoryStore.php",
 		"BSApiAdminUserStore": "includes/api/BSApiAdminUserStore.php",
 		"BSApiGroupStore": "includes/api/BSApiGroupStore.php",
 		"BSApiInterwikiStore": "includes/api/BSApiInterwikiStore.php",
