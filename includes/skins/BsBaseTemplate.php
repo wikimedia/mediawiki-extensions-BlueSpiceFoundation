@@ -423,7 +423,7 @@ class BsBaseTemplate extends BaseTemplate {
 								} else {
 									$sUrl = $oFile->getUrl();
 								}
-								$sIcon = '<span class="icon24" style="background-image:url(' . $sUrl . ')"></span>';
+								$sIcon = '<span class="icon24 custom-icon" style="background-image:url(' . $sUrl . ')"></span>';
 							}
 						}
 						$aOut[] = '<a href="' . $sHref . '" title="' . $sTitle .'" ' . $sTarget . $sRel . '>';
