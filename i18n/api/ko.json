@@ -6,6 +6,7 @@
 			"아라"
 		]
 	},
+	"apihelp-bs-category-store-description": "모든 분류를 나열합니다. 정렬, 필터링, 페이지 매기기를 허용합니다. ExtJS 스토어 변수들을 구현합니다.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "바뀐 분류입니다.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "당신은 '$1' 문서를 편집할 권한이 없습니다.",
 	"bs-wikipage-tasks-setcategories-success": "목차가 성공적으로 설정되었습니다.",
