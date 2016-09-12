@@ -1,14 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Zygimantus"
 		]
 	},
 	"bs-ns_main": "(Puslapiai)",
 	"bs-ns_all": "(visi)",
 	"bs-tab_navigation": "Navigacija",
-	"bs-tab_focus": "Dėmesys",
-	"bs-tab_admin": "Administravimas",
 	"bs-userbar_loginswitch_logout": "Atsijungti",
 	"bs-userbar_loginswitch_login": "Prisijungti",
 	"bs-extended-search-textfield-defaultvalue": "Ieškoti...",
@@ -71,5 +70,7 @@
 	"bs-pref-anonuserimage": "Vartotojo anonimo avataras:",
 	"bs-pref-deleteduserimage": "Ištrinto vartotojo avataras:",
 	"bs-pref-bspinginterval": "Ping intervalas (sekundėmis):",
-	"bs-pref-testmode": "Įjungti bandymo režimą"
+	"bs-pref-testmode": "Įjungti bandymo režimą",
+	"bs-export-menu-print-text": "Spausdinti",
+	"bs-export-menu-print-title": "Rodo šio puslapio versiją spausdinimui"
 }
