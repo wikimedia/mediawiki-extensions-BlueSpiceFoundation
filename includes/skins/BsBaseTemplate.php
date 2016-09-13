@@ -235,7 +235,7 @@ class BsBaseTemplate extends BaseTemplate {
 				<ul>
 					<?php if ( count( $actions ) > 0 ) { ?>
 					<li id="bs-cactions-button" class="">
-						<a href="#" class="icon-arrow-down9-after"><span><?php $this->msg( 'bs-tools-button' ) ?></span></a>
+						<a href="#" class="menuToggler bs-icon-arrow-down" title="<?php $this->msg( 'bs-tools-button') ?>"></a>
 						<div class="menu">
 							<div class="bs-personal-menu-top"></div>
 							<ul<?php $this->html( 'userlangattributes' ) ?> class="bs-personal-menu">
@@ -633,7 +633,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$aOut = array();
 		$aOut[] = '<ul id="bs-export-menu-anchor">';
 		$aOut[] = '<li id="bs-cexport-button" class="bs-cexport-button">';
-		$aOut[] = '<a href="#" class="icon-arrow-down9-after icon-print">';
+		$aOut[] = '<a href="#" class="menuToggler bs-icon-download" title="' . $this->getMsg( 'bs-export-button' )->escaped() . '">';
 		$aOut[] = '</a>';
 		$aOut[] = '<div class="menu">';
 		$aOut[] = '<div class="bs-export-menu-top"></div>';
