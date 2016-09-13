@@ -7,7 +7,6 @@
 		url('../fontawesome/fontawesome.svg?-x6wapc#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
-
 }
 
 @font-face {
@@ -29,6 +28,116 @@
 .bs-icon-arrow-down:after {
 	font-family: 'fontawesome' !important;
 	content: '\f078'
+}
+
+.bs-icon-text:before{
+	content: "\e85b";
+}
+
+.bs-icon-alphabetic-sort-asc:before{
+	font-family: 'fontawesome' !important;
+	content: "\f15d";
+}
+
+.bs-icon-alphabetic-sort-desc:before{
+	font-family: 'fontawesome' !important;
+	content: "\f15e";
+}
+
+.bs-icon-star-full:before{
+	content: "/e6d1";
+}
+
+.bs-icon-star-half:before{
+	content: "\e60d";
+}
+
+.bs-icon-star-empty:before{
+	content: "\e6cf";
+}
+
+.bs-icon-gears:before{
+	content: "\e690";
+}
+
+.bs-icon-book:before{
+	content: "\e620";
+}
+
+.bs-icon-eye:before{
+	content: "\e6c7";
+}
+
+.bs-icon-gear:before{
+	content: "\e68f";
+}
+
+.bs-icon-earth:before{
+	content: "\e6c3";
+}
+
+.bs-icon-wrench:before{
+	content: "\e68c";
+}
+
+.bs-icon-chain:before{
+	content: "\e7ec";
+}
+.bs-icon-key:before{
+	content: "\e688";
+}
+
+.bs-icon-shopping-cart:before{
+	content: "\e636";
+}
+
+.bs-icon-painting-roll:before{
+	content: "\e60c";
+}
+
+.bs-icon-magnifying-glass:before{
+	content: "\e7e8";
+}
+
+.bs-icon-bar-chart:before{
+	content: "\e698";
+}
+
+.bs-icon-user-add:before{
+	content: "\e7d3";
+}
+
+.bs-icon-group:before{
+	content: "\e7d2";
+}
+
+.bs-icon-register-box:before{
+	content: "\e65b";
+}
+
+.bs-icon-upload:before{
+	content: "\e65f";
+}
+
+.bs-icon-flag-pole:before{
+	content: "\e6c5";
+}
+
+.bs-icon-clipboard-checked:before{
+	content: "\e62c";
+}
+
+.bs-icon-puzzle:before{
+	font-family: 'fontawesome' !important;
+	content: "\f12e";
+}
+
+.bs-icon-info:before{
+	content: "\e848";
+}
+
+.bs-icon-profile:before{
+	content: "\e624";
 }
 
 .icon-create:before {
