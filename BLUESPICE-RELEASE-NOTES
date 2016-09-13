@@ -3,404 +3,227 @@ Copyright 2016 by Hallo Welt! GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
 
-== BlueSpice 2.23.3 ==
+== BlueSpice 2.27.0 beta ==
 
-BlueSpice 2.23.3 is a minor and maintenance release.
-This is a stable release.
+BlueSpice 2.27.0-beta is a minor and maintenance release.
+This is a beta release and not recommended for use in production
 
 === Notable new features ===
-* BlueSpice API: There is now a standardized API for many BlueSpice actions.
-* Compatibility: BlueSpice can now be used with MediaWiki 1.27.
-* ContextMenu: The extension is now enabled by default.
-* Dashboards: There is a wiki page portlet, which allows you to use any wiki
-  page as a dashboard item.
-* ExtendedSearch: Introduces facet operators, which indicated whether multiple
-  selections in a facet should be combined using AND or OR logic.
-* ExtendedSearch: It is possible to open articles in the autocomplete list in
-  new windows or tabs.
-* Flexiskin: It is now possible to disable the background image.
-* GroupManager: Raised group name character limit to 255 (was 16).
-* InsertMagic: Tag descriptions are now much more descriptive.
-* PermissionManager: Add hint flyout for every right.
-* Upload: XML and SVG files can now be uploaded by default.
-* UserMerge: Added extension to Distribution.
-* UserSidebar: There is now a "global actions" navigation tab for every user.
-* VisualEditor: Set default style for table to contenttable. This makes nicer
-  tables.
+==== New features ====
+* Showtime: A HTML video player
+* Page Assignments: Assign poeple and groups of people to pages, e.g. as responsible editors. Supersedes ResponsibleEditors.
+
+==== New features ====
+* Farm: Add metadata (like descriptions and tags), disable old wikis, organize your wikis in groups
+* Farm: Add central search across all farmed wikis
+* Testsystem mode: visually indicate when a wiki is a testing system
+* Disable users: Instead of user deletion, you can now disable the users while keeping their full record.
+* User-group self-service: Certain user groups can now assign users to groups without having to be sysops.
+* Managers: separate rights per manager. Certain user groups can now access a selection of administrative tools without having to be sysops.
+* UX improvements: Confirmation dialoges are more unobtrusive now.
+* Bookmaker: add pages directly to book from the more menu
+* FlexiSkin: manage uploaded images
+* Removed/deprecated WantedArticles, FeedbackHelper, WikiCategoryTagCloud, GuidedEditing and WidgetBar
+* Track usage statistics: know how often a certain feature is used in your wiki
+* Namespace-specific notifications: get notified about actions in the wiki on a namespace basis
+
+==== Newly packaged extensions ====
+* HitCounter: Restores the hit count functionality missing in MW core since MW 1.25
+* EditNotify: Basis for page action notifications
+
+==== Compatibility ====
+* Fully MW 1.27 compatible
 
 === BlueSpice Foundation ===
-* General: ArticleHelper: Fixed fatal getRedirectTarget call on null
-* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
-  company name.
+AJAXInterface: quickfix to make ajax functions available
+API notifications: only show alert when there are messages.
+API: Added category store, some bugfixes and JS API store
+API: apitaskbase dataupdate: improve error handling
+API: apitasks: fix changed function name of permission callback
+API: BSApiExtJSStoreBase: extended sort logic
+API: BSApiExtJSStoreBase: Fixed sorting...
+API: BSAPITAsksBase: add data update trigger on api action
+API: BSApiTitleQueryStore: Fine tuning of database query
+API: BSApiWikiSubPageTreeStore: Added I18N desc
+API: bstaskapi add posibility to share task crud permissions with visual elements
+API: ExtJS/API deleted superfluous file.
+API: Fixed possible notices in filterCallback of BSApiExtJSStoreBase
+API: New WikiSubPageTreeStore
+API: Pass this $wgUser to UploadStash than relying on core's $wgUser
+API: TaskAPI: added silent exec method
+API: use non-disruptive alerts
+API: UserStore: include blocked information and hide blocked users
+Architecture: Added $bsgConfigFiles to extension.json
+Architecture: BSExtensionManager: Changed global name for BlueSpice extensions
+Architecture: BSExtensionManager: Fixed getResourcePath
+Architecture: BsExtensionManager: Rework of extension registration
+Architecture: BSFoundation: Partial use of new extension registration
+Architecture: Moved installer implementation to separate repo
+Architecture:: Added new maintenance script base class
+DebugLog: added documentation, cc, and factured out write method
+General: Added 'bluespice' as default special page group
+General: Added extension type bluespice for special version
+General: check namespace before dataupdate
+General: CoreHooks
+General: Fix for empty grid pages
+General: Fixed autoloader double registration
+General: JS-BlueSpice String: add ucfirst function
+General: reduce footprint
+General: removed legacy permission
+General: Removed old i18n.php files
+General:: BSFileSystemHelper: Added/fixed documentation
+Maintenance: Added output buffer and diff
+Maintenance: Adding BSFileHashCheck maintenance script
+Maintenance: BSMassEditBase: Fix for NULL content
+Output: Added bs.icons.php
+Output: Added bsgTestSystem for BlueSpice Testsystems
+Output: Added new iconfonts and made some changes to the Base Template
+Output: BsBaseTemplate et. al.: Serverside tab implementation
+Output: BsBaseTemplate: add class to getNavigationSidebar for custom icons
+Output: CRUDGrid: increased icon width
+Output: ExtJS / RL: Removed obsolete "wait-for-css"
+Output: introduce new icon-classes for WikiAdmin menu items
+Output: Remove widgetbar: added export menu
+Output: Updated the Credit SpecialPage
+Portlets: Added API portlet
 
 === BlueSpice Extensions ===
-* ArticleInfo: Stop using deprecated Skin::link
-* Checklist: Fixed error when inserting checklists several times
-* Checklist: Improved tag documentation
-* ContextMenu: Added dependencies to fix runtime errors
-* CountThings: Improved tag documentation
-* Dashboards: Fixed Notice
-* Dashboards: Fixed wikipage portlet error messages
-* Flexiskin: Add some hook points
-* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
-  company name.
-* InsertCategory: Removed wrong user information
-* InsertLink: use user config var instead of browser settings to trigger java
-  applet for file links
-* InsertMagic: Added examples to description and reference implementation
-* InsertMagic: Improve example code line wrapping
-* PageAccess: Improved tag documentation
-* PageTemplates: Remove loadmask workaround
-* PagesVisited: Improved tag documentation
-* ResponsibleEditors: Remove loadmask workaround
-* Review: Added dependencies to fix runtime errors
-* SmartList: Added exception for getToplist for mw > 1.24
-* Smartlist: Improved tag documentation
-* UniversalExport: Improved tag documentation
-* WantedArticle: Improved tag documentation
-* Watchlist: Improved tag documentation
-* WhoIsOnline: Improved tag documentation
+* Architecture: Switched extension registration to extension.json
+* Architecture: finished switch from AJAX handler to API
+* AboutBlueSpice: Changed global name for BlueSpice extensions
+* AboutBlueSpice: Modified logo in sidebar
+* AboutBlueSpice: Register new permission and add permission check on view of special page
+* Avatars: Using the new extension registration
+* Avatars: Fixed bug when saving files
+* Blog: Minor changes to the styling
+* Blog: Register new permission and add permission check on view of special page "Blog"
+* Blog: repace action=blog with special page
+* BlueSpiceFeedbackHelper: removed extension
+* ContextMenu: Fixed access to wgFileExtensions
+* Dashboards: Register new permission and add permission check on view of special page "User dashboard"
+* Dashboards: Workaround for JS TypeError
+* Extended Search: Changed default facet operator to AND
+* ExtendedSearch: add special page and permission for admin page
+* ExtendedSearch: Fixed response handling SolrPhpClient for certain Tomcat versions (8.5)
+* ExtendedSearch: Added client side hook point that  allows to add custom logic that executes after the UI has been updated using the ajax call.
+* ExtendedSearch: Do not automatically use fuzzy search when query is already fuzzy
+* ExtendedSearch: New ux for facet operators
+* ExtendedSearch: Register new permission and add permission check on view of special page
+* ExtendedSearch: Show facet view when search yields no result
+* ExtendedStatistics: Use unobtrusive alert
+* ExtensionInfo: Works with new registration of BlueSpice extensions
+* Extensions: Removed old i18n.php files
+* Extensions: Replaced $GLOBALS['wgAutoloadClasses'] with $wgAutoloadClasses
+* Flexiskin: Use combobox for logo and background
+* Flexiskin: add special page and permission
+* FlexiSkin: Fixed I18N messages for automated testing
+* GroupManager: Move to special page and register own permission
+* GroupManager: Re-enable permission cleanup after deletion
+* GroupManager: Use unobtrusive alert
+* InsertCategory: Add ucfirst js function to make it compatible with mw 1.27
+* InsertCategory: JS replace moved ucfirst call
+* InsertCategory: Use unobtrusive alert
+* InsertFile: Fixed access to wgFileExtensions
+* InsertFile: Add option to insert file on pure text selection
+* InsertFile: Fixed I18N messages for automated testing
+* InsertFile: Fixed IE issue with DOM ranges
+* InsertFile: Fixed issue with pseudo protocol
+* InsertFile: Made compatible with MW1.27
+* InsertLink: Fixed IE error when selection is collapsed
+* InsertLink: JAR Permissions & new JNLP endpoint
+* InsertLink: Patch is replacing " " with %20 in href of external links
+* InsertLink: replace jar file with valid signed certificate
+* InsertMagic: Fixed I18N messages for automated testing
+* InterWikiLinks: Add specialpage and view permission
+* InterWikiLinks: Fixed permission mapping in JS definition
+* InterwikiManager: Use unobtrusive alert and enable filters
+* NamespaceManager: Fixed function definition to match base class
+* NamespaceManager: Fixed logic for system namespaces
+* Namespacemanager: Use existing constants and sanitize constant names
+* NamespaceManager: Use unobtrusive alert
+* NamespaceManager: create special page and custom permission
+* Notifications: Removed old unused left over files
+* PageAccess: Register new permission and add permission check on view of special page
+* PageAssignments: Activated PageAssignments | Removed ResponsibleEditors
+* PageAssignments: Added Dashboard portlets
+* PageAssignments: Added I18N for permissions
+* PageAssignments: Added UEModulePDF and Bookshelf integration
+* PageAssignments: Fixed getForPage task permission
+* PageAssignments: Incorporated functionality previously known as extension AssignedUsersAdditionalPermissions
+* PageAssignments: New extension
+* PageAssignments: ResponsibleEditors migration via update.php
+* PageAssignments: WikiExplorer integration
+* PageTemplates: Fixed I18N messages for automated testing
+* PageTemplates: Fixed erroneous namespace prefix save to database
+* PageTemplates: Moved admin page to custom special page and add permission
+* PermissionManager: Removed legacy permission
+* PermissionManager: Added Validator for read permission to prevent sysop lockout
+* PermissionManager: Fixed template editor for list divergence on insert new and cancel fix template list (permission grid panel) on new template
+* PermissionManager: Fixed I18N messages for automated testing
+* PermissionManager: move to special page and register own permission improve message key usage as suggested in comments fix getRequiredTaskPermissions as needed by base class
+* PermissionManater: Use unobtrusive alert
+* Preferences: Added special page and permission
+* Preferences: Updated user sidebar for moved admin special pages
+* Readers: Fixed specialpage grids
+* Readers: Switched to new api base. Code cleanup. Use mw.config
+* ResponsibleEditors: Fixed I18N messages for automated testing
+* ResponsibleEditors: Reference implementation - add config and mapper function for bluespice semantic special property
+* ResponsibleEditors: update specialproperties definition to suite current smw-extra-special-properies
+* ResponsibleEditors: Deprecated extension in favor of PageAssignments
+* Review: Fixed review function for other namespace, eg. help pages
+* Review: Fixed I18N messages for automated testing
+* Review: Using own user store to filter by permission 'workflowview'
+* RSSFeeder: Register new permission and add permission check on view of special page
+* SaferEdit: Fixed deprecated access to global state
+* ShoutBox: Fixed I18N messages for automated testing
+* Shoutbox: Use unobtrusive alert
+* Smartlist: Inserted i18n description for api
+* Smartlist: Inserted js dependencies switch to js class BS.portal.APIPortlet
+* Smartlist: Fixed task function on "YourEdits portlet"
+* Statistics: Bugfixes: search stats and week grain
+* Statistics: Replaced mysql with mysqli command
+* TopMenuBarCustomizer: add <i> element for icon to anchor-tag
+* UEModulePDF: Added context information
+* UEModulePDF: Adding UnitTests
+* UEModulePDF: Switched from title action to export menu
+* UEModulePDF: Fixed issue with file path in findFiles
+* UniversalExport: Fixed issue with double jumpmarks in getBookmarkElementForPageDOM
+* UsageTracker: initial commit and reference implementation
+* UserManager: Fixed RemoveGroups calculation
+* UserManager: Moved to specialpage and add permision
+* UserManager: Quickfix for missing groups in combobox
+* UserManager: Use block to enable / disable users
+* UserManager: Use wgAddGroups and wgRemoveGroups
+* UserSidebar: Fixed I18N messages for automated testing
+* VisualEditor: Patch is replacing " " with %20 in href of external links
+* VisualEditor: 'checkLink' API recognizes MEDIA
+* VisualEditor: Removed 'code' from list of special tags so its content is displayed properly
+* VisualEditor: Restored missing BSConfig var registration
+* WantedArticles: Use unobtrusive alert
+* WantedArticle: Deprecated extension
+* Widgetbar: Deprecated WidgetBar extension
+* WikiAdmin: Changed admin page links to special pages
+* WikiAdmin: Removed unused getForm methods
+* WikiAdmin: Removed legacy permission
+* WikiAdmin: add classes to use font-icons in onBSWikiAdminMenuItems hooks
 
-=== BlueSpice Skin ===
-* Fix for different line height since mw 1.27
-* Development: Upgrade jsonlint to report file/line
-* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
-  company name.
-
-=== BlueSpice Distribution ===
-* General: Improved tag documentation
-* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
-  company name.
-* RSS: Updated RSS to 1.26 - works for 1.23 - 1.27
-
-=== BlueSpice Pro ===
-* Bookmaker: ExtJS/RL runtime issues
-* Bookmaker: New global navigation implementation
-* Bookmaker: Color book icon when inside a book
-* Bookmaker: Switch to book navigation when inside a book
-* Bookmaker: Added special page to global actions widget
-* Bookmaker: used mw.config.get( 'wgScriptPath') instead of global wgScriptPath
-* Bookmaker: Fixed link for module pdf in UI manager
-* Bookmaker: Improved tag descriptions
-* ExportTables: Added to BlueSpice pro. This allows to export tables as xls
-  file
-* General: Updated all URLs to bluespice.com and removed "Medienwerkstatt" from
-  company name.
-* GuidedEditing: ExtJS/RL fixed runtime issues
-* GuidedEditing: Modified insertCategory button id
-* PasteImage: Intermediate save, base64 image in var, base64 img replaced with
-  replacebin, next fix dialog and replace replacebin with uploaded version
-* PasteImage: Re-implementation of ie11/edge, ff und chrome version, pure
-  javascript, no java used anymore
-* PasteImage: Change response header type for ie11 compatability
-* PasteImage: Add ie11 workaround, load xml instead of json
-* PasteImage: Test on ignore filetype parsing
-* PasteImage: Remove bsae64 preview, while most browsers will hang on base64
-  image show
-* PasteImage: Prevent default action only on images
-* PasteImage: Remove java files, replaced by native tinymce paste functions
-* PasteImage: Fix: Image Description not set
-* ProDistribution: Added extension Drawio
-* ProDistribution: Added extension Duplicator
-* ProDistribution: Added extension HeaderTabs
-* ProDistribution: Added extension Math
-* ProDistribution: Added extension MultimediaViewer
-* ProDistribution: Added extension ReplaceText
-* ProDistribution: Added extension Scribunto
-* ProDistribution: Added extension Widgets
-* RatedComments: BS2.23.3 Create / Update / Delete Works
-* RatedComments: Changed use of deprecated jQuery.live to jQuery.on to be
-  compatible with current MW Versions
-* RatedComments: Fixed Fatal
-* RatedComments: Fixed redirect context
-* RatedComments: Got rid of some old globals (mw 1.27 copatibility)
-* RatedComments: MW1.27 compatibility
-* RatedComments: RL: Added dependencies
-* RatedComments: Replaced deprecated wfMsg with wfMessage
-* RatedComments: Restored compatiblilty with rating api
-* RatedComments: Use mw.config.get( 'wgScriptPath') instead of global
-  wgScriptPath
-* Rating: Add more context related stuff - context is not supported by default
-* Rating: Add special page to global actions widget
-* Rating: Add use of token
-* Rating: Added dependencies
-* Rating: Enabled rating in context
-* Rating: Fix rating icon path
-* Rating: Fix typo
-* Rating: Fixed Fatal
-* Rating: Fixed context
-* Rating: Fixed redirect context
-* Rating: Fixes for api
-* Rating: MW1.27 compatibility
-* Rating: Use mw.config.get( 'wgScriptPath') instead of global wgScriptPath
-* Rating: Use of Rating tasks api instead of deprecated ajaxExport
-* Reminder: Added API classes for Expiry
-* Reminder: Added API description and fixed typo
-* Reminder: Added comment for updating from BSP 2.23.2
-* Reminder: Added gitignore for local settings file
-* Reminder: Added special page to global actions widget
-* Reminder: Added table prefixes
-* Reminder: All Reminder ajax function now use API calls
-* Reminder: Breaking change: new database schema for Reminder and Expiry
-* Reminder: Changed default sorting
-* Reminder: Changed menu entry in personal tools to match the other entries
-* Reminder: Correctly adding rem_comment
-* Reminder: Expiry is now a standalone extension
-* Reminder: Expiry now uses API for deletion
-* Reminder: Expiry: adjusted callback function
-* Reminder: Expiry: reworked i18n messages
-* Reminder: ExtJS/RL runtime issues
-* Reminder: Fixed paths after package name change
-* Reminder: Moved Reminder and Expiry out of BSTeamwork and now in BSReminder
-* Reminder: Reminder: Added filter for title and date
-* Reminder: Reminder: Adopted afterDelete to new hook signature
-* Reminder: Reminder: Created ApiReminderStore to serve grid data
-* Reminder: Reminder: Enabled multiple deletion
-* Reminder: Reminder: delete user reminder on user deletion
-* Reminder: Removed Expiry from Reminder API
-* Reminder: Removed dependencies on Expiry
-* Semantic: Added filtering to NamespaceManager integration
-* Semantic: Added use of format table instead of datatable when pdf export
-* Semantic: Deactivated help boxes in edit mode
-* Semantic: ExtJS/RL runtime issues
-* Semantic: Fixed removal of qtips
-* Semantic: Removed all qtip divs (semantic bootstrap popups for tooltips)
-* Semantic: Removed bswiki editor button
-* Semantic: Require smw to be in /extension base dir, copied from _base
-* Semantic: Update semanticforms and semanticformsinputs to master branch for
-  mw1.27 compatability
-* Semantic: Use bssemantic delivered semantic extensions
-* ServiceCenter: Added TagSearch/vendor
-* ServiceCenter: Added filtering to NamespaceManager integration
-* ServiceCenter: Added search string escaping
-* ServiceCenter: Fixed hardcoded core
-* ServiceCenter: Removed debug statement
-* ServiceCenter: TagSearch: Improved tag documentation
-* ServiceCenter: Used method POST and action fullUrl cause jquery could not
-  handle the form action for some reason
-* ServiceCenter: Used mw.config.get( 'wgScriptPath') instead of global
-  wgScriptPath
-* Teamwork: Added filtering to NamespaceManager integration
-* Teamwork: Added stylings for pdf export
-* Teamwork: Expiry and Reminder are now in the BlueSpiceReminder Repo
-* TagCloud: Added to BlueSpice pro. This creates a tag cloud.
-* VisualDiff: BugFix: PDF export only working correctly by using the more menu
-* VisualDiff: ExtJS/RL runtime issues
-* VisualDiff: Fixed fatal in mw > 1.23 | Config is needed
-* VisualDiff: Forgot to use getCss() on parser
-* VisualDiff: Modified css for pdf export
-* VisualDiff: More mw 1.27 compatibility changes ResourceLoader -.-
-* WikiExplorer: Added special page to global actions widget
-* WikiExplorer: ExtJS/RL runtime issues
-
-
-== BlueSpice 2.23.3-beta ==
-
-BlueSpice 2.23.3-beta is a minor and maintenance release.
-This is a beta release and not recommende for use in production
-
-=== BlueSpice Foundation ===
-* API: Added a generic group store API backend
-* API: Added a generic WikiPage store
-* API: Added BS.store.BSApi
-* API: Added BSApiAdminUserStore
-* API: Added Interwiki ExtJS store API module
-* API: Added title filter to store api
-* API: API I18N
-* API: ApiExtJSStoreBase/BS.GRUDGridPanel: Filter
-* API: ApiExtJSStoreBase/StringHelper: String filter
-* API: ApiExtJSStoreBase: Implemted 'date' filter
-* API: ApiGroupStore: Fixed return value
-* API: ApiTasksBase: Added support for logging
-* API: ApiTasksBase: Fixed token return value
-* API: ApiTasksBase: needToken by default + hooks
-* API: ApiTasksBase: read-only check
-* API: ApiTasksBase: token mechanism for MW 1.24+
-* API: BSApiFileBackendStore: userAdjust of timestamp
-* API: BSApiTasksBase: stub implementation of task data param processing
-* API: BsCommonAjaxInterface --> API
-* API: BSTasksAPI: Added permission check
-* API: Metadata node and data in ExtJSStoreBase
-* API: New 'bs.api.tasks.exec'
-* API: New BSApiWikiPageTasks
-* API: Removed legacy override
-* API: TasksAPI: Added context
-* API: TitleQueryStore: return objects, not arrays
-* Appearance: added padding to dashboard panel content
-* Appearance: bluespice.extjs.fixes: Fixed tool icon alignment
-* Appearance: BS.CRUDPanel: dynamic calculation of action column
-* Appearance: BsBaseTemplate: Introduced printFooter method.
-* Appearance: BsBaseTemplate: Removed double echo
-* Appearance: BSUserMiniProfile: Replaced spaces in HTML output
-* Appearance: Compress PNGs with zopflipng
-* Appearance: extjs themes: Reverting images
-* Appearance: getHTMLContentFor: fixed issue with PDF export
-* Appearance: getNavigationSidebar: allows html-string injection from extensions
-* Appearance: Icomoon font icons in BS.CRUDGridPanel
-* Appearance: Show BlueSpice Version in the appropriate column
-* Architecture: Added config file registry
-* Compatibility: Compat. REL1_27: Custom JSON format
-* Compatibility: Remove usage of Title::newFromRedirect()
-* Compatibility: Remove usage of Title::newFromRedirectArray()
-* Compatibility: Remove usage of Title::newFromRedirectRecurse()
-* Compatibility: Stop using $wgTitle, no need to be the global
-* Compatibility: Use __METHOD__ for DB begin/commit calls
-* Compatiblity: Fix case of Html class
-* DefaultSettings: Added xml and svg as default allowed file types
-* DefaultSettings: disabled thumb.php
-* Documentation: Pretty urls on IIS
-* ExtensionManager: Invoke autoloader if possible
-* General: Added some info to composer.json
-* General: build: Updating development dependencies
-* General: build: Updating development dependencies
-* General: Composer.json: Added more information
-* General: Fix jenkins tests
-* General: Fix jslint errors, Add npm and composer tests
-* General: Restored startsWith / endsWith functionality
-* GenericTagExtensionHandler: Basic impl.
-* GroupHelper: MW1.27 compatibility - Fixed TMP user groups
-* Hooks: DROP TABLE in LoadExtensionSchemaUpdates
-* I18N: Added language specific support and contact URLs
-* I18N: Added messages for BooleanFilter
-* I18n: Removed i18n keys
-* Installcheck: removed old requirements
-* Mailer: Call UserMailer::send() correctly
-* Mailer: Changed Variables
-* Mailer: Remove Bug where Version is not being checked
-* Maintenance: importImagesRecursive: delete obsolete files
-* Ping: Suppress all messages and warings
-* Ping: Used API instead of AjaxExportList
-* ResourceLoader: 'ext.bluespice' Bad reference to ExtJS
-* ResourceLoader: ExtJS Runtime errors due to missing/late css
-
-=== BlueSpice Extensions ===
-* ArticleInfo: makeStateBarTopLastEdited: fixed issue with PDF Export
-* Avatars: Remove use of "successful" in strings
-* BlueSpiceProjectFeedbackHelper: Fixed issue with quotation marks
-* BSPFeedbackHelper: Refactoring
-* Checklist: changed filter for list options to give more flexibility
-* Checklist: Fallback list options when list template is corrupt
-* Checklist: Fixed file path issue
-* Checklist: Use API instead of AJAX
-* ContextMenu: Now enabled by default
-* CountThings: Uses GenericTagExtensionHandler
-* Dashboard: Add page article widget
-* Dashboard: Use API instead of ajax
-* Dashboards: ExtJS/ResourceLoader: Fixes in manager components
-* Extended Search: Enable "open in new tab" in autocomplete
-* ExtendedEditBar: Enable only in certain contexts
-* ExtendedSearch: Keep facet operator when changing facets
-* ExtendedSearch: Use categories from file page
-* ExtendenSearch: Facet settings: choose AND or OR as logical operator
-* Flexiskin: Add checkbox "Use background image"
-* Flexiskin: New RL implementation
-* Flexiskin: now works with WikiFarming
-* Flexiskin: Use BSApiTasksBase
-* FomattingHelp: Removed need of token for read only API module
-* FormattingHelp: Use API instead of AjaxExportList
-* General: *Manager: Now using config file registry from BSF
-* General: Add npm entry point
-* General: Add phplint to composer
-* General: Adding composer.json
-* General: Composer.json: Added more information
-* General: Compress PNGs with zopflipng
-* General: Don't use User::getSkin()
-* General: Fix BlueSpiceExtensions jenkins tests
-* General: Fix composer.json since hallowelt/bluespice-foundation is not
-  released in version 2
-* General: Replace wfMsg* calls
-* GroupManager: Raised group name character limit
-* GroupManager: Use task API instead of AjaxExportList
-* GroupManager: Used edit tokens for all task API calls
-* InserMagic: Used API instead of AjaxExportList
-* InsertCategory: Added button classes for VisualEditor
-* InsertCategory: Fixed runtime errors when visual editor is not activated
-* InsertCategory: Use API instead of AjaxExportList
-* InsertCategory: Use post instead of get
-* InsertFile: Use API instead of AjaxExportList
-* InsertLink: Removed AjaxExportList
-* InsertLink: Replace applet with jnlp loader, no chrome support so far
-* InsertMagic: Improve tag description mechanism
-* InsertMagic: Simplify insertmagic-desc message
-* InsertMagic: Switched description and text field
-* InterWikiLinks: Use API instead of AjaxExportList
-* NamespaceManager: API and further development
-* NamespaceManager: Fixed action confirmation
-* NamespaceManager: System namespaces can no longer be deleted
-* NamespaceManager: Token must be posted
-* NamespaceManager: Used API instead of AjaxExportList
-* PageTemplates: use API instead of ajax
-* PageTemplates: Use strict array search for linker options
-* PermissionManager: add config and handler for max num of backups
-* PermissionManager: Add hint flyout for every right
-* PermissionManager: Fallback when canonical ns name is different from
-  constant name
-* PermissionManager: Now easier extendable and has a getHTMLTable method
-* PermissionManager: Use API instead of AjaxExportList
-* Preferences: Fixed autoloader entry
-* ResponsibleEditors: Resolve code invoking Title::newFromURL
-* ResponsibleEditors: Use API instead of AjaxExportList
-* RSSStandards: resolved ExtJS dependency
-* SaferEdit: Fixed interval and param handling
-* SaferEdit: Fixed textbox id and return of undefined value
-* ShoutBox: Add autogenerated id to return payload
-* ShoutBox: Use correct message key for mail
-* ShoutBox: Used API instead of AjaxExportList
-* SmartList: getCustomList: modified exclude namespace argument
-* TopMenuBarCustomizer: Fix case of Html class
-* UEModulePDF: Added lost compatibility for php <= 5.5
-* UEModulePDF: Added stylings for pdf export
-* UEModulePDF: Correction of missing quotation marks
-* UEModulePDF: findFiles: fixed issue with pdf export
-* UEModulePDF: Improved styling rues for xhtmlrenderer PDF
-* UserManager: Add hook BSUserManagerAfterSetGroups
-* UserManager: Added hook after user deletion and edit
-* UserManager: Fixed error display for group change
-* UserManager: Use API instead of AjaxExportList
-* UserSidebar: "special" navigation tab + wiki wide widget
-* VisualEditor: Compatibility REL1_27: Use of 'addModules'
-* VisualEditor: Do not auto focus when in preview node
-* VisualEditor: EditToolbar button is disabled until VE can be loaded
-* VisualEditor: Replace Article::replaceSection usage with
-  Article::replaceSectionAtRev
-* VisualEditor: Set default style for table to contenttable
-* VisualEditor: Use API instead of AJAX
-* VisualEditor: Wait for dependencies to be loaded before enabling
-* WantedArticle: Dixed issue with html class
-* WantedArticle: Fix JS and removed unused resources
-* WantedArticle: Use API instead of AjaxExportList
-
-=== BlueSpice Skin ===
-* Improved edit section icon in vector skin
-* Make support URLs language specific
-* Moved basic LESS vars to BlueSpiceFoundation
-* Removed footer code and introduced printFooter method
-* Replace Title::userIsWatching
-
-=== BlueSpice Distribution ===
-* DynamicPageList: Update to DPL version 3
-* Echo: Fixed paths that got broken by our 'Distribution' folder
-* EchoConnector: Add processing of unknown params in processParams on
-  BSNotifications::notify call
-* EchoConnector: BsNotificationsFormatter is easier extensible. See
-  https://gerrit.wikimedia.org/r/#/c/279089/
-* EchoConnector: Fixed access to event extra params
-* EchoConnector: Fixed error with diff param
-* EchoConnector: Implemented default behavior for 'affected-users' and
-  'affected-groups' extra data of an Echo event
-* ImageMapEdit: Added to template file
-* LdapAuthentication: Updated version (Bug fixes)
-* LdapAuthenticationConnector: Removed unimplemented methods
-* LdapAuthenticationConnector: completely hide domain selection when there is
-  only one domain
-* LdapAuthenticationConnector: fixed RenameMergeUser
-* Lockdown: updated from Gerrit master
-* UserMerge: Added extension
-* UserMergeConnector: Fixes
+===BlueSpice Skin===
+* Added some restyling for the more menu and export menu
+* BSTopMenuBar: Removed !important in styling
+* CSS class "wikitable": reset to MW default
+* Fixed data-after-content marker
+* New class for WikiAdmin menu items
+* onSkinTemplateOutputPageBeforeExec: fixed position for pt-notifications-alert
+* Reducing FOUC on jQuery UI Tabs
+* Remove widgets: Added export menu bar/removed title actions
+* Sidebar navigation tabs
+* Sidebar using icomoon fonts instead of sprite
+* skin.menuTop.js - add/remove class 'open' to #bs-personal-name on click
+* Switched from deprecated DoEditSectionLink hook to new SkinEditSectionLinks
 
 ===Compatibility===
-* MediaWiki 1.23 - 1.27
-* PHP 5.4 or later.
+* MediaWiki 1.27
+* PHP 5.6 or later
 * MySQL 5.0 or later
 
 ====Webservices====

@@ -1,6 +1,6 @@
 {
 	"name": "BlueSpice",
-	"version": "2.27.0",
+	"version": "2.27.0-beta",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],
@@ -80,8 +80,8 @@
 	"config": {
 		"BlueSpiceExtInfo": {
 			"name": "BlueSpice",
-			"version": "2.27.0",
-			"status": "alpha",
+			"version": "2.27.0-beta",
+			"status": "beta",
 			"package": "BlueSpice Free",
 			"url": "http://bluespice.com",
 			"desc": "Makes MediaWiki enterprise ready.",
