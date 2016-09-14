@@ -46,9 +46,6 @@ class BsCoreHooks {
 		HTMLForm::$typeMappings['multiselectex'] = 'HTMLMultiSelectEx';
 		HTMLForm::$typeMappings['multiselectplusadd'] = 'HTMLMultiSelectPlusAdd';
 		HTMLForm::$typeMappings['multiselectsort'] = 'HTMLMultiSelectSortList';
-
-		global $wgLogo;
-		$wgLogo = BsConfig::get('MW::LogoPath');
 	}
 
 	/**
@@ -60,7 +57,10 @@ class BsCoreHooks {
 	* @return boolean
 	*/
 	public static function onBeforePageDisplay( $out, $skin ) {
-		global $IP, $wgFavicon, $wgExtensionAssetsPath;
+		global $IP, $wgFavicon, $wgExtensionAssetsPath, $wgLogo;
+
+		//TODO: Change this mechanism to make it overwriteable!
+		$wgLogo = BsConfig::get('MW::LogoPath');
 
 		// Append CSS for icon font support
 		$out->addHeadItem(
