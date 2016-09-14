@@ -147,7 +147,7 @@ class BsCoreHooks {
 
 		$oRequest = $out->getRequest();
 		$oUser = $out->getUser();
-		if( $oUser->getId() == 0) {
+		if( $oUser->getId() == 0 || !$oUser->isAllowed( 'read' ) ) {
 			return null; //do nothing for not logged in user, prevent error with read permission for anon
 		}
 
