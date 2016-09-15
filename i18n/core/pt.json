@@ -74,5 +74,6 @@
 	"bs-pref-deleteduserimage": "Avatar do(a) utilizador(a) eliminado:",
 	"bs-pref-bspinginterval": "Intervalo de ping (em segundos):",
 	"bs-pref-testmode": "Activar o modo de teste",
-	"bs-exttype-bluespice": "Extensões BlueSpice"
+	"bs-exttype-bluespice": "Extensões BlueSpice",
+	"bs-export-menu-print-text": "Imprimir"
 }

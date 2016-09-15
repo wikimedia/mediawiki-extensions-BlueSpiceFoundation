@@ -7,7 +7,6 @@
 	},
 	"bs-ns_main": "(பக்கங்கள்)",
 	"bs-ns_all": "(அனைத்து)",
-	"bs-tab_admin": "நிர்வாகி",
 	"bs-userbar_loginswitch_logout": "விடுபதிகை",
 	"bs-userbar_loginswitch_login": "புகுபதிகை",
 	"bs-extended-search-textfield-defaultvalue": "தேடுக...",
@@ -30,5 +29,6 @@
 	"bs-filesystemhelper-upload-base64-error": "கோப்பினை பதிவேற்றம் செய்ய இயலாது",
 	"bs-navigation-support": "உதவி",
 	"bs-navigation-contact": "அணுகவும்",
-	"bs-imagepage-download-text": "தரவிறக்கு"
+	"bs-imagepage-download-text": "தரவிறக்கு",
+	"bs-export-menu-print-text": "அச்சிடுக"
 }
