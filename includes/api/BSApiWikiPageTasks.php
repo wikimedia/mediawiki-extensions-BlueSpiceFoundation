@@ -51,6 +51,10 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 		$oTitle = Title::newFromID( $oTaskData->page_id );
 		if ( $oTitle instanceof Title === false ) {
+			$oTitle = Title::newFromText( $oTaskData->page_title );
+		}
+
+		if ( $oTitle instanceof Title === false ) {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain();
 			return $oResponse;
 		}
@@ -86,7 +90,12 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 		$oWikiPage = WikiPage::factory( $oTitle );
 		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ){
-			$sText = $oWikiPage->getContent()->getNativeData();
+			$oContent = $oWikiPage->getContent();
+			$sText = '';
+			if( $oContent instanceof Content ) {
+				$sText = $oContent->getNativeData();
+			}
+
 		}
 		else {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
