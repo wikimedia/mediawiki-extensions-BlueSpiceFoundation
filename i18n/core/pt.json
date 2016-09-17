@@ -75,5 +75,6 @@
 	"bs-pref-bspinginterval": "Intervalo de ping (em segundos):",
 	"bs-pref-testmode": "Activar o modo de teste",
 	"bs-exttype-bluespice": "Extensões BlueSpice",
-	"bs-export-menu-print-text": "Imprimir"
+	"bs-export-menu-print-text": "Imprimir",
+	"bs-export-menu-print-title": "Mostra a versão para impressão da página"
 }
