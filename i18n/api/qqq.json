@@ -37,5 +37,6 @@
 	"apihelp-bs-wikipage-store-description": "Describes the API endpoint that list wiki pages",
 	"apihelp-bs-ping-tasks-description": "Describes the API endpoint that provides the ping",
 	"apihelp-bs-wikisubpage-treestore-description": "Describes the API endpoint that serves as backend for a tree view of wikipages",
-	"apihelp-bs-wikisubpage-treestore-param-node": "Describes the <var>node</var> parameter of the API module"
+	"apihelp-bs-wikisubpage-treestore-param-node": "Describes the <var>node</var> parameter of the API module",
+	"apihelp-bs-upload-license-store-description": "Describes the API endpoint that serves as backend for a upload licences selectbox"
 }

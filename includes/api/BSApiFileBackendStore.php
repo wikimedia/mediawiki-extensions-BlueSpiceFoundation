@@ -49,6 +49,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 		//First query: Get all files and their pages
 		$aReturn = array();
+		$aUserNames = array();
 		foreach( $res as $oRow ) {
 			try {
 				$oImg = RepoGroup::singleton()->getLocalRepo()
@@ -63,12 +64,14 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 			//TODO: use 'thumb.php'?
 			//TODO: Make thumb size a parameter
-			$sThumb = $oImg->createThumb( 48, 48 );
+			$sThumb = $oImg->createThumb( 120 );
 			$sUrl = $oImg->getUrl();
 			if( $bUseSecureFileStore ) { //TODO: Remove
 				$sThumb = html_entity_decode( SecureFileStore::secureStuff( $sThumb, true ) );
 				$sUrl = html_entity_decode( SecureFileStore::secureStuff( $sUrl, true ) );
 			}
+
+			$aUserNames[$oImg->getUser( 'text' )] = '';
 
 			$aReturn[ $oRow->page_id ] = (object) array(
 				'file_url' => $sUrl,
@@ -80,17 +83,22 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'file_height' => $oImg->getHeight(),
 				'file_mimetype' => $oImg->getMimeType(), # major/minor
 				'file_user_text' => $oImg->getUser( 'text' ),
+				'file_user_display_text' => $oImg->getUser( 'text' ), //Will be overridden in a separate step
+				'file_user_link' => '-',
 				'file_extension' => $oImg->getExtension(),
 				'file_timestamp' => $this->getLanguage()->userAdjust( $oImg->getTimestamp() ),
 				'file_mediatype' => $oImg->getMediaType(),
 				'file_description' => $oImg->getDescription(),
-				'file_display_text' => $oImg->getName(),
+				'file_display_text' => str_replace( '_', ' ', $oImg->getName() ),
 				'file_thumbnail_url' => $sThumb,
+				'page_link' => '-',
 				'page_id' => $oTitle->getArticleID(),
 				'page_title' => $oTitle->getText(),
+				'page_prefixed_text' => $oTitle->getPrefixedText(),
 				'page_latest' => $oTitle->getLatestRevID(),
 				'page_namespace' => $oTitle->getNamespace(),
 				'page_categories' => array(), //Filled by a second step below
+				'page_categories_links' => array(),
 				'page_is_redirect' => $oTitle->isRedirect(),
 
 				//For some reason 'page_is_new' and 'page_touched' are not
@@ -115,6 +123,27 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			);
 			foreach( $oCatRes as $oCatRow ) {
 				$aReturn[$oCatRow->cl_from]->page_categories[] = $oCatRow->cl_to;
+			}
+		}
+
+		//Third query (for performance reasons we can not provide the full
+		//link to the user page here): get user_real_name
+		if( !empty( $aUserNames ) ) {
+			$oDbr = wfGetDB( DB_SLAVE );
+			$oUserRes = $oDbr->select(
+				'user',
+				array( 'user_name', 'user_real_name' ),
+				array( 'user_name' => array_keys( $aUserNames ) )
+			);
+
+			foreach( $oUserRes as $oUserRow ) {
+				$aUserNames[$oUserRow->user_name] = $oUserRow->user_real_name;
+			}
+
+			foreach( $aReturn as $iPageId => $oDataSet ) {
+				if( !empty( $aUserNames[ $oDataSet->file_user_text ] ) ) {
+					$oDataSet->file_user_display_text = $aUserNames[ $oDataSet->file_user_text ];
+				}
 			}
 		}
 
@@ -175,5 +204,24 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		);
 
 		return $res;
+	}
+
+	public function filterString($oFilter, $aDataSet) {
+		$aSpecialFilterFields = [ 'page_categories', 'page_categories_links' ];
+		if( !in_array( $oFilter->field, $aSpecialFilterFields ) ) {
+			return parent::filterString( $oFilter, $aDataSet );
+		}
+
+		$sField = $oFilter->field;
+		if( $sField === 'page_categories_links' ) {
+			$sField = 'page_categories';
+		}
+
+		$sFieldValue = '';
+		foreach( $aDataSet->{$sField} as $sValue ) {
+			$sFieldValue .= $sValue;
+		}
+
+		return BsStringHelper::filter( $oFilter->comparison, $sFieldValue, $oFilter->value );
 	}
 }

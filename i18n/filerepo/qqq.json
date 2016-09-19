@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dejan Savuljesku"
+		]
+	},
+	"bs-filerepo-labelupload": "Label for upload button",
+	"bs-filerepo-labelfilter": "Label for input field that filters a result list",
+	"bs-filerepo-headerfilename": "Table header for filename column",
+	"bs-filerepo-headerfilesize": "Table header for file size column",
+	"bs-filerepo-headerpagecategories": "Table header for catgories column",
+	"bs-filerepo-headerfilewidth": "Table header for image width column",
+	"bs-filerepo-headerfileheight": "Table header for image height column",
+	"bs-filerepo-headerfilemimetype": "Table header for file mime type column",
+	"bs-filerepo-headerfileusertext": "Table header for user name column",
+	"bs-filerepo-headerfileextension": "Table header for file extension column",
+	"bs-filerepo-headerfiletimestamp": "Table header for upload timestamp column",
+	"bs-filerepo-headerfilemediatype": "Table header for file media type column",
+	"bs-filerepo-headerfiledescription": "Table header for file description column",
+	"bs-filerepo-headerfilethumbnail": "Table header for thumbnail column",
+	"bs-filerepo-yes": "Label for table cell that holds a boolean true",
+	"bs-filerepo-no": "Label for table cell that holds a boolean false",
+	"bs-filerepo-pagesize": "Label for a select box that changes the page size"
+}

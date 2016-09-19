@@ -1,0 +1,9 @@
+.bs-filerepo-grid .x-grid-cell {
+	vertical-align: middle;
+	white-space: normal !important;
+	overflow: visible;
+}
+
+body.mediawiki #content .bs-filerepo-grid .bs-btn-upload:before {
+	color: black;
+}

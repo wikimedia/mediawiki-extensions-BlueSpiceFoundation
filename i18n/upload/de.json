@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robert Vogel"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Datei hochladen",
+	"bs-upload-uploadbuttontext": "Durchsuchen",
+	"bs-upload-uploadfilefieldlabel": "Dateiname",
+	"bs-upload-uploadfileemptytext": "Datei auswählen...",
+	"bs-upload-uploaddestfilelabel": "Zielname",
+	"bs-upload-allowedfiletypesare": "Zulässige Dateitypen sind:",
+	"bs-upload-license": "Lizenz",
+	"bs-upload-uploadwatchthislabel": "Diese Datei auf die Beobachtungsliste setzen",
+	"bs-upload-uploadignorewarningslabel": "Alle Fehler ignorieren",
+	"bs-upload-categories": "Kategorien",
+	"bs-upload-upload-waitmessage": "Hochladen ...",
+	"bs-upload-error": "Fehler",
+	"bs-upload-descfilelabel": "Beschreibung",
+	"bs-upload-error-long": "Fehler beim Hochladen der Datei",
+	"bs-upload-filetypenotsupported": "Der Dateityp wird nicht unterstützt",
+	"bs-upload-details": "Details"
+}

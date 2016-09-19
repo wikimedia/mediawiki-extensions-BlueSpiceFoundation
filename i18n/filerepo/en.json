@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dejan Savuljesku"
+		]
+	},
+	"bs-filerepo-labelupload": "Upload",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Filename",
+	"bs-filerepo-headerfilesize": "Size",
+	"bs-filerepo-headerpagecategories": "Categories",
+	"bs-filerepo-headerfilewidth": "Width",
+	"bs-filerepo-headerfileheight": "Height",
+	"bs-filerepo-headerfilemimetype": "MIME type",
+	"bs-filerepo-headerfileusertext": "User",
+	"bs-filerepo-headerfileextension": "Extension",
+	"bs-filerepo-headerfiletimestamp": "Uploaded",
+	"bs-filerepo-headerfilemediatype": "Media type",
+	"bs-filerepo-headerfiledescription": "Description",
+	"bs-filerepo-headerfilethumbnail": "Thumbnail",
+	"bs-filerepo-yes": "Yes",
+	"bs-filerepo-no": "No",
+	"bs-filerepo-pagesize": "Page size"
+}
