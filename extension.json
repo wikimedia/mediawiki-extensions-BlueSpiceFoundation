@@ -228,7 +228,12 @@
 		"BsACTION": "includes/Common.php",
 		"BsSTYLEMEDIA": "includes/Common.php",
 		"EXTINFO": "includes/Common.php",
-		"EXTTYPE": "includes/Common.php"
+		"EXTTYPE": "includes/Common.php",
+		"BSEntity": "includes/Entity.php",
+		"BSEntityRegistry": "includes/EntityRegistry.php",
+		"BSEntityConfig": "includes/entityconfigs/EntityConfig.php",
+		"BSEntityContent": "includes/content/EntityContent.php",
+		"BSEntityContentHandler": "includes/content/EntityContentHandler.php"
 	},
 	"bsgConfigFiles": [],
 	"load_composer_autoloader": true,
