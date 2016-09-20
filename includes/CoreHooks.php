@@ -62,20 +62,6 @@ class BsCoreHooks {
 		//TODO: Change this mechanism to make it overwriteable!
 		$wgLogo = BsConfig::get('MW::LogoPath');
 
-		// Append CSS for icon font support
-		$out->addHeadItem(
-			'icomoon-style',
-			"\n<link rel=\"stylesheet\" href=\"" .
-				htmlspecialchars( $wgExtensionAssetsPath ) .
-				"/BlueSpiceFoundation/resources/icomoon/icomoon.icons.css\">\n"
-			."<!--[if lt IE 8]>\n<link rel=\"stylesheet\" href=\"" .
-				htmlspecialchars( $wgExtensionAssetsPath ) .
-				"/BlueSpiceFoundation/resources/icomoon/icomoon.icons.ie7.css\">\n<![endif]-->\n"
-			. "<!--[if lt IE 8]>\n<script src=\"" .
-				htmlspecialchars( $wgExtensionAssetsPath ) .
-				"/BlueSpiceFoundation/resources/icomoon/icomoon.icons.ie7.js\"></script>\n<![endif]-->\n"
-		);
-
 		$out->addModules( 'ext.bluespice' );
 		$out->addModuleStyles( 'ext.bluespice.styles' );
 		$out->addModuleStyles( 'ext.bluespice.compat.vector.styles' );
