@@ -101,7 +101,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 				$oResult = $this->validateTaskData( $oTaskData );
 				if( empty( $oResult->errors ) && empty( $oResult->message ) ) {
-					$oResult = $this->$sMethod( $oTaskData , $aParams );
+					try {
+						$oResult = $this->$sMethod( $oTaskData , $aParams );
+					}
+					catch ( Exception $e ) {
+						$oResult->message = $e->getMessage();
+					}
 				}
 
 				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', array( $this, $sTask, &$oResult, $oTaskData , $aParams ) );
