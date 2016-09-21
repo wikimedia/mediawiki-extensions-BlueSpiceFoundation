@@ -201,11 +201,14 @@ while ($row = mysql_fetch_array($res->result))
 		}
 
 		// Actual modification
-		$success = $article->doEdit( $text, $summary,
+		$success = $article->doEditContent(
+			ContentHandler::makeContent( $text, $title ),
+			$summary,
 			( $minor ? EDIT_MINOR : 0 ) |
 			( $bot ? EDIT_FORCE_BOT : 0 ) |
 			( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
-			( $noRC ? EDIT_SUPPRESS_RC : 0 ) );
+			( $noRC ? EDIT_SUPPRESS_RC : 0 )
+		);
 		if ( $success ) {
 			print "done\n";
 		} else {

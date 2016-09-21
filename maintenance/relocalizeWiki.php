@@ -124,7 +124,12 @@ class RelocalizeWiki extends Maintenance {
 
 			if( $this->bEdited ) {
 				if( !$this->bDryRun ) {
-					$oArticle->doEdit( $sArticleContent, '/* Changed Localisation */', EDIT_FORCE_BOT | EDIT_MINOR | EDIT_SUPPRESS_RC );
+					$oArticle->doEditContent(
+						ContentHandler::makeContent( $sArticleContent, $oArticle->getTitle() ),
+						$sArticleContent,
+						'/* Changed Localisation */',
+						EDIT_FORCE_BOT | EDIT_MINOR | EDIT_SUPPRESS_RC
+					);
 				}
 				$this->sOutput .=  "Replacement done.\n\n";
 			} else {
