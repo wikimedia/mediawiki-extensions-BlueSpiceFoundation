@@ -15,5 +15,8 @@
 	"bs-deferred-batch-progress-desc": "Title of a fieldset that displays the progress of the running batch process\n{{Identical|Progress}}",
 	"bs-deferred-batch-actions": "Title of the column that shows the names of the actions on the batch\n{{Identical|Action}}",
 	"bs-deferred-batch-description": "Title of the column that shows a short description of the actions on the batch\n{{Identical|Description}}",
-	"bs-deferred-batch-status": "Title of the column that shows the current state of the actions on the batch\n{{Identical|Status}}"
+	"bs-deferred-batch-status": "Title of the column that shows the current state of the actions on the batch\n{{Identical|Status}}",
+	"bs-deferred-action-apiaddcategories-description": "Description of an action that adds a set of categories to existing set of categories on a page.\n\nParameters:\n* $1 - The page title that is being modified",
+	"bs-deferred-action-apisetcategories-description": "Description of an action that adds a set of categories  to a page with removing existing ones.\n\nParameters:\n* $1 - The page title that is being modified",
+	"bs-deferred-action-apiremovecategories-description": "Description of an action that removes a set of categories  to a page.\n\nParameters:\n* $1 - The page title that is being modified"
 }
