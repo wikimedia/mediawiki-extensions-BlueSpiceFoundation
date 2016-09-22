@@ -85,5 +85,6 @@
 	"bs-validator-error-title-does-not-exist": "A páxina non existe: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Páxina non permitida: $1",
 	"bs-exttype-bluespice": "Extensións BlueSpice",
-	"bs-export-menu-print-text": "Imprimir"
+	"bs-export-menu-print-text": "Imprimir",
+	"bs-export-menu-print-title": "Mostra a versión para imprimir da páxina"
 }

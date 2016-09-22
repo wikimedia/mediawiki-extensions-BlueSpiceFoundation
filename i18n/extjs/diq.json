@@ -20,7 +20,7 @@
 	"bs-extjs-loading": "Bar beno...",
 	"bs-extjs-pageSize": "Ebadê pele",
 	"bs-extjs-actions-column-header": "Kerdışi",
-	"bs-extjs-warning": "İqaz",
+	"bs-extjs-warning": "Tembe kem",
 	"bs-extjs-saving": "qeyd beno...",
 	"bs-extjs-reset": "Raçarne",
 	"bs-extjs-close": "Bıracene",
@@ -28,5 +28,6 @@
 	"bs-extjs-upload": "Bar ke",
 	"bs-extjs-browse": "Cıgeyrayış",
 	"bs-extjs-uploading": "Bar beno...",
-	"bs-extjs-allns": "(pêro)"
+	"bs-extjs-allns": "(pêro)",
+	"bs-extjs-title-warning": "Tembe kem"
 }
