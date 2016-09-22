@@ -134,7 +134,7 @@ class BsBaseTemplate extends BaseTemplate {
 		//Fill in content of "navigation tab" at "execute" time
 		$this->data['bs_navigation_main']['navigation']['label'] = $this->getMsg( 'bs-tab_navigation' )->text();
 		$this->data['bs_navigation_main']['navigation']['content'] = $this->getNavigationSidebar();
-		$this->data['bs_navigation_main']['navigation']['class'] = 'icon-menu2';
+		$this->data['bs_navigation_main']['navigation']['class'] = 'bs-icon-menu';
 
 		$this->sortDataArrayByPosition( $this->data['bs_navigation_main'] );
 

@@ -132,7 +132,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 	makeRowActions: function() {
 		if( this.opPermitted( 'delete' ) ) {
 			this.colMainConf.actions.unshift({
-				iconCls: 'bs-extjs-actioncolumn-icon icon-cross3 destructive',
+				iconCls: 'bs-extjs-actioncolumn-icon bs-icon-cross destructive',
 				glyph: true, //Needed to have the "BS.override.grid.column.Action" render an <span> instead of an <img>,
 				tooltip: mw.message('bs-extjs-delete').plain(),
 				handler: this.onActionRemoveClick,
@@ -142,7 +142,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 
 		if( this.opPermitted( 'update' ) ) {
 			this.colMainConf.actions.unshift({
-				iconCls: 'bs-extjs-actioncolumn-icon icon-wrench progressive',
+				iconCls: 'bs-extjs-actioncolumn-icon bs-icon-wrench progressive',
 				glyph: true,
 				tooltip: mw.message('bs-extjs-edit').plain(),
 				handler: this.onActionEditClick,
