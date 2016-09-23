@@ -61,6 +61,10 @@
 	content: '\e960';
 }
 
+.bs-icon-upload:before{
+	content: "\e961";
+}
+
 .bs-icon-arrow-down:after {
 	content: '\f078';
 	font-family: 'fontawesome' !important;
@@ -95,7 +99,7 @@
 
 .bs-icon-gears:before{
 	content: "\f085";
-	font-family: 'fontawesome';
+	font-family: 'fontawesome' !important;
 }
 
 .bs-icon-book:before{
@@ -104,7 +108,7 @@
 
 .bs-icon-eye:before{
 	content: "\e9a1";
-	font-family: 'entypo';
+	font-family: 'entypo'  !important;
 }
 
 .bs-icon-gear:before{
@@ -121,16 +125,16 @@
 
 .bs-icon-chain:before{
 	content: "\f0c1";
-	font-family: 'fontawesome';
+	font-family: 'fontawesome' !important;
 }
 .bs-icon-key:before{
 	content: "\e9c1";
-	font-family: 'entypo';
+	font-family: 'entypo' !important;
 }
 
 .bs-icon-shopping-cart:before{
 	content: "\f07a";
-	font-family: 'fontawesome';
+	font-family: 'fontawesome' !important;
 }
 
 .bs-icon-painting-roll:before{
@@ -139,12 +143,12 @@
 
 .bs-icon-magnifying-glass:before{
 	content: "\e9d9";
-	font-family: 'entypo';
+	font-family: 'entypo' !important;
 }
 
 .bs-icon-bar-chart:before{
 	content: "\f080";
-	font-family: 'fontawesome';
+	font-family: 'fontawesome' !important;
 }
 
 .bs-icon-user-add:before{
@@ -160,11 +164,7 @@
 }
 
 .bs-icon-register-box:before{
-	content: "\e65b";
-}
-
-.bs-icon-upload:before{
-	content: "\e961";
+	content: "\e95c";
 }
 
 .bs-icon-flag-pole:before{
@@ -192,7 +192,7 @@
 }
 
 .bs-icon-profile:before{
-	content: "\e624";
+	content: "\e923";
 }
 
 .bs-icon-cog:before{
@@ -377,5 +377,5 @@
 
 .icon-eye {
 	content: "\e9a1";
-	font-family: 'entypo';
+	font-family: 'entypo' !important;
 }
