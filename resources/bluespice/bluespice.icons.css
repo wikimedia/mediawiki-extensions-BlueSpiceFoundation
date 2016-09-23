@@ -53,44 +53,49 @@
 	display: none;
 }
 
+[class^="bs-icon-"]:before, [class*=" bs-icon-"]:before {
+	font-family: 'icomoon';
+}
+
 .bs-icon-download:after {
-	font-family: 'entypo' !important;
-	content: '\e93f'
+	content: '\e960';
 }
 
 .bs-icon-arrow-down:after {
+	content: '\f078';
 	font-family: 'fontawesome' !important;
-	content: '\f078'
 }
 
 .bs-icon-text:before{
-	content: "\e85b";
+	content: "\ea26";
+	font-family: 'entypo' !important;
 }
 
 .bs-icon-alphabetic-sort-asc:before{
-	font-family: 'fontawesome' !important;
 	content: "\f15d";
+	font-family: 'fontawesome' !important;
 }
 
 .bs-icon-alphabetic-sort-desc:before{
-	font-family: 'fontawesome' !important;
 	content: "\f15e";
+	font-family: 'fontawesome' !important;
 }
 
 .bs-icon-star-full:before{
-	content: "/e6d1";
+	content: "\e9d9";
 }
 
 .bs-icon-star-half:before{
-	content: "\e60d";
+	content: "\e9d8";
 }
 
 .bs-icon-star-empty:before{
-	content: "\e6cf";
+	content: "\e9d7";
 }
 
 .bs-icon-gears:before{
-	content: "\e690";
+	content: "\f085";
+	font-family: 'fontawesome';
 }
 
 .bs-icon-book:before{
@@ -98,15 +103,16 @@
 }
 
 .bs-icon-eye:before{
-	content: "\e6c7";
+	content: "\e9a1";
+	font-family: 'entypo';
 }
 
 .bs-icon-gear:before{
-	content: "\e68f";
+	content: "\e994";
 }
 
 .bs-icon-earth:before{
-	content: "\e6c3";
+	content: "\e9ca";
 }
 
 .bs-icon-wrench:before{
@@ -114,34 +120,43 @@
 }
 
 .bs-icon-chain:before{
-	content: "\e7ec";
+	content: "\f0c1";
+	font-family: 'fontawesome';
 }
 .bs-icon-key:before{
-	content: "\e688";
+	content: "\e9c1";
+	font-family: 'entypo';
 }
 
 .bs-icon-shopping-cart:before{
-	content: "\e636";
+	content: "\f07a";
+	font-family: 'fontawesome';
 }
 
 .bs-icon-painting-roll:before{
-	content: "\e60c";
+	content: "\e90c";
 }
 
 .bs-icon-magnifying-glass:before{
-	content: "\e7e8";
+	content: "\e9d9";
+	font-family: 'entypo';
 }
 
 .bs-icon-bar-chart:before{
-	content: "\e698";
+	content: "\f080";
+	font-family: 'fontawesome';
 }
 
 .bs-icon-user-add:before{
-	content: "\e7d3";
+	content: "\e973";
+}
+
+.bs-icon-user:before {
+	content: "\e971";
 }
 
 .bs-icon-group:before{
-	content: "\e7d2";
+	content: "\e972";
 }
 
 .bs-icon-register-box:before{
@@ -149,30 +164,31 @@
 }
 
 .bs-icon-upload:before{
-	content: "\e65f";
+	content: "\e961";
 }
 
 .bs-icon-flag-pole:before{
-	content: "\e6c5";
+	content: "\e9a3";
+	font-family: 'entypo' !important;
 }
 
 .bs-icon-clipboard-checked:before{
-	content: "\e62c";
+	content: "\e9b8";
 }
 
 .bs-icon-clipboard:before{
-	font-family: 'entypo' !important;
 	content: "\e984";
+	font-family: 'entypo' !important;
 }
 
 .bs-icon-puzzle:before{
-	font-family: 'fontawesome' !important;
 	content: "\f12e";
+	font-family: 'fontawesome' !important;
 }
 
 .bs-icon-info:before{
-	font-family: "entypo" !important;
 	content: "\e9bf";
+	font-family: "entypo" !important;
 }
 
 .bs-icon-profile:before{
@@ -188,13 +204,13 @@
 }
 
 .bs-icon-cross:before {
-	font-family: "entypo" !important;
 	content: "\e97e";
+	font-family: "entypo" !important;
 }
 
 .bs-icon-book:before {
-	font-family: "entypo" !important;
 	content: "\e970";
+	font-family: "entypo" !important;
 }
 
 .bs-icon-blocked:before {
@@ -202,8 +218,8 @@
 }
 
 .bs-icon-help:before {
-	font-family: "entypo" !important;
 	content: "\e9b6";
+	font-family: "entypo" !important;
 }
 
 /* BACKWARDS COMPATIBILITY */
@@ -248,7 +264,7 @@
 }
 
 .icon-upload:before {
-	content: "\e956";
+	content: "\e960";
 }
 
 .icon-history:before {
@@ -346,7 +362,8 @@
 }
 
 .icon-text:before{
-	content: "\e85b";
+	font-family: 'entypo' !important;
+	content: "\ea26";
 }
 
 .icon-book2:before {
@@ -356,4 +373,9 @@
 
 .icon-blocked:before {
 	content: "\ea0e";
+}
+
+.icon-eye {
+	content: "\e9a1";
+	font-family: 'entypo';
 }

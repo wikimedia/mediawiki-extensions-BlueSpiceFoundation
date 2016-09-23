@@ -81,8 +81,6 @@ switch( $iconSet ){
 			}
 
 			.icontable {
-				position: absolute;
-				top: 50px;
 				width: 100%;
 				border-collapse: collapse;
 			}
@@ -116,8 +114,9 @@ switch( $iconSet ){
 
 	for( $i=0; $i < count( $lines ); $i++ ) {
 		$className = null;
+		$number = '';
 
-		if( preg_match( '#^\.icon-#', $lines[$i] ) ) {
+		if( preg_match( '#^\.(bs-)?icon-#', $lines[$i] ) ) {
 			$pos = strpos( $lines[$i],':' );
 			$className = substr( $lines[$i],1,$pos -1 );
 
