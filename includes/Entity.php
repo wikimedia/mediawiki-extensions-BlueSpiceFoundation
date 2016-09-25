@@ -253,7 +253,7 @@ class BSEntity implements JsonSerializable {
 			return Status::newFatal('Related Title error');
 		}
 
-		$oWikiPage = new WikiPage( $oTitle );
+		$oWikiPage = WikiPage::factory( $oTitle );
 		$sContentClass = $this->getConfig()->get('ContentClass');
 		try {
 			$oStatus = $oWikiPage->doEditContent(
@@ -289,7 +289,7 @@ class BSEntity implements JsonSerializable {
 		$oTitle = $this->getTitle();
 
 		$oStatus = null;
-		$oWikiPage = new WikiPage( $oTitle );
+		$oWikiPage = WikiPage::factory( $oTitle );
 
 		wfRunHooks( 'BSEntityDelete', array( $this, $oStatus, $oUser ) );
 		if( $oStatus instanceof Status && $oStatus->isOK() ) {

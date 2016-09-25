@@ -83,7 +83,10 @@ class RelocalizeWiki extends Maintenance {
 		foreach( $aArticleIds as $iArticleId ) {
 			$this->bEdited = false;
 			$oArticle = Article::newFromID( $iArticleId );
-			$sArticleContent = $oArticle->fetchContent();
+			//Article::fetchContent() is deprecated.
+			//Replaced by WikiPage::getContent()::getNativeData()
+			$oWikiPage = WikiPage::newFromID( $iArticleId );
+			$sArticleContent = ContentHandler::getContentText( $oWikiPage->getContent() );
 			ob_start();
 			$this->sOutput = '';
 			$this->sOutput .= "\n-------- Article with ID: ".$iArticleId." --------\n";

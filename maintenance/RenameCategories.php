@@ -222,9 +222,8 @@ while ($row = mysql_fetch_array($res->result))
 	}
 
 	// Fetch text
-	$article = new Article( $title );
-	$article->fetchContent();
-	$text = $article->getContent() ;
+	$wikipage = WikiPage::factory( $title );
+	$text = ContentHandler::getContentText( $wikipage->getContent() );
 	if ($text == '') echo 'empty!';
 
 	// Text conditions
@@ -351,7 +350,10 @@ foreach ($res as $row) {
 	$oldtitle = Title::newFromId($row->page_id);
 	$oldtitletext = $oldtitle->getText();
 	$oldarticle = new Article($oldtitle);
-	$oldarticlecontent = $oldarticle->fetchContent();
+	//Article::fetchContent() is deprecated.
+	//Replaced by WikiPage::getContent()::getNativeData()
+	$oldwikipage = WikiPage::factory( $oldtitle );
+	$oldarticlecontent = ContentHandler::getContentText( $oldwikipage->getContent() );
 	$newtitletext = preg_replace($oldtitlepatterns, $newtitlepatterns, $oldtitletext, -1, $repcount);
 	echo "$oldtitle" . PHP_EOL . "=========================" . PHP_EOL;
 	if ($repcount > 0) {

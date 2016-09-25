@@ -145,10 +145,8 @@ while ($row = mysql_fetch_array($res->result))
 	}
 
 	// Fetch text
-	$article = new Article( $title );
-
-	$article->fetchContent();
-	$text = $article->getContent() ;
+	$wikipage = WikiPage::factory( $title );
+	$text = ContentHandler::getContentText( $wikipage->getContent() );
 	if ($text == '') echo 'empty!';
 
 	// Text conditions
