@@ -57,7 +57,7 @@
 	font-family: 'icomoon';
 }
 
-.bs-icon-download:after {
+.bs-icon-download:before {
 	content: '\e960';
 }
 
@@ -65,7 +65,7 @@
 	content: "\e961";
 }
 
-.bs-icon-arrow-down:after {
+.bs-icon-arrow-down:before {
 	content: '\f078';
 	font-family: 'fontawesome' !important;
 }
@@ -213,6 +213,10 @@
 	font-family: "entypo" !important;
 }
 
+.bs-icon-books:before {
+	content: "\e920";
+}
+
 .bs-icon-blocked:before {
 	content: "\ea0e";
 }
@@ -220,6 +224,41 @@
 .bs-icon-help:before {
 	content: "\e9b6";
 	font-family: "entypo" !important;
+}
+
+.bs-icon-bin:before {
+	content: "\e9ad";
+}
+
+.bs-icon-pencil:before {
+	content: "\e905";
+}
+
+.bs-icon-bell:before {
+	content: "\e96d";
+	font-family: "entypo" !important;
+}
+
+.bs-icon-shuffle:before {
+	content: "\ea30";
+}
+
+.bs-icon-shield:before {
+	content: "\e9b4";
+}
+
+.bs-icon-history:before {
+	content: "\e94d";
+}
+
+.bs-icon-checkmark-circle:before {
+	content: "\f058";
+	font-family: "fontawesome" !important;
+}
+
+.bs-icon-cancel-circle:before {
+	content: "\f057";
+	font-family: "fontawesome" !important;
 }
 
 /* BACKWARDS COMPATIBILITY */
@@ -375,7 +414,11 @@
 	content: "\ea0e";
 }
 
-.icon-eye {
+.icon-eye:before {
 	content: "\e9a1";
 	font-family: 'entypo' !important;
+}
+
+.icon-pencil:before {
+	content: "\e905";
 }
