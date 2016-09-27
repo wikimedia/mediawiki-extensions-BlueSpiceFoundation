@@ -50,7 +50,7 @@ Ext.define('BS.store.BSApi', {
 		 * Therefore we check for these circumstances and select a previous
 		 * page if possible
 		 */
-		if( records.length === 0 && sender.getTotalCount() !== 0 && sender.currentPage !== 1 ) {
+		if( records && records.length === 0 && sender.getTotalCount() !== 0 && sender.currentPage !== 1 ) {
 			sender.loadPage( sender.currentPage - 1 );
 		}
 	}

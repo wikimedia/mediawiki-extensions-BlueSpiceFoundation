@@ -1,6 +1,6 @@
 {
 	"name": "BlueSpice",
-	"version": "2.27.0-beta",
+	"version": "2.27.0",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],
@@ -24,7 +24,8 @@
 		"bs-wikipage-store": "BSApiWikiPageStore",
 		"bs-wikisubpage-treestore": "BSApiWikiSubPageTreeStore",
 		"bs-titlequery-store": "BSApiTitleQueryStore",
-		"bs-ping-tasks": "BSApiPingTasks"
+		"bs-ping-tasks": "BSApiPingTasks",
+		"bs-upload-license-store": "BSApiUploadLicenseStore"
 	},
 	"MessagesDirs": {
 		"BlueSpice": [
@@ -53,6 +54,12 @@
 		],
 		"BlueSpice.API": [
 			"i18n/api"
+		],
+		"BlueSpice.Upload": [
+			"i18n/upload"
+		],
+		"BlueSpice.FileRepo": [
+			"i18n/filerepo"
 		]
 	},
 	"ExtensionMessagesFiles": {
@@ -80,8 +87,8 @@
 	"config": {
 		"BlueSpiceExtInfo": {
 			"name": "BlueSpice",
-			"version": "2.27.0-beta",
-			"status": "beta",
+			"version": "2.27.0",
+			"status": "alpha",
 			"package": "BlueSpice Free",
 			"url": "http://bluespice.com",
 			"desc": "Makes MediaWiki enterprise ready.",
@@ -153,6 +160,8 @@
 		"BSApiAdminUserStore": "includes/api/BSApiAdminUserStore.php",
 		"BSApiGroupStore": "includes/api/BSApiGroupStore.php",
 		"BSApiInterwikiStore": "includes/api/BSApiInterwikiStore.php",
+		"JsonLicenses": "includes/JsonLicenses.php",
+		"BSApiUploadLicenseStore": "includes/api/BSApiUploadLicenseStore.php",
 		"BSApiWikiPageTasks": "includes/api/BSApiWikiPageTasks.php",
 		"BSApiWikiPageStore": "includes/api/BSApiWikiPageStore.php",
 		"BSApiWikiSubPageTreeStore": "includes/api/BSApiWikiSubPageTreeStore.php",

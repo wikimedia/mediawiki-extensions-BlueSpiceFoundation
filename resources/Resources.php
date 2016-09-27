@@ -41,7 +41,50 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bs-two-units-ago',
 		'bs-one-unit-ago',
 		'bs-now',
-		'blanknamespace', //MediaWiki
+		'blanknamespace'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.upload'] = array(
+	'messages' => array(
+		'bs-upload-uploaddialogtitle',
+		'bs-upload-uploadbuttontext',
+		'bs-upload-uploadfilefieldlabel',
+		'bs-upload-uploadfileemptytext',
+		'bs-upload-uploaddestfilelabel',
+		'bs-upload-allowedfiletypesare',
+		'bs-upload-license',
+		'bs-upload-uploadwatchthislabel',
+		'bs-upload-uploadignorewarningslabel',
+		'bs-upload-categories',
+		'bs-upload-upload-waitmessage',
+		'bs-upload-error',
+		'bs-upload-descfilelabel',
+		'bs-upload-error-long',
+		'bs-upload-filetypenotsupported',
+		'bs-upload-details'
+	)
+) + $aResourceModuleTemplate;
+
+$wgResourceModules['ext.bluespice.extjs.filerepo'] = array(
+	'messages' => array(
+		'bs-filerepo-labelupload',
+		'bs-filerepo-labelfilter',
+		'bs-filerepo-headerfilename',
+		'bs-filerepo-headerfilesize',
+		'bs-filerepo-headerpagecategories',
+		'bs-filerepo-headerfilewidth',
+		'bs-filerepo-headerfileheight',
+		'bs-filerepo-headerfilemimetype',
+		'bs-filerepo-headerfileusertext',
+		'bs-filerepo-headerfileextension',
+		'bs-filerepo-headerfiletimestamp',
+		'bs-filerepo-headerfilemediatype',
+		'bs-filerepo-headerfiledescription',
+		'bs-filerepo-headerfilethumbnail',
+		'bs-filerepo-yes',
+		'bs-filerepo-no',
+		'bs-filerepo-pagesize'
 	)
 ) + $aResourceModuleTemplate;
 
@@ -101,7 +144,8 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 	'styles' => array(
 		//There are some weird legacy CSS fixes. Don't know if they still apply
 		'bluespice.extjs/bluespice.extjs.fixes.css',
-		'bluespice.extjs/bluespice.extjs.overrides.less'
+		'bluespice.extjs/bluespice.extjs.overrides.less',
+		'bluespice.extjs/bluespice.extjs.filerepogrid.css'
 	),
 	'messages' => array(
 		'bs-extjs-ok',

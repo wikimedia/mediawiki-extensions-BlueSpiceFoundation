@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robert Vogel"
+		]
+	},
+	"bs-filerepo-labelupload": "Hochladen",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Dateiname",
+	"bs-filerepo-headerfilesize": "Größe",
+	"bs-filerepo-headerpagecategories": "Kategorien",
+	"bs-filerepo-headerfilewidth": "Breite",
+	"bs-filerepo-headerfileheight": "Höhe",
+	"bs-filerepo-headerfilemimetype": "MIME Typ",
+	"bs-filerepo-headerfileusertext": "Benutzer",
+	"bs-filerepo-headerfileextension": "Erweiterung",
+	"bs-filerepo-headerfiletimestamp": "Hochgeladen",
+	"bs-filerepo-headerfilemediatype": "Medienart",
+	"bs-filerepo-headerfiledescription": "Beschreibung",
+	"bs-filerepo-headerfilethumbnail": "Vorschau",
+	"bs-filerepo-yes": "Ja",
+	"bs-filerepo-no": "Nein",
+	"bs-filerepo-pagesize": "Seitengröße"
+}

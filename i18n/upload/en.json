@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dejan Savuljesku"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Upload file",
+	"bs-upload-uploadbuttontext": "Browse",
+	"bs-upload-uploadfilefieldlabel": "File name",
+	"bs-upload-uploadfileemptytext": "Insert new file...",
+	"bs-upload-uploaddestfilelabel": "Destination filename",
+	"bs-upload-allowedfiletypesare": "Valid file types are:",
+	"bs-upload-license": "License",
+	"bs-upload-uploadwatchthislabel": "Watch this file",
+	"bs-upload-uploadignorewarningslabel": "Ignore any warnings",
+	"bs-upload-categories": "Categories",
+	"bs-upload-upload-waitmessage": "Upload in progress ...",
+	"bs-upload-error": "Error",
+	"bs-upload-descfilelabel": "Description",
+	"bs-upload-error-long": "Error in the uploading process",
+	"bs-upload-filetypenotsupported": "Filetype is not supported",
+	"bs-upload-details": "Details"
+}

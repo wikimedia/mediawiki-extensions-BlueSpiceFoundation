@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dejan Savuljesku"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Title of an upload dialog window",
+	"bs-upload-uploadbuttontext": "Label fot button that opens a file chooser dialog",
+	"bs-upload-uploadfilefieldlabel": "Label for field that specifies the source name of an uploaded file",
+	"bs-upload-uploadfileemptytext": "Placeholder text in file input field",
+	"bs-upload-uploaddestfilelabel": "Label for field that specifies the destination name of an uploaded file",
+	"bs-upload-allowedfiletypesare": "Label for hint about allowed file types",
+	"bs-upload-license": "Label for licence select field",
+	"bs-upload-uploadwatchthislabel": "Label for checkbox that adds an uploaded file to the watchlist",
+	"bs-upload-uploadignorewarningslabel": "Label for checkbox that makes the upload dialog ignore warnings",
+	"bs-upload-categories": "Label for categories chooser field",
+	"bs-upload-upload-waitmessage": "Message that is shown during an upload",
+	"bs-upload-error": "Title of an error message dialog",
+	"bs-upload-descfilelabel": "Label of a description textfield",
+	"bs-upload-error-long": "Message in case of an upload error",
+	"bs-upload-filetypenotsupported": "Message in case of an unsupported file extension",
+	"bs-upload-details": "Label for a fieldset holding additional fields"
+}
