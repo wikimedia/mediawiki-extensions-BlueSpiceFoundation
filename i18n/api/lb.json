@@ -10,5 +10,6 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Dir däerft d'Säit '$1' net änneren.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Net-valabel {{PLURAL:$2|Kategorie|Kategorien}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "D'Kategorie goufe festgeluecht.",
-	"apihelp-bs-wikisubpage-treestore-description": "Liwwert d'Ënnersäite vun enger spezifescher Wikisäit"
+	"apihelp-bs-wikisubpage-treestore-description": "Liwwert d'Ënnersäite vun enger spezifescher Wikisäit",
+	"apihelp-bs-upload-license-store-description": "Lëscht vun allen disponibele Lizenzen fir e Fichier eropzelueden"
 }
