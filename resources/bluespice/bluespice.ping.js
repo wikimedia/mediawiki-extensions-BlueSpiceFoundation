@@ -26,15 +26,12 @@ BSPing = {
 				aData:aListenersToGo[i].aData
 			});
 		}
-		bs.api.tasks.exec( 'ping', 'ping', {
+		bs.api.tasks.execSilent( 'ping', 'ping', {
 				iArticleID: mw.config.get( "wgArticleId" ),
 				sTitle: mw.config.get( "wgTitle" ),
 				iNamespace: mw.config.get( "wgNamespaceNumber" ),
 				iRevision: mw.config.get( "wgCurRevisionId" ),
 				BsPingData: BsPingData
-		},{ //Suppress all messages and errors
-			success: function() {},
-			failure: function() {}
 		}).done( BSPing.pingCallback( aListenersToGo ) );
 	},
 	registerListener: function( sRef, iInterval, aData, callback) {
