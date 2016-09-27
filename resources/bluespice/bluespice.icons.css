@@ -261,6 +261,11 @@
 	font-family: "fontawesome" !important;
 }
 
+.bs-icon-tag:before {
+	content: "\f02b";
+	font-family: "fontawesome" !important;
+}
+
 /* BACKWARDS COMPATIBILITY */
 .icon-create:before {
 	content: "\e924";

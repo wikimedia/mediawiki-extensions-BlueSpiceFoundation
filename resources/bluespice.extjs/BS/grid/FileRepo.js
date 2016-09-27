@@ -50,7 +50,8 @@ Ext.define( 'BS.grid.FileRepo', {
 	renderThumb: function( value, meta, record ) {
 		var attr = {
 			style: 'background-image:url('+value+'); display:block; height: 120px;background-position: center center; background-repeat: no-repeat;',
-			href: record.get( 'file_url' )
+			href: record.get( 'file_url' ),
+			target: '_blank'
 		};
 		return mw.html.element( 'a', attr );
 	},
@@ -304,7 +305,7 @@ Ext.define( 'BS.grid.FileRepo', {
 	makeUploader: function( cfg ) {
 		this.btnUpload = new Ext.Button({
 			glyph: true,
-			iconCls: 'icon-upload3 bs-btn-upload',
+			iconCls: 'bs-icon-upload',
 			tooltip: mw.message( 'bs-filerepo-labelupload' ).plain()
 		});
 

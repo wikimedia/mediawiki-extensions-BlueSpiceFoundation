@@ -4,6 +4,6 @@
 	overflow: visible;
 }
 
-body.mediawiki #content .bs-filerepo-grid .bs-btn-upload:before {
+body.mediawiki #content .bs-filerepo-grid .bs-icon-upload:before {
 	color: black;
 }

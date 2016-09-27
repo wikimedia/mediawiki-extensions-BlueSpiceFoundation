@@ -20,11 +20,12 @@ Ext.define('BS.model.File', {
 		{ name: 'page_touched', type: 'date', defaultValue: '19700101000000', dateFormat: 'YmdHis' },
 		{ name: 'page_link', type: 'string', defaultValue: '', convert: function( value, record ) {
 			//This is not being calculated on the serverside for performance reasons
-			var title = new mw.Title( record.get( 'page_title' ), record.get( 'page_namespace' ) );
+			var title = new mw.Title( record.get( 'page_prefixed_text' ) );
 			return mw.html.element(
 				'a',
 				{
 					'href': title.getUrl(),
+					'target': '_blank',
 					'data-bs-title': title.getPrefixedText(),
 					'data-bs-filename': record.get( 'file_name' ),
 					'data-bs-fileurl': record.get( 'file_url' )
@@ -41,11 +42,12 @@ Ext.define('BS.model.File', {
 			for( var i = 0; i < categories.length; i++ ) {
 				var category = categories[i];
 				var title = new mw.Title( category, bs.ns.NS_CATEGORY );
-				var icon = mw.html.element( 'i', { 'class' : 'bs-icon-tag' }, '' );
+				var icon = mw.html.element( 'span', { 'class' : 'bs-icon-tag' }, '' );
 				var link = mw.html.element(
 					'a',
 					{
 						'href': title.getUrl(),
+						'target': '_blank',
 						'data-bs-title': title.getPrefixedText()
 					},
 					title.getNameText()
@@ -81,11 +83,12 @@ Ext.define('BS.model.File', {
 		{ name: 'file_user_link', type: 'string', defaultValue: '', convert: function( value, record ) {
 			//This is not being calculated on the serverside for performance reasons
 			var title = new mw.Title( record.get( 'file_user_text' ), bs.ns.NS_USER );
-			var icon = mw.html.element( 'i', { 'class' : 'bs-icon-user icon-user' }, '' );
+			var icon = mw.html.element( 'span', { 'class' : 'bs-icon-user' }, '' );
 			var link =  mw.html.element(
 				'a',
 				{
 					'href': title.getUrl(),
+					'target': '_blank',
 					'data-bs-title': title.getPrefixedText(),
 					'data-bs-username': record.get( 'file_user_text' )
 				},
