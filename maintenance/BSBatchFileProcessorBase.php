@@ -1,6 +1,6 @@
 <?php
 
-require_once( __DIR_.'/BSMaintenance.php' );
+require_once( __DIR__.'/BSMaintenance.php' );
 
 abstract class BSBatchFileProcessorBase extends BSMaintenance {
 
@@ -14,7 +14,7 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addOption('src', 'The path to the source directory', false, true);
+		$this->addOption('src', 'The path to the source directory', true, true);
 		$this->addOption('dest', 'The path to the destination directory', false, true);
 
 		$this->aFileExtensionWhitelist = array_map(
@@ -96,7 +96,7 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 					continue;
 				}
 			}
-			$aFiles[$oFile->getFilename()] = $oFile;
+			$aFiles[$oFile->getPathname()] = $oFile;
 		}
 
 		ksort($aFiles, SORT_NATURAL);
