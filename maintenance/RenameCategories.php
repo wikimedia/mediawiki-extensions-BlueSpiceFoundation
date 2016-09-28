@@ -359,23 +359,26 @@ foreach ($res as $row) {
 		if (!$testing) {
 			$newtitle = Title::newFromText($newtitletext, NS_CATEGORY);
 			$newarticle = new Article($newtitle);
-			$savestat = $newarticle->doEdit(
+			$savestat = $newarticle->doEditContent(
 				ContentHandler::makeContent( $oldarticlecontent, $newtitle ),
 				$summary,
-					( $minor ? EDIT_MINOR : 0 ) |
-					( $bot ? EDIT_FORCE_BOT : 0 ) |
-					( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
-					( $noRC ? EDIT_SUPPRESS_RC : 0 )
+				( $minor ? EDIT_MINOR : 0 ) |
+				( $bot ? EDIT_FORCE_BOT : 0 ) |
+				( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
+				( $noRC ? EDIT_SUPPRESS_RC : 0 )
 			);
 		        if ($savestat->isGood()) echo "moved successfully\n";
 			else echo "failed moving\n";
 			/*
 			echo "Creating redirect from $oldtitletext to $newtitletext : ";
-			$redirstat = $oldarticle->doEdit( "#REDIRECT [[:$newtitle]]", $summary,
-					( $minor ? EDIT_MINOR : 0 ) |
-					( $bot ? EDIT_FORCE_BOT : 0 ) |
-					( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
-					( $noRC ? EDIT_SUPPRESS_RC : 0 ) );
+			$redirstat = $oldarticle->doEditContent(
+				ContentHandler::makeContent( "#REDIRECT [[:$newtitle]]", $oldTitle ),
+				$summary,
+				( $minor ? EDIT_MINOR : 0 ) |
+				( $bot ? EDIT_FORCE_BOT : 0 ) |
+				( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
+				( $noRC ? EDIT_SUPPRESS_RC : 0 )
+			);
 		        if ($redirstat->isGood()) echo "successful\n";
 			else echo "failed\n";
 			*/
