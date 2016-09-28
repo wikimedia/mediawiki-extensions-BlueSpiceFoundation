@@ -38,5 +38,7 @@
 	"apihelp-bs-ping-tasks-description": "Ping task that provides continuous exchange of data",
 	"apihelp-bs-wikisubpage-treestore-description": "Lists the subpages of a specific wikipage",
 	"apihelp-bs-wikisubpage-treestore-param-node": "The prefixed title of the wikipage ",
-	"apihelp-bs-upload-license-store-description": "Lists all available licences for a file upload"
+	"apihelp-bs-upload-license-store-description": "Lists all available licences for a file upload",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "You are not allowed to read page '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "There are no categories to remove"
 }

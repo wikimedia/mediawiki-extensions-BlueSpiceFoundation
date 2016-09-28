@@ -230,7 +230,10 @@ $wgResourceModules['ext.bluespice.extjs.BS.deferred'] = array(
 		'bs-deferred-batch-progress-desc',
 		'bs-deferred-batch-actions',
 		'bs-deferred-batch-description',
-		'bs-deferred-batch-status'
+		'bs-deferred-batch-status',
+		'bs-deferred-action-apiaddcategories-description',
+		'bs-deferred-action-apisetcategories-description',
+		'bs-deferred-action-apiremovecategories-description'
 	)
 ) + $aResourceModuleTemplate;
 
