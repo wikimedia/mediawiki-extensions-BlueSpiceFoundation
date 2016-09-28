@@ -40,5 +40,7 @@
 	"apihelp-bs-wikisubpage-treestore-param-node": "The prefixed title of the wikipage ",
 	"apihelp-bs-upload-license-store-description": "Lists all available licences for a file upload",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "You are not allowed to read page '$1'.",
-	"bs-wikipage-tasks-error-nothingtoremove": "There are no categories to remove"
+	"bs-wikipage-tasks-error-nothingtoremove": "There are no categories to remove",
+	"apihelp-bs-category-treestore-description": "Lists the sub-categories of a specific category",
+	"apihelp-bs-category-treestore-param-node": "A path of categories separated by slash"
 }

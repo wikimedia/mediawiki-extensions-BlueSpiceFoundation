@@ -59,5 +59,4 @@ $wgAjaxExportList[] = 'BsCommonAJAXInterface::getTitleStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getNamespaceStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getUserStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getCategoryStoreData';
-$wgAjaxExportList[] = 'BsCommonAJAXInterface::getAsyncCategoryTreeStoreData';
 $wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
