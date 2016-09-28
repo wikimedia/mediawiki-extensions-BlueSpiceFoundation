@@ -33,5 +33,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoria non valida|Categorie non valide}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Le categorie sono state impostate correttamente.",
 	"apihelp-bs-wikipage-store-description": "Elenca tutte le pagine wiki. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
-	"apihelp-bs-wikisubpage-treestore-description": "Elenca le sottopagine di una pagina specifica"
+	"apihelp-bs-wikisubpage-treestore-description": "Elenca le sottopagine di una pagina specifica",
+	"apihelp-bs-upload-license-store-description": "Elenca tutte le licenze disponibili per il caricamento di un file"
 }

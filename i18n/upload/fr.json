@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Télécharger le fichier",
+	"bs-upload-uploadbuttontext": "Naviguer",
+	"bs-upload-uploadfilefieldlabel": "Nom de fichier",
+	"bs-upload-uploadfileemptytext": "Insérer un nouveau fichier…",
+	"bs-upload-uploaddestfilelabel": "Nom de fichier cible",
+	"bs-upload-allowedfiletypesare": "Les types de fichier valides sont :",
+	"bs-upload-license": "Licence",
+	"bs-upload-uploadwatchthislabel": "Suivre ce fichier",
+	"bs-upload-uploadignorewarningslabel": "Ignorer les avertissements",
+	"bs-upload-categories": "Catégories",
+	"bs-upload-upload-waitmessage": "Téléchargement en cours…",
+	"bs-upload-error": "Erreur",
+	"bs-upload-descfilelabel": "Description",
+	"bs-upload-error-long": "Erreur dans le processus de téléchargement",
+	"bs-upload-filetypenotsupported": "Le type de fichier n’est pas supporté",
+	"bs-upload-details": "Détails"
+}

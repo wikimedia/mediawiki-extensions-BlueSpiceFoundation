@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Subir un ficheiro",
+	"bs-upload-uploadbuttontext": "Navegar",
+	"bs-upload-uploadfilefieldlabel": "Nome de ficheiro",
+	"bs-upload-uploadfileemptytext": "Inserir ficheiro novo...",
+	"bs-upload-uploaddestfilelabel": "Nome do ficheiro de destino",
+	"bs-upload-allowedfiletypesare": "Tipos de ficheiros válidos:",
+	"bs-upload-license": "Licenza",
+	"bs-upload-uploadwatchthislabel": "Vixiar este ficheiro",
+	"bs-upload-uploadignorewarningslabel": "Ignorar as advertencias",
+	"bs-upload-categories": "Categorías",
+	"bs-upload-upload-waitmessage": "Subida en curso...",
+	"bs-upload-error": "Erro",
+	"bs-upload-descfilelabel": "Descrición",
+	"bs-upload-error-long": "Erro no proceso de subida",
+	"bs-upload-filetypenotsupported": "Non se admite este tipo de ficheiro",
+	"bs-upload-details": "Detalles"
+}

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"bs-filerepo-labelupload": "Télécharger",
+	"bs-filerepo-labelfilter": "Filtre",
+	"bs-filerepo-headerfilename": "Nom de fichier",
+	"bs-filerepo-headerfilesize": "Taille",
+	"bs-filerepo-headerpagecategories": "Catégories",
+	"bs-filerepo-headerfilewidth": "Largeur",
+	"bs-filerepo-headerfileheight": "Hauteur",
+	"bs-filerepo-headerfilemimetype": "Type MIME",
+	"bs-filerepo-headerfileusertext": "Utilisateur",
+	"bs-filerepo-headerfileextension": "Extension",
+	"bs-filerepo-headerfiletimestamp": "Téléchargé",
+	"bs-filerepo-headerfilemediatype": "Type de média",
+	"bs-filerepo-headerfiledescription": "Description",
+	"bs-filerepo-headerfilethumbnail": "Vignette",
+	"bs-filerepo-yes": "Oui",
+	"bs-filerepo-no": "Non",
+	"bs-filerepo-pagesize": "Taille de la page"
+}

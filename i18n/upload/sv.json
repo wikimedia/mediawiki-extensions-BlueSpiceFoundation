@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Josve05a"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Ladda upp fil",
+	"bs-upload-uploadbuttontext": "Bläddra",
+	"bs-upload-uploadfilefieldlabel": "Filnamn",
+	"bs-upload-license": "Licens",
+	"bs-upload-uploadwatchthislabel": "Bevaka den här filen",
+	"bs-upload-uploadignorewarningslabel": "Ignorera eventuella varningar",
+	"bs-upload-categories": "Kategorier",
+	"bs-upload-upload-waitmessage": "Uppladdning pågår ...",
+	"bs-upload-error": "Fel",
+	"bs-upload-descfilelabel": "Beskrivning",
+	"bs-upload-details": "Detaljer"
+}

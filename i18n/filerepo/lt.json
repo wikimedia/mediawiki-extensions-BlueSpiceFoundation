@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"bs-filerepo-labelupload": "Įkelti",
+	"bs-filerepo-labelfilter": "Filtras",
+	"bs-filerepo-headerfilename": "Failo pavadinimas",
+	"bs-filerepo-headerfilesize": "Dydis",
+	"bs-filerepo-headerpagecategories": "Kategorijos",
+	"bs-filerepo-headerfilewidth": "Plotis",
+	"bs-filerepo-headerfileheight": "Aukštis",
+	"bs-filerepo-headerfilemimetype": "MIME tipas",
+	"bs-filerepo-headerfileusertext": "Vartotojas",
+	"bs-filerepo-headerfileextension": "Plėtinys",
+	"bs-filerepo-headerfiletimestamp": "Įkelta",
+	"bs-filerepo-headerfilemediatype": "Laikmenos tipas",
+	"bs-filerepo-headerfiledescription": "Aprašymas",
+	"bs-filerepo-headerfilethumbnail": "Miniatiūra",
+	"bs-filerepo-yes": "Taip",
+	"bs-filerepo-no": "Ne",
+	"bs-filerepo-pagesize": "Puslapio dydis"
+}

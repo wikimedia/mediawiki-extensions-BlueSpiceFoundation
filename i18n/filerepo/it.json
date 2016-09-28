@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"bs-filerepo-labelupload": "Carica",
+	"bs-filerepo-labelfilter": "Filtro",
+	"bs-filerepo-headerfilename": "Nome del file",
+	"bs-filerepo-headerfilesize": "Dimensione",
+	"bs-filerepo-headerpagecategories": "Categorie",
+	"bs-filerepo-headerfilewidth": "Larghezza",
+	"bs-filerepo-headerfileheight": "Altezza",
+	"bs-filerepo-headerfilemimetype": "Tipo MIME",
+	"bs-filerepo-headerfileusertext": "Utente",
+	"bs-filerepo-headerfileextension": "Estensione",
+	"bs-filerepo-headerfiletimestamp": "Caricato",
+	"bs-filerepo-headerfiledescription": "Descrizione",
+	"bs-filerepo-headerfilethumbnail": "Miniatura",
+	"bs-filerepo-yes": "Sì",
+	"bs-filerepo-no": "No",
+	"bs-filerepo-pagesize": "Dimensione della pagina"
+}

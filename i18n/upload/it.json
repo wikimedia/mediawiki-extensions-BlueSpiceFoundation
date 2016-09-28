@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Carica un file",
+	"bs-upload-uploadfilefieldlabel": "Nome del file",
+	"bs-upload-uploaddestfilelabel": "Nome del file di destinazione",
+	"bs-upload-allowedfiletypesare": "Tipi di file validi sono:",
+	"bs-upload-uploadwatchthislabel": "Aggiungi agli osservati speciali",
+	"bs-upload-uploadignorewarningslabel": "Ignora i messaggi di avvertimento del sistema",
+	"bs-upload-categories": "Categorie",
+	"bs-upload-upload-waitmessage": "Caricamento in corso ...",
+	"bs-upload-error": "Errore",
+	"bs-upload-descfilelabel": "Descrizione",
+	"bs-upload-filetypenotsupported": "Il tipo di file non è supportato",
+	"bs-upload-details": "Dettagli"
+}

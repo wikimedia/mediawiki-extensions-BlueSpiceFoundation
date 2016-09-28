@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eitvys200"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Įkelti failą",
+	"bs-upload-uploadbuttontext": "Naršyti",
+	"bs-upload-uploadfilefieldlabel": "Failo pavadinimas",
+	"bs-upload-uploadfileemptytext": "Įterpti naują failą...",
+	"bs-upload-allowedfiletypesare": "Galimi failų tipai yra:",
+	"bs-upload-license": "Licencija",
+	"bs-upload-uploadwatchthislabel": "Stebėti šį failą",
+	"bs-upload-uploadignorewarningslabel": "Ignuoruoti bet kokius įspėjimus",
+	"bs-upload-categories": "Kategorijos",
+	"bs-upload-upload-waitmessage": "Įkėlimas vyksta ...",
+	"bs-upload-error": "Klaida",
+	"bs-upload-descfilelabel": "Aprašymas",
+	"bs-upload-error-long": "Klaida įkėlimo procese",
+	"bs-upload-filetypenotsupported": "Failo tipas nepalaikomas",
+	"bs-upload-details": "Informacija"
+}

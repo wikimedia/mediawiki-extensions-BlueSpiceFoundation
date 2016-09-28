@@ -37,5 +37,6 @@
 	"bs-wikipage-tasks-setcategories-success": "Establecéronse as categorías con éxito.",
 	"apihelp-bs-wikipage-store-description": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS.",
 	"apihelp-bs-wikisubpage-treestore-description": "Lista as subpáxinas dunha wikipáxina específica",
-	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki"
+	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki",
+	"apihelp-bs-upload-license-store-description": "Lista todas as licenzas dispoñibles para a suba dun ficheiro"
 }

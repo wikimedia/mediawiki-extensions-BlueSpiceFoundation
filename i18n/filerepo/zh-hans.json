@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"bs-filerepo-labelupload": "上传",
+	"bs-filerepo-labelfilter": "过滤器",
+	"bs-filerepo-headerfilename": "文件名",
+	"bs-filerepo-headerfilesize": "大小",
+	"bs-filerepo-headerpagecategories": "分类",
+	"bs-filerepo-headerfilewidth": "宽度",
+	"bs-filerepo-headerfileheight": "高度",
+	"bs-filerepo-headerfilemimetype": "MIME类型",
+	"bs-filerepo-headerfileusertext": "用户",
+	"bs-filerepo-headerfileextension": "扩展",
+	"bs-filerepo-headerfiletimestamp": "已上传",
+	"bs-filerepo-headerfilemediatype": "媒体类型",
+	"bs-filerepo-headerfiledescription": "描述",
+	"bs-filerepo-headerfilethumbnail": "缩略图",
+	"bs-filerepo-yes": "是",
+	"bs-filerepo-no": "否",
+	"bs-filerepo-pagesize": "页面大小"
+}

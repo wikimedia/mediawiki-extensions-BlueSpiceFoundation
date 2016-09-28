@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Josve05a"
+		]
+	},
+	"bs-filerepo-labelupload": "Ladda upp",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Filnamn",
+	"bs-filerepo-headerfilesize": "Storlek",
+	"bs-filerepo-headerpagecategories": "Kategorier",
+	"bs-filerepo-headerfilewidth": "Bredd",
+	"bs-filerepo-headerfileheight": "Höjd",
+	"bs-filerepo-headerfilemimetype": "MIME-typ",
+	"bs-filerepo-headerfileusertext": "Användare",
+	"bs-filerepo-headerfileextension": "Tillägg",
+	"bs-filerepo-headerfiletimestamp": "Uppladdad",
+	"bs-filerepo-headerfilemediatype": "Mediatyp",
+	"bs-filerepo-headerfiledescription": "Beskrivning",
+	"bs-filerepo-headerfilethumbnail": "Miniatyrbild",
+	"bs-filerepo-yes": "Ja",
+	"bs-filerepo-no": "Nej",
+	"bs-filerepo-pagesize": "Sidstorlek"
+}
