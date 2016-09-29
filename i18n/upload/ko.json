@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "파일 업로드",
+	"bs-upload-uploadbuttontext": "찾아보기",
+	"bs-upload-uploadfilefieldlabel": "파일 이름",
+	"bs-upload-license": "라이선스",
+	"bs-upload-uploadwatchthislabel": "이 파일 주시하기",
+	"bs-upload-categories": "분류",
+	"bs-upload-upload-waitmessage": "업로드 진행 중 ...",
+	"bs-upload-error": "오류",
+	"bs-upload-descfilelabel": "설명",
+	"bs-upload-details": "자세한 사항"
+}

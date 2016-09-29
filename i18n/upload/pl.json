@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-upload-uploadfilefieldlabel": "Nazwa pliku",
+	"bs-upload-uploaddestfilelabel": "Nazwa pliku docelowego",
+	"bs-upload-license": "Licencja",
+	"bs-upload-uploadignorewarningslabel": "Ignoruj wszystkie ostrzeżenia",
+	"bs-upload-categories": "Kategorie",
+	"bs-upload-upload-waitmessage": "Przesyłanie w toku ...",
+	"bs-upload-error": "Błąd",
+	"bs-upload-descfilelabel": "Opis",
+	"bs-upload-details": "Szczegóły"
+}

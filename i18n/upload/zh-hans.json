@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hydra"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "上传文件",
+	"bs-upload-uploadbuttontext": "浏览",
+	"bs-upload-uploadfilefieldlabel": "文件名",
+	"bs-upload-allowedfiletypesare": "有效的文件类型有：",
+	"bs-upload-license": "授权协议",
+	"bs-upload-uploadignorewarningslabel": "忽略任何警告",
+	"bs-upload-categories": "分类",
+	"bs-upload-upload-waitmessage": "上传中……",
+	"bs-upload-error": "错误",
+	"bs-upload-descfilelabel": "说明",
+	"bs-upload-error-long": "上传时出现错误",
+	"bs-upload-details": "详细信息"
+}

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dejan Savuljesku"
+			"Dejan Savuljesku",
+			"Robby"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Title of an upload dialog window",
@@ -15,9 +16,9 @@
 	"bs-upload-uploadignorewarningslabel": "Label for checkbox that makes the upload dialog ignore warnings",
 	"bs-upload-categories": "Label for categories chooser field",
 	"bs-upload-upload-waitmessage": "Message that is shown during an upload",
-	"bs-upload-error": "Title of an error message dialog",
+	"bs-upload-error": "Title of an error message dialog\n{{Identical|Error}}",
 	"bs-upload-descfilelabel": "Label of a description textfield",
 	"bs-upload-error-long": "Message in case of an upload error",
 	"bs-upload-filetypenotsupported": "Message in case of an unsupported file extension",
-	"bs-upload-details": "Label for a fieldset holding additional fields"
+	"bs-upload-details": "Label for a fieldset holding additional fields\n{{Identical|Detail}}"
 }

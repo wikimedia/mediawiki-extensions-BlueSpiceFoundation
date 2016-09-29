@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Fichier eroplueden",
+	"bs-upload-uploadfilefieldlabel": "Numm vum Fichier",
+	"bs-upload-uploadwatchthislabel": "Dëse Fichier iwwerwaachen",
+	"bs-upload-upload-waitmessage": "Eroplueden am Gaang ...",
+	"bs-upload-error": "Feeler",
+	"bs-upload-details": "Detailer"
+}

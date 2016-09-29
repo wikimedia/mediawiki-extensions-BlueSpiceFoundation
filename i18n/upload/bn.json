@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman",
+			"Ziyaurr"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "ফাইল আপলোড করুন",
+	"bs-upload-uploadbuttontext": "ব্রাউজ করুন",
+	"bs-upload-uploadfilefieldlabel": "ফাইলের নাম",
+	"bs-upload-uploadfileemptytext": "নতুন ফাইল প্রবেশ করান...",
+	"bs-upload-uploaddestfilelabel": "লক্ষ্য ফাইলের নাম",
+	"bs-upload-allowedfiletypesare": "বৈধ ফাইলের ধরনগুলি হলো:",
+	"bs-upload-license": "লাইসেন্স",
+	"bs-upload-uploadwatchthislabel": "এই ফাইলটি নজরে রাখুন",
+	"bs-upload-uploadignorewarningslabel": "যে কোন সতর্কীকরণ উপেক্ষা করুন",
+	"bs-upload-categories": "বিষয়শ্রেণীসমূহ",
+	"bs-upload-upload-waitmessage": "আপলোড করা হচ্ছে...",
+	"bs-upload-error": "ত্রুটি",
+	"bs-upload-descfilelabel": "বিবরণ",
+	"bs-upload-error-long": "আপলোড প্রক্রিয়াকরণে ত্রুটি",
+	"bs-upload-filetypenotsupported": "ফাইলের ধরন সমর্থিত নয়",
+	"bs-upload-details": "বিস্তারিত"
+}

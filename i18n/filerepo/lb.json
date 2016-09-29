@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-filerepo-labelupload": "Eroplueden",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Numm vum Fichier",
+	"bs-filerepo-headerfilesize": "Gréisst",
+	"bs-filerepo-headerpagecategories": "Kategorien",
+	"bs-filerepo-headerfilewidth": "Breet",
+	"bs-filerepo-headerfileheight": "Héicht",
+	"bs-filerepo-headerfileusertext": "Benotzer",
+	"bs-filerepo-headerfileextension": "Erweiderung",
+	"bs-filerepo-headerfiletimestamp": "Eropgelueden",
+	"bs-filerepo-headerfilemediatype": "Medientyp",
+	"bs-filerepo-headerfiledescription": "Beschreiwung",
+	"bs-filerepo-headerfilethumbnail": "Miniaturbild",
+	"bs-filerepo-yes": "Jo",
+	"bs-filerepo-no": "Neen",
+	"bs-filerepo-pagesize": "Gréisst vun der Säit"
+}

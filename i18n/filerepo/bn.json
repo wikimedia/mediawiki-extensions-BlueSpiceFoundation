@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman",
+			"Ziyaurr"
+		]
+	},
+	"bs-filerepo-labelupload": "আপলোড",
+	"bs-filerepo-labelfilter": "ছাঁকনি",
+	"bs-filerepo-headerfilename": "ফাইলের নাম",
+	"bs-filerepo-headerfilesize": "আকার",
+	"bs-filerepo-headerpagecategories": "বিষয়শ্রেণী",
+	"bs-filerepo-headerfilewidth": "প্রস্থ",
+	"bs-filerepo-headerfileheight": "উচ্চতা",
+	"bs-filerepo-headerfilemimetype": "MIME ধরন",
+	"bs-filerepo-headerfileusertext": "ব্যবহারকারী",
+	"bs-filerepo-headerfileextension": "এক্সটেনশন",
+	"bs-filerepo-headerfiletimestamp": "আপলোড হয়েছে",
+	"bs-filerepo-headerfilemediatype": "মিডিয়ার ধরন",
+	"bs-filerepo-headerfiledescription": "বিবরণ",
+	"bs-filerepo-headerfilethumbnail": "থাম্বনেইল",
+	"bs-filerepo-yes": "হ্যাঁ",
+	"bs-filerepo-no": "না",
+	"bs-filerepo-pagesize": "পাতার আকার"
+}

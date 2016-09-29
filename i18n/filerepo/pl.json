@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-filerepo-labelfilter": "Filtr",
+	"bs-filerepo-headerfilename": "Nazwa pliku",
+	"bs-filerepo-headerfilesize": "Rozmiar",
+	"bs-filerepo-headerpagecategories": "Kategorie",
+	"bs-filerepo-headerfilewidth": "Szerokość",
+	"bs-filerepo-headerfileheight": "Wysokość",
+	"bs-filerepo-headerfilemimetype": "Typ MIME",
+	"bs-filerepo-headerfileusertext": "Użytkownik",
+	"bs-filerepo-headerfileextension": "Rozszerzenie",
+	"bs-filerepo-headerfiledescription": "Opis",
+	"bs-filerepo-headerfilethumbnail": "Miniatura",
+	"bs-filerepo-yes": "Tak",
+	"bs-filerepo-no": "Nie",
+	"bs-filerepo-pagesize": "Rozmiar strony"
+}
