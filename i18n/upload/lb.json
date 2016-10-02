@@ -5,9 +5,19 @@
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Fichier eroplueden",
+	"bs-upload-uploadbuttontext": "Duerchsichen",
 	"bs-upload-uploadfilefieldlabel": "Numm vum Fichier",
+	"bs-upload-uploadfileemptytext": "Neie Fichier drasetzen...",
+	"bs-upload-uploaddestfilelabel": "Numm ënner deem de Fichier gespäichert gëtt",
+	"bs-upload-allowedfiletypesare": "Valabe Fichierstype sinn:",
+	"bs-upload-license": "Lizenz",
 	"bs-upload-uploadwatchthislabel": "Dëse Fichier iwwerwaachen",
+	"bs-upload-uploadignorewarningslabel": "All Warnungen ignoréieren",
+	"bs-upload-categories": "Kategorien",
 	"bs-upload-upload-waitmessage": "Eroplueden am Gaang ...",
 	"bs-upload-error": "Feeler",
+	"bs-upload-descfilelabel": "Beschreiwung",
+	"bs-upload-error-long": "Feeler beim Eropluede vum Fichier",
+	"bs-upload-filetypenotsupported": "Typ vu Fichier gëtt net ënnerstëtzt",
 	"bs-upload-details": "Detailer"
 }

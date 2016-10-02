@@ -4,13 +4,20 @@
 			"Chrumps"
 		]
 	},
+	"bs-upload-uploaddialogtitle": "Prześlij plik",
+	"bs-upload-uploadbuttontext": "Przeglądaj",
 	"bs-upload-uploadfilefieldlabel": "Nazwa pliku",
+	"bs-upload-uploadfileemptytext": "Wstaw nowy plik...",
 	"bs-upload-uploaddestfilelabel": "Nazwa pliku docelowego",
+	"bs-upload-allowedfiletypesare": "Prawidłowe typy plików to:",
 	"bs-upload-license": "Licencja",
+	"bs-upload-uploadwatchthislabel": "Obserwuj ten plik",
 	"bs-upload-uploadignorewarningslabel": "Ignoruj wszystkie ostrzeżenia",
 	"bs-upload-categories": "Kategorie",
 	"bs-upload-upload-waitmessage": "Przesyłanie w toku ...",
 	"bs-upload-error": "Błąd",
 	"bs-upload-descfilelabel": "Opis",
+	"bs-upload-error-long": "Błąd w trakcie przesyłania",
+	"bs-upload-filetypenotsupported": "Nieobsługiwany typ pliku",
 	"bs-upload-details": "Szczegóły"
 }

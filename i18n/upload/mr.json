@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "संचिकेचे अपभारण करा",
+	"bs-upload-uploadbuttontext": "न्याहाळा",
+	"bs-upload-uploadfilefieldlabel": "संचिका नाम",
+	"bs-upload-uploadfileemptytext": "नविन संचिका टाका...",
+	"bs-upload-uploaddestfilelabel": "गंतव्य संचिकानाम",
+	"bs-upload-allowedfiletypesare": "वैध संचिका प्रकार आहेत:",
+	"bs-upload-license": "परवाना",
+	"bs-upload-uploadwatchthislabel": "या संचिकेवर लक्ष ठेवा",
+	"bs-upload-uploadignorewarningslabel": "सर्व सूचनांकडे दुर्लक्ष करा",
+	"bs-upload-categories": "वर्ग",
+	"bs-upload-upload-waitmessage": "अपभारण प्रगतीपथावर आहे ...",
+	"bs-upload-error": "त्रुटी",
+	"bs-upload-descfilelabel": "वर्णन",
+	"bs-upload-filetypenotsupported": "संचिका-प्रकार सहाय्यिभूत नाही",
+	"bs-upload-details": "तपशील"
+}

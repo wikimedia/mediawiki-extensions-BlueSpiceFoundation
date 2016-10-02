@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pickle12"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Naloži datoteko",
+	"bs-upload-uploadbuttontext": "Prebrskaj",
+	"bs-upload-uploadfilefieldlabel": "Ime datoteke",
+	"bs-upload-uploadfileemptytext": "Vstavi novo datoteko...",
+	"bs-upload-uploaddestfilelabel": "Ime ciljne datoteke",
+	"bs-upload-allowedfiletypesare": "Podprte vrste datotek:",
+	"bs-upload-license": "Licenca",
+	"bs-upload-categories": "Kategorije",
+	"bs-upload-upload-waitmessage": "Nalaganje poteka ...",
+	"bs-upload-descfilelabel": "Opis",
+	"bs-upload-error-long": "Napaka pri nalaganju",
+	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt"
+}

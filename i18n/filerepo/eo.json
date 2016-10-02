@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robin van der Vliet"
+		]
+	},
+	"bs-filerepo-labelupload": "Alŝuti",
+	"bs-filerepo-headerfilename": "Dosiernomo",
+	"bs-filerepo-headerpagecategories": "Kategorioj",
+	"bs-filerepo-headerfilemimetype": "MIME-tipo",
+	"bs-filerepo-headerfileusertext": "Uzanto",
+	"bs-filerepo-headerfiletimestamp": "Alŝutita",
+	"bs-filerepo-headerfiledescription": "Priskribo",
+	"bs-filerepo-headerfilethumbnail": "Bildeto",
+	"bs-filerepo-yes": "Jes",
+	"bs-filerepo-no": "Ne"
+}

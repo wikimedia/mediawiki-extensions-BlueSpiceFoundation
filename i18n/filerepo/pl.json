@@ -4,6 +4,7 @@
 			"Chrumps"
 		]
 	},
+	"bs-filerepo-labelupload": "Prześlij",
 	"bs-filerepo-labelfilter": "Filtr",
 	"bs-filerepo-headerfilename": "Nazwa pliku",
 	"bs-filerepo-headerfilesize": "Rozmiar",
@@ -13,6 +14,7 @@
 	"bs-filerepo-headerfilemimetype": "Typ MIME",
 	"bs-filerepo-headerfileusertext": "Użytkownik",
 	"bs-filerepo-headerfileextension": "Rozszerzenie",
+	"bs-filerepo-headerfiletimestamp": "Przesłano",
 	"bs-filerepo-headerfiledescription": "Opis",
 	"bs-filerepo-headerfilethumbnail": "Miniatura",
 	"bs-filerepo-yes": "Tak",

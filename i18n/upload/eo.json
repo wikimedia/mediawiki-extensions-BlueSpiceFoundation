@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robin van der Vliet"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Alŝuti dosieron",
+	"bs-upload-uploadbuttontext": "Foliumi",
+	"bs-upload-uploadfilefieldlabel": "Dosiernomo",
+	"bs-upload-license": "Permesilo",
+	"bs-upload-categories": "Kategorioj",
+	"bs-upload-error": "Eraro",
+	"bs-upload-descfilelabel": "Priskribo",
+	"bs-upload-details": "Detaloj"
+}

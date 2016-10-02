@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pickle12"
+		]
+	},
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Ime datoteke",
+	"bs-filerepo-headerfilesize": "Velikost",
+	"bs-filerepo-headerpagecategories": "Kategorije",
+	"bs-filerepo-headerfilewidth": "Širina",
+	"bs-filerepo-headerfileheight": "Višina",
+	"bs-filerepo-headerfileusertext": "Uporabnik",
+	"bs-filerepo-headerfileextension": "Dodatek",
+	"bs-filerepo-headerfiletimestamp": "Naloženo",
+	"bs-filerepo-headerfilemediatype": "Vrsta medija",
+	"bs-filerepo-headerfilethumbnail": "Sličica",
+	"bs-filerepo-pagesize": "Velikost strani"
+}

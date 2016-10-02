@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"V.narsikar"
+		]
+	},
+	"bs-filerepo-labelupload": "अपभारण करा",
+	"bs-filerepo-labelfilter": "गाळणी",
+	"bs-filerepo-headerfilename": "संचिकानाम",
+	"bs-filerepo-headerfilesize": "आकार",
+	"bs-filerepo-headerpagecategories": "वर्ग",
+	"bs-filerepo-headerfilewidth": "रुंदी",
+	"bs-filerepo-headerfileheight": "उंची",
+	"bs-filerepo-headerfilemimetype": "विविधामाप (माईम) प्रकार",
+	"bs-filerepo-headerfileusertext": "सदस्य",
+	"bs-filerepo-headerfileextension": "विस्तारक",
+	"bs-filerepo-headerfiletimestamp": "अपभारण केले",
+	"bs-filerepo-headerfilemediatype": "माध्यम प्रकार",
+	"bs-filerepo-headerfiledescription": "वर्णन",
+	"bs-filerepo-headerfilethumbnail": "नखुले",
+	"bs-filerepo-yes": "होय",
+	"bs-filerepo-no": "नाही",
+	"bs-filerepo-pagesize": "पानाचा आकार"
+}

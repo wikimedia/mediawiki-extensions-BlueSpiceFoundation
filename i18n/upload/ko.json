@@ -7,11 +7,16 @@
 	"bs-upload-uploaddialogtitle": "파일 업로드",
 	"bs-upload-uploadbuttontext": "찾아보기",
 	"bs-upload-uploadfilefieldlabel": "파일 이름",
+	"bs-upload-uploadfileemptytext": "새 파일 추가...",
+	"bs-upload-allowedfiletypesare": "유효한 파일 형식은 다음과 같습니다:",
 	"bs-upload-license": "라이선스",
 	"bs-upload-uploadwatchthislabel": "이 파일 주시하기",
+	"bs-upload-uploadignorewarningslabel": "모든 경고 무시하기",
 	"bs-upload-categories": "분류",
 	"bs-upload-upload-waitmessage": "업로드 진행 중 ...",
 	"bs-upload-error": "오류",
 	"bs-upload-descfilelabel": "설명",
+	"bs-upload-error-long": "업로드 처리 오류",
+	"bs-upload-filetypenotsupported": "파일 형식은 지원되지 않습니다",
 	"bs-upload-details": "자세한 사항"
 }

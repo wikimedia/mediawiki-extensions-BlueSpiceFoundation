@@ -11,6 +11,7 @@
 	"bs-filerepo-headerpagecategories": "Kategorien",
 	"bs-filerepo-headerfilewidth": "Breet",
 	"bs-filerepo-headerfileheight": "Héicht",
+	"bs-filerepo-headerfilemimetype": "MIME-Typ",
 	"bs-filerepo-headerfileusertext": "Benotzer",
 	"bs-filerepo-headerfileextension": "Erweiderung",
 	"bs-filerepo-headerfiletimestamp": "Eropgelueden",

@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Carregar ficheiro",
+	"bs-upload-uploadbuttontext": "Procurar",
+	"bs-upload-uploadfilefieldlabel": "Nome do ficheiro",
+	"bs-upload-uploadfileemptytext": "Inserir novo ficheiro...",
+	"bs-upload-uploaddestfilelabel": "Nome do ficheiro de destino",
+	"bs-upload-allowedfiletypesare": "Tipos de ficheiros válidos:",
+	"bs-upload-license": "Licença",
+	"bs-upload-uploadwatchthislabel": "Vigiar este ficheiro",
+	"bs-upload-uploadignorewarningslabel": "Ignorar todos os avisos",
+	"bs-upload-categories": "Categorias",
+	"bs-upload-upload-waitmessage": "Carregamento em progresso ...",
+	"bs-upload-error": "Erro",
+	"bs-upload-descfilelabel": "Descrição",
+	"bs-upload-error-long": "Erro no processo de carregamento",
+	"bs-upload-filetypenotsupported": "O tipo de ficheiro não é suportado.",
+	"bs-upload-details": "Detalhes"
+}

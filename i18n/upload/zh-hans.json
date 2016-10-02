@@ -1,19 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hydra"
+			"Hydra",
+			"Liuxinyu970226"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "上传文件",
 	"bs-upload-uploadbuttontext": "浏览",
 	"bs-upload-uploadfilefieldlabel": "文件名",
+	"bs-upload-uploadfileemptytext": "插入新文件...",
+	"bs-upload-uploaddestfilelabel": "目标文件名称",
 	"bs-upload-allowedfiletypesare": "有效的文件类型有：",
 	"bs-upload-license": "授权协议",
+	"bs-upload-uploadwatchthislabel": "监视此文件",
 	"bs-upload-uploadignorewarningslabel": "忽略任何警告",
 	"bs-upload-categories": "分类",
-	"bs-upload-upload-waitmessage": "上传中……",
+	"bs-upload-upload-waitmessage": "正在上传...",
 	"bs-upload-error": "错误",
-	"bs-upload-descfilelabel": "说明",
-	"bs-upload-error-long": "上传时出现错误",
-	"bs-upload-details": "详细信息"
+	"bs-upload-descfilelabel": "描述",
+	"bs-upload-error-long": "上传过程中发生错误",
+	"bs-upload-filetypenotsupported": "文件类型不受支持",
+	"bs-upload-details": "详情"
 }

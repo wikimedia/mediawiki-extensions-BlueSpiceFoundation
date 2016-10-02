@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente"
+		]
+	},
+	"bs-filerepo-labelupload": "Carregar",
+	"bs-filerepo-headerfilename": "Nome do ficheiro",
+	"bs-filerepo-headerfilesize": "Tamanho",
+	"bs-filerepo-headerpagecategories": "Categorias",
+	"bs-filerepo-headerfilewidth": "Largura",
+	"bs-filerepo-headerfileheight": "Altura",
+	"bs-filerepo-headerfilemimetype": "Tipo MIME",
+	"bs-filerepo-headerfileusertext": "Utilizador(a)",
+	"bs-filerepo-headerfileextension": "Extensão",
+	"bs-filerepo-headerfiletimestamp": "Carregado",
+	"bs-filerepo-headerfilemediatype": "Tipo de multimédia",
+	"bs-filerepo-headerfiledescription": "Descrição",
+	"bs-filerepo-headerfilethumbnail": "Miniatura",
+	"bs-filerepo-yes": "Sim",
+	"bs-filerepo-no": "Não",
+	"bs-filerepo-pagesize": "Tamanho da página"
+}
