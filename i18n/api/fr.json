@@ -39,5 +39,7 @@
 	"apihelp-bs-ping-tasks-description": "Tâche de ping qui fournit un échange continuel de données",
 	"apihelp-bs-wikisubpage-treestore-description": "Fournit les sous-pages d'une page wiki spécifique",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Le titre préfixé de la page wiki",
-	"apihelp-bs-upload-license-store-description": "Liste toutes les licences disponibles pour un téléchargement de fichier"
+	"apihelp-bs-upload-license-store-description": "Liste toutes les licences disponibles pour un téléchargement de fichier",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Vous n’êtes pas autorisé à lire la page '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Il n’y a pas de catégorie à supprimer"
 }

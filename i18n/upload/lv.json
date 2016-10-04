@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"bs-upload-uploadbuttontext": "Pārlūkot",
+	"bs-upload-uploadfilefieldlabel": "Faila nosaukums",
+	"bs-upload-license": "Licence",
+	"bs-upload-categories": "Kategorijas",
+	"bs-upload-error": "Kļūda",
+	"bs-upload-descfilelabel": "Apraksts"
+}

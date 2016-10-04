@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Milicevic01"
+		]
+	},
+	"bs-filerepo-labelupload": "Отпреми",
+	"bs-filerepo-labelfilter": "Филтер",
+	"bs-filerepo-headerfilename": "Назив датотеке",
+	"bs-filerepo-headerfilesize": "Величина",
+	"bs-filerepo-headerpagecategories": "Категорије",
+	"bs-filerepo-headerfileheight": "Висина",
+	"bs-filerepo-headerfilemimetype": "MIME тип",
+	"bs-filerepo-headerfileusertext": "Корисник",
+	"bs-filerepo-headerfiledescription": "Опис",
+	"bs-filerepo-headerfilethumbnail": "Минијатура",
+	"bs-filerepo-yes": "Да",
+	"bs-filerepo-no": "Не",
+	"bs-filerepo-pagesize": "Величина странице"
+}

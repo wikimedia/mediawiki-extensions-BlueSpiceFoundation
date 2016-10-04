@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Papuass"
+		]
+	},
+	"bs-filerepo-labelupload": "Augšupielādēt",
+	"bs-filerepo-labelfilter": "Filtrs",
+	"bs-filerepo-headerfilename": "Faila nosaukums",
+	"bs-filerepo-headerfilesize": "Izmērs",
+	"bs-filerepo-headerpagecategories": "Kategorijas",
+	"bs-filerepo-headerfilewidth": "Platums",
+	"bs-filerepo-headerfileheight": "Augstums",
+	"bs-filerepo-headerfilemimetype": "MIME tips",
+	"bs-filerepo-headerfileusertext": "Dalībnieks",
+	"bs-filerepo-headerfileextension": "Paplašinājums",
+	"bs-filerepo-headerfiletimestamp": "Augšupielādēts",
+	"bs-filerepo-headerfiledescription": "Apraksts",
+	"bs-filerepo-headerfilethumbnail": "Sīktēls",
+	"bs-filerepo-yes": "Jā",
+	"bs-filerepo-no": "Nē",
+	"bs-filerepo-pagesize": "Lapas izmērs"
+}

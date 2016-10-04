@@ -14,5 +14,8 @@
 	"bs-deferred-batch-progress-desc": "进展",
 	"bs-deferred-batch-actions": "操作",
 	"bs-deferred-batch-description": "描述",
-	"bs-deferred-batch-status": "状态"
+	"bs-deferred-batch-status": "状态",
+	"bs-deferred-action-apiaddcategories-description": "添加分类至“$1”。",
+	"bs-deferred-action-apiremovecategories-description": "从“$1”移除分类。",
+	"bs-deferred-action-apisetcategories-description": "在“$1”设置分类。"
 }

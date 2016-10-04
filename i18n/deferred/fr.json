@@ -3,7 +3,8 @@
 		"authors": [
 			"Macofe",
 			"TomT0m",
-			"Wladek92"
+			"Wladek92",
+			"Gomoko"
 		]
 	},
 	"bs-deferred-action-status-pending": "En attente.",
@@ -16,5 +17,8 @@
 	"bs-deferred-batch-progress-desc": "Progrès",
 	"bs-deferred-batch-actions": "Actions",
 	"bs-deferred-batch-description": "Description",
-	"bs-deferred-batch-status": "Statut"
+	"bs-deferred-batch-status": "Statut",
+	"bs-deferred-action-apiaddcategories-description": "Ajouter des catégories à '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Supprimer des catégories de '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Fixer les catégories sur '$1'."
 }

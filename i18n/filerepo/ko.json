@@ -14,6 +14,7 @@
 	"bs-filerepo-headerfilemimetype": "MIME 종류",
 	"bs-filerepo-headerfileusertext": "사용자",
 	"bs-filerepo-headerfileextension": "확장",
+	"bs-filerepo-headerfiletimestamp": "올려짐",
 	"bs-filerepo-headerfilemediatype": "미디어 유형",
 	"bs-filerepo-headerfiledescription": "설명",
 	"bs-filerepo-headerfilethumbnail": "섬네일",

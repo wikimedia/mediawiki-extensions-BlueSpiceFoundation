@@ -1,12 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Josve05a"
+			"Josve05a",
+			"WikiPhoenix"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Ladda upp fil",
 	"bs-upload-uploadbuttontext": "Bläddra",
 	"bs-upload-uploadfilefieldlabel": "Filnamn",
+	"bs-upload-uploadfileemptytext": "Infoga ny fil...",
+	"bs-upload-allowedfiletypesare": "Giltiga filtyper är:",
 	"bs-upload-license": "Licens",
 	"bs-upload-uploadwatchthislabel": "Bevaka den här filen",
 	"bs-upload-uploadignorewarningslabel": "Ignorera eventuella varningar",

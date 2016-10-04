@@ -4,7 +4,8 @@
 			"Beta16",
 			"PeppeAeco",
 			"LACLARETTA",
-			"Macofe"
+			"Macofe",
+			"Selven"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -16,6 +17,7 @@
 	"bs-extjs-add": "Aggiungi",
 	"bs-extjs-remove": "Rimuovi",
 	"bs-extjs-edit": "Modifica",
+	"bs-extjs-copy": "Copia",
 	"bs-extjs-hint": "Suggerimento",
 	"bs-extjs-error": "Errore",
 	"bs-extjs-confirm": "Conferma",
@@ -43,6 +45,7 @@
 	"bs-extjs-filter-starts-with": "inizia con",
 	"bs-extjs-filter-ends-with": "termina con",
 	"bs-extjs-filter-greater-than": "più importante di",
+	"bs-extjs-filter-less-than": "Meno di",
 	"bs-extjs-filter-bool-yes": "sì",
 	"bs-extjs-filter-bool-no": "no",
 	"bs-extjs-title-success": "Successo",

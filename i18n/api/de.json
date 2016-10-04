@@ -37,5 +37,7 @@
 	"apihelp-bs-wikipage-store-description": "Listet alle Wikiseiten auf. Erlaubt die Sortierung, Filterung und Nummerierung. Implementiert ExtJS-Store-Parameter.",
 	"apihelp-bs-wikisubpage-treestore-description": "Listet die Unterseiten einer bestimmten Wikiseite auf",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Der Präfix-Titel der Wikiseite",
-	"apihelp-bs-upload-license-store-description": "Listet alle verfügbaren Lizenzen für das Hochladen einer Datei auf"
+	"apihelp-bs-upload-license-store-description": "Listet alle verfügbaren Lizenzen für das Hochladen einer Datei auf",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Du bist nicht berechtigt, die Seite „$1“ zu lesen.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Es gibt keine zu entfernenden Kategorien"
 }
