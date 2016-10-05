@@ -131,6 +131,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->message = $oStatus->getMessage();
 		}
 		else {
+			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
+			DataUpdate::runUpdates( $oUpdates );
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
 		}
@@ -279,6 +281,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->message = $oStatus->getMessage();
 		}
 		else {
+			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
+			DataUpdate::runUpdates( $oUpdates );
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
 		}
@@ -333,7 +337,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
 		}
-		
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		foreach ($aCategoriesToRemove as $sToRemove){
@@ -351,6 +354,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->message = $oStatus->getMessage();
 		}
 		else {
+			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
+			DataUpdate::runUpdates( $oUpdates );
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
 		}
