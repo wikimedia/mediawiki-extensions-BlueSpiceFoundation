@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Hamilton Abreu"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Carregar ficheiro",
@@ -9,7 +10,7 @@
 	"bs-upload-uploadfilefieldlabel": "Nome do ficheiro",
 	"bs-upload-uploadfileemptytext": "Inserir novo ficheiro...",
 	"bs-upload-uploaddestfilelabel": "Nome do ficheiro de destino",
-	"bs-upload-allowedfiletypesare": "Tipos de ficheiros válidos:",
+	"bs-upload-allowedfiletypesare": "Tipos de ficheiro válidos:",
 	"bs-upload-license": "Licença",
 	"bs-upload-uploadwatchthislabel": "Vigiar este ficheiro",
 	"bs-upload-uploadignorewarningslabel": "Ignorar todos os avisos",

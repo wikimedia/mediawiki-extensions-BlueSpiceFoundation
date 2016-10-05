@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitorvicentevalente"
+		]
+	},
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Não tem permissão para ler a página '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Não há categorias para remover"
+}

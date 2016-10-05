@@ -14,5 +14,8 @@
 	"bs-deferred-batch-progress-desc": "Progreso",
 	"bs-deferred-batch-actions": "Accións",
 	"bs-deferred-batch-description": "Descrición",
-	"bs-deferred-batch-status": "Estado"
+	"bs-deferred-batch-status": "Estado",
+	"bs-deferred-action-apiaddcategories-description": "Engadir categorías a '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Eliminar categorías de '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Definir categorías en '$1'."
 }

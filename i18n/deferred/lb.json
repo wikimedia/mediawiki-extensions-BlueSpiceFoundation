@@ -12,5 +12,6 @@
 	"bs-deferred-batch-progress-desc": "Fortschrëtt",
 	"bs-deferred-batch-actions": "Aktiounen",
 	"bs-deferred-batch-description": "Beschreiwung",
-	"bs-deferred-batch-status": "Status"
+	"bs-deferred-batch-status": "Status",
+	"bs-deferred-action-apiremovecategories-description": "Kategorie vu(n) '$1' ewechhuelen"
 }

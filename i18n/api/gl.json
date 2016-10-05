@@ -38,5 +38,7 @@
 	"apihelp-bs-wikipage-store-description": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS.",
 	"apihelp-bs-wikisubpage-treestore-description": "Lista as subpáxinas dunha wikipáxina específica",
 	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki",
-	"apihelp-bs-upload-license-store-description": "Lista todas as licenzas dispoñibles para a suba dun ficheiro"
+	"apihelp-bs-upload-license-store-description": "Lista todas as licenzas dispoñibles para a suba dun ficheiro",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Non ten permiso para ler a páxina '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Non hai categorías para eliminar."
 }
