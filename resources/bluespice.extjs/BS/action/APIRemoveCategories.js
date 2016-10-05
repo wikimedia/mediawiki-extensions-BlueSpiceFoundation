@@ -1,7 +1,7 @@
-Ext.define('BS.action.ApiRemoveCategories', {
+Ext.define( 'BS.action.APIRemoveCategories', {
 	extend: 'BS.action.Base',
 
-	categories: array(),
+	categories: [],
 	pageTitle: '',
 
 	contructor: function(){
@@ -22,25 +22,29 @@ Ext.define('BS.action.ApiRemoveCategories', {
 		return dfd.promise();
 	},
 
-	doAPIRemoveCategories: function( dfd, set){
+	doAPIRemoveCategories: function( dfd, set ){
 		var taskData = {
 			page_title: set.page_title,
 			categories: set.categories
 		};
 		bs.api.tasks.execSilent(
-			'bs-wikipage-tasks', 'removeCategories', taskData
+			'wikipage', 'removeCategories', taskData
 		)
 		.fail(function( response ){
 			this.actionStatus = BS.action.Base.STATUS_ERROR;
-			dfd.reject( this, set, response);
+			dfd.reject( this, set, response );
 		})
 		.done(function( response ) {
+			if( !response.success ){
+				this.actionStatus = BS.action.Base.STATUS_ERROR;
+				dfd.reject( this, set, response );
+			}
 			this.actionStatus = BS.action.Base.STATUS_DONE;
-			dfd.resolve(this);
+			dfd.resolve( this );
 		});
 	},
 
 	getDescription: function(){
-		return mw.message('bs-deferred-action-apiremovecategories-description', this.pageTitle).parse();
+		return mw.message( 'bs-deferred-action-apiremovecategories-description', this.pageTitle ).parse();
 	}
 });

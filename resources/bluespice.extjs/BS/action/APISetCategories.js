@@ -1,11 +1,11 @@
-Ext.define('BS.action.ApiSetCategories', {
+Ext.define( 'BS.action.APISetCategories', {
 	extend: 'BS.action.Base',
 
-	categories: array(),
+	categories: [],
 	pageTitle: '',
 
 	contructor: function(){
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
 	execute: function(){
@@ -22,25 +22,29 @@ Ext.define('BS.action.ApiSetCategories', {
 		return dfd.promise();
 	},
 
-	doAPISetCategories: function( dfd, set){
+	doAPISetCategories: function( dfd, set ){
 		var taskData = {
 			page_title: set.page_title,
 			categories: set.categories
 		};
 		bs.api.tasks.execSilent(
-			'bs-wikipage-tasks', 'setCategories', taskData
+			'wikipage', 'setCategories', taskData
 		)
 		.fail(function( response ){
 			this.actionStatus = BS.action.Base.STATUS_ERROR;
-			dfd.reject( this, set, response);
+			dfd.reject( this, set, response );
 		})
 		.done(function( response ) {
+			if( !response.success ){
+				this.actionStatus = BS.action.Base.STATUS_ERROR;
+				dfd.reject( this, set, response );
+			}
 			this.actionStatus = BS.action.Base.STATUS_DONE;
-			dfd.resolve(this);
+			dfd.resolve( this );
 		});
 	},
 
 	getDescription: function(){
-		return mw.message('bs-deferred-action-apisetcategories-description', this.pageTitle).parse();
+		return mw.message( 'bs-deferred-action-apisetcategories-description', this.pageTitle ).parse();
 	}
 });

@@ -146,7 +146,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 */
 	protected function task_getExplicitCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
-
 		//get Title of the page
 		$oTitle = Title::newFromText( $oTaskData->page_title );
 
@@ -265,6 +264,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
+		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		foreach ( $aNewCategories as $sCategoryToAdd ) {
 			$sText .= "\n[[" . $sLocalNSName . ":".$sCategoryToAdd."]]";
 		}
@@ -295,16 +295,17 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected function task_removeCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
 		$aCategoriesToRemove = $oTaskData->categories;
+
 		if (count($aCategoriesToRemove) === 0){
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-nothingtoremove')->plain();
 			$oResponse->payload = array();
 			$oResponse->payload_count = 0;
+			return $oResponse;
 		}
 
 		//get Title of the page
 		$oTitle = Title::newFromText( $oTaskData->page_title );
-
 		if ( $oTitle instanceof Title === false ) {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain();
 			return $oResponse;
@@ -332,7 +333,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
 		}
-
+		
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		foreach ($aCategoriesToRemove as $sToRemove){
