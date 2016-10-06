@@ -25,7 +25,8 @@
 		"bs-wikisubpage-treestore": "BSApiWikiSubPageTreeStore",
 		"bs-titlequery-store": "BSApiTitleQueryStore",
 		"bs-ping-tasks": "BSApiPingTasks",
-		"bs-upload-license-store": "BSApiUploadLicenseStore"
+		"bs-upload-license-store": "BSApiUploadLicenseStore",
+		"bs-category-treestore": "BSApiCategoryTreeStore"
 	},
 	"MessagesDirs": {
 		"BlueSpice": [
@@ -166,6 +167,7 @@
 		"BSApiWikiPageStore": "includes/api/BSApiWikiPageStore.php",
 		"BSApiWikiSubPageTreeStore": "includes/api/BSApiWikiSubPageTreeStore.php",
 		"BSApiTitleQueryStore": "includes/api/BSApiTitleQueryStore.php",
+		"BSApiCategoryTreeStore": "includes/api/BSApiCategoryTreeStore.php",
 		"BSApiPingTasks": "includes/api/BSApiPingTasks.php",
 		"BsExtensionMW": "includes/ExtensionMW.class.php",
 		"BsInvalidNamespaceException": "includes/exception/InvalidNamespaceException.class.php",
