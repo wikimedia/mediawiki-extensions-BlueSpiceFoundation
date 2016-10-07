@@ -88,7 +88,7 @@
 		"BlueSpiceExtInfo": {
 			"name": "BlueSpice",
 			"version": "2.27.0",
-			"status": "alpha",
+			"status": "stable",
 			"package": "BlueSpice Free",
 			"url": "http://bluespice.com",
 			"desc": "Makes MediaWiki enterprise ready.",
