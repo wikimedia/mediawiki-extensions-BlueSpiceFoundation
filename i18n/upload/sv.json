@@ -17,5 +17,7 @@
 	"bs-upload-upload-waitmessage": "Uppladdning pågår ...",
 	"bs-upload-error": "Fel",
 	"bs-upload-descfilelabel": "Beskrivning",
+	"bs-upload-error-long": "Fel i uppladdningsprocessen",
+	"bs-upload-filetypenotsupported": "Filtyp stöds inte",
 	"bs-upload-details": "Detaljer"
 }

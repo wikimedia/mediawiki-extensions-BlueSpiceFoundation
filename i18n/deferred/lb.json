@@ -13,5 +13,7 @@
 	"bs-deferred-batch-actions": "Aktiounen",
 	"bs-deferred-batch-description": "Beschreiwung",
 	"bs-deferred-batch-status": "Status",
-	"bs-deferred-action-apiremovecategories-description": "Kategorie vu(n) '$1' ewechhuelen"
+	"bs-deferred-action-apiaddcategories-description": "Kategorien op '$1' derbäisetzen.",
+	"bs-deferred-action-apiremovecategories-description": "Kategorie vu(n) '$1' ewechhuelen",
+	"bs-deferred-action-apisetcategories-description": "Kategorien op '$1' festleeën."
 }

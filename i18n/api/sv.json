@@ -11,5 +11,6 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan '$1'.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ogiltig kategori|Ogiltig kategorier}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Kategorier har lagts till."
+	"bs-wikipage-tasks-setcategories-success": "Kategorier har lagts till.",
+	"apihelp-bs-upload-license-store-description": "Listar alla tillgängliga licenser för en filuppladdning"
 }

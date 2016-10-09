@@ -1,13 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cocu"
+			"Cocu",
+			"Jon Harald Søby"
 		]
 	},
 	"bs-validator-email-validation-approved": "Valideringen av e-postadressen var vellykket.",
 	"bs-validator-email-validation-not-approved": "E-postadressen kunne ikke valideres.",
 	"bs-validator-url-validation-approved": "Valideringen av URL-en var vellykket.",
 	"bs-validator-url-validation-not-approved": "URL-en kunne ikke valideres.",
+	"bs-validator-arg-count-validation-approved": "Attributtet «count» har blitt validert.",
+	"bs-validator-arg-count-validation-not-approved": "Attributtet «count» kunne ikke valideres.",
 	"bs-validator-set-validation-approved": "Valideringen av $1 var vellykket.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Kun følgende verdier er tillatt for $1|For $1 er bare én av følgende verdier tillatt}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Den angitte verdien er for lav. Den må ikke være mindre enn $1.",

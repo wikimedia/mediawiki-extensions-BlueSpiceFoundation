@@ -40,5 +40,7 @@
 	"apihelp-bs-wikisubpage-treestore-param-node": "wiki页面的带前缀标题",
 	"apihelp-bs-upload-license-store-description": "列出所有文件上传可用的许可协议",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "您不被允许阅读页面“$1”。",
-	"bs-wikipage-tasks-error-nothingtoremove": "没有要移除的分类"
+	"bs-wikipage-tasks-error-nothingtoremove": "没有要移除的分类",
+	"apihelp-bs-category-treestore-description": "列出特定分类的子分类",
+	"apihelp-bs-category-treestore-param-node": "斜线分隔的分类路径"
 }

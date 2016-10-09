@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Subir archivo",
+	"bs-upload-uploadbuttontext": "Examinar",
+	"bs-upload-uploadfilefieldlabel": "Nombre del archivo",
+	"bs-upload-uploadfileemptytext": "Insertar archivo nuevo...",
+	"bs-upload-uploaddestfilelabel": "Nombre del archivo de destino",
+	"bs-upload-allowedfiletypesare": "Los tipos de archivo válidos son:",
+	"bs-upload-license": "Licencia",
+	"bs-upload-uploadwatchthislabel": "Vigilar este archivo",
+	"bs-upload-uploadignorewarningslabel": "Ignorar las advertencias",
+	"bs-upload-categories": "Categorías",
+	"bs-upload-upload-waitmessage": "Subida en curso...",
+	"bs-upload-error": "Error",
+	"bs-upload-descfilelabel": "Descripción",
+	"bs-upload-error-long": "Error en el proceso de subida",
+	"bs-upload-filetypenotsupported": "No se admite este tipo de archivo",
+	"bs-upload-details": "Detalles"
+}

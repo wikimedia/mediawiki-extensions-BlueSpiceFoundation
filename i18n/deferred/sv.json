@@ -13,5 +13,7 @@
 	"bs-deferred-batch-progress-desc": "Framsteg",
 	"bs-deferred-batch-actions": "Åtgärder",
 	"bs-deferred-batch-description": "Beskrivning",
-	"bs-deferred-batch-status": "Status"
+	"bs-deferred-batch-status": "Status",
+	"bs-deferred-action-apiaddcategories-description": "Lägg till kategorier i '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Ta bort kategorier från '$1'."
 }

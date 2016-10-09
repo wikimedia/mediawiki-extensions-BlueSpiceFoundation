@@ -39,5 +39,7 @@
 	"apihelp-bs-wikisubpage-treestore-param-node": "Der Präfix-Titel der Wikiseite",
 	"apihelp-bs-upload-license-store-description": "Listet alle verfügbaren Lizenzen für das Hochladen einer Datei auf",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du bist nicht berechtigt, die Seite „$1“ zu lesen.",
-	"bs-wikipage-tasks-error-nothingtoremove": "Es gibt keine zu entfernenden Kategorien"
+	"bs-wikipage-tasks-error-nothingtoremove": "Es gibt keine zu entfernenden Kategorien",
+	"apihelp-bs-category-treestore-description": "Listet die Unterkategorien einer speziellen Kategorie auf",
+	"apihelp-bs-category-treestore-param-node": "Ein Pfad mit Kategorien, getrennt durch Schrägstrich"
 }

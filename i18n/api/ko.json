@@ -10,5 +10,6 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "바뀐 분류입니다.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "당신은 '$1' 문서를 편집할 권한이 없습니다.",
 	"bs-wikipage-tasks-setcategories-success": "목차가 성공적으로 설정되었습니다.",
-	"apihelp-bs-wikisubpage-treestore-description": "특정 위키 페이지의 하위 페이지를 나열합니다"
+	"apihelp-bs-wikisubpage-treestore-description": "특정 위키 페이지의 하위 페이지를 나열합니다",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "당신은 '$1' 문서를 읽을 권한이 없습니다."
 }

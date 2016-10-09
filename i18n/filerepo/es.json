@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"bs-filerepo-labelupload": "Subir",
+	"bs-filerepo-labelfilter": "Filtro",
+	"bs-filerepo-headerfilename": "Nombre de archivo",
+	"bs-filerepo-headerfilesize": "Tamaño",
+	"bs-filerepo-headerpagecategories": "Categorías",
+	"bs-filerepo-headerfilewidth": "Anchura",
+	"bs-filerepo-headerfileheight": "Altura",
+	"bs-filerepo-headerfilemimetype": "Tipo MIME",
+	"bs-filerepo-headerfileusertext": "Usuario",
+	"bs-filerepo-headerfileextension": "Extensión",
+	"bs-filerepo-headerfiletimestamp": "Subido",
+	"bs-filerepo-headerfilemediatype": "Tipo de medio",
+	"bs-filerepo-headerfiledescription": "Descripción",
+	"bs-filerepo-headerfilethumbnail": "Miniatura",
+	"bs-filerepo-yes": "Sí",
+	"bs-filerepo-no": "No",
+	"bs-filerepo-pagesize": "Tamaño de página"
+}

@@ -36,5 +36,6 @@
 	"apihelp-bs-wikisubpage-treestore-description": "Elenca le sottopagine di una pagina specifica",
 	"apihelp-bs-upload-license-store-description": "Elenca tutte le licenze disponibili per il caricamento di un file",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Non è consentito leggere la pagina '$1'.",
-	"bs-wikipage-tasks-error-nothingtoremove": "Non ci sono categorie da rimuovere"
+	"bs-wikipage-tasks-error-nothingtoremove": "Non ci sono categorie da rimuovere",
+	"apihelp-bs-category-treestore-param-node": "Un percorso di categorie separate da slash"
 }
