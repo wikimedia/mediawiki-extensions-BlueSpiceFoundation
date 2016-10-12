@@ -30,7 +30,6 @@ $wgResourceModules['ext.bluespice'] = array(
 		'bs-months-duration',
 		'bs-week-duration',
 		'bs-weeks-duration',
-		'bs-day-duration',
 		'bs-days-duration',
 		'bs-hour-duration',
 		'bs-hours-duration',
