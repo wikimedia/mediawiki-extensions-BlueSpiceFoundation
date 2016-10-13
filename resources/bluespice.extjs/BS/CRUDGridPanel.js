@@ -193,12 +193,18 @@ Ext.define( 'BS.CRUDGridPanel', {
 	},
 
 	onGrdMainRowClick: function( oSender, iRowIndex, oEvent ) {
-		this.btnEdit.enable();
-		this.btnRemove.enable();
+		if( this.btnEdit ) {
+			this.btnEdit.enable();
+		}
+		if( this.btnRemove ) {
+			this.btnRemove.enable();
+		}
 
 		var selectedRecords = this.grdMain.getSelectionModel().getSelection();
 		if( selectedRecords.length > 1 ) {
-			this.btnEdit.disable();
+			if( this.btnEdit ) {
+				this.btnEdit.disable();
+			}
 		}
 	},
 	onStrMainLoadBase: function() {
