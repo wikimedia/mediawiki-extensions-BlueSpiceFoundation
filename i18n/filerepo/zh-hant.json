@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"1233thehongkonger"
+		]
+	},
+	"bs-filerepo-labelupload": "上載",
+	"bs-filerepo-headerfilemimetype": "MIME類型",
+	"bs-filerepo-headerfiletimestamp": "上傳於：",
+	"bs-filerepo-headerfilethumbnail": "縮圖",
+	"bs-filerepo-yes": "是",
+	"bs-filerepo-no": "否"
+}
