@@ -191,6 +191,12 @@ class BsExtensionManager {
 
 	public static function getExtension( $name ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
+		//Backwards compatibility: extensions will have a BlueSice prefix in
+		//the future
+		if ( isset( self::$prRunningExtensions["BlueSpice$name"] ) ) {
+			//TODO: Add a wfDeprecated( __METHOD__, 'next BS Version' );
+			return self::$prRunningExtensions["BlueSpice$name"];
+		}
 		if ( isset( self::$prRunningExtensions[$name] ) ) {
 			return self::$prRunningExtensions[$name];
 		}
