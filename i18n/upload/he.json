@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Or"
+		]
+	},
+	"bs-upload-uploadbuttontext": "עיון",
+	"bs-upload-uploadfilefieldlabel": "שם הקובץ",
+	"bs-upload-categories": "קטגוריות",
+	"bs-upload-error": "שגיאה",
+	"bs-upload-descfilelabel": "תיאור",
+	"bs-upload-filetypenotsupported": "סוג קובץ זה אינו נתמך",
+	"bs-upload-details": "פרטים"
+}

@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Or"
+		]
+	},
+	"bs-filerepo-labelupload": "העלאה",
+	"bs-filerepo-labelfilter": "מסנן",
+	"bs-filerepo-headerfilename": "שם הקובץ",
+	"bs-filerepo-headerfilesize": "גודל",
+	"bs-filerepo-headerpagecategories": "קטגוריות",
+	"bs-filerepo-headerfilewidth": "רוחב",
+	"bs-filerepo-headerfileusertext": "משתמש",
+	"bs-filerepo-headerfiletimestamp": "הועלה",
+	"bs-filerepo-headerfilemediatype": "סוג המדיה",
+	"bs-filerepo-headerfiledescription": "תיאור",
+	"bs-filerepo-yes": "כן",
+	"bs-filerepo-no": "לא",
+	"bs-filerepo-pagesize": "גודל הדף"
+}
