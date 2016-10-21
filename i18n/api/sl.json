@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pickle12"
+			"Pickle12",
+			"Dbc334"
 		]
 	},
-	"apihelp-bs-upload-license-store-description": "Seznam licenc za nalaganje datoteke"
+	"apihelp-bs-upload-license-store-description": "Seznam dovoljenj za nalaganje datoteke"
 }
