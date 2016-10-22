@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Завантажити файл",
+	"bs-upload-uploadbuttontext": "Огляд",
+	"bs-upload-uploadfilefieldlabel": "Назва файлу",
+	"bs-upload-uploadfileemptytext": "Вставте новий файл...",
+	"bs-upload-uploaddestfilelabel": "Цільова назва файлу",
+	"bs-upload-allowedfiletypesare": "Допустимі типи файлів:",
+	"bs-upload-license": "Ліцензія",
+	"bs-upload-uploadwatchthislabel": "Спостерігати за цим файлом",
+	"bs-upload-uploadignorewarningslabel": "Ігнорувати всі попередження",
+	"bs-upload-categories": "Категорії",
+	"bs-upload-upload-waitmessage": "Триває завантаження ...",
+	"bs-upload-error": "Помилка",
+	"bs-upload-descfilelabel": "Опис",
+	"bs-upload-error-long": "Помилка в процесі завантаження",
+	"bs-upload-filetypenotsupported": "Тип файлу не підтримується",
+	"bs-upload-details": "Деталі"
+}

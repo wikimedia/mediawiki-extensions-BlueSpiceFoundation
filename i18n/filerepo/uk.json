@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"bs-filerepo-labelupload": "Завантажити",
+	"bs-filerepo-labelfilter": "Фільтр",
+	"bs-filerepo-headerfilename": "Назва файлу",
+	"bs-filerepo-headerfilesize": "Розмір",
+	"bs-filerepo-headerpagecategories": "Категорії",
+	"bs-filerepo-headerfilewidth": "Ширина",
+	"bs-filerepo-headerfileheight": "Висота",
+	"bs-filerepo-headerfilemimetype": "MIME-тип",
+	"bs-filerepo-headerfileusertext": "Користувач",
+	"bs-filerepo-headerfileextension": "Розширення",
+	"bs-filerepo-headerfiletimestamp": "Завантажено",
+	"bs-filerepo-headerfilemediatype": "Медіатип",
+	"bs-filerepo-headerfiledescription": "Опис",
+	"bs-filerepo-headerfilethumbnail": "Мініатюра",
+	"bs-filerepo-yes": "Так",
+	"bs-filerepo-no": "Ні",
+	"bs-filerepo-pagesize": "Розмір сторінки"
+}
