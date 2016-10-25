@@ -25,6 +25,21 @@ class BsCoreHooks {
 			}
 		}
 
+		$GLOBALS['wgParamDefinitions'] += array(
+			'titlelist' => array(
+				'definition' => 'BSTitleListParam',
+				//TODO: Find way to define paser and validator in definition
+				//class rather than in global registration
+				'string-parser' => 'BSTitleParser',
+				'validator' => 'BSTitleValidator',
+			),
+			'namespacelist' => array(
+				'definition' => 'BSNamespaceListParam',
+				'string-parser' => 'BSNamespaceParser',
+				'validator' => 'BSNamespaceValidator',
+			)
+		);
+
 		return true;
 	}
 
