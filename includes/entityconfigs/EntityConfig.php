@@ -83,6 +83,33 @@ abstract class BSEntityConfig {
 		return $this->$sMethod();
 	}
 
+	/**
+	 * Returns a json serializable object
+	 * @return stdClass
+	 */
+	public function jsonSerialize() {
+		$aConfig = array();
+		foreach( get_class_methods( $this ) as $sMethod ) {
+			if( strpos($sMethod, 'get_') !== 0 ) {
+				continue;
+			}
+			//remove the get_
+			$sVarName = substr( $sMethod, 4 );
+			$aConfig[$sVarName] = $this->$sMethod();
+		}
+		return (object) array_merge(
+			static::$aDefaults,
+			$aConfig
+		);
+	}
+
+	/**
+	 * @return string - EntityConfig type
+	 */
+	public function getType() {
+		return $this->sType;
+	}
+
 	abstract protected function addGetterDefaults();
 	abstract protected function get_EntityClass();
 
