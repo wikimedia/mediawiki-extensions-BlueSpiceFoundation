@@ -39,6 +39,7 @@ class BSEntity implements JsonSerializable {
 	protected $iID = 0;
 	protected $iOwnerID = 0;
 	protected $sType = '';
+	protected $bArchived = false;
 
 	protected function __construct( stdClass $oStdClass, BSEntityConfig $oConfig ) {
 		$this->oConfig = $oConfig;
@@ -51,6 +52,9 @@ class BSEntity implements JsonSerializable {
 		}
 		if( !empty($oStdClass->type) ) {
 			$this->sType = $oStdClass->type;
+		}
+		if( !empty($oStdClass->archived) ) {
+			$this->bArchived = $oStdClass->archived;
 		}
 	}
 
@@ -71,6 +75,7 @@ class BSEntity implements JsonSerializable {
 		//Get the page_title of the last created title in entity namespace and
 		//add +1. Entities are stored like: MYEntityNamespace:1,
 		//MYEntityNamespace:2, MYEntityNamespace:3
+		//TODO: This should be done by related Content object
 		if ( (int) $this->getID() === 0 ) {
 			$dbw = wfGetDB( DB_MASTER );
 			$res = $dbw->selectRow(
@@ -78,7 +83,9 @@ class BSEntity implements JsonSerializable {
 				'page_title',
 				array( 'page_namespace' => static::NS ),
 				__METHOD__,
-				array( 'ORDER BY' => 'page_id DESC' )
+				array(
+					'ORDER BY' => 'LENGTH( page_title ) DESC, page_title DESC'
+				)
 			);
 
 			if ( $res ) {
@@ -282,7 +289,7 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Deletes the current BSEntity
+	 * Archives the current BSEntity
 	 * @return Status
 	 */
 	public function delete( User $oUser = null, $aOptions = array() ) {
@@ -295,23 +302,15 @@ class BSEntity implements JsonSerializable {
 		if( $oStatus instanceof Status && $oStatus->isOK() ) {
 			return $oStatus;
 		}
+		$this->bArchived = true;
+          	$this->setUnsavedChanges();
 
 		try {
-			$sError = '';
-			$b = $oWikiPage->doDeleteArticle(
-				'',
-				false,
-				0,
-				true,
-				$sError,
-				$oUser
-			);
+			$oStatus = $this->save();
 		} catch( Exception $e ) {
-			error_log( $e->getMessage() );
 			return Status::newFatal( $e->getMessage() );
 		}
 
-		$oStatus = Status::newGood( 'success' );
 		wfRunHooks( 'BSEntityDeleteComplete', array( $this, $oStatus ) );
 		if( !$oStatus->isOK() ) {
 			return $oStatus;
@@ -332,6 +331,7 @@ class BSEntity implements JsonSerializable {
 				'id' => $this->getID(),
 				'ownerid' => $this->getOwnerID(),
 				'type' => $this->getType(),
+				'archived' => $this->isArchived(),
 			)
 		);
 	}
@@ -392,6 +392,13 @@ class BSEntity implements JsonSerializable {
 			return false;
 		}
 		return $oTitle->exists();
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function isArchived() {
+		return $this->bArchived;
 	}
 
 	/**
