@@ -7,6 +7,17 @@ class BsCoreHooks {
 
 	protected static $aTaskAPIPermission = array();
 
+	public static function onRegistry(){
+		global $wgScriptPath, $wgFooterIcons, $wgExtensionFunctions, $wgAjaxExportList, $wgVersion, $IP;
+		global $wgNamespacesWithSubpages, $wgApiFrameOptions, $wgRSSUrlWhitelist;
+		global $wgExternalLinkTarget, $wgCapitalLinkOverrides, $wgRestrictDisplayTitle;
+		global $wgUrlProtocols, $wgVerifyMimeType, $wgAllowJavaUploads;
+		global $bsgTestSystem, $bsgPermissionConfig, $bsgSystemNamespaces;
+		global $bsgConfigFiles, $wgResourceLoaderLESSVars, $bsgExtensions;
+		global $wgHooks, $wgDBtype;
+		require_once( __DIR__ . "/../BlueSpiceFoundation.php" );
+	}
+
 	public static function onSetupAfterCache() {
 		global $wgExtensionFunctions, $wgGroupPermissions, $wgWhitelistRead, $wgMaxUploadSize,
 		$wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown, $wgNonincludableNamespaces,
