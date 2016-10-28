@@ -206,7 +206,7 @@ $bsgConfigFiles = array(
 );
 
 
-$wgResourceLoaderLESSVars += array(
+$wgResourceLoaderLESSVars = array_merge( $wgResourceLoaderLESSVars, array(
 	'bs-color-primary' => '#3e5389', //blue
 	'bs-color-secondary' => '#ffae00', //orange
 	'bs-color-tertiary' => '#b73a3a', //red
@@ -225,7 +225,7 @@ $wgResourceLoaderLESSVars += array(
 	'bs-color-warning' => '#fcf8e3',
 	'bs-color-error' => '#f2dede',
 	'bs-color-info' => '#d9edf7',
-);
+) );
 
 /**
  * BsExtensionManager extension registration
