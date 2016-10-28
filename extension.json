@@ -259,7 +259,8 @@
                 "bs-deferred-batch-status",
                 "bs-deferred-action-apiaddcategories-description",
                 "bs-deferred-action-apisetcategories-description",
-                "bs-deferred-action-apiremovecategories-description"
+                "bs-deferred-action-apiremovecategories-description",
+                "bs-deferred-action-apimovepage-description"
             ]
         },
         "ext.bluespice.extjs.BS.portal.css": {
