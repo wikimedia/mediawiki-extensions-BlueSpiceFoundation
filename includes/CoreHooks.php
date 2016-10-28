@@ -669,4 +669,23 @@ class BsCoreHooks {
 		$out->addJsConfigVars( 'bsgTestSystem',$bsgTestSystem );
 	}
 
+	/**
+	 * Used for invalidations
+	 * @param WikiPage $article
+	 * @param User $user
+	 * @param Content $content
+	 * @param string $summary
+	 * @param boolean $isMinor
+	 * @param $isWatch deprecated
+	 * @param $section deprecated
+	 * @param integer $flags
+	 * @param {Revision|null} $revision
+	 * @param Status $status
+	 * @param integer $baseRevId
+	 */
+	public static function onPageContentSaveComplete( $article, $user, $content, $summary, $isMinor, $isWatch, $section, $flags, $revision, $status, $baseRevId ) {
+		BsArticleHelper::getInstance( $article->getTitle() )->invalidate();
+		return true;
+	}
+
 }

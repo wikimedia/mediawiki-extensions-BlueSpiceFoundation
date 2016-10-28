@@ -83,7 +83,8 @@
 		"SkinAfterContent": "BsCoreHooks::onSkinAfterContent",
 		"ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
 		"UserAddGroup": "BsGroupHelper::addTemporaryGroupToUserHelper",
-		"ExtensionTypes": "BsCoreHooks::onExtensionTypes"
+		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",
+		"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete"
 	},
 	"config": {
 		"BlueSpiceExtInfo": {

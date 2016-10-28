@@ -128,30 +128,23 @@ class BsArticleHelper {
 	 * Fetches the page_props table
 	 */
 	public function loadPageProps() {
-		$iArticleId = $this->oTitle->getArticleID();
-
-		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'loadPageProps', $iArticleId );
-		$aData = BsCacheHelper::get( $sKey );
-
-		if( $aData !== false ) {
-			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching page props from cache' );
-			$this->aPageProps = $aData;
-		} else {
-			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching page props from DB' );
-			$dbr = wfGetDB( DB_SLAVE );
-			$res = $dbr->select(
-				'page_props',
-				array('pp_propname', 'pp_value'),
-				array('pp_page' => $iArticleId ),
-				__METHOD__
-			);
-
-			foreach( $res as $row ) {
-				$this->aPageProps[$row->pp_propname] = $row->pp_value;
-			}
-			BsCacheHelper::set( $sKey, $this->aPageProps, 60*15 );// invalidates cache after 15 minutes
-		}
 		$this->bIsLoaded = true;
+		$this->aPageProps = array();
+		if( !$this->oTitle->exists() ) {
+			return;
+		}
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$res = $dbr->select(
+			'page_props',
+			array('pp_propname', 'pp_value'),
+			array( 'pp_page' => $this->oTitle->getArticleID() ),
+			__METHOD__
+		);
+
+		foreach( $res as $row ) {
+			$this->aPageProps[$row->pp_propname] = $row->pp_value;
+		}
 	}
 
 	/**
@@ -164,6 +157,24 @@ class BsArticleHelper {
 			return null;
 		}
 		return $oWikiPage->getRedirectTarget();
+	}
+
+	public function invalidate() {
+		$this->bIsLoaded = false;
+		$this->aPageProps = array();
+
+		if( !$this->oTitle->exists() ) {
+			return true;
+		}
+
+		$sKey = BsCacheHelper::getCacheKey(
+			'BlueSpice',
+			'ArticleHelper',
+			'getDiscussionAmount',
+			$this->oTitle->getTalkPage()->getArticleID()
+		);
+
+		BsCacheHelper::invalidateCache( $sKey );
 	}
 
 }
