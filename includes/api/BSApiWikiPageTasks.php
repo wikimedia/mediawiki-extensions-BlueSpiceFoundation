@@ -35,7 +35,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		'setCategories',
 		'getExplicitCategories',
 		'addCategories',
-		'removeCategories'
+		'removeCategories',
+		'getDiscussionCount'
 	);
 
 	/**
@@ -47,7 +48,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'setCategories' => array( 'edit' ),
 			'getExplicitCategories' => array( 'read' ),
 			'addCategories' => array( 'edit' ),
-			'removeCategories' => array( 'edit' )
+			'removeCategories' => array( 'edit' ),
+			'getDiscussionCount' => array( 'read' )
 		);
 	}
 
@@ -359,6 +361,25 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
 		}
+
+		return $oResponse;
+	}
+
+	/**
+	 *
+	 * @param stdClass $oTaskData
+	 * @param array $aParams
+	 * @return BSStandardAPIResponse
+	 */
+	protected function task_getDiscussionCount( $oTaskData, $aParams  ) {
+		$oResponse = $this->makeStandardReturn();
+
+		$iCount = BsArticleHelper::getInstance(
+			$this->getTitle()
+		)->getDiscussionAmount();
+
+		$oResponse->success = true;
+		$oResponse->payload = $iCount ;
 
 		return $oResponse;
 	}
