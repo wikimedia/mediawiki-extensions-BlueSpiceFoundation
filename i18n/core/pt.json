@@ -77,7 +77,7 @@
 	"bs-pref-testmode": "Ativar o modo de teste",
 	"bs-tag-input-desc": "Valor do conteúdo do elemento",
 	"bs-tag-param-desc": "Valor do atributo '$1' do elemento",
-	"bs-parser-error-invalid-namespace": "Domínio inválido: $1",
+	"bs-parser-error-invalid-namespace": "Espaço nominal inválido: $1",
 	"bs-parser-error-invalid-title": "Título inválido: $1",
 	"bs-validator-error-namespace-does-not-exist": "Domínio não existe: $1",
 	"bs-validator-error-namespace-on-blacklist": "Domínio não permitido: $1",
