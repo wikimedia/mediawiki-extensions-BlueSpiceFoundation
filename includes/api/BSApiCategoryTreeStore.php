@@ -116,6 +116,18 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		return $aResult;
 	}
 
+	public function trimData( $aProcessedData ) {
+		/**
+		 * In a tree store paging is not anted in most cases
+		 * TODO: Promote to dedicated BSApiExtJSTreeStoreBase class
+		 */
+		if( $this->getRequest()->getInt( 'limit', -1 ) === -1 ) {
+			return $aProcessedData;
+		}
+
+		return parent::trimData( $aProcessedData );
+	}
+
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + array(
 			'node' => array(

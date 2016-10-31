@@ -20,7 +20,7 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 		this.store = Ext.create( 'Ext.data.JsonStore', {
 			proxy: {
 				type: 'ajax',
-				url: bs.util.getCAIUrl( 'getCategoryStoreData' ),
+				url: bs.api.makeUrl( 'bs-category-treestore' ),
 				reader: {
 					type: 'json',
 					root: 'categories',
