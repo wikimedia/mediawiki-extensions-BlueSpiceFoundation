@@ -45,7 +45,6 @@ $wgFooterIcons['poweredby']['bluespice'] = array(
 require_once( __DIR__."/includes/AutoLoader.php");
 require_once( __DIR__."/includes/Defines.php" );
 require_once( __DIR__."/includes/DefaultSettings.php" );
-require_once( __DIR__."/resources/Resources.php");
 
 // Register hooks
 require_once( 'BlueSpice.hooks.php' );
