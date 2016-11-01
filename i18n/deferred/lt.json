@@ -14,5 +14,6 @@
 	"bs-deferred-batch-progress-desc": "Progresas",
 	"bs-deferred-batch-actions": "Veiksmai",
 	"bs-deferred-batch-description": "Aprašymas",
-	"bs-deferred-batch-status": "Statusas"
+	"bs-deferred-batch-status": "Statusas",
+	"bs-deferred-action-apimovepage-description": "Perkelti „$1“ į „$2“."
 }

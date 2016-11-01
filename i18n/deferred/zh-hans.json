@@ -17,5 +17,6 @@
 	"bs-deferred-batch-status": "状态",
 	"bs-deferred-action-apiaddcategories-description": "添加分类至“$1”。",
 	"bs-deferred-action-apiremovecategories-description": "从“$1”移除分类。",
-	"bs-deferred-action-apisetcategories-description": "在“$1”设置分类。"
+	"bs-deferred-action-apisetcategories-description": "在“$1”设置分类。",
+	"bs-deferred-action-apimovepage-description": "移动“$1”至“$2”。"
 }

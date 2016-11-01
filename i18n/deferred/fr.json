@@ -20,5 +20,6 @@
 	"bs-deferred-batch-status": "Statut",
 	"bs-deferred-action-apiaddcategories-description": "Ajouter des catégories à '$1'.",
 	"bs-deferred-action-apiremovecategories-description": "Supprimer des catégories de '$1'.",
-	"bs-deferred-action-apisetcategories-description": "Fixer les catégories sur '$1'."
+	"bs-deferred-action-apisetcategories-description": "Fixer les catégories sur '$1'.",
+	"bs-deferred-action-apimovepage-description": "Renommer «$1» en «$2» .\n« ALT-SHIFT-S »"
 }

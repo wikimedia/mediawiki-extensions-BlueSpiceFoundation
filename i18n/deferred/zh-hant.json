@@ -15,5 +15,6 @@
 	"bs-deferred-batch-progress-desc": "進度",
 	"bs-deferred-batch-actions": "操作",
 	"bs-deferred-batch-description": "描述",
-	"bs-deferred-batch-status": "狀態"
+	"bs-deferred-batch-status": "狀態",
+	"bs-deferred-action-apimovepage-description": "移動 \"$1\" 至 \"$2\"。"
 }

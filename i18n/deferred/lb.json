@@ -15,5 +15,6 @@
 	"bs-deferred-batch-status": "Status",
 	"bs-deferred-action-apiaddcategories-description": "Kategorien op '$1' derbäisetzen.",
 	"bs-deferred-action-apiremovecategories-description": "Kategorie vu(n) '$1' ewechhuelen",
-	"bs-deferred-action-apisetcategories-description": "Kategorien op '$1' festleeën."
+	"bs-deferred-action-apisetcategories-description": "Kategorien op '$1' festleeën.",
+	"bs-deferred-action-apimovepage-description": "\"$1\" op \"$2\" réckelen."
 }
