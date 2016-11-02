@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ghiutun",
-			"Okras"
+			"Okras",
+			"Kareyac"
 		]
 	},
 	"bs-deferred-action-status-pending": "Ожидание.",
@@ -15,5 +16,6 @@
 	"bs-deferred-batch-progress-desc": "Прогресс",
 	"bs-deferred-batch-actions": "Действия",
 	"bs-deferred-batch-description": "Описание",
-	"bs-deferred-batch-status": "Состояние"
+	"bs-deferred-batch-status": "Состояние",
+	"bs-deferred-action-apimovepage-description": "Переместите «$1» к «$2»."
 }

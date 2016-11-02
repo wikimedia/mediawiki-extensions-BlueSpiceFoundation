@@ -15,5 +15,6 @@
 	"bs-deferred-batch-description": "Beskrivning",
 	"bs-deferred-batch-status": "Status",
 	"bs-deferred-action-apiaddcategories-description": "Lägg till kategorier i '$1'.",
-	"bs-deferred-action-apiremovecategories-description": "Ta bort kategorier från '$1'."
+	"bs-deferred-action-apiremovecategories-description": "Ta bort kategorier från '$1'.",
+	"bs-deferred-action-apimovepage-description": "Flytta \"$1\" till \"$2\"."
 }
