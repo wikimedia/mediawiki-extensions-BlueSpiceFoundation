@@ -89,7 +89,11 @@ abstract class BSApiTasksBase extends BSApiBase {
 		else {
 			$res = $this->checkTaskPermission( $sTask );
 			if( !$res ) {
-				$this->dieUsageMsg( 'badaccess-groups' );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
+				} else {
+					$this->dieUsageMsg( 'badaccess-groups' );
+				}
 			}
 			if( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
 				global $wgReadOnly;

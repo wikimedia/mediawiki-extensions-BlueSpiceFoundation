@@ -298,7 +298,7 @@ class BsCoreHooks {
 	 * Called during ApiMain::checkCanExecute(), prevents user getting text when lacking permissions
 	 * @param ApiBase $module
 	 * @param User $user
-	 * @param String $message
+	 * @param ApiMessage &$message
 	 * @return boolean
 	 */
 	public static function onApiCheckCanExecute( $module, $user, &$message ){
@@ -307,7 +307,10 @@ class BsCoreHooks {
 		}
 		$oTitle = Title::newFromText( $module->getRequest()->getVal( 'page' ) );
 		if ( !is_null( $oTitle ) && $oTitle->userCan( 'read' ) == false ) {
-			$message = wfMessage('loginreqpagetext', wfMessage('loginreqlink')->plain())->plain();
+			$message = ApiMessage::create(
+				[ 'loginreqpagetext', wfMessage('loginreqlink') ],
+				'loginrequired'
+			);
 			return false;
 		}
 		return true;

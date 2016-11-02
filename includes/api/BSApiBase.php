@@ -43,29 +43,38 @@ abstract class BSApiBase extends ApiBase {
 		if( empty( $aRequiredPermissions ) ) {
 			return; //No need for further checking
 		}
+
+		if( $oUser instanceof User === false ) {
+			$oUser = $this->getUser();
+		}
+
+		$status = Status::newGood();
 		foreach( $aTitles as $oTitle ) {
 			if( $oTitle instanceof Title === false ) {
 				continue;
 			}
 			foreach( $aRequiredPermissions as $sPermission ) {
-				if( $oTitle->userCan( $sPermission ) === false ) {
-					//TODO: Reflect title and permission in error message
-					$this->dieUsageMsg( 'badaccess-groups' );
+				foreach ( $oTitle->getUserPermissionsErrors( $sPermission, $oUser ) as $error ) {
+					$status->fatal(
+						ApiMessage::create( $error, null, [ 'title' => $oTitle->getPrefixedText() ] )
+					);
 				}
 			}
 		}
 
 		//Fallback if not conrete title was provided
 		if( empty( $aTitles ) ) {
-			if( $oUser instanceof User === false ) {
-				$oUser = $this->getUser();
-			}
 			foreach( $aRequiredPermissions as $sPermission ) {
 				if( $oUser->isAllowed( $sPermission ) === false ) {
-					//TODO: Reflect permission in error message
-					$this->dieUsageMsg( 'badaccess-groups' );
+					$status->fatal(
+						[ 'apierror-permissiondenied', $this->msg( "action-$sPermission" ) ]
+					);
 				}
 			}
+		}
+
+		if ( !$status->isOK() ) {
+			$this->dieStatus( $status );
 		}
 	}
 
