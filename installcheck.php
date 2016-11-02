@@ -242,7 +242,8 @@ checkWrite( $reqWrite );
 
 // Check template renaming
 echo( "<h2>Checking for necessary files</h2>" );
-$reqMove = array(	"extensions/BlueSpiceExtensions/BlueSpiceExtensions.php" );
+$reqMove = array(	"extensions/BlueSpiceExtensions/BlueSpiceExtensions.php",
+					"LocalSettings.BlueSpice.php" );
 checkMove( $reqMove );
 
 
