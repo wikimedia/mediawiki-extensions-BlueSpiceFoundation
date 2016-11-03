@@ -65,12 +65,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$aCategories = $oTaskData->categories;
 		$aCategories = ( !is_array( $aCategories ) ) ? array() : $aCategories;
 
-		$oTitle = Title::newFromText( $oTaskData->page_title );
-
-		if ( $oTitle instanceof Title === false ) {
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain();
-			return $oResponse;
-		}
+		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 
 		//Check for actual title permissions
 		if ( !$oTitle->userCan( 'edit' ) ) {
@@ -150,13 +145,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 */
 	protected function task_getExplicitCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
-		//get Title of the page
-		$oTitle = Title::newFromText( $oTaskData->page_title );
-
-		if ( $oTitle instanceof Title === false ) {
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain();
-			return $oResponse;
-		}
+		$oTitle = $oTitle = $this->getTitleFromTaskData( $oTaskData );
 
 		if ( !$oTitle->userCan( 'read' ) ) {
 			$oResponse->message = wfMessage(
@@ -218,7 +207,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$aCategories = $oTaskData->categories;
 		$aCategories = ( !is_array( $aCategories ) ) ? array() : $aCategories;
 
-		$oTitle = Title::newFromText( $oTaskData->page_title );
+		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 
 		if ( !$oTitle->userCan( 'edit' ) ) {
 			$oResponse->message = wfMessage(
@@ -310,12 +299,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//get Title of the page
-		$oTitle = Title::newFromText( $oTaskData->page_title );
-		if ( $oTitle instanceof Title === false ) {
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain();
-			return $oResponse;
-		}
+		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 
 		if ( !$oTitle->userCan( 'edit' ) ) {
 			$oResponse->message = wfMessage(
@@ -375,13 +359,40 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oResponse = $this->makeStandardReturn();
 
 		$iCount = BsArticleHelper::getInstance(
-			$this->getTitle()
+			$this->getTitleFromTaskData( $oTaskData )
 		)->getDiscussionAmount();
 
 		$oResponse->success = true;
 		$oResponse->payload = $iCount ;
 
 		return $oResponse;
+	}
+
+	/**
+	 *
+	 * @param stdClass $oTaskData
+	 * @return Title
+	 * @throws MWException
+	 * @todo: Maybe have this logic in "parent::getTitle" altogether
+	 */
+	protected function getTitleFromTaskData( $oTaskData ) {
+		$oTitle = Title::newFromID( $oTaskData->page_id );
+		if ( $oTitle instanceof Title === false ) {
+			$oTitle = Title::newFromText( $oTaskData->page_title );
+		}
+		if ( $oTitle instanceof Title === false ) {
+			$oTitle = $this->getTitle();
+		}
+
+		//Actually this should never happen as $this->getTitle() will at least
+		//return title "Special:BadTitle"
+		if ( $oTitle instanceof Title === false ) {
+			throw new MWException(
+				wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain()
+			);
+		}
+
+		return $oTitle;
 	}
 
 	public function needsToken() {

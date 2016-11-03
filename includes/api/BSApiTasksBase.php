@@ -105,6 +105,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 						$oResult = $this->$sMethod( $oTaskData , $aParams );
 					}
 					catch ( Exception $e ) {
+						$oResult->success = false;
 						$oResult->message = $e->getMessage();
 					}
 				}
@@ -394,7 +395,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 * @param stdClass $oTaskData
 	 * @return stdClass - Standard return
 	 */
-	public function validateTaskData( $oTaskData ) {
+	protected function validateTaskData( $oTaskData ) {
 		$aDefinitions = $this->getTaskDataDefinitions();
 		$oReturn = $this->makeStandardReturn();
 		if( $aDefinitions === false ) {
