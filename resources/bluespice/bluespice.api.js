@@ -39,7 +39,7 @@
 	function _execTask( module, task, data, cfg ) {
 		cfg = cfg || {};
 		cfg = $.extend( {
-			token: 'edit',
+			token: 'csrf',
 			context: {},
 			success: _msgSuccess,
 			failure: _msgFailure
