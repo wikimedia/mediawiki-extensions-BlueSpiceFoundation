@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fúlvio"
+			"Fúlvio",
+			"Hamilton Abreu"
 		]
 	},
 	"bs-validator-email-validation-approved": "O endereço de e-mail foi validado com sucesso.",
 	"bs-validator-email-validation-not-approved": "O endereço de e-mail não pode ser validado.",
-	"bs-validator-url-validation-approved": "O URL foi validado com sucesso.",
+	"bs-validator-url-validation-approved": "O URL foi validado.",
 	"bs-validator-url-validation-not-approved": "O URL não pode ser validado.",
 	"bs-validator-arg-count-validation-approved": "O atributo \"count\" foi validado com sucesso.",
 	"bs-validator-arg-count-validation-not-approved": "O atributo \"count\" não pode ser validado.",
