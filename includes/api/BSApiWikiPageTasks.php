@@ -376,8 +376,11 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @todo: Maybe have this logic in "parent::getTitle" altogether
 	 */
 	protected function getTitleFromTaskData( $oTaskData ) {
-		$oTitle = Title::newFromID( $oTaskData->page_id );
-		if ( $oTitle instanceof Title === false ) {
+		$oTitle = null;
+		if ( isset( $oTaskData->page_id ) ) {
+			$oTitle = Title::newFromID( $oTaskData->page_id );
+		}
+		if ( $oTitle instanceof Title === false && isset( $oTaskData->page_title ) ) {
 			$oTitle = Title::newFromText( $oTaskData->page_title );
 		}
 		if ( $oTitle instanceof Title === false ) {
