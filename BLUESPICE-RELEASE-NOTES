@@ -3,17 +3,14 @@ Copyright 2016 by Hallo Welt! GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
 
-== BlueSpice 2.27.0 beta ==
+== BlueSpice 2.27.0 ==
 
-BlueSpice 2.27.0-beta is a minor and maintenance release.
-This is a beta release and not recommended for use in production
+BlueSpice 2.27.0 is a minor and maintenance release.
+This is a stable release.
 
 === Notable new features ===
 ==== New features ====
-* Showtime: A HTML video player
-* Page Assignments: Assign poeple and groups of people to pages, e.g. as responsible editors. Supersedes ResponsibleEditors.
-
-==== New features ====
+* Page Assignments: Assign people and groups of people to pages, e.g. as responsible editors. Supersedes ResponsibleEditors.
 * Farm: Add metadata (like descriptions and tags), disable old wikis, organize your wikis in groups
 * Farm: Add central search across all farmed wikis
 * Testsystem mode: visually indicate when a wiki is a testing system
@@ -26,13 +23,308 @@ This is a beta release and not recommended for use in production
 * Removed/deprecated WantedArticles, FeedbackHelper, WikiCategoryTagCloud, GuidedEditing and WidgetBar
 * Track usage statistics: know how often a certain feature is used in your wiki
 * Namespace-specific notifications: get notified about actions in the wiki on a namespace basis
+* Semantic properties: Use data from BlueSpice as semantic properties
+* Reminder: several reminders per user and article, also assign to others
+* ProDistribution: Added Extension:DrawioEditor and Extension:NativeSVGHandler
+* Distribution: Added BlueSpiceTagCloud
+* CategoryManager: A new manager to organize categories via user interface
+* Showtime: A HTML video player
 
 ==== Newly packaged extensions ====
 * HitCounter: Restores the hit count functionality missing in MW core since MW 1.25
 * EditNotify: Basis for page action notifications
+* Added connectors for Echo, LdapAuthentication, EditNotify, UserMerge
 
 ==== Compatibility ====
 * Fully MW 1.27 compatible
+
+=== BlueSpice Foundation ===
+* Add autoloader to extension.json
+* Added check for LocalSettings.BlueSpice.php to installcheck.php
+* ApiWikiPageTasks: Added task getDiscussionCount
+* ApiWikiPageTasks: fixed notice
+* ApiWikiPageTasks: Implemented method to determine title
+* Archive Entities instead delete
+* BS.grid.FileRepo: Minor fixes
+* BSApiCategoryTreeStore replaces CommonAjaxInterface
+* BSApiCategoryTreeStore: Fixed default limit
+* BSApiWikiPageTasks: added new tasks
+* BSApiWikiPageTasks: bugfixes
+* BSApiWikiTasks - fixed cache issues after change
+* BSBatchFileProcessorBase: Fix and minor changes
+* BSExtensionManager: Added a fallback when extension got prefixed
+* BSFoundation: ArticleHelper - Added cache invalidation
+* BSPing: exec task api silently
+* Fixed icons
+* Fixed type error when TBar buttons are removed by subclass
+* GenericTagHandler: Fixed registration
+* Improve autofocus in extjs prompt dialog
+* Made EntityConfig searializeable
+* move special extension registration settings to callback function make wfLoadExtension usage backward compatible reduce change footprint
+* Move syntax from += to array_merge for hhvm compatability
+* New deferred action "ApiMovePage"
+* Reenable closeAction: 'destroy'
+* Refactoring of InsertFiles UploadDialog and new FileRepo Grid
+* Remove message bs-day-duration from Resources.php
+* Replace deprecated Article::fetchContent()
+* Resource modules moved to extension.json to fix not found resources remove deprecated msg key
+* set the default package status to stable
+* TaskAPI: Use csrf instead of edit token
+
+=== BlueSpice Extensions ===
+* Avatars: Removed wgAjaxExportList from extension.json
+* Blog: fix rss registration, link creation function was wrong
+* Checklist: SMW integration
+* Compatibility: move registration to special callback function to make setup backward compatible
+* Compatiblity: add composer autoloading
+* Compatiblity: Replace ArticleSave hook usage
+* Compatiblity: Replace ArticleSaveComplete hook usage
+* CountThings: added mode parameter alias for backwards compatibility.
+* Dashboards: Fixed syntax error
+* ExtendedEditBar: Fixed ids for testing
+* ExtendedSearch: add Create Page option in SearchBox autocomplete
+* ExtendedSearch: add missing bsgExtendedSearchBoostQuerySettings
+* ExtensionInfo: Fixed Fatal, when descriptionmsg is not set
+* ExtensionInfo: Using real url from extension.json if exists
+* FlexiSkin: Avoid using long-deprecated ApiBase::getResultData()
+* Flexiskin: Fix typo in BS-flexiskin-api-id-desc message
+* Flexiskin: Upload file button - solved issue with missing tooltip and icon
+* Groupmanager: Added id for testing
+* InsertCategory: Now using new bs-category-treestore
+* Internationalisation: Remove unused messages from extension.json
+* InterWikiLinks: fixed edit and delete of interwiki links
+* PageAccess: BlueSpice should not call deprecated Article::prepareTextForEdit()
+* PageAccess: fix bug where tag would lead to a complete block
+* PageAssignments: Added Helpdesk url
+* PageAssignments: Improved API performance
+* PageAssignments: SMW integration
+* PageAssignments: Switched type registration order to have groups listed first
+* PageAssignments: Various icon fixes
+* PageTemplates: Fix Invalid SPDX license identifier
+* PermissionManager: add on hide listener, discard empty templates on dialog close
+* PermissionManager: fix prevent lockout implementation after object/array conversion error, add default options to prevent manager lockout
+* PermissionManageR: Remove bs-permissionmanager-labeltpled-permissions from extension.json
+* Review: SMW integration
+* RSSStandards: replace watchlist with specialwatchlist while class have been removed
+* Shoutbox: Added hook 'BSShoutBoxBeforeAddViewAfterArticleContent'
+* ShoutBox: SMW integration
+* Sidebar: Added Global action Icons
+* UsageTracker: show number of open analyses
+* UsageTracker: using safe way for autoloader
+* UserSidebar::getGlobalActionsWidget: add class to global action links
+* VisualEditor/InsertFile: fixed issue with image size and frame
+* VisualEditor: Finished collition prevention with Extension:VisualEditor
+* VisualEditor: Renamed VisualEditor to BlueSpiceVisualEditor
+* VisualEditor: spaced pre after heading
+* WikiAdmin: now using registered message key if available
+
+=== BlueSpice Skin ===
+* bs-nav-tabs: solved issue with flickering navigation tabs
+* content actions - export: fixed font-family
+* Navigation and Global Actions Icons:
+* Removed deprecated AjaxDispatcher implementation
+* skin.scrollToTop.less: fixed bs-top arrow overlapping content @media print
+* Update skin
+
+=== BlueSpice Distribution ===
+* Distribution: Adopted to current NSFileRepo implementation
+* Distribution: Move NSFileRepo to BSProDistribution
+* Distribution: Updated to current status of NSFileRepo
+* DistributionConnector: Removed WikiCategoryTagCloud related stuff: this extension is replaced by BlueSpiceTagCloud
+* DistributionConnector: Update extension.json
+* DistributionConnector: Using new extension registration + Added ext info
+* EchoConnector: Added generic PresentationModel
+* EchoConnector: Made the extension webinstaller ready
+* EchoConnector: Restored flyout functionality
+* EchoConnector: Using new extension registration + added ext info
+* EditNotifyConnector: create editnotify connector to make user preferences available for namespace related action notifications
+* LdapAuthenticationConnector: init merge from BlueSpiceDistribution
+* UserMergeConnector: Made the extension webinstaller ready
+* UserMergeConnector: Removed old unused code
+* UserMergeConnector: Using new extension registration
+
+=== BlueSpice Pro ===
+* Bookmaker: $wgSpecialPageGroups was replaced with SpecialPage::getGroupName
+* Bookmaker: Add book_meta to ApiBookshelfStore
+* Bookmaker: Add class with icon for navigaiton
+* Bookmaker: Added additional classes to ease customization requests
+* Bookmaker: Added extensions classes to autoloader
+* Bookmaker: Added hook BSBookshelfBookStoreMakeData
+* Bookmaker: Added items to export menu
+* Bookmaker: Added Q-Tips for long nodes
+* Bookmaker: Added scrollbars to book navigation in navigation tab
+* Bookmaker: Added spans to chapter numbers
+* Bookmaker: Added styling for non-existing pages in tree
+* Bookmaker: Added wgAutoloadClasses to support new ExtensionManager implemenation
+* Bookmaker: Adding chapter number to firstHeading on export
+* Bookmaker: Better unit testing
+* Bookmaker: BookEditor: Rework of add dialog
+* Bookmaker: Bookshelf: added link to BookManager to navigation panel
+* Bookmaker: bs-nav-section-bs-bookshelfui: icon for "Library" now using entypo font
+* Bookmaker: Changed 'article' to 'wikipage'
+* Bookmaker: Fixed 'Open in new Window link'
+* Bookmaker: Fixed book navigation with new tab implementation in skin
+* Bookmaker: Fixed book save for REL1_27
+* Bookmaker: Fixed creation of new pages on book save
+* Bookmaker: Fixed dependency management of BookManager; Now using font icons
+* Bookmaker: Fixed error in chapter navigation where a box would show up in the content area
+* Bookmaker: Fixed issue with Bookeditor: edit chapter title using context menue
+* Bookmaker: Fixed page navigation in book navigation
+* Bookmaker: Implemented "follow redirects"
+* Bookmaker: Implemented 'Add page to book'
+* Bookmaker: Infrastructure for TagNodes
+* Bookmaker: navigation-Tabs: adjusted global-actions css selector
+* Bookmaker: New context menu and tag dialog
+* Bookmaker: Now using batch actions to save books
+* Bookmaker: Remove border and set autoheight
+* Bookmaker: Removed legacy suff
+* Bookmaker: Removed old i18n files
+* Bookmaker: Removed stuff that is now in BSF
+* Bookmaker: Removed unused task API
+* Bookmaker: Underscore to space conversion in default value of alias field
+* Bookmaker: Update README, using markdown
+* Bookmaker: Use unobtrusive alert
+* Bookmaker: Used the new extension registration
+* CategoryManager: Added new feature
+* ExportTables: Added fallback and fixed typeError, when grid tbar is not set at all
+* ExportTables: Added wgAutoloadClasses to support new ExtensionManager implemenation
+* ExportTables: Converted to i18n json files
+* ExportTables: Using new extension registration
+* BlueSpicePasteImage: Added wgAutoloadClasses to support new ExtensionManager implemenation
+* BlueSpicePasteImage: Fixed api url for REL1_27
+* BlueSpicePasteImage: Fixed category handling: remove usage of deprecated function
+* BlueSpicePasteImage: Prepare for mw REL1_27 permission check
+* BlueSpicePasteImage: Prepare paste for wikieditor handler: move registration to extension.json
+* BlueSpicePasteImage: Removed old i18n.php files
+* BlueSpicePasteImage: Replace ajax with api, use extension.json
+* Showtime: Removed old i18n.php files
+* Showtime: Showtime: initial commit of Showtime as video player
+* Showtime: Using new extension registration
+* RatedComments: Added extensions classes to autoloader
+* RatedComments: Fixed run time error with auto scroll
+* RatedComments: Removed old i18n.php files
+* RatedComments: Removed unused registration callback
+* RatedComments: Switched from AJAX to API
+* RatedComments: Using new extension registration
+* Rating: $wgSpecialPageGroups was replaced with SpecialPage::getGroupName
+* Rating: Add styles and icon for navigation global actions
+* Rating: Added permission rating-read to rating store
+* Rating: Changed package name to BlueSpice Pro
+* Rating: Fixed extension description
+* Rating: Fixed malformed HTML if item not voteable
+* Rating: Removed old i18n.php files
+* Rating: Removed onRegistration
+* Rating: Switched from AJAX to API
+* Rating: Used new extension registration
+* Reminder: $wgSpecialPageGroups was replaced with SpecialPage::getGroupName
+* Reminder: Add styles for navigation global actions
+* Reminder: Added assignment to user and implemented comment on reminder
+* Reminder: Expiry: add icon to global actions and statebar
+* Reminder: Expiry: fix empty dialog after entry delete on special page
+* Reminder: Fix for server/client timezone mismatch
+* Reminder: notify only for current day / add flag icon
+* Reminder: Reminder/Expiry: Completely redone almost everything
+* Reminder: Reminder/Expiry: Switch to extension.json
+* Reminder: Removed old i18n.php files
+* Reminder: several reminders per user and article, also assign to others
+* Reminder: Update ApiReminderTasks.php
+* Reminder: Use BS.store.BSApi
+* Semantic: Add handler for empty config file
+* Semantic: Add preloaded composer files
+* Semantic: Check if definitions are missing to prevent php notice
+* Semantic: Enable BlueSpices special property only on settings request
+* Semantic: Fix for php7 compatibility
+* Semantic: Implemented semanticspecialextraproperties for BlueSpice responsible editors
+* Semantic: Move configs and mapping functions to extensions.json
+* Semantic: Remove $bssSpecialProperties
+* Semantic: Remove unused i18n keys
+* Semantic: Update SMW to version 3 for MediaWiki 1.27 compatibility
+* ServiceCenter: Added TagSearch prefix query tag param. For example prefix="*"
+* ServiceCenter: Added wgAutoloadClasses to support new ExtensionManager implemenation
+* ServiceCenter: Fixed class loading which broke BlueSpice configuration
+* ServiceCenter: Fixed icon
+* ServiceCenter: Improved templates
+* ServiceCenter: Removed old i18n.php files
+* ServiceCenter: Using new extension Registration
+* Teamwork: Add SMW Mapping to provide current FlaggedRevs status and user as SMW attribute
+* Teamwork: Added extensions classes to autoloader
+* Teamwork: Compatibility + removed unused stuff
+* Teamwork: Converted to i18n json files
+* Teamwork: Fixed I18N overrides
+* Teamwork: Fixed styling for PDFExport
+* Teamwork: FlaggedRevs/PageAssignments integration
+* Teamwork: FlaggedRevsConnector: Use unobtrusive alert
+* Teamwork: Removed comment field in confirm dialog
+* Teamwork: Removed old i18n.php files
+* Teamwork: Replaced the removed deprecated superlist hooks with newer but also deprecated wiki explorer hooks
+* Teamwork: ReviewExtended using API instead of Ajax
+* Teamwork: Updated FlaggedRevs to tag 1.27
+* Teamwork: Using new extension registration
+* VisualDiff: Added wgAutoloadClasses to support new ExtensionManager implemenation
+* VisualDiff: Fixed RessourceLoader dependency and some styling
+* VisualDiff: Removed old i18n.php files
+* VisualDiff: Using new extension registration
+* WikiExplorer: $wgSpecialPageGroups was replaced with SpecialPage::getGroupName
+* WikiExplorer: Add styles for navigation global actions
+* WikiExplorer: Added hack for page_assignments and removed page counter
+* WikiExplorer: Added Hook for custom filters
+* WikiExplorer: Added own date rendering
+* WikiExplorer: Added set_time_limit( 120 ) to various positions....
+* WikiExplorer: Added wgAutoloadClasses to support new ExtensionManager implemenation
+* WikiExplorer: Converted to i18n json files
+* WikiExplorer: Fixed fatals and messages
+* WikiExplorer: Fixed flagged revs filter
+* WikiExplorer: Removed blue border
+* WikiExplorer: Removed old 18n.php files
+* WikiExplorer: Reworked backward compatibility - still hacky, but works better now ;)
+* WikiExplorer: Swiched from AJAX to API
+* WikiFarm: Added 'more-results-url'
+* WikiFarm: Added basis mechanism for disabling instances
+* WikiFarm: Added host attribute to dump table
+* WikiFarm: Added htaccess-rule for /index.php/sitename
+* WikiFarm: Added icons for buttons
+* WikiFarm: Added maintenance script
+* WikiFarm: Added Migration-Script for future changes
+* WikiFarm: Added stubs for future TasksAPI implementation
+* WikiFarm: Always drop and re-create the table
+* WikiFarm: Changed output name of sql-dump (file-extension was missing)
+* WikiFarm: Fix for emtpy local search results
+* WikiFarm: Fix for memchached scenarios
+* WikiFarm: Fixed clone error
+* WikiFarm: Fixed RunForAll.php script
+* WikiFarm: Fixed use of wfShellExec for some linux distributions
+* WikiFarm: Implemented ExtendedSearch OtherWikis
+* WikiFarm: Implemented UI element for suspend/resume
+* WikiFarm: Metadata implemented
+* WikiFarm: Moved config from SimpleFarmerApi to SimpleFarmer
+* WikiFarm: Moved dispatcher logic to separate place
+* WikiFarm: New feature: Archive-on-delete
+* WikiFarm: Refactored to use new _sf_instances structure
+* WikiFarm: Refactoring buttons out of grid and into panel
+* WikiFarm: Removed 'page_templates' mechanism. Better use a template instance for such things
+* WikiFarm: Removed duplicate setting
+* WikiFarm: Removed unused API base class. Using base classes from BlueSpice 2_23 now.
+* WikiFarm: sfrlistwikis now uses BSApiExtJSStoreBase
+* WikiFarm: Template for setup file
+* WikiFarm: URL-rewrite to support arbitrary entrypoints (like img_auth.php and webdav.php) that are called with PATH_INFO
+
+=== BlueSpice Pro Distribution ===
+* ProDistribution: Added build script for bs-pro-dist
+* ProDistribution: Added Extension:DrawioEditor and Extension:NativeSVGHandler
+* ProDistribution: Added Extension:NSFileRepo
+* ProDistribution: Added NSFileRepoConnector
+* ProDistribution: Added README.md
+* ProDistribution: Removed Extension:Drawio
+* ProDistribution: Removed preceeding empty line in LocalSettings.BlueSpiceProDistribution.php
+* ProDistribution: Replace drawio with drawioedit and nativesvg extension
+* ProDistribution: Update .gitmodules
+* ProDistribution: Updated Extension:HeaderTabs
+* ProDistribution: Updated gitmodule install description
+
+== BlueSpice 2.27.0 beta ==
+
+BlueSpice 2.27.0-beta is a minor and maintenance release.
+This is a beta release and not recommended for use in production
 
 === BlueSpice Foundation ===
 AJAXInterface: quickfix to make ajax functions available
@@ -251,6 +543,8 @@ Portlets: Added API portlet
 * Daniel Vogel
 * Leonid Verhovskij
 * Benedikt Hofmann
+* Gerhard Diller
+* Dejan Savuljesku
 
 ====Design & Testing====
 * Anja Ebersbach
@@ -268,9 +562,11 @@ Portlets: Added API portlet
 * Sabine Gürtler
 * Thomas Schnakenberg
 * Sabrina Dürr
+* Tobias Kornprobst
 
 ====Contributors====
 * Aaron Schulz
+* addshore
 * Albert221
 * Antoine Musso
 * Aude
@@ -281,16 +577,21 @@ Portlets: Added API portlet
 * Florianschmidtwelzow
 * Frederic Mohr
 * Gergő Tisza
+* itSpiderman
 * Justin Du
 * Legoktm
 * MaxSem
+* MtDu
 * Ori Livneh
 * Paladox
+* Purodha
 * Raimond Spekking
 * Reedy
+* Rohitt Vashishtha
 * Siebrand Mazeland
 * TGC
 * Umherirrender
+* withoutaname
 * Yuki Shira
 
 ====Translation====
