@@ -27,9 +27,8 @@ class SpecialCredits extends BsSpecialPage {
 			'Mathias Scheer', 'Thomas Lorenz', 'Tobias Weichart', 'Robert Vogel',
 			'Erwin Forster', 'Karl Waldmannstetter', 'Daniel Lynge', 'Tobias Davids',
 			'Patric Wirth', 'Stephan Muggli', 'Stefan Widmann', 'Jan Göttlich',
-			'Benedikt Hofmann', 'Daniel Vogel', 'Leon Verhovskji', 'Gerhard Diller',
-			'Mannfred Dennerlein', 
-			
+			'Benedikt Hofmann', 'Daniel Vogel', 'Leonid Verhovskij', 'Gerhard Diller',
+			'Mannfred Dennerlein', 'Dejan Savuljesku'
 		);
 		$aDesignAndTesting = array(
 			'Anja Ebersbach', 'Richard Heigl', 'Nathalie Köpff', 'Michael Rödl',
@@ -38,11 +37,11 @@ class SpecialCredits extends BsSpecialPage {
 			'Thomas Schnakenberg', 'Sabrina Dürr', 'Tobias Kornprobst'
 		);
 		$aContributors = array(
-			'Aaron Schulz','Albert221','Antoine Musso','Aude', 'Brad Jorsch',
+			'Aaron Schulz', 'addshore', 'Albert221','Antoine Musso', 'Aude', 'Brad Jorsch',
 			'Chad Horohoe', 'Demon','Florian','Florianschmidtwelzow',
-			'Frederic Mohr','Gergő Tisza','Justin Du','Legoktm','MaxSem',
-			'Ori Livneh','Paladox','Raimond Spekking', 'Reedy',
-			'Siebrand Mazeland', 'Yuki Shira', 'TGC', 'Umherirrender'
+			'Frederic Mohr','Gergő Tisza', 'itSpiderman', 'Justin Du','Legoktm','MaxSem',
+			'MtDu', 'Ori Livneh','Paladox','Purodha', 'Raimond Spekking', 'Reedy',
+			'Rohitt Vashishtha', 'Siebrand Mazeland', 'Yuki Shira', 'TGC', 'Umherirrender', 'withoutaname'
 		);
 		$aTranslation = array(
 			'Siebrand Mazeland', 'Raimond Spekking', 'Stephan Muggli'
