@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Subi"
+			"Subi",
+			"Gorkaazk"
 		]
 	},
 	"bs-ns_main": "(Orrialdeak)",
 	"bs-ns_all": "(denak)",
-	"bs-userbar_loginswitch_login": "Saioa hasi",
+	"bs-userbar_loginswitch_login": "Hasi saioa",
 	"bs-years-duration": "{{PLURAL:$1|urte bat|$1 urte}}",
 	"bs-months-duration": "{{PLURAL:$1|hilabete bat|$1 hilabete}}",
 	"bs-weeks-duration": "{{PLURAL:$1|aste bat|$1 aste}}",
