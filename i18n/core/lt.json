@@ -35,6 +35,7 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "Rodyti klaidos informaciją",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Paslėpti klaidos informaciją",
 	"bs-viewtagerrorlist-legend": "$1 - Klaida",
+	"bs-readonly": "Duomenų bazė šiuo metu yra užrakinta naujiems įrašams ar kitiems keitimams, tikriausiai duomenų bazės techninei profilaktikai, po kurios viskas vėl veiks kaip įprasta. Užrakinusiojo sistemos administratoriaus pateiktas paaiškinimas: $1",
 	"bs-imageofotheruser": "Jūs negalite įkelti paveikslėlį kitam vartotojui.",
 	"bs-pref-sortalph": "Rūšiuoti vardus pagal abėcėlę",
 	"bs-permissionerror": "Leidimo klaida!",
@@ -71,6 +72,12 @@
 	"bs-pref-deleteduserimage": "Ištrinto vartotojo avataras:",
 	"bs-pref-bspinginterval": "Ping intervalas (sekundėmis):",
 	"bs-pref-testmode": "Įjungti bandymo režimą",
+	"bs-tag-input-desc": "Elemento turinio reikšmė",
+	"bs-tag-param-desc": "Elemento atributo '$1' reikšmė",
+	"bs-parser-error-invalid-title": "Neleistinas pavadinimas: $1",
+	"bs-validator-error-title-does-not-exist": "Puslapis neegzistuoja: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Puslapis neleistinas: $1",
+	"bs-exttype-bluespice": "BlueSpice plėtiniai",
 	"bs-export-menu-print-text": "Spausdinti",
 	"bs-export-menu-print-title": "Rodo šio puslapio versiją spausdinimui"
 }
