@@ -8,6 +8,7 @@
 	"bs-upload-uploadbuttontext": "Naršyti",
 	"bs-upload-uploadfilefieldlabel": "Failo pavadinimas",
 	"bs-upload-uploadfileemptytext": "Įterpti naują failą...",
+	"bs-upload-uploaddestfilelabel": "Tikslo failo pavadinimas",
 	"bs-upload-allowedfiletypesare": "Galimi failų tipai yra:",
 	"bs-upload-license": "Licencija",
 	"bs-upload-uploadwatchthislabel": "Stebėti šį failą",
