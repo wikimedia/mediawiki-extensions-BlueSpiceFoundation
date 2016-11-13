@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"bs-deferred-action-status-pending": "Очікування.",
@@ -14,5 +15,9 @@
 	"bs-deferred-batch-progress-desc": "Прогрес",
 	"bs-deferred-batch-actions": "Дії",
 	"bs-deferred-batch-description": "Опис",
-	"bs-deferred-batch-status": "Статус"
+	"bs-deferred-batch-status": "Статус",
+	"bs-deferred-action-apiaddcategories-description": "Додати категорії до «$1».",
+	"bs-deferred-action-apiremovecategories-description": "Вилучити категорії з «$1».",
+	"bs-deferred-action-apisetcategories-description": "Встановити категорії для «$1».",
+	"bs-deferred-action-apimovepage-description": "Перейменувати «$1» на «$2»."
 }

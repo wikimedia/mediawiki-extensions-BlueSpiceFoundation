@@ -83,5 +83,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Недозволений простір назв: $1",
 	"bs-validator-error-title-does-not-exist": "Сторінка не існує: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Сторінка не дозволена: $1",
-	"bs-exttype-bluespice": "Розширення BlueSpice"
+	"bs-exttype-bluespice": "Розширення BlueSpice",
+	"bs-export-menu-print-text": "Друк",
+	"bs-export-menu-print-title": "Відтворює версію сторінки, доступну для друку"
 }
