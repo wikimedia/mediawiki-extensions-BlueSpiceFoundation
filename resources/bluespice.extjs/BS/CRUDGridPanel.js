@@ -202,17 +202,13 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.grdMain.getSelectionModel().deselectAll();
 	},
 
-	onActionEditClick:function(grid, rowIndex, colIndex) {
-		this.grdMain.getSelectionModel().select(
-			this.grdMain.getStore().getAt( rowIndex )
-		);
+	onActionEditClick:function( view, rowIndex, colIndex, item, e, record, row ) {
+		this.grdMain.getSelectionModel().select( record );
 		this.onBtnEditClick( this.btnEdit, {} );
 	},
 
-	onActionRemoveClick:function(grid, rowIndex, colIndex) {
-		this.grdMain.getSelectionModel().select(
-			this.grdMain.getStore().getAt( rowIndex )
-		);
+	onActionRemoveClick:function(view, rowIndex, colIndex, item, e, record, row ) {
+		this.grdMain.getSelectionModel().select( record );
 		this.onBtnRemoveClick( this.btnRemove, {} );
 	},
 
