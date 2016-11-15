@@ -74,6 +74,36 @@
 		}
 	});
 
+	/**
+	 * There is a bug in our version of ExtJS: When having a "Ext.grid.Panel"
+	 * with an "Ext.grid.feature.Grouping" and the user has collapsed one or
+	 * more groups, then in the "handler"-callback of an
+	 * "Ext.grid.column.Action" the passed record/rowIndex will be wrong!
+	 * This bug got probably fixed in version "4.2.2.1144", wich is
+	 * unfortunately not available for non-support-subscribers of Sencha Inc.
+	 * Therefore we implement this bugfix here and wait for a future update.
+	 * See also https://www.sencha.com/forum/showthread.php?264961-Grid-Grouping-Bug&p=973054&viewfull=1#post973054
+	 */
+	Ext.override( Ext.view.Table, {
+		getRecord: function ( node ) {
+			node = this.getNode( node );
+			if ( node ) {
+				return this.dataSource.data.get(
+					node.getAttribute( 'data-recordId' )
+				);
+			}
+		},
+		indexInStore: function ( node ) {
+			node = this.getNode( node, true );
+			if ( !node && node !== 0 ) {
+				return -1;
+			}
+			return this.dataSource.indexOf(
+				this.getRecord( node )
+			);
+		}
+	});
+
 	/*
 	//TODO: Find a way to have BS.Window and BS.Panel shorthands for
 	//mw.message.plain() and this.getId()+'-SubComponent'
