@@ -121,7 +121,8 @@
             ],
             "dependencies": [
                 "ext.bluespice.extjs.theme.ux",
-                "ext.bluespice.extjs.theme"
+                "ext.bluespice.extjs.theme",
+                "mediawiki.Title"
             ],
             "group": "bsextjs"
         },
