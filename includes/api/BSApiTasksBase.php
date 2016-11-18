@@ -111,6 +111,11 @@ abstract class BSApiTasksBase extends BSApiBase {
 					catch ( Exception $e ) {
 						$oResult->success = false;
 						$oResult->message = $e->getMessage();
+						$mCode = method_exists( $e, 'getCodeString' ) ? $e->getCodeString() : $e->getCode();
+						if( $e instanceof DBError ) {
+							$mCode = 'dberror'; //TODO: error code for subtypes like DBQueryError or DBReadOnlyError?
+						}
+						$oResult->errors[$mCode] = $e->getMessage();
 					}
 				}
 
