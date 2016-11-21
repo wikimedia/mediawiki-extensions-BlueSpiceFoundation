@@ -512,8 +512,6 @@
         "ViewUserMiniProfile": "includes/outputhandler/views/view.UserMiniProfile.php",
         "ViewWidget": "includes/outputhandler/views/view.Widget.php",
         "ResourceLoaderExtJSModule": "includes/resourceloader/ResourceLoaderExtJSModule.php",
-        "DatabaseOracleBase": "includes/db/DatabaseOracleBase.php",
-        "BSOracleHooks": "includes/db/BSOracleHooks.php",
         "SpecialDiagnostics": "includes/specials/SpecialDiagnostics.class.php",
         "SpecialCredits": "includes/specials/SpecialCredits.class.php",
         "BsPARAM": "includes/Common.php",
