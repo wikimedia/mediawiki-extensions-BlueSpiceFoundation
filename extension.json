@@ -1,6 +1,7 @@
 {
 	"name": "BlueSpice",
-	"version": "2.27.0",
+	"version": "2.27.1",
+	"license-name": "GPL-2.0+",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],
@@ -369,7 +370,8 @@
 		"ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
 		"UserAddGroup": "BsGroupHelper::addTemporaryGroupToUserHelper",
 		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",
-				"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete"
+		"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete",
+		"UnitTestsList": "BsCoreHooks::onUnitTestsList"
 	},
 	"config": {
 		"BlueSpiceExtInfo": {
@@ -530,7 +532,10 @@
 		"BSEntityRegistry": "includes/EntityRegistry.php",
 		"BSEntityConfig": "includes/entityconfigs/EntityConfig.php",
 		"BSEntityContent": "includes/content/EntityContent.php",
-		"BSEntityContentHandler": "includes/content/EntityContentHandler.php"
+		"BSEntityContentHandler": "includes/content/EntityContentHandler.php",
+		"BSPageFixturesProvider": "tests/BSPageFixturesProvider.php",
+		"BSApiExtJSStoreTestBase": "tests/BSApiExtJSStoreTestBase.php",
+		"BSApiTasksTestBase": "tests/BSApiTasksTestBase.php"
 	},
 	"bsgConfigFiles": [],
 	"load_composer_autoloader": true,
