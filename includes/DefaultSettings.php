@@ -32,21 +32,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 1 );
 }
 
-//Default settings needed for BlueSpice
-$wgNamespacesWithSubpages[NS_MAIN] = true;
-$wgApiFrameOptions = 'SAMEORIGIN';
-$wgRSSUrlWhitelist = array(
-	"http://blog.blue-spice.org/feed/",
-	"http://blog.bluespice.com/feed/",
-	"http://blog.hallowelt.com/feed/",
-);
-$wgExternalLinkTarget = '_blank';
-$wgCapitalLinkOverrides[ NS_FILE ] = false;
-$wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
-$wgUrlProtocols[] = "file://";
-$wgVerifyMimeType = false;
-$wgAllowJavaUploads = true;
-
 /*
  * If this global is set to an array like
  * $bsgTestSystem = array(
@@ -189,22 +174,6 @@ $bsgPermissionConfig = array(
 $bsgSystemNamespaces = array(
 	//1599 => 'NS_COOL_STUFF'
 );
-
-/**
- * PHP config files registered here will be included on "SetupAfterCache"
- * time. Access to all global config variables need to be in the form of
- * $GLOBALS['wg...'] as the inclusion will be done in callback function scope
- * rather than in global scope.
- */
-$bsgConfigFiles = array(
-	//'extensionname' => 'path/to/file.php'
-
-	//Pre-registering for BC; Should be removed in future releases
-	'GroupManager' => BSCONFIGDIR . DS . 'gm-settings.php',
-	'NamespaceManager' => BSCONFIGDIR . DS . 'nm-settings.php',
-	'PermissionManager' => BSCONFIGDIR . DS . 'pm-settings.php',
-);
-
 
 $wgResourceLoaderLESSVars = array_merge( $wgResourceLoaderLESSVars, array(
 	'bs-color-primary' => '#3e5389', //blue
