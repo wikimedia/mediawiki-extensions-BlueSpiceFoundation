@@ -15,7 +15,17 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 	queryMode: 'local',
 	emptyText: mw.message('bs-extjs-categoryboxselect-emptytext').plain(),
 	delimiter: '|',
+
 	deferredSetValueConf: false,
+	showTreeTrigger: false,
+
+	constructor: function( cfg ) {
+		if( cfg.showTreeTrigger ) {
+			cfg.trigger2Cls = Ext.baseCSSPrefix + 'form-search-trigger bs-form-tree-trigger';
+		}
+		this.callParent( [cfg] );
+	},
+
 	initComponent: function() {
 		this.store = Ext.create( 'Ext.data.JsonStore', {
 			proxy: {
@@ -74,5 +84,67 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 			callback: callback,
 			value: value
 		};
+	},
+
+	onTrigger2Click : function( event ){
+        //lazy loading, as this trigger is optional
+        Ext.require( 'BS.tree.Categories', this.showTree, this );
+	},
+
+    wdTree: null,
+	showTree: function() {
+        if( !this.wdTree ) {
+            var categoryTree =  new BS.tree.Categories({
+                width: 250,
+                height: 300
+            });
+            categoryTree.on( 'itemclick', this.onTreeItemClick, this );
+            this.wdTree = new Ext.Window({
+                title: mw.message('bs-extjs-categorytree-title').plain(),
+                x: this.getX() + this.getWidth(),
+                y: this.getY() - 175,
+				closeAction: 'hide',
+                items: [
+                    categoryTree
+                ]
+            });
+
+            this.wireUpWithContainerWindow();
+        }
+
+        this.wdTree.show();
+	},
+
+    onTreeItemClick: function( tree, record, item, index, e, eOpts ) {
+		if ( mw.config.get( 'BSInsertCategoryWithParents' ) ) {
+			this.addValuesFromRecord( record );
+		}
+		else {
+			this.addValue( [ record.data.text ] );
+		}
+	},
+
+	addValuesFromRecord: function ( record ) {
+		//parentNode is null if there is no parent, internalId "src" is the root of the categories
+		if ( typeof ( record.parentNode ) !== "null" && record.parentNode.internalId !== "src" ) {
+			this.addValuesFromRecord( record.parentNode );
+		}
+		this.addValue( [ record.data.text ] );
+	},
+
+    /**
+	 * This is a little bit tricky. If our CategoryBoxSelect field is within a window we need to close the tree
+	 * window when the parent window closes. As the CategoryBoxSelect is not necessarily in a window we need some
+	 * checks here
+     */
+    wireUpWithContainerWindow: function() {
+		var parentWindow = this.up( 'window' );
+		if( !parentWindow ) {
+			return;
+		}
+
+		parentWindow.on( 'close', function() {
+			this.wdTree.close();
+		}, this );
 	}
 });

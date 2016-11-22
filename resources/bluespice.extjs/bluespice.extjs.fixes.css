@@ -104,3 +104,7 @@ body.x-body {
 .bs-extjs-cssisready {
 	display: inline;
 }
+
+.bs-form-tree-trigger {
+	background-image: url(images/tree-trigger.png);
+}
