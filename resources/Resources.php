@@ -146,7 +146,8 @@ $wgResourceModules['ext.bluespice.extjs'] = array(
 		'bs-extjs-title-warning',
 		'bs-extjs-filter-bool-yes',
 		'bs-extjs-filter-bool-no',
-		'bs-extjs-categoryboxselect-emptytext'
+		'bs-extjs-categoryboxselect-emptytext',
+		'bs-extjs-categorytree-title'
 	),
 	'dependencies' => array(
 		'ext.bluespice.extjs.theme.ux',
