@@ -129,7 +129,7 @@ class BsExtensionManager {
 	}
 
 	protected static function makeExtensionConfig( $sExtName = "", $aConfig = array() ) {
-		global $wgBlueSpiceExtInfo;
+		global $bsgBlueSpiceExtInfo;
 		if( !isset( $aConfig['className'] ) ) {
 			$aConfig['className'] = $sExtName;
 		}
@@ -144,12 +144,12 @@ class BsExtensionManager {
 		}
 		$aConfig['status'] = str_replace(
 			'default',
-			$wgBlueSpiceExtInfo['status'],
+			$bsgBlueSpiceExtInfo['status'],
 			$aConfig['status']
 		);
 		$aConfig['package'] = str_replace(
 			'default',
-			$wgBlueSpiceExtInfo['package'],
+			$bsgBlueSpiceExtInfo['package'],
 			$aConfig['package']
 		);
 		return $aConfig;

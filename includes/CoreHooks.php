@@ -29,7 +29,6 @@ class BsCoreHooks {
 		 */
 
 		global $bsgConfigFiles;
-
 		foreach( $bsgConfigFiles as $sConfigFileKey => $sConfigFilePath ) {
 			if ( file_exists( $sConfigFilePath ) ) {
 				include( $sConfigFilePath );
@@ -59,8 +58,8 @@ class BsCoreHooks {
 	 * @param Array $aSoftware: The array of software in format 'name' => 'version'.
 	 */
 	public static function onSoftwareInfo( &$aSoftware ) {
-		global $wgBlueSpiceExtInfo;
-		$aSoftware['[http://bluespice.com/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
+		global $bsgBlueSpiceExtInfo;
+		$aSoftware['[http://bluespice.com/ ' . $bsgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $bsgBlueSpiceExtInfo['version'];
 		return true;
 	}
 

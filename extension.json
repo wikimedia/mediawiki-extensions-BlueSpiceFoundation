@@ -371,6 +371,7 @@
 				"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete"
     },
     "config": {
+        "_prefix": "bsg",
         "BlueSpiceExtInfo": {
             "name": "BlueSpice",
             "version": "2.27.0",
@@ -381,7 +382,8 @@
             "author": [
                 "[http://www.hallowelt.com Hallo Welt! GmbH]"
             ]
-        }
+        },
+        "ConfigFiles": []
     },
     "AutoloadClasses": {
         "BsCore": "includes/Core.class.php",
@@ -520,7 +522,6 @@
         "BSEntityContent": "includes/content/EntityContent.php",
         "BSEntityContentHandler": "includes/content/EntityContentHandler.php"
     },
-    "bsgConfigFiles": [],
     "load_composer_autoloader": true,
     "manifest_version": 1,
     "callback": "BsCoreHooks::onRegistry"

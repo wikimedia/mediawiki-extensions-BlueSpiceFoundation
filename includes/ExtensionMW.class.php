@@ -79,12 +79,12 @@ abstract class BsExtensionMW extends ContextSource {
 	public function setup( $sExtName = "", $aConfig = array() ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 
-		global $wgExtensionCredits, $wgBlueSpiceExtInfo;
+		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
 			// Extension credits that will show up on Special:Version
 		if( !empty( $aConfig['deprecatedSince'] ) ) {
 			$sVersion = str_replace(
 				'default',
-				$wgBlueSpiceExtInfo['version'],
+				$bsgBlueSpiceExtInfo['version'],
 				$this->mInfo[EXTINFO::VERSION]
 			);
 
