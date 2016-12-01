@@ -101,3 +101,7 @@ body.x-body {
 .x-boundlist-item {
 	font-size: 13px;
 }
+
+.bs-form-tree-trigger {
+	background-image: url(images/tree-trigger.png);
+}
