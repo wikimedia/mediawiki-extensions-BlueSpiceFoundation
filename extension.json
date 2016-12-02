@@ -102,6 +102,7 @@
                 "bs-extjs-confirmNavigationTitle",
                 "bs-extjs-confirmNavigationText",
                 "bs-extjs-allns",
+                "bs-extjs-mainns",
                 "bs-extjs-upload",
                 "bs-extjs-browse",
                 "bs-extjs-uploading",

@@ -9,11 +9,9 @@ Ext.define( 'BS.store.LocalNamespaces', {
 	excludeIds: [],
 
 	constructor: function( config ){
-		config = Ext.merge({
-			includeAll: false,
-			excludeIds: [],
-			data: this.getLocalNamespaces()
-		}, config );
+		this.includeAll = config.includeAll || this.includeAll;
+		this.excludeIds = config.excludeIds || this.excludeIds;
+		this.data = config.data || this.getLocalNamespaces();
 		this.callParent( [config] );
 	},
 	getLocalNamespaces: function() {
@@ -34,7 +32,7 @@ Ext.define( 'BS.store.LocalNamespaces', {
 			var namespace = {};
 			namespace.id = +id;
 			if ( namespace.id === 0 ) {
-				namespace.namespace = mw.message( 'blanknamespace' ).plain();
+				namespace.namespace = mw.message( 'bs-extjs-mainns' ).plain();
 			} else {
 				namespace.namespace = mw.config.get( "wgFormattedNamespaces" )[id];
 			}

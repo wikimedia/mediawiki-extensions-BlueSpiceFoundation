@@ -33,6 +33,7 @@
 	"bs-extjs-confirmNavigationTitle": "Dem Link folgen",
 	"bs-extjs-confirmNavigationText": "Möchtest du wirklich diesem Link folgen? Alle dynamischen Einstellungen, wie Filter und Sortierung, auf dieser Seite gehen dabei verloren.",
 	"bs-extjs-allns": "(alle)",
+	"bs-extjs-mainns": "(Seiten)",
 	"bs-extjs-filters": "Filter",
 	"bs-extjs-filter-equals": "ist",
 	"bs-extjs-filter-equals-not": "ist nicht",
