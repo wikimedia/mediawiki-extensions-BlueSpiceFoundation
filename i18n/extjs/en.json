@@ -33,6 +33,7 @@
 	"bs-extjs-confirmNavigationTitle": "Follow link",
 	"bs-extjs-confirmNavigationText": "Do you really want to follow this link? All dynamic settings like filtering or sorting on the current page will be lost.",
 	"bs-extjs-allns": "(all)",
+	"bs-extjs-mainns": "(Main)",
 	"bs-extjs-filters": "Filters",
 	"bs-extjs-filter-equals": "equals",
 	"bs-extjs-filter-equals-not": "equals not",
