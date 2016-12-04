@@ -35,6 +35,7 @@
 	"bs-extjs-confirmNavigationTitle": "跟随链接",
 	"bs-extjs-confirmNavigationText": "确认要打开该链接？所有在当前页面下进行的动态设置，如筛选或排序都会丢失。",
 	"bs-extjs-allns": "（所有）",
+	"bs-extjs-mainns": "（主）",
 	"bs-extjs-filters": "过滤器",
 	"bs-extjs-filter-equals": "等于",
 	"bs-extjs-filter-equals-not": "不等于",

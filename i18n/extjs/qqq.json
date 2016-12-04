@@ -36,7 +36,7 @@
 	"bs-extjs-confirmNavigationTitle": "Title for prompt that warns you if you want to follow a link but have unsaved changes.\n\nFollowed by the following prompt:\n* {{msg-mw|Bs-extjs-confirmNavigationText}}",
 	"bs-extjs-confirmNavigationText": "Text for prompt that warns you if you want to follow a link but have unsaved changes.\n\nPreceded by the title {{msg-mw|Bs-extjs-confirmNavigationTitle}}.",
 	"bs-extjs-allns": "Selector for all namespaces in namespace combo boxes.\n{{Identical|All}}",
-	"bs-extjs-mainns": "Selector for main namespace in namespace combo boxes.\n{{Identical|Blanknamespace}}",
+	"bs-extjs-mainns": "Selector for main namespace in namespace combo boxes.\n{{Identical|Main}}",
 	"bs-extjs-filters": "Label for filters\n{{Identical|Filter}}",
 	"bs-extjs-filter-equals": "Label for equals\n{{Identical|equals}}",
 	"bs-extjs-filter-equals-not": "Label for equals not\n{{Identical|equals not}}",
