@@ -167,6 +167,7 @@ class BsStringHelper {
 			case self::FILTER_EQUALSNOT:
 				return $sHaystack !== $sNeedle;
 		}
+		return false;
 	}
 
 }
