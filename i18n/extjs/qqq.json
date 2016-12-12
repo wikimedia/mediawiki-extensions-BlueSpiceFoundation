@@ -50,5 +50,6 @@
 	"bs-extjs-filter-bool-no": "Label for a filter option that fitlers for datasets where the value of the field is boolean false\n{{Identical|No}}",
 	"bs-extjs-title-success": "Window title for success\n{{Identical|Success}}",
 	"bs-extjs-title-warning": "Window title for warning\n{{Identical|Warning}}",
-	"bs-extjs-categoryboxselect-emptytext": "The placeholder text of an input field that allows the definition of categories"
+	"bs-extjs-categoryboxselect-emptytext": "The placeholder text of an input field that allows the definition of categories",
+	"bs-extjs-categorytree-title": "The title of a panel containing a tree view of the wiki's categories"
 }
