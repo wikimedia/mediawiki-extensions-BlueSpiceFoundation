@@ -51,5 +51,6 @@
 	"bs-extjs-filter-bool-no": "non",
 	"bs-extjs-title-success": "Réussi",
 	"bs-extjs-title-warning": "Avertissement",
-	"bs-extjs-categoryboxselect-emptytext": "Ajouter une catégorie"
+	"bs-extjs-categoryboxselect-emptytext": "Ajouter une catégorie",
+	"bs-extjs-categorytree-title": "Catégories"
 }

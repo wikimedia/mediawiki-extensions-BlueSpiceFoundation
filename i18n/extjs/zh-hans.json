@@ -49,5 +49,6 @@
 	"bs-extjs-filter-bool-no": "否",
 	"bs-extjs-title-success": "成功",
 	"bs-extjs-title-warning": "警告",
-	"bs-extjs-categoryboxselect-emptytext": "添加分类"
+	"bs-extjs-categoryboxselect-emptytext": "添加分类",
+	"bs-extjs-categorytree-title": "分类"
 }
