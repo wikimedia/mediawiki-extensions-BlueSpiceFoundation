@@ -65,6 +65,11 @@
 	content: "\e961";
 }
 
+.bs-icon-arrow-o-up:before{
+	content: "\f01b";
+	font-family: 'fontawesome' !important;
+}
+
 .bs-icon-arrow-down:before {
 	content: '\f078';
 	font-family: 'fontawesome' !important;
