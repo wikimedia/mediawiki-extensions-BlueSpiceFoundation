@@ -44,5 +44,6 @@
 	"bs-extjs-filters": "필터",
 	"bs-extjs-filter-bool-yes": "예",
 	"bs-extjs-filter-bool-no": "아니오",
-	"bs-extjs-categoryboxselect-emptytext": "분류 추가"
+	"bs-extjs-categoryboxselect-emptytext": "분류 추가",
+	"bs-extjs-categorytree-title": "분류"
 }
