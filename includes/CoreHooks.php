@@ -642,17 +642,7 @@ class BsCoreHooks {
 	 * @return boolean Always true to keep hook running
 	 */
 	public static function onUnitTestsList( &$files ) {
-		$oIterator = new RecursiveIteratorIterator(
-			new RecursiveDirectoryIterator( dirname( __DIR__ ) . '/tests/' )
-		);
-		/**
-		 * @var SplFileInfo $oFileInfo
-		 */
-		foreach ( $oIterator as $oFileInfo ) {
-			if ( substr( $oFileInfo->getFilename(), -8 ) === 'Test.php' ) {
-				$files[] = $oFileInfo->getPathname();
-			}
-		}
+		$files[] = dirname( __DIR__ ) . '/tests/';
 
 		return true;
 	}

@@ -370,7 +370,8 @@
         "ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
         "UserAddGroup": "BsGroupHelper::addTemporaryGroupToUserHelper",
         "ExtensionTypes": "BsCoreHooks::onExtensionTypes",
-				"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete"
+        "PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete",
+        "UnitTestsList": "BsCoreHooks::onUnitTestsList"
     },
     "config": {
         "_prefix": "bsg",
@@ -522,7 +523,10 @@
         "BSEntityRegistry": "includes/EntityRegistry.php",
         "BSEntityConfig": "includes/entityconfigs/EntityConfig.php",
         "BSEntityContent": "includes/content/EntityContent.php",
-        "BSEntityContentHandler": "includes/content/EntityContentHandler.php"
+        "BSEntityContentHandler": "includes/content/EntityContentHandler.php",
+        "BSPageFixturesProvider": "tests/BSPageFixturesProvider.php",
+        "BSApiExtJSStoreTestBase": "tests/BSApiExtJSStoreTestBase.php",
+        "BSApiTasksTestBase": "tests/BSApiTasksTestBase.php"
     },
     "load_composer_autoloader": true,
     "manifest_version": 1,

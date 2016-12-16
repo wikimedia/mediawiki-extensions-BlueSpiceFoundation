@@ -27,7 +27,7 @@
  */
 
 /**
- * Provides common tasks that can pe performed on a WikiPage
+ * Provides common tasks that can be performed on a WikiPage
  * @package BlueSpice_Foundation
  */
 class BSApiWikiPageTasks extends BSApiTasksBase {
@@ -170,20 +170,18 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//Patern for Category tags
+		//Pattern for Category tags
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):(.*?)\]\]#si";
 		$matches = [];
-		$matchCount = 0;
 		$matchCount = preg_match_all($sPattern, $sText, $matches, PREG_PATTERN_ORDER);
 
 		$aCategories = [];
 		//normalize
-		foreach ($matches[2] as $match){
-			$sMatch = preg_replace('!_+!', ' ', $match);
-			$sMatch = preg_replace('!\s+!', ' ', $sMatch);
-			array_push($aCategories, $sMatch);
+		foreach ( $matches[2] as $match ){
+			$oCategoryTitle = Title::newFromText( $match, NS_CATEGORY );
+			array_push( $aCategories, $oCategoryTitle->getText() );
 		}
 
 		$oResponse->success = true;
@@ -276,6 +274,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			DataUpdate::runUpdates( $oUpdates );
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
+			$oResponse->payload = $this->makeCategoryTaskPayload( $oTitle->getArticleID() );
 		}
 
 		return $oResponse;
@@ -398,7 +397,13 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		return $oTitle;
 	}
 
-	public function needsToken() {
-		return parent::needsToken();
+	protected function makeCategoryTaskPayload( $pageId ) {
+		$oTitle = Title::newFromID( $pageId );
+		$result = $this->task_getExplicitCategories( (object)[ 'page_id' => $pageId ], [] );
+		return array(
+			'page_id' => $oTitle->getArticleID(),
+			'page_prefixed_text' => $oTitle->getPrefixedText(),
+			'categories' => $result->payload
+		);
 	}
 }
