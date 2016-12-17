@@ -2,6 +2,10 @@
 
 /**
  * @group medium
+ * @group API
+ * @group Database
+ * @group BlueSpice
+ * @group BlueSpiceFoundation
  *
  * Class BSApiWikiPageTasksTest
  */
