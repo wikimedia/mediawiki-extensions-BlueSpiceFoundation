@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Reza1615",
-			"Alirezaaa"
+			"Alirezaaa",
+			"Arash.pt"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -45,5 +46,6 @@
 	"bs-extjs-filter-less-than": "کمتر از",
 	"bs-extjs-title-success": "موفق",
 	"bs-extjs-title-warning": "هشدار",
-	"bs-extjs-categoryboxselect-emptytext": "افزودن رده"
+	"bs-extjs-categoryboxselect-emptytext": "افزودن رده",
+	"bs-extjs-categorytree-title": "رده‌ها"
 }
