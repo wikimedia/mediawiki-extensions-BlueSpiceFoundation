@@ -49,5 +49,6 @@
 	"bs-extjs-filter-bool-no": "nej",
 	"bs-extjs-title-success": "Lyckades",
 	"bs-extjs-title-warning": "Varning",
-	"bs-extjs-categoryboxselect-emptytext": "Lägg till en kategori"
+	"bs-extjs-categoryboxselect-emptytext": "Lägg till en kategori",
+	"bs-extjs-categorytree-title": "Kategorier"
 }
