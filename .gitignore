@@ -1,8 +1,8 @@
 *~
 *.kate-swp
-.*.swp
-data/
-config/
+*.swp
+/data/
+/config/
 node_modules/**
 vendor/**
 

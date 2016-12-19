@@ -1,0 +1,14 @@
+{
+  "pages" : [
+    [ "Test", "Lorem ipsum dolor sit amet" ],
+    [ "A B C", "Lorem ipsum dolor sit amet" ],
+    [ "a b c", "Lorem ipsum dolor sit amet" ],
+    [ "テスト", "Lorem ipsum dolor sit amet" ],
+    [ "தமிழ்மொழி", "Lorem ipsum dolor sit amet" ],
+    [ "የከፈተውን", "Lorem ipsum dolor sit amet" ],
+    [ "Зарегистрируйтесь сейчас", "Lorem ipsum dolor sit amet" ],
+    [ "Template:Hello World", "Lorem ipsum dolor sit amet" ],
+    [ "Template:テスト", "Lorem ipsum dolor sit amet" ],
+    [ "Help:Test", "Lorem ipsum dolor sit amet" ]
+  ]
+}
