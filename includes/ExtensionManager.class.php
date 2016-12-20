@@ -23,6 +23,11 @@ class BsExtensionManager {
 	protected static $aContexts = array();
 	protected static $aActiveContexts = array();
 
+	/**
+	 * @deprecated since version 2.27.0
+	 * @param string $sKey Context key
+	 * @return string normalized key
+	 */
 	public static function addContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		wfDeprecated( __METHOD__, '2.27.0' );
@@ -37,6 +42,10 @@ class BsExtensionManager {
 		return $sKey;
 	}
 
+	/**
+	 * @deprecated since version 2.27.0
+	 * @param string $sKey Context key
+	 */
 	public static function setContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		wfDeprecated( __METHOD__, '2.27.0' );
@@ -47,6 +56,11 @@ class BsExtensionManager {
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
+	/**
+	 * @deprecated since version 2.27.0
+	 * @param string $sKey Context key
+	 * @return bool
+	 */
 	public static function isContextActive( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		wfDeprecated( __METHOD__, '2.27.0' );
@@ -55,6 +69,10 @@ class BsExtensionManager {
 		return $bResult;
 	}
 
+	/**
+	 * @deprecated since version 2.27.0
+	 * @param string $sKey Context key
+	 */
 	public static function removeContext( $sKey ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		wfDeprecated( __METHOD__, '2.27.0' );
@@ -228,6 +246,7 @@ class BsExtensionManager {
 	 * "Extension.namespaces.php" file with "$wgExtensionMessagesFiles" as
 	 * described on https://www.mediawiki.org/wiki/Localisation#Namespaces
 	 *
+	 * @deprecated since version 2.27.0
 	 * @global array $wgExtraNamespaces
 	 * @param string $sCanonicalName
 	 * @param int $iBaseIndex
