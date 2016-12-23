@@ -180,6 +180,7 @@ Ext.define('BS.form.field.ItemList', {
 	},
 
 	setValue: function( data ) {
+		data = data || {};
 		this.gdItems.getStore().loadData( data );
 	}
 });
