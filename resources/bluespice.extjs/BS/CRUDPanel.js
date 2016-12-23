@@ -130,18 +130,15 @@ Ext.define( 'BS.CRUDPanel', {
 	setData: function( obj ) {
 		this.currentData = obj;
 	},
-	//return boolean if param exists, otherwise null
-	opPermitted: function ( operation ) {
-		switch( operation ) {
-			case 'create':
-				return this.operationPermissions.create;
-			case 'update':
-				return this.operationPermissions.update;
-			case 'delete':
-				return this.operationPermissions.delete;
-			default:
-				return null;
-		}
 
+	/**
+	* @return boolean if param exists, otherwise null
+	*/
+	opPermitted: function ( operation ) {
+		if( operation in this.operationPermissions ) {
+			return this.operationPermissions[operation];
+		} else {
+			return null;
+		}
 	}
 });
