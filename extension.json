@@ -76,7 +76,8 @@
 			"styles": [
 				"bluespice.extjs/bluespice.extjs.fixes.css",
 				"bluespice.extjs/bluespice.extjs.overrides.less",
-				"bluespice.extjs/bluespice.extjs.filerepogrid.css"
+				"bluespice.extjs/bluespice.extjs.filerepogrid.css",
+				"bluespice.extjs/bluespice.extjs.theme.less"
 			],
 			"messages": [
 				"bs-extjs-ok",
