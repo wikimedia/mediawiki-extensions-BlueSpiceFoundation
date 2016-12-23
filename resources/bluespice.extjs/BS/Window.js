@@ -52,6 +52,15 @@ Ext.define( 'BS.Window', {
 	show: function () {
 		this.setLoading( false );
 		this.callParent( arguments );
+
+		// (re)set position
+		if( !this.original_x ){
+			this.original_x = this.getX();
+		}
+		if( !this.original_y ){
+			this.original_y = this.getY();
+		}
+		this.setPosition( this.original_x, this.original_y, false );
 	},
 	onBtnOKClick: function () {
 		this.setLoading( true );
