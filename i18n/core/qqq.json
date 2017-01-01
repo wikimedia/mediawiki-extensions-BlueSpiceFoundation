@@ -5,7 +5,8 @@
 			"Shirayuki",
 			"Beta16",
 			"Mar(c)",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Umherirrender"
 		]
 	},
 	"bs-ns_main": "Label used in namespace dropdown lists for NS_MAIN.\n\nUsed in:\n* {{msg-mw|Bs-namespacemanager-willmove}}\n* {{msg-mw|Bs-namespacemanager-willmovesuffix}}\n{{Identical|Page}}",
@@ -80,7 +81,7 @@
 	"bs-pref-deleteduserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for deleted user avatar",
 	"bs-pref-bspinginterval": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for ping interval (in seconds)",
 	"bs-pref-testmode": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for activate test mode",
-	"specialpages-group-bluespice": "Used in [[Special:SpecialPages]], headline of BlueSpice section. Message is referenced to message of BlueSpice preference section.\n\nRefers to {{msg-mw|Prefs-base}}.",
+	"specialpages-group-bluespice": "{{doc-special-group|like=headline of BlueSpice section. Message is referenced to message of BlueSpice preference section.}}\n\nRefers to {{msg-mw|Prefs-base}}.",
 	"bs-tag-input-desc": "Description of the 'input' part of a tag extension. The 'input' is everything that is placed between the opening and the closing element of the tag extension",
 	"bs-tag-param-desc": "Description of a 'parameter' part of a tag extension. A 'parameter' is everything that is defined using attributes of the tag extension's element.\n\nParameters:\n* $1 - the name of the attribute",
 	"bs-parser-error-invalid-namespace": "Error message in case a string could not be parsed into a valid namespace id.\n\nParameters:\n* $1 - the original string value",
