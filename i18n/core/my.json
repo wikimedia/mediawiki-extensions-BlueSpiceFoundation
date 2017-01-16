@@ -5,6 +5,7 @@
 			"Ninjastrikers"
 		]
 	},
+	"bs-ns_main": "(စာမျက်နှာများ)",
 	"bs-ns_all": "(အားလုံး)",
 	"bs-extended-search-textfield-defaultvalue": "ရှာဖွေရန်...",
 	"bs-email-greeting-receiver": "{{GENDER:$1|မင်္ဂလာပါ ကို $2|မင်္ဂလာပါ မ|မင်္ဂလာပါ}}"
