@@ -67,4 +67,7 @@ class ResourceLoaderBSTemplateModule extends ResourceLoaderModule {
 		return $input;
 	}
 
+	public function getTargets() {
+		return [ 'desktop', 'mobile' ];
+	}
 }
