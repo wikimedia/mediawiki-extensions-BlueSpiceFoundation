@@ -1,0 +1,70 @@
+<?php
+/**
+ * ResourceLoader class for BSTemplates resource module for BlueSpice
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ * This file is part of BlueSpice for MediaWiki
+ * For further information visit http://bluespice.com
+ *
+ * @author     Patric Wirth <wirth@hallowelt.com>
+ * @version    2.27.0
+ * @package    BlueSpiceFoundation
+ * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
+ * @filesource
+ */
+
+class ResourceLoaderBSTemplateModule extends ResourceLoaderModule {
+	/**
+	 * Takes named BlueSpice templates by the module and returns an array mapping.
+	 * @return array of templates mapping template alias to content
+	 * @throws MWException
+	 */
+	public function getTemplates() {
+		$templates = parent::getTemplates();
+		foreach( BSTemplateHelper::getAllTemplates() as $sName => $sPath ) {
+			if ( is_int( $sName ) ) {
+				continue;
+			}
+			if ( file_exists( $sPath ) ) {
+				$content = file_get_contents( $sPath );
+				$templates[$sName] = $this->stripBom( $content );
+			} else {
+				$msg = __METHOD__ . ": template file not found: \"$sPath\"";
+				wfDebugLog( 'resourceloader', $msg );
+				throw new MWException( $msg );
+			}
+		}
+		return $templates;
+	}
+
+	/**
+	 * Takes an input string and removes the UTF-8 BOM character if present
+	 *
+	 * We need to remove these after reading a file, because we concatenate our files and
+	 * the BOM character is not valid in the middle of a string.
+	 * We already assume UTF-8 everywhere, so this should be safe.
+	 *
+	 * @return string input minus the intial BOM char
+	 */
+	protected function stripBom( $input ) {
+		if ( substr_compare( "\xef\xbb\xbf", $input, 0, 3 ) === 0 ) {
+			return substr( $input, 3 );
+		}
+		return $input;
+	}
+
+}

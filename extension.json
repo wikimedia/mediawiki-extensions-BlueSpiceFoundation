@@ -58,6 +58,9 @@
                 "bs-two-units-ago",
                 "bs-one-unit-ago",
                 "bs-now"
+            ],
+            "dependencies": [
+                "ext.bluespice.templates"
             ]
         },
         "ext.bluespice.extjs": {
@@ -312,6 +315,12 @@
             "localBasePath": "resources",
             "remoteExtPath": "BlueSpiceFoundation/resources",
             "scripts": "bluespice/bluespice.testsystem.js"
+        },
+        "ext.bluespice.templates": {
+            "class": "ResourceLoaderBSTemplateModule",
+            "targets": [
+                "mobile", "desktop"
+            ]
         }
     },
     "MessagesDirs": {
@@ -529,7 +538,9 @@
         "BSEntityContentHandler": "includes/content/EntityContentHandler.php",
         "BSPageFixturesProvider": "tests/BSPageFixturesProvider.php",
         "BSApiExtJSStoreTestBase": "tests/BSApiExtJSStoreTestBase.php",
-        "BSApiTasksTestBase": "tests/BSApiTasksTestBase.php"
+        "BSApiTasksTestBase": "tests/BSApiTasksTestBase.php",
+        "BSTemplateHelper": "includes/TemplateHelper.php",
+        "ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php"
     },
     "load_composer_autoloader": true,
     "manifest_version": 1,

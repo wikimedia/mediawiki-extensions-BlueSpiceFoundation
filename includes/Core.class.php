@@ -347,6 +347,9 @@ class BsCore {
 		$wgHooks['ParserBeforeStrip'][] = array( self::$oInstance, 'hideBehaviorSwitches' );
 		$wgHooks['ParserBeforeTidy'][] = array( self::$oInstance, 'recoverBehaviorSwitches' );
 
+		if( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
+			$wgHooks['EditPage::showEditForm:initial'] = [];
+		}
 		array_unshift(
 			$wgHooks['EditPage::showEditForm:initial'],
 			array( self::$oInstance, 'lastChanceBehaviorSwitches' )

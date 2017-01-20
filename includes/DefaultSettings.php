@@ -200,3 +200,11 @@ $wgResourceLoaderLESSVars = array_merge( $wgResourceLoaderLESSVars, array(
  * BsExtensionManager extension registration
  */
 $bsgExtensions = array();
+
+/**
+ * BsTemplateHelper template directory overwrite
+ * $bsgTemplates = array(
+ *    BSExtension.Template.Name": "$wgExtensionsDirectory/MyExtension/PathToTemplateDir",
+ * )
+ */
+$GLOBALS['bsgTemplates'] = array();
