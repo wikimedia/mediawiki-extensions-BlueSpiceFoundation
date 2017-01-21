@@ -175,7 +175,7 @@ $bsgSystemNamespaces = array(
 	//1599 => 'NS_COOL_STUFF'
 );
 
-$wgResourceLoaderLESSVars = array_merge( $wgResourceLoaderLESSVars, array(
+$GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLESSVars'], array(
 	'bs-color-primary' => '#3e5389', //blue
 	'bs-color-secondary' => '#ffae00', //orange
 	'bs-color-tertiary' => '#b73a3a', //red

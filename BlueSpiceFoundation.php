@@ -36,8 +36,8 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 	include_once( __DIR__ . '/vendor/autoload.php' );
 }
 
-$wgFooterIcons['poweredby']['bluespice'] = array(
-	"src" => "$wgScriptPath/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
+$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = array(
+	"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
 	"url" => "http://bluespice.com",
 	"alt" => "Powered by BlueSpice",
 );
@@ -52,6 +52,6 @@ require_once( 'BlueSpice.hooks.php' );
 
 // initalise BlueSpice as first extension in a fully initialised environment
 array_unshift(
-	$wgExtensionFunctions,
+	$GLOBALS['wgExtensionFunctions'],
 	'BsCore::doInitialise'
 );

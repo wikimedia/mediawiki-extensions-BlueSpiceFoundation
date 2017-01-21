@@ -22,9 +22,9 @@ if (!defined('WIKI_FARMING')) {
 	define('BSDATADIR',   BSROOTDIR . DS . 'data'); //Present
 
 	//New constants
-	$sTMPUploadDir  = empty($wgUploadDirectory)    ? $IP . DS . 'images'           : $wgUploadDirectory;
-	$sTMPCacheDir   = empty($wgFileCacheDirectory) ? $sTMPUploadDir . DS . 'cache' : $wgFileCacheDirectory;
-	$sTMPUploadPath = empty($wgUploadPath) ?  "$wgScriptPath/images" : $wgUploadPath;
+	$sTMPUploadDir  = empty($GLOBALS['wgUploadDirectory'])    ? $GLOBALS['IP'] . DS . 'images'           : $GLOBALS['wgUploadDirectory'];
+	$sTMPCacheDir   = empty($GLOBALS['wgFileCacheDirectory']) ? $sTMPUploadDir . DS . 'cache' : $GLOBALS['wgFileCacheDirectory'];
+	$sTMPUploadPath = empty($GLOBALS['wgUploadPath']) ? $GLOBALS['wgScriptPath'] . "/images" : $GLOBALS['wgUploadPath'];
 
 	define('BS_DATA_DIR',  $sTMPUploadDir. DS . 'bluespice'); //Future
 	define('BS_CACHE_DIR', $sTMPCacheDir. DS . 'bluespice'); //$wgCacheDirectory?
