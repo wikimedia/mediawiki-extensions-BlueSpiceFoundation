@@ -37,7 +37,7 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 }
 
 $wgFooterIcons['poweredby']['bluespice'] = array(
-	"src" => "$wgScriptPath/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
+	"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
 	"url" => "http://bluespice.com",
 	"alt" => "Powered by BlueSpice",
 );
@@ -52,12 +52,12 @@ require_once( 'BlueSpice.hooks.php' );
 
 // initalise BlueSpice as first extension in a fully initialised environment
 array_unshift(
-	$wgExtensionFunctions,
+	$GLOBALS['wgExtensionFunctions'],
 	'BsCore::doInitialise'
 );
 
 //make old ajax functions available, remove this after replacement implemented
-$wgAjaxExportList[] = 'BsCommonAJAXInterface::getTitleStoreData';
-$wgAjaxExportList[] = 'BsCommonAJAXInterface::getNamespaceStoreData';
-$wgAjaxExportList[] = 'BsCommonAJAXInterface::getUserStoreData';
-$wgAjaxExportList[] = 'BsCommonAJAXInterface::getFileUrl';
+$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getTitleStoreData';
+$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getNamespaceStoreData';
+$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getUserStoreData';
+$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getFileUrl';

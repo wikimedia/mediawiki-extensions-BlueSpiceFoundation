@@ -14,7 +14,7 @@ $GLOBALS['wgAutoloadClasses']['EXTTYPE'] = __DIR__."/Common.php";
 $GLOBALS['wgAutoloadClasses']['BsExtensionManager'] = __DIR__."/ExtensionManager.class.php";
 
 //TODO: Remove this
-if ( version_compare( $wgVersion, '1.19.0', '>' ) ) {
+if ( version_compare( $GLOBALS['wgVersion'], '1.19.0', '>' ) ) {
 	$GLOBALS['wgAutoloadClasses']['DatabaseOracle'] = __DIR__."/db/DatabaseOraclePost120.php";
 	$GLOBALS['wgAutoloadClasses']['OracleUpdater']  = __DIR__."/db/OracleUpdater.php";
 } else {

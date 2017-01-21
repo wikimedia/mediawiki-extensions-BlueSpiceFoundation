@@ -33,19 +33,19 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 //Default settings needed for BlueSpice
-$wgNamespacesWithSubpages[NS_MAIN] = true;
-$wgApiFrameOptions = 'SAMEORIGIN';
-$wgRSSUrlWhitelist = array(
+$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
+$GLOBALS['wgApiFrameOptions'] = 'SAMEORIGIN';
+$GLOBALS['wgRSSUrlWhitelist'] = array(
 	"http://blog.blue-spice.org/feed/",
 	"http://blog.bluespice.com/feed/",
 	"http://blog.hallowelt.com/feed/",
 );
-$wgExternalLinkTarget = '_blank';
-$wgCapitalLinkOverrides[ NS_FILE ] = false;
-$wgRestrictDisplayTitle = false; //Otherwise only titles that normalize to the same DB key are allowed
-$wgUrlProtocols[] = "file://";
-$wgVerifyMimeType = false;
-$wgAllowJavaUploads = true;
+$GLOBALS['wgExternalLinkTarget'] = '_blank';
+$GLOBALS['wgCapitalLinkOverrides'][ NS_FILE ] = false;
+$GLOBALS['wgRestrictDisplayTitle'] = false; //Otherwise only titles that normalize to the same DB key are allowed
+$GLOBALS['wgUrlProtocols'][] = "file://";
+$GLOBALS['wgVerifyMimeType'] = false;
+$GLOBALS['wgAllowJavaUploads'] = true;
 
 /*
  * If this global is set to an array like
@@ -206,7 +206,7 @@ $bsgConfigFiles = array(
 );
 
 
-$wgResourceLoaderLESSVars = array_merge( $wgResourceLoaderLESSVars, array(
+$GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLESSVars'], array(
 	'bs-color-primary' => '#3e5389', //blue
 	'bs-color-secondary' => '#ffae00', //orange
 	'bs-color-tertiary' => '#b73a3a', //red
