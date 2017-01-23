@@ -1,9 +1,9 @@
 <?php
 
 //TDOD: Is this really still necessary?
-if (!defined('DS'))
+if (!defined('DS')) {
 	define('DS', DIRECTORY_SEPARATOR);
-elseif (DS != DIRECTORY_SEPARATOR) {
+} elseif (DS != DIRECTORY_SEPARATOR) {
 	$message = 'Constant "DS" already in use but unequal "DIRECTORY_SEPARATOR", namely: DS == "' . DS . '"';
 	//throw new Exception($message);
 	exit($message . ' in ' . __FILE__ . ', line ' . __LINE__);
@@ -17,18 +17,30 @@ elseif (DS != DIRECTORY_SEPARATOR) {
  * separaten Verzeichnis liegen kann.
  */
 if (!defined('WIKI_FARMING')) {
-	define('BSROOTDIR', dirname(__DIR__) );
-	define('BSCONFIGDIR', BSROOTDIR . DS . 'config');
-	define('BSDATADIR',   BSROOTDIR . DS . 'data'); //Present
+	if (!defined('BSROOTDIR')) {
+		define('BSROOTDIR', dirname(__DIR__) );
+        }
+	if (!defined('BSCONFIGDIR')) {
+		define('BSCONFIGDIR', BSROOTDIR . DS . 'config');
+        }
+	if (!defined('BSDATADIR')) {
+		define('BSDATADIR',   BSROOTDIR . DS . 'data'); //Present
+        }
 
 	//New constants
 	$sTMPUploadDir  = empty($GLOBALS['wgUploadDirectory'])    ? $GLOBALS['IP'] . DS . 'images'           : $GLOBALS['wgUploadDirectory'];
 	$sTMPCacheDir   = empty($GLOBALS['wgFileCacheDirectory']) ? $sTMPUploadDir . DS . 'cache' : $GLOBALS['wgFileCacheDirectory'];
 	$sTMPUploadPath = empty($GLOBALS['wgUploadPath']) ? $GLOBALS['wgScriptPath'] . "/images" : $GLOBALS['wgUploadPath'];
 
-	define('BS_DATA_DIR',  $sTMPUploadDir. DS . 'bluespice'); //Future
-	define('BS_CACHE_DIR', $sTMPCacheDir. DS . 'bluespice'); //$wgCacheDirectory?
-	define('BS_DATA_PATH', $sTMPUploadPath. '/bluespice');
+	if (!defined('BS_DATA_DIR')) {
+		define('BS_DATA_DIR',  $sTMPUploadDir. DS . 'bluespice'); //Future
+        }
+	if (!defined('BS_CACHE_DIR')) {
+		define('BS_CACHE_DIR', $sTMPCacheDir. DS . 'bluespice'); //$wgCacheDirectory?
+        }
+	if (!defined('BS_DATA_PATH')) {
+		define('BS_DATA_PATH', $sTMPUploadPath. '/bluespice');
+        }
 }
 
 if (!defined('BS_NS_OFFSET')) {
