@@ -45,16 +45,17 @@ class BSEntity implements JsonSerializable {
 		$this->oConfig = $oConfig;
 		if( !empty($oStdClass->id) ) {
 			$this->iID = (int) $oStdClass->id;
-			$this->bUnsavedChanges = false;
-		}
-		if( !empty($oStdClass->ownerid) ) {
-			$this->iOwnerID = $oStdClass->ownerid;
 		}
 		if( !empty($oStdClass->type) ) {
 			$this->sType = $oStdClass->type;
 		}
 		if( !empty($oStdClass->archived) ) {
 			$this->bArchived = $oStdClass->archived;
+		}
+
+		$this->setValuesByObject( $oStdClass );
+		if( $this->exists() ) {
+			$this->setUnsavedChanges( false );
 		}
 	}
 
@@ -303,7 +304,7 @@ class BSEntity implements JsonSerializable {
 			return $oStatus;
 		}
 		$this->bArchived = true;
-          	$this->setUnsavedChanges();
+		$this->setUnsavedChanges();
 
 		try {
 			$oStatus = $this->save();
@@ -324,9 +325,9 @@ class BSEntity implements JsonSerializable {
 	 * Gets the BSEntity attributes formated for the api
 	 * @return object
 	 */
-	public function getFullData( $a = array() ) {
-		return array_merge(
-			$a,
+	public function getFullData( $aData = array() ) {
+		$aData = array_merge(
+			$aData,
 			array(
 				'id' => $this->getID(),
 				'ownerid' => $this->getOwnerID(),
@@ -334,6 +335,11 @@ class BSEntity implements JsonSerializable {
 				'archived' => $this->isArchived(),
 			)
 		);
+		Hooks::run('BSEntityGetFullData', [
+			$this,
+			&$aData
+		]);
+		return $aData;
 	}
 
 	/**
@@ -479,6 +485,10 @@ class BSEntity implements JsonSerializable {
 		if( isset($oData->ownerid) ) {
 			$this->setOwnerID( $oData->ownerid );
 		}
+		Hooks::run('BSEntitySetValuesByObject', [
+			$this,
+			$oData
+		]);
 	}
 
 	/**
