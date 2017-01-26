@@ -41,7 +41,8 @@ class ResourceLoaderBSTemplateModule extends ResourceLoaderModule {
 			}
 			if ( file_exists( $sPath ) ) {
 				$content = file_get_contents( $sPath );
-				$templates[$sName] = $this->stripBom( $content );
+				$ext = pathinfo( $sPath, PATHINFO_EXTENSION );
+				$templates["$sName.$ext"] = $this->stripBom( $content );
 			} else {
 				$msg = __METHOD__ . ": template file not found: \"$sPath\"";
 				wfDebugLog( 'resourceloader', $msg );
@@ -67,7 +68,31 @@ class ResourceLoaderBSTemplateModule extends ResourceLoaderModule {
 		return $input;
 	}
 
+	/**
+	 * Get target(s) for the module, eg ['desktop'] or ['desktop', 'mobile']
+	 *
+	 * @return array Array of strings
+	 */
 	public function getTargets() {
 		return [ 'desktop', 'mobile' ];
+	}
+
+	/**
+	 * Get a list of modules this module depends on.
+	 *
+	 * Dependency information is taken into account when loading a module
+	 * on the client side.
+	 *
+	 * Note: It is expected that $context will be made non-optional in the near
+	 * future.
+	 *
+	 * @param ResourceLoaderContext $context
+	 * @return array List of module names as strings
+	 */
+	public function getDependencies(\ResourceLoaderContext $context = null) {
+		return array_merge(
+			parent::getDependencies( $context ),
+			[ "mediawiki.template.mustache" ]
+		);
 	}
 }
