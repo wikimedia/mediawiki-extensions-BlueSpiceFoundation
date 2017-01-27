@@ -405,17 +405,14 @@ class BsBaseTemplate extends BaseTemplate {
 
 						$aOut[] = '<li id="' . Sanitizer::escapeId($val['id']) . '"' . $sCssClass . ' class="clearfix">';
 
-						$sTitle = htmlspecialchars($val['text']);
-						$sText = htmlspecialchars($val['text']);
+						$sTitle = $val['text'];
+						$sText = $val['text'];
 						$sHref = htmlspecialchars($val['href']);
 						$sIcon = '<span class="icon24"></span>';
 						if ( !empty( $aVal ) ) {
 							$oFile = wfFindFile( $aVal[1] );
-							if ( strpos( $lang = $this->translator->translate( $aVal[0] ), "&lt;" ) === false ) {
-								$aVal[0] = $lang;
-							}
-							$sTitle = htmlspecialchars($aVal[0]);
-							$sText = htmlspecialchars($aVal[0]);
+							$sTitle = $aVal[0];
+							$sText = $aVal[0];
 
 							if ( is_object( $oFile ) && $oFile->exists() ) {
 								if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
@@ -426,6 +423,20 @@ class BsBaseTemplate extends BaseTemplate {
 								$sIcon = '<span class="icon24 custom-icon" style="background-image:url(' . $sUrl . ')"></span>';
 							}
 						}
+
+						$oTitleMsg = wfMessage( $sTitle );
+						if( $oTitleMsg->exists() ) {
+							$sTitle = $oTitleMsg->plain();
+						}
+
+						$oTextMsg = wfMessage( $sText );
+						if( $oTextMsg->exists() ) {
+							$sText = $oTextMsg->plain();
+						}
+
+						$sTitle = htmlspecialchars( $sTitle );
+						$sText = htmlspecialchars( $sText );
+
 						$aOut[] = '<a href="' . $sHref . '" title="' . $sTitle .'" ' . $sTarget . $sRel . '>';
 						$aOut[] = $sIcon;
 						$aOut[] = '<span class="bs-nav-item-text">' . $sText . '</span>';
