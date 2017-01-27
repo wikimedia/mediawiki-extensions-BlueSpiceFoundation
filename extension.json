@@ -6,7 +6,7 @@
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],
 	"url": "http://bluespice.com",
-	"description": "Makes MediaWiki enterprise ready.",
+	"descriptionmsg": "bluespicefoundation-desc",
 	"type": "other",
 	"ExtensionFunctions": [
 		"BsCoreHooks::setup"

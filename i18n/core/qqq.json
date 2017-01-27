@@ -9,6 +9,7 @@
 			"Umherirrender"
 		]
 	},
+	"bluespicefoundation-desc": "{{desc|name=BlueSpiceFoundation|url=https://www.mediawiki.org/wiki/BlueSpice}}",
 	"bs-ns_main": "Label used in namespace dropdown lists for NS_MAIN.\n\nUsed in:\n* {{msg-mw|Bs-namespacemanager-willmove}}\n* {{msg-mw|Bs-namespacemanager-willmovesuffix}}\n{{Identical|Page}}",
 	"bs-ns_all": "Label used in namespace dropdown lists for all namespaces.\n{{Identical|All}}",
 	"bs-tab_navigation": "Label for \"nagivation\" tab in left sidebar\n{{Identical|Navigation}}",
