@@ -43,7 +43,6 @@ class BSEntityRegistry {
 
 		$b = wfRunHooks( 'BSEntityRegister', array(
 			&self::$aEntities,
-			//&self::$sDefaultHandlerType,
 		));
 
 		return $b ? static::$bEntitiesRegistered = true : $b;
