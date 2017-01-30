@@ -1,7 +1,4 @@
 <?php
-$specialPageAliases = array();
-
-/** English */
 // @codingStandardsIgnoreFile
 
 $specialPageAliases = array();
