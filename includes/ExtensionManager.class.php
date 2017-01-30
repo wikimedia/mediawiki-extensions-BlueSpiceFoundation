@@ -178,10 +178,11 @@ class BsExtensionManager {
 		$aBSExtFromJSON = ExtensionRegistry::getInstance()->getAttribute(
 			'bsgExtensions'
 		);
+
 		if( !empty( $aBSExtFromJSON ) ) {
-			$GLOBALS['bsgExtensions'] = array_merge_recursive(
-				$GLOBALS['bsgExtensions'],
-				$aBSExtFromJSON
+			$GLOBALS['bsgExtensions'] = array_replace_recursive(
+				$aBSExtFromJSON,
+				$GLOBALS['bsgExtensions']
 			);
 		}
 
