@@ -129,7 +129,7 @@ abstract class BsExtensionMW extends ContextSource {
 			&& is_array( $wgHooks[$hook] )
 			&& !(count($wgHooks[$hook]) && is_object($wgHooks[$hook][0])
 			&& ($wgHooks[$hook][0] instanceof Closure))
-			&& in_array( $register, $wgHooks[$hook] ) ) {
+			&& in_array( $register, $wgHooks[$hook], true ) ) {
 			return;
 		};
 		if ( $bExecuteFirst && isset( $wgHooks[$hook] ) ) {
