@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Bestand uploaden",
+	"bs-upload-uploadbuttontext": "Bladeren",
+	"bs-upload-uploadfilefieldlabel": "Bestandsnaam",
+	"bs-upload-uploadfileemptytext": "Voeg nieuw bestand in...",
+	"bs-upload-uploaddestfilelabel": "Opslaan als",
+	"bs-upload-allowedfiletypesare": "Geldige bestandstypen zijn:",
+	"bs-upload-license": "Licentie",
+	"bs-upload-uploadwatchthislabel": "Dit bestand volgen",
+	"bs-upload-uploadignorewarningslabel": "Alle waarschuwingen negeren",
+	"bs-upload-categories": "Categorieën",
+	"bs-upload-upload-waitmessage": "Aan het uploaden ...",
+	"bs-upload-error": "Fout",
+	"bs-upload-descfilelabel": "Beschrijving",
+	"bs-upload-error-long": "Fout bij het uploaden",
+	"bs-upload-filetypenotsupported": "Dit bestandstype wordt niet ondersteund.",
+	"bs-upload-details": "Details"
+}

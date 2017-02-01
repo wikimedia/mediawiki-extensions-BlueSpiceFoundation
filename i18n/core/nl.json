@@ -9,14 +9,14 @@
 			"Ribert",
 			"McDutchie",
 			"Sjoerddebruin",
-			"Esketti"
+			"Esketti",
+			"Mainframe98"
 		]
 	},
+	"bluespicefoundation-desc": "Maakt MediaWiki geschikt voor bedrijven",
 	"bs-ns_main": "(Pagina's)",
 	"bs-ns_all": "(alle)",
 	"bs-tab_navigation": "Navigatie",
-	"bs-tab_focus": "Focus",
-	"bs-tab_admin": "Beheer",
 	"bs-userbar_loginswitch_logout": "Afmelden",
 	"bs-userbar_loginswitch_login": "Aanmelden",
 	"bs-extended-search-tooltip-fulltext": "Fulltext-zoeken",
@@ -81,5 +81,14 @@
 	"bs-pref-anonuserimage": "Avatar voor anonieme gebruiker:",
 	"bs-pref-deleteduserimage": "Avatar voor verwijderde gebruiker:",
 	"bs-pref-bspinginterval": "Ping-interval (in seconden):",
-	"bs-pref-testmode": "Testmodus activeren"
+	"bs-pref-testmode": "Testmodus activeren",
+	"bs-parser-error-invalid-namespace": "Ongeldige naamruimte: $1",
+	"bs-parser-error-invalid-title": "Ongeldige titel: $1",
+	"bs-validator-error-namespace-does-not-exist": "Naamruimte bestaat niet: $1",
+	"bs-validator-error-namespace-on-blacklist": "Naamruimte niet toegestaan: $1",
+	"bs-validator-error-title-does-not-exist": "De pagina bestaat niet: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Pagina niet toegestaan: $1",
+	"bs-exttype-bluespice": "BlueSpice uitbreidingen",
+	"bs-export-menu-print-text": "Afdrukken",
+	"bs-export-menu-print-title": "Toont een printbare versie van de pagina"
 }
