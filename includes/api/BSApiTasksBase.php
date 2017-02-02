@@ -120,9 +120,6 @@ abstract class BSApiTasksBase extends BSApiBase {
 				}
 
 				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', array( $this, $sTask, &$oResult, $oTaskData , $aParams ) );
-
-				//trigger data update flag after content change over api
-				$this->runUpdates();
 			}
 		}
 
