@@ -100,8 +100,9 @@ class BSTemplateHelper {
 			$aTplDir = static::makeFullExtTemplatePathFromExtName( $sExtName );
 		}
 
-		$sTemplateDir = implode( '/', $aTplDir )."/".implode('/', $aTplPath);
-		$sTemplateDir = BsFileSystemHelper::normalizePath($sTemplateDir);
+		$sTemplateDir = implode('/', $aTplPath );
+		$sTemplateDir = BsFileSystemHelper::normalizePath( $sTemplateDir );
+		$sTemplateDir = implode( '/', $aTplDir ) . "/" . $sTemplateDir;
 		$oInstance = new TemplateParser( $sTemplateDir, $bForceRecompile );
 		return $oInstance->processTemplate( $sTpl, $args, $scopes );
 	}
@@ -121,9 +122,7 @@ class BSTemplateHelper {
 			} catch( Exception $e ) {
 				continue;
 			}
-			$sPath = BsFileSystemHelper::normalizePath(
-				implode('/', $aTplDir)
-			);
+			$sPath = implode('/', $aTplDir);
 			if( !is_dir($sPath) ) {
 				continue;
 			}
@@ -138,9 +137,7 @@ class BSTemplateHelper {
 					continue;
 				}
 				$oFile instanceof SplFileObject;
-				$sPath = BsFileSystemHelper::normalizePath(
-					$oFile->getPathname()
-				);
+				$sPath = $oFile->getPathname();
 				$sTplName = static::makeTemplateNameFromPath(
 					$sExtName,
 					$sPath
@@ -149,12 +146,9 @@ class BSTemplateHelper {
 					$aTplPath = explode( static::$sSeparator, $sTplName );
 					$sExtName = array_shift( $aTplPath );
 
-					$sPath = $GLOBALS['bsgTemplates'][$sTplName]
-						."/"
-						.implode( '/', $aTplPath )
-						.static::$sFileExt
-					;
+					$sPath = implode( '/', $aTplPath ) . static::$sFileExt;
 					$sPath = BsFileSystemHelper::normalizePath( $sPath );
+					$sPath = $GLOBALS['bsgTemplates'][$sTplName] . "/" . $sPath;
 				}
 				$aReturn[ $sTplName ] = $sPath;
 			}
