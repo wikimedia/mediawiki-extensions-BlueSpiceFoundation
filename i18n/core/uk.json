@@ -4,9 +4,11 @@
 			"Andriykopanytsia",
 			"Base",
 			"Ата",
-			"Piramidion"
+			"Piramidion",
+			"AS"
 		]
 	},
+	"bluespicefoundation-desc": "Готує MediaWiki до корпоративних потреб",
 	"bs-ns_main": "(Сторінки)",
 	"bs-ns_all": "(всі)",
 	"bs-tab_navigation": "Навігація",
