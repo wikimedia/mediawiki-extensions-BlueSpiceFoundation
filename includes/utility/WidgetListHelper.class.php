@@ -99,6 +99,8 @@ class BsWidgetListHelper {
 		$oCurrentWidgetView = null;
 		$oCustomListView    = new ViewBaseElement();
 		$oCustomListView->setTemplate('*[[{TITLE}|{DESCRIPTION}]]' . "\n");
+		$oCustomExternalLinkListView = new ViewBaseElement();
+		$oCustomExternalLinkListView->setTemplate( '*[{TITLE} {DESCRIPTION}]' . "\n");
 
 		$oCore = BsCore::getInstance();
 
@@ -119,8 +121,10 @@ class BsWidgetListHelper {
 				&& is_callable( $this->aKeywords[$sPotentialKeyword] ) ) {
 
 				if ( $oCurrentWidgetView !== null ) {
+					$sPageLinkListResults = $oCustomListView->execute();
+					$aExternalLinkListResults = $oCustomExternalLinkListView->execute();
 					$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-							$oCore->parseWikiText( $oCustomListView->execute(), RequestContext::getMain()->getTitle() )
+							$oCore->parseWikiText( $sPageLinkListResults . $aExternalLinkListResults, RequestContext::getMain()->getTitle() )
 					);
 					$oCurrentWidgetView = null;
 				}
@@ -131,8 +135,10 @@ class BsWidgetListHelper {
 
 			if ( $iDepth == 1 ) {
 				if ($oCurrentWidgetView !== null) {
+					$sPageLinkListResults = $oCustomListView->execute();
+					$aExternalLinkListResults = $oCustomExternalLinkListView->execute();
 					$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-							$oCore->parseWikiText( $oCustomListView->execute(), RequestContext::getMain()->getTitle() )
+							$oCore->parseWikiText( $sPageLinkListResults . $aExternalLinkListResults, RequestContext::getMain()->getTitle() )
 					);
 					$oCurrentWidgetView = null;
 				}
@@ -141,6 +147,8 @@ class BsWidgetListHelper {
 					->setAdditionalBodyClasses( array( 'bs-nav-links' ) );
 				$oCustomListView = new ViewBaseElement();
 				$oCustomListView->setTemplate( '*[[{TITLE}|{DESCRIPTION}]]' . "\n" );
+				$oCustomExternalLinkListView = new ViewBaseElement();
+				$oCustomExternalLinkListView->setTemplate( '*[{TITLE} {DESCRIPTION}]' . "\n");
 			}
 			if ($iDepth == 2) {
 				$sLine = $this->cleanWikiLink( $sLine );
@@ -161,12 +169,33 @@ class BsWidgetListHelper {
 						'DESCRIPTION' => BsStringHelper::shorten( $sDescription, array( 'max-length' => 25, 'position' => 'middle' ) )
 						)
 					);
+					continue;
+				}
+
+				//Handle External Links
+				if ( preg_match( '#^\[http.*?\]$#si', $sLine ) ) {
+					$sLine = substr( $sLine, 1, -1 );
+
+					$sLink = $sLine;
+					$sDescription = $sLine;
+
+					$aExtLinkParts = explode(' ', $sLine, 2);
+					if( count( $aExtLinkParts ) > 1 ) {
+						$sLink = $aExtLinkParts[0];
+						$sDescription = $aExtLinkParts[1];
+					}
+					$oCustomExternalLinkListView->addData(array(
+						'TITLE' => $sLink,
+						'DESCRIPTION' => BsStringHelper::shorten( $sDescription, array( 'max-length' => 25, 'position' => 'middle' ) )
+					));
 				}
 			}
 		}
 		if ($oCurrentWidgetView !== null) { // TODO RBV (23.02.11 14:45): This is just a workaround. At given time: review logic!
+			$sPageLinkListResults = $oCustomListView->execute();
+			$aExternalLinkListResults = $oCustomExternalLinkListView->execute();
 			$this->aWidgetList[] = $oCurrentWidgetView->setBody(
-					$oCore->parseWikiText( $oCustomListView->execute(), RequestContext::getMain()->getTitle() )
+					$oCore->parseWikiText( $sPageLinkListResults . $aExternalLinkListResults, RequestContext::getMain()->getTitle() )
 			);
 		}
 
