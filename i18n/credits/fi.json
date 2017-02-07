@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stryn"
+			"Stryn",
+			"Pyscowicz"
 		]
 	},
+	"specialcredits": "BlueSpice tekijät",
 	"bs-credits-programmers": "Ohjelmoijat",
-	"bs-credits-contributors": "Osallistujat"
+	"bs-credits-dnt": "Suunnittelu ja testaus",
+	"bs-credits-contributors": "Osallistujat",
+	"bs-credits-translators": "Kääntäjät",
+	"bs-credits-translation": "Kääntäminen",
+	"bs-credits-th": "Kiitos kaikille kääntäjille $1 -sivustolta"
 }
