@@ -27,15 +27,16 @@
  * Example request parameters of an ExtJS store
  */
 class BSApiGroupStore extends BSApiExtJSStoreBase {
+
+	protected $sLcQuery = '';
+
 	/**
-	 * @param string $sQuery Potential query provided by ExtJS component.
-	 * This is some kind of preliminary filtering. Subclass has to decide if
-	 * and how to process it
-	 * @return array - Full list of of data objects. Filters, paging, sorting
-	 * will be done by the base class
+	 * @param string $sQuery
+	 * @return array - List of of groups
 	 */
 	protected function makeData( $sQuery = '' ) {
 		global $wgAdditionalGroups, $wgImplicitGroups;
+		$this->sLcQuery = strtolower( $sQuery );
 
 		$aData = array();
 		foreach ( BsGroupHelper::getAvailableGroups() as $sGroup ) {
@@ -46,6 +47,10 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 			$oMsg = wfMessage( "group-$sGroup" );
 			if( $oMsg->exists() ) {
 				$sDisplayName = $oMsg->plain()." ($sGroup)";
+			}
+
+			if( !$this->queryApplies( $sGroup, $sDisplayName ) ) {
+				continue;
 			}
 
 			$aData[] = (object) array(
@@ -61,5 +66,17 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 		return parent::getRequiredPermissions() + array(
 			'wikiadmin'
 		);
+	}
+
+	protected function queryApplies( $sGroup, $sDisplayName ) {
+		if( empty( $this->sLcQuery ) ) {
+			return true;
+		}
+
+		$sLcGroup = strtolower( $sGroup );
+		$sLcDisplayname = strtolower( $sDisplayName );
+
+		return strpos( $sLcGroup, $this->sLcQuery ) !== false
+			|| strpos( $sLcDisplayname, $this->sLcQuery ) !== false;
 	}
 }
