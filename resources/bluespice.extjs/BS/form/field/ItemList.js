@@ -12,8 +12,9 @@ Ext.define('BS.form.field.ItemList', {
 
 	//model: null,
 	apiFields: [],
-	apiStore: 'bs-pageassignable-store',
-
+	idProperty: 'id',
+	inputDisplayField: 'text',
+	listDisplayField: 'anchor',
 	itemGridConfig: null,
 
 	initComponent: function() {
@@ -34,14 +35,14 @@ Ext.define('BS.form.field.ItemList', {
 	},
 
 	makeItemChooser: function() {
-
+		var me = this;
 		//var combo = new Ext.ux.form.field.GridPicker({
 		var combo = new Ext.form.field.ComboBox({
 			anchor: '100%',
-			displayField: 'text',
+			displayField: this.inputDisplayField,
 			listConfig: {
 				getInnerTpl: function() {
-					return '{["<span class=\'icon-"+values.type+" bs-typeicon\'></span>"+values.text]}';
+					return '{["<span class=\'bs-icon-"+values.type+" bs-typeicon\'></span>"+values.' + me.inputDisplayField + ']}';
 				}
 			},
 
@@ -97,12 +98,12 @@ Ext.define('BS.form.field.ItemList', {
 						width: 30,
 						renderer: function( value ) {
 							return mw.html.element( 'span', {
-								class: 'icon-' + value
+								class: 'bs-icon-' + value
 							} );
 						}
 					},
 					{
-						dataIndex: 'anchor',
+						dataIndex: this.listDisplayField,
 						flex: 1
 					},
 					deleteCol
@@ -138,8 +139,9 @@ Ext.define('BS.form.field.ItemList', {
 	},
 
 	makeFindByIdFunction: function( currentRecord ) {
+		var me = this;
 		return function( record, id ) {
-			if( record.get('id') === currentRecord.get('id') ) {
+			if( record.get( me.idProperty ) === currentRecord.get( me.idProperty ) ) {
 				return true;
 			}
 			return false;
