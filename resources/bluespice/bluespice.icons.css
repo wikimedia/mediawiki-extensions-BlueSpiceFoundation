@@ -117,3 +117,11 @@
 .icon-admin:before {
 	content: "\e675";
 }
+
+.bs-icon-group:before {
+	content: "\e672";
+}
+
+.bs-icon-key:before {
+	content: "\e688";
+}

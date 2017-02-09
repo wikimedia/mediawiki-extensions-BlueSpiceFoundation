@@ -18,6 +18,13 @@ Ext.define( 'BS.CRUDPanel', {
 	requires: [ 'Ext.Toolbar', 'Ext.Button' ],
 	border: false,
 	hideBorder: true,
+
+	operationPermissions : {
+        "create": true, //should be connected to mw.config.get('bsTaskAPIPermissions').extension_xyz.task1 = boolean in derived class
+        "update": true, //...
+        "delete": true  //...
+    },
+
 	tbarHeight: 44,
 
 	constructor: function() {
@@ -52,45 +59,52 @@ Ext.define( 'BS.CRUDPanel', {
 	},
 
 	makeTbarItems: function() {
-		this.btnAdd = new Ext.Button({
-			id: this.getId()+'-btn-add',
-			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_add.png',
-			iconCls: 'btn'+this.tbarHeight,
-			tooltip: mw.message('bs-extjs-add').plain(),
-			height: 50,
-			width: 52
-		});
-		this.btnAdd.on( 'click', this.onBtnAddClick, this );
+		var arrItems = [];
+		if( this.opPermitted( 'create' ) ) {
+			this.btnAdd = new Ext.Button({
+				id: this.getId()+'-btn-add',
+				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_add.png',
+				iconCls: 'btn'+this.tbarHeight,
+				tooltip: mw.message('bs-extjs-add').plain(),
+				height: 50,
+				width: 52
+			});
+			this.btnAdd.on( 'click', this.onBtnAddClick, this );
+			this.addEvents( 'button-add','button-edit','button-delete' );
+			arrItems.push( this.btnAdd );
+		}
 
-		this.btnEdit = new Ext.Button({
-			id: this.getId()+'-btn-edit',
-			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config.png',
-			iconCls: 'btn'+this.tbarHeight,
-			tooltip: mw.message('bs-extjs-edit').plain(),
-			height: 50,
-			width: 52,
-			disabled: true
-		});
-		this.btnEdit.on( 'click', this.onBtnEditClick, this );
+		if( this.opPermitted( 'update' )) {
+			this.btnEdit = new Ext.Button({
+				id: this.getId()+'-btn-edit',
+				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config.png',
+				iconCls: 'btn'+this.tbarHeight,
+				tooltip: mw.message('bs-extjs-edit').plain(),
+				height: 50,
+				width: 52,
+				disabled: true
+			});
+			this.btnEdit.on( 'click', this.onBtnEditClick, this );
+			this.addEvents( 'button-add','button-edit','button-delete' );
+			arrItems.push( this.btnEdit );
+		}
 
-		this.btnRemove = new Ext.Button({
-			id: this.getId()+'-btn-remove',
-			icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete.png',
-			iconCls: 'btn'+this.tbarHeight,
-			tooltip: mw.message('bs-extjs-remove').plain(),
-			height: 50,
-			width: 52,
-			disabled: true
-		});
-		this.btnRemove.on( 'click', this.onBtnRemoveClick, this );
+		if( this.opPermitted( 'delete' ) ) {
+			this.btnRemove = new Ext.Button({
+				id: this.getId()+'-btn-remove',
+				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete.png',
+				iconCls: 'btn'+this.tbarHeight,
+				tooltip: mw.message('bs-extjs-remove').plain(),
+				height: 50,
+				width: 52,
+				disabled: true
+			});
+			this.btnRemove.on( 'click', this.onBtnRemoveClick, this );
+			this.addEvents( 'button-add','button-edit','button-delete' );
+			arrItems.push(this.btnRemove);
+		}
 
-		this.addEvents( 'button-add','button-edit','button-delete' );
-
-		return [
-			this.btnAdd,
-			this.btnEdit,
-			this.btnRemove
-		];
+		return arrItems;
 	},
 
 	afterInitComponent: function( arguments ) {
@@ -115,5 +129,16 @@ Ext.define( 'BS.CRUDPanel', {
 
 	setData: function( obj ) {
 		this.currentData = obj;
+	},
+
+	/**
+	* @return boolean if param exists, otherwise null
+	*/
+	opPermitted: function ( operation ) {
+		if( operation in this.operationPermissions ) {
+			return this.operationPermissions[operation];
+		} else {
+			return null;
+		}
 	}
 });
