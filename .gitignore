@@ -1,6 +1,10 @@
-.svn		
-*~		
-*.kate-swp		
+*~
+*.kate-swp
 .*.swp
 data/
 config/
+node_modules/**
+vendor/**
+
+composer.lock
+composer.phar
