@@ -228,6 +228,9 @@
 				"bluespice/bluespice.icons.css",
 				"bluespice/bluespice.ui.basic.less"
 			],
+			"targets": [
+				"mobile", "desktop"
+			],
 			"position": "top"
 		},
 		"ext.bluespice.extjs.BS.portal": {
