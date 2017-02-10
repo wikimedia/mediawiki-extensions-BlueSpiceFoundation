@@ -213,8 +213,7 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 	'bs-extjs-theme-tool-toggle-img-background' => 'transparent',
 	'bs-extjs-theme-btn-split-right-image' => 'url( "bluespice-theme/images/button/default-small-s-arrow.png" )',
 
-	//buttons
-	// Button OK / Cancel
+	//Buttons ( both, OK and Cancel )
 	'bs-extjs-theme-btn-small-text' => '@bs-extjs-theme-primary-text-color',
 	'bs-extjs-theme-btn-small-border' => '1px solid @bs-extjs-theme-btn-small-background',
 	'bs-extjs-theme-btn-small-background' => '@bs-extjs-theme-primary-background-color-1st-derivate',
@@ -223,7 +222,25 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 	'bs-extjs-theme-btn-small-background-51' => 'darken( @bs-extjs-theme-btn-small-background, 2.5% )',
 	'bs-extjs-theme-btn-small-background-100' => '@bs-extjs-theme-btn-small-background',
 
-	// Button i. e. Insert image -> image size
+	//Button OK ( explicit )
+	'bs-extjs-theme-btn-small-ok-text' => '@bs-extjs-theme-btn-small-text',
+	'bs-extjs-theme-btn-small-ok-border' => '@bs-extjs-theme-btn-small-border',
+	'bs-extjs-theme-btn-small-ok-background' => '@bs-extjs-theme-btn-small-background',
+	'bs-extjs-theme-btn-small-ok-background-0' => 'lighten( saturate( @bs-extjs-theme-btn-small-ok-background, abs(2%) ), 5% )',
+	'bs-extjs-theme-btn-small-ok-background-50' => '@bs-extjs-theme-btn-small-ok-background',
+	'bs-extjs-theme-btn-small-ok-background-51' => 'darken( @bs-extjs-theme-btn-small-ok-background, 2.5% )',
+	'bs-extjs-theme-btn-small-ok-background-100' => '@bs-extjs-theme-btn-small-ok-background',
+
+	//Button Cancel ( explicit )
+	'bs-extjs-theme-btn-small-cancel-text' => '@bs-extjs-theme-btn-small-text',
+	'bs-extjs-theme-btn-small-cancel-border' => '@bs-extjs-theme-btn-small-border',
+	'bs-extjs-theme-btn-small-cancel-background' => '@bs-extjs-theme-btn-small-background',
+	'bs-extjs-theme-btn-small-cancel-background-0' => 'lighten( saturate( @bs-extjs-theme-btn-small-cancel-background, abs(2%) ), 5% )',
+	'bs-extjs-theme-btn-small-cancel-background-50' => '@bs-extjs-theme-btn-small-cancel-background',
+	'bs-extjs-theme-btn-small-cancel-background-51' => 'darken( @bs-extjs-theme-btn-small-cancel-background, 2.5% )',
+	'bs-extjs-theme-btn-small-cancel-background-100' => '@bs-extjs-theme-btn-small-cancel-background',
+
+	//Button i. e. Insert image -> image size
 	'bs-extjs-theme-btn-toolbar-small-text' => '@bs-extjs-theme-secondary-text-color',
 	'bs-extjs-theme-btn-toolbar-small-border' => '1px solid darken( @bs-extjs-theme-btn-toolbar-small-background, 8% )',
 	'bs-extjs-theme-btn-toolbar-small-background' => '@bs-extjs-theme-secondary-background-color',
@@ -232,7 +249,7 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 	'bs-extjs-theme-btn-toolbar-small-background-51' => 'darken( @bs-extjs-theme-btn-toolbar-small-background, 5% )',
 	'bs-extjs-theme-btn-toolbar-small-background-100' => '@bs-extjs-theme-btn-toolbar-small-background',
 
-	// Button in toolbar with icon (Bookmaker, Flexiskin)
+	//Button in toolbar with icon (Bookmaker, Flexiskin)
 	'bs-extjs-theme-btn-toolbar-text' => '@bs-extjs-theme-secondary-text-color',
 	'bs-extjs-theme-btn-toolbar-border' => '1px solid @bs-extjs-theme-btn-toolbar-background',
 	'bs-extjs-theme-btn-toolbar-background' => '@bs-extjs-theme-secondary-background-color',
@@ -241,7 +258,7 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 	'bs-extjs-theme-btn-toolbar-background-51' => 'darken( @bs-extjs-theme-btn-toolbar-background, 2.5% )',
 	'bs-extjs-theme-btn-toolbar-background-100' => '@bs-extjs-theme-btn-toolbar-background',
 
-	// Button in toolbar without icon (upload, Bookmaker "Export section")
+	//Button in toolbar without icon (upload, Bookmaker "Export section")
 	'bs-extjs-theme-btn-toolbar-noicon-text' => '@bs-extjs-theme-secondary-text-color',
 	'bs-extjs-theme-btn-toolbar-noicon-border' => '1px solid @bs-extjs-theme-btn-toolbar-noicon-background',
 	'bs-extjs-theme-btn-toolbar-noicon-background' => '@bs-extjs-theme-secondary-background-color',
@@ -256,6 +273,7 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 	'bs-extjs-theme-window-header-background' => '@bs-extjs-theme-primary-background-color-1st-derivate',
 	'bs-extjs-theme-window-header-border' => '5px solid @bs-extjs-theme-primary-background-color-1st-derivate',
 	'bs-extjs-theme-window-border' => '5px solid @bs-extjs-theme-primary-background-color-1st-derivate',
+	'bs-extjs-theme-window-header-border-width' => '5px',
 	'bs-extjs-theme-window-background' => 'white',
 	'bs-extjs-theme-window-body-background' => 'white',
 	'bs-extjs-theme-window-header-border-radius' => '2px 2px 0px 0px',
@@ -309,3 +327,27 @@ $bsgExtensions = array();
  * )
  */
 $GLOBALS['bsgTemplates'] = array();
+
+
+/*
+ * ExtJSThemes
+ */
+$GLOBALS["bsgExtJSThemes"] = array(
+	"white" => array(
+		'bs-extjs-theme-primary-text-color' => 'black',
+		'bs-extjs-theme-secondary-text-color' => 'black',
+		'bs-extjs-theme-primary-background-color' => 'white',
+		'bs-extjs-theme-secondary-background-color' => 'white',
+		'bs-extjs-theme-toolbar-footer-background' => 'white',
+		'bs-extjs-theme-btn-small-border' => '1px solid @bs-color-neutral4',
+		'bs-extjs-theme-tab-active-background' => '@bs-color-neutral4',
+		'bs-extjs-theme-tab-active-text' => 'white',
+		'bs-extjs-theme-tab-active-strip' => '@bs-color-neutral4',
+		'bs-extjs-theme-panel-border' => '5px solid @bs-color-neutral4',
+		'bs-extjs-theme-panel-header-horizontal-border' => '1px solid @bs-color-neutral4',
+		'bs-extjs-theme-panel-header-vertical-border' => '1px solid @bs-color-neutral4',
+		'bs-extjs-theme-btn-toolbar-noicon-border' => '1px solid black',
+		'bs-extjs-theme-tool-img-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/tools/tool-sprites-dark.png" )',
+		'bs-extjs-theme-btn-split-right-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/button/default-toolbar-small-s-arrow.png" )',
+	)
+);
