@@ -3,7 +3,8 @@
 		"authors": [
 			"Y-M D",
 			"Fohanno",
-			"Ash Crow"
+			"Ash Crow",
+			"Fulup"
 		]
 	},
 	"bs-extjs-ok": "Mat eo",
@@ -39,7 +40,10 @@
 	"bs-extjs-filter-contains-not": "n'eus ket ennañ",
 	"bs-extjs-filter-starts-with": "a grog gant",
 	"bs-extjs-filter-ends-with": "a echu gant",
+	"bs-extjs-filter-bool-yes": "ya",
+	"bs-extjs-filter-bool-no": "ket",
 	"bs-extjs-title-success": "Berzh",
 	"bs-extjs-title-warning": "Diwallit",
-	"bs-extjs-categoryboxselect-emptytext": "Ouzhpennañ ur rummad"
+	"bs-extjs-categoryboxselect-emptytext": "Ouzhpennañ ur rummad",
+	"bs-extjs-categorytree-title": "Rummadoù"
 }
