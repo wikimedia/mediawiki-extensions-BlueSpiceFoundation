@@ -62,23 +62,24 @@ abstract class BSEntityConfig {
 		return static::$aEntityConfigs[$sType];
 	}
 
-	protected static function getDefault( $sMethod ) {
-		if( !isset(static::$aDefaults[$sMethod]) ) {
+
+	protected static function getDefault( $sOption ) {
+		if( !isset(static::$aDefaults[$sOption]) ) {
 			return false;
 		}
-		return static::$aDefaults[$sMethod];
+		return static::$aDefaults[$sOption];
 	}
 
 	/**
 	 * Getter for config methods
-	 * @param string $sMethod
+	 * @param string $sOption
 	 * @return mixed - The return value of the internaly called method or the
 	 * default
 	 */
-	public function get( $sMethod ) {
-		$sMethod = "get_$sMethod";
+	public function get( $sOption ) {
+		$sMethod = "get_$sOption";
 		if( !is_callable( array($this, $sMethod) ) ) {
-			return static::getDefault( $sMethod );
+			return static::getDefault( $sOption );
 		}
 		return $this->$sMethod();
 	}
