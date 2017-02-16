@@ -78,7 +78,7 @@ abstract class BSEntityConfig {
 	public function get( $sMethod ) {
 		$sMethod = "get_$sMethod";
 		if( !is_callable( array($this, $sMethod) ) ) {
-			static::getDefault( $sMethod );
+			return static::getDefault( $sMethod );
 		}
 		return $this->$sMethod();
 	}
