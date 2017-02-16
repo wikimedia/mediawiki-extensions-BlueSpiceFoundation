@@ -239,8 +239,8 @@ class BSEntity implements JsonSerializable {
 		if( !$oUser instanceof User ) {
 			return Status::newFatal( 'No User' );
 		}
-		if( !$this->hasUnsavedChanges() ) {
-			return Status::newGood('success');
+		if( $this->exists() && !$this->hasUnsavedChanges() ) {
+			return Status::newGood( $this );
 		}
 		if( empty($this->getID()) ) {
 			$this->generateID();
