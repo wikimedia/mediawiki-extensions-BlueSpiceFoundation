@@ -276,7 +276,7 @@ class BsConfig {
 			$aRows = $aData;
 		} else {
 			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from DB' );
-			$dbr = wfGetDB ( DB_READ );
+			$dbr = wfGetDB ( DB_SLAVE );
 			# query the settings from bs_settings
 			$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
 			$aRows = array();
