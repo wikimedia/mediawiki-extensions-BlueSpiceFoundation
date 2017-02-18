@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Metalhead64",
-			"Inkowik"
+			"Inkowik",
+			"Umherirrender"
 		]
 	},
 	"bluespicefoundation-desc": "Macht MediaWiki bereit für Unternehmen",
@@ -12,7 +13,7 @@
 	"bs-userbar_loginswitch_logout": "Abmelden",
 	"bs-userbar_loginswitch_login": "Anmelden",
 	"bs-extended-search-tooltip-fulltext": "Volltextsuche",
-	"bs-extended-search-textfield-defaultvalue": "Suche...",
+	"bs-extended-search-textfield-defaultvalue": "Suche …",
 	"bs-extended-search-textfield-tooltip": "Wiki durchsuchen",
 	"bs-no-information-available": "Keine Informationen verfügbar",
 	"bs-years-duration": "{{PLURAL:$1|einem Jahr|$1 Jahren}}",
