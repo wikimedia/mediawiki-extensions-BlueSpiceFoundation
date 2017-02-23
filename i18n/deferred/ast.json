@@ -14,5 +14,9 @@
 	"bs-deferred-batch-progress-desc": "Progresu",
 	"bs-deferred-batch-actions": "Aiciones",
 	"bs-deferred-batch-description": "Descripción",
-	"bs-deferred-batch-status": "Estáu"
+	"bs-deferred-batch-status": "Estáu",
+	"bs-deferred-action-apiaddcategories-description": "Amestar categoríes a «$1».",
+	"bs-deferred-action-apiremovecategories-description": "Quitar categoríes de «$1».",
+	"bs-deferred-action-apisetcategories-description": "Configurar les categoríes de «$1».",
+	"bs-deferred-action-apimovepage-description": "Treslladar «$1» a «$2»."
 }

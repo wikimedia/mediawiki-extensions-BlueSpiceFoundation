@@ -5,6 +5,7 @@
 			"Crucifunked"
 		]
 	},
+	"bluespicefoundation-desc": "Fai que Mediawiki tea preparáu pa les empreses",
 	"bs-ns_main": "(Páxines)",
 	"bs-ns_all": "(toos)",
 	"bs-tab_navigation": "Navegación",
@@ -73,6 +74,15 @@
 	"bs-pref-deleteduserimage": "Avatar d'usuariu desaniciáu:",
 	"bs-pref-bspinginterval": "Intervalu de ping (en segundos):",
 	"bs-pref-testmode": "Activar el mou de prueba",
+	"bs-tag-input-desc": "Valor del conteníu del elementu",
+	"bs-tag-param-desc": "Valor del atributu «$1» del elementu",
+	"bs-parser-error-invalid-namespace": "Espaciu de nomes inválidu: $1",
+	"bs-parser-error-invalid-title": "Títulu inválidu: $1",
+	"bs-validator-error-namespace-does-not-exist": "L'espaciu de nomes nun esiste: $1",
+	"bs-validator-error-namespace-on-blacklist": "Espaciu de nomes nun permitíu: $1",
+	"bs-validator-error-title-does-not-exist": "La páxina nun esiste: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Páxina nun permitida: $1",
+	"bs-exttype-bluespice": "Estensiones de BlueSpice",
 	"bs-export-menu-print-text": "Imprentar",
 	"bs-export-menu-print-title": "Amuesa la versión imprentable de la páxina"
 }
