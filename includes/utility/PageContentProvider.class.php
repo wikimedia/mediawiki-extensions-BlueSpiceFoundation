@@ -328,7 +328,11 @@ class BsPageContentProvider {
 		}
 
 		//This would be the case with normal articles and imagepages
-		$sHTML = empty( $sHTML ) ? $wgOut->getHTML() : $sHTML;
+		$sTitle = "";
+		if( empty( $sHTML ) ){
+			$sHTML = $wgOut->getHTML();
+			$sTitle = $wgOut->getPageTitle();
+		}
 
 		$this->restoreGlobals();
 
@@ -345,8 +349,8 @@ class BsPageContentProvider {
 			$sHTML = sprintf(
 				$this->getTemplate(),
 				'bs-ue-jumpmark-'.
-					md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
-				$oTitle->getPrefixedText(),
+				md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
+				empty( $sTitle ) ? $oTitle->getPrefixedText( ) : $sTitle,
 				$sHTML
 			);
 		}
