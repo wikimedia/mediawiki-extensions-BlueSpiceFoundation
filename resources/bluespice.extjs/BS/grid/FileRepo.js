@@ -51,7 +51,8 @@ Ext.define( 'BS.grid.FileRepo', {
 		var attr = {
 			style: 'background-image:url('+value+'); display:block; height: 120px;background-position: center center; background-repeat: no-repeat;',
 			href: record.get( 'file_url' ),
-			target: '_blank'
+			target: '_blank',
+			class: 'bs-thumb-link'
 		};
 		return mw.html.element( 'a', attr );
 	},
