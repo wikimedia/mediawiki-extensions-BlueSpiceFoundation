@@ -115,13 +115,15 @@ Ext.define( 'BS.Window', {
 	makeButtons: function() {
 		this.btnOK = Ext.create( 'Ext.Button', {
 			text: mw.message('bs-extjs-ok').plain(),
-			id: this.getId()+'-btn-ok'
+			id: this.getId()+'-btn-ok',
+			cls: 'bs-extjs-btn-ok'
 		});
 		this.btnOK.on( 'click', this.onBtnOKClick, this );
 
 		this.btnCancel = Ext.create( 'Ext.Button', {
 			text: mw.message('bs-extjs-cancel').plain(),
-			id: this.getId()+'-btn-cancel'
+			id: this.getId()+'-btn-cancel',
+			cls: 'bs-extjs-btn-cancel'
 		});
 		this.btnCancel.on( 'click', this.onBtnCancelClick, this );
 
