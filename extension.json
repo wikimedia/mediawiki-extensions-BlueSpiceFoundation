@@ -175,6 +175,24 @@
 			],
 			"group": "bsextjs"
 		},
+		"ext.bluespice.oojs": {
+			"localBasePath": "resources",
+			"remoteExtPath": "BlueSpiceFoundation/resources",
+			"targets": [
+				"mobile", "desktop"
+			],
+			"scripts": [
+				"bluespice.oojs/bluespice.ui.js",
+				"bluespice.oojs/ui/widget/StoreComboBoxInput.js",
+				"bluespice.oojs/ui/widget/StoreApiBoundComboBoxInput.js",
+				"bluespice.oojs/ui/widget/TitleComboBoxInput.js"
+			],
+			"dependencies": [
+				"mediawiki.api",
+				"oojs-ui",
+				"ext.bluespice"
+			]
+		},
 		"ext.bluespice.upload": {
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
