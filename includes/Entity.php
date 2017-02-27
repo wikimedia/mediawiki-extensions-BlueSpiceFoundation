@@ -199,7 +199,7 @@ class BSEntity implements JsonSerializable {
 		);
 
 		$oBSEntityContent = new JsonContent( $sText );
-		$oData = (object) $oBSEntityContent->getJsonData();
+		$oData = (object) $oBSEntityContent->getData()->getValue();
 
 		if( empty($oData->type) ) {
 			return null;
