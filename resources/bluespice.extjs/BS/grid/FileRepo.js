@@ -48,13 +48,33 @@ Ext.define( 'BS.grid.FileRepo', {
 	},
 
 	renderThumb: function( value, meta, record ) {
+		var title = new mw.Title(
+			record.get( 'page_title' ),
+			record.get( 'page_namespace' )
+		);
 		var attr = {
-			style: 'background-image:url('+value+'); display:block; height: 120px;background-position: center center; background-repeat: no-repeat;',
+			style: 'background-image:url('+value+'); display:block; height: 120px; background-position: center center; background-repeat: no-repeat;',
 			href: record.get( 'file_url' ),
 			target: '_blank',
-			class: 'bs-thumb-link'
+			class: 'bs-thumb-link',
+			'data-bs-title': title.getPrefixedText()
 		};
-		return mw.html.element( 'a', attr );
+		var attrImg = {
+			src: record.get( 'file_url' ),
+			height: '120px',
+			'data-file-width': record.get( 'file_width' ),
+			'data-file-height': record.get( 'file_height' )
+		};
+		// is thumb an image or a fileicon?
+		var ret = mw.html.element( 'a', attr ); // thumb is a fileicon
+		if( record.get( 'file_height' ) !== 0 ) {
+			// thumb is an image
+			attr.class = 'bs-thumb-link image';
+			attr.style = 'display: block; height: 120px; width: 120px;';
+			var img = mw.html.element( 'img', attrImg );
+			ret = mw.html.element( 'a', attr, new mw.html.Raw( img ) );
+		}
+		return ret;
 	},
 
 	renderBool: function( value ){
