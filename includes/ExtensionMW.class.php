@@ -123,7 +123,7 @@ abstract class BsExtensionMW extends ContextSource {
 	public function setHook( $hook, $method = false, $bExecuteFirst = false ) {
 		global $wgHooks;
 		// handle $method === 'on'.$hook as if $method == false
-		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( &$this, $method ) : $this;
+		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( $this, $method ) : $this;
 		// do not set same hook twice
 		if ( isset( $wgHooks ) && isset( $wgHooks[$hook] )
 			&& is_array( $wgHooks[$hook] )
