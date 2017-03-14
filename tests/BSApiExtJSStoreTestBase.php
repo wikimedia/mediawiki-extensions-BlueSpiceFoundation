@@ -8,6 +8,10 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 
 	protected $iFixtureTotal = 0;
 	abstract protected function getStoreSchema();
+
+	/**
+	 * @return int Total count of fixture data sets available to the test
+	 */
 	abstract protected function createStoreFixtureData();
 	abstract protected function getModuleName();
 
@@ -18,7 +22,7 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 	}
 
 	public function addDBDataOnce() {
-		$this->createStoreFixtureData();
+		$this->iFixtureTotal = $this->createStoreFixtureData();
 	}
 
 	public function testSchema() {
@@ -69,7 +73,7 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 		$results = $this->doApiRequest([
 			'action' => $this->getModuleName(),
 			'limit' => $limit,
-			'offset' => $offset
+			'start' => $offset
 		]);
 		$response = $results[0];
 
