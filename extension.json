@@ -201,6 +201,9 @@
 		"ext.bluespice.upload": {
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
+			"styles": [
+				"bluespice.extjs/bluespice.extjs.upload.css"
+			],
 			"messages": [
 				"bs-upload-uploaddialogtitle",
 				"bs-upload-uploadbuttontext",
@@ -217,10 +220,18 @@
 				"bs-upload-descfilelabel",
 				"bs-upload-error-long",
 				"bs-upload-filetypenotsupported",
-				"bs-upload-details"
+				"bs-upload-details",
+				"bs-upload-uploadwarningdialog-title",
+				"bs-upload-uploadwarningdialog-intro",
+				"bs-upload-uploadwarningdialog-outro",
+				"bs-upload-uploadwarningdialog-warning-exists",
+				"bs-upload-uploadwarningdialog-warning-duplicate",
+				"bs-upload-uploadwarningdialog-warning-unknown"
 			],
-			"targets": [ "desktop", "mobile" ]
-
+			"targets": [ "desktop", "mobile" ],
+			"dependencies": [
+				"mediawiki.api.upload"
+			]
 		},
 		"ext.bluespice.extjs.filerepo": {
 			"localBasePath": "resources",

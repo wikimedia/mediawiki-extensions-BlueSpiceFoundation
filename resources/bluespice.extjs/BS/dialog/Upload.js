@@ -9,12 +9,17 @@ Ext.define( 'BS.dialog.Upload', {
 	title: mw.message( 'bs-upload-uploaddialogtitle' ).plain(),
 	layout: 'fit',
 
-	afterInitComponent: function(){
-		this.upMain = new BS.panel.Upload({
+	/* Component specific */
+	uploadPanelCfg: {},
+
+	afterInitComponent: function() {
+		this.upMain = new BS.panel.Upload( $.extend(
+		this.uploadPanelCfg,
+		{
 			id: this.getId()+'-upload-panel',
 			allowedFileExtensions: this.allowedFileExtensions
-		});
-		this.upMain.on ('upload-complete', this.onUpMainUploadComplete, this);
+		} ) );
+		this.upMain.on( 'upload-complete', this.onUpMainUploadComplete, this );
 
 		this.items = [
 			this.upMain
