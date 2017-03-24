@@ -206,6 +206,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$variants = $this->data['content_navigation']['variants']; //Not used at the moment
 		$views = $this->data['content_navigation']['views'];
 		$actions = $this->data['content_navigation']['actions'];
+		$aTools = $this->getToolbox();
 		?>
 		<div id='left-navigation'>
 			<div id="p-namespaces" role="navigation" class="<?php if ( count( $namespaces ) == 0 ) { echo ' emptyPortlet'; } ?>" aria-labelledby="p-namespaces-label">
@@ -241,7 +242,19 @@ class BsBaseTemplate extends BaseTemplate {
 							<ul<?php $this->html( 'userlangattributes' ) ?> class="bs-personal-menu">
 							<?php foreach ( $actions as $key => $item){
 								echo $this->makeListItem( $key, $item );
-							}?>
+							}
+							//toolbox items to "more" content actions menu #5786
+							foreach( $aTools as $sKey => $aItem ) {
+								//make sure to have a new unique id related to
+								//content actions
+								$aItem['id'] = "ca-$sKey";
+								if( !is_string( $aItem['class'] ) ) {
+									$aItem['class'] = '';
+								}
+								$aItem['class'] .= " ca-toolbox-item";
+								echo $this->makeListItem( $sKey, $aItem );
+							}
+							?>
 							</ul>
 						</div>
 					</li>
@@ -309,17 +322,21 @@ class BsBaseTemplate extends BaseTemplate {
 	}
 
 	public function getToolbox() {
-		$baseToolbox = parent::getToolbox();
+		$aToolbox = parent::getToolbox();
+		//Remove some toolbox items, cause they are shown elsewhere. #5786
+		$aUnsetItems = [
+			'print',
+			'upload',
+			'specialpages',
+		];
+		foreach( $aUnsetItems as $sItem ) {
+			if( !isset( $aToolbox[$sItem] ) ) {
+				continue;
+			}
+			unset( $aToolbox[$sItem] );
+		}
 
-		// adding link to Allpages
-		$oAllPages = SpecialPageFactory::getPage( 'Allpages' );
-		$baseToolbox['specialpageallpages'] = array(
-			'href' => $oAllPages->getTitle()->getLinkURL(),
-			'text' => $oAllPages->getDescription(),
-			'id' => 't-allpages'
-		);
-
-		return $baseToolbox;
+		return $aToolbox;
 	}
 
 	// introduced in MediaWiki 1.23
