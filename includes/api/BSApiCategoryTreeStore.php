@@ -24,7 +24,8 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 			);
 
 			foreach ( $resSubcats as $row ) {
-				$aSubCategories[] = $row->cat_title;
+				$sCatTitle = preg_replace( '/\'/', "\'", $row->cat_title );
+				$aSubCategories[] = $sCatTitle;
 			}
 
 			$aTables = array( 'page' );
