@@ -560,6 +560,53 @@ class BsBaseTemplate extends BaseTemplate {
 
 	protected function printPersonalInfo(&$aOut){
 		$aOut[] = '<ul id="bs-personal-info">';
+
+		if( $this->data['language_urls'] ) {
+			$iCountLinks = 1;
+			foreach( $this->data['language_urls'] as $aLangLink ) {
+				$aLangLink['class'] .= " bs-lang-flag-{$aLangLink['lang']}";
+				$aOut[] = Html::rawElement( 'li', [
+						'id' => "pt-interlanguagelink-{$aLangLink['lang']}",
+						'class' => 'pt-interlanguagelink',
+					],
+					Html::element( 'a', $aLangLink, $aLangLink['text'] )
+				);
+				//only show up to 3 links
+				if( $iCountLinks >= 3 ) {
+					break;
+				}
+				$iCountLinks++;
+			}
+			//if there is more than 3 links, show an additional more button with
+			//all items included
+			if( count( $this->data['language_urls'] ) > $iCountLinks ) {
+				$aOut[] = Html::openElement( 'li', [
+					'id' => "pt-interlanguagelink-more",
+					'class' => 'pt-interlanguagelink-more',
+				]);
+				$aOut[] = Html::element( 'a', [
+					'href' => '#',
+					'text' => wfMessage('otherlanguages')->plain(),
+					'class' => 'pt-interlanguagelink-more-btn menuToggler',
+					'title' => wfMessage('otherlanguages')->plain(),
+				]);
+				$aOut[] = Html::openElement( 'ul', [
+					'class' => 'pt-interlanguagelink-more-list menu',
+				]);
+				foreach( $this->data['language_urls'] as $aLangLink ) {
+					$aLangLink['class'] .=
+						" bs-lang-flag-{$aLangLink['lang']}";
+						$aOut[] = Html::rawElement( 'li', [
+							'class' => 'pt-interlanguagelink-more-list-item',
+						],
+						Html::element( 'a', $aLangLink, $aLangLink['text'] )
+					);
+				}
+				$aOut[] = Html::closeElement( 'ul' );
+				$aOut[] = Html::closeElement( 'li' );
+			}
+		}
+
 		foreach( $this->data['bs_personal_info'] as $item ) {
 			$sActiveClass = $item['active'] ? 'active' : '';
 			$aOut[] = Html::rawElement(
@@ -578,6 +625,7 @@ class BsBaseTemplate extends BaseTemplate {
 				)
 			);
 		}
+
 		$aOut[] = '</ul>';
 		return true;
 	}
