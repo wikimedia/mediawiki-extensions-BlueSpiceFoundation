@@ -101,9 +101,6 @@ $bsgPermissionConfig = array(
 	"editmyoptions" => array(
 		'type' => 'global'
 	),
-	"editusercssjs" => array(
-		'type' => 'global'
-	),
 	"editusercss" => array(
 		'type' => 'global'
 	),
