@@ -560,7 +560,8 @@
 		"BSApiExtJSStoreTestBase": "tests/BSApiExtJSStoreTestBase.php",
 		"BSApiTasksTestBase": "tests/BSApiTasksTestBase.php",
 		"BSTemplateHelper": "includes/TemplateHelper.php",
-		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php"
+		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
+		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 1,

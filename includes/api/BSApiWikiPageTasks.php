@@ -32,12 +32,147 @@
  */
 class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected $aTasks = array(
-		'setCategories',
-		'getExplicitCategories',
-		'addCategories',
-		'removeCategories',
-		'getDiscussionCount'
+		'setCategories' => [
+			//'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
+			'examples' => [
+				[
+					'page_id' => 3234,
+					'categories' => [ 'Category A', 'Category_B' ]
+				],
+				[
+					'page_title' => 'SomeNamespace:Some page title',
+					'categories' => []
+				]
+			],
+			'params' => [
+				'page_id' => [
+					'type' => 'integer',
+			        'required' => true,
+					'alternative_to' => [ 'page_title' ]
+				],
+				'page_title' => [
+					'type' => 'string',
+			        'required' => true,
+					'alternative_to' => [ 'page_id' ]
+				],
+				'categories' => [
+					'desc' => 'bs-api-task-wikipagetasks-taskData-categories',
+					'type' => 'array',
+			        'required' => false,
+				    'default' => [],
+				]
+			]
+		],
+		'getExplicitCategories' => [
+			'examples' => [
+				[
+					'page_id' => 3234
+				],
+				[
+					'page_title' => 'SomeNamespace:Some page title',
+				]
+			],
+			'params' => [
+				'page_id' => [
+					'type' => 'integer',
+			        'required' => true,
+					'alternative_to' => [ 'page_title' ]
+				],
+				'page_title' => [
+					'type' => 'string',
+			        'required' => true,
+					'alternative_to' => [ 'page_id' ]
+				]
+			]
+		],
+		'addCategories' => [
+			'examples' => [
+				[
+					'page_id' => 3234,
+					'categories' => [ 'Category A', 'Category_B' ]
+				],
+				[
+					'page_title' => 'SomeNamespace:Some page title',
+					'categories' => [ 'Category A', 'Category_B' ]
+				]
+			],
+			'params' => [
+				'page_id' => [
+					'type' => 'integer',
+			        'required' => true,
+					'alternative_to' => [ 'page_title' ]
+				],
+				'page_title' => [
+					'type' => 'string',
+			        'required' => true,
+					'alternative_to' => [ 'page_id' ]
+				],
+				'categories' => [
+					'desc' => 'bs-api-task-wikipagetasks-taskData-categories',
+					'type' => 'array',
+			        'required' => false,
+				    'default' => [],
+				]
+			]
+		],
+		'removeCategories' => [
+			'examples' => [
+				[
+					'page_id' => 3234,
+					'categories' => [ 'Category A', 'Category_B' ]
+				],
+				[
+					'page_title' => 'SomeNamespace:Some page title',
+					'categories' => [ 'Category A', 'Category_B' ]
+				]
+			],
+			'params' => [
+				'page_id' => [
+					'type' => 'integer',
+			        'required' => true,
+					'alternative_to' => [ 'page_title' ]
+				],
+				'page_title' => [
+					'type' => 'string',
+			        'required' => true,
+					'alternative_to' => [ 'page_id' ]
+				],
+				'categories' => [
+					'desc' => 'bs-api-task-wikipagetasks-taskData-categories',
+					'type' => 'array',
+			        'required' => false,
+				    'default' => [],
+				]
+			]
+		],
+		'getDiscussionCount' => [
+			'examples' => [
+				[
+					'page_id' => 3234
+				],
+				[
+					'page_title' => 'SomeNamespace:Some page title'
+				]
+			],
+			//'readonly' => true, //TODO migrate "$this->aReadTasks"
+			'params' => [
+				'page_id' => [
+					'type' => 'integer',
+			        'required' => true,
+					'alternative_to' => [ 'page_title' ]
+				],
+				'page_title' => [
+					'type' => 'string',
+			        'required' => true,
+					'alternative_to' => [ 'page_id' ]
+				]
+			]
+		]
 	);
+
+	protected $aReadTasks = [
+		'getDiscussionCount', 'getExplicitCategories'
+	];
 
 	/**
 	 * Configures the global permission requirements
