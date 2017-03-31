@@ -402,6 +402,11 @@
 	content: "\eadf";
 }
 
+.icon-file-zip:before {
+	font-family: "icomoon" !important;
+	content: "\e92b";
+}
+
 .icon-users:before {
 	content: "\e972";
 }
