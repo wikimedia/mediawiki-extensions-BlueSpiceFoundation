@@ -220,7 +220,8 @@
             "styles": [
                 "bluespice/bluespice.css",
                 "bluespice/bluespice.icons.css",
-                "bluespice/bluespice.ui.basic.less"
+                "bluespice/bluespice.ui.basic.less",
+                "famfamfam/flags.css"
             ],
             "position": "top"
         },
