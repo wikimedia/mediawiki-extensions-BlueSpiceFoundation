@@ -36,6 +36,7 @@
 	"bs-extjs-confirmNavigationTitle": "Följ länken",
 	"bs-extjs-confirmNavigationText": "Vill du verkligen att följa denna länk? Alla dynamiska inställningar, som filtrering och sortering, på den aktuella sidan kommer att försvinna.",
 	"bs-extjs-allns": "(alla)",
+	"bs-extjs-mainns": "(Huvudnamnrymden)",
 	"bs-extjs-filters": "Filter",
 	"bs-extjs-filter-equals": "är lika med",
 	"bs-extjs-filter-equals-not": "motsvarar inte",

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kghbln"
+		]
+	},
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Sie sind nicht berechtigt, die Seite „$1“ zu bearbeiten.",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Sie sind nicht berechtigt, die Seite „$1“ zu lesen."
+}
