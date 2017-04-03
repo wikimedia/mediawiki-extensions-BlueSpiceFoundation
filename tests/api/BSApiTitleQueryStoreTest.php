@@ -39,6 +39,8 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 		foreach( $aFixtures as $aFixture ) {
 			$this->insertPage( $aFixture[0], $aFixture[1] );
 		}
+		$total = count( $aFixtures );
+		return $total;
 	}
 
 	protected function getModuleName() {
