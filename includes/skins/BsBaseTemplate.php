@@ -572,7 +572,7 @@ class BsBaseTemplate extends BaseTemplate {
 					Html::element( 'a', $aLangLink, $aLangLink['text'] )
 				);
 				//only show up to 3 links
-				if( $iCountLinks >= 3 ) {
+				if( $iCountLinks >= 2 ) {
 					break;
 				}
 				$iCountLinks++;
