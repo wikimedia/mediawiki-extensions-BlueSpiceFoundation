@@ -45,5 +45,6 @@
 	"bs-extjs-filter-bool-yes": "tak",
 	"bs-extjs-filter-bool-no": "nie",
 	"bs-extjs-title-warning": "Ostrzeżenie",
-	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorię"
+	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorię",
+	"bs-extjs-categorytree-title": "Kategorie"
 }

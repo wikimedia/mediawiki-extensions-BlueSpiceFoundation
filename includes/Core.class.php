@@ -343,10 +343,13 @@ class BsCore {
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
 
 		global $wgHooks;
-		$wgHooks['ArticleAfterFetchContent'][] = array( self::$oInstance, 'behaviorSwitches' );
+		$wgHooks['ArticleAfterFetchContentObject'][] = array( self::$oInstance, 'behaviorSwitches' );
 		$wgHooks['ParserBeforeStrip'][] = array( self::$oInstance, 'hideBehaviorSwitches' );
 		$wgHooks['ParserBeforeTidy'][] = array( self::$oInstance, 'recoverBehaviorSwitches' );
 
+		if( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
+			$wgHooks['EditPage::showEditForm:initial'] = [];
+		}
 		array_unshift(
 			$wgHooks['EditPage::showEditForm:initial'],
 			array( self::$oInstance, 'lastChanceBehaviorSwitches' )
@@ -575,9 +578,9 @@ class BsCore {
 	}
 
 	/**
-	 * Hook-handler for "ArticleAfterFetchContent"
+	 * Hook-handler for "ArticleAfterFetchContentObject"
 	 * @param WikiPage $article
-	 * @param string $content
+	 * @param Content $content
 	 * @return boolean Always true to keep hook running
 	 */
 	public function behaviorSwitches( &$article, &$content ) {
@@ -585,7 +588,7 @@ class BsCore {
 			return true;
 		}
 
-		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $content );
+		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", ContentHandler::getContentText( $content ) );
 		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
 			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
 				call_user_func( $sCallback );

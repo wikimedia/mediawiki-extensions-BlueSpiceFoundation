@@ -15,5 +15,6 @@
 	"bs-deferred-batch-progress-desc": "Progreso",
 	"bs-deferred-batch-actions": "Acciones",
 	"bs-deferred-batch-description": "Descripción",
-	"bs-deferred-batch-status": "Estado"
+	"bs-deferred-batch-status": "Estado",
+	"bs-deferred-action-apimovepage-description": "Trasladar «$1» a «$2»."
 }

@@ -4,7 +4,8 @@
 			"Amire80",
 			"Okras",
 			"Габдулгани НИШ ХБН",
-			"SuperPuperSteve"
+			"SuperPuperSteve",
+			"Kareyac"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -49,5 +50,6 @@
 	"bs-extjs-filter-bool-no": "нет",
 	"bs-extjs-title-success": "Успешно",
 	"bs-extjs-title-warning": "Предупреждение",
-	"bs-extjs-categoryboxselect-emptytext": "Добавить категорию"
+	"bs-extjs-categoryboxselect-emptytext": "Добавить категорию",
+	"bs-extjs-categorytree-title": "Категории"
 }

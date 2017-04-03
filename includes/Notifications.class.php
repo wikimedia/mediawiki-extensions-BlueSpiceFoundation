@@ -134,45 +134,18 @@ abstract class BSNotifications {
 	/**
 	 * @see BSNotificationHandlerInterface::registerNotification
 	 *
-	 * @param String $sKey
-	 * @param String $sCategory
-	 * @param String $sSummaryMsgKey
-	 * @param Array  $aSummaryParams
-	 * @param String $sEmailSubjectMsgKey
-	 * @param Array  $aEmailSubjectParams
-	 * @param String $sEmailBodyMsgKey
-	 * @param Array  $aEmailBodyParams
-	 * @param Array  $aExtraParams
 	 *
 	 * @throws BsException
 	 */
-	public static function registerNotification(
-		$sKey,
-		$sCategory,
-		$sSummaryMsgKey,
-		$aSummaryParams,
-		$sEmailSubjectMsgKey,
-		$aEmailSubjectParams,
-		$sEmailBodyMsgKey,
-		$aEmailBodyParams,
-		$aExtraParams = null
-	) {
+	public static function registerNotification( /*...*/ ) {
+		$aParams = func_get_args();
+
 		$aNotificationHandlerMethods = self::getNotificationHandlerMethods(
 			__FUNCTION__
 		);
 
 		foreach ( $aNotificationHandlerMethods as $sHandler => $sCallable ) {
-			$sHandler::$sCallable(
-				$sKey,
-				$sCategory,
-				$sSummaryMsgKey,
-				$aSummaryParams,
-				$sEmailSubjectMsgKey,
-				$aEmailSubjectParams,
-				$sEmailBodyMsgKey,
-				$aEmailBodyParams,
-				$aExtraParams
-			);
+			$sHandler::$sCallable( $aParams );
 		}
 	}
 

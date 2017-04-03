@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fulup"
+		]
+	},
+	"bs-deferred-action-status-done": "Graet.",
+	"bs-deferred-action-status-error": "C'hwitet.",
+	"bs-deferred-action-apicopypage-description": "Eilañ \"$1\" e \"$2\".",
+	"bs-deferred-batch-description": "Deskrivadur",
+	"bs-deferred-batch-status": "Statud",
+	"bs-deferred-action-apiaddcategories-description": "Ouzhpennañ rummadoù e '$1'.",
+	"bs-deferred-action-apimovepage-description": "Kas \"$1\" da \"$2\"."
+}

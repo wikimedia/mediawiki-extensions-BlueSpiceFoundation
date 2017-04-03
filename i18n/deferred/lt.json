@@ -15,5 +15,8 @@
 	"bs-deferred-batch-actions": "Veiksmai",
 	"bs-deferred-batch-description": "Aprašymas",
 	"bs-deferred-batch-status": "Statusas",
+	"bs-deferred-action-apiaddcategories-description": "Pridėti kategorijas į '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Pašalinti kategorijos iš '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Nustatyti kategorijas '$1'.",
 	"bs-deferred-action-apimovepage-description": "Perkelti „$1“ į „$2“."
 }

@@ -3,14 +3,13 @@
 		"authors": [
 			"Okras",
 			"Agilight",
-			"Kaganer"
+			"Kaganer",
+			"Mailman"
 		]
 	},
 	"bs-ns_main": "(Страницы)",
 	"bs-ns_all": "(все)",
 	"bs-tab_navigation": "Навигация",
-	"bs-tab_focus": "Фокус",
-	"bs-tab_admin": "Админ",
 	"bs-userbar_loginswitch_logout": "Выйти",
 	"bs-userbar_loginswitch_login": "Войти",
 	"bs-extended-search-tooltip-fulltext": "Полнотекстовый поиск",
@@ -75,5 +74,6 @@
 	"bs-pref-anonuserimage": "Аватар анонимного участника:",
 	"bs-pref-deleteduserimage": "Аватар удалённого участника:",
 	"bs-pref-bspinginterval": "Интервал пинга (в секундах):",
-	"bs-pref-testmode": "Включить тестовый режим"
+	"bs-pref-testmode": "Включить тестовый режим",
+	"bs-exttype-bluespice": "Расширения BlueSpice"
 }

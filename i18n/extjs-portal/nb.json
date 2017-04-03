@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"bs-extjs-portal-config": "Konfigurer portlet:",
+	"bs-extjs-portal-title": "Portlet-tittel",
+	"bs-extjs-portal-height": "Høyde",
+	"bs-extjs-portal-count": "Oppslag",
+	"bs-extjs-portal-timespan": "Tidsrom",
+	"bs-extjs-portal-timespan-week": "Uke",
+	"bs-extjs-portal-timespan-month": "Måned",
+	"bs-extjs-portal-timespan-alltime": "Gjennom tidene"
+}

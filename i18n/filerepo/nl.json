@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"bs-filerepo-labelupload": "Uploaden",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Bestandsnaam",
+	"bs-filerepo-headerfilesize": "Grootte",
+	"bs-filerepo-headerpagecategories": "Categorieën",
+	"bs-filerepo-headerfilewidth": "Breedte",
+	"bs-filerepo-headerfileheight": "Hoogte",
+	"bs-filerepo-headerfilemimetype": "MIME-type",
+	"bs-filerepo-headerfileusertext": "Gebruiker",
+	"bs-filerepo-headerfileextension": "Uitbreiding",
+	"bs-filerepo-headerfiletimestamp": "Geüpload op",
+	"bs-filerepo-headerfilemediatype": "Mediatype",
+	"bs-filerepo-headerfiledescription": "Beschrijving",
+	"bs-filerepo-headerfilethumbnail": "Miniatuur",
+	"bs-filerepo-yes": "Ja",
+	"bs-filerepo-no": "Nee",
+	"bs-filerepo-pagesize": "Paginagrootte"
+}

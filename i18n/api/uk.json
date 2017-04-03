@@ -39,5 +39,10 @@
 	"apihelp-bs-wikipage-store-description": "Перелічує всі сторінки у вікі. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
 	"apihelp-bs-ping-tasks-description": "Пінгувати завдання, що забезпечує безперервний обмін даними",
 	"apihelp-bs-wikisubpage-treestore-description": "Перелічує підсторінки конкретної вікісторінки",
-	"apihelp-bs-wikisubpage-treestore-param-node": "Назва вікісторінки із префіксом"
+	"apihelp-bs-wikisubpage-treestore-param-node": "Назва вікісторінки із префіксом",
+	"apihelp-bs-upload-license-store-description": "Перелічує всі доступні ліцензії для завантаження файлу",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "У Вас немає дозволу на читання сторінки «$1».",
+	"bs-wikipage-tasks-error-nothingtoremove": "Немає категорій до вилучення",
+	"apihelp-bs-category-treestore-description": "Перелічує підкатегорії певної категорії",
+	"apihelp-bs-category-treestore-param-node": "Шлях до категорій, розділених косою рискою"
 }

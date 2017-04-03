@@ -36,6 +36,7 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría non valida|Categorías non válidas}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Establecéronse as categorías con éxito.",
 	"apihelp-bs-wikipage-store-description": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS.",
+	"apihelp-bs-ping-tasks-description": "Tarefa de <i>ping</i> que proporciona un intercambio contínuo de datos",
 	"apihelp-bs-wikisubpage-treestore-description": "Lista as subpáxinas dunha wikipáxina específica",
 	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki",
 	"apihelp-bs-upload-license-store-description": "Lista todas as licenzas dispoñibles para a suba dun ficheiro",

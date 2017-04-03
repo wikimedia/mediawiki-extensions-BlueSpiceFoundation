@@ -4,7 +4,13 @@
 			"WikiPhoenix"
 		]
 	},
+	"apihelp-bs-user-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-category-store-description": "Listar alla kategorier. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-adminuser-store-description": "Listar alla användare från databasen med ytterligare känslig data. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-group-store-description": "Listar alla grupper förutom $wgImplicitGroups. Tillåter sortering, filtrering och sidnumrering. Implementerar parametrar för ExtJS Store.",
+	"apihelp-bs-interwiki-store-description": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-titlequery-store-description": "Listar sidtitlar och (valfritt) namnrymdsprefix baserat på en frågeterm. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-wikipage-tasks-description": "Tillhandahåller vanliga åtgärder för WikiPages",
 	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
 	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
 	"apihelp-bs-task-param-format": "Format för resultatet",
@@ -12,5 +18,10 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan '$1'.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ogiltig kategori|Ogiltig kategorier}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategorier har lagts till.",
-	"apihelp-bs-upload-license-store-description": "Listar alla tillgängliga licenser för en filuppladdning"
+	"apihelp-bs-wikisubpage-treestore-description": "Listar undersidor för en specifik wikisida",
+	"apihelp-bs-wikisubpage-treestore-param-node": "Prefixtiteln för wikisidan",
+	"apihelp-bs-upload-license-store-description": "Listar alla tillgängliga licenser för en filuppladdning",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Du har inte tillåtelse att läsa sidan \"$1\".",
+	"bs-wikipage-tasks-error-nothingtoremove": "Det finns inga kategorier att ta bort",
+	"apihelp-bs-category-treestore-description": "Listar alla underkategorier för en specifik kategori"
 }

@@ -5,8 +5,8 @@ class BsBaseTemplate extends BaseTemplate {
 	function __construct() {
 		parent::__construct();
 		global $wgHooks;
-		$wgHooks['BSWidgetBarGetDefaultWidgets'][] = array(&$this, 'onBSWidgetBarGetDefaultWidgets');
-		$wgHooks['BSWidgetListHelperInitKeyWords'][] = array(&$this, 'onBSWidgetListHelperInitKeyWords');
+		$wgHooks['BSWidgetBarGetDefaultWidgets'][] = array($this, 'onBSWidgetBarGetDefaultWidgets');
+		$wgHooks['BSWidgetListHelperInitKeyWords'][] = array($this, 'onBSWidgetListHelperInitKeyWords');
 
 		$this->data['bs_search_input'] = array(
 			'id' => 'searchInput',

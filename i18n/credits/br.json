@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fohanno"
+			"Fohanno",
+			"Fulup"
 		]
 	},
 	"specialcredits": "Kredoù BlueSpice",
 	"bs-credits-programmers": "Programmourien",
+	"bs-credits-dnt": "Empentiñ hag amprouiñ",
 	"bs-credits-contributors": "Kenlabourerien",
 	"bs-credits-translators": "Troerien",
 	"bs-credits-translation": "Troidigezh",

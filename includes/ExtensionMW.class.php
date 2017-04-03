@@ -79,12 +79,12 @@ abstract class BsExtensionMW extends ContextSource {
 	public function setup( $sExtName = "", $aConfig = array() ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 
-		global $wgExtensionCredits, $wgBlueSpiceExtInfo;
+		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
 			// Extension credits that will show up on Special:Version
 		if( !empty( $aConfig['deprecatedSince'] ) ) {
 			$sVersion = str_replace(
 				'default',
-				$wgBlueSpiceExtInfo['version'],
+				$bsgBlueSpiceExtInfo['version'],
 				$this->mInfo[EXTINFO::VERSION]
 			);
 
@@ -123,7 +123,7 @@ abstract class BsExtensionMW extends ContextSource {
 	public function setHook( $hook, $method = false, $bExecuteFirst = false ) {
 		global $wgHooks;
 		// handle $method === 'on'.$hook as if $method == false
-		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( &$this, $method ) : $this;
+		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( $this, $method ) : $this;
 		// do not set same hook twice
 		if ( isset( $wgHooks ) && isset( $wgHooks[$hook] )
 			&& is_array( $wgHooks[$hook] )

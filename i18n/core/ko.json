@@ -33,7 +33,7 @@
 	"bs-email-footer": "이 메시지는 $1이(가) 자동으로 생성했습니다. 이 이메일에 답변하지 마세요.",
 	"bs-userpagesettings-legend": "사용자 설정",
 	"bs-userpreferences-link-text": "사용자 설정 더 보기",
-	"bs-userpreferences-link-title": "개인 사용자 설정 보기",
+	"bs-userpreferences-link-title": "개인 사용자 설정 표시",
 	"bs-exception-view-heading": "오류가 발생함",
 	"bs-exception-view-text": "요청을 처리하는 동안 다음 오류가 발생했습니다:",
 	"bs-exception-view-admin-hint": "시스템 관리자에게 문의하시기 바랍니다.",

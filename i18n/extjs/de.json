@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stephan Muggli <muggli@hallowelt.biz>"
+			"Stephan Muggli <muggli@hallowelt.biz>",
+			"Umherirrender"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -17,11 +18,11 @@
 	"bs-extjs-hint": "Hinweis",
 	"bs-extjs-error": "Fehler",
 	"bs-extjs-confirm": "Bestätigen",
-	"bs-extjs-loading": "Lade...",
+	"bs-extjs-loading": "Lade …",
 	"bs-extjs-pageSize": "Seitengröße",
 	"bs-extjs-actions-column-header": "Aktionen",
 	"bs-extjs-warning": "Warnung",
-	"bs-extjs-saving": "speichern...",
+	"bs-extjs-saving": "speichern …",
 	"bs-extjs-reset": "Zurücksetzen",
 	"bs-extjs-close": "Schließen",
 	"bs-extjs-label-user": "Benutzer",
@@ -29,7 +30,7 @@
 	"bs-extjs-label-page": "Seite",
 	"bs-extjs-upload": "Hochladen",
 	"bs-extjs-browse": "Durchsuchen",
-	"bs-extjs-uploading": "Lädt hoch...",
+	"bs-extjs-uploading": "Lädt hoch …",
 	"bs-extjs-confirmNavigationTitle": "Dem Link folgen",
 	"bs-extjs-confirmNavigationText": "Möchtest du wirklich diesem Link folgen? Alle dynamischen Einstellungen, wie Filter und Sortierung, auf dieser Seite gehen dabei verloren.",
 	"bs-extjs-allns": "(alle)",
@@ -47,5 +48,6 @@
 	"bs-extjs-filter-bool-no": "nein",
 	"bs-extjs-title-success": "Erfolg",
 	"bs-extjs-title-warning": "Warnung",
-	"bs-extjs-categoryboxselect-emptytext": "Kategorie hinzufügen"
+	"bs-extjs-categoryboxselect-emptytext": "Kategorie hinzufügen",
+	"bs-extjs-categorytree-title": "Kategorien"
 }

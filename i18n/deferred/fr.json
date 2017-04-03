@@ -4,12 +4,13 @@
 			"Macofe",
 			"TomT0m",
 			"Wladek92",
-			"Gomoko"
+			"Gomoko",
+			"The RedBurn"
 		]
 	},
 	"bs-deferred-action-status-pending": "En attente.",
 	"bs-deferred-action-status-running": "En cours d'exécution...",
-	"bs-deferred-action-status-done": "Fait.",
+	"bs-deferred-action-status-done": "Terminé.",
 	"bs-deferred-action-status-error": "Échec.",
 	"bs-deferred-action-apicopypage-description": "Copier «$1» vers «$2».",
 	"bs-deferred-action-apieditpage-description": "Modifier « $1 ».",

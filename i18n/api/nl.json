@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98"
+		]
+	},
+	"apihelp-bs-store-param-limit": "Aantal resultaten om te tonen",
+	"bs-wikipage-tasks-error-page-not-valid": "De opgegeven pagina is ongeldig.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Categorieën gewijzigd.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "U hebt geen toestemming om de pagina '$1' te bewerken.",
+	"bs-wikipage-tasks-error-categories-not-valid": "Ongeldige {{PLURAL:$2|categorie|categorieën}}: $1",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "U hebt geen toestemming om de pagina '$1' te bekijken.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Er zijn geen categorieën om te verwijderen"
+}

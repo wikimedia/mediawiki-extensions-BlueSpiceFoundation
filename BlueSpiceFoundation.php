@@ -36,7 +36,7 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 	include_once( __DIR__ . '/vendor/autoload.php' );
 }
 
-$wgFooterIcons['poweredby']['bluespice'] = array(
+$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = array(
 	"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
 	"url" => "http://bluespice.com",
 	"alt" => "Powered by BlueSpice",
@@ -55,9 +55,3 @@ array_unshift(
 	$GLOBALS['wgExtensionFunctions'],
 	'BsCore::doInitialise'
 );
-
-//make old ajax functions available, remove this after replacement implemented
-$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getTitleStoreData';
-$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getNamespaceStoreData';
-$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getUserStoreData';
-$GLOBALS['wgAjaxExportList'][] = 'BsCommonAJAXInterface::getFileUrl';

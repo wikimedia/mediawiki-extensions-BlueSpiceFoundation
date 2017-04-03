@@ -1,6 +1,6 @@
 <?php
 /**
- * Provides the base api for BlueSpice.
+ * Provides the base task api for BlueSpice.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -41,6 +41,22 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 	/**
 	 * Methods that can be called by task param
+	 * e.g.
+	 * [
+	 *    'taskname' => [
+	 *       'examples' => [
+	 *           [
+	 *               'paramname' => 'Some string'
+	 *           ]
+	 *       ],
+	 *       'params' => [
+	 *           'paramname' => [
+	 *               'type' => string,
+	 *               'required' => true
+	 *           ]
+	 *        ]
+	 *     ]
+	 * ];
 	 * @var array
 	 */
 	protected $aTasks = array();
@@ -65,6 +81,23 @@ abstract class BSApiTasksBase extends BSApiBase {
 	protected $oExtendedContext = null;
 
 	/**
+	 *
+	 * @var BSTasksApiSpec
+	 */
+	protected $oTasksSpec = null;
+
+	/**
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName Name of this module
+	 * @param string $modulePrefix Prefix to use for parameter names
+	 */
+	public function __construct( \ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
+		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
+		$this->oTasksSpec = new BSTasksApiSpec( $this->aTasks );
+		parent::__construct($mainModule, $moduleName, $modulePrefix);
+	}
+
+	/**
 	 * The execute() method will be invoked directly by ApiMain immediately
 	 * before the result of the module is output. Aside from the
 	 * constructor, implementations should assume that no other methods
@@ -74,6 +107,17 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 */
 	public function execute() {
 		$aParams = $this->extractRequestParams();
+
+		/**
+		 * As we disable "needToken" of one of the following flags is set we
+		 * need to make sure that no task is being executed!
+		 */
+		if( isset( $aParams['schema'] ) ) {
+			return $this->returnTaskDataSchema( $aParams['task'] );
+		}
+		if( isset( $aParams['examples'] ) ) {
+			return $this->returnTaskDataExamples( $aParams['task'] );
+		}
 		$this->initContext();
 
 		//Avoid API warning: register the parameter used to bust browser cache
@@ -84,12 +128,16 @@ abstract class BSApiTasksBase extends BSApiBase {
 		$oResult = $this->makeStandardReturn();
 
 		if( !is_callable( array( $this, $sMethod ) ) ) {
-			$oResult->errors['task'] = 'Task '.$sTask.' not implemented';
+			$oResult->errors['task'] = "Task '$sTask' not implemented!";
 		}
 		else {
 			$res = $this->checkTaskPermission( $sTask );
 			if( !$res ) {
-				$this->dieUsageMsg( 'badaccess-groups' );
+				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+					$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
+				} else {
+					$this->dieUsageMsg( 'badaccess-groups' );
+				}
 			}
 			if( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
 				global $wgReadOnly;
@@ -99,7 +147,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 				$oTaskData = $this->getParameter( 'taskData' );
 				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', array( $this, $sTask, &$oTaskData , &$aParams ) );
 
-				$oResult = $this->validateTaskData( $oTaskData );
+				$oResult = $this->validateTaskData( $sTask, $oTaskData );
 				if( empty( $oResult->errors ) && empty( $oResult->message ) ) {
 					try {
 						$oResult = $this->$sMethod( $oTaskData , $aParams );
@@ -107,6 +155,11 @@ abstract class BSApiTasksBase extends BSApiBase {
 					catch ( Exception $e ) {
 						$oResult->success = false;
 						$oResult->message = $e->getMessage();
+						$mCode = method_exists( $e, 'getCodeString' ) ? $e->getCodeString() : $e->getCode();
+						if( $e instanceof DBError ) {
+							$mCode = 'dberror'; //TODO: error code for subtypes like DBQueryError or DBReadOnlyError?
+						}
+						$oResult->errors[$mCode] = $e->getMessage();
 					}
 				}
 
@@ -230,34 +283,39 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 * @return array
 	 */
 	protected function getAllowedParams() {
-		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		return array(
 			'task' => array(
 				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => $this->aTasks,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-task',
+				ApiBase::PARAM_TYPE => $this->oTasksSpec->getTaskNames(),
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-task',
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => $this->makeTaskHelpMessages()
 			),
 			'taskData' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '{}',
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-taskdata',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-taskdata',
 			),
 			'context' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '{}',
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-context',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-context',
+			),
+			'schema' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => false,
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-schema',
+			),
+			'examples' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => false,
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-examples',
 			),
 			'format' => array(
 				ApiBase::PARAM_DFLT => 'json',
 				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-format',
-			),
-			'token' => array(
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-task-param-token',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-format',
 			)
 		);
 	}
@@ -302,8 +360,9 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 * @return type
 	 */
 	public function getExamples() {
+		$aTaskNames = $this->oTasksSpec->getTaskNames();
 		return array(
-			'api.php?action='.$this->getModuleName().'&task='.$this->aTasks[0].'&taskData={someKey:"someValue",isFalse:true}',
+			'api.php?action='.$this->getModuleName().'&task='.$aTaskNames[0].'&taskData={someKey:"someValue",isFalse:true}',
 		);
 	}
 
@@ -370,36 +429,18 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 	/**
 	 * NOT IMPLEMENTED YET
-	 * Return the param definition for each task
-	 * array(
-	 *    taskname => array(
-	 *       paramname => array(
-	 *           type => string,
-	 *           required => true,
-	 *           default => '',
-	 *       )
-	 *    )
-	 * );
-	 * @return array - or false to skip validation
-	 */
-	public function getTaskDataDefinitions() {
-		return false;
-	}
-
-	/**
-	 * NOT IMPLEMENTED YET
 	 * Use ParamProcessor to validate taskData params
+	 * @param string $sTask
 	 * @param stdClass $oTaskData
 	 * @return stdClass - Standard return
 	 */
-	protected function validateTaskData( $oTaskData ) {
-		$aDefinitions = $this->getTaskDataDefinitions();
+	protected function validateTaskData( $sTask, $oTaskData ) {
+		$aDefinitions = $this->oTasksSpec->getTaskDataDefinition( $sTask );
 		$oReturn = $this->makeStandardReturn();
 		if( $aDefinitions === false ) {
 			return $oReturn;
 		}
 		//TODO: Use ParamProcessor to validate params defined by
-		//$this->getTaskDataDefinitions().
 		return $oReturn;
 	}
 
@@ -408,6 +449,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 * @return string
 	 */
 	public function needsToken() {
+		if( $this->isTaskDataSchemaCall() || $this->isTaskDataExamplesCall() ) {
+			return false;
+		}
+
 		return 'csrf';
 	}
 
@@ -479,5 +524,69 @@ abstract class BSApiTasksBase extends BSApiBase {
 		return array(
 			'getUserTaskPermissions' => array( 'read' )
 		);
+	}
+
+	protected function makeTaskHelpMessages() {
+		$aMessages = [];
+		$aUrlParams = [
+			'path' => wfScript( 'api' )
+		];
+
+		foreach( $this->oTasksSpec->getTaskNames() as $sTaskName ) {
+			$aMessages[$sTaskName] = [
+				'bs-api-task-taskdata-help',
+				wfExpandUrl( wfAssembleUrl( $aUrlParams + [
+					'query' => wfArrayToCgi( [
+						'action' => $this->getModuleName(),
+						'task' => $sTaskName,
+						'schema' => 1
+					] )
+				] ) ),
+				wfExpandUrl( wfAssembleUrl( $aUrlParams + [
+					'query' => wfArrayToCgi( [
+						'action' => $this->getModuleName(),
+						'task' => $sTaskName,
+						'examples' => 1
+					] )
+				] ) )
+			];
+		}
+
+		return $aMessages;
+	}
+
+	protected function returnTaskDataSchema( $sTaskName ) {
+		$this->getResult()->addValue( 
+			null,
+			'schema',
+			$this->oTasksSpec->getSchema( $sTaskName )
+		);
+	}
+
+	protected function returnTaskDataExamples( $sTaskName ) {
+		$this->getResult()->addValue( 
+			null,
+			'examples',
+			$this->oTasksSpec->getExamples( $sTaskName )
+		);
+	}
+
+	/**
+	 * @return \BSApiFormatJson
+	 */
+	public function getCustomPrinter() {
+		if( $this->isTaskDataSchemaCall() || $this->isTaskDataExamplesCall() ) {
+			return new BSApiFormatJson( $this->getMain(), 'jsonfm' );
+		}
+
+		return parent::getCustomPrinter();
+	}
+
+	protected function isTaskDataSchemaCall() {
+		return $this->getRequest()->getVal( 'schema', null ) !== null;
+	}
+
+	protected function isTaskDataExamplesCall() {
+		return $this->getRequest()->getVal( 'examples', null ) !== null;
 	}
 }

@@ -42,5 +42,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "You are not allowed to read page '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "There are no categories to remove",
 	"apihelp-bs-category-treestore-description": "Lists the sub-categories of a specific category",
-	"apihelp-bs-category-treestore-param-node": "A path of categories separated by slash"
+	"apihelp-bs-category-treestore-param-node": "A path of categories separated by slash",
+	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parameter examples]",
+	"apihelp-bs-task-param-schema": "Show the JSON schema for the task parameters",
+	"apihelp-bs-task-param-examples": "Show examples of task parameters",
+	"bs-api-task-taskData-page-id": "The ID of an existing wiki page",
+	"bs-api-task-taskData-page-title": "A valid title of a wiki page",
+	"bs-api-task-wikipagetasks-taskData-categories": "Array of strings. Values need to be valid category names."
 }

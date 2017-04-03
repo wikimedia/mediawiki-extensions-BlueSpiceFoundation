@@ -6,7 +6,7 @@
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],
 	"url": "http://bluespice.com",
-	"description": "Makes MediaWiki enterprise ready.",
+	"descriptionmsg": "bluespicefoundation-desc",
 	"type": "other",
 	"ExtensionFunctions": [
 		"BsCoreHooks::setup"
@@ -58,6 +58,9 @@
 				"bs-two-units-ago",
 				"bs-one-unit-ago",
 				"bs-now"
+			],
+			"dependencies": [
+				"ext.bluespice.templates"
 			]
 		},
 		"ext.bluespice.extjs": {
@@ -73,7 +76,8 @@
 			"styles": [
 				"bluespice.extjs/bluespice.extjs.fixes.css",
 				"bluespice.extjs/bluespice.extjs.overrides.less",
-				"bluespice.extjs/bluespice.extjs.filerepogrid.css"
+				"bluespice.extjs/bluespice.extjs.filerepogrid.css",
+				"bluespice.extjs/bluespice.extjs.theme.less"
 			],
 			"messages": [
 				"bs-extjs-ok",
@@ -119,7 +123,8 @@
 				"bs-extjs-title-warning",
 				"bs-extjs-filter-bool-yes",
 				"bs-extjs-filter-bool-no",
-				"bs-extjs-categoryboxselect-emptytext"
+				"bs-extjs-categoryboxselect-emptytext",
+				"bs-extjs-categorytree-title"
 			],
 			"dependencies": [
 				"ext.bluespice.extjs.theme.ux",
@@ -169,6 +174,24 @@
 				"bluespice.extjs/Ext.ux/form/field/BoxSelect.css"
 			],
 			"group": "bsextjs"
+		},
+		"ext.bluespice.oojs": {
+			"localBasePath": "resources",
+			"remoteExtPath": "BlueSpiceFoundation/resources",
+			"targets": [
+				"mobile", "desktop"
+			],
+			"scripts": [
+				"bluespice.oojs/bluespice.ui.js",
+				"bluespice.oojs/ui/widget/StoreComboBoxInput.js",
+				"bluespice.oojs/ui/widget/StoreApiBoundComboBoxInput.js",
+				"bluespice.oojs/ui/widget/TitleComboBoxInput.js"
+			],
+			"dependencies": [
+				"mediawiki.api",
+				"oojs-ui",
+				"ext.bluespice"
+			]
 		},
 		"ext.bluespice.upload": {
 			"localBasePath": "resources",
@@ -223,6 +246,9 @@
 				"bluespice/bluespice.icons.css",
 				"bluespice/bluespice.ui.basic.less",
 				"famfamfam/flags.css"
+			],
+			"targets": [
+				"mobile", "desktop"
 			],
 			"position": "top"
 		},
@@ -312,6 +338,9 @@
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": "bluespice/bluespice.testsystem.js"
+		},
+		"ext.bluespice.templates": {
+			"class": "ResourceLoaderBSTemplateModule"
 		}
 	},
 	"MessagesDirs": {
@@ -347,6 +376,9 @@
 		],
 		"BlueSpice.FileRepo": [
 			"i18n/filerepo"
+		],
+		"BlueSpice.Installer": [
+			"i18n/installer"
 		]
 	},
 	"ExtensionMessagesFiles": {
@@ -374,6 +406,7 @@
 		"UnitTestsList": "BsCoreHooks::onUnitTestsList"
 	},
 	"config": {
+		"_prefix": "bsg",
 		"BlueSpiceExtInfo": {
 			"name": "BlueSpice",
 			"version": "2.27.0",
@@ -384,7 +417,8 @@
 			"author": [
 				"[http://www.hallowelt.com Hallo Welt! GmbH]"
 			]
-		}
+		},
+		"ConfigFiles": []
 	},
 	"AutoloadClasses": {
 		"BsCore": "includes/Core.class.php",
@@ -422,15 +456,6 @@
 		"BSNamespaceParser": "includes/parser/BSNamespaceParser.php",
 		"BSNamespaceValidator": "includes/validator/BSNamespaceValidator.php",
 		"BsMailer": "includes/Mailer.class.php",
-		"BsXHRBaseResponse": "includes/XHRBaseResponse.class.php",
-		"BsXHRJSONResponse": "includes/XHRBaseResponse.class.php",
-		"BsXHRResponseStatus": "includes/XHRBaseResponse.class.php",
-		"BsCommonAJAXInterface": "includes/CommonAJAXInterface.php",
-		"BsCAI": "includes/CommonAJAXInterface.php",
-		"BsCAContext": "includes/CAContext.php",
-		"BsCAIContext": "includes/CAContext.php",
-		"BsCAResponse": "includes/CAResponse.php",
-		"BsCAIResponse": "includes/CAResponse.php",
 		"BsExtJSStoreParams": "includes/ExtJSStoreParams.php",
 		"BsExtJSSortParam": "includes/ExtJSStoreParams.php",
 		"BSNotifications": "includes/Notifications.class.php",
@@ -515,8 +540,6 @@
 		"ViewUserMiniProfile": "includes/outputhandler/views/view.UserMiniProfile.php",
 		"ViewWidget": "includes/outputhandler/views/view.Widget.php",
 		"ResourceLoaderExtJSModule": "includes/resourceloader/ResourceLoaderExtJSModule.php",
-		"DatabaseOracleBase": "includes/db/DatabaseOracleBase.php",
-		"BSOracleHooks": "includes/db/BSOracleHooks.php",
 		"SpecialDiagnostics": "includes/specials/SpecialDiagnostics.class.php",
 		"SpecialCredits": "includes/specials/SpecialCredits.class.php",
 		"BsPARAM": "includes/Common.php",
@@ -535,9 +558,11 @@
 		"BSEntityContentHandler": "includes/content/EntityContentHandler.php",
 		"BSPageFixturesProvider": "tests/BSPageFixturesProvider.php",
 		"BSApiExtJSStoreTestBase": "tests/BSApiExtJSStoreTestBase.php",
-		"BSApiTasksTestBase": "tests/BSApiTasksTestBase.php"
+		"BSApiTasksTestBase": "tests/BSApiTasksTestBase.php",
+		"BSTemplateHelper": "includes/TemplateHelper.php",
+		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
+		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php"
 	},
-	"bsgConfigFiles": [],
 	"load_composer_autoloader": true,
 	"manifest_version": 1,
 	"callback": "BsCoreHooks::onRegistry"

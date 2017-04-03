@@ -98,17 +98,7 @@ interface BSNotificationHandlerInterface {
 	 *                                    see
 	 *                                    https://www.mediawiki.org/wiki/Echo_(Notifications)/Developer_guide#Notification_parameters
 	 */
-	public static function registerNotification(
-		$sKey,
-		$sCategory,
-		$sSummaryMsgKey,
-		$aSummaryParams,
-		$sEmailSubjectMsgKey,
-		$aEmailSubjectParams,
-		$sEmailBodyMsgKey,
-		$aEmailBodyParams,
-		$aExtraParams = null
-	);
+	public static function registerNotification( $aParams );
 
 	/**
 	 * Removes a notification message from the notification handler.
@@ -157,17 +147,7 @@ abstract class BSNotificationHandler implements BSNotificationHandlerInterface {
 	) {
 	}
 
-	public static function registerNotification(
-		$sKey,
-		$sCategory,
-		$sSummaryMsgKey,
-		$aSummaryParams,
-		$sEmailSubjectMsgKey,
-		$aEmailSubjectParams,
-		$sEmailBodyMsgKey,
-		$aEmailBodyParams,
-		$aExtraParams = null
-	) {
+	public static function registerNotification( $aParams ) {
 	}
 
 	public static function unregisterNotification( $sKey ) {

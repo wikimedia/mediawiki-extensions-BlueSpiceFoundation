@@ -4,7 +4,8 @@
 			"Gomoko",
 			"Fany",
 			"TomT0m",
-			"Urhixidur"
+			"Urhixidur",
+			"Wladek92"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -36,6 +37,7 @@
 	"bs-extjs-confirmNavigationTitle": "Suivre le lien",
 	"bs-extjs-confirmNavigationText": "Voulez-vous vraiment suivre ce lien ? Tous les paramètres dynamiques comme le filtrage ou le tri sur la page actuelle seront perdus.",
 	"bs-extjs-allns": "(tous)",
+	"bs-extjs-mainns": "(Principal)",
 	"bs-extjs-filters": "Filtres",
 	"bs-extjs-filter-equals": "égal",
 	"bs-extjs-filter-equals-not": "différent",
@@ -49,5 +51,6 @@
 	"bs-extjs-filter-bool-no": "non",
 	"bs-extjs-title-success": "Réussi",
 	"bs-extjs-title-warning": "Avertissement",
-	"bs-extjs-categoryboxselect-emptytext": "Ajouter une catégorie"
+	"bs-extjs-categoryboxselect-emptytext": "Ajouter une catégorie",
+	"bs-extjs-categorytree-title": "Catégories"
 }

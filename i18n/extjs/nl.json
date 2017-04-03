@@ -6,7 +6,8 @@
 			"Niknetniko",
 			"Sjoerddebruin",
 			"Siebrand",
-			"Jeleniccz"
+			"Jeleniccz",
+			"Mainframe98"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -51,5 +52,6 @@
 	"bs-extjs-filter-bool-no": "nee",
 	"bs-extjs-title-success": "Afgerond",
 	"bs-extjs-title-warning": "Waarschuwing",
-	"bs-extjs-categoryboxselect-emptytext": "Categorie toevoegen"
+	"bs-extjs-categoryboxselect-emptytext": "Categorie toevoegen",
+	"bs-extjs-categorytree-title": "Categorieën"
 }

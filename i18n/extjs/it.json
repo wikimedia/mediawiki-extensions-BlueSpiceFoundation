@@ -37,6 +37,7 @@
 	"bs-extjs-confirmNavigationTitle": "Segui il collegamento",
 	"bs-extjs-confirmNavigationText": "Vuoi davvero seguire questo collegamento? Tutte le impostazioni dinamiche, come i filtri o l'ordinamento, nella pagina attuale andrà perso.",
 	"bs-extjs-allns": "(tutti)",
+	"bs-extjs-mainns": "(Principale)",
 	"bs-extjs-filters": "Filtri",
 	"bs-extjs-filter-equals": "è uguale a",
 	"bs-extjs-filter-equals-not": "non è uguale a",
@@ -50,5 +51,6 @@
 	"bs-extjs-filter-bool-no": "no",
 	"bs-extjs-title-success": "Successo",
 	"bs-extjs-title-warning": "Attenzione",
-	"bs-extjs-categoryboxselect-emptytext": "Aggiungi una categoria"
+	"bs-extjs-categoryboxselect-emptytext": "Aggiungi una categoria",
+	"bs-extjs-categorytree-title": "Categorie"
 }

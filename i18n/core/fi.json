@@ -58,6 +58,7 @@
 	"bs-pref-fileextensions": "Sallitut tiedostopäätteet:",
 	"bs-pref-logopath": "Logon sijainti:",
 	"bs-pref-faviconpath": "Faviconin sijainti:",
+	"bs-pref-testmode": "Aktivoi testitila",
 	"bs-parser-error-invalid-namespace": "Virheellinen nimiavaruus: $1",
 	"bs-parser-error-invalid-title": "Virheellinen otsikko: $1",
 	"bs-validator-error-namespace-does-not-exist": "Nimiavaruutta ei ole olemassa: $1",

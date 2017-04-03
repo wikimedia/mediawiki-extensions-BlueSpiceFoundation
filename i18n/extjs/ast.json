@@ -33,6 +33,7 @@
 	"bs-extjs-confirmNavigationTitle": "Siguir l'enllaz",
 	"bs-extjs-confirmNavigationText": "¿Realmente quier siguir esti enllaz? Tola configuración dinámica, como'l filtriáu o la ordenación na páxina actual, perderáse.",
 	"bs-extjs-allns": "(toos)",
+	"bs-extjs-mainns": "(Principal)",
 	"bs-extjs-filters": "Peñeres",
 	"bs-extjs-filter-equals": "ye igual a",
 	"bs-extjs-filter-equals-not": "nun ye igual a",
@@ -46,5 +47,6 @@
 	"bs-extjs-filter-bool-no": "non",
 	"bs-extjs-title-success": "Correuto",
 	"bs-extjs-title-warning": "Avisu",
-	"bs-extjs-categoryboxselect-emptytext": "Amestar una categoría"
+	"bs-extjs-categoryboxselect-emptytext": "Amestar una categoría",
+	"bs-extjs-categorytree-title": "Categoríes"
 }

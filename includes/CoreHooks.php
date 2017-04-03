@@ -29,7 +29,6 @@ class BsCoreHooks {
 		 */
 
 		global $bsgConfigFiles;
-
 		foreach( $bsgConfigFiles as $sConfigFileKey => $sConfigFilePath ) {
 			if ( file_exists( $sConfigFilePath ) ) {
 				include( $sConfigFilePath );
@@ -59,8 +58,8 @@ class BsCoreHooks {
 	 * @param Array $aSoftware: The array of software in format 'name' => 'version'.
 	 */
 	public static function onSoftwareInfo( &$aSoftware ) {
-		global $wgBlueSpiceExtInfo;
-		$aSoftware['[http://bluespice.com/ ' . $wgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $wgBlueSpiceExtInfo['version'];
+		global $bsgBlueSpiceExtInfo;
+		$aSoftware['[http://bluespice.com/ ' . $bsgBlueSpiceExtInfo['name'] . '] ([' . SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $bsgBlueSpiceExtInfo['version'];
 		return true;
 	}
 
@@ -298,7 +297,7 @@ class BsCoreHooks {
 	 * Called during ApiMain::checkCanExecute(), prevents user getting text when lacking permissions
 	 * @param ApiBase $module
 	 * @param User $user
-	 * @param String $message
+	 * @param ApiMessage &$message
 	 * @return boolean
 	 */
 	public static function onApiCheckCanExecute( $module, $user, &$message ){
@@ -307,7 +306,10 @@ class BsCoreHooks {
 		}
 		$oTitle = Title::newFromText( $module->getRequest()->getVal( 'page' ) );
 		if ( !is_null( $oTitle ) && $oTitle->userCan( 'read' ) == false ) {
-			$message = wfMessage('loginreqpagetext', wfMessage('loginreqlink')->plain())->plain();
+			$message = ApiMessage::create(
+				[ 'loginreqpagetext', wfMessage('loginreqlink') ],
+				'loginrequired'
+			);
 			return false;
 		}
 		return true;

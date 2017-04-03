@@ -32,21 +32,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 1 );
 }
 
-//Default settings needed for BlueSpice
-$GLOBALS['wgNamespacesWithSubpages'][NS_MAIN] = true;
-$GLOBALS['wgApiFrameOptions'] = 'SAMEORIGIN';
-$GLOBALS['wgRSSUrlWhitelist'] = array(
-	"http://blog.blue-spice.org/feed/",
-	"http://blog.bluespice.com/feed/",
-	"http://blog.hallowelt.com/feed/",
-);
-$GLOBALS['wgExternalLinkTarget'] = '_blank';
-$GLOBALS['wgCapitalLinkOverrides'][ NS_FILE ] = false;
-$GLOBALS['wgRestrictDisplayTitle'] = false; //Otherwise only titles that normalize to the same DB key are allowed
-$GLOBALS['wgUrlProtocols'][] = "file://";
-$GLOBALS['wgVerifyMimeType'] = false;
-$GLOBALS['wgAllowJavaUploads'] = true;
-
 /*
  * If this global is set to an array like
  * $bsgTestSystem = array(
@@ -187,22 +172,6 @@ $bsgSystemNamespaces = array(
 	//1599 => 'NS_COOL_STUFF'
 );
 
-/**
- * PHP config files registered here will be included on "SetupAfterCache"
- * time. Access to all global config variables need to be in the form of
- * $GLOBALS['wg...'] as the inclusion will be done in callback function scope
- * rather than in global scope.
- */
-$bsgConfigFiles = array(
-	//'extensionname' => 'path/to/file.php'
-
-	//Pre-registering for BC; Should be removed in future releases
-	'GroupManager' => BSCONFIGDIR . DS . 'gm-settings.php',
-	'NamespaceManager' => BSCONFIGDIR . DS . 'nm-settings.php',
-	'PermissionManager' => BSCONFIGDIR . DS . 'pm-settings.php',
-);
-
-
 $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLESSVars'], array(
 	'bs-color-primary' => '#3e5389', //blue
 	'bs-color-secondary' => '#ffae00', //orange
@@ -222,9 +191,160 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 	'bs-color-warning' => '#fcf8e3',
 	'bs-color-error' => '#f2dede',
 	'bs-color-info' => '#d9edf7',
+
+	//extjs theme
+
+	//base colors
+	'bs-extjs-theme-primary-text-color' => 'white',
+	'bs-extjs-theme-secondary-text-color' => 'black',
+	'bs-extjs-theme-primary-background-color' => '@bs-color-primary',
+	'bs-extjs-theme-primary-background-color-1st-derivate' => 'lighten( desaturate( @bs-extjs-theme-primary-background-color, abs(11%) ), 9% )',
+	'bs-extjs-theme-primary-background-color-2nd-derivate' => 'lighten( desaturate( spin( @bs-extjs-theme-primary-background-color, 2), abs(20%) ) , 51.5% )',
+	'bs-extjs-theme-primary-background-color-3rd-derivate' => 'lighten( desaturate( spin( @bs-extjs-theme-primary-background-color, 1), abs(10%) ) , 40% )',
+	'bs-extjs-theme-secondary-background-color' => 'lighten( @bs-color-neutral4, 49% )',
+
+	//images (i. e. close, toggle)
+	'bs-extjs-theme-tool-img-image' => 'url( "bluespice-theme/images/tools/tool-sprites.png" )',
+	'bs-extjs-theme-tool-img-background' => 'transparent',
+	'bs-extjs-theme-tool-toggle-img-image' => 'url( "bluespice-theme/images/fieldset/collapse-tool.png" )',
+	'bs-extjs-theme-tool-toggle-img-background' => 'transparent',
+	'bs-extjs-theme-btn-split-right-image' => 'url( "bluespice-theme/images/button/default-small-s-arrow.png" )',
+
+	//Buttons ( both, OK and Cancel )
+	'bs-extjs-theme-btn-small-text' => '@bs-extjs-theme-primary-text-color',
+	'bs-extjs-theme-btn-small-border' => '1px solid @bs-extjs-theme-btn-small-background',
+	'bs-extjs-theme-btn-small-background' => '@bs-extjs-theme-primary-background-color-1st-derivate',
+	'bs-extjs-theme-btn-small-background-0' => 'lighten( saturate( @bs-extjs-theme-btn-small-background, abs(2%) ), 5% )',
+	'bs-extjs-theme-btn-small-background-50' => '@bs-extjs-theme-btn-small-background',
+	'bs-extjs-theme-btn-small-background-51' => 'darken( @bs-extjs-theme-btn-small-background, 2.5% )',
+	'bs-extjs-theme-btn-small-background-100' => '@bs-extjs-theme-btn-small-background',
+
+	//Button OK ( explicit )
+	'bs-extjs-theme-btn-small-ok-text' => '@bs-extjs-theme-btn-small-text',
+	'bs-extjs-theme-btn-small-ok-border' => '@bs-extjs-theme-btn-small-border',
+	'bs-extjs-theme-btn-small-ok-background' => '@bs-extjs-theme-btn-small-background',
+	'bs-extjs-theme-btn-small-ok-background-0' => 'lighten( saturate( @bs-extjs-theme-btn-small-ok-background, abs(2%) ), 5% )',
+	'bs-extjs-theme-btn-small-ok-background-50' => '@bs-extjs-theme-btn-small-ok-background',
+	'bs-extjs-theme-btn-small-ok-background-51' => 'darken( @bs-extjs-theme-btn-small-ok-background, 2.5% )',
+	'bs-extjs-theme-btn-small-ok-background-100' => '@bs-extjs-theme-btn-small-ok-background',
+
+	//Button Cancel ( explicit )
+	'bs-extjs-theme-btn-small-cancel-text' => '@bs-extjs-theme-btn-small-text',
+	'bs-extjs-theme-btn-small-cancel-border' => '@bs-extjs-theme-btn-small-border',
+	'bs-extjs-theme-btn-small-cancel-background' => '@bs-extjs-theme-btn-small-background',
+	'bs-extjs-theme-btn-small-cancel-background-0' => 'lighten( saturate( @bs-extjs-theme-btn-small-cancel-background, abs(2%) ), 5% )',
+	'bs-extjs-theme-btn-small-cancel-background-50' => '@bs-extjs-theme-btn-small-cancel-background',
+	'bs-extjs-theme-btn-small-cancel-background-51' => 'darken( @bs-extjs-theme-btn-small-cancel-background, 2.5% )',
+	'bs-extjs-theme-btn-small-cancel-background-100' => '@bs-extjs-theme-btn-small-cancel-background',
+
+	//Button i. e. Insert image -> image size
+	'bs-extjs-theme-btn-toolbar-small-text' => '@bs-extjs-theme-secondary-text-color',
+	'bs-extjs-theme-btn-toolbar-small-border' => '1px solid darken( @bs-extjs-theme-btn-toolbar-small-background, 8% )',
+	'bs-extjs-theme-btn-toolbar-small-background' => '@bs-extjs-theme-secondary-background-color',
+	'bs-extjs-theme-btn-toolbar-small-background-0' => 'lighten( @bs-extjs-theme-btn-toolbar-small-background, 0.5% )',
+	'bs-extjs-theme-btn-toolbar-small-background-50' => '@bs-extjs-theme-btn-toolbar-small-background',
+	'bs-extjs-theme-btn-toolbar-small-background-51' => 'darken( @bs-extjs-theme-btn-toolbar-small-background, 5% )',
+	'bs-extjs-theme-btn-toolbar-small-background-100' => '@bs-extjs-theme-btn-toolbar-small-background',
+
+	//Button in toolbar with icon (Bookmaker, Flexiskin)
+	'bs-extjs-theme-btn-toolbar-text' => '@bs-extjs-theme-secondary-text-color',
+	'bs-extjs-theme-btn-toolbar-border' => '1px solid @bs-extjs-theme-btn-toolbar-background',
+	'bs-extjs-theme-btn-toolbar-background' => '@bs-extjs-theme-secondary-background-color',
+	'bs-extjs-theme-btn-toolbar-background-0' => 'lighten( saturate( @bs-extjs-theme-btn-toolbar-background, abs(2%) ), 5% )',
+	'bs-extjs-theme-btn-toolbar-background-50' => '@bs-extjs-theme-btn-toolbar-background',
+	'bs-extjs-theme-btn-toolbar-background-51' => 'darken( @bs-extjs-theme-btn-toolbar-background, 2.5% )',
+	'bs-extjs-theme-btn-toolbar-background-100' => '@bs-extjs-theme-btn-toolbar-background',
+
+	//Button in toolbar without icon (upload, Bookmaker "Export section")
+	'bs-extjs-theme-btn-toolbar-noicon-text' => '@bs-extjs-theme-secondary-text-color',
+	'bs-extjs-theme-btn-toolbar-noicon-border' => '1px solid @bs-extjs-theme-btn-toolbar-noicon-background',
+	'bs-extjs-theme-btn-toolbar-noicon-background' => '@bs-extjs-theme-secondary-background-color',
+	'bs-extjs-theme-btn-toolbar-noicon-background-0' => 'lighten( saturate( @bs-extjs-theme-btn-toolbar-noicon-background, abs(2%) ), 5% )',
+	'bs-extjs-theme-btn-toolbar-noicon-background-50' => '@bs-extjs-theme-btn-toolbar-noicon-background',
+	'bs-extjs-theme-btn-toolbar-noicon-background-51' => 'darken( @bs-extjs-theme-btn-toolbar-noicon-background, 2.5% )',
+	'bs-extjs-theme-btn-toolbar-noicon-background-100' => '@bs-extjs-theme-btn-toolbar-noicon-background',
+
+	//more stylings
+	//window
+	'bs-extjs-theme-window-header-text' => '@bs-extjs-theme-primary-text-color',
+	'bs-extjs-theme-window-header-background' => '@bs-extjs-theme-primary-background-color-1st-derivate',
+	'bs-extjs-theme-window-header-border' => '5px solid @bs-extjs-theme-primary-background-color-1st-derivate',
+	'bs-extjs-theme-window-border' => '5px solid @bs-extjs-theme-primary-background-color-1st-derivate',
+	'bs-extjs-theme-window-header-border-width' => '5px',
+	'bs-extjs-theme-window-background' => 'white',
+	'bs-extjs-theme-window-body-background' => 'white',
+	'bs-extjs-theme-window-header-border-radius' => '2px 2px 0px 0px',
+	'bs-extjs-theme-window-border-radius' => '2px',
+	'bs-extjs-theme-window-shadow-radius' => '5px',
+
+	//inner background (i. e. insert link)
+	'bs-extjs-theme-layout-background' => '@bs-extjs-theme-primary-background-color-1st-derivate',
+
+
+	//tab's (i. e. insert link)
+	'bs-extjs-theme-tab-default-background' => '@bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-tab-default-text' => '@bs-extjs-theme-primary-text-color',
+	'bs-extjs-theme-tab-active-background' => '@bs-extjs-theme-primary-background-color-3rd-derivate',
+	'bs-extjs-theme-tab-active-strip' => '@bs-extjs-theme-primary-background-color-3rd-derivate',
+	'bs-extjs-theme-tab-active-text' => '@bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-tab-background' => '@bs-extjs-theme-primary-background-color-1st-derivate',
+
+	//toolbar (i. e. insert image, specialpages, footer with OK/Cancel button)
+	'bs-extjs-theme-toolbar-background' => 'white',
+	'bs-extjs-theme-toolbar-text' => '@bs-extjs-theme-secondary-text-color',
+	'bs-extjs-theme-toolbar-footer-background' => '@bs-extjs-theme-primary-background-color-2nd-derivate',
+	'bs-extjs-theme-toolbar-footer-text' => '@bs-extjs-theme-primary-text-color',
+	'bs-extjs-theme-toolbar-form-item-label-text' => '@bs-extjs-theme-secondary-text-color',
+
+	//panel
+	'bs-extjs-theme-panel-header-background' => '@bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-panel-header-text' => '@bs-extjs-theme-primary-text-color',
+	'bs-extjs-theme-panel-header-horizontal-border' => '1px solid @bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-panel-header-horizontal-background' => '@bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-panel-header-vertical-border' => '1px solid @bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-panel-header-vertical-background' => '@bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-panel-border' => '5px solid @bs-extjs-theme-primary-background-color',
+	'bs-extjs-theme-panel-body-background' => 'white',
+	'bs-extjs-theme-panel-form-item-label-text' => '@bs-extjs-theme-secondary-text-color',
+
+	// border tree view ( i. e. insert category)
+	'bs-extjs-theme-tree-view-border' => '0px solid black'
+
 ) );
 
 /**
  * BsExtensionManager extension registration
  */
 $bsgExtensions = array();
+
+/**
+ * BsTemplateHelper template directory overwrite
+ * $bsgTemplates = array(
+ *    BSExtension.Template.Name": "$wgExtensionsDirectory/MyExtension/PathToTemplateDir",
+ * )
+ */
+$GLOBALS['bsgTemplates'] = array();
+
+
+/*
+ * ExtJSThemes
+ */
+$GLOBALS["bsgExtJSThemes"] = array(
+	"white" => array(
+		'bs-extjs-theme-primary-text-color' => 'black',
+		'bs-extjs-theme-secondary-text-color' => 'black',
+		'bs-extjs-theme-primary-background-color' => 'white',
+		'bs-extjs-theme-secondary-background-color' => 'white',
+		'bs-extjs-theme-toolbar-footer-background' => 'white',
+		'bs-extjs-theme-btn-small-border' => '1px solid @bs-color-neutral4',
+		'bs-extjs-theme-tab-active-background' => '@bs-color-neutral4',
+		'bs-extjs-theme-tab-active-text' => 'white',
+		'bs-extjs-theme-tab-active-strip' => '@bs-color-neutral4',
+		'bs-extjs-theme-panel-border' => '5px solid @bs-color-neutral4',
+		'bs-extjs-theme-panel-header-horizontal-border' => '1px solid @bs-color-neutral4',
+		'bs-extjs-theme-panel-header-vertical-border' => '1px solid @bs-color-neutral4',
+		'bs-extjs-theme-btn-toolbar-noicon-border' => '1px solid black',
+		'bs-extjs-theme-tool-img-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/tools/tool-sprites-dark.png" )',
+		'bs-extjs-theme-btn-split-right-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/button/default-toolbar-small-s-arrow.png" )',
+	)
+);

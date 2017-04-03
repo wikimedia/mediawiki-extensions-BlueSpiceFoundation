@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fulup"
+		]
+	},
+	"bs-filerepo-labelupload": "Enporzhiañ",
+	"bs-filerepo-labelfilter": "Sil",
+	"bs-filerepo-headerfilename": "Anv ar restr",
+	"bs-filerepo-headerfilesize": "Ment",
+	"bs-filerepo-headerpagecategories": "Rummadoù",
+	"bs-filerepo-headerfilewidth": "Ledander",
+	"bs-filerepo-headerfileheight": "Uhelder",
+	"bs-filerepo-headerfilemimetype": "Seurt MIME",
+	"bs-filerepo-headerfileusertext": "Implijer",
+	"bs-filerepo-headerfileextension": "Astenn",
+	"bs-filerepo-headerfiletimestamp": "Enporzhiet",
+	"bs-filerepo-headerfilemediatype": "Seurt media",
+	"bs-filerepo-headerfiledescription": "Deskrivadur",
+	"bs-filerepo-headerfilethumbnail": "Munud",
+	"bs-filerepo-yes": "Ya",
+	"bs-filerepo-no": "Ket",
+	"bs-filerepo-pagesize": "Ment ar bajenn"
+}

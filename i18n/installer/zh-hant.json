@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Wehwei"
 		]
-	}
+	},
+	"bs-installer-title": "MediaWiki $1 和 BlueSpice $2 的安裝版本"
 }

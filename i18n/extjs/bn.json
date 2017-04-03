@@ -24,5 +24,7 @@
 	"bs-extjs-upload": "আপলোড",
 	"bs-extjs-browse": "ব্রাউজ",
 	"bs-extjs-uploading": "আপলোড হচ্ছে...",
-	"bs-extjs-allns": "(সকল)"
+	"bs-extjs-allns": "(সকল)",
+	"bs-extjs-mainns": "(প্রধান)",
+	"bs-extjs-categorytree-title": "বিষয়শ্রেণীসমূহ"
 }

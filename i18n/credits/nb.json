@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"specialcredits": "BlueSpice-medvirkende",
+	"bs-credits-programmers": "Programmerere",
+	"bs-credits-dnt": "Design og testing",
+	"bs-credits-contributors": "Bidragsytere",
+	"bs-credits-translators": "Oversettere",
+	"bs-credits-translation": "Oversettelse",
+	"bs-credits-th": "Takk til alle oversettere fra $1."
+}

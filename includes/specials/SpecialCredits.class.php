@@ -92,7 +92,7 @@ class SpecialCredits extends BsSpecialPage {
 
 		$sLink = '<a href="https://translatewiki.net">translatewiki.net</a>';
 		$aOut = array();
-		$aOut[] = '<table class="wikitable">';
+		$aOut[] = '<table class="wikitable" style="width:100%">';
 		$aOut[] = '<tr>';
 		$aOut[] = '<th>' . wfMessage( 'bs-credits-programmers' )->plain() . '</th>';
 		$aOut[] = '<th>' . wfMessage( 'bs-credits-dnt' )->plain() . '</th>';
@@ -105,7 +105,7 @@ class SpecialCredits extends BsSpecialPage {
 		$aOut[] = '</tr>';
 		$aOut[] = '</table>';
 
-		$aOut[] = '<table class="wikitable">';
+		$aOut[] = '<table class="wikitable" style="width:100%">';
 		$aOut[] = '<tr>';
 		$aOut[] = '<th>'. wfMessage( 'bs-credits-translators' )->plain() .'</th>';
 		$aOut[] = '<th>'. wfMessage( 'bs-credits-translation' )->plain() .'</th>';
@@ -125,9 +125,8 @@ class SpecialCredits extends BsSpecialPage {
 	private function generateTranslatorsList() {
 		global $IP;
 		$aPaths = array(
-			$IP . '/extensions/BlueSpiceExtensions/',
-			$IP . '/extensions/BlueSpiceFoundation/',
-			$IP . '/skins/BlueSpiceSkin/'
+			$IP . '/extensions/',
+			$IP . '/skins/'
 		);
 
 		foreach ( $aPaths as $sPath ) {
@@ -140,24 +139,39 @@ class SpecialCredits extends BsSpecialPage {
 	}
 
 	private function readInTranslators( $sDir ) {
-		$oCurrentDirectory = new DirectoryIterator( $sDir );
-		foreach ( $oCurrentDirectory as $oFileinfo ) {
-			if ( $oFileinfo->isFile() && strpos( $oFileinfo->getFilename(), '.json' ) !== false ) {
-				$sContent = json_decode(
-					file_get_contents( $oFileinfo->getPath() .DS. $oFileinfo->getFilename() )
-				);
-				foreach ( $sContent as $aData ) {
-					if ( $aData instanceof StdClass && isset( $aData->authors ) ) {
-						foreach ( $aData->authors as $Author ) {
-							$Author = preg_replace( '#\<([0-9a-zA-Z]+)@(\w+)\.(\w+)\>#', '', $Author );
-							$this->aTranslators[] = $Author;
-						}
-					}
-				}
+		$oIterator = new RegexIterator(
+			new RecursiveIteratorIterator(
+				new RecursiveDirectoryIterator( $sDir )
+			),
+			'/^.+\.json/i'
+		);
+
+		foreach ( $oIterator as $oFileinfo ) {
+			if( !$oFileinfo->isFile() ) {
 				continue;
 			}
-			if ( $oFileinfo->isDir() && !$oFileinfo->isDot() && $oFileinfo->getFilename() != $sDir ) {
-				$this->readInTranslators( $oFileinfo->getPath() .DS. $oFileinfo->getFilename() );
+
+			$sFilePath = $oFileinfo->getPathname();
+			if ( strpos( $sFilePath, '/i18n/' ) === false ) {
+				continue;
+			}
+			if ( strpos( $sFilePath, '/BlueSpice' ) === false ) {
+				continue;
+			}
+
+			$oContent = FormatJson::decode( file_get_contents( $sFilePath ) );
+			foreach ( $oContent as $oData ) {
+				if ( $oData instanceof stdClass === false || !isset( $oData->authors ) ) {
+					continue;
+				}
+
+				foreach ( $oData->authors as $sAuthor ) {
+					if( !is_string( $sAuthor ) ) {
+						continue;
+					}
+					$sAuthor = strip_tags( $sAuthor );
+					$this->aTranslators[] = $sAuthor;
+				}
 			}
 		}
 	}

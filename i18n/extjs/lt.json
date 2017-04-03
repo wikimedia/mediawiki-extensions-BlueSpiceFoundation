@@ -34,6 +34,7 @@
 	"bs-extjs-confirmNavigationTitle": "Sekti nuorodą",
 	"bs-extjs-confirmNavigationText": "Ar tikrai norite sekti šią nuorodą? Visi dinaminiai nustatymai, kaip filtravimas ir rūšiavimas, šiame puslapyje bus prarasti.",
 	"bs-extjs-allns": "(visi)",
+	"bs-extjs-mainns": "(Pagrindinis)",
 	"bs-extjs-filters": "Filtrai",
 	"bs-extjs-filter-equals": "lygus",
 	"bs-extjs-filter-equals-not": "nelygus",
@@ -47,5 +48,6 @@
 	"bs-extjs-filter-bool-no": "ne",
 	"bs-extjs-title-success": "Sėkmė",
 	"bs-extjs-title-warning": "Įspėjimas",
-	"bs-extjs-categoryboxselect-emptytext": "Pridėti kategoriją"
+	"bs-extjs-categoryboxselect-emptytext": "Pridėti kategoriją",
+	"bs-extjs-categorytree-title": "Kategorijos"
 }

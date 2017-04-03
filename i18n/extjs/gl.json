@@ -3,7 +3,8 @@
 		"authors": [
 			"Vivaelcelta",
 			"Toliño",
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",
@@ -35,6 +36,7 @@
 	"bs-extjs-confirmNavigationTitle": "Seguir a ligazón",
 	"bs-extjs-confirmNavigationText": "Está seguro de querer seguir esta ligazón? Perderá toda a configuración dinámica, como os filtros ou a ordenación da páxina actual.",
 	"bs-extjs-allns": "(todos)",
+	"bs-extjs-mainns": "(Principal)",
 	"bs-extjs-filters": "Filtros",
 	"bs-extjs-filter-equals": "é igual a",
 	"bs-extjs-filter-equals-not": "non é igual a",
@@ -48,5 +50,6 @@
 	"bs-extjs-filter-bool-no": "non",
 	"bs-extjs-title-success": "Todo correcto",
 	"bs-extjs-title-warning": "Aviso",
-	"bs-extjs-categoryboxselect-emptytext": "Engada unha categoría"
+	"bs-extjs-categoryboxselect-emptytext": "Engada unha categoría",
+	"bs-extjs-categorytree-title": "Categorías"
 }

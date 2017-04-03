@@ -31,7 +31,51 @@
  * @package BlueSpice_Foundation
  */
 class BSApiPingTasks extends BSApiTasksBase {
-	protected $aTasks = array( 'ping' );
+	protected $aTasks = array(
+		'ping' => [
+			'examples' => [
+				[
+					'iArticleID' => 543,
+					'iNamespace' =>  10,
+					'sTitle' => 'Some page',
+					'iRevision' => 324,
+					'BsPingData' => [
+						[
+							'sRef' => 'Reference',
+							'aData' => []
+						]
+					]
+				]
+			],
+			'params' => [
+				'iArticleID' => [
+					'desc' => 'A valid page id',
+					'type' => 'integer',
+					'required' => false
+				],
+				'iNamespace' => [
+					'desc' => 'A valid namespace id',
+					'type' => 'integer',
+					'required' => false
+				],
+				'sTitle' => [
+					'desc' => 'A valid page title',
+					'type' => 'string',
+					'required' => false
+				],
+				'iRevision' => [
+					'desc' => 'A valid revision id',
+					'type' => 'integer',
+					'required' => false
+				],
+				'BsPingData' => [
+					'desc' => 'Array of objects that contain the actual ping data packages',
+					'type' => 'array',
+					'required' => true
+				],
+			]
+		]
+	);
 
 	protected $aReadTasks = array( 'ping' );
 

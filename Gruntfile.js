@@ -18,14 +18,17 @@ module.exports = function ( grunt ) {
 		},
 		banana: {
 			all: [
+				'i18n/api/',
 				'i18n/core/',
 				'i18n/credits/',
-				'i18n/diferred/',
+				'i18n/deferred/',
 				'i18n/diagnostics/',
 				'i18n/extjs/',
 				'i18n/extjs-portal/',
+				'i18n/filerepo/',
 				'i18n/installer/',
 				'i18n/notifications/',
+				'i18n/upload',
 				'i18n/validator/'
 			]
 		},
