@@ -43,5 +43,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "An error message that occurs if a user is not allowed to read page with name '$1'.\n\nParameters:\n* $1 - a page title",
 	"bs-wikipage-tasks-error-nothingtoremove": "This error message occurs if empty array is passed to task_removeCategories method",
 	"apihelp-bs-category-treestore-description": "{{doc-apihelp-description|bs-category-treestore}}",
-	"apihelp-bs-category-treestore-param-node": "{{doc-apihelp-param|bs-category-treestore|node}}"
+	"apihelp-bs-category-treestore-param-node": "{{doc-apihelp-param|bs-category-treestore|node}}",
+	"bs-api-task-taskdata-help": "Text for API help page that orpvides a schema definition.\\n\nParameters:\n* $1 - an url to the API endpoint schema\n* $2 - an url to parameter examples",
+	"apihelp-bs-task-param-schema": "{{doc-apihelp-param|bs-task|schema}}",
+	"apihelp-bs-task-param-examples": "{{doc-apihelp-param|bs-task|examples}}",
+	"bs-api-task-taskData-page-id": "Description of <code>taskData.page_id</code> field",
+	"bs-api-task-taskData-page-title": "Description of <code>taskData.page_title</code> field",
+	"bs-api-task-wikipagetasks-taskData-categories": "Description of <code>taskData.categories</code> field in WikiPageTasks API"
 }
