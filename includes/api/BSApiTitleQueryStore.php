@@ -39,8 +39,41 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			'type' => 'wikipage'
 		);
 
+		if( empty( $aOptions['namespaces'] ) ) {
+			//Search in all namespaces by default
+			$aOptions['namespaces'] = $wgContLang->getNamespaceIds();
+			if( !in_array( 0, $aOptions['namespaces'] ) ) {
+				//Add main namespace!
+				$aOptions['namespaces'][] = 0;
+			}
+		} else {
+			//validate user input
+			foreach( $aOptions['namespaces'] as $iKey => $iNSId ) {
+				if( !$iNSId || !is_numeric( $iNSId ) ) {
+					unset( $aOptions['namespaces'][$iKey] );
+					continue;
+				}
+				if( !in_array( $iNSId, $wgContLang->getNamespaceIds() ) ) {
+					//Namespace index does not exist
+					unset( $aOptions['namespaces'][$iKey] );
+					continue;
+				}
+				$aOptions['namespaces'][$iKey] = (int) $iNSId;
+			}
+		}
+		//Remove medium namespace!
+		$iKeyMedium = array_search( -2, $aOptions['namespaces'] );
+		if( $iKeyMedium !== false ) {
+			unset( $aOptions['namespaces'][$iKeyMedium] );
+		}
+
 		//Step 1: Collect namespaces
 		$aNamespaces = $wgContLang->getNamespaces();
+		$aNsCondition = [];
+		if( in_array( 0, $aOptions['namespaces'] ) ) {
+			//if main space is allowed, hand it over directly to the query
+			$aNsCondition[] = 0;
+		}
 		asort( $aNamespaces );
 		foreach ( $aNamespaces as $iNsId => $sNamespaceText ) {
 			if ( empty( $sNamespaceText ) ) {
@@ -54,14 +87,13 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			$sNormNSText = strtolower( $sNamespaceText );
 			$sNormNSText = str_replace( '_', ' ', $sNormNSText );
 
+			//Only namespaces a user has the read permission for
+			$oDummyTitle = Title::newFromText( $sNamespaceText.':X' );
+			if ( $oDummyTitle->userCan( 'read' ) === false ) {
+				continue;
+			}
+			$aNsCondition[] = $iNsId;
 			if ( empty( $sNormQuery ) || strpos( $sNormNSText, $sNormQuery ) === 0) {
-
-				//Only namespaces a user has the read permission for
-				$oDummyTitle = Title::newFromText( $sNamespaceText.':X' );
-				if ( $oDummyTitle->userCan( 'read' ) === false ) {
-					continue;
-				}
-
 				$aData[] = (object)(array(
 					'type' => 'namespace',
 					'displayText' => $sNamespaceText.':'
@@ -70,6 +102,11 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		}
 
 		if ( empty( $sNormQuery ) ) {
+			return $aData;
+		}
+		//rare case of absolutely no permission or only not existing namespaces
+		//in options['namespaces']
+		if( empty( $aNsCondition ) ) {
 			return $aData;
 		}
 
@@ -112,7 +149,8 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			'si_title '. $dbr->buildLike( $aLike ) . ' OR si_title ' . $dbr->buildLike( $aNormalLike ),
 		);
 
-		if ( $oQueryTitle->getNamespace() !== NS_MAIN || strpos( $sQuery, ':' ) === 0 ) {
+		$aConditions['page_namespace'] = $aNsCondition;
+		if( $oQueryTitle->getNamespace() !== NS_MAIN || strpos( $sNormQuery, ':' ) === 0 ) {
 			$aConditions['page_namespace'] = $oQueryTitle->getNamespace();
 		}
 
