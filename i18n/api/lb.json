@@ -14,5 +14,6 @@
 	"apihelp-bs-upload-license-store-description": "Lëscht vun allen disponibele Lizenzen fir e Fichier eropzelueden",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Dir däerft d'Säit '$1' net liesen.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Et gëtt keng Kategorie fir ewechzehuelen.",
-	"apihelp-bs-category-treestore-description": "Weist d'Ënnerkategorie vun enger spezifescher Kategorie"
+	"apihelp-bs-category-treestore-description": "Weist d'Ënnerkategorie vun enger spezifescher Kategorie",
+	"bs-api-task-taskData-page-title": "E valabelen Titel vun enger Wikisäit"
 }

@@ -42,5 +42,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "您不被允许阅读页面“$1”。",
 	"bs-wikipage-tasks-error-nothingtoremove": "没有要移除的分类",
 	"apihelp-bs-category-treestore-description": "列出特定分类的子分类",
-	"apihelp-bs-category-treestore-param-node": "斜线分隔的分类路径"
+	"apihelp-bs-category-treestore-param-node": "斜线分隔的分类路径",
+	"bs-api-task-taskdata-help": "[$1 架构]，[$2 参数示例]",
+	"apihelp-bs-task-param-schema": "显示任务参数的JSON架构",
+	"apihelp-bs-task-param-examples": "显示任务参数的示例",
+	"bs-api-task-taskData-page-id": "现有wiki页面的ID",
+	"bs-api-task-taskData-page-title": "wiki页面的有效标题",
+	"bs-api-task-wikipagetasks-taskData-categories": "字符串数组。值应为有效分类名称。"
 }

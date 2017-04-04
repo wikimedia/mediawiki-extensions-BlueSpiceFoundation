@@ -5,5 +5,7 @@
 		]
 	},
 	"apihelp-bs-wikisubpage-treestore-param-node": "উইকিপৃষ্ঠার উপসর্গবিশিষ্ট শিরোনাম",
-	"apihelp-bs-upload-license-store-description": "ফাইল আপলোডের জন্য সমস্ত উপলব্ধ লাইসেন্সগুলির তালিকা"
+	"apihelp-bs-upload-license-store-description": "ফাইল আপলোডের জন্য সমস্ত উপলব্ধ লাইসেন্সগুলির তালিকা",
+	"bs-api-task-taskData-page-id": "একটি বিদ্যমান উইকি পাতার আইডি",
+	"bs-api-task-taskData-page-title": "একটি উইকি পাতার একটি বৈধ শিরোনাম"
 }

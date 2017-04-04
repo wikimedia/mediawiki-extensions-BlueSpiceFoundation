@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Краснорядцева Елена"
+			"Краснорядцева Елена",
+			"Redredsonia"
 		]
 	},
-	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)"
+	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
+	"apihelp-bs-task-param-examples": "Показать примеры параметров задачи",
+	"bs-api-task-taskData-page-id": "Идентификатор существующей вики-страницы",
+	"bs-api-task-taskData-page-title": "Допустимое название вики-страницы",
+	"bs-api-task-wikipagetasks-taskData-categories": "Массив строк. Значения должны быть допустимыми именами категорий."
 }

@@ -22,5 +22,6 @@
 	"apihelp-bs-wikisubpage-treestore-param-node": "El título con prefijo de la página wiki",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "No tienes permitido leer la página «$1».",
 	"bs-wikipage-tasks-error-nothingtoremove": "No hay categorías que quitar",
-	"apihelp-bs-category-treestore-description": "Enumera las subcategorías de una categoría concreta"
+	"apihelp-bs-category-treestore-description": "Enumera las subcategorías de una categoría concreta",
+	"bs-api-task-taskData-page-title": "Un título válido de una página wiki"
 }

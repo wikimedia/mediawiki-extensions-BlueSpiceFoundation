@@ -11,5 +11,9 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "당신은 '$1' 문서를 편집할 권한이 없습니다.",
 	"bs-wikipage-tasks-setcategories-success": "목차가 성공적으로 설정되었습니다.",
 	"apihelp-bs-wikisubpage-treestore-description": "특정 위키 페이지의 하위 페이지를 나열합니다",
-	"bs-wikipage-tasks-error-page-read-not-allowed": "당신은 '$1' 문서를 읽을 권한이 없습니다."
+	"bs-wikipage-tasks-error-page-read-not-allowed": "당신은 '$1' 문서를 읽을 권한이 없습니다.",
+	"bs-api-task-taskdata-help": "[$1 스키마], [$2 변수 예제]",
+	"bs-api-task-taskData-page-id": "기존 위키 페이지의 ID",
+	"bs-api-task-taskData-page-title": "위키 페이지의 유효한 제목입니다",
+	"bs-api-task-wikipagetasks-taskData-categories": "문자열의 배열입니다. 값은 유효한 분류 이름이어야 합니다."
 }

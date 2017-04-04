@@ -43,5 +43,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Non ten permiso para ler a páxina '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Non hai categorías para eliminar.",
 	"apihelp-bs-category-treestore-description": "Lista as subcategorías dunha categoría específica",
-	"apihelp-bs-category-treestore-param-node": "Un camiño de categorías separado por barras oblicuas"
+	"apihelp-bs-category-treestore-param-node": "Un camiño de categorías separado por barras oblicuas",
+	"bs-api-task-taskdata-help": "[$1 esquema], [$2 exemplos de parámetros]",
+	"apihelp-bs-task-param-schema": "Mostrar a estrutura JSOn para os parámetros da tarefa",
+	"apihelp-bs-task-param-examples": "Mostrar exemplos de parámetros de tarefa",
+	"bs-api-task-taskData-page-id": "O ID dunha páxina wiki existente",
+	"bs-api-task-taskData-page-title": "Un título válido dunha páxina wiki",
+	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de cadeas de caracteres. Os valores deben ser nomes de categoría válidos."
 }

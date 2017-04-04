@@ -43,5 +43,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Vous n’êtes pas autorisé à lire la page '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Il n’y a pas de catégorie à supprimer",
 	"apihelp-bs-category-treestore-description": "Liste les sous-catégories d’une catégorie particulière",
-	"apihelp-bs-category-treestore-param-node": "Un chemin de catégories séparé par des barres obliques"
+	"apihelp-bs-category-treestore-param-node": "Un chemin de catégories séparé par des barres obliques",
+	"bs-api-task-taskdata-help": "[$1 schema], [$2 exemples de paramètres]",
+	"apihelp-bs-task-param-schema": "Montrer la structure JSON pour les paramètres de tâche",
+	"apihelp-bs-task-param-examples": "Montrer des exemples de paramètres de tâche",
+	"bs-api-task-taskData-page-id": "L'ID d'une page wiki existante",
+	"bs-api-task-taskData-page-title": "Un titre valide de page wiki",
+	"bs-api-task-wikipagetasks-taskData-categories": "Tableau de chaînes. Les valeurs doivent être des noms de catégories valides."
 }

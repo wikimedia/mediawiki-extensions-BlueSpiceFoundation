@@ -44,5 +44,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du bist nicht berechtigt, die Seite „$1“ zu lesen.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Es sind keine Kategorien zum Entfernen vorhanden.",
 	"apihelp-bs-category-treestore-description": "Listet die Unterkategorien einer bestimmten Kategorie auf",
-	"apihelp-bs-category-treestore-param-node": "Ein Pfad von Kategorien, die mit Schrägstichen voneinander getrennter angegeben sind."
+	"apihelp-bs-category-treestore-param-node": "Ein Pfad von Kategorien, die mit Schrägstichen voneinander getrennter angegeben sind.",
+	"bs-api-task-taskdata-help": "[$1 Schema], [$2 Parameterbeispiele]",
+	"apihelp-bs-task-param-schema": "Zeigt das JSON-Schema für die Aufgabenparameter",
+	"apihelp-bs-task-param-examples": "Zeigt Beispiele von Aufgabenparametern",
+	"bs-api-task-taskData-page-id": "Die Kennung einer vorhandenen Wikiseite",
+	"bs-api-task-taskData-page-title": "Ein gültiger Titel einer Wikiseite",
+	"bs-api-task-wikipagetasks-taskData-categories": "Anordnung von Zeichenfolgen. Werte müssen gültige Kategorienamen sein."
 }
