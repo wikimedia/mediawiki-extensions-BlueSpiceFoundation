@@ -322,7 +322,10 @@ class BsBaseTemplate extends BaseTemplate {
 	}
 
 	public function getToolbox() {
-		$aToolbox = parent::getToolbox();
+		if( isset( $this->data['toolboxitems'] ) ) {
+			return $this->data['toolboxitems'];
+		}
+		$this->data['toolboxitems'] = parent::getToolbox();
 		//Remove some toolbox items, cause they are shown elsewhere. #5786
 		$aUnsetItems = [
 			'print',
@@ -330,13 +333,13 @@ class BsBaseTemplate extends BaseTemplate {
 			'specialpages',
 		];
 		foreach( $aUnsetItems as $sItem ) {
-			if( !isset( $aToolbox[$sItem] ) ) {
+			if( !isset( $this->data['toolboxitems'][$sItem] ) ) {
 				continue;
 			}
-			unset( $aToolbox[$sItem] );
+			unset( $this->data['toolboxitems'][$sItem] );
 		}
 
-		return $aToolbox;
+		return $this->data['toolboxitems'];
 	}
 
 	// introduced in MediaWiki 1.23
