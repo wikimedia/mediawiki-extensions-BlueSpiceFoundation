@@ -9,7 +9,7 @@
 	"apihelp-bs-task-param-format": "Format danych wyjściowych",
 	"bs-wikipage-tasks-error-page-not-valid": "Podana strona nie jest poprawna.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Zmienione kategorie.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nie masz uprawnień do edytowania strony '$1'.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nie masz uprawnień do edytowania strony „$1”.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Nieprawidłowa kategoria|Nieprawidłowe kategorie}}: $1",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Nie masz uprawnień do czytania strony '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Brak kategorii do usunięcia"

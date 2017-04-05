@@ -29,7 +29,7 @@
 	"bs-wikipage-tasks-error-contentmodel": "L'attività non può essere eseguita con il modello di contenuto della pagina indicata.",
 	"bs-wikipage-tasks-error-page-not-valid": "La pagina indicata non è valida.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorie modificate.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Non è consentito modificare la pagina '$1'.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Non è consentito modificare la pagina \"$1\".",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoria non valida|Categorie non valide}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Le categorie sono state impostate correttamente.",
 	"apihelp-bs-wikipage-store-description": "Elenca tutte le pagine wiki. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
