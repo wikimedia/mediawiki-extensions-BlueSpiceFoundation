@@ -24,7 +24,9 @@ class BSTasksApiSpec {
 	 * @return array the spec
 	 */
 	public function getTaskSpec( $sTaskName ) {
-		return $this->aInitialConfig[$sTaskName];
+		return isset( $this->aInitialConfig[$sTaskName] )
+			? $this->aInitialConfig[$sTaskName]
+			: [];
 	}
 
 	/**
