@@ -35,6 +35,9 @@ Ext.define( 'BS.form.CategoryBoxSelect', {
 					type: 'json',
 					root: 'results',
 					idProperty: 'cat_id'
+				},
+				extraParams: {
+					limit: 9999
 				}
 			},
 			model: 'BS.model.Category'
