@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Краснорядцева Елена",
-			"Redredsonia"
+			"Redredsonia",
+			"Alexey zakharenkov"
 		]
 	},
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
+	"apihelp-bs-task-param-schema": "Показывает JSON-схему для параметров задачи",
 	"apihelp-bs-task-param-examples": "Показать примеры параметров задачи",
 	"bs-api-task-taskData-page-id": "Идентификатор существующей вики-страницы",
 	"bs-api-task-taskData-page-title": "Допустимое название вики-страницы",
