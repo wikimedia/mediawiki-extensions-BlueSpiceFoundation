@@ -4,6 +4,7 @@
 			"Aftabuzzaman"
 		]
 	},
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "আপনার \"$1\" পাতাটি সম্পাদনা করার অনুমতি নেই।",
 	"apihelp-bs-wikisubpage-treestore-param-node": "উইকিপৃষ্ঠার উপসর্গবিশিষ্ট শিরোনাম",
 	"apihelp-bs-upload-license-store-description": "ফাইল আপলোডের জন্য সমস্ত উপলব্ধ লাইসেন্সগুলির তালিকা",
 	"bs-api-task-taskData-page-id": "একটি বিদ্যমান উইকি পাতার আইডি",
