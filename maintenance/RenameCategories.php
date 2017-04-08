@@ -123,7 +123,7 @@ $noRC = true;
 //					'/test test/'
 //				);
 //$namespace_include = array( 10 );
-//$namespace_exclude = array( NS_IMAGE, NS_IMAGE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
+//$namespace_exclude = array( NS_FILE, NS_FILE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 //$title_include = array( '/Datev/', '/Hauptseite/' );
 //$title_include = array( '|NZ/.*?|' );
 //$title_include = array( '|NZ/.*?|' );

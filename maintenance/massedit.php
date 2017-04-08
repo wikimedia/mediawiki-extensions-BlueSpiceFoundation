@@ -49,7 +49,7 @@ $noRC        = true;
 
 $namespace_include = array( NS_MAIN );
 //$namespace_include = array( 10 );
-//$namespace_exclude = array( NS_IMAGE, NS_IMAGE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
+//$namespace_exclude = array( NS_FILE, NS_FILE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 
 #==================
 # TITLE FILTER
