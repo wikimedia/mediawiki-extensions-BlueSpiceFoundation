@@ -272,7 +272,7 @@ class BsPageContentProvider {
 		$sError = '';
 		try {
 			switch( $oTitle->getNamespace() ) {
-				case NS_IMAGE:
+				case NS_FILE:
 					$oImagePage = ImagePage::newFromTitle( $oTitle, $context );
 					$oImagePage->view(); //Parse to OutputPage
 					break;

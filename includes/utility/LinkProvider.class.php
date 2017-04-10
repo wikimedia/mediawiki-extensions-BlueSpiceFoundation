@@ -125,7 +125,7 @@ class BsLinkProvider {
 
 	/**
 	 * Creates a WikiText Link in the form of &quot;[[NSP:Title|Description]]&quot;
-	 * and escapes it if the Title is from NS_CATEGORY or NS_IMAGE to aviod
+	 * and escapes it if the Title is from NS_CATEGORY or NS_FILE to aviod
 	 * parsing problems.
 	 * @param Title $oTitle The MediaWiki Title object to link to.
 	 * @param string $sDescription The description part of the link.
@@ -136,7 +136,7 @@ class BsLinkProvider {
 
 		$sWikiLink = '[[';
 
-		if ( in_array( $oTitle->getNamespace(), array( NS_IMAGE, NS_CATEGORY ) ) ) {
+		if ( in_array( $oTitle->getNamespace(), array( NS_FILE, NS_CATEGORY ) ) ) {
 			$sWikiLink .= ':'; //Prevent file links from being rendered as <img .../> tags and category links as... nothing.
 		}
 
