@@ -124,7 +124,11 @@
 				"bs-extjs-filter-bool-yes",
 				"bs-extjs-filter-bool-no",
 				"bs-extjs-categoryboxselect-emptytext",
-				"bs-extjs-categorytree-title"
+				"bs-extjs-categorytree-title",
+				"bs-extjs-filter-date-after",
+				"bs-extjs-filter-date-before",
+				"bs-extjs-filter-date-on",
+				"bs-extjs-filter-date-filter"
 			],
 			"dependencies": [
 				"ext.bluespice.extjs.theme.ux",

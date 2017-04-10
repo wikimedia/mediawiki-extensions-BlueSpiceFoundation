@@ -32,12 +32,12 @@ Ext.define('Ext.ux.grid.filter.DateFilter', {
      * @cfg {String} afterText
      * Defaults to 'After'.
      */
-    afterText : 'After',
+    afterText : mw.message( 'bs-extjs-filter-date-after' ).plain(),
     /**
      * @cfg {String} beforeText
      * Defaults to 'Before'.
      */
-    beforeText : 'Before',
+    beforeText : mw.message( 'bs-extjs-filter-date-before' ).plain(),
     /**
      * @cfg {Object} compareMap
      * Map for assigning the comparison values used in serialization.
@@ -86,7 +86,7 @@ Ext.define('Ext.ux.grid.filter.DateFilter', {
      * @cfg {String} onText
      * Defaults to 'On'.
      */
-    onText : 'On',
+    onText : mw.message( 'bs-extjs-filter-date-on' ).plain(),
 
     /**
      * @cfg {Object} pickerOpts
