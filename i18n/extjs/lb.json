@@ -40,5 +40,9 @@
 	"bs-extjs-filter-bool-no": "neen",
 	"bs-extjs-title-warning": "Warnung",
 	"bs-extjs-categoryboxselect-emptytext": "Eng Kategorie derbäisetzen",
-	"bs-extjs-categorytree-title": "Kategorien"
+	"bs-extjs-categorytree-title": "Kategorien",
+	"bs-extjs-filter-date-after": "Nom",
+	"bs-extjs-filter-date-before": "Virum",
+	"bs-extjs-filter-date-on": "Den",
+	"bs-extjs-filter-date-filter": "Filter"
 }

@@ -50,5 +50,9 @@
 	"bs-extjs-title-success": "成功",
 	"bs-extjs-title-warning": "警告",
 	"bs-extjs-categoryboxselect-emptytext": "添加分类",
-	"bs-extjs-categorytree-title": "分类"
+	"bs-extjs-categorytree-title": "分类",
+	"bs-extjs-filter-date-after": "晚于",
+	"bs-extjs-filter-date-before": "早于",
+	"bs-extjs-filter-date-on": "于",
+	"bs-extjs-filter-date-filter": "过滤器"
 }

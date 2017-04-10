@@ -52,5 +52,9 @@
 	"bs-extjs-title-success": "Réussi",
 	"bs-extjs-title-warning": "Avertissement",
 	"bs-extjs-categoryboxselect-emptytext": "Ajouter une catégorie",
-	"bs-extjs-categorytree-title": "Catégories"
+	"bs-extjs-categorytree-title": "Catégories",
+	"bs-extjs-filter-date-after": "Après",
+	"bs-extjs-filter-date-before": "Avant",
+	"bs-extjs-filter-date-on": "Le",
+	"bs-extjs-filter-date-filter": "Filtre"
 }
