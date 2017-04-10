@@ -51,5 +51,9 @@
 	"bs-extjs-title-success": "Window title for success\n{{Identical|Success}}",
 	"bs-extjs-title-warning": "Window title for warning\n{{Identical|Warning}}",
 	"bs-extjs-categoryboxselect-emptytext": "The placeholder text of an input field that allows the definition of categories",
-	"bs-extjs-categorytree-title": "The title of a panel containing a tree view of the wiki's categories\n{{Identical|Category}}"
+	"bs-extjs-categorytree-title": "The title of a panel containing a tree view of the wiki's categories\n{{Identical|Category}}",
+	"bs-extjs-filter-date-after": "Label for a filter option that filters for datasets where date in the field is later than the the entered date",
+	"bs-extjs-filter-date-before": "Label for a filter option that filters for datasets where date in the field is earlier than the the entered date",
+	"bs-extjs-filter-date-on": "Label for a filter option that filters for datasets where date in the field is the same as the entered date",
+	"bs-extjs-filter-date-filter": "Label for a button invoking the filter"
 }

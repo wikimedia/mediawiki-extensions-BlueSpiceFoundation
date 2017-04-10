@@ -107,7 +107,7 @@ Ext.define('Ext.ux.grid.filter.DateTimeFilter', {
      */
     dockDefaults: {
         dock: 'top',
-        buttonText: 'Filter'
+        buttonText: mw.message( 'bs-extjs-filter-date-filter' ).plain()
     },
 
     /**
