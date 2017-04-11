@@ -5,7 +5,8 @@
 			"Okras",
 			"Габдулгани НИШ ХБН",
 			"SuperPuperSteve",
-			"Kareyac"
+			"Kareyac",
+			"Alexey zakharenkov"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -51,5 +52,9 @@
 	"bs-extjs-title-success": "Успешно",
 	"bs-extjs-title-warning": "Предупреждение",
 	"bs-extjs-categoryboxselect-emptytext": "Добавить категорию",
-	"bs-extjs-categorytree-title": "Категории"
+	"bs-extjs-categorytree-title": "Категории",
+	"bs-extjs-filter-date-after": "После",
+	"bs-extjs-filter-date-before": "До",
+	"bs-extjs-filter-date-on": "На",
+	"bs-extjs-filter-date-filter": "Фильтр"
 }
