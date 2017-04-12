@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Vitorvicentevalente",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Fúlvio"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
@@ -32,7 +33,7 @@
 	"bs-wikipage-tasks-error-contentmodel": "Não foi possível realizar a tarefa com o modelo de conteúdo da página fornecida.",
 	"bs-wikipage-tasks-error-page-not-valid": "A página fornecida não é válida.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Alteração de categorias.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Não tem permissão para editar a página '$1'.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Não tem permissão para editar a página \"$1\".",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoria inválida|Categorias inválidas}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "As categorias foram enviadas.",
 	"apihelp-bs-wikipage-store-description": "Lista todas as páginas da wiki. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",

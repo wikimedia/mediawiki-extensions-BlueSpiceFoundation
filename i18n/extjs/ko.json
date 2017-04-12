@@ -8,7 +8,8 @@
 			"Miri-Nae",
 			"Hwangjy9",
 			"SeoJeongHo",
-			"Ykhwong"
+			"Ykhwong",
+			"Ellif"
 		]
 	},
 	"bs-extjs-ok": "확인",
@@ -46,5 +47,8 @@
 	"bs-extjs-filter-bool-no": "아니오",
 	"bs-extjs-categoryboxselect-emptytext": "분류 추가",
 	"bs-extjs-categorytree-title": "분류",
+	"bs-extjs-filter-date-after": "이후",
+	"bs-extjs-filter-date-before": "이전",
+	"bs-extjs-filter-date-on": "사용",
 	"bs-extjs-filter-date-filter": "필터"
 }
