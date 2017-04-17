@@ -33,7 +33,7 @@
 	"bs-wikipage-tasks-error-contentmodel": "Це завдання неможливо виконати з контентною моделлю заданої сторінки.",
 	"bs-wikipage-tasks-error-page-not-valid": "Подана сторінка недійсна.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Змінені категорії.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Ви не маєте дозволу на редагування сторінки «$1».",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Ви не маєте прав на редагування сторінки «$1».",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Недійсна категорія|Недійсні категорії}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Категорії успішно встановлено.",
 	"apihelp-bs-wikipage-store-description": "Перелічує всі сторінки у вікі. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
@@ -44,5 +44,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "У Вас немає дозволу на читання сторінки «$1».",
 	"bs-wikipage-tasks-error-nothingtoremove": "Немає категорій до вилучення",
 	"apihelp-bs-category-treestore-description": "Перелічує підкатегорії певної категорії",
-	"apihelp-bs-category-treestore-param-node": "Шлях до категорій, розділених косою рискою"
+	"apihelp-bs-category-treestore-param-node": "Шлях до категорій, розділених косою рискою",
+	"bs-api-task-taskdata-help": "[$1 Схема], [$2 приклади параметрів]",
+	"apihelp-bs-task-param-schema": "Показує JSON-схему для параметрів завдання",
+	"apihelp-bs-task-param-examples": "Показує приклади параметрів завдання",
+	"bs-api-task-taskData-page-id": "Ідентифікатор наявної вікісторінки",
+	"bs-api-task-taskData-page-title": "Валідна назва вікісторінки",
+	"bs-api-task-wikipagetasks-taskData-categories": "Масив рядків. Значення мають бути валідними назвами категорій."
 }
