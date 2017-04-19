@@ -224,4 +224,21 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 		return BsStringHelper::filter( $oFilter->comparison, $sFieldValue, $oFilter->value );
 	}
+
+	/**
+	 * Adds special default sorting
+	 * @return array
+	 */
+	public function getAllowedParams() {
+		$aParams = parent::getAllowedParams();
+
+		$aParams['sort'][ApiBase::PARAM_DFLT] = FormatJson::encode( [
+			[
+				'property' => 'file_timestamp',
+				'direction' => 'DESC'
+			]
+		] );
+
+		return $aParams;
+	}
 }
