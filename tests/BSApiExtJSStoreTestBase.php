@@ -7,6 +7,7 @@
 abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 
 	protected $iFixtureTotal = 0;
+	protected $sQuery = '';
 	abstract protected function getStoreSchema();
 
 	/**
@@ -70,11 +71,15 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 	 * @dataProvider providePagingData
 	 */
 	public function testPaging( $limit, $offset ) {
-		$results = $this->doApiRequest([
+		$aParams = array(
 			'action' => $this->getModuleName(),
 			'limit' => $limit,
 			'start' => $offset
-		]);
+		);
+		if( $this->sQuery ) {
+			$aParams['query'] = $this->sQuery;
+		}
+		$results = $this->doApiRequest( $aParams );
 		$response = $results[0];
 
 		$this->assertAttributeEquals(
@@ -117,7 +122,7 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 	 * @dataProvider provideSingleFilterData
 	 */
 	public function testSingleFilter( $type, $comparison, $field, $value, $expectedTotal ) {
-		$results = $this->doApiRequest([
+		$aParams = array(
 			'action' => $this->getModuleName(),
 			'filter' => FormatJson::encode([
 				[
@@ -127,7 +132,12 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 					'value' => $value
 				]
 			])
-		]);
+		);
+		if( $this->sQuery ) {
+			$aParams['query'] = $this->sQuery;
+		}
+
+		$results = $this->doApiRequest( $aParams );
 
 		$response = $results[0];
 
@@ -148,10 +158,15 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 	 * @dataProvider provideMultipleFilterData
 	 */
 	public function testMultipleFilter( $filters, $expectedTotal ) {
-		$results = $this->doApiRequest([
+		$aParams = array(
 			'action' => $this->getModuleName(),
 			'filter' => FormatJson::encode( $filters )
-		]);
+		);
+		if( $this->sQuery ) {
+			$aParams['query'] = $this->sQuery;
+		}
+
+		$results = $this->doApiRequest( $aParams );
 
 		$response = $results[0];
 
@@ -166,8 +181,13 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 	abstract public function provideMultipleFilterData();
 
 	protected function makeRequestParams() {
-		return [
+		$aParams = array(
 			'action' => $this->getModuleName()
-		];
+		);
+		if( $this->sQuery ) {
+			$aParams['query'] = $this->sQuery;
+		}
+
+		return $aParams;
 	}
 }
