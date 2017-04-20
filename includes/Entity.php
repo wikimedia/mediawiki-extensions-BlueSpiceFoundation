@@ -508,8 +508,42 @@ class BSEntity implements JsonSerializable {
 	 * @return BSEntity
 	 */
 	public function invalidateCache() {
-		$this->getTitle()->invalidateCache();
+		$this->invalidateTitleCache( wfTimestampNow() );
 		static::detachCache( $this );
+		Hooks::run( 'BSEntityInvalidate', array( $this ) );
 		return $this;
+	}
+
+	/**
+	 * Almost a copy of Title::invalidateCache method - but we need an immediate
+	 * invalidation, not whenever the db feels 'idle'
+	 * Updates page_touched for this page; called from LinksUpdate.php
+	 *
+	 * @param string $purgeTime [optional] TS_MW timestamp
+	 * @return bool True if the update succeeded
+	 */
+	protected function invalidateTitleCache( $purgeTime = null ) {
+		if ( wfReadOnly() ) {
+			return false;
+		}
+
+		if( !$this->getTitle()->exists() ) {
+			return true; // avoid gap locking if we know it's not there
+		}
+
+		$method = __METHOD__;
+		$dbw = wfGetDB( DB_MASTER );
+		$conds = $this->getTitle()->pageCond();
+
+		$dbTimestamp = $dbw->timestamp( $purgeTime ?: time() );
+
+		$dbw->update(
+			'page',
+			[ 'page_touched' => $dbTimestamp ],
+			$conds + [ 'page_touched < ' . $dbw->addQuotes( $dbTimestamp ) ],
+			$method
+		);
+
+		return true;
 	}
 }
