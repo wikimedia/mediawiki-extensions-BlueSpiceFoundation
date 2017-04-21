@@ -20,23 +20,17 @@ class TestMail extends BSMaintenance {
 		parent::__construct();
 
 		$this->addOption('recipient', 'Valid user name or e-mail address to send the mail to', true, true);
-		$this->addOption('framework', '[MW|BS] - To choose UserMailer or BsMailer for sending. Default is "MW".', false, true);
 		$this->addOption('subject', 'An optional subject', false, true);
 		$this->addOption('text', 'An optional text', false, true);
-		$this->addOption('testmode', '[true|false] - Optional for framework "BS". Temporarily enables "Core::TestMode". Default is "false".', false, true);
-		$this->addOption('html', '[true|false] - Optional for framework "BS". Default is "false".', false, true);
 	}
 
 	public function execute() {
 		global $wgPasswordSender;
-		
+
 		$sRecipient = $this->getOption( 'recipient' );
-		$sFramework = strtoupper( $this->getOption( 'framework', 'MW' ) );
 		$sSubject   = $this->getOption( 'subject', $this->defaultSubject );
 		$sText      = $this->getOption( 'text', $this->defaultText );
-		$sTestMode  = strtolower( $this->getOption( 'testmode', 'false' ) );
-		$sHTML      = strtolower( $this->getOption( 'html', 'false' ) );
-		
+
 		//We asume that the given recipient is a user name
 		$oRecipient = User::newFromName($sRecipient);
 		$oRecipientAddress = null;
@@ -50,35 +44,18 @@ class TestMail extends BSMaintenance {
 		else if ( $oRecipient->getEmail() ) { //not empty, false or things like this
 			$oRecipientAddress = new MailAddress( $oRecipient->getEmail() );
 		}
-		
+
 		if( $oRecipientAddress == null ) {
 			$this->error( 'Not a valid user name or e-mail address or user has no e-mail address set.');
 			return;
 		}
-		
+
 		$this->output( "Sending mail to '{$oRecipientAddress->toString()}'\n" );
 
-		if( $sFramework == 'BS' ) {
-			if( $sTestMode == 'true' ) {
-				BsConfig::set( 'MW::TestMode', true ); //is not saved so it doesn't need to be reverted
-			}
 
-			$vTo = $oRecipient; //BsMailer needs User object or String, but not MailAddress object.
-			if( $oRecipient->getId() == 0 ) $vTo = $oRecipientAddress->toString ();
-			
-			$this->output( "Using BsMailer with 'Core::TestMode' == $sTestMode and 'HTML' == $sHTML\n" );
+		$this->output( "Using UserMailer\n" );
+		$oStatus = UserMailer::send( $oRecipientAddress, new MailAddress( $wgPasswordSender ), $sSubject, $sText );
 
-			$bHTML = false;
-			if( $sHTML == 'true' ) $bHTML = true;
-
-			BsMailer::getInstance('MW')->setSendHTML($bHTML); //is not saved so it doesn't need to be reverted
-			$oStatus = BsMailer::getInstance('MW')->send( $vTo, $sSubject, $sText );
-		}
-		else { 
-			$this->output( "Using UserMailer\n" );
-			$oStatus = UserMailer::send( $oRecipientAddress, new MailAddress( $wgPasswordSender ), $sSubject, $sText );
-		}
-		
 		if( $oStatus->isGood() ) {
 			$this->output( "Mail send\n" );
 		}
