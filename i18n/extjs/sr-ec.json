@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
 	"bs-extjs-ok": "У реду",
@@ -27,5 +28,9 @@
 	"bs-extjs-allns": "(сви)",
 	"bs-extjs-filters": "Филтери",
 	"bs-extjs-filter-bool-yes": "да",
-	"bs-extjs-filter-bool-no": "не"
+	"bs-extjs-filter-bool-no": "не",
+	"bs-extjs-filter-date-after": "После",
+	"bs-extjs-filter-date-before": "Пре",
+	"bs-extjs-filter-date-on": "На исти датум",
+	"bs-extjs-filter-date-filter": "Филтер"
 }
