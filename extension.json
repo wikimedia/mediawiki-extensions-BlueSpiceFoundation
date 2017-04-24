@@ -396,9 +396,12 @@
 	},
 	"Hooks": {
 		"SetupAfterCache": "BsCoreHooks::onSetupAfterCache",
-		"SoftwareInfo": "BsCoreHooks::onSoftwareInfo",
+		"SoftwareInfo": "BlueSpice\\Hooks\\SoftwareInfo\\AddBlueSpice::callback",
 		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
-		"LinkEnd": "BsCoreHooks::onLinkEnd",
+		"LinkEnd": [
+			"BlueSpice\\Hooks\\LinkEnd\\AddDataTitle::callback",
+			"BlueSpice\\Hooks\\LinkEnd\\AddDataUserName::callback"
+		],
 		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
 		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",
 		"MakeGlobalVariablesScript": "BsCoreHooks::onMakeGlobalVariablesScript",
@@ -430,6 +433,9 @@
 			]
 		},
 		"ConfigFiles": []
+	},
+	"ConfigRegistry": {
+		"bsg": "BlueSpice\\Config::newInstance"
 	},
 	"AutoloadClasses": {
 		"BsCore": "includes/Core.class.php",
