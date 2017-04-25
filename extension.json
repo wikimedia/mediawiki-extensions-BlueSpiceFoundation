@@ -459,7 +459,6 @@
 		"BSNamespaceListParam": "includes/paramdefinition/BSNamespaceListParam.php",
 		"BSNamespaceParser": "includes/parser/BSNamespaceParser.php",
 		"BSNamespaceValidator": "includes/validator/BSNamespaceValidator.php",
-		"BsMailer": "includes/Mailer.class.php",
 		"BsExtJSStoreParams": "includes/ExtJSStoreParams.php",
 		"BsExtJSSortParam": "includes/ExtJSStoreParams.php",
 		"BSNotifications": "includes/Notifications.class.php",
