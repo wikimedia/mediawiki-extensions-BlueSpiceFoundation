@@ -49,7 +49,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		} else {
 			//validate user input
 			foreach( $aOptions['namespaces'] as $iKey => $iNSId ) {
-				if( !$iNSId || !is_numeric( $iNSId ) ) {
+				if( !$iNSId && !is_numeric( $iNSId ) ) {
 					unset( $aOptions['namespaces'][$iKey] );
 					continue;
 				}
