@@ -23,7 +23,8 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 	}
 
 	public function addDBDataOnce() {
-		$this->iFixtureTotal = $this->createStoreFixtureData();
+		// Caution: this is only called once per testsuite, not per test.
+		$this->createStoreFixtureData();
 	}
 
 	public function testSchema() {
