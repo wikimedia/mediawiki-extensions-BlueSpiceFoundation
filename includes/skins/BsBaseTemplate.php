@@ -299,7 +299,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$sToolboxLinkList = implode("\n", $aToolboxLinkList);
 
 		ob_start();
-		wfRunHooks('SkinTemplateToolboxEnd', array(&$this));
+		wfRunHooks('SkinTemplateToolboxEnd', array( $this ));
 		$sToolboxEndLinkList = ob_get_contents();
 		ob_end_clean();
 

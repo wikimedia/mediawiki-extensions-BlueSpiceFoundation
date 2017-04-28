@@ -111,7 +111,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			}
 		}
 
-		wfRunHooks( 'UserMiniProfileAfterInit', array( &$this ) );
+		wfRunHooks( 'UserMiniProfileAfterInit', array( $this ) );
 		$this->bIsInit = true;
 	}
 
