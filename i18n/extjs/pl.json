@@ -48,5 +48,6 @@
 	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorię",
 	"bs-extjs-categorytree-title": "Kategorie",
 	"bs-extjs-filter-date-after": "Po",
-	"bs-extjs-filter-date-before": "Przed"
+	"bs-extjs-filter-date-before": "Przed",
+	"bs-extjs-filter-date-filter": "Filtr"
 }
