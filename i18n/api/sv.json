@@ -13,9 +13,11 @@
 	"apihelp-bs-wikipage-tasks-description": "Tillhandahåller vanliga åtgärder för WikiPages",
 	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
 	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
+	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera cache</code>",
+	"apihelp-bs-store-param-format": "Formatet för utmatningen (endast JSON eller formaterad JSON)",
 	"apihelp-bs-task-param-format": "Format för resultatet",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan '$1'.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan \"$1\".",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ogiltig kategori|Ogiltig kategorier}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategorier har lagts till.",
 	"apihelp-bs-wikisubpage-treestore-description": "Listar undersidor för en specifik wikisida",
@@ -25,5 +27,6 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "Det finns inga kategorier att ta bort",
 	"apihelp-bs-category-treestore-description": "Listar alla underkategorier för en specifik kategori",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parameterexempel]",
+	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn."
 }
