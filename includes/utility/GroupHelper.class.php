@@ -25,7 +25,16 @@ class BsGroupHelper {
 		}
 
 		$aBlacklist[] = self::$sLockModeGroup;
+
+		$bDoReload = false;
+		if ( isset( $aConf['reload'] ) ) {
+			$bDoReload = $aConf['reload'];
+		}
 		if ( empty( self::$aGroups ) ) {
+			$bDoReload = true;
+		}
+
+		if ( $bDoReload ) {
 			self::$aGroups = array_merge(
 				User::getImplicitGroups(),
 				User::getAllGroups()
