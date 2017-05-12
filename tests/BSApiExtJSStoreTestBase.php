@@ -53,7 +53,7 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 					$this->assertEquals( true, is_bool( $value ), "Value of field '$schemaFieldName' is not a boolean" );
 					break;
 				case 'date':
-					$this->assertNotEquals( -1, strtotime(), "Value of field '$schemaFieldName' is not a valid date format" );
+					$this->assertNotEquals( -1, strtotime( $value ), "Value of field '$schemaFieldName' is not a valid date format" );
 					break;
 				case 'title':
 					$this->assertNotNull( Title::newFromText( $value ), "Value of field '$schemaFieldName' is not a valid title" );
