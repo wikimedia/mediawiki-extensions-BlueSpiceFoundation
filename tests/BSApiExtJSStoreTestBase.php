@@ -4,7 +4,7 @@
  *
  * Class BSApiExtJSStoreTestBase
  */
-abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
+abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 
 	protected $iFixtureTotal = 0;
 	protected $sQuery = '';

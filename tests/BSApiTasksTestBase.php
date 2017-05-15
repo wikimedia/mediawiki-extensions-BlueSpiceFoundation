@@ -1,6 +1,6 @@
 <?php
 
-abstract class BSApiTasksTestBase extends ApiTestCase {
+abstract class BSApiTasksTestBase extends BSApiTestCase {
 
 	abstract protected function getModuleName();
 
