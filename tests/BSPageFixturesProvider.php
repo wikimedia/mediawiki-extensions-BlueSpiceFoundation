@@ -1,12 +1,12 @@
 <?php
 
-class BSPageFixturesProvider {
+class BSPageFixturesProvider implements BSFixturesProvider {
 
 	/**
 	 * @return array[]
 	 */
 	public function getFixtureData() {
-		$oData = FormatJson::decode( file_get_contents( __DIR__."/data/pages.json" ) );
+		$oData = FormatJson::decode( file_get_contents( __DIR__ . "/data/pages.json" ) );
 		return $oData->pages;
 	}
 }

@@ -1,0 +1,8 @@
+{
+  "users" : [
+    [ "John", "John L.", "j@example.doesnotexist", [ "A", "B" ] ],
+    [ "Paul", "Paul M.", "p@example.doesnotexist", [ "A", "C" ] ],
+    [ "George", "George H.", "g@example.doesnotexist", [ "C" ] ],
+    [ "Ringo", "Ringo S.", "r@example.doesnotexist", [ "D" ] ]
+  ]
+}
