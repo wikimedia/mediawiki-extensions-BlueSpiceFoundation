@@ -6,7 +6,8 @@
 			"Габдулгани НИШ ХБН",
 			"SuperPuperSteve",
 			"Kareyac",
-			"Alexey zakharenkov"
+			"Alexey zakharenkov",
+			"Facenapalm"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -38,6 +39,7 @@
 	"bs-extjs-confirmNavigationTitle": "Перейти по ссылке",
 	"bs-extjs-confirmNavigationText": "Вы действительно хотите перейти по этой ссылке? Все динамические параметры, такие как фильтрация или сортировка на текущей странице, будут потеряны.",
 	"bs-extjs-allns": "(все)",
+	"bs-extjs-mainns": "(основное)",
 	"bs-extjs-filters": "Фильтры",
 	"bs-extjs-filter-equals": "равно",
 	"bs-extjs-filter-equals-not": "не равно",
