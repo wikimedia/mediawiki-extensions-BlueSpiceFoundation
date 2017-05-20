@@ -3,9 +3,11 @@
 		"authors": [
 			"Краснорядцева Елена",
 			"Redredsonia",
-			"Alexey zakharenkov"
+			"Alexey zakharenkov",
+			"Facenapalm"
 		]
 	},
+	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
 	"apihelp-bs-task-param-schema": "Показывает JSON-схему для параметров задачи",
