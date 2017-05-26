@@ -8,6 +8,7 @@ class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
 	protected $oOriginalGlobalParser     = null;
 	protected $oOriginalGlobalTitle      = null;
+	protected $oOriginalGlobalRequest    = null;
 
 	protected $oOriginalMainRequestContextTitle = null;
 	protected $oOriginalMainRequestContextOutputPage = null;
@@ -439,14 +440,26 @@ class BsPageContentProvider {
 	}
 
 	//<editor-fold desc="Save, override and restore OutputPage and Parser" defaultstate="collapsed">
+	/**
+	 * Overrides global variables
+	 *
+	 * @global Parser $wgParser
+	 * @global OutputPage $wgOut
+	 * @global Title $wgTitle
+	 * @global string $wgVersion
+	 * @global WebRequest $wgRequest
+	 * @param Title $oTitle
+	 * @param Context $context
+	 */
 	private function overrideGlobals( $oTitle, $context = null ) {
-		global $wgParser, $wgOut, $wgTitle, $wgVersion;
+		global $wgParser, $wgOut, $wgTitle, $wgVersion, $wgRequest;
 
 		//This is neccessary for other extensions that may rely on $wgTitle,
 		//i.e for checking permissions during rendering
 		$this->oOriginalGlobalOutputPage = $wgOut;
 		$this->oOriginalGlobalParser     = $wgParser;
 		$this->oOriginalGlobalTitle      = $wgTitle;
+		$this->oOriginalGlobalRequest    = $wgRequest;
 
 		/*
 		 * New MediaWiki RequestContext mechanism. More or less redundant but
@@ -469,6 +482,10 @@ class BsPageContentProvider {
 			$wgOut = new OutputPage( $context );
 		}
 
+		if( $context ) {
+			$wgRequest = $context->getRequest();
+		}
+
 		$wgOut->setArticleBodyOnly( true );
 		RequestContext::getMain()->setOutput( $wgOut );
 
@@ -476,12 +493,21 @@ class BsPageContentProvider {
 		RequestContext::getMain()->setTitle( $oTitle );
 	}
 
+	/**
+	 * Restores the global variables
+	 *
+	 * @global Parser $wgParser
+	 * @global OutputPage $wgOut
+	 * @global Title $wgTitle
+	 * @global WebRequest $wgRequest
+	 */
 	private function restoreGlobals() {
-		global $wgParser, $wgOut, $wgTitle;
+		global $wgParser, $wgOut, $wgTitle, $wgRequest;
 
-		$wgOut    = $this->oOriginalGlobalOutputPage;
-		$wgParser = $this->oOriginalGlobalParser;
-		$wgTitle  = $this->oOriginalGlobalTitle;
+		$wgOut     = $this->oOriginalGlobalOutputPage;
+		$wgParser  = $this->oOriginalGlobalParser;
+		$wgTitle   = $this->oOriginalGlobalTitle;
+		$wgRequest = $this->oOriginalGlobalRequest;
 
 		RequestContext::getMain()->setTitle(
 			$this->oOriginalMainRequestContextTitle
