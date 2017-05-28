@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Urhixidur"
 		]
 	},
-	"bs-upload-uploaddialogtitle": "Télécharger le fichier",
+	"bs-upload-uploaddialogtitle": "Téléverser le fichier",
 	"bs-upload-uploadbuttontext": "Naviguer",
 	"bs-upload-uploadfilefieldlabel": "Nom de fichier",
 	"bs-upload-uploadfileemptytext": "Insérer un nouveau fichier…",
@@ -14,10 +15,10 @@
 	"bs-upload-uploadwatchthislabel": "Suivre ce fichier",
 	"bs-upload-uploadignorewarningslabel": "Ignorer les avertissements",
 	"bs-upload-categories": "Catégories",
-	"bs-upload-upload-waitmessage": "Téléchargement en cours…",
+	"bs-upload-upload-waitmessage": "Téléversement en cours…",
 	"bs-upload-error": "Erreur",
 	"bs-upload-descfilelabel": "Description",
-	"bs-upload-error-long": "Erreur dans le processus de téléchargement",
-	"bs-upload-filetypenotsupported": "Le type de fichier n’est pas supporté",
+	"bs-upload-error-long": "Erreur dans le processus de téléversement",
+	"bs-upload-filetypenotsupported": "Le type de fichier n’est pas pris en charge",
 	"bs-upload-details": "Détails"
 }

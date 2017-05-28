@@ -4,7 +4,8 @@
 			"Gomoko",
 			"Macofe",
 			"Benjozork",
-			"Wladek92"
+			"Wladek92",
+			"Urhixidur"
 		]
 	},
 	"bluespicefoundation-desc": "Rend Médiawiki prêt pour l’entreprise",
@@ -28,7 +29,6 @@
 	"bs-one-unit-ago": "il y a $1",
 	"bs-now": "maintenant",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Bonjour M. $2|Bonjour Mme $2|Bonjour $2}},",
-	"bs-email-greeting-no-receiver": "Bonjour,",
 	"bs-email-footer": "Ce message a été généré automatiquement par $1. Veuillez ne pas répondre à ce courriel.",
 	"bs-userpagesettings-legend": "Paramètres utilisateur",
 	"bs-userpreferences-link-text": "Paramètres utilisateurs avancés",
@@ -53,12 +53,12 @@
 	"bs-filesystemhelper-folder-copy-error": "Le répertoire <code>$1</code> n’a pas pu être renommé.",
 	"bs-filesystemhelper-folder-not-exists": "Le répertoire <code>$1</code> n’existe pas.",
 	"bs-filesystemhelper-folder-rename-error": "Le dossier <code>$1</code> ne peut pas être renommé en <code>$2</code>.",
-	"bs-filesystemhelper-upload-err-code": "Le fichier n’a pas pu être téléchargé : $1",
+	"bs-filesystemhelper-upload-err-code": "Le fichier n’a pas pu être téléversé : $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Le fichier n’a pas l’extension requise : $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Ce type de fichier n’est pas pris en charge.",
 	"bs-filesystemhelper-save-base64-error": "Le fichier n’a pas pu être enregistré.",
-	"bs-filesystemhelper-upload-base64-error": "Le fichier n’a pas pu être téléchargé.",
-	"bs-filesystemhelper-upload-local-error-stash-file": "Le fichier n’a pas pu être déplacé vers la réserve de téléchargement.",
+	"bs-filesystemhelper-upload-base64-error": "Le fichier n’a pas pu être téléversé.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "Le fichier n’a pas pu être déplacé vers la réserve de téléversement.",
 	"bs-filesystemhelper-upload-local-error-create": "Le fichier n’a pas pu être créé dans le wiki.",
 	"bs-navigation-instructions": "Instructions",
 	"bs-navigation-support": "Soutien",
