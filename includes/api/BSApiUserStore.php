@@ -98,4 +98,40 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 
 		return $value;
 	}
+
+	/**
+	 * @param object $aDataSet
+	 * @return boolean
+	 */
+	public function filterCallback( $aDataSet ) {
+		$bFilterApplies = $this->filterUserName(
+			$this->getParameter( 'query' ),
+			$aDataSet
+		);
+		if( !$bFilterApplies ) {
+			return false;
+		}
+
+		return parent::filterCallback( $aDataSet );
+	}
+
+	/**
+	 * Performs string filtering on the user name and real name based on given
+	 * query parameter
+	 * @param string $sQuery
+	 * @param oject $aDataSet
+	 * @return boolean true if filter applies, false if not
+	 */
+	public function filterUserName( $sQuery, $aDataSet ) {
+		if( empty( $sQuery ) || !is_string( $sQuery ) ) {
+			return true;
+		}
+
+		return BsStringHelper::filter( 'ct', $aDataSet->user_name, $sQuery )
+		|| BsStringHelper::filter(
+			'ct',
+			$aDataSet->user_real_name,
+			$sQuery
+		);
+	}
 }
