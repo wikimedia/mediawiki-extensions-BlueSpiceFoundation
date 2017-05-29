@@ -6,14 +6,15 @@ Ext.define( 'BS.form.UserCombo', {
 	labelAlign: 'right',
 	forceSelection: true,
 	triggerAction: 'all',
-	queryMode: 'local',
+	queryMode: 'remote',
+	minChars: 1,
 	typeAhead: true,
 	anyMatch: true,
 	store: null,
 	extraParams: {},
 
 	deferredSetValueConf: false,
-	
+
 	initComponent: function() {
 		this.setFieldLabel( mw.message('bs-extjs-label-user').plain() );
 		if( !this.store ) {
@@ -42,21 +43,21 @@ Ext.define( 'BS.form.UserCombo', {
 			});
 		}
 		this.store.load();
-		
+
 		this.store.on( 'load', this.onStoreLoad, this );
-		
+
 		this.callParent(arguments);
 	},
-	
+
 	onStoreLoad: function( store, records, successful, eOpts ) {
 		if( this.deferredSetValueConf ) {
-			this.deferredSetValueConf.callback.apply( 
+			this.deferredSetValueConf.callback.apply(
 				this, [this.deferredSetValueConf.value]
 			);
 			this.deferredSetValueConf = false;
 		}
 	},
-	
+
 	setValueByUserId: function( user_id ) {
 		if( this.store.isLoading() ) {
 			this.deferSetValue( this.setValueByUserId, user_id );
@@ -67,24 +68,18 @@ Ext.define( 'BS.form.UserCombo', {
 		var record = this.store.getAt( index );
 		this.setValue(record);
 	},
-	
-	setValueByUserName: function( user_name ) {
-		
-	},
-	
-	getUserIdValue: function() {
-		
-	},
-	
-	getUserNameValue: function() {
-		
-	},
-	
+
+	setValueByUserName: function( user_name ) {},
+
+	getUserIdValue: function() {},
+
+	getUserNameValue: function() {},
+
 	getUserModel: function() {
 		var user_id = this.getValue();
 		return this.store.getById( user_id );
 	},
-	
+
 	setValue: function( value ) {
 		if( this.store.isLoading() ) {
 			this.deferSetValue( this.setValue, value );
@@ -92,7 +87,7 @@ Ext.define( 'BS.form.UserCombo', {
 		}
 		this.callParent( arguments );
 	},
-	
+
 	deferSetValue: function( callback, value ) {
 		this.deferredSetValueConf = {
 			callback: callback,
