@@ -294,7 +294,8 @@
 				"bs-deferred-action-apiaddcategories-description",
 				"bs-deferred-action-apisetcategories-description",
 				"bs-deferred-action-apiremovecategories-description",
-				"bs-deferred-action-apimovepage-description"
+				"bs-deferred-action-apimovepage-description",
+				"bs-deferred-action-apideletepage-description"
 			]
 		},
 		"ext.bluespice.extjs.BS.portal.css": {

@@ -19,5 +19,6 @@
 	"bs-deferred-action-apiaddcategories-description": "Description of an action that adds a set of categories to existing set of categories on a page.\n\nParameters:\n* $1 - The page title that is being modified",
 	"bs-deferred-action-apiremovecategories-description": "Description of an action that removes a set of categories  to a page.\n\nParameters:\n* $1 - The page title that is being modified",
 	"bs-deferred-action-apisetcategories-description": "Description of an action that adds a set of categories  to a page with removing existing ones.\n\nParameters:\n* $1 - The page title that is being modified",
-	"bs-deferred-action-apimovepage-description": "Description of an action that moves a page.\n\nParameters:\n* $1 - The source page title to be moved from\n* $2 - The target page title to be moved to"
+	"bs-deferred-action-apimovepage-description": "Description of an action that moves a page.\n\nParameters:\n* $1 - The source page title to be moved from\n* $2 - The target page title to be moved to",
+	"bs-deferred-action-apideletepage-description": "Description of an action that deletes a page.\n\nParameters:\n* $1 - The page title to be deleted"
 }

@@ -4,10 +4,6 @@ Ext.define( 'BS.action.APIRemoveCategories', {
 	categories: [],
 	pageTitle: '',
 
-	contructor: function(){
-		this.callParent(arguments);
-	},
-
 	execute: function(){
 		var dfd = $.Deferred();
 		this.actionStatus = BS.action.Base.STATUS_RUNNING;
@@ -23,6 +19,8 @@ Ext.define( 'BS.action.APIRemoveCategories', {
 	},
 
 	doAPIRemoveCategories: function( dfd, set ){
+		var me = this;
+
 		var taskData = {
 			page_title: set.page_title,
 			categories: set.categories
@@ -31,16 +29,16 @@ Ext.define( 'BS.action.APIRemoveCategories', {
 			'wikipage', 'removeCategories', taskData
 		)
 		.fail(function( response ){
-			this.actionStatus = BS.action.Base.STATUS_ERROR;
-			dfd.reject( this, set, response );
+			me.actionStatus = BS.action.Base.STATUS_ERROR;
+			dfd.reject( me, set, response );
 		})
 		.done(function( response ) {
 			if( !response.success ){
-				this.actionStatus = BS.action.Base.STATUS_ERROR;
-				dfd.reject( this, set, response );
+				me.actionStatus = BS.action.Base.STATUS_ERROR;
+				dfd.reject( me, set, response );
 			}
-			this.actionStatus = BS.action.Base.STATUS_DONE;
-			dfd.resolve( this );
+			me.actionStatus = BS.action.Base.STATUS_DONE;
+			dfd.resolve( me );
 		});
 	},
 
