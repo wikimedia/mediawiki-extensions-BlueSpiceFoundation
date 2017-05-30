@@ -4,10 +4,6 @@ Ext.define( 'BS.action.APISetCategories', {
 	categories: [],
 	pageTitle: '',
 
-	contructor: function(){
-		this.callParent( arguments );
-	},
-
 	execute: function(){
 		var dfd = $.Deferred();
 		this.actionStatus = BS.action.Base.STATUS_RUNNING;
@@ -23,6 +19,8 @@ Ext.define( 'BS.action.APISetCategories', {
 	},
 
 	doAPISetCategories: function( dfd, set ){
+		var me = this;
+
 		var taskData = {
 			page_title: set.page_title,
 			categories: set.categories
@@ -32,15 +30,16 @@ Ext.define( 'BS.action.APISetCategories', {
 		)
 		.fail(function( response ){
 			this.actionStatus = BS.action.Base.STATUS_ERROR;
-			dfd.reject( this, set, response );
+			dfd.reject( me, set, response );
 		})
 		.done(function( response ) {
 			if( !response.success ){
 				this.actionStatus = BS.action.Base.STATUS_ERROR;
-				dfd.reject( this, set, response );
+				dfd.reject( me, set, response );
 			}
+
 			this.actionStatus = BS.action.Base.STATUS_DONE;
-			dfd.resolve( this );
+			dfd.resolve( me );
 		});
 	},
 

@@ -19,5 +19,6 @@
 	"bs-deferred-action-apiaddcategories-description": "Kategorien zu „$1“ hinzufügen.",
 	"bs-deferred-action-apiremovecategories-description": "Kategorien von „$1“ entfernen.",
 	"bs-deferred-action-apisetcategories-description": "Kategorien zu „$1“ festlegen.",
-	"bs-deferred-action-apimovepage-description": "„$1“ nach „$2“ verschieben."
+	"bs-deferred-action-apimovepage-description": "„$1“ nach „$2“ verschieben.",
+	"bs-deferred-action-apideletepage-description": "„$1“ löschen."
 }
