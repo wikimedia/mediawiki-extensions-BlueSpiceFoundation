@@ -50,63 +50,99 @@ class ViewUserMiniProfile extends ViewBaseElement {
 	}
 
 	/**
+	 * TODO: Rewrite and separate all this into single methods
 	 * Initializes the views members with the information from given options.
 	 * @param bool $bReInit
 	 * @return null
 	 */
 	public function init( $bReInit = false ) {
 		global $wgUrlProtocols;
-		if ( $this->bIsInit == true && $bReInit == false ) return;
+		if ( $this->bIsInit == true && $bReInit == false ) {
+			return;
+		}
 
 		$oUser = $this->mOptions['user'];
-
-		if ( !isset( $this->mOptions['width'] ) ) $this->mOptions['width']  = 32;
-		if( !isset( $this->mOptions['height'] ) ) $this->mOptions['height'] = 32;
-
-		if ( !isset( $this->mOptions['userdisplayname'] ) ) {
-			$this->mOptions['userdisplayname'] = BsCore::getUserDisplayName( $oUser );
+		if( !$oUser instanceof User ) {
+			throw new BsException( "No User Given. ".__CLASS__." ".__METHOD__ );
 		}
 
+		if ( !isset( $this->mOptions['width'] ) ) {
+			$this->mOptions['width'] = 32;
+		}
+		if( !isset( $this->mOptions['height'] ) ) {
+			$this->mOptions['height'] = 32;
+		}
+
+		if ( empty($this->mOptions['userdisplayname'] ) ) {
+			$this->mOptions['userdisplayname'] = empty( $oUser->getRealName() )
+				? $oUser->getName()
+				: $oUser->getRealName()
+			;
+		}
+
+		//link can be empty for an anon user
 		if ( !isset( $this->mOptions['linktargethref'] ) ) {
-			$this->mOptions['linktargethref'] = htmlspecialchars( $oUser->getUserPage()->getLinkURL(), ENT_QUOTES, 'UTF-8' );
+			$this->mOptions['linktargethref'] = htmlspecialchars(
+				$oUser->getUserPage()->getLinkURL(),
+				ENT_QUOTES,
+				'UTF-8'
+			);
 		}
 
-		if ( isset ( $this->mOptions['userimagesrc'] ) ) {
-			$this->mOptions['userimagesrc'] = $this->mOptions['userimagesrc'];
-		} elseif ( $oUser->isAnon() ){
+		if( empty( $this->mOptions['userimagesrc'] ) ) {
+			$this->mOptions['userimagesrc'] = BsConfig::get( 'MW::DefaultUserImage' );
+		}
+
+		if ( $oUser->isAnon() ) {
 			$this->mOptions['userimagesrc'] = BsConfig::get( 'MW::AnonUserImage' );
 			$this->mOptions['linktargethref'] = '';
 		} else {
-			$sUserImageName = BsConfig::getVarForUser('MW::UserImage', $oUser);
-			$this->mOptions['userimagesrc'] = BsConfig::get( 'MW::DefaultUserImage' );
-			if ( !empty( $sUserImageName ) ) {
-				$aParsedUrl = parse_url( $sUserImageName );
-				if ( $sUserImageName{0} == '/' ) {
-					$this->mOptions['userimagesrc'] = $sUserImageName;
-				} elseif ( isset( $aParsedUrl['scheme'] ) && in_array( $aParsedUrl['scheme'], $wgUrlProtocols ) ) {
-					$aPathInfo = pathinfo( $aParsedUrl['path'] );
-					$aFileExtWhitelist = BsConfig::get( 'MW::ImageExtensions' );
-					$this->mOptions['userimagesrc'] = $aParsedUrl['scheme'].'://'.$aParsedUrl['host'].$aParsedUrl['path'];
+			$sUserImageName = BsConfig::getVarForUser( 'MW::UserImage', $oUser );
+			if ( !empty( $sUserImageName ) ) { //Image given as a url
 
-					if ( isset( $aPathInfo['extension'] ) && !in_array( strtolower( $aPathInfo['extension'] ), $aFileExtWhitelist ) ){
-						$this->mOptions['userimagesrc'] = BsConfig::get( 'MW::AnonUserImage' );
+				if ( $sUserImageName{0} == '/' ) {
+					//relative url from own system given
+					$this->mOptions['userimagesrc'] = $sUserImageName;
+				} elseif ( $aParsedUrl = wfParseUrl( $sUserImageName ) ) {
+					//external url
+					//TODO: Fix, when system is call via https:// and the given
+					//url is http:// the browser will block the image
+					$bAllowedProtocoll = in_array(
+						$aParsedUrl['scheme'].$aParsedUrl['delimiter'],
+						$wgUrlProtocols
+					);
+					if( $bAllowedProtocoll ) {
+						$sQuery = isset( $aParsedUrl['query'] ) ?
+							"?{$aParsedUrl['query']}"
+							: ''
+						;
+						$this->mOptions['userimagesrc'] =
+							$aParsedUrl['scheme']
+							.$aParsedUrl['delimiter']
+							.$aParsedUrl['host']
+							.$aParsedUrl['path']
+							.$sQuery
+						;
 					}
-				} else {
-					$oUserImageFile = RepoGroup::singleton()->findFile( Title::newFromText( $sUserImageName, NS_FILE ) );
-					$oUserThumbnail = false;
-					if ( $oUserImageFile !== false ) {
-						$oUserThumbnail = $oUserImageFile->transform(
-							array(
-								'width' => $this->mOptions['width'],
-								'height' => $this->mOptions['height']
-							)
-						);
-					}
-					if ( $oUserThumbnail !== false ) {
-						$this->mOptions['userimagesrc'] = $oUserThumbnail->getUrl();
-						$this->mOptions['width'] = $oUserThumbnail->getWidth();
-						$this->mOptions['height'] = $oUserThumbnail->getHeight();
-					}
+				}
+			} else {
+				//MW default File:<username>
+				$oUserImageFile = RepoGroup::singleton()->findFile(
+					Title::newFromText( $sUserImageName, NS_FILE )
+				);
+				$oUserThumbnail = false;
+				if ( $oUserImageFile !== false ) {
+					$oUserThumbnail = $oUserImageFile->transform(
+						array(
+							'width' => $this->mOptions['width'],
+							'height' => $this->mOptions['height']
+						)
+					);
+				}
+				if ( $oUserThumbnail !== false ) {
+					$this->mOptions['userimagesrc'] = $oUserThumbnail->getUrl();
+					$this->mOptions['width'] = $oUserThumbnail->getWidth();
+					$this->mOptions['height'] = $oUserThumbnail->getHeight();
 				}
 			}
 		}
