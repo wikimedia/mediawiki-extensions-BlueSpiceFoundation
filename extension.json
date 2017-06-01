@@ -407,7 +407,8 @@
 		"UserAddGroup": "BsGroupHelper::addTemporaryGroupToUserHelper",
 		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",
 		"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete",
-		"UnitTestsList": "BsCoreHooks::onUnitTestsList"
+		"UnitTestsList": "BsCoreHooks::onUnitTestsList",
+		"ResourceLoaderGetConfigVars": "BsExtensionManager::onResourceLoaderGetConfigVars"
 	},
 	"config": {
 		"_prefix": "bsg",
