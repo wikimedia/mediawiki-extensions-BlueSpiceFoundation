@@ -520,7 +520,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$aOut[] = '    <h3 id="p-personal-label">'.$this->getMsg( 'personaltools' )->text().'</h3>';
 		if ( !$oUser->isAnon() ) {
 			$aOut[] = "<div id='bs-personal-name'>";
-			$aOut[] = BsCore::getUserDisplayName();
+			$aOut[] = BsUserHelper::getUserDisplayName();
 			$aOut[] = "</div>";
 		}
 
