@@ -281,4 +281,12 @@ class BsExtensionManager {
 			$bsgSystemNamespaces[$iCalculatedNSId] = $sConstantName;
 		}
 	}
+
+	public static function onResourceLoaderGetConfigVars( array &$vars ) {
+		global $bsgBlueSpiceExtInfo;
+
+		$vars["bsgVersion"] = $bsgBlueSpiceExtInfo["version"];
+
+		return true;
+	}
 }
