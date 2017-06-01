@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Meno25"
+			"Meno25",
+			"Mido"
 		]
 	},
-	"bs-deferred-batch-description": "الوصف"
+	"bs-deferred-batch-description": "الوصف",
+	"bs-deferred-action-apideletepage-description": "حذف \"$1\"."
 }
