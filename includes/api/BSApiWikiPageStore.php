@@ -28,6 +28,41 @@
  */
 class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 
+	/**
+	 * This method does a preliminary filtering of the data according to
+	 * the query.
+	 * @param string $sQuery
+	 * @return array a set of data items
+	 */
+	protected function makeData( $sQuery = '' ) {
+		$aData = parent::makeData( $sQuery );
+
+		// Bypass quickfilter when there is no query
+		if ( $sQuery == '' ) {
+			return $aData;
+		}
+
+		// Split query text into namespace and title part
+		$oTitle = Title::newFromText( $sQuery );
+		$sTitleText = $oTitle->getText();
+		$sNamespace = $oTitle->getNamespace();
+
+		$aNewData = [];
+		foreach ( $aData as $oDataItem ) {
+			// Filter namespace
+			if ( $oDataItem->page_namespace != $sNamespace ) {
+				continue;
+			}
+			// Filter title text
+			if ( stripos( $oDataItem->page_title, $sTitleText ) === false ) {
+				continue;
+			}
+			$aNewData[] = $oDataItem;
+		}
+
+		return $aNewData;
+	}
+
 	public function makeTables( $sQuery, $aFilter ) {
 		return array(
 			'page'
