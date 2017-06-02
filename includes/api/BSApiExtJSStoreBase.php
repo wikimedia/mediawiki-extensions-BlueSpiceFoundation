@@ -57,6 +57,10 @@
  */
 abstract class BSApiExtJSStoreBase extends BSApiBase {
 
+	const SECONDARY_FIELD_PLACEHOLDER = '<added as secondary field>';
+	const PROP_SPEC_FILTERABLE = 'filterable';
+	const PROP_SPEC_SORTABLE = 'sortable';
+
 	/**
 	 * The current parameters sent by the ExtJS store
 	 * @var BsExtJSStoreParams
@@ -90,14 +94,14 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	public function execute() {
 		$sQuery = $this->getParameter( 'query' );
 		$aData = $this->makeData( $sQuery );
-		$aMetaData = $this->makeMetaData( $sQuery );
+		$aMetaData = $this->makeMetaData();
 		$aFinalData = $this->postProcessData( $aData );
 		$this->returnData( $aFinalData, $aMetaData );
 	}
 
 	/**
 	 * @param string $sQuery Potential query provided by ExtJS component.
-	 * This is some kind of preliminary filtering. Subclass has to decide if
+	 * This is some kind of pre-filtering. Subclass has to decide if
 	 * and how to process it
 	 * @return array - Full list of of data objects. Filters, paging, sorting
 	 * will be done by the base class
@@ -105,13 +109,12 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	protected abstract function makeData( $sQuery = '' );
 
 	/**
-	 * @param string $sQuery Potential query provided by ExtJS component.
-	 * This is some kind of preliminary filtering. Subclass has to decide if
-	 * and how to process it
-	 * @return array - Full list of of data objects. Filters, paging, sorting
-	 * will be done by the base class
+	 * @return array - a meta data specification in form
+	 *  [ 'properties' => [ <property_name> => <spec>, ... ], ... ]
+	 * where <spec> is an array compatible to
+	 * https://docs.sencha.com/extjs/4.2.1/#!/api/Ext.grid.column.Column
 	 */
-	protected function makeMetaData( $sQuery = '' ) {
+	protected function makeMetaData() {
 		return array();
 	}
 
@@ -264,6 +267,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		//Last, do trimming
 		$aProcessedData = $this->trimData( $aProcessedData );
 
+		//Add secondary fields
+		$aProcessedData = $this->addSecondaryFields( $aProcessedData );
+
 		return $aProcessedData;
 	}
 
@@ -300,6 +306,10 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	public function filterCallback( $aDataSet ) {
 		$aFilter = $this->getParameter( 'filter' );
+		$aUnfilterableProps = $this->getPropertyNamesBySpecValue(
+			self::PROP_SPEC_FILTERABLE, false
+		);
+
 		foreach( $aFilter as $oFilter ) {
 			//If just one of these filters does not apply, the dataset needs
 			//to be removed
@@ -307,6 +317,11 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			if( empty( $oFilter->type ) ) {
 				continue;
 			}
+
+			if( in_array( $oFilter->field, $aUnfilterableProps ) ) {
+				continue;
+			}
+
 			if( $oFilter->type == 'string' ) {
 				$bFilterApplies = $this->filterString( $oFilter, $aDataSet );
 				if( !$bFilterApplies ) {
@@ -511,9 +526,15 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	public function sortData($aProcessedData) {
 		$aSort = $this->getParameter('sort');
 		$iCount = count( $aSort );
+		$aUnsortableProps = $this->getPropertyNamesBySpecValue(
+			self::PROP_SPEC_SORTABLE, false
+		);
 		$aParams = array();
 		for( $i = 0; $i < $iCount; $i++ ) {
 			$sProperty = $aSort[$i]->property;
+			if( in_array( $sProperty, $aUnsortableProps ) ) {
+				continue;
+			}
 			$sDirection = strtoupper( $aSort[$i]->direction );
 			$a{$sProperty} = array();
 			foreach( $aProcessedData as $iKey => $oDataSet ) {
@@ -580,6 +601,40 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			$sCombinedValue .= (string)$sValue;
 		}
 		return $sCombinedValue;
+	}
+
+	/**
+	 * May be overridden by subclass to add additional fields to the data sets
+	 * ATTENTION: Those fields are not filterable and sortable! This should be
+	 * declared in "makeMetadata"
+	 * @param array $aTrimmedData
+	 * @return array
+	 */
+	protected function addSecondaryFields( $aTrimmedData ) {
+		return $aTrimmedData;
+	}
+
+	/**
+	 * Searches properties defined in the metadata for a certain specification
+	 * value
+	 * @param string $sSpecName
+	 * @param mixed $mSpecValue
+	 * @return array Property names
+	 */
+	protected function getPropertyNamesBySpecValue( $sSpecName, $mSpecValue ) {
+		$aMeta = $this->makeMetaData();
+		$aFoundPropNames = [];
+		if( !isset( $aMeta['properties'] ) ) {
+			return $aFoundPropNames;
+		}
+
+		foreach( $aMeta['properties'] as $sPropName => $aPropSpec ) {
+			if( isset( $aPropSpec[$sSpecName] ) &&  $aPropSpec[$sSpecName] === $mSpecValue ) {
+				$aFoundPropNames[] = $sPropName;
+			}
+		}
+
+		return $aFoundPropNames;
 	}
 
 }
