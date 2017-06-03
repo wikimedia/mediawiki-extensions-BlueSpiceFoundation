@@ -18,5 +18,5 @@
 	"bs-deferred-batch-description": "Descripción",
 	"bs-deferred-batch-status": "Estado",
 	"bs-deferred-action-apimovepage-description": "Trasladar «$1» a «$2».",
-	"bs-deferred-action-apideletepage-description": "Borrar \"$1\"."
+	"bs-deferred-action-apideletepage-description": "Borrar «$1»."
 }
