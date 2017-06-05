@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Fitoschido"
 		]
 	},
 	"bs-deferred-action-status-pending": "Pendent.",
@@ -13,5 +14,6 @@
 	"bs-deferred-batch-progress-desc": "Progrés",
 	"bs-deferred-batch-actions": "Accions",
 	"bs-deferred-batch-description": "Descripció",
-	"bs-deferred-batch-status": "Estat"
+	"bs-deferred-batch-status": "Estat",
+	"bs-deferred-action-apideletepage-description": "Suprimeix «$1»."
 }
