@@ -84,7 +84,7 @@ Ext.define('BS.model.File', {
 			//This is not being calculated on the serverside for performance reasons
 			var title = new mw.Title( record.get( 'file_user_text' ), bs.ns.NS_USER );
 			var icon = mw.html.element( 'span', { 'class' : 'bs-icon-user' }, '' );
-			var link =  mw.html.element(
+			var link = mw.html.element(
 				'a',
 				{
 					'href': title.getUrl(),
