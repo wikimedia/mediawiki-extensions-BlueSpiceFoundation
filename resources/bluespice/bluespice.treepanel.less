@@ -1,0 +1,43 @@
+.bs-treenodeitem {
+	&.expandable {
+		cursor: pointer;
+	}
+
+	.bs-icon{
+		margin-right: 0.2em;
+
+		&:before {
+			font-family: 'fontawesome';
+			content: "\f13a";
+			color: @bs-color-secondary;
+		}
+	}
+
+	&.collapsed {
+		.bs-icon:before {
+			content: "\f138";
+			color: @bs-color-tertiary;
+		}
+
+		& > ul {
+			display: none;
+		}
+	}
+
+	&.leaf {
+		cursor:default;
+
+		.bs-icon:before {
+			content: "\f192";
+			color: @bs-color-tertiary;
+		}
+	}
+}
+
+/* This should to be in a skin that uses BSSkinSidebarTreeNavigation */
+#bs-sidebar-tree > li:first-child {
+	& > .bs-icon,
+	& > .bs-treenode-value {
+		display:none; //Hide "navigation" item in MediaWiki:Sidebar
+	}
+}

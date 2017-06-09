@@ -45,7 +45,8 @@
 				"bluespice/bluespice.xhr.js",
 				"bluespice/bluespice.ping.js",
 				"bluespice/bluespice.tooltip.js",
-				"bluespice/bluespice.api.js"
+				"bluespice/bluespice.api.js",
+				"bluespice/bluespice.treepanel.js"
 			],
 			"messages": [
 				"bs-years-duration",
@@ -249,6 +250,7 @@
 				"bluespice/bluespice.css",
 				"bluespice/bluespice.icons.css",
 				"bluespice/bluespice.ui.basic.less",
+				"bluespice/bluespice.treepanel.less",
 				"famfamfam/flags.css"
 			],
 			"targets": [
@@ -450,6 +452,11 @@
 		"BSSkinTabs": "includes/skins/BSSkinTabs.php",
 		"BSSkinDataAfterContentTabs": "includes/skins/BSSkinDataAfterContentTabs.php",
 		"BSSkinNavigationMainTabs": "includes/skins/BSSkinNavigationMainTabs.php",
+		"BSSkinTreeNavigation": "includes/skins/BSSkinTreeNavigation.php",
+		"BSSkinSidebarTreeParser": "includes/skins/BSSkinSidebarTreeParser.php",
+		"BSSkinSidebarTreeNavigation": "includes/skins/BSSkinSidebarTreeNavigation.php",
+		"BSTreeNode": "includes/tree/BSTreeNode.php",
+		"BSTreeRenderer": "includes/tree/BSTreeRenderer.php",
 		"BsConfig": "includes/Config.class.php",
 		"BSDebug": "includes/Debug.php",
 		"BsException": "includes/Exception.class.php",
