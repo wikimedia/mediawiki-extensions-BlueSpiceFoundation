@@ -173,6 +173,11 @@ class BsExtensionManager {
 		return $aConfig;
 	}
 
+	/**
+	 * Collects and initializes all BlueSpice extensions
+	 * @param BsCore $oCore
+	 * @throws BsException
+	 */
 	public static function initialiseExtensions( $oCore ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		$aBSExtFromJSON = ExtensionRegistry::getInstance()->getAttribute(
@@ -208,22 +213,35 @@ class BsExtensionManager {
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
+	/**
+	 * Returns an instance of the requested BlueSpice extension or null, when
+	 * not found / not active
+	 * @param string $name
+	 * @return BsExtensionMW
+	 */
 	public static function getExtension( $name ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
 		//Backwards compatibility: extensions will have a BlueSice prefix in
 		//the future
-		if ( isset( self::$prRunningExtensions["BlueSpice$name"] ) ) {
+		$aExtensions = self::getRunningExtensions();
+		if ( isset( $aExtensions["BlueSpice$name"] ) ) {
 			//TODO: Add a wfDeprecated( __METHOD__, 'next BS Version' );
-			return self::$prRunningExtensions["BlueSpice$name"];
+			wfProfileOut( 'Performance: ' . __METHOD__ );
+			return $aExtensions["BlueSpice$name"];
 		}
-		if ( isset( self::$prRunningExtensions[$name] ) ) {
-			return self::$prRunningExtensions[$name];
+		if ( isset( $aExtensions[$name] ) ) {
+			wfProfileOut( 'Performance: ' . __METHOD__ );
+			return $aExtensions[$name];
 		}
 		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
+	/**
+	 * Returns a list of all running BlueSpice extensions
+	 * @return array
+	 */
 	public static function getExtensionNames() {
-		return array_keys( self::$prRegisteredExtensions );
+		return array_keys( self::getRunningExtensions() );
 	}
 
 	/**
@@ -282,6 +300,13 @@ class BsExtensionManager {
 		}
 	}
 
+	/**
+	 * Hook handler for ResourceLoaderGetConfigVars - Appends the BlueSpice
+	 * version number to JS config vars
+	 * @global array $bsgBlueSpiceExtInfo
+	 * @param array $vars
+	 * @return boolean
+	 */
 	public static function onResourceLoaderGetConfigVars( array &$vars ) {
 		global $bsgBlueSpiceExtInfo;
 
