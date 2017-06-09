@@ -623,8 +623,16 @@ class BsFileSystemHelper {
 		if ( $status->isGood() && $oRepoFile !== false ){
 			$oPage = WikiPage::factory( $oRepoFile->getTitle() );
 			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
-			if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
-				return Status::newGood(SecureFileStore::secureStuff( $oRepoFile->getUrl(), true) );
+
+			//TODO: Remove, when SecureFileStore is finally removed
+			$oSecureFileStore = BsExtensionManager::getExtension(
+				'SecureFileStore'
+			);
+			if ( $oSecureFileStore ) {
+				return Status::newGood( SecureFileStore::secureStuff(
+					$oRepoFile->getUrl(),
+					true
+				));
 			}
 			else{
 				return Status::newGood( $oRepoFile->getUrl(), true );

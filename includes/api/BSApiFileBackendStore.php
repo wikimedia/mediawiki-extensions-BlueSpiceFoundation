@@ -310,8 +310,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	}
 
 	protected function addSecondaryFields( $aTrimmedData ) {
-		$bUseSecureFileStore = BsExtensionManager::isContextActive(
-			'MW::SecureFileStore::Active'
+		$oSecureFileStore = BsExtensionManager::getExtension(
+			'SecureFileStore'
 		);
 
 		foreach( $aTrimmedData as $oDataSet ) {
@@ -325,7 +325,9 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			//TODO: Make thumb size a parameter
 			$sThumb = $oImg->createThumb( 120 );
 			$sUrl = $oImg->getUrl();
-			if( $bUseSecureFileStore ) { //TODO: Remove
+
+			//TODO: Remove, when SecureFileStore is finally removed
+			if( $oSecureFileStore ) {
 				$sThumb = html_entity_decode( SecureFileStore::secureStuff( $sThumb, true ) );
 				$sUrl = html_entity_decode( SecureFileStore::secureStuff( $sUrl, true ) );
 			}
