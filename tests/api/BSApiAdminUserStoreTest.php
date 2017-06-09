@@ -3,11 +3,11 @@
 /**
  * @group medium
  * @group api
+ * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
 class BSApiAdminUserStoreTest extends BSApiExtJSStoreTestBase {
-	protected $iFixtureTotal = 3;
 
 	protected function getStoreSchema() {
 		return [
@@ -45,7 +45,7 @@ class BSApiAdminUserStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	protected function createStoreFixtureData() {
-		return 3;
+		self::$userFixtures = new BSUserFixtures( $this );
 	}
 
 	protected function getModuleName() {
@@ -54,7 +54,7 @@ class BSApiAdminUserStoreTest extends BSApiExtJSStoreTestBase {
 
 	public function provideSingleFilterData() {
 		return [
-			'Filter by user_name' => [ 'string', 'ct', 'user_name', 'Sysop', 2 ]
+			'Filter by user_name' => [ 'string', 'ct', 'user_name', 'John', 1 ]
 		];
 	}
 
@@ -66,18 +66,30 @@ class BSApiAdminUserStoreTest extends BSApiExtJSStoreTestBase {
 						'type' => 'string',
 						'comparison' => 'ct',
 						'field' => 'user_email',
-						'value' => 'example.com'
+						'value' => 'example.doesnotexist'
 					],
 					[
 						'type' => 'string',
 						'comparison' => 'ct',
 						'field' => 'user_name',
-						'value' => 'Sysop'
+						'value' => 'John'
 					]
 				],
 				1
 			]
 		];
 	}
-}
 
+	public function provideKeyItemData() {
+		return[
+			'Test user John: name' => [ "user_name", "John" ],
+			'Test user Paul: name' => [ "user_name", "Paul" ],
+			'Test user John: email' => [ "user_email", "j@example.doesnotexist" ],
+			'Test user Paul: email' => [ "user_email", "p@example.doesnotexist" ]
+		];
+	}
+
+	protected function skipAssertTotal() {
+		return true;
+	}
+}

@@ -3,12 +3,11 @@
 /**
  * @group medium
  * @group api
+ * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
 class BSApiUserStoreTest extends BSApiExtJSStoreTestBase {
-	protected $iFixtureTotal = 3;
-
 	protected function getStoreSchema() {
 		return [
 			'user_id' => [
@@ -42,7 +41,7 @@ class BSApiUserStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	protected function createStoreFixtureData() {
-		return 3;
+		self::$userFixtures = new BSUserFixtures( $this );
 	}
 
 	protected function getModuleName() {
@@ -51,7 +50,7 @@ class BSApiUserStoreTest extends BSApiExtJSStoreTestBase {
 
 	public function provideSingleFilterData() {
 		return [
-			'Filter by user_name' => [ 'string', 'ct', 'user_name', 'Sysop', 2 ]
+			'Filter by user_name' => [ 'string', 'ct', 'user_name', 'John', 1 ]
 		];
 	}
 
@@ -63,18 +62,29 @@ class BSApiUserStoreTest extends BSApiExtJSStoreTestBase {
 						'type' => 'string',
 						'comparison' => 'eq',
 						'field' => 'display_name',
-						'value' => 'UTSysop'
+						'value' => 'John L.'
 					],
 					[
 						'type' => 'string',
 						'comparison' => 'ct',
 						'field' => 'user_name',
-						'value' => 'Sysop'
+						'value' => 'John'
 					]
 				],
 				1
 			]
 		];
 	}
-}
 
+	public function provideKeyItemData() {
+		return[
+			'Test user John: name' => [ "user_name", "John" ],
+			'Test user Paul: name' => [ "user_name", "Paul" ],
+		];
+	}
+
+	protected function skipAssertTotal() {
+		return true;
+	}
+
+}
