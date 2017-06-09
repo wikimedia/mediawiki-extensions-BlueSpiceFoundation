@@ -435,7 +435,13 @@ class BsBaseTemplate extends BaseTemplate {
 							$sText = $aVal[0];
 
 							if ( is_object( $oFile ) && $oFile->exists() ) {
-								if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
+								//TODO: Remove, when SecureFileStore is finally
+								//removed
+								$oSecureFileStore
+									= BsExtensionManager::getExtension(
+									'SecureFileStore'
+								);
+								if ( $oSecureFileStore ) {
 									$sUrl = SecureFileStore::secureStuff( $oFile->getUrl(), true );
 								} else {
 									$sUrl = $oFile->getUrl();
