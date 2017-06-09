@@ -66,6 +66,28 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 	}
 
 	/**
+	 * @param $keyItemKey The array key of an item to look for
+	 * @param $keyItemValue The array value of an item to look for
+	 *
+	 * @dataProvider provideKeyItemData
+	 */
+	public function testKeyItem( $keyItemKey, $keyItemValue ) {
+		$aParams = array(
+			'action' => $this->getModuleName()
+		);
+		$results = $this->doApiRequest( $aParams );
+		$resultItems = $results[0]["results"];
+
+		$keyPresent = $this->array_findNestedKeyValuePair( $resultItems, $keyItemKey, $keyItemValue );
+
+		$this->assertTrue( $keyPresent, "Key value pair not found in results" );
+	}
+
+	public function provideKeyItemData() {
+		$this->markTestSkipped( "No key items to test" );
+	}
+
+	/**
 	 * @param $limit
 	 * @param $offset
 	 *
@@ -83,12 +105,14 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 		$results = $this->doApiRequest( $aParams );
 		$response = $results[0];
 
-		$this->assertAttributeEquals(
-			$this->iFixtureTotal,
-			'total',
-			(object)$response,
-			'Field "total" contains wrong value'
-		);
+		if ( !$this->skipAssertTotal() ) {
+			$this->assertAttributeEquals(
+				$this->iFixtureTotal,
+				'total',
+				(object)$response,
+				'Field "total" contains wrong value'
+			);
+		}
 
 		$this->assertLessThanOrEqual( $limit, count($response['results']), 'Number of results exceeds limit' );
 	}
@@ -190,5 +214,35 @@ abstract class BSApiExtJSStoreTestBase extends ApiTestCase {
 		}
 
 		return $aParams;
+	}
+
+	/**
+	 * Indicates whether the total count of a store should be tested
+	 * @return boolean
+	 */
+	protected function skipAssertTotal() {
+		return false;
+	}
+
+	/**
+	 * Finds a key value pair in a multidimensional array
+	 * @param array $haystack
+	 * @param mixed $key
+	 * @param mixed $value
+	 * @return bool true if the pair was found
+	 */
+	protected function array_findNestedKeyValuePair( $haystack, $key, $value ) {
+		foreach( $haystack as $itemKey => $itemValue ) {
+			if ( $itemKey == $key && $itemValue == $value ) {
+				return true;
+			}
+			if ( is_array( $itemValue ) ) {
+				$foundInNested = $this->array_findNestedKeyValuePair( $itemValue, $key, $value );
+				if ( $foundInNested === true ) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 }
