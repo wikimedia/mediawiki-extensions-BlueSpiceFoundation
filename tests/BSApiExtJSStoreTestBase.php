@@ -33,7 +33,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		);
 
 		$response = $results[0];
-		$firstRow = (object)$response['results'][0];
+		$firstRow = (object)$response[ $this->getResultsNodeName() ][0];
 		$schema = $this->getStoreSchema();
 		foreach( $schema as $schemaFieldName => $config ) {
 			$this->assertObjectHasAttribute( $schemaFieldName, $firstRow, "Dataset misses field '$schemaFieldName'' from schema definition!" );
@@ -76,7 +76,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 			'action' => $this->getModuleName()
 		);
 		$results = $this->doApiRequest( $aParams );
-		$resultItems = $results[0]["results"];
+		$resultItems = $results[0][ $this->getResultsNodeName() ];
 
 		$keyPresent = $this->array_findNestedKeyValuePair( $resultItems, $keyItemKey, $keyItemValue );
 
@@ -114,7 +114,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 			);
 		}
 
-		$this->assertLessThanOrEqual( $limit, count($response['results']), 'Number of results exceeds limit' );
+		$this->assertLessThanOrEqual( $limit, count($response[ $this->getResultsNodeName() ]), 'Number of results exceeds limit' );
 	}
 
 	public function providePagingData() {
@@ -245,4 +245,14 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		}
 		return false;
 	}
+
+	/**
+	 * Allows subclasses to define name of
+	 * root node in results
+	 * @return string
+	 */
+	protected function getResultsNodeName() {
+		return 'results';
+	}
+
 }
