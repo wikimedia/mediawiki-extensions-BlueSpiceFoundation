@@ -40,6 +40,7 @@
 	"apihelp-bs-ping-tasks-description": "Ping-Aufgabe, die den kontinuierlichen Austausch von Daten ermöglicht.",
 	"apihelp-bs-wikisubpage-treestore-description": "Listet die Unterseiten einer bestimmten Wikiseite auf",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Der Titel der Wikiseite einschließlich Namensraumpräfix",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Liste der Optionen",
 	"apihelp-bs-upload-license-store-description": "Listet alle verfügbaren Lizenzen für das Hochladen einer Datei auf",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du bist nicht berechtigt, die Seite „$1“ zu lesen.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Es sind keine Kategorien zum Entfernen vorhanden.",

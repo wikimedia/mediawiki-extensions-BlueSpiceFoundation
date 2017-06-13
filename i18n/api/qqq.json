@@ -51,6 +51,7 @@
 	"apihelp-bs-wikisubpage-treestore-description": "{{doc-apihelp-description|bs-wikisubpage-treestore}}",
 	"apihelp-bs-wikisubpage-treestore-summary": "{{doc-apihelp-summary|bs-wikisubpage-treestore}}",
 	"apihelp-bs-wikisubpage-treestore-param-node": "{{doc-apihelp-param|bs-wikisubpage-treestore|node}}",
+	"apihelp-bs-wikisubpage-treestore-param-options": "{{doc-apihelp-param|bs-wikisubpage-treestore|options}}",
 	"apihelp-bs-upload-license-store-description": "{{doc-apihelp-description|bs-upload-license-store}}",
 	"apihelp-bs-upload-license-store-summary": "{{doc-apihelp-summary|bs-upload-license-store}}",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "An error message that occurs if a user is not allowed to read page with name '$1'.\n\nParameters:\n* $1 - a page title",
