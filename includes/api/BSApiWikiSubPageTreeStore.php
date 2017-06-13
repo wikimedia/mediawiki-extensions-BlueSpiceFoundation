@@ -31,6 +31,12 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-wikisubpage-treestore-param-node',
+			),
+			'options' => array(
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_DFLT => '{}',
+				ApiBase::PARAM_REQUIRED => false,
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-wikisubpage-treestore-param-options',
 			)
 		);
 	}
@@ -41,7 +47,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 * @param array $aOptions
 	 * @return stdClass[]
 	 */
-	protected function makeNamespaceNodes( $sQuery, $aOptions ) {
+	protected function makeNamespaceNodes( $sQuery, $aOptions = [] ) {
 		$aNamespaceIds = $this->getLanguage()->getNamespaceIds();
 		$aDataSets = array();
 		foreach( $aNamespaceIds as $iNamespaceId ) {
@@ -80,7 +86,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 * @param array $aOptions
 	 * @return stdClass[]
 	 */
-	protected function makeRootPageNodes( $sNamespacePrefix, $sQuery, $aOptions ) {
+	protected function makeRootPageNodes( $sNamespacePrefix, $sQuery, $aOptions = [] ) {
 		$aDataSets = array();
 
 		$oDummyTitle = Title::newFromText( $sNamespacePrefix.':X' );
@@ -113,7 +119,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 * @param array $aOptions
 	 * @return array of objects
 	 */
-	protected function makePageNodes( $oParent, $sQuery, $aOptions ) {
+	protected function makePageNodes( $oParent, $sQuery, $aOptions = [] ) {
 		$aDataSets = array();
 
 		$res = $this->getDB()->select(
