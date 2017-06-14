@@ -39,8 +39,9 @@ class BSApiCategoryStoreTest extends BSApiExtJSStoreTestBase {
 		];
 	}
 
-	protected function createStoreFixtureData() {
-		$oDbw = wfGetDB( DB_MASTER );
+	protected function setUp() {
+		parent::setUp();
+		$oDbw = $this->db;
 		$oDbw->insert( 'category', array(
 			'cat_title' => "Dummy test",
 			'cat_pages' => 3,
@@ -61,7 +62,9 @@ class BSApiCategoryStoreTest extends BSApiExtJSStoreTestBase {
 			'page_title' => "Dummy test 2",
 			'page_namespace' => NS_CATEGORY
 		) );
+	}
 
+	protected function createStoreFixtureData() {
 		return 2;
 	}
 
@@ -97,4 +100,3 @@ class BSApiCategoryStoreTest extends BSApiExtJSStoreTestBase {
 		];
 	}
 }
-
