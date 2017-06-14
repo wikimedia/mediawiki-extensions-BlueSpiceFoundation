@@ -154,18 +154,29 @@ class BsWidgetListHelper {
 				$sLine = $this->cleanWikiLink( $sLine );
 
 				$sTitle = $sLine;
-				$sDescription = $sLine;
 
-				$aParts = explode('|', $sLine, 2);
-				if (count($aParts) > 1) {
+				$bIsColonLink = false;
+				if( strpos( $sTitle, ':' ) === 0 ) {
+					$bIsColonLink = true;
+					$sTitle = ltrim( $sTitle, ':' );
+				}
+				$sDescription = $sTitle;
+
+				$aParts = explode( '|', $sTitle, 2 );
+				if ( count( $aParts ) > 1) {
 					$sTitle = $aParts[0];
 					$sDescription = $aParts[1];
 				}
 
 				$oTitle = Title::newFromText( $sTitle );
-				if (is_object($oTitle)) { // CR RBV (06.06.11 15:25): Why not $oTitle === null?
+
+				if ( $oTitle ) {
+					$sTitle = $oTitle->getPrefixedText();
+					if( $bIsColonLink ) {
+						$sTitle = ':' . $sTitle;
+					}
 					$oCustomListView->addData(array(
-						'TITLE' => $oTitle->getPrefixedText(),
+						'TITLE' => $sTitle,
 						'DESCRIPTION' => BsStringHelper::shorten( $sDescription, array( 'max-length' => 25, 'position' => 'middle' ) )
 						)
 					);
