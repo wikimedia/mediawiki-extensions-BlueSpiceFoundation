@@ -75,6 +75,11 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		$aParams = array(
 			'action' => $this->getModuleName()
 		);
+		if( $this->sQuery ) {
+			$aParams['query'] = $this->sQuery;
+		}
+		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
+
 		$results = $this->doApiRequest( $aParams );
 		$resultItems = $results[0][ $this->getResultsNodeName() ];
 
@@ -102,6 +107,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		if( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
+		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
 		$results = $this->doApiRequest( $aParams );
 		$response = $results[0];
 
@@ -161,6 +167,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		if( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
+		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
 
 		$results = $this->doApiRequest( $aParams );
 
@@ -190,6 +197,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		if( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
+		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
 
 		$results = $this->doApiRequest( $aParams );
 
@@ -212,6 +220,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		if( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
+		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
 
 		return $aParams;
 	}
@@ -253,6 +262,15 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 */
 	protected function getResultsNodeName() {
 		return 'results';
+	}
+
+	/**
+	 * Allows subclasses to add custom parameters
+	 * to the API calls
+	 * @return array
+	 */
+	protected function getAdditionalParams() {
+		return [];
 	}
 
 }
