@@ -44,5 +44,11 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Não tem permissão para ler a página '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Não há categorias para remover",
 	"apihelp-bs-category-treestore-description": "Lista as subcategorias de uma categoria específica",
-	"apihelp-bs-category-treestore-param-node": "Um caminho de categorias separadas por barras"
+	"apihelp-bs-category-treestore-param-node": "Um caminho de categorias separadas por barras",
+	"bs-api-task-taskdata-help": "[$1 Esquema], [$2 exemplos de parâmetros]",
+	"apihelp-bs-task-param-schema": "Mostrar o esquema JSON para os parâmetros de tarefa",
+	"apihelp-bs-task-param-examples": "Mostrar exemplos de parâmetros de tarefa",
+	"bs-api-task-taskData-page-id": "O identificador de uma página existente da wiki",
+	"bs-api-task-taskData-page-title": "Um título válido de uma página da wiki",
+	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de textos. Os valores têm de ser nomes de categoria válidos."
 }
