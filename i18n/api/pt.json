@@ -26,7 +26,7 @@
 	"apihelp-bs-store-param-group": "Texto JSON com informação de agrupamento; a anulação da seriação resulta numa <code>array of objects</code> que contém o nome do campo e a direção de cada opção de agrupamento.",
 	"apihelp-bs-store-param-filter": "Texto JSON com informação de filtragem; a anulação da seriação resulta numa <code>array of objects</code> que contém o nome do campo e a direção de cada opção de filtragem.",
 	"apihelp-bs-store-param-page": "Permite o cálculo do início e limite do lado do servidor",
-	"apihelp-bs-store-param-limit": "Número de resultados a devolver",
+	"apihelp-bs-store-param-limit": "Número de resultados a serem devolvidos",
 	"apihelp-bs-store-param-start": "Posição a partir da qual começar a lista de resultados",
 	"apihelp-bs-store-param-callback": "O nome de um método no código do cliente que deve ser chamado na resposta (JSONP)",
 	"apihelp-bs-store-param-query": "Semelhante a <var>filter</var>, mas o valor fornecido serve de filtro apenas para o campo <var>value</var> de um componente ExtJS",
