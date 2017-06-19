@@ -429,7 +429,7 @@ class BsBaseTemplate extends BaseTemplate {
 						$sText = $val['text'];
 						$sHref = htmlspecialchars($val['href']);
 						$sIcon = '<span class="icon24"></span>';
-						if ( !empty( $aVal ) ) {
+						if ( !empty( $aVal ) && !empty( $aVal[0] ) && !empty( $aVal[1] ) ) {
 							$oFile = wfFindFile( $aVal[1] );
 							$sTitle = $aVal[0];
 							$sText = $aVal[0];
@@ -443,7 +443,6 @@ class BsBaseTemplate extends BaseTemplate {
 								$sIcon = '<span class="icon24 custom-icon" style="background-image:url(' . $sUrl . ')"></span>';
 							}
 						}
-
 						$oTitleMsg = wfMessage( $sTitle );
 						if( $oTitleMsg->exists() ) {
 							$sTitle = $oTitleMsg->plain();
