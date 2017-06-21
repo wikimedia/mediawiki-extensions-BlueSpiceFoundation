@@ -3,7 +3,8 @@
 		"authors": [
 			"Ghiutun",
 			"Okras",
-			"Kareyac"
+			"Kareyac",
+			"Facenapalm"
 		]
 	},
 	"bs-deferred-action-status-pending": "Ожидание.",
@@ -17,5 +18,9 @@
 	"bs-deferred-batch-actions": "Действия",
 	"bs-deferred-batch-description": "Описание",
 	"bs-deferred-batch-status": "Состояние",
-	"bs-deferred-action-apimovepage-description": "Переместите «$1» к «$2»."
+	"bs-deferred-action-apiaddcategories-description": "Добавить категории к '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Удалить категории из '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Установить категории в '$1'.",
+	"bs-deferred-action-apimovepage-description": "Переместите «$1» к «$2».",
+	"bs-deferred-action-apideletepage-description": "Удалить «$1»."
 }
