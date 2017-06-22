@@ -218,7 +218,9 @@
 				"bs-upload-error-long",
 				"bs-upload-filetypenotsupported",
 				"bs-upload-details"
-			]
+			],
+			"targets": [ "desktop", "mobile" ]
+
 		},
 		"ext.bluespice.extjs.filerepo": {
 			"localBasePath": "resources",
