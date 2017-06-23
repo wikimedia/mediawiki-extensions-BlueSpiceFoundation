@@ -42,7 +42,7 @@ class BSApiWikiPageStoreTest extends BSApiExtJSStoreTestBase {
 
 	public function provideSingleFilterData() {
 		return [
-			'Filter by page_title' => [ 'string', 'ct', 'page_title', 'Test', 2 ]
+			'Filter by page_title' => [ 'string', 'ct', 'page_title', 'Hello', 1 ]
 		];
 	}
 
