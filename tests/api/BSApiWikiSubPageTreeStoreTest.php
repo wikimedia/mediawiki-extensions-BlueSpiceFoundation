@@ -8,6 +8,7 @@
  */
 class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 2;
+	protected $tablesUsed = [ 'page' ];
 
 	protected function getStoreSchema() {
 		return [
@@ -32,16 +33,38 @@ class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 		];
 	}
 
+	protected function setUp() {
+		parent::setUp();
+		$oDbw = $this->db;
+		$oDbw->insert( 'page', array(
+			'page_title' => "Dummy",
+			'page_namespace' => 12,
+			'page_restrictions' => '',
+			'page_random' => 0,
+			'page_latest' => 1,
+			'page_len' => 1
+		) );
+
+		$oDbw->insert( 'page', array(
+			'page_title' => "Dummy/First",
+			'page_namespace' => 12,
+			'page_restrictions' => '',
+			'page_random' => 0,
+			'page_latest' => 1,
+			'page_len' => 1
+		) );
+
+		$oDbw->insert( 'page', array(
+			'page_title' => "Dummy/Second",
+			'page_namespace' => 12,
+			'page_restrictions' => '',
+			'page_random' => 0,
+			'page_latest' => 1,
+			'page_len' => 1
+		) );
+	}
+
 	protected function createStoreFixtureData() {
-
-		$aFixtures = [];
-		$aFixtures[] = [ "Help:Dummy", "Dummy text" ];
-		$aFixtures[] = [ "Help:Dummy/First", "Dummy text" ];
-		$aFixtures[] = [ "Help:Dummy/Second", "Dummy text" ];
-		foreach( $aFixtures as $aFixture ) {
-			$this->insertPage( $aFixture[0], $aFixture[1] );
-		}
-
 		return 2;
 	}
 
