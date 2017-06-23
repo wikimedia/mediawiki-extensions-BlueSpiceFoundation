@@ -5,6 +5,7 @@
 		]
 	},
 	"apihelp-bs-user-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-user-store-summary": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-category-store-description": "Listar alla kategorier. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-adminuser-store-description": "Listar alla användare från databasen med ytterligare känslig data. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-group-store-description": "Listar alla grupper förutom $wgImplicitGroups. Tillåter sortering, filtrering och sidnumrering. Implementerar parametrar för ExtJS Store.",
@@ -26,6 +27,7 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du har inte tillåtelse att läsa sidan \"$1\".",
 	"bs-wikipage-tasks-error-nothingtoremove": "Det finns inga kategorier att ta bort",
 	"apihelp-bs-category-treestore-description": "Listar alla underkategorier för en specifik kategori",
+	"apihelp-bs-category-treestore-summary": "Listar alla underkategorier för en specifik kategori",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parameterexempel]",
 	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn."
