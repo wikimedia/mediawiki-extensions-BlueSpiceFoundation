@@ -17,6 +17,7 @@
 	"apihelp-bs-wikipage-store-summary": "모든 위키 문서를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",
 	"apihelp-bs-wikisubpage-treestore-description": "특정 위키 페이지의 하위 페이지를 나열합니다",
 	"apihelp-bs-wikisubpage-treestore-summary": "특정 위키 페이지의 하위 페이지를 나열합니다",
+	"apihelp-bs-wikisubpage-treestore-param-options": "옵션 목록",
 	"apihelp-bs-upload-license-store-summary": "파일 올리기를 위해 사용할 수 있는 모든 라이선스를 나열합니다",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "당신은 '$1' 문서를 읽을 권한이 없습니다.",
 	"apihelp-bs-category-treestore-summary": "특정 분류의 하위 분류를 나열합니다",

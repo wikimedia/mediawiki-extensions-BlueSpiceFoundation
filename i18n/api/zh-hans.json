@@ -49,6 +49,7 @@
 	"apihelp-bs-wikisubpage-treestore-description": "列举指定wiki页面的子页面",
 	"apihelp-bs-wikisubpage-treestore-summary": "列举指定wiki页面的子页面",
 	"apihelp-bs-wikisubpage-treestore-param-node": "wiki页面的带前缀标题",
+	"apihelp-bs-wikisubpage-treestore-param-options": "选项列表",
 	"apihelp-bs-upload-license-store-description": "列出所有文件上传可用的许可协议",
 	"apihelp-bs-upload-license-store-summary": "列举所有可用于文件上传的许可协议",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "您不被允许阅读页面“$1”。",
