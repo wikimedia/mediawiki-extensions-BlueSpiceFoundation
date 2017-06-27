@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Giromin Cangiaxo"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Elenca tutti i file da-o backend. O consente d'ordinâ, filtrâ e impaginâ. O l'implementa i parammetri ExtJS Store."
+}
