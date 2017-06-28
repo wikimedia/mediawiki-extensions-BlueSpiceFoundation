@@ -51,6 +51,7 @@
 	"apihelp-bs-wikisubpage-treestore-description": "Перелічує підсторінки конкретної вікісторінки",
 	"apihelp-bs-wikisubpage-treestore-summary": "Перелічує підсторінки конкретної вікісторінки",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Назва вікісторінки із префіксом",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Список опцій",
 	"apihelp-bs-upload-license-store-description": "Перелічує всі доступні ліцензії для завантаження файлу",
 	"apihelp-bs-upload-license-store-summary": "Перелічує всі доступні ліцензії для завантаження файлу",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "У Вас немає дозволу на читання сторінки «$1».",
