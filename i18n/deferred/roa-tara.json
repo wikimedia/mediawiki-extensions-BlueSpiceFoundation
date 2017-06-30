@@ -14,5 +14,10 @@
 	"bs-deferred-batch-progress-desc": "Progresse",
 	"bs-deferred-batch-actions": "Aziune",
 	"bs-deferred-batch-description": "Descrizione",
-	"bs-deferred-batch-status": "State"
+	"bs-deferred-batch-status": "State",
+	"bs-deferred-action-apiaddcategories-description": "Aggiunge categorije a '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Live categorije da '$1'.",
+	"bs-deferred-action-apisetcategories-description": "'Mboste categorije sus a '$1'.",
+	"bs-deferred-action-apimovepage-description": "Spuéste \"$1\" sus a \"$2\".",
+	"bs-deferred-action-apideletepage-description": "Scangille \"$1\"."
 }

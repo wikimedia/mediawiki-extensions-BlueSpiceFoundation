@@ -50,6 +50,7 @@
 	"apihelp-bs-wikisubpage-treestore-description": "Lista as subpáxinas dunha wikipáxina específica",
 	"apihelp-bs-wikisubpage-treestore-summary": "Lista as subpáxinas dunha wikipáxina específica",
 	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Lista de opcións",
 	"apihelp-bs-upload-license-store-description": "Lista todas as licenzas dispoñibles para a suba dun ficheiro",
 	"apihelp-bs-upload-license-store-summary": "Lista tódalas licenzas dispoñibles para a suba dun ficheiro",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Non ten permiso para ler a páxina '$1'.",

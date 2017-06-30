@@ -23,6 +23,7 @@
 	"bs-wikipage-tasks-setcategories-success": "Kategorier har lagts till.",
 	"apihelp-bs-wikisubpage-treestore-description": "Listar undersidor för en specifik wikisida",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Prefixtiteln för wikisidan",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Lista över alternativ",
 	"apihelp-bs-upload-license-store-description": "Listar alla tillgängliga licenser för en filuppladdning",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du har inte tillåtelse att läsa sidan \"$1\".",
 	"bs-wikipage-tasks-error-nothingtoremove": "Det finns inga kategorier att ta bort",
