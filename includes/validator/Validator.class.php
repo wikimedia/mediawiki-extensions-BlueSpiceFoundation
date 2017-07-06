@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of blue spice for MediaWiki.
+ * This file is part of BlueSpice MediaWiki.
  *
  * Call BsValidator::isValid() to validate several types of user input (Email, username, URLs, ...)
  * Can be extended with plugin-classes of name: "BsValidator{$type}Plugin" that implement interface BsValidatorPlugin

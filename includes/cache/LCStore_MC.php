@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of blue spice for MediaWiki.
+ * This file is part of BlueSpice MediaWiki.
  *
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Stefan Widmann <widmann@hallowelt.com>
