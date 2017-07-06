@@ -16,7 +16,7 @@
  *
  * You should have received a copy of the GNU General Public License along
  * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * l1 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  * This file is part of BlueSpice for MediaWiki
  * For further information visit http://bluespice.com
@@ -577,9 +577,30 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	protected function getSortValueFromList( $aValues, $oDataSet, $sProperty ) {
 		$sCombinedValue = '';
 		foreach( $aValues as $sValue ) {
-			$sCombinedValue .= (string)$sValue;
+			// PHP 7 workaround. In PHP 7 cast throws no exception. It's a fatal error so i can't catch it :-(
+			if( $this->canBeCastedToString( $sValue ) )
+			{
+				$sCombinedValue .= (string)$sValue;
+			} else {
+				$sCombinedValue .= FormatJson::encode( $sValue );
+			}
 		}
 		return $sCombinedValue;
 	}
 
+	/**
+	 * Checks if a array or object ist castable to string.
+	 *
+	 * @param mixed $mValue
+	 * @return bool
+	 */
+	private function canBeCastedToString( $mValue ) {
+		if ( !is_array( $mValue ) &&
+			( !is_object( $mValue ) && settype( $mValue, 'string' ) !== false ) ||
+			( is_object( $mValue ) && method_exists( $mValue, '__toString' ) ) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
