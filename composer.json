@@ -1,6 +1,6 @@
 {
 	"name": "hallowelt/blue-spice-foundation",
-	"description": "This package contains basic classes/functions/resources of BlueSpice for MediaWiki",
+	"description": "This package contains basic classes/functions/resources of BlueSpice MediaWiki",
 	"keywords": [
 		"mediawiki",
 		"wiki"

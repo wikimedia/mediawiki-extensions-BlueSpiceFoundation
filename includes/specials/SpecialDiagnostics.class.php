@@ -2,7 +2,7 @@
 /**
  * Special page for Diagnostics for BlueSpice
  *
- * Part of BlueSpice for MediaWiki
+ * Part of BlueSpice MediaWiki
  *
  * @author     Marc Reymann <reymann@hallowelt.com>
  * @version    $Id$

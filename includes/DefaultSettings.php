@@ -1,13 +1,13 @@
 <?php
 /**
- * Default values for "BlueSpice for MediaWiki" configuration settings.
+ * Default values for "BlueSpice MediaWiki" configuration settings.
  *
  *
  *                 NEVER EDIT THIS FILE
  *
  *
  * To customize your installation, edit "LocalSettings.php". If you make
- * changes here, they will be lost on next upgrade of BlueSpice for MediaWiki!
+ * changes here, they will be lost on next upgrade of BlueSpice MediaWiki!
  * *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
