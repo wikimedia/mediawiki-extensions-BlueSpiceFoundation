@@ -2,7 +2,7 @@
 /**
  * Special page for BlueSpice credits
  *
- * Part of BlueSpice for MediaWiki
+ * Part of BlueSpice MediaWiki
  *
  * @author     Stephan Muggli <muggli@hallowelt.com>
  * @package    BlueSpice_Credits

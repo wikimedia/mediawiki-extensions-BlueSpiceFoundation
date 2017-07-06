@@ -1,7 +1,7 @@
 <?php
 
 /**
- * BlueSpice for MediaWiki
+ * BlueSpice MediaWiki
  * Description: Adds functionality for business needs
  * Authors: Markus Glaser
  *
