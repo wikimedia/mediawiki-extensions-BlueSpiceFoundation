@@ -61,11 +61,6 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 				$aOptions['namespaces'][$iKey] = (int) $iNSId;
 			}
 		}
-		//Remove medium namespace!
-		$iKeyMedium = array_search( -2, $aOptions['namespaces'] );
-		if( $iKeyMedium !== false ) {
-			unset( $aOptions['namespaces'][$iKeyMedium] );
-		}
 
 		//Step 1: Collect namespaces
 		$aNamespaces = $wgContLang->getNamespaces();
@@ -153,10 +148,13 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		if( $oQueryTitle->getNamespace() !== NS_MAIN || strpos( $sNormQuery, ':' ) === 0 ) {
 			$aConditions['page_namespace'] = $oQueryTitle->getNamespace();
 		}
+		if( $oQueryTitle->getNamespace() === NS_MEDIA ) {
+			$aConditions['page_namespace'] = NS_FILE;
+		}
 
 		$res = $dbr->select(
 			array( 'page', 'searchindex' ),
-			array( 'page_id' ),
+			array( 'page_id', 'page_title' ),
 			$aConditions,
 			__METHOD__,
 			array(
@@ -166,7 +164,11 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 		$aTitles = array();
 		foreach ( $res as $row ) {
-			$oTitle = Title::newFromID( $row->page_id );
+			if( $oQueryTitle->getNamespace() === NS_MEDIA ) {
+				$oTitle = Title::newFromText( $row->page_title, NS_MEDIA );
+			} else {
+				$oTitle = Title::newFromID( $row->page_id );
+			}
 			if ( $oTitle->userCan( 'read' ) === false ) continue;
 
 			$aTitles[] = $oTitle;
