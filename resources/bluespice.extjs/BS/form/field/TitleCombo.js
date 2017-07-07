@@ -33,7 +33,7 @@ Ext.define('BS.form.field.TitleCombo', {
 		}]
 	},
 
-	excludeIds: [ bs.ns.NS_MEDIA ],
+	excludeIds: [],
 
 	constructor: function( conf ) {
 		//May not be overridden
