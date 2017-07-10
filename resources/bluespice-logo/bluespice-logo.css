@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'bluespice-logo';
+	src: url('bluespice-logo.eot?hwknpc');
+	src: url('bluespice-logo.eot?hwknpc#iefix') format('embedded-opentype'),
+		url('bluespice-logo.ttf?hwknpc') format('truetype'),
+		url('bluespice-logo.woff?hwknpc') format('woff'),
+		url('bluespice-logo.svg?hwknpc#bluespice-logo') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-bluespice-logo:before {
+	font-family: 'bluespice-logo' !important;
+	content: "\e900";
+}
+.icon-bluespice-logo-color:before {
+	font-family: 'bluespice-logo' !important;
+	content: "\e900";
+	color: rgb(62, 83, 137);
+}
+.icon-bluespice-logo-color:after {
+	font-family: 'bluespice-logo' !important;
+	content: "\e901";
+	margin: -1em;
+	color: rgb(183, 58, 58);
+}

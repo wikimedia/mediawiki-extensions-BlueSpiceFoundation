@@ -13,6 +13,10 @@ switch( $iconSet ){
 		$icons = 'fontawesome.css';
 		$icons2 = 'fontawesome/fontawesome.css';
 		break;
+	case 'bluespice-logo':
+		$icons = 'bluespice-logo.css';
+		$icons2 = 'bluespice-logo/bluespice-logo.css';
+		break;
 	case 'bluespice' :
 		$icons = 'bluespice.icons.css';
 		$icons2 = 'bluespice/bluespice.icons.css';
@@ -102,6 +106,7 @@ switch( $iconSet ){
 				<td><a href="?icons=icomoon">icomoon</a></td>
 				<td><a href="?icons=fontawesome">fontawesome</a></td>
 				<td><a href="?icons=entypo">entypo</a></td>
+				<td><a href="?icons=bluespice-logo">bluespice-logo</a></td>
 			</tr>
 		</table>
 		<table class="icontable">
