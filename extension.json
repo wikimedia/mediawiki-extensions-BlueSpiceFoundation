@@ -398,6 +398,7 @@
 		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
 		"LinkEnd": "BsCoreHooks::onLinkEnd",
 		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
+		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",
 		"MakeGlobalVariablesScript": "BsCoreHooks::onMakeGlobalVariablesScript",
 		"LoadExtensionSchemaUpdates": "BsCoreHooks::onLoadExtensionSchemaUpdates",
 		"ApiCheckCanExecute": "BsCoreHooks::onApiCheckCanExecute",
