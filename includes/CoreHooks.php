@@ -374,6 +374,19 @@ class BsCoreHooks {
 	}
 
 	/**
+	 * Adds data attribute to standard image output
+	 * @param ThumbnailImage $thumbnail
+	 * @param array $attribs
+	 * @param array $linkAttribs
+	 * @return boolean
+	 */
+	public static function onThumbnailBeforeProduceHTML( $thumbnail, &$attribs, &$linkAttribs ) {
+		$oFile = $thumbnail->getFile();
+		$linkAttribs['data-bs-title'] = $oFile->getTitle()->getPrefixedDBKey();
+		return true;
+	}
+
+	/**
 	 * @param User $oUser
 	 * @param array $aRights
 	 * @return boolean
