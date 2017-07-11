@@ -5,7 +5,6 @@ class BsBaseTemplate extends BaseTemplate {
 	function __construct() {
 		parent::__construct();
 		global $wgHooks;
-		$wgHooks['BSWidgetBarGetDefaultWidgets'][] = array($this, 'onBSWidgetBarGetDefaultWidgets');
 		$wgHooks['BSWidgetListHelperInitKeyWords'][] = array($this, 'onBSWidgetListHelperInitKeyWords');
 
 		$this->data['bs_search_input'] = array(
@@ -364,13 +363,6 @@ class BsBaseTemplate extends BaseTemplate {
 			->setTooltip($this->translator->translate('toolbox'));
 
 		return $oWidgetView;
-	}
-
-	public function onBSWidgetBarGetDefaultWidgets( &$aViews, $oUser, $oTitle ) {
-		if ( !isset( $this->data['sidebar']['TOOLBOX'] ) ) {
-			$aViews[] = $this->getToolBoxWidget();
-		}
-		return true;
 	}
 
 	public function onBSWidgetListHelperInitKeyWords( &$aKeywords, $oTitle ) {
