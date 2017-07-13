@@ -36,6 +36,18 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.callParent(arguments);
 	},
 
+	initComponent: function() {
+		this.callParent( arguments );
+
+		//Bugfix for filters are not being rendered in hidden columns
+		//https://www.sencha.com/forum/showthread.php?268893
+		this.grdMain.on( 'columnshow', function() {
+			if( this.grdMain.filters ) {
+				this.grdMain.filters.createFilters();
+			}
+		}, this );
+	},
+
 	makeItems: function() {
 		return [
 			this.makeMainGrid()

@@ -36,7 +36,7 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.callParent(arguments);
 
-		//Bugfix for filters are not bein renderec in hidden columns
+		//Bugfix for filters are not being rendered in hidden columns
 		//https://www.sencha.com/forum/showthread.php?268893
 		this.on( 'columnshow', function() {
 			this.filters.createFilters();
