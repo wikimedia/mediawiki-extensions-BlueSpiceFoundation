@@ -1,6 +1,6 @@
 {
 	"name": "BlueSpice",
-	"version": "2.27.1",
+	"version": "2.27.2",
 	"license-name": "GPL-2.0+",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
@@ -45,7 +45,8 @@
 				"bluespice/bluespice.xhr.js",
 				"bluespice/bluespice.ping.js",
 				"bluespice/bluespice.tooltip.js",
-				"bluespice/bluespice.api.js"
+				"bluespice/bluespice.api.js",
+				"bluespice/bluespice.treepanel.js"
 			],
 			"messages": [
 				"bs-years-duration",
@@ -251,6 +252,7 @@
 				"bluespice/bluespice.css",
 				"bluespice/bluespice.icons.css",
 				"bluespice/bluespice.ui.basic.less",
+				"bluespice/bluespice.treepanel.less",
 				"famfamfam/flags.css"
 			],
 			"targets": [
@@ -418,7 +420,7 @@
 		"_prefix": "bsg",
 		"BlueSpiceExtInfo": {
 			"name": "BlueSpice",
-			"version": "2.27.1",
+			"version": "2.27.2",
 			"status": "stable",
 			"package": "BlueSpice Free",
 			"url": "http://bluespice.com",
@@ -453,6 +455,11 @@
 		"BSSkinTabs": "includes/skins/BSSkinTabs.php",
 		"BSSkinDataAfterContentTabs": "includes/skins/BSSkinDataAfterContentTabs.php",
 		"BSSkinNavigationMainTabs": "includes/skins/BSSkinNavigationMainTabs.php",
+		"BSSkinTreeNavigation": "includes/skins/BSSkinTreeNavigation.php",
+		"BSSkinSidebarTreeParser": "includes/skins/BSSkinSidebarTreeParser.php",
+		"BSSkinSidebarTreeNavigation": "includes/skins/BSSkinSidebarTreeNavigation.php",
+		"BSTreeNode": "includes/tree/BSTreeNode.php",
+		"BSTreeRenderer": "includes/tree/BSTreeRenderer.php",
 		"BsConfig": "includes/Config.class.php",
 		"BSDebug": "includes/Debug.php",
 		"BsException": "includes/Exception.class.php",
@@ -464,7 +471,6 @@
 		"BSNamespaceListParam": "includes/paramdefinition/BSNamespaceListParam.php",
 		"BSNamespaceParser": "includes/parser/BSNamespaceParser.php",
 		"BSNamespaceValidator": "includes/validator/BSNamespaceValidator.php",
-		"BsMailer": "includes/Mailer.class.php",
 		"BsExtJSStoreParams": "includes/ExtJSStoreParams.php",
 		"BsExtJSSortParam": "includes/ExtJSStoreParams.php",
 		"BSNotifications": "includes/Notifications.class.php",

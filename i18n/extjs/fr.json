@@ -33,7 +33,7 @@
 	"bs-extjs-label-page": "Page",
 	"bs-extjs-upload": "Téléverser",
 	"bs-extjs-browse": "Naviguer",
-	"bs-extjs-uploading": "Téléchargement en cours…",
+	"bs-extjs-uploading": "Téléversement en cours…",
 	"bs-extjs-confirmNavigationTitle": "Suivre le lien",
 	"bs-extjs-confirmNavigationText": "Voulez-vous vraiment suivre ce lien ? Tous les paramètres dynamiques comme le filtrage ou le tri sur la page actuelle seront perdus.",
 	"bs-extjs-allns": "(tous)",
@@ -52,5 +52,9 @@
 	"bs-extjs-title-success": "Réussi",
 	"bs-extjs-title-warning": "Avertissement",
 	"bs-extjs-categoryboxselect-emptytext": "Ajouter une catégorie",
-	"bs-extjs-categorytree-title": "Catégories"
+	"bs-extjs-categorytree-title": "Catégories",
+	"bs-extjs-filter-date-after": "Après",
+	"bs-extjs-filter-date-before": "Avant",
+	"bs-extjs-filter-date-on": "Le",
+	"bs-extjs-filter-date-filter": "Filtre"
 }

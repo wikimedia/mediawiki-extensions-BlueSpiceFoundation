@@ -20,5 +20,6 @@
 	"bs-deferred-action-apiaddcategories-description": "Aggiungi categorie a '$1'.",
 	"bs-deferred-action-apiremovecategories-description": "Rimuovi categorie da '$1'.",
 	"bs-deferred-action-apisetcategories-description": "Imposta categorie su '$1'.",
-	"bs-deferred-action-apimovepage-description": "Sposta \"$1\" a \"$2\"."
+	"bs-deferred-action-apimovepage-description": "Sposta \"$1\" a \"$2\".",
+	"bs-deferred-action-apideletepage-description": "Cancella \"$1\"."
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
 	"bs-ns_main": "(Странице)",
@@ -9,6 +10,8 @@
 	"bs-tab_navigation": "Навигација",
 	"bs-userbar_loginswitch_logout": "Одјави ме",
 	"bs-userbar_loginswitch_login": "Пријави ме",
+	"bs-secs-duration": "{{PLURAL:$1|1 секунда|$1 секунда|$1 секунди}}",
+	"bs-two-units-ago": "пре $1 и $2",
 	"bs-one-unit-ago": "пре $1",
 	"bs-now": "сада",
 	"bs-viewtagerrorlist-legend": "$1 — Грешка",

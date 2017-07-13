@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jayprakash12345"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "फ़ाइल अपलोड करें",
+	"bs-upload-uploadbuttontext": "ब्राउज़ करें",
+	"bs-upload-uploadfilefieldlabel": "फ़ाइल का नाम",
+	"bs-upload-uploadfileemptytext": "नई फ़ाइल सम्मिलित करें...",
+	"bs-upload-uploaddestfilelabel": "गंतव्य फ़ाइल नाम",
+	"bs-upload-allowedfiletypesare": "मान्य फ़ाइल प्रकार हैं:",
+	"bs-upload-license": "लाइसेंस",
+	"bs-upload-uploadwatchthislabel": "इस फ़ाइल पर ध्यान रखें",
+	"bs-upload-uploadignorewarningslabel": "सभी चेतावनियों को नज़रंदाज़ करें",
+	"bs-upload-categories": "श्रेणियाँ",
+	"bs-upload-upload-waitmessage": "अपलोड प्रगति में है...",
+	"bs-upload-error": "त्रुटि",
+	"bs-upload-descfilelabel": "विवरण",
+	"bs-upload-error-long": "अपलोड करने की प्रक्रिया में त्रुटि",
+	"bs-upload-filetypenotsupported": "फ़ाइल प्रकार समर्थित नहीं है",
+	"bs-upload-details": "विवरण"
+}

@@ -5,5 +5,6 @@
 		]
 	},
 	"bs-deferred-action-apiaddcategories-description": "'$1'-এ বিষয়শ্রেণী যোগ করুন।",
-	"bs-deferred-action-apimovepage-description": "\"$1\" কে \"$2\"-এ স্থানান্তর করুন।"
+	"bs-deferred-action-apimovepage-description": "\"$1\" কে \"$2\"-এ স্থানান্তর করুন।",
+	"bs-deferred-action-apideletepage-description": "\"$1\" অপসারণ করুন।"
 }

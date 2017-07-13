@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Captantrips"
+			"Captantrips",
+			"Vito Genovese"
 		]
 	},
 	"bs-deferred-action-status-error": "Başarısız.",
+	"bs-deferred-action-apieditpage-description": "\"$1\" adlı sayfayı düzenle.",
 	"bs-deferred-batch-progress-desc": "İlerleme",
 	"bs-deferred-batch-actions": "Eylemler",
 	"bs-deferred-batch-description": "Tanımlama"

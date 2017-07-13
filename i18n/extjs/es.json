@@ -37,8 +37,8 @@
 	"bs-extjs-confirmNavigationText": "¿Estás seguro de que quieres seguir este enlace? Se perderá la configuración dinámica —como los filtros y el ordenamiento—.",
 	"bs-extjs-allns": "(todos)",
 	"bs-extjs-filters": "Filtros",
-	"bs-extjs-filter-equals": "es igual a",
-	"bs-extjs-filter-equals-not": "no es igual a",
+	"bs-extjs-filter-equals": "equivale a",
+	"bs-extjs-filter-equals-not": "difiere de",
 	"bs-extjs-filter-contains": "contiene",
 	"bs-extjs-filter-contains-not": "no contiene",
 	"bs-extjs-filter-starts-with": "inicia con",
@@ -50,5 +50,9 @@
 	"bs-extjs-title-success": "Éxito",
 	"bs-extjs-title-warning": "Advertencia",
 	"bs-extjs-categoryboxselect-emptytext": "Añadir una categoría",
-	"bs-extjs-categorytree-title": "Categorías"
+	"bs-extjs-categorytree-title": "Categorías",
+	"bs-extjs-filter-date-after": "Después",
+	"bs-extjs-filter-date-before": "Antes",
+	"bs-extjs-filter-date-on": "El",
+	"bs-extjs-filter-date-filter": "Filtrar"
 }

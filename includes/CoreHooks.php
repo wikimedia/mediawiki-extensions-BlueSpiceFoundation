@@ -10,7 +10,7 @@ class BsCoreHooks {
 	public static function onRegistry(){
 		global $wgScriptPath, $wgFooterIcons, $wgExtensionFunctions, $wgAjaxExportList, $wgVersion, $IP;
 		global $wgNamespacesWithSubpages, $wgApiFrameOptions, $wgRSSUrlWhitelist;
-		global $wgExternalLinkTarget, $wgCapitalLinkOverrides, $wgRestrictDisplayTitle;
+		global $wgExternalLinkTarget, $wgRestrictDisplayTitle;
 		global $wgUrlProtocols, $wgVerifyMimeType, $wgAllowJavaUploads;
 		global $bsgTestSystem, $bsgPermissionConfig, $bsgSystemNamespaces;
 		global $bsgConfigFiles, $wgResourceLoaderLESSVars, $bsgExtensions;
@@ -339,8 +339,8 @@ class BsCoreHooks {
 			$attribs['class'] .= ' user';*/
 			if( $target->getText() == $html ) {
 				$html = htmlspecialchars(
-					BsCore::getUserDisplayName(
-						User::newFromName($target->getText())
+					BsUserHelper::getUserDisplayName(
+						User::newFromName( $target->getText() )
 					)
 				);
 				$attribs['data-bs-username'] = $target->getText();

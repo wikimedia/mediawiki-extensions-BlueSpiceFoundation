@@ -51,5 +51,9 @@
 	"bs-extjs-title-success": "Todo correcto",
 	"bs-extjs-title-warning": "Aviso",
 	"bs-extjs-categoryboxselect-emptytext": "Engada unha categoría",
-	"bs-extjs-categorytree-title": "Categorías"
+	"bs-extjs-categorytree-title": "Categorías",
+	"bs-extjs-filter-date-after": "Despois",
+	"bs-extjs-filter-date-before": "Antes",
+	"bs-extjs-filter-date-on": "O",
+	"bs-extjs-filter-date-filter": "Filtro"
 }

@@ -18,5 +18,6 @@
 	"bs-deferred-action-apiaddcategories-description": "Amestar categoríes a «$1».",
 	"bs-deferred-action-apiremovecategories-description": "Quitar categoríes de «$1».",
 	"bs-deferred-action-apisetcategories-description": "Configurar les categoríes de «$1».",
-	"bs-deferred-action-apimovepage-description": "Treslladar «$1» a «$2»."
+	"bs-deferred-action-apimovepage-description": "Treslladar «$1» a «$2».",
+	"bs-deferred-action-apideletepage-description": "Desaniciar «$1»."
 }

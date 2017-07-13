@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Stephan Muggli <muggli@hallowelt.biz>",
-			"Umherirrender"
+			"Umherirrender",
+			"Metalhead64"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -49,5 +50,9 @@
 	"bs-extjs-title-success": "Erfolg",
 	"bs-extjs-title-warning": "Warnung",
 	"bs-extjs-categoryboxselect-emptytext": "Kategorie hinzufügen",
-	"bs-extjs-categorytree-title": "Kategorien"
+	"bs-extjs-categorytree-title": "Kategorien",
+	"bs-extjs-filter-date-after": "Nach",
+	"bs-extjs-filter-date-before": "Vor",
+	"bs-extjs-filter-date-on": "Am",
+	"bs-extjs-filter-date-filter": "Filtern"
 }

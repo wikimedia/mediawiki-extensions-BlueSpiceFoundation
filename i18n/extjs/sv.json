@@ -51,5 +51,9 @@
 	"bs-extjs-title-success": "Lyckades",
 	"bs-extjs-title-warning": "Varning",
 	"bs-extjs-categoryboxselect-emptytext": "Lägg till en kategori",
-	"bs-extjs-categorytree-title": "Kategorier"
+	"bs-extjs-categorytree-title": "Kategorier",
+	"bs-extjs-filter-date-after": "Efter",
+	"bs-extjs-filter-date-before": "Innan",
+	"bs-extjs-filter-date-on": "Den",
+	"bs-extjs-filter-date-filter": "Filtrera"
 }

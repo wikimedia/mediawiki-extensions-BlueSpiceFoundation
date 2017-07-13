@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Nuodas"
 		]
 	},
 	"apihelp-bs-user-store-description": "Nurodo visus vartotojus iš duomenų bazės. Leidžia rūšiuoti, filtruoti ir numeruoti. Įterpia ExtJS Store parametrus.",
@@ -23,5 +24,10 @@
 	"apihelp-bs-ping-tasks-description": "Pink užduotis, kuri pateikia nenutrūkstamus duomenų mainus",
 	"apihelp-bs-upload-license-store-description": "Pateikia visas galimas licencijas failo įkėlimui",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Jūs negalite skaityti puslapio '$1'.",
-	"bs-wikipage-tasks-error-nothingtoremove": "Nėra kategorijų šalinimui"
+	"bs-wikipage-tasks-error-nothingtoremove": "Nėra kategorijų šalinimui",
+	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parametrų pavyzdžiai]",
+	"apihelp-bs-task-param-examples": "Rodyti užduoties parametrų pavyzdžius",
+	"bs-api-task-taskData-page-id": "Ekzistuojančio wiki puslapio identifikacinis kodas",
+	"bs-api-task-taskData-page-title": "Galiojanti wiki puslapio antraštė",
+	"bs-api-task-wikipagetasks-taskData-categories": "Eilučių rinkinys. Reikšmes turi būti galiojantys ketegorijų pavadinimai."
 }

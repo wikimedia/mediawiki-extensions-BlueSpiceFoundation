@@ -19,5 +19,6 @@
 	"bs-deferred-action-apiaddcategories-description": "Додати категорії до «$1».",
 	"bs-deferred-action-apiremovecategories-description": "Вилучити категорії з «$1».",
 	"bs-deferred-action-apisetcategories-description": "Встановити категорії для «$1».",
-	"bs-deferred-action-apimovepage-description": "Перейменувати «$1» на «$2»."
+	"bs-deferred-action-apimovepage-description": "Перейменувати «$1» на «$2».",
+	"bs-deferred-action-apideletepage-description": "Вилучити «$1»."
 }

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
+	"bs-upload-license": "Лиценца",
 	"bs-upload-categories": "Категорије"
 }

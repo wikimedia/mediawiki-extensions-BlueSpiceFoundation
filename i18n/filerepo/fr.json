@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Urhixidur"
 		]
 	},
-	"bs-filerepo-labelupload": "Télécharger",
+	"bs-filerepo-labelupload": "Téléverser",
 	"bs-filerepo-labelfilter": "Filtre",
 	"bs-filerepo-headerfilename": "Nom de fichier",
 	"bs-filerepo-headerfilesize": "Taille",
@@ -14,7 +15,7 @@
 	"bs-filerepo-headerfilemimetype": "Type MIME",
 	"bs-filerepo-headerfileusertext": "Utilisateur",
 	"bs-filerepo-headerfileextension": "Extension",
-	"bs-filerepo-headerfiletimestamp": "Téléchargé",
+	"bs-filerepo-headerfiletimestamp": "Téléversé",
 	"bs-filerepo-headerfilemediatype": "Type de média",
 	"bs-filerepo-headerfiledescription": "Description",
 	"bs-filerepo-headerfilethumbnail": "Vignette",

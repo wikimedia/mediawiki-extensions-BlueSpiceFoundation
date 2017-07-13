@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wolf Rex"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Fájl feltöltése",
+	"bs-upload-uploadbuttontext": "Fájl keresése",
+	"bs-upload-uploadfilefieldlabel": "Fájlnév",
+	"bs-upload-uploadfileemptytext": "Új fájl beillesztése...",
+	"bs-upload-uploaddestfilelabel": "Célfájlnév",
+	"bs-upload-allowedfiletypesare": "Elfogadott fájltípusok:",
+	"bs-upload-license": "Licenc",
+	"bs-upload-uploadwatchthislabel": "Fájl figyelése",
+	"bs-upload-uploadignorewarningslabel": "Figyelmeztetések figyelmen kívül hagyása",
+	"bs-upload-categories": "Kategóriák",
+	"bs-upload-upload-waitmessage": "Feltöltés folyamatban...",
+	"bs-upload-error": "Hiba",
+	"bs-upload-descfilelabel": "Leírás",
+	"bs-upload-error-long": "Hiba a feltöltés közben",
+	"bs-upload-filetypenotsupported": "Ez a fájltípus nem támogatott",
+	"bs-upload-details": "Részletek"
+}

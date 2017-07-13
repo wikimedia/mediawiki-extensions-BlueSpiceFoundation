@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Luckas",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Felipe L. Ewald"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -27,5 +28,6 @@
 	"bs-extjs-label-user": "Usuário",
 	"bs-extjs-upload": "Enviar",
 	"bs-extjs-browse": "Explorar",
-	"bs-extjs-confirmNavigationText": "Você deseja realmente seguir este link? Todas as configurações dinâmicas, como os filtros e a classificação, serão perdidas."
+	"bs-extjs-confirmNavigationText": "Você deseja realmente seguir este link? Todas as configurações dinâmicas, como os filtros e a classificação, serão perdidas.",
+	"bs-extjs-filter-date-after": "Depois"
 }

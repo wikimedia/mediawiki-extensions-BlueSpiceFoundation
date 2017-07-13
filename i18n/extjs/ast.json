@@ -48,5 +48,9 @@
 	"bs-extjs-title-success": "Correuto",
 	"bs-extjs-title-warning": "Avisu",
 	"bs-extjs-categoryboxselect-emptytext": "Amestar una categoría",
-	"bs-extjs-categorytree-title": "Categoríes"
+	"bs-extjs-categorytree-title": "Categoríes",
+	"bs-extjs-filter-date-after": "Después",
+	"bs-extjs-filter-date-before": "Antes",
+	"bs-extjs-filter-date-on": "Activáu",
+	"bs-extjs-filter-date-filter": "Filtru"
 }

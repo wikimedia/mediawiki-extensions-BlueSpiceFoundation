@@ -30,6 +30,125 @@
  */
 class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
+	protected function makeMetaData() {
+		return [
+			'properties' => [
+				'file_url' => [
+					self::PROP_SPEC_SORTABLE => false,
+					self::PROP_SPEC_FILTERABLE => false
+				],
+				'file_name' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_size' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_bits' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_user' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_width' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_height' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_mimetype' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_user_text' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_user_display_text' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_user_link' => [
+					self::PROP_SPEC_SORTABLE => false,
+					self::PROP_SPEC_FILTERABLE => false
+				],
+				'file_extension' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_timestamp' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_mediatype' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_description' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_display_text' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'file_thumbnail_url' => [
+					self::PROP_SPEC_SORTABLE => false,
+					self::PROP_SPEC_FILTERABLE => false
+				],
+				'page_link' => [
+					self::PROP_SPEC_SORTABLE => false,
+					self::PROP_SPEC_FILTERABLE => false
+				],
+				'page_id' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_title' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_prefixed_text' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_latest' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_namespace' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_categories' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_categories_links'=> [
+					self::PROP_SPEC_SORTABLE => false,
+					self::PROP_SPEC_FILTERABLE => false
+				],
+				'page_is_redirect' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_is_new' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				],
+				'page_touched' => [
+					self::PROP_SPEC_SORTABLE => true,
+					self::PROP_SPEC_FILTERABLE => true
+				]
+			]
+		];
+	}
+
 	public function makeData( $sQuery = '' ) {
 		$res = $this->fetchCaseInsensitive( $sQuery );
 
@@ -43,10 +162,6 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			$res = $this->fetchCaseSensitive( $sQuery );
 		}
 
-		$bUseSecureFileStore = BsExtensionManager::isContextActive(
-			'MW::SecureFileStore::Active'
-		);
-
 		//First query: Get all files and their pages
 		$aReturn = array();
 		$aUserNames = array();
@@ -58,23 +173,13 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				continue;
 			}
 
-			$oTitle = Title::newFromRow( $oRow );
 			//No "user can read" check here, because it may be expensive.
 			//This may be done by hook handlers
-
-			//TODO: use 'thumb.php'?
-			//TODO: Make thumb size a parameter
-			$sThumb = $oImg->createThumb( 120 );
-			$sUrl = $oImg->getUrl();
-			if( $bUseSecureFileStore ) { //TODO: Remove
-				$sThumb = html_entity_decode( SecureFileStore::secureStuff( $sThumb, true ) );
-				$sUrl = html_entity_decode( SecureFileStore::secureStuff( $sUrl, true ) );
-			}
 
 			$aUserNames[$oImg->getUser( 'text' )] = '';
 
 			$aReturn[ $oRow->page_id ] = (object) array(
-				'file_url' => $sUrl,
+				'file_url' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_name' => $oImg->getName(),
 				'file_size' => $oImg->getSize(),
 				'file_bits' => $oImg->getBitDepth(),
@@ -84,22 +189,22 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'file_mimetype' => $oImg->getMimeType(), # major/minor
 				'file_user_text' => $oImg->getUser( 'text' ),
 				'file_user_display_text' => $oImg->getUser( 'text' ), //Will be overridden in a separate step
-				'file_user_link' => '-',
+				'file_user_link' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_extension' => $oImg->getExtension(),
 				'file_timestamp' => $this->getLanguage()->userAdjust( $oImg->getTimestamp() ),
 				'file_mediatype' => $oImg->getMediaType(),
 				'file_description' => $oImg->getDescription(),
 				'file_display_text' => str_replace( '_', ' ', $oImg->getName() ),
-				'file_thumbnail_url' => $sThumb,
-				'page_link' => '-',
-				'page_id' => $oTitle->getArticleID(),
-				'page_title' => $oTitle->getText(),
-				'page_prefixed_text' => $oTitle->getPrefixedText(),
-				'page_latest' => $oTitle->getLatestRevID(),
-				'page_namespace' => $oTitle->getNamespace(),
+				'file_thumbnail_url' => self::SECONDARY_FIELD_PLACEHOLDER,
+				'page_link' => self::SECONDARY_FIELD_PLACEHOLDER,
+				'page_id' => (int)$oRow->page_id,
+				'page_title' => $oRow->page_title,
+				'page_prefixed_text' => self::SECONDARY_FIELD_PLACEHOLDER,
+				'page_latest' => (int)$oRow->page_latest,
+				'page_namespace' => (int)$oRow->page_namespace,
 				'page_categories' => array(), //Filled by a second step below
-				'page_categories_links' => array(),
-				'page_is_redirect' => $oTitle->isRedirect(),
+				'page_categories_links' => self::SECONDARY_FIELD_PLACEHOLDER,
+				'page_is_redirect' => (bool)$oRow->page_is_redirect,
 
 				//For some reason 'page_is_new' and 'page_touched' are not
 				//initialized by 'Title::newFromRow'; Instead when calling
@@ -108,7 +213,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				//issue. As the resulting data is the same we just use the raw
 				//form here.
 				'page_is_new' => (bool)$oRow->page_is_new,
-				'page_touched' => $oRow->page_touched
+				'page_touched' => $this->getLanguage()->userAdjust( $oRow->page_touched )
 			);
 		}
 
@@ -148,11 +253,9 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		}
 
 		return array_values( $aReturn );
-		//TODO: Find out if or where this hook was used before
-		//wfRunHooks( 'BSInsertFileGetFilesBeforeQuery', array( &$aConds, &$aNameFilters ) );
 	}
 
-	public function fetchCaseInsensitive( $sQuery ) {
+	protected function fetchCaseInsensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_SLAVE );
 
 		$aContidions = array(
@@ -180,7 +283,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		return $res;
 	}
 
-	public function fetchCaseSensitive( $sQuery ) {
+	protected function fetchCaseSensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_SLAVE );
 
 		$aContidions = array(
@@ -204,6 +307,45 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		);
 
 		return $res;
+	}
+
+	protected function addSecondaryFields( $aTrimmedData ) {
+		$oSecureFileStore = BsExtensionManager::getExtension(
+			'SecureFileStore'
+		);
+
+		foreach( $aTrimmedData as $oDataSet ) {
+			$oFilePage = Title::makeTitle( NS_FILE, $oDataSet->page_title );
+			$oDataSet->page_link = Linker::link( $oFilePage );
+			$oDataSet->page_prefixed_text = $oFilePage->getPrefixedText();
+
+			$oImg = RepoGroup::singleton()->getLocalRepo()->newFile( $oFilePage );
+
+			//TODO: use 'thumb.php'?
+			//TODO: Make thumb size a parameter
+			$sThumb = $oImg->createThumb( 120 );
+			$sUrl = $oImg->getUrl();
+
+			//TODO: Remove, when SecureFileStore is finally removed
+			if( $oSecureFileStore ) {
+				$sThumb = html_entity_decode( SecureFileStore::secureStuff( $sThumb, true ) );
+				$sUrl = html_entity_decode( SecureFileStore::secureStuff( $sUrl, true ) );
+			}
+
+			$oDataSet->file_url = $sUrl;
+			$oDataSet->file_thumbnail_url = $sThumb;
+
+			$oUserPageTitle = Title::makeTitle( NS_USER, $oDataSet->file_user_text );
+			$oDataSet->file_user_link = Linker::link( $oUserPageTitle );
+
+			$oDataSet->page_categories_links = [];
+			foreach( $oDataSet->page_categories as $sCategory ) {
+				$oCategoryTitle = Title::makeTitle( NS_CATEGORY, $sCategory );
+				$oDataSet->page_categories_links[] = Linker::link( $oCategoryTitle );
+			}
+		}
+
+		return $aTrimmedData;
 	}
 
 	public function filterString($oFilter, $aDataSet) {

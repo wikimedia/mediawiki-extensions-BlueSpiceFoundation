@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"Obsuser"
 		]
 	},
+	"bs-secs-duration": "{{PLURAL:$1|1 sekunda|$1 sekunda|$1 sekundi}}",
+	"bs-two-units-ago": "pre $1 i $2",
 	"bs-one-unit-ago": "pre $1",
 	"bs-imagepage-download-text": "Preuzmi"
 }

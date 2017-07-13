@@ -45,5 +45,8 @@
 	"bs-extjs-title-success": "Berzh",
 	"bs-extjs-title-warning": "Diwallit",
 	"bs-extjs-categoryboxselect-emptytext": "Ouzhpennañ ur rummad",
-	"bs-extjs-categorytree-title": "Rummadoù"
+	"bs-extjs-categorytree-title": "Rummadoù",
+	"bs-extjs-filter-date-after": "Goude",
+	"bs-extjs-filter-date-before": "A-raok",
+	"bs-extjs-filter-date-filter": "Sil"
 }

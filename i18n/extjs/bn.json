@@ -26,5 +26,9 @@
 	"bs-extjs-uploading": "আপলোড হচ্ছে...",
 	"bs-extjs-allns": "(সকল)",
 	"bs-extjs-mainns": "(প্রধান)",
-	"bs-extjs-categorytree-title": "বিষয়শ্রেণীসমূহ"
+	"bs-extjs-categorytree-title": "বিষয়শ্রেণীসমূহ",
+	"bs-extjs-filter-date-after": "এর পর",
+	"bs-extjs-filter-date-before": "এর পূর্বে",
+	"bs-extjs-filter-date-on": "এ",
+	"bs-extjs-filter-date-filter": "ছাঁকনি"
 }

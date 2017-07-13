@@ -30,7 +30,6 @@
 	"bs-one-unit-ago": "Text shown when indicating how long ago an event was\n\nParameters:\n* $1 - a duration; any one of the following messages:\n** {{msg-mw|Bs-years-duration}}\n** {{msg-mw|Bs-months-duration}}\n** {{msg-mw|Bs-weeks-duration}}\n** {{msg-mw|Bs-days-duration}}\n** {{msg-mw|Bs-hours-duration}}\n** {{msg-mw|Bs-mins-duration}}\n** {{msg-mw|Bs-secs-duration}}\n{{Identical|Ago}}",
 	"bs-now": "Text shown for \"now\" when indicating how long ago an event was.\n{{Identical|Now}}",
 	"bs-email-greeting-receiver": "Used in emails as first line in body to greet the receiver.\n\nParameters:\n* $1 is the username of the receiver - use for GENDER distinction \n*$2 is real name of the receiver, if the receiver has not set a real name it is the username",
-	"bs-email-greeting-no-receiver": "Used in emails as first line in body to greet the reveiver\n{{Identical|Hello}}",
 	"bs-email-footer": "Used in mails as last line\n* $1 is the site name ($wgSitename)",
 	"bs-userpagesettings-legend": "Label for section with links to special user related settings",
 	"bs-userpreferences-link-text": "Label for link to user preferences on user page",

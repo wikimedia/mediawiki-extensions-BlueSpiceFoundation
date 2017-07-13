@@ -35,6 +35,7 @@
 	"bs-extjs-confirmNavigationTitle": "Seguir link",
 	"bs-extjs-confirmNavigationText": "Deseja realmente seguir este link? Todas as configurações dinâmicas, como os filtros e a ordenação, serão perdidas.",
 	"bs-extjs-allns": "(todos)",
+	"bs-extjs-mainns": "(Principal)",
 	"bs-extjs-filters": "Filtros",
 	"bs-extjs-filter-equals": "é igual a",
 	"bs-extjs-filter-equals-not": "não é igual a",
@@ -48,5 +49,10 @@
 	"bs-extjs-filter-bool-no": "não",
 	"bs-extjs-title-success": "Sucesso",
 	"bs-extjs-title-warning": "Aviso",
-	"bs-extjs-categoryboxselect-emptytext": "Adicionar categoria"
+	"bs-extjs-categoryboxselect-emptytext": "Adicionar categoria",
+	"bs-extjs-categorytree-title": "Categorias",
+	"bs-extjs-filter-date-after": "Depois de",
+	"bs-extjs-filter-date-before": "Antes de",
+	"bs-extjs-filter-date-on": "Na data",
+	"bs-extjs-filter-date-filter": "Filtrar"
 }

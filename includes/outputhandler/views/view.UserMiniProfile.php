@@ -42,9 +42,14 @@ class ViewUserMiniProfile extends ViewBaseElement {
 
 		$sOut = implode( "\n", $aOut );
 
+		$oSecureFileStore = BsExtensionManager::getExtension(
+			'SecureFileStore'
+		);
 		// CR RBV (03.06.11 08:39): Hook/Event!
-		if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) )
-			$sOut = SecureFileStore::secureFilesInText($sOut);
+		//TODO: Remove, when SecureFileStore is finally removed
+		if ( $oSecureFileStore ) {
+			$sOut = SecureFileStore::secureFilesInText( $sOut );
+		}
 
 		return $sOut;
 	}
