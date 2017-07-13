@@ -3,6 +3,373 @@ Copyright 2017 by Hallo Welt! GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
 
+== BlueSpice 2.27.2 ==
+
+BlueSpice 2.27.2 is a minor release.
+This is a stable release.
+
+=== Notable changes ===
+==== New features ====
+* FilterSpecialPages: Quickly filter the list of special pages with a search term
+* InsertTemplate (Pro): Indert and edit templates from BlueSpiceVisualEditor
+* LaTexRenderer (Pro): Reliably render math formulas
+* SignHere (Pro): Easily add signature in view mode
+* Newly bundled extensions: Arrays, Userfunctions, Variables, Maps (Pro)
+
+==== Other significant changes ====
+* Support for digest notifications once per day or week
+* Major improvements in BlueSpiceVisualEditor
+* PermissionManager explains why a right is set or blocked
+* Various small UX improvements
+* Dropped support for IE10 due to VisualEditor update. Talk to us if you still need it.
+
+==== Removed extensions ====
+* WidgetBar
+* Review: This is now part of BlueSpice pro
+* WantedArticles
+
+=== Compatibility ===
+* Fully MW 1.27 compatible
+* MediaWiki 1.27 LTS
+* Operating System: Microsoft Windows Server 2008+ or Linux (common distributions)
+* Web server: Apache 2+, IIS 7+
+* PHP 5.6 to 7.0
+* MySQL 5.4+ or MariaDB 10+
+* Apache Tomcat 8 (for ExtendedSearch, UEModulePDF, VisualDiff and LaTexRenderer)
+* Java 8+
+* Chrome, Firefox, Internet Eplorer 11, Edge
+
+=== BlueSpice Foundation ===
+* API: Add 'options' param to allowed params inBSApiWikiSubPageTreeStore
+* API: Added 'query' param to API calls
+* API: Added APIDeletePage
+* API: ApiTasksTestBase - removing permission change
+* API: ApiTitleQueryStore - Fix for not returning Titles from NS_MAIN
+* API: Bs-filebackend-store: Changed default sort
+* API: BSApiExtJSStoreBase: order a grid with stdClass value
+* API: BSApiFileBackendStore - Improved performance
+* API: User store api supports the query param
+* API: WikiPageStore - added filtering of namespace and title parts
+* Build: Add jakub-onderka/php-console-highlighter
+* Compatibility: Add CODE_OF_CONDUCT.md
+* Compatibility: API - Split description messages into summary + additional text
+* Compatibility: CC - Remove newline at end from english messages
+* Compatibility: NS_IMAGE -> NS_FILE
+* Compatibility: Removed $wgCapitalLinkOverrides from global list onRegistry, as it is not in use anymore
+* Compatibility: Removed deprecated BSMailer
+* Compatibility: Removed deprecated ContextActive for SecureFilestore
+* Compatibility: Replaced deprecated BsCore::getUserDisplayName with BsUserHelper::getUserDisplayName
+* Compatibility: WigetBar deprecation - removed call to widgetbar hook
+* Compatiblity: Replaced &$this with $this
+* Components: Add support for links with colons in Widgets
+* Components: Added 'data-bs-title' attribute to images
+* Components: Added i18n messages for Date/DateTime grid filter
+* Components: CRUDGridPanel - Fixed "filters not showing on initially hidden columns"
+* Components: Entity - Used own title invalidation method
+* Components: FileSystemHelper - Add checking for warnings before uploading
+* Components: GroupHelper - adding reload option
+* Components: Made bluespice upload available in mobile view
+* Components: New basic tree structure classes
+* Components: PageContentProvider - Fix for not overriding wgRequest
+* Components: Set remote as default for UserCombo query type
+* Components: UploadPanel - Fix for missing duplicate warnings
+* ExtensionManager: Various code improvements
+* General: Add NS_MEDIA to "allowed" namespaces in TitleCombo
+* General: Added jJS configuration variable bsgVersion containing bluespice version
+* General: Adding "BlueSpice" namespace to PSR-4 autoloader
+* General: Rename "BlueSpice for MediaWiki" to "BlueSpice MediaWiki"
+* Permissions: Added permissions "userrights" and "siteadmin" for group sysop.
+* Tests: Added simplified fixtures for users
+* Tests: Adding info about tables used
+* Tests: API - Add function for retrieving custom params
+* Tests: API - Add method that defines root node name in results
+* Tests: BSApiAdminUserStore and BSApiUserStore
+* Tests: BSApiCategoryStore
+* Tests: BSApiCategoryTreeStore
+* Tests: BSApiExtJSStoreTestBase - fixed schema test
+* Tests: BSApiGroupStore
+* Tests: BSApiInterwikiStore
+* Tests: BSApiPingTasks
+* Tests: BSApiUploadLicenseStore
+* Tests: BSApiWikiPageStore
+* Tests: BSApiWikiSubPageTreeStore
+* Tests: Change conditions for single filter
+* Tests: Clarified usage of addDBDataOnce
+* Tests: Maintenance script to adopt unittest log to jenkins
+* Tests: Move fixture creation to setUp function
+* Tests: Unittests - optional total and key item check
+* UI: Added the bluespice logo as own font
+* UI: Fixed possible fatal when sidebar params are missing
+* UI: User images: do not use a passepartout
+* UX: Fixes/Improvements for UserMiniProfile
+* UX: Flag icons - adjusted css to match resource loader unit tests
+* UX: Removed limit for CategoryBoxSelect combo box
+
+=== BlueSpice Extensions ===
+* AboutBlueSpice: Changed icon to bluespice-logo font #6773
+* AboutBlueSpice: Changed the icon in the left navigation #6773
+* ArticleInfo: Removed the arrows from the subpages in the statebar
+* Authors: Improved "more users" image
+* Avatars: Add PHPUnit Tests, uploadfile is ignored in this version update as suggested
+* Avatars: Added invalidation, so the user images can be changed properly
+* Avatars: Fix for image width
+* Avatars: Fixed fatal error when new Avatar gets created
+* Avatars: Fixed missing initial avatars for new users
+* Avatars: Fixes notices undefined width and/or height in ViewUserMiniProfile
+* Blog: Fix for missing blog segment on Special:RSS_Feeder
+* Blog: Fix RSS feed
+* Blog: Fixed behavior of 'ns' and 'mode' argument
+* Blog: Replaced deprecated BsExtensionManager::registerNamespace
+* Build: Add jakub-onderka/php-console-highlighter
+* Checklist: Filter actual checklists from template namespace
+* Checklist: Fixed recursive parser bug
+* Checklist: I18n - improved logentry text
+* Compatibility - API: Split description messages into summary + additional text
+* Compatibility: Add CODE_OF_CONDUCT.md
+* Compatibility: Remove deprecated hook calls for BSWidgetBarGetDefaultWidgets
+* Compatibility: Replaced &$this with $this
+* Compatibility: Replaced NS_IMAGE with NS_FILE
+* ContextMenu: API unit tests #1
+* ContextMenu: Moved code to BSF
+* CSyntaxHighlight: Fixed notice "non static method called statically"
+* Dashboards: Nothing shown in dashboards
+* ExtendedEditBar: Fix for duplicate strike button
+* ExtendedSearch: ApiFeed - Fixed query and made sure there is valid rss when solr is not available
+* ExtendedSearch: ApiFeedExtendedSearch phpunit test
+* ExtendedSearch: Fix for sending multiple namespace params to Solr
+* ExtendedSearch: Fixed ApiFeedExtendedSearch
+* ExtendedSearch: Fixed autocomplete query
+* ExtendedSearch: Fixed issue with content repacement after API call
+* ExtendedSearch: Removed ExtendedSearchAdmin
+* ExtendedStatistics: Added a user right to view the statistics.
+* ExtensionInfo: Fixed possible notice when an old deprecated extensions is displayed
+* Extensions: Removed deprecated ContextActive for SecureFilestore
+* Extensions: Removed deprecated usage of context handling methods
+* Extensions: Replaced deprecated BsCore::getUserDisplayName with BsUserHelper::getUserDisplayName
+* Extensions: Replaced url blue-spice.org with bluespice.com
+* Flexiskin: API Unittest + API documentation fix
+* Flexiskin: Enabled unittests
+* FlexiSkin: Filterable grid columns
+* Flexiskin: Fixed operator issue
+* FlexiSkin: Permissions and other fixes
+* General: I18n - Remove newline at end from english messages
+* General: Insert dialogs - Fixed selection in IE
+* General: Replaced "BlueSpice for MediaWiki" and similar occurences
+* General: Unittests - added correct grouping of BlueSpice tests
+* General: Unittests - added missing API descriptions
+* General: Unittests - Fixed caching issue
+* General: Unittests - Fixed shared fixture
+* General: Unittests - Made tests cache proof
+* General: Unittests - Provided a shared fixture for the tests
+* GroupManager: Activated filter for ExtJS grid
+* InsertFile: Add option to select File or Media link
+* InsertFile: Fix for double File/Media radio buttons
+* InsertFile: Switched from infinite scroll to paging
+* InsertFile: Switching to BSF Upload dialog
+* InsertLink: CC - Fix bad newlines
+* InsertMagic: Raised number of totals to 86
+* InterWikiLinks: Added full string filter feature #6656
+* NamespaceManager: Add new hook
+* NamespaceManager: Disable deleting and renaming Talk namespaces
+* NamespaceManager: Include namespace number in write hook
+* NamespaceManager: normalized available namespaces
+* NamespaceManager: Show page count by default
+* NamespaceManager: Unittest if there is no user namespace
+* NamespaceManager: Unittest no longer messes with namespaces
+* PageAccess: API unittest BSApiPageAccessStore
+* PageAccess: Used store api and extJS grid instead of simple table for specialpage
+* PageAssignments: Added primary keys
+* PageAssignments: Adding Asignee "everyone"
+* PageAssignments: API Unit test + Filter fix
+* PageAssignments: Enable unit tests
+* PageAssignments: Fix for hook handler
+* PageAssignments: Fixed display of statebar icon
+* PageAssignments: Fixed Strict Standard Static function BSAssignableBase::getQueryConds() should not be abstract
+* PageAssignments: Reset assignments table after test
+* PageTemplates: Added filters
+* PageTemplates: shared fixture should only be set up once
+* PermissionManager: Add flyout to show where is permission comming from
+* PermissionManager: Added sorting
+* PermissionManager: removed unneccessary rights settings from tests
+* PermissionManager: restore global state after API call
+* PermissionManager: Updated PHPUnit Test to suite save requirements: assigned edit and siteadmin permission to sysop group
+* Readers: Added basic API tests
+* Readers: Fix for TZ difference
+* Readers: Fix for TZ offset
+* Readers: Fixed link text-decorations were also applied to the images
+* Review: This is now part of BlueSpice pro
+* RSSFeeder: Added API unit tests
+* RSSFeeder: Changed RSSPortlet url to http://blog.bluespice.com/feed/
+* RSSStandards: Added API unit tests
+* RSSStandards: Fix for page feed select combobox
+* RSSStandards: Fixed undefined variable error
+* ShoutBox: api test
+* ShoutBox: Fixed / impoved error handling
+* SmartList: Add phpunit base tests
+* StateBar: Added BSApiStateBarTasksTest phpunit test
+* Statebar: Better mobile integration
+* StateBar: Fixed return values
+* Statistics: API Unittets
+* Statistics: Fix for example in API documentation
+* Statistics: Fixed PNG export
+* UEModulePDF: Bugs on new class
+* UEModulePDF: Change tag filename is retrieved from
+* UEModulePDF: Refactor findFiles logic
+* UsageTracker: API unittest
+* UsageTracker: Used ExtJS grid indstead of simple table on special page
+* UserManager: Added filters
+* UserPreferences: Fixed "Current logged in users settings will be saved to other users"
+* VisualEditor: Add header row and standard formats to table
+* VisualEditor: Added summary, save, preview, changes and cancel btn
+* VisualEditor: Additional toggles for table function and style
+* VisualEditor: FirstHeading will not disappear when scrolling
+* VisualEditor: Fix for adding external links with umlauts
+* VisualEditor: Fix for wrong regex match
+* VisualEditor: Fixed context menu
+* VisualEditor: Fixed issue with image links
+* VisualEditor: Fixed issue with image preview
+* VisualEditor: Fixed link editing
+* VisualEditor: Fixed undefined menu item
+* VisualEditor: Fixed vertical cell alignment from formats menu
+* VisualEditor: Improved context specific availability of actions
+* VisualEditor: Improving Excel import
+* VisualEditor: Made styling more realistic
+* VisualEditor: Modified button and summary tf in bs-ve-editoptions
+* VisualEditor: Updating to TinyMCE version 4.6
+* VisualEditor: Version info and branding
+* WantedArticle: Remove deprecated Extension
+* WhoIsOnline: Moved inserTrace from BeforeInitialize to ParserFirstCallInit
+* WidgetBar: Remove deprecated Extension
+
+=== BlueSpice Skin ===
+* Add CODE_OF_CONDUCT.md
+* Adopted editing font to display font
+* Echo notifications overlays are now in front of the extJS panels
+* Fixed float of personal menu in not logged-in state
+* Fixed user images loosing aspect ratio when down scaling
+* Inline-block for navigation before items
+* Notifications in bs-user-container: fixed overlay z-index: 100
+* Replaced "BlueSpice for MediaWiki" and similar occurences
+* Set the font-weight of the icons in personal info to 100
+
+=== BlueSpice Distribution ===
+* Newly bundled extension: Arrays
+* Newly bundled extension: Userfunctions
+* Newly bundled extension: Variables
+* DistributionConnector: Fixed double encoding of duplicator url
+* EchoConnector: Fixed issue with deleted users
+* EchoConnector: Replaced deprecated BsCore::getUserDisplayName with BsUserHelper::getUserDisplayName
+* EchoConnector: Fix for Echo not loading message- and alert widgets
+* EchoConnector: Update extension.json
+* EditNotifyConnector: Add empty default value for wgEditNotifyAlerts
+
+=== BlueSpice Pro ===
+* New Feature: InsertTemplate
+* New Feature: LatexRenderer
+* New Feature: DrawioConnector
+* New Feature: SignHere
+* Bookmaker: Add unlimited height for "all books" overview when not inside a book
+* Bookmaker: Fix for BookMeta['title']: Using title from meta data if set.
+* Bookmaker: Remove deprecated hook call after the extension have been removed
+* Bookmaker: Replaced deprecated BsExtensionManager::registerNamespace
+* Bookmaker: Tests - Added more API descriptions
+* Bookmaker: Tests - Adding missing api descriptions
+* Bookmaker: UEModulePDFSubpages - Refactored out widget creation
+* CategoryManager: Added icons and action column
+* CategoryManager: Fixed leaf items
+* CategoryManager: Fixed logical errors, improvements
+* CategoryManager: Fixed no response message on new category fails
+* CategoryManager: Removed link from treepanel and added it to action column.
+* ExportTables: add export to standard table in VE
+* ExportTables: Replaced deprecated BsCore::getUserDisplayName with BsUserHelper::getUserDisplayName
+* ExportTables: updating to new visual editor table_functions
+* ExtendedFilelist: Adding url to extension.json
+* NSFileRepoConnector: Add hook handler to fix filenames in PDF exports
+* NSFileRepoConnector: Adding missing API description
+* NSFileRepoConnector: Fix for colons in prefixed filenames
+* NSFileRepoConnector: Fixed BlueSpiceWebDAVIntegration
+* NSFileRepoConnector: Fixed main namespace name
+* NSFileRepoConnector: Fixed warning on client side
+* NSFileRepoConnector: Fixes for NSFileRepo REL1_27
+* NSFileRepoConnector: Integration with "BlueSpiceMultiUpload"
+* NSFileRepoConnector: Moved access to NSFileRepo\NamespaceList to NSFileRepoConnectorNamespaceHelper
+* NSFileRepoConnector: Remove unnecessary code
+* NSFileRepoConnector: Removed functionality that is now part of NSFileRepo itself
+* NSFileRepoConnector: Usage of unified namespace list
+* PasteImage: Add duplicate (and other) warning when drag'n'dropping an image
+* PasteImage: Bumped version number to 2.27.1
+* PasteImage: Catch if non image pasted
+* PasteImage: Fix moved uploaddialog, fix paste from excel https://support.hallowelt.com/issues/6652
+* PasteImage: Fixed dependency error for mobile view.
+* PasteImage: Fixed description message and added package BlueSpice Pro in extension.json
+* PasteImage: Handle empty pasteimage events
+* PasteImage: Implement reading file from browser blob cache
+* PasteImage: Improved API documentation and added missings
+* PasteImage: Re-implementing hook BSPasteImageBeforeSettingsDialogSetData
+* PasteImage: Removing unused RL module
+* PasteImage: Tests - Added missing API descriptions
+* PasteImage: Update i18n messages
+* RatedComments: Removed deprecated usage of context handling methods
+* RatedComments: Tests - Added missing API description
+* Rating: Added hooks to make changing/tracking votes for other extensions possible
+* Rating: Rating: Improved filtering of page name
+* Rating: Removed deprecated usage of context handling methods
+* Rating: Tests - Added missing API documentation
+* ReadConfirmation: Add possibility to disable/enable ReadConfirmation based on NS
+* ReadConfirmation: Added README.md
+* ReadConfirmation: Adding english translation and missing API description
+* ReadConfirmation: API unittest
+* ReadConfirmation: Hide action buttons related to this extension on PageAssignments
+* ReadConfirmation: Remove a hook handler
+* ReadConfirmation: Update de.json
+* ReadConfirmation: Update ReadConfirmationHooks.php
+* Reminder: Activated filter for comment fields #6656
+* Reminder: Add missing message for notification category
+* Reminder: Fixed notice, that non static method is called statically
+* Review: Add custom notes
+* Review: Added paging toolbar to overview panel
+* Review: Fix for compatibility with new EchoConnector
+* Review: Fix for error on non-content pages
+* Review: Fixed availability of review overview
+* Review: Fixed Review:doDelete not returning a valid status object in some cases
+* Review: Fixes checks for "isSpecial"
+* Review: Remove deprecated extension
+* Review: Replaced deprecated BsCore::getUserDisplayName with BsUserHelper::getUserDisplayName
+* Review: Step dialogs user combobox now supports more than 25 users
+* Review: Update extpath for proper extjs loading
+* ServiceCenter: Adding missing API parameter documentation
+* ServiceCenter: CategoryCheck - Replaced deprecated hook call
+* ServiceCenter: Messages - adding qqq for API description
+* ServiceCenter: Tests - Add missing api description
+* ServiceCenter: Updated onWriteNamespaceConfiguration to new signature
+* SMWConnector: Add CODE_OF_CONDUCT.md
+* SMWConnector: Add php-parallel-lint
+* SMWConnector: BlueSpiceSMWConnector: visual editor and mandatory are now working
+* SMWConnector: Build - ignore extensions folder
+* SMWConnector: Refactoring of BlueSpiceVisualEditor from SMWForms to PageForms
+* SMWConnector: Replaced "BlueSpice for MediaWiki" and similar occurences
+* SMWConnector: Updated onWriteNamespaceConfiguration to new signature
+* SMWConnector: Updated use of deprecated hook
+* Teamwork: Add ExtensionField revh_step_id
+* Teamwork: Add note about comment being deleted when delegating review
+* Teamwork: Adding missing API descriptions
+* Teamwork: Avoid notices by checking for dependency
+* Teamwork: Fix for notifications not working
+* Teamwork: Fixed notice "Missing argument 1 for Title::isSpecial()"
+* Teamwork: FlaggedRevsConnector: missed a translation
+* Teamwork: Remove contition Title->isContentPage()
+* Teamwork: Removed nonexistant class from autoloader
+* Teamwork: Rename review to bsreview
+* Teamwork: Update extension.json
+* Teamwork: Update README.md
+* Teamwork: Update ReviewExtended.setup.php
+* Teamwork: Updated onWriteNamespaceConfiguration signature
+* Teamwork: Updated use of deprecated hook
+* WikiExplorer: Adding missing API description
+* WikiExplorer: Fixed renderPrototypes is not defined on table export
+* WikiExplorer: Removed deprecated usage of context handling methods
+
+
 == BlueSpice 2.27.1 ==
 
 BlueSpice 2.27.1 is a maintenance release.
