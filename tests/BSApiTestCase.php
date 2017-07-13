@@ -25,13 +25,13 @@ class BSApiTestCase extends ApiTestCase {
 	}
 
 	/**
-	 * Making this public so we cam make use of it from within a "*Fixtures"
+	 * Making this public so we can make use of it from within a "*Fixtures"
 	 * class
 	 * @param string $pageName
 	 * @param string $text
 	 */
-	public function insertPage($pageName, $text = 'Sample page for unit test.') {
-		return parent::insertPage($pageName, $text);
+	public function insertPage( $pageName, $text = 'Sample page for unit test.', $namespace = NULL ) {
+		return parent::insertPage( $pageName, $text, $namespace );
 	}
 }
 
