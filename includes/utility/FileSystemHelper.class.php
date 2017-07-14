@@ -550,44 +550,56 @@ class BsFileSystemHelper {
 		}
 	}
 
-	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false){
+	public static function uploadLocalFile($sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false, $bIgnoreWarnings = true ){
 		global $wgLocalFileRepo, $wgUser;
-		$oUploadStash = new UploadStash(new LocalRepo($wgLocalFileRepo));
+		$oUploadStash = new UploadStash( new LocalRepo( $wgLocalFileRepo ) );
 		$oUploadFile = $oUploadStash->stashFile( $sFilename, "file" );
 		$sTargetFileName = basename( self::restoreFileName( $sFilename ) );
 
 		if ($oUploadFile === false) {
-			return Status::newFailure(wfMessage('bs-filesystemhelper-upload-local-error-stash-file')->plain());
+			return Status::newFailure( wfMessage( 'bs-filesystemhelper-upload-local-error-stash-file' )->plain() );
 		}
 
 		$oUploadFromStash = new UploadFromStash( $wgUser, $oUploadStash, $wgLocalFileRepo );
 		$oUploadFromStash->initialize( $oUploadFile->getFileKey(), $sTargetFileName );
 		$aStatus = $oUploadFromStash->verifyUpload();
-		if ($aStatus['status'] != UploadBase::OK) {
+
+		if( $bIgnoreWarnings === false ) {
+			$aWarnings = $oUploadFromStash->checkWarnings();
+			if( !empty( $aWarnings ) ) {
+				$oStatus = new Status();
+				foreach( $aWarnings as $sKey => $vValue ) {
+					$oStatus->warning( $sKey, $vValue );
+				}
+				return $oStatus;
+			}
+		}
+
+		if ( $aStatus['status'] != UploadBase::OK ) {
 			return Status::newFatal(
-				wfMessage('bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status']) . '}}')->parse()
+				wfMessage( 'bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode($aStatus['status'] ) . '}}' )->parse()
 			);
 		}
-		$status = $oUploadFromStash->performUpload($sComment, $sPageText, $bWatch, $wgUser);
+		$status = $oUploadFromStash->performUpload( $sComment, $sPageText, $bWatch, $wgUser );
 		$oUploadFromStash->cleanupTempFile();
 
-		if (file_exists($sFilename) && $bDeleteSrc) {
-			unlink($sFilename);
+		if ( file_exists( $sFilename ) && $bDeleteSrc ) {
+			unlink( $sFilename );
 		}
 
 		$oRepoFile = wfFindFile( $sTargetFileName );
-		if ($status->isGood() && $oRepoFile !== false){
+		if ( $status->isGood() && $oRepoFile !== false ){
 			$oPage = WikiPage::factory( $oRepoFile->getTitle() );
 			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
 			if ( BsExtensionManager::isContextActive( 'MW::SecureFileStore::Active' ) ) {
-				return Status::newGood(SecureFileStore::secureStuff($oRepoFile->getUrl(), true));
+				return Status::newGood( SecureFileStore::secureStuff($oRepoFile->getUrl(), true) );
 			}
 			else{
-				return Status::newGood($oRepoFile->getUrl(), true);
+				return Status::newGood( $oRepoFile->getUrl(), true );
 			}
 		}
 		else{
-			return Status::newFatal (wfMessage('bs-filesystemhelper-upload-local-error-create')->plain());
+			return Status::newFatal ( wfMessage('bs-filesystemhelper-upload-local-error-create')->plain() );
 		}
 	}
 }
