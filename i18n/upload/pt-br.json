@@ -4,6 +4,10 @@
 			"Felipe L. Ewald"
 		]
 	},
+	"bs-upload-uploadbuttontext": "Explorar",
+	"bs-upload-categories": "Categorias",
 	"bs-upload-upload-waitmessage": "Upload em progresso ...",
-	"bs-upload-descfilelabel": "Descrição"
+	"bs-upload-error": "Erro",
+	"bs-upload-descfilelabel": "Descrição",
+	"bs-upload-details": "Detalhes"
 }

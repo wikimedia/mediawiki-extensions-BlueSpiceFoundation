@@ -15,6 +15,7 @@
 	"bs-extjs-add": "Adicionar",
 	"bs-extjs-remove": "Remover",
 	"bs-extjs-edit": "Editar",
+	"bs-extjs-copy": "Copiar",
 	"bs-extjs-hint": "Sugestão",
 	"bs-extjs-error": "Erro",
 	"bs-extjs-confirm": "Confirmar",
@@ -26,8 +27,16 @@
 	"bs-extjs-reset": "Reiniciar",
 	"bs-extjs-close": "Fechar",
 	"bs-extjs-label-user": "Usuário",
+	"bs-extjs-label-namespace": "Espaço nominal",
+	"bs-extjs-label-page": "Página",
 	"bs-extjs-upload": "Enviar",
 	"bs-extjs-browse": "Explorar",
 	"bs-extjs-confirmNavigationText": "Você deseja realmente seguir este link? Todas as configurações dinâmicas, como os filtros e a classificação, serão perdidas.",
-	"bs-extjs-filter-date-after": "Depois"
+	"bs-extjs-filters": "Filtros",
+	"bs-extjs-filter-bool-yes": "sim",
+	"bs-extjs-filter-bool-no": "não",
+	"bs-extjs-title-warning": "Aviso",
+	"bs-extjs-categorytree-title": "Categorias",
+	"bs-extjs-filter-date-after": "Depois",
+	"bs-extjs-filter-date-filter": "Filtro"
 }

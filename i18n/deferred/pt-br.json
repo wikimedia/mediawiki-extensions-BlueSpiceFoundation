@@ -4,5 +4,7 @@
 			"Felipe L. Ewald"
 		]
 	},
-	"bs-deferred-batch-description": "Descrição"
+	"bs-deferred-batch-actions": "Ações",
+	"bs-deferred-batch-description": "Descrição",
+	"bs-deferred-batch-status": "Status"
 }

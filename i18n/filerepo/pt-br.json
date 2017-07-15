@@ -4,5 +4,15 @@
 			"Felipe L. Ewald"
 		]
 	},
-	"bs-filerepo-headerfiledescription": "Descrição"
+	"bs-filerepo-labelupload": "Enviar",
+	"bs-filerepo-labelfilter": "Filtro",
+	"bs-filerepo-headerfilename": "Nome do arquivo",
+	"bs-filerepo-headerfilesize": "Tamanho",
+	"bs-filerepo-headerpagecategories": "Categorias",
+	"bs-filerepo-headerfileheight": "Altura",
+	"bs-filerepo-headerfileusertext": "Usuário",
+	"bs-filerepo-headerfiledescription": "Descrição",
+	"bs-filerepo-yes": "Sim",
+	"bs-filerepo-no": "Não",
+	"bs-filerepo-pagesize": "Tamanho da página"
 }
