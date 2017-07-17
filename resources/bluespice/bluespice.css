@@ -4,7 +4,7 @@
 }
 .bs-actions-filedownload a{
 	/*@embed*/
-	background-image:url("images/download-file_btn.png");
+	background-image: url("images/download-file_btn.png");
 	background-repeat: no-repeat;
 	width: 116px !important;
 	color: #FFFFFF !important;
@@ -15,7 +15,7 @@
 }
 .bs-actions-filedownload a:hover{
 	/*@embed*/
-	background-image:url("images/download-file_btn-hover.png");
+	background-image: url("images/download-file_btn-hover.png");
 	text-decoration: none;
 }
 
@@ -124,7 +124,8 @@
 
 .bs-manager-container {
 	min-height: 300px;
-	background-image: url( 'images/bs-ajax-loader-bar-blue.gif' );
+	/* @embed */
+	background-image: url("images/bs-ajax-loader-bar-blue.gif");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
