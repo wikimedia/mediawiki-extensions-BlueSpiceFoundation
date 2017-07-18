@@ -348,3 +348,5 @@ $GLOBALS["bsgExtJSThemes"] = array(
 		'bs-extjs-theme-btn-split-right-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/button/default-toolbar-small-s-arrow.png" )',
 	)
 );
+
+$GLOBALS['bsgUserMiniProfileParams'] = [ 'width' => 40, 'height' => 40 ];

@@ -72,10 +72,12 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		}
 
 		if ( !isset( $this->mOptions['width'] ) ) {
-			$this->mOptions['width'] = 32;
+			$this->mOptions['width']
+				= $GLOBALS['bsgUserMiniProfileParams']['width'];
 		}
 		if( !isset( $this->mOptions['height'] ) ) {
-			$this->mOptions['height'] = 32;
+			$this->mOptions['height']
+				= $GLOBALS['bsgUserMiniProfileParams']['height'];
 		}
 
 		if ( empty($this->mOptions['userdisplayname'] ) ) {
