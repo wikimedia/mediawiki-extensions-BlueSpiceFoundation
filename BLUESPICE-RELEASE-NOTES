@@ -11,7 +11,7 @@ This is a stable release.
 === Notable changes ===
 ==== New features ====
 * FilterSpecialPages: Quickly filter the list of special pages with a search term
-* InsertTemplate (Pro): Indert and edit templates from BlueSpiceVisualEditor
+* InsertTemplate (Pro): Insert and edit templates from BlueSpiceVisualEditor
 * LaTexRenderer (Pro): Reliably render math formulas
 * SignHere (Pro): Easily add signature in view mode
 * Newly bundled extensions: Arrays, Userfunctions, Variables, Maps (Pro)
