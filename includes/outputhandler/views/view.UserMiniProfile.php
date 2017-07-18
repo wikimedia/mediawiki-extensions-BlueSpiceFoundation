@@ -108,7 +108,8 @@ class ViewUserMiniProfile extends ViewBaseElement {
 				if ( $sUserImageName{0} == '/' ) {
 					//relative url from own system given
 					$this->mOptions['userimagesrc'] = $sUserImageName;
-				} elseif ( $aParsedUrl = wfParseUrl( $sUserImageName ) ) {
+				} elseif ( $this->isExternalUrl( $sUserImageName ) ) {
+					$aParsedUrl = wfParseUrl( $sUserImageName );
 					//external url
 					//TODO: Fix, when system is call via https:// and the given
 					//url is http:// the browser will block the image
@@ -129,6 +130,8 @@ class ViewUserMiniProfile extends ViewBaseElement {
 							.$sQuery
 						;
 					}
+				} else {
+					$this->setOptionsFromRepoFile( $sUserImageName );
 				}
 			} else {
 				//MW default File:<username>
@@ -166,5 +169,26 @@ class ViewUserMiniProfile extends ViewBaseElement {
 
 	public function getOptions() {
 		return $this->mOptions;
+	}
+
+	protected function isExternalUrl( $sMaybeExternalUrl ) {
+		return substr( $sMaybeExternalUrl, 0, 4 ) == "http";
+	}
+
+	protected function setOptionsFromRepoFile( $sUserImageName ) {
+		$oUserImageFile = wfFindFile( $sUserImageName );
+		if( $oUserImageFile ) {
+			$oUserThumbnail = $oUserImageFile->transform(
+				array(
+					'width' => $this->mOptions['width'],
+					'height' => $this->mOptions['height']
+				)
+			);
+			if ( $oUserThumbnail ) {
+				$this->mOptions['userimagesrc'] = $oUserThumbnail->getUrl();
+				$this->mOptions['width'] = $oUserThumbnail->getWidth();
+				$this->mOptions['height'] = $oUserThumbnail->getHeight();
+			}
+		}
 	}
 }
