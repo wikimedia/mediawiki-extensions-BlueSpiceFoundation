@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-filerepo-labelupload": "Careche",
+	"bs-filerepo-labelfilter": "Filtre",
+	"bs-filerepo-headerfilename": "Nome d'u file",
+	"bs-filerepo-headerfilesize": "Dimenzione",
+	"bs-filerepo-headerpagecategories": "Categorije",
+	"bs-filerepo-headerfilewidth": "Larghezze",
+	"bs-filerepo-headerfileheight": "Altezze",
+	"bs-filerepo-headerfilemimetype": "Tipe de MIME",
+	"bs-filerepo-headerfileusertext": "Utende",
+	"bs-filerepo-headerfileextension": "Estenzione",
+	"bs-filerepo-headerfiletimestamp": "Carecate",
+	"bs-filerepo-headerfilemediatype": "Tipe de media",
+	"bs-filerepo-headerfiledescription": "Descrizione",
+	"bs-filerepo-headerfilethumbnail": "Miniature",
+	"bs-filerepo-yes": "Sìne",
+	"bs-filerepo-no": "None",
+	"bs-filerepo-pagesize": "Dimenzione d'a pàgene"
+}

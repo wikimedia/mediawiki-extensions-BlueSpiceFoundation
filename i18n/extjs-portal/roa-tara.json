@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-extjs-portal-config": "Configure 'u portlet:",
+	"bs-extjs-portal-title": "Titole d'u portlet",
+	"bs-extjs-portal-height": "Altezze",
+	"bs-extjs-portal-count": "Vôsce",
+	"bs-extjs-portal-timespan": "'Ndervalle de tiembe",
+	"bs-extjs-portal-timespan-week": "Sumáne",
+	"bs-extjs-portal-timespan-month": "Mese",
+	"bs-extjs-portal-timespan-alltime": "Tutte 'u tiembe"
+}
