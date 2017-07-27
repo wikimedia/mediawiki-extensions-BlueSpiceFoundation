@@ -127,5 +127,5 @@
 	/* @embed */
 	background-image: url("images/bs-ajax-loader-bar-blue.gif");
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: top center;
 }
