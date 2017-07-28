@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Careche 'u file",
+	"bs-upload-uploadbuttontext": "Sfoglie",
+	"bs-upload-uploadfilefieldlabel": "Nome d'u file",
+	"bs-upload-uploadfileemptytext": "'Nzerisce 'nu file nuève...",
+	"bs-upload-uploaddestfilelabel": "Nome d'u file de destinazione",
+	"bs-upload-allowedfiletypesare": "Le tipe de file valide sò:",
+	"bs-upload-license": "Licenze",
+	"bs-upload-uploadwatchthislabel": "Condrolle stu file",
+	"bs-upload-uploadignorewarningslabel": "No scè penzanne a tutte l'avvise",
+	"bs-upload-categories": "Categorije",
+	"bs-upload-upload-waitmessage": "Stoche a careche...",
+	"bs-upload-error": "Errore",
+	"bs-upload-descfilelabel": "Descrizione",
+	"bs-upload-error-long": "Errore jndr'à 'u processe de carecamende",
+	"bs-upload-filetypenotsupported": "Tipe de file non supportate",
+	"bs-upload-details": "Dettaglie"
+}
