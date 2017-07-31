@@ -60,7 +60,7 @@ Ext.define( 'BS.grid.FileRepo', {
 			'data-bs-title': title.getPrefixedText()
 		};
 		var attrImg = {
-			src: record.get( 'file_url' ),
+			src: record.get( 'file_thumbnail_url' ),
 			height: '120px',
 			'data-file-width': record.get( 'file_width' ),
 			'data-file-height': record.get( 'file_height' )
