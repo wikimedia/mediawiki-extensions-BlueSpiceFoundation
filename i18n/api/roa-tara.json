@@ -4,6 +4,12 @@
 			"Joetaras"
 		]
 	},
+	"apihelp-bs-filebackend-store-description": "Elenghe tutte le file da 'u backend. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
+	"apihelp-bs-filebackend-store-summary": "Elenghe tutte le file da 'u backend. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
+	"apihelp-bs-user-store-description": "Elenghe tutte le utinde d'u database. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
+	"apihelp-bs-user-store-summary": "Elenghe tutte le utinde d'u database. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
+	"apihelp-bs-category-store-description": "Elenghe tutte le categorije. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
+	"apihelp-bs-category-store-summary": "Elenghe tutte le categorije. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Dèje operazziune comune pe le WikiPages",
 	"apihelp-bs-wikipage-tasks-summary": "Dèje operazziune comune pe le WikiPages",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Elenghe de le opziune",
