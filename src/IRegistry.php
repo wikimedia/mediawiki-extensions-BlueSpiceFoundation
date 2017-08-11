@@ -11,4 +11,9 @@ interface IRegistry {
 	 * @return string
 	 */
 	public function getValue( $key, $default = '' );
+
+	/**
+	 * @return string[]
+	 */
+	public function getAllKeys();
 }

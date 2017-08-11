@@ -215,8 +215,8 @@ class BsGenericTagExtensionHandler {
 			'classes' => array(), //Additional CSS classes that should be added to the container element
 			'titleMsg' => null, //A message key for the title attribute of the container element
 			'element' => 'div', //The element name of the container element. Allows for inline tags.
-			'parseInput' => true, //Wether ot not to do a recursiceTagParse on the input before further processing. Allowes for variables, templates, parserfunctions in tag input
-			'parseParams' => true, //Wether ot not to do a recursiceTagParse on the arguments before further processing. Allowes for variables, templates, parserfunctions in tag arguments
+			'parseInput' => true, //Whether ot not to do a recursiveTagParse on the input before further processing. Allowes for variables, templates, parserfunctions in tag input
+			'parseParams' => true, //Whether ot not to do a recursiveTagParse on the arguments before further processing. Allowes for variables, templates, parserfunctions in tag arguments
 			'callback' => null, //A optional Callable that generates the actual content within the container element
 			'modules' => array(), //ResourceLoader modules to be added to the ParserOutput
 			'moduleStyles' => array() //ResourceLoader modules (only CSS) to be added to the ParserOutput

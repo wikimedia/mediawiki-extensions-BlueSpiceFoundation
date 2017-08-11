@@ -28,7 +28,8 @@
 			"EntityRegistry": {},
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
-			"AdminToolRegistry": {}
+			"AdminToolRegistry": {},
+			"TagRegistry": {}
 		}
 	},
 	"ExtensionFunctions": [
@@ -480,7 +481,10 @@
 			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddAdminTools::callback"
 		],
 		"SkinAfterContent": "BsCoreHooks::onSkinAfterContent",
-		"ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
+		"ParserFirstCallInit": [
+			"BsCoreHooks::onParserFirstCallInit",
+			"BlueSpice\\Hook\\ParserFirstCallInit\\AddTags::callback"
+		],
 		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",
 		"PageContentSaveComplete": [
 			"BsCoreHooks::onPageContentSaveComplete",

@@ -2,8 +2,6 @@
 
 namespace BlueSpice;
 
-use ExtensionRegistry;
-
 class ExtensionAttributeBasedRegistry implements IRegistry {
 
 	/**
@@ -14,14 +12,14 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 
 	/**
 	 *
-	 * @var ExtensionRegistry
+	 * @var \ExtensionRegistry
 	 */
 	protected $extensionRegistry = null;
 
 	/**
 	 *
 	 * @param string $attribName
-	 * @param ExtensionRegistry $extensionRegistry
+	 * @param \ExtensionRegistry $extensionRegistry
 	 */
 	public function __construct( $attribName, $extensionRegistry = null ) {
 		$this->attribName = $attribName;
@@ -48,5 +46,14 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 		}
 
 		return (string)$value;
+	}
+
+	/**
+	 *
+	 * @return string[]
+	 */
+	public function getAllKeys() {
+		$registry = $this->extensionRegistry->getAttribute( $this->attribName );
+		return array_keys( $registry );
 	}
 }

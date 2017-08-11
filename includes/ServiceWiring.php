@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use BlueSpice\ExtensionAttributeBasedRegistry;
 
 return [
 
@@ -61,5 +62,10 @@ return [
 	'BSAdminToolFactory' => function ( MediaWikiServices $services ) {
 		$attribute = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationAdminToolRegistry' );
 		return new \BlueSpice\AdminToolFactory( $attribute );
+	},
+
+	'BSTagFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry( 'BlueSpiceFoundationTagRegistry' );
+		return new \BlueSpice\TagFactory( $registry );
 	}
 ];

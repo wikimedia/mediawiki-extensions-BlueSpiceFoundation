@@ -75,4 +75,12 @@ class Services extends ServicesDecorator {
 	public function getBSAdminToolFactory() {
 		return $this->decoratedServices->getService( 'BSAdminToolFactory' );
 	}
+
+	/**
+	 *
+	 * @return TagFactory
+	 */
+	public function getBSTagFactory() {
+		return $this->decoratedServices->getService( 'BSTagFactory' );
+	}
 }
