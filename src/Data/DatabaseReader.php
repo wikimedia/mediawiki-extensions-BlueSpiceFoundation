@@ -2,19 +2,22 @@
 
 namespace BlueSpice\Data;
 
-abstract class DatabaseReader implements IReader {
+abstract class DatabaseReader extends Reader {
 
 	/**
 	 *
-	 * @var \DatabaseBase
+	 * @var \Wikimedia\Rdbms\IDatabase
 	 */
 	protected $db = null;
 
 	/**
 	 *
-	 * @param \LoadBalancer $loadBalancer
+	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
+	 * @param \IContextSource $context
+	 * @param \Config $config
 	 */
-	public function __construct( $loadBalancer ) {
+	public function __construct( $loadBalancer, \IContextSource $context = null, \Config $config = null ) {
+		parent::__construct( $context, $config );
 		$this->db = $loadBalancer->getConnection( DB_REPLICA );
 	}
 }

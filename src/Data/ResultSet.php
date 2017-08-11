@@ -6,7 +6,7 @@ class ResultSet {
 
 	/**
 	 *
-	 * @var \stdClass[]
+	 * @var \BlueSpice\Data\Record[]
 	 */
 	protected $records = [];
 
@@ -18,7 +18,7 @@ class ResultSet {
 
 	/**
 	 *
-	 * @param \stdClass[] $records
+	 * @param \BlueSpice\Data\Record[] $records
 	 * @param int $total
 	 */
 	public function __construct( $records, $total ) {
@@ -26,10 +26,18 @@ class ResultSet {
 		$this->total = $total;
 	}
 
+	/**
+	 *
+	 * @return \BlueSpice\Data\Record[]
+	 */
 	public function getRecords() {
 		return $this->records;
 	}
 
+	/**
+	 *
+	 * @return int
+	 */
 	public function getTotal() {
 		return $this->total;
 	}
