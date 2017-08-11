@@ -610,7 +610,7 @@ class BsCoreHooks {
 	 * @return boolean Always true to keep hook running
 	 */
 	public static function onUnitTestsList( &$files ) {
-		$files[] = dirname( __DIR__ ) . '/tests/';
+		$files[] = dirname( __DIR__ ) . '/tests/phpunit';
 
 		return true;
 	}
