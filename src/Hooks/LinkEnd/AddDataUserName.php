@@ -17,7 +17,7 @@ class AddDataUserName extends \BlueSpice\Hooks\LinkEnd {
 
 		if( $this->target->getText() === $this->html ) {
 			$this->html = htmlspecialchars(
-				\BsCore::getUserDisplayName( $user )
+				\BsUserHelper::getUserDisplayName( $user )
 			);
 		}
 
