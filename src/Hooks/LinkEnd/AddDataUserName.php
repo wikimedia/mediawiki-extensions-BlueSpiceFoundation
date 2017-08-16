@@ -9,6 +9,11 @@ class AddDataUserName extends \BlueSpice\Hooks\LinkEnd {
 		}
 
 		$user = \User::newFromName( $this->target->getText() );
+		if( !$user ) {
+			//in rare cases $this->target->getText() returns '127.0.0.1' which
+			//results in 'false' in User::newFromName
+			return true;
+		}
 
 		if( $this->target->getText() === $this->html ) {
 			$this->html = htmlspecialchars(
