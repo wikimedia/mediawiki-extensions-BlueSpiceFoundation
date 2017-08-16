@@ -1,6 +1,7 @@
 <?php
+namespace BlueSpice\Content;
 
-abstract class BSEntityContent extends JsonContent {
+class Entity extends \JsonContent {
 
 	public function __construct( $text, $modelId = '' ) {
 		parent::__construct( $text, $modelId );
@@ -11,7 +12,7 @@ abstract class BSEntityContent extends JsonContent {
 	 * @return array
 	 */
 	public function getJsonData() {
-		return FormatJson::decode( $this->getNativeData(), true );
+		return \FormatJson::decode( $this->getNativeData(), true );
 	}
 
 	/**
@@ -27,22 +28,22 @@ abstract class BSEntityContent extends JsonContent {
 	 * @return bool|null|string
 	 */
 	public function beautifyJSON() {
-		$decoded = FormatJson::decode( $this->getNativeData(), true );
+		$decoded = \FormatJson::decode( $this->getNativeData(), true );
 		if ( !is_array( $decoded ) ) {
 			return null;
 		}
-		return FormatJson::encode( $decoded, true );
+		return \FormatJson::encode( $decoded, true );
 
 	}
 
 	/**
 	 * Beautifies JSON prior to save.
-	 * @param Title $title Title
-	 * @param User $user User
+	 * @param \Title $title Title
+	 * @param \User $user User
 	 * @param ParserOptions $popts
 	 * @return JsonContent
 	 */
-	public function preSaveTransform( Title $title, User $user, ParserOptions $popts ) {
+	public function preSaveTransform( \Title $title, \User $user, \ParserOptions $popts ) {
 		return new static( $this->beautifyJSON() );
 	}
 
@@ -50,14 +51,14 @@ abstract class BSEntityContent extends JsonContent {
 	 * Set the HTML and add the appropriate styles
 	 *
 	 *
-	 * @param Title $title
+	 * @param \Title $title
 	 * @param int $revId
-	 * @param ParserOptions $options
+	 * @param \ParserOptions $options
 	 * @param bool $generateHtml
-	 * @param ParserOutput $output
+	 * @param \ParserOutput $output
 	 */
-	protected function fillParserOutput( Title $title, $revId,
-		ParserOptions $options, $generateHtml, ParserOutput &$output
+	protected function fillParserOutput( \Title $title, $revId,
+		\ParserOptions $options, $generateHtml, \ParserOutput &$output
 	) {
 		return parent::fillParserOutput(
 			$title,
@@ -78,8 +79,8 @@ abstract class BSEntityContent extends JsonContent {
 		foreach ( $mapping as $key => $val ) {
 			$rows[] = $this->objectRow( $key, $val );
 		}
-		return Xml::tags( 'table', array( 'class' => 'mw-json' ),
-			Xml::tags( 'tbody', array(), join( "\n", $rows ) )
+		return \Xml::tags( 'table', array( 'class' => 'mw-json' ),
+			\Xml::tags( 'tbody', array(), join( "\n", $rows ) )
 		);
 	}
 
@@ -90,19 +91,19 @@ abstract class BSEntityContent extends JsonContent {
 	 * @return string HTML.
 	 */
 	protected function objectRow( $key, $val ) {
-		$th = Xml::elementClean( 'th', array(), $key );
+		$th = \Xml::elementClean( 'th', array(), $key );
 		if ( is_array( $val ) ) {
-			$td = Xml::tags( 'td', array(), self::objectTable( $val ) );
+			$td = \Xml::tags( 'td', array(), self::objectTable( $val ) );
 		} else {
 			if ( is_string( $val ) ) {
 				$val = '"' . $val . '"';
 			} else {
-				$val = FormatJson::encode( $val );
+				$val = \FormatJson::encode( $val );
 			}
 
-			$td = Xml::elementClean( 'td', array( 'class' => 'value' ), $val );
+			$td = \Xml::elementClean( 'td', array( 'class' => 'value' ), $val );
 		}
 
-		return Xml::tags( 'tr', array(), $th . $td );
+		return \Xml::tags( 'tr', array(), $th . $td );
 	}
 }

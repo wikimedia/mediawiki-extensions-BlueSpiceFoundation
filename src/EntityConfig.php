@@ -1,7 +1,7 @@
 <?php
 
 /**
- * BSEntityConfig class for BlueSpice
+ * EntityConfig class for BlueSpice
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,30 +26,31 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
+namespace BlueSpice;
 
 /**
- * BSEntityConfig class for BlueSpice
+ * EntityConfig class for BlueSpice
  * @package BlueSpiceFoundation
  */
-abstract class BSEntityConfig {
+abstract class EntityConfig implements \JsonSerializable {
 	protected static $aEntityConfigs = null;
 	protected static $aDefaults = array();
 	protected $sType = '';
 
 	/**
-	 * BSEntityConfig factory
+	 * EntityConfig factory
 	 * @param string $sType - Entity type
-	 * @return BSEntityConfig - or null
+	 * @return EntityConfig - or null
 	 */
 	public static function factory( $sType ) {
-		if( !is_null(static::$aEntityConfigs) ) {
-			if( !isset(static::$aEntityConfigs[$sType]) ) {
+		if( !is_null( static::$aEntityConfigs ) ) {
+			if( !isset( static::$aEntityConfigs[$sType] ) ) {
 				return null;
 			}
 			return static::$aEntityConfigs[$sType];
 		}
 		//TODO: Check params and classes
-		$aRegisteredEntities = BSEntityRegistry::getRegisteredEntities();
+		$aRegisteredEntities = EntityRegistry::getRegisteredEntities();
 		foreach( $aRegisteredEntities as $sKey => $sConfigClass ) {
 			static::$aEntityConfigs[$sKey] = new $sConfigClass();
 			static::$aEntityConfigs[$sKey]->sType = $sKey;
@@ -58,13 +59,13 @@ abstract class BSEntityConfig {
 				static::$aEntityConfigs[$sKey]->addGetterDefaults()
 			);
 		}
-		Hooks::run( 'BSEntityConfigDefaults', array( &static::$aDefaults ) );
+		\Hooks::run( 'BSEntityConfigDefaults', [ &static::$aDefaults ] );
 		return static::$aEntityConfigs[$sType];
 	}
 
 
 	protected static function getDefault( $sOption ) {
-		if( !isset(static::$aDefaults[$sOption]) ) {
+		if( !isset( static::$aDefaults[$sOption] ) ) {
 			return false;
 		}
 		return static::$aDefaults[$sOption];
@@ -115,6 +116,6 @@ abstract class BSEntityConfig {
 	abstract protected function get_EntityClass();
 
 	protected function get_ContentClass() {
-		return 'BSEntityContent';
+		return "\\BlueSpice\\Content\\Entity";
 	}
 }

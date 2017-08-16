@@ -1,6 +1,7 @@
 <?php
+namespace BlueSpice\Content;
 
-abstract class BSEntityContentHandler extends JsonContentHandler {
+abstract class EntityHandler extends \JsonContentHandler {
 
 	public function __construct( $modelId = '' ) {
 		parent::__construct( $modelId );
@@ -10,6 +11,6 @@ abstract class BSEntityContentHandler extends JsonContentHandler {
 	 * @return string
 	 */
 	protected function getContentClass() {
-		return 'BSEntityContent';
+		return "\\BlueSpice\\Content\\Entity";
 	}
 }

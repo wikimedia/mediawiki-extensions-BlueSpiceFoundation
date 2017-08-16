@@ -1,6 +1,6 @@
 <?php
 /**
- * BSEntity base class for BlueSpice
+ * Entity base class for BlueSpice
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,13 +26,16 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
-class BSEntity implements JsonSerializable {
+namespace BlueSpice;
+use BlueSpice\Content\Entity as EntityContent;
+
+abstract class Entity implements \JsonSerializable {
 	const NS = '';
 	protected static $aEntitiesByID = array();
 	protected $bUnsavedChanges = true;
 
 	/**
-	 * @var BSEntityConfig
+	 * @var EntityConfig
 	 */
 	protected $oConfig = null;
 
@@ -41,7 +44,7 @@ class BSEntity implements JsonSerializable {
 	protected $sType = '';
 	protected $bArchived = false;
 
-	protected function __construct( stdClass $oStdClass, BSEntityConfig $oConfig ) {
+	protected function __construct( \stdClass $oStdClass, EntityConfig $oConfig ) {
 		$this->oConfig = $oConfig;
 		if( !empty($oStdClass->id) ) {
 			$this->iID = (int) $oStdClass->id;
@@ -60,8 +63,8 @@ class BSEntity implements JsonSerializable {
 	}
 
 	protected static function factory( $sType, $oData ) {
-		$oConfig = BSEntityConfig::factory( $sType );
-		if( !$oConfig instanceof BSEntityConfig ) {
+		$oConfig = EntityConfig::factory( $sType );
+		if( !$oConfig instanceof EntityConfig ) {
 			//TODO: Return a DummyEntity instead of null.
 			return null;
 		}
@@ -72,7 +75,7 @@ class BSEntity implements JsonSerializable {
 	}
 
 	protected function generateID() {
-		//this is the case if the current BSEntity is new (no Title created yet)
+		//this is the case if the current Entity is new (no Title created yet)
 		//Get the page_title of the last created title in entity namespace and
 		//add +1. Entities are stored like: MYEntityNamespace:1,
 		//MYEntityNamespace:2, MYEntityNamespace:3
@@ -98,11 +101,11 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Get BSEntity by BSEntityContent Object, wrapper for newFromObject
-	 * @param BSEntityContent $sContent
-	 * @return BSEntity
+	 * Get Entity by EntityContent Object, wrapper for newFromObject
+	 * @param EntityContent $sContent
+	 * @return Entity
 	 */
-	public static function newFromContent( BSEntityContent $sContent ) {
+	public static function newFromContent( EntityContent $sContent ) {
 		$aContent = $sContent->getJsonData();
 		if ( empty($aContent) ) {
 			return null;
@@ -112,9 +115,9 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Get BSEntity by Json Object
+	 * Get Entity by Json Object
 	 * @param Object $oObject
-	 * @return BSEntity
+	 * @return Entity
 	 */
 	public static function newFromObject( $oObject ) {
 		if( !is_object($oObject) ) {
@@ -122,10 +125,10 @@ class BSEntity implements JsonSerializable {
 		}
 
 		if( empty($oObject->type) ) {
-			//$oObject->type = BSEntityRegistry::getDefaultHandlerType();
+			//$oObject->type = EntityRegistry::getDefaultHandlerType();
 			return null;
 		}
-		if( !BSEntityRegistry::isRegisteredType($oObject->type) ) {
+		if( !EntityRegistry::isRegisteredType($oObject->type) ) {
 			return null;
 		}
 
@@ -142,7 +145,7 @@ class BSEntity implements JsonSerializable {
 
 	/**
 	 * Gets the related config object
-	 * @return BSEntityConfig
+	 * @return EntityConfig
 	 */
 	public function getConfig() {
 		return $this->oConfig;
@@ -150,10 +153,10 @@ class BSEntity implements JsonSerializable {
 
 	/**
 	 * Gets the related Title object by ID
-	 * @return Title
+	 * @return \Title
 	 */
 	public static function getTitleFor( $iID ) {
-		return Title::newFromText( $iID, static::NS );
+		return \Title::makeTitle( static::NS, $iID );
 	}
 
 	/**
@@ -173,10 +176,10 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Get BSEntity from ID, wrapper for newFromTitle
+	 * Get Entity from ID, wrapper for newFromTitle
 	 * @param int $iID
 	 * @param boolean $bForceReload
-	 * @return BSEntity | null
+	 * @return Entity | null
 	 */
 	public static function newFromID( $iID, $bForceReload = false ) {
 		if ( !is_numeric( $iID ) ) {
@@ -194,18 +197,18 @@ class BSEntity implements JsonSerializable {
 			return null;
 		}
 
-		$sText = BsPageContentProvider::getInstance()->getContentFromTitle(
+		$sText = \BsPageContentProvider::getInstance()->getContentFromTitle(
 			$oTitle
 		);
 
-		$oBSEntityContent = new JsonContent( $sText );
-		$oData = (object) $oBSEntityContent->getData()->getValue();
+		$oEntityContent = new EntityContent( $sText );
+		$oData = (object) $oEntityContent->getData()->getValue();
 
 		if( empty($oData->type) ) {
 			return null;
-			//$oData->type = BSEntityRegistry::getDefaultHandlerType();
+			//$oData->type = EntityRegistry::getDefaultHandlerType();
 		}
-		if( !BSEntityRegistry::isRegisteredType($oData->type) ) {
+		if( !EntityRegistry::isRegisteredType($oData->type) ) {
 			return null;
 		}
 
@@ -217,12 +220,12 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Main method for getting a BSEntity from a Title
-	 * @param Title $oTitle
+	 * Main method for getting a Entity from a Title
+	 * @param \Title $oTitle
 	 * @param boolean $bForceReload
-	 * @return BSEntity
+	 * @return Entity
 	 */
-	public static function newFromTitle( Title $oTitle, $bForceReload = false ) {
+	public static function newFromTitle( \Title $oTitle, $bForceReload = false ) {
 		if ( is_null( $oTitle ) || $oTitle->getNamespace() !== static::NS ) {
 			return null;
 		}
@@ -232,37 +235,37 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Saves the current BSEntity
-	 * @return Status
+	 * Saves the current Entity
+	 * @return \Status
 	 */
-	public function save( User $oUser = null, $aOptions = array() ) {
+	public function save( \User $oUser = null, $aOptions = [] ) {
 		if( !$oUser instanceof User ) {
-			return Status::newFatal( 'No User' );
+			return \Status::newFatal( 'No User' );
 		}
 		if( $this->exists() && !$this->hasUnsavedChanges() ) {
-			return Status::newGood( $this );
+			return \Status::newGood( $this );
 		}
 		if( empty($this->getID()) ) {
 			$this->generateID();
 		}
 		if( empty($this->getID()) ) {
-			return Status::newFatal( 'No ID generated' );
+			return \Status::newFatal( 'No ID generated' );
 		}
 		if( empty($this->getOwnerID()) ) {
 			$this->setOwnerID( (int) $oUser->getId() );
 		}
 		$sType = $this->getType();
 		if( empty($sType) ) {
-			return Status::newFatal('Related Type error');
+			return \Status::newFatal( 'Related Type error' );
 		}
 
 		$oTitle = $this->getTitle();
 		if ( is_null( $oTitle ) ) {
-			return Status::newFatal('Related Title error');
+			return \Status::newFatal( 'Related Title error' );
 		}
 
-		$oWikiPage = WikiPage::factory( $oTitle );
-		$sContentClass = $this->getConfig()->get('ContentClass');
+		$oWikiPage = \WikiPage::factory( $oTitle );
+		$sContentClass = $this->getConfig()->get( 'ContentClass' );
 		try {
 			$oStatus = $oWikiPage->doEditContent(
 				new $sContentClass( json_encode( $this ) ),
@@ -272,9 +275,9 @@ class BSEntity implements JsonSerializable {
 				$oUser,
 				null
 			);
-		} catch( Exception $e ) {
+		} catch( \Exception $e ) {
 			//Something probalby breaks json
-			return Status::newFatal( $e->getMessage() );
+			return \Status::newFatal( $e->getMessage() );
 		}
 		//TODO: check why this is not good
 		if ( !$oStatus->isOK() ) {
@@ -283,37 +286,34 @@ class BSEntity implements JsonSerializable {
 
 		$this->setUnsavedChanges( false );
 
-		Hooks::run( 'BSEntitySaveComplete', array( $this, $oStatus, $oUser ) );
-
+		\Hooks::run( 'BSEntitySaveComplete', [ $this, $oStatus, $oUser ] );
 		$this->invalidateCache();
 		return $oStatus;
 	}
 
 	/**
-	 * Archives the current BSEntity
-	 * @return Status
+	 * Archives the current Entity
+	 * @return \Status
 	 */
-	public function delete( User $oUser = null, $aOptions = array() ) {
+	public function delete( \User $oUser = null, $aOptions = [] ) {
 		$oTitle = $this->getTitle();
 
 		$oStatus = null;
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oWikiPage = \WikiPage::factory( $oTitle );
 
-		Hooks::run( 'BSEntityDelete', array( $this, $oStatus, $oUser ) );
-		if( $oStatus instanceof Status && $oStatus->isOK() ) {
-			return $oStatus;
+		\Hooks::run( 'BSEntityDelete', [ $this, $oStatus, $oUser ] );
+		if( $oStatus instanceof \Status && $oStatus->isOK() ) {			return $oStatus;
 		}
 		$this->bArchived = true;
 		$this->setUnsavedChanges();
 
 		try {
 			$oStatus = $this->save();
-		} catch( Exception $e ) {
-			return Status::newFatal( $e->getMessage() );
+		} catch( \Exception $e ) {
+			return \Status::newFatal( $e->getMessage() );
 		}
 
-		Hooks::run( 'BSEntityDeleteComplete', array( $this, $oStatus ) );
-		if( !$oStatus->isOK() ) {
+		\Hooks::run( 'BSEntityDeleteComplete', [ $this, $oStatus ] );		if( !$oStatus->isOK() ) {
 			return $oStatus;
 		}
 
@@ -322,8 +322,8 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Gets the BSEntity attributes formated for the api
-	 * @return object
+	 * Gets the Entity attributes formated for the api
+	 * @return array
 	 */
 	public function getFullData( $aData = array() ) {
 		$aData = array_merge(
@@ -335,7 +335,7 @@ class BSEntity implements JsonSerializable {
 				'archived' => $this->isArchived(),
 			)
 		);
-		Hooks::run('BSEntityGetFullData', [
+		\Hooks::run('BSEntityGetFullData', [
 			$this,
 			&$aData
 		]);
@@ -343,12 +343,12 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Adds a BSEntity to the cache
-	 * @param BSEntity $oInstance
-	 * @return BSEntity
+	 * Adds a Entity to the cache
+	 * @param Entity $oInstance
+	 * @return Entity
 	 */
-	protected static function appendCache( BSEntity &$oInstance ) {
-		if( static::hasCacheEntry($oInstance->getID()) ) {
+	protected static function appendCache( Entity &$oInstance ) {
+		if( static::hasCacheEntry( $oInstance->getID() ) ) {
 			return $oInstance;
 		}
 		static::$aEntitiesByID[$oInstance->getID()] = $oInstance;
@@ -356,11 +356,11 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Removes a BSEntity from the cache if it's in
-	 * @param BSEntity $oInstance
-	 * @return BSEntity
+	 * Removes a Entity from the cache if it's in
+	 * @param Entity $oInstance
+	 * @return Entity
 	 */
-	protected static function detachCache( BSEntity &$oInstance ) {
+	protected static function detachCache( Entity &$oInstance ) {
 		if( !static::hasCacheEntry($oInstance->getID()) ) {
 			return $oInstance;
 		}
@@ -369,9 +369,9 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Gets a instance of the BSEntity from the cache by ID
+	 * Gets a instance of the Entity from the cache by ID
 	 * @param int $iID
-	 * @return BSEntity
+	 * @return Entity
 	 */
 	protected static function getInstanceFromCacheByID( $iID ) {
 		if( !static::hasCacheEntry( $iID ) ) {
@@ -385,7 +385,7 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Checks, if the current BSEntity exists in the Wiki
+	 * Checks, if the current Entity exists in the Wiki
 	 * @return boolean
 	 */
 	public function exists() {
@@ -416,7 +416,7 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Returns the current id for the BSEntity
+	 * Returns the current id for the Entity
 	 * @return int
 	 */
 	public function getID() {
@@ -424,7 +424,7 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Returns the current user id for the BSEntity
+	 * Returns the current user id for the Entity
 	 * @return int
 	 */
 	public function getOwnerID() {
@@ -440,9 +440,9 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Sets the current BSEntity to an unsaved changes mode, refreshes cache
+	 * Sets the current Entity to an unsaved changes mode, refreshes cache
 	 * @param String $bStatus
-	 * @return BSEntity
+	 * @return Entity
 	 */
 	public function setUnsavedChanges( $bStatus = true ) {
 		$this->bUnsavedChanges = (bool) $bStatus;
@@ -452,7 +452,7 @@ class BSEntity implements JsonSerializable {
 	/**
 	 * Sets the current user ID
 	 * @param int
-	 * @return BSEntity
+	 * @return Entity
 	 */
 	public function setOwnerID( $iOwnerID ) {
 		return $this->setUnsavedChanges(
@@ -461,7 +461,7 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * Subclass needs to return the current BSEntity as a Json encoded
+	 * Subclass needs to return the current Entity as a Json encoded
 	 * string
 	 * @deprecated since 2.27.0 - Use json_encode( $oInstance ) instead
 	 * @return stdObject - Subclass needs to return encoded string!
@@ -479,13 +479,13 @@ class BSEntity implements JsonSerializable {
 	}
 
 	/**
-	 * @param stdClass $oData
+	 * @param \stdClass $oData
 	 */
-	public function setValuesByObject( stdClass $oData ) {
+	public function setValuesByObject( \stdClass $oData ) {
 		if( isset($oData->ownerid) ) {
 			$this->setOwnerID( $oData->ownerid );
 		}
-		Hooks::run('BSEntitySetValuesByObject', [
+		\Hooks::run('BSEntitySetValuesByObject', [
 			$this,
 			$oData
 		]);
@@ -493,10 +493,10 @@ class BSEntity implements JsonSerializable {
 
 	/**
 	 * Checks if the given User is the owner of this entity
-	 * @param User $oUser
+	 * @param \User $oUser
 	 * @return boolean
 	 */
-	public function userIsOwner( User $oUser ) {
+	public function userIsOwner( \User $oUser ) {
 		if( $oUser->isAnon() || $this->getOwnerID() < 1) {
 			return false;
 		}
@@ -505,12 +505,12 @@ class BSEntity implements JsonSerializable {
 
 	/**
 	 * Invalidated the cache
-	 * @return BSEntity
+	 * @return Entity
 	 */
 	public function invalidateCache() {
 		$this->invalidateTitleCache( wfTimestampNow() );
 		static::detachCache( $this );
-		Hooks::run( 'BSEntityInvalidate', array( $this ) );
+		\Hooks::run( 'BSEntityInvalidate', [ $this ] );
 		return $this;
 	}
 

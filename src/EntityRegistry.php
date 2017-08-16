@@ -1,7 +1,7 @@
 <?php
 
 /**
- * BSEntityRegistry class for BlueSpice
+ * EntityRegistry class for BlueSpice
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,12 +26,13 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
+namespace BlueSpice;
 
 /**
- * BSEntityRegistry class for BSSocial extension
+ * EntityRegistry class for BlueSpice
  * @package BlueSpiceFoundation
  */
-class BSEntityRegistry {
+class EntityRegistry {
 	private function __construct() {}
 	private static $bEntitiesRegistered = false;
 	private static $aEntities = array();
@@ -41,9 +42,7 @@ class BSEntityRegistry {
 			return true;
 		}
 
-		$b = Hooks::run( 'BSEntityRegister', array(
-			&self::$aEntities,
-		));
+		$b = \Hooks::run( 'BSEntityRegister', [ &self::$aEntities ]);
 
 		return $b ? static::$bEntitiesRegistered = true : $b;
 	}
@@ -54,7 +53,7 @@ class BSEntityRegistry {
 	 */
 	public static function getRegisteredEntities() {
 		if( !self::runRegister() ) {
-			return array();
+			return [];
 		}
 		return self::$aEntities;
 	}
@@ -77,8 +76,8 @@ class BSEntityRegistry {
 	 * @return array
 	 */
 	public static function getRegisteredEntityByType( $sType ) {
-		if( !self::isRegisteredType($sType) ) {
-			return array();
+		if( !self::isRegisteredType( $sType ) ) {
+			return [];
 		}
 		return self::$aEntities[$sType];
 	}
