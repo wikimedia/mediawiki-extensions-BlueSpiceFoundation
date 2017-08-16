@@ -23,8 +23,8 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		$ret = '';
 
 		$this->assertInstanceOf(
-			'\BlueSpice\Hooks\LinkEnd\AddDataUserName',
-			new \BlueSpice\Hooks\LinkEnd\AddDataUserName(
+			'\BlueSpice\Hook\LinkEnd\AddDataUserName',
+			new \BlueSpice\Hook\LinkEnd\AddDataUserName(
 				$context,
 				$config,
 				$dummy,
@@ -58,7 +58,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		$attribs = [];
 		$ret = '';
 
-		$instance = new \BlueSpice\Hooks\LinkEnd\AddDataUserName(
+		$instance = new \BlueSpice\Hook\LinkEnd\AddDataUserName(
 			$context,
 			$config,
 			$dummy,
@@ -96,7 +96,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		$attribs = [];
 		$ret = '';
 
-		$instance = new \BlueSpice\Hooks\LinkEnd\AddDataUserName(
+		$instance = new \BlueSpice\Hook\LinkEnd\AddDataUserName(
 			$context,
 			$config,
 			$dummy,
@@ -129,7 +129,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		$attribs = [];
 		$ret = '';
 
-		$instance = new \BlueSpice\Hooks\LinkEnd\AddDataUserName(
+		$instance = new \BlueSpice\Hook\LinkEnd\AddDataUserName(
 			$context,
 			$config,
 			$dummy,

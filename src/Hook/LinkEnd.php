@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueSpice\Hooks;
+namespace BlueSpice\Hook;
 
 abstract class LinkEnd extends Hook {
 

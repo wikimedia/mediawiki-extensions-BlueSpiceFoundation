@@ -399,8 +399,8 @@
 		"SoftwareInfo": "BlueSpice\\Hooks\\SoftwareInfo\\AddBlueSpice::callback",
 		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
 		"LinkEnd": [
-			"BlueSpice\\Hooks\\LinkEnd\\AddDataTitle::callback",
-			"BlueSpice\\Hooks\\LinkEnd\\AddDataUserName::callback"
+			"BlueSpice\\Hook\\LinkEnd\\AddDataTitle::callback",
+			"BlueSpice\\Hook\\LinkEnd\\AddDataUserName::callback"
 		],
 		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
 		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",

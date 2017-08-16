@@ -1,8 +1,8 @@
 <?php
 
-namespace BlueSpice\Hooks\LinkEnd;
+namespace BlueSpice\Hook\LinkEnd;
 
-class AddDataUserName extends \BlueSpice\Hooks\LinkEnd {
+class AddDataUserName extends \BlueSpice\Hook\LinkEnd {
 	protected function doProcess() {
 		if( $this->target->getNamespace() !== NS_USER || $this->target->isSubpage() ) {
 			return true;

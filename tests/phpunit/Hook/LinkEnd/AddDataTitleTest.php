@@ -22,8 +22,8 @@ class AddDataTitleTest extends \PHPUnit_Framework_TestCase {
 		$ret = '';
 
 		$this->assertInstanceOf(
-			'\BlueSpice\Hooks\LinkEnd\AddDataTitle',
-			new \BlueSpice\Hooks\LinkEnd\AddDataTitle(
+			'\BlueSpice\Hook\LinkEnd\AddDataTitle',
+			new \BlueSpice\Hook\LinkEnd\AddDataTitle(
 				$context,
 				$config,
 				$dummy,
@@ -53,7 +53,7 @@ class AddDataTitleTest extends \PHPUnit_Framework_TestCase {
 		$attribs = [];
 		$ret = '';
 
-		$instance = new \BlueSpice\Hooks\LinkEnd\AddDataTitle(
+		$instance = new \BlueSpice\Hook\LinkEnd\AddDataTitle(
 			$context,
 			$config,
 			$dummy,

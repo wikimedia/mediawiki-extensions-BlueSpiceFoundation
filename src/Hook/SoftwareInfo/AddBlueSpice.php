@@ -1,8 +1,8 @@
 <?php
 
-namespace BlueSpice\Hooks\SoftwareInfo;
+namespace BlueSpice\Hook\SoftwareInfo;
 
-class AddBlueSpice extends \BlueSpice\Hooks\SoftwareInfo {
+class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 
 	protected static $configName = 'bsg';
 

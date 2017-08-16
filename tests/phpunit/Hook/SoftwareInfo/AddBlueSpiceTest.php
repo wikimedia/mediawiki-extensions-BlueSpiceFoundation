@@ -18,8 +18,8 @@ class AddBlueSpiceTest extends \PHPUnit_Framework_TestCase {
 
 
 		$this->assertInstanceOf(
-			'\BlueSpice\Hooks\SoftwareInfo\AddBlueSpice',
-			new \BlueSpice\Hooks\SoftwareInfo\AddBlueSpice(
+			'\BlueSpice\Hook\SoftwareInfo\AddBlueSpice',
+			new \BlueSpice\Hook\SoftwareInfo\AddBlueSpice(
 				$context,
 				$config,
 				$software
@@ -42,7 +42,7 @@ class AddBlueSpiceTest extends \PHPUnit_Framework_TestCase {
 
 		$software = [];
 
-		$instance = new \BlueSpice\Hooks\SoftwareInfo\AddBlueSpice(
+		$instance = new \BlueSpice\Hook\SoftwareInfo\AddBlueSpice(
 			$context,
 			$config,
 			$software
