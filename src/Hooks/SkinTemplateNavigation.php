@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Hooks;
 
-class SkinTemplateNavigation extends Hook {
+abstract class SkinTemplateNavigation extends Hook {
 
 	/**
 	 *

@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Hooks;
 
-abstract class BeforePageDisplay extends BlueSpice\Hooks\Hook {
+abstract class BeforePageDisplay extends Hook {
 
 	/**
 	 *
