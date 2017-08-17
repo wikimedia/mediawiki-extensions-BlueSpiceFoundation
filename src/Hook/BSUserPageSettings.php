@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook UserCan
+ * Hook handler base class for BlueSpice hook BS:UserPageSettings
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -28,59 +28,60 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class UserCan extends Hook {
-
+abstract class BSUserPageSettings extends Hook {
 	/**
-	 *
-	 * @var \Title
-	 */
-	protected $title  = null;
-
-	/**
-	 *
+	 * The user related to the user page
 	 * @var \User
 	 */
 	protected $user = null;
 
 	/**
-	 *
-	 * @var string
+	 * The user page
+	 * @var \Title
 	 */
-	protected $action = '';
+	protected $title = null;
 
 	/**
-	 *
-	 * @var boolean
+	 * An array of \ViewBaseElement's
+	 * @var []\ViewBaseElement
 	 */
-	protected $result = false;
+	protected $settingViews = null;
 
 	/**
-	 *
-	 * @param \Title $title
+	 * This hook is called: 'BS:UserPageSettings'
+	 * Located in BsCoreHooks::addProfilePageSettings. This is where the
+	 * user setting buttons on the users page are registered, when the current
+	 * user is on his user page.
 	 * @param \User $user
-	 * @param string $action
-	 * @param boolean $result
+	 * @param \Title $title
+	 * @param array $settingViews
 	 * @return boolean
 	 */
-	public static function callback( &$title, &$user, $action, &$result ) {
+	public static function callback( $user, $title, &$settingViews ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$title,
 			$user,
-			$action,
-			$result
+			$title,
+			$settingViews
 		);
 		return $hookHandler->process();
 	}
 
-	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
+	/**
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 * @param \User $user
+	 * @param \Title $title
+	 * @param array $settingViews
+	 * @return boolean
+	 */
+	public function __construct( $context, $config, $user, $title, &$settingViews ) {
 		parent::__construct( $context, $config );
 
-		$this->title = $title;
 		$this->user = $user;
-		$this->action = $action;
-		$this->result =& $result;
+		$this->title = $title;
+		$this->settingViews = &$settingViews;
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook UserCan
+ * Hook handler base class for BlueSpice hook BSEntityConfigDefaults
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -28,59 +28,38 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class UserCan extends Hook {
-
+abstract class BSEntityConfigDefaults extends Hook {
 	/**
-	 *
-	 * @var \Title
+	 * An array of settings [ key => mixed value ]
+	 * @var array
 	 */
-	protected $title  = null;
+	protected $defaultSettings = null;
 
 	/**
-	 *
-	 * @var \User
-	 */
-	protected $user = null;
-
-	/**
-	 *
-	 * @var string
-	 */
-	protected $action = '';
-
-	/**
-	 *
-	 * @var boolean
-	 */
-	protected $result = false;
-
-	/**
-	 *
-	 * @param \Title $title
-	 * @param \User $user
-	 * @param string $action
-	 * @param boolean $result
+	 * Located in \BlueSpice\EntityConfig::factory. After all instances of
+	 * EntityConfig's have been created. A default setting will be returned,
+	 * when a EntityConfig does not have a method get_<settingsKey>
+	 * @param array $defaultSettings
 	 * @return boolean
 	 */
-	public static function callback( &$title, &$user, $action, &$result ) {
+	public static function callback( &$defaultSettings ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$title,
-			$user,
-			$action,
-			$result
+			$defaultSettings
 		);
 		return $hookHandler->process();
 	}
 
-	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
+	/**
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 * @param array $defaultSettings
+	 */
+	public function __construct( $context, $config, &$defaultSettings ) {
 		parent::__construct( $context, $config );
 
-		$this->title = $title;
-		$this->user = $user;
-		$this->action = $action;
-		$this->result =& $result;
+		$this->defaultSettings = &$defaultSettings;
 	}
 }

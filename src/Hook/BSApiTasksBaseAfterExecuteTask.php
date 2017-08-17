@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook BeforePageDisplay
+ * Hook handler base class for BlueSpice hook BSApiTasksBaseAfterExecuteTask
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -28,48 +28,76 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class BeforePageDisplay extends Hook {
-
+abstract class BSApiTasksBaseAfterExecuteTask extends Hook {
 	/**
-	 *
-	 * @var \OutputPage
+	 * The task api
+	 * @var \BSApiTasksBase
 	 */
-	protected $out = null;
+	protected $taskApi = null;
 
 	/**
-	 *
-	 * @var \Skin
+	 * Key of the requested task
+	 * @var string
 	 */
-	protected $skin = null;
+	protected $taskKey = null;
 
 	/**
-	 *
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * Result of the called task
+	 * @var \stdClass
+	 */
+	protected $result = null;
+
+	/**
+	 * Params for the requested task
+	 * @var \stdClass
+	 */
+	protected $taskData = null;
+
+	/**
+	 * Params for the requested task
+	 * @var array
+	 */
+	protected $params = null;
+
+	/**
+	 * Located in BSApiTasksBase::execute. After the requested task was called.
+	 * @param \BSApiTasksBase $taskApi
+	 * @param string $taskKey
+	 * @param \stdClass $result
+	 * @param \stdClass $taskData
+	 * @param array $params
 	 * @return boolean
 	 */
-	public static function callback( $out, $skin  ) {
+	public static function callback( $taskApi, $taskKey, &$result, $taskData, $params ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$out,
-			$skin
+			$taskApi,
+			$taskKey,
+			$result,
+			$taskData,
+			$params
 		);
 		return $hookHandler->process();
 	}
 
 	/**
-	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param \BSApiTasksBase $taskApi
+	 * @param string $taskKey
+	 * @param \stdClass $result
+	 * @param \stdClass $taskData
+	 * @param array $params
 	 */
-	public function __construct( $context, $config, $out, $skin ) {
+	public function __construct( $context, $config, $taskApi, $taskKey, &$result, $taskData, $params ) {
 		parent::__construct( $context, $config );
 
-		$this->out = $out;
-		$this->skin = $skin;
+		$this->taskApi = $taskApi;
+		$this->taskKey = $taskKey;
+		$this->result = &$result;
+		$this->taskData = $taskData;
+		$this->params = $params;
 	}
 }

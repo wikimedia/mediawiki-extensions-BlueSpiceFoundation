@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook UserCan
+ * Hook handler base class for BlueSpice hook BSEntityGetFullData
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -27,60 +27,49 @@
  */
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
+use BlueSpice\Entity;
 
-abstract class UserCan extends Hook {
-
+abstract class BSEntityGetFullData extends Hook {
 	/**
-	 *
-	 * @var \Title
+	 * The Entity which stores the values
+	 * @var Entity
 	 */
-	protected $title  = null;
+	protected $entity = null;
 
 	/**
-	 *
-	 * @var \User
+	 * An array of values stored in the entity [ key => mixed value ].
+	 * @var array
 	 */
-	protected $user = null;
+	protected $data = null;
 
 	/**
-	 *
-	 * @var string
-	 */
-	protected $action = '';
-
-	/**
-	 *
-	 * @var boolean
-	 */
-	protected $result = false;
-
-	/**
-	 *
-	 * @param \Title $title
-	 * @param \User $user
-	 * @param string $action
-	 * @param boolean $result
+	 * Located in \BlueSpice\Entity::getFullData. Before the full set of values
+	 * stored in the entity is returned
+	 * @param Entity $entity
+	 * @param array $data
 	 * @return boolean
 	 */
-	public static function callback( &$title, &$user, $action, &$result ) {
+	public static function callback( $entity, &$data ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$title,
-			$user,
-			$action,
-			$result
+			$entity,
+			$data
 		);
 		return $hookHandler->process();
 	}
 
-	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
+	/**
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 * @param Entity $entity
+	 * @param array $data
+	 */
+	public function __construct( $context, $config, $entity, &$data ) {
 		parent::__construct( $context, $config );
 
-		$this->title = $title;
-		$this->user = $user;
-		$this->action = $action;
-		$this->result =& $result;
+		$this->entity = $entity;
+		$this->data = &$data;
 	}
 }

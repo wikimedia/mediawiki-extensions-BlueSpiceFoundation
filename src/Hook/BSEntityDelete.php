@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook UserCan
+ * Hook handler base class for BlueSpice hook BSEntityDelete
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -27,60 +27,59 @@
  */
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
+use BlueSpice\Entity;
 
-abstract class UserCan extends Hook {
-
+abstract class BSEntityDelete extends Hook {
 	/**
-	 *
-	 * @var \Title
+	 * The Entity which will be deleted
+	 * @var Entity
 	 */
-	protected $title  = null;
+	protected $entity = null;
 
 	/**
 	 *
+	 * @var \Status
+	 */
+	protected $status = null;
+
+	/**
+	 * User who performed this action
 	 * @var \User
 	 */
 	protected $user = null;
 
 	/**
-	 *
-	 * @var string
-	 */
-	protected $action = '';
-
-	/**
-	 *
-	 * @var boolean
-	 */
-	protected $result = false;
-
-	/**
-	 *
-	 * @param \Title $title
+	 * Located in \BlueSpice\Entity::delete. Before the entity will be deleted.
+	 * Return a fatal $status to abort the deletion.
+	 * @param Entity $entity
+	 * @param \Status $status
 	 * @param \User $user
-	 * @param string $action
-	 * @param boolean $result
 	 * @return boolean
 	 */
-	public static function callback( &$title, &$user, $action, &$result ) {
+	public static function callback( $entity, $status, $user ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$title,
-			$user,
-			$action,
-			$result
+			$entity,
+			$status,
+			$user
 		);
 		return $hookHandler->process();
 	}
 
-	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
+	/**
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 * @param Entity $entity
+	 * @param \Status $status
+	 * @param \User $user
+	 */
+	public function __construct( $context, $config, $entity, $status, $user ) {
 		parent::__construct( $context, $config );
 
-		$this->title = $title;
+		$this->entity = $entity;
+		$this->status = $status;
 		$this->user = $user;
-		$this->action = $action;
-		$this->result =& $result;
 	}
 }

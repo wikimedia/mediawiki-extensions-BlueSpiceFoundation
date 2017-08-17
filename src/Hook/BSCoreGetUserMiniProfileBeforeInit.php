@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook UserCan
+ * Hook handler base class for BlueSpice hook BSCoreGetUserMiniProfileBeforeInit
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -28,13 +28,13 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class UserCan extends Hook {
+abstract class BSCoreGetUserMiniProfileBeforeInit extends Hook {
 
 	/**
 	 *
-	 * @var \Title
+	 * @var \ViewUserMiniProfile
 	 */
-	protected $title  = null;
+	protected $userMiniProfileView = null;
 
 	/**
 	 *
@@ -44,43 +44,42 @@ abstract class UserCan extends Hook {
 
 	/**
 	 *
-	 * @var string
+	 * @var array
 	 */
-	protected $action = '';
+	Protected $params = null;
 
 	/**
-	 *
-	 * @var boolean
-	 */
-	protected $result = false;
-
-	/**
-	 *
-	 * @param \Title $title
+	 * Located in \BsCore::getUserMiniProfile. Before the created user mini
+	 * profile view is initialized and returned.
+	 * @param \ViewUserMiniProfile $userMiniProfileView
 	 * @param \User $user
-	 * @param string $action
-	 * @param boolean $result
+	 * @param array $params
 	 * @return boolean
 	 */
-	public static function callback( &$title, &$user, $action, &$result ) {
+	public static function callback( &$userMiniProfileView, &$user, &$params ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$title,
+			$userMiniProfileView,
 			$user,
-			$action,
-			$result
+			$params
 		);
 		return $hookHandler->process();
 	}
 
-	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
+	/**
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 * @param \ViewUserMiniProfile $userMiniProfileView
+	 * @param \User $user
+	 * @param array $params
+	 */
+	public function __construct( $context, $config, &$userMiniProfileView, &$user, &$params ) {
 		parent::__construct( $context, $config );
 
-		$this->title = $title;
-		$this->user = $user;
-		$this->action = $action;
-		$this->result =& $result;
+		$this->userMiniProfileView = &$userMiniProfileView;
+		$this->user = &$user;
+		$this->params = &$params;
 	}
 }

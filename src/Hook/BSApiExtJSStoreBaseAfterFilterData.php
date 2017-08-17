@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook UserCan
+ * Hook handler base class for BlueSpice hook BSApiExtJSStoreBaseAfterFilterData
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -28,59 +28,47 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class UserCan extends Hook {
-
+abstract class BSApiExtJSStoreBaseAfterFilterData extends Hook {
 	/**
-	 *
-	 * @var \Title
+	 * The store api
+	 * @var \BSApiExtJSStoreBase
 	 */
-	protected $title  = null;
+	protected $store = null;
 
 	/**
-	 *
-	 * @var \User
+	 * An array of data itemss
+	 * @var \stdClass[]
 	 */
-	protected $user = null;
+	protected $dataItems = null;
 
 	/**
-	 *
-	 * @var string
-	 */
-	protected $action = '';
-
-	/**
-	 *
-	 * @var boolean
-	 */
-	protected $result = false;
-
-	/**
-	 *
-	 * @param \Title $title
-	 * @param \User $user
-	 * @param string $action
-	 * @param boolean $result
+	 * Located in BSApiExtJSStoreBase::postProcessData. After the result was
+	 * filtered.
+	 * @param \BSApiExtJSStoreBase $store
+	 * @param array $dataItems
 	 * @return boolean
 	 */
-	public static function callback( &$title, &$user, $action, &$result ) {
+	public static function callback( $store, &$dataItems ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$title,
-			$user,
-			$action,
-			$result
+			$store,
+			$dataItems
 		);
 		return $hookHandler->process();
 	}
 
-	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
+	/**
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 * @param \BSApiExtJSStoreBase $store
+	 * @param array $dataItems
+	 */
+	public function __construct( $context, $config, $store, &$dataItems ) {
 		parent::__construct( $context, $config );
 
-		$this->title = $title;
-		$this->user = $user;
-		$this->action = $action;
-		$this->result =& $result;
+		$this->store = $store;
+		$this->dataItems = &$dataItems;
 	}
 }

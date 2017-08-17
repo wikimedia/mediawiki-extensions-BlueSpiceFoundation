@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook UserCan
+ * Hook handler base class for BlueSpice hook BSBaseTemplateGetNavigationSidebar
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
@@ -28,59 +28,59 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class UserCan extends Hook {
-
+abstract class BSBaseTemplateGetNavigationSidebar extends Hook {
 	/**
 	 *
-	 * @var \Title
+	 * @var \BsBaseTemplate
 	 */
-	protected $title  = null;
+	protected $template = null;
 
 	/**
-	 *
-	 * @var \User
+	 * An array of \ViewBaseElement's
+	 * @var \ViewBaseElement[]
 	 */
-	protected $user = null;
+	protected $portlets = null;
 
 	/**
-	 *
-	 * @var string
+	 * An array of html strings. All executed \ViewBaseElement's output will be
+	 * stored there.
+	 * @var array
 	 */
-	protected $action = '';
+	protected $outputItems = null;
 
 	/**
-	 *
-	 * @var boolean
+	 * Located in \BsBaseTemplate::getNavigationSidebar. Before the
+	 * \ViewBaseElement's in $portlets are executed and their results stored in
+	 * $outputItems
+	 * @param \BsBaseTemplate $template
+	 * @param array $portlets
+	 * @param array $outputItems
+	 * @return type
 	 */
-	protected $result = false;
-
-	/**
-	 *
-	 * @param \Title $title
-	 * @param \User $user
-	 * @param string $action
-	 * @param boolean $result
-	 * @return boolean
-	 */
-	public static function callback( &$title, &$user, $action, &$result ) {
+	public static function callback( $template, &$portlets, &$outputItems ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$title,
-			$user,
-			$action,
-			$result
+			$template,
+			$portlets,
+			$outputItems
 		);
 		return $hookHandler->process();
 	}
 
-	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
+	/**
+	 * @param \IContextSource $context
+	 * @param \Config $config
+	 * @param \BsBaseTemplate $template
+	 * @param array $portlets
+	 * @param array $outputItems
+	 */
+	public function __construct( $context, $config, $template, &$portlets, &$outputItems ) {
 		parent::__construct( $context, $config );
 
-		$this->title = $title;
-		$this->user = $user;
-		$this->action = $action;
-		$this->result =& $result;
+		$this->template = $template;
+		$this->portlets = &$portlets;
+		$this->outputItems = &$outputItems;
 	}
 }

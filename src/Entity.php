@@ -302,7 +302,8 @@ abstract class Entity implements \JsonSerializable {
 		$oWikiPage = \WikiPage::factory( $oTitle );
 
 		\Hooks::run( 'BSEntityDelete', [ $this, $oStatus, $oUser ] );
-		if( $oStatus instanceof \Status && $oStatus->isOK() ) {			return $oStatus;
+		if( $oStatus instanceof \Status && $oStatus->isOK() ) {
+			return $oStatus;
 		}
 		$this->bArchived = true;
 		$this->setUnsavedChanges();
@@ -313,7 +314,8 @@ abstract class Entity implements \JsonSerializable {
 			return \Status::newFatal( $e->getMessage() );
 		}
 
-		\Hooks::run( 'BSEntityDeleteComplete', [ $this, $oStatus ] );		if( !$oStatus->isOK() ) {
+		\Hooks::run( 'BSEntityDeleteComplete', [ $this, $oStatus, $oUser ] );
+		if( !$oStatus->isOK() ) {
 			return $oStatus;
 		}
 
