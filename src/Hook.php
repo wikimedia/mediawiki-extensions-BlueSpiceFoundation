@@ -1,5 +1,5 @@
 <?php
-namespace BlueSpice\Hook;
+namespace BlueSpice;
 
 abstract class Hook {
 
