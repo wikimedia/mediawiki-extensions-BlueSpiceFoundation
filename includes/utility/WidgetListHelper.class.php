@@ -43,7 +43,7 @@ class BsWidgetListHelper {
 	private function __construct( $oTitle ) {
 		$this->oTitle = $oTitle;
 		$aKeywords = array();
-		wfRunHooks( 'BSWidgetListHelperInitKeyWords' , array( &$aKeywords, $oTitle ) );
+		Hooks::run( 'BSWidgetListHelperInitKeyWords' , array( &$aKeywords, $oTitle ) );
 		$this->aKeywords = $aKeywords;
 	}
 

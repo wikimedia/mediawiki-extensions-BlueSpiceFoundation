@@ -183,7 +183,7 @@ class BsConfig {
 		wfProfileIn ( 'BS::Core::ConfigGet' );
 
 		$mReturn = null;
-		if( !wfRunHooks ( "BSCoreConfigGet", array ( $sPath, &$mReturn ) ) ) {
+		if( !Hooks::run ( "BSCoreConfigGet", array ( $sPath, &$mReturn ) ) ) {
 			wfProfileOut ( 'BS::Core::ConfigGet' );
 			return $mReturn;
 		}
@@ -331,12 +331,12 @@ class BsConfig {
 			);
 		}
 
-		wfRunHooks( 'BsSettingsBeforeSaveSettings', array( &$aSettings ) );
+		Hooks::run( 'BsSettingsBeforeSaveSettings', array( &$aSettings ) );
 
 		# write the settings array to the database
 		$bReturn = $dbw->insert('bs_settings', $aSettings);
 
-		wfRunHooks( 'BsSettingsAfterSaveSettings', array( $aSettings ) );
+		Hooks::run( 'BsSettingsAfterSaveSettings', array( $aSettings ) );
 
 		BsCacheHelper::invalidateCache(
 			BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' )

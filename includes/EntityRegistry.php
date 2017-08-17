@@ -41,7 +41,7 @@ class BSEntityRegistry {
 			return true;
 		}
 
-		$b = wfRunHooks( 'BSEntityRegister', array(
+		$b = Hooks::run( 'BSEntityRegister', array(
 			&self::$aEntities,
 		));
 

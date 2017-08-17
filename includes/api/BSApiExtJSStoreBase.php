@@ -124,7 +124,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @param array $aMetaData An array of meta data items
 	 */
 	public function returnData( $aData, $aMetaData = array() ) {
-		wfRunHooks( 'BSApiExtJSStoreBaseBeforeReturnData', array( $this, &$aData, &$aMetaData ) );
+		Hooks::run( 'BSApiExtJSStoreBaseBeforeReturnData', array( $this, &$aData, &$aMetaData ) );
 		$result = $this->getResult();
 		$result->setIndexedTagName( $aData, $this->root );
 		$result->addValue( null, $this->root, $aData );
@@ -247,7 +247,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return array
 	 */
 	public function postProcessData( $aData ) {
-		if( !wfRunHooks( 'BSApiExtJSStoreBaseBeforePostProcessData', array( $this, &$aData ) ) ) {
+		if( !Hooks::run( 'BSApiExtJSStoreBaseBeforePostProcessData', array( $this, &$aData ) ) ) {
 			return $aData;
 		}
 
@@ -255,7 +255,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 		//First, apply filter
 		$aProcessedData = array_filter($aData, array( $this, 'filterCallback') );
-		wfRunHooks( 'BSApiExtJSStoreBaseAfterFilterData', array( $this, &$aProcessedData ) );
+		Hooks::run( 'BSApiExtJSStoreBaseAfterFilterData', array( $this, &$aProcessedData ) );
 
 		//Next, apply sort
 		//usort($aProcessedData, array( $this, 'sortCallback') ); <-- had some performance issues

@@ -283,7 +283,7 @@ class BSEntity implements JsonSerializable {
 
 		$this->setUnsavedChanges( false );
 
-		wfRunHooks( 'BSEntitySaveComplete', array( $this, $oStatus, $oUser ) );
+		Hooks::run( 'BSEntitySaveComplete', array( $this, $oStatus, $oUser ) );
 
 		$this->invalidateCache();
 		return $oStatus;
@@ -299,7 +299,7 @@ class BSEntity implements JsonSerializable {
 		$oStatus = null;
 		$oWikiPage = WikiPage::factory( $oTitle );
 
-		wfRunHooks( 'BSEntityDelete', array( $this, $oStatus, $oUser ) );
+		Hooks::run( 'BSEntityDelete', array( $this, $oStatus, $oUser ) );
 		if( $oStatus instanceof Status && $oStatus->isOK() ) {
 			return $oStatus;
 		}
@@ -312,7 +312,7 @@ class BSEntity implements JsonSerializable {
 			return Status::newFatal( $e->getMessage() );
 		}
 
-		wfRunHooks( 'BSEntityDeleteComplete', array( $this, $oStatus ) );
+		Hooks::run( 'BSEntityDeleteComplete', array( $this, $oStatus ) );
 		if( !$oStatus->isOK() ) {
 			return $oStatus;
 		}

@@ -29,7 +29,7 @@ class DeployJavaWebApps extends BSMaintenance {
 
 		$aReport = array();
 		
-		wfRunHooks('BSDeployJavaWebApps', array($this, $sRealTarget, $sBaseURL, &$aReport ) );
+		Hooks::run('BSDeployJavaWebApps', array($this, $sRealTarget, $sBaseURL, &$aReport ) );
 
 		$this->output( 'Deployment done.' );
 		$this->output( implode( "\n", $aReport ) );

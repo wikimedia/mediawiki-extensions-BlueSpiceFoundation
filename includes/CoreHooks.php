@@ -203,7 +203,7 @@ class BsCoreHooks {
 		$oUser = $out->getUser();
 
 		$aScriptSettings = BsConfig::getScriptSettings();
-		wfRunHooks('BsFoundationBeforeMakeGlobalVariablesScript', array( $oUser, &$aScriptSettings ) );
+		Hooks::run('BsFoundationBeforeMakeGlobalVariablesScript', array( $oUser, &$aScriptSettings ) );
 
 		foreach ( $aScriptSettings as $oVar ) {
 			$mValue = $oVar->getValue();
@@ -535,7 +535,7 @@ class BsCoreHooks {
 		$oTitle = $skin->getTitle();
 
 		$aSettingViews = array();
-		wfRunHooks( 'BS:UserPageSettings', array( $oUser, $oTitle, &$aSettingViews ) );
+		Hooks::run( 'BS:UserPageSettings', array( $oUser, $oTitle, &$aSettingViews ) );
 
 		$oUserPageSettingsView = new ViewBaseElement();
 		$oUserPageSettingsView->setAutoWrap(

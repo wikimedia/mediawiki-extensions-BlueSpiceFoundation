@@ -154,7 +154,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 				"message" => '',
 			);
 			//if hook returns false - overall success is false
-			$oResponse->success = wfRunHooks( 'BsAdapterAjaxPingResult', array(
+			$oResponse->success = Hooks::run( 'BsAdapterAjaxPingResult', array(
 				$aSinglePing['sRef'],
 				$aSinglePing['aData'],
 				$iArticleId,

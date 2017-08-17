@@ -298,7 +298,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$sToolboxLinkList = implode("\n", $aToolboxLinkList);
 
 		ob_start();
-		wfRunHooks('SkinTemplateToolboxEnd', array( $this ));
+		Hooks::run('SkinTemplateToolboxEnd', array( $this ));
 		$sToolboxEndLinkList = ob_get_contents();
 		ob_end_clean();
 
@@ -472,7 +472,7 @@ class BsBaseTemplate extends BaseTemplate {
 		}
 
 		if ($this->data['language_urls']) {
-			wfRunHooks( 'otherlanguages', array( $this, true ) );
+			Hooks::run( 'otherlanguages', array( $this, true ) );
 			$aOut = array();
 			$aOut[] = '<div title="' . wfMessage('otherlanguages')->plain() . '" id="p-lang" class="bs-widget portal">';
 			$aOut[] = '  <div class="bs-widget-head">';
@@ -492,7 +492,7 @@ class BsBaseTemplate extends BaseTemplate {
 		}
 
 		$aOut = array();
-		if ( wfRunHooks( "BSBaseTemplateGetNavigationSidebar", array( $this, &$aPortlets, &$aOut ) ) ) {
+		if ( Hooks::run( "BSBaseTemplateGetNavigationSidebar", array( $this, &$aPortlets, &$aOut ) ) ) {
 			foreach ( $aPortlets as $sKey => $vPortlet ) {
 				if ( $vPortlet instanceof ViewBaseElement ) {
 					$aOut[] = $vPortlet->execute();
