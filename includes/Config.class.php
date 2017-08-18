@@ -299,7 +299,7 @@ class BsConfig {
 	 * @return bool false if an error occurs
 	 */
 	public static function saveSettings() {
-		$dbw = wfGetDB ( DB_WRITE );
+		$dbw = wfGetDB ( DB_MASTER );
 
 		$dbw->delete( 'bs_settings', '*' );
 
