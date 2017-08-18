@@ -396,7 +396,7 @@
 	},
 	"Hooks": {
 		"SetupAfterCache": "BsCoreHooks::onSetupAfterCache",
-		"SoftwareInfo": "BlueSpice\\Hooks\\SoftwareInfo\\AddBlueSpice::callback",
+		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
 		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
 		"LinkEnd": [
 			"BlueSpice\\Hook\\LinkEnd\\AddDataTitle::callback",
