@@ -49,7 +49,7 @@ abstract class BSEntitySetValuesByObject extends Hook {
 	 * @param \stdClass $data
 	 * @return boolean
 	 */
-	public static function callback( $entity, &$data ) {
+	public static function callback( $entity, $data ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -66,10 +66,10 @@ abstract class BSEntitySetValuesByObject extends Hook {
 	 * @param Entity $entity
 	 * @param \stdClass $data
 	 */
-	public function __construct( $context, $config, $entity, &$data ) {
+	public function __construct( $context, $config, $entity, $data ) {
 		parent::__construct( $context, $config );
 
 		$this->entity = $entity;
-		$this->data = &$data;
+		$this->data = $data;
 	}
 }
