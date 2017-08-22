@@ -5,8 +5,8 @@
 			"Hamilton Abreu"
 		]
 	},
-	"bs-validator-email-validation-approved": "O endereço de e-mail foi validado com sucesso.",
-	"bs-validator-email-validation-not-approved": "O endereço de e-mail não pode ser validado.",
+	"bs-validator-email-validation-approved": "O endereço de correio eletrónico foi validado.",
+	"bs-validator-email-validation-not-approved": "Não foi possível validar o endereço de correio eletrónico.",
 	"bs-validator-url-validation-approved": "O URL foi validado.",
 	"bs-validator-url-validation-not-approved": "O URL não pode ser validado.",
 	"bs-validator-arg-count-validation-approved": "O atributo \"count\" foi validado com sucesso.",
