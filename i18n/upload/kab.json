@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Belkacem77"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Azen afaylu",
+	"bs-upload-uploadbuttontext": "Snirem",
+	"bs-upload-uploadfilefieldlabel": "Isem n ufaylu",
+	"bs-upload-uploadfileemptytext": "Ger afaylu amaynut...",
+	"bs-upload-uploaddestfilelabel": "Isem n ufaylu n tniɣert",
+	"bs-upload-allowedfiletypesare": "Anawen-agi n ufaylu imeɣta d:",
+	"bs-upload-license": "Turagt",
+	"bs-upload-uploadwatchthislabel": "Ḍfeṛ afaylu-agi",
+	"bs-upload-uploadignorewarningslabel": "Zgel ilɣa",
+	"bs-upload-categories": "Taggayin",
+	"bs-upload-upload-waitmessage": "Asali i teddu...",
+	"bs-upload-error": "Tuccḍa",
+	"bs-upload-descfilelabel": "Aglam",
+	"bs-upload-error-long": "Tuccḍa deg ukala n usali",
+	"bs-upload-filetypenotsupported": "Anaw n ufaylu ur yettwasefrak ara",
+	"bs-upload-details": "Talqayt"
+}
