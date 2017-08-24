@@ -177,4 +177,26 @@ class BsArticleHelper {
 		BsCacheHelper::invalidateCache( $sKey );
 	}
 
+	/**
+	 * Retuns subpages of a title sorted by name
+	 *
+	 * @param Title $oTitle
+	 * @param int $iLimit
+	 * @return array
+	 */
+	public static function getSubpagesSorted( $oTitle, $iLimit ) {
+		$aSubpages = $oTitle->getSubpages( $iLimit );
+		$aTitleArray = [];
+		foreach( $aSubpages as $oSubpage ) {
+			$aTitleArray[] = $oSubpage;
+		}
+		usort( $aTitleArray, array( 'BsArticleHelper', 'sortSubpagesInternal' ) );
+
+		return $aTitleArray;
+	}
+
+	protected static function sortSubpagesInternal( $a, $b ) {
+		return strcmp( strtolower( $a->getFullText() ), strtolower( $b->getFullText() ) );
+	}
+
 }
