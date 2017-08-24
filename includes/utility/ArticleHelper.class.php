@@ -178,25 +178,35 @@ class BsArticleHelper {
 	}
 
 	/**
-	 * Retuns subpages of a title sorted by name
+	 * Retuns subpages of a given title alphabetical sorted by fullArticleText
 	 *
-	 * @param Title $oTitle
+	 * @param \Title $oTitle
 	 * @param int $iLimit
 	 * @return array
 	 */
-	public static function getSubpagesSorted( $oTitle, $iLimit ) {
-		$aSubpages = $oTitle->getSubpages( $iLimit );
+	public static function getSubpagesSortedForTitle( \Title $oTitle, $iLimit = -1 ) {
+		return self::getInstance( $oTitle )->getSubpagesSorted( $iLimit );
+	}
+
+	/**
+	 * Retuns subpages alphabetical sorted by fullArticleText
+	 * @param int $iLimit
+	 * @return array
+	 */
+	public function getSubpagesSorted( $iLimit = -1 ) {
+		$aSubpages = $this->oTitle->getSubpages( $iLimit );
 		$aTitleArray = [];
 		foreach( $aSubpages as $oSubpage ) {
 			$aTitleArray[] = $oSubpage;
 		}
-		usort( $aTitleArray, array( 'BsArticleHelper', 'sortSubpagesInternal' ) );
+		usort( $aTitleArray, function( $a, $b ) {
+			return strcmp(
+				strtolower( $a->getFullText() ),
+				strtolower( $b->getFullText() )
+			);
+		});
 
 		return $aTitleArray;
-	}
-
-	protected static function sortSubpagesInternal( $a, $b ) {
-		return strcmp( strtolower( $a->getFullText() ), strtolower( $b->getFullText() ) );
 	}
 
 }
