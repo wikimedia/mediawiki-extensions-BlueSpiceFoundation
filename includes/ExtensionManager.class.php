@@ -192,6 +192,9 @@ class BsExtensionManager {
 		}
 
 		foreach( $GLOBALS['bsgExtensions'] as $sExtName => $aConfig ) {
+			if( $sExtName === "BlueSpiceFoundation" ) {
+				continue;
+			}
 			self::$prRegisteredExtensions[$sExtName]
 				= self::makeExtensionConfig( $sExtName, $aConfig );
 		}

@@ -69,7 +69,7 @@ abstract class Hook {
 	 *
 	 * @var string
 	 */
-	protected static $configName = 'main';
+	protected static $configName = 'bsg';
 
 	/**
 	 *
