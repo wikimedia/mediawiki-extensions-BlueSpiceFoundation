@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Baba Tabita"
+		]
+	},
+	"bs-years-duration": "{{PLURAL:$1|mwaaka ʉmudu|myaaka $1}}",
+	"bs-months-duration": "{{PLURAL:$1|mweeri ʉmudu|myeeri $1}}"
+}
