@@ -220,7 +220,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		//Second query: Get all categories of each file page
 		$aPageIds = array_keys( $aReturn );
 		if( !empty( $aPageIds ) ) {
-			$oDbr = wfGetDB( DB_SLAVE );
+			$oDbr = wfGetDB( DB_REPLICA );
 			$oCatRes = $oDbr->select(
 				'categorylinks',
 				array( 'cl_from', 'cl_to' ),
@@ -234,7 +234,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		//Third query (for performance reasons we can not provide the full
 		//link to the user page here): get user_real_name
 		if( !empty( $aUserNames ) ) {
-			$oDbr = wfGetDB( DB_SLAVE );
+			$oDbr = wfGetDB( DB_REPLICA );
 			$oUserRes = $oDbr->select(
 				'user',
 				array( 'user_name', 'user_real_name' ),
@@ -256,7 +256,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	}
 
 	protected function fetchCaseInsensitive( $sQuery ) {
-		$oDbr = wfGetDB( DB_SLAVE );
+		$oDbr = wfGetDB( DB_REPLICA );
 
 		$aContidions = array(
 			'page_namespace' => NS_FILE,
@@ -284,7 +284,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	}
 
 	protected function fetchCaseSensitive( $sQuery ) {
-		$oDbr = wfGetDB( DB_SLAVE );
+		$oDbr = wfGetDB( DB_REPLICA );
 
 		$aContidions = array(
 			'page_namespace' => NS_FILE,

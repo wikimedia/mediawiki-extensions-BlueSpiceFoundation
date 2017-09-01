@@ -425,7 +425,7 @@ This is a stable release.
 * Compatibility: Removed deprecated editusercssjs right
 * Compatibility: Removed MediaWiki settings
 * Compatibility: Replaced the use of &$this
-* Compatibility: Replaced long deprecated DB_READ constant by DB_SLAVE
+* Compatibility: Replaced long deprecated DB_READ constant by DB_REPLICA
 * Components: Added possibility to add external links in UserSidebar
 * Components: Added BSTemplateHelper
 * Components: BS.store:LocalNamespaces - Fixed 'all' and 'main'
@@ -545,7 +545,7 @@ This is a stable release.
 * NamespaceManager: Fixed issue with delete options
 * PageAssignments: Added hook listener for user delete and group delete/rename.
 * PageAssignments: Move hooks to correct place in extension.json
-* PageAssignments: Replaced long deprecated DB_READ constant by DB_SLAVE
+* PageAssignments: Replaced long deprecated DB_READ constant by DB_REPLICA
 * PageTemplates: Added API unit test
 * PageTemplates: Refactoring PageTemplates
 * PageTemplates: Removed unneeded apihelp messages

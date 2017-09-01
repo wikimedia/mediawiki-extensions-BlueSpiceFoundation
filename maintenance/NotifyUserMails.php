@@ -61,7 +61,7 @@ function getUser( $sGivenUser ) {
 		}
 	}
 	
-	$oDbr = wfGetDB( DB_SLAVE );
+	$oDbr = wfGetDB( DB_REPLICA );
 	$rRes = $oDbr->select( 
 			'user',
 			array('user_id','user_name'), 

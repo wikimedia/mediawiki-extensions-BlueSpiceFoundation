@@ -46,7 +46,7 @@ class ConfirmUserEMail extends Maintenance {
 			}
 		}
 		
-		$oDbr = wfGetDB( DB_SLAVE );
+		$oDbr = wfGetDB( DB_REPLICA );
 		$rRes = $oDbr->select( 
 				'user',
 				array('user_id','user_name','user_email','user_email_authenticated'),

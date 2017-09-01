@@ -42,7 +42,7 @@ class ListUserEmails extends BSMaintenance {
 	}
 	
 	private function getUserData() {
-		$oDbr = wfGetDB( DB_SLAVE );
+		$oDbr = wfGetDB( DB_REPLICA );
 		$rRes = $oDbr->select( 
 			'user',
 			array(

@@ -160,7 +160,7 @@ class BsGroupHelper {
 	 * @return array Array of User objects
 	 */
 	public static function getUserInGroups( $aGroups ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		if ( !is_array( $aGroups ) ) {
 			$aGroups = array ( $aGroups );
 		}

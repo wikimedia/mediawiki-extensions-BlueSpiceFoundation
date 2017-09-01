@@ -99,7 +99,7 @@ function displayMPCResult( $aUserStore ) {
 }
 function getMPCUserValue( $aUserStore, $property, $filtervalue=false ) {
 	
-	$oDbr = wfGetDB( DB_SLAVE );
+	$oDbr = wfGetDB( DB_REPLICA );
 	
 	$iCounter = count($aUserStore);
 	for($i = 0; $i < $iCounter; $i++) {
@@ -139,7 +139,7 @@ function getMPCUser( $sGivenUser ) {
 		}
 	}
 	
-	$oDbr = wfGetDB( DB_SLAVE );
+	$oDbr = wfGetDB( DB_REPLICA );
 	$rRes = $oDbr->select( 
 			'user',
 			array('user_id','user_name'), 

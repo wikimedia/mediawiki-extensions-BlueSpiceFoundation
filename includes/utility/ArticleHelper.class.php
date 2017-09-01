@@ -51,7 +51,7 @@ class BsArticleHelper {
 			$iCount = $aData['iCount'];
 		} else {
 			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching discussion amounts from DB' );
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			// a new revision (rev_id) is also created on page move. So use rev_text_id
 			$res = $dbr->select(
 				'revision',
@@ -134,7 +134,7 @@ class BsArticleHelper {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'page_props',
 			array('pp_propname', 'pp_value'),

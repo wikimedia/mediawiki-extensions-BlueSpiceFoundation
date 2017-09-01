@@ -234,7 +234,7 @@ class BsCore {
 		}
 		if ( $options & BsPARAMTYPE::SQL_STRING ) {
 			if ( is_string( $handover ) ) {
-				$oDb = wfGetDB( DB_SLAVE );
+				$oDb = wfGetDB( DB_REPLICA );
 				// Use database specific escape methods
 				$handover = $oDb->strencode( $handover );
 

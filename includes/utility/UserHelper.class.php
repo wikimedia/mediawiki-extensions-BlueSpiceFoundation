@@ -17,7 +17,7 @@ class BsUserHelper {
 			wfProfileOut( 'BS::' . __METHOD__ );
 			return $aReturn;
 		}
-		$oDBr = wfGetDB( DB_SLAVE );
+		$oDBr = wfGetDB( DB_REPLICA );
 		$aCond = array(
 			'ug_group' => $aGroups
 		);

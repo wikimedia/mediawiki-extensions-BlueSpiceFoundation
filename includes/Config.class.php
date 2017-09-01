@@ -276,7 +276,7 @@ class BsConfig {
 			$aRows = $aData;
 		} else {
 			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from DB' );
-			$dbr = wfGetDB ( DB_SLAVE );
+			$dbr = wfGetDB ( DB_REPLICA );
 			# query the settings from bs_settings
 			$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
 			$aRows = array();
@@ -378,7 +378,7 @@ class BsConfig {
 	public static function getUsersForVar( $sKey, $vValue, $sSingleValFromMultiple = false, $bSerialized = true ) {
 
 		global $wgDBtype;
-		$oDb = wfGetDB ( DB_SLAVE );
+		$oDb = wfGetDB ( DB_REPLICA );
 		$aUsers = array ();
 
 		if ( $wgDBtype == 'oracle' ) {

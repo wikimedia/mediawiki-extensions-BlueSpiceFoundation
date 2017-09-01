@@ -7,7 +7,7 @@ class BSExportUsers extends BSMaintenance {
 		$oUsersNode = $oDOM->createElement( 'users' );
 		$oDOM->appendChild( $oUsersNode );
 
-		$dbr = $this->getDB( DB_SLAVE );
+		$dbr = $this->getDB( DB_REPLICA );
 		$res = $dbr->select( 'user', '*' );
 
 		foreach( $res as $row ) {

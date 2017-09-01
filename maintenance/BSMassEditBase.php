@@ -61,7 +61,7 @@ class BSMassEditBase extends BSMaintenance {
 	 * @return array of Title objects
 	 */
 	protected function getTitleList() {
-		$dbr = $this->getDB( DB_SLAVE );
+		$dbr = $this->getDB( DB_REPLICA );
 		$aTitles = array();
 
 		$res = $dbr->select( 'page', '*' );

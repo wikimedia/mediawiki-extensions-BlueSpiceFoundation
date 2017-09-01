@@ -26,7 +26,7 @@ class LCStore_BSDB implements LCStore {
 			if ( $this->writesDone ) {
 				$db = wfGetDB( DB_MASTER );
 			} else {
-				$db = wfGetDB( DB_SLAVE );
+				$db = wfGetDB( DB_REPLICA );
 			}
 
 			$res = $db->select( 'l10n_cache', array( 'lc_key', 'lc_value' ), array( 'lc_lang' => $code ), __METHOD__);

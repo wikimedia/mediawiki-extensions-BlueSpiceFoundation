@@ -32,7 +32,7 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 		$oResult = new stdClass();
 
 		$aCategories = array();
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		// category table also tracks all deleted categories. So we need to double
 		// check with categorylinks and page table. Use case for this is a category
 		// name that had a spelling mistake.

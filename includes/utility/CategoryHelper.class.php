@@ -9,7 +9,7 @@ class BsCategoryHelper {
 	public static function getCategories() {
 		$aReturn = array ();
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			array ( 'category' ),
 			array ( 'cat_id' )
