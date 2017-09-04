@@ -16,6 +16,9 @@
 		}
 	],
 	"require": {
+		"ext-curl": "*",
+		"ext-gd": "*",
+		"ext-tidy": "*",
 		"param-processor/param-processor": "~1.2"
 	},
 	"require-dev": {
