@@ -14,8 +14,6 @@ class BsGroupHelper {
 
 	protected static $aGroups = array();
 
-	private static $sTempGroup = '';
-
 	public static function getAvailableGroups( $aConf = array() ) {
 		$aBlacklist = array();
 
@@ -75,8 +73,10 @@ class BsGroupHelper {
 	 */
 	public static function addTempGroupToUser( $oUser, $sGroupName ) {
 
-		self::$sTempGroup = $sGroupName;
-		$oUser->addGroup( $sGroupName );
+		if( in_array( $sGroupName, $oUser->getEffectiveGroups() ) ) {
+			return true;
+		}
+		$oUser->addGroup( $sGroupName, wfTimestamp( TS_MW, time() + 60 ) );
 
 		return true;
 	}
@@ -113,45 +113,6 @@ class BsGroupHelper {
 					= $sGroupName;
 			}
 		}
-	}
-
-	/**
-	 * DEPRECATED!
-	 * Use GroupHelper::addTempGroupToUser and GroupHelper::addPermissionsToGroup
-	 * @deprecated since 2.23.1
-	 * @param User $oUser
-	 * @param String $sGroupName
-	 * @param Array $aPermissions
-	 * @param Title $oTitle
-	 * @return NULL
-	 */
-	public static function addTemporaryGroupToUser( $oUser, $sGroupName, $aPermissions, Title $oTitle = null ) {
-		//Deprecated, use GroupHelper::addTempGroupToUser and GroupHelper::addPermissionsToGroup
-
-		$aNamespaces = array();
-		if( !is_null($oTitle) ) {
-			$aNamespaces[] = $oTitle->getNamespace();
-		}
-
-		self::addPermissionsToGroup( $sGroupName, $aPermissions, $aNamespaces );
-		self::addTempGroupToUser($oUser, $sGroupName);
-	}
-
-	/**
-	 * Hook-Handler for MediaWiki hook UserAddGroup
-	 * @param User $user
-	 * @param String $group
-	 * @return boolean - returns false to skip saving group into db
-	 */
-	public static function addTemporaryGroupToUserHelper( $user, &$group ) {
-		if ( empty( self::$sTempGroup ) || self::$sTempGroup !== $group ) return true;
-		self::$sTempGroup = '';
-
-		//Mw 1.27 compatibility
-		$user->mGroups[] = $group;
-		$user->mGroups = array_unique( $user->mGroups );
-
-		return false;
 	}
 
 	/**

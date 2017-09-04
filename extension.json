@@ -413,7 +413,6 @@
 		"SkinTemplateOutputPageBeforeExec": "BsCoreHooks::onSkinTemplateOutputPageBeforeExec",
 		"SkinAfterContent": "BsCoreHooks::onSkinAfterContent",
 		"ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
-		"UserAddGroup": "BsGroupHelper::addTemporaryGroupToUserHelper",
 		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",
 		"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete",
 		"UnitTestsList": "BsCoreHooks::onUnitTestsList",
