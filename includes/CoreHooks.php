@@ -189,7 +189,9 @@ class BsCoreHooks {
 		foreach( $aData as $sItem ) {
 			$aNormalized[] = strtolower( $sItem );
 		}
-		return array_unique( $aNormalized );
+		return array_values(
+			array_unique( $aNormalized )
+		);
 	}
 
 	/**
