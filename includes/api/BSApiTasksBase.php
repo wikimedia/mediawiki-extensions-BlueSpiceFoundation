@@ -171,6 +171,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 			if( $mFieldValue === null ) {
 				continue; //MW Api doesn't like NULL values
 			}
+
+			//Remove empty 'errors' array from respons as mw.Api in MW 1.30+
+			//will interpret this field as indicator for a failed request
+			if( $sFieldName === 'errors' && empty( $mFieldValue ) ) {
+				continue;
+			}
 			$this->getResult()->addValue(null, $sFieldName, $mFieldValue);
 		}
 	}
