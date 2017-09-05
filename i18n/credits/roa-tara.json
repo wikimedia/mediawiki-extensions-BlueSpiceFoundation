@@ -4,6 +4,10 @@
 			"Joetaras"
 		]
 	},
+	"specialcredits": "Credite BlueSpice",
+	"bs-credits-programmers": "Programmature",
+	"bs-credits-dnt": "Proggettazzione e test",
+	"bs-credits-contributors": "Condrebbutore",
 	"bs-credits-translators": "Tradutture",
 	"bs-credits-translation": "Traduzione",
 	"bs-credits-th": "Grazie a tutte le tradutture da $1."
