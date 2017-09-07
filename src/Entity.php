@@ -30,7 +30,7 @@ namespace BlueSpice;
 use BlueSpice\Content\Entity as EntityContent;
 
 abstract class Entity implements \JsonSerializable {
-	const NS = '';
+	const NS = -1;
 	protected static $aEntitiesByID = array();
 	protected $bUnsavedChanges = true;
 
@@ -353,7 +353,7 @@ abstract class Entity implements \JsonSerializable {
 		if( static::hasCacheEntry( $oInstance->getID() ) ) {
 			return $oInstance;
 		}
-		static::$aEntitiesByID[$oInstance->getID()] = $oInstance;
+		static::$aEntitiesByID[static::NS][$oInstance->getID()] = $oInstance;
 		return $oInstance;
 	}
 
@@ -366,7 +366,7 @@ abstract class Entity implements \JsonSerializable {
 		if( !static::hasCacheEntry($oInstance->getID()) ) {
 			return $oInstance;
 		}
-		unset( static::$aEntitiesByID[$oInstance->getID()] );
+		unset( static::$aEntitiesByID[static::NS][$oInstance->getID()] );
 		return $oInstance;
 	}
 
@@ -379,11 +379,11 @@ abstract class Entity implements \JsonSerializable {
 		if( !static::hasCacheEntry( $iID ) ) {
 			return null;
 		}
-		return static::$aEntitiesByID[(int) $iID];
+		return static::$aEntitiesByID[static::NS][(int) $iID];
 	}
 
 	protected static function hasCacheEntry( $iID ) {
-		return isset( static::$aEntitiesByID[(int) $iID] );
+		return isset( static::$aEntitiesByID[static::NS][(int) $iID] );
 	}
 
 	/**
