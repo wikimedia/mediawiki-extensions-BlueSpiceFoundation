@@ -9,8 +9,10 @@ class BsFileSystemHelper {
 	 */
 	public static function ensureCacheDirectory($sSubDirName = '') {
 		wfProfileIn(__METHOD__);
-		if (self::hasTraversal($sSubDirName))
+		if ( self::hasTraversal( $sSubDirName ) ) {
+			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
+		}
 		if (!empty($sSubDirName) && !preg_match('#^[a-zA-Z/\\\]+#', $sSubDirName)) {
 			wfProfileOut(__METHOD__);
 			return Status::newFatal('Requested subdirectory of ' . BS_CACHE_DIR . ' contains illegal chars');
@@ -45,8 +47,10 @@ class BsFileSystemHelper {
 	 */
 	public static function ensureDataDirectory($sSubDirName = '') {
 		wfProfileIn(__METHOD__);
-		if (self::hasTraversal($sSubDirName))
+		if ( self::hasTraversal( $sSubDirName ) ) {
+			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
+		}
 		if (!empty($sSubDirName) && !preg_match('#^[a-zA-Z/\\\]+#', $sSubDirName)) {
 			wfProfileOut(__METHOD__);
 			return Status::newFatal('Requested subdirectory of ' . BS_DATA_DIR . ' contains illegal chars');
@@ -84,8 +88,10 @@ class BsFileSystemHelper {
 	public static function saveToCacheDirectory($sFileName, $data, $sSubDirName = '') {
 		wfProfileIn(__METHOD__);
 		$oStatus = self::ensureCacheDirectory($sSubDirName);
-		if (self::hasTraversal($sSubDirName . DS . $sFileName))
+		if ( self::hasTraversal( $sSubDirName . DS . $sFileName ) ) {
+			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
+		}
 		if (!$oStatus->isGood()) {
 			wfProfileOut(__METHOD__);
 			return $oStatus;
@@ -109,8 +115,10 @@ class BsFileSystemHelper {
 	public static function saveToDataDirectory($sFileName, $data, $sSubDirName = '') {
 		wfProfileIn(__METHOD__);
 		$oStatus = self::ensureDataDirectory($sSubDirName);
-		if (self::hasTraversal($sSubDirName . DS . $sFileName))
+		if ( self::hasTraversal( $sSubDirName . DS . $sFileName ) ) {
+			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
+		}
 		if (!$oStatus->isGood()) {
 			wfProfileOut(__METHOD__);
 			return $oStatus;
