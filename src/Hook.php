@@ -85,10 +85,22 @@ abstract class Hook {
 	}
 
 	public function process() {
+		if( $this->skipProcessing() ) {
+			return true;
+		}
+
 		\Profiler::instance()->scopedProfileIn( "Hook ". __METHOD__ );
 		$result = $this->doProcess();
 		return $result;
 	}
 
 	protected abstract function doProcess();
+
+	/**
+	 * Allow subclasses to define a skip condition
+	 * @return boolean
+	 */
+	protected function skipProcessing() {
+		return false;
+	}
 }
