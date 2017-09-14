@@ -20,5 +20,11 @@
 	"bs-upload-descfilelabel": "描述",
 	"bs-upload-error-long": "上传过程中发生错误",
 	"bs-upload-filetypenotsupported": "文件类型不受支持",
-	"bs-upload-details": "详情"
+	"bs-upload-details": "详情",
+	"bs-upload-uploadwarningdialog-title": "上传文件：警告",
+	"bs-upload-uploadwarningdialog-intro": "在尝试上传文件期间发生以下警告",
+	"bs-upload-uploadwarningdialog-outro": "点击“{{int:bs-extjs-ok}}”忽略警告并上传文件，点击“{{int:bs-extjs-cancel}}”返回上传表单",
+	"bs-upload-uploadwarningdialog-warning-exists": "名为“$1”的文件已存在",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "这里有与该文件{{PLURAL:$1|重复的}}文件",
+	"bs-upload-uploadwarningdialog-warning-unknown": "未知警告，代码“$1”"
 }

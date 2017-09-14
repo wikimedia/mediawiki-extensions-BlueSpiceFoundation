@@ -18,5 +18,11 @@
 	"bs-upload-descfilelabel": "설명",
 	"bs-upload-error-long": "업로드 처리 오류",
 	"bs-upload-filetypenotsupported": "파일 형식은 지원되지 않습니다",
-	"bs-upload-details": "자세한 사항"
+	"bs-upload-details": "자세한 사항",
+	"bs-upload-uploadwarningdialog-title": "파일 업로드: 경고",
+	"bs-upload-uploadwarningdialog-intro": "파일 업로드를 시도하는 동안 다음의 경고가 발생했습니다",
+	"bs-upload-uploadwarningdialog-outro": "경고를 무시하고 파일을 업로드하려면 \"{{int:bs-extjs-ok}}\"를 클릭하시고, 업로드 양식으로 돌아가려면 \"{{int:bs-extjs-cancel}}\"를 클릭하십시오",
+	"bs-upload-uploadwarningdialog-warning-exists": "\"$1\" 이름으로 된 파일이 이미 존재합니다",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "이 파일의 {{PLURAL:$1|중복}}이 있습니다",
+	"bs-upload-uploadwarningdialog-warning-unknown": "\"$1\" 코드의 알 수 없는 경고"
 }

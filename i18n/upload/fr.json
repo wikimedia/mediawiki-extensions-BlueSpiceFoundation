@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Urhixidur"
+			"Urhixidur",
+			"Wladek92"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Téléverser le fichier",
@@ -20,5 +21,7 @@
 	"bs-upload-descfilelabel": "Description",
 	"bs-upload-error-long": "Erreur dans le processus de téléversement",
 	"bs-upload-filetypenotsupported": "Le type de fichier n’est pas pris en charge",
-	"bs-upload-details": "Détails"
+	"bs-upload-details": "Détails",
+	"bs-upload-uploadwarningdialog-title": "Téléversement de fichier : avertissements",
+	"bs-upload-uploadwarningdialog-warning-exists": "Un fichier existe déja avec le nom « $1 »"
 }

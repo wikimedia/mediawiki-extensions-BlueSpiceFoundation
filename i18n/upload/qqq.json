@@ -24,7 +24,7 @@
 	"bs-upload-details": "Label for a fieldset holding additional fields\n{{Identical|Detail}}",
 	"bs-upload-uploadwarningdialog-title": "Title of an dialog window that contains warnings",
 	"bs-upload-uploadwarningdialog-intro": "Text above a list of warnings",
-	"bs-upload-uploadwarningdialog-outro": "Text below a list of warnings\n{{Identical|Bs-extjs-ok}}\n{{Identical|Bs-extjs-cancel}}",
+	"bs-upload-uploadwarningdialog-outro": "Text below a list of warnings",
 	"bs-upload-uploadwarningdialog-warning-exists": "Error message that a file with the same name already exists\n\nParameters:\n* $1 - a file name",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "Intro text to a list of duplicate files\n\nParameters:\n* $1 - number of duplicates",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Error message for a unknown warning code\n\nParameters:\n* $1 - a string code"

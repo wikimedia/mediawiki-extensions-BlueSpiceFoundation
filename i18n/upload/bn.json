@@ -20,5 +20,6 @@
 	"bs-upload-descfilelabel": "বিবরণ",
 	"bs-upload-error-long": "আপলোড প্রক্রিয়াকরণে ত্রুটি",
 	"bs-upload-filetypenotsupported": "ফাইলের ধরন সমর্থিত নয়",
-	"bs-upload-details": "বিস্তারিত"
+	"bs-upload-details": "বিস্তারিত",
+	"bs-upload-uploadwarningdialog-title": "আপলোড ফাইল: সতর্কতা"
 }
