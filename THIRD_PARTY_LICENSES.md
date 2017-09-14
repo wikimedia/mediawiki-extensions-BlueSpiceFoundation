@@ -22,6 +22,7 @@ Images
 | [Famfamfam Flag Icons](http://www.famfamfam.com/lab/icons/flags/) | Mark James | - | Public Domain |
 | [Function Icons](http://www.wefunction.com) | Liam McKay | - | Free for commercial use (Include link to package) |
 | [PC 100 Icon Pack](http://pc.de/) | PC.de | - | [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| [Microsoft Office 2013 logos lineup](https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logos_lineup.svg) | Microsoft | 17:43, 21 January 2017 | Public Domain |
 
 Fonts
 -----
