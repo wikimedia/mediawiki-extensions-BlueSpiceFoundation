@@ -1,14 +1,22 @@
 Ext.define ( 'BS.panel.Upload', {
 	extend: 'Ext.form.Panel',
 	requires: [
-		'BS.form.action.MediaWikiApiCall', 'BS.store.BSApi',
-		'BS.form.CategoryBoxSelect'
+		'BS.store.BSApi', 'BS.form.CategoryBoxSelect',
+		'BS.dialog.UploadWarnings'
 	],
 	fileUpload: true,
 	layout: {
 		type: 'vbox',
 		align: 'stretch'
 	},
+
+	/* Component specific */
+	defaultFileNamePrefix: '',
+	defaultCategories: [],
+	defaultDescription: '',
+	implicitFileNamePrefix: '',
+	implicitCategories: [],
+	implicitDescription: '',
 
 	initComponent: function(){
 
@@ -22,7 +30,6 @@ Ext.define ( 'BS.panel.Upload', {
 			validateOnChange: true,
 			clearOnSubmit: false,
 			msgTarget: 'under'
-
 		});
 
 		this.fuFile.on( 'change', this.fuFileChange, this);
@@ -31,9 +38,8 @@ Ext.define ( 'BS.panel.Upload', {
 			fieldLabel: mw.message('bs-upload-uploaddestfilelabel').plain(),
 			id: this.getId()+'-filename',
 			/*jshint ignore:start */
-			maskRe: new RegExp( /[^\/\?\*\"\#\<\>\|\ö\ä\ü\Ö\Ä\Ü\á\à\â\é\è\ê\ú\ù\û\ó\ò\ô\Á\À\Â\É\È\Ê\Ú\Ù\Û\Ó\Ò\Ô\ß\\]/gmi ),
+			maskRe: new RegExp( /[^\/\?\*\"\#\<\>\|\ö\ä\ü\Ö\Ä\Ü\á\à\â\é\è\ê\ú\ù\û\ó\ò\ô\Á\À\Â\É\È\Ê\Ú\Ù\Û\Ó\Ò\Ô\ß\\]/gmi )
 			/*jshint ignore:end */
-			name: 'filename'
 		});
 
 		this.tfFileName.on( 'change', this.tfFileNameChange, this);
@@ -45,14 +51,6 @@ Ext.define ( 'BS.panel.Upload', {
 			submitValue: false
 		});
 
-		//This hidden field will store the combined data of this.storeLicenses,
-		//this.taDescription and this.bsCategories on submit
-		this.hfText = new Ext.form.field.Hidden({
-			id: this.getId()+'-text',
-			value: '',
-			name: 'text'
-		});
-
 		this.storeLicenses = new BS.store.BSApi({
 			apiAction: 'bs-upload-license-store',
 			fields: ['text', 'value', 'indent'],
@@ -61,11 +59,6 @@ Ext.define ( 'BS.panel.Upload', {
 
 		this.cbLicenses = new Ext.form.ComboBox({
 			fieldLabel: mw.message('bs-upload-license').plain(),
-			//autoSelect: true,
-			//forceSelection: true,
-			//typeAhead: true,
-			//triggerAction: 'all',
-			//lazyRender: true,
 			mode: 'local',
 			store: this.storeLicenses,
 			valueField: 'value',
@@ -109,8 +102,10 @@ Ext.define ( 'BS.panel.Upload', {
 		this.bsCategories = new BS.form.CategoryBoxSelect({
 			id: this.getId()+'categories',
 			fieldLabel: mw.message('bs-upload-categories').plain(),
-			submitValue: false
+			submitValue: false,
+			showTreeTrigger: true
 		});
+		this.bsCategories.setValue( this.defaultCategories );
 
 		this.fsDetails = new Ext.form.FieldSet({
 			title: mw.message('bs-upload-details').plain(),
@@ -130,7 +125,6 @@ Ext.define ( 'BS.panel.Upload', {
 		];
 
 		var detailsItems = [
-			this.hfText,
 			this.bsCategories,
 			this.taDescription,
 			this.cbLicenses,
@@ -144,18 +138,18 @@ Ext.define ( 'BS.panel.Upload', {
 
 		this.items = this.panelItems;
 
-		this.addEvents( 'uploadcomplete' );
+		this.addEvents( 'upload-complete' );
 
 		this.callParent(arguments);
-
 	},
 
 
-	fuFileChange: function(field, value, eOpts){
+	fuFileChange: function( field, value, eOpts ) {
 		//Remove path info
-		value = value.replace(/^.*?([^\\\/:]*?\.[a-z0-9]+)$/img, "$1");
-		value = value.replace(/\s/g, "_");
-		if( mw.config.get('bsIsWindows') ) {
+		value = value.replace( /^.*?([^\\\/:]*?\.[a-z0-9]+)$/img, "$1" );
+		value = this.defaultFileNamePrefix + value;
+		value = value.replace( /\s/g, "_" );
+		if( mw.config.get( 'bsIsWindows' ) ) {
 			//replace non-ASCII
 			var matcher = /[öäüÖÄÜáàâéèêúùûóòôÁÀÂÉÈÊÚÙÛÓÒÔß]/g;
 			var dictionary = {
@@ -178,18 +172,18 @@ Ext.define ( 'BS.panel.Upload', {
 			value = value.replace( matcher, translator );
 			value = value.replace( /[^\u0000-\u007F]/gmi, '' ); //Replace remaining Non-ASCII
 		}
-		//apply value without 'C:\fakepath\' to file filed as well
-		field.setRawValue(value);
+		//apply value without 'C:\fakepath\' to file field as well
+		field.setRawValue( value );
 
-		this.tfFileName.setValue(value);
-		this.tfFileName.fireEvent('change', this.tfFileName, value);
+		this.tfFileName.setValue( value );
+		this.tfFileName.fireEvent( 'change', this.tfFileName, value );
 
 	},
 
-	tfFileNameChange: function(sender, newValue, oldValue, eOpts){
-		var Api = new mw.Api();
+	tfFileNameChange: function( sender, newValue, oldValue, eOpts ) {
+		var api = new mw.Api();
 		var me = this;
-		Api.get({
+		api.get({
 			action: 'query',
 			format: 'json',
 			titles: 'File:' + newValue,
@@ -212,7 +206,7 @@ Ext.define ( 'BS.panel.Upload', {
 				},
 				{
 					ok: function() {
-						me.cbxWarnings.setValue(true);
+						me.cbxWarnings.setValue( true );
 					},
 					scope: me
 				}
@@ -234,196 +228,114 @@ Ext.define ( 'BS.panel.Upload', {
 		return true;
 	},
 
-	//PW(12.03.2015) TODO: Make a second ajax request to edit file description
-	//(text), cause mediawiki api for action upload does not allow to change an
-	//existing text while uploading.
 	uploadFile: function( sessionKeyForReupload ) {
-		var desc = this.taDescription.getValue();
-		var license = this.cbLicenses.getValue();
-		if( license ) {
-			desc += license + "\n";
-		}
-
-		var categories = this.bsCategories.getValue();
-		var formattedNamespaces = mw.config.get('wgFormattedNamespaces');
-		for( var i = 0; i < categories.length; i++ ) {
-			var categoryLink = new bs.wikiText.Link({
-				title: categories[i].ucFirst(),
-				nsText: formattedNamespaces[bs.ns.NS_CATEGORY],
-				link: false //TDOD: fix this in "bs.wikiText.Link"
-			});
-			desc += "\n" + categoryLink.toString();
-		}
-		this.hfText.setValue(desc);
-
-		this.cbLicenses.disable(); //To prevent the form from submitting a generated name
-
 		var params = {
-			action: 'upload',
-			token: mw.user.tokens.get('editToken'),
-			//IE9 has an issue with this API call returnug a application/json
-			//content-type. Therefore we let the server return a "text/xml"
-			//content-type header
-			//HINT: http://stackoverflow.com/questions/18571719/extjs-file-uploading-error-on-ie8-ie9
-			format: 'xml'
+			filename: this.makeFileName(),
+			watchlist: this.cbxWatch.getValue() ? 'watch' : 'nochange',
+			ignorewarnings: this.cbxWarnings.getValue(),
+			text: this.makeFilePageText()
 		};
 
+		var me = this;
+		var api = new mw.Api();
+		var promise = null;
+
 		if( sessionKeyForReupload ) {
-			params.sessionkey = sessionKeyForReupload;
+			params.action = 'upload';
+			params.filekey = sessionKeyForReupload;
+			promise = api.postWithEditToken( params );
+		}
+		else {
+			promise = api.upload( this.fuFile.fileInputEl.dom, params );
 		}
 
-		this.getForm().doAction( Ext.create('BS.form.action.MediaWikiApiCall', {
-			form: this.getForm(), //Required
-			url: mw.util.wikiScript('api'),
-			params: params,
-			success: this.onUploadSuccess,
-			failure: this.onUploadFailure,
-			scope: this
-		}));
+		promise.done( function() {
+			me.onUploadSuccess.apply( me, arguments );
+		} )
+		.fail( function( errorcode, response ) {
+			/* When sending "ignorewarnings" MW API still calls "fail" */
+			if( response.upload.result === 'Success' ) {
+				me.onUploadSuccess.apply( me, [ response ] );
+			}
+			else {
+				me.onUploadFailure.apply( me, arguments );
+			}
+		} );
 
-		//We mask only the FormPanel, because masking the whole document using
-		// "waitMsg" param on MediaWikiApiCall does no automatic unmasking.
-		//This is because MediaWikiApiCall overrides the onSuccess/onFailure
-		//methods of action "Submit"
+		//TODO: Better mask whole document?
 		this.getEl().mask(
-			mw.message('bs-upload-upload-waitmessage').plain(),
+			mw.message( 'bs-upload-upload-waitmessage' ).plain(),
 			Ext.baseCSSPrefix + 'mask-loading'
 		);
 	},
 
-	onUploadSuccess: function( response, action ) {
-		this.getEl().unmask();
-		this.cbLicenses.enable();
-
-		var errorTag = response.responseXML
-			.documentElement.getElementsByTagName('error').item(0);
-
-		if( errorTag !== null ) {
-			//Mw API only renders un-localized windows-nonascii-filename
-			if( errorTag.getAttribute('invalidparameter') === "filename" ) {
-				if( errorTag.getAttribute('info').indexOf('windows-nonascii-filename') >= 0 ) {
-					bs.util.alert(
-						this.getId()+'-error', {
-							title: mw.message('bs-upload-error').plain(),
-							text: mw.message('windows-nonascii-filename').plain()
-						}
-					);
-					return;
-				}
-			}
-			bs.util.alert(
-				this.getId()+'-error',
-				{
-					title: mw.message('bs-upload-error').plain(),
-					text: errorTag.getAttribute('info')
-				}
-			);
-
+	onUploadSuccess: function( response ) {
+		var me = this;
+		var pageText = this.makeFilePageText();
+		/*
+		 * 'pageText' consists of chosen categories, chosen licence and provided
+		 * description text. If it is not empty - which means the user has set
+		 * at least one of those fields - we need to edit the file description
+		 * page after a successfull upload. Because otherwise such things as
+		 * categories would not be persisted in case of a re-upload.
+		 */
+		if( pageText === '' ) {
+			this.fireEvent( 'upload-complete', me, response.upload );
+			this.resetDialog();
 			return;
 		}
 
-		//As we process XML instead of JSON (see reason above) we have to
-		//create a suitable JS object from the XML response to be compatible
-		var uploadTag = response.responseXML
-			.documentElement.getElementsByTagName('upload').item(0);
+		var filePageEditApi = new mw.Api();
+		filePageEditApi.postWithEditToken({
+			action: 'edit',
+			title: 'File:' + response.upload.filename,
+			text: pageText
+		})
+		.then( function() {
+			me.fireEvent( 'upload-complete', me, response.upload );
+			me.resetDialog();
+		});
 
-		var imageinfoTag = uploadTag.getElementsByTagName('imageinfo').item(0);
-
-		var warningsTag = uploadTag.getElementsByTagName('warnings').item(0);
-		if( warningsTag !== null && imageinfoTag === null ) {
-			var duplicate = warningsTag.getElementsByTagName('duplicate');
-			if( duplicate === null ) {
-				duplicate = [];
-			}
-
-			var secondaryWarnings = [];
-			if( warningsTag.getAttribute('exists-normalized') ) {
-				secondaryWarnings.push( warningsTag.getAttribute('exists-normalized') );
-			}
-			if( warningsTag.getAttribute('exists') ) {
-				secondaryWarnings.push( warningsTag.getAttribute('exists') );
-			}
-
-			if( duplicate.length > 0 || secondaryWarnings.length > 0 ) {
-				var dupUrls = [];
-				$.each(duplicate, function() {
-					dupUrls.push( "File:"+this.textContent );
-				});
-
-				$.each(secondaryWarnings, function( idx, filename ) {
-					dupUrls.push( "File:"+filename );
-				});
-				this.duplicateWarning({
-					titles: dupUrls
-				});
-				return;
-			}
-			// Unknown warnings
-			bs.util.alert(
-				this.getId()+'-warning',
-				{
-					title: mw.message('bs-upload-error').plain(),
-					text: $(warningsTag).html()
-				}
-			);
-			return;
-		}
-
-		var imageinfo = {};
-		if( imageinfoTag.attributes ) {
-			for( var i = 0; i < imageinfoTag.attributes.length; i++ ) {
-				var attribute = imageinfoTag.attributes.item(i);
-				imageinfo[attribute.nodeName] = attribute.nodeValue;
-			}
-		}
-		var upload = {
-			result: uploadTag.getAttribute('result'),
-			filename: uploadTag.getAttribute('filename'),
-			imageinfo: imageinfo
-		};
-
-		this.fireEvent( 'upload-complete', this, upload );
-		//walkaround for reseting fuFile Field
-		this.fuFile.setRawValue('');
-		this.getForm().reset();
 	},
 
-	onUploadFailure: function( response, action ) {
-		//This would only happen when a server error occurred but not when the
-		//MediaWiki API returns an JSON encoded error
-		this.getEl().unmask();
-		this.getForm().reset();
-		this.cbLicenses.enable();
-		//walkaround for reseting fuFile Field
-		this.fuFile.setRawValue('');
-		bs.util.alert(
-				this.getId()+'-error',
-				{
-					title: mw.message('bs-upload-error').plain(),
-					text: mw.message('bs-upload-error-long').plain()
-				}
-			);
+	onUploadFailure: function( errorcode, response ) {
+		var upload = response.upload;
+		if( upload.error ) {
+			return this.handleError( upload );
+		}
 
+		if( upload.warnings && !upload.imageinfo ) {
+			return this.handleWarnings( upload );
+		}
+
+		bs.util.alert(
+			this.getId() + '-error',
+			{
+				title: mw.message( 'bs-upload-error' ).plain(),
+				text: mw.message( 'bs-upload-error-long' ).plain()
+			},
+			{
+				ok: this.resetDialog,
+				scope: this
+			}
+		);
 	},
 
 	//scope: "this" == fuFile
 	validateFile: function( value ) {
 		if( value === "" ) return true;
-		var me = this.up('form');
+		var me = this.up( 'form' );
 		var nameParts = value.split('.');
 		var fileExtension = nameParts[nameParts.length-1].toLowerCase();
 		var extensionFound = false;
 
-		for (i = 0; i<me.allowedFileExtensions.length; i++){
-
-			if (me.allowedFileExtensions[i].toLowerCase() === fileExtension.toLowerCase()){
-
+		for ( var i = 0; i < me.allowedFileExtensions.length; i++ ) {
+			if ( me.allowedFileExtensions[i].toLowerCase() === fileExtension.toLowerCase() ) {
 				extensionFound = true;
-
 				break;
 			}
 		}
-		if(!extensionFound){
+		if( !extensionFound ){
 			return mw.message('bs-upload-filetypenotsupported').plain();
 		}
 
@@ -434,49 +346,81 @@ Ext.define ( 'BS.panel.Upload', {
 		return true;
 	},
 
-	duplicateWarning: function( params ) {
-		var Api = new mw.Api();
-		var me = this;
-		params = $.extend({
-			action: 'query',
-			format: 'json',
-			titles: [],
-			prop: 'imageinfo',
-			iiprop: 'url|uploadwarning',
-			iiurlwidth: 64,
-			indexpageids: ''
-		}, params);
-		params.titles = params.titles.join('|');
+	makeFilePageText: function() {
+		var desc = this.implicitDescription;
+		desc += this.taDescription.getValue();
 
-		Api.get(params).done( function ( response ) {
-			var text = '';
-			var count = 0;
-			for( var i in response.query.pages ) {
-				if( i < 0 ) {
-					continue;
-				}
-				count ++;
-				var href = response.query.pages[i].imageinfo[0].descriptionurl;
-				var src = response.query.pages[i].imageinfo[0].thumburl;
-				var title = response.query.pages[i].title;
-				text += "<div class='thumbinner' style='width:62px; float:left'><a target='_blank' class='image' href="+href+" title="+title+"><img src='"+src+"' /></a></div>";
+		var license = this.cbLicenses.getValue();
+		if( license ) {
+			desc += license + "\n";
+		}
+
+		var categories = this.bsCategories.getValue();
+		categories = categories.concat( this.implicitCategories );
+		var formattedNamespaces = mw.config.get('wgFormattedNamespaces');
+		for( var i = 0; i < categories.length; i++ ) {
+			var categoryLink = new bs.wikiText.Link({
+				title: categories[i].ucFirst(),
+				nsText: formattedNamespaces[bs.ns.NS_CATEGORY],
+				link: false //TODO: fix this in "bs.wikiText.Link"
+			});
+			desc += "\n" + categoryLink.toString();
+		}
+
+		return desc;
+	},
+
+	handleError: function( upload ) {
+		var text = upload.error.info;
+
+		//Mw API only renders un-localized windows-nonascii-filename
+		if( upload.error.invalidparameter === "filename" ) {
+			if( upload.error.info === 'windows-nonascii-filename' ) {
+				text = mw.message( 'windows-nonascii-filename' ).plain();
 			}
+		}
 
-			bs.util.alert(
-				me.getId()+'-existswarning',
-				{
-					titleMsg: 'bs-extjs-title-warning',
-					text: mw.message('file-exists-duplicate',count).text() + '<br /><div style="clear:both">' + text + '</div>'
-				},
-				{
-					ok: function() {
-						//User is noticed. Now let's set the
-						//ignore warnings flag automatically
-						me.cbxWarnings.setValue(true);
-					},
-					scope: me
-				}
-			);
+		bs.util.alert(
+			this.getId()+'-error',
+			{
+				title: mw.message( 'bs-upload-error' ).plain(),
+				text: text
+			},
+			{
+				ok: this.resetDialog,
+				scope: this
+			}
+		);
+	},
+
+	handleWarnings: function( upload ) {
+		var warnDlg = new BS.dialog.UploadWarnings( {
+			id: this.getId()+'-warning',
+			apiUpload: upload
 		});
+
+		warnDlg.on( 'ok', function( sender, response ) {
+			this.cbxWarnings.setValue( true );
+			this.uploadFile( upload.filekey );
+		}, this );
+		warnDlg.on( 'cancel', function() {
+			this.getEl().unmask();
+		}, this );
+
+		warnDlg.show();
+	},
+
+	resetDialog: function() {
+		this.getEl().unmask();
+		this.getForm().reset(); //workaround for resetting fuFile field
+		this.fuFile.setRawValue('');
+	},
+
+	makeFileName: function() {
+		var fileName =
+			this.implicitFileNamePrefix +
+			this.tfFileName.getValue();
+
+		return fileName;
 	}
 });
