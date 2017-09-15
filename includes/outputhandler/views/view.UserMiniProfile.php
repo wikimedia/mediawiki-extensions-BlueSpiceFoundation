@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+use BlueSpice\DynamicFileDispatcher\Params;
 /**
  * This class provides a miniprofile for users.
  * @package BlueSpice_AdapterMW
@@ -27,11 +30,22 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			? array_merge( $this->aDefaultClasses, $this->mOptions['classes'] )
 			: $this->aDefaultClasses;
 
+		$params = array_merge( $this->mOptions, [
+			Params::MODULE => 'userprofileimage',
+			'username' => $this->mOptions['user']->getName(),
+		]);
+		$dfdUrlBuilder = MediaWikiServices::getInstance()->getService(
+			'DynamicFileDispatcherUrlBuilder'
+		);
+		$url = $dfdUrlBuilder->build(
+			new Params( $params )
+		);
+
 		$aOut = array();
 		$aOut[] = '<div class="'.  implode( ' ', $aClasses ).'" title="'.$this->mOptions['userdisplayname'].'">';
 		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' :'<a class="bs-block" href="'.$this->mOptions['linktargethref'].'">';
 		$aOut[] =   '<img alt="'.$this->mOptions['userdisplayname'].'"';
-		$aOut[] =        'src="'.$this->mOptions['userimagesrc'].'"';
+		$aOut[] =        'src="'.$url.'"';
 		$aOut[] =        'width="'.$this->mOptions['width'].'"';
 		if ( BsConfig::get( 'MW::MiniProfileEnforceHeight' ) ) {
 			$aOut[] =        'height="'.$this->mOptions['height'].'"';
@@ -41,15 +55,6 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$aOut[] = '</div>';
 
 		$sOut = implode( "\n", $aOut );
-
-		$oSecureFileStore = BsExtensionManager::getExtension(
-			'SecureFileStore'
-		);
-		// CR RBV (03.06.11 08:39): Hook/Event!
-		//TODO: Remove, when SecureFileStore is finally removed
-		if ( $oSecureFileStore ) {
-			$sOut = SecureFileStore::secureFilesInText( $sOut );
-		}
 
 		return $sOut;
 	}
@@ -97,11 +102,13 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		}
 
 		if( empty( $this->mOptions['userimagesrc'] ) ) {
-			$this->mOptions['userimagesrc'] = BsConfig::get( 'MW::DefaultUserImage' );
+			$this->mOptions['userimagesrc'] = $GLOBALS['wgScriptPath']
+				."/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-user-default-image.png";
 		}
 
 		if ( $oUser->isAnon() ) {
-			$this->mOptions['userimagesrc'] = BsConfig::get( 'MW::AnonUserImage' );
+			$this->mOptions['userimagesrc'] = $GLOBALS['wgScriptPath']
+				."/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-user-anon-image.png";
 			$this->mOptions['linktargethref'] = '';
 		} else {
 			$sUserImageName = BsConfig::getVarForUser( 'MW::UserImage', $oUser );

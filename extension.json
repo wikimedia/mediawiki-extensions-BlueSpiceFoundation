@@ -11,6 +11,9 @@
 	"ExtensionFunctions": [
 		"BsCoreHooks::setup"
 	],
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"SpecialPages": {
 		"SpecialCredits": "SpecialCredits"
 	},
@@ -456,6 +459,11 @@
 		},
 		"ConfigFiles": {
 			"value": []
+		},
+		"DynamicFileRegistry": {
+			"value": {
+				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage"
+			}
 		}
 	},
 	"ConfigRegistry": {

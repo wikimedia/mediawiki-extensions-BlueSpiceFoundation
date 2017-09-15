@@ -460,7 +460,7 @@ class BsFileSystemHelper {
 				return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-unsupported-type' ) );
 		}
 
-		$iNewWidth = $iNewHeight = BsConfig::get('MW::Avatars::DefaultSize');
+		$iNewWidth = $iNewHeight = 1024;
 		$fRatio = $iWidth / $iHeight;
 		if ($fRatio < 1) {
 			$iNewWidth = $iNewHeight * $fRatio; # portrait
