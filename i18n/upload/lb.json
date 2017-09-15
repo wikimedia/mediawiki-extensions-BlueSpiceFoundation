@@ -19,5 +19,11 @@
 	"bs-upload-descfilelabel": "Beschreiwung",
 	"bs-upload-error-long": "Feeler beim Eropluede vum Fichier",
 	"bs-upload-filetypenotsupported": "Typ vu Fichier gëtt net ënnerstëtzt",
-	"bs-upload-details": "Detailer"
+	"bs-upload-details": "Detailer",
+	"bs-upload-uploadwarningdialog-title": "Fichier eroplueden: Warnungen",
+	"bs-upload-uploadwarningdialog-intro": "Dës Warnunge gouf et beim Versuch de Fichier eropzelueden",
+	"bs-upload-uploadwarningdialog-outro": "Klickt op \"{{int:bs-extjs-ok}}\" fir d'Warnungen z'ignoréieren an de Fichier eropzelueden, klickt \"{{int:bs-extjs-cancel}}\" fir zréck ze goen op de Formulaire vum Eroplueden",
+	"bs-upload-uploadwarningdialog-warning-exists": "Et gëtt schonn e Fichier mam Numm \"$1\"",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Et gëtt {{PLURAL:$1|een Doublon|Doublone}} vun dësem Fichier",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Onbekannt Warnung mam Code \"$1\""
 }

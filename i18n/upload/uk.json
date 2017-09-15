@@ -19,5 +19,11 @@
 	"bs-upload-descfilelabel": "Опис",
 	"bs-upload-error-long": "Помилка в процесі завантаження",
 	"bs-upload-filetypenotsupported": "Тип файлу не підтримується",
-	"bs-upload-details": "Деталі"
+	"bs-upload-details": "Деталі",
+	"bs-upload-uploadwarningdialog-title": "Завантажити файл: Попередження",
+	"bs-upload-uploadwarningdialog-intro": "При спробі завантажити файл з'явилися такі попередження",
+	"bs-upload-uploadwarningdialog-outro": "Клацніть «{{int:bs-extjs-ok}}», щоб проігнорувати попередження й завантажити файл, або клацніть «{{int:bs-extjs-cancel}}», щоб повернутися до форми завантаження",
+	"bs-upload-uploadwarningdialog-warning-exists": "Файл з назвою «$1» вже існує",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Є {{PLURAL:$1|один дублікат|дублікати}} цього файлу",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Невідоме попередження з кодом «$1»"
 }
