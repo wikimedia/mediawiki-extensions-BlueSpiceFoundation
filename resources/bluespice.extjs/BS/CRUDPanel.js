@@ -15,15 +15,14 @@
 
 Ext.define( 'BS.CRUDPanel', {
 	extend: 'Ext.Panel',
-	requires: [ 'Ext.Toolbar', 'Ext.Button' ],
 	border: false,
 	hideBorder: true,
 
 	operationPermissions : {
-        "create": true, //should be connected to mw.config.get('bsTaskAPIPermissions').extension_xyz.task1 = boolean in derived class
-        "update": true, //...
-        "delete": true  //...
-    },
+		"create": true, //should be connected to mw.config.get('bsTaskAPIPermissions').extension_xyz.task1 = boolean in derived class
+		"update": true, //...
+		"delete": true  //...
+	},
 
 	tbarHeight: 44,
 
@@ -70,7 +69,6 @@ Ext.define( 'BS.CRUDPanel', {
 				width: 52
 			});
 			this.btnAdd.on( 'click', this.onBtnAddClick, this );
-			this.addEvents( 'button-add','button-edit','button-delete' );
 			arrItems.push( this.btnAdd );
 		}
 
@@ -85,7 +83,6 @@ Ext.define( 'BS.CRUDPanel', {
 				disabled: true
 			});
 			this.btnEdit.on( 'click', this.onBtnEditClick, this );
-			this.addEvents( 'button-add','button-edit','button-delete' );
 			arrItems.push( this.btnEdit );
 		}
 
@@ -100,7 +97,6 @@ Ext.define( 'BS.CRUDPanel', {
 				disabled: true
 			});
 			this.btnRemove.on( 'click', this.onBtnRemoveClick, this );
-			this.addEvents( 'button-add','button-edit','button-delete' );
 			arrItems.push(this.btnRemove);
 		}
 

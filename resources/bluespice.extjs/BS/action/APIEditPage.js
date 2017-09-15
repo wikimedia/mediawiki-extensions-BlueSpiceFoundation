@@ -5,11 +5,6 @@ Ext.define('BS.action.APIEditPage', {
 	pageTitle: '',
 	pageContent: '',
 
-	constructor: function( cfg ) {
-		this.addEvents( 'beforesaveedit' );
-		this.callParent(arguments);
-	},
-
 	execute: function() {
 		var dfd = $.Deferred();
 		this.actionStatus = BS.action.Base.STATUS_RUNNING;

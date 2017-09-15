@@ -71,7 +71,6 @@ Ext.define('BS.form.UploadPanel', {
 			this.btnReset.disable();
 		}
 
-		this.addEvents('reset', 'upload');
 		this.callParent(arguments);
 	},
 	onBtnResetClick: function( btn, e ) {

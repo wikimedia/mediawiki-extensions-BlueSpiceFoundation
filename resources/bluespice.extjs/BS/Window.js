@@ -127,8 +127,6 @@ Ext.define( 'BS.Window', {
 		});
 		this.btnCancel.on( 'click', this.onBtnCancelClick, this );
 
-		this.addEvents( 'ok', 'cancel' );
-
 		return [
 			'->',
 			this.btnOK,

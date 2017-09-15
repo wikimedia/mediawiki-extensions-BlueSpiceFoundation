@@ -132,20 +132,14 @@
 			]
 		},
 		"ext.bluespice.extjs": {
+			"class": "BlueSpice\\ResourceModule\\ExtJS",
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"targets": [
 				"mobile", "desktop"
 			],
 			"scripts": [
-				"bluespice.extjs/bluespice.extjs.js",
-				"bluespice.extjs/BS/override/grid/column/Action.js"
-			],
-			"styles": [
-				"bluespice.extjs/bluespice.extjs.fixes.css",
-				"bluespice.extjs/bluespice.extjs.overrides.less",
-				"bluespice.extjs/bluespice.extjs.filerepogrid.css",
-				"bluespice.extjs/bluespice.extjs.theme.less"
+				"bluespice.extjs/bluespice.extjs.js"
 			],
 			"messages": [
 				"bs-extjs-ok",
@@ -210,53 +204,6 @@
 				"bs-extjs-pageexport-required-text",
 				"bs-extjs-export-search-summary-text",
 				"bs-extjs-pageexport-error-invalid-title"
-			],
-			"dependencies": [
-				"ext.bluespice.extjs.theme.ux",
-				"ext.bluespice.extjs.theme",
-				"mediawiki.Title"
-			],
-			"group": "bsextjs"
-		},
-		"ext.bluespice.extjs.theme": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"targets": [
-				"mobile", "desktop"
-			],
-			"scripts": [
-				"extjs/ext-theme-neptune-debug.js"
-			],
-			"styles": [
-				"bluespice.extjs/bluespice-theme/bluespice-theme-all.css"
-			],
-			"dependencies": [
-				"ext.bluespice.extjs.base"
-			],
-			"group": "bsextjs"
-		},
-		"ext.bluespice.extjs.base": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"targets": [
-				"mobile", "desktop"
-			],
-			"class": "ResourceLoaderExtJSModule"
-		},
-		"ext.bluespice.extjs.theme.ux": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"targets": [
-				"mobile", "desktop"
-			],
-			"styles": [
-				"bluespice.extjs/Ext.ux/css/GroupTabPanel.css",
-				"bluespice.extjs/Ext.ux/css/ItemSelector.css",
-				"bluespice.extjs/Ext.ux/css/LiveSearchGridPanel.css",
-				"bluespice.extjs/Ext.ux/css/TabScrollerMenu.css",
-				"bluespice.extjs/Ext.ux/grid/css/GridFilters.css",
-				"bluespice.extjs/Ext.ux/grid/css/RangeMenu.css",
-				"bluespice.extjs/Ext.ux/form/field/BoxSelect.css"
 			],
 			"group": "bsextjs"
 		},
@@ -699,7 +646,6 @@
 		"ViewUserBarElement": "includes/outputhandler/views/view.UserBarElement.php",
 		"ViewUserMiniProfile": "includes/outputhandler/views/view.UserMiniProfile.php",
 		"ViewWidget": "includes/outputhandler/views/view.Widget.php",
-		"ResourceLoaderExtJSModule": "includes/resourceloader/ResourceLoaderExtJSModule.php",
 		"SpecialDiagnostics": "includes/specials/SpecialDiagnostics.class.php",
 		"SpecialCredits": "includes/specials/SpecialCredits.class.php",
 		"SpecialWikiAdmin": "includes/specials/SpecialWikiAdmin.class.php",

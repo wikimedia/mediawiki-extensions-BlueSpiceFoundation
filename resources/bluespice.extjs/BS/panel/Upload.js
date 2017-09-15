@@ -138,8 +138,6 @@ Ext.define ( 'BS.panel.Upload', {
 
 		this.items = this.panelItems;
 
-		this.addEvents( 'upload-complete' );
-
 		this.callParent(arguments);
 	},
 

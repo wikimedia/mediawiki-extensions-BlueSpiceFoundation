@@ -31,13 +31,6 @@ Ext.define('BS.portal.PortalPanel', {
 		};
 		this.callParent();
 
-		this.addEvents({
-			validatedrop: true,
-			beforedragover: true,
-			dragover: true,
-			beforedrop: true,
-			drop: true
-		});
 	},
 
 	// Set columnWidth, and set first and last column classes to allow exact CSS targeting.
