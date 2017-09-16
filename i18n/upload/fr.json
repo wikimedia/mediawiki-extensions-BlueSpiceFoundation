@@ -23,5 +23,8 @@
 	"bs-upload-filetypenotsupported": "Le type de fichier n’est pas pris en charge",
 	"bs-upload-details": "Détails",
 	"bs-upload-uploadwarningdialog-title": "Téléversement de fichier : avertissements",
-	"bs-upload-uploadwarningdialog-warning-exists": "Un fichier existe déja avec le nom « $1 »"
+	"bs-upload-uploadwarningdialog-intro": "Les avertissements suivants sont apparus pendant le téléversement du fichier",
+	"bs-upload-uploadwarningdialog-warning-exists": "Un fichier existe déja avec le nom « $1 »",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Il existe {{PLURAL:$1|un double|plusieurs occurences}} de ce fichier",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Avertissement inconnu avec le code « $1 »"
 }
