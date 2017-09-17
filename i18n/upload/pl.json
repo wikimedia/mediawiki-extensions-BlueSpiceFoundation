@@ -19,5 +19,7 @@
 	"bs-upload-descfilelabel": "Opis",
 	"bs-upload-error-long": "Błąd w trakcie przesyłania",
 	"bs-upload-filetypenotsupported": "Nieobsługiwany typ pliku",
-	"bs-upload-details": "Szczegóły"
+	"bs-upload-details": "Szczegóły",
+	"bs-upload-uploadwarningdialog-warning-exists": "Plik o nazwie „$1” już istnieje",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Nieznane ostrzeżenie o kodzie „$1”"
 }

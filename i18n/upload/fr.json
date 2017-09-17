@@ -24,6 +24,7 @@
 	"bs-upload-details": "Détails",
 	"bs-upload-uploadwarningdialog-title": "Téléversement de fichier : avertissements",
 	"bs-upload-uploadwarningdialog-intro": "Les avertissements suivants sont apparus pendant le téléversement du fichier",
+	"bs-upload-uploadwarningdialog-outro": "Cliquez sur \"{{int:bs-extjs-ok}}\" pour ignorer les avertissements et téléverser le fichier, cliquez sur \"{{int:bs-extjs-cancel}}\" pour revenir au formulaire de téléversement",
 	"bs-upload-uploadwarningdialog-warning-exists": "Un fichier existe déja avec le nom « $1 »",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "Il existe {{PLURAL:$1|un double|plusieurs occurences}} de ce fichier",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Avertissement inconnu avec le code « $1 »"
