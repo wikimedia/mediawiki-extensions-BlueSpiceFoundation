@@ -94,6 +94,9 @@
 			},
 			"TargetCacheTitleRegistry": {
 				"pageprops": "\\BlueSpice\\TargetCacheHandler"
+			},
+			"TaskRegistry": {
+				"wikipage-setlanguagelinks": "\\BlueSpice\\Task\\WikiPage\\SetLanguageLinks::factory"
 			}
 		}
 	},
@@ -122,7 +125,8 @@
 		"bs-upload-license-store": "BSApiUploadLicenseStore",
 		"bs-category-treestore": "BSApiCategoryTreeStore",
 		"bs-watchlist-store": "BlueSpice\\Api\\Store\\Watchlist",
-		"bs-recentchanges-store": "BlueSpice\\Api\\Store\\RecentChanges"
+		"bs-recentchanges-store": "BlueSpice\\Api\\Store\\RecentChanges",
+		"bs-task": "\\BlueSpice\\Api\\Task"
 	},
 	"GroupPermissions": {
 		"sysop": {

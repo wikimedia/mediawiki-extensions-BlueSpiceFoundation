@@ -125,6 +125,17 @@ return [
 		);
 	},
 
+	'BSTaskFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationTaskRegistry'
+		);
+
+		return new \BlueSpice\TaskFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	},
+
 	'BSUtilityFactory' => function ( MediaWikiServices $services ) {
 		return new \BlueSpice\UtilityFactory(
 			\BlueSpice\Services::getInstance()

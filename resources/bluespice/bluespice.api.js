@@ -9,6 +9,7 @@
 	 * @param string module
 	 * @param string taskname
 	 * @param object data
+	 * @param object cfg
 	 * @returns jQuery.Promise
 	 */
 	function _execTaskSilent( module, task, data, cfg ) {
@@ -34,6 +35,7 @@
 	 * @param string module
 	 * @param string taskname
 	 * @param object data
+	 * @param object cfg - set { useService: true } to use new task service
 	 * @returns jQuery.Promise
 	 */
 	function _execTask( module, task, data, cfg ) {
@@ -49,7 +51,7 @@
 
 		var api = new mw.Api();
 		api.postWithToken( cfg.token, {
-			action: 'bs-'+ module +'-tasks',
+			action: cfg.useService ? 'bs-task' : 'bs-'+ module +'-tasks',
 			task: task,
 			taskData: JSON.stringify( data ),
 			context: JSON.stringify(
@@ -66,15 +68,17 @@
 				cfg.failure( response, module, task, $dfd, cfg );
 			}
 		})
-		.fail( function( code, errResp ) { //Server error like FATAL
-			var dummyResp = {
-				success: false,
-				message: errResp.exception,
-				errors: [{
-					message: code
-				}]
-			};
-			cfg.failure( dummyResp, module, task, $dfd, cfg );
+		.fail( function( code, result ) { //Server error like FATAL
+			if( result.exception ) {
+				result = {
+					success: false,
+					message: result.exception,
+					errors: [{
+						message: code
+					}]
+				};
+			}
+			cfg.failure( result, module, task, $dfd, cfg );
 		});
 		return $dfd.promise();
 	}
@@ -85,7 +89,7 @@
 		)
 		.done(...);
 	 * @param string module
-	 * @param cfg data
+	 * @param object cfg
 	 * @returns jQuery.Promise
 	 */
 	function _getStoreData( module, cfg ) {
@@ -130,8 +134,26 @@
 		var message = response.message || '';
 		if ( response.errors && response.errors.length > 0 ) {
 			for ( var i in response.errors ) {
-				if ( typeof( response.errors[i].message ) !== 'string' ) continue;
-				message = message + '<br />' + response.errors[i].message;
+				if ( typeof( response.errors[i].html ) === 'string' ) {
+					message = message + '<br />' + response.errors[i].html;
+					continue;
+				}
+				if ( typeof( response.errors[i].plaintext ) === 'string' ) {
+					message = message + "\n" + response.errors[i].plaintext;
+					continue;
+				}
+				if ( typeof( response.errors[i].wiki ) === 'string' ) {
+					message = message + "\n*" + response.errors[i].wiki;
+					continue;
+				}
+				if ( typeof( response.errors[i].message ) === 'string' ) {
+					message = message + '<br />' + response.errors[i].message;
+					continue;
+				}
+				if ( typeof( response.errors[i].code ) === 'string' ) {
+					message = message + '<br />' + response.errors[i].code;
+					continue;
+				}
 			}
 		}
 		if ( message.length ) {

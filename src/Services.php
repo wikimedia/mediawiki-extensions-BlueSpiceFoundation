@@ -117,6 +117,14 @@ class Services extends ServicesDecorator {
 
 	/**
 	 *
+	 * @return TaskFactory
+	 */
+	public function getBSTaskFactory() {
+		return $this->getService( 'BSTaskFactory' );
+	}
+
+	/**
+	 *
 	 * @return UtilityFactory
 	 */
 	public function getBSUtilityFactory() {

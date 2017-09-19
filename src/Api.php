@@ -28,12 +28,15 @@
 
 namespace BlueSpice;
 
+use RequestContext;
+use Language;
 use ApiBase;
 use User;
 use Title;
 use Status;
 use ApiMessage;
 use BlueSpice\Api\Format\Json;
+use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Services;
 
 /**
@@ -91,6 +94,35 @@ abstract class Api extends ApiBase {
 	 */
 	public function getCustomPrinter() {
 		return new Json( $this->getMain(), $this->getParameter( 'format' ) );
+	}
+
+	/**
+	 *
+	 * @global type $wgContLang
+	 * @return ErrorFormatter
+	 */
+	public function getErrorFormatter() {
+		$request = $this->getContext()->getRequest();
+		$errorFormat = $request->getVal( 'errorformat', 'html' );
+		$errorLangCode = $request->getVal( 'errorlang',	'uselang' );
+		$errorsUseDB = $request->getCheck( 'errorsuselocal' );
+
+		if ( $errorLangCode === 'uselang' ) {
+			$errorLang = $this->getLanguage();
+		} elseif ( $errorLangCode === 'content' ) {
+			global $wgContLang;
+			$errorLang = $wgContLang;
+		} else {
+			$errorLangCode = RequestContext::sanitizeLangCode( $errorLangCode );
+			$errorLang = Language::factory( $errorLangCode );
+		}
+
+		return new ErrorFormatter(
+			$this->getResult(),
+			$errorLang,
+			$errorFormat,
+			$errorsUseDB
+		);
 	}
 
 	/**
