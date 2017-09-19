@@ -3,11 +3,12 @@
 /**
  * There was a change in adressing IW links in MW > 1.27. BlueSpice is testing
  * with MW 1.27, so adding the group "Broken" until we update our compatibility
- * @group Broken
  * @group medium
  * @group api
+ * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @group Daniel
  */
 class BSApiInterwikiStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 3;
@@ -36,7 +37,7 @@ class BSApiInterwikiStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	protected function createStoreFixtureData() {
-		$oDbw = wfGetDB( DB_MASTER );
+		$oDbw = $this->db;
 		$oDbw->insert( 'interwiki', array(
 			'iw_prefix' => "Dummy",
 			'iw_url' => "http://wiki.dummy.org/$1",

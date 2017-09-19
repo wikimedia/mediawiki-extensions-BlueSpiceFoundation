@@ -3,9 +3,9 @@
 /**
  * The base fixture has changed since MW 1.27. Therefore the test is marked
  * broken until BlueSpice updates its compatibility.
- * @group Broken
  * @group medium
  * @group api
+ * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
@@ -46,10 +46,7 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 			'cl_to' => "Dummy test"
 		) );
 
-		$oDbw->insert( 'page', array(
-			'page_title' => "Dummy test 2",
-			'page_namespace' => NS_CATEGORY
-		) );
+		$this->insertPage( "Dummy test 2", "Text Dummy test 2", NS_CATEGORY );
 	}
 
 	protected function createStoreFixtureData() {
