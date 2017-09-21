@@ -102,8 +102,6 @@ class BsCore {
 	 */
 	protected static $aUserMiniProfiles = array();
 
-	protected static $aClientScriptBlocks = array();
-
 	protected static $bHtmlFormClassLoaded = false;
 
 	/**
@@ -718,25 +716,5 @@ class BsCore {
 	public static function getMediaWikiWebrootPath() {
 		global $wgScriptPath;
 		return str_replace($wgScriptPath, '', self::getMediaWikiIncludePath());
-	}
-
-	public static function getClientScriptBlocks() {
-		return self::$aClientScriptBlocks;
-	}
-
-	/**
-	 * Use this to place javascript logic _below_ the including script files. Therefore you can benefit from the available frameworks like BlueSpiceFramework, ExtJS and jQuery.
-	 * @param String $sExtensionKey The name of the extension. This is just for creating a nice comment within the script-Tags
-	 * @param String $sCode The JavaScript code, that should be executed after all scriptfiles have been included
-	 * @param String $sUniqueKey (Optional) If provided the script block gets saved in with a unique key and therefore will not be registered multiple times.
-	 * @deprecated Use MediaWikis Outpage interface instead
-	 */
-	public static function registerClientScriptBlock( $sExtensionKey, $sCode, $sUniqueKey = '' ) {
-		wfDeprecated(__METHOD__);
-		if( !empty( $sUniqueKey ) ) {
-			self::$aClientScriptBlocks[$sUniqueKey] = array( $sExtensionKey, $sCode );
-		} else {
-			self::$aClientScriptBlocks[] = array( $sExtensionKey, $sCode );
-		}
 	}
 }
