@@ -6,7 +6,7 @@ abstract class DatabaseWriter implements IWriter {
 
 	/**
 	 *
-	 * @var \DatabaseBase
+	 * @var \Wikimedia\Rdbms\IDatabase
 	 */
 	protected $db = null;
 

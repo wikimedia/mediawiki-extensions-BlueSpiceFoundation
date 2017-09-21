@@ -27,7 +27,8 @@
 		"bs-titlequery-store": "BSApiTitleQueryStore",
 		"bs-ping-tasks": "BSApiPingTasks",
 		"bs-upload-license-store": "BSApiUploadLicenseStore",
-		"bs-category-treestore": "BSApiCategoryTreeStore"
+		"bs-category-treestore": "BSApiCategoryTreeStore",
+		"bs-watchlist-store": "BlueSpice\\Api\\WatchlistStore"
 	},
 	"ResourceModules": {
 		"ext.bluespice": {
