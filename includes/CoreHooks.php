@@ -83,15 +83,6 @@ class BsCoreHooks {
 
 		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
 
-		$aScriptBlocks = BsCore::getClientScriptBlocks();
-		foreach ( $aScriptBlocks as $sKey => $aClientScriptBlock ) {
-			$aOutput[] = '<script type="text/javascript">';
-			$aOutput[] = '//'.$aClientScriptBlock[0].' ('.$sKey.')';
-			$aOutput[] = $aClientScriptBlock[1];
-			$aOutput[] = '</script>';
-			$out->addScript( implode( "\n", $aOutput ) );
-		}
-
 		//Make some variables available on client side:
 		global $wgEnableUploads, $wgMaxUploadSize;
 		$iMaxPhpUploadSize = (int) ini_get('upload_max_filesize');
