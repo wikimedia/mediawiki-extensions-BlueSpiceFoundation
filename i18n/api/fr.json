@@ -65,5 +65,6 @@
 	"apihelp-bs-task-param-examples": "Montrer des exemples de paramètres de tâche",
 	"bs-api-task-taskData-page-id": "L'ID d'une page wiki existante",
 	"bs-api-task-taskData-page-title": "Un titre valide de page wiki",
-	"bs-api-task-wikipagetasks-taskData-categories": "Tableau de chaînes. Les valeurs doivent être des noms de catégories valides."
+	"bs-api-task-wikipagetasks-taskData-categories": "Tableau de chaînes. Les valeurs doivent être des noms de catégories valides.",
+	"apihelp-bs-watchlist-store-summary": "Liste toutes les entrées des listes de suivi. Permet le tri, le filtrage et la mise en forme. Implémente les paramètres store."
 }

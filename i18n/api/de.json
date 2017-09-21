@@ -51,5 +51,6 @@
 	"apihelp-bs-task-param-examples": "Zeigt Beispiele von Aufgabenparametern",
 	"bs-api-task-taskData-page-id": "Die Kennung einer vorhandenen Wikiseite",
 	"bs-api-task-taskData-page-title": "Ein gültiger Titel einer Wikiseite",
-	"bs-api-task-wikipagetasks-taskData-categories": "Anordnung von Zeichenfolgen. Werte müssen gültige Kategorienamen sein."
+	"bs-api-task-wikipagetasks-taskData-categories": "Anordnung von Zeichenfolgen. Werte müssen gültige Kategorienamen sein.",
+	"apihelp-bs-watchlist-store-summary": "Listet alle Beobachtungslisteneinträge auf. Erlaubt die Sortierung, Filterung und Nummerierung. Implementiert Speicherparameter."
 }
