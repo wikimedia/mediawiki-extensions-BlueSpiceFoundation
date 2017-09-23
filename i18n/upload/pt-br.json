@@ -4,7 +4,11 @@
 			"Felipe L. Ewald"
 		]
 	},
+	"bs-upload-uploaddialogtitle": "Enviar arquivo",
 	"bs-upload-uploadbuttontext": "Explorar",
+	"bs-upload-uploadfilefieldlabel": "Nome do arquivo",
+	"bs-upload-license": "Licença",
+	"bs-upload-uploadwatchthislabel": "Vigiar este arquivo",
 	"bs-upload-categories": "Categorias",
 	"bs-upload-upload-waitmessage": "Upload em progresso ...",
 	"bs-upload-error": "Erro",

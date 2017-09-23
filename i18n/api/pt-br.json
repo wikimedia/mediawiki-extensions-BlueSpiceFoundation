@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Felipe L. Ewald"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Lista todos os arquivos do backend de arquivos. Permite classificar, filtrar e paginação. Implementa os parâmetros da ExtJS Store.",
+	"apihelp-bs-filebackend-store-summary": "Lista todos os arquivos do backend de arquivos. Permite classificar, filtrar e paginação. Implementa os parâmetros da ExtJS Store.",
+	"apihelp-bs-user-store-description": "Lista todos os usuários da base de dados. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-user-store-summary": "Lista todos os usuários da base de dados. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-category-store-description": "Lista todas as categorias. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-category-store-summary": "Lista todas as categorias. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-adminuser-store-description": "Lista todos os usuários do banco de dados com dados confidenciais adicionais. Permite classificar, filtrar e paginação. Implementa os parâmetros da ExtJS Store.",
+	"apihelp-bs-adminuser-store-summary": "Lista todos os usuários do banco de dados com dados confidenciais adicionais. Permite classificar, filtrar e paginação. Implementa os parâmetros da ExtJS Store.",
+	"apihelp-bs-group-store-description": "Lista todos os grupos, exceto $wgImplicitGroups. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-group-store-summary": "Lista todos os grupos, exceto $wgImplicitGroups. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-interwiki-store-description": "Lista todos os links interwiki. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-interwiki-store-summary": "Lista todos os links interwiki. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Lista os títulos das páginas e (opcionalmente) prefixos do espaço nominal com base em um termo de consulta. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-titlequery-store-summary": "Lista os títulos das páginas e (opcionalmente) prefixos do espaço nominal com base em um termo de consulta. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-wikipage-tasks-description": "Fornece operações comuns para páginas wiki",
+	"apihelp-bs-wikipage-tasks-summary": "Fornece operações comuns para páginas wiki",
+	"apihelp-bs-wikipage-store-description": "Lista todas as páginas wiki. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-wikipage-store-summary": "Lista todas as páginas wiki. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
+	"apihelp-bs-ping-tasks-description": "Tarefa Ping que fornece troca contínua de dados",
+	"apihelp-bs-ping-tasks-summary": "Tarefa Ping que fornece troca contínua de dados",
+	"apihelp-bs-wikisubpage-treestore-description": "Lista as subpáginas de uma página específica da wiki",
+	"apihelp-bs-wikisubpage-treestore-summary": "Lista as subpáginas de uma página específica da wiki",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Lista de opções",
+	"apihelp-bs-upload-license-store-description": "Lista todas as licenças disponíveis para o upload de um arquivo",
+	"apihelp-bs-upload-license-store-summary": "Lista todas as licenças disponíveis para o upload de um arquivo",
+	"apihelp-bs-category-treestore-description": "Lista as subcategorias de uma categoria específica",
+	"apihelp-bs-category-treestore-summary": "Lista as subcategorias de uma categoria específica"
+}

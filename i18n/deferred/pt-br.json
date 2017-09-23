@@ -4,7 +4,15 @@
 			"Felipe L. Ewald"
 		]
 	},
+	"bs-deferred-action-status-pending": "Pendente.",
+	"bs-deferred-action-status-running": "Executando...",
+	"bs-deferred-action-status-done": "Feito.",
+	"bs-deferred-action-status-error": "Falhou.",
+	"bs-deferred-action-apieditpage-description": "Editar \"$1”.",
+	"bs-deferred-batch-title": "Processamento em lote",
+	"bs-deferred-batch-progress-desc": "Progresso",
 	"bs-deferred-batch-actions": "Ações",
 	"bs-deferred-batch-description": "Descrição",
-	"bs-deferred-batch-status": "Status"
+	"bs-deferred-batch-status": "Status",
+	"bs-deferred-action-apideletepage-description": "Excluir \"$1\"."
 }
