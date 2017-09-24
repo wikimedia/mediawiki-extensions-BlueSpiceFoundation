@@ -62,5 +62,6 @@
 	"apihelp-bs-task-param-examples": "显示任务参数的示例",
 	"bs-api-task-taskData-page-id": "现有wiki页面的ID",
 	"bs-api-task-taskData-page-title": "wiki页面的有效标题",
-	"bs-api-task-wikipagetasks-taskData-categories": "字符串数组。值应为有效分类名称。"
+	"bs-api-task-wikipagetasks-taskData-categories": "字符串数组。值应为有效分类名称。",
+	"apihelp-bs-watchlist-store-summary": "列举所有监视列表项。允许排序、过滤和分页。执行ExtJS存储的参数。"
 }
