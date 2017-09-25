@@ -12,4 +12,5 @@ class FieldType {
 	const FLOAT = 'float';
 	const INT = 'int';
 	const STRING = 'string';
+	const LISTVALUE = 'list';
 }
