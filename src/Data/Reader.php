@@ -10,7 +10,7 @@ abstract class Reader implements IReader {
 	 *
 	 * @var \IContextSource
 	 */
-	private $context = null;
+	protected $context = null;
 
 	/**
 	 *
