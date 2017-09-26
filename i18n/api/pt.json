@@ -64,5 +64,6 @@
 	"apihelp-bs-task-param-examples": "Mostrar exemplos de parâmetros de tarefa",
 	"bs-api-task-taskData-page-id": "O identificador de uma página existente da wiki",
 	"bs-api-task-taskData-page-title": "Um título válido de uma página da wiki",
-	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de textos. Os valores têm de ser nomes de categoria válidos."
+	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de textos. Os valores têm de ser nomes de categoria válidos.",
+	"apihelp-bs-watchlist-store-summary": "Lista todas as entradas da lista de páginas vigiadas. Permite ordenar, filtrar e paginar. Implementa os parâmetros store."
 }
