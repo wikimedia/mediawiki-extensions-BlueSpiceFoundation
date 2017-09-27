@@ -49,7 +49,7 @@ class ReaderParams {
 		$this->setFilter( $params );
 	}
 
-	private function setIfAvailable( &$property, $source, $field ) {
+	protected function setIfAvailable( &$property, $source, $field ) {
 		if( isset( $source[$field] ) ) {
 			$property = $source[$field];
 		}
