@@ -570,7 +570,7 @@ class BsCore {
 	public function registerBehaviorSwitch( $sMagicWord, $aCallback = null ) {
 		if ( is_callable( $aCallback ) ) {
 			$this->aBehaviorSwitches[$sMagicWord] = $aCallback;
-		} elseif ( !isset( MagicWord::$mDoubleUnderscoreIDs[$sMagicWord] ) ) {
+		} elseif ( !in_array( $sMagicWord, MagicWord::$mDoubleUnderscoreIDs ) ) {
 			MagicWord::$mDoubleUnderscoreIDs[] = $sMagicWord;
 		}
 	}
