@@ -116,6 +116,7 @@ abstract class EntityConfig implements \JsonSerializable {
 
 	abstract protected function addGetterDefaults();
 	abstract protected function get_EntityClass();
+	abstract protected function get_StoreClass();
 
 	protected function get_ContentClass() {
 		return "\\BlueSpice\\Content\\Entity";

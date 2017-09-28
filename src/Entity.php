@@ -241,11 +241,22 @@ abstract class Entity implements \JsonSerializable {
 		if ( is_null( $oTitle ) ) {
 			return \Status::newFatal( 'Related Title error' );
 		}
+		$sStoreClass = $this->getConfig()->get( 'StoreClass' );
+		if( !class_exists( $sStoreClass ) ) {
+			return \Status::newFatal( "Store class '$sStoreClass' not found" );
+		}
+		$oStore = new $sStoreClass( \RequestContext::getMain() );
+		$oSchema = $oStore->getWriter()->getSchema();
+		$aData = array_intersect_key(
+			$this->getFullData(),
+			array_flip( $oSchema->getStorableFields() )
+		);
 
 		$oWikiPage = \WikiPage::factory( $oTitle );
+
 		try {
 			$oStatus = $oWikiPage->doEditContent(
-				new $sContentClass( json_encode( $this ) ),
+				new $sContentClass( json_encode( $aData ) ),
 				"",
 				0,
 				0,
