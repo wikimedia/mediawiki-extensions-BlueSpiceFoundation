@@ -74,32 +74,6 @@ abstract class Entity implements \JsonSerializable {
 		return $oInstance;
 	}
 
-	protected function generateID() {
-		//this is the case if the current Entity is new (no Title created yet)
-		//Get the page_title of the last created title in entity namespace and
-		//add +1. Entities are stored like: MYEntityNamespace:1,
-		//MYEntityNamespace:2, MYEntityNamespace:3
-		//TODO: This should be done by related Content object
-		if ( (int) $this->getID() === 0 ) {
-			$dbw = wfGetDB( DB_MASTER );
-			$res = $dbw->selectRow(
-				'page',
-				'page_title',
-				array( 'page_namespace' => static::NS ),
-				__METHOD__,
-				array(
-					'ORDER BY' => 'LENGTH( page_title ) DESC, page_title DESC'
-				)
-			);
-
-			if ( $res ) {
-				$this->iID = (int) $res->page_title + 1;
-			} else {
-				$this->iID = 1;
-			}
-		}
-	}
-
 	/**
 	 * Get Entity by EntityContent Object, wrapper for newFromObject
 	 * @param EntityContent $sContent
@@ -239,16 +213,20 @@ abstract class Entity implements \JsonSerializable {
 	 * @return \Status
 	 */
 	public function save( \User $oUser = null, $aOptions = [] ) {
-		if( !$oUser instanceof User ) {
+		if( !$oUser instanceof \User ) {
 			return \Status::newFatal( 'No User' );
 		}
 		if( $this->exists() && !$this->hasUnsavedChanges() ) {
 			return \Status::newGood( $this );
 		}
-		if( empty($this->getID()) ) {
-			$this->generateID();
+		$sContentClass = $this->getConfig()->get( 'ContentClass' );
+		if( !class_exists( $sContentClass ) ) {
+			return \Status::newFatal( "Content class '$sContentClass' not found" );
 		}
-		if( empty($this->getID()) ) {
+		if( empty( $this->getID() ) ) {
+			$this->iID = $sContentClass::generateID( $this );
+		}
+		if( empty( $this->getID() ) ) {
 			return \Status::newFatal( 'No ID generated' );
 		}
 		if( empty($this->getOwnerID()) ) {
@@ -265,7 +243,6 @@ abstract class Entity implements \JsonSerializable {
 		}
 
 		$oWikiPage = \WikiPage::factory( $oTitle );
-		$sContentClass = $this->getConfig()->get( 'ContentClass' );
 		try {
 			$oStatus = $oWikiPage->doEditContent(
 				new $sContentClass( json_encode( $this ) ),

@@ -106,4 +106,36 @@ class Entity extends \JsonContent {
 
 		return \Xml::tags( 'tr', array(), $th . $td );
 	}
+
+	/**
+	 * Returns a generated id for a given entity.
+	 * @param \BlueSpice\Entity $entity
+	 * @return int
+	 */
+	public static function generateID( \BlueSpice\Entity $entity ) {
+		//this is the case if the current Entity is new (no Title created yet)
+		//Get the page_title of the last created title in entity namespace and
+		//add +1. Entities are stored like: MYEntityNamespace:1,
+		//MYEntityNamespace:2, MYEntityNamespace:3
+		if ( (int) $entity->getID() > 0 ) {
+			return $entity->getID();
+		}
+		$dbw = wfGetDB( DB_MASTER );
+		$res = $dbw->selectRow(
+			'page',
+			'page_title',
+			array( 'page_namespace' => $entity::NS ),
+			__METHOD__,
+			array(
+				'ORDER BY' => 'LENGTH( page_title ) DESC, page_title DESC'
+			)
+		);
+
+		if ( $res ) {
+			$id = (int) $res->page_title + 1;
+		} else {
+			$id = 1;
+		}
+		return $id;
+	}
 }
