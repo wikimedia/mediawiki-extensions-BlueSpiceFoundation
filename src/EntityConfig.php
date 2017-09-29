@@ -27,6 +27,8 @@
  * @filesource
  */
 namespace BlueSpice;
+use BlueSpice\Data\Entity\Schema;
+use BlueSpice\Data\FieldType;
 
 /**
  * EntityConfig class for BlueSpice
@@ -117,5 +119,66 @@ abstract class EntityConfig implements \JsonSerializable {
 
 	protected function get_ContentClass() {
 		return "\\BlueSpice\\Content\\Entity";
+	}
+
+	protected function get_AttributeDefinitions() {
+		$attributeDefinitions =  [
+			'id' => [
+				Schema::FILTERABLE => true,
+				Schema::SORTABLE => true,
+				Schema::TYPE => FieldType::INT,
+				Schema::INDEXABLE => true,
+				Schema::STORABLE => true,
+			],
+			'ownerid' => [
+				Schema::FILTERABLE => true,
+				Schema::SORTABLE => true,
+				Schema::TYPE => FieldType::INT,
+				Schema::INDEXABLE => true,
+				Schema::STORABLE => true,
+			],
+			'type' => [
+				Schema::FILTERABLE => true,
+				Schema::SORTABLE => true,
+				Schema::TYPE => FieldType::STRING,
+				Schema::INDEXABLE => true,
+				Schema::STORABLE => true,
+			],
+			'archived' => [
+				Schema::FILTERABLE => true,
+				Schema::SORTABLE => true,
+				Schema::TYPE => FieldType::BOOLEAN,
+				Schema::INDEXABLE => true,
+				Schema::STORABLE => true,
+			],
+			'parentid' => [
+				Schema::FILTERABLE => true,
+				Schema::SORTABLE => true,
+				Schema::TYPE => FieldType::INT,
+				Schema::INDEXABLE => true,
+				Schema::STORABLE => true,
+			],
+			'timestampcreated' => [
+				Schema::FILTERABLE => true,
+				Schema::SORTABLE => true,
+				Schema::TYPE => FieldType::DATE,
+				Schema::INDEXABLE => true,
+				Schema::STORABLE => false,
+			],
+			'timestamptouched' => [
+				Schema::FILTERABLE => true,
+				Schema::SORTABLE => true,
+				Schema::TYPE => FieldType::DATE,
+				Schema::INDEXABLE => true,
+				Schema::STORABLE => false,
+			],
+		];
+
+		\Hooks::run( 'BSEntityConfigAttributeDefinitions', [
+			$this,
+			&$attributeDefinitions,
+		]);
+
+		return $attributeDefinitions;
 	}
 }
