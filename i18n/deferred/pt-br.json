@@ -8,11 +8,16 @@
 	"bs-deferred-action-status-running": "Executando...",
 	"bs-deferred-action-status-done": "Feito.",
 	"bs-deferred-action-status-error": "Falhou.",
+	"bs-deferred-action-apicopypage-description": "Copiar \"$1\" para \"$2\".",
 	"bs-deferred-action-apieditpage-description": "Editar \"$1”.",
 	"bs-deferred-batch-title": "Processamento em lote",
 	"bs-deferred-batch-progress-desc": "Progresso",
 	"bs-deferred-batch-actions": "Ações",
 	"bs-deferred-batch-description": "Descrição",
 	"bs-deferred-batch-status": "Status",
+	"bs-deferred-action-apiaddcategories-description": "Adicionar categorias para '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Removidas categorias de '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Definir categorias em '$1'.",
+	"bs-deferred-action-apimovepage-description": "Mover \"$1\" para \"$2\".",
 	"bs-deferred-action-apideletepage-description": "Excluir \"$1\"."
 }

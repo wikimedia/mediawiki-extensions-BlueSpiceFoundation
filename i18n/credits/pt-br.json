@@ -6,7 +6,9 @@
 	},
 	"specialcredits": "Créditos do BlueSpice",
 	"bs-credits-programmers": "Programadores",
+	"bs-credits-dnt": "Design e teste",
 	"bs-credits-contributors": "Contribuidores",
 	"bs-credits-translators": "Tradutores",
-	"bs-credits-translation": "Tradução"
+	"bs-credits-translation": "Tradução",
+	"bs-credits-th": "Obrigado a todos os tradutores de $1."
 }

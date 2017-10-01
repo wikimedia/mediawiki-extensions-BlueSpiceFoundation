@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Felipe L. Ewald"
+		]
+	},
+	"bs-validator-url-validation-approved": "O URL foi validado com sucesso.",
+	"bs-validator-url-validation-not-approved": "O URL não pode ser validado.",
+	"bs-validator-set-validation-approved": "$1 foi validado com êxito.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL: $3|Somente o seguinte valor é permitido para $1|Para $1 somente um dos seguintes valores é permitido}}: $2."
+}
