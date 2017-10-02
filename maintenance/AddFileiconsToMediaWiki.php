@@ -4,9 +4,6 @@
 require_once( __DIR__ . '/BSMaintenance.php' );
 
 class AddFileiconsToMediaWiki extends BSMaintenance {
-
-
-
 	public function __construct() {
 		parent::__construct();
 		$this->addOption( 'source', 'source filesystem path to icons', false, true );

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Bengtsson96"
 		]
 	},
 	"apihelp-bs-user-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
@@ -31,5 +32,6 @@
 	"apihelp-bs-category-treestore-summary": "Listar alla underkategorier för en specifik kategori",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parameterexempel]",
 	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
-	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn."
+	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn.",
+	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar."
 }
