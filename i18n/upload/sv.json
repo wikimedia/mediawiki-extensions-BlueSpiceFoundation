@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Josve05a",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Bengtsson96"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Ladda upp fil",
@@ -19,5 +20,11 @@
 	"bs-upload-descfilelabel": "Beskrivning",
 	"bs-upload-error-long": "Fel i uppladdningsprocessen",
 	"bs-upload-filetypenotsupported": "Filtyp stöds inte",
-	"bs-upload-details": "Detaljer"
+	"bs-upload-details": "Detaljer",
+	"bs-upload-uploadwarningdialog-title": "Ladda upp fil: Vaningar",
+	"bs-upload-uploadwarningdialog-intro": "Uppladdningsförsöket gav följande varningar",
+	"bs-upload-uploadwarningdialog-outro": "Klicka på \"{{int:bs-extjs-ok}}\" för att ignorera varningar och ladda upp filen, klicka på \"{{int:bs-extjs-cancel}}\" för att återvända till uppladdningsformuläret",
+	"bs-upload-uploadwarningdialog-warning-exists": "Det finns redan en fil med namnet \"$1\"",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Det finns {{PLURAL:$1|en dubblett|dubbletter}} av denna fil",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Okänd varning med felkoden \"$1\""
 }
