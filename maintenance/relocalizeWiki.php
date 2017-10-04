@@ -19,6 +19,7 @@ class RelocalizeWiki extends Maintenance {
 		$this->addOption( 'oldLang', 'From wich Language you want to translate the Imagelink', true );
 		$this->addOption( 'newLang', 'To wich Language you want to translate the Imagelink', true );
 		$this->addOption( 'dry', 'Testrun without saving the article' );
+		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 	
 	public function execute() {

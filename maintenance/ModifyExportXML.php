@@ -11,6 +11,7 @@ class ModifyExportXML extends Maintenance {
 		$this->addOption('output', 'The file to write to', true, true);
 		$this->addOption('newnamespacetext', 'The namespace text to prepend', true, true);
 		$this->addOption('oldnamespacetext', 'The old namespace text', false, true);
+		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
 	protected $aTitles = array();

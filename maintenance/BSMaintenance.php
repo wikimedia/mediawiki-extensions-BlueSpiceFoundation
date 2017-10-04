@@ -10,6 +10,7 @@ abstract class BSMaintenance extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addOption( 'cliOutputTo', 'Specifiy a file the console output is being written to', false, true );
+		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
 	/**

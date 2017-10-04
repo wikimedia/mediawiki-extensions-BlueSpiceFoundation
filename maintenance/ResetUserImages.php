@@ -7,6 +7,7 @@ class ResetUserImages extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->mDescription = "Resets all user images";
+		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
 	function execute() {
