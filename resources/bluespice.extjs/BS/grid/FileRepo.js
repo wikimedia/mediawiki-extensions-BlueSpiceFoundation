@@ -61,7 +61,7 @@ Ext.define( 'BS.grid.FileRepo', {
 		};
 		var attrImg = {
 			src: record.get( 'file_thumbnail_url' ),
-			height: '120px',
+			style: 'max-height: 100%; max-width: 100%; width: auto; height: auto; position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto;',
 			'data-file-width': record.get( 'file_width' ),
 			'data-file-height': record.get( 'file_height' )
 		};
@@ -70,7 +70,7 @@ Ext.define( 'BS.grid.FileRepo', {
 		if( record.get( 'file_height' ) !== 0 ) {
 			// thumb is an image
 			attr.class = 'bs-thumb-link image';
-			attr.style = 'display: block; height: 120px; width: 120px;';
+			attr.style = 'display: block; height: 120px; width: 80px; position:relative';
 			var img = mw.html.element( 'img', attrImg );
 			ret = mw.html.element( 'a', attr, new mw.html.Raw( img ) );
 		}
