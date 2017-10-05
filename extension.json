@@ -1,5 +1,5 @@
 {
-	"name": "BlueSpice",
+	"name": "BlueSpiceFoundation",
 	"version": "2.27.1",
 	"license-name": "GPL-2.0+",
 	"author": [
@@ -426,7 +426,10 @@
 		"SkinAfterContent": "BsCoreHooks::onSkinAfterContent",
 		"ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
 		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",
-		"PageContentSaveComplete": "BsCoreHooks::onPageContentSaveComplete",
+		"PageContentSaveComplete": [
+			"BsCoreHooks::onPageContentSaveComplete",
+			"BsCacheHelper::onPageContentSaveComplete"
+		],
 		"UnitTestsList": "BsCoreHooks::onUnitTestsList",
 		"ResourceLoaderGetConfigVars": "BsExtensionManager::onResourceLoaderGetConfigVars"
 	},

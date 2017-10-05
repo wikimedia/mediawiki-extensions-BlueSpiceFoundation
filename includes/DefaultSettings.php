@@ -32,6 +32,12 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 1 );
 }
 
+$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = array(
+	"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
+	"url" => "http://bluespice.com",
+	"alt" => "Powered by BlueSpice",
+);
+
 /*
  * If this global is set to an array like
  * $bsgTestSystem = array(
@@ -41,9 +47,9 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * the color will determine a div that is placed above the bs-wrapper
  * with the text element as a headline in it
  */
-$bsgTestSystem = false;
+$GLOBALS['bsgTestSystem'] = false;
 
-$bsgPermissionConfig = array(
+$GLOBALS['bsgPermissionConfig'] = array(
 	'read' => array(
 		'type' => 'namespace',
 		'preventLockout' => true
@@ -168,7 +174,7 @@ $bsgPermissionConfig = array(
  * renamed of deleted and system NS that can not be modified. Used in
  * BlueSpiceExtensions/NamespaceManager and NamespaceHelper
  */
-$bsgSystemNamespaces = array(
+$GLOBALS['bsgSystemNamespaces'] = array(
 	//1599 => 'NS_COOL_STUFF'
 );
 
@@ -315,7 +321,7 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 /**
  * BsExtensionManager extension registration
  */
-$bsgExtensions = array();
+$GLOBALS['bsgExtensions'] = array();
 
 /**
  * BsTemplateHelper template directory overwrite

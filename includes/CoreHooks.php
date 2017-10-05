@@ -8,14 +8,19 @@ class BsCoreHooks {
 	protected static $aTaskAPIPermission = array();
 
 	public static function onRegistry(){
-		global $wgScriptPath, $wgFooterIcons, $wgExtensionFunctions, $wgAjaxExportList, $wgVersion, $IP;
-		global $wgNamespacesWithSubpages, $wgApiFrameOptions, $wgRSSUrlWhitelist;
-		global $wgExternalLinkTarget, $wgRestrictDisplayTitle;
-		global $wgUrlProtocols, $wgVerifyMimeType, $wgAllowJavaUploads;
-		global $bsgTestSystem, $bsgPermissionConfig, $bsgSystemNamespaces;
-		global $bsgConfigFiles, $wgResourceLoaderLESSVars, $bsgExtensions;
-		global $wgHooks, $wgDBtype;
-		require_once( __DIR__ . "/../BlueSpiceFoundation.php" );
+		if ( is_readable( __DIR__ . '../vendor/autoload.php' ) ) {
+			include_once( __DIR__ . '../vendor/autoload.php' );
+		}
+
+		require_once __DIR__ . "/Defines.php";
+		require_once __DIR__ . "/DefaultSettings.php";
+
+		// initalise BlueSpice as first extension in a fully initialised
+		// environment
+		array_unshift(
+			$GLOBALS['wgExtensionFunctions'],
+			'BsCore::doInitialise'
+		);
 	}
 
 	public static function onSetupAfterCache() {
