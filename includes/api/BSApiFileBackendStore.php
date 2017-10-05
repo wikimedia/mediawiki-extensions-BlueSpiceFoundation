@@ -323,7 +323,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 			//TODO: use 'thumb.php'?
 			//TODO: Make thumb size a parameter
-			$sThumb = $oImg->createThumb( 120 );
+			$sThumb = $oImg->createThumb( 80, 120 );
 			$sUrl = $oImg->getUrl();
 
 			//TODO: Remove, when SecureFileStore is finally removed
