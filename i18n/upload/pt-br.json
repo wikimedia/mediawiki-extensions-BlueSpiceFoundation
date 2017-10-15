@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Enviar arquivo",
@@ -21,6 +22,9 @@
 	"bs-upload-filetypenotsupported": "O formato de arquivo não é suportado",
 	"bs-upload-details": "Detalhes",
 	"bs-upload-uploadwarningdialog-title": "Enviar arquivo: Avisos",
+	"bs-upload-uploadwarningdialog-intro": "As seguintes advertências ocorreram ao tentar carregar o arquivo",
+	"bs-upload-uploadwarningdialog-outro": "Clique \"{{int:bs-extjs-ok}}\" para ignorar os avisos e carregar o arquivo, clique \"{{int:bs-extjs-cancel}}\" para voltar ao formulário de carregamento",
 	"bs-upload-uploadwarningdialog-warning-exists": "Um nome de arquivo \"$1\" já existe",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Existe um duplicado|Existem duplicados}} deste arquivo",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso desconhecido com código \"$1\""
 }
