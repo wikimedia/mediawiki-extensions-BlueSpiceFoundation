@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Subi",
-			"Sator"
+			"Sator",
+			"Mikel Ibaiba"
 		]
 	},
+	"specialcredits": "BlueSpice kredituak",
 	"bs-credits-programmers": "Programatzaileak",
+	"bs-credits-dnt": "Diseinu eta frogaketa",
 	"bs-credits-contributors": "Lankideak",
 	"bs-credits-translators": "Itzultzaileak",
-	"bs-credits-translation": "Itzulpena"
+	"bs-credits-translation": "Itzulpena",
+	"bs-credits-th": "Eskerrik asko $1-ko itzultzaile guztiei."
 }
