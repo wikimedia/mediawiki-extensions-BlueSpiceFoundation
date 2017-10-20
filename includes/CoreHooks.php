@@ -77,16 +77,17 @@ class BsCoreHooks {
 	* @return boolean
 	*/
 	public static function onBeforePageDisplay( $out, $skin ) {
-		global $IP, $wgFavicon, $wgExtensionAssetsPath, $wgLogo;
+		global $wgFavicon, $wgExtensionAssetsPath, $wgLogo;
 
-		//TODO: Change this mechanism to make it overwriteable!
-		$wgLogo = BsConfig::get('MW::LogoPath');
+		$config = \MediaWiki\MediaWikiServices::getInstance()
+			->getConfigFactory()->makeConfig( 'bsg' );
 
 		$out->addModules( 'ext.bluespice' );
 		$out->addModuleStyles( 'ext.bluespice.styles' );
 		$out->addModuleStyles( 'ext.bluespice.compat.vector.styles' );
 
-		$wgFavicon = BsConfig::get( 'MW::FaviconPath' );
+		$wgFavicon = $config->get( 'Favicon' );
+		$wgLogo = $config->get( 'Logo' );
 
 		//Make some variables available on client side:
 		global $wgEnableUploads, $wgMaxUploadSize;
@@ -98,8 +99,12 @@ class BsCoreHooks {
 
 		//We cannot use BsConfig::RENDER_AS_JAVASCRIPT because we want to
 		//normalize the content to lower case:
-		$aFileExtensions  = self::lcNormalizeArray( BsConfig::get( 'MW::FileExtensions' ) );
-		$aImageExtensions = self::lcNormalizeArray( BsConfig::get( 'MW::ImageExtensions' ) );
+		$aFileExtensions  = self::lcNormalizeArray(
+			$config->get( 'FileExtensions' )
+		);
+		$aImageExtensions = self::lcNormalizeArray(
+			$config->get( 'ImageExtensions' )
+		);
 
 		$out->addJsConfigVars( 'bsMaxUploadSize', $aMaxUploadSize );
 		$out->addJsConfigVars( 'bsEnableUploads', $wgEnableUploads ); //Was: 'MW::InsertFile::EnableUploads' --> 'bsInsertFileEnableUploads'

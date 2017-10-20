@@ -417,7 +417,10 @@
 		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
 		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",
 		"MakeGlobalVariablesScript": "BsCoreHooks::onMakeGlobalVariablesScript",
-		"LoadExtensionSchemaUpdates": "BsCoreHooks::onLoadExtensionSchemaUpdates",
+		"LoadExtensionSchemaUpdates": [
+			"BsCoreHooks::onLoadExtensionSchemaUpdates",
+			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback"
+		],
 		"ApiCheckCanExecute": "BsCoreHooks::onApiCheckCanExecute",
 		"UserGetRights": "BsCoreHooks::onUserGetRights",
 		"userCan": "BsCoreHooks::onUserCan",
@@ -431,22 +434,29 @@
 			"BsCacheHelper::onPageContentSaveComplete"
 		],
 		"UnitTestsList": "BsCoreHooks::onUnitTestsList",
-		"ResourceLoaderGetConfigVars": "BsExtensionManager::onResourceLoaderGetConfigVars"
+		"ResourceLoaderGetConfigVars": [
+			"BsExtensionManager::onResourceLoaderGetConfigVars",
+			"BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback"
+		]
 	},
+	"config_prefix": "bsg",
 	"config": {
-		"_prefix": "bsg",
 		"BlueSpiceExtInfo": {
-			"name": "BlueSpice",
-			"version": "2.27.1",
-			"status": "stable",
-			"package": "BlueSpice Free",
-			"url": "http://bluespice.com",
-			"desc": "Makes MediaWiki enterprise ready.",
-			"author": [
-				"[http://www.hallowelt.com Hallo Welt! GmbH]"
-			]
+			"value": {
+				"name": "BlueSpice",
+				"version": "2.27.1",
+				"status": "stable",
+				"package": "BlueSpice Free",
+				"url": "http://bluespice.com",
+				"desc": "Makes MediaWiki enterprise ready.",
+				"author": [
+					"[http://www.hallowelt.com Hallo Welt! GmbH]"
+				]
+			}
 		},
-		"ConfigFiles": []
+		"ConfigFiles": {
+			"value": []
+		}
 	},
 	"ConfigRegistry": {
 		"bsg": "BlueSpice\\Config::newInstance"
@@ -596,9 +606,10 @@
 		"BSApiTasksTestBase": "tests/phpunit/BSApiTasksTestBase.php",
 		"BSTemplateHelper": "includes/TemplateHelper.php",
 		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
-		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php"
+		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
+		"BSMigrateSettings": "maintenance/BSMigrateSettings.php"
 	},
 	"load_composer_autoloader": true,
-	"manifest_version": 1,
+	"manifest_version": 2,
 	"callback": "BsCoreHooks::onRegistry"
 }

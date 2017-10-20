@@ -321,7 +321,16 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 /**
  * BsExtensionManager extension registration
  */
-$GLOBALS['bsgExtensions'] = array();
+$GLOBALS['bsgExtensions'] = [
+	"BlueSpiceFoundation" => [
+		"configDefinitions" => [
+			"Logo" => "\\BlueSpice\\ConfigDefinition\\Logo::getInstance",
+			"FileExtensions" => "\\BlueSpice\\ConfigDefinition\\FileExtensions::getInstance",
+			"ImageExtensions" => "\\BlueSpice\\ConfigDefinition\\ImageExtensions::getInstance",
+			"Favicon" => "\\BlueSpice\\ConfigDefinition\\Favicon::getInstance",
+		]
+	]
+];
 
 /**
  * BsTemplateHelper template directory overwrite
@@ -356,3 +365,26 @@ $GLOBALS["bsgExtJSThemes"] = array(
 );
 
 $GLOBALS['bsgUserMiniProfileParams'] = [ 'width' => 40, 'height' => 40 ];
+$GLOBALS['bsgMiniProfileEnforceHeight'] = true;
+$GLOBALS['bsgPingInterval'] = 10;
+
+/**
+ * ATTENTION: Not to confuse with 'bsgTestSystem'.
+ * This settings influences e-mail-, export- and other features
+ * @global string $GLOBALS['bsgTestMode']
+ * @name $bsgTestMode
+ */
+$GLOBALS['bsgTestMode'] = false;
+$GLOBALS['bsgFileExtensions'] = [
+			'txt', 'rtf',
+			'doc', 'dot', 'docx', 'dotx', 'dotm',
+			'xls', 'xlt', 'xlm', 'xlsx', 'xlsm', 'xltm', 'xltx',
+			'ppt', 'pot', 'pps', 'pptx', 'pptm', 'potx', 'potm', 'ppsx', 'ppsm', 'sldx', 'sldm',
+			'odt', 'fodt', 'ods', 'fods', 'odp', 'fodp',
+			'pdf',
+			'zip', 'rar', 'tar', 'tgz', 'gz', 'bzip2', '7zip',
+			'xml', 'svg'
+];
+
+
+$GLOBALS['bsgImageExtensions'] = [ 'png', 'gif', 'jpg', 'jpeg' ];

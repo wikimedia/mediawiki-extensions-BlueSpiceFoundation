@@ -104,42 +104,6 @@ class BsCore {
 
 	protected static $bHtmlFormClassLoaded = false;
 
-	/**
-	 * The constructor is protected because of the singleton pattern.
-	 */
-	protected function __construct() {
-		wfProfileIn('Performance: ' . __METHOD__);
-		global $wgScriptPath;
-		$sPath = $wgScriptPath . "/extensions/BlueSpiceFoundation/resources/bluespice/images/";
-
-		$aFiles = array(
-			'txt', 'rtf',
-			'doc', 'dot', 'docx', 'dotx', 'dotm',
-			'xls', 'xlt', 'xlm', 'xlsx', 'xlsm', 'xltm', 'xltx',
-			'ppt', 'pot', 'pps', 'pptx', 'pptm', 'potx', 'potm', 'ppsx', 'ppsm', 'sldx', 'sldm',
-			'odt', 'fodt', 'ods', 'fods', 'odp', 'fodp',
-			'pdf',
-			'zip', 'rar', 'tar', 'tgz', 'gz', 'bzip2', '7zip',
-			'xml', 'svg'
-		);
-		$aImages = array( 'png', 'gif', 'jpg', 'jpeg' );
-		BsConfig::registerVar( 'MW::FileExtensions', $aFiles, BsConfig::LEVEL_PUBLIC  | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-fileextensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::ImageExtensions', $aImages, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_ARRAY_STRING, 'bs-pref-imageextensions', 'multiselectplusadd' );
-		BsConfig::registerVar( 'MW::LogoPath', $sPath . 'bs-logo.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-logopath' );
-		BsConfig::registerVar( 'MW::FaviconPath', $sPath . 'favicon.ico', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-faviconpath' );
-		BsConfig::registerVar( 'MW::DefaultUserImage', $sPath . 'bs-user-default-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-defaultuserimage' );
-		BsConfig::registerVar( 'MW::MiniProfileEnforceHeight', true, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-miniprofileenforceheight', 'toggle' );
-		BsConfig::registerVar( 'MW::AnonUserImage', $sPath . 'bs-user-anon-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-anonuserimage' );
-		BsConfig::registerVar( 'MW::DeletedUserImage', $sPath . 'bs-user-deleted-image.png', BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_STRING, 'bs-pref-deleteduserimage' );
-		BsConfig::registerVar( 'MW::UserImage', '', BsConfig::LEVEL_USER | BsConfig::TYPE_STRING | BsConfig::NO_DEFAULT, 'bs-authors-profileimage' );
-		BsConfig::registerVar( 'MW::PingInterval', 10, BsConfig::LEVEL_PUBLIC | BsConfig::RENDER_AS_JAVASCRIPT | BsConfig::TYPE_INT, 'bs-pref-bspinginterval' );
-		BsConfig::registerVar( 'MW::SortAlph', false, BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER | BsConfig::TYPE_BOOL, 'bs-pref-sortalph', 'toggle' );
-		BsConfig::registerVar( 'MW::TestMode', false, BsConfig::LEVEL_PUBLIC | BsConfig::TYPE_BOOL, 'bs-pref-testmode', 'toggle' );
-
-		BsConfig::set( 'MW::ApplicationContext', 'Wiki' );
-		wfProfileOut('Performance: ' . __METHOD__);
-	}
-
 	public static function getForbiddenCharsInArticleTitle() {
 		return self::$prForbiddenCharsInArticleTitle;
 	}
@@ -355,8 +319,10 @@ class BsCore {
 
 		//TODO: This does not seem to be the right place for stuff like this.
 		global $wgFileExtensions;
-		$aFileExtensions  = BsConfig::get( 'MW::FileExtensions' );
-		$aImageExtensions = BsConfig::get( 'MW::ImageExtensions' );
+		$config = MediaWiki\MediaWikiServices::getInstance()
+			->getConfigFactory()->makeConfig( 'bsg' );
+		$aFileExtensions  = $config->get( 'FileExtensions' );
+		$aImageExtensions = $config->get( 'ImageExtensions' );
 		$wgFileExtensions = array_merge( $aFileExtensions, $aImageExtensions );
 		$wgFileExtensions = array_values( array_unique( $wgFileExtensions ) );
 	}

@@ -52,11 +52,18 @@ class ViewBaseElement {
 	protected $mOptions         = array();
 
 	/**
+	 *
+	 * @var \Config
+	 */
+	protected $config = null;
+
+	/**
 	 * Build a new element instance and bind an unique id to it.
 	 */
 	public function __construct() {
 		wfProfileIn( 'BS::'.__METHOD__ );
 		$this->_mId = 'bs-element-'.self::getAutoId();
+		$this->config = \MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 		wfProfileOut( 'BS::'.__METHOD__ );
 	}
 
