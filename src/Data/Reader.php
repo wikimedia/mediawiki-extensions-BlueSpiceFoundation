@@ -74,7 +74,9 @@ abstract class Reader implements IReader {
 		$dataSets = $trimmer->trim( $dataSets );
 
 		$secondaryDataProvider = $this->makeSecondaryDataProvider();
-		$dataSets = $secondaryDataProvider->extend( $dataSets );
+		if( $secondaryDataProvider instanceof ISecondaryDataProvider ) {
+			$dataSets = $secondaryDataProvider->extend( $dataSets );
+		}
 
 		$resultSet = new ResultSet( $dataSets, $total  );
 		return $resultSet;
@@ -114,7 +116,7 @@ abstract class Reader implements IReader {
 	}
 
 	/**
-	 * @return ISecondaryDataProvider
+	 * @return ISecondaryDataProvider | null to skip
 	 */
 	protected abstract function makeSecondaryDataProvider();
 }

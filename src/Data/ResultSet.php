@@ -2,13 +2,7 @@
 
 namespace BlueSpice\Data;
 
-class ResultSet {
-
-	/**
-	 *
-	 * @var \BlueSpice\Data\Record[]
-	 */
-	protected $records = [];
+class ResultSet extends RecordSet {
 
 	/**
 	 *
@@ -22,16 +16,8 @@ class ResultSet {
 	 * @param int $total
 	 */
 	public function __construct( $records, $total ) {
-		$this->records = $records;
+		parent::__construct( $records );
 		$this->total = $total;
-	}
-
-	/**
-	 *
-	 * @return \BlueSpice\Data\Record[]
-	 */
-	public function getRecords() {
-		return $this->records;
 	}
 
 	/**

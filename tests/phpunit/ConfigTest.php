@@ -22,9 +22,13 @@ class ConfigTest extends \MediaWikiTestCase {
 	public function addDBData() {
 		parent::addDBData();
 		$this->db->insert( 'bs_settings3', [
-			's_name' => 'bsgUnitTestSetting',
+			's_name' => 'UnitTestSetting',
 			's_value' => '"9"' //JSON formatted
 		] );
+		$config = new \BlueSpice\Config(
+			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
+		);
+		$config->invalidateCache();
 	}
 
 	public function testFactoryReturn() {

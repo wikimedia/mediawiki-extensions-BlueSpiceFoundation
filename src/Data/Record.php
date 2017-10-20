@@ -12,10 +12,17 @@ class Record implements IRecord, \JsonSerializable {
 
 	/**
 	 *
+	 * @var \Status
+	 */
+	protected $status = null;
+
+	/**
+	 *
 	 * @param \stdClass $dataSet
 	 */
-	public function __construct( $dataSet ) {
+	public function __construct( $dataSet, \Status $status = null ) {
 		$this->dataSet = $dataSet;
+		$this->status = $status;
 	}
 
 	/**
@@ -54,6 +61,18 @@ class Record implements IRecord, \JsonSerializable {
 	 */
 	public function getData() {
 		return $this->dataSet;
+	}
+
+	/**
+	 *
+	 * @return \Status
+	 */
+	public function getStatus() {
+		if( $this->status ) {
+			return $this->status;
+		}
+		$this->status = \Status::newGood();
+		return $this->status;
 	}
 
 }
