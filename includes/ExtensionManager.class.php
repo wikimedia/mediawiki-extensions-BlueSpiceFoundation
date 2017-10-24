@@ -146,31 +146,57 @@ class BsExtensionManager {
 		return self::$prRunningExtensions;
 	}
 
-	protected static function makeExtensionConfig( $sExtName = "", $aConfig = array() ) {
+	protected static function makeExtensionDefinition( $sExtName = "", $aDefinition = array() ) {
 		global $bsgBlueSpiceExtInfo;
-		if( !isset( $aConfig['className'] ) ) {
-			$aConfig['className'] = $sExtName;
+		$aExtensions = ExtensionRegistry::getInstance()->getAllThings();
+
+		//Some BlueSpice extensions have been registered wrong in the past.
+		//The the extension name used as key in bsgExtensions must be equal with
+		//the extensions name in the "name" attribute of the extension.json!
+		$aExtension = null;
+		if( isset( $aExtensions[$sExtName] ) ) {
+			$aExtension = $aExtensions[$sExtName];
+		} elseif ( isset( $aExtensions["BlueSpice$sExtName"] ) ) {
+			$aExtension = $aExtensions["BlueSpice$sExtName"];
+		} else {
+			$sFixedExtName = str_replace( 'BlueSpice', '', $sExtName );
+			if( isset( $aExtensions[$sFixedExtName] ) ) {
+				$aExtension = $aExtensions[$sFixedExtName];
+			}
 		}
-		if( !isset( $aConfig['extPath'] ) ) {
-			$aConfig['extPath'] = "";
+		if( !$aExtension ) {
+			throw new BsException(
+				"$sExtName is not a registered extension!"
+			);
 		}
-		if( !isset( $aConfig['status'] ) ) {
-			$aConfig['status'] = "default";
-		}
-		if( !isset( $aConfig['package'] ) ) {
-			$aConfig['package'] = "default";
-		}
-		$aConfig['status'] = str_replace(
-			'default',
-			$bsgBlueSpiceExtInfo['status'],
-			$aConfig['status']
+
+		$aDefinition = array_merge(
+			$aExtension,
+			$aDefinition
 		);
-		$aConfig['package'] = str_replace(
+		if( !isset( $aDefinition['className'] ) ) {
+			$aDefinition['className'] = $sExtName;
+		}
+		if( !isset( $aDefinition['extPath'] ) ) {
+			$aDefinition['extPath'] = "";
+		}
+		if( !isset( $aDefinition['status'] ) ) {
+			$aDefinition['status'] = "default";
+		}
+		if( !isset( $aDefinition['package'] ) ) {
+			$aDefinition['package'] = "default";
+		}
+		$aDefinition['status'] = str_replace(
 			'default',
-			$bsgBlueSpiceExtInfo['package'],
-			$aConfig['package']
+			$GLOBALS['bsgBlueSpiceExtInfo']['status'],
+			$aDefinition['status']
 		);
-		return $aConfig;
+		$aDefinition['package'] = str_replace(
+			'default',
+			$GLOBALS['bsgBlueSpiceExtInfo']['package'],
+			$aDefinition['package']
+		);
+		return $aDefinition;
 	}
 
 	/**
@@ -191,16 +217,18 @@ class BsExtensionManager {
 			);
 		}
 
-		foreach( $GLOBALS['bsgExtensions'] as $sExtName => $aConfig ) {
-			if( $sExtName === "BlueSpiceFoundation" ) {
+		foreach( $GLOBALS['bsgExtensions'] as $sExtName => $aDefinition ) {
+			//Skip the definitions for BlueSpiceFoundation, as it is not a
+			//extension we can instantiate
+			if( $sExtName === 'BlueSpiceFoundation' ) {
 				continue;
 			}
 			self::$prRegisteredExtensions[$sExtName]
-				= self::makeExtensionConfig( $sExtName, $aConfig );
+				= self::makeExtensionDefinition( $sExtName, $aDefinition );
 		}
 
-		foreach ( self::$prRegisteredExtensions as $sExtName => $aConfig ) {
-			$sClassName = $aConfig['className'];
+		foreach ( self::$prRegisteredExtensions as $sExtName => $aDefinition ) {
+			$sClassName = $aDefinition['className'];
 
 			if( !class_exists( $sClassName ) ) {
 				throw new BsException(
@@ -208,9 +236,29 @@ class BsExtensionManager {
 				);
 			}
 
-			self::$prRunningExtensions[$sExtName] = new $sClassName();
+			$config = \MediaWiki\MediaWikiServices::getInstance()
+				->getConfigFactory()->makeConfig( 'bsg' );
+			self::$prRunningExtensions[$sExtName] = new $sClassName(
+				$aDefinition,
+				RequestContext::getMain(),
+				$config
+			);
+			if( !self::$prRunningExtensions[$sExtName] instanceof \BsExtensionMW ) {
+				wfProfileOut( 'Performance: ' . __METHOD__ );
+				return;
+			}
+
+			//this is for extensions using the old mechanism and may have their
+			//own __constructor
+			self::$prRunningExtensions[$sExtName]->setConfig( $config );
+			self::$prRunningExtensions[$sExtName]->setContext(
+				RequestContext::getMain()
+			);
 			self::$prRunningExtensions[$sExtName]->setCore( $oCore );
-			self::$prRunningExtensions[$sExtName]->setup( $sExtName, $aConfig );
+			self::$prRunningExtensions[$sExtName]->setup(
+				$sExtName,
+				$aDefinition
+			);
 		}
 
 		wfProfileOut( 'Performance: ' . __METHOD__ );

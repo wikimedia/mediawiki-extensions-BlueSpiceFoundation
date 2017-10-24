@@ -1,14 +1,17 @@
 <?php
 
-abstract class BsExtensionMW extends ContextSource {
+use BlueSpice\Extension;
 
-	//<editor-fold desc="Former BsExtension implementation">
+/**
+ * @deprecated since version 3.0.0 - Use \BlueSpice\Extension instead
+ */
+abstract class BsExtensionMW extends Extension {
+
+	protected $mExtensionKey = null;
 	protected $mExtensionFile = null;
 	protected $mExtensionType = null;
 
 	protected $mInfo = null;
-	protected $mExtensionKey = null;
-
 	protected $mResourcePath = null;
 
 	protected $sName = '';
@@ -18,18 +21,24 @@ abstract class BsExtensionMW extends ContextSource {
 	/**
 	 *
 	 * @var BsCore
+	 * @deprecated since version 3.0.0
 	 */
 	protected $mCore = null;
 
 	protected $aStandardContext = array( '*', '*', '*' );
 
+	/**
+	 * @deprecated since version 3.0.0 - Use constructor instead
+	 */
 	protected function initExt() {}
 
 	/**
 	 * Save a reference to current adapter instance.
+	 * @deprecated since version 3.0.0
 	 * @param BsCore $oCore
 	 */
 	public function setCore( $oCore ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$this->mCore = $oCore;
 	}
 
@@ -63,21 +72,15 @@ abstract class BsExtensionMW extends ContextSource {
 		);
 	}
 
-	// TODO MRG (01.09.10 01:57): Kommentar
-	public function getName() {
-		return $this->sName;
-	}
-
-	// TODO MRG (01.09.10 01:57): Kommentar
-	public function getExtensionKey() {
-		return $this->mExtensionKey;
-	}
-
 	/**
 	 * Initializes the extension.
+	 * @param string $sExtName
+	 * @param array $aConfig
+	 * @deprecated since version 3.0.0
 	 */
 	public function setup( $sExtName = "", $aConfig = array() ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
+		wfDeprecated( __METHOD__, '3.0.0' );
 
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
 			// Extension credits that will show up on Special:Version
@@ -119,8 +122,10 @@ abstract class BsExtensionMW extends ContextSource {
 	 * @param string $hook name of the hook to register to
 	 * @param string $method (optional) name of method register to
 	 * @param bool $bExecuteFirst set this method to be first to be executed when hook triggered
+	 * @deprecated since version 3.0.0 - use extension registration instead
 	 */
 	public function setHook( $hook, $method = false, $bExecuteFirst = false ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		global $wgHooks;
 		// handle $method === 'on'.$hook as if $method == false
 		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( $this, $method ) : $this;
@@ -140,6 +145,36 @@ abstract class BsExtensionMW extends ContextSource {
 	}
 
 	/**
+	 * Sets the Context
+	 * @param \IContextSource $context
+	 * @deprecated since version 3.0.0 - This is just for
+	 * backwards compatibillity as older extensions may have their own
+	 * constructor and therefore do not handover the context to the parent
+	 * constructor
+	 * @return Extension
+	 */
+	public function setContext( \IContextSource $context ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$this->context = $context;
+		return $this;
+	}
+
+	/**
+	 * Sets the Config
+	 * @param \Config $config
+	 * @deprecated since version 3.0.0 - This is just for
+	 * backwards compatibillity as older extensions may have their own
+	 * constructor and therefore do not handover the config to the parent
+	 * constructor
+	 * @return Extension
+	 */
+	public function setConfig( \Config $config ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$this->config = $config;
+		return $this;
+	}
+
+	/**
 	 * Returns the resource path for the current extension
 	 * @global string $IP
 	 * @global string $wgScriptPath
@@ -150,11 +185,34 @@ abstract class BsExtensionMW extends ContextSource {
 	}
 
 	/**
+	 * Returns the name of the extension
+	 * @return string
+	 */
+	public function getName() {
+		return $this->sName;
+	}
+
+	/**
+	 * Returns the key of the extension. 'MW::<name>'
+	 * @return string
+	 */
+	public function getExtensionKey() {
+		return $this->mExtensionKey;
+	}
+
+	public function getExtensionPath() {
+		return "/{$this->getName()}";
+	}
+
+	/**
 	 * Returns the image path for the current extension
-	 * @param boolean $bResources Whether or not the image directory is located inside the resources directory
+	 * @param boolean $bResources Whether or not the image directory is located
+	 * inside the resources directory
+	 * @deprecated since version 3.0.0
 	 * @return string
 	 */
 	public function getImagePath( $bResources = false ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		if ( $bResources ) {
 			return $this->getResourcePath().'/images/';
 		}
@@ -164,10 +222,12 @@ abstract class BsExtensionMW extends ContextSource {
 	/**
 	 * Returns the cache key for this particlular extension
 	 * @param string $sSubKey
+	 * @deprecated since version 3.0.0
 	 * @return string
 	 */
 	public function getCacheKey( $sSubKey = 'default' ) {
-		return BsCacheHelper::getCacheKey(
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return \BsCacheHelper::getCacheKey(
 			'BlueSpice',
 			$this->getName(),
 			$sSubKey
@@ -176,9 +236,11 @@ abstract class BsExtensionMW extends ContextSource {
 
 	/**
 	 * Returns an array of tag extension definitions
+	 * @deprecated since version 3.0.0
 	 * @return array
 	 */
 	public function makeTagExtensionDefinitions() {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		return array();
 	}
 }
