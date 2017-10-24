@@ -2,7 +2,7 @@
 
 namespace BlueSpice\ConfigDefinition;
 
-class ArraySetting extends \BlueSpice\ConfigDefinition {
+abstract class ArraySetting extends \BlueSpice\ConfigDefinition {
 
 	public function getHtmlFormField() {
 		return new \HTMLMultiSelectEx( $this->makeFormFieldParams() );
@@ -12,9 +12,5 @@ class ArraySetting extends \BlueSpice\ConfigDefinition {
 		$params = parent::makeFormFieldParams();
 		$params['options'] = $this->getValue();
 		return $params;
-	}
-
-	public function getLabelMessageKey() {
-		return $this->getVariableName();
 	}
 }

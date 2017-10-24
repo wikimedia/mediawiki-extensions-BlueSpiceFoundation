@@ -51,39 +51,17 @@ abstract class ConfigDefinition implements ISetting {
 			return false;
 		}
 		$definitions = static::getConfigDefinitions();
-		if( isset( $definitions[$name] ) ) {
-			$callback = $definitions[$name];
-		} else {
-			$callback = static::getDefaultDefinitionCallback(
-				$name,
-				$config
-			);
-			if( !$callback ) {
-				return false;
-			}
-		}
-		if( !is_callable( $callback ) ) {
+		if( !isset( $definitions[$name] ) ) {
 			return false;
 		}
-		return call_user_func_array( $callback, [
+		if( !is_callable( $definitions[$name] ) ) {
+			return false;
+		}
+		return call_user_func_array( $definitions[$name], [
 			\RequestContext::getMain(),
 			$config,
 			$name,
 		]);
-	}
-
-	protected static function getDefaultDefinitionCallback( $name, \Config $config = null ) {
-		//TODO: make this configurable
-		if( is_string( $config->get( $name ) ) ) {
-			return "\\BlueSpice\\ConfigDefinition\\StringSetting::getInstance";
-		}
-		if( is_int( $config->get( $name ) ) ) {
-			return "\\BlueSpice\\ConfigDefinition\\IntSetting::getInstance";
-		}
-		if( is_array( $config->get( $name ) ) ) {
-			return "\\BlueSpice\\ConfigDefinition\\ArraySetting::getInstance";
-		}
-		return null;
 	}
 
 	protected static function getConfigDefinitions() {
@@ -122,14 +100,6 @@ abstract class ConfigDefinition implements ISetting {
 
 	/**
 	 *
-	 * @return \Message
-	 */
-	public function getDescripttionMessage() {
-		return null;
-	}
-
-	/**
-	 *
 	 * @return mixed
 	 */
 	public function getValue() {
@@ -164,7 +134,7 @@ abstract class ConfigDefinition implements ISetting {
 		return [
 			static::MAIN_PATH_TYPE . '/' . static::TYPE_SYSTEM,
 			static::MAIN_PATH_EXTENSION . '/BlueSpiceFoundation',
-			static::MAIN_PATH_PAKAGE . '/BlueSpice',
+			static::MAIN_PATH_PACKAGE . '/BlueSpice',
 		];
 	}
 

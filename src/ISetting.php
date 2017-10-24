@@ -5,7 +5,7 @@ namespace BlueSpice;
 interface ISetting {
 	const MAIN_PATH_TYPE = 'type';
 	const MAIN_PATH_EXTENSION = 'extension';
-	const MAIN_PATH_PAKAGE = 'pakage';
+	const MAIN_PATH_PACKAGE = 'package';
 
 	const TYPE_SYSTEM = 'system';
 	const TYPE_INTERFACE = 'interface';
@@ -21,7 +21,7 @@ interface ISetting {
 	/**
 	 * @return array An array of paths that define where to provide an input
 	 * field within the settings UI. E.g.
-	 * [ 'type/interface', 'extension/<extensionX>', 'pakage/<pakageX>' ]
+	 * [ 'type/interface', 'extension/<extensionX>', 'package/<packageX>' ]
 	 * ATTENTION: Path elements need a message key to be available following
 	 * the pattern 'bs-setting-path-<elementName>'. E. g.
 	 * 'bs-setting-path-<extensionX>'
