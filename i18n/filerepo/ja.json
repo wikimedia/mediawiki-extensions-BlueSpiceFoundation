@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Otokoume"
+		]
+	},
+	"bs-filerepo-labelupload": "アップロード",
+	"bs-filerepo-labelfilter": "フィルター",
+	"bs-filerepo-headerfilename": "ファイル名",
+	"bs-filerepo-headerfilesize": "サイズ",
+	"bs-filerepo-headerpagecategories": "カテゴリ",
+	"bs-filerepo-headerfilewidth": "幅",
+	"bs-filerepo-headerfileheight": "高さ",
+	"bs-filerepo-headerfilemimetype": "MIMEタイプ",
+	"bs-filerepo-headerfileusertext": "利用者",
+	"bs-filerepo-headerfileextension": "拡張子",
+	"bs-filerepo-headerfiletimestamp": "アップロード日時",
+	"bs-filerepo-headerfilemediatype": "メディアの種類",
+	"bs-filerepo-headerfiledescription": "説明",
+	"bs-filerepo-headerfilethumbnail": "サムネイル",
+	"bs-filerepo-yes": "はい",
+	"bs-filerepo-no": "いいえ",
+	"bs-filerepo-pagesize": "ページサイズ"
+}
