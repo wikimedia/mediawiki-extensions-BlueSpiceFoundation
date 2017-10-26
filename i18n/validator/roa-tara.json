@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-validator-email-validation-approved": "L'indirizze email ha state convalidate.",
+	"bs-validator-email-validation-not-approved": "L'indirizze email non ge pò essere convalidate."
+}
