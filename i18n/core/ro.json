@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"XXN"
+			"XXN",
+			"Strainu"
 		]
 	},
+	"bs-userbar_loginswitch_logout": "Închide sesiunea",
 	"bs-filesystemhelper-folder-copy-error": "Dosarul <code>$1</code> nu poate fi redenumit."
 }
