@@ -95,16 +95,25 @@ Ext.define('Ext.ux.grid.filter.StringFilter', {
      * @return {Boolean} true if the record is valid within the bounds
      * of the filter, false otherwise.
      */
-    validateRecord: function(record) {
+    validateRecord: function( record ) {
         var val = record.get(this.dataIndex),
                 values = this.getValue();
-        if (values.eq !== undefined && val != values.eq) {
+        if (values.eq !== undefined && values.eq !== '' && val.toLowerCase() !== values.eq.toLowerCase() ) {
             return false;
         }
-        if (values.lt !== undefined && val >= values.lt) {
+        if( values.neq !== undefined && values.neq !== '' && val.toLowerCase() === values.neq.toLowerCase() ) {
             return false;
         }
-        if (values.gt !== undefined && val <= values.gt) {
+        if( values.ct !== undefined && values.ct !== '' && val.toLowerCase().indexOf( values.ct.toLowerCase() ) === -1 ) {
+            return false;
+        }
+        if( values.nct !== undefined && values.nct !== '' && val.toLowerCase().indexOf( values.nct.toLowerCase() ) !== -1 ) {
+            return false;
+        }
+        if( values.sw !== undefined && values.sw !== '' && val.toLowerCase().indexOf( values.sw.toLowerCase() ) !== 0 ) {
+            return false;
+        }
+        if( values.ew !== undefined && values.ew !== '' && val.toLowerCase().endsWith( values.ew.toLowerCase() ) !== true ) {
             return false;
         }
         return true;
