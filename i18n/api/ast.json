@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Llista de tolos ficheros del sirvidor de ficheros. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-filebackend-store-summary": "Llista de tolos ficheros del sirvidor de ficheros. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-user-store-description": "Llista de tolos usuarios de la base de datos. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-user-store-summary": "Llista de tolos usuarios de la base de datos. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-category-store-description": "Llista de toles categoríes. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-category-store-summary": "Llista de toles categoríes. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-adminuser-store-description": "Llista de tolos usuarios de la base de datos incluyendo datos sensibles. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-adminuser-store-summary": "Llista de tolos usuarios de la base de datos incluyendo datos sensibles. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-group-store-description": "Llista de tolos grupos, sacante $wgImplicitGroups. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-group-store-summary": "Llista de tolos grupos, sacante $wgImplicitGroups. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-interwiki-store-description": "Llista de tolos enllaces interwiki. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-interwiki-store-summary": "Llista de tolos enllaces interwiki. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Llista de títulos de páxina y (opcionalmente) prefixos d'espaciu de nomes basándose na consulta d'un términu. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-titlequery-store-summary": "Llista de títulos de páxina y (opcionalmente) prefixos d'espaciu de nomes basándose na consulta d'un términu. Proporciona los parámetros ExtJS Store.",
+	"apihelp-bs-wikipage-tasks-description": "Ufre operaciones comunes pa WikiPages",
+	"apihelp-bs-wikipage-tasks-summary": "Ufre operaciones comunes pa WikiPages"
+}
