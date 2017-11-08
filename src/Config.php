@@ -1,6 +1,9 @@
 <?php
 
 namespace BlueSpice;
+use BlueSpice\Data\Settings\Store;
+use BlueSpice\Data\Settings\Record;
+use BlueSpice\Context;
 
 class Config extends \MultiConfig implements \Serializable {
 
@@ -59,25 +62,42 @@ class Config extends \MultiConfig implements \Serializable {
 		return new self( $lb );
 	}
 
+	/**
+	 * //TODO: We need a config chache invalidation when writing to the db!
+	 * Invalidates the cache of config stored in the database
+	 * @return boolean
+	 */
+	public function invalidateCache() {
+		//TODO: We need a config chache invalidation when writing to the db!
+		return true;
+	}
+
 	protected function makeDatabaseConfig() {
 		$hash = [];
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-		//when config get initialized before the database is created
-		//(f.e.: in update.php)
-		//TODO: Cache this config
 		if( !$dbr->tableExists( 'bs_settings3' ) ) {
 			return new \HashConfig( $hash );
 		}
-		$res = $dbr->select( 'bs_settings3', '*' );
+		$store = $this->getStore();
+		$resultSet = $store->getReader()->read(
+			new Data\ReaderParams( [
+				'limit' => Data\ReaderParams::LIMIT_INFINITE
+			] )
+		);
 
-		foreach( $res as $row ) {
-			if( strpos(  $row->s_name, 'bsg' ) === 0 ) {
-				$name = substr( $row->s_name, 3 );
-				$hash[$name] = \FormatJson::decode( $row->s_value );
-			}
+		foreach( $resultSet->getRecords() as $record ) {
+			$name = $record->get( Record::NAME );
+			$hash[ $name ] = $record->get( Record::VALUE );
 		}
 
 		return new \HashConfig( $hash );
+	}
+
+	protected function getStore() {
+		return new Store(
+			new Context( \RequestContext::getMain(), $this ),
+			$this->loadBalancer
+		);
 	}
 
 }

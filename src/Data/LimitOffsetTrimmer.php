@@ -28,7 +28,10 @@ class LimitOffsetTrimmer implements ITrimmer {
 	 */
 	public function trim( $dataSets ) {
 		$total = count( $dataSets );
-		$end = $this->limit + $this->offset;
+		$end = $total;
+		if( $this->limit !== ReaderParams::LIMIT_INFINITE ) {
+			$end = $this->limit + $this->offset;
+		}
 
 		if( $end > $total || $end === 0 ) {
 			$end = $total;

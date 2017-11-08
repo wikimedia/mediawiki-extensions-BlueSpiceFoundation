@@ -2,18 +2,7 @@
 
 require_once( 'BSMaintenance.php' );
 
-class BSMigrateSettings extends Maintenance {
-
-	public function execute() {
-		if( $this->noDataToMigrate() ) {
-			$this->output( "bs_settings -> bs_settings3: No data to migrate" );
-			return;
-		}
-
-		$this->readOldData();
-		$this->convertData();
-		$this->saveConvertedData();
-	}
+class BSMigrateSettings extends LoggedUpdateMaintenance {
 
 	protected function noDataToMigrate() {
 		return $this->getDB( DB_REPLICA )->tableExists( 'bs_settings' ) === false;
@@ -38,19 +27,34 @@ class BSMigrateSettings extends Maintenance {
 	}
 
 	protected function makeNewName( $oldName ) {
-		if( $oldName === 'MW::LogoPath' ) {
-			return 'wgLogo';
+		if( $deviatingName = $this->fromDeviatingNames( $oldName ) ) {
+			return $deviatingName;
 		}
 
 		//$oldName = "MW::TopMenuBarCustomizer::NumberOfSubEntries"
 		$nameParts = explode( '::', $oldName );
 		array_shift( $nameParts ); //MW
-		$newName = 'bsg' . implode( '', $nameParts );
+		$newName = implode( '', $nameParts );
 
 		if( strlen( $newName ) > 255 ) {
 			throw new Exception( "Variable name '$newName' is too long!" );
 		}
 
+		return $newName;
+	}
+
+	protected function fromDeviatingNames( $oldName ) {
+		if( $oldName === 'MW::LogoPath' ) {
+			return 'Logo';
+		}
+		if( $oldName === 'MW::FaviconPath' ) {
+			return 'Favicon';
+		}
+		$newName = false;
+		\Hooks::run( 'BSMigrateSettingsFromDeviatingNames', [
+			$oldName,
+			&$newName
+		]);
 		return $newName;
 	}
 
@@ -82,11 +86,21 @@ class BSMigrateSettings extends Maintenance {
 		return FormatJson::encode( $newValue );
 	}
 
-}
+	protected function doDBUpdates() {
+		if( $this->noDataToMigrate() ) {
+			$this->output( "bs_settings -> bs_settings3: No data to migrate" );
+			return true;
+		}
 
-$maintClass = 'BSMigrateSettings';
-if (defined('RUN_MAINTENANCE_IF_AIN')) {
-	require_once( RUN_MAINTENANCE_IF_MAIN );
-} else {
-	require_once( DO_MAINTENANCE ); # Make this work on versions before 1.17
+		$this->readOldData();
+		$this->convertData();
+		$this->saveConvertedData();
+
+		return true;
+	}
+
+	protected function getUpdateKey() {
+		return 'bs_settings3-migration';
+	}
+
 }

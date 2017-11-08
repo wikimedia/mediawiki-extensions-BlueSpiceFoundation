@@ -56,6 +56,9 @@ class BsGenericTagExtensionHandler {
 	 */
 	public static function setupHandlers( $aExtensions, $parser ) {
 		foreach( $aExtensions as $oExtension ) {
+			if( !$oExtension instanceof BlueSpice\ITagExtensionDefinitionProvider ) {
+				continue;
+			}
 			$aExtensionTags = $oExtension->makeTagExtensionDefinitions();
 			foreach( $aExtensionTags as $sTagName => $aTagDef ) {
 				$oTagHandler = new self( $sTagName, $aTagDef );

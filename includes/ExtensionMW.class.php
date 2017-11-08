@@ -1,11 +1,12 @@
 <?php
 
 use BlueSpice\Extension;
+use BlueSpice\ITagExtensionDefinitionProvider;
 
 /**
  * @deprecated since version 3.0.0 - Use \BlueSpice\Extension instead
  */
-abstract class BsExtensionMW extends Extension {
+abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitionProvider {
 
 	protected $mExtensionKey = null;
 	protected $mExtensionFile = null;
@@ -236,11 +237,9 @@ abstract class BsExtensionMW extends Extension {
 
 	/**
 	 * Returns an array of tag extension definitions
-	 * @deprecated since version 3.0.0
 	 * @return array
 	 */
 	public function makeTagExtensionDefinitions() {
-		wfDeprecated( __METHOD__, '3.0.0' );
 		return array();
 	}
 }

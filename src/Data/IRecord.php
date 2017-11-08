@@ -22,4 +22,9 @@ interface IRecord {
 	 * @return \stdClass
 	 */
 	public function getData();
+
+	/**
+	 * @return \Status
+	 */
+	public function getStatus();
 }

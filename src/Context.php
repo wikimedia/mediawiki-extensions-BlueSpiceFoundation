@@ -1,7 +1,7 @@
 <?php
 namespace BlueSpice;
 
-abstract class Context implements \IContextSource {
+class Context implements \IContextSource {
 
 	/**
 	 *
