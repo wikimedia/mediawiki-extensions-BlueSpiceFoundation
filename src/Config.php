@@ -39,15 +39,18 @@ class Config extends \MultiConfig implements \Serializable {
 	 */
 	protected $loadBalancer = null;
 
+	protected $databaseConfig = null;
+
 	/**
 	 *
 	 * @param \LoadBalancer $loadBalancer
 	 */
 	public function __construct( $loadBalancer ) {
 		$this->loadBalancer = $loadBalancer;
+		$this->databaseConfig = $this->makeDatabaseConfig();
 		parent::__construct( [
 			new \GlobalVarConfig( 'bsgOverride' ),
-			$this->makeDatabaseConfig(),
+			&$this->databaseConfig,
 			new \GlobalVarConfig( 'bsg' ),
 			new \GlobalVarConfig( 'wg' ),
 		] );
@@ -63,12 +66,11 @@ class Config extends \MultiConfig implements \Serializable {
 	}
 
 	/**
-	 * //TODO: We need a config chache invalidation when writing to the db!
 	 * Invalidates the cache of config stored in the database
 	 * @return boolean
 	 */
 	public function invalidateCache() {
-		//TODO: We need a config chache invalidation when writing to the db!
+		$this->databaseConfig = $this->makeDatabaseConfig();
 		return true;
 	}
 
