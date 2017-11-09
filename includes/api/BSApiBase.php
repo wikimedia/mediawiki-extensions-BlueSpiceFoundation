@@ -95,4 +95,15 @@ abstract class BSApiBase extends ApiBase {
 	public function getCustomPrinter() {
 		return new BSApiFormatJson( $this->getMain(), $this->getParameter( 'format' ) );
 	}
+
+	/**
+	 * Get the Config object
+	 *
+	 * @since 1.23
+	 * @return Config
+	 */
+	public function getConfig() {
+		return \MediaWiki\MediaWikiServices::getInstance()
+			->getConfigFactory()->makeConfig( 'bsg' );
+	}
 }
