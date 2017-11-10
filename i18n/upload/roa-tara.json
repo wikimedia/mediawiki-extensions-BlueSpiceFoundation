@@ -20,5 +20,7 @@
 	"bs-upload-error-long": "Errore jndr'à 'u processe de carecamende",
 	"bs-upload-filetypenotsupported": "Tipe de file non supportate",
 	"bs-upload-details": "Dettaglie",
-	"bs-upload-uploadwarningdialog-title": "Carecamende d'u file: Avverteminde"
+	"bs-upload-uploadwarningdialog-title": "Carecamende d'u file: Avverteminde",
+	"bs-upload-uploadwarningdialog-intro": "Le avvise ca avènene onne assute quanne ste pruvave a carecà 'u file",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Avvise scanusciute cu 'u codece \"$1\""
 }
