@@ -12,6 +12,7 @@ module.exports = function ( grunt ) {
 			all: [
 				'**/*.js',
 				'!node_modules/**',
+				'!vendor/**',
 				'!resources/bluespice.extjs/Ext.ux/**',
 				'!resources/extjs/**'
 			]
@@ -36,7 +37,8 @@ module.exports = function ( grunt ) {
 			all: [
 				'*.json',
 				'**/*.json',
-				'!node_modules/**'
+				'!node_modules/**',
+				'!vendor/**'
 			]
 		}
 	} );
