@@ -28,10 +28,24 @@
  */
 namespace BlueSpice;
 use BlueSpice\Content\Entity as EntityContent;
+use MediaWiki\MediaWikiServices;
 
 abstract class Entity implements \JsonSerializable {
 	const NS = -1;
-	protected static $aEntitiesByID = array();
+
+	const ATTR_TYPE = 'type';
+	const ATTR_ID = 'id';
+	const ATTR_OWNER_ID = 'ownerid';
+	const ATTR_ARCHIVED = 'archived';
+	const ATTR_PARENT_ID = 'parentid';
+	const ATTR_TIMESTAMP_CREATED = 'timestampcreated';
+	const ATTR_TIMESTAMP_TOUCHED = 'timestamptouched';
+
+	/**
+	 *
+	 * @var EntityFactory
+	 */
+	protected $entityFactory = null;
 	protected $bUnsavedChanges = true;
 
 	/**
@@ -44,16 +58,26 @@ abstract class Entity implements \JsonSerializable {
 	protected $sType = '';
 	protected $bArchived = false;
 
-	protected function __construct( \stdClass $oStdClass, EntityConfig $oConfig ) {
+	protected function __construct( \stdClass $oStdClass, EntityConfig $oConfig, EntityFactory $entityFactory = null ) {
+		if( !$entityFactory ) {
+			$entityFactory = MediaWikiServices::getInstance()->getService(
+				'EntityFactory'
+			);
+		}
+
+		$this->entityFactory = $entityFactory;
 		$this->oConfig = $oConfig;
-		if( !empty($oStdClass->id) ) {
-			$this->iID = (int) $oStdClass->id;
+		if( !empty( $oStdClass->{static::ATTR_ID} ) ) {
+			$this->iID = (int) $oStdClass->{static::ATTR_ID};
 		}
-		if( !empty($oStdClass->type) ) {
-			$this->sType = $oStdClass->type;
+		if( !empty( $oStdClass->{static::ATTR_TYPE} ) ) {
+			$this->sType = $oStdClass->{static::ATTR_TYPE};
 		}
-		if( !empty($oStdClass->archived) ) {
-			$this->bArchived = $oStdClass->archived;
+		if( !empty( $oStdClass->{static::ATTR_ARCHIVED} ) ) {
+			$this->bArchived = $oStdClass->{static::ATTR_ARCHIVED};
+		}
+		if( !empty( $oStdClass->{static::ATTR_OWNER_ID} ) ) {
+			$this->iOwnerID = $oStdClass->{static::ATTR_OWNER_ID};
 		}
 
 		$this->setValuesByObject( $oStdClass );
@@ -62,59 +86,47 @@ abstract class Entity implements \JsonSerializable {
 		}
 	}
 
-	protected static function factory( $sType, $oData ) {
-		$oConfig = EntityConfig::factory( $sType );
-		if( !$oConfig instanceof EntityConfig ) {
-			//TODO: Return a DummyEntity instead of null.
-			return null;
-		}
-
-		$sEntity = $oConfig->get( 'EntityClass' );
-		$oInstance = new $sEntity( $oData, $oConfig );
-		return $oInstance;
+	/**
+	 * Returns the instance - Should not be used directly. This is a workaround
+	 * as all entity __construc methods are private. Use mediawiki service
+	 * 'EntityFactory' instead
+	 * @param \stdClass $data
+	 * @param \BlueSpice\EntityConfig $oConfig
+	 * @param \BlueSpice\EntityFactory $entityFactory
+	 * @return \static
+	 */
+	public static function newFromFactory( \stdClass $data, EntityConfig $oConfig, EntityFactory $entityFactory ) {
+		return new static( $data, $oConfig );
 	}
 
 	/**
 	 * Get Entity by EntityContent Object, wrapper for newFromObject
+	 * @deprecated since version 3.0.0 - Use mediawiki service
+	 * ('EntityFactory')->newFromContent() instead
 	 * @param EntityContent $sContent
 	 * @return Entity
 	 */
 	public static function newFromContent( EntityContent $sContent ) {
-		$aContent = $sContent->getJsonData();
-		if ( empty($aContent) ) {
-			return null;
-		}
-
-		return static::newFromObject( (object) $aContent );
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityFactory = MediaWikiServices::getInstance()->getService(
+			'EntityFactory'
+		);
+		return $entityFactory->newFromContent( $sContent );
 	}
 
 	/**
 	 * Get Entity by Json Object
+	 * @deprecated since version 3.0.0 - Use mediawiki service
+	 * ('EntityFactory')->newFromObject() instead
 	 * @param Object $oObject
 	 * @return Entity
 	 */
 	public static function newFromObject( $oObject ) {
-		if( !is_object($oObject) ) {
-			return null;
-		}
-
-		if( empty($oObject->type) ) {
-			//$oObject->type = EntityRegistry::getDefaultHandlerType();
-			return null;
-		}
-		if( !EntityRegistry::isRegisteredType($oObject->type) ) {
-			return null;
-		}
-
-		if( !empty($oObject->id) && (int) $oObject->id !== 0 ) {
-			return static::newFromID( $oObject->id );
-		}
-
-		$oInstance = static::factory(
-			$oObject->type,
-			$oObject
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityFactory = MediaWikiServices::getInstance()->getService(
+			'EntityFactory'
 		);
-		return static::appendCache( $oInstance );
+		return $entityFactory->newFromObject( $oObject );
 	}
 
 	/**
@@ -151,61 +163,34 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Get Entity from ID, wrapper for newFromTitle
+	 * @deprecated since version 3.0.0 - Use mediawiki service
+	 * ('EntityFactory')->newFromID() instead
 	 * @param int $iID
 	 * @param boolean $bForceReload
 	 * @return Entity | null
 	 */
 	public static function newFromID( $iID, $bForceReload = false ) {
-		if ( !is_numeric( $iID ) ) {
-			return null;
-		}
-		$iID = (int) $iID;
-
-		if ( !$bForceReload && static::hasCacheEntry( $iID ) ) {
-			return static::getInstanceFromCacheByID( $iID );
-		}
-
-		$oTitle = static::getTitleFor( $iID );
-
-		if( is_null($oTitle) || !$oTitle->exists() ) {
-			return null;
-		}
-
-		$sText = \BsPageContentProvider::getInstance()->getContentFromTitle(
-			$oTitle
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityFactory = MediaWikiServices::getInstance()->getService(
+			'EntityFactory'
 		);
-
-		$oEntityContent = new EntityContent( $sText );
-		$oData = (object) $oEntityContent->getData()->getValue();
-
-		if( empty($oData->type) ) {
-			return null;
-			//$oData->type = EntityRegistry::getDefaultHandlerType();
-		}
-		if( !EntityRegistry::isRegisteredType($oData->type) ) {
-			return null;
-		}
-
-		$oInstace = static::factory(
-			$oData->type,
-			$oData
-		);
-		return static::appendCache( $oInstace );
+		return $entityFactory->newFromID( $iID, static::NS, $bForceReload );
 	}
 
 	/**
 	 * Main method for getting a Entity from a Title
+	 * @deprecated since version 3.0.0 - Use mediawiki service
+	 * ('EntityFactory')->newFromSourceTitle() instead
 	 * @param \Title $oTitle
 	 * @param boolean $bForceReload
 	 * @return Entity
 	 */
 	public static function newFromTitle( \Title $oTitle, $bForceReload = false ) {
-		if ( is_null( $oTitle ) || $oTitle->getNamespace() !== static::NS ) {
-			return null;
-		}
-		$iID = (int) $oTitle->getText();
-
-		return static::newFromID( $iID, $bForceReload );
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityFactory = MediaWikiServices::getInstance()->getService(
+			'EntityFactory'
+		);
+		return $entityFactory->newFromSourceTitle( $oTitle, $bForceReload );
 	}
 
 	/**
@@ -333,48 +318,6 @@ abstract class Entity implements \JsonSerializable {
 	}
 
 	/**
-	 * Adds a Entity to the cache
-	 * @param Entity $oInstance
-	 * @return Entity
-	 */
-	protected static function appendCache( Entity &$oInstance ) {
-		if( static::hasCacheEntry( $oInstance->getID() ) ) {
-			return $oInstance;
-		}
-		static::$aEntitiesByID[static::NS][$oInstance->getID()] = $oInstance;
-		return $oInstance;
-	}
-
-	/**
-	 * Removes a Entity from the cache if it's in
-	 * @param Entity $oInstance
-	 * @return Entity
-	 */
-	protected static function detachCache( Entity &$oInstance ) {
-		if( !static::hasCacheEntry($oInstance->getID()) ) {
-			return $oInstance;
-		}
-		unset( static::$aEntitiesByID[static::NS][$oInstance->getID()] );
-		return $oInstance;
-	}
-
-	/**
-	 * Gets a instance of the Entity from the cache by ID
-	 * @param int $iID
-	 * @return Entity
-	 */
-	protected static function getInstanceFromCacheByID( $iID ) {
-		if( !static::hasCacheEntry( $iID ) ) {
-			return null;
-		}
-		return static::$aEntitiesByID[static::NS][(int) $iID];
-	}
-
-	protected static function hasCacheEntry( $iID ) {
-		return isset( static::$aEntitiesByID[static::NS][(int) $iID] );
-	}
-
-	/**
 	 * Checks, if the current Entity exists in the Wiki
 	 * @return boolean
 	 */
@@ -472,9 +415,6 @@ abstract class Entity implements \JsonSerializable {
 	 * @param \stdClass $oData
 	 */
 	public function setValuesByObject( \stdClass $oData ) {
-		if( isset($oData->ownerid) ) {
-			$this->setOwnerID( $oData->ownerid );
-		}
 		\Hooks::run('BSEntitySetValuesByObject', [
 			$this,
 			$oData
@@ -499,7 +439,7 @@ abstract class Entity implements \JsonSerializable {
 	 */
 	public function invalidateCache() {
 		$this->invalidateTitleCache( wfTimestampNow() );
-		static::detachCache( $this );
+		$this->entityFactory->detachCache( $this );
 		\Hooks::run( 'BSEntityInvalidate', [ $this ] );
 		return $this;
 	}

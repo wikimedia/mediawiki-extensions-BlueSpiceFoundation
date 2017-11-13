@@ -464,6 +464,9 @@
 			"value": {
 				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage"
 			}
+		},
+		"EntityRegistry": {
+			"value": []
 		}
 	},
 	"ConfigRegistry": {

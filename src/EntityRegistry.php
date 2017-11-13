@@ -27,35 +27,51 @@
  * @filesource
  */
 namespace BlueSpice;
+use MediaWiki\MediaWikiServices;
 
 /**
  * EntityRegistry class for BlueSpice
  * @package BlueSpiceFoundation
  */
 class EntityRegistry {
-	private function __construct() {}
-	private static $bEntitiesRegistered = false;
-	private static $aEntities = array();
+	protected $entitydefinitions = null;
 
-	protected static function runRegister( $bForceReload = false ) {
-		if( static::$bEntitiesRegistered && !$bForceReload ) {
+	/**
+	 *
+	 * @var \Config
+	 */
+	protected $config = null;
+
+	/**
+	 *
+	 * @param type $config
+	 */
+	public function __construct( $config ) {
+		$this->config = $config;
+	}
+
+	protected function runRegister( $bForceReload = false ) {
+		if( $this->entitydefinitions && !$bForceReload ) {
 			return true;
 		}
+		$this->entitydefinitions = $this->config->get( 'EntityRegistry' );
 
-		$b = \Hooks::run( 'BSEntityRegister', [ &self::$aEntities ]);
+		//This hook is deprecated - Use config mechanism in extension.json to
+		//register entities
+		\Hooks::run( 'BSEntityRegister', [&$this->entitydefinitions] );
 
-		return $b ? static::$bEntitiesRegistered = true : $b;
+		return true;
 	}
 
 	/**
 	 * Returns all registered entities ( type => EntityConfigClass )
 	 * @return array
 	 */
-	public static function getRegisteredEntities() {
-		if( !self::runRegister() ) {
+	public function getEntityDefinitions() {
+		if( !$this->runRegister() ) {
 			return [];
 		}
-		return self::$aEntities;
+		return $this->entitydefinitions;
 	}
 
 	/**
@@ -63,10 +79,10 @@ class EntityRegistry {
 	 * @param string $sType
 	 * @return bool
 	 */
-	public static function isRegisteredType( $sType ) {
+	public function hasType( $sType ) {
 		return in_array(
 			$sType,
-			self::getRegisterdTypeKeys()
+			$this->getTypes()
 		);
 	}
 
@@ -75,20 +91,75 @@ class EntityRegistry {
 	 * @param string $sType
 	 * @return array
 	 */
-	public static function getRegisteredEntityByType( $sType ) {
-		if( !self::isRegisteredType( $sType ) ) {
+	public function getEntityByType( $sType ) {
+		if( !$this->hasType( $sType ) ) {
 			return [];
 		}
-		return self::$aEntities[$sType];
+		return $this->entitydefinitions[$sType];
 	}
 
 	/**
 	 * Returns all registered entity types
 	 * @return array
 	 */
-	public static function getRegisterdTypeKeys() {
+	public function getTypes() {
 		return array_keys(
-			self::getRegisteredEntities()
+			$this->getEntityDefinitions()
 		);
+	}
+
+	/**
+	 * Returns all registered entities ( type => EntityConfigClass )
+	 * @deprecated since version 3.0.0 - User $instance->getEntityDefinitions() instead
+	 * @return array
+	 */
+	public static function getRegisteredEntities() {
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityRegistry = MediaWikiServices::getInstance()->getService(
+			'EntityRegistry'
+		);
+		return $entityRegistry->getEntityDefinitions();
+	}
+
+	/**
+	 * Checks if given type is a registered Entity
+	 * @deprecated since version 3.0.0 - User $instance->hasType() instead
+	 * @param string $sType
+	 * @return bool
+	 */
+	public static function isRegisteredType( $sType ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityRegistry = MediaWikiServices::getInstance()->getService(
+			'EntityRegistry'
+		);
+		return $entityRegistry->hasType( $sType );
+	}
+
+	/**
+	 * Returns a registered entity by given type
+	 * @deprecated since version 3.0.0 - User $instance->getEntityByType()
+	 * instead
+	 * @param string $sType
+	 * @return array
+	 */
+	public static function getRegisteredEntityByType( $sType ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityRegistry = MediaWikiServices::getInstance()->getService(
+			'EntityRegistry'
+		);
+		return $entityRegistry->getEntityByType( $sType );
+	}
+
+	/**
+	 * Returns all registered entity types
+	 * @deprecated since version 3.0.0 - User $instance->getTypes()
+	 * @return array
+	 */
+	public static function getRegisterdTypeKeys() {
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$entityRegistry = MediaWikiServices::getInstance()->getService(
+			'EntityRegistry'
+		);
+		return $entityRegistry->getTypes();
 	}
 }

@@ -27,6 +27,7 @@
  * @filesource
  */
 namespace BlueSpice;
+use MediaWiki\MediaWikiServices;
 use BlueSpice\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
 
@@ -35,42 +36,66 @@ use BlueSpice\Data\FieldType;
  * @package BlueSpiceFoundation
  */
 abstract class EntityConfig implements \JsonSerializable {
-	protected static $aEntityConfigs = null;
-	protected static $aDefaults = array();
-	protected $sType = '';
+
+	protected $type = '';
+
+	/**
+	 *
+	 * @var \Config
+	 */
+	protected $config = null;
+
+	/**
+	 *
+	 * @var array
+	 */
+	protected $defaults = [];
+
+	/**
+	 *
+	 * @param type $config
+	 */
+	public function __construct( $config, $type, $defaults = [] ) {
+		$this->config = $config;
+		$this->type = $type;
+		$this->defaults = array_merge(
+			$this->addGetterDefaults(),
+			$defaults
+		);
+	}
 
 	/**
 	 * EntityConfig factory
-	 * @param string $sType - Entity type
+	 * @deprecated since version 3.0.0 - Use MediaWikiService
+	 * 'EntityConfigFactory' instead
+	 * @param string $type - Entity type
 	 * @return EntityConfig - or null
 	 */
-	public static function factory( $sType ) {
-		if( !is_null( static::$aEntityConfigs ) ) {
-			if( !isset( static::$aEntityConfigs[$sType] ) ) {
-				return null;
-			}
-			return static::$aEntityConfigs[$sType];
-		}
-		//TODO: Check params and classes
-		$aRegisteredEntities = EntityRegistry::getRegisteredEntities();
-		foreach( $aRegisteredEntities as $sKey => $sConfigClass ) {
-			static::$aEntityConfigs[$sKey] = new $sConfigClass();
-			static::$aEntityConfigs[$sKey]->sType = $sKey;
-			array_merge(
-				static::$aDefaults,
-				static::$aEntityConfigs[$sKey]->addGetterDefaults()
-			);
-		}
-		\Hooks::run( 'BSEntityConfigDefaults', [ &static::$aDefaults ] );
-		return static::$aEntityConfigs[$sType];
+	public static function factory( $type ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
+		$configFactory = MediaWikiServices::getInstance()->getService(
+			'EntityConfigFactory'
+		);
+		return $configFactory->newFromType( $type );
 	}
 
-
-	protected static function getDefault( $sOption ) {
-		if( !isset( static::$aDefaults[$sOption] ) ) {
-			return false;
+	protected function getDefault( $sOption ) {
+		if( isset( $this->defaults[$sOption] ) ) {
+			return $this->defaults[$sOption];
 		}
-		return static::$aDefaults[$sOption];
+		return $this->getConfig()->has( $sOption )
+			? $this->getConfig()->get( $sOption )
+			: false
+		;
+	}
+
+	protected function getConfig() {
+		if( $this->config ) {
+			return $this->config;
+		}
+		$this->config = MediaWikiServices::getInstance()
+			->getConfigFactory()->makeConfig( 'bsg' );
+		return $this->config;
 	}
 
 	/**
@@ -81,8 +106,8 @@ abstract class EntityConfig implements \JsonSerializable {
 	 */
 	public function get( $sOption ) {
 		$sMethod = "get_$sOption";
-		if( !is_callable( array($this, $sMethod) ) ) {
-			return static::getDefault( $sOption );
+		if( !is_callable( [$this, $sMethod] ) ) {
+			return $this->getDefault( $sOption );
 		}
 		return $this->$sMethod();
 	}
@@ -102,7 +127,7 @@ abstract class EntityConfig implements \JsonSerializable {
 			$aConfig[$sVarName] = $this->$sMethod();
 		}
 		return (object) array_merge(
-			static::$aDefaults,
+			$this->defaults,
 			$aConfig
 		);
 	}
@@ -111,7 +136,7 @@ abstract class EntityConfig implements \JsonSerializable {
 	 * @return string - EntityConfig type
 	 */
 	public function getType() {
-		return $this->sType;
+		return $this->type;
 	}
 
 	abstract protected function addGetterDefaults();
@@ -124,49 +149,49 @@ abstract class EntityConfig implements \JsonSerializable {
 
 	protected function get_AttributeDefinitions() {
 		$attributeDefinitions =  [
-			'id' => [
+			Entity::ATTR_ID => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
 				Schema::TYPE => FieldType::INT,
 				Schema::INDEXABLE => true,
 				Schema::STORABLE => true,
 			],
-			'ownerid' => [
+			Entity::ATTR_OWNER_ID => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
 				Schema::TYPE => FieldType::INT,
 				Schema::INDEXABLE => true,
 				Schema::STORABLE => true,
 			],
-			'type' => [
+			Entity::ATTR_TYPE => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
 				Schema::TYPE => FieldType::STRING,
 				Schema::INDEXABLE => true,
 				Schema::STORABLE => true,
 			],
-			'archived' => [
+			Entity::ATTR_ARCHIVED => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
 				Schema::TYPE => FieldType::BOOLEAN,
 				Schema::INDEXABLE => true,
 				Schema::STORABLE => true,
 			],
-			'parentid' => [
+			Entity::ATTR_PARENT_ID => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
 				Schema::TYPE => FieldType::INT,
 				Schema::INDEXABLE => true,
 				Schema::STORABLE => true,
 			],
-			'timestampcreated' => [
+			Entity::ATTR_TIMESTAMP_CREATED => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
 				Schema::TYPE => FieldType::DATE,
 				Schema::INDEXABLE => true,
 				Schema::STORABLE => false,
 			],
-			'timestamptouched' => [
+			Entity::ATTR_TIMESTAMP_TOUCHED => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
 				Schema::TYPE => FieldType::DATE,

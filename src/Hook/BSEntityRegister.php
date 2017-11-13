@@ -28,6 +28,10 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
+/**
+ * @deprecated since version 3.0.0 - Use 'EntityRegistry' config in
+ * extension.josn instead
+ */
 abstract class BSEntityRegister extends Hook {
 	/**
 	 * An array of entity registrations
@@ -39,10 +43,13 @@ abstract class BSEntityRegister extends Hook {
 	/**
 	 * Located in \BlueSpice\EntityRegistry::runRegister. Collects all entity
 	 * configs and instantiates them.
+	 * @deprecated since version 3.0.0 - Use 'EntityRegistry' config in
+	 * extension.josn instead
 	 * @param array $entityRegistrations
 	 * @return boolean
 	 */
 	public static function callback( &$entityRegistrations ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

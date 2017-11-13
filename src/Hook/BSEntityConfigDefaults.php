@@ -28,6 +28,10 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
+/**
+ * @deprecated since version 3.0.0 - Use the bluespice global config mechanism
+ * instead
+ */
 abstract class BSEntityConfigDefaults extends Hook {
 	/**
 	 * An array of settings [ key => mixed value ]
@@ -39,10 +43,13 @@ abstract class BSEntityConfigDefaults extends Hook {
 	 * Located in \BlueSpice\EntityConfig::factory. After all instances of
 	 * EntityConfig's have been created. A default setting will be returned,
 	 * when a EntityConfig does not have a method get_<settingsKey>
+	 * @deprecated since version 3.0.0 - Use the bluespice global config
+	 * mechanism instead
 	 * @param array $defaultSettings
 	 * @return boolean
 	 */
 	public static function callback( &$defaultSettings ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

@@ -32,9 +32,14 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 * @param type $preFilters
 	 */
 	public function makeData( $query = '', $preFilters = [] ) {
-		$res = $this->db->select( 'bs_settings3', '*' );
-
 		$this->data = [];
+		//workaround for the upgrade process. The new settings cannot be
+		//accessed before they are migrated
+		if( !$this->db->tableExists( 'bs_settings3' ) ) {
+			return $this->data;
+		}
+
+		$res = $this->db->select( 'bs_settings3', '*' );
 		foreach( $res as $row ) {
 			$this->appendRowToData( $row );
 		}
