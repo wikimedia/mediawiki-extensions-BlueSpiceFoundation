@@ -160,6 +160,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 							$mCode = 'dberror'; //TODO: error code for subtypes like DBQueryError or DBReadOnlyError?
 						}
 						$oResult->errors[$mCode] = $e->getMessage();
+						$oResult->errors[0]['code'] = 'unknown error';
 					}
 				}
 
@@ -562,7 +563,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	}
 
 	protected function returnTaskDataSchema( $sTaskName ) {
-		$this->getResult()->addValue( 
+		$this->getResult()->addValue(
 			null,
 			'schema',
 			$this->oTasksSpec->getSchema( $sTaskName )
@@ -570,7 +571,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	}
 
 	protected function returnTaskDataExamples( $sTaskName ) {
-		$this->getResult()->addValue( 
+		$this->getResult()->addValue(
 			null,
 			'examples',
 			$this->oTasksSpec->getExamples( $sTaskName )
