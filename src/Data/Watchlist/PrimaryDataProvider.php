@@ -42,14 +42,13 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param string $query
-	 * @param type $preFilters
+	 * @param \BlueSpice\Data\ReaderParams $params
 	 */
-	public function makeData( $query = '', $preFilters = [] ) {
+	public function makeData( $params ) {
 		$res = $this->db->select(
 			'watchlist',
 			'*',
-			$this->makePreFilterConds( $preFilters )
+			$this->makePreFilterConds( $params->getFilter() )
 		);
 
 		$distinctUserIds = [];

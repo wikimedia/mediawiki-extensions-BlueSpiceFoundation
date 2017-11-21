@@ -58,7 +58,7 @@ abstract class Reader implements IReader {
 	 */
 	public function read( $params ) {
 		$primaryDataProvider = $this->makePrimaryDataProvider( $params );
-		$dataSets = $primaryDataProvider->makeData( $params->getQuery(), $params->getFilter() );
+		$dataSets = $primaryDataProvider->makeData( $params );
 
 		$filterer = $this->makeFilterer( $params );
 		$dataSets = $filterer->filter( $dataSets );
@@ -78,7 +78,7 @@ abstract class Reader implements IReader {
 			$dataSets = $secondaryDataProvider->extend( $dataSets );
 		}
 
-		$resultSet = new ResultSet( $dataSets, $total  );
+		$resultSet = new ResultSet( $dataSets, $total );
 		return $resultSet;
 	}
 

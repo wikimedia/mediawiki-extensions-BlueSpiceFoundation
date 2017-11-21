@@ -28,10 +28,9 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param string $query
-	 * @param type $preFilters
+	 * @param \BlueSpice\Data\ReaderParams $params
 	 */
-	public function makeData( $query = '', $preFilters = [] ) {
+	public function makeData( $params ) {
 		$this->data = [];
 		//workaround for the upgrade process. The new settings cannot be
 		//accessed before they are migrated
