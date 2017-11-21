@@ -103,7 +103,7 @@ class BSTemplateHelper {
 		$sTemplateDir = implode('/', $aTplPath );
 		$sTemplateDir = BsFileSystemHelper::normalizePath( $sTemplateDir );
 		$sTemplateDir = implode( '/', $aTplDir ) . "/" . $sTemplateDir;
-		$oInstance = new TemplateParser( $sTemplateDir, $bForceRecompile );
+		$oInstance = new \BlueSpice\TemplateParser( $sTemplateDir, $bForceRecompile );
 		return $oInstance->processTemplate( $sTpl, $args, $scopes );
 	}
 
