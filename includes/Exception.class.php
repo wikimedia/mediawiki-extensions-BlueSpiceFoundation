@@ -4,7 +4,6 @@
  *
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Sebastian Ulbricht, Robert Vogel
- * @version 0.1.0 beta
  *
  * $LastChangedDate: 2013-06-13 10:32:52 +0200 (Do, 13 Jun 2013) $
  * $LastChangedBy: rvogel $

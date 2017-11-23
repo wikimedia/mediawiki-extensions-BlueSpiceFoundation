@@ -4,7 +4,6 @@
  *
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Sebastian Ulbricht <sebastian.ulbricht@dragon-network.hk>
- * @version 0.1.0 beta
  *
  * $LastChangedDate: 2011-09-06 17:46:46 +0800 (Tue, 06 Sep 2011) $
  * $LastChangedBy: rvogel $

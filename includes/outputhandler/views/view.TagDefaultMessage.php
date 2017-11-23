@@ -5,7 +5,6 @@
  * @abstract
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Markus Glaser
- * @version 0.1.0 alpha
  *
  * $LastChangedDate: 2011-05-05 15:40:25 +0200 (Do, 05 Mai 2011) $
  * $LastChangedBy: mglaser $

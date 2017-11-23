@@ -4,7 +4,6 @@
  * @package BlueSpice
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH
  * @author Marc Reymann
- * @version $Id: $
  *
  * Install check for BlueSpice.
  * This file checks several values and settings on a
