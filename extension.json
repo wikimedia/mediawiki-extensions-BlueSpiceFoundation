@@ -1,7 +1,7 @@
 {
 	"name": "BlueSpiceFoundation",
-	"version": "2.27.1",
-	"license-name": "GPL-2.0+",
+	"license-name": "GPL-3.0",
+	"version": "3.0.0-alpha",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
 	],

@@ -5,7 +5,6 @@
  * @package bluespice
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Markus Glaser
- * @version 0.1.0 alpha
  *
  * $LastChangedDate: 2013-06-17 10:18:53 +0200 (Mo, 17 Jun 2013) $
  * $LastChangedBy: pwirth $

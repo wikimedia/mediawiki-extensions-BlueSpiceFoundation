@@ -8,7 +8,7 @@
  * @package    Bluespice_Extensions
  * @subpackage Foundation
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
- * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
 /*jshint -W024 */

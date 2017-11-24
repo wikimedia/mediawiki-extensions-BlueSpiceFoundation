@@ -6,7 +6,6 @@
  * Can be extended with plugin-classes of name: "BsValidator{$type}Plugin" that implement interface BsValidatorPlugin
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Mathias Scheer
- * @version 0.1.0 beta
  */
 
 /* Changelog

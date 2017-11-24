@@ -5,7 +5,6 @@
  *
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Stefan Widmann <widmann@hallowelt.com>
- * @version 0.1.0 beta
   */
 /**
  * LCStore implementation which uses memcache to store data.
