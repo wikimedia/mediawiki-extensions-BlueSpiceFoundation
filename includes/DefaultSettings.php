@@ -316,20 +316,10 @@ $GLOBALS['wgResourceLoaderLESSVars'] = array_merge( $GLOBALS['wgResourceLoaderLE
 	'bs-extjs-theme-tree-view-border' => '0px solid black'
 
 ) );
-
 /**
  * BsExtensionManager extension registration
  */
-$GLOBALS['bsgExtensions'] = [
-	"BlueSpiceFoundation" => [
-		"configDefinitions" => [
-			"Logo" => "\\BlueSpice\\ConfigDefinition\\Logo::getInstance",
-			"FileExtensions" => "\\BlueSpice\\ConfigDefinition\\FileExtensions::getInstance",
-			"ImageExtensions" => "\\BlueSpice\\ConfigDefinition\\ImageExtensions::getInstance",
-			"Favicon" => "\\BlueSpice\\ConfigDefinition\\Favicon::getInstance",
-		]
-	]
-];
+$GLOBALS['bsgExtensions'] = [];
 
 /**
  * BsTemplateHelper template directory overwrite

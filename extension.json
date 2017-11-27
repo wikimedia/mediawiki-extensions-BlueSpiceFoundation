@@ -8,6 +8,24 @@
 	"url": "http://bluespice.com",
 	"descriptionmsg": "bluespicefoundation-desc",
 	"type": "other",
+	"attributes": {
+		"BlueSpiceFoundation": {
+			"Extensions": {
+				"BlueSpiceFoundation": {
+					"configDefinitions": {
+						"Logo": "\\BlueSpice\\ConfigDefinition\\Logo::getInstance",
+						"FileExtensions": "\\BlueSpice\\ConfigDefinition\\FileExtensions::getInstance",
+						"ImageExtensions": "\\BlueSpice\\ConfigDefinition\\ImageExtensions::getInstance",
+						"Favicon": "\\BlueSpice\\ConfigDefinition\\Favicon::getInstance"
+					}
+				}
+			},
+			"DynamicFileRegistry": {
+				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage"
+			},
+			"EntityRegistry": {}
+		}
+	},
 	"ExtensionFunctions": [
 		"BsCoreHooks::setup"
 	],
@@ -458,14 +476,6 @@
 			}
 		},
 		"ConfigFiles": {
-			"value": []
-		},
-		"DynamicFileRegistry": {
-			"value": {
-				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage"
-			}
-		},
-		"EntityRegistry": {
 			"value": []
 		}
 	},
