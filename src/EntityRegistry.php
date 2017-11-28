@@ -115,7 +115,7 @@ class EntityRegistry {
 	public static function getRegisteredEntities() {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'EntityRegistry'
+			'BSEntityRegistry'
 		);
 		return $entityRegistry->getEntityDefinitions();
 	}
@@ -129,7 +129,7 @@ class EntityRegistry {
 	public static function isRegisteredType( $sType ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'EntityRegistry'
+			'BSEntityRegistry'
 		);
 		return $entityRegistry->hasType( $sType );
 	}
@@ -144,7 +144,7 @@ class EntityRegistry {
 	public static function getRegisteredEntityByType( $sType ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'EntityRegistry'
+			'BSEntityRegistry'
 		);
 		return $entityRegistry->getEntityByType( $sType );
 	}
@@ -157,7 +157,7 @@ class EntityRegistry {
 	public static function getRegisterdTypeKeys() {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'EntityRegistry'
+			'BSEntityRegistry'
 		);
 		return $entityRegistry->getTypes();
 	}

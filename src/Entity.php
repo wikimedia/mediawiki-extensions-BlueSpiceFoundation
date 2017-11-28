@@ -59,7 +59,7 @@ abstract class Entity implements \JsonSerializable {
 	protected function __construct( \stdClass $oStdClass, EntityConfig $oConfig, EntityFactory $entityFactory = null ) {
 		if( !$entityFactory ) {
 			$entityFactory = MediaWikiServices::getInstance()->getService(
-				'EntityFactory'
+				'BSEntityFactory'
 			);
 		}
 
@@ -87,7 +87,7 @@ abstract class Entity implements \JsonSerializable {
 	/**
 	 * Returns the instance - Should not be used directly. This is a workaround
 	 * as all entity __construc methods are private. Use mediawiki service
-	 * 'EntityFactory' instead
+	 * 'BSEntityFactory' instead
 	 * @param \stdClass $data
 	 * @param \BlueSpice\EntityConfig $oConfig
 	 * @param \BlueSpice\EntityFactory $entityFactory
@@ -100,14 +100,14 @@ abstract class Entity implements \JsonSerializable {
 	/**
 	 * Get Entity by EntityContent Object, wrapper for newFromObject
 	 * @deprecated since version 3.0.0 - Use mediawiki service
-	 * ('EntityFactory')->newFromContent() instead
+	 * ('BSEntityFactory')->newFromContent() instead
 	 * @param EntityContent $sContent
 	 * @return Entity
 	 */
 	public static function newFromContent( EntityContent $sContent ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
-			'EntityFactory'
+			'BSEntityFactory'
 		);
 		return $entityFactory->newFromContent( $sContent );
 	}
@@ -115,14 +115,14 @@ abstract class Entity implements \JsonSerializable {
 	/**
 	 * Get Entity by Json Object
 	 * @deprecated since version 3.0.0 - Use mediawiki service
-	 * ('EntityFactory')->newFromObject() instead
+	 * ('BSEntityFactory')->newFromObject() instead
 	 * @param Object $oObject
 	 * @return Entity
 	 */
 	public static function newFromObject( $oObject ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
-			'EntityFactory'
+			'BSEntityFactory'
 		);
 		return $entityFactory->newFromObject( $oObject );
 	}
@@ -162,7 +162,7 @@ abstract class Entity implements \JsonSerializable {
 	/**
 	 * Get Entity from ID, wrapper for newFromTitle
 	 * @deprecated since version 3.0.0 - Use mediawiki service
-	 * ('EntityFactory')->newFromID() instead
+	 * ('BSEntityFactory')->newFromID() instead
 	 * @param int $iID
 	 * @param boolean $bForceReload
 	 * @return Entity | null
@@ -170,7 +170,7 @@ abstract class Entity implements \JsonSerializable {
 	public static function newFromID( $iID, $bForceReload = false ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
-			'EntityFactory'
+			'BSEntityFactory'
 		);
 		return $entityFactory->newFromID( $iID, static::NS, $bForceReload );
 	}
@@ -178,7 +178,7 @@ abstract class Entity implements \JsonSerializable {
 	/**
 	 * Main method for getting a Entity from a Title
 	 * @deprecated since version 3.0.0 - Use mediawiki service
-	 * ('EntityFactory')->newFromSourceTitle() instead
+	 * ('BSEntityFactory')->newFromSourceTitle() instead
 	 * @param \Title $oTitle
 	 * @param boolean $bForceReload
 	 * @return Entity
@@ -186,7 +186,7 @@ abstract class Entity implements \JsonSerializable {
 	public static function newFromTitle( \Title $oTitle, $bForceReload = false ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
-			'EntityFactory'
+			'BSEntityFactory'
 		);
 		return $entityFactory->newFromSourceTitle( $oTitle, $bForceReload );
 	}

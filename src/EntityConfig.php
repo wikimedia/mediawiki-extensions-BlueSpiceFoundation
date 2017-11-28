@@ -73,7 +73,7 @@ abstract class EntityConfig implements \JsonSerializable {
 	public static function factory( $type ) {
 		wfDeprecated( __METHOD__, '3.0.0' );
 		$configFactory = MediaWikiServices::getInstance()->getService(
-			'EntityConfigFactory'
+			'BSEntityConfigFactory'
 		);
 		return $configFactory->newFromType( $type );
 	}

@@ -35,7 +35,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			'username' => $this->mOptions['user']->getName(),
 		]);
 		$dfdUrlBuilder = MediaWikiServices::getInstance()->getService(
-			'DynamicFileDispatcherUrlBuilder'
+			'BSDynamicFileDispatcherUrlBuilder'
 		);
 		$url = $dfdUrlBuilder->build(
 			new Params( $params )

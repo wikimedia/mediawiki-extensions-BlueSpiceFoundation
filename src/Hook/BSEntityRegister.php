@@ -28,7 +28,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
 /**
- * @deprecated since version 3.0.0 - Use 'EntityRegistry' config in
+ * @deprecated since version 3.0.0 - Use 'BSEntityRegistry' config in
  * extension.josn instead
  */
 abstract class BSEntityRegister extends Hook {
@@ -42,7 +42,7 @@ abstract class BSEntityRegister extends Hook {
 	/**
 	 * Located in \BlueSpice\EntityRegistry::runRegister. Collects all entity
 	 * configs and instantiates them.
-	 * @deprecated since version 3.0.0 - Use 'EntityRegistry' config in
+	 * @deprecated since version 3.0.0 - Use 'BSEntityRegistry' config in
 	 * extension.josn instead
 	 * @param array $entityRegistrations
 	 * @return boolean

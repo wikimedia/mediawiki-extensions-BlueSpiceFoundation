@@ -27,7 +27,7 @@ $wgTitle = Title::makeTitle(
 $fileDispatcher = null;
 try {
 	$dfdFactory = \MediaWiki\MediaWikiServices::getInstance()->getService(
-		'DynamicFileDispatcherFactory'
+		'BSDynamicFileDispatcherFactory'
 	);
 	$dfd = $dfdFactory->newFromParams(
 		new \BlueSpice\DynamicFileDispatcher\RequestParams( [], \RequestContext::getMain()->getRequest() ),

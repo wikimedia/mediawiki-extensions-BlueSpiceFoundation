@@ -37,10 +37,10 @@ class Schema extends \BlueSpice\Data\Schema {
 	protected function getEntityConfigs() {
 		$entityConfigs = [];
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'EntityRegistry'
+			'BSEntityRegistry'
 		);
 		$configFactory = MediaWikiServices::getInstance()->getService(
-			'EntityConfigFactory'
+			'BSEntityConfigFactory'
 		);
 		foreach( $entityRegistry->getTypes() as $type ) {
 			if( !$entityConfig = $configFactory->newFromType( $type ) ) {

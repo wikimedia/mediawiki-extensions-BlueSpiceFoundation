@@ -62,7 +62,7 @@ class EntityConfigFactory {
 		$this->entityConfigs = [];
 		//TODO: Check params and classes
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'EntityRegistry'
+			'BSEntityRegistry'
 		);
 		$entityDefinitions = $entityRegistry->getEntityDefinitions();
 		$defaults = [];
