@@ -22,5 +22,8 @@
 	"bs-upload-details": "Dettaglie",
 	"bs-upload-uploadwarningdialog-title": "Carecamende d'u file: Avverteminde",
 	"bs-upload-uploadwarningdialog-intro": "Le avvise ca avènene onne assute quanne ste pruvave a carecà 'u file",
+	"bs-upload-uploadwarningdialog-outro": "Cazze \"{{int:bs-extjs-ok}}\" pe cacà le avvise e carecà le file, cazze \"{{int:bs-extjs-cancel}}\" pe turnà a 'u module de carecamende",
+	"bs-upload-uploadwarningdialog-warning-exists": "'Nu file cu 'u nome \"$1\" esiste già",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Ste 'nu |Stonne le }} duplicate de stu file",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Avvise scanusciute cu 'u codece \"$1\""
 }
