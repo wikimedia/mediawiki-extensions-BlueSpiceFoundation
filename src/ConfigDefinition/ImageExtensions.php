@@ -11,4 +11,8 @@ class ImageExtensions extends ArraySetting {
 	public function isStored() {
 		return true;
 	}
+
+	public function isRLConfigVar() {
+		return true;
+	}
 }

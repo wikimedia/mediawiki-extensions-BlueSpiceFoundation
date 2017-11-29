@@ -26,6 +26,8 @@
  */
 namespace BlueSpice;
 
+use MediaWiki\MediaWikiServices;
+
 abstract class Hook {
 
 	/**
@@ -81,6 +83,14 @@ abstract class Hook {
 		}
 
 		return $this->config;
+	}
+
+	/**
+	 *
+	 * @return MediaWikiServices
+	 */
+	protected function getServices() {
+		return MediaWikiServices::getInstance();
 	}
 
 	public function process() {

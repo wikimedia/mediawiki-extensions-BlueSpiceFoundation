@@ -59,6 +59,6 @@ abstract class ResourceLoaderGetConfigVars extends Hook {
 	public function __construct( $context, $config, &$vars ) {
 		parent::__construct( $context, $config );
 
-		$this->vars = $vars;
+		$this->vars = &$vars;
 	}
 }
