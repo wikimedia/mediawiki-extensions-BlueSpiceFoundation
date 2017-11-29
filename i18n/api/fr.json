@@ -4,7 +4,8 @@
 			"Gomoko",
 			"Wladek92",
 			"Urhixidur",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Zetud"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Liste tous les fichiers du serveur de fichiers. Permet le tri, le filtrage et la pagination. Implémente les paramètres ExtJS Store.",
@@ -41,7 +42,7 @@
 	"apihelp-bs-task-param-token": "Le jeton nécessaire pour accéder au module de l’API",
 	"bs-wikipage-tasks-error-contentmodel": "La tâche n'a pas pu être effectuées avec le modèle de contenu de la page fournie.",
 	"bs-wikipage-tasks-error-page-not-valid": "La page spécifiée n'est pas valide.",
-	"bs-wikipage-tasks-setcategories-edit-summary": "Categories modifiées.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Catégories modifiées.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Vous n’êtes pas autorisé(e) à modifier la page « $1 ».",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Catégorie invalide|Catégories invalides}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Les catégories ont été définies avec succès.",
