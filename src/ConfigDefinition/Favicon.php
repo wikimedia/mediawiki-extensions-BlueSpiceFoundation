@@ -11,8 +11,4 @@ class Favicon extends StringSetting {
 	public function getVariableName() {
 		return 'wg' . $this->getName();
 	}
-
-	public function isStored() {
-		return true;
-	}
 }

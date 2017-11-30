@@ -8,10 +8,6 @@ class ImageExtensions extends ArraySetting {
 		return 'bs-pref-fileextensions';
 	}
 
-	public function isStored() {
-		return true;
-	}
-
 	public function isRLConfigVar() {
 		return true;
 	}

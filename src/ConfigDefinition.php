@@ -92,14 +92,6 @@ abstract class ConfigDefinition implements ISetting {
 	}
 
 	/**
-	 * Returns if the config is stored in the database
-	 * @return boolean
-	 */
-	public function isStored() {
-		return false;
-	}
-
-	/**
 	 * Returns if the config is a ResourceLoader variable
 	 * @return boolean
 	 */

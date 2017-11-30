@@ -37,12 +37,6 @@ interface ISetting {
 
 	/**
 	 *
-	 * @return boolean, If this variable is stored in the database
-	 */
-	public function isStored();
-
-	/**
-	 *
 	 * @return string, the message key for the label
 	 */
 	public function getLabelMessageKey();
