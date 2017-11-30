@@ -77,6 +77,14 @@ class Factory {
 		$this->modules = $extRegistry->getAttribute(
 			'BlueSpiceFoundationDynamicFileRegistry'
 		);
+		foreach( $this->modules as $key => $module ) {
+			if( !is_array( $module ) ) {
+				continue;
+			}
+			//Attributes get merged together instead of overwritten, so just take the
+			//last one
+			$this->modules[$key] = end( $module );
+		}
 
 		return $this->modules;
 	}
