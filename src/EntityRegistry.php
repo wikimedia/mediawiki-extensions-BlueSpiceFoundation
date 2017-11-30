@@ -53,10 +53,14 @@ class EntityRegistry {
 		if( $this->entitydefinitions && !$bForceReload ) {
 			return true;
 		}
-		$this->entitydefinitions = $this->config->get( 'EntityRegistry' );
 
-		//This hook is deprecated - Use config mechanism in extension.json to
-		//register entities
+		$extRegistry = \ExtensionRegistry::getInstance();
+		$this->entitydefinitions = $extRegistry->getAttribute(
+			'BlueSpiceFoundationEntityRegistry'
+		);
+
+		//This hook is deprecated - Use attributes mechanism in extension.json
+		//to register entities
 		\Hooks::run( 'BSEntityRegister', [&$this->entitydefinitions] );
 
 		return true;

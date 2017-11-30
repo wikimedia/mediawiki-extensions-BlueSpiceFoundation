@@ -205,14 +205,22 @@ class BsExtensionManager {
 	 */
 	public static function initialiseExtensions( $oCore ) {
 		wfProfileIn( 'Performance: ' . __METHOD__ );
-		$aBSExtFromJSON = ExtensionRegistry::getInstance()->getAttribute(
+		$extRegistry = ExtensionRegistry::getInstance();
+		$aBSExtFromJSON = $extRegistry->getAttribute(
 			'bsgExtensions'
 		);
 
+		if( empty( $GLOBALS['bsgExtensions'] ) ) {
+			$GLOBALS['bsgExtensions'] = [];
+		}
 		if( !empty( $aBSExtFromJSON ) ) {
-			$GLOBALS['bsgExtensions'] = array_replace_recursive(
+			$GLOBALS['bsgExtensions'] = array_merge(
+				//old global
+				$GLOBALS['bsgExtensions'],
+				//manifest version 1
 				$aBSExtFromJSON,
-				$GLOBALS['bsgExtensions']
+				//manifest version 2
+				$extRegistry->getAttribute( 'BlueSpiceFoundationExtensions' )
 			);
 		}
 

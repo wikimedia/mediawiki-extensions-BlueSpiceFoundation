@@ -73,7 +73,11 @@ class Factory {
 			return $this->modules;
 		}
 
-		$this->modules = $this->config->get( 'DynamicFileRegistry' );
+		$extRegistry = \ExtensionRegistry::getInstance();
+		$this->modules = $extRegistry->getAttribute(
+			'BlueSpiceFoundationDynamicFileRegistry'
+		);
+
 		return $this->modules;
 	}
 }
