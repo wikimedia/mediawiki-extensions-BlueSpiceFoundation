@@ -104,7 +104,13 @@ class EntityFactory {
 		}
 
 		if( !empty($object->id) && (int) $object->id !== 0 ) {
-			return $this->newFromID( $object->id );
+			$entityConfig = $this->configFactory->newFromType( $object->type );
+			if( !$entityConfig instanceof EntityConfig ) {
+				//TODO: Return a DummyEntity instead of null.
+				return null;
+			}
+			$entityClass = $entityConfig->get( 'EntityClass' );
+			return $this->newFromID( $object->id, $entityClass::NS );
 		}
 
 		$oInstance = $this->factory(
@@ -171,7 +177,7 @@ class EntityFactory {
 	 * @return Entity | null
 	 */
 	public function newFromSourceTitle( \Title $title = null, $reload = false ) {
-		if ( $title ) {
+		if ( !$title ) {
 			return null;
 		}
 		$id = (int) $title->getText();
