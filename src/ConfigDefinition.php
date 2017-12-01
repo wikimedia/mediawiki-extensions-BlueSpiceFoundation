@@ -4,8 +4,6 @@ namespace BlueSpice;
 
 abstract class ConfigDefinition implements ISetting {
 
-	protected static $configDefinitions = null;
-
 	/**
 	 *
 	 * @var \IContextSource
@@ -30,55 +28,10 @@ abstract class ConfigDefinition implements ISetting {
 	 * @param \Config $config
 	 * @param string $name
 	 */
-	protected function __construct( $context, $config, $name ) {
+	public function __construct( $context, $config, $name ) {
 		$this->context = $context;
 		$this->config = $config;
 		$this->name = $name;
-	}
-
-	/**
-	 *
-	 * @param string $name
-	 * @param \Config $config
-	 * @return ConfigDefinition | false
-	 */
-	public static function factory( $name, \Config $config = null ) {
-		if( !$config ) {
-			$config = \MediaWiki\MediaWikiServices::getInstance()
-				->getConfigFactory()->makeConfig( 'bsg' );
-		}
-		if( empty( $name ) || !$config->has( $name ) ) {
-			return false;
-		}
-		$definitions = static::getConfigDefinitions();
-		if( !isset( $definitions[$name] ) ) {
-			return false;
-		}
-		if( !is_callable( $definitions[$name] ) ) {
-			return false;
-		}
-		return call_user_func_array( $definitions[$name], [
-			\RequestContext::getMain(),
-			$config,
-			$name,
-		]);
-	}
-
-	protected static function getConfigDefinitions() {
-		if( static::$configDefinitions ) {
-			return static::$configDefinitions;
-		}
-		static::$configDefinitions = [];
-		foreach( $GLOBALS['bsgExtensions'] as $extName => $extDefinition ) {
-			if( empty( $extDefinition['configDefinitions'] ) ) {
-				continue;
-			}
-			static::$configDefinitions = array_merge(
-				static::$configDefinitions,
-				$extDefinition['configDefinitions']
-			);
-		}
-		return static::$configDefinitions;
 	}
 
 	/**
@@ -138,7 +91,19 @@ abstract class ConfigDefinition implements ISetting {
 		];
 	}
 
+	/**
+	 * Returns if the config is stored in the database
+	 * @return boolean
+	 */
 	public function isStored() {
+		return false;
+	}
+
+	/**
+	 * Returns if the config is a ResourceLoader variable
+	 * @return boolean
+	 */
+	public function isRLConfigVar() {
 		return false;
 	}
 

@@ -4,6 +4,12 @@ use MediaWiki\MediaWikiServices;
 
 return [
 
+	'BSConfigDefinitionFactory' => function ( MediaWikiServices $services ) {
+		return new \BlueSpice\ConfigDefinitionFactory(
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	},
+
 	'BSDynamicFileDispatcherFactory' => function ( MediaWikiServices $services ) {
 		return new \BlueSpice\DynamicFileDispatcher\Factory(
 			$services->getConfigFactory()->makeConfig( 'bsg' )
