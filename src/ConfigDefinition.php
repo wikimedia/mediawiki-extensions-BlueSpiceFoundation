@@ -105,8 +105,7 @@ abstract class ConfigDefinition implements ISetting {
 			'fieldname' => $this->getName(),
 			'default' => $this->getValue(),
 			'id' => $this->makeID(),
-			'label-message' => $this->getLabelMessageKey(),
-			'disabled' => !$this->isStored(),
+			'label-message' => $this->getLabelMessageKey()
 		];
 	}
 
