@@ -234,13 +234,36 @@ abstract class DatabaseWriter extends Writer {
 		return [
 			Filter::KEY_FIELD => $fieldName,
 			Filter::KEY_VALUE => $record->get( $fieldName ),
-			Filter::KEY_TYPE => $this->getFieldType( $fieldName ),
+			Filter::KEY_TYPE => $this->getFilterTypeFromFieldMapping( $fieldName ),
 			Filter::KEY_COMPARISON => Filter::COMPARISON_EQUALS,
 		];
 	}
 
+	/**
+	 * Returns the field type defined in the related schema
+	 * @param string $fieldName
+	 * @return string
+	 */
 	protected function getFieldType( $fieldName ) {
 		$schema = $this->getSchema();
 		return $schema[$fieldName][Schema::TYPE];
+	}
+
+	/**
+	 * Field types are not equal filter names. Field type 'int' would be filter
+	 * 'numeric'. Overwrite this for special fields or when you use your own
+	 * filters
+	 * @param string $fieldName
+	 * @return string
+	 */
+	protected function getFilterTypeFromFieldMapping( $fieldName ) {
+		$fieldType = $this->getFieldType( $fieldName );
+		if( $fieldType === FieldType::INT ) {
+			return 'numeric';
+		}
+		if( $fieldType === FieldType::FLOAT ) {
+			return 'numeric';
+		}
+		return $fieldType;
 	}
 }
