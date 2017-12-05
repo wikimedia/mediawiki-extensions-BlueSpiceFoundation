@@ -26,7 +26,7 @@ class BsPageContentProvider {
 
 		//Default Template
 		$sTemplate = array();
-		$sTemplate[] = '<div class="bs-page-content">';
+		$sTemplate[] = '<div %s>';
 		$sTemplate[] = '<a name="%s"></a>'; //jump-anchor
 		$sTemplate[] = '<h1 class="firstHeading">%s</h1>';
 		$sTemplate[] = '<div class="bodyContent">';
@@ -349,6 +349,7 @@ class BsPageContentProvider {
 		if( $this->bEncapsulateContent ) {
 			$sHTML = sprintf(
 				$this->getTemplate(),
+				$this->getWrapperAttributes( $oTitle ),
 				'bs-ue-jumpmark-'.
 				md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
 				empty( $sTitle ) ? $oTitle->getPrefixedText( ) : $sTitle,
@@ -361,6 +362,15 @@ class BsPageContentProvider {
 			$this->aTidyConfig,
 			'utf8'
 		);
+	}
+
+	/**
+	* @param \Title $oTitle
+	* @return string
+	*/
+	protected function getWrapperAttributes( $oTitle ) {
+		$cssClass = Sanitizer::escapeClass( 'page-'.$oTitle->getPrefixedDBKey() );
+		return "class=\"bs-page-content $cssClass\"";
 	}
 
 	/**
