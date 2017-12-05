@@ -23,7 +23,6 @@
 	"bs-secs-duration": "{{PLURAL:$1|un segon|$1 segons}}",
 	"bs-now": "ara",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hola, Sr. $2|Hola, Sra. $2|Hola, $2}},",
-	"bs-email-greeting-no-receiver": "Hola:",
 	"bs-email-footer": "Aquest missatge ha estat generat automàticament. No respongueu a aquest missatge.",
 	"bs-userpagesettings-legend": "Paràmetres de l’usuari",
 	"bs-exception-view-heading": "S’ha produït un error",

@@ -44,7 +44,6 @@
 	"bs-viewtagerrorlist-legend": "$1——错误",
 	"bs-readonly": "数据库当前被锁定，不能添加新条目或进行其他修改，锁定可能是因为例行的数据库维护，完成后即可恢复正常。\n\n锁定数据库的管理员提供的解释：$1",
 	"bs-imageofotheruser": "您不能为另一个用户上传图像。",
-	"bs-pref-sortalph": "按字母排序名字空间",
 	"bs-permissionerror": "权限错误！",
 	"bs-filesystemhelper-no-directory": "<code>$1</code>不是一个有效的目录。",
 	"bs-filesystemhelper-has-path-traversal": "检测到路径遍历！",

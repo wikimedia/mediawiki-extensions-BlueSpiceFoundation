@@ -25,7 +25,6 @@
 	"bs-one-unit-ago": "i a $1",
 	"bs-now": "ara",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Bonjorn Sénher $2|Bonjorn Dòna $2|Bonjorn $2}},",
-	"bs-email-greeting-no-receiver": "Bonjorn,",
 	"bs-userpagesettings-legend": "Paramètres de l'utilizaire",
 	"bs-userpreferences-link-text": "Paramètres utilizaires avançats",
 	"bs-exception-view-heading": "Una error s'es produita",

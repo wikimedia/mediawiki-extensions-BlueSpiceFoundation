@@ -19,7 +19,6 @@
 	"bs-one-unit-ago": "$1 önce",
 	"bs-now": "şimdi",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Merhaba Bay $1|Merhaba Bayan $1|Merhaba $1}},",
-	"bs-email-greeting-no-receiver": "Merhaba,",
 	"bs-email-footer": "Bu ileti otomatik olarak oluşturuldu. Lütfen bu e-postayı yanıtlamayın.",
 	"bs-userpagesettings-legend": "Kullanıcı ayarları",
 	"bs-userpreferences-link-text": "Daha fazla kullanıcı ayarı",

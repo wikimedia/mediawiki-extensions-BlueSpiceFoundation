@@ -40,7 +40,6 @@
 	"bs-viewtagerrorlist-legend": "$1 - Erro",
 	"bs-readonly": "A base de dados está atualmente bloqueada para novas entradas e outras modificações, provavelmente para manutenção de rotina, depois da qual voltará à normalidade. O administrador responsável pelo bloqueio deu a seguinte explicação: $1",
 	"bs-imageofotheruser": "Não tem permissão para carregar uma imagem em nome de outro(a) utilizador(a).",
-	"bs-pref-sortalph": "Ordenar alfabeticamente os domínios",
 	"bs-permissionerror": "Erro de permissão!",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> não é um diretório válido.",
 	"bs-filesystemhelper-has-path-traversal": "Foi detetado um salto indevido de caminho (path traversal)!",

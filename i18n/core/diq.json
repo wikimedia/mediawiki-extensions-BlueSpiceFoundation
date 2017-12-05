@@ -25,7 +25,6 @@
 	"bs-one-unit-ago": "$1 raver",
 	"bs-now": "nıka",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Merheba bıra $2|Merheba waya $2|Merheba $2}},",
-	"bs-email-greeting-no-receiver": "Merheba,",
 	"bs-userpagesettings-legend": "Eyarê karberi",
 	"bs-userpreferences-link-text": "Vêşi eyarê karberi",
 	"bs-userpreferences-link-title": "Bağse eyaranê karberi bıasne",

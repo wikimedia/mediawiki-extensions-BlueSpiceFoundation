@@ -15,9 +15,7 @@
 	"bs-one-unit-ago": "$1 আগে",
 	"bs-now": "বর্তমানে",
 	"bs-email-greeting-receiver": "{{GENDER:$1|হ্যালো জনাব $2|হ্যালো জনাবা $2|হ্যালো $2}},",
-	"bs-email-greeting-no-receiver": "হ্যালো,",
 	"bs-viewtagerrorlist-legend": "$1 - ত্রুটি",
-	"bs-pref-sortalph": "বর্ণানুক্রমে নামস্থান সাজান",
 	"bs-navigation-contact": "যোগাযোগ",
 	"bs-export-menu-print-text": "মুদ্রণ",
 	"bs-export-menu-print-title": "পাতার মুদ্রণযোগ্য সংস্করণ প্রদর্শন করে"

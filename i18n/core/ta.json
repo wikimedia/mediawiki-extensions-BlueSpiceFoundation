@@ -17,7 +17,6 @@
 	"bs-mins-duration": "{{PLURAL:$1|ஒரு நிமிடம்|$1 நிமிடங்கள்}}",
 	"bs-one-unit-ago": "$1 முன்பு",
 	"bs-now": "இப்பொழுது",
-	"bs-email-greeting-no-receiver": "வணக்கம்",
 	"bs-email-footer": "இந்தத் தகவல் தானாக உருவாக்கப்பட்டுள்ளது.  இந்த மின்னஞ்சலுக்கு பதிலளிக்கத்தேவையில்லை.",
 	"bs-exception-view-stacktrace-toggle-show-text": "பிழை விபரங்களைக் காட்டுக",
 	"bs-exception-view-stacktrace-toggle-hide-text": "பிழை விபரங்களை மறைக்கவும்",

@@ -7,8 +7,6 @@
 	"bs-ns_main": "(გვერდები)",
 	"bs-ns_all": "(ყველა)",
 	"bs-tab_navigation": "ნავიგაცია",
-	"bs-tab_focus": "ფოკუსი",
-	"bs-tab_admin": "ადმინი",
 	"bs-userbar_loginswitch_logout": "გასვლა",
 	"bs-userbar_loginswitch_login": "შესვლა",
 	"bs-extended-search-textfield-defaultvalue": "ძიება...",
@@ -23,6 +21,5 @@
 	"bs-two-units-ago": "$1 და $2 წინ",
 	"bs-one-unit-ago": "$1 წინ",
 	"bs-now": "ახლა",
-	"bs-email-greeting-receiver": "{{GENDER:$1|გამარჯობა ბ-ნო $2|გამარჯობა ქ-ნო $2|გამარჯობა $2}},",
-	"bs-email-greeting-no-receiver": "გამარჯობა,"
+	"bs-email-greeting-receiver": "{{GENDER:$1|გამარჯობა ბ-ნო $2|გამარჯობა ქ-ნო $2|გამარჯობა $2}},"
 }

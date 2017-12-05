@@ -7,8 +7,6 @@
 	"bs-ns_main": "(Stranice)",
 	"bs-ns_all": "(sve)",
 	"bs-tab_navigation": "Navigacija",
-	"bs-tab_focus": "Fokus",
-	"bs-tab_admin": "Administrator",
 	"bs-userbar_loginswitch_logout": "Odjava",
 	"bs-userbar_loginswitch_login": "Prijavi me",
 	"bs-extended-search-textfield-defaultvalue": "Tražite...",
@@ -17,6 +15,5 @@
 	"bs-years-duration": "{{PLURAL:$1|jedna godina|$1 godina}}",
 	"bs-one-unit-ago": "prije $1",
 	"bs-now": "sada",
-	"bs-email-greeting-no-receiver": "Pozdrav,",
 	"bs-viewtagerrorlist-legend": "$1 - Greška"
 }

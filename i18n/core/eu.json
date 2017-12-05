@@ -19,7 +19,6 @@
 	"bs-one-unit-ago": "Duela $1",
 	"bs-now": "orain",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Kaixo $2 Jauna|Kaixo $2 Andrea|Kaixo $2}},",
-	"bs-email-greeting-no-receiver": "Kaixo,",
 	"bs-exception-view-heading": "Errore bat gertatu da",
 	"bs-exception-view-text": "Zure eskaera prozesatzean ondorengo errorea gertatu da:",
 	"bs-exception-view-admin-hint": "Mesedez, jar zaitez harremanetan zure sistemaren administratzailearekin.",
