@@ -85,7 +85,8 @@ class BsCacheHelper {
 
 	/**
 	 * cache invalidation
-	 * @param Article $article
+	 *
+	 * @param WikiPage $wikiPage
 	 * @param User $user
 	 * @param Content $content
 	 * @param type $summary
@@ -96,19 +97,23 @@ class BsCacheHelper {
 	 * @param Revision $revision
 	 * @param Status $status
 	 * @param type $baseRevId
+	 *
 	 * @return boolean
 	 */
-	public static function onPageContentSaveComplete( $article, $user, $content, $summary, $isMinor, $isWatch, $section, $flags, $revision, $status, $baseRevId ) {
+	public static function onPageContentSaveComplete( WikiPage $wikiPage, $user, $content, $summary, $isMinor, $isWatch, $section, $flags, $revision, $status, $baseRevId ) {
 		// This is hardcoded because there is no need to make it generic, yet
 		//invalidate cache ArticleHelper::getDiscussionAmount
-		if( $article->getTitle()->isTalkPage() ) {
-			BsCacheHelper::invalidateCache( BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'getDiscussionAmount', $article->getTitle()->getArticleID() ) );
+		if ( $wikiPage->getTitle()->isTalkPage() ) {
+			BsCacheHelper::invalidateCache( BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'getDiscussionAmount',
+				$wikiPage->getTitle()->getArticleID() ) );
 		} else {
 			$aKeys = array(
 				// invalidate cache ArticleHelper::loadPageProps
-				BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'loadPageProps', $article->getTitle()->getArticleID() ),
+				BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'loadPageProps',
+					$wikiPage->getTitle()->getArticleID() ),
 				// invalidate cache WidgetListHelper::getWidgets
-				BsCacheHelper::getCacheKey( 'BlueSpice', 'WidgetListHelper', $article->getTitle()->getPrefixedDBkey() )
+				BsCacheHelper::getCacheKey( 'BlueSpice', 'WidgetListHelper',
+					$wikiPage->getTitle()->getPrefixedDBkey() )
 			);
 
 			BsCacheHelper::invalidateCache( $aKeys );

@@ -634,7 +634,8 @@ class BsCoreHooks {
 
 	/**
 	 * Used for invalidations
-	 * @param WikiPage $article
+	 *
+	 * @param WikiPage $wikiPage
 	 * @param User $user
 	 * @param Content $content
 	 * @param string $summary
@@ -646,8 +647,8 @@ class BsCoreHooks {
 	 * @param Status $status
 	 * @param integer $baseRevId
 	 */
-	public static function onPageContentSaveComplete( $article, $user, $content, $summary, $isMinor, $isWatch, $section, $flags, $revision, $status, $baseRevId ) {
-		BsArticleHelper::getInstance( $article->getTitle() )->invalidate();
+	public static function onPageContentSaveComplete( WikiPage $wikiPage, $user, $content, $summary, $isMinor, $isWatch, $section, $flags, $revision, $status, $baseRevId ) {
+		BsArticleHelper::getInstance( $wikiPage->getTitle() )->invalidate();
 		return true;
 	}
 
