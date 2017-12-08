@@ -31,6 +31,12 @@ abstract class Filter {
 
 	/**
 	 *
+	 * @var boolean
+	 */
+	protected $applied = false;
+
+	/**
+	 *
 	 * @param array $params
 	 */
 	public function __construct( $params ) {
@@ -69,9 +75,19 @@ abstract class Filter {
 	 * @return boolean
 	 */
 	public function matches( $dataSet ) {
+		if( $this->applied ) {
+			return true;
+		}
 		return $this->doesMatch( $dataSet );
 	}
 
+	/**
+	 *
+	 * @param boolean $applied
+	 */
+	public function setAppied( $applied = true ) {
+		$this->applied = $applied;
+	}
 
 	/**
 	 *

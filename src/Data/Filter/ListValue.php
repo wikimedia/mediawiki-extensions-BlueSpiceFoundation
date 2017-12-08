@@ -5,6 +5,18 @@ namespace BlueSpice\Data\Filter;
 use BlueSpice\Data\Filter;
 
 class ListValue extends Filter {
+	const COMPARISON_CONTAINS = 'ct';
+
+	/**
+	 *
+	 * @param array $params
+	 */
+	public function __construct( $params ) {
+		if( !isset( $params[self::KEY_COMPARISON] ) ) {
+			$params[self::KEY_COMPARISON] = static::COMPARISON_CONTAINS;
+		}
+		parent::__construct( $params );
+	}
 
 	/**
 	 * Performs list filtering based on given filter of type array on a dataset
@@ -27,3 +39,4 @@ class ListValue extends Filter {
 		return true;
 	}
 }
+
