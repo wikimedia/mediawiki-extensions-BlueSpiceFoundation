@@ -12,6 +12,7 @@
 		"BlueSpiceFoundation": {
 			"Extensions": {
 				"BlueSpiceFoundation": {
+					"extPath": "/BlueSpiceFoundation",
 					"configDefinitions": {
 						"Logo": "\\BlueSpice\\ConfigDefinition\\Logo::getInstance",
 						"FileExtensions": "\\BlueSpice\\ConfigDefinition\\FileExtensions::getInstance",
@@ -456,8 +457,9 @@
 		],
 		"UnitTestsList": "BsCoreHooks::onUnitTestsList",
 		"ResourceLoaderGetConfigVars": [
-			"BsExtensionManager::onResourceLoaderGetConfigVars",
-			"BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback"
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddVersion::callback",
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback"
 		]
 	},
 	"config_prefix": "bsg",

@@ -632,19 +632,7 @@ class BsFileSystemHelper {
 			$oPage = WikiPage::factory( $oRepoFile->getTitle() );
 			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
 
-			//TODO: Remove, when SecureFileStore is finally removed
-			$oSecureFileStore = BsExtensionManager::getExtension(
-				'SecureFileStore'
-			);
-			if ( $oSecureFileStore ) {
-				return Status::newGood( SecureFileStore::secureStuff(
-					$oRepoFile->getUrl(),
-					true
-				));
-			}
-			else{
-				return Status::newGood( $oRepoFile->getUrl(), true );
-			}
+			return Status::newGood( $oRepoFile->getUrl(), true );
 		}
 		else{
 			return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-local-error-create' ) );

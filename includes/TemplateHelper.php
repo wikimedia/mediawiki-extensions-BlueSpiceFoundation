@@ -24,6 +24,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
+use MediaWiki\MediaWikiServices;
 
 /**
  * @package BlueSpiceFoundation
@@ -34,7 +35,10 @@ class BSTemplateHelper {
 	protected static $sFileExt = '.mustache';
 
 	protected static function makeFullExtTemplatePathFromExtName( $sExtName ) {
-		$aExtensions = BsExtensionManager::getRegisteredExtensions();
+		$registry = MediaWikiServices::getInstance()->getService(
+			'BSExtensionRegistry'
+		);
+		$aExtensions = $registry->getExtensionDefinitions();
 		if( !isset($aExtensions[$sExtName]) ) {
 			throw new BsException( "Unknowen Extension $sExtName" );
 		}
@@ -49,7 +53,10 @@ class BSTemplateHelper {
 
 	protected static function makeTemplateNameFromPath( $sExtName, $sFullPath ) {
 		$sFullPath = BsFileSystemHelper::normalizePath( $sFullPath );
-		$aExtensions = BsExtensionManager::getRegisteredExtensions();
+		$registry = MediaWikiServices::getInstance()->getService(
+			'BSExtensionRegistry'
+		);
+		$aExtensions = $registry->getExtensionDefinitions();
 		if( !isset($aExtensions[$sExtName]) ) {
 			throw new BsException( "Unknowen Extension $sExtName" );
 		}
@@ -111,7 +118,10 @@ class BSTemplateHelper {
 	 * @return array
 	 */
 	public static function getAllTemplates( $aReturn = [] ) {
-		$aExtensions = BsExtensionManager::getRegisteredExtensions();
+		$registry = MediaWikiServices::getInstance()->getService(
+			'BSExtensionRegistry'
+		);
+		$aExtensions = $registry->getExtensionDefinitions();
 		foreach( $aExtensions as $sExtName => $aConfig ) {
 			try {
 				$aTplDir = static::makeFullExtTemplatePathFromExtName(
