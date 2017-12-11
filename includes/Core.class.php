@@ -30,6 +30,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
+use MediaWiki\MediaWikiServices;
 
 /**
  * The BsCore
@@ -300,7 +301,10 @@ class BsCore {
 		BSNotifications::init();
 
 		wfProfileIn('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
-		BsExtensionManager::initialiseExtensions( self::$oInstance );
+		$factory = MediaWikiServices::getInstance()->getService(
+			'BSExtensionFactory'
+		);
+		$factory->getExtensions();
 		wfProfileOut('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
 
 		global $wgHooks;

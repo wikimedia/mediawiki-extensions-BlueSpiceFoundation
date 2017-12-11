@@ -1,4 +1,6 @@
 <?php
+use MediaWiki\MediaWikiServices;
+
 class BsCoreHooks {
 
 	protected static $bUserFetchRights = false;
@@ -77,7 +79,7 @@ class BsCoreHooks {
 	* @return boolean
 	*/
 	public static function onBeforePageDisplay( $out, $skin ) {
-		global $wgFavicon, $wgExtensionAssetsPath, $wgLogo;
+		global $wgFavicon, $wgLogo;
 
 		$config = \MediaWiki\MediaWikiServices::getInstance()
 			->getConfigFactory()->makeConfig( 'bsg' );
@@ -112,15 +114,6 @@ class BsCoreHooks {
 		$out->addJsConfigVars( 'bsImageExtensions', $aImageExtensions );
 		$out->addJsConfigVars( 'bsIsWindows', wfIsWindows() );
 
-		$aExtensionConfs = BsExtensionManager::getRegisteredExtensions();
-		$aAssetsPaths = array(
-			'BlueSpiceFoundation' => $wgExtensionAssetsPath.'/BlueSpiceFoundation'
-		);
-
-		foreach( $aExtensionConfs as $sName => $aConf ) {
-			$aAssetsPaths[$sName] = $wgExtensionAssetsPath.$aConf['extPath'];
-		}
-
 		//provide task permission data for current user to be used in js ui elements, eg show / hide elements
 		//get all registered api modules
 		global $wgAPIModules;
@@ -132,8 +125,6 @@ class BsCoreHooks {
 			}
 		}
 
-		//TODO: Implement as RL Module: see ResourceLoaderUserOptionsModule
-		$out->addJsConfigVars('bsExtensionManagerAssetsPaths', $aAssetsPaths);
 		self::addTestSystem( $out );
 		return true;
 	}
@@ -591,8 +582,11 @@ class BsCoreHooks {
 	 * @return boolean Always true to keep hook running
 	 */
 	public static function onParserFirstCallInit( $parser ) {
+		$factory = MediaWikiServices::getInstance()->getService(
+			'BSExtensionFactory'
+		);
 		BsGenericTagExtensionHandler::setupHandlers(
-			BsExtensionManager::getRunningExtensions(),
+			$factory->getExtensions(),
 			$parser
 		);
 		return true;

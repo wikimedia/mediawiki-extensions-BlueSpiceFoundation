@@ -427,17 +427,7 @@ class BsBaseTemplate extends BaseTemplate {
 							$sText = $aVal[0];
 
 							if ( is_object( $oFile ) && $oFile->exists() ) {
-								//TODO: Remove, when SecureFileStore is finally
-								//removed
-								$oSecureFileStore
-									= BsExtensionManager::getExtension(
-									'SecureFileStore'
-								);
-								if ( $oSecureFileStore ) {
-									$sUrl = SecureFileStore::secureStuff( $oFile->getUrl(), true );
-								} else {
-									$sUrl = $oFile->getUrl();
-								}
+								$sUrl = $oFile->getUrl();
 								$sIcon = '<span class="icon24 custom-icon" style="background-image:url(' . $sUrl . ')"></span>';
 							}
 						}

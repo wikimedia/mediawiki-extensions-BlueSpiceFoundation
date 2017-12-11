@@ -4,6 +4,20 @@ use MediaWiki\MediaWikiServices;
 
 return [
 
+	'BSExtensionRegistry' => function ( MediaWikiServices $services ) {
+		return new \BlueSpice\ExtensionRegistry(
+			\ExtensionRegistry::getInstance(),
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	},
+
+	'BSExtensionFactory' => function ( MediaWikiServices $services ) {
+		return new \BlueSpice\ExtensionFactory(
+			$services->getService( 'BSExtensionRegistry' ),
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	},
+
 	'BSConfigDefinitionFactory' => function ( MediaWikiServices $services ) {
 		return new \BlueSpice\ConfigDefinitionFactory(
 			$services->getConfigFactory()->makeConfig( 'bsg' )
