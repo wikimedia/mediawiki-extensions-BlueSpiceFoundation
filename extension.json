@@ -22,7 +22,8 @@
 				}
 			},
 			"DynamicFileRegistry": {
-				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage"
+				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage",
+				"articlepreviewimage": "\\BlueSpice\\DynamicFileDispatcher\\ArticlePreviewImage"
 			},
 			"EntityRegistry": {}
 		}
