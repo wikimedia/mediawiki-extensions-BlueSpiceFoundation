@@ -87,10 +87,10 @@ abstract class Hook {
 
 	/**
 	 *
-	 * @return MediaWikiServices
+	 * @return Services
 	 */
 	protected function getServices() {
-		return MediaWikiServices::getInstance();
+		return Services::getInstance();
 	}
 
 	public function process() {
