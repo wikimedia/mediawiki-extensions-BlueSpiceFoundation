@@ -8,6 +8,22 @@ class Services extends MediaWikiServices {
 
 	/**
 	 *
+	 * @return ExtensionRegistry
+	 */
+	public function getBSExtensionRegistry() {
+		return $this->getService( 'BSExtensionRegistry' );
+	}
+
+	/**
+	 *
+	 * @return ExtensionFactory
+	 */
+	public function getBSExtensionFactory() {
+		return $this->getService( 'BSExtensionFactory' );
+	}
+
+	/**
+	 *
 	 * @return ConfigDefinitionFactory
 	 */
 	public function getBSConfigDefinitionFactory() {
