@@ -456,11 +456,16 @@ class BsCore {
 	 * Creates a miniprofile for a user. It consists if the useres profile image
 	 * and links to his userpage. In future versions it should also have a
 	 * little menu with his mail adress, and other profile information.
+	 * @deprecated since version 3.0.0 - Use
+	 * \BlueSpice\Services::getInstance()->getBSRendererFactory() and create
+	 * an instance of the 'userimage' renderer.
+	 * ->get( 'userimage', new \BlueSpice\Renderer\Params( [...] )
 	 * @param User $oUser The requested MediaWiki User object
 	 * @param array $aParams The settings array for the mini profile view object
 	 * @return ViewUserMiniProfile A view with the users mini profile
 	 */
 	public function getUserMiniProfile( $oUser, $aParams = array() ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$sParamsHash = md5( serialize( $aParams ) );
 		$sViewHash = $oUser->getName() . $sParamsHash;
 

@@ -83,4 +83,19 @@ class Services extends ServicesDecorator {
 	public function getBSTagFactory() {
 		return $this->decoratedServices->getService( 'BSTagFactory' );
 	}
+
+	/**
+	 * @return RendererFactory
+	 */
+	public function getBSRendererFactory() {
+		return $this->getService( 'BSRendererFactory' );
+	}
+
+	/**
+	 *
+	 * @return SkinDataRendererFactory
+	 */
+	public function getBSSkinDataRendererFactory() {
+		return $this->getService( 'BSSkinDataRendererFactory' );
+	}
 }

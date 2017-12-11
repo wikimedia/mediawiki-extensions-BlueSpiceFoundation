@@ -512,14 +512,14 @@ class BsBaseTemplate extends BaseTemplate {
 		}
 
 		if ( $oUser->isLoggedIn() ) {
-			$oProfile = BsCore::getInstance()->getUserMiniProfile(
-				$oUser,
-				array(
-					"width" => "32",
-					"height" => "32"
-				)
-			);
-			$aOut[] = $oProfile->execute();
+			$factory = \BlueSpice\Services::getInstance()->getBSRendererFactory();
+			$image = $factory->get( 'userimage', new \BlueSpice\Renderer\Params( [
+				'user' => $oUser,
+				'width' => "32",
+				'height' => "32",
+			]));
+
+			$aOut[] = $image->render();
 		} else {
 			$sLink = Linker::link(
 				SpecialPage::getTitleFor( 'login' ),

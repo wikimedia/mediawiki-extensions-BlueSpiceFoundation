@@ -29,7 +29,21 @@
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
 			"AdminToolRegistry": {},
-			"TagRegistry": {}
+			"TagRegistry": {},
+			"RendererRegistry": {
+				"form": "\\BlueSpice\\Renderer\\Form",
+				"list": "\\BlueSpice\\Renderer\\SimpleList",
+				"linklist": "\\BlueSpice\\Renderer\\LinkList",
+				"panel": "\\BlueSpice\\Renderer\\Panel",
+				"table": "\\BlueSpice\\Renderer\\Table",
+				"treenavigation": "\\BlueSpice\\Renderer\\TreeNavigation",
+				"userimage": "\\BlueSpice\\Renderer\\UserImage"
+			},
+			"SkinDataRendererRegistry": {
+				"bs_navigation_site": "\\BlueSpice\\Renderer\\TreeNavigation",
+				"bs_navigation_globalactions_general": "\\BlueSpice\\Renderer\\SimpleList",
+				"bs_navigation_globalactions_admin": "\\BlueSpice\\Renderer\\SimpleList"
+			}
 		}
 	},
 	"ExtensionFunctions": [

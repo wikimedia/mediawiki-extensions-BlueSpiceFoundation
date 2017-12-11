@@ -83,5 +83,27 @@ return [
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
 			$GLOBALS[ 'bsgPermissionConfig' ]
 		);
+	},
+
+	'BSRendererFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationRendererRegistry'
+		);
+
+		return new \BlueSpice\RendererFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	},
+
+	'BSSkinDataRendererFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationSkinDataRendererRegistry'
+		);
+
+		return new \BlueSpice\SkinDataRendererFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
 	}
 ];
