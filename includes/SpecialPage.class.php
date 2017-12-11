@@ -36,4 +36,14 @@ class BsSpecialPage extends SpecialPage {
 	protected function getGroupName() {
 		return 'bluespice';
 	}
+
+	/**
+	 * Shortcut to get main config object
+	 * @return \Config
+	 * @since 1.24
+	 */
+	public function getConfig() {
+		return \MediaWiki\MediaWikiServices::getInstance()
+			->getConfigFactory()->makeConfig( 'bsg' );
+	}
 }
