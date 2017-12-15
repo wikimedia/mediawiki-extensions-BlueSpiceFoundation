@@ -23,5 +23,6 @@
 	"bs-upload-details": "Detalles",
 	"bs-upload-uploadwarningdialog-intro": "Se emitieron las alertas siguientes al tratar de cargar el archivo",
 	"bs-upload-uploadwarningdialog-outro": "Pulsa en «{{int:bs-extjs-ok}}» para ignorar las alertas y cargar el archivo, o bien, pulsa en «{{int:bs-extjs-cancel}}» para volver al formulario de carga",
-	"bs-upload-uploadwarningdialog-warning-exists": "Ya existe un archivo con el nombre «$1»"
+	"bs-upload-uploadwarningdialog-warning-exists": "Ya existe un archivo con el nombre «$1»",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Alerta desconocida con código «$1»"
 }
