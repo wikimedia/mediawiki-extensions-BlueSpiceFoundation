@@ -22,5 +22,6 @@ class AddDataUserName extends \BlueSpice\Hook\LinkEnd {
 		}
 
 		$this->attribs['data-bs-username'] = $user->getName();
+		return true;
 	}
 }
