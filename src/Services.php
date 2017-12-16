@@ -4,14 +4,14 @@ namespace BlueSpice;
 
 use MediaWiki\MediaWikiServices;
 
-class Services extends MediaWikiServices {
+class Services extends ServicesDecorator {
 
 	/**
 	 *
 	 * @return ExtensionRegistry
 	 */
 	public function getBSExtensionRegistry() {
-		return $this->getService( 'BSExtensionRegistry' );
+		return $this->decoratedServices->getService( 'BSExtensionRegistry' );
 	}
 
 	/**
@@ -19,7 +19,7 @@ class Services extends MediaWikiServices {
 	 * @return ExtensionFactory
 	 */
 	public function getBSExtensionFactory() {
-		return $this->getService( 'BSExtensionFactory' );
+		return $this->decoratedServices->getService( 'BSExtensionFactory' );
 	}
 
 	/**
@@ -27,7 +27,7 @@ class Services extends MediaWikiServices {
 	 * @return ConfigDefinitionFactory
 	 */
 	public function getBSConfigDefinitionFactory() {
-		return $this->getService( 'BSConfigDefinitionFactory' );
+		return $this->decoratedServices->getService( 'BSConfigDefinitionFactory' );
 	}
 
 	/**
@@ -35,7 +35,7 @@ class Services extends MediaWikiServices {
 	 * @return DynamicFileDispatcher\Factory
 	 */
 	public function getBSDynamicFileDispatcherFactory() {
-		return $this->getService( 'BSDynamicFileDispatcherFactory' );
+		return $this->decoratedServices->getService( 'BSDynamicFileDispatcherFactory' );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Services extends MediaWikiServices {
 	 * @return DynamicFileDispatcher\UrlBuilder
 	 */
 	public function getBSDynamicFileDispatcherUrlBuilder() {
-		return $this->getService( 'BSDynamicFileDispatcherUrlBuilder' );
+		return $this->decoratedServices->getService( 'BSDynamicFileDispatcherUrlBuilder' );
 	}
 
 	/**
@@ -51,7 +51,7 @@ class Services extends MediaWikiServices {
 	 * @return EntityRegistry
 	 */
 	public function getBSEntityRegistry() {
-		return $this->getService( 'BSEntityRegistry' );
+		return $this->decoratedServices->getService( 'BSEntityRegistry' );
 	}
 
 	/**
@@ -59,7 +59,7 @@ class Services extends MediaWikiServices {
 	 * @return EntityConfigFactory
 	 */
 	public function getBSEntityConfigFactory() {
-		return $this->getService( 'BSEntityConfigFactory' );
+		return $this->decoratedServices->getService( 'BSEntityConfigFactory' );
 	}
 
 	/**
@@ -67,6 +67,6 @@ class Services extends MediaWikiServices {
 	 * @return EntityFactory
 	 */
 	public function getBSEntityFactory() {
-		return $this->getService( 'BSEntityFactory' );
+		return $this->decoratedServices->getService( 'BSEntityFactory' );
 	}
 }
