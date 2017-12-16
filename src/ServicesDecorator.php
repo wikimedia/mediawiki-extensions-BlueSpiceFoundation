@@ -93,7 +93,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * use getMainConfig() to get a Config instances.
 	 *
 	 * @since 1.27
-	 * @return Config
+	 * @return \Config
 	 */
 	public function getBootstrapConfig() {
 		return $this->decoratedServices->getService( 'BootstrapConfig' );
@@ -101,7 +101,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return ConfigFactory
+	 * @return \ConfigFactory
 	 */
 	public function getConfigFactory() {
 		return $this->decoratedServices->getService( 'ConfigFactory' );
@@ -112,7 +112,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * This may or may not be the same object that is returned by getBootstrapConfig().
 	 *
 	 * @since 1.27
-	 * @return Config
+	 * @return \Config
 	 */
 	public function getMainConfig() {
 		return $this->decoratedServices->getService( 'MainConfig' );
@@ -120,7 +120,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return SiteLookup
+	 * @return \SiteLookup
 	 */
 	public function getSiteLookup() {
 		return $this->decoratedServices->getService( 'SiteLookup' );
@@ -128,7 +128,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return SiteStore
+	 * @return \SiteStore
 	 */
 	public function getSiteStore() {
 		return $this->decoratedServices->getService( 'SiteStore' );
@@ -136,7 +136,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return InterwikiLookup
+	 * @return \InterwikiLookup
 	 */
 	public function getInterwikiLookup() {
 		return $this->decoratedServices->getService( 'InterwikiLookup' );
@@ -144,7 +144,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return IBufferingStatsdDataFactory
+	 * @return \IBufferingStatsdDataFactory
 	 */
 	public function getStatsdDataFactory() {
 		return $this->decoratedServices->getService( 'StatsdDataFactory' );
@@ -152,7 +152,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return EventRelayerGroup
+	 * @return \EventRelayerGroup
 	 */
 	public function getEventRelayerGroup() {
 		return $this->decoratedServices->getService( 'EventRelayerGroup' );
@@ -160,7 +160,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return SearchEngine
+	 * @return \SearchEngine
 	 */
 	public function newSearchEngine() {
 		// New engine object every time, since they keep state
@@ -169,7 +169,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return SearchEngineFactory
+	 * @return \SearchEngineFactory
 	 */
 	public function getSearchEngineFactory() {
 		return $this->decoratedServices->getService( 'SearchEngineFactory' );
@@ -177,7 +177,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return SearchEngineConfig
+	 * @return \SearchEngineConfig
 	 */
 	public function getSearchEngineConfig() {
 		return $this->decoratedServices->getService( 'SearchEngineConfig' );
@@ -185,7 +185,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.27
-	 * @return SkinFactory
+	 * @return \SkinFactory
 	 */
 	public function getSkinFactory() {
 		return $this->decoratedServices->getService( 'SkinFactory' );
@@ -193,7 +193,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return LBFactory
+	 * @return \LBFactory
 	 */
 	public function getDBLoadBalancerFactory() {
 		return $this->decoratedServices->getService( 'DBLoadBalancerFactory' );
@@ -201,7 +201,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return LoadBalancer The main DB load balancer for the local wiki.
+	 * @return \LoadBalancer The main DB load balancer for the local wiki.
 	 */
 	public function getDBLoadBalancer() {
 		return $this->decoratedServices->getService( 'DBLoadBalancer' );
@@ -209,7 +209,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return WatchedItemStoreInterface
+	 * @return \WatchedItemStoreInterface
 	 */
 	public function getWatchedItemStore() {
 		return $this->decoratedServices->getService( 'WatchedItemStore' );
@@ -217,7 +217,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return WatchedItemQueryService
+	 * @return \WatchedItemQueryService
 	 */
 	public function getWatchedItemQueryService() {
 		return $this->decoratedServices->getService( 'WatchedItemQueryService' );
@@ -225,7 +225,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return CryptRand
+	 * @return \CryptRand
 	 */
 	public function getCryptRand() {
 		return $this->decoratedServices->getService( 'CryptRand' );
@@ -233,7 +233,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return CryptHKDF
+	 * @return \CryptHKDF
 	 */
 	public function getCryptHKDF() {
 		return $this->decoratedServices->getService( 'CryptHKDF' );
@@ -241,7 +241,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return MediaHandlerFactory
+	 * @return \MediaHandlerFactory
 	 */
 	public function getMediaHandlerFactory() {
 		return $this->decoratedServices->getService( 'MediaHandlerFactory' );
@@ -249,7 +249,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return MimeAnalyzer
+	 * @return \MimeAnalyzer
 	 */
 	public function getMimeAnalyzer() {
 		return $this->decoratedServices->getService( 'MimeAnalyzer' );
@@ -257,7 +257,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return ProxyLookup
+	 * @return \ProxyLookup
 	 */
 	public function getProxyLookup() {
 		return $this->decoratedServices->getService( 'ProxyLookup' );
@@ -265,7 +265,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.29
-	 * @return Parser
+	 * @return \Parser
 	 */
 	public function getParser() {
 		return $this->decoratedServices->getService( 'Parser' );
@@ -273,7 +273,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.30
-	 * @return ParserCache
+	 * @return \ParserCache
 	 */
 	public function getParserCache() {
 		return $this->decoratedServices->getService( 'ParserCache' );
@@ -281,7 +281,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return GenderCache
+	 * @return \GenderCache
 	 */
 	public function getGenderCache() {
 		return $this->decoratedServices->getService( 'GenderCache' );
@@ -289,7 +289,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return LinkCache
+	 * @return \LinkCache
 	 */
 	public function getLinkCache() {
 		return $this->decoratedServices->getService( 'LinkCache' );
@@ -297,7 +297,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return LinkRendererFactory
+	 * @return \LinkRendererFactory
 	 */
 	public function getLinkRendererFactory() {
 		return $this->decoratedServices->getService( 'LinkRendererFactory' );
@@ -308,7 +308,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * if no custom options are needed
 	 *
 	 * @since 1.28
-	 * @return LinkRenderer
+	 * @return \LinkRenderer
 	 */
 	public function getLinkRenderer() {
 		return $this->decoratedServices->getService( 'LinkRenderer' );
@@ -316,7 +316,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return TitleFormatter
+	 * @return \TitleFormatter
 	 */
 	public function getTitleFormatter() {
 		return $this->decoratedServices->getService( 'TitleFormatter' );
@@ -324,7 +324,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return TitleParser
+	 * @return \TitleParser
 	 */
 	public function getTitleParser() {
 		return $this->decoratedServices->getService( 'TitleParser' );
@@ -356,7 +356,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return VirtualRESTServiceClient
+	 * @return \VirtualRESTServiceClient
 	 */
 	public function getVirtualRESTServiceClient() {
 		return $this->decoratedServices->getService( 'VirtualRESTServiceClient' );
@@ -380,7 +380,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.30
-	 * @return CommandFactory
+	 * @return \CommandFactory
 	 */
 	public function getShellCommandFactory() {
 		return $this->decoratedServices->getService( 'ShellCommandFactory' );

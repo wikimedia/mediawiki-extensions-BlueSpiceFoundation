@@ -480,6 +480,14 @@
 		},
 		"ConfigFiles": {
 			"value": []
+		},
+		"DefaultUserImage": {
+			"value": "resources/bluespice/images/bs-user-default-image.png",
+			"path": true
+		},
+		"DefaultAnonImage": {
+			"value": "resources/bluespice/images/bs-user-anon-image.png",
+			"path": true
 		}
 	},
 	"ConfigRegistry": {
