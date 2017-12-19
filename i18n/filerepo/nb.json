@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"bs-filerepo-labelupload": "Last opp",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Filnavn",
+	"bs-filerepo-headerfilesize": "Størrelse",
+	"bs-filerepo-headerpagecategories": "Kategorier",
+	"bs-filerepo-headerfilewidth": "Bredde",
+	"bs-filerepo-headerfileheight": "Høyde",
+	"bs-filerepo-headerfilemimetype": "MIME-type",
+	"bs-filerepo-headerfileusertext": "Bruker",
+	"bs-filerepo-headerfileextension": "Utvidelse",
+	"bs-filerepo-headerfiletimestamp": "Lastet opp",
+	"bs-filerepo-headerfilemediatype": "Medietype",
+	"bs-filerepo-headerfiledescription": "Beskrivelse",
+	"bs-filerepo-headerfilethumbnail": "Miniatyrbilde",
+	"bs-filerepo-yes": "Ja",
+	"bs-filerepo-no": "Nei",
+	"bs-filerepo-pagesize": "Sidestørrelse"
+}

@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Last opp fil",
+	"bs-upload-uploadbuttontext": "Bla gjennom",
+	"bs-upload-uploadfilefieldlabel": "Filnavn",
+	"bs-upload-uploadfileemptytext": "Sett inn ny fil …",
+	"bs-upload-uploaddestfilelabel": "Målfilnavn",
+	"bs-upload-allowedfiletypesare": "Gyldige filtyper er:",
+	"bs-upload-license": "Lisens",
+	"bs-upload-uploadwatchthislabel": "Overvåk denne fila",
+	"bs-upload-uploadignorewarningslabel": "Ignorer advarsler",
+	"bs-upload-categories": "Kategorier",
+	"bs-upload-upload-waitmessage": "Opplasting pågår …",
+	"bs-upload-error": "Feil",
+	"bs-upload-descfilelabel": "Beskrivelse",
+	"bs-upload-error-long": "Feil under opplastingsprosessen",
+	"bs-upload-filetypenotsupported": "Filtypen støttes ikke",
+	"bs-upload-details": "Detaljer",
+	"bs-upload-uploadwarningdialog-title": "Last opp fil: Advarsler",
+	"bs-upload-uploadwarningdialog-intro": "Følgende advarsler oppsto under opplastingen av fila",
+	"bs-upload-uploadwarningdialog-outro": "Klikk på «{{int:bs-extjs-ok}}» for å ignorere advarsler og laste opp fila, klikk «{{int:bs-extjs-cancel}}» for å gå tilbake til opplastingsskjemaet",
+	"bs-upload-uploadwarningdialog-warning-exists": "En fil med navnet «$1» finnes fra før",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Det er {{PLURAL:$1|en duplikat|duplikater}} av denne fila",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Ukjent advarsel med koden «$1»"
+}
