@@ -4,7 +4,13 @@
 			"Jon Harald Søby"
 		]
 	},
+	"apihelp-bs-store-param-limit": "Antall resultater som skal returneres",
+	"apihelp-bs-store-param-query": "Som <var>filter</var>, men den gitte verdien fungerer bare som filter for <var>value</var>-feltet til en ExtJS-komponent",
+	"apihelp-bs-store-param-dc": "<code>Disable cache</code>-flagg",
+	"apihelp-bs-store-param-format": "Formatet til utdataene (kun JSON eller formatert JSON)",
+	"apihelp-bs-task-param-task": "Oppgaven som skal utføres",
 	"apihelp-bs-task-param-format": "Resultatets format",
+	"bs-wikipage-tasks-error-page-not-valid": "Den gitte siden er ikke gyldig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Endret kategorier.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har ikke tillatelse til å redigere siden «$1».",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ugyldig kategori|Ugyldige kategorier}}: $1",

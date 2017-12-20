@@ -10,6 +10,7 @@
 	"bs-deferred-action-status-error": "Mislyktes.",
 	"bs-deferred-action-apicopypage-description": "Kopier «$1» til «$2».",
 	"bs-deferred-action-apieditpage-description": "Rediger «$1».",
+	"bs-deferred-batch-title": "Partiprosessering",
 	"bs-deferred-batch-progress-desc": "Framgang",
 	"bs-deferred-batch-actions": "Handlinger",
 	"bs-deferred-batch-description": "Beskrivelse",
