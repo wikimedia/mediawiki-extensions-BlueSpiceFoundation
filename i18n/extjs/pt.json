@@ -32,7 +32,7 @@
 	"bs-extjs-upload": "Carregar",
 	"bs-extjs-browse": "Procurar",
 	"bs-extjs-uploading": "A carregar...",
-	"bs-extjs-confirmNavigationTitle": "Seguir link",
+	"bs-extjs-confirmNavigationTitle": "Seguir hiperligação",
 	"bs-extjs-confirmNavigationText": "Deseja realmente seguir este link? Todas as configurações dinâmicas, como os filtros e a ordenação, serão perdidas.",
 	"bs-extjs-allns": "(todos)",
 	"bs-extjs-mainns": "(Principal)",
