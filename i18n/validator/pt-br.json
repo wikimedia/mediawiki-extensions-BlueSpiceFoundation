@@ -1,12 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
+	"bs-validator-email-validation-approved": "O endereço de e-mail foi validado com sucesso.",
 	"bs-validator-email-validation-not-approved": "O endereço de e-mail não pode ser validado.",
 	"bs-validator-url-validation-approved": "O URL foi validado com sucesso.",
 	"bs-validator-url-validation-not-approved": "O URL não pode ser validado.",
+	"bs-validator-arg-count-validation-approved": "O atributo \"count\" foi validado com sucesso.",
+	"bs-validator-arg-count-validation-not-approved": "O atributo \"count\" não pode ser validado.",
 	"bs-validator-set-validation-approved": "$1 foi validado com êxito.",
-	"bs-validator-set-validation-not-approved": "{{PLURAL: $3|Somente o seguinte valor é permitido para $1|Para $1 somente um dos seguintes valores é permitido}}: $2."
+	"bs-validator-set-validation-not-approved": "{{PLURAL: $3|Somente o seguinte valor é permitido para $1|Para $1 somente um dos seguintes valores é permitido}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "O valor fornecido é muito baixo. Ele não deve ser inferior a $1.",
+	"bs-validator-integer-range-validation-too-high": "O valor fornecido é muito alto. Ele não deve ser inferior a $1."
 }
