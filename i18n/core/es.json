@@ -57,7 +57,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "No se admite este tipo de archivo.",
 	"bs-filesystemhelper-save-base64-error": "No se pudo guardar el archivo.",
 	"bs-filesystemhelper-upload-base64-error": "No se pudo cargar el archivo.",
-	"bs-filesystemhelper-upload-local-error-stash-file": "El archivo no se pudo mover al escondite de subida.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "El archivo no se pudo trasladar al almacén provisional de cargas.",
 	"bs-filesystemhelper-upload-local-error-create": "No se pudo crear el archivo en el wiki.",
 	"bs-navigation-instructions": "Instrucciones",
 	"bs-navigation-support": "Asistencia",

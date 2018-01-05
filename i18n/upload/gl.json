@@ -20,6 +20,8 @@
 	"bs-upload-error-long": "Erro no proceso de subida",
 	"bs-upload-filetypenotsupported": "Non se admite este tipo de ficheiro",
 	"bs-upload-details": "Detalles",
+	"bs-upload-uploadwarningdialog-title": "Carga de ficheiro: Avisos",
+	"bs-upload-uploadwarningdialog-intro": "Xurdiron os seguintes avisos ó tratar de cargar o ficheiro",
 	"bs-upload-uploadwarningdialog-warning-exists": "Xa existe un ficheiro co nome \"$1\"",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Existe un duplicado|Existen varios duplicados}} deste ficheiro",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso descoñecido con código \"$1\""

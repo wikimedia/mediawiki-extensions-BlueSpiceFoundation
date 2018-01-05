@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os arquivos do backend de arquivos. Permite classificar, filtrar e paginação. Implementa os parâmetros da ExtJS Store.",
@@ -20,16 +21,27 @@
 	"apihelp-bs-titlequery-store-summary": "Lista os títulos das páginas e (opcionalmente) prefixos do espaço nominal com base em um termo de consulta. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Fornece operações comuns para páginas wiki",
 	"apihelp-bs-wikipage-tasks-summary": "Fornece operações comuns para páginas wiki",
+	"apihelp-bs-store-param-sort": "Texto JSON com informação de ordenação; a anulação da seriação resulta numa <code>array of objects</code> que contém o nome do campo e a direção de cada opção de ordenação.",
+	"apihelp-bs-store-param-group": "Texto JSON com informação de agrupamento; a anulação da seriação resulta numa <code>array of objects</code> que contém o nome do campo e a direção de cada opção de agrupamento.",
+	"apihelp-bs-store-param-filter": "Texto JSON com informação de filtragem; a anulação da seriação resulta numa <code>array of objects</code> que contém o nome do campo e a direção de cada opção de filtragem.",
+	"apihelp-bs-store-param-page": "Permite o cálculo do início e limite do lado do servidor",
 	"apihelp-bs-store-param-limit": "Número de resultados a retornar",
 	"apihelp-bs-store-param-start": "O offset do qual começar a lista de resultados",
 	"apihelp-bs-store-param-callback": "Um nome de método no código do cliente que deve ser chamado na resposta (JSONP)",
+	"apihelp-bs-store-param-query": "Semelhante a <var>filter</var>, mas o valor fornecido serve de filtro apenas para o campo <var>value</var> de um componente ExtJS",
 	"apihelp-bs-store-param-dc": "Bandeira <code>Disable cache</code>",
+	"apihelp-bs-store-param-format": "O formato do resultado (só JSON, ou JSON formatado)",
+	"apihelp-bs-store-param-options": "Opções arbitrárias para configurar o armazenamento em formato de texto JSON",
 	"apihelp-bs-task-param-task": "A tarefa que deve ser excluída",
+	"apihelp-bs-task-param-taskdata": "Objeto codificado em texto JSON com dados arbitrários para a tarefa",
+	"apihelp-bs-task-param-context": "Objeto codificado em texto JSON com dados de contexto para a tarefa",
 	"apihelp-bs-task-param-format": "O formato do resultado",
 	"apihelp-bs-task-param-token": "O token necessário para acessar o módulo da API",
+	"bs-wikipage-tasks-error-contentmodel": "Não foi possível realizar a tarefa com o modelo de conteúdo da página fornecida.",
 	"bs-wikipage-tasks-error-page-not-valid": "A página fornecida não é válida.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorias alteradas.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Você não está autorizado a editar a página '$1'.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoria inválida|Categorias inválidas}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "As categorias foram definidas com sucesso.",
 	"apihelp-bs-wikipage-store-description": "Lista todas as páginas wiki. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-wikipage-store-summary": "Lista todas as páginas wiki. Permite classificar, filtrar e paginação. Implementa os parâmetros ExtJS Store.",
@@ -47,7 +59,10 @@
 	"apihelp-bs-category-treestore-summary": "Lista as subcategorias de uma categoria específica",
 	"apihelp-bs-category-treestore-param-node": "Um caminho de categorias separadas por uma barra",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 exemplos de parâmetros]",
+	"apihelp-bs-task-param-schema": "Mostrar o esquema JSON para os parâmetros de tarefa",
 	"apihelp-bs-task-param-examples": "Mostra exemplos de parâmetros de tarefas",
 	"bs-api-task-taskData-page-id": "O ID de uma página wiki existente",
-	"bs-api-task-taskData-page-title": "Um título válido para uma página wiki"
+	"bs-api-task-taskData-page-title": "Um título válido para uma página wiki",
+	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de textos. Os valores têm de ser nomes de categoria válidos.",
+	"apihelp-bs-watchlist-store-summary": "Lista todas as entradas da lista de páginas vigiadas. Permite ordenar, filtrar e paginar. Implementa os parâmetros store."
 }
