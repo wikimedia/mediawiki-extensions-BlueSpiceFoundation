@@ -1,11 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"Baloch Khan"
 		]
 	},
 	"bs-ns_all": "(ټول)",
 	"bs-extended-search-textfield-defaultvalue": "پلټل...",
+	"bs-years-duration": "{{PLURAL:$1|يو کال|$1 کاله}}",
+	"bs-months-duration": "{{PLURAL:$1|يوه مياشت|$1 مياشتې}}",
+	"bs-weeks-duration": "{{PLURAL:$1|يوه اونۍ|$1 اونۍ}}",
+	"bs-days-duration": "{{PLURAL:$1|يوه ورځ|$1 ورځې}}",
+	"bs-hours-duration": "{{PLURAL:$1|يو ساعت|$1 ساعته}}",
+	"bs-mins-duration": "{{PLURAL:$1|يوه دقيقه|$1 دقیقي}}",
+	"bs-secs-duration": "{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}",
+	"bs-two-units-ago": "$1 او $2 ترمخه",
+	"bs-one-unit-ago": "$1 ترمخه",
 	"bs-parser-error-invalid-title": "ناسم سرليک: $1",
 	"bs-validator-error-title-does-not-exist": "پدې نوم مخ نشته: $1",
 	"bs-exttype-bluespice": "بلوسپايس شاتاړي",

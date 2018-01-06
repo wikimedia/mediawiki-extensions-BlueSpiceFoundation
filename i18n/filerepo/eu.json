@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mikel Ibaiba"
+		]
+	},
+	"bs-filerepo-labelupload": "Igo",
+	"bs-filerepo-labelfilter": "Iragazkia",
+	"bs-filerepo-headerfilename": "Fitxategiaren izena",
+	"bs-filerepo-headerfilesize": "Tamaina",
+	"bs-filerepo-headerpagecategories": "Kategoriak",
+	"bs-filerepo-headerfilewidth": "Zabalera",
+	"bs-filerepo-headerfileheight": "Altuera",
+	"bs-filerepo-headerfilemimetype": "MIME mota",
+	"bs-filerepo-headerfileusertext": "Erabiltzailea",
+	"bs-filerepo-headerfileextension": "Luzapena",
+	"bs-filerepo-headerfiletimestamp": "Igoa",
+	"bs-filerepo-headerfilemediatype": "Media mota",
+	"bs-filerepo-headerfiledescription": "Deskribapena",
+	"bs-filerepo-headerfilethumbnail": "Iruditxoa",
+	"bs-filerepo-yes": "Bai",
+	"bs-filerepo-no": "Ez",
+	"bs-filerepo-pagesize": "Orriaren tamaina"
+}

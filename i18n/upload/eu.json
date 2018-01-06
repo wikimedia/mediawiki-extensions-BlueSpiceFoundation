@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mikel Ibaiba"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Igo fitxategia",
+	"bs-upload-uploadbuttontext": "Arakatu",
+	"bs-upload-uploadfilefieldlabel": "Fitxategiaren izena",
+	"bs-upload-uploaddestfilelabel": "Helburu fitxategi izena",
+	"bs-upload-license": "Lizentzia",
+	"bs-upload-uploadwatchthislabel": "Fitxategi hau ikusi",
+	"bs-upload-uploadignorewarningslabel": "Edozein ohar ezikusi",
+	"bs-upload-categories": "Kategoriak",
+	"bs-upload-error": "Akatsa",
+	"bs-upload-descfilelabel": "Deskribapena",
+	"bs-upload-filetypenotsupported": "Fitxategi mota hau ez da onartzen",
+	"bs-upload-details": "Xehetasunak"
+}

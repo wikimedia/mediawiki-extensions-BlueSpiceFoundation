@@ -1,9 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sator"
+			"Sator",
+			"Mikel Ibaiba"
 		]
 	},
+	"bs-deferred-action-status-pending": "Zain.",
+	"bs-deferred-action-status-running": "Exekutatzen...",
 	"bs-deferred-action-status-done": "Egina.",
-	"bs-deferred-action-status-error": "Hutsegitea."
+	"bs-deferred-action-status-error": "Hutsegitea.",
+	"bs-deferred-action-apicopypage-description": "\"$1\" \"$2\"-ra kopiatu.",
+	"bs-deferred-action-apieditpage-description": "\"$1\" aldatu.",
+	"bs-deferred-batch-progress-desc": "Aurrerapena",
+	"bs-deferred-batch-actions": "Ekintzak",
+	"bs-deferred-batch-description": "Deskribapena",
+	"bs-deferred-batch-status": "Egoera"
 }

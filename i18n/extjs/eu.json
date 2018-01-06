@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Subi",
-			"Sator"
+			"Sator",
+			"Mikel Ibaiba"
 		]
 	},
 	"bs-extjs-ok": "Ados",
@@ -15,12 +16,35 @@
 	"bs-extjs-remove": "Kendu",
 	"bs-extjs-edit": "Aldatu",
 	"bs-extjs-copy": "Kopiatu",
+	"bs-extjs-hint": "Aholkua",
 	"bs-extjs-error": "Errorea",
+	"bs-extjs-confirm": "Baieztatu",
 	"bs-extjs-loading": "Kargatzen...",
+	"bs-extjs-pageSize": "Orriaren tamaina",
+	"bs-extjs-actions-column-header": "Ekintzak",
+	"bs-extjs-warning": "Oharra",
 	"bs-extjs-saving": "gordetzen...",
+	"bs-extjs-reset": "Hasieratu",
 	"bs-extjs-close": "Itxi",
+	"bs-extjs-label-user": "Erabiltzailea",
+	"bs-extjs-label-namespace": "Izen-tartea",
+	"bs-extjs-label-page": "Orrialdea",
 	"bs-extjs-upload": "Igo",
 	"bs-extjs-browse": "Arakatu",
 	"bs-extjs-uploading": "Igotzen...",
-	"bs-extjs-filters": "Iragazkiak"
+	"bs-extjs-confirmNavigationTitle": "Linka jarraitu",
+	"bs-extjs-allns": "(guztiak)",
+	"bs-extjs-mainns": "(Nagusia)",
+	"bs-extjs-filters": "Iragazkiak",
+	"bs-extjs-filter-equals": "berdinak",
+	"bs-extjs-filter-equals-not": "berdinak ez",
+	"bs-extjs-filter-bool-yes": "bai",
+	"bs-extjs-filter-bool-no": "ez",
+	"bs-extjs-title-success": "Arrakasta",
+	"bs-extjs-title-warning": "Oharra",
+	"bs-extjs-categoryboxselect-emptytext": "Kategoria bat gehitu",
+	"bs-extjs-categorytree-title": "Kategoriak",
+	"bs-extjs-filter-date-after": "Ondoren",
+	"bs-extjs-filter-date-before": "Lehenago",
+	"bs-extjs-filter-date-filter": "Iragazkia"
 }
