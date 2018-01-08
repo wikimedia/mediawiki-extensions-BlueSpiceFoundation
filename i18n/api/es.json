@@ -10,6 +10,7 @@
 	},
 	"apihelp-bs-wikipage-tasks-description": "Proporciona operaciones comunes para páginas wiki",
 	"apihelp-bs-store-param-limit": "Número de resultados a devolver",
+	"apihelp-bs-task-param-task": "La tarea que debería ejecutarse",
 	"apihelp-bs-task-param-format": "El formato del resultado",
 	"apihelp-bs-task-param-token": "El token necesario para acceder al módulo de la API",
 	"bs-wikipage-tasks-error-contentmodel": "No se pudo realizar la tarea con el modelo de contenido de la página proporcionada.",
@@ -25,5 +26,9 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "No tienes permitido leer la página «$1».",
 	"bs-wikipage-tasks-error-nothingtoremove": "No hay categorías que quitar",
 	"apihelp-bs-category-treestore-description": "Enumera las subcategorías de una categoría concreta",
-	"bs-api-task-taskData-page-title": "Un título válido de una página wiki"
+	"apihelp-bs-category-treestore-summary": "Enumera las subcategorías de una categoría específica",
+	"apihelp-bs-task-param-examples": "Mostrar ejemplos de parámetros de tareas",
+	"bs-api-task-taskData-page-id": "El identificador de una página existente del wiki",
+	"bs-api-task-taskData-page-title": "Un título válido de una página wiki",
+	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de cadenas. Los valores deben ser nombres de categorías válidos."
 }

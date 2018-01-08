@@ -17,6 +17,9 @@
 	"bs-deferred-batch-actions": "Acciones",
 	"bs-deferred-batch-description": "Descripción",
 	"bs-deferred-batch-status": "Estado",
+	"bs-deferred-action-apiaddcategories-description": "Añadir categorías a «$1».",
+	"bs-deferred-action-apiremovecategories-description": "Quitar categorías de «$1».",
+	"bs-deferred-action-apisetcategories-description": "Establecer las categorías en «$1».",
 	"bs-deferred-action-apimovepage-description": "Trasladar «$1» a «$2».",
 	"bs-deferred-action-apideletepage-description": "Borrar «$1»."
 }
