@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hedda"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Dosya arka ucundaki tüm dosyaları listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-filebackend-store-summary": "Dosya arka ucundaki tüm dosyaları listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-user-store-description": "Veritabanındaki tüm kullanıcıları listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-user-store-summary": "Veritabanındaki tüm kullanıcıları listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-category-store-description": "Tüm kategorileri listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-category-store-summary": "Tüm kategorileri listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-adminuser-store-description": "Veritabanındaki tüm kullanıcıları ek hassas verilerle listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-adminuser-store-summary": "Veritabanındaki tüm kullanıcıları ek hassas verilerle listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-group-store-description": "$wgImplicitGroups haricindeki tüm grupları listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-group-store-summary": "$wgImplicitGroups haricindeki tüm grupları listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-interwiki-store-description": "Tüm interwiki bağlantılarını listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-interwiki-store-summary": "Tüm interwiki bağlantılarını listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-titlequery-store-description": "Bir sorgu terimine dayanan sayfa başlıklarını ve (isteğe bağlı olarak) ad alanı öneklerini listeler. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-titlequery-store-summary": "Bir sorgu terimine dayanan sayfa başlıklarını ve (isteğe bağlı olarak) ad alanı öneklerini listeler. ExtJS Store parametrelerini uygular.",
+	"apihelp-bs-wikipage-tasks-description": "WikiPages için ortak işlemler sunar",
+	"apihelp-bs-wikipage-tasks-summary": "WikiPages için ortak işlemler sunar",
+	"apihelp-bs-store-param-sort": "Sıralama bilgisi olan JSON dizesi; her sıralama seçeneği için alan adını ve yönünü tutan <code>nesnelerin dizisine</code> deserialize eder",
+	"apihelp-bs-store-param-group": "Sıralama bilgisi olan JSON dizesi; her sıralama seçeneği için alan adını ve yönünü tutan <code>nesnelerin dizisine</code> deserialize eder",
+	"apihelp-bs-store-param-filter": "Filtre bilgisine sahip JSON dizesi; alan adını, filtre türünü ve her filtreleme seçeneği için filtre değerini barındıran <code>nesnelerin dizisine</code> deserialize eder",
+	"apihelp-bs-store-param-page": "Sunucu tarafında başlangıç/limit hesaplamasına izin verir",
+	"apihelp-bs-store-param-limit": "Geri dönülecek sonuç sayısı",
+	"apihelp-bs-store-param-start": "Sonuç listesini başlatmak için ofset"
+}
