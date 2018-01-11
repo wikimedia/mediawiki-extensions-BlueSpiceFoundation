@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Cwlin0416"
+			"Cwlin0416",
+			"Kly"
 		]
 	},
 	"bs-deferred-action-status-pending": "待處理。",
@@ -16,5 +17,9 @@
 	"bs-deferred-batch-actions": "操作",
 	"bs-deferred-batch-description": "描述",
 	"bs-deferred-batch-status": "狀態",
-	"bs-deferred-action-apimovepage-description": "移動 \"$1\" 至 \"$2\"。"
+	"bs-deferred-action-apiaddcategories-description": "添加分類至「$1」。",
+	"bs-deferred-action-apiremovecategories-description": "從「$1」移除分類。",
+	"bs-deferred-action-apisetcategories-description": "設定分類在「$1」。",
+	"bs-deferred-action-apimovepage-description": "移動 \"$1\" 至 \"$2\"。",
+	"bs-deferred-action-apideletepage-description": "刪除「$1」。"
 }
