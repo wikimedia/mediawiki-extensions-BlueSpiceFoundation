@@ -33,6 +33,7 @@
 	"bs-extjs-confirmNavigationTitle": "Проследување на врската",
 	"bs-extjs-confirmNavigationText": "Дали навистина сакате да ја проследите врскава? Така ќе се изгуват динамички поставки или подредување на тековната страница.",
 	"bs-extjs-allns": "(сите)",
+	"bs-extjs-mainns": "(Главен)",
 	"bs-extjs-filters": "Филтри",
 	"bs-extjs-filter-equals": "е",
 	"bs-extjs-filter-equals-not": "не е",
@@ -46,5 +47,10 @@
 	"bs-extjs-filter-bool-no": "не",
 	"bs-extjs-title-success": "Успеа",
 	"bs-extjs-title-warning": "Предупредување",
-	"bs-extjs-categoryboxselect-emptytext": "Додај категорија"
+	"bs-extjs-categoryboxselect-emptytext": "Додај категорија",
+	"bs-extjs-categorytree-title": "Категории",
+	"bs-extjs-filter-date-after": "По",
+	"bs-extjs-filter-date-before": "Пред",
+	"bs-extjs-filter-date-on": "На",
+	"bs-extjs-filter-date-filter": "Филтрирај"
 }
