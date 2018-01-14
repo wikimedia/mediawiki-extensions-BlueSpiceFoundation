@@ -14,5 +14,10 @@
 	"bs-deferred-batch-progress-desc": "Напредок",
 	"bs-deferred-batch-actions": "Дејства",
 	"bs-deferred-batch-description": "Опис",
-	"bs-deferred-batch-status": "Статус"
+	"bs-deferred-batch-status": "Статус",
+	"bs-deferred-action-apiaddcategories-description": "Стави категории во „$1“.",
+	"bs-deferred-action-apiremovecategories-description": "Отстрани категории од „$1“.",
+	"bs-deferred-action-apisetcategories-description": "Задај ѝ категории на „$1“.",
+	"bs-deferred-action-apimovepage-description": "Премести ја „$1“ на „$2“.",
+	"bs-deferred-action-apideletepage-description": "Избриши ја „$1“."
 }
