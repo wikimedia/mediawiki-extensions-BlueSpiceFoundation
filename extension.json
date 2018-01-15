@@ -25,7 +25,9 @@
 				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage",
 				"articlepreviewimage": "\\BlueSpice\\DynamicFileDispatcher\\ArticlePreviewImage"
 			},
-			"EntityRegistry": {}
+			"EntityRegistry": {},
+			"GraphicalListRegistry": {},
+			"ExtendedSiteToolsRegistry": {}
 		}
 	},
 	"ExtensionFunctions": [
@@ -460,6 +462,8 @@
 		"ResourceLoaderGetConfigVars": [
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddVersion::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddGraphicalListRegistry::callback",
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddExtendedSiteToolsRegistry::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback"
 		]
 	},
