@@ -27,7 +27,8 @@
 			},
 			"EntityRegistry": {},
 			"GraphicalListRegistry": {},
-			"ExtendedSiteToolsRegistry": {}
+			"ExtendedSiteToolRegistry": {},
+			"AdminToolRegistry": {}
 		}
 	},
 	"ExtensionFunctions": [
@@ -450,7 +451,10 @@
 		"UserGetRights": "BsCoreHooks::onUserGetRights",
 		"userCan": "BsCoreHooks::onUserCan",
 		"UploadVerification": "BsCoreHooks::onUploadVerification",
-		"SkinTemplateOutputPageBeforeExec": "BsCoreHooks::onSkinTemplateOutputPageBeforeExec",
+		"SkinTemplateOutputPageBeforeExec": [
+			"BsCoreHooks::onSkinTemplateOutputPageBeforeExec",
+			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddAdminTools::callback"
+		],
 		"SkinAfterContent": "BsCoreHooks::onSkinAfterContent",
 		"ParserFirstCallInit": "BsCoreHooks::onParserFirstCallInit",
 		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",

@@ -57,4 +57,9 @@ return [
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
+
+	'BSAdminToolRegistry' => function ( MediaWikiServices $services ) {
+		$attribute = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationAdminToolRegistry' );
+		return new \BlueSpice\AdminToolRegistry( $attribute );
+	}
 ];

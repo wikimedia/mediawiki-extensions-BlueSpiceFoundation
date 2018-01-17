@@ -2,8 +2,6 @@
 
 namespace BlueSpice;
 
-use MediaWiki\MediaWikiServices;
-
 class Services extends ServicesDecorator {
 
 	/**
@@ -68,5 +66,13 @@ class Services extends ServicesDecorator {
 	 */
 	public function getBSEntityFactory() {
 		return $this->decoratedServices->getService( 'BSEntityFactory' );
+	}
+
+	/**
+	 *
+	 * @return AdminToolRegistry
+	 */
+	public function getBSAdminToolRegistry() {
+		return $this->decoratedServices->getService( 'BSAdminToolRegistry' );
 	}
 }
