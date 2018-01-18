@@ -1,7 +1,8 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
 use BlueSpice\DynamicFileDispatcher\Params;
+use BlueSpice\Services;
+use BlueSpice\DynamicFileDispatcher\UserProfileImage;
 /**
  * This class provides a miniprofile for users.
  * @package BlueSpice_AdapterMW
@@ -31,15 +32,14 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			: $this->aDefaultClasses;
 
 		$params = array_merge( $this->mOptions, [
-			Params::MODULE => 'userprofileimage',
-			'username' => $this->mOptions['user']->getName(),
+			Params::MODULE => UserProfileImage::MODULE_NAME,
+			UserProfileImage::USERNAME => $this->mOptions['user']->getName(),
+			UserProfileImage::WIDTH => (int)$this->mOptions['width'],
+			UserProfileImage::HEIGHT => (int)$this->mOptions['height']
 		]);
-		$dfdUrlBuilder = MediaWikiServices::getInstance()->getService(
-			'BSDynamicFileDispatcherUrlBuilder'
-		);
-		$url = $dfdUrlBuilder->build(
-			new Params( $params )
-		);
+
+		$dfdUrlBuilder = Services::getInstance()->getBSDynamicFileDispatcherUrlBuilder();
+		$url = $dfdUrlBuilder->build( new Params( $params ) );
 
 		$aOut = array();
 		$aOut[] = '<div class="'.  implode( ' ', $aClasses ).'" title="'.$this->mOptions['userdisplayname'].'">';
@@ -101,69 +101,6 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			);
 		}
 
-		if( empty( $this->mOptions['userimagesrc'] ) ) {
-			$this->mOptions['userimagesrc'] = $GLOBALS['wgScriptPath']
-				."/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-user-default-image.png";
-		}
-
-		if ( $oUser->isAnon() ) {
-			$this->mOptions['userimagesrc'] = $GLOBALS['wgScriptPath']
-				."/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-user-anon-image.png";
-			$this->mOptions['linktargethref'] = '';
-		} else {
-			$sUserImageName = BsConfig::getVarForUser( 'MW::UserImage', $oUser );
-			if ( !empty( $sUserImageName ) ) { //Image given as a url
-
-				if ( $sUserImageName{0} == '/' ) {
-					//relative url from own system given
-					$this->mOptions['userimagesrc'] = $sUserImageName;
-				} elseif ( $this->isExternalUrl( $sUserImageName ) ) {
-					$aParsedUrl = wfParseUrl( $sUserImageName );
-					//external url
-					//TODO: Fix, when system is call via https:// and the given
-					//url is http:// the browser will block the image
-					$bAllowedProtocoll = in_array(
-						$aParsedUrl['scheme'].$aParsedUrl['delimiter'],
-						$wgUrlProtocols
-					);
-					if( $bAllowedProtocoll ) {
-						$sQuery = isset( $aParsedUrl['query'] ) ?
-							"?{$aParsedUrl['query']}"
-							: ''
-						;
-						$this->mOptions['userimagesrc'] =
-							$aParsedUrl['scheme']
-							.$aParsedUrl['delimiter']
-							.$aParsedUrl['host']
-							.$aParsedUrl['path']
-							.$sQuery
-						;
-					}
-				} else {
-					$this->setOptionsFromRepoFile( $sUserImageName );
-				}
-			} else {
-				//MW default File:<username>
-				$oUserImageFile = RepoGroup::singleton()->findFile(
-					Title::newFromText( $sUserImageName, NS_FILE )
-				);
-				$oUserThumbnail = false;
-				if ( $oUserImageFile !== false ) {
-					$oUserThumbnail = $oUserImageFile->transform(
-						array(
-							'width' => $this->mOptions['width'],
-							'height' => $this->mOptions['height']
-						)
-					);
-				}
-				if ( $oUserThumbnail !== false ) {
-					$this->mOptions['userimagesrc'] = $oUserThumbnail->getUrl();
-					$this->mOptions['width'] = $oUserThumbnail->getWidth();
-					$this->mOptions['height'] = $oUserThumbnail->getHeight();
-				}
-			}
-		}
-
 		Hooks::run( 'UserMiniProfileAfterInit', array( $this ) );
 		$this->bIsInit = true;
 	}
@@ -178,26 +115,5 @@ class ViewUserMiniProfile extends ViewBaseElement {
 
 	public function getOptions() {
 		return $this->mOptions;
-	}
-
-	protected function isExternalUrl( $sMaybeExternalUrl ) {
-		return substr( $sMaybeExternalUrl, 0, 4 ) == "http";
-	}
-
-	protected function setOptionsFromRepoFile( $sUserImageName ) {
-		$oUserImageFile = wfFindFile( $sUserImageName );
-		if( $oUserImageFile ) {
-			$oUserThumbnail = $oUserImageFile->transform(
-				array(
-					'width' => $this->mOptions['width'],
-					'height' => $this->mOptions['height']
-				)
-			);
-			if ( $oUserThumbnail ) {
-				$this->mOptions['userimagesrc'] = $oUserThumbnail->getUrl();
-				$this->mOptions['width'] = $oUserThumbnail->getWidth();
-				$this->mOptions['height'] = $oUserThumbnail->getHeight();
-			}
-		}
 	}
 }

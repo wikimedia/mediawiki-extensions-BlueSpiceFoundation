@@ -2,10 +2,20 @@
 
 namespace BlueSpice\DynamicFileDispatcher;
 
+use BlueSpice\DynamicFileDispatcher\UserProfileImage\AnonImage;
+use BlueSpice\DynamicFileDispatcher\UserProfileImage\DefaultImage;
+
 class UserProfileImage extends Module {
+	const MODULE_NAME = 'userprofileimage';
 	const USERNAME = 'username';
 	const WIDTH = 'width';
 	const HEIGHT = 'height';
+
+	/**
+	 *
+	 * @var \User
+	 */
+	protected $user = null;
 
 	public function getParamDefinition() {
 		return array_merge( parent::getParamDefinition(), [
@@ -37,39 +47,14 @@ class UserProfileImage extends Module {
 		}
 	}
 
-	protected function getImageSource() {
-		//This is temporay code until the UserMiniProfile gets a rewrite
-		$miniprofile = \BsCore::getInstance()->getUserMiniProfile(
-			\User::newFromName( $this->params[static::USERNAME] ),
-			[
-				'width' => $this->params[static::WIDTH],
-				'height' => $this->params[static::HEIGHT],
-			]
-		);
-		$options = $miniprofile->getOptions();
-		return $options['userimagesrc'];
-	}
-
-	protected function isExternalUrl( $sMaybeExternalUrl ) {
-		return substr( $sMaybeExternalUrl, 0, 4 ) == "http";
-	}
-
 	/**
 	 * @return File
 	 */
 	public function getFile() {
-		$imgSrc = $this->getImageSource();
-		if( $this->isExternalUrl( $imgSrc ) ) {
-			return new \BlueSpice\DynamicFileDispatcher\UserProfileImage\ImageExternal(
-				$this,
-				$imgSrc,
-				\User::newFromName( $this->params[static::USERNAME] )
-			);
+		$this->user = \User::newFromName( $this->params[static::USERNAME] );
+		if( $this->user->isAnon() ) {
+			return new AnonImage( $this );
 		}
-		return new \BlueSpice\DynamicFileDispatcher\UserProfileImage\Image(
-			$this,
-			$imgSrc,
-			\User::newFromName( $this->params[static::USERNAME] )
-		);
+		return new DefaultImage( $this );
 	}
 }
