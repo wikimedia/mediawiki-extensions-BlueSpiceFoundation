@@ -496,6 +496,16 @@
 		"DefaultAnonImage": {
 			"value": "resources/bluespice/images/bs-user-anon-image.png",
 			"path": true
+		},
+		"UIPermissionBlacklist": {
+			"value": [
+				"reupload", "reupload-shared", "minoredit",
+				"deletedhistory", "editinterface", "importupload",
+				"patrol", "autopatrol", "proxyunbannable", "trackback",
+				"unwatchedpages", "autoconfirmed", "upload_by_url",
+				"ipblock-exempt", "blockemail", "purge", "emailconfirmed",
+				"nominornewtalk"
+			]
 		}
 	},
 	"ConfigRegistry": {
