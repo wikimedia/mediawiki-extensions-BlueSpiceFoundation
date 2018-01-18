@@ -7,7 +7,7 @@ use BlueSpice\SkinData;
 
 class AddAdminTools extends SkinTemplateOutputPageBeforeExec {
 	protected function doProcess() {
-		$registry = $this->getServices()->getBSAdminToolRegistry();
+		$registry = $this->getServices()->getBSAdminToolFactory();
 		$adminTools = $registry->getAll();
 
 		foreach( $adminTools as $toolId => $tool ) {
@@ -26,7 +26,7 @@ class AddAdminTools extends SkinTemplateOutputPageBeforeExec {
 			'title' => $tool->getDescription(),
 			'text' => $tool->getName(),
 			'href' => $tool->getURL(),
-			'classes' => $tool->getClasses(),
+			'classes' => implode( ' ', $tool->getClasses() ),
 			'data' => $tool->getDataAttributes(),
 
 		];

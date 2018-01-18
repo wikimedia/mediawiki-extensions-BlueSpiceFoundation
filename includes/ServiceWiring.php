@@ -58,8 +58,8 @@ return [
 		);
 	},
 
-	'BSAdminToolRegistry' => function ( MediaWikiServices $services ) {
+	'BSAdminToolFactory' => function ( MediaWikiServices $services ) {
 		$attribute = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationAdminToolRegistry' );
-		return new \BlueSpice\AdminToolRegistry( $attribute );
+		return new \BlueSpice\AdminToolFactory( $attribute );
 	}
 ];

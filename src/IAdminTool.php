@@ -20,7 +20,7 @@ interface IAdminTool {
 	public function getName();
 
 	/**
-	 * @return string
+	 * @return array
 	 */
 	public function getClasses();
 

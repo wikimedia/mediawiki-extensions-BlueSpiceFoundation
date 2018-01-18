@@ -2,7 +2,7 @@
 
 namespace BlueSpice;
 
-class AdminToolRegistry {
+class AdminToolFactory {
 	protected $classes = [];
 
 	public function __construct( $classes ) {

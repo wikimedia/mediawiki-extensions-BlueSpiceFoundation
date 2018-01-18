@@ -70,9 +70,9 @@ class Services extends ServicesDecorator {
 
 	/**
 	 *
-	 * @return AdminToolRegistry
+	 * @return AdminToolFactory
 	 */
-	public function getBSAdminToolRegistry() {
-		return $this->decoratedServices->getService( 'BSAdminToolRegistry' );
+	public function getBSAdminToolFactory() {
+		return $this->decoratedServices->getService( 'BSAdminToolFactory' );
 	}
 }
