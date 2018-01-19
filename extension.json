@@ -56,6 +56,14 @@
 		"bs-category-treestore": "BSApiCategoryTreeStore",
 		"bs-watchlist-store": "BlueSpice\\Api\\WatchlistStore"
 	},
+	"GroupPermissions": {
+		"sysop": {
+			"wikiadmin": true
+		}
+	},
+	"AvailableRights": [
+		"wikiadmin"
+	],
 	"ResourceModules": {
 		"ext.bluespice": {
 			"localBasePath": "resources",
