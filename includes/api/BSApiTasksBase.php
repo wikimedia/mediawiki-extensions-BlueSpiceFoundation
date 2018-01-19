@@ -158,6 +158,9 @@ abstract class BSApiTasksBase extends BSApiBase {
 						if( $e instanceof DBError ) {
 							$mCode = 'dberror'; //TODO: error code for subtypes like DBQueryError or DBReadOnlyError?
 						}
+						if ( $mCode === 0 ) {
+							$mCode = 'error-0';
+						}
 						$oResult->errors[$mCode] = $e->getMessage();
 						$oResult->errors[0]['code'] = 'unknown error';
 					}
