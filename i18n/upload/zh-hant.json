@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"1233thehongkonger"
+			"1233thehongkonger",
+			"Liuxinyu970226"
 		]
 	},
 	"bs-upload-uploadfilefieldlabel": "檔案名稱",
@@ -9,6 +10,7 @@
 	"bs-upload-uploadwatchthislabel": "監視此檔案",
 	"bs-upload-categories": "分類",
 	"bs-upload-error": "錯誤",
+	"bs-upload-descfilelabel": "描述",
 	"bs-upload-error-long": "上傳過程中發生錯誤",
 	"bs-upload-filetypenotsupported": "不支援此檔案類型",
 	"bs-upload-details": "詳細資料"
