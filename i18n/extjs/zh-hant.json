@@ -4,7 +4,8 @@
 			"Cwlin0416",
 			"EagerLin",
 			"LNDDYL",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Kly"
 		]
 	},
 	"bs-extjs-ok": "確定",
@@ -51,5 +52,9 @@
 	"bs-extjs-title-success": "成功",
 	"bs-extjs-title-warning": "警告",
 	"bs-extjs-categoryboxselect-emptytext": "加入分類",
-	"bs-extjs-categorytree-title": "分類"
+	"bs-extjs-categorytree-title": "分類",
+	"bs-extjs-filter-date-after": "晚於",
+	"bs-extjs-filter-date-before": "早於",
+	"bs-extjs-filter-date-on": "在",
+	"bs-extjs-filter-date-filter": "篩選"
 }
