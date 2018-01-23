@@ -71,4 +71,32 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 		$this->skin = $skin;
 		$this->template = &$template;
 	}
+
+
+	/**
+	 *
+	 * @param string $fieldName
+	 * @param array $item
+	 */
+	protected function mergeSkinDataArray( $fieldName, $item ) {
+		if( !isset( $this->template->data[$fieldName] ) ) {
+			$this->template->data[$fieldName] = [];
+		}
+
+		$this->template->data[$fieldName] = array_merge( $this->template->data[$fieldName], $item );
+	}
+
+	/**
+	 *
+	 * @param string $fieldName
+	 * @param array $item
+	 */
+	protected function appendSkinDataArray( $fieldName, $item ) {
+		if( !isset( $this->template->data[$fieldName] ) ) {
+			$this->template->data[$fieldName] = [];
+		}
+
+		$this->template->data[$fieldName][] = $item;
+	}
+
 }
