@@ -164,7 +164,20 @@
 				"bs-extjs-filter-date-after",
 				"bs-extjs-filter-date-before",
 				"bs-extjs-filter-date-on",
-				"bs-extjs-filter-date-filter"
+				"bs-extjs-filter-date-filter",
+				"bs-extjs-pageexport-dialog-title",
+				"bs-extjs-pageexport-list-name-label",
+				"bs-extjs-pageexport-list-format-label",
+				"bs-extjs-pageexport-list-format-plain-label",
+				"bs-extjs-pageexport-list-format-link-label",
+				"bs-extjs-pageexport-overwrite-label",
+				"bs-extjs-pageexport-general-error",
+				"bs-extjs-pageexport-pagecollection-prefix",
+				"bs-extjs-pageexport-success",
+				"bs-extjs-pageexport-success-text",
+				"bs-extjs-pageexport-required-text",
+				"bs-extjs-export-search-summary-text",
+				"bs-extjs-pageexport-error-invalid-title"
 			],
 			"dependencies": [
 				"ext.bluespice.extjs.theme.ux",
