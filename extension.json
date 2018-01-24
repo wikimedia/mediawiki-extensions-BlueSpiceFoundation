@@ -453,7 +453,8 @@
 		"MakeGlobalVariablesScript": "BsCoreHooks::onMakeGlobalVariablesScript",
 		"LoadExtensionSchemaUpdates": [
 			"BsCoreHooks::onLoadExtensionSchemaUpdates",
-			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback"
+			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
+			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
 		],
 		"ApiCheckCanExecute": "BsCoreHooks::onApiCheckCanExecute",
 		"UserGetRights": "BsCoreHooks::onUserGetRights",
@@ -665,7 +666,8 @@
 		"BSTemplateHelper": "includes/TemplateHelper.php",
 		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
-		"BSMigrateSettings": "maintenance/BSMigrateSettings.php"
+		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
+		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2,
