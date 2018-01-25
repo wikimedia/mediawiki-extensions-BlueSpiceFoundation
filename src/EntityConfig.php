@@ -34,7 +34,7 @@ use BlueSpice\Data\FieldType;
  * EntityConfig class for BlueSpice
  * @package BlueSpiceFoundation
  */
-abstract class EntityConfig implements \JsonSerializable {
+abstract class EntityConfig implements \JsonSerializable, \Config {
 
 	protected $type = '';
 
@@ -109,6 +109,22 @@ abstract class EntityConfig implements \JsonSerializable {
 			return $this->getDefault( $sOption );
 		}
 		return $this->$sMethod();
+	}
+
+	/**
+	 * check for config methods
+	 * @param string $method
+	 * @return bool
+	 */
+	public function has( $method ) {
+		$method = "get_$method";
+		if( is_callable( array($this, $method) ) ) {
+			return true;
+		}
+		if( isset( $this->defaults[$method] ) ) {
+			return true;
+		}
+		return $this->getConfig()->has( $method );
 	}
 
 	/**
