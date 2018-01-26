@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Obsuser"
+			"Obsuser",
+			"Acamicamacaraca"
 		]
 	},
 	"bs-extjs-ok": "У реду",
@@ -17,7 +18,7 @@
 	"bs-extjs-hint": "Савет",
 	"bs-extjs-error": "Грешка",
 	"bs-extjs-confirm": "Потврди",
-	"bs-extjs-loading": "Учитавање...",
+	"bs-extjs-loading": "Учитавам...",
 	"bs-extjs-pageSize": "Величина странице",
 	"bs-extjs-actions-column-header": "Радње",
 	"bs-extjs-warning": "Упозорење",
