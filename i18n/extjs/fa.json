@@ -3,7 +3,8 @@
 		"authors": [
 			"Reza1615",
 			"Alirezaaa",
-			"Arash.pt"
+			"Arash.pt",
+			"Alifakoor"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -35,6 +36,7 @@
 	"bs-extjs-confirmNavigationTitle": "به دنبال پیوند",
 	"bs-extjs-confirmNavigationText": "آیا واقعاً می‌خواهید این پیوند را دنبال کنید؟ همه تنظیمات پویا مانند پالودن یا مرتب‌کردن در صفحه جاری از دست خواهند رفت.",
 	"bs-extjs-allns": "(همه)",
+	"bs-extjs-mainns": "(اصلی)",
 	"bs-extjs-filters": "پالایه‌ها",
 	"bs-extjs-filter-equals": "برابر است با",
 	"bs-extjs-filter-equals-not": "برابر نیست با",
@@ -44,8 +46,14 @@
 	"bs-extjs-filter-ends-with": "پایان می‌یابد با",
 	"bs-extjs-filter-greater-than": "بزرگتر از",
 	"bs-extjs-filter-less-than": "کمتر از",
+	"bs-extjs-filter-bool-yes": "بله",
+	"bs-extjs-filter-bool-no": "خیر",
 	"bs-extjs-title-success": "موفق",
 	"bs-extjs-title-warning": "هشدار",
 	"bs-extjs-categoryboxselect-emptytext": "افزودن رده",
-	"bs-extjs-categorytree-title": "رده‌ها"
+	"bs-extjs-categorytree-title": "رده‌ها",
+	"bs-extjs-filter-date-after": "بعد",
+	"bs-extjs-filter-date-before": "قبل",
+	"bs-extjs-filter-date-on": "روشن",
+	"bs-extjs-filter-date-filter": "پالایه"
 }
