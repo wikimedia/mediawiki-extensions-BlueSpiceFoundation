@@ -5,18 +5,20 @@ namespace BlueSpice\Data;
 class FilterFactory {
 	/**
 	 *
-	 * @var array
+	 * @return array
 	 */
-	public static $typeMap = [
-		'string' => 'BlueSpice\Data\Filter\StringValue',
-		'date'=> 'BlueSpice\Data\Filter\Date',
-		#'datetime'=> 'BlueSpice\Data\Filter\DateTime',
-		'boolean'=> 'BlueSpice\Data\Filter\Boolean',
-		'numeric' => 'BlueSpice\Data\Filter\Numeric',
-		'title' => 'BlueSpice\Data\Filter\Title',
-		'templatetitle' => 'BlueSpice\Data\Filter\TemplateTitle',
-		'list' => 'BlueSpice\Data\Filter\ListValue'
-	];
+	public static function getTypeMap() {
+		return [
+			'string' => 'BlueSpice\Data\Filter\StringValue',
+			'date'=> 'BlueSpice\Data\Filter\Date',
+			#'datetime'=> 'BlueSpice\Data\Filter\DateTime',
+			'boolean'=> 'BlueSpice\Data\Filter\Boolean',
+			'numeric' => 'BlueSpice\Data\Filter\Numeric',
+			'title' => 'BlueSpice\Data\Filter\Title',
+			'templatetitle' => 'BlueSpice\Data\Filter\TemplateTitle',
+			'list' => 'BlueSpice\Data\Filter\ListValue'
+		];
+	}
 
 	/**
 	 *
@@ -25,8 +27,9 @@ class FilterFactory {
 	 * @throws \UnexpectedValueException
 	 */
 	public static function newFromArray( $filter ) {
-		if( isset( self::$typeMap[$filter[Filter::KEY_TYPE]]) ) {
-			return new self::$typeMap[$filter[Filter::KEY_TYPE]]( $filter );
+		$typeMap = static::getTypeMap();
+		if( isset( $typeMap[$filter[Filter::KEY_TYPE]]) ) {
+			return new $typeMap[$filter[Filter::KEY_TYPE]]( $filter );
 		}
 		else {
 			throw new \UnexpectedValueException(

@@ -100,10 +100,14 @@ abstract class Filter {
 			if( is_object(  $filter ) ) {
 				$filter = (array) $filter;
 			}
-			$filterObjects[] = FilterFactory::newFromArray( $filter );
+			$filterObjects[] = static::makeFilter( $filter );
 		}
 
 		return $filterObjects;
+	}
+
+	protected static function makeFilter( $filter ) {
+		return FilterFactory::newFromArray( $filter );
 	}
 
 	protected abstract function doesMatch( $dataSet );
