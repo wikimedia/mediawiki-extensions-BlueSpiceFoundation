@@ -25,4 +25,6 @@ class SkinData {
 	const PAGE_TOOLS_PANEL = 'bs_page_tools_panel';
 	const PAGE_TOOLS = 'bs_page_tools';
 
+	const AFTER_CONTENT = 'bs_after_content';
+
 }
