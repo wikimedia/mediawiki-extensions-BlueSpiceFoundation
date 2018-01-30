@@ -38,7 +38,8 @@
 		"includes/ServiceWiring.php"
 	],
 	"SpecialPages": {
-		"SpecialCredits": "SpecialCredits"
+		"SpecialCredits": "SpecialCredits",
+		"WikiAdmin": "SpecialWikiAdmin"
 	},
 	"APIModules": {
 		"bs-filebackend-store": "BSApiFileBackendStore",
@@ -438,7 +439,8 @@
 	},
 	"ExtensionMessagesFiles": {
 		"DiagnosticsAlias": "languages/BlueSpice.Diagnostics.alias.php",
-		"CreditsAlias": "languages/BlueSpice.Credits.alias.php"
+		"CreditsAlias": "languages/BlueSpice.Credits.alias.php",
+		"WikiAdminAlias": "languages/BlueSpice.WikiAdmin.alias.php"
 	},
 	"Hooks": {
 		"SetupAfterCache": "BsCoreHooks::onSetupAfterCache",
@@ -646,6 +648,7 @@
 		"ResourceLoaderExtJSModule": "includes/resourceloader/ResourceLoaderExtJSModule.php",
 		"SpecialDiagnostics": "includes/specials/SpecialDiagnostics.class.php",
 		"SpecialCredits": "includes/specials/SpecialCredits.class.php",
+		"SpecialWikiAdmin": "includes/specials/SpecialWikiAdmin.class.php",
 		"BsPARAM": "includes/Common.php",
 		"BsPARAMTYPE": "includes/Common.php",
 		"BsPARAMOPTION": "includes/Common.php",
