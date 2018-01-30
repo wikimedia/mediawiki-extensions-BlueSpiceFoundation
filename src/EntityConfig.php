@@ -192,13 +192,6 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 				Schema::INDEXABLE => true,
 				Schema::STORABLE => true,
 			],
-			Entity::ATTR_PARENT_ID => [
-				Schema::FILTERABLE => true,
-				Schema::SORTABLE => true,
-				Schema::TYPE => FieldType::INT,
-				Schema::INDEXABLE => true,
-				Schema::STORABLE => true,
-			],
 			Entity::ATTR_TIMESTAMP_CREATED => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,

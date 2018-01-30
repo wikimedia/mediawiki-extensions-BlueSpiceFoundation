@@ -30,6 +30,7 @@ use MediaWiki\MediaWikiServices;
 
 abstract class Entity implements \JsonSerializable {
 	const NS = -1;
+	const TYPE = '';
 
 	const ATTR_TYPE = 'type';
 	const ATTR_ID = 'id';
@@ -41,20 +42,26 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 *
+	 * @var array
+	 */
+	protected $attributes = [];
+
+	/**
+	 *
 	 * @var EntityFactory
 	 */
 	protected $entityFactory = null;
+
+	/**
+	 *
+	 * @var boolean
+	 */
 	protected $bUnsavedChanges = true;
 
 	/**
 	 * @var EntityConfig
 	 */
 	protected $oConfig = null;
-
-	protected $iID = 0;
-	protected $iOwnerID = 0;
-	protected $sType = '';
-	protected $bArchived = false;
 
 	protected function __construct( \stdClass $oStdClass, EntityConfig $oConfig, EntityFactory $entityFactory = null ) {
 		if( !$entityFactory ) {
@@ -66,16 +73,17 @@ abstract class Entity implements \JsonSerializable {
 		$this->entityFactory = $entityFactory;
 		$this->oConfig = $oConfig;
 		if( !empty( $oStdClass->{static::ATTR_ID} ) ) {
-			$this->iID = (int) $oStdClass->{static::ATTR_ID};
+			$this->attributes[static::ATTR_ID] =
+				(int) $oStdClass->{static::ATTR_ID};
 		}
 		if( !empty( $oStdClass->{static::ATTR_TYPE} ) ) {
-			$this->sType = $oStdClass->{static::ATTR_TYPE};
+			$this->attributes[static::ATTR_TYPE]
+				= $oStdClass->{static::ATTR_TYPE};
+		} else {
+			$this->attributes[static::ATTR_TYPE] = static::TYPE;
 		}
 		if( !empty( $oStdClass->{static::ATTR_ARCHIVED} ) ) {
-			$this->bArchived = $oStdClass->{static::ATTR_ARCHIVED};
-		}
-		if( !empty( $oStdClass->{static::ATTR_OWNER_ID} ) ) {
-			$this->iOwnerID = $oStdClass->{static::ATTR_OWNER_ID};
+			$this->attributes[static::ATTR_ARCHIVED] = true;
 		}
 
 		$this->setValuesByObject( $oStdClass );
@@ -85,8 +93,82 @@ abstract class Entity implements \JsonSerializable {
 	}
 
 	/**
+	 * Returns an entity's attributes or the given default, if not set
+	 * @param string $attrName
+	 * @param mixed $default
+	 * @return mixed
+	 */
+	public function get( $attrName, $default = null ) {
+		//we currently just use the source titles timestamps
+		if( $attrName == static::ATTR_TIMESTAMP_CREATED ) {
+			return $this->getTimestampCreated()
+				? $this->getTimestampCreated()
+				: $default;
+		}
+		if( $attrName == static::ATTR_TIMESTAMP_TOUCHED ) {
+			return $this->getTimestampTouched()
+				? $this->getTimestampTouched()
+				: $default;
+		}
+
+		if( !isset( $this->attributes[$attrName] ) ) {
+			return $default;
+		}
+		return $this->attributes[$attrName];
+	}
+
+	/**
+	 * Returns the User object of the entity's owner
+	 * @return \User
+	 */
+	public function getOwner() {
+		return \User::newFromId( $this->get( static::ATTR_OWNER_ID, 0 ) );
+	}
+
+	/**
+	 * Returns the entity store
+	 * @return \BlueSpice\Data\IStore
+	 * @throws \MWException
+	 */
+	protected function getStore() {
+		$sStoreClass = $this->getConfig()->get( 'StoreClass' );
+		if( !class_exists( $sStoreClass ) ) {
+			throw new \MWException( "Store class '$sStoreClass' not found" );
+		}
+		return new $sStoreClass( \RequestContext::getMain() );
+	}
+
+	/**
+	 * Sets an entity's attributes
+	 * @param string $attrName
+	 * @param mixed $value
+	 * @return Entity
+	 */
+	public function set( $attrName, $value ) {
+		//An Entity's id should never be changed
+		if( $attrName == static::ATTR_ID ) {
+			throw new \MWException( "An Entity's id can not be changed!" );
+		}
+		//An Entity's type should never be changed
+		if( $attrName == static::ATTR_TYPE ) {
+			throw new \MWException( "An Entity's type can not be changed!" );
+		}
+
+		//Non-storable fields and unregistered fields can not be saved and
+		//therefore should not be set into the attributes
+		$storableFields = $this->getStore()->getWriter()->getSchema()
+			->getStorableFields();
+		if( ! in_array( $attrName, $storableFields ) ) {
+			return $this;
+		}
+
+		$this->attributes[$attrName] = $value;
+		return $this->setUnsavedChanges();
+	}
+
+	/**
 	 * Returns the instance - Should not be used directly. This is a workaround
-	 * as all entity __construc methods are private. Use mediawiki service
+	 * as all entity __construc methods are protected. Use mediawiki service
 	 * 'BSEntityFactory' instead
 	 * @param \stdClass $data
 	 * @param \BlueSpice\EntityConfig $oConfig
@@ -148,14 +230,28 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Title
 	 */
 	public function getTitle() {
-		return static::getTitleFor( $this->iID );
+		return static::getTitleFor( $this->get( static::ATTR_ID, 0 ) );
 	}
 
+	/**
+	* Get the last touched timestamp
+	* @return string|boolean Last-touched timestamp, false if entity was not saved yet
+	*/
 	public function getTimestampTouched() {
+		if( !$this->exists() ) {
+			return false;
+		}
 		return $this->getTitle()->getTouched();
 	}
 
+	/**
+	* Get the oldest revision timestamp of this entity
+	* @return string|boolean Created timestamp, false if entity was not saved yet
+	*/
 	public function getTimestampCreated() {
+		if( !$this->exists() ) {
+			return false;
+		}
 		return $this->getTitle()->getEarliestRevTime();
 	}
 
@@ -207,13 +303,15 @@ abstract class Entity implements \JsonSerializable {
 			return \Status::newFatal( "Content class '$sContentClass' not found" );
 		}
 		if( empty( $this->getID() ) ) {
-			$this->iID = $sContentClass::generateID( $this );
+			$this->attributes[static::ATTR_ID] = $sContentClass::generateID(
+				$this
+			);
 		}
 		if( empty( $this->getID() ) ) {
 			return \Status::newFatal( 'No ID generated' );
 		}
-		if( empty($this->getOwnerID()) ) {
-			$this->setOwnerID( (int) $oUser->getId() );
+		if( empty($this->get( static::ATTR_OWNER_ID, 0 )) ) {
+			$this->set( static::ATTR_OWNER_ID, (int) $oUser->getId() );
 		}
 		$sType = $this->getType();
 		if( empty($sType) ) {
@@ -228,11 +326,11 @@ abstract class Entity implements \JsonSerializable {
 		if( !class_exists( $sStoreClass ) ) {
 			return \Status::newFatal( "Store class '$sStoreClass' not found" );
 		}
-		$oStore = new $sStoreClass( \RequestContext::getMain() );
-		$oSchema = $oStore->getWriter()->getSchema();
+
+		$schema = $this->getStore()->getWriter()->getSchema();
 		$aData = array_intersect_key(
 			$this->getFullData(),
-			array_flip( $oSchema->getStorableFields() )
+			array_flip( $schema->getStorableFields() )
 		);
 
 		$oWikiPage = \WikiPage::factory( $oTitle );
@@ -276,7 +374,7 @@ abstract class Entity implements \JsonSerializable {
 		if( $oStatus instanceof \Status && $oStatus->isOK() ) {
 			return $oStatus;
 		}
-		$this->bArchived = true;
+		$this->set( static::ATTR_ARCHIVED, true );
 		$this->setUnsavedChanges();
 
 		try {
@@ -298,21 +396,23 @@ abstract class Entity implements \JsonSerializable {
 	 * Gets the Entity attributes formated for the api
 	 * @return array
 	 */
-	public function getFullData( $aData = array() ) {
-		$aData = array_merge(
-			$aData,
-			array(
-				'id' => $this->getID(),
-				'ownerid' => $this->getOwnerID(),
-				'type' => $this->getType(),
-				'archived' => $this->isArchived(),
-			)
+	public function getFullData( $data = [] ) {
+		$data = array_merge(
+			$data,
+			[
+				static::ATTR_ID => $this->get( static::ATTR_ID, 0 ),
+				static::ATTR_OWNER_ID => $this->get( static::ATTR_OWNER_ID, 0 ),
+				static::ATTR_TYPE => $this->get( static::ATTR_TYPE ),
+				static::ATTR_ARCHIVED => $this->get( static::ATTR_ARCHIVED, false ),
+				static::ATTR_TIMESTAMP_CREATED => $this->getTimestampCreated(),
+				static::ATTR_TIMESTAMP_TOUCHED => $this->getTimestampTouched(),
+			]
 		);
-		\Hooks::run('BSEntityGetFullData', [
+		\Hooks::run( 'BSEntityGetFullData', [
 			$this,
-			&$aData
+			&$data
 		]);
-		return $aData;
+		return $data;
 	}
 
 	/**
@@ -332,10 +432,11 @@ abstract class Entity implements \JsonSerializable {
 	}
 
 	/**
+	 * Checks if this entity is marked as archived
 	 * @return boolean
 	 */
 	public function isArchived() {
-		return $this->bArchived;
+		return $this->get( static::ATTR_ARCHIVED, false ) !== false;
 	}
 
 	/**
@@ -348,26 +449,32 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Returns the current id for the Entity
+	 * @deprecated since version 3.0.0 - use get( $attrName ) instead
 	 * @return int
 	 */
 	public function getID() {
-		return (int) $this->iID;
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return (int) $this->get( static::ATTR_ID, 0 );
 	}
 
 	/**
 	 * Returns the current user id for the Entity
+	 * @deprecated since version 3.0.0 - use get( $attrName ) instead
 	 * @return int
 	 */
 	public function getOwnerID() {
-		return (int) $this->iOwnerID;
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return (int) $this->get( static::ATTR_OWNER_ID, 0 );
 	}
 
 	/**
 	 * Returns the current type for the BSSocialEntity
+	 * @deprecated since version 3.0.0 - use get( $attrName ) instead
 	 * @return String
 	 */
 	public function getType() {
-		return $this->sType;
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return $this->get( static::ATTR_TYPE );
 	}
 
 	/**
@@ -382,23 +489,13 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Sets the current user ID
+	 * @deprecated since version 3.0.0 - use set( $attrName, $value ) instead
 	 * @param int
 	 * @return Entity
 	 */
 	public function setOwnerID( $iOwnerID ) {
-		return $this->setUnsavedChanges(
-			$this->iOwnerID = (int) $iOwnerID
-		);
-	}
-
-	/**
-	 * Subclass needs to return the current Entity as a Json encoded
-	 * string
-	 * @deprecated since 2.27.0 - Use json_encode( $oInstance ) instead
-	 * @return stdObject - Subclass needs to return encoded string!
-	 */
-	public function toJson() {
-		return json_encode( (object) static::getFullData() );
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return $this->set( static::ATTR_OWNER_ID, (int) $iOwnerID );
 	}
 
 	/**
@@ -410,12 +507,19 @@ abstract class Entity implements \JsonSerializable {
 	}
 
 	/**
-	 * @param \stdClass $oData
+	 * @param \stdClass $data
 	 */
-	public function setValuesByObject( \stdClass $oData ) {
+	public function setValuesByObject( \stdClass $data ) {
+		if( !empty( $data->{static::ATTR_ARCHIVED} ) ) {
+			$this->set( static::ATTR_ARCHIVED, $data->{static::ATTR_TYPE} );
+		}
+		if( !empty( $data->{static::ATTR_OWNER_ID} ) ) {
+			$this->set( static::ATTR_OWNER_ID, $data->{static::ATTR_OWNER_ID} );
+		}
+
 		\Hooks::run('BSEntitySetValuesByObject', [
 			$this,
-			$oData
+			$data
 		]);
 	}
 
@@ -425,10 +529,10 @@ abstract class Entity implements \JsonSerializable {
 	 * @return boolean
 	 */
 	public function userIsOwner( \User $oUser ) {
-		if( $oUser->isAnon() || $this->getOwnerID() < 1) {
+		if( $oUser->isAnon() || $this->get( static::ATTR_OWNER_ID, 0 ) < 1) {
 			return false;
 		}
-		return $oUser->getId() == $this->getOwnerID();
+		return $oUser->getId() == $this->get( static::ATTR_OWNER_ID, 0 );
 	}
 
 	/**
