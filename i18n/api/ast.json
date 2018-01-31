@@ -19,5 +19,10 @@
 	"apihelp-bs-titlequery-store-description": "Llista de títulos de páxina y (opcionalmente) prefixos d'espaciu de nomes basándose na consulta d'un términu. Proporciona los parámetros ExtJS Store.",
 	"apihelp-bs-titlequery-store-summary": "Llista de títulos de páxina y (opcionalmente) prefixos d'espaciu de nomes basándose na consulta d'un términu. Proporciona los parámetros ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Ufre operaciones comunes pa WikiPages",
-	"apihelp-bs-wikipage-tasks-summary": "Ufre operaciones comunes pa WikiPages"
+	"apihelp-bs-wikipage-tasks-summary": "Ufre operaciones comunes pa WikiPages",
+	"apihelp-bs-store-param-sort": "Cadena JSON con información d'ordenación; deserialízase a <code>matriz d'oxetos</code> que contien el nome del campu y la dirección pa cada opción d'ordenación",
+	"apihelp-bs-store-param-group": "Cadena JSON con información d'agrupamientu; deserialízase a <code>matriz d'oxetos</code> que contien el nome del campu y la dirección pa cada opción d'agrupamientu",
+	"apihelp-bs-store-param-filter": "Cadena JSON con información de filtru; deserialízase a <code>matriz d'oxetos</code> que contien el nome del campu, el tipu de filtru, ya'l valor del filtru pa cada opción de filtráu",
+	"apihelp-bs-store-param-page": "Permite'l cálculu nel llau del sirvidor del principiu/llende",
+	"apihelp-bs-store-param-limit": "Númberu de resultaos a devolver"
 }
