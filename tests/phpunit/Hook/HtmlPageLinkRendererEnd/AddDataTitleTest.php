@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueSpice\Tests\LinkEnd;
+namespace BlueSpice\Tests\HtmlPageLinkRendererEnd;
 
 class AddDataTitleTest extends \PHPUnit_Framework_TestCase {
 
@@ -14,21 +14,22 @@ class AddDataTitleTest extends \PHPUnit_Framework_TestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$dummy = new \DummyLinker();
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()
+			->getLinkRenderer();
 		$title = \Title::newMainPage();
-		$options = [];
-		$html = '';
+		$isKnown = true;
+		$html = new \HtmlArmor( '' );
 		$attribs = [];
 		$ret = '';
 
 		$this->assertInstanceOf(
-			'\BlueSpice\Hook\LinkEnd\AddDataTitle',
-			new \BlueSpice\Hook\LinkEnd\AddDataTitle(
+			'\BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle',
+			new \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle(
 				$context,
 				$config,
-				$dummy,
+				$linkRenderer,
 				$title,
-				$options,
+				$isKnown,
 				$html,
 				$attribs,
 				$ret
@@ -46,19 +47,20 @@ class AddDataTitleTest extends \PHPUnit_Framework_TestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$dummy = new \DummyLinker();
+		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()
+			->getLinkRenderer();
 		$title = \Title::newMainPage();
-		$options = [];
-		$html = '';
+		$html = new \HtmlArmor( '' );
+		$isKnown = true;
 		$attribs = [];
 		$ret = '';
 
-		$instance = new \BlueSpice\Hook\LinkEnd\AddDataTitle(
+		$instance = new \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle(
 			$context,
 			$config,
-			$dummy,
+			$linkRenderer,
 			$title,
-			$options,
+			$isKnown,
 			$html,
 			$attribs,
 			$ret
