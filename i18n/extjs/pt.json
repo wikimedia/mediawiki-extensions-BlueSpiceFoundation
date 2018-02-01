@@ -3,7 +3,8 @@
 		"authors": [
 			"Fúlvio",
 			"Vitorvicentevalente",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Athena in Wonderland"
 		]
 	},
 	"bs-extjs-ok": "Aceitar",
@@ -54,5 +55,17 @@
 	"bs-extjs-filter-date-after": "Depois de",
 	"bs-extjs-filter-date-before": "Antes de",
 	"bs-extjs-filter-date-on": "Na data",
-	"bs-extjs-filter-date-filter": "Filtrar"
+	"bs-extjs-filter-date-filter": "Filtrar",
+	"bs-extjs-pageexport-dialog-title": "Exportar páginas",
+	"bs-extjs-pageexport-list-name-label": "Nome da lista",
+	"bs-extjs-pageexport-list-format-label": "Formato da lista",
+	"bs-extjs-pageexport-list-format-plain-label": "Texto simples",
+	"bs-extjs-pageexport-list-format-link-label": "Hiperligação",
+	"bs-extjs-pageexport-overwrite-label": "Substituir",
+	"bs-extjs-pageexport-general-error": "Erro de exportação",
+	"bs-extjs-pageexport-pagecollection-prefix": "Coleção de páginas",
+	"bs-extjs-pageexport-success": "Exportação bem sucedida",
+	"bs-extjs-pageexport-success-text": "A coleção de páginas foi exportada para $1",
+	"bs-extjs-export-search-summary-text": "Gerado por PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "O nome da lista é inválido"
 }

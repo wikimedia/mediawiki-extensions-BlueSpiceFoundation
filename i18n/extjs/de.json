@@ -55,5 +55,17 @@
 	"bs-extjs-filter-date-before": "Vor",
 	"bs-extjs-filter-date-on": "Am",
 	"bs-extjs-filter-date-filter": "Filtern",
-	"bs-extjs-pageexport-pagecollection-prefix": "Seitensammlung"
+	"bs-extjs-pageexport-dialog-title": "Seiten exportieren",
+	"bs-extjs-pageexport-list-name-label": "Listenname",
+	"bs-extjs-pageexport-list-format-label": "Listenformat",
+	"bs-extjs-pageexport-list-format-plain-label": "Klartext",
+	"bs-extjs-pageexport-list-format-link-label": "Link",
+	"bs-extjs-pageexport-overwrite-label": "Überschreiben",
+	"bs-extjs-pageexport-general-error": "Exportfehler",
+	"bs-extjs-pageexport-pagecollection-prefix": "Seitensammlung",
+	"bs-extjs-pageexport-success": "Export erfolgreich",
+	"bs-extjs-pageexport-success-text": "Seitensammlung nach $1 exportiert",
+	"bs-extjs-pageexport-required-text": "Der Listenname darf nicht leer sein und es muss mindestens eine Seite ausgewählt werden",
+	"bs-extjs-export-search-summary-text": "Erzeugt von PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Der Name der Liste ist ungültig"
 }
