@@ -54,5 +54,6 @@
 	"bs-extjs-filter-date-after": "Nach",
 	"bs-extjs-filter-date-before": "Vor",
 	"bs-extjs-filter-date-on": "Am",
-	"bs-extjs-filter-date-filter": "Filtern"
+	"bs-extjs-filter-date-filter": "Filtern",
+	"bs-extjs-pageexport-pagecollection-prefix": "Seitensammlung"
 }

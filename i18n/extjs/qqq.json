@@ -57,5 +57,18 @@
 	"bs-extjs-filter-date-after": "Label for a filter option that filters for datasets where date in the field is later than the entered date\n{{Identical|After}}",
 	"bs-extjs-filter-date-before": "Label for a filter option that filters for datasets where date in the field is earlier than the the entered date\n{{Identical|Before}}",
 	"bs-extjs-filter-date-on": "Label for a filter option that filters for datasets where date in the field is the same as the entered date\n{{Identical|On}}",
-	"bs-extjs-filter-date-filter": "Label for a button invoking the filter\n{{Identical|Filter}}"
+	"bs-extjs-filter-date-filter": "Label for a button invoking the filter\n{{Identical|Filter}}",
+	"bs-extjs-pageexport-dialog-title": "Title for the export dialog",
+	"bs-extjs-pageexport-list-name-label": "Label text for input used to define name of the list",
+	"bs-extjs-pageexport-list-format-label": "Label text for choosing export list format",
+	"bs-extjs-pageexport-list-format-plain-label": "Label text indicating plain text format for export list",
+	"bs-extjs-pageexport-list-format-link-label": "Label text indicating link format for export list",
+	"bs-extjs-pageexport-overwrite-label": "Label text indicating link format for export list",
+	"bs-extjs-pageexport-general-error": "Text for general error in export process",
+	"bs-extjs-pageexport-pagecollection-prefix": "Prefix for naming page collections created by exporting search results",
+	"bs-extjs-pageexport-success": "Dialog title when export was sucessful",
+	"bs-extjs-pageexport-success-text": "Content of dialog when export was sucessful",
+	"bs-extjs-pageexport-required-text": "Dialog text when required fields are not filled",
+	"bs-extjs-export-search-summary-text": "Text for summary message for page edit on export",
+	"bs-extjs-pageexport-error-invalid-title": "Text for error message when name of the list is not valid for a Title"
 }
