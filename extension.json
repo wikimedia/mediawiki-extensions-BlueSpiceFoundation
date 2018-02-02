@@ -542,9 +542,6 @@
 	"AutoloadClasses": {
 		"BsCore": "includes/Core.class.php",
 		"BsCoreHooks": "includes/CoreHooks.php",
-		"LCStore_BSDB": "includes/cache/LCStore_BSDB.php",
-		"LCStore_SHM": "includes/cache/LCStore_SHM.php",
-		"LCStore_MC": "includes/cache/LCStore_MC.php",
 		"BsValidator": "includes/validator/Validator.class.php",
 		"BsValidatorPlugin": "includes/validator/Validator.class.php",
 		"BsValidatorResponse": "includes/validator/Validator.class.php",
