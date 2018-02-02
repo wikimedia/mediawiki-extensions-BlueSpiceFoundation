@@ -4,12 +4,25 @@
 			"Ssola",
 			"Edustus",
 			"Macofe",
-			"F3RaN"
+			"F3RaN",
+			"Fitoschido"
 		]
 	},
 	"bs-extjs-no": "No",
 	"bs-extjs-copy": "Còpia",
 	"bs-extjs-label-page": "Pàgina",
 	"bs-extjs-title-warning": "Advertència",
-	"bs-extjs-categoryboxselect-emptytext": "Afegir una categoria"
+	"bs-extjs-categoryboxselect-emptytext": "Afegir una categoria",
+	"bs-extjs-pageexport-dialog-title": "Exportació de pàgines",
+	"bs-extjs-pageexport-list-name-label": "Nom de la llista",
+	"bs-extjs-pageexport-list-format-label": "Format de la llista",
+	"bs-extjs-pageexport-list-format-plain-label": "Text sense format",
+	"bs-extjs-pageexport-list-format-link-label": "Enllaç",
+	"bs-extjs-pageexport-overwrite-label": "Sobreescriu",
+	"bs-extjs-pageexport-general-error": "Error d’exportació",
+	"bs-extjs-pageexport-pagecollection-prefix": "Col·lecció de pàgines",
+	"bs-extjs-pageexport-success": "L’exportació ha estat exitosa",
+	"bs-extjs-pageexport-success-text": "S’ha exportat la col·lecció de pàgines el dia $1",
+	"bs-extjs-export-search-summary-text": "Generat pel PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "El nom de la llista no és vàlid"
 }

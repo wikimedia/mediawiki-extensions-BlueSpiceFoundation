@@ -66,6 +66,7 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Coleção de páginas",
 	"bs-extjs-pageexport-success": "Exportação bem sucedida",
 	"bs-extjs-pageexport-success-text": "A coleção de páginas foi exportada para $1",
+	"bs-extjs-pageexport-required-text": "O nome da lista não pode estar vazio e pelo menos uma página deve estar selecionada",
 	"bs-extjs-export-search-summary-text": "Gerado por PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "O nome da lista é inválido"
 }

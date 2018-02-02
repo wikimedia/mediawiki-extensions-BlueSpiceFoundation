@@ -7,5 +7,7 @@
 	"bs-extjs-categoryboxselect-emptytext": "Pievienot kategoriju",
 	"bs-extjs-filter-date-after": "Pēc",
 	"bs-extjs-filter-date-before": "Pirms",
-	"bs-extjs-filter-date-filter": "Filtrēt"
+	"bs-extjs-filter-date-filter": "Filtrēt",
+	"bs-extjs-pageexport-dialog-title": "Eksportēt lapas",
+	"bs-extjs-pageexport-list-format-link-label": "Saite"
 }

@@ -50,5 +50,18 @@
 	"bs-extjs-filter-date-after": "이후",
 	"bs-extjs-filter-date-before": "이전",
 	"bs-extjs-filter-date-on": "사용",
-	"bs-extjs-filter-date-filter": "필터"
+	"bs-extjs-filter-date-filter": "필터",
+	"bs-extjs-pageexport-dialog-title": "문서 내보내기",
+	"bs-extjs-pageexport-list-name-label": "목록 이름",
+	"bs-extjs-pageexport-list-format-label": "목록 형식",
+	"bs-extjs-pageexport-list-format-plain-label": "일반 텍스트",
+	"bs-extjs-pageexport-list-format-link-label": "링크",
+	"bs-extjs-pageexport-overwrite-label": "덮어쓰기",
+	"bs-extjs-pageexport-general-error": "내보내기 오류",
+	"bs-extjs-pageexport-pagecollection-prefix": "문서 모음집",
+	"bs-extjs-pageexport-success": "내보내기 성공",
+	"bs-extjs-pageexport-success-text": "문서 모음집을 $1로 내보냈습니다",
+	"bs-extjs-pageexport-required-text": "목록 이름은 비워둘 수 없으며 적어도 하나의 문서를 선택해야 합니다",
+	"bs-extjs-export-search-summary-text": "PageExport를 통해 생성됨",
+	"bs-extjs-pageexport-error-invalid-title": "목록의 이름이 유효하지 않습니다"
 }

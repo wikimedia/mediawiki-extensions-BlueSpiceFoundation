@@ -44,5 +44,9 @@
 	"bs-extjs-filter-date-after": "Nom",
 	"bs-extjs-filter-date-before": "Virum",
 	"bs-extjs-filter-date-on": "Den",
-	"bs-extjs-filter-date-filter": "Filter"
+	"bs-extjs-filter-date-filter": "Filter",
+	"bs-extjs-pageexport-dialog-title": "Säiten exportéieren",
+	"bs-extjs-pageexport-list-format-link-label": "Link",
+	"bs-extjs-pageexport-overwrite-label": "Iwwerschreiwen",
+	"bs-extjs-pageexport-general-error": "Exportfeeler"
 }

@@ -56,5 +56,18 @@
 	"bs-extjs-filter-date-after": "Après",
 	"bs-extjs-filter-date-before": "Avant",
 	"bs-extjs-filter-date-on": "Le",
-	"bs-extjs-filter-date-filter": "Filtre"
+	"bs-extjs-filter-date-filter": "Filtre",
+	"bs-extjs-pageexport-dialog-title": "Exporter les pages",
+	"bs-extjs-pageexport-list-name-label": "Nom de la liste",
+	"bs-extjs-pageexport-list-format-label": "Format de la liste",
+	"bs-extjs-pageexport-list-format-plain-label": "Texte brut",
+	"bs-extjs-pageexport-list-format-link-label": "Lien",
+	"bs-extjs-pageexport-overwrite-label": "Écraser",
+	"bs-extjs-pageexport-general-error": "Erreur d’exportation",
+	"bs-extjs-pageexport-pagecollection-prefix": "Collection de pages",
+	"bs-extjs-pageexport-success": "Exportation réussie",
+	"bs-extjs-pageexport-success-text": "Collection de pages exportée vers $1",
+	"bs-extjs-pageexport-required-text": "La liste de noms ne peut pas être vide et au moins une page doit être sélectionnée",
+	"bs-extjs-export-search-summary-text": "Généré par PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Le nom de la liste n’est pas valide"
 }

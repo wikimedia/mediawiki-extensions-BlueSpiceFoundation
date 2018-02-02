@@ -5,7 +5,8 @@
 			"EagerLin",
 			"LNDDYL",
 			"Liuxinyu970226",
-			"Kly"
+			"Kly",
+			"Assoc"
 		]
 	},
 	"bs-extjs-ok": "確定",
@@ -56,5 +57,18 @@
 	"bs-extjs-filter-date-after": "晚於",
 	"bs-extjs-filter-date-before": "早於",
 	"bs-extjs-filter-date-on": "在",
-	"bs-extjs-filter-date-filter": "篩選"
+	"bs-extjs-filter-date-filter": "篩選",
+	"bs-extjs-pageexport-dialog-title": "匯出頁面",
+	"bs-extjs-pageexport-list-name-label": "清單名稱",
+	"bs-extjs-pageexport-list-format-label": "清單格式",
+	"bs-extjs-pageexport-list-format-plain-label": "純文本",
+	"bs-extjs-pageexport-list-format-link-label": "連結",
+	"bs-extjs-pageexport-overwrite-label": "覆蓋",
+	"bs-extjs-pageexport-general-error": "匯出錯誤",
+	"bs-extjs-pageexport-pagecollection-prefix": "頁面收藏",
+	"bs-extjs-pageexport-success": "匯出成功",
+	"bs-extjs-pageexport-success-text": "頁面收藏已匯出至$1",
+	"bs-extjs-pageexport-required-text": "清單名称不能為空，並且必須至少選擇一個頁面",
+	"bs-extjs-export-search-summary-text": "生成自頁面匯出",
+	"bs-extjs-pageexport-error-invalid-title": "清單名稱無效"
 }

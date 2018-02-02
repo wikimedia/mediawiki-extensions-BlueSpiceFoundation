@@ -56,5 +56,15 @@
 	"bs-extjs-filter-date-after": "Dopo il",
 	"bs-extjs-filter-date-before": "Prima del",
 	"bs-extjs-filter-date-on": "Il",
-	"bs-extjs-filter-date-filter": "Filtro"
+	"bs-extjs-filter-date-filter": "Filtro",
+	"bs-extjs-pageexport-dialog-title": "Esporta pagine",
+	"bs-extjs-pageexport-list-name-label": "Nome dell'elenco",
+	"bs-extjs-pageexport-list-format-label": "Formato dell'elenco",
+	"bs-extjs-pageexport-list-format-plain-label": "Testo normale",
+	"bs-extjs-pageexport-list-format-link-label": "Collegamento",
+	"bs-extjs-pageexport-overwrite-label": "Sovrascrivi",
+	"bs-extjs-pageexport-general-error": "Errore esportazione",
+	"bs-extjs-pageexport-success": "Esportazione corretta",
+	"bs-extjs-export-search-summary-text": "Generato da PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Il nome dell'elenco non è valido"
 }

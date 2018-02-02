@@ -54,5 +54,18 @@
 	"bs-extjs-filter-date-after": "晚于",
 	"bs-extjs-filter-date-before": "早于",
 	"bs-extjs-filter-date-on": "于",
-	"bs-extjs-filter-date-filter": "过滤器"
+	"bs-extjs-filter-date-filter": "过滤器",
+	"bs-extjs-pageexport-dialog-title": "导出页面",
+	"bs-extjs-pageexport-list-name-label": "列表名称",
+	"bs-extjs-pageexport-list-format-label": "列表格式",
+	"bs-extjs-pageexport-list-format-plain-label": "纯文本",
+	"bs-extjs-pageexport-list-format-link-label": "链接",
+	"bs-extjs-pageexport-overwrite-label": "覆盖",
+	"bs-extjs-pageexport-general-error": "导出错误",
+	"bs-extjs-pageexport-pagecollection-prefix": "页面收藏",
+	"bs-extjs-pageexport-success": "导出成功",
+	"bs-extjs-pageexport-success-text": "页面收藏已导出至$1",
+	"bs-extjs-pageexport-required-text": "列表名称不能为空，并且必须至少选择一个页面",
+	"bs-extjs-export-search-summary-text": "生成自页面导出",
+	"bs-extjs-pageexport-error-invalid-title": "列表名称无效"
 }

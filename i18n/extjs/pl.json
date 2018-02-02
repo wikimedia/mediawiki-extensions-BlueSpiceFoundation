@@ -49,5 +49,16 @@
 	"bs-extjs-categorytree-title": "Kategorie",
 	"bs-extjs-filter-date-after": "Po",
 	"bs-extjs-filter-date-before": "Przed",
-	"bs-extjs-filter-date-filter": "Filtr"
+	"bs-extjs-filter-date-filter": "Filtr",
+	"bs-extjs-pageexport-dialog-title": "Eksport stron",
+	"bs-extjs-pageexport-list-name-label": "Nazwa listy",
+	"bs-extjs-pageexport-list-format-label": "Format listy",
+	"bs-extjs-pageexport-list-format-plain-label": "Zwykły tekst",
+	"bs-extjs-pageexport-list-format-link-label": "Link",
+	"bs-extjs-pageexport-general-error": "Błąd eksportu",
+	"bs-extjs-pageexport-pagecollection-prefix": "Zbiór stron",
+	"bs-extjs-pageexport-success": "Eksport zakończony powodzeniem",
+	"bs-extjs-pageexport-required-text": "Nazwa listy nie może być pusta i musi być wybrana co najmniej jedna strona",
+	"bs-extjs-export-search-summary-text": "Utworzono za pomocą PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Nazwa listy jest nieprawidłowa"
 }
