@@ -533,6 +533,28 @@
 		} );
 	}
 
+	/**
+	 * This is a utility method that creates a object structure
+	 * like window.mw.component.subcomponent.concretetype from a string
+	 * like "mw.component.subcomponent.concretetype". This allows the creation
+	 * of complex type structures with a single call. I.e. from the components
+	 * sourcefile.
+	 * @param string subNamespace
+	 * @param object baseNamespace
+	 * @returns {undefined}
+	 */
+	function _registerNamespace( subNamespace, baseNamespace ) {
+		var baseNS = baseNamespace || window;
+		var parts = subNamespace.split('.');
+		var firstPart = parts[0];
+		baseNS[firstPart] = baseNS[firstPart] || {};
+		baseNS = baseNS[parts[0]];
+		parts.shift(); //Remove first element
+		if( parts.length > 0 ) {
+			_registerNamespace( parts.join('.'), baseNS );
+		}
+	}
+
 	var util = {
 		getNamespaceText: _getNamespaceText,
 		getRemoteHandlerUrl: _getRemoteHandlerUrl,
@@ -554,7 +576,8 @@
 		addEntryToMultiSelect: _addEntryToMultiSelect,
 		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect,
 		wikiGetlink: _wikiGetlink,
-		auditCssSelectors: _auditCssSelectors
+		auditCssSelectors: _auditCssSelectors,
+		registerNamespace: _registerNamespace
 	};
 
 	//This allows us to have a confirm dialog be displayed
