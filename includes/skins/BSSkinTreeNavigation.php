@@ -90,7 +90,7 @@ abstract class BSSkinTreeNavigation {
 	}
 
 	protected function getPathsToExpand() {
-		$webRequest = $this->mSkinTemplate->getSkin()->getRequest();
+		$webRequest = $this->getSkinTemplate()->getSkin()->getRequest();
 		$cookie = $webRequest->getCookie( $this->getTreeId() );
 
 		$paths = FormatJson::decode( $cookie );
