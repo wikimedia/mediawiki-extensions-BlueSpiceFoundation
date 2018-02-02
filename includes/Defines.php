@@ -1,13 +1,5 @@
 <?php
 
-//TDOD: Is this really still necessary?
-if (!defined('DS')) {
-	define('DS', DIRECTORY_SEPARATOR);
-} elseif (DS != DIRECTORY_SEPARATOR) {
-	$message = 'Constant "DS" already in use but unequal "DIRECTORY_SEPARATOR", namely: DS == "' . DS . '"';
-	//throw new Exception($message);
-	exit($message . ' in ' . __FILE__ . ', line ' . __LINE__);
-}
 
 // TODO MRG20100724: Ist das ok beim Hosting (index.php ist hier symlinked)
 /* Lilu:
