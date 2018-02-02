@@ -459,9 +459,9 @@
 		"SetupAfterCache": "BsCoreHooks::onSetupAfterCache",
 		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
 		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
-		"LinkEnd": [
-			"BlueSpice\\Hook\\LinkEnd\\AddDataTitle::callback",
-			"BlueSpice\\Hook\\LinkEnd\\AddDataUserName::callback"
+		"HtmlPageLinkRendererEnd": [
+			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataUserName::callback",
+			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataTitle::callback"
 		],
 		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
 		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",
