@@ -318,8 +318,7 @@
 			],
 			"targets": [
 				"mobile", "desktop"
-			],
-			"position": "top"
+			]
 		},
 		"ext.bluespice.extjs.BS.portal": {
 			"localBasePath": "resources",
@@ -401,8 +400,7 @@
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"styles": [
 				"bluespice.compat/bluespice.compat.vector.fixes.css"
-			],
-			"position": "top"
+			]
 		},
 		"ext.bluespice.testsystem": {
 			"localBasePath": "resources",
