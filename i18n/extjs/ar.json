@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Azouz.anis"
+		]
+	},
+	"bs-extjs-pageexport-dialog-title": "تصدير صفحات",
+	"bs-extjs-pageexport-list-name-label": "اسم القائمة",
+	"bs-extjs-pageexport-list-format-label": "شكل القائمة",
+	"bs-extjs-pageexport-list-format-plain-label": "نص عادي",
+	"bs-extjs-pageexport-list-format-link-label": "رابط",
+	"bs-extjs-pageexport-overwrite-label": "اعادة الكتابة",
+	"bs-extjs-pageexport-general-error": "خطأ في التصدير",
+	"bs-extjs-pageexport-pagecollection-prefix": "صفحة المجموعة",
+	"bs-extjs-pageexport-success": "عملية التصدير ناجحة",
+	"bs-extjs-pageexport-success-text": "تم تصدير مجموعة الصفحات إلى $1",
+	"bs-extjs-pageexport-required-text": "لا يمكن أن يكون اسم القائمة فارغا ويجب تحديد صفحة واحدة على الأقل",
+	"bs-extjs-export-search-summary-text": "تم إنشاؤها بواسطة (تصدير الصفحة)",
+	"bs-extjs-pageexport-error-invalid-title": "اسم القائمة غير صالح"
+}

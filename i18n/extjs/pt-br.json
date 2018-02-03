@@ -3,7 +3,8 @@
 		"authors": [
 			"Luckas",
 			"Hamilton Abreu",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -54,5 +55,18 @@
 	"bs-extjs-filter-date-after": "Depois",
 	"bs-extjs-filter-date-before": "Antes",
 	"bs-extjs-filter-date-on": "Em",
-	"bs-extjs-filter-date-filter": "Filtro"
+	"bs-extjs-filter-date-filter": "Filtro",
+	"bs-extjs-pageexport-dialog-title": "Exportar páginas",
+	"bs-extjs-pageexport-list-name-label": "Nome da lista",
+	"bs-extjs-pageexport-list-format-label": "Formato da lista",
+	"bs-extjs-pageexport-list-format-plain-label": "Texto simples",
+	"bs-extjs-pageexport-list-format-link-label": "Link",
+	"bs-extjs-pageexport-overwrite-label": "Substituir",
+	"bs-extjs-pageexport-general-error": "Erro de exportação",
+	"bs-extjs-pageexport-pagecollection-prefix": "Coleção de páginas",
+	"bs-extjs-pageexport-success": "Exportação bem sucedida",
+	"bs-extjs-pageexport-success-text": "A coleção de páginas foi exportada para $1",
+	"bs-extjs-pageexport-required-text": "O nome da lista não pode estar vazio e pelo menos uma página deve estar selecionada",
+	"bs-extjs-export-search-summary-text": "Gerado por PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "O nome da lista é inválido"
 }

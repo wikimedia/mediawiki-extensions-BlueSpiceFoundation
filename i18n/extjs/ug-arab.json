@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"چۈشكۈن"
+		]
+	},
+	"bs-extjs-pageexport-dialog-title": "بەت چىقار",
+	"bs-extjs-pageexport-list-format-plain-label": "ساپ تېكست",
+	"bs-extjs-pageexport-list-format-link-label": "ئۇلانما",
+	"bs-extjs-pageexport-overwrite-label": "قاپلا",
+	"bs-extjs-pageexport-general-error": "چىقىرىش خاتا",
+	"bs-extjs-pageexport-pagecollection-prefix": "بەت يېغىپ ساقلاش",
+	"bs-extjs-pageexport-success": "چىقىرىش مۇۋەپپەقىيەتلىك بولدى",
+	"bs-extjs-pageexport-success-text": "ساقلانغان بەتنى چىقىرىش $1",
+	"bs-extjs-export-search-summary-text": "بەت ھاسىل قىلىش ئۆزلۈكىدىن چىقىرىش",
+	"bs-extjs-pageexport-error-invalid-title": "جەدۋەل نامى ئىناۋەتسىز"
+}

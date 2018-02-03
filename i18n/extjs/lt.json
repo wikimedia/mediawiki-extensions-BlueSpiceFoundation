@@ -49,5 +49,17 @@
 	"bs-extjs-title-success": "Sėkmė",
 	"bs-extjs-title-warning": "Įspėjimas",
 	"bs-extjs-categoryboxselect-emptytext": "Pridėti kategoriją",
-	"bs-extjs-categorytree-title": "Kategorijos"
+	"bs-extjs-categorytree-title": "Kategorijos",
+	"bs-extjs-pageexport-dialog-title": "Eksportuoti puslapius",
+	"bs-extjs-pageexport-list-name-label": "Sąrašo pavadinimas",
+	"bs-extjs-pageexport-list-format-label": "Sąrašo formatas",
+	"bs-extjs-pageexport-list-format-plain-label": "Paprastas tekstas",
+	"bs-extjs-pageexport-list-format-link-label": "Nuoroda",
+	"bs-extjs-pageexport-overwrite-label": "Perrašyti",
+	"bs-extjs-pageexport-general-error": "Eksportavimo klaida",
+	"bs-extjs-pageexport-success": "Eksportavimas pavyko",
+	"bs-extjs-pageexport-success-text": "Puslapių kolekcija eksportuota į $1",
+	"bs-extjs-pageexport-required-text": "Sąrašo pavadinimas negali būti tuščias ir bent vienas puslapis turi būti pasirinktas",
+	"bs-extjs-export-search-summary-text": "Sugeneravo PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Sąrašo pavadinimas negalimas"
 }
