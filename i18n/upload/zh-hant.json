@@ -2,16 +2,30 @@
 	"@metadata": {
 		"authors": [
 			"1233thehongkonger",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Kly"
 		]
 	},
+	"bs-upload-uploaddialogtitle": "上傳檔案",
+	"bs-upload-uploadbuttontext": "瀏覽",
 	"bs-upload-uploadfilefieldlabel": "檔案名稱",
+	"bs-upload-uploadfileemptytext": "挿入新檔案...",
 	"bs-upload-uploaddestfilelabel": "目地檔案名稱",
+	"bs-upload-allowedfiletypesare": "有效的檔案類型為：",
+	"bs-upload-license": "授權條款",
 	"bs-upload-uploadwatchthislabel": "監視此檔案",
+	"bs-upload-uploadignorewarningslabel": "忽略所有警告",
 	"bs-upload-categories": "分類",
+	"bs-upload-upload-waitmessage": "進行上傳 ...",
 	"bs-upload-error": "錯誤",
 	"bs-upload-descfilelabel": "描述",
 	"bs-upload-error-long": "上傳過程中發生錯誤",
 	"bs-upload-filetypenotsupported": "不支援此檔案類型",
-	"bs-upload-details": "詳細資料"
+	"bs-upload-details": "詳細資料",
+	"bs-upload-uploadwarningdialog-title": "上傳檔案：警告",
+	"bs-upload-uploadwarningdialog-intro": "在嘗試上傳檔案時發生以下警告",
+	"bs-upload-uploadwarningdialog-outro": "點擊「{{int:bs-extjs-ok}}」來忽略警告並上傳檔案，點擊「{{int:bs-extjs-cancel}}」來返回上傳表單",
+	"bs-upload-uploadwarningdialog-warning-exists": "已有名稱為「$1」的檔案",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "有 {{PLURAL:$1| 個| 個}}和此檔案重複的項目",
+	"bs-upload-uploadwarningdialog-warning-unknown": "未知警告代碼「$1」"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Skalcaa",
-			"Dbc334"
+			"Dbc334",
+			"HairyFotr"
 		]
 	},
 	"bs-extjs-ok": "V redu",
@@ -47,5 +48,6 @@
 	"bs-extjs-filter-bool-no": "ne",
 	"bs-extjs-title-success": "Uspeh",
 	"bs-extjs-title-warning": "Opozorilo",
-	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorijo"
+	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorijo",
+	"bs-extjs-pageexport-list-format-link-label": "Povezava"
 }
