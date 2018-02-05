@@ -7,7 +7,8 @@
 			"SuperPuperSteve",
 			"Kareyac",
 			"Alexey zakharenkov",
-			"Facenapalm"
+			"Facenapalm",
+			"Redredsonia"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -58,5 +59,10 @@
 	"bs-extjs-filter-date-after": "После",
 	"bs-extjs-filter-date-before": "До",
 	"bs-extjs-filter-date-on": "На",
-	"bs-extjs-filter-date-filter": "Фильтр"
+	"bs-extjs-filter-date-filter": "Фильтр",
+	"bs-extjs-pageexport-list-name-label": "Название списка",
+	"bs-extjs-pageexport-list-format-label": "Формат списка",
+	"bs-extjs-pageexport-list-format-plain-label": "Обычный текст",
+	"bs-extjs-pageexport-list-format-link-label": "Ссылка",
+	"bs-extjs-pageexport-overwrite-label": "Перезаписать"
 }

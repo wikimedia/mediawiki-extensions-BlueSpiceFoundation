@@ -46,7 +46,10 @@
 	"bs-extjs-filter-date-on": "Den",
 	"bs-extjs-filter-date-filter": "Filter",
 	"bs-extjs-pageexport-dialog-title": "Säiten exportéieren",
+	"bs-extjs-pageexport-list-name-label": "Numm vun der Lëscht",
+	"bs-extjs-pageexport-list-format-label": "Format vun der Lëscht",
 	"bs-extjs-pageexport-list-format-link-label": "Link",
 	"bs-extjs-pageexport-overwrite-label": "Iwwerschreiwen",
-	"bs-extjs-pageexport-general-error": "Exportfeeler"
+	"bs-extjs-pageexport-general-error": "Exportfeeler",
+	"bs-extjs-pageexport-error-invalid-title": "Den Numm vun der Lëscht ass net valabel"
 }

@@ -55,5 +55,18 @@
 	"bs-extjs-filter-date-after": "Efter",
 	"bs-extjs-filter-date-before": "Innan",
 	"bs-extjs-filter-date-on": "Den",
-	"bs-extjs-filter-date-filter": "Filtrera"
+	"bs-extjs-filter-date-filter": "Filtrera",
+	"bs-extjs-pageexport-dialog-title": "Exportera sidor",
+	"bs-extjs-pageexport-list-name-label": "Listnamn",
+	"bs-extjs-pageexport-list-format-label": "Listformat",
+	"bs-extjs-pageexport-list-format-plain-label": "Oformaterad text",
+	"bs-extjs-pageexport-list-format-link-label": "Länk",
+	"bs-extjs-pageexport-overwrite-label": "Skriv över",
+	"bs-extjs-pageexport-general-error": "Exporteringsfel",
+	"bs-extjs-pageexport-pagecollection-prefix": "Sidsamling",
+	"bs-extjs-pageexport-success": "Exportering slutfördes",
+	"bs-extjs-pageexport-success-text": "Sidsamling exporterades till $1",
+	"bs-extjs-pageexport-required-text": "Listnamnet kan inte vara tomt och minst en sida måste väljas",
+	"bs-extjs-export-search-summary-text": "Genererad av PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Namnet på listan är ogiltig"
 }
