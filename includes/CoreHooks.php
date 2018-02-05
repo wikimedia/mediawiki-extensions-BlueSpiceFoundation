@@ -1,5 +1,6 @@
 <?php
 use MediaWiki\MediaWikiServices;
+use BlueSpice\Services;
 
 class BsCoreHooks {
 
@@ -582,9 +583,7 @@ class BsCoreHooks {
 	 * @return boolean Always true to keep hook running
 	 */
 	public static function onParserFirstCallInit( $parser ) {
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSExtensionFactory'
-		);
+		$factory = Services::getInstance()->getBSExtensionFactory();
 		BsGenericTagExtensionHandler::setupHandlers(
 			$factory->getExtensions(),
 			$parser

@@ -31,7 +31,9 @@ class ExtensionFactory {
 	 *
 	 * @var Extension[]
 	 */
-	protected $extensions = null;
+	protected $extensions = [];
+
+	protected $allExtensionsLoaded = false;
 
 	/**
 	 *
@@ -104,7 +106,7 @@ class ExtensionFactory {
 	 * @return Extension[]
 	 */
 	public function getExtensions() {
-		if( $this->extensions ) {
+		if( $this->allExtensionsLoaded ) {
 			return $this->extensions;
 		}
 		$definitions = $this->extensionRegistry->getExtensionDefinitions();
@@ -112,7 +114,7 @@ class ExtensionFactory {
 			if( $name === 'BlueSpiceFoundation' ) {
 				continue;
 			}
-			$this->extensions[] = $this->factory( $name, $definition );
+			$this->factory( $name, $definition );
 		}
 		return $this->extensions;
 	}
