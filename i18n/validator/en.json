@@ -13,5 +13,13 @@
 	"bs-validator-set-validation-approved": "$1 was successfully validated.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Only the following value is allowed for $1|For $1 only one of the following values is allowed}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "The provided value is too low. It should not be less than $1.",
-	"bs-validator-integer-range-validation-too-high": "The provided value is too high. It should not be greater than $1."
+	"bs-validator-integer-range-validation-too-high": "The provided value is too high. It should not be greater than $1.",
+	"bs-validator-value-not-recognized": "Value could not be processed",
+	"bs-validator-invalid-boolean": "Not a valid boolean",
+	"bs-validator-invalid-float": "Not a valid float",
+	"bs-validator-invalid-integer": "Not a valid integer",
+	"bs-validator-invalid-string": "Not a valid string",
+	"bs-validator-invalid-coordinate": "Not a valid coordinate",
+	"bs-validator-invalid-parameter": "This parameter is not allowed",
+	"bs-validator-missing-required": "This parameter is required"
 }

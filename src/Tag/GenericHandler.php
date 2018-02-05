@@ -3,6 +3,7 @@
 namespace BlueSpice\Tag;
 
 use BlueSpice\Tag\MarkerType;
+use BlueSpice\ParamProcessor\ProcessingErrorMessageTranslator;
 
 class GenericHandler {
 
@@ -167,7 +168,9 @@ class GenericHandler {
 			wfMessage( 'bs-tag-input-desc' )->plain()
 		);
 
-		$processor = \ParamProcessor\Processor::newDefault();
+		$options = new \ParamProcessor\Options();
+		$options->setName( 'input-text' );
+		$processor = \ParamProcessor\Processor::newFromOptions( $options );
 		$processor->setParameters(
 			[ $paramName => $this->processedInput ],
 			[ $paramDefinition ]
@@ -200,18 +203,29 @@ class GenericHandler {
 					$paramDefinition->getName()
 				)->plain()
 			);
-		}
+			$options = new \ParamProcessor\Options();
+			$options->setName( 'arg-' . $paramDefinition->getName() );
+			$processor = \ParamProcessor\Processor::newFromOptions( $options );
+			$localArgs = [];
+			$names = array_merge(
+				[ $paramDefinition->getName() ],
+				$paramDefinition->getAliases()
+			);
+			foreach( $names as $name ) {
+				if( isset( $this->processedArgs[$name] ) ) {
+					$localArgs[$name] = $this->processedArgs[$name];
+				}
+			}
+			$processor->setParameters( $localArgs, [ $paramDefinition ] );
 
-		$processor = \ParamProcessor\Processor::newDefault();
-		$processor->setParameters( $this->processedArgs, $paramDefinitions );
+			$result = $processor->processParameters();
+			$this->checkForProcessingErrors( $result );
 
-		$result = $processor->processParameters();
-		$this->checkForProcessingErrors( $result );
-
-		$this->processedArgs = [];
-		foreach( $result->getParameters() as $processedParam ) {
-			$this->processedArgs[$processedParam->getName()]
-				= $processedParam->getValue();
+			$this->processedArgs = [];
+			foreach( $result->getParameters() as $processedParam ) {
+				$this->processedArgs[$processedParam->getName()]
+					= $processedParam->getValue();
+			}
 		}
 	}
 
@@ -221,11 +235,14 @@ class GenericHandler {
 
 	protected function makeErrorOutput() {
 		$out = [];
+		$translator = new ProcessingErrorMessageTranslator();
 		foreach( $this->errors as $errorKey => $errorMessage ) {
+			$translatedMessage = $translator->translate( $errorMessage );
+			$label = $this->makeErrorLabel( $errorKey );
 			$out[] = \Html::element(
 				'div',
 				[ 'class' => 'bs-error bs-tag' ],
-				$errorMessage
+				$label . $translatedMessage
 			);
 		}
 		return implode( "\n", $out );
@@ -253,7 +270,18 @@ class GenericHandler {
 	 */
 	protected function checkForProcessingErrors( $result ) {
 		foreach( $result->getErrors() as $error ) {
-			$this->errors[] = $error->getMessage();
+			$this->errors[$error->getElement()] = $error->getMessage();
 		}
 	}
+
+	protected function makeErrorLabel( $errorKey ) {
+		$keyParts = explode( '-', $errorKey, 2 );
+		$argName = end( $keyParts );
+		if( $keyParts[0] === 'input' ){
+			return '';
+		}
+
+		return "$argName: ";
+	}
+
 }

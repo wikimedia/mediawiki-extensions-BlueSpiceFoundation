@@ -54,12 +54,12 @@ interface ITag {
 	public function getMarkerType();
 
 	/**
-	 * @return \ParamProcessor\ParamDefinition
+	 * @return \BlueSpice\ParamProcessor\IParamDefinition
 	 */
 	public function getInputDefinition();
 
 	/**
-	 * @return \ParamProcessor\ParamDefinition[]
+	 * @return \BlueSpice\ParamProcessor\IParamDefinition[]
 	 */
 	public function getArgsDefinitions();
 }

@@ -13,5 +13,13 @@
 	"bs-validator-set-validation-approved": "Used for confirmation message in dialogs and tags if the value given is found in a set of options.\n\nParameters:\n* $1 - name of the set of options",
 	"bs-validator-set-validation-not-approved": "Used for error message in dialogs and tags if the value given is not found in a set of options.\n\nParameters:\n* $1 - name of the set of options\n* $2 - list of values that are in the set of options\n* $3 - count of values that are in the set of options, use for PLURAL",
 	"bs-validator-integer-range-validation-too-low": "Used for error message in dialogs and tags if the value given is below a certain integer value.\n\nParameters:\n* $1 - lower boundary of the value range (included).",
-	"bs-validator-integer-range-validation-too-high": "Used for error message in dialogs and tags if the value given is above a certain integer value.\n\nParameters:\n* $1 - upper boundary of the value range (included)."
+	"bs-validator-integer-range-validation-too-high": "Used for error message in dialogs and tags if the value given is above a certain integer value.\n\nParameters:\n* $1 - upper boundary of the value range (included).",
+	"bs-validator-value-not-recognized": "Used for error message in dialogs and tags if the value given could not be parsed",
+	"bs-validator-invalid-boolean": "Used for error message in dialogs and tags if the value given is not a valid boolean",
+	"bs-validator-invalid-float": "Used for error message in dialogs and tags if the value given is not a valid float",
+	"bs-validator-invalid-integer": "Used for error message in dialogs and tags if the value given is not a valid integer",
+	"bs-validator-invalid-string": "Used for error message in dialogs and tags if the value given is not a valid string",
+	"bs-validator-invalid-coordinate": "Used for error message in dialogs and tags if the value given is not a valid coordinate",
+	"bs-validator-invalid-parameter": "Used for error message in dialogs and tags if the parameter name given is not allowed",
+	"bs-validator-missing-required": "Used for error message in dialogs and tags if a required parameter is missing"
 }
