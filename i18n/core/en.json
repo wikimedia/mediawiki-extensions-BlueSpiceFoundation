@@ -86,5 +86,8 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Page not allowed: $1",
 	"bs-exttype-bluespice": "BlueSpice extensions",
 	"bs-export-menu-print-text": "Print",
-	"bs-export-menu-print-title": "Displays printable version of the page"
+	"bs-export-menu-print-title": "Displays printable version of the page",
+	"bs-graphicallist-action-close": "Close",
+	"bs-graphicallist-action-list": "List",
+	"bs-graphicallist-action-preview": "Preview"
 }

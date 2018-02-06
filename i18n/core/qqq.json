@@ -91,5 +91,8 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Error message in case the namespace of a given Title object is on the blacklist.\n\nParameters:\n* $1 - the prefixed text of the Title",
 	"bs-exttype-bluespice": "This is the name of the extension group on [[Special:Version]].",
 	"bs-export-menu-print-text": "Anchor alternative text for print.\n{{Identical|Print}}",
-	"bs-export-menu-print-title": "Tooltip for the button to display printable version of the page."
+	"bs-export-menu-print-title": "Tooltip for the button to display printable version of the page.",
+	"bs-graphicallist-action-close": "Tooltip for the button to close graphicalList view",
+	"bs-graphicallist-action-list": "Tooltip for the button to show the graphicalList content as list",
+	"bs-graphicallist-action-preview": "Tooltip for the button to show the graphicalList content as preview"
 }
