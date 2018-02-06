@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"    Stephan Muggli <muggli@hallowelt.biz>"
+			"    Stephan Muggli <muggli@hallowelt.biz>",
+			"Metalhead64"
 		]
 	},
 	"bs-validator-email-validation-approved": "Die Email-Adresse wurde erfolgreich validiert.",
@@ -13,5 +14,13 @@
 	"bs-validator-set-validation-approved": "$1 wurde erfolgreich validiert.",
 	"bs-validator-set-validation-not-approved": "Für $1 ist nur {{PLURAL:$3|der folgende Wert|einer der folgenden Werte}} erlaubt: $2.",
 	"bs-validator-integer-range-validation-too-low": "Der angegebene Wert ist zu klein. Er darf nicht kleiner als $1 sein.",
-	"bs-validator-integer-range-validation-too-high": "Der angegebene Wert ist zu groß. Er darf nicht größer als $1 sein."
+	"bs-validator-integer-range-validation-too-high": "Der angegebene Wert ist zu groß. Er darf nicht größer als $1 sein.",
+	"bs-validator-value-not-recognized": "Der Wert konnte nicht verarbeitet werden",
+	"bs-validator-invalid-boolean": "Kein gültiges Boolean",
+	"bs-validator-invalid-float": "Keine gültige Gleitkommazahl",
+	"bs-validator-invalid-integer": "Keine gültige Ganzzahl",
+	"bs-validator-invalid-string": "Keine gültige Zeichenfolge",
+	"bs-validator-invalid-coordinate": "Keine gültige Koordinate",
+	"bs-validator-invalid-parameter": "Dieser Parameter ist nicht erlaubt",
+	"bs-validator-missing-required": "Dieser Parameter ist erforderlich"
 }

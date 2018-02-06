@@ -55,5 +55,12 @@
 	"bs-extjs-filter-date-after": "Despois",
 	"bs-extjs-filter-date-before": "Antes",
 	"bs-extjs-filter-date-on": "O",
-	"bs-extjs-filter-date-filter": "Filtro"
+	"bs-extjs-filter-date-filter": "Filtro",
+	"bs-extjs-pageexport-list-name-label": "Nome da lista",
+	"bs-extjs-pageexport-list-format-label": "Formato da lista",
+	"bs-extjs-pageexport-list-format-plain-label": "Texto sen formato",
+	"bs-extjs-pageexport-list-format-link-label": "Ligazón",
+	"bs-extjs-pageexport-overwrite-label": "Sobrescribir",
+	"bs-extjs-pageexport-general-error": "Erro de exportación",
+	"bs-extjs-pageexport-pagecollection-prefix": "Colección de páxinas"
 }
