@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fúlvio",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Athena in Wonderland"
 		]
 	},
 	"bs-validator-email-validation-approved": "O endereço de correio eletrónico foi validado.",
@@ -14,5 +15,13 @@
 	"bs-validator-set-validation-approved": "$1 foi validado com sucesso.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Somente o seguinte valor é permitido para $1|Somente um dos valores é permitido para $1}}: $2",
 	"bs-validator-integer-range-validation-too-low": "O valor fornecido é muito baixo. Ele não deve ser inferior a $1.",
-	"bs-validator-integer-range-validation-too-high": "O valor fornecido é muito alto. Ele não deve ser inferior a $1."
+	"bs-validator-integer-range-validation-too-high": "O valor fornecido é muito alto. Ele não deve ser inferior a $1.",
+	"bs-validator-value-not-recognized": "Não foi possível processar o valor",
+	"bs-validator-invalid-boolean": "Booleano inválido",
+	"bs-validator-invalid-float": "Vírgula flutuante inválida",
+	"bs-validator-invalid-integer": "Número inteiro inválido",
+	"bs-validator-invalid-string": "Segmento de texto inválido",
+	"bs-validator-invalid-coordinate": "Coordenadas inválidas",
+	"bs-validator-invalid-parameter": "Este parâmetro não é permitido",
+	"bs-validator-missing-required": "Este parâmetro é obrigatório"
 }

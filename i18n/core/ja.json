@@ -3,7 +3,8 @@
 		"authors": [
 			"Shirayuki",
 			"Sujiniku",
-			"2nd-player"
+			"2nd-player",
+			"Otokoume"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -54,5 +55,6 @@
 	"bs-pref-faviconpath": "favicon のパス:",
 	"bs-pref-defaultuserimage": "利用者の既定のアバター:",
 	"bs-pref-anonuserimage": "匿名利用者のアバター:",
-	"bs-pref-deleteduserimage": "削除された利用者のアバター:"
+	"bs-pref-deleteduserimage": "削除された利用者のアバター:",
+	"bs-graphicallist-action-close": "閉じる"
 }

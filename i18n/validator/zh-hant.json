@@ -2,11 +2,26 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"LNDDYL"
+			"LNDDYL",
+			"Kly"
 		]
 	},
 	"bs-validator-email-validation-approved": "電子郵件地址已驗證成功。",
 	"bs-validator-email-validation-not-approved": "無法驗證電子郵件地址。",
 	"bs-validator-url-validation-approved": "URL 網址已驗證成功。",
-	"bs-validator-url-validation-not-approved": "無法驗證 URL 網址。"
+	"bs-validator-url-validation-not-approved": "無法驗證 URL 網址。",
+	"bs-validator-arg-count-validation-approved": "屬性「count」已成功驗證。",
+	"bs-validator-arg-count-validation-not-approved": "屬性「count」無法驗證。",
+	"bs-validator-set-validation-approved": "$1 已驗證成功。",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|僅讓$1允許以下的值|對於$1僅有以下的值是允許的}}：$2。",
+	"bs-validator-integer-range-validation-too-low": "提供的值太低，不可小於 $1。",
+	"bs-validator-integer-range-validation-too-high": "提供的值太高，不可大於 $1。",
+	"bs-validator-value-not-recognized": "值無法被處理",
+	"bs-validator-invalid-boolean": "不是有效的布林值",
+	"bs-validator-invalid-float": "不是有效的浮點數",
+	"bs-validator-invalid-integer": "不是有效的整數",
+	"bs-validator-invalid-string": "不是有效的字串",
+	"bs-validator-invalid-coordinate": "不是有效的座標",
+	"bs-validator-invalid-parameter": "不允許此參數",
+	"bs-validator-missing-required": "需要此參數"
 }

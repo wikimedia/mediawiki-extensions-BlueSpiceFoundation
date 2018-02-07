@@ -15,5 +15,13 @@
 	"bs-validator-set-validation-approved": "$1已成功验证。",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|只允许对$1采用下列赋值|对于$1，只有下列赋值是合法的}}：$2。",
 	"bs-validator-integer-range-validation-too-low": "提供的值太小。请输入大于 $1 的值。",
-	"bs-validator-integer-range-validation-too-high": "提供的值太大。请输入小于 $1 的值。"
+	"bs-validator-integer-range-validation-too-high": "提供的值太大。请输入小于 $1 的值。",
+	"bs-validator-value-not-recognized": "无法处理值",
+	"bs-validator-invalid-boolean": "不是有效的布尔值",
+	"bs-validator-invalid-float": "不是有效的浮点数",
+	"bs-validator-invalid-integer": "不是有效的整数",
+	"bs-validator-invalid-string": "不是有效的字符串",
+	"bs-validator-invalid-coordinate": "不是有效的坐标",
+	"bs-validator-invalid-parameter": "不允许此参数",
+	"bs-validator-missing-required": "这个参数是必须的"
 }

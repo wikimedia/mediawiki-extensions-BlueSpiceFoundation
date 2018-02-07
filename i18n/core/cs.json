@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dvorapa"
+			"Dvorapa",
+			"Ilimanaq29"
 		]
 	},
-	"bs-exttype-bluespice": "Rozšíření BlueSpice"
+	"bs-exttype-bluespice": "Rozšíření BlueSpice",
+	"bs-graphicallist-action-close": "Zavřít",
+	"bs-graphicallist-action-list": "Seznam",
+	"bs-graphicallist-action-preview": "Náhled"
 }

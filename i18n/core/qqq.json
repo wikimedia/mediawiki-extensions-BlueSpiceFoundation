@@ -92,7 +92,7 @@
 	"bs-exttype-bluespice": "This is the name of the extension group on [[Special:Version]].",
 	"bs-export-menu-print-text": "Anchor alternative text for print.\n{{Identical|Print}}",
 	"bs-export-menu-print-title": "Tooltip for the button to display printable version of the page.",
-	"bs-graphicallist-action-close": "Tooltip for the button to close graphicalList view",
-	"bs-graphicallist-action-list": "Tooltip for the button to show the graphicalList content as list",
-	"bs-graphicallist-action-preview": "Tooltip for the button to show the graphicalList content as preview"
+	"bs-graphicallist-action-close": "Tooltip for the button to close graphicalList view\n{{Identical|Close}}",
+	"bs-graphicallist-action-list": "Tooltip for the button to show the graphicalList content as list\n{{Identical|List}}",
+	"bs-graphicallist-action-preview": "Tooltip for the button to show the graphicalList content as preview\n{{Identical|Preview}}"
 }

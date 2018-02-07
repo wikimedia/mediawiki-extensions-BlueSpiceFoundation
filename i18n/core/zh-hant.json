@@ -66,5 +66,8 @@
 	"bs-pref-imageextensions": "允許的影像副檔名：",
 	"bs-pref-logopath": "標誌路徑：",
 	"bs-pref-faviconpath": "Favicon 路徑：",
-	"bs-pref-defaultuserimage": "預設使用者頭像："
+	"bs-pref-defaultuserimage": "預設使用者頭像：",
+	"bs-graphicallist-action-close": "關閉",
+	"bs-graphicallist-action-list": "清單",
+	"bs-graphicallist-action-preview": "預覽"
 }
