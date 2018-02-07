@@ -46,125 +46,212 @@ $GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = array(
  * the color will determine a div that is placed above the bs-wrapper
  * with the text element as a headline in it
  */
-$GLOBALS['bsgTestSystem'] = false;
+$GLOBALS[ 'bsgTestSystem' ] = false;
 
-$GLOBALS['bsgPermissionConfig'] = array(
+$GLOBALS[ 'bsgEnableRoleSystem' ] = false;
+
+$GLOBALS[ 'bsgGroupRoles' ] = [
+	'sysop' => [ 'admin' => true ],
+	'user' => [ 'editor' => true ],
+	'*' => [ 'reader' => true ]
+];
+
+$GLOBALS[ 'bsgNamespaceRolesLockdown' ]  = [];
+
+$GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	'read' => array(
 		'type' => 'namespace',
-		'preventLockout' => true
+		'preventLockout' => true,
+		'roles' => [ 'reader', 'editor', 'admin' ]
+	),
+	'edit' => array(
+		'type' => 'namespace',
+		'preventLockout' => true,
+		'roles' => [ 'editor', 'admin' ]
+	),
+	'delete' => array(
+		'type' => 'namespace',
+		'preventLockout' => true,
+		'roles' => [ 'editor', 'admin' ]
 	),
 	'siteadmin' => array(
 		'type' => 'global',
-		'preventLockout' => true
+		'preventLockout' => true,
+		'roles' => [ 'admin' ]
 	),
 	'wikiadmin' => array(
 		'type' => 'global',
-		'preventLockout' => true
+		'preventLockout' => true,
+		'roles' => [ 'admin' ]
 	),
 	"apihighlimits" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"autoconfirmed" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"autopatrol" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"bigdelete" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"block" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"blockemail" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"bot" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"browsearchive" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"createaccount" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'reader', 'editor', 'admin' ]
+	),
+	"createpage" => array(
+		'type' => 'namespace',
+		'roles' => [ 'admin', 'editor', 'reader' ]
+	),
+	"move" => array(
+		'type' => 'namespace',
+		'roles' => [ 'admin', 'editor' ]
+	),
+	"createtalk" => array(
+		'type' => 'namespace',
+		'roles' => [ 'admin', 'editor' ]
+	),
+	"create" => array(
+		'type' => 'namespace',
+		'roles' => [ 'admin', 'editor', 'reader' ]
+	),
+	"purge" => array(
+		'type' => 'namespace',
+		'roles' => [ 'admin', 'editor', 'reader' ]
 	),
 	"editinterface" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"editmywatchlist" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"viewmywatchlist" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"editmyprivateinfo" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"viewmyprivateinfo" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"editmyoptions" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"editusercss" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"editmyusercss" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"edituserjs" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'editor' ],
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"editmyuserjs" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"hideuser" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"import" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"importupload" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
+	),
+	"upload" => array(
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
+	),
+	"minoredit" => array(
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"ipblock-exempt" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"move-rootuserpages" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"override-export-depth" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"passwordreset" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"sendemail" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"unblockself" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"userrights" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"userrights-interwiki" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"writeapi" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'reader', 'editor' ]
 	),
 	"skipcaptcha" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"renameuser" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin' ]
 	),
 	"viewfiles" => array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor', 'reader' ]
 	),
 	"searchfiles"=> array(
-		'type' => 'global'
+		'type' => 'global',
+		'roles' => [ 'admin', 'editor', 'reader' ]
 	)
 );
 

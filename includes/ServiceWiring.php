@@ -67,5 +67,21 @@ return [
 	'BSTagFactory' => function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry( 'BlueSpiceFoundationTagRegistry' );
 		return new \BlueSpice\TagFactory( $registry );
+	},
+
+	'BSRoleManager' => function ( MediaWikiServices $services ) {
+		return \BlueSpice\Permission\Role\Manager::getInstance(
+				$GLOBALS[ 'wgGroupPermissions' ],
+				$GLOBALS[ 'bsgGroupRoles' ],
+				$GLOBALS[ 'bsgEnableRoleSystem' ]
+		);
+	},
+
+	'BSPermissionRegistry' => function( MediaWikiServices $services ) {
+		global $bsgPermissionConfigDefault, $bsgPermissionConfig;
+		return \BlueSpice\Permission\Registry::getInstance(
+			$GLOBALS[ 'bsgPermissionConfigDefault' ],
+			$GLOBALS[ 'bsgPermissionConfig' ]
+		);
 	}
 ];

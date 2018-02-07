@@ -320,6 +320,14 @@ class BsCore {
 		$aImageExtensions = $config->get( 'ImageExtensions' );
 		$wgFileExtensions = array_merge( $aFileExtensions, $aImageExtensions );
 		$wgFileExtensions = array_values( array_unique( $wgFileExtensions ) );
+
+		//Initialize and apply role
+		if( $config->get( 'EnableRoleSystem' ) ) {
+			$roleManager = \MediaWiki\MediaWikiServices::getInstance()->getService(
+				'BSRoleManager'
+			);
+			$roleManager->applyRoles();
+		}
 	}
 
 	/* Returns the filesystem path of the core installation
@@ -478,6 +486,9 @@ class BsCore {
 	 * object for proper internationalisation of your permission. Every
 	 * permission is granted automatically to the user group 'sysop'. You can
 	 * specify additional groups through the third parameter.
+	 *
+	 * @deprecated since version 3.0 - use BSPermissionRegistry instead
+	 *
 	 * @param String $sPermissionName I.e. 'myextension-dosomething'
 	 * @param Array $aUserGroups User groups that get preinitialized with the new
 	 * pemission. I.e. array( 'user', 'bureaucrats' )
@@ -501,6 +512,9 @@ class BsCore {
 			}
 		}
 		$wgAvailableRights[] = $sPermissionName;
+
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return true;
 	}
 
 	/**
