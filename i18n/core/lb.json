@@ -70,5 +70,7 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Säit net erlaabt: $1",
 	"bs-exttype-bluespice": "BlueSpice-Erweiderungen",
 	"bs-export-menu-print-text": "Drécken",
-	"bs-export-menu-print-title": "Weist d'Drockversioun vun der Säit"
+	"bs-export-menu-print-title": "Weist d'Drockversioun vun der Säit",
+	"bs-graphicallist-action-close": "Zoumaachen",
+	"bs-graphicallist-action-list": "Lëscht"
 }

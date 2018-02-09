@@ -30,5 +30,6 @@
 	"bs-extjs-filter-date-after": "এর পর",
 	"bs-extjs-filter-date-before": "এর পূর্বে",
 	"bs-extjs-filter-date-on": "এ",
-	"bs-extjs-filter-date-filter": "ছাঁকনি"
+	"bs-extjs-filter-date-filter": "ছাঁকনি",
+	"bs-extjs-pageexport-list-format-link-label": "সংযোগ"
 }

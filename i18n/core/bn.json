@@ -18,5 +18,8 @@
 	"bs-viewtagerrorlist-legend": "$1 - ত্রুটি",
 	"bs-navigation-contact": "যোগাযোগ",
 	"bs-export-menu-print-text": "মুদ্রণ",
-	"bs-export-menu-print-title": "পাতার মুদ্রণযোগ্য সংস্করণ প্রদর্শন করে"
+	"bs-export-menu-print-title": "পাতার মুদ্রণযোগ্য সংস্করণ প্রদর্শন করে",
+	"bs-graphicallist-action-close": "বন্ধ করুন",
+	"bs-graphicallist-action-list": "তালিকা",
+	"bs-graphicallist-action-preview": "প্রাকদর্শন"
 }

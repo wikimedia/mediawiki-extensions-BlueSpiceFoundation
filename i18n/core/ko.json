@@ -71,5 +71,8 @@
 	"bs-pref-bspinginterval": "핑 간격 (초):",
 	"bs-exttype-bluespice": "BlueSpice 확장 기능",
 	"bs-export-menu-print-text": "인쇄",
-	"bs-export-menu-print-title": "문서의 인쇄용 판 보기"
+	"bs-export-menu-print-title": "문서의 인쇄용 판 보기",
+	"bs-graphicallist-action-close": "닫기",
+	"bs-graphicallist-action-list": "목록",
+	"bs-graphicallist-action-preview": "미리 보기"
 }
