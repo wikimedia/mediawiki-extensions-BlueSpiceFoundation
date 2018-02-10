@@ -10,11 +10,9 @@ class BsUserHelper {
 	 * @return array array of user ids
 	 */
 	public static function getUserIdsByRight( $sRight, $iLimit = 0, $iOffset = 0 ) {
-		wfProfileIn( 'BS::' . __METHOD__ );
 		$aReturn = array();
 		$aGroups = BsGroupHelper::getGroupsByRight( $sRight );
 		if ( count( $aGroups ) < 1 ) {
-			wfProfileOut( 'BS::' . __METHOD__ );
 			return $aReturn;
 		}
 		$oDBr = wfGetDB( DB_REPLICA );
@@ -30,13 +28,11 @@ class BsUserHelper {
 		}
 		$oRes = $oDBr->select( 'user_groups', array( 'DISTINCT(ug_user)' ), $aCond, __METHOD__, $aOptions );
 		if ( !$oRes ) {
-			wfProfileOut( 'BS::' . __METHOD__ );
 			return $aReturn;
 		}
 		while ( $oRow = $oRes->fetchObject() ) {
 			$aReturn [] = (int) $oRow->ug_user;
 		}
-		wfProfileOut( 'BS::' . __METHOD__ );
 		return $aReturn;
 	}
 
@@ -46,20 +42,16 @@ class BsUserHelper {
 	 * @return mixed username, else false
 	 */
 	public static function getUserDisplayName( $oUser = null ) {
-		wfProfileIn( 'BS::' . __METHOD__ );
 		if ( $oUser === null ) {
 			$oUser = RequestContext::getMain()->getUser();
 		}
 		if ( !( $oUser instanceof User ) ) {
-			wfProfileOut( 'BS::' . __METHOD__ );
 			return false;
 		}
 		$sRealname = $oUser->getRealName();
 		if ( $sRealname ) {
-			wfProfileOut( 'BS::' . __METHOD__ );
 			return $sRealname;
 		} else {
-			wfProfileOut( 'BS::' . __METHOD__ );
 			return $oUser->getName();
 		}
 	}

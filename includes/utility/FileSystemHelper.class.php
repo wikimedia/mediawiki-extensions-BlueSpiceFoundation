@@ -8,35 +8,27 @@ class BsFileSystemHelper {
 	 * @return Status
 	 */
 	public static function ensureCacheDirectory($sSubDirName = '') {
-		wfProfileIn(__METHOD__);
 		if ( self::hasTraversal( $sSubDirName ) ) {
-			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if (!empty($sSubDirName) && !preg_match('#^[a-zA-Z/\\\]+#', $sSubDirName)) {
-			wfProfileOut(__METHOD__);
 			return Status::newFatal('Requested subdirectory of ' . BS_CACHE_DIR . ' contains illegal chars');
 		}
 		if (!is_dir(BS_CACHE_DIR)) {
 			if (!mkdir(BS_CACHE_DIR, 0777, true)) {
-				wfProfileOut(__METHOD__);
 				return Status::newFatal(BS_CACHE_DIR . ' is not accessible');
 			}
 		}
 		if (empty($sSubDirName)) {
-			wfProfileOut(__METHOD__);
 			return Status::newGood(BS_CACHE_DIR);
 		} elseif (is_dir(BS_CACHE_DIR . DS . $sSubDirName)) {
-			wfProfileOut(__METHOD__);
 			return Status::newGood(BS_CACHE_DIR . DS . $sSubDirName);
 		}
 
 		if (!mkdir(BS_CACHE_DIR . DS . $sSubDirName, 0777, true)) {
-			wfProfileOut(__METHOD__);
 			return Status::newFatal(BS_CACHE_DIR . ' is not accessible');
 		}
 
-		wfProfileOut(__METHOD__);
 		return Status::newGood(BS_CACHE_DIR . DS . $sSubDirName);
 	}
 
@@ -46,36 +38,28 @@ class BsFileSystemHelper {
 	 * @return Status
 	 */
 	public static function ensureDataDirectory($sSubDirName = '') {
-		wfProfileIn(__METHOD__);
 		if ( self::hasTraversal( $sSubDirName ) ) {
-			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if (!empty($sSubDirName) && !preg_match('#^[a-zA-Z/\\\]+#', $sSubDirName)) {
-			wfProfileOut(__METHOD__);
 			return Status::newFatal('Requested subdirectory of ' . BS_DATA_DIR . ' contains illegal chars');
 		}
 		if (!is_dir(BS_DATA_DIR)) {
 			if (!mkdir(BS_DATA_DIR, 0777, true)) {
-				wfProfileOut(__METHOD__);
 				return Status::newFatal(BS_DATA_DIR . ' is not accessible');
 			}
 		}
 
 		$sFullPath = strpos( $sSubDirName, BS_DATA_DIR ) === 0 ? $sSubDirName : BS_DATA_DIR . DS . $sSubDirName;
 		if ( empty( $sFullPath ) ) {
-			wfProfileOut(__METHOD__);
 			return Status::newGood(BS_DATA_DIR);
 		} elseif ( is_dir( $sFullPath ) ) {
-			wfProfileOut(__METHOD__);
 			return Status::newGood( $sFullPath );
 		}
 		if ( !mkdir( $sFullPath, 0777, true ) ) {
-			wfProfileOut(__METHOD__);
 			return Status::newFatal(BS_DATA_DIR . ' is not accessible');
 		}
 
-		wfProfileOut(__METHOD__);
 		return Status::newGood( $sFullPath );
 	}
 
@@ -86,23 +70,18 @@ class BsFileSystemHelper {
 	 * @return Status
 	 */
 	public static function saveToCacheDirectory($sFileName, $data, $sSubDirName = '') {
-		wfProfileIn(__METHOD__);
 		$oStatus = self::ensureCacheDirectory($sSubDirName);
 		if ( self::hasTraversal( $sSubDirName . DS . $sFileName ) ) {
-			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if (!$oStatus->isGood()) {
-			wfProfileOut(__METHOD__);
 			return $oStatus;
 		}
 
 		if (!file_put_contents($oStatus->getValue() . DS . $sFileName, $data)) {
-			wfProfileOut(__METHOD__);
 			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . DS . $sFileName);
 		}
 
-		wfProfileOut(__METHOD__);
 		return $oStatus;
 	}
 
@@ -113,24 +92,19 @@ class BsFileSystemHelper {
 	 * @return Status
 	 */
 	public static function saveToDataDirectory($sFileName, $data, $sSubDirName = '') {
-		wfProfileIn(__METHOD__);
 		$oStatus = self::ensureDataDirectory($sSubDirName);
 		if ( self::hasTraversal( $sSubDirName . DS . $sFileName ) ) {
-			wfProfileOut( __METHOD__ );
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if (!$oStatus->isGood()) {
-			wfProfileOut(__METHOD__);
 			return $oStatus;
 		}
 
 		//todo: via FileRepo
 		if (!file_put_contents($oStatus->getValue() . DS . $sFileName, $data)) {
-			wfProfileOut(__METHOD__);
 			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . DS . $sFileName);
 		}
 
-		wfProfileOut(__METHOD__);
 		return $oStatus;
 	}
 

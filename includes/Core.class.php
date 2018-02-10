@@ -113,11 +113,9 @@ class BsCore {
 	 * @return BsCore Singleton instance of BlueSpice object.
 	 */
 	public static function getInstance() {
-		wfProfileIn('Performance: ' . __METHOD__);
 		if ( self::$oInstance === null ) {
 			self::$oInstance = new BsCore();
 		}
-		wfProfileOut('Performance: ' . __METHOD__);
 		return self::$oInstance;
 	}
 
@@ -288,24 +286,18 @@ class BsCore {
 	}
 
 	public static function doInitialise() {
-		wfProfileIn('Performance: ' . __METHOD__ . ' - Initialize Core');
 		self::$oInstance = new BsCore();
-		wfProfileOut('Performance: ' . __METHOD__ . ' - Initialize Core');
 
-		wfProfileIn('Performance: ' . __METHOD__ . ' - Load Settings');
 		if ( !defined( 'DO_MAINTENANCE' ) ) {
 			BsConfig::loadSettings();
 		}
-		wfProfileOut('Performance: ' . __METHOD__ . ' - Load Settings');
 
 		BSNotifications::init();
 
-		wfProfileIn('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
 		$factory = MediaWikiServices::getInstance()->getService(
 			'BSExtensionFactory'
 		);
 		$factory->getExtensions();
-		wfProfileOut('Performance: ' . __METHOD__ . ' - Load and initialize all Extensions');
 
 		global $wgHooks;
 		$wgHooks['ArticleAfterFetchContentObject'][] = array( self::$oInstance, 'behaviorSwitches' );
@@ -347,8 +339,6 @@ class BsCore {
 	 * @return string The HTML result
 	 */
 	public function parseWikiText( $sText, $oTitle, $nocache = false, $numberheadings = null ) {
-		wfProfileIn('BS::' . __METHOD__);
-
 		if ( !self::$oLocalParser ) self::$oLocalParser = new Parser();
 		if ( !self::$oLocalParserOptions ) self::$oLocalParserOptions = new ParserOptions();
 
@@ -368,7 +358,6 @@ class BsCore {
 
 		$output = self::$oLocalParser->parse( $sText, $oTitle, self::$oLocalParserOptions, true )->getText();
 
-		wfProfileOut('BS::' . __METHOD__);
 		return $output;
 	}
 
@@ -388,7 +377,6 @@ class BsCore {
 	 * @return string the requested URI
 	 */
 	public static function getRequestURI($getUrlEncoded = false) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		if (self::$prRequestUri === null) {
 			$requestUri = '';
 			if ( isset( $_SERVER['HTTP_X_REWRITE_URL'] ) ) { // check this first so IIS will catch
@@ -407,7 +395,6 @@ class BsCore {
 		if ( $getUrlEncoded ) {
 			return ( self::$prUrlIsEncoded ? self::$prRequestUri : urlencode( self::$prRequestUri ) );
 		}
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return ( self::$prUrlIsEncoded ? urldecode( self::$prRequestUri ) : self::$prRequestUri );
 	}
 
@@ -421,38 +408,31 @@ class BsCore {
 	 * @return bool
 	 */
 	public static function checkAccessAdmission( $sPermission = 'read', $sI18NInstanceKey = 'BlueSpice', $sI18NMessageKey = 'not_allowed', $bSilent = true ) {
-		wfProfileIn('BS::' . __METHOD__);
 		// TODO MRG28072010: isAllowed prüft nicht gegen die Artikel. D.H. die Rechte sind nicht per Namespace überprüfbar
 		$oUser = self::loadCurrentUser();
 		if ( $oUser->isAllowed( $sPermission ) ) {
-			wfProfileOut('BS::' . __METHOD__);
 			return true;
 		}
 		if ( !$bSilent ) echo wfMessage( 'bs-' . $sI18NMessageKey )->plain();
 
-		wfProfileOut('BS::' . __METHOD__);
 		return false;
 	}
 
 	public static function loadCurrentUser() {
-		wfProfileIn('BS::' . __METHOD__);
 		/* Load current user */
 		global $wgUser;
 
 		if ( !$wgUser || is_null( $wgUser->mId ) ) {
 
 			if ( !is_null( self::$prCurrentUser ) ) {
-				wfProfileOut('BS::' . __METHOD__);
 				return self::$prCurrentUser;
 			}
 
 			self::$prCurrentUser = User::newFromSession();
 			self::$prCurrentUser->load();
-			wfProfileOut('BS::' . __METHOD__);
 			return self::$prCurrentUser;
 		}
 
-		wfProfileOut('BS::' . __METHOD__);
 		return $wgUser;
 		// Used to bie like the following code. however, this did not take into account the __session-Cookie, and logged out users were still recognized.
 		/* if( isset( $_SESSION['wsUserID'] ) ) {
@@ -473,12 +453,10 @@ class BsCore {
 	 * @return ViewUserMiniProfile A view with the users mini profile
 	 */
 	public function getUserMiniProfile( $oUser, $aParams = array() ) {
-		wfProfileIn('BS::' . __METHOD__);
 		$sParamsHash = md5( serialize( $aParams ) );
 		$sViewHash = $oUser->getName() . $sParamsHash;
 
 		if ( isset( self::$aUserMiniProfiles[$sViewHash] ) ) {
-			wfProfileOut('BS::' . __METHOD__);
 			return self::$aUserMiniProfiles[$sViewHash];
 		}
 
@@ -492,7 +470,6 @@ class BsCore {
 
 		self::$aUserMiniProfiles[$sViewHash] = $oUserMiniProfileView;
 
-		wfProfileOut('BS::' . __METHOD__);
 		return $oUserMiniProfileView;
 	}
 
@@ -509,7 +486,6 @@ class BsCore {
 	 * @return void
 	 */
 	public function registerPermission( $sPermissionName, $aUserGroups = array(), $aConfig = array() ) {
-		wfProfileIn('BS::' . __METHOD__);
 		global $wgGroupPermissions, $wgAvailableRights, $bsgPermissionConfig;
 		$wgGroupPermissions['sysop'][$sPermissionName] = true;
 		if(!isset($bsgPermissionConfig[$sPermissionName])){
@@ -525,7 +501,6 @@ class BsCore {
 			}
 		}
 		$wgAvailableRights[] = $sPermissionName;
-		wfProfileOut('BS::' . __METHOD__);
 	}
 
 	/**
@@ -671,9 +646,7 @@ class BsCore {
 	 * @return String MediaWiki include path variable
 	 */
 	public static function getMediaWikiIncludePath() {
-		wfProfileIn('BS::' . __METHOD__);
 		global $IP;
-		wfProfileOut('BS::' . __METHOD__);
 		return str_replace('\\', '/', $IP);
 	}
 

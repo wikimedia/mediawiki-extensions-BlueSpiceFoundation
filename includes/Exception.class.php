@@ -32,7 +32,6 @@ class BsException extends Exception {
 	 * @param Exception $oPreviousException For use in a chain of try-catch blocks.
 	 */
 	public function __construct( $sMessage = '', $iCode = 0, Exception $oPreviousException = null ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		$this->sMessage = $sMessage;
 
 		if ( $oPreviousException === null ) {
@@ -40,7 +39,6 @@ class BsException extends Exception {
 		} else {
 			parent::__construct( $sMessage, $iCode, $oPreviousException ); // results in fatal error if $oPreviousException === null
 		}
-		wfProfileOut( 'BS::'.__METHOD__ );
 	}
 	
 	public function getLogMessage() {

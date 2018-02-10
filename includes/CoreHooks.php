@@ -342,8 +342,6 @@ class BsCoreHooks {
 	 * @return boolean
 	 */
 	public static function onUserGetRights( $oUser, &$aRights ) {
-		wfProfileIn('BS::' . __METHOD__);
-
 		if ( $oUser->isAnon() ) {
 			$oRequest = RequestContext::getMain()->getRequest();
 			$iUserId = $oRequest->getVal( 'u', '' );
@@ -363,7 +361,6 @@ class BsCoreHooks {
 			# The flag is deactivated to prevent some bugs with the loading of the actual users rights.
 			# $this->bUserFetchRights = true;
 		}
-		wfProfileOut('BS::' . __METHOD__);
 		return true;
 	}
 
@@ -377,15 +374,12 @@ class BsCoreHooks {
 	 * @param boolean $result
 	 */
 	public static function onUserCan( &$title, &$user, $action, &$result ) {
-		wfProfileIn('BS::' . __METHOD__);
 		if ( !self::$loggedInByHash ) {
-			wfProfileIn('--BS::' . __METHOD__ . 'if !$this->loggedInByHash');
 			$oRequest = RequestContext::getMain()->getRequest();
 			$iUserId = $oRequest->getVal( 'u', '' );
 			$sUserHash = $oRequest->getVal( 'h', '' );
 
 			if ( empty( $iUserId ) || empty( $sUserHash ) ) {
-				wfProfileOut('--BS::' . __METHOD__ . 'if !self::$loggedInByHash');
 				return true;
 			}
 
@@ -399,14 +393,12 @@ class BsCoreHooks {
 					$user = $_user;
 				}
 			}
-			wfProfileOut('--BS::' . __METHOD__ . 'if !self::$loggedInByHash');
 		}
 
 		if ( $action == 'read' ) {
 			$result = $user->isAllowed( $action );
 		}
 
-		wfProfileOut('BS::' . __METHOD__);
 		return true;
 	}
 

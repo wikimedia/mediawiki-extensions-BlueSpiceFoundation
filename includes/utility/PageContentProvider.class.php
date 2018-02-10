@@ -84,12 +84,10 @@ class BsPageContentProvider {
 	 * @return BsPageContentProvider Instance of BsPageContentProvider
 	 */
 	public static function getInstance() {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		if ( self::$oInstance === null ) {
 			self::$oInstance = new self();
 		}
 
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return self::$oInstance;
 	}
 

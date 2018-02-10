@@ -35,8 +35,6 @@ class BsStringHelper {
 	 *          '... lazy dog' (<code>'position' => 'start'</code>)
 	 */
 	public static function shorten( $sString, $aOptions ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
-
 		$iMaxLength = BsCore::sanitizeArrayEntry( $aOptions, 'max-length', 15, BsPARAMTYPE::INT );
 		$bIgnoreWordBorders = BsCore::sanitizeArrayEntry( $aOptions, 'ignore-word-borders', true,  BsPARAMTYPE::BOOL );
 		$sPosition = BsCore::sanitizeArrayEntry( $aOptions, 'position', 'end', BsPARAMTYPE::STRING );
@@ -88,7 +86,6 @@ class BsStringHelper {
 			}
 		}
 
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return $sShortendString;
 	}
 

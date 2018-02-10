@@ -27,7 +27,6 @@ class BsTagFinder {
 	 * );
 	 */
 	public static function find( &$sText, $aTagnames ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		wfSuppressWarnings();
 		$aResult = array();
 
@@ -65,7 +64,6 @@ class BsTagFinder {
 			}
 		}
 		wfRestoreWarnings();
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return $aResult;
 	}
 }

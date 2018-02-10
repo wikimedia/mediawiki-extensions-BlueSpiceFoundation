@@ -100,7 +100,6 @@ class BsNamespaceHelper {
 	 * @return array List of namespace names 
 	 */
 	public static function getNamespaceNamesAndAliases($iNamespaceId) {
-		wfProfileIn('BS::' . __METHOD__);
 		global $wgContLang, $wgNamespaceAliases, $wgCanonicalNamespaceNames;
 		$aAliases = array();
 
@@ -116,7 +115,6 @@ class BsNamespaceHelper {
 			$aAliases = array_merge( array_keys( $aTmpAliases, $iNamespaceId ), $aAliases );
 		}
 
-		wfProfileOut('BS::' . __METHOD__);
 		return $aAliases;
 	}
 
@@ -126,11 +124,9 @@ class BsNamespaceHelper {
 	 * @return int The  NamespaceId.
 	 */
 	public static function getNamespaceIndex( $vNamespace ) {
-		wfProfileIn('BS::' . __METHOD__);
 		if ( is_numeric( $vNamespace ) ) return $vNamespace;
 		global $wgContLang;
 
-		wfProfileOut('BS::' . __METHOD__);
 		return $wgContLang->getNsIndex( $vNamespace );
 	}
 
@@ -152,12 +148,10 @@ class BsNamespaceHelper {
 	 */
 	public static function getNamespaceIdsFromAmbiguousCSVString( $sCSV = '' ) {
 		global $wgContLang;
-		wfProfileIn('BS::' . __METHOD__);
 		$sCSV = trim( $sCSV );
 		$sCSV = mb_strtolower( $sCSV ); // make namespaces case insensitive
 
 		if ( in_array( $sCSV, array( 'all', '-', '' ) ) ) { //for compatibility reason the '-' is equivalent to 'all'
-			wfProfileOut('BS::' . __METHOD__);
 			return array_keys( $wgContLang->getNamespaces() );
 		}
 
@@ -200,7 +194,6 @@ class BsNamespaceHelper {
 			$oInvalidNamespaceException->setListOfValidNamespaces( $aValidNamespaceIntIndexes );
 			throw $oInvalidNamespaceException;
 		}
-		wfProfileOut('BS::' . __METHOD__);
 
 		return array_values( array_unique( $aValidNamespaceIntIndexes ) ); //minify the Array, rearrange indexes and return it
 	}
@@ -212,7 +205,6 @@ class BsNamespaceHelper {
 	 * @return array 
 	 */
 	public static function getNamespacesForSelectOptions( $aExcludeIds = array() ) {
-		wfProfileIn('BS::' . __METHOD__);
 		global $wgContLang;
 		$aNamespaces = array();
 
@@ -221,7 +213,6 @@ class BsNamespaceHelper {
 			if ( in_array( $iNsIndex, $aExcludeIds ) ) continue; //Filter namespaces
 			$aNamespaces[$iNsIndex] = self::getNamespaceName( $iNsIndex );
 		}
-		wfProfileOut('BS::' . __METHOD__);
 		return $aNamespaces;
 	}
 
@@ -232,26 +223,21 @@ class BsNamespaceHelper {
 	 * @return boolean returns true if user is allowed , otherwise false
 	 */
 	public static function checkNamespacePermission( $iID, $sPermission ) {
-		wfProfileIn( 'BS::' . __METHOD__ );
 		if ( !is_numeric( $iID ) ) return false;
 
 		if ( ( $iID == 998 || $iID == 999 ) ) {
 			global $wgUser;
 			if ( $wgUser->isAllowed( 'searchfiles' ) ) {
-				wfProfileOut('BS::' . __METHOD__);
 				return true;
 			} else {
-				wfProfileOut('BS::' . __METHOD__);
 				return false;
 			}
 		}
 
 		$oDummyTitle = Title::makeTitle( $iID, 'Dummy' );
 		if ( $oDummyTitle->userCan( $sPermission ) ) {
-			wfProfileOut('BS::' . __METHOD__);
 			return true;
 		} else {
-			wfProfileOut('BS::' . __METHOD__);
 			return false;
 		}
 	}
