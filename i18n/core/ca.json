@@ -32,5 +32,8 @@
 	"bs-navigation-support": "Assistència",
 	"bs-navigation-contact": "Contacte",
 	"bs-imagepage-download-text": "Baixa",
-	"bs-pref-fileextensions": "Extensions de fitxers permesses:"
+	"bs-pref-fileextensions": "Extensions de fitxers permesses:",
+	"bs-graphicallist-action-close": "Tanca",
+	"bs-graphicallist-action-list": "Llista",
+	"bs-graphicallist-action-preview": "Previsualitza"
 }

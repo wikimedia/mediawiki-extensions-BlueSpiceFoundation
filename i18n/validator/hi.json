@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nitin1485"
+		]
+	},
+	"bs-validator-value-not-recognized": "मान संसाधित नहीं किया जा सका",
+	"bs-validator-invalid-parameter": "इस पैरामीटर की अनुमति नहीं है",
+	"bs-validator-missing-required": "यह पैरामीटर आवश्यक है"
+}

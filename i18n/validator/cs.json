@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ilimanaq29"
+			"Ilimanaq29",
+			"Matěj Suchánek"
 		]
 	},
 	"bs-validator-value-not-recognized": "Hodnota nemohla být zpracována",
 	"bs-validator-invalid-boolean": "Neplatný boolean",
-	"bs-validator-invalid-float": "Neplatná tabulka",
+	"bs-validator-invalid-float": "Neplatné desetinné číslo",
 	"bs-validator-invalid-integer": "Neplatné číslo",
 	"bs-validator-invalid-string": "Neplatný řetězec",
 	"bs-validator-invalid-coordinate": "Neplatná souřadnice",

@@ -63,10 +63,10 @@
 	"bs-extjs-pageexport-list-format-link-label": "Hiperligação",
 	"bs-extjs-pageexport-overwrite-label": "Substituir",
 	"bs-extjs-pageexport-general-error": "Erro de exportação",
-	"bs-extjs-pageexport-pagecollection-prefix": "Coleção de páginas",
-	"bs-extjs-pageexport-success": "Exportação bem sucedida",
-	"bs-extjs-pageexport-success-text": "A coleção de páginas foi exportada para $1",
-	"bs-extjs-pageexport-required-text": "O nome da lista não pode estar vazio e pelo menos uma página deve estar selecionada",
+	"bs-extjs-pageexport-pagecollection-prefix": "Conjunto de páginas",
+	"bs-extjs-pageexport-success": "Exportação realizada",
+	"bs-extjs-pageexport-success-text": "O conjunto de páginas foi exportado para $1",
+	"bs-extjs-pageexport-required-text": "O nome da lista não pode estar vazio e deve estar selecionada pelo menos uma página",
 	"bs-extjs-export-search-summary-text": "Gerado por PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "O nome da lista é inválido"
 }

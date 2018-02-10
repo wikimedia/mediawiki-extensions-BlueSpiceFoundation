@@ -20,7 +20,7 @@
 	"bs-validator-invalid-boolean": "Booleano inválido",
 	"bs-validator-invalid-float": "Vírgula flutuante inválida",
 	"bs-validator-invalid-integer": "Número inteiro inválido",
-	"bs-validator-invalid-string": "Segmento de texto inválido",
+	"bs-validator-invalid-string": "Texto inválido",
 	"bs-validator-invalid-coordinate": "Coordenadas inválidas",
 	"bs-validator-invalid-parameter": "Este parâmetro não é permitido",
 	"bs-validator-missing-required": "Este parâmetro é obrigatório"

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jorn Ari"
+		]
+	},
+	"bs-validator-value-not-recognized": "Værdien kunne ikke behandles",
+	"bs-validator-invalid-string": "Ikke en gyldig streng",
+	"bs-validator-invalid-coordinate": "Ikke et gyldigt koordinat",
+	"bs-validator-invalid-parameter": "Dette parameter er ikke tilladt"
+}
