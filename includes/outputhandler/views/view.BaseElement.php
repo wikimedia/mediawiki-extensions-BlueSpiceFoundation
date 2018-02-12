@@ -60,10 +60,8 @@ class ViewBaseElement {
 	 * Build a new element instance and bind an unique id to it.
 	 */
 	public function __construct() {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		$this->_mId = 'bs-element-'.self::getAutoId();
 		$this->config = \MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
-		wfProfileOut( 'BS::'.__METHOD__ );
 	}
 
 	public function __toString(){
@@ -234,7 +232,6 @@ class ViewBaseElement {
 	 * @return String Returns the output of this element.
 	 */
 	public function execute( $params = false ) {
-		//wfProfileIn( 'BS::'.__METHOD__ );
 		$output = '';
 		// TODO MRG20100816: Eine Mischung aus data und items geht nicht?
 		if ( count( $this->_mData ) ) {
@@ -260,18 +257,15 @@ class ViewBaseElement {
 			}
 		}
 		else {
-			//wfProfileOut( 'BS::'.__METHOD__ );
 			return '';
 		}
 		if ( $this->_mAutoWrap && is_string( $this->_mAutoWrap ) ) {
 			$output = preg_replace( '/###CONTENT###/', $output, $this->_mAutoWrap );
 		}
-		//wfProfileOut( 'BS::'.__METHOD__ );
 		return $output;
 	}
 
 	protected function processData( $dataSet ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		$this->_mPresentDataset = $dataSet;
 		if($this->_mTemplate != '') {
 			$output = $this->_mTemplate;
@@ -293,7 +287,6 @@ class ViewBaseElement {
 		}
 
 		$this->_mPresentDataset = null;
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return $output;
 	}
 
@@ -342,7 +335,6 @@ class ViewBaseElement {
 
 	// TODO MRG20100831: comment
 	protected function renderLink( $options = array(), $content ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		$glue = '';
 		$href = isset( $options['href'] )
 			? $options['href']
@@ -367,7 +359,6 @@ class ViewBaseElement {
 		$out .= '>';
 		$out .= $content;
 		$out .= '</a>';
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return $out;
 	}
 

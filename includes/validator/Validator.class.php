@@ -64,7 +64,6 @@ class BsValidator {
 	 * </p>
 	 */
 	public static function isValid( $type, $validateThis, $options = array() ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		if ( !is_array( $options ) ) {
 			throw new BsException( 'BsValidator::isValid called with 3rd param that is no array' ); // todo: throw new BsException
 		}
@@ -84,12 +83,10 @@ class BsValidator {
 		$validationResult = call_user_func( $plugin.'::isValid', $validateThis, $options );
 
 		if ( is_object( $validationResult ) && ( $validationResult instanceof BsValidatorResponse ) ) {
-			wfProfileOut( 'BS::'.__METHOD__ );
 			return ( array_key_exists( 'fullResponse', $options ) && $options['fullResponse'] )
 				? $validationResult
 				: ( $validationResult->getErrorCode() === 0 ); // return boolean (success: 'true')
 		}
-		wfProfileOut( 'BS::'.__METHOD__ );
 		throw new BsException( "$plugin did not return a BsValidatorResponse-object." ); // todo: throw new BsException
 	}
 
@@ -111,12 +108,10 @@ class BsValidatorResponse {
 	 * @param mixed $vI18NTokens spoken-word-params for BsI18N, can be single string or array with numeric keys
 	 */
 	public function __construct( $errorcode, $sI18NInstanceName = null, $sI18NMessageKey = null, $vI18NTokens = null ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		$this->mErrorcode = $errorcode;
 		$this->mI18NInstanceName = $sI18NInstanceName;
 		$this->mI18NMessageKey = $sI18NMessageKey;
 		$this->mI18NTokens = $vI18NTokens;
-		wfProfileOut( 'BS::'.__METHOD__ );
 	}
 
 	/**
@@ -130,7 +125,6 @@ class BsValidatorResponse {
 	 * @return string Human readable errormessage in User's language
 	 */
 	public function getI18N() {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		if ( is_null( $this->mI18NInstanceName ) ) {
 			return false;
 		}
@@ -141,7 +135,6 @@ class BsValidatorResponse {
 				// TODO MRG (08.02.11 00:08): msg wurde modifiziert, $default gibts nicht mehr. @Robert: macht Tokens von $default Gebrauch?
 				: wfMessage( $this->mI18NMessageKey, $this->mI18NTokens )->text();
 		}
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return $this->mI18NRenderedString;
 
 		// @todo @sebastian : hier wird dem BsI18N-Mechanismus ENTWEDER
@@ -260,7 +253,6 @@ class BsValidatorPositiveIntegerPlugin implements BsValidatorPlugin
 class BsValidatorIntegerRangePlugin implements BsValidatorPlugin
 {
 	public static function isValid( $validateThis, $options ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		if ( is_numeric( $validateThis ) ) {
 			if ( isset( $options['lowerBoundary'] ) && ( $validateThis < $options['lowerBoundary'] ) ) {
 				$response = new BsValidatorResponse( 1, 'Validator', 'bs-validator-integer-range-validation-too-low', $options['lowerBoundary'] );
@@ -272,7 +264,6 @@ class BsValidatorIntegerRangePlugin implements BsValidatorPlugin
 		} else {
 			$response = new BsValidatorResponse( 3, 'Validator', 'bs-validator-integer-range-validation-no-integer' );
 		}
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return $response;
 	}
 }

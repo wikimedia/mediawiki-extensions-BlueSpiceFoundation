@@ -177,17 +177,12 @@ class BsConfig {
 	 * @return mixed the value
 	 */
 	public static function get( $sPath ) {
-		wfProfileIn ( 'BS::Core::ConfigGet' );
-
 		$mReturn = null;
 		if( !Hooks::run ( "BSCoreConfigGet", array ( $sPath, &$mReturn ) ) ) {
-			wfProfileOut ( 'BS::Core::ConfigGet' );
 			return $mReturn;
 		}
 
 		$oSetting = self::getSettingObject ( $sPath );
-
-		wfProfileOut ( 'BS::Core::ConfigGet' );
 
 		if ( is_object ( $oSetting ) ) {
 			return $oSetting->_get ();

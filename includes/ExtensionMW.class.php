@@ -80,7 +80,6 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @deprecated since version 3.0.0
 	 */
 	public function setup( $sExtName = "", $aConfig = array() ) {
-		wfProfileIn( 'Performance: ' . __METHOD__ );
 		wfDeprecated( __METHOD__, '3.0.0' );
 
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
@@ -111,8 +110,6 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 		$this->mExtensionKey = "MW::$sExtName";
 		$this->sName = $sExtName;
 		$this->initExt();
-
-		wfProfileOut( 'Performance: ' . __METHOD__ );
 	}
 
 	/**

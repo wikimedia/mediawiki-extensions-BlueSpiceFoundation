@@ -41,7 +41,6 @@ class BsConnectionHelper {
 	 * @return Boolean
 	 */
 	public static function testUrlForTimeout( $sUrl, $fTimeout = 3.0 ) {
-		wfProfileIn( 'BS::'.__METHOD__ );
 		$iErrorNo = 0;
 		$sErrorMsg = '';
 		$aUrlInfo = parse_url($sUrl);
@@ -52,7 +51,6 @@ class BsConnectionHelper {
 			$iPort = isset( $aUrlInfo['port'] ) ? $aUrlInfo['port'] : 80;
 			@$pFile = fsockopen($aUrlInfo['host'], $iPort, $iErrorNo, $sErrorMsg, $fTimeout );
 		}
-		wfProfileOut( 'BS::'.__METHOD__ );
 		return (bool) $pFile;
 	}
 }
