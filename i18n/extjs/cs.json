@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ilimanaq29"
+			"Ilimanaq29",
+			"Matěj Suchánek"
 		]
 	},
 	"bs-extjs-pageexport-dialog-title": "Exportovat stránky",
@@ -10,7 +11,7 @@
 	"bs-extjs-pageexport-list-format-plain-label": "Prostý text",
 	"bs-extjs-pageexport-list-format-link-label": "Odkaz",
 	"bs-extjs-pageexport-overwrite-label": "Přepsat",
-	"bs-extjs-pageexport-general-error": "Přemístit chybu",
+	"bs-extjs-pageexport-general-error": "Chyba exportu",
 	"bs-extjs-pageexport-pagecollection-prefix": "Sbírka stránek",
 	"bs-extjs-pageexport-success": "Přemístění úspěšné",
 	"bs-extjs-pageexport-success-text": "Sbírka stránek přemístěna na $1",
