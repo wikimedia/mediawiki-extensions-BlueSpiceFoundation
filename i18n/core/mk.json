@@ -81,5 +81,8 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Страницата не е допуштена: $1",
 	"bs-exttype-bluespice": "Додатоци за BlueSpice",
 	"bs-export-menu-print-text": "Печати",
-	"bs-export-menu-print-title": "Прикажува верзија на страницата погодна за печатање"
+	"bs-export-menu-print-title": "Прикажува верзија на страницата погодна за печатање",
+	"bs-graphicallist-action-close": "Затвори",
+	"bs-graphicallist-action-list": "Список",
+	"bs-graphicallist-action-preview": "Преглед"
 }

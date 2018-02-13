@@ -5,5 +5,7 @@
 			"Aftabuzzaman"
 		]
 	},
-	"bs-validator-email-validation-approved": "ইমেল ঠিকানা সফলভাবে যাচাই করা হয়েছে।"
+	"bs-validator-email-validation-approved": "ইমেল ঠিকানা সফলভাবে যাচাই করা হয়েছে।",
+	"bs-validator-invalid-boolean": "একটি বৈধ বুলিয়ান নয়",
+	"bs-validator-invalid-integer": "একটি বৈধ পূর্ণসংখ্যা নয়"
 }
