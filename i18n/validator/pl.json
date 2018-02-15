@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Anwar2"
 		]
 	},
-	"bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany."
+	"bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany.",
+	"bs-validator-invalid-boolean": "Niepoprawna wartość logiczna",
+	"bs-validator-invalid-string": "Niepoprawny ciąg"
 }
