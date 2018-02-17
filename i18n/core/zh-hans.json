@@ -68,6 +68,7 @@
 	"bs-imagepage-download-text": "下载",
 	"bs-ns": "名字空间",
 	"bs-from-something": "（来自$1）",
+	"prefs-base": "BlueSpice",
 	"bs-pref-fileextensions": "允许的文件扩展名：",
 	"bs-pref-imageextensions": "允许的图片扩展名：",
 	"bs-pref-logopath": "标志路径：",
