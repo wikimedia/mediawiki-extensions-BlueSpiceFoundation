@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"bs-filerepo-labelupload": "Xubir",
+	"bs-filerepo-labelfilter": "Filtru",
+	"bs-filerepo-headerfilename": "Nome del ficheru",
+	"bs-filerepo-headerfilesize": "Tamañu",
+	"bs-filerepo-headerpagecategories": "Categoríes",
+	"bs-filerepo-headerfilewidth": "Anchor",
+	"bs-filerepo-headerfileheight": "Altor",
+	"bs-filerepo-headerfilemimetype": "Tipu MIME",
+	"bs-filerepo-headerfileusertext": "Usuariu",
+	"bs-filerepo-headerfileextension": "Estensión",
+	"bs-filerepo-headerfiletimestamp": "Xubío",
+	"bs-filerepo-headerfilemediatype": "Tipu de mediu",
+	"bs-filerepo-headerfiledescription": "Descripción",
+	"bs-filerepo-headerfilethumbnail": "Miniatura",
+	"bs-filerepo-yes": "Sí",
+	"bs-filerepo-no": "Non",
+	"bs-filerepo-pagesize": "Tamañu de la páxina"
+}

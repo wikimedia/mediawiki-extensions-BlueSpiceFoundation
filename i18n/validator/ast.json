@@ -13,5 +13,13 @@
 	"bs-validator-set-validation-approved": "$1 validóse correutamente.",
 	"bs-validator-set-validation-not-approved": "Sólo se {{PLURAL:$3|permite'l siguiente valor|permite unu de los siguientes valores}} pa $1: $2.",
 	"bs-validator-integer-range-validation-too-low": "El valor proporcionáu ye baxu enforma. Nun tien de ser menor que $1.",
-	"bs-validator-integer-range-validation-too-high": "El valor proporcionáu ye altu enforma. Nun tien de ser mayor que $1."
+	"bs-validator-integer-range-validation-too-high": "El valor proporcionáu ye altu enforma. Nun tien de ser mayor que $1.",
+	"bs-validator-value-not-recognized": "Nun pudo procesase'l valor",
+	"bs-validator-invalid-boolean": "Nun ye un valor booleano válidu",
+	"bs-validator-invalid-float": "Nun ye un valor de coma flotante válidu",
+	"bs-validator-invalid-integer": "Nun ye un enteru válidu",
+	"bs-validator-invalid-string": "Nun ye una cadena válida",
+	"bs-validator-invalid-coordinate": "Nun ye una coordenada válida",
+	"bs-validator-invalid-parameter": "Esti parámetru nun ta permitíu",
+	"bs-validator-missing-required": "Esti parámetru ye obligatoriu"
 }
