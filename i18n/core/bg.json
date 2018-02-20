@@ -12,5 +12,6 @@
 	"bs-userbar_loginswitch_login": "Влизане",
 	"bs-extended-search-textfield-defaultvalue": "Търсене...",
 	"bs-userpagesettings-legend": "Потребителски настройки",
-	"bs-ns": "Именно пространство"
+	"bs-ns": "Именно пространство",
+	"bs-graphicallist-action-close": "Затваряне"
 }
