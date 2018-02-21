@@ -21,15 +21,15 @@ class BsFileSystemHelper {
 		}
 		if (empty($sSubDirName)) {
 			return Status::newGood(BS_CACHE_DIR);
-		} elseif (is_dir(BS_CACHE_DIR . DS . $sSubDirName)) {
-			return Status::newGood(BS_CACHE_DIR . DS . $sSubDirName);
+		} elseif ( is_dir( BS_CACHE_DIR . "/$sSubDirName" ) ) {
+			return Status::newGood( BS_CACHE_DIR . "/$sSubDirName" );
 		}
 
-		if (!mkdir(BS_CACHE_DIR . DS . $sSubDirName, 0777, true)) {
+		if (!mkdir(BS_CACHE_DIR . "/$sSubDirName", 0777, true)) {
 			return Status::newFatal(BS_CACHE_DIR . ' is not accessible');
 		}
 
-		return Status::newGood(BS_CACHE_DIR . DS . $sSubDirName);
+		return Status::newGood( BS_CACHE_DIR . "/$sSubDirName" );
 	}
 
 	/**
@@ -50,7 +50,7 @@ class BsFileSystemHelper {
 			}
 		}
 
-		$sFullPath = strpos( $sSubDirName, BS_DATA_DIR ) === 0 ? $sSubDirName : BS_DATA_DIR . DS . $sSubDirName;
+		$sFullPath = strpos( $sSubDirName, BS_DATA_DIR ) === 0 ? $sSubDirName : BS_DATA_DIR . "/$sSubDirName";
 		if ( empty( $sFullPath ) ) {
 			return Status::newGood(BS_DATA_DIR);
 		} elseif ( is_dir( $sFullPath ) ) {
@@ -71,15 +71,17 @@ class BsFileSystemHelper {
 	 */
 	public static function saveToCacheDirectory($sFileName, $data, $sSubDirName = '') {
 		$oStatus = self::ensureCacheDirectory($sSubDirName);
-		if ( self::hasTraversal( $sSubDirName . DS . $sFileName ) ) {
+		if ( self::hasTraversal( "$sSubDirName/$sFileName" ) ) {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if (!$oStatus->isGood()) {
 			return $oStatus;
 		}
 
-		if (!file_put_contents($oStatus->getValue() . DS . $sFileName, $data)) {
-			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . DS . $sFileName);
+		if (!file_put_contents( "{$oStatus->getValue()}/$sFileName", $data ) ) {
+			return Status::newFatal(
+				"could not save \"$sFileName\" to location: {$oStatus->getValue()}/$sFileName"
+			);
 		}
 
 		return $oStatus;
@@ -93,7 +95,7 @@ class BsFileSystemHelper {
 	 */
 	public static function saveToDataDirectory($sFileName, $data, $sSubDirName = '') {
 		$oStatus = self::ensureDataDirectory($sSubDirName);
-		if ( self::hasTraversal( $sSubDirName . DS . $sFileName ) ) {
+		if ( self::hasTraversal( "$sSubDirName/$sFileName" ) ) {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if (!$oStatus->isGood()) {
@@ -101,8 +103,10 @@ class BsFileSystemHelper {
 		}
 
 		//todo: via FileRepo
-		if (!file_put_contents($oStatus->getValue() . DS . $sFileName, $data)) {
-			return Status::newFatal('could not save "' . $sFileName . '" to location: ' . $oStatus->getValue() . DS . $sFileName);
+		if (!file_put_contents( "{$oStatus->getValue()}/$sFileName", $data ) ) {
+			return Status::newFatal(
+				"could not save \"$sFileName\" to location: {$oStatus->getValue()}/$sFileName"
+			);
 		}
 
 		return $oStatus;
@@ -114,7 +118,9 @@ class BsFileSystemHelper {
 	 * @return string Filepath
 	 */
 	public static function getDataDirectory($sSubDirName = '') {
-		return empty( $sSubDirName ) ? BS_DATA_DIR : BS_DATA_DIR . DS . $sSubDirName;
+		return empty( $sSubDirName )
+			? BS_DATA_DIR
+			: BS_DATA_DIR . "/$sSubDirName";
 	}
 
 	/**
@@ -132,7 +138,9 @@ class BsFileSystemHelper {
 	 * @return string Filepath
 	 */
 	public static function getCacheDirectory( $sSubDirName = '' ) {
-		return empty( $sSubDirName ) ? BS_CACHE_DIR : BS_CACHE_DIR . DS . $sSubDirName;
+		return empty( $sSubDirName )
+			? BS_CACHE_DIR
+			: BS_CACHE_DIR . "/$sSubDirName";
 	}
 
 	/**
@@ -148,10 +156,16 @@ class BsFileSystemHelper {
 		wfMkdirParents($sDestination);
 		while (false !== ( $sFileName = readdir($rDir))) {
 			if (( $sFileName != '.' ) && ( $sFileName != '..' )) {
-				if (is_dir($sSource . DS . $sFileName)) {
-					self::copyRecursive($sSource . DS . $sFileName, $sDestination . DS . $sFileName);
+				if ( is_dir( "$sSource/$sFileName" ) ) {
+					self::copyRecursive(
+						"$sSource/$sFileName",
+						"$sDestination/$sFileName"
+					);
 				} else {
-					copy($sSource . DS . $sFileName, $sDestination . DS . $sFileName);
+					copy(
+						"$sSource/$sFileName",
+						"$sDestination/$sFileName"
+					);
 				}
 			}
 		}
@@ -182,13 +196,13 @@ class BsFileSystemHelper {
 	 * @return Status (->getValue() for the file's content).
 	 */
 	public static function getFileContent($sFileName, $sDir) {
-		if (self::hasTraversal($sDir . DS . $sFileName))
+		if ( self::hasTraversal( "$sDir/$sFileName" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
-		if (!is_dir(BS_DATA_DIR . DS . $sDir))
+		if ( !is_dir( BS_DATA_DIR . "/$sDir" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-no-directory", $sDir ) );
-		if (!file_exists(BS_DATA_DIR . DS . $sDir . DS . $sFileName))
+		if ( !file_exists( BS_DATA_DIR . "/$sDir/$sFileName" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-file-not-exists", $sFileName ) );
-		$sFile = file_get_contents(BS_DATA_DIR . DS . $sDir . DS . $sFileName);
+		$sFile = file_get_contents( BS_DATA_DIR . "/$sDir/$sFileName" );
 		return Status::newGood($sFile);
 	}
 
@@ -199,13 +213,13 @@ class BsFileSystemHelper {
 	 * @return Status (->getValue() for the file's content).
 	 */
 	public static function getCacheFileContent($sFileName, $sDir) {
-		if (self::hasTraversal($sDir . DS . $sFileName))
+		if ( self::hasTraversal( $sDir . "/$sFileName" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
-		if (!is_dir(BS_CACHE_DIR . DS . $sDir))
+		if ( !is_dir( BS_CACHE_DIR . "/$sDir" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-no-directory", $sDir ) );
-		if (!file_exists(BS_CACHE_DIR . DS . $sDir . DS . $sFileName))
+		if ( !file_exists( BS_CACHE_DIR . "/$sDir/$sFileName" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-file-not-exists", $sFileName ) );
-		$sFile = file_get_contents(BS_CACHE_DIR . DS . $sDir . DS . $sFileName);
+		$sFile = file_get_contents( BS_CACHE_DIR . "/$sDir/$sFileName" );
 		return Status::newGood($sFile);
 	}
 
@@ -217,17 +231,45 @@ class BsFileSystemHelper {
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function copyFile($sFileName, $sSource, $sDestination, $bOverwrite = true) {
-		if (self::hasTraversal($sSource . DS . $sFileName) || self::hasTraversal($sDestination . DS . $sFileName))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
-		if (!is_dir(BS_DATA_DIR . DS . $sSource))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sSource ) );
-		if (!is_dir(BS_DATA_DIR . DS . $sDestination))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sDestination ) );
-		if (!file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFileName))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-file-not-exists", $sFileName ) );
-		if (file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFileName) && !$bOverwrite)
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-file-already-exists", $sFileName ) );
-		$bStatus = copy(BS_DATA_DIR . DS . $sSource . DS . $sFileName, BS_DATA_DIR . DS . $sDestination . DS . $sFileName);
+
+		if ( self::hasTraversal( "$sSource/$sFileName" ) || self::hasTraversal( "$sDestination/$sFileName" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-has-path-traversal"
+			));
+		}
+
+		if ( !is_dir( BS_DATA_DIR . "/$sSource" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-no-directory",
+				BS_DATA_DIR . "/$sSource"
+			));
+		}
+
+		if ( !is_dir( BS_DATA_DIR . "/$sDestination" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-no-directory",
+				BS_DATA_DIR . "/$sDestination"
+			));
+		}
+
+		if ( !file_exists( BS_DATA_DIR . "/$sSource/$sFileName" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-file-not-exists",
+				$sFileName
+			));
+		}
+
+		if ( file_exists( BS_DATA_DIR . "/$sSource/$sFileName" ) && !$bOverwrite ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-file-already-exists",
+				$sFileName
+			));
+		}
+
+		$bStatus = copy(
+			BS_DATA_DIR . "/$sSource/$sFileName",
+			BS_DATA_DIR . "/$sDestination/$sFileName"
+		);
 		if ($bStatus)
 			return Status::newGood();
 		else
@@ -243,18 +285,42 @@ class BsFileSystemHelper {
 	 * @return Status
 	 */
 	public static function copyFolder($sFolderName, $sSource, $sDestination, $bOverwrite = true) {
-		if (self::hasTraversal($sSource . DS . $sFolderName) || self::hasTraversal($sDestination . DS . $sFolderName))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
-		if (!is_dir(BS_DATA_DIR . DS . $sSource))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sSource ) );
-		if (!is_dir(BS_DATA_DIR . DS . $sDestination))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sDestination ) );
-		if (!file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFolderName))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-not-exists", $sFolderName ) );
-		if (file_exists(BS_DATA_DIR . DS . $sSource . DS . $sFolderName) && !$bOverwrite)
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-already-exists", $sFolderName ) );
-		$it = new RecursiveDirectoryIterator(BS_DATA_DIR . DS . $sSource . DS . $sFolderName);
-		BsFileSystemHelper::ensureDataDirectory($sDestination . DS . $sFolderName);
+		if ( self::hasTraversal( "$sSource/$sFolderName" ) || self::hasTraversal( "$sDestination/$sFolderName" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-has-path-traversal"
+			));
+		}
+
+		if ( !is_dir( BS_DATA_DIR . "/$sSource" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-no-directory",
+				BS_DATA_DIR . "/$sSource"
+			));
+		}
+
+		if ( !is_dir( BS_DATA_DIR . "/$sDestination" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-no-directory",
+				BS_DATA_DIR . "/$sDestination"
+			));
+		}
+
+		if ( !file_exists( BS_DATA_DIR . "/$sSource/$sFolderName" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-folder-not-exists",
+				$sFolderName
+			));
+		}
+		if ( file_exists( BS_DATA_DIR . "/$sSource/$sFolderName" ) && !$bOverwrite ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-folder-already-exists",
+				$sFolderName
+			));
+		}
+		$it = new RecursiveDirectoryIterator(
+			BS_DATA_DIR . "/$sSource/$sFolderName"
+		);
+		BsFileSystemHelper::ensureDataDirectory( "$sDestination/$sFolderName" );
 		$files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
 		foreach ($files as $file) {
 			if ($file->getFilename() === '.' || $file->getFilename() === '..') {
@@ -263,7 +329,10 @@ class BsFileSystemHelper {
 			if ($file->isDir())
 				mkdir($file->getRealPath(), 0777);
 			if ($file->isFile()) {
-				$bStatus = copy(BS_DATA_DIR . DS . $sSource . DS . $sFolderName . DS . $file->getFileName(), BS_DATA_DIR . DS . $sDestination . DS . $sFolderName . DS . $file->getFileName());
+				$bStatus = copy(
+					BS_DATA_DIR . "/$sSource/$sFolderName/{$file->getFileName()}",
+					BS_DATA_DIR . "/$sDestination/$sFolderName/{$file->getFileName()}"
+				);
 				if (!$bStatus)
 					return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-copy-error", $file->getFileName( ) ));
 			}
@@ -281,11 +350,24 @@ class BsFileSystemHelper {
 	public static function renameFolder($sSource, $sDestination, $bOverwrite = true) {
 		if (self::hasTraversal($sSource) || self::hasTraversal($sDestination))
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
-		if (!is_dir(BS_DATA_DIR . DS . $sSource))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-no-directory", BS_DATA_DIR . DS . $sSource ) );
-		if (file_exists(BS_DATA_DIR . DS . $sDestination) && !$bOverwrite)
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-already-exists", $sDestination ) );
-		$bStatus = rename(BS_DATA_DIR . DS . $sSource, BS_DATA_DIR . DS . $sDestination);
+
+		if ( !is_dir( BS_DATA_DIR . "/$sSource" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-no-directory",
+				BS_DATA_DIR . "/$sSource"
+			));
+		}
+
+		if ( file_exists( BS_DATA_DIR . "/$sDestination" ) && !$bOverwrite ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-folder-already-exists",
+				$sDestination
+			));
+		}
+		$bStatus = rename(
+			BS_DATA_DIR . "/$sSource",
+			BS_DATA_DIR . "/$sDestination"
+		);
 		if ($bStatus)
 			return Status::newGood();
 		else
@@ -299,11 +381,20 @@ class BsFileSystemHelper {
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function deleteFile($sFile, $sDir) {
-		if (self::hasTraversal($sDir . DS . $sFile))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
-		if (!is_dir(BS_DATA_DIR . DS . $sDir))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-not-exists", $sFile ) );
-		$bStatus = unlink(BS_DATA_DIR . DS . $sDir . DS . $sFile);
+		if ( self::hasTraversal( $sDir . "/$sFile" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-has-path-traversal"
+			));
+		}
+
+		if ( !is_dir( BS_DATA_DIR . "/$sDir" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-folder-not-exists",
+				$sFile
+			));
+		}
+
+		$bStatus = unlink( BS_DATA_DIR . "/$sDir/$sFile" );
 		if ($bStatus)
 			return Status::newGood();
 		else
@@ -316,14 +407,21 @@ class BsFileSystemHelper {
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function deleteFolder($sDir, $bIfExists = false) {
-		if ($bIfExists && !file_exists(BS_DATA_DIR . DS . $sDir))
+		if ( $bIfExists && !file_exists( BS_DATA_DIR . "/$sDir" ) ) {
 			return Status::newGood();
+		}
+
 		if (self::hasTraversal($sDir))
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
-		if (!file_exists(BS_DATA_DIR . DS . $sDir))
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-not-exists", $sDir ) );
+
+		if ( !file_exists( BS_DATA_DIR . "/$sDir" ) ) {
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-folder-not-exists",
+				$sDir
+			));
+		}
 		//hint: http://stackoverflow.com/questions/3349753/delete-directory-with-files-in-it
-		$it = new RecursiveDirectoryIterator(BS_DATA_DIR . DS . $sDir);
+		$it = new RecursiveDirectoryIterator( BS_DATA_DIR . "/$sDir" );
 		$files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
 		foreach ($files as $file) {
 			if ($file->getFilename() === '.' || $file->getFilename() === '..') {
@@ -335,7 +433,7 @@ class BsFileSystemHelper {
 				unlink($file->getRealPath());
 			}
 		}
-		rmdir(BS_DATA_DIR . DS . $sDir);
+		rmdir( BS_DATA_DIR . "/$sDir" );
 		return Status::newGood();
 	}
 
@@ -373,7 +471,7 @@ class BsFileSystemHelper {
 		if ( !$oStatus->isGood() )
 			return $oStatus;
 
-		$sTmpName = BS_DATA_DIR . DS . $sDir . DS;
+		$sTmpName = BS_DATA_DIR . "/$sDir/";
 		$sTmpName .= ( $sFileName ) ? $sFileName : $sRemoteFileName;
 		if ( self::hasTraversal( $sTmpName, true ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
@@ -414,7 +512,7 @@ class BsFileSystemHelper {
 		if (!$oStatus->isGood())
 			return $oStatus;
 
-		$sTmpName = BS_DATA_DIR . DS . $sDir . DS;
+		$sTmpName = BS_DATA_DIR . "/$sDir/";
 		$sTmpName .= ($sFileName) ? $sFileName : $sRemoteFileName;
 		if (self::hasTraversal($sTmpName, true))
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
@@ -462,12 +560,18 @@ class BsFileSystemHelper {
 	public static function hasTraversal($sPath, $bIsAbsolute = false) {
 		if (!$sPath)
 			return true; // BS_DATA_DIR without trailing DS. Bail out.
-		$sCheckDataPath = ($bIsAbsolute ? '' : BS_DATA_DIR . DS) . $sPath;
-		$sCheckCachePath = ($bIsAbsolute ? '' : BS_CACHE_DIR . DS) . $sPath;
+		$sCheckDataPath = ( $bIsAbsolute ? '' : BS_DATA_DIR . "/") . $sPath;
+		$sCheckCachePath = ( $bIsAbsolute ? '' : BS_CACHE_DIR . "/" ) . $sPath;
 		if (file_exists($sCheckDataPath)) {
-			return (strpos(realpath($sCheckDataPath), realpath(BS_DATA_DIR . DS)) !== 0);
+			return strpos(
+				realpath( $sCheckDataPath ),
+				realpath( BS_DATA_DIR . "/" )
+			) !== 0;
 		} elseif (file_exists($sCheckCachePath)) {
-			return (strpos(realpath($sCheckCachePath), realpath(BS_CACHE_DIR . DS)) !== 0);
+			return strpos(
+				realpath( $sCheckCachePath ),
+				realpath( BS_CACHE_DIR . "/" )
+			) !== 0;
 		} else {
 			$sPath = self::normalizePath($sCheckDataPath);
 			if( $sPath  === null ) {
@@ -537,7 +641,7 @@ class BsFileSystemHelper {
 	 */
 	public static function saveBase64ToTmp($sFileName, $sFileContent){
 		$sFileName = self::makeTmpFileName($sFileName);
-		$sFileName = wfTempDir() . DS . basename($sFileName);
+		$sFileName = wfTempDir() . "/" . basename( $sFileName );
 
 		$sFileContent = preg_replace("#^data:.*?;base64,#", "", $sFileContent);
 		$sFileContent = str_replace(' ', '+', $sFileContent);
