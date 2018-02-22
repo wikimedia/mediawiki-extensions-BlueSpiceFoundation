@@ -4,7 +4,8 @@
 			"Okras",
 			"Agilight",
 			"Kaganer",
-			"Mailman"
+			"Mailman",
+			"Mouse21"
 		]
 	},
 	"bs-ns_main": "(Страницы)",
@@ -73,5 +74,6 @@
 	"bs-pref-deleteduserimage": "Аватар удалённого участника:",
 	"bs-pref-bspinginterval": "Интервал пинга (в секундах):",
 	"bs-pref-testmode": "Включить тестовый режим",
-	"bs-exttype-bluespice": "Расширения BlueSpice"
+	"bs-exttype-bluespice": "Расширения BlueSpice",
+	"bs-graphicallist-action-preview": "Предпросмотр"
 }

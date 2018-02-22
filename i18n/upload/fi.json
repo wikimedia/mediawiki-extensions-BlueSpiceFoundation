@@ -1,8 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hopea"
+			"Hopea",
+			"Pyscowicz"
 		]
 	},
+	"bs-upload-uploaddialogtitle": "Tallenna tiedosto",
+	"bs-upload-uploadbuttontext": "Selaa",
+	"bs-upload-uploadfilefieldlabel": "Tiedostonimi",
+	"bs-upload-license": "Lisenssi",
+	"bs-upload-uploadwatchthislabel": "Tarkkaile tätä tiedostoa",
+	"bs-upload-uploadignorewarningslabel": "Ohita kaikki varoitukset",
+	"bs-upload-categories": "Luokat",
+	"bs-upload-upload-waitmessage": "Lataus käynnissä ...",
+	"bs-upload-error": "Virhe",
+	"bs-upload-descfilelabel": "Kuvaus",
+	"bs-upload-error-long": "Virhe latausprosessissa",
+	"bs-upload-filetypenotsupported": "Tiedostotyyppi ei ole tuettu",
+	"bs-upload-details": "Tiedot",
 	"bs-upload-uploadwarningdialog-intro": "Seuraavat varoitukset tapahtuivat tiedoston lataamisen aikana."
 }
