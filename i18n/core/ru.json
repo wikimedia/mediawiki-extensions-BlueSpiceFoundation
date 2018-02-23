@@ -8,6 +8,7 @@
 			"Mouse21"
 		]
 	},
+	"bluespicefoundation-desc": "Делает MediaWiki готовое предприятие",
 	"bs-ns_main": "(Страницы)",
 	"bs-ns_all": "(все)",
 	"bs-tab_navigation": "Навигация",
@@ -74,6 +75,18 @@
 	"bs-pref-deleteduserimage": "Аватар удалённого участника:",
 	"bs-pref-bspinginterval": "Интервал пинга (в секундах):",
 	"bs-pref-testmode": "Включить тестовый режим",
+	"bs-tag-input-desc": "Значение содержания элемента",
+	"bs-tag-param-desc": "Значение содержания элемента '$1'",
+	"bs-parser-error-invalid-namespace": "Недопустимое пространство имен: $1",
+	"bs-parser-error-invalid-title": "Недопустимое название: $1",
+	"bs-validator-error-namespace-does-not-exist": "Пространства имен не существует: $1",
+	"bs-validator-error-namespace-on-blacklist": "Пространства имен не разрешено: $1",
+	"bs-validator-error-title-does-not-exist": "Страницы не существует: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Страница не разрешена: $1",
 	"bs-exttype-bluespice": "Расширения BlueSpice",
+	"bs-export-menu-print-text": "Печать",
+	"bs-export-menu-print-title": "Отображает версию страницы для печати",
+	"bs-graphicallist-action-close": "Закрыть",
+	"bs-graphicallist-action-list": "Список",
 	"bs-graphicallist-action-preview": "Предпросмотр"
 }

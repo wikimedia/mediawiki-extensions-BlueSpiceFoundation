@@ -8,7 +8,8 @@
 			"Kareyac",
 			"Alexey zakharenkov",
 			"Facenapalm",
-			"Redredsonia"
+			"Redredsonia",
+			"Mouse21"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -60,9 +61,17 @@
 	"bs-extjs-filter-date-before": "До",
 	"bs-extjs-filter-date-on": "На",
 	"bs-extjs-filter-date-filter": "Фильтр",
+	"bs-extjs-pageexport-dialog-title": "Экспорт страниц",
 	"bs-extjs-pageexport-list-name-label": "Название списка",
 	"bs-extjs-pageexport-list-format-label": "Формат списка",
 	"bs-extjs-pageexport-list-format-plain-label": "Обычный текст",
 	"bs-extjs-pageexport-list-format-link-label": "Ссылка",
-	"bs-extjs-pageexport-overwrite-label": "Перезаписать"
+	"bs-extjs-pageexport-overwrite-label": "Перезаписать",
+	"bs-extjs-pageexport-general-error": "Экспорт ошибка",
+	"bs-extjs-pageexport-pagecollection-prefix": "Сбор страниц",
+	"bs-extjs-pageexport-success": "Успешный экспорт",
+	"bs-extjs-pageexport-success-text": "Сбор страниц экспортируется в $1",
+	"bs-extjs-pageexport-required-text": "Имя списка не может быть пустым и должно быть выбрано хотя бы одна страница",
+	"bs-extjs-export-search-summary-text": "Создано PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Недопустимое имя списка."
 }

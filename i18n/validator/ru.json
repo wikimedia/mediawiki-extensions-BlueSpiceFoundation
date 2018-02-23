@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Okras",
-			"Kaganer"
+			"Kaganer",
+			"Mouse21"
 		]
 	},
 	"bs-validator-email-validation-approved": "Адрес электронной почты был успешно проверен.",
@@ -14,5 +15,13 @@
 	"bs-validator-set-validation-approved": "$1 был успешно проверен.",
 	"bs-validator-set-validation-not-approved": "Для $1 {{PLURAL:$3|разрешены только следующие значения|разрешено только одно из следующих значений}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Указано слишком маленькое значение. Оно не должно быть меньше $1.",
-	"bs-validator-integer-range-validation-too-high": "Указано слишком большое значение. Оно не должно быть больше $1."
+	"bs-validator-integer-range-validation-too-high": "Указано слишком большое значение. Оно не должно быть больше $1.",
+	"bs-validator-value-not-recognized": "Значение не может быть обработано",
+	"bs-validator-invalid-boolean": "Недействительный логический",
+	"bs-validator-invalid-float": "Недействительный плавающий",
+	"bs-validator-invalid-integer": "Недействительное целое число",
+	"bs-validator-invalid-string": "Недействительная строка",
+	"bs-validator-invalid-coordinate": "Недействительная координата",
+	"bs-validator-invalid-parameter": "Этот параметр не разрешен",
+	"bs-validator-missing-required": "Этот параметр требуется"
 }
