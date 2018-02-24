@@ -17,7 +17,7 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 	public function execute() {
 		global $IP;
 
-		if( !( $this->getOption( 'source' ) === NULL ) ){
+		if( !( $this->getOption( 'source' ) === null ) ){
 			$sSourceDir = $this->getOption( 'source' );
 		}
 		else{
@@ -25,7 +25,7 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 		}
 
 
-		if( !( $this->getOption( 'target' ) === NULL ) ){
+		if( !( $this->getOption( 'target' ) === null ) ){
 			$sTargetDir = $this->getOption( 'target' );
 		}
 		else{

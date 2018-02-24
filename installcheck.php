@@ -347,7 +347,7 @@ echo date( 'r' ) . "\n";
 echo( "</pre>" );
 
 echo( "<h3>PHP version:</h3>" );
-echo phpversion() . " (" . php_sapi_name() . ")";
+echo phpversion() . " (" . PHP_SAPI . ")";
 
 // works for PHP 5 >= 5.2.1
 if (version_compare(PHP_VERSION, '5.2.1', '>=')) {

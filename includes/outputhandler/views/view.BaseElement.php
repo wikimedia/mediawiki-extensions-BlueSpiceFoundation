@@ -308,7 +308,7 @@ class ViewBaseElement {
 					$params[$token] = $this->_mPresentDataset[$token];
 				}
 				else {
-					$params[$token] = NULL;
+					$params[$token] = null;
 				}
 			}
 			return $this->_mItems[$item]->execute( $params );

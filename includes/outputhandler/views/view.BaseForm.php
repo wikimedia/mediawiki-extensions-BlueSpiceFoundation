@@ -19,7 +19,7 @@ class ViewBaseForm extends ViewBaseElement {
 	protected $_mEnctype		= 'multipart/form-data';
 	protected $_mRenderAsExt	= false;
 	protected $_mActionUrl		= '';
-	protected $_mValidationUrl	= NULL;
+	protected $_mValidationUrl	= null;
 
 	public function  __construct() {
 		parent::__construct();

@@ -45,7 +45,7 @@ abstract class BSCoreGetUserMiniProfileBeforeInit extends Hook {
 	 *
 	 * @var array
 	 */
-	Protected $params = null;
+	protected $params = null;
 
 	/**
 	 * Located in \BsCore::getUserMiniProfile. Before the created user mini
