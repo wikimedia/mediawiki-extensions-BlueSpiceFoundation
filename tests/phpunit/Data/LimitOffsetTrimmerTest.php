@@ -8,7 +8,7 @@ use BlueSpice\Data\LimitOffsetTrimmer;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class LimitOffsetTrimmerTest extends \PHPUnit_Framework_TestCase {
+class LimitOffsetTrimmerTest extends \PHPUnit\Framework\TestCase {
 
 	protected $testDataSets = [
 		//Page 1

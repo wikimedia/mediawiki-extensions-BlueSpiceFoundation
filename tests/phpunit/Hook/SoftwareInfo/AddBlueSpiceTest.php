@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests\SoftwareInfo;
 
-class AddBlueSpiceTest extends \PHPUnit_Framework_TestCase {
+class AddBlueSpiceTest extends \PHPUnit\Framework\TestCase {
 
 	public function testCanConstruct() {
 

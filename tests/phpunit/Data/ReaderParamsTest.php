@@ -8,7 +8,7 @@ use \BlueSpice\Data\ReaderParams;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class ReaderParamsTest extends \PHPUnit_Framework_TestCase {
+class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 	public function testInitFromArray() {
 		$params = new ReaderParams([
 			'query' => 'Some query',

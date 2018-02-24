@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests\WikiText;
 
-class TemplateTest extends \PHPUnit_Framework_TestCase {
+class TemplateTest extends \PHPUnit\Framework\TestCase {
 	public function testSimpleIndexedParams() {
 		$template = new \BlueSpice\WikiText\Template( 'TestTemplate', [
 			'Value 1', 'Value 2', 'Value 3'

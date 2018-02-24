@@ -10,7 +10,7 @@ use BlueSpice\Data\Record;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class FiltererTest extends \PHPUnit_Framework_TestCase {
+class FiltererTest extends \PHPUnit\Framework\TestCase {
 	protected $testDataSets = [
 		[
 			'field1' => 1,

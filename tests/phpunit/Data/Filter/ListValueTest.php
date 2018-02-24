@@ -8,7 +8,7 @@ use BlueSpice\Data\Record;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class ListValueTest extends \PHPUnit_Framework_TestCase {
+class ListValueTest extends \PHPUnit\Framework\TestCase {
 	public function testPositive() {
 		$filter = new \BlueSpice\Data\Filter\ListValue( [
 			'field' => 'field1',

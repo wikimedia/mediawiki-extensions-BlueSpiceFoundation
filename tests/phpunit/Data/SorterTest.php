@@ -10,7 +10,7 @@ use BlueSpice\Data\Record;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class SorterTest extends \PHPUnit_Framework_TestCase {
+class SorterTest extends \PHPUnit\Framework\TestCase {
 	protected $testDataSets = [
 		[
 			'field1' => 1,

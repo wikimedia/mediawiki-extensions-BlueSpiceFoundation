@@ -9,7 +9,7 @@ use BlueSpice\Data\Record;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class DateTest extends \PHPUnit_Framework_TestCase {
+class DateTest extends \PHPUnit\Framework\TestCase {
 	public function testPositive() {
 		$filter = new Filter\Date( [
 			'field' => 'field1',

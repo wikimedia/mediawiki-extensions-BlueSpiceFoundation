@@ -54,7 +54,6 @@
 		<exclude name="MediaWiki.Usage.DirUsage.FunctionFound" />
 		<exclude name="MediaWiki.Usage.ForbiddenFunctions.each" />
 		<exclude name="MediaWiki.Usage.ForbiddenFunctions.join" />
-		<exclude name="MediaWiki.Usage.PHPUnitClassUsage.NotNamespaced" />
 		<exclude name="MediaWiki.Usage.SuperGlobalsUsage.SuperGlobals" />
 		<exclude name="MediaWiki.VariableAnalysis.ForbiddenGlobalVariables.ForbiddenGlobal$wgTitle" />
 		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgExtensionFunctions" />

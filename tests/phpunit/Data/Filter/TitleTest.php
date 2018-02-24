@@ -8,7 +8,7 @@ use BlueSpice\Data\Record;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class TitleTest extends \PHPUnit_Framework_TestCase {
+class TitleTest extends \PHPUnit\Framework\TestCase {
 	public function testPositive() {
 		$filter = new \BlueSpice\Data\Filter\Title( [
 			'field' => 'field2',

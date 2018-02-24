@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests\HtmlPageLinkRendererEnd;
 
-class AddDataTitleTest extends \PHPUnit_Framework_TestCase {
+class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 
 	public function testCanConstruct() {
 

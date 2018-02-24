@@ -8,7 +8,7 @@ use BlueSpice\Data\Record;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class NumericTest extends \PHPUnit_Framework_TestCase {
+class NumericTest extends \PHPUnit\Framework\TestCase {
 	public function testPositive() {
 		$filter = new \BlueSpice\Data\Filter\Numeric( [
 			'field' => 'field1',

@@ -9,7 +9,7 @@ use BlueSpice\Data\Record;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class BooleanTest extends \PHPUnit_Framework_TestCase {
+class BooleanTest extends \PHPUnit\Framework\TestCase {
 	public function testPositive() {
 		$filter = new Filter\Boolean( [
 			'field' => 'field1',
