@@ -76,4 +76,3 @@ class BSApiWikiPageStoreTest extends BSApiExtJSStoreTestBase {
 		);
 	}
 }
-

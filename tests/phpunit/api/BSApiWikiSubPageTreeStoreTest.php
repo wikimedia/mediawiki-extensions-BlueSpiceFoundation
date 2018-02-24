@@ -118,4 +118,3 @@ class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 		return 'children';
 	}
 }
-

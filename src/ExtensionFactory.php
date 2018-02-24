@@ -154,4 +154,3 @@ class ExtensionFactory {
 		return $info;
 	}
 }
-

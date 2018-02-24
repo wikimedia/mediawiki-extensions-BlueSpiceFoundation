@@ -91,4 +91,3 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 		];
 	}
 }
-

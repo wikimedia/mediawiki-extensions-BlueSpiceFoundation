@@ -80,8 +80,6 @@
 		<exclude name="MediaWiki.WhiteSpace.SpaceyParenthesis.UnnecessarySpaceBetweenParentheses" />
 		<exclude name="PSR2.Classes.PropertyDeclaration.Underscore" />
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
-		<exclude name="PSR2.Files.EndFileNewline.NoneFound" />
-		<exclude name="PSR2.Files.EndFileNewline.TooMany" />
 		<exclude name="PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose" />
 		<exclude name="PSR2.Methods.MethodDeclaration.AbstractAfterVisibility" />
 		<exclude name="PSR2.Methods.MethodDeclaration.Underscore" />

@@ -76,4 +76,3 @@ class Record implements IRecord, \JsonSerializable {
 	}
 
 }
-

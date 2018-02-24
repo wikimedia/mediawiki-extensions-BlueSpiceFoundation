@@ -42,4 +42,3 @@ class Title extends Range {
 	}
 
 }
-

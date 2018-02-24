@@ -39,4 +39,3 @@ class ListValue extends Filter {
 		return true;
 	}
 }
-

@@ -81,4 +81,3 @@ class BSApiGroupStoreTest extends BSApiExtJSStoreTestBase {
 		);
 	}
 }
-

@@ -34,4 +34,3 @@ class BSApiTestCase extends ApiTestCase {
 		return parent::insertPage( $pageName, $text, $namespace );
 	}
 }
-

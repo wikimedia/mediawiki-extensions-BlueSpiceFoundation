@@ -13,4 +13,3 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 		return true;
 	}
 }
-
