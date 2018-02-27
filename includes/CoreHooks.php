@@ -155,12 +155,11 @@ class BsCoreHooks {
 	 * @return array permission data for requested module or null on error
 	 */
 	public static function addJsConfigVarsUserTaskPermissions( OutputPage &$out, $action ){
-		$config = BlueSpice\Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 
 		$oRequest = $out->getRequest();
 		$oUser = $out->getUser();
-		if( $oUser->getId() == 0 || !$oUser->isAllowed( 'read' ) || $config->get( 'ReadOnly') !== null ) {
-			return new stdClass(); //do nothing for not logged in user, prevent error with read permission for anon
+		if( $oUser->getId() == 0 || !$oUser->isAllowed( 'read' ) ) {
+			return null; //do nothing for not logged in user, prevent error with read permission for anon
 		}
 
 		//workaround for internal api call:
@@ -184,7 +183,7 @@ class BsCoreHooks {
 		if( $data->success ) {
 			return $data->payload;
 		}else{
-			return new stdClass();
+			return null;
 		}
 
 	}
