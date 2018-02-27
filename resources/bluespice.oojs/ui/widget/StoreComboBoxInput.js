@@ -116,7 +116,7 @@ bs.ui.widget.StoreComboBoxInput.prototype.cleanUpValue = function ( value ) {
  *
  * @inheritdoc
  */
-bs.ui.widget.StoreComboBoxInput.prototype.getSelectedItem = function () {
+bs.ui.widget.StoreComboBoxInput.prototype.findSelectedItem = function () {
 	return this.selectedItem;
 };
 
@@ -128,7 +128,7 @@ bs.ui.widget.StoreComboBoxInput.prototype.getSelectedValue = function () {
 	if( this.valueField === '' ) {
 		return this.getValue();
 	}
-	var item = this.getSelectedItem();
+	var item = this.findSelectedItem();
 	return item ? item[this.valueField] : null;
 };
 
