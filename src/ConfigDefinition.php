@@ -85,9 +85,9 @@ abstract class ConfigDefinition implements ISetting {
 
 	public function getPaths() {
 		return [
-			static::MAIN_PATH_TYPE . '/' . static::TYPE_SYSTEM,
-			static::MAIN_PATH_EXTENSION . '/BlueSpiceFoundation',
-			static::MAIN_PATH_PACKAGE . '/BlueSpice',
+			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_SYSTEM . '/' . static::EXTENSION_FOUNDATION,
+			static::MAIN_PATH_EXTENSION . '/' . static::EXTENSION_FOUNDATION . '/' . static::FEATURE_SYSTEM ,
+			static::MAIN_PATH_PACKAGE . '/' . static::PACKAGE_FREE . '/' . static::EXTENSION_FOUNDATION,
 		];
 	}
 
@@ -105,7 +105,8 @@ abstract class ConfigDefinition implements ISetting {
 			'fieldname' => $this->getName(),
 			'default' => $this->getValue(),
 			'id' => $this->makeID(),
-			'label-message' => $this->getLabelMessageKey()
+			'label-message' => $this->getLabelMessageKey(),
+			'parent' => new \HTMLFormEx( [] ),
 		];
 	}
 

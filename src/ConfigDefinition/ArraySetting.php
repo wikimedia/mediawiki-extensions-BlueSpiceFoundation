@@ -10,7 +10,11 @@ abstract class ArraySetting extends \BlueSpice\ConfigDefinition {
 
 	protected function makeFormFieldParams() {
 		$params = parent::makeFormFieldParams();
-		$params['options'] = $this->getValue();
+		$params['options'] = $this->getOptions();
 		return $params;
+	}
+
+	protected function getOptions() {
+		return $this->getValue();
 	}
 }
