@@ -469,8 +469,18 @@
 		Ext.Msg.prompt( sTitle, sMessage, function( btn, text ){
 			if ( btn == 'ok' ){
 				var oSelect = document.getElementById( 'mw-input-' + sFieldName );
-				if ( oSelect === null ) {
+				if ( !oSelect ) {
 					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
+				}
+				if ( !oSelect ) {
+					oSelect = document.getElementsByName(
+						oSrc.getAttribute( 'targetfield' )
+					)[0];
+				}
+				if ( !oSelect ) {
+					oSelect = document.getElementsByName(
+						oSrc.getAttribute( 'targetfield' ) + '[]'
+					)[0];
 				}
 
 				oSelect.options[oSelect.options.length] = new Option( text, text, false, true );
