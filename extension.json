@@ -43,6 +43,19 @@
 				"bs_navigation_site": "\\BlueSpice\\Renderer\\TreeNavigation",
 				"bs_navigation_globalactions_general": "\\BlueSpice\\Renderer\\SimpleList",
 				"bs_navigation_globalactions_admin": "\\BlueSpice\\Renderer\\SimpleList"
+			},
+			"SettingPathRegistry": {
+				"feature": "bs-setting-path-feature",
+				"extension": "bs-setting-path-extension",
+				"package": "bs-setting-path-package",
+				"system": "bs-setting-path-system",
+				"dataanalysis": "bs-setting-path-dataanalysis",
+				"editor": "bs-setting-path-editor",
+				"search": "bs-setting-path-search",
+				"personalisation": "bs-setting-path-personalisation",
+				"skinning": "bs-setting-path-skinning",
+				"customizing": "bs-setting-path-customizing",
+				"contentstructuring": "bs-setting-path-contentstructuring"
 			}
 		}
 	},
@@ -461,6 +474,9 @@
 		],
 		"BlueSpice.Installer": [
 			"i18n/installer"
+		],
+		"BlueSpice.Settings": [
+			"i18n/settings"
 		]
 	},
 	"ExtensionMessagesFiles": {

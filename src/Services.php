@@ -98,4 +98,12 @@ class Services extends ServicesDecorator {
 	public function getBSSkinDataRendererFactory() {
 		return $this->getService( 'BSSkinDataRendererFactory' );
 	}
+
+	/**
+	 *
+	 * @return SettingPathFactory
+	 */
+	public function getBSSettingPathFactory() {
+		return $this->getService( 'BSSettingPathFactory' );
+	}
 }

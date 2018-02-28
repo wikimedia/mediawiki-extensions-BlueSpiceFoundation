@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patric Wirth <wirth@hallowelt.com>"
+		]
+	},
+	"bs-setting-path-feature": "Feature",
+	"bs-setting-path-extension": "Extension",
+	"bs-setting-path-package": "Package",
+	"bs-setting-path-system": "System",
+	"bs-setting-path-dataanalysis": "Data analysis",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Searching and Navigation",
+	"bs-setting-path-personalisation": "Personalization",
+	"bs-setting-path-skinning": "Skinning",
+	"bs-setting-path-customizing": "Customizing",
+	"bs-setting-path-contentstructuring": "Content structuring"
+}
