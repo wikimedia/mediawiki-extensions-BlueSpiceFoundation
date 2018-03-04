@@ -40,9 +40,9 @@ class UserProfileImage extends Module {
 	 */
 	protected function extractParams( $params ) {
 		parent::extractParams( $params );
-		if( !\User::newFromName( $this->params[static::USERNAME] ) ) {
+		if( empty( $this->params[static::USERNAME] ) ) {
 			throw new \MWException(
-				"Invalid username: {$this->params[static::USERNAME]}"
+				"Empty username parameter"
 			);
 		}
 	}
@@ -52,7 +52,7 @@ class UserProfileImage extends Module {
 	 */
 	public function getFile() {
 		$this->user = \User::newFromName( $this->params[static::USERNAME] );
-		if( $this->user->isAnon() ) {
+		if( !$this->user || $this->user->isAnon() ) {
 			return new AnonImage( $this );
 		}
 		return new DefaultImage( $this );
