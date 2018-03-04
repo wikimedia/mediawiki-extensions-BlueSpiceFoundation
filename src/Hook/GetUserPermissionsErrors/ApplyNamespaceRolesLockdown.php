@@ -20,7 +20,7 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 		if( empty( $this->namespaceRolesLockdown ) ) {
 			return true;
 		}
-		if( $this->title->isCssJsSubpage() ) {
+		if( $this->title->isUserConfigPage() ) {
 			return true;
 		}
 
