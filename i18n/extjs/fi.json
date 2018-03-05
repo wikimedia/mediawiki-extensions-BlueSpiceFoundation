@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stryn"
+			"Stryn",
+			"Pyscowicz"
 		]
 	},
 	"bs-extjs-cancel": "Peruuta",
 	"bs-extjs-yes": "Kyllä",
+	"bs-extjs-no": "Ei",
 	"bs-extjs-save": "Tallenna",
 	"bs-extjs-delete": "Poista",
 	"bs-extjs-add": "Lisää",
@@ -17,5 +19,7 @@
 	"bs-extjs-pageSize": "Sivun koko",
 	"bs-extjs-actions-column-header": "Toiminnot",
 	"bs-extjs-warning": "Varoitus",
-	"bs-extjs-saving": "tallennetaan..."
+	"bs-extjs-saving": "tallennetaan...",
+	"bs-extjs-filter-bool-yes": "kyllä",
+	"bs-extjs-filter-bool-no": "ei"
 }
