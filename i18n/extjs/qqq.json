@@ -66,6 +66,7 @@
 	"bs-extjs-pageexport-overwrite-label": "Label text indicating link format for export list\n{{Identical|Overwrite}}",
 	"bs-extjs-pageexport-general-error": "Text for general error in export process",
 	"bs-extjs-pageexport-pagecollection-prefix": "Prefix for naming page collections created by exporting search results",
+	"bs-pagecollection-prefix": "Prefix for naming page collections created by exporting search results",
 	"bs-extjs-pageexport-success": "Dialog title when export was sucessful",
 	"bs-extjs-pageexport-success-text": "Content of dialog when export was sucessful",
 	"bs-extjs-pageexport-required-text": "Dialog text when required fields are not filled",

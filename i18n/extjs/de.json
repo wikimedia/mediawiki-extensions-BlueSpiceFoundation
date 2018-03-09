@@ -63,6 +63,7 @@
 	"bs-extjs-pageexport-overwrite-label": "Überschreiben",
 	"bs-extjs-pageexport-general-error": "Exportfehler",
 	"bs-extjs-pageexport-pagecollection-prefix": "Seitensammlung",
+	"bs-pagecollection-prefix": "Seitensammlung",
 	"bs-extjs-pageexport-success": "Export erfolgreich",
 	"bs-extjs-pageexport-success-text": "Seitensammlung nach $1 exportiert",
 	"bs-extjs-pageexport-required-text": "Der Listenname darf nicht leer sein und es muss mindestens eine Seite ausgewählt werden",
