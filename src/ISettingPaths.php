@@ -14,6 +14,7 @@ interface ISettingPaths {
 	const FEATURE_PERSONALISATION = 'personalisation';
 	const FEATURE_SKINNING = 'skinning';
 	const FEATURE_CONTENT_STRUCTURING = 'contentstructuring';
+	const FEATURE_COMMUNICATION = 'communication';
 
 	const PACKAGE_FREE = 'BlueSpice Free';
 	const PACKAGE_PRO = 'BlueSpice Pro';

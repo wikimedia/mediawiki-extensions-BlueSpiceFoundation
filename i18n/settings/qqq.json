@@ -14,5 +14,6 @@
 	"bs-setting-path-personalisation": "\"../personalisation/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Personalization}}",
 	"bs-setting-path-skinning": "\"../skinning/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Skinning}}",
 	"bs-setting-path-customizing": "\"../customizing/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Customizing}}",
-	"bs-setting-path-contentstructuring": "\"../contentstructuring/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Content structuring}}"
+	"bs-setting-path-contentstructuring": "\"../contentstructuring/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Content structuring}}",
+	"bs-setting-path-communication": "\"../communication/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Communication}}"
 }
