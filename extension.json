@@ -55,7 +55,8 @@
 				"personalisation": "bs-setting-path-personalisation",
 				"skinning": "bs-setting-path-skinning",
 				"customizing": "bs-setting-path-customizing",
-				"contentstructuring": "bs-setting-path-contentstructuring"
+				"contentstructuring": "bs-setting-path-contentstructuring",
+				"communication": "bs-setting-path-communication"
 			}
 		}
 	},
