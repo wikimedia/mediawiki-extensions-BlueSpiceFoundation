@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patric Wirth <wirth@hallowelt.com>"
+		]
+	},
+	"bs-setting-path-feature": "\"feature/..\" main section in a settings path, used for sorting and filtering\n{{Identical|Feature}}",
+	"bs-setting-path-extension": "\"extension/..\" main section in a settings path, used for sorting and filtering\n{{Identical|Extension}}",
+	"bs-setting-path-package": "\"package/..\" main section in a settings path, used for sorting and filtering\n{{Identical|Package}}",
+	"bs-setting-path-system": "\"../system/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|System}}",
+	"bs-setting-path-dataanalysis": "\"../dataanalysis/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Data analysis}}",
+	"bs-setting-path-editor": "\"../editor/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Editor}}",
+	"bs-setting-path-search": "\"../search/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Searching and Navigation}}",
+	"bs-setting-path-personalisation": "\"../personalisation/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Personalization}}",
+	"bs-setting-path-skinning": "\"../skinning/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Skinning}}",
+	"bs-setting-path-customizing": "\"../customizing/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Customizing}}",
+	"bs-setting-path-contentstructuring": "\"../contentstructuring/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Content structuring}}"
+}

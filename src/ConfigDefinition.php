@@ -2,7 +2,7 @@
 
 namespace BlueSpice;
 
-abstract class ConfigDefinition implements ISetting {
+abstract class ConfigDefinition implements ISetting, ISettingPaths {
 
 	/**
 	 *

@@ -105,5 +105,16 @@ return [
 			$registry,
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
-	}
+	},
+
+	'BSSettingPathFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationSettingPathRegistry'
+		);
+
+		return new \BlueSpice\SettingPathFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	},
 ];
