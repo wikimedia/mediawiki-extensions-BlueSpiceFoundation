@@ -56,7 +56,8 @@
 				"skinning": "bs-setting-path-skinning",
 				"customizing": "bs-setting-path-customizing",
 				"contentstructuring": "bs-setting-path-contentstructuring",
-				"communication": "bs-setting-path-communication"
+				"communication": "bs-setting-path-communication",
+				"administration": "bs-setting-path-administration"
 			}
 		}
 	},
