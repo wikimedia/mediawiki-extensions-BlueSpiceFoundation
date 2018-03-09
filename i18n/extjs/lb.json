@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Les Meloures"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -10,7 +11,7 @@
 	"bs-extjs-no": "Neen",
 	"bs-extjs-save": "Späicheren",
 	"bs-extjs-delete": "Läschen",
-	"bs-extjs-add": "Dobäisetzen",
+	"bs-extjs-add": "Derbäisetzen",
 	"bs-extjs-remove": "Ewechhuelen",
 	"bs-extjs-edit": "Änneren",
 	"bs-extjs-copy": "Kopéieren",
