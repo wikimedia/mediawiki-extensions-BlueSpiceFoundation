@@ -203,7 +203,7 @@
 				"bs-extjs-pageexport-list-format-link-label",
 				"bs-extjs-pageexport-overwrite-label",
 				"bs-extjs-pageexport-general-error",
-				"bs-extjs-pageexport-pagecollection-prefix",
+				"bs-pagecollection-prefix",
 				"bs-extjs-pageexport-success",
 				"bs-extjs-pageexport-success-text",
 				"bs-extjs-pageexport-required-text",
