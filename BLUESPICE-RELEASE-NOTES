@@ -77,7 +77,7 @@ This is a stable release.
 * Compatibility: Removed deprecated ContextActive for SecureFilestore
 * Compatibility: Replaced deprecated BsCore::getUserDisplayName with BsUserHelper::getUserDisplayName
 * Compatibility: WigetBar deprecation - removed call to widgetbar hook
-* Compatiblity: Replaced &$this with $this
+* Compatibility: Replaced &$this with $this
 * Components: Add support for links with colons in Widgets
 * Components: Added 'data-bs-title' attribute to images
 * Components: Added i18n messages for Date/DateTime grid filter
@@ -791,9 +791,9 @@ This is a stable release.
 * Blog: fix rss registration, link creation function was wrong
 * Checklist: SMW integration
 * Compatibility: move registration to special callback function to make setup backward compatible
-* Compatiblity: add composer autoloading
-* Compatiblity: Replace ArticleSave hook usage
-* Compatiblity: Replace ArticleSaveComplete hook usage
+* Compatibility: add composer autoloading
+* Compatibility: Replace ArticleSave hook usage
+* Compatibility: Replace ArticleSaveComplete hook usage
 * CountThings: added mode parameter alias for backwards compatibility.
 * Dashboards: Fixed syntax error
 * ExtendedEditBar: Fixed ids for testing

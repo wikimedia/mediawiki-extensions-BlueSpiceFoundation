@@ -247,7 +247,7 @@ This is a beta release and not recommende for use in production
 * Compatibility: Remove usage of Title::newFromRedirectRecurse()
 * Compatibility: Stop using $wgTitle, no need to be the global
 * Compatibility: Use __METHOD__ for DB begin/commit calls
-* Compatiblity: Fix case of Html class
+* Compatibility: Fix case of Html class
 * DefaultSettings: Added xml and svg as default allowed file types
 * DefaultSettings: disabled thumb.php
 * Documentation: Pretty urls on IIS
@@ -1276,7 +1276,7 @@ BlueSpice 2.23.0 is a minor and maintenance release.
 * Resized profile image
 * New API base class for use with ExtJS stores
 * Minor profiling fix
-* Restored compatiblity to mw 1.22
+* Restored compatibility to mw 1.22
 * Fixed action buttons in CRUDGridPanel
 * Added TitleCombo for dialogs
 * Removed strict mode, reset caller to null in some cases
