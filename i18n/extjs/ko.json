@@ -9,7 +9,8 @@
 			"Hwangjy9",
 			"SeoJeongHo",
 			"Ykhwong",
-			"Ellif"
+			"Ellif",
+			"In2acous"
 		]
 	},
 	"bs-extjs-ok": "확인",
@@ -59,6 +60,7 @@
 	"bs-extjs-pageexport-overwrite-label": "덮어쓰기",
 	"bs-extjs-pageexport-general-error": "내보내기 오류",
 	"bs-extjs-pageexport-pagecollection-prefix": "문서 모음집",
+	"bs-pagecollection-prefix": "문서 모음집",
 	"bs-extjs-pageexport-success": "내보내기 성공",
 	"bs-extjs-pageexport-success-text": "문서 모음집을 $1로 내보냈습니다",
 	"bs-extjs-pageexport-required-text": "목록 이름은 비워둘 수 없으며 적어도 하나의 문서를 선택해야 합니다",

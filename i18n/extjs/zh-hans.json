@@ -63,6 +63,7 @@
 	"bs-extjs-pageexport-overwrite-label": "覆盖",
 	"bs-extjs-pageexport-general-error": "导出错误",
 	"bs-extjs-pageexport-pagecollection-prefix": "页面收藏",
+	"bs-pagecollection-prefix": "页面收藏",
 	"bs-extjs-pageexport-success": "导出成功",
 	"bs-extjs-pageexport-success-text": "页面收藏已导出至$1",
 	"bs-extjs-pageexport-required-text": "列表名称不能为空，并且必须至少选择一个页面",

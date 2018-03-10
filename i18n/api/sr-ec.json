@@ -10,6 +10,6 @@
 	"apihelp-bs-task-param-schema": "Приказ JSON шеме за радне параметре",
 	"apihelp-bs-task-param-examples": "Приказ примера радних параметара",
 	"bs-api-task-taskData-page-id": "ID непостојеће вики странице",
-	"bs-api-task-taskData-page-title": "Исправан наслов вики странице",
-	"bs-api-task-wikipagetasks-taskData-categories": "Низ стрингова. Вредности морају да буду исправна имена категорија."
+	"bs-api-task-taskData-page-title": "Валидан наслов вики странице",
+	"bs-api-task-wikipagetasks-taskData-categories": "Низ стрингова. Вредности морају да буду валидна имена категорија."
 }

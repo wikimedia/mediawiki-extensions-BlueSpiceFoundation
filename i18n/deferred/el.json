@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"bs-deferred-action-status-pending": "Σε εκκρεμότητα.",
+	"bs-deferred-action-status-running": "Εκτέλεση σε εξέλιξη...",
+	"bs-deferred-action-status-done": "Έγινε.",
+	"bs-deferred-action-status-error": "Αποτυχία.",
+	"bs-deferred-action-apicopypage-description": "Αντιγραφή του \"$1\" στο \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Επεξεργασία \"$1\".",
+	"bs-deferred-batch-progress-desc": "Πρόοδος",
+	"bs-deferred-batch-actions": "Ενέργειες",
+	"bs-deferred-batch-description": "Περιγραφή",
+	"bs-deferred-batch-status": "Κατάσταση",
+	"bs-deferred-action-apiaddcategories-description": "Πρόσθεση κατηγοριών στο '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Αφαίρεση κατηγοριών από το '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Ορισμός κατηγοριών στο '$1'.",
+	"bs-deferred-action-apimovepage-description": "Μετακίνηση του \"$1\" στο \"$2\".",
+	"bs-deferred-action-apideletepage-description": "Διαγραφή του \"$1\"."
+}

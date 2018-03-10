@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"bs-filerepo-labelupload": "Ανέβασμα",
+	"bs-filerepo-labelfilter": "Φιλτράρισμα",
+	"bs-filerepo-headerfilename": "Όνομα αρχείου",
+	"bs-filerepo-headerfilesize": "Μέγεθος",
+	"bs-filerepo-headerpagecategories": "Κατηγορίες",
+	"bs-filerepo-headerfilewidth": "Πλάτος",
+	"bs-filerepo-headerfileheight": "Ύψος",
+	"bs-filerepo-headerfilemimetype": "Τύπος MIME",
+	"bs-filerepo-headerfileusertext": "Χρήστης",
+	"bs-filerepo-headerfileextension": "Επέκταση",
+	"bs-filerepo-headerfiletimestamp": "Ανέβηκε",
+	"bs-filerepo-headerfilemediatype": "Τύπος μέσου",
+	"bs-filerepo-headerfiledescription": "Περιγραφή",
+	"bs-filerepo-headerfilethumbnail": "Μικρογραφία",
+	"bs-filerepo-yes": "Ναι",
+	"bs-filerepo-no": "Όχι",
+	"bs-filerepo-pagesize": "Μέγεθος σελίδας"
+}

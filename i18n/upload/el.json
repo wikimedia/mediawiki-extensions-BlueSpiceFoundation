@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Ανέβασμα αρχείου",
+	"bs-upload-uploadbuttontext": "Αναζήτηση",
+	"bs-upload-uploadfilefieldlabel": "Όνομα αρχείου",
+	"bs-upload-uploadfileemptytext": "Εισαγωγή νέου αρχείου σε εξέλιξη...",
+	"bs-upload-uploaddestfilelabel": "Όνομα αρχείου προορισμού",
+	"bs-upload-allowedfiletypesare": "Οι έγκυροι τύποι αρχείων είναι:",
+	"bs-upload-license": "Άδεια",
+	"bs-upload-uploadwatchthislabel": "Παρακολούθηση αυτού του αρχείου",
+	"bs-upload-uploadignorewarningslabel": "Αγνόηση οποιωνδήποτε προειδοποιήσεων",
+	"bs-upload-categories": "Κατηγορίες",
+	"bs-upload-upload-waitmessage": "Ανέβασμα σε εξέλιξη...",
+	"bs-upload-error": "Σφάλμα",
+	"bs-upload-descfilelabel": "Περιγραφή",
+	"bs-upload-error-long": "Σφάλμα στην διαδικασία μεταφόρτωσης",
+	"bs-upload-filetypenotsupported": "Ο τύπος αρχείου δεν υποστηρίζεται",
+	"bs-upload-details": "Λεπτομέρειες",
+	"bs-upload-uploadwarningdialog-title": "Ανέβασμα αρχείου: Προειδοποιήσεις",
+	"bs-upload-uploadwarningdialog-warning-exists": "Ένα αρχείο με το όνομα \"$1\" υπάρχει ήδη"
+}
