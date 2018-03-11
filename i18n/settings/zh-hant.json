@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"bs-setting-path-feature": "功能",
+	"bs-setting-path-extension": "擴充",
+	"bs-setting-path-package": "套件",
+	"bs-setting-path-system": "系統",
+	"bs-setting-path-dataanalysis": "資料分析",
+	"bs-setting-path-editor": "編輯器",
+	"bs-setting-path-search": "搜尋與導航",
+	"bs-setting-path-personalisation": "個人化",
+	"bs-setting-path-skinning": "忽略",
+	"bs-setting-path-customizing": "自定義",
+	"bs-setting-path-contentstructuring": "內容結構化",
+	"bs-setting-path-communication": "傳達",
+	"bs-setting-path-administration": "管理"
+}

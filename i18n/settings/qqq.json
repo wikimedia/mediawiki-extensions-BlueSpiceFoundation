@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patric Wirth <wirth@hallowelt.com>"
+			"Patric Wirth <wirth@hallowelt.com>",
+			"Wladek92"
 		]
 	},
 	"bs-setting-path-feature": "\"feature/..\" main section in a settings path, used for sorting and filtering\n{{Identical|Feature}}",
 	"bs-setting-path-extension": "\"extension/..\" main section in a settings path, used for sorting and filtering\n{{Identical|Extension}}",
-	"bs-setting-path-package": "\"package/..\" main section in a settings path, used for sorting and filtering\n{{Identical|Package}}",
+	"bs-setting-path-package": "\"package/..\" main section in a settings path, used for sorting and filtering\n{{Identical|Package}}\nFor translators : this is a different notion than the paquet used for transmission.",
 	"bs-setting-path-system": "\"../system/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|System}}",
 	"bs-setting-path-dataanalysis": "\"../dataanalysis/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Data analysis}}",
 	"bs-setting-path-editor": "\"../editor/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Editor}}",

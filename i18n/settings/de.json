@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Metalhead64"
+		]
+	},
+	"bs-setting-path-feature": "Funktion",
+	"bs-setting-path-extension": "Erweiterung",
+	"bs-setting-path-package": "Paket",
+	"bs-setting-path-system": "System",
+	"bs-setting-path-dataanalysis": "Datenanalyse",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Suche und Navigation",
+	"bs-setting-path-personalisation": "Personalisierung",
+	"bs-setting-path-skinning": "Benutzeroberfläche",
+	"bs-setting-path-customizing": "Anpassung",
+	"bs-setting-path-contentstructuring": "Inhaltsstrukturierung",
+	"bs-setting-path-communication": "Kommunikation",
+	"bs-setting-path-administration": "Verwaltung"
+}

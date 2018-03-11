@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"bs-setting-path-feature": "Recurso",
+	"bs-setting-path-extension": "Extensão",
+	"bs-setting-path-package": "Pacote",
+	"bs-setting-path-system": "Sistema",
+	"bs-setting-path-dataanalysis": "Análise de dados",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Pesquisa e navegação",
+	"bs-setting-path-personalisation": "Personalização",
+	"bs-setting-path-skinning": "Temas",
+	"bs-setting-path-customizing": "Personalizar",
+	"bs-setting-path-contentstructuring": "Estruturar conteúdos",
+	"bs-setting-path-communication": "Comunicação",
+	"bs-setting-path-administration": "Administração"
+}

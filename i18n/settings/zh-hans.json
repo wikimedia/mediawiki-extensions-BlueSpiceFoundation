@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"bs-setting-path-feature": "功能",
+	"bs-setting-path-extension": "扩展",
+	"bs-setting-path-package": "程序包",
+	"bs-setting-path-system": "系统",
+	"bs-setting-path-dataanalysis": "数据分析",
+	"bs-setting-path-editor": "编辑器",
+	"bs-setting-path-search": "搜索和导航",
+	"bs-setting-path-personalisation": "个性化",
+	"bs-setting-path-skinning": "皮肤",
+	"bs-setting-path-customizing": "定制",
+	"bs-setting-path-contentstructuring": "内容结构",
+	"bs-setting-path-communication": "通讯",
+	"bs-setting-path-administration": "管理"
+}

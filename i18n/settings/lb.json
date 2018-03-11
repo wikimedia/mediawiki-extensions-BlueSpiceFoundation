@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-setting-path-feature": "Funktioun",
+	"bs-setting-path-extension": "Erweiderung",
+	"bs-setting-path-package": "Pak",
+	"bs-setting-path-system": "System",
+	"bs-setting-path-dataanalysis": "Analys vun den Donnéeën",
+	"bs-setting-path-editor": "Auteur",
+	"bs-setting-path-search": "Sichen an Navigatioun",
+	"bs-setting-path-personalisation": "Personalisatioun",
+	"bs-setting-path-skinning": "Ausgesinn",
+	"bs-setting-path-customizing": "Personaliséieren",
+	"bs-setting-path-contentstructuring": "Strukturéiere vum Inhalt",
+	"bs-setting-path-communication": "Kommunikatioun",
+	"bs-setting-path-administration": "Administratioun"
+}

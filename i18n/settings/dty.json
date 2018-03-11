@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nirajan pant"
+		]
+	},
+	"bs-setting-path-feature": "विशेषता",
+	"bs-setting-path-extension": "एक्सटेन्सन",
+	"bs-setting-path-package": "प्याकेज",
+	"bs-setting-path-system": "प्रणाली",
+	"bs-setting-path-dataanalysis": "डाटा विश्लेषण",
+	"bs-setting-path-editor": "सम्पादक",
+	"bs-setting-path-search": "खोजी रे नेविगेशन",
+	"bs-setting-path-contentstructuring": "सामग्री संरचना",
+	"bs-setting-path-communication": "सञ्चार",
+	"bs-setting-path-administration": "प्रशासन"
+}

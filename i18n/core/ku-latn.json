@@ -5,8 +5,10 @@
 			"George Animal"
 		]
 	},
+	"bs-ns_main": "(Rûpel)",
 	"bs-userbar_loginswitch_logout": "Derkeve",
 	"bs-userbar_loginswitch_login": "Têkeve",
 	"bs-parser-error-invalid-title": "Sernavê nederbasdar:$1",
-	"bs-validator-error-title-does-not-exist": "Rûpel tune ye: $1"
+	"bs-validator-error-title-does-not-exist": "Rûpel tune ye: $1",
+	"bs-graphicallist-action-close": "Bigre"
 }

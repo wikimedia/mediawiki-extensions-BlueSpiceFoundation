@@ -65,6 +65,7 @@
 	"bs-extjs-pageexport-overwrite-label": "Écraser",
 	"bs-extjs-pageexport-general-error": "Erreur d’exportation",
 	"bs-extjs-pageexport-pagecollection-prefix": "Collection de pages",
+	"bs-pagecollection-prefix": "Collection de pages",
 	"bs-extjs-pageexport-success": "Exportation réussie",
 	"bs-extjs-pageexport-success-text": "Collection de pages exportée vers $1",
 	"bs-extjs-pageexport-required-text": "La liste de noms ne peut pas être vide et au moins une page doit être sélectionnée",
