@@ -57,7 +57,8 @@
 				"customizing": "bs-setting-path-customizing",
 				"contentstructuring": "bs-setting-path-contentstructuring",
 				"communication": "bs-setting-path-communication",
-				"administration": "bs-setting-path-administration"
+				"administration": "bs-setting-path-administration",
+				"qualityassurance": "bs-setting-path-qualityassurance"
 			}
 		}
 	},
