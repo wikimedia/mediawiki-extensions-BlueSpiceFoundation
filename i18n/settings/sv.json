@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"bs-setting-path-feature": "Funktion",
+	"bs-setting-path-extension": "Tillägg",
+	"bs-setting-path-package": "Paket",
+	"bs-setting-path-system": "System",
+	"bs-setting-path-dataanalysis": "Dataanalys",
+	"bs-setting-path-editor": "Redigerare",
+	"bs-setting-path-search": "Sökning och navigering",
+	"bs-setting-path-personalisation": "Personalisering",
+	"bs-setting-path-skinning": "Utseenden",
+	"bs-setting-path-customizing": "Anpassar",
+	"bs-setting-path-contentstructuring": "Innehållsstrukturerar",
+	"bs-setting-path-communication": "Kommunikation",
+	"bs-setting-path-administration": "Administration"
+}

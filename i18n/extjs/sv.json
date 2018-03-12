@@ -64,6 +64,7 @@
 	"bs-extjs-pageexport-overwrite-label": "Skriv över",
 	"bs-extjs-pageexport-general-error": "Exporteringsfel",
 	"bs-extjs-pageexport-pagecollection-prefix": "Sidsamling",
+	"bs-pagecollection-prefix": "Sidsamling",
 	"bs-extjs-pageexport-success": "Exportering slutfördes",
 	"bs-extjs-pageexport-success-text": "Sidsamling exporterades till $1",
 	"bs-extjs-pageexport-required-text": "Listnamnet kan inte vara tomt och minst en sida måste väljas",

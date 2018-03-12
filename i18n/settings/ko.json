@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"bs-setting-path-feature": "기능",
+	"bs-setting-path-extension": "확장 기능",
+	"bs-setting-path-package": "패키지",
+	"bs-setting-path-system": "시스템",
+	"bs-setting-path-dataanalysis": "데이터 분석",
+	"bs-setting-path-editor": "편집기",
+	"bs-setting-path-search": "검색 및 둘러보기",
+	"bs-setting-path-personalisation": "환경 설정",
+	"bs-setting-path-skinning": "스킨",
+	"bs-setting-path-customizing": "사용자 지정",
+	"bs-setting-path-contentstructuring": "내용 구성",
+	"bs-setting-path-communication": "커뮤니케이션",
+	"bs-setting-path-administration": "관리"
+}

@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"bs-setting-path-feature": "Caratteristica",
+	"bs-setting-path-extension": "Estensione",
+	"bs-setting-path-system": "Sistema",
+	"bs-setting-path-search": "Ricerca e navigazione",
+	"bs-setting-path-personalisation": "Personalizzazione",
+	"bs-setting-path-customizing": "Personalizzazione",
+	"bs-setting-path-contentstructuring": "Struttura dei contenuti",
+	"bs-setting-path-communication": "Comunicazione",
+	"bs-setting-path-administration": "Amministrazione"
+}

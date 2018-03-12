@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"bs-setting-path-extension": "Extensión",
+	"bs-setting-path-package": "Paquete",
+	"bs-setting-path-system": "Sistema",
+	"bs-setting-path-dataanalysis": "Análisis de datos",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Búsquedas y navegación",
+	"bs-setting-path-personalisation": "Personalización",
+	"bs-setting-path-customizing": "Personalización",
+	"bs-setting-path-contentstructuring": "Estructura de contenidos",
+	"bs-setting-path-communication": "Comunicación",
+	"bs-setting-path-administration": "Administración"
+}
