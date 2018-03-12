@@ -17,5 +17,6 @@
 	"bs-setting-path-customizing": "\"../customizing/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Customizing}}",
 	"bs-setting-path-contentstructuring": "\"../contentstructuring/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Content structuring}}",
 	"bs-setting-path-communication": "\"../communication/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Communication}}",
-	"bs-setting-path-administration": "\"../administration/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Administration}}"
+	"bs-setting-path-administration": "\"../administration/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Administration}}",
+	"bs-setting-path-qualityassurance": "\"../qualityassurance/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Quality assurance}}"
 }
