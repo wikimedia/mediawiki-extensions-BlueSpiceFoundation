@@ -13,23 +13,29 @@ if (!defined('WIKI_FARMING')) {
 		define('BSROOTDIR', dirname(__DIR__) );
         }
 	if (!defined('BSCONFIGDIR')) {
-		define('BSCONFIGDIR', BSROOTDIR . DS . 'config');
-        }
+		define( 'BSCONFIGDIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'config' );
+	}
 	if (!defined('BSDATADIR')) {
-		define('BSDATADIR',   BSROOTDIR . DS . 'data'); //Present
-        }
+		define( 'BSDATADIR',   BSROOTDIR . DIRECTORY_SEPARATOR . 'data' ); //Present
+	}
 
 	//New constants
-	$sTMPUploadDir  = empty($GLOBALS['wgUploadDirectory'])    ? $GLOBALS['IP'] . DS . 'images'           : $GLOBALS['wgUploadDirectory'];
-	$sTMPCacheDir   = empty($GLOBALS['wgFileCacheDirectory']) ? $sTMPUploadDir . DS . 'cache' : $GLOBALS['wgFileCacheDirectory'];
+	$sTMPUploadDir  = empty( $GLOBALS['wgUploadDirectory'] )
+		? $GLOBALS['IP'] . DIRECTORY_SEPARATOR . 'images'
+		: $GLOBALS['wgUploadDirectory'];
+
+	$sTMPCacheDir   = empty( $GLOBALS['wgFileCacheDirectory'] )
+		? $sTMPUploadDir . DIRECTORY_SEPARATOR . 'cache'
+		: $GLOBALS['wgFileCacheDirectory'];
+
 	$sTMPUploadPath = empty($GLOBALS['wgUploadPath']) ? $GLOBALS['wgScriptPath'] . "/images" : $GLOBALS['wgUploadPath'];
 
 	if (!defined('BS_DATA_DIR')) {
-		define('BS_DATA_DIR',  $sTMPUploadDir. DS . 'bluespice'); //Future
-        }
+		define( 'BS_DATA_DIR',  $sTMPUploadDir. DIRECTORY_SEPARATOR . 'bluespice' ); //Future
+	}
 	if (!defined('BS_CACHE_DIR')) {
-		define('BS_CACHE_DIR', $sTMPCacheDir. DS . 'bluespice'); //$wgCacheDirectory?
-        }
+		define( 'BS_CACHE_DIR', $sTMPCacheDir. DIRECTORY_SEPARATOR . 'bluespice' ); //$wgCacheDirectory?
+	}
 	if (!defined('BS_DATA_PATH')) {
 		define('BS_DATA_PATH', $sTMPUploadPath. '/bluespice');
         }
