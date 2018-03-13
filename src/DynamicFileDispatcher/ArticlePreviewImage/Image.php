@@ -37,11 +37,7 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 			true
 		);
 
-		$path = \BsFileSystemHelper::normalizePath(
-			$this->getSourcePath()
-		);
-
-		readfile( $path );
+		readfile( $this->getSourcePath() );
 	}
 
 	public function getMimeType() {
