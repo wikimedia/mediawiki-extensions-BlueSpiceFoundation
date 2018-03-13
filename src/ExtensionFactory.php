@@ -58,6 +58,9 @@ class ExtensionFactory {
 	}
 
 	protected function factory( $name, $definition ) {
+		if( isset( $this->extensions[$name] ) ) {
+			return $this->extensions[$name];
+		}
 		$class = $definition['className'];
 		if( strpos( $class, "\\" ) !== 0 ) {
 			$class = "\\$class";
