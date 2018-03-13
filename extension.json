@@ -58,7 +58,8 @@
 				"contentstructuring": "bs-setting-path-contentstructuring",
 				"communication": "bs-setting-path-communication",
 				"administration": "bs-setting-path-administration",
-				"qualityassurance": "bs-setting-path-qualityassurance"
+				"qualityassurance": "bs-setting-path-qualityassurance",
+				"export": "bs-setting-path-export"
 			}
 		}
 	},

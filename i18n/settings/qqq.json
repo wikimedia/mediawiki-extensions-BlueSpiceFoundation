@@ -18,5 +18,6 @@
 	"bs-setting-path-contentstructuring": "\"../contentstructuring/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Content structuring}}",
 	"bs-setting-path-communication": "\"../communication/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Communication}}",
 	"bs-setting-path-administration": "\"../administration/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Administration}}",
-	"bs-setting-path-qualityassurance": "\"../qualityassurance/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Quality assurance}}"
+	"bs-setting-path-qualityassurance": "\"../qualityassurance/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Quality assurance}}",
+	"bs-setting-path-export": "\"../export/..\" subsection in a settings path, used for sorting and filtering\n{{Identical|Export}}"
 }
