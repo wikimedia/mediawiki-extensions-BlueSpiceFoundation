@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joedalton"
+		]
+	},
+	"bs-setting-path-package": "Pakke",
+	"bs-setting-path-system": "System",
+	"bs-setting-path-dataanalysis": "Dataanalyse",
+	"bs-setting-path-administration": "Administration"
+}
