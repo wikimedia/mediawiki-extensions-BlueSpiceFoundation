@@ -17,6 +17,7 @@ interface ISettingPaths {
 	const FEATURE_COMMUNICATION = 'communication';
 	const FEATURE_ADMINISTRATION = 'administration';
 	const FEATURE_QUALITY_ASSURANCE = 'qualityassurance';
+	const FEATURE_EXPORT = 'export';
 
 	const PACKAGE_FREE = 'BlueSpice Free';
 	const PACKAGE_PRO = 'BlueSpice Pro';
