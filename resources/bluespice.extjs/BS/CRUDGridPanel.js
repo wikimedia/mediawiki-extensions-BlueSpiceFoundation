@@ -14,10 +14,6 @@
 
 Ext.define( 'BS.CRUDGridPanel', {
 	extend: 'BS.CRUDPanel',
-	requires: [ 'Ext.PagingToolbar', 'Ext.selection.RowModel',
-		'Ext.grid.GridPanel', 'Ext.grid.column.Action',
-		'Ext.ux.grid.FiltersFeature'
-	],
 
 	//Custom
 	pageSize: 20,
@@ -34,18 +30,6 @@ Ext.define( 'BS.CRUDGridPanel', {
 		this.gpMainConf = {};
 
 		this.callParent(arguments);
-	},
-
-	initComponent: function() {
-		this.callParent( arguments );
-
-		//Bugfix for filters are not being rendered in hidden columns
-		//https://www.sencha.com/forum/showthread.php?268893
-		this.grdMain.on( 'columnshow', function() {
-			if( this.grdMain.filters ) {
-				this.grdMain.filters.createFilters();
-			}
-		}, this );
 	},
 
 	makeItems: function() {
@@ -99,6 +83,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 			columns: this.makeGridColumns(),
 			selModel: this.makeSelModel(),
 			features: this.makeFeatures(),
+			plugins: 'gridfilters',
 			bbar: this.makeBBar()
 		};
 
@@ -175,11 +160,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 	},
 
 	makeFeatures: function() {
-		return [
-			new Ext.ux.grid.FiltersFeature({
-				encode: true
-			})
-		];
+		return [];
 	},
 
 	getSingleSelection: function() {

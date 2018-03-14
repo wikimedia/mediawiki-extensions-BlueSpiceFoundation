@@ -19,6 +19,7 @@ Ext.define('BS.store.BSApi', {
 			},
 			autoLoad: true,
 			remoteSort: true,
+			remoteFilter: true,
 			sortInfo: {
 				field: 'id',
 				direction: 'ASC'

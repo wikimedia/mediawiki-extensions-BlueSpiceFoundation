@@ -13,6 +13,8 @@ class StringValue extends Filter {
 	const COMPARISON_CONTAINS = 'ct';
 	const COMPARISON_NOT_CONTAINS = 'nct';
 
+	const COMPARISON_LIKE = 'like';
+
 	/**
 	 * Performs string filtering based on given filter of type string on a
 	 * dataset

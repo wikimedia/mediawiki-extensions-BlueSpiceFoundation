@@ -11,7 +11,7 @@ Ext.define( 'BS.store.LocalNamespaces', {
 	constructor: function( config ){
 		this.includeAll = config.includeAll || this.includeAll;
 		this.excludeIds = config.excludeIds || this.excludeIds;
-		this.data = config.data || this.getLocalNamespaces();
+		config.data = config.data || this.getLocalNamespaces();
 		this.callParent( [config] );
 	},
 	getLocalNamespaces: function() {

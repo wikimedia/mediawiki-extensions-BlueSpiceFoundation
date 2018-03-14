@@ -128,6 +128,8 @@ class BsStringHelper {
 	const FILTER_EQUALS = 'eq';
 	const FILTER_EQUALSNOT = 'neq';
 
+	const FILTER_LIKE = 'like';
+
 	/**
 	 * HINT: http://stackoverflow.com/a/10473026
 	 * @param string $sOp ExtJS filter conformant operator<br/>
@@ -155,6 +157,7 @@ class BsStringHelper {
 					( ( $temp = strlen( $sHaystack ) - strlen( $sNeedle ) ) >= 0
 					&& strpos( $sHaystack, $sNeedle, $temp ) !== false);
 			case self::FILTER_CONTAINS:
+			case self::FILTER_LIKE:
 				return strpos( $sHaystack, $sNeedle ) !== false;
 			case self::FILTER_CONTAINSNOT:
 				return strpos( $sHaystack, $sNeedle ) === false;

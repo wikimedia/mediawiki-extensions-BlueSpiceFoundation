@@ -8,7 +8,9 @@ abstract class Filter {
 
 	const KEY_TYPE = 'type';
 	const KEY_COMPARISON = 'comparison';
+	const KEY_OPERATOR = 'operator';
 	const KEY_FIELD = 'field';
+	const KEY_PROPERTY = 'property';
 	const KEY_VALUE = 'value';
 
 	/**
@@ -40,7 +42,9 @@ abstract class Filter {
 	 * @param array $params
 	 */
 	public function __construct( $params ) {
-		$this->field = $params[self::KEY_FIELD];
+		$this->field = !isset( $params[self::KEY_FIELD] ) && isset( $params[self::KEY_PROPERTY] )
+			? $params[self::KEY_PROPERTY]
+			: $params[self::KEY_FIELD];
 		$this->value = $params[self::KEY_VALUE];
 		$this->comparison = $params[self::KEY_COMPARISON];
 	}

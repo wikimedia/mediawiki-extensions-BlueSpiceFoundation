@@ -1,5 +1,5 @@
 Ext.define( 'BS.dialog.Upload', {
-	extend: 'BS.Window',
+	extend: 'MWExt.Dialog',
 	requires: [
 		'BS.panel.Upload'
 	],

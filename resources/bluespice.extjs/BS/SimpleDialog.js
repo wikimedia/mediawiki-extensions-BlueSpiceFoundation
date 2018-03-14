@@ -38,7 +38,6 @@ Ext.define( 'BS.SimpleDialog', {
 		});
 		this.btnCancel.on( 'click', this.btnCancelClicked, this );
 
-		this.addEvents( 'ok', 'cancel' );
 
 		this.afterInitComponent(arguments);
 		this.callParent( arguments );

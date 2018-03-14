@@ -317,6 +317,14 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 				continue;
 			}
 
+			if( !isset( $oFilter->field ) && isset( $oFilter->property ) ) {
+				$oFilter->field = $oFilter->property;
+			}
+
+			if( !isset( $oFilter->comparison ) && isset( $oFilter->operator ) ) {
+				$oFilter->comparison = $oFilter->operator;
+			}
+
 			if( in_array( $oFilter->field, $aUnfilterableProps ) ) {
 				continue;
 			}

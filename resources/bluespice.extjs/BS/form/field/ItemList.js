@@ -1,6 +1,5 @@
 Ext.define('BS.form.field.ItemList', {
 	extend: 'Ext.form.FieldContainer',
-	requires: [ 'Ext.ux.form.field.GridPicker' ],
 	alias: ['widget.bs-itemlist'],
 	baseCls: 'bs-form-field-itemlist',
 	mixins: {
@@ -36,7 +35,6 @@ Ext.define('BS.form.field.ItemList', {
 
 	makeItemChooser: function() {
 		var me = this;
-		//var combo = new Ext.ux.form.field.GridPicker({
 		var combo = new Ext.form.field.ComboBox({
 			anchor: '100%',
 			displayField: this.inputDisplayField,

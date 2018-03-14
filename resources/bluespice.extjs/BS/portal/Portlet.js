@@ -33,7 +33,7 @@ Ext.define('BS.portal.Portlet', {
 
 		this.tools = this.tools || [];
 		this.tools.push(this.tlSettings);
-		this.addEvents( 'configchange' );
+
 		this.afterInitComponent(arguments);
 		this.callParent(arguments);
 	},

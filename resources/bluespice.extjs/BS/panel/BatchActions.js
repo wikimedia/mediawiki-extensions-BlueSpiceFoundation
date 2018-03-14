@@ -47,7 +47,6 @@ Ext.define( 'BS.panel.BatchActions', {
 			this.fsActions
 		];
 
-		this.addEvents( 'processtart', 'processcomplete', 'actioncomplete' );
 
 		this.callParent( arguments );
 	},

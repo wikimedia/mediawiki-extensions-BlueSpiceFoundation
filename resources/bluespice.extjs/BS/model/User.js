@@ -7,7 +7,7 @@ Ext.define('BS.model.User', {
 		{ name: 'user_real_name', type: 'string' },
 		{ name: 'user_registration', type: 'date', defaultValue: '19700101000000', dateFormat: 'YmdHis' },
 		{ name: 'user_editcount', type: 'int' },
-		{ name: 'groups', type: 'array', defaultValue: [] },
+		{ name: 'groups', type: 'auto', defaultValue: [] },
 
 		//legacy fields
 		{ name: 'display_name', type: 'string' },

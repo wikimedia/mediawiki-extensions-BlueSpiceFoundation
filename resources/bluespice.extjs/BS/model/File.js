@@ -34,8 +34,8 @@ Ext.define('BS.model.File', {
 			);
 		}},
 		//Here come custom fields that are calculated on the server side
-		{ name: 'page_categories', type: 'array', defaultValue: [] },
-		{ name: 'page_categories_links', type: 'array', defaultValue: [], convert: function( value, record ) {
+		{ name: 'page_categories', type: 'auto', defaultValue: [] },
+		{ name: 'page_categories_links', type: 'auto', defaultValue: [], convert: function( value, record ) {
 			//This is not being calculated on the serverside for performance reasons
 			var categories = record.get( 'page_categories' );
 			var categoryLinks = [];
