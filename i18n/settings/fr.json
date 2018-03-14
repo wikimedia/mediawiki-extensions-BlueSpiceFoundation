@@ -17,5 +17,6 @@
 	"bs-setting-path-contentstructuring": "Structuration du contenu",
 	"bs-setting-path-communication": "Communication",
 	"bs-setting-path-administration": "Administration",
-	"bs-setting-path-qualityassurance": "Assurance qualité"
+	"bs-setting-path-qualityassurance": "Assurance qualité",
+	"bs-setting-path-export": "Exporter"
 }

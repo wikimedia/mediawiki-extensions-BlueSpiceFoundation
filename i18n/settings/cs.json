@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ilimanaq29"
+		]
+	},
+	"bs-setting-path-feature": "Funkce",
+	"bs-setting-path-extension": "Rozšíření",
+	"bs-setting-path-package": "Balík",
+	"bs-setting-path-system": "Systém",
+	"bs-setting-path-dataanalysis": "Analýza dat",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Hledání a navigace",
+	"bs-setting-path-personalisation": "Personalizace",
+	"bs-setting-path-skinning": "Skinning",
+	"bs-setting-path-customizing": "Přizpůsobování",
+	"bs-setting-path-contentstructuring": "Strukturace obsahu",
+	"bs-setting-path-communication": "Komunikace",
+	"bs-setting-path-administration": "Administrace",
+	"bs-setting-path-qualityassurance": "Záruka kvality",
+	"bs-setting-path-export": "Exportovat"
+}

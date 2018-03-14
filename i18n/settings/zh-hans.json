@@ -17,5 +17,6 @@
 	"bs-setting-path-contentstructuring": "内容结构",
 	"bs-setting-path-communication": "通讯",
 	"bs-setting-path-administration": "管理",
-	"bs-setting-path-qualityassurance": "质量保证"
+	"bs-setting-path-qualityassurance": "质量保证",
+	"bs-setting-path-export": "导出"
 }
