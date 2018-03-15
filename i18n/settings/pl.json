@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-setting-path-extension": "Rozszerzenie",
+	"bs-setting-path-system": "System",
+	"bs-setting-path-administration": "Administracja",
+	"bs-setting-path-export": "Eksport"
+}
