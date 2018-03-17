@@ -66,8 +66,4 @@ class TestMail extends BSMaintenance {
 }
 
 $maintClass = 'TestMail';
-if (defined('RUN_MAINTENANCE_IF_MAIN')) {
-	require_once( RUN_MAINTENANCE_IF_MAIN );
-} else {
-	require_once( DO_MAINTENANCE ); # Make this work on versions before 1.17
-}
+require_once RUN_MAINTENANCE_IF_MAIN;
