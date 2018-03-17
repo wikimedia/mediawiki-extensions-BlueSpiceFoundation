@@ -4,6 +4,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
 	grunt.loadNpmTasks( 'grunt-banana-checker' );
 
+	var conf = grunt.file.readJSON( 'extension.json' );
 	grunt.initConfig( {
 		jshint: {
 			options: {
@@ -17,22 +18,7 @@ module.exports = function ( grunt ) {
 				'!resources/extjs/**'
 			]
 		},
-		banana: {
-			all: [
-				'i18n/api/',
-				'i18n/core/',
-				'i18n/credits/',
-				'i18n/deferred/',
-				'i18n/diagnostics/',
-				'i18n/extjs/',
-				'i18n/extjs-portal/',
-				'i18n/filerepo/',
-				'i18n/installer/',
-				'i18n/notifications/',
-				'i18n/upload',
-				'i18n/validator/'
-			]
-		},
+		banana: conf.MessagesDirs,
 		jsonlint: {
 			all: [
 				'*.json',
