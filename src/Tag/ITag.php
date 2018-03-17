@@ -19,7 +19,7 @@ interface ITag {
 	public function getHandler( $processedInput, array $processedArgs, \Parser $parser, \PPFrame $frame );
 
 	/**
-	 * @retrun string
+	 * @return string
 	 */
 	public function getContainerElementName();
 
@@ -49,7 +49,7 @@ interface ITag {
 	public function getResourceLoaderModuleStyles();
 
 	/**
-	 * @retrun MarkerType
+	 * @return MarkerType
 	 */
 	public function getMarkerType();
 
