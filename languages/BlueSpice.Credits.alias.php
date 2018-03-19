@@ -83,6 +83,16 @@ $specialPageAliases['pt-br'] = array(
 	'SpecialCredits' => array( 'Créditos' ),
 );
 
+/** Serbian Cyrilic (српски (ћирилица)) */
+$specialPageAliases['sr-ec'] = array(
+	'SpecialCredits' => array( 'Заслуге' ),
+);
+
+/** Serbian Latin (srpski (latinica)) */
+$specialPageAliases['sr-el'] = array(
+	'SpecialCredits' => array( 'Zasluge' ),
+);
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'SpecialCredits' => array( 'Ghi_công' ),

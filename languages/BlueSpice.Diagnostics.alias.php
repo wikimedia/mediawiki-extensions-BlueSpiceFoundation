@@ -78,12 +78,22 @@ $specialPageAliases['pt-br'] = array(
 	'Diagnostics' => array( 'Diagnósticos' ),
 );
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Serbian Cyrilic (српски (ћирилица)) */
+$specialPageAliases['sr-ec'] = array(
+	'Diagnostics' => array( 'Дијагностика' ),
+);
+
+/** Serbian Latin (srpski (latinica)) */
+$specialPageAliases['sr-el'] = array(
+	'Diagnostics' => array( 'Dijagnostika' ),
+);
+
+/** Simplified Chinese (中文（简体)) */
 $specialPageAliases['zh-hans'] = array(
 	'Diagnostics' => array( '诊断程序' ),
 );
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體)) */
 $specialPageAliases['zh-hant'] = array(
 	'Diagnostics' => array( '診斷程式' ),
 );
