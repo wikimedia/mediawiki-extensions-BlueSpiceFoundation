@@ -5,7 +5,8 @@ namespace BlueSpice\ResourceModule;
 class ExtJS extends \ResourceLoaderFileModule {
 	public function getDependencies( \ResourceLoaderContext $context = null ) {
 		$dependencies = [
-			'mediawiki.Title'
+			'mediawiki.Title',
+			'ext.bluespice'
 		];
 
 		/**
