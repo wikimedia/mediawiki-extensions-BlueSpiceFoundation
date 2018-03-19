@@ -2,7 +2,22 @@
 	"@metadata": {
 		"authors": [
 			"Patrick Star"
+			"EdwardGeneralov"
 		]
 	},
-	"bs-setting-path-editor": "Редактор"
+	"bs-setting-path-feature": "Особенность",
+	"bs-setting-path-extension": "Расширение",
+	"bs-setting-path-package": "Пакет",
+	"bs-setting-path-system": "Система",
+	"bs-setting-path-dataanalysis": "Анализ данных",
+	"bs-setting-path-editor": "Редактор",
+	"bs-setting-path-search": "Поиск и навигация",
+	"bs-setting-path-personalisation": "Воплощение",
+	"bs-setting-path-skinning": "Зачистка",
+	"bs-setting-path-customizing": "Пользовательская настройка",
+	"bs-setting-path-contentstructuring": "Структурирование контента",
+	"bs-setting-path-communication": "Связь",
+	"bs-setting-path-administration": "Администрация",
+	"bs-setting-path-qualityassurance": "Гарантия качества",
+	"bs-setting-path-export": "Экспорт"
 }
