@@ -8,10 +8,12 @@
 	});
 	Ext.Loader.setPath( 'BS', basePath + '/BS');
 	var bsExtensionManagerAssetsPaths = mw.config.get( 'bsExtensionManagerAssetsPaths' );
-	var extNamespace;
+	var extNamespace, unprefixedExtNamespace;
 	for( var extName in bsExtensionManagerAssetsPaths ) {
 		extNamespace = 'BS.' + extName;
+		unprefixedExtNamespace = 'BS.' + extName.replace( /^BlueSpice/g, '' );
 		Ext.Loader.setPath( extNamespace, bsExtensionManagerAssetsPaths[extName] + '/resources/' + extNamespace );
+		Ext.Loader.setPath( unprefixedExtNamespace, bsExtensionManagerAssetsPaths[extName] + '/resources/' + unprefixedExtNamespace );
 	}
 
 	//This allows us to place elements with special data attributes
