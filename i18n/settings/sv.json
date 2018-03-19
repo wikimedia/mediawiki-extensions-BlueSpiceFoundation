@@ -16,5 +16,7 @@
 	"bs-setting-path-customizing": "Anpassar",
 	"bs-setting-path-contentstructuring": "Innehållsstrukturerar",
 	"bs-setting-path-communication": "Kommunikation",
-	"bs-setting-path-administration": "Administration"
+	"bs-setting-path-administration": "Administration",
+	"bs-setting-path-qualityassurance": "Kvalitetssäkring",
+	"bs-setting-path-export": "Exportera"
 }

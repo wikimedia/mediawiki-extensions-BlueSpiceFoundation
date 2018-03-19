@@ -30,8 +30,10 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "No hay categorías que quitar",
 	"apihelp-bs-category-treestore-description": "Enumera las subcategorías de una categoría concreta",
 	"apihelp-bs-category-treestore-summary": "Enumera las subcategorías de una categoría específica",
+	"apihelp-bs-task-param-schema": "Mostrar el esquema JSON de los parámetros de la tarea",
 	"apihelp-bs-task-param-examples": "Mostrar ejemplos de parámetros de tareas",
 	"bs-api-task-taskData-page-id": "El identificador de una página existente del wiki",
 	"bs-api-task-taskData-page-title": "Un título válido de una página wiki",
-	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de cadenas. Los valores deben ser nombres de categorías válidos."
+	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de cadenas. Los valores deben ser nombres de categorías válidos.",
+	"apihelp-bs-watchlist-store-summary": "Enumera todas las entradas de la lista de seguimiento. Permite su ordenamiento y filtrado y consultarlas mediante paginación. Implementa parámetros de almacenamiento."
 }

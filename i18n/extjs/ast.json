@@ -61,6 +61,7 @@
 	"bs-extjs-pageexport-overwrite-label": "Sobreescribir",
 	"bs-extjs-pageexport-general-error": "Error d’esportación",
 	"bs-extjs-pageexport-pagecollection-prefix": "Colección de páxines",
+	"bs-pagecollection-prefix": "Colección de páxines",
 	"bs-extjs-pageexport-success": "Esportación correuta",
 	"bs-extjs-pageexport-success-text": "Esportóse la colección de páxines a $1",
 	"bs-extjs-pageexport-required-text": "El nome de la llista nun puede tar vacíu y tien d'escoyese una páxina a lo menos",

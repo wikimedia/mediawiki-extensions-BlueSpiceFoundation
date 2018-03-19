@@ -14,5 +14,7 @@
 	"bs-setting-path-customizing": "Personalización",
 	"bs-setting-path-contentstructuring": "Estructura de contenidos",
 	"bs-setting-path-communication": "Comunicación",
-	"bs-setting-path-administration": "Administración"
+	"bs-setting-path-administration": "Administración",
+	"bs-setting-path-qualityassurance": "Control de calidad",
+	"bs-setting-path-export": "Exportación"
 }

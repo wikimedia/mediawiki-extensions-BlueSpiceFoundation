@@ -6,6 +6,11 @@
 	},
 	"bs-setting-path-extension": "Rozszerzenie",
 	"bs-setting-path-system": "System",
+	"bs-setting-path-dataanalysis": "Analiza danych",
+	"bs-setting-path-editor": "Edytor",
+	"bs-setting-path-personalisation": "Personalizacja",
+	"bs-setting-path-customizing": "Dostosowywanie",
+	"bs-setting-path-communication": "Komunikacja",
 	"bs-setting-path-administration": "Administracja",
 	"bs-setting-path-export": "Eksport"
 }

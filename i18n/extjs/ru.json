@@ -9,7 +9,8 @@
 			"Alexey zakharenkov",
 			"Facenapalm",
 			"Redredsonia",
-			"Mouse21"
+			"Mouse21",
+			"Patrick Star"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -69,6 +70,7 @@
 	"bs-extjs-pageexport-overwrite-label": "Перезаписать",
 	"bs-extjs-pageexport-general-error": "Экспорт ошибка",
 	"bs-extjs-pageexport-pagecollection-prefix": "Сбор страниц",
+	"bs-pagecollection-prefix": "Сбор страниц",
 	"bs-extjs-pageexport-success": "Успешный экспорт",
 	"bs-extjs-pageexport-success-text": "Сбор страниц экспортируется в $1",
 	"bs-extjs-pageexport-required-text": "Имя списка не может быть пустым и должно быть выбрано хотя бы одна страница",
