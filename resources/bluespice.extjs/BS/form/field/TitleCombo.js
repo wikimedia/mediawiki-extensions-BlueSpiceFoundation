@@ -1,10 +1,11 @@
 Ext.define('BS.form.field.TitleCombo', {
-	extend: 'Ext.ux.form.field.GridPicker',
+	extend: 'MWExt.form.field.GridPicker',
 	requires:[ 'BS.model.Title', 'BS.store.BSApi' ],
 
 	//This is necessary to make the ComboBox return a Model
 	//instance if input is less then 4 chars
 	minChars: 1,
+	triggerAction: 'last',
 
 	gridConfig: {
 		border:true,
@@ -32,7 +33,7 @@ Ext.define('BS.form.field.TitleCombo', {
 			flex: 1
 		}],
 		viewConfig: {
-		getRowClass: function(record, rowIndex, rowParams, store){
+			getRowClass: function(record, rowIndex, rowParams, store){
 				var cssClass = 'bs-model-title-type-namespace';
 				if( record.get( 'type' ) === 'namespace' ) {
 					return cssClass;
