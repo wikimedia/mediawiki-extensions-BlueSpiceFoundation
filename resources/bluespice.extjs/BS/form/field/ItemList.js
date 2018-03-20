@@ -1,6 +1,6 @@
 Ext.define('BS.form.field.ItemList', {
 	extend: 'Ext.form.FieldContainer',
-	alias: ['widget.bs-itemlist'],
+	alias: [ 'widget.bs-itemlist' ],
 	baseCls: 'bs-form-field-itemlist',
 	mixins: {
 		field: 'Ext.form.field.Field'
@@ -131,8 +131,8 @@ Ext.define('BS.form.field.ItemList', {
 		});
 	},
 
-	onItemChooserSelect: function( combo, records, eOpts ) {
-		this.addToList( records );
+	onItemChooserSelect: function( combo, record, eOpts ) {
+		this.addToList( record );
 		combo.clearValue();
 	},
 
@@ -146,15 +146,13 @@ Ext.define('BS.form.field.ItemList', {
 		};
 	},
 
-	addToList: function( records ) {
-		for( var i = 0; i < records.length; i++ ) {
-			var idx = this.gdItems.getStore().findBy(
-				this.makeFindByIdFunction( records[i] )
-			);
+	addToList: function( record ) {
+		var idx = this.gdItems.getStore().findBy(
+			this.makeFindByIdFunction( record )
+		);
 
-			if( idx === -1 ) {
-				this.gdItems.getStore().add( records[i] );
-			}
+		if( idx === -1 ) {
+			this.gdItems.getStore().add( record );
 		}
 	},
 

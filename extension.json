@@ -140,9 +140,11 @@
 				"mobile", "desktop"
 			],
 			"scripts": [
-				"bluespice.extjs/bluespice.extjs.js"
+				"bluespice.extjs/bluespice.extjs.js",
+				"bluespice.extjs/BS/override/grid/column/Action.js"
 			],
 			"styles": [
+				"bluespice.extjs/bluespice.extjs.fixes.css",
 				"bluespice.extjs/bluespice.extjs.overrides.less"
 			],
 			"messages": [

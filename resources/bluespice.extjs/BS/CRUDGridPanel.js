@@ -62,8 +62,17 @@ Ext.define( 'BS.CRUDGridPanel', {
 	},
 
 	makeMainGrid: function() {
+		var gridDefaultConf = this.makeGridDefaultConf();
 
-		var gridDefaultConf = {
+		var gridConf = Ext.applyIf( this.gpMainConf, gridDefaultConf );
+		this.grdMain = new Ext.grid.GridPanel( gridConf );
+		this.grdMain.on( 'select', this.onGrdMainRowClick, this );
+
+		return this.grdMain;
+	},
+
+	makeGridDefaultConf: function() {
+		return {
 			cls: 'bs-extjs-crud-grid',
 			//Simple
 			border: false,
@@ -83,15 +92,15 @@ Ext.define( 'BS.CRUDGridPanel', {
 			columns: this.makeGridColumns(),
 			selModel: this.makeSelModel(),
 			features: this.makeFeatures(),
-			plugins: 'gridfilters',
+			plugins: this.makeGridPlugins(),
 			bbar: this.makeBBar()
 		};
+	},
 
-		var gridConf = Ext.applyIf( this.gpMainConf, gridDefaultConf );
-		this.grdMain = new Ext.grid.GridPanel( gridConf );
-		this.grdMain.on( 'select', this.onGrdMainRowClick, this );
-
-		return this.grdMain;
+	makeGridPlugins: function() {
+		return [
+			'gridfilters'
+		];
 	},
 
 	makeGridColumns: function(){
