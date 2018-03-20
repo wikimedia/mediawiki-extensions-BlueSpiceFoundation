@@ -201,6 +201,9 @@ Ext.define( 'BS.CRUDGridPanel', {
 		}
 	},
 	onStrMainLoadBase: function() {
+		if( !this.grdMain ) {
+			return;
+		}
 		// All selections have to be deselected otherwise double editing of the same row won't work
 		this.grdMain.getSelectionModel().deselectAll();
 	},
