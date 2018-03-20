@@ -116,6 +116,8 @@ class BsConfig {
 	/**
 	 * Use this method to register a configurable variable.
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinitionFactory and
+	 * MW config registration instead
 	 * @param string $path
 	 *        	The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
 	 * @param mixed $default
@@ -127,6 +129,7 @@ class BsConfig {
 	 *        	The type for the input rendering. I.e.
 	 */
 	public static function registerVar( $path, $default = null, $options = 0, $i18n = '', $sFormFieldMappingName = 'text' ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$var = self::getSettingObject ( $path );
 		$var->setDefault( $default );
 		if ( $options ) {
@@ -155,6 +158,8 @@ class BsConfig {
 	/**
 	 * sets the value of the variable, which is specified by the path
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefintion, MW config
+	 * registration and use \BlueSpice\Data\Settings\Store
 	 * @param string $path
 	 *        	The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
 	 * @param mixed $value
@@ -164,6 +169,7 @@ class BsConfig {
 	 * @return bool true if the action was successful
 	 */
 	public static function set( $path, $value, $bUserValue = false ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$oSetting = self::getSettingObject( $path );
 		if ( $bUserValue ) {
 			return $oSetting->_setUserValue( $value );
@@ -173,10 +179,14 @@ class BsConfig {
 
 	/**
 	 * Gets the value of the variable, which is specified by the path
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
+	 * registration and use \BlueSpice\Config MultiConfig from
+	 * BlueSpice\Services instead
 	 * @param string $sPath The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
 	 * @return mixed the value
 	 */
 	public static function get( $sPath ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$mReturn = null;
 		if( !Hooks::run ( "BSCoreConfigGet", array ( $sPath, &$mReturn ) ) ) {
 			return $mReturn;

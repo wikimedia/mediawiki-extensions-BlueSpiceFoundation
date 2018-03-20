@@ -47,9 +47,6 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$aOut[] =   '<img alt="'.$this->mOptions['userdisplayname'].'"';
 		$aOut[] =        'src="'.$url.'"';
 		$aOut[] =        'width="'.$this->mOptions['width'].'"';
-		if ( BsConfig::get( 'MW::MiniProfileEnforceHeight' ) ) {
-			$aOut[] =        'height="'.$this->mOptions['height'].'"';
-		}
 		$aOut[] =   '/>';
 		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '</span>' : '</a>';
 		$aOut[] = '</div>';
