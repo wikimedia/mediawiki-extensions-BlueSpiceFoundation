@@ -142,6 +142,9 @@
 			"scripts": [
 				"bluespice.extjs/bluespice.extjs.js"
 			],
+			"styles": [
+				"bluespice.extjs/bluespice.extjs.overrides.less"
+			],
 			"messages": [
 				"bs-extjs-ok",
 				"bs-extjs-cancel",

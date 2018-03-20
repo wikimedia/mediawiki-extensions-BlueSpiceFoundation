@@ -12,7 +12,7 @@ Ext.define('BS.store.BSApi', {
 				},
 				reader: {
 					type: 'json',
-					root: 'results',
+					rootProperty: 'results',
 					idProperty: 'id',
 					totalProperty: 'total'
 				}
