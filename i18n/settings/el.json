@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"bs-setting-path-feature": "Επιλεγμένο",
+	"bs-setting-path-extension": "Επέκταση",
+	"bs-setting-path-package": "Πακέτο",
+	"bs-setting-path-system": "Σύστημα",
+	"bs-setting-path-dataanalysis": "Ανάλυση δεδομένων",
+	"bs-setting-path-editor": "Συντάκτης",
+	"bs-setting-path-search": "Αναζήτηση και πλοήγηση",
+	"bs-setting-path-personalisation": "Προσωπικοποίηση",
+	"bs-setting-path-customizing": "Εξατομίκευση",
+	"bs-setting-path-contentstructuring": "Δομή κειμένου",
+	"bs-setting-path-communication": "Επικοινωνία",
+	"bs-setting-path-administration": "Διαχείριση",
+	"bs-setting-path-export": "Εξαγωγή"
+}
