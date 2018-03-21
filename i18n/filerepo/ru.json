@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"EdwardGeneralov"
+		]
+	},
+	"bs-filerepo-labelupload": "Загрузка",
+	"bs-filerepo-labelfilter": "Фильтр",
+	"bs-filerepo-headerfilename": "Имя файла",
+	"bs-filerepo-headerfilesize": "Размер",
+	"bs-filerepo-headerpagecategories": "Категории",
+	"bs-filerepo-headerfilewidth": "Ширина",
+	"bs-filerepo-headerfileheight": "Высота",
+	"bs-filerepo-headerfilemimetype": "Тип MIME",
+	"bs-filerepo-headerfileusertext": "Участник",
+	"bs-filerepo-headerfileextension": "Расширение",
+	"bs-filerepo-headerfiletimestamp": "Загрузил",
+	"bs-filerepo-headerfilemediatype": "Тип медиа",
+	"bs-filerepo-headerfiledescription": "Описание",
+	"bs-filerepo-headerfilethumbnail": "Миниатюра изображения",
+	"bs-filerepo-yes": "Да",
+	"bs-filerepo-no": "Нет",
+	"bs-filerepo-pagesize": "Размер страницы"
+}
