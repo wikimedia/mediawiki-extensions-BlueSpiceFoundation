@@ -535,6 +535,10 @@
 	"ConfigRegistry": {
 		"bsg": "BlueSpice\\Config::newInstance"
 	},
+	"AutoloadNamespaces": {
+		"BlueSpice\\Tests\\": "tests/phpunit/",
+		"BlueSpice\\": "src/"
+	},
 	"AutoloadClasses": {
 		"BsCore": "includes/Core.class.php",
 		"BsCoreHooks": "includes/CoreHooks.php",
@@ -681,7 +685,6 @@
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
 		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
 	},
-	"load_composer_autoloader": true,
 	"manifest_version": 2,
 	"callback": "BsCoreHooks::onRegistry"
 }
