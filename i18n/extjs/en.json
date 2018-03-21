@@ -27,6 +27,7 @@
 	"bs-extjs-label-user": "User",
 	"bs-extjs-label-namespace": "Namespace",
 	"bs-extjs-label-page": "Page",
+	"bs-extjs-titlecombo-newpagehint": "Page does not exist!",
 	"bs-extjs-upload": "Upload",
 	"bs-extjs-browse": "Browse",
 	"bs-extjs-uploading": "Uploading...",
