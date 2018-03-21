@@ -1,8 +1,8 @@
 Ext.define( 'BS.grid.FileRepo', {
 	extend: 'Ext.grid.Panel',
 	requires: [
-		'BS.store.BSApi', 'Ext.ux.form.SearchField', 'BS.model.File',
-		'BS.dialog.Upload', 'Ext.ux.grid.FiltersFeature'
+		'BS.store.BSApi', 'MWExt.form.field.Search', 'BS.model.File',
+		'BS.dialog.Upload'
 	],
 	cls: 'bs-filerepo-grid',
 	pageSize : 50,
@@ -27,6 +27,7 @@ Ext.define( 'BS.grid.FileRepo', {
 		});
 
 		this.features = this.makeFeatures();
+		this.plugins = this.makePlugins();
 		this.dockedItems = this.makeDockedItems();
 		this.columns = this.makeColumns();
 		this.items = [];
@@ -35,12 +36,6 @@ Ext.define( 'BS.grid.FileRepo', {
 		$(document).trigger('BS.grid.FileRepo.initComponent', [ this, this.items ]);
 
 		this.callParent(arguments);
-
-		//Bugfix for filters are not being rendered in hidden columns
-		//https://www.sencha.com/forum/showthread.php?268893
-		this.on( 'columnshow', function() {
-			this.filters.createFilters();
-		}, this );
 	},
 
 	renderFilesize: function( val ){
@@ -124,9 +119,8 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colPageCategories = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
 			filter: {
-				menuItems: ['ct' ] //Other types are not supported in bs-filebackend-store at the moment
+				type: 'string'
 			},
 			dataIndex: 'page_categories',
 			renderer: this.renderCategories,
@@ -136,7 +130,9 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colFileWidth = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'numeric'
+			},
 			dataIndex: 'file_width',
 			hidden: true,
 			header: mw.message('bs-filerepo-headerfilewidth').plain()
@@ -144,7 +140,9 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colFileHeight = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'numeric'
+			},
 			dataIndex: 'file_height',
 			hidden: true,
 			header: mw.message('bs-filerepo-headerfileheight').plain()
@@ -152,7 +150,9 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colFileMimetype = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'string'
+			},
 			dataIndex: 'file_mimetype',
 			hidden: true,
 			header: mw.message('bs-filerepo-headerfilemimetype').plain()
@@ -160,7 +160,9 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colFileUserText = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'string'
+			},
 			dataIndex: 'file_user_display_text',
 			renderer: this.renderUser,
 			header: mw.message('bs-filerepo-headerfileusertext').plain()
@@ -168,14 +170,18 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colFileExtension = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'string'
+			},
 			dataIndex: 'file_extension',
 			header: mw.message('bs-filerepo-headerfileextension').plain()
 		});
 
 		this.colFileTimestamp = Ext.create( 'Ext.grid.column.Date', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'date'
+			},
 			dateFormat: 'Y-m-d H:i:s',
 			dataIndex: 'file_timestamp',
 			width:100,
@@ -184,7 +190,9 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colFileMediaType = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'string'
+			},
 			dataIndex: 'file_mediatype',
 			hidden: true,
 			header: mw.message('bs-filerepo-headerfilemediatype').plain()
@@ -192,7 +200,9 @@ Ext.define( 'BS.grid.FileRepo', {
 
 		this.colFileDescription = Ext.create( 'Ext.grid.column.Column', {
 			sortable: true,
-			filterable: true,
+			filter: {
+				type: 'string'
+			},
 			dataIndex: 'file_description',
 			header: mw.message('bs-filerepo-headerfiledescription').plain()
 		});
@@ -200,19 +210,23 @@ Ext.define( 'BS.grid.FileRepo', {
 		this.colFilename = Ext.create( 'Ext.grid.column.Column', {
 			header: mw.message('bs-filerepo-headerfilename').plain(),
 			sortable: true,
+			filter: {
+				type: 'string'
+			},
 			dataIndex: 'file_name',
 			flex:3,
-			filterable: true,
 			renderer: this.renderFileName,
 		});
 
 		this.colFilesize = Ext.create( 'Ext.grid.column.Column', {
 			header: mw.message('bs-filerepo-headerfilesize').plain(),
 			sortable: true,
+			filter: {
+				type: 'numeric'
+			},
 			dataIndex: 'file_size',
 			renderer: this.renderFilesize,
-			width: 100,
-			filterable: true
+			width: 100
 		});
 
 		return {
@@ -236,11 +250,11 @@ Ext.define( 'BS.grid.FileRepo', {
 		};
 	},
 
-	makeFeatures: function() {
+	makeFeatures: function() {},
+
+	makePlugins: function() {
 		return [
-			new Ext.ux.grid.FiltersFeature({
-				encode: true
-			})
+			'gridfilters'
 		];
 	},
 
@@ -254,7 +268,7 @@ Ext.define( 'BS.grid.FileRepo', {
 	},
 
 	makeTopToolbar: function( items ) {
-		this.sfFilter = new Ext.ux.form.SearchField({
+		this.sfFilter = new MWExt.form.field.Search({
 			fieldLabel: mw.message( 'bs-filerepo-labelfilter' ).plain(),
 			labelAlign: 'right',
 			flex: 3,
@@ -325,7 +339,6 @@ Ext.define( 'BS.grid.FileRepo', {
 
 	makeUploader: function( cfg ) {
 		this.btnUpload = new Ext.Button({
-			glyph: true,
 			iconCls: 'bs-icon-upload',
 			tooltip: mw.message( 'bs-filerepo-labelupload' ).plain()
 		});

@@ -1,5 +1,5 @@
 Ext.define( 'BS.dialog.UploadWarnings', {
-	extend: 'BS.Window',
+	extend: 'MWExt.Dialog',
 	minHeight: 50,
 	minWidth: 500,
 	padding: null,

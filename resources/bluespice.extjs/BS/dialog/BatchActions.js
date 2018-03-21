@@ -1,5 +1,5 @@
 Ext.define( 'BS.dialog.BatchActions', {
-	extend: 'BS.Window',
+	extend: 'MWExt.Dialog',
 	requires: [ 'BS.panel.BatchActions' ],
 
 	width: 600,
@@ -7,22 +7,23 @@ Ext.define( 'BS.dialog.BatchActions', {
 	title: mw.message('bs-deferred-batch-title').plain(),
 	closable: false,
 
-	afterInitComponent: function() {
+	makeItems: function() {
 		this.pnlBatchActions = new BS.panel.BatchActions();
 		this.pnlBatchActions.on( 'processcomplete', this.onProcessComplete, this );
 
-		this.items = [
+		return [
 			this.pnlBatchActions
 		];
+	},
 
+	makeButtons: function() {
+		var buttons = this.callParent( arguments );
 		this.btnCancel.hide();
-
-		this.callParent( arguments );
+		return buttons;
 	},
 
 	setData: function( data ) {
 		this.pnlBatchActions.setData( data );
-		this.callParent( arguments );
 	},
 
 	onBtnOKClick: function() {
