@@ -343,6 +343,9 @@
 				"bs-deferred-action-apiremovecategories-description",
 				"bs-deferred-action-apimovepage-description",
 				"bs-deferred-action-apideletepage-description"
+			],
+			"targets": [
+				"mobile", "desktop"
 			]
 		},
 		"ext.bluespice.extjs.BS.portal.css": {
