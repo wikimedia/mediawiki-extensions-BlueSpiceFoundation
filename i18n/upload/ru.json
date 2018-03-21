@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"EdwardGeneralov"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Загрузить файл",
+	"bs-upload-uploadbuttontext": "Просматривать",
+	"bs-upload-uploadfilefieldlabel": "Имя файла",
+	"bs-upload-uploadfileemptytext": "Вставить новый файл...",
+	"bs-upload-uploaddestfilelabel": "Имя файла назначения",
+	"bs-upload-allowedfiletypesare": "Допустимые типы файлов",
+	"bs-upload-license": "Лицензия",
+	"bs-upload-uploadwatchthislabel": "Смотреть этот файл",
+	"bs-upload-uploadignorewarningslabel": "Игнорировать любые предупреждения",
+	"bs-upload-categories": "Категории",
+	"bs-upload-upload-waitmessage": "Выполняется загрузка...",
+	"bs-upload-error": "Ошибка",
+	"bs-upload-descfilelabel": "Описание",
+	"bs-upload-error-long": "Ошибка при загрузке",
+	"bs-upload-filetypenotsupported": "Тип файла не поддерживается",
+  "bs-upload-details": "Детали",
+	"bs-upload-uploadwarningdialog-title": "Загрузить файл: Предупреждения",
+	"bs-upload-uploadwarningdialog-intro": "Следующие предупреждения возникли при попытке загрузить файл",
+	"bs-upload-uploadwarningdialog-outro": "Нажмите \"{{int:bs-extjs-ok}}\" игнорировать предупреждения и загружать файлы, нажмите \"{{int:bs-extjs-cancel}}\" вернуться в форму загрузки",
+	"bs-upload-uploadwarningdialog-warning-exists": "Файл с именем \"$1\" уже существует",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Там {{PLURAL:$1|является дубликатом|являются дубликатами}} этого файла",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Неизвестное предупреждение с кодом \"$1\""
+}
