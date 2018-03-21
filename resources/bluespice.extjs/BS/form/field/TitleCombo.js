@@ -29,10 +29,22 @@ Ext.define('BS.form.field.TitleCombo', {
 		}],
 		columns: [{
 			dataIndex: 'displayText',
+			renderer: function( value, meta, record ) {
+				if( record.get( 'type' ) === 'namespace' ) {
+					return value;
+				}
+				if( record.get( 'page_namespace' ) > 0 ) {
+					return value;
+				}
+				if( record.get( 'page_id' ) === 0 ) {
+					return value + ' <sup><span class="new-page-hint">' + mw.message( 'bs-extjs-titlecombo-newpagehint' ).plain() + '</span></sup>';
+				}
+				return value;
+			},
 			flex: 1
 		}],
 		viewConfig: {
-		getRowClass: function(record, rowIndex, rowParams, store){
+			getRowClass: function(record, rowIndex, rowParams, store){
 				var cssClass = 'bs-model-title-type-namespace';
 				if( record.get( 'type' ) === 'namespace' ) {
 					return cssClass;
