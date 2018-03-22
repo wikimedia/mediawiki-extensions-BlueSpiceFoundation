@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Indoril"
+			"Indoril",
+			"Nikosgranturismogt"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -20,5 +21,6 @@
 	"bs-extjs-close": "Κλείσιμο",
 	"bs-extjs-label-user": "Χρήστης",
 	"bs-extjs-confirmNavigationTitle": "Ακολουθήστε το σύνδεσμο",
-	"bs-extjs-allns": "(όλα)"
+	"bs-extjs-allns": "(όλα)",
+	"bs-pagecollection-prefix": "Συλλογή σελίδας"
 }
