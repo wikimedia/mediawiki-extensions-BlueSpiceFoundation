@@ -29,7 +29,7 @@
 	"bs-extjs-label-user": "Benutzer",
 	"bs-extjs-label-namespace": "Namensraum",
 	"bs-extjs-label-page": "Seite",
-	"bs-extjs-titlecombo-newpagehint": "Seite existiert nicht!",
+	"bs-extjs-titlecombo-newpagehint": "Die Seite ist nicht vorhanden!",
 	"bs-extjs-upload": "Hochladen",
 	"bs-extjs-browse": "Durchsuchen",
 	"bs-extjs-uploading": "Lädt hoch …",

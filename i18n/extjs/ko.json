@@ -36,6 +36,7 @@
 	"bs-extjs-label-user": "사용자",
 	"bs-extjs-label-namespace": "이름공간",
 	"bs-extjs-label-page": "문서",
+	"bs-extjs-titlecombo-newpagehint": "문서가 존재하지 않습니다!",
 	"bs-extjs-upload": "올리기",
 	"bs-extjs-browse": "찾아보기",
 	"bs-extjs-uploading": "올리는 중...",
