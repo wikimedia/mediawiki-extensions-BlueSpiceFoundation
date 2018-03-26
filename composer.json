@@ -42,5 +42,11 @@
 	"support": {
 		"issues": "https://sourceforge.net/projects/bluespice/support",
 		"wiki": "https://help.bluespice.com"
+	},
+	"autoload": {
+		"psr-4": {
+			"BlueSpice\\Tests\\": "tests/phpunit",
+			"BlueSpice\\": "src"
+		}
 	}
 }
