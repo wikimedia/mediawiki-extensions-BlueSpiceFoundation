@@ -692,6 +692,7 @@
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
 		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
 	},
+	"load_composer_autoloader": true,
 	"manifest_version": 2,
 	"callback": "BsCoreHooks::onRegistry"
 }
