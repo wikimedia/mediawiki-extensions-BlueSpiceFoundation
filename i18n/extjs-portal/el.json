@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xaris333"
+			"Xaris333",
+			"Nikosgranturismogt"
 		]
 	},
-	"bs-extjs-portal-timespan-month": "Μήνας"
+	"bs-extjs-portal-height": "Ύψος",
+	"bs-extjs-portal-count": "Καταχωρήσεις",
+	"bs-extjs-portal-timespan-week": "Εβδομάδα",
+	"bs-extjs-portal-timespan-month": "Μήνας",
+	"bs-extjs-portal-timespan-alltime": "Όλων των εποχών"
 }
