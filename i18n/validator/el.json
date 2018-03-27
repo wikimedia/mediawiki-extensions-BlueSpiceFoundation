@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Indoril"
+			"Indoril",
+			"Nikosgranturismogt"
 		]
 	},
 	"bs-validator-email-validation-approved": "Η διεύθυνση ηλεκτρονικού ταχυδρομείου έχει επικυρωθεί με επιτυχία.",
@@ -13,5 +14,8 @@
 	"bs-validator-set-validation-approved": "$1 επικυρώθηκε με επιτυχία.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Επιτρέπεται μόνο η ακόλουθη τιμή για $1 |Για $1  επιτρέπεται μόνο μία από τις ακόλουθες τιμές}}:  $2 .",
 	"bs-validator-integer-range-validation-too-low": "Η παρεχόμενη τιμή είναι πολύ χαμηλή. Δεν πρέπει να είναι χαμηλότερη από $1 .",
-	"bs-validator-integer-range-validation-too-high": "Η παρεχόμενη τιμή είναι πολύ υψηλή. Δεν πρέπει να είναι μεγαλύτερη από  $1 ."
+	"bs-validator-integer-range-validation-too-high": "Η παρεχόμενη τιμή είναι πολύ υψηλή. Δεν πρέπει να είναι μεγαλύτερη από  $1 .",
+	"bs-validator-value-not-recognized": "Η τιμή δεν μπορεί να επεξεργαστεί",
+	"bs-validator-invalid-parameter": "Αυτή η παράμετρος δεν επιτρέπεται",
+	"bs-validator-missing-required": "Αυτή η παράμετρος απαιτείται"
 }

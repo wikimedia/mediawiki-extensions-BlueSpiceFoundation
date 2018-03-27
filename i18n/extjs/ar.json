@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Azouz.anis"
+			"Azouz.anis",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
+	"bs-extjs-titlecombo-newpagehint": "الصفحة غير موجودة!",
 	"bs-extjs-pageexport-dialog-title": "تصدير صفحات",
 	"bs-extjs-pageexport-list-name-label": "اسم القائمة",
 	"bs-extjs-pageexport-list-format-label": "شكل القائمة",

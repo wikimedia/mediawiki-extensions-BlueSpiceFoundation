@@ -30,6 +30,7 @@
 	"bs-extjs-label-user": "Usuario",
 	"bs-extjs-label-namespace": "Espacio de nombres",
 	"bs-extjs-label-page": "Página",
+	"bs-extjs-titlecombo-newpagehint": "La página no existe.",
 	"bs-extjs-upload": "Cargar",
 	"bs-extjs-browse": "Explorar",
 	"bs-extjs-uploading": "Cargando…",
