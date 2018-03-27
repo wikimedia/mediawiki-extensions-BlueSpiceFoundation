@@ -15,6 +15,8 @@ Ext.define('BS.form.field.ItemList', {
 	inputDisplayField: 'text',
 	listDisplayField: 'anchor',
 	itemGridConfig: null,
+	minChars: 4,
+	typeField: 'type',
 
 	initComponent: function() {
 		this.items = this.makeItems();
@@ -38,9 +40,10 @@ Ext.define('BS.form.field.ItemList', {
 		var combo = new Ext.form.field.ComboBox({
 			anchor: '100%',
 			displayField: this.inputDisplayField,
+			minChars: this.minChars,
 			listConfig: {
 				getInnerTpl: function() {
-					return '{["<span class=\'bs-icon-"+values.type+" bs-typeicon\'></span>"+values.' + me.inputDisplayField + ']}';
+					return '{["<span class=\'bs-icon-"+values.' + me.typeField + '+" bs-typeicon\'></span>"+values.' + me.inputDisplayField + ']}';
 				}
 			},
 
@@ -92,7 +95,7 @@ Ext.define('BS.form.field.ItemList', {
 				},
 				columns: [
 					{
-						dataIndex: 'type',
+						dataIndex: this.typeField,
 						width: 30,
 						renderer: function( value ) {
 							return mw.html.element( 'span', {
