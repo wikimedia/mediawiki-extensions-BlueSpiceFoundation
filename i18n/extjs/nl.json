@@ -7,7 +7,8 @@
 			"Sjoerddebruin",
 			"Siebrand",
 			"Jeleniccz",
-			"Mainframe98"
+			"Mainframe98",
+			"Patio"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -33,6 +34,7 @@
 	"bs-extjs-label-user": "Gebruiker",
 	"bs-extjs-label-namespace": "Naamruimte",
 	"bs-extjs-label-page": "Pagina",
+	"bs-extjs-titlecombo-newpagehint": "Pagina is er niet!",
 	"bs-extjs-upload": "Uploaden",
 	"bs-extjs-browse": "Bladeren",
 	"bs-extjs-uploading": "Bezig met uploaden...",
