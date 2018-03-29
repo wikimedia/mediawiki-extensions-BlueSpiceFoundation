@@ -8,7 +8,8 @@ Ext.define('BS.store.BSApi', {
 				type: 'ajax',
 				url: mw.util.wikiScript('api'),
 				extraParams: {
-					format: 'json'
+					format: 'json',
+					context: JSON.stringify( bs.util.getCAIContext() )
 				},
 				reader: {
 					type: 'json',

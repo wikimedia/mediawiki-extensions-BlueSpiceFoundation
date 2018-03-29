@@ -54,6 +54,7 @@ abstract class StoreApiBase extends \BSApiBase {
 	 * Main method called by \ApiMain
 	 */
 	public function execute() {
+		$this->initContext();
 		$dataStore = $this->makeDataStore();
 		$result = $dataStore->getReader()->read( $this->getReaderParams() );
 		$schema = $dataStore->getReader()->getSchema();
@@ -144,7 +145,13 @@ abstract class StoreApiBase extends \BSApiBase {
 				\ApiBase::PARAM_DFLT => 'json',
 				\ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-format',
-			)
+			),
+			'context' => array(
+				\ApiBase::PARAM_TYPE => 'string',
+				\ApiBase::PARAM_REQUIRED => false,
+				\ApiBase::PARAM_DFLT => '{}',
+				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-context',
+			),
 		);
 	}
 
@@ -159,14 +166,15 @@ abstract class StoreApiBase extends \BSApiBase {
 			'query' => 'Similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
 			'callback' => 'A method name in the client code that should be called in the response (JSONP)',
 			'_dc' => '"Disable cache" flag',
-			'format' => 'The format of the output (only JSON or formatted JSON)'
+			'format' => 'The format of the output (only JSON or formatted JSON)',
+			'context' => 'JSON string encoded object with context data for the store',
 		);
 	}
 
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		//Unfortunately there is no way to register custom types for parameters
-		if( in_array( $paramName, [ 'sort', 'group', 'filter' ] ) ) {
+		if( in_array( $paramName, [ 'sort', 'group', 'filter', 'context' ] ) ) {
 			$value = \FormatJson::decode( $value );
 			if( empty( $value ) ) {
 				return [];
@@ -197,6 +205,22 @@ abstract class StoreApiBase extends \BSApiBase {
 			'filter' => $this->getParameter( 'filter', null ),
 			'sort' => $this->getParameter( 'sort', null ),
 		]);
+	}
+
+	/**
+	 * Initializes the context of the API call
+	 */
+	protected function initContext() {
+		$this->extendedContext = \BSExtendedApiContext::newFromRequest(
+			$this->getRequest()
+		);
+		$this->getContext()->setTitle( $this->extendedContext->getTitle() );
+		if( $this->getTitle()->getArticleID() > 0 ) {
+			//TODO: Check for subtypes like WikiFilePage or WikiCategoryPage
+			$this->getContext()->setWikiPage(
+				\WikiPage::factory( $this->getTitle() )
+			);
+		}
 	}
 
 }

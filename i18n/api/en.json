@@ -31,6 +31,7 @@
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code> flag",
 	"apihelp-bs-store-param-format": "The format of the output (only JSON or formatted JSON)",
 	"apihelp-bs-store-param-options": "Arbitrary options to configure the store in format of a JSON string",
+	"apihelp-bs-store-param-context": "JSON string encoded object with context data for the store",
 	"apihelp-bs-task-param-task": "The task that should be executed",
 	"apihelp-bs-task-param-taskdata": "JSON string encoded object with arbitrary data for the task",
 	"apihelp-bs-task-param-context": "JSON string encoded object with context data for the task",

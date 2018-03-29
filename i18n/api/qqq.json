@@ -33,6 +33,7 @@
 	"apihelp-bs-store-param-dc": "{{doc-apihelp-param|bs-store|dc}}",
 	"apihelp-bs-store-param-format": "{{doc-apihelp-param|bs-store|format}}",
 	"apihelp-bs-store-param-options": "{{doc-apihelp-param|bs-store|options}}",
+	"apihelp-bs-store-param-context": "{{doc-apihelp-param|bs-store|context}}",
 	"apihelp-bs-task-param-task": "{{doc-apihelp-param|bs-task|task}}",
 	"apihelp-bs-task-param-taskdata": "{{doc-apihelp-param|bs-task|taskdata}}",
 	"apihelp-bs-task-param-context": "{{doc-apihelp-param|bs-task|context}}",

@@ -58,7 +58,8 @@ Ext.define('BS.form.field.ItemList', {
 					},
 					extraParams: {
 						action: this.apiStore,
-						format: 'json'
+						format: 'json',
+						context: JSON.stringify( bs.util.getCAIContext() )
 					}
 				},
 				//model: this.model, //for some reason having a string with the models class name does not work here...
