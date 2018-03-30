@@ -25,6 +25,7 @@
 	"apihelp-bs-store-param-dc": "Der Parameter „<code>Disable cache</code>“",
 	"apihelp-bs-store-param-format": "Das Format zur Ausgabe der Ergebnisse (nur JSON oder formatiertes JSON)",
 	"apihelp-bs-store-param-options": "Beliebige Optionen zur Konfiguration der Datenbank im Format einer JSON-Zeichenfolge",
+	"apihelp-bs-store-param-context": "JSON-zeichenfolgekodiertes Objekt mit Kontextdaten für den Speicher",
 	"apihelp-bs-task-param-task": "Die auszuführende Aufgabe",
 	"apihelp-bs-task-param-taskdata": "Zeichenfolge im JSON-Format, die beliebige Daten im Zusammenhang mit der auszuführenden Aufgabe enthält.",
 	"apihelp-bs-task-param-context": "Zeichenfolge im JSON-Format, die Daten im Zusammenhang mit der auszuführenden Aufgabe enthält.",

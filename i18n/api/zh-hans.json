@@ -31,6 +31,7 @@
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code>标记",
 	"apihelp-bs-store-param-format": "输出格式（仅JSON或格式化JSON）",
 	"apihelp-bs-store-param-options": "要将库配置为JSON字符串格式的任意选项",
+	"apihelp-bs-store-param-context": "JSON字符串编码的对象，带用于存储的环境数据",
 	"apihelp-bs-task-param-task": "应执行的任务",
 	"apihelp-bs-task-param-taskdata": "JSON字符串编码的对象，带用于任务的任意数据",
 	"apihelp-bs-task-param-context": "JSON字符串编码的对象，带用于任务的环境数据",
