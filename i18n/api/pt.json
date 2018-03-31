@@ -3,7 +3,8 @@
 		"authors": [
 			"Vitorvicentevalente",
 			"Hamilton Abreu",
-			"Fúlvio"
+			"Fúlvio",
+			"Athena in Wonderland"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
@@ -33,6 +34,7 @@
 	"apihelp-bs-store-param-dc": "Elemento <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "O formato do resultado (só JSON, ou JSON formatado)",
 	"apihelp-bs-store-param-options": "Opções arbitrárias para configurar o armazenamento em formato de texto JSON",
+	"apihelp-bs-store-param-context": "Objeto codificado em texto JSON com dados de contexto para o armazenamento",
 	"apihelp-bs-task-param-task": "A tarefa que deve ser executada",
 	"apihelp-bs-task-param-taskdata": "Objeto codificado em texto JSON com dados arbitrários para a tarefa",
 	"apihelp-bs-task-param-context": "Objeto codificado em texto JSON com dados de contexto para a tarefa",

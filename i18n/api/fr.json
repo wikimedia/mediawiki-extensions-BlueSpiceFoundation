@@ -35,6 +35,7 @@
 	"apihelp-bs-store-param-dc": "Marque <code>Désactivation du cache</code>",
 	"apihelp-bs-store-param-format": "Le format de la sortie (uniquement JSON ou JSON mis en forme)",
 	"apihelp-bs-store-param-options": "Options arbitraires pour configurer le stockage sous la forme d’une chaîne JSON",
+	"apihelp-bs-store-param-context": "Objet encodé en chaîne JSON avec les données de contexte pour le stockage",
 	"apihelp-bs-task-param-task": "La tâche qui doit être exécutée",
 	"apihelp-bs-task-param-taskdata": "Objet encodé en chaîne JSON avec des données arbitraires pour la tâche",
 	"apihelp-bs-task-param-context": "Objet encodé en chaîne JSON avec des données contextuelles pour la tâche",
