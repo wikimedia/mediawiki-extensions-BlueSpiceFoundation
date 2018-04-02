@@ -32,6 +32,7 @@
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code> 標記",
 	"apihelp-bs-store-param-format": "輸出格式（僅限 JSON 或格式化 JSON）",
 	"apihelp-bs-store-param-options": "設置 JSON 字串格式儲存的任意選項",
+	"apihelp-bs-store-param-context": "用於儲存，帶有環境資料的 JSON 字串編碼物件",
 	"apihelp-bs-task-param-task": "應被執行的任務",
 	"apihelp-bs-task-param-taskdata": "用於任務，帶有任意資料的 JSON 字串編碼物件",
 	"apihelp-bs-task-param-context": "用於任務，帶有環境資料的 JSON 字串編碼物件",
