@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ans"
+			"Ans",
+			"Aefgh39622",
+			"Horus"
 		]
 	},
-	"bs-userbar_loginswitch_logout": "ออกจากระบบ",
-	"bs-userbar_loginswitch_login": "เข้าสู่ระบบ"
+	"bs-userbar_loginswitch_logout": "ลงชื่อออก",
+	"bs-userbar_loginswitch_login": "ลงชื่อเข้า"
 }

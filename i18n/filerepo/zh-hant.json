@@ -3,7 +3,8 @@
 		"authors": [
 			"1233thehongkonger",
 			"Liuxinyu970226",
-			"Kly"
+			"Kly",
+			"Sanmosa"
 		]
 	},
 	"bs-filerepo-labelupload": "上載",
@@ -14,7 +15,7 @@
 	"bs-filerepo-headerfilewidth": "寬度",
 	"bs-filerepo-headerfileheight": "高度",
 	"bs-filerepo-headerfilemimetype": "MIME類型",
-	"bs-filerepo-headerfileusertext": "使用者",
+	"bs-filerepo-headerfileusertext": "用戶",
 	"bs-filerepo-headerfileextension": "擴充套件",
 	"bs-filerepo-headerfiletimestamp": "上傳於：",
 	"bs-filerepo-headerfilemediatype": "多媒體類型",
