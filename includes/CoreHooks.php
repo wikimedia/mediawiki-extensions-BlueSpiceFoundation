@@ -348,6 +348,10 @@ class BsCoreHooks {
 				$attribs['data-bs-username'] = $target->getText();
 			}
 		}
+		if( $target->getNamespace() === NS_FILE ) {
+			$attribs['data-bs-filename'] = $target->getText();
+			$attribs['data-bs-filetimestamp'] = '';
+		}
 		return true;
 	}
 
@@ -367,9 +371,11 @@ class BsCoreHooks {
 		$attribs['data-bs-title'] = $title->getPrefixedText();
 		if( $file instanceof File ) {
 			$attribs['data-bs-filename'] = $file->getName();
+			$attribs['data-bs-filetimestamp'] = $file->getTimestamp();
 		}
 		else {
 			$attribs['data-bs-filename'] = $title->getText();
+			$attribs['data-bs-filetimestamp'] = '';
 		}
 
 		return true;
@@ -385,6 +391,8 @@ class BsCoreHooks {
 	public static function onThumbnailBeforeProduceHTML( $thumbnail, &$attribs, &$linkAttribs ) {
 		$oFile = $thumbnail->getFile();
 		$linkAttribs['data-bs-title'] = $oFile->getTitle()->getPrefixedDBKey();
+		$linkAttribs['data-bs-filetimestamp'] = $oFile->getTimestamp();
+
 		return true;
 	}
 
