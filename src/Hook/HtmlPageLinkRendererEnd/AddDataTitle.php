@@ -15,6 +15,12 @@ class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		//We add the original title to a link. This may be the same content as
 		//"title" attribute, but it doesn't have to. I.e. in red links
 		$this->attribs['data-bs-title'] = $this->target->getDBkey();
+
+		if( $this->target->getNamespace() === NS_FILE ) {
+			$this->attribs['data-bs-filename'] = $this->target->getText();
+			$this->attribs['data-bs-filetimestamp'] = '';
+		}
+
 		return true;
 	}
 }
