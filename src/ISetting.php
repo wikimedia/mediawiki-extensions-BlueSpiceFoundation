@@ -32,4 +32,10 @@ interface ISetting {
 	 * @return string, the message key for the label
 	 */
 	public function getLabelMessageKey();
+
+	/**
+	 *
+	 * @return string, the message key for the help message | null
+	 */
+	public function getHelpMessageKey();
 }

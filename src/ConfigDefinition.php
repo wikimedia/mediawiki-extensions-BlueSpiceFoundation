@@ -99,6 +99,14 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return string | null
+	 */
+	public function getHelpMessageKey() {
+		return null;
+	}
+
 	protected function makeFormFieldParams() {
 		return [
 			'name' => $this->getName(),
@@ -107,6 +115,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths {
 			'id' => $this->makeID(),
 			'label-message' => $this->getLabelMessageKey(),
 			'parent' => new \HTMLFormEx( [] ),
+			'help-message' => $this->getHelpMessageKey(),
 		];
 	}
 
