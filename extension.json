@@ -66,7 +66,8 @@
 				"administration": "bs-setting-path-administration",
 				"qualityassurance": "bs-setting-path-qualityassurance",
 				"export": "bs-setting-path-export"
-			}
+			},
+			"RunJobsTriggerHandlerRegistry": {}
 		}
 	},
 	"ExtensionFunctions": [
@@ -451,7 +452,10 @@
 		"WikiAdminAlias": "languages/BlueSpice.WikiAdmin.alias.php"
 	},
 	"Hooks": {
-		"SetupAfterCache": "BsCoreHooks::onSetupAfterCache",
+		"SetupAfterCache": [
+			"BsCoreHooks::onSetupAfterCache",
+			"BlueSpice\\Hook\\SetupAfterCache\\RunJobsTrigger::callback"
+		],
 		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
 		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
 		"HtmlPageLinkRendererEnd": [
