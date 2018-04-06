@@ -5,7 +5,7 @@
  * @author Robert Vogel <vogel@hallowelt.com>
  */
 
-//HINT: http://www.mediawiki.org/wiki/Manual:Writing_maintenance_scripts
+//HINT: https://www.mediawiki.org/wiki/Manual:Writing_maintenance_scripts
 require_once( 'BSMaintenance.php' );
 
 class TestMail extends BSMaintenance {

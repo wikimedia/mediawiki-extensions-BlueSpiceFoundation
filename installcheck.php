@@ -23,7 +23,7 @@
 //TODO: Check if folders with .htaccess can be accessed (Apache via .htaccess, AllowOverride Limit; IIS via GUI).
 //TODO: Check if impersonation is active on Windows
 //DONE: Add server sanity checks (APC, wincache, register_globals)
-//      cf. http://www.mediawiki.org/wiki/PHP_configuration
+//      cf. https://www.mediawiki.org/wiki/PHP_configuration
 //      Interesting stuff: http://www.php.net/manual/de/ref.info.php
 
 // Bail out if not in $IP
@@ -68,7 +68,7 @@ if (!file_exists("LocalSettings.php")) exit("This file must be placed where your
 $d = DIRECTORY_SEPARATOR;
 $p = PATH_SEPARATOR;
 
-// General MediaWiki requirements check. Cf. http://www.mediawiki.org/wiki/Installation
+// General MediaWiki requirements check. Cf. https://www.mediawiki.org/wiki/Installation
 
 if (version_compare(PHP_VERSION, '5.3.2', '<')) {
     echo 'BlueSpice works with PHP 5.3.2 or higher. Your version: ' . PHP_VERSION . "\n";
@@ -381,7 +381,7 @@ else {
 	}
 	echo(implode(",", $foundcaches).')');
 	echo("<br />\n");
-	echo('For optimal performance make sure you set <tt>$wgMainCacheType = CACHE_ACCEL;</tt> <a href="http://www.mediawiki.org/wiki/Manual:$wgMainCacheType">(more info)</a>'); // TODO: CACHE_ACCEL & WinCache are BROKEN with BS! :-(
+	echo('For optimal performance make sure you set <tt>$wgMainCacheType = CACHE_ACCEL;</tt> <a href="https://www.mediawiki.org/wiki/Manual:$wgMainCacheType">(more info)</a>'); // TODO: CACHE_ACCEL & WinCache are BROKEN with BS! :-(
 }
 
 echo( "<h3>PHP Thread Safety:</h3>" );

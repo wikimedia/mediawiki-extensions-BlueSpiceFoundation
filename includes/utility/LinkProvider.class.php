@@ -2,7 +2,7 @@
 // Last review MRG (21.09.10 13:08)
 /**
  * This class provides functions to generate multiple types of links (WikiText or HTML anchors) from various sources.
- * Hint: http://www.mediawiki.org/wiki/Help:Links
+ * Hint: https://www.mediawiki.org/wiki/Help:Links
  * @package BlueSpice_AdapterMW
  * @subpackage Utility
  */

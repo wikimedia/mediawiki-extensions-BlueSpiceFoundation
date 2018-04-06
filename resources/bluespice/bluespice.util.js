@@ -159,7 +159,7 @@
 	}
 
 	function _getCAIContext() {
-		//HINT: http://www.mediawiki.org/wiki/Manual:Interface/JavaScript
+		//HINT: https://www.mediawiki.org/wiki/Manual:Interface/JavaScript
 		return {
 			wgAction: mw.config.get('wgAction'),
 			wgArticleId: mw.config.get('wgArticleId'),

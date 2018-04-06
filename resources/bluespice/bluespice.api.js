@@ -149,7 +149,7 @@
 	}
 
 	function _getContext() {
-		//HINT: http://www.mediawiki.org/wiki/Manual:Interface/JavaScript
+		//HINT: https://www.mediawiki.org/wiki/Manual:Interface/JavaScript
 		//Sync with serverside implementation of 'BSExtendedApiContext::newFromRequest'
 		return {
 			wgAction: mw.config.get( 'wgAction' ),

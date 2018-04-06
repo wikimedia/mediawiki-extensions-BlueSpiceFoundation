@@ -80,7 +80,7 @@
 	bs.wikiText.Link = function( cfg ) {
 		var me = this;
 
-		//HINT: http://www.mediawiki.org/wiki/Help:Images#Syntax
+		//HINT: https://www.mediawiki.org/wiki/Help:Images#Syntax
 		//Format: border|frameless|frame|thumb
 		//Resizing: {width}px|x{height}px|{width}x{height}px|upright
 		//Horizontal alignment: left|right|center|none

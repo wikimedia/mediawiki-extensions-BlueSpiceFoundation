@@ -236,7 +236,7 @@ class BsRUNLEVEL {
  * querystring.
  * With BlueSpice being a former MediaWiki framework those actions are very
  * similar to the ones described at
- * http://www.mediawiki.org/wiki/Manual:Parameters_to_index.php
+ * https://www.mediawiki.org/wiki/Manual:Parameters_to_index.php
  */
 class BsACTION {
 	const NONE = 0;

@@ -632,7 +632,7 @@ class BsCore {
 
 	/**
 	 * Make the page being parsed have a dependency on $page via the templatelinks table.
-	 * http://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
+	 * https://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
 	 * @param Parser $oParser
 	 * @param String $sTitle
 	 */
@@ -643,7 +643,7 @@ class BsCore {
 
 	/**
 	 * Make the page being parsed have a dependency on $page via the templatelinks table.
-	 * http://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
+	 * https://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
 	 * @param Parser $oParser
 	 * @param Title $oTitle
 	 */
