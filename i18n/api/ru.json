@@ -4,11 +4,13 @@
 			"Краснорядцева Елена",
 			"Redredsonia",
 			"Alexey zakharenkov",
-			"Facenapalm"
+			"Facenapalm",
+			"Happy13241"
 		]
 	},
 	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
+	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с данными контекста для хранилища",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
 	"apihelp-bs-task-param-schema": "Показывает JSON-схему для параметров задачи",
 	"apihelp-bs-task-param-examples": "Показать примеры параметров задачи",
