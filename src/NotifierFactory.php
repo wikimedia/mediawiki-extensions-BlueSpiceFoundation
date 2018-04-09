@@ -8,7 +8,7 @@ class NotifierFactory {
 	 *
 	 * @return \BlueSpice\INotifier
 	 */
-	public function newNotifier() {
+	public static function newNotifier() {
 		return new LegacyNotifier();
 	}
 }
