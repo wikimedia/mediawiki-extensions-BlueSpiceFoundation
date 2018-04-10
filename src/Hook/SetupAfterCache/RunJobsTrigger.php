@@ -5,6 +5,9 @@ namespace BlueSpice\Hook\SetupAfterCache;
 use BlueSpice\Hook\SetupAfterCache;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use BlueSpice\IRunJobsTriggerHandler;
+use MediaWiki\Logger\LoggerFactory;
+use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
+use BlueSpice\NotifierFactory;
 
 class RunJobsTrigger extends SetupAfterCache {
 
@@ -17,10 +20,21 @@ class RunJobsTrigger extends SetupAfterCache {
 			'BlueSpiceFoundationRunJobsTriggerHandlerRegistry'
 		);
 
+		$logger = LoggerFactory::getInstance( 'runjobs-trigger-runner' );
+
+		$runConditionChecker = new JSONFileBasedRunConditionChecker(
+			new \DateTime(),
+			BSDATADIR,
+			$logger
+		);
+
 		$runner = new \BlueSpice\RunJobsTriggerRunner(
 			$registry,
+			$logger,
+			$runConditionChecker,
 			$this->getConfig(),
-			$this->getServices()->getDBLoadBalancer()
+			$this->getServices()->getDBLoadBalancer(),
+			NotifierFactory::newNotifier() //TODO: Add NotifierFactory to BlueSpice\Services
 		);
 
 		$runner->execute();
