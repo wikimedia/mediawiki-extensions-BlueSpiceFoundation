@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"JohSan65"
+			"JohSan65",
+			"Imre Eilertsen"
 		]
 	},
+	"bs-setting-path-communication": "Kommunikasjon",
 	"bs-setting-path-qualityassurance": "Kvalitetssikring."
 }
