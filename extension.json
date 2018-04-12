@@ -379,6 +379,16 @@
 				"ext.bluespice"
 			]
 		},
+		"ext.bluespice.html.formfields": {
+			"localBasePath": "resources",
+			"remoteExtPath": "BlueSpiceFoundation/resources",
+			"scripts": [
+				"bluespice/bluespice.html.formfields.js"
+			],
+			"dependencies": [
+				"ext.bluespice"
+			]
+		},
 		"ext.bluespice.html.formfields.multiselect": {
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
