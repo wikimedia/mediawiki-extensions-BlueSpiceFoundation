@@ -71,7 +71,8 @@
 		}
 	},
 	"ExtensionFunctions": [
-		"BsCoreHooks::setup"
+		"BsCoreHooks::setup",
+		"BlueSpice\\OnTheFlyPermissions\\Subsystem::setup"
 	],
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
@@ -383,7 +384,10 @@
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
-				"bluespice/bluespice.html.formfields.js"
+				"bluespice/bluespice.html.formfields.namespacemultiselect.js"
+			],
+			"styles": [
+				"bluespice/bluespice.html.formfields.less"
 			],
 			"dependencies": [
 				"ext.bluespice"

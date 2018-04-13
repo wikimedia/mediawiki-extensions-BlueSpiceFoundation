@@ -9,7 +9,7 @@ Ext.define('BS.form.SimpleSelectBox', {
 
 	//Custom settings
 	bsData: {},
-	
+
 	initComponent: function() {
 		this.store = Ext.create('Ext.data.JsonStore', {
 			fields: [ this.displayField, this.valueField ],

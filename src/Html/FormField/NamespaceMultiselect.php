@@ -19,9 +19,16 @@ class NamespaceMultiselect extends \HTMLFormField {
 			]
 		);
 
-		$hiddenField = \Html::input( $this->mName, $value, 'hidden' );
+		$assocField = \Html::input(
+			$this->mName,
+			$value,
+			'text',
+			[
+				'class' => 'bs-html-formfield-hidden'
+			]
+		);
 
-		return $container.$hiddenField;
+		return $container.$assocField;
 	}
 
 	protected function getDefaultOptions() {
