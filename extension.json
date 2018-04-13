@@ -1,6 +1,6 @@
 {
 	"name": "BlueSpice",
-	"version": "2.27.2",
+	"version": "2.27.3",
 	"license-name": "GPL-2.0+",
 	"author": [
 		"[http://www.hallowelt.com Hallo Welt! GmbH]"
@@ -434,7 +434,7 @@
 		"_prefix": "bsg",
 		"BlueSpiceExtInfo": {
 			"name": "BlueSpice",
-			"version": "2.27.2",
+			"version": "2.27.3",
 			"status": "stable",
 			"package": "BlueSpice Free",
 			"url": "http://bluespice.com",
