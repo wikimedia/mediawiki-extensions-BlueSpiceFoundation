@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nikosgranturismogt"
+		]
+	},
+	"apihelp-bs-wikipage-tasks-description": "Παρέχει συνηθισμένες λειτουργίες για τις WikiPages",
+	"apihelp-bs-wikipage-tasks-summary": "Παρέχει συνηθισμένες λειτουργίες για τις WikiPages",
+	"apihelp-bs-store-param-limit": "Αριθμός αποτελεσμάτων για επιστροφή",
+	"apihelp-bs-task-param-task": "Η εργασία που θα εκτελεστεί",
+	"apihelp-bs-task-param-format": "Η μορφή του αποτελέσματος",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Αλλαγμένες κατηγορίες.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Δεν σας επιτρέπεται να επεξεργαστείτε την σελίδα \"$1\".",
+	"bs-wikipage-tasks-error-categories-not-valid": "Άκυρες {{PLURAL:$2|κατηγορία|κατηγορίες}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Οι κατηγορίες έχουν οριστεί επιτυχώς.",
+	"apihelp-bs-wikisubpage-treestore-param-node": "Ο προθεματοποιημένος τίτλος της βικισελίδας",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Κατάλογος επιλογών",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Δεν σας επιτρέπεται να διαβάσετε την σελίδα '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Δεν υπάρχουν κατηγορίες για αφαίρεση"
+}
