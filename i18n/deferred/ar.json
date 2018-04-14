@@ -2,9 +2,24 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
-			"Mido"
+			"Mido",
+			"ديفيد"
 		]
 	},
+	"bs-deferred-action-status-pending": "قيد الانتظار",
+	"bs-deferred-action-status-running": "جارٍ...",
+	"bs-deferred-action-status-done": "تم.",
+	"bs-deferred-action-status-error": "فشل.",
+	"bs-deferred-action-apicopypage-description": "انسخ \"$1\" إلى \"$2\".",
+	"bs-deferred-action-apieditpage-description": "تحرير \"$1\".",
+	"bs-deferred-batch-title": "دفعة المعالجة",
+	"bs-deferred-batch-progress-desc": "التقدم",
+	"bs-deferred-batch-actions": "الأفعال",
 	"bs-deferred-batch-description": "الوصف",
+	"bs-deferred-batch-status": "الحالة",
+	"bs-deferred-action-apiaddcategories-description": "أضف تصنيفات إلى \"$1\".",
+	"bs-deferred-action-apiremovecategories-description": "أضف تصنيفات من \"$1\".",
+	"bs-deferred-action-apisetcategories-description": "تعيين التصنيفات في \"$1\".",
+	"bs-deferred-action-apimovepage-description": "انقل \"$1\" إلى \"$2\".",
 	"bs-deferred-action-apideletepage-description": "حذف \"$1\"."
 }

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"bs-filerepo-labelupload": "رفع",
+	"bs-filerepo-labelfilter": "فلترة",
+	"bs-filerepo-headerfilename": "اسم الملف",
+	"bs-filerepo-headerfilesize": "الحجم",
+	"bs-filerepo-headerpagecategories": "التصنيفات",
+	"bs-filerepo-headerfilewidth": "العرض",
+	"bs-filerepo-headerfileheight": "الارتفاع",
+	"bs-filerepo-headerfilemimetype": "نوع MIME",
+	"bs-filerepo-headerfileusertext": "المستخدم",
+	"bs-filerepo-headerfileextension": "التمديد",
+	"bs-filerepo-headerfiletimestamp": "مرفوع",
+	"bs-filerepo-headerfilemediatype": "نوع الوسائط",
+	"bs-filerepo-headerfiledescription": "الوصف",
+	"bs-filerepo-headerfilethumbnail": "الصورة المصغرة",
+	"bs-filerepo-yes": "نعم",
+	"bs-filerepo-no": "لا",
+	"bs-filerepo-pagesize": "حجم الصفحة"
+}

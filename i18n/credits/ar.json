@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"ديفيد"
 		]
 	},
+	"specialcredits": "إحالات BlueSpice",
+	"bs-credits-programmers": "المبرمجون",
+	"bs-credits-dnt": "التصميم والاختبار",
+	"bs-credits-contributors": "المساهمون",
 	"bs-credits-translators": "المترجمون",
-	"bs-credits-translation": "الترجمة"
+	"bs-credits-translation": "الترجمة",
+	"bs-credits-th": "شكرا لجميع المترجمين من $1."
 }

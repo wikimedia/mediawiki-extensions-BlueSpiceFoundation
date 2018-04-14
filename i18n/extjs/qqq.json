@@ -6,7 +6,8 @@
 			"Stephan Muggli <muggli@hallowelt.biz>",
 			"Liuxinyu970226",
 			"Chrumps",
-			"Mglaser"
+			"Mglaser",
+			"ديفيد"
 		]
 	},
 	"bs-extjs-ok": "Label for submit button used in dialogues, alerts and prompts.\n{{Identical|OK}}",
@@ -24,7 +25,7 @@
 	"bs-extjs-confirm": "Title for confirm prompts\n{{Identical|Confirm}}",
 	"bs-extjs-loading": "Label for elements that are shown when waiting for Ajax data.\n{{Identical|Loading}}",
 	"bs-extjs-pageSize": "Label for the input box that changes the number of lines in a grid.\n{{Identical|Page size}}",
-	"bs-extjs-actions-column-header": "Label for the grid cloumn that shows the action buttons.\n{{Identical|Action}}",
+	"bs-extjs-actions-column-header": "Label for the grid column that shows the action buttons.\n{{Identical|Action}}",
 	"bs-extjs-warning": "Title for warning prompts.\n{{Identical|Warning}}",
 	"bs-extjs-saving": "Label for elements that are shown when saving data from a dialogue via Ajax.\n{{Identical|Saving}}",
 	"bs-extjs-reset": "Label for reset button used in dialogues, alerts and prompts.\n{{Identical|Reset}}",

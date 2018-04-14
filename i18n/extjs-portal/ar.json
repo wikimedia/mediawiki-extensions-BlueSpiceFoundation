@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"bs-extjs-portal-config": "تهيئة المدخل:",
+	"bs-extjs-portal-title": "عنوان المدخل",
+	"bs-extjs-portal-height": "الارتفاع",
+	"bs-extjs-portal-count": "المدخلات",
+	"bs-extjs-portal-timespan": "الفترة الزمنية",
+	"bs-extjs-portal-timespan-week": "أسبوع",
+	"bs-extjs-portal-timespan-month": "شهر",
+	"bs-extjs-portal-timespan-alltime": "كل الوقت"
+}

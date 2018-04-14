@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"bs-validator-email-validation-approved": "تم التحقق من صحة عنوان البريد الإلكتروني بنجاح.",
+	"bs-validator-email-validation-not-approved": "عنوان البريد الالكتروني لا يمكن التحقق من صحته.",
+	"bs-validator-url-validation-approved": "تم التحقق من صحة المسار بنجاح.",
+	"bs-validator-url-validation-not-approved": "لا يمكن التحقق من صحة المسار.",
+	"bs-validator-arg-count-validation-approved": "تم التحقق من صحة سمة \"العدد\" بنجاح.",
+	"bs-validator-arg-count-validation-not-approved": "لا يمكن التحقق من صحة السمة \"العدد\".",
+	"bs-validator-set-validation-approved": "تم التحقق من صحة $1 بنجاح.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|يتم السماح بالقيمة التالية فقط لـ$1|يتم السماح لـ$1 فقط من القيم التالية}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "القيمة المقدمة منخفضة جدا; يجب ألا تكون أقل من $1.",
+	"bs-validator-integer-range-validation-too-high": "القيمة المقدمة عالية جدا; يجب ألا تكون أكبر من $1.",
+	"bs-validator-value-not-recognized": "لا يمكن معالجة القيمة",
+	"bs-validator-invalid-boolean": "ليست منطقية صالحة",
+	"bs-validator-invalid-float": "ليس تعويما صالحا",
+	"bs-validator-invalid-integer": "ليس عددا صحيحا صالحا",
+	"bs-validator-invalid-string": "ليست سلسلة صالحة",
+	"bs-validator-invalid-coordinate": "ليس إحداثيا صالحا",
+	"bs-validator-invalid-parameter": "هذا الوسيط غير مسموح به",
+	"bs-validator-missing-required": "هذا الوسيط مطلوب"
+}

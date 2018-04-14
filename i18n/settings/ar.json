@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"bs-setting-path-feature": "الميزة",
+	"bs-setting-path-extension": "التمديد",
+	"bs-setting-path-package": "الحزمة",
+	"bs-setting-path-system": "النظام",
+	"bs-setting-path-dataanalysis": "تحليل البيانات",
+	"bs-setting-path-editor": "المحرر",
+	"bs-setting-path-search": "البحث والتنقل",
+	"bs-setting-path-personalisation": "إضفاء الطابع الشخصي",
+	"bs-setting-path-skinning": "واجهة المستخدم",
+	"bs-setting-path-customizing": "التخصيص",
+	"bs-setting-path-contentstructuring": "بنية المحتوى",
+	"bs-setting-path-communication": "الاتصال",
+	"bs-setting-path-administration": "الإدارة",
+	"bs-setting-path-qualityassurance": "تاكيد الجودة",
+	"bs-setting-path-export": "تصدير"
+}

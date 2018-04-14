@@ -51,7 +51,7 @@
 	"bs-pref-imageextensions": "Επιτρεπόμενες επεκτάσεις εικόνων:",
 	"bs-pref-logopath": "Διαδρομή λογοτύπου:",
 	"bs-pref-testmode": "Ενεργοποίηση δοκιμαστικής λειτουργίας",
-	"bs-validator-error-title-namespace-on-blacklist": "Η σελίδα δεν επιτρέπεται:",
+	"bs-validator-error-title-namespace-on-blacklist": "Η σελίδα δεν επιτρέπεται: $1",
 	"bs-exttype-bluespice": "Επεκτάσεις BlueSpice",
 	"bs-export-menu-print-text": "Εκτύπωση",
 	"bs-export-menu-print-title": "Εμφανίζει εκτυπώσιμη έκδοση της σελίδας",

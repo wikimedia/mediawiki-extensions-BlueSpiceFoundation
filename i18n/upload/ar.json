@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "ارفع ملفا",
+	"bs-upload-uploadbuttontext": "تصفح",
+	"bs-upload-uploadfilefieldlabel": "اسم الملف",
+	"bs-upload-uploadfileemptytext": "أدخل ملفا جديدا...",
+	"bs-upload-uploaddestfilelabel": "اسم الملف المقصود",
+	"bs-upload-allowedfiletypesare": "أنواع الملفات الصالحة هي:",
+	"bs-upload-license": "الترخيص",
+	"bs-upload-uploadwatchthislabel": "راقب هذا الملف",
+	"bs-upload-uploadignorewarningslabel": "تجاهل أية تحذيرات",
+	"bs-upload-categories": "التصنيفات",
+	"bs-upload-upload-waitmessage": "الرفع قيد التقدم ...",
+	"bs-upload-error": "خطأ",
+	"bs-upload-descfilelabel": "الوصف",
+	"bs-upload-error-long": "خطأ في عملية الرفع",
+	"bs-upload-filetypenotsupported": "نوع الملف غير مدعوم",
+	"bs-upload-details": "التفاصيل",
+	"bs-upload-uploadwarningdialog-title": "رفع ملف: تحذيرات",
+	"bs-upload-uploadwarningdialog-intro": "حدثت التحذيرات التالية أثناء محاولة رفع الملف",
+	"bs-upload-uploadwarningdialog-outro": "انقر على \"{{int:bs-extjs-ok}}\" لتجاهل التحذيرات رفع الملف، وانقر على \"{{int:bs-extjs-cancel}}\" للعودة إلى نموذج الرفع",
+	"bs-upload-uploadwarningdialog-warning-exists": "يوجد بالفعل ملف بالاسم \"$1\"",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "هناك {{PLURAL:$1|نسخة|نسخ}} مكررة من هذا الملف",
+	"bs-upload-uploadwarningdialog-warning-unknown": "تحذير غير معروف بالرمز \"$1\""
+}
