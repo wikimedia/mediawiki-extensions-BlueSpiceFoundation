@@ -71,8 +71,7 @@
 		}
 	},
 	"ExtensionFunctions": [
-		"BsCoreHooks::setup",
-		"BlueSpice\\OnTheFlyPermissions\\Subsystem::setup"
+		"BsCoreHooks::setup"
 	],
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
