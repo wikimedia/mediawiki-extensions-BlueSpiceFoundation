@@ -1,7 +1,111 @@
 BlueSpice
-Copyright 2017 by Hallo Welt! GmbH
+Copyright 2018 by Hallo Welt! GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
+
+== BlueSpice 2.27.3 ==
+
+BlueSpice 2.27.3 is a patch release.
+This is a stable release.
+
+=== Compatibility ===
+* MediaWiki 1.27 LTS
+* Operating System: Microsoft Windows Server 2008+ or Linux (common distributions)
+* Web server: Apache 2+, IIS 7+
+* PHP 5.6 to 7.0
+* MySQL 5.4+ or MariaDB 10+
+* Apache Tomcat 8 (for ExtendedSearch, UEModulePDF, VisualDiff and LaTexRenderer)
+* Java 8+
+* Chrome, Firefox, Internet Eplorer 11, Edge
+
+=== BlueSpice Foundation ===
+* Foundation: Add BSTestPermissions.php
+* Foundation: Add getSubpagesSorted function
+* Foundation: Add PageExport dialog
+* Foundation: Add UrlTitleParser to BSFoundation for a better way to get a title from an url
+* Foundation: Add more base classes for MW hooks
+* Foundation: Add real client side filter validation to ExtJS string field grid filter
+* Foundation: BsCore::registerBehaviorSwitch fix exists check in_array
+* Foundation: Fix FileRepo grid thumb view
+* Foundation: Fix for JS variables
+* Foundation: Fix for loader bar position
+* Foundation: Fix getPathsToExpand function
+* Foundation: Fix typo in word parser
+* Foundation: Maintenance script to add docx, pptx and xlsx fileicons to mediawiki
+* Foundation: PageContentProvider: Add additional wrapper classes
+* Foundation: TitleCombo.js: Added note and visualization for non-existing pages
+
+=== BlueSpice Free ===
+* EchoConnector: Fix cut off notifications in Special:Notifications #7582
+* EchoConnector: Fix cut of text in notifications on echo special page #7582
+* EchoConnector: Fix digest
+* EchoConnector: Improved digest formatting
+* EditNotifyConnector: Add loader file for backward compatibility
+* ArticleInfo: Changed the recent added getSubpagesSorted the match the style of ArticleHelper
+* ArticleInfo: Fix for subpage list sorting
+* ContextMenu: Fix for fatal when link is broken
+* ContextMenu: Fix links for IE11
+* ExtendedSearch: Add export results to wiki-list functionality
+* ExtendedSearch: Fix for NSFR files
+* ExtendedSearch: Fix for not indexing files in namespaces
+* ExtendedSearch: Fix indexing of Open Document files
+* ExtendedSearch: Fix pseudo protocol issue with external files
+* Extensions: Fix HideTitle breaking javascript with inline script
+* FlexiSkin: Update Path Build on Logo directory interator to prevent lookup error on special data and image paths (non
+default config)
+* InsertMagic: Pre select quick access when not empty
+* NamespaceManager: Add support for editing namespaces with hyphen in name
+* PageAssignment: Add permissions to assigned users fix
+* PageAssignments: Add page link to notifications
+* PageAssignments: Backport opt-in for temporary permissions
+* PageAssignments: Fix I18N for notifications
+* PermissionManager: Fix for template permission display
+* RSSStandards: Fix param types in Category and Watchlist
+* Statistics: Fix for column label and dataIndex
+* Statistics: Fix for NaN error on list
+* UEModulePDF: Add option to set source attribute for PDF export
+* UEModulePDF/FileResolver: Consider file timestamp
+* UEModulePDF: Fix for image width in PDF
+* UEModulePDF: Fix for tables being too wide
+* UEModulePDF: Fix SVG support
+* UEModulePDF: Handle DISPLAYTITLE with "&"
+* UEModulePDF: PDF Templates with new BlueSpice Logo
+* VisualEditor: Fix: Browser freezes if a special tag has a template in it
+* VisualEditor: Fix for <> in tables - commit 2
+* VisualEditor: Fix for broken syntax by "link in caption"
+* VisualEditor: Fix for scrolling - check existence of #editform
+* VisualEditor: Fix for square brackets inside external links
+* VisualEditor: Improved readablity of __NOEDITOR__ logic
+* WikiAdmin: Admin menu - individual module permission check
+* LdapAuthenticationConnector: Remove composer extension autoactivation
+* LdapAuthenticationConnector: Update LdapAuthenticationConnector.setup.php
+
+=== BlueSpice Pro ===
+* Bookmaker: Add MassAdd posibility
+* Bookmaker: Fix for "ue:meta/title" not evaluated
+* Bookmaker: PMP: Fixed PDF-Export with Subpages on VisualDiffs
+* CategoryManager: BSWikiAdmin: Admin menu - individual module permission check
+* NSFileRepoConnector: Add autoscrolling to the preselected element
+* NSFileRepoConnector: Fix bug where namespace form field was not loaded in chrome
+* NSFileRepoConnector: Set namespace selection combobox to config value
+* PasteImage: Fix bookmark selection path to use correct object
+* Rating: Add recommended text to like article rating, when user voted #5238
+* Review: Add opt-in for temporary permissions
+* Review: Applying HACK for extended permissions
+* Review: Changed some icons to new icon font
+* SMWConnector: Add migration scripts
+* SMWConnector: Changed path to MediaWiki maintenance.php
+* SMWConnector: Change selector due to change in extension name
+* SMWConnector: Fix code styling
+* SMWConnector: Fix for PageForms DateImePicker
+* SMWConnector: Fix language selection Fix plugin list
+* Teamwork: Fix hard coded requirement of extension PageAssignments
+* Teamwork: Fix template store getting cut of after 25 entries ERM:#8662
+* Teamwork: PMP: Fixed spelling mistake
+* WikiExplorer: API Unittest
+
+=== BlueSpice Skin ===
+* Skin: Fixes size of <code> elements
 
 == BlueSpice 2.27.2 ==
 
