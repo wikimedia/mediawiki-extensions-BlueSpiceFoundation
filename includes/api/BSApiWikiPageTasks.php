@@ -46,19 +46,19 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'params' => [
 				'page_id' => [
 					'type' => 'integer',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_title' ]
 				],
 				'page_title' => [
 					'type' => 'string',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_id' ]
 				],
 				'categories' => [
 					'desc' => 'bs-api-task-wikipagetasks-taskData-categories',
 					'type' => 'array',
-			        'required' => false,
-				    'default' => [],
+					'required' => false,
+					'default' => [],
 				]
 			]
 		],
@@ -74,12 +74,12 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'params' => [
 				'page_id' => [
 					'type' => 'integer',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_title' ]
 				],
 				'page_title' => [
 					'type' => 'string',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_id' ]
 				]
 			]
@@ -98,19 +98,19 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'params' => [
 				'page_id' => [
 					'type' => 'integer',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_title' ]
 				],
 				'page_title' => [
 					'type' => 'string',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_id' ]
 				],
 				'categories' => [
 					'desc' => 'bs-api-task-wikipagetasks-taskData-categories',
 					'type' => 'array',
-			        'required' => false,
-				    'default' => [],
+					'required' => false,
+					'default' => [],
 				]
 			]
 		],
@@ -128,19 +128,19 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'params' => [
 				'page_id' => [
 					'type' => 'integer',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_title' ]
 				],
 				'page_title' => [
 					'type' => 'string',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_id' ]
 				],
 				'categories' => [
 					'desc' => 'bs-api-task-wikipagetasks-taskData-categories',
 					'type' => 'array',
-			        'required' => false,
-				    'default' => [],
+					'required' => false,
+					'default' => [],
 				]
 			]
 		],
@@ -157,12 +157,34 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'params' => [
 				'page_id' => [
 					'type' => 'integer',
-			        'required' => true,
+					'required' => true,
 					'alternative_to' => [ 'page_title' ]
 				],
 				'page_title' => [
 					'type' => 'string',
-			        'required' => true,
+					'required' => true,
+					'alternative_to' => [ 'page_id' ]
+				]
+			]
+		],
+		'getTemplateTree' => [
+			'examples' => [
+				[
+					'page_id' => 3234
+				],
+				[
+					'page_title' => 'SomeNamespace:Some page title'
+				]
+			],
+			'params' => [
+				'page_id' => [
+					'type' => 'integer',
+					'required' => true,
+					'alternative_to' => [ 'page_title' ]
+				],
+				'page_title' => [
+					'type' => 'string',
+					'required' => true,
 					'alternative_to' => [ 'page_id' ]
 				]
 			]
@@ -170,7 +192,9 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	);
 
 	protected $aReadTasks = [
-		'getDiscussionCount', 'getExplicitCategories'
+		'getDiscussionCount',
+		'getExplicitCategories',
+		'getTemplateTree'
 	];
 
 	/**
@@ -183,7 +207,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'getExplicitCategories' => array( 'read' ),
 			'addCategories' => array( 'edit' ),
 			'removeCategories' => array( 'edit' ),
-			'getDiscussionCount' => array( 'read' )
+			'getDiscussionCount' => array( 'read' ),
+			'getTemplateTree' => array( 'read' )
 		);
 	}
 
@@ -539,5 +564,33 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'page_prefixed_text' => $oTitle->getPrefixedText(),
 			'categories' => $result->payload
 		);
+	}
+
+	/**
+	 *
+	 * @param stdClass $oTaskData
+	 * @param array $aParams
+	 * @return BSStandardAPIResponse
+	 */
+	protected function task_getTemplateTree( $oTaskData, $aParams  ) {
+		$oResponse = $this->makeStandardReturn();
+
+		$oTitle = $this->getTitleFromTaskData( $oTaskData );
+		$oWikiPage = WikiPage::factory( $oTitle );
+		$oContent = $oWikiPage->getContent();
+		if( $oContent instanceof WikitextContent === false ) {
+			$oResponse->message =
+				wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
+			return $oResponse;
+		}
+
+		$sWikiText = $oContent->getNativeData();
+		$oTemplateTreeParser =
+			new BlueSpice\Utility\WikiTextTemplateTreeParser( $sWikiText );
+
+		$oResponse->success = true;
+		$oResponse->payload = $oTemplateTreeParser->getArray();
+
+		return $oResponse;
 	}
 }
