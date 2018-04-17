@@ -473,11 +473,10 @@
 			wikiText.push( this.title );
 
 			for ( var param in this.params ) {
-
 				var keyValuePair = param + "=";
-
 				//TODO: handle nested "bs.wikiText.Template" objects
 				keyValuePair += this.params[param];
+				wikiText.push( keyValuePair );
 			}
 			return '{{' + wikiText.join('|') + '}}';
 		};
