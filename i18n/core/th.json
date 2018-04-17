@@ -6,6 +6,6 @@
 			"Horus"
 		]
 	},
-	"bs-userbar_loginswitch_logout": "ลงชื่อออก",
-	"bs-userbar_loginswitch_login": "ลงชื่อเข้า"
+	"bs-userbar_loginswitch_logout": "ออกจากระบบ",
+	"bs-userbar_loginswitch_login": "เข้าสู่ระบบ"
 }
