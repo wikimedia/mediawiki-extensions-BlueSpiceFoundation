@@ -20,7 +20,9 @@ class BsLinkProvider {
 	 * @return String Something like '<a href="[...]index.php?title=Gandalf$action=edit" title="Gandalf" [...]>the White Wizard</a>'
 	 */
 	public static function makeAnchorTagForUser( User $oUser, $sLabel = '', $sTitle = '', $bRelative = true, $aAdditionalQueryString = array(), $aClasses = array(), $aStyles = array(), $aAdditionalAttributes = array() ) {
-		$sUserDisplayName = BsUserHelper::getUserDisplayName( $oUser );
+		$sUserDisplayName = \BlueSpice\Services::getInstance()
+			->getBSUtilityFactory()->getUserHelper( $oUser )->getDisplayName();
+
 		$sLabel = ( empty( $sLabel ) ) ? $sUserDisplayName : $sLabel;
 		$sTitleArrtibute = ( empty( $sTitle ) ) ? 'title="'.$sLabel.'" ' : 'title="'.$sTitle.'" ';
 		$sHref = $oUser->getUserPage()->getFullURL();

@@ -370,15 +370,6 @@ class BsCore {
 	}
 
 	/**
-	 * @deprecated since version 2.23.2
-	 * @param User $oUser
-	 * @return String
-	 */
-	public static function getUserDisplayName( $oUser = null ) {
-		return BsUserHelper::getUserDisplayName($oUser);
-	}
-
-		/**
 	 * Determines the request URI for Apache and IIS
 	 *
 	 * @param bool $getUrlEncoded set to true to get URI url encoded

@@ -1,9 +1,15 @@
 <?php
 
+/**
+ * DEPRECATED - use \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+ * ->getUserHelper()
+ */
 class BsUserHelper {
 
 	/**
+	 * DEPRECATED - Not in use anymore
 	 * Returns an array of user ids of users in the given group
+	 * @deprecated since version 3.0.0 - Not in use anymore
 	 * @param String $sRight
 	 * @param Int $iLimit
 	 * @param Int $iOffset
@@ -38,22 +44,15 @@ class BsUserHelper {
 
 	/**
 	 * Returns the displayed name for the given user
+	 * @deprecated since version 3.0.0 - Use \BlueSpice\Services::getInstance()
+	 * ->getBSUtilityFactory()->getUserHelper()->getDisplayName() instead
 	 * @param User $oUser
 	 * @return mixed username, else false
 	 */
 	public static function getUserDisplayName( $oUser = null ) {
-		if ( $oUser === null ) {
-			$oUser = RequestContext::getMain()->getUser();
-		}
-		if ( !( $oUser instanceof User ) ) {
-			return false;
-		}
-		$sRealname = $oUser->getRealName();
-		if ( $sRealname ) {
-			return $sRealname;
-		} else {
-			return $oUser->getName();
-		}
+		wfDeprecated( __METHOD__, '3.0.0' );
+		return \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+			->getUserHelper( $oUser )->getDisplayName();
 	}
 
 }

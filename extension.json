@@ -554,6 +554,9 @@
 				"ipblock-exempt", "blockemail", "purge", "emailconfirmed",
 				"nominornewtalk"
 			]
+		},
+		"MaintenanceUserName": {
+			"value": "BSMaintenance"
 		}
 	},
 	"ConfigRegistry": {
