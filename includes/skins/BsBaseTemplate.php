@@ -507,7 +507,8 @@ class BsBaseTemplate extends BaseTemplate {
 		$aOut[] = '    <h3 id="p-personal-label">'.$this->getMsg( 'personaltools' )->text().'</h3>';
 		if ( !$oUser->isAnon() ) {
 			$aOut[] = "<div id='bs-personal-name'>";
-			$aOut[] = BsUserHelper::getUserDisplayName();
+			$aOut[] = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+				->getUserHelper()->getDisplayName();
 			$aOut[] = "</div>";
 		}
 

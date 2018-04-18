@@ -106,4 +106,12 @@ class Services extends ServicesDecorator {
 	public function getBSSettingPathFactory() {
 		return $this->getService( 'BSSettingPathFactory' );
 	}
+
+	/**
+	 *
+	 * @return UtilityFactory
+	 */
+	public function getBSUtilityFactory() {
+		return $this->getService( 'BSUtilityFactory' );
+	}
 }

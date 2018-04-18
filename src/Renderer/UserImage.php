@@ -44,12 +44,12 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 
 		$this->args['imagesrc'] = $this->getUser()->getName();
 		$this->args['username'] = $this->getUser()->getName();
-		$this->args['imagetitle'] = \BsUserHelper::getUserDisplayName(
-			$this->getUser()
-		);
-		$this->args['imagealt'] = \BsUserHelper::getUserDisplayName(
-			$this->getUser()
-		);
+
+		$userHelper = Services::getInstance()->getBSUtilityFactory()
+			->getUserHelper( $this->getUser() );
+
+		$this->args['imagetitle'] = $userHelper->getDisplayName();
+		$this->args['imagealt'] = $userHelper->getDisplayName();
 		$this->args['anchorhref']
 			= $this->getUser()->getUserPage()->getLocalURL();
 	}
