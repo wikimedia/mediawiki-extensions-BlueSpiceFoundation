@@ -4,6 +4,7 @@ Ext.define( 'BS.form.UserCombo', {
 	displayField: 'display_name',
 	valueField: 'user_id',
 	labelAlign: 'right',
+	labelMessage: mw.message( 'bs-extjs-label-user' ).plain(),
 	forceSelection: true,
 	triggerAction: 'all',
 	queryMode: 'remote',
@@ -12,11 +13,13 @@ Ext.define( 'BS.form.UserCombo', {
 	anyMatch: true,
 	store: null,
 	extraParams: {},
+	storeFilters: [],
 
 	deferredSetValueConf: false,
 
 	initComponent: function() {
-		this.setFieldLabel( mw.message('bs-extjs-label-user').plain() );
+		this.setFieldLabel( this.labelMessage );
+
 		if( !this.store ) {
 			this.store = Ext.create( 'BS.store.BSApi', {
 				apiAction: 'bs-user-store',
@@ -27,9 +30,10 @@ Ext.define( 'BS.form.UserCombo', {
 						type: 'json',
 						root: 'results',
 						idProperty: 'user_id'
-					}
+					},
+					extraParams: this.extraParams
 				},
-				extraParams: this.extraParams,
+				filters: this.storeFilters,
 				model: 'BS.model.User',
 				//autoLoad: true //We need to load manually to have the store
 				//loading before rendering. This allows setting values at an early
@@ -69,9 +73,19 @@ Ext.define( 'BS.form.UserCombo', {
 		this.setValue(record);
 	},
 
-	setValueByUserName: function( user_name ) {},
+	setValueByUserName: function( user_name ) {
+		if( this.store.isLoading() ) {
+			this.deferSetValue( this.setValueByUserName, user_name );
+			return;
+		}
+		var index = this.store.find( 'user_name', user_name );
+		var record = this.store.getAt( index );
+		this.setValue(record);
+	},
 
-	getUserIdValue: function() {},
+	getUserIdValue: function() {
+		return this.getValue();
+	},
 
 	getUserNameValue: function() {},
 
