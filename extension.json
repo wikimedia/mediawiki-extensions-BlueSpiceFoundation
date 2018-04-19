@@ -500,7 +500,6 @@
 			"BsCoreHooks::onPageContentSaveComplete",
 			"BsCacheHelper::onPageContentSaveComplete"
 		],
-		"UnitTestsList": "BsCoreHooks::onUnitTestsList",
 		"ResourceLoaderGetConfigVars": [
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddVersion::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",

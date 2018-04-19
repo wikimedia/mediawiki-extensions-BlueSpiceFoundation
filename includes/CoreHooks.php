@@ -546,17 +546,6 @@ class BsCoreHooks {
 	}
 
 	/**
-	 * Register PHP Unit Tests with MediaWiki framework
-	 * @param array $files
-	 * @return boolean Always true to keep hook running
-	 */
-	public static function onUnitTestsList( &$files ) {
-		$files[] = dirname( __DIR__ ) . '/tests/phpunit';
-
-		return true;
-	}
-
-	/**
 	 * @global array $bsgTestSystem
 	 * @param OutputPage $out
 	 * @return void
