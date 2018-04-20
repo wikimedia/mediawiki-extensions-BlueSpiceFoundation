@@ -334,18 +334,16 @@ class BsCoreHooks {
 		$attribs['data-bs-title'] = $target->getPrefixedText();
 
 		if( $target->getNamespace() == NS_USER && $target->isSubpage() === false ) {
-			//Linker::userLink adds class "mw-userlink" by default
-			/*if( !isset($attribs['class']) ) {
-				$attribs['class'] = '';
-			}
-			$attribs['class'] .= ' user';*/
-			if( $target->getText() == $html ) {
-				$html = htmlspecialchars(
-					BsUserHelper::getUserDisplayName(
-						User::newFromName( $target->getText() )
-					)
-				);
-				$attribs['data-bs-username'] = $target->getText();
+			$compareTitle = \Title::newFromText( $html, NS_USER );
+			if( $compareTitle instanceof \Title ) {
+				if( $target->equals( $compareTitle ) ) {
+					$html = htmlspecialchars(
+						BsUserHelper::getUserDisplayName(
+							User::newFromName( $target->getText() )
+						)
+					);
+					$attribs['data-bs-username'] = $target->getText();
+				}
 			}
 		}
 		if( $target->getNamespace() === NS_FILE ) {
