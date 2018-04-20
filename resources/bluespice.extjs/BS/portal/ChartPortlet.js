@@ -1,21 +1,42 @@
 Ext.define('BS.portal.ChartPortlet', {
-
 	extend: 'BS.portal.Portlet',
-
-	requires: [
-		'Ext.data.JsonStore',
-		'Ext.chart.theme.Base',
-		'Ext.chart.series.Series',
-		'Ext.chart.series.Line',
-		'Ext.chart.axis.Numeric'
-	],
-	
 	layout: 'fit',
 	height: 300,
 
 	initComponent: function(){
 		this.beforeInitCompontent();
-		this.ctMainConfig = this.ctMainConfig || {
+		this.ctMainConfig = this.ctMainConfig || this.makeDummyConfig();
+
+		this.ctMain = new Ext.chart.CartesianChart( {
+			theme: 'blue',
+			legend: {
+				position: 'bottom'
+			},
+			store: this.makeStore(),
+			axes: this.makeAxes(),
+			series: this.makeSeries()
+		});
+
+		this.items = [
+			this.ctMain
+		];
+
+		this.callParent(arguments);
+	},
+
+	makeStore: function() {
+		return this.ctMainConfig.store;
+	},
+	makeAxes: function() {
+		return this.ctMainConfig.axes;
+
+	},
+	makeSeries: function() {
+		return this.ctMainConfig.series;
+	},
+
+	makeDummyConfig: function() {
+		return {
 			store: Ext.create('Ext.data.JsonStore', {
 				fields: ['name', 'sp500', 'djia'],
 				data: (function(){
@@ -31,7 +52,7 @@ Ext.define('BS.portal.ChartPortlet', {
 				})()
 			}),
 			axes: [{
-				type: 'Numeric',
+				type: 'numeric',
 				position: 'left',
 				fields: ['djia'],
 				title: 'Dow Jones Average',
@@ -39,7 +60,7 @@ Ext.define('BS.portal.ChartPortlet', {
 					font: '11px Arial'
 				}
 			}, {
-				type: 'Numeric',
+				type: 'numeric',
 				position: 'right',
 				grid: false,
 				fields: ['sp500'],
@@ -75,22 +96,5 @@ Ext.define('BS.portal.ChartPortlet', {
 				}
 			}]
 		};
-		
-		this.ctMain = Ext.create('Ext.chart.Chart', {
-			animate: false,
-			shadow: false,
-			legend: {
-				position: 'bottom'
-			},
-			store: this.ctMainConfig.store,
-			axes: this.ctMainConfig.axes,
-			series: this.ctMainConfig.series
-		});
-		
-		this.items = [
-			this.ctMain
-		];
-
-		this.callParent(arguments);
 	}
 });
