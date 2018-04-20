@@ -23,7 +23,8 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 		$this->ensureTestJSON();
 
 		$currentTS = new \DateTime( '1970-01-01 01:30:00' );
-		$dummyLogger = $this->getMock( LoggerInterface::class );
+		$dummyLogger = $this->getMockBuilder( LoggerInterface::class )
+			->getMock();
 
 		$checker = new Checker(
 			$currentTS,
@@ -43,7 +44,8 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 		OnceADay::resetInstanceCounter();
 
 		$currentTS = new \DateTime( '1970-01-01 01:30:00' );
-		$dummyLogger = $this->getMock( LoggerInterface::class );
+		$dummyLogger = $this->getMockBuilder( LoggerInterface::class )
+			->getMock();
 
 		$checker = new Checker(
 			$currentTS,
