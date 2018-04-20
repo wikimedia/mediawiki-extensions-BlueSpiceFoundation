@@ -91,11 +91,7 @@ class BsCore {
 	 * @var object
 	 */
 	protected static $oLocalParserOptions = false;
-	/**
-	 * Current User Object
-	 * @var object
-	 */
-	protected static $prCurrentUser = null;
+
 	/**
 	 * Simple caching mechanism for UserMiniProfiles
 	 * @var array
@@ -399,7 +395,8 @@ class BsCore {
 
 	// TODO MRG (09.12.10 11:21): Habe silent im Standard auf true gesetzt. Echo ist ohnehin nicht gut.
 	/**
-	 *
+	 * @deprecated since version 3.0.0 - use \Title->userCan() or
+	 * \User->isAllowed()
 	 * @param string $sPermission
 	 * @param string $sI18NInstanceKey
 	 * @param string $sI18NMessageKey
@@ -407,6 +404,7 @@ class BsCore {
 	 * @return bool
 	 */
 	public static function checkAccessAdmission( $sPermission = 'read', $sI18NInstanceKey = 'BlueSpice', $sI18NMessageKey = 'not_allowed', $bSilent = true ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		// TODO MRG28072010: isAllowed prüft nicht gegen die Artikel. D.H. die Rechte sind nicht per Namespace überprüfbar
 		$oUser = self::loadCurrentUser();
 		if ( $oUser->isAllowed( $sPermission ) ) {
@@ -417,30 +415,13 @@ class BsCore {
 		return false;
 	}
 
+	/**
+	 * @deprecated since version 3.0.0 - this probably only in use by the core
+	 * it self - anyway, get your own user ;)
+	 * @return \User
+	 */
 	public static function loadCurrentUser() {
-		/* Load current user */
-		global $wgUser;
-
-		if ( !$wgUser || is_null( $wgUser->mId ) ) {
-
-			if ( !is_null( self::$prCurrentUser ) ) {
-				return self::$prCurrentUser;
-			}
-
-			self::$prCurrentUser = User::newFromSession();
-			self::$prCurrentUser->load();
-			return self::$prCurrentUser;
-		}
-
-		return $wgUser;
-		// Used to bie like the following code. however, this did not take into account the __session-Cookie, and logged out users were still recognized.
-		/* if( isset( $_SESSION['wsUserID'] ) ) {
-		  self::$prCurrentUser = User::newFromId( $_SESSION['wsUserID'] ); // object created but not loaded from DB
-		  self::$prCurrentUser->loadFromId(); // get from DB or MemCache
-		  return self::$prCurrentUser;
-		  }
-		  return new User(); //anonymous
-		 */
+		return \RequestContext::getMain()->getUser();
 	}
 
 	/**
