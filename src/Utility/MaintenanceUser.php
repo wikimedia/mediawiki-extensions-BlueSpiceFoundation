@@ -24,7 +24,7 @@ class MaintenanceUser {
 	 * @return string
 	 */
 	public function getUserName() {
-		return $this->config()->get( 'MaintenanceUserName' );
+		return $this->config->get( 'MaintenanceUserName' );
 	}
 
 	/**
@@ -70,7 +70,7 @@ class MaintenanceUser {
 	}
 
 	protected function getGroups() {
-		return [ 'sysop', 'bureaucrat' ];
+		return [ 'sysop', 'bureaucrat', 'bot' ];
 	}
 
 	protected function addGroups( \User $user, $expiry ) {
