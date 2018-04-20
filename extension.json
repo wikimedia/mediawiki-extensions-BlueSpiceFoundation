@@ -479,7 +479,6 @@
 		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",
 		"MakeGlobalVariablesScript": "BsCoreHooks::onMakeGlobalVariablesScript",
 		"LoadExtensionSchemaUpdates": [
-			"BsCoreHooks::onLoadExtensionSchemaUpdates",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
 		],

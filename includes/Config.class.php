@@ -34,6 +34,7 @@
 /**
  * the BsConfig class
  *
+ * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
  * @package BlueSpice_Core
  * @subpackage Core
  */
@@ -146,10 +147,11 @@ class BsConfig {
 	/**
 	 * This method switch the config class to deliver the bluespice basesettings or the users own settings
 	 *
+	 * @deprecated since version 3.0.0 - migrate to configDefinition instead
 	 * @param bool $bFlag
 	 */
 	public static function deliverUsersSettings( $bFlag ) {
-
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$tmp = self::$prGetUsersSettings;
 		self::$prGetUsersSettings = $bFlag;
 		return $tmp;
@@ -203,6 +205,7 @@ class BsConfig {
 	/**
 	 * adds an value to the variable, which is specified by the path
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 * @param string $path
 	 *        	The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
 	 * @param mixed $value
@@ -211,23 +214,25 @@ class BsConfig {
 	 * @see _add()
 	 */
 	public static function add( $path, $value ) {
-
+		wfDeprecated( __METHOD__, '3.0.0' );
 		return self::getSettingObject ( $path )->_add ( $value );
 	}
 
 	/**
 	 * returns all settings instances, which should be rendered as javascript variables
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 * @return array
 	 */
 	public static function getScriptSettings() {
-
+		wfDeprecated( __METHOD__, '3.0.0' );
 		return self::$prRegisterJavascript;
 	}
 
 	/**
 	 * returns the BsConfig instance for a variable, specified by the path
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 * @param string $path
 	 *        	The unique identifier the variable should be accessibly by. I.e. 'Adapter::Extension::MyVar'.
 	 * @return BsConfig
@@ -268,8 +273,10 @@ class BsConfig {
 
 	/**
 	 * loads all settings from the database and saves the instances for every variable internal.
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 */
 	public static function loadSettings() {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' );
 		$aData = BsCacheHelper::get( $sKey );
 
@@ -280,13 +287,14 @@ class BsConfig {
 			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from DB' );
 			$dbr = wfGetDB ( DB_REPLICA );
 			# query the settings from bs_settings
-			$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
 			$aRows = array();
+			if( $dbr->tableExists( 'bs_settings' ) ) {
+				$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
 
-			while( $row = $res->fetchObject() ) {
-				$aRows[] = $row;
+				while( $row = $res->fetchObject() ) {
+					$aRows[] = $row;
+				}
 			}
-
 			BsCacheHelper::set( $sKey, $aRows, 60*1440 );//max cache time 24h
 		}
 		# unserialize and save every setting in the config class
@@ -298,11 +306,16 @@ class BsConfig {
 	/**
 	 * save all settings to the database
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 * @return bool false if an error occurs
 	 */
 	public static function saveSettings() {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$dbw = wfGetDB ( DB_MASTER );
 
+		if( !$dbw->tableExists( 'bs_settings' ) ) {
+			return true;
+		}
 		$dbw->delete( 'bs_settings', '*' );
 
 		$aSettings = array();
@@ -348,8 +361,15 @@ class BsConfig {
 	}
 
 	// TODO RBV (02.06.11 16:06): Core-Kontamination! Keine MediaWiki Funktionen im Core!
-	public static function getVarForUser( $sKey, $mUser ) {
 
+	/**
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
+	 * @param string $sKey
+	 * @param \User | string $mUser
+	 * @return mixed
+	 */
+	public static function getVarForUser( $sKey, $mUser ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		$oSettingsObject = self::getSettingObject ( $sKey );
 		if ( is_object ( $mUser ) ) {
 			$oUser = $mUser;
@@ -377,8 +397,18 @@ class BsConfig {
 	}
 
 	// TODO RBV (02.06.11 16:06): Core-Kontamination! Keine MediaWiki Funktionen im Core!
-	public static function getUsersForVar( $sKey, $vValue, $sSingleValFromMultiple = false, $bSerialized = true ) {
 
+	/**
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
+	 * @global string $wgDBtype
+	 * @param string $sKey
+	 * @param mixed $vValue
+	 * @param string $sSingleValFromMultiple
+	 * @param boolean $bSerialized
+	 * @return array
+	 */
+	public static function getUsersForVar( $sKey, $vValue, $sSingleValFromMultiple = false, $bSerialized = true ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		global $wgDBtype;
 		$oDb = wfGetDB ( DB_REPLICA );
 		$aUsers = array ();
@@ -416,7 +446,13 @@ class BsConfig {
 		return $aUsers;
 	}
 
+	/**
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
+	 * @param \User | string $user
+	 * @return boolean
+	 */
 	public static function loadUserSettings( $user ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		if ( !is_object( $user ) ) {
 			$user = User::newFromName( $user );
 			if ( !is_object( $user ) ) {
@@ -446,11 +482,13 @@ class BsConfig {
 	/**
 	 * saves all userspecific settings for the given user to the database
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 * @param string|User $user
 	 *        	the username or a instance of the mediawiki user class
 	 * @return bool returns always true since we save the settings with mediawiki methods
 	 */
 	public static function saveUserSettings( $user ) {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		if ( ! is_object ( $user ) ) {
 			$user = User::newFromName ( $user );
 		}
@@ -476,9 +514,11 @@ class BsConfig {
 	/**
 	 * returns an array of instaces which holds all registered variables.
 	 *
+	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 * @return array
 	 */
 	public static function getRegisteredVars() {
+		wfDeprecated( __METHOD__, '3.0.0' );
 		return self::$prSettings;
 	}
 
