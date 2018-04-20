@@ -305,7 +305,7 @@ class BsBaseTemplate extends BaseTemplate {
 		$aOut = array();
 		$aOut[] = '<div class="portlet bs-nav-links" id="p-tb">';
 		if ( $bRenderHeading === true ) {
-			$aOut[] = '  <h5>' . $this->translator->translate( 'toolbox' ) . '</h5>';
+			$aOut[] = '  <h5>' . $this->getMsg( 'toolbox' )->text() . '</h5>';
 		}
 		$aOut[] = '  <div class="pBody">';
 		$aOut[] = '    <ul>';
@@ -358,9 +358,9 @@ class BsBaseTemplate extends BaseTemplate {
 	public function getToolBoxWidget() {
 		$oWidgetView = new ViewWidget();
 		$oWidgetView->setId('bs-toolbox')
-			->setTitle($this->translator->translate('toolbox'))
+			->setTitle( $this->msg( 'toolbox' ) )
 			->setBody($this->getToolboxMarkUp(false))
-			->setTooltip($this->translator->translate('toolbox'));
+			->setTooltip( $this->msg( 'toolbox' ) );
 
 		return $oWidgetView;
 	}
