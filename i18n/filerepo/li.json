@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"bs-filerepo-labelupload": "Upload",
+	"bs-filerepo-labelfilter": "Filtjer",
+	"bs-filerepo-headerfilename": "Bestandjsnaam",
+	"bs-filerepo-headerfilesize": "Gruuedje",
+	"bs-filerepo-headerpagecategories": "Categorieje",
+	"bs-filerepo-headerfilewidth": "Brèdje",
+	"bs-filerepo-headerfileheight": "Huuegdje",
+	"bs-filerepo-headerfilemimetype": "MIME-type",
+	"bs-filerepo-headerfileusertext": "Gebroeker",
+	"bs-filerepo-headerfileextension": "Oetbreijing",
+	"bs-filerepo-headerfiletimestamp": "Upgeload op",
+	"bs-filerepo-headerfilemediatype": "Mediaformaot",
+	"bs-filerepo-headerfiledescription": "Besjrieving",
+	"bs-filerepo-headerfilethumbnail": "Miniatuurplaetje",
+	"bs-filerepo-yes": "Jao",
+	"bs-filerepo-no": "Nae",
+	"bs-filerepo-pagesize": "Paginagruuedje"
+}

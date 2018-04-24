@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"bs-setting-path-feature": "Functie",
+	"bs-setting-path-extension": "Oetbreijing",
+	"bs-setting-path-package": "Pak",
+	"bs-setting-path-system": "Stèlsel",
+	"bs-setting-path-dataanalysis": "Gegaevesoetpluzing",
+	"bs-setting-path-editor": "Bewirker",
+	"bs-setting-path-search": "Zeuke en Navigatie",
+	"bs-setting-path-personalisation": "Verpersuuenliking",
+	"bs-setting-path-contentstructuring": "Inhawdstrukturering",
+	"bs-setting-path-communication": "Kómmunikaasje",
+	"bs-setting-path-administration": "Administraasje",
+	"bs-setting-path-qualityassurance": "Kwaliteitswaorbörging",
+	"bs-setting-path-export": "Oetveur"
+}

@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"bs-extjs-portal-config": "Stèl pörtje in:",
+	"bs-extjs-portal-title": "Pörtjesnaam",
+	"bs-extjs-portal-height": "Huuegdje",
+	"bs-extjs-portal-count": "ingeng",
+	"bs-extjs-portal-timespan": "Tiedsdoer",
+	"bs-extjs-portal-timespan-week": "Waek",
+	"bs-extjs-portal-timespan-month": "Maondj",
+	"bs-extjs-portal-timespan-alltime": "Alle verzies"
+}

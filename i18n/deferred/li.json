@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"bs-deferred-action-status-pending": "In behanjeling.",
+	"bs-deferred-action-status-running": "Oet 'nt veure...",
+	"bs-deferred-action-status-done": "Vaerdig.",
+	"bs-deferred-action-status-error": "Mislök.",
+	"bs-deferred-action-apicopypage-description": "Kopieer \"$1\" nao \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Bewirk \"$1\".",
+	"bs-deferred-batch-title": "Batchverwirking",
+	"bs-deferred-batch-progress-desc": "Veurtgank",
+	"bs-deferred-batch-actions": "Hanjelinge",
+	"bs-deferred-batch-description": "Besjrieving",
+	"bs-deferred-batch-status": "Staot",
+	"bs-deferred-action-apiaddcategories-description": "Veug categorieje toe aan '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Haol categorieje eweg van '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Plaats categorieje op '$1'.",
+	"bs-deferred-action-apimovepage-description": "Verplaats \"$1\" nao \"$2\".",
+	"bs-deferred-action-apideletepage-description": "Sjaf \"$1\" eweg."
+}

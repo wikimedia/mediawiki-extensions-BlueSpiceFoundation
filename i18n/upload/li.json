@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ooswesthoesbes"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Load bestandj up",
+	"bs-upload-uploadbuttontext": "Blajer",
+	"bs-upload-uploadfilefieldlabel": "Bestandjsnaam",
+	"bs-upload-uploadfileemptytext": "Veug nuuj bestandj in...",
+	"bs-upload-uploaddestfilelabel": "Doeltitel",
+	"bs-upload-allowedfiletypesare": "Geljige bestandjstype zint:",
+	"bs-upload-license": "Lisens",
+	"bs-upload-uploadwatchthislabel": "Volg dit bestandj",
+	"bs-upload-uploadignorewarningslabel": "Negeer alle waorsjoewinge",
+	"bs-upload-categories": "Categorieje",
+	"bs-upload-upload-waitmessage": "'nt uploade...",
+	"bs-upload-error": "Fout",
+	"bs-upload-descfilelabel": "Besjrieving",
+	"bs-upload-error-long": "Fout bie 't uploade",
+	"bs-upload-filetypenotsupported": "Bestandjstype weurt neet óngerstäönd",
+	"bs-upload-details": "Details",
+	"bs-upload-uploadwarningdialog-title": "Uploadbestandj: Waorsjoewinge"
+}
