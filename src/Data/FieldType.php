@@ -14,4 +14,5 @@ class FieldType {
 	const STRING = 'string';
 	const LISTVALUE = 'list';
 	const MIXED = 'mixed';
+	const TEXT = 'text';
 }
