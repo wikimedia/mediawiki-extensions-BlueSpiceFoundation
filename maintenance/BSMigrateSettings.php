@@ -18,12 +18,57 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 
 	protected $newData = [];
 	protected function convertData() {
-		foreach( $this->oldData as $oldName => $serializedValue ) {
+		$skipSettings = $this->getSkipSettings();
+
+		foreach( $this->oldData as $oldName => $oldValue ) {
+			if( in_array( $oldName, $skipSettings ) ) {
+				$this->output( "$oldName skipped\n" );
+				continue;
+			}
+
 			$newName = $this->makeNewName( $oldName );
-			$newValue = $this->convertValue( $serializedValue );
+			$newValue = $this->convertValue( $oldValue );
+			$skip = false;
+			\Hooks::run( 'BSMigrateSettingsFromDeviatingNames', [
+				$oldName,
+				&$newName,
+				$oldValue,
+				&$newValue,
+				&$skip,
+			]);
+			if( $skip === true ) {
+				$this->output( "$oldName skipped\n" );
+				continue;
+			}
+
 			$this->output( "$oldName => $newName\n" );
 			$this->newData[ $newName ] = $newValue;
 		}
+	}
+
+	protected function getSkipSettings() {
+		return [
+			'MW::DefaultUserImage',
+			'MW::DeletedUserImage',
+			'MW::AnonUserImage',
+			//partially removed packages
+			'MW::ExtendedSearch::SolrCore',
+			'MW::ExtendedSearch::SolrPingTime',
+			'MW::ExtendedSearch::SolrServiceUrl',
+			//removed packages
+			'MW::TopMenuBarCustomizer::NuberOfLevels',
+			'MW::TopMenuBarCustomizer::NumberOfMainEntries',
+			'MW::TopMenuBarCustomizer::NumberOfSubEntries',
+			'MW::VisualEditor::disableNS',
+			'MW::VisualEditor::Use',
+			'MW::ShoutBox::AllowArchive',
+			'MW::ShoutBox::CommitTimeInterval',
+			'MW::ShoutBox::MaxMessageLength',
+			'MW::ShoutBox::NumberOfShouts',
+			'MW::ShoutBox::Show',
+			'MW::ShoutBox::ShowAge',
+			'MW::ShoutBox::ShowUser'
+		];
 	}
 
 	protected function makeNewName( $oldName ) {
@@ -50,12 +95,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		if( $oldName === 'MW::FaviconPath' ) {
 			return 'Favicon';
 		}
-		$newName = false;
-		\Hooks::run( 'BSMigrateSettingsFromDeviatingNames', [
-			$oldName,
-			&$newName
-		]);
-		return $newName;
+		return false;
 	}
 
 	protected function saveConvertedData() {

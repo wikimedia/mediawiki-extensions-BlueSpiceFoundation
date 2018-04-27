@@ -43,19 +43,40 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 	protected $newName = null;
 
 	/**
+	 *
+	 * @var string - serialized string of a mixed type
+	 */
+	protected $oldValue = null;
+
+	/**
+	 *
+	 * @var string - json formated string of a mixed type
+	 */
+	protected $newValue = null;
+
+	/**
+	 * Skip migration of the current setting
+	 * @var boolean 
+	 */
+	protected $skip = null;
+
+	/**
 	 * Located in \BSMigrateSettings::fromDeviatingNames. Use change the new
 	 * name of the setting.
 	 * @param string $oldName
 	 * @param string $newName
 	 * @return boolean
 	 */
-	public static function callback( $oldName, &$newName ) {
+	public static function callback( $oldName, &$newName, $oldValue, &$newValue, &$skip ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
 			$oldName,
-			$newName
+			$newName,
+			$oldValue,
+			$newValue,
+			$skip
 		);
 		return $hookHandler->process();
 	}
@@ -66,10 +87,13 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 	 * @param string $oldName
 	 * @param string $newName
 	 */
-	public function __construct( $context, $config, $oldName, &$newName ) {
+	public function __construct( $context, $config, $oldName, &$newName, $oldValue, &$newValue, &$skip ) {
 		parent::__construct( $context, $config );
 
 		$this->oldName = $oldName;
 		$this->newName = &$newName;
+		$this->oldValue = $oldValue;
+		$this->newValue = &$newValue;
+		$this->skip = &$skip;
 	}
 }
