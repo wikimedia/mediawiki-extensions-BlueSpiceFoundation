@@ -210,32 +210,28 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		//language.
 		//In means of a "Title" the canonical names would be better, because you
 		//cannot link or access a SpecialPage by its description
-		$aSpecialPages = SpecialPageFactory::getList();
+		$aSpecialPages = SpecialPageFactory::getNames();
 		$aSPDataSets = array();
 		$aSortHelper = array();
-		$aClassNames = array();
-		foreach ( $aSpecialPages as $sSpecialPageName => $sClassName ) {
+		$sSpecialNmspPrefix = $this->getLanguage()->getNsText( NS_SPECIAL );
+		$sUnprefixedNormQuery = array_pop( explode( ':', $sNormQuery, 2 ) );
 
-			//Prevent double listing
-			if ( in_array( $sClassName, $aClassNames ) ) {
-				continue;
-			}
+		foreach ( $aSpecialPages as $sSpecialPageName ) {
 
-			$aClassNames[] = $sClassName;
-
-			$oSpecialPage = SpecialPageFactory::getPage($sSpecialPageName);
+			$oSpecialPage = SpecialPageFactory::getPage( $sSpecialPageName );
 			if ( !( $oSpecialPage instanceof SpecialPage ) ){
-				wfDebug( __METHOD__.': "'.$sSpecialPageName.'" is not a valid SpecialPage' );
+				wfDebug( __METHOD__ . ': "' . $sSpecialPageName . '" is not a valid SpecialPage' );
 				continue;
 			}
+			$sSPDisplayText = $oSpecialPage->getDescription();
 
-			//This seems awkward. There has to be a better way...
-			$sMsgKey = strtolower( $sSpecialPageName );
-			$sSPDisplayText = Title::makeTitle(
-				NS_SPECIAL, wfMessage( $sMsgKey )->inContentLanguage()->plain()
-			)->getPrefixedText();
+			$sQueryPos = strpos(
+				strtolower( $sSPDisplayText ),
+				$sUnprefixedNormQuery
+			);
 
-			if ( strpos( strtolower( $sSPDisplayText ), $sNormQuery ) !== 0 ) {
+
+			if ( $sQueryPos === false ) {
 				continue;
 			}
 
@@ -252,8 +248,11 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 			$aSPDataSets[] = (object)(array(
 				'type' => 'specialpage',
+				'page_id' => 0,
+				'page_namespace' => NS_SPECIAL,
+				'page_title' => $sSpecialPageName,
 				'prefixedText' => $sSPText,
-				'displayText' => $sSPDisplayText
+				'displayText' => $sSpecialNmspPrefix . ':' .  $sSPDisplayText
 			) + $aDataSet);
 
 			$aSortHelper[] = $sSPDisplayText;
@@ -262,7 +261,8 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		//We want the result to be sorted by its display text!
 		array_multisort( $aSortHelper, SORT_NATURAL, $aSPDataSets );
 
-		$aData += $aSPDataSets;
+		$aData = array_merge( $aData, $aSPDataSets );
+
 		return $aData;
 	}
 
