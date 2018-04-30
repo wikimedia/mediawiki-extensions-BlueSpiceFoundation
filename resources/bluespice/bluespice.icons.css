@@ -464,3 +464,11 @@
 	margin: -1em;
 	color: rgb(183, 58, 58);
 }
+
+.bs-icon-plus-circle::before,
+.icon-plus-circle::before,
+.bs-icon-add::before,
+.icon-add::before {
+	content: "\e980";
+	font-family: "entypo" !important;
+}
