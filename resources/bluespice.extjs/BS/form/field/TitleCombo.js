@@ -33,7 +33,7 @@ Ext.define('BS.form.field.TitleCombo', {
 				if( record.get( 'type' ) === 'namespace' ) {
 					return value;
 				}
-				if( record.get( 'page_namespace' ) > 0 ) {
+				if( record.get( 'type' ) === 'specialpage' ) {
 					return value;
 				}
 				if( record.get( 'page_id' ) === 0 ) {
@@ -47,6 +47,10 @@ Ext.define('BS.form.field.TitleCombo', {
 			getRowClass: function(record, rowIndex, rowParams, store){
 				var cssClass = 'bs-model-title-type-namespace';
 				if( record.get( 'type' ) === 'namespace' ) {
+					return cssClass;
+				}
+				cssClass = 'bs-model-title-type-specialpage';
+				if( record.get( 'type' ) === 'specialpage' ) {
 					return cssClass;
 				}
 				cssClass = 'bs-model-title-type-title';
