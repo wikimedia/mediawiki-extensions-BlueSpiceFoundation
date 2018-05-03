@@ -14,5 +14,6 @@
 	"bs-validator-set-validation-approved": "$1 validouse correctamente.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Só está permitido o seguinte valor para $1|Para $1 só está permitido un dos seguintes valores }}: $2.",
 	"bs-validator-integer-range-validation-too-low": "O valor proporcionado é demasiado baixo. Non debe ser menor que $1.",
-	"bs-validator-integer-range-validation-too-high": "O valor proporcionado é demasiado alto. Non debe ser superior que $1."
+	"bs-validator-integer-range-validation-too-high": "O valor proporcionado é demasiado alto. Non debe ser superior que $1.",
+	"bs-validator-invalid-boolean": "Non é un booleano válido"
 }
