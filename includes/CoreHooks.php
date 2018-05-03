@@ -4,10 +4,6 @@ use BlueSpice\Services;
 
 class BsCoreHooks {
 
-	protected static $bUserFetchRights = false;
-
-	protected static $loggedInByHash = false;
-
 	protected static $aTaskAPIPermission = array();
 
 	public static function onRegistry(){
@@ -286,72 +282,6 @@ class BsCoreHooks {
 		$oFile = $thumbnail->getFile();
 		$linkAttribs['data-bs-title'] = $oFile->getTitle()->getPrefixedDBKey();
 		$linkAttribs['data-bs-filetimestamp'] = $oFile->getTimestamp();
-		return true;
-	}
-
-	/**
-	 * @param User $oUser
-	 * @param array $aRights
-	 * @return boolean
-	 */
-	public static function onUserGetRights( $oUser, &$aRights ) {
-		if ( $oUser->isAnon() ) {
-			$oRequest = RequestContext::getMain()->getRequest();
-			$iUserId = $oRequest->getVal( 'u', '' );
-			$sUserHash = $oRequest->getVal( 'h', '' );
-
-			if ( !empty( $iUserId ) && !empty( $sUserHash ) ) {
-				self::$loggedInByHash = true;
-				$_user = User::newFromName( $iUserId );
-				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
-					$oUser = $_user;
-				}
-			}
-		}
-
-		if ( self::$bUserFetchRights == false ) {
-			$aRights = User::getGroupPermissions( $oUser->getEffectiveGroups( true ) );
-			# The flag is deactivated to prevent some bugs with the loading of the actual users rights.
-			# $this->bUserFetchRights = true;
-		}
-		return true;
-	}
-
-	/**
-	 * This function triggers User::isAllowed when checkPermissionHooks is run
-	 * from Title.php. This leads to an early initialization of $user object,
-	 * which is needed in order to have correct permission sets in BlueSpice.
-	 * @param Title $title
-	 * @param User $user
-	 * @param string $action
-	 * @param boolean $result
-	 */
-	public static function onUserCan( &$title, &$user, $action, &$result ) {
-		if ( !self::$loggedInByHash ) {
-			$oRequest = RequestContext::getMain()->getRequest();
-			$iUserId = $oRequest->getVal( 'u', '' );
-			$sUserHash = $oRequest->getVal( 'h', '' );
-
-			if ( empty( $iUserId ) || empty( $sUserHash ) ) {
-				return true;
-			}
-
-			$user->mGroups = array();
-			$user->getEffectiveGroups( true );
-			if ( $iUserId && $sUserHash ) {
-				self::$loggedInByHash = true;
-				$_user = User::newFromName( $iUserId );
-				if ( $_user !== false && $sUserHash == $_user->getToken() ) {
-					$result = $_user->isAllowed( 'read' );
-					$user = $_user;
-				}
-			}
-		}
-
-		if ( $action == 'read' ) {
-			$result = $user->isAllowed( $action );
-		}
-
 		return true;
 	}
 

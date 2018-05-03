@@ -483,8 +483,6 @@
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
 		],
 		"ApiCheckCanExecute": "BsCoreHooks::onApiCheckCanExecute",
-		"UserGetRights": "BsCoreHooks::onUserGetRights",
-		"userCan": "BsCoreHooks::onUserCan",
 		"UploadVerification": "BsCoreHooks::onUploadVerification",
 		"SkinTemplateOutputPageBeforeExec": [
 			"BsCoreHooks::onSkinTemplateOutputPageBeforeExec",
