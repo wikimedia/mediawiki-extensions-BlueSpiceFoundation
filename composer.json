@@ -1,5 +1,5 @@
 {
-	"name": "hallowelt/blue-spice-foundation",
+	"name": "bluespice/foundation",
 	"description": "This package contains basic classes/functions/resources of BlueSpice MediaWiki",
 	"keywords": [
 		"mediawiki",
@@ -15,6 +15,9 @@
 			"homepage": "http://www.hallowelt.com"
 		}
 	],
+	"extra": {
+		"installer-name": "BlueSpiceFoundation"
+	},
 	"require": {
 		"ext-curl": "*",
 		"ext-gd": "*",
