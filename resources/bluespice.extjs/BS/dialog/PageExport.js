@@ -1,5 +1,5 @@
 Ext.define( 'BS.dialog.PageExport', {
-	extend: 'BS.Window',
+	extend: 'MWExt.Dialog',
 	requires: [],
 	width: 350,
 	title: mw.message( 'bs-pagecollection-prefix' ).plain(),
@@ -95,6 +95,8 @@ Ext.define( 'BS.dialog.PageExport', {
 	makePagesGrid: function() {
 		this.gdPages = Ext.create( 'Ext.grid.Panel', {
 			store: this.store,
+			height: 500,
+			scrollable: true,
 			columns: [
 				{
 					header: '',
