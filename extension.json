@@ -217,7 +217,8 @@
 				"bs-extjs-pageexport-success-text",
 				"bs-extjs-pageexport-required-text",
 				"bs-extjs-export-search-summary-text",
-				"bs-extjs-pageexport-error-invalid-title"
+				"bs-extjs-pageexport-error-invalid-title",
+				"bs-extjs-combo-box-default-placeholder"
 			],
 			"group": "bsextjs"
 		},
