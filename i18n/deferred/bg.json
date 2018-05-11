@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Лорд Бъмбъри"
+			"Лорд Бъмбъри",
+			"StanProg"
 		]
 	},
-	"bs-deferred-action-status-done": "Готово"
+	"bs-deferred-action-status-done": "Готово",
+	"bs-deferred-batch-description": "Описание"
 }
