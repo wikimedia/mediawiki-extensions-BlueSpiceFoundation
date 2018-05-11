@@ -4,6 +4,13 @@ namespace BlueSpice;
 
 interface INotification {
 	/**
+	 *
+	 * @param string $key
+	 * @param array $params
+	 */
+	public function __construct( $key, $params );
+
+	/**
 	 * @return string
 	 */
 	public function getKey();
@@ -14,9 +21,9 @@ interface INotification {
 	public function getParams();
 
 	/**
-	 * @return \Title|null The title the notification is about. May be null.
+	 * @return array
 	 */
-	public function getTitle();
+	public function getAudience();
 
 	/**
 	 * @return \User The user that initiated the notification

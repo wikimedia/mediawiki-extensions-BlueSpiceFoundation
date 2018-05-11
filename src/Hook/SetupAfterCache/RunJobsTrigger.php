@@ -34,7 +34,8 @@ class RunJobsTrigger extends SetupAfterCache {
 			$runConditionChecker,
 			$this->getConfig(),
 			$this->getServices()->getDBLoadBalancer(),
-			NotifierFactory::newNotifier() //TODO: Add NotifierFactory to BlueSpice\Services
+			$this->getServices()->getService( 'BSNotifications' )
+				->getNotifier( 'nullnotifier' )
 		);
 
 		$runner->execute();

@@ -78,7 +78,6 @@ return [
 	},
 
 	'BSPermissionRegistry' => function( MediaWikiServices $services ) {
-		global $bsgPermissionConfigDefault, $bsgPermissionConfig;
 		return \BlueSpice\Permission\Registry::getInstance(
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
 			$GLOBALS[ 'bsgPermissionConfig' ]
@@ -123,4 +122,20 @@ return [
 			\BlueSpice\Services::getInstance()
 		);
 	},
+
+	'BSNotificationManager' => function( MediaWikiServices $services ) {
+		$notifierRegistry = new \BlueSpice\ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationNotifiers'
+		);
+
+		$regFuncRegsitry = new \BlueSpice\ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationNotificationRegistrationFunctions'
+		);
+
+		return new \BlueSpice\NotificationManager(
+			$notifierRegistry,
+			$regFuncRegsitry,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	}
 ];

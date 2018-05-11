@@ -67,7 +67,11 @@
 				"qualityassurance": "bs-setting-path-qualityassurance",
 				"export": "bs-setting-path-export"
 			},
-			"RunJobsTriggerHandlerRegistry": {}
+			"RunJobsTriggerHandlerRegistry": {},
+			"Notifiers": {
+				"nullnotifier": "\\BlueSpice\\NullNotifier"
+			},
+			"NotificationRegistrationFunctions": []
 		}
 	},
 	"ExtensionFunctions": [
@@ -440,9 +444,6 @@
 		"Validator": [
 			"i18n/validator"
 		],
-		"Notifications": [
-			"i18n/notifications"
-		],
 		"BlueSpice.API": [
 			"i18n/api"
 		],
@@ -602,8 +603,6 @@
 		"BsExtJSStoreParams": "includes/ExtJSStoreParams.php",
 		"BsExtJSSortParam": "includes/ExtJSStoreParams.php",
 		"BSNotifications": "includes/Notifications.class.php",
-		"BSNotificationHandlerInterface": "includes/notifications/NotificationHandler.php",
-		"BSNotificationHandler": "includes/notifications/NotificationHandler.php",
 		"BSStandardAPIResponse": "includes/api/BSStandardAPIResponse.php",
 		"BSExtendedApiContext": "includes/api/BSExtendedApiContext.php",
 		"BSApiFormatJson": "includes/api/BSApiFormatJson.php",
