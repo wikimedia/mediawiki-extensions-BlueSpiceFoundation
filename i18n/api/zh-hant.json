@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Corainn",
-			"Kly"
+			"Kly",
+			"LNDDYL"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "列出來自檔案後端的所有檔案。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
@@ -40,7 +41,7 @@
 	"apihelp-bs-task-param-token": "存取 API 模組的所需令牌",
 	"bs-wikipage-tasks-error-contentmodel": "任務不可與提供頁面的內容模型一同執行。",
 	"bs-wikipage-tasks-error-page-not-valid": "提供的頁面無效。",
-	"bs-wikipage-tasks-setcategories-edit-summary": "更改的分類",
+	"bs-wikipage-tasks-setcategories-edit-summary": "變更的分類。",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "您不被允許編輯頁面「$1」。",
 	"bs-wikipage-tasks-error-categories-not-valid": "無效{{PLURAL:$2|分類|分類}}：$1",
 	"bs-wikipage-tasks-setcategories-success": "分類已成功設定。",
