@@ -7,8 +7,8 @@ class BsCoreHooks {
 	protected static $aTaskAPIPermission = array();
 
 	public static function onRegistry(){
-		if ( is_readable( __DIR__ . '../vendor/autoload.php' ) ) {
-			include_once( __DIR__ . '../vendor/autoload.php' );
+		if ( is_readable( __DIR__ . '/../vendor/autoload.php' ) ) {
+			include_once( __DIR__ . '/../vendor/autoload.php' );
 		}
 
 		require_once __DIR__ . "/Defines.php";
