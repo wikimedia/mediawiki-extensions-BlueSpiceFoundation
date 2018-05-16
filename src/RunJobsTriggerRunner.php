@@ -77,7 +77,7 @@ class RunJobsTriggerRunner {
 				]
 			);
 
-			$this->checkHandlerInterface();
+			$this->checkHandlerInterface( $regKey );
 
 			if( $this->shouldRunCurrentHandler( $regKey ) ) {
 				try {
@@ -104,7 +104,7 @@ class RunJobsTriggerRunner {
 		);
 	}
 
-	protected function checkHandlerInterface() {
+	protected function checkHandlerInterface( $regKey ) {
 		$doesImplementInterface =
 			$this->currentTriggerHandler instanceof IRunJobsTriggerHandler;
 
