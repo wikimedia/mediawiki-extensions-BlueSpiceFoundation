@@ -69,5 +69,6 @@
 	"bs-extjs-pageexport-success-text": "页面收藏已导出至$1",
 	"bs-extjs-pageexport-required-text": "列表名称不能为空，并且必须至少选择一个页面",
 	"bs-extjs-export-search-summary-text": "生成自页面导出",
-	"bs-extjs-pageexport-error-invalid-title": "列表名称无效"
+	"bs-extjs-pageexport-error-invalid-title": "列表名称无效",
+	"bs-extjs-combo-box-default-placeholder": "输入以过滤..."
 }

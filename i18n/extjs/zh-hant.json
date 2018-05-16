@@ -73,5 +73,6 @@
 	"bs-extjs-pageexport-success-text": "頁面收藏已匯出至$1",
 	"bs-extjs-pageexport-required-text": "清單名稱不能為空，並且必須至少選擇一個頁面",
 	"bs-extjs-export-search-summary-text": "透過頁面匯出所產生",
-	"bs-extjs-pageexport-error-invalid-title": "清單名稱無效"
+	"bs-extjs-pageexport-error-invalid-title": "清單名稱無效",
+	"bs-extjs-combo-box-default-placeholder": "輸入來篩選..."
 }

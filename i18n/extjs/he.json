@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Ronel1",
-			"Eladk"
+			"Eladk",
+			"Guycn2"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -40,5 +41,6 @@
 	"bs-extjs-filter-contains": "מכיל",
 	"bs-extjs-filter-contains-not": "מכיל לא",
 	"bs-extjs-filter-starts-with": "מתחיל עם",
-	"bs-extjs-filter-ends-with": "מסתיים"
+	"bs-extjs-filter-ends-with": "מסתיים",
+	"bs-extjs-combo-box-default-placeholder": "הסוג לסינון..."
 }

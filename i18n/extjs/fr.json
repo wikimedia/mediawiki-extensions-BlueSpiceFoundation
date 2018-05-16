@@ -71,5 +71,6 @@
 	"bs-extjs-pageexport-success-text": "Collection de pages exportée vers $1",
 	"bs-extjs-pageexport-required-text": "La liste de noms ne peut pas être vide et au moins une page doit être sélectionnée",
 	"bs-extjs-export-search-summary-text": "Généré par PageExport",
-	"bs-extjs-pageexport-error-invalid-title": "Le nom de la liste n’est pas valide"
+	"bs-extjs-pageexport-error-invalid-title": "Le nom de la liste n’est pas valide",
+	"bs-extjs-combo-box-default-placeholder": "Type à filtrer ..."
 }

@@ -66,5 +66,6 @@
 	"bs-extjs-pageexport-success-text": "문서 모음집을 $1로 내보냈습니다",
 	"bs-extjs-pageexport-required-text": "목록 이름은 비워둘 수 없으며 적어도 하나의 문서를 선택해야 합니다",
 	"bs-extjs-export-search-summary-text": "PageExport를 통해 생성됨",
-	"bs-extjs-pageexport-error-invalid-title": "목록의 이름이 유효하지 않습니다"
+	"bs-extjs-pageexport-error-invalid-title": "목록의 이름이 유효하지 않습니다",
+	"bs-extjs-combo-box-default-placeholder": "필터 대상을 입력하세요..."
 }
