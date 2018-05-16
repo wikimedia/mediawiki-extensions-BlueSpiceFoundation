@@ -6,6 +6,7 @@ Ext.define( 'BS.form.CategoryCombo', {
 	valueField: 'text',
 	allowBlank: false,
 	forceSelection: true,
+	emptyText: mw.message( "bs-extjs-combo-box-default-placeholder" ).plain(),
 
 	initComponent: function() {
 		this.store = this.makeStore();
