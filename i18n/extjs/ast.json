@@ -67,5 +67,6 @@
 	"bs-extjs-pageexport-success-text": "Esportóse la colección de páxines a $1",
 	"bs-extjs-pageexport-required-text": "El nome de la llista nun puede tar vacíu y tien d'escoyese una páxina a lo menos",
 	"bs-extjs-export-search-summary-text": "Xeneráu por PageExport",
-	"bs-extjs-pageexport-error-invalid-title": "El nome de la llista nun ye válidu"
+	"bs-extjs-pageexport-error-invalid-title": "El nome de la llista nun ye válidu",
+	"bs-extjs-combo-box-default-placeholder": "Escribe pa filtrar..."
 }
