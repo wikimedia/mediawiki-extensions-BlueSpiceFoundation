@@ -70,5 +70,6 @@
 	"bs-extjs-pageexport-success-text": "Sidsamling exporterades till $1",
 	"bs-extjs-pageexport-required-text": "Listnamnet kan inte vara tomt och minst en sida måste väljas",
 	"bs-extjs-export-search-summary-text": "Genererad av PageExport",
-	"bs-extjs-pageexport-error-invalid-title": "Namnet på listan är ogiltig"
+	"bs-extjs-pageexport-error-invalid-title": "Namnet på listan är ogiltig",
+	"bs-extjs-combo-box-default-placeholder": "Skriv för att filtrera..."
 }
