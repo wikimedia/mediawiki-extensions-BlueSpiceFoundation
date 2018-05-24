@@ -288,7 +288,8 @@ class BsCore {
 			BsConfig::loadSettings();
 		}
 
-		BSNotifications::init();
+		$notifications = BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notifications->init();
 
 		$factory = MediaWikiServices::getInstance()->getService(
 			'BSExtensionFactory'

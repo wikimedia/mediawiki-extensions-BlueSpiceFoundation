@@ -26,53 +26,23 @@
  * @filesource
  */
 abstract class BSNotifications {
-	private static $aNotificationHandlers = array();
-
+	/**
+	 * @deprecated since version 3.0.0 - use NotificationManager
+	 * @param type $sHandler
+	 */
 	public static function registerNotificationHandler( $sHandler ) {
-		self::$aNotificationHandlers[] = $sHandler;
-	}
-
-	private static function getNotificationHandlerMethods( $sMethod ) {
-		$aNotificationHandlers = self::$aNotificationHandlers;
-		if ( empty( $aNotificationHandlers ) ) {
-			return array();
-		}
-
-		$aCallableMethods = array();
-		foreach ( $aNotificationHandlers as $sHandler ) {
-			$sCallable = "$sHandler::$sMethod";
-			if ( !is_callable( $sCallable ) ) {
-				throw new BsException(
-					"Notification Handler $sHandler does not have a method $sMethod!"
-				);
-			}
-			$aCallableMethods[ $sHandler ] = $sMethod;
-		}
-
-		return $aCallableMethods;
-	}
-
-	public static function init() {
-		Hooks::run('BeforeNotificationsInit');
-
-		$aNotificationHandlerMethods = self::getNotificationHandlerMethods(
-			__FUNCTION__
-		);
-
-		foreach ( $aNotificationHandlerMethods as $sHandler => $sCallable ) {
-			$sHandler::$sCallable();
-		}
+		//NO-OP
 	}
 
 	/**
 	 * @see BSNotificationHandlerInterface::registerIcon
 	 *
+	 * @deprecated since version 3.0.0 - use NotificationManager
 	 * @param String  $sKey
 	 * @param String  $sLocation
 	 * @param String  $sLocationType
 	 * @param Boolean $bOverride
 	 *
-	 * @throws BsException
 	 */
 	public static function registerIcon(
 		$sKey,
@@ -80,23 +50,27 @@ abstract class BSNotifications {
 		$sLocationType = 'path',
 		$bOverride = false
 	) {
-		$aNotificationHandlerMethods = self::getNotificationHandlerMethods(
-			__FUNCTION__
-		);
-
-		foreach ( $aNotificationHandlerMethods as $sHandler => $sCallable ) {
-			$sHandler::$sCallable(
-				$sKey,
-				$sLocation,
-				$sLocationType,
-				$bOverride
-			);
+		if( $sLocationType != 'path' ) {
+			//Only support path in new version
+			return;
 		}
+
+		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+
+		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+
+		$echoNotifier->registerIcon(
+			$sKey,
+			[
+				'path' => $sLocation
+			]
+		);
 	}
 
 	/**
 	 * @see BSNotificationHandlerInterface::registerNotificationCategory
 	 *
+	 * @deprecated since version 3.0.0 - use NotificationManager
 	 * @param String  $sKey
 	 * @param Integer $iPriority
 	 * @param Array   $aNoDismiss
@@ -114,64 +88,76 @@ abstract class BSNotifications {
 		$aUserGroups = null,
 		$aActiveDefaultUserOptions = null
 	) {
-		$aNotificationHandlerMethods = self::getNotificationHandlerMethods(
-			__FUNCTION__
-		);
+		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
-		foreach ( $aNotificationHandlerMethods as $sHandler => $sCallable ) {
-			$sHandler::$sCallable(
-				$sKey,
-				$iPriority,
-				$aNoDismiss,
-				$sTooltipMsgKey,
-				$aUserGroups,
-				$aActiveDefaultUserOptions
-			);
-		}
+		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+
+		$echoNotifier->registerNotificationCategory(
+			$sKey,
+			[
+				'priority' => $iPriority,
+				'usergroups' => $aUserGroups
+			]
+		);
 	}
 
 	/**
 	 * @see BSNotificationHandlerInterface::registerNotification
 	 *
-	 *
+	 * @deprecated since version 3.0.0 - use NotificationManager
 	 * @throws BsException
 	 */
 	public static function registerNotification( /*...*/ ) {
 		$aParams = func_get_args();
 
-		$aNotificationHandlerMethods = self::getNotificationHandlerMethods(
-			__FUNCTION__
-		);
-
-		foreach ( $aNotificationHandlerMethods as $sHandler => $sCallable ) {
-			$sHandler::$sCallable( $aParams );
+		if ( is_array ( $aParams[ 0 ] ) ) {
+			$aValues = $aParams[ 0 ];
+		} else {
+			$aValues[ 'type' ] = $aParams[ 0 ];
+			$aValues[ 'category' ] = $aParams[ 1 ];
+			$aValues[ 'summary-message' ] = $aParams[ 2 ];
+			$aValues[ 'summary-params' ] = $aParams[ 3 ];
+			$aValues[ 'email-subject-message' ] = $aParams[ 4 ];
+			$aValues[ 'email-subject-params' ] = $aParams[ 5 ];
+			$aValues[ 'email-body-message' ] = $aParams[ 6 ];
+			$aValues[ 'email-body-params' ] = $aParams[ 7 ];
+			$aValues[ 'web-body-message' ] = $aParams[ 6 ];
+			$aValues[ 'web-body-params' ] = $aParams[ 7 ];
+			if ( isset ( $aParams[ 8 ] ) && is_array ( $aParams[ 8 ] ) ) {
+				$aValues[ 'extra-params' ] = $aParams[ 8 ];
+			} else {
+				$aValues[ 'extra-params' ] = array ();
+			}
 		}
+
+		$sType = $aValues['type'];
+		unset( $aValues['type'] );
+
+		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+
+		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+
+		$notificationsManager->registerNotification(
+			$sType,
+			$echoNotifier,
+			$aValues
+		);
 	}
 
 	/**
-	 * @see BSNotificationHandlerInterface::unregisterNotification
 	 *
+	 * @deprecated since version 3.0.0 - use NotificationManager
 	 * @param $sKey
-	 *
-	 * @throws BsException
 	 */
 	public static function unregisterNotification(
 		$sKey
 	) {
-		$aNotificationHandlerMethods = self::getNotificationHandlerMethods(
-			__FUNCTION__
-		);
-
-		foreach ( $aNotificationHandlerMethods as $sHandler => $sCallable ) {
-			$sHandler::$sCallable(
-				$sKey
-			);
-		}
+		//NO-OP
 	}
 
 	/**
-	 * @see BSNotificationHandlerInterface::notify
 	 *
+	 * @deprecated since version 3.0.0 - use NotificationManager
 	 * @param String $sKey
 	 * @param User   $oAgent
 	 * @param Title  $oTitle
@@ -185,17 +171,19 @@ abstract class BSNotifications {
 		$oTitle = null,
 		$aExtraParams = null
 	) {
-		$aNotificationHandlerMethods = self::getNotificationHandlerMethods(
-			__FUNCTION__
+		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+
+		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+
+		$notification = $echoNotifier->getNotificationObject(
+			$sKey,
+			[
+				'agent' => $oAgent,
+				'title' => $oTitle,
+				'extra-params' => $aExtraParams
+			]
 		);
 
-		foreach ( $aNotificationHandlerMethods as $sHandler => $sCallable ) {
-			$sHandler::$sCallable(
-				$sKey,
-				$oAgent,
-				$oTitle,
-				$aExtraParams
-			);
-		}
+		$echoNotifier->notify( $notification );
 	}
 }

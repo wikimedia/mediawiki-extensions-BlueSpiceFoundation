@@ -114,4 +114,8 @@ class Services extends ServicesDecorator {
 	public function getBSUtilityFactory() {
 		return $this->getService( 'BSUtilityFactory' );
 	}
+
+	public function getBSNotificationManager() {
+		return $this->getService( 'BSNotificationManager' );
+	}
 }
