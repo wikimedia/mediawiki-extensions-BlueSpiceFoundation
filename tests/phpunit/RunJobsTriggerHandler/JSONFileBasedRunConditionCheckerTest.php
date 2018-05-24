@@ -16,7 +16,7 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 		parent::setUp();
 
 		$this->tmpJSONPathname = sys_get_temp_dir() . '/runJobsTriggerData.json';
-		$this->fixtureJSONPathname = __DIR__. '/../data/runJobsTriggerData.json';
+		$this->fixtureJSONPathname = __DIR__. '/../json/runJobsTriggerData.json';
 	}
 
 	public function testShouldRun() {
