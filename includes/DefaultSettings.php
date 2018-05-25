@@ -118,11 +118,11 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	),
 	"createaccount" => array(
 		'type' => 'global',
-		'roles' => [ 'reader', 'editor', 'admin' ]
+		'roles' => [ 'editor', 'admin' ]
 	),
 	"createpage" => array(
 		'type' => 'namespace',
-		'roles' => [ 'admin', 'editor', 'reader' ]
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"move" => array(
 		'type' => 'namespace',
@@ -134,7 +134,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	),
 	"create" => array(
 		'type' => 'namespace',
-		'roles' => [ 'admin', 'editor', 'reader' ]
+		'roles' => [ 'admin', 'editor' ]
 	),
 	"purge" => array(
 		'type' => 'namespace',
