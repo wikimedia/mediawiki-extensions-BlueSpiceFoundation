@@ -110,7 +110,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	),
 	"bot" => array(
 		'type' => 'global',
-		'roles' => [ 'admin' ]
+		'roles' => []
 	),
 	"browsearchive" => array(
 		'type' => 'global',
