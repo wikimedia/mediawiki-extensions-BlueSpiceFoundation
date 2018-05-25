@@ -11,7 +11,8 @@
 			"Redredsonia",
 			"Mouse21",
 			"Patrick Star",
-			"Happy13241"
+			"Happy13241",
+			"Abiyoyo"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -37,7 +38,7 @@
 	"bs-extjs-label-user": "Участник",
 	"bs-extjs-label-namespace": "Пространство имён",
 	"bs-extjs-label-page": "Страница",
-	"bs-extjs-titlecombo-newpagehint": "Страницы не существует!",
+	"bs-extjs-titlecombo-newpagehint": "Страница не существует!",
 	"bs-extjs-upload": "Загрузить",
 	"bs-extjs-browse": "Обзор",
 	"bs-extjs-uploading": "Загрузка…",
