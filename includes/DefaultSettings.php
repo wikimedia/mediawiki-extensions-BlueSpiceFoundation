@@ -51,9 +51,11 @@ $GLOBALS[ 'bsgTestSystem' ] = false;
 $GLOBALS[ 'bsgEnableRoleSystem' ] = false;
 
 $GLOBALS[ 'bsgGroupRoles' ] = [
-	'sysop' => [ 'admin' => true ],
-	'user' => [ 'editor' => true ],
-	'*' => [ 'reader' => true ]
+	'sysop' => ['admin' => true],
+	'user' => ['editor' => true],
+	'*' => ['reader' => true],
+	'bot' => ['bot' => true],
+	'bureaucrat' => ['editor' => true]
 ];
 
 $GLOBALS[ 'bsgNamespaceRolesLockdown' ]  = [];
@@ -110,7 +112,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	),
 	"bot" => array(
 		'type' => 'global',
-		'roles' => []
+		'roles' => ['bot']
 	),
 	"browsearchive" => array(
 		'type' => 'global',
