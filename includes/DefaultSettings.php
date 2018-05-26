@@ -60,6 +60,8 @@ $GLOBALS[ 'bsgGroupRoles' ] = [
 
 $GLOBALS[ 'bsgNamespaceRolesLockdown' ]  = [];
 
+$GLOBALS[ 'bsgPermissionConfig' ] = [];
+
 $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	'read' => array(
 		'type' => 'namespace',
