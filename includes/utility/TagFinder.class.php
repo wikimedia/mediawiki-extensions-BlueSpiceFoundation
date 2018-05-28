@@ -6,6 +6,9 @@
  * @author Thomas Lorenz, Robert Vogel
 
  */
+
+use UtfNormal\Validator;
+
 class BsTagFinder {
 
 	/**
@@ -36,7 +39,7 @@ class BsTagFinder {
 				.$sText
 				. '</body>'
 				. '</html>';
-		$sXML = UtfNormal::cleanUp($sXML);
+		$sXML = Validator::cleanUp($sXML);
 
 		$oDOMDoc = new DOMDocument();
 		$oDOMDoc->recover = true;
