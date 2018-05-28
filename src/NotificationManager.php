@@ -52,7 +52,7 @@ class NotificationManager {
 	public function init() {
 		foreach( $this->notifierRegistry->getAllKeys() as $notifier ) {
 			$notifierClass = $this->notifierRegistry->getValue( $notifier );
-			$notifierInstance = new $notifierClass();
+			$notifierInstance = new $notifierClass( $this->config );
 			$notifierInstance->init();
 
 			$this->notifiers[$notifier] = $notifierInstance;
