@@ -1,7 +1,8 @@
 <?php
 
-namespace BlueSpice\Tests\Data\Filter;
+namespace BlueSpice\Tests\DataSources\Filter;
 
+use BlueSpice\Data\Filter;
 use BlueSpice\Data\Record;
 
 /**
@@ -10,7 +11,7 @@ use BlueSpice\Data\Record;
  */
 class StringValueTest extends \PHPUnit\Framework\TestCase {
 	public function testPositive() {
-		$filter = new \BlueSpice\Data\Filter\StringValue( [
+		$filter = new Filter\StringValue( [
 			'field' => 'field1',
 			'comparison' => 'ct',
 			'value' => 'ello'
@@ -25,7 +26,7 @@ class StringValueTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testNegative() {
-		$filter = new \BlueSpice\Data\Filter\StringValue( [
+		$filter = new Filter\StringValue( [
 			'field' => 'field1',
 			'comparison' => 'ct',
 			'value' => 'allo'

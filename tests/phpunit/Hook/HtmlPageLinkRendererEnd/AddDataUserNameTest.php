@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueSpice\Tests\HtmlPageLinkRendererEnd;
+namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
 class AddDataUserNameTest extends \MediaWikiTestCase {
 	protected $testUserName = 'wiki Sysöp';

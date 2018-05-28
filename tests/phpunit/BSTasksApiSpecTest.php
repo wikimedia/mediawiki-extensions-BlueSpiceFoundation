@@ -1,12 +1,16 @@
 <?php
+
+namespace BlueSpice\Tests;
+
+
 /**
  * @group BlueSpice
  */
-class BSTasksApiSpecTest extends MediaWikiTestCase {
+class BSTasksApiSpecTest extends \MediaWikiTestCase {
 
 	public function testGetTaskNames() {
 		$aTasks = [ 'test1', 'test2', 'test3' ];
-		$oSpec = new BSTasksApiSpec( $aTasks );
+		$oSpec = new \BSTasksApiSpec( $aTasks );
 		$this->assertArrayEquals( $aTasks, $oSpec->getTaskNames() );
 
 		$aTasks2 = [
@@ -14,7 +18,7 @@ class BSTasksApiSpecTest extends MediaWikiTestCase {
 			'test2' => [],
 			'test3' => [],
 		];
-		$oSpec2 = new BSTasksApiSpec( $aTasks2 );
+		$oSpec2 = new \BSTasksApiSpec( $aTasks2 );
 		$this->assertArrayEquals( $aTasks, $oSpec2->getTaskNames() );
 
 		$aTasks3 = [
@@ -23,7 +27,7 @@ class BSTasksApiSpecTest extends MediaWikiTestCase {
 			'test3' => [],
 		];
 
-		$oSpec3 = new BSTasksApiSpec( $aTasks3 );
+		$oSpec3 = new \BSTasksApiSpec( $aTasks3 );
 		$this->assertArrayEquals( $aTasks, $oSpec3->getTaskNames() );
 	}
 
@@ -31,7 +35,7 @@ class BSTasksApiSpecTest extends MediaWikiTestCase {
 	 * @expectedException MWException
 	 */
 	public function testUnsupportedTaskSpecException1() {
-		new BSTasksApiSpec( [
+		new \BSTasksApiSpec( [
 			'is a string' => 'is not an array'
 		] );
 	}
@@ -40,7 +44,7 @@ class BSTasksApiSpecTest extends MediaWikiTestCase {
 	 * @expectedException MWException
 	 */
 	public function testUnsupportedTaskSpecException2() {
-		new BSTasksApiSpec( [
+		new \BSTasksApiSpec( [
 			0 => [ 'key is int, but value is not array' ]
 		] );
 	}

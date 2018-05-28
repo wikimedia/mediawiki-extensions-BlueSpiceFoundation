@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueSpice\Tests\Data;
+namespace BlueSpice\Tests\DataSources;
 
 use BlueSpice\Data\LimitOffsetTrimmer;
 

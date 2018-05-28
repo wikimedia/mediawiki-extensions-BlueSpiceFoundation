@@ -1,5 +1,9 @@
 <?php
 
+namespace BlueSpice\Tests\Api;
+
+use BlueSpice\Tests\BSApiExtJSStoreTestBase;
+
 /**
  * Test behavior has changed on MW > 1.27. Therefore this test is currently
  * broken until BlueSpice updates compatibility

@@ -1,5 +1,9 @@
 <?php
 
+namespace BlueSpice\Tests\Api;
+
+use BlueSpice\Tests\BSApiTasksTestBase;
+
 /**
  * @group medium
  * @group API
@@ -23,8 +27,8 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	}
 
 	public function testPing() {
-		$oTitle = Title::makeTitle( NS_MAIN, 'Test page' );
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
+		$oWikiPage = \WikiPage::factory( $oTitle );
 
 		$oResponse = $this->executeTask(
 			'ping',
@@ -59,7 +63,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	 * @param array $aSingleResult
 	 */
 	public static function onBsAdapterAjaxPingResult ( $sRef, $aData, $iArticleId, $sTitle, $iNamespace, $iRevision, &$aSingleResult) {
-		$oTitle = Title::makeTitle( NS_MAIN, 'Test page' );
+		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
 
 		if( $iArticleId != $oTitle->getArticleID() ) {
 			return false;

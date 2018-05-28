@@ -1,5 +1,9 @@
 <?php
 
+namespace BlueSpice\Tests\Api;
+
+use BlueSpice\Tests\BSApiExtJSStoreTestBase;
+
 /**
  * The base fixture has changed since MW 1.27. Therefore the test is marked
  * broken until BlueSpice updates its compatibility.
@@ -9,20 +13,32 @@
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
+class BSApiCategoryStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 2;
 	protected $tablesUsed = [ 'category', 'categorylinks', 'page' ];
 
 	protected function getStoreSchema() {
 		return [
+			'cat_id' => [
+				'type' => 'integer'
+			],
+			'cat_title' => [
+				'type' => 'string'
+			],
 			'text' => [
 				'type' => 'string'
 			],
-			'leaf' => [
-				'type' => 'boolean'
+			'cat_pages' => [
+				'type' => 'integer'
 			],
-			'id' => [
-				'type' => 'string'
+			'cat_subcats' => [
+				'type' => 'integer'
+			],
+			'cat_files' => [
+				'type' => 'integer'
+			],
+			'prefixed_text' => [
+				'type' => 'sting'
 			]
 		];
 	}
@@ -54,40 +70,34 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	protected function getModuleName() {
-		return 'bs-category-treestore';
+		return 'bs-category-store';
 	}
 
 	public function provideSingleFilterData() {
 		return [
-			'Filter by id' => [ 'string', 'ct', 'id', 'src/', 2 ]
+			'Filter by cat_title' => [ 'string', 'ct', 'cat_title', 'test', 2 ]
 		];
 	}
 
 	public function provideMultipleFilterData() {
 		return [
-			'Filter by leaf and text' => [
+			'Filter by cat_pages and cat_title' => [
 				[
 					[
-						'type' => 'boolean',
+						'type' => 'numeric',
 						'comparison' => 'eq',
-						'field' => 'leaf',
-						'value' => true
+						'field' => 'cat_pages',
+						'value' => 3
 					],
 					[
 						'type' => 'string',
-						'comparison' => 'eq',
-						'field' => 'text',
-						'value' => 'Dummy test 2'
+						'comparison' => 'ct',
+						'field' => 'cat_title',
+						'value' => 'test'
 					]
 				],
 				1
 			]
-		];
-	}
-
-	protected function getAdditionalParams() {
-		return [
-			'node' => 'src'
 		];
 	}
 }

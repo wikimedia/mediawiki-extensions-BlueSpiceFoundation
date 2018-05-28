@@ -35,6 +35,15 @@ class ServicesDecorator extends ServiceContainer {
 	}
 
 	/**
+	 * Resets instance when new original instance is resetted
+	 *
+	 * @param type \MediaWikiServices $services
+	 */
+	public static function resetInstance( $services ) {
+		static::$instance = static::newInstance( $services );
+	}
+
+	/**
 	 *
 	 * @var MediaWikiServices
 	 */

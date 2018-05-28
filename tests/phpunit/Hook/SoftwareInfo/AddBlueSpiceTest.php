@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueSpice\Tests\SoftwareInfo;
+namespace BlueSpice\Tests\Hook\SoftwareInfo;
 
 class AddBlueSpiceTest extends \PHPUnit\Framework\TestCase {
 

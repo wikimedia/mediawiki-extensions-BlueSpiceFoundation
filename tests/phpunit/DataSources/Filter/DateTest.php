@@ -1,8 +1,8 @@
 <?php
 
-namespace BlueSpice\Tests\Data\Filter;
+namespace BlueSpice\Tests\DataSources\Filter;
 
-use \BlueSpice\Data\Filter;
+use BlueSpice\Data\Filter;
 use BlueSpice\Data\Record;
 
 /**
@@ -26,7 +26,7 @@ class DateTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testNegative() {
-		$filter = new \BlueSpice\Data\Filter\Date( [
+		$filter = new Filter\Date( [
 			'field' => 'field1',
 			'comparison' => 'gt',
 			'value' => '2017/01/02'

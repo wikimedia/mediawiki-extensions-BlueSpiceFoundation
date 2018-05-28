@@ -2,10 +2,11 @@
 
 namespace BlueSpice;
 
+use BlueSpice\INotification;
 /**
  * Generic empty notification
  */
-class NullNotification implements BlueSpice\INotification {
+class NullNotification implements INotification {
 	protected $key;
 
 	public function __construct( $key, $params ) {

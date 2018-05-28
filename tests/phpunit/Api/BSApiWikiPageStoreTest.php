@@ -1,5 +1,10 @@
 <?php
 
+namespace BlueSpice\Tests\Api;
+
+use BlueSpice\Tests\BSApiExtJSStoreTestBase;
+use BlueSpice\Tests\BSPageFixturesProvider;
+
 /**
  * @group medium
  * @group api

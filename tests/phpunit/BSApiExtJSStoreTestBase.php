@@ -1,5 +1,8 @@
 <?php
 
+namespace BlueSpice\Tests;
+
+use BlueSpice\Tests\BSApiTestCase;
 /**
  *
  * Class BSApiExtJSStoreTestBase
@@ -56,10 +59,10 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 					$this->assertNotEquals( -1, strtotime( $value ), "Value of field '$schemaFieldName' is not a valid date format" );
 					break;
 				case 'title':
-					$this->assertNotNull( Title::newFromText( $value ), "Value of field '$schemaFieldName' is not a valid title" );
+					$this->assertNotNull( \Title::newFromText( $value ), "Value of field '$schemaFieldName' is not a valid title" );
 					break;
 				case 'templatetitle':
-					$this->assertNotNull( Title::newFromText( $value, NS_TEMPLATE ), "Value of field '$schemaFieldName' is not a valid template title" );
+					$this->assertNotNull( \Title::newFromText( $value, NS_TEMPLATE ), "Value of field '$schemaFieldName' is not a valid template title" );
 					break;
 			}
 		}
@@ -155,7 +158,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	public function testSingleFilter( $type, $comparison, $field, $value, $expectedTotal ) {
 		$aParams = array(
 			'action' => $this->getModuleName(),
-			'filter' => FormatJson::encode([
+			'filter' => \FormatJson::encode([
 				[
 					'type' => $type,
 					'comparison' => $comparison,
@@ -192,7 +195,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	public function testMultipleFilter( $filters, $expectedTotal ) {
 		$aParams = array(
 			'action' => $this->getModuleName(),
-			'filter' => FormatJson::encode( $filters )
+			'filter' => \FormatJson::encode( $filters )
 		);
 		if( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;

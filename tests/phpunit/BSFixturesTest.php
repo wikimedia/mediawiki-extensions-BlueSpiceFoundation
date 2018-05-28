@@ -1,5 +1,11 @@
 <?php
 
+namespace BlueSpice\Tests;
+
+use BlueSpice\Tests\BSApiTestCase;
+use BlueSpice\Tests\BSPageFixtures;
+use BlueSpice\Tests\BSUserFixtures;
+
 /**
  * @group medium
  * @group Database
@@ -15,12 +21,12 @@ class BSFixturesTest extends BSApiTestCase {
 	}
 
 	public function testPageFixtures() {
-		$title = Title::newFromText( 'Template:Hello World' );
+		$title = \Title::newFromText( 'Template:Hello World' );
 		$this->assertTrue( $title->exists(), 'Title should be known' );
 	}
 
 	public function testUserFixtures() {
-		$user = User::newFromName( 'Paul' );
+		$user = \User::newFromName( 'Paul' );
 		$this->assertFalse( $user->isAnon(), "User should be known" );
 
 

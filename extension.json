@@ -515,7 +515,8 @@
 		],
 		"SearchGetNearMatchComplete": [
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
-		]
+		],
+		"MediaWikiServices": "BlueSpice\\Hook\\MediaWikiServices\\ResetServices::callback"
 	},
 	"config_prefix": "bsg",
 	"config": {
@@ -694,14 +695,6 @@
 		"BsSTYLEMEDIA": "includes/Common.php",
 		"EXTINFO": "includes/Common.php",
 		"EXTTYPE": "includes/Common.php",
-		"BSApiTestCase": "tests/phpunit/BSApiTestCase.php",
-		"BSFixturesProvider": "tests/phpunit/BSFixturesProvider.php",
-		"BSPageFixturesProvider": "tests/phpunit/BSPageFixturesProvider.php",
-		"BSUserFixturesProvider": "tests/phpunit/BSUserFixturesProvider.php",
-		"BSPageFixtures": "tests/phpunit/BSPageFixtures.php",
-		"BSUserFixtures": "tests/phpunit/BSUserFixtures.php",
-		"BSApiExtJSStoreTestBase": "tests/phpunit/BSApiExtJSStoreTestBase.php",
-		"BSApiTasksTestBase": "tests/phpunit/BSApiTasksTestBase.php",
 		"BSTemplateHelper": "includes/TemplateHelper.php",
 		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",

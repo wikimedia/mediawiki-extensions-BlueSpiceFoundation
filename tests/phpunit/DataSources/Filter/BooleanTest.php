@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueSpice\Tests\Data\Filter;
+namespace BlueSpice\Tests\DataSources\Filter;
 
 use BlueSpice\Data\Filter;
 use BlueSpice\Data\Record;

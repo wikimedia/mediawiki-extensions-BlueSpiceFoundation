@@ -1,5 +1,9 @@
 <?php
 
+namespace BlueSpice\Tests\Api;
+
+use BlueSpice\Tests\BSApiTasksTestBase;
+
 /**
  * @group medium
  * @group API
@@ -21,13 +25,13 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	}
 
 	public function testAddCategoriesSucceeds() {
-		$oTitle = Title::newFromText( 'Category Test' );
+		$oTitle = \Title::newFromText( 'Category Test' );
 		$aTestCategories = [
-			'CatA' => Title::newFromText( 'CatA', NS_CATEGORY )->getText(),
-			'cAT_B' => Title::newFromText( 'cAT_B', NS_CATEGORY )->getText(),
-			'CAT C' => Title::newFromText( 'CAT C', NS_CATEGORY )->getText(),
-			'cat____d'=> Title::newFromText( 'cat____d', NS_CATEGORY )->getText(),
-			'CAT   f  g' => Title::newFromText( 'CAT   f  g', NS_CATEGORY )->getText()
+			'CatA' => \Title::newFromText( 'CatA', NS_CATEGORY )->getText(),
+			'cAT_B' => \Title::newFromText( 'cAT_B', NS_CATEGORY )->getText(),
+			'CAT C' => \Title::newFromText( 'CAT C', NS_CATEGORY )->getText(),
+			'cat____d'=> \Title::newFromText( 'cat____d', NS_CATEGORY )->getText(),
+			'CAT   f  g' => \Title::newFromText( 'CAT   f  g', NS_CATEGORY )->getText()
 		];
 
 		$response = $this->executeTask(
@@ -40,7 +44,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 
 		$this->assertEquals( true, $response->success, "Adding categories failed where it should have succeeded" );
 
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
 		foreach( $aCategoryTitles as $oCategoryTitle ) {
@@ -59,9 +63,9 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	}
 
 	public function testSetCategoriesSucceeds() {
-		$oTitle = Title::newFromText( 'Category Test' );
+		$oTitle = \Title::newFromText( 'Category Test' );
 		$aTestCategories = [
-			'Cat' => Title::newFromText( 'Cat', NS_CATEGORY )->getText(),
+			'Cat' => \Title::newFromText( 'Cat', NS_CATEGORY )->getText(),
 		];
 
 		$response = $this->executeTask(
@@ -74,7 +78,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 
 		$this->assertEquals( true, $response->success, "Setting categories failed where it should have succeeded" );
 
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
 		foreach( $aCategoryTitles as $oCategoryTitle ) {
@@ -94,7 +98,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	}
 
 	public function testRemoveCategoriesSucceeds() {
-		$oTitle = Title::newFromText( 'Category Test' );
+		$oTitle = \Title::newFromText( 'Category Test' );
 
 		$response = $this->executeTask(
 			'removeCategories',
@@ -106,7 +110,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 
 		$this->assertEquals( true, $response->success, "Removing categories failed where it should have succeeded" );
 
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
 		foreach( $aCategoryTitles as $oCategoryTitle ) {
