@@ -34,7 +34,7 @@ class RunJobsTrigger extends SetupAfterCache {
 			$runConditionChecker,
 			$this->getConfig(),
 			$this->getServices()->getDBLoadBalancer(),
-			$this->getServices()->getService( 'BSNotifications' )
+			$this->getServices()->getService( 'BSNotificationManager' )
 				->getNotifier( 'nullnotifier' )
 		);
 
