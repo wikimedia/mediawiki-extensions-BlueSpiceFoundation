@@ -165,7 +165,7 @@ class Manager {
 	 * @param BlueSpice\Permission\Role\IRole $roleObject
 	 * Enables extensions to register custom role objects
 	 */
-	public function registerRole( $roleName, $permissions = [], $groups = [], $assignToSysop = true, $roleObject = null ) {
+	public function registerRole( $roleName, $permissions = [], $groups = [], $assignToSysop = false, $roleObject = null ) {
 		if( $roleObject == null || ( $roleObject instanceof IRole ) == false ) {
 			$roleObject = Role::newFromNameAndPermissions( $roleName, $permissions );
 		}
