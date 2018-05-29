@@ -1,5 +1,9 @@
 <?php
 
+namespace BlueSpice\Tests;
+
+use BlueSpice\Tests\BSUserFixturesProvider;
+
 class BSUserFixtures {
 
 	/**
@@ -33,7 +37,7 @@ class BSUserFixtures {
 	public function makeTestUsers() {
 		$users = [];
 		foreach( $this->fixtureData as $userData ) {
-			$user = new TestUser(
+			$user = new \TestUser(
 				$userData[0], $userData[1], $userData[2], $userData[3]
 			);
 			$key = $this->makeKey( $userData[0] );

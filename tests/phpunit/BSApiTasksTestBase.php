@@ -1,5 +1,9 @@
 <?php
 
+namespace BlueSpice\Tests;
+
+use BlueSpice\Tests\BSApiTestCase;
+
 abstract class BSApiTasksTestBase extends BSApiTestCase {
 
 	abstract protected function getModuleName();
@@ -14,7 +18,7 @@ abstract class BSApiTasksTestBase extends BSApiTestCase {
 		$results = $this->doApiRequestWithToken([
 			'action' => $this->getModuleName(),
 			'task' => $taskName,
-			'taskData' => FormatJson::encode( $taskData )
+			'taskData' => \FormatJson::encode( $taskData )
 		]);
 
 		return (object)$results[0];

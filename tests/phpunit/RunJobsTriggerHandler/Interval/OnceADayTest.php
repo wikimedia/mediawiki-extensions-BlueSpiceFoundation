@@ -1,6 +1,6 @@
 <?php
 
-namespace BlueSpice\Tests\RunJobsTriggerHandler\Intervall;
+namespace BlueSpice\Tests\RunJobsTriggerHandler\Interval;
 
 use BlueSpice\RunJobsTriggerHandler\Interval\OnceADay;
 

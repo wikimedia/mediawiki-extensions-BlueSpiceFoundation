@@ -1,5 +1,9 @@
 <?php
 
+namespace BlueSpice\Tests\Api;
+
+use BlueSpice\Tests\BSApiExtJSStoreTestBase;
+
 /**
  * There was a change in adressing IW links in MW > 1.27. BlueSpice is testing
  * with MW 1.27, so adding the group "Broken" until we update our compatibility

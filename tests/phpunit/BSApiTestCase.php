@@ -1,6 +1,8 @@
 <?php
 
-class BSApiTestCase extends ApiTestCase {
+namespace BlueSpice\Tests;
+
+class BSApiTestCase extends \ApiTestCase {
 
 	/**
 	 *

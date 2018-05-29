@@ -1,39 +1,40 @@
 <?php
 
-namespace BlueSpice\Tests\Data\Filter;
+namespace BlueSpice\Tests\DataSources\Filter;
 
+use BlueSpice\Data\Filter;
 use BlueSpice\Data\Record;
 
 /**
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */
-class ListValueTest extends \PHPUnit\Framework\TestCase {
+class NumericTest extends \PHPUnit\Framework\TestCase {
 	public function testPositive() {
-		$filter = new \BlueSpice\Data\Filter\ListValue( [
+		$filter = new Filter\Numeric( [
 			'field' => 'field1',
-			'comparison' => 'ct',
-			'value' => [ 'Hello' ]
+			'comparison' => 'gt',
+			'value' => 5
 		] );
 
 		$result = $filter->matches( new Record( (object)[
-			'field1' => [ 'Hello', 'World' ],
-			'field2' => false
+			'field1' => 7,
+			'field2' => 3
 		] ) );
 
 		$this->assertTrue( $result );
 	}
 
 	public function testNegative() {
-		$filter = new \BlueSpice\Data\Filter\ListValue( [
+		$filter = new Filter\Numeric( [
 			'field' => 'field1',
-			'comparison' => 'ct',
-			'value' => [ 'Hello' ]
+			'comparison' => 'gt',
+			'value' => 5
 		] );
 
 		$result = $filter->matches( new Record( (object)[
-			'field1' => [ 'Hallo', 'Welt' ],
-			'field2' => false
+			'field1' => 3,
+			'field2' => 7
 		] ) );
 
 		$this->assertFalse( $result );
