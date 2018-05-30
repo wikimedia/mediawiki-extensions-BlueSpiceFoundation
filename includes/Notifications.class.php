@@ -59,6 +59,10 @@ abstract class BSNotifications {
 
 		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
 
+		if( $echoNotifier == null ) {
+			return;
+		}
+
 		$echoNotifier->registerIcon(
 			$sKey,
 			[
@@ -91,6 +95,10 @@ abstract class BSNotifications {
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
 		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+
+		if( $echoNotifier == null ) {
+			return;
+		}
 
 		$echoNotifier->registerNotificationCategory(
 			$sKey,
@@ -137,6 +145,10 @@ abstract class BSNotifications {
 
 		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
 
+		if( $echoNotifier == null ) {
+			return;
+		}
+
 		$notificationsManager->registerNotification(
 			$sType,
 			$echoNotifier,
@@ -174,6 +186,10 @@ abstract class BSNotifications {
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
 		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+
+		if( $echoNotifier == null ) {
+			return;
+		}
 
 		$notification = $echoNotifier->getNotificationObject(
 			$sKey,
