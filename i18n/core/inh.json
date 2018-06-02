@@ -4,5 +4,6 @@
 			"Adam-Yourist"
 		]
 	},
-	"bs-extended-search-textfield-defaultvalue": "Лахар..."
+	"bs-extended-search-textfield-defaultvalue": "Лахар...",
+	"bs-days-duration": "{{PLURAL:$1|цхьа ди|$1 ди}}"
 }
