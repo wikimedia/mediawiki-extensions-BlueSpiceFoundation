@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sayginer"
+			"Sayginer",
+			"Hedda"
 		]
 	},
+	"specialcredits": "BlueSpice katkıda bulunanlar",
+	"bs-credits-programmers": "Programcılar",
+	"bs-credits-dnt": "Tasarım ve test",
 	"bs-credits-contributors": "Katkıda bulunanlar",
-	"bs-credits-translators": "Çevirmenler"
+	"bs-credits-translators": "Çevirmenler",
+	"bs-credits-translation": "Çeviri",
+	"bs-credits-th": "$1 sayfasındaki tüm çevirmenlere teşekkür ederiz."
 }
