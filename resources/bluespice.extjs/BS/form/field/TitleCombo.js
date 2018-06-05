@@ -5,6 +5,7 @@ Ext.define('BS.form.field.TitleCombo', {
 	//This is necessary to make the ComboBox return a Model
 	//instance if input is less then 4 chars
 	minChars: 1,
+	emptyText: mw.message( "bs-extjs-combo-box-default-placeholder" ).plain(),
 
 	gridConfig: {
 		border:true,

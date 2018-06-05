@@ -16,6 +16,7 @@ Ext.define('BS.form.field.ItemList', {
 	inputDisplayField: 'text',
 	listDisplayField: 'anchor',
 	itemGridConfig: null,
+	emptyText: mw.message( "bs-extjs-combo-box-default-placeholder" ).plain(),
 
 	initComponent: function() {
 		this.items = this.makeItems();
@@ -38,6 +39,7 @@ Ext.define('BS.form.field.ItemList', {
 		var me = this;
 		//var combo = new Ext.ux.form.field.GridPicker({
 		var combo = new Ext.form.field.ComboBox({
+			emptyText: me.emptyText,
 			anchor: '100%',
 			displayField: this.inputDisplayField,
 			listConfig: {

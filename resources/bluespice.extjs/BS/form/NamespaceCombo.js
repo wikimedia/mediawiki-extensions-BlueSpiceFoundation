@@ -7,6 +7,7 @@ Ext.define( 'BS.form.NamespaceCombo', {
 	typeAhead: true,
 	triggerAction: 'all',
 	fieldLabel: mw.message('bs-extjs-label-namespace').plain(),
+	emptyText: mw.message( "bs-extjs-combo-box-default-placeholder" ).plain(),
 
 	//Custom Settings
 	includeAll: false,
