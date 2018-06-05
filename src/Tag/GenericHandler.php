@@ -62,6 +62,12 @@ class GenericHandler {
 
 	/**
 	 *
+	 * @var \PPFrame
+	 */
+	protected $frame = null;
+
+	/**
+	 *
 	 * @param ITag $tag
 	 */
 	public function __construct( $tag ) {
@@ -89,6 +95,7 @@ class GenericHandler {
 		$this->parser = $parser;
 		$this->input = $input;
 		$this->args = $args;
+		$this->frame = $frame;
 
 		$this->processInput();
 		$this->processArgs();
@@ -156,7 +163,7 @@ class GenericHandler {
 		$this->processedInput = $this->input;
 		if( $this->tag->needsParsedInput() ) {
 			$this->processedInput =
-				$this->parser->recursiveTagParse( $this->processedInput );
+				$this->parser->recursiveTagParse( $this->processedInput, $this->frame  );
 		}
 
 		$paramDefinition = $this->tag->getInputDefinition();
@@ -196,6 +203,10 @@ class GenericHandler {
 		if( empty( $paramDefinitions ) ) {
 			return;
 		}
+
+		$rawArgs = $this->processedArgs;
+		$this->processedArgs = [];
+
 		foreach( $paramDefinitions as $paramDefinition ) {
 			$paramDefinition->setMessage(
 				wfMessage(
@@ -211,9 +222,10 @@ class GenericHandler {
 				[ $paramDefinition->getName() ],
 				$paramDefinition->getAliases()
 			);
+
 			foreach( $names as $name ) {
-				if( isset( $this->processedArgs[$name] ) ) {
-					$localArgs[$name] = $this->processedArgs[$name];
+				if( isset( $rawArgs[$name] ) ) {
+					$localArgs[$name] = $rawArgs[$name];
 				}
 			}
 			$processor->setParameters( $localArgs, [ $paramDefinition ] );
@@ -221,7 +233,6 @@ class GenericHandler {
 			$result = $processor->processParameters();
 			$this->checkForProcessingErrors( $result );
 
-			$this->processedArgs = [];
 			foreach( $result->getParameters() as $processedParam ) {
 				$this->processedArgs[$processedParam->getName()]
 					= $processedParam->getValue();
