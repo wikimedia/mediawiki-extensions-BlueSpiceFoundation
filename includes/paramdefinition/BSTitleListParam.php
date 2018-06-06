@@ -31,6 +31,11 @@
  */
 class BSTitleListParam extends \ParamProcessor\ParamDefinition {
 	protected $delimiter = '|';
+	protected $validator = null;
+
+	protected function postConstruct() {
+		$this->validator = new BSTitleValidator();
+	}
 
 	public function isList() {
 		return true;

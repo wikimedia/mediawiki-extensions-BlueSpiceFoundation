@@ -31,6 +31,11 @@
  */
 class BSNamespaceListParam extends \ParamProcessor\ParamDefinition {
 	protected $delimiter = '|';
+	protected $validator = null;
+
+	protected function postConstruct() {
+		$this->validator = new BSNamespaceValidator();
+	}
 
 	public function isList() {
 		return true;

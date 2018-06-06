@@ -44,13 +44,11 @@ class BsCoreHooks {
 				'definition' => 'BSTitleListParam',
 				//TODO: Find way to define parser and validator in definition
 				//class rather than in global registration
-				'string-parser' => 'BSTitleParser',
-				'validator' => 'BSTitleValidator',
+				'string-parser' => 'BSTitleParser'
 			),
 			'namespacelist' => array(
 				'definition' => 'BSNamespaceListParam',
-				'string-parser' => 'BSNamespaceParser',
-				'validator' => 'BSNamespaceValidator',
+				'string-parser' => 'BSNamespaceParser'
 			)
 		);
 
