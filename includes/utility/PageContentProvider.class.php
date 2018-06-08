@@ -136,13 +136,14 @@ class BsPageContentProvider {
 
 			//FIX for #HW20130072210000028
 			//Manually expand templates to allow bookshelf tags via template
-			$oParser = new Parser();
-			$oParser->Options( $this->getParserOptions() ); //TODO: needed? below
-			$sContent = $oParser->preprocess(
+			$this->overrideGlobals( $oRevision->getTitle() );
+			global $wgParser;
+			$sContent = $wgParser->preprocess(
 				$sContent,
 				$oRevision->getTitle(),
 				$this->getParserOptions()
 			);
+			$this->restoreGlobals();
 		}
 		return $sContent;
 	}
