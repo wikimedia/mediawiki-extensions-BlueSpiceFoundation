@@ -363,6 +363,21 @@ class BsCore {
 		$wgFileExtensions = array_values( array_unique( $wgFileExtensions ) );
 	}
 
+	public static function doJobsTrigger() {
+		$debugBacktrace = debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS );
+		$entryPoint = array_pop( $debugBacktrace );
+
+		if( basename( $entryPoint[ 'file' ] ) !== 'runJobs.php' ) {
+			return;
+		}
+
+		$job = new \BlueSpice\Job\RunJobsTrigger (
+			Title::newMainPage()
+		);
+
+		\JobQueueGroup::singleton()->push( $job );
+	}
+
 	/* Returns the filesystem path of the core installation
 	 * @return String Filesystempath to the core installation
 	 */
