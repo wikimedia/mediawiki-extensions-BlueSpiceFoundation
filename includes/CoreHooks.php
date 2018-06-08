@@ -284,26 +284,29 @@ class BsCoreHooks {
 	}
 
 	/**
-	 * Additional chances to reject an uploaded file
-	 * @param String $sSaveName: Destination file name
-	 * @param String $sTempName: Filesystem path to the temporary file for checks
-	 * @param String &$sError: output: message key for message to show if upload canceled by returning false
-	 * @return Boolean true on success , false on failure
+	 * Reject uploaded file if user tries to upload image with other user's name
+	 *
+	 * @param \UploadBase $upload
+	 * @param string $mime
+	 * @param boolean|string $error
+	 * @return boolean
 	 */
-	public static function onUploadVerification( $sSaveName, $sTempName, &$sError ) {
-		if( empty( $sSaveName ) || !$iFileExt = strrpos( $sSaveName, '.' ) ) {
+	public static function onUploadVerifyFile( \UploadBase $upload, $mime, &$error ) {
+		$fileName = $upload->getLocalFile()->getName();
+		if( empty( $fileName ) || !$fileExt = strrpos( $fileName, '.' ) ) {
 			return true;
 		}
 
-		$sUser = substr( $sSaveName, 0, $iFileExt );
-		$oUser = User::newFromName( $sUser );
-		if( $oUser instanceof User === false || $oUser->getId() == 0 ) {
+		$userName = substr( $fileName, 0, $fileExt );
+
+		$user = User::newFromName( $userName );
+		if( $user instanceof User === false || $user->getId() == 0 ) {
 			return true;
 		}
 
-		$oCurrUser = RequestContext::getMain()->getUser();
-		if( $oUser->getId() !== $oCurrUser->getId() ) {
-			$sError = 'bs-imageofotheruser';
+		$currentUser = RequestContext::getMain()->getUser();
+		if( $user->getId() !== $currentUser->getId() ) {
+			$error = 'bs-imageofotheruser';
 			return false;
 		}
 

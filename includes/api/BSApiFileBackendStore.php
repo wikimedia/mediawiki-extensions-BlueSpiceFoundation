@@ -27,6 +27,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
+
+use BlueSpice\Services;
+
 class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 	protected function makeMetaData() {
@@ -166,8 +169,9 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		$aUserNames = array();
 		foreach( $res as $oRow ) {
 			try {
+				$title = Title::makeTitle( NS_FILE, $oRow->img_name );
 				$oImg = RepoGroup::singleton()->getLocalRepo()
-						->newFileFromRow( $oRow );
+					->newFile( $title );
 			} catch (Exception $ex) {
 				continue;
 			}
@@ -309,10 +313,10 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	}
 
 	protected function addSecondaryFields( $aTrimmedData ) {
-
+		$linkRenderer = Services::getInstance()->getLinkRenderer();
 		foreach( $aTrimmedData as $oDataSet ) {
 			$oFilePage = Title::makeTitle( NS_FILE, $oDataSet->page_title );
-			$oDataSet->page_link = Linker::link( $oFilePage );
+			$oDataSet->page_link = $linkRenderer->makeLink( $oFilePage );
 			$oDataSet->page_prefixed_text = $oFilePage->getPrefixedText();
 
 			$oImg = RepoGroup::singleton()->getLocalRepo()->newFile( $oFilePage );
