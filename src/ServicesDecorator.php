@@ -306,7 +306,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return \LinkRendererFactory
+	 * @return \MediaWiki\Linker\LinkRendererFactory
 	 */
 	public function getLinkRendererFactory() {
 		return $this->decoratedServices->getService( 'LinkRendererFactory' );
@@ -317,7 +317,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * if no custom options are needed
 	 *
 	 * @since 1.28
-	 * @return \LinkRenderer
+	 * @return \MediaWiki\Linker\LinkRenderer
 	 */
 	public function getLinkRenderer() {
 		return $this->decoratedServices->getService( 'LinkRenderer' );
