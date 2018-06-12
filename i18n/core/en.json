@@ -64,7 +64,6 @@
 	"bs-imagepage-download-text": "Download",
 	"bs-ns": "Namespace",
 	"bs-from-something": "(from $1)",
-	"prefs-base": "BlueSpice",
 	"bs-pref-fileextensions": "Allowed file extensions:",
 	"bs-pref-imageextensions": "Allowed image extensions:",
 	"bs-pref-logopath": "Logo path:",
@@ -75,7 +74,7 @@
 	"bs-pref-deleteduserimage": "Deleted user avatar:",
 	"bs-pref-bspinginterval": "Ping interval (in seconds):",
 	"bs-pref-testmode": "Activate test mode",
-	"specialpages-group-bluespice": "{{int:prefs-base}}",
+	"specialpages-group-bluespice": "{{int:bs-bluespice}}",
 	"bs-tag-input-desc": "Value of element content",
 	"bs-tag-param-desc": "Value of element attribute '$1'",
 	"bs-parser-error-invalid-namespace": "Invalid namespace: $1",
@@ -89,5 +88,8 @@
 	"bs-export-menu-print-title": "Displays printable version of the page",
 	"bs-graphicallist-action-close": "Close",
 	"bs-graphicallist-action-list": "List",
-	"bs-graphicallist-action-preview": "Preview"
+	"bs-graphicallist-action-preview": "Preview",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-bluespice": "BlueSpice",
+	"prefs-bluespice": "{{int:bs-bluespice}}"
 }

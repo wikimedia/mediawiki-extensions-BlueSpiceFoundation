@@ -69,7 +69,6 @@
 	"bs-imagepage-download-text": "Text message for download used on image pages\n{{Identical|Download}}",
 	"bs-ns": "Text message for namespace used multiple times in different situations\n{{Identical|Namespace}}",
 	"bs-from-something": "This is a suffix for a couple of messages. The meaning of this message is to show the origin of something.\n\nUsed in {{msg-mw|Bs-namespacemanager-willmovesuffix}}.\n\nParameters:\n* $1 - the origin for example a namespace\n{{Identical|From}}",
-	"prefs-base": "Used in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], headline for bluespice section in preferences\n{{Identical|BlueSpice}}",
 	"bs-pref-fileextensions": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for allowed file extensions",
 	"bs-pref-imageextensions": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for allowed image extensions",
 	"bs-pref-logopath": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for the path to logo",
@@ -80,7 +79,7 @@
 	"bs-pref-deleteduserimage": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for deleted user avatar",
 	"bs-pref-bspinginterval": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for ping interval (in seconds)",
 	"bs-pref-testmode": "Option in [{{canonicalurl:Special:WikiAdmin|mode=Preferences}} Special:WikiAdmin?mode=Preferences], label for activate test mode",
-	"specialpages-group-bluespice": "{{doc-special-group|like=headline of BlueSpice section. Message is referenced to message of BlueSpice preference section.}}\n\nRefers to {{msg-mw|Prefs-base}}.",
+	"specialpages-group-bluespice": "{{doc-special-group|like=headline of BlueSpice section.}}\n\nRefers to {{msg-mw|Bs-bluespice}}.",
 	"bs-tag-input-desc": "Description of the 'input' part of a tag extension. The 'input' is everything that is placed between the opening and the closing element of the tag extension",
 	"bs-tag-param-desc": "Description of a 'parameter' part of a tag extension. A 'parameter' is everything that is defined using attributes of the tag extension's element.\n\nParameters:\n* $1 - the name of the attribute",
 	"bs-parser-error-invalid-namespace": "Error message in case a string could not be parsed into a valid namespace id.\n\nParameters:\n* $1 - the original string value",
@@ -94,5 +93,8 @@
 	"bs-export-menu-print-title": "Tooltip for the button to display printable version of the page.",
 	"bs-graphicallist-action-close": "Tooltip for the button to close graphicalList view\n{{Identical|Close}}",
 	"bs-graphicallist-action-list": "Tooltip for the button to show the graphicalList content as list\n{{Identical|List}}",
-	"bs-graphicallist-action-preview": "Tooltip for the button to show the graphicalList content as preview\n{{Identical|Preview}}"
+	"bs-graphicallist-action-preview": "Tooltip for the button to show the graphicalList content as preview\n{{Identical|Preview}}",
+	"bs-bluespice-mediawiki": "Name of the BlueSpice Mediawiki distribution\n{{Identical|BlueSpice MediaWiki}}",
+	"bs-bluespice": "Name of the BlueSpice Mediawiki distribution (short)\n{{Identical|BlueSpice}}",
+	"prefs-bluespice": "Used in [[Special:Preferences]], tab \"BlueSpice\"\n\nRefers to {{msg-mw|Bs-bluespice}}"
 }
