@@ -4,13 +4,6 @@ namespace BlueSpice;
 
 interface INotification {
 	/**
-	 *
-	 * @param string $key
-	 * @param array $params
-	 */
-	public function __construct( $key, $params );
-
-	/**
 	 * @return string
 	 */
 	public function getKey();

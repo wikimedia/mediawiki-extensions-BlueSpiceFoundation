@@ -9,23 +9,16 @@ namespace BlueSpice;
  */
 class NotificationManager {
 	/**
-	 * Holds instances of all registered notifiers
 	 *
-	 * @var array
+	 * @var INotifier
 	 */
-	protected $notifiers;
+	protected $notifier;
 
 	/**
 	 *
 	 * @var BlueSpice\IRegistry
 	 */
 	protected $notificationRegistry;
-
-	/**
-	 *
-	 * @var BlueSpice\ExtensionAttributeBasedRegistry
-	 */
-	protected $notifierRegistry;
 
 	/**
 	 *
@@ -39,9 +32,8 @@ class NotificationManager {
 	 */
 	protected $config;
 
-	public function __construct( $notifierRegistry, $regFuncRegistry, $config ) {
+	public function __construct( $regFuncRegistry, $config ) {
 		$this->notificationRegistry = new NotificationRegistry();
-		$this->notifierRegistry = $notifierRegistry;
 		$this->registrationFuncRegistry = $regFuncRegistry;
 		$this->config = $config;
 	}
@@ -50,13 +42,9 @@ class NotificationManager {
 	 * Instantiates all registered notifiers
 	 */
 	public function init() {
-		foreach( $this->notifierRegistry->getAllKeys() as $notifier ) {
-			$notifierClass = $this->notifierRegistry->getValue( $notifier );
-			$notifierInstance = new $notifierClass( $this->config );
-			$notifierInstance->init();
-
-			$this->notifiers[$notifier] = $notifierInstance;
-		}
+		$notifierClass = $this->config->get( 'NotifierClass' );
+		$this->notifier = new $notifierClass( $this->config );
+		$this->notifier->init();
 
 		$this->runRegisterFunctions();
 	}
@@ -74,20 +62,18 @@ class NotificationManager {
 
 	/**
 	 * Registeres single notification
-	 * Notifications must specify notifier they are supposed to use
 	 *
 	 * @param string $key
 	 * @param \BlueSpice\INotifier $notifier
 	 * @param array $params
-	 * @return false if notifier is not registered
 	 */
-	public function registerNotification( $key, INotifier $notifier, $params ) {
-		if( $this->isNotifierRegistered( $notifier ) ) {
-			$this->notificationRegistry->addValue( $key, $notifier );
-			return $notifier->registerNotification( $key, $params );
+	public function registerNotification( $key, $params, INotifier $notifier = null ) {
+		if( $notifier == null || $notifier instanceof INotifier == false ) {
+			$notifier = $this->notifier;
 		}
 
-		return false;
+		$this->notificationRegistry->addValue( $key, $notifier );
+		return $notifier->registerNotification( $key, $params );
 	}
 
 	/**
@@ -95,40 +81,13 @@ class NotificationManager {
 	 *
 	 * @param string $key
 	 * @param \BlueSpice\INotifier $notifier
-	 * @param type $params
-	 * @return false if notifier is not registered
 	 */
-	public function unRegisterNotification( $key, INotifier $notifier ) {
-		if( $this->isNotifierRegistered( $notifier ) ) {
-			return $notifier->unRegisterNotification( $key );
+	public function unRegisterNotification( $key, $notifier = null ) {
+		if( $notifier == null || $notifier instanceof INotifier == false ) {
+			$notifier = $this->notifier;
 		}
 
-		return false;
-	}
-
-	/**
-	 * Checks if notifier is registered
-	 * Param passed can be notifier key or \INotifier object
-	 *
-	 * @param string|\INotifier $notifier
-	 * @return boolean
-	 */
-	public function isNotifierRegistered( $notifier ) {
-		if( is_string( $notifier ) ) {
-			if( isset( $this->notifiers[$notifier] ) ) {
-				return true;
-			}
-		}
-
-		if( $notifier instanceof INotifier ) {
-			foreach( $this->notifiers as $key => $registeredNotifier ) {
-				if( $notifier === $registeredNotifier ) {
-					return true;
-				}
-			}
-		}
-
-		return false;
+		return $notifier->unRegisterNotification( $key );
 	}
 
 	/**
@@ -142,8 +101,8 @@ class NotificationManager {
 	 * @return \INotification
 	 */
 	public function getNotificationObject( $key, $params, $notifier = null ) {
-		if( $notifier == null ) {
-			$notifier = $this->notificationRegistry->getValue( $key );
+		if( $notifier == null || $notifier instanceof INotifier == false ) {
+			$notifier = $this->notifier;
 		}
 
 		return $notifier->getNotificationObject( $key, $params );
@@ -159,7 +118,7 @@ class NotificationManager {
 	 * @return \Status
 	 */
 	public function notify( $notification, $notifier = null ) {
-		if( $notifier == null ) {
+		if( $notifier == null || $notifier instanceof INotifier == false ) {
 			if( $this->notificationRegistry->hasKey( $notification->getKey() ) == false ) {
 				return \Status::newFatal( 'Notification not registered' );
 			}
@@ -170,16 +129,11 @@ class NotificationManager {
 	}
 
 	/**
-	 * Gets \INotifier object for specified key (if registered)
+	 * Gets \INotifier instance
 	 *
-	 * @param string $key
 	 * @return \INotifier|null
 	 */
-	public function getNotifier( $key ) {
-		if( isset( $this->notifiers[$key] ) ) {
-			return $this->notifiers[$key];
-		}
-
-		return null;
+	public function getNotifier() {
+		return $this->notifier;
 	}
 }

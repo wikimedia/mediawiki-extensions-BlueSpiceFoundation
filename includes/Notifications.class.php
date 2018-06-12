@@ -57,7 +57,7 @@ abstract class BSNotifications {
 
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
-		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+		$echoNotifier = $notificationsManager->getNotifier();
 
 		if( $echoNotifier == null ) {
 			return;
@@ -94,7 +94,7 @@ abstract class BSNotifications {
 	) {
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
-		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+		$echoNotifier = $notificationsManager->getNotifier();
 
 		if( $echoNotifier == null ) {
 			return;
@@ -143,7 +143,7 @@ abstract class BSNotifications {
 
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
-		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+		$echoNotifier = $notificationsManager->getNotifier();
 
 		if( $echoNotifier == null ) {
 			return;
@@ -151,7 +151,6 @@ abstract class BSNotifications {
 
 		$notificationsManager->registerNotification(
 			$sType,
-			$echoNotifier,
 			$aValues
 		);
 	}
@@ -185,7 +184,7 @@ abstract class BSNotifications {
 	) {
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
-		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+		$echoNotifier = $notificationsManager->getNotifier();
 
 		if( $echoNotifier == null ) {
 			return;
@@ -193,11 +192,9 @@ abstract class BSNotifications {
 
 		$notification = $echoNotifier->getNotificationObject(
 			$sKey,
-			[
-				'agent' => $oAgent,
-				'title' => $oTitle,
-				'extra-params' => $aExtraParams
-			]
+			$oAgent,
+			$oTitle,
+			$aExtraParams
 		);
 
 		$echoNotifier->notify( $notification );

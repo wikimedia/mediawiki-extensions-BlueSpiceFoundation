@@ -18,6 +18,14 @@ class NullNotifier implements \BlueSpice\INotifier {
 		return \Status::newGood();
 	}
 
+	/**
+	 *
+	 * @param string $key
+	 * @param array $params
+	 */
+	public function registerNotificationCategory( $key, $params ) {
+	}
+
 	public function registerNotification( $key, $params ) {
 	}
 

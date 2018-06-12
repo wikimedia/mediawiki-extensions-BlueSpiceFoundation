@@ -124,17 +124,12 @@ return [
 	},
 
 	'BSNotificationManager' => function( MediaWikiServices $services ) {
-		$notifierRegistry = new \BlueSpice\ExtensionAttributeBasedRegistry(
-			'BlueSpiceFoundationNotifiers'
-		);
-
-		$regFuncRegsitry = new \BlueSpice\ExtensionAttributeBasedRegistry(
+		$regFuncRegistry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationNotificationRegistrationFunctions'
 		);
 
 		return new \BlueSpice\NotificationManager(
-			$notifierRegistry,
-			$regFuncRegsitry,
+			$regFuncRegistry,
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	}

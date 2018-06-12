@@ -68,9 +68,6 @@
 				"export": "bs-setting-path-export"
 			},
 			"RunJobsTriggerHandlerRegistry": {},
-			"Notifiers": {
-				"nullnotifier": "\\BlueSpice\\NullNotifier"
-			},
 			"NotificationRegistrationFunctions": []
 		}
 	},
@@ -520,6 +517,9 @@
 	},
 	"config_prefix": "bsg",
 	"config": {
+		"NotifierClass": {
+			"value": "BlueSpice\\NullNotifier"
+		},
 		"BlueSpiceExtInfo": {
 			"value": {
 				"name": "BlueSpice",
