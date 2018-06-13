@@ -66,7 +66,6 @@
 	"bs-imagepage-download-text": "下載",
 	"bs-ns": "命名空間",
 	"bs-from-something": "(來自 $1)",
-	"prefs-base": "BlueSpice",
 	"bs-pref-fileextensions": "允許的檔案副檔名：",
 	"bs-pref-imageextensions": "允許的影像副檔名：",
 	"bs-pref-logopath": "標誌路徑：",
@@ -90,5 +89,8 @@
 	"bs-export-menu-print-title": "顯示頁面的可列印版本",
 	"bs-graphicallist-action-close": "關閉",
 	"bs-graphicallist-action-list": "清單",
-	"bs-graphicallist-action-preview": "預覽"
+	"bs-graphicallist-action-preview": "預覽",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-bluespice": "BlueSpice",
+	"prefs-bluespice": "{{int:bs-bluespice}}"
 }

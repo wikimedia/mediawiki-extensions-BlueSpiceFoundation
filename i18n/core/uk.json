@@ -85,5 +85,6 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Сторінка не дозволена: $1",
 	"bs-exttype-bluespice": "Розширення BlueSpice",
 	"bs-export-menu-print-text": "Друк",
-	"bs-export-menu-print-title": "Відтворює версію сторінки, доступну для друку"
+	"bs-export-menu-print-title": "Відтворює версію сторінки, доступну для друку",
+	"bs-bluespice": "BlueSpice"
 }

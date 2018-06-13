@@ -88,5 +88,6 @@
 	"bs-export-menu-print-title": "Отображает версию страницы для печати",
 	"bs-graphicallist-action-close": "Закрыть",
 	"bs-graphicallist-action-list": "Список",
-	"bs-graphicallist-action-preview": "Предпросмотр"
+	"bs-graphicallist-action-preview": "Предпросмотр",
+	"bs-bluespice": "BlueSpice"
 }

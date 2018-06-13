@@ -85,5 +85,6 @@
 	"bs-export-menu-print-title": "Mostra a versão para impressão da página",
 	"bs-graphicallist-action-close": "Fechar",
 	"bs-graphicallist-action-list": "Lista",
-	"bs-graphicallist-action-preview": "Pré-visualizar"
+	"bs-graphicallist-action-preview": "Pré-visualizar",
+	"bs-bluespice": "BlueSpice"
 }

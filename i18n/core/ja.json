@@ -51,10 +51,10 @@
 	"bs-navigation-contact": "お問い合わせ",
 	"bs-imagepage-download-text": "ダウンロード",
 	"bs-ns": "名前空間",
-	"prefs-base": "BlueSpice",
 	"bs-pref-faviconpath": "favicon のパス:",
 	"bs-pref-defaultuserimage": "利用者の既定のアバター:",
 	"bs-pref-anonuserimage": "匿名利用者のアバター:",
 	"bs-pref-deleteduserimage": "削除された利用者のアバター:",
-	"bs-graphicallist-action-close": "閉じる"
+	"bs-graphicallist-action-close": "閉じる",
+	"bs-bluespice": "BlueSpice"
 }

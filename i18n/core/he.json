@@ -78,5 +78,8 @@
 	"bs-validator-error-title-namespace-on-blacklist": "דף לא מאופשר: $1",
 	"bs-exttype-bluespice": "הרחבות BlueSpice",
 	"bs-export-menu-print-text": "הדפסה",
-	"bs-export-menu-print-title": "הצגת גרסת הדפסה של הדף"
+	"bs-export-menu-print-title": "הצגת גרסת הדפסה של הדף",
+	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
+	"bs-bluespice": "BlueSpice",
+	"prefs-bluespice": "{{int:bs-bluespice}}"
 }

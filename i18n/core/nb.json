@@ -81,5 +81,6 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Side ikke tillatt: $1",
 	"bs-exttype-bluespice": "BlueSpice-utvidelser",
 	"bs-export-menu-print-text": "Skriv ut",
-	"bs-export-menu-print-title": "Viser en utskriftsvennlig versjon av siden"
+	"bs-export-menu-print-title": "Viser en utskriftsvennlig versjon av siden",
+	"bs-bluespice": "BlueSpice"
 }

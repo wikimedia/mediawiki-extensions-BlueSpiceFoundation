@@ -58,5 +58,6 @@
 	"bs-pref-imageextensions": "Zohjelohße Ändonge vun de Dateinahme för Bellder:",
 	"bs-parser-error-invalid-title": "Di Övverschreff för di Sigg jeiht nit: $1",
 	"bs-validator-error-namespace-does-not-exist": "Dadd Appachtemang jidd_et nit: $1",
-	"bs-validator-error-title-does-not-exist": "Di Sigg jidd_et nit: $1"
+	"bs-validator-error-title-does-not-exist": "Di Sigg jidd_et nit: $1",
+	"bs-bluespice": "<i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"„Blou Jewöhz“\">Blue-Spice</i>"
 }
