@@ -70,9 +70,9 @@
 	"bs-pref-logopath": "Caminho do logótipo:",
 	"bs-pref-faviconpath": "Caminho da favicon:",
 	"bs-pref-defaultuserimage": "Imagem de perfil padrão:",
-	"bs-pref-miniprofileenforceheight": "Forçar altura do avatar do(a) utilizador(a):",
+	"bs-pref-miniprofileenforceheight": "Forçar altura do avatar do utilizador:",
 	"bs-pref-anonuserimage": "Imagem de perfil de utilizador anónimo:",
-	"bs-pref-deleteduserimage": "Avatar do(a) utilizador(a) eliminado:",
+	"bs-pref-deleteduserimage": "Avatar do utilizador eliminado:",
 	"bs-pref-bspinginterval": "Intervalo de ping (em segundos):",
 	"bs-pref-testmode": "Ativar o modo de teste",
 	"bs-tag-input-desc": "Valor do conteúdo do elemento",
@@ -89,5 +89,7 @@
 	"bs-graphicallist-action-close": "Fechar",
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Antevisão",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
+	"bs-bluespice": "BlueSpice",
+	"prefs-bluespice": "{{int:bs-bluespice}}"
 }

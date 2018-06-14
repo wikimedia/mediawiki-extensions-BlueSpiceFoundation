@@ -96,5 +96,5 @@
 	"bs-graphicallist-action-preview": "Tooltip for the button to show the graphicalList content as preview\n{{Identical|Preview}}",
 	"bs-bluespice-mediawiki": "Name of the BlueSpice Mediawiki distribution\n{{Identical|BlueSpice MediaWiki}}",
 	"bs-bluespice": "Name of the BlueSpice Mediawiki distribution (short)\n{{Identical|BlueSpice}}",
-	"prefs-bluespice": "Used in [[Special:Preferences]], tab \"BlueSpice\"\n\nRefers to {{msg-mw|Bs-bluespice}}"
+	"prefs-bluespice": "{{optional}}\nUsed in [[Special:Preferences]], tab \"BlueSpice\"\n\nRefers to {{msg-mw|Bs-bluespice}}"
 }

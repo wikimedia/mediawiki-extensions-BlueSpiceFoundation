@@ -86,5 +86,7 @@
 	"bs-graphicallist-action-close": "Zarrar",
 	"bs-graphicallist-action-list": "Llista",
 	"bs-graphicallist-action-preview": "Vista previa",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
+	"bs-bluespice": "BlueSpice",
+	"prefs-bluespice": "{{int:bs-bluespice}}"
 }

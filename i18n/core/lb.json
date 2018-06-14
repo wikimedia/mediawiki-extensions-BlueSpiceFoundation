@@ -72,5 +72,7 @@
 	"bs-export-menu-print-text": "Drécken",
 	"bs-export-menu-print-title": "Weist d'Drockversioun vun der Säit",
 	"bs-graphicallist-action-close": "Zoumaachen",
-	"bs-graphicallist-action-list": "Lëscht"
+	"bs-graphicallist-action-list": "Lëscht",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"prefs-bluespice": "{{int:bs-bluespice}}"
 }

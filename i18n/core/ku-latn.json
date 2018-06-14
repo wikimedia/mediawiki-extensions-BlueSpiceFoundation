@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ghybu",
-			"George Animal"
+			"George Animal",
+			"Kur"
 		]
 	},
 	"bs-ns_main": "(Rûpel)",
@@ -11,5 +12,7 @@
 	"bs-viewtagerrorlist-legend": "$1 - Çewtî",
 	"bs-parser-error-invalid-title": "Sernavê nederbasdar:$1",
 	"bs-validator-error-title-does-not-exist": "Rûpel tune ye: $1",
-	"bs-graphicallist-action-close": "Bigre"
+	"bs-graphicallist-action-close": "Bigre",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"prefs-bluespice": "{{int:bs-bluespice}}"
 }
