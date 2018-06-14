@@ -109,7 +109,7 @@ class RunJobsTriggerRunner {
 			$this->currentTriggerHandler instanceof IRunJobsTriggerHandler;
 
 		if( !$doesImplementInterface ) {
-			throw new Exception(
+			throw new \Exception(
 				"RunJobsTriggerHanlder factory '$regKey' did not return "
 					. "'IRunJobsTriggerHandler' instance!"
 			);
