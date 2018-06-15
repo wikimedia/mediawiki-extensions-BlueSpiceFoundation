@@ -93,6 +93,5 @@
 	"bs-graphicallist-action-list": "列表",
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
-	"bs-bluespice": "BlueSpice",
-	"prefs-bluespice": "{{int:bs-bluespice}}"
+	"bs-bluespice": "BlueSpice"
 }

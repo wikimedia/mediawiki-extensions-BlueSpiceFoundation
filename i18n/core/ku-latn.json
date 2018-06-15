@@ -13,6 +13,5 @@
 	"bs-parser-error-invalid-title": "Sernavê nederbasdar:$1",
 	"bs-validator-error-title-does-not-exist": "Rûpel tune ye: $1",
 	"bs-graphicallist-action-close": "Bigre",
-	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
-	"prefs-bluespice": "{{int:bs-bluespice}}"
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki"
 }
