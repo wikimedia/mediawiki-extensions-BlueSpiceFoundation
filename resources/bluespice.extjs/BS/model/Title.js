@@ -26,7 +26,8 @@ Ext.define('BS.model.Title', {
 		{ name: 'prefixedText', type: 'string' }, //TODO:  Maybe calculate from page_namespace and page_title?
 		                                          //http://docs.sencha.com/extjs/4.2.2/#!/api/Ext.data.Field
 		{ name: 'displayText', type: 'string' },
-		{ name: 'type', type: 'string' } //'wikipage', 'specialpage'(, 'interwiki'?)
+		{ name: 'type', type: 'string' }, //'wikipage', 'specialpage'(, 'interwiki'?)
+		{ name: 'page_link', type: 'string' } //An anchor HTML fragment with all kinds of meta-data
 	],
 
 	getPrefixedText: function() {

@@ -23,8 +23,10 @@
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  *
- * Example request parameters of an ExtJS store
  */
+
+use BlueSpice\Services;
+
 class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 
 	/**
@@ -81,8 +83,12 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		$this->iFinalDataSetCount = count( $aData );
 
 		//Last, do trimming
-		$aData = $this->trimData( $aData );
-		return $aData;
+		$aProcessedData = $this->trimData( $aData );
+
+		//Add secondary fields
+		$aProcessedData = $this->addSecondaryFields( $aProcessedData );
+
+		return $aProcessedData;
 	}
 
 	public function makeDataSet($row) {
@@ -93,5 +99,23 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 			? parent::makeDataSet( $row )
 			: false
 		;
+	}
+
+	protected function addSecondaryFields( $aTrimmedData ) {
+		$oLinkRenderer = Services::getInstance()->getLinkRenderer();
+		foreach( $aTrimmedData as &$oDataSet ) {
+			$oTitle = Title::makeTitle(
+				$oDataSet->page_namespace,
+				$oDataSet->page_title
+			);
+
+			$oDataSet->prefixedText = $oTitle->getPrefixedText();
+			$oDataSet->displayText = $oTitle->getSubpageText();
+			$oDataSet->type = 'wikipage';
+
+			$oDataSet->page_link = $oLinkRenderer->makeLink( $oTitle );
+		}
+
+		return $aTrimmedData;
 	}
 }
