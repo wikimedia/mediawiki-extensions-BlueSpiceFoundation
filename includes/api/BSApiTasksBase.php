@@ -416,7 +416,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 		$aTaskPermissions = $this->getRequiredTaskPermissions();
 		$arrReturn = array();
-		while( list( $sTask, $val ) = each( $aTaskPermissions ) ){
+		foreach( $aTaskPermissions as $sTask => $val ) {
 			$arrReturn[$sTask] = $this->checkTaskPermission( $sTask );
 		}
 
