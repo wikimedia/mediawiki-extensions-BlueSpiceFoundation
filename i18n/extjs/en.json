@@ -70,5 +70,11 @@
 	"bs-extjs-pageexport-error-invalid-title": "Name of the list is invalid",
 	"bs-extjs-combo-box-default-placeholder": "Type to filter...",
 	"bs-extjs-tools-trigger-title": "Click here to open the tools menu",
-	"bs-extjs-tools-trigger-text": "Tools"
+	"bs-extjs-tools-trigger-text": "Tools",
+	"bs-extjs-flyout-tab-thumbs-label": "Thumbnails",
+	"bs-extjs-flyout-tab-thumbs-title": "Switch to thumbnail view",
+	"bs-extjs-flyout-tab-grid-label": "Details",
+	"bs-extjs-flyout-tab-grid-title": "Switch to details view",
+	"bs-extjs-flyout-add-title": "Click here to add a new item",
+	"bs-extjs-flyout-add-label": "Add item"
 }

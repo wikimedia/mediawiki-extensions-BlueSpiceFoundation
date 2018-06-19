@@ -221,7 +221,13 @@
 				"bs-extjs-pageexport-error-invalid-title",
 				"bs-extjs-combo-box-default-placeholder",
 				"bs-extjs-tools-trigger-title",
-				"bs-extjs-tools-trigger-text"
+				"bs-extjs-tools-trigger-text",
+				"bs-extjs-flyout-tab-thumbs-label",
+				"bs-extjs-flyout-tab-thumbs-title",
+				"bs-extjs-flyout-tab-grid-label",
+				"bs-extjs-flyout-tab-grid-title",
+				"bs-extjs-flyout-add-title",
+				"bs-extjs-flyout-add-label"
 			],
 			"group": "bsextjs"
 		},
