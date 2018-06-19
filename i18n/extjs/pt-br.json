@@ -4,7 +4,8 @@
 			"Luckas",
 			"Hamilton Abreu",
 			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Pedrofariasm"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -71,5 +72,13 @@
 	"bs-extjs-pageexport-required-text": "O nome da lista não pode estar vazio e pelo menos uma página deve estar selecionada",
 	"bs-extjs-export-search-summary-text": "Gerado por PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "O nome da lista é inválido",
-	"bs-extjs-combo-box-default-placeholder": "Tipo para filtrar ..."
+	"bs-extjs-combo-box-default-placeholder": "Tipo para filtrar ...",
+	"bs-extjs-tools-trigger-title": "Clique aqui para abrir o menu de ferramentas",
+	"bs-extjs-tools-trigger-text": "Ferramentas",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturas",
+	"bs-extjs-flyout-tab-thumbs-title": "Troque para visualizar a miniatura",
+	"bs-extjs-flyout-tab-grid-label": "Detalhes",
+	"bs-extjs-flyout-tab-grid-title": "Troque para ver os detalhes",
+	"bs-extjs-flyout-add-title": "Clique aqui para adicionar um novo item",
+	"bs-extjs-flyout-add-label": "Adicionar item"
 }

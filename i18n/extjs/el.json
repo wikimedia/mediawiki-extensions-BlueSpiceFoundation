@@ -68,5 +68,13 @@
 	"bs-extjs-pageexport-success-text": "Η συλλογή σελίδων εξήχθη στο $1",
 	"bs-extjs-pageexport-required-text": "Το όνομα καταλόγου δεν μπορεί να είναι άδειο και πρέπει να επιλεγεί τουλάχιστον μια σελίδα",
 	"bs-extjs-export-search-summary-text": "Δημιουργήθηκε από το PageExport",
-	"bs-extjs-pageexport-error-invalid-title": "Το όνομα του καταλόγου δεν είναι έγκυρο"
+	"bs-extjs-pageexport-error-invalid-title": "Το όνομα του καταλόγου δεν είναι έγκυρο",
+	"bs-extjs-tools-trigger-title": "Κάντε κλικ εδώ για να ανοίξετε το μενού εργαλείων",
+	"bs-extjs-tools-trigger-text": "Εργαλεία",
+	"bs-extjs-flyout-tab-thumbs-label": "Μικρογραφίες",
+	"bs-extjs-flyout-tab-thumbs-title": "Αλλαγή σε προβολή μικρογραφιών",
+	"bs-extjs-flyout-tab-grid-label": "Λεπτομέρειες",
+	"bs-extjs-flyout-tab-grid-title": "Αλλαγή σε προβολή λεπτομερειών",
+	"bs-extjs-flyout-add-title": "Κάντε κλικ για να προσθέσετε νέο στοιχείο",
+	"bs-extjs-flyout-add-label": "Προσθήκη Στοιχείου"
 }

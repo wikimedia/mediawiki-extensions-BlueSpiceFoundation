@@ -71,12 +71,12 @@
 	"bs-extjs-export-search-summary-text": "Erzeugt von PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Der Name der Liste ist ungültig",
 	"bs-extjs-combo-box-default-placeholder": "Zum Filtern tippen …",
-	"bs-extjs-tools-trigger-title": "Hier klicken um das Werkzeugmenü zu öffnen",
+	"bs-extjs-tools-trigger-title": "Hier klicken, um das Werkzeugmenü zu öffnen.",
 	"bs-extjs-tools-trigger-text": "Werkzeuge",
 	"bs-extjs-flyout-tab-thumbs-label": "Vorschaubilder",
 	"bs-extjs-flyout-tab-thumbs-title": "Zur Vorschaubildansicht wechseln",
 	"bs-extjs-flyout-tab-grid-label": "Details",
 	"bs-extjs-flyout-tab-grid-title": "Zur Detailansicht wechseln",
-	"bs-extjs-flyout-add-title": "Hier klicken um ein neues Element anzulegen",
+	"bs-extjs-flyout-add-title": "Hier klicken, um ein neues Element anzulegen.",
 	"bs-extjs-flyout-add-label": "Element hinzufügen"
 }
