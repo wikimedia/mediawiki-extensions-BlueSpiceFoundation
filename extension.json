@@ -43,7 +43,8 @@
 				"panel": "\\BlueSpice\\Renderer\\Panel",
 				"table": "\\BlueSpice\\Renderer\\Table",
 				"treenavigation": "\\BlueSpice\\Renderer\\TreeNavigation",
-				"userimage": "\\BlueSpice\\Renderer\\UserImage"
+				"userimage": "\\BlueSpice\\Renderer\\UserImage",
+				"entity": "\\BlueSpice\\Renderer\\Entity"
 			},
 			"SkinDataRendererRegistry": {
 				"bs_navigation_site": "\\BlueSpice\\Renderer\\TreeNavigation",

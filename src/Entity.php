@@ -27,6 +27,7 @@
 namespace BlueSpice;
 use BlueSpice\Content\Entity as EntityContent;
 use MediaWiki\MediaWikiServices;
+use BlueSpice\Renderer\Entity as Renderer;
 
 abstract class Entity implements \JsonSerializable {
 	const NS = -1;
@@ -416,6 +417,31 @@ abstract class Entity implements \JsonSerializable {
 	}
 
 	/**
+	 *
+	 * @param array $attribs
+	 * @return \BlueSpice\Renderer\Entity\Params
+	 */
+	protected function makeRendererParams( $attribs = [] ) {
+		$attribs[Renderer::PARAM_ENTITY] = $this;
+		return new Renderer\Params( $attribs );
+	}
+
+	/**
+	 *
+	 * @param \IContextSource $context
+	 * @return Renderer
+	 */
+	public function getRenderer( \IContextSource $context = null ) {
+		if( !$context ) {
+			$context = \RequestContext::getMain();
+		}
+		return Services::getInstance()->getBSRendererFactory()->get(
+			$this->getConfig()->get( 'renderer' ),
+			$this->makeRendererParams( [Renderer::PARAM_CONTEXT => $context] )
+		);
+	}
+
+	/**
 	 * Checks, if the current Entity exists in the Wiki
 	 * @return boolean
 	 */
@@ -503,7 +529,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return stdClass
 	 */
 	public function jsonSerialize() {
-		return (object) static::getFullData();
+		return (object) $this->getFullData();
 	}
 
 	/**

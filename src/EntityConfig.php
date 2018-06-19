@@ -162,6 +162,14 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 		return "\\BlueSpice\\Content\\Entity";
 	}
 
+	protected function get_renderer() {
+		return "entity";
+	}
+
+	protected function get_RenderTemplate() {
+		return 'BlueSpiceFoundation.Entity';
+	}
+
 	protected function get_AttributeDefinitions() {
 		$attributeDefinitions =  [
 			Entity::ATTR_ID => [
