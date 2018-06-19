@@ -70,5 +70,7 @@
 	"bs-extjs-pageexport-required-text": "Der Listenname darf nicht leer sein und es muss mindestens eine Seite ausgewählt werden",
 	"bs-extjs-export-search-summary-text": "Erzeugt von PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Der Name der Liste ist ungültig",
-	"bs-extjs-combo-box-default-placeholder": "Zum Filtern tippen …"
+	"bs-extjs-combo-box-default-placeholder": "Zum Filtern tippen …",
+	"bs-extjs-tools-trigger-title": "Hier klicken um das Werkzeugmenü zu öffnen",
+	"bs-extjs-tools-trigger-text": "Werkzeuge"
 }
