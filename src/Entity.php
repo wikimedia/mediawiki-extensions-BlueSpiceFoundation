@@ -380,7 +380,7 @@ abstract class Entity implements \JsonSerializable {
 		$this->setUnsavedChanges();
 
 		try {
-			$oStatus = $this->save();
+			$oStatus = $this->save( $oUser );
 		} catch( \Exception $e ) {
 			return \Status::newFatal( $e->getMessage() );
 		}
