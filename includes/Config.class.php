@@ -225,7 +225,7 @@ class BsConfig {
 	 * @return array
 	 */
 	public static function getScriptSettings() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__ );
 		return self::$prRegisterJavascript;
 	}
 
@@ -276,7 +276,7 @@ class BsConfig {
 	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 */
 	public static function loadSettings() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__ );
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' );
 		$aData = BsCacheHelper::get( $sKey );
 
