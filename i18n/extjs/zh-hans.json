@@ -70,5 +70,13 @@
 	"bs-extjs-pageexport-required-text": "列表名称不能为空，并且必须至少选择一个页面",
 	"bs-extjs-export-search-summary-text": "生成自页面导出",
 	"bs-extjs-pageexport-error-invalid-title": "列表名称无效",
-	"bs-extjs-combo-box-default-placeholder": "输入以过滤..."
+	"bs-extjs-combo-box-default-placeholder": "输入以过滤...",
+	"bs-extjs-tools-trigger-title": "点此打开工具菜单",
+	"bs-extjs-tools-trigger-text": "工具",
+	"bs-extjs-flyout-tab-thumbs-label": "缩略图",
+	"bs-extjs-flyout-tab-thumbs-title": "切换为缩略图视图",
+	"bs-extjs-flyout-tab-grid-label": "详情",
+	"bs-extjs-flyout-tab-grid-title": "切换为详情视图",
+	"bs-extjs-flyout-add-title": "点此添加新的项目",
+	"bs-extjs-flyout-add-label": "添加项目"
 }

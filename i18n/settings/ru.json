@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patrick Star"
+			"Patrick Star",
+			"Okras"
 		]
 	},
 	"bs-setting-path-feature": "Функция",
 	"bs-setting-path-system": "Система",
 	"bs-setting-path-editor": "Редактор",
-	"bs-setting-path-administration": "Администрация",
+	"bs-setting-path-administration": "Администрирование",
 	"bs-setting-path-export": "Экспорт"
 }

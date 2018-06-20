@@ -74,5 +74,13 @@
 	"bs-extjs-pageexport-required-text": "清單名稱不能為空，並且必須至少選擇一個頁面",
 	"bs-extjs-export-search-summary-text": "透過頁面匯出所產生",
 	"bs-extjs-pageexport-error-invalid-title": "清單名稱無效",
-	"bs-extjs-combo-box-default-placeholder": "輸入來篩選..."
+	"bs-extjs-combo-box-default-placeholder": "輸入來篩選...",
+	"bs-extjs-tools-trigger-title": "點此來開啟工具選單",
+	"bs-extjs-tools-trigger-text": "工具",
+	"bs-extjs-flyout-tab-thumbs-label": "縮圖",
+	"bs-extjs-flyout-tab-thumbs-title": "切換至縮圖檢視",
+	"bs-extjs-flyout-tab-grid-label": "詳細資料",
+	"bs-extjs-flyout-tab-grid-title": "切換至詳細資料檢視",
+	"bs-extjs-flyout-add-title": "點此來添加新的項目",
+	"bs-extjs-flyout-add-label": "添加項目"
 }

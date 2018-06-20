@@ -42,5 +42,13 @@
 	"bs-extjs-filter-contains-not": "מכיל לא",
 	"bs-extjs-filter-starts-with": "מתחיל עם",
 	"bs-extjs-filter-ends-with": "מסתיים",
-	"bs-extjs-combo-box-default-placeholder": "הסוג לסינון..."
+	"bs-extjs-combo-box-default-placeholder": "הסוג לסינון...",
+	"bs-extjs-tools-trigger-title": "יש ללחוץ כאן כדי לפתוח את תפריט הכלים",
+	"bs-extjs-tools-trigger-text": "כלים",
+	"bs-extjs-flyout-tab-thumbs-label": "תמונות ממוזערות",
+	"bs-extjs-flyout-tab-thumbs-title": "החלפה לתצוגה ממוזערת",
+	"bs-extjs-flyout-tab-grid-label": "פרטים",
+	"bs-extjs-flyout-tab-grid-title": "החלפה לתצוגה מפורטת",
+	"bs-extjs-flyout-add-title": "יש ללחוץ כאן כדי להוסיף פריט חדש",
+	"bs-extjs-flyout-add-label": "הוספת פריט"
 }

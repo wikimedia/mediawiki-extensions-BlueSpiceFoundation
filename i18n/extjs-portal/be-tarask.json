@@ -4,5 +4,6 @@
 			"Red Winged Duck"
 		]
 	},
-	"bs-extjs-portal-config": "Налады портлету:"
+	"bs-extjs-portal-config": "Налады портлету:",
+	"bs-extjs-portal-title": "Загаловак портлету"
 }

@@ -4,6 +4,7 @@
 			"Adam-Yourist"
 		]
 	},
+	"bs-userbar_loginswitch_login": "Чудовла",
 	"bs-extended-search-textfield-defaultvalue": "Лахар...",
 	"bs-days-duration": "{{PLURAL:$1|цхьа ди|$1 ди}}"
 }

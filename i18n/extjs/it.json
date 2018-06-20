@@ -66,5 +66,11 @@
 	"bs-extjs-pageexport-general-error": "Errore esportazione",
 	"bs-extjs-pageexport-success": "Esportazione corretta",
 	"bs-extjs-export-search-summary-text": "Generato da PageExport",
-	"bs-extjs-pageexport-error-invalid-title": "Il nome dell'elenco non è valido"
+	"bs-extjs-pageexport-error-invalid-title": "Il nome dell'elenco non è valido",
+	"bs-extjs-tools-trigger-title": "Clicca qui per aprire il menu degli strumenti",
+	"bs-extjs-tools-trigger-text": "Strumenti",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniature",
+	"bs-extjs-flyout-tab-grid-label": "Dettagli",
+	"bs-extjs-flyout-add-title": "Clicca qui per aggiungere un nuovo elemento",
+	"bs-extjs-flyout-add-label": "Aggiungi elemento"
 }
