@@ -705,8 +705,12 @@ class BsFileSystemHelper {
 			unlink( $sFilename );
 		}
 
-		$oRepoFile = wfFindFile( $sTargetFileName );
-		if ( $status->isGood() && $oRepoFile !== false ){
+		$oRepoFile = RepoGroup::singleton()->getLocalRepo()->newFile( $sTargetFileName );
+		if ( $status->isGood() ){
+			if( !$oRepoFile ) {
+				return Status::newGood();
+			}
+
 			$oPage = WikiPage::factory( $oRepoFile->getTitle() );
 			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
 
