@@ -179,7 +179,10 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 		if( $oTitle->getNamespace() === NS_MAIN ) {
 			$oDataSet->id = ':'.$oDataSet->id; //Rebuild full qualified path
 		}
-		$oDataSet->page_link = Linker::link( $oTitle, $oTitle->getSubpageText() );
+		$oDataSet->page_link = $this->oLinkRenderer->makeLink(
+			$oTitle,
+			$oTitle->getSubpageText()
+		);
 		$oDataSet->leaf = true;
 		$oDataSet->expanded = true;
 		$oDataSet->loaded = true;

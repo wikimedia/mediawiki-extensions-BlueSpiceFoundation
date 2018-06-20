@@ -57,7 +57,10 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 			'user_editcount' => (int) $row->user_editcount,
 			'groups' => isset( $this->aGroups[$row->user_id] ) ? $this->aGroups[$row->user_id] : array(),
 			'enabled' => isset( $this->aBlocks[$row->user_id] ) ? false : true,
-			'page_link' => Linker::link( $oUserPageTitle, $row->user_name.' ' ), //The whitespace is to aviod automatic rewrite to user_real_name by BSF
+			'page_link' => $this->oLinkRenderer->makeLink(
+				$oUserPageTitle,
+				$row->user_name.' '
+			), //The whitespace is to aviod automatic rewrite to user_real_name by BSF
 
 			//legacy fields
 			'display_name' => $row->user_real_name == null ? $row->user_name : $row->user_real_name,
