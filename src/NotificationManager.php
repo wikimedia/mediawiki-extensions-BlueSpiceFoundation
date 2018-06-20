@@ -36,6 +36,8 @@ class NotificationManager {
 		$this->notificationRegistry = new NotificationRegistry();
 		$this->registrationFuncRegistry = $regFuncRegistry;
 		$this->config = $config;
+
+		$this->init();
 	}
 
 	/**

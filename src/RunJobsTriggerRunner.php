@@ -2,6 +2,10 @@
 
 namespace BlueSpice;
 
+use BlueSpice\ExtensionAttributeBasedRegistry;
+use MediaWiki\Logger\LoggerFactory;
+use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
+
 class RunJobsTriggerRunner {
 
 	/**
@@ -136,4 +140,37 @@ class RunJobsTriggerRunner {
 		}
 	}
 
+	/**
+	 * Called from $wgExtensionFunctions
+	 */
+	public static function run() {
+		if( !defined( 'MEDIAWIKI_JOB_RUNNER' ) ) {
+			return;
+		}
+
+		$services = \BlueSpice\Services::getInstance();
+
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationRunJobsTriggerHandlerRegistry'
+		);
+
+		$logger = LoggerFactory::getInstance( 'runjobs-trigger-runner' );
+
+		$runConditionChecker = new JSONFileBasedRunConditionChecker(
+			new \DateTime(),
+			BSDATADIR,
+			$logger
+		);
+
+		$runner = new \BlueSpice\RunJobsTriggerRunner(
+			$registry,
+			$logger,
+			$runConditionChecker,
+			$services,
+			$services->getDBLoadBalancer(),
+			$services->getBSNotificationManager()->getNotifier()
+		);
+
+		$runner->execute();
+	}
 }
