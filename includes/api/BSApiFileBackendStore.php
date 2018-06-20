@@ -330,12 +330,14 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			$oDataSet->file_thumbnail_url = $sThumb;
 
 			$oUserPageTitle = Title::makeTitle( NS_USER, $oDataSet->file_user_text );
-			$oDataSet->file_user_link = Linker::link( $oUserPageTitle );
+			$oDataSet->file_user_link =
+				$this->oLinkRenderer->makeLink(  $oUserPageTitle );
 
 			$oDataSet->page_categories_links = [];
 			foreach( $oDataSet->page_categories as $sCategory ) {
 				$oCategoryTitle = Title::makeTitle( NS_CATEGORY, $sCategory );
-				$oDataSet->page_categories_links[] = Linker::link( $oCategoryTitle );
+				$oDataSet->page_categories_links[] =
+					$this->oLinkRenderer->makeLink( $oCategoryTitle );
 			}
 		}
 

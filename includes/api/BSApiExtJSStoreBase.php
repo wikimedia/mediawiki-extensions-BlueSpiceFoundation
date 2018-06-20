@@ -54,6 +54,10 @@
 	start:0
 	limit:25
  */
+
+use MediaWiki\Linker\LinkRenderer;
+use BlueSpice\Services;
+
 abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	const SECONDARY_FIELD_PLACEHOLDER = '<added as secondary field>';
@@ -90,7 +94,15 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	protected $metaData = 'metadata';
 
+	/**
+	 *
+	 * @var LinkRenderer
+	 */
+	protected $oLinkRenderer = null;
+
 	public function execute() {
+		$this->oLinkRenderer = Services::getInstance()->getLinkRenderer();
+
 		$sQuery = $this->getParameter( 'query' );
 		$aData = $this->makeData( $sQuery );
 		$aMetaData = $this->makeMetaData();
