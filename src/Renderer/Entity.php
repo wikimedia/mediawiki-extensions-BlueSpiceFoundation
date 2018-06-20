@@ -63,7 +63,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 	 *
 	 * @return \BlueSpice\Entity
 	 */
-	protected function getEntity() {
+	public function getEntity() {
 		return $this->entity;
 	}
 
@@ -71,7 +71,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 	 *
 	 * @return \IContextSource
 	 */
-	protected function getContext() {
+	public function getContext() {
 		return $this->context;
 	}
 

@@ -162,7 +162,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 		return "\\BlueSpice\\Content\\Entity";
 	}
 
-	protected function get_renderer() {
+	protected function get_Renderer() {
 		return "entity";
 	}
 
