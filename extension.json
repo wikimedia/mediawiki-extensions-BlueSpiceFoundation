@@ -72,7 +72,8 @@
 		}
 	},
 	"ExtensionFunctions": [
-		"BsCoreHooks::setup"
+		"BsCoreHooks::setup",
+		"\\BlueSpice\\RunJobsTriggerRunner::run"
 	],
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
@@ -473,8 +474,7 @@
 	},
 	"Hooks": {
 		"SetupAfterCache": [
-			"BsCoreHooks::onSetupAfterCache",
-			"BlueSpice\\Hook\\SetupAfterCache\\RunJobsTrigger::callback"
+			"BsCoreHooks::onSetupAfterCache"
 		],
 		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
 		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
