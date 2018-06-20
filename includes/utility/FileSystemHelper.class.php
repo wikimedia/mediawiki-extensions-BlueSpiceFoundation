@@ -619,23 +619,25 @@ class BsFileSystemHelper {
 			unlink( $sFilename );
 		}
 
-		$oRepoFile = wfFindFile( $sTargetFileName );
-		if ( $status->isGood() && $oRepoFile !== false ){
-			$oPage = WikiPage::factory( $oRepoFile->getTitle() );
-			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
+		$oRepoFile = RepoGroup::singleton()->getLocalRepo()->newFile( $sTargetFileName );
+		if ( $status->isGood() ){
+			if( $oRepoFile !== false ) {
+				$oPage = WikiPage::factory( $oRepoFile->getTitle() );
+				$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
 
-			//TODO: Remove, when SecureFileStore is finally removed
-			$oSecureFileStore = BsExtensionManager::getExtension(
-				'SecureFileStore'
-			);
-			if ( $oSecureFileStore ) {
-				return Status::newGood( SecureFileStore::secureStuff(
-					$oRepoFile->getUrl(),
-					true
-				));
-			}
-			else{
-				return Status::newGood( $oRepoFile->getUrl(), true );
+				//TODO: Remove, when SecureFileStore is finally removed
+				$oSecureFileStore = BsExtensionManager::getExtension(
+					'SecureFileStore'
+				);
+				if ( $oSecureFileStore ) {
+					return Status::newGood( SecureFileStore::secureStuff(
+						$oRepoFile->getUrl(),
+						true
+					));
+				}
+				else{
+					return Status::newGood( $oRepoFile->getUrl(), true );
+				}
 			}
 		}
 		else{
