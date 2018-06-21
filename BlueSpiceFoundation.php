@@ -55,3 +55,5 @@ array_unshift(
 	$GLOBALS['wgExtensionFunctions'],
 	'BsCore::doInitialise'
 );
+
+$GLOBALS['wgExtensionFunctions'][] = 'BsCore::doJobsTrigger';

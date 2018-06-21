@@ -8,6 +8,7 @@
 	"url": "http://bluespice.com",
 	"descriptionmsg": "bluespicefoundation-desc",
 	"type": "other",
+	"BlueSpiceFoundationRunJobsTriggerHandlerRegistry": {},
 	"ExtensionFunctions": [
 		"BsCoreHooks::setup"
 	],
@@ -408,6 +409,9 @@
 	"ExtensionMessagesFiles": {
 		"DiagnosticsAlias": "languages/BlueSpice.Diagnostics.alias.php",
 		"CreditsAlias": "languages/BlueSpice.Credits.alias.php"
+	},
+	"JobClasses": {
+		"runjobstrigger": "\\BlueSpice\\Job\\RunJobsTrigger"
 	},
 	"Hooks": {
 		"SetupAfterCache": "BsCoreHooks::onSetupAfterCache",
