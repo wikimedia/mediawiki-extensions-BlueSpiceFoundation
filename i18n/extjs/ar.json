@@ -70,5 +70,13 @@
 	"bs-extjs-pageexport-required-text": "لا يمكن أن يكون اسم القائمة فارغا ويجب تحديد صفحة واحدة على الأقل",
 	"bs-extjs-export-search-summary-text": "تم إنشاؤها بواسطة (تصدير الصفحة)",
 	"bs-extjs-pageexport-error-invalid-title": "اسم القائمة غير صالح",
-	"bs-extjs-combo-box-default-placeholder": "اكتب للتصفية..."
+	"bs-extjs-combo-box-default-placeholder": "اكتب للتصفية...",
+	"bs-extjs-tools-trigger-title": "انقر هنا لفتح قائمة الأدوات",
+	"bs-extjs-tools-trigger-text": "أدوات",
+	"bs-extjs-flyout-tab-thumbs-label": "الصور المصغرة",
+	"bs-extjs-flyout-tab-thumbs-title": "التبديل إلى عرض الصور المصغرة",
+	"bs-extjs-flyout-tab-grid-label": "التفاصيل",
+	"bs-extjs-flyout-tab-grid-title": "التبديل إلى عرض التفاصيل",
+	"bs-extjs-flyout-add-title": "انقر هنا لإضافة عنصر جديد",
+	"bs-extjs-flyout-add-label": "إضافة عنصر"
 }

@@ -85,5 +85,7 @@
 	"bs-export-menu-print-title": "يعرض نسخة قابلة للطباعة من الصفحة",
 	"bs-graphicallist-action-close": "إغلاق",
 	"bs-graphicallist-action-list": "قائمة",
-	"bs-graphicallist-action-preview": "عرض مسبق"
+	"bs-graphicallist-action-preview": "عرض مسبق",
+	"bs-bluespice-mediawiki": "بلوسبايس ميدياويكي",
+	"bs-bluespice": "بلوسبايس"
 }

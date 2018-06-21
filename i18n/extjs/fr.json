@@ -72,5 +72,13 @@
 	"bs-extjs-pageexport-required-text": "La liste de noms ne peut pas être vide et au moins une page doit être sélectionnée",
 	"bs-extjs-export-search-summary-text": "Généré par PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Le nom de la liste n’est pas valide",
-	"bs-extjs-combo-box-default-placeholder": "Type à filtrer ..."
+	"bs-extjs-combo-box-default-placeholder": "Type à filtrer ...",
+	"bs-extjs-tools-trigger-title": "Cliquer ici pour ouvrir le menu outils",
+	"bs-extjs-tools-trigger-text": "Outils",
+	"bs-extjs-flyout-tab-thumbs-label": "Vignettes",
+	"bs-extjs-flyout-tab-thumbs-title": "Basculer en affichage vignette",
+	"bs-extjs-flyout-tab-grid-label": "Détails",
+	"bs-extjs-flyout-tab-grid-title": "Basculer vers l'affichage détaillé",
+	"bs-extjs-flyout-add-title": "Cliquer ici pour ajouter un nouvel élément",
+	"bs-extjs-flyout-add-label": "Ajouter un élément"
 }
