@@ -112,7 +112,12 @@ class Manager {
 	protected function resetGroupPermissions() {
 		//All permissions, including 3rd party ones,
 		//which are not included in the registry are removed
-		$this->groupPermissions = [];
+		$this->groupPermissions = array_map(
+			function() {
+				return [];
+			},
+			$this->groupPermissions
+		);
 	}
 
 	/**
