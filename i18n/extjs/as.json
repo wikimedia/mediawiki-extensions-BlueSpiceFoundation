@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bishnu Saikia"
+			"Bishnu Saikia",
+			"Sagsag"
 		]
 	},
-	"bs-extjs-confirm": "নিশ্চিত কৰক"
+	"bs-extjs-confirm": "নিশ্চিত কৰক",
+	"bs-extjs-tools-trigger-text": "সঁজুলি"
 }
