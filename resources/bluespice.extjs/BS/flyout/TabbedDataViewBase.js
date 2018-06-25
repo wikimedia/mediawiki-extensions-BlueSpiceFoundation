@@ -155,14 +155,22 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	 */
 	makeDataViewThumbnailImageSrc: function( values ) {
 		var query = $.param( {
-			module: 'articlepreviewimage',
+			module: this.makeDataViewThumbImageModuleName(),
 			width: '160px',
-			titletext: values.prefixedText
+			titletext: this.makeDataViewThumbImageTitletextValue( value )
 		} );
 
 		//TODO: Create and use abtraction for 'dynamic_file' in 'bs.util';
 		var url = mw.util.wikiScript( 'dynamic_file' ) + '?' + query;
 		return url;
+	},
+
+	makeDataViewThumbImageModuleName: function() {
+		return 'articlepreviewimage';
+	},
+
+	makeDataViewThumbImageTitletextValue: function( values ) {
+		return values.prefixedText;
 	},
 
 	makeDataViewThumbnailImageTitle: function( values ) {
