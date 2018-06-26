@@ -8,6 +8,15 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	commonStoreApiAction: 'bs-wikipage-store',
 	pageSize: 25,
 
+	constructor: function( cfg ) {
+		cfg.height = cfg.height || this.calcDefaultHeight( cfg.renderTo );
+		this.callParent( arguments );
+	},
+
+	calcDefaultHeight: function ( target ) {
+		return $(target).height();
+	},
+
 	initComponent: function() {
 		this.commonStore = this.makeCommonStore();
 		this.items = this.makeTabs();
@@ -157,7 +166,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		var query = $.param( {
 			module: this.makeDataViewThumbImageModuleName(),
 			width: '160px',
-			titletext: this.makeDataViewThumbImageTitletextValue( value )
+			titletext: this.makeDataViewThumbImageTitletextValue( values )
 		} );
 
 		//TODO: Create and use abtraction for 'dynamic_file' in 'bs.util';
