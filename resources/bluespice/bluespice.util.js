@@ -565,6 +565,23 @@
 		}
 	}
 
+	/**
+	 *
+	 * @param string callback e.G. "bs.extension.flyout.someKey"
+	 * @param array args
+	 * @param object scope
+	 * @returns mixed
+	 */
+	function _runCallback( callback, args, scope ) {
+		var parts = callback.split( '.' );
+		var func = window[parts[0]];
+		for( var i = 1; i < parts.length; i++ ) {
+			func = func[parts[i]];
+		}
+
+		return func.apply( scope || null, args );
+	}
+
 	var util = {
 		getNamespaceText: _getNamespaceText,
 		getRemoteHandlerUrl: _getRemoteHandlerUrl,
@@ -587,7 +604,8 @@
 		deleteEntryFromMultiSelect: _deleteEntryFromMultiSelect,
 		wikiGetlink: _wikiGetlink,
 		auditCssSelectors: _auditCssSelectors,
-		registerNamespace: _registerNamespace
+		registerNamespace: _registerNamespace,
+		runCallback: _runCallback
 	};
 
 	//This allows us to have a confirm dialog be displayed
