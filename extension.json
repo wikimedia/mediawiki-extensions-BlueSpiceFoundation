@@ -511,7 +511,8 @@
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddGraphicalListRegistry::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddExtendedSiteToolsRegistry::callback",
-			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback"
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback",
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddPingInterval::callback"
 		],
 		"getUserPermissionsErrors": [
 			"BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyNamespaceRolesLockdown::callback"

@@ -6,7 +6,7 @@ BSPing = {
 
 	init: function() {
 		$(document).triggerHandler('BSPingInit', [BSPing]);
-		BSPing.interval = mw.config.get( 'bsPingInterval' ) * 1000;
+		BSPing.interval = mw.config.get( 'bsgPingInterval' ) * 1000;
 		if ( BSPing.interval < 1000 ) return;
 
 		BSPing.ping();
