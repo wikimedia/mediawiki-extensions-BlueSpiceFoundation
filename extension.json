@@ -37,12 +37,8 @@
 			"AdminToolRegistry": {},
 			"TagRegistry": {},
 			"RendererRegistry": {
-				"form": "\\BlueSpice\\Renderer\\Form",
 				"list": "\\BlueSpice\\Renderer\\SimpleList",
 				"linklist": "\\BlueSpice\\Renderer\\LinkList",
-				"panel": "\\BlueSpice\\Renderer\\Panel",
-				"table": "\\BlueSpice\\Renderer\\Table",
-				"treenavigation": "\\BlueSpice\\Renderer\\TreeNavigation",
 				"userimage": "\\BlueSpice\\Renderer\\UserImage",
 				"entity": "\\BlueSpice\\Renderer\\Entity"
 			},
