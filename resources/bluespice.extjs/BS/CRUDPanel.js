@@ -49,10 +49,6 @@ Ext.define( 'BS.CRUDPanel', {
 
 	makeTbar: function() {
 		return new Ext.Toolbar({
-			style: {
-				backgroundColor: '#FFFFFF',
-				backgroundImage: 'none'
-			},
 			items: this.makeTbarItems()
 		});
 	},
