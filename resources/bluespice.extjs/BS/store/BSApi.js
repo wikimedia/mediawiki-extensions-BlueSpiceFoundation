@@ -20,11 +20,7 @@ Ext.define('BS.store.BSApi', {
 			},
 			autoLoad: true,
 			remoteSort: true,
-			remoteFilter: true,
-			sortInfo: {
-				field: 'id',
-				direction: 'ASC'
-			}
+			remoteFilter: true
 		}, cfg);
 		cfg.proxy.extraParams.action = cfg.apiAction || this.apiAction;
 		this.callParent([cfg]);
