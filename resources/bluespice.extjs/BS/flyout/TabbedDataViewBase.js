@@ -65,6 +65,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 			iconCls: 'icon-thumbs',
 			title: mw.message( 'bs-extjs-flyout-tab-thumbs-label' ).text(),
 			tooltip: mw.message( 'bs-extjs-flyout-tab-thumbs-title' ).text(),
+			cls: 'preview',
 			items: [ new Ext.view.View( {
 				store: this.commonStore,
 				tpl: this.makeDataViewPanelTemplate(),
@@ -165,7 +166,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	makeDataViewThumbnailImageSrc: function( values ) {
 		var query = $.param( {
 			module: this.makeDataViewThumbImageModuleName(),
-			width: '160px',
+			width: '320px',
 			titletext: this.makeDataViewThumbImageTitletextValue( values )
 		} );
 
@@ -255,7 +256,6 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		if( this.showAddIcon() ) {
 			this.btnAdd = new Ext.Button({
 				id: this.getId()+'-btn-add',
-				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_add.png',
 				iconCls: 'btn32',
 				tooltip: mw.message( 'bs-extjs-add' ).plain(),
 				height: 50,
@@ -275,6 +275,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 
 		return new Ext.grid.Panel( {
 			iconCls: 'icon-grid',
+			cls: 'list',
 			title: mw.message( 'bs-extjs-flyout-tab-grid-label' ).text(),
 			tooltip: mw.message( 'bs-extjs-flyout-tab-grid-title' ).text(),
 			store: this.commonStore,
