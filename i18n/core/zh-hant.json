@@ -6,7 +6,8 @@
 			"LNDDYL",
 			"Liuxinyu970226",
 			"Kly",
-			"Sanmosa"
+			"Sanmosa",
+			"A2093064"
 		]
 	},
 	"bluespicefoundation-desc": "讓 MediaWiki 企業化就緒",
@@ -31,7 +32,7 @@
 	"bs-now": "現在",
 	"bs-email-greeting-receiver": "{{GENDER:$1|$2 先生您好|$2 小姐您好|$2 您好}}，",
 	"bs-email-footer": "此訊息為 $1 所自動產生，請勿回覆此電子郵件。",
-	"bs-userpagesettings-legend": "用戶設定",
+	"bs-userpagesettings-legend": "使用者設定",
 	"bs-userpreferences-link-text": "更多使用者設定",
 	"bs-userpreferences-link-title": "顯示您的個人使用者設定",
 	"bs-exception-view-heading": "發生錯誤",
