@@ -42,11 +42,14 @@ abstract class Filter {
 	 * @param array $params
 	 */
 	public function __construct( $params ) {
-		$this->field = !isset( $params[self::KEY_FIELD] ) && isset( $params[self::KEY_PROPERTY] )
-			? $params[self::KEY_PROPERTY]
-			: $params[self::KEY_FIELD];
-		$this->value = $params[self::KEY_VALUE];
-		$this->comparison = $params[self::KEY_COMPARISON];
+		$this->field = !isset( $params[static::KEY_FIELD] ) && isset( $params[static::KEY_PROPERTY] )
+			? $params[static::KEY_PROPERTY]
+			: $params[static::KEY_FIELD];
+		$this->value = $params[static::KEY_VALUE];
+		if( !isset($params[static::KEY_COMPARISON] ) ) {
+			$params[static::KEY_COMPARISON] = static::COMPARISON_EQUALS;
+		}
+		$this->comparison = $params[static::KEY_COMPARISON];
 	}
 
 	/**
