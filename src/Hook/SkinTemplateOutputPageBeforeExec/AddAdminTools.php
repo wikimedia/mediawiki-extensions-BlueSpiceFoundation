@@ -9,10 +9,15 @@ class AddAdminTools extends SkinTemplateOutputPageBeforeExec {
 	protected function doProcess() {
 		$registry = $this->getServices()->getBSAdminToolFactory();
 		$adminTools = $registry->getAll();
-
-		foreach( $adminTools as $toolId => $tool ) {
-			$this->template->data[SkinData::ADMIN_LINKS][$toolId]
-				= $this->makeLinkDesc( $tool );
+		$user = $this->getContext()->getUser();
+		foreach ( $adminTools as $toolId => $tool ) {
+			foreach ( $tool->getPermissions() as $permission ) {
+				if ( $user->isAllowed( $permission ) ) {
+					$this->template->data[SkinData::ADMIN_LINKS][$toolId] =
+						$this->makeLinkDesc( $tool );
+					break;
+				}
+			}
 		}
 	}
 
