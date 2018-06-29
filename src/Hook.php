@@ -95,13 +95,13 @@ abstract class Hook {
 
 	public function process() {
 		if( $this->skipProcessingForAnon() ) {
-			if( $this->context->getUser()->isAnon() ) {
+			if( $this->getContext()->getUser()->isAnon() ) {
 				return true;
 			}
 		}
 
 		if( $this->skipProcessingForSpecialPages() ) {
-			if( $this->context->getTitle()->isSpecialPage() ) {
+			if( $this->getContext()->getTitle()->isSpecialPage() ) {
 				return true;
 			}
 		}
