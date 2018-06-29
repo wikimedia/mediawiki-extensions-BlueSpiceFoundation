@@ -94,6 +94,18 @@ abstract class Hook {
 	}
 
 	public function process() {
+		if( $this->skipProcessingForAnon() ) {
+			if( $this->context->getUser()->isAnon() ) {
+				return true;
+			}
+		}
+
+		if( $this->skipProcessingForSpecialPages() ) {
+			if( $this->context->getTitle()->isSpecialPage() ) {
+				return true;
+			}
+		}
+
 		if( $this->skipProcessing() ) {
 			return true;
 		}
@@ -110,6 +122,22 @@ abstract class Hook {
 	 * @return boolean
 	 */
 	protected function skipProcessing() {
+		return false;
+	}
+
+	/**
+	 * Convenience method for subclasses
+	 * @return boolean
+	 */
+	protected function skipProcessingForAnon() {
+		return false;
+	}
+
+	/**
+	 * Convenience method for subclasses
+	 * @return boolean
+	 */
+	protected function skipProcessingForSpecialPages() {
 		return false;
 	}
 }
