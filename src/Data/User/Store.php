@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Data\User;
 
+use BlueSpice\Data\NoWriterException;
+
 class Store implements \BlueSpice\Data\IStore {
 
 	/**
@@ -24,6 +26,6 @@ class Store implements \BlueSpice\Data\IStore {
 	}
 
 	public function getWriter() {
-		throw new Exception( 'This store does not support writing!' );
+		throw new NoWriterException();
 	}
 }
