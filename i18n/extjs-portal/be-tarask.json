@@ -9,5 +9,6 @@
 	"bs-extjs-portal-height": "Вышыня",
 	"bs-extjs-portal-count": "Запісы",
 	"bs-extjs-portal-timespan": "Прамежак часу",
-	"bs-extjs-portal-timespan-week": "Тыдзень"
+	"bs-extjs-portal-timespan-week": "Тыдзень",
+	"bs-extjs-portal-timespan-month": "Месяц"
 }
