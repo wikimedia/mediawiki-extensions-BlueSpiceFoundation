@@ -66,5 +66,6 @@
 	"bs-api-task-taskData-page-id": "Description of <code>taskData.page_id</code> field",
 	"bs-api-task-taskData-page-title": "Description of <code>taskData.page_title</code> field",
 	"bs-api-task-wikipagetasks-taskData-categories": "Description of <code>taskData.categories</code> field in WikiPageTasks API",
-	"apihelp-bs-watchlist-store-summary": "{{doc-apihelp-summary|bs-watchlist-store}}"
+	"apihelp-bs-watchlist-store-summary": "{{doc-apihelp-summary|bs-watchlist-store}}",
+	"apihelp-bs-recentchanges-store-summary": "{{doc-apihelp-summary|bs-recentchanges-store}}"
 }

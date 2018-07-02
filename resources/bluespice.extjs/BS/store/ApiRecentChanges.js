@@ -1,0 +1,19 @@
+Ext.define('BS.store.ApiRecentChanges', {
+	extend: 'BS.store.BSApi',
+	apiAction: 'bs-recentchanges-store',
+	fields: [
+		'user_name',
+		'user_display_name',
+		'user_link',
+		'page_prefixedtext',
+		'page_namespace',
+		'page_link',
+		'timestamp',
+		'comment_text',
+		'source',
+		'diff_url',
+		'diff_link',
+		'hist_url',
+		'hist_link'
+	]
+});
