@@ -6,6 +6,7 @@ Ext.define( 'BS.dialog.BatchActions', {
 	autoHeight: true,
 	title: mw.message('bs-deferred-batch-title').plain(),
 	closable: false,
+	currentData: null,
 
 	makeItems: function() {
 		this.pnlBatchActions = new BS.panel.BatchActions();
@@ -23,7 +24,12 @@ Ext.define( 'BS.dialog.BatchActions', {
 	},
 
 	setData: function( data ) {
+		this.currentData = data;
 		this.pnlBatchActions.setData( data );
+	},
+
+	getData: function() {
+		return this.currentData;
 	},
 
 	onBtnOKClick: function() {
