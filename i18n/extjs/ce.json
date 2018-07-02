@@ -40,5 +40,6 @@
 	"bs-extjs-filter-starts-with": "йола ло тӀера",
 	"bs-extjs-filter-ends-with": "чекхйолу",
 	"bs-extjs-filter-bool-yes": "хӀаъ",
-	"bs-extjs-filter-bool-no": "хӀан-хӀа"
+	"bs-extjs-filter-bool-no": "хӀан-хӀа",
+	"bs-extjs-flyout-tab-grid-label": "Мадарра"
 }
