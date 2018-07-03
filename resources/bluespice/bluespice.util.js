@@ -272,7 +272,6 @@
 		};
 	}
 
-
 	function _timestampToAgeString( unixTimestamp ) {
 		//This is a js version of "adapter/Utility/FormatConverter.class.php" -> timestampToAgeString
 		//TODO: use PLURAL (probably wont work in mw 1.17)
@@ -319,6 +318,60 @@
 		else if (iSecs === 0) sDateTimeOut = mw.message( 'bs-now' ).plain();
 
 		return sDateTimeOut;
+	}
+
+	function _convertDateToMWTimestamp( date ) {
+		//welcome to handling timestamps in js
+		var curr_year = date.getFullYear();
+		var curr_month = date.getMonth() + 1;
+		if( curr_month < 10 ) {
+			curr_month = "0" + curr_month;
+		}
+		var curr_date = date.getDate();
+		if( curr_date < 10) {
+			curr_date = "0" + curr_date;
+		}
+		var curr_hour = date.getHours();
+		if( curr_hour < 10 ) {
+			curr_hour = "0" + curr_hour;
+		}
+		var curr_min = date.getMinutes();
+		if( curr_min < 10 ) {
+			curr_min = "0" + curr_min;
+		}
+		var curr_sec = date.getSeconds();
+		if( curr_sec < 10 ) {
+			curr_sec = "0" + curr_sec;
+		}
+		var newtimestamp
+			= curr_year.toString() +
+			curr_month.toString() +
+			curr_date.toString() +
+			curr_hour.toString() +
+			curr_min.toString() +
+			curr_sec.toString();
+
+		return newtimestamp.toString();
+	}
+
+	function _convertMWTimestampToISO( ts ) {
+		//YYYYMMDDHHMMSS => YYYY-MM-DD HH:MM:SS
+		return ts.replace(
+			/^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/g,
+			"$1-$2-$3 $4:$5:$6"
+		).toString();
+	}
+
+	function _convertISOToMWTimestamp( ts ) {
+		//YYYY-MM-DDTHH:MM:SS => YYYYMMDDHHMMSS
+		return ts.replace(
+			/^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})$/g,
+			"$1$2$3$4$5$6"
+		).toString();
+	}
+
+	function _convertMWTimestampToDate( ts ) {
+		return new Date( _convertMWTimestampToISO( ts ) );
 	}
 
 	/**
@@ -605,7 +658,11 @@
 		wikiGetlink: _wikiGetlink,
 		auditCssSelectors: _auditCssSelectors,
 		registerNamespace: _registerNamespace,
-		runCallback: _runCallback
+		runCallback: _runCallback,
+		convertDateToMWTimestamp: _convertDateToMWTimestamp,
+		convertMWTimestampToISO: _convertMWTimestampToISO,
+		convertISOToMWTimestamp: _convertISOToMWTimestamp,
+		convertMWTimestampToDate: _convertMWTimestampToDate
 	};
 
 	//This allows us to have a confirm dialog be displayed
