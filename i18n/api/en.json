@@ -64,5 +64,6 @@
 	"bs-api-task-taskData-page-id": "The ID of an existing wiki page",
 	"bs-api-task-taskData-page-title": "A valid title of a wiki page",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array of strings. Values need to be valid category names.",
-	"apihelp-bs-watchlist-store-summary": "Lists all watchlist entries. Allows sorting, filtering and pagination. Implements store parameters."
+	"apihelp-bs-watchlist-store-summary": "Lists all watchlist entries. Allows sorting, filtering and pagination. Implements store parameters.",
+	"apihelp-bs-recentchanges-store-summary": "Lists all recentchanges. Allows sorting, filtering and pagination. Implements store parameters."
 }
