@@ -153,7 +153,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	},
 
 	makeDataViewItemLinkUrl: function( values ) {
-		return mw.util.getUrl( values.prefixedText );
+		return mw.util.getUrl( values.page_prefixedtext );
 	},
 
 	/**
