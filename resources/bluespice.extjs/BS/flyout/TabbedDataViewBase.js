@@ -29,10 +29,10 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		$( this.getEl().dom ).on( 'click', '.actions a', $.proxy( function( e ) {
 			e.preventDefault();
 
-			var recordId = $( e.target ).parents( '.thumbnail' )
-				.data( 'storeitemid' );
+			var recordIdx = $( e.target ).parents( '.thumbnail' )
+				.data( 'recordindex' );
 
-			var record = this.commonStore.getById( recordId );
+			var record = this.commonStore.getAt( recordIdx );
 			this.showItemMenu( record, e.target );
 
 			return false;
@@ -84,17 +84,15 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 
 	makeDataViewPanelTemplate: function() {
 		var me = this;
-		var toolsIconTooltip = mw.message( 'bs-extjs-tools-trigger-title' ).text();
-		var toolsIconLabel = mw.message( 'bs-extjs-tools-trigger-text' ).text();
 		var addIcon = this.makeDataViewAddIcon();
 
 		return new Ext.XTemplate(
 			addIcon,
 			'<tpl for=".">',
-				'<div class="thumbnail storeitem" data-storeitemid="{[this.makeDataStoreItemId(values)]}">',
+				'<div class="thumbnail storeitem">',
 					'<tpl if="this.hasMenu(values)">',
 						'<div class="actions">',
-							'<a class="menu-trigger" href="#" title="' + toolsIconTooltip + '">' + toolsIconLabel + '</a>',
+							'<a class="menu-trigger" href="#" title="{[this.makeToolsLinkTitle()]}">{[this.makeToolsLinkText()]}</a>',
 						'</div>',
 					'</tpl>',
 					'<div class="caption">',
@@ -115,8 +113,11 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 			'<div class="x-clear"></div>',
 			{
 				disableFormats: true,
-				makeDataStoreItemId: function( values ) {
-					return me.makeDataViewStoreItemId( values );
+				makeToolsLinkText: function() {
+					return me.makeToolsLinkText();
+				},
+				makeToolsLinkTitle: function() {
+					return me.makeToolsLinkTitle();
 				},
 				makeMainLinkUrl: function( values ) {
 					return me.makeDataViewItemLinkUrl( values );
@@ -143,15 +144,12 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		);
 	},
 
-	/**
-	 * Must return an ID that can be used in 'this.commonStore.getById()'
-	 * In most cases this is definded in the 'idProperty' field of the used
-	 * model.
-	 * @param {object} values
-	 * @returns {Integer}
-	 */
-	makeDataViewStoreItemId: function( values ) {
-		return values.prefixedText;
+	makeToolsLinkText: function() {
+		return mw.message( 'bs-extjs-tools-trigger-text' ).text();
+	},
+
+	makeToolsLinkTitle: function() {
+		return mw.message( 'bs-extjs-tools-trigger-title' ).text();
 	},
 
 	makeDataViewItemLinkUrl: function( values ) {
