@@ -84,9 +84,6 @@ class BSTreeRenderer {
 	 */
 	protected function doExpandPath( $path, $node ) {
 		$firstElement = array_shift( $path );
-		if( empty( $path ) ) {
-			return;
-		}
 		if( Sanitizer::escapeId( $node->getId() ) !== $firstElement ) {
 			if( $firstElement !== '' || $node->isRoot() ) {
 				return;
