@@ -5,7 +5,8 @@
 			"Redredsonia",
 			"Alexey zakharenkov",
 			"Facenapalm",
-			"Happy13241"
+			"Happy13241",
+			"Vlad5250"
 		]
 	},
 	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
@@ -16,5 +17,6 @@
 	"apihelp-bs-task-param-examples": "Показать примеры параметров задачи",
 	"bs-api-task-taskData-page-id": "Идентификатор существующей вики-страницы",
 	"bs-api-task-taskData-page-title": "Допустимое название вики-страницы",
-	"bs-api-task-wikipagetasks-taskData-categories": "Массив строк. Значения должны быть допустимыми именами категорий."
+	"bs-api-task-wikipagetasks-taskData-categories": "Массив строк. Значения должны быть допустимыми именами категорий.",
+	"apihelp-bs-recentchanges-store-summary": "Перечисляет все недавние правки. Разрешает сортировку, фильтр и разбиение на страницы. Реализовывает параметры хранения."
 }

@@ -66,5 +66,6 @@
 	"bs-api-task-taskData-page-id": "存在的 wiki 頁面 ID",
 	"bs-api-task-taskData-page-title": "wiki 頁面的有效標題",
 	"bs-api-task-wikipagetasks-taskData-categories": "字串陣列。值應為有效的分類名稱。",
-	"apihelp-bs-watchlist-store-summary": "列出所有監視清單項目。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。"
+	"apihelp-bs-watchlist-store-summary": "列出所有監視清單項目。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
+	"apihelp-bs-recentchanges-store-summary": "列出所有最近更改。允許排序、篩選，以及分頁。執行所儲存的變數。"
 }
