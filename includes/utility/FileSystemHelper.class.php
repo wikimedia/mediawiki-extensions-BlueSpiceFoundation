@@ -98,18 +98,26 @@ class BsFileSystemHelper {
 		if ( self::hasTraversal( "$sSubDirName/$sFileName" ) ) {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
+
 		if (!$oStatus->isGood()) {
 			return $oStatus;
 		}
 
-		//todo: via FileRepo
 		if (!file_put_contents( "{$oStatus->getValue()}/$sFileName", $data ) ) {
 			return Status::newFatal(
 				"could not save \"$sFileName\" to location: {$oStatus->getValue()}/$sFileName"
 			);
 		}
 
-		return $oStatus;
+		$repo = \RepoGroup::singleton()->getRepoByName( $sSubDirName );
+
+		// This is not usable! Used for invalidating cache.
+		$repo->quickImport(
+			"",
+			""
+		);
+
+		return $oStatus::newGood( static::getFileFromRepoName( $sFileName, $sSubDirName ) );
 	}
 
 	/**
@@ -564,14 +572,14 @@ class BsFileSystemHelper {
 		$sCheckCachePath = ( $bIsAbsolute ? '' : BS_CACHE_DIR . "/" ) . $sPath;
 		if (file_exists($sCheckDataPath)) {
 			return strpos(
-				realpath( $sCheckDataPath ),
-				realpath( BS_DATA_DIR . "/" )
-			) !== 0;
+					realpath( $sCheckDataPath ),
+					realpath( BS_DATA_DIR . "/" )
+				) !== 0;
 		} elseif (file_exists($sCheckCachePath)) {
 			return strpos(
-				realpath( $sCheckCachePath ),
-				realpath( BS_CACHE_DIR . "/" )
-			) !== 0;
+					realpath( $sCheckCachePath ),
+					realpath( BS_CACHE_DIR . "/" )
+				) !== 0;
 		} else {
 			$sPath = self::normalizePath($sCheckDataPath);
 			if( $sPath  === null ) {
@@ -596,12 +604,12 @@ class BsFileSystemHelper {
 		// Use the same traversal protection as Title::secureAndSplit()
 		if (strpos($path, '.') !== false) {
 			if (
-					$path === '.' ||
-					$path === '..' ||
-					strpos($path, './') === 0 ||
-					strpos($path, '../') === 0 ||
-					strpos($path, '/./') !== false ||
-					strpos($path, '/../') !== false
+				$path === '.' ||
+				$path === '..' ||
+				strpos($path, './') === 0 ||
+				strpos($path, '../') === 0 ||
+				strpos($path, '/./') !== false ||
+				strpos($path, '/../') !== false
 			) {
 				return null;
 			}
