@@ -56,7 +56,8 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::PAGE_PREFIXED_TEXT => $title->getPrefixedText(), //Not expensive, as all required information available on instantiation
 			Record::PAGE_NAMESPACE => $row->rc_namespace,
 			Record::PAGE_LINK => '',
-			Record::TIMESTAMP =>$row->rc_timestamp,
+			Record::TIMESTAMP => '',
+			Record::RAW_TIMESTAMP =>$row->rc_timestamp,
 			Record::COMMENT_TEXT => $row->rc_comment,
 			Record::SOURCE => $row->rc_source,
 			Record::DIFF_URL => '',

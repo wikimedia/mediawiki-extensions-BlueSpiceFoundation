@@ -11,11 +11,18 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 	protected $linkrenderer = null;
 
 	/**
+	 * @var \IContextSource
+	 */
+	protected $context;
+
+	/**
 	 *
 	 * @param \MediaWiki\Linker\LinkRenderer $linkrenderer
+	 * @param \IContextSource $context
 	 */
-	public function __construct( $linkrenderer ) {
+	public function __construct( $linkrenderer, $context ) {
 		$this->linkrenderer = $linkrenderer;
+		$this->context = $context;
 	}
 
 	/**
@@ -60,6 +67,11 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 				[],
 				$histQuery
 			);
+
+		$rawData->timestamp = $this->context->getLanguage()->userTimeAndDate(
+			$rawData->raw_timestamp,
+			$this->context->getUser()
+		);
 
 		unset( $rawData->tmp_user );
 		unset( $rawData->tmp_curid );

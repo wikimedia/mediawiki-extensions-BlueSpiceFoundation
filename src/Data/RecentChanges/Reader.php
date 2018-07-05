@@ -12,7 +12,8 @@ class Reader extends DatabaseReader {
 
 	protected function makeSecondaryDataProvider() {
 		return new SecondaryDataProvider(
-			\MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer()
+			\MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer(),
+			$this->context
 		);
 	}
 

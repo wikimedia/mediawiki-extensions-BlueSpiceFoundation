@@ -8,6 +8,7 @@ Ext.define('BS.store.ApiRecentChanges', {
 		'page_prefixedtext',
 		'page_namespace',
 		'page_link',
+		'raw_timestamp',
 		'timestamp',
 		'comment_text',
 		'source',
