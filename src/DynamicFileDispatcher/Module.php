@@ -18,7 +18,7 @@ abstract class Module {
 
 	/**
 	 *
-	 * @var sring
+	 * @var string
 	 */
 	protected $module = '';
 
