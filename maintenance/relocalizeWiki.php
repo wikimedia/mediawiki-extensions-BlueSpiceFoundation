@@ -30,8 +30,7 @@ class RelocalizeWiki extends Maintenance {
 		$this->output( "\nLooking for namespace indexes...\n" );
 		$aFromNs = $this->getNamespaceIndexes( $sOldLang );
 		$this->aFromNs = $aFromNs;
-		$oLang = new Language();
-		$oLang->setCode( $sOldLang );
+		$oLang = Language::factory( $sOldLang );
 		$this->aSpecialFrom = $oLang->getSpecialPageAliases();
 		
 		$aToNs = $this->getNamespaceIndexes( $sNewLang );
@@ -50,8 +49,7 @@ class RelocalizeWiki extends Maintenance {
 		
 		$aReturn = array();
 
-		$oLang = new Language();
-		$oLang->setCode( $sLanguageCode );
+		$oLang = Language::factory( $sLanguageCode );
 		
 		// get index from NS_FILE e.g. File:
 		$aReturn['ns'] = $oLang->getNamespaces();
