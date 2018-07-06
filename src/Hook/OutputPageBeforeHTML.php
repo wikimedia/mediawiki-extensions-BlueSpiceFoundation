@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook BeforePageDisplay
+ * Hook handler base class for MediaWiki hook OutputPageBeforeHTML
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,16 +18,16 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Peter Boehm <boehm@hallowelt.com>
  * @package    BlueSpiceFoundation
- * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2018 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class BeforePageDisplay extends Hook {
+abstract class OutputPageBeforeHTML extends Hook {
 
 	/**
 	 *
@@ -37,23 +37,23 @@ abstract class BeforePageDisplay extends Hook {
 
 	/**
 	 *
-	 * @var \Skin
+	 * @var string
 	 */
-	protected $skin = null;
+	protected $text = '';
 
 	/**
 	 *
 	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param string $text
 	 * @return boolean
 	 */
-	public static function callback( &$out, &$skin  ) {
+	public static function callback( &$out, &$text  ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
 			$out,
-			$skin
+			$text
 		);
 		return $hookHandler->process();
 	}
@@ -63,12 +63,11 @@ abstract class BeforePageDisplay extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param string $text
 	 */
-	public function __construct( $context, $config, &$out, &$skin ) {
+	public function __construct( $context, $config, &$out, &$text ) {
 		parent::__construct( $context, $config );
-
 		$this->out =& $out;
-		$this->skin =& $skin;
+		$this->text =& $text;
 	}
 }

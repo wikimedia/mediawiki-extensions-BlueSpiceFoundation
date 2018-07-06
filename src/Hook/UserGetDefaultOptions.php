@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook BeforePageDisplay
+ * Hook handler base class for MediaWiki hook UserGetDefaultOptions
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,42 +18,34 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Peter Boehm <boehm@hallowelt.com>
  * @package    BlueSpiceFoundation
- * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2018 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class BeforePageDisplay extends Hook {
+abstract class UserGetDefaultOptions extends Hook {
+
+	/**
+	 * Array of preference keys and their default values.
+	 * @var array
+	 */
+	protected $defaultOptions = [];
 
 	/**
 	 *
-	 * @var \OutputPage
+	 * @param array $defaultOptions
+	 * @return type
 	 */
-	protected $out = null;
-
-	/**
-	 *
-	 * @var \Skin
-	 */
-	protected $skin = null;
-
-	/**
-	 *
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
-	 * @return boolean
-	 */
-	public static function callback( &$out, &$skin  ) {
+	public static function callback( &$defaultOptions ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$out,
-			$skin
+			$defaultOptions
 		);
 		return $hookHandler->process();
 	}
@@ -62,13 +54,11 @@ abstract class BeforePageDisplay extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param array $defaultOptions
 	 */
-	public function __construct( $context, $config, &$out, &$skin ) {
+	public function __construct( $context, $config, &$defaultOptions ) {
 		parent::__construct( $context, $config );
 
-		$this->out =& $out;
-		$this->skin =& $skin;
+		$this->defaultOptions =& $defaultOptions;
 	}
 }

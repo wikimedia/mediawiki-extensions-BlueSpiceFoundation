@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook PageContentSaveComplete
+ * Hook handler base class for MediaWiki hook PageContentSave
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,16 +18,16 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Peter Boehm <boehm@hallowelt.com>
  * @package    BlueSpiceFoundation
- * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2018 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class PageContentSaveComplete extends Hook {
+abstract class PageContentSave extends Hook {
 
 	/**
 	 *
@@ -105,12 +105,10 @@ abstract class PageContentSaveComplete extends Hook {
 	 * @param boolean $isWatch
 	 * @param section $section
 	 * @param int $flags
-	 * @param \Revision $revision
 	 * @param \Status $status
-	 * @param int $baseRevId
 	 * @return boolean
 	 */
-	public static function callback( &$wikipage, &$user, $content, $summary, $isMinor, $isWatch, $section, &$flags, $revision, &$status, $baseRevId ) {
+	public static function callback( &$wikipage, &$user, &$content, &$summary, $isMinor, $isWatch, $section, &$flags, &$status ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -123,9 +121,7 @@ abstract class PageContentSaveComplete extends Hook {
 			$isWatch,
 			$section,
 			$flags,
-			$revision,
-			$status,
-			$baseRevId
+			$status
 		);
 		return $hookHandler->process();
 	}
@@ -142,22 +138,18 @@ abstract class PageContentSaveComplete extends Hook {
 	 * @param boolean $isWatch
 	 * @param section $section
 	 * @param int $flags
-	 * @param \Revision $revision
 	 * @param \Status $status
-	 * @param int $baseRevId
 	 */
-	public function __construct( $context, $config, &$wikipage, &$user, $content, $summary, $isMinor, $isWatch, $section, &$flags, $revision, &$status, $baseRevId ) {
+	public function __construct( $context, $config, &$wikipage, &$user, &$content, &$summary, $isMinor, $isWatch, $section, &$flags, &$status ) {
 		parent::__construct( $context, $config );
 
 		$this->wikipage =& $wikipage;
 		$this->user =& $user;
-		$this->content = $content;
-		$this->summary = $summary;
+		$this->content =& $content;
+		$this->summary =& $summary;
 		$this->isMinor = $isMinor;
 		$this->section = $section;
 		$this->flags =& $flags;
-		$this->revision = $revision;
 		$this->status =& $status;
-		$this->baseRevId = $baseRevId;
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook PageContentSaveComplete
+ * Hook handler base class for MediaWiki hook PageContentInsertComplete
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,16 +18,16 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Peter Boehm <boehm@hallowelt.com>
  * @package    BlueSpiceFoundation
- * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2018 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class PageContentSaveComplete extends Hook {
+abstract class PageContentInsertComplete extends Hook {
 
 	/**
 	 *
