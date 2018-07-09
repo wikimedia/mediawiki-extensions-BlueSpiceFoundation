@@ -50,8 +50,7 @@ class BsValidator {
 			throw new BsException( 'BsValidator::isValid called with 3rd param that is no array' ); // todo: throw new BsException
 		}
 		$plugin = "BsValidator{$type}Plugin";
-		// TODO MRG20100816: Sollte man hier nicht den Autoloader verwenden?
-		if ( !class_exists( $plugin, false ) ) {
+		if ( !class_exists( $plugin ) ) {
 			throw new BsException( "BsValidatorPlugin of type: $plugin does not exist." );
 		}
 		// TODO MRG20100816: entweder $prKnownPlugins initialisieren oder hier auf is_array testen
