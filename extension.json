@@ -65,7 +65,11 @@
 				"export": "bs-setting-path-export"
 			},
 			"RunJobsTriggerHandlerRegistry": {},
-			"NotificationRegistrationFunctions": []
+			"NotificationRegistrationFunctions": [],
+			"AlertProviderRegistry": {
+				"bs-readonly-warning": "\\BlueSpice\\AlertProvider\\ReadOnlyWarning::factory",
+				"bs-testsystem-warning": "\\BlueSpice\\AlertProvider\\TestsystemWarning::factory"
+			}
 		}
 	},
 	"ExtensionFunctions": [
@@ -121,7 +125,8 @@
 				"bluespice/bluespice.ping.js",
 				"bluespice/bluespice.tooltip.js",
 				"bluespice/bluespice.api.js",
-				"bluespice/bluespice.treepanel.js"
+				"bluespice/bluespice.treepanel.js",
+				"bluespice/bluespice.alerts.js"
 			],
 			"messages": [
 				"bs-years-duration",
@@ -520,7 +525,8 @@
 		"SearchGetNearMatchComplete": [
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
-		"MediaWikiServices": "BlueSpice\\Hook\\MediaWikiServices\\ResetServices::callback"
+		"MediaWikiServices": "BlueSpice\\Hook\\MediaWikiServices\\ResetServices::callback",
+		"SiteNoticeAfter": "BlueSpice\\Hook\\SiteNoticeAfter\\AddAlerts::callback"
 	},
 	"config_prefix": "bsg",
 	"config": {
