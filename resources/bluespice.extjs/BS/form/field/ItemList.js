@@ -56,7 +56,7 @@ Ext.define('BS.form.field.ItemList', {
 					url: mw.util.wikiScript( 'api' ),
 					reader: {
 						type: 'json',
-						root: 'results'
+						rootProperty: 'results'
 					},
 					extraParams: {
 						action: this.apiStore,
@@ -131,7 +131,7 @@ Ext.define('BS.form.field.ItemList', {
 				type: 'memory',
 				reader: {
 					type: 'json',
-					root: 'items',
+					rootProperty: 'items',
 				}
 			}
 		});

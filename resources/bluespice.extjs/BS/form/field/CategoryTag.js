@@ -36,7 +36,7 @@ Ext.define( 'BS.form.field.CategoryTag', {
 				url: bs.api.makeUrl( 'bs-category-store' ),
 				reader: {
 					type: 'json',
-					root: 'results',
+					rootProperty: 'results',
 					idProperty: 'cat_id'
 				},
 				extraParams: {
@@ -105,10 +105,12 @@ Ext.define( 'BS.form.field.CategoryTag', {
 				height: 300
 			});
 			categoryTree.on( 'itemclick', this.onTreeItemClick, this );
+
 			this.wdTree = new Ext.Window({
+				modal: true,
 				title: mw.message('bs-extjs-categorytree-title').plain(),
-				x: this.getX() + this.getWidth(),
-				y: this.getY() - 175,
+				x: this.getX() + this.getWidth() + 10,
+				y: this.getY() + 50,
 				closeAction: 'hide',
 				items: [
 					categoryTree

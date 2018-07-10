@@ -29,7 +29,7 @@ Ext.define( 'BS.form.UserCombo', {
 					url: mw.util.wikiScript( 'api' ),
 					reader: {
 						type: 'json',
-						root: 'results',
+						rootProperty: 'results',
 						idProperty: 'user_id'
 					},
 					extraParams: this.extraParams
