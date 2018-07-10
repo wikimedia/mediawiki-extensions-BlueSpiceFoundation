@@ -104,4 +104,9 @@ body.x-body {
 
 .bs-form-tree-trigger {
 	background-image: url(images/tree-trigger.png);
+	width: 25px !important;
+}
+
+.bs-form-tree-trigger:hover {
+	background-position-x: 0 !important;
 }

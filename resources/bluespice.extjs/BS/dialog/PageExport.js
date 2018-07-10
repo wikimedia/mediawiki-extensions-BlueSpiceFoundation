@@ -86,7 +86,7 @@ Ext.define( 'BS.dialog.PageExport', {
 				type: 'memory',
 				reader: {
 					type: 'json',
-					root: 'pages'
+					rootProperty: 'pages'
 				}
 			}
 		} );
