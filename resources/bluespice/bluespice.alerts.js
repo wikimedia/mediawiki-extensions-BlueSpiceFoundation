@@ -28,6 +28,14 @@
 		return $box;
 	}
 
+	function _remove( id ) {
+		var $box = _alerts[id];
+		if( $box ) {
+			$box.remove();
+			delete( _alerts[id] );
+		}
+	}
+
 	function _getContainer() {
 		var $container = $( '#bs-alert-container' );
 		return $container;
@@ -46,6 +54,7 @@
 
 	bs.alerts = {
 		add: _add,
+		remove: _remove,
 
 		//Keep in sync with IAlertProvider constants
 		TYPE_SUCCESS: 'success',

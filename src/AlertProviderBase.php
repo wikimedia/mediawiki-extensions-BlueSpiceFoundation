@@ -26,12 +26,20 @@ abstract class AlertProviderBase implements IAlertProvider {
 
 	/**
 	 *
+	 * @var Config
+	 */
+	protected $config = null;
+
+	/**
+	 *
 	 * @param Skin $skin
 	 * @param LoadBalancer $loadBalancer
+	 * @param Config $config
 	 */
-	public function __construct( $skin, $loadBalancer ) {
+	public function __construct( $skin, $loadBalancer, $config ) {
 		$this->skin = $skin;
 		$this->loadBalancer = $loadBalancer;
+		$this->config = $config;
 	}
 
 	/**
@@ -40,8 +48,12 @@ abstract class AlertProviderBase implements IAlertProvider {
 	 * @return IAlertProvider
 	 */
 	public static function factory( $skin ) {
-		$loadBalancer = Services::getInstance()->getDBLoadBalancer();
-		$instance = new static( $skin, $loadBalancer );
+		$services = Services::getInstance();
+
+		$loadBalancer = $services->getDBLoadBalancer();
+		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
+
+		$instance = new static( $skin, $loadBalancer, $config );
 
 		return $instance;
 	}
@@ -60,7 +72,7 @@ abstract class AlertProviderBase implements IAlertProvider {
 	 * @return Config
 	 */
 	protected function getConfig() {
-		return $this->skin->getConfig();
+		return $this->config;
 	}
 
 	/**
