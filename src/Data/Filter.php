@@ -125,10 +125,21 @@ abstract class Filter {
 	}
 
 	/**
+	 * !!TYPO IN FUNCTION NAME
+	 * It is still here because there are a ton
+	 * of usage in other extensions
+	 * @param boolean $applied
+	 * @deprecated
+	 */
+	public function setAppied( $applied = true ) {
+		$this->applied = $applied;
+	}
+
+	/**
 	 *
 	 * @param boolean $applied
 	 */
-	public function setAppied( $applied = true ) {
+	public function setApplied( $applied = true ) {
 		$this->applied = $applied;
 	}
 
