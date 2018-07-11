@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Hook handler base class for MediaWiki hook BeforePageDisplay
+ * Hook handler base class for MediaWiki hook BaseTemplateToolbox
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,42 +19,44 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Peter Boehm <boehm@hallowelt.com>
  * @package    BlueSpiceFoundation
- * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2018 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
+
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
-abstract class BeforePageDisplay extends Hook {
+abstract class BaseTemplateToolbox extends Hook {
 
 	/**
 	 *
-	 * @var \OutputPage
+	 * @var \BaseTemplate
 	 */
-	protected $out = null;
+	protected $baseTemplate = null;
 
 	/**
-	 *
-	 * @var \Skin
+	 * An array of toolbox items
+	 * @var array
 	 */
-	protected $skin = null;
+	protected $toolbox = [];
 
 	/**
 	 *
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param \BaseTemplate $baseTemplate
+	 * @param array $toolbox
 	 * @return boolean
 	 */
-	public static function callback( &$out, &$skin  ) {
+	public static function callback( $baseTemplate, &$toolbox ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$out,
-			$skin
+			$baseTemplate,
+			$toolbox
 		);
 		return $hookHandler->process();
 	}
@@ -62,13 +65,14 @@ abstract class BeforePageDisplay extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param \BaseTemplate $baseTemplate
+	 * @param array $toolbox
 	 */
-	public function __construct( $context, $config, &$out, &$skin ) {
+	public function __construct( $context, $config, $baseTemplate, &$toolbox ) {
 		parent::__construct( $context, $config );
 
-		$this->out =& $out;
-		$this->skin =& $skin;
+		$this->baseTemplate = $baseTemplate;
+		$this->toolbox =& $toolbox;
 	}
+
 }
