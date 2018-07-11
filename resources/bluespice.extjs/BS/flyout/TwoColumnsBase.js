@@ -75,11 +75,7 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 	makeCenterOnePanel: function( items ) {
 		return {
 			region: 'west',
-			responsiveConfig: {
-				'width >= 1024': {
-					width: 350,
-				}
-			},
+			width: '40%',
 			bodyPadding: 5,
 			cls: 'panel-center-one',
 			items: items
