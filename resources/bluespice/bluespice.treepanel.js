@@ -1,6 +1,7 @@
 (function( mw, $, d, undefined ) {
 	$(d).on( 'click', '.bs-treenodeitem', function( e ) {
-		if( e.target.nodeName.toUpperCase() === 'A' ) {
+		var $parentAnchor = $(e.target).parentsUntil( '.bs-treenodeitem', 'a' );
+		if( e.target.nodeName.toUpperCase() === 'A' || $parentAnchor.length !== 0 ) {
 			return; //Don't prevent clicks on anchor elements
 		}
 		if( $(this).hasClass( 'leaf' ) || !$(this).hasClass( 'expandable' ) ) {
