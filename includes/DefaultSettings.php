@@ -256,7 +256,11 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	"searchfiles"=> array(
 		'type' => 'global',
 		'roles' => [ 'admin', 'editor', 'reader' ]
-	)
+	),
+	"protect" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin' ]
+	]
 );
 
 /**
