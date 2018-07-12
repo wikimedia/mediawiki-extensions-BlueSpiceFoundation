@@ -260,6 +260,10 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	"protect" => [
 		"type" => 'namespace',
 		"roles" => [ 'admin' ]
+	],
+	"editprotected" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin' ]
 	]
 );
 
