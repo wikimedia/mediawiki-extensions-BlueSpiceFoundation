@@ -30,6 +30,7 @@
 	"bs-extjs-label-user": "Usuario",
 	"bs-extjs-label-namespace": "Espazo de nomes",
 	"bs-extjs-label-page": "Páxina",
+	"bs-extjs-titlecombo-newpagehint": "A páxina non existe!",
 	"bs-extjs-upload": "Subir",
 	"bs-extjs-browse": "Navegar",
 	"bs-extjs-uploading": "Subindo...",
@@ -56,11 +57,17 @@
 	"bs-extjs-filter-date-before": "Antes",
 	"bs-extjs-filter-date-on": "O",
 	"bs-extjs-filter-date-filter": "Filtro",
+	"bs-extjs-pageexport-dialog-title": "Exportar páxinas",
 	"bs-extjs-pageexport-list-name-label": "Nome da lista",
 	"bs-extjs-pageexport-list-format-label": "Formato da lista",
 	"bs-extjs-pageexport-list-format-plain-label": "Texto sen formato",
 	"bs-extjs-pageexport-list-format-link-label": "Ligazón",
 	"bs-extjs-pageexport-overwrite-label": "Sobrescribir",
 	"bs-extjs-pageexport-general-error": "Erro de exportación",
-	"bs-extjs-pageexport-pagecollection-prefix": "Colección de páxinas"
+	"bs-extjs-pageexport-pagecollection-prefix": "Colección de páxinas",
+	"bs-pagecollection-prefix": "Colección de páxinas",
+	"bs-extjs-tools-trigger-text": "Ferramentas",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturas",
+	"bs-extjs-flyout-tab-grid-label": "Detalles",
+	"bs-extjs-flyout-add-label": "Engadir elemento"
 }

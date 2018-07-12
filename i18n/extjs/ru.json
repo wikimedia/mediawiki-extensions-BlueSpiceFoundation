@@ -12,7 +12,8 @@
 			"Mouse21",
 			"Patrick Star",
 			"Happy13241",
-			"Abiyoyo"
+			"Abiyoyo",
+			"Vlad5250"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -78,5 +79,9 @@
 	"bs-extjs-pageexport-success-text": "Сбор страниц экспортируется в $1",
 	"bs-extjs-pageexport-required-text": "Имя списка не может быть пустым и должно быть выбрано хотя бы одна страница",
 	"bs-extjs-export-search-summary-text": "Создано PageExport",
-	"bs-extjs-pageexport-error-invalid-title": "Недопустимое имя списка."
+	"bs-extjs-pageexport-error-invalid-title": "Недопустимое имя списка.",
+	"bs-extjs-tools-trigger-text": "Инструменты",
+	"bs-extjs-flyout-tab-thumbs-label": "Миниатюры",
+	"bs-extjs-flyout-tab-grid-label": "Детали",
+	"bs-extjs-flyout-add-label": "Добавить объект"
 }

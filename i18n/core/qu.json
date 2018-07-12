@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"AlimanRuna"
+		]
+	},
+	"bs-days-duration": "{{PLURAL:$1|huk p'unchaw|$1 p'unchawkuna}}"
+}
