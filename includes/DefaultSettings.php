@@ -264,7 +264,91 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	"editprotected" => [
 		"type" => 'namespace',
 		"roles" => [ 'admin' ]
-	]
+	],
+	"editsemiprotected" => [
+		"type" => 'namespace',
+		"roles" => ['editor','admin']
+	],
+	"movefile" => [
+		"type" => 'global',
+		"roles" => ['editor', 'admin']
+	],
+	"move-subpages" => [
+		"type" => 'global',
+		"roles" => ['editor', 'admin']
+	],
+	"move-categorypages" => [
+		"type" => 'global',
+		"roles" => ['editor', 'admin']
+	],
+	"reupload" => [
+		"type" => 'global',
+		"roles" => ['editor', 'admin']
+	],
+	"reupload-shared" => [
+		"type" => 'global',
+		"roles" => ['editor', 'admin']
+	],
+	"applychangetags" => [
+		"type" => 'namespace',
+		"roles" => ['editor', 'admin']
+	],
+	"deletedhistory" => [
+		"type" => 'namespace',
+		"roles" => ['admin']
+	],
+	"deletedtext" => [
+		"type" => 'namespace',
+		"roles" => ['admin']
+	],
+	"undelete" => [
+		"type" => 'namespace',
+		"roles" => ['admin']
+	],
+	"mergehistory" => [
+		"type" => 'namespace',
+		"roles" => ['admin']
+	],
+	"rollback" => [
+		"type" => 'global',
+		"roles" => ['admin']
+	],
+	"markbotedits" => [
+		"type" => 'global',
+		"roles" => ['admin']
+	],
+	"patrol" => [
+		"type" => 'namespace',
+		"roles" => ['admin']
+	],
+	"changetags" => [
+		"type" => 'global',
+		"roles" => ['editor', 'admin']
+	],
+	"sendemail-new-users" => [
+		"type" => 'global',
+		"roles" => ['editor', 'admin']
+	],
+	"unwatchedpages" => [
+		"type" => 'global',
+		"roles" => ['admin']
+	],
+	"managechangetags" => [
+		"type" => 'global',
+		"roles" => ['admin']
+	],
+	"nominornewtalk" => [
+		"type" => 'global',
+		"roles" => ['bot']
+	],
+	"noratelimit" => [
+		"type" => 'global',
+		"roles" => ['admin']
+	],
+	"suppressredirect" => [
+		"type" => 'global',
+		"roles" => ['admin', 'bot']
+	],
 );
 
 /**
