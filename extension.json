@@ -105,6 +105,7 @@
 				"bs-extjs-label-user",
 				"bs-extjs-label-namespace",
 				"bs-extjs-label-page",
+				"bs-extjs-label-directsearch",
 				"bs-extjs-titlecombo-newpagehint",
 				"bs-extjs-confirmNavigationTitle",
 				"bs-extjs-confirmNavigationText",
