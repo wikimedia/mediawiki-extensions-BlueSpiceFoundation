@@ -30,4 +30,41 @@ class NullNotification implements INotification {
 			->getBSUtilityFactory()->getMaintenanceUser()->getUser();
 	}
 
+	/**
+	 * Gets configuration for secondary links
+	 * if any exist
+	 *
+	 * @return array
+	 */
+	public function getSecondaryLinks() {
+		return [];
+	}
+
+	/**
+	 * Whether mail for this notification should
+	 * be sent immediately regardless of user settings
+	 *
+	 * @return boolean
+	 */
+	public function sendImmediateEmail() {
+		return false;
+	}
+
+	/**
+	 * Whether job queue should be used
+	 * to send this notification
+	 *
+	 * @return boolean
+	 */
+	public function useJobQueue() {
+		return false;
+	}
+
+	/**
+	 *
+	 * @return \Title|null
+	 */
+	public function getTitle() {
+		return null;
+	}
 }

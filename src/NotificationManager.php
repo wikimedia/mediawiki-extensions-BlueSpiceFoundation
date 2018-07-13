@@ -63,6 +63,21 @@ class NotificationManager {
 	}
 
 	/**
+	 * Registeres notification category
+	 *
+	 * @param string $key
+	 * @param \BlueSpice\INotifier $notifier
+	 * @param array $params
+	 */
+	public function registerNotificationCategory( $key, $params = [], INotifier $notifier = null ) {
+		if( $notifier == null || $notifier instanceof INotifier == false ) {
+			$notifier = $this->notifier;
+		}
+
+		return $notifier->registerNotificationCategory( $key, $params );
+	}
+
+	/**
 	 * Registeres single notification
 	 *
 	 * @param string $key

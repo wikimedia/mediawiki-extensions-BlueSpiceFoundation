@@ -11,6 +11,13 @@ interface INotifier {
 	public function init();
 
 	/**
+	 * @param string $key
+	 * @param array| null $params
+	 * @return mixed
+	 */
+	public function registerNotificationCategory( $key, $params );
+
+	/**
 	 *
 	 * @param string $key
 	 * @param array $params
