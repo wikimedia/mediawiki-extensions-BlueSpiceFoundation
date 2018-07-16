@@ -39,7 +39,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @param BsCore $oCore
 	 */
 	public function setCore( $oCore ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->mCore = $oCore;
 	}
 
@@ -80,7 +80,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @deprecated since version 3.0.0
 	 */
 	public function setup( $sExtName = "", $aConfig = array() ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
 			// Extension credits that will show up on Special:Version
@@ -123,7 +123,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @deprecated since version 3.0.0 - use extension registration instead
 	 */
 	public function setHook( $hook, $method = false, $bExecuteFirst = false ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		global $wgHooks;
 		// handle $method === 'on'.$hook as if $method == false
 		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( $this, $method ) : $this;
@@ -152,7 +152,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @return Extension
 	 */
 	public function setContext( \IContextSource $context ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->context = $context;
 		return $this;
 	}
@@ -167,7 +167,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @return Extension
 	 */
 	public function setConfig( \Config $config ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->config = $config;
 		return $this;
 	}
@@ -210,7 +210,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @return string
 	 */
 	public function getImagePath( $bResources = false ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( $bResources ) {
 			return $this->getResourcePath().'/images/';
 		}
@@ -224,7 +224,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @return string
 	 */
 	public function getCacheKey( $sSubKey = 'default' ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return \BsCacheHelper::getCacheKey(
 			'BlueSpice',
 			$this->getName(),

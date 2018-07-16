@@ -189,7 +189,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Entity
 	 */
 	public static function newFromContent( EntityContent $sContent ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
 			'BSEntityFactory'
 		);
@@ -204,7 +204,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Entity
 	 */
 	public static function newFromObject( $oObject ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
 			'BSEntityFactory'
 		);
@@ -266,7 +266,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Entity | null
 	 */
 	public static function newFromID( $iID, $bForceReload = false ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
 			'BSEntityFactory'
 		);
@@ -282,7 +282,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Entity
 	 */
 	public static function newFromTitle( \Title $oTitle, $bForceReload = false ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityFactory = MediaWikiServices::getInstance()->getService(
 			'BSEntityFactory'
 		);
@@ -480,7 +480,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return int
 	 */
 	public function getID() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return (int) $this->get( static::ATTR_ID, 0 );
 	}
 
@@ -490,7 +490,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return int
 	 */
 	public function getOwnerID() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return (int) $this->get( static::ATTR_OWNER_ID, 0 );
 	}
 
@@ -500,7 +500,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return String
 	 */
 	public function getType() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return $this->get( static::ATTR_TYPE );
 	}
 
@@ -521,7 +521,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Entity
 	 */
 	public function setOwnerID( $iOwnerID ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return $this->set( static::ATTR_OWNER_ID, (int) $iOwnerID );
 	}
 

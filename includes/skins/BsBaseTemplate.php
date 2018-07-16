@@ -684,9 +684,9 @@ class BsBaseTemplate extends BaseTemplate {
 
 	public function printTitleActions() {
 		if ( !empty( $this->data['bs_title_actions'] ) ) {
-			wfDeprecated( "data['bs_title_actions']", "2.27.0" );
+			wfDebugLog( 'bluespice-deprecations', "data['bs_title_actions']", 'private' );
 		}
-		wfDeprecated( __METHOD__, "2.27.0" );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 	}
 
 	public function printExportMenu() {

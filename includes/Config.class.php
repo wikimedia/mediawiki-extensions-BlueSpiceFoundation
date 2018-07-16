@@ -130,7 +130,7 @@ class BsConfig {
 	 *        	The type for the input rendering. I.e.
 	 */
 	public static function registerVar( $path, $default = null, $options = 0, $i18n = '', $sFormFieldMappingName = 'text' ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$var = self::getSettingObject ( $path );
 		$var->setDefault( $default );
 		if ( $options ) {
@@ -151,7 +151,7 @@ class BsConfig {
 	 * @param bool $bFlag
 	 */
 	public static function deliverUsersSettings( $bFlag ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$tmp = self::$prGetUsersSettings;
 		self::$prGetUsersSettings = $bFlag;
 		return $tmp;
@@ -171,7 +171,7 @@ class BsConfig {
 	 * @return bool true if the action was successful
 	 */
 	public static function set( $path, $value, $bUserValue = false ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$oSetting = self::getSettingObject( $path );
 		if ( $bUserValue ) {
 			return $oSetting->_setUserValue( $value );
@@ -188,7 +188,7 @@ class BsConfig {
 	 * @return mixed the value
 	 */
 	public static function get( $sPath ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$mReturn = null;
 		if( !Hooks::run ( "BSCoreConfigGet", array ( $sPath, &$mReturn ) ) ) {
 			return $mReturn;
@@ -214,7 +214,7 @@ class BsConfig {
 	 * @see _add()
 	 */
 	public static function add( $path, $value ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return self::getSettingObject ( $path )->_add ( $value );
 	}
 
@@ -225,7 +225,7 @@ class BsConfig {
 	 * @return array
 	 */
 	public static function getScriptSettings() {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__ );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return self::$prRegisterJavascript;
 	}
 
@@ -276,7 +276,7 @@ class BsConfig {
 	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
 	 */
 	public static function loadSettings() {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__ );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' );
 		$aData = BsCacheHelper::get( $sKey );
 
@@ -310,7 +310,7 @@ class BsConfig {
 	 * @return bool false if an error occurs
 	 */
 	public static function saveSettings() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$dbw = wfGetDB ( DB_MASTER );
 
 		if( !$dbw->tableExists( 'bs_settings' ) ) {
@@ -369,7 +369,7 @@ class BsConfig {
 	 * @return mixed
 	 */
 	public static function getVarForUser( $sKey, $mUser ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$oSettingsObject = self::getSettingObject ( $sKey );
 		if ( is_object ( $mUser ) ) {
 			$oUser = $mUser;
@@ -408,7 +408,7 @@ class BsConfig {
 	 * @return array
 	 */
 	public static function getUsersForVar( $sKey, $vValue, $sSingleValFromMultiple = false, $bSerialized = true ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		global $wgDBtype;
 		$oDb = wfGetDB ( DB_REPLICA );
 		$aUsers = array ();
@@ -452,7 +452,7 @@ class BsConfig {
 	 * @return boolean
 	 */
 	public static function loadUserSettings( $user ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( !is_object( $user ) ) {
 			$user = User::newFromName( $user );
 			if ( !is_object( $user ) ) {
@@ -488,7 +488,7 @@ class BsConfig {
 	 * @return bool returns always true since we save the settings with mediawiki methods
 	 */
 	public static function saveUserSettings( $user ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( ! is_object ( $user ) ) {
 			$user = User::newFromName ( $user );
 		}
@@ -518,7 +518,7 @@ class BsConfig {
 	 * @return array
 	 */
 	public static function getRegisteredVars() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return self::$prSettings;
 	}
 

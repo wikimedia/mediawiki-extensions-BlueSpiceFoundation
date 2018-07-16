@@ -24,7 +24,7 @@ class BsExtensionManager {
 	 * @return array
 	 */
 	public static function getRegisteredExtensions() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$registry = MediaWikiServices::getInstance()->getService(
 			'BSExtensionRegistry'
 		);
@@ -37,7 +37,7 @@ class BsExtensionManager {
 	 * @return Extension[]
 	 */
 	public static function getRunningExtensions() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$factory = MediaWikiServices::getInstance()->getService(
 			'BSExtensionFactory'
 		);
@@ -53,7 +53,7 @@ class BsExtensionManager {
 	 * @return Extension
 	 */
 	public static function getExtension( $name ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$factory = MediaWikiServices::getInstance()->getService(
 			'BSExtensionFactory'
 		);
@@ -73,7 +73,7 @@ class BsExtensionManager {
 	 * @return array
 	 */
 	public static function getExtensionNames() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$registry = MediaWikiServices::getInstance()->getService(
 			'BSExtensionRegistry'
 		);
@@ -87,7 +87,7 @@ class BsExtensionManager {
 	 * @return array
 	 */
 	public static function getExtensionInformation() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$factory = MediaWikiServices::getInstance()->getService(
 			'BSExtensionFactory'
 		);

@@ -50,7 +50,7 @@ class BsUserHelper {
 	 * @return mixed username, else false
 	 */
 	public static function getUserDisplayName( $oUser = null ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return \BlueSpice\Services::getInstance()->getBSUtilityFactory()
 			->getUserHelper( $oUser )->getDisplayName();
 	}

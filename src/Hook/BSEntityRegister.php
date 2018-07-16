@@ -48,7 +48,7 @@ abstract class BSEntityRegister extends Hook {
 	 * @return boolean
 	 */
 	public static function callback( &$entityRegistrations ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

@@ -405,7 +405,7 @@ class BsCore {
 	 * @return bool
 	 */
 	public static function checkAccessAdmission( $sPermission = 'read', $sI18NInstanceKey = 'BlueSpice', $sI18NMessageKey = 'not_allowed', $bSilent = true ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// TODO MRG28072010: isAllowed prüft nicht gegen die Artikel. D.H. die Rechte sind nicht per Namespace überprüfbar
 		$oUser = self::loadCurrentUser();
 		if ( $oUser->isAllowed( $sPermission ) ) {
@@ -438,7 +438,7 @@ class BsCore {
 	 * @return ViewUserMiniProfile A view with the users mini profile
 	 */
 	public function getUserMiniProfile( $oUser, $aParams = array() ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$sParamsHash = md5( serialize( $aParams ) );
 		$sViewHash = $oUser->getName() . $sParamsHash;
 
@@ -491,7 +491,7 @@ class BsCore {
 		}
 		$wgAvailableRights[] = $sPermissionName;
 
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return true;
 	}
 

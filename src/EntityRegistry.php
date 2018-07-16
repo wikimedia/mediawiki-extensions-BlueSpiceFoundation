@@ -117,7 +117,7 @@ class EntityRegistry {
 	 * @return array
 	 */
 	public static function getRegisteredEntities() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
 			'BSEntityRegistry'
 		);
@@ -131,7 +131,7 @@ class EntityRegistry {
 	 * @return bool
 	 */
 	public static function isRegisteredType( $sType ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
 			'BSEntityRegistry'
 		);
@@ -146,7 +146,7 @@ class EntityRegistry {
 	 * @return array
 	 */
 	public static function getRegisteredEntityByType( $sType ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
 			'BSEntityRegistry'
 		);
@@ -159,7 +159,7 @@ class EntityRegistry {
 	 * @return array
 	 */
 	public static function getRegisterdTypeKeys() {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
 			'BSEntityRegistry'
 		);

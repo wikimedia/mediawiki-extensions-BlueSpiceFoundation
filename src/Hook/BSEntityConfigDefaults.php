@@ -48,7 +48,7 @@ abstract class BSEntityConfigDefaults extends Hook {
 	 * @return boolean
 	 */
 	public static function callback( &$defaultSettings ) {
-		wfDeprecated( __METHOD__, '3.0.0' );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
