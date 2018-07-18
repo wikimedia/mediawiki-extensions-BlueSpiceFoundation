@@ -113,11 +113,14 @@ class EntityFactory {
 			return $this->newFromID( $object->id, $entityClass::NS );
 		}
 
-		$oInstance = $this->factory(
+		$instance = $this->factory(
 			$object->type,
 			$object
 		);
-		return $this->appendCache( $oInstance );
+		if( !$instance instanceof Entity ) {
+			return null;
+		}
+		return $this->appendCache( $instance );
 	}
 
 	/**
@@ -167,6 +170,9 @@ class EntityFactory {
 			$data->type,
 			$data
 		);
+		if( !$instance instanceof Entity ) {
+			return null;
+		}
 		return $this->appendCache( $instance );
 	}
 
