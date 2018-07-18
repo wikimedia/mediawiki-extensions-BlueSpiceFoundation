@@ -364,17 +364,15 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Archives the current Entity
+	 * @param \User $oUser
 	 * @return \Status
 	 */
-	public function delete( \User $oUser = null, $aOptions = [] ) {
-		$oTitle = $this->getTitle();
+	public function delete( \User $oUser = null ) {
+		$status = \Status::newGood();
 
-		$oStatus = null;
-		$oWikiPage = \WikiPage::factory( $oTitle );
-
-		\Hooks::run( 'BSEntityDelete', [ $this, $oStatus, $oUser ] );
-		if( $oStatus instanceof \Status && $oStatus->isOK() ) {
-			return $oStatus;
+		\Hooks::run( 'BSEntityDelete', [ $this, $status, $oUser ] );
+		if( !$status->isOK() ) {
+			return $status;
 		}
 		$this->set( static::ATTR_ARCHIVED, true );
 		$this->setUnsavedChanges();
@@ -392,6 +390,36 @@ abstract class Entity implements \JsonSerializable {
 
 		$this->invalidateCache();
 		return $oStatus;
+	}
+
+	/**
+	 * Restores the current Entity from archived state
+	 * @param \User $user
+	 * @return \Status
+	 */
+	public function undelete( \User $user = null ) {
+		$status = \Status::newGood();
+
+		\Hooks::run( 'BSEntityUndelete', [ $this, $status, $user ] );
+		if( !$status->isOK() ) {
+			return $status;
+		}
+		$this->set( static::ATTR_ARCHIVED, false );
+		$this->setUnsavedChanges();
+
+		try {
+			$status = $this->save( $user );
+		} catch( \Exception $e ) {
+			return \Status::newFatal( $e->getMessage() );
+		}
+
+		\Hooks::run( 'BSEntityUndeleteComplete', [ $this, $status, $user ] );
+		if( !$status->isOK() ) {
+			return $status;
+		}
+
+		$this->invalidateCache();
+		return $status;
 	}
 
 	/**
@@ -538,7 +566,7 @@ abstract class Entity implements \JsonSerializable {
 	 */
 	public function setValuesByObject( \stdClass $data ) {
 		if( !empty( $data->{static::ATTR_ARCHIVED} ) ) {
-			$this->set( static::ATTR_ARCHIVED, $data->{static::ATTR_TYPE} );
+			$this->set( static::ATTR_ARCHIVED, $data->{static::ATTR_ARCHIVED} );
 		}
 		if( !empty( $data->{static::ATTR_OWNER_ID} ) ) {
 			$this->set( static::ATTR_OWNER_ID, $data->{static::ATTR_OWNER_ID} );
