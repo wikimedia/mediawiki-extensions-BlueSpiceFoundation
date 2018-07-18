@@ -5,6 +5,7 @@ Ext.define( 'BS.tree.WikiSubPages', {
 	useArrows: true,
 
 	treeRootPath: '',
+	renderLinks: false,
 
 	initComponent: function() {
 		this.store = new Ext.data.TreeStore( {
@@ -24,6 +25,14 @@ Ext.define( 'BS.tree.WikiSubPages', {
 			folderSort: true/*,
 			model: 'BS.model.Title'*/
 		});
+
+		if( this.renderLinks ) {
+			this.columns = [{
+				xtype: 'treecolumn',
+				flex: 1,
+				dataIndex: 'page_link'
+			}];
+		}
 
 		this.callParent( arguments );
 	}
