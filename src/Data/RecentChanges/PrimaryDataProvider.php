@@ -22,10 +22,18 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param \Wikimedia\Rdbms\IDatabase $db
+	 * @var int[]
 	 */
-	public function __construct( $db ) {
+	protected $namespaceWhitelist = [];
+
+	/**
+	 *
+	 * @param \Wikimedia\Rdbms\IDatabase $db
+	 * @param array $namespaceWhitelist
+	 */
+	public function __construct( $db, $namespaceWhitelist = [] ) {
 		$this->db = $db;
+		$this->namespaceWhitelist = $namespaceWhitelist;
 	}
 
 	/**
@@ -33,10 +41,20 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 * @param \BlueSpice\Data\ReaderParams $params
 	 */
 	public function makeData( $params ) {
+		$conds = [];
+
+		if( !empty( $this->namespaceWhitelist ) ) {
+			$conds['rc_namespace'] = $this->namespaceWhitelist;
+		}
+
 		$res = $this->db->select(
 			'recentchanges',
 			'*',
-			[]
+			$conds,
+			__METHOD__,
+			[
+				'ORDER BY' => 'rc_timestamp DESC'
+			]
 		);
 
 		foreach( $res as $row ) {

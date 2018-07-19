@@ -3,11 +3,17 @@
 namespace BlueSpice\Data\RecentChanges;
 
 use \BlueSpice\Data\DatabaseReader;
+use MWNamespace;
 
 class Reader extends DatabaseReader {
 
 	protected function makePrimaryDataProvider( $params ) {
-		return new PrimaryDataProvider( $this->db );
+
+
+		return new PrimaryDataProvider(
+			$this->db,
+			$this->getContentNamespaceIds()
+		);
 	}
 
 	protected function makeSecondaryDataProvider() {
@@ -20,4 +26,18 @@ class Reader extends DatabaseReader {
 	public function getSchema() {
 		return new Schema();
 	}
+
+	protected function getContentNamespaceIds() {
+		$namespaceIds = $this->context->getLanguage()->getNamespaceIds();
+		$contentNamespaceIds = [];
+
+		foreach( $namespaceIds as $namespaceId ) {
+			if( MWNamespace::isContent( $namespaceId ) ) {
+				$contentNamespaceIds[] = $namespaceId;
+			}
+		}
+
+		return $contentNamespaceIds;
+	}
+
 }
