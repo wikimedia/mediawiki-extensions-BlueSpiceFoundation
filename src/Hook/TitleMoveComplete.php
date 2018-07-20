@@ -76,7 +76,7 @@ abstract class TitleMoveComplete extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Context $config
+	 * @param \Config $config
 	 * @param \Title $title
 	 * @param \Title $newTitle
 	 * @param \User $user

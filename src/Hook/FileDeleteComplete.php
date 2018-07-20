@@ -80,7 +80,7 @@ abstract class FileDeleteComplete extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Context $config
+	 * @param \Config $config
 	 * @param \File $file
 	 * @param string $oldimage
 	 * @param \WikiPage $wikipage

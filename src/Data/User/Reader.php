@@ -3,11 +3,12 @@
 namespace BlueSpice\Data\User;
 
 use \BlueSpice\Data\DatabaseReader;
+use \Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {
 	/**
 	 *
-	 * @param \LoadBalancer $loadBalancer
+	 * @param LoadBalancer $loadBalancer
 	 * @param \IContextSource $context
 	 */
 	public function __construct( $loadBalancer, \IContextSource $context = null ) {

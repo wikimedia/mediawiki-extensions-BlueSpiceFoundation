@@ -24,7 +24,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths {
 
 	/**
 	 *
-	 * @param \Context $context
+	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param string $name
 	 */
@@ -36,7 +36,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths {
 
 	/**
 	 *
-	 * @param \Context $context
+	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param string $name
 	 * @return ConfigDefinition

@@ -1,6 +1,5 @@
 <?php
 namespace BlueSpice\Permission\Role;
-use BlueSpice\Permission;
 
 /**
  * Generic class for roles
@@ -38,7 +37,7 @@ class Role implements IRole {
 	 *
 	 * @param string $name
 	 * @param array $permissions
-	 * @return \BlueSpice\Permission\Role
+	 * @return Role
 	 */
 	public static function newFromNameAndPermissions( $name, $permissions = [] ) {
 		return new self( $name, $permissions );
@@ -50,7 +49,7 @@ class Role implements IRole {
 	 *
 	 * @param string $name
 	 * @param array $defaultRoleConfig Array of default permission for roles
-	 * @return \BlueSpice\Permission\Role|null if no default permissions
+	 * @return Role|null if no default permissions
 	 * are set for this role name
 	 */
 	public static function newFromDefaultConfig( $name, $defaultRoleConfig ) {
@@ -62,7 +61,7 @@ class Role implements IRole {
 
 	/**
 	 * Adds single permission to the role
-	 * @param type $sPermission
+	 * @param string $sPermission
 	 */
 	public function addPermission($sPermission) {
 		$this->permissions[] = $sPermission;
@@ -70,7 +69,7 @@ class Role implements IRole {
 
 	/**
 	 * Removes single permission from the role
-	 * @param type $sPermission
+	 * @param string $sPermission
 	 */
 	public function removePermission ( $sPermission ) {
 		if( isset( $this->permissions[ $sPermission] ) ) {

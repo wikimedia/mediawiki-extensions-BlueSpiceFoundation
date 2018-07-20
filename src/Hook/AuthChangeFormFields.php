@@ -77,7 +77,7 @@ abstract class AuthChangeFormFields extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Context $config
+	 * @param \Config $config
 	 * @param array $requests
 	 * @param array $fieldInfo
 	 * @param array $formDescriptor

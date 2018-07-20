@@ -93,7 +93,7 @@ abstract class ArticleDeleteComplete extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Context $config
+	 * @param \Config $config
 	 * @param \WikiPage $wikipage
 	 * @param \User $user
 	 * @param string $reason

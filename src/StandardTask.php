@@ -31,7 +31,7 @@ abstract class StandardTask implements ITask {
 
 	/**
 	 *
-	 * @var \BlueSpice\Notifier
+	 * @var \BlueSpice\INotifier
 	 */
 	protected $notifier = null;
 

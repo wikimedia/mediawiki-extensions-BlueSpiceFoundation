@@ -53,7 +53,7 @@ abstract class UploadComplete extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Context $config
+	 * @param \Config $config
 	 * @param \UploadBase $upload
 	 */
 	public function __construct( $context, $config, &$upload ) {

@@ -103,7 +103,7 @@ abstract class PageContentInsertComplete extends Hook {
 	 * @param string $summary
 	 * @param boolean $isMinor
 	 * @param boolean $isWatch
-	 * @param section $section
+	 * @param int $section
 	 * @param int $flags
 	 * @param \Revision $revision
 	 * @param \Status $status
@@ -133,14 +133,14 @@ abstract class PageContentInsertComplete extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Context $config
+	 * @param \Config $config
 	 * @param \WikiPage $wikipage
 	 * @param \User $user
 	 * @param \Content $content
 	 * @param string $summary
 	 * @param boolean $isMinor
 	 * @param boolean $isWatch
-	 * @param section $section
+	 * @param int $section
 	 * @param int $flags
 	 * @param \Revision $revision
 	 * @param \Status $status
