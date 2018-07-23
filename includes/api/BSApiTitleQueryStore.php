@@ -210,6 +210,9 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		//language.
 		//In means of a "Title" the canonical names would be better, because you
 		//cannot link or access a SpecialPage by its description
+		if ( !in_array( NS_SPECIAL, $aOptions['namespaces'] ) ) {
+			return $aData;
+		}
 		$aSpecialPages = SpecialPageFactory::getNames();
 		$aSPDataSets = array();
 		$aSortHelper = array();
