@@ -185,11 +185,14 @@ abstract class BSApiTasksBase extends BSApiBase {
 	}
 
 	//trigger data update flag after content change over api
-	protected function runUpdates() {
-		if ( $this->isWriteMode() && $this->getTitle()->getNamespace() >= NS_MAIN ) {
-			$oWikiPage = WikiPage::factory( $this->getTitle() );
+	protected function runUpdates( $oTitle = null ) {
+		if( $oTitle === null ) {
+			$oTitle = $this->getTitle();
+		}
+		if ( $this->isWriteMode() && $oTitle->getNamespace() >= NS_MAIN ) {
+			$oWikiPage = WikiPage::factory( $oTitle );
 			if ( $oWikiPage->getContent() != null ) {
-				DataUpdate::runUpdates( $oWikiPage->getContent()->getSecondaryDataUpdates( $this->getTitle() ) );
+				DataUpdate::runUpdates( $oWikiPage->getContent()->getSecondaryDataUpdates( $oTitle ) );
 			}
 		}
 	}
