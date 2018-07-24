@@ -147,6 +147,11 @@ class BsNamespaceHelper {
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */
 	public static function getNamespaceIdsFromAmbiguousCSVString( $sCSV = '' ) {
+		if( !isset( $sCSV ) || !is_string( $sCSV ) ) {
+			throw new \MWException(
+				__CLASS__.":".__METHOD__.' - expects comma seperated string'
+			);
+		}
 		global $wgContLang;
 		$sCSV = trim( $sCSV );
 		$sCSV = mb_strtolower( $sCSV ); // make namespaces case insensitive
