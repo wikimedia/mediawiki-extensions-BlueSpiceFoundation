@@ -4,8 +4,6 @@ use BlueSpice\Services;
 
 class BsCoreHooks {
 
-	protected static $aTaskAPIPermission = array();
-
 	public static function onRegistry(){
 		if ( is_readable( __DIR__ . '/../vendor/autoload.php' ) ) {
 			include_once( __DIR__ . '/../vendor/autoload.php' );
@@ -109,61 +107,8 @@ class BsCoreHooks {
 		$out->addJsConfigVars( 'bsImageExtensions', $aImageExtensions );
 		$out->addJsConfigVars( 'bsIsWindows', wfIsWindows() );
 
-		//provide task permission data for current user to be used in js ui elements, eg show / hide elements
-		//get all registered api modules
-		global $wgAPIModules;
-		foreach( $wgAPIModules as $key => $apiModule ){
-			if( is_subclass_of( $apiModule, 'BSApiTasksBase' ) ){
-				//beautify and js compatible var name
-				$strClassName = preg_replace( array ( '/^bs-/', '/-tasks$/', '/-/' ), array( '', '', '_' ), $key );
-				self::$aTaskAPIPermission[ $strClassName ] = self::addJsConfigVarsUserTaskPermissions( $out, $key );
-			}
-		}
-
 		self::addTestSystem( $out );
 		return true;
-	}
-
-	/**
-	 * create and return array equal to BsApiTasksbase::getRequiredTaskPermissions with boolean params for grant / deny
-	 * @global type $wgAPIModules
-	 * @param OutputPage $out ressource for request objects
-	 * @param string $action api action name
-	 * @return array permission data for requested module or null on error
-	 */
-	public static function addJsConfigVarsUserTaskPermissions( OutputPage &$out, $action ){
-		$config = BlueSpice\Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
-
-		$oRequest = $out->getRequest();
-		$oUser = $out->getUser();
-		if( $oUser->getId() == 0 || !$oUser->isAllowed( 'read' ) || $config->get( 'ReadOnly') !== null ) {
-			return new stdClass(); //do nothing for not logged in user, prevent error with read permission for anon
-		}
-
-		//workaround for internal api call:
-		$params = new DerivativeRequest(
-			$oRequest, // Fallback upon $wgRequest if you can't access context.
-			array(
-				'action' => $action,
-				'task' => 'getUserTaskPermissions',
-				'token' => $oUser->getEditToken()
-			),
-			true // treat this as a POST
-		);
-		$api = new ApiMain(
-		  $params,
-		  true // Enable write.
-		);
-		$api->execute();
-
-		$data = (object)$api->getResult()->getResultData();
-
-		if( $data->success ) {
-			return $data->payload;
-		}else{
-			return new stdClass();
-		}
-
 	}
 
 	/**
@@ -206,18 +151,6 @@ class BsCoreHooks {
 			// true = $sValue
 			$vars['bs'.$oVar->getExtension().$oVar->getName()] = $mValue;
 		}
-
-		//Add js vars with users task permissions if data given from some apitaskbase class
-		//format: "bsTaskAPIPermissions":{
-		//  "interwikilinks":{ //trimmed class name without "bsapitasks" and "manager"
-		//    "editInterWikiLink":true, //aTasks with results from checkTaskPermission()
-		//    "removeInterWikiLink":true //...
-		//  },
-		//  ...
-		//}
-		//example to get value in js (don't forget to catch unavailable values):
-		//mw.config.get('bsTaskAPIPermissions').interwikilinks.editInterWikiLink //true;
-		$vars[ 'bsTaskAPIPermissions' ] = self::$aTaskAPIPermission;
 
 		return true;
 	}

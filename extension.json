@@ -487,7 +487,10 @@
 		],
 		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
 		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",
-		"MakeGlobalVariablesScript": "BsCoreHooks::onMakeGlobalVariablesScript",
+		"MakeGlobalVariablesScript": [
+			"BsCoreHooks::onMakeGlobalVariablesScript",
+			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback"
+		],
 		"LoadExtensionSchemaUpdates": [
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
