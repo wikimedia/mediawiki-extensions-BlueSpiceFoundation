@@ -129,15 +129,19 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Returns the entity store
+	 * @param \IContextSource $context
 	 * @return \BlueSpice\Data\IStore
 	 * @throws \MWException
 	 */
-	protected function getStore() {
+	protected function getStore( \IContextSource $context = null ) {
+		if( !$context ) {
+			$context = \RequestContext::getMain();
+		}
 		$sStoreClass = $this->getConfig()->get( 'StoreClass' );
 		if( !class_exists( $sStoreClass ) ) {
 			throw new \MWException( "Store class '$sStoreClass' not found" );
 		}
-		return new $sStoreClass( \RequestContext::getMain() );
+		return new $sStoreClass( $context );
 	}
 
 	/**
