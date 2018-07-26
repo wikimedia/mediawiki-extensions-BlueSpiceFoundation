@@ -72,7 +72,6 @@ class BsPageContentProvider {
 
 		//Default ParserOptions
 		$this->oParserOptions = ParserOptions::newFromUser( $wgUser );
-		$this->oParserOptions->setEditSection( false ); //Does not work...
 		$this->oParserOptions->setTidy( true );
 		$this->oParserOptions->setRemoveComments( true );
 
