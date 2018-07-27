@@ -91,5 +91,6 @@
 	"bs-graphicallist-action-preview": "Preview",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"prefs-bluespice": "{{int:bs-bluespice}}"
+	"prefs-bluespice": "{{int:bs-bluespice}}",
+	"right-wikiadmin": "Used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration"
 }
