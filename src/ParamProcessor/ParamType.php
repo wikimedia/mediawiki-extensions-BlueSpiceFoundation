@@ -14,4 +14,5 @@ class ParamType {
 	/* BlueSpice */
 	const TITLE_LIST = 'titlelist';
 	const NAMESPACE_LIST = 'namespacelist';
+	const CATEGORY_LIST = 'categorylist';
 }

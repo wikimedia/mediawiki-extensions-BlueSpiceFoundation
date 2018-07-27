@@ -9,9 +9,17 @@ class Registry {
 	protected $permissionConfig = [];
 	protected $permissions = [];
 
-	protected function __construct( $permissionConfigDefault, $permissionConfig ) {
+	/**
+	 * global $wgAvailableRights;
+	 *
+	 * @var type @array
+	 */
+	protected $mwAvailableRights = [];
+
+	protected function __construct( $permissionConfigDefault, $permissionConfig, &$mwAvailableRights ) {
 		$this->permissionConfigDefault = $permissionConfigDefault;
 		$this->permissionConfig = is_array( $permissionConfig ) ? $permissionConfig : [];
+		$this->mwAvailableRights =& $mwAvailableRights;
 		$this->init();
 	}
 
@@ -54,17 +62,18 @@ class Registry {
 	 *
 	 * @param array $defaultPermissionConfig
 	 * @param array $permissionConfig
+	 * @param array $mwAvailableRights
 	 * @return type
 	 */
-	public static function getInstance( $defaultPermissionConfig, $permissionConfig ) {
+	public static function getInstance( $defaultPermissionConfig, $permissionConfig, &$mwAvailableRights ) {
 		if( self::$instance === null ) {
-			self::$instance = self::newInstance( $defaultPermissionConfig, $permissionConfig );
+			self::$instance = self::newInstance( $defaultPermissionConfig, $permissionConfig, $mwAvailableRights );
 		}
 		return self::$instance;
 	}
 
-	protected static function newInstance( $defaultPermissionConfig, $permissionConfig ) {
-		return new static( $defaultPermissionConfig, $permissionConfig );
+	protected static function newInstance( $defaultPermissionConfig, $permissionConfig, &$mwAvailableRights ) {
+		return new static( $defaultPermissionConfig, $permissionConfig, $mwAvailableRights );
 	}
 
 	/**
@@ -74,6 +83,9 @@ class Registry {
 	 * @param \BlueSpice\Permission\IDescription $description
 	 */
 	public function addPermission( $name, IDescription $description ) {
+		if( in_array( $name, $this->mwAvailableRights ) === false ) {
+			$this->mwAvailableRights[] = $name;
+		}
 		$this->permissions[ $name ] = $description;
 	}
 

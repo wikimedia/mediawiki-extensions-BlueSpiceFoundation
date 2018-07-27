@@ -47,6 +47,10 @@ class BsCoreHooks {
 			'namespacelist' => array(
 				'definition' => 'BSNamespaceListParam',
 				'string-parser' => 'BSNamespaceParser'
+			),
+			'categorylist' => array(
+				'definition' => 'BSCategoryListParam',
+				'string-parser' => 'BSCategoryParser'
 			)
 		);
 

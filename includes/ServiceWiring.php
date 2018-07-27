@@ -80,7 +80,8 @@ return [
 	'BSPermissionRegistry' => function( MediaWikiServices $services ) {
 		return \BlueSpice\Permission\Registry::getInstance(
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
-			$GLOBALS[ 'bsgPermissionConfig' ]
+			$GLOBALS[ 'bsgPermissionConfig' ],
+			$GLOBALS[ 'wgAvailableRights' ]
 		);
 	},
 

@@ -83,6 +83,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Namespace not allowed: $1",
 	"bs-validator-error-title-does-not-exist": "Page does not exist: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Page not allowed: $1",
+	"bs-parser-error-invalid-category-title": "Page is not a valid category: $1",
 	"bs-exttype-bluespice": "BlueSpice extensions",
 	"bs-export-menu-print-text": "Print",
 	"bs-export-menu-print-title": "Displays printable version of the page",
@@ -93,5 +94,13 @@
 	"bs-bluespice": "BlueSpice",
 	"prefs-bluespice": "{{int:bs-bluespice}}",
 	"right-wikiadmin": "Used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration",
-	"bs-notifications-agent-anon": "anonymous user"
+	"bs-notifications-agent-anon": "anonymous user",
+	"right-create": "Allows creating pages",
+	"right-passwordreset": "Allows resetting passwords",
+	"right-skipcaptcha": "Allows skipping captcha",
+	"right-renameuser": "Allows renaming users",
+	"right-viewfiles": "Allows viewing files",
+	"right-searchfiles": "Allows searching files",
+	"right-sendemail-new-users": "Allows new users to send emails",
+	"right-edit": "Allows editing pages"
 }

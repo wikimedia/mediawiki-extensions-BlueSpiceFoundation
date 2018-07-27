@@ -88,6 +88,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Error message in case a given namespace id is on the blacklist.\n\nParameters:\n* $1 - the namespace id",
 	"bs-validator-error-title-does-not-exist": "Error message in case a given Title object does not exist.\n\nParameters:\n* $1 - the prefixed text of the Title",
 	"bs-validator-error-title-namespace-on-blacklist": "Error message in case the namespace of a given Title object is on the blacklist.\n\nParameters:\n* $1 - the prefixed text of the Title",
+	"bs-parser-error-invalid-category-title": "Error message in case given page title is not a valid category Title. \n\nParameters:\n* $1 - page title to create category Title object from",
 	"bs-exttype-bluespice": "This is the name of the extension group on [[Special:Version]].",
 	"bs-export-menu-print-text": "Anchor alternative text for print.\n{{Identical|Print}}",
 	"bs-export-menu-print-title": "Tooltip for the button to display printable version of the page.",
@@ -98,5 +99,13 @@
 	"bs-bluespice": "Name of the BlueSpice Mediawiki distribution (short)\n{{Identical|BlueSpice}}",
 	"prefs-bluespice": "{{optional}}\nUsed in [[Special:Preferences]], tab \"BlueSpice\"\n\nRefers to {{msg-mw|Bs-bluespice}}",
 	"right-wikiadmin": "Special permission used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration etc...\nShould only be given to the \"sysop\" group.\n{{doc-right|wikiadmin}}",
-	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous"
+	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous",
+	"right-create": "Message for create right",
+	"right-passwordreset": "Message for passwordreset right",
+	"right-skipcaptcha": "Message for skipcaptcha right",
+	"right-renameuser": "Message for renameuser right",
+	"right-viewfiles": "Message for viewfiles right",
+	"right-searchfiles": "Message for searchfiles right",
+	"right-sendemail-new-users": "Message for sendemail-new-users right",
+	"right-edit": "Description of edit right"
 }
