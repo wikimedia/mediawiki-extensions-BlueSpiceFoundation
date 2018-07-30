@@ -2,8 +2,11 @@
 
 namespace BlueSpice\DynamicFileDispatcher;
 
+use BlueSpice\Services;
+
 class ArticlePreviewImage extends Module {
 	const TITLETEXT = 'titletext';
+	const REVISION = 'revid';
 	const WIDTH = 'width';
 	const HEIGHT = 'height';
 
@@ -12,6 +15,10 @@ class ArticlePreviewImage extends Module {
 			static::TITLETEXT => [
 				Params::PARAM_TYPE => Params::TYPE_STRING,
 				Params::PARAM_DEFAULT => '',
+			],
+			static::REVISION => [
+				Params::PARAM_TYPE => Params::TYPE_INT,
+				Params::PARAM_DEFAULT => 0, //TODO: config
 			],
 			static::WIDTH => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
@@ -35,15 +42,36 @@ class ArticlePreviewImage extends Module {
 				"Invalid titletext: {$this->params[static::TITLETEXT]}"
 			);
 		}
+		if( !empty( $this->params[static::REVISION] ) ) {
+			$store = Services::getInstance()->getRevisionStore();
+			$revision = $store->getRevisionById(
+				$this->params[static::REVISION]
+			);
+			if( !$revision ) {
+				throw new \MWException(
+					"Invalid revid: {$this->params[static::REVISION]}"
+				);
+			}
+		} else {
+			$this->params[static::REVISION] = 0;
+		}
 	}
 
 	/**
 	 * @return File
 	 */
 	public function getFile() {
+		$revision = null;
+		if( $this->params[static::REVISION] > 0 ) {
+			$store = Services::getInstance()->getRevisionStore();
+			$revision = $store->getRevisionById(
+				$this->params[static::REVISION]
+			);
+		}
 		return new \BlueSpice\DynamicFileDispatcher\ArticlePreviewImage\Image(
 			$this,
-			\Title::newFromText( $this->params[static::TITLETEXT] )
+			\Title::newFromText( $this->params[static::TITLETEXT] ),
+			$revision
 		);
 	}
 }

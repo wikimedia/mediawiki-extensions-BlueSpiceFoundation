@@ -403,4 +403,12 @@ class ServicesDecorator extends ServiceContainer {
 		return $this->decoratedServices->getService( 'ExternalStoreFactory' );
 	}
 
+	/**
+	 * @since 1.31
+	 * @return \MediaWiki\Storage\RevisionStore
+	 */
+	public function getRevisionStore() {
+		return $this->decoratedServices->getService( 'RevisionStore' );
+	}
+
 }
