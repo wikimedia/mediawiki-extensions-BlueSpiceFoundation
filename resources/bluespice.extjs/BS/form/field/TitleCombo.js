@@ -64,7 +64,7 @@ Ext.define('BS.form.field.TitleCombo', {
 		}
 	},
 
-	excludeIds: [],
+	excludeIds: false,
 
 	constructor: function( conf ) {
 		//May not be overridden
@@ -84,14 +84,20 @@ Ext.define('BS.form.field.TitleCombo', {
 	},
 
 	makeStore: function() {
+		var namespaces = mw.config.get( 'bsgTitleComboDefaultNamespaces', [] );
+		if( this.excludeIds !== false  ) {
+			namespaces = bs.ns.filter.allBut( this.excludeIds );
+		}
+		var options = {
+			returnQuery: true,
+			namespaces : namespaces
+		};
+
 		var store = new BS.store.BSApi({
 			apiAction: 'bs-titlequery-store',
 			proxy: {
 				extraParams: {
-					options: Ext.encode({
-						namespaces: bs.ns.filter.allBut( this.excludeIds ),
-						returnQuery: true
-					})
+					options: Ext.encode( options )
 				}
 			},
 			model: 'BS.model.Title',

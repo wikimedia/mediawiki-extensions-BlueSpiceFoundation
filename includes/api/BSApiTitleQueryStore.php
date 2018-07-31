@@ -17,12 +17,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		$aOptions = $this->getParameter( 'options' ) + array(
 			'limit' => 100,
 			'namespaces' => array(),
-			'returnQuery' => false,
-			'returnTypes' => array(
-				'wikipage',
-				#'specialpage',
-				#'namespace'
-			)
+			'returnQuery' => false
 		);
 
 		$sNormQuery = strtolower( $sQuery );
@@ -42,9 +37,9 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		if( empty( $aOptions['namespaces'] ) ) {
 			//Search in all namespaces by default
 			$aOptions['namespaces'] = $wgContLang->getNamespaceIds();
-			if( !in_array( 0, $aOptions['namespaces'] ) ) {
+			if( !in_array( NS_MAIN, $aOptions['namespaces'] ) ) {
 				//Add main namespace!
-				$aOptions['namespaces'][] = 0;
+				$aOptions['namespaces'][] = NS_MAIN;
 			}
 		} else {
 			//validate user input
