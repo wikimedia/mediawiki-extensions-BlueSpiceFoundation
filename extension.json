@@ -3,9 +3,9 @@
 	"license-name": "GPL-3.0-only",
 	"version": "3.0.0-beta",
 	"author": [
-		"[http://www.hallowelt.com Hallo Welt! GmbH]"
+		"[https://www.hallowelt.com Hallo Welt! GmbH]"
 	],
-	"url": "http://bluespice.com",
+	"url": "https://bluespice.com",
 	"descriptionmsg": "bluespicefoundation-desc",
 	"type": "bluespice",
 	"requires": {
@@ -542,10 +542,10 @@
 				"version": "3.0.0-beta",
 				"status": "stable",
 				"package": "BlueSpice Free",
-				"url": "http://bluespice.com",
+				"url": "https://bluespice.com",
 				"desc": "Makes MediaWiki enterprise ready.",
 				"author": [
-					"[http://www.hallowelt.com Hallo Welt! GmbH]"
+					"[https://www.hallowelt.com Hallo Welt! GmbH]"
 				]
 			}
 		},
