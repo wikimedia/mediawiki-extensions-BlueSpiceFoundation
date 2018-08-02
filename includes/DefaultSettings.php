@@ -217,10 +217,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 		'type' => 'global',
 		'roles' => [ 'admin' ]
 	),
-	"passwordreset" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
 	"sendemail" => array(
 		'type' => 'global',
 		'roles' => [ 'admin', 'editor' ]
@@ -240,22 +236,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 	"writeapi" => array(
 		'type' => 'global',
 		'roles' => [ 'admin', 'reader', 'editor' ]
-	),
-	"skipcaptcha" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"renameuser" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"viewfiles" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor', 'reader' ]
-	),
-	"searchfiles"=> array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor', 'reader' ]
 	),
 	"protect" => [
 		"type" => 'namespace',
@@ -322,10 +302,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
 		"roles" => ['admin']
 	],
 	"changetags" => [
-		"type" => 'global',
-		"roles" => ['editor', 'admin']
-	],
-	"sendemail-new-users" => [
 		"type" => 'global',
 		"roles" => ['editor', 'admin']
 	],

@@ -99,13 +99,5 @@
 	"bs-bluespice": "Name of the BlueSpice Mediawiki distribution (short)\n{{Identical|BlueSpice}}",
 	"prefs-bluespice": "{{optional}}\nUsed in [[Special:Preferences]], tab \"BlueSpice\"\n\nRefers to {{msg-mw|Bs-bluespice}}",
 	"right-wikiadmin": "Special permission used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration etc...\nShould only be given to the \"sysop\" group.\n{{doc-right|wikiadmin}}",
-	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous",
-	"right-create": "Message for create right",
-	"right-passwordreset": "Message for passwordreset right",
-	"right-skipcaptcha": "Message for skipcaptcha right",
-	"right-renameuser": "Message for renameuser right",
-	"right-viewfiles": "Message for viewfiles right",
-	"right-searchfiles": "Message for searchfiles right",
-	"right-sendemail-new-users": "Message for sendemail-new-users right",
-	"right-edit": "Description of edit right"
+	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous"
 }
