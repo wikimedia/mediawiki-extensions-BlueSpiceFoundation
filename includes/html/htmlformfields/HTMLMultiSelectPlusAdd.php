@@ -6,6 +6,23 @@
  * @author Sebastian Ulbricht <x_lilu_x@gmx.de>
  */
 class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
+	protected $allowAdditions = true;
+
+	function validate( $value, $alldata ) {
+		if( !is_array( $value ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public function getOOUIAttributes() {
+		$attr = parent::getOOUIAttributes();
+
+		$attr['allowArbitrary'] = true;
+
+		return $attr;
+	}
 
 	function getInputHTML( $value ) {
 		$html = $this->formatOptions( $this->mParams['options'], $value, 'multiselectplusadd' );
