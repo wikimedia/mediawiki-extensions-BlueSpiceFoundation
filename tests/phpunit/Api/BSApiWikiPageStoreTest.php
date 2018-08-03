@@ -6,6 +6,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
 use BlueSpice\Tests\BSPageFixturesProvider;
 
 /**
+ * @group Broken
  * @group medium
  * @group api
  * @group BlueSpice
