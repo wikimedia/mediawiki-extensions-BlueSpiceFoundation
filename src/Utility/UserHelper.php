@@ -13,7 +13,7 @@ class UserHelper {
 
 	/**
 	 *
-	 * @param \User $user
+	 * @param \User|null $user
 	 * @return UserHelper
 	 * @throws \MWException
 	 */

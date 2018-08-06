@@ -28,7 +28,7 @@ class Record implements IRecord, \JsonSerializable {
 	/**
 	 *
 	 * @param string $fieldName
-	 * @param mixed $default
+	 * @param mixed|null $default
 	 * @return mixed
 	 */
 	public function get( $fieldName, $default = null ) {

@@ -97,7 +97,7 @@ abstract class Entity implements \JsonSerializable {
 	/**
 	 * Returns an entity's attributes or the given default, if not set
 	 * @param string $attrName
-	 * @param mixed $default
+	 * @param mixed|null $default
 	 * @return mixed
 	 */
 	public function get( $attrName, $default = null ) {
@@ -129,7 +129,7 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Returns the entity store
-	 * @param \IContextSource $context
+	 * @param \IContextSource|null $context
 	 * @return \BlueSpice\Data\IStore
 	 * @throws \MWException
 	 */
@@ -368,7 +368,7 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Archives the current Entity
-	 * @param \User $oUser
+	 * @param \User|null $oUser
 	 * @return \Status
 	 */
 	public function delete( \User $oUser = null ) {
@@ -398,7 +398,7 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 * Restores the current Entity from archived state
-	 * @param \User $user
+	 * @param \User|null $user
 	 * @return \Status
 	 */
 	public function undelete( \User $user = null ) {
@@ -461,7 +461,7 @@ abstract class Entity implements \JsonSerializable {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param \IContextSource|null $context
 	 * @return Renderer
 	 */
 	public function getRenderer( \IContextSource $context = null ) {
@@ -610,7 +610,7 @@ abstract class Entity implements \JsonSerializable {
 	 * invalidation, not whenever the db feels 'idle'
 	 * Updates page_touched for this page; called from LinksUpdate.php
 	 *
-	 * @param string $purgeTime [optional] TS_MW timestamp
+	 * @param string|null $purgeTime [optional] TS_MW timestamp
 	 * @return bool True if the update succeeded
 	 */
 	protected function invalidateTitleCache( $purgeTime = null ) {

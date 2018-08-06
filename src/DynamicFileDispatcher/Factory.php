@@ -18,7 +18,7 @@ class Factory {
 	/**
 	 *
 	 * @param Params $params
-	 * @param \IContextSource $context
+	 * @param \IContextSource|null $context
 	 * @param boolean $secure - set to false when internal use, to improve
 	 * performance
 	 * @return Module

@@ -50,7 +50,7 @@ class UtilityFactory {
 	/**
 	 *
 	 * @param array $params
-	 * @params \Title $default
+	 * @params \Title|null $default
 	 * @return \BlueSpice\Utility\TitleParamsResolver
 	 */
 	public function getTitleParamsResolver( $params, $default = null ) {
@@ -69,7 +69,7 @@ class UtilityFactory {
 	}
 
 	/**
-	 * @param \User $user
+	 * @param \User|null $user
 	 * @return \BlueSpice\Utility\UserHelper
 	 */
 	public function getUserHelper( $user = null ) {

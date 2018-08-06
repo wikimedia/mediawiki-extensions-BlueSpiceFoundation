@@ -15,7 +15,7 @@ abstract class BSSkinTreeNavigation {
 	/**
 	 *
 	 * @param BaseTemplate $template
-	 * @param DOMElement $domElement
+	 * @param DOMElement|null $domElement
 	 * @param int $indent
 	 */
 	public function __construct( BaseTemplate $template, DOMElement $domElement = null, $indent = 0 ) {

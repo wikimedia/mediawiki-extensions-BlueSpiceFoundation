@@ -183,7 +183,7 @@ class BsLinkProvider {
 	/**
 	 * Provides a linker link
 	 * @param Title $oTitle
-	 * @param String $sHtml
+	 * @param String|null $sHtml
 	 * @param Array $aCustomAttribs
 	 * @param Array $aQuery
 	 * @param Array $aOptions

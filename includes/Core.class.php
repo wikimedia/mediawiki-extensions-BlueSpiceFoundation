@@ -262,9 +262,10 @@ class BsCore {
 	 * method, use this interface to sanitize an array. For security reasons it
 	 * is strongly recommended to use this method!
 	 * @param array $array The array that has to be sanitized.
-	 * @param array $default A default array that gets returned, if the
+	 * @param string $key
+	 * @param array|null $default A default array that gets returned, if the
 	 * submitted array is not valid or does not match the requested BsPARAMTYPE.
-	 * @param BsPARAMTYPE $options Sets the type of the expected return value.
+	 * @param BsPARAMTYPE|null $options Sets the type of the expected return value.
 	 * This information is used for proper sanitizing.
 	 * @return array Depending on the BsPARAMTYPE sumbitted in $options the
 	 * sanitized $array or in case of invalidity of $array, the $default
@@ -340,7 +341,7 @@ class BsCore {
 	 * @param string $sText WikiText
 	 * @param Title $oTitle
 	 * @param bool $nocache DISFUNCTIONAL and therefore DEPRECATED. There is no chaching anyway.
-	 * @param bool $numberheadings
+	 * @param bool|null $numberheadings
 	 * @return string The HTML result
 	 */
 	public function parseWikiText( $sText, $oTitle, $nocache = false, $numberheadings = null ) {

@@ -87,7 +87,7 @@ class EntityFactory {
 
 	/**
 	 * Get Entity by Json Object
-	 * @param Object $object
+	 * @param Object|null $object
 	 * @return Entity | null
 	 */
 	public function newFromObject( \stdClass $object = null ) {
@@ -178,7 +178,7 @@ class EntityFactory {
 
 	/**
 	 * Main method for getting a Entity from a Title
-	 * @param \Title $title
+	 * @param \Title|null $title
 	 * @param boolean $reload
 	 * @return Entity | null
 	 */

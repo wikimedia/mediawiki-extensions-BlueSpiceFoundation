@@ -17,9 +17,9 @@ class BsValidatorResponse {
 
 	/**
 	 * @param int $errorcode HAS TO BE (int) '0' if no error occurred
-	 * @param string $sI18NInstanceName Name of BsI18N-Instance in Blue spice's mechanism for internationalization, where message translation can be found
-	 * @param string $sI18NMessageKey key for BsI18N translation of error
-	 * @param mixed $vI18NTokens spoken-word-params for BsI18N, can be single string or array with numeric keys
+	 * @param string|null $sI18NInstanceName Name of BsI18N-Instance in Blue spice's mechanism for internationalization, where message translation can be found
+	 * @param string|null $sI18NMessageKey key for BsI18N translation of error
+	 * @param mixed|null $vI18NTokens spoken-word-params for BsI18N, can be single string or array with numeric keys
 	 */
 	public function __construct( $errorcode, $sI18NInstanceName = null, $sI18NMessageKey = null, $vI18NTokens = null ) {
 		$this->mErrorcode = $errorcode;

@@ -29,7 +29,7 @@ class MaintenanceUser {
 
 	/**
 	 *
-	 * @param \User $user
+	 * @param \User|null $user
 	 * @return boolean
 	 */
 	public function isMaintenanceUser( \User $user = null ) {

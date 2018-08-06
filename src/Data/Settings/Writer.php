@@ -9,7 +9,7 @@ class Writer extends \BlueSpice\Data\DatabaseWriter {
 	 *
 	 * @param \BlueSpice\Data\IReader $reader
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
-	 * @param \IContextSource $context
+	 * @param \IContextSource|null $context
 	 */
 	public function __construct( \BlueSpice\Data\IReader $reader, $loadBalancer, \IContextSource $context = null ) {
 		parent::__construct( $reader, $loadBalancer, $context, $context->getConfig() );

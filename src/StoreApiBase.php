@@ -65,7 +65,7 @@ abstract class StoreApiBase extends \BSApiBase {
 	 * Creates a proper output format based on the class's properties
 	 * @param \BlueSpice\Data\ResultSet $resultSet Holds the records as an
 	 * array of plain old data objects
-	 * @param \BlueSpice\Data\Schema $schema An array of meta data items
+	 * @param \BlueSpice\Data\Schema|null $schema An array of meta data items
 	 */
 	protected function returnData( $resultSet, $schema = null ) {
 		\Hooks::run( 'BSApiStoreBaseBeforeReturnData', array( $this, &$resultSet, &$schema ) );

@@ -25,8 +25,8 @@ abstract class DatabaseWriter extends Writer {
 	 *
 	 * @param IReader $reader
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
-	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param \IContextSource|null $context
+	 * @param \Config|null $config
 	 */
 	public function __construct( IReader $reader, $loadBalancer, \IContextSource $context = null, \Config $config = null ) {
 		parent::__construct( $context, $config );

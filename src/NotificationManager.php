@@ -66,8 +66,8 @@ class NotificationManager {
 	 * Registeres notification category
 	 *
 	 * @param string $key
-	 * @param \BlueSpice\INotifier $notifier
 	 * @param array $params
+	 * @param \BlueSpice\INotifier|null $notifier
 	 */
 	public function registerNotificationCategory( $key, $params = [], INotifier $notifier = null ) {
 		if( $notifier == null || $notifier instanceof INotifier == false ) {
@@ -81,8 +81,8 @@ class NotificationManager {
 	 * Registeres single notification
 	 *
 	 * @param string $key
-	 * @param \BlueSpice\INotifier $notifier
 	 * @param array $params
+	 * @param \BlueSpice\INotifier|null $notifier
 	 */
 	public function registerNotification( $key, $params, INotifier $notifier = null ) {
 		if( $notifier == null || $notifier instanceof INotifier == false ) {
@@ -97,7 +97,7 @@ class NotificationManager {
 	 * Un-registeres single notification
 	 *
 	 * @param string $key
-	 * @param \BlueSpice\INotifier $notifier
+	 * @param \BlueSpice\INotifier|null $notifier
 	 */
 	public function unRegisterNotification( $key, $notifier = null ) {
 		if( $notifier == null || $notifier instanceof INotifier == false ) {

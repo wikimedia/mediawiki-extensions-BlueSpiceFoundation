@@ -46,9 +46,9 @@ abstract class StandardTask implements ITask {
 	 * @param stdClass $taskData
 	 * @param \IContextSource $context
 	 * @param Data\IStore $dataStore
-	 * @param ActionLogger $actionLogger
-	 * @param Notifier $notifier
-	 * @param \Psr\Log\LoggerInterface $logger
+	 * @param ActionLogger|null $actionLogger
+	 * @param Notifier|null $notifier
+	 * @param \Psr\Log\LoggerInterface|null $logger
 	 */
 	public function __construct( $taskData, $context, $dataStore, $actionLogger = null, $notifier = null, $logger = null ) {
 		$this->taskData = $taskData;

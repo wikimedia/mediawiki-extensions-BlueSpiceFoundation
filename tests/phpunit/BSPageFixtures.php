@@ -10,7 +10,7 @@ class BSPageFixtures {
 	/**
 	 *
 	 * @param BSApiTestCase $testcase
-	 * @param BSFixturesProvider $provider
+	 * @param BSFixturesProvider|null $provider
 	 */
 	public function __construct( $testcase, $provider = null ) {
 		if( $provider === null ) {

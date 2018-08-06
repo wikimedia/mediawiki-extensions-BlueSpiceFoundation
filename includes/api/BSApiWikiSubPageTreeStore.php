@@ -145,7 +145,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 *
 	 * @param stdClass[] $aDataSets
 	 * @param stdClass $row
-	 * @param Title $oParent
+	 * @param Title|null $oParent
 	 * @return void
 	 */
 	protected function addDataSet( &$aDataSets, $row, $oParent = null ) {

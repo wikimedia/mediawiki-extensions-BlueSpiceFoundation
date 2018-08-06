@@ -19,7 +19,7 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 	/**
 	 *
 	 * @param string $attribName
-	 * @param \ExtensionRegistry $extensionRegistry
+	 * @param \ExtensionRegistry|null $extensionRegistry
 	 */
 	public function __construct( $attribName, $extensionRegistry = null ) {
 		$this->attribName = $attribName;

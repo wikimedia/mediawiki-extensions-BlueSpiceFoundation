@@ -13,7 +13,7 @@ class RequestParams extends Params {
 	/**
 	 *
 	 * @param array $params
-	 * @param \WebRequest $request
+	 * @param \WebRequest|null $request
 	 */
 	public function __construct( array $params = [], \WebRequest $request = null ) {
 		parent::__construct( $params );

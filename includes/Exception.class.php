@@ -29,7 +29,7 @@ class BsException extends Exception {
 	 * Extended constructor mehtod of the BsException class.
 	 * @param String $sMessage The literal message fore the exception, or a I18N key for the provided I18N repository object
 	 * @param Integer $iCode Classic errorcode
-	 * @param Exception $oPreviousException For use in a chain of try-catch blocks.
+	 * @param Exception|null $oPreviousException For use in a chain of try-catch blocks.
 	 */
 	public function __construct( $sMessage = '', $iCode = 0, Exception $oPreviousException = null ) {
 		$this->sMessage = $sMessage;

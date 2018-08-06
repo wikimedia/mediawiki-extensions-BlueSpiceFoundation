@@ -30,7 +30,7 @@ class UrlBuilder {
 	/**
 	 * Returns the relative url to a dynamic file
 	 * @param Params $params
-	 * @param \IContextSource $context
+	 * @param \IContextSource|null $context
 	 * @return string
 	 */
 	public function build( Params $params, \IContextSource $context = null ) {

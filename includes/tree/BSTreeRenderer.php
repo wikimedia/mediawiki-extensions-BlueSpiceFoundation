@@ -25,7 +25,7 @@ class BSTreeRenderer {
 	/**
 	 *
 	 * @param BSTreeNode $root
-	 * @param Config $config
+	 * @param Config|null $config
 	 */
 	public function __construct( $root, $config = null ) {
 		$this->root = $root;

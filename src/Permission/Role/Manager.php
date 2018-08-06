@@ -167,7 +167,7 @@ class Manager {
 	 * @param bool $assignToSysop
 	 * If false, and no groups are passed,
 	 * role will not be assigned to sysop
-	 * @param BlueSpice\Permission\Role\IRole $roleObject
+	 * @param BlueSpice\Permission\Role\IRole|null $roleObject
 	 * Enables extensions to register custom role objects
 	 */
 	public function registerRole( $roleName, $permissions = [], $groups = [], $assignToSysop = false, $roleObject = null ) {

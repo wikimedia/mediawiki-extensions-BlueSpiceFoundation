@@ -7,7 +7,7 @@ interface IRecord {
 	/**
 	 *
 	 * @param string $fieldName
-	 * @param mixed $default
+	 * @param mixed|null $default
 	 */
 	public function get( $fieldName, $default = null );
 

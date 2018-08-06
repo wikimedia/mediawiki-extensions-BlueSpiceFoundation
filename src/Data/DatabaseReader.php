@@ -13,8 +13,8 @@ abstract class DatabaseReader extends Reader {
 	/**
 	 *
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
-	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param \IContextSource|null $context
+	 * @param \Config|null $config
 	 */
 	public function __construct( $loadBalancer, \IContextSource $context = null, \Config $config = null ) {
 		parent::__construct( $context, $config );

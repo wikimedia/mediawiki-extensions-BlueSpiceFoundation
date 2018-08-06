@@ -57,7 +57,7 @@ abstract class Renderer implements IRenderer {
 	 * Constructor
 	 * @param \Config $config
 	 * @param Params $params
-	 * @param LinkRenderer $linkRenderer
+	 * @param LinkRenderer|null $linkRenderer
 	 */
 	public function __construct( \Config $config, Params $params, LinkRenderer $linkRenderer = null ) {
 		$this->config = $config;

@@ -20,8 +20,8 @@ abstract class Reader implements IReader {
 
 	/**
 	 *
-	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param \IContextSource|null $context
+	 * @param \Config|null $config
 	 */
 	public function __construct( \IContextSource $context = null, \Config $config = null ) {
 		$this->context = $context;

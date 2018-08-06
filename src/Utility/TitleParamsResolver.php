@@ -50,7 +50,7 @@ class TitleParamsResolver {
 	/**
 	 *
 	 * @param array $params
-	 * @params \Title $default
+	 * @params \Title|null $default
 	 */
 	public function __construct( $params, $default = null ) {
 		$this->params = $params;
