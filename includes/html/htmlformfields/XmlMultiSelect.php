@@ -3,7 +3,7 @@
 class XmlMultiSelect extends XmlSelect {
 
 	public function addOption( $name, $value = false ) {
-		global $wgVersion;
+
 		$value = ( $value !== false ) ? $value : $name;
 
 		$this->options[] = array($name => $value);

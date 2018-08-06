@@ -228,7 +228,6 @@ class BsPageContentProvider {
 	 * @global WebRequest $wgRequest
 	 * @global User $wgUser
 	 * @global OutputPage $wgOut
-	 * @global string $wgVersion
 	 */
 	public function getHTMLContentFor( $oTitle, $aParams = array() ){
 		global $wgRequest, $wgUser, $wgOut;
@@ -453,13 +452,12 @@ class BsPageContentProvider {
 	 * @global Parser $wgParser
 	 * @global OutputPage $wgOut
 	 * @global Title $wgTitle
-	 * @global string $wgVersion
 	 * @global WebRequest $wgRequest
 	 * @param Title $oTitle
 	 * @param Context $context
 	 */
 	private function overrideGlobals( $oTitle, $context = null ) {
-		global $wgParser, $wgOut, $wgTitle, $wgVersion, $wgRequest;
+		global $wgParser, $wgOut, $wgTitle, $wgRequest;
 
 		//This is neccessary for other extensions that may rely on $wgTitle,
 		//i.e for checking permissions during rendering
@@ -482,12 +480,7 @@ class BsPageContentProvider {
 		$wgParser = new Parser();
 		$wgParser->Options( $this->getParserOptions() );
 
-		if( $wgVersion < '1.18' ) {
-			$wgOut = new OutputPage();
-		}
-		else {
-			$wgOut = new OutputPage( $context );
-		}
+		$wgOut = new OutputPage( $context );
 
 		if( $context ) {
 			$wgRequest = $context->getRequest();
