@@ -81,6 +81,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Namensraum nicht erlaubt: $1",
 	"bs-validator-error-title-does-not-exist": "Seite existiert nicht: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Seite nicht erlaubt: $1",
+	"bs-parser-error-invalid-category-title": "Die Seite ist keine gültige Kategorie: $1",
 	"bs-exttype-bluespice": "BlueSpice-Erweiterungen",
 	"bs-export-menu-print-text": "Drucken",
 	"bs-export-menu-print-title": "Druckbare Version der Seite anzeigen",
@@ -88,5 +89,7 @@
 	"bs-graphicallist-action-list": "Liste",
 	"bs-graphicallist-action-preview": "Vorschau",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "In vielen BlueSpice-Erweiterungen verwendet für potentiell gefährliche administrative Aufgaben wie die Verwaltung von Benutzern, Berechtigungen oder der globalen Konfiguration.",
+	"bs-notifications-agent-anon": "anonymer Benutzer"
 }

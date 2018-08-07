@@ -5,7 +5,8 @@
 			"Agilight",
 			"Kaganer",
 			"Mailman",
-			"Mouse21"
+			"Mouse21",
+			"Meshkov.a"
 		]
 	},
 	"bluespicefoundation-desc": "Делает MediaWiki готовое предприятие",
@@ -89,5 +90,6 @@
 	"bs-graphicallist-action-close": "Закрыть",
 	"bs-graphicallist-action-list": "Список",
 	"bs-graphicallist-action-preview": "Предпросмотр",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Отображение страницы администрирования BlueSpice"
 }

@@ -69,5 +69,6 @@
 	"bs-pref-anonuserimage": "Avatar pro usator anonyme:",
 	"bs-pref-deleteduserimage": "Avatar pro usator delite:",
 	"bs-pref-bspinginterval": "Intervallo de ping (in secundas):",
-	"bs-pref-testmode": "Activar le modo de test"
+	"bs-pref-testmode": "Activar le modo de test",
+	"right-wikiadmin": "Vider paginas de administration de BlueSpice"
 }

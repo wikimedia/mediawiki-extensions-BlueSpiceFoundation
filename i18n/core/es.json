@@ -89,5 +89,6 @@
 	"bs-graphicallist-action-close": "Cerrar",
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Previsualizar",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Mostrar páginas de administración de BlueSpice"
 }

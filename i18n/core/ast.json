@@ -87,5 +87,6 @@
 	"bs-graphicallist-action-list": "Llista",
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Amosar les páxines d'alministración de BlueSpice"
 }

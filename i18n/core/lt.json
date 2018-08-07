@@ -77,5 +77,6 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Puslapis neleistinas: $1",
 	"bs-exttype-bluespice": "BlueSpice plėtiniai",
 	"bs-export-menu-print-text": "Spausdinti",
-	"bs-export-menu-print-title": "Rodo šio puslapio versiją spausdinimui"
+	"bs-export-menu-print-title": "Rodo šio puslapio versiją spausdinimui",
+	"right-wikiadmin": "Rodyti BlueSpice administracijos puslapius"
 }

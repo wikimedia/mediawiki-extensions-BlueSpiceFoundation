@@ -93,5 +93,6 @@
 	"bs-graphicallist-action-list": "列表",
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "显示BlueSpice管理员页面"
 }

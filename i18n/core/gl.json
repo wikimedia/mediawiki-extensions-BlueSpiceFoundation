@@ -88,5 +88,6 @@
 	"bs-graphicallist-action-close": "Pechar",
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Vista previa",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Mostrar páxinas de administración de BlueSpice"
 }

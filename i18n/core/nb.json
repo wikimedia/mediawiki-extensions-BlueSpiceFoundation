@@ -82,5 +82,6 @@
 	"bs-exttype-bluespice": "BlueSpice-utvidelser",
 	"bs-export-menu-print-text": "Skriv ut",
 	"bs-export-menu-print-title": "Viser en utskriftsvennlig versjon av siden",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Vise BlueSpice-administrasjonssider"
 }

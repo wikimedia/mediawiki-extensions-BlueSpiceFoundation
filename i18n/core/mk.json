@@ -84,5 +84,6 @@
 	"bs-export-menu-print-title": "Прикажува верзија на страницата погодна за печатање",
 	"bs-graphicallist-action-close": "Затвори",
 	"bs-graphicallist-action-list": "Список",
-	"bs-graphicallist-action-preview": "Преглед"
+	"bs-graphicallist-action-preview": "Преглед",
+	"right-wikiadmin": "Приказ на раководни страници за BlueSpiceа"
 }

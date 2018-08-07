@@ -5,7 +5,8 @@
 			"WikiPhoenix",
 			"Fader",
 			"Lokal Profil",
-			"Warrakkk"
+			"Warrakkk",
+			"Jopparn"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -77,5 +78,6 @@
 	"bs-validator-error-title-does-not-exist": "Sidan finns inte: $1",
 	"bs-export-menu-print-text": "Skriv ut",
 	"bs-export-menu-print-title": "Visar en utskriftsvänlig version av sidan",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Visa BlueSpices administrationssidor"
 }

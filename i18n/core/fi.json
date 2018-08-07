@@ -64,5 +64,6 @@
 	"bs-validator-error-namespace-on-blacklist": "Nimiavaruus ei ole sallittu: $1",
 	"bs-validator-error-title-does-not-exist": "Sivua ei ole olemassa: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Sivu ei ole sallittu: $1",
-	"bs-export-menu-print-text": "Tulosta"
+	"bs-export-menu-print-text": "Tulosta",
+	"right-wikiadmin": "Näytä BlueSpice hallintosivut"
 }

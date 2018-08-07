@@ -80,6 +80,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Domínio não permitido: $1",
 	"bs-validator-error-title-does-not-exist": "Página não existe: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Página não permitida: $1",
+	"bs-parser-error-invalid-category-title": "A página não é uma categoria válida: $1",
 	"bs-exttype-bluespice": "Extensões BlueSpice",
 	"bs-export-menu-print-text": "Imprimir",
 	"bs-export-menu-print-title": "Mostra a versão para impressão da página",
@@ -87,5 +88,7 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Pré-visualizar",
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Usado na extensão BlueSpice para tarefas administrativas possivelmente perigosas, como a administração de utilizadores e permissões, e a configuração global",
+	"bs-notifications-agent-anon": "usuário anônimo"
 }

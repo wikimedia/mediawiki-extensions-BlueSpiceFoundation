@@ -86,5 +86,6 @@
 	"bs-exttype-bluespice": "Розширення BlueSpice",
 	"bs-export-menu-print-text": "Друк",
 	"bs-export-menu-print-title": "Відтворює версію сторінки, доступну для друку",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Відображення сторінок адміністрування BlueSpice"
 }

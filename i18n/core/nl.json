@@ -88,5 +88,6 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Pagina niet toegestaan: $1",
 	"bs-exttype-bluespice": "BlueSpice uitbreidingen",
 	"bs-export-menu-print-text": "Afdrukken",
-	"bs-export-menu-print-title": "Toont een printbare versie van de pagina"
+	"bs-export-menu-print-title": "Toont een printbare versie van de pagina",
+	"right-wikiadmin": "Toon BlueSpice's beheerpagina's"
 }
