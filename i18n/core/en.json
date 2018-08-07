@@ -94,13 +94,5 @@
 	"bs-bluespice": "BlueSpice",
 	"prefs-bluespice": "{{int:bs-bluespice}}",
 	"right-wikiadmin": "Used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration",
-	"bs-notifications-agent-anon": "anonymous user",
-	"right-create": "Allows creating pages",
-	"right-passwordreset": "Allows resetting passwords",
-	"right-skipcaptcha": "Allows skipping captcha",
-	"right-renameuser": "Allows renaming users",
-	"right-viewfiles": "Allows viewing files",
-	"right-searchfiles": "Allows searching files",
-	"right-sendemail-new-users": "Allows new users to send emails",
-	"right-edit": "Allows editing pages"
+	"bs-notifications-agent-anon": "anonymous user"
 }
