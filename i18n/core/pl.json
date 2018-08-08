@@ -67,7 +67,9 @@
 	"bs-parser-error-invalid-title": "Niepoprawny tytuł: $1",
 	"bs-validator-error-namespace-does-not-exist": "Przestrzeń nazw nie istnieje: $1",
 	"bs-validator-error-title-does-not-exist": "Strona nie istnieje: $1",
+	"bs-parser-error-invalid-category-title": "Strona nie jest prawidłową kategorią: $1",
 	"bs-exttype-bluespice": "Rozszerzenia BlueSpice",
 	"bs-export-menu-print-text": "Drukuj",
-	"bs-bluespice-mediawiki": "Mediawiki BlueSpice"
+	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
+	"bs-notifications-agent-anon": "anonimowy użytkownik"
 }

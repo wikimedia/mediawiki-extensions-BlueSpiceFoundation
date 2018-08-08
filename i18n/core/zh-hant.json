@@ -85,6 +85,7 @@
 	"bs-validator-error-namespace-on-blacklist": "命名空間不被允許：$1",
 	"bs-validator-error-title-does-not-exist": "頁面不存在：$1",
 	"bs-validator-error-title-namespace-on-blacklist": "頁面不被允許：$1",
+	"bs-parser-error-invalid-category-title": "不是有效分類的頁面：$1",
 	"bs-exttype-bluespice": "BlueSpice 擴充",
 	"bs-export-menu-print-text": "列印",
 	"bs-export-menu-print-title": "顯示頁面的可列印版本",
@@ -93,5 +94,6 @@
 	"bs-graphicallist-action-preview": "預覽",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置"
+	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
+	"bs-notifications-agent-anon": "匿名使用者"
 }
