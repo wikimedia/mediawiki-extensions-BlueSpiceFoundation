@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Skalcaa"
+			"Skalcaa",
+			"Dbc334"
 		]
 	},
-	"right-wikiadmin": "Prikaži skrbniške strani BlueSpice"
+	"right-wikiadmin": "Uporabljeno v mnogih razširitvah BlueSpice za morebitno nevarna administratorska opravila, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami"
 }
