@@ -1,7 +1,6 @@
 <?php
 
 class HTMLIntFieldOverride extends HTMLIntField {
-
 	function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 
@@ -18,4 +17,26 @@ class HTMLIntFieldOverride extends HTMLIntField {
 		return true;
 	}
 
+	function getInputOOUI( $value ) {
+		$attr = [
+			'value' => $value
+		];
+		if( isset( $this->mParams['min'] ) ) {
+			$attr['min'] = $this->mParams['min'];
+		}
+		if( isset( $this->mParams['max'] ) ) {
+			$attr['max'] = $this->mParams['max'];
+		}
+		if( isset( $this->mParams['step'] ) ) {
+			$attr['step'] = $this->mParams['step'];
+		}
+		if( isset( $this->mParams['pageStep'] ) ) {
+			$attr['pageStep'] = $this->mParams['pageStep'];
+		}
+		if( isset( $this->mParams['showButtons'] ) ) {
+			$attr['showButtons'] = $this->mParams['showButtons'];
+		}
+		$attr['isInteger'] = true;
+		return new \OOUI\NumberInputWidget( $attr );
+	}
 }
