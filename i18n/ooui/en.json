@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dejan Savuljesku <savuljesku@hallowelt.com>"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Add new...",
+	"bs-ooui-key-value-input-widget-key-label": "Key",
+	"bs-ooui-key-value-input-widget-value-label": "Value",
+	"bs-ooui-key-value-input-widget-add-button-label": "Add",
+	"bs-ooui-key-value-input-widget-add-form-label": "Add new entry",
+	"bs-ooui-key-value-input-widget-error-message": "All required fields must be set!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "No values set!"
+}

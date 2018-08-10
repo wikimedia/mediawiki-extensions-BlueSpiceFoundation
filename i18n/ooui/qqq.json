@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dejan Savuljesku"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Placeholder for input field of OOUI TagMultiselectWidget",
+	"bs-ooui-key-value-input-widget-key-label": "Label for input field holding the key of a value in KeyValueInputWidget",
+	"bs-ooui-key-value-input-widget-value-label": "Label for input field holding the value of a value in KeyValueInputWidget",
+	"bs-ooui-key-value-input-widget-add-button-label": "Label for button used to add new values to KeyValueInputWidget",
+	"bs-ooui-key-value-input-widget-add-form-label": "Label for add new entry form in KeyValueInputWidget",
+	"bs-ooui-key-value-input-widget-error-message": "Message showing when validation failed on KeyValueInputWidget",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Message text showing when no values are set in KeyValueInputWidget"
+}
