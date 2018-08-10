@@ -6,7 +6,8 @@
 			"Ihojose",
 			"ProtoplasmaKid",
 			"Macofe",
-			"Amitie 10g"
+			"Amitie 10g",
+			"Jelou"
 		]
 	},
 	"bs-ns_main": "(Páginas)",
@@ -90,5 +91,6 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Previsualizar",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Mostrar páginas de administración de BlueSpice"
+	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
+	"bs-notifications-agent-anon": "usuario anónimo"
 }

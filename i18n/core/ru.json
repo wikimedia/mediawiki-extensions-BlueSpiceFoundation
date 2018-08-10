@@ -6,7 +6,8 @@
 			"Kaganer",
 			"Mailman",
 			"Mouse21",
-			"Meshkov.a"
+			"Meshkov.a",
+			"Shaleych"
 		]
 	},
 	"bluespicefoundation-desc": "Делает MediaWiki готовое предприятие",
@@ -91,5 +92,6 @@
 	"bs-graphicallist-action-list": "Список",
 	"bs-graphicallist-action-preview": "Предпросмотр",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Отображение страницы администрирования BlueSpice"
+	"right-wikiadmin": "Отображение страницы администрирования BlueSpice",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Добавить новый..."
 }
