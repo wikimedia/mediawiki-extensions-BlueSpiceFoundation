@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
 	"bs-ns_main": "(Странице)",
@@ -20,5 +21,6 @@
 	"bs-navigation-support": "Подршка",
 	"bs-navigation-contact": "Контакт",
 	"bs-imagepage-download-text": "Преузми",
-	"bs-export-menu-print-text": "Штампај"
+	"bs-export-menu-print-text": "Штампај",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Додајте нов..."
 }

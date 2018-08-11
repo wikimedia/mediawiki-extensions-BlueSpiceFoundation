@@ -80,6 +80,7 @@
 	"bs-validator-error-namespace-on-blacklist": "نطاق غير مسموح به: $1",
 	"bs-validator-error-title-does-not-exist": "الصفحة غير موجودة: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "الصفحة غير مسموح بها: $1",
+	"bs-parser-error-invalid-category-title": "الصفحة ليست تصنيفا صالحا: $1",
 	"bs-exttype-bluespice": "ملحقات BlueSpice",
 	"bs-export-menu-print-text": "اطبع",
 	"bs-export-menu-print-title": "يعرض نسخة قابلة للطباعة من الصفحة",
@@ -87,5 +88,8 @@
 	"bs-graphicallist-action-list": "قائمة",
 	"bs-graphicallist-action-preview": "عرض مسبق",
 	"bs-bluespice-mediawiki": "بلوسبايس ميدياويكي",
-	"bs-bluespice": "بلوسبايس"
+	"bs-bluespice": "بلوسبايس",
+	"right-wikiadmin": "تُستخدَم في العديد من امتدادات BlueSpice للمهام الإدارية الخطيرة المحتملة مثل إدارة المستخدمين والصلاحيات والتكوين العالمي",
+	"bs-notifications-agent-anon": "مستخدم مجهول",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "أضف ... جديدا"
 }
