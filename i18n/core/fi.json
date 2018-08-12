@@ -5,7 +5,8 @@
 			"SMAUG",
 			"Silvonen",
 			"01miki10",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Surjection"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -65,5 +66,5 @@
 	"bs-validator-error-title-does-not-exist": "Sivua ei ole olemassa: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Sivu ei ole sallittu: $1",
 	"bs-export-menu-print-text": "Tulosta",
-	"right-wikiadmin": "Näytä BlueSpice hallintosivut"
+	"right-wikiadmin": "Käytetään monissa BlueSpice-laajennuksissa mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista, varten"
 }
