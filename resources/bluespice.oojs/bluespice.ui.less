@@ -1,0 +1,51 @@
+/* KeyValueInputWidget */
+.bs-ooui-widget-keyValueInputWidget {
+	.bs-ooui-keyValueInputWidget-separator {
+		display: block;
+	}
+	.oo-ui-fieldLayout {
+		width: 44%;
+		display: inline-block;
+		margin-left: 2%;
+		.oo-ui-fieldLayout-field {
+			width: 100%;
+		}
+	}
+	.bs-ooui-keyValueInputWidget-value-container {
+		.bs-ooui-keyValueInputWidget-no-value-label {
+			margin-top: 10px;
+			margin-left: 2%;
+		}
+	}
+	.bs-ooui-widget-keyValueInputWidget-add-container {
+		margin-top: 20px;
+		.oo-ui-labelWidget {
+			display: block;
+			margin-left: 2%;
+			margin-bottom: 0;
+			font-weight: normal;
+		}
+		.bs-ooui-keyValueInputWidget-error-box {
+			margin-left: 2%;
+			margin-top: 10px;
+			label {
+				margin-left: 10px;
+				display: inline;
+				vertical-align: bottom;
+			}
+		}
+	}
+	.bs-ooui-widget-keyValueInputWidget-add-btn {
+		margin-top: -4px;
+	}
+	.bs-ooui-widget-keyValueInputWidget-remove-btn {
+		display: inline-block;
+		margin-left: 10px;
+		margin-top: -27px;
+	}
+	.oo-ui-fieldLayout.oo-ui-labelElement {
+		+.bs-ooui-widget-keyValueInputWidget-remove-btn {
+			margin-top:-8px;
+		}
+	}
+}

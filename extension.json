@@ -245,12 +245,24 @@
 				"bluespice.oojs/bluespice.ui.js",
 				"bluespice.oojs/ui/widget/StoreComboBoxInput.js",
 				"bluespice.oojs/ui/widget/StoreApiBoundComboBoxInput.js",
-				"bluespice.oojs/ui/widget/TitleComboBoxInput.js"
+				"bluespice.oojs/ui/widget/TitleComboBoxInput.js",
+				"bluespice.oojs/ui/widget/KeyValueInputWidget.js"
+			],
+			"styles": [
+				"bluespice.oojs/bluespice.ui.less"
 			],
 			"dependencies": [
 				"mediawiki.api",
 				"oojs-ui",
 				"ext.bluespice"
+			],
+			"messages": [
+				"bs-ooui-key-value-input-widget-error-message",
+				"bs-ooui-key-value-input-widget-key-label",
+				"bs-ooui-key-value-input-widget-value-label",
+				"bs-ooui-key-value-input-widget-add-button-label",
+				"bs-ooui-key-value-input-widget-add-form-label",
+				"bs-ooui-keyValueInputWidget-no-value-label"
 			]
 		},
 		"ext.bluespice.upload": {
@@ -468,6 +480,9 @@
 		],
 		"BlueSpice.Settings": [
 			"i18n/settings"
+		],
+		"BlueSpice.OOUI": [
+			"i18n/ooui"
 		]
 	},
 	"ExtensionMessagesFiles": {
