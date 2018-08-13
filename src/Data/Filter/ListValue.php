@@ -6,6 +6,7 @@ use BlueSpice\Data\Filter;
 
 class ListValue extends Filter {
 	const COMPARISON_CONTAINS = 'ct';
+	const COMPARISON_NOT_CONTAINS = 'nct';
 
 	/**
 	 *
@@ -31,9 +32,15 @@ class ListValue extends Filter {
 		if( empty( $fieldValues ) ) {
 			return false;
 		}
+		if( is_string( $fieldValues ) ) {
+			$fieldValues = [ $fieldValues ];
+		}
 
 		$intersection = array_intersect( $fieldValues, $this->getValue() );
-		if( empty( $intersection ) ) {
+		if( $this->getComparison() === static::COMPARISON_CONTAINS && empty( $intersection ) ) {
+			return false;
+		}
+		if( $this->getComparison() === static::COMPARISON_NOT_CONTAINS && !empty( $intersection ) ) {
 			return false;
 		}
 		return true;
