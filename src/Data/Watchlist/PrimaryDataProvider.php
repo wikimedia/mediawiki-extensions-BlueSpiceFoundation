@@ -117,6 +117,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 		foreach( $this->data as &$dataSet ) {
 			$userId = $dataSet->get( Record::USER_ID );
+			//users may have been deleted from user table but still remain in
+			//watchlist
+			if( !isset( $userDisplayNames[$userId] ) ) {
+				continue;
+			}
 			$dataSet->set( Record::USER_DISPLAY_NAME, $userDisplayNames[$userId] );
 		}
 	}
