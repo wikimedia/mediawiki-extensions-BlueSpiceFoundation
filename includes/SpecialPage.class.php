@@ -30,6 +30,7 @@ class BsSpecialPage extends SpecialPage {
 	public function execute( $sParameter ) {
 		$this->setHeaders();
 		$this->checkPermissions();
+		$this->checkLoginSecurityLevel( $this->getLoginSecurityLevel() );
 		$this->outputHeader();
 	}
 
