@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for BlueSpice hook BS:UserPageSettings
+ * Hook handler base class for MediaWiki hook ThumbnailBeforeProduceHTML
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,72 +15,69 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * This file is part of BlueSpice MediaWiki
+ * This thumbnail is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Patric Wirth <wirth@hallowelt.com>
+ * @author     Patric WIrth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
- * @filesource
+ * @thumbnailsource
  */
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class BSUserPageSettings extends Hook {
-	/**
-	 * The user related to the user page
-	 * @var \User
-	 */
-	protected $user = null;
+abstract class ThumbnailBeforeProduceHTML extends Hook {
 
 	/**
-	 * The user page
-	 * @var \Title
+	 *
+	 * @var \ThumbnailImage
 	 */
-	protected $title = null;
+	protected $thumbnail = null;
 
 	/**
-	 * An array of \ViewBaseElement's
-	 * @var []\ViewBaseElement
+	 *
+	 * @var array
 	 */
-	protected $settingViews = null;
+	protected $attribs = [];
 
 	/**
-	 * This hook is called: 'BS:UserPageSettings'
-	 * Located in BsCoreHooks::addProfilePageSettings. This is where the
-	 * user setting buttons on the users page are registered, when the current
-	 * user is on his user page.
-	 * @param \User $user
-	 * @param \Title $title
-	 * @param array $settingViews
-	 * @return boolean
+	 *
+	 * @var array
 	 */
-	public static function callback( $user, $title, &$settingViews ) {
+	protected $linkAttribs  = [];
+
+	/**
+	 * @param \ThumbnailImage $thumbnail
+	 * @param array $attribs
+	 * @param array $linkAttribs
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function callback( $thumbnail, &$attribs, &$linkAttribs  ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$user,
-			$title,
-			$settingViews
+			$thumbnail,
+			$attribs,
+			$linkAttribs
 		);
 		return $hookHandler->process();
 	}
 
 	/**
+	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \User $user
-	 * @param \Title $title
-	 * @param array $settingViews
-	 * @return boolean
+	 * @param \ThumbnailImage $thumbnail
+	 * @param array $attribs
+	 * @param array $linkAttribs
 	 */
-	public function __construct( $context, $config, $user, $title, &$settingViews ) {
+	public function __construct( $context, $config, $thumbnail, &$attribs, &$linkAttribs ) {
 		parent::__construct( $context, $config );
 
-		$this->user = $user;
-		$this->title = $title;
-		$this->settingViews = &$settingViews;
+		$this->thumbnail = $thumbnail;
+		$this->attribs =& $attribs;
+		$this->linkAttribs =& $linkAttribs;
 	}
 }

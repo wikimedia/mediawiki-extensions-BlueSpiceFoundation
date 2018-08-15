@@ -1,8 +1,6 @@
 <?php
 /**
- * DEPRECATED
- * Hook handler base class for BlueSpice hook
- * BsFoundationBeforeMakeGlobalVariablesScript
+ * Hook handler base class for MediaWiki hook ExtensionTypes
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,51 +25,41 @@
  * @filesource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
-abstract class BsFoundationBeforeMakeGlobalVariablesScript extends Hook {
-
-	/**
-	 *
-	 * @var \User
-	 */
-	protected $user = null;
+abstract class ExtensionTypes extends Hook {
 
 	/**
 	 *
 	 * @var array
 	 */
-	protected $scriptSettings = null;
+	protected $extTypes = null;
 
 	/**
-	 * DEPRECATED!
-	 * Located in
-	 * \BlueSpice\Hook\BeforePageDisplay\AddResources::addLegacyJSConfigVars,
-	 * before the javascript globals for BlueSpice get added to the javascript
-	 * globals
-	 * @param \User $user
-	 * @param array $scriptSettings
+	 *
+	 * @param array $extTypes
 	 * @return boolean
 	 */
-	public static function callback( $user, &$scriptSettings ) {
+	public static function callback( &$extTypes ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$user,
-			$scriptSettings
+			$extTypes
 		);
 		return $hookHandler->process();
 	}
 
 	/**
+	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
+	 * @param array $extTypes
 	 */
-	public function __construct( $context, $config, $user, &$scriptSettings ) {
+	public function __construct( $context, $config, &$extTypes ) {
 		parent::__construct( $context, $config );
 
-		$this->user = $user;
-		$this->scriptSettings = &$scriptSettings;
+		$this->extTypes =& $extTypes;
 	}
 }
