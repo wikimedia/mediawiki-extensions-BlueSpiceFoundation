@@ -69,6 +69,7 @@
 	"bs-pref-anonuserimage": "익명 사용자 아바타:",
 	"bs-pref-deleteduserimage": "삭제된 사용자 아바타:",
 	"bs-pref-bspinginterval": "핑 간격 (초):",
+	"bs-parser-error-invalid-category-title": "문서는 유효하지 않은 분류입니다: $1",
 	"bs-exttype-bluespice": "BlueSpice 확장 기능",
 	"bs-export-menu-print-text": "인쇄",
 	"bs-export-menu-print-title": "문서의 인쇄용 판 보기",
@@ -76,5 +77,6 @@
 	"bs-graphicallist-action-list": "목록",
 	"bs-graphicallist-action-preview": "미리 보기",
 	"bs-bluespice-mediawiki": "블루스파이스 미디어위키",
+	"bs-notifications-agent-anon": "익명 사용자",
 	"bs-ooui-field-tagmultiselect-input-placeholder": "새로 추가..."
 }
