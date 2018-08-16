@@ -80,6 +80,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Espaciu de nomes nun permitíu: $1",
 	"bs-validator-error-title-does-not-exist": "La páxina nun esiste: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Páxina nun permitida: $1",
+	"bs-parser-error-invalid-category-title": "La páxina nun ye una categoría válida: $1",
 	"bs-exttype-bluespice": "Estensiones de BlueSpice",
 	"bs-export-menu-print-text": "Imprentar",
 	"bs-export-menu-print-title": "Amuesa la versión imprentable de la páxina",
@@ -88,5 +89,7 @@
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Amosar les páxines d'alministración de BlueSpice"
+	"right-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
+	"bs-notifications-agent-anon": "usuariu anónimu",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Añadir nuevu..."
 }

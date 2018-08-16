@@ -17,7 +17,7 @@
 	"bs-validator-integer-range-validation-too-low": "O valor fornecido é muito baixo. Ele não deve ser inferior a $1.",
 	"bs-validator-integer-range-validation-too-high": "O valor fornecido é muito alto. Ele não deve ser inferior a $1.",
 	"bs-validator-value-not-recognized": "Não foi possível processar o valor",
-	"bs-validator-invalid-boolean": "Booleano inválido",
+	"bs-validator-invalid-boolean": "Booliano inválido",
 	"bs-validator-invalid-float": "Vírgula flutuante inválida",
 	"bs-validator-invalid-integer": "Número inteiro inválido",
 	"bs-validator-invalid-string": "Texto inválido",
