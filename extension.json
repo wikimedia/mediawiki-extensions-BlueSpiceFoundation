@@ -69,6 +69,22 @@
 			"AlertProviderRegistry": {
 				"bs-readonly-warning": "\\BlueSpice\\AlertProvider\\ReadOnlyWarning::factory",
 				"bs-testsystem-warning": "\\BlueSpice\\AlertProvider\\TestsystemWarning::factory"
+			},
+			"LessVarsRegistry": {
+				"bs-color-primary": "#3e5389",
+				"bs-color-secondary": "#ffae00",
+				"bs-color-tertiary": "#b73a3a",
+				"bs-color-neutral": "#929292",
+				"bs-color-neutral2": "#ABABAB",
+				"bs-color-neutral3": "#C4C4C4",
+				"bs-color-neutral4": "#787878",
+				"bs-color-progressive": "#347bff",
+				"bs-color-contructive": "#00af89",
+				"bs-color-destructive": "#d11d13",
+				"bs-color-success": "#dff0d8",
+				"bs-color-warning": "#fcf8e3",
+				"bs-color-error": "#f2dede",
+				"bs-color-info": "#d9edf7"
 			}
 		}
 	},
@@ -335,7 +351,8 @@
 			],
 			"targets": [
 				"mobile", "desktop"
-			]
+			],
+			"class": "\\BlueSpice\\ResourceModule\\LessVars"
 		},
 		"ext.bluespice.extjs.BS.portal": {
 			"localBasePath": "resources",
