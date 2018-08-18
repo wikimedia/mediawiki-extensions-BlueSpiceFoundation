@@ -7,5 +7,9 @@
 	},
 	"bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany.",
 	"bs-validator-invalid-boolean": "Niepoprawna wartość logiczna",
-	"bs-validator-invalid-string": "Niepoprawny ciąg"
+	"bs-validator-invalid-integer": "Niepoprawna liczba całkowita",
+	"bs-validator-invalid-string": "Niepoprawny ciąg",
+	"bs-validator-invalid-coordinate": "Nieprawidłowa współrzędna",
+	"bs-validator-invalid-parameter": "Ten parametr jest niedozwolony",
+	"bs-validator-missing-required": "Ten parametr jest wymagany"
 }

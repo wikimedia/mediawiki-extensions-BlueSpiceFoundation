@@ -63,6 +63,10 @@
 	"bs-extjs-export-search-summary-text": "Utworzono za pomocą PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Nazwa listy jest nieprawidłowa",
 	"bs-extjs-tools-trigger-text": "Narzędzia",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniatury",
+	"bs-extjs-flyout-tab-thumbs-title": "Przełącz do widoku miniatur",
 	"bs-extjs-flyout-tab-grid-label": "Szczegóły",
+	"bs-extjs-flyout-tab-grid-title": "Przełącz na widok szczegółów",
+	"bs-extjs-flyout-add-title": "Kliknij tutaj, aby dodać nowy element",
 	"bs-extjs-flyout-add-label": "Dodaj element"
 }
