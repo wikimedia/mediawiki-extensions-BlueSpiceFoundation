@@ -14,7 +14,10 @@
 
 // Last review: MRG20100816
 // TODO MRG20100816: Hier wird nix ausgegeben. Ist das eine abstrakte Klasse? Wenn ja, als solche implementieren.
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewFormElement extends ViewBaseElement {
 	protected $_mLabel			= '';
 	protected $_mName			= '';

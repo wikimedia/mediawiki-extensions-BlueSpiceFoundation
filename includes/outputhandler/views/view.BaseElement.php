@@ -28,6 +28,10 @@
 // TODO MRG20100816: Changelog
 
 // TODO MRG20100816: Kommentare
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewBaseElement {
 	protected static $_prAutoId = 0;
 
@@ -57,9 +61,12 @@ class ViewBaseElement {
 	protected $config = null;
 
 	/**
+	 * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+	 * \BlueSpice\TemplateRenderer instead
 	 * Build a new element instance and bind an unique id to it.
 	 */
 	public function __construct() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->_mId = 'bs-element-'.self::getAutoId();
 		$this->config = \MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 	}
@@ -229,9 +236,12 @@ class ViewBaseElement {
 	// TODO MRG20100816: Genauer kommentieren
 	/**
 	 *
+	 * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+     * \BlueSpice\TemplateRenderer instead
 	 * @return String Returns the output of this element.
 	 */
 	public function execute( $params = false ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$output = '';
 		// TODO MRG20100816: Eine Mischung aus data und items geht nicht?
 		if ( count( $this->_mData ) ) {

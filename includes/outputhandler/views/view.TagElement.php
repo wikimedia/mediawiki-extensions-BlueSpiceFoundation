@@ -11,7 +11,10 @@
  * $Rev: 314 $
 
  */
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewTagElement extends ViewBaseElement {
 	public function  __construct() {
 		parent::__construct();

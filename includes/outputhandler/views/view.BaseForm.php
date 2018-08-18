@@ -13,7 +13,10 @@
  */
 
 // Last review: MRG20100816
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewBaseForm extends ViewBaseElement {
 	protected $_mMethod			= 'post';
 	protected $_mEnctype		= 'multipart/form-data';

@@ -13,7 +13,10 @@
  */
 
 // Last review MRG20100816
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewFormElementFieldset extends ViewFormElement {
 
 	public function execute($params = false) {

@@ -11,7 +11,10 @@
  * $Rev: 314 $
 
  */
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewFormElementSelectbox extends ViewFormElement {
 	public function execute($params = false) {
 		$output = '';

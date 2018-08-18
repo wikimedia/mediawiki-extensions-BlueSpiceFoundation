@@ -13,7 +13,10 @@
  */
 
 // Last review MRG20100816
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewFormElementLabel extends ViewFormElement {
 	protected $_mForId = '';
 	protected $bUseAutoWidth = false;
