@@ -76,11 +76,10 @@ class SpecialCredits extends BsSpecialPage {
 		$sOlTl = '<ul>' . $sLiTranslation . '</ul>';
 
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'Credits', 'Translators' );
-		$aData = BsCacheHelper::get( $sKey );
+		$this->aTranslators = BsCacheHelper::get( $sKey );
 
-		if ( $aData !== false ) {
+		if ( $this->aTranslators ) {
 			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching translators from cache' );
-			$this->aTranslators = $aData;
 		} else {
 			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching translators from DB' );
 			$this->generateTranslatorsList();
@@ -154,7 +153,9 @@ class SpecialCredits extends BsSpecialPage {
 				continue;
 			}
 
-			$sFilePath = $oFileinfo->getPathname();
+			$sFilePath = \BsFileSystemHelper::normalizePath(
+				$oFileinfo->getPathname()
+			);
 			if ( strpos( $sFilePath, '/i18n/' ) === false ) {
 				continue;
 			}
@@ -162,7 +163,7 @@ class SpecialCredits extends BsSpecialPage {
 				continue;
 			}
 
-			$oContent = FormatJson::decode( file_get_contents( $sFilePath ) );
+			$oContent = FormatJson::decode( file_get_contents( $oFileinfo->getPathname() ) );
 			foreach ( $oContent as $oData ) {
 				if ( $oData instanceof stdClass === false || !isset( $oData->authors ) ) {
 					continue;
