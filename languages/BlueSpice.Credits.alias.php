@@ -83,7 +83,7 @@ $specialPageAliases['pt-br'] = array(
 	'SpecialCredits' => array( 'Créditos' ),
 );
 
-/** Serbian Cyrilic (српски (ћирилица)) */
+/** Serbian Cyrillic (српски (ћирилица)) */
 $specialPageAliases['sr-ec'] = array(
 	'SpecialCredits' => array( 'Заслуге' ),
 );
