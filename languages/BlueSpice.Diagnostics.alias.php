@@ -78,7 +78,7 @@ $specialPageAliases['pt-br'] = array(
 	'Diagnostics' => array( 'Diagnósticos' ),
 );
 
-/** Serbian Cyrilic (српски (ћирилица)) */
+/** Serbian Cyrillic (српски (ћирилица)) */
 $specialPageAliases['sr-ec'] = array(
 	'Diagnostics' => array( 'Дијагностика' ),
 );
