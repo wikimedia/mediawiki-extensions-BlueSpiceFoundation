@@ -733,7 +733,6 @@
 		"ViewUserBarElement": "includes/outputhandler/views/view.UserBarElement.php",
 		"ViewUserMiniProfile": "includes/outputhandler/views/view.UserMiniProfile.php",
 		"ViewWidget": "includes/outputhandler/views/view.Widget.php",
-		"SpecialDiagnostics": "includes/specials/SpecialDiagnostics.class.php",
 		"SpecialCredits": "includes/specials/SpecialCredits.class.php",
 		"SpecialWikiAdmin": "includes/specials/SpecialWikiAdmin.class.php",
 		"BsPARAM": "includes/common/BsPARAM.php",
