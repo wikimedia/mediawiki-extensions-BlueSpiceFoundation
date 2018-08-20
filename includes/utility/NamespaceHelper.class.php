@@ -230,15 +230,6 @@ class BsNamespaceHelper {
 	public static function checkNamespacePermission( $iID, $sPermission ) {
 		if ( !is_numeric( $iID ) ) return false;
 
-		if ( ( $iID == 998 || $iID == 999 ) ) {
-			global $wgUser;
-			if ( $wgUser->isAllowed( 'searchfiles' ) ) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-
 		$oDummyTitle = Title::makeTitle( $iID, 'Dummy' );
 		if ( $oDummyTitle->userCan( $sPermission ) ) {
 			return true;
