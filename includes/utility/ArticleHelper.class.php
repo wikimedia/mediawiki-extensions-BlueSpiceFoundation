@@ -105,26 +105,6 @@ class BsArticleHelper {
 	}
 
 	/**
-	 * Fetches the number of edits in the discussion page of the given Title.
-	 * @param Title $oTitle The MediaWiki Title object to query.
-	 * @return int The number of edits.
-	 * @deprecated since version 1.20
-	 */
-	public static function getDiscussionAmountForTitle( $oTitle ) {
-		return self::getInstance($oTitle)->getDiscussionAmount();
-	}
-
-	/**
-	 * Fetches the number of edits in the discussion page of the given Article.
-	 * @param Article $oArticle The MediaWiki Article object to query.
-	 * @return int The number of edits.
-	 * @deprecated since version 1.20
-	 */
-	public static function getDiscussionAmountForArticle( $oArticle ) {
-		return self::getDiscussionAmountForTitle( $oArticle->getTitle() );
-	}
-
-	/**
 	 * Fetches the page_props table
 	 */
 	public function loadPageProps() {

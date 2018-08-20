@@ -129,7 +129,7 @@ abstract class Filter {
 	 * It is still here because there are a ton
 	 * of usage in other extensions
 	 * @param boolean $applied
-	 * @deprecated
+	 * @deprecated since version 3.0.0 - use setApplied instead
 	 */
 	public function setAppied( $applied = true ) {
 		$this->applied = $applied;

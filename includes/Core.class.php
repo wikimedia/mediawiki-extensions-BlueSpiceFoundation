@@ -39,22 +39,6 @@ use MediaWiki\MediaWikiServices;
  */
 class BsCore {
 
-	public $aBehaviorSwitches = array();
-
-	/**
-	 *
-	 * @var array
-	 * @deprecated since version 2.22
-	 */
-	protected $aEditButtons = array();
-
-	/**
-	 *
-	 * @var array
-	 * @deprecated since version 2.22
-	 */
-	protected $aEditButtonRanking = array();
-
 	/**
 	 * Array of illegal chars in article title
 	 * @var array
@@ -65,12 +49,7 @@ class BsCore {
 	 * @var array
 	 */
 	protected static $oInstance = null;
-	/**
-	 * a state flag if ExtJs is already loaded
-	 * @var bool
-	 * @deprecated since version 2.22
-	 */
-	protected static $bExtJsLoaded = false;
+
 	/**
 	 * holds the requested URI after the first time, the method getRequestURI was running
 	 * @var string
@@ -297,19 +276,6 @@ class BsCore {
 		);
 		$factory->getExtensions();
 
-		global $wgHooks;
-		$wgHooks['ArticleAfterFetchContentObject'][] = array( self::$oInstance, 'behaviorSwitches' );
-		$wgHooks['ParserBeforeStrip'][] = array( self::$oInstance, 'hideBehaviorSwitches' );
-		$wgHooks['ParserBeforeTidy'][] = array( self::$oInstance, 'recoverBehaviorSwitches' );
-
-		if( !isset( $wgHooks['EditPage::showEditForm:initial'] ) ) {
-			$wgHooks['EditPage::showEditForm:initial'] = [];
-		}
-		array_unshift(
-			$wgHooks['EditPage::showEditForm:initial'],
-			array( self::$oInstance, 'lastChanceBehaviorSwitches' )
-		);
-
 		//TODO: This does not seem to be the right place for stuff like this.
 		global $wgFileExtensions;
 		$config = MediaWiki\MediaWikiServices::getInstance()
@@ -509,7 +475,7 @@ class BsCore {
 	public function registerBehaviorSwitch( $sMagicWord, $aCallback = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( is_callable( $aCallback ) ) {
-			$this->aBehaviorSwitches[$sMagicWord] = $aCallback;
+			return;
 		} else {
 			global $wgHooks;
 			$wgHooks['GetDoubleUnderscoreIDs'][] = function ( &$ids ) use ( $sMagicWord ) {
@@ -518,98 +484,6 @@ class BsCore {
 				}
 			};
 		}
-	}
-
-	/**
-	 * Hook-handler for "ArticleAfterFetchContentObject"
-	 * @param WikiPage $article
-	 * @param Content $content
-	 * @return boolean Always true to keep hook running
-	 */
-	public function behaviorSwitches( &$article, &$content ) {
-		if ( !isset( $this->aBehaviorSwitches ) ) {
-			return true;
-		}
-
-		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", ContentHandler::getContentText( $content ) );
-		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
-			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
-				call_user_func( $sCallback );
-			}
-		}
-		return true;
-	}
-
-	/**
-	 * Hook-handler for "ParserBeforeStrip"
-	 * @param Parser $parser
-	 * @param string $text
-	 * @return boolean Always true to keep hook running
-	 * @deprecated since version 2.22
-	 */
-	public function hideBehaviorSwitches( &$parser, &$text ) {
-		if ( !isset( $this->aBehaviorSwitches ) ) {
-			return true;
-		}
-
-		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $text );
-		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
-			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
-				call_user_func( $sCallback );
-			}
-
-			$text = preg_replace( "/(<nowiki>.*?)__{$sSwitch}__(.*?<\/nowiki>)/i", "$1@@{$sSwitch}@@$2", $text );
-		}
-		return true;
-	}
-
-	/**
-	 * Hook-handler for "ParserBeforeTidy"
-	 * @param Parser $parser
-	 * @param string $text
-	 * @return boolean Always true to keep hook running
-	 * @deprecated since version 2.22
-	 */
-	public function recoverBehaviorSwitches( &$parser, &$text ) {
-		if ( !isset( $this->aBehaviorSwitches ) ) {
-			return true;
-		}
-
-		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
-			$text = str_replace( '__' . $sSwitch . '__', "", $text );
-			$text = preg_replace( "/@@" . $sSwitch . "@@/", '__' . $sSwitch . '__', $text );
-		}
-		return true;
-	}
-
-	/**
-	 * Hook-handler for "EditPage::showEditForm:initial"
-	 * Needed for edit and sumbit (preview) mode
-	 * @param EditPage $editPage
-	 * @return boolean Always true to keep hook running
-	 */
-	public function lastChanceBehaviorSwitches( $editPage ) {
-		// TODO SW(05.01.12 15:39): Profiling
-		$sContent = BsPageContentProvider::getInstance()->getContentFromTitle( RequestContext::getMain()->getTitle() );
-		if ( !isset( $this->aBehaviorSwitches ) ) return true;
-
-		$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $sContent );
-		foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
-			if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
-				call_user_func( $sCallback );
-			}
-		}
-		// TODO: This note should be displayed when the editor is deactivated
-		//$editPage->editFormTextTop = "Der Editor wurde deaktiviert <br/>";
-		if ( isset( $editPage->textbox1 ) ) {
-			foreach ( $this->aBehaviorSwitches as $sSwitch => $sCallback ) {
-				$sNowikistripped = preg_replace( "#<nowiki>.*?<\/nowiki>#si", "", $editPage->textbox1 );
-				if ( strstr( $sNowikistripped, '__' . $sSwitch . '__' ) ) {
-					call_user_func( $sCallback );
-				}
-			}
-		}
-		return true;
 	}
 
 	/**
