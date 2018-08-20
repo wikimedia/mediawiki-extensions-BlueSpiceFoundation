@@ -1,8 +1,6 @@
 <?php
 /**
- * DEPRECATED
- * Hook handler base class for BlueSpice hook
- * BsFoundationBeforeMakeGlobalVariablesScript
+ * Hook handler base class for MediaWiki hook LinkerMakeMediaLinkFile
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,7 +18,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Patric Wirth <wirth@hallowelt.com>
+ * @author     Patric WIrth <wirth@hallowelt.com>
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
@@ -29,49 +27,77 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class BsFoundationBeforeMakeGlobalVariablesScript extends Hook {
+abstract class LinkerMakeMediaLinkFile extends Hook {
 
 	/**
 	 *
-	 * @var \User
+	 * @var \Title
 	 */
-	protected $user = null;
+	protected $title = null;
+
+	/**
+	 *
+	 * @var \File
+	 */
+	protected $file = null;
+
+	/**
+	 *
+	 * @var string
+	 */
+	protected $html = '';
 
 	/**
 	 *
 	 * @var array
 	 */
-	protected $scriptSettings = null;
+	protected $attribs = [];
 
 	/**
-	 * DEPRECATED!
-	 * Located in
-	 * \BlueSpice\Hook\BeforePageDisplay\AddResources::addLegacyJSConfigVars,
-	 * before the javascript globals for BlueSpice get added to the javascript
-	 * globals
-	 * @param \User $user
-	 * @param array $scriptSettings
-	 * @return boolean
+	 *
+	 * @var string
 	 */
-	public static function callback( $user, &$scriptSettings ) {
+	protected $ret  = '';
+
+	/**
+	 * @param \Title $title
+	 * @param \File $file
+	 * @param string $html
+	 * @param array $attribs
+	 * @param string $ret
+	 * @return boolean Always true to keep hook running
+	 */
+	public static function callback( \Title $title, $file, &$html, &$attribs, &$ret  ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$user,
-			$scriptSettings
+			$title,
+			$file,
+			$html,
+			$attribs,
+			$ret
 		);
 		return $hookHandler->process();
 	}
 
 	/**
+	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
+	 * @param \Title $title
+	 * @param \File $file
+	 * @param string $html
+	 * @param array $attribs
+	 * @param string $ret
 	 */
-	public function __construct( $context, $config, $user, &$scriptSettings ) {
+	public function __construct( $context, $config, \Title $title, $file, &$html, &$attribs, &$ret ) {
 		parent::__construct( $context, $config );
 
-		$this->user = $user;
-		$this->scriptSettings = &$scriptSettings;
+		$this->title = $title;
+		$this->file = $file;
+		$this->html =& $html;
+		$this->attribs =& $attribs;
+		$this->ret =& $ret;
 	}
 }

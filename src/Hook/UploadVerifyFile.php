@@ -1,8 +1,6 @@
 <?php
 /**
- * DEPRECATED
- * Hook handler base class for BlueSpice hook
- * BsFoundationBeforeMakeGlobalVariablesScript
+ * Hook handler base class for MediaWiki hook UploadVerifyFile
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,49 +27,58 @@
 namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
-abstract class BsFoundationBeforeMakeGlobalVariablesScript extends Hook {
+abstract class UploadVerifyFile extends Hook {
 
 	/**
 	 *
-	 * @var \User
+	 * @var \UploadBase
 	 */
-	protected $user = null;
+	protected $upload = null;
 
 	/**
 	 *
-	 * @var array
+	 * @var string
 	 */
-	protected $scriptSettings = null;
+	protected $mime = null;
 
 	/**
-	 * DEPRECATED!
-	 * Located in
-	 * \BlueSpice\Hook\BeforePageDisplay\AddResources::addLegacyJSConfigVars,
-	 * before the javascript globals for BlueSpice get added to the javascript
-	 * globals
-	 * @param \User $user
-	 * @param array $scriptSettings
+	 *
+	 * @var true | array
+	 */
+	protected $error = null;
+
+	/**
+	 *
+	 * @param \UploadBase $upload
+	 * @param string $mime
+	 * @param true | array $error
 	 * @return boolean
 	 */
-	public static function callback( $user, &$scriptSettings ) {
+	public static function callback( $upload, $mime, &$error  ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
 			null,
-			$user,
-			$scriptSettings
+			$upload,
+			$mime,
+			$error
 		);
 		return $hookHandler->process();
 	}
 
 	/**
+	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
+	 * @param \UploadBase $upload
+	 * @param string $mime
+	 * @param true | array $error
 	 */
-	public function __construct( $context, $config, $user, &$scriptSettings ) {
+	public function __construct( $context, $config, &$upload, $mime, &$error ) {
 		parent::__construct( $context, $config );
 
-		$this->user = $user;
-		$this->scriptSettings = &$scriptSettings;
+		$this->upload = $upload;
+		$this->mime = $mime;
+		$this->error =& $error;
 	}
 }

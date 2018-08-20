@@ -89,7 +89,6 @@
 		}
 	},
 	"ExtensionFunctions": [
-		"BsCoreHooks::setup",
 		"\\BlueSpice\\RunJobsTriggerRunner::run"
 	],
 	"ServiceWiringFiles": [
@@ -509,38 +508,33 @@
 	},
 	"Hooks": {
 		"SetupAfterCache": [
-			"BsCoreHooks::onSetupAfterCache"
+			"\\BlueSpice\\Hook\\SetupAfterCache\\AddConfigFiles::callback",
+			"\\BlueSpice\\Hook\\SetupAfterCache\\AddParamDefinitions::callback"
 		],
 		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
-		"BeforePageDisplay": "BsCoreHooks::onBeforePageDisplay",
+		"BeforePageDisplay": "\\BlueSpice\\Hook\\BeforePageDisplay\\AddResources::callback",
 		"HtmlPageLinkRendererEnd": [
 			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataUserName::callback",
 			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataTitle::callback"
 		],
-		"LinkerMakeMediaLinkFile": "BsCoreHooks::onLinkerMakeMediaLinkFile",
-		"ThumbnailBeforeProduceHTML": "BsCoreHooks::onThumbnailBeforeProduceHTML",
-		"MakeGlobalVariablesScript": [
-			"BsCoreHooks::onMakeGlobalVariablesScript",
-			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback"
-		],
+		"LinkerMakeMediaLinkFile": "\\BlueSpice\\Hook\\LinkerMakeMediaLinkFile\\AddDataAttributes::callback",
+		"ThumbnailBeforeProduceHTML": "\\BlueSpice\\Hook\\ThumbnailBeforeProduceHTML\\AddDataAttributes::callback",
+		"MakeGlobalVariablesScript": "\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback",
 		"LoadExtensionSchemaUpdates": [
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
 		],
-		"ApiCheckCanExecute": "BsCoreHooks::onApiCheckCanExecute",
-		"UploadVerifyFile": "BsCoreHooks::onUploadVerifyFile",
 		"SkinTemplateOutputPageBeforeExec": [
-			"BsCoreHooks::onSkinTemplateOutputPageBeforeExec",
-			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddAdminTools::callback"
+			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddAdminTools::callback",
+			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddExportDownloadFile::callback"
 		],
-		"SkinAfterContent": "BsCoreHooks::onSkinAfterContent",
 		"ParserFirstCallInit": [
-			"BsCoreHooks::onParserFirstCallInit",
+			"\\BlueSpice\\Hook\\ParserFirstCallInit\\GenericTagExtensionHandler::callback",
 			"BlueSpice\\Hook\\ParserFirstCallInit\\AddTags::callback"
 		],
-		"ExtensionTypes": "BsCoreHooks::onExtensionTypes",
+		"ExtensionTypes": "\\BlueSpice\\Hook\\ExtensionTypes\\AddResources::callback",
 		"PageContentSaveComplete": [
-			"BsCoreHooks::onPageContentSaveComplete",
+			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateArticleHelper::callback",
 			"BsCacheHelper::onPageContentSaveComplete"
 		],
 		"ResourceLoaderGetConfigVars": [
@@ -709,7 +703,6 @@
 	},
 	"AutoloadClasses": {
 		"BsCore": "includes/Core.class.php",
-		"BsCoreHooks": "includes/CoreHooks.php",
 		"BsValidator": "includes/validator/BSValidator.class.php",
 		"BsValidatorPlugin": "includes/validator/BSValidatorPlugin.php",
 		"BsValidatorResponse": "includes/validator/BSValidatorResponse.php",
@@ -829,5 +822,6 @@
 		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
 	},
 	"manifest_version": 2,
-	"callback": "BsCoreHooks::onRegistry"
+	"load_composer_autoloader": true,
+	"callback": "\\BlueSpice\\Foundation::onRegistry"
 }
