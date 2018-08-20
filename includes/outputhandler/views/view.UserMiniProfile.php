@@ -4,6 +4,8 @@ use BlueSpice\DynamicFileDispatcher\Params;
 use BlueSpice\Services;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage;
 /**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
  * This class provides a miniprofile for users.
  * @package BlueSpice_AdapterMW
  * @subpackage views

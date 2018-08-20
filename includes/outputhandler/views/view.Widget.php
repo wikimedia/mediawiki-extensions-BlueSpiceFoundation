@@ -1,4 +1,8 @@
 <?php
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewWidget extends ViewBaseElement {
 
 	protected $_mDefaultViewstate = ''; // Possible values 'expanded'|'collapsed'

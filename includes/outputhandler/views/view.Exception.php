@@ -10,7 +10,10 @@
  * $Rev: 6486 $
 
  */
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewException extends ViewBaseElement {
 	protected $oException = null;
 

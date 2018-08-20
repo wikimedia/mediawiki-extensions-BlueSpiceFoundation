@@ -13,7 +13,10 @@
  */
 
 // Last review: MRG20100816
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewFormElementInput extends ViewFormElement {
 	protected $_mValidate = false;
 	protected $_mLinebreak = true;

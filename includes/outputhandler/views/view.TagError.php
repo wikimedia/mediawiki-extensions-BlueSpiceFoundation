@@ -12,7 +12,10 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewTagError extends ViewBaseElement {
 
 	protected $mErrorMsg;

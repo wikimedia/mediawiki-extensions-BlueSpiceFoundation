@@ -11,7 +11,10 @@
  * $Rev: 8734 $
 
  */
-
+/**
+ * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
+ * \BlueSpice\TemplateRenderer instead
+ */
 class ViewTagErrorList extends ViewBaseElement {
 
 	protected $mSenderName;
