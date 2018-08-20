@@ -502,7 +502,6 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"DiagnosticsAlias": "languages/BlueSpice.Diagnostics.alias.php",
 		"CreditsAlias": "languages/BlueSpice.Credits.alias.php",
 		"WikiAdminAlias": "languages/BlueSpice.WikiAdmin.alias.php"
 	},
