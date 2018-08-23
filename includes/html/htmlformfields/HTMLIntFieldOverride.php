@@ -37,6 +37,8 @@ class HTMLIntFieldOverride extends HTMLIntField {
 			$attr['showButtons'] = $this->mParams['showButtons'];
 		}
 		$attr['isInteger'] = true;
-		return new \OOUI\NumberInputWidget( $attr );
+		// Compatibility layer - replace with \OOUI\NumberInputWidget
+		// when MW core requires oojs/oojs-ui at least v0.27.0
+		return new \BlueSpice\Html\OOUI\NumberInputWidget( $attr );
 	}
 }
