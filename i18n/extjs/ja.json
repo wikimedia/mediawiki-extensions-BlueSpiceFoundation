@@ -3,7 +3,8 @@
 		"authors": [
 			"Shirayuki",
 			"2nd-player",
-			"Otokoume"
+			"Otokoume",
+			"Suyama"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -39,5 +40,6 @@
 	"bs-extjs-title-success": "成功",
 	"bs-extjs-title-warning": "警告",
 	"bs-extjs-categoryboxselect-emptytext": "カテゴリを追加",
-	"bs-extjs-pageexport-list-format-link-label": "リンク"
+	"bs-extjs-pageexport-list-format-link-label": "リンク",
+	"bs-extjs-pageexport-general-error": "エクスポート エラー"
 }

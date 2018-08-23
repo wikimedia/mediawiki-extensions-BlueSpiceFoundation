@@ -4,7 +4,8 @@
 			"Shirayuki",
 			"Sujiniku",
 			"2nd-player",
-			"Otokoume"
+			"Otokoume",
+			"Suyama"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -32,6 +33,7 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "エラーの詳細を表示",
 	"bs-exception-view-stacktrace-toggle-hide-text": "エラーの詳細を非表示",
 	"bs-viewtagerrorlist-legend": "$1 - エラー",
+	"bs-readonly": "データベースは現在、新しいページの追加や編集を受け付けない「ロック状態」になっています。これはおそらくデータベースの定期メンテナンスのためで、メンテナンス終了後は正常な状態に復帰します。\n\nデータベースをロックしたシステム管理者による説明は以下の通りです: $1",
 	"bs-permissionerror": "権限エラー!",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> は有効なディレクトリではありません。",
 	"bs-filesystemhelper-has-path-traversal": "ディレクトリ トラバーサルを検出しました!",
