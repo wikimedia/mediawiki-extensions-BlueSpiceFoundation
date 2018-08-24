@@ -558,6 +558,9 @@
 	},
 	"config_prefix": "bsg",
 	"config": {
+		"PermissionConfig": {
+			"value": []
+		},
 		"NotifierClass": {
 			"value": "BlueSpice\\NullNotifier"
 		},
