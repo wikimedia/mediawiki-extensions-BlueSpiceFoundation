@@ -48,7 +48,7 @@ abstract class BSTemplateRendererGetRenderedArgs extends \BlueSpice\Hook {
 	protected $val = null;
 
 	/**
-	 * Result of the processed value. Before this overwrites the the value.
+	 * Result of the processed value. Before this overwrites the value.
 	 * @var string
 	 */
 	protected $renderedVal = null;

@@ -274,7 +274,7 @@ Ext.define ( 'BS.panel.Upload', {
 		 * 'pageText' consists of chosen categories, chosen licence and provided
 		 * description text. If it is not empty - which means the user has set
 		 * at least one of those fields - we need to edit the file description
-		 * page after a successfull upload. Because otherwise such things as
+		 * page after a successful upload. Because otherwise such things as
 		 * categories would not be persisted in case of a re-upload.
 		 */
 		if( pageText === '' ) {

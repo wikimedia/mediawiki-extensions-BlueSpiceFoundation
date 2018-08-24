@@ -142,14 +142,14 @@ class BsNamespaceHelper {
 
 	/**
 	 * Resolves a given ambigous list of namespaces into a array of integer namespace ids
-	 * @param string $sCSV Comma seperated list of integer and string namespaces, i.e. "4, 14, SomeNamespace, 7". The strings "all", "-" and the empty string "" will result in an array of all available namespaces.
+	 * @param string $sCSV Comma separated list of integer and string namespaces, i.e. "4, 14, SomeNamespace, 7". The strings "all", "-" and the empty string "" will result in an array of all available namespaces.
 	 * @return array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */
 	public static function getNamespaceIdsFromAmbiguousCSVString( $sCSV = '' ) {
 		if( !isset( $sCSV ) || !is_string( $sCSV ) ) {
 			throw new \MWException(
-				__CLASS__.":".__METHOD__.' - expects comma seperated string'
+				__CLASS__.":".__METHOD__.' - expects comma separated string'
 			);
 		}
 		global $wgContLang;
