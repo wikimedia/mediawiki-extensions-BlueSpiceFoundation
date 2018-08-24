@@ -531,7 +531,7 @@
 			"\\BlueSpice\\Hook\\ParserFirstCallInit\\GenericTagExtensionHandler::callback",
 			"BlueSpice\\Hook\\ParserFirstCallInit\\AddTags::callback"
 		],
-		"ExtensionTypes": "\\BlueSpice\\Hook\\ExtensionTypes\\AddResources::callback",
+		"ExtensionTypes": "\\BlueSpice\\Hook\\ExtensionTypes\\AddBlueSpice::callback",
 		"PageContentSaveComplete": [
 			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateArticleHelper::callback",
 			"BsCacheHelper::onPageContentSaveComplete"
