@@ -4,5 +4,8 @@
 			"Dr Lotus Black"
 		]
 	},
+	"bs-extjs-ok": "အိုကေ",
+	"bs-extjs-cancel": "မလုပ်တော့ပါ",
+	"bs-extjs-delete": "ဖျက်ပါ",
 	"bs-extjs-label-namespace": "အမည်ညွှန်း"
 }
