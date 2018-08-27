@@ -321,7 +321,7 @@ class BsConfig {
 		$aSettings = array();
 
 		foreach ( self::$prSettings as $setting ) {
-			# if the the setting is not a public or a user setting
+			# if the setting is not a public or a user setting
 			# go to the next setting
 			if ( ! ( $setting->getOptions () &
 					( self::LEVEL_PUBLIC | self::LEVEL_USER ) ) ) {

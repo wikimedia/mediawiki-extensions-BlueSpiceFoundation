@@ -40,7 +40,7 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 		// -- try somewhere in categorylinks, or 2) it once did.  Categories might not
 		// -- have corresponding pages, so they need to be tracked separately.
 
-		// (31.01.14) STM: Query had to be seperated into two quieres because it was to expensive
+		// (31.01.14) STM: Query had to be separated into two quieres because it was to expensive
 
 		$res = $dbr->select(
 			array( 'category', 'categorylinks' ),

@@ -26,7 +26,7 @@ class BsException extends Exception {
 
 	protected $sMessage = '';
 	/**
-	 * Extended constructor mehtod of the BsException class.
+	 * Extended constructor method of the BsException class.
 	 * @param String $sMessage The literal message fore the exception, or a I18N key for the provided I18N repository object
 	 * @param Integer $iCode Classic errorcode
 	 * @param Exception|null $oPreviousException For use in a chain of try-catch blocks.
