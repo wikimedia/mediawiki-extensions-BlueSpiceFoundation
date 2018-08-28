@@ -15,7 +15,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		global $wgContLang;
 
 		$aOptions = $this->getParameter( 'options' ) + array(
-			'limit' => 100,
+			'limit' => 250,
 			'namespaces' => array(),
 			'returnQuery' => false
 		);
@@ -184,8 +184,15 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			}
 
 			$sPrefixedText = $oTitle->getPrefixedText();
+
+			$pagetype = 'wikipage';
+
+			if ( $sPrefixedText === ucfirst( $sQuery ) || $sPrefixedText === $sQuery ) {
+				$pagetype = 'directsearch';
+			}
+
 			$aData[] = (object)(array(
-				'type' => 'wikipage',
+				'type' => $pagetype,
 				'page_id' => $oTitle->getArticleId(),
 				'page_namespace' => $oTitle->getNamespace(),
 				'page_title' => $oTitle->getText(),
@@ -210,7 +217,6 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		}
 		$aSpecialPages = SpecialPageFactory::getNames();
 		$aSPDataSets = array();
-		$aSortHelper = array();
 		$sSpecialNmspPrefix = $this->getLanguage()->getNsText( NS_SPECIAL );
 		$sUnprefixedNormQuery = array_pop( explode( ':', $sNormQuery, 2 ) );
 
@@ -253,11 +259,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 				'displayText' => $sSpecialNmspPrefix . ':' .  $sSPDisplayText
 			) + $aDataSet);
 
-			$aSortHelper[] = $sSPDisplayText;
 		}
-
-		//We want the result to be sorted by its display text!
-		array_multisort( $aSortHelper, SORT_NATURAL, $aSPDataSets );
 
 		$aData = array_merge( $aData, $aSPDataSets );
 
@@ -286,4 +288,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		}
 		return $value;
 	}
+
+	// Sorting does not work here, so skip it
+	public function sortData( $aProcessedData ) {
+		return $aProcessedData;
+	}
+
 }

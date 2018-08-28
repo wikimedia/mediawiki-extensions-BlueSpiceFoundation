@@ -23,6 +23,9 @@ Ext.define('BS.form.field.TitleCombo', {
 						if( name === 'wikipage' || name === 'specialpage' ) {
 							return mw.message('bs-extjs-label-page').plain();
 						}
+						if( name === 'directsearch' ) {
+							return mw.message('bs-extjs-label-directsearch').plain();
+						}
 						return name;
 					}
 				}
@@ -44,6 +47,12 @@ Ext.define('BS.form.field.TitleCombo', {
 				return value;
 			},
 			flex: 1
+		}],
+		dockedItems: [{
+			xtype: 'pagingtoolbar',
+			store: this.store,
+			dock: 'bottom',
+			displayInfo: true
 		}],
 		viewConfig: {
 			getRowClass: function(record, rowIndex, rowParams, store){
@@ -105,6 +114,11 @@ Ext.define('BS.form.field.TitleCombo', {
 			remoteSort: true,
 			autoLoad: true
 		});
+
+		store.on( "beforeload", function( store, operation, eOpts ){
+			operation.params = operation.params || {};
+			operation.params.query = this.lastQuery;
+		}, this );
 
 		return store;
 	},
