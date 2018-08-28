@@ -261,39 +261,6 @@ class BsCore {
 		return self::sanitize($array[$key], $default, $options);
 	}
 
-	public static function doInitialise() {
-		self::$oInstance = new BsCore();
-
-		if ( !defined( 'DO_MAINTENANCE' ) ) {
-			BsConfig::loadSettings();
-		}
-
-		$notifications = BlueSpice\Services::getInstance()->getBSNotificationManager();
-		$notifications->init();
-
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSExtensionFactory'
-		);
-		$factory->getExtensions();
-
-		//TODO: This does not seem to be the right place for stuff like this.
-		global $wgFileExtensions;
-		$config = MediaWiki\MediaWikiServices::getInstance()
-			->getConfigFactory()->makeConfig( 'bsg' );
-		$aFileExtensions  = $config->get( 'FileExtensions' );
-		$aImageExtensions = $config->get( 'ImageExtensions' );
-		$wgFileExtensions = array_merge( $aFileExtensions, $aImageExtensions );
-		$wgFileExtensions = array_values( array_unique( $wgFileExtensions ) );
-
-		//Initialize and apply role
-		if( $config->get( 'EnableRoleSystem' ) ) {
-			$roleManager = \MediaWiki\MediaWikiServices::getInstance()->getService(
-				'BSRoleManager'
-			);
-			$roleManager->applyRoles();
-		}
-	}
-
 	/* Returns the filesystem path of the core installation
 	 * @return String Filesystempath to the core installation
 	 */
