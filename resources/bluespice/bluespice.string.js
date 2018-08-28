@@ -6,13 +6,6 @@ String.prototype.ellipse = function ( maxLength ) {
 	return this;
 };
 
-String.prototype.trim = function () {
-	// TODO MRG (21.09.10 16:29): warum \xA0? könnte man auch einen u-flag verwenden?
-	var newString = this.replace(/^[\s\xA0]+/, "");
-	newString = this.replace(/[\s\xA0]+$/, "");
-	return newString;
-};
-
 // taken from http://stackoverflow.com/questions/646628/how-to-check-if-a-string-startswith-another-string
 String.prototype.startsWith = function ( startString ) {
 	return this.slice( 0, startString.length ) === startString;
