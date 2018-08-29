@@ -86,7 +86,8 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 
 			$bEnabledFilterIsSet = false;
 			foreach ( $value as $filter ) {
-				if ( $filter->field == 'enabled' ) {
+				if ( (isset( $filter->property ) && ($filter->property == 'enabled' ) )
+                                    || ($filter->field == 'enabled') ) {
 					$bEnabledFilterIsSet = true;
 				}
 			}
