@@ -80,10 +80,16 @@
 	"bs-validator-error-namespace-on-blacklist": "Navnerom ikke tillatt: $1",
 	"bs-validator-error-title-does-not-exist": "Siden finnes ikke: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Side ikke tillatt: $1",
+	"bs-parser-error-invalid-category-title": "Siden er ikke en gyldig kategori: $1",
 	"bs-exttype-bluespice": "BlueSpice-utvidelser",
 	"bs-export-menu-print-text": "Skriv ut",
 	"bs-export-menu-print-title": "Viser en utskriftsvennlig versjon av siden",
+	"bs-graphicallist-action-close": "Lukk",
+	"bs-graphicallist-action-list": "Liste",
+	"bs-graphicallist-action-preview": "Forhåndsvis",
+	"bs-bluespice-mediawiki": "BlueSpice-MediaWiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Vise BlueSpice-administrasjonssider",
+	"right-wikiadmin": "Brukt i mange BlueSpice-utvidelser for potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon",
+	"bs-notifications-agent-anon": "anonym bruker",
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Legg til ny…"
 }

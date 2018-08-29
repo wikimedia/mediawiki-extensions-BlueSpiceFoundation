@@ -3,7 +3,8 @@
 		"authors": [
 			"Milicevic01",
 			"Obsuser",
-			"Acamicamacaraca"
+			"Acamicamacaraca",
+			"BadDog"
 		]
 	},
 	"bs-extjs-ok": "У реду",
@@ -25,6 +26,7 @@
 	"bs-extjs-saving": "чување...",
 	"bs-extjs-close": "Затвори",
 	"bs-extjs-label-user": "Корисник",
+	"bs-extjs-label-directsearch": "Претражи",
 	"bs-extjs-uploading": "Отпремање...",
 	"bs-extjs-allns": "(сви)",
 	"bs-extjs-filters": "Филтери",
