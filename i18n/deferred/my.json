@@ -4,5 +4,7 @@
 			"Dr Lotus Black"
 		]
 	},
+	"bs-deferred-action-status-pending": "ဆိုင်းငံ့နေသည်",
+	"bs-deferred-batch-description": "ဖော်ပြချက်",
 	"bs-deferred-action-apideletepage-description": "\"$1\" ကို ဖျက်ပါ"
 }
