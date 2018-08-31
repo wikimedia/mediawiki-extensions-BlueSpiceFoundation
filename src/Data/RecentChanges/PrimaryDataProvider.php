@@ -82,9 +82,9 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::DIFF_LINK => '',
 			Record::HIST_URL => '',
 			Record::HIST_LINK => '',
-			'tmp_curid' => $row->rc_cur_id,
-			'tmp_diff' => $row->rc_last_oldid,
-			'tmp_oldid' => $row->rc_this_oldid,
+			Record::CUR_ID => $row->rc_cur_id,
+			Record::LAST_OLDID => $row->rc_last_oldid,
+			Record::THIS_OLDID => $row->rc_this_oldid,
 			'tmp_user' => $row->rc_user
 		] );
 	}

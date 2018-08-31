@@ -42,9 +42,9 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		}
 
 		$diffQuery = [
-			'curid' => $rawData->tmp_curid,
-			'oldid' => $rawData->tmp_oldid,
-			'diff' => $rawData->tmp_diff
+			'curid' => $rawData->cur_id,
+			'oldid' => $rawData->this_oldid,
+			'diff' => $rawData->last_oldid
 		];
 		$rawData->diff_url = $title->getFullURL( $diffQuery );
 		$rawData->diff_link =
@@ -74,9 +74,6 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		);
 
 		unset( $rawData->tmp_user );
-		unset( $rawData->tmp_curid );
-		unset( $rawData->tmp_oldid );
-		unset( $rawData->tmp_diff );
 
 		$dataSet = new Record( $rawData );
 	}

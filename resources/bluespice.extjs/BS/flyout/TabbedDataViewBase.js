@@ -162,14 +162,19 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	 * @returns {String}
 	 */
 	makeDataViewThumbnailImageSrc: function( values ) {
-		var query = $.param( {
+		var query =  {
 			module: this.makeDataViewThumbImageModuleName(),
 			width: '320px',
 			titletext: this.makeDataViewThumbImageTitletextValue( values )
-		} );
+		};
+
+		var revid = this.makeDataViewThumbImageRevidValue( values );
+		if( revid > 0 ) {
+			query.revid = revid;
+		}
 
 		//TODO: Create and use abtraction for 'dynamic_file' in 'bs.util';
-		var url = mw.util.wikiScript( 'dynamic_file' ) + '?' + query;
+		var url = mw.util.wikiScript( 'dynamic_file' ) + '?' + $.param( query );
 		return url;
 	},
 
@@ -179,6 +184,10 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 
 	makeDataViewThumbImageTitletextValue: function( values ) {
 		return values.prefixedText;
+	},
+
+	makeDataViewThumbImageRevidValue: function( values ) {
+		return 0;
 	},
 
 	makeDataViewThumbnailImageTitle: function( values ) {

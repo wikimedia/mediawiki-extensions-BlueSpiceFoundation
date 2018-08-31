@@ -17,4 +17,7 @@ class Record extends \BlueSpice\Data\Record {
 	const HIST_URL = 'hist_link';
 	const HIST_LINK = 'hist_url';
 	const RAW_TIMESTAMP = 'raw_timestamp';
+	const CUR_ID = 'cur_id';
+	const LAST_OLDID = 'last_oldid';
+	const THIS_OLDID = 'this_oldid';
 }
