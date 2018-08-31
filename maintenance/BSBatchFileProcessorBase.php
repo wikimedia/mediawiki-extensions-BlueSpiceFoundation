@@ -51,7 +51,7 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 		}
 
 		$this->output( $iProcessedFiles.' file(s) processed.' );
-		$this->output( count($this->aErrors).' errors(s) occured.' );
+		$this->output( count($this->aErrors).' errors(s) occurred.' );
 		if( count( $this->aErrors ) > 0 ) {
 			$this->output(
 				implode( "\n", $this->aErrors )
