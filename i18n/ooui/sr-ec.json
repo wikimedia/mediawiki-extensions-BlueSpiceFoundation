@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"BadDog"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Додајте нов...",
+	"bs-ooui-key-value-input-widget-key-label": "Кључ",
+	"bs-ooui-key-value-input-widget-value-label": "Вредност",
+	"bs-ooui-key-value-input-widget-add-button-label": "Додај",
+	"bs-ooui-key-value-input-widget-add-form-label": "Додај нови унос",
+	"bs-ooui-key-value-input-widget-error-message": "Сва неопходна поља морају да буду попуњена.",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Нема постављених вредности."
+}

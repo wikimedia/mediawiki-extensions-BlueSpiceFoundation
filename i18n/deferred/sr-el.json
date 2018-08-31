@@ -1,0 +1,19 @@
+{
+	"@metadata": [],
+	"bs-deferred-action-status-pending": "Nerešno.",
+	"bs-deferred-action-status-running": "U toku...",
+	"bs-deferred-action-status-done": "Urađeno.",
+	"bs-deferred-action-status-error": "Nije urađeno.",
+	"bs-deferred-action-apicopypage-description": "Kopiraj $1 u $2",
+	"bs-deferred-action-apieditpage-description": "Uredi $1.",
+	"bs-deferred-batch-title": "Obrada serije",
+	"bs-deferred-batch-progress-desc": "Napredak",
+	"bs-deferred-batch-actions": "Akcije",
+	"bs-deferred-batch-description": "Opis",
+	"bs-deferred-batch-status": "Status",
+	"bs-deferred-action-apiaddcategories-description": "Dodaj kategorije u $1.",
+	"bs-deferred-action-apiremovecategories-description": "Ukloni kategorije iz $1.",
+	"bs-deferred-action-apisetcategories-description": "Postavi kategorije na $1.",
+	"bs-deferred-action-apimovepage-description": "Premesti $1 u $2.",
+	"bs-deferred-action-apideletepage-description": "Obriši $1."
+}

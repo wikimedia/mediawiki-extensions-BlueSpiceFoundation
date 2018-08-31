@@ -1,0 +1,20 @@
+{
+	"@metadata": [],
+	"bs-filerepo-labelupload": "Otpremi",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Naziv datoteke",
+	"bs-filerepo-headerfilesize": "Veličina",
+	"bs-filerepo-headerpagecategories": "Kategorije",
+	"bs-filerepo-headerfilewidth": "Širina",
+	"bs-filerepo-headerfileheight": "Visina",
+	"bs-filerepo-headerfilemimetype": "MIME tip",
+	"bs-filerepo-headerfileusertext": "Korisnik",
+	"bs-filerepo-headerfileextension": "Ekstenzija",
+	"bs-filerepo-headerfiletimestamp": "Postavljeno",
+	"bs-filerepo-headerfilemediatype": "Vrsta medija",
+	"bs-filerepo-headerfiledescription": "Opis",
+	"bs-filerepo-headerfilethumbnail": "Minijatura",
+	"bs-filerepo-yes": "Da",
+	"bs-filerepo-no": "Ne",
+	"bs-filerepo-pagesize": "Veličina stranice"
+}

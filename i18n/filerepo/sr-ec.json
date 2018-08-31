@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"BadDog"
 		]
 	},
 	"bs-filerepo-labelupload": "Отпреми",
@@ -9,9 +10,13 @@
 	"bs-filerepo-headerfilename": "Назив датотеке",
 	"bs-filerepo-headerfilesize": "Величина",
 	"bs-filerepo-headerpagecategories": "Категорије",
+	"bs-filerepo-headerfilewidth": "Ширина",
 	"bs-filerepo-headerfileheight": "Висина",
 	"bs-filerepo-headerfilemimetype": "MIME тип",
 	"bs-filerepo-headerfileusertext": "Корисник",
+	"bs-filerepo-headerfileextension": "Додатак",
+	"bs-filerepo-headerfiletimestamp": "Отпремљено",
+	"bs-filerepo-headerfilemediatype": "Тип медија",
 	"bs-filerepo-headerfiledescription": "Опис",
 	"bs-filerepo-headerfilethumbnail": "Минијатура",
 	"bs-filerepo-yes": "Да",

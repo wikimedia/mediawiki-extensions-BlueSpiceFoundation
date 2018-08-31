@@ -2,9 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
+	"specialcredits": "Заслуге за BlueSpice",
 	"bs-credits-programmers": "Програмери",
-	"bs-credits-translation": "Превод"
+	"bs-credits-dnt": "Дизајн и тестирање",
+	"bs-credits-contributors": "Доприносиоци",
+	"bs-credits-translators": "Преводиоци",
+	"bs-credits-translation": "Превод",
+	"bs-credits-th": "Захваљујемо се свим преводиоцима са $1."
 }

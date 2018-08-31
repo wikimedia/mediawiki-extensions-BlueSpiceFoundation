@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"BadDog"
+		]
+	},
+	"bs-deferred-action-status-pending": "На чекању.",
+	"bs-deferred-action-status-running": "Извршава се…",
+	"bs-deferred-action-status-done": "Готово.",
+	"bs-deferred-action-status-error": "Неуспело.",
+	"bs-deferred-action-apicopypage-description": "Копирање странице „$1” на наслов „$2”",
+	"bs-deferred-action-apieditpage-description": "Уређивање странице „$1”.",
+	"bs-deferred-batch-title": "Обрада пакета",
+	"bs-deferred-batch-progress-desc": "Напредак",
+	"bs-deferred-batch-actions": "Радње",
+	"bs-deferred-batch-description": "Опис",
+	"bs-deferred-batch-status": "Статус",
+	"bs-deferred-action-apiaddcategories-description": "Додавање категорија на страницу „$1”.",
+	"bs-deferred-action-apiremovecategories-description": "Уклањање категорија са странице „$1”.",
+	"bs-deferred-action-apisetcategories-description": "Постављање категорија на страници „$1”.",
+	"bs-deferred-action-apimovepage-description": "Премештање странице „$1” на наслов „$2”.",
+	"bs-deferred-action-apideletepage-description": "Брисање странице „$1”."
+}

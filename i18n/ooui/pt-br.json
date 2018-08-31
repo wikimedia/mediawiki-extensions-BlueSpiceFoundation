@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Adicionar novo...",
+	"bs-ooui-key-value-input-widget-key-label": "Chave",
+	"bs-ooui-key-value-input-widget-value-label": "Valor",
+	"bs-ooui-key-value-input-widget-add-button-label": "Adicionar",
+	"bs-ooui-key-value-input-widget-add-form-label": "Adicionar nova entrada",
+	"bs-ooui-key-value-input-widget-error-message": "Todos os campos obrigatórios devem ser definidos!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Nenhum valor definido!"
+}

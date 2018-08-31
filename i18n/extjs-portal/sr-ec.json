@@ -1,10 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Milicevic01"
+			"Milicevic01",
+			"BadDog"
 		]
 	},
+	"bs-extjs-portal-config": "Конфигуриши портрет:",
+	"bs-extjs-portal-title": "Наслов портлета",
 	"bs-extjs-portal-height": "Висина",
+	"bs-extjs-portal-count": "Уноси",
+	"bs-extjs-portal-timespan": "Временски распон",
 	"bs-extjs-portal-timespan-week": "Недеља",
-	"bs-extjs-portal-timespan-month": "Месец"
+	"bs-extjs-portal-timespan-month": "Месец",
+	"bs-extjs-portal-timespan-alltime": "Цело време"
 }

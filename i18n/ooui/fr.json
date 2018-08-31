@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko",
+			"Zarisi"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Ajouter un nouveau…",
+	"bs-ooui-key-value-input-widget-key-label": "Clé",
+	"bs-ooui-key-value-input-widget-value-label": "Valeur",
+	"bs-ooui-key-value-input-widget-add-button-label": "Ajouter",
+	"bs-ooui-key-value-input-widget-add-form-label": "Ajouter une nouvelle entrée",
+	"bs-ooui-key-value-input-widget-error-message": "Tous les champs obligatoires doivent être fixés !",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Aucune valeur fixée !"
+}

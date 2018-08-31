@@ -1,0 +1,11 @@
+{
+	"@metadata": [],
+	"bs-extjs-portal-config": "Konfiguriši portlet:",
+	"bs-extjs-portal-title": "Naslov portleta",
+	"bs-extjs-portal-height": "Visina",
+	"bs-extjs-portal-count": "Zapisi",
+	"bs-extjs-portal-timespan": "Vremenski raspon",
+	"bs-extjs-portal-timespan-week": "Nedellja",
+	"bs-extjs-portal-timespan-month": "Mesec",
+	"bs-extjs-portal-timespan-alltime": "Celo vreme"
+}

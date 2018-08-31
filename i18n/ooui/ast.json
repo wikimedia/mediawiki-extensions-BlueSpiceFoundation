@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Añadir nuevu...",
+	"bs-ooui-key-value-input-widget-key-label": "Clave",
+	"bs-ooui-key-value-input-widget-value-label": "Valor",
+	"bs-ooui-key-value-input-widget-add-button-label": "Añadir",
+	"bs-ooui-key-value-input-widget-add-form-label": "Añadir una entrada nueva",
+	"bs-ooui-key-value-input-widget-error-message": "Tien de dase valores a tolos campos riquíos",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Nun se dió nengún valor."
+}

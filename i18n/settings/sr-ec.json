@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"BadDog"
+		]
+	},
+	"bs-setting-path-feature": "Могућност",
+	"bs-setting-path-extension": "Додатак",
+	"bs-setting-path-package": "Пакет",
+	"bs-setting-path-system": "Систем",
+	"bs-setting-path-dataanalysis": "Анализе података",
+	"bs-setting-path-editor": "Уређивач",
+	"bs-setting-path-search": "Претраживање и навигација",
+	"bs-setting-path-personalisation": "Персонализација",
+	"bs-setting-path-skinning": "Прилагођавање теме",
+	"bs-setting-path-customizing": "Прилагођавање",
+	"bs-setting-path-contentstructuring": "Структурирање садржаја",
+	"bs-setting-path-communication": "Комуникација",
+	"bs-setting-path-administration": "Администрација",
+	"bs-setting-path-qualityassurance": "Гаранција квалитета",
+	"bs-setting-path-export": "Извоз"
+}

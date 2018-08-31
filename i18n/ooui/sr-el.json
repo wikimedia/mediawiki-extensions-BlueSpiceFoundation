@@ -1,0 +1,10 @@
+{
+	"@metadata": [],
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Dodajte nov...",
+	"bs-ooui-key-value-input-widget-key-label": "Ključ",
+	"bs-ooui-key-value-input-widget-value-label": "Vrednost",
+	"bs-ooui-key-value-input-widget-add-button-label": "Dodaj",
+	"bs-ooui-key-value-input-widget-add-form-label": "Dodaj novi unos",
+	"bs-ooui-key-value-input-widget-error-message": "Sva neophodna polja moraju biti popunjena!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Nema postavljenih vrednosti!"
+}

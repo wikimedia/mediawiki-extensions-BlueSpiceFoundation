@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Shaleych",
+			"Vlad5250"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Добавить новый...",
+	"bs-ooui-key-value-input-widget-key-label": "Ключ",
+	"bs-ooui-key-value-input-widget-value-label": "Значение",
+	"bs-ooui-key-value-input-widget-add-button-label": "Добавить",
+	"bs-ooui-key-value-input-widget-add-form-label": "Добавить новую запись",
+	"bs-ooui-key-value-input-widget-error-message": "Необходимо заполнить все необходимые поля!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Не задано значений!"
+}

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "添加新的...",
+	"bs-ooui-key-value-input-widget-key-label": "鍵",
+	"bs-ooui-key-value-input-widget-value-label": "值",
+	"bs-ooui-key-value-input-widget-add-button-label": "添加",
+	"bs-ooui-key-value-input-widget-add-form-label": "添加新項目",
+	"bs-ooui-key-value-input-widget-error-message": "需設定所有必要欄位！",
+	"bs-ooui-keyValueInputWidget-no-value-label": "值沒有設定！"
+}

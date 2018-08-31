@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"bs-ooui-key-value-input-widget-key-label": "Klucz",
+	"bs-ooui-key-value-input-widget-value-label": "Wartość",
+	"bs-ooui-key-value-input-widget-add-button-label": "Dodaj",
+	"bs-ooui-key-value-input-widget-add-form-label": "Dodaj nowy wpis",
+	"bs-ooui-key-value-input-widget-error-message": "Wszystkie wymagane pola muszą być ustawione!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Brak ustawionych wartości!"
+}

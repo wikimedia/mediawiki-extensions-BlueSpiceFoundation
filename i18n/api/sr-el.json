@@ -1,0 +1,23 @@
+{
+	"@metadata": [],
+	"apihelp-bs-wikipage-tasks-description": "Pruža važne operacije za stranice na vikiju",
+	"apihelp-bs-wikipage-tasks-summary": "Pruža važne operacije za stranice na vikiju",
+	"apihelp-bs-task-param-task": "Zadatak koji bi trebao biti pokrenut",
+	"apihelp-bs-task-param-format": "Format rezultata",
+	"apihelp-bs-task-param-token": "Neophodan je token za pristup API modulu",
+	"bs-wikipage-tasks-error-contentmodel": "Zadatak se ne može izvršiti sa modelom sadržaja stranice.",
+	"bs-wikipage-tasks-error-page-not-valid": "Pružena stranica nije korektna.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Promena kategorija.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nemate dozvolu da uređujete stranicu „$1”.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Nevažeća|Nevažeće}} {{PLURAL:$2|kategorija|kategorije}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Kategorije su uspešno postavljene.",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Spisak opcija",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Nije vam dozvoljeno da čitate stranicu $1.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Nema kategorija za uklanjanje.",
+	"bs-api-task-taskdata-help": "[$1 Šema], [$2 primeri parametara]",
+	"apihelp-bs-task-param-schema": "Prikaz JSON šeme za radne parametre",
+	"apihelp-bs-task-param-examples": "Prikaz primera radnih parametara",
+	"bs-api-task-taskData-page-id": "ID nepostojeće viki stranice",
+	"bs-api-task-taskData-page-title": "Validan naslov viki stranice",
+	"bs-api-task-wikipagetasks-taskData-categories": "Niz stringova. Vrednosti moraju da budu validna imena kategorija."
+}

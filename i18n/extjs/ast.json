@@ -27,6 +27,7 @@
 	"bs-extjs-label-user": "Usuariu",
 	"bs-extjs-label-namespace": "Espaciu de nomes",
 	"bs-extjs-label-page": "Páxina",
+	"bs-extjs-label-directsearch": "Buscar",
 	"bs-extjs-titlecombo-newpagehint": "La páxina nun esiste.",
 	"bs-extjs-upload": "Xubir",
 	"bs-extjs-browse": "Navegar",
@@ -68,5 +69,13 @@
 	"bs-extjs-pageexport-required-text": "El nome de la llista nun puede tar vacíu y tien d'escoyese una páxina a lo menos",
 	"bs-extjs-export-search-summary-text": "Xeneráu por PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "El nome de la llista nun ye válidu",
-	"bs-extjs-combo-box-default-placeholder": "Escribe pa filtrar..."
+	"bs-extjs-combo-box-default-placeholder": "Escribe pa filtrar...",
+	"bs-extjs-tools-trigger-title": "Pulsia equí p'abrir el menú de ferramientes",
+	"bs-extjs-tools-trigger-text": "Ferramientes",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniatures",
+	"bs-extjs-flyout-tab-thumbs-title": "Cambiar a la vista de miniatures",
+	"bs-extjs-flyout-tab-grid-label": "Detalles",
+	"bs-extjs-flyout-tab-grid-title": "Cambiar a la vista de detalles",
+	"bs-extjs-flyout-add-title": "Pulsia equí p'añadir un nuevu elementu",
+	"bs-extjs-flyout-add-label": "Añadir un elementu"
 }
