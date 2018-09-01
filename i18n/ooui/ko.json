@@ -4,5 +4,11 @@
 			"Ykhwong"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "새로 추가..."
+	"bs-ooui-field-tagmultiselect-input-placeholder": "새로 추가...",
+	"bs-ooui-key-value-input-widget-key-label": "키",
+	"bs-ooui-key-value-input-widget-value-label": "값",
+	"bs-ooui-key-value-input-widget-add-button-label": "추가",
+	"bs-ooui-key-value-input-widget-add-form-label": "새 항목 추가",
+	"bs-ooui-key-value-input-widget-error-message": "모든 필수 칸은 반드시 설정해야 합니다!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "설정된 값이 없습니다!"
 }

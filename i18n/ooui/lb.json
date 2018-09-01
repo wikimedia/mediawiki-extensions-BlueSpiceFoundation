@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"bs-ooui-key-value-input-widget-key-label": "Schlëssel",
+	"bs-ooui-key-value-input-widget-value-label": "Wäert",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Keng Wäerter festgeluecht!"
+}

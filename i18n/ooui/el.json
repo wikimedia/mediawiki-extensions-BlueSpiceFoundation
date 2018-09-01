@@ -4,5 +4,10 @@
 			"Nikosgranturismogt"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Προσθήκη νέου..."
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Προσθήκη νέου...",
+	"bs-ooui-key-value-input-widget-key-label": "Κλειδί",
+	"bs-ooui-key-value-input-widget-value-label": "Τιμή",
+	"bs-ooui-key-value-input-widget-add-button-label": "Προσθήκη",
+	"bs-ooui-key-value-input-widget-add-form-label": "Προσθήκη νέας καταχώρησης",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Δεν ορίστηκαν τιμές!"
 }

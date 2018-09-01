@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Nhatminh01"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -24,6 +25,7 @@
 	"bs-extjs-reset": "Mặc định lại",
 	"bs-extjs-close": "Đóng",
 	"bs-extjs-label-user": "Người dùng",
+	"bs-extjs-label-directsearch": "Tìm kiếm",
 	"bs-extjs-upload": "Tải lên",
 	"bs-extjs-browse": "Duyệt",
 	"bs-extjs-uploading": "Đang tải lên…",

@@ -94,5 +94,6 @@
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "显示BlueSpice管理员页面"
+	"right-wikiadmin": "显示BlueSpice管理员页面",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "添加新的..."
 }
