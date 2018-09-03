@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dual"
+		]
+	},
+	"bs-ooui-key-value-input-widget-key-label": "Anahtar kelime",
+	"bs-ooui-key-value-input-widget-value-label": "Değer",
+	"bs-ooui-key-value-input-widget-add-button-label": "Ekle",
+	"bs-ooui-key-value-input-widget-add-form-label": "Yeni girdi ekle",
+	"bs-ooui-key-value-input-widget-error-message": "Tüm gerekli alanlar doldudulmalı!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Hiç değer girilmedi!"
+}

@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Dual"
+		]
+	},
+	"bs-upload-upload-waitmessage": "Yükleme devam ediyor...",
+	"bs-upload-uploadwarningdialog-intro": "Dosyayı yüklemeye çalışırken aşağıdaki hatalar meydana geldi"
+}

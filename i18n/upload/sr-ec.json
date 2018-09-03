@@ -2,20 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"Milicevic01",
-			"Obsuser"
+			"Obsuser",
+			"BadDog"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Отпремање датотеке",
-	"bs-upload-uploadbuttontext": "Претражи",
-	"bs-upload-uploadfilefieldlabel": "Назив датотеке",
-	"bs-upload-uploadfileemptytext": "Убаци нову датотеку...",
-	"bs-upload-uploaddestfilelabel": "Дестинација датотеке",
-	"bs-upload-allowedfiletypesare": "Коректни типови датотека су:",
+	"bs-upload-uploadbuttontext": "Прегледај",
+	"bs-upload-uploadfilefieldlabel": "Име датотеке",
+	"bs-upload-uploadfileemptytext": "Уметни нову датотеку…",
+	"bs-upload-uploaddestfilelabel": "Одредиште имена датотеке",
+	"bs-upload-allowedfiletypesare": "Важећи типови датотека су:",
 	"bs-upload-license": "Лиценца",
 	"bs-upload-uploadwatchthislabel": "Надгледај ову датотеку",
-	"bs-upload-uploadignorewarningslabel": "Игнориши упозорења",
+	"bs-upload-uploadignorewarningslabel": "Занемари било која упозорења",
 	"bs-upload-categories": "Категорије",
-	"bs-upload-upload-waitmessage": "Отпремање у току...",
+	"bs-upload-upload-waitmessage": "Отпремање у току…",
 	"bs-upload-error": "Грешка",
 	"bs-upload-descfilelabel": "Опис",
 	"bs-upload-error-long": "Грешка у процесу отпремања",

@@ -4,5 +4,6 @@
 			"Vlad5250"
 		]
 	},
-	"bs-upload-upload-waitmessage": "Загрузка в процессе…"
+	"bs-upload-upload-waitmessage": "Идёт загрузка…",
+	"bs-upload-uploadwarningdialog-intro": "При попытке загрузить файл возникли следующие предупреждения"
 }
