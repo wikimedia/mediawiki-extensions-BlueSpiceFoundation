@@ -25,6 +25,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
+	 * @var \BlueSpice\Data\ReaderParams
+	 */
+	protected $params = null;
+	/**
+	 *
 	 * @param \Wikimedia\Rdbms\IDatabase $db
 	 */
 	public function __construct( $db ) {
@@ -37,7 +42,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	public function makeData( $params ) {
 		$this->data = [];
-
+		$this->params = $params;
 		$res = $this->db->select(
 			'user',
 			'*',
@@ -60,17 +65,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	protected function makePreFilterConds( $params ) {
 		$conds = [];
 		$schema = new Schema();
-		if( $params->getQuery() !== '' ) {
-			$conds[] = Record::USER_NAME." ".$this->db->buildLike(
-				$this->db->anyString(),
-				$params->getQuery(),
-				$this->db->anyString()
-			). "OR ". Record::USER_REAL_NAME." ".$this->db->buildLike(
-				$this->db->anyString(),
-				$params->getQuery(),
-				$this->db->anyString()
-			);
-		}
 		$fields = array_values( $schema->getFilterableFields() );
 		$filterFinder = new FilterFinder( $params->getFilter() );
 		foreach( $fields as $fieldName ) {
@@ -157,6 +151,21 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	protected function appendRowToData( $row ) {
+		if( $this->params->getQuery() !== '' ) {
+			$bApply = \BsStringHelper::filter(
+				\BsStringHelper::FILTER_CONTAINS,
+				$row->{Record::USER_NAME},
+				$this->params->getQuery()
+			) || \BsStringHelper::filter(
+				\BsStringHelper::FILTER_CONTAINS,
+				$row->{Record::USER_REAL_NAME},
+				$this->params->getQuery()
+			);
+			if( !$bApply ) {
+				return;
+			}
+		}
+
 		$this->data[] = new Record( (object) [
 			Record::ID => $row->{Record::ID},
 			Record::USER_NAME => $row->{Record::USER_NAME},
