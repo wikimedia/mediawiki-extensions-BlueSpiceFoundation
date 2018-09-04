@@ -31,7 +31,7 @@ class AddAdminTools extends SkinTemplateOutputPageBeforeExec {
 			'title' => $tool->getDescription(),
 			'text' => $tool->getName(),
 			'href' => $tool->getURL(),
-			'classes' => implode( ' ', $tool->getClasses() ),
+			'iconClass' => implode( ' ', $tool->getClasses() ),
 			'data' => $tool->getDataAttributes(),
 
 		];

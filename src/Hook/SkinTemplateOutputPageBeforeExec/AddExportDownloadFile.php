@@ -30,7 +30,8 @@ class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBefore
 				'href' => $file->getFullUrl(),
 				'title' => $file->getName(),
 				'text' => wfMessage( 'bs-imagepage-download-text' )->plain(),
-				'class' => 'icon-download'
+				'class' => 'bs-ue-export-link',
+				'iconClass' => 'icon-download'
 			]
 		]);
 		return true;
