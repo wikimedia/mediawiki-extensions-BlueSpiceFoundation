@@ -79,11 +79,16 @@
 	"bs-validator-error-namespace-on-blacklist": "Именскиот простор не е допуштен: $1",
 	"bs-validator-error-title-does-not-exist": "Страницата не постои: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Страницата не е допуштена: $1",
+	"bs-parser-error-invalid-category-title": "Страницата не е во важечка категорија: $1",
 	"bs-exttype-bluespice": "Додатоци за BlueSpice",
 	"bs-export-menu-print-text": "Печати",
 	"bs-export-menu-print-title": "Прикажува верзија на страницата погодна за печатање",
 	"bs-graphicallist-action-close": "Затвори",
 	"bs-graphicallist-action-list": "Список",
 	"bs-graphicallist-action-preview": "Преглед",
-	"right-wikiadmin": "Приказ на раководни страници за BlueSpiceа"
+	"bs-bluespice-mediawiki": "BlueSpice МедијаВики",
+	"bs-bluespice": "BlueSpice",
+	"right-wikiadmin": "Приказ на раководни страници за BlueSpiceа",
+	"bs-notifications-agent-anon": "анонимен корисник",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Додај нов..."
 }
