@@ -3,9 +3,28 @@
 namespace BlueSpice\Hook\GetUserPermissionsErrors;
 
 class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
+	/**
+	 *
+	 * @var array
+	 */
 	protected $namespaceRolesLockdown;
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $whitelistRead;
+
+	/**
+	 *
+	 * @var \Language
+	 */
 	protected $languageObject;
+
+	/**
+	 *
+	 * @var \BlueSpice\Permission\Registry
+	 */
 	protected $permissionRegistry;
 
 	/**
@@ -57,6 +76,9 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 				continue;
 			}
 			foreach( $roles as $roleName => $groups ) {
+				if( !in_array( $roleName, $actionRoles ) ) {
+					continue;
+				}
 				$allowedGroups = array_merge( $allowedGroups, $groups );
 				if( array_intersect( $groups, $userGroups ) ) {
 					return true;
@@ -64,6 +86,7 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 			}
 		}
 
+		$allowedGroups = array_unique( $allowedGroups );
 		$this->result = [
 			'badaccess-groups',
 			$this->languageObject->commaList( $allowedGroups ),
