@@ -76,7 +76,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::PAGE_LINK => '',
 			Record::TIMESTAMP => '',
 			Record::RAW_TIMESTAMP =>$row->rc_timestamp,
-			Record::COMMENT_TEXT => $row->rc_comment,
+			Record::COMMENT_TEXT => htmlspecialchars( $row->rc_comment ),
 			Record::SOURCE => $row->rc_source,
 			Record::DIFF_URL => '',
 			Record::DIFF_LINK => '',
