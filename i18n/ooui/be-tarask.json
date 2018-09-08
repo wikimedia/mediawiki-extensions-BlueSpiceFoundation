@@ -4,5 +4,6 @@
 			"Red Winged Duck"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Дадаць новы…"
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Дадаць новы…",
+	"bs-ooui-key-value-input-widget-key-label": "Ключ"
 }

@@ -31,11 +31,11 @@
 	"bs-email-footer": "Esta mensaxe foi xerada automaticamente por $1. Por favor, non responda a este correo electrónico.",
 	"bs-userpagesettings-legend": "Configuración de usuario",
 	"bs-userpreferences-link-text": "Máis axustes de usuario",
-	"bs-userpreferences-link-title": "Mostrar a súa configuración de usuario",
+	"bs-userpreferences-link-title": "Amosar a súa configuración de usuario",
 	"bs-exception-view-heading": "Houbo un erro",
 	"bs-exception-view-text": "Durante o procesamento da súa petición ocorreu o seguinte erro:",
 	"bs-exception-view-admin-hint": "Por favor, póñase en contacto co administrador do sistema.",
-	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar os detalles do erro",
+	"bs-exception-view-stacktrace-toggle-show-text": "Amosar os detalles do erro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Agochar os detalles do erro",
 	"bs-viewtagerrorlist-legend": "$1 - Erro",
 	"bs-readonly": "Nestes intres a base de datos está pechada a novas entradas e outras modificacións, probablemente debido a procesos de mantemento, tras os que volverá á normalidade. O administrador que a pechou deu esta explicación: $1",
@@ -84,10 +84,10 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Páxina non permitida: $1",
 	"bs-exttype-bluespice": "Extensións BlueSpice",
 	"bs-export-menu-print-text": "Imprimir",
-	"bs-export-menu-print-title": "Mostra a versión para imprimir da páxina",
+	"bs-export-menu-print-title": "Amosa a versión para imprimir da páxina",
 	"bs-graphicallist-action-close": "Pechar",
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Mostrar páxinas de administración de BlueSpice"
+	"right-wikiadmin": "Úsase en moitas extensións de BlueSpice para posibles tarefas administrativas perigrosas, como administrar usuarios, permisos, configuración global"
 }

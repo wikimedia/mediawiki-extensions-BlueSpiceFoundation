@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jelou"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Añade...",
+	"bs-ooui-key-value-input-widget-key-label": "Clave",
+	"bs-ooui-key-value-input-widget-value-label": "Valor",
+	"bs-ooui-key-value-input-widget-add-button-label": "Añadir",
+	"bs-ooui-key-value-input-widget-add-form-label": "Añade nueva entrada",
+	"bs-ooui-key-value-input-widget-error-message": "¡Todos los campos requeridos deben estar definidos!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "¡Sin valores establecidos!"
+}
