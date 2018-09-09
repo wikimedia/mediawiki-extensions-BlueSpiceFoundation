@@ -4,6 +4,19 @@
 			"Vlad5250"
 		]
 	},
+	"bs-upload-uploaddialogtitle": "Загрузка",
+	"bs-upload-uploadbuttontext": "Обзор",
+	"bs-upload-uploadfilefieldlabel": "Имя файла",
+	"bs-upload-uploadfileemptytext": "Вставить новый файл...",
+	"bs-upload-allowedfiletypesare": "Допустимые типы файлов:",
+	"bs-upload-license": "Лицензия",
+	"bs-upload-uploadwatchthislabel": "Следить за этим файлом",
+	"bs-upload-uploadignorewarningslabel": "Игнорировать предупреждения",
+	"bs-upload-categories": "Категории",
 	"bs-upload-upload-waitmessage": "Идёт загрузка…",
+	"bs-upload-error": "Ошибка",
+	"bs-upload-descfilelabel": "Описание",
+	"bs-upload-filetypenotsupported": "Этот тип файла не поддерживается",
+	"bs-upload-details": "Детали",
 	"bs-upload-uploadwarningdialog-intro": "При попытке загрузить файл возникли следующие предупреждения"
 }

@@ -2,11 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Patrick Star",
-			"Okras"
+			"Okras",
+			"Vlad5250"
 		]
 	},
 	"bs-setting-path-feature": "Функция",
+	"bs-setting-path-extension": "Расширение",
+	"bs-setting-path-package": "Пакет",
 	"bs-setting-path-system": "Система",
+	"bs-setting-path-dataanalysis": "Анализ данных",
 	"bs-setting-path-editor": "Редактор",
 	"bs-setting-path-administration": "Администрирование",
 	"bs-setting-path-export": "Экспорт"

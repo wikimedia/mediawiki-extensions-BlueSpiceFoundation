@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"bs-filerepo-labelupload": "Загрузка",
+	"bs-filerepo-labelfilter": "Фильтр",
+	"bs-filerepo-headerfilename": "Имя файла",
+	"bs-filerepo-headerfilesize": "Размер",
+	"bs-filerepo-headerpagecategories": "Категории",
+	"bs-filerepo-headerfilewidth": "Ширина",
+	"bs-filerepo-headerfileheight": "Высота",
+	"bs-filerepo-headerfilemimetype": "MIME-тип",
+	"bs-filerepo-headerfileusertext": "Участник",
+	"bs-filerepo-headerfileextension": "Расширение",
+	"bs-filerepo-headerfiletimestamp": "Загружено",
+	"bs-filerepo-headerfilemediatype": "Тип медиа",
+	"bs-filerepo-headerfiledescription": "Описание",
+	"bs-filerepo-headerfilethumbnail": "Миниатюра",
+	"bs-filerepo-yes": "Да",
+	"bs-filerepo-no": "Нет",
+	"bs-filerepo-pagesize": "Размер страницы"
+}
