@@ -232,7 +232,7 @@ abstract class Entity implements \JsonSerializable {
 	}
 
 	/**
-	 * Gets the related Title object
+	 * Gets the source Title object
 	 * @return Title
 	 */
 	public function getTitle() {
