@@ -89,6 +89,5 @@
 	"bs-bluespice-mediawiki": "BlueSpice МедијаВики",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Се користи во многу додатоци за BlueSpice за потенцијално опасни административни задачи како раководење со корисници, дозволи и глобално поставување",
-	"bs-notifications-agent-anon": "анонимен корисник",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Додај нов..."
+	"bs-notifications-agent-anon": "анонимен корисник"
 }

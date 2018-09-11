@@ -90,6 +90,5 @@
 	"bs-bluespice-mediawiki": "BlueSpice-MediaWiki",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Brukt i mange BlueSpice-utvidelser for potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon",
-	"bs-notifications-agent-anon": "anonym bruker",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Legg til ny…"
+	"bs-notifications-agent-anon": "anonym bruker"
 }

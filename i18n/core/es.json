@@ -92,6 +92,5 @@
 	"bs-graphicallist-action-preview": "Previsualizar",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
-	"bs-notifications-agent-anon": "usuario anónimo",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Añade..."
+	"bs-notifications-agent-anon": "usuario anónimo"
 }

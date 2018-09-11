@@ -96,6 +96,5 @@
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Используется во многих расширениях BlueSpice для потенциально опасных административных задач, таких как управление пользователями, разрешениями и глобальная конфигурация",
-	"bs-notifications-agent-anon": "анонимный участник",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Добавить новый..."
+	"bs-notifications-agent-anon": "анонимный участник"
 }

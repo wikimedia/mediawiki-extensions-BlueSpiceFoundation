@@ -95,6 +95,5 @@
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
-	"bs-notifications-agent-anon": "匿名使用者",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "添加新的..."
+	"bs-notifications-agent-anon": "匿名使用者"
 }
