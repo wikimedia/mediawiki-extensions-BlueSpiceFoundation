@@ -7,6 +7,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
 /**
  * @group medium
  * @group api
+ * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
  */

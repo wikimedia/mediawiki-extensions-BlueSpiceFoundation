@@ -5,6 +5,7 @@ namespace BlueSpice\Tests;
 use \MediaWiki\MediaWikiServices;
 
 /**
+ * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
  * @group Medium
