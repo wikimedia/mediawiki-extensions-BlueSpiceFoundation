@@ -4,5 +4,11 @@
 			"ديفيد"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "أضف ... جديدا"
+	"bs-ooui-field-tagmultiselect-input-placeholder": "أضف ... جديدا",
+	"bs-ooui-key-value-input-widget-key-label": "المفتاح",
+	"bs-ooui-key-value-input-widget-value-label": "القيمة",
+	"bs-ooui-key-value-input-widget-add-button-label": "إضافة",
+	"bs-ooui-key-value-input-widget-add-form-label": "إضافة مدخلة جديدة",
+	"bs-ooui-key-value-input-widget-error-message": "يجب تعيين جميع الحقول المطلوبة!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "لا توجد مجموعة قيم!"
 }

@@ -7,5 +7,6 @@
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Дадаць новы…",
 	"bs-ooui-key-value-input-widget-key-label": "Ключ",
 	"bs-ooui-key-value-input-widget-value-label": "Значэньне",
-	"bs-ooui-key-value-input-widget-add-button-label": "Дадаць"
+	"bs-ooui-key-value-input-widget-add-button-label": "Дадаць",
+	"bs-ooui-key-value-input-widget-add-form-label": "Дадаць новы запіс"
 }
