@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Rul1902"
+		]
+	},
+	"bs-setting-path-feature": "အထူး",
+	"bs-setting-path-system": "စနစ်",
+	"bs-setting-path-editor": "တည်းဖြတ်သူ",
+	"bs-setting-path-communication": "ဆက်သွယ်ရေး",
+	"bs-setting-path-administration": "စီမံခန့်ခွဲမှု",
+	"bs-setting-path-export": "တင်ပို့ရန်"
+}
