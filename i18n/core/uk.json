@@ -5,7 +5,8 @@
 			"Base",
 			"Ата",
 			"Piramidion",
-			"AS"
+			"AS",
+			"Vlad5250"
 		]
 	},
 	"bluespicefoundation-desc": "Готує MediaWiki до корпоративних потреб",
@@ -87,5 +88,5 @@
 	"bs-export-menu-print-text": "Друк",
 	"bs-export-menu-print-title": "Відтворює версію сторінки, доступну для друку",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Відображення сторінок адміністрування BlueSpice"
+	"right-wikiadmin": "Використовується у багатьох додатках BlueSpice для потенційно небезпечних адміністративних завдань, як керування користувачами, дозволи та глобальне налаштовування"
 }
