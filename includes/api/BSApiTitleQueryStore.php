@@ -76,6 +76,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 			$sNormNSText = strtolower( $sNamespaceText );
 			$sNormNSText = str_replace( '_', ' ', $sNormNSText );
+			$sNormNSText = "$sNormNSText:";
 
 			//Only namespaces a user has the read permission for
 			$oDummyTitle = Title::newFromText( $sNamespaceText.':X' );
@@ -86,6 +87,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			if ( empty( $sNormQuery ) || strpos( $sNormNSText, $sNormQuery ) === 0) {
 				$aData[] = (object)(array(
 					'type' => 'namespace',
+					'prefixedText' => $sNamespaceText.':',
 					'displayText' => $sNamespaceText.':'
 				) + $aDataSet);
 			}
