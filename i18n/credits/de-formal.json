@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hwboehm"
+		]
+	},
+	"specialcredits": "BlueSpice Credits",
+	"bs-credits-programmers": "Programmierer",
+	"bs-credits-dnt": "Design und Testing",
+	"bs-credits-contributors": "Contributors",
+	"bs-credits-translators": "Übersetzer",
+	"bs-credits-translation": "Übersetzung",
+	"bs-credits-th": "Vielen Dank an alle Übersetzer von $1."
+}

@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Hwboehm"
+		]
+	},
+	"bs-extjs-ok": "OK",
 	"bs-extjs-confirmNavigationText": "Möchten Sie wirklich diesem Link folgen? Alle dynamischen Einstellungen, wie Filter und Sortierung, auf dieser Seite gehen dabei verloren."
 }

@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hwboehm"
+		]
+	},
+	"bs-deferred-action-status-pending": "Warten.",
+	"bs-deferred-action-status-running": "Läuft …",
+	"bs-deferred-action-status-done": "Abgeschlossen.",
+	"bs-deferred-action-status-error": "Fehlgeschlagen.",
+	"bs-deferred-action-apicopypage-description": "Kopieren von „$1“ nach „$2“.",
+	"bs-deferred-action-apieditpage-description": "Bearbeiten von „$1“.",
+	"bs-deferred-batch-title": "Stapelverarbeitung",
+	"bs-deferred-batch-progress-desc": "Fortschritt",
+	"bs-deferred-batch-actions": "Aktionen"
+}
