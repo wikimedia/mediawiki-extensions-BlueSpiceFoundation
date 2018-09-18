@@ -273,12 +273,13 @@ Ext.define( 'BS.grid.FileRepo', {
 			labelAlign: 'right',
 			flex: 3,
 			store: this.store,
-				listeners: {
-					change: function ( field, newValue, oldValue, eOpts ) {
-						field.onTrigger2Click();
-						return true;
-					}
+			paramName: 'file_name',
+			listeners: {
+				change: function ( field, newValue, oldValue, eOpts ) {
+					field.onTrigger2Click();
+					return true;
 				}
+			}
 		});
 
 		var toolBarItems = [
