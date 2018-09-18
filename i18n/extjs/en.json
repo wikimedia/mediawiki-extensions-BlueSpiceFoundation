@@ -18,7 +18,7 @@
 	"bs-extjs-error": "Error",
 	"bs-extjs-confirm": "Confirm",
 	"bs-extjs-loading": "Loading...",
-	"bs-extjs-pageSize": "Page size",
+	"bs-extjs-pageSize": "Entries per page",
 	"bs-extjs-actions-column-header": "Actions",
 	"bs-extjs-warning": "Warning",
 	"bs-extjs-saving": "saving...",
