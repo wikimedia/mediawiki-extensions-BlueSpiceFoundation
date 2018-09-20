@@ -3,7 +3,8 @@
 		"authors": [
 			"Xiaomingyan",
 			"Liuxinyu970226",
-			"Kuailong"
+			"Kuailong",
+			"夢蝶葬花"
 		]
 	},
 	"bs-extjs-ok": "确定",
@@ -20,7 +21,7 @@
 	"bs-extjs-error": "错误",
 	"bs-extjs-confirm": "确认",
 	"bs-extjs-loading": "载入中...",
-	"bs-extjs-pageSize": "页面大小",
+	"bs-extjs-pageSize": "页均编辑",
 	"bs-extjs-actions-column-header": "操作",
 	"bs-extjs-warning": "警告",
 	"bs-extjs-saving": "正在保存...",
@@ -29,6 +30,7 @@
 	"bs-extjs-label-user": "用户",
 	"bs-extjs-label-namespace": "名字空间",
 	"bs-extjs-label-page": "页面",
+	"bs-extjs-label-directsearch": "搜索",
 	"bs-extjs-titlecombo-newpagehint": "页面不存在！",
 	"bs-extjs-upload": "上传",
 	"bs-extjs-browse": "浏览",

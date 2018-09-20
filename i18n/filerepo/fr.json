@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Urhixidur"
+			"Urhixidur",
+			"Wladek92"
 		]
 	},
 	"bs-filerepo-labelupload": "Téléverser",
@@ -21,5 +22,5 @@
 	"bs-filerepo-headerfilethumbnail": "Vignette",
 	"bs-filerepo-yes": "Oui",
 	"bs-filerepo-no": "Non",
-	"bs-filerepo-pagesize": "Taille de la page"
+	"bs-filerepo-pagesize": "Entrées par page"
 }

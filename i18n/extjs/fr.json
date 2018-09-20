@@ -23,7 +23,7 @@
 	"bs-extjs-error": "Erreur",
 	"bs-extjs-confirm": "Confirmer",
 	"bs-extjs-loading": "Chargement en cours…",
-	"bs-extjs-pageSize": "Taille de la page",
+	"bs-extjs-pageSize": "Entrées par page",
 	"bs-extjs-actions-column-header": "Actions",
 	"bs-extjs-warning": "Avertissement",
 	"bs-extjs-saving": "enregistrement en cours…",

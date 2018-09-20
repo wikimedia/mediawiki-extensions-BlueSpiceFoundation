@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"夢蝶葬花"
 		]
 	},
 	"bs-filerepo-labelupload": "上传",
@@ -20,5 +21,5 @@
 	"bs-filerepo-headerfilethumbnail": "缩略图",
 	"bs-filerepo-yes": "是",
 	"bs-filerepo-no": "否",
-	"bs-filerepo-pagesize": "页面大小"
+	"bs-filerepo-pagesize": "页均编辑"
 }

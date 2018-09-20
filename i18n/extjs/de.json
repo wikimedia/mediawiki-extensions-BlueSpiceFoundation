@@ -20,7 +20,7 @@
 	"bs-extjs-error": "Fehler",
 	"bs-extjs-confirm": "Bestätigen",
 	"bs-extjs-loading": "Lade …",
-	"bs-extjs-pageSize": "Seitengröße",
+	"bs-extjs-pageSize": "Einträge pro Seite",
 	"bs-extjs-actions-column-header": "Aktionen",
 	"bs-extjs-warning": "Warnung",
 	"bs-extjs-saving": "speichern …",
