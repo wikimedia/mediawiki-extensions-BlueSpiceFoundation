@@ -60,270 +60,280 @@ $GLOBALS[ 'bsgGroupRoles' ] = [
 
 $GLOBALS[ 'bsgNamespaceRolesLockdown' ]  = [];
 
-$GLOBALS[ 'bsgPermissionConfigDefault' ] = array(
-	'read' => array(
-		'type' => 'namespace',
-		'preventLockout' => true,
-		'roles' => [ 'reader', 'editor', 'admin' ]
-	),
-	'edit' => array(
-		'type' => 'namespace',
-		'preventLockout' => true,
-		'roles' => [ 'editor', 'admin' ]
-	),
-	'delete' => array(
-		'type' => 'namespace',
-		'preventLockout' => true,
-		'roles' => [ 'editor', 'admin' ]
-	),
-	'siteadmin' => array(
-		'type' => 'global',
-		'preventLockout' => true,
-		'roles' => [ 'admin' ]
-	),
-	'wikiadmin' => array(
-		'type' => 'global',
-		'preventLockout' => true,
-		'roles' => [ 'admin' ]
-	),
-	"apihighlimits" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"autoconfirmed" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"autopatrol" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"bigdelete" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"block" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"blockemail" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"bot" => array(
-		'type' => 'global',
-		'roles' => ['bot']
-	),
-	"browsearchive" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"createaccount" => array(
-		'type' => 'global',
-		'roles' => [ 'editor', 'admin' ]
-	),
-	"createpage" => array(
-		'type' => 'namespace',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"move" => array(
-		'type' => 'namespace',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"createtalk" => array(
-		'type' => 'namespace',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"create" => array(
-		'type' => 'namespace',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"purge" => array(
-		'type' => 'namespace',
-		'roles' => [ 'admin', 'editor', 'reader' ]
-	),
-	"editinterface" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"editmywatchlist" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"viewmywatchlist" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"editmyprivateinfo" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"viewmyprivateinfo" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"editmyoptions" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"editusercss" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"editmyusercss" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"edituserjs" => array(
-		'type' => 'global',
-		'roles' => [ 'editor' ],
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"editmyuserjs" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"hideuser" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"import" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"importupload" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"upload" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"minoredit" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"ipblock-exempt" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"move-rootuserpages" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"override-export-depth" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"sendemail" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'editor' ]
-	),
-	"unblockself" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"userrights" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"userrights-interwiki" => array(
-		'type' => 'global',
-		'roles' => [ 'admin' ]
-	),
-	"writeapi" => array(
-		'type' => 'global',
-		'roles' => [ 'admin', 'reader', 'editor' ]
-	),
-	"protect" => [
-		"type" => 'namespace',
-		"roles" => [ 'admin' ]
-	],
-	"editprotected" => [
-		"type" => 'namespace',
-		"roles" => [ 'admin' ]
-	],
-	"editsemiprotected" => [
-		"type" => 'namespace',
-		"roles" => ['editor','admin']
-	],
-	"movefile" => [
+$GLOBALS[ 'bsgPermissionConfigDefault' ] = [
+	"apihighlimits" => [
 		"type" => 'global',
-		"roles" => ['editor', 'admin']
-	],
-	"move-subpages" => [
-		"type" => 'global',
-		"roles" => ['editor', 'admin']
-	],
-	"move-categorypages" => [
-		"type" => 'global',
-		"roles" => ['editor', 'admin']
-	],
-	"reupload" => [
-		"type" => 'global',
-		"roles" => ['editor', 'admin']
-	],
-	"reupload-shared" => [
-		"type" => 'global',
-		"roles" => ['editor', 'admin']
+		"roles" => [ 'bot', 'maintenanceadmin' ]
 	],
 	"applychangetags" => [
 		"type" => 'namespace',
-		"roles" => ['editor', 'admin']
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'reviewer' ]
 	],
-	"deletedhistory" => [
-		"type" => 'namespace',
-		"roles" => ['admin']
-	],
-	"deletedtext" => [
-		"type" => 'namespace',
-		"roles" => ['admin']
-	],
-	"undelete" => [
-		"type" => 'namespace',
-		"roles" => ['admin']
-	],
-	"mergehistory" => [
-		"type" => 'namespace',
-		"roles" => ['admin']
-	],
-	"rollback" => [
+	"autoconfirmed" => [
 		"type" => 'global',
-		"roles" => ['admin']
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'editor', 'maintenanceadmin', 'reviewer', 'structuremanager' ]
 	],
-	"markbotedits" => [
+	"autopatrol" => [
 		"type" => 'global',
-		"roles" => ['admin']
+		"roles" => [ 'bot', 'editor', 'maintenanceadmin' ]
 	],
-	"patrol" => [
-		"type" => 'namespace',
-		"roles" => ['admin']
+	"bigdelete" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin' ]
+	],
+	"block" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"blockemail" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"bot" => [
+		"type" => 'global',
+		"roles" => [ 'bot', 'maintenanceadmin' ]
+	],
+	"browsearchive" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
 	],
 	"changetags" => [
 		"type" => 'global',
-		"roles" => ['editor', 'admin']
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'reviewer' ]
 	],
-	"unwatchedpages" => [
+	"createaccount" => [
 		"type" => 'global',
-		"roles" => ['admin']
+		"roles" => [ 'accountmanager', 'accountselfcreate', 'admin', 'maintenanceadmin' ]
+	],
+	"createpage" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin' ]
+	],
+	"createtalk" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'author', 'commenter', 'editor', 'maintenanceadmin' ]
+	],
+	"delete" => [
+		"type" => 'namespace',
+		"preventLockout" => '1',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+	],
+	"deletechangetags" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+	],
+	"deletedhistory" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+	],
+	"deletedtext" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'reviewer' ]
+	],
+	"edit" => [
+		"type" => 'namespace',
+		"preventLockout" => '1',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin' ]
+	],
+	"editcontentmodel" => [
+		"type" => 'global',
+		"roles" => [ 'bot', 'maintenanceadmin' ]
+	],
+	"editinterface" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"editmyoptions" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"editmyprivateinfo" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"editmyusercss" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"editmyuserjs" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"editmyuserjson" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"editmywatchlist" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"editprotected" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+	],
+	"editsemiprotected" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+	],
+	"editusercss" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"edituserjs" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"edituserjson" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"hideuser" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"import" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'bot', 'editor', 'maintenanceadmin' ]
+	],
+	"importupload" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'bot', 'editor', 'maintenanceadmin' ]
+	],
+	"ipblock-exempt" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin' ]
 	],
 	"managechangetags" => [
 		"type" => 'global',
-		"roles" => ['admin']
+		"roles" => [ 'admin', 'maintenanceadmin' ]
+	],
+	"markbotedits" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'bot', 'maintenanceadmin' ]
+	],
+	"mergehistory" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'maintenanceadmin' ]
+	],
+	"minoredit" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin' ]
+	],
+	"move" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"move-categorypages" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"move-rootuserpages" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"move-subpages" => [
+		"type" => 'global',
+		"roles" => [ 'editor', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"movefile" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin', 'structuremanager' ]
 	],
 	"nominornewtalk" => [
 		"type" => 'global',
-		"roles" => ['bot']
+		"roles" => [ 'bot', 'maintenanceadmin' ]
 	],
 	"noratelimit" => [
 		"type" => 'global',
-		"roles" => ['admin']
+		"roles" => [ 'bot', 'maintenanceadmin' ]
+	],
+	"override-export-depth" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin' ]
+	],
+	"passwordreset" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"patrol" => [
+		"type" => 'namespace',
+		"roles" => [ 'maintenanceadmin' ]
+	],
+	"patrolmarks" => [
+		"type" => 'global',
+		"roles" => [ 'maintenanceadmin' ]
+	],
+	"protect" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+	],
+	"purge" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin' ]
+	],
+	"read" => [
+		"type" => 'namespace',
+		"preventLockout" => '1',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"reupload" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin' ]
+	],
+	"reupload-shared" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin' ]
+	],
+	"rollback" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+	],
+	"sendemail" => [
+		"type" => 'global',
+		"roles" => [ 'maintenanceadmin' ]
 	],
 	"suppressredirect" => [
 		"type" => 'global',
-		"roles" => ['admin', 'bot']
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'reviewer', 'structuremanager' ]
 	],
-);
+	"unblockself" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"undelete" => [
+		"type" => 'namespace',
+		"roles" => [ 'admin', 'editor', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"unwatchedpages" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin' ]
+	],
+	"upload" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"userrights" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
+	],
+	"viewmyprivateinfo" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"viewmywatchlist" => [
+		"type" => 'global',
+		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+	],
+	"wikiadmin" => [
+		"type" => 'global',
+		"preventLockout" => '1',
+		"roles" => [ 'admin', 'maintenanceadmin' ]
+	],
+	"writeapi" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'author', 'maintenanceadmin' ]
+	],
+];
 
 /**
  * Allows extensions to distinguish between normal content NS, that can be
