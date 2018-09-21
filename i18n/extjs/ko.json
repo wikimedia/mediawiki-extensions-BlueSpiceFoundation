@@ -27,7 +27,7 @@
 	"bs-extjs-error": "오류",
 	"bs-extjs-confirm": "확인",
 	"bs-extjs-loading": "불러오는 중...",
-	"bs-extjs-pageSize": "페이지 크기",
+	"bs-extjs-pageSize": "페이지 당 항목",
 	"bs-extjs-actions-column-header": "동작",
 	"bs-extjs-warning": "경고",
 	"bs-extjs-saving": "저장 중...",
