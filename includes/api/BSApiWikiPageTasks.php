@@ -481,11 +481,14 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
 		}
+
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		foreach ($aCategoriesToRemove as $sToRemove){
-			$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):($sToRemove)\]\]#si";
-			$sText = preg_replace($sPattern, '', $sText);
+			$linksToRemove = $this->findCategoryLinksInText( $sToRemove, $sText );
+			foreach( $linksToRemove as $linkToRemove ) {
+				$sText = str_replace( $linkToRemove, '', $sText );
+			}
 		}
 		//TODO: remove blank lines from page
 		$oContent = ContentHandler::makeContent( $sText, $oTitle );
@@ -505,6 +508,37 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		}
 
 		return $oResponse;
+	}
+
+	/**
+	 * Parses all internal links on page into Title objects
+	 * and compares to the category title we need.
+	 *
+	 * @param string $category
+	 * @param string $text
+	 * @return array Links texts for requested category
+	 */
+	protected function findCategoryLinksInText( $category,$text ) {
+		$categoryTitle = Title::makeTitle( NS_CATEGORY, $category );
+		if( $categoryTitle instanceof Title === false ) {
+			return [];
+		}
+
+		$categoryLinkText = [];
+		$internalLinks = [];
+		preg_match_all( '#\[\[(.*?)\]\]#si', $text, $internalLinks );
+
+		if( !isset( $internalLinks[1] ) && count( $internalLinks[1] ) === 0 ) {
+			return [];
+		}
+		foreach( $internalLinks[1] as $key => $pageName ) {
+			$titleToTest = Title::newFromText( $pageName );
+			if( $categoryTitle->equals( $titleToTest ) ) {
+				$categoryLinkText[] = $internalLinks[0][$key];
+			}
+		}
+
+		return $categoryLinkText;
 	}
 
 	/**
