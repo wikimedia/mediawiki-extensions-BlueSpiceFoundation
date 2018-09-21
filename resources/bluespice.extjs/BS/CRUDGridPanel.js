@@ -124,7 +124,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 			header: mw.message('bs-extjs-actions-column-header').plain(),
 			flex: 0,
 			width: width,
-			//cls: 'hideAction',
+			cls: 'bs-extjs-action-column',
 			items: items,
 			menuDisabled: true,
 			hideable: false,
