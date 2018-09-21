@@ -202,7 +202,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return \LBFactory
+	 * @return \Wikimedia\Rdbms\LBFactory
 	 */
 	public function getDBLoadBalancerFactory() {
 		return $this->decoratedServices->getService( 'DBLoadBalancerFactory' );
