@@ -53,11 +53,16 @@
 	"bs-extjs-filter-date-before": "Apprime",
 	"bs-extjs-filter-date-on": "'U",
 	"bs-extjs-filter-date-filter": "Filtre",
+	"bs-extjs-pageexport-list-format-plain-label": "Teste semblice",
 	"bs-extjs-pageexport-list-format-link-label": "Collegamende",
 	"bs-extjs-pageexport-overwrite-label": "Sovrascrive",
 	"bs-extjs-pageexport-general-error": "Esporte l'errore",
 	"bs-extjs-pageexport-pagecollection-prefix": "Collezzione de le pàggene",
 	"bs-pagecollection-prefix": "Collezzione de le pàggene",
 	"bs-extjs-pageexport-success": "Esportazione sciute bbone",
-	"bs-extjs-pageexport-success-text": "Collezzione de le pàggene esportate sus a $1"
+	"bs-extjs-pageexport-success-text": "Collezzione de le pàggene esportate sus a $1",
+	"bs-extjs-tools-trigger-text": "Struminde",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniature",
+	"bs-extjs-flyout-tab-grid-label": "Dettaglie",
+	"bs-extjs-flyout-add-label": "Aggiunge 'na vôsce"
 }

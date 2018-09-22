@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Aggiunge nuève...",
+	"bs-ooui-key-value-input-widget-key-label": "Chiave",
+	"bs-ooui-key-value-input-widget-value-label": "Valore",
+	"bs-ooui-key-value-input-widget-add-button-label": "Aggiunge",
+	"bs-ooui-key-value-input-widget-add-form-label": "Aggiunge 'na vôscia nove",
+	"bs-ooui-key-value-input-widget-error-message": "Tutte le cambe obbligatorie onna essere mise!",
+	"bs-ooui-keyValueInputWidget-no-value-label": "Nisciune valore 'mbostate!"
+}

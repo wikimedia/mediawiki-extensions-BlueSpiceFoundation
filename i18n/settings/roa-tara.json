@@ -4,5 +4,9 @@
 			"Joetaras"
 		]
 	},
+	"bs-setting-path-feature": "Dettaglie",
+	"bs-setting-path-extension": "Estenzione",
+	"bs-setting-path-package": "Cartone",
+	"bs-setting-path-system": "Sisteme",
 	"bs-setting-path-export": "Esporte"
 }
