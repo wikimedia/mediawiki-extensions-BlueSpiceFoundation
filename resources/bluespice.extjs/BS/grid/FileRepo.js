@@ -321,6 +321,8 @@ Ext.define( 'BS.grid.FileRepo', {
 				]
 			}),
 			value: this.pageSize,
+			labelWidth: 120,
+			flex: 2,
 			valueField: 'value',
 			displayField: 'text'
 		});
