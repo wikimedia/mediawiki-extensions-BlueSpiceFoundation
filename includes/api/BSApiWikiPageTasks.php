@@ -532,7 +532,13 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return [];
 		}
 		foreach( $internalLinks[1] as $key => $pageName ) {
-			$titleToTest = Title::newFromText( $pageName );
+			if( strpos( '|', $pageName ) !== false ) {
+				$pageName = explode( '|', $pageName )[0];
+			}
+			$titleToTest = \Title::newFromText( $pageName );
+			if( $titleToTest instanceof \Title === false ) {
+				continue;
+			}
 			if( $categoryTitle->equals( $titleToTest ) ) {
 				$categoryLinkText[] = $internalLinks[0][$key];
 			}
