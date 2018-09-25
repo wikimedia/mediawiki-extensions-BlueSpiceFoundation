@@ -78,6 +78,14 @@ class Services extends ServicesDecorator {
 
 	/**
 	 *
+	 * @return PageToolFactory
+	 */
+	public function getBSPageToolFactory() {
+		return $this->decoratedServices->getService( 'BSPageToolFactory' );
+	}
+
+	/**
+	 *
 	 * @return TagFactory
 	 */
 	public function getBSTagFactory() {

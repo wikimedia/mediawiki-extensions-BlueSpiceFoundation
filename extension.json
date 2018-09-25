@@ -35,6 +35,7 @@
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
 			"AdminToolRegistry": {},
+			"PageToolRegistry": {},
 			"TagRegistry": {},
 			"RendererRegistry": {
 				"list": "\\BlueSpice\\Renderer\\SimpleList",

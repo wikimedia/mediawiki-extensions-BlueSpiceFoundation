@@ -472,3 +472,13 @@
 	content: "\e980";
 	font-family: "entypo" !important;
 }
+
+.bs-icon-export::before {
+	content: "\e9a0";
+	font-family: "entypo" !important;
+}
+
+.bs-icon-talk::before {
+	content: "\e96d";
+	font-family: "icomoon" !important;
+}
