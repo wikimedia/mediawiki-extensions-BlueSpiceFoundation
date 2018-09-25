@@ -54,9 +54,43 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		return $newName;
 	}
 
+	/**
+	 * Test data:
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::INT', 'i:500;' );
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::FLOAT', 'd:1.5;' );
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::BOOL_TRUE', 'b:1;' );
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::BOOL_FALSE', 'b:0;' );
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::STRING', 's:5:"hello";' );
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::ARRAY', 'a:2:{i:0;i:3000;i:1;i:3001;}' );
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::OBJECT', 'O:8:"stdClass":1:{s:1:"A";i:5;}' );
+		INSERT INTO user_properties VALUES( 234, 'MW::ABC::NOTSERIALIZED', 'not serialized' );
+	 */
 	protected function saveConvertedData() {
 		foreach( $this->newData as $newName => $values ) {
 			foreach( $values as $userId => $value ) {
+				// Old config mechanism saved values as PHP serialize strings
+				// BlueSpiceExtensions/UserPreferences applied unserialize on `UserLoadOptions`
+				// We need to revert this:
+				// "i:500;" => 500
+				// "d:1.5;" => 1.5
+				// "b:1;" => 1
+				// "s:5:"hello";" => "hello"
+				// "a:2:{i:0;i:3000;i:1;i:3001;}" => "3000|3001"
+				// "O:8:"stdClass":1:{s:1:"A";i:5;}" => '{"A":5}'
+				$newValue = $value;
+				$deserializedValue = unserialize( $value );
+				if( $deserializedValue !== false || strpos( $value, 'b:' ) === 0 ) {
+					$newValue = $deserializedValue;
+
+					if( is_array( $deserializedValue ) ) {
+						$newValue = implode( '|', $deserializedValue ); //Better also as JSON?
+					}
+
+					if( is_object( $deserializedValue ) ) {
+						$newValue = FormatJson::encode( $deserializedValue );
+					}
+				}
+
 				$row = $this->getDB( DB_REPLICA )->selectRow(
 					'user_properties',
 					'*',
@@ -68,7 +102,7 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 				);
 				if( $row ) {
 					//this implementation prevents all current testsystems from
-					//experiencing problems when certan new user settings
+					//experiencing problems when certain new user settings
 					//already exist
 					$this->getDB( DB_MASTER )->update(
 						'user_properties',
@@ -89,7 +123,7 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 					[
 						'up_property' => $newName,
 						'up_user' => $userId,
-						'up_value' => $value,
+						'up_value' => $newValue,
 					],
 					__METHOD__
 				);
@@ -110,4 +144,4 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		return 'bs_userproperties-migration';
 	}
 
-}
+	}
