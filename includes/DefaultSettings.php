@@ -51,11 +51,10 @@ $GLOBALS[ 'bsgTestSystem' ] = false;
 $GLOBALS[ 'bsgEnableRoleSystem' ] = false;
 
 $GLOBALS[ 'bsgGroupRoles' ] = [
-	'sysop' => ['admin' => true],
-	'user' => ['editor' => true],
-	'*' => ['reader' => true],
-	'bot' => ['bot' => true],
-	'bureaucrat' => ['editor' => true]
+	'bureaucrat' => [ 'accountmanager' ],
+	'sysop' => [ 'admin' => true ],
+	'user' => [ 'editor' => true ],
+	'*' => [ 'reader' => true ]
 ];
 
 $GLOBALS[ 'bsgNamespaceRolesLockdown' ]  = [];
