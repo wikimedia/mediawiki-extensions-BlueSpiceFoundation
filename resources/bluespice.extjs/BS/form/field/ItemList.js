@@ -1,5 +1,6 @@
 Ext.define('BS.form.field.ItemList', {
 	extend: 'Ext.form.FieldContainer',
+	requires: [ 'BS.store.BSApi' ],
 	alias: [ 'widget.bs-itemlist' ],
 	baseCls: 'bs-form-field-itemlist',
 	mixins: {
@@ -9,7 +10,8 @@ Ext.define('BS.form.field.ItemList', {
 	combineErrors: true,
 	msgTarget: 'side',
 
-	//model: null,
+	apiStore: 'must-be-set',
+	apiStoreConfig: {},
 	apiFields: [],
 	idProperty: 'id',
 	inputDisplayField: 'text',
@@ -37,6 +39,14 @@ Ext.define('BS.form.field.ItemList', {
 	},
 
 	makeItemChooser: function() {
+		var itemChooserStoreConfig = Ext.merge( {
+				apiAction: this.apiStore,
+				extraParams: {
+					context: JSON.stringify( bs.util.getCAIContext() )
+				},
+				fields: this.apiFields
+		}, this.apiStoreConfig );
+
 		var me = this;
 		var combo = new Ext.form.field.ComboBox({
 			emptyText: me.emptyText,
@@ -50,26 +60,7 @@ Ext.define('BS.form.field.ItemList', {
 			},
 
 			/* TODO: Filter result to remove records that are already in the item list store */
-			store: new Ext.data.JsonStore({
-				proxy: {
-					type: 'ajax',
-					url: mw.util.wikiScript( 'api' ),
-					reader: {
-						type: 'json',
-						rootProperty: 'results'
-					},
-					extraParams: {
-						action: this.apiStore,
-						format: 'json',
-						context: JSON.stringify( bs.util.getCAIContext() )
-					}
-				},
-				//model: this.model, //for some reason having a string with the models class name does not work here...
-				fields: this.apiFields,
-				//groupField: 'type',
-				remoteSort: true,
-				autoLoad: true
-			})
+			store: new BS.store.BSApi( itemChooserStoreConfig )
 		});
 
 		combo.on( 'select', this.onItemChooserSelect, this );
