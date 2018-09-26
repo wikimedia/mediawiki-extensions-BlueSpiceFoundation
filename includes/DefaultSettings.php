@@ -51,7 +51,7 @@ $GLOBALS[ 'bsgTestSystem' ] = false;
 $GLOBALS[ 'bsgEnableRoleSystem' ] = false;
 
 $GLOBALS[ 'bsgGroupRoles' ] = [
-	'bureaucrat' => [ 'accountmanager' ],
+	'bureaucrat' => [ 'accountmanager' => true ],
 	'sysop' => [ 'admin' => true ],
 	'user' => [ 'editor' => true ],
 	'*' => [ 'reader' => true ]
