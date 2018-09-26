@@ -25,7 +25,7 @@
 	"bs-extjs-error": "錯誤",
 	"bs-extjs-confirm": "確認",
 	"bs-extjs-loading": "讀取中…",
-	"bs-extjs-pageSize": "頁面大小",
+	"bs-extjs-pageSize": "各頁面項目",
 	"bs-extjs-actions-column-header": "操作",
 	"bs-extjs-warning": "警告",
 	"bs-extjs-saving": "儲存中...",

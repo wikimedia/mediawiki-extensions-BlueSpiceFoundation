@@ -3,7 +3,8 @@
 		"authors": [
 			"Metalhead64",
 			"Inkowik",
-			"Umherirrender"
+			"Umherirrender",
+			"Hwboehm"
 		]
 	},
 	"bluespicefoundation-desc": "Macht MediaWiki bereit für Unternehmen",
@@ -32,7 +33,7 @@
 	"bs-userpreferences-link-text": "Weitere Benutzereinstellungen",
 	"bs-userpreferences-link-title": "Zeigt deine persönlichen Benutzereinstellungen an",
 	"bs-exception-view-heading": "Es ist ein Fehler aufgetreten",
-	"bs-exception-view-text": "Bei der Verarbeitung Deiner Anfrage ist folgender Fehler aufgetreten:",
+	"bs-exception-view-text": "Bei der Verarbeitung deiner Anfrage ist folgender Fehler aufgetreten:",
 	"bs-exception-view-admin-hint": "Bitte kontaktiere Deinen Administrator.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Fehlerdetails anzeigen",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Fehlerdetails verbergen",
