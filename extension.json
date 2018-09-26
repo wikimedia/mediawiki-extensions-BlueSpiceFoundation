@@ -29,6 +29,7 @@
 			},
 			"DynamicFileRegistry": {
 				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage",
+				"groupimage": "\\BlueSpice\\DynamicFileDispatcher\\GroupImage",
 				"articlepreviewimage": "\\BlueSpice\\DynamicFileDispatcher\\ArticlePreviewImage"
 			},
 			"EntityRegistry": {},
@@ -41,6 +42,7 @@
 				"list": "\\BlueSpice\\Renderer\\SimpleList",
 				"linklist": "\\BlueSpice\\Renderer\\LinkList",
 				"userimage": "\\BlueSpice\\Renderer\\UserImage",
+				"groupimage": "\\BlueSpice\\Renderer\\GroupImage",
 				"entity": "\\BlueSpice\\Renderer\\Entity"
 			},
 			"SkinDataRendererRegistry": {
@@ -588,6 +590,10 @@
 		},
 		"DefaultAnonImage": {
 			"value": "resources/bluespice/images/bs-user-anon-image.png",
+			"path": true
+		},
+		"DefaultGroupImage": {
+			"value": "resources/bluespice/images/bs-group-default-image.png",
 			"path": true
 		},
 		"UIPermissionBlacklist": {
