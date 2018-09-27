@@ -84,6 +84,13 @@ class Manager {
 		$this->resetGroupPermissions();
 		foreach( $this->groupRoles as $group => $roles ) {
 			foreach( $roles as $role => $active ) {
+				if( $this->roleExists( $role ) === false ) {
+					wfDebugLog(
+						'BsRoleSystem',
+						__CLASS__ . ": Applying role $role failed because it does not exist!"
+					);
+					continue;
+				}
 				if( $active ) {
 					$this->applyToGroup( $group, $role, self::ROLE_GRANT );
 				} else {
