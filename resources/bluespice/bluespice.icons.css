@@ -482,3 +482,8 @@
 	content: "\e96d";
 	font-family: "icomoon" !important;
 }
+
+.icon-rss::before {
+	content: "\ea9b";
+	font-family: "icomoon" !important;
+}
