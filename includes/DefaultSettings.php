@@ -330,7 +330,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"writeapi" => [
 		"type" => 'global',
-		"roles" => [ 'admin', 'author', 'maintenanceadmin' ]
+		"roles" => [ "accountmanager", "accountselfcreate", "admin", "author", "bot", "commenter", "editor", "maintenanceadmin", "reviewer", "structuremanager" ]
 	],
 ];
 
