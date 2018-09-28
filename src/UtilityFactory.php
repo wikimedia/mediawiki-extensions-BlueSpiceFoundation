@@ -85,4 +85,14 @@ class UtilityFactory {
 			$this->services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	}
+
+	/**
+	 * @param string $wikitext
+	 * @return \BlueSpice\Utility\WikiTextLinksHelper
+	 */
+	public function getWikiTextLinksHelper( $wikitext ) {
+		return new \BlueSpice\Utility\WikiTextLinksHelper(
+			$wikitext
+		);
+	}
 }
