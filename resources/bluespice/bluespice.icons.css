@@ -487,3 +487,8 @@
 	content: "\ea9b";
 	font-family: "icomoon" !important;
 }
+
+.bs-icon-swap::before {
+	content: "\ea20";
+	font-family: "entypo" !important;
+}
