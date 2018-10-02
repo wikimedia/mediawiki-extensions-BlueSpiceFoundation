@@ -91,7 +91,7 @@
 
 	function _msgFailure( response, module, task, $dfd, cfg ) {
 		var message = response.message || '';
-		if ( response.errors.length > 0 ) {
+		if ( response.errors && response.errors.length > 0 ) {
 			for ( var i in response.errors ) {
 				if ( typeof( response.errors[i].message ) !== 'string' ) continue;
 				message = message + '<br />' + response.errors[i].message;
