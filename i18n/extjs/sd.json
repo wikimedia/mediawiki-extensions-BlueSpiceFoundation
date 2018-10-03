@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mehtab ahmed"
+			"Mehtab ahmed",
+			"Tweety"
 		]
 	},
 	"bs-extjs-cancel": "رد",
@@ -9,5 +10,6 @@
 	"bs-extjs-confirm": "پڪ ڪريو",
 	"bs-extjs-close": "بند ڪريو",
 	"bs-extjs-allns": "سڀ",
-	"bs-extjs-filters": "ڇاڻيون"
+	"bs-extjs-filters": "ڇاڻيون",
+	"bs-extjs-pageexport-list-format-plain-label": "سادا اکر"
 }

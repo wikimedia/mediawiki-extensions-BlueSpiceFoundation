@@ -8,7 +8,8 @@
 			"Kuailong",
 			"Fengchao",
 			"御坂美琴",
-			"Yfdyh000"
+			"Yfdyh000",
+			"A Chinese Wikipedian"
 		]
 	},
 	"bluespicefoundation-desc": "使MediaWiki准备好企业化",
@@ -94,5 +95,6 @@
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "显示BlueSpice管理员页面"
+	"right-wikiadmin": "显示BlueSpice管理员页面",
+	"bs-notifications-agent-anon": "匿名用户"
 }

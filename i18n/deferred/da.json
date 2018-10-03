@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"bs-deferred-action-status-done": "Udført.",
+	"bs-deferred-action-apicopypage-description": "Kopier \"$1\" til \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Rediger \"$1\".",
+	"bs-deferred-batch-progress-desc": "Fremskridt",
+	"bs-deferred-batch-actions": "Handlinger",
+	"bs-deferred-batch-description": "Beskrivelse",
+	"bs-deferred-batch-status": "Status",
+	"bs-deferred-action-apiaddcategories-description": "Tilføj kategorier til '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Fjern kategorier fra '$1'."
+}

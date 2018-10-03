@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"bs-filerepo-headerfilename": "Filnavn",
+	"bs-filerepo-headerfilesize": "Størrelse",
+	"bs-filerepo-headerpagecategories": "Kategorier",
+	"bs-filerepo-headerfilewidth": "Bredde",
+	"bs-filerepo-headerfileheight": "Højde",
+	"bs-filerepo-headerfilemimetype": "MIME-type",
+	"bs-filerepo-headerfileusertext": "Bruger",
+	"bs-filerepo-headerfileextension": "Udvidelse",
+	"bs-filerepo-headerfiledescription": "Beskrivelse",
+	"bs-filerepo-yes": "Ja",
+	"bs-filerepo-no": "Nej"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Tilføj ny...",
+	"bs-ooui-key-value-input-widget-key-label": "Nøgle",
+	"bs-ooui-key-value-input-widget-value-label": "Værdi",
+	"bs-ooui-key-value-input-widget-add-button-label": "Tilføj"
+}
