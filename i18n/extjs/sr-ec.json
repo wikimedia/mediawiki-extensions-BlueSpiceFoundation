@@ -62,7 +62,7 @@
 	"bs-extjs-pageexport-list-name-label": "Име списка",
 	"bs-extjs-pageexport-list-format-label": "Формат списка",
 	"bs-extjs-pageexport-list-format-plain-label": "Обичан текст",
-	"bs-extjs-pageexport-list-format-link-label": "Линк",
+	"bs-extjs-pageexport-list-format-link-label": "Веза",
 	"bs-extjs-pageexport-overwrite-label": "Препиши",
 	"bs-extjs-pageexport-general-error": "Грешка при извозу",
 	"bs-extjs-pageexport-pagecollection-prefix": "Збирка страница",
