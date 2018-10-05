@@ -5,6 +5,9 @@ namespace BlueSpice\Hook\SetupAfterCache;
 class AddParamDefinitions extends \BlueSpice\Hook\SetupAfterCache {
 
 	protected function doProcess() {
+		if ( !isset( $GLOBALS['wgParamDefinitions'] ) ) {
+			$GLOBALS['wgParamDefinitions'] = [];
+		}
 		$GLOBALS['wgParamDefinitions'] += array(
 			'titlelist' => array(
 				'definition' => 'BSTitleListParam',
