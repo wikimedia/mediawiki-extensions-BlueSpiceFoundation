@@ -33,6 +33,9 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		$rawData = $dataSet->getData();
 
 		$title = \Title::newFromText( $rawData->page_prefixedtext );
+		if ( $title instanceof \Title === false ) {
+			return;
+		}
 		$rawData->page_link = $this->linkrenderer->makeLink( $title );
 
 		$user = \User::newFromID( $rawData->tmp_user );
