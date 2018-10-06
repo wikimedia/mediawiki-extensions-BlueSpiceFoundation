@@ -24,7 +24,7 @@
 	"bs-upload-details": "Детаљи",
 	"bs-upload-uploadwarningdialog-title": "Отпремање датотеке: Упозорења",
 	"bs-upload-uploadwarningdialog-intro": "Дошло је до следећих упозорења приликом покушаја преноса датотеке",
-	"bs-upload-uploadwarningdialog-outro": "Кликни \"{{int:bs-extjs-ok}}\" да одбаците упозорења и отпремите датотеку, кликни \"{{int:bs-extjs-cancel}}\" да се вратите на форму за отпремање",
+	"bs-upload-uploadwarningdialog-outro": "Кликните на „{{int:bs-extjs-ok}}” да бисте занемарили упозорења и отпремили датотеку. Кликните на „{{int:bs-extjs-cancel}}” да бисте се вратили на образац за отпремање.",
 	"bs-upload-uploadwarningdialog-warning-exists": "Датотека са именом „$1” већ постоји",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Постоји|Постоје}} {{PLURAL:$1|дупликат|дупликати}} ове датотеке",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Непознато упозорење са кодом \"$1\""
