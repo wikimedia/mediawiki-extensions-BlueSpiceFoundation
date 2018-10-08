@@ -402,6 +402,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		if( !is_string( $oFilter->value ) ) {
 			return true; //TODO: Warning
 		}
+		if ( !isset( $aDataSet->{$oFilter->field} ) ) {
+			return false;
+		}
 		$sFieldValue = $aDataSet->{$oFilter->field};
 		$sFilterValue = $oFilter->value;
 

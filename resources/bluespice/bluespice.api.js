@@ -79,6 +79,43 @@
 		return $dfd.promise();
 	}
 
+	/**
+	 * e.g. bs.api.store.getData(
+			'groups'
+		)
+		.done(...);
+	 * @param string module
+	 * @param cfg data
+	 * @returns jQuery.Promise
+	 */
+	function _getStoreData( module, cfg ) {
+		cfg = cfg || {};
+		cfg = $.extend( {
+			token: 'csrf',
+			context: {}
+		}, cfg );
+
+		var $dfd = $.Deferred();
+
+		var api = new mw.Api();
+		api.postWithToken( cfg.token, {
+			action: 'bs-'+ module +'-store',
+			context: JSON.stringify(
+				$.extend (
+					_getContext(),
+					cfg.context
+				)
+			)
+		})
+		.done(function( response ){
+			$dfd.resolve( response );
+		})
+		.fail( function( code, errResp ) { //Server error like FATAL
+			$dfd.resolve( response );
+		});
+		return $dfd.promise();
+	}
+
 	function _msgSuccess( response, module, task, $dfd, cfg ) {
 		if ( response.message.length ) {
 			mw.notify( response.message, { title: mw.msg( 'bs-extjs-title-success' ) } );
@@ -171,6 +208,9 @@
 			exec: _execTask,
 			execSilent: _execTaskSilent,
 			makeUrl: _makeTaskUrl
+		},
+		store: {
+			getData: _getStoreData
 		},
 		makeUrl: _makeUrl
 	};
