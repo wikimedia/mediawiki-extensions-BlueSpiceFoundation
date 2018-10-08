@@ -316,7 +316,7 @@
 			],
 			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
-				"mediawiki.api"
+				"mediawiki.api.upload"
 			]
 		},
 		"ext.bluespice.extjs.filerepo": {
