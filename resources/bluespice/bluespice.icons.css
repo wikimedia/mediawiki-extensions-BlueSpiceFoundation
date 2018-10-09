@@ -331,8 +331,10 @@
 	content: "\e94c";
 }
 
-.icon-delete:before {
-	content: "\e9ab";
+.icon-delete:before,
+.icon-trash:before {
+	font-family: "fontawesome" !important;
+	content: "\f014";
 }
 
 .icon-menu:before {
@@ -491,4 +493,9 @@
 .bs-icon-swap::before {
 	content: "\ea20";
 	font-family: "entypo" !important;
+}
+
+.icon-external-link::before {
+	font-family: "fontawesome" !important;
+	content: "\f08e";
 }

@@ -18,13 +18,15 @@ Ext.define( 'BS.CRUDPanel', {
 	border: false,
 	hideBorder: true,
 
+	cls: 'bs-crud-panel',
+
 	operationPermissions : {
 		"create": true, //should be connected to mw.config.get('bsTaskAPIPermissions').extension_xyz.task1 = boolean in derived class
 		"update": true, //...
 		"delete": true  //...
 	},
 
-	tbarHeight: 44,
+	tbarHeight: 32,
 
 	constructor: function() {
 		//Custom Settings
@@ -49,6 +51,7 @@ Ext.define( 'BS.CRUDPanel', {
 
 	makeTbar: function() {
 		return new Ext.Toolbar({
+			cls: 'bs-crud-panel-toolbar',
 			items: this.makeTbarItems()
 		});
 	},
@@ -58,7 +61,7 @@ Ext.define( 'BS.CRUDPanel', {
 		if( this.opPermitted( 'create' ) ) {
 			this.btnAdd = new Ext.Button({
 				id: this.getId()+'-btn-add',
-				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_add.png',
+				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-btn_add.png',
 				iconCls: 'btn'+this.tbarHeight,
 				tooltip: mw.message('bs-extjs-add').plain(),
 				height: 50,
@@ -71,7 +74,7 @@ Ext.define( 'BS.CRUDPanel', {
 		if( this.opPermitted( 'update' )) {
 			this.btnEdit = new Ext.Button({
 				id: this.getId()+'-btn-edit',
-				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-um_config.png',
+				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-btn_config.png',
 				iconCls: 'btn'+this.tbarHeight,
 				tooltip: mw.message('bs-extjs-edit').plain(),
 				height: 50,
@@ -85,7 +88,7 @@ Ext.define( 'BS.CRUDPanel', {
 		if( this.opPermitted( 'delete' ) ) {
 			this.btnRemove = new Ext.Button({
 				id: this.getId()+'-btn-remove',
-				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-m_delete.png',
+				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-btn_delete.png',
 				iconCls: 'btn'+this.tbarHeight,
 				tooltip: mw.message('bs-extjs-remove').plain(),
 				height: 50,

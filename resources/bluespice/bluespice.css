@@ -43,6 +43,21 @@
 	width:44px!important;
 }
 
+.btn32.x-btn-icon-el {
+	height:32px!important;
+	width:32px!important;
+	background-position: 0 0;
+	background-repeat: repeat;
+}
+
+.btn32.x-btn-icon-el:hover {
+	background-position: 0 32px;
+}
+
+.btn32.x-btn-icon-el.x-btn-disabled:hover {
+	background-position: 0 0;
+}
+
 .bluebox,
 .box-blue {
 	border:1px solid #6093D2;
