@@ -30,12 +30,13 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	echo "This file is part of MediaWiki and is not a valid entry point\n";
 	die( 1 );
 }
-
-$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = array(
-	"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
-	"url" => "http://bluespice.com",
-	"alt" => "Powered by BlueSpice",
-);
+if ( !isset( $GLOBALS['wgFooterIcons']['poweredby']['bluespice'] ) ) {
+	$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = array(
+		"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
+		"url" => "http://bluespice.com",
+		"alt" => "Powered by BlueSpice",
+	);
+}
 
 /*
  * If this global is set to an array like
