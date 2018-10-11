@@ -10,7 +10,7 @@ class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		}
 		if( empty( $this->target->getDBkey() ) ) {
 			//not a real target (i.e links from the cite extension)
-			return false;
+			return true;
 		}
 		return false;
 	}
