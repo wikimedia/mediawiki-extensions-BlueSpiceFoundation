@@ -29,5 +29,5 @@ class SkinData {
 	const AFTER_CONTENT = 'bs_after_content';
 
 	const EXPORT_MENU = 'bs_export_menu';
-
+	const TOOLBOX_BLACKLIST = 'bs_toolbox_blacklist';
 }
