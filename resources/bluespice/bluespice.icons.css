@@ -499,3 +499,8 @@
 	font-family: "fontawesome" !important;
 	content: "\f08e";
 }
+
+.icon-tree::before {
+	content: "\e9bc";
+	font-family: "icomoon" !important;
+}
