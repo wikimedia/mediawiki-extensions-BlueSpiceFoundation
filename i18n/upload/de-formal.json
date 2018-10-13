@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hwboehm"
+		]
+	},
+	"bs-upload-uploadwarningdialog-outro": "Klicken Sie auf „{{int:bs-extjs-ok}}“, um die Warnungen zu ignorieren und die Datei hochzuladen oder auf „{{int:bs-extjs-cancel}}“, um zum Hochladeformular zurückzukehren."
+}
