@@ -1,8 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otokoume"
+			"Otokoume",
+			"Shirayuki"
 		]
 	},
-	"bs-deferred-action-apimovepage-description": "「$1」を「$2」に移動します。"
+	"bs-deferred-action-status-done": "完了。",
+	"bs-deferred-action-status-error": "失敗しました。",
+	"bs-deferred-batch-actions": "操作",
+	"bs-deferred-batch-description": "説明",
+	"bs-deferred-batch-status": "状態",
+	"bs-deferred-action-apiremovecategories-description": "「$1」からカテゴリを除去。",
+	"bs-deferred-action-apimovepage-description": "「$1」を「$2」に移動します。",
+	"bs-deferred-action-apideletepage-description": "「$1」を削除。"
 }

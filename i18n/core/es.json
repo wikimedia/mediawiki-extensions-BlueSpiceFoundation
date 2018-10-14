@@ -7,7 +7,8 @@
 			"ProtoplasmaKid",
 			"Macofe",
 			"Amitie 10g",
-			"Jelou"
+			"Jelou",
+			"Tiberius1701"
 		]
 	},
 	"bs-ns_main": "(Páginas)",
@@ -36,7 +37,7 @@
 	"bs-userpreferences-link-title": "Mostrar tu configuración de usuario",
 	"bs-exception-view-heading": "Ocurrió un error",
 	"bs-exception-view-text": "Se produjo el siguiente error al procesar la solicitud:",
-	"bs-exception-view-admin-hint": "Contacta a tu administrador de sistema.",
+	"bs-exception-view-admin-hint": "Contacta con tu administrador de sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostrar detalles del error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Ocultar detalles del error",
 	"bs-viewtagerrorlist-legend": "$1 - Error",
