@@ -7,5 +7,8 @@
 	"bs-validator-email-validation-approved": "L'indirizze email ha state convalidate.",
 	"bs-validator-email-validation-not-approved": "L'indirizze email non ge pò essere convalidate.",
 	"bs-validator-url-validation-approved": "'A URL ha state condrollate e jè bbone.",
-	"bs-validator-url-validation-not-approved": "'A URL ha state condrollate e no jè bbone."
+	"bs-validator-url-validation-not-approved": "'A URL ha state condrollate e no jè bbone.",
+	"bs-validator-arg-count-validation-approved": "L'attribbute \"count\" ha state validate.",
+	"bs-validator-arg-count-validation-not-approved": "L'attribbute \"count\" non ge pò essere validate.",
+	"bs-validator-set-validation-approved": "$1 ha state validate."
 }
