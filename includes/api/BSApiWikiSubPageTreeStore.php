@@ -195,4 +195,13 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 
 		$aDataSets[] = $oDataSet;
 	}
+
+	/**
+	 * Pagination in a tree store is not reasonable
+	 * @param stdClass[] $aProcessedData
+	 * @return stdClass[]
+	 */
+	public function trimData( $aProcessedData ) {
+		return $aProcessedData;
+	}
 }
