@@ -1,18 +1,17 @@
 BlueSpice
 Copyright 2018 by Hallo Welt! GmbH
-http://www.bluespice.com
-http://www.hallowelt.com
+https://bluespice.com
+https://hallowelt.com
 
-== BlueSpice 3.0.0-beta ==
-
+== BlueSpice 3.0.0 ==
 BlueSpice 3.0.0 is a major release.
-This is a beta version. Do not use in production.
+This is a stable release.
 
 === Notable changes ===
 ==== New features ====
-* Timeline: an activity, communication and interaction layer
+* Social: an activity, communication and interaction layer
 * Extended Search: based on ElasticSearch and completely new interface
-* Responsive skin: supports mobile view and touch interaction
+* Responsive skin "Calumma": supports mobile view and touch interaction
 * Graphical list: new interface element for better usability
 * MediaWiki VisualEditor: native support for wikitext
 * Role-based permissions: simplifies rights configuration
@@ -20,16 +19,81 @@ This is a beta version. Do not use in production.
 * Authentication stack: LDAP and SAML authentication
 
 ==== Other significant changes ====
-* Dialogs and grids now use ExtJS 6
-* License is now GPL-3.0-only
-* Compatibility with MediaWiki 1.31 LTS
-* Reworked configration system
-* Reworked notification system
+* Architecture: All extensions have their own repository
+* Architecture: Compatibility with MediaWiki 1.31 LTS
+* Architecture: Dialogs and grids now use ExtJS 6
+* Architecture: License is now GPL-3.0-only
+* Architecture: Reworked configuration system
+* Architecture: Reworked notification system
+* Architecture: Complete use of new MediaWiki auth manager
+* ArticleInfo: Uses new flyout for quick interaction
+* Bookmaker: Books with preview images and covers
+* Calumma: Breadcrumbs show the page context
+* Calumma: Facilitate sidebar customisation with "Edit sidebar" links
+* Calumma: Global actions and right sidebar make relevant functionality quickly accessible
+* Calumma: Intelligent navigation bars only open when needed
+* Calumma: New page dialog to create a new namespaced page or subpage
+* Calumma: Quality assessment navigation shows page status at a glance
+* Calumma: Subpage dialog to find and navigate to subpages
+* Calumma: Visual recent changes show preview images of recently changed pages
+* CategoryCheck: Integration in VisualEditor
+* Checklist: Inspector for VisualEditor
+* Checklist: Improved logging of checklist changes
+* ConfigManager: Search for configuration options and visual overhaul
+* CountThings: Inspector for VisualEditor
+* Expiry: Use new flyout for quick interaction
+* ExtendedSearch: Improved facets
+* ExtendedSearch: Individual boosts of search results
+* ExtendedSearch: Search for semantic properties
+* ExtendedStatistics: Improved workflow
+* ExtJS Base: ExtJS for all MediaWiki extensions
+* FilterableTables: Turn almost any table into a filterable one
+* FlaggedRevsConnector: Use new flyout for quick interaction
+* InsertCategory: Use flyout widget
+* InsertMagic: VisualEditor integration
+* MediaWiki extension: CodeEditor for easy editing of script and code fragments
+* MediaWiki extension: Lingo for glossary function
+* MediaWiki extension: Popups for quick page preview
+* MediaWiki extension: TwoColConflict for edit conflict resolution
+* MediaWiki extension: SemanticScributo for scripting Semantic MediaWiki
+* Multiupload: Provide a dropzone element for quick uploads
+* Multiupload: Upload several files at once
+* NamespaceCSS: New manager for namespace specific CSS files
+* NamespaceManager: Add more options and visual overhaul
+* PageAssignments: Use new flyout for quick interaction
+* PermissionManager: Role-based system
+* PermissionManager: Searchable overview of included rights
+* PermissionManager: Improved logging of permission changes
+* QrCode: QR code to open the page on a mobile device
+* Reminder: Use new flyout for quick interaction
+* Smartlist: Inspector for VisualEditor
+* SMWConnector: Inject security trimming into ask queries
+* Social: Attachments for articles
+* Social: Discussions at the end of an article
+* Social: Resolved state for discussions to track open issues
+* Social: Blog feature for central information
+* Social: User profile with customizable fields
+* Social: Central list of activities
+* TagSearch: Inspector for VisualEditor
+* UserInfo: Quick info about a user in a hovercard
+* VisualEditor: Inspectors for BlueSpice tags
+* VisualEditor: Create filterable and exportable tables
+* VisualEditor: Improved image search
+* VisualEditorConnector: Provide framework for tool plugins and interaction with tags
+* VisualEditorConnector: Provide widget for use in extension form elements
+* WebDAV: Major rewrite and stabilisation
+* WikiExplorer: Improve filters for category and dates
 
 ==== Removed extensions ====
-* Blog
-* Shoutbox
-* RatedComments
+* Blog: Replaced by Timeline blog
+* RatedComments: Replaced by Timeline discussions
+* Shoutbox: Replaced by Timeline discussions
+* TopBarMenuCustomizer: Contact Hallo Welt! if needed
+* ExtensionInfo: All information goes to Special:Version now
+* FormattingHelp: No longer needed in VisualEditor
+* PasteImage: Directly supported by VisualEditor
+* FlexiSkin: Skin is configurable on the server side
+* BlueSpicePreferences: Replaced by ConfigManager
 
 === Compatibility ===
 * MediaWiki 1.31 LTS
@@ -42,9 +106,6 @@ This is a beta version. Do not use in production.
 * Java 8+
 * NodeJS 6+
 * Chrome, Firefox, Internet Eplorer 11, Edge
-
-=== Changes since BlueSpice 3.0.0-beta ===
-Detailled changelog will be published starting with BlueSpice 3.0.0 beta
 
 ===The Team===
 ====Programmers====
@@ -63,12 +124,15 @@ Detailled changelog will be published starting with BlueSpice 3.0.0 beta
 * Patric Wirth
 * Stephan Muggli
 * Stefan Widmann
-* Manfred Dennerlein
+* Jan Göttlich
+* Benedikt Hofmann
 * Daniel Vogel
 * Leonid Verhovskij
-* Benedikt Hofmann
 * Gerhard Diller
+* Mannfred Dennerlein
 * Dejan Savuljesku
+* Josef Konrad
+* Philipp Pirzer
 * Peter Böhm
 
 ====Design & Testing====
@@ -81,45 +145,77 @@ Detailled changelog will be published starting with BlueSpice 3.0.0 beta
 * Christina Glaser
 * Christian Graf
 * Angelika Müller
-* Jan Göttlich
 * Karl Skodnik
 * Astrid Scheffler
 * Sabine Gürtler
 * Thomas Schnakenberg
 * Sabrina Dürr
 * Tobias Kornprobst
-* Florian Bäckmann
+* Luisa Roth
+* Ljubica Sireta
 * David Schweiger
+* Florian Bäckmann
 
 ====Contributors====
 * Aaron Schulz
+* Acamicamacaraca
+* Alangi Derick
 * addshore
 * Albert221
+* Amir Sarabadani
+* amritsreekumar
 * Antoine Musso
+* Aryeh Gregor
 * Aude
+* Basil Hershberger
 * Brad Jorsch
 * Chad Horohoe
+* Christian Aistleitner
+* David Sn
 * Demon
 * Florian
 * Florianschmidtwelzow
+* Fomafix
 * Frederic Mohr
 * Gergő Tisza
-* itSpiderman
+* Guycn2
+* hexmode
+* idakuch
+* James D. Forrester
+* Jayprakash12345
+* Jforrester
+* jhsoby
 * Justin Du
+* Kunal Mehta
 * Legoktm
+* libraryupgrader
+* MarcoAurelio
+* Mark A. Hershberger
+* Max Semenik
 * MaxSem
 * MtDu
+* OmkarJ
 * Ori Livneh
 * Paladox
+* Phantom42
+* Prateek Saxena
 * Purodha
+* QChris
 * Raimond Spekking
+* Raymond
+* RazeSoldier
 * Reedy
+* rlot
 * Rohitt Vashishtha
 * Siebrand Mazeland
+* Subin Siby
 * TGC
+* Tulsi Bhagat
 * Umherirrender
-* withoutaname
 * Yuki Shira
+* Yuriy Shnitkovskiy
+* withoutaname
+* Zoranzoki21
 
 ====Translation====
 BlueSpice is translated at translatewiki.net. Many, many thanks for your contributions!
