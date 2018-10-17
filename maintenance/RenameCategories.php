@@ -385,8 +385,9 @@ foreach ($res as $row) {
 			else echo "failed\n";
 			*/
 			echo "Deleting $oldtitletext : ";
-			$delstat = $oldarticle->doDeleteArticle( $summary, $noRC );
-		        if ($delstat) echo "successful\n"; # doesn't work
+			$error = '';
+			$delstat = $oldarticle->doDeleteArticle( $summary, $noRC, null, null, $error, true );
+			if ($delstat) echo "successful\n"; # doesn't work
 			else echo "failed\n";
 		}
 		else echo " ... testing" . PHP_EOL;
