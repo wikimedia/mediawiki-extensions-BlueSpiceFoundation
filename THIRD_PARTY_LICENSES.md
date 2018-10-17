@@ -7,8 +7,6 @@ Software
 
 | Software | Author | Version | License |
 |:--------|:-------|:--------|:-------|
-| [Ext.us.form.field.BoxSelect](https://github.com/kveeiv/extjs-boxselect) | Kevin Vaughan, kleins, KorisA, moritori | 2.0.3 | [MIT](https://opensource.org/licenses/MIT) |
-| [GridPicker](https://github.com/rixo/GridPicker) | Éric Ortega | - | [GPL 2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt) |
 | [ExtJS](https://www.sencha.com/products/extjs/) |Sencha, Inc. | 4.2 | [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.txt) |
 
 Images
@@ -31,6 +29,11 @@ Fonts
 |:--------|:-------|:--------|:-------|
 | [FontAwesome](http://fontawesome.io) | Dave Gandy | 3.0 | [SIL 1.1](http://fontawesome.io/license) |
 | [IcoMoon](https://icomoon.io/#icons-icomoon) | Keyamoon | - | [GPL-3.0-only](https://www.gnu.org/licenses/gpl-3.0.txt) |
+
+PHP libraries
+-------------
+
+BlueSpice uses libraries managed via composer. All of these are declared in composer.json and can be found in the vendor folder.
 
 License texts
 =============
