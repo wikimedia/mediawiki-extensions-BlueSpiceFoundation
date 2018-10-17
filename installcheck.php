@@ -244,8 +244,8 @@ function checkPHPversion( $phpversion ) {
 	if ( version_compare( $phpversion, $cfgPHPversion['min'], '<') ) {
 		$sResult .= "<span class=\"fail\">FAILED!</span> This version is not compatible with BlueSpice. Please upgrade to version >= {$cfgPHPversion['min']}.";
 	}
-	elseif ( version_compare( $phpversion, $cfgPHPversion['opt'], '<') ) {
-		$sResult .= "<span class=\"warn\">WARNING!</span> You should upgrade to version >= {$cfgPHPversion['opt']} for best performance.";
+	elseif ( version_compare( $phpversion, $cfgPHPversion['opt'], '!=') ) {
+		$sResult .= "<span class=\"warn\">WARNING!</span> You should use version {$cfgPHPversion['opt']} for full compatibility.";
 	}
 	else {
 		$sResult .= "<span class=\"ok\">OK</span>";
@@ -323,6 +323,7 @@ function checkSessionSavePath() {
 function checkINIvalues( $iniOptions ) {
 
 	$sReturn = '';
+	$iniOptionChecked = [];
 
 	foreach ( $iniOptions as $value ) {
 
@@ -352,14 +353,16 @@ function checkINIvalues( $iniOptions ) {
 			}
 		}
 		elseif ( $checkOperator == ">=" ) {
-			if ( $iniValue < $checkValue || in_array( [ '0', '1' ] ) ) {
+			if ( $iniValue < $checkValue ) {
 				$sReturn .= "..... {$helptext}<br/>";
 				$iniOptionChecked[$iniOption] = true;
 			}
 		}
 
-		if ( $iniOptionChecked[$iniOption] != true ) {
+		if ( isset( $iniOptionChecked[$iniOption] ) && $iniOptionChecked[$iniOption] == true ) {
 			$sReturn .= "..... <span class=\"ok\">OK</span><br/>";
+		} else {
+			$sReturn .= "..... <span class=\"warn\">FAILED</span><br/>";
 		}
 
 	}
