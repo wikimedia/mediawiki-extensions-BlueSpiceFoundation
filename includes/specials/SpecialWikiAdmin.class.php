@@ -12,7 +12,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v3
  * @filesource
  */
-class SpecialWikiAdmin extends BsSpecialPage {
+class SpecialWikiAdmin extends \BlueSpice\SpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'WikiAdmin', '', false );
@@ -23,10 +23,6 @@ class SpecialWikiAdmin extends BsSpecialPage {
 		$oOutputPage = $this->getOutput();
 		$oOutputPage->setPageTitle( "WikiAdmin" );
 		$oOutputPage->addHTML( '<div>WikiAdmin has been removed in BlueSpice 3</div>' );
-	}
-
-	protected function getGroupName() {
-		return 'bluespice';
 	}
 
 }
