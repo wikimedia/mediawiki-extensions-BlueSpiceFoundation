@@ -38,7 +38,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testProcess() {
-
+		define( 'BS_ADD_DATA_TITLE_TEST', true );
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
 			->getMock();

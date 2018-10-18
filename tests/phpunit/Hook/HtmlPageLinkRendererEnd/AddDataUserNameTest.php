@@ -39,6 +39,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 	}
 
 	public function testProcessUserPageWithRename() {
+		define( 'BS_ADD_DATA_USER_NAME_TEST', true );
 		$testuser = \User::newFromName( $this->testUserName );
 		$testuser->addToDatabase();
 		$testuser->setRealName( 'Sysöp, W. Iki' );
