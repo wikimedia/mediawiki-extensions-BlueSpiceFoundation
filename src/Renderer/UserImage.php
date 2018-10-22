@@ -74,8 +74,8 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		$params = [
 			DFDParams::MODULE => UserProfileImage::MODULE_NAME,
 			UserProfileImage::USERNAME => $val,
-			UserProfileImage::WIDTH => $this->args[static::PARAM_WIDTH],
-			UserProfileImage::HEIGHT => $this->args[static::PARAM_HEIGHT]
+			UserProfileImage::WIDTH => (int)$this->args[static::PARAM_WIDTH] * 1.4,
+			UserProfileImage::HEIGHT => (int)$this->args[static::PARAM_HEIGHT] * 1.4,
 		];
 
 		$dfdUrlBuilder = Services::getInstance()
