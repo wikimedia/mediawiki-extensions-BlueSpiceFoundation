@@ -59,7 +59,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 			);
 
 		$histQuery = [
-			'curid' => $rawData->tmp_curid,
+			'curid' => $rawData->cur_id,
 			'action' => 'history'
 		];
 		$rawData->hist_url = $title->getFullURL( $histQuery );
