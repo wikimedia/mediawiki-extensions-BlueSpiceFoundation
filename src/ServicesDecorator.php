@@ -145,7 +145,7 @@ class ServicesDecorator extends ServiceContainer {
 
 	/**
 	 * @since 1.28
-	 * @return \InterwikiLookup
+	 * @return \MediaWiki\Interwiki\InterwikiLookup
 	 */
 	public function getInterwikiLookup() {
 		return $this->decoratedServices->getService( 'InterwikiLookup' );
