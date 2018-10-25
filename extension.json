@@ -537,8 +537,7 @@
 		],
 		"ExtensionTypes": "\\BlueSpice\\Hook\\ExtensionTypes\\AddBlueSpice::callback",
 		"PageContentSaveComplete": [
-			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateArticleHelper::callback",
-			"BsCacheHelper::onPageContentSaveComplete"
+			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateArticleHelper::callback"
 		],
 		"ResourceLoaderGetConfigVars": [
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddVersion::callback",
