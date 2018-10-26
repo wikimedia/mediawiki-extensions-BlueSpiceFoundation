@@ -35,4 +35,6 @@ class SkinData {
 	const EDIT_MENU_BLACKLIST = 'bs_edit_menu_blacklist';
 	const VIEW_MENU_BLACKLIST = 'bs_view_menu_blacklist';
 	const TOOLBOX_BLACKLIST = 'bs_toolbox_blacklist';
+
+	const CUSTOM_MENU = 'bs_custom_menu';
 }
