@@ -10,5 +10,5 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Add",
 	"bs-ooui-key-value-input-widget-add-form-label": "Add new entry",
 	"bs-ooui-key-value-input-widget-error-message": "All required fields must be set!",
-	"bs-ooui-keyValueInputWidget-no-value-label": "No values set!"
+	"bs-ooui-key-value-input-widget-no-values-label": "No values set!"
 }
