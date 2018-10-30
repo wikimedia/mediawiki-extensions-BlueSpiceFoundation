@@ -281,7 +281,7 @@
 				"bs-ooui-key-value-input-widget-value-label",
 				"bs-ooui-key-value-input-widget-add-button-label",
 				"bs-ooui-key-value-input-widget-add-form-label",
-				"bs-ooui-keyValueInputWidget-no-value-label"
+				"bs-ooui-key-value-input-widget-no-values-label"
 			]
 		},
 		"ext.bluespice.upload": {
