@@ -10,5 +10,5 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "添加",
 	"bs-ooui-key-value-input-widget-add-form-label": "添加新记录",
 	"bs-ooui-key-value-input-widget-error-message": "所有必填字段必须设置！",
-	"bs-ooui-keyValueInputWidget-no-value-label": "未设置值！"
+	"bs-ooui-key-value-input-widget-no-values-label": "未设置值！"
 }

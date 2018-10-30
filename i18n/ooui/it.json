@@ -9,5 +9,5 @@
 	"bs-ooui-key-value-input-widget-value-label": "Valore",
 	"bs-ooui-key-value-input-widget-add-button-label": "Aggiungi",
 	"bs-ooui-key-value-input-widget-error-message": "Tutti i campi obbligatori devono essere impostati!",
-	"bs-ooui-keyValueInputWidget-no-value-label": "Nessun valore impostato!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Nessun valore impostato!"
 }

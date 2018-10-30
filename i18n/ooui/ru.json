@@ -11,5 +11,5 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Добавить",
 	"bs-ooui-key-value-input-widget-add-form-label": "Добавить новую запись",
 	"bs-ooui-key-value-input-widget-error-message": "Необходимо заполнить все необходимые поля!",
-	"bs-ooui-keyValueInputWidget-no-value-label": "Не задано значений!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значений!"
 }

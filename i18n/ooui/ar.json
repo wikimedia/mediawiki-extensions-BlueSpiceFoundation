@@ -10,5 +10,5 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "إضافة",
 	"bs-ooui-key-value-input-widget-add-form-label": "إضافة مدخلة جديدة",
 	"bs-ooui-key-value-input-widget-error-message": "يجب تعيين جميع الحقول المطلوبة!",
-	"bs-ooui-keyValueInputWidget-no-value-label": "لا توجد مجموعة قيم!"
+	"bs-ooui-key-value-input-widget-no-values-label": "لا توجد مجموعة قيم!"
 }
