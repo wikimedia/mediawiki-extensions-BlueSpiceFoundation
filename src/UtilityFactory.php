@@ -95,4 +95,13 @@ class UtilityFactory {
 			$wikitext
 		);
 	}
+
+	/**
+	 * @return \BlueSpice\Utility\CacheHelper
+	 */
+	public function getCacheHelper() {
+		return new \BlueSpice\Utility\CacheHelper(
+			$this->services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	}
 }
