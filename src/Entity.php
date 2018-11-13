@@ -160,14 +160,6 @@ abstract class Entity implements \JsonSerializable {
 			throw new \MWException( "An Entity's type can not be changed!" );
 		}
 
-		//Non-storable fields and unregistered fields can not be saved and
-		//therefore should not be set into the attributes
-		$storableFields = $this->getStore()->getWriter()->getSchema()
-			->getStorableFields();
-		if( ! in_array( $attrName, $storableFields ) ) {
-			return $this;
-		}
-
 		$this->attributes[$attrName] = $value;
 		return $this->setUnsavedChanges();
 	}
