@@ -7,6 +7,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	commonStore: null,
 	commonStoreApiAction: 'bs-wikipage-store',
 	pageSize: 25,
+	defaultTab: '',
 
 	constructor: function( cfg ) {
 		cfg.height = cfg.height || this.calcDefaultHeight( cfg.renderTo );
@@ -47,6 +48,9 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 			}
 		}, this ) );
 
+		if( this.getInitialActiveTab() ) {
+			this.setActiveTab( this.getInitialActiveTab() );
+		}
 		return this.callParent( arguments );
 	},
 
@@ -63,6 +67,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	makeDataViewPanel: function() {
 		return {
 			iconCls: 'icon-thumbs',
+			id: 'dataviewpanel',
 			title: mw.message( 'bs-extjs-flyout-tab-thumbs-label' ).text(),
 			tooltip: mw.message( 'bs-extjs-flyout-tab-thumbs-title' ).text(),
 			cls: 'preview',
@@ -94,7 +99,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 						'<a style="display:block;" href="{[this.makeMainLinkUrl(values)]}" title="Read">',
 							'<span class="title">{[this.makeThumbnailCaptionTitle(values)]}</span>',
 							'<div class="image">',
-								'<img src="{[this.makeThumbnailImageSrc(values)]}" title="{[this.makeThumbnailImageTitle(values)]}" alt="{[this.makeThumbnailImageAlt(values)]}">',
+								'<img src="{[this.makeThumbnailImageSrc(values)]}" title="{[this.makeThumbnailImageTitle(values)]}" alt="{[this.makeThumbnailImageAlt(values)]}" onload="$(this).parent().addClass( \'loaded\' );">',
 							'</div>',
 							'<ul class="meta">',
 								'<tpl for="this.makeMetaItems(values)">',
@@ -139,7 +144,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 				},
 				makeMetaItems: function( values ) {
 					return me.makeDataViewItemMetaItems( values );
-				},
+				}
 			}
 		);
 	},
@@ -281,6 +286,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		}
 
 		return new Ext.grid.Panel( {
+			id: 'gridviewpanel',
 			iconCls: 'icon-grid',
 			cls: 'list',
 			title: mw.message( 'bs-extjs-flyout-tab-grid-label' ).text(),
@@ -348,5 +354,12 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 			model: 'BS.model.Title',
 			apiAction: this.commonStoreApiAction
 		} );
+	},
+
+	getInitialActiveTab: function() {
+		if( !this.defaultTab || this.defaultTab === '' ) {
+			return null;
+		}
+		return this.defaultTab;
 	}
 });
