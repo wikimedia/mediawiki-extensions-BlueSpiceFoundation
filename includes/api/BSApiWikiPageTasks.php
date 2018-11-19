@@ -549,11 +549,13 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 	/**
 	 *
+	 * @deprecated since version 3.1 - Not in use anymore
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
 	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_getDiscussionCount( $oTaskData, $aParams  ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$oResponse = $this->makeStandardReturn();
 
 		$iCount = BsArticleHelper::getInstance(

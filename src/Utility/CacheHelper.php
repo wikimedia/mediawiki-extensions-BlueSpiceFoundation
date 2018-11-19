@@ -76,6 +76,7 @@ class CacheHelper {
 		if( !$res ) {
 			wfDebugLog( 'BsMemcached', "NO INVALIDATION FOR KEY: $key" );
 		}
+		return $res;
 	}
 
 }
