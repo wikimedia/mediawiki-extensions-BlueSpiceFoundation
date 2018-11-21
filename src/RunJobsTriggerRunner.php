@@ -159,7 +159,8 @@ class RunJobsTriggerRunner {
 		$runConditionChecker = new JSONFileBasedRunConditionChecker(
 			new \DateTime(),
 			BSDATADIR,
-			$logger
+			$logger,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 
 		$runner = new \BlueSpice\RunJobsTriggerRunner(
