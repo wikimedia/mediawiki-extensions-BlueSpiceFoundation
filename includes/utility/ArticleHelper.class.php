@@ -148,7 +148,7 @@ class BsArticleHelper {
 		$this->bIsLoaded = false;
 		$this->aPageProps = array();
 
-		if( !$this->oTitle->exists() || $this->oTitle->getTalkPageIfDefined() === null ) {
+		if( !$this->oTitle->exists() || !$this->oTitle->getTalkPageIfDefined() ) {
 			return true;
 		}
 
