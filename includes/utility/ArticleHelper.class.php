@@ -40,7 +40,12 @@ class BsArticleHelper {
 	 * @return int The number of edits of the talk page
 	 */
 	public function getDiscussionAmount() {
-		$oTalkPage   = $this->oTitle->getTalkPage();
+		$oTalkPage   = $this->oTitle->getTalkPageIfDefined();
+
+		if ( !$oTalkPage ) {
+			return 0;
+		}
+
 		$iTalkPageId = $oTalkPage->getArticleID();
 
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'getDiscussionAmount', $iTalkPageId );
@@ -143,7 +148,7 @@ class BsArticleHelper {
 		$this->bIsLoaded = false;
 		$this->aPageProps = array();
 
-		if( !$this->oTitle->exists() ) {
+		if( !$this->oTitle->exists() || $this->oTitle->getTalkPageIfDefined() === null ) {
 			return true;
 		}
 
