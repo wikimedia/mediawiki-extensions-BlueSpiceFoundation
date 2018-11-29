@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * DEPRECATED
+ * @deprecated since version 2.27.2 - use extension.json to register your
+ * BlueSpice extension
+ */
 class EXTINFO {
 	const NAME        = 0;
 	const DESCRIPTION = 1;
