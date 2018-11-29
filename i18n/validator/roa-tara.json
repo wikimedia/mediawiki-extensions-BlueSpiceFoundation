@@ -10,5 +10,16 @@
 	"bs-validator-url-validation-not-approved": "'A URL ha state condrollate e no jè bbone.",
 	"bs-validator-arg-count-validation-approved": "L'attribbute \"count\" ha state validate.",
 	"bs-validator-arg-count-validation-not-approved": "L'attribbute \"count\" non ge pò essere validate.",
-	"bs-validator-set-validation-approved": "$1 ha state validate."
+	"bs-validator-set-validation-approved": "$1 ha state validate.",
+	"bs-validator-set-validation-not-approved": "Pe $1 jè conzendite {{PLURAL:$3|sulamende stu valore|sulamende une de ste valore}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "'U valore date jè troppe vasce. Non g'adda essere minore de $1.",
+	"bs-validator-integer-range-validation-too-high": "'U valore date jè troppe ierte. Non g'adda essere maggiore de $1.",
+	"bs-validator-value-not-recognized": "'U valore non ge pò essere processate",
+	"bs-validator-invalid-boolean": "'Nu booleane non valide",
+	"bs-validator-invalid-float": "'Nu float non valide",
+	"bs-validator-invalid-integer": "'Nu indere non valide",
+	"bs-validator-invalid-string": "'Na stringhe non valide",
+	"bs-validator-invalid-coordinate": "'Na coordinate non valide",
+	"bs-validator-invalid-parameter": "Stu parametre non g'è conzendite",
+	"bs-validator-missing-required": "Stu parametre jè richieste"
 }
