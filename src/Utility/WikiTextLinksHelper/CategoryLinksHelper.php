@@ -35,12 +35,12 @@ class CategoryLinksHelper extends InternalLinksHelper {
 	 * @param string|false $text
 	 * @param bool $addDuplicates
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates ) {
+	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
 		if( $target->getNamespace() !== NS_CATEGORY ) {
 			return;
 		}
 
-		return parent::addTarget( $target, false, false );
+		return parent::addTarget( $target, false, false, false, "\n" );
 	}
 
 	/**
