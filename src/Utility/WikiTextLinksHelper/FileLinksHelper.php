@@ -35,11 +35,11 @@ class FileLinksHelper extends InternalLinksHelper {
 	 * @param string|false $text
 	 * @param bool $addDuplicates
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates ) {
+	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
 		if( $target->getNamespace() !== NS_FILE ) {
 			return;
 		}
-		return parent::addTarget( $target, $text, $addDuplicates );
+		return parent::addTarget( $target, $text, $addDuplicates, false, $separator );
 	}
 
 	/**

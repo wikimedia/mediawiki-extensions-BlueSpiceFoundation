@@ -108,7 +108,7 @@ class InternalLinksHelper {
 	 * @param string|false $text
 	 * @param bool $addDuplicates
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates ) {
+	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
 		if( !$addDuplicates ) {
 			foreach( $this->getTargets() as $match => $title ) {
 				if( !$target->equals( $title ) ) {
@@ -117,8 +117,15 @@ class InternalLinksHelper {
 				return;
 			}
 		}
-		$linkWikiText = "\n[[";
-		if( $target->getNamespace() !== 0 ) {
+		$linkWikiText = "[[";
+		if( !empty( $this->wikitext ) ) {
+			$linkWikiText = $separator . $linkWikiText;
+		}
+
+		if( $target->getNamespace() !== NS_MAIN ) {
+			if( $leadingColon && in_array( $target->getNamespace() , [NS_FILE, NS_CATEGORY] ) ) {
+				$linkWikiText .= ':';
+			}
 			$linkWikiText .= \MWNamespace::getCanonicalName(
 				$target->getNamespace()
 			);
@@ -154,7 +161,7 @@ class InternalLinksHelper {
 	 * @param bool|true $addDuplicates
 	 * @return InternalLinksHelper
 	 */
-	public function addTargets( $links, $addDuplicates = true ) {
+	public function addTargets( $links, $addDuplicates = true, $separator = "\n" ) {
 		foreach( $links as $linkText => $target ) {
 			if( !$target instanceof \Title ) {
 				continue;
@@ -162,7 +169,7 @@ class InternalLinksHelper {
 			if( empty( $linkText ) || is_numeric( $linkText ) ) {
 				$linkText = false;
 			}
-			$this->addTarget( $target, $linkText, $addDuplicates );
+			$this->addTarget( $target, $linkText, $addDuplicates, true, $separator );
 		}
 		return $this;
 	}
