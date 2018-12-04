@@ -44,6 +44,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 				$this->getConfig()->get( 'ImageExtensions' )
 			),
 			'IsWindows' => wfIsWindows(),
+			'ArticlePreviewCaptureNotDefault' => $this->getArticlePreviewCaptureNotDefault(),
 		];
 
 		if( $this->getConfig()->get( 'TestSystem' ) ) {
@@ -110,4 +111,20 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 		);
 	}
 
+	protected function getArticlePreviewCaptureNotDefault() {
+		$extRegistry = \ExtensionRegistry::getInstance();
+		$modules = $extRegistry->getAttribute(
+			'BlueSpiceFoundationDynamicFileRegistry'
+		);
+		$articlePreviewCaptureNotDefault = false;
+		foreach( $modules as $key => $module ) {
+			if( $key !== "articlepreviewimage" ) {
+				continue;
+			}
+
+			$articlePreviewCaptureNotDefault
+				= $module !== "\\BlueSpice\\DynamicFileDispatcher\\ArticlePreviewImage";
+		}
+		return $articlePreviewCaptureNotDefault;
+	}
 }
