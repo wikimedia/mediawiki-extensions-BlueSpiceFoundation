@@ -51,14 +51,20 @@ $GLOBALS[ 'bsgTestSystem' ] = false;
 
 $GLOBALS[ 'bsgEnableRoleSystem' ] = false;
 
-$GLOBALS[ 'bsgGroupRoles' ] = [
+if ( !isset( $GLOBALS[ 'bsgGroupRoles' ] ) ) {
+	$GLOBALS['bsgGroupRoles'] = [];
+}
+
+$GLOBALS[ 'bsgGroupRoles' ] = array_merge( [
 	'bureaucrat' => [ 'accountmanager' => true ],
 	'sysop' => [ 'admin' => true ],
 	'user' => [ 'editor' => true ],
 	'*' => [ 'reader' => true ]
-];
+], $GLOBALS['bsgGroupRoles'] );
 
-$GLOBALS[ 'bsgNamespaceRolesLockdown' ]  = [];
+if ( !isset( $GLOBALS[ 'bsgNamespaceRolesLockdown' ] ) ) {
+	$GLOBALS['bsgNamespaceRolesLockdown'] = [];
+}
 
 $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	"apihighlimits" => [
