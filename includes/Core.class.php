@@ -395,8 +395,8 @@ class BsCore {
 
 	/**
 	 * Registers a permission with the MediaWiki Framework.
-	 * object for proper internationalisation of your permission. Every
-	 * permission is granted automatically to the user group 'sysop'. You can
+	 * object for proper internationalisation of your permission. If not already set,
+	 * every permission is granted automatically to the user group 'sysop'. You can
 	 * specify additional groups through the third parameter.
 	 *
 	 * @deprecated since version 3.0 - use BSPermissionRegistry instead
@@ -410,7 +410,10 @@ class BsCore {
 	 */
 	public function registerPermission( $sPermissionName, $aUserGroups = array(), $aConfig = array() ) {
 		global $wgGroupPermissions, $wgAvailableRights, $bsgPermissionConfig;
-		$wgGroupPermissions['sysop'][$sPermissionName] = true;
+
+		$aUserGroups = array_merge( [
+			'sysop'
+		], $aUserGroups );
 		if(!isset($bsgPermissionConfig[$sPermissionName])){
 			if ( isset( $aConfig ) ) {
 				$bsgPermissionConfig[$sPermissionName] = $aConfig;
