@@ -64,9 +64,9 @@ function NSRecoveryController( $bDry, $options ) {
 
 function getDataFromNSBackup( $sTable, $aConditions = array(), $aReturn = array() ) {
     $oDbr = wfGetDB( DB_REPLICA );
-	global $wgDBtype;		
-	$sTable = $wgDBtype == 'oracle' ? 'bs_ns_bak_'.$sTable : 'bs_namespacemanager_backup_'.$sTable;
-		
+
+	$sTable = 'bs_namespacemanager_backup_'.$sTable;
+
     $rRes = $oDbr->select( $sTable, '*', $aConditions ) ;
     var_dump($oDbr->lastQuery());
     if( empty($rRes) ) return array();
