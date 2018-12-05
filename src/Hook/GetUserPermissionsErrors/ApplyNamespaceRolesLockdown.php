@@ -76,10 +76,10 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 				continue;
 			}
 			foreach( $roles as $roleName => $groups ) {
+				$allowedGroups = array_merge( $allowedGroups, $groups );
 				if( !in_array( $roleName, $actionRoles ) ) {
 					continue;
 				}
-				$allowedGroups = array_merge( $allowedGroups, $groups );
 				if( array_intersect( $groups, $userGroups ) ) {
 					return true;
 				}
