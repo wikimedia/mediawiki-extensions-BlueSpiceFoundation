@@ -400,7 +400,6 @@ class BsConfig {
 
 	/**
 	 * @deprecated since version 3.0.0 - Migrate to ConfigDefinition, MW config
-	 * @global string $wgDBtype
 	 * @param string $sKey
 	 * @param mixed $vValue
 	 * @param string $sSingleValFromMultiple
@@ -409,28 +408,21 @@ class BsConfig {
 	 */
 	public static function getUsersForVar( $sKey, $vValue, $sSingleValFromMultiple = false, $bSerialized = true ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		global $wgDBtype;
+
 		$oDb = wfGetDB ( DB_REPLICA );
 		$aUsers = array ();
 
-		if ( $wgDBtype == 'oracle' ) {
-			$rRes = $oDb->select ( 'user_properties', '*',
-					array ( 'up_property' => $sKey,
-							'up_value like \'' . serialize ( $vValue ) . '\'' )			//TODO WP: HACKY oracle patch - find a better way!
-				);
+		$aConditions = array( 'up_property' => $sKey );
+		if( $sSingleValFromMultiple ) {
+			$aConditions[] = 'up_value like "%'.$vValue.'%"';
 		} else {
-			$aConditions = array( 'up_property' => $sKey );
-			if( $sSingleValFromMultiple ) {
-				$aConditions[] = 'up_value like "%'.$vValue.'%"';
-			} else {
-					$aConditions['up_value'] = ( $bSerialized ) ? serialize( $vValue ) : $vValue;
-			}
-			$rRes = $oDb->select (
-					'user_properties',
-					'*',
-					$aConditions
-			);
+				$aConditions['up_value'] = ( $bSerialized ) ? serialize( $vValue ) : $vValue;
 		}
+		$rRes = $oDb->select (
+				'user_properties',
+				'*',
+				$aConditions
+		);
 
 		while ( $oRow = $rRes->fetchObject () ) {
 			if( $sSingleValFromMultiple ) {
