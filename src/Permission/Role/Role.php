@@ -5,9 +5,23 @@ namespace BlueSpice\Permission\Role;
  * Generic class for roles
  */
 class Role implements IRole {
+	/**
+	 *
+	 * @var string
+	 */
 	protected $name;
+
+	/**
+	 *
+	 * @var string[]
+	 */
 	protected $permissions;
 
+	/**
+	 *
+	 * @param string $name
+	 * @param string[] $permissions
+	 */
 	protected function __construct( $name, $permissions = [] ) {
 		$this->name = $name;
 		$this->permissions = $permissions;
@@ -61,19 +75,20 @@ class Role implements IRole {
 
 	/**
 	 * Adds single permission to the role
-	 * @param string $sPermission
+	 * @param string $permission
 	 */
-	public function addPermission($sPermission) {
-		$this->permissions[] = $sPermission;
+	public function addPermission( $permission ) {
+		$this->permissions[] = $permission;
 	}
 
 	/**
 	 * Removes single permission from the role
-	 * @param string $sPermission
+	 * @param string $permission
 	 */
-	public function removePermission ( $sPermission ) {
-		if( isset( $this->permissions[ $sPermission] ) ) {
-			unset( $this->permissions[ $sPermission] );
+	public function removePermission ( $permission ) {
+		$index = array_search( $permission, $this->permissions );
+		if( $index !== false ) {
+			unset( $this->permissions[ $index ] );
 		}
 	}
 }
