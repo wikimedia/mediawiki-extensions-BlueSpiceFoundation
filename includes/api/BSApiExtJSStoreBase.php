@@ -215,7 +215,12 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 				ApiBase::PARAM_DFLT => 'json',
 				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
 				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-format',
-			)
+			),
+			'context' => [
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => false,
+				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-context',
+			]
 		);
 	}
 
@@ -230,14 +235,15 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			'query' => 'Similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
 			'callback' => 'A method name in the client code that should be called in the response (JSONP)',
 			'_dc' => '"Disable cache" flag',
-			'format' => 'The format of the output (only JSON or formatted JSON)'
+			'format' => 'The format of the output (only JSON or formatted JSON)',
+			'context' => 'Context in which the call is made'
 		);
 	}
 
 	protected function getParameterFromSettings($paramName, $paramSettings, $parseLimit) {
 		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
 		//Unfortunately there is no way to register custom types for parameters
-		if( in_array( $paramName, array( 'sort', 'group', 'filter' ) ) ) {
+		if( in_array( $paramName, array( 'sort', 'group', 'filter', 'context' ) ) ) {
 			$value = FormatJson::decode( $value );
 			if( empty($value) ) {
 				return array();
