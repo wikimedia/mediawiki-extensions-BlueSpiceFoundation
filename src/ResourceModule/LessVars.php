@@ -11,6 +11,20 @@ class LessVars extends \ResourceLoaderFileModule {
 		foreach( $registry->getAllKeys() as $key ) {
 			$vars[$key] = $registry->getValue( $key, '¯\_(ツ)_/¯' );
 		}
-		return $vars;
+
+		// TODO: make LessVars text area field with valiadtion for ConfigManager
+		return array_merge(
+			$vars,
+			$this->getConfig()->get( 'LessVars' )
+		);
+	}
+
+	/**
+	 * @return Config
+	 * @since 1.24
+	 */
+	public function getConfig() {
+		return \BlueSpice\Services::getInstance()->getConfigFactory()
+			->makeConfig( 'bsg' );
 	}
 }

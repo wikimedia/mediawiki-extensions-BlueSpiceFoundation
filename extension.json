@@ -729,6 +729,9 @@
 				"Raimond Spekking",
 				"Stephan Muggli"
 			]
+		},
+		"LessVars": {
+			"value": {}
 		}
 	},
 	"ConfigRegistry": {
