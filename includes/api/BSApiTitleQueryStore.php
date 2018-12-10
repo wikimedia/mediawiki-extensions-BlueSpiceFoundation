@@ -220,7 +220,9 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		$aSpecialPages = SpecialPageFactory::getNames();
 		$aSPDataSets = array();
 		$sSpecialNmspPrefix = $this->getLanguage()->getNsText( NS_SPECIAL );
-		$sUnprefixedNormQuery = array_pop( explode( ':', $sNormQuery, 2 ) );
+
+		$normQueryParts = explode( ':', $sNormQuery, 2 );
+		$sUnprefixedNormQuery = array_pop( $normQueryParts );
 
 		foreach ( $aSpecialPages as $sSpecialPageName ) {
 
