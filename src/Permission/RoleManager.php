@@ -1,8 +1,6 @@
 <?php
 
-namespace BlueSpice\Permission\Role;
-use BlueSpice\Permission\Role\IRole;
-use BlueSpice\Permission\Role\Role;
+namespace BlueSpice\Permission;
 
 /**
  * This class controls all the operation
@@ -11,11 +9,9 @@ use BlueSpice\Permission\Role\Role;
  * It should be accessed over MediaWikiServices,
  * where it is registered as "BSRoleManager"
  */
-class Manager {
+class RoleManager {
 	const ROLE_GRANT = true;
 	const ROLE_DENY = false;
-
-	private static $instance;
 
 	/**
 	 * Which roles are assigned to which groups
@@ -39,40 +35,42 @@ class Manager {
 	protected $roleSystemEnabled;
 
 	/**
-	 * @var BlueSpice\Permission\Registry
+	 * @var PermissionRegistry
 	 */
 	protected $permissionRegistry;
 
+	/**
+	 * @var RoleFactory
+	 */
+	protected $roleFactory;
+
+	/**
+	 * @var array
+	 */
+	protected $predefinedRoles;
+
 	protected $roles = [];
 
-	protected function __construct( &$groupPermission, &$roleGroups, &$roleSystemEnabled ) {
+	/**
+	 * Manager constructor.
+	 * @param array $groupPermission
+	 * @param array $roleGroups
+	 * @param boolean $roleSystemEnabled
+	 * @param array $predefinedRoles
+	 * @param PermissionRegistry $permissionRegistry
+	 * @param RoleFactory $roleFactory
+	 */
+	public function __construct( &$groupPermission, &$roleGroups, &$roleSystemEnabled, $predefinedRoles, $permissionRegistry, $roleFactory ) {
 		$this->groupRoles =& $roleGroups;
 		$this->groupPermissions =& $groupPermission;
 		$this->roleSystemEnabled =& $roleSystemEnabled;
-		$this->permissionRegistry = \MediaWiki\MediaWikiServices::getInstance()->getService(
-			'BSPermissionRegistry'
-		);
+		$this->predefinedRoles = $predefinedRoles;
 
-		$this->makeRoles();
-	}
+		$this->permissionRegistry = $permissionRegistry;
+		$this->roleFactory = $roleFactory;
 
-	/**
-	 * Gets the instance of the manager
-	 *
-	 * @param array $groupPermission
-	 * @param array $roleGroups
-	 * @param bool $roleSystemEnabled
-	 * @return BlueSpice\Permission\Role\Manager
-	 */
-	public static function getInstance( &$groupPermission, &$roleGroups, &$roleSystemEnabled ) {
-		if( self::$instance === null ) {
-			self::$instance = self::newInstance( $groupPermission, $roleGroups, $roleSystemEnabled );
-		}
-		return self::$instance;
-	}
-
-	protected static function newInstance( &$groupPermission, &$roleGroups, &$roleSystemEnabled ) {
-		return new self( $groupPermission, $roleGroups, $roleSystemEnabled );
+		$this->makePredefinedRoles();
+		$this->makeRolesFromPermissions();
 	}
 
 	/**
@@ -155,7 +153,7 @@ class Manager {
 	 * Removes a role from a group
 	 *
 	 * @param string $role Role name
-	 * @param srting $group GroupName
+	 * @param string $group GroupName
 	 */
 	public function removeRoleFromGroup( $role, $group ) {
 		if( isset( $this->groupRoles[ $group ][ $role ] ) ) {
@@ -164,29 +162,16 @@ class Manager {
 	}
 
 	/**
-	 * Registeres new role
+	 * Register new role
 	 *
-	 * @param string $roleName
-	 * @param array $permissions
-	 * @param array $groups
-	 * If this parameter is set, all groups passed will
-	 * immediately be assigned the role
-	 * @param bool $assignToSysop
-	 * If false, and no groups are passed,
-	 * role will not be assigned to sysop
-	 * @param BlueSpice\Permission\Role\IRole|null $roleObject
-	 * Enables extensions to register custom role objects
+	 * @param IRole
+	 * @param array $groups Groups to assign the role to
 	 */
-	public function registerRole( $roleName, $permissions = [], $groups = [], $assignToSysop = false, $roleObject = null ) {
-		if( $roleObject == null || ( $roleObject instanceof IRole ) == false ) {
-			$roleObject = Role::newFromNameAndPermissions( $roleName, $permissions );
-		}
-		$this->addRole( $roleObject );
-		if( empty( $groups ) === true && $assignToSysop === true ) {
-			$this->groupRoles[ 'sysop' ][ $roleName ] = true;
-		} else {
+	public function registerRole( IRole $role, $groups = [] ) {
+		$this->addRole( $role );
+		if( !empty( $groups ) ) {
 			foreach( $groups as $groupName => $active ) {
-				$this->assignRoleToGroup( $roleName, $groupName, $active );
+				$this->assignRoleToGroup( $role->getName(), $groupName, $active );
 			}
 		}
 	}
@@ -214,6 +199,8 @@ class Manager {
 	 * If a role does not exist, it will be created and
 	 * be given the permission
 	 *
+	 * @deprecated Since 3.1 - Implement and register role class (implements IRole)
+	 * or add permission to role using "BlueSpiceFoundationPermissionRegistry" attribute or global var
 	 * @param string $permission
 	 * @param array $roles Roles to which to add the permission
 	 */
@@ -223,10 +210,13 @@ class Manager {
 		if( isset( $roles ) ) {
 			foreach( $roles as $role ) {
 				if( $this->roleExists ( $role ) === false ) {
-					$this->registerRole( $role, [ $permission ], [], false );
+					$roleObject = $this->roleFactory->makeRole( $role );
+					$this->registerRole( $roleObject );
+				} else {
+					$roleObject = $this->getRole( $role );
 				}
-				$roleObject = $this->getRole( $role );
-				if( $roleObject instanceof Role\IRole ) {
+
+				if( $roleObject instanceof IRole ) {
 					$roleObject->addPermission( $permission );
 				}
 			}
@@ -311,20 +301,36 @@ class Manager {
 		return $rolesAndPermissions;
 	}
 
-	protected function makeRoles () {
-		foreach( $this->permissionRegistry->getPermissions() as
-				$permissionName => $permissionDescription ) {
-			if( empty( $permissionDescription->getRoles() ) ) {
-				continue;
-			}
-			foreach( $permissionDescription->getRoles() as $roleName ) {
+	protected function makePredefinedRoles() {
+		foreach( $this->predefinedRoles as $roleName => $class ) {
+			$roleObject = $this->roleFactory->makeRole( $roleName );
+			$this->registerRole( $roleObject );
+		}
+	}
 
-				if( $this->roleExists ( $roleName ) === false ) {
-					$this->registerRole( $roleName );
+	protected function makeRolesFromPermissions() {
+		$checked = [];
+		foreach( $this->permissionRegistry->getPermissions() as
+				 $permissionName => $permissionDescription ) {
+			$rolesAssigned = $permissionDescription->getRoles();
+			foreach( $rolesAssigned as $role ) {
+				if ( in_array( $role, $checked ) ) {
+					continue;
+				};
+
+				$checked[] = $role;
+				if ( $this->isRolePredefined( $role ) === false ) {
+					$roleObject = $this->roleFactory->makeRole( $role );
+					$this->registerRole( $roleObject );
 				}
-				$roleObject = $this->getRole( $roleName );
-				$roleObject->addPermission( $permissionName );
 			}
 		}
+	}
+
+	protected function isRolePredefined( $roleName ) {
+		if ( isset( $this->predefinedRoles[$roleName] ) ) {
+			return true;
+		}
+		return false;
 	}
 }

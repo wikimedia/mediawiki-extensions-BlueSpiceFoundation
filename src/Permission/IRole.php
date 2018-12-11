@@ -1,7 +1,13 @@
 <?php
-namespace BlueSpice\Permission\Role;
+namespace BlueSpice\Permission;
 
 interface IRole {
+	/**
+	 * @param PermissionRegistry $permissionRegistry
+	 * @return IRole
+	 */
+	public static function factory( PermissionRegistry $permissionRegistry );
+
 	/**
 	 * Returns permission array for the role
 	 * @return array

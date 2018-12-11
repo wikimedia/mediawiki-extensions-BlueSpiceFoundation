@@ -10,8 +10,9 @@ use Config;
 use BlueSpice\Services;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use BlueSpice\Permission\Lockdown\Module\Groups\ISubModule;
+use BlueSpice\Permission\Lockdown\Module;
 
-class Groups extends \BlueSpice\Permission\Lockdown\Module {
+class Groups extends Module {
 
 	/**
 	 *

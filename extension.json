@@ -38,6 +38,15 @@
 			"AdminToolRegistry": {},
 			"PageToolRegistry": {},
 			"TagRegistry": {},
+			"PermissionRegistry": {},
+			"RoleRegistry": {
+				"admin": "\\BlueSpice\\Permission\\Role\\Admin::factory",
+				"editor": "\\BlueSpice\\Permission\\Role\\Editor::factory",
+				"reader": "\\BlueSpice\\Permission\\Role\\Reader::factory",
+				"author": "\\BlueSpice\\Permission\\Role\\Author::factory",
+				"reviewer": "\\BlueSpice\\Permission\\Role\\Reviewer::factory",
+				"accountmanager": "\\BlueSpice\\Permission\\Role\\AccountManager::factory"
+			},
 			"RendererRegistry": {
 				"list": "\\BlueSpice\\Renderer\\SimpleList::factory",
 				"linklist": "\\BlueSpice\\Renderer\\LinkList::factory",

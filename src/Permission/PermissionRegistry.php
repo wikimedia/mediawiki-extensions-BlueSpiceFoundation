@@ -1,9 +1,8 @@
 <?php
 
 namespace BlueSpice\Permission;
-use BlueSpice\Permission;
 
-class Registry {
+class PermissionRegistry {
 	private static $instance;
 	protected $permissionConfigDefault;
 	protected $permissionConfig = [];
@@ -54,7 +53,7 @@ class Registry {
 	 *
 	 * @param array $defaultPermissionConfig
 	 * @param array $permissionConfig
-	 * @return type
+	 * @return PermissionRegistry
 	 */
 	public static function getInstance( $defaultPermissionConfig, $permissionConfig ) {
 		if( self::$instance === null ) {
@@ -71,7 +70,7 @@ class Registry {
 	 * Adds permission to registry
 	 *
 	 * @param string $name
-	 * @param \BlueSpice\Permission\IDescription $description
+	 * @param IDescription $description
 	 */
 	public function addPermission( $name, IDescription $description ) {
 		$this->permissions[ $name ] = $description;
@@ -81,7 +80,7 @@ class Registry {
 	 * Gets Description object for permission name
 	 *
 	 * @param string $name
-	 * @return \BlueSpice\Permission\Description|null
+	 * @return Description|null
 	 */
 	public function getPermission( $name ) {
 		if( isset( $this->permissions[ $name ] ) ) {
