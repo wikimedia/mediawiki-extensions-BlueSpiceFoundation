@@ -2,15 +2,16 @@
 
 namespace BlueSpice\Permission\Lockdown\Module;
 
+use BlueSpice\Permission\RoleManager;
 use Message;
 use Title;
 use User;
 use IContextSource;
 use Config;
 use BlueSpice\Services;
-use BlueSpice\Permission\Role\Manager;
+use BlueSpice\Permission\Lockdown\Module;
 
-class Namespaces extends \BlueSpice\Permission\Lockdown\Module {
+class Namespaces extends Module {
 
 	/**
 	 *
@@ -29,10 +30,10 @@ class Namespaces extends \BlueSpice\Permission\Lockdown\Module {
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param Services $services
-	 * @param Manager $manager
+	 * @param RoleManager $manager
 	 */
 	protected function __construct( Config $config, IContextSource $context,
-		Services $services, Manager $manager ) {
+		Services $services, RoleManager $manager ) {
 		parent::__construct( $config, $context, $services );
 		$this->manager = $manager;
 	}
@@ -42,10 +43,10 @@ class Namespaces extends \BlueSpice\Permission\Lockdown\Module {
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param Services $services
-	 * @param Manager|null $manager
+	 * @param RoleManager|null $manager
 	 */
 	public static function getInstance( Config $config, IContextSource $context,
-		Services $services, Manager $manager = null ) {
+		Services $services, RoleManager $manager = null ) {
 		if ( !$manager ) {
 			$manager = $services->getBSRoleManager();
 		}

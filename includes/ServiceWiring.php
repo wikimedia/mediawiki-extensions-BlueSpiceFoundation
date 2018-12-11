@@ -77,16 +77,28 @@ return [
 		return new \BlueSpice\TagFactory( $registry );
 	},
 
+	'BSRoleFactory' => function( MediaWikiServices $services ) {
+		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoleRegistry' );
+		return new \BlueSpice\Permission\RoleFactory(
+			$roles,
+			$services->getService( 'BSPermissionRegistry' )
+		);
+	},
+
 	'BSRoleManager' => function ( MediaWikiServices $services ) {
-		return \BlueSpice\Permission\Role\Manager::getInstance(
-				$GLOBALS[ 'wgGroupPermissions' ],
-				$GLOBALS[ 'bsgGroupRoles' ],
-				$GLOBALS[ 'bsgEnableRoleSystem' ]
+		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoles' );
+		return new \BlueSpice\Permission\RoleManager(
+			$GLOBALS[ 'wgGroupPermissions' ],
+			$GLOBALS[ 'bsgGroupRoles' ],
+			$GLOBALS[ 'bsgEnableRoleSystem' ],
+			$roles,
+			$services->getService( 'BSPermissionRegistry' ),
+			$services->getService( 'BSRoleFactory' )
 		);
 	},
 
 	'BSPermissionRegistry' => function( MediaWikiServices $services ) {
-		return \BlueSpice\Permission\Registry::getInstance(
+		return \BlueSpice\Permission\PermissionRegistry::getInstance(
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
 			$GLOBALS[ 'bsgPermissionConfig' ]
 		);
