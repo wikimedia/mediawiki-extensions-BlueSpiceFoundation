@@ -130,9 +130,6 @@
 		"ext.bluespice": {
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"targets": [
-				"mobile", "desktop"
-			],
 			"scripts": [
 				"bluespice/bluespice.js",
 				"bluespice/bluespice.extensionManager.js",
@@ -166,9 +163,6 @@
 			"class": "BlueSpice\\ResourceModule\\ExtJS",
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"targets": [
-				"mobile", "desktop"
-			],
 			"scripts": [
 				"bluespice.extjs/bluespice.extjs.js",
 				"bluespice.extjs/BS/override/grid/column/Action.js"
@@ -257,9 +251,6 @@
 		"ext.bluespice.oojs": {
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"targets": [
-				"mobile", "desktop"
-			],
 			"scripts": [
 				"bluespice.oojs/bluespice.ui.js",
 				"bluespice.oojs/ui/widget/StoreComboBoxInput.js",
@@ -314,7 +305,6 @@
 				"bs-upload-uploadwarningdialog-warning-duplicate",
 				"bs-upload-uploadwarningdialog-warning-unknown"
 			],
-			"targets": [ "desktop", "mobile" ],
 			"dependencies": [
 				"mediawiki.api"
 			]
@@ -351,9 +341,6 @@
 				"bluespice/bluespice.ui.basic.less",
 				"bluespice/bluespice.treepanel.less",
 				"famfamfam/flags.css"
-			],
-			"targets": [
-				"mobile", "desktop"
 			],
 			"class": "\\BlueSpice\\ResourceModule\\LessVars"
 		},
@@ -397,9 +384,6 @@
 				"bs-deferred-action-apiremovecategories-description",
 				"bs-deferred-action-apimovepage-description",
 				"bs-deferred-action-apideletepage-description"
-			],
-			"targets": [
-				"mobile", "desktop"
 			]
 		},
 		"ext.bluespice.extjs.BS.portal.css": {
