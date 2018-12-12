@@ -26,5 +26,7 @@
 	"bs-extjs-label-page": "Страница",
 	"bs-extjs-browse": "Преглеждане",
 	"bs-extjs-uploading": "Качване...",
-	"bs-extjs-allns": "(всички)"
+	"bs-extjs-allns": "(всички)",
+	"bs-extjs-filter-bool-yes": "Да",
+	"bs-extjs-filter-bool-no": "не"
 }
