@@ -12,5 +12,11 @@
 	"bs-setting-path-editor": "Cangiatore",
 	"bs-setting-path-search": "Recerche e navigazzione",
 	"bs-setting-path-personalisation": "Personalizzazzione",
+	"bs-setting-path-skinning": "Skinning",
+	"bs-setting-path-customizing": "Personalizzazione",
+	"bs-setting-path-contentstructuring": "Strutture de le condenute",
+	"bs-setting-path-communication": "Comunicazione",
+	"bs-setting-path-administration": "Amministrazione",
+	"bs-setting-path-qualityassurance": "Sicurezze d'a qualitate",
 	"bs-setting-path-export": "Esporte"
 }
