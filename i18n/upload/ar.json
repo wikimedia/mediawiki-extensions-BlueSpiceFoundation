@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
-	"bs-upload-uploaddialogtitle": "ارفع ملفا",
+	"bs-upload-uploaddialogtitle": "رفع ملف",
 	"bs-upload-uploadbuttontext": "تصفح",
 	"bs-upload-uploadfilefieldlabel": "اسم الملف",
 	"bs-upload-uploadfileemptytext": "أدخل ملفا جديدا...",

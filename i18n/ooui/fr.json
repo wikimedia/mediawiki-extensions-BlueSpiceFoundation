@@ -11,5 +11,5 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Ajouter",
 	"bs-ooui-key-value-input-widget-add-form-label": "Ajouter une nouvelle entrée",
 	"bs-ooui-key-value-input-widget-error-message": "Tous les champs obligatoires doivent être fixés !",
-	"bs-ooui-keyValueInputWidget-no-value-label": "Aucune valeur fixée !"
+	"bs-ooui-key-value-input-widget-no-values-label": "Aucune valeur fixée !"
 }

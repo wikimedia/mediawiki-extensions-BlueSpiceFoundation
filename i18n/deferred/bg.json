@@ -6,5 +6,6 @@
 		]
 	},
 	"bs-deferred-action-status-done": "Готово",
-	"bs-deferred-batch-description": "Описание"
+	"bs-deferred-batch-description": "Описание",
+	"bs-deferred-action-apideletepage-description": "Изтриване на „$1“."
 }

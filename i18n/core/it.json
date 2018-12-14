@@ -88,5 +88,5 @@
 	"bs-export-menu-print-title": "Mostra la versione stampabile della pagina",
 	"bs-graphicallist-action-close": "Chiudi",
 	"bs-graphicallist-action-list": "Elenco",
-	"right-wikiadmin": "Visualizza le pagine di amministrazione di BlueSpice"
+	"right-wikiadmin": "Utilizzato in molte estensioni BlueSpice per potenziali attività amministrative pericolose come la gestione di utenti, permessi, configurazione globale"
 }

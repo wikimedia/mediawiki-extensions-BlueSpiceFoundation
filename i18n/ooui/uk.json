@@ -8,5 +8,5 @@
 	"bs-ooui-key-value-input-widget-value-label": "Значення",
 	"bs-ooui-key-value-input-widget-add-button-label": "Додати",
 	"bs-ooui-key-value-input-widget-add-form-label": "Додати новий запис",
-	"bs-ooui-keyValueInputWidget-no-value-label": "Не задано значень!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значень!"
 }

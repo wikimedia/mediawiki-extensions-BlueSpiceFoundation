@@ -3,7 +3,8 @@
 		"authors": [
 			"Dejan Savuljesku",
 			"Robby",
-			"Beta16"
+			"Beta16",
+			"Raymond"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Placeholder for input field of OOUI TagMultiselectWidget",
