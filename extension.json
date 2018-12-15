@@ -115,8 +115,8 @@
 		"bs-ping-tasks": "BSApiPingTasks",
 		"bs-upload-license-store": "BSApiUploadLicenseStore",
 		"bs-category-treestore": "BSApiCategoryTreeStore",
-		"bs-watchlist-store": "BlueSpice\\Api\\WatchlistStore",
-		"bs-recentchanges-store": "BlueSpice\\Api\\RecentChangesStore"
+		"bs-watchlist-store": "BlueSpice\\Api\\Store\\Watchlist",
+		"bs-recentchanges-store": "BlueSpice\\Api\\Store\\RecentChanges"
 	},
 	"GroupPermissions": {
 		"sysop": {

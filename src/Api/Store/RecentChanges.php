@@ -1,8 +1,8 @@
 <?php
 
-namespace BlueSpice\Api;
+namespace BlueSpice\Api\Store;
 
-class RecentChangesStore extends \BlueSpice\StoreApiBase {
+class RecentChanges extends \BlueSpice\Api\Store {
 
 	protected function makeDataStore() {
 		return new \BlueSpice\Data\RecentChanges\Store( $this->getContext() );

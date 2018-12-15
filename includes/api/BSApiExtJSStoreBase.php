@@ -58,7 +58,7 @@
 use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\Services;
 
-abstract class BSApiExtJSStoreBase extends BSApiBase {
+abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
 	const SECONDARY_FIELD_PLACEHOLDER = '<added as secondary field>';
 	const PROP_SPEC_FILTERABLE = 'filterable';
@@ -221,22 +221,6 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 				ApiBase::PARAM_REQUIRED => false,
 				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-context',
 			]
-		);
-	}
-
-	public function getParamDescription() {
-		return array(
-			'sort' => 'JSON string with sorting info; deserializes to "array of objects" that hold field name and direction for each sorting option',
-			'group' => 'JSON string with grouping info; deserializes to "array of objects" that hold field name and direction for each grouping option',
-			'filter' => 'JSON string with filter info; deserializes to "array of objects" that hold field name, filter type, and filter value for each filtering option',
-			'page' => 'Allows server side calculation of start/limit',
-			'limit' => 'Number of results to return',
-			'start' => 'The offset to start the result list from',
-			'query' => 'Similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
-			'callback' => 'A method name in the client code that should be called in the response (JSONP)',
-			'_dc' => '"Disable cache" flag',
-			'format' => 'The format of the output (only JSON or formatted JSON)',
-			'context' => 'Context in which the call is made'
 		);
 	}
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace BlueSpice\Api;
+namespace BlueSpice\Api\Store;
 
-class WatchlistStore extends \BlueSpice\StoreApiBase {
+class Watchlist extends \BlueSpice\Api\Store {
 
 	protected function makeDataStore() {
 		return new \BlueSpice\Data\Watchlist\Store( $this->getContext() );
