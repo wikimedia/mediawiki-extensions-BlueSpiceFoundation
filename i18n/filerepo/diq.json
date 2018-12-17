@@ -4,5 +4,7 @@
 			"Mirzali"
 		]
 	},
-	"bs-filerepo-headerpagecategories": "Kategoriyi"
+	"bs-filerepo-labelupload": "Bar ke",
+	"bs-filerepo-headerpagecategories": "Kategoriyi",
+	"bs-filerepo-headerfiletimestamp": "Bar biyo"
 }

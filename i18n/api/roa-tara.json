@@ -19,6 +19,7 @@
 	"apihelp-bs-wikipage-tasks-description": "Dèje operazziune comune pe le WikiPages",
 	"apihelp-bs-wikipage-tasks-summary": "Dèje operazziune comune pe le WikiPages",
 	"apihelp-bs-store-param-limit": "Numere de le resultate da turnà",
+	"apihelp-bs-store-param-start": "'U offset da addò accumenzà l'elenghe de le resultate",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Elenghe de le opziune",
 	"apihelp-bs-upload-license-store-description": "Elenghe de tutte le licenze disponibbele pu carecamende de 'nu file",
 	"apihelp-bs-upload-license-store-summary": "Elenghe de tutte le licenze disponibbele pu carecamende de 'nu file",
