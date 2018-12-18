@@ -36,7 +36,7 @@
 	bs.ui.widget.KeyValueInputWidget.prototype.setNoValueMessage = function() {
 		this.$valueContainer.append(
 			new OO.ui.LabelWidget( {
-				label: mw.message( "bs-ooui-keyValueInputWidget-no-value-label" ).plain()
+				label: mw.message( "bs-ooui-key-value-input-widget-no-values-label" ).plain()
 			} ).$element.addClass( 'bs-ooui-keyValueInputWidget-no-value-label' )
 		);
 	};
