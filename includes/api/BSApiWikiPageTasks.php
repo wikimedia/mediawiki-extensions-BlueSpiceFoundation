@@ -216,7 +216,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_setCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
@@ -300,7 +300,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_getExplicitCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
@@ -354,7 +354,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_addCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
@@ -443,7 +443,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_removeCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
@@ -551,7 +551,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_getDiscussionCount( $oTaskData, $aParams  ) {
 		$oResponse = $this->makeStandardReturn();
@@ -610,7 +610,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_getTemplateTree( $oTaskData, $aParams  ) {
 		$oResponse = $this->makeStandardReturn();

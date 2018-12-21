@@ -25,11 +25,13 @@
  * @filesource
  */
 
+use BlueSpice\Api\Response\Standard;
+
 /**
  * Api base class for simple tasks in BlueSpice
  * @package BlueSpice_Foundation
  */
-abstract class BSApiTasksBase extends BSApiBase {
+abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	/**
 	 * This is the default log the API writes to. It needs to be registered
@@ -200,10 +202,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 	/**
 	 * Standard return object
 	 * Every task should return this!
-	 * @return BSStandardAPIResponse
+	 * @return Standard
 	 */
 	protected function makeStandardReturn() {
-		return new BSStandardAPIResponse();
+		return new Standard();
 	}
 
 	/**
@@ -342,19 +344,6 @@ abstract class BSApiTasksBase extends BSApiBase {
 			}
 		}
 		return $value;
-	}
-
-	/**
-	 * Returns the basic param descriptions
-	 * @return array
-	 */
-	public function getParamDescription() {
-		return array(
-			'task' => 'The task that should be executed',
-			'taskData' => 'JSON string encoded object with arbitrary data for the task',
-			'context' => 'JSON string encoded object with context data for the task',
-			'format' => 'The format of the result',
-		);
 	}
 
 	/**

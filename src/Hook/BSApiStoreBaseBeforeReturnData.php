@@ -6,7 +6,7 @@ use BlueSpice\Hook;
 
 abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	/**
-	 * @var \BlueSpice\StoreApiBase
+	 * @var \BlueSpice\Api\Store
 	 */
 	protected $store;
 	/**
@@ -19,7 +19,7 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	protected $schema;
 
 	/**
-	 * @param \BlueSpice\StoreApiBase $store
+	 * @param \BlueSpice\Api\Store $store
 	 * @param \BlueSpice\Data\ResultSet $resultSet
 	 * @param \BlueSpice\Data\Schema $schema
 	 * @return boolean
@@ -40,7 +40,7 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \BlueSpice\StoreApiBase $store
+	 * @param \BlueSpice\Api\Store $store
 	 * @param \BlueSpice\Data\ResultSet $resultSet
 	 * @param \BlueSpice\Data\Schema $schema
 	 */
