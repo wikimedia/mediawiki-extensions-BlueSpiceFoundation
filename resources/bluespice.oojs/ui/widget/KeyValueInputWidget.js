@@ -255,11 +255,12 @@
 
 	bs.ui.widget.KeyValueInputWidget.prototype.onDeleteClick = function( e ) {
 		e.data.deleteWidget.$element.remove();
-		this.removeFromAddedWidgets( e.data.keyWidget, e.data.valueWidget );
+		this.removeFromAddedWidgets( e.data.keyWidget );
 		var currentValue = this.getValue();
 		this.addedWidgets = [];
 		this.$valueContainer.html( '' );
-		if( currentValue.length > 0 ) {
+
+		if( $.isEmptyObject( currentValue ) === false ) {
 			this.setValue( currentValue );
 		} else {
 			this.setNoValueMessage();
