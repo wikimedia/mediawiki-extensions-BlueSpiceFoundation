@@ -23,9 +23,9 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 
 	/**
 	 *
-	 * @var \BlueSpice\Permission\Registry
+	 * @var \BlueSpice\Permission\Role\Manager
 	 */
-	protected $permissionRegistry;
+	protected $roleManager;
 
 	/**
 	 * Checks if requested action belongs to a role
@@ -49,12 +49,13 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 			}
 		}
 
-		$permissionObject = $this->permissionRegistry->getPermission( $this->action );
-		if( $permissionObject === null ) {
-			//in case permission is not registered with BlueSpice\Permission\Registry
-			return true;
+		$actionRoles = [];
+		$roles = $this->roleManager->getRoleNamesAndPermissions();
+		foreach( $roles as $role ) {
+			if ( in_array( $this->action, $role['permissions'] ) ) {
+				$actionRoles[] = $role['role'];
+			}
 		}
-		$actionRoles = $permissionObject->getRoles();
 
 		if( empty( $actionRoles ) ) {
 			return true;
@@ -65,7 +66,7 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 		$titleNS = $this->title->getNamespace();
 		$affectedNamespaces = array_keys( $this->namespaceRolesLockdown );
 
-		//If there are no per-ns roles assigned for this ns dont block
+		//If there are no per-ns roles assigned for this ns don't block
 		if( in_array( $titleNS, $affectedNamespaces ) == false ) {
 			return true;
 		}
@@ -100,11 +101,10 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 		$config = $this->getConfig();
 		$this->namespaceRolesLockdown = $config->get( 'NamespaceRolesLockdown' );
 
-		$mainConfig = $this->getServices()->getMainConfig();
 		$this->whitelistRead = $config->get( 'WhitelistRead' );
 
-		$this->permissionRegistry = $this->getServices()->getService(
-			'BSPermissionRegistry'
+		$this->roleManager = $this->getServices()->getService(
+			'BSRoleManager'
 		);
 
 		$this->languageObject = $this->getContext()->getLanguage();
