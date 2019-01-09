@@ -79,6 +79,10 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"type" => 'global',
 		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'editor', 'maintenanceadmin', 'reviewer', 'structuremanager' ]
 	],
+	"autocreateaccount" => [
+		"type" => 'global',
+		"roles" => [ 'reader' ]
+	],
 	"autopatrol" => [
 		"type" => 'global',
 		"roles" => [ 'bot', 'editor', 'maintenanceadmin' ]
