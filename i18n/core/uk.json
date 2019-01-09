@@ -84,9 +84,15 @@
 	"bs-validator-error-namespace-on-blacklist": "Недозволений простір назв: $1",
 	"bs-validator-error-title-does-not-exist": "Сторінка не існує: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Сторінка не дозволена: $1",
+	"bs-parser-error-invalid-category-title": "Сторінка не є дійсною категорією: $1",
 	"bs-exttype-bluespice": "Розширення BlueSpice",
 	"bs-export-menu-print-text": "Друк",
 	"bs-export-menu-print-title": "Відтворює версію сторінки, доступну для друку",
+	"bs-graphicallist-action-close": "Закрити",
+	"bs-graphicallist-action-list": "Список",
+	"bs-graphicallist-action-preview": "Попередній перегляд",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Використовується у багатьох додатках BlueSpice для потенційно небезпечних адміністративних завдань, як керування користувачами, дозволи та глобальне налаштовування"
+	"right-wikiadmin": "Використовується у багатьох додатках BlueSpice для потенційно небезпечних адміністративних завдань, як керування користувачами, дозволи та глобальне налаштовування",
+	"bs-notifications-agent-anon": "анонімний користувач"
 }

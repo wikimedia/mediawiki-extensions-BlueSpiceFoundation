@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"bs-setting-path-feature": "Функція",
+	"bs-setting-path-extension": "Розширення",
+	"bs-setting-path-package": "Пакунок",
+	"bs-setting-path-system": "Система",
+	"bs-setting-path-dataanalysis": "Аналіз даних",
+	"bs-setting-path-editor": "Редактор",
+	"bs-setting-path-search": "Пошук і навігація",
+	"bs-setting-path-personalisation": "Персоналізація",
+	"bs-setting-path-skinning": "Оформлення",
+	"bs-setting-path-customizing": "Налагодження",
+	"bs-setting-path-contentstructuring": "Структурування вмісту",
+	"bs-setting-path-communication": "Спілкування",
+	"bs-setting-path-administration": "Адміністрування",
+	"bs-setting-path-qualityassurance": "Запевнення якості",
+	"bs-setting-path-export": "Експорт"
+}
