@@ -71,6 +71,8 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 			return true;
 		}
 
+		// Does any of the roles containing this permission have a lockdown.
+		$applies = false;
 		$allowedGroups = [];
 		foreach( $this->namespaceRolesLockdown as $ns => $roles ) {
 			if( $ns != $titleNS ) {
@@ -81,10 +83,19 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 				if( !in_array( $roleName, $actionRoles ) ) {
 					continue;
 				}
+
+				// If any of the roles that are under lockdown are containing
+				// permission we are testing for, lockdown applies
+				$applies = true;
 				if( array_intersect( $groups, $userGroups ) ) {
 					return true;
 				}
 			}
+		}
+
+		if ( $applies === false ) {
+			// Bail out if this permission is not affected by lockdown
+			return true;
 		}
 
 		$allowedGroups = array_unique( $allowedGroups );
