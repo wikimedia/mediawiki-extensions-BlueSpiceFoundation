@@ -144,4 +144,4 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		return 'bs_userproperties-migration';
 	}
 
-	}
+}

@@ -35,7 +35,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 				$oldValue,
 				&$newValue,
 				&$skip,
-			]);
+			] );
 			if( $skip === true ) {
 				$this->output( "$oldName skipped\n" );
 				continue;
@@ -99,12 +99,25 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	protected function saveConvertedData() {
+		$dbValues = [];
 		foreach( $this->newData as $newName => $newValue ) {
-			$this->getDB( DB_MASTER )->insert( 'bs_settings3', [
-				's_name' => $newName,
-				's_value' => $newValue
+			$set = false;
+			\Hooks::run( 'BSMigrateSettingsSetNewSettings', [
+				$newName,
+				$newValue,
+				&$set
 			] );
+			if ( !$set ) {
+				// If no other extension did the settings, set it to the db
+				$dbValues[] = [
+					's_name' => $newName,
+					's_value' => $newValue
+				];
+			}
 		}
+
+		$this->getDB( DB_MASTER )->insert( 'bs_settings3', $dbValues );
+		\Hooks::run( 'BSMigrateSettingsSaveNewSettings', [ $this->newData ] );
 	}
 
 	protected function convertValue( $serializedValue ) {
