@@ -38,4 +38,10 @@ interface ISetting {
 	 * @return string, the message key for the help message | null
 	 */
 	public function getHelpMessageKey();
+
+	/**
+	 *
+	 * @return bool, is the config currently defined as hidden
+	 */
+	public function isHidden();
 }

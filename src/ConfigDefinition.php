@@ -122,4 +122,12 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths {
 	protected function makeID() {
 		return $this->getVariableName();
 	}
+
+	/**
+	 *
+	 * @return boolean
+	 */
+	public function isHidden() {
+		return false;
+	}
 }
