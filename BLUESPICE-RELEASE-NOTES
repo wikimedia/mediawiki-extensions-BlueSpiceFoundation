@@ -1,7 +1,237 @@
 BlueSpice
-Copyright 2018 by Hallo Welt! GmbH
+Copyright 2019 by Hallo Welt! GmbH
 https://bluespice.com
 https://hallowelt.com
+
+== BlueSpice 3.0.1 ==
+BlueSpice 3.0.1 is a patch release.
+This is a stable release.
+
+===Notable Changes===
+* VisualEditor: Switch between source mode and visual mode is now possible without saving
+* Privacy Center and Admin: Allows users and site maintainers to manage their personalized data
+* CustomizableMenu: Adds a top menu to the site
+* Flagged Revisions: New overview list for revision status of pages
+* Calumma: Display of menus and featured actions depends on rights, not on logged in status
+* Calumma: Added a backlink from discussion page to content page
+
+===BlueSpice Foundation===
+Foundation: Add base class for hook BSApiStoreBaseBeforeReturnData
+Foundation: Add Bosnian alias and cleanup *.alias.php files
+Foundation: Add custom menu skin data
+Foundation: Add detection for when articlepreviewcapture is not handled by default handler
+Foundation: Add progressive button styling for ExtJS
+Foundation: Do not grant every permission to sysop, only if not previously assigned
+Foundation: Exclude modification on link attributes for all mw tests
+Foundation: Extend permission configs rather that overwriting
+Foundation: Fix "unknown parameter" error on API calls to ExtJS stores
+Foundation: Fix msg key after #470326
+Foundation: Fix Role::removePermission
+Foundation: Fix badly stretched user images again
+Foundation: Fix keyValueInputWidget deletion bug
+Foundation: Fix line sizes to pass tests
+Foundation: Fix list filtering for ExtJS
+Foundation: Fix missing i18n key
+Foundation: Improve WikiTextLinksHelper
+Foundation: List allowed groups on locked down namespace
+Foundation: Make LessVars overwriteable. ERM:13150
+Foundation: Move BsCacheHelper to UtilityFactory and remove the invalidations
+Foundation: Put prefixed page title in data-bs-title
+Foundation: Refactor namespace lockdown logic
+Foundation: Remove BsCategoryHelper as it last usage was in version BS2.23
+Foundation: Remove old attribute limitation. Only storable fields will be saved anyway
+Foundation: Remove support for other db types. ERM:10576
+Foundation: Remove targets from ResourceLoader modules
+Foundation: Remove unused common constants that have been used for extension registration in BS1*
+Foundation: Remove usage of BsLinkProvider and mark it as deprecated
+Foundation: Remove usage of deprecated BsSpecialPage
+Foundation: Skip adding data attributes in unit test context to pass tests
+Foundation: Update doc for service InterWikiLinkLookup in ServiceDecorator
+
+===BlueSpice Free===
+About: Remove usage of deprecated BsSpecialPage
+Authors: Disregard non-existing users
+Authors: Fix fatal if invalid usernames in list
+Authors: Require MediaWiki 1.29 in extension.json for manifest_version 2
+Avatars: Apply MediaWiki coding conventions
+Avatars: Fix Avatars path
+Checklist: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+Checklist: Remove hook handler for VisualEditorConfig
+Checklist: Remove targets from ResourceLoader modules
+Checklist: Use new hook handler system for BeforePageDisplay
+ConfigManager: Harmonize naming of special page title
+ConfigManager: Remove usage of deprecated BsSpecialPage
+ContextMenu: Add hook handler base classes
+ContextMenu: Require MediaWiki 1.29 in extension.json for manifest_version 2
+CountThings: Quick typo fix
+CountThings: Replace usage of deprecated BsExtensionMW
+CustomMenu: New extension to provide an additional menu bar
+Dashboards: Remove unused old method for AjaxDispatcher
+Dashboards: Remove usage of deprecated BsSpecialPage
+Dashboards: Upgrade to BS3
+Dashboards: Use new hook class system for SchemaUpdate hook handler
+DistributionConnector: Add check for existence of the duplicator specialpage. ERM:12836
+EchoConnector: Require MediaWiki 1.29 in extension.json for manifest_version 2
+ExtendedSearch: Add priority to LookupModifiers
+ExtendedSearch: Add sort by modification time for Media dialog
+ExtendedSearch: Allow additional LookupModifiers to be added by extensions
+ExtendedSearch: Evaluate skip_namespaces on index updates as well
+ExtendedSearch: Fix autocomplete result click handler
+ExtendedSearch: Fix indexing to searchindex table
+ExtendedSearch: Fix layouting issue with searchbar
+ExtendedSearch: Make sure index name is lowercased
+ExtendedSearch: Manual cherry-pick gerrit: 477504
+ExtendedSearch: Quick-fix all icon paths when there is a script path set
+ExtendedSearch: Refactor of results panel
+ExtendedSearch: Require MediaWiki 1.29 in extension.json for manifest_version 2
+ExtendedSearch: Update privacy handler
+ExtendedSearch: Use new hook handler system for BeforePageDisplay
+ExtendedSearch: WikiFarm integration
+ExtendedStatistics: Fix db prefix on query
+ExtendedStatistics: Fix duplicate class definition
+ExtendedStatistics: Remove BSExtendedSearchAdminButtons hook handler
+ExtendedStatistics: Remove support for other db types. ERM:10576
+ExtendedStatistics: Remove usage of deprecated BsSpecialPage
+ExtendedStatistics: Use new hook class system for BeforePageDisplay hook handler
+ExtendedStatistics: Use new hook handler system for BeforePageDisplay
+GroupManager: Remove usage of deprecated BsSpecialPage
+HideTitle: Remove targets from ResourceLoader modules
+HideTitle: Replace usage of deprecated BsExtensionMW
+InsertCategory: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertCategory: Remove hook handler for VisualEditorConfig
+InsertCategory: Remove targets from ResourceLoader modules
+InsertCategory: Upgrade to BS3
+InsertFile: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertFile: Remove hook handler for VisualEditorConfig
+InsertFile: Remove old unused paging procedures
+InsertFile: Remove targets from ResourceLoader modules
+InsertFile: Upgrade to BS3
+InsertLink: Add file-link
+InsertLink: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertLink: Remove hook handler for VisualEditorConfig
+InsertLink: Remove targets from ResourceLoader modules
+InsertMagic: Add icon to Insertmagic in VE
+InsertMagic: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertMagic: Remove hook handler for VisualEditorConfig
+InsertMagic: Remove targets from ResourceLoader modules
+InsertMagic: Upgrade to BS3
+InterWikiLinks: Mark BSApiTasksInterWikiLinksManagerTest as broken
+InterWikiLinks: Remove usage of deprecated BsSpecialPage
+InterWikiLinks: Use new hook class system for BeforePageDisplay hook handler
+NamespaceCSS: Remove usage of deprecated BsSpecialPage
+NamespaceManager: Handler for BSPrivacy
+NamespaceManager: Hide talk NSs + assign aliases
+NamespaceManager: Re-add missing sql field patch files, that got removed
+NamespaceManager: Remove support for other db types. ERM:10576
+NamespaceManager: Remove usage of deprecated BsSpecialPage
+NamespaceManager: Require MediaWiki 1.29 in extension.json for manifest_version 2
+NamespaceManager: Upgrade BSPrivacy handler
+NamespaceManager: Use new hook class system for SchemaUpdate hook handler
+PageAccess: Remove usage of deprecated BsSpecialPage
+PageAssignments: Handler for BSPrivacy
+PageAssignments: Make assigned users notified on changes to talk page
+PageAssignments: Quick Fix remove cause of warnings
+PageAssignments: Remove targets from ResourceLoader modules
+PageAssignments: Remove usage of deprecated BsSpecialPage
+PageAssignments: Remove usage of deprecated BsUserHelper
+PageAssignments: Update privacy handler
+PageAssignments: Use new hook class system for SchemaUpdate hook handler
+PageTemplates: Remove support for other db types. ERM:10576
+PageTemplates: Remove unused class PageTemplatesAdmin
+PageTemplates: Remove usage of deprecated BsSpecialPage
+PageTemplates: Use new hook class system for SchemaUpdate hook handler
+PagesVisited: Remove support for other db types. ERM:10576
+PagesVisited: Replace BsLinkProvider with WikitextLinkHelper service
+PagesVisited: Require MediaWiki 1.29 in extension.json for manifest_version 2
+PermissionManager: Fix button styling
+PermissionManager: Fix custom group icon
+PermissionManager: Script to compare permissions
+Privacy: New extension to match GDPR requirements
+QrCode: Add CI scripts
+QrCode: Fix css class scanQrCode padding
+RSSFeeder: Fix a typo
+RSSFeeder: Remove usage of deprecated BsSpecialPage
+RSSFeeder: Use new hook handler system for BeforePageDisplay
+Readers: Handler for BSPrivacy
+Readers: Remove bs_aftercontent readers, as is not supported by 3.0.0 skin
+Readers: Remove usage of deprecated BsSpecialPage
+Readers: Require MediaWiki 1.29 in extension.json for manifest_version 2
+Readers: Update privacy handler
+Readers: Use new hook class system for SchemaUpdate hook handler
+Readers: Use new hook handler system for BeforePageDisplay and SkinTemplateNavigation
+SaferEdit: Handler for BSPrivacy
+SaferEdit: Remove saferEdit ping on namespaces lower than 0
+SaferEdit: Remove support for other db types. ERM:10576
+SaferEdit: Update privacy handler
+SaferEdit: Use new hook class system for SchemaUpdate hook handler
+SmartList: Remove targets from ResourceLoader modules
+SmartList: Use linkRenderer service instead of BsLinkProvider
+SmartList: Use new hook handler system for BeforePageDisplay
+UEModulePDF: Add Hook hander base class for hook BSUEModulePDFcollectMetaData
+UEModulePDF: Hide PDF export on SpecialPages
+UniversalExport: Remove usage of deprecated BsSpecialPage
+UniversalExport: Use new hook handler system for BeforePageDisplay
+UsageTracker: Remove usage of deprecated BsSpecialPage
+UserManager: Add registration date column to UserManager. ERM:12999
+UserManager: Mark ApiTasksUserManagerTest as broken
+UserManager: Remove unused empty file
+UserManager: Remove usage of deprecated BsSpecialPage
+UserSidebar: Move from gitlab to gerrit, as this is included in BS free
+WatchList: Replace BsLinkProvider with WikitextLinkHelper service
+WatchList: Require MediaWiki 1.29 in extension.json for manifest_version 2
+WhoIsOnline: Remove support for other db types. ERM:10576
+WhoIsOnline: Require MediaWiki 1.29 in extension.json for manifest_version 2
+WhoIsOnline: Use new hook handler system and drop support for other db types in schema update
+
+===BlueSpice Distribution===
+VisualEditorConnector: Add composer test entry point
+VisualEditorConnector: Add integration into BlueSpiceSimpleFarmer
+VisualEditorConnector: Add parseWikitextFragment to standalone BlueSpiceTarget, as
+VisualEditorConnector: Add proxy API module for Parsoid communication
+VisualEditorConnector: Do not use VE on PageTemplates when VE is not enabled
+VisualEditorConnector: Fix VisualEditor cancel button appearance
+VisualEditorConnector: Fix VisualEditor editing when oldid present
+VisualEditorConnector: Fix constructor parameter for RestbaseMock
+VisualEditorConnector: Fix extension.json and remove random icon path from other extension to pass tests
+VisualEditorConnector: Hide quality management tab when VE is active
+VisualEditorConnector: Override behavior of MediaDialog
+VisualEditorConnector: Reload page after saving is done
+VisualEditorConnector: Require MediaWiki 1.31 in extension.json for AutoloadNamespaces
+VisualEditorConnector: Update dynamic parsoid config for SimpleFarmer
+
+===BlueSpice Skin===
+Calumma: Add tooltip for navigation toggler. ERM:13150
+Calumma: BlueSpiceCustomMenu Component. ERM:13134
+Calumma: CustomMenu header: modify height and color
+Calumma: Fix 'view' page tool is always skipped. ERM: 13004
+Calumma: Fix CustomMenuHeader collapse state
+Calumma: Fix Hidden VE with CustomMenu/Header on scroll
+Calumma: Fix JS type error when the anchor for jumpmark has no attribute href
+Calumma: Fix OOjs primary button colors + show QM tab only in view mode
+Calumma: Fix Scroll to jumpmark
+Calumma: Fix badly stretched user images again
+Calumma: Fix for PluggableAuth AutoLogin
+Calumma: Fix for VE line spacing
+Calumma: Fix scroll-to-jumpmark for data-fragments
+Calumma: Make default MW search work
+Calumma: Modify LinkListGroup.mustache to fix alignment (pull-right chevron)
+Calumma: Pre-select grid view tab only in RecentChanges, whenever
+Calumma: Refactor stylesheets to avoid multiple loading
+Calumma: Remove content styling for ordered list elements
+Calumma: Remove not-logged-in state
+
+===BlueSpice Pro===
+ArticlePreviewCapture: Add PhantomJS Options
+CategoryManager: Remove usage of deprecated BsSpecialPage
+ExtendedFilelist: Add missing BlueSpice extension registry
+ExtendedFilelist: Remove usage of deprecated BsSpecialPage
+InsertTemplate: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertTemplate: Remove hook handler for VisualEditorConfig
+InsertTemplate: Upgrade to BS3
+MultiUpload: Remove targets from ResourceLoader modules
+MultiUpload: Use new hook handler system for BeforePageDisplay
+SMWConnector: Change Source registration method for ES
+SMWConnector: Require MediaWiki 1.29 in extension.json for manifest_version 2
 
 == BlueSpice 3.0.0 ==
 BlueSpice 3.0.0 is a major release.
