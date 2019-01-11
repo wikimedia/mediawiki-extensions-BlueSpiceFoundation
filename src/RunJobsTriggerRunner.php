@@ -166,7 +166,7 @@ class RunJobsTriggerRunner {
 			$registry,
 			$logger,
 			$runConditionChecker,
-			$services,
+			$services->getConfigFactory()->makeConfig( 'bsg' ),
 			$services->getDBLoadBalancer(),
 			$services->getBSNotificationManager()->getNotifier()
 		);
