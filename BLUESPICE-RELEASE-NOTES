@@ -16,6 +16,7 @@ This is a stable release.
 * Calumma: Added a backlink from discussion page to content page
 
 ===BlueSpice Foundation===
+Foundation: Add `autocreateaccount` right to role `reader`
 Foundation: Add base class for hook BSApiStoreBaseBeforeReturnData
 Foundation: Add Bosnian alias and cleanup *.alias.php files
 Foundation: Add custom menu skin data
