@@ -22,7 +22,7 @@
 		"ext-curl": "*",
 		"ext-gd": "*",
 		"ext-tidy": "*",
-		"param-processor/param-processor": "~1.2",
+		"param-processor/param-processor": "<1.4",
 		"composer/installers": "~1.0"
 	},
 	"require-dev": {
