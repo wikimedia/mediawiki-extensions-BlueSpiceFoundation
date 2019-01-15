@@ -16,13 +16,13 @@ class NotificationManager {
 
 	/**
 	 *
-	 * @var BlueSpice\IRegistry
+	 * @var IRegistry
 	 */
 	protected $notificationRegistry;
 
 	/**
 	 *
-	 * @var BlueSpice\ExtensionAttributeBasedRegistry
+	 * @var ExtensionAttributeBasedRegistry
 	 */
 	protected $registrationFuncRegistry;
 
@@ -67,7 +67,7 @@ class NotificationManager {
 	 *
 	 * @param string $key
 	 * @param array $params
-	 * @param \BlueSpice\INotifier|null $notifier
+	 * @param INotifier|null $notifier
 	 */
 	public function registerNotificationCategory( $key, $params = [], INotifier $notifier = null ) {
 		if( $notifier == null || $notifier instanceof INotifier == false ) {
@@ -82,7 +82,7 @@ class NotificationManager {
 	 *
 	 * @param string $key
 	 * @param array $params
-	 * @param \BlueSpice\INotifier|null $notifier
+	 * @param INotifier|null $notifier
 	 */
 	public function registerNotification( $key, $params, INotifier $notifier = null ) {
 		if( $notifier == null || $notifier instanceof INotifier == false ) {
@@ -97,7 +97,7 @@ class NotificationManager {
 	 * Un-registeres single notification
 	 *
 	 * @param string $key
-	 * @param \BlueSpice\INotifier|null $notifier
+	 * @param INotifier|null $notifier
 	 */
 	public function unRegisterNotification( $key, $notifier = null ) {
 		if( $notifier == null || $notifier instanceof INotifier == false ) {
@@ -114,8 +114,8 @@ class NotificationManager {
 	 *
 	 * @param string $key
 	 * @param array $params
-	 * @param \INotificator|null $notifier
-	 * @return \INotification
+	 * @param INotificator|null $notifier
+	 * @return INotification
 	 */
 	public function getNotificationObject( $key, $params, $notifier = null ) {
 		if( $notifier == null || $notifier instanceof INotifier == false ) {
@@ -130,8 +130,8 @@ class NotificationManager {
 	 * If $notifier is not specified, it will default to notifier
 	 * object registered for given notification key
 	 *
-	 * @param \INotification $notification
-	 * @param \INotifier|null $notifier
+	 * @param INotification $notification
+	 * @param INotifier|null $notifier
 	 * @return \Status
 	 */
 	public function notify( $notification, $notifier = null ) {
@@ -146,9 +146,9 @@ class NotificationManager {
 	}
 
 	/**
-	 * Gets \INotifier instance
+	 * Gets INotifier instance
 	 *
-	 * @return \INotifier|null
+	 * @return INotifier|null
 	 */
 	public function getNotifier() {
 		return $this->notifier;
