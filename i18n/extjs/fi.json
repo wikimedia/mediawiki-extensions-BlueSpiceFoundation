@@ -41,5 +41,10 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Sivukokoelma",
 	"bs-pagecollection-prefix": "\nSivukokoelma",
 	"bs-extjs-pageexport-success": "Vienti onnistui",
-	"bs-extjs-pageexport-error-invalid-title": "Luettelon nimi on virheellinen"
+	"bs-extjs-pageexport-error-invalid-title": "Luettelon nimi on virheellinen",
+	"bs-extjs-combo-box-default-placeholder": "Kirjoita suodattaaksesi...",
+	"bs-extjs-tools-trigger-text": "Työkalut",
+	"bs-extjs-flyout-tab-thumbs-label": "Pienoiskuvat",
+	"bs-extjs-flyout-add-title": "Klikkaa tästä lisätäksesi uuden kohteen",
+	"bs-extjs-flyout-add-label": "Lisää kohde"
 }
