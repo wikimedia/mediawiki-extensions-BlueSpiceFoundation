@@ -174,7 +174,7 @@ class BaseNotification implements \BlueSpice\INotification {
 	 * Adds array of \User object of user IDs
 	 * to list of users to receive this notification
 	 *
-	 * @param array $users;
+	 * @param array $users
 	 */
 	protected function addAffectedUsers( $users ) {
 		foreach( $users as $user ) {
