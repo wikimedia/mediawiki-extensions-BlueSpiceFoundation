@@ -378,7 +378,7 @@ class BsConfig {
 		}
 		$bOrigDeliverFlag = BsConfig::deliverUsersSettings ( false );
 		// This is needed in MW 1.17. For some strange reason, array keys are rendered with _, not : .
-		// Beware, in getUsersForVar, the value is being read manually, so no replacement is neccessary.
+		// Beware, in getUsersForVar, the value is being read manually, so no replacement is necessary.
 		// Todo: either store all values with underscore or read all values manually to get consistent behaviour.
 		// $sKey = str_replace( ':', '_', $sKey );
 		if ( is_object ( $oUser ) ) {
