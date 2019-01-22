@@ -260,7 +260,7 @@ while ($row = mysql_fetch_array($res->result))
 
 		if ($old_text == $text)
 		{
-			print "No modification neccessary.\n";
+			print "No modification necessary.\n";
 			continue;
 		}
 		$matches++;

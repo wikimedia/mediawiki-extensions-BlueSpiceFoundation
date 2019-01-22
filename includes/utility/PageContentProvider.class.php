@@ -459,7 +459,7 @@ class BsPageContentProvider {
 	private function overrideGlobals( $oTitle, $context = null ) {
 		global $wgParser, $wgOut, $wgTitle, $wgRequest;
 
-		//This is neccessary for other extensions that may rely on $wgTitle,
+		//This is necessary for other extensions that may rely on $wgTitle,
 		//i.e for checking permissions during rendering
 		$this->oOriginalGlobalOutputPage = $wgOut;
 		$this->oOriginalGlobalParser     = $wgParser;
