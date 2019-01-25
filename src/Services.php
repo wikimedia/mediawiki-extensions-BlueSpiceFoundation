@@ -130,4 +130,21 @@ class Services extends ServicesDecorator {
 	public function getBSNotificationManager() {
 		return $this->getService( 'BSNotificationManager' );
 	}
+
+	/**
+	 *
+	 * @return TargetCacheFactory
+	 */
+	public function getBSTargetCacheFactory() {
+		return $this->getService( 'BSTargetCacheFactory' );
+	}
+
+	/**
+	 *
+	 * @return TargetCache\Title
+	 */
+	public function getBSTargetCacheTitle() {
+		return $this->getService( 'BSTargetCacheTitle' );
+	}
+
 }

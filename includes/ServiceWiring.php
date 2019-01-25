@@ -140,5 +140,22 @@ return [
 			$regFuncRegistry,
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
-	}
+	},
+
+	'BSTargetCacheFactory' => function( MediaWikiServices $services ) {
+		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationTargetCacheRegistry'
+		);
+
+		return new \BlueSpice\TargetCacheFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' ),
+			$services->getService( 'BSUtilityFactory' )->getCacheHelper()
+		);
+	},
+
+	'BSTargetCacheTitle' => function( MediaWikiServices $services ) {
+		return $services->getService( 'BSTargetCacheFactory' )->get( 'title' );
+	},
+
 ];

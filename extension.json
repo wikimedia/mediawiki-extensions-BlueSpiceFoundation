@@ -88,6 +88,12 @@
 				"bs-color-warning": "#fcf8e3",
 				"bs-color-error": "#f2dede",
 				"bs-color-info": "#d9edf7"
+			},
+			"TargetCacheRegistry": {
+				"title": "\\BlueSpice\\TargetCache\\Title"
+			},
+			"TargetCacheTitleRegistry": {
+				"pageprops": "\\BlueSpice\\TargetCacheHandler"
 			}
 		}
 	},
@@ -521,8 +527,11 @@
 		],
 		"ExtensionTypes": "\\BlueSpice\\Hook\\ExtensionTypes\\AddBlueSpice::callback",
 		"PageContentSaveComplete": [
-			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateArticleHelper::callback"
+			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateArticleHelper::callback",
+			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateTargetCacheTitle::callback"
 		],
+		"ArticleDeleteComplete": "\\BlueSpice\\Hook\\ArticleDeleteComplete\\InvalidateTargetCacheTitle::callback",
+		"TitleMoveComplete": "\\BlueSpice\\Hook\\TitleMoveComplete\\InvalidateTargetCacheTitle::callback",
 		"ResourceLoaderGetConfigVars": [
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddVersion::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",
