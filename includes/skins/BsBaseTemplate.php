@@ -235,7 +235,9 @@ class BsBaseTemplate extends BaseTemplate {
 				<ul>
 					<?php if ( count( $actions ) > 0 ) { ?>
 					<li id="bs-cactions-button" class="">
-						<a href="#" class="menuToggler bs-icon-arrow-down" title="<?php $this->msg( 'bs-tools-button') ?>"></a>
+						<a href="#" class="menuToggler bs-icon-arrow-down-after" title="<?php $this->msg( 'bs-tools-button') ?>">
+							<?php $this->msg( 'bs-tools-button') ?>
+						</a>
 						<div class="menu">
 							<div class="bs-personal-menu-top"></div>
 							<ul<?php $this->html( 'userlangattributes' ) ?> class="bs-personal-menu">
