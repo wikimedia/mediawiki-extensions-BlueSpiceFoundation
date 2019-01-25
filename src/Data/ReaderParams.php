@@ -8,6 +8,12 @@ use BlueSpice\Data\Filter;
 class ReaderParams {
 	const LIMIT_INFINITE = -1;
 
+	const PARAM_LIMIT = 'limit';
+	const PARAM_QUERY = 'query';
+	const PARAM_START = 'start';
+	const PARAM_SORT = 'sort';
+	const PARAM_FILTER = 'filter';
+
 	/**
 	 * For pre filtering
 	 * @var string
@@ -43,9 +49,9 @@ class ReaderParams {
 	 * @param array $params
 	 */
 	public function __construct( $params = [] ) {
-		$this->setIfAvailable( $this->query, $params, 'query' );
-		$this->setIfAvailable( $this->start, $params, 'start' );
-		$this->setIfAvailable( $this->limit, $params, 'limit' );
+		$this->setIfAvailable( $this->query, $params, static::PARAM_QUERY );
+		$this->setIfAvailable( $this->start, $params, static::PARAM_START );
+		$this->setIfAvailable( $this->limit, $params, static::PARAM_LIMIT );
 		$this->setSort( $params );
 		$this->setFilter( $params );
 	}
@@ -69,7 +75,8 @@ class ReaderParams {
 	 * @return int The "start" parameter
 	 */
 	public function getStart() {
-		//TODO: mabye this can be calculated from "page" and "limit"; Examine behavior of Ext.data.Store / Ext.data.Proxy
+		// TODO: mabye this can be calculated from "page" and "limit";
+		// Examine behavior of Ext.data.Store / Ext.data.Proxy
 		return $this->start;
 	}
 
@@ -98,18 +105,20 @@ class ReaderParams {
 	}
 
 	protected function setSort( $params ) {
-		if( !isset( $params['sort'] ) || !is_array(  $params['sort'] ) ) {
+		if( !isset( $params[static::PARAM_SORT] )
+			|| !is_array( $params[static::PARAM_SORT] ) ) {
 			return;
 		}
 
-		$this->sort = Sort::newCollectionFromArray( $params['sort'] );
+		$this->sort = Sort::newCollectionFromArray( $params[static::PARAM_SORT] );
 	}
 
 	protected function setFilter( $params ) {
-		if( !isset( $params['filter'] ) || !is_array(  $params['filter'] ) ) {
+		if( !isset( $params[static::PARAM_FILTER] )
+			|| !is_array( $params[static::PARAM_FILTER] ) ) {
 			return;
 		}
-		$this->filter = Filter::newCollectionFromArray( $params['filter'] );
+		$this->filter = Filter::newCollectionFromArray( $params[static::PARAM_FILTER] );
 	}
 
 }
