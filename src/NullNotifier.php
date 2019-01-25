@@ -19,19 +19,30 @@ class NullNotifier implements \BlueSpice\INotifier {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @param array $params
 	 */
-	public function registerNotificationCategory( $key, $params ) {
+	public function registerNotificationCategory( $key, $params = [] ) {
 	}
 
+	/**
+	 * @param string $key
+	 * @param array $params
+	 */
 	public function registerNotification( $key, $params ) {
 	}
 
+	/**
+	 * @param string $key
+	 */
 	public function unRegisterNotification( $key ) {
 	}
 
+	/**
+	 * @param string $key
+	 * @param array $params
+	 * @return NullNotification
+	 */
 	public function getNotificationObject( $key, $params ) {
 		return new \BlueSpice\NullNotification( $key, $params );
 	}
