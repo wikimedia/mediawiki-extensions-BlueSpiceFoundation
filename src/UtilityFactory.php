@@ -104,4 +104,11 @@ class UtilityFactory {
 			$this->services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	}
+
+	/**
+	 * @return \BlueSpice\Utility\PagePropHelper
+	 */
+	public function getPagePropHelper( \Title $title ) {
+		return new \BlueSpice\Utility\PagePropHelper( $this->services, $title );
+	}
 }

@@ -7,7 +7,6 @@
 class BsArticleHelper {
 
 	protected $oTitle = null;
-	protected $aPageProps = array();
 	protected $bIsLoaded = false;
 
 	protected static $aInstances = array();
@@ -74,15 +73,9 @@ class BsArticleHelper {
 	 * @return string|null
 	 */
 	public function getPageProp( $sPropName, $bDoLoad = false ) {
-		if( $this->bIsLoaded == false || $bDoLoad == true ) {
-			$this->loadPageProps();
-		}
-
-		if( !isset($this->aPageProps[$sPropName]) ) {
-			return null;
-		}
-
-		return $this->aPageProps[$sPropName];
+		$helper = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+			->getPagePropHelper( $this->oTitle );
+		return $helper->getPageProp( $sPropName );
 	}
 
 	/**
@@ -97,34 +90,14 @@ class BsArticleHelper {
 		);
 	}
 
-	public function getPageProps( $bDoLoad = false ) {
-		if( $bDoLoad ) {
-			$this->loadPageProps();
-		}
-		return $this->aPageProps;
-	}
-
 	/**
-	 * Fetches the page_props table
+	 * @param bool $bDoLoad
+	 * @return array
 	 */
-	public function loadPageProps() {
-		$this->bIsLoaded = true;
-		$this->aPageProps = array();
-		if( !$this->oTitle->exists() ) {
-			return;
-		}
-
-		$dbr = wfGetDB( DB_REPLICA );
-		$res = $dbr->select(
-			'page_props',
-			array('pp_propname', 'pp_value'),
-			array( 'pp_page' => $this->oTitle->getArticleID() ),
-			__METHOD__
-		);
-
-		foreach( $res as $row ) {
-			$this->aPageProps[$row->pp_propname] = $row->pp_value;
-		}
+	public function getPageProps( $bDoLoad = false ) {
+		$helper = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+			->getPagePropHelper( $this->oTitle );
+		return $helper->getPageProps();
 	}
 
 	/**
@@ -141,7 +114,6 @@ class BsArticleHelper {
 
 	public function invalidate() {
 		$this->bIsLoaded = false;
-		$this->aPageProps = array();
 
 		if( !$this->oTitle->exists() ) {
 			return true;
