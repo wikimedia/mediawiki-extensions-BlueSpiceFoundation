@@ -35,6 +35,7 @@
 	"bs-extjs-label-user": "Gebruiker",
 	"bs-extjs-label-namespace": "Naamruimte",
 	"bs-extjs-label-page": "Pagina",
+	"bs-extjs-label-directsearch": "Zoeken",
 	"bs-extjs-titlecombo-newpagehint": "Pagina is er niet!",
 	"bs-extjs-upload": "Uploaden",
 	"bs-extjs-browse": "Bladeren",
@@ -42,6 +43,7 @@
 	"bs-extjs-confirmNavigationTitle": "Koppeling volgen",
 	"bs-extjs-confirmNavigationText": "Wilt u deze koppeling echt volgen? Alle dynamische instellingen zoals filters of sortering op de huidige pagina gaan verloren.",
 	"bs-extjs-allns": "(alle)",
+	"bs-extjs-mainns": "(Hoofdnaamruimte)",
 	"bs-extjs-filters": "Filters",
 	"bs-extjs-filter-equals": "gelijk aan",
 	"bs-extjs-filter-equals-not": "niet gelijk aan",
@@ -56,5 +58,11 @@
 	"bs-extjs-title-success": "Afgerond",
 	"bs-extjs-title-warning": "Waarschuwing",
 	"bs-extjs-categoryboxselect-emptytext": "Categorie toevoegen",
-	"bs-extjs-categorytree-title": "Categorieën"
+	"bs-extjs-categorytree-title": "Categorieën",
+	"bs-extjs-filter-date-after": "Na",
+	"bs-extjs-filter-date-before": "Voor",
+	"bs-extjs-pageexport-list-format-link-label": "Koppeling",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturen",
+	"bs-extjs-flyout-tab-grid-label": "Details",
+	"bs-extjs-flyout-add-label": "Item toevoegen"
 }
