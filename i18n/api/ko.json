@@ -11,6 +11,7 @@
 	"apihelp-bs-user-store-summary": "데이터베이스로부터 모든 사용자를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",
 	"apihelp-bs-category-store-description": "모든 분류를 나열합니다. 정렬, 필터링, 페이지 매기기를 허용합니다. ExtJS 스토어 변수들을 구현합니다.",
 	"apihelp-bs-interwiki-store-summary": "모든 인터위키 링크를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",
+	"apihelp-bs-store-param-limit": "반환할 결과 수",
 	"bs-wikipage-tasks-error-contentmodel": "지정된 문서의 콘텐츠 모델로 작업을 수행하지 못했습니다.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "바뀐 분류입니다.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "당신은 \"$1\" 문서를 편집할 수 없습니다.",
