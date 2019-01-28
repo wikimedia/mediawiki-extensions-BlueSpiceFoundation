@@ -3,7 +3,8 @@
 		"authors": [
 			"C5st4wr6ch",
 			"Raynasution",
-			"Arifin.wijaya"
+			"Arifin.wijaya",
+			"J Nia30"
 		]
 	},
 	"bs-extjs-ok": "Oke",
@@ -39,6 +40,10 @@
 	"bs-extjs-filter-contains-not": "tidak berisi",
 	"bs-extjs-filter-starts-with": "dimulai dengan",
 	"bs-extjs-filter-ends-with": "berakhir dengan",
+	"bs-extjs-filter-less-than": "kurang dari",
+	"bs-extjs-filter-bool-yes": "ya",
+	"bs-extjs-filter-bool-no": "tidak",
 	"bs-extjs-title-success": "Sukses",
-	"bs-extjs-title-warning": "Peringatan"
+	"bs-extjs-title-warning": "Peringatan",
+	"bs-extjs-categoryboxselect-emptytext": "Tambah kategori"
 }

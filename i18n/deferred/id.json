@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"J Nia30"
 		]
 	},
 	"bs-deferred-action-status-done": "Selesai.",
-	"bs-deferred-batch-actions": "Tindakan"
+	"bs-deferred-action-status-error": "Gagal.",
+	"bs-deferred-batch-actions": "Tindakan",
+	"bs-deferred-batch-description": "Deskripsi"
 }
