@@ -78,12 +78,14 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 	}
 
 	protected function loadPersistenceFile() {
-		$this->data = \FormatJson::decode (
-			file_get_contents( $this->getPersistenceFilepath() ),
-			true
-		);
+		if ( file_exists( $this->getPersistenceFilepath() ) ) {
+			$this->data = \FormatJson::decode (
+				file_get_contents( $this->getPersistenceFilepath() ),
+				true
+			);
+		}
 
-		if( !is_array( $this->data ) ) {
+		if( !is_array( $this->data ) || empty( $this->data ) ) {
 			$this->data = [
 				static::DATA_KEY_LASTRUN => '',
 				static::DATA_KEY_NEXTRUNS => []
