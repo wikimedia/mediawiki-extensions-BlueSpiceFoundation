@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Comjun04"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "파일 업로드",
 	"bs-upload-uploadbuttontext": "찾아보기",
 	"bs-upload-uploadfilefieldlabel": "파일 이름",
 	"bs-upload-uploadfileemptytext": "새 파일 추가...",
+	"bs-upload-uploaddestfilelabel": "새 파일 이름",
 	"bs-upload-allowedfiletypesare": "유효한 파일 형식은 다음과 같습니다:",
 	"bs-upload-license": "라이선스",
 	"bs-upload-uploadwatchthislabel": "이 파일 주시하기",

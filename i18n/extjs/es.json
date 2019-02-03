@@ -4,7 +4,8 @@
 			"Fitoschido",
 			"Frammm",
 			"Macofe",
-			"Joaquin1001"
+			"Joaquin1001",
+			"Carlosmg.dg"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",
@@ -21,7 +22,7 @@
 	"bs-extjs-error": "Error",
 	"bs-extjs-confirm": "Confirmar",
 	"bs-extjs-loading": "Cargando…",
-	"bs-extjs-pageSize": "Tamaño de página",
+	"bs-extjs-pageSize": "Entradas por página",
 	"bs-extjs-actions-column-header": "Acciones",
 	"bs-extjs-warning": "Aviso",
 	"bs-extjs-saving": "guardando…",
