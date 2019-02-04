@@ -769,7 +769,6 @@
 		"BSNamespaceParser": "includes/parser/BSNamespaceParser.php",
 		"BSNamespaceValidator": "includes/validator/BSNamespaceValidator.php",
 		"BsExtJSStoreParams": "includes/ExtJSStoreParams.php",
-		"BsExtJSSortParam": "includes/BsExtJSSortParam.php",
 		"BSNotifications": "includes/Notifications.class.php",
 		"BSStandardAPIResponse": "includes/api/BSStandardAPIResponse.php",
 		"BSExtendedApiContext": "includes/api/BSExtendedApiContext.php",
