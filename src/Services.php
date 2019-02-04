@@ -155,4 +155,20 @@ class Services extends ServicesDecorator {
 		return $this->getService( 'BSTargetCacheTitle' );
 	}
 
+	/**
+	 *
+	 * @return PermissionLockdownFactory
+	 */
+	public function getBSPermissionLockdownFactory() {
+		return $this->getService( 'BSPermissionLockdownFactory' );
+	}
+
+	/**
+	 *
+	 * @return \BlueSpice\Permission\Role\Manager
+	 */
+	public function getBSRoleManager() {
+		return $this->getService( 'BSRoleManager' );
+	}
+
 }
