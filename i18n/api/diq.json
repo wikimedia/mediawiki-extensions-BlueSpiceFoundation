@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kumkumuk"
+			"Kumkumuk",
+			"Orbot707"
 		]
 	},
 	"apihelp-bs-task-param-format": "Neticey formati",
-	"bs-wikipage-tasks-setcategories-edit-summary": "Kategoriy vuriyay."
+	"bs-wikipage-tasks-setcategories-edit-summary": "Kategoriy vuriyay.",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Lista weçinıtışa"
 }

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Orbot707"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Newe dekere...",
+	"bs-ooui-key-value-input-widget-key-label": "Kılit",
+	"bs-ooui-key-value-input-widget-value-label": "Erc",
+	"bs-ooui-key-value-input-widget-add-button-label": "Dekerê",
+	"bs-ooui-key-value-input-widget-add-form-label": "Dekerdışo newe cı kerê",
+	"bs-ooui-key-value-input-widget-error-message": "Caya pêroyın pır kerê",
+	"bs-ooui-key-value-input-widget-no-values-label": "Qet jû erc nêdebiyayo"
+}

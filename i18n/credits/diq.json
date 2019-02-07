@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Marmase",
-			"Mirzali"
+			"Mirzali",
+			"Orbot707"
 		]
 	},
+	"bs-credits-programmers": "Programwani",
+	"bs-credits-dnt": "Dizayn u test kerdış",
 	"bs-credits-contributors": "İştırakkerdoği",
-	"bs-credits-translators": "Açarnayoği"
+	"bs-credits-translators": "Açarnayoği",
+	"bs-credits-translation": "Çarnayış",
+	"bs-credits-th": "$1 rê çarnayoğa pêroyın rê teşekur keme."
 }

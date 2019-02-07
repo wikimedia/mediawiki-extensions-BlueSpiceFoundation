@@ -6,7 +6,8 @@
 			"Alexey zakharenkov",
 			"Facenapalm",
 			"Happy13241",
-			"Vlad5250"
+			"Vlad5250",
+			"Alexandr Efremov"
 		]
 	},
 	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
@@ -14,6 +15,8 @@
 	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с данными контекста для хранилища",
 	"bs-wikipage-tasks-error-contentmodel": "Эта задача не может быть выполнена с использованием модели содержания данной страницы.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Список опций",
+	"bs-api-task-taskdata-help": "[$1 схема], [$2 примеры параметров]",
 	"apihelp-bs-task-param-schema": "Показывает JSON-схему для параметров задачи",
 	"apihelp-bs-task-param-examples": "Показать примеры параметров задачи",
 	"bs-api-task-taskData-page-id": "Идентификатор существующей вики-страницы",
