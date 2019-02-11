@@ -61,6 +61,18 @@ abstract class Entity implements \JsonSerializable {
 	protected $bUnsavedChanges = true;
 
 	/**
+	 *
+	 * @var string
+	 */
+	private $tsCreatedCache = null;
+
+	/**
+	 *
+	 * @var string
+	 */
+	private $tsTouchedCache = null;
+
+	/**
 	 * @var EntityConfig
 	 */
 	protected $oConfig = null;
@@ -239,7 +251,11 @@ abstract class Entity implements \JsonSerializable {
 		if( !$this->exists() ) {
 			return false;
 		}
-		return $this->getTitle()->getTouched();
+		if ( $this->tsTouchedCache ) {
+			return $this->tsTouchedCache;
+		}
+		$this->tsTouchedCache = $this->getTitle()->getTouched();
+		return $this->tsTouchedCache;
 	}
 
 	/**
@@ -250,7 +266,11 @@ abstract class Entity implements \JsonSerializable {
 		if( !$this->exists() ) {
 			return false;
 		}
-		return $this->getTitle()->getEarliestRevTime();
+		if ( $this->tsCreatedCache ) {
+			return $this->tsCreatedCache;
+		}
+		$this->tsCreatedCache = $this->getTitle()->getEarliestRevTime();
+		return $this->tsCreatedCache;
 	}
 
 	/**
@@ -593,6 +613,8 @@ abstract class Entity implements \JsonSerializable {
 	public function invalidateCache() {
 		$this->invalidateTitleCache( wfTimestampNow() );
 		$this->entityFactory->detachCache( $this );
+		$this->tsCreatedCache = null;
+		$this->tsTouchedCache = null;
 		\Hooks::run( 'BSEntityInvalidate', [ $this ] );
 		return $this;
 	}
