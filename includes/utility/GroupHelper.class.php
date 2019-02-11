@@ -67,12 +67,15 @@ class BsGroupHelper {
 	}
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.0.2 - Do not assign groups temporarily, as
+	 * this is broken
 	 * @param User $oUser
 	 * @param String $sGroupName
 	 * @return boolean
 	 */
 	public static function addTempGroupToUser( $oUser, $sGroupName ) {
-
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if( in_array( $sGroupName, $oUser->getEffectiveGroups() ) ) {
 			return true;
 		}
@@ -82,12 +85,16 @@ class BsGroupHelper {
 	}
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.0.2 - Do not assign permissions temporarily,
+	 * as this is broken
 	 * @global Array $wgGroupPermissions
 	 * @param String $sGroupName
 	 * @param Array $aPermissions
 	 * @param Array $aNamespaces
 	 */
 	public static function addPermissionsToGroup( $sGroupName, $aPermissions, $aNamespaces = array() ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		global $wgGroupPermissions;
 
 		$aNamespaces = array_diff(
