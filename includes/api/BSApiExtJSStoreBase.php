@@ -65,12 +65,6 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	const PROP_SPEC_SORTABLE = 'sortable';
 
 	/**
-	 * The current parameters sent by the ExtJS store
-	 * @var BsExtJSStoreParams
-	 */
-	protected $oStoreParams = null;
-
-	/**
 	 * Automatically set within 'postProcessData' method
 	 * @var int
 	 */
@@ -143,17 +137,6 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 		if( !empty( $aMetaData ) ) {
 			$result->addValue( null, $this->metaData, $aMetaData );
 		}
-	}
-
-	/**
-	 *
-	 * @return BsExtJSStoreParams
-	 */
-	protected function getStoreParams() {
-		if( $this->oStoreParams === null ) {
-			$this->oStoreParams = BsExtJSStoreParams::newFromRequest();
-		}
-		return $this->oStoreParams;
 	}
 
 	public function getAllowedParams() {
