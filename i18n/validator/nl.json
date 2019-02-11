@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Esketti",
-			"Mainframe98"
+			"Mainframe98",
+			"Xbaked potatox"
 		]
 	},
-	"bs-validator-email-validation-approved": "Het emailadres is succesvol gevalideerd.",
+	"bs-validator-email-validation-approved": "Het e-mailadres is succesvol gevalideerd.",
 	"bs-validator-email-validation-not-approved": "Het e-mailadres kon niet worden gevalideerd.",
 	"bs-validator-url-validation-approved": "De URL is succesvol gevalideerd.",
-	"bs-validator-url-validation-not-approved": "De URL kan niet worden gevalideerd.",
+	"bs-validator-url-validation-not-approved": "De URL kon niet worden gevalideerd.",
 	"bs-validator-arg-count-validation-approved": "Het attribuut \"aantal\" is succesvol gevalideerd.",
 	"bs-validator-arg-count-validation-not-approved": "Het attribuut \"aantal\" kan niet worden gevalideerd.",
 	"bs-validator-set-validation-approved": "$1 is succesvol gevalideerd.",

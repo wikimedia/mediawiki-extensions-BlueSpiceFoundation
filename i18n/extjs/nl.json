@@ -9,7 +9,8 @@
 			"Jeleniccz",
 			"Mainframe98",
 			"Patio",
-			"KlaasZ4usV"
+			"KlaasZ4usV",
+			"Xbaked potatox"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -26,7 +27,7 @@
 	"bs-extjs-error": "Fout",
 	"bs-extjs-confirm": "Bevestigen",
 	"bs-extjs-loading": "Bezig met laden…",
-	"bs-extjs-pageSize": "Papierformaat",
+	"bs-extjs-pageSize": "Inzendingen per pagina",
 	"bs-extjs-actions-column-header": "Handelingen",
 	"bs-extjs-warning": "Waarschuwing",
 	"bs-extjs-saving": "opslaan...",
