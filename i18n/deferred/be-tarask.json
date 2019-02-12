@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nerogaf"
+			"Nerogaf",
+			"Red Winged Duck"
 		]
 	},
+	"bs-deferred-action-status-pending": "Чаканьне.",
 	"bs-deferred-action-status-running": "Запускаецца...",
 	"bs-deferred-action-status-done": "Зроблена.",
 	"bs-deferred-action-status-error": "Памылка.",

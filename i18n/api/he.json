@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"MojoMann",
-			"Guycn2"
+			"Guycn2",
+			"YaronSh"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
@@ -11,5 +12,7 @@
 	"apihelp-bs-wikipage-tasks-description": "מספק פעולות נפוצות ל-WikiPages",
 	"apihelp-bs-store-param-page": "מאפשר חישוב התחלה/גבול מצד שרת",
 	"apihelp-bs-store-param-limit": "מספר התוצאות להשיב",
-	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון."
+	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון.",
+	"apihelp-bs-task-summary": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
+	"apihelp-bs-task-description": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות"
 }
