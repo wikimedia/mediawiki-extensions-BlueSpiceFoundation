@@ -58,9 +58,21 @@ if ( !isset( $GLOBALS[ 'bsgGroupRoles' ] ) ) {
 $GLOBALS[ 'bsgGroupRoles' ] = array_merge( [
 	'bureaucrat' => [ 'accountmanager' => true ],
 	'sysop' => [ 'admin' => true ],
-	'user' => [ 'editor' => true ],
-	'*' => [ 'reader' => true ]
+	'user' => [ 'editor' => true ]
 ], $GLOBALS['bsgGroupRoles'] );
+
+// If "reader" is not explicitly set to "*"
+if ( !isset( $GLOBALS['bsgGroupRoles']['*']['reader'] ) ) {
+	// respect the setting of wgGroupPermission
+	$isPrivate = isset( $GLOBALS['wgGroupPermissions']['*']['read'] ) ?
+		!$GLOBALS['wgGroupPermissions']['*']['read'] :
+		false;
+
+	$GLOBALS['bsgGroupRoles']['*']['reader'] = !$isPrivate;
+} elseif( $GLOBALS['bsgGroupRoles']['*']['reader'] === false ) {
+	// otherwise, if "*" is explicitly denied "reader", give it to "user".
+	$GLOBALS['bsgGroupRoles']['user']['reader'] = true;
+}
 
 if ( !isset( $GLOBALS[ 'bsgNamespaceRolesLockdown' ] ) ) {
 	$GLOBALS['bsgNamespaceRolesLockdown'] = [];
