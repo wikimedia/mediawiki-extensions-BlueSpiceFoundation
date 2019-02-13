@@ -30,7 +30,7 @@ class BsTagFinder {
 	 * );
 	 */
 	public static function find( &$sText, $aTagnames ) {
-		wfSuppressWarnings();
+		Wikimedia\suppressWarnings();
 		$aResult = array();
 
 		$sXML = '<?xml encoding="UTF-8">'
@@ -66,7 +66,7 @@ class BsTagFinder {
 				}
 			}
 		}
-		wfRestoreWarnings();
+		Wikimedia\restoreWarnings();
 		return $aResult;
 	}
 }

@@ -181,9 +181,9 @@ class BsPageContentProvider {
 		$sHtmlContent = mb_convert_encoding($sHtmlContent,
 											'HTML-ENTITIES', "UTF-8");
 		$oDOMDoc->recover = true;
-		wfSuppressWarnings();
+		Wikimedia\suppressWarnings();
 		$oDOMDoc->loadHTML( $sHtmlContent );
-		wfRestoreWarnings();
+		Wikimedia\restoreWarnings();
 		 */
 
 		/*
