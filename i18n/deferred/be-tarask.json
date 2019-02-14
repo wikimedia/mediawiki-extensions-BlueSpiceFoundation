@@ -16,5 +16,6 @@
 	"bs-deferred-batch-actions": "Дзеяньні",
 	"bs-deferred-batch-description": "Апісаньне",
 	"bs-deferred-batch-status": "Стан",
-	"bs-deferred-action-apiaddcategories-description": "Дадаць катэгорыі да «$1»."
+	"bs-deferred-action-apiaddcategories-description": "Дадаць катэгорыі да «$1».",
+	"bs-deferred-action-apiremovecategories-description": "Выдаліць катэгорыі з «$1»."
 }
