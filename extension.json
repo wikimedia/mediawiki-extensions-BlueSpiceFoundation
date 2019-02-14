@@ -87,7 +87,9 @@
 				"bs-color-success": "#dff0d8",
 				"bs-color-warning": "#fcf8e3",
 				"bs-color-error": "#f2dede",
-				"bs-color-info": "#d9edf7"
+				"bs-color-info": "#d9edf7",
+				"bs-background-neutral": "#FFFFFF",
+				"bs-background-primary": "none"
 			},
 			"TargetCacheRegistry": {
 				"title": "\\BlueSpice\\TargetCache\\Title"
