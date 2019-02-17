@@ -4,7 +4,8 @@
 			"Reza1615",
 			"Alirezaaa",
 			"Arash.pt",
-			"Alifakoor"
+			"Alifakoor",
+			"Amirsara"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -55,5 +56,8 @@
 	"bs-extjs-filter-date-after": "بعد",
 	"bs-extjs-filter-date-before": "قبل",
 	"bs-extjs-filter-date-on": "روشن",
-	"bs-extjs-filter-date-filter": "پالایه"
+	"bs-extjs-filter-date-filter": "پالایه",
+	"bs-extjs-pageexport-list-format-link-label": "پیوند",
+	"bs-extjs-pageexport-overwrite-label": "رونویسی",
+	"bs-extjs-flyout-tab-grid-label": "جزئیات"
 }

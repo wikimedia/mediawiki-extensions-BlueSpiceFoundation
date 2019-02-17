@@ -5,7 +5,8 @@
 			"Rtemis",
 			"Alirezaaa",
 			"Ebraminio",
-			"Huji"
+			"Huji",
+			"Amirsara"
 		]
 	},
 	"bs-ns_main": "(صفحات)",
@@ -73,5 +74,6 @@
 	"bs-pref-anonuserimage": "نماد کاربر ناشناس:",
 	"bs-pref-deleteduserimage": "نماد کاربر پاک‌شده:",
 	"bs-pref-bspinginterval": "بازه پینگ (به ثانیه):",
-	"bs-pref-testmode": "فعال کردن حالت آزمایش"
+	"bs-pref-testmode": "فعال کردن حالت آزمایش",
+	"bs-notifications-agent-anon": "کاربر ناشناس"
 }

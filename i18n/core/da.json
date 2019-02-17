@@ -1,10 +1,26 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jorn Ari"
+			"Jorn Ari",
+			"Saederup92"
 		]
 	},
+	"bs-years-duration": "{{PLURAL:$1|et år|$1 år}}",
+	"bs-months-duration": "{{PLURAL:$1|en måned|$1 måneder}}",
+	"bs-weeks-duration": "{{PLURAL:$1|en uge|$1 uger}}",
+	"bs-days-duration": "{{PLURAL:$1|en dag|$1 dage}}",
+	"bs-hours-duration": "{{PLURAL:$1|en time|$1 timer}}",
+	"bs-mins-duration": "{{PLURAL:$1|et minut|$1 minutter}}",
+	"bs-secs-duration": "{{PLURAL:$1|et sekund|$1 sekunder}}",
+	"bs-two-units-ago": "for $1 og $2 siden",
+	"bs-one-unit-ago": "for $1 siden",
+	"bs-now": "nu",
+	"bs-navigation-instructions": "Instruktioner",
+	"bs-navigation-contact": "Kontakt",
+	"bs-ns": "Navnerum",
+	"bs-from-something": "(fra $1)",
 	"bs-graphicallist-action-close": "Luk",
 	"bs-graphicallist-action-list": "Liste",
-	"bs-graphicallist-action-preview": "Forhåndsvisning"
+	"bs-graphicallist-action-preview": "Forhåndsvisning",
+	"bs-notifications-agent-anon": "anonym bruger"
 }

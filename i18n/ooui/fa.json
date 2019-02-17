@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amirsara"
+		]
+	},
+	"bs-ooui-key-value-input-widget-key-label": "کلید",
+	"bs-ooui-key-value-input-widget-value-label": "مقدار",
+	"bs-ooui-key-value-input-widget-add-button-label": "افزودن",
+	"bs-ooui-key-value-input-widget-add-form-label": "افزودن ورودی تازه"
+}
