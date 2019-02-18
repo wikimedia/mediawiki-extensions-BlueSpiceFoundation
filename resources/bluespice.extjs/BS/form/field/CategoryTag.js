@@ -100,10 +100,7 @@ Ext.define( 'BS.form.field.CategoryTag', {
 	wdTree: null,
 	showTree: function() {
 		if( !this.wdTree ) {
-			var categoryTree =  new BS.tree.Categories({
-				width: 250,
-				height: 300
-			});
+			var categoryTree =  new BS.tree.Categories();
 			categoryTree.on( 'itemclick', this.onTreeItemClick, this );
 
 			this.wdTree = new Ext.Window({
@@ -112,6 +109,9 @@ Ext.define( 'BS.form.field.CategoryTag', {
 				x: this.getX() + this.getWidth() + 10,
 				y: this.getY() + 50,
 				closeAction: 'hide',
+				autoScroll: true,
+				width: 250,
+				height: 300,
 				items: [
 					categoryTree
 				]
