@@ -1,7 +1,9 @@
 <?php
 
 namespace BlueSpice\Data;
+
 use BlueSpice\Data\RecordSet;
+use BlueSpice\Data\ReaderParams;
 
 abstract class DatabaseWriter extends Writer {
 
@@ -201,9 +203,10 @@ abstract class DatabaseWriter extends Writer {
 	 * @param BlueSpice\Data\Record $record
 	 */
 	protected function getExistingRecord( $record ) {
-		$recordSet = $this->reader->read( new \BlueSpice\Data\ReaderParams( [
-			'filter' => $this->makeExistingRecordFilters( $record )
-		]));
+		$recordSet = $this->reader->read( new ReaderParams( [
+			ReaderParams::PARAM_LIMIT => ReaderParams::LIMIT_INFINITE,
+			ReaderParams::PARAM_FILTER => $this->makeExistingRecordFilters( $record )
+		] ) );
 		$records = $recordSet->getRecords();
 		if( count( $records ) < 1 ) {
 			return false;
