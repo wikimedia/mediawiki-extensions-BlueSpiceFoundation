@@ -132,9 +132,9 @@ class BsCoreHooks {
 
 		//provide task permission data for current user to be used in js ui elements, eg show / hide elements
 		//get all registered api modules
-		global $wgAPIModules;
+		global $wgAPIModules, $wgReadOny;
 		foreach( $wgAPIModules as $key => $apiModule ){
-			if( is_subclass_of( $apiModule, 'BSApiTasksBase' ) ){
+			if( !$wgReadOny && is_subclass_of( $apiModule, 'BSApiTasksBase' ) ){
 				//beautify and js compatible var name
 				$strClassName = preg_replace( array ( '/^bs-/', '/-tasks$/', '/-/' ), array( '', '', '_' ), $key );
 				self::$aTaskAPIPermission[ $strClassName ] = self::addJsConfigVarsUserTaskPermissions( $out, $key );
