@@ -479,7 +479,7 @@
 		"BlueSpice.Deferred": [
 			"i18n/deferred"
 		],
-		"Validator": [
+		"BlueSpice.Validator": [
 			"i18n/validator"
 		],
 		"BlueSpice.API": [
