@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amirsara"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "بارگذاری پرونده",
+	"bs-upload-uploadbuttontext": "مرور",
+	"bs-upload-uploadfilefieldlabel": "نام پرونده",
+	"bs-upload-license": "مجوز",
+	"bs-upload-categories": "رده‌ها",
+	"bs-upload-error": "خطا",
+	"bs-upload-details": "جزئیات"
+}

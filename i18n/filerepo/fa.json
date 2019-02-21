@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amirsara"
+		]
+	},
+	"bs-filerepo-labelfilter": "پالایه",
+	"bs-filerepo-headerfilename": "نام فايل",
+	"bs-filerepo-headerfilesize": "اندازه",
+	"bs-filerepo-headerpagecategories": "رده‌ها",
+	"bs-filerepo-headerfilewidth": "عرض",
+	"bs-filerepo-headerfileheight": "ارتفاع",
+	"bs-filerepo-headerfilemimetype": "نوع مایم",
+	"bs-filerepo-headerfileusertext": "کاربر",
+	"bs-filerepo-headerfileextension": "افزونه‌ها",
+	"bs-filerepo-headerfiletimestamp": "بارگذاری شده",
+	"bs-filerepo-headerfilemediatype": "نوع رسانه",
+	"bs-filerepo-headerfiledescription": "توضیحات",
+	"bs-filerepo-headerfilethumbnail": "بندانگشتی",
+	"bs-filerepo-yes": "بله",
+	"bs-filerepo-no": "خیر"
+}

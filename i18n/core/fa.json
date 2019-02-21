@@ -75,5 +75,8 @@
 	"bs-pref-deleteduserimage": "نماد کاربر پاک‌شده:",
 	"bs-pref-bspinginterval": "بازه پینگ (به ثانیه):",
 	"bs-pref-testmode": "فعال کردن حالت آزمایش",
+	"bs-graphicallist-action-close": "بستن",
+	"bs-graphicallist-action-list": "فهرست",
+	"bs-graphicallist-action-preview": "پیش‌نمایش",
 	"bs-notifications-agent-anon": "کاربر ناشناس"
 }

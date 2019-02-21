@@ -31,6 +31,7 @@
 	"bs-extjs-label-user": "کاربر",
 	"bs-extjs-label-namespace": "فضای نام",
 	"bs-extjs-label-page": "صفحه",
+	"bs-extjs-label-directsearch": "جستجو",
 	"bs-extjs-upload": "بارگذاری",
 	"bs-extjs-browse": "مرور",
 	"bs-extjs-uploading": "در حال بارگذاری...",
@@ -57,7 +58,11 @@
 	"bs-extjs-filter-date-before": "قبل",
 	"bs-extjs-filter-date-on": "روشن",
 	"bs-extjs-filter-date-filter": "پالایه",
+	"bs-extjs-pageexport-list-name-label": "نام فهرست",
 	"bs-extjs-pageexport-list-format-link-label": "پیوند",
 	"bs-extjs-pageexport-overwrite-label": "رونویسی",
-	"bs-extjs-flyout-tab-grid-label": "جزئیات"
+	"bs-extjs-tools-trigger-text": "ابزارها",
+	"bs-extjs-flyout-tab-thumbs-label": "بندانگشتی",
+	"bs-extjs-flyout-tab-grid-label": "جزئیات",
+	"bs-extjs-flyout-add-label": "افزودن آیتم"
 }

@@ -4,5 +4,8 @@
 			"Mirzali"
 		]
 	},
-	"bs-extjs-cancel": "Bıtexelne"
+	"bs-extjs-cancel": "Bıtexelne",
+	"bs-extjs-yes": "Heya",
+	"bs-extjs-no": "Nê",
+	"bs-extjs-filter-bool-yes": "heya"
 }

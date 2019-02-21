@@ -1,14 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615"
+			"Reza1615",
+			"Amirsara"
 		]
 	},
 	"bs-deferred-action-status-pending": "در انتظار.",
 	"bs-deferred-action-status-done": "انجام شد.",
 	"bs-deferred-action-status-error": "ناموفق بود.",
 	"bs-deferred-action-apieditpage-description": "ویرایش «$1».",
+	"bs-deferred-batch-progress-desc": "پیشرفت",
 	"bs-deferred-batch-actions": "عملکردها",
 	"bs-deferred-batch-description": "توضیح",
-	"bs-deferred-batch-status": "وضعیت"
+	"bs-deferred-batch-status": "وضعیت",
+	"bs-deferred-action-apideletepage-description": "حذف «$1»."
 }
