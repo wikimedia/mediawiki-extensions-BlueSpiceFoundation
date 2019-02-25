@@ -29,7 +29,7 @@ namespace BlueSpice;
 use MessageLocalizer;
 use Message;
 
-abstract class Hook implements MessageLocalizer {
+abstract class Hook implements MessageLocalizer, IServiceProvider {
 
 	/**
 	 *
@@ -91,7 +91,7 @@ abstract class Hook implements MessageLocalizer {
 	 *
 	 * @return Services
 	 */
-	protected function getServices() {
+	public function getServices() {
 		return Services::getInstance();
 	}
 
