@@ -26,9 +26,10 @@
  */
 namespace BlueSpice;
 
-use MediaWiki\MediaWikiServices;
+use MessageLocalizer;
+use Message;
 
-abstract class Hook {
+abstract class Hook implements MessageLocalizer {
 
 	/**
 	 *
@@ -78,8 +79,9 @@ abstract class Hook {
 	 */
 	protected function getConfig() {
 		if( $this->config instanceof \Config === false ) {
-			$this->config = \MediaWiki\MediaWikiServices::getInstance()
-				->getConfigFactory()->makeConfig( static::$configName );
+			$this->config = $this->getServices()->getConfigFactory()->makeConfig(
+				static::$configName
+			);
 		}
 
 		return $this->config;
@@ -91,6 +93,17 @@ abstract class Hook {
 	 */
 	protected function getServices() {
 		return Services::getInstance();
+	}
+
+	/**
+	 *
+	 * @return Message
+	 */
+	public function msg( $key /* $args */ ) {
+		return call_user_func_array(
+			[ $this->getContext(), 'msg' ],
+			func_get_args()
+		);
 	}
 
 	public function process() {
