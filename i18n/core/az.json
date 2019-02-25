@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wertuose"
+		]
+	},
+	"bs-days-duration": "{{PLURAL:$1|1 gün|$1 gün}}"
+}
