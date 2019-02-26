@@ -178,10 +178,14 @@ Ext.define ( 'BS.panel.Upload', {
 
 	},
 
+	uploadWarningAPI: null,
 	tfFileNameChange: function( sender, newValue, oldValue, eOpts ) {
-		var api = new mw.Api();
+		if( this.uploadWarningAPI === null ) {
+			this.uploadWarningAPI = new mw.Api();
+		}
 		var me = this;
-		api.get({
+		this.uploadWarningAPI.abort();
+		this.uploadWarningAPI.get({
 			action: 'query',
 			format: 'json',
 			titles: 'File:' + newValue,
