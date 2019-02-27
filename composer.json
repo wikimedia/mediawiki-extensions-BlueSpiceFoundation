@@ -19,7 +19,7 @@
 		"installer-name": "BlueSpiceFoundation"
 	},
 	"require": {
-		"param-processor/param-processor": "~1.2"
+		"param-processor/param-processor": "<1.4"
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "0.9.2",
