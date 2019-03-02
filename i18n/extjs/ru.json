@@ -14,7 +14,8 @@
 			"Happy13241",
 			"Abiyoyo",
 			"Vlad5250",
-			"Alexandr Efremov"
+			"Alexandr Efremov",
+			"Romanko Mikhail"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -85,5 +86,6 @@
 	"bs-extjs-tools-trigger-text": "Инструменты",
 	"bs-extjs-flyout-tab-thumbs-label": "Миниатюры",
 	"bs-extjs-flyout-tab-grid-label": "Детали",
+	"bs-extjs-flyout-add-title": "Нажмите сюда, чтобы добавить новую позицию",
 	"bs-extjs-flyout-add-label": "Добавить объект"
 }

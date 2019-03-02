@@ -7,15 +7,22 @@
 			"Facenapalm",
 			"Happy13241",
 			"Vlad5250",
-			"Alexandr Efremov"
+			"Alexandr Efremov",
+			"Romanko Mikhail"
 		]
 	},
+	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",
 	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
 	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с данными контекста для хранилища",
+	"apihelp-bs-task-param-format": "Формат результата",
 	"bs-wikipage-tasks-error-contentmodel": "Эта задача не может быть выполнена с использованием модели содержания данной страницы.",
+	"bs-wikipage-tasks-error-page-not-valid": "Предоставленная страница недействительна.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Измененные категории.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Список опций",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
+	"bs-wikipage-tasks-error-nothingtoremove": "Нет категорий для удаления",
 	"bs-api-task-taskdata-help": "[$1 схема], [$2 примеры параметров]",
 	"apihelp-bs-task-param-schema": "Показывает JSON-схему для параметров задачи",
 	"apihelp-bs-task-param-examples": "Показать примеры параметров задачи",

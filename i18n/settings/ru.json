@@ -3,7 +3,8 @@
 		"authors": [
 			"Patrick Star",
 			"Okras",
-			"Vlad5250"
+			"Vlad5250",
+			"Romanko Mikhail"
 		]
 	},
 	"bs-setting-path-feature": "Функция",
@@ -12,6 +13,9 @@
 	"bs-setting-path-system": "Система",
 	"bs-setting-path-dataanalysis": "Анализ данных",
 	"bs-setting-path-editor": "Редактор",
+	"bs-setting-path-search": "Поиск и Навигация",
+	"bs-setting-path-personalisation": "Персонализация",
+	"bs-setting-path-communication": "Связь",
 	"bs-setting-path-administration": "Администрирование",
 	"bs-setting-path-export": "Экспорт"
 }
