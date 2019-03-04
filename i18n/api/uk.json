@@ -3,7 +3,8 @@
 		"authors": [
 			"Piramidion",
 			"Alex Khimich",
-			"Ата"
+			"Ата",
+			"Vlad5250"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Перелічує всі файли з файлового backend'у. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
@@ -67,5 +68,7 @@
 	"bs-api-task-taskData-page-title": "Дійсна назва вікісторінки",
 	"bs-api-task-wikipagetasks-taskData-categories": "Масив рядків. Значення мають бути валідними назвами категорій.",
 	"apihelp-bs-watchlist-store-summary": "Перелічує всі записи у списку спостереження. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри Store.",
-	"apihelp-bs-recentchanges-store-summary": "Перелічує всі останні зміни. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри Store."
+	"apihelp-bs-recentchanges-store-summary": "Перелічує всі останні зміни. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри Store.",
+	"apihelp-bs-task-summary": "Надає кінцеву точку API для виконання реєстрованих завдань",
+	"apihelp-bs-task-description": "Надає кінцеву точку API для виконання реєстрованих завдань"
 }
