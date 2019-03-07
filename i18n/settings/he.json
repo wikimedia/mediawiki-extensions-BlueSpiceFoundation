@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"YaronSh"
+		]
+	},
+	"bs-setting-path-feature": "אפשרות",
+	"bs-setting-path-extension": "הרחבה",
+	"bs-setting-path-package": "חבילה",
+	"bs-setting-path-system": "מערכת",
+	"bs-setting-path-dataanalysis": "ניתוח נתונים",
+	"bs-setting-path-editor": "עורך",
+	"bs-setting-path-search": "חיפוש וניווט",
+	"bs-setting-path-personalisation": "התאמה אישית",
+	"bs-setting-path-skinning": "עיצוב",
+	"bs-setting-path-customizing": "התאמה אישית",
+	"bs-setting-path-communication": "תקשורת",
+	"bs-setting-path-administration": "ניהול",
+	"bs-setting-path-qualityassurance": "אבטחת איכות",
+	"bs-setting-path-export": "ייצוא"
+}

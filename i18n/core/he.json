@@ -7,7 +7,8 @@
 			"Ronel1",
 			"Eladk",
 			"ערן",
-			"Guycn2"
+			"Guycn2",
+			"YaronSh"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -79,7 +80,11 @@
 	"bs-exttype-bluespice": "הרחבות BlueSpice",
 	"bs-export-menu-print-text": "הדפסה",
 	"bs-export-menu-print-title": "הצגת גרסת הדפסה של הדף",
+	"bs-graphicallist-action-close": "סגירה",
+	"bs-graphicallist-action-list": "רשימה",
+	"bs-graphicallist-action-preview": "תצוגה מקדימה",
 	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "צפייה בדפי ניהול של BlueSpice"
+	"right-wikiadmin": "צפייה בדפי ניהול של BlueSpice",
+	"bs-notifications-agent-anon": "משתמש אלמוני"
 }
