@@ -3,12 +3,9 @@
 namespace BlueSpice\Api;
 
 use Status;
-use WikiPage;
 use FormatJson;
-use BSExtendedApiContext;
 use BlueSpice\ITask;
 use BlueSpice\IPermissionChecker;
-use BlueSpice\Context;
 use BlueSpice\Api;
 use BlueSpice\Api\Task\StatusConverter;
 use BlueSpice\ParamProcessor\Processor;
@@ -174,24 +171,6 @@ class Task extends Api {
 			$this->getContext(),
 			$this->makePermissionChecker()
 		);
-	}
-
-	/**
-	 *
-	 * @return Context
-	 */
-	public function getContext() {
-		$context = parent::getContext();
-		$extendedContext = BSExtendedApiContext::newFromRequest(
-			$context->getRequest()
-		);
-		$context->setTitle( $extendedContext->getTitle() );
-		if( $context->getTitle()->getArticleID() > 0 ) {
-			$context->setWikiPage(
-				WikiPage::factory( $context->getTitle() )
-			);
-		}
-		return new Context( $context, $this->getConfig() );
 	}
 
 	/**
