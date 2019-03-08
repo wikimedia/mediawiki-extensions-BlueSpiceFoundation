@@ -138,4 +138,27 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 			$sQuery
 		);
 	}
+
+	/**
+	 *
+	 * @param \stdClass $filter
+	 * @param \stdClass $dataSet
+	 * @return bool
+	 */
+	public function filterString( $filter, $dataSet ) {
+		if( $filter->field === 'groups' ) {
+			if ( !isset( $dataSet->{$filter->field} ) ) {
+				return false;
+			}
+			if( !is_string( $filter->value ) ) {
+				return true; //TODO: Warning
+			}
+			return BsStringHelper::filter(
+				$filter->comparison,
+				implode( '', $dataSet->{$filter->field} ),
+				$filter->value
+			);
+		}
+		return parent::filterString( $filter, $dataSet );
+	}
 }
