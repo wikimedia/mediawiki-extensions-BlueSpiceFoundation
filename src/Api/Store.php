@@ -59,7 +59,6 @@ abstract class Store extends Api {
 	 * Main method called by \ApiMain
 	 */
 	public function execute() {
-		$this->initContext();
 		$dataStore = $this->makeDataStore();
 		$result = $dataStore->getReader()->read( $this->getReaderParams() );
 		$schema = $dataStore->getReader()->getSchema();
@@ -213,22 +212,6 @@ abstract class Store extends Api {
 			'filter' => $this->getParameter( 'filter', null ),
 			'sort' => $this->getParameter( 'sort', null ),
 		] );
-	}
-
-	/**
-	 * Initializes the context of the API call
-	 */
-	protected function initContext() {
-		$this->extendedContext = \BSExtendedApiContext::newFromRequest(
-			$this->getRequest()
-		);
-		$this->getContext()->setTitle( $this->extendedContext->getTitle() );
-		if ( $this->getTitle()->getArticleID() > 0 ) {
-			//TODO: Check for subtypes like WikiFilePage or WikiCategoryPage
-			$this->getContext()->setWikiPage(
-				WikiPage::factory( $this->getTitle() )
-			);
-		}
 	}
 
 }

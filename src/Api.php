@@ -38,6 +38,9 @@ use ApiMessage;
 use BlueSpice\Api\Format\Json;
 use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Services;
+use WikiPage;
+use BSExtendedApiContext;
+use BlueSpice\Context;
 
 /**
  * Api base class in BlueSpice
@@ -132,8 +135,7 @@ abstract class Api extends ApiBase {
 	 * @return Config
 	 */
 	public function getConfig() {
-		return \MediaWiki\MediaWikiServices::getInstance()
-			->getConfigFactory()->makeConfig( 'bsg' );
+		return $this->getServices()->getConfigFactory()->makeConfig( 'bsg' );
 	}
 
 	/**
@@ -142,6 +144,43 @@ abstract class Api extends ApiBase {
 	 */
 	protected function getServices() {
 		return Services::getInstance();
+	}
+
+	/**
+	 *
+	 * @return Context
+	 */
+	public function getContext() {
+		$context = parent::getContext();
+		//whenever no action was sent this module was constructed internally by
+		//the API help or API Sandbox i.e.
+		//we can not overwrite the context, as this would result in an exception,
+		//cause this modules need their own context to work with
+		if ( $context->getRequest()->getVal( 'action', '' ) !== $this->getModuleName() ) {
+			return $context;
+		}
+		//TODO: Replace this class with something more modular wich extends the
+		//context only if is aditional data and this module is actially called
+		//by WebRequest
+		$extendedContext = BSExtendedApiContext::newFromRequest(
+			$context->getRequest()
+		);
+		$context->setTitle( $extendedContext->getTitle() );
+		if( $context->getTitle()->getArticleID() > 0 ) {
+			$context->setWikiPage(
+				WikiPage::factory( $context->getTitle() )
+			);
+		}
+		return new Context( $context, $this->getConfig() );
+	}
+
+	/**
+	 * DEPRECATED
+	 * Initializes the context of the API call
+	 * @deprecated since version 3.1 - not in use anymore
+	 */
+	public function initContext() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 	}
 
 	/**

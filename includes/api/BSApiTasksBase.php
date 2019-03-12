@@ -119,7 +119,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		if( isset( $aParams['examples'] ) ) {
 			return $this->returnTaskDataExamples( $aParams['task'] );
 		}
-		$this->initContext();
 
 		//Avoid API warning: register the parameter used to bust browser cache
 		$this->getMain()->getVal( '_' );
@@ -455,20 +454,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		}
 
 		return 'csrf';
-	}
-
-	/**
-	 * Initializes the context of the API call
-	 */
-	public function initContext() {
-		$this->oExtendedContext = BSExtendedApiContext::newFromRequest( $this->getRequest() );
-		$this->getContext()->setTitle( $this->oExtendedContext->getTitle() );
-		if( $this->getTitle()->getArticleID() > 0 ) {
-			//TODO: Check for subtypes like WikiFilePage or WikiCategoryPage
-			$this->getContext()->setWikiPage(
-				WikiPage::factory( $this->getTitle() )
-			);
-		}
 	}
 
 	/**
