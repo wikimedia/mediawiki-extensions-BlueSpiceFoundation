@@ -103,7 +103,10 @@
 			},
 			"PermissionLockdownGroupModuleRegistry": {},
 			"TaskRegistry": {
-				"wikipage-setlanguagelinks": "\\BlueSpice\\Task\\WikiPage\\SetLanguageLinks::factory"
+				"wikipage-setlanguagelinks": "\\BlueSpice\\Task\\WikiPage\\SetLanguageLinks::factory",
+				"wikipage-setcategories": "\\BlueSpice\\Task\\WikiPage\\SetCategories::factory",
+				"wikipage-addcategories": "\\BlueSpice\\Task\\WikiPage\\AddCategories::factory",
+				"wikipage-removecategories": "\\BlueSpice\\Task\\WikiPage\\RemoveCategories::factory"
 			}
 		}
 	},
