@@ -59,11 +59,16 @@ class PagePropHelper {
 		if( !$this->title->exists() ) {
 			return [];
 		}
-		if( $this->getCache()->get() ) {
-			return $this->getCache()->get();
+
+		$pageProps = $this->getCache()->get();
+
+		// If the cache returns `false`it means the data was not cached or an error occured. Empty
+		// arrays are okay
+		if( $pageProps === false ) {
+			$pageProps = $this->loadPageProps();
+			$this->getCache()->set( $pageProps );
 		}
-		$pageProps = $this->loadPageProps();
-		$this->getCache()->set( $pageProps );
+
 		return $pageProps;
 	}
 
