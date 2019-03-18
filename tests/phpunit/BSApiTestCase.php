@@ -31,8 +31,11 @@ class BSApiTestCase extends \ApiTestCase {
 	 * class
 	 * @param string $pageName
 	 * @param string $text
+	 * @param int|null $namespace
+	 * @param User|null $user
+	 * @return array
 	 */
-	public function insertPage( $pageName, $text = 'Sample page for unit test.', $namespace = null ) {
-		return parent::insertPage( $pageName, $text, $namespace );
+	public function insertPage( $pageName, $text = 'Sample page for unit test.', $namespace = null, $user = null ) {
+		return parent::insertPage( $pageName, $text, $namespace, $user );
 	}
 }
