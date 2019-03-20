@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ted Masters"
+		]
+	},
+	"bs-ooui-key-value-input-widget-key-label": "Ключ",
+	"bs-ooui-key-value-input-widget-value-label": "Стойност",
+	"bs-ooui-key-value-input-widget-add-button-label": "Добавяне",
+	"bs-ooui-key-value-input-widget-add-form-label": "Добавяне на нов запис",
+	"bs-ooui-key-value-input-widget-error-message": "Всички задължителни полета трябва да са попълнени!"
+}
