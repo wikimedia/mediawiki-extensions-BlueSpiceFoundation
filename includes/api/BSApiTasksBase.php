@@ -93,7 +93,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	public function __construct( \ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
 		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		$this->oTasksSpec = new BSTasksApiSpec( $this->aTasks );
-		parent::__construct($mainModule, $moduleName, $modulePrefix);
+		parent::__construct( $mainModule, $moduleName, $modulePrefix );
 	}
 
 	/**
@@ -520,10 +520,24 @@ abstract class BSApiTasksBase extends BSApiBase {
 	}
 
 	/*
-	 * Indicates whether this module requires write mode
+	 * Set to false for all read modules
+	 *
 	 * @return bool
 	 */
 	public function isWriteMode() {
+		try {
+			$params = $this->extractRequestParams();
+			if ( !isset( $params['task'] ) ) {
+				return true;
+			}
+			$task = $params['task'];
+			if ( in_array( $task, $this->aReadTasks ) ) {
+				return false;
+			}
+		} catch ( ApiUsageException $ex ) {
+			return true;
+		}
+
 		return true;
 	}
 
