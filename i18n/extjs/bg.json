@@ -35,12 +35,12 @@
 	"bs-extjs-filter-date-on": "На",
 	"bs-extjs-filter-date-filter": "Филтър",
 	"bs-extjs-pageexport-dialog-title": "Изнасяне на страници",
-	"bs-extjs-pageexport-list-name-label": "Име на списък",
-	"bs-extjs-pageexport-list-format-label": "Формат на списък",
+	"bs-extjs-pageexport-list-name-label": "Име на списъка",
+	"bs-extjs-pageexport-list-format-label": "Формат на списъка",
 	"bs-extjs-pageexport-list-format-plain-label": "Обикновен текст",
 	"bs-extjs-pageexport-list-format-link-label": "Препратка",
 	"bs-extjs-pageexport-overwrite-label": "Презаписване",
-	"bs-extjs-pageexport-general-error": "Изнасяне на грешка",
+	"bs-extjs-pageexport-general-error": "Грешка при изнасяне",
 	"bs-extjs-tools-trigger-text": "Инструменти",
-	"bs-extjs-flyout-tab-thumbs-label": "Миниатюра"
+	"bs-extjs-flyout-tab-thumbs-label": "Миниатюри"
 }

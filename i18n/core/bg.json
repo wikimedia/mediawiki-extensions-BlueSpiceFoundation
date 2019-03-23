@@ -15,9 +15,9 @@
 	"bs-userpagesettings-legend": "Потребителски настройки",
 	"bs-exception-view-heading": "Възникна грешка",
 	"bs-exception-view-text": "Обработвайки заявката Ви, се появи следната грешка:",
-	"bs-exception-view-stacktrace-toggle-show-text": "Показване на подробности за грешката",
-	"bs-exception-view-stacktrace-toggle-hide-text": "Скриване на подробности за грешката",
-	"bs-viewtagerrorlist-legend": "$1 - Грешка",
+	"bs-exception-view-stacktrace-toggle-show-text": "Показване подробностите на грешката",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Скриване подробностите на грешката",
+	"bs-viewtagerrorlist-legend": "$1 – Грешка",
 	"bs-imagepage-download-text": "Изтегляне",
 	"bs-ns": "Именно пространство",
 	"bs-graphicallist-action-close": "Затваряне"
