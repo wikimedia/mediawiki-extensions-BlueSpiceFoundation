@@ -234,7 +234,7 @@ Ext.define( 'BS.dialog.PageExport', {
 					me.targetPageContent + "\n" + me.formattedExportContent;
 		}
 
-		savePageAPI.postWithToken( 'edit', {
+		savePageAPI.postWithToken( 'csrf', {
 			action: 'edit',
 			title: me.targetTitle.getPrefixedText(),
 			summary: mw.message( 'bs-extjs-pageexport-edit-summary-text' ).plain(),
