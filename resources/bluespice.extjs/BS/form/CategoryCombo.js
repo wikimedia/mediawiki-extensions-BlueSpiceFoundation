@@ -21,7 +21,7 @@ Ext.define( 'BS.form.CategoryCombo', {
 				url: bs.api.makeUrl( 'bs-category-store' ),
 				reader: {
 					type: 'json',
-					root: 'results',
+					rootProperty: 'results',
 					idProperty: 'cat_id'
 				},
 				extraParams: {
