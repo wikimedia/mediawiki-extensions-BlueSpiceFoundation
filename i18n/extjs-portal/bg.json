@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"DCLXVI"
+			"DCLXVI",
+			"Ted Masters"
 		]
 	},
+	"bs-extjs-portal-height": "Височина",
+	"bs-extjs-portal-timespan": "Времеви обсег",
 	"bs-extjs-portal-timespan-week": "Седмица",
-	"bs-extjs-portal-timespan-month": "Месец"
+	"bs-extjs-portal-timespan-month": "Месец",
+	"bs-extjs-portal-timespan-alltime": "За всички времена"
 }

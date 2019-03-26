@@ -1,11 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"StanProg"
+			"StanProg",
+			"Ted Masters"
 		]
 	},
+	"bs-filerepo-labelupload": "Качване",
+	"bs-filerepo-labelfilter": "Филтриране",
+	"bs-filerepo-headerfilename": "Име на файл",
+	"bs-filerepo-headerfilesize": "Размер",
+	"bs-filerepo-headerpagecategories": "Категории",
+	"bs-filerepo-headerfilewidth": "Ширина",
+	"bs-filerepo-headerfileheight": "Височина",
+	"bs-filerepo-headerfilemimetype": "MIME тип",
 	"bs-filerepo-headerfileusertext": "Потребител",
+	"bs-filerepo-headerfileextension": "Разширение",
+	"bs-filerepo-headerfiletimestamp": "Качено",
+	"bs-filerepo-headerfilemediatype": "Тип медия",
 	"bs-filerepo-headerfiledescription": "Описание",
+	"bs-filerepo-headerfilethumbnail": "Миниатюра",
 	"bs-filerepo-yes": "Да",
 	"bs-filerepo-no": "Не",
 	"bs-filerepo-pagesize": "Записи на страницата"

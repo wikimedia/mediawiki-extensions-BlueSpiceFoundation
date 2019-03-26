@@ -20,5 +20,8 @@
 	"bs-viewtagerrorlist-legend": "$1 – Грешка",
 	"bs-imagepage-download-text": "Изтегляне",
 	"bs-ns": "Именно пространство",
-	"bs-graphicallist-action-close": "Затваряне"
+	"bs-graphicallist-action-close": "Затваряне",
+	"bs-graphicallist-action-list": "Списък",
+	"bs-graphicallist-action-preview": "Предварителен преглед",
+	"bs-notifications-agent-anon": "анонимен потребител"
 }
