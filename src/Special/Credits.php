@@ -85,7 +85,7 @@ class Credits extends \BlueSpice\SpecialPage {
 		);
 		$translators = \BsCacheHelper::get( $key );
 
-		if ( $translators ) {
+		if ( $translators !== false ) {
 			wfDebugLog(
 				'BsMemcached',
 				__CLASS__ . ': Fetching translators from cache'
@@ -95,7 +95,7 @@ class Credits extends \BlueSpice\SpecialPage {
 				'BsMemcached',
 				__CLASS__ . ': Fetching translators from DB'
 			);
-			$this->generateTranslatorsList();
+			$translators = $this->generateTranslatorsList();
 			// Keep list for one day
 			\BsCacheHelper::set( $key, $translators, 86400 );
 		}
@@ -153,6 +153,12 @@ class Credits extends \BlueSpice\SpecialPage {
 	protected function readInTranslatorsFile( $content, &$translators ) {
 		foreach ( $content as $data ) {
 			if ( !$data instanceof \stdClass || empty( $data->authors ) ) {
+				continue;
+			}
+			if ( is_string( $data->authors ) ) {
+				$data->authors = [ $data->authors ];
+			}
+			if ( !is_array( $data->authors ) ) {
 				continue;
 			}
 
