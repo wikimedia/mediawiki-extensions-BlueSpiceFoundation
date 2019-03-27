@@ -24,7 +24,7 @@ Ext.define('BS.action.APIEditPage', {
 		this.fireEvent( 'beforesaveedit', this, edit );
 
 		var editPageAPI = new mw.Api();
-		editPageAPI.postWithToken( 'edit', {
+		editPageAPI.postWithToken( 'csrf', {
 			'action': 'edit',
 			'title': edit.title,
 			'text': edit.content,
