@@ -31,11 +31,7 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 	protected function makeOptions( $params ) {
 		$this->options = [];
 		foreach ( $this->groups as $group ) {
-			$groupDisplay = $group;
 			$msg = Message::newFromKey( "group-$group" );
-			if( $msg->exists() ) {
-				$groupDisplay = $msg->plain()." ($group)";
-			}
 			$this->options[$group] = $msg->exists()
 				? "{$msg->plain()} ($group)"
 				: $group;
