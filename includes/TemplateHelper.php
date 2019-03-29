@@ -34,7 +34,14 @@ class BSTemplateHelper {
 	protected static $sSeparator = '.';
 	protected static $sFileExt = '.mustache';
 
-	protected static function makeFullExtTemplatePathFromExtName( $sExtName ) {
+	protected static function makeFullExtTemplatePathFromExtName( $sExtName, $config = [] ) {
+		if ( isset( $config['type'] ) && $config['type'] === 'skin' ) {
+			return [
+				$GLOBALS['wgStyleDirectory'],
+				$sExtName,
+				static::$sTemplatePath
+			];
+		}
 		$registry = MediaWikiServices::getInstance()->getService(
 			'BSExtensionRegistry'
 		);
@@ -57,6 +64,19 @@ class BSTemplateHelper {
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
+		foreach( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+			if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
+				continue;
+			}
+			if ( $thing['name'] !== $sExtName ) {
+				continue;
+			}
+			$aExtensions[$thing['name']]['extPath'] = str_replace(
+				'/skin.json',
+				'',
+				$thing['path']
+			);
+		}
 		if( !isset($aExtensions[$sExtName]) ) {
 			throw new BsException( "Unknowen Extension $sExtName" );
 		}
@@ -102,7 +122,17 @@ class BSTemplateHelper {
 				$GLOBALS['bsgTemplates'][$sTplName]
 			);
 		} else {
-			$aTplDir = static::makeFullExtTemplatePathFromExtName( $sExtName );
+			$config = [];
+			foreach( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+				if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
+					continue;
+				}
+				if ( $thing['name'] !== $sExtName ) {
+					continue;
+				}
+				$config = $thing;
+			}
+			$aTplDir = static::makeFullExtTemplatePathFromExtName( $sExtName, $config );
 		}
 
 		$sTemplateDir = implode('/', $aTplPath );
@@ -122,10 +152,17 @@ class BSTemplateHelper {
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
+		foreach( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+			if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
+				continue;
+			}
+			$aExtensions[$thing['name']] = $thing;
+		}
 		foreach( $aExtensions as $sExtName => $aConfig ) {
 			try {
 				$aTplDir = static::makeFullExtTemplatePathFromExtName(
-					$sExtName
+					$sExtName,
+					$aConfig
 				);
 			} catch( Exception $e ) {
 				continue;
