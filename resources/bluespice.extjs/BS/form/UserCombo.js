@@ -44,7 +44,7 @@ Ext.define( 'BS.form.UserCombo', {
 					direction: 'ASC'
 				}],
 				sortOnLoad: true,
-				remoteSort: false,
+				remoteSort: true,
 				remoteFilter: true
 			});
 		}
