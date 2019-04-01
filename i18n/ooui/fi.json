@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pyscowicz"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Lisää uusi...",
+	"bs-ooui-key-value-input-widget-key-label": "Avain",
+	"bs-ooui-key-value-input-widget-value-label": "Arvo",
+	"bs-ooui-key-value-input-widget-add-button-label": "Lisää",
+	"bs-ooui-key-value-input-widget-add-form-label": "Lisää uusi merkintä"
+}
