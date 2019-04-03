@@ -25,26 +25,32 @@
  */
 
 /**
+ * DEPRECATED!
  * BsPARAMOPTION
  *
  * Options for BsCore::sanitize(), BsCore::sanitizeArrayEntry()
  * and BsCore::getParam()
+ * @deprecated since version 3.1
  */
 class BsPARAMOPTION {
 	/**
+	 * DEPRECATED!
 	 * BsPARAMOPTION::DEFAULT_ON_ERROR
 	 *
 	 * For use with BsCore::getParam(). If type checking results in an error,
 	 * the provided default value is returned.
 	 * By default it is attempted to sanitize the value, even if type checking
 	 * fails.
+	 * @deprecated since version 3.1
 	 */
 	const DEFAULT_ON_ERROR = 524288;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMOPTION::CLEANUP_STRING
 	 * Attempt to sanitize the value, even if type checking
 	 * fails.
+	 * @deprecated since version 3.1
 	 */
 	const CLEANUP_STRING   = 1048576;
 }

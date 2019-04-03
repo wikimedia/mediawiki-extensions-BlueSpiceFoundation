@@ -25,94 +25,122 @@
  */
 
 /**
+ * DEPRECATED!
  * Enum BsPARAMTYPE
  * Option for BsCore::getParam(), BsCore::sanitize() and
  * BsCore::sanitizeArrayEntry().
+ * @deprecated since version 3.1
  */
 class BsPARAMTYPE {
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::RAW
 	 * No type checking.
+	 * @deprecated since version 3.1
 	 */
 	const RAW           =    64;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::INT
 	 * Parameter has to be of type Int/Integer.
+	 * @deprecated since version 3.1
 	 */
 	const INT           =    128;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::FLOAT
 	 * Parameter has to be of type Float.
+	 * @deprecated since version 3.1
 	 */
 	const FLOAT         =    256;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::NUMERIC
 	 * Parameter has to be numeric.
+	 * @deprecated since version 3.1
 	 */
 	const NUMERIC       =    512;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::BOOL
 	 * Parameter has to be of type Boolean.
+	 * @deprecated since version 3.1
 	 */
 	const BOOL          =    1024;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::STRING
 	 * Parameter has to be of type String.
+	 * @deprecated since version 3.1
 	 */
 	const STRING        =   2048;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::SQL_STRING
 	 * Parameter has to be of type String.
 	 * Several operations will be executed to prevent SQL injection by this
 	 * value.
+	 * @deprecated since version 3.1
 	 */
 	const SQL_STRING    =   4096;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::ARRAY_MIXED
 	 * Parameter has to be an Array.
 	 * There will be no type checking of the contained values.
+	 * @deprecated since version 3.1
 	 */
 	const ARRAY_MIXED   =   8192;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::INT
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type Int/Integer.
+	 * @deprecated since version 3.1
 	 */
 	const ARRAY_INT     =  16384;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::ARRAY_FLOAT
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type Float.
+	 * @deprecated since version 3.1
 	 */
 	const ARRAY_FLOAT   =  32768;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::ARRAY_NUMERIC
 	 * Parameter has to be an Array.
 	 * Each contained value has to be numeric.
+	 * @deprecated since version 3.1
 	 */
 	const ARRAY_NUMERIC =  65536;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::ARRAY_BOOL
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type Boolean.
+	 * @deprecated since version 3.1
 	 */
 	const ARRAY_BOOL    = 131072;
 
 	/**
+	 * DEPRECATED!
 	 * BsPARAMTYPE::ARRAY_STRING
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type String.
+	 * @deprecated since version 3.1
 	 */
 	const ARRAY_STRING  = 262144;
 }
