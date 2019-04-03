@@ -351,10 +351,16 @@
 				"bluespice/bluespice.css",
 				"bluespice/bluespice.icons.css",
 				"bluespice/bluespice.ui.basic.less",
-				"bluespice/bluespice.treepanel.less",
-				"famfamfam/flags.css"
+				"bluespice/bluespice.treepanel.less"
 			],
 			"class": "\\BlueSpice\\ResourceModule\\LessVars"
+		},
+		"ext.bluespice.flags.styles": {
+			"localBasePath": "resources",
+			"remoteExtPath": "BlueSpiceFoundation/resources",
+			"styles": [
+				"famfamfam/flags.css"
+			]
 		},
 		"ext.bluespice.extjs.BS.portal": {
 			"localBasePath": "resources",
