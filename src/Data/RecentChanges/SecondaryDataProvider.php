@@ -45,9 +45,10 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		}
 
 		$diffQuery = [
+			'type' => 'revision',
 			'curid' => $rawData->cur_id,
-			'oldid' => $rawData->this_oldid,
-			'diff' => $rawData->last_oldid
+			'oldid' => $rawData->last_oldid,
+			'diff' => $rawData->this_oldid
 		];
 		$rawData->diff_url = $title->getFullURL( $diffQuery );
 		$rawData->diff_link =
