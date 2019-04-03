@@ -1,7 +1,20 @@
 <?php
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.1 - Use ParamProcessor instead
+ */
 class BsValidatorMwGroupnamePlugin implements BsValidatorPlugin {
+
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use ParamProcessor instead
+	 * @param mixed $mwGroupname the value to be checked against
+	 * @param array $options
+	 * @return BsValidatorResponse If type is not BsValidatorResponse an error is thrown
+	 */
 	public static function isValid( $mwGroupname, $options ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( strlen( $mwGroupname ) > 16 )
 			return new BsValidatorResponse( 1, 'GroupManager', 'grp_2long' );
 		if ( $mwGroupname == '' )
