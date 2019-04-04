@@ -20,6 +20,7 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría no válida|Categorías no válidas}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Se establecieron las categorías con éxito.",
 	"apihelp-bs-wikipage-store-description": "Lista todas las páginas del wiki. Permite ordenar, filtrar y paginar. Implementa parámetros de almacenamiento ExtJS.",
+	"apihelp-bs-wikipage-store-summary": "Enumera todas las páginas del wiki. Permite ordenarlas, filtrarlas y paginarlas. Implanta parámetros de la ExtJS Store.",
 	"apihelp-bs-wikisubpage-treestore-description": "Lista las subpáginas de una página wiki específica",
 	"apihelp-bs-wikisubpage-treestore-summary": "Enumera las subpáginas de una página concreta del wiki",
 	"apihelp-bs-wikisubpage-treestore-param-node": "El título con prefijo de la página wiki",
