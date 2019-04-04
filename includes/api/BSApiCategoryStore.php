@@ -98,7 +98,27 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 
 		ksort( $aCategories );
 		$aCategories = array_values( $aCategories );
+		$aCategories = array_filter( $aCategories, [ $this, 'filterCategoriesCallback' ] );
 
 		return $aCategories;
+	}
+
+	/**
+	 * @param string $categoryData
+	 * @return bool
+	 */
+	protected function filterCategoriesCallback( $categoryData ) {
+		$query = trim( $this->getParameter( 'query' ) );
+		if( empty( $query ) || !is_string( $query ) ) {
+			return true;
+		}
+
+		$doesContain = BsStringHelper::filter(
+			BsStringHelper::FILTER_CONTAINS,
+			$categoryData->cat_title,
+			$query
+		);
+
+		return $doesContain;
 	}
 }
