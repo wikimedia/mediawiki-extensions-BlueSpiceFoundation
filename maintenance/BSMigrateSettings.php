@@ -2,6 +2,8 @@
 
 require_once( 'BSMaintenance.php' );
 
+use Wikimedia\Rdbms\DBQueryError;
+
 class BSMigrateSettings extends LoggedUpdateMaintenance {
 
 	protected function noDataToMigrate() {
@@ -29,7 +31,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 			$newName = $this->makeNewName( $oldName );
 			$newValue = $this->convertValue( $oldValue );
 			$skip = false;
-			\Hooks::run( 'BSMigrateSettingsFromDeviatingNames', [
+			Hooks::run( 'BSMigrateSettingsFromDeviatingNames', [
 				$oldName,
 				&$newName,
 				$oldValue,
@@ -102,7 +104,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		$dbValues = [];
 		foreach( $this->newData as $newName => $newValue ) {
 			$set = false;
-			\Hooks::run( 'BSMigrateSettingsSetNewSettings', [
+			Hooks::run( 'BSMigrateSettingsSetNewSettings', [
 				$newName,
 				$newValue,
 				&$set
@@ -116,25 +118,16 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 			}
 		}
 
-		$this->getDB( DB_MASTER )->insert( 'bs_settings3', $dbValues );
-		\Hooks::run( 'BSMigrateSettingsSaveNewSettings', [ $this->newData ] );
+		try {
+			$this->getDB( DB_MASTER )->insert( 'bs_settings3', $dbValues );
+			Hooks::run( 'BSMigrateSettingsSaveNewSettings', [ $this->newData ] );
+		} catch ( DBQueryError $ex ) {
+			$this->output( "bs_settings -> bs_settings3: {$ex->getMessage()}" );
+		}
 	}
 
 	protected function convertValue( $serializedValue ) {
 		$newValue = unserialize( $serializedValue );
-		/*if( is_int(  $newValue ) ) {
-			$newValue = (int) $newValue;
-		}
-		if( is_array( $newValue ) ) {
-			$newArray = [];
-			foreach( $newValue as $key => $element ) {
-				$newArray[$key] = $this->convertValue( $element );
-			}
-			$newValue = $newArray;
-		}
-		if( is_bool( $newValue ) ) {
-			$newValue = (bool) $newValue;
-		}*/
 
 		return FormatJson::encode( $newValue );
 	}
@@ -148,7 +141,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		$this->readOldData();
 		$this->convertData();
 		$this->saveConvertedData();
-
 		return true;
 	}
 
