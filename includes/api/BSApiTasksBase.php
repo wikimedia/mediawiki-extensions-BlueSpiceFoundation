@@ -1,5 +1,6 @@
 <?php
 /**
+ * DEPRECATED!
  * Provides the base task api for BlueSpice.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -18,6 +19,9 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
+ * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
+ * the TaskRegistry in extension.json to be able to call your task in the new
+ * generic task api BlueSpice\Api\Task with 'bs-task'
  * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    Bluespice_Foundation
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
@@ -88,25 +92,35 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	protected $oTasksSpec = null;
 
 	/**
+	 * DEPRECATED!
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName Name of this module
 	 * @param string $modulePrefix Prefix to use for parameter names
+	 * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
+	 * the TaskRegistry in extension.json to be able to call your task in the new
+	 * generic task api BlueSpice\Api\Task with 'bs-task'
 	 */
 	public function __construct( \ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		$this->oTasksSpec = new BSTasksApiSpec( $this->aTasks );
 		parent::__construct( $mainModule, $moduleName, $modulePrefix );
 	}
 
 	/**
+	 * DEPRECATED!
 	 * The execute() method will be invoked directly by ApiMain immediately
 	 * before the result of the module is output. Aside from the
 	 * constructor, implementations should assume that no other methods
 	 * will be called externally on the module before the result is
 	 * processed.
+	 * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
+	 * the TaskRegistry in extension.json to be able to call your task in the new
+	 * generic task api BlueSpice\Api\Task with 'bs-task'
 	 * @return null
 	 */
 	public function execute() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$aParams = $this->extractRequestParams();
 
 		/**
