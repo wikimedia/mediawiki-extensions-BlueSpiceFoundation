@@ -6,6 +6,10 @@
  * @author Mathias Scheer
  */
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.1 - Use ParamProcessor instead
+ */
 class BsValidatorResponse {
 
 	// TODO MRG20100816: Kurzer Kommentar, was der Zweck der Variablen ist.
@@ -16,12 +20,15 @@ class BsValidatorResponse {
 	protected $mI18NRenderedString = null;
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use ParamProcessor instead
 	 * @param int $errorcode HAS TO BE (int) '0' if no error occurred
 	 * @param string|null $sI18NInstanceName Name of BsI18N-Instance in Blue spice's mechanism for internationalization, where message translation can be found
 	 * @param string|null $sI18NMessageKey key for BsI18N translation of error
 	 * @param mixed|null $vI18NTokens spoken-word-params for BsI18N, can be single string or array with numeric keys
 	 */
 	public function __construct( $errorcode, $sI18NInstanceName = null, $sI18NMessageKey = null, $vI18NTokens = null ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->mErrorcode = $errorcode;
 		$this->mI18NInstanceName = $sI18NInstanceName;
 		$this->mI18NMessageKey = $sI18NMessageKey;
@@ -29,16 +36,22 @@ class BsValidatorResponse {
 	}
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use ParamProcessor instead
 	 * @return int Is 0 if no error occurred
 	 */
 	public function getErrorCode() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return $this->mErrorcode;
 	}
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use ParamProcessor instead
 	 * @return string Human readable errormessage in User's language
 	 */
 	public function getI18N() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( is_null( $this->mI18NInstanceName ) ) {
 			return false;
 		}
