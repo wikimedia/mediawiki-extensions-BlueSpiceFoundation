@@ -22,16 +22,24 @@
 // und BsException::SOLR=2 ebenso wie BsException::FATALERROR=16 als bitkodierte Konstanten der Klasse definieren. Eine
 // BsException würde dann wie folgt geworfen:
 // throw new BsException( 'Can not connect to search server', BsException::SOLR|BsException::FATAL );
+
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.1
+ */
 class BsException extends Exception {
 
 	protected $sMessage = '';
 	/**
+	 * DEPRECATED!
 	 * Extended constructor method of the BsException class.
+	 * @deprecated since version 3.1
 	 * @param String $sMessage The literal message fore the exception, or a I18N key for the provided I18N repository object
 	 * @param Integer $iCode Classic errorcode
 	 * @param Exception|null $oPreviousException For use in a chain of try-catch blocks.
 	 */
 	public function __construct( $sMessage = '', $iCode = 0, Exception $oPreviousException = null ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->sMessage = $sMessage;
 
 		if ( $oPreviousException === null ) {
@@ -40,8 +48,14 @@ class BsException extends Exception {
 			parent::__construct( $sMessage, $iCode, $oPreviousException ); // results in fatal error if $oPreviousException === null
 		}
 	}
-	
+
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1
+	 * @return string
+	 */
 	public function getLogMessage() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return $this->sMessage;
 	}
 
