@@ -38,7 +38,6 @@ class ListUserEmails extends BSMaintenance {
 		}
 		$this->output( count($aUserMails)." users found\n" );
 		$this->output( implode( $sDelimiter, $aUserMails ) );
-		return;
 	}
 	
 	private function getUserData() {

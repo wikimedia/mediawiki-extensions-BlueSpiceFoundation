@@ -29,27 +29,27 @@ class ViewBaseForm extends ViewBaseElement {
 		$this->_mAutoElement = 'form';
 	}
 
-	public function renderAsExtFormPanel($state = true) {
+	public function renderAsExtFormPanel( $state = true ) {
 		$this->_mRenderAsExt = $state;
 		return $this;
 	}
 
-	public function setActionUrl($url) {
+	public function setActionUrl( $url ) {
 		$this->_mActionUrl = $url;
 		return $this;
 	}
 
-	public function setMethod($method) {
+	public function setMethod( $method ) {
 		$this->_mMethod = $method;
 		return $this;
 	}
 
-	public function setEnctype($enc) {
+	public function setEnctype( $enc ) {
 		$this->_mEnctype = $enc;
 		return $this;
 	}
 
-	public function setValidationUrl($url) {
+	public function setValidationUrl( $url ) {
 		$this->_mValidationUrl = $url;
 		return $this;
 	}

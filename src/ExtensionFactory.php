@@ -101,7 +101,6 @@ class ExtensionFactory {
 			$name,
 			$this->extensionRegistry->getExtensionDefinitionByName( $name )
 		);
-		return;
 	}
 
 	/**

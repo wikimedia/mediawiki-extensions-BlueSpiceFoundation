@@ -518,7 +518,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @param string $text
 	 * @return array Links texts for requested category
 	 */
-	protected function findCategoryLinksInText( $category,$text ) {
+	protected function findCategoryLinksInText( $category, $text ) {
 		$categoryTitle = Title::makeTitle( NS_CATEGORY, $category );
 		if( $categoryTitle instanceof Title === false ) {
 			return [];
@@ -554,7 +554,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @param array $aParams
 	 * @return \BlueSpice\Api\Response\Standard
 	 */
-	protected function task_getDiscussionCount( $oTaskData, $aParams  ) {
+	protected function task_getDiscussionCount( $oTaskData, $aParams ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$oResponse = $this->makeStandardReturn();
 
@@ -573,7 +573,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @param stdClass $oTaskData
 	 * @return Title
 	 * @throws MWException
-	 * @todo: Maybe have this logic in "parent::getTitle" altogether
+	 * @todo Maybe have this logic in "parent::getTitle" altogether
 	 */
 	protected function getTitleFromTaskData( $oTaskData ) {
 		$oTitle = null;
@@ -614,7 +614,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @param array $aParams
 	 * @return \BlueSpice\Api\Response\Standard
 	 */
-	protected function task_getTemplateTree( $oTaskData, $aParams  ) {
+	protected function task_getTemplateTree( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
 
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );

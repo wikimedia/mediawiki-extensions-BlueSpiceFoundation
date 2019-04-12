@@ -21,17 +21,17 @@ class ViewFormElementLabel extends ViewFormElement {
 	protected $_mForId = '';
 	protected $bUseAutoWidth = false;
 	
-	public function setFor($sForId) {
+	public function setFor( $sForId ) {
 		$this->_mForId = $sForId;
 		return $this;
 	}
 	
-	public function setText($sText) {
+	public function setText( $sText ) {
 		$this->_mData['text'] = $sText;
 		return $this;
 	}
 
-	public function execute($params = false) {		
+	public function execute( $params = false ) {		
 		$output = '<label id="'.$this->_mId.'" ';
 		if($this->bUseAutoWidth) {
 			$output .= 'class="label_use_auto_width" ';
@@ -43,7 +43,7 @@ class ViewFormElementLabel extends ViewFormElement {
 		return $output;
 	}
 	
-	public function useAutoWidth($bUseAutoWidth = true) {
+	public function useAutoWidth( $bUseAutoWidth = true ) {
 		$this->bUseAutoWidth = $bUseAutoWidth;
 	}
 }

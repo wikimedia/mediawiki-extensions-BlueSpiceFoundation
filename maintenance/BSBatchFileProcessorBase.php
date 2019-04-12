@@ -108,5 +108,5 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	 *
 	 * @param SplFileInfo $oFile
 	 */
-	public abstract function processFile($oFile);
+	public abstract function processFile( $oFile );
 }

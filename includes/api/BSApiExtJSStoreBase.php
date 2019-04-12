@@ -207,7 +207,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 		);
 	}
 
-	protected function getParameterFromSettings($paramName, $paramSettings, $parseLimit) {
+	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
 		//Unfortunately there is no way to register custom types for parameters
 		if( in_array( $paramName, array( 'sort', 'group', 'filter', 'context' ) ) ) {
@@ -518,7 +518,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	 * @param array $aProcessedData
 	 * @return array The sorted results
 	 */
-	public function sortData($aProcessedData) {
+	public function sortData( $aProcessedData ) {
 		$aSort = $this->getParameter('sort');
 		$iCount = count( $aSort );
 		$aUnsortableProps = $this->getPropertyNamesBySpecValue(

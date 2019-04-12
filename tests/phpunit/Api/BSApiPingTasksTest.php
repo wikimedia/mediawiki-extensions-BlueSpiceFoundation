@@ -62,7 +62,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	 * @param integer $iRevision
 	 * @param array $aSingleResult
 	 */
-	public static function onBsAdapterAjaxPingResult ( $sRef, $aData, $iArticleId, $sTitle, $iNamespace, $iRevision, &$aSingleResult) {
+	public static function onBsAdapterAjaxPingResult ( $sRef, $aData, $iArticleId, $sTitle, $iNamespace, $iRevision, &$aSingleResult ) {
 		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
 
 		if( $iArticleId != $oTitle->getArticleID() ) {

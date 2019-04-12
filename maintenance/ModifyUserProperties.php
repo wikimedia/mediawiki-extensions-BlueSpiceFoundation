@@ -65,7 +65,7 @@ function modifyPropertiesController( $bDry, $options ) {
 	updateUserProperties($aUserStore, $options, $bDry);
 }
 
-function updateUserProperties($aUserStore, $options, $bDry) {
+function updateUserProperties( $aUserStore, $options, $bDry ) {
 	$oDbw = wfGetDB( DB_MASTER );
 	
 	$iCounter = count($aUserStore);
@@ -97,7 +97,7 @@ function displayMPCResult( $aUserStore ) {
 			echo $aUser["name"].": ".$aUser["value"].$sSetvalue."\n";
 		}
 }
-function getMPCUserValue( $aUserStore, $property, $filtervalue=false ) {
+function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 	
 	$oDbr = wfGetDB( DB_REPLICA );
 	

@@ -54,7 +54,7 @@ abstract class UploadVerifyFile extends Hook {
 	 * @param true | array $error
 	 * @return boolean
 	 */
-	public static function callback( $upload, $mime, &$error  ) {
+	public static function callback( $upload, $mime, &$error ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
