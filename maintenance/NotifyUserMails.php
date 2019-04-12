@@ -80,7 +80,7 @@ function getUser( $sGivenUser ) {
 	return $aUser;
 }
 
-function NotifyUser($aUserStore, $options, $bDry) {
+function NotifyUser( $aUserStore, $options, $bDry ) {
 	$oDbw = wfGetDB( DB_MASTER );
 	
 	$iCounter = count($aUserStore);

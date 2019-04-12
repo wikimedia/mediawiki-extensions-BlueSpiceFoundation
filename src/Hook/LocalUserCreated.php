@@ -24,7 +24,7 @@ abstract class LocalUserCreated extends \BlueSpice\Hook {
 	 * @param bool $autocreated
 	 * @return bool Always true to keep hook running
 	 */
-	public static function callback( User $user, $autocreated  ) {
+	public static function callback( User $user, $autocreated ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

@@ -838,7 +838,7 @@ class BsConfig {
 	 * @param string $sSection
 	 * @return array
 	 */
-	public function getFieldDefinition( $sSection) {
+	public function getFieldDefinition( $sSection ) {
 		$aField = array(
 			'type' => $this->getFieldMapping(),
 			'label-message' => $this->getI18nName(), // a system message

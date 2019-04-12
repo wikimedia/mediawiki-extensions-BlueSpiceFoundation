@@ -29,7 +29,7 @@ class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 	}
 
 
-	private function reValidate( $value, $aOptions) {
+	private function reValidate( $value, $aOptions ) {
 		$aValidated = array();
 
 		foreach( $value as $sValue ) {

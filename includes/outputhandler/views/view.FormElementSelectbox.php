@@ -16,7 +16,7 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewFormElementSelectbox extends ViewFormElement {
-	public function execute($params = false) {
+	public function execute( $params = false ) {
 		$output = '';
 		if($this->_mLabel != '') {
 			$output .= '<label for="'.$this->_mId.'">'.$this->_mLabel.':</label>'."\n";

@@ -60,7 +60,7 @@ abstract class WebResponseSetCookie extends Hook {
 	 * @param array $options
 	 * @return boolean
 	 */
-	public static function callback( &$name, &$value, &$expire, &$options  ) {
+	public static function callback( &$name, &$value, &$expire, &$options ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

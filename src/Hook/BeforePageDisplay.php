@@ -47,7 +47,7 @@ abstract class BeforePageDisplay extends Hook {
 	 * @param \Skin $skin
 	 * @return boolean
 	 */
-	public static function callback( &$out, &$skin  ) {
+	public static function callback( &$out, &$skin ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

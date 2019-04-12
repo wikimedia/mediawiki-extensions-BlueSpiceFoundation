@@ -91,7 +91,7 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		return $aProcessedData;
 	}
 
-	public function makeDataSet($row) {
+	public function makeDataSet( $row ) {
 		if( !$oTitle = Title::newFromRow($row) ) {
 			return false;
 		}

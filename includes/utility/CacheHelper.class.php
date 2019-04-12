@@ -89,7 +89,6 @@ class BsCacheHelper {
 	 * @deprecated since version 3.1.0 - Was never in use by any extension.
 	 */
 	public static function invalidateAllCaches() {
-		return;
 	}
 
 }

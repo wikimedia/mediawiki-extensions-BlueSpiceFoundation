@@ -344,7 +344,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		return $aTrimmedData;
 	}
 
-	public function filterString($oFilter, $aDataSet) {
+	public function filterString( $oFilter, $aDataSet ) {
 		$aSpecialFilterFields = [ 'page_categories', 'page_categories_links' ];
 		if( !in_array( $oFilter->field, $aSpecialFilterFields ) ) {
 			return parent::filterString( $oFilter, $aDataSet );

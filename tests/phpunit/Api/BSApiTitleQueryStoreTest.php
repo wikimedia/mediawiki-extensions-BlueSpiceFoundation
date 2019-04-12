@@ -83,7 +83,7 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	 * @param int $limit
 	 * @param int $offset
 	 */
-	public function testPaging($limit, $offset) {
+	public function testPaging( $limit, $offset ) {
 		parent::testPaging($limit, $offset);
 	}
 

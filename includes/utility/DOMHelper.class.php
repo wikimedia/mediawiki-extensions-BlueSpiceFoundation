@@ -158,7 +158,7 @@ class BsDOMHelper {
 	 * @return boolean true on success, false if the operation could not be
 	 * performed
 	 */
-	public static function removeElement($oEl) {
+	public static function removeElement( $oEl ) {
 		if( !is_object( $oEl ) ) {
 			return false;
 		}

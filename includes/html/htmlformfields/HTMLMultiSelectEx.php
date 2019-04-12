@@ -106,7 +106,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $html;
 	}
 
-	function formatOptions( $options, $value, $class="multiselectex" ) {
+	function formatOptions( $options, $value, $class = "multiselectex" ) {
 		$select = new XmlMultiSelect( $this->mName . '[]', $this->mID, $value );
 		$select->setAttribute('size', 5);
 		$select->setAttribute('multiple', 'true');

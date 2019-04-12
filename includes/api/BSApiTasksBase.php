@@ -332,7 +332,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 		);
 	}
 
-	protected function getParameterFromSettings($paramName, $paramSettings, $parseLimit) {
+	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
 		//Unfortunately there is no way to register custom types for parameters
 		if ( in_array( $paramName, array( 'taskData', 'context' ) ) ) {

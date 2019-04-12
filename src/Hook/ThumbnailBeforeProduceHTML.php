@@ -53,7 +53,7 @@ abstract class ThumbnailBeforeProduceHTML extends Hook {
 	 * @param array $linkAttribs
 	 * @return boolean Always true to keep hook running
 	 */
-	public static function callback( $thumbnail, &$attribs, &$linkAttribs  ) {
+	public static function callback( $thumbnail, &$attribs, &$linkAttribs ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

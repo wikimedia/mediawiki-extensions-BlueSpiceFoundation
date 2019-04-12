@@ -24,32 +24,32 @@ class ViewFormElement extends ViewBaseElement {
 	protected $_mType			= '';
 	protected $_mValue			= '';
 
-	public function setLabel($label) {
+	public function setLabel( $label ) {
 		$this->_mLabel = $label;
 		return $this;
 	}
 
-	public function setLabelSeparator($separator) {
+	public function setLabelSeparator( $separator ) {
 		$this->_mLabelSeparator = $separator;
 		return $this;
 	}
 
-	public function setName($name) {
+	public function setName( $name ) {
 		$this->_mName = $name;
 		return $this;
 	}
 
-	public function setType($type) {
+	public function setType( $type ) {
 		$this->_mType = $type;
 		return $this;
 	}
 
-	public function setValue($value) {
+	public function setValue( $value ) {
 		$this->_mValue = $value;
 		return $this;
 	}
 
-	public function execute($params = false) {
+	public function execute( $params = false ) {
 		return '';
 	}
 }

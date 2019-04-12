@@ -31,7 +31,7 @@ if(trim($line) != 'yes') exit("ABORTING!".PHP_EOL);
 
 $oldcatspatterns = array_map('old_to_regex', $oldcats);
 
-function old_to_regex($rawcat) {
+function old_to_regex( $rawcat ) {
 	$rawcat = trim($rawcat);
 	$rawcat = preg_quote($rawcat, '#'); # escape special regex characters plus the hash delimiter we'll use
 	$rawcat = '\[\[(:?Kategorie|:?Category):' . $rawcat . '\]\]'; # note: links to category pages begin with [[:
@@ -44,7 +44,7 @@ var_dump($oldcatspatterns);
 
 $newcatspatterns = array_map('new_to_pattern', $newcats);
 
-function new_to_pattern($rawcat) {
+function new_to_pattern( $rawcat ) {
 	$rawcat = trim($rawcat);
 	$rawcat = '[[$1:' . $rawcat . ']]';
 	return $rawcat;
@@ -54,7 +54,7 @@ var_dump($newcatspatterns);
 
 $oldtitlepatterns = array_map('oldtitle_to_regex', $oldcats);
 
-function oldtitle_to_regex($rawcat) {
+function oldtitle_to_regex( $rawcat ) {
 	$rawcat = trim($rawcat);
 	$rawcat = preg_quote($rawcat, '#'); # escape special regex characters plus the hash delimiter we'll use
 	$rawcat = preg_replace('# |_#', '[ _]', $rawcat); # spaces in cats may occur as space or underscore
@@ -66,7 +66,7 @@ var_dump($oldtitlepatterns);
 
 $newtitlepatterns = array_map('newtitle_to_pattern', $newcats);
 
-function newtitle_to_pattern($rawcat) {
+function newtitle_to_pattern( $rawcat ) {
 	$rawcat = trim($rawcat);
 	return $rawcat;
 }
@@ -329,8 +329,7 @@ while ($row = mysql_fetch_array($res->result))
 
 }
 
-function hw_error($msg)
-{
+function hw_error( $msg ) {
 	echo 'ERROR: '.$msg;
 	exit();
 }
