@@ -54,7 +54,9 @@ class ConfirmUserEMail extends Maintenance {
 				$condition 
 		);
 		
-		if( !$rRes ) return array();
+		if( !$rRes ) {
+			return array();
+		}
 		
 		$aUser = array();
 		while( $aRow = $oDbr->fetchRow( $rRes ) ) {
@@ -89,8 +91,9 @@ class ConfirmUserEMail extends Maintenance {
 					);
 				}
 				$aUserStore[$i]['setvalue'] = ' => confirmed';
+			} else {
+				$aUserStore[$i]['setvalue'] = '';
 			}
-			else $aUserStore[$i]['setvalue'] = '';
 		}
 
 		return $aUserStore;

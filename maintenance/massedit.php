@@ -91,25 +91,43 @@ $replace_with   = 'Template:';
 
 // Check valid user
 $wgUser = User::newFromName( $userName );
-if ( !$wgUser ) error("Invalid username");
+if ( !$wgUser ) {
+	error("Invalid username");
+}
 
 if ( $wgUser->isAnon() ) {
 	$wgUser->addToDatabase();
 }
 
 // Check conditions for validity
-if (isset($namespace_include) && isset($namespace_exclude)) error('You cannot include and exclude namespaces at the same time');
-if (isset($text_exclude) && isset($text_include)) error('You cannot include and exclude namespaces at the same time');
-if (isset($title_exclude) && isset($title_include)) error('You cannot include and exclude titles at the same time');
-if (isset($text_exclude) && isset($text_include)) error('You cannot include and exclude namespaces at the same time');
+if (isset($namespace_include) && isset($namespace_exclude)) {
+	error('You cannot include and exclude namespaces at the same time');
+}
+if (isset($text_exclude) && isset($text_include)) {
+	error('You cannot include and exclude namespaces at the same time');
+}
+if (isset($title_exclude) && isset($title_include)) {
+	error('You cannot include and exclude titles at the same time');
+}
+if (isset($text_exclude) && isset($text_include)) {
+	error('You cannot include and exclude namespaces at the same time');
+}
 
 // Get titles
 // Namespace conditions
 $token = '';
 $namespace = array();
-if (isset($namespace_include)) { $token = 'IN '; $namespace = $namespace_include; }
-if (isset($namespace_exclude)) { $token = 'NOT IN '; $namespace = $namespace_exclude; }
-if ($token) $qry_ns = 'page_namespace '.$token.' ("'.implode('","', $namespace).'")';
+if (isset($namespace_include)) {
+	$token = 'IN ';
+	$namespace = $namespace_include;
+}
+if (isset($namespace_exclude)) {
+	$token = 'NOT IN ';
+	$namespace = $namespace_exclude;
+}
+if ($token) {
+	$qry_ns = 'page_namespace '.$token.' ("'.implode('","', $namespace).'")';
+}
 
 $dbw =& wfGetDB( DB_MASTER );
 $res = $dbw->select('page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', array('order by' => 'page_title'));
@@ -126,11 +144,20 @@ while ($row = mysql_fetch_array($res->result))
 
 	// Title conditions
 	$title_conds = array();
-	if (isset($title_include)) { $title_conds = $title_include; $match = true; }
-	if (isset($title_exclude)) { $title_conds = $title_exclude; $match = false; }
+	if (isset($title_include)) {
+		$title_conds = $title_include;
+		$match = true;
+	}
+	if (isset($title_exclude)) {
+		$title_conds = $title_exclude;
+		$match = false;
+	}
 	$skip = true;
-	foreach ($title_conds as $cond)
-		if (preg_match($cond, $cur_title)==$match) $skip = false;
+	foreach ($title_conds as $cond) {
+		if (preg_match($cond, $cur_title)==$match) {
+			$skip = false;
+		}
+	}
 	if ((isset($title_include) || isset($title_exclude)) && ($skip))
 	{
 		print "Skipped based on title exclude condition.\n";
@@ -147,15 +174,26 @@ while ($row = mysql_fetch_array($res->result))
 	// Fetch text
 	$wikipage = WikiPage::factory( $title );
 	$text = ContentHandler::getContentText( $wikipage->getContent() );
-	if ($text == '') echo 'empty!';
+	if ($text == '') {
+		echo 'empty!';
+	}
 
 	// Text conditions
 	$text_conds = array();
-	if (isset($text_include)) { $text_conds = $text_include; $match = false; }
-	if (isset($text_exclude)) { $text_conds = $text_exclude; $match = true; }
+	if (isset($text_include)) {
+		$text_conds = $text_include;
+		$match = false;
+	}
+	if (isset($text_exclude)) {
+		$text_conds = $text_exclude;
+		$match = true;
+	}
 	$skip = false;
-	foreach ($text_conds as $cond)
-		if (preg_match($cond, $text) == $match) $skip = true;
+	foreach ($text_conds as $cond) {
+		if (preg_match($cond, $text) == $match) {
+			$skip = true;
+		}
+	}
 	if ((isset($text_include) || isset($text_exclude)) && ($skip))
 	{
 		print "Skipped based on text exclude condition.\n";
@@ -168,11 +206,11 @@ while ($row = mysql_fetch_array($res->result))
 		# Modify the text
 		$old_text = $text;
 
-		if ($mode == 'append')
+		if ($mode == 'append') {
 			$text .= $append_text;
-		else if ($mode == 'prefix')
+		} else if ($mode == 'prefix') {
 			$text = $prefix_text.$text;
-		else if ($mode == 'delete')
+		} else if ($mode == 'delete')
 		{
 			$text = preg_replace($delete_text, '', $text);
 		}
@@ -194,7 +232,9 @@ while ($row = mysql_fetch_array($res->result))
 		if ($testing)
 		{
 			print "testing.\n";
-			if ($verbose) print $text."\n--------------------------------------------------------------------------------\n\n";
+			if ($verbose) {
+				print $text."\n--------------------------------------------------------------------------------\n\n";
+			}
 			continue;
 		}
 
@@ -221,7 +261,9 @@ while ($row = mysql_fetch_array($res->result))
 			$ns = $title->getNamespace();
 			$new_title = preg_replace($move_from, $move_to, $cur_title);
 
-			if ($new_title == $cur_title) continue;
+			if ($new_title == $cur_title) {
+				continue;
+			}
 
 			echo "Moving title \"$cur_title\" to \"$new_title\" (NS:$ns): ";
 

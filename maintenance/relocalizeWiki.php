@@ -96,7 +96,9 @@ class RelocalizeWiki extends Maintenance {
 				$iPregImageCount = 0;
 				
 				foreach( $aValues as $sNsIndex => $sNsName ) {
-					if( !isset( $this->aToNs['ns'][$sNsIndex] ) ) continue;
+					if( !isset( $this->aToNs['ns'][$sNsIndex] ) ) {
+						continue;
+					}
 					if( $sNsIndex === NS_TEMPLATE ) {
 						$sPrefix = '{';
 					} else {
@@ -105,7 +107,9 @@ class RelocalizeWiki extends Maintenance {
 					$sSearchFor = $sPrefix.$sNsName.':';
 					$sReplacement = $sPrefix. $this->aToNs['ns'][$sNsIndex].':';
 					
-					if( $sSearchFor === $sReplacement ) continue;
+					if( $sSearchFor === $sReplacement ) {
+						continue;
+					}
 					
 					if( $sNsIndex === NS_SPECIAL ) {
 						$sArticleContent = preg_replace_callback( '#\[('.$sNsName.'\:(.*?))\]#si', array( $this, 'pregSpecialpageCallback'), $sArticleContent, -1, $iPregSpecialCount );
@@ -179,7 +183,9 @@ class RelocalizeWiki extends Maintenance {
 		
 		$oSpecialPage = SpecialPage::getPage( $sReplacement );
 		
-		if( !is_object( $oSpecialPage ) ) return $input[0];
+		if( !is_object( $oSpecialPage ) ) {
+			return $input[0];
+		}
 		
 		$input[0] = str_replace( $this->aFromNs['ns'][NS_SPECIAL].':'.$aReplace[0], $this->aToNs['ns'][NS_SPECIAL].':'.$oSpecialPage->getName(), $input[0] );
 		$this->sOutput .= 'Replaced "'.$this->aFromNs['ns'][NS_SPECIAL].':'.$aReplace[0].'" with "'.$this->aToNs['ns'][NS_SPECIAL].':'.$oSpecialPage->getName().'"'."\n";

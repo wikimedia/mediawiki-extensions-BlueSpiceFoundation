@@ -31,7 +31,9 @@ class ListUserEmails extends BSMaintenance {
 		}
 		$aUserMails = array();
 		foreach( $aAllUserData as $aUserData ) {
-			if ( $bConfirmed && $aUserData['auth'] === null ) continue;
+			if ( $bConfirmed && $aUserData['auth'] === null ) {
+				continue;
+			}
 			if ( $aUserData['email'] ) {
 				$aUserMails[] = $aUserData['email'];
 			}
@@ -50,7 +52,9 @@ class ListUserEmails extends BSMaintenance {
 			)
 		);
 		
-		if( !$rRes ) return array();
+		if( !$rRes ) {
+			return array();
+		}
 		
 		$aUser = array();
 		while( $aRow = $oDbr->fetchRow( $rRes ) ) {

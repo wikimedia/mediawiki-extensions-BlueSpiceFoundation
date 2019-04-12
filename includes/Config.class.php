@@ -198,8 +198,9 @@ class BsConfig {
 
 		if ( is_object ( $oSetting ) ) {
 			return $oSetting->_get ();
-		} else
+		} else {
 			return null;
+		}
 	}
 
 	/**
@@ -807,10 +808,11 @@ class BsConfig {
 	 */
 	public function getI18nName() {
 
-		if ( is_string ( $this->_mI18n ) )
+		if ( is_string ( $this->_mI18n ) ) {
 			return $this->_mI18n;
-		else
+		} else {
 			return $this->_mName;
+		}
 	}
 
 	/**

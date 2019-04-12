@@ -55,6 +55,7 @@ function deleteOldTomcatLogs( $bDry, $options ) {
 		}
 		closedir($handle);
 	}
-	else 
+	else { 
 		echo 'Directory not found! '.$options['logdir'];
+	}
 }

@@ -18,7 +18,9 @@ class BsGroupHelper {
 		$aBlacklist = array();
 
 		if ( isset( $aConf['blacklist'] ) ) {
-			if ( !is_array( $aConf['blacklist'] ) ) $aConf['blacklist'] = (array) $aConf['blacklist'];
+			if ( !is_array( $aConf['blacklist'] ) ) {
+				$aConf['blacklist'] = (array) $aConf['blacklist'];
+			}
 			$aBlacklist = $aConf['blacklist'];
 		}
 
@@ -49,13 +51,17 @@ class BsGroupHelper {
 		$aBlacklist = array();
 
 		if ( isset( $aConf['blacklist'] ) ) {
-			if ( !is_array( $aConf['blacklist'] ) ) $aConf['blacklist'] = (array) $aConf['blacklist'];
+			if ( !is_array( $aConf['blacklist'] ) ) {
+				$aConf['blacklist'] = (array) $aConf['blacklist'];
+			}
 			$aBlacklist = $aConf['blacklist'];
 		}
 
 		$aGroups = array();
 		foreach ( $wgGroupPermissions as $sGroup => $aPermissions ) {
-			if ( in_array( $sGroup, $aBlacklist ) ) continue;
+			if ( in_array( $sGroup, $aBlacklist ) ) {
+				continue;
+			}
 			foreach ( $aPermissions as $sPermissionName => $bBool ) {
 				if ( $sPermissionName == $sRight ) {
 					$aGroups[] = $sGroup;
@@ -114,7 +120,9 @@ class BsGroupHelper {
 					if( in_array(
 						$sGroupName,
 						$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission]
-					)) continue;
+					)) {
+						continue;
+					}
 				}
 				$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission][]
 					= $sGroupName;

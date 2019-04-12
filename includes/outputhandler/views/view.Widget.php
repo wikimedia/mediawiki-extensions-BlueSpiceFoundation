@@ -41,9 +41,15 @@ class ViewWidget extends ViewBaseElement {
 	}
 
 	private function checkProperties() {
-		if( empty($this->_mId) ) throw new BsException ('No id set.'); // TODO RBV (21.10.10 09:08): Check for html id validity. See MW Sanitizer::escapeId() for inspiration.
-		if( empty($this->_mTitle) )   $this->_mTitle   = $this->mId;
-		if( empty($this->_mTooltip) ) $this->_mTooltip = $this->_mTitle;
+		if( empty($this->_mId) ) {
+			throw new BsException ('No id set.'); // TODO RBV (21.10.10 09:08): Check for html id validity. See MW Sanitizer::escapeId() for inspiration.
+		}
+		if( empty($this->_mTitle) ) {
+			$this->_mTitle = $this->mId;
+		}
+		if( empty($this->_mTooltip) ) {
+			$this->_mTooltip = $this->_mTitle;
+		}
 		if( empty($this->_mBody) ) {
 			if( $this->hasItems() ) {
 			foreach ($this->_mItems as $oViewItem ){
