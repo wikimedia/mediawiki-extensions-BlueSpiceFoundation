@@ -18,8 +18,9 @@ class BsInvalidNamespaceException extends BsException {
 	public function setListOfInvalidNamespaces( $aInvalidNamespaces ){
 		if (is_array( $aInvalidNamespaces ) ) {
 			$this->mListOfInvalidNamespaces = $aInvalidNamespaces;
+		} else {
+			throw new InvalidArgumentException();
 		}
-		else throw new InvalidArgumentException();
 	}
 
 	/**
@@ -38,8 +39,9 @@ class BsInvalidNamespaceException extends BsException {
 	public function setListOfValidNamespaces( $aValidNamespaces ){
 		if (is_array( $aValidNamespaces ) ) {
 			$this->mListOfValidNamespaces = $aValidNamespaces;
+		} else {
+			throw new InvalidArgumentException();
 		}
-		else throw new InvalidArgumentException();
 	}
 
 	/**

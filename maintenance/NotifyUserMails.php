@@ -68,7 +68,9 @@ function getUser( $sGivenUser ) {
 			$condition 
 	);
 	
-	if( !$rRes ) return array();
+	if( !$rRes ) {
+		return array();
+	}
 	
 	$aUser = array();
 	while( $oRow = $oDbr->fetchRow( $rRes ) ) {

@@ -103,7 +103,9 @@ class ModifyExportXML extends Maintenance {
 			return $aMatches[0]; //Only modify links that have changed.
 		}
 		$sNewWikiLink = '[['.$this->aTitles[ $sLinkPart ];
-		if( isset( $aLinkParts[1] ) ) $sNewWikiLink .= '|'.$aLinkParts[1]; //Add optional description text
+		if( isset( $aLinkParts[1] ) ) {
+			$sNewWikiLink .= '|'.$aLinkParts[1]; //Add optional description text
+		}
 		$sNewWikiLink .= ']]';
 		echo '"'.$aMatches[0].'" --> "'.$sNewWikiLink.'"'."\n";
 		return $sNewWikiLink;

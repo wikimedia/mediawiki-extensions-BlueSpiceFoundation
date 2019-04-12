@@ -85,8 +85,12 @@ class BsNamespaceHelper {
 		global $wgContLang;
 		// TODO SW(05.01.12 15:21): Profiling
 		if ( $bReturnNamesForMainAndAll ) {
-			if ( $iNamespaceId == 0 ) return wfMessage( 'bs-ns_main' )->plain();
-			if ( $iNamespaceId == -99 ) return wfMessage( 'bs-ns_all' )->plain();
+			if ( $iNamespaceId == 0 ) {
+				return wfMessage( 'bs-ns_main' )->plain();
+			}
+			if ( $iNamespaceId == -99 ) {
+				return wfMessage( 'bs-ns_all' )->plain();
+			}
 		}
 		return $wgContLang->getNsText( $iNamespaceId );
 	}
@@ -124,7 +128,9 @@ class BsNamespaceHelper {
 	 * @return int The  NamespaceId.
 	 */
 	public static function getNamespaceIndex( $vNamespace ) {
-		if ( is_numeric( $vNamespace ) ) return $vNamespace;
+		if ( is_numeric( $vNamespace ) ) {
+			return $vNamespace;
+		}
 		global $wgContLang;
 
 		return $wgContLang->getNsIndex( $vNamespace );
@@ -215,7 +221,9 @@ class BsNamespaceHelper {
 
 		foreach ( $wgContLang->getNamespaces() as $sNamespace ) {
 			$iNsIndex = $wgContLang->getNsIndex( $sNamespace );
-			if ( in_array( $iNsIndex, $aExcludeIds ) ) continue; //Filter namespaces
+			if ( in_array( $iNsIndex, $aExcludeIds ) ) {
+				continue; //Filter namespaces
+			}
 			$aNamespaces[$iNsIndex] = self::getNamespaceName( $iNsIndex );
 		}
 		return $aNamespaces;
@@ -228,7 +236,9 @@ class BsNamespaceHelper {
 	 * @return boolean returns true if user is allowed , otherwise false
 	 */
 	public static function checkNamespacePermission( $iID, $sPermission ) {
-		if ( !is_numeric( $iID ) ) return false;
+		if ( !is_numeric( $iID ) ) {
+			return false;
+		}
 
 		$oDummyTitle = Title::makeTitle( $iID, 'Dummy' );
 		if ( $oDummyTitle->userCan( $sPermission ) ) {

@@ -177,8 +177,9 @@ class ViewBaseElement {
 
 	// TODO MRG20100831: comment
 	public function getOption( $key ) {
-		if ( isset( $this->mOptions[$key] ) )
+		if ( isset( $this->mOptions[$key] ) ) {
 			return $this->mOptions[$key];
+		}
 		return false;
 	}
 
