@@ -69,7 +69,9 @@ function getDataFromNSBackup( $sTable, $aConditions = array(), $aReturn = array(
 
     $rRes = $oDbr->select( $sTable, '*', $aConditions ) ;
     var_dump($oDbr->lastQuery());
-    if( empty($rRes) ) return array();
+    if( empty($rRes) ) {
+    	return array();
+    }
     
     foreach( $rRes as $row ) {
         $aReturn[] = (array)$row;

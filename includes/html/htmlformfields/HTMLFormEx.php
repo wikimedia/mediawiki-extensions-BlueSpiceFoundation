@@ -26,8 +26,9 @@ class HTMLFormEx extends HTMLForm {
 					: $value->getDefault();
 				$tableHtml .= $value->getTableRow( $v );
 
-				if( $value->getLabel() != '&nbsp;' )
+				if( $value->getLabel() != '&nbsp;' ) {
 					$hasLeftColumn = true;
+				}
 			} elseif ( is_array( $value ) ) {
 				$section = $this->displaySection( $value, $key );
 				$subsectionHtml .= self::fieldset( $legend, $section, array( 'class' => 'bs-prefs', 'id' => $sectionName.$key ) ) . "\n";
@@ -35,13 +36,15 @@ class HTMLFormEx extends HTMLForm {
 		}
 
 		$classes = array();
-		if( !$hasLeftColumn ) // Avoid strange spacing when no labels exist
+		if( !$hasLeftColumn ) { // Avoid strange spacing when no labels exist
 			$classes[] = 'mw-htmlform-nolabel';
+		}
 		$attribs = array(
 			'class' => implode( ' ', $classes ),
 		);
-		if ( $sectionName )
+		if ( $sectionName ) {
 			$attribs['id'] = Sanitizer::escapeId( "mw-htmlform-$sectionName" );
+		}
 
 		$tableHtml = Html::rawElement( 'table', $attribs,
 			Html::rawElement( 'tbody', array(), "\n$tableHtml\n" ) ) . "\n";

@@ -108,7 +108,9 @@ class BsExtJSStoreParams {
 	 * @return int The "sort" parameter for the ExtJS Store backend
 	 */
 	public function getSort( $sDefault = '' ) {
-		if ( empty( $this->sSort ) ) return $sDefault;
+		if ( empty( $this->sSort ) ) {
+			return $sDefault;
+                }
 		return $this->sSort;
 	}
 

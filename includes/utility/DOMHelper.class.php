@@ -13,7 +13,9 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getPreviousDOMElementSibling( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) return null;
+		if( $oNode instanceof DOMNode == false ) {
+			return null;
+		}
 		if( $oNode->previousSibling instanceof DOMElement ){
 			if( empty( $aElementNames ) || in_array($oNode->previousSibling->nodeName, $aElementNames ) ) {
 				return $oNode->previousSibling;
@@ -29,7 +31,9 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getNextDOMElementSibling( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) return null;
+		if( $oNode instanceof DOMNode == false ) {
+			return null;
+		}
 		if( $oNode->nextSibling instanceof DOMElement ){
 			if( empty( $aElementNames ) || in_array($oNode->nextSibling->nodeName, $aElementNames ) ) {
 				return $oNode->nextSibling;
@@ -45,7 +49,9 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getParentDOMElement( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) return null;
+		if( $oNode instanceof DOMNode == false ) {
+			return null;
+		}
 		if( $oNode->parentNode instanceof DOMElement ){
 			if( empty( $aElementNames ) || in_array($oNode->parentNode->nodeName, $aElementNames ) ) {
 				return $oNode->parentNode;
@@ -61,7 +67,9 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getFirstDOMElementChild( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) return null;
+		if( $oNode instanceof DOMNode == false ) {
+			return null;
+		}
 		if( $oNode->firstChild instanceof DOMElement ){
 			if( empty( $aElementNames ) || in_array($oNode->firstChild->nodeName, $aElementNames ) ) {
 				return $oNode->firstChild;
@@ -85,9 +93,13 @@ class BsDOMHelper {
 			implode( ' ', array_unique( array_merge( $aNodesClasses, $aClasses ) ) )
 		);
 
-		if( $oNode->hasChildNodes() == false ) return;
+		if( $oNode->hasChildNodes() == false ) {
+			return;
+		}
 		foreach( $oNode->childNodes as $oChild ) {
-			if( $oChild instanceof DOMElement == false ) continue;
+			if( $oChild instanceof DOMElement == false ) {
+				continue;
+			}
 			static::addClassesRecursive($oChild, $aClasses, $bOverrideExisting);
 		}
 	}

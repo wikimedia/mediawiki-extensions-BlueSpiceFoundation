@@ -166,7 +166,9 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			} else {
 				$oTitle = Title::newFromID( $row->page_id );
 			}
-			if ( $oTitle->userCan( 'read' ) === false ) continue;
+			if ( $oTitle->userCan( 'read' ) === false ) {
+				continue;
+			}
 
 			$aTitles[] = $oTitle;
 		}

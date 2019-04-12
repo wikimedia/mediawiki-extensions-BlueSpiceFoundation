@@ -8,9 +8,13 @@
 class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
-		if( $p !== true ) return $p;
+		if( $p !== true ) {
+			return $p;
+		}
 
-		if( !is_array( $value ) ) return false;
+		if( !is_array( $value ) ) {
+			return false;
+		}
 
 		return true;
 	}
@@ -120,10 +124,11 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 
 			foreach ( $options as $key => $value ) {
 				// find a better way to identify associative array
-				if ( $bIsAssoc )
+				if ( $bIsAssoc ) {
 					$select->addOption( $value, $key );
-				else
+				} else {
 					$select->addOption( $value, $value );
+				}
 			}
 		}
 
@@ -135,8 +140,9 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		if ( $request->getCheck( 'wpEditToken' ) ) {
 			$arr = $request->getArray( $this->mName );
 
-			if( !$arr )
+			if( !$arr ) {
 				$arr = array();
+			}
 
 			return $arr;
 		} else {

@@ -278,8 +278,12 @@ class BsCore {
 	 * @return string The HTML result
 	 */
 	public function parseWikiText( $sText, $oTitle, $nocache = false, $numberheadings = null ) {
-		if ( !self::$oLocalParser ) self::$oLocalParser = new Parser();
-		if ( !self::$oLocalParserOptions ) self::$oLocalParserOptions = new ParserOptions();
+		if ( !self::$oLocalParser ) {
+			self::$oLocalParser = new Parser();
+		}
+		if ( !self::$oLocalParserOptions ) {
+			self::$oLocalParserOptions = new ParserOptions();
+		}
 
 		if ( $numberheadings === false ) {
 			self::$oLocalParserOptions->setNumberHeadings( false );
@@ -293,7 +297,9 @@ class BsCore {
 			wfDebug( __METHOD__.': Use of $nocache parameter is deprecated. There is no caching anyway.' );
 		}
 
-		if ( !( $oTitle instanceof Title ) ) return '';
+		if ( !( $oTitle instanceof Title ) ) {
+			return '';
+		}
 
 		$output = self::$oLocalParser->parse( $sText, $oTitle, self::$oLocalParserOptions, true )->getText();
 
@@ -345,7 +351,9 @@ class BsCore {
 		if ( $oUser->isAllowed( $sPermission ) ) {
 			return true;
 		}
-		if ( !$bSilent ) echo wfMessage( 'bs-' . $sI18NMessageKey )->plain();
+		if ( !$bSilent ) {
+			echo wfMessage( 'bs-' . $sI18NMessageKey )->plain();
+		}
 
 		return false;
 	}

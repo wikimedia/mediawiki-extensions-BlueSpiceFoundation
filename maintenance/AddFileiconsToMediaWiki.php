@@ -42,7 +42,9 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 			$this->output( "Target: " . $sTargetDir . "\n" );
 
 			while ( ( $fileName = readdir( $sourceHandler ) ) !== false ){
-				if( $fileName == "."  || $fileName == ".." ) continue;
+				if( $fileName == "."  || $fileName == ".." ) {
+					continue;
+				}
 
 				if( file_exists( $sTargetDir . "/" . $fileName ) ){
 					$this->output( $fileName . " ... exists" );

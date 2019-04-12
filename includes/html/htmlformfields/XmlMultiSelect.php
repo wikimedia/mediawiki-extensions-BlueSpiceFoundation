@@ -12,7 +12,9 @@ class XmlMultiSelect extends XmlSelect {
 	public static function formatOptions( $options, $default = false ) {
 		$data = '';
 
-		if ( !is_array( $default ) ) $default = array();
+		if ( !is_array( $default ) ) {
+			$default = array();
+		}
 
 		foreach( $options as $label => $value ) {
 			if ( is_array( $value ) ) {
