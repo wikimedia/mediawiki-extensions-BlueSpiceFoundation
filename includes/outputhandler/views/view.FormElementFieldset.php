@@ -19,7 +19,7 @@
  */
 class ViewFormElementFieldset extends ViewFormElement {
 
-	public function execute($params = false) {
+	public function execute( $params = false ) {
 		if(!count($this->_mItems)) {
 			return '';
 		}

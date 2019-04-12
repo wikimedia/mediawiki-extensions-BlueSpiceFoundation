@@ -47,7 +47,7 @@ abstract class OutputPageBeforeHTML extends Hook {
 	 * @param string $text
 	 * @return boolean
 	 */
-	public static function callback( &$out, &$text  ) {
+	public static function callback( &$out, &$text ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

@@ -87,7 +87,7 @@ class ResourceLoaderBSTemplateModule extends ResourceLoaderModule {
 	 * @param ResourceLoaderContext|null $context
 	 * @return array List of module names as strings
 	 */
-	public function getDependencies(\ResourceLoaderContext $context = null) {
+	public function getDependencies( \ResourceLoaderContext $context = null ) {
 		return array_merge(
 			parent::getDependencies( $context ),
 			[ "mediawiki.template.mustache" ]

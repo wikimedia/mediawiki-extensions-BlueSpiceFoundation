@@ -99,7 +99,7 @@ class BsNamespaceHelper {
 	 * @param int $iNamespaceId number of namespace index
 	 * @return array List of namespace names 
 	 */
-	public static function getNamespaceNamesAndAliases($iNamespaceId) {
+	public static function getNamespaceNamesAndAliases( $iNamespaceId ) {
 		global $wgContLang, $wgNamespaceAliases, $wgCanonicalNamespaceNames;
 		$aAliases = array();
 
@@ -136,7 +136,7 @@ class BsNamespaceHelper {
 	 * @return Array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given 
 	 */
-	public static function getNamespaceIdsFromAmbiguousArray($aNamespaces) {
+	public static function getNamespaceIdsFromAmbiguousArray( $aNamespaces ) {
 		return self::getNamespaceIdsFromAmbiguousCSVString( implode( ',', $aNamespaces ) );
 	}
 

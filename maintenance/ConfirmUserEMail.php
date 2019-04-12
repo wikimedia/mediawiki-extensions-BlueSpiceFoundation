@@ -70,7 +70,7 @@ class ConfirmUserEMail extends Maintenance {
 		return $aUser;
 	}
 	
-	private function confirmUser($aUserStore, $bExecute = false, $bForce = false) {
+	private function confirmUser( $aUserStore, $bExecute = false, $bForce = false ) {
 		$oDbw = wfGetDB( DB_MASTER );
 		
 		$iCounter = count($aUserStore);

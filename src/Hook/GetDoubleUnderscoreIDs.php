@@ -40,7 +40,7 @@ abstract class GetDoubleUnderscoreIDs extends \BlueSpice\Hook {
 	 * @param string $text
 	 * @return boolean
 	 */
-	public static function callback( &$doubleUnderscoreIDs  ) {
+	public static function callback( &$doubleUnderscoreIDs ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,

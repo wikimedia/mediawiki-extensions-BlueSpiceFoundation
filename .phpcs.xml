@@ -7,7 +7,8 @@
 		<exclude name="Generic.Files.LineLength.TooLong" />
 		<exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
 		<exclude name="Generic.Formatting.MultipleStatementAlignment.IncorrectWarning" />
-		<exclude name="Generic.Formatting.NoSpaceAfterCast.SpaceFound" />
+		<exclude name="Generic.Formatting.SpaceAfterCast.TooMuchSpace" />
+		<exclude name="Generic.Formatting.SpaceAfterNot.Incorrect" />
 		<exclude name="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" />
 		<exclude name="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma" />
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
@@ -17,6 +18,7 @@
 		<exclude name="MediaWiki.AlternativeSyntax.AlternativeSyntax.AlternativeSyntax" />
 		<exclude name="MediaWiki.AlternativeSyntax.ShortCastSyntax.NotShortIntForm" />
 		<exclude name="MediaWiki.Classes.UnusedUseStatement.UnusedUse" />
+		<exclude name="MediaWiki.Commenting.FunctionAnnotations.UnrecognizedAnnotation" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.ExtraParamComment" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationProtected" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
@@ -49,13 +51,13 @@
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
 		<exclude name="MediaWiki.NamingConventions.PrefixedGlobalFunctions.wfPrefix" />
-		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.wgPrefix" />
+		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix" />
 		<exclude name="MediaWiki.Usage.AssignmentInReturn.AssignmentInReturn" />
 		<exclude name="MediaWiki.Usage.DirUsage.FunctionFound" />
 		<exclude name="MediaWiki.Usage.ForbiddenFunctions.each" />
 		<exclude name="MediaWiki.Usage.ForbiddenFunctions.join" />
 		<exclude name="MediaWiki.Usage.SuperGlobalsUsage.SuperGlobals" />
-		<exclude name="MediaWiki.VariableAnalysis.ForbiddenGlobalVariables.ForbiddenGlobal$wgTitle" />
+		<exclude name="MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgTitle" />
 		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables" />
 		<exclude name="MediaWiki.WhiteSpace.DisallowEmptyLineFunctions.NoEmptyLine" />
 		<exclude name="MediaWiki.WhiteSpace.MultipleEmptyLines.MultipleEmptyLines" />
@@ -80,6 +82,7 @@
 		<exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse" />
 		<exclude name="Squiz.Classes.SelfMemberReference.NotUsed" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
+		<exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
 		<exclude name="Squiz.WhiteSpace.CastSpacing.ContainsWhiteSpace" />
 		<exclude name="Squiz.WhiteSpace.LanguageConstructSpacing.Incorrect" />
 		<exclude name="Squiz.WhiteSpace.LanguageConstructSpacing.IncorrectSingle" />

@@ -20,7 +20,7 @@ class ExtJS extends \ResourceLoaderFileModule {
 		return $dependencies;
 	}
 
-	public function getLessVars(\ResourceLoaderContext $context) {
+	public function getLessVars( \ResourceLoaderContext $context ) {
 		$vars = parent::getLessVars( $context );
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationLessVarsRegistry'
