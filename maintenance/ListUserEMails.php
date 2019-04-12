@@ -5,7 +5,7 @@
  * @file
  * @ingroup Maintenance
  * @author Marc Reymann
- * @license GNU General Public Licence 3.0
+ * @license GPL-3.0-only
  */
 
 require_once( 'BSMaintenance.php' );
