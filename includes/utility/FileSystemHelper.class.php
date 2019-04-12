@@ -7,7 +7,7 @@ class BsFileSystemHelper {
 	 * @param string $sSubDirName
 	 * @return Status
 	 */
-	public static function ensureCacheDirectory($sSubDirName = '') {
+	public static function ensureCacheDirectory( $sSubDirName = '' ) {
 		if ( self::hasTraversal( $sSubDirName ) ) {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
@@ -37,7 +37,7 @@ class BsFileSystemHelper {
 	 * @param string $sSubDirName
 	 * @return Status
 	 */
-	public static function ensureDataDirectory($sSubDirName = '') {
+	public static function ensureDataDirectory( $sSubDirName = '' ) {
 		if ( self::hasTraversal( $sSubDirName ) ) {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
@@ -69,7 +69,7 @@ class BsFileSystemHelper {
 	 * @param mixed $data
 	 * @return Status
 	 */
-	public static function saveToCacheDirectory($sFileName, $data, $sSubDirName = '') {
+	public static function saveToCacheDirectory( $sFileName, $data, $sSubDirName = '' ) {
 		$oStatus = self::ensureCacheDirectory($sSubDirName);
 		if ( self::hasTraversal( "$sSubDirName/$sFileName" ) ) {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
@@ -93,7 +93,7 @@ class BsFileSystemHelper {
 	 * @param mixed $data
 	 * @return Status
 	 */
-	public static function saveToDataDirectory($sFileName, $data, $sSubDirName = '') {
+	public static function saveToDataDirectory( $sFileName, $data, $sSubDirName = '' ) {
 		$oStatus = self::ensureDataDirectory($sSubDirName);
 		if ( self::hasTraversal( "$sSubDirName/$sFileName" ) ) {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
@@ -125,7 +125,7 @@ class BsFileSystemHelper {
 	 * @param string $sSubDirName
 	 * @return string Filepath
 	 */
-	public static function getDataDirectory($sSubDirName = '') {
+	public static function getDataDirectory( $sSubDirName = '' ) {
 		return empty( $sSubDirName )
 			? BS_DATA_DIR
 			: BS_DATA_DIR . "/$sSubDirName";
@@ -157,7 +157,7 @@ class BsFileSystemHelper {
 	 * @param string $sDestination
 	 * @return Status
 	 */
-	public static function copyRecursive($sSource, $sDestination) {
+	public static function copyRecursive( $sSource, $sDestination ) {
 		if (self::hasTraversal($sSource) || self::hasTraversal($sDestination))
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		$rDir = opendir($sSource);
@@ -187,7 +187,7 @@ class BsFileSystemHelper {
 	 * @param String $sRepoName
 	 * @return boolean|\File
 	 */
-	public static function getFileFromRepoName($sFileName, $sRepoName) {
+	public static function getFileFromRepoName( $sFileName, $sRepoName ) {
 		$oFileRepo = RepoGroup::singleton()->getRepoByName($sRepoName);
 		if (!$oFileRepo instanceof FileRepo)
 			return false;
@@ -203,7 +203,7 @@ class BsFileSystemHelper {
 	 * @param String $sDir
 	 * @return Status (->getValue() for the file's content).
 	 */
-	public static function getFileContent($sFileName, $sDir) {
+	public static function getFileContent( $sFileName, $sDir ) {
 		if ( self::hasTraversal( "$sDir/$sFileName" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		if ( !is_dir( BS_DATA_DIR . "/$sDir" ) )
@@ -220,7 +220,7 @@ class BsFileSystemHelper {
 	 * @param String $sDir
 	 * @return Status (->getValue() for the file's content).
 	 */
-	public static function getCacheFileContent($sFileName, $sDir) {
+	public static function getCacheFileContent( $sFileName, $sDir ) {
 		if ( self::hasTraversal( $sDir . "/$sFileName" ) )
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		if ( !is_dir( BS_CACHE_DIR . "/$sDir" ) )
@@ -238,7 +238,7 @@ class BsFileSystemHelper {
 	 * @param String $sDestination
 	 * @return Status good on success, otherwise fatal with message
 	 */
-	public static function copyFile($sFileName, $sSource, $sDestination, $bOverwrite = true) {
+	public static function copyFile( $sFileName, $sSource, $sDestination, $bOverwrite = true ) {
 
 		if ( self::hasTraversal( "$sSource/$sFileName" ) || self::hasTraversal( "$sDestination/$sFileName" ) ) {
 			return Status::newFatal( wfMessage(
@@ -292,7 +292,7 @@ class BsFileSystemHelper {
 	 * @param boolean $bOverwrite
 	 * @return Status
 	 */
-	public static function copyFolder($sFolderName, $sSource, $sDestination, $bOverwrite = true) {
+	public static function copyFolder( $sFolderName, $sSource, $sDestination, $bOverwrite = true ) {
 		if ( self::hasTraversal( "$sSource/$sFolderName" ) || self::hasTraversal( "$sDestination/$sFolderName" ) ) {
 			return Status::newFatal( wfMessage(
 				"bs-filesystemhelper-has-path-traversal"
@@ -355,7 +355,7 @@ class BsFileSystemHelper {
 	 * @param boolean $bOverwrite
 	 * @return Status good on success, otherwise fatal with message
 	 */
-	public static function renameFolder($sSource, $sDestination, $bOverwrite = true) {
+	public static function renameFolder( $sSource, $sDestination, $bOverwrite = true ) {
 		if (self::hasTraversal($sSource) || self::hasTraversal($sDestination))
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 
@@ -388,7 +388,7 @@ class BsFileSystemHelper {
 	 * @param String $sDir
 	 * @return Status good on success, otherwise fatal with message
 	 */
-	public static function deleteFile($sFile, $sDir) {
+	public static function deleteFile( $sFile, $sDir ) {
 		if ( self::hasTraversal( $sDir . "/$sFile" ) ) {
 			return Status::newFatal( wfMessage(
 				"bs-filesystemhelper-has-path-traversal"
@@ -414,7 +414,7 @@ class BsFileSystemHelper {
 	 * @param String $sDir
 	 * @return Status good on success, otherwise fatal with message
 	 */
-	public static function deleteFolder($sDir, $bIfExists = false) {
+	public static function deleteFolder( $sDir, $bIfExists = false ) {
 		if ( $bIfExists && !file_exists( BS_DATA_DIR . "/$sDir" ) ) {
 			return Status::newGood();
 		}
@@ -496,7 +496,7 @@ class BsFileSystemHelper {
 	 * @param string $sFileName
 	 * @return Status
 	 */
-	public static function uploadAndConvertImage($sName, $sDir, $sFileName = '') {
+	public static function uploadAndConvertImage( $sName, $sDir, $sFileName = '' ) {
 		global $wgRequest;
 		$oWebRequest = new WebRequest();
 		$oWebRequestUpload = $oWebRequest->getUpload($sName);
@@ -565,7 +565,7 @@ class BsFileSystemHelper {
 	 * @param string $sPath Filepath
 	 * @return bool
 	 */
-	public static function hasTraversal($sPath, $bIsAbsolute = false) {
+	public static function hasTraversal( $sPath, $bIsAbsolute = false ) {
 		if (!$sPath)
 			return true; // BS_DATA_DIR without trailing DS. Bail out.
 		$sCheckDataPath = ( $bIsAbsolute ? '' : BS_DATA_DIR . "/") . $sPath;
@@ -594,7 +594,7 @@ class BsFileSystemHelper {
 	 * @param string $path
 	 * @return null or sting
 	 */
-	public static function normalizePath($path) {
+	public static function normalizePath( $path ) {
 		// Normalize directory separators
 		$path = strtr($path, '\\', '/');
 		// Collapse any consecutive directory separators
@@ -647,7 +647,7 @@ class BsFileSystemHelper {
 	 * @param string $sFileContent
 	 * @return Status
 	 */
-	public static function saveBase64ToTmp($sFileName, $sFileContent){
+	public static function saveBase64ToTmp( $sFileName, $sFileContent ){
 		$sFileName = self::makeTmpFileName($sFileName);
 		$sFileName = wfTempDir() . "/" . basename( $sFileName );
 

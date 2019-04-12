@@ -30,12 +30,12 @@ class ViewFormElementInput extends ViewFormElement {
 		$this->_mLinebreak = false;
 	}
 
-	public function setValidate($state = true) {
+	public function setValidate( $state = true ) {
 		$this->_mValidate = $state;
 		return $this;
 	}
 
-	public function execute($params = false) {
+	public function execute( $params = false ) {
 		$output = '';
 		$title = '';
 		$validate = ($this->_mValidate) ? ' validate="true"' : '';

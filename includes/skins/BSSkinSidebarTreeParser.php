@@ -90,7 +90,7 @@ class BSSkinSidebarTreeParser {
 	 * @param DOMElement $domNode
 	 * @return string
 	 */
-	protected function getNodeValue( $domNode  ) {
+	protected function getNodeValue( $domNode ) {
 		$nodeValue = '';
 		foreach( $domNode->childNodes as $node ) {
 			if( $node instanceof DOMText === false ) {
@@ -148,7 +148,7 @@ class BSSkinSidebarTreeParser {
 	 * @param \Config $config
 	 * @return \BSTreeNode
 	 */
-	protected function makeNode($parentNode, $config) {
+	protected function makeNode( $parentNode, $config ) {
 		if( $config->get('id') === 'navigation' && $parentNode->isRoot() ) {
 			$config = new MultiConfig( [
 				new HashConfig([

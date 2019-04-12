@@ -244,8 +244,7 @@ while ($row = mysql_fetch_array($res->result))
 
 echo "\n\n-- " . ($testing ? "Would have m":"M") . "odified $hits articles.\n";
 
-function error($msg)
-{
+function error( $msg ) {
 	echo 'ERROR: '.$msg;
 	exit();
 }

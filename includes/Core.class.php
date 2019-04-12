@@ -103,7 +103,7 @@ class BsCore {
 	 * sanitized $handover or in case of invalidity of $handover, the $default
 	 * value.
 	 */
-	public static function sanitize($handover, $default = false, $options = BsPARAMTYPE::STRING) {
+	public static function sanitize( $handover, $default = false, $options = BsPARAMTYPE::STRING ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// TODO MRG20100725: Ist die Reihenfolge hier Ã¼berlegt? Was ist, wenn ich BsPARAMTYPE::INT & BsPARAMTYPE::STRING angebe?
 		// TODO MRG20100725: Kann man das nicht mit getParam zusammenschalten, so dass diese Funktion sanitize verwendet?
@@ -248,7 +248,7 @@ class BsCore {
 	 * sanitized $array or in case of invalidity of $array, the $default
 	 * array.
 	 */
-	public static function sanitizeArrayEntry($array, $key, $default = null, $options = null) {
+	public static function sanitizeArrayEntry( $array, $key, $default = null, $options = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// TODO MRG20100725: Sollte $default nicht auch durch den sanitizer?
 		if (!is_array($array)) {
@@ -303,7 +303,7 @@ class BsCore {
 	 * @param bool $getUrlEncoded set to true to get URI url encoded
 	 * @return string the requested URI
 	 */
-	public static function getRequestURI($getUrlEncoded = false) {
+	public static function getRequestURI( $getUrlEncoded = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if (self::$prRequestUri === null) {
 			$requestUri = '';

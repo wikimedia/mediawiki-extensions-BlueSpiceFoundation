@@ -82,7 +82,7 @@ class ViewBaseElement {
 	 * @param String $elm typically an HTML-Tag
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
-	public function setAutoElement($elm = 'div') {
+	public function setAutoElement( $elm = 'div' ) {
 		$this->_mAutoElement = $elm;
 		return $this;
 	}
@@ -95,7 +95,7 @@ class ViewBaseElement {
 	 * @param Mixed $wrap a string or a boolean value
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
-	public function setAutoWrap($wrap) {
+	public function setAutoWrap( $wrap ) {
 		$this->_mAutoWrap = $wrap;
 		return $this;
 	}
@@ -105,7 +105,7 @@ class ViewBaseElement {
 	 * @param String $id The id should be unique for this http request because it´s used as html element id.
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
-	public function setId($id) {
+	public function setId( $id ) {
 		$this->_mId = $id;
 		return $this;
 	}

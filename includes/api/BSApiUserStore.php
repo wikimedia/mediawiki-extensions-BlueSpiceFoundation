@@ -5,7 +5,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	protected $aGroups = array();
 	protected $aBlocks = array();
 
-	protected function makeData($sQuery = '') {
+	protected function makeData( $sQuery = '' ) {
 		$dbr = $this->getDB();
 
 		$this->aGroups = array();
