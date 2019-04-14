@@ -5,7 +5,8 @@
 			"Macofe",
 			"Benjozork",
 			"Wladek92",
-			"Urhixidur"
+			"Urhixidur",
+			"Pols12"
 		]
 	},
 	"bluespicefoundation-desc": "Rend Médiawiki prêt pour l’entreprise",
@@ -92,6 +93,7 @@
 	"bs-graphicallist-action-preview": "Aperçu",
 	"bs-bluespice-mediawiki": "MédiaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "utilisé dans beaucoup de modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d’accès, de la configuration globale",
 	"right-wikiadmin": "Utilisé dans beaucoup de modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d'accès, de la configuration globale",
 	"bs-notifications-agent-anon": "utilisateur anonyme"
 }

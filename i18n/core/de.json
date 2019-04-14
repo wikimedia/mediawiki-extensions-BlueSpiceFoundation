@@ -91,6 +91,7 @@
 	"bs-graphicallist-action-preview": "Vorschau",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "BlueSpice-Administrationsseiten anzuzeigen",
 	"right-wikiadmin": "In vielen BlueSpice-Erweiterungen verwendet für potentiell gefährliche administrative Aufgaben wie die Verwaltung von Benutzern, Berechtigungen oder der globalen Konfiguration.",
 	"bs-notifications-agent-anon": "anonymer Benutzer"
 }

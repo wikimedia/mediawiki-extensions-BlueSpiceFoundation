@@ -88,6 +88,7 @@
 	"bs-graphicallist-action-preview": "Преглед",
 	"bs-bluespice-mediawiki": "BlueSpice МедијаВики",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "приказ на раководни страници за BlueSpice",
 	"right-wikiadmin": "Се користи во многу додатоци за BlueSpice за потенцијално опасни административни задачи како раководење со корисници, дозволи и глобално поставување",
 	"bs-notifications-agent-anon": "анонимен корисник"
 }

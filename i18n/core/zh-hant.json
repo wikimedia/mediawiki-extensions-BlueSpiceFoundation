@@ -94,6 +94,7 @@
 	"bs-graphicallist-action-preview": "預覽",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "顯示 BlueSpice 管理頁面",
 	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
 	"bs-notifications-agent-anon": "匿名使用者"
 }

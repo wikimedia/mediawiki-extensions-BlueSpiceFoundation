@@ -59,5 +59,6 @@
 	"bs-pref-deleteduserimage": "削除された利用者のアバター:",
 	"bs-graphicallist-action-close": "閉じる",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "BlueSpice 管理ページの表示",
 	"right-wikiadmin": "BlueSpice 管理ページを表示"
 }

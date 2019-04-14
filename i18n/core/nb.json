@@ -89,6 +89,7 @@
 	"bs-graphicallist-action-preview": "Forhåndsvis",
 	"bs-bluespice-mediawiki": "BlueSpice-MediaWiki",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "vise BlueSpice-administrasjonssider",
 	"right-wikiadmin": "Brukt i mange BlueSpice-utvidelser for potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon",
 	"bs-notifications-agent-anon": "anonym bruker"
 }

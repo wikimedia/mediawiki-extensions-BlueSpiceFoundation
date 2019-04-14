@@ -92,6 +92,7 @@
 	"bs-graphicallist-action-close": "Sluiten",
 	"bs-graphicallist-action-list": "Lijst",
 	"bs-graphicallist-action-preview": "Voorvertoning",
+	"action-wikiadmin": "Toon BlueSpice's beheerpagina's",
 	"right-wikiadmin": "Toon BlueSpice's beheerpagina's",
 	"bs-notifications-agent-anon": "anonieme gebruiker"
 }

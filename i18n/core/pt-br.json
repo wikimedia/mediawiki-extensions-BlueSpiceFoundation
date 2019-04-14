@@ -89,6 +89,7 @@
 	"bs-graphicallist-action-preview": "Pré-visualizar",
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "usado em muitas extensões do BlueSpice para tarefas administrativas potencialmente perigosas, como gerenciamento de usuários, permissões, configuração global",
 	"right-wikiadmin": "Usado na extensão BlueSpice para tarefas administrativas possivelmente perigosas, como a administração de utilizadores e permissões, e a configuração global",
 	"bs-notifications-agent-anon": "usuário anônimo"
 }

@@ -94,6 +94,7 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Previsualizar",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "mostrar páginas de administración de BlueSpice",
 	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
 	"bs-notifications-agent-anon": "usuario anónimo"
 }

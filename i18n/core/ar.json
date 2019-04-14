@@ -90,6 +90,7 @@
 	"bs-graphicallist-action-preview": "عرض مسبق",
 	"bs-bluespice-mediawiki": "بلوسبايس ميدياويكي",
 	"bs-bluespice": "بلوسبايس",
+	"action-wikiadmin": "تستخدم في العديد من امتدادات BlueSpice للمهام الإدارية الخطيرة المحتملة مثل إدارة المستخدمين والصلاحيات والتكوين العالمي",
 	"right-wikiadmin": "تُستخدَم في العديد من امتدادات BlueSpice للمهام الإدارية الخطيرة المحتملة مثل إدارة المستخدمين والصلاحيات والتكوين العالمي",
 	"bs-notifications-agent-anon": "مستخدم مجهول"
 }

@@ -97,6 +97,7 @@
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "显示BlueSpice管理员页面",
 	"right-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。",
 	"bs-notifications-agent-anon": "匿名用户"
 }
