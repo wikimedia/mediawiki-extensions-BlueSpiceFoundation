@@ -17,8 +17,8 @@
 	"bs-deferred-batch-progress-desc": "진행도",
 	"bs-deferred-batch-description": "설명",
 	"bs-deferred-batch-status": "상태",
-	"bs-deferred-action-apiaddcategories-description": "'$1'에 분류 추가",
-	"bs-deferred-action-apiremovecategories-description": "'$1'에서 분류 제거",
+	"bs-deferred-action-apiaddcategories-description": "'$1'에 분류를 추가합니다.",
+	"bs-deferred-action-apiremovecategories-description": "'$1'에서 분류를 제거합니다.",
 	"bs-deferred-action-apimovepage-description": "\"$1\"을(를) \"$2\"(으)로 이동합니다.",
 	"bs-deferred-action-apideletepage-description": "\"$1\" 삭제."
 }
