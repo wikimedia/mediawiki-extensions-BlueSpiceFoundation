@@ -5,7 +5,7 @@
  * @file
  * @ingroup Maintenance
  * @author Patric Wirth
- * @license GNU General Public Licence 3.0
+ * @license GPL-3.0-only
  */
 
 //PW:
