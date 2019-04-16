@@ -43,6 +43,7 @@
 	"bs-readonly": "Shown in various messages when database is in readonly mode and a write operation is requested.\n\nParameters:\n* $1 - explanation as given in $wgReadOnly",
 	"bs-imageofotheruser": "Error message when user tries to upload an avatar for another user",
 	"bs-permissionerror": "Error message sent in ajax requests when user has no permissions to perform that action\n{{Identical|Permission error}}",
+	"bs-lockdown-groups-permissionerror": "Error message when a user cannot perform a specific action, because it was locked down by the groups module.\n* $1 - action that was locked down\n* $2 - number of reasons, why this action was locked down\n* $3 - comma separated list of reasons, why this action was locked down",
 	"bs-filesystemhelper-no-directory": "Error message given when requested directory is not a directory, put $1 in code tags\n\nParameters:\n* $1 - name of the requested directory",
 	"bs-filesystemhelper-has-path-traversal": "Error message given when a file path tries to access files outside mediawiki root.\n\nSee [[w:Directory traversal attack]].",
 	"bs-filesystemhelper-file-not-exists": "Error message given when a file does not exist, put $1 in code tags\n\nParameters:\n* $1 - name of the file",

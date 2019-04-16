@@ -38,6 +38,7 @@
 	"bs-readonly": "The database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal. The administrator who locked it offered this explanation: $1",
 	"bs-imageofotheruser": "You are not allowed to upload an image for another user.",
 	"bs-permissionerror": "Permission error!",
+	"bs-lockdown-groups-permissionerror": "The action \"$1\" is not available for the following {{PLURAL:$2|reason|reasons}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> is not a valid directory.",
 	"bs-filesystemhelper-has-path-traversal": "Path traversal detected!",
 	"bs-filesystemhelper-file-not-exists": "The file <code>$1</code> does not exist.",
