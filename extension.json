@@ -97,6 +97,11 @@
 			"TargetCacheTitleRegistry": {
 				"pageprops": "\\BlueSpice\\TargetCacheHandler"
 			},
+			"PermissionLockdownRegistry": {
+				"namespaces": "\\BlueSpice\\Permission\\Lockdown\\Module\\Namespaces::getInstance",
+				"groups": "\\BlueSpice\\Permission\\Lockdown\\Module\\Groups::getInstance"
+			},
+			"PermissionLockdownGroupModuleRegistry": {},
 			"TaskRegistry": {
 				"wikipage-setlanguagelinks": "\\BlueSpice\\Task\\WikiPage\\SetLanguageLinks::factory"
 			}
@@ -553,7 +558,7 @@
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddPingInterval::callback"
 		],
 		"getUserPermissionsErrors": [
-			"BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyNamespaceRolesLockdown::callback"
+			"\\BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyLockdown::callback"
 		],
 		"SearchableNamespaces": [
 			"BlueSpice\\Hook\\SearchableNamespaces\\ApplySearchableNamespacesLockdown::callback"

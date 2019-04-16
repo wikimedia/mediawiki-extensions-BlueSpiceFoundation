@@ -92,6 +92,17 @@ return [
 		);
 	},
 
+	'BSPermissionLockdownFactory' => function( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationPermissionLockdownRegistry'
+		);
+		return new \BlueSpice\PermissionLockdownFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' ),
+			\RequestContext::getMain()
+		);
+	},
+
 	'BSRendererFactory' => function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationRendererRegistry'
