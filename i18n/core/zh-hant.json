@@ -44,6 +44,7 @@
 	"bs-readonly": "資料庫目前已鎖定無法執行新增及修改動作，可能在做例行性的資料庫維護，維護過後會恢復正常狀況。鎖定資料庫的管理員說明：$1",
 	"bs-imageofotheruser": "您未被允許上傳圖片給其他使用者。",
 	"bs-permissionerror": "權限錯誤！",
+	"bs-lockdown-groups-permissionerror": "出於以下{{PLURAL:$2|原因}}「$1」操作無效：$3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> 不是有效的目錄。",
 	"bs-filesystemhelper-has-path-traversal": "已偵測到目錄走訪，可能受到攻擊！",
 	"bs-filesystemhelper-file-not-exists": "檔案 <code>$1</code> 不存在。",
@@ -94,7 +95,7 @@
 	"bs-graphicallist-action-preview": "預覽",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "顯示 BlueSpice 管理頁面",
+	"action-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
 	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
 	"bs-notifications-agent-anon": "匿名使用者"
 }

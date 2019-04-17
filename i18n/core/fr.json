@@ -43,6 +43,7 @@
 	"bs-readonly": "La base de données est actuellement verrouillée pour de nouvelles entrées et d’autres modifications, probablement par une routine de maintenance de la base de données, après laquelle tout reviendra à la normale. L’administrateur qui l’a verrouillée a offert l’explication suivante : $1",
 	"bs-imageofotheruser": "Vous n’êtes pas autorisé à importer une image pour un autre utilisateur.",
 	"bs-permissionerror": "Erreur de droit !",
+	"bs-lockdown-groups-permissionerror": "L'action « $1 » n'est pas disponible pour {{PLURAL:$2|la raison suivante|les raisons suivantes}} : $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> n’est pas un répertoire valide.",
 	"bs-filesystemhelper-has-path-traversal": "Traversée de chemin détectée !",
 	"bs-filesystemhelper-file-not-exists": "Le fichier <code>$1</code> n’existe pas.",

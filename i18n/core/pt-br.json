@@ -39,6 +39,7 @@
 	"bs-readonly": "A base de dados está atualmente bloqueada para novas entradas e outras modificações, provavelmente para manutenção de rotina, depois da qual voltará à normalidade. O administrador responsável pelo bloqueio deu a seguinte explicação: $1",
 	"bs-imageofotheruser": "Não tem permissão para carregar uma imagem em nome de outro(a) usuário(a).",
 	"bs-permissionerror": "Erro de permissão!",
+	"bs-lockdown-groups-permissionerror": "A ação \"$1\" não está disponível para os seguintes{{PLURAL:$2|motivo|motivos}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> não é um diretório válido.",
 	"bs-filesystemhelper-has-path-traversal": "Deslocamento do caminho detectado!",
 	"bs-filesystemhelper-file-not-exists": "O arquivo <code>$1</code> não existe!",

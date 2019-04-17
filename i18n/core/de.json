@@ -41,6 +41,7 @@
 	"bs-readonly": "Die Datenbank ist vorübergehend für Neueinträge und Änderungen gesperrt. Bitte versuche es später noch einmal. Grund der Sperrung: $1.",
 	"bs-imageofotheruser": "Du bist nicht berechtigt ein Bild für einen anderen Benutzer hochzuladen.",
 	"bs-permissionerror": "Berechtigungsfehler!",
+	"bs-lockdown-groups-permissionerror": "Die Aktion „$1“ ist aus {{PLURAL:$2|dem folgenden Grund|den folgenden Gründen}} nicht verfügbar: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> ist kein gültiges Verzeichnis.",
 	"bs-filesystemhelper-has-path-traversal": "Path traversal entdeckt!",
 	"bs-filesystemhelper-file-not-exists": "Die Datei <code>$1</code> existiert nicht.",

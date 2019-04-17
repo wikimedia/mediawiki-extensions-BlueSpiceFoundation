@@ -40,6 +40,7 @@
 	"bs-readonly": "قاعدة البيانات مقفلة حاليا للإدخالات الجديدة والتعديلات الأخرى، ربما لصيانة قاعدة البيانات الروتينية، وبعد ذلك سوف تعود إلى طبيعتها، قدم الإداري الذي قام بقفلها هذا التفسير: $1",
 	"bs-imageofotheruser": "غير مسموح لك برفع صورة لمستخدم آخر.",
 	"bs-permissionerror": "خطأ في الصلاحية!",
+	"bs-lockdown-groups-permissionerror": "الإجراء \"$1\" غير متاح {{PLURAL:$2|للسبب التالي|للأسباب التالية}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> ليس دليلا صالحا.",
 	"bs-filesystemhelper-has-path-traversal": "تم اكتشاف هجوم اجتياز الدليل!",
 	"bs-filesystemhelper-file-not-exists": "الملف <code>$1</code> غير موجود.",
