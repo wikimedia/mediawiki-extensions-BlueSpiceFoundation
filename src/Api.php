@@ -113,8 +113,7 @@ abstract class Api extends ApiBase {
 		if ( $errorLangCode === 'uselang' ) {
 			$errorLang = $this->getLanguage();
 		} elseif ( $errorLangCode === 'content' ) {
-			global $wgContLang;
-			$errorLang = $wgContLang;
+			$errorLang = $this->getServices()->getContentLanguage();
 		} else {
 			$errorLangCode = RequestContext::sanitizeLangCode( $errorLangCode );
 			$errorLang = Language::factory( $errorLangCode );

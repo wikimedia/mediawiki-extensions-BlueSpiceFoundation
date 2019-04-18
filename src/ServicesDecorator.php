@@ -48,6 +48,7 @@ use TitleFormatter;
 use TitleParser;
 use VirtualRESTServiceClient;
 use MediaWiki\Interwiki\InterwikiLookup;
+use Language;
 
 class ServicesDecorator extends ServiceContainer {
 
@@ -453,6 +454,14 @@ class ServicesDecorator extends ServiceContainer {
 	 */
 	public function getRevisionStore() {
 		return $this->decoratedServices->getService( 'RevisionStore' );
+	}
+
+	/**
+	 * @since 1.32
+	 * @return Language
+	 */
+	public function getContentLanguage() {
+		return $this->decoratedServices->getService( 'ContentLanguage' );
 	}
 
 	/**
