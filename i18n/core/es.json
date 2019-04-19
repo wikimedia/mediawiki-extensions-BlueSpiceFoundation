@@ -45,6 +45,7 @@
 	"bs-readonly": "La base de datos está bloqueada temporalmente —probablemente por mantenimiento programado— y no permite entradas nuevas u otras modificaciones.\nEl motivo proporcionado por el administrador que la bloqueó es: $1",
 	"bs-imageofotheruser": "No tienes autorización para subir una imagen para otro usuario.",
 	"bs-permissionerror": "Error de permisos",
+	"bs-lockdown-groups-permissionerror": "La acción «$1» no está disponible por {{PLURAL:$2|el motivo siguiente|los motivos siguientes}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> no es un directorio válido.",
 	"bs-filesystemhelper-has-path-traversal": "Se detectó un traspaso de rutas.",
 	"bs-filesystemhelper-file-not-exists": "El archivo <code>$1</code> no existe.",

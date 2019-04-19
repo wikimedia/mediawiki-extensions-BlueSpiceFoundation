@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Xuacu",
-			"Crucifunked"
+			"Crucifunked",
+			"Fitoschido"
 		]
 	},
 	"bluespicefoundation-desc": "Fai que Mediawiki tea preparáu pa les empreses",
@@ -39,6 +40,7 @@
 	"bs-readonly": "Nestos momentos la base de datos ta candada pa nueves entraes y otros cambios, probablemente por un mantenimientu rutinariu, y volverá a la normalidá en acabando esti. L'alministrador que la candó dio esti motivu: $1",
 	"bs-imageofotheruser": "Nun tien permisu pa xubir una imaxe pa otru usuariu.",
 	"bs-permissionerror": "¡Error de permisos!",
+	"bs-lockdown-groups-permissionerror": "L'acción «$1» nun ta disponible {{PLURAL:$2|pol motivu siguiente|polos motivos siguientes}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> nun ye un direutoriu válidu.",
 	"bs-filesystemhelper-has-path-traversal": "¡Detectóse un saltu de camín!",
 	"bs-filesystemhelper-file-not-exists": "El ficheru <code>$1</code> nun esiste.",

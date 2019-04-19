@@ -28,6 +28,7 @@
 	"bs-exception-view-heading": "S’ha produït un error",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostra els detalls de l’error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Amaga els detalls de l’error",
+	"bs-lockdown-groups-permissionerror": "L’operació «$1» no està disponible {{PLURAL:$2|pel motiu següent|pels motius següents}}: $3",
 	"bs-navigation-instructions": "Instruccions",
 	"bs-navigation-support": "Assistència",
 	"bs-navigation-contact": "Contacte",
