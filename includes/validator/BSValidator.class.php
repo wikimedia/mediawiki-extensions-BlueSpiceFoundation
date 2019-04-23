@@ -63,8 +63,9 @@ class BsValidator {
 		// TODO MRG20100816: entweder $prKnownPlugins initialisieren oder hier auf is_array testen
 		if ( !in_array( $type, self::$prKnownPlugins ) ) {
 			$test = new ReflectionClass( $plugin );
-			if ( !$test->implementsInterface( 'BsValidatorPlugin' ) )
+			if ( !$test->implementsInterface( 'BsValidatorPlugin' ) ) {
 				throw new BsException( "BsValidatorPlugin of type: $type does not implement 'BsValidatorPlugin'." );
+			}
 			self::$prKnownPlugins[] = $type;
 		}
 

@@ -3,8 +3,9 @@
 class HTMLCheckFieldOverride extends HTMLCheckField {
 
 	function getInputHTML( $value ) {
-		if ( !empty( $this->mParams['invert'] ) )
+		if ( !empty( $this->mParams['invert'] ) ) {
 			$value = !$value;
+		}
 
 		$attr = $this->getTooltipAndAccessKey();
 		$attr['id'] = $this->mID;

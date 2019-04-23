@@ -22,7 +22,9 @@ class BsPageContentProvider {
 	public static $oInstance             = null;
 
 	protected function getTemplate() {
-		if( $this->sTemplate !== false ) return $this->sTemplate;
+		if( $this->sTemplate !== false ) {
+			return $this->sTemplate;
+		}
 
 		//Default Template
 		$sTemplate = array();
@@ -46,7 +48,9 @@ class BsPageContentProvider {
 	 * @return Tidy
 	 */
 	protected function getTidy() {
-		if( $this->oTidy !== null ) return $this->oTidy;
+		if( $this->oTidy !== null ) {
+			return $this->oTidy;
+		}
 
 		$this->aTidyConfig = array(
 				'output-xhtml'     => true,
@@ -66,7 +70,9 @@ class BsPageContentProvider {
 	 * @return ParserOptions
 	 */
 	protected function getParserOptions() {
-		if ( $this->oParserOptions !== null ) return $this->oParserOptions;
+		if ( $this->oParserOptions !== null ) {
+			return $this->oParserOptions;
+		}
 
 		global $wgUser;
 
@@ -113,7 +119,9 @@ class BsPageContentProvider {
 	 * @return String Content
 	 */
 	public function getContentFromID( $iRevId, $iAudience = Revision::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
-		if ( !is_int( $iRevId ) ) return '';
+		if ( !is_int( $iRevId ) ) {
+			return '';
+		}
 		$oRevision = Revision::newFromId( $iRevId );
 
 		return $this->getContentFromRevision( $oRevision, $iAudience, $oUser, $bHTML );
@@ -403,7 +411,9 @@ class BsPageContentProvider {
 			//TODO: This migth bypass FlaggedRevs! Test and fix if necessary!
 			$oRevision = Revision::newFromTitle($oTitle);
 		}
-		if (is_null($oRevision)) return '';
+		if (is_null($oRevision)) {
+			return '';
+		}
 		return $this->getContentFromRevision($oRevision);
 	}
 
