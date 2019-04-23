@@ -9,7 +9,8 @@
 			"Meshkov.a",
 			"Shaleych",
 			"Vlad5250",
-			"Diralik"
+			"Diralik",
+			"DmitTrix"
 		]
 	},
 	"bluespicefoundation-desc": "Делает MediaWiki готовой для предприятия",
@@ -46,6 +47,7 @@
 	"bs-readonly": "Добавление новых записей и другие изменения базы данных сейчас заблокированы: вероятно, в связи с плановым обслуживанием (после которого всё вернётся в нормальное состояние).\nЗаблокировавший её администратор оставил следующее разъяснение: $1",
 	"bs-imageofotheruser": "Вы не можете загрузить изображение для другого участника.",
 	"bs-permissionerror": "Ошибка прав доступа!",
+	"bs-lockdown-groups-permissionerror": "Действие \"$1\" невозможно выполнить по {{PLURAL:$2|следующей причине|следующим причинам}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> — некорректный каталог.",
 	"bs-filesystemhelper-has-path-traversal": "Обнаружен обход пути!",
 	"bs-filesystemhelper-file-not-exists": "Файл <code>$1</code> не существует.",
