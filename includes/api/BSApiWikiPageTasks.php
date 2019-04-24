@@ -340,6 +340,9 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		//normalize
 		foreach ( $matches[2] as $match ){
 			$oCategoryTitle = Title::newFromText( $match, NS_CATEGORY );
+			if ( $oCategoryTitle instanceof Title === false ) {
+				continue;
+			}
 			array_push( $aCategories, $oCategoryTitle->getText() );
 		}
 
