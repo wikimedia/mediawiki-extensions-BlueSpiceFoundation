@@ -1,7 +1,168 @@
 BlueSpice
-Copyright 2018 by Hallo Welt! GmbH
+Copyright 2019 by Hallo Welt! GmbH
 http://www.bluespice.com
 http://www.hallowelt.com
+
+== BlueSpice 2.27.4 ==
+
+BlueSpice 2.27.4 is a patch release.
+This is a stable release.
+
+=== Compatibility ===
+* MediaWiki 1.27 LTS
+* Operating System: Microsoft Windows Server 2008+ or Linux (common distributions)
+* Web server: Apache 2+, IIS 7+
+* PHP 5.6 to 7.0
+* MySQL 5.4+ or MariaDB 10+
+* Apache Tomcat 8 (for ExtendedSearch, UEModulePDF, VisualDiff and LaTexRenderer)
+* Java 8+
+* Chrome, Firefox, Internet Eplorer 11, Edge
+
+==BlueSpice Foundation==
+Foundation: Add WikiTextTemplateTreeParser and new WikiPage API task
+Foundation: Add explanatory placeholder to combo boxes
+Foundation: Add more-menu caption
+Foundation: Add new icon 'circle plus'
+Foundation: Add remoteFilter option to UserCombo
+Foundation: BS.form.CategoryCombo: Modify makeStore to get more results and enable filter
+Foundation: Backport 'BS.form.field.UserTag' from master
+Foundation: Backport of RunJobsTriggerHandler
+Foundation: Change composer package name
+Foundation: Change version constraint for library ParamProcessor
+Foundation: Credits: Add contributors and new developers
+Foundation: Enable passing related Title object to runUpdates
+Foundation: Fix duplicate warning dialog opened twice
+Foundation: Fix exception when wgReadOnly is set
+Foundation: Fix for failed upload
+Foundation: Fix userpage link label -> realname
+Foundation: Force assignment of permission to sysop only when new
+Foundation: Improve namespace selection in TitleCombo
+Foundation: Improve search results when inserting link in VisualEditor
+Foundation: Make special pages skippable in TitleCombo
+Foundation: Set global scope parser-object to satisfy hook handlers
+Foundation: Some improvements to UserCombo
+Foundation: TitleCombo: Fix listing of special pages
+Foundation: UserCombo: Do the sorting remotely
+
+==BlueSpice Free==
+Authors: Show anons as author
+Avatars: Check if imageantialias function exists
+Blog: Add support for a preload param on new blog entries
+Blog: Add uniformity to tags
+Checklist: UI fixes
+ContextMenu: Fix user option evaluation
+DistributionConnector: Add library dependency for mediawik/syntax-highlight
+DistributionConnector: Add syntaxhighlight tag
+DistributionConnector: Backport of "Hide edit tab link"
+EchoConnector: Add option to send mails immediately
+EchoConnector: Adjust Params for Notification on PageMove
+EchoConnector: Check if user exists before adding as receiver of notifications
+EchoConnector: Fix problems with farming
+EchoConnector: Prefilter affected users on "page events"
+EchoConnector: Query refinement and additional indention fixes
+EchoConnector: Syncing stuff from master into REL1_27
+EchoConnector: TestNotification script: Force email output
+ExtendedSearch: Add curl_setopt to unset system-wide proxy
+ExtendedSearch: Enable indexing of pages without sections
+ExtendedSearch: Fix failing index proccess when page content type no longer exists
+ExtendedSearch: Fix undefined index when retrieving search options
+ExtendedSearch: Remove search_files param
+InsertCategory: Fix adding new category when page already has categories
+InsertFile: Enable editing tags in the dialog
+InsertLink: Add file link
+InsertLink: Fix parsing for external links with nested []
+InsertMagic: Fix unselectable magic words
+NamespaceManager: Deletion of talk namespaces
+PageAssignments: Check if user exists before add as receiver of notifications
+PageAssignments: Pass title to update to runUpdates
+PageTemplates: Fix page creation with with forced target namespace
+PermissionManager: Fix for not being able to deselect permission templates
+Statistics: Fix db prefix on query
+Statistics: Increase CategoryStore limit
+TagCloud: Fix composer package name
+TopMenuBarCustomizer: Fix hook-handler-override of default sites list
+UEModulePDF: Fix resources could not be added/overwritten
+UEModulePDF: Fix table width
+UEModulePDF: Remove background-color from toc to make it not blend over watermarks
+UniversalExport: Add "export targets"
+UniversalExport: Enable PDF export of pages with FlaggedRevs
+UniversalExport: Fix parameter target-filename
+UserManager: Resize manager by showing hidden groups
+UserManager: Warning when changing your own password
+UserPreferences: Save user preferences with caching
+VisualEditor: Add plugin to preprocess pasted content
+VisualEditor: Fix parsing of <pre> tags
+VisualEditor: Fix pasting-error in VisualEditor
+VisualEditor: Fix selection issues with MS Edge in TinyMCE
+VisualEditor: Fix template tags with pipes in wikilinks in VisualEditor
+VisualEditor: Remove bspaste
+VisualEditor: Update TinyMCE to 4.6.7
+
+==BlueSpice Pro==
+Bookmaker: Allow raw HTML in bookchapterlink
+Bookmaker: Fix name for tags
+Bookmaker: Fix numbers in book page
+Bookmaker: Improve creation of internal links
+Bookmaker: Remove not required callParent from onBtnAddMassClick
+Bookmaker: Update formatting
+ExportTables: Fix auto integration
+ExportTables: Fix possible fatal on when revision returns userID instead of user object
+ExportTables: Fix usage of non-existent services in REL1_27
+LdapAuthenticationConnector: Add handling for login requests from WebDAV
+NSFileRepoConnector: Cleanup after comments
+NSFileRepoConnector: Fix integration in BSImportImages.php
+NSFileRepoConnector: Late update of WebDAV changes
+PasteImage: Fix close dialog after upload a image
+PasteImage: IE fix
+PasteImage: Increase timeout for uploading images
+PasteImage: Recognize file extension based on uploaded file
+Player: Fix tag name
+Reminder: Add PSR-4 autoloader to base composer.json
+Reminder: Add all notification i18n
+Reminder: Add expired watermark and toggle settings for page, print and pdf
+Reminder: Add expiry comment to the notification
+Reminder: Add missing i18n keys for web based notification
+Reminder: Backport of fix for only using main part of the language for image names
+Reminder: Fix syntax problem
+Reminder: Fix sysops are always notified and check if users exists before add as receiver
+Reminder: Fully load users to be notified and filter out deleted ones
+Reminder: Implement change by Darian Vela
+Reminder: Initial commit with RunJobsTriggerHandler backport
+Reminder: Re-add unit tests that have accidentially been deleted
+Reminder: Refactor expiry notifications
+Reminder: Remove unused 'comment' field
+Reminder: Split daily/weekly into different categories
+Review: Add new hook BlueSpiceReviewEditReviewBeforeSave
+Review: Check if user exists before add as receiver of notifications
+Review: Fix return of status date, even when workflow has already successfully ended
+Review: Pass title to be updated to runUpdates
+Review: Update translations
+SMWConnector: Add PageForms input fields
+SMWConnector: Add grid and user tags input for PageForms
+SMWConnector: Backport minor fixes from current master
+SMWConnector: Fix dependency issue during install
+SMWConnector: Fix for bsvisualeditor field in multi templates
+SMWConnector: Fix not called function
+SMWConnector: Refactor UserCombo PF input
+SMWConnector: Remove extension dependencies from composer.json
+SMWConnector: Set fixed size for VisualEditor in freetext fields
+ServiceCenter: Fix composer package name
+ServiceCenter: Fix name for the tag
+ServiceCenter: Switch from POST to GET
+SignHere: Make composer.json packagist compatible
+Teamwork: Add maintenance script that allows import of stable flaggs
+Teamwork: Add new file
+Teamwork: Fix blank pages on review
+Teamwork: Fix colors in history view
+Teamwork: Fix document-state on new fileupload for attribute
+Teamwork: FlaggedRevsConnector fix PDF export
+Teamwork: Increase pristine-value
+Teamwork: Remove unused variable
+Teamwork: Show approve comment in page history
+Teamwork: Update FRCSemanticMediaWiki.class.php
+VisualDiff: Delete webservice/BShtmlDiff.war
+VisualDiff: Fix broken layout on semantic page diffs
+VisualDiff: Update VisualDiff.class.php
 
 == BlueSpice 2.27.3 ==
 
