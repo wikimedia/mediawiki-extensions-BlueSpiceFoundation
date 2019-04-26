@@ -12,6 +12,7 @@
 	"apihelp-bs-wikipage-tasks-description": "מספק פעולות נפוצות ל-WikiPages",
 	"apihelp-bs-store-param-page": "מאפשר חישוב התחלה/גבול מצד שרת",
 	"apihelp-bs-store-param-limit": "מספר התוצאות להשיב",
+	"apihelp-bs-task-param-task": "המשימה שאמורה לפעול",
 	"apihelp-bs-task-param-format": "תסדיר התוצאה.",
 	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",
 	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון.",
