@@ -1,5 +1,7 @@
 <?php
 
+use BlueSpice\Services;
+
 class BsNamespaceHelper {
 
 	protected static $aNamespaceMap = array(
@@ -82,7 +84,6 @@ class BsNamespaceHelper {
 	 * @return string name of namespace internationalized
 	 */
 	public static function getNamespaceName( $iNamespaceId, $bReturnNamesForMainAndAll = true ) {
-		global $wgContLang;
 		// TODO SW(05.01.12 15:21): Profiling
 		if ( $bReturnNamesForMainAndAll ) {
 			if ( $iNamespaceId == 0 ) {
@@ -92,19 +93,21 @@ class BsNamespaceHelper {
 				return wfMessage( 'bs-ns_all' )->plain();
 			}
 		}
-		return $wgContLang->getNsText( $iNamespaceId );
+
+		return Services::getInstance()->getContentLanguage()->getNsText(
+			$iNamespaceId
+		);
 	}
 
 	/**
 	 * Returns all possible active names and aliases for a given namespace, including localized forms.
-	 * @global Language $wgContLang MediaWiki object for content language
 	 * @global array $wgNamespaceAliases stores all the namespace aliases
 	 * @global array $wgCanonicalNamespaceNames stores generic namespace names
 	 * @param int $iNamespaceId number of namespace index
 	 * @return array List of namespace names 
 	 */
 	public static function getNamespaceNamesAndAliases( $iNamespaceId ) {
-		global $wgContLang, $wgNamespaceAliases, $wgCanonicalNamespaceNames;
+		global $wgNamespaceAliases, $wgCanonicalNamespaceNames;
 		$aAliases = array();
 
 		// get canonical name
@@ -114,7 +117,8 @@ class BsNamespaceHelper {
 		// get canonical aliases (used for image/file namespace)
 		$aAliases = array_merge( array_keys( $wgNamespaceAliases, $iNamespaceId ), $aAliases );
 		// get localized aliases
-		$aTmpAliases = $wgContLang->getNamespaceAliases();
+		$aTmpAliases = Services::getInstance()->getContentLanguage()
+			->getNamespaceAliases();
 		if ( $aTmpAliases ) {
 			$aAliases = array_merge( array_keys( $aTmpAliases, $iNamespaceId ), $aAliases );
 		}
@@ -131,9 +135,8 @@ class BsNamespaceHelper {
 		if ( is_numeric( $vNamespace ) ) {
 			return $vNamespace;
 		}
-		global $wgContLang;
 
-		return $wgContLang->getNsIndex( $vNamespace );
+		return Services::getInstance()->getContentLanguage()->getNsIndex( $vNamespace );
 	}
 
 	/**
@@ -158,12 +161,12 @@ class BsNamespaceHelper {
 				__CLASS__.":".__METHOD__.' - expects comma separated string'
 			);
 		}
-		global $wgContLang;
+		$contLang = Services::getInstance()->getContentLanguage();
 		$sCSV = trim( $sCSV );
 		$sCSV = mb_strtolower( $sCSV ); // make namespaces case insensitive
 
 		if ( in_array( $sCSV, array( 'all', '-', '' ) ) ) { //for compatibility reason the '-' is equivalent to 'all'
-			return array_keys( $wgContLang->getNamespaces() );
+			return array_keys( $contLang->getNamespaces() );
 		}
 
 		$aAmbiguousNS = explode( ',', $sCSV );
@@ -173,7 +176,7 @@ class BsNamespaceHelper {
 
 		foreach ( $aAmbiguousNS as $vAmbiguousNS ) {
 			if ( is_numeric( $vAmbiguousNS ) ) { //Given value is a namespace id.
-				if ( $wgContLang->getNsText( $vAmbiguousNS ) === false ) { //Does a namespace with the given id exist?
+				if ( $contLang->getNsText( $vAmbiguousNS ) === false ) { //Does a namespace with the given id exist?
 					$aInvalidNamespaces[] = $vAmbiguousNS;
 				} else {
 					$aValidNamespaceIntIndexes[] = $vAmbiguousNS;
@@ -188,7 +191,7 @@ class BsNamespaceHelper {
 					//Given value is a namespace text.
 					$vAmbiguousNS = str_replace( ' ', '_', $vAmbiguousNS ); //'Bluespice talk' -> 'Bluespice_talk'
 					//Does a namespace id for the given namespace text exist?
-					$iNamespaceIdFromText = $wgContLang->getNsIndex( $vAmbiguousNS );
+					$iNamespaceIdFromText = $contLang->getNsIndex( $vAmbiguousNS );
 				}
 				if ( $iNamespaceIdFromText === false ) {
 					$aInvalidNamespaces[] = $vAmbiguousNS;
@@ -211,16 +214,15 @@ class BsNamespaceHelper {
 
 	/**
 	 * Creates an array for the HTMLFormField class for select boxes.
-	 * @global Language $wgContLang
 	 * @param array $aExcludeIds
 	 * @return array 
 	 */
 	public static function getNamespacesForSelectOptions( $aExcludeIds = array() ) {
-		global $wgContLang;
 		$aNamespaces = array();
 
-		foreach ( $wgContLang->getNamespaces() as $sNamespace ) {
-			$iNsIndex = $wgContLang->getNsIndex( $sNamespace );
+		$contLang = Services::getInstance()->getContentLanguage();
+		foreach ( $contLang->getNamespaces() as $sNamespace ) {
+			$iNsIndex = $contLang->getNsIndex( $sNamespace );
 			if ( in_array( $iNsIndex, $aExcludeIds ) ) {
 				continue; //Filter namespaces
 			}

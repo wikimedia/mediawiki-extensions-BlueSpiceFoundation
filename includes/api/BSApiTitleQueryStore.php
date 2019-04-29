@@ -10,12 +10,9 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 	 * Returns a List of Titles for the client side
 	 * @param string $sQuery A (maybe prefixed) title, or parts of a title
 	 * that the store should look for
-	 * @global Language $wgContLang
 	 * @return array of objects
 	 */
 	protected function makeData( $sQuery = '' ) {
-		global $wgContLang;
-
 		$aOptions = $this->getParameter( 'options' ) + array(
 			'limit' => 250,
 			'namespaces' => array(),
@@ -36,9 +33,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			'type' => 'wikipage'
 		);
 
+		$contLang = $this->getServices()->getContentLanguage();
 		if( empty( $aOptions['namespaces'] ) ) {
 			//Search in all namespaces by default
-			$aOptions['namespaces'] = $wgContLang->getNamespaceIds();
+			$aOptions['namespaces'] = $contLang->getNamespaceIds();
 			if( !in_array( NS_MAIN, $aOptions['namespaces'] ) ) {
 				//Add main namespace!
 				$aOptions['namespaces'][] = NS_MAIN;
@@ -50,7 +48,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 					unset( $aOptions['namespaces'][$iKey] );
 					continue;
 				}
-				if( !in_array( $iNSId, $wgContLang->getNamespaceIds() ) ) {
+				if( !in_array( $iNSId, $contLang->getNamespaceIds() ) ) {
 					//Namespace index does not exist
 					unset( $aOptions['namespaces'][$iKey] );
 					continue;
@@ -60,7 +58,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		}
 
 		//Step 1: Collect namespaces
-		$aNamespaces = $wgContLang->getNamespaces();
+		$aNamespaces = $contLang->getNamespaces();
 		$aNsCondition = [];
 		if( in_array( 0, $aOptions['namespaces'] ) ) {
 			//if main space is allowed, hand it over directly to the query
