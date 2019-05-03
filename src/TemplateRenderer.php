@@ -26,9 +26,70 @@
  */
 namespace BlueSpice;
 
+use Config;
+use IContextSource;
+use BlueSpice\Renderer\Params;
+use BlueSpice\Utility\CacheHelper;
+use MediaWiki\Linker\LinkRenderer;
+
 abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 
 	protected static $cache = [];
+
+	/**
+	 *
+	 * @var CacheHelper
+	 */
+	protected $cacheHelper = null;
+
+	/**
+	 * Constructor
+	 * @param Config $config
+	 * @param Params $params
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string $name | ''
+	 * @param CacheHelper|null $cacheHelper
+	 */
+	protected function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '', CacheHelper $cacheHelper = null ) {
+		parent::__construct( $config, $params, $linkRenderer, $context, $name );
+
+		$this->cacheHelper = $cacheHelper;
+	}
+	/**
+	 *
+	 * @param string $name
+	 * @param Services $services
+	 * @param Config $config
+	 * @param Params $params
+	 * @param IContextSource|null $context
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param CacheHelper|null $cacheHelper
+	 * @return Renderer
+	 */
+	public static function factory( $name, Services $services, Config $config, Params $params,
+		IContextSource $context = null, LinkRenderer $linkRenderer = null,
+		CacheHelper $cacheHelper = null ) {
+		if ( !$context ) {
+			$context = $params->get(
+				static::PARAM_CONTEXT,
+				false
+			);
+			if ( !$context instanceof IContextSource ) {
+				$context = \RequestContext::getMain();
+			}
+		}
+		if ( !$linkRenderer ) {
+			$linkRenderer = $services->getLinkRenderer();
+		}
+		if ( !$cacheHelper ) {
+			$cacheHelper = $services->getBSUtilityFactory()->getCacheHelper();
+		}
+
+		return new static( $config, $params, $linkRenderer, $context, $name, $cacheHelper );
+	}
 
 	/**
 	 * Returns a rendered template as HTML markup
@@ -95,7 +156,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		if( $this->hasCacheEntry() ) {
 			return static::$cache[$cacheKey];
 		}
-		static::$cache[$cacheKey] = \BsCacheHelper::get( $cacheKey );
+		static::$cache[$cacheKey] = $this->getCacheHelper()->get( $cacheKey );
 		return static::$cache[$cacheKey];
 	}
 
@@ -123,7 +184,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		if( !$cacheKey = $this->getCacheKey() ) {
 			return false;
 		}
-		\BsCacheHelper::set(
+		$this->getCacheHelper()->set(
 			$cacheKey,
 			$content,
 			$this->getCacheExpiryTime()
@@ -144,6 +205,21 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		if( isset( static::$cache[$cacheKey] ) ) {
 			unset( static::$cache[$cacheKey] );
 		}
-		return \BsCacheHelper::invalidateCache( $cacheKey );
+		return $this->getCacheHelper()->invalidate( $cacheKey );
+	}
+
+	/**
+	 *
+	 * @return CacheHelper
+	 */
+	protected function getCacheHelper() {
+		if ( !$this->cacheHelper ) {
+			$this->cacheHelper = Services::getInstance()->getBSUtilityFactory()
+				->getCacheHelper();
+			// Deprecated since 3.1! All sub classes should be registered with a factory
+			// callback and inject CacheHelper
+			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		}
+		return $this->cacheHelper;
 	}
 }

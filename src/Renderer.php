@@ -25,21 +25,42 @@
  * @filesource
  */
 namespace BlueSpice;
+
+use Config;
+use IContextSource;
+use Html;
+use HtmlArmor;
+use Hooks;
+use Message;
+use MessageLocalizer;
 use BlueSpice\Renderer\Params;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 
-abstract class Renderer implements IRenderer {
+abstract class Renderer implements IRenderer, MessageLocalizer {
+	const PARAM_CONTEXT = 'context';
+
 	const PARAM_ID = 'id';
 	const PARAM_CLASS = 'class';
 	const PARAM_TAG = 'tag';
 	const PARAM_CONTENT = 'content';
 
 	/**
+	 * Name of the Renderer
+	 * @var string
+	 */
+	protected $name = '';
+
+	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
+
+	/**
+	 *
+	 * @var IContextSource
+	 */
+	protected $context = null;
 
 	/**
 	 *
@@ -55,15 +76,19 @@ abstract class Renderer implements IRenderer {
 
 	/**
 	 * Constructor
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param Params $params
 	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string $name | ''
 	 */
-	public function __construct( \Config $config, Params $params, LinkRenderer $linkRenderer = null ) {
+	protected function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '' ) {
 		$this->config = $config;
-		$this->linkRenderer = $linkRenderer
-			? $linkRenderer
-			: MediaWikiServices::getInstance()->getLinkRenderer();
+		$this->context = $context;
+		$this->linkRenderer = $linkRenderer;
+		$this->name = $name;
 
 		$this->args[static::PARAM_CLASS] = $params->get(
 			static::PARAM_CLASS,
@@ -83,13 +108,60 @@ abstract class Renderer implements IRenderer {
 		);
 	}
 
+	/**
+	 *
+	 * @param string $name
+	 * @param Services $services
+	 * @param Config $config
+	 * @param Params $params
+	 * @param IContextSource|null $context
+	 * @param LinkRenderer|null $linkRenderer
+	 * @return Renderer
+	 */
+	public static function factory( $name, Services $services, Config $config, Params $params,
+		IContextSource $context = null, LinkRenderer $linkRenderer = null ) {
+		if ( !$context ) {
+			$context = $params->get(
+				static::PARAM_CONTEXT,
+				false
+			);
+			if ( !$context instanceof IContextSource ) {
+				$context = \RequestContext::getMain();
+			}
+		}
+		if ( !$linkRenderer ) {
+			$linkRenderer = $services->getLinkRenderer();
+		}
+
+		return new static( $config, $params, $linkRenderer, $context, $name );
+	}
+
+	/**
+	 *
+	 * @return Message
+	 */
+	public function msg( $key /* $args */ ) {
+		return call_user_func_array(
+			[ $this->getContext(), 'msg' ],
+			func_get_args()
+		);
+	}
+
+	/**
+	 *
+	 * @return IContextSource
+	 */
+	public function getContext() {
+		return $this->context;
+	}
+
 	protected function makeTagContent() {
-		$text = new \HtmlArmor( $this->args[static::PARAM_CONTENT] );
-		return \HtmlArmor::getHtml( $text );
+		$text = new HtmlArmor( $this->args[static::PARAM_CONTENT] );
+		return HtmlArmor::getHtml( $text );
 	}
 
 	protected function getOpenTag() {
-		return \Html::openElement(
+		return Html::openElement(
 			$this->args[static::PARAM_TAG],
 			$this->makeTagAttribs()
 		);
@@ -103,7 +175,7 @@ abstract class Renderer implements IRenderer {
 		if( $this->args[static::PARAM_ID] ) {
 			$attrbs[static::PARAM_ID] = $this->args[static::PARAM_ID];
 		}
-		\Hooks::run( 'BSFoundationRendererMakeTagAttribs', [
+		Hooks::run( 'BSFoundationRendererMakeTagAttribs', [
 			$this,
 			$this->args,
 			&$attrbs
@@ -112,6 +184,14 @@ abstract class Renderer implements IRenderer {
 	}
 
 	protected function getCloseTag() {
-		return \Html::closeElement( $this->args[static::PARAM_TAG] );
+		return Html::closeElement( $this->args[static::PARAM_TAG] );
+	}
+
+	/**
+	 * Name of the Renderer
+	 * @return string
+	 */
+	protected function getName() {
+		return $this->name;
 	}
 }

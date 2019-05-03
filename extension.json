@@ -39,11 +39,11 @@
 			"PageToolRegistry": {},
 			"TagRegistry": {},
 			"RendererRegistry": {
-				"list": "\\BlueSpice\\Renderer\\SimpleList",
-				"linklist": "\\BlueSpice\\Renderer\\LinkList",
-				"userimage": "\\BlueSpice\\Renderer\\UserImage",
-				"groupimage": "\\BlueSpice\\Renderer\\GroupImage",
-				"entity": "\\BlueSpice\\Renderer\\Entity"
+				"list": "\\BlueSpice\\Renderer\\SimpleList::factory",
+				"linklist": "\\BlueSpice\\Renderer\\LinkList::factory",
+				"userimage": "\\BlueSpice\\Renderer\\UserImage::factory",
+				"groupimage": "\\BlueSpice\\Renderer\\GroupImage::factory",
+				"entity": "\\BlueSpice\\Renderer\\Entity::factory"
 			},
 			"SkinDataRendererRegistry": {
 				"bs_navigation_site": "\\BlueSpice\\Renderer\\TreeNavigation",
