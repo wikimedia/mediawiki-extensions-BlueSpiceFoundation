@@ -1,7 +1,11 @@
 <?php
 namespace BlueSpice\Renderer;
-use MediaWiki\Linker\LinkRenderer;
+
+use Config;
+use IContextSource;
 use BlueSpice\Renderer\Params;
+use BlueSpice\Utility\CacheHelper;
+use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
 use BlueSpice\DynamicFileDispatcher\GroupImage as DFDGroupImage;
 use BlueSpice\Services;
@@ -19,12 +23,23 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 
 	/**
 	 * Constructor
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param Params $params
 	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string $name | ''
 	 */
-	public function __construct( \Config $config, Params $params, LinkRenderer $linkRenderer = null ) {
-		parent::__construct( $config, $params, $linkRenderer );
+	protected function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '', CacheHelper $cacheHelper = null ) {
+		parent::__construct(
+			$config,
+			$params,
+			$linkRenderer,
+			$context,
+			$name,
+			$cacheHelper
+		);
 
 		$this->group = $params->get( static::PARAM_GROUP, 'unknown' );
 		$this->args[static::PARAM_WIDTH] = $params->get( static::PARAM_WIDTH, 50 );
@@ -35,7 +50,7 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 		}
 		$this->args[static::PARAM_CLASS] .= ' bs-groupminiprofile';
 
-		$message = new \Message( 'group-' . $this->group );
+		$message = $this->msg( 'group-' . $this->group );
 		if( !$message->exists() ) {
 			$message = new \RawMessage( $this->group );
 		}
@@ -85,7 +100,7 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	 * @return string
 	 */
 	protected function getCacheKey() {
-		return \BsCacheHelper::getCacheKey(
+		return $this->getCacheHelper()->getCacheKey(
 			$this->getTemplateName(),
 			$this->group,
 			$this->args[static::PARAM_WIDTH],
