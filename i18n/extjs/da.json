@@ -51,6 +51,7 @@
 	"bs-extjs-filter-date-on": "Den",
 	"bs-extjs-pageexport-dialog-title": "Eksportér sider",
 	"bs-extjs-pageexport-overwrite-label": "Overskriv",
+	"bs-extjs-pageexport-error-invalid-title": "Navnet på listen er ugyldigt",
 	"bs-extjs-tools-trigger-text": "Værktøjer",
 	"bs-extjs-flyout-tab-grid-label": "Detaljer"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"Vlad5250",
 			"Romanko Mikhail",
-			"DmitTrix"
+			"DmitTrix",
+			"Movses"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Загрузка",
@@ -19,7 +20,7 @@
 	"bs-upload-upload-waitmessage": "Идёт загрузка…",
 	"bs-upload-error": "Ошибка",
 	"bs-upload-descfilelabel": "Описание",
-	"bs-upload-error-long": "Ошибка в процессе загрузке",
+	"bs-upload-error-long": "Ошибка в процессе загрузки",
 	"bs-upload-filetypenotsupported": "Этот тип файла не поддерживается",
 	"bs-upload-details": "Детали",
 	"bs-upload-uploadwarningdialog-title": "Загрузка файла: Предупреждения",

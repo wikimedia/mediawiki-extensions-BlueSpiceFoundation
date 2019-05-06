@@ -21,6 +21,7 @@
 	"bs-one-unit-ago": "for $1 siden",
 	"bs-now": "nu",
 	"bs-exception-view-heading": "Der opstod en fejl",
+	"bs-filesystemhelper-save-base64-error": "Filen kunne ikke gemmes.",
 	"bs-navigation-instructions": "Instruktioner",
 	"bs-navigation-contact": "Kontakt",
 	"bs-ns": "Navnerum",
