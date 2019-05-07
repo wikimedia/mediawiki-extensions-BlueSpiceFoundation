@@ -320,12 +320,10 @@ abstract class Entity implements \JsonSerializable {
 		if( !class_exists( $sContentClass ) ) {
 			return \Status::newFatal( "Content class '$sContentClass' not found" );
 		}
-		if( empty( $this->getID() ) ) {
-			$this->attributes[static::ATTR_ID] = $sContentClass::generateID(
-				$this
-			);
+		if ( empty( $this->get( static::ATTR_ID, 0 ) ) ) {
+			$this->attributes[static::ATTR_ID] = $sContentClass::generateID( $this );
 		}
-		if( empty( $this->getID() ) ) {
+		if ( empty( $this->get( static::ATTR_ID, 0 ) ) ) {
 			return \Status::newFatal( 'No ID generated' );
 		}
 		if( empty($this->get( static::ATTR_OWNER_ID, 0 )) ) {
@@ -491,7 +489,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return boolean
 	 */
 	public function exists() {
-		$bExists = $this->getID() > 0 ? true : false;
+		$bExists = !empty( $this->get( static::ATTR_ID, 0 ) );
 		if ( !$bExists ) {
 			return false;
 		}
@@ -612,7 +610,6 @@ abstract class Entity implements \JsonSerializable {
 	 */
 	public function invalidateCache() {
 		$this->invalidateTitleCache( wfTimestampNow() );
-		$this->entityFactory->detachCache( $this );
 		$this->tsCreatedCache = null;
 		$this->tsTouchedCache = null;
 		\Hooks::run( 'BSEntityInvalidate', [ $this ] );
