@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zoranzoki21"
+		]
+	},
+	"bs-validator-email-validation-approved": "Имејл адреса је успешно потврђена.",
+	"bs-validator-email-validation-not-approved": "Имејл адреса не може бити потврђена.",
+	"bs-validator-url-validation-approved": "Линк је успешно потврђен.",
+	"bs-validator-url-validation-not-approved": "Линк не може бити потврђен.",
+	"bs-validator-arg-count-validation-approved": "Атрибут \"count\" је успешно потврђен.",
+	"bs-validator-arg-count-validation-not-approved": "Атрибут \"count\" не може бити потврђен.",
+	"bs-validator-set-validation-approved": "$1 је успешно потврђен.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Само наведене вредности су дозвољене за $1|За $1 само једна од наведених вредности су дозвољене}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Наведена вредност је веома слаба. Не би требала бити мања од $1.",
+	"bs-validator-integer-range-validation-too-high": "Наведена вредност је веома висока. Не би требала да буде већа од $1.",
+	"bs-validator-value-not-recognized": "Није могуће обрадити вредност",
+	"bs-validator-invalid-parameter": "Овај параметар није дозвољен",
+	"bs-validator-missing-required": "Овај параметар је препоручен"
+}
