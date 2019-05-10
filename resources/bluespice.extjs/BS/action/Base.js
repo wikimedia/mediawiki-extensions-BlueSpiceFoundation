@@ -1,5 +1,5 @@
 Ext.define( 'BS.action.Base', {
-	extend: 'Ext.util.Observable',
+	extend: 'Ext.mixin.Observable',
 	statics: {
 		STATUS_ERROR: -1,
 		STATUS_PENDING: 0,
@@ -19,6 +19,17 @@ Ext.define( 'BS.action.Base', {
 
 	getDescription: function() {
 		return Ext.getClassName( this );
+	},
+
+	getErrors: function () {
+		var errors = [];
+		if ( this.actionErrors ) {
+			this.actionErrors.forEach( function ( msg ) {
+				errors.push( { message: msg['*'] } );
+			} );
+		}
+		return errors;
+
 	},
 
 	getStatus: function() {
