@@ -1,14 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Mirin"
 		]
 	},
 	"bs-filerepo-labelupload": "Alŝuti",
+	"bs-filerepo-labelfilter": "Filtri",
 	"bs-filerepo-headerfilename": "Dosiernomo",
+	"bs-filerepo-headerfilesize": "Grando",
 	"bs-filerepo-headerpagecategories": "Kategorioj",
+	"bs-filerepo-headerfilewidth": "Larĝo",
+	"bs-filerepo-headerfileheight": "Alto",
 	"bs-filerepo-headerfilemimetype": "MIME-tipo",
 	"bs-filerepo-headerfileusertext": "Uzanto",
+	"bs-filerepo-headerfileextension": "Dosiersufikso",
 	"bs-filerepo-headerfiletimestamp": "Alŝutita",
 	"bs-filerepo-headerfiledescription": "Priskribo",
 	"bs-filerepo-headerfilethumbnail": "Bildeto",

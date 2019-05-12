@@ -2,9 +2,37 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
-			"Lucas"
+			"Lucas",
+			"Mirin"
 		]
 	},
+	"bs-ns_main": "(Paĝoj)",
+	"bs-ns_all": "(ĉiuj)",
+	"bs-tab_navigation": "Navigado",
 	"bs-userbar_loginswitch_logout": "Elsaluti",
-	"bs-validator-error-title-does-not-exist": "Paĝo ne ekzistas: $1"
+	"bs-userbar_loginswitch_login": "Ensaluti",
+	"bs-extended-search-textfield-defaultvalue": "Serĉi...",
+	"bs-extended-search-textfield-tooltip": "Serĉi vikion",
+	"bs-now": "nun",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Saluton, S-ro $2|Saluton, S-ino $2|Saluton, $2}},",
+	"bs-userpagesettings-legend": "Agordoj de uzanto",
+	"bs-exception-view-heading": "Eraro okazis",
+	"bs-exception-view-stacktrace-toggle-show-text": "Montri detalojn de eraro",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Kaŝi detalojn de eraro",
+	"bs-viewtagerrorlist-legend": "$1 - Eraro",
+	"bs-navigation-contact": "Kontakti",
+	"bs-imagepage-download-text": "Elŝuti",
+	"bs-ns": "Nomspaco",
+	"bs-from-something": "(de $1)",
+	"bs-parser-error-invalid-title": "Ne valida titolo: $1",
+	"bs-validator-error-namespace-does-not-exist": "Nomspaco ne ekzistas: $1",
+	"bs-validator-error-namespace-on-blacklist": "Nomspaco ne permesata: $1",
+	"bs-validator-error-title-does-not-exist": "Paĝo ne ekzistas: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Paĝo ne permesata: $1",
+	"bs-parser-error-invalid-category-title": "Paĝo ne estas valida kategorio: $1",
+	"bs-export-menu-print-text": "Presi",
+	"bs-graphicallist-action-close": "Malfermi",
+	"bs-graphicallist-action-list": "Listo",
+	"bs-graphicallist-action-preview": "Antaŭrigardi",
+	"bs-notifications-agent-anon": "anonimulo"
 }

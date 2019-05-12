@@ -9,13 +9,14 @@
 			"Vlad5250",
 			"Alexandr Efremov",
 			"Romanko Mikhail",
-			"DmitTrix"
+			"DmitTrix",
+			"Movses"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",
 	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
-	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с данными контекста для хранилища",
+	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с контекстными данными для хранилища",
 	"apihelp-bs-task-param-format": "Формат результата",
 	"bs-wikipage-tasks-error-contentmodel": "Эта задача не может быть выполнена с использованием модели содержания данной страницы.",
 	"bs-wikipage-tasks-error-page-not-valid": "Предоставленная страница недействительна.",

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"bs-deferred-action-status-running": "Rulante...",
+	"bs-deferred-action-status-done": "Farite.",
+	"bs-deferred-action-status-error": "Malsukcesis.",
+	"bs-deferred-batch-progress-desc": "Progreso",
+	"bs-deferred-batch-actions": "Agoj",
+	"bs-deferred-batch-description": "Priskribo",
+	"bs-deferred-batch-status": "Stato",
+	"bs-deferred-action-apiaddcategories-description": "Aldoni kategoriojn al '$1'.",
+	"bs-deferred-action-apimovepage-description": "Movi la paĝon \"$1\" al \"$2\"",
+	"bs-deferred-action-apideletepage-description": "Forigi la paĝon \"$1\"."
+}
