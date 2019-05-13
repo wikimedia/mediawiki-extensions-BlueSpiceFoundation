@@ -3,7 +3,8 @@
 		"authors": [
 			"Milicevic01",
 			"Obsuser",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"bluespicefoundation-desc": "Омогућава спремност Медијавики предузећа",
@@ -40,6 +41,7 @@
 	"bs-readonly": "База података је тренутно закључана на нове уносе и друге модификације, вероватно због рутинског одржавања базе података, након чијег завршетка ће се она вратити у нормалу. Администратор који ју је закључао је навео ово објашњење: $1",
 	"bs-imageofotheruser": "Није вам дозвољено да опремате слику за другог корисника.",
 	"bs-permissionerror": "Грешка у дозволи.",
+	"bs-lockdown-groups-permissionerror": "Акција \"$1\" није доступна из {{PLURAL:$2|наведеног разлога|наведених разлога}}: $3",
 	"bs-filesystemhelper-no-directory": "Фасцикла <code>$1</code> није важећа.",
 	"bs-filesystemhelper-has-path-traversal": "Откривена прелазна путања.",
 	"bs-filesystemhelper-file-not-exists": "Датотека <code>$1</code> не постоји.",
@@ -90,6 +92,7 @@
 	"bs-graphicallist-action-preview": "Преглед",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "коришћено у многим BlueSpice додацима за потенцијалне опасне администраторске задатке попут управљања корисницима, дозволама и глобалном конфигурацијом",
 	"right-wikiadmin": "Користи се у многим додацима BlueSpice-а за потенцијалне опасне административне задатке попут управљања корисницима, дозволама, глобалном конфигурацијом",
 	"bs-notifications-agent-anon": "анониман корисник"
 }

@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Veeven"
+		]
+	},
+	"bs-filerepo-headerpagecategories": "వర్గాలు",
+	"bs-filerepo-headerfilewidth": "వెడల్పు",
+	"bs-filerepo-headerfileheight": "ఎత్తు",
+	"bs-filerepo-headerfileusertext": "వాడుకరి",
+	"bs-filerepo-headerfiledescription": "వివరణ"
+}

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kiranmayee"
+			"Kiranmayee",
+			"Veeven"
 		]
 	},
 	"bs-ns_main": "(ప్రతులు)",
@@ -20,9 +21,14 @@
 	"bs-two-units-ago": "$1 మరియు $2 క్రితం",
 	"bs-one-unit-ago": "$1 క్రితం",
 	"bs-now": "ఇప్పుడు",
+	"bs-userpagesettings-legend": "వాడుకరి అమరికలు",
 	"bs-viewtagerrorlist-legend": "$1 - తప్పు",
 	"bs-readonly": "డేటాబేసు ప్రస్తుతం లాకు చేయబడింది. మార్పులు, చేర్పులు ప్రస్తుతం చెయ్యలేరు. మామూలుగా జరిగే నిర్వహణ కొరకు ఇది జరిగి ఉండవచ్చు; అది పూర్తి కాగానే తిరిగి మామూలుగా పనిచేస్తుంది.\n\nదీనిని లాకు చేసిన నిర్వాహకుడు ఇలా తెలియజేస్తున్నాడు: $1",
+	"bs-navigation-instructions": "సూచనలు",
 	"bs-navigation-support": "సహాయకుడు",
 	"bs-navigation-contact": "సంప్రదించండి",
-	"bs-imagepage-download-text": "దింపుకోండి"
+	"bs-imagepage-download-text": "దింపుకోండి",
+	"bs-ns": "పేరుబరి",
+	"bs-from-something": "($1 నుండి)",
+	"bs-graphicallist-action-close": "మూసివేయి"
 }
