@@ -47,14 +47,14 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			$conds['rc_namespace'] = $this->namespaceWhitelist;
 		}
 
+		$info = \RecentChange::getQueryInfo();
 		$res = $this->db->select(
-			'recentchanges',
-			'*',
+			$info['tables'],
+			$info['fields'],
 			$conds,
 			__METHOD__,
-			[
-				'ORDER BY' => 'rc_timestamp DESC'
-			]
+			['ORDER BY' => 'rc_timestamp DESC'],
+			$info['joins']
 		);
 
 		foreach( $res as $row ) {
@@ -76,7 +76,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::PAGE_LINK => '',
 			Record::TIMESTAMP => '',
 			Record::RAW_TIMESTAMP =>$row->rc_timestamp,
-			Record::COMMENT_TEXT => htmlspecialchars( $row->rc_comment ),
+			Record::COMMENT_TEXT => htmlspecialchars( $row->rc_comment_text ),
 			Record::SOURCE => $row->rc_source,
 			Record::DIFF_URL => '',
 			Record::DIFF_LINK => '',
