@@ -16,8 +16,10 @@
 	"bs-filerepo-headerfileusertext": "Uzanto",
 	"bs-filerepo-headerfileextension": "Dosiersufikso",
 	"bs-filerepo-headerfiletimestamp": "Alŝutita",
+	"bs-filerepo-headerfilemediatype": "Dosiertipo de aŭdvidaĵo",
 	"bs-filerepo-headerfiledescription": "Priskribo",
 	"bs-filerepo-headerfilethumbnail": "Bildeto",
 	"bs-filerepo-yes": "Jes",
-	"bs-filerepo-no": "Ne"
+	"bs-filerepo-no": "Ne",
+	"bs-filerepo-pagesize": "Nombro de eroj en paĝo"
 }
