@@ -103,7 +103,7 @@ class BsFileSystemHelper {
 			return $oStatus;
 		}
 
-		if (!file_put_contents( "{$oStatus->getValue()}/$sFileName", $data ) ) {
+		if ( !self::atomicPutContents( "{$oStatus->getValue()}/$sFileName", $data ) ) {
 			return Status::newFatal(
 				"could not save \"$sFileName\" to location: {$oStatus->getValue()}/$sFileName"
 			);
@@ -748,5 +748,21 @@ class BsFileSystemHelper {
 		else{
 			return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-local-error-create' ) );
 		}
+	}
+
+	/**
+	 * @param string $filename
+	 * @param string $data
+	 * @return bool|int
+	 */
+	protected static function atomicPutContents( $filename, $data ) {
+		$fp = fopen( $filename, "w+" );
+		if ( flock( $fp, LOCK_EX ) ) {
+			fwrite( $fp, $data );
+			flock( $fp, LOCK_UN );
+			return true;
+		}
+		fclose( $fp );
+		return false;
 	}
 }
