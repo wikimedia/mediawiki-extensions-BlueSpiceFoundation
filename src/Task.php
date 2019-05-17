@@ -29,6 +29,8 @@ namespace BlueSpice;
 
 use Status;
 use MessageLocalizer;
+use Message;
+use WikiPage;
 use Psr\Log\LoggerInterface;
 use MediaWiki\Logger\LoggerFactory;
 

@@ -7,7 +7,7 @@ use BlueSpice\ParamProcessor\ParamDefinition;
 use BlueSpice\ParamProcessor\ParamType;
 use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
 
-class SetLanguageLinks extends \BlueSpice\Task {
+class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	const PARAM_LANGUAGE_LINKS = 'languagelinks';
 
 	/**
@@ -54,50 +54,12 @@ class SetLanguageLinks extends \BlueSpice\Task {
 
 	/**
 	 *
-	 * @param string $wikitext
-	 * @return Status
-	 */
-	protected function saveWikiPage( $wikitext ) {
-		return $this->getWikiPage()->doEditContent(
-			new \WikitextContent( $wikitext ),
-			'',
-			0,
-			false,
-			$this->context->getUser()
-		);
-	}
-
-	/**
-	 *
 	 * @param string $wikiText
 	 * @return InterlanguageLinksHelper
 	 */
 	protected function getLanguageLinksHelper( $wikiText ) {
 		return $this->getServices()->getBSUtilityFactory()
 			->getWikiTextLinksHelper( $wikiText )->getLanguageLinksHelper();
-	}
-
-	/**
-	 *
-	 * @return string
-	 * @throws Exception
-	 */
-	protected function fetchCurrentRevisionWikiText() {
-		$content = $this->getWikiPage()->getContent();
-		if( $content instanceof \WikitextContent === false ) {
-			throw new Exception(
-				"Can not set wikitext-language-links on non-wikitext content"
-			);
-		}
-		return $content->getNativeData();
-	}
-
-	/**
-	 *
-	 * @return \WikiPage
-	 */
-	protected function getWikiPage() {
-		return $this->context->getWikiPage();
 	}
 
 	/**
