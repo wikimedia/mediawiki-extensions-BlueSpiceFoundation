@@ -3,9 +3,8 @@
 namespace BlueSpice;
 
 use Status;
-use BlueSpice\ParamProcessor\ParamDefinition;
 
-interface ITask {
+interface ITask extends IParamProvider {
 
 	/**
 	 * @param array $params
@@ -13,11 +12,6 @@ interface ITask {
 	 * @return Status
 	 */
 	public function execute( array $params = [], Status $status = null );
-
-	/**
-	 * @return ParamDefinition[]
-	 */
-	public function getArgsDefinitions();
 
 	/**
 	 * @return string[]
