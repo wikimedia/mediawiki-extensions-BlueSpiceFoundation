@@ -16,6 +16,8 @@
 	"apihelp-bs-group-store-summary": "Elenghe tutte le gruppe tranne $wgImplicitGroups. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-interwiki-store-description": "Elenghe tutte le collegaminde 'mbrà uicchi. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Elenghe tutte le collegaminde 'mbrà uicchi. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Elenghe de le titole de le pàggene e (facoltative) le prefisse de le namespace basate sus a 'nu termine de 'nderrogazione. 'Mblemende le parametre de ExtJS Store.",
+	"apihelp-bs-titlequery-store-summary": "Elenghe de le titole de le pàggene e (facoltative) le prefisse de le namespace basate sus a 'nu termine de 'nderrogazione. 'Mblemende le parametre de ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Dèje operazziune comune pe le WikiPages",
 	"apihelp-bs-wikipage-tasks-summary": "Dèje operazziune comune pe le WikiPages",
 	"apihelp-bs-store-param-limit": "Numere de le resultate da turnà",

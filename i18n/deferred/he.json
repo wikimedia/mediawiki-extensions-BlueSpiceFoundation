@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"LaG roiL"
+			"LaG roiL",
+			"Erelon"
 		]
 	},
+	"bs-deferred-action-status-pending": "ממתין.",
 	"bs-deferred-action-status-running": "פועל...",
 	"bs-deferred-action-status-done": "בוצע.",
 	"bs-deferred-action-status-error": "כשל.",

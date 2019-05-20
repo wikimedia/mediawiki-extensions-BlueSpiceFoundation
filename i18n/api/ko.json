@@ -12,6 +12,8 @@
 	"apihelp-bs-category-store-description": "모든 분류를 나열합니다. 정렬, 필터링, 페이지 매기기를 허용합니다. ExtJS 스토어 변수들을 구현합니다.",
 	"apihelp-bs-interwiki-store-summary": "모든 인터위키 링크를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",
 	"apihelp-bs-store-param-limit": "반환할 결과 수",
+	"apihelp-bs-store-param-dc": "<code>Disable cache</code> 플래그",
+	"apihelp-bs-store-param-format": "출력 형식 (JSON 또는 서식화된 JSON만)",
 	"apihelp-bs-task-param-format": "결과 형식",
 	"bs-wikipage-tasks-error-contentmodel": "지정된 문서의 콘텐츠 모델로 작업을 수행하지 못했습니다.",
 	"bs-wikipage-tasks-error-page-not-valid": "지정한 문서가 올바르지 않습니다.",

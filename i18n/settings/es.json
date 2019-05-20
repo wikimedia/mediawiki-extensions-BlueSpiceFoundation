@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Ryo567"
 		]
 	},
+	"bs-setting-path-feature": "Característica",
 	"bs-setting-path-extension": "Extensión",
 	"bs-setting-path-package": "Paquete",
 	"bs-setting-path-system": "Sistema",

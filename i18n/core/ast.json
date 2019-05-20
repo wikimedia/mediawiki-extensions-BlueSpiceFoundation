@@ -91,7 +91,7 @@
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "amosar les páxines d'alministración de BlueSpice",
+	"action-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
 	"right-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
 	"bs-notifications-agent-anon": "usuariu anónimu"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"MojoMann",
 			"Guycn2",
-			"YaronSh"
+			"YaronSh",
+			"Erelon"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
@@ -14,6 +15,7 @@
 	"apihelp-bs-store-param-limit": "מספר התוצאות להשיב",
 	"apihelp-bs-task-param-task": "המשימה שאמורה לפעול",
 	"apihelp-bs-task-param-format": "תסדיר התוצאה.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "קטגוריות ששונו.",
 	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",
 	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון.",
 	"apihelp-bs-task-summary": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
