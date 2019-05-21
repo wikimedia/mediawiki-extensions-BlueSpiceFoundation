@@ -153,6 +153,18 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"type" => 'global',
 		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
 	],
+	"editsitecss" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"editsitejs" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
+	],
+	"editsitejson" => [
+		"type" => 'global',
+		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
+	],
 	"editmyoptions" => [
 		"type" => 'global',
 		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
