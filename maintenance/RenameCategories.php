@@ -348,7 +348,7 @@ while ($row = mysql_fetch_array($res->result))
 			$new_title = preg_replace($move_from, $move_to, $cur_title);
 
 			if ($new_title == $cur_title) {
-				continue;
+				break;
 			}
 
 			echo "Moving title \"$cur_title\" to \"$new_title\" (NS:$ns): ";
@@ -357,7 +357,7 @@ while ($row = mysql_fetch_array($res->result))
 			if ($testing)
 			{
 				echo "testing\n";
-				continue;
+				break;
 			}
 
 			// Actual modification
