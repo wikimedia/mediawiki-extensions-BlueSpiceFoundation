@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"bs-extjs-ok": "Ок",
@@ -18,7 +19,7 @@
 	"bs-extjs-error": "Грешка",
 	"bs-extjs-confirm": "Потврди",
 	"bs-extjs-loading": "Вчитувам...",
-	"bs-extjs-pageSize": "Големина на страницата",
+	"bs-extjs-pageSize": "Ставки по страница",
 	"bs-extjs-actions-column-header": "Дејства",
 	"bs-extjs-warning": "Предупредување",
 	"bs-extjs-saving": "зачувувам...",
