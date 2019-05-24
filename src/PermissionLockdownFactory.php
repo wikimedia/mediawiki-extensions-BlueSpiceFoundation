@@ -4,11 +4,13 @@ namespace BlueSpice;
 
 use Title;
 use User;
+use Status;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use Config;
 use IContextSource;
 use BlueSpice\Services;
 use BlueSpice\Permission\Lockdown;
+use MediaWiki\Permissions\PermissionManager;
 
 class PermissionLockdownFactory {
 
@@ -109,6 +111,45 @@ class PermissionLockdownFactory {
 	 */
 	protected function getCacheKey( Title $title, User $user ) {
 		return "{$title->getArticleID()}-{$user->getId()}";
+	}
+
+	/**
+	 * Can $user perform $action on a page?
+	 *
+	 * The method is intended to wrap around PermissionManager::userCan(), to be
+	 * able to return a Status wich contains a message exactly why the user can
+	 * not access the given action in permission error case
+	 *
+	 * @see PermissionManager::userCan()
+	 *
+	 * @param Title $title
+	 * @param string $action
+	 * @param User|null $user
+	 * @param string $rigor One of PermissionManager::RIGOR_ constants
+	 *   - RIGOR_QUICK  : does cheap permission checks from replica DBs (usable for GUI creation)
+	 *   - RIGOR_FULL   : does cheap and expensive checks possibly from a replica DB
+	 *   - RIGOR_SECURE : does cheap and expensive checks, using the master as needed
+	 *
+	 * @return Status
+	 */
+	public function userCan( Title $title, $action = 'read', User $user = null,
+		$rigor = PermissionManager::RIGOR_SECURE ) {
+		$status = Status::newGood();
+		if ( !$user ) {
+			$user = $this->context->getUser();
+		}
+		$result = Services::getInstance()->getPermissionManager()->userCan(
+			$action,
+			$user,
+			$title,
+			$rigor
+		);
+		if ( !$result ) {
+			$lockdown = $this->newFromTitleAndUserRelation( $title, $user );
+			$status->merge( $lockdown->getLockState( $action ) );
+		}
+
+		return $status;
 	}
 
 }
