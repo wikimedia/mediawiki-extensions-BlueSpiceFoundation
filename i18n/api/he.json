@@ -4,7 +4,8 @@
 			"MojoMann",
 			"Guycn2",
 			"YaronSh",
-			"Erelon"
+			"Erelon",
+			"Steeve815"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
@@ -17,6 +18,7 @@
 	"apihelp-bs-task-param-format": "תסדיר התוצאה.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "קטגוריות ששונו.",
 	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",
+	"bs-wikipage-tasks-error-nothingtoremove": "אין קטגוריות להסרה",
 	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון.",
 	"apihelp-bs-task-summary": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
 	"apihelp-bs-task-description": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות"

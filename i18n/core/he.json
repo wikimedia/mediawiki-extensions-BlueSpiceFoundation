@@ -8,7 +8,8 @@
 			"Eladk",
 			"ערן",
 			"Guycn2",
-			"YaronSh"
+			"YaronSh",
+			"Steeve815"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -70,6 +71,8 @@
 	"bs-pref-logopath": "נתיב הלוגו:",
 	"bs-pref-faviconpath": "נתיב סמל מועדפים:",
 	"bs-pref-defaultuserimage": "דמות ברירת המחדל של המשתמש:",
+	"bs-pref-anonuserimage": "אווטאר של משתמש אנונימי:",
+	"bs-pref-deleteduserimage": "אווטאר מחוק של משתמש:",
 	"bs-pref-testmode": "הפעלת מצב בדיקה",
 	"bs-parser-error-invalid-namespace": "מרחב שם בלתי תקין: $1",
 	"bs-parser-error-invalid-title": "כותרת בלתי תקינה: $1",
