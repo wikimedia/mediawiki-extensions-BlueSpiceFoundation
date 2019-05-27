@@ -49,6 +49,7 @@ use TitleParser;
 use VirtualRESTServiceClient;
 use MediaWiki\Interwiki\InterwikiLookup;
 use Language;
+use MediaWiki\Permissions\PermissionManager;
 
 class ServicesDecorator extends ServiceContainer {
 
@@ -542,5 +543,13 @@ class ServicesDecorator extends ServiceContainer {
 	 */
 	public function getActorMigration() {
 		return $this->getService( 'ActorMigration' );
+	}
+
+	/**
+	 * @since 1.33
+	 * @return PermissionManager
+	 */
+	public function getPermissionManager() {
+		return $this->getService( 'PermissionManager' );
 	}
 }
