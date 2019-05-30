@@ -2,18 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Robin0van0der0vliet",
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"PiefPafPier"
 		]
 	},
 	"bs-tab_navigation": "Navigaasje",
 	"bs-extended-search-textfield-defaultvalue": "Sykje...",
-	"bs-years-duration": "{{PLURAL:$1|ien jier|$1 jierren}}",
+	"bs-years-duration": "{{PLURAL:$1|ien jier|$1 jier}}",
 	"bs-months-duration": "{{PLURAL:$1|ien moanne|$1 moannen}}",
 	"bs-weeks-duration": "{{PLURAL:$1|ien wike|$1 wiken}}",
 	"bs-days-duration": "{{PLURAL:$1|ien dei|$1 dagen}}",
-	"bs-hours-duration": "{{PLURAL:$1|ien oere|$1 oere}}",
+	"bs-hours-duration": "{{PLURAL:$1|ien oere|$1 oeren}}",
 	"bs-mins-duration": "{{PLURAL:$1|ien minút|$1 minuten}}",
 	"bs-secs-duration": "{{PLURAL:$1|ien sekonde|$1 sekonden}}",
+	"bs-two-units-ago": "$1 en $2 lyn",
 	"bs-one-unit-ago": "$1 lyn",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hallo menear $2|Hallo mefrou $2|Hallo $2}},",
 	"bs-viewtagerrorlist-legend": "$1 - Flater",
