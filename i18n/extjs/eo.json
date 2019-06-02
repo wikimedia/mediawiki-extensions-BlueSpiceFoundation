@@ -19,7 +19,9 @@
 	"bs-extjs-hint": "Sugesto",
 	"bs-extjs-error": "Eraro",
 	"bs-extjs-confirm": "Konfirmi",
+	"bs-extjs-loading": "Ŝargante...",
 	"bs-extjs-actions-column-header": "Agoj",
+	"bs-extjs-warning": "Averto",
 	"bs-extjs-saving": "konservante...",
 	"bs-extjs-close": "Fermi",
 	"bs-extjs-label-user": "Uzanto",
@@ -42,9 +44,16 @@
 	"bs-extjs-filter-less-than": "malpli granda ol",
 	"bs-extjs-filter-bool-yes": "jes",
 	"bs-extjs-filter-bool-no": "ne",
+	"bs-extjs-title-success": "Sukceso",
+	"bs-extjs-categoryboxselect-emptytext": "Aldoni kategorion",
 	"bs-extjs-categorytree-title": "Kategorioj",
+	"bs-extjs-filter-date-filter": "Filtri",
+	"bs-extjs-pageexport-list-name-label": "Nomo de listo",
+	"bs-extjs-pageexport-list-format-plain-label": "Plata teksto",
+	"bs-extjs-pageexport-list-format-link-label": "Ligilo",
 	"bs-extjs-tools-trigger-text": "Iloj",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturoj",
 	"bs-extjs-flyout-tab-thumbs-title": "Ŝalti vidojn de miniaturoj",
-	"bs-extjs-flyout-tab-grid-label": "Detaloj"
+	"bs-extjs-flyout-tab-grid-label": "Detaloj",
+	"bs-extjs-flyout-add-label": "Aldoni eron"
 }

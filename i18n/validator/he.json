@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Steeve815"
+		]
+	},
+	"bs-validator-invalid-string": "מחרוזת לא תקינה",
+	"bs-validator-invalid-coordinate": "קואורדינטה לא תקינה",
+	"bs-validator-missing-required": "פרמטר זה נדרש"
+}

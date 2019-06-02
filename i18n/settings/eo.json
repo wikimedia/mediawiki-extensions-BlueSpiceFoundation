@@ -5,6 +5,8 @@
 		]
 	},
 	"bs-setting-path-feature": "Trajto",
+	"bs-setting-path-package": "Pako",
 	"bs-setting-path-system": "Sistemo",
-	"bs-setting-path-dataanalysis": "Analizo de dateno"
+	"bs-setting-path-dataanalysis": "Analizo de dateno",
+	"bs-setting-path-skinning": "Etoso"
 }

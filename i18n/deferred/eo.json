@@ -7,6 +7,7 @@
 	"bs-deferred-action-status-running": "Rulante...",
 	"bs-deferred-action-status-done": "Farite.",
 	"bs-deferred-action-status-error": "Malsukcesis.",
+	"bs-deferred-action-apieditpage-description": "Redakti \"$1\".",
 	"bs-deferred-batch-progress-desc": "Progreso",
 	"bs-deferred-batch-actions": "Agoj",
 	"bs-deferred-batch-description": "Priskribo",

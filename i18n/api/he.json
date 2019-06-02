@@ -19,6 +19,8 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "קטגוריות ששונו.",
 	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",
 	"bs-wikipage-tasks-error-nothingtoremove": "אין קטגוריות להסרה",
+	"bs-api-task-taskData-page-id": "המזהה של דף ויקי קיים",
+	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי",
 	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון.",
 	"apihelp-bs-task-summary": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
 	"apihelp-bs-task-description": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות"
