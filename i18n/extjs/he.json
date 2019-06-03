@@ -5,7 +5,8 @@
 			"Ronel1",
 			"Eladk",
 			"Guycn2",
-			"YaronSh"
+			"YaronSh",
+			"Steeve815"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -47,6 +48,8 @@
 	"bs-extjs-filter-contains-not": "מכיל לא",
 	"bs-extjs-filter-starts-with": "מתחיל עם",
 	"bs-extjs-filter-ends-with": "מסתיים",
+	"bs-extjs-filter-greater-than": "גדול מ־",
+	"bs-extjs-filter-less-than": "קטן מ־",
 	"bs-extjs-filter-bool-yes": "כן",
 	"bs-extjs-filter-bool-no": "לא",
 	"bs-extjs-title-success": "הצלחה",
@@ -55,6 +58,7 @@
 	"bs-extjs-categorytree-title": "קטגוריות",
 	"bs-extjs-filter-date-after": "אחרי",
 	"bs-extjs-filter-date-before": "לפני",
+	"bs-extjs-filter-date-on": "פעיל",
 	"bs-extjs-filter-date-filter": "מסנן",
 	"bs-extjs-pageexport-dialog-title": "ייצוא דפים",
 	"bs-extjs-pageexport-list-name-label": "שם הרשימה",

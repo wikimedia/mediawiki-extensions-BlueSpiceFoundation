@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"LaG roiL",
-			"Erelon"
+			"Erelon",
+			"Steeve815"
 		]
 	},
 	"bs-deferred-action-status-pending": "ממתין.",
@@ -14,5 +15,9 @@
 	"bs-deferred-batch-progress-desc": "התקדמות",
 	"bs-deferred-batch-actions": "פעולות",
 	"bs-deferred-batch-description": "תיאור",
-	"bs-deferred-batch-status": "מצב"
+	"bs-deferred-batch-status": "מצב",
+	"bs-deferred-action-apiaddcategories-description": "הוספת קטגוריות ל-'$1'.",
+	"bs-deferred-action-apiremovecategories-description": "הסרת קטגוריות מ-'$1'.",
+	"bs-deferred-action-apimovepage-description": "העברת \"$1\" ל-\"$2\".",
+	"bs-deferred-action-apideletepage-description": "מחיקת הדף \"$1\"."
 }

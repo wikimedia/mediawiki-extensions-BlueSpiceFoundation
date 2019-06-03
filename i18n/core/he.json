@@ -54,6 +54,7 @@
 	"bs-filesystemhelper-folder-already-exists": "התיקיה <code>$1</code> כבר קיימת.",
 	"bs-filesystemhelper-folder-copy-error": "לא הייתה אפשרות לשנות את שם התיקיה <code>$1</code>.",
 	"bs-filesystemhelper-folder-not-exists": "התיקיה <code>$1</code> אינה קיימת.",
+	"bs-filesystemhelper-folder-rename-error": "לא ניתן לשנות את שם התיקייה <code>$1</code> לשם <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "לא הייתה אפשרות להעלות את הקובץ: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "לקובץ זה אין את הסיומת הדרושה: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "סוג קובץ זה אינו נתמך.",
