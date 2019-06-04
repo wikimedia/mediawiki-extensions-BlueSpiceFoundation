@@ -82,7 +82,7 @@ class EntityFactory {
 			return null;
 		}
 
-		return $this->newFromObject( (object) $aContent );
+		return $this->newFromObject( (object)$aContent );
 	}
 
 	/**
@@ -103,7 +103,7 @@ class EntityFactory {
 			return null;
 		}
 
-		if( !empty($object->id) && (int) $object->id !== 0 ) {
+		if( !empty($object->id) && (int)$object->id !== 0 ) {
 			$entityConfig = $this->configFactory->newFromType( $object->type );
 			if( !$entityConfig instanceof EntityConfig ) {
 				//TODO: Return a DummyEntity instead of null.
@@ -134,8 +134,8 @@ class EntityFactory {
 		if ( !is_numeric( $id ) || !is_numeric( $ns ) ) {
 			return null;
 		}
-		$id = (int) $id;
-		$ns = (int) $ns;
+		$id = (int)$id;
+		$ns = (int)$ns;
 
 		$instance = null;
 		if( !$reload ) {
@@ -156,7 +156,7 @@ class EntityFactory {
 		);
 
 		$content = new EntityContent( $sText );
-		$data = (object) $content->getData()->getValue();
+		$data = (object)$content->getData()->getValue();
 
 		if( empty($data->type) ) {
 			return null;
@@ -186,7 +186,7 @@ class EntityFactory {
 		if ( !$title ) {
 			return null;
 		}
-		$id = (int) $title->getText();
+		$id = (int)$title->getText();
 
 		return $this->newFromID( $id, $title->getNamespace(), $reload );
 	}
@@ -226,10 +226,10 @@ class EntityFactory {
 		if( !$this->hasCacheEntry( $id, $ns ) ) {
 			return null;
 		}
-		return $this->storedById[$ns][(int) $id];
+		return $this->storedById[$ns][(int)$id];
 	}
 
 	protected function hasCacheEntry( $id, $ns = -1 ) {
-		return isset( $this->storedById[$ns][(int) $id] );
+		return isset( $this->storedById[$ns][(int)$id] );
 	}
 }

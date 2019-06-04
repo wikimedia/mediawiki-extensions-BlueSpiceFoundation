@@ -31,7 +31,7 @@ trait FloatableElement {
 
 		$this->hideWhenOutOfView = true;
 		if( isset( $config[ 'hideWhenOutOfView' ] ) ) {
-			$this->hideWhenOutOfView = (bool) $config['hideWhenOutOfView'];
+			$this->hideWhenOutOfView = (bool)$config['hideWhenOutOfView'];
 		}
 	}
 

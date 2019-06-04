@@ -21,10 +21,10 @@ class KeyValueInputWidget extends \OOUI\Widget {
 
 		$this->value = isset( $config['value'] ) ? $config['value'] : [];
 		$this->labelsOnlyOnFirst = isset( $config['labelsOnlyOnFirst'] ) ?
-			(bool) $config['labelsOnlyOnFirst'] : true;
+			(bool)$config['labelsOnlyOnFirst'] : true;
 
 		$this->valueRequired = isset( $config['valueRequired'] ) ?
-			(bool) $config['valueRequired'] : false;
+			(bool)$config['valueRequired'] : false;
 
 		$this->keyLabel = isset( $config['keyLabel'] ) ?
 			$config['keyLabel'] : wfMessage( 'bs-ooui-key-value-input-widget-key-label' )->plain();
@@ -36,10 +36,10 @@ class KeyValueInputWidget extends \OOUI\Widget {
 			$config['addNewFormLabel'] : wfMessage( 'bs-ooui-key-value-input-widget-add-form-label' )->plain();
 
 		$this->keyReadOnly = isset( $config['keyReadOnly'] ) ?
-			(bool) $config['keyReadOnly'] : false;
+			(bool)$config['keyReadOnly'] : false;
 
 		$this->allowAdditions = isset( $config['allowAdditions'] ) ?
-			(bool) $config['allowAdditions'] : false;
+			(bool)$config['allowAdditions'] : false;
 
 		$this->separator = new \OOUI\Tag();
 		$this->separator->addClasses( ['bs-ooui-keyValueInputWidget-separator' ] );

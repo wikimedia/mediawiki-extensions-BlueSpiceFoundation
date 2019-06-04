@@ -17,7 +17,7 @@ class StringValueTest extends \PHPUnit\Framework\TestCase {
 			'value' => 'ello'
 		] );
 
-		$result = $filter->matches( new Record( (object) [
+		$result = $filter->matches( new Record( (object)[
 			'field1' => 'Hello World',
 			'field2' => 'Hallo Welt'
 		] ) );

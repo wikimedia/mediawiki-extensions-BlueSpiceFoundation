@@ -55,7 +55,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 					unset( $aOptions['namespaces'][$iKey] );
 					continue;
 				}
-				$aOptions['namespaces'][$iKey] = (int) $iNSId;
+				$aOptions['namespaces'][$iKey] = (int)$iNSId;
 			}
 		}
 

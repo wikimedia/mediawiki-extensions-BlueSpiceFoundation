@@ -141,7 +141,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 			$sVarName = substr( $sMethod, 4 );
 			$aConfig[$sVarName] = $this->$sMethod();
 		}
-		return (object) array_merge(
+		return (object)array_merge(
 			$this->defaults,
 			$aConfig
 		);

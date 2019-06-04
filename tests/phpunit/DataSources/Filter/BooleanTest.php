@@ -55,7 +55,7 @@ class BooleanTest extends \PHPUnit\Framework\TestCase {
 			Filter\Boolean::KEY_COMPARISON => $comparison
 		] );
 
-		$dataSet = new Record( (object) [
+		$dataSet = new Record( (object)[
 			'field_A' => $fieldValue
 		] );
 

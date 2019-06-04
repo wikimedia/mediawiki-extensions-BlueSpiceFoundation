@@ -19,7 +19,7 @@ class BsGroupHelper {
 
 		if ( isset( $aConf['blacklist'] ) ) {
 			if ( !is_array( $aConf['blacklist'] ) ) {
-				$aConf['blacklist'] = (array) $aConf['blacklist'];
+				$aConf['blacklist'] = (array)$aConf['blacklist'];
 			}
 			$aBlacklist = $aConf['blacklist'];
 		}
@@ -52,7 +52,7 @@ class BsGroupHelper {
 
 		if ( isset( $aConf['blacklist'] ) ) {
 			if ( !is_array( $aConf['blacklist'] ) ) {
-				$aConf['blacklist'] = (array) $aConf['blacklist'];
+				$aConf['blacklist'] = (array)$aConf['blacklist'];
 			}
 			$aBlacklist = $aConf['blacklist'];
 		}

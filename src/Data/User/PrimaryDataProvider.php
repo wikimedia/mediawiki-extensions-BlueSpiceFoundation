@@ -166,7 +166,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			}
 		}
 
-		$this->data[] = new Record( (object) [
+		$this->data[] = new Record( (object)[
 			Record::ID => $row->{Record::ID},
 			Record::USER_NAME => $row->{Record::USER_NAME},
 			Record::USER_REAL_NAME => empty( $row->{Record::USER_REAL_NAME} )

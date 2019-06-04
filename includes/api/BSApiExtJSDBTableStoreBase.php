@@ -138,14 +138,14 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 	 * @return stdClass or null
 	 */
 	public function makeDataSet( $row ) {
-		return (object) $row;
+		return (object)$row;
 	}
 
 	public function buildConditionNumeric( $oFilter, $aReturn = array() ) {
 		if( !is_numeric( $oFilter->value ) ) {
 			return $aReturn; //TODO: Warning
 		}
-		$iFilterValue = (int) $oFilter->value;
+		$iFilterValue = (int)$oFilter->value;
 
 		switch( $oFilter->comparison ) {
 			case 'gt':
@@ -168,7 +168,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		if( !is_string( $oFilter->value ) ) {
 			return $aReturn; //TODO: Warning
 		}
-		$sFilterValue = (string) $oFilter->value;
+		$sFilterValue = (string)$oFilter->value;
 
 		$oDB = $this->getDB();
 		switch( $oFilter->comparison ) {

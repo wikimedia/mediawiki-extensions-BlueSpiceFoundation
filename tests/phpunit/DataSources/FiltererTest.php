@@ -122,7 +122,7 @@ class FiltererTest extends \PHPUnit\Framework\TestCase {
 	protected function makeDataSets() {
 		$dataSets = [];
 		foreach( $this->testDataSets as $dataSet ) {
-			$dataSets[] = new Record( (object) $dataSet );
+			$dataSets[] = new Record( (object)$dataSet );
 		}
 
 		return $dataSets;
