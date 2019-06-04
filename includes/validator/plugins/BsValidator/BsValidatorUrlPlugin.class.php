@@ -12,8 +12,8 @@
  *     # FILTER_FLAG_PATH_REQUIRED
  *     # FILTER_FLAG_QUERY_REQUIRED
  */
-class BsValidatorUrlPlugin implements BsValidatorPlugin
-{
+class BsValidatorUrlPlugin implements BsValidatorPlugin {
+
 
 	public static function isValid( $validateThis, $options ) {
 		$params = ( array_key_exists( 'flags', $options ) && $options['flags'] != 0 )

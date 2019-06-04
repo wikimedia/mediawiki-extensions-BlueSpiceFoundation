@@ -181,7 +181,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 			$aUserNames[$oImg->getUser( 'text' )] = '';
 
-			$aReturn[ $oRow->page_id ] = (object) array(
+			$aReturn[ $oRow->page_id ] = (object)array(
 				'file_url' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_name' => $oImg->getName(),
 				'file_size' => $oImg->getSize(),

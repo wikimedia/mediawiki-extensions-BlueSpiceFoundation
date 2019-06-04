@@ -35,7 +35,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		$attr['placeholder'] = isset( $this->mParams['placeholder'] ) ?
 				$this->mParams['placeholder'] : $placeholder;
 		$attr['allowDuplicates'] = isset( $this->mParams['allowDuplicates'] ) ?
-			(bool) $this->mParams['allowDuplicates'] : false;
+			(bool)$this->mParams['allowDuplicates'] : false;
 
 		$attr['allowArbitrary'] = false;
 		if( isset( $this->mParams['allowedValues'] ) ) {
@@ -43,11 +43,11 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		}
 
 		if( isset( $this->mParams['allowEditTags'] ) ) {
-			$attr[ 'allowEditTags' ] = (bool) $this->mParams['allowEditTags'];
+			$attr[ 'allowEditTags' ] = (bool)$this->mParams['allowEditTags'];
 		}
 
 		if( isset( $this->mParams['allowDisplayInvalidTags'] ) ) {
-			$attr[ 'allowDisplayInvalidTags' ] = (bool) $this->mParams['allowDisplayInvalidTags'];
+			$attr[ 'allowDisplayInvalidTags' ] = (bool)$this->mParams['allowDisplayInvalidTags'];
 		}
 
 		return $attr;

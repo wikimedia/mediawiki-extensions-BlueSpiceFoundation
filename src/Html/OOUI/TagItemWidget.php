@@ -15,8 +15,8 @@ class TagItemWidget extends \OOUI\Widget {
 		// Parent constructor
 		parent::__construct( $config );
 
-		$this->valid = !isset( $config['valid'] ) ? true : (bool) $config['valid'];
-		$this->fixed = isset( $config['fixed'] ) ? (bool) $config['fixed'] : false;
+		$this->valid = !isset( $config['valid'] ) ? true : (bool)$config['valid'];
+		$this->fixed = isset( $config['fixed'] ) ? (bool)$config['fixed'] : false;
 
 		$this->initializeFlaggedElement( $config );
 		$this->initializeLabelElement( $config );

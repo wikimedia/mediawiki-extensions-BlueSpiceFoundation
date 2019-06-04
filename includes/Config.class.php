@@ -336,7 +336,7 @@ class BsConfig {
 			# if the setting is a boolean type then make sure, it
 			# gets saved as boolean type
 			if ( $setting->getOptions () & self::TYPE_BOOL ) {
-				$value = (bool) $setting->getValue ();
+				$value = (bool)$setting->getValue ();
 			} else {
 				$value = $setting->getValue ();
 			}
@@ -494,7 +494,7 @@ class BsConfig {
 			}
 			if ( $setting->getOptions () & self::TYPE_BOOL ) {
 				$user->setOption ( $setting->getKey (),
-						( int ) $setting->getValue () );
+						( int )$setting->getValue () );
 			} else {
 				$user->setOption ( $setting->getKey (), $setting->getValue () );
 			}

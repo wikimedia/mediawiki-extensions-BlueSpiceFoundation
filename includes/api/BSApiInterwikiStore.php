@@ -38,7 +38,7 @@ class BSApiInterwikiStore extends BSApiExtJSStoreBase {
 
 		$aData = array();
 		foreach( $aInterwikiData as $a ) {
-			$aData[] = (object) $a;
+			$aData[] = (object)$a;
 		}
 
 		return $aData;

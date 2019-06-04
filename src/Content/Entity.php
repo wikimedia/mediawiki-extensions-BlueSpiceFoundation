@@ -117,7 +117,7 @@ class Entity extends \JsonContent {
 		//Get the page_title of the last created title in entity namespace and
 		//add +1. Entities are stored like: MYEntityNamespace:1,
 		//MYEntityNamespace:2, MYEntityNamespace:3
-		if ( (int) $entity->getID() > 0 ) {
+		if ( (int)$entity->getID() > 0 ) {
 			return $entity->getID();
 		}
 		$dbw = wfGetDB( DB_MASTER );
@@ -132,7 +132,7 @@ class Entity extends \JsonContent {
 		);
 
 		if ( $res ) {
-			$id = (int) $res->page_title + 1;
+			$id = (int)$res->page_title + 1;
 		} else {
 			$id = 1;
 		}

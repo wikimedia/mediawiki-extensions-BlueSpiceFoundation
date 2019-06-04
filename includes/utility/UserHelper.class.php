@@ -37,7 +37,7 @@ class BsUserHelper {
 			return $aReturn;
 		}
 		while ( $oRow = $oRes->fetchObject() ) {
-			$aReturn [] = (int) $oRow->ug_user;
+			$aReturn [] = (int)$oRow->ug_user;
 		}
 		return $aReturn;
 	}

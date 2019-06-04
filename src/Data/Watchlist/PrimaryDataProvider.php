@@ -88,7 +88,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	protected function appendRowToData( $row ) {
 		$title = \Title::makeTitle( $row->wl_namespace, $row->wl_title );
 
-		$this->data[] = new Record( (object) [
+		$this->data[] = new Record( (object)[
 			Record::USER_ID => $row->wl_user,
 			Record::USER_DISPLAY_NAME => '',
 			Record::USER_LINK => '',

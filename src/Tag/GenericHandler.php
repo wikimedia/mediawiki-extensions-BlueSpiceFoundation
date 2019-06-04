@@ -133,7 +133,7 @@ class GenericHandler {
 
 		return [
 			$wrappedOutput,
-			MarkerType::KEY => (string) $this->tag->getMarkerType()
+			MarkerType::KEY => (string)$this->tag->getMarkerType()
 		];
 	}
 

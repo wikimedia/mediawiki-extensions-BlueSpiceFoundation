@@ -52,7 +52,7 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 				continue;
 			}
 
-			$aData[] = (object) array(
+			$aData[] = (object)array(
 				'group_name' => $sGroup,
 				'additional_group' => isset( $wgAdditionalGroups[$sGroup] ),
 				'displayname' => $sDisplayName,
