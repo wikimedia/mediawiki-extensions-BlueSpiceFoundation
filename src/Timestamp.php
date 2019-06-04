@@ -54,9 +54,9 @@ class Timestamp extends MWTimestamp {
 
 			$value = 0;
 			if ( $key === 'w' && $diff->d > 0 && ( $diff->d / 7 ) >= 1 ) {
-				$value = (int) ( $diff->d / 7 );
+				$value = (int)( $diff->d / 7 );
 			} elseif( $key === 'd' && $diff->d > 0 && ( $diff->d / 7 ) > 1 ) {
-				$value = (int) ( $diff->d / 7 );
+				$value = (int)( $diff->d / 7 );
 			} elseif ( isset( $diff->{$key} )  ) {
 				$value = $diff->{$key};
 			}

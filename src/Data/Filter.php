@@ -152,7 +152,7 @@ abstract class Filter {
 		$filterObjects = [];
 		foreach( $filters as $filter ) {
 			if( is_object(  $filter ) ) {
-				$filter = (array) $filter;
+				$filter = (array)$filter;
 			}
 			$filterObjects[] = static::makeFilter( $filter );
 		}

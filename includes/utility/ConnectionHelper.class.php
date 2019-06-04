@@ -51,6 +51,6 @@ class BsConnectionHelper {
 			$iPort = isset( $aUrlInfo['port'] ) ? $aUrlInfo['port'] : 80;
 			@$pFile = fsockopen($aUrlInfo['host'], $iPort, $iErrorNo, $sErrorMsg, $fTimeout );
 		}
-		return (bool) $pFile;
+		return (bool)$pFile;
 	}
 }

@@ -153,7 +153,7 @@ abstract class DatabaseWriter extends Writer {
 	 * @param \BlueSpice\Data\IRecord $record
 	 */
 	protected function makeInsertFields( $record ) {
-		return (array) $record->getData();
+		return (array)$record->getData();
 	}
 
 	/**
@@ -163,7 +163,7 @@ abstract class DatabaseWriter extends Writer {
 	 */
 	protected function makeUpdateFields( $existingRecord, $record ) {
 		$return = [];
-		foreach( (array) $record->getData() as $fieldName => $mValue ) {
+		foreach( (array)$record->getData() as $fieldName => $mValue ) {
 			if( in_array( $fieldName, $this->getIdentifierFields() ) ) {
 				continue;
 			}

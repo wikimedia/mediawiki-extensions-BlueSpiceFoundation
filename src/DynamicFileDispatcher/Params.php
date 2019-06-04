@@ -44,7 +44,7 @@ class Params {
 				break;
 			case static::TYPE_INT:
 				$return = is_numeric( $this->params[$name] )
-					? (int) $this->params[$name]
+					? (int)$this->params[$name]
 					: $definition[static::PARAM_DEFAULT]
 				;
 				break;

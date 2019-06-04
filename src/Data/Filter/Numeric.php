@@ -14,8 +14,8 @@ class Numeric extends Range {
 		if( !is_numeric( $this->getValue() ) ) {
 			return true; //TODO: Warning
 		}
-		$fieldValue = (int) $dataSet->get( $this->getField() );
-		$filterValue = (int) $this->getValue();
+		$fieldValue = (int)$dataSet->get( $this->getField() );
+		$filterValue = (int)$this->getValue();
 
 		switch( $this->getComparison() ) {
 			case self::COMPARISON_GREATER_THAN:

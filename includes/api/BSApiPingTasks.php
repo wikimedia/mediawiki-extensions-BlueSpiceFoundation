@@ -93,23 +93,23 @@ class BSApiPingTasks extends BSApiTasksBase {
 
 		//TODO: Params need very hard param processing!
 		$iArticleId = isset( $oTaskData->iArticleID )
-			? (int) $oTaskData->iArticleID
+			? (int)$oTaskData->iArticleID
 			: 0
 		;
 		$iNamespace = isset( $oTaskData->iNamespace )
-			? (int) $oTaskData->iNamespace
+			? (int)$oTaskData->iNamespace
 			: 0
 		;
 		$sTitle = isset( $oTaskData->sTitle )
-			? (string) $oTaskData->sTitle
+			? (string)$oTaskData->sTitle
 			: ''
 		;
 		$iRevision = isset( $oTaskData->iRevision )
-			? (int) $oTaskData->iRevision
+			? (int)$oTaskData->iRevision
 			: 0
 		;
 		$aBSPingData = isset( $oTaskData->BsPingData )
-			? (array) $oTaskData->BsPingData
+			? (array)$oTaskData->BsPingData
 			: array()
 		;
 
@@ -128,12 +128,12 @@ class BSApiPingTasks extends BSApiTasksBase {
 			}
 
 			//Workaround: Each hook handler expect an array
-			$aSinglePing = (array) $oSinglePing;
+			$aSinglePing = (array)$oSinglePing;
 			if( !isset($aSinglePing['aData']) ) {
 				$aSinglePing['aData'] = array();
 			} else {
 				//TODO: Each data set needs very hard param processing too!
-				$aSinglePing['aData'] = (array) $aSinglePing['aData'];
+				$aSinglePing['aData'] = (array)$aSinglePing['aData'];
 			}
 			//Workaround: Each hook handler expect an array not an object
 			foreach( $aSinglePing['aData'] as $iKey => $oData ) {
@@ -144,7 +144,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 				if( !$oData instanceof stdClass ) {
 					continue;
 				}
-				$aSinglePing['aData'][$iKey] = (array) $oData;
+				$aSinglePing['aData'][$iKey] = (array)$oData;
 			}
 
 			$aSingleResult = array(

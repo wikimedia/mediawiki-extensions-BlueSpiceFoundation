@@ -72,8 +72,9 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 	public function testMediaWikiApiTitlesOrPageIds( $params, $expectedPrefixedTexts, $message ) {
 		$resolver = new TitleParamsResolver( $params );
 		$resolvedTitles = $resolver->resolve();
+		$numResolvedTitles = count( $resolvedTitles );
 
-		for( $i = 0; $i < count( $resolvedTitles ); $i++ ) {
+		for( $i = 0; $i < $numResolvedTitles; $i++ ) {
 			$resolvedTitle = $resolvedTitles[$i];
 			$expectedPrefixedText = $expectedPrefixedTexts[$i];
 

@@ -88,7 +88,7 @@ abstract class Entity implements \JsonSerializable {
 		$this->oConfig = $oConfig;
 		if( !empty( $oStdClass->{static::ATTR_ID} ) ) {
 			$this->attributes[static::ATTR_ID] =
-				(int) $oStdClass->{static::ATTR_ID};
+				(int)$oStdClass->{static::ATTR_ID};
 		}
 		if( !empty( $oStdClass->{static::ATTR_TYPE} ) ) {
 			$this->attributes[static::ATTR_TYPE]
@@ -327,7 +327,7 @@ abstract class Entity implements \JsonSerializable {
 			return \Status::newFatal( 'No ID generated' );
 		}
 		if( empty($this->get( static::ATTR_OWNER_ID, 0 )) ) {
-			$this->set( static::ATTR_OWNER_ID, (int) $oUser->getId() );
+			$this->set( static::ATTR_OWNER_ID, (int)$oUser->getId() );
 		}
 		$sType = $this->getType();
 		if( empty($sType) ) {
@@ -513,7 +513,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return boolean
 	 */
 	public function hasUnsavedChanges() {
-		return (bool) $this->bUnsavedChanges;
+		return (bool)$this->bUnsavedChanges;
 	}
 
 	/**
@@ -523,7 +523,7 @@ abstract class Entity implements \JsonSerializable {
 	 */
 	public function getID() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return (int) $this->get( static::ATTR_ID, 0 );
+		return (int)$this->get( static::ATTR_ID, 0 );
 	}
 
 	/**
@@ -533,7 +533,7 @@ abstract class Entity implements \JsonSerializable {
 	 */
 	public function getOwnerID() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return (int) $this->get( static::ATTR_OWNER_ID, 0 );
+		return (int)$this->get( static::ATTR_OWNER_ID, 0 );
 	}
 
 	/**
@@ -552,7 +552,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Entity
 	 */
 	public function setUnsavedChanges( $bStatus = true ) {
-		$this->bUnsavedChanges = (bool) $bStatus;
+		$this->bUnsavedChanges = (bool)$bStatus;
 		return $this;
 	}
 
@@ -564,7 +564,7 @@ abstract class Entity implements \JsonSerializable {
 	 */
 	public function setOwnerID( $iOwnerID ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return $this->set( static::ATTR_OWNER_ID, (int) $iOwnerID );
+		return $this->set( static::ATTR_OWNER_ID, (int)$iOwnerID );
 	}
 
 	/**
@@ -572,7 +572,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return stdClass
 	 */
 	public function jsonSerialize() {
-		return (object) $this->getFullData();
+		return (object)$this->getFullData();
 	}
 
 	/**

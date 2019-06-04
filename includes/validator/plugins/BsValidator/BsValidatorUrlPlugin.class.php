@@ -14,8 +14,8 @@
  *     # FILTER_FLAG_PATH_REQUIRED
  *     # FILTER_FLAG_QUERY_REQUIRED
  */
-class BsValidatorUrlPlugin implements BsValidatorPlugin
-{
+class BsValidatorUrlPlugin implements BsValidatorPlugin {
+
 
 	/**
 	 * DEPRECATED!

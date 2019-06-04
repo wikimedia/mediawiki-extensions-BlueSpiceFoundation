@@ -51,10 +51,12 @@ function NSRecoveryController( $bDry, $options ) {
         }
         $aRevisions = array();
         $aTexts     = array();
-        for($i = 0; $i < count( $aPages ); $i++) {
+        $numPages = count( $aPages );
+        for($i = 0; $i < $numPages; $i++) {
             $aRevisions[$i] = getDataFromNSBackup( 'revision', array( 'rev_page' => $aPages[$i]['page_id'] ) );
-            
-            for($ir = 0; $ir < count( $aRevisions[$i] ); $ir++) {
+
+            $numRevisions = count( $aRevisions[$i] );
+            for($ir = 0; $ir < $numRevisions; $ir++) {
                 $aTexts[$i][$ir] = getDataFromNSBackup( 'text', array( 'old_id' => $aRevisions[$i][$ir]['rev_text_id'] ) );
             }
         }
@@ -81,8 +83,8 @@ function getDataFromNSBackup( $sTable, $aConditions = array(), $aReturn = array(
 
 function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
     $oDbr = wfGetDB( DB_MASTER );
-    //die();
-    for( $iP = 0; $iP < count( $aPages ); $iP++ ) {
+	$numPages = count( $aPages );
+    for( $iP = 0; $iP < $numPages; $iP++ ) {
         
         /*if( empty( $aRevisions[$iP] ) ) {
             echo "error: ".$aPages[$iP]['page_title']."  no revision found\n";
@@ -94,7 +96,8 @@ function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
             continue;
         } 
         */
-        for( $iR = 0; $iR < count( $aRevisions[$iP] ); $iR++ ) {
+		$numRevisions = count( $aRevisions[$iP] );
+        for( $iR = 0; $iR < $numRevisions; $iR++ ) {
 			echo 'Revision';
             /*if( empty( $aTexts[$iP][$iR] ) ) {
                 echo "error: ".$aPages[$iP]['page_id']." -> ".$aRevisions[$iP][$iR]." - no text found !not recovered\n";

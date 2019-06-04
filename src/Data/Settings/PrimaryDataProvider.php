@@ -47,7 +47,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	protected function appendRowToData( $row ) {
-		$this->data[] = new Record( (object) [
+		$this->data[] = new Record( (object)[
 			Record::NAME => $row->s_name,
 			Record::VALUE => \FormatJson::decode( $row->s_value )
 		]);
