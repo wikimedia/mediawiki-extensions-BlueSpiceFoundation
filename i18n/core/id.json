@@ -3,7 +3,8 @@
 		"authors": [
 			"Kenrick95",
 			"Raynasution",
-			"Arifin.wijaya"
+			"Arifin.wijaya",
+			"Palladin911"
 		]
 	},
 	"bs-ns_main": "(Halaman)",
@@ -58,5 +59,9 @@
 	"bs-navigation-instructions": "Petunjuk",
 	"bs-navigation-support": "Dukungan",
 	"bs-navigation-contact": "Hubungi",
-	"bs-imagepage-download-text": "Unduh"
+	"bs-imagepage-download-text": "Unduh",
+	"bs-ns": "Ruang nama",
+	"bs-graphicallist-action-close": "Tutup",
+	"bs-graphicallist-action-list": "Daftar",
+	"bs-graphicallist-action-preview": "Pratayang"
 }
