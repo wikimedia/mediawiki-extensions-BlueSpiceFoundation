@@ -67,6 +67,7 @@
 	"bs-pref-logopath": "로고 경로:",
 	"bs-pref-faviconpath": "패비콘 경로:",
 	"bs-pref-defaultuserimage": "기본 사용자 아바타:",
+	"bs-pref-miniprofileenforceheight": "사용자 아바타의 높이 강제 설정",
 	"bs-pref-anonuserimage": "익명 사용자 아바타:",
 	"bs-pref-deleteduserimage": "삭제된 사용자 아바타:",
 	"bs-pref-bspinginterval": "핑 간격 (초):",

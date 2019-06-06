@@ -10,7 +10,8 @@
 			"Alexandr Efremov",
 			"Romanko Mikhail",
 			"DmitTrix",
-			"Movses"
+			"Movses",
+			"INS Pirat"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",
@@ -23,6 +24,7 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Измененные категории.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Неправильная категория|Неправильные категории}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Категории успешно заданы.",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Список опций",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
 	"bs-wikipage-tasks-error-nothingtoremove": "Нет категорий для удаления",
