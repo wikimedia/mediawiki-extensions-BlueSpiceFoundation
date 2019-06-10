@@ -70,6 +70,8 @@
 	"bs-parser-error-invalid-category-title": "Strona nie jest prawidłową kategorią: $1",
 	"bs-exttype-bluespice": "Rozszerzenia BlueSpice",
 	"bs-export-menu-print-text": "Drukuj",
+	"bs-graphicallist-action-close": "Zamknij",
+	"bs-graphicallist-action-preview": "Podgląd",
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
 	"bs-notifications-agent-anon": "anonimowy użytkownik"
 }

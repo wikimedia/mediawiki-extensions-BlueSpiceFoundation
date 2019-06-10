@@ -6,6 +6,8 @@
 		]
 	},
 	"bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany.",
+	"bs-validator-email-validation-not-approved": "Nie można zweryfikować adresu e-mail.",
+	"bs-validator-url-validation-not-approved": "Nie można zweryfikować adresu URL.",
 	"bs-validator-invalid-boolean": "Niepoprawna wartość logiczna",
 	"bs-validator-invalid-integer": "Niepoprawna liczba całkowita",
 	"bs-validator-invalid-string": "Niepoprawny ciąg",
