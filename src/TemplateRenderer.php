@@ -43,6 +43,12 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	protected $cacheHelper = null;
 
 	/**
+	 *
+	 * @var TemplateFactory
+	 */
+	protected $templateFactory = null;
+
+	/**
 	 * Constructor
 	 * @param Config $config
 	 * @param Params $params
@@ -50,14 +56,18 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @param IContextSource|null $context
 	 * @param string $name | ''
 	 * @param CacheHelper|null $cacheHelper
+	 * @param TemplateFactory|null $templateFactory
 	 */
 	protected function __construct( Config $config, Params $params,
 		LinkRenderer $linkRenderer = null, IContextSource $context = null,
-		$name = '', CacheHelper $cacheHelper = null ) {
+		$name = '', CacheHelper $cacheHelper = null,
+		TemplateFactory $templateFactory = null ) {
 		parent::__construct( $config, $params, $linkRenderer, $context, $name );
 
 		$this->cacheHelper = $cacheHelper;
+		$this->templateFactory = $templateFactory;
 	}
+
 	/**
 	 *
 	 * @param string $name
@@ -67,11 +77,12 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @param IContextSource|null $context
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param CacheHelper|null $cacheHelper
+	 * @param TemplateFactory|null $templateFactory
 	 * @return Renderer
 	 */
 	public static function factory( $name, Services $services, Config $config, Params $params,
 		IContextSource $context = null, LinkRenderer $linkRenderer = null,
-		CacheHelper $cacheHelper = null ) {
+		CacheHelper $cacheHelper = null, TemplateFactory $templateFactory = null ) {
 		if ( !$context ) {
 			$context = $params->get(
 				static::PARAM_CONTEXT,
@@ -87,8 +98,19 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		if ( !$cacheHelper ) {
 			$cacheHelper = $services->getBSUtilityFactory()->getCacheHelper();
 		}
+		if ( !$templateFactory ) {
+			$templateFactory = $services->getBSTemplateFactory();
+		}
 
-		return new static( $config, $params, $linkRenderer, $context, $name, $cacheHelper );
+		return new static(
+			$config,
+			$params,
+			$linkRenderer,
+			$context,
+			$name,
+			$cacheHelper,
+			$templateFactory
+		);
 	}
 
 	/**
@@ -110,8 +132,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 			return $content;
 		}
 
-		$content = \BSTemplateHelper::process(
-			$this->getTemplateName(),
+		$template = $this->getTemplateFactory()->get( $this->getTemplateName() );
+		$content = $template->process(
 			$this->getRenderedArgs()
 		);
 		$this->appendCache( $content );
@@ -221,5 +243,19 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		}
 		return $this->cacheHelper;
+	}
+
+	/**
+	 *
+	 * @return TemplateFactory
+	 */
+	protected function getTemplateFactory() {
+		if ( !$this->templateFactory ) {
+			$this->templateFactory = Services::getInstance()->getBSTemplateFactory();
+			// Deprecated since 3.1! All sub classes should be registered with a factory
+			// callback and inject TemplateFactory
+			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		}
+		return $this->templateFactory;
 	}
 }

@@ -117,6 +117,9 @@
 				"wikipage-setcategories": "\\BlueSpice\\Task\\WikiPage\\SetCategories::factory",
 				"wikipage-addcategories": "\\BlueSpice\\Task\\WikiPage\\AddCategories::factory",
 				"wikipage-removecategories": "\\BlueSpice\\Task\\WikiPage\\RemoveCategories::factory"
+			},
+			"TemplateHanderRegistry": {
+				"mustache": "\\BlueSpice\\Template\\Mustache::factory"
 			}
 		}
 	},

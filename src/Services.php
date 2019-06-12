@@ -171,4 +171,12 @@ class Services extends ServicesDecorator {
 		return $this->getService( 'BSRoleManager' );
 	}
 
+	/**
+	 *
+	 * @return TemplateFactory
+	 */
+	public function getBSTemplateFactory() {
+		return $this->getService( 'BSTemplateFactory' );
+	}
+
 }

@@ -25,13 +25,20 @@
  * @filesource
  */
 
+/**
+ * DEPRECATED
+ * @deprecated since version 3.1 - global templates in RL will be removed
+ */
 class ResourceLoaderBSTemplateModule extends ResourceLoaderModule {
 	/**
+	 * DEPRECATED!
 	 * Takes named BlueSpice templates by the module and returns an array mapping.
+	 * @deprecated since version 3.1 - global templates in RL will be removed
 	 * @return array of templates mapping template alias to content
 	 * @throws MWException
 	 */
 	public function getTemplates() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$templates = parent::getTemplates();
 		foreach( BSTemplateHelper::getAllTemplates() as $sName => $sPath ) {
 			if ( is_int( $sName ) ) {
