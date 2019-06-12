@@ -9,7 +9,7 @@ class Services extends ServicesDecorator {
 	 * @return ExtensionRegistry
 	 */
 	public function getBSExtensionRegistry() {
-		return $this->decoratedServices->getService( 'BSExtensionRegistry' );
+		return $this->getService( 'BSExtensionRegistry' );
 	}
 
 	/**
@@ -17,7 +17,7 @@ class Services extends ServicesDecorator {
 	 * @return ExtensionFactory
 	 */
 	public function getBSExtensionFactory() {
-		return $this->decoratedServices->getService( 'BSExtensionFactory' );
+		return $this->getService( 'BSExtensionFactory' );
 	}
 
 	/**
@@ -25,7 +25,7 @@ class Services extends ServicesDecorator {
 	 * @return ConfigDefinitionFactory
 	 */
 	public function getBSConfigDefinitionFactory() {
-		return $this->decoratedServices->getService( 'BSConfigDefinitionFactory' );
+		return $this->getService( 'BSConfigDefinitionFactory' );
 	}
 
 	/**
@@ -33,7 +33,7 @@ class Services extends ServicesDecorator {
 	 * @return DynamicFileDispatcher\Factory
 	 */
 	public function getBSDynamicFileDispatcherFactory() {
-		return $this->decoratedServices->getService( 'BSDynamicFileDispatcherFactory' );
+		return $this->getService( 'BSDynamicFileDispatcherFactory' );
 	}
 
 	/**
@@ -41,7 +41,7 @@ class Services extends ServicesDecorator {
 	 * @return DynamicFileDispatcher\UrlBuilder
 	 */
 	public function getBSDynamicFileDispatcherUrlBuilder() {
-		return $this->decoratedServices->getService( 'BSDynamicFileDispatcherUrlBuilder' );
+		return $this->getService( 'BSDynamicFileDispatcherUrlBuilder' );
 	}
 
 	/**
@@ -49,7 +49,7 @@ class Services extends ServicesDecorator {
 	 * @return EntityRegistry
 	 */
 	public function getBSEntityRegistry() {
-		return $this->decoratedServices->getService( 'BSEntityRegistry' );
+		return $this->getService( 'BSEntityRegistry' );
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Services extends ServicesDecorator {
 	 * @return EntityConfigFactory
 	 */
 	public function getBSEntityConfigFactory() {
-		return $this->decoratedServices->getService( 'BSEntityConfigFactory' );
+		return $this->getService( 'BSEntityConfigFactory' );
 	}
 
 	/**
@@ -65,7 +65,7 @@ class Services extends ServicesDecorator {
 	 * @return EntityFactory
 	 */
 	public function getBSEntityFactory() {
-		return $this->decoratedServices->getService( 'BSEntityFactory' );
+		return $this->getService( 'BSEntityFactory' );
 	}
 
 	/**
@@ -73,7 +73,7 @@ class Services extends ServicesDecorator {
 	 * @return AdminToolFactory
 	 */
 	public function getBSAdminToolFactory() {
-		return $this->decoratedServices->getService( 'BSAdminToolFactory' );
+		return $this->getService( 'BSAdminToolFactory' );
 	}
 
 	/**
@@ -81,7 +81,7 @@ class Services extends ServicesDecorator {
 	 * @return PageToolFactory
 	 */
 	public function getBSPageToolFactory() {
-		return $this->decoratedServices->getService( 'BSPageToolFactory' );
+		return $this->getService( 'BSPageToolFactory' );
 	}
 
 	/**
@@ -89,7 +89,7 @@ class Services extends ServicesDecorator {
 	 * @return TagFactory
 	 */
 	public function getBSTagFactory() {
-		return $this->decoratedServices->getService( 'BSTagFactory' );
+		return $this->getService( 'BSTagFactory' );
 	}
 
 	/**
