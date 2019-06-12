@@ -24,7 +24,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
-use MediaWiki\MediaWikiServices;
+use BlueSpice\Services;
 
 /**
  * @package BlueSpiceFoundation
@@ -34,33 +34,9 @@ class BSTemplateHelper {
 	protected static $sSeparator = '.';
 	protected static $sFileExt = '.mustache';
 
-	protected static function makeFullExtTemplatePathFromExtName( $sExtName, $config = [] ) {
-		if ( isset( $config['type'] ) && $config['type'] === 'skin' ) {
-			return [
-				$GLOBALS['wgStyleDirectory'],
-				$sExtName,
-				static::$sTemplatePath
-			];
-		}
-		$registry = MediaWikiServices::getInstance()->getService(
-			'BSExtensionRegistry'
-		);
-		$aExtensions = $registry->getExtensionDefinitions();
-		if( !isset($aExtensions[$sExtName]) ) {
-			throw new BsException( "Unknowen Extension $sExtName" );
-		}
-		$sExtPath = $aExtensions[$sExtName]['extPath'];
-		$aTplDir = array(
-			$GLOBALS['wgExtensionDirectory'],
-			$sExtPath,
-			static::$sTemplatePath
-		);
-		return $aTplDir;
-	}
-
 	protected static function makeTemplateNameFromPath( $sExtName, $sFullPath ) {
 		$sFullPath = BsFileSystemHelper::normalizePath( $sFullPath );
-		$registry = MediaWikiServices::getInstance()->getService(
+		$registry = Services::getInstance()->getService(
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
@@ -95,6 +71,7 @@ class BSTemplateHelper {
 	}
 
 	/**
+	 * DEPRECATED!
 	 * Returns HTML for a given template by calling the template function with the given args
 	 *
 	 * @code
@@ -106,6 +83,8 @@ class BSTemplateHelper {
 	 *         )
 	 *     );
 	 * @endcode
+	 * @deprecated since version 3.1 - use Services->getBSTemplateFactory()->get( $name )
+	 * ->process() instead
 	 * @param string $sTplName The name of the template
 	 * @param mixed $args
 	 * @param array $scopes
@@ -113,42 +92,21 @@ class BSTemplateHelper {
 	 * @return string
 	 */
 	public static function process( $sTplName, array $args = [], array $scopes = [], $bForceRecompile = false ) {
-		$aTplPath = explode( static::$sSeparator, $sTplName );
-		$sTpl = array_pop( $aTplPath );
-		$sExtName = array_shift( $aTplPath );
-		if( isset($GLOBALS['bsgTemplates'][$sTplName]) ) {
-			$aTplDir = explode(
-				'/',
-				$GLOBALS['bsgTemplates'][$sTplName]
-			);
-		} else {
-			$config = [];
-			foreach( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
-				if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
-					continue;
-				}
-				if ( $thing['name'] !== $sExtName ) {
-					continue;
-				}
-				$config = $thing;
-			}
-			$aTplDir = static::makeFullExtTemplatePathFromExtName( $sExtName, $config );
-		}
-
-		$sTemplateDir = implode('/', $aTplPath );
-		$sTemplateDir = BsFileSystemHelper::normalizePath( $sTemplateDir );
-		$sTemplateDir = implode( '/', $aTplDir ) . "/" . $sTemplateDir;
-		$oInstance = new \BlueSpice\TemplateParser( $sTemplateDir, $bForceRecompile );
-		return $oInstance->processTemplate( $sTpl, $args, $scopes );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		$template = Services::getInstance()->getBSTemplateFactory()->get( $sTplName );
+		return $template->process( $args, $scopes );
 	}
 
 	/**
+	 * DEPRECATED!
 	 * Returns all Templates and their path in the filesystem
+	 * @deprecated since version 3.1 - global templates in RL will be removed
 	 * @param array $aReturn
 	 * @return array
 	 */
 	public static function getAllTemplates( $aReturn = [] ) {
-		$registry = MediaWikiServices::getInstance()->getService(
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		$registry = Services::getInstance()->getService(
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
@@ -160,7 +118,8 @@ class BSTemplateHelper {
 		}
 		foreach( $aExtensions as $sExtName => $aConfig ) {
 			try {
-				$aTplDir = static::makeFullExtTemplatePathFromExtName(
+				$aTplDir = Services::getInstance()->getBSUtilityFactory()
+					->getTemplateHelper()->makeFullExtTemplatePathFromExtName(
 					$sExtName,
 					$aConfig
 				);

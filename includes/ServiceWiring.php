@@ -192,4 +192,13 @@ return [
 		return $services->getService( 'BSTargetCacheFactory' )->get( 'title' );
 	},
 
+	'BSTemplateFactory' => function( MediaWikiServices $services ) {
+		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationTemplateHanderRegistry'
+		);
+		return new \BlueSpice\TemplateFactory(
+			$registry,
+			$services->getService( 'BSUtilityFactory' )->getTemplateHelper()
+		);
+	},
 ];

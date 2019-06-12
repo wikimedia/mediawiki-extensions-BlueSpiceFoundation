@@ -384,7 +384,7 @@ $GLOBALS['bsgSystemNamespaces'] = array(
 $GLOBALS['bsgExtensions'] = [];
 
 /**
- * BsTemplateHelper template directory overwrite
+ * TemplateHelper template directory overwrite
  * $bsgTemplates = array(
  *    BSExtension.Template.Name": "$wgExtensionsDirectory/MyExtension/PathToTemplateDir",
  * )

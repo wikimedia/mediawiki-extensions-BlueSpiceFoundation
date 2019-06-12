@@ -111,4 +111,11 @@ class UtilityFactory {
 	public function getPagePropHelper( \Title $title ) {
 		return new \BlueSpice\Utility\PagePropHelper( $this->services, $title );
 	}
+
+	/**
+	 * @return \BlueSpice\Utility\TemplateHelper
+	 */
+	public function getTemplateHelper() {
+		return new \BlueSpice\Utility\TemplateHelper( $this->services );
+	}
 }

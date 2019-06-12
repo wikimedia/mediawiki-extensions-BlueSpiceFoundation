@@ -4,32 +4,60 @@
 
 namespace BlueSpice;
 
-class TemplateParser extends \TemplateParser {
+use LightnCandy;
+use RuntimeException;
+use MessageLocalizer;
+use RequestContext;
 
+class TemplateParser extends \TemplateParser implements ITemplateParser, MessageLocalizer {
+
+	/**
+	 * Compile the Mustache code into PHP code using LightnCandy
+	 * @param string $code Mustache code
+	 * @return string PHP code (with '<?php')
+	 * @throws RuntimeException
+	 */
 	protected function compile( $code ) {
 		if ( !class_exists( 'LightnCandy' ) ) {
-			throw new \RuntimeException( 'LightnCandy class not defined' );
+			throw new RuntimeException( 'LightnCandy class not defined' );
 		}
+		$helpers = $this->getCompileHelpers();
+		return LightnCandy::compile( $code, [
+			'flags' => $this->compileFlags,
+			'basedir' => $this->templateDir,
+			'fileext' => '.mustache',
+			'helpers' => $helpers,
+		] );
+	}
 
-		return \LightnCandy::compile(
-			$code, array(
-			  // Do not add more flags here without discussion.
-			  // If you do add more flags, be sure to update unit tests as well.
-			  'flags' => \LightnCandy::FLAG_ERROR_EXCEPTION,
-			  'helpers' => array(
-				  '_' => function( $msg ) {
-					  if ( count( $msg ) > 1 ) {
-						  $msgKey = array_shift( $msg );
-						  return wfMessage( $msgKey, $msg )->plain();
-					  } else {
-						  return wfMessage( $msg )->plain();
-					  }
-				  },
-				  '__' => function( $msg ) {
-					  return wfMessage( $msg )->parse();
-				  },
-			  )
-			)
+	/**
+	 *
+	 * @return array
+	 */
+	protected function getCompileHelpers() {
+		$helpers = [];
+		if ( RequestContext::getMain() instanceof ResourceLoaderContext ) {
+			return $helpers;
+		}
+		$helpers['_'] = function( $msg ) {
+			$msgKey = array_shift( $msg );
+			return $this->msg( $msgKey, ...$msg )->plain();
+		};
+		$helpers['__'] = function( $msg ) {
+			$msgKey = array_shift( $msg );
+			return $this->msg( $msgKey, ...$msg )->parse();
+		};
+		return $helpers;
+	}
+
+	/**
+	 *
+	 * @return Message
+	 */
+	public function msg( $key /* $args */ ) {
+		return call_user_func_array(
+			[ RequestContext::getMain(), 'msg' ],
+			func_get_args()
 		);
 	}
 
