@@ -12,7 +12,6 @@ use CryptHKDF;
 use CryptRand;
 use EventRelayerGroup;
 use GenderCache;
-use Hooks;
 use IBufferingStatsdDataFactory;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Preferences\PreferencesFactory;
@@ -30,8 +29,6 @@ use MediaHandlerFactory;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkRendererFactory;
 use MediaWiki\Services\ServiceContainer;
-use MediaWiki\Services\NoSuchServiceException;
-use MWException;
 use MimeAnalyzer;
 use Parser;
 use ParserCache;
@@ -52,87 +49,20 @@ use MediaWiki\Interwiki\InterwikiLookup;
 class ServicesDecorator extends ServiceContainer {
 
 	/**
-	 * @var Services|null
-	 */
-	protected static $instance = null;
-
-	/**
-	 * Returns the global default instance of the top level service locator.
-	 *
-	 * @since 1.27
-	 *
-	 * The default instance is initialized using the service instantiator functions
-	 * defined in ServiceWiring.php.
-	 *
-	 * @note This should only be called by static functions! The instance returned here
-	 * should not be passed around! Objects that need access to a service should have
-	 * that service injected into the constructor, never a service locator!
-	 *
-	 * @return Services
+	 * @return ServicesDecorator
 	 */
 	public static function getInstance() {
-		if ( static::$instance === null ) {
-			static::$instance = static::newInstance( MediaWikiServices::getInstance() );
-		}
-
-		return static::$instance;
+		return new static();
 	}
 
 	/**
-	 * Resets instance when new original instance is resetted
+	 * Return the service registered under $name
 	 *
-	 * @param type MediaWikiServices $services
-	 */
-	public static function resetInstance( $services ) {
-		static::$instance = static::newInstance( $services );
-	}
-
-	/**
-	 *
-	 * @var MediaWikiServices
-	 */
-	protected $decoratedServices = null;
-
-	public function __construct( $services ) {
-		$this->decoratedServices = $services;
-	}
-
-	/**
-	 * @params MediaWikiServices
-	 * @return Services
-	 * @throws MWException
-	 * @throws FatalError
-	 */
-	private static function newInstance( $services ) {
-		$instance = new static( $services );
-
-		Hooks::run( 'BlueSpiceServices', [ $instance ] );
-
-		return $instance;
-	}
-
-	/**
-	 * Returns a service object of the kind associated with $name.
-	 * Services instances are instantiated lazily, on demand.
-	 * This method may or may not return the same service instance
-	 * when called multiple times with the same $name.
-	 *
-	 * @note Rather than calling this method directly, it is recommended to provide
-	 * getters with more meaningful names and more specific return types, using
-	 * a subclass or wrapper.
-	 *
-	 * @see redefineService().
-	 *
-	 * @param string $name The service name
-	 *
-	 * @throws NoSuchServiceException if $name is not a known service.
-	 * @throws ContainerDisabledException if this container has already been destroyed.
-	 * @throws ServiceDisabledException if the requested service has been disabled.
-	 *
-	 * @return object The service instance
+	 * @param string $name
+	 * @return mixed
 	 */
 	public function getService( $name ) {
-		return $this->decoratedServices->getService( $name );
+		return MediaWikiServices::getInstance()->getService( $name );
 	}
 
 	/**
@@ -149,7 +79,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return Config
 	 */
 	public function getBootstrapConfig() {
-		return $this->decoratedServices->getService( 'BootstrapConfig' );
+		return $this->getService( 'BootstrapConfig' );
 	}
 
 	/**
@@ -157,7 +87,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return ConfigFactory
 	 */
 	public function getConfigFactory() {
-		return $this->decoratedServices->getService( 'ConfigFactory' );
+		return $this->getService( 'ConfigFactory' );
 	}
 
 	/**
@@ -168,7 +98,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return Config
 	 */
 	public function getMainConfig() {
-		return $this->decoratedServices->getService( 'MainConfig' );
+		return $this->getService( 'MainConfig' );
 	}
 
 	/**
@@ -176,7 +106,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return SiteLookup
 	 */
 	public function getSiteLookup() {
-		return $this->decoratedServices->getService( 'SiteLookup' );
+		return $this->getService( 'SiteLookup' );
 	}
 
 	/**
@@ -184,7 +114,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return SiteStore
 	 */
 	public function getSiteStore() {
-		return $this->decoratedServices->getService( 'SiteStore' );
+		return $this->getService( 'SiteStore' );
 	}
 
 	/**
@@ -192,7 +122,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return InterwikiLookup
 	 */
 	public function getInterwikiLookup() {
-		return $this->decoratedServices->getService( 'InterwikiLookup' );
+		return $this->getService( 'InterwikiLookup' );
 	}
 
 	/**
@@ -200,7 +130,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return IBufferingStatsdDataFactory
 	 */
 	public function getStatsdDataFactory() {
-		return $this->decoratedServices->getService( 'StatsdDataFactory' );
+		return $this->getService( 'StatsdDataFactory' );
 	}
 
 	/**
@@ -208,7 +138,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return EventRelayerGroup
 	 */
 	public function getEventRelayerGroup() {
-		return $this->decoratedServices->getService( 'EventRelayerGroup' );
+		return $this->getService( 'EventRelayerGroup' );
 	}
 
 	/**
@@ -217,7 +147,7 @@ class ServicesDecorator extends ServiceContainer {
 	 */
 	public function newSearchEngine() {
 		// New engine object every time, since they keep state
-		return $this->decoratedServices->getService( 'SearchEngineFactory' )->create();
+		return $this->getService( 'SearchEngineFactory' )->create();
 	}
 
 	/**
@@ -225,7 +155,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return SearchEngineFactory
 	 */
 	public function getSearchEngineFactory() {
-		return $this->decoratedServices->getService( 'SearchEngineFactory' );
+		return $this->getService( 'SearchEngineFactory' );
 	}
 
 	/**
@@ -233,7 +163,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return SearchEngineConfig
 	 */
 	public function getSearchEngineConfig() {
-		return $this->decoratedServices->getService( 'SearchEngineConfig' );
+		return $this->getService( 'SearchEngineConfig' );
 	}
 
 	/**
@@ -241,7 +171,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return SkinFactory
 	 */
 	public function getSkinFactory() {
-		return $this->decoratedServices->getService( 'SkinFactory' );
+		return $this->getService( 'SkinFactory' );
 	}
 
 	/**
@@ -249,7 +179,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return LBFactory
 	 */
 	public function getDBLoadBalancerFactory() {
-		return $this->decoratedServices->getService( 'DBLoadBalancerFactory' );
+		return $this->getService( 'DBLoadBalancerFactory' );
 	}
 
 	/**
@@ -257,7 +187,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return LoadBalancer The main DB load balancer for the local wiki.
 	 */
 	public function getDBLoadBalancer() {
-		return $this->decoratedServices->getService( 'DBLoadBalancer' );
+		return $this->getService( 'DBLoadBalancer' );
 	}
 
 	/**
@@ -265,7 +195,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return WatchedItemStoreInterface
 	 */
 	public function getWatchedItemStore() {
-		return $this->decoratedServices->getService( 'WatchedItemStore' );
+		return $this->getService( 'WatchedItemStore' );
 	}
 
 	/**
@@ -273,7 +203,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return WatchedItemQueryService
 	 */
 	public function getWatchedItemQueryService() {
-		return $this->decoratedServices->getService( 'WatchedItemQueryService' );
+		return $this->getService( 'WatchedItemQueryService' );
 	}
 
 	/**
@@ -281,7 +211,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return CryptRand
 	 */
 	public function getCryptRand() {
-		return $this->decoratedServices->getService( 'CryptRand' );
+		return $this->getService( 'CryptRand' );
 	}
 
 	/**
@@ -289,7 +219,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return CryptHKDF
 	 */
 	public function getCryptHKDF() {
-		return $this->decoratedServices->getService( 'CryptHKDF' );
+		return $this->getService( 'CryptHKDF' );
 	}
 
 	/**
@@ -297,7 +227,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return MediaHandlerFactory
 	 */
 	public function getMediaHandlerFactory() {
-		return $this->decoratedServices->getService( 'MediaHandlerFactory' );
+		return $this->getService( 'MediaHandlerFactory' );
 	}
 
 	/**
@@ -305,7 +235,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return MimeAnalyzer
 	 */
 	public function getMimeAnalyzer() {
-		return $this->decoratedServices->getService( 'MimeAnalyzer' );
+		return $this->getService( 'MimeAnalyzer' );
 	}
 
 	/**
@@ -313,7 +243,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return ProxyLookup
 	 */
 	public function getProxyLookup() {
-		return $this->decoratedServices->getService( 'ProxyLookup' );
+		return $this->getService( 'ProxyLookup' );
 	}
 
 	/**
@@ -321,7 +251,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return Parser
 	 */
 	public function getParser() {
-		return $this->decoratedServices->getService( 'Parser' );
+		return $this->getService( 'Parser' );
 	}
 
 	/**
@@ -329,7 +259,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return ParserCache
 	 */
 	public function getParserCache() {
-		return $this->decoratedServices->getService( 'ParserCache' );
+		return $this->getService( 'ParserCache' );
 	}
 
 	/**
@@ -337,7 +267,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return GenderCache
 	 */
 	public function getGenderCache() {
-		return $this->decoratedServices->getService( 'GenderCache' );
+		return $this->getService( 'GenderCache' );
 	}
 
 	/**
@@ -345,7 +275,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return LinkCache
 	 */
 	public function getLinkCache() {
-		return $this->decoratedServices->getService( 'LinkCache' );
+		return $this->getService( 'LinkCache' );
 	}
 
 	/**
@@ -353,7 +283,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return LinkRendererFactory
 	 */
 	public function getLinkRendererFactory() {
-		return $this->decoratedServices->getService( 'LinkRendererFactory' );
+		return $this->getService( 'LinkRendererFactory' );
 	}
 
 	/**
@@ -364,7 +294,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return LinkRenderer
 	 */
 	public function getLinkRenderer() {
-		return $this->decoratedServices->getService( 'LinkRenderer' );
+		return $this->getService( 'LinkRenderer' );
 	}
 
 	/**
@@ -372,7 +302,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return TitleFormatter
 	 */
 	public function getTitleFormatter() {
-		return $this->decoratedServices->getService( 'TitleFormatter' );
+		return $this->getService( 'TitleFormatter' );
 	}
 
 	/**
@@ -380,7 +310,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return TitleParser
 	 */
 	public function getTitleParser() {
-		return $this->decoratedServices->getService( 'TitleParser' );
+		return $this->getService( 'TitleParser' );
 	}
 
 	/**
@@ -388,7 +318,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return BagOStuff
 	 */
 	public function getMainObjectStash() {
-		return $this->decoratedServices->getService( 'MainObjectStash' );
+		return $this->getService( 'MainObjectStash' );
 	}
 
 	/**
@@ -396,7 +326,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return WANObjectCache
 	 */
 	public function getMainWANObjectCache() {
-		return $this->decoratedServices->getService( 'MainWANObjectCache' );
+		return $this->getService( 'MainWANObjectCache' );
 	}
 
 	/**
@@ -404,7 +334,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return BagOStuff
 	 */
 	public function getLocalServerObjectCache() {
-		return $this->decoratedServices->getService( 'LocalServerObjectCache' );
+		return $this->getService( 'LocalServerObjectCache' );
 	}
 
 	/**
@@ -412,7 +342,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return VirtualRESTServiceClient
 	 */
 	public function getVirtualRESTServiceClient() {
-		return $this->decoratedServices->getService( 'VirtualRESTServiceClient' );
+		return $this->getService( 'VirtualRESTServiceClient' );
 	}
 
 	/**
@@ -420,7 +350,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return ConfiguredReadOnlyMode
 	 */
 	public function getConfiguredReadOnlyMode() {
-		return $this->decoratedServices->getService( 'ConfiguredReadOnlyMode' );
+		return $this->getService( 'ConfiguredReadOnlyMode' );
 	}
 
 	/**
@@ -428,7 +358,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return ReadOnlyMode
 	 */
 	public function getReadOnlyMode() {
-		return $this->decoratedServices->getService( 'ReadOnlyMode' );
+		return $this->getService( 'ReadOnlyMode' );
 	}
 
 	/**
@@ -436,7 +366,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return CommandFactory
 	 */
 	public function getShellCommandFactory() {
-		return $this->decoratedServices->getService( 'ShellCommandFactory' );
+		return $this->getService( 'ShellCommandFactory' );
 	}
 
 	/**
@@ -444,7 +374,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return ExternalStoreFactory
 	 */
 	public function getExternalStoreFactory() {
-		return $this->decoratedServices->getService( 'ExternalStoreFactory' );
+		return $this->getService( 'ExternalStoreFactory' );
 	}
 
 	/**
@@ -452,7 +382,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @return RevisionStore
 	 */
 	public function getRevisionStore() {
-		return $this->decoratedServices->getService( 'RevisionStore' );
+		return $this->getService( 'RevisionStore' );
 	}
 
 	/**
