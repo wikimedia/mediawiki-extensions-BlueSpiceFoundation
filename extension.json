@@ -557,7 +557,6 @@
 		"SearchGetNearMatchComplete": [
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
-		"MediaWikiServices": "BlueSpice\\Hook\\MediaWikiServices\\ResetServices::callback",
 		"SiteNoticeAfter": "BlueSpice\\Hook\\SiteNoticeAfter\\AddAlerts::callback"
 	},
 	"config_prefix": "bsg",
