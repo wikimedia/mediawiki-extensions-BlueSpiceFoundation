@@ -6,7 +6,8 @@
 			"Fader",
 			"Lokal Profil",
 			"Warrakkk",
-			"Jopparn"
+			"Jopparn",
+			"Mjälten"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -75,7 +76,9 @@
 	"bs-pref-bspinginterval": "Ping-intervall (i sekunder):",
 	"bs-pref-testmode": "Aktivera testläge",
 	"bs-parser-error-invalid-namespace": "Ogiltig namnrymd: $1",
+	"bs-parser-error-invalid-title": "Ogiltig titel: $1.",
 	"bs-validator-error-title-does-not-exist": "Sidan finns inte: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Sida inte tillåten: $1",
 	"bs-parser-error-invalid-category-title": "Sidan är inte en giltig kategori: $1",
 	"bs-export-menu-print-text": "Skriv ut",
 	"bs-export-menu-print-title": "Visar en utskriftsvänlig version av sidan",
