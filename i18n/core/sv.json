@@ -77,6 +77,7 @@
 	"bs-pref-testmode": "Aktivera testläge",
 	"bs-parser-error-invalid-namespace": "Ogiltig namnrymd: $1",
 	"bs-parser-error-invalid-title": "Ogiltig titel: $1.",
+	"bs-validator-error-namespace-on-blacklist": "Namnrymd är inte tillåten: $1",
 	"bs-validator-error-title-does-not-exist": "Sidan finns inte: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Sida inte tillåten: $1",
 	"bs-parser-error-invalid-category-title": "Sidan är inte en giltig kategori: $1",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Bengtsson96"
+			"Bengtsson96",
+			"Mjälten"
 		]
 	},
 	"apihelp-bs-user-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
@@ -18,6 +19,7 @@
 	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera cache</code>",
 	"apihelp-bs-store-param-format": "Formatet för utmatningen (endast JSON eller formaterad JSON)",
 	"apihelp-bs-task-param-format": "Format för resultatet",
+	"bs-wikipage-tasks-error-page-not-valid": "Den angivna sidan är inte giltig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan \"$1\".",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ogiltig kategori|Ogiltig kategorier}}: $1",
@@ -31,6 +33,7 @@
 	"apihelp-bs-category-treestore-description": "Listar alla underkategorier för en specifik kategori",
 	"apihelp-bs-category-treestore-summary": "Listar alla underkategorier för en specifik kategori",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parameterexempel]",
+	"apihelp-bs-task-param-examples": "Visa exempel med task parameters",
 	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn.",
 	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar."

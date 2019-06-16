@@ -67,6 +67,7 @@
 	"bs-extjs-pageexport-list-format-link-label": "קישור",
 	"bs-extjs-pageexport-overwrite-label": "שכתוב",
 	"bs-extjs-pageexport-general-error": "שגיאת ייצוא",
+	"bs-extjs-pageexport-error-invalid-title": "שם הרשימה אינו תקין",
 	"bs-extjs-combo-box-default-placeholder": "הסוג לסינון...",
 	"bs-extjs-tools-trigger-title": "יש ללחוץ כאן כדי לפתוח את תפריט הכלים",
 	"bs-extjs-tools-trigger-text": "כלים",

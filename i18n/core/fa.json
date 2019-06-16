@@ -6,7 +6,8 @@
 			"Alirezaaa",
 			"Ebraminio",
 			"Huji",
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-ns_main": "(صفحات)",
@@ -75,6 +76,8 @@
 	"bs-pref-deleteduserimage": "نماد کاربر پاک‌شده:",
 	"bs-pref-bspinginterval": "بازه پینگ (به ثانیه):",
 	"bs-pref-testmode": "فعال کردن حالت آزمایش",
+	"bs-parser-error-invalid-title": "عنوان نامعتبر: $1",
+	"bs-validator-error-namespace-does-not-exist": "فضای نام وجود ندارد: $1",
 	"bs-export-menu-print-text": "چاپ",
 	"bs-graphicallist-action-close": "بستن",
 	"bs-graphicallist-action-list": "فهرست",
