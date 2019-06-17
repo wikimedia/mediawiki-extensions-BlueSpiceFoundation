@@ -862,7 +862,6 @@
 		"BsPARAM": "includes/common/BsPARAM.php",
 		"BsPARAMTYPE": "includes/common/BsPARAMTYPE.php",
 		"BsPARAMOPTION": "includes/common/BsPARAMOPTION.php",
-		"EXTINFO": "includes/common/EXTINFO.php",
 		"BSTemplateHelper": "includes/TemplateHelper.php",
 		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",

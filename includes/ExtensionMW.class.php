@@ -48,18 +48,6 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @return array
 	 */
 	public function getInfo() {
-		if( !empty( $this->deprecatedSince ) ) {
-			return array(
-				'path' => $this->mExtensionFile,
-				'name' => $this->mInfo[EXTINFO::NAME],
-				'version' => $this->mInfo[EXTINFO::VERSION],
-				'author' => $this->mInfo[EXTINFO::AUTHOR],
-				'url' => $this->mInfo[EXTINFO::URL],
-				'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION],
-				'status' => $this->sStatus,
-				'package' => $this->sPackage,
-			);
-		}
 		$aExtensions = ExtensionRegistry::getInstance()->getAllThings();
 		if( empty( $aExtensions[$this->sName] ) ) {
 			return array(
@@ -84,23 +72,6 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
 			// Extension credits that will show up on Special:Version
-		if( !empty( $aConfig['deprecatedSince'] ) ) {
-			$sVersion = str_replace(
-				'default',
-				$bsgBlueSpiceExtInfo['version'],
-				$this->mInfo[EXTINFO::VERSION]
-			);
-
-			$wgExtensionCredits[$this->mExtensionType][] = array(
-				'path' => $this->mExtensionFile,
-				'name' => $this->mInfo[EXTINFO::NAME],
-				'version' => $sVersion,
-				'author' => $this->mInfo[EXTINFO::AUTHOR],
-				'url' => $this->mInfo[EXTINFO::URL],
-				'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION]
-			);
-			$this->deprecatedSince = $aConfig['deprecatedSince'];
-		}
 
 		$this->mResourcePath = $GLOBALS['wgScriptPath']."/extensions"
 			.$aConfig['extPath'].'/resources';
