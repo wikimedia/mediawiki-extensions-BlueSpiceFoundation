@@ -14,6 +14,7 @@
 	"apihelp-bs-wikipage-tasks-description": "מספק פעולות נפוצות ל-WikiPages",
 	"apihelp-bs-store-param-page": "מאפשר חישוב התחלה/גבול מצד שרת",
 	"apihelp-bs-store-param-limit": "מספר התוצאות להשיב",
+	"apihelp-bs-store-param-dc": "דגל <code>Disable cache</code>",
 	"apihelp-bs-task-param-task": "המשימה שאמורה לפעול",
 	"apihelp-bs-task-param-format": "תסדיר התוצאה.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "קטגוריות ששונו.",

@@ -5,7 +5,8 @@
 			"Alirezaaa",
 			"Arash.pt",
 			"Alifakoor",
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -32,6 +33,7 @@
 	"bs-extjs-label-namespace": "فضای نام",
 	"bs-extjs-label-page": "صفحه",
 	"bs-extjs-label-directsearch": "جستجو",
+	"bs-extjs-titlecombo-newpagehint": "صفحه وجود ندارد!",
 	"bs-extjs-upload": "بارگذاری",
 	"bs-extjs-browse": "مرور",
 	"bs-extjs-uploading": "در حال بارگذاری...",
@@ -59,6 +61,8 @@
 	"bs-extjs-filter-date-on": "روشن",
 	"bs-extjs-filter-date-filter": "پالایه",
 	"bs-extjs-pageexport-list-name-label": "نام فهرست",
+	"bs-extjs-pageexport-list-format-label": "قالب فهرست",
+	"bs-extjs-pageexport-list-format-plain-label": "متن ساده",
 	"bs-extjs-pageexport-list-format-link-label": "پیوند",
 	"bs-extjs-pageexport-overwrite-label": "رونویسی",
 	"bs-extjs-tools-trigger-text": "ابزارها",
