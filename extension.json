@@ -188,9 +188,6 @@
 				"bs-two-units-ago",
 				"bs-one-unit-ago",
 				"bs-now"
-			],
-			"dependencies": [
-				"ext.bluespice.templates"
 			]
 		},
 		"ext.bluespice.extjs": {
@@ -484,9 +481,6 @@
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": "bluespice/bluespice.testsystem.js"
-		},
-		"ext.bluespice.templates": {
-			"class": "ResourceLoaderBSTemplateModule"
 		}
 	},
 	"MessagesDirs": {
@@ -873,7 +867,6 @@
 		"BsPARAMOPTION": "includes/common/BsPARAMOPTION.php",
 		"EXTINFO": "includes/common/EXTINFO.php",
 		"BSTemplateHelper": "includes/TemplateHelper.php",
-		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
 		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
