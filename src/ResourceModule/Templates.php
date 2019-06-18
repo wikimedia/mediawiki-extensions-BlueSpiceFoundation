@@ -64,23 +64,4 @@ class Templates extends ResourceLoaderFileModule {
 	protected function getTemplateFactory() {
 		return Services::getInstance()->getBSTemplateFactory();
 	}
-
-	/**
-	 * Get a list of modules this module depends on.
-	 *
-	 * Dependency information is taken into account when loading a module
-	 * on the client side.
-	 *
-	 * Note: It is expected that $context will be made non-optional in the near
-	 * future.
-	 *
-	 * @param ResourceLoaderContext|null $context
-	 * @return array List of module names as strings
-	 */
-	public function getDependencies( \ResourceLoaderContext $context = null ) {
-		return array_merge(
-			parent::getDependencies( $context ),
-			[ "mediawiki.template.mustache" ]
-		);
-	}
 }
