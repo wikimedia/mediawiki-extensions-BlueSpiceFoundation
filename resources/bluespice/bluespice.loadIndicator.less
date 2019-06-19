@@ -1,0 +1,42 @@
+.loader-indicator.loading {
+	height: 3px;
+	background-color: @bs-loading-indicator-color;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	.loader-indicator-inner {
+		background-image: linear-gradient(
+						to right,
+						rgba( 255,255,255,0.0 ) 40%,
+						rgba( 255,255,255,0.9 ) 55%,
+						rgba( 255,255,255,0.9 ) 60%,
+						rgba( 255,255,255,0.0 ) 60% );
+		height: 3px;
+		background-size: 50%;
+		background-position: 100%;
+
+		-webkit-animation: bs-loader 2s infinite linear;
+		-moz-animation:    bs-loader 2s infinite linear;
+		-o-animation:      bs-loader 2s infinite linear;
+		animation:         bs-loader 2s infinite linear;
+	}
+}
+
+@-webkit-keyframes bs-loader {
+	0%   { background-position-x: 0; }
+	100% { background-position-x: 200%; }
+}
+@-moz-keyframes bs-loader {
+	0%   { background-position-x: 0; }
+	100% { background-position-x: 200%; }
+}
+@-o-keyframes bs-loader {
+	0%   { background-position-x: 0; }
+	100% { background-position-x: 200%; }
+}
+@keyframes bs-loader {
+	0%   { background-position-x: 0; }
+	100% { background-position-x: 200%; }
+}

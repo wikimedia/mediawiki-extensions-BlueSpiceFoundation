@@ -20,7 +20,8 @@
 			},
 			failure: function( response, module, task, $dfd, cfg ) {
 				$dfd.resolve( response );
-			}
+			},
+			loadingIndicator: false
 		}, cfg );
 
 		return _execTask( module, task, data, cfg );
@@ -44,42 +45,52 @@
 			token: 'csrf',
 			context: {},
 			success: _msgSuccess,
-			failure: _msgFailure
+			failure: _msgFailure,
+			loadingIndicator: true
 		}, cfg );
 
 		var $dfd = $.Deferred();
+		if ( cfg.loadingIndicator ) {
+			bs.loadIndicator.pushPending();
+		}
 
 		var api = new mw.Api();
-		api.postWithToken( cfg.token, {
-			action: cfg.useService ? 'bs-task' : 'bs-'+ module +'-tasks',
+		api.postWithToken(cfg.token, {
+			action: cfg.useService ? 'bs-task' : 'bs-' + module + '-tasks',
 			task: task,
-			taskData: JSON.stringify( data ),
+			taskData: JSON.stringify(data),
 			context: JSON.stringify(
-				$.extend (
+				$.extend(
 					_getContext(),
 					cfg.context
 				)
 			)
 		})
-		.done(function( response ){
-			if ( response.success === true ) {
-				cfg.success( response, module, task, $dfd, cfg );
-			} else {
-				cfg.failure( response, module, task, $dfd, cfg );
-			}
-		})
-		.fail( function( code, result ) { //Server error like FATAL
-			if( result.exception ) {
-				result = {
-					success: false,
-					message: result.exception,
-					errors: [{
-						message: code
-					}]
-				};
-			}
-			cfg.failure( result, module, task, $dfd, cfg );
-		});
+			.done(function (response) {
+				if ( cfg.loadingIndicator ) {
+					bs.loadIndicator.popPending();
+				}
+				if (response.success === true) {
+					cfg.success(response, module, task, $dfd, cfg);
+				} else {
+					cfg.failure(response, module, task, $dfd, cfg);
+				}
+			})
+			.fail(function (code, result) { //Server error like FATAL
+				if ( cfg.loadingIndicator ) {
+					bs.loadIndicator.popPending();
+				}
+				if (result.exception) {
+					result = {
+						success: false,
+						message: result.exception,
+						errors: [{
+							message: code
+						}]
+					};
+				}
+				cfg.failure(result, module, task, $dfd, cfg);
+			});
 		return $dfd.promise();
 	}
 
@@ -96,10 +107,14 @@
 		cfg = cfg || {};
 		cfg = $.extend( {
 			token: 'csrf',
-			context: {}
+			context: {},
+			loadingIndicator: true
 		}, cfg );
 
 		var $dfd = $.Deferred();
+		if ( cfg.loadingIndicator ) {
+			bs.loadIndicator.pushPending();
+		}
 
 		var api = new mw.Api();
 		api.postWithToken( cfg.token, {
@@ -112,10 +127,16 @@
 			)
 		})
 		.done(function( response ){
+			if ( cfg.loadingIndicator ) {
+				bs.loadIndicator.popPending();
+			}
 			$dfd.resolve( response );
 		})
 		.fail( function( code, errResp ) { //Server error like FATAL
-			$dfd.resolve( response );
+			if ( cfg.loadingIndicator ) {
+				bs.loadIndicator.popPending();
+			}
+			$dfd.resolve( errResp );
 		});
 		return $dfd.promise();
 	}
