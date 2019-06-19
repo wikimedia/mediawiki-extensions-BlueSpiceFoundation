@@ -98,7 +98,8 @@
 				"bs-color-error": "#f2dede",
 				"bs-color-info": "#d9edf7",
 				"bs-background-neutral": "#FFFFFF",
-				"bs-background-primary": "none"
+				"bs-background-primary": "none",
+				"bs-loading-indicator-color": "#ffae00"
 			},
 			"TargetCacheRegistry": {
 				"title": "\\BlueSpice\\TargetCache\\Title"
@@ -170,7 +171,8 @@
 				"bluespice/bluespice.tooltip.js",
 				"bluespice/bluespice.api.js",
 				"bluespice/bluespice.treepanel.js",
-				"bluespice/bluespice.alerts.js"
+				"bluespice/bluespice.alerts.js",
+				"bluespice/bluespice.loadIndicator.js"
 			],
 			"messages": [
 				"bs-years-duration",
@@ -368,7 +370,8 @@
 				"bluespice/bluespice.css",
 				"bluespice/bluespice.icons.css",
 				"bluespice/bluespice.ui.basic.less",
-				"bluespice/bluespice.treepanel.less"
+				"bluespice/bluespice.treepanel.less",
+				"bluespice/bluespice.loadIndicator.less"
 			],
 			"class": "\\BlueSpice\\ResourceModule\\LessVars"
 		},
@@ -534,7 +537,10 @@
 			"\\BlueSpice\\Hook\\SetupAfterCache\\AddParamDefinitions::callback"
 		],
 		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
-		"BeforePageDisplay": "\\BlueSpice\\Hook\\BeforePageDisplay\\AddResources::callback",
+		"BeforePageDisplay": [
+			"\\BlueSpice\\Hook\\BeforePageDisplay\\AddResources::callback",
+			"\\BlueSpice\\Hook\\BeforePageDisplay\\AddLoadingIndicator::callback"
+		],
 		"HtmlPageLinkRendererEnd": [
 			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataUserName::callback",
 			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataTitle::callback"
