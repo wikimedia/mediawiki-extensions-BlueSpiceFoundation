@@ -26,33 +26,29 @@
  */
 namespace BlueSpice;
 
-abstract class Extension extends Context implements \JsonSerializable {
+use ConfigException;
+use IContextSource;
+use Config;
+use JsonSerializable;
 
-	protected $extPath = '';
+abstract class Extension extends Context implements JsonSerializable {
 
-	protected $name = '';
-	protected $authors = [];
-	protected $version = '';
-	protected $url = '';
-
-	protected $status = '';
-	protected $package = '';
+	protected $allowedInfoKeys = [
+		'extPath' => '',
+		'author' => [],
+		'package' => '',
+		'status' => '',
+		'name' => '',
+		'url' => '',
+		'version' => ''
+	];
 
 	public function jsonSerialize() {
 		return $this->getInfo();
 	}
 
-	public function __construct( array $definition, \IContextSource $context, \Config $config ) {
-		$this->extPath = $definition['extPath'];
-		$this->authors = $definition['author'];
-		if( !is_array( $this->authors ) ) {
-			$this->authors = explode( ',', $this->authors );
-		}
-		$this->package = $definition['package'];
-		$this->status = $definition['status'];
-		$this->name = $definition['name'];
-		$this->url = $definition['url'];
-		$this->version = $definition['version'];
+	public function __construct( array $definition, IContextSource $context, Config $config ) {
+		$this->initDataFromDefinition( $definition );
 		parent::__construct( $context, $config );
 	}
 
@@ -61,19 +57,17 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return array
 	 */
 	public function getInfo() {
-		return [
-			'name' => $this->getName(),
-			'authors' => $this->getAuthors(),
-			'package' => $this->getPackage(),
-			'status' => $this->getStatus(),
-			'version' => $this->getVersion(),
-			'url' => $this->getUrl(),
-		];
+		$info = [];
+		foreach( $this->allowedInfoKeys as $name => $defVal ) {
+			$info[$name] = $this->$name;
+		}
+		return $info;
 	}
 
 	/**
 	 * Returns the resource path for the current extension
 	 * @return string
+	 * @throws ConfigException
 	 */
 	public function getResourcePath() {
 		return implode( '', [
@@ -90,7 +84,7 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return string
 	 */
 	public function getExtensionPath() {
-		return $this->extPath;
+		return $this->get( 'extPath' );
 	}
 
 	/**
@@ -98,7 +92,7 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return string
 	 */
 	public function getName() {
-		return $this->name;
+		return $this->get( 'name' );
 	}
 
 	/**
@@ -106,7 +100,7 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return array
 	 */
 	public function getAuthors() {
-		return $this->authors;
+		return $this->get( 'author' );
 	}
 
 	/**
@@ -114,7 +108,7 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return string
 	 */
 	public function getStatus() {
-		return $this->status;
+		return $this->get( 'status' );
 	}
 
 	/**
@@ -123,7 +117,7 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return string
 	 */
 	public function getPackage() {
-		return $this->package;
+		return $this->get( 'package' );
 	}
 
 	/**
@@ -131,7 +125,7 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return string
 	 */
 	public function getUrl() {
-		return $this->url;
+		return $this->get( 'url' );
 	}
 
 	/**
@@ -139,7 +133,7 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 * @return string
 	 */
 	public function getVersion() {
-		return $this->version;
+		return $this->get( 'version' );
 	}
 
 	/**
@@ -149,5 +143,54 @@ abstract class Extension extends Context implements \JsonSerializable {
 	 */
 	public function getExtensionKey() {
 		return "MW::{$this->getName()}";
+	}
+
+	/**
+	 * @param string $name Name of the info to retrieve
+	 * @return mixed|null
+	 */
+	public function get( $name ) {
+		if ( isset( $this->allowedInfoKeys[$name] ) ) {
+			return $this->$name;
+		}
+		return null;
+	}
+
+	/**
+	 * @param string $name
+	 * @param mixed $value
+	 * @return bool
+	 */
+	public function set( $name, $value ) {
+		if ( isset( $this->allowedInfoKeys[$name] ) ) {
+			if ( $name === 'author' ) {
+				return $this->setAuthors( $value );
+			}
+			$this->$name = $value;
+			return true;
+		}
+		return false;
+	}
+
+	private function setAuthors( $value ) {
+		$var = 'author';
+		if ( !is_array( $value ) ) {
+			$value = explode( ',', $value );
+		}
+		$value = array_map( function( $author ) {
+			return trim( $author );
+		}, $value );
+		$this->$var = $value;
+		return true;
+	}
+
+	private function initDataFromDefinition( $def ) {
+		foreach ( $this->allowedInfoKeys as $name => $defVal ) {
+			$value = $def;
+			if ( isset( $def[$name] ) ) {
+				$value = $def[$name];
+			}
+			$this->set( $name, $value );
+		}
 	}
 }
