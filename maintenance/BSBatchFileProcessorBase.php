@@ -23,7 +23,7 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	}
 
 	public function execute() {
-		//wfCountDown( 5 );
+		// \Maintenance::countDown( 5 );
 
 		$this->sSrc = $this->getOption( 'src', $this->sSrc );
 		$this->sDest = $this->getOption( 'dest', $this->sDest );
