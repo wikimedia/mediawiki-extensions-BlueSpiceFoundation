@@ -1,11 +1,17 @@
 .loader-indicator.loading {
 	height: 3px;
 	background-color: @bs-loading-indicator-color;
-	position: fixed;
 	width: 100%;
-	top: 0;
-	left: 0;
 	z-index: 999;
+	&.global {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+	}
+	&.manager {
+		position: absolute;
+	}
 	.loader-indicator-inner {
 		background-image: linear-gradient(
 						to right,

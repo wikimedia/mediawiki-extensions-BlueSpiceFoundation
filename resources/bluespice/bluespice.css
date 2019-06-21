@@ -136,11 +136,3 @@
 .bs-tab-content {
 	clear: both;
 }
-
-.bs-manager-container {
-	min-height: 300px;
-	/* @embed */
-	background-image: url("images/bs-ajax-loader-bar-blue.gif");
-	background-repeat: no-repeat;
-	background-position: top center;
-}

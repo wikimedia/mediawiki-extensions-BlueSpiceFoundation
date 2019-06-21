@@ -1,7 +1,8 @@
 ( function( mw, $, bs, d, undefined ) {
-	var LoadIndicator = function( cfg ) {
+	bs.LoadIndicator = function( cfg ) {
 		cfg = cfg || {};
 		this.$element = cfg.$element;
+		this.highStart = cfg.highStart || false;
 
 		this.queue = 0;
 		// Min. time request must take in order to show loading
@@ -14,18 +15,27 @@
 
 		// Time when the loading started
 		this.loadingStart = 0;
-		// When DOM ready, cancel initial loading
-		this.doSetLoading( false );
+
+		// High start initially keep loading
+		// until someone calls popPending()
+		if ( this.highStart ) {
+			if ( !this.isLoading() ) {
+				this.doSetLoading( true );
+			}
+			this.queue = 1;
+		} else {
+			this.doSetLoading( false );
+		}
 	};
 
-	LoadIndicator.prototype.pushPending = function() {
+	bs.LoadIndicator.prototype.pushPending = function() {
 		this.queue++;
 		if ( this.queue > 0 ) {
 			this.setLoading( true );
 		}
 	};
 
-	LoadIndicator.prototype.popPending = function() {
+	bs.LoadIndicator.prototype.popPending = function() {
 		if ( this.queue === 0 ) {
 			return;
 		}
@@ -35,7 +45,7 @@
 		}
 	};
 
-	LoadIndicator.prototype.setLoading = function( show ) {
+	bs.LoadIndicator.prototype.setLoading = function( show ) {
 		var hideTime;
 		if( show ) {
 			clearTimeout( this.hideTimer );
@@ -61,21 +71,26 @@
 		}
 	};
 
-	LoadIndicator.prototype.doSetLoading = function( value ) {
+	bs.LoadIndicator.prototype.doSetLoading = function( value ) {
+		this.$element.trigger( 'stateChanged', [ value ] );
 		if ( value ) {
 			return this.$element.addClass( 'loading' );
 		}
 		return this.$element.removeClass( 'loading' );
 	};
 
-	LoadIndicator.prototype.getQueue = function() {
+	bs.LoadIndicator.prototype.getQueue = function() {
 		return this.queue;
 	};
 
+	bs.LoadIndicator.prototype.isLoading = function() {
+		return this.$element.hasClass( 'loading' );
+	};
+
 	$( function() {
-		// Call this on DOMReady, to make sure element is there
-		bs.loadIndicator = new LoadIndicator( {
-			$element: $( '.loader-indicator' )
+		// Call this on DOMReady, to make sure elements are there
+		bs.loadIndicator = new bs.LoadIndicator( {
+			$element: $( '.loader-indicator.global' )
 		} );
 	} );
 

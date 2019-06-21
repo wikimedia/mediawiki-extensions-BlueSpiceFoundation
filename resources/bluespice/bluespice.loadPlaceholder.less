@@ -1,0 +1,79 @@
+.placeholder-loader {
+	[class^="bs-placeholder-item"] {
+		background-color: @bs-color-neutral3;
+		-webkit-animation: fadeinout 2s linear forwards infinite;
+		animation: fadeinout 2s linear forwards infinite;
+	}
+	.bs-placeholder-item-circle {
+		width: 50px;
+		height: 50px;
+		border-radius: 100%;
+		margin-right: 10px;
+		display: inline-block;
+	}
+	.bs-placeholder-item-rect {
+		height: 50px;
+		width: 200px;
+		border-radius: 3px;
+	}
+	.bs-placeholder-item-grid {
+		background-color: @bs-background-neutral;
+		width: 100%;
+		display: table;
+		border-radius: 3px;
+		.bs-placeholder-item-row {
+			background-color: @bs-background-neutral;
+		}
+		.bs-placeholder-item-grid-cell,
+		.bs-placeholder-item-grid-header-cell {
+			background-color: @bs-background-neutral;
+			height: 30px;
+			width: 20%;
+			border: 2px solid @bs-color-neutral3;
+			display: table-cell;
+			border-right: none;
+			&:last-of-type {
+				border-right: 1px;
+			}
+			.bs-placeholder-item-grid-cell-text {
+				background-color: @bs-color-neutral3;
+				height: 15px;
+				width: 80%;
+				margin: auto;
+				margin-top: 5px;
+			}
+		}
+		.bs-placeholder-item-grid-header-cell {
+			height: 50px;
+			.bs-placeholder-item-grid-cell-text {
+				margin-top: 15px;
+			}
+		}
+
+	}
+}
+
+@-webkit-keyframes fadeinout {
+	0%,100% { opacity: 0.5; }
+	50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+	0%,100% { opacity: 0.5; }
+	50% { opacity: 1; }
+}
+
+/* BS ExtJS managers*/
+.bs-manager-container {
+	.placeholder-loader {
+		margin-top: 10px;
+		.bs-placeholder-container {
+			.bs-placeholder-item-rect {
+				float: right;
+			}
+		}
+		.bs-placeholder-item-grid {
+			margin-top: 30px;
+		}
+	}
+}

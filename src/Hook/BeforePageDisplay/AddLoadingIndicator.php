@@ -9,7 +9,7 @@ class AddLoadingIndicator extends BeforePageDisplay {
 
 	protected function doProcess() {
 		$html = Html::openElement( 'div', [
-			'class' => 'loader-indicator loading'
+			'class' => 'loader-indicator global loading'
 		] );
 		$html .= Html::element( 'div', [
 			'class' => 'loader-indicator-inner'
