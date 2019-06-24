@@ -6,9 +6,9 @@
 
 		this.queue = 0;
 		// Min. time request must take in order to show loading
-		this.inTimeout = 100;
+		this.inTimeout = cfg.inTimeout || 100;
 		// Min. time loading indicator can stay on
-		this.outTimeout = 200;
+		this.outTimeout = cfg.outTimeout || 200;
 		//Timers to show and hide loader
 		this.showTimer = null;
 		this.hideTimer = null;
