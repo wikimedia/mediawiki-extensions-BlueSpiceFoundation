@@ -3,6 +3,7 @@
 namespace BlueSpice\Data\Filter;
 
 use BlueSpice\Data\Filter;
+use BsStringHelper;
 
 /**
  * Class name "String" is reserved
@@ -19,10 +20,26 @@ class StringValue extends Filter {
 	 * Performs string filtering based on given filter of type string on a
 	 * dataset
 	 * @param \BlueSpice\Data\Record $dataSet
+	 * @return bool
 	 */
 	protected function doesMatch( $dataSet ) {
-		$fieldValue = $dataSet->get( $this->getField() );
-
-		return \BsStringHelper::filter( $this->getComparison(), $fieldValue, $this->getValue() );
+		$fieldValues = $dataSet->get( $this->getField() );
+		if ( !is_array( $fieldValues ) ) {
+			$fieldValues = [ $fieldValues ];
+		}
+		foreach ( $fieldValues as $fieldValue ) {
+			if ( !is_scalar( $fieldValue ) ) {
+				continue;
+			}
+			$res = BsStringHelper::filter(
+				$this->getComparison(),
+				(string)$fieldValue,
+				$this->getValue()
+			);
+			if ( $res ) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
