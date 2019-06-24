@@ -63,13 +63,17 @@
 	50% { opacity: 1; }
 }
 
-/* BS ExtJS managers*/
-.bs-manager-container {
+/* ExtJS components */
+.extjs-load-placeholder-cnt {
 	.placeholder-loader {
 		margin-top: 10px;
 		.bs-placeholder-container {
 			.bs-placeholder-item-rect {
 				float: right;
+				&.full {
+					float: none;
+					width: 100%;
+				}
 			}
 		}
 		.bs-placeholder-item-grid {

@@ -122,7 +122,8 @@
 				"mustache": "\\BlueSpice\\Template\\Mustache::factory"
 			},
 			"LoadPlaceholders":  {
-				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
+				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder",
+				"ExtJSGeneric":  "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
 			}
 		}
 	},
@@ -199,7 +200,7 @@
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice.extjs/bluespice.extjs.js",
-				"bluespice.extjs/bluespice.extjs.manager.loadPlaceholder.js",
+				"bluespice.extjs/bluespice.extjs.loadPlaceholder.js",
 				"bluespice.extjs/BS/override/grid/column/Action.js"
 			],
 			"styles": [
