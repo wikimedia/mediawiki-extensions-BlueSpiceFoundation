@@ -5,6 +5,9 @@
 		]
 	},
 	"bs-deferred-action-status-pending": "ဆိုင်းငံ့နေသည်",
+	"bs-deferred-action-status-done": "ပြီးပြီ",
+	"bs-deferred-action-status-error": "မအောင်မြင်ပါ။",
+	"bs-deferred-action-apicopypage-description": "\"$1\" မှ \"$2\" မိတ္တူကူးရန်",
 	"bs-deferred-batch-description": "ဖော်ပြချက်",
 	"bs-deferred-action-apideletepage-description": "\"$1\" ကို ဖျက်ပါ"
 }

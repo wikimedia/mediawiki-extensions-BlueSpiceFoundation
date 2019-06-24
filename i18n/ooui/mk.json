@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Додај нов..."
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Додај нов...",
+	"bs-ooui-key-value-input-widget-key-label": "Клуч",
+	"bs-ooui-key-value-input-widget-value-label": "Вредност",
+	"bs-ooui-key-value-input-widget-add-button-label": "Додај",
+	"bs-ooui-key-value-input-widget-add-form-label": "Додај нов запис",
+	"bs-ooui-key-value-input-widget-error-message": "Сите задолжителни полиња мора да се поставени!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Нема зададено вредности!"
 }

@@ -4,7 +4,15 @@
 			"Dr Lotus Black"
 		]
 	},
+	"bs-filerepo-labelupload": "တင်ရန်",
 	"bs-filerepo-labelfilter": "စိစစ်မှု",
+	"bs-filerepo-headerfilename": "ဖိုင်အမည်",
+	"bs-filerepo-headerfilesize": "အရွယ်အစား",
 	"bs-filerepo-headerpagecategories": "ကဏ္ဍများ",
-	"bs-filerepo-headerfiledescription": "ဖော်ပြချက်"
+	"bs-filerepo-headerfilewidth": "အကျယ်",
+	"bs-filerepo-headerfileheight": "အမြင့်",
+	"bs-filerepo-headerfileusertext": "အသုံးပြုသူ",
+	"bs-filerepo-headerfilemediatype": "မီဒီယာ အမျိုးအစား",
+	"bs-filerepo-headerfiledescription": "ဖော်ပြချက်",
+	"bs-filerepo-headerfilethumbnail": "နမူနာပုံငယ်"
 }

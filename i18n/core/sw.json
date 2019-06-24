@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Rance"
+			"Rance",
+			"Yasen igra"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Ongeza mpya"
+	"bs-years-duration": "{{PLURAL:$1|mwaka mmoja|miaka $1}}",
+	"bs-weeks-duration": "{{PLURAL:$1|wiki moja|wiki $1}}",
+	"bs-days-duration": "{{PLURAL:$1|siku moja|siku $1}}"
 }

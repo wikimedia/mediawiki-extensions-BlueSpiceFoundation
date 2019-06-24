@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"bluespicefoundation-desc": "Ја прави МедијаВики подготвена за претприемништво",
@@ -88,7 +89,7 @@
 	"bs-graphicallist-action-preview": "Преглед",
 	"bs-bluespice-mediawiki": "BlueSpice МедијаВики",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "приказ на раководни страници за BlueSpice",
+	"action-wikiadmin": "се користи во многу додатоци за BlueSpice за потенцијално опасни административни задачи како раководење со корисници, дозволи и глобално поставување",
 	"right-wikiadmin": "Се користи во многу додатоци за BlueSpice за потенцијално опасни административни задачи како раководење со корисници, дозволи и глобално поставување",
 	"bs-notifications-agent-anon": "анонимен корисник"
 }

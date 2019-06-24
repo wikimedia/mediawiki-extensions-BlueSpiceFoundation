@@ -18,6 +18,7 @@
 	"bs-deferred-batch-status": "מצב",
 	"bs-deferred-action-apiaddcategories-description": "הוספת קטגוריות ל-'$1'.",
 	"bs-deferred-action-apiremovecategories-description": "הסרת קטגוריות מ-'$1'.",
+	"bs-deferred-action-apisetcategories-description": "שינוי קטגוריות בדף '$1'.",
 	"bs-deferred-action-apimovepage-description": "העברת \"$1\" ל-\"$2\".",
 	"bs-deferred-action-apideletepage-description": "מחיקת הדף \"$1\"."
 }

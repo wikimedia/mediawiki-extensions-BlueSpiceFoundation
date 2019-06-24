@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Josve05a",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Mjälten"
 		]
 	},
 	"bs-validator-email-validation-approved": "E-postadressen har validerats.",
@@ -14,5 +15,12 @@
 	"bs-validator-set-validation-approved": "$1 bekräftades.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Endast följande värde är tillåtet för $1|För $1 är endast ett av följande värden tillåtna}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Det angivna värdet är för lågt. Det bör inte vara mindre än $1.",
-	"bs-validator-integer-range-validation-too-high": "Det angivna värdet är för högt. Det bör inte vara högre än $1."
+	"bs-validator-integer-range-validation-too-high": "Det angivna värdet är för högt. Det bör inte vara högre än $1.",
+	"bs-validator-invalid-boolean": "Inte en godkänd boolean",
+	"bs-validator-invalid-float": "Ogiltigt flytttal",
+	"bs-validator-invalid-integer": "Ogiltigt heltal",
+	"bs-validator-invalid-string": "Ogiltig sträng",
+	"bs-validator-invalid-coordinate": "Ogiltig koordinat",
+	"bs-validator-invalid-parameter": "Denna parameter är inte tillåten",
+	"bs-validator-missing-required": "Denna parameter är obligatorisk."
 }

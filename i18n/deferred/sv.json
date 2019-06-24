@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Mjälten"
 		]
 	},
 	"bs-deferred-action-status-pending": "Väntande.",
@@ -10,6 +11,7 @@
 	"bs-deferred-action-status-error": "Misslyckades.",
 	"bs-deferred-action-apicopypage-description": "Kopiera \"$1\" till \"$2\".",
 	"bs-deferred-action-apieditpage-description": "Redigera \"$1\".",
+	"bs-deferred-batch-title": "Partiprosessering",
 	"bs-deferred-batch-progress-desc": "Framsteg",
 	"bs-deferred-batch-actions": "Åtgärder",
 	"bs-deferred-batch-description": "Beskrivning",

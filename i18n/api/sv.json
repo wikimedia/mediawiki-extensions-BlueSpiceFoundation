@@ -18,6 +18,8 @@
 	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
 	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera cache</code>",
 	"apihelp-bs-store-param-format": "Formatet för utmatningen (endast JSON eller formaterad JSON)",
+	"apihelp-bs-task-param-task": "Uppgiften som bör utföras",
+	"apihelp-bs-task-param-taskdata": "JSON-sträng-kodat objekt med godtycklig data för uppgiften",
 	"apihelp-bs-task-param-format": "Format för resultatet",
 	"bs-wikipage-tasks-error-page-not-valid": "Den angivna sidan är inte giltig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
