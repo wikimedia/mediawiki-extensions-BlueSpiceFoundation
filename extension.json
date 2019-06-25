@@ -164,7 +164,8 @@
 				"bs-now"
 			],
 			"dependencies": [
-				"ext.bluespice.templates"
+				"ext.bluespice.templates",
+				"mediawiki.api"
 			]
 		},
 		"ext.bluespice.extjs": {
