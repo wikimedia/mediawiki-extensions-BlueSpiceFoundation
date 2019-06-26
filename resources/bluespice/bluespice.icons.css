@@ -267,6 +267,11 @@
 	content: "\e94d";
 }
 
+.bs-icon-purge:before {
+	content: "\f12d";
+	font-family: "fontawesome" !important;
+}
+
 .bs-icon-checkmark-circle:before {
 	content: "\f058";
 	font-family: "fontawesome" !important;
