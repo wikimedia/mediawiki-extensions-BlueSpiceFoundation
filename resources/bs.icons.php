@@ -116,8 +116,8 @@ switch( $iconSet ){
 
 	echo "\t\t<tr>\n";
 	$rowcount = 0;
-
-	for( $i=0; $i < count( $lines ); $i++ ) {
+	$numLines = count( $lines );
+	for( $i=0; $i < $numLines; $i++ ) {
 		$className = null;
 		$number = '';
 

@@ -90,7 +90,7 @@ class MaintenanceUser {
 	}
 
 	protected function getExpiryTS( $expireInSeconds ) {
-		$expireInSeconds = (int) $expireInSeconds;
+		$expireInSeconds = (int)$expireInSeconds;
 		if( empty( $expireInSeconds ) || $expireInSeconds < 10 ) {
 			$expireInSeconds = 10;
 		}

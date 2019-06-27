@@ -18,7 +18,7 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 		$this->overlay = $this;
 		$this->clearInputOnChoose = true;
 		if( isset( $config['clearInputOnChoose'] ) ) {
-			$this->clearInputOnChoose = (bool) $config['clearInputOnChoose'];
+			$this->clearInputOnChoose = (bool)$config['clearInputOnChoose'];
 		}
 
 		$this->menuConfig = isset( $config['menu'] ) ? $config['menu'] : [];
@@ -26,7 +26,7 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 		$menuConfig = $this->menuConfig;
 		$menuConfig['widget'] = $this;
 		$menuConfig['input'] = $this->hasInput ? $this->input : null;
-		$menuConfig['filterFromInput'] = (bool) $this->hasInput;
+		$menuConfig['filterFromInput'] = (bool)$this->hasInput;
 		$menuConfig['autoCloseIgnore'] = $this->hasInput ? $this->input : new \OOUI\Tag( '' );
 		$menuConfig['floatableContainer'] = $this->hasInput && $this->inputPosition == 'outline' ?
 			$this->input : $this;

@@ -50,11 +50,11 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	protected function makeResultRow( $row ) {
 		$oUserPageTitle = Title::makeTitle( NS_USER, $row->user_name );
 		return array(
-			'user_id' => (int) $row->user_id,
+			'user_id' => (int)$row->user_id,
 			'user_name' => $row->user_name,
 			'user_real_name' => $row->user_real_name,
 			'user_registration' => $row->user_registration,
-			'user_editcount' => (int) $row->user_editcount,
+			'user_editcount' => (int)$row->user_editcount,
 			'groups' => isset( $this->aGroups[$row->user_id] ) ? $this->aGroups[$row->user_id] : array(),
 			'enabled' => isset( $this->aBlocks[$row->user_id] ) ? false : true,
 			'page_link' => $this->oLinkRenderer->makeLink(
@@ -96,7 +96,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 				}
 			}
 			if ( !$bEnabledFilterIsSet ) {
-				$value[] = (object) array(
+				$value[] = (object)array(
 					'type' => 'boolean',
 					'value' => true,
 					'field' => 'enabled'

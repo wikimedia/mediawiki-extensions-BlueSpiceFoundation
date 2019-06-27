@@ -61,7 +61,7 @@ class Sort {
 		$sortObjects = [];
 		foreach( $sorts as $sort ) {
 			if( is_array( $sort ) ) {
-				$sort = (object) $sort;
+				$sort = (object)$sort;
 			}
 
 			$sortObjects[] = new Sort(

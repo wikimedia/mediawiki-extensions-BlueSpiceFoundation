@@ -12,8 +12,8 @@
  * DEPRECATED!
  * @deprecated since version 3.1 - Use ParamProcessor instead
  */
-class BsValidatorPositiveIntegerPlugin implements BsValidatorPlugin
-{
+class BsValidatorPositiveIntegerPlugin implements BsValidatorPlugin {
+
 	/**
 	 * DEPRECATED!
 	 * @deprecated since version 3.1 - Use ParamProcessor instead
