@@ -43,20 +43,20 @@ class TagMultiselectWidget extends Widget {
 
 		$this->group->addClasses( [ "oo-ui-tagMultiselectWidget-group" ] );
 		$this->contentCnt = new \OOUI\Tag();
-		$this->contentCnt->addClasses( [  'oo-ui-tagMultiselectWidget-content' ] );
+		$this->contentCnt->addClasses( [ 'oo-ui-tagMultiselectWidget-content' ] );
 		$this->contentCnt->appendContent( $this->group );
 
 		$this->handle = new \OOUI\Tag();
 		$this->handle->addClasses( [ 'oo-ui-tagMultiselectWidget-handle' ] );
 		$this->handle->appendContent( $this->indicator, $this->icon );
 
-		if( $this->hasInput ) {
-			if( isset( $config[ 'inputWidget' ] ) && $config[ 'inputWidget' ] instanceof \OOUI\Tag ) {
+		if ( $this->hasInput ) {
+			if ( isset( $config[ 'inputWidget' ] ) && $config[ 'inputWidget' ] instanceof \OOUI\Tag ) {
 				$this->input = $config[ 'inputWidget' ];
 			} else {
 				$this->input = new \OOUI\Tag( 'input' );
 				$this->input->addClasses( [ "oo-ui-tagMultiselectWidget-input" ] );
-				if( isset( $config[ 'placeholder' ] ) ) {
+				if ( isset( $config[ 'placeholder' ] ) ) {
 					$this->input->setAttributes( [ 'placeholder' => $config[ 'placeholder' ] ] );
 				}
 			}
@@ -70,19 +70,19 @@ class TagMultiselectWidget extends Widget {
 		$this->addClasses( [ "oo-ui-tagMultiselectWidget" ] );
 		$this->appendContent( $this->handle );
 
-		if( !empty( $this->selected ) ) {
+		if ( !empty( $this->selected ) ) {
 			$this->setValue( $this->selected );
 		}
 	}
 
 	public function setValue( $value ) {
-		if( !is_array( $value ) ) {
+		if ( !is_array( $value ) ) {
 			$value = [ $value ];
 		}
 
 		$this->clearItems();
-		foreach( $value as $val ) {
-			if( is_string( $val ) ) {
+		foreach ( $value as $val ) {
+			if ( is_string( $val ) ) {
 				$this->addTag( $val );
 			} else {
 				$this->addTag( $val['data'], $val['label'] );
@@ -92,7 +92,7 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	protected function addTag( $data, $label = '' ) {
-		if( $this->isAllowedData( $data ) || $this->allowDisplayInvalidTypes ) {
+		if ( $this->isAllowedData( $data ) || $this->allowDisplayInvalidTypes ) {
 			$newItemWidget = $this->createTagItemWidget( $data, $label );
 			$this->addItems( [ $newItemWidget ] );
 			return true;
@@ -106,11 +106,11 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	protected function isAllowedData( $data ) {
-		if( $this->allowArbitrary ) {
+		if ( $this->allowArbitrary ) {
 			return true;
 		}
 
-		if( !empty( $this->allowedValues ) && in_array( $data, $this->allowedValues ) ) {
+		if ( !empty( $this->allowedValues ) && in_array( $data, $this->allowedValues ) ) {
 			return true;
 		}
 
@@ -137,7 +137,7 @@ class TagMultiselectWidget extends Widget {
 	protected function setConfigAttributes( $config ) {
 		$this->allowArbitrary = isset( $config['allowArbitrary'] ) ? (bool)$config['allowArbitrary'] : false;
 		$this->inputPosition = 'inline';
-		if( isset( $config['inputPosition'] )
+		if ( isset( $config['inputPosition'] )
 			&& in_array( $config['inputPosition'], $this->allowedInputPositions ) ) {
 			$this->inputPosition = $config['inputPosition'];
 		}
@@ -149,7 +149,7 @@ class TagMultiselectWidget extends Widget {
 		// Setting placeholder on infuse will trigger "change" event of input,
 		// which will trigger filtering, which will ultimately hide the menu,
 		// making it positioning imposible. This is OOUI/browser bug.
-		//$this->placeholder = isset( $config['placeholder'] ) ? $config['placeholder'] : '';
+		// $this->placeholder = isset( $config['placeholder'] ) ? $config['placeholder'] : '';
 
 		$this->registerConfigCallback( function ( &$config ) {
 			$config[ 'allowArbitrary' ] = $this->allowArbitrary;
@@ -159,7 +159,7 @@ class TagMultiselectWidget extends Widget {
 			$config[ 'allowedValues' ] = $this->allowedValues;
 			$config[ 'allowDisplayInvalidTags' ] = $this->allowDisplayInvalidTags;
 			$config[ 'selected' ] = $this->selected;
-			//$config[ 'placeholder' ] = $this->placeholder;
+			// $config[ 'placeholder' ] = $this->placeholder;
 		} );
 	}
 }

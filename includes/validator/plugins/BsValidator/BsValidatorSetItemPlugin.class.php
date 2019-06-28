@@ -12,7 +12,7 @@ class BsValidatorSetItemPlugin implements BsValidatorPlugin {
 	public static function isValid( $validateThis, $options ) {
 		return ( !in_array( $validateThis , $options['set'] ) )
 			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-set-validation-not-approved', array( $options['setname'], implode( ',', $options['set'] ) ) )
-			: new BsValidatorResponse( 0, 'Validator', 'bs-validator-set-validation-approved', array( $options['setname']) );
+			: new BsValidatorResponse( 0, 'Validator', 'bs-validator-set-validation-approved', array( $options['setname'] ) );
 	}
 
 }

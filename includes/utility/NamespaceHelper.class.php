@@ -26,10 +26,10 @@ class BsNamespaceHelper {
 	/**
 	 * returns the constantname for MW NS like 0 => NS_MAIN
 	 * @param type $iNamespaceId
-	 * @return string 
-	 */	
+	 * @return string
+	 */
 	public static function getMwNamespaceConstant( $iNamespaceId ) {
-		if( isset( self::$aNamespaceMap[$iNamespaceId] ) ) {
+		if ( isset( self::$aNamespaceMap[$iNamespaceId] ) ) {
 			return self::$aNamespaceMap[$iNamespaceId];
 		} else {
 			return '';
@@ -38,10 +38,10 @@ class BsNamespaceHelper {
 
 	/**
 	 * Returns array with MW NS Mapping
-	 * @return Array 
+	 * @return Array
 	 */
 	public static function getMwNamespaceConstants() {
-		//TODO: Use this logic for contants mapping
+		// TODO: Use this logic for contants mapping
 		/*
 		$aConsts = get_defined_constants(true);
 		foreach($aConsts['user'] as $sContantName => $sContantValue ) {
@@ -101,7 +101,7 @@ class BsNamespaceHelper {
 	 * @global array $wgNamespaceAliases stores all the namespace aliases
 	 * @global array $wgCanonicalNamespaceNames stores generic namespace names
 	 * @param int $iNamespaceId number of namespace index
-	 * @return array List of namespace names 
+	 * @return array List of namespace names
 	 */
 	public static function getNamespaceNamesAndAliases( $iNamespaceId ) {
 		global $wgContLang, $wgNamespaceAliases, $wgCanonicalNamespaceNames;
@@ -140,7 +140,7 @@ class BsNamespaceHelper {
 	 *
 	 * @param array $aNamespaces Array of namespaces i.e. array( 3, 5, 'SomeNamespace', 4 )
 	 * @return Array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
-	 * @throws BsInvalidNamespaceException In case a invalid namespace is given 
+	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */
 	public static function getNamespaceIdsFromAmbiguousArray( $aNamespaces ) {
 		return self::getNamespaceIdsFromAmbiguousCSVString( implode( ',', $aNamespaces ) );
@@ -153,16 +153,18 @@ class BsNamespaceHelper {
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */
 	public static function getNamespaceIdsFromAmbiguousCSVString( $sCSV = '' ) {
-		if( !isset( $sCSV ) || !is_string( $sCSV ) ) {
+		if ( !isset( $sCSV ) || !is_string( $sCSV ) ) {
 			throw new \MWException(
 				__CLASS__.":".__METHOD__.' - expects comma separated string'
 			);
 		}
 		global $wgContLang;
 		$sCSV = trim( $sCSV );
-		$sCSV = mb_strtolower( $sCSV ); // make namespaces case insensitive
+		// make namespaces case insensitive
+		$sCSV = mb_strtolower( $sCSV );
 
-		if ( in_array( $sCSV, array( 'all', '-', '' ) ) ) { //for compatibility reason the '-' is equivalent to 'all'
+		if ( in_array( $sCSV, array( 'all', '-', '' ) ) ) {
+			// for compatibility reason the '-' is equivalent to 'all'
 			return array_keys( $wgContLang->getNamespaces() );
 		}
 
@@ -172,8 +174,10 @@ class BsNamespaceHelper {
 		$aInvalidNamespaces = array();
 
 		foreach ( $aAmbiguousNS as $vAmbiguousNS ) {
-			if ( is_numeric( $vAmbiguousNS ) ) { //Given value is a namespace id.
-				if ( $wgContLang->getNsText( $vAmbiguousNS ) === false ) { //Does a namespace with the given id exist?
+			if ( is_numeric( $vAmbiguousNS ) ) {
+				// Given value is a namespace id.
+				if ( $wgContLang->getNsText( $vAmbiguousNS ) === false ) {
+					// Does a namespace with the given id exist?
 					$aInvalidNamespaces[] = $vAmbiguousNS;
 				} else {
 					$aValidNamespaceIntIndexes[] = $vAmbiguousNS;
@@ -185,9 +189,10 @@ class BsNamespaceHelper {
 				} else if ( $vAmbiguousNS == '' ) {
 					$iNamespaceIdFromText = 0;
 				} else {
-					//Given value is a namespace text.
-					$vAmbiguousNS = str_replace( ' ', '_', $vAmbiguousNS ); //'Bluespice talk' -> 'Bluespice_talk'
-					//Does a namespace id for the given namespace text exist?
+					// Given value is a namespace text.
+					// 'Bluespice talk' -> 'Bluespice_talk'
+					$vAmbiguousNS = str_replace( ' ', '_', $vAmbiguousNS );
+					// Does a namespace id for the given namespace text exist?
 					$iNamespaceIdFromText = $wgContLang->getNsIndex( $vAmbiguousNS );
 				}
 				if ( $iNamespaceIdFromText === false ) {
@@ -198,7 +203,7 @@ class BsNamespaceHelper {
 			}
 		}
 
-		//Does the given CSV list contain any invalid namespaces?
+		// Does the given CSV list contain any invalid namespaces?
 		if ( !empty( $aInvalidNamespaces ) ) {
 			$oInvalidNamespaceException = new BsInvalidNamespaceException();
 			$oInvalidNamespaceException->setListOfInvalidNamespaces( $aInvalidNamespaces );
@@ -206,14 +211,15 @@ class BsNamespaceHelper {
 			throw $oInvalidNamespaceException;
 		}
 
-		return array_values( array_unique( $aValidNamespaceIntIndexes ) ); //minify the Array, rearrange indexes and return it
+		// minify the Array, rearrange indexes and return it
+		return array_values( array_unique( $aValidNamespaceIntIndexes ) );
 	}
 
 	/**
 	 * Creates an array for the HTMLFormField class for select boxes.
 	 * @global Language $wgContLang
 	 * @param array $aExcludeIds
-	 * @return array 
+	 * @return array
 	 */
 	public static function getNamespacesForSelectOptions( $aExcludeIds = array() ) {
 		global $wgContLang;
@@ -222,7 +228,8 @@ class BsNamespaceHelper {
 		foreach ( $wgContLang->getNamespaces() as $sNamespace ) {
 			$iNsIndex = $wgContLang->getNsIndex( $sNamespace );
 			if ( in_array( $iNsIndex, $aExcludeIds ) ) {
-				continue; //Filter namespaces
+				// Filter namespaces
+				continue;
 			}
 			$aNamespaces[$iNsIndex] = self::getNamespaceName( $iNsIndex );
 		}

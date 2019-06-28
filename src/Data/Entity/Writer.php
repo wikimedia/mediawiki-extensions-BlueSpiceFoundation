@@ -12,11 +12,11 @@ abstract class Writer implements \BlueSpice\Data\IWriter {
 
 	public function __construct( \IContextSource $context = null, \Config $config = null ) {
 		$this->context = $context;
-		if( $this->context === null ) {
+		if ( $this->context === null ) {
 			$this->context = \RequestContext::getMain();
 		}
 		$this->config = $config;
-		if( $this->config === null ) {
+		if ( $this->config === null ) {
 			$this->config = \MediaWiki\MediaWikiServices::getInstance()->getMainConfig();
 		}
 	}

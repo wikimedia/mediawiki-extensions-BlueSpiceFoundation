@@ -28,7 +28,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 
 abstract class LoadExtensionSchemaUpdates extends Hook {
-	
+
 	/**
 	 *
 	 * @var \DatabaseUpdater

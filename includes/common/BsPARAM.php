@@ -33,22 +33,22 @@ class BsPARAM {
 	 * BsPARAM::REQUEST
 	 * Use super global array $_REQUEST
 	 */
-	const REQUEST =  1;
+	const REQUEST = 1;
 	/**
 	 * BsPARAM::GET
 	 * Use super global array $_GET
 	 */
-	const GET     =  2;
+	const GET     = 2;
 	/**
 	 * BsPARAM::POST
 	 * Use super global array $_POST
 	 */
-	const POST    =  4;
+	const POST    = 4;
 	/**
 	 * BsPARAM::FILES
 	 * Use super global array $_FILES
 	 */
-	const FILES   =  8;
+	const FILES   = 8;
 	/**
 	 * BsPARAM::COOKIE
 	 * Use super global array $_COOKIE

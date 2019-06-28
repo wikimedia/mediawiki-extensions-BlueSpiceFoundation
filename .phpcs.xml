@@ -55,21 +55,8 @@
 		<exclude name="MediaWiki.Usage.ForbiddenFunctions.join" />
 		<exclude name="MediaWiki.Usage.SuperGlobalsUsage.SuperGlobals" />
 		<exclude name="MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgTitle" />
+		<exclude name="MediaWiki.VariableAnalysis.ForbiddenGlobalVariables.ForbiddenGlobal$wgTitle" />
 		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables" />
-		<exclude name="MediaWiki.WhiteSpace.DisallowEmptyLineFunctions.NoEmptyLine" />
-		<exclude name="MediaWiki.WhiteSpace.MultipleEmptyLines.MultipleEmptyLines" />
-		<exclude name="MediaWiki.WhiteSpace.OpeningKeywordParenthesis.WrongWhitespaceBeforeParenthesis" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceAfterClosure.NoWhitespaceAfterClosure" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceAfterControlStructure.Incorrect" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeClassBrace.BraceNotOnSameLine" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeControlStructureBrace.BraceOnNewLine" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeControlStructureBrace.SpaceBeforeControl" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.SingleSpaceBeforeSingleLineComment" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceyParenthesis.SingleSpaceAfterOpenParenthesis" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceyParenthesis.SingleSpaceBeforeCloseParenthesis" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceyParenthesis.SpaceBeforeOpeningParenthesis" />
-		<exclude name="MediaWiki.WhiteSpace.SpaceyParenthesis.UnnecessarySpaceBetweenParentheses" />
 		<exclude name="PSR2.Classes.PropertyDeclaration.Underscore" />
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
 		<exclude name="PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose" />
@@ -80,20 +67,6 @@
 		<exclude name="Squiz.Classes.SelfMemberReference.NotUsed" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
 		<exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
-		<exclude name="Squiz.WhiteSpace.CastSpacing.ContainsWhiteSpace" />
-		<exclude name="Squiz.WhiteSpace.LanguageConstructSpacing.Incorrect" />
-		<exclude name="Squiz.WhiteSpace.LanguageConstructSpacing.IncorrectSingle" />
-		<exclude name="Squiz.WhiteSpace.LogicalOperatorSpacing.TooMuchSpaceAfter" />
-		<exclude name="Squiz.WhiteSpace.LogicalOperatorSpacing.TooMuchSpaceBefore" />
-		<exclude name="Squiz.WhiteSpace.OperatorSpacing.NoSpaceAfter" />
-		<exclude name="Squiz.WhiteSpace.OperatorSpacing.NoSpaceBefore" />
-		<exclude name="Squiz.WhiteSpace.OperatorSpacing.SpacingAfter" />
-		<exclude name="Squiz.WhiteSpace.OperatorSpacing.SpacingBefore" />
-		<exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore" />
-		<exclude name="Squiz.WhiteSpace.ScopeClosingBrace.Indent" />
-		<exclude name="Squiz.WhiteSpace.ScopeKeywordSpacing.Incorrect" />
-		<exclude name="Squiz.WhiteSpace.SemicolonSpacing.Incorrect" />
-		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" />
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>

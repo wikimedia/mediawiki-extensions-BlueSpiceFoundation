@@ -97,17 +97,17 @@ abstract class Renderer implements IRenderer {
 
 	protected function makeTagAttribs() {
 		$attrbs = [];
-		if( $this->args[static::PARAM_CLASS] ) {
+		if ( $this->args[static::PARAM_CLASS] ) {
 			$attrbs[static::PARAM_CLASS] = $this->args[static::PARAM_CLASS];
 		}
-		if( $this->args[static::PARAM_ID] ) {
+		if ( $this->args[static::PARAM_ID] ) {
 			$attrbs[static::PARAM_ID] = $this->args[static::PARAM_ID];
 		}
 		\Hooks::run( 'BSFoundationRendererMakeTagAttribs', [
 			$this,
 			$this->args,
 			&$attrbs
-		]);
+		] );
 		return $attrbs;
 	}
 

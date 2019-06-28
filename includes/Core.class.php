@@ -201,8 +201,8 @@ class BsCore {
 			return $handover;
 		}
 		if ( $options & BsPARAMTYPE::ARRAY_BOOL && is_array( $handover ) ) {
-			foreach ($handover as $key => $v) {
-				if (!is_bool($v)) {
+			foreach ( $handover as $key => $v ) {
+				if ( !is_bool( $v ) ) {
 					$handover[$key] = null;
 				}
 			}
@@ -252,13 +252,13 @@ class BsCore {
 	 */
 	public static function sanitizeArrayEntry( $array, $key, $default = null, $options = null ) {
 		// TODO MRG20100725: Sollte $default nicht auch durch den sanitizer?
-		if (!is_array($array)) {
+		if ( !is_array( $array ) ) {
 			return $default;
 		}
-		if (!isset($array[$key])) {
+		if ( !isset( $array[$key] ) ) {
 			return $default;
 		}
-		return self::sanitize($array[$key], $default, $options);
+		return self::sanitize( $array[$key], $default, $options );
 	}
 
 	/* Returns the filesystem path of the core installation
@@ -313,13 +313,15 @@ class BsCore {
 	 * @return string the requested URI
 	 */
 	public static function getRequestURI( $getUrlEncoded = false ) {
-		if (self::$prRequestUri === null) {
+		if ( self::$prRequestUri === null ) {
 			$requestUri = '';
-			if ( isset( $_SERVER['HTTP_X_REWRITE_URL'] ) ) { // check this first so IIS will catch
+			if ( isset( $_SERVER['HTTP_X_REWRITE_URL'] ) ) {
+				// check this first so IIS will catch
 				$requestUri = $_SERVER['HTTP_X_REWRITE_URL'];
 			} elseif ( isset( $_SERVER['REQUEST_URI'] ) ) {
 				$requestUri = $_SERVER['REQUEST_URI'];
-			} elseif ( isset( $_SERVER['ORIG_PATH_INFO'] ) ) { // IIS 5.0, PHP as CGI
+			} elseif ( isset( $_SERVER['ORIG_PATH_INFO'] ) ) {
+				// IIS 5.0, PHP as CGI
 				$requestUri = $_SERVER['ORIG_PATH_INFO'];
 				if ( !empty( $_SERVER['QUERY_STRING'] ) ) {
 					$requestUri .= '?' . $_SERVER['QUERY_STRING'];
@@ -422,7 +424,7 @@ class BsCore {
 		$aUserGroups = array_merge( [
 			'sysop'
 		], $aUserGroups );
-		if(!isset($bsgPermissionConfig[$sPermissionName])){
+		if ( !isset( $bsgPermissionConfig[$sPermissionName] ) ) {
 			if ( isset( $aConfig ) ) {
 				$bsgPermissionConfig[$sPermissionName] = $aConfig;
 			} else {
@@ -472,7 +474,7 @@ class BsCore {
 	 */
 	public static function addTemplateLinkDependencyByText( $oParser, $sTitle ) {
 		$oTitle = Title::newFromText( $sTitle );
-		static::addTemplateLinkDependency($oParser, $oTitle);
+		static::addTemplateLinkDependency( $oParser, $oTitle );
 	}
 
 	/**
@@ -484,13 +486,14 @@ class BsCore {
 	public static function addTemplateLinkDependency( $oParser, $oTitle )  {
 		$oRevision = Revision::newFromTitle( $oTitle );
 		$iPageId = $oRevision ? $oRevision->getPage() : 0;
-		$iRevId  = $oRevision ? $oRevision->getId()   : 0;
+		$iRevId  = $oRevision ? $oRevision->getId() : 0;
 
+		// Register dependency in templatelinks
 		$oParser->getOutput()->addTemplate(
 			$oTitle,
 			$iPageId,
 			$iRevId
-		); // Register dependency in templatelinks
+		);
 	}
 
 	/**
@@ -500,7 +503,7 @@ class BsCore {
 	 */
 	public static function getMediaWikiIncludePath() {
 		global $IP;
-		return str_replace('\\', '/', $IP);
+		return str_replace( '\\', '/', $IP );
 	}
 
 	/**
@@ -510,6 +513,6 @@ class BsCore {
 	 */
 	public static function getMediaWikiWebrootPath() {
 		global $wgScriptPath;
-		return str_replace($wgScriptPath, '', self::getMediaWikiIncludePath());
+		return str_replace( $wgScriptPath, '', self::getMediaWikiIncludePath() );
 	}
 }

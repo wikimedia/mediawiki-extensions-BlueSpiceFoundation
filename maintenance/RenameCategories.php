@@ -1,85 +1,90 @@
 <?php
-#error_reporting(-1);
-#ini_set('display_errors', 1);
-#if (PHP_OS == "WINNT") exec("chcp 65001"); # doesn't seem to work - do it manually
-if ($argc != 2) {
-	exit("Syntax: {$argv[0]} filename");
+# error_reporting(-1);
+# ini_set('display_errors', 1);
+# if (PHP_OS == "WINNT") exec("chcp 65001"); # doesn't seem to work - do it manually
+if ( $argc != 2 ) {
+	exit( "Syntax: {$argv[0]} filename" );
 }
 $filename = $argv[1];
-if (!is_readable($filename)) {
-	exit("File '$filename' could not be read.");
+if ( !is_readable( $filename ) ) {
+	exit( "File '$filename' could not be read." );
 }
-$rawlist = file_get_contents($filename);
-preg_match_all('|^(.*?);(.*?)$|m', $rawlist, $matches);
-#var_dump($matches);exit;
+$rawlist = file_get_contents( $filename );
+preg_match_all( '|^(.*?);(.*?)$|m', $rawlist, $matches );
+# var_dump($matches);exit;
 
 $oldcats = $matches[1];
 $newcats = $matches[2];
 
-$numcats = count($oldcats);
-if ($numcats < 1) {
-	exit("No categories found in file.");
+$numcats = count( $oldcats );
+if ( $numcats < 1 ) {
+	exit( "No categories found in file." );
 }
 
 echo "Found $numcats categories to replace:" . PHP_EOL . PHP_EOL;
-for ($i=0; $i<$numcats; $i++){
-	echo 1+$i.": {$oldcats[$i]} --> {$newcats[$i]}" . PHP_EOL;
+for ( $i = 0; $i < $numcats; $i++ ) {
+	echo 1 + $i.": {$oldcats[$i]} --> {$newcats[$i]}" . PHP_EOL;
 }
-if (PHP_OS == "WINNT") {
+if ( PHP_OS == "WINNT" ) {
 	echo PHP_EOL;
 	echo "NOTE: Your Windows prompt may show garbled characters. The script should still work.";
 }
 echo PHP_EOL;
 echo "Are you sure you want to do this?  Type 'yes' to continue: ";
-$handle = fopen ("php://stdin","r");
-$line = fgets($handle);
-if(trim($line) != 'yes') {
-	exit("ABORTING!".PHP_EOL);
+$handle = fopen( "php://stdin","r" );
+$line = fgets( $handle );
+if ( trim( $line ) != 'yes' ) {
+	exit( "ABORTING!".PHP_EOL );
 }
 
-$oldcatspatterns = array_map('old_to_regex', $oldcats);
+$oldcatspatterns = array_map( 'old_to_regex', $oldcats );
 
 function old_to_regex( $rawcat ) {
-	$rawcat = trim($rawcat);
-	$rawcat = preg_quote($rawcat, '#'); # escape special regex characters plus the hash delimiter we'll use
-	$rawcat = '\[\[(:?Kategorie|:?Category):' . $rawcat . '\]\]'; # note: links to category pages begin with [[:
-	$rawcat = preg_replace('# |_#', '[ _]', $rawcat); # spaces in categories may occur as space or underscore
+	$rawcat = trim( $rawcat );
+	# escape special regex characters plus the hash delimiter we'll use
+	$rawcat = preg_quote( $rawcat, '#' );
+	# note: links to category pages begin with [[:
+	$rawcat = '\[\[(:?Kategorie|:?Category):' . $rawcat . '\]\]';
+	# spaces in categories may occur as space or underscore
+	$rawcat = preg_replace( '# |_#', '[ _]', $rawcat );
 	$rawcat = '#' . $rawcat . '#';
 	return $rawcat;
 }
 
-var_dump($oldcatspatterns);
+var_dump( $oldcatspatterns );
 
-$newcatspatterns = array_map('new_to_pattern', $newcats);
+$newcatspatterns = array_map( 'new_to_pattern', $newcats );
 
 function new_to_pattern( $rawcat ) {
-	$rawcat = trim($rawcat);
+	$rawcat = trim( $rawcat );
 	$rawcat = '[[$1:' . $rawcat . ']]';
 	return $rawcat;
 }
 
-var_dump($newcatspatterns);
+var_dump( $newcatspatterns );
 
-$oldtitlepatterns = array_map('oldtitle_to_regex', $oldcats);
+$oldtitlepatterns = array_map( 'oldtitle_to_regex', $oldcats );
 
 function oldtitle_to_regex( $rawcat ) {
-	$rawcat = trim($rawcat);
-	$rawcat = preg_quote($rawcat, '#'); # escape special regex characters plus the hash delimiter we'll use
-	$rawcat = preg_replace('# |_#', '[ _]', $rawcat); # spaces in cats may occur as space or underscore
+	$rawcat = trim( $rawcat );
+	# escape special regex characters plus the hash delimiter we'll use
+	$rawcat = preg_quote( $rawcat, '#' );
+	# spaces in cats may occur as space or underscore
+	$rawcat = preg_replace( '# |_#', '[ _]', $rawcat );
 	$rawcat = '#' . $rawcat . '#';
 	return $rawcat;
 }
 
-var_dump($oldtitlepatterns);
+var_dump( $oldtitlepatterns );
 
-$newtitlepatterns = array_map('newtitle_to_pattern', $newcats);
+$newtitlepatterns = array_map( 'newtitle_to_pattern', $newcats );
 
 function newtitle_to_pattern( $rawcat ) {
-	$rawcat = trim($rawcat);
+	$rawcat = trim( $rawcat );
 	return $rawcat;
 }
 
-var_dump($newtitlepatterns);
+var_dump( $newtitlepatterns );
 
 # rename categories in all articles & rename articles in category namespace
 
@@ -107,12 +112,10 @@ This script is based loosely on maintenance/edit.php of MediaWiki.
 
 */
 
-
-//$optionsWithArgs = array( 'u', 's' );
+// $optionsWithArgs = array( 'u', 's' );
 
 // include MediaWiki's command line tools
 require_once( 'BSMaintenance.php' );
-
 
 // TODO: Das in ein options.php file tun, das per Parameter aufgerufen wird
 
@@ -123,38 +126,41 @@ $bot = true;
 $autoSummary = false;
 $noRC = true;
 
-//$text_exclude = array(
-// 					'/\[\[Kategorie:Englisch\]\]/',
-//					'/\[\[Category:Translation\]\]/'
-//				 );
-//$text_include = array(
-//					'/test test/'
-//				);
-//$namespace_include = array( 10 );
-//$namespace_exclude = array( NS_FILE, NS_FILE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
-//$title_include = array( '/Datev/', '/Hauptseite/' );
-//$title_include = array( '|NZ/.*?|' );
-//$title_include = array( '|NZ/.*?|' );
+// $text_exclude = array(
+// '/\[\[Kategorie:Englisch\]\]/',
+// '/\[\[Category:Translation\]\]/'
+// );
+// $text_include = array(
+// '/test test/'
+// );
+// $namespace_include = array( 10 );
+// $namespace_exclude = array( NS_FILE, NS_FILE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
+// $title_include = array( '/Datev/', '/Hauptseite/' );
+// $title_include = array( '|NZ/.*?|' );
+// $title_include = array( '|NZ/.*?|' );
 
-#$mode = 'grep';
+# $mode = 'grep';
 $mode = 'replace';
-//$mode = 'append';
-//$mode = 'prefix';
-//$mode = 'delete';
-$testing = false;		// do not apply the changes
-$verbose = true;  		// print modified text in test mode
+// $mode = 'append';
+// $mode = 'prefix';
+// $mode = 'delete';
+
+// do not apply the changes
+$testing = false;
+// print modified text in test mode
+$verbose = true;
 
 // Parameters for text manipulation modes:
 // ---------------------------------------
 
-//$prefix_text = "testsetset\n";
-//$append_text = '\n[[Category:Translate]]';
-//$delete_text = '/\[\[Category:English\]\]/';
+// $prefix_text = "testsetset\n";
+// $append_text = '\n[[Category:Translate]]';
+// $delete_text = '/\[\[Category:English\]\]/';
 
-#$grep_regex = '|<diaslink(.*?)>|';
+# $grep_regex = '|<diaslink(.*?)>|';
 
-#$replace_search = '|<diaslink url="https://dias.intranet.de/(.*?)"|';
-#$replace_with   =  '<diaslink url="https://dias-qa.eu/$1"';
+# $replace_search = '|<diaslink url="https://dias.intranet.de/(.*?)"|';
+# $replace_with   =  '<diaslink url="https://dias-qa.eu/$1"';
 
 $replace_search = $oldcatspatterns;
 $replace_with   = $newcatspatterns;
@@ -162,8 +168,8 @@ $replace_with   = $newcatspatterns;
 // Parameters for title manipulation modes:
 // ----------------------------------------
 
-//$move_from = '|^NZ/(.*)$|';
-//$move_to = 'NZ:$1';
+// $move_from = '|^NZ/(.*)$|';
+// $move_to = 'NZ:$1';
 
 
 // ---- End options
@@ -171,7 +177,7 @@ $replace_with   = $newcatspatterns;
 // Check valid user
 $wgUser = User::newFromName( $userName );
 if ( !$wgUser ) {
-	hw_error("Invalid username");
+	hw_error( "Invalid username" );
 }
 
 if ( $wgUser->isAnon() ) {
@@ -179,17 +185,17 @@ if ( $wgUser->isAnon() ) {
 }
 
 // Check conditions for validity
-if (isset($namespace_include) && isset($namespace_exclude)) {
-	hw_error('You cannot include and exclude namespaces at the same time');
+if ( isset( $namespace_include ) && isset( $namespace_exclude ) ) {
+	hw_error( 'You cannot include and exclude namespaces at the same time' );
 }
-if (isset($text_exclude) && isset($text_include)) {
-	hw_error('You cannot include and exclude namespaces at the same time');
+if ( isset( $text_exclude ) && isset( $text_include ) ) {
+	hw_error( 'You cannot include and exclude namespaces at the same time' );
 }
-if (isset($title_exclude) && isset($title_include)) {
-	hw_error('You cannot include and exclude titles at the same time');
+if ( isset( $title_exclude ) && isset( $title_include ) ) {
+	hw_error( 'You cannot include and exclude titles at the same time' );
 }
-if (isset($text_exclude) && isset($text_include)) {
-	hw_error('You cannot include and exclude namespaces at the same time');
+if ( isset( $text_exclude ) && isset( $text_include ) ) {
+	hw_error( 'You cannot include and exclude namespaces at the same time' );
 }
 
 // Get titles
@@ -197,20 +203,20 @@ if (isset($text_exclude) && isset($text_include)) {
 $token = '';
 $qry_ns = '';
 $namespace = array();
-if (isset($namespace_include)) {
+if ( isset( $namespace_include ) ) {
 	$token = 'IN ';
 	$namespace = $namespace_include;
 }
-if (isset($namespace_exclude)) {
+if ( isset( $namespace_exclude ) ) {
 	$token = 'NOT IN ';
 	$namespace = $namespace_exclude;
 }
-if ($token) {
-	$qry_ns = 'page_namespace '.$token.' ("'.implode('","', $namespace).'")';
+if ( $token ) {
+	$qry_ns = 'page_namespace '.$token.' ("'.implode( '","', $namespace ).'")';
 }
 
 $dbw =& wfGetDB( DB_MASTER );
-$res = $dbw->select('page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', array('order by' => 'page_title'));
+$res = $dbw->select( 'page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', array( 'order by' => 'page_title' ) );
 
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $wgGroupPermissions['*']['autoreview'] = true;
@@ -219,32 +225,30 @@ $wgFlaggedRevsAutoReview = true;
 $matches = 0;
 $inarticlematches = 0;
 
-while ($row = mysql_fetch_array($res->result))
-{
+while ( $row = mysql_fetch_array( $res->result ) ) {
 
 	$cur_title = $row['page_title'];
-	$cur_title_ns = MWNamespace::getCanonicalName($row['page_namespace']);
-	$cur_title_ns = ($cur_title_ns) ? "$cur_title_ns:" : "";
+	$cur_title_ns = MWNamespace::getCanonicalName( $row['page_namespace'] );
+	$cur_title_ns = ( $cur_title_ns ) ? "$cur_title_ns:" : "";
 	print "$cur_title_ns$cur_title\n=======================================================\n";
 
 	// Title conditions
 	$title_conds = array();
-	if (isset($title_include)) {
+	if ( isset( $title_include ) ) {
 		$title_conds = $title_include;
 		$match = true;
 	}
-	if (isset($title_exclude)) {
+	if ( isset( $title_exclude ) ) {
 		$title_conds = $title_exclude;
 		$match = false;
 	}
 	$skip = true;
-	foreach ($title_conds as $cond) {
-		if (preg_match($cond, $cur_title)==$match) {
+	foreach ( $title_conds as $cond ) {
+		if ( preg_match( $cond, $cur_title ) == $match ) {
 			$skip = false;
 		}
 	}
-	if ((isset($title_include) || isset($title_exclude)) && ($skip))
-	{
+	if ( ( isset( $title_include ) || isset( $title_exclude ) ) && ( $skip ) ) {
 		print "Skipped based on title exclude condition.\n";
 		continue;
 	}
@@ -259,53 +263,48 @@ while ($row = mysql_fetch_array($res->result))
 	// Fetch text
 	$wikipage = WikiPage::factory( $title );
 	$text = ContentHandler::getContentText( $wikipage->getContent() );
-	if ($text == '') {
+	if ( $text == '' ) {
 		echo 'empty!';
 	}
 
 	// Text conditions
 	$text_conds = array();
-	if (isset($text_include)) {
+	if ( isset( $text_include ) ) {
 		$text_conds = $text_include;
 		$match = false;
 	}
-	if (isset($text_exclude)) {
+	if ( isset( $text_exclude ) ) {
 		$text_conds = $text_exclude;
 		$match = true;
 	}
 	$skip = false;
-	foreach ($text_conds as $cond) {
-		if (preg_match($cond, $text) == $match) {
+	foreach ( $text_conds as $cond ) {
+		if ( preg_match( $cond, $text ) == $match ) {
 			$skip = true;
 		}
 	}
-	if ((isset($text_include) || isset($text_exclude)) && ($skip))
-	{
+	if ( ( isset( $text_include ) || isset( $text_exclude ) ) && ( $skip ) ) {
 		print "Skipped based on text exclude condition.\n";
 		continue;
 	}
 
 	// this part is for text modification only (append, prefix, delete, replace)
-	if (in_array($mode, array('append','prefix','delete','replace')))
-	{
+	if ( in_array( $mode, array( 'append','prefix','delete','replace' ) ) ) {
 		# Modify the text
 		$old_text = $text;
 
-		if ($mode == 'append') {
+		if ( $mode == 'append' ) {
 			$text .= $append_text;
-		} else if ($mode == 'prefix') {
+		} else if ( $mode == 'prefix' ) {
 			$text = $prefix_text.$text;
-		} else if ($mode == 'delete')
-		{
-			$text = preg_replace($delete_text, '', $text);
+		} else if ( $mode == 'delete' ) {
+			$text = preg_replace( $delete_text, '', $text );
 		}
-		else if ($mode == 'replace')
-		{
-			$text = preg_replace($replace_search, $replace_with, $text, -1, $repcount);
+		else if ( $mode == 'replace' ) {
+			$text = preg_replace( $replace_search, $replace_with, $text, -1, $repcount );
 		}
 
-		if ($old_text == $text)
-		{
+		if ( $old_text == $text ) {
 			print "No modification necessary.\n";
 			continue;
 		}
@@ -315,10 +314,9 @@ while ($row = mysql_fetch_array($res->result))
 		$inarticlematches += $repcount;
 
 		// Only testing
-		if ($testing)
-		{
+		if ( $testing ) {
 			print "testing.\n";
-			if ($verbose) {
+			if ( $verbose ) {
 				print $text."\n--------------------------------------------------------------------------------\n\n";
 			}
 			continue;
@@ -338,24 +336,23 @@ while ($row = mysql_fetch_array($res->result))
 		} else {
 			print "failed\n";
 		}
-	} // end of text manipulation modes
+		// end of text manipulation modes
+	}
 
 	// this part is for other modes (e.g. "move")
-	switch ($mode)
-	{
+	switch ( $mode ) {
 		case 'move':
 			$ns = $title->getNamespace();
-			$new_title = preg_replace($move_from, $move_to, $cur_title);
+			$new_title = preg_replace( $move_from, $move_to, $cur_title );
 
-			if ($new_title == $cur_title) {
+			if ( $new_title == $cur_title ) {
 				continue;
 			}
 
 			echo "Moving title \"$cur_title\" to \"$new_title\" (NS:$ns): ";
 
 			// Only testing
-			if ($testing)
-			{
+			if ( $testing ) {
 				echo "testing\n";
 				continue;
 			}
@@ -368,9 +365,8 @@ while ($row = mysql_fetch_array($res->result))
 
 		case 'grep':
 			$nmatches = preg_match_all( $grep_regex, $text, $grepmatches );
-			if ($nmatches)
-			{
-				echo("MATCH! This article matches $nmatches times.\n");
+			if ( $nmatches ) {
+				echo( "MATCH! This article matches $nmatches times.\n" );
 				$matches++;
 				$inarticlematches += $nmatches;
 			}
@@ -385,7 +381,7 @@ function hw_error( $msg ) {
 }
 
 echo "\n\n------------\nArticles modified: $matches\n";
-if ($mode="replace" || $mode="grep") {
+if ( $mode = "replace" || $mode = "grep" ) {
 	echo "Total replacements: $inarticlematches\n";
 }
 
@@ -395,23 +391,23 @@ echo PHP_EOL;
 
 # now for the category namespace
 $dbw =& wfGetDB( DB_MASTER );
-$res = $dbw->select('page', 'page_id, page_title', array('page_namespace' => NS_CATEGORY), 'Database::select', array('order by' => 'page_title'));
-echo $dbw->numRows($res) . " articles in category namespace\n";
-foreach ($res as $row) {
-	$oldtitle = Title::newFromId($row->page_id);
+$res = $dbw->select( 'page', 'page_id, page_title', array( 'page_namespace' => NS_CATEGORY ), 'Database::select', array( 'order by' => 'page_title' ) );
+echo $dbw->numRows( $res ) . " articles in category namespace\n";
+foreach ( $res as $row ) {
+	$oldtitle = Title::newFromId( $row->page_id );
 	$oldtitletext = $oldtitle->getText();
-	$oldarticle = new Article($oldtitle);
-	//Article::fetchContent() is deprecated.
-	//Replaced by WikiPage::getContent()::getNativeData()
+	$oldarticle = new Article( $oldtitle );
+	// Article::fetchContent() is deprecated.
+	// Replaced by WikiPage::getContent()::getNativeData()
 	$oldwikipage = WikiPage::factory( $oldtitle );
 	$oldarticlecontent = ContentHandler::getContentText( $oldwikipage->getContent() );
-	$newtitletext = preg_replace($oldtitlepatterns, $newtitlepatterns, $oldtitletext, -1, $repcount);
+	$newtitletext = preg_replace( $oldtitlepatterns, $newtitlepatterns, $oldtitletext, -1, $repcount );
 	echo "$oldtitle" . PHP_EOL . "=========================" . PHP_EOL;
-	if ($repcount > 0) {
+	if ( $repcount > 0 ) {
 		echo "Moving $oldtitletext to $newtitletext : ";
-		if (!$testing) {
-			$newtitle = Title::newFromText($newtitletext, NS_CATEGORY);
-			$newarticle = new Article($newtitle);
+		if ( !$testing ) {
+			$newtitle = Title::newFromText( $newtitletext, NS_CATEGORY );
+			$newarticle = new Article( $newtitle );
 			$savestat = $newarticle->doEditContent(
 				ContentHandler::makeContent( $oldarticlecontent, $newtitle ),
 				$summary,
@@ -420,7 +416,7 @@ foreach ($res as $row) {
 				( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
 				( $noRC ? EDIT_SUPPRESS_RC : 0 )
 			);
-			if ($savestat->isGood()) {
+			if ( $savestat->isGood() ) {
 				echo "moved successfully\n";
 			} else {
 				echo "failed moving\n";
@@ -441,8 +437,9 @@ foreach ($res as $row) {
 			echo "Deleting $oldtitletext : ";
 			$error = '';
 			$delstat = $oldarticle->doDeleteArticle( $summary, $noRC, null, null, $error, true );
-			if ($delstat) {
-				echo "successful\n"; # doesn't work
+			if ( $delstat ) {
+				# doesn't work
+				echo "successful\n";
 			} else {
 				echo "failed\n";
 			}

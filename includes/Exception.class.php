@@ -37,13 +37,14 @@ class BsException extends Exception {
 		if ( $oPreviousException === null ) {
 			parent::__construct( $sMessage, $iCode );
 		} else {
-			parent::__construct( $sMessage, $iCode, $oPreviousException ); // results in fatal error if $oPreviousException === null
+			// results in fatal error if $oPreviousException === null
+			parent::__construct( $sMessage, $iCode, $oPreviousException );
 		}
 	}
-	
+
 	public function getLogMessage() {
 		return $this->sMessage;
 	}
 
-	//TODO: Enhance.
+	// TODO: Enhance.
 }

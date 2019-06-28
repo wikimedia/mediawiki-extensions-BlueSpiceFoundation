@@ -17,11 +17,11 @@ class BsValidatorMwNamespacePlugin implements BsValidatorPlugin {
 		if ( strpos( $mwNamespace, ' ' ) !== false ) {
 			return new BsValidatorResponse( 5, 'NamespaceManager', 'mw_ns_contains_spaces' );
 		}
-		if ($mwNamespace == null) {
+		if ( $mwNamespace == null ) {
 			return new BsValidatorResponse( 6, 'NamespaceManager', 'mw_ns_invalid' );
 		}
 
-		//return new BsValidatorResponse(0, 'NamespaceManager', 'mw_ns_validation_approved');
-		return new BsValidatorResponse(0);
+		// return new BsValidatorResponse(0, 'NamespaceManager', 'mw_ns_validation_approved');
+		return new BsValidatorResponse( 0 );
 	}
 }

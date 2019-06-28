@@ -18,7 +18,7 @@ class RequestParams extends Params {
 	public function __construct( array $params = [], \WebRequest $request = null ) {
 		parent::__construct( $params );
 		$this->request = $request;
-		if( !$this->request ) {
+		if ( !$this->request ) {
 			$this->request = \RequestContext::getMain()->getRequest();
 		}
 	}
@@ -29,11 +29,11 @@ class RequestParams extends Params {
 	 * @return mixed
 	 */
 	public function get( $name, $definition ) {
-		//Given params overwrite request params
-		if( isset( $this->params[$name] ) ) {
+		// Given params overwrite request params
+		if ( isset( $this->params[$name] ) ) {
 			return parent::get( $name, $definition );
 		}
-		switch( $definition[static::PARAM_TYPE] ) {
+		switch ( $definition[static::PARAM_TYPE] ) {
 			case static::TYPE_BOOL:
 				$methodName = 'getBool';
 				break;

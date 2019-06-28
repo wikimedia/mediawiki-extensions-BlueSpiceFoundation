@@ -26,17 +26,18 @@ class OnceADay implements Interval {
 	 */
 	public function getNextTimestamp( $currentRunTimestamp ) {
 		$nextTS = clone $currentRunTimestamp;
-		$nextTS->setTime( 1, 0 ); //Set default to one o clock in the morning
+		// Set default to one o clock in the morning
+		$nextTS->setTime( 1, 0 );
 
-		for( $i = 0; $i < static::$instanceCounter; $i++ ) {
-			if( $i >= $this->instanceNumber ) {
+		for ( $i = 0; $i < static::$instanceCounter; $i++ ) {
+			if ( $i >= $this->instanceNumber ) {
 				break;
 			}
 
 			$nextTS->modify( '+15 minutes' );
 		}
 
-		if( $nextTS < $currentRunTimestamp ) {
+		if ( $nextTS < $currentRunTimestamp ) {
 			$nextTS->modify( '+1 day' );
 		}
 

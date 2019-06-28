@@ -39,8 +39,7 @@ class BSApiAdminUserStore extends BSApiUserStore {
 		$aResult = parent::makeResultRow( $row, $aGroups );
 		$aResult['user_email'] = isset( $row->user_email )
 			? $row->user_email
-			: ''
-		;
+			: '';
 		return $aResult;
 	}
 }

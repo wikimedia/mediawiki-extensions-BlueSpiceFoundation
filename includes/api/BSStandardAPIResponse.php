@@ -8,10 +8,12 @@
  * TODO: do a clean implemenation with gettes and setters
  */
 class BSStandardAPIResponse {
-	public $errors = array(); //ExtJS
-	public $success = false; //ExtJS
+	// ExtJS
+	public $errors = array();
+	// ExtJS
+	public $success = false;
 
-	//Custom fields
+	// Custom fields
 	public $message = '';
 	public $payload = array();
 	public $payload_count = 0;

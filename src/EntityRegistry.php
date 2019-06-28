@@ -50,7 +50,7 @@ class EntityRegistry {
 	}
 
 	protected function runRegister( $bForceReload = false ) {
-		if( $this->entitydefinitions && !$bForceReload ) {
+		if ( $this->entitydefinitions && !$bForceReload ) {
 			return true;
 		}
 
@@ -59,9 +59,9 @@ class EntityRegistry {
 			'BlueSpiceFoundationEntityRegistry'
 		);
 
-		//This hook is deprecated - Use attributes mechanism in extension.json
-		//to register entities
-		\Hooks::run( 'BSEntityRegister', [&$this->entitydefinitions] );
+		// This hook is deprecated - Use attributes mechanism in extension.json
+		// to register entities
+		\Hooks::run( 'BSEntityRegister', [ &$this->entitydefinitions ] );
 
 		return true;
 	}
@@ -71,7 +71,7 @@ class EntityRegistry {
 	 * @return array
 	 */
 	public function getEntityDefinitions() {
-		if( !$this->runRegister() ) {
+		if ( !$this->runRegister() ) {
 			return [];
 		}
 		return $this->entitydefinitions;
@@ -95,7 +95,7 @@ class EntityRegistry {
 	 * @return array
 	 */
 	public function getEntityByType( $sType ) {
-		if( !$this->hasType( $sType ) ) {
+		if ( !$this->hasType( $sType ) ) {
 			return [];
 		}
 		return $this->entitydefinitions[$sType];

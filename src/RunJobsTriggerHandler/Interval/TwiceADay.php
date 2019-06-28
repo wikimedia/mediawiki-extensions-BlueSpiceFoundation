@@ -18,16 +18,16 @@ class TwiceADay implements Interval {
 		$secondTS = clone $currentRunTimestamp;
 		$secondTS->setTime( 13, 0, 0 );
 
-		if( $firstTS > $currentRunTimestamp ) {
+		if ( $firstTS > $currentRunTimestamp ) {
 			return $firstTS;
 		}
 
-		if( $firstTS < $currentRunTimestamp
+		if ( $firstTS < $currentRunTimestamp
 			&& $currentRunTimestamp < $secondTS ) {
 			return $secondTS;
 		}
 
-		if( $currentRunTimestamp > $secondTS ) {
+		if ( $currentRunTimestamp > $secondTS ) {
 			$firstTS->modify( '+1 day' );
 			return $firstTS;
 		}

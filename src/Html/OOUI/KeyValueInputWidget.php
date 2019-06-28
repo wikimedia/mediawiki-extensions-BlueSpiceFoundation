@@ -18,7 +18,6 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	protected $addContainer;
 
 	public function __construct( array $config = [] ) {
-
 		$this->value = isset( $config['value'] ) ? $config['value'] : [];
 		$this->labelsOnlyOnFirst = isset( $config['labelsOnlyOnFirst'] ) ?
 			(bool)$config['labelsOnlyOnFirst'] : true;
@@ -42,7 +41,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 			(bool)$config['allowAdditions'] : false;
 
 		$this->separator = new \OOUI\Tag();
-		$this->separator->addClasses( ['bs-ooui-keyValueInputWidget-separator' ] );
+		$this->separator->addClasses( [ 'bs-ooui-keyValueInputWidget-separator' ] );
 
 		parent::__construct( $config );
 
@@ -50,14 +49,14 @@ class KeyValueInputWidget extends \OOUI\Widget {
 		$this->valueContainer->addClasses( [ 'bs-ooui-keyValueInputWidget-value-container' ] );
 
 		$this->addClasses( [ 'bs-ooui-widget-keyValueInputWidget' ] );
-		if( !empty( $this->value ) ) {
+		if ( !empty( $this->value ) ) {
 			$this->setValue( $config['value'] );
 		} else {
 			$this->setNoValueMessage();
 		}
 		$this->appendContent( $this->valueContainer );
 
-		if( $this->allowAdditions ) {
+		if ( $this->allowAdditions ) {
 			$this->addNewValueForm();
 		}
 	}
@@ -76,11 +75,11 @@ class KeyValueInputWidget extends \OOUI\Widget {
 
 	public function setValue( $values ) {
 		$first = true;
-		foreach( $values as $key => $value ) {
+		foreach ( $values as $key => $value ) {
 			$keyInput = new \OOUI\TextInputWidget( [
 				'value' => $key
 			] );
-			if( $this->keyReadOnly ) {
+			if ( $this->keyReadOnly ) {
 				$keyInput->setReadOnly( true );
 			}
 
@@ -90,17 +89,17 @@ class KeyValueInputWidget extends \OOUI\Widget {
 
 			$showLabels = $first || !$this->labelsOnlyOnFirst;
 			$layoutAttr = [];
-			if( $showLabels ) {
+			if ( $showLabels ) {
 				$layoutAttr = [
 					'align' => 'top'
 				];
 			}
 			$keyLayout = new \OOUI\FieldLayout( $keyInput, $layoutAttr );
-			if( $showLabels ) {
+			if ( $showLabels ) {
 				$keyLayout->setLabel( $this->keyLabel );
 			}
 			$valueLayout = new \OOUI\FieldLayout( $valueInput, $layoutAttr );
-			if( $showLabels ) {
+			if ( $showLabels ) {
 				$valueLayout->setLabel( $this->valueLabel );
 			}
 
@@ -121,7 +120,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 		$this->addContainer = new \OOUI\Tag();
 		$this->addContainer->addClasses( [ 'bs-ooui-widget-keyValueInputWidget-add-container' ] );
 
-		if( $this->addNewFormLabel !== '' ) {
+		if ( $this->addNewFormLabel !== '' ) {
 			$this->addContainer->appendContent( new \OOUI\LabelWidget( [
 				'label' => $this->addNewFormLabel
 			] ) );
@@ -131,7 +130,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 		] );
 
 		$valueInput = new \OOUI\TextInputWidget();
-		if( $this->valueRequired ) {
+		if ( $this->valueRequired ) {
 			$valueInput->setRequired( true );
 		}
 
@@ -156,25 +155,25 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	}
 
 	public function getConfig( &$config ) {
-		if( $this->keyLabel ) {
+		if ( $this->keyLabel ) {
 			$config['keyLabel'] = $this->keyLabel;
 		}
-		if( $this->valueLabel ) {
+		if ( $this->valueLabel ) {
 			$config['valueLabel'] = $this->valueLabel;
 		}
-		if( $this->valueRequired ) {
+		if ( $this->valueRequired ) {
 			$config['valueRequired'] = $this->valueRequired;
 		}
-		if( $this->addNewFormLabel ) {
+		if ( $this->addNewFormLabel ) {
 			$config['addNewFormLabel'] = $this->addNewFormLabel;
 		}
-		if( $this->keyReadOnly ) {
+		if ( $this->keyReadOnly ) {
 			$config['keyReadOnly'] = $this->keyReadOnly;
 		}
-		if( $this->allowAdditions ) {
+		if ( $this->allowAdditions ) {
 			$config['allowAdditions'] = $this->allowAdditions;
 		}
-		if( $this->labelsOnlyOnFirst ) {
+		if ( $this->labelsOnlyOnFirst ) {
 			$config['labelsOnlyOnFirst'] = $this->labelsOnlyOnFirst;
 		}
 		$config['value'] = $this->value;

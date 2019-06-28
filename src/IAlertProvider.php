@@ -4,7 +4,7 @@ namespace BlueSpice;
 
 interface IAlertProvider {
 
-	//Keep in sync with `bs.alerts` constants
+	// Keep in sync with `bs.alerts` constants
 	const TYPE_SUCCESS = 'success';
 	const TYPE_INFO = 'info';
 	const TYPE_WARNING = 'warning';

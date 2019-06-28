@@ -27,7 +27,7 @@
 /* Changelog
  */
 
-//DEPRECATED, use wfLoadExtension( 'BlueSpiceFoundation' );
-if( !ExtensionRegistry::getInstance()->isLoaded('BlueSpiceFoundation') ){
-	wfLoadExtension('BlueSpiceFoundation');
+// DEPRECATED, use wfLoadExtension( 'BlueSpiceFoundation' );
+if ( !ExtensionRegistry::getInstance()->isLoaded( 'BlueSpiceFoundation' ) ) {
+	wfLoadExtension( 'BlueSpiceFoundation' );
 }

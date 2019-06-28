@@ -13,7 +13,6 @@ class WatchlistTest extends \MediaWikiTestCase {
 	protected $tablesUsed = [ 'watchlist', 'user' ];
 
 	public function addDBData() {
-
 		$this->insertPage( 'Test A' );
 		$this->insertPage( 'Talk:Test A' );
 		$this->insertPage( 'Test B' );
@@ -34,7 +33,7 @@ class WatchlistTest extends \MediaWikiTestCase {
 		];
 
 		$dbw = wfGetDB( DB_MASTER );
-		foreach( $dummyDbEntries as $dummyDbEntry ) {
+		foreach ( $dummyDbEntries as $dummyDbEntry ) {
 			$dbw->insert( 'watchlist', [
 				'wl_user' => $dummyDbEntry[0],
 				'wl_namespace' => $dummyDbEntry[1],

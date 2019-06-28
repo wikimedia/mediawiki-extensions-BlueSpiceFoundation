@@ -31,59 +31,62 @@ $bot         = true;
 $autoSummary = false;
 $noRC        = true;
 
-#=============
+# =============
 # TEXT FILTER
-#=============
+# =============
 
-//$text_exclude = array(
-//				'/\[\[Kategorie:Englisch\]\]/',
-//				'/\[\[Category:Translation\]\]/'
-//			);
-//$text_include = array(
-//				'/test test/'
-//			);
+// $text_exclude = array(
+// '/\[\[Kategorie:Englisch\]\]/',
+// '/\[\[Category:Translation\]\]/'
+// );
+// $text_include = array(
+// '/test test/'
+// );
 
-#==================
+# ==================
 # NAMESPACE FILTER
-#==================
+# ==================
 
 $namespace_include = array( NS_MAIN );
-//$namespace_include = array( 10 );
-//$namespace_exclude = array( NS_FILE, NS_FILE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
+// $namespace_include = array( 10 );
+// $namespace_exclude = array( NS_FILE, NS_FILE_TALK, NS_MEDIAWIKI, NS_MEDIAWIKI_TALK );
 
-#==================
+# ==================
 # TITLE FILTER
-#==================
+# ==================
 
-//$title_include = array( '/Datev/', '/Hauptseite/' );
-//$title_include = array( '|NZ/.*?|' );
+// $title_include = array( '/Datev/', '/Hauptseite/' );
+// $title_include = array( '|NZ/.*?|' );
 
-#========
+# ========
 #  MODE
-#========
+# ========
 
 $mode = 'replace';
-//$mode = 'move';
-//$mode = 'append';
-//$mode = 'prefix';
-//$mode = 'delete';
-$testing = true;	// do not apply the changes
-$verbose = true;	// print modified text in test mode
+// $mode = 'move';
+// $mode = 'append';
+// $mode = 'prefix';
+// $mode = 'delete';
+
+// do not apply the changes
+$testing = true;
+// print modified text in test mode
+$verbose = true;
 
 # Parameters for text manipulation modes:
 # ---------------------------------------
 
 $replace_search = '/Vorlage:/';
 $replace_with   = 'Template:';
-//$prefix_text = "testsetset\n";
-//$append_text = '\n[[Category:Translate]]';
-//$delete_text = '/\[\[Category:English\]\]/';
+// $prefix_text = "testsetset\n";
+// $append_text = '\n[[Category:Translate]]';
+// $delete_text = '/\[\[Category:English\]\]/';
 
 # Parameters for title manipulation modes:
 # ----------------------------------------
 
-//$move_from = '|^NZ/(.*)$|';
-//$move_to   = 'NZ:$1';
+// $move_from = '|^NZ/(.*)$|';
+// $move_to   = 'NZ:$1';
 
 
 ########################## Nothing to do past this point ############################
@@ -92,7 +95,7 @@ $replace_with   = 'Template:';
 // Check valid user
 $wgUser = User::newFromName( $userName );
 if ( !$wgUser ) {
-	error("Invalid username");
+	error( "Invalid username" );
 }
 
 if ( $wgUser->isAnon() ) {
@@ -100,66 +103,64 @@ if ( $wgUser->isAnon() ) {
 }
 
 // Check conditions for validity
-if (isset($namespace_include) && isset($namespace_exclude)) {
-	error('You cannot include and exclude namespaces at the same time');
+if ( isset( $namespace_include ) && isset( $namespace_exclude ) ) {
+	error( 'You cannot include and exclude namespaces at the same time' );
 }
-if (isset($text_exclude) && isset($text_include)) {
-	error('You cannot include and exclude namespaces at the same time');
+if ( isset( $text_exclude ) && isset( $text_include ) ) {
+	error( 'You cannot include and exclude namespaces at the same time' );
 }
-if (isset($title_exclude) && isset($title_include)) {
-	error('You cannot include and exclude titles at the same time');
+if ( isset( $title_exclude ) && isset( $title_include ) ) {
+	error( 'You cannot include and exclude titles at the same time' );
 }
-if (isset($text_exclude) && isset($text_include)) {
-	error('You cannot include and exclude namespaces at the same time');
+if ( isset( $text_exclude ) && isset( $text_include ) ) {
+	error( 'You cannot include and exclude namespaces at the same time' );
 }
 
 // Get titles
 // Namespace conditions
 $token = '';
 $namespace = array();
-if (isset($namespace_include)) {
+if ( isset( $namespace_include ) ) {
 	$token = 'IN ';
 	$namespace = $namespace_include;
 }
-if (isset($namespace_exclude)) {
+if ( isset( $namespace_exclude ) ) {
 	$token = 'NOT IN ';
 	$namespace = $namespace_exclude;
 }
-if ($token) {
-	$qry_ns = 'page_namespace '.$token.' ("'.implode('","', $namespace).'")';
+if ( $token ) {
+	$qry_ns = 'page_namespace '.$token.' ("'.implode( '","', $namespace ).'")';
 }
 
 $dbw =& wfGetDB( DB_MASTER );
-$res = $dbw->select('page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', array('order by' => 'page_title'));
+$res = $dbw->select( 'page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', array( 'order by' => 'page_title' ) );
 
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $hits = 0;
 
-while ($row = mysql_fetch_array($res->result))
-{
+while ( $row = mysql_fetch_array( $res->result ) ) {
 	$cur_title    = $row['page_title'];
-	$cur_title_ns = MWNamespace::getCanonicalName($row['page_namespace']);
-	$cur_title_ns = ($cur_title_ns) ? "$cur_title_ns:" : "";
+	$cur_title_ns = MWNamespace::getCanonicalName( $row['page_namespace'] );
+	$cur_title_ns = ( $cur_title_ns ) ? "$cur_title_ns:" : "";
 	print "$cur_title_ns$cur_title\n-----------------\n";
 
 	// Title conditions
 	$title_conds = array();
-	if (isset($title_include)) {
+	if ( isset( $title_include ) ) {
 		$title_conds = $title_include;
 		$match = true;
 	}
-	if (isset($title_exclude)) {
+	if ( isset( $title_exclude ) ) {
 		$title_conds = $title_exclude;
 		$match = false;
 	}
 	$skip = true;
-	foreach ($title_conds as $cond) {
-		if (preg_match($cond, $cur_title)==$match) {
+	foreach ( $title_conds as $cond ) {
+		if ( preg_match( $cond, $cur_title ) == $match ) {
 			$skip = false;
 		}
 	}
-	if ((isset($title_include) || isset($title_exclude)) && ($skip))
-	{
+	if ( ( isset( $title_include ) || isset( $title_exclude ) ) && ( $skip ) ) {
 		print "Skipped based on title exclude condition.\n";
 		continue;
 	}
@@ -174,53 +175,48 @@ while ($row = mysql_fetch_array($res->result))
 	// Fetch text
 	$wikipage = WikiPage::factory( $title );
 	$text = ContentHandler::getContentText( $wikipage->getContent() );
-	if ($text == '') {
+	if ( $text == '' ) {
 		echo 'empty!';
 	}
 
 	// Text conditions
 	$text_conds = array();
-	if (isset($text_include)) {
+	if ( isset( $text_include ) ) {
 		$text_conds = $text_include;
 		$match = false;
 	}
-	if (isset($text_exclude)) {
+	if ( isset( $text_exclude ) ) {
 		$text_conds = $text_exclude;
 		$match = true;
 	}
 	$skip = false;
-	foreach ($text_conds as $cond) {
-		if (preg_match($cond, $text) == $match) {
+	foreach ( $text_conds as $cond ) {
+		if ( preg_match( $cond, $text ) == $match ) {
 			$skip = true;
 		}
 	}
-	if ((isset($text_include) || isset($text_exclude)) && ($skip))
-	{
+	if ( ( isset( $text_include ) || isset( $text_exclude ) ) && ( $skip ) ) {
 		print "Skipped based on text exclude condition.\n";
 		continue;
 	}
 
 	// this part is for text modification only (append, prefix, delete, replace)
-	if (in_array($mode, array('append','prefix','delete','replace')))
-	{
+	if ( in_array( $mode, array( 'append','prefix','delete','replace' ) ) ) {
 		# Modify the text
 		$old_text = $text;
 
-		if ($mode == 'append') {
+		if ( $mode == 'append' ) {
 			$text .= $append_text;
-		} else if ($mode == 'prefix') {
+		} else if ( $mode == 'prefix' ) {
 			$text = $prefix_text.$text;
-		} else if ($mode == 'delete')
-		{
-			$text = preg_replace($delete_text, '', $text);
+		} else if ( $mode == 'delete' ) {
+			$text = preg_replace( $delete_text, '', $text );
 		}
-		else if ($mode == 'replace')
-		{
-			$text = preg_replace($replace_search, $replace_with, $text);
+		else if ( $mode == 'replace' ) {
+			$text = preg_replace( $replace_search, $replace_with, $text );
 		}
 
-		if ($old_text == $text)
-		{
+		if ( $old_text == $text ) {
 			print "No modification necessary.\n";
 			continue;
 		}
@@ -229,10 +225,9 @@ while ($row = mysql_fetch_array($res->result))
 		$hits++;
 
 		// Only testing
-		if ($testing)
-		{
+		if ( $testing ) {
 			print "testing.\n";
-			if ($verbose) {
+			if ( $verbose ) {
 				print $text."\n--------------------------------------------------------------------------------\n\n";
 			}
 			continue;
@@ -252,24 +247,23 @@ while ($row = mysql_fetch_array($res->result))
 		} else {
 			print "failed\n";
 		}
-	} // end of text manipulation modes
+		// end of text manipulation modes
+	}
 
 	// this part is for other modes (e.g. "move")
-	switch ($mode)
-	{
+	switch ( $mode ) {
 		case 'move':
 			$ns = $title->getNamespace();
-			$new_title = preg_replace($move_from, $move_to, $cur_title);
+			$new_title = preg_replace( $move_from, $move_to, $cur_title );
 
-			if ($new_title == $cur_title) {
+			if ( $new_title == $cur_title ) {
 				continue;
 			}
 
 			echo "Moving title \"$cur_title\" to \"$new_title\" (NS:$ns): ";
 
 			// Only testing
-			if ($testing)
-			{
+			if ( $testing ) {
 				echo "testing\n";
 				continue;
 			}
@@ -284,7 +278,7 @@ while ($row = mysql_fetch_array($res->result))
 
 }
 
-echo "\n\n-- " . ($testing ? "Would have m":"M") . "odified $hits articles.\n";
+echo "\n\n-- " . ( $testing ? "Would have m" : "M" ) . "odified $hits articles.\n";
 
 function error( $msg ) {
 	echo 'ERROR: '.$msg;

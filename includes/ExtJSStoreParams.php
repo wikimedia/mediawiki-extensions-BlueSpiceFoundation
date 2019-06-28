@@ -3,37 +3,37 @@
  * Encapsulation for standard Ext.data.Store / Ext.data.Proxy parameters
  */
 class BsExtJSStoreParams {
-	
+
 	const DIR_ASC = 'ASC';
 	const DIR_DESC = 'DESC';
 
 	protected $oRequest = null;
 
-	protected $iLimit; //25
-	protected $iPage; //1
-	protected $iStart; //0
-	protected $aSort; //Array 
-	protected $sCallback; //For JSONP
-	protected $sQuery; //For filtering
+	protected $iLimit;
+	protected $iPage;
+	protected $iStart;
+	protected $aSort;
+	protected $sCallback;
+	protected $sQuery;
 	protected $sDirection;
 	protected $aFilter;
 
 	/**
 	 * Factory method for BsExtJSStoreParams.
-	 * @return null|BsExtJSStoreParams 
+	 * @return null|BsExtJSStoreParams
 	 */
 	public static function newFromRequest(){
 		$oRequest = RequestContext::getMain()->getRequest();
 
-		//Mandatory (?)
+		// Mandatory (?)
 		$iLimit  = $oRequest->getInt( 'limit', null );
 		$iPage   = $oRequest->getInt( 'page', null );
 		$iStart  = $oRequest->getInt( 'start', null );
 
-		//Optional
+		// Optional
 		$aSort = FormatJson::decode( $oRequest->getVal( 'sort' ) );
 		if ( is_array( $aSort ) ) {
-			//TODO: Multisort!
+			// TODO: Multisort!
 			$aSort = $aSort[0];
 		} else {
 			$sSort      = $oRequest->getVal( 'sort', '' );
@@ -46,10 +46,10 @@ class BsExtJSStoreParams {
 		$sCallback = $oRequest->getVal( 'callback' );
 		$sQuery    = $oRequest->getVal( 'query', '' );
 
-		$aFilter = FormatJson::decode( $oRequest->getVal('filter', '[]') );
+		$aFilter = FormatJson::decode( $oRequest->getVal( 'filter', '[]' ) );
 
-		//TODO: Really return null or better return object with default values?
-		if( $iLimit === null || $iPage === null || $iStart === null ) {
+		// TODO: Really return null or better return object with default values?
+		if ( $iLimit === null || $iPage === null || $iStart === null ) {
 			return null;
 		}
 
@@ -99,7 +99,7 @@ class BsExtJSStoreParams {
 	 * @return int The "start" parameter for the ExtJS Store backend
 	 */
 	public function getStart() {
-		//TODO: mabye this can be calculated from "page" and "limit"; Examine behavior of Ext.data.Store / Ext.data.Proxy
+		// TODO: mabye this can be calculated from "page" and "limit"; Examine behavior of Ext.data.Store / Ext.data.Proxy
 		return $this->iStart;
 	}
 
@@ -110,7 +110,7 @@ class BsExtJSStoreParams {
 	public function getSort( $sDefault = '' ) {
 		if ( empty( $this->sSort ) ) {
 			return $sDefault;
-                }
+  }
 		return $this->sSort;
 	}
 
@@ -129,7 +129,7 @@ class BsExtJSStoreParams {
 	public function getQuery() {
 		return $this->sQuery;
 	}
-	
+
 	public function getFilter() {
 		return $this->aFilter;
 	}
@@ -141,7 +141,7 @@ class BsExtJSStoreParams {
 	 */
 	public function maybeApplyCallback( $mData ) {
 		$result = FormatJson::encode( $mData );
-		if( !empty($this->sCallback) ) {
+		if ( !empty( $this->sCallback ) ) {
 			$result = sprintf(
 				$this->sCallback.'( %s );',
 				$result
@@ -151,7 +151,7 @@ class BsExtJSStoreParams {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return WebRequest
 	 */
 	public function getRequest() {

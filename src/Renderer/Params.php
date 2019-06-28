@@ -24,7 +24,7 @@ class Params {
 	 * @return mixed
 	 */
 	public function get( $name, $default ) {
-		if( !isset( $this->params[$name] ) ) {
+		if ( !isset( $this->params[$name] ) ) {
 			return $default;
 		}
 		return $this->params[$name];

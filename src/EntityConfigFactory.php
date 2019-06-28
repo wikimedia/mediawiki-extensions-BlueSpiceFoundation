@@ -53,32 +53,33 @@ class EntityConfigFactory {
 	 * @return EntityConfig - or null
 	 */
 	public function newFromType( $type ) {
-		if( $this->entityConfigs ) {
-			if( !isset( $this->entityConfigs[$type] ) ) {
+		if ( $this->entityConfigs ) {
+			if ( !isset( $this->entityConfigs[$type] ) ) {
 				return null;
 			}
 			return $this->entityConfigs[$type];
 		}
 		$this->entityConfigs = [];
-		//TODO: Check params and classes
+		// TODO: Check params and classes
 		$entityRegistry = MediaWikiServices::getInstance()->getService(
 			'BSEntityRegistry'
 		);
 		$entityDefinitions = $entityRegistry->getEntityDefinitions();
 		$defaults = [];
 
-		//Deprecated: This hook should not be used anymore - Use the bluespice
-		//global config mechanism instead
+		// Deprecated: This hook should not be used anymore - Use the bluespice
+		// global config mechanism instead
 		\Hooks::run( 'BSEntityConfigDefaults', [ &$defaults ] );
-		foreach( $entityDefinitions as $key => $sConfigClass ) {
+		foreach ( $entityDefinitions as $key => $sConfigClass ) {
 			$this->entityConfigs[$key] = new $sConfigClass(
 				$this->config,
 				$key,
-				$defaults //deprecated
+				// deprecated
+				$defaults
 			);
 		}
 
-		if( !isset( $this->entityConfigs[$type] ) ) {
+		if ( !isset( $this->entityConfigs[$type] ) ) {
 			return null;
 		}
 		return $this->entityConfigs[$type];

@@ -39,7 +39,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		$rawData->page_link = $this->linkrenderer->makeLink( $title );
 
 		$user = \User::newFromID( $rawData->tmp_user );
-		if( !$user->isAnon() ) {
+		if ( !$user->isAnon() ) {
 			$rawData->user_link =
 				$this->linkrenderer->makeLink( $user->getUserPage() );
 		}

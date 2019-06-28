@@ -32,7 +32,7 @@ class WikiTextLinksHelper {
 	 * @return CategoryLinksHelper
 	 */
 	public function getCategoryLinksHelper() {
-		if( $this->categories ) {
+		if ( $this->categories ) {
 			return $this->categories;
 		}
 		$this->categories = new CategoryLinksHelper( $this->wikitext );
@@ -44,7 +44,7 @@ class WikiTextLinksHelper {
 	 * @return InternalLinksHelper
 	 */
 	public function getInternalLinksHelper() {
-		if( $this->links ) {
+		if ( $this->links ) {
 			return $this->links;
 		}
 		$this->links = new InternalLinksHelper( $this->wikitext );
@@ -56,7 +56,7 @@ class WikiTextLinksHelper {
 	 * @return FileLinksHelper
 	 */
 	public function getFileLinksHelper() {
-		if( $this->files ) {
+		if ( $this->files ) {
 			return $this->files;
 		}
 		$this->files = new FileLinksHelper( $this->wikitext );

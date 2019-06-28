@@ -37,12 +37,12 @@ class BSNamespaceParser extends \ValueParsers\StringValueParser {
 	 * @return int
 	 */
 	protected function stringParse( $value ) {
-		if( is_int( $value ) ) {
+		if ( is_int( $value ) ) {
 			return (int)$value;
 		}
 
 		$iNSId = BsNamespaceHelper::getNamespaceIndex( $value );
-		if( $iNSId === false ) {
+		if ( $iNSId === false ) {
 			throw new \ValueParsers\ParseException(
 				wfMessage( 'bs-parser-error-invalid-namespace' , $value )->plain()
 			);

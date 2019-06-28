@@ -78,7 +78,7 @@ abstract class Entity implements \JsonSerializable {
 	protected $oConfig = null;
 
 	protected function __construct( \stdClass $oStdClass, EntityConfig $oConfig, EntityFactory $entityFactory = null ) {
-		if( !$entityFactory ) {
+		if ( !$entityFactory ) {
 			$entityFactory = MediaWikiServices::getInstance()->getService(
 				'BSEntityFactory'
 			);
@@ -86,22 +86,22 @@ abstract class Entity implements \JsonSerializable {
 
 		$this->entityFactory = $entityFactory;
 		$this->oConfig = $oConfig;
-		if( !empty( $oStdClass->{static::ATTR_ID} ) ) {
+		if ( !empty( $oStdClass->{static::ATTR_ID} ) ) {
 			$this->attributes[static::ATTR_ID] =
 				(int)$oStdClass->{static::ATTR_ID};
 		}
-		if( !empty( $oStdClass->{static::ATTR_TYPE} ) ) {
+		if ( !empty( $oStdClass->{static::ATTR_TYPE} ) ) {
 			$this->attributes[static::ATTR_TYPE]
 				= $oStdClass->{static::ATTR_TYPE};
 		} else {
 			$this->attributes[static::ATTR_TYPE] = static::TYPE;
 		}
-		if( !empty( $oStdClass->{static::ATTR_ARCHIVED} ) ) {
+		if ( !empty( $oStdClass->{static::ATTR_ARCHIVED} ) ) {
 			$this->attributes[static::ATTR_ARCHIVED] = true;
 		}
 
 		$this->setValuesByObject( $oStdClass );
-		if( $this->exists() ) {
+		if ( $this->exists() ) {
 			$this->setUnsavedChanges( false );
 		}
 	}
@@ -113,19 +113,19 @@ abstract class Entity implements \JsonSerializable {
 	 * @return mixed
 	 */
 	public function get( $attrName, $default = null ) {
-		//we currently just use the source titles timestamps
-		if( $attrName == static::ATTR_TIMESTAMP_CREATED ) {
+		// we currently just use the source titles timestamps
+		if ( $attrName == static::ATTR_TIMESTAMP_CREATED ) {
 			return $this->getTimestampCreated()
 				? $this->getTimestampCreated()
 				: $default;
 		}
-		if( $attrName == static::ATTR_TIMESTAMP_TOUCHED ) {
+		if ( $attrName == static::ATTR_TIMESTAMP_TOUCHED ) {
 			return $this->getTimestampTouched()
 				? $this->getTimestampTouched()
 				: $default;
 		}
 
-		if( !isset( $this->attributes[$attrName] ) ) {
+		if ( !isset( $this->attributes[$attrName] ) ) {
 			return $default;
 		}
 		return $this->attributes[$attrName];
@@ -146,11 +146,11 @@ abstract class Entity implements \JsonSerializable {
 	 * @throws \MWException
 	 */
 	protected function getStore( \IContextSource $context = null ) {
-		if( !$context ) {
+		if ( !$context ) {
 			$context = \RequestContext::getMain();
 		}
 		$sStoreClass = $this->getConfig()->get( 'StoreClass' );
-		if( !class_exists( $sStoreClass ) ) {
+		if ( !class_exists( $sStoreClass ) ) {
 			throw new \MWException( "Store class '$sStoreClass' not found" );
 		}
 		return new $sStoreClass( $context );
@@ -163,12 +163,12 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Entity
 	 */
 	public function set( $attrName, $value ) {
-		//An Entity's id should never be changed
-		if( $attrName == static::ATTR_ID ) {
+		// An Entity's id should never be changed
+		if ( $attrName == static::ATTR_ID ) {
 			throw new \MWException( "An Entity's id can not be changed!" );
 		}
-		//An Entity's type should never be changed
-		if( $attrName == static::ATTR_TYPE ) {
+		// An Entity's type should never be changed
+		if ( $attrName == static::ATTR_TYPE ) {
 			throw new \MWException( "An Entity's type can not be changed!" );
 		}
 
@@ -248,7 +248,7 @@ abstract class Entity implements \JsonSerializable {
 	* @return string|boolean Last-touched timestamp, false if entity was not saved yet
 	*/
 	public function getTimestampTouched() {
-		if( !$this->exists() ) {
+		if ( !$this->exists() ) {
 			return false;
 		}
 		if ( $this->tsTouchedCache ) {
@@ -263,7 +263,7 @@ abstract class Entity implements \JsonSerializable {
 	* @return string|boolean Created timestamp, false if entity was not saved yet
 	*/
 	public function getTimestampCreated() {
-		if( !$this->exists() ) {
+		if ( !$this->exists() ) {
 			return false;
 		}
 		if ( $this->tsCreatedCache ) {
@@ -310,14 +310,14 @@ abstract class Entity implements \JsonSerializable {
 	 * @return \Status
 	 */
 	public function save( \User $oUser = null, $aOptions = [] ) {
-		if( !$oUser instanceof \User ) {
+		if ( !$oUser instanceof \User ) {
 			return \Status::newFatal( 'No User' );
 		}
-		if( $this->exists() && !$this->hasUnsavedChanges() ) {
+		if ( $this->exists() && !$this->hasUnsavedChanges() ) {
 			return \Status::newGood( $this );
 		}
 		$sContentClass = $this->getConfig()->get( 'ContentClass' );
-		if( !class_exists( $sContentClass ) ) {
+		if ( !class_exists( $sContentClass ) ) {
 			return \Status::newFatal( "Content class '$sContentClass' not found" );
 		}
 		if ( empty( $this->get( static::ATTR_ID, 0 ) ) ) {
@@ -326,11 +326,11 @@ abstract class Entity implements \JsonSerializable {
 		if ( empty( $this->get( static::ATTR_ID, 0 ) ) ) {
 			return \Status::newFatal( 'No ID generated' );
 		}
-		if( empty($this->get( static::ATTR_OWNER_ID, 0 )) ) {
+		if ( empty( $this->get( static::ATTR_OWNER_ID, 0 ) ) ) {
 			$this->set( static::ATTR_OWNER_ID, (int)$oUser->getId() );
 		}
 		$sType = $this->getType();
-		if( empty($sType) ) {
+		if ( empty( $sType ) ) {
 			return \Status::newFatal( 'Related Type error' );
 		}
 
@@ -339,7 +339,7 @@ abstract class Entity implements \JsonSerializable {
 			return \Status::newFatal( 'Related Title error' );
 		}
 		$sStoreClass = $this->getConfig()->get( 'StoreClass' );
-		if( !class_exists( $sStoreClass ) ) {
+		if ( !class_exists( $sStoreClass ) ) {
 			return \Status::newFatal( "Store class '$sStoreClass' not found" );
 		}
 
@@ -360,11 +360,11 @@ abstract class Entity implements \JsonSerializable {
 				$oUser,
 				null
 			);
-		} catch( \Exception $e ) {
-			//Something probalby breaks json
+		} catch ( \Exception $e ) {
+			// Something probalby breaks json
 			return \Status::newFatal( $e->getMessage() );
 		}
-		//TODO: check why this is not good
+		// TODO: check why this is not good
 		if ( !$oStatus->isOK() ) {
 			return $oStatus;
 		}
@@ -385,7 +385,7 @@ abstract class Entity implements \JsonSerializable {
 		$status = \Status::newGood();
 
 		\Hooks::run( 'BSEntityDelete', [ $this, $status, $oUser ] );
-		if( !$status->isOK() ) {
+		if ( !$status->isOK() ) {
 			return $status;
 		}
 		$this->set( static::ATTR_ARCHIVED, true );
@@ -393,12 +393,12 @@ abstract class Entity implements \JsonSerializable {
 
 		try {
 			$oStatus = $this->save( $oUser );
-		} catch( \Exception $e ) {
+		} catch ( \Exception $e ) {
 			return \Status::newFatal( $e->getMessage() );
 		}
 
 		\Hooks::run( 'BSEntityDeleteComplete', [ $this, $oStatus, $oUser ] );
-		if( !$oStatus->isOK() ) {
+		if ( !$oStatus->isOK() ) {
 			return $oStatus;
 		}
 
@@ -415,7 +415,7 @@ abstract class Entity implements \JsonSerializable {
 		$status = \Status::newGood();
 
 		\Hooks::run( 'BSEntityUndelete', [ $this, $status, $user ] );
-		if( !$status->isOK() ) {
+		if ( !$status->isOK() ) {
 			return $status;
 		}
 		$this->set( static::ATTR_ARCHIVED, false );
@@ -423,12 +423,12 @@ abstract class Entity implements \JsonSerializable {
 
 		try {
 			$status = $this->save( $user );
-		} catch( \Exception $e ) {
+		} catch ( \Exception $e ) {
 			return \Status::newFatal( $e->getMessage() );
 		}
 
 		\Hooks::run( 'BSEntityUndeleteComplete', [ $this, $status, $user ] );
-		if( !$status->isOK() ) {
+		if ( !$status->isOK() ) {
 			return $status;
 		}
 
@@ -455,7 +455,7 @@ abstract class Entity implements \JsonSerializable {
 		\Hooks::run( 'BSEntityGetFullData', [
 			$this,
 			&$data
-		]);
+		] );
 		return $data;
 	}
 
@@ -475,12 +475,12 @@ abstract class Entity implements \JsonSerializable {
 	 * @return Renderer
 	 */
 	public function getRenderer( \IContextSource $context = null ) {
-		if( !$context ) {
+		if ( !$context ) {
 			$context = \RequestContext::getMain();
 		}
 		return Services::getInstance()->getBSRendererFactory()->get(
 			$this->getConfig()->get( 'Renderer' ),
-			$this->makeRendererParams( [Renderer::PARAM_CONTEXT => $context] )
+			$this->makeRendererParams( [ Renderer::PARAM_CONTEXT => $context ] )
 		);
 	}
 
@@ -579,17 +579,17 @@ abstract class Entity implements \JsonSerializable {
 	 * @param \stdClass $data
 	 */
 	public function setValuesByObject( \stdClass $data ) {
-		if( !empty( $data->{static::ATTR_ARCHIVED} ) ) {
+		if ( !empty( $data->{static::ATTR_ARCHIVED} ) ) {
 			$this->set( static::ATTR_ARCHIVED, $data->{static::ATTR_ARCHIVED} );
 		}
-		if( !empty( $data->{static::ATTR_OWNER_ID} ) ) {
+		if ( !empty( $data->{static::ATTR_OWNER_ID} ) ) {
 			$this->set( static::ATTR_OWNER_ID, $data->{static::ATTR_OWNER_ID} );
 		}
 
-		\Hooks::run('BSEntitySetValuesByObject', [
+		\Hooks::run( 'BSEntitySetValuesByObject', [
 			$this,
 			$data
-		]);
+		] );
 	}
 
 	/**
@@ -598,7 +598,7 @@ abstract class Entity implements \JsonSerializable {
 	 * @return boolean
 	 */
 	public function userIsOwner( \User $oUser ) {
-		if( $oUser->isAnon() || $this->get( static::ATTR_OWNER_ID, 0 ) < 1) {
+		if ( $oUser->isAnon() || $this->get( static::ATTR_OWNER_ID, 0 ) < 1 ) {
 			return false;
 		}
 		return $oUser->getId() == $this->get( static::ATTR_OWNER_ID, 0 );
@@ -629,8 +629,9 @@ abstract class Entity implements \JsonSerializable {
 			return false;
 		}
 
-		if( !$this->getTitle()->exists() ) {
-			return true; // avoid gap locking if we know it's not there
+		if ( !$this->getTitle()->exists() ) {
+			// avoid gap locking if we know it's not there
+			return true;
 		}
 
 		$method = __METHOD__;

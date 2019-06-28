@@ -70,7 +70,7 @@ class RunJobsTriggerRunner {
 
 	public function execute() {
 		$factoryKeys = $this->registry->getAllKeys();
-		foreach( $factoryKeys as $regKey ) {
+		foreach ( $factoryKeys as $regKey ) {
 			$factoryCallback = $this->registry->getValue( $regKey );
 			$this->currentTriggerHandler = call_user_func_array(
 				$factoryCallback,
@@ -83,10 +83,10 @@ class RunJobsTriggerRunner {
 
 			$this->checkHandlerInterface( $regKey );
 
-			if( $this->shouldRunCurrentHandler( $regKey ) ) {
+			if ( $this->shouldRunCurrentHandler( $regKey ) ) {
 				try {
 					$this->runCurrentHandler( $regKey );
-				} catch( \Exception $ex ) {
+				} catch ( \Exception $ex ) {
 					$message = $ex->getMessage();
 					$message .= "\n";
 					$message .= $ex->getTraceAsString();
@@ -112,7 +112,7 @@ class RunJobsTriggerRunner {
 		$doesImplementInterface =
 			$this->currentTriggerHandler instanceof IRunJobsTriggerHandler;
 
-		if( !$doesImplementInterface ) {
+		if ( !$doesImplementInterface ) {
 			throw new \Exception(
 				"RunJobsTriggerHanlder factory '$regKey' did not return "
 					. "'IRunJobsTriggerHandler' instance!"
@@ -126,7 +126,7 @@ class RunJobsTriggerRunner {
 	 */
 	protected function runCurrentHandler( $regKey ) {
 		$status = $this->currentTriggerHandler->run();
-		if( $status->isOK() ) {
+		if ( $status->isOK() ) {
 			$this->logger->info(
 				"Successfully ran handler for '$regKey'"
 			);
@@ -144,7 +144,7 @@ class RunJobsTriggerRunner {
 	 * Called from $wgExtensionFunctions
 	 */
 	public static function run() {
-		if( !defined( 'MEDIAWIKI_JOB_RUNNER' ) ) {
+		if ( !defined( 'MEDIAWIKI_JOB_RUNNER' ) ) {
 			return;
 		}
 

@@ -9,7 +9,7 @@ class HTMLCheckFieldOverride extends HTMLCheckField {
 
 		$attr = $this->getTooltipAndAccessKey();
 		$attr['id'] = $this->mID;
-		if( !empty( $this->mParams['disabled'] ) ) {
+		if ( !empty( $this->mParams['disabled'] ) ) {
 			$attr['disabled'] = 'disabled';
 		}
 

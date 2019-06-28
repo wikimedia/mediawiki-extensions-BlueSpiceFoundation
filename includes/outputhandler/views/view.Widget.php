@@ -5,7 +5,11 @@
  */
 class ViewWidget extends ViewBaseElement {
 
-	protected $_mDefaultViewstate = ''; // Possible values 'expanded'|'collapsed'
+	/**
+	 * Possible values 'expanded'|'collapsed'
+	 * @var string
+	 */
+	protected $_mDefaultViewstate = '';
 	protected $_mTitle        = '';
 	protected $_mBody         = '';
 	protected $_mTooltip      = '';
@@ -15,9 +19,9 @@ class ViewWidget extends ViewBaseElement {
 	public function execute( $params = false ) {
 		$this->checkProperties();
 
-		$sAdditionalTitleClasses = implode(' ', $this->_mAdditionalTitleClasses );
-		$sAdditionalBodyClasses = implode(' ', $this->_mAdditionalBodyClasses );
-		if (is_array($params) && isset($params['format']) && $params['format'] == 'json'){
+		$sAdditionalTitleClasses = implode( ' ', $this->_mAdditionalTitleClasses );
+		$sAdditionalBodyClasses = implode( ' ', $this->_mAdditionalBodyClasses );
+		if ( is_array( $params ) && isset( $params['format'] ) && $params['format'] == 'json' ) {
 			$oReturn = new stdClass();
 			$oReturn->defaultViewstate = $this->_mDefaultViewstate;
 			$oReturn->title = $this->_mTitle;
@@ -41,18 +45,19 @@ class ViewWidget extends ViewBaseElement {
 	}
 
 	private function checkProperties() {
-		if( empty($this->_mId) ) {
-			throw new BsException ('No id set.'); // TODO RBV (21.10.10 09:08): Check for html id validity. See MW Sanitizer::escapeId() for inspiration.
+		if ( empty( $this->_mId ) ) {
+			// TODO RBV (21.10.10 09:08): Check for html id validity. See MW Sanitizer::escapeId() for inspiration.
+			throw new BsException( 'No id set.' );
 		}
-		if( empty($this->_mTitle) ) {
+		if ( empty( $this->_mTitle ) ) {
 			$this->_mTitle = $this->mId;
 		}
-		if( empty($this->_mTooltip) ) {
+		if ( empty( $this->_mTooltip ) ) {
 			$this->_mTooltip = $this->_mTitle;
 		}
-		if( empty($this->_mBody) ) {
-			if( $this->hasItems() ) {
-			foreach ($this->_mItems as $oViewItem ){
+		if ( empty( $this->_mBody ) ) {
+			if ( $this->hasItems() ) {
+			foreach ( $this->_mItems as $oViewItem ) {
 				$this->_mBody .= $oViewItem->execute();
 			}
 			}else {
@@ -88,9 +93,9 @@ class ViewWidget extends ViewBaseElement {
 
 	public function setDefaultViewstate( $sDefaultViewstate ) {
 		if ( $sDefaultViewstate != 'expanded' || $sDefaultViewstate != 'collapsed' ) {
-			throw new BsException('"'.$sDefaultViewstate.'" is not a vaild viewstate. Possible values are "expanded"|"collapsed"' );
+			throw new BsException( '"'.$sDefaultViewstate.'" is not a vaild viewstate. Possible values are "expanded"|"collapsed"' );
 		}
-		if ($sDefaultViewstate == 'collapsed') {
+		if ( $sDefaultViewstate == 'collapsed' ) {
 			$this->_mDefaultViewstate = ' bs-widget-viewstate-collapsed';
 		}
 		else{

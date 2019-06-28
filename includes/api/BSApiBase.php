@@ -39,20 +39,21 @@ abstract class BSApiBase extends ApiBase {
 	 */
 	protected function checkPermissions( $aTitles = array(), $oUser = null ) {
 		$aRequiredPermissions = $this->getRequiredPermissions();
-		if( empty( $aRequiredPermissions ) ) {
-			return; //No need for further checking
+		if ( empty( $aRequiredPermissions ) ) {
+			// No need for further checking
+			return;
 		}
 
-		if( $oUser instanceof User === false ) {
+		if ( $oUser instanceof User === false ) {
 			$oUser = $this->getUser();
 		}
 
 		$status = Status::newGood();
-		foreach( $aTitles as $oTitle ) {
-			if( $oTitle instanceof Title === false ) {
+		foreach ( $aTitles as $oTitle ) {
+			if ( $oTitle instanceof Title === false ) {
 				continue;
 			}
-			foreach( $aRequiredPermissions as $sPermission ) {
+			foreach ( $aRequiredPermissions as $sPermission ) {
 				foreach ( $oTitle->getUserPermissionsErrors( $sPermission, $oUser ) as $error ) {
 					$status->fatal(
 						ApiMessage::create( $error, null, [ 'title' => $oTitle->getPrefixedText() ] )
@@ -61,10 +62,10 @@ abstract class BSApiBase extends ApiBase {
 			}
 		}
 
-		//Fallback if not conrete title was provided
-		if( empty( $aTitles ) ) {
-			foreach( $aRequiredPermissions as $sPermission ) {
-				if( $oUser->isAllowed( $sPermission ) === false ) {
+		// Fallback if not conrete title was provided
+		if ( empty( $aTitles ) ) {
+			foreach ( $aRequiredPermissions as $sPermission ) {
+				if ( $oUser->isAllowed( $sPermission ) === false ) {
 					$status->fatal(
 						[ 'apierror-permissiondenied', $this->msg( "action-$sPermission" ) ]
 					);

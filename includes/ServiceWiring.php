@@ -85,7 +85,7 @@ return [
 		);
 	},
 
-	'BSPermissionRegistry' => function( MediaWikiServices $services ) {
+	'BSPermissionRegistry' => function ( MediaWikiServices $services ) {
 		return \BlueSpice\Permission\Registry::getInstance(
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
 			$GLOBALS[ 'bsgPermissionConfig' ]
@@ -131,7 +131,7 @@ return [
 		);
 	},
 
-	'BSNotificationManager' => function( MediaWikiServices $services ) {
+	'BSNotificationManager' => function ( MediaWikiServices $services ) {
 		$regFuncRegistry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationNotificationRegistrationFunctions'
 		);
@@ -142,7 +142,7 @@ return [
 		);
 	},
 
-	'BSTargetCacheFactory' => function( MediaWikiServices $services ) {
+	'BSTargetCacheFactory' => function ( MediaWikiServices $services ) {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationTargetCacheRegistry'
 		);
@@ -154,7 +154,7 @@ return [
 		);
 	},
 
-	'BSTargetCacheTitle' => function( MediaWikiServices $services ) {
+	'BSTargetCacheTitle' => function ( MediaWikiServices $services ) {
 		return $services->getService( 'BSTargetCacheFactory' )->get( 'title' );
 	},
 

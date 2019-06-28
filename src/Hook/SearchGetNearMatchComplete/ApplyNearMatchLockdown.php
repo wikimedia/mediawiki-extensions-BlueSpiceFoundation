@@ -16,10 +16,10 @@ class ApplyNearMatchLockdown extends \BlueSpice\Hook\SearchGetNearMatchComplete 
 	protected function doProcess() {
 		$this->setUp();
 
-		if( empty( $this->namespaceRolesLockdown ) ) {
+		if ( empty( $this->namespaceRolesLockdown ) ) {
 			return true;
 		}
-		if( $this->title == null ) {
+		if ( $this->title == null ) {
 			return true;
 		}
 
@@ -29,16 +29,16 @@ class ApplyNearMatchLockdown extends \BlueSpice\Hook\SearchGetNearMatchComplete 
 
 		$userGroups = $this->user->getEffectiveGroups();
 
-		if( isset( $this->namespaceRolesLockdown[ $titleNs ] ) === false ) {
+		if ( isset( $this->namespaceRolesLockdown[ $titleNs ] ) === false ) {
 			return true;
 		}
 
 		$isAllowed = false;
-		foreach( $this->namespaceRolesLockdown[ $titleNs ] as $roleName => $groups ) {
-			if( in_array( $roleName, $permissionRoles ) == false ) {
+		foreach ( $this->namespaceRolesLockdown[ $titleNs ] as $roleName => $groups ) {
+			if ( in_array( $roleName, $permissionRoles ) == false ) {
 				continue;
 			}
-			if( array_intersect ( $groups, $userGroups ) ) {
+			if ( array_intersect( $groups, $userGroups ) ) {
 				return true;
 			}
 		}
@@ -47,7 +47,7 @@ class ApplyNearMatchLockdown extends \BlueSpice\Hook\SearchGetNearMatchComplete 
 		return false;
 	}
 
-	protected function setUp () {
+	protected function setUp() {
 		$config = $this->getConfig();
 		$this->namespaceRolesLockdown = $config->get( 'NamespaceRolesLockdown' );
 

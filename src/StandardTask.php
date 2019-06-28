@@ -4,7 +4,6 @@ namespace BlueSpice;
 
 abstract class StandardTask implements ITask {
 
-
 	/**
 	 *
 	 * @var Data\IStore
@@ -78,8 +77,8 @@ abstract class StandardTask implements ITask {
 	 */
 	public function execute() {
 		try {
-			//TODO: Permission checking, Param processing and other stuff
-		} catch( \Exception $ex ) {
+			// TODO: Permission checking, Param processing and other stuff
+		} catch ( \Exception $ex ) {
 			return \Status::newFatal( $ex->getMessage() );
 		}
 		return $this->doExecute();
@@ -91,7 +90,7 @@ abstract class StandardTask implements ITask {
 	 */
 	protected function makeActionLogger() {
 		$type = $this->getActionLogType();
-		if( empty( $type ) ) {
+		if ( empty( $type ) ) {
 			return new NullLogger();
 		}
 

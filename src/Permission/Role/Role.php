@@ -67,7 +67,7 @@ class Role implements IRole {
 	 * are set for this role name
 	 */
 	public static function newFromDefaultConfig( $name, $defaultRoleConfig ) {
-		if( isset( $defaultRoleConfig[ $name ] ) ) {
+		if ( isset( $defaultRoleConfig[ $name ] ) ) {
 			return new self( $name, $defaultRoleConfig[ $name ] );
 		}
 		return null;
@@ -85,9 +85,9 @@ class Role implements IRole {
 	 * Removes single permission from the role
 	 * @param string $permission
 	 */
-	public function removePermission ( $permission ) {
+	public function removePermission( $permission ) {
 		$index = array_search( $permission, $this->permissions );
-		if( $index !== false ) {
+		if ( $index !== false ) {
 			unset( $this->permissions[ $index ] );
 		}
 	}

@@ -21,15 +21,14 @@ class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {
 
 		$this->filenames = [
 			dirname( __DIR__ ) . "/data/images/demoImage.png",
-			dirname( __DIR__  ). "/data/images/test.jpg",
+			dirname( __DIR__ ). "/data/images/test.jpg",
 			dirname( __DIR__ ). "/data/images/test.png",
 		];
 
-		foreach( $this->filenames as $filename ) {
+		foreach ( $this->filenames as $filename ) {
 			$status = \BsFileSystemHelper::uploadLocalFile( $filename );
 		}
 	}
-
 
 	protected function createStoreFixtureData(){
 		return 3;
@@ -113,7 +112,7 @@ class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {
 			'page_categories' => [
 				'type' => 'array'
 			],
-			'page_categories_links'=> [
+			'page_categories_links' => [
 				'type' => 'array'
 			],
 			'page_is_redirect' => [

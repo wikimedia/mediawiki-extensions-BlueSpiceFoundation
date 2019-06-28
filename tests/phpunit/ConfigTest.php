@@ -24,7 +24,8 @@ class ConfigTest extends \MediaWikiTestCase {
 		parent::addDBData();
 		$this->db->insert( 'bs_settings3', [
 			's_name' => 'UnitTestSetting',
-			's_value' => '"9"' //JSON formatted
+			// JSON formatted
+			's_value' => '"9"'
 		] );
 		$config = new \BlueSpice\Config(
 			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
@@ -37,7 +38,8 @@ class ConfigTest extends \MediaWikiTestCase {
 			->makeConfig( 'bsg' );
 
 		$this->assertInstanceOf(
-			'\\BlueSpice\\Config', //Can be discussed whether just \Config is sufficient to test
+			// Can be discussed whether just \Config is sufficient to test
+			'\\BlueSpice\\Config',
 			$config,
 			'MediaWiki ConfigFactory should return propert instance'
 		);

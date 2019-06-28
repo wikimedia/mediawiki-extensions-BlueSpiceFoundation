@@ -30,7 +30,6 @@ use BlueSpice\Hook;
 
 abstract class BSMigrateSettingsSaveNewSettings extends Hook {
 
-
 	/**
 	 * Key/Value pairs of new data
 	 * @var array

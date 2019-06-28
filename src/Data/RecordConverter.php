@@ -20,7 +20,7 @@ class RecordConverter {
 
 	public function convertToRawData() {
 		$rawData = [];
-		foreach( $this->records as $record ) {
+		foreach ( $this->records as $record ) {
 			$rawData[] = $record->getData();
 		}
 		return $rawData;

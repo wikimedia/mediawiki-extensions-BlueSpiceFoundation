@@ -32,7 +32,7 @@
 class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected $aTasks = array(
 		'setCategories' => [
-			//'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
+			// 'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
 			'examples' => [
 				[
 					'page_id' => 3234,
@@ -153,7 +153,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 					'page_title' => 'SomeNamespace:Some page title'
 				]
 			],
-			//'readonly' => true, //TODO migrate "$this->aReadTasks"
+			// 'readonly' => true, //TODO migrate "$this->aReadTasks"
 			'params' => [
 				'page_id' => [
 					'type' => 'integer',
@@ -226,7 +226,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 
-		//Check for actual title permissions
+		// Check for actual title permissions
 		if ( !$oTitle->userCan( 'edit' ) ) {
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-page-edit-not-allowed',
@@ -235,7 +235,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//Check for category validity
+		// Check for category validity
 		$aInvalidCategories = array();
 		foreach ( $aCategories as $sCategoryName ) {
 			if ( Category::newFromName( $sCategoryName ) === false ) {
@@ -243,7 +243,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			}
 		}
 
-		if( !empty( $aInvalidCategories ) ) {
+		if ( !empty( $aInvalidCategories ) ) {
 			$iCount = count( $aInvalidCategories );
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-categories-not-valid',
@@ -256,10 +256,10 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		}
 
 		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ){
+		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$oContent = $oWikiPage->getContent();
 			$sText = '';
-			if( $oContent instanceof Content ) {
+			if ( $oContent instanceof Content ) {
 				$sText = $oContent->getNativeData();
 			}
 		}
@@ -314,12 +314,12 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//get page and content
+		// get page and content
 		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ){
+		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$oContent = $oWikiPage->getContent();
 			$sText = '';
-			if( $oContent instanceof Content ) {
+			if ( $oContent instanceof Content ) {
 				$sText = $oContent->getNativeData();
 			}
 
@@ -329,16 +329,16 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//Pattern for Category tags
+		// Pattern for Category tags
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):(.*?)\]\]#si";
 		$matches = [];
-		$matchCount = preg_match_all($sPattern, $sText, $matches, PREG_PATTERN_ORDER);
+		$matchCount = preg_match_all( $sPattern, $sText, $matches, PREG_PATTERN_ORDER );
 
 		$aCategories = [];
-		//normalize
-		foreach ( $matches[2] as $match ){
+		// normalize
+		foreach ( $matches[2] as $match ) {
 			$oCategoryTitle = Title::newFromText( $match, NS_CATEGORY );
 			if ( $oCategoryTitle instanceof Title === false ) {
 				continue;
@@ -362,7 +362,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected function task_addCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
 
-		$oCategoriesInPage = $this->task_getExplicitCategories($oTaskData, $aParams);
+		$oCategoriesInPage = $this->task_getExplicitCategories( $oTaskData, $aParams );
 
 		$aCategories = $oTaskData->categories;
 		$aCategories = ( !is_array( $aCategories ) ) ? array() : $aCategories;
@@ -377,7 +377,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//Check for category validity
+		// Check for category validity
 		$aInvalidCategories = array();
 		foreach ( $aCategories as $sCategoryName ) {
 			if ( Category::newFromName( $sCategoryName ) === false ) {
@@ -385,7 +385,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			}
 		}
 
-		if( !empty( $aInvalidCategories ) ) {
+		if ( !empty( $aInvalidCategories ) ) {
 			$iCount = count( $aInvalidCategories );
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-categories-not-valid',
@@ -397,17 +397,17 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		if ($oCategoriesInPage->payload_count > 0){
-			$aNewCategories = array_diff($aCategories, $oCategoriesInPage->payload);
+		if ( $oCategoriesInPage->payload_count > 0 ) {
+			$aNewCategories = array_diff( $aCategories, $oCategoriesInPage->payload );
 		} else {
 			$aNewCategories = $aCategories;
 		}
 
 		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ){
+		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$oContent = $oWikiPage->getContent();
 			$sText = '';
-			if( $oContent instanceof Content ) {
+			if ( $oContent instanceof Content ) {
 				$sText = $oContent->getNativeData();
 			}
 
@@ -452,9 +452,9 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oResponse = $this->makeStandardReturn();
 		$aCategoriesToRemove = $oTaskData->categories;
 
-		if (count($aCategoriesToRemove) === 0){
+		if ( count( $aCategoriesToRemove ) === 0 ) {
 			$oResponse->message = wfMessage(
-				'bs-wikipage-tasks-error-nothingtoremove')->plain();
+				'bs-wikipage-tasks-error-nothingtoremove' )->plain();
 			$oResponse->payload = array();
 			$oResponse->payload_count = 0;
 			return $oResponse;
@@ -470,12 +470,12 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//get page and content
+		// get page and content
 		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ){
+		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$oContent = $oWikiPage->getContent();
 			$sText = '';
-			if( $oContent instanceof Content ) {
+			if ( $oContent instanceof Content ) {
 				$sText = $oContent->getNativeData();
 			}
 
@@ -487,13 +487,13 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
-		foreach ($aCategoriesToRemove as $sToRemove){
+		foreach ( $aCategoriesToRemove as $sToRemove ) {
 			$linksToRemove = $this->findCategoryLinksInText( $sToRemove, $sText );
-			foreach( $linksToRemove as $linkToRemove ) {
+			foreach ( $linksToRemove as $linkToRemove ) {
 				$sText = str_replace( $linkToRemove, '', $sText );
 			}
 		}
-		//TODO: remove blank lines from page
+		// TODO: remove blank lines from page
 		$oContent = ContentHandler::makeContent( $sText, $oTitle );
 		$oStatus = $oWikiPage->doEditContent(
 			$oContent,
@@ -523,7 +523,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 */
 	protected function findCategoryLinksInText( $category, $text ) {
 		$categoryTitle = Title::makeTitle( NS_CATEGORY, $category );
-		if( $categoryTitle instanceof Title === false ) {
+		if ( $categoryTitle instanceof Title === false ) {
 			return [];
 		}
 
@@ -531,18 +531,18 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$internalLinks = [];
 		preg_match_all( '#\[\[(.*?)\]\]#si', $text, $internalLinks );
 
-		if( !isset( $internalLinks[1] ) && count( $internalLinks[1] ) === 0 ) {
+		if ( !isset( $internalLinks[1] ) && count( $internalLinks[1] ) === 0 ) {
 			return [];
 		}
-		foreach( $internalLinks[1] as $key => $pageName ) {
-			if( strpos( '|', $pageName ) !== false ) {
+		foreach ( $internalLinks[1] as $key => $pageName ) {
+			if ( strpos( '|', $pageName ) !== false ) {
 				$pageName = explode( '|', $pageName )[0];
 			}
 			$titleToTest = \Title::newFromText( $pageName );
-			if( $titleToTest instanceof \Title === false ) {
+			if ( $titleToTest instanceof \Title === false ) {
 				continue;
 			}
-			if( $categoryTitle->equals( $titleToTest ) ) {
+			if ( $categoryTitle->equals( $titleToTest ) ) {
 				$categoryLinkText[] = $internalLinks[0][$key];
 			}
 		}
@@ -564,7 +564,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		)->getDiscussionAmount();
 
 		$oResponse->success = true;
-		$oResponse->payload = $iCount ;
+		$oResponse->payload = $iCount;
 
 		return $oResponse;
 	}
@@ -588,8 +588,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oTitle = $this->getTitle();
 		}
 
-		//Actually this should never happen as $this->getTitle() will at least
-		//return title "Special:BadTitle"
+		// Actually this should never happen as $this->getTitle() will at least
+		// return title "Special:BadTitle"
 		if ( $oTitle instanceof Title === false ) {
 			throw new MWException(
 				wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain()
@@ -621,7 +621,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 		$oWikiPage = WikiPage::factory( $oTitle );
 		$oContent = $oWikiPage->getContent();
-		if( $oContent instanceof WikitextContent === false ) {
+		if ( $oContent instanceof WikitextContent === false ) {
 			$oResponse->message =
 				wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;

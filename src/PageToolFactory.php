@@ -41,19 +41,19 @@ class PageToolFactory {
 	 */
 	public function getAll() {
 		$pageTools = [];
-		foreach( $this->registry->getAllKeys() as $toolId ) {
+		foreach ( $this->registry->getAllKeys() as $toolId ) {
 			$callback = $this->registry->getValue( $toolId );
 
 			$tool = call_user_func_array( $callback, [ $this->context, $this->config ] );
-			if( $tool instanceof IPageTool === false ) {
+			if ( $tool instanceof IPageTool === false ) {
 				throw new \MWException( "Class for tool '$toolId' does not implement IPageTool" );
 			}
 			$pageTools[$toolId] = $tool;
 		}
 
-		usort( $pageTools, function( $a, $b ) {
+		usort( $pageTools, function ( $a, $b ) {
 			return $a->getPosition() > $b->getPosition();
-		});
+		} );
 
 		return $pageTools;
 	}

@@ -15,10 +15,10 @@ class SelectWidget extends \OOUI\Widget {
 		$groupConfig['group'] = $this;
 		$this->initializeGroupElement( $groupConfig );
 
-		$this->addClasses( ["oo-ui-selectWidget", "oo-ui-selectWidget-depressed" ] );
+		$this->addClasses( [ "oo-ui-selectWidget", "oo-ui-selectWidget-depressed" ] );
 		$this->attributes['role'] = 'listbox';
 
-		if( isset( $config[ 'items' ] ) && is_array( $config[ 'items' ] ) ) {
+		if ( isset( $config[ 'items' ] ) && is_array( $config[ 'items' ] ) ) {
 			$this->addItems( $config['items'] );
 		}
 		$this->appendContent( $this->group );

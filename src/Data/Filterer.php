@@ -26,7 +26,7 @@ class Filterer {
 	public function filter( $data ) {
 		$filteredData = array_filter( $data, function ( $aDataSet ) {
 				return $this->matchFilter( $aDataSet );
-			}
+		}
 		);
 
 		return array_values( $filteredData );
@@ -38,10 +38,10 @@ class Filterer {
 	 * @return boolean
 	 */
 	protected function matchFilter( $dataSet ) {
-		foreach( $this->filters as $filter ) {
-			//If just one of these filters does not apply, the dataset needs
-			//to be removed
-			if( !$filter->matches( $dataSet ) ) {
+		foreach ( $this->filters as $filter ) {
+			// If just one of these filters does not apply, the dataset needs
+			// to be removed
+			if ( !$filter->matches( $dataSet ) ) {
 				return false;
 			}
 		}

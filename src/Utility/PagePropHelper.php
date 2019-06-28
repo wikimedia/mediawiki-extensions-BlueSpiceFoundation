@@ -33,7 +33,7 @@ class PagePropHelper {
 	 */
 	public function getPageProp( $name, $default = null ) {
 		$props = $this->getPageProps();
-		if( !isset( $props[$name] ) ) {
+		if ( !isset( $props[$name] ) ) {
 			return $default;
 		}
 
@@ -56,7 +56,7 @@ class PagePropHelper {
 	 * @return array
 	 */
 	public function getPageProps() {
-		if( !$this->title->exists() ) {
+		if ( !$this->title->exists() ) {
 			return [];
 		}
 
@@ -64,7 +64,7 @@ class PagePropHelper {
 
 		// If the cache returns `false`it means the data was not cached or an error occured. Empty
 		// arrays are okay
-		if( $pageProps === false ) {
+		if ( $pageProps === false ) {
 			$pageProps = $this->loadPageProps();
 			$this->getCache()->set( $pageProps );
 		}
@@ -87,7 +87,7 @@ class PagePropHelper {
 			__METHOD__
 		);
 
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$pageProps[$row->pp_propname] = $row->pp_value;
 		}
 		return $pageProps;

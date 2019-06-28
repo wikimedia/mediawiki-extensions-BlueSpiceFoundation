@@ -33,31 +33,31 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 	 *
 	 * @return boolean
 	 */
-	protected function doProcess () {
+	protected function doProcess() {
 		$this->setUp();
 
-		if( empty( $this->namespaceRolesLockdown ) ) {
+		if ( empty( $this->namespaceRolesLockdown ) ) {
 			return true;
 		}
-		if( $this->title->isUserConfigPage() ) {
+		if ( $this->title->isUserConfigPage() ) {
 			return true;
 		}
 
-		if( $this->action == 'read' && is_array( $this->whitelistRead ) ) {
-			if( in_array( $this->title->getPrefixedText(), $this->whitelistRead ) ) {
+		if ( $this->action == 'read' && is_array( $this->whitelistRead ) ) {
+			if ( in_array( $this->title->getPrefixedText(), $this->whitelistRead ) ) {
 				return true;
 			}
 		}
 
 		$actionRoles = [];
 		$roles = $this->roleManager->getRoleNamesAndPermissions();
-		foreach( $roles as $role ) {
+		foreach ( $roles as $role ) {
 			if ( in_array( $this->action, $role['permissions'] ) ) {
 				$actionRoles[] = $role['role'];
 			}
 		}
 
-		if( empty( $actionRoles ) ) {
+		if ( empty( $actionRoles ) ) {
 			return true;
 		}
 
@@ -66,28 +66,28 @@ class ApplyNamespaceRolesLockdown extends \BlueSpice\Hook\GetUserPermissionsErro
 		$titleNS = $this->title->getNamespace();
 		$affectedNamespaces = array_keys( $this->namespaceRolesLockdown );
 
-		//If there are no per-ns roles assigned for this ns don't block
-		if( in_array( $titleNS, $affectedNamespaces ) == false ) {
+		// If there are no per-ns roles assigned for this ns don't block
+		if ( in_array( $titleNS, $affectedNamespaces ) == false ) {
 			return true;
 		}
 
 		// Does any of the roles containing this permission have a lockdown.
 		$applies = false;
 		$allowedGroups = [];
-		foreach( $this->namespaceRolesLockdown as $ns => $roles ) {
-			if( $ns != $titleNS ) {
+		foreach ( $this->namespaceRolesLockdown as $ns => $roles ) {
+			if ( $ns != $titleNS ) {
 				continue;
 			}
-			foreach( $roles as $roleName => $groups ) {
+			foreach ( $roles as $roleName => $groups ) {
 				$allowedGroups = array_merge( $allowedGroups, $groups );
-				if( !in_array( $roleName, $actionRoles ) ) {
+				if ( !in_array( $roleName, $actionRoles ) ) {
 					continue;
 				}
 
 				// If any of the roles that are under lockdown are containing
 				// permission we are testing for, lockdown applies
 				$applies = true;
-				if( array_intersect( $groups, $userGroups ) ) {
+				if ( array_intersect( $groups, $userGroups ) ) {
 					return true;
 				}
 			}

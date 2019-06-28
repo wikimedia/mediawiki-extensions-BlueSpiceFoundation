@@ -47,7 +47,7 @@ class BsValidator {
 	 */
 	public static function isValid( $type, $validateThis, $options = array() ) {
 		if ( !is_array( $options ) ) {
-			throw new BsException( 'BsValidator::isValid called with 3rd param that is no array' ); // todo: throw new BsException
+			throw new BsException( 'BsValidator::isValid called with 3rd param that is no array' );
 		}
 		$plugin = "BsValidator{$type}Plugin";
 		if ( !class_exists( $plugin ) ) {
@@ -67,9 +67,10 @@ class BsValidator {
 		if ( is_object( $validationResult ) && ( $validationResult instanceof BsValidatorResponse ) ) {
 			return ( array_key_exists( 'fullResponse', $options ) && $options['fullResponse'] )
 				? $validationResult
-				: ( $validationResult->getErrorCode() === 0 ); // return boolean (success: 'true')
+				// return boolean (success: 'true')
+				: ( $validationResult->getErrorCode() === 0 );
 		}
-		throw new BsException( "$plugin did not return a BsValidatorResponse-object." ); // todo: throw new BsException
+		throw new BsException( "$plugin did not return a BsValidatorResponse-object." );
 	}
 
 }

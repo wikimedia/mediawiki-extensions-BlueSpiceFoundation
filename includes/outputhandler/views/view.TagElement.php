@@ -20,7 +20,7 @@ class ViewTagElement extends ViewBaseElement {
 		parent::__construct();
 		$this->_mAutoElement = 'p';
 	}
-	
+
 	public function execute( $params = false ) {
 		return '<'.$this->_mAutoElement.' id="'.$this->_mId.'"></'.$this->_mAutoElement.'>';
 	}

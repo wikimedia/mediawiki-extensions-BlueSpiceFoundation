@@ -19,16 +19,17 @@ class BSDebug {
 	 * @param array $aParams currently not in use
 	 */
 	public static function logSimpleCallStack( $aParams = array() ){
-		$aBackTrace = debug_backtrace(); //TODO: Use wfDebugBacktrace()?
+		// TODO: Use wfDebugBacktrace()?
+		$aBackTrace = debug_backtrace();
 		$iLength = count( $aBackTrace );
 		$aStack = array();
-		for( $i = 2; $i < $iLength; $i++ ) {
+		for ( $i = 2; $i < $iLength; $i++ ) {
 			$aStack[] = self::formatLine( $aBackTrace[$i] );
 		}
 
 		$sStack = implode( "\n", $aStack );
 
-		self::writeLog($sStack);
+		self::writeLog( $sStack );
 	}
 
 	/**
@@ -37,9 +38,10 @@ class BSDebug {
 	 * @param array $aParams currently not used
 	 */
 	public static function logCaller( $aParams = array() ){
-		$aBackTrace = debug_backtrace(); //TODO: Use wfDebugBacktrace()?
-		//Index of "2", because "0" is this method call and "1" is the caller
-		//of this method. But we want the caller of the caller of this method.
+		// TODO: Use wfDebugBacktrace()?
+		$aBackTrace = debug_backtrace();
+		// Index of "2", because "0" is this method call and "1" is the caller
+		// of this method. But we want the caller of the caller of this method.
 		$sLine = self::formatLine( $aBackTrace[2] );
 
 		self::writeLog( $sLine );
@@ -53,7 +55,7 @@ class BSDebug {
 	 */
 	protected static function formatLine( $aBackTraceLine, $aParams = array() ) {
 		$sLine = '';
-		if( isset( $aBackTraceLine['class'] ) ) {
+		if ( isset( $aBackTraceLine['class'] ) ) {
 			$sLine = $aBackTraceLine['class'].'::';
 		}
 		$sLine .= $aBackTraceLine['function'];
@@ -70,13 +72,13 @@ class BSDebug {
 	 *   "mark" => true
 	 */
 	public static function logVar( $mVar, $aParams = array() ) {
-		if( empty( $aParams['mark'] ) ) {
+		if ( empty( $aParams['mark'] ) ) {
 			$aBackTrace = debug_backtrace();
 			$sLine = self::formatLine( $aBackTrace[1] );
 			self::writeLog( $sLine );
 		}
 
-		if( isset( $aParams['format'] ) && strtolower( $aParams['format'] ) == 'json') {
+		if ( isset( $aParams['format'] ) && strtolower( $aParams['format'] ) == 'json' ) {
 			$sOut = FormatJson::encode( $mVar, true );
 		}
 		else {
@@ -94,7 +96,7 @@ class BSDebug {
 	 * @param array $aParams see logVar
 	 */
 	public static function logVarConditionally( $bCondition, $mVar, $aParams = array() ) {
-		if( $bCondition ) {
+		if ( $bCondition ) {
 			self::logVar( $mVar, $aParams );
 		}
 	}

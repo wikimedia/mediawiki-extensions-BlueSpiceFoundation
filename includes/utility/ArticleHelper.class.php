@@ -27,7 +27,7 @@ class BsArticleHelper {
 	 */
 	public static function getInstance( $oTitle ) {
 		$iArticleId = $oTitle->getArticleID();
-		if( !isset( self::$aInstances[$iArticleId] ) ) {
+		if ( !isset( self::$aInstances[$iArticleId] ) ) {
 			self::$aInstances[$iArticleId] = new BsArticleHelper( $oTitle );
 		}
 
@@ -45,7 +45,7 @@ class BsArticleHelper {
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'getDiscussionAmount', $iTalkPageId );
 		$aData = BsCacheHelper::get( $sKey );
 
-		if( $aData !== false ) {
+		if ( $aData !== false ) {
 			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching discussion amounts from cache' );
 			$iCount = $aData['iCount'];
 		} else {
@@ -60,7 +60,7 @@ class BsArticleHelper {
 			);
 			$iCount = $dbr->numRows( $res );
 
-			BsCacheHelper::set( $sKey, array( 'iCount' =>  $iCount ) );
+			BsCacheHelper::set( $sKey, array( 'iCount' => $iCount ) );
 		}
 
 		return $iCount;
@@ -106,7 +106,7 @@ class BsArticleHelper {
 	 */
 	public function getTitleFromRedirectRecurse() {
 		$oWikiPage = WikiPage::newFromID( $this->oTitle->getArticleID() );
-		if( !$oWikiPage ) {
+		if ( !$oWikiPage ) {
 			return null;
 		}
 		return $oWikiPage->getRedirectTarget();
@@ -115,7 +115,7 @@ class BsArticleHelper {
 	public function invalidate() {
 		$this->bIsLoaded = false;
 
-		if( !$this->oTitle->exists() ) {
+		if ( !$this->oTitle->exists() ) {
 			return true;
 		}
 
@@ -148,15 +148,15 @@ class BsArticleHelper {
 	public function getSubpagesSorted( $iLimit = -1 ) {
 		$aSubpages = $this->oTitle->getSubpages( $iLimit );
 		$aTitleArray = [];
-		foreach( $aSubpages as $oSubpage ) {
+		foreach ( $aSubpages as $oSubpage ) {
 			$aTitleArray[] = $oSubpage;
 		}
-		usort( $aTitleArray, function( $a, $b ) {
+		usort( $aTitleArray, function ( $a, $b ) {
 			return strcmp(
 				strtolower( $a->getFullText() ),
 				strtolower( $b->getFullText() )
 			);
-		});
+		} );
 
 		return $aTitleArray;
 	}

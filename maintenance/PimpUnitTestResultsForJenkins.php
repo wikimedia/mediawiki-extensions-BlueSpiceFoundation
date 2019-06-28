@@ -3,9 +3,9 @@ require_once( 'BSMaintenance.php' );
 
 class BSPimpUnitTestResultsForJenkins extends BSMaintenance {
 	public function __construct() {
-		$this->addOption('source', 'The path to the source file', true, true);
-		$this->addOption('target', 'The path to the source file', true, true);
-		$this->addOption('prefix', 'A prefix for the whole test run', true, true);
+		$this->addOption( 'source', 'The path to the source file', true, true );
+		$this->addOption( 'target', 'The path to the source file', true, true );
+		$this->addOption( 'prefix', 'A prefix for the whole test run', true, true );
 
 		parent::__construct();
 	}
@@ -42,7 +42,7 @@ class BSPimpUnitTestResultsForJenkins extends BSMaintenance {
 				$parentSuiteNode = $parentSuiteNode->parentNode;
 			}
 			$filename = preg_replace( "/^.*?extensions.(.*).tests.*$/", "$1", $parentSuiteNode->getAttribute( 'file' ) );
-			$filename = str_replace( ["/", "\\"], "::", $filename );
+			$filename = str_replace( [ "/", "\\" ], "::", $filename );
 
 			// Compile new class name for jenkins
 			$jenkinsClassName = $prefix . "." . $filename . "." . $suitename;

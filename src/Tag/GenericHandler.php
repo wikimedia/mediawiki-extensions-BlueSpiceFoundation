@@ -11,7 +11,7 @@ class GenericHandler {
 	const TAG_SPAN = 'span';
 	const TAG_BUTTON = 'button';
 
-	protected function getValidElementNames () {
+	protected function getValidElementNames() {
 		return [
 			static::TAG_BUTTON,
 			static::TAG_DIV,
@@ -85,7 +85,7 @@ class GenericHandler {
 	 */
 	public function handle( $input, array $args, \Parser $parser, \PPFrame $frame ) {
 		$elementName = $this->tag->getContainerElementName();
-		if( !$this->isValidContainerElementName( $elementName ) ) {
+		if ( !$this->isValidContainerElementName( $elementName ) ) {
 			$tagNames = $this->tag->getTagNames();
 			throw new \MWException(
 				"Invalid container element name for tag '{$tagNames[0]}'!"
@@ -100,11 +100,11 @@ class GenericHandler {
 		$this->processInput();
 		$this->processArgs();
 
-		if( $this->hasErrors() ) {
+		if ( $this->hasErrors() ) {
 			return $this->makeErrorOutput();
 		}
 
-		if( $this->tag->needsDisabledParserCache() ) {
+		if ( $this->tag->needsDisabledParserCache() ) {
 			$this->parser->getOutput()->updateCacheExpiry( 0 );
 		}
 
@@ -119,8 +119,8 @@ class GenericHandler {
 
 		try {
 			$output = $handler->handle();
-		} catch( \Exception $ex) {
-			//TODO: Find way to output "hidden" trace
+		} catch ( \Exception $ex ) {
+			// TODO: Find way to output "hidden" trace
 			$this->errors[] = $ex->getMessage();
 			return $this->makeErrorOutput();
 		}
@@ -142,7 +142,7 @@ class GenericHandler {
 	 */
 	protected function makeContainerAttributes() {
 		$cssClasses = [ 'bs-tag' ];
-		foreach( $this->tag->getTagNames() as $tagName ) {
+		foreach ( $this->tag->getTagNames() as $tagName ) {
 			$cssClasses[] = \Sanitizer::escapeClass( "bs-tag-$tagName" );
 		}
 
@@ -150,7 +150,7 @@ class GenericHandler {
 			'class' => implode( ' ', array_unique( $cssClasses ) )
 		];
 
-		foreach( $this->args as $argName => $argValue ) {
+		foreach ( $this->args as $argName => $argValue ) {
 			$attribs["data-bs-arg-$argName"] = $argValue;
 		}
 
@@ -161,13 +161,13 @@ class GenericHandler {
 
 	protected function processInput() {
 		$this->processedInput = $this->input;
-		if( $this->tag->needsParsedInput() ) {
+		if ( $this->tag->needsParsedInput() ) {
 			$this->processedInput =
-				$this->parser->recursiveTagParse( $this->processedInput, $this->frame  );
+				$this->parser->recursiveTagParse( $this->processedInput, $this->frame );
 		}
 
 		$paramDefinition = $this->tag->getInputDefinition();
-		if( $paramDefinition === null ) {
+		if ( $paramDefinition === null ) {
 			return;
 		}
 		$paramName = $paramDefinition->getName();
@@ -192,22 +192,22 @@ class GenericHandler {
 
 	protected function processArgs() {
 		$this->processedArgs = $this->args;
-		if( $this->tag->needsParseArgs() ) {
-			foreach( $this->processedArgs as &$processedArg ) {
+		if ( $this->tag->needsParseArgs() ) {
+			foreach ( $this->processedArgs as &$processedArg ) {
 				$processedArg =
 					$this->parser->recursiveTagParse( $processedArg );
 			}
 		}
 
 		$paramDefinitions = $this->tag->getArgsDefinitions();
-		if( empty( $paramDefinitions ) ) {
+		if ( empty( $paramDefinitions ) ) {
 			return;
 		}
 
 		$rawArgs = $this->processedArgs;
 		$this->processedArgs = [];
 
-		foreach( $paramDefinitions as $paramDefinition ) {
+		foreach ( $paramDefinitions as $paramDefinition ) {
 			$paramDefinition->setMessage(
 				wfMessage(
 					'bs-tag-param-desc',
@@ -223,8 +223,8 @@ class GenericHandler {
 				$paramDefinition->getAliases()
 			);
 
-			foreach( $names as $name ) {
-				if( isset( $rawArgs[$name] ) ) {
+			foreach ( $names as $name ) {
+				if ( isset( $rawArgs[$name] ) ) {
 					$localArgs[$name] = $rawArgs[$name];
 				}
 			}
@@ -233,7 +233,7 @@ class GenericHandler {
 			$result = $processor->processParameters();
 			$this->checkForProcessingErrors( $result );
 
-			foreach( $result->getParameters() as $processedParam ) {
+			foreach ( $result->getParameters() as $processedParam ) {
 				$this->processedArgs[$processedParam->getName()]
 					= $processedParam->getValue();
 			}
@@ -247,7 +247,7 @@ class GenericHandler {
 	protected function makeErrorOutput() {
 		$out = [];
 		$translator = new ProcessingErrorMessageTranslator();
-		foreach( $this->errors as $errorKey => $errorMessage ) {
+		foreach ( $this->errors as $errorKey => $errorMessage ) {
 			$translatedMessage = $translator->translate( $errorMessage );
 			$label = $this->makeErrorLabel( $errorKey );
 			$out[] = \Html::element(
@@ -265,12 +265,12 @@ class GenericHandler {
 
 	protected function addResourceLoaderModules() {
 		$modules = $this->tag->getResourceLoaderModules();
-		foreach( $modules as $moduleName ) {
+		foreach ( $modules as $moduleName ) {
 			$this->parser->getOutput()->addModules( $moduleName );
 		}
 
 		$moduleStyles = $this->tag->getResourceLoaderModuleStyles();
-		foreach( $moduleStyles as $moduleStyleName ) {
+		foreach ( $moduleStyles as $moduleStyleName ) {
 			$this->parser->getOutput()->addModuleStyles( $moduleStyleName );
 		}
 	}
@@ -280,7 +280,7 @@ class GenericHandler {
 	 * @param \ParamProcessor\ProcessingResult $result
 	 */
 	protected function checkForProcessingErrors( $result ) {
-		foreach( $result->getErrors() as $error ) {
+		foreach ( $result->getErrors() as $error ) {
 			$this->errors[$error->getElement()] = $error->getMessage();
 		}
 	}
@@ -288,7 +288,7 @@ class GenericHandler {
 	protected function makeErrorLabel( $errorKey ) {
 		$keyParts = explode( '-', $errorKey, 2 );
 		$argName = end( $keyParts );
-		if( $keyParts[0] === 'input' ){
+		if ( $keyParts[0] === 'input' ) {
 			return '';
 		}
 

@@ -21,7 +21,7 @@ class Sort {
 		$this->property = $property;
 		$this->direction = strtoupper( $direction );
 
-		if( !in_array( $this->direction, [ self::ASCENDING, self::DESCENDING ] ) ) {
+		if ( !in_array( $this->direction, [ self::ASCENDING, self::DESCENDING ] ) ) {
 			throw new UnexpectedValueException(
 				"'{$this->direction}' is not an allowed value for argument \$direction"
 			);
@@ -59,8 +59,8 @@ class Sort {
 	 */
 	public static function newCollectionFromArray( $sorts ) {
 		$sortObjects = [];
-		foreach( $sorts as $sort ) {
-			if( is_array( $sort ) ) {
+		foreach ( $sorts as $sort ) {
+			if ( is_array( $sort ) ) {
 				$sort = (object)$sort;
 			}
 

@@ -30,13 +30,13 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 		$this->args[static::PARAM_WIDTH] = $params->get( static::PARAM_WIDTH, 50 );
 		$this->args[static::PARAM_HEIGHT] = $params->get( static::PARAM_HEIGHT, 50 );
 
-		if( empty( $this->args[static::PARAM_CLASS] ) ) {
+		if ( empty( $this->args[static::PARAM_CLASS] ) ) {
 			$this->args[static::PARAM_CLASS] = '';
 		}
 		$this->args[static::PARAM_CLASS] .= ' bs-groupminiprofile';
 
 		$message = new \Message( 'group-' . $this->group );
-		if( !$message->exists() ) {
+		if ( !$message->exists() ) {
 			$message = new \RawMessage( $this->group );
 		}
 

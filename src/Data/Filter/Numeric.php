@@ -11,13 +11,14 @@ class Numeric extends Range {
 	 * @return boolean
 	 */
 	protected function doesMatch( $dataSet ) {
-		if( !is_numeric( $this->getValue() ) ) {
-			return true; //TODO: Warning
+		if ( !is_numeric( $this->getValue() ) ) {
+			// TODO: Warning
+			return true;
 		}
 		$fieldValue = (int)$dataSet->get( $this->getField() );
 		$filterValue = (int)$this->getValue();
 
-		switch( $this->getComparison() ) {
+		switch ( $this->getComparison() ) {
 			case self::COMPARISON_GREATER_THAN:
 				return $fieldValue > $filterValue;
 			case self::COMPARISON_LOWER_THAN:

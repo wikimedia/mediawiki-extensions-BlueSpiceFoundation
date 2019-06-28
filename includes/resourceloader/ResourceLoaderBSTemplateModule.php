@@ -33,7 +33,7 @@ class ResourceLoaderBSTemplateModule extends ResourceLoaderModule {
 	 */
 	public function getTemplates() {
 		$templates = parent::getTemplates();
-		foreach( BSTemplateHelper::getAllTemplates() as $sName => $sPath ) {
+		foreach ( BSTemplateHelper::getAllTemplates() as $sName => $sPath ) {
 			if ( is_int( $sName ) ) {
 				continue;
 			}

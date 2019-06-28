@@ -10,4 +10,4 @@
 	  * @return \BlueSpice\Data\Record[]
 	  */
 	 public function trim( $dataSets );
-}
+ }

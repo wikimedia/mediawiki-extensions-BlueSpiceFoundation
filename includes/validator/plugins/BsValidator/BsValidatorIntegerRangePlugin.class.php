@@ -7,8 +7,8 @@
  */
 
 // TODO MRG20100816: Kommentar, auch Fehlercodes beschreiben
-class BsValidatorIntegerRangePlugin implements BsValidatorPlugin
-{
+class BsValidatorIntegerRangePlugin implements BsValidatorPlugin {
+
 	public static function isValid( $validateThis, $options ) {
 		if ( is_numeric( $validateThis ) ) {
 			if ( isset( $options['lowerBoundary'] ) && ( $validateThis < $options['lowerBoundary'] ) ) {

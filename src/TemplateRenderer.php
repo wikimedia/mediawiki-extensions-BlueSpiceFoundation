@@ -45,7 +45,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 
 	protected function makeTagContent() {
 		$content = $this->getFromCache();
-		if( $content ) {
+		if ( $content ) {
 			return $content;
 		}
 
@@ -71,10 +71,10 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 */
 	protected function getRenderedArgs() {
 		$args = [];
-		foreach( $this->getArgs() as $name => $val ) {
+		foreach ( $this->getArgs() as $name => $val ) {
 			$method = "render_$name";
 			$renderedVal = $val;
-			if( is_callable( array( $this, $method ) ) ) {
+			if ( is_callable( array( $this, $method ) ) ) {
 				$renderedVal = $this->$method( $val );
 			}
 			\Hooks::run( 'BSTemplateRendererGetRenderedArgs', [
@@ -82,17 +82,17 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 				$name,
 				$val,
 				&$renderedVal,
-			]);
+			] );
 			$args[ $name ] = $renderedVal;
 		}
 		return $args;
 	}
 
 	protected function getFromCache() {
-		if( !$cacheKey = $this->getCacheKey() ) {
+		if ( !$cacheKey = $this->getCacheKey() ) {
 			return false;
 		}
-		if( $this->hasCacheEntry() ) {
+		if ( $this->hasCacheEntry() ) {
 			return static::$cache[$cacheKey];
 		}
 		static::$cache[$cacheKey] = \BsCacheHelper::get( $cacheKey );
@@ -100,7 +100,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	protected function hasCacheEntry() {
-		if( !$cacheKey = $this->getCacheKey() ) {
+		if ( !$cacheKey = $this->getCacheKey() ) {
 			return false;
 		}
 		return isset( static::$cache[$cacheKey] );
@@ -111,7 +111,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	protected function getCacheExpiryTime() {
-		return 60*1440; //24h - max
+		// 24h - max
+		return 60 * 1440;
 	}
 
 	/**
@@ -120,7 +121,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @return boolean
 	 */
 	protected function appendCache( $content ) {
-		if( !$cacheKey = $this->getCacheKey() ) {
+		if ( !$cacheKey = $this->getCacheKey() ) {
 			return false;
 		}
 		\BsCacheHelper::set(
@@ -137,11 +138,11 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @return boolean
 	 */
 	public function invalidate() {
-		if( !$cacheKey = $this->getCacheKey() ) {
+		if ( !$cacheKey = $this->getCacheKey() ) {
 			return false;
 		}
 
-		if( isset( static::$cache[$cacheKey] ) ) {
+		if ( isset( static::$cache[$cacheKey] ) ) {
 			unset( static::$cache[$cacheKey] );
 		}
 		return \BsCacheHelper::invalidateCache( $cacheKey );

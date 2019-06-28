@@ -53,7 +53,7 @@ abstract class TargetCache implements ITargetCache {
 	 * @return IRegistry
 	 */
 	protected function getRegistry() {
-		if( $this->registry ) {
+		if ( $this->registry ) {
 			return $this->registry;
 		}
 		$this->registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
@@ -69,7 +69,7 @@ abstract class TargetCache implements ITargetCache {
 	 * @return ITargetCacheHandler
 	 */
 	public function getHandler( $key, $target ) {
-		if( isset( $this->instances[$key][$target->getIdentifier()] ) ) {
+		if ( isset( $this->instances[$key][$target->getIdentifier()] ) ) {
 			return $this->instances[$key][$target->getIdentifier()];
 		}
 		$className = $this->getRegistry()->getValue(
@@ -91,7 +91,7 @@ abstract class TargetCache implements ITargetCache {
 	 * @param ITarget $target
 	 */
 	public function invalidateAll( $target, $action = '' ) {
-		foreach( $this->getRegistry()->getAllKeys() as $key ) {
+		foreach ( $this->getRegistry()->getAllKeys() as $key ) {
 			$this->getHandler( $key, $target )->invalidate( $action );
 		}
 	}

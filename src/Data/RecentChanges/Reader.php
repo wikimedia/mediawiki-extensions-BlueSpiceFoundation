@@ -29,8 +29,8 @@ class Reader extends DatabaseReader {
 		$namespaceIds = $this->context->getLanguage()->getNamespaceIds();
 		$contentNamespaceIds = [];
 
-		foreach( $namespaceIds as $namespaceId ) {
-			if( MWNamespace::isContent( $namespaceId ) ) {
+		foreach ( $namespaceIds as $namespaceId ) {
+			if ( MWNamespace::isContent( $namespaceId ) ) {
 				$contentNamespaceIds[] = $namespaceId;
 			}
 		}

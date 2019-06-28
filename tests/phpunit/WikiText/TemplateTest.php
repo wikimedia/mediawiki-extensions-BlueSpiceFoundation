@@ -80,7 +80,7 @@ HERE;
 HERE;
 
 		$this->assertEquals( $expectedWikiText, $wikiText );
-	}
+	 }
 
 	public function testComplexNamedParams() {
 		$template = new \BlueSpice\WikiText\Template( 'TestTemplate', [
@@ -89,7 +89,7 @@ HERE;
 				"Some normal text with a ",
 				new \BlueSpice\WikiText\Template( 'NestedTemplate', [
 					'innerParam1' => 'Inner value 1'
-				]),
+				] ),
 				" and\n\nsome paragraph"
 			],
 			'param3' => 'Value 3'

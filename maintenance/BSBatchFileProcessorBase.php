@@ -14,8 +14,8 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addOption('src', 'The path to the source directory', true, true);
-		$this->addOption('dest', 'The path to the destination directory', false, true);
+		$this->addOption( 'src', 'The path to the source directory', true, true );
+		$this->addOption( 'dest', 'The path to the destination directory', false, true );
 
 		$this->aFileExtensionWhitelist = array_map(
 			'strtoupper', $this->aFileExtensionWhitelist
@@ -31,8 +31,8 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 		$aFiles = $this->getFileList();
 
 		$iProcessedFiles = 0;
-		foreach( $aFiles as $sFileName => $oFile ) {
-			if( $oFile instanceof SplFileInfo !== true ) {
+		foreach ( $aFiles as $sFileName => $oFile ) {
+			if ( $oFile instanceof SplFileInfo !== true ) {
 				$this->error( 'Could not process list item: '
 						. $sFileName . ' '
 						. var_export( $oFile, true )
@@ -51,8 +51,8 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 		}
 
 		$this->output( $iProcessedFiles.' file(s) processed.' );
-		$this->output( count($this->aErrors).' errors(s) occurred.' );
-		if( count( $this->aErrors ) > 0 ) {
+		$this->output( count( $this->aErrors ).' errors(s) occurred.' );
+		if ( count( $this->aErrors ) > 0 ) {
 			$this->output(
 				implode( "\n", $this->aErrors )
 			);
@@ -87,19 +87,19 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 
 		$aFiles = array();
 		foreach ( $oFiles as $sPath => $oFile ) {
-			if( $oFile instanceof SplFileInfo === false ) {
+			if ( $oFile instanceof SplFileInfo === false ) {
 				$this->error( 'Not a valid SplFileInfo object: ' . $sPath );
 			}
-			if( !empty( $this->aFileExtensionWhitelist ) ) {
+			if ( !empty( $this->aFileExtensionWhitelist ) ) {
 				$sFileExt = strtoupper( $oFile->getExtension() );
-				if( !in_array( $sFileExt, $this->aFileExtensionWhitelist ) ) {
+				if ( !in_array( $sFileExt, $this->aFileExtensionWhitelist ) ) {
 					continue;
 				}
 			}
 			$aFiles[$oFile->getPathname()] = $oFile;
 		}
 
-		ksort($aFiles, SORT_NATURAL);
+		ksort( $aFiles, SORT_NATURAL );
 		$this->output( '... found ' . count( $aFiles ) . ' file(s).' );
 		return $aFiles;
 	}

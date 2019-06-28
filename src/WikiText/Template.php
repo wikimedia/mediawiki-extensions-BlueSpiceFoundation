@@ -51,7 +51,7 @@ class Template {
 	 * @return mixed
 	 */
 	public function get( $paramNameorIndex, $default = '' ) {
-		if( isset( $this->params[$paramNameorIndex] ) ) {
+		if ( isset( $this->params[$paramNameorIndex] ) ) {
 			return $this->params[$paramNameorIndex];
 		}
 		return $default;
@@ -120,23 +120,23 @@ class Template {
 
 	protected function appendName() {
 		$this->buffer[] = $this->name;
-		if( $this->renderFormatted ) {
+		if ( $this->renderFormatted ) {
 			$this->buffer[] = "\n";
 		}
 	}
 
 	protected function appendParams() {
-		foreach( $this->params as $paramNameOrIndex => $paramValue ) {
+		foreach ( $this->params as $paramNameOrIndex => $paramValue ) {
 			$this->buffer[] = "|";
 			$isNamedParameter = false;
-			if( !is_numeric( $paramNameOrIndex ) ) {
+			if ( !is_numeric( $paramNameOrIndex ) ) {
 				$this->buffer[] = "$paramNameOrIndex =";
 				$isNamedParameter = true;
 			}
 
 			$this->appendParamValue( $paramValue, $isNamedParameter );
 
-			if( $this->renderFormatted ) {
+			if ( $this->renderFormatted ) {
 				$this->buffer[] = "\n";
 			}
 		}
@@ -148,10 +148,10 @@ class Template {
 		$preparedParamValue = $this->prepareParamValue( $paramValue );
 		$firstChar = substr( $preparedParamValue, 0, 1 );
 
-		if( in_array( $firstChar, $this->specialWikiTextMarkupFirstChars ) ) {
+		if ( in_array( $firstChar, $this->specialWikiTextMarkupFirstChars ) ) {
 			$this->buffer[] = "\n";
 		}
-		else if( $isNamedParameter ) {
+		else if ( $isNamedParameter ) {
 			$this->buffer[] = ' ';
 		}
 
@@ -159,7 +159,7 @@ class Template {
 	}
 
 	protected function prepareParamValue( $paramValue ) {
-		if( is_array(  $paramValue ) ) {
+		if ( is_array( $paramValue ) ) {
 			$newParamValue = implode( '', $paramValue );
 		}
 		else {

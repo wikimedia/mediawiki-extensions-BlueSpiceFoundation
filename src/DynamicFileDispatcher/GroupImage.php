@@ -22,13 +22,15 @@ class GroupImage extends Module {
 			],
 			static::WIDTH => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
-				Params::PARAM_DEFAULT => 40, //TODO: config
+				// TODO: config
+				Params::PARAM_DEFAULT => 40,
 			],
 			static::HEIGHT => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
-				Params::PARAM_DEFAULT => 40, //TODO: config
+				// TODO: config
+				Params::PARAM_DEFAULT => 40,
 			],
-		]);
+		] );
 	}
 
 	/**
@@ -37,7 +39,7 @@ class GroupImage extends Module {
 	 */
 	protected function extractParams( $params ) {
 		parent::extractParams( $params );
-		if( empty( $this->params[static::GROUP] ) ) {
+		if ( empty( $this->params[static::GROUP] ) ) {
 			throw new \MWException(
 				"Empty 'group' parameter"
 			);

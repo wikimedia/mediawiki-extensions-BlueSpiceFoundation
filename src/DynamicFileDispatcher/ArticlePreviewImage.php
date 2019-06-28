@@ -18,17 +18,20 @@ class ArticlePreviewImage extends Module {
 			],
 			static::REVISION => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
-				Params::PARAM_DEFAULT => 0, //TODO: config
+				// TODO: config
+				Params::PARAM_DEFAULT => 0,
 			],
 			static::WIDTH => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
-				Params::PARAM_DEFAULT => 40, //TODO: config
+				// TODO: config
+				Params::PARAM_DEFAULT => 40,
 			],
 			static::HEIGHT => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
-				Params::PARAM_DEFAULT => 40, //TODO: config
+				// TODO: config
+				Params::PARAM_DEFAULT => 40,
 			],
-		]);
+		] );
 	}
 
 	/**
@@ -37,17 +40,17 @@ class ArticlePreviewImage extends Module {
 	 */
 	protected function extractParams( $params ) {
 		parent::extractParams( $params );
-		if( !\Title::newFromText( $this->params[static::TITLETEXT] ) ) {
+		if ( !\Title::newFromText( $this->params[static::TITLETEXT] ) ) {
 			throw new \MWException(
 				"Invalid titletext: {$this->params[static::TITLETEXT]}"
 			);
 		}
-		if( !empty( $this->params[static::REVISION] ) ) {
+		if ( !empty( $this->params[static::REVISION] ) ) {
 			$store = Services::getInstance()->getRevisionStore();
 			$revision = $store->getRevisionById(
 				$this->params[static::REVISION]
 			);
-			if( !$revision ) {
+			if ( !$revision ) {
 				throw new \MWException(
 					"Invalid revid: {$this->params[static::REVISION]}"
 				);
@@ -62,7 +65,7 @@ class ArticlePreviewImage extends Module {
 	 */
 	public function getFile() {
 		$revision = null;
-		if( $this->params[static::REVISION] > 0 ) {
+		if ( $this->params[static::REVISION] > 0 ) {
 			$store = Services::getInstance()->getRevisionStore();
 			$revision = $store->getRevisionById(
 				$this->params[static::REVISION]

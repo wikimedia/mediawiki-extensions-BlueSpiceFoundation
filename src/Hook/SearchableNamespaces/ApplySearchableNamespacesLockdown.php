@@ -13,10 +13,10 @@ class ApplySearchableNamespacesLockdown extends \BlueSpice\Hook\SearchableNamesp
 	 *
 	 * @return boolean
 	 */
-	protected function doProcess () {
+	protected function doProcess() {
 		$this->setUp();
 
-		if( empty( $this->namespaceRolesLockdown ) ) {
+		if ( empty( $this->namespaceRolesLockdown ) ) {
 			return true;
 		}
 
@@ -25,21 +25,21 @@ class ApplySearchableNamespacesLockdown extends \BlueSpice\Hook\SearchableNamesp
 
 		$userGroups = $this->user->getEffectiveGroups();
 
-		foreach( $this->namespaces as $nsId => $nsName ) {
-			if( isset( $this->namespaceRolesLockdown[ $nsId ] ) == false ) {
+		foreach ( $this->namespaces as $nsId => $nsName ) {
+			if ( isset( $this->namespaceRolesLockdown[ $nsId ] ) == false ) {
 				continue;
 			}
 			$isAllowed = false;
-			foreach( $this->namespaceRolesLockdown[ $nsId ] as $roleName => $groups ) {
-				if( in_array( $roleName, $permissionRoles ) == false ) {
+			foreach ( $this->namespaceRolesLockdown[ $nsId ] as $roleName => $groups ) {
+				if ( in_array( $roleName, $permissionRoles ) == false ) {
 					continue;
 				}
-				if( array_intersect ( $groups, $userGroups ) ) {
+				if ( array_intersect( $groups, $userGroups ) ) {
 					$isAllowed = true;
 					break;
 				}
 			}
-			if( !$isAllowed ) {
+			if ( !$isAllowed ) {
 				unset( $this->namespaces[ $nsId ] );
 			}
 		}

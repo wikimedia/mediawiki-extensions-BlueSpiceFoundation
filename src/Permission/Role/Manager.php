@@ -65,7 +65,7 @@ class Manager {
 	 * @return BlueSpice\Permission\Role\Manager
 	 */
 	public static function getInstance( &$groupPermission, &$roleGroups, &$roleSystemEnabled ) {
-		if( self::$instance === null ) {
+		if ( self::$instance === null ) {
 			self::$instance = self::newInstance( $groupPermission, $roleGroups, $roleSystemEnabled );
 		}
 		return self::$instance;
@@ -82,20 +82,20 @@ class Manager {
 	 */
 	public function applyRoles() {
 		$this->resetGroupPermissions();
-		foreach( $this->groupRoles as $group => $roles ) {
-			foreach( $roles as $role => $active ) {
-				if( $this->roleExists( $role ) === false ) {
+		foreach ( $this->groupRoles as $group => $roles ) {
+			foreach ( $roles as $role => $active ) {
+				if ( $this->roleExists( $role ) === false ) {
 					wfDebugLog(
 						'BsRoleSystem',
 						__CLASS__ . ": Applying role $role failed because it does not exist!"
 					);
 					continue;
 				}
-				if( $active ) {
+				if ( $active ) {
 					$this->applyToGroup( $group, $role, self::ROLE_GRANT );
 				} else {
-					//DS: Maybe used in the future
-					#$this->applyToGroup( $group, $role, self::ROLE_DENY );
+					// DS: Maybe used in the future
+					# $this->applyToGroup( $group, $role, self::ROLE_DENY );
 				}
 			}
 		}
@@ -108,19 +108,19 @@ class Manager {
 	 * @param string $role Role name
 	 * @param bool $grant Grant or deny permissions in the role
 	 */
-	protected function applyToGroup ( $group, $role, $grant ) {
+	protected function applyToGroup( $group, $role, $grant ) {
 		$roleObject = $this->getRole( $role );
 		$rolePermissions = $roleObject->getPermissions();
-		foreach( $rolePermissions as $permission ) {
+		foreach ( $rolePermissions as $permission ) {
 			$this->groupPermissions[ $group ][ $permission ] = $grant;
 		}
 	}
 
 	protected function resetGroupPermissions() {
-		//All permissions, including 3rd party ones,
-		//which are not included in the registry are removed
+		// All permissions, including 3rd party ones,
+		// which are not included in the registry are removed
 		$this->groupPermissions = array_map(
-			function() {
+			function () {
 				return [];
 			},
 			$this->groupPermissions
@@ -134,7 +134,7 @@ class Manager {
 	 * @return array
 	 */
 	public function getGroupRoles( $group = '' ) {
-		if( $group && isset( $this->groupRoles[ $group ] ) ) {
+		if ( $group && isset( $this->groupRoles[ $group ] ) ) {
 			return [ $group => $this->groupRoles[ $group ] ];
 		}
 		return $this->groupRoles;
@@ -158,7 +158,7 @@ class Manager {
 	 * @param srting $group GroupName
 	 */
 	public function removeRoleFromGroup( $role, $group ) {
-		if( isset( $this->groupRoles[ $group ][ $role ] ) ) {
+		if ( isset( $this->groupRoles[ $group ][ $role ] ) ) {
 			unset( $this->groupRoles[ $group ][ $role ] );
 		}
 	}
@@ -178,14 +178,14 @@ class Manager {
 	 * Enables extensions to register custom role objects
 	 */
 	public function registerRole( $roleName, $permissions = [], $groups = [], $assignToSysop = false, $roleObject = null ) {
-		if( $roleObject == null || ( $roleObject instanceof IRole ) == false ) {
+		if ( $roleObject == null || ( $roleObject instanceof IRole ) == false ) {
 			$roleObject = Role::newFromNameAndPermissions( $roleName, $permissions );
 		}
 		$this->addRole( $roleObject );
-		if( empty( $groups ) === true && $assignToSysop === true ) {
+		if ( empty( $groups ) === true && $assignToSysop === true ) {
 			$this->groupRoles[ 'sysop' ][ $roleName ] = true;
 		} else {
-			foreach( $groups as $groupName => $active ) {
+			foreach ( $groups as $groupName => $active ) {
 				$this->assignRoleToGroup( $roleName, $groupName, $active );
 			}
 		}
@@ -197,12 +197,12 @@ class Manager {
 	 * @param string $roleName
 	 */
 	public function unregisterRole( $roleName ) {
-		if( $this->roleExists( $roleName ) ) {
+		if ( $this->roleExists( $roleName ) ) {
 			$this->removeRole( $roleName );
 		}
-		foreach( $this->groupRoles as $group => $roles ) {
-			foreach( $roles as $role => $granted ) {
-				if( $roleName === $role ) {
+		foreach ( $this->groupRoles as $group => $roles ) {
+			foreach ( $roles as $role => $granted ) {
+				if ( $roleName === $role ) {
 					$this->removeRoleFromGroup( $role, $group );
 				}
 			}
@@ -220,13 +220,13 @@ class Manager {
 	public function addPermissionToRoles( $permission, $roles ) {
 		$oAdminRole = $this->getRole( 'admin' );
 		$oAdminRole->addPermission( $permission );
-		if( isset( $roles ) ) {
-			foreach( $roles as $role ) {
-				if( $this->roleExists ( $role ) === false ) {
+		if ( isset( $roles ) ) {
+			foreach ( $roles as $role ) {
+				if ( $this->roleExists( $role ) === false ) {
 					$this->registerRole( $role, [ $permission ], [], false );
 				}
 				$roleObject = $this->getRole( $role );
-				if( $roleObject instanceof Role\IRole ) {
+				if ( $roleObject instanceof Role\IRole ) {
 					$roleObject->addPermission( $permission );
 				}
 			}
@@ -266,26 +266,26 @@ class Manager {
 	 * @param string $sName
 	 * @return \BlueSpice\Permission\Role\IRole
 	 */
-	public function getRole ( $role ) {
-		if( $this->roleExists ( $role ) ) {
+	public function getRole( $role ) {
+		if ( $this->roleExists( $role ) ) {
 			return $this->roles[ $role ];
 		}
 		return null;
 	}
 
-	protected function addRole ( $roleObject ) {
+	protected function addRole( $roleObject ) {
 		$this->roles[ $roleObject->getName() ] = $roleObject;
 	}
 
-	protected function roleExists ( $roleName ) {
-		if( isset( $this->roles[ $roleName ] ) ) {
+	protected function roleExists( $roleName ) {
+		if ( isset( $this->roles[ $roleName ] ) ) {
 			return true;
 		}
 		return false;
 	}
 
-	protected function removeRole ( $roleName ) {
-		if( $this->roleExists ( $roleName ) ) {
+	protected function removeRole( $roleName ) {
+		if ( $this->roleExists( $roleName ) ) {
 			unset( $this->roles[ $roleName ] );
 		}
 	}
@@ -302,7 +302,7 @@ class Manager {
 
 	public function getRoleNamesAndPermissions() {
 		$rolesAndPermissions = [];
-		foreach( $this->roles as $roleName => $roleObject ) {
+		foreach ( $this->roles as $roleName => $roleObject ) {
 			$rolesAndPermissions[] = [
 				'role' => $roleName,
 				'permissions' => $roleObject->getPermissions()
@@ -311,15 +311,15 @@ class Manager {
 		return $rolesAndPermissions;
 	}
 
-	protected function makeRoles () {
-		foreach( $this->permissionRegistry->getPermissions() as
+	protected function makeRoles() {
+		foreach ( $this->permissionRegistry->getPermissions() as
 				$permissionName => $permissionDescription ) {
-			if( empty( $permissionDescription->getRoles() ) ) {
+			if ( empty( $permissionDescription->getRoles() ) ) {
 				continue;
 			}
-			foreach( $permissionDescription->getRoles() as $roleName ) {
+			foreach ( $permissionDescription->getRoles() as $roleName ) {
 
-				if( $this->roleExists ( $roleName ) === false ) {
+				if ( $this->roleExists( $roleName ) === false ) {
 					$this->registerRole( $roleName );
 				}
 				$roleObject = $this->getRole( $roleName );

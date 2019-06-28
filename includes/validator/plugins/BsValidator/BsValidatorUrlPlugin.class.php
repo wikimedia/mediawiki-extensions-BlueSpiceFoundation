@@ -14,7 +14,6 @@
  */
 class BsValidatorUrlPlugin implements BsValidatorPlugin {
 
-
 	public static function isValid( $validateThis, $options ) {
 		$params = ( array_key_exists( 'flags', $options ) && $options['flags'] != 0 )
 			? $options['flags']
@@ -27,7 +26,8 @@ class BsValidatorUrlPlugin implements BsValidatorPlugin {
 
 		$result = ( is_null( $params ) )
 			? filter_var( $validateThis, FILTER_VALIDATE_URL )
-			: filter_var( $validateThis, FILTER_VALIDATE_URL, $params ); // return is boolean
+			// return is boolean
+			: filter_var( $validateThis, FILTER_VALIDATE_URL, $params );
 
 		return ( $result === false )
 			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-url-validation-not-approved' )

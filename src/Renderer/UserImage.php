@@ -26,7 +26,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 			static::PARAM_USER,
 			\RequestContext::getMain()->getUser()
 		);
-		if( !$this->user instanceof \User ) {
+		if ( !$this->user instanceof \User ) {
 			$this->user = \RequestContext::getMain()->getUser();
 		}
 		$this->args[static::PARAM_WIDTH] = $params->get(
@@ -37,7 +37,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 			static::PARAM_HEIGHT,
 			50
 		);
-		if( empty( $this->args[static::PARAM_CLASS] ) ) {
+		if ( empty( $this->args[static::PARAM_CLASS] ) ) {
 			$this->args[static::PARAM_CLASS] = '';
 		}
 		$this->args[static::PARAM_CLASS] .= ' bs-userminiprofile';

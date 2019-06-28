@@ -47,7 +47,7 @@ $cfgRequiredExtensions[] = [ "zip",            "<span class=\"warn\">WARNING!</s
 $cfgRequiredExtensions[] = [ "Zend OPcache",   "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use a fast bytecode cache." ];
 
 // PHP ini values#
-#$cfgINIoptions[] = [ "date.timezone",       "!=", "Off",  "<span class=\"warn\">WARNING!</span> You should set this to your local timezone." ];
+# $cfgINIoptions[] = [ "date.timezone",       "!=", "Off",  "<span class=\"warn\">WARNING!</span> You should set this to your local timezone." ];
 $cfgINIoptions[] = [ "memory_limit",        ">=", "128",  "<span class=\"warn\">WARNING!</span> You should increase this value to 128M or higher." ];
 $cfgINIoptions[] = [ "max_execution_time",  ">=", "120",  "<span class=\"warn\">WARNING!</span> You should increase this value to 120 or higher." ];
 $cfgINIoptions[] = [ "post_max_size",       ">=", "32",   "<span class=\"warn\">WARNING!</span> You should increase this value to 32M or higher." ];
@@ -62,7 +62,7 @@ $cfgWritableFolders[] = [ "/extensions/BlueSpiceFoundation/data",   "<span class
 $cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class=\"warn\">WARNING!</span> This folder is only needed for BlueSpice pro" ];
 
 // Files to check
-#$cfgFilesToCheck[] = [ "/extensions/BlueSpiceExtensions/BlueSpiceExtensions.local.php", "<span class=\"warn\">WARNING!</span> BlueSpice will load it's default extensions." ];
+# $cfgFilesToCheck[] = [ "/extensions/BlueSpiceExtensions/BlueSpiceExtensions.local.php", "<span class=\"warn\">WARNING!</span> BlueSpice will load it's default extensions." ];
 
 ?>
 <!DOCTYPE html>
@@ -470,7 +470,6 @@ $cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class
 // Functions ======================================================================================================================
 
 function checkMediaWikiHomeDir( $mwVersion ) {
-
 	if ( !file_exists( __DIR__ . "/cache" ) ||
              !file_exists( __DIR__ . "/images" ) ||
              !file_exists( __DIR__ . "/extensions" ) ||
@@ -483,15 +482,14 @@ function checkMediaWikiHomeDir( $mwVersion ) {
 }
 
 function checkPHPversion( $phpversion ) {
-
 	global $cfgPHPversion;
 
 	$sResult = "PHP version is {$phpversion} ..... ";
 
-	if ( version_compare( $phpversion, $cfgPHPversion['min'], '<') ) {
+	if ( version_compare( $phpversion, $cfgPHPversion['min'], '<' ) ) {
 		$sResult .= "<span class=\"fail\">FAILED!</span> This version is not compatible with BlueSpice. Please upgrade to version >= {$cfgPHPversion['min']}.";
 	}
-	elseif ( version_compare( $phpversion, $cfgPHPversion['opt'], '!=') ) {
+	elseif ( version_compare( $phpversion, $cfgPHPversion['opt'], '!=' ) ) {
 		$sResult .= "<span class=\"warn\">WARNING!</span> You should use version {$cfgPHPversion['opt']} for full compatibility.";
 	}
 	else {
@@ -503,7 +501,6 @@ function checkPHPversion( $phpversion ) {
 }
 
 function checkExtensions( $requiredExtensions ) {
-
 	$sReturn = '';
 
 	foreach ( $requiredExtensions as $value ) {
@@ -512,7 +509,7 @@ function checkExtensions( $requiredExtensions ) {
 
 		$sReturn .= "\nChecking: {$extension} ..... ";
 
-		if( extension_loaded( $extension ) ) {
+		if ( extension_loaded( $extension ) ) {
 			$sReturn .= "<span class=\"ok\">OK</span><br/>";
 		}
 		else {
@@ -525,7 +522,6 @@ function checkExtensions( $requiredExtensions ) {
 }
 
 function checkFileUpload() {
-
 	$sReturn = '';
 
 	$fileUploads = ini_get( "file_uploads" );
@@ -551,7 +547,6 @@ function checkFileUpload() {
 }
 
 function checkSessionSavePath() {
-
 	$sReturn = '';
 
 	$sessionSavePath = ini_get( "session.save_path" );
@@ -568,7 +563,6 @@ function checkSessionSavePath() {
 }
 
 function checkINIvalues( $iniOptions ) {
-
 	$sReturn = '';
 	$iniOptionChecked = [];
 
@@ -576,10 +570,10 @@ function checkINIvalues( $iniOptions ) {
 
 		list( $iniOption, $checkOperator, $checkValue, $helptext ) = $value;
 
-		$checkValue = preg_replace("/[^0-9]/", "", $checkValue );
+		$checkValue = preg_replace( "/[^0-9]/", "", $checkValue );
 
 		$iniValue = ini_get( $iniOption );
-		$iniValue = preg_replace("/[^0-9]/", "", $checkValue );
+		$iniValue = preg_replace( "/[^0-9]/", "", $checkValue );
 
 		if ( empty( $iniValue ) ) {
 			$iniValue = "0";
@@ -619,7 +613,6 @@ function checkINIvalues( $iniOptions ) {
 }
 
 function checkWritePerm( $checkFolders ) {
-
 	if ( !is_array( $checkFolders ) ) {
 		$checkFolders = array( [ $checkFolders, "" ] );
 		$returnValue = "tf";
@@ -673,7 +666,6 @@ function checkWritePerm( $checkFolders ) {
 }
 
 function checkFiles( $checkFiles ) {
-
 	$sReturn = '';
 
 	foreach ( $checkFiles as $value ) {
@@ -698,7 +690,6 @@ function checkFiles( $checkFiles ) {
 }
 
 function checkMail() {
-
 	$sReturn = '';
 
 	$smtpHost = ini_get( "SMTP" );
@@ -706,7 +697,7 @@ function checkMail() {
 
 	$smtpConnection = @fsockopen( "tcp://{$smtpHost}", $smtpPort, $errno, $errstr, 5 );
 
-	if ( !$smtpConnection )	{
+	if ( !$smtpConnection ) {
 		$sReturn .= "<span class=\"warn\">WARNING!</span> Mail will not work. Error message: <i>{$errno}: {$errstr}</i>";
 	}
 	else {
@@ -718,7 +709,6 @@ function checkMail() {
 }
 
 function checkSSO() {
-
 	$sReturn = '';
 
 	if ( isset( $_SERVER['REMOTE_USER'] ) ) {

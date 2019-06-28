@@ -34,7 +34,7 @@ class BSTestPermissions extends BSMaintenance {
 	protected function makeUser() {
 		$userName = $this->getOption( 'username' );
 		$this->testUser = User::newFromName( $userName );
-		if( $this->testUser instanceof User === false ) {
+		if ( $this->testUser instanceof User === false ) {
 			throw new Exception( "Could not create valid user from '$userName'" );
 		}
 	}
@@ -42,7 +42,7 @@ class BSTestPermissions extends BSMaintenance {
 	protected function makeTitle() {
 		$title = $this->getOption( 'title' );
 		$this->testTitle = Title::newFromText( $title );
-		if( $this->testTitle instanceof Title === false ) {
+		if ( $this->testTitle instanceof Title === false ) {
 			$this->testTitle = Title::newMainPage();
 		}
 	}

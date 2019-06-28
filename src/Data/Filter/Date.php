@@ -12,16 +12,18 @@ class Date extends Range {
 	 * @return boolean
 	 */
 	protected function doesMatch( $dataSet ) {
-		$filterValue = strtotime( $this->getValue() ); // Format: "m/d/Y"
-		$fieldValue = strtotime( $dataSet->get( $this->getField() ) ); // Format "YmdHis", or something else...
+		// Format: "m/d/Y"
+		$filterValue = strtotime( $this->getValue() );
+		// Format "YmdHis", or something else...
+		$fieldValue = strtotime( $dataSet->get( $this->getField() ) );
 
-		switch( $this->getComparison() ) {
+		switch ( $this->getComparison() ) {
 			case self::COMPARISON_GREATER_THAN:
 				return $fieldValue > $filterValue;
 			case self::COMPARISON_LOWER_THAN:
 				return $fieldValue < $filterValue;
 			case self::COMPARISON_EQUALS:
-				//We need to normalise the date on day-level
+				// We need to normalise the date on day-level
 				$fieldValue = strtotime(
 					date( 'm/d/Y', $fieldValue )
 				);

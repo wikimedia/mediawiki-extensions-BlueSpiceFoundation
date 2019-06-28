@@ -30,7 +30,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			'CatA' => \Title::newFromText( 'CatA', NS_CATEGORY )->getText(),
 			'cAT_B' => \Title::newFromText( 'cAT_B', NS_CATEGORY )->getText(),
 			'CAT C' => \Title::newFromText( 'CAT C', NS_CATEGORY )->getText(),
-			'cat____d'=> \Title::newFromText( 'cat____d', NS_CATEGORY )->getText(),
+			'cat____d' => \Title::newFromText( 'cat____d', NS_CATEGORY )->getText(),
 			'CAT   f  g' => \Title::newFromText( 'CAT   f  g', NS_CATEGORY )->getText()
 		];
 
@@ -47,7 +47,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
-		foreach( $aCategoryTitles as $oCategoryTitle ) {
+		foreach ( $aCategoryTitles as $oCategoryTitle ) {
 			$aActualCategories[] = $oCategoryTitle->getText();
 		}
 
@@ -81,7 +81,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
-		foreach( $aCategoryTitles as $oCategoryTitle ) {
+		foreach ( $aCategoryTitles as $oCategoryTitle ) {
 			$aActualCategories[] = $oCategoryTitle->getText();
 		}
 
@@ -113,7 +113,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
-		foreach( $aCategoryTitles as $oCategoryTitle ) {
+		foreach ( $aCategoryTitles as $oCategoryTitle ) {
 			$aActualCategories[] = $oCategoryTitle->getText();
 		}
 

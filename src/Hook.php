@@ -43,7 +43,6 @@ abstract class Hook implements MessageLocalizer {
 	 */
 	private $config = null;
 
-
 	/**
 	 * Normally both parameters are NULL on instantiation. This is because we
 	 * perform a lazy loading out of performance reasons. But for the sake of
@@ -61,7 +60,7 @@ abstract class Hook implements MessageLocalizer {
 	 * @return \IContextSource
 	 */
 	protected function getContext() {
-		if( $this->context instanceof \IContextSource === false ) {
+		if ( $this->context instanceof \IContextSource === false ) {
 			$this->context = \RequestContext::getMain();
 		}
 		return $this->context;
@@ -78,7 +77,7 @@ abstract class Hook implements MessageLocalizer {
 	 * @return \Config
 	 */
 	protected function getConfig() {
-		if( $this->config instanceof \Config === false ) {
+		if ( $this->config instanceof \Config === false ) {
 			$this->config = $this->getServices()->getConfigFactory()->makeConfig(
 				static::$configName
 			);
@@ -96,10 +95,12 @@ abstract class Hook implements MessageLocalizer {
 	}
 
 	/**
-	 *
+	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 *   or a MessageSpecifier.
+	 * @param mixed $params,... Normal message parameters
 	 * @return Message
 	 */
-	public function msg( $key /* $args */ ) {
+	public function msg( $key ) {
 		return call_user_func_array(
 			[ $this->getContext(), 'msg' ],
 			func_get_args()
@@ -107,19 +108,19 @@ abstract class Hook implements MessageLocalizer {
 	}
 
 	public function process() {
-		if( $this->skipProcessingForAnon() ) {
-			if( $this->getContext()->getUser()->isAnon() ) {
+		if ( $this->skipProcessingForAnon() ) {
+			if ( $this->getContext()->getUser()->isAnon() ) {
 				return true;
 			}
 		}
 
-		if( $this->skipProcessingForSpecialPages() ) {
-			if( $this->getContext()->getTitle()->isSpecialPage() ) {
+		if ( $this->skipProcessingForSpecialPages() ) {
+			if ( $this->getContext()->getTitle()->isSpecialPage() ) {
 				return true;
 			}
 		}
 
-		if( $this->skipProcessing() ) {
+		if ( $this->skipProcessing() ) {
 			return true;
 		}
 

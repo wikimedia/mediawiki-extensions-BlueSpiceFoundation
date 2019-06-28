@@ -10,7 +10,7 @@ class HTMLTextFieldOverride extends HTMLTextField {
 		}
 
 		if ( isset( $this->options['range_min'] ) && $value < $this->options['range_min'] ) {
-			return $this->msg( 'htmlform-text-outofrange')->parseAsBlock();
+			return $this->msg( 'htmlform-text-outofrange' )->parseAsBlock();
 		}
 
 		if ( isset( $this->options['range_max'] ) && $value > $this->options['range_max'] ) {

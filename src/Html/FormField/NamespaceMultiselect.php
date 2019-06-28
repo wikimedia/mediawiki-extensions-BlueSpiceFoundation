@@ -50,24 +50,24 @@ class NamespaceMultiselect extends \HTMLFormField {
 		$language = $this->mParent->getLanguage();
 
 		$allNamespaces = $language->getNamespaceIds();
-		foreach( $allNamespaces as $lcName => $namespaceId ) {
-			//Create 'BS.model.Namespace' compatible datasets
-			//TODO: Add serverside models that are synchron with the JS models
-			;
-			if( $namespaceId < 0 && $options[ static::OPTION_HIDE_PSEUDO ] ) {
+		foreach ( $allNamespaces as $lcName => $namespaceId ) {;
+			// Create 'BS.model.Namespace' compatible datasets
+			// TODO: Add serverside models that are synchron with the JS models
+
+			if ( $namespaceId < 0 && $options[ static::OPTION_HIDE_PSEUDO ] ) {
 				continue;
 			}
 
-			if( \MWNamespace::isTalk( $namespaceId ) && $options[ static::OPTION_HIDE_TALK ] ) {
+			if ( \MWNamespace::isTalk( $namespaceId ) && $options[ static::OPTION_HIDE_TALK ] ) {
 				continue;
 			}
 
-			//TODO: Make threshold of '3000' configureable?
-			if( $namespaceId < 3000 && $options[ static::OPTION_ONLY_CUSTOM ] ) {
+			// TODO: Make threshold of '3000' configureable?
+			if ( $namespaceId < 3000 && $options[ static::OPTION_ONLY_CUSTOM ] ) {
 				continue;
 			}
 
-			if( in_array( $namespaceId, $options[ static::OPTION_BLACKLIST] ) ) {
+			if ( in_array( $namespaceId, $options[ static::OPTION_BLACKLIST] ) ) {
 				continue;
 			}
 
@@ -78,7 +78,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 				'namespaceContentModel' => \MWNamespace::getNamespaceContentModel( $namespaceId )
 			];
 
-			if( $namespaceId === NS_MAIN ) {
+			if ( $namespaceId === NS_MAIN ) {
 				$dataSet['namespaceName'] = wfMessage( 'bs-ns_main' )->plain();
 			}
 
@@ -90,7 +90,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 
 	public function getOptions() {
 		$options = parent::getOptions();
-		if( $options === null ) {
+		if ( $options === null ) {
 			$options = [];
 		}
 
@@ -101,8 +101,8 @@ class NamespaceMultiselect extends \HTMLFormField {
 			static::OPTION_ONLY_CUSTOM
 		];
 
-		foreach( $customOptions as $customOption ) {
-			if( isset( $this->mParams[ $customOption ] ) ) {
+		foreach ( $customOptions as $customOption ) {
+			if ( isset( $this->mParams[ $customOption ] ) ) {
 				$options[$customOption] = $this->mParams[ $customOption ];
 			}
 		}

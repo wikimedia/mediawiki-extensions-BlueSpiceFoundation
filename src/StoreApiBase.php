@@ -71,15 +71,15 @@ abstract class StoreApiBase extends \BSApiBase {
 		\Hooks::run( 'BSApiStoreBaseBeforeReturnData', array( $this, &$resultSet, &$schema ) );
 		$apiResult = $this->getResult();
 
-		//Unfortunately \ApiResult does not like \JsonSerializable[], so we
-		//need to provide a \stdClass[] or array[]
+		// Unfortunately \ApiResult does not like \JsonSerializable[], so we
+		// need to provide a \stdClass[] or array[]
 		$converter = new Data\RecordConverter( $resultSet->getRecords() );
 		$records = $converter->convertToRawData();
 
 		$apiResult->setIndexedTagName( $records, $this->root );
-		$apiResult->addValue( null, $this->root, $records  );
+		$apiResult->addValue( null, $this->root, $records );
 		$apiResult->addValue( null, $this->totalProperty, $resultSet->getTotal() );
-		if( $schema !== null ) {
+		if ( $schema !== null ) {
 			$apiResult->addValue( null, $this->metaData, $schema );
 		}
 	}
@@ -173,10 +173,10 @@ abstract class StoreApiBase extends \BSApiBase {
 
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
-		//Unfortunately there is no way to register custom types for parameters
-		if( in_array( $paramName, [ 'sort', 'group', 'filter', 'context' ] ) ) {
+		// Unfortunately there is no way to register custom types for parameters
+		if ( in_array( $paramName, [ 'sort', 'group', 'filter', 'context' ] ) ) {
 			$value = \FormatJson::decode( $value );
-			if( empty( $value ) ) {
+			if ( empty( $value ) ) {
 				return [];
 			}
 		}
@@ -184,7 +184,7 @@ abstract class StoreApiBase extends \BSApiBase {
 	}
 
 	public function getParameter( $paramName, $parseLimit = true ) {
-		//Make this public, so hook handler could get the params
+		// Make this public, so hook handler could get the params
 		return parent::getParameter( $paramName, $parseLimit );
 	}
 
@@ -198,13 +198,13 @@ abstract class StoreApiBase extends \BSApiBase {
 	 * @return \BlueSpice\Data\ReaderParams
 	 */
 	protected function getReaderParams() {
-		return new \BlueSpice\Data\ReaderParams([
+		return new \BlueSpice\Data\ReaderParams( [
 			'query' => $this->getParameter( 'query', null ),
 			'start' => $this->getParameter( 'start', null ),
 			'limit' => $this->getParameter( 'limit', null ),
 			'filter' => $this->getParameter( 'filter', null ),
 			'sort' => $this->getParameter( 'sort', null ),
-		]);
+		] );
 	}
 
 	/**
@@ -215,8 +215,8 @@ abstract class StoreApiBase extends \BSApiBase {
 			$this->getRequest()
 		);
 		$this->getContext()->setTitle( $this->extendedContext->getTitle() );
-		if( $this->getTitle()->getArticleID() > 0 ) {
-			//TODO: Check for subtypes like WikiFilePage or WikiCategoryPage
+		if ( $this->getTitle()->getArticleID() > 0 ) {
+			// TODO: Check for subtypes like WikiFilePage or WikiCategoryPage
 			$this->getContext()->setWikiPage(
 				\WikiPage::factory( $this->getTitle() )
 			);

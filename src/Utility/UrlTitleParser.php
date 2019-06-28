@@ -27,10 +27,10 @@ class UrlTitleParser {
 		$titleText = '';
 		$parsedUrl = wfParseUrl( $this->url );
 
-		if( isset( $parsedUrl['query'] ) ) {
+		if ( isset( $parsedUrl['query'] ) ) {
 			$queryString = wfCgiToArray( $parsedUrl['query'] );
 
-			if( isset( $queryString['title'] ) ) {
+			if ( isset( $queryString['title'] ) ) {
 				$titleText = $queryString['title'];
 			} else {
 				$titleText = $this->removeScriptPathFromUrl(
@@ -47,12 +47,12 @@ class UrlTitleParser {
 
 		$decodedTitleText = urldecode( $titleText );
 
-		if( empty( $decodedTitleText ) || $decodedTitleText == '/' || $decodedTitleText == $this->url ) {
+		if ( empty( $decodedTitleText ) || $decodedTitleText == '/' || $decodedTitleText == $this->url ) {
 			throw new MWException( "Did not find suitable title in '$decodedTitleText'" );
 		}
 
 		$title = \Title::newFromText( $decodedTitleText );
-		if( $title instanceof \Title === false ) {
+		if ( $title instanceof \Title === false ) {
 			throw new MWException( "Could not create title from '$decodedTitleText'" );
 		}
 

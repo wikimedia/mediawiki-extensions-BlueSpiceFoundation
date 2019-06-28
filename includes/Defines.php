@@ -8,18 +8,19 @@
  * Dies sollte sich ohne Probleme umsetzen lassen, da BlueSpice ja so designed ist, dass der Core in einem
  * separaten Verzeichnis liegen kann.
  */
-if (!defined('WIKI_FARMING')) {
-	if (!defined('BSROOTDIR')) {
-		define('BSROOTDIR', dirname(__DIR__) );
-        }
-	if (!defined('BSCONFIGDIR')) {
+if ( !defined( 'WIKI_FARMING' ) ) {
+	if ( !defined( 'BSROOTDIR' ) ) {
+		define( 'BSROOTDIR', dirname( __DIR__ ) );
+ }
+	if ( !defined( 'BSCONFIGDIR' ) ) {
 		define( 'BSCONFIGDIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'config' );
 	}
-	if (!defined('BSDATADIR')) {
-		define( 'BSDATADIR',   BSROOTDIR . DIRECTORY_SEPARATOR . 'data' ); //Present
+	if ( !defined( 'BSDATADIR' ) ) {
+		// Present
+		define( 'BSDATADIR',   BSROOTDIR . DIRECTORY_SEPARATOR . 'data' );
 	}
 
-	//New constants
+	// New constants
 	$sTMPUploadDir  = empty( $GLOBALS['wgUploadDirectory'] )
 		? $GLOBALS['IP'] . DIRECTORY_SEPARATOR . 'images'
 		: $GLOBALS['wgUploadDirectory'];
@@ -28,19 +29,21 @@ if (!defined('WIKI_FARMING')) {
 		? $sTMPUploadDir . DIRECTORY_SEPARATOR . 'cache'
 		: $GLOBALS['wgFileCacheDirectory'];
 
-	$sTMPUploadPath = empty($GLOBALS['wgUploadPath']) ? $GLOBALS['wgScriptPath'] . "/images" : $GLOBALS['wgUploadPath'];
+	$sTMPUploadPath = empty( $GLOBALS['wgUploadPath'] ) ? $GLOBALS['wgScriptPath'] . "/images" : $GLOBALS['wgUploadPath'];
 
-	if (!defined('BS_DATA_DIR')) {
-		define( 'BS_DATA_DIR',  $sTMPUploadDir. DIRECTORY_SEPARATOR . 'bluespice' ); //Future
+	if ( !defined( 'BS_DATA_DIR' ) ) {
+		// Future
+		define( 'BS_DATA_DIR',  $sTMPUploadDir. DIRECTORY_SEPARATOR . 'bluespice' );
 	}
-	if (!defined('BS_CACHE_DIR')) {
-		define( 'BS_CACHE_DIR', $sTMPCacheDir. DIRECTORY_SEPARATOR . 'bluespice' ); //$wgCacheDirectory?
+	if ( !defined( 'BS_CACHE_DIR' ) ) {
+		// $wgCacheDirectory?
+		define( 'BS_CACHE_DIR', $sTMPCacheDir. DIRECTORY_SEPARATOR . 'bluespice' );
 	}
-	if (!defined('BS_DATA_PATH')) {
-		define('BS_DATA_PATH', $sTMPUploadPath. '/bluespice');
-        }
+	if ( !defined( 'BS_DATA_PATH' ) ) {
+		define( 'BS_DATA_PATH', $sTMPUploadPath. '/bluespice' );
+ }
 }
 
-if (!defined('BS_NS_OFFSET')) {
-	define('BS_NS_OFFSET', 1500);
+if ( !defined( 'BS_NS_OFFSET' ) ) {
+	define( 'BS_NS_OFFSET', 1500 );
 }

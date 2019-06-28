@@ -28,7 +28,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 			static::PARAM_CONTEXT,
 			null
 		);
-		if( !$this->context instanceof \IContextSource ) {
+		if ( !$this->context instanceof \IContextSource ) {
 			throw new \MWException(
 				'"\IContextSource" must be given by ' . static::PARAM_CONTEXT. ' param'
 			);
@@ -37,7 +37,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 			static::PARAM_ENTITY,
 			null
 		);
-		if( !$this->entity instanceof \BlueSpice\Entity ) {
+		if ( !$this->entity instanceof \BlueSpice\Entity ) {
 			throw new \MWException(
 				'"\BlueSpice\Entity" must be given by ' . static::PARAM_ENTITY. ' param'
 			);

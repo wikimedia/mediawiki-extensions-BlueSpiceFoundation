@@ -10,7 +10,7 @@ use \BlueSpice\Data\ReaderParams;
  */
 class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 	public function testInitFromArray() {
-		$params = new ReaderParams([
+		$params = new ReaderParams( [
 			'query' => 'Some query',
 			'limit' => 50,
 			'start' => 100,
@@ -19,8 +19,7 @@ class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 				[ 'property' => 'prop_b', 'direction' => 'desc' ]
 			],
 			'filter' => [
-				[ 
-					'type' => 'string',
+				[ 'type' => 'string',
 					'comparison' => 'ct',
 					'value' => 'test',
 					'field' => 'prop_a'
@@ -32,11 +31,11 @@ class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 					'field' => 'prop_b'
 				]
 			]
-		]);
+		] );
 
 		$this->assertInstanceOf( '\BlueSpice\Data\ReaderParams', $params );
 
-		//TODO: Split test
+		// TODO: Split test
 		$this->assertEquals( 'Some query', $params->getQuery() );
 		$this->assertEquals( 100, $params->getStart() );
 		$this->assertEquals( 50, $params->getLimit() );
@@ -67,7 +66,7 @@ class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 		);
 
 		$filedNames = [];
-		foreach( $filter as $filterObject ) {
+		foreach ( $filter as $filterObject ) {
 			$filedNames[] = $filterObject->getField();
 		}
 

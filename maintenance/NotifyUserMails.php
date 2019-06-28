@@ -8,23 +8,23 @@
  * @license GPL-3.0-only
  */
 
-//PW:
-//TODO: use serialize
-//TODO: support MW < 1.17.0
+// PW:
+// TODO: use serialize
+// TODO: support MW < 1.17.0
 $options = array( 'help', 'execute', 'user', );
 require_once( 'BSMaintenance.php' );
 print_r( $options );
 
 $bDry = true;
-if( isset( $options['execute'] ) ) { 
+if ( isset( $options['execute'] ) ) {
 	$bDry = false;
 }
 
-if( isset( $options['help'] ) ) {
+if ( isset( $options['help'] ) ) {
 	showHelp();
 }
 else {
-	if( isset( $options['user'] ) ) {
+	if ( isset( $options['user'] ) ) {
 		notifyUserMailController( $bDry, $options );
 	}
 	else {
@@ -42,77 +42,75 @@ function showHelp() {
 
 function notifyUserMailController( $bDry, $options ) {
 	$aUserStore = getUser( $options['user'] );
-	if( empty( $aUserStore ) ) {
+	if ( empty( $aUserStore ) ) {
 		echo "User does not exist!";
 		return;
 	}
-	var_dump(wfTimestamp());
-	//NotifyUser($aUserStore, $options, $bDry);
+	var_dump( wfTimestamp() );
+	// NotifyUser($aUserStore, $options, $bDry);
 }
 
 function getUser( $sGivenUser ) {
-	
-	if( $sGivenUser != "-1") {
-		if( !ctype_digit( $sGivenUser ) ) {
+	if ( $sGivenUser != "-1" ) {
+		if ( !ctype_digit( $sGivenUser ) ) {
 			$condition = array( 'user_name = \''.$sGivenUser.'\'' );
 		}
 		else {
 			$condition = array( 'user_id = '.$sGivenUser );
 		}
 	}
-	
+
 	$oDbr = wfGetDB( DB_REPLICA );
-	$rRes = $oDbr->select( 
-			'user',
-			array('user_id','user_name'), 
-			$condition 
-	);
-	
-	if( !$rRes ) {
+	$rRes = $oDbr->select( 'user',
+			array( 'user_id','user_name' ),
+			$condition
+ );
+
+	if ( !$rRes ) {
 		return array();
 	}
-	
+
 	$aUser = array();
-	while( $oRow = $oDbr->fetchRow( $rRes ) ) {
-		$aUser[] = array( 'id' => $oRow['user_id'], 
-						'name' => $oRow['user_name'] 
-						);
+	while ( $oRow = $oDbr->fetchRow( $rRes ) ) {
+		$aUser[] = array( 'id' => $oRow['user_id'],
+						'name' => $oRow['user_name']
+ );
 	}
-	
+
 	return $aUser;
 }
 
 function NotifyUser( $aUserStore, $options, $bDry ) {
 	$oDbw = wfGetDB( DB_MASTER );
-	
-	$iCounter = count($aUserStore);
-	for($i = 0; $i < $iCounter; $i++) {
-		if( !$bDry ) {
 
-			$oDbw->update(array('user'),
-						array('user_email_authenticated' => wfTimestamp()),
-						array('user_id' => $aUserStore['id'])
+	$iCounter = count( $aUserStore );
+	for ( $i = 0; $i < $iCounter; $i++ ) {
+		if ( !$bDry ) {
+
+			$oDbw->update( array( 'user' ),
+						array( 'user_email_authenticated' => wfTimestamp() ),
+						array( 'user_id' => $aUserStore['id'] )
 					);
 			/*
-			$oDbw->replace( 
-					'user', 
+			$oDbw->replace(
+					'user',
 					array( 'up_user' , 'up_property' ),
-					array( 
+					array(
 							'up_user' => $aUserStore[$i]['id'],
 							'up_property' => $options['property'],
 							'up_value' => $options['setvalue']
-					) 
+					)
 			);
 			 * */
 		}
 		$aUserStore[$i]['setvalue'] = $options['setvalue'];
-		displayMPCResult(array($aUserStore[$i]));
+		displayMPCResult( array( $aUserStore[$i] ) );
 	}
 }
 
 function displayResult( $aUserStore ) {
-	foreach( $aUserStore as $aUser) {
-			$sSetvalue = !empty( $aUser["setvalue"]) ? ' => '.$aUser["setvalue"] : '';
+	foreach ( $aUserStore as $aUser ) {
+			$sSetvalue = !empty( $aUser["setvalue"] ) ? ' => '.$aUser["setvalue"] : '';
 			echo $aUser["name"].": ".$aUser["value"].$sSetvalue."\n";
-		}
+	}
 }

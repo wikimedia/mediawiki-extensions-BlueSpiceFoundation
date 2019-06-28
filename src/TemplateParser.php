@@ -1,6 +1,6 @@
 <?php
 
-//derived from https://github.com/vedmaka/mediawiki-extension-Mustache_i18n
+// derived from https://github.com/vedmaka/mediawiki-extension-Mustache_i18n
 
 namespace BlueSpice;
 
@@ -17,7 +17,7 @@ class TemplateParser extends \TemplateParser {
 			  // If you do add more flags, be sure to update unit tests as well.
 			  'flags' => \LightnCandy::FLAG_ERROR_EXCEPTION,
 			  'helpers' => array(
-				  '_' => function( $msg ) {
+				  '_' => function ( $msg ) {
 					  if ( count( $msg ) > 1 ) {
 						  $msgKey = array_shift( $msg );
 						  return wfMessage( $msgKey, $msg )->plain();
@@ -25,7 +25,7 @@ class TemplateParser extends \TemplateParser {
 						  return wfMessage( $msg )->plain();
 					  }
 				  },
-				  '__' => function( $msg ) {
+				  '__' => function ( $msg ) {
 					  return wfMessage( $msg )->parse();
 				  },
 			  )

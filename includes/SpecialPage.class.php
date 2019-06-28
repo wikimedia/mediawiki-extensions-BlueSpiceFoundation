@@ -13,4 +13,5 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
-abstract class BsSpecialPage extends \BlueSpice\SpecialPage {}
+abstract class BsSpecialPage extends \BlueSpice\SpecialPage {
+}

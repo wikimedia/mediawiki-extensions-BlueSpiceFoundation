@@ -34,7 +34,7 @@ abstract class Base implements IPageTool {
 	}
 
 	public function getHtml() {
-		if( $this->skipProcessing() ) {
+		if ( $this->skipProcessing() ) {
 			return '';
 		}
 

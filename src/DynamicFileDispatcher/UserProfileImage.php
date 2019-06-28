@@ -25,13 +25,15 @@ class UserProfileImage extends Module {
 			],
 			static::WIDTH => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
-				Params::PARAM_DEFAULT => 40, //TODO: config
+				// TODO: config
+				Params::PARAM_DEFAULT => 40,
 			],
 			static::HEIGHT => [
 				Params::PARAM_TYPE => Params::TYPE_INT,
-				Params::PARAM_DEFAULT => 40, //TODO: config
+				 // TODO: config
+				Params::PARAM_DEFAULT => 40,
 			],
-		]);
+		] );
 	}
 
 	/**
@@ -40,7 +42,7 @@ class UserProfileImage extends Module {
 	 */
 	protected function extractParams( $params ) {
 		parent::extractParams( $params );
-		if( empty( $this->params[static::USERNAME] ) ) {
+		if ( empty( $this->params[static::USERNAME] ) ) {
 			throw new \MWException(
 				"Empty username parameter"
 			);
@@ -52,7 +54,7 @@ class UserProfileImage extends Module {
 	 */
 	public function getFile() {
 		$this->user = \User::newFromName( $this->params[static::USERNAME] );
-		if( !$this->user || $this->user->isAnon() ) {
+		if ( !$this->user || $this->user->isAnon() ) {
 			return new AnonImage( $this );
 		}
 		return new DefaultImage( $this );

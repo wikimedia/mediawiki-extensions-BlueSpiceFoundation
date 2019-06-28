@@ -64,7 +64,8 @@ class BsValidatorEmailPlugin implements BsValidatorPlugin {
 	*/
 
 	public static function isValid( $email, $options ) {
-		$result = filter_var( $email, FILTER_VALIDATE_EMAIL ); // return is boolean
+		$result = filter_var( $email, FILTER_VALIDATE_EMAIL );
+		// return is boolean
 		return ( $result === false )
 			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-email-validation-not-approved' )
 			: new BsValidatorResponse( 0, 'Validator', 'bs-validator-email-validation-approved' );

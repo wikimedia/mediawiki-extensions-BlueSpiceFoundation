@@ -32,7 +32,7 @@
 class BSApiFormatJson extends ApiFormatJson {
 	public function getAllowedParams() {
 		$aParams = parent::getAllowedParams();
-		if( isset( $aParams['formatversion'] ) ) {
+		if ( isset( $aParams['formatversion'] ) ) {
 
 			/*
 			 * This is needed for most ExtJS frontent components.

@@ -86,7 +86,7 @@ class BSApiAdminUserStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	public function provideKeyItemData() {
-		return[
+		return [
 			'Test user John: name' => [ "user_name", "John" ],
 			'Test user Paul: name' => [ "user_name", "Paul" ],
 			'Test user John: email' => [ "user_email", "j@example.doesnotexist" ],

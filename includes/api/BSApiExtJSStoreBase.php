@@ -140,7 +140,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		$result->setIndexedTagName( $aData, $this->root );
 		$result->addValue( null, $this->root, $aData );
 		$result->addValue( null, $this->totalProperty, $this->iFinalDataSetCount );
-		if( !empty( $aMetaData ) ) {
+		if ( !empty( $aMetaData ) ) {
 			$result->addValue( null, $this->metaData, $aMetaData );
 		}
 	}
@@ -150,7 +150,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return BsExtJSStoreParams
 	 */
 	protected function getStoreParams() {
-		if( $this->oStoreParams === null ) {
+		if ( $this->oStoreParams === null ) {
 			$this->oStoreParams = BsExtJSStoreParams::newFromRequest();
 		}
 		return $this->oStoreParams;
@@ -162,64 +162,64 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '[]',
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-sort',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-sort',
 			),
 			'group' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '[]',
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-group',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-group',
 			),
 			'filter' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '[]',
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-filter',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-filter',
 			),
 			'page' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => 0,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-page',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-page',
 			),
 			'limit' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => 25,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-limit',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-limit',
 			),
 			'start' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => 0,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-start',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-start',
 			),
 
 			'callback' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-callback',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-callback',
 			),
 
 			'query' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-query',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-query',
 			),
 			'_dc' => array(
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-dc',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-dc',
 			),
 			'format' => array(
 				ApiBase::PARAM_DFLT => 'json',
 				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-format',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-format',
 			),
 			'context' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
-				10 /*ApiBase::PARAM_HELP_MSG*/ => 'apihelp-bs-store-param-context',
+				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-context',
 			]
 		);
 	}
@@ -241,11 +241,11 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	}
 
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
-		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
-		//Unfortunately there is no way to register custom types for parameters
-		if( in_array( $paramName, array( 'sort', 'group', 'filter', 'context' ) ) ) {
+		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
+		// Unfortunately there is no way to register custom types for parameters
+		if ( in_array( $paramName, array( 'sort', 'group', 'filter', 'context' ) ) ) {
 			$value = FormatJson::decode( $value );
-			if( empty($value) ) {
+			if ( empty( $value ) ) {
 				return array();
 			}
 		}
@@ -253,7 +253,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	}
 
 	public function getParameter( $paramName, $parseLimit = true ) {
-		//Make this public, so hook handler could get the params
+		// Make this public, so hook handler could get the params
 		return parent::getParameter( $paramName, $parseLimit );
 	}
 
@@ -264,27 +264,27 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return array
 	 */
 	public function postProcessData( $aData ) {
-		if( !Hooks::run( 'BSApiExtJSStoreBaseBeforePostProcessData', array( $this, &$aData ) ) ) {
+		if ( !Hooks::run( 'BSApiExtJSStoreBaseBeforePostProcessData', array( $this, &$aData ) ) ) {
 			return $aData;
 		}
 
 		$aProcessedData = array();
 
-		//First, apply filter
-		$aProcessedData = array_filter($aData, array( $this, 'filterCallback') );
+		// First, apply filter
+		$aProcessedData = array_filter( $aData, array( $this, 'filterCallback' ) );
 		Hooks::run( 'BSApiExtJSStoreBaseAfterFilterData', array( $this, &$aProcessedData ) );
 
-		//Next, apply sort
-		//usort($aProcessedData, array( $this, 'sortCallback') ); <-- had some performance issues
+		// Next, apply sort
+		// usort($aProcessedData, array( $this, 'sortCallback') ); <-- had some performance issues
 		$aProcessedData = $this->sortData( $aProcessedData );
 
-		//Before we trim, we save the count
+		// Before we trim, we save the count
 		$this->iFinalDataSetCount = count( $aProcessedData );
 
-		//Last, do trimming
+		// Last, do trimming
 		$aProcessedData = $this->trimData( $aProcessedData );
 
-		//Add secondary fields
+		// Add secondary fields
 		$aProcessedData = $this->addSecondaryFields( $aProcessedData );
 
 		return $aProcessedData;
@@ -298,17 +298,18 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return int
 	 */
 	public function sortCallback( $oA, $oB ) {
-		$aSort = $this->getParameter('sort');
+		$aSort = $this->getParameter( 'sort' );
 		$iCount = count( $aSort );
-		for( $i = 0; $i < $iCount; $i++ ) {
+		for ( $i = 0; $i < $iCount; $i++ ) {
 			$sProperty = $aSort[$i]->property;
 			$sDirection = strtoupper( $aSort[$i]->direction );
 
-			if( $oA->$sProperty !== $oB->$sProperty ) {
-				if( $sDirection === 'ASC' ) {
+			if ( $oA->$sProperty !== $oB->$sProperty ) {
+				if ( $sDirection === 'ASC' ) {
 					return $oA->$sProperty < $oB->$sProperty ? -1 : 1;
 				}
-				else { //'DESC'
+				else {
+					// 'DESC'
 					return $oA->$sProperty > $oB->$sProperty ? -1 : 1;
 				}
 			}
@@ -327,69 +328,69 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			self::PROP_SPEC_FILTERABLE, false
 		);
 
-		foreach( $aFilter as $oFilter ) {
-			//If just one of these filters does not apply, the dataset needs
-			//to be removed
+		foreach ( $aFilter as $oFilter ) {
+			// If just one of these filters does not apply, the dataset needs
+			// to be removed
 
-			if( empty( $oFilter->type ) ) {
+			if ( empty( $oFilter->type ) ) {
 				continue;
 			}
 
-			if( !isset( $oFilter->field ) && isset( $oFilter->property ) ) {
+			if ( !isset( $oFilter->field ) && isset( $oFilter->property ) ) {
 				$oFilter->field = $oFilter->property;
 			}
 
-			if( !isset( $oFilter->comparison ) && isset( $oFilter->operator ) ) {
+			if ( !isset( $oFilter->comparison ) && isset( $oFilter->operator ) ) {
 				$oFilter->comparison = $oFilter->operator;
 			}
 
-			if( in_array( $oFilter->field, $aUnfilterableProps ) ) {
+			if ( in_array( $oFilter->field, $aUnfilterableProps ) ) {
 				continue;
 			}
 
-			if( $oFilter->type == 'string' ) {
+			if ( $oFilter->type == 'string' ) {
 				$bFilterApplies = $this->filterString( $oFilter, $aDataSet );
-				if( !$bFilterApplies ) {
+				if ( !$bFilterApplies ) {
 					return false;
 				}
 			}
-			if( $oFilter->type == 'list' ) {
+			if ( $oFilter->type == 'list' ) {
 				$bFilterApplies = $this->filterList( $oFilter, $aDataSet );
-				if( !$bFilterApplies ) {
+				if ( !$bFilterApplies ) {
 					return false;
 				}
 			}
-			if( $oFilter->type == 'numeric' ) {
+			if ( $oFilter->type == 'numeric' ) {
 				$bFilterApplies = $this->filterNumeric( $oFilter, $aDataSet );
-				if( !$bFilterApplies ) {
+				if ( !$bFilterApplies ) {
 					return false;
 				}
 			}
-			if( $oFilter->type == 'boolean' ) {
+			if ( $oFilter->type == 'boolean' ) {
 				$bFilterApplies = $this->filterBoolean( $oFilter, $aDataSet );
-				if( !$bFilterApplies ) {
+				if ( !$bFilterApplies ) {
 					return false;
 				}
 			}
 
-			if( $oFilter->type == 'date' ) {
+			if ( $oFilter->type == 'date' ) {
 				$bFilterApplies = $this->filterDate( $oFilter, $aDataSet );
-				if( !$bFilterApplies ) {
+				if ( !$bFilterApplies ) {
 					return false;
 				}
 			}
-			//TODO: Implement for type 'datetime'
+			// TODO: Implement for type 'datetime'
 
-			if( $oFilter->type == 'title' ) {
+			if ( $oFilter->type == 'title' ) {
 				$bFilterApplies = $this->filterTitle( $oFilter, $aDataSet );
-				if( !$bFilterApplies ) {
+				if ( !$bFilterApplies ) {
 					return false;
 				}
 			}
 
-			if( $oFilter->type == 'templatetitle' ) {
+			if ( $oFilter->type == 'templatetitle' ) {
 				$bFilterApplies = $this->filterTitle( $oFilter, $aDataSet, NS_TEMPLATE );
-				if( !$bFilterApplies ) {
+				if ( !$bFilterApplies ) {
 					return false;
 				}
 			}
@@ -405,8 +406,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return boolean true if filter applies, false if not
 	 */
 	public function filterString( $oFilter, $aDataSet ) {
-		if( !is_string( $oFilter->value ) ) {
-			return true; //TODO: Warning
+		if ( !is_string( $oFilter->value ) ) {
+			// TODO: Warning
+			return true;
 		}
 		if ( !isset( $aDataSet->{$oFilter->field} ) ) {
 			return false;
@@ -425,13 +427,14 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return boolean true if filter applies, false if not
 	 */
 	public function filterNumeric( $oFilter, $aDataSet ) {
-		if( !is_numeric( $oFilter->value ) ) {
-			return true; //TODO: Warning
+		if ( !is_numeric( $oFilter->value ) ) {
+			// TODO: Warning
+			return true;
 		}
 		$iFieldValue = (int)$aDataSet->{$oFilter->field};
 		$iFilterValue = (int)$oFilter->value;
 
-		switch( $oFilter->comparison ) {
+		switch ( $oFilter->comparison ) {
 			case 'gt':
 				return $iFieldValue > $iFilterValue;
 			case 'lt':
@@ -450,16 +453,17 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return boolean true if filter applies, false if not
 	 */
 	public function filterList( $oFilter, $aDataSet ) {
-		if( !is_array( $oFilter->value ) ) {
-			return true; //TODO: Warning
+		if ( !is_array( $oFilter->value ) ) {
+			// TODO: Warning
+			return true;
 		}
 		$aFieldValues = $aDataSet->{$oFilter->field};
-		if( empty( $aFieldValues ) ) {
+		if ( empty( $aFieldValues ) ) {
 			return false;
 		}
 		$aFilterValues = $oFilter->value;
 		$aTemp = array_intersect( $aFieldValues, $aFilterValues );
-		if( empty( $aTemp ) ) {
+		if ( empty( $aTemp ) ) {
 			return false;
 		}
 		return true;
@@ -483,16 +487,18 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @param object $aDataSet
 	 */
 	public function filterDate( $oFilter, $aDataSet ) {
-		$iFilterValue = strtotime( $oFilter->value ); // Format: "m/d/Y"
-		$iFieldValue = strtotime( $aDataSet->{$oFilter->field} ); // Format "YmdHis", or something else...
+		// Format: "m/d/Y"
+		$iFilterValue = strtotime( $oFilter->value );
+		// Format "YmdHis", or something else...
+		$iFieldValue = strtotime( $aDataSet->{$oFilter->field} );
 
-		switch( $oFilter->comparison ) {
+		switch ( $oFilter->comparison ) {
 			case 'gt':
 				return $iFieldValue > $iFilterValue;
 			case 'lt':
 				return $iFieldValue < $iFilterValue;
 			case 'eq':
-				//We need to normalise the date on day-level
+				// We need to normalise the date on day-level
 				$iFieldValue = strtotime(
 					date( 'm/d/Y', $iFieldValue )
 				);
@@ -507,13 +513,14 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return boolean true if filter applies, false if not
 	 */
 	public function filterTitle( $oFilter, $aDataSet, $iDefaultNs = NS_MAIN ) {
-		if( !is_string( $oFilter->value ) ) {
-			return true; //TODO: Warning
+		if ( !is_string( $oFilter->value ) ) {
+			// TODO: Warning
+			return true;
 		}
 		$oFieldValue = Title::newFromText( $aDataSet->{$oFilter->field}, $iDefaultNs );
-		$oFilterValue = Title::newFromText( $oFilter->value, $iDefaultNs  );
+		$oFilterValue = Title::newFromText( $oFilter->value, $iDefaultNs );
 
-		switch( $oFilter->comparison ) {
+		switch ( $oFilter->comparison ) {
 			case 'gt':
 				return Title::compare( $oFieldValue, $oFilterValue ) > 0;
 			case 'lt':
@@ -534,12 +541,12 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		$iStart = $this->getParameter( 'start' );
 		$iEnd = $this->getParameter( 'limit' ) + $iStart;
 
-		if( $iEnd > $this->iFinalDataSetCount || $iEnd === 0 ) {
+		if ( $iEnd > $this->iFinalDataSetCount || $iEnd === 0 ) {
 			$iEnd = $this->iFinalDataSetCount;
 		}
 
 		$aTrimmedData = array();
-		for( $i = $iStart; $i < $iEnd; $i++ ) {
+		for ( $i = $iStart; $i < $iEnd; $i++ ) {
 			$aTrimmedData[] = $aProcessedData[$i];
 		}
 
@@ -552,25 +559,25 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return array The sorted results
 	 */
 	public function sortData( $aProcessedData ) {
-		$aSort = $this->getParameter('sort');
+		$aSort = $this->getParameter( 'sort' );
 		$iCount = count( $aSort );
 		$aUnsortableProps = $this->getPropertyNamesBySpecValue(
 			self::PROP_SPEC_SORTABLE, false
 		);
 		$aParams = array();
-		for( $i = 0; $i < $iCount; $i++ ) {
+		for ( $i = 0; $i < $iCount; $i++ ) {
 			$sProperty = $aSort[$i]->property;
-			if( in_array( $sProperty, $aUnsortableProps ) ) {
+			if ( in_array( $sProperty, $aUnsortableProps ) ) {
 				continue;
 			}
 			$sDirection = strtoupper( $aSort[$i]->direction );
 			$a{$sProperty} = array();
-			foreach( $aProcessedData as $iKey => $oDataSet ) {
+			foreach ( $aProcessedData as $iKey => $oDataSet ) {
 				$a{$sProperty}[$iKey] = $this->getSortValue( $oDataSet, $sProperty );
 			}
 
 			$aParams[] = $a{$sProperty};
-			if( $sDirection === 'ASC' ) {
+			if ( $sDirection === 'ASC' ) {
 				$aParams[] = SORT_ASC;
 			}
 			else {
@@ -579,7 +586,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			$aParams[] = $this->getSortFlags( $sProperty );
 		}
 
-		if( !empty( $aParams ) ) {
+		if ( !empty( $aParams ) ) {
 			$aParams[] = &$aProcessedData;
 			call_user_func_array( 'array_multisort', $aParams );
 		}
@@ -607,7 +614,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	protected function getSortValue( $oDataSet, $sProperty ) {
 		$mValue = $oDataSet->{$sProperty};
-		if( is_array( $mValue ) ) {
+		if ( is_array( $mValue ) ) {
 			return $this->getSortValueFromList( $mValue, $oDataSet, $sProperty );
 		}
 
@@ -625,10 +632,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 */
 	protected function getSortValueFromList( $aValues, $oDataSet, $sProperty ) {
 		$sCombinedValue = '';
-		foreach( $aValues as $sValue ) {
+		foreach ( $aValues as $sValue ) {
 			// PHP 7 workaround. In PHP 7 cast throws no exception. It's a fatal error so i can't catch it :-(
-			if( $this->canBeCastedToString( $sValue ) )
-			{
+			if ( $this->canBeCastedToString( $sValue ) ) {
 				$sCombinedValue .= (string)$sValue;
 			} else {
 				$sCombinedValue .= FormatJson::encode( $sValue );
@@ -658,12 +664,12 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	protected function getPropertyNamesBySpecValue( $sSpecName, $mSpecValue ) {
 		$aMeta = $this->makeMetaData();
 		$aFoundPropNames = [];
-		if( !isset( $aMeta['properties'] ) ) {
+		if ( !isset( $aMeta['properties'] ) ) {
 			return $aFoundPropNames;
 		}
 
-		foreach( $aMeta['properties'] as $sPropName => $aPropSpec ) {
-			if( isset( $aPropSpec[$sSpecName] ) &&  $aPropSpec[$sSpecName] === $mSpecValue ) {
+		foreach ( $aMeta['properties'] as $sPropName => $aPropSpec ) {
+			if ( isset( $aPropSpec[$sSpecName] ) && $aPropSpec[$sSpecName] === $mSpecValue ) {
 				$aFoundPropNames[] = $sPropName;
 			}
 		}

@@ -39,25 +39,26 @@ class BsTagFinder {
 				.$sText
 				. '</body>'
 				. '</html>';
-		$sXML = Validator::cleanUp($sXML);
+		$sXML = Validator::cleanUp( $sXML );
 
 		$oDOMDoc = new DOMDocument();
 		$oDOMDoc->recover = true;
-		$oDOMDoc->loadHTML( $sXML ); //Formerly was loadXML but that caused a
-		//lot of warnings. Also the input is propbably more HTML than XML.
+		// Formerly was loadXML but that caused a lot of warnings. Also the input
+		// is propbably more HTML than XML.
+		$oDOMDoc->loadHTML( $sXML );
 
-		foreach( $aTagnames as $aTagname ) {
+		foreach ( $aTagnames as $aTagname ) {
 			$oElements = $oDOMDoc->getElementsByTagName( $aTagname );
-			if( $oElements->length > 0 ) {
-				foreach( $oElements as $oElement ) {
+			if ( $oElements->length > 0 ) {
+				foreach ( $oElements as $oElement ) {
 					$aTag = array();
 					$aTag['name']    = $oElement->nodeName;
 					$aTag['content'] = trim( $oElement->textContent );
 					$aTag['isempty'] = !$oElement->hasChildNodes();
 
-					if( $oElement->hasAttributes() ) {
+					if ( $oElement->hasAttributes() ) {
 						$aTag['attributes'] = array();
-						foreach( $oElement->attributes as $oAttribute) {
+						foreach ( $oElement->attributes as $oAttribute ) {
 							$aTag['attributes'][ $oAttribute->name ] = $oAttribute->value;
 						}
 					}

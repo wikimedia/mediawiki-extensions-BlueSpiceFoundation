@@ -19,7 +19,7 @@ class Item extends \BlueSpice\Renderer\SimpleList\Item {
 	protected function makeTagContent() {
 		$content = '';
 		$text = new \HtmlArmor( $this->args[static::PARAM_TEXT] );
-		if( $this->args[static::PARAM_TARGET] instanceof LinkTarget ) {
+		if ( $this->args[static::PARAM_TARGET] instanceof LinkTarget ) {
 			$content .= $this->linkRenderer->makeLink(
 				$this->args[static::PARAM_TARGET],
 				$text

@@ -10,7 +10,7 @@ class BSExportUsers extends BSMaintenance {
 		$dbr = $this->getDB( DB_REPLICA );
 		$res = $dbr->select( 'user', '*' );
 
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$oUserNode = $oDOM->createElement( 'user' );
 			$oUsersNode->appendChild( $oUserNode );
 
@@ -23,10 +23,10 @@ class BSExportUsers extends BSMaintenance {
 			$oUserNode->appendChild( $oDOM->createElement( 'editcount', $row->user_editcount ) );
 
 			$res2 = $dbr->select( 'user_groups', '*', array( 'ug_user' => $row->user_id ) );
-			if( $dbr->numRows( $res2 ) > 0 ) {
+			if ( $dbr->numRows( $res2 ) > 0 ) {
 				$oGroupsNode = $oDOM->createElement( 'groups' );
 				$oUserNode->appendChild( $oGroupsNode );
-				foreach( $res2 as $row2 ) {
+				foreach ( $res2 as $row2 ) {
 					$oGroupNode = $oDOM->createElement( 'group' );
 					$oGroupNode->setAttribute( 'name', $row2->ug_group );
 					$oGroupsNode->appendChild( $oGroupNode );
@@ -34,10 +34,10 @@ class BSExportUsers extends BSMaintenance {
 			}
 
 			$res3 = $dbr->select( 'user_properties', '*', array( 'up_user' => $row->user_id ) );
-			if( $dbr->numRows( $res3 ) > 0 ) {
+			if ( $dbr->numRows( $res3 ) > 0 ) {
 				$oPropertiesNode = $oDOM->createElement( 'properties' );
 				$oUserNode->appendChild( $oPropertiesNode );
-				foreach( $res3 as $row3 ) {
+				foreach ( $res3 as $row3 ) {
 					$oPropertyNode = $oDOM->createElement( 'property' );
 					$oPropertyNode->setAttribute( 'name', $row3->up_property );
 					$oPropertyNode->setAttribute( 'value', $row3->up_value );

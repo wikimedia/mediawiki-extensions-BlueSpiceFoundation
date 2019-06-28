@@ -57,7 +57,7 @@ class ReaderParams {
 	}
 
 	protected function setIfAvailable( &$property, $source, $field ) {
-		if( isset( $source[$field] ) ) {
+		if ( isset( $source[$field] ) ) {
 			$property = $source[$field];
 		}
 	}
@@ -105,7 +105,7 @@ class ReaderParams {
 	}
 
 	protected function setSort( $params ) {
-		if( !isset( $params[static::PARAM_SORT] )
+		if ( !isset( $params[static::PARAM_SORT] )
 			|| !is_array( $params[static::PARAM_SORT] ) ) {
 			return;
 		}
@@ -114,7 +114,7 @@ class ReaderParams {
 	}
 
 	protected function setFilter( $params ) {
-		if( !isset( $params[static::PARAM_FILTER] )
+		if ( !isset( $params[static::PARAM_FILTER] )
 			|| !is_array( $params[static::PARAM_FILTER] ) ) {
 			return;
 		}

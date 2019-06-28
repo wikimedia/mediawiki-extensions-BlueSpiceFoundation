@@ -11,8 +11,8 @@ class AddParamDefinitions extends \BlueSpice\Hook\SetupAfterCache {
 		$GLOBALS['wgParamDefinitions'] += array(
 			'titlelist' => array(
 				'definition' => 'BSTitleListParam',
-				//TODO: Find way to define parser and validator in definition
-				//class rather than in global registration
+				// TODO: Find way to define parser and validator in definition
+				// class rather than in global registration
 				'string-parser' => 'BSTitleParser'
 			),
 			'namespacelist' => array(

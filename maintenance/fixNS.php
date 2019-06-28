@@ -23,8 +23,8 @@ class FixNS extends Maintenance {
             "page_namespace ".$dbr->buildLike( "%:%", $dbr->anyString() )
         );
 
-        if($res!=null){
-            foreach( $res as $row ) {
+        if ( $res != null ) {
+            foreach ( $res as $row ) {
                 $fields = get_object_vars( $row );
                 $pageId = $fields[ "page_id" ];
                 $pageTitle = $fields[ "page_title" ];
@@ -33,11 +33,11 @@ class FixNS extends Maintenance {
                 $pageName = $arr[ 1 ];
                 $arrNS = $GLOBALS[ 'wgExtraNamespaces' ];
 
-                if( in_array( $pageNS, $arrNS ) ) {
+                if ( in_array( $pageNS, $arrNS ) ) {
                     $this->output( "Found " . $pageNS . " as namespace. \n" );
                     $this->output( "Adding " . $pageTitle . " to the namespace " . $pageNS . ". \n" );
-                    foreach( $arrNS as $nsKey => $nsData ) {
-                        if( $nsData == $pageNS ) {
+                    foreach ( $arrNS as $nsKey => $nsData ) {
+                        if ( $nsData == $pageNS ) {
                             $dbr->update(
                                 "page",
                                 array(
@@ -54,7 +54,7 @@ class FixNS extends Maintenance {
                         }
                     }
 
-                    if( $done == true ) {
+                    if ( $done == true ) {
                         $this->output( " ... done\n" );
                     } else {
                         $this->output( " ... query failed \n" );
