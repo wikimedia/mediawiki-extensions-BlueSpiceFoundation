@@ -13,11 +13,11 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getPreviousDOMElementSibling( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) {
+		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
-		if( $oNode->previousSibling instanceof DOMElement ){
-			if( empty( $aElementNames ) || in_array($oNode->previousSibling->nodeName, $aElementNames ) ) {
+		if ( $oNode->previousSibling instanceof DOMElement ) {
+			if ( empty( $aElementNames ) || in_array( $oNode->previousSibling->nodeName, $aElementNames ) ) {
 				return $oNode->previousSibling;
 			}
 		}
@@ -31,11 +31,11 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getNextDOMElementSibling( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) {
+		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
-		if( $oNode->nextSibling instanceof DOMElement ){
-			if( empty( $aElementNames ) || in_array($oNode->nextSibling->nodeName, $aElementNames ) ) {
+		if ( $oNode->nextSibling instanceof DOMElement ) {
+			if ( empty( $aElementNames ) || in_array( $oNode->nextSibling->nodeName, $aElementNames ) ) {
 				return $oNode->nextSibling;
 			}
 		}
@@ -49,11 +49,11 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getParentDOMElement( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) {
+		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
-		if( $oNode->parentNode instanceof DOMElement ){
-			if( empty( $aElementNames ) || in_array($oNode->parentNode->nodeName, $aElementNames ) ) {
+		if ( $oNode->parentNode instanceof DOMElement ) {
+			if ( empty( $aElementNames ) || in_array( $oNode->parentNode->nodeName, $aElementNames ) ) {
 				return $oNode->parentNode;
 			}
 		}
@@ -67,11 +67,11 @@ class BsDOMHelper {
 	 * @return DOMElement | null
 	 */
 	public static function getFirstDOMElementChild( $oNode, $aElementNames = array() ) {
-		if( $oNode instanceof DOMNode == false ) {
+		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
-		if( $oNode->firstChild instanceof DOMElement ){
-			if( empty( $aElementNames ) || in_array($oNode->firstChild->nodeName, $aElementNames ) ) {
+		if ( $oNode->firstChild instanceof DOMElement ) {
+			if ( empty( $aElementNames ) || in_array( $oNode->firstChild->nodeName, $aElementNames ) ) {
 				return $oNode->firstChild;
 			}
 		}
@@ -86,21 +86,21 @@ class BsDOMHelper {
 	 * @param bool $bOverrideExisting Wether or not to override existing classes
 	 */
 	public static function addClassesRecursive( $oNode, $aClasses, $bOverrideExisting = false ) {
-		$sNodesClasses = $oNode->getAttribute('class');
+		$sNodesClasses = $oNode->getAttribute( 'class' );
 		$aNodesClasses = explode( ' ', $sNodesClasses );
 		$oNode->setAttribute(
 			'class',
 			implode( ' ', array_unique( array_merge( $aNodesClasses, $aClasses ) ) )
 		);
 
-		if( $oNode->hasChildNodes() == false ) {
+		if ( $oNode->hasChildNodes() == false ) {
 			return;
 		}
-		foreach( $oNode->childNodes as $oChild ) {
-			if( $oChild instanceof DOMElement == false ) {
+		foreach ( $oNode->childNodes as $oChild ) {
+			if ( $oChild instanceof DOMElement == false ) {
 				continue;
 			}
-			static::addClassesRecursive($oChild, $aClasses, $bOverrideExisting);
+			static::addClassesRecursive( $oChild, $aClasses, $bOverrideExisting );
 		}
 	}
 
@@ -110,11 +110,11 @@ class BsDOMHelper {
 	 * @param DOMNode $oRefNode
 	 */
 	public static function insertAfter( $oNode, $oRefNode ) {
-		if( $oRefNode->nextSibling instanceof DOMNode ) {
-			$oRefNode->parentNode->insertBefore($oNode, $oRefNode->nextSibling);
+		if ( $oRefNode->nextSibling instanceof DOMNode ) {
+			$oRefNode->parentNode->insertBefore( $oNode, $oRefNode->nextSibling );
 		}
 		else {
-			$oRefNode->parentNode->appendChild($oNode);
+			$oRefNode->parentNode->appendChild( $oNode );
 		}
 	}
 
@@ -127,7 +127,7 @@ class BsDOMHelper {
 	public static function getElementsByClassNames( $oDOMDoc, $aClassNames ) {
 		$oDOMXPath = new DOMXPath( $oDOMDoc );
 		$aClassQuery = array();
-		foreach( $aClassNames as $sClassName ) {
+		foreach ( $aClassNames as $sClassName ) {
 			# //*[contains(concat(' ', normalize-space(@class), ' '), ' Test ')]
 			$aClassQuery[] = "contains(concat(' ', normalize-space(@class), ' '), ' $sClassName ')";
 		}
@@ -135,7 +135,7 @@ class BsDOMHelper {
 		$oElements = $oDOMXPath->query( $sQuery );
 
 		$aElements = array();
-		foreach( $oElements as $oElement ) {
+		foreach ( $oElements as $oElement ) {
 			$aElements[] = $oElement;
 		}
 
@@ -152,12 +152,12 @@ class BsDOMHelper {
 	 */
 	public static function getElementsByTagNames( $oDOMDoc, $aTagnames ) {
 		$aElements = array();
-		if( !is_array( $aTagnames ) ) {
+		if ( !is_array( $aTagnames ) ) {
 			return $aElements;
 		}
-		foreach( $aTagnames as $sTagname ) {
+		foreach ( $aTagnames as $sTagname ) {
 			$oElements = $oDOMDoc->getElementsByTagName( $sTagname );
-			foreach( $oElements as $oElement ) {
+			foreach ( $oElements as $oElement ) {
 				$aElements[] = $oElement;
 			}
 		}
@@ -171,11 +171,11 @@ class BsDOMHelper {
 	 * performed
 	 */
 	public static function removeElement( $oEl ) {
-		if( !is_object( $oEl ) ) {
+		if ( !is_object( $oEl ) ) {
 			return false;
 		}
 		$oParent = $oEl->parentNode;
-		if( $oParent instanceof DOMNode === false ) {
+		if ( $oParent instanceof DOMNode === false ) {
 			return false;
 		}
 		$oParent->removeChild( $oEl );

@@ -18,14 +18,14 @@ class Credits extends \BlueSpice\SpecialPage {
 			$this->msg( 'bs-credits-programmers' )->plain(),
 			$this->msg( 'bs-credits-dnt' )->plain(),
 			$this->msg( 'bs-credits-contributors' )->plain()
-		]);
+		] );
 		$html .= \Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
 		$configNames = [
 			'CreditsProgrammers',
 			'CreditsDesignAndTesting',
 			'CreditsContributors'
 		];
-		foreach( $configNames as $cfgName ) {
+		foreach ( $configNames as $cfgName ) {
 			$html .= \Html::openElement( 'td' );
 			$html .= $this->renderNameList(
 				$this->getConfig()->get( $cfgName )
@@ -38,7 +38,7 @@ class Credits extends \BlueSpice\SpecialPage {
 		$html .= $this->renderOpenTable( [
 			$this->msg( 'bs-credits-translators' )->plain(),
 			$this->msg( 'bs-credits-translation' )->plain(),
-		]);
+		] );
 		$html .= \Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
 		$html .= \Html::openElement( 'td' );
 		$html .= $this->renderNameList(
@@ -59,9 +59,9 @@ class Credits extends \BlueSpice\SpecialPage {
 		$html .= \Html::openElement( 'table', [
 			'class' => 'wikitable',
 			'style' => 'width:100%',
-		]);
+		] );
 		$html .= \Html::openElement( 'tr' );
-		foreach( $headElements as $content ) {
+		foreach ( $headElements as $content ) {
 			$html .= \Html::element( 'th', [], $content );
 		}
 		$html .= \Html::closeElement( 'tr' );
@@ -70,7 +70,7 @@ class Credits extends \BlueSpice\SpecialPage {
 
 	protected function renderNameList( $list, $hmtl = '' ) {
 		$hmtl .= \Html::openElement( 'ul' );
-		foreach( $list as $entry ) {
+		foreach ( $list as $entry ) {
 			$hmtl .= \Html::element( 'li', [], $entry );
 		}
 		$hmtl .= \Html::closeElement( 'ul' );
@@ -129,7 +129,7 @@ class Credits extends \BlueSpice\SpecialPage {
 		);
 
 		foreach ( $iterator as $fileinfo ) {
-			if( !$fileinfo->isFile() ) {
+			if ( !$fileinfo->isFile() ) {
 				continue;
 			}
 
@@ -145,7 +145,7 @@ class Credits extends \BlueSpice\SpecialPage {
 
 			$content = \FormatJson::decode( file_get_contents(
 				$fileinfo->getPathname()
-			));
+			) );
 			$this->readInTranslatorsFile( $content, $translators );
 		}
 	}
@@ -163,7 +163,7 @@ class Credits extends \BlueSpice\SpecialPage {
 			}
 
 			foreach ( $data->authors as $author ) {
-				if( !is_string( $author ) ) {
+				if ( !is_string( $author ) ) {
 					continue;
 				}
 				$author = strip_tags( $author );

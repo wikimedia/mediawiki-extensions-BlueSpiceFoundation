@@ -77,7 +77,7 @@ return [
 		return new \BlueSpice\TagFactory( $registry );
 	},
 
-	'BSRoleFactory' => function( MediaWikiServices $services ) {
+	'BSRoleFactory' => function ( MediaWikiServices $services ) {
 		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoleRegistry' );
 		return new \BlueSpice\Permission\RoleFactory(
 			$roles,
@@ -97,14 +97,14 @@ return [
 		);
 	},
 
-	'BSPermissionRegistry' => function( MediaWikiServices $services ) {
+	'BSPermissionRegistry' => function ( MediaWikiServices $services ) {
 		return \BlueSpice\Permission\PermissionRegistry::getInstance(
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
 			$GLOBALS[ 'bsgPermissionConfig' ]
 		);
 	},
 
-	'BSPermissionLockdownFactory' => function( MediaWikiServices $services ) {
+	'BSPermissionLockdownFactory' => function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationPermissionLockdownRegistry'
 		);
@@ -165,7 +165,7 @@ return [
 		);
 	},
 
-	'BSNotificationManager' => function( MediaWikiServices $services ) {
+	'BSNotificationManager' => function ( MediaWikiServices $services ) {
 		$regFuncRegistry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationNotificationRegistrationFunctions'
 		);
@@ -176,7 +176,7 @@ return [
 		);
 	},
 
-	'BSTargetCacheFactory' => function( MediaWikiServices $services ) {
+	'BSTargetCacheFactory' => function ( MediaWikiServices $services ) {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationTargetCacheRegistry'
 		);
@@ -188,11 +188,11 @@ return [
 		);
 	},
 
-	'BSTargetCacheTitle' => function( MediaWikiServices $services ) {
+	'BSTargetCacheTitle' => function ( MediaWikiServices $services ) {
 		return $services->getService( 'BSTargetCacheFactory' )->get( 'title' );
 	},
 
-	'BSTemplateFactory' => function( MediaWikiServices $services ) {
+	'BSTemplateFactory' => function ( MediaWikiServices $services ) {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationTemplateHanderRegistry'
 		);

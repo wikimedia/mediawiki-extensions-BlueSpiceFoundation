@@ -54,7 +54,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			&$this->aOptions,
 			&$this->aJoinOptions,
 			&$aData,
-		));
+		) );
 
 		$res = $this->getDB()->select(
 			$this->aTables,
@@ -65,13 +65,13 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			$this->aJoinOptions
 		);
 
-		//TODO error
-		if( !$res ) {
+		// TODO error
+		if ( !$res ) {
 			return $aData;
 		}
 
-		foreach( $res as $row ) {
-			if( !$oData = $this->makeDataSet( $row ) ) {
+		foreach ( $res as $row ) {
+			if ( !$oData = $this->makeDataSet( $row ) ) {
 				continue;
 			}
 			$aData[] = $oData;
@@ -87,7 +87,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			$this->aOptions,
 			$this->aJoinOptions,
 			&$aData,
-		));
+		) );
 
 		return $aData;
 	}
@@ -102,18 +102,18 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 
 	public function makeConditions( $sQuery, $aFilter ) {
 		$aReturn = array();
-		if( empty($aFilter) ) {
+		if ( empty( $aFilter ) ) {
 			return $aReturn;
 		}
 
-		foreach( $aFilter as $oFilter ) {
-			if( !in_array($oFilter->field, $this->aFields) ) {
+		foreach ( $aFilter as $oFilter ) {
+			if ( !in_array( $oFilter->field, $this->aFields ) ) {
 				continue;
 			}
-			if( $oFilter->type == 'numeric' ) {
+			if ( $oFilter->type == 'numeric' ) {
 				$aReturn = $this->buildConditionNumeric( $oFilter, $aReturn );
 			}
-			if( $oFilter->type == 'string' ) {
+			if ( $oFilter->type == 'string' ) {
 				$aReturn = $this->buildConditionString( $oFilter, $aReturn );
 			}
 		}
@@ -142,12 +142,13 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 	}
 
 	public function buildConditionNumeric( $oFilter, $aReturn = array() ) {
-		if( !is_numeric( $oFilter->value ) ) {
-			return $aReturn; //TODO: Warning
+		if ( !is_numeric( $oFilter->value ) ) {
+			// TODO: Warning
+			return $aReturn;
 		}
 		$iFilterValue = (int)$oFilter->value;
 
-		switch( $oFilter->comparison ) {
+		switch ( $oFilter->comparison ) {
 			case 'gt':
 				$aReturn[] = "$oFilter->field > $iFilterValue";
 				break;
@@ -165,13 +166,14 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 	}
 
 	public function buildConditionString( $oFilter, $aReturn = array() ) {
-		if( !is_string( $oFilter->value ) ) {
-			return $aReturn; //TODO: Warning
+		if ( !is_string( $oFilter->value ) ) {
+			// TODO: Warning
+			return $aReturn;
 		}
 		$sFilterValue = (string)$oFilter->value;
 
 		$oDB = $this->getDB();
-		switch( $oFilter->comparison ) {
+		switch ( $oFilter->comparison ) {
 			case 'ew':
 				$aReturn[] = $oFilter->field." ".$oDB->buildLike(
 					$oDB->anyString(),

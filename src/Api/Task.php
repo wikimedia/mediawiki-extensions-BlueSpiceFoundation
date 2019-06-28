@@ -12,7 +12,6 @@ use BlueSpice\ParamProcessor\Processor;
 use BlueSpice\ParamProcessor\Options;
 use Exception;
 
-
 class Task extends Api {
 	const PARAM_TASK = 'task';
 	const PARAM_TASK_DATA = 'taskData';
@@ -31,7 +30,7 @@ class Task extends Api {
 				$args = $status->getValue();
 			}
 			$status = $task->execute( $args, $status );
-		} catch( Exception $e ) {
+		} catch ( Exception $e ) {
 			$status->fatal( $e->getMessage() );
 		}
 		$converter = new StatusConverter( $this, $status );
@@ -151,9 +150,9 @@ class Task extends Api {
 			$paramSettings,
 			$parseLimit
 		);
-		//Unfortunately there is no way to register custom types for parameters
+		// Unfortunately there is no way to register custom types for parameters
 		if ( in_array( $paramName, array( 'taskData', 'context' ) ) ) {
-			$value = FormatJson::decode($value);
+			$value = FormatJson::decode( $value );
 			if ( empty( $value ) ) {
 				return new stdClass();
 			}

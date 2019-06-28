@@ -30,10 +30,10 @@ class BsCacheHelper {
 	 * ->getBSUtilityFactory()->getCacheHelper() instead
 	 * @return string
 	 */
-	public static function getCacheKey( /*...*/ ) {
+	public static function getCacheKey() {
 		$helper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
 		$args = func_get_args();
-		return call_user_func_array( [$helper, 'getCacheKey'], $args );
+		return call_user_func_array( [ $helper, 'getCacheKey' ], $args );
 	}
 
 	/**
@@ -71,10 +71,10 @@ class BsCacheHelper {
 	 */
 	public static function invalidateCache( $mKey ) {
 		$helper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
-		if( is_array( $mKey ) ) {
+		if ( is_array( $mKey ) ) {
 			$bReturn = true;
-			foreach( $mKey as $key ) {
-				if( !$helper->invalidate( $key ) ) {
+			foreach ( $mKey as $key ) {
+				if ( !$helper->invalidate( $key ) ) {
 					wfDebugLog( 'BsMemcached', 'NO INVALIDATION FOR KEY: '.$key );
 					$bReturn = false;
 				}

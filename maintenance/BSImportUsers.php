@@ -4,9 +4,9 @@ require_once( 'BSMaintenance.php' );
 
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
-		$this->addOption('src', 'The path to the source file', true, true);
-		$this->addOption('defaultpw', 'A password that should be set for any new user', false, true);
-		$this->addOption('createuserpage', 'Wether or not a user page should be created (<userpage> element needs to be available)', false, false);
+		$this->addOption( 'src', 'The path to the source file', true, true );
+		$this->addOption( 'defaultpw', 'A password that should be set for any new user', false, true );
+		$this->addOption( 'createuserpage', 'Wether or not a user page should be created (<userpage> element needs to be available)', false, false );
 
 		parent::__construct();
 	}
@@ -20,31 +20,32 @@ class BSImportUsers extends BSMaintenance {
 		foreach ( $oUserNodes as $oUserNode ) {
 			$sUserName = $this->getChildNodeValue( $oUserNode, 'name' );
 			$oUser = User::newFromName( $sUserName );
-			if( $oUser instanceof User === false ) {
+			if ( $oUser instanceof User === false ) {
 				$this->output( $sUserName.' is not a valid username' );
 				continue;
 			}
 
-			if( $oUser->getId() !== 0 ) {
+			if ( $oUser->getId() !== 0 ) {
 				$this->output( $oUser->getName().'already exists. UserID: '.$oUser->getId() );
-				$this->output( 'Skipping!' ); //TODO: make optional
+				// TODO: make optional
+				$this->output( 'Skipping!' );
 				continue;
 			}
 
 			$sUserRealName = $this->getChildNodeValue( $oUserNode, 'realname' );
-			if( !empty( $sUserRealName ) ) {
+			if ( !empty( $sUserRealName ) ) {
 				$oUser->setRealName( $sUserRealName );
 			}
 
 			$sUserEmail = $this->getChildNodeValue( $oUserNode, 'email' );
-			if( !empty( $sUserEmail ) ) {
+			if ( !empty( $sUserEmail ) ) {
 				$oUser->setEmail( $sUserEmail );
 			}
 
-			//TODO: maybe write 'touched', 'registration', etc. directly to DB?
+			// TODO: maybe write 'touched', 'registration', etc. directly to DB?
 
-			$oProperties = $oUserNode->getElementsByTagName('property');
-			foreach( $oProperties as $oProperty ) {
+			$oProperties = $oUserNode->getElementsByTagName( 'property' );
+			foreach ( $oProperties as $oProperty ) {
 				$oUser->setOption(
 					$oProperty->getAttribute( 'name' ),
 					$oProperty->getAttribute( 'value' )
@@ -52,7 +53,7 @@ class BSImportUsers extends BSMaintenance {
 			}
 
 			$oStatus = $oUser->addToDatabase();
-			if( $oStatus->isOK() ) {
+			if ( $oStatus->isOK() ) {
 				$this->output( $oUser->getName().' successfully added to database. UserID: '.$oUser->getId() );
 			}
 			else {
@@ -61,22 +62,22 @@ class BSImportUsers extends BSMaintenance {
 			}
 
 			$sUserPassword = $this->getOption( 'defaultpw', '' );
-			if( !empty ( $sUserPassword ) ) {
+			if ( !empty( $sUserPassword ) ) {
 				$oUser->setPassword( $sUserPassword );
 				$oUser->saveSettings();
 			}
 
-			$oGroups = $oUserNode->getElementsByTagName('group');
-			foreach( $oGroups as $oGroup ) {
+			$oGroups = $oUserNode->getElementsByTagName( 'group' );
+			foreach ( $oGroups as $oGroup ) {
 				$oUser->addGroup( $oGroup->getAttribute( 'name' ) );
 			}
 
-			if( $this->getOption( 'createuserpage', false ) ) {
-				if( $oUser->getUserPage()->exists() ) {
+			if ( $this->getOption( 'createuserpage', false ) ) {
+				if ( $oUser->getUserPage()->exists() ) {
 					continue;
 				}
 				$sContent = $this->getChildNodeValue( $oUserNode, 'userpage' );
-				if( empty( $sContent ) ) {
+				if ( empty( $sContent ) ) {
 					continue;
 				}
 
@@ -87,7 +88,7 @@ class BSImportUsers extends BSMaintenance {
 
 				$oWikiPage = WikiPage::factory( $oUser->getUserPage() );
 				$oEditStatus = $oWikiPage->doEditContent( $oContent, __CLASS__ );
-				if( $oEditStatus->isOK() ) {
+				if ( $oEditStatus->isOK() ) {
 					$this->output( 'Page '.$oUser->getUserPage()->getPrefixedText().' successfully created.' );
 				}
 				else {
@@ -105,7 +106,7 @@ class BSImportUsers extends BSMaintenance {
 	 */
 	public function getChildNodeValue( $oNode, $sChildNodeName ) {
 		$oChildNode = $oNode->getElementsByTagName( $sChildNodeName )->item( 0 );
-		if( $oChildNode instanceof DOMElement === false ) {
+		if ( $oChildNode instanceof DOMElement === false ) {
 			return '';
 		}
 

@@ -29,12 +29,12 @@ class Sorter {
 		$sortParams = [];
 		foreach ( $this->sorts as $sort ) {
 			$property = $sort->getProperty();
-			if( in_array( $property, $unsortableProps ) ) {
+			if ( in_array( $property, $unsortableProps ) ) {
 				continue;
 			}
 
 			$valuesOf{$property} = array();
-			foreach( $dataSets as $idx => $dataSet ) {
+			foreach ( $dataSets as $idx => $dataSet ) {
 				$valuesOf{$property}[$idx] =
 					$this->getSortValue( $dataSet, $property );
 			}
@@ -44,7 +44,7 @@ class Sorter {
 			$sortParams[] = $this->getSortFlags( $property );
 		}
 
-		if( !empty( $sortParams ) ) {
+		if ( !empty( $sortParams ) ) {
 			$sortParams[] = &$dataSets;
 			call_user_func_array( 'array_multisort', $sortParams );
 		}
@@ -73,7 +73,7 @@ class Sorter {
 	 */
 	protected function getSortValue( $dataSet, $property ) {
 		$value = $dataSet->get( $property );
-		if( is_array( $value ) ) {
+		if ( is_array( $value ) ) {
 			return $this->getSortValueFromList( $value, $dataSet, $property );
 		}
 
@@ -91,10 +91,9 @@ class Sorter {
 	 */
 	protected function getSortValueFromList( $values, $dataSet, $property ) {
 		$combinedValue = '';
-		foreach( $values as $value ) {
+		foreach ( $values as $value ) {
 			// PHP 7 workaround. In PHP 7 cast throws no exception. It's a fatal error so no way to catch
-			if( $this->canBeCastedToString( $value ) )
-			{
+			if ( $this->canBeCastedToString( $value ) ) {
 				$combinedValue .= (string)$value;
 			} else {
 				$combinedValue .= FormatJson::encode( $value );
@@ -102,7 +101,6 @@ class Sorter {
 		}
 		return $combinedValue;
 	}
-
 
 	/**
 	 * Checks if a array or object ist castable to string.
@@ -126,10 +124,10 @@ class Sorter {
 	 * @return int Constant value of SORT_ASC or SORT_DESC
 	 */
 	protected function getSortDirection( $sort ) {
-		if( $sort->getDirection() === Sort::ASCENDING ) {
+		if ( $sort->getDirection() === Sort::ASCENDING ) {
 			return SORT_ASC;
 		}
-		return  SORT_DESC;
+		return SORT_DESC;
 	}
 
 }

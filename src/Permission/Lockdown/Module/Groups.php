@@ -123,19 +123,19 @@ class Groups extends Module {
 			return false;
 		}
 
-		foreach( $groups as $group ) {
-			if( in_array( $group, $this->getLockdownGroups( $user ) ) ) {
+		foreach ( $groups as $group ) {
+			if ( in_array( $group, $this->getLockdownGroups( $user ) ) ) {
 				continue;
 			}
-			//if this action is in a non lockdownable group, we can not lock it
-			//anyway, so just return
+			// if this action is in a non lockdownable group, we can not lock it
+			// anyway, so just return
 			return false;
 		}
 		$this->reasons[$action] = [];
 		$lockGroups = [];
-		foreach( $this->getAppliedSubModules( $title, $user ) as $module ) {
-			foreach( $groups as $group ) {
-				if( !in_array( $group, $module->getLockdownGroups( $user ) ) ) {
+		foreach ( $this->getAppliedSubModules( $title, $user ) as $module ) {
+			foreach ( $groups as $group ) {
+				if ( !in_array( $group, $module->getLockdownGroups( $user ) ) ) {
 					continue;
 				}
 				// collect all lockdowns from applied subModule for this action
@@ -155,7 +155,7 @@ class Groups extends Module {
 
 		// only set this to locked down when all of the lockdown groups get locked
 		// as we mimic adding permissions
-		if( count( $this->reasons[$action] ) === count( $lockGroups ) ) {
+		if ( count( $this->reasons[$action] ) === count( $lockGroups ) ) {
 			return true;
 		}
 		return false;
@@ -187,26 +187,26 @@ class Groups extends Module {
 		$roleManager = Services::getInstance()->getService( 'BSRoleManager' );
 		$roleManager instanceof \BlueSpice\Permission\Role\Manager;
 
-		foreach( $this->getUserGroups( $user ) as $group ) {
-			foreach( $this->config->get( 'GroupRoles' ) as $roleGroup => $roles ) {
-				if( $roleGroup !== $group ) {
+		foreach ( $this->getUserGroups( $user ) as $group ) {
+			foreach ( $this->config->get( 'GroupRoles' ) as $roleGroup => $roles ) {
+				if ( $roleGroup !== $group ) {
 					continue;
 				}
-				foreach( $roles as $roleName => $value ) {
-					if( $value === false ) {
+				foreach ( $roles as $roleName => $value ) {
+					if ( $value === false ) {
 						continue;
 					}
 					$role = $roleManager->getRole( $roleName );
-					if( !$role ) {
+					if ( !$role ) {
 						continue;
 					}
-					if( !in_array( $action, $role->getPermissions() ) ) {
+					if ( !in_array( $action, $role->getPermissions() ) ) {
 						continue;
 					}
 
 					$lockdownNs = $this->config->get( 'NamespaceRolesLockdown' );
-					if( isset( $lockdownNs[$title->getNamespace()][$roleName] ) ) {
-						if( !in_array( $group, $lockdownNs[$title->getNamespace()][$roleName] ) ) {
+					if ( isset( $lockdownNs[$title->getNamespace()][$roleName] ) ) {
+						if ( !in_array( $group, $lockdownNs[$title->getNamespace()][$roleName] ) ) {
 							continue;
 						}
 						$groups[] = $group;
@@ -226,11 +226,11 @@ class Groups extends Module {
 	 * @return string[]
 	 */
 	protected function getLockdownGroups( User $user, array $groups = [] ) {
-		if( $this->lockdownGroups ) {
+		if ( $this->lockdownGroups ) {
 			return $this->lockdownGroups;
 		}
 		$this->lockdownGroups = [];
-		foreach( $this->getSubModules() as $module ) {
+		foreach ( $this->getSubModules() as $module ) {
 			$groups = array_merge( $groups, $module->getLockdownGroups( $user ) );
 		}
 
@@ -248,13 +248,13 @@ class Groups extends Module {
 	 * @return ISubModule[]
 	 */
 	protected function getAppliedSubModules( Title $title, User $user ) {
-		if( $this->appliedSubModules ) {
+		if ( $this->appliedSubModules ) {
 			return $this->appliedSubModules;
 		}
 
 		$this->appliedSubModules = [];
-		foreach( $this->getSubModules() as $module ) {
-			if( !$module->applies( $title, $user ) ) {
+		foreach ( $this->getSubModules() as $module ) {
+			if ( !$module->applies( $title, $user ) ) {
 				continue;
 			}
 			$this->appliedSubModules[] = $module;

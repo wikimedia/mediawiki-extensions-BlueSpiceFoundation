@@ -6,7 +6,6 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 	protected $testUserName = 'wiki Sysöp';
 
 	public function testCanConstruct() {
-
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
 			->getMock();

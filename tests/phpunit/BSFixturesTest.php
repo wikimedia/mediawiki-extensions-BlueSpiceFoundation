@@ -29,7 +29,6 @@ class BSFixturesTest extends BSApiTestCase {
 		$user = \User::newFromName( 'Paul' );
 		$this->assertFalse( $user->isAnon(), "User should be known" );
 
-
 		$groups = $user->getGroups();
 
 		$this->assertTrue( in_array( 'A', $groups ), 'User should be in group A' );

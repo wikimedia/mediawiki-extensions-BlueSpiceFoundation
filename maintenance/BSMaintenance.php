@@ -37,9 +37,10 @@ abstract class BSMaintenance extends Maintenance {
 	 *     function outputChanneled.
 	 */
 	public function output( $out, $channel = null ) {
-		$out .= "\n"; //MediaWiki outputs no linebreak in output(), but in error() it does...
+		// MediaWiki outputs no linebreak in output(), but in error() it does...
+		$out .= "\n";
 		$this->appendOutputBuffer( $out, 0 );
-		parent::output($out, $channel);
+		parent::output( $out, $channel );
 	}
 
 	/**
@@ -49,7 +50,7 @@ abstract class BSMaintenance extends Maintenance {
 	 */
 	protected function appendOutputBuffer( $out, $die ) {
 		$this->aOutputBuffer[] = $out;
-		if( $die !== 0 ) {
+		if ( $die !== 0 ) {
 			$this->writeOutputBuffer();
 		}
 	}
@@ -59,7 +60,7 @@ abstract class BSMaintenance extends Maintenance {
 	 */
 	protected function writeOutputBuffer() {
 		$sOutputFile = $this->getOption( 'cliOutputTo' );
-		if( $sOutputFile !== null ) {
+		if ( $sOutputFile !== null ) {
 			wfMkdirParents( wfBaseName( realpath( $sOutputFile ) ) );
 			file_put_contents( $sOutputFile, implode( "\n", $this->aOutputBuffer ) );
 		}

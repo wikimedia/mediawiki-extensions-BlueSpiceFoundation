@@ -69,7 +69,7 @@ class TargetCacheHandler implements ITargetCacheHandler {
 	 * @return mixed
 	 */
 	public function get() {
-		if( $this->data !== false ) {
+		if ( $this->data !== false ) {
 			return $this->data;
 		}
 		$this->data = $this->cacheHelper->get( $this->getCacheKey() );

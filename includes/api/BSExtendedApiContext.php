@@ -65,14 +65,15 @@ class BSExtendedApiContext {
 		) + $aDefaultParams;
 
 		$oTitle = Title::newFromID( $aRequestParams['wgArticleId'] );
-		if ( $oTitle instanceof Title === false ) { //e.g. on a SpecialPage
+		// e.g. on a SpecialPage
+		if ( $oTitle instanceof Title === false ) {
 			$oTitle = Title::makeTitle(
 				$aRequestParams['wgNamespaceNumber'],
 				$aRequestParams['wgTitle']
 			);
 		}
 
-		//TODO: Fallback if any of those is empty!
+		// TODO: Fallback if any of those is empty!
 		$aParams = array(
 			'title'        => $oTitle,
 			'revision'     => Revision::newFromId( $aRequestParams['wgRevisionId'] ),

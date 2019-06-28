@@ -66,19 +66,19 @@ class BSTreeNode {
 		$this->id = $id;
 		$this->parentNode = $parentNode;
 
-		$config = new MultiConfig([
+		$config = new MultiConfig( [
 			$config,
-			new HashConfig([
+			new HashConfig( [
 				self::CONFIG_CHILDNODES => [],
 				self::CONFIG_IS_LEAF => false,
 				self::CONFIG_EXPANDED => false,
 				self::CONFIG_EXPANDABLE => true,
-			])
-		]);
+			] )
+		] );
 
 		$this->config = $config;
 
-		//Init primary fields from config
+		// Init primary fields from config
 		$this->text = $config->get( self::CONFIG_TEXT );
 		$this->childNodes = $config->get( self::CONFIG_CHILDNODES );
 		$this->isLeaf = $config->get( self::CONFIG_IS_LEAF );
@@ -86,7 +86,7 @@ class BSTreeNode {
 	}
 
 	public function get( $key, $default ) {
-		if( $this->config->has( $key ) ) {
+		if ( $this->config->has( $key ) ) {
 			return $this->config->get( $key );
 		}
 
@@ -149,7 +149,7 @@ class BSTreeNode {
 	 */
 	public function getPath() {
 		$basePath = '';
-		if( $this->parentNode instanceof BSTreeNode ) {
+		if ( $this->parentNode instanceof BSTreeNode ) {
 			$basePath = $this->parentNode->getPath();
 		}
 
@@ -168,7 +168,7 @@ class BSTreeNode {
 	 * @return void
 	 */
 	public function expand() {
-		if( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
+		if ( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
 			$this->expanded = true;
 		}
 		else {
@@ -180,7 +180,7 @@ class BSTreeNode {
 	 * @return void
 	 */
 	public function collapse() {
-		if( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
+		if ( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
 			$this->expanded = false;
 		}
 		else {

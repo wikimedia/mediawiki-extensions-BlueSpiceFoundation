@@ -11,14 +11,14 @@ class HTMLFormEx extends HTMLForm {
 		$subsectionHtml = '';
 		$hasLeftColumn = false;
 		$map = array();
-		foreach( $fields as $key => $value ) {
+		foreach ( $fields as $key => $value ) {
 			$sKey = $this->mMessagePrefix . '-' . strtolower( $key );
 			$map[$key] = wfMessage( $sKey )->plain();
 		}
 
-		asort($map);
+		asort( $map );
 
-		foreach( $map as $key => $legend ) {
+		foreach ( $map as $key => $legend ) {
 			$value = $fields[$key];
 			if ( is_object( $value ) ) {
 				$v = empty( $value->mParams['nodata'] )
@@ -26,7 +26,7 @@ class HTMLFormEx extends HTMLForm {
 					: $value->getDefault();
 				$tableHtml .= $value->getTableRow( $v );
 
-				if( $value->getLabel() != '&nbsp;' ) {
+				if ( $value->getLabel() != '&nbsp;' ) {
 					$hasLeftColumn = true;
 				}
 			} elseif ( is_array( $value ) ) {
@@ -36,7 +36,8 @@ class HTMLFormEx extends HTMLForm {
 		}
 
 		$classes = array();
-		if( !$hasLeftColumn ) { // Avoid strange spacing when no labels exist
+		if ( !$hasLeftColumn ) {
+			// Avoid strange spacing when no labels exist
 			$classes[] = 'mw-htmlform-nolabel';
 		}
 		$attribs = array(
@@ -55,10 +56,10 @@ class HTMLFormEx extends HTMLForm {
 	public static function fieldset( $legend = false, $content = false, $attribs = array() ) {
 		$s = Xml::openElement( 'fieldset', $attribs ) . "\n";
 		if ( $legend ) {
-			$s .= Xml::element( 'legend', array('class' => 'bs-prefs-head'), $legend." " ) . "\n";
+			$s .= Xml::element( 'legend', array( 'class' => 'bs-prefs-head' ), $legend." " ) . "\n";
 		}
 		if ( $content !== false ) {
-			$s .= Xml::openElement( 'div', array('class' => 'bs-prefs-body') );
+			$s .= Xml::openElement( 'div', array( 'class' => 'bs-prefs-body' ) );
 			$s .= $content . "\n";
 			$s .= Xml::closeElement( 'div' );
 			$s .= Xml::closeElement( 'fieldset' ) . "\n";
@@ -69,5 +70,5 @@ class HTMLFormEx extends HTMLForm {
 
 }
 
-//HTMLForm::$typeMappings['check'] = 'HTMLCheckFieldOverride';
-//HTMLForm::$typeMappings['toggle'] = 'HTMLCheckFieldOverride';
+// HTMLForm::$typeMappings['check'] = 'HTMLCheckFieldOverride';
+// HTMLForm::$typeMappings['toggle'] = 'HTMLCheckFieldOverride';

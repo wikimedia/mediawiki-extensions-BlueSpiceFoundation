@@ -31,7 +31,7 @@ abstract class BSNotifications {
 	 * @param type $sHandler
 	 */
 	public static function registerNotificationHandler( $sHandler ) {
-		//NO-OP
+		// NO-OP
 	}
 
 	/**
@@ -50,8 +50,8 @@ abstract class BSNotifications {
 		$sLocationType = 'path',
 		$bOverride = false
 	) {
-		if( $sLocationType != 'path' ) {
-			//Only support path in new version
+		if ( $sLocationType != 'path' ) {
+			// Only support path in new version
 			return;
 		}
 
@@ -59,7 +59,7 @@ abstract class BSNotifications {
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
-		if( $echoNotifier == null ) {
+		if ( $echoNotifier == null ) {
 			return;
 		}
 
@@ -96,7 +96,7 @@ abstract class BSNotifications {
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
-		if( $echoNotifier == null ) {
+		if ( $echoNotifier == null ) {
 			return;
 		}
 
@@ -115,10 +115,10 @@ abstract class BSNotifications {
 	 * @deprecated since version 3.0.0 - use NotificationManager
 	 * @throws BsException
 	 */
-	public static function registerNotification( /*...*/ ) {
+	public static function registerNotification() {
 		$aParams = func_get_args();
 
-		if ( is_array ( $aParams[ 0 ] ) ) {
+		if ( is_array( $aParams[ 0 ] ) ) {
 			$aValues = $aParams[ 0 ];
 		} else {
 			$aValues[ 'type' ] = $aParams[ 0 ];
@@ -131,10 +131,10 @@ abstract class BSNotifications {
 			$aValues[ 'email-body-params' ] = $aParams[ 7 ];
 			$aValues[ 'web-body-message' ] = $aParams[ 6 ];
 			$aValues[ 'web-body-params' ] = $aParams[ 7 ];
-			if ( isset ( $aParams[ 8 ] ) && is_array ( $aParams[ 8 ] ) ) {
+			if ( isset( $aParams[ 8 ] ) && is_array( $aParams[ 8 ] ) ) {
 				$aValues[ 'extra-params' ] = $aParams[ 8 ];
 			} else {
-				$aValues[ 'extra-params' ] = array ();
+				$aValues[ 'extra-params' ] = array();
 			}
 		}
 
@@ -145,7 +145,7 @@ abstract class BSNotifications {
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
-		if( $echoNotifier == null ) {
+		if ( $echoNotifier == null ) {
 			return;
 		}
 
@@ -163,7 +163,7 @@ abstract class BSNotifications {
 	public static function unregisterNotification(
 		$sKey
 	) {
-		//NO-OP
+		// NO-OP
 	}
 
 	/**
@@ -186,7 +186,7 @@ abstract class BSNotifications {
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
-		if( $echoNotifier == null ) {
+		if ( $echoNotifier == null ) {
 			return;
 		}
 

@@ -31,7 +31,7 @@ class BsValidatorMwGroupnamePlugin implements BsValidatorPlugin {
 			return new BsValidatorResponse( 5, 'GroupManager', 'invalid_grp' );
 		}
 
-		//return new BsValidatorResponse(0, 'GroupManager', 'groupname_validation_approved');
-		return new BsValidatorResponse(0);
+		// return new BsValidatorResponse(0, 'GroupManager', 'groupname_validation_approved');
+		return new BsValidatorResponse( 0 );
 	}
 }

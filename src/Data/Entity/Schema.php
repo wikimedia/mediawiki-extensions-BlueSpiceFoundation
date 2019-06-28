@@ -21,8 +21,8 @@ class Schema extends \BlueSpice\Data\Schema {
 	}
 
 	protected function fillMissingWithDefaults( $fieldDefinition ) {
-		foreach( $this->getDefaultFieldDefinition() as $key => $defaultVal ) {
-			if( array_key_exists( $key, $fieldDefinition ) ) {
+		foreach ( $this->getDefaultFieldDefinition() as $key => $defaultVal ) {
+			if ( array_key_exists( $key, $fieldDefinition ) ) {
 				continue;
 			}
 			$fieldDefinition[$key] = $defaultVal;
@@ -42,8 +42,8 @@ class Schema extends \BlueSpice\Data\Schema {
 		$configFactory = MediaWikiServices::getInstance()->getService(
 			'BSEntityConfigFactory'
 		);
-		foreach( $entityRegistry->getTypes() as $type ) {
-			if( !$entityConfig = $configFactory->newFromType( $type ) ) {
+		foreach ( $entityRegistry->getTypes() as $type ) {
+			if ( !$entityConfig = $configFactory->newFromType( $type ) ) {
 				continue;
 			}
 			$entityConfigs[] = $entityConfig;
@@ -53,9 +53,9 @@ class Schema extends \BlueSpice\Data\Schema {
 
 	public function __construct() {
 		$scheme = [];
-		foreach( $this->getEntityConfigs() as $entityConfig ) {
+		foreach ( $this->getEntityConfigs() as $entityConfig ) {
 			$definitions = $entityConfig->get( 'AttributeDefinitions' );
-			foreach( $definitions as $key => $definition ) {
+			foreach ( $definitions as $key => $definition ) {
 				$definitions[$key] = $this->fillMissingWithDefaults(
 					$definition
 				);

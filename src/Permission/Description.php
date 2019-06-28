@@ -24,20 +24,20 @@ class Description implements IDescription {
 	public function __construct( $name, $config = [] ) {
 		$this->name = $name;
 
-		if( isset( $config ) === false ) {
+		if ( isset( $config ) === false ) {
 			return;
 		}
-		if( isset( $config[ 'type' ] ) ) {
+		if ( isset( $config[ 'type' ] ) ) {
 			$this->type = $config[ 'type' ];
 		}
-		if( isset( $config[ 'preventLockout' ] ) ) {
+		if ( isset( $config[ 'preventLockout' ] ) ) {
 			$this->preventLockout = $config[ 'preventLockout' ];
 		}
-		if( isset( $config[ 'dependencies' ] ) &&
+		if ( isset( $config[ 'dependencies' ] ) &&
 			is_array( $config[ 'dependencies' ] ) ) {
 			$this->dependencies = $config[ 'dependencies' ];
 		}
-		if( isset( $config[ 'roles' ] ) &&
+		if ( isset( $config[ 'roles' ] ) &&
 			is_array( $config[ 'roles' ] ) ) {
 			$this->roles = $config[ 'roles' ];
 		}
@@ -99,7 +99,7 @@ class Description implements IDescription {
 	 * @return string|false if property doesn't exist
 	 */
 	public function getProperty( $propertyName ) {
-		if( isset( $this->configArray[ $propertyName ] ) ) {
+		if ( isset( $this->configArray[ $propertyName ] ) ) {
 			return $this->configArray[ $propertyName ];
 		} else {
 			return false;

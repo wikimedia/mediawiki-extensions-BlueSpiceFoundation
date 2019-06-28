@@ -7,7 +7,7 @@ use BlueSpice\TargetCache\Title\Target;
 class InvalidateTargetCacheTitle extends \BlueSpice\Hook\PageContentSaveComplete {
 
 	protected function skipProcessing() {
-		if( !$this->wikipage->getTitle()->exists() ) {
+		if ( !$this->wikipage->getTitle()->exists() ) {
 			return true;
 		}
 

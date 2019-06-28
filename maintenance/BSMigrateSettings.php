@@ -13,7 +13,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	protected $oldData = [];
 	protected function readOldData() {
 		$res = $this->getDB( DB_REPLICA )->select( 'bs_settings', '*' );
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$this->oldData[$row->key] = $row->value;
 		}
 	}
@@ -22,8 +22,8 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	protected function convertData() {
 		$skipSettings = $this->getSkipSettings();
 
-		foreach( $this->oldData as $oldName => $oldValue ) {
-			if( in_array( $oldName, $skipSettings ) ) {
+		foreach ( $this->oldData as $oldName => $oldValue ) {
+			if ( in_array( $oldName, $skipSettings ) ) {
 				$this->output( "$oldName skipped\n" );
 				continue;
 			}
@@ -38,7 +38,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 				&$newValue,
 				&$skip,
 			] );
-			if( $skip === true ) {
+			if ( $skip === true ) {
 				$this->output( "$oldName skipped\n" );
 				continue;
 			}
@@ -53,11 +53,11 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 			'MW::DefaultUserImage',
 			'MW::DeletedUserImage',
 			'MW::AnonUserImage',
-			//partially removed packages
+			// partially removed packages
 			'MW::ExtendedSearch::SolrCore',
 			'MW::ExtendedSearch::SolrPingTime',
 			'MW::ExtendedSearch::SolrServiceUrl',
-			//removed packages
+			// removed packages
 			'MW::TopMenuBarCustomizer::NuberOfLevels',
 			'MW::TopMenuBarCustomizer::NumberOfMainEntries',
 			'MW::TopMenuBarCustomizer::NumberOfSubEntries',
@@ -74,16 +74,17 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	protected function makeNewName( $oldName ) {
-		if( $deviatingName = $this->fromDeviatingNames( $oldName ) ) {
+		if ( $deviatingName = $this->fromDeviatingNames( $oldName ) ) {
 			return $deviatingName;
 		}
 
-		//$oldName = "MW::TopMenuBarCustomizer::NumberOfSubEntries"
+		// $oldName = "MW::TopMenuBarCustomizer::NumberOfSubEntries"
 		$nameParts = explode( '::', $oldName );
-		array_shift( $nameParts ); //MW
+		// MW
+		array_shift( $nameParts );
 		$newName = implode( '', $nameParts );
 
-		if( strlen( $newName ) > 255 ) {
+		if ( strlen( $newName ) > 255 ) {
 			throw new Exception( "Variable name '$newName' is too long!" );
 		}
 
@@ -91,10 +92,10 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	protected function fromDeviatingNames( $oldName ) {
-		if( $oldName === 'MW::LogoPath' ) {
+		if ( $oldName === 'MW::LogoPath' ) {
 			return 'Logo';
 		}
-		if( $oldName === 'MW::FaviconPath' ) {
+		if ( $oldName === 'MW::FaviconPath' ) {
 			return 'Favicon';
 		}
 		return false;
@@ -102,7 +103,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 
 	protected function saveConvertedData() {
 		$dbValues = [];
-		foreach( $this->newData as $newName => $newValue ) {
+		foreach ( $this->newData as $newName => $newValue ) {
 			$set = false;
 			Hooks::run( 'BSMigrateSettingsSetNewSettings', [
 				$newName,
@@ -133,7 +134,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	protected function doDBUpdates() {
-		if( $this->noDataToMigrate() ) {
+		if ( $this->noDataToMigrate() ) {
 			$this->output( "bs_settings -> bs_settings3: No data to migrate" );
 			return true;
 		}

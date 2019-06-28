@@ -37,14 +37,14 @@ class StatusConverter {
 			$res->{Standard::ERRORS} = $this->api->getErrorFormatter()->arrayFromStatus(
 				$this->status
 			);
-			//$res->{Standard::MESSAGE} = $this->status->getMessage();
+			// $res->{Standard::MESSAGE} = $this->status->getMessage();
 		} else {
 			$res->{Standard::SUCCESS} = true;
 			$res->{Standard::PAYLOAD} = $this->status->getValue();
 			$res->{Standard::PAYLOAD_COUNT} = count( $this->status->getValue() );
 		}
-		foreach( (array)$res as $name => $field ) {
-			if( $name === Standard::ERRORS && empty( $field ) ) {
+		foreach ( (array)$res as $name => $field ) {
+			if ( $name === Standard::ERRORS && empty( $field ) ) {
 				continue;
 			}
 			$this->api->getResult()->addValue( null, $name, $field );

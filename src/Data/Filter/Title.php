@@ -12,11 +12,12 @@ class Title extends Range {
 	 * @return boolean
 	 */
 	protected function doesMatch( $dataSet ) {
-		if( !is_string( $this->getValue() ) ) {
-			return true; //TODO: Warning
+		if ( !is_string( $this->getValue() ) ) {
+			// TODO: Warning
+			return true;
 		}
 		$fieldValue = \Title::newFromText(
-			$dataSet->get($this->getField() ),
+			$dataSet->get( $this->getField() ),
 			$this->getDefaultTitleNamespace()
 		);
 		$filterValue = \Title::newFromText(
@@ -24,7 +25,7 @@ class Title extends Range {
 			$this->getDefaultTitleNamespace()
 		);
 
-		switch( $this->getComparison() ) {
+		switch ( $this->getComparison() ) {
 			case self::COMPARISON_GREATER_THAN:
 				return \Title::compare( $fieldValue, $filterValue ) > 0;
 			case self::COMPARISON_LOWER_THAN:

@@ -58,9 +58,9 @@ class BsExtensionManager {
 			'BSExtensionFactory'
 		);
 		$extension = $factory->getExtension( $name );
-		if( !$extension ) {
-			//Backwards compatibility: extensions will have a BlueSice prefix in
-			//the future
+		if ( !$extension ) {
+			// Backwards compatibility: extensions will have a BlueSice prefix in
+			// the future
 			$extension = $factory->getExtension( "BlueSpice$name" );
 		}
 		return $extension;

@@ -30,13 +30,13 @@ trait FloatableElement {
 		$this->setHorizontalPosition( $horizontalPosition );
 
 		$this->hideWhenOutOfView = true;
-		if( isset( $config[ 'hideWhenOutOfView' ] ) ) {
+		if ( isset( $config[ 'hideWhenOutOfView' ] ) ) {
 			$this->hideWhenOutOfView = (bool)$config['hideWhenOutOfView'];
 		}
 	}
 
 	protected function setFloatableElement( $floatableElement ) {
-		if( $this->floatable instanceof \OOUI\Tag ) {
+		if ( $this->floatable instanceof \OOUI\Tag ) {
 			$this->floatable->removeClasses( [ 'oo-ui-floatableElement-floatable' ] );
 		}
 
@@ -45,21 +45,21 @@ trait FloatableElement {
 	}
 
 	protected function setVerticalPosition( $verticalPosition ) {
-		if( in_array( $verticalPosition, $this->validVerticalPositions ) === false ) {
+		if ( in_array( $verticalPosition, $this->validVerticalPositions ) === false ) {
 			return;
 		}
 
-		if( $this->verticalPosition !== $verticalPosition ) {
+		if ( $this->verticalPosition !== $verticalPosition ) {
 			$this->verticalPosition = $verticalPosition;
 		}
 	}
 
 	protected function setHorizontalPosition( $horizontalPosition ) {
-		if( in_array( $horizontalPosition, $this->validHorizontalPositions ) === false ) {
+		if ( in_array( $horizontalPosition, $this->validHorizontalPositions ) === false ) {
 			return;
 		}
 
-		if( $this->horizontalPosition !== $horizontalPosition ) {
+		if ( $this->horizontalPosition !== $horizontalPosition ) {
 			$this->horizontalPosition = $horizontalPosition;
 		}
 	}

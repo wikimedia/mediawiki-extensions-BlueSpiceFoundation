@@ -35,7 +35,7 @@ class BSApiWikiPageStoreTest extends BSApiExtJSStoreTestBase {
 	protected function createStoreFixtureData() {
 		$oPageFixtures = new BSPageFixturesProvider();
 		$aFixtures = $oPageFixtures->getFixtureData();
-		foreach( $aFixtures as $aFixture ) {
+		foreach ( $aFixtures as $aFixture ) {
 			$this->insertPage( $aFixture[0], $aFixture[1] );
 		}
 

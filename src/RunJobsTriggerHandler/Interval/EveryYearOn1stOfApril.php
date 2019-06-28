@@ -15,7 +15,7 @@ class EveryYearOn1stOfApril implements Interval {
 		$the1stOfApril = new \DateTime();
 		$the1stOfApril->setDate( $the1stOfApril->format( 'Y' ), 4, 1 );
 
-		if( $the1stOfApril > $currentRunTimestamp ) {
+		if ( $the1stOfApril > $currentRunTimestamp ) {
 			return $the1stOfApril;
 		}
 

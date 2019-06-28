@@ -57,8 +57,8 @@ class SorterTest extends \PHPUnit\Framework\TestCase {
 			]
 		],
 
-		//Identically to filed1=4 but with different timestamp to allow testing
-		//of multible sorters
+		// Identically to filed1=4 but with different timestamp to allow testing
+		// of multible sorters
 		[
 			'field1' => 5,
 			'field2' => '20170101000002',
@@ -83,7 +83,7 @@ class SorterTest extends \PHPUnit\Framework\TestCase {
 		$dataSets = $this->makeDataSets();
 		$sortedDataSets = $sorter->sort( $dataSets );
 
-		foreach( $sortedDataSets as $index => $dataSet ) {
+		foreach ( $sortedDataSets as $index => $dataSet ) {
 			$this->assertEquals( $expectedSorting[$index], $dataSet->get( 'field1' ) );
 		}
 	}
@@ -115,7 +115,7 @@ class SorterTest extends \PHPUnit\Framework\TestCase {
 
 	protected function makeDataSets() {
 		$dataSets = [];
-		foreach( $this->testDataSets as $dataSet ) {
+		foreach ( $this->testDataSets as $dataSet ) {
 			$dataSets[] = new Record( (object)$dataSet );
 		}
 

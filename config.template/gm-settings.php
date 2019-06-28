@@ -3,5 +3,4 @@ global $wgAdditionalGroups;
 
 $wgAdditionalGroups = array();
 
-
-$wgGroupPermissions = array_merge($wgGroupPermissions, $wgAdditionalGroups);
+$wgGroupPermissions = array_merge( $wgGroupPermissions, $wgAdditionalGroups );

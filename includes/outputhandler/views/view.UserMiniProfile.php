@@ -38,18 +38,18 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			UserProfileImage::USERNAME => $this->mOptions['user']->getName(),
 			UserProfileImage::WIDTH => (int)$this->mOptions['width'],
 			UserProfileImage::HEIGHT => (int)$this->mOptions['height']
-		]);
+		] );
 
 		$dfdUrlBuilder = Services::getInstance()->getBSDynamicFileDispatcherUrlBuilder();
 		$url = $dfdUrlBuilder->build( new Params( $params ) );
 
 		$aOut = array();
 		$aOut[] = '<div class="'.  implode( ' ', $aClasses ).'" title="'.$this->mOptions['userdisplayname'].'">';
-		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' :'<a class="bs-block" href="'.$this->mOptions['linktargethref'].'">';
-		$aOut[] =   '<img alt="'.$this->mOptions['userdisplayname'].'"';
-		$aOut[] =        'src="'.$url.'"';
-		$aOut[] =        'width="'.$this->mOptions['width'].'"';
-		$aOut[] =   '/>';
+		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' : '<a class="bs-block" href="'.$this->mOptions['linktargethref'].'">';
+		$aOut[] = '<img alt="'.$this->mOptions['userdisplayname'].'"';
+		$aOut[] = 'src="'.$url.'"';
+		$aOut[] = 'width="'.$this->mOptions['width'].'"';
+		$aOut[] = '/>';
 		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '</span>' : '</a>';
 		$aOut[] = '</div>';
 
@@ -71,7 +71,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		}
 
 		$oUser = $this->mOptions['user'];
-		if( !$oUser instanceof User ) {
+		if ( !$oUser instanceof User ) {
 			throw new BsException( "No User Given. ".__CLASS__." ".__METHOD__ );
 		}
 
@@ -79,19 +79,18 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			$this->mOptions['width']
 				= $GLOBALS['bsgUserMiniProfileParams']['width'];
 		}
-		if( !isset( $this->mOptions['height'] ) ) {
+		if ( !isset( $this->mOptions['height'] ) ) {
 			$this->mOptions['height']
 				= $GLOBALS['bsgUserMiniProfileParams']['height'];
 		}
 
-		if ( empty($this->mOptions['userdisplayname'] ) ) {
+		if ( empty( $this->mOptions['userdisplayname'] ) ) {
 			$this->mOptions['userdisplayname'] = empty( $oUser->getRealName() )
 				? $oUser->getName()
-				: $oUser->getRealName()
-			;
+				: $oUser->getRealName();
 		}
 
-		//link can be empty for an anon user
+		// link can be empty for an anon user
 		if ( !isset( $this->mOptions['linktargethref'] ) ) {
 			$this->mOptions['linktargethref'] = htmlspecialchars(
 				$oUser->getUserPage()->getLinkURL(),

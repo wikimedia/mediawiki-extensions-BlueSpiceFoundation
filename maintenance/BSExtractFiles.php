@@ -29,9 +29,9 @@ class BSExtractFiles extends BSMaintenance {
 	private $destPath = '';
 
 	public function __construct() {
-		$this->addOption('srcxml', 'The path to the source file', true, true);
-		$this->addOption('srcimages', 'The path to the source images directory', true, true);
-		$this->addOption('dest', 'The folder to copy the files to', true, true);
+		$this->addOption( 'srcxml', 'The path to the source file', true, true );
+		$this->addOption( 'srcimages', 'The path to the source images directory', true, true );
+		$this->addOption( 'dest', 'The folder to copy the files to', true, true );
 
 		parent::__construct();
 	}
@@ -50,23 +50,23 @@ class BSExtractFiles extends BSMaintenance {
 		$dom->recover = true;
 
 		$pageEls = $dom->getElementsByTagName( 'page' );
-		foreach( $pageEls as $pageEl ) {
+		foreach ( $pageEls as $pageEl ) {
 			$titleEl = $pageEl->getElementsByTagName( 'title' )->item( 0 );
 			$title = $titleEl->nodeValue;
 			$this->output( "Extract from $title ..." );
 			$revisionEls = $pageEl->getElementsByTagName( 'revision' );
-			foreach( $revisionEls as $revisionEl ) {
+			foreach ( $revisionEls as $revisionEl ) {
 				$textEl = $revisionEl->getElementsByTagName( 'text' )->item( 0 );
 				$wikiText = $textEl->nodeValue;
-				preg_replace_callback( '#\[\[(.*?)\]\]#si', function( $matches ) {
+				preg_replace_callback( '#\[\[(.*?)\]\]#si', function ( $matches ) {
 					$parts = explode( '|', $matches[1] );
 					$targetTitleText = $parts[0];
 					$targetTitle = \Title::newFromText( $targetTitleText );
-					if( $targetTitle instanceof \Title === false ) {
+					if ( $targetTitle instanceof \Title === false ) {
 						$this->errors[] = "No title for '{$matches[0]}]'!";
 						return $matches[0];
 					}
-					if( in_array( $targetTitle->getNamespace(), [ NS_FILE, NS_MEDIA ] ) ) {
+					if ( in_array( $targetTitle->getNamespace(), [ NS_FILE, NS_MEDIA ] ) ) {
 						$this->addFileToExtract( $targetTitle );
 					}
 					return $matches[0];
@@ -75,9 +75,9 @@ class BSExtractFiles extends BSMaintenance {
 			}
 		}
 
-		if( !empty( $this->errors ) ) {
+		if ( !empty( $this->errors ) ) {
 			$this->output( "Errors:" );
-			foreach( $this->errors as $error ) {
+			foreach ( $this->errors as $error ) {
 				$this->output( "* $error" );
 			}
 		}
@@ -92,9 +92,9 @@ class BSExtractFiles extends BSMaintenance {
 	private function addFileToExtract( $title ) {
 		$file = \RepoGroup::singleton()->getLocalRepo()->newFile( $title );
 		$fileName = $title->getDBkey();
-		if( !isset( $this->sourceImages[$fileName] ) ) {
+		if ( !isset( $this->sourceImages[$fileName] ) ) {
 			$fileName = ucfirst( $fileName );
-			if( !isset( $this->sourceImages[$fileName] ) ) {
+			if ( !isset( $this->sourceImages[$fileName] ) ) {
 				$this->errors[] = "File {$fileName} not found in source directory!";
 				return;
 			}
@@ -102,7 +102,7 @@ class BSExtractFiles extends BSMaintenance {
 		$path = $this->sourceImages[$fileName];
 		$this->output( "* {$title->getDBkey()} ($path)" );
 		$result = copy( $path, $this->destPath . '/' . basename( $path ) );
-		if( $result === false ) {
+		if ( $result === false ) {
 			die( "Could not copy '$path'!" );
 		}
 		$this->noOfFiles++;
@@ -117,15 +117,15 @@ class BSExtractFiles extends BSMaintenance {
 		$this->sourceImages = array();
 		foreach ( $files as $path => $file ) {
 			$file instanceof SplFileInfo;
-			if( !$file->isFile() ) {
+			if ( !$file->isFile() ) {
 				continue;
 			}
 			$basename = $file->getBasename();
 			$title = \Title::makeTitle( NS_FILE, $basename );
 			$wikiFileName = $title->getDBkey();
 
-			if( isset( $this->sourceImages[$wikiFileName] ) ) {
-				die( "Duplicate '$wikiFileName' in source directory! This must never happen!"  );
+			if ( isset( $this->sourceImages[$wikiFileName] ) ) {
+				die( "Duplicate '$wikiFileName' in source directory! This must never happen!" );
 			}
 			$this->sourceImages[$wikiFileName] = $file->getPathname();
 		}

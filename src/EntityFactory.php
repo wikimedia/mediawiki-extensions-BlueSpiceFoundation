@@ -62,8 +62,8 @@ class EntityFactory {
 
 	protected function factory( $type, $data ) {
 		$entityConfig = $this->configFactory->newFromType( $type );
-		if( !$entityConfig instanceof EntityConfig ) {
-			//TODO: Return a DummyEntity instead of null.
+		if ( !$entityConfig instanceof EntityConfig ) {
+			// TODO: Return a DummyEntity instead of null.
 			return null;
 		}
 
@@ -78,7 +78,7 @@ class EntityFactory {
 	 */
 	public function newFromContent( EntityContent $sContent ) {
 		$aContent = $sContent->getJsonData();
-		if ( empty($aContent) ) {
+		if ( empty( $aContent ) ) {
 			return null;
 		}
 
@@ -91,22 +91,22 @@ class EntityFactory {
 	 * @return Entity | null
 	 */
 	public function newFromObject( \stdClass $object = null ) {
-		if( !$object ) {
+		if ( !$object ) {
 			return null;
 		}
 
-		if( empty( $object->type ) ) {
+		if ( empty( $object->type ) ) {
 			return null;
 		}
 
-		if( !$this->entityRegistry->hasType( $object->type ) ) {
+		if ( !$this->entityRegistry->hasType( $object->type ) ) {
 			return null;
 		}
 
-		if( !empty($object->id) && (int)$object->id !== 0 ) {
+		if ( !empty( $object->id ) && (int)$object->id !== 0 ) {
 			$entityConfig = $this->configFactory->newFromType( $object->type );
-			if( !$entityConfig instanceof EntityConfig ) {
-				//TODO: Return a DummyEntity instead of null.
+			if ( !$entityConfig instanceof EntityConfig ) {
+				// TODO: Return a DummyEntity instead of null.
 				return null;
 			}
 			$entityClass = $entityConfig->get( 'EntityClass' );
@@ -117,7 +117,7 @@ class EntityFactory {
 			$object->type,
 			$object
 		);
-		if( !$instance instanceof Entity ) {
+		if ( !$instance instanceof Entity ) {
 			return null;
 		}
 		return $this->appendCache( $instance );
@@ -138,16 +138,16 @@ class EntityFactory {
 		$ns = (int)$ns;
 
 		$instance = null;
-		if( !$reload ) {
+		if ( !$reload ) {
 			$instance = $this->getInstanceFromCacheByID( $id, $ns );
 		}
-		if( $instance ) {
+		if ( $instance ) {
 			return $instance;
 		}
 
 		$title = \Title::makeTitle( $ns, $id );
 
-		if( !$title || !$title->exists() ) {
+		if ( !$title || !$title->exists() ) {
 			return null;
 		}
 
@@ -158,11 +158,11 @@ class EntityFactory {
 		$content = new EntityContent( $sText );
 		$data = (object)$content->getData()->getValue();
 
-		if( empty($data->type) ) {
+		if ( empty( $data->type ) ) {
 			return null;
 		}
 
-		if( !$this->entityRegistry->hasType( $data->type ) ) {
+		if ( !$this->entityRegistry->hasType( $data->type ) ) {
 			return null;
 		}
 
@@ -170,7 +170,7 @@ class EntityFactory {
 			$data->type,
 			$data
 		);
-		if( !$instance instanceof Entity ) {
+		if ( !$instance instanceof Entity ) {
 			return null;
 		}
 		return $this->appendCache( $instance );
@@ -197,7 +197,7 @@ class EntityFactory {
 	 * @return Entity
 	 */
 	protected function appendCache( Entity &$oInstance ) {
-		if( $this->hasCacheEntry( $oInstance->getID(), $oInstance::NS ) ) {
+		if ( $this->hasCacheEntry( $oInstance->getID(), $oInstance::NS ) ) {
 			return $oInstance;
 		}
 		$this->storedById[$oInstance::NS][$oInstance->getID()] = $oInstance;
@@ -210,7 +210,7 @@ class EntityFactory {
 	 * @return Entity
 	 */
 	public function detachCache( Entity &$oInstance ) {
-		if( !$this->hasCacheEntry($oInstance->getID(), $oInstance::NS ) ) {
+		if ( !$this->hasCacheEntry( $oInstance->getID(), $oInstance::NS ) ) {
 			return $oInstance;
 		}
 		unset( $this->storedById[$oInstance::NS][$oInstance->getID()] );
@@ -223,7 +223,7 @@ class EntityFactory {
 	 * @return Entity
 	 */
 	protected function getInstanceFromCacheByID( $id, $ns = -1 ) {
-		if( !$this->hasCacheEntry( $id, $ns ) ) {
+		if ( !$this->hasCacheEntry( $id, $ns ) ) {
 			return null;
 		}
 		return $this->storedById[$ns][(int)$id];

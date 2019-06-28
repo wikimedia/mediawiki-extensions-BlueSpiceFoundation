@@ -75,28 +75,28 @@ class Namespaces extends Module {
 	 */
 	public function mustLockdown( Title $title, User $user, $action ) {
 		$actionRoles = $this->getActionRoles( $action );
-		if( empty( $actionRoles ) ) {
+		if ( empty( $actionRoles ) ) {
 			return false;
 		}
 		// Does any of the roles containing this permission have a lockdown.
 		$applies = false;
 		$this->allowedGroups[$action] = [];
-		foreach( $this->config->get( 'NamespaceRolesLockdown' ) as $ns => $roles ) {
-			if( $ns !== $title->getNamespace() ) {
+		foreach ( $this->config->get( 'NamespaceRolesLockdown' ) as $ns => $roles ) {
+			if ( $ns !== $title->getNamespace() ) {
 				continue;
 			}
-			foreach( $roles as $roleName => $groups ) {
+			foreach ( $roles as $roleName => $groups ) {
 				$this->allowedGroups[$action] = array_merge(
 					$this->allowedGroups[$action],
 					$groups
 				);
-				if( !in_array( $roleName, $actionRoles ) ) {
+				if ( !in_array( $roleName, $actionRoles ) ) {
 					continue;
 				}
 				// If any of the roles that are under lockdown are containing
 				// permission we are testing for, lockdown applies
 				$applies = true;
-				if( array_intersect( $groups, $this->getUserGroups( $user ) ) ) {
+				if ( array_intersect( $groups, $this->getUserGroups( $user ) ) ) {
 					return false;
 				}
 			}
@@ -123,7 +123,7 @@ class Namespaces extends Module {
 		return $this->msg( 'badaccess-groups', [
 			$this->getContext()->getLanguage()->commaList( $allowedGroups ),
 			count( $allowedGroups )
-		]);
+		] );
 	}
 
 	/**
@@ -159,8 +159,8 @@ class Namespaces extends Module {
 		$affectedNamespaces = array_keys(
 			$this->config->get( 'NamespaceRolesLockdown' )
 		);
-		//If there are no per-ns roles assigned for this ns don't block
-		if( !in_array( $title->getNamespace(), $affectedNamespaces ) ) {
+		// If there are no per-ns roles assigned for this ns don't block
+		if ( !in_array( $title->getNamespace(), $affectedNamespaces ) ) {
 			return false;
 		}
 		return true;

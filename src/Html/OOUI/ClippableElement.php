@@ -8,7 +8,7 @@ trait ClippableElement {
 	protected $clippableContainer;
 
 	public function initializeClippableElement( array $config = [] ) {
-		if( isset( $config['clippableContainer'] ) ) {
+		if ( isset( $config['clippableContainer'] ) ) {
 			$this->setClippableContainer( $config['clippableContainer'] );
 		}
 
@@ -21,7 +21,7 @@ trait ClippableElement {
 	}
 
 	protected function setClippableElement( $clippable ) {
-		if( $this->clippable && $this->clippable instanceof \OOUI\Tag ) {
+		if ( $this->clippable && $this->clippable instanceof \OOUI\Tag ) {
 			$this->clippable->removeClasses( [ "oo-ui-clippableElement-clippable" ] );
 			$this->clippable->setAttributes( [
 				'style' => "width: ''; height: ''; overflowX: ''; overflowY: ''"

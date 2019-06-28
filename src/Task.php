@@ -153,7 +153,7 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 				$status->merge( $this->runUpdates() );
 				$this->logger->debug( 'runUpdates', [ 'status' => $status ] );
 			}
-		} catch( \Exception $ex ) {
+		} catch ( \Exception $ex ) {
 			$this->logger->debug( 'exception', [ 'message' => $ex->getMessage() ] );
 			$status->fatal( $ex->getMessage() );
 			return $status;
@@ -211,10 +211,12 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	}
 
 	/**
-	 *
+	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 *   or a MessageSpecifier.
+	 * @param mixed $params,... Normal message parameters
 	 * @return Message
 	 */
-	public function msg( $key /* $args */ ) {
+	public function msg( $key ) {
 		return call_user_func_array(
 			[ $this->getContext(), 'msg' ],
 			func_get_args()
@@ -241,12 +243,12 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 				$permission,
 				$this->context
 			);
-			if( $res ) {
+			if ( $res ) {
 				continue;
 			}
 			$this->logger->debug(
 				'permissionserrors',
-				['permission' => $permission ]
+				[ 'permission' => $permission ]
 			);
 			$status->fatal( $this->msg( 'bs-permissionerror' ) );
 			break;

@@ -56,8 +56,8 @@ class TitleParamsResolver {
 		$this->params = $params;
 		$this->default = $default;
 
-		if( $this->default === null ) {
-			//Question: Better be "\Title::newMainPage()"?
+		if ( $this->default === null ) {
+			// Question: Better be "\Title::newMainPage()"?
 			$this->default = \Title::makeTitle( NS_SPECIAL, 'Badtitle/dummy title' );
 		}
 	}
@@ -67,7 +67,7 @@ class TitleParamsResolver {
 	 * @return \Title[] all titles that could be found in the provided params
 	 */
 	public function resolve() {
-		foreach( $this->params as $paramName => $paramValue ) {
+		foreach ( $this->params as $paramName => $paramValue ) {
 			$this->resolvePageIds( $paramName, $paramValue );
 			$this->resolvePageNames( $paramName, $paramValue );
 			$this->resolveRevisionIds( $paramName, $paramValue );
@@ -81,7 +81,7 @@ class TitleParamsResolver {
 	 * @return \Title[]
 	 */
 	protected function getResultOrDefault() {
-		if( empty( $this->titles ) ) {
+		if ( empty( $this->titles ) ) {
 			return [ $this->default ];
 		}
 		return array_values( $this->titles );
@@ -89,16 +89,16 @@ class TitleParamsResolver {
 
 	protected function resolvePageIds( $paramName, $paramValue ) {
 		$pageIds = [];
-		if( $this->isPageIdParam( $paramName ) ) {
+		if ( $this->isPageIdParam( $paramName ) ) {
 			$pageIds = [ $paramValue ];
 		}
-		else if( $this->isPageIdsParam( $paramName ) ) {
+		else if ( $this->isPageIdsParam( $paramName ) ) {
 			$pageIds = explode( '|', $paramValue );
 		}
 
-		foreach( $pageIds as $pageId ) {
+		foreach ( $pageIds as $pageId ) {
 			$title = \Title::newFromID( $pageId );
-			if( $title instanceof \Title ) {
+			if ( $title instanceof \Title ) {
 				$this->titles[$title->getPrefixedDBkey()] = $title;
 			}
 		}
@@ -114,16 +114,16 @@ class TitleParamsResolver {
 
 	protected function resolvePageNames( $paramName, $paramValue ) {
 		$pageNames = [];
-		if( $this->isPageNameParam( $paramName ) ) {
+		if ( $this->isPageNameParam( $paramName ) ) {
 			$pageNames = [ $paramValue ];
 		}
-		else if( $this->isPageNamesParam( $paramName ) ) {
+		else if ( $this->isPageNamesParam( $paramName ) ) {
 			$pageNames = explode( '|', $paramValue );
 		}
 
-		foreach( $pageNames as $pageName ) {
+		foreach ( $pageNames as $pageName ) {
 			$title = \Title::newFromText( $pageName );
-			if( $title instanceof  \Title ) {
+			if ( $title instanceof  \Title ) {
 				$this->titles[$title->getPrefixedDBkey()] = $title;
 			}
 		}
@@ -139,18 +139,18 @@ class TitleParamsResolver {
 
 	protected function resolveRevisionIds( $paramName, $paramValue ) {
 		$revisionIds = [];
-		if( $this->isRevisionIdParam( $paramName ) ) {
+		if ( $this->isRevisionIdParam( $paramName ) ) {
 			$revisionIds = [ $paramValue ];
 		}
-		else if( $this->isRevisionIdsParam( $paramName ) ) {
+		else if ( $this->isRevisionIdsParam( $paramName ) ) {
 			$revisionIds = explode( '|', $paramValue );
 		}
 
-		foreach( $revisionIds as $revId ) {
+		foreach ( $revisionIds as $revId ) {
 			$revision = \Revision::newFromId( $revId );
-			if( $revision instanceof \Revision ) {
+			if ( $revision instanceof \Revision ) {
 				$title = $revision->getTitle();
-				if( $title instanceof  \Title ) {
+				if ( $title instanceof  \Title ) {
 					$this->titles[$title->getPrefixedDBkey()] = $title;
 				}
 			}

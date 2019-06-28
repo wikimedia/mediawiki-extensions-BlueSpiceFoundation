@@ -45,7 +45,7 @@ class Config extends \MultiConfig {
 			] )
 		);
 
-		foreach( $resultSet->getRecords() as $record ) {
+		foreach ( $resultSet->getRecords() as $record ) {
 			$name = $record->get( Record::NAME );
 			$hash[ $name ] = $record->get( Record::VALUE );
 		}

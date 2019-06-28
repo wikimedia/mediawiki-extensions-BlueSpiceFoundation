@@ -7,7 +7,6 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 	private $params;
 
 	public function __construct( $params ) {
-
 		if ( isset( $params['type'] ) ) {
 			$type = $params['type'];
 		} else {
@@ -31,7 +30,7 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 	protected function makeOptions( $type ) {
 		$this->options = [];
 		foreach ( $this->permissions as $permKey => $permVal ) {
-			if ( empty( $type ) || ($permVal['type'] === $type ) ) {
+			if ( empty( $type ) || ( $permVal['type'] === $type ) ) {
 				$name = wfMessage( 'right-' . $permKey )->exists() ?
 					wfMessage( 'right-' . $permKey )->plain() :
 					$permKey;

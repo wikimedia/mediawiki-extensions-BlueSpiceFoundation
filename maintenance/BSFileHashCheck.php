@@ -16,9 +16,9 @@ class BSFileHashCheck extends BSMaintenance {
 		$sDir = $this->getOption( 'dir' );
 		$sHashes = $this->getOption( 'hashes' );
 
-		if( 'check' === $sMode ) {
+		if ( 'check' === $sMode ) {
 			$this->checkDirectoryContents( $sHashes, $sDir );
-		} else if( 'create' === $sMode ) {
+		} else if ( 'create' === $sMode ) {
 			$this->createHashFile( $sHashes, $sDir );
 		}
 	}
@@ -54,15 +54,15 @@ class BSFileHashCheck extends BSMaintenance {
 		);
 
 		$aErrors = array();
-		foreach( $aFileHashMap as $sRelPath => $sExpectedHash ) {
+		foreach ( $aFileHashMap as $sRelPath => $sExpectedHash ) {
 			$oFileInfo = new SplFileInfo( $sDir . '/' . $sRelPath );
 			$sActualHash = $this->getFileHash( $oFileInfo );
-			if( $sActualHash !== $sExpectedHash ) {
+			if ( $sActualHash !== $sExpectedHash ) {
 				$aErrors[] = $sRelPath;
 			}
 		}
 
-		if( empty( $aErrors ) ) {
+		if ( empty( $aErrors ) ) {
 			$this->output( 'Code base check OK!' );
 		}
 		else {
@@ -77,13 +77,13 @@ class BSFileHashCheck extends BSMaintenance {
 		);
 
 		$aFileHashMap = array();
-		foreach( $oIterator as $name => $oFileInfo ) {
-			if( $oFileInfo->isDir() ) {
+		foreach ( $oIterator as $name => $oFileInfo ) {
+			if ( $oFileInfo->isDir() ) {
 				continue;
 			}
 
 			$sFilePath = $this->getFilePath( $oFileInfo, $sDir );
-			if( substr( $sFilePath, 0, 1 ) === '.' ) {
+			if ( substr( $sFilePath, 0, 1 ) === '.' ) {
 				continue;
 			}
 			$sHash = $this->getFileHash( $oFileInfo );
@@ -91,7 +91,7 @@ class BSFileHashCheck extends BSMaintenance {
 			$aFileHashMap[$sFilePath] = $sHash;
 		}
 
-		$this->output( "Saving to $sHashes");
+		$this->output( "Saving to $sHashes" );
 		file_put_contents( $sHashes, FormatJson::encode( $aFileHashMap, true ) );
 	}
 

@@ -35,8 +35,8 @@ class BSApiUploadLicenseStore extends BSApiExtJSStoreBase {
 	 * will be done by the base class
 	 */
 	protected function makeData( $sQuery = '' ) {
-		//There is an api action "licences" in mw 2.24, but it is described as
-		//"Get media license dropdown HTML."
+		// There is an api action "licences" in mw 2.24, but it is described as
+		// "Get media license dropdown HTML."
 		$oLicenses = new JsonLicenses();
 		$aData = FormatJson::decode(
 			$oLicenses->getJsonOutput()

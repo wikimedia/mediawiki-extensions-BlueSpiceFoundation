@@ -32,14 +32,14 @@ class InternalLinksHelper {
 			PREG_SET_ORDER
 		);
 		$links = [];
-		foreach( $matches as $match ) {
+		foreach ( $matches as $match ) {
 			list( $fullMatch, $leadingColon, $titleText ) = $match;
 			$title = $this->makeTitleFromMatch(
 				$fullMatch,
 				$leadingColon,
 				$titleText
 			);
-			if( !$title ) {
+			if ( !$title ) {
 				continue;
 			}
 			$links[$fullMatch] = $title;
@@ -71,7 +71,7 @@ class InternalLinksHelper {
 	 * @return string
 	 */
 	protected function getPattern() {
-		return  "#\[\[([ :])?(.*?)([\|].*?\]\]|\]\])#si";
+		return "#\[\[([ :])?(.*?)([\|].*?\]\]|\]\])#si";
 	}
 
 	/**
@@ -88,8 +88,8 @@ class InternalLinksHelper {
 	 * @param bool $removeAllOccurrences
 	 */
 	protected function removeTarget( \Title $target, $removeAllOccurrences ) {
-		foreach( $this->getTargets() as $match => $title ) {
-			if( !$target->equals( $title ) ) {
+		foreach ( $this->getTargets() as $match => $title ) {
+			if ( !$target->equals( $title ) ) {
 				continue;
 			}
 			$this->wikitext = preg_replace(
@@ -97,7 +97,7 @@ class InternalLinksHelper {
 				'',
 				$this->wikitext,
 				$removeAllOccurrences ? -1 : 1
-			); 
+			);
 			break;
 		}
 	}
@@ -109,21 +109,21 @@ class InternalLinksHelper {
 	 * @param bool $addDuplicates
 	 */
 	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
-		if( !$addDuplicates ) {
-			foreach( $this->getTargets() as $match => $title ) {
-				if( !$target->equals( $title ) ) {
+		if ( !$addDuplicates ) {
+			foreach ( $this->getTargets() as $match => $title ) {
+				if ( !$target->equals( $title ) ) {
 					continue;
 				}
 				return;
 			}
 		}
 		$linkWikiText = "[[";
-		if( !empty( $this->wikitext ) ) {
+		if ( !empty( $this->wikitext ) ) {
 			$linkWikiText = $separator . $linkWikiText;
 		}
 
-		if( $target->getNamespace() !== NS_MAIN ) {
-			if( $leadingColon && in_array( $target->getNamespace() , [NS_FILE, NS_CATEGORY] ) ) {
+		if ( $target->getNamespace() !== NS_MAIN ) {
+			if ( $leadingColon && in_array( $target->getNamespace() , [ NS_FILE, NS_CATEGORY ] ) ) {
 				$linkWikiText .= ':';
 			}
 			$linkWikiText .= \MWNamespace::getCanonicalName(
@@ -132,7 +132,7 @@ class InternalLinksHelper {
 			$linkWikiText .= ':';
 		}
 		$linkWikiText .= $target->getText();
-		if( $text ) {
+		if ( $text ) {
 			$linkWikiText .= "|$text";
 		}
 		$linkWikiText .= "]]";
@@ -146,8 +146,8 @@ class InternalLinksHelper {
 	 * @return InternalLinksHelper
 	 */
 	public function removeTargets( $links, $removeAllOccurrences = false ) {
-		foreach( $links as $linkText => $target ) {
-			if( !$target instanceof \Title ) {
+		foreach ( $links as $linkText => $target ) {
+			if ( !$target instanceof \Title ) {
 				continue;
 			}
 			$this->removeTarget( $target, $removeAllOccurrences );
@@ -162,11 +162,11 @@ class InternalLinksHelper {
 	 * @return InternalLinksHelper
 	 */
 	public function addTargets( $links, $addDuplicates = true, $separator = "\n" ) {
-		foreach( $links as $linkText => $target ) {
-			if( !$target instanceof \Title ) {
+		foreach ( $links as $linkText => $target ) {
+			if ( !$target instanceof \Title ) {
 				continue;
 			}
-			if( empty( $linkText ) || is_numeric( $linkText ) ) {
+			if ( empty( $linkText ) || is_numeric( $linkText ) ) {
 				$linkText = false;
 			}
 			$this->addTarget( $target, $linkText, $addDuplicates, true, $separator );

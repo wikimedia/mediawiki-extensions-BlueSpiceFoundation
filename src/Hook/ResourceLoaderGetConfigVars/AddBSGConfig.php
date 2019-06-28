@@ -20,12 +20,12 @@ class AddBSGConfig extends ResourceLoaderGetConfigVars {
 		$cfgDefFactory = $this->getServices()->getService(
 			'BSConfigDefinitionFactory'
 		);
-		foreach( $cfgDefFactory->getRegisteredDefinitions() as $name ) {
+		foreach ( $cfgDefFactory->getRegisteredDefinitions() as $name ) {
 			$cfgDef = $cfgDefFactory->factory( $name );
-			if( !$cfgDef instanceof ConfigDefinition ) {
+			if ( !$cfgDef instanceof ConfigDefinition ) {
 				continue;
 			}
-			if( !$cfgDef->isRLConfigVar() ) {
+			if ( !$cfgDef->isRLConfigVar() ) {
 				continue;
 			}
 			$cfgVars[ $cfgDef->getVariableName() ] = $cfgDef->getValue();

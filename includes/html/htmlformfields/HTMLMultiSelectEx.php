@@ -8,11 +8,11 @@
 class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
-		if( $p !== true ) {
+		if ( $p !== true ) {
 			return $p;
 		}
 
-		if( !is_array( $value ) ) {
+		if ( !is_array( $value ) ) {
 			return false;
 		}
 
@@ -27,7 +27,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		$attr['infusable'] = true;
 
 		$attr['id'] = $this->mParams['id'];
-		//Add options menu only if options hold more values than actual value
+		// Add options menu only if options hold more values than actual value
 		$attr['options'] = $this->getOptionsOOUI();
 		$attr['inputPosition'] = isset( $this->mParams['inputPosition'] ) ?
 			$this->mParams['inputPosition'] : 'inline';
@@ -38,15 +38,15 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 			(bool)$this->mParams['allowDuplicates'] : false;
 
 		$attr['allowArbitrary'] = false;
-		if( isset( $this->mParams['allowedValues'] ) ) {
+		if ( isset( $this->mParams['allowedValues'] ) ) {
 			$attr['allowedValues'] = $this->mParams['allowedValues'];
 		}
 
-		if( isset( $this->mParams['allowEditTags'] ) ) {
+		if ( isset( $this->mParams['allowEditTags'] ) ) {
 			$attr[ 'allowEditTags' ] = (bool)$this->mParams['allowEditTags'];
 		}
 
-		if( isset( $this->mParams['allowDisplayInvalidTags'] ) ) {
+		if ( isset( $this->mParams['allowDisplayInvalidTags'] ) ) {
 			$attr[ 'allowDisplayInvalidTags' ] = (bool)$this->mParams['allowDisplayInvalidTags'];
 		}
 
@@ -60,16 +60,16 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		$attr['selected'] = $value;
 
 		// If options hold just a list of alredy set values, disable it
-		if( $value == $this->getOptions() ) {
+		if ( $value == $this->getOptions() ) {
 			$attr['options'] = [];
 		}
 
-		if( !empty( $attr[ 'options' ] ) ) {
-			//If there are actually options user can choose from, display
-			//widget with dropdown menu
+		if ( !empty( $attr[ 'options' ] ) ) {
+			// If there are actually options user can choose from, display
+			// widget with dropdown menu
 			$widget = new \BlueSpice\Html\OOUI\MenuTagMultiselectWidget( $attr );
 		} else {
-			//Display only current values and input
+			// Display only current values and input
 			$widget = new \BlueSpice\Html\OOUI\TagMultiselectWidget( $attr );
 		}
 
@@ -79,20 +79,20 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	function getOptionsOOUI() {
 		$options = $this->getOptions();
 
-		if( empty( $options ) ) {
+		if ( empty( $options ) ) {
 			return [];
 		}
 
 		$isAssoc = !isset( $options[0] );
 		$oouiOptions = [];
-		foreach( $options as $data => $label ) {
+		foreach ( $options as $data => $label ) {
 			$oouiOption = [
 				'data' => $data,
 				'label' => $label,
 				'icon' => ''
 			];
 
-			if( $isAssoc == false ) {
+			if ( $isAssoc == false ) {
 				$oouiOption['data'] = $label;
 			}
 			$oouiOptions[] = $oouiOption;
@@ -112,13 +112,13 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 
 	function formatOptions( $options, $value, $class = "multiselectex" ) {
 		$select = new XmlMultiSelect( $this->mName . '[]', $this->mID, $value );
-		$select->setAttribute('size', 5);
-		$select->setAttribute('multiple', 'true');
-		$select->setAttribute('class', $class);
+		$select->setAttribute( 'size', 5 );
+		$select->setAttribute( 'multiple', 'true' );
+		$select->setAttribute( 'class', $class );
 
 		if ( is_array( $options ) ) {
 			$bIsAssoc = true;
-			if ( array_values($options) === $options ) {
+			if ( array_values( $options ) === $options ) {
 				$bIsAssoc = false;
 			}
 
@@ -140,7 +140,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		if ( $request->getCheck( 'wpEditToken' ) ) {
 			$arr = $request->getArray( $this->mName );
 
-			if( !$arr ) {
+			if ( !$arr ) {
 				$arr = array();
 			}
 

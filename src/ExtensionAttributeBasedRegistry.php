@@ -24,7 +24,7 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 	public function __construct( $attribName, $extensionRegistry = null ) {
 		$this->attribName = $attribName;
 		$this->extensionRegistry = $extensionRegistry;
-		if( $this->extensionRegistry === null ) {
+		if ( $this->extensionRegistry === null ) {
 			$this->extensionRegistry = \ExtensionRegistry::getInstance();
 		}
 	}
@@ -39,9 +39,9 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 		$registry = $this->extensionRegistry->getAttribute( $this->attribName );
 		$value = isset( $registry[$key] ) ? $registry[$key] : $default;
 
-		if( is_array( $value ) ) {
-			//Attributes get merged together instead of being overwritten,
-			//so just take the last one
+		if ( is_array( $value ) ) {
+			// Attributes get merged together instead of being overwritten,
+			// so just take the last one
 			$value = end( $value );
 		}
 

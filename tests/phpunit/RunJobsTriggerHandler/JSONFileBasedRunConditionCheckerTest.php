@@ -57,7 +57,8 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 
 		$this->assertTrue( $checker->shouldRun( $dummyHandler, 'handler1' ) );
 
-		unset( $checker ); //Invoke '__destruct'
+		// Invoke '__destruct'
+		unset( $checker );
 
 		$persistedData = \FormatJson::decode(
 			file_get_contents( $this->tmpJSONPathname ),

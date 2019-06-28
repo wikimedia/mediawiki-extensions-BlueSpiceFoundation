@@ -50,7 +50,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			__METHOD__,
 			$this->makePreOptionConds( $params )
 		);
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$this->appendRowToData( $row );
 		}
 
@@ -67,12 +67,12 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$schema = new Schema();
 		$fields = array_values( $schema->getFilterableFields() );
 		$filterFinder = new FilterFinder( $params->getFilter() );
-		foreach( $fields as $fieldName ) {
+		foreach ( $fields as $fieldName ) {
 			$filter = $filterFinder->findByField( $fieldName );
-			if( !$filter instanceof Filter ) {
+			if ( !$filter instanceof Filter ) {
 				continue;
 			}
-			switch( $filter->getComparison() ) {
+			switch ( $filter->getComparison() ) {
 				case Filter::COMPARISON_EQUALS:
 					$conds[$fieldName] = $filter->getValue();
 					$filter->setApplied();
@@ -135,11 +135,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$schema = new Schema();
 		$fields = array_values( $schema->getSortableFields() );
 
-		foreach( $params->getSort() as $sort ) {
-			if( !in_array( $sort->getProperty(), $fields ) ) {
+		foreach ( $params->getSort() as $sort ) {
+			if ( !in_array( $sort->getProperty(), $fields ) ) {
 				continue;
 			}
-			if( !isset( $conds['ORDER BY'] ) ) {
+			if ( !isset( $conds['ORDER BY'] ) ) {
 				$conds['ORDER BY'] = "";
 			} else {
 				$conds['ORDER BY'] .= ",";
@@ -151,7 +151,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	protected function appendRowToData( $row ) {
-		if( $this->params->getQuery() !== '' ) {
+		if ( $this->params->getQuery() !== '' ) {
 			$bApply = \BsStringHelper::filter(
 				\BsStringHelper::FILTER_CONTAINS,
 				$row->{Record::USER_NAME},
@@ -161,7 +161,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 				$row->{Record::USER_REAL_NAME},
 				$this->params->getQuery()
 			);
-			if( !$bApply ) {
+			if ( !$bApply ) {
 				return;
 			}
 		}

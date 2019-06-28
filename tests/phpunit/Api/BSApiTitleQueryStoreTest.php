@@ -41,7 +41,7 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	protected function createStoreFixtureData() {
 		$oPageFixtures = new BSPageFixturesProvider();
 		$aFixtures = $oPageFixtures->getFixtureData();
-		foreach( $aFixtures as $aFixture ) {
+		foreach ( $aFixtures as $aFixture ) {
 			$this->insertPage( $aFixture[0], $aFixture[1] );
 		}
 		$total = count( $aFixtures );
@@ -53,10 +53,10 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	protected function makeRequestParams() {
-		$aParams =  parent::makeRequestParams();
-		$aParams['options'] = \FormatJson::encode([
+		$aParams = parent::makeRequestParams();
+		$aParams['options'] = \FormatJson::encode( [
 			'namespaces' => [ NS_MAIN, NS_TEMPLATE ]
-		]);
+		] );
 
 		return $aParams;
 	}
@@ -84,7 +84,7 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	 * @param int $offset
 	 */
 	public function testPaging( $limit, $offset ) {
-		parent::testPaging($limit, $offset);
+		parent::testPaging( $limit, $offset );
 	}
 
 	/**

@@ -2,7 +2,6 @@
 
 namespace BlueSpice\Tests;
 
-
 /**
  * @group BlueSpice
  */

@@ -10,8 +10,8 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 
 		$this->aGroups = array();
 		$groupsRes = $dbr->select( 'user_groups', '*' );
-		foreach( $groupsRes as $row ) {
-			if( !isset( $this->aGroups[$row->ug_user] ) ) {
+		foreach ( $groupsRes as $row ) {
+			if ( !isset( $this->aGroups[$row->ug_user] ) ) {
 				$this->aGroups[$row->ug_user] = array();
 			}
 			$this->aGroups[$row->ug_user][] = $row->ug_group;
@@ -19,21 +19,21 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 
 		$this->aBlocks = array();
 		$blocksRes = $dbr->select( 'ipblocks', '*' );
-		foreach( $blocksRes as $row ) {
+		foreach ( $blocksRes as $row ) {
 			$this->aBlocks[$row->ipb_user] = $row->ipb_address;
 		}
 
-		//TODO: It would be very cool to have the permissions as a filterable
-		//field. Unfortunately this requires some context information from the
-		//client. I.e. The page/namespace for which the permissions should be
-		//calculated. This would also be very expensive and a potential
-		//security issue.
+		// TODO: It would be very cool to have the permissions as a filterable
+		// field. Unfortunately this requires some context information from the
+		// client. I.e. The page/namespace for which the permissions should be
+		// calculated. This would also be very expensive and a potential
+		// security issue.
 
 		$aData = array();
 		$userRes = $dbr->select( 'user', '*' );
-		foreach( $userRes as $aRow ) {
+		foreach ( $userRes as $aRow ) {
 			$aResRow = $this->makeResultRow( $aRow );
-			if( !$aResRow ) {
+			if ( !$aResRow ) {
 				continue;
 			}
 			$aData[] = (object)$aResRow;
@@ -59,10 +59,11 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 			'enabled' => isset( $this->aBlocks[$row->user_id] ) ? false : true,
 			'page_link' => $this->oLinkRenderer->makeLink(
 				$oUserPageTitle,
+				// The whitespace is to aviod automatic rewrite to user_real_name by BSF
 				$row->user_name.' '
-			), //The whitespace is to aviod automatic rewrite to user_real_name by BSF
+			),
 
-			//legacy fields
+			// legacy fields
 			'display_name' => $row->user_real_name == null ? $row->user_name : $row->user_real_name,
 			'page_prefixed_text' => $oUserPageTitle->getPrefixedText()
 		);
@@ -116,7 +117,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 			$this->getParameter( 'query' ),
 			$aDataSet
 		);
-		if( !$bFilterApplies ) {
+		if ( !$bFilterApplies ) {
 			return false;
 		}
 
@@ -131,7 +132,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	 * @return boolean true if filter applies, false if not
 	 */
 	public function filterUserName( $sQuery, $aDataSet ) {
-		if( empty( $sQuery ) || !is_string( $sQuery ) ) {
+		if ( empty( $sQuery ) || !is_string( $sQuery ) ) {
 			return true;
 		}
 
@@ -150,12 +151,13 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	 * @return bool
 	 */
 	public function filterString( $filter, $dataSet ) {
-		if( $filter->field === 'groups' ) {
+		if ( $filter->field === 'groups' ) {
 			if ( !isset( $dataSet->{$filter->field} ) ) {
 				return false;
 			}
-			if( !is_string( $filter->value ) ) {
-				return true; //TODO: Warning
+			if ( !is_string( $filter->value ) ) {
+				// TODO: Warning
+				return true;
 			}
 			return BsStringHelper::filter(
 				$filter->comparison,

@@ -26,21 +26,21 @@ class ConfigDefinitionFactory {
 	 * @return ConfigDefinition | false
 	 */
 	public function factory( $name ) {
-		if( empty( $name ) || !$this->config->has( $name ) ) {
+		if ( empty( $name ) || !$this->config->has( $name ) ) {
 			return false;
 		}
 		$definitions = $this->getConfigDefinitions();
-		if( !isset( $definitions[$name] ) ) {
+		if ( !isset( $definitions[$name] ) ) {
 			return false;
 		}
-		if( !is_callable( $definitions[$name] ) ) {
+		if ( !is_callable( $definitions[$name] ) ) {
 			return false;
 		}
 		return call_user_func_array( $definitions[$name], [
 			\RequestContext::getMain(),
 			$this->config,
 			$name,
-		]);
+		] );
 	}
 
 	/**
@@ -52,14 +52,14 @@ class ConfigDefinitionFactory {
 	}
 
 	protected function getConfigDefinitions() {
-		if( $this->configDefinitions ) {
+		if ( $this->configDefinitions ) {
 			return $this->configDefinitions;
 		}
 		$this->configDefinitions = [];
-		//TODO: This need to be changed in the future, using globals is not
-		//cool! You may implement \BlueSpice\ExtensionManager ;)
-		foreach( $GLOBALS['bsgExtensions'] as $extName => $extDefinition ) {
-			if( empty( $extDefinition['configDefinitions'] ) ) {
+		// TODO: This need to be changed in the future, using globals is not
+		// cool! You may implement \BlueSpice\ExtensionManager ;)
+		foreach ( $GLOBALS['bsgExtensions'] as $extName => $extDefinition ) {
+			if ( empty( $extDefinition['configDefinitions'] ) ) {
 				continue;
 			}
 			$this->configDefinitions = array_merge(

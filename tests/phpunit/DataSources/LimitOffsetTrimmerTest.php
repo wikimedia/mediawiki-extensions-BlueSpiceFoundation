@@ -11,21 +11,21 @@ use BlueSpice\Data\LimitOffsetTrimmer;
 class LimitOffsetTrimmerTest extends \PHPUnit\Framework\TestCase {
 
 	protected $testDataSets = [
-		//Page 1
+		// Page 1
 		'Zero',
 		'One',
 		'Two',
 		'Three',
 		'Four',
 
-		//Page 2
+		// Page 2
 		'Five',
 		'Six',
 		'Seven',
 		'Eight',
 		'Nine',
 
-		//Page 3
+		// Page 3
 		'Ten',
 		'Eleven',
 		'Twelve',

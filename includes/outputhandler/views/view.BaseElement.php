@@ -118,7 +118,6 @@ class ViewBaseElement {
 		return $this->_mId;
 	}
 
-
 	/**
 	 * Set a string as template for this element.
 	 * @param String $template
@@ -137,12 +136,12 @@ class ViewBaseElement {
 	 */
 	public function setTemplateFile( $path ) {
 		if ( !is_file( $path ) ) {
-			throw new Exception('template file' . $path . ' not found');
+			throw new Exception( 'template file' . $path . ' not found' );
 		}
 
 		$this->_mTemplate = file_get_contents( $path );
-		if($this->_mTemplate === false) {
-			throw new Exception('Failed reading template file ' . $path);
+		if ( $this->_mTemplate === false ) {
+			throw new Exception( 'Failed reading template file ' . $path );
 		}
 
 		return $this;
@@ -246,7 +245,7 @@ class ViewBaseElement {
 		$output = '';
 		// TODO MRG20100816: Eine Mischung aus data und items geht nicht?
 		if ( count( $this->_mData ) ) {
-			foreach( $this->_mData as $dataSet ) {
+			foreach ( $this->_mData as $dataSet ) {
 				$output .= $this->processData( $dataSet );
 			}
 		}
@@ -278,15 +277,15 @@ class ViewBaseElement {
 
 	protected function processData( $dataSet ) {
 		$this->_mPresentDataset = $dataSet;
-		if($this->_mTemplate != '') {
+		if ( $this->_mTemplate != '' ) {
 			$output = $this->_mTemplate;
 			$output = preg_replace_callback(
 				'/###([-_|A-Za-z0-9]*?)###/',
 				array( $this, 'processItem' ),
 				$output
 			);
-			foreach( $dataSet as $key => $value ) {
-				$output = str_replace('{'.$key.'}', $value, $output);
+			foreach ( $dataSet as $key => $value ) {
+				$output = str_replace( '{'.$key.'}', $value, $output );
 			}
 		}
 		else {
@@ -308,7 +307,7 @@ class ViewBaseElement {
 		// | nicht anderweitig verwendet wird.
 		$tokens = explode( '|', $request );
 		$item = array_shift( $tokens );
-		if( !isset( $this->_mItems[$item] ) ) {
+		if ( !isset( $this->_mItems[$item] ) ) {
 			return '';
 		}
 		if ( count( $tokens ) ) {
@@ -329,7 +328,7 @@ class ViewBaseElement {
 
 	// TODO MRG20100816: Kommentar: Das sollte in der Regel überschrieben werden.
 	protected function getAutoElementOpener() {
-		if(!$this->_mAutoElement) {
+		if ( !$this->_mAutoElement ) {
 			return '';
 		}
 
@@ -351,7 +350,7 @@ class ViewBaseElement {
 			? $options['href']
 			: '';
 		if ( isset( $options['query'] ) ) {
-			$glue = (strpos( $href, '?' ) === false)
+			$glue = ( strpos( $href, '?' ) === false )
 				? '?'
 				: '&';
 			$href = $href.$glue.$options['query'];
@@ -364,7 +363,7 @@ class ViewBaseElement {
 		if ( isset( $options['class'] ) ) {
 			$out .= 'class="'.$options['class'].'" ';
 		}
-		if (isset($options['openInNewWindow'])) {
+		if ( isset( $options['openInNewWindow'] ) ) {
 			$out .= 'target="_blank" ';
 		}
 		$out .= '>';

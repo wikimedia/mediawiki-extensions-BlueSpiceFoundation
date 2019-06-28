@@ -17,7 +17,7 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 
 		$this->overlay = $this;
 		$this->clearInputOnChoose = true;
-		if( isset( $config['clearInputOnChoose'] ) ) {
+		if ( isset( $config['clearInputOnChoose'] ) ) {
 			$this->clearInputOnChoose = (bool)$config['clearInputOnChoose'];
 		}
 
@@ -41,22 +41,22 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 
 		$this->addClasses( [ 'oo-ui-menuTagMultiselectWidget' ] );
 
-		if( isset( $config['selected'] ) && is_array( $config['selected' ] ) ) {
+		if ( isset( $config['selected'] ) && is_array( $config['selected' ] ) ) {
 			$this->selected = $config['selected'];
 			$this->setValue( $this->selected );
 		}
 
-		$this->registerConfigCallback( function( &$config ) {
-			if( $this->clearInputOnChoose ) {
+		$this->registerConfigCallback( function ( &$config ) {
+			if ( $this->clearInputOnChoose ) {
 				$config['clearInputOnChoose'] = $this->clearInputOnChoose;
 			}
-			if( ! empty( $this->menuConfig ) ) {
+			if ( ! empty( $this->menuConfig ) ) {
 				$config['menu'] = $this->menuConfig;
 			}
-			if( $this->options ) {
+			if ( $this->options ) {
 				$config['options'] = $this->options;
 			}
-			if( $this->selected ) {
+			if ( $this->selected ) {
 				$config['selected'] = $this->selected;
 			}
 		} );
@@ -76,7 +76,7 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 
 	public function addOptions( $options ) {
 		$items = [];
-		foreach( $options as $option ) {
+		foreach ( $options as $option ) {
 			$items[] = new MenuOptionWidget( [
 				'data' => $option['data'],
 				'label' => isset( $option['label'] ) ? $option['label'] : $option['data'],

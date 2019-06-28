@@ -103,7 +103,8 @@ abstract class SpecialPage extends \SpecialPage {
 					$key = $key . ':' . $uniqueId;
 					$queryParams['postUniqueId'] = $uniqueId;
 					$session = $request->getSession();
-					$session->persist(); // Just in case
+					// Just in case
+					$session->persist();
 					$session->setSecret( $key, $data );
 				}
 			}
@@ -113,9 +114,9 @@ abstract class SpecialPage extends \SpecialPage {
 				'returntoquery' => wfArrayToCgi( array_diff_key( $queryParams, [ 'title' => true ] ) ),
 				'force' => $level,
 			];
-			//PW(20180815): ssl should not be forced
+			// PW(20180815): ssl should not be forced
 			$url = $title->getFullURL( $query, false, PROTO_CURRENT );
-			//$url = $title->getFullURL( $query, false, PROTO_HTTPS );
+			// $url = $title->getFullURL( $query, false, PROTO_HTTPS );
 
 			$this->getOutput()->redirect( $url );
 			return false;

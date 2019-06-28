@@ -27,11 +27,11 @@ class AddAlerts extends SiteNoticeAfter {
 			'BlueSpiceFoundationAlertProviderRegistry'
 		);
 
-		foreach( $registry->getAllKeys() as $registryKey ) {
+		foreach ( $registry->getAllKeys() as $registryKey ) {
 			$callback = $registry->getValue( $registryKey );
 			$provider = call_user_func_array( $callback, [ $this->skin ] );
 
-			if( $provider instanceof IAlertProvider === false ) {
+			if ( $provider instanceof IAlertProvider === false ) {
 				throw new Exception(
 					"Factory callback of '$registryKey' does not "
 						. "implement IAlertProvider!"
@@ -45,7 +45,7 @@ class AddAlerts extends SiteNoticeAfter {
 	protected function buildContainer() {
 		$rawContentHtml = '';
 
-		foreach( $this->alerts as $regKey => $html ) {
+		foreach ( $this->alerts as $regKey => $html ) {
 			$rawContentHtml .= $html;
 		}
 
@@ -77,7 +77,7 @@ class AddAlerts extends SiteNoticeAfter {
 		$type = $provider->getType();
 		$html = $provider->getHTML();
 
-		if( empty( $html ) ) {
+		if ( empty( $html ) ) {
 			return '';
 		}
 
@@ -85,7 +85,7 @@ class AddAlerts extends SiteNoticeAfter {
 			'div',
 			[
 				'class' => 'alert alert-' . $type,
-				'role' =>"alert",
+				'role' => "alert",
 				'data-bs-alert-id' => $registryKey
 			],
 			$html

@@ -58,7 +58,7 @@ abstract class Extension extends Context implements JsonSerializable {
 	 */
 	public function getInfo() {
 		$info = [];
-		foreach( $this->allowedInfoKeys as $name => $defVal ) {
+		foreach ( $this->allowedInfoKeys as $name => $defVal ) {
 			$info[$name] = $this->$name;
 		}
 		return $info;
@@ -75,7 +75,7 @@ abstract class Extension extends Context implements JsonSerializable {
 			"/extensions",
 			$this->getExtensionPath(),
 			'/resources',
-		]);
+		] );
 	}
 
 	/**
@@ -177,7 +177,7 @@ abstract class Extension extends Context implements JsonSerializable {
 		if ( !is_array( $value ) ) {
 			$value = explode( ',', $value );
 		}
-		$value = array_map( function( $author ) {
+		$value = array_map( function ( $author ) {
 			return trim( $author );
 		}, $value );
 		$this->$var = $value;

@@ -70,7 +70,8 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 
 			foreach ( $aCategories as $sCategory ) {
 				$oTmpCat = Category::newFromName( $sCategory );
-				if ( $oTmpCat instanceof Category ){}
+				if ( $oTmpCat instanceof Category ) {
+    }
 				$oCategory = new stdClass();
 				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
 				$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
@@ -86,7 +87,7 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 			$aConditions = array( 'cl_to' => $sCatTitle, 'page_namespace' => NS_CATEGORY );
 			$sMethod = __METHOD__;
 			$aOptions = array( '' );
-			$aJoinConds = array( 'categorylinks' => array( 'INNER JOIN', 'page_id=cl_from') );
+			$aJoinConds = array( 'categorylinks' => array( 'INNER JOIN', 'page_id=cl_from' ) );
 
 			$resSubCategories = $dbr->select(
 				$aTables,
@@ -122,7 +123,7 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		 * In a tree store paging is not anted in most cases
 		 * TODO: Promote to dedicated BSApiExtJSTreeStoreBase class
 		 */
-		if( $this->getRequest()->getInt( 'limit', -1 ) === -1 ) {
+		if ( $this->getRequest()->getInt( 'limit', -1 ) === -1 ) {
 			return $aProcessedData;
 		}
 

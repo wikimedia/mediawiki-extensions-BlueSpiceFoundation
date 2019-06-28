@@ -14,15 +14,15 @@ print_r( "need to have permissions on log directory\n" );
 print_r( $options );
 
 $bDry = true;
-if( isset( $options['execute'] ) ) { 
+if ( isset( $options['execute'] ) ) {
 	$bDry = false;
 }
 
-if( isset( $options['help'] ) ) {
+if ( isset( $options['help'] ) ) {
 	showHelp();
 }
 else {
-	if( isset( $options['logdir'] ) ) {
+	if ( isset( $options['logdir'] ) ) {
 		deleteOldTomcatLogs( $bDry, $options );
 	}
 	else {
@@ -39,23 +39,22 @@ function showHelp() {
 }
 
 function deleteOldTomcatLogs( $bDry, $options ) {
-	
-	if ($handle = opendir($options['logdir'])) {
-		while (false !== ($file = readdir($handle))) {
-			if( !empty( $file ) 
-					&& preg_match( '/.(\d{4})\-(\d{2})\-(\d{2}).log/', $file, $hits) 
-					&& $hits 
-					&& $hits[1].$hits[2].$hits[3] != date('Ymd') 
-					) {
-				if( $bDry == false ) {
+	if ( $handle = opendir( $options['logdir'] ) ) {
+		while ( false !== ( $file = readdir( $handle ) ) ) {
+			if ( !empty( $file )
+					&& preg_match( '/.(\d{4})\-(\d{2})\-(\d{2}).log/', $file, $hits )
+					&& $hits
+					&& $hits[1].$hits[2].$hits[3] != date( 'Ymd' )
+ ) {
+				if ( $bDry == false ) {
 					unlink( $options['logdir'].'\\'.$file );
 				}
 				echo ( 'deleted: '.$file." \n" );
 			}
 		}
-		closedir($handle);
+		closedir( $handle );
 	}
-	else { 
+	else {
 		echo 'Directory not found! '.$options['logdir'];
 	}
 }

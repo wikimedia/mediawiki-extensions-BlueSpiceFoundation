@@ -9,13 +9,13 @@ namespace BlueSpice\Hook\MakeGlobalVariablesScript;
 class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 
 	protected function skipProcessing() {
-		if( $this->getContext()->getUser()->isAnon() ) {
+		if ( $this->getContext()->getUser()->isAnon() ) {
 			return true;
 		}
-		if( !$this->getContext()->getUser()->isAllowed( 'read' ) ) {
+		if ( !$this->getContext()->getUser()->isAllowed( 'read' ) ) {
 			return true;
 		}
-		if( $this->getConfig()->get( 'ReadOnly' ) ) {
+		if ( $this->getConfig()->get( 'ReadOnly' ) ) {
 			return true;
 		}
 		return false;
@@ -41,8 +41,8 @@ class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 			$this->getContext(),
 			$this->getConfig()
 		);
-		foreach( $this->getConfig()->get( 'APIModules' ) as $name => $module ) {
-			if( !is_subclass_of( $module, \BSApiTasksBase::class ) ) {
+		foreach ( $this->getConfig()->get( 'APIModules' ) as $name => $module ) {
+			if ( !is_subclass_of( $module, \BSApiTasksBase::class ) ) {
 				continue;
 			}
 			$api = new $module( new \ApiMain( $context ), $name );
@@ -56,7 +56,7 @@ class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 		}
 
 		$this->vars['bsgTaskAPIPermissions'] = (object)$taskPermissions;
-		//backward compatibility
+		// backward compatibility
 		$this->vars['bsTaskAPIPermissions'] = (object)$taskPermissions;
 		return true;
 	}

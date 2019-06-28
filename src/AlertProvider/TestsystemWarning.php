@@ -8,7 +8,7 @@ use BlueSpice\IAlertProvider;
 class TestsystemWarning extends AlertProviderBase {
 
 	public function getHTML() {
-		//TBD
+		// TBD
 		return '';
 	}
 

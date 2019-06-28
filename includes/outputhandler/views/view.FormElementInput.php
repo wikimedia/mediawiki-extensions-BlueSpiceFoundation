@@ -38,9 +38,9 @@ class ViewFormElementInput extends ViewFormElement {
 	public function execute( $params = false ) {
 		$output = '';
 		$title = '';
-		$validate = ($this->_mValidate) ? ' validate="true"' : '';
-		$linebreak = ($this->_mLinebreak) ? "<br />\n" : "\n";
-		if($this->_mLabel != '') {
+		$validate = ( $this->_mValidate ) ? ' validate="true"' : '';
+		$linebreak = ( $this->_mLinebreak ) ? "<br />\n" : "\n";
+		if ( $this->_mLabel != '' ) {
 			$output .= '<label for="'.$this->_mId.'">'.$this->_mLabel.':</label>'."\n";
 			$title = $this->_mLabel;
 		}

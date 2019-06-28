@@ -39,7 +39,7 @@ class CacheHelper {
 	 * Use of multiple params (func_get_args)
 	 * @return string
 	 */
-	public function getCacheKey( /*...*/ ) {
+	public function getCacheKey() {
 		return call_user_func_array(
 			[ $this->getCache(), 'makeKey' ],
 			func_get_args()
@@ -73,7 +73,7 @@ class CacheHelper {
 	 */
 	public function invalidate( $key ) {
 		$res = $this->getCache()->delete( $key );
-		if( !$res ) {
+		if ( !$res ) {
 			wfDebugLog( 'BsMemcached', "NO INVALIDATION FOR KEY: $key" );
 		}
 		return $res;

@@ -34,7 +34,6 @@ class ActionLogger {
 	 */
 	protected $target = null;
 
-
 	/**
 	 *
 	 * @param string $type

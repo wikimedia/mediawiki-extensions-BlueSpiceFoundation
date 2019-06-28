@@ -63,7 +63,7 @@ abstract class Api extends ApiBase {
 		}
 
 		$status = Status::newGood();
-		foreach( $this->getRequiredPermissions() as $permission ) {
+		foreach ( $this->getRequiredPermissions() as $permission ) {
 			if ( empty( $titles ) ) {
 				$this->checkPermission( $status, $user, $permission );
 				continue;
@@ -151,21 +151,21 @@ abstract class Api extends ApiBase {
 	 */
 	public function getContext() {
 		$context = parent::getContext();
-		//whenever no action was sent this module was constructed internally by
-		//the API help or API Sandbox i.e.
-		//we can not overwrite the context, as this would result in an exception,
-		//cause this modules need their own context to work with
+		// whenever no action was sent this module was constructed internally by
+		// the API help or API Sandbox i.e.
+		// we can not overwrite the context, as this would result in an exception,
+		// cause this modules need their own context to work with
 		if ( $context->getRequest()->getVal( 'action', '' ) !== $this->getModuleName() ) {
 			return $context;
 		}
-		//TODO: Replace this class with something more modular wich extends the
-		//context only if is aditional data and this module is actially called
-		//by WebRequest
+		// TODO: Replace this class with something more modular wich extends the
+		// context only if is aditional data and this module is actially called
+		// by WebRequest
 		$extendedContext = BSExtendedApiContext::newFromRequest(
 			$context->getRequest()
 		);
 		$context->setTitle( $extendedContext->getTitle() );
-		if( $context->getTitle()->getArticleID() > 0 ) {
+		if ( $context->getTitle()->getArticleID() > 0 ) {
 			$context->setWikiPage(
 				WikiPage::factory( $context->getTitle() )
 			);

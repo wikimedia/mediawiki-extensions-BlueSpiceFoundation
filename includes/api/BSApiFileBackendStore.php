@@ -131,7 +131,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 					self::PROP_SPEC_SORTABLE => true,
 					self::PROP_SPEC_FILTERABLE => true
 				],
-				'page_categories_links'=> [
+				'page_categories_links' => [
 					self::PROP_SPEC_SORTABLE => false,
 					self::PROP_SPEC_FILTERABLE => false
 				],
@@ -154,30 +154,30 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	public function makeData( $sQuery = '' ) {
 		$res = $this->fetchCaseInsensitive( $sQuery );
 
-		//The initial query is made against the searchindex table, which holds
-		//lowercased and otherwise normalized titles. Unfornunately if
-		//one queries an exact title with dots (and colons) the result will be
-		//empty because the searchindex table data is stripped from those
-		//characters. We will fallback to a query without the use of
-		//searchindex, just in case...
-		if( $res->numRows() === 0 ) {
+		// The initial query is made against the searchindex table, which holds
+		// lowercased and otherwise normalized titles. Unfornunately if
+		// one queries an exact title with dots (and colons) the result will be
+		// empty because the searchindex table data is stripped from those
+		// characters. We will fallback to a query without the use of
+		// searchindex, just in case...
+		if ( $res->numRows() === 0 ) {
 			$res = $this->fetchCaseSensitive( $sQuery );
 		}
 
-		//First query: Get all files and their pages
+		// First query: Get all files and their pages
 		$aReturn = array();
 		$aUserNames = array();
-		foreach( $res as $oRow ) {
+		foreach ( $res as $oRow ) {
 			try {
 				$title = Title::makeTitle( NS_FILE, $oRow->img_name );
 				$oImg = RepoGroup::singleton()->getLocalRepo()
 					->newFile( $title );
-			} catch (Exception $ex) {
+			} catch ( Exception $ex ) {
 				continue;
 			}
 
-			//No "user can read" check here, because it may be expensive.
-			//This may be done by hook handlers
+			// No "user can read" check here, because it may be expensive.
+			// This may be done by hook handlers
 
 			$aUserNames[$oImg->getUser( 'text' )] = '';
 
@@ -189,9 +189,11 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'file_user' => $oImg->getUser( 'id' ),
 				'file_width' => $oImg->getWidth(),
 				'file_height' => $oImg->getHeight(),
-				'file_mimetype' => $oImg->getMimeType(), # major/minor
+				# major/minor
+				'file_mimetype' => $oImg->getMimeType(),
 				'file_user_text' => $oImg->getUser( 'text' ),
-				'file_user_display_text' => $oImg->getUser( 'text' ), //Will be overridden in a separate step
+				// Will be overridden in a separate step
+				'file_user_display_text' => $oImg->getUser( 'text' ),
 				'file_user_link' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_extension' => $oImg->getExtension(),
 				'file_timestamp' => $this->getLanguage()->userAdjust( $oImg->getTimestamp() ),
@@ -205,38 +207,39 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'page_prefixed_text' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'page_latest' => (int)$oRow->page_latest,
 				'page_namespace' => (int)$oRow->page_namespace,
-				'page_categories' => array(), //Filled by a second step below
+				// Filled by a second step below
+				'page_categories' => array(),
 				'page_categories_links' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'page_is_redirect' => (bool)$oRow->page_is_redirect,
 
-				//For some reason 'page_is_new' and 'page_touched' are not
-				//initialized by 'Title::newFromRow'; Instead when calling
-				//'Title->isNew()' or 'Title->getTouched()' an extra query is
-				//being sent to the database, wich introduced a performance
-				//issue. As the resulting data is the same we just use the raw
-				//form here.
+				// For some reason 'page_is_new' and 'page_touched' are not
+				// initialized by 'Title::newFromRow'; Instead when calling
+				// 'Title->isNew()' or 'Title->getTouched()' an extra query is
+				// being sent to the database, wich introduced a performance
+				// issue. As the resulting data is the same we just use the raw
+				// form here.
 				'page_is_new' => (bool)$oRow->page_is_new,
 				'page_touched' => $this->getLanguage()->userAdjust( $oRow->page_touched )
 			);
 		}
 
-		//Second query: Get all categories of each file page
+		// Second query: Get all categories of each file page
 		$aPageIds = array_keys( $aReturn );
-		if( !empty( $aPageIds ) ) {
+		if ( !empty( $aPageIds ) ) {
 			$oDbr = wfGetDB( DB_REPLICA );
 			$oCatRes = $oDbr->select(
 				'categorylinks',
 				array( 'cl_from', 'cl_to' ),
 				array( 'cl_from' => $aPageIds )
 			);
-			foreach( $oCatRes as $oCatRow ) {
+			foreach ( $oCatRes as $oCatRow ) {
 				$aReturn[$oCatRow->cl_from]->page_categories[] = $oCatRow->cl_to;
 			}
 		}
 
-		//Third query (for performance reasons we can not provide the full
-		//link to the user page here): get user_real_name
-		if( !empty( $aUserNames ) ) {
+		// Third query (for performance reasons we can not provide the full
+		// link to the user page here): get user_real_name
+		if ( !empty( $aUserNames ) ) {
 			$oDbr = wfGetDB( DB_REPLICA );
 			$oUserRes = $oDbr->select(
 				'user',
@@ -244,12 +247,12 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				array( 'user_name' => array_keys( $aUserNames ) )
 			);
 
-			foreach( $oUserRes as $oUserRow ) {
+			foreach ( $oUserRes as $oUserRow ) {
 				$aUserNames[$oUserRow->user_name] = $oUserRow->user_real_name;
 			}
 
-			foreach( $aReturn as $iPageId => $oDataSet ) {
-				if( !empty( $aUserNames[ $oDataSet->file_user_text ] ) ) {
+			foreach ( $aReturn as $iPageId => $oDataSet ) {
+				if ( !empty( $aUserNames[ $oDataSet->file_user_text ] ) ) {
 					$oDataSet->file_user_display_text = $aUserNames[ $oDataSet->file_user_text ];
 				}
 			}
@@ -264,14 +267,16 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		$aContidions = array(
 			'page_namespace' => NS_FILE,
 			'page_title = img_name',
-			'page_id = si_page' //Needed for case insensitive quering; Maybe
-			//implement 'query' as a implicit filter on 'img_name' field?
+			// Needed for case insensitive quering; Maybe
+			'page_id = si_page'
+			// implement 'query' as a implicit filter on 'img_name' field?
 		);
 
-		if( !empty( $sQuery ) ) {
+		if ( !empty( $sQuery ) ) {
 			$aContidions[] = "si_title ".$oDbr->buildLike(
 				$oDbr->anyString(),
-				strtolower( $sQuery ), //make case insensitive!
+				// make case insensitive!
+				strtolower( $sQuery ),
 				$oDbr->anyString()
 			);
 		}
@@ -294,10 +299,10 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			'page_title = img_name',
 		);
 
-		if( !empty( $sQuery ) ) {
+		if ( !empty( $sQuery ) ) {
 			$aContidions[] = "img_name ".$oDbr->buildLike(
 				$oDbr->anyString(),
-				str_replace(' ', '_', $sQuery ),
+				str_replace( ' ', '_', $sQuery ),
 				$oDbr->anyString()
 			);
 		}
@@ -314,15 +319,15 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 	protected function addSecondaryFields( $aTrimmedData ) {
 		$linkRenderer = Services::getInstance()->getLinkRenderer();
-		foreach( $aTrimmedData as $oDataSet ) {
+		foreach ( $aTrimmedData as $oDataSet ) {
 			$oFilePage = Title::makeTitle( NS_FILE, $oDataSet->page_title );
 			$oDataSet->page_link = $linkRenderer->makeLink( $oFilePage );
 			$oDataSet->page_prefixed_text = $oFilePage->getPrefixedText();
 
 			$oImg = RepoGroup::singleton()->getLocalRepo()->newFile( $oFilePage );
 
-			//TODO: use 'thumb.php'?
-			//TODO: Make thumb size a parameter
+			// TODO: use 'thumb.php'?
+			// TODO: Make thumb size a parameter
 			$sThumb = $oImg->createThumb( 80, 120 );
 			$sUrl = $oImg->getUrl();
 
@@ -331,10 +336,10 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 			$oUserPageTitle = Title::makeTitle( NS_USER, $oDataSet->file_user_text );
 			$oDataSet->file_user_link =
-				$this->oLinkRenderer->makeLink(  $oUserPageTitle );
+				$this->oLinkRenderer->makeLink( $oUserPageTitle );
 
 			$oDataSet->page_categories_links = [];
-			foreach( $oDataSet->page_categories as $sCategory ) {
+			foreach ( $oDataSet->page_categories as $sCategory ) {
 				$oCategoryTitle = Title::makeTitle( NS_CATEGORY, $sCategory );
 				$oDataSet->page_categories_links[] =
 					$this->oLinkRenderer->makeLink( $oCategoryTitle );
@@ -346,17 +351,17 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 	public function filterString( $oFilter, $aDataSet ) {
 		$aSpecialFilterFields = [ 'page_categories', 'page_categories_links' ];
-		if( !in_array( $oFilter->field, $aSpecialFilterFields ) ) {
+		if ( !in_array( $oFilter->field, $aSpecialFilterFields ) ) {
 			return parent::filterString( $oFilter, $aDataSet );
 		}
 
 		$sField = $oFilter->field;
-		if( $sField === 'page_categories_links' ) {
+		if ( $sField === 'page_categories_links' ) {
 			$sField = 'page_categories';
 		}
 
 		$sFieldValue = '';
-		foreach( $aDataSet->{$sField} as $sValue ) {
+		foreach ( $aDataSet->{$sField} as $sValue ) {
 			$sFieldValue .= $sValue;
 		}
 

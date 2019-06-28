@@ -12,7 +12,7 @@ class CategoryLinksHelper extends InternalLinksHelper {
 	 * @return \Title|null
 	 */
 	protected function makeTitleFromMatch( $fullMatch, $leadingColon, $titleText ) {
-		if( !empty( $leadingColon ) ) {
+		if ( !empty( $leadingColon ) ) {
 			return null;
 		}
 		$title = parent::makeTitleFromMatch(
@@ -20,10 +20,10 @@ class CategoryLinksHelper extends InternalLinksHelper {
 			$leadingColon,
 			$titleText
 		);
-		if( !$title ) {
+		if ( !$title ) {
 			return $title;
 		}
-		if( $title->getNamespace() !== NS_CATEGORY ) {
+		if ( $title->getNamespace() !== NS_CATEGORY ) {
 			return null;
 		}
 		return $title;
@@ -36,7 +36,7 @@ class CategoryLinksHelper extends InternalLinksHelper {
 	 * @param bool $addDuplicates
 	 */
 	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
-		if( $target->getNamespace() !== NS_CATEGORY ) {
+		if ( $target->getNamespace() !== NS_CATEGORY ) {
 			return;
 		}
 
@@ -49,7 +49,7 @@ class CategoryLinksHelper extends InternalLinksHelper {
 	 * @param bool $removeAllOccurrences
 	 */
 	protected function removeTarget( \Title $target, $removeAllOccurrences ) {
-		if( $target->getNamespace() !== NS_CATEGORY ) {
+		if ( $target->getNamespace() !== NS_CATEGORY ) {
 			return;
 		}
 		return parent::removeTarget( $target, $removeAllOccurrences );

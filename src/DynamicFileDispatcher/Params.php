@@ -34,7 +34,7 @@ class Params {
 	public function get( $name, $definition ) {
 		$return = $definition[static::PARAM_DEFAULT];
 
-		if( !isset( $this->params[$name] ) ) {
+		if ( !isset( $this->params[$name] ) ) {
 			return $return;
 		}
 
@@ -45,14 +45,12 @@ class Params {
 			case static::TYPE_INT:
 				$return = is_numeric( $this->params[$name] )
 					? (int)$this->params[$name]
-					: $definition[static::PARAM_DEFAULT]
-				;
+					: $definition[static::PARAM_DEFAULT];
 				break;
 			case static::TYPE_STRING:
 				$return = is_string( $this->params[$name] )
 					? $this->params[$name]
-					: $definition[static::PARAM_DEFAULT]
-				;
+					: $definition[static::PARAM_DEFAULT];
 				break;
 		}
 		return $return;

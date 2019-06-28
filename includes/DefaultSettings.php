@@ -69,7 +69,7 @@ if ( !isset( $GLOBALS['bsgGroupRoles']['*']['reader'] ) ) {
 		false;
 
 	$GLOBALS['bsgGroupRoles']['*']['reader'] = !$isPrivate;
-} elseif( $GLOBALS['bsgGroupRoles']['*']['reader'] === false ) {
+} elseif ( $GLOBALS['bsgGroupRoles']['*']['reader'] === false ) {
 	// otherwise, if "*" is explicitly denied "reader", give it to "user".
 	$GLOBALS['bsgGroupRoles']['user']['reader'] = true;
 }
@@ -375,7 +375,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
  * BlueSpiceExtensions/NamespaceManager and NamespaceHelper
  */
 $GLOBALS['bsgSystemNamespaces'] = array(
-	//1599 => 'NS_COOL_STUFF'
+	// 1599 => 'NS_COOL_STUFF'
 );
 
 /**
@@ -390,7 +390,6 @@ $GLOBALS['bsgExtensions'] = [];
  * )
  */
 $GLOBALS['bsgTemplates'] = array();
-
 
 /*
  * ExtJSThemes
@@ -436,6 +435,5 @@ $GLOBALS['bsgFileExtensions'] = [
 			'zip', 'rar', 'tar', 'tgz', 'gz', 'bzip2', '7zip',
 			'xml', 'svg'
 ];
-
 
 $GLOBALS['bsgImageExtensions'] = [ 'png', 'gif', 'jpg', 'jpeg' ];

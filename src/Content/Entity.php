@@ -113,10 +113,10 @@ class Entity extends \JsonContent {
 	 * @return int
 	 */
 	public static function generateID( \BlueSpice\Entity $entity ) {
-		//this is the case if the current Entity is new (no Title created yet)
-		//Get the page_title of the last created title in entity namespace and
-		//add +1. Entities are stored like: MYEntityNamespace:1,
-		//MYEntityNamespace:2, MYEntityNamespace:3
+		// this is the case if the current Entity is new (no Title created yet)
+		// Get the page_title of the last created title in entity namespace and
+		// add +1. Entities are stored like: MYEntityNamespace:1,
+		// MYEntityNamespace:2, MYEntityNamespace:3
 		if ( (int)$entity->getID() > 0 ) {
 			return $entity->getID();
 		}

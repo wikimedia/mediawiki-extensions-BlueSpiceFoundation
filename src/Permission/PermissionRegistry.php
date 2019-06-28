@@ -14,28 +14,28 @@ class PermissionRegistry {
 		$this->init();
 	}
 
-	protected function init () {
-		//Add default permissions
-		foreach( $this->permissionConfigDefault as $permissionName => $config ) {
+	protected function init() {
+		// Add default permissions
+		foreach ( $this->permissionConfigDefault as $permissionName => $config ) {
 			$description = new Description( $permissionName, $config );
 			$this->addPermission( $permissionName, $description );
 		}
-		//Add permissions from other extensions
-		//This is run after default config has been set
-		//to be used to override default permission definition
-		//Include pemissions from $bsgPermissionConfig as well
+		// Add permissions from other extensions
+		// This is run after default config has been set
+		// to be used to override default permission definition
+		// Include pemissions from $bsgPermissionConfig as well
 		$permissionConfigFromExtensions = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationPermissionRegistry' );
-		if( is_array( $permissionConfigFromExtensions ) ) {
+		if ( is_array( $permissionConfigFromExtensions ) ) {
 			$this->permissionConfig = array_merge(
 				$permissionConfigFromExtensions,
 				$this->permissionConfig
 			);
 		}
 
-		foreach( $this->permissionConfig as $permissionName => $config ) {
-			//We dont want to override all the configuration params
-			//only ones that differ from default config
-			if( isset( $this->permissionConfigDefault[ $permissionName ] ) ) {
+		foreach ( $this->permissionConfig as $permissionName => $config ) {
+			// We dont want to override all the configuration params
+			// only ones that differ from default config
+			if ( isset( $this->permissionConfigDefault[ $permissionName ] ) ) {
 				$config = array_merge(
 					$this->permissionConfigDefault[ $permissionName ],
 					$config
@@ -56,7 +56,7 @@ class PermissionRegistry {
 	 * @return PermissionRegistry
 	 */
 	public static function getInstance( $defaultPermissionConfig, $permissionConfig ) {
-		if( self::$instance === null ) {
+		if ( self::$instance === null ) {
 			self::$instance = self::newInstance( $defaultPermissionConfig, $permissionConfig );
 		}
 		return self::$instance;
@@ -83,7 +83,7 @@ class PermissionRegistry {
 	 * @return Description|null
 	 */
 	public function getPermission( $name ) {
-		if( isset( $this->permissions[ $name ] ) ) {
+		if ( isset( $this->permissions[ $name ] ) ) {
 			return $this->permissions[ $name ];
 		}
 		return null;

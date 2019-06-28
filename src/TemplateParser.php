@@ -1,6 +1,6 @@
 <?php
 
-//derived from https://github.com/vedmaka/mediawiki-extension-Mustache_i18n
+// derived from https://github.com/vedmaka/mediawiki-extension-Mustache_i18n
 
 namespace BlueSpice;
 
@@ -39,11 +39,11 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 		if ( RequestContext::getMain() instanceof ResourceLoaderContext ) {
 			return $helpers;
 		}
-		$helpers['_'] = function( $msg ) {
+		$helpers['_'] = function ( $msg ) {
 			$msgKey = array_shift( $msg );
 			return $this->msg( $msgKey, ...$msg )->plain();
 		};
-		$helpers['__'] = function( $msg ) {
+		$helpers['__'] = function ( $msg ) {
 			$msgKey = array_shift( $msg );
 			return $this->msg( $msgKey, ...$msg )->parse();
 		};
@@ -51,10 +51,12 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 	}
 
 	/**
-	 *
+	 * * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 *   or a MessageSpecifier.
+	 * @param mixed $params,... Normal message parameters
 	 * @return Message
 	 */
-	public function msg( $key /* $args */ ) {
+	public function msg( $key ) {
 		return call_user_func_array(
 			[ RequestContext::getMain(), 'msg' ],
 			func_get_args()

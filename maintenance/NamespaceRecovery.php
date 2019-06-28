@@ -8,23 +8,23 @@
  * @license GPL-3.0-only
  */
 
-//TODO: check if namespace (newns) exists
-//TODO: write log
-//TODO: add some logic
+// TODO: check if namespace (newns) exists
+// TODO: write log
+// TODO: add some logic
 $options = array( 'help', 'execute', 'oldns', 'newns' );
 require_once( 'BSMaintenance.php' );
 print_r( $options );
 
 $bDry = true;
-if( isset( $options['execute'] ) ) { 
+if ( isset( $options['execute'] ) ) {
 	$bDry = false;
 }
 
-if( isset( $options['help'] ) ) {
+if ( isset( $options['help'] ) ) {
 	showHelp();
 }
 else {
-	if( isset( $options['oldns'] ) && $options['oldns'] > 100 ) {
+	if ( isset( $options['oldns'] ) && $options['oldns'] > 100 ) {
 		NSRecoveryController( $bDry, $options );
 	}
 	else {
@@ -43,25 +43,24 @@ function showHelp() {
 }
 
 function NSRecoveryController( $bDry, $options ) {
-       
 	$aPages = getDataFromNSBackup( 'page', array( 'page_namespace' => $options['oldns'] ) );
-	
-        if( empty( $aPages ) ) { 
-            die("backup for namespace ".$options['oldns']." not found");
+
+        if ( empty( $aPages ) ) {
+            die( "backup for namespace ".$options['oldns']." not found" );
         }
         $aRevisions = array();
         $aTexts     = array();
         $numPages = count( $aPages );
-        for($i = 0; $i < $numPages; $i++) {
+        for ( $i = 0; $i < $numPages; $i++ ) {
             $aRevisions[$i] = getDataFromNSBackup( 'revision', array( 'rev_page' => $aPages[$i]['page_id'] ) );
 
             $numRevisions = count( $aRevisions[$i] );
-            for($ir = 0; $ir < $numRevisions; $ir++) {
+            for ( $ir = 0; $ir < $numRevisions; $ir++ ) {
                 $aTexts[$i][$ir] = getDataFromNSBackup( 'text', array( 'old_id' => $aRevisions[$i][$ir]['rev_text_id'] ) );
             }
         }
-        //var_dump($aRevisions);
-        setDataFromNSBackup($aPages, $aRevisions, $aTexts, $bDry, $options);
+        // var_dump($aRevisions);
+        setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options );
 }
 
 function getDataFromNSBackup( $sTable, $aConditions = array(), $aReturn = array() ) {
@@ -69,23 +68,23 @@ function getDataFromNSBackup( $sTable, $aConditions = array(), $aReturn = array(
 
 	$sTable = 'bs_namespacemanager_backup_'.$sTable;
 
-    $rRes = $oDbr->select( $sTable, '*', $aConditions ) ;
-    if( empty($rRes) ) {
+    $rRes = $oDbr->select( $sTable, '*', $aConditions );
+    if ( empty( $rRes ) ) {
     	return array();
     }
-    
-    foreach( $rRes as $row ) {
+
+    foreach ( $rRes as $row ) {
         $aReturn[] = (array)$row;
     }
-    
+
     return $aReturn;
 }
 
 function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
     $oDbr = wfGetDB( DB_MASTER );
 	$numPages = count( $aPages );
-    for( $iP = 0; $iP < $numPages; $iP++ ) {
-        
+    for ( $iP = 0; $iP < $numPages; $iP++ ) {
+
         /*if( empty( $aRevisions[$iP] ) ) {
             echo "error: ".$aPages[$iP]['page_title']."  no revision found\n";
             continue;
@@ -94,45 +93,45 @@ function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
         if( $rRes->fetchRow() ) {
             echo "error: ".$aPages[$iP]['page_title']."  already exists\n";
             continue;
-        } 
+        }
         */
 		$numRevisions = count( $aRevisions[$iP] );
-        for( $iR = 0; $iR < $numRevisions; $iR++ ) {
+        for ( $iR = 0; $iR < $numRevisions; $iR++ ) {
 			echo 'Revision';
             /*if( empty( $aTexts[$iP][$iR] ) ) {
                 echo "error: ".$aPages[$iP]['page_id']." -> ".$aRevisions[$iP][$iR]." - no text found !not recovered\n";
                 continue;
             }
-            
+
             $rRes = $oDbr->select('revision', 'rev_id' , array('rev_id' => $aRevisions[$iP][$iR]['rev_id']) );
             if( $rRes->fetchRow() ) {
                 echo "error: ".$aPages[$iP]['page_title']."->".$aRevisions[$iP][$iR]['rev_id']." already exists\n";
                 continue;
-            }   
-            
+            }
+
             $rRes = $oDbr->select('text', 'old_id' , array('old_id' => $aTexts[$iP][$iR][0]['old_id']) );
             if( $rRes->fetchRow() ) {
                 echo "error: ".$aPages[$iP]['page_title']."->".$aRevisions[$iP][$iR]['rev_id']."->".$aTexts[$iP][$iR][0]['old_id']." already exists\n";
                 continue;
             }
             */
-            //var_dump($aTexts[$iP][$iR][0]);
-            if( !$bDry && $options['execute'] ) {
-                $oDbr->insert( 'text', $aTexts[$iP][$iR][0]);
-                $oDbr->insert( 'revision', $aRevisions[$iP][$iR]);
+            // var_dump($aTexts[$iP][$iR][0]);
+            if ( !$bDry && $options['execute'] ) {
+                $oDbr->insert( 'text', $aTexts[$iP][$iR][0] );
+                $oDbr->insert( 'revision', $aRevisions[$iP][$iR] );
 				// var_dump($aRevisions[$iP][$iR]);
             }
-            
+
         }
-        if( isset($options['newns']) ) {
+        if ( isset( $options['newns'] ) ) {
             $aPages[$iP]['page_namespace'] = $options['newns'];
         }
-        if( !$bDry && $options['execute'] ) {
-            //$rRes = $oDbr->insert( 'page', $aPages[$iP]);
+        if ( !$bDry && $options['execute'] ) {
+            // $rRes = $oDbr->insert( 'page', $aPages[$iP]);
         }
-        //if($rRes ){
+        // if($rRes ){
             echo $aPages[$iP]['page_title']." recovered\n";
-        //}
-		//echo $aPages[$iP]['page_title']." recovered\n";
+        // }
+		// echo $aPages[$iP]['page_title']." recovered\n";
     }
 }

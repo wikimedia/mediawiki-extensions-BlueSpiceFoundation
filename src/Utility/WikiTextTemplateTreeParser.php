@@ -41,7 +41,7 @@ class WikiTextTemplateTreeParser {
 	 */
 	public function getArray() {
 		$this->currentWikiText = $this->wikiText;
-		while( $this->currentWikiTextContainsLeafTemplates() ) {
+		while ( $this->currentWikiTextContainsLeafTemplates() ) {
 			$this->findAndReplaceLeafTemplates();
 		}
 
@@ -52,8 +52,7 @@ class WikiTextTemplateTreeParser {
 	}
 
 	protected function currentWikiTextContainsLeafTemplates() {
-		return
-			preg_match( "/{{([^{]*?)}}/", $this->currentWikiText )
+		return preg_match( "/{{([^{]*?)}}/", $this->currentWikiText )
 			!== 0;
 	}
 
@@ -62,7 +61,7 @@ class WikiTextTemplateTreeParser {
 	protected function findAndReplaceLeafTemplates() {
 		$this->currentWikiText = preg_replace_callback(
 			"/{{([^{]*?)}}/",
-			function( $matches ) {
+			function ( $matches ) {
 				$marker = "###T:{$this->counter}:T###";
 				$this->counter++;
 				$this->templateMap[$marker] = $matches[0];
@@ -77,7 +76,7 @@ class WikiTextTemplateTreeParser {
 		$marker = [];
 		preg_replace_callback(
 			"/###T:(.*?):T###/",
-			function( $matches ) use ( &$marker ) {
+			function ( $matches ) use ( &$marker ) {
 				$marker[] = $matches[0];
 				return $matches[0];
 			},
@@ -87,7 +86,7 @@ class WikiTextTemplateTreeParser {
 	}
 
 	protected function resolveAndAddToResult( $markers, &$result ) {
-		foreach( $markers as $marker ) {
+		foreach ( $markers as $marker ) {
 			$descriptor = [
 				'name' => '',
 				'params' => []
@@ -99,13 +98,13 @@ class WikiTextTemplateTreeParser {
 
 			$templateName = array_shift( $parts );
 			$descriptor['name'] = trim( $templateName );
-			foreach( $parts as $kvPair ) {
+			foreach ( $parts as $kvPair ) {
 				$kv = explode( '=', $kvPair, 2 );
 				$paramName = trim( $kv[0] );
 				$paramValue = trim( $kv[1] );
 
 				$nestedMarkers = $this->findMarkers( $paramValue );
-				if( !empty( $nestedMarkers ) ) {
+				if ( !empty( $nestedMarkers ) ) {
 					$nestedResult = [];
 					$this->resolveAndAddToResult(
 						$nestedMarkers,

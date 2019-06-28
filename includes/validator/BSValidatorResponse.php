@@ -65,8 +65,8 @@ class BsValidatorResponse {
 		return $this->mI18NRenderedString;
 
 		// @todo @sebastian : hier wird dem BsI18N-Mechanismus ENTWEDER
-		//     # ein array (z.B. array('wort1', 'wort2', ... , 'wort99') oder
-		//     # ein einzelner String
+		// # ein array (z.B. array('wort1', 'wort2', ... , 'wort99') oder
+		// # ein einzelner String
 		// übergeben
 	}
 

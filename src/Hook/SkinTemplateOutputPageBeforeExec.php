@@ -72,14 +72,13 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 		$this->template = &$template;
 	}
 
-
 	/**
 	 *
 	 * @param string $fieldName
 	 * @param array $item
 	 */
 	protected function mergeSkinDataArray( $fieldName, $item ) {
-		if( !isset( $this->template->data[$fieldName] ) ) {
+		if ( !isset( $this->template->data[$fieldName] ) ) {
 			$this->template->data[$fieldName] = [];
 		}
 
@@ -92,7 +91,7 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 	 * @param array $item
 	 */
 	protected function appendSkinDataArray( $fieldName, $item ) {
-		if( !isset( $this->template->data[$fieldName] ) ) {
+		if ( !isset( $this->template->data[$fieldName] ) ) {
 			$this->template->data[$fieldName] = [];
 		}
 

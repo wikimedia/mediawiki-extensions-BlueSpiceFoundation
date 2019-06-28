@@ -9,7 +9,7 @@ class ReadOnlyWarning extends AlertProviderBase {
 
 	public function getHTML() {
 		$readOnly = $this->getConfig()->get( 'ReadOnly' );
-		if( !$readOnly ) {
+		if ( !$readOnly ) {
 			return '';
 		}
 
