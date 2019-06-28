@@ -79,31 +79,30 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	public function postProcessData( $aData ) {
-		//Before we trim, we save the count
+		// Before we trim, we save the count
 		$this->iFinalDataSetCount = count( $aData );
 
-		//Last, do trimming
+		// Last, do trimming
 		$aProcessedData = $this->trimData( $aData );
 
-		//Add secondary fields
+		// Add secondary fields
 		$aProcessedData = $this->addSecondaryFields( $aProcessedData );
 
 		return $aProcessedData;
 	}
 
 	public function makeDataSet( $row ) {
-		if( !$oTitle = Title::newFromRow($row) ) {
+		if ( !$oTitle = Title::newFromRow( $row ) ) {
 			return false;
 		}
 		return $oTitle->userCan( 'read', $this->getUser() )
 			? parent::makeDataSet( $row )
-			: false
-		;
+			: false;
 	}
 
 	protected function addSecondaryFields( $aTrimmedData ) {
 		$oLinkRenderer = Services::getInstance()->getLinkRenderer();
-		foreach( $aTrimmedData as &$oDataSet ) {
+		foreach ( $aTrimmedData as &$oDataSet ) {
 			$oTitle = Title::makeTitle(
 				$oDataSet->page_namespace,
 				$oDataSet->page_title

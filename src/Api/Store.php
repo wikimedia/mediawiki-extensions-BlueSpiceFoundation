@@ -79,13 +79,13 @@ abstract class Store extends Api {
 		] );
 		$apiResult = $this->getResult();
 
-		//Unfortunately \ApiResult does not like \JsonSerializable[], so we
-		//need to provide a \stdClass[] or array[]
+		// Unfortunately \ApiResult does not like \JsonSerializable[], so we
+		// need to provide a \stdClass[] or array[]
 		$converter = new RecordConverter( $resultSet->getRecords() );
 		$records = $converter->convertToRawData();
 
 		$apiResult->setIndexedTagName( $records, $this->root );
-		$apiResult->addValue( null, $this->root, $records  );
+		$apiResult->addValue( null, $this->root, $records );
 		$apiResult->addValue( null, $this->totalProperty, $resultSet->getTotal() );
 		if ( $schema !== null ) {
 			$apiResult->addValue( null, $this->metaData, $schema );
@@ -174,7 +174,7 @@ abstract class Store extends Api {
 	 */
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
-		//Unfortunately there is no way to register custom types for parameters
+		// Unfortunately there is no way to register custom types for parameters
 		if ( in_array( $paramName, [ 'sort', 'group', 'filter', 'context' ] ) ) {
 			$value = \FormatJson::decode( $value );
 			if ( empty( $value ) ) {
@@ -191,7 +191,7 @@ abstract class Store extends Api {
 	 * @return mixed Parameter value
 	 */
 	public function getParameter( $paramName, $parseLimit = true ) {
-		//Make this public, so hook handler could get the params
+		// Make this public, so hook handler could get the params
 		return parent::getParameter( $paramName, $parseLimit );
 	}
 

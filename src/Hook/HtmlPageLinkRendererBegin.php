@@ -58,7 +58,7 @@ abstract class HtmlPageLinkRendererBegin extends Hook {
 	 *
 	 * @var string
 	 */
-	protected $query =  null;
+	protected $query = null;
 
 	/**
 	 *

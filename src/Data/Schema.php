@@ -13,11 +13,10 @@ class Schema extends \ArrayObject {
 	}
 
 	protected function filterEntries( $key, $value ) {
-		$callback = function( $entry ) use( $key, $value ) {
+		$callback = function ( $entry ) use( $key, $value ) {
 			return array_key_exists( $key, $entry )
 				? $entry[$key] === $value
-				: false === $value
-			;
+				: false === $value;
 		};
 		return array_filter( (array)$this, $callback );
 	}

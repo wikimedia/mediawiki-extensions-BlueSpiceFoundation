@@ -20,20 +20,20 @@ class BSMassEditBase extends BSMaintenance {
 		$aTitles = $this->getTitleList();
 		$this->iTitleCount = count( $aTitles );
 
-		foreach( $aTitles as $sTitle => $oTitle ) {
-			if( $oTitle instanceof Title === false ) {
+		foreach ( $aTitles as $sTitle => $oTitle ) {
+			if ( $oTitle instanceof Title === false ) {
 				$this->error( "Invalid Title '$sTitle'!" );
 				continue;
 			}
 			$oWikiPage = WikiPage::factory( $oTitle );
 			$this->output( "\nModifying '{$oTitle->getPrefixedText()}'..." );
 			$oNewContent = $this->modifyContent( $oWikiPage->getContent(), $oWikiPage );
-			if( $oNewContent instanceof Content === false ) {
+			if ( $oNewContent instanceof Content === false ) {
 				$this->output( "--> Content of page '{$oTitle->getPrefixedText()}' has NOT been modified!" );
 				continue;
 			}
 
-			if( $this->isDryMode() ) {
+			if ( $this->isDryMode() ) {
 				continue;
 			}
 
@@ -41,8 +41,8 @@ class BSMassEditBase extends BSMaintenance {
 				$oNewContent,
 				$this->getEditSummay( $oWikiPage )
 			);
-			if( !$oStatus->isOK() ) {
-				$this->error( "--> Content of page {$oTitle->getPrefixedText()} could not be modified: {$oStatus->getMessage()->plain()}");
+			if ( !$oStatus->isOK() ) {
+				$this->error( "--> Content of page {$oTitle->getPrefixedText()} could not be modified: {$oStatus->getMessage()->plain()}" );
 				$this->iFailureTitleCount++;
 			}
 			else {
@@ -65,7 +65,7 @@ class BSMassEditBase extends BSMaintenance {
 		$aTitles = array();
 
 		$res = $dbr->select( 'page', '*' );
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$oTitle = Title::newFromRow( $row );
 			$aTitles[ $oTitle->getPrefixedDBkey() ] = $oTitle;
 		}
@@ -85,7 +85,7 @@ class BSMassEditBase extends BSMaintenance {
 	 */
 	protected function modifyContent( $oContent, $oWikiPage ) {
 		$sTextContent = '';
-		if( $oContent instanceof Content ) {
+		if ( $oContent instanceof Content ) {
 			$sTextContent = $oContent->getContentHandler()->getContentText( $oContent );
 		}
 
@@ -94,8 +94,9 @@ class BSMassEditBase extends BSMaintenance {
 			$oWikiPage
 		);
 
-		if( $sTextContent === $sNewTextContent ) {
-			return null; //No change? No edit!
+		if ( $sTextContent === $sNewTextContent ) {
+			// No change? No edit!
+			return null;
 		}
 
 		return $oWikiPage->getContentHandler()->makeContent(
@@ -120,7 +121,7 @@ class BSMassEditBase extends BSMaintenance {
 			$sContent
 		);
 
-		if( $this->isVerbose() ) {
+		if ( $this->isVerbose() ) {
 			$this->outputDiff( $sContent, $sNewContent );
 		}
 
@@ -141,7 +142,7 @@ class BSMassEditBase extends BSMaintenance {
 	 * @return mixed string or array-of-strings containig a valid regular expression
 	 */
 	protected function getTextModificationRegexPatterns() {
-		//Just an example: "Find all internal links in WikiText"
+		// Just an example: "Find all internal links in WikiText"
 		return '#\[\[(.*?)\]\]#s';
 	}
 
@@ -153,7 +154,7 @@ class BSMassEditBase extends BSMaintenance {
 	 * @return type
 	 */
 	public function textModificationCallback( $aMatches ) {
-		//Just a dummy: returns unmodified
+		// Just a dummy: returns unmodified
 		return $aMatches[0];
 	}
 
@@ -162,7 +163,7 @@ class BSMassEditBase extends BSMaintenance {
 			explode( "\n", $sContent ),
 			explode( "\n", $sNewContent )
 		);
-		if( !$oDiff->isEmpty() ) {
+		if ( !$oDiff->isEmpty() ) {
 			$oDiffFormatter = new UnifiedDiffFormatter();
 			$this->output(
 				$oDiffFormatter->format( $oDiff )

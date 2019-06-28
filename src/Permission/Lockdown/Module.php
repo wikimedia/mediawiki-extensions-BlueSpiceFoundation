@@ -68,10 +68,12 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 	}
 
 	/**
-	 *
+	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 *   or a MessageSpecifier.
+	 * @param mixed $params,... Normal message parameters
 	 * @return Message
 	 */
-	public function msg( $key /* $args */ ) {
+	public function msg( $key ) {
 		return call_user_func_array(
 			[ $this->getContext(), 'msg' ],
 			func_get_args()
@@ -100,7 +102,7 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 	 * @return string[]
 	 */
 	protected function getUserGroups( User $user ) {
-		if( isset( static::$userGroups[$user->getId()] ) ) {
+		if ( isset( static::$userGroups[$user->getId()] ) ) {
 			return static::$userGroups[$user->getId()];
 		}
 		static::$userGroups[$user->getId()] = $user->getEffectiveGroups( true );

@@ -74,12 +74,11 @@ abstract class Role implements IRole {
 	public static function newFromNameAndPermissions( $name, $permissions = [] ) {
 		$roleFactory = Services::getInstance()->getService( 'BSRoleFactory' );
 		$role = $roleFactory->makeRole( $name );
-		foreach( $permissions as $permission ) {
+		foreach ( $permissions as $permission ) {
 			$role->addPermission( $permission );
 		}
 		return $role;
 	}
-
 
 	/**
 	 * Creates new instance of a Role
@@ -92,7 +91,7 @@ abstract class Role implements IRole {
 	 * are set for this role name
 	 */
 	public static function newFromDefaultConfig( $name, $defaultRoleConfig ) {
-		if( isset( $defaultRoleConfig[ $name ] ) ) {
+		if ( isset( $defaultRoleConfig[ $name ] ) ) {
 			return static::newFromNameAndPermissions( $name, $defaultRoleConfig[$name] );
 		}
 		return null;
@@ -104,9 +103,9 @@ abstract class Role implements IRole {
 	 * or remove roles from permission using "BlueSpiceFoundationPermissionRegistry" attribute or global var
 	 * @param string $permission
 	 */
-	public function removePermission ( $permission ) {
+	public function removePermission( $permission ) {
 		$index = array_search( $permission, $this->permissions );
-		if( $index !== false ) {
+		if ( $index !== false ) {
 			unset( $this->permissions[ $index ] );
 		}
 	}
@@ -124,7 +123,7 @@ abstract class Role implements IRole {
 	 * @param string $roleName
 	 */
 	protected function loadPermissionsForRole( $roleName ) {
-		foreach( $this->permissionRegistry->getPermissions() as
+		foreach ( $this->permissionRegistry->getPermissions() as
 				 $permissionName => $permissionDescription ) {
 			$rolesAssigned = $permissionDescription->getRoles();
 			if ( !in_array( $roleName, $rolesAssigned ) ) {

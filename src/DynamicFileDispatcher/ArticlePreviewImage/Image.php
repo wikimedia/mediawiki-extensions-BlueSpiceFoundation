@@ -29,7 +29,7 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 		parent::__construct( $dfd );
 		$this->title = $title;
 		$this->revision = $revision;
-		if( !$this->revision ) {
+		if ( !$this->revision ) {
 			$store = Services::getInstance()->getRevisionStore();
 			$this->revision = $store->getRevisionByTitle( $title );
 		}

@@ -82,7 +82,7 @@ class BSApiUserStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	public function provideKeyItemData() {
-		return[
+		return [
 			'Test user John: name' => [ "user_name", "John" ],
 			'Test user Paul: name' => [ "user_name", "Paul" ],
 		];

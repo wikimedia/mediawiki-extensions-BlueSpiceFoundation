@@ -5,7 +5,6 @@ namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 
 	public function testCanConstruct() {
-
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
 			->getMock();

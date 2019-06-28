@@ -31,7 +31,7 @@ class BsFormatConverter {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		/* Idea by sandydakam, http://phpcentral.com/206-php-script-for-duration-calculator.html */
 
-		//There is also a javascript version of this method in ArticleInfo.js (should better be in BlueSpice framework)
+		// There is also a javascript version of this method in ArticleInfo.js (should better be in BlueSpice framework)
 		$sDateTimeOut = '';
 		$sYears = '';
 		$sMonths = '';
@@ -45,22 +45,22 @@ class BsFormatConverter {
 		$sTsNow = time();
 		$iDuration = $sTsNow - $sTsPast;
 
-		$iYears = floor( $iDuration / ( 60*60*24*365 ) );
-		$iDuration %= 60*60*24*365;
+		$iYears = floor( $iDuration / ( 60 * 60 * 24 * 365 ) );
+		$iDuration %= 60 * 60 * 24 * 365;
 
-		$iMonths = floor( $iDuration / ( 60*60*24*30.5 ) );
-		$iDuration %= 60*60*24*30.5;
+		$iMonths = floor( $iDuration / ( 60 * 60 * 24 * 30.5 ) );
+		$iDuration %= 60 * 60 * 24 * 30.5;
 
-		$iWeeks = floor( $iDuration/ ( 60*60*24*7 ) );
-		$iDuration %= 60*60*24*7;
+		$iWeeks = floor( $iDuration / ( 60 * 60 * 24 * 7 ) );
+		$iDuration %= 60 * 60 * 24 * 7;
 
-		$iDays = floor( $iDuration / ( 60*60*24 ) );
-		$iDuration %= 60*60*24;
+		$iDays = floor( $iDuration / ( 60 * 60 * 24 ) );
+		$iDuration %= 60 * 60 * 24;
 
-		$iHrs = floor( $iDuration / ( 60*60 ) );
-		$iDuration %= 60*60;
+		$iHrs = floor( $iDuration / ( 60 * 60 ) );
+		$iDuration %= 60 * 60;
 
-		$iMins = floor( $iDuration/60 );
+		$iMins = floor( $iDuration / 60 );
 		$iSecs = $iDuration % 60;
 
 		if ( $iYears > 0 ) {
@@ -82,7 +82,7 @@ class BsFormatConverter {
 			$sMins = wfMessage( 'bs-mins-duration', $iMins )->text();
 		}
 		if ( $iSecs > 0 ) {
-			$sSecs =wfMessage( 'bs-secs-duration', $iSecs )->text();
+			$sSecs = wfMessage( 'bs-secs-duration', $iSecs )->text();
 		}
 
 		if ( $iYears > 0 ) {

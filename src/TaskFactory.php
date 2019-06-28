@@ -65,7 +65,7 @@ class TaskFactory {
 			$key,
 			false
 		);
-		if( !$callback ) {
+		if ( !$callback ) {
 			throw new MWException( "No registered task for given '$key'!" );
 		}
 		$instance = $callback( Services::getInstance(), $context, $permissionChecker );

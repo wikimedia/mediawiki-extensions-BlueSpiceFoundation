@@ -39,16 +39,16 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 
 		$aData = array();
 		foreach ( BsGroupHelper::getAvailableGroups() as $sGroup ) {
-			if( in_array($sGroup, $wgImplicitGroups) ) {
+			if ( in_array( $sGroup, $wgImplicitGroups ) ) {
 				continue;
 			}
 			$sDisplayName = $sGroup;
 			$oMsg = wfMessage( "group-$sGroup" );
-			if( $oMsg->exists() ) {
+			if ( $oMsg->exists() ) {
 				$sDisplayName = $oMsg->plain()." ($sGroup)";
 			}
 
-			if( !$this->queryApplies( $sGroup, $sDisplayName ) ) {
+			if ( !$this->queryApplies( $sGroup, $sDisplayName ) ) {
 				continue;
 			}
 
@@ -68,7 +68,7 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 	}
 
 	protected function queryApplies( $sGroup, $sDisplayName ) {
-		if( empty( $this->sLcQuery ) ) {
+		if ( empty( $this->sLcQuery ) ) {
 			return true;
 		}
 

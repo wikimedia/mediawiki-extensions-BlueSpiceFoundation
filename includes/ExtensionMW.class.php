@@ -31,7 +31,8 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	/**
 	 * @deprecated since version 3.0.0 - Use constructor instead
 	 */
-	protected function initExt() {}
+	protected function initExt() {
+ }
 
 	/**
 	 * Save a reference to current adapter instance.
@@ -48,7 +49,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @return array
 	 */
 	public function getInfo() {
-		if( !empty( $this->deprecatedSince ) ) {
+		if ( !empty( $this->deprecatedSince ) ) {
 			return array(
 				'path' => $this->mExtensionFile,
 				'name' => $this->mInfo[EXTINFO::NAME],
@@ -61,7 +62,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 			);
 		}
 		$aExtensions = ExtensionRegistry::getInstance()->getAllThings();
-		if( empty( $aExtensions[$this->sName] ) ) {
+		if ( empty( $aExtensions[$this->sName] ) ) {
 			return array(
 				'status' => $this->sStatus,
 				'package' => $this->sPackage,
@@ -84,7 +85,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
 			// Extension credits that will show up on Special:Version
-		if( !empty( $aConfig['deprecatedSince'] ) ) {
+		if ( !empty( $aConfig['deprecatedSince'] ) ) {
 			$sVersion = str_replace(
 				'default',
 				$bsgBlueSpiceExtInfo['version'],
@@ -130,8 +131,8 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 		// do not set same hook twice
 		if ( isset( $wgHooks ) && isset( $wgHooks[$hook] )
 			&& is_array( $wgHooks[$hook] )
-			&& !(count($wgHooks[$hook]) && is_object($wgHooks[$hook][0])
-			&& ($wgHooks[$hook][0] instanceof Closure))
+			&& !( count( $wgHooks[$hook] ) && is_object( $wgHooks[$hook][0] )
+			&& ( $wgHooks[$hook][0] instanceof Closure ) )
 			&& in_array( $register, $wgHooks[$hook], true ) ) {
 			return;
 		};

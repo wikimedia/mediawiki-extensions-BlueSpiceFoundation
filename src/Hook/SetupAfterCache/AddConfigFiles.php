@@ -15,7 +15,7 @@ class AddConfigFiles extends \BlueSpice\Hook\SetupAfterCache {
 		 */
 
 		global $bsgConfigFiles;
-		foreach( $bsgConfigFiles as $sConfigFileKey => $sConfigFilePath ) {
+		foreach ( $bsgConfigFiles as $sConfigFileKey => $sConfigFilePath ) {
 			if ( file_exists( $sConfigFilePath ) ) {
 				include( $sConfigFilePath );
 			}

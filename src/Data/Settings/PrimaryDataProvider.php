@@ -32,14 +32,14 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	public function makeData( $params ) {
 		$this->data = [];
-		//workaround for the upgrade process. The new settings cannot be
-		//accessed before they are migrated
-		if( !$this->db->tableExists( 'bs_settings3' ) ) {
+		// workaround for the upgrade process. The new settings cannot be
+		// accessed before they are migrated
+		if ( !$this->db->tableExists( 'bs_settings3' ) ) {
 			return $this->data;
 		}
 
 		$res = $this->db->select( 'bs_settings3', '*' );
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$this->appendRowToData( $row );
 		}
 
@@ -50,6 +50,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$this->data[] = new Record( (object)[
 			Record::NAME => $row->s_name,
 			Record::VALUE => \FormatJson::decode( $row->s_value )
-		]);
+		] );
 	}
 }

@@ -48,7 +48,7 @@ abstract class Module {
 		$this->context = $context;
 		$this->config = $config;
 		$this->extractParams( $params );
-		if( $secure ) {
+		if ( $secure ) {
 			$this->checkPermissions( $params );
 		}
 	}
@@ -71,8 +71,8 @@ abstract class Module {
 	 * @param Params $params
 	 */
 	protected function extractParams( $params ) {
-		foreach( $this->getParamDefinition() as $paramName => $definition ) {
-			if( $paramName == Params::MODULE ) {
+		foreach ( $this->getParamDefinition() as $paramName => $definition ) {
+			if ( $paramName == Params::MODULE ) {
 				$this->module = $params->get( $paramName, $definition );
 				continue;
 			}
@@ -119,20 +119,20 @@ abstract class Module {
 	 */
 	protected function checkPermissions( $params ) {
 		$user = $this->getContext()->getUser();
-		if( !$this->isTitleRequired() ) {
-			if( !$user->isAllowed( $this->getPermissionKey() ) ) {
+		if ( !$this->isTitleRequired() ) {
+			if ( !$user->isAllowed( $this->getPermissionKey() ) ) {
 				throw new \MWException( 'permission denied' );
 			}
 			return;
 		}
 		$title = \Title::newFromText( $this->titleText );
-		if( !$title instanceof \Title ) {
+		if ( !$title instanceof \Title ) {
 			throw new \MWException( 'title required' );
 		}
-		if( $this->mustRequiredTitleExist() && !$title->exists() ) {
+		if ( $this->mustRequiredTitleExist() && !$title->exists() ) {
 			throw new \MWException( 'title must exist' );
 		}
-		if( !$title->userCan( $this->getPermissionKey(), $user ) ) {
+		if ( !$title->userCan( $this->getPermissionKey(), $user ) ) {
 			throw new \MWException( 'permission denied' );
 		}
 	}

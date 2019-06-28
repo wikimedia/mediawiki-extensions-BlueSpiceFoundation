@@ -137,10 +137,12 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	}
 
 	/**
-	 *
+	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 *   or a MessageSpecifier.
+	 * @param mixed $params,... Normal message parameters
 	 * @return Message
 	 */
-	public function msg( $key /* $args */ ) {
+	public function msg( $key ) {
 		return call_user_func_array(
 			[ $this->getContext(), 'msg' ],
 			func_get_args()
@@ -169,17 +171,17 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 
 	protected function makeTagAttribs() {
 		$attrbs = [];
-		if( $this->args[static::PARAM_CLASS] ) {
+		if ( $this->args[static::PARAM_CLASS] ) {
 			$attrbs[static::PARAM_CLASS] = $this->args[static::PARAM_CLASS];
 		}
-		if( $this->args[static::PARAM_ID] ) {
+		if ( $this->args[static::PARAM_ID] ) {
 			$attrbs[static::PARAM_ID] = $this->args[static::PARAM_ID];
 		}
 		Hooks::run( 'BSFoundationRendererMakeTagAttribs', [
 			$this,
 			$this->args,
 			&$attrbs
-		]);
+		] );
 		return $attrbs;
 	}
 

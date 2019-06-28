@@ -15,11 +15,11 @@ abstract class BSApiTasksTestBase extends BSApiTestCase {
 	}
 
 	protected function executeTask( $taskName, $taskData ) {
-		$results = $this->doApiRequestWithToken([
+		$results = $this->doApiRequestWithToken( [
 			'action' => $this->getModuleName(),
 			'task' => $taskName,
 			'taskData' => \FormatJson::encode( $taskData )
-		]);
+		] );
 
 		return (object)$results[0];
 	}

@@ -1,6 +1,6 @@
 <?php
 $iconSet = isset( $_GET['icons'] ) ? $_GET['icons'] : 'bluespice';
-switch( $iconSet ){
+switch ( $iconSet ) {
 	case 'icomoon':
 		$icons = 'icomoon.css';
 		$icons2 = 'icomoon/icomoon.css';
@@ -117,30 +117,29 @@ switch( $iconSet ){
 	echo "\t\t<tr>\n";
 	$rowcount = 0;
 	$numLines = count( $lines );
-	for( $i=0; $i < $numLines; $i++ ) {
+	for ( $i = 0; $i < $numLines; $i++ ) {
 		$className = null;
 		$number = '';
 
-		if( preg_match( '#^\.(bs-)?icon-#', $lines[$i] ) ) {
+		if ( preg_match( '#^\.(bs-)?icon-#', $lines[$i] ) ) {
 			$pos = strpos( $lines[$i],':' );
-			$className = substr( $lines[$i],1,$pos -1 );
+			$className = substr( $lines[$i],1,$pos - 1 );
 
-			if( preg_match( '#content: "#', $lines[$i + 1] ) ){
+			if ( preg_match( '#content: "#', $lines[$i + 1] ) ) {
 				$pos = strpos( $lines[$i + 1],'"' );
 				$number = substr( $lines[$i + 1],12,$pos - 6 );
 			}
  ?>
-		<td class="icon"><a href="#" class="<?php echo  $className ;?>"></a></td>
+		<td class="icon"><a href="#" class="<?php echo $className;?>"></a></td>
 		<td class="text"><p><?php echo $className ?></p></td>
 		<td class="number"><p><?php echo $number ?></p></td>
 <?php
-		if( $rowcount < 3 )
-			{
+		if ( $rowcount < 3 ) {
 				$rowcount++;
-			}else if ( $rowcount == 3 ){
+		}else if ( $rowcount == 3 ) {
 				$rowcount = 0;
 				echo "\t\t</tr>\n\t\t<tr>\n";
-			}
+		}
 		}
 	}
 ?>

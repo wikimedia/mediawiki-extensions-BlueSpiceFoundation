@@ -5,7 +5,6 @@ namespace BlueSpice\Tests\Hook\SoftwareInfo;
 class AddBlueSpiceTest extends \PHPUnit\Framework\TestCase {
 
 	public function testCanConstruct() {
-
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
 			->getMock();
@@ -15,7 +14,6 @@ class AddBlueSpiceTest extends \PHPUnit\Framework\TestCase {
 			->getMock();
 
 		$software = [];
-
 
 		$this->assertInstanceOf(
 			'\BlueSpice\Hook\SoftwareInfo\AddBlueSpice',
@@ -28,7 +26,6 @@ class AddBlueSpiceTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function testProcess() {
-
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
 			->getMock();

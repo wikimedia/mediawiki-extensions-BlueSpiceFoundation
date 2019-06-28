@@ -79,17 +79,16 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	}
 
 	protected function getDefault( $sOption ) {
-		if( isset( $this->defaults[$sOption] ) ) {
+		if ( isset( $this->defaults[$sOption] ) ) {
 			return $this->defaults[$sOption];
 		}
 		return $this->getConfig()->has( $sOption )
 			? $this->getConfig()->get( $sOption )
-			: false
-		;
+			: false;
 	}
 
 	protected function getConfig() {
-		if( $this->config ) {
+		if ( $this->config ) {
 			return $this->config;
 		}
 		$this->config = MediaWikiServices::getInstance()
@@ -105,7 +104,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 */
 	public function get( $sOption ) {
 		$sMethod = "get_$sOption";
-		if( !is_callable( [$this, $sMethod] ) ) {
+		if ( !is_callable( [ $this, $sMethod ] ) ) {
 			return $this->getDefault( $sOption );
 		}
 		return $this->$sMethod();
@@ -118,10 +117,10 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 */
 	public function has( $method ) {
 		$method = "get_$method";
-		if( is_callable( array($this, $method) ) ) {
+		if ( is_callable( array( $this, $method ) ) ) {
 			return true;
 		}
-		if( isset( $this->defaults[$method] ) ) {
+		if ( isset( $this->defaults[$method] ) ) {
 			return true;
 		}
 		return $this->getConfig()->has( $method );
@@ -133,11 +132,11 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 */
 	public function jsonSerialize() {
 		$aConfig = array();
-		foreach( get_class_methods( $this ) as $sMethod ) {
-			if( strpos($sMethod, 'get_') !== 0 ) {
+		foreach ( get_class_methods( $this ) as $sMethod ) {
+			if ( strpos( $sMethod, 'get_' ) !== 0 ) {
 				continue;
 			}
-			//remove the get_
+			// remove the get_
 			$sVarName = substr( $sMethod, 4 );
 			$aConfig[$sVarName] = $this->$sMethod();
 		}
@@ -171,7 +170,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	}
 
 	protected function get_AttributeDefinitions() {
-		$attributeDefinitions =  [
+		$attributeDefinitions = [
 			Entity::ATTR_ID => [
 				Schema::FILTERABLE => true,
 				Schema::SORTABLE => true,
@@ -219,7 +218,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 		\Hooks::run( 'BSEntityConfigAttributeDefinitions', [
 			$this,
 			&$attributeDefinitions,
-		]);
+		] );
 
 		return $attributeDefinitions;
 	}

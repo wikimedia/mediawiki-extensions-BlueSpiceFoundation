@@ -25,7 +25,7 @@ class TagFactory {
 	 */
 	public function get( $key ) {
 		$className = $this->registry->getValue( $key );
-		if( empty( $className ) ) {
+		if ( empty( $className ) ) {
 			throw new \Exception( "No class registered for '$key'!" );
 		}
 
@@ -40,7 +40,7 @@ class TagFactory {
 		$registeredTags = $this->registry->getAllKeys();
 		$instances = [];
 
-		foreach( $registeredTags as $registeredTag ) {
+		foreach ( $registeredTags as $registeredTag ) {
 			$instances[$registeredTag] = $this->get( $registeredTag );
 		}
 

@@ -14,9 +14,9 @@ class AdminToolFactory {
 	 */
 	public function getAll() {
 		$adminTools = [];
-		foreach( $this->classes as $toolId => $callback ) {
+		foreach ( $this->classes as $toolId => $callback ) {
 			$tool = new $callback();
-			if( $tool instanceof IAdminTool === false ) {
+			if ( $tool instanceof IAdminTool === false ) {
 				throw new MWException( "Class for tool '$toolId' does not implement IAdminTool" );
 			}
 			$adminTools[$toolId] = $tool;

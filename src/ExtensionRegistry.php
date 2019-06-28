@@ -56,7 +56,7 @@ class ExtensionRegistry {
 	}
 
 	protected function runRegister() {
-		if( $this->extensionDefinitions ) {
+		if ( $this->extensionDefinitions ) {
 			return true;
 		}
 
@@ -67,21 +67,21 @@ class ExtensionRegistry {
 			'BlueSpiceFoundationExtensions'
 		);
 
-		if( empty( $GLOBALS['bsgExtensions'] ) ) {
+		if ( empty( $GLOBALS['bsgExtensions'] ) ) {
 			$GLOBALS['bsgExtensions'] = [];
 		}
 
 		$GLOBALS['bsgExtensions'] = array_merge(
-			//old global, wich is still in use in some cases
+			// old global, wich is still in use in some cases
 			$GLOBALS['bsgExtensions'],
-			//manifest version 1
+			// manifest version 1
 			$extRegistryV1,
-			//manifest version 2
+			// manifest version 2
 			$extRegistryV2
 		);
 
-		foreach( $GLOBALS['bsgExtensions'] as $name => $definition ) {
-			if( $name === 'BlueSpiceFoundation' ) {
+		foreach ( $GLOBALS['bsgExtensions'] as $name => $definition ) {
+			if ( $name === 'BlueSpiceFoundation' ) {
 				continue;
 			}
 			$GLOBALS['bsgExtensions'][$name] = $this->makeExtensionDefinition(
@@ -97,10 +97,10 @@ class ExtensionRegistry {
 	protected function makeExtensionDefinition( $name, $definition ) {
 		$allThings = $this->extensionRegistry->getAllThings();
 
-		//Some BlueSpice extensions have been registered wrong in the past.
-		//The the extension name used as key in bsgExtensions must be equal with
-		//the extensions name in the "name" attribute of the extension.json!
-		if( !isset( $allThings[$name] ) ) {
+		// Some BlueSpice extensions have been registered wrong in the past.
+		// The the extension name used as key in bsgExtensions must be equal with
+		// the extensions name in the "name" attribute of the extension.json!
+		if ( !isset( $allThings[$name] ) ) {
 			throw new \BsException(
 				"$name is not a registered extension!"
 			);
@@ -110,20 +110,20 @@ class ExtensionRegistry {
 			$allThings[$name],
 			$definition
 		);
-		if( !isset( $definition['className'] ) ) {
-			//this may change in the future, as there is not much left, that
-			//would be written into the extensin classes
+		if ( !isset( $definition['className'] ) ) {
+			// this may change in the future, as there is not much left, that
+			// would be written into the extensin classes
 			throw new \BsException(
 				"$name className needs to be set!"
 			);
 		}
-		if( !isset( $definition['extPath'] ) ) {
+		if ( !isset( $definition['extPath'] ) ) {
 			$definition['extPath'] = "";
 		}
-		if( !isset( $definition['status'] ) ) {
+		if ( !isset( $definition['status'] ) ) {
 			$definition['status'] = "default";
 		}
-		if( !isset( $definition['package'] ) ) {
+		if ( !isset( $definition['package'] ) ) {
 			$definition['package'] = "default";
 		}
 
@@ -146,7 +146,7 @@ class ExtensionRegistry {
 	 * @return array
 	 */
 	public function getExtensionDefinitions() {
-		if( !$this->runRegister() ) {
+		if ( !$this->runRegister() ) {
 			return [];
 		}
 		return $this->extensionDefinitions;
@@ -170,7 +170,7 @@ class ExtensionRegistry {
 	 * @return array
 	 */
 	public function getExtensionDefinitionByName( $sName ) {
-		if( !$this->hasName( $sName ) ) {
+		if ( !$this->hasName( $sName ) ) {
 			return [];
 		}
 		return $this->extensionDefinitions[$sName];

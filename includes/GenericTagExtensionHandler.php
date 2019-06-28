@@ -69,12 +69,12 @@ class BsGenericTagExtensionHandler {
 	 */
 	public static function setupHandlers( $aExtensions, $parser ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		foreach( $aExtensions as $oExtension ) {
-			if( !$oExtension instanceof BlueSpice\ITagExtensionDefinitionProvider ) {
+		foreach ( $aExtensions as $oExtension ) {
+			if ( !$oExtension instanceof BlueSpice\ITagExtensionDefinitionProvider ) {
 				continue;
 			}
 			$aExtensionTags = $oExtension->makeTagExtensionDefinitions();
-			foreach( $aExtensionTags as $sTagName => $aTagDef ) {
+			foreach ( $aExtensionTags as $sTagName => $aTagDef ) {
 				$oTagHandler = new self( $sTagName, $aTagDef );
 				$parser->setHook( $sTagName, array( $oTagHandler, 'handle' ) );
 			}
@@ -94,16 +94,16 @@ class BsGenericTagExtensionHandler {
 	 */
 	public function handle( $input, array $args, Parser $parser, PPFrame $frame ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if( $this->aTagDef['disableParserCache'] === true ) {
+		if ( $this->aTagDef['disableParserCache'] === true ) {
 			$parser->disableCache();
 		}
 
-		if( $this->aTagDef['parseInput'] === true ) {
+		if ( $this->aTagDef['parseInput'] === true ) {
 			$input = $parser->recursiveTagParse( $input );
 		}
 
-		if( $this->aTagDef['parseParams'] === true ) {
-			foreach( $args as $iKey => $sValue ) {
+		if ( $this->aTagDef['parseParams'] === true ) {
+			foreach ( $args as $iKey => $sValue ) {
 				$args[$iKey] = $parser->recursiveTagParse( $sValue );
 			}
 		}
@@ -113,7 +113,7 @@ class BsGenericTagExtensionHandler {
 		$aElementClasses[] = $this->makeElementClassName();
 
 		$aAttributes = array();
-		if( $this->aTagDef['titleMsg'] !== null ) {
+		if ( $this->aTagDef['titleMsg'] !== null ) {
 			$aAttributes[ 'title' ] = wfMessage( $this->aTagDef['titleMsg'] )->plain();
 		}
 
@@ -127,7 +127,7 @@ class BsGenericTagExtensionHandler {
 				'bs-tag-'.$this->sTagName, $aAttributes['params']
 			);
 
-			if( is_callable( $this->aTagDef['callback'] ) ) {
+			if ( is_callable( $this->aTagDef['callback'] ) ) {
 				$sContent = call_user_func_array(
 					$this->aTagDef['callback'],
 					array(
@@ -157,7 +157,7 @@ class BsGenericTagExtensionHandler {
 	 * @throws Exception
 	 */
 	protected function processInput( $input ) {
-		if( $this->aTagDef['input'] === null ) {
+		if ( $this->aTagDef['input'] === null ) {
 			return $input;
 		}
 
@@ -203,7 +203,7 @@ class BsGenericTagExtensionHandler {
 		$aProcessedParams = $oResult->getParameters();
 
 		$aProcessedValues = array();
-		foreach( $aProcessedParams as $oProcessedParam ) {
+		foreach ( $aProcessedParams as $oProcessedParam ) {
 			$aProcessedValues[$oProcessedParam->getName()] = $oProcessedParam->getValue();
 		}
 
@@ -228,17 +228,34 @@ class BsGenericTagExtensionHandler {
 	 */
 	protected function makeDefaultTagDefinition() {
 		return array(
-			'input' => null, //Param definition for the contents of a tag
-			'params' => array(), //Param definition for the arguments of a tag
-			'disableParserCache' => false, //Whether or not to disable the parser cache for the page the tag is used on
-			'classes' => array(), //Additional CSS classes that should be added to the container element
-			'titleMsg' => null, //A message key for the title attribute of the container element
-			'element' => 'div', //The element name of the container element. Allows for inline tags.
-			'parseInput' => true, //Whether ot not to do a recursiveTagParse on the input before further processing. Allowes for variables, templates, parserfunctions in tag input
-			'parseParams' => true, //Whether ot not to do a recursiveTagParse on the arguments before further processing. Allowes for variables, templates, parserfunctions in tag arguments
-			'callback' => null, //A optional Callable that generates the actual content within the container element
-			'modules' => array(), //ResourceLoader modules to be added to the ParserOutput
-			'moduleStyles' => array() //ResourceLoader modules (only CSS) to be added to the ParserOutput
+			// Param definition for the contents of a tag
+			'input' => null,
+			// Param definition for the arguments of a tag
+			'params' => array(),
+			// Whether or not to disable the parser cache for the page the tag is
+			// used on
+			'disableParserCache' => false,
+			// Additional CSS classes that should be added to the container element
+			'classes' => array(),
+			// A message key for the title attribute of the container element
+			'titleMsg' => null,
+			// The element name of the container element. Allows for inline tags.
+			'element' => 'div',
+			// Whether ot not to do a recursiveTagParse on the input before further
+			// processing. Allowes for variables, templates, parserfunctions in tag
+			// input
+			'parseInput' => true,
+			// Whether ot not to do a recursiveTagParse on the arguments before
+			// further processing. Allowes for variables, templates, parserfunctions
+			// in tag arguments
+			'parseParams' => true,
+			// A optional Callable that generates the actual content within the
+			// container element
+			'callback' => null,
+			// ResourceLoader modules to be added to the ParserOutput
+			'modules' => array(),
+			// ResourceLoader modules (only CSS) to be added to the ParserOutput
+			'moduleStyles' => array()
 		);
 	}
 
@@ -248,12 +265,11 @@ class BsGenericTagExtensionHandler {
 	 */
 	protected function makeElementClassName() {
 		$sPrefix = 'bs-';
-		if( strpos( $this->sTagName, 'bs:' ) === 0 ) {
+		if ( strpos( $this->sTagName, 'bs:' ) === 0 ) {
 			$sPrefix = '';
 		}
 		return str_replace( ':', '-', $sPrefix.$this->sTagName );
 	}
-
 
 	/**
 	 * DEPRECATED!
@@ -266,7 +282,7 @@ class BsGenericTagExtensionHandler {
 	 */
 	public function makeExceptionOutput( $ex ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if( $ex instanceof BSInvalidParamException ) {
+		if ( $ex instanceof BSInvalidParamException ) {
 			return $this->makeInvalidParamExceptionOutput( $ex );
 		}
 
@@ -290,7 +306,7 @@ class BsGenericTagExtensionHandler {
 	public function makeParamDefinitions() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$aParamDefs = array();
-		foreach( $this->aTagDef['params'] as $sParamName => $aParamDef ) {
+		foreach ( $this->aTagDef['params'] as $sParamName => $aParamDef ) {
 			$aParamDefs[] = array(
 				'name' => $sParamName,
 				'message' => wfMessage( 'bs-tag-param-desc', $sParamName )->plain()
@@ -317,7 +333,7 @@ class BsGenericTagExtensionHandler {
 	public function checkForProcessingErrors( $oResult ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$aErrors = $oResult->getErrors();
-		if( !empty( $aErrors ) ) {
+		if ( !empty( $aErrors ) ) {
 			$ex = new BSInvalidParamException();
 			$ex->setErrors( $aErrors );
 			throw $ex;
@@ -335,7 +351,7 @@ class BsGenericTagExtensionHandler {
 	public function makeInvalidParamExceptionOutput( $ex ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$sHtml = '';
-		foreach( $ex->getErrors() as $oProcessingError ) {
+		foreach ( $ex->getErrors() as $oProcessingError ) {
 			$sHtml .= Html::element(
 				'div',
 				array(),

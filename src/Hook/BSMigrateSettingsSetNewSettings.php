@@ -30,7 +30,6 @@ use BlueSpice\Hook;
 
 abstract class BSMigrateSettingsSetNewSettings extends Hook {
 
-
 	/**
 	 * New name of the setting
 	 * @var string

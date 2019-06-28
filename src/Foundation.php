@@ -20,12 +20,11 @@ class Foundation {
 	protected $services = null;
 
 	public static function onRegistry(){
-
 		require_once dirname( __DIR__ ) . "/includes/Defines.php";
 		require_once dirname( __DIR__ ) . "/includes/DefaultSettings.php";
 		require_once dirname( __DIR__ ) . "/includes/GlobalFunctions.php";
 
-		//currently there is no other way
+		// currently there is no other way
 		\HTMLForm::$typeMappings['staticimage'] = 'HTMLStaticImageFieldOverride';
 		\HTMLForm::$typeMappings['link'] = 'HTMLInfoFieldOverride';
 		\HTMLForm::$typeMappings['text'] = 'HTMLTextFieldOverride';
@@ -34,7 +33,7 @@ class Foundation {
 		\HTMLForm::$typeMappings['multiselectplusadd'] = 'HTMLMultiSelectPlusAdd';
 		\HTMLForm::$typeMappings['multiselectsort'] = 'HTMLMultiSelectSortList';
 
-		if( !isset( $GLOBALS['wgExtensionFunctions'] ) ) {
+		if ( !isset( $GLOBALS['wgExtensionFunctions'] ) ) {
 			$GLOBALS['wgExtensionFunctions'] = [];
 		}
 		// initalise BlueSpice as first extension in a fully initialised
@@ -42,16 +41,17 @@ class Foundation {
 		$foundation = new self;
 		array_unshift(
 			$GLOBALS['wgExtensionFunctions'],
-			function() use( $foundation ) {
+			function () use( $foundation ) {
 				$foundation->initialize();
 			}
 		);
 	}
 
-	private function __construct() {}
+	private function __construct() {
+ }
 
 	protected function initialize() {
-		//earliest possible position to use the services and config
+		// earliest possible position to use the services and config
 		$this->services = Services::getInstance();
 		$this->config = $this->services->getConfigFactory()->makeConfig( 'bsg' );
 
@@ -87,7 +87,7 @@ class Foundation {
 	}
 
 	protected function initializeRoleSystem() {
-		if( !$this->config->get( 'EnableRoleSystem' ) ) {
+		if ( !$this->config->get( 'EnableRoleSystem' ) ) {
 			return;
 		}
 		$roleManager = $this->services->getService( 'BSRoleManager' );

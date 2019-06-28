@@ -1,7 +1,7 @@
 <?php
 
 // @todo: Hier wird nicht die Eingabe validiert, sondern bereits der angepaßte Name (z.B. _ ersetzt durch " ").
-//          Es ist also zusätzlich ein Mechanismus zur Validierung der Benutzereingabe erforderlich.
+// Es ist also zusätzlich ein Mechanismus zur Validierung der Benutzereingabe erforderlich.
 
 /**
  * DEPRECATED!
@@ -36,10 +36,10 @@ class BsValidatorMwUsernamePlugin implements BsValidatorPlugin {
 			if ( !User::isUsableName( $mwUsername ) ) {
 				return new BsValidatorResponse( 4, 'UserManager', 'reserved_uname' );
 			}
-			
+
 			return new BsValidatorResponse( 5, 'UserManager', 'invalid_uname' );
 		}
-		//return new BsValidatorResponse(0, 'UserManager', 'uname_validation_approved);
-		return new BsValidatorResponse(0);
+		// return new BsValidatorResponse(0, 'UserManager', 'uname_validation_approved);
+		return new BsValidatorResponse( 0 );
 	}
 }

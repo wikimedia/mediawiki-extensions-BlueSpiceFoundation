@@ -8,7 +8,7 @@ class LessVars extends \ResourceLoaderFileModule {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationLessVarsRegistry'
 		);
-		foreach( $registry->getAllKeys() as $key ) {
+		foreach ( $registry->getAllKeys() as $key ) {
 			$vars[$key] = $registry->getValue( $key, '¯\_(ツ)_/¯' );
 		}
 

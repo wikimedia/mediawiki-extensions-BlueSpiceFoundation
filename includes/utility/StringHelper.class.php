@@ -57,10 +57,10 @@ class BsStringHelper {
 			switch ( $sPosition ) {
 				case 'start':
 					$sShortendString = $sEllipsisCharaters;
-					$sShortendString .= mb_substr($sString, $iGivenStringLength - $iMaxLengthWithoutEllipsis );
+					$sShortendString .= mb_substr( $sString, $iGivenStringLength - $iMaxLengthWithoutEllipsis );
 					break;
 				case 'middle':
-					$iStartIndex = ceil( $iMaxLengthWithoutEllipsis / 2 ) ;
+					$iStartIndex = ceil( $iMaxLengthWithoutEllipsis / 2 );
 					$iEndIndex   = $iGivenStringLength - $iStartIndex - $iEllipsisCharactersLength;
 					$sStart      = mb_substr( $sString, 0, $iStartIndex );
 					$sEnd        = mb_substr( $sString, $iEndIndex );
@@ -73,12 +73,14 @@ class BsStringHelper {
 			}
 		} else {
 			switch ( $sPosition ) {
-				case 'start': // TODO RBV (12.10.10 12:18): implement
+				case 'start':
+					// TODO RBV (12.10.10 12:18): implement
 					break;
-				case 'middle': // TODO RBV (12.10.10 12:18):  implement
+				case 'middle':
+					// TODO RBV (12.10.10 12:18):  implement
 					break;
 				default:
-					if( substr_count( $sString, ' ' ) == 0 ) {
+					if ( substr_count( $sString, ' ' ) == 0 ) {
 						$sShortendString = mb_substr( $sString, 0, $iMaxLengthWithoutEllipsis );
 						$sShortendString .= $sEllipsisCharaters;
 						break;
@@ -153,18 +155,18 @@ class BsStringHelper {
 	 * @return bool
 	 */
 	public static function filter( $sOp, $sHaystack, $sNeedle, $bCaseSensitive = false ) {
-		if( !$bCaseSensitive ) {
+		if ( !$bCaseSensitive ) {
 			$sHaystack = mb_strtolower( $sHaystack );
 			$sNeedle = mb_strtolower( $sNeedle );
 		}
-		switch( $sOp ) {
+		switch ( $sOp ) {
 			case self::FILTER_STARTSWITH:
 				return $sNeedle === '' ||
 					strrpos( $sHaystack, $sNeedle, - strlen( $sHaystack ) ) !== false;
 			case self::FILTER_ENDSWITH:
 				return $sNeedle === '' ||
 					( ( $temp = strlen( $sHaystack ) - strlen( $sNeedle ) ) >= 0
-					&& strpos( $sHaystack, $sNeedle, $temp ) !== false);
+					&& strpos( $sHaystack, $sNeedle, $temp ) !== false );
 			case self::FILTER_CONTAINS:
 			case self::FILTER_LIKE:
 				return strpos( $sHaystack, $sNeedle ) !== false;

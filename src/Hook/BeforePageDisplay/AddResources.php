@@ -25,7 +25,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	protected function addModules() {
 		$this->out->addModules( 'ext.bluespice' );
 
-		if( $this->getConfig()->get( 'TestSystem' ) ) {
+		if ( $this->getConfig()->get( 'TestSystem' ) ) {
 			$this->out->addModules( 'ext.bluespice.testsystem' );
 		}
 	}
@@ -33,7 +33,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	protected function addJSConfigVars() {
 		$configs = [
 			'MaxUploadSize' => [
-				'php' => 1024 * 1024* (int)ini_get( 'upload_max_filesize' ),
+				'php' => 1024 * 1024 * (int)ini_get( 'upload_max_filesize' ),
 				'mediawiki' => $this->getConfig()->get( 'MaxUploadSize' ),
 			],
 			'EnableUploads' => $this->getConfig()->get( 'EnableUploads' ),
@@ -47,11 +47,11 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 			'ArticlePreviewCaptureNotDefault' => $this->getArticlePreviewCaptureNotDefault(),
 		];
 
-		if( $this->getConfig()->get( 'TestSystem' ) ) {
+		if ( $this->getConfig()->get( 'TestSystem' ) ) {
 			$configs['TestSystem'] = true;
 		}
 
-		foreach( $configs as $name => $config ) {
+		foreach ( $configs as $name => $config ) {
 			$this->out->addJsConfigVars( "bsg$name", $config );
 		}
 
@@ -63,7 +63,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	 * @param array $configs
 	 */
 	protected function addLegacyJSConfigVarNames( $configs ) {
-		foreach( $configs as $name => $config ) {
+		foreach ( $configs as $name => $config ) {
 			$this->out->addJsConfigVars( "bs$name", $config );
 		}
 	}
@@ -77,11 +77,11 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 		\Hooks::run( 'BsFoundationBeforeMakeGlobalVariablesScript', [
 			$this->out->getUser(),
 			&$scriptSettings
-		]);
+		] );
 
 		foreach ( $scriptSettings as $setting ) {
 			$value = $setting->getValue();
-			if( $setting->getOptions() & \BsConfig::TYPE_JSON ) {
+			if ( $setting->getOptions() & \BsConfig::TYPE_JSON ) {
 				$value = json_decode( $value );
 			}
 			// All settings are outputed like this: setting bsVisualEditorUse = true
@@ -103,7 +103,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	 */
 	protected function lcNormalizeArray( $data ) {
 		$normalized = array();
-		foreach( $data as $item ) {
+		foreach ( $data as $item ) {
 			$normalized[] = strtolower( $item );
 		}
 		return array_values(
@@ -117,8 +117,8 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 			'BlueSpiceFoundationDynamicFileRegistry'
 		);
 		$articlePreviewCaptureNotDefault = false;
-		foreach( $modules as $key => $module ) {
-			if( $key !== "articlepreviewimage" ) {
+		foreach ( $modules as $key => $module ) {
+			if ( $key !== "articlepreviewimage" ) {
 				continue;
 			}
 

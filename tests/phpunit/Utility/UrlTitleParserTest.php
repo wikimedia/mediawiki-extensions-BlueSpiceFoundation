@@ -78,7 +78,7 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 			'non-existing-namespace' => [
 				'http://tollerserver.de/SomeNS:A_Tollesache_das/Wenn_es_geht', 'SomeNS:A Tollesache das/Wenn es geht'
 			]
-			//.. Umlauts, Namespace prefixes...
+			// .. Umlauts, Namespace prefixes...
 		];
 	}
 }

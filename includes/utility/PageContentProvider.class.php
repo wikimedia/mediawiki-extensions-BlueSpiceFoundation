@@ -13,32 +13,34 @@ class BsPageContentProvider {
 	protected $oOriginalMainRequestContextTitle = null;
 	protected $oOriginalMainRequestContextOutputPage = null;
 
-	public    $oParserOptions            = null;
-	protected $sTemplate                 = false; // TODO RBV (21.01.11 17:09): Better templating...
-	public    $bEncapsulateContent       = true;
+	public $oParserOptions            = null;
+	protected $sTemplate                 = false;
+	public $bEncapsulateContent       = true;
 	protected $oTidy                     = null;
-	public    $aTidyConfig               = array();
+	public $aTidyConfig               = array();
 
 	public static $oInstance             = null;
 
 	protected function getTemplate() {
-		if( $this->sTemplate !== false ) {
+		if ( $this->sTemplate !== false ) {
 			return $this->sTemplate;
 		}
 
-		//Default Template
+		// Default Template
 		$sTemplate = array();
 		$sTemplate[] = '<div %s>';
-		$sTemplate[] = '<a name="%s"></a>'; //jump-anchor
+		// jump-anchor
+		$sTemplate[] = '<a name="%s"></a>';
 		$sTemplate[] = '<h1 class="firstHeading">%s</h1>';
 		$sTemplate[] = '<div class="bodyContent">';
 		$sTemplate[] = '%s';
 		$sTemplate[] = '</div>';
 		$sTemplate[] = '</div>';
 
-		$this->sTemplate = implode( '', $sTemplate ); //no concat with \n,
-		//because in DOM this will be a TextNode, making it more
-		//difficult to traverse DOM
+		// no concat with \n,
+		$this->sTemplate = implode( '', $sTemplate );
+		// because in DOM this will be a TextNode, making it more
+		// difficult to traverse DOM
 
 		return $this->sTemplate;
 	}
@@ -48,7 +50,7 @@ class BsPageContentProvider {
 	 * @return Tidy
 	 */
 	protected function getTidy() {
-		if( $this->oTidy !== null ) {
+		if ( $this->oTidy !== null ) {
 			return $this->oTidy;
 		}
 
@@ -76,7 +78,7 @@ class BsPageContentProvider {
 
 		global $wgUser;
 
-		//Default ParserOptions
+		// Default ParserOptions
 		$this->oParserOptions = ParserOptions::newFromUser( $wgUser );
 		$this->oParserOptions->setTidy( true );
 		$this->oParserOptions->setRemoveComments( true );
@@ -139,10 +141,11 @@ class BsPageContentProvider {
 		} else {
 			$sContent = $oRevision->getContent( $iAudience, $oUser )->getNativeData();
 
-			//FIX for #HW20130072210000028
-			//Manually expand templates to allow bookshelf tags via template
+			// FIX for #HW20130072210000028
+			// Manually expand templates to allow bookshelf tags via template
 			$oParser = new Parser();
-			$oParser->Options( $this->getParserOptions() ); //TODO: needed? below
+			// TODO: needed? below
+			$oParser->Options( $this->getParserOptions() );
 			$sContent = $oParser->preprocess(
 				$sContent,
 				$oRevision->getTitle(),
@@ -166,8 +169,8 @@ class BsPageContentProvider {
 
 		$sHtmlContent = $this->getHTMLContentFor( $oTitle, $aParams );
 
-		//To avoid strange errors... should never happen.
-		if ( !mb_check_encoding( $sHtmlContent, 'utf8') ) {
+		// To avoid strange errors... should never happen.
+		if ( !mb_check_encoding( $sHtmlContent, 'utf8' ) ) {
 			$sHtmlContent = utf8_encode( $sHtmlContent );
 			wfDebug(
 				'BsPageContentProvider::getDOMDocumentContentFor: Content of '
@@ -200,24 +203,24 @@ class BsPageContentProvider {
 		 * http://stackoverflow.com/questions/3834319/trim-only-the-first-and-last-occurrence-of-a-character-in-a-string-php/3834391#3834391
 		 */
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
-		foreach( $oPreTags as $oPreTag ) {
-			if( !($oPreTag->firstChild instanceof DOMText ) ){
+		foreach ( $oPreTags as $oPreTag ) {
+			if ( !( $oPreTag->firstChild instanceof DOMText ) ) {
 				continue;
 			}
-			//Cut off a leading linebreak in <PRE>
-			if( $oPreTag->firstChild->nodeValue[0] == "\n") {
+			// Cut off a leading linebreak in <PRE>
+			if ( $oPreTag->firstChild->nodeValue[0] == "\n" ) {
 				$oPreTag->firstChild->nodeValue =
 					substr( $oPreTag->firstChild->nodeValue, 1 );
 			}
 
-			if( !($oPreTag->lastChild instanceof DOMText ) ) {
+			if ( !( $oPreTag->lastChild instanceof DOMText ) ) {
 				continue;
 			}
 
-			//Cut off a tailing linebreak in <PRE>
-			$sLastIndex = strlen( $oPreTag->lastChild->nodeValue ) -1 ;
+			// Cut off a tailing linebreak in <PRE>
+			$sLastIndex = strlen( $oPreTag->lastChild->nodeValue ) - 1;
 			$sNodeValue = $oPreTag->lastChild->nodeValue;
-			if( $oPreTag->lastChild->nodeValue[$sLastIndex] == "\n" ) {
+			if ( $oPreTag->lastChild->nodeValue[$sLastIndex] == "\n" ) {
 				$oPreTag->lastChild->nodeValue =
 					substr( $sNodeValue, 0, $sLastIndex );
 			}
@@ -249,9 +252,10 @@ class BsPageContentProvider {
 		);
 
 		$oRedirectTarget = null;
-		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
+		if ( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ) {
 			$oRedirectTarget = $this->getRedirectTargetRecursiveFrom( $oTitle, $aParams );
-			$aParams['oldid'] = 0; //This is not the right place... at least we need a hook or something
+			// This is not the right place... at least we need a hook or something
+			$aParams['oldid'] = 0;
 		}
 
 		$oTitle = ( $oRedirectTarget == null ) ? $oTitle : $oRedirectTarget;
@@ -260,31 +264,34 @@ class BsPageContentProvider {
 		$context->setRequest(
 			new DerivativeRequest(
 				$wgRequest,
-				//$_REQUEST + i.e. oldid
-				//TODO: Check if all params are necessary
+				// $_REQUEST + i.e. oldid
+				// TODO: Check if all params are necessary
 				$wgRequest->getValues() + $aParams,
 				$wgRequest->wasPosted() )
 		);
 		$context->setTitle( $oTitle );
 		$context->setUser( $wgUser );
 		$context->setSkin( $wgOut->getSkin() );
-		//Prevent "BeforePageDisplay" hook
-		$context->getOutput()->setArticleBodyOnly( true ); //TODO: redundant?
+		// Prevent "BeforePageDisplay" hook
+		// TODO: redundant?
+		$context->getOutput()->setArticleBodyOnly( true );
 
 		$this->overrideGlobals( $oTitle, $context );
 
 		$sHTML = '';
 		$sError = '';
 		try {
-			switch( $oTitle->getNamespace() ) {
+			switch ( $oTitle->getNamespace() ) {
 				case NS_FILE:
 					$oImagePage = ImagePage::newFromTitle( $oTitle, $context );
-					$oImagePage->view(); //Parse to OutputPage
+					// Parse to OutputPage
+					$oImagePage->view();
 					break;
 
 				case NS_CATEGORY:
 					$oCategoryPage = CategoryPage::newFromTitle( $oTitle, $context );
-					$oCategoryPage->view(); //Parse to OutputPage
+					// Parse to OutputPage
+					$oCategoryPage->view();
 					break;
 
 				case NS_SPECIAL:
@@ -298,32 +305,32 @@ class BsPageContentProvider {
 					break;
 
 				default:
-					$oArticle = Article::newFromTitle($oTitle, $context);
+					$oArticle = Article::newFromTitle( $oTitle, $context );
 					$oArticle->view();
 					break;
 			}
 		}
-		catch( Exception $e ) {
-			if( $e instanceof PermissionsError ) {
+		catch ( Exception $e ) {
+			if ( $e instanceof PermissionsError ) {
 				$wgOut->showPermissionsErrorPage( $e->errors, $e->permission );
-			} else if( $e instanceof ErrorPageError ) {
+			} else if ( $e instanceof ErrorPageError ) {
 				$wgOut->showErrorPage( $e->title, $e->msg, $e->params );
 			} else {
 				$sError = $e->getMessage();
 			}
 			wfDebug(
 				'BsPageContentProvider::getHTMLContentFor: Exception of type '
-					.get_class($e)
+					.get_class( $e )
 					.' thrown on title '
 					.$oTitle->getPrefixedText()
 					.'. Continuing happily.'
 			);
 		}
 
-		//HW#2012062710000041 — Bookshelf, PDF Export: HTTP 404 wenn nicht extistierende Artikel beinhaltet sind
-		//Because in this case MW sets 404 Header in Article::view()
-		if( !$oTitle->isKnown() ) {
-			//Therefore we will have to reset it
+		// HW#2012062710000041 — Bookshelf, PDF Export: HTTP 404 wenn nicht extistierende Artikel beinhaltet sind
+		// Because in this case MW sets 404 Header in Article::view()
+		if ( !$oTitle->isKnown() ) {
+			// Therefore we will have to reset it
 			$wgRequest->response()->header( "HTTP/1.1 200 OK", true );
 			wfDebug(
 				'BsPageContentProvider::getHTMLContentFor: Title "'
@@ -332,9 +339,9 @@ class BsPageContentProvider {
 			);
 		}
 
-		//This would be the case with normal articles and imagepages
+		// This would be the case with normal articles and imagepages
 		$sTitle = "";
-		if( empty( $sHTML ) ){
+		if ( empty( $sHTML ) ) {
 			$sHTML = $wgOut->getHTML();
 			$sTitle = $wgOut->getPageTitle();
 		}
@@ -343,20 +350,19 @@ class BsPageContentProvider {
 
 		$sHTML = empty( $sHTML ) ? $context->getOutput()->getHTML() : $sHTML;
 
-
-		if( !empty($sError)) {
+		if ( !empty( $sError ) ) {
 			$sHTML .= '<div class="bs-error">'.$sError.'</div>';
 		}
 
 		$this->makeInternalAnchorNamesUnique( $sHTML, $oTitle, $aParams );
 
-		if( $this->bEncapsulateContent ) {
+		if ( $this->bEncapsulateContent ) {
 			$sHTML = sprintf(
 				$this->getTemplate(),
 				$this->getWrapperAttributes( $oTitle ),
 				'bs-ue-jumpmark-'.
 				md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
-				empty( $sTitle ) ? $oTitle->getPrefixedText( ) : $sTitle,
+				empty( $sTitle ) ? $oTitle->getPrefixedText() : $sTitle,
 				$sHTML
 			);
 		}
@@ -384,7 +390,7 @@ class BsPageContentProvider {
 	 * @return String WikiText of the desired Article
 	 */
 	public function getWikiTextContentFor( Title $oTitle, $aParams = array() ) {
-		//TODO: Dispatch for different types [SpecialPage?, CategoryPage?, ImagePage? --> What WikiText could be received?]
+		// TODO: Dispatch for different types [SpecialPage?, CategoryPage?, ImagePage? --> What WikiText could be received?]
 		return $this->getWikiTextContentForArticle( $oTitle, $aParams );
 	}
 
@@ -399,22 +405,22 @@ class BsPageContentProvider {
 			$aParams
 		);
 
-		$oRevision = Revision::newFromTitle($oTitle, $aParams['oldid']);
+		$oRevision = Revision::newFromTitle( $oTitle, $aParams['oldid'] );
 
-		//TODO PW (16.01.2013): Use $this->mAdapter->getTitleFromRedirectRecurse($oTitle);
-		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
+		// TODO PW (16.01.2013): Use $this->mAdapter->getTitleFromRedirectRecurse($oTitle);
+		if ( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ) {
 			$oTitle = ContentHandler::makeContent(
-				$this->getContentFromRevision($oRevision),
+				$this->getContentFromRevision( $oRevision ),
 				null,
 				CONTENT_MODEL_WIKITEXT
 			)->getRedirectTarget();
-			//TODO: This migth bypass FlaggedRevs! Test and fix if necessary!
-			$oRevision = Revision::newFromTitle($oTitle);
+			// TODO: This migth bypass FlaggedRevs! Test and fix if necessary!
+			$oRevision = Revision::newFromTitle( $oTitle );
 		}
-		if (is_null($oRevision)) {
+		if ( is_null( $oRevision ) ) {
 			return '';
 		}
-		return $this->getContentFromRevision($oRevision);
+		return $this->getContentFromRevision( $oRevision );
 	}
 
 	/**
@@ -455,7 +461,7 @@ class BsPageContentProvider {
 		return Title::newFromRedirect( $this->getWikiTextContentFor( $oTitle, $aParams ) );
 	}
 
-	//<editor-fold desc="Save, override and restore OutputPage and Parser" defaultstate="collapsed">
+	// <editor-fold desc="Save, override and restore OutputPage and Parser" defaultstate="collapsed">
 	/**
 	 * Overrides global variables
 	 *
@@ -469,8 +475,8 @@ class BsPageContentProvider {
 	private function overrideGlobals( $oTitle, $context = null ) {
 		global $wgParser, $wgOut, $wgTitle, $wgRequest;
 
-		//This is necessary for other extensions that may rely on $wgTitle,
-		//i.e for checking permissions during rendering
+		// This is necessary for other extensions that may rely on $wgTitle,
+		// i.e for checking permissions during rendering
 		$this->oOriginalGlobalOutputPage = $wgOut;
 		$this->oOriginalGlobalParser     = $wgParser;
 		$this->oOriginalGlobalTitle      = $wgTitle;
@@ -492,7 +498,7 @@ class BsPageContentProvider {
 
 		$wgOut = new OutputPage( $context );
 
-		if( $context ) {
+		if ( $context ) {
 			$wgRequest = $context->getRequest();
 		}
 
@@ -526,42 +532,44 @@ class BsPageContentProvider {
 			$this->oOriginalMainRequestContextOutputPage
 		);
 
-		$this->oOriginalGlobalTitle= null;
+		$this->oOriginalGlobalTitle = null;
 	}
 
 	private function makeInternalAnchorNamesUnique( &$sHTML, $oTitle, $aParams ) {
 		$aMatches = array();
 		// TODO RBV (19.07.12 09:29): Use DOM!
 		// TODO RBV (09.09.11 11:48): What if there is no TOC?
-		preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber">)|si', $sHTML, $aMatches ); //Finds all TOC links
+		// Finds all TOC links
+		preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber">)|si', $sHTML, $aMatches );
 
 		$aPatterns     = array();
 		$aReplacements = array();
 
 		$sPatternQuotedArticleTitle = preg_quote( str_replace( ' ', '_', $oTitle->getPrefixedText() ) );
 
-		foreach( $aMatches[2] as $sAnchorName ) {
-			$sUniqueAnchorName = md5( $oTitle->getPrefixedText().$sAnchorName.$aParams['oldid'].$aParams['entropy']);
+		foreach ( $aMatches[2] as $sAnchorName ) {
+			$sUniqueAnchorName = md5( $oTitle->getPrefixedText().$sAnchorName.$aParams['oldid'].$aParams['entropy'] );
 
 			$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
-			//In TOC
+			// In TOC
 			$aPatterns[]     = '|<a href="#'.$sPatternQuotedAnchorName.'"><span class="tocnumber">|si';
-			$aReplacements[] =  '<a href="#'.$sUniqueAnchorName.'"><span class="tocnumber">';
+			$aReplacements[] = '<a href="#'.$sUniqueAnchorName.'"><span class="tocnumber">';
 
-			//Every single headline
+			// Every single headline
 			$aPatterns[]     = '|<a name="'.$sPatternQuotedAnchorName.'" id="'.$sPatternQuotedAnchorName.'"></a>|si';
-			$aReplacements[] =  '<a name="'.$sUniqueAnchorName.'" id="'.$sUniqueAnchorName.'"></a>';
+			$aReplacements[] = '<a name="'.$sUniqueAnchorName.'" id="'.$sUniqueAnchorName.'"></a>';
 
-			//In text
-			$aPatterns[]     = '|<a href="(/index\.php/'.$sPatternQuotedArticleTitle.')?#'.$sPatternQuotedAnchorName.'"|si'; //TODO: What about index.php?title=abc links?
-			$aReplacements[] =  '<a href="#'.$sUniqueAnchorName.'"';
+			// In text
+			// TODO: What about index.php?title=abc links?
+			$aPatterns[]     = '|<a href="(/index\.php/'.$sPatternQuotedArticleTitle.')?#'.$sPatternQuotedAnchorName.'"|si';
+			$aReplacements[] = '<a href="#'.$sUniqueAnchorName.'"';
 
-			//Every single headline new
+			// Every single headline new
 			$aPatterns[]     = '|<span class="mw-headline" id="'.$sPatternQuotedAnchorName.'"|si';
-			$aReplacements[] =  '<span class="mw-headline" id="'.$sUniqueAnchorName.'"';
+			$aReplacements[] = '<span class="mw-headline" id="'.$sUniqueAnchorName.'"';
 		}
 
 		$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
 	}
-	//</editor-fold>
+	// </editor-fold>
 }

@@ -27,7 +27,7 @@ class SimpleList extends \BlueSpice\Renderer {
 			static::PARAM_ITEMS,
 			[]
 		);
-		if( !in_array( $this->args[static::PARAM_TAG], ['ol', 'ul'] ) ) {
+		if ( !in_array( $this->args[static::PARAM_TAG], [ 'ol', 'ul' ] ) ) {
 			$this->args[static::PARAM_TAG] = 'ul';
 		}
 	}
@@ -42,7 +42,7 @@ class SimpleList extends \BlueSpice\Renderer {
 
 	protected function makeTagContent() {
 		$content = '';
-		foreach( $this->args[static::PARAM_ITEMS] as $item ) {
+		foreach ( $this->args[static::PARAM_ITEMS] as $item ) {
 			$renderer = new Item(
 				$this->config,
 				new Params( $item ),

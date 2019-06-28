@@ -28,7 +28,7 @@ class LoadPlaceholderRegistry extends ExtensionAttributeBasedRegistry {
 	 */
 	public function getPlaceholderPath( $template ) {
 		$registry = $this->extensionRegistry->getAttribute( $this->attribName );
-		if( isset( $registry[$template] ) ) {
+		if ( isset( $registry[$template] ) ) {
 			return $registry[$template];
 		}
 		return null;
@@ -50,7 +50,7 @@ class LoadPlaceholderRegistry extends ExtensionAttributeBasedRegistry {
 
 		try {
 			return $templateParser->processTemplate( $template, $args );
-		} catch( RuntimeException $ex ) {
+		} catch ( RuntimeException $ex ) {
 			return '';
 		}
 	}

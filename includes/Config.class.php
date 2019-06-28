@@ -98,11 +98,11 @@ class BsConfig {
 	 *
 	 * @var array
 	 */
-	protected static $prSettings = array ();
+	protected static $prSettings = array();
 
-	protected static $prRegisterAdapter = array ();
+	protected static $prRegisterAdapter = array();
 
-	protected static $prRegisterExtension = array ();
+	protected static $prRegisterExtension = array();
 
 	protected static $prGetUsersSettings = true;
 
@@ -111,7 +111,7 @@ class BsConfig {
 	 *
 	 * @var array
 	 */
-	protected static $prRegisterJavascript = array ();
+	protected static $prRegisterJavascript = array();
 
 	// TODO MRG20100810: was ist mit path gemeint? bitte im kommentar erklÃ¤ren und ggf. besser benennen.
 	/**
@@ -131,16 +131,16 @@ class BsConfig {
 	 */
 	public static function registerVar( $path, $default = null, $options = 0, $i18n = '', $sFormFieldMappingName = 'text' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$var = self::getSettingObject ( $path );
+		$var = self::getSettingObject( $path );
 		$var->setDefault( $default );
 		if ( $options ) {
 			$var->setOptions( $options );
 		}
 		if ( $i18n ) {
-			$var->setI18N ( $i18n );
+			$var->setI18N( $i18n );
 		}
 		if ( $sFormFieldMappingName ) {
-			$var->setFieldMapping ( $sFormFieldMappingName );
+			$var->setFieldMapping( $sFormFieldMappingName );
 		}
 	}
 
@@ -190,14 +190,14 @@ class BsConfig {
 	public static function get( $sPath ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$mReturn = null;
-		if( !Hooks::run ( "BSCoreConfigGet", array ( $sPath, &$mReturn ) ) ) {
+		if ( !Hooks::run( "BSCoreConfigGet", array( $sPath, &$mReturn ) ) ) {
 			return $mReturn;
 		}
 
-		$oSetting = self::getSettingObject ( $sPath );
+		$oSetting = self::getSettingObject( $sPath );
 
-		if ( is_object ( $oSetting ) ) {
-			return $oSetting->_get ();
+		if ( is_object( $oSetting ) ) {
+			return $oSetting->_get();
 		} else {
 			return null;
 		}
@@ -216,7 +216,7 @@ class BsConfig {
 	 */
 	public static function add( $path, $value ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return self::getSettingObject ( $path )->_add ( $value );
+		return self::getSettingObject( $path )->_add( $value );
 	}
 
 	/**
@@ -247,8 +247,8 @@ class BsConfig {
 		if ( isset( self::$prSettings[$key] ) ) {
 			return self::$prSettings[$key];
 		}
-		$_path = explode ( '::', $path );
-		$len = count ( $_path );
+		$_path = explode( '::', $path );
+		$len = count( $_path );
 
 		if ( $len < 2 || $len > 3 ) {
 			// @todo Fehlermeldung Falsches Pfad-Format (ADAPTER::[EXTENSION::]VARIABLE)
@@ -256,18 +256,18 @@ class BsConfig {
 		}
 
 		$extension = null;
-		$adapter = array_shift ( $_path );
+		$adapter = array_shift( $_path );
 		$len--;
 		if ( $len === 2 ) {
-			$extension = array_shift ( $_path );
+			$extension = array_shift( $_path );
 		}
-		$varname = array_shift ( $_path );
+		$varname = array_shift( $_path );
 
-		$tmp = new BsConfig ();
-		$tmp->setKey ( $path );
-		$tmp->setAdapter ( $adapter );
-		$tmp->setExtension ( $extension );
-		$tmp->setName ( $varname );
+		$tmp = new BsConfig();
+		$tmp->setKey( $path );
+		$tmp->setAdapter( $adapter );
+		$tmp->setExtension( $extension );
+		$tmp->setName( $varname );
 		self::$prSettings[$key] = $tmp;
 		return $tmp;
 	}
@@ -286,21 +286,22 @@ class BsConfig {
 			$aRows = $aData;
 		} else {
 			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from DB' );
-			$dbr = wfGetDB ( DB_REPLICA );
+			$dbr = wfGetDB( DB_REPLICA );
 			# query the settings from bs_settings
 			$aRows = array();
-			if( $dbr->tableExists( 'bs_settings' ) ) {
-				$res = $dbr->select ( 'bs_settings', array ( $dbr->addIdentifierQuotes('key'), $dbr->addIdentifierQuotes('value') ) );
+			if ( $dbr->tableExists( 'bs_settings' ) ) {
+				$res = $dbr->select( 'bs_settings', array( $dbr->addIdentifierQuotes( 'key' ), $dbr->addIdentifierQuotes( 'value' ) ) );
 
-				while( $row = $res->fetchObject() ) {
+				while ( $row = $res->fetchObject() ) {
 					$aRows[] = $row;
 				}
 			}
-			BsCacheHelper::set( $sKey, $aRows, 60*1440 );//max cache time 24h
+			// max cache time 24h
+			BsCacheHelper::set( $sKey, $aRows, 60 * 1440 );
 		}
 		# unserialize and save every setting in the config class
-		foreach( $aRows as $row ) {
-			self::set ( $row->key, unserialize ( $row->value ) );
+		foreach ( $aRows as $row ) {
+			self::set( $row->key, unserialize( $row->value ) );
 		}
 	}
 
@@ -312,9 +313,9 @@ class BsConfig {
 	 */
 	public static function saveSettings() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$dbw = wfGetDB ( DB_MASTER );
+		$dbw = wfGetDB( DB_MASTER );
 
-		if( !$dbw->tableExists( 'bs_settings' ) ) {
+		if ( !$dbw->tableExists( 'bs_settings' ) ) {
 			return true;
 		}
 		$dbw->delete( 'bs_settings', '*' );
@@ -324,33 +325,33 @@ class BsConfig {
 		foreach ( self::$prSettings as $setting ) {
 			# if the setting is not a public or a user setting
 			# go to the next setting
-			if ( ! ( $setting->getOptions () &
+			if ( ! ( $setting->getOptions() &
 					( self::LEVEL_PUBLIC | self::LEVEL_USER ) ) ) {
 				continue;
 			}
 			# if the setting is not a default setting go to the next
 			# setting
-			if ( $setting->getOptions () & BsConfig::NO_DEFAULT ) {
+			if ( $setting->getOptions() & BsConfig::NO_DEFAULT ) {
 				continue;
 			}
 			# if the setting is a boolean type then make sure, it
 			# gets saved as boolean type
-			if ( $setting->getOptions () & self::TYPE_BOOL ) {
-				$value = (bool)$setting->getValue ();
+			if ( $setting->getOptions() & self::TYPE_BOOL ) {
+				$value = (bool)$setting->getValue();
 			} else {
-				$value = $setting->getValue ();
+				$value = $setting->getValue();
 			}
 			# save the setting in the settings array
 			$aSettings[] = array(
-				$dbw->addIdentifierQuotes('key') => $setting->getKey(),
-				$dbw->addIdentifierQuotes('value') => serialize ( $value )
+				$dbw->addIdentifierQuotes( 'key' ) => $setting->getKey(),
+				$dbw->addIdentifierQuotes( 'value' ) => serialize( $value )
 			);
 		}
 
 		Hooks::run( 'BsSettingsBeforeSaveSettings', array( &$aSettings ) );
 
 		# write the settings array to the database
-		$bReturn = $dbw->insert('bs_settings', $aSettings);
+		$bReturn = $dbw->insert( 'bs_settings', $aSettings );
 
 		Hooks::run( 'BsSettingsAfterSaveSettings', array( $aSettings ) );
 
@@ -371,29 +372,29 @@ class BsConfig {
 	 */
 	public static function getVarForUser( $sKey, $mUser ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$oSettingsObject = self::getSettingObject ( $sKey );
-		if ( is_object ( $mUser ) ) {
+		$oSettingsObject = self::getSettingObject( $sKey );
+		if ( is_object( $mUser ) ) {
 			$oUser = $mUser;
 		} else {
-			$oUser = User::newFromName ( $mUser );
+			$oUser = User::newFromName( $mUser );
 		}
-		$bOrigDeliverFlag = BsConfig::deliverUsersSettings ( false );
+		$bOrigDeliverFlag = BsConfig::deliverUsersSettings( false );
 		// This is needed in MW 1.17. For some strange reason, array keys are rendered with _, not : .
 		// Beware, in getUsersForVar, the value is being read manually, so no replacement is necessary.
 		// Todo: either store all values with underscore or read all values manually to get consistent behaviour.
 		// $sKey = str_replace( ':', '_', $sKey );
-		if ( is_object ( $oUser ) ) {
-			$mRawOption = $oUser->getOption ( $sKey );
+		if ( is_object( $oUser ) ) {
+			$mRawOption = $oUser->getOption( $sKey );
 			if ( $mRawOption ) {
 				$mReturn = $mRawOption;
 			} else {
-				$mReturn = $oSettingsObject->getValue ();
+				$mReturn = $oSettingsObject->getValue();
 			}
 		} else {
-			$mReturn = $oSettingsObject->getValue ();
+			$mReturn = $oSettingsObject->getValue();
 		}
 
-		BsConfig::deliverUsersSettings ( $bOrigDeliverFlag );
+		BsConfig::deliverUsersSettings( $bOrigDeliverFlag );
 		return $mReturn;
 	}
 
@@ -410,30 +411,30 @@ class BsConfig {
 	public static function getUsersForVar( $sKey, $vValue, $sSingleValFromMultiple = false, $bSerialized = true ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
-		$oDb = wfGetDB ( DB_REPLICA );
-		$aUsers = array ();
+		$oDb = wfGetDB( DB_REPLICA );
+		$aUsers = array();
 
 		$aConditions = array( 'up_property' => $sKey );
-		if( $sSingleValFromMultiple ) {
+		if ( $sSingleValFromMultiple ) {
 			$aConditions[] = 'up_value like "%'.$vValue.'%"';
 		} else {
 				$aConditions['up_value'] = ( $bSerialized ) ? serialize( $vValue ) : $vValue;
 		}
-		$rRes = $oDb->select (
+		$rRes = $oDb->select(
 				'user_properties',
 				'*',
 				$aConditions
 		);
 
-		while ( $oRow = $rRes->fetchObject () ) {
-			if( $sSingleValFromMultiple ) {
-				foreach( unserialize( $oRow->up_value ) as $value ) {
-					if( $value === $vValue ) {
-						$aUsers[] = User::newFromId($oRow->up_user);
+		while ( $oRow = $rRes->fetchObject() ) {
+			if ( $sSingleValFromMultiple ) {
+				foreach ( unserialize( $oRow->up_value ) as $value ) {
+					if ( $value === $vValue ) {
+						$aUsers[] = User::newFromId( $oRow->up_user );
 					}
 				}
 			} else {
-				$aUsers [] = User::newFromId ( $oRow->up_user );
+				$aUsers [] = User::newFromId( $oRow->up_user );
 			}
 		}
 		return $aUsers;
@@ -482,25 +483,25 @@ class BsConfig {
 	 */
 	public static function saveUserSettings( $user ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if ( ! is_object ( $user ) ) {
-			$user = User::newFromName ( $user );
+		if ( ! is_object( $user ) ) {
+			$user = User::newFromName( $user );
 		}
 
-		$orig_deliver = self::deliverUsersSettings ( true );
+		$orig_deliver = self::deliverUsersSettings( true );
 
 		foreach ( self::$prSettings as $setting ) {
-			if ( ! ( $setting->getOptions () & ( self::LEVEL_USER ) ) ) {
+			if ( ! ( $setting->getOptions() & ( self::LEVEL_USER ) ) ) {
 				continue;
 			}
-			if ( $setting->getOptions () & self::TYPE_BOOL ) {
-				$user->setOption ( $setting->getKey (),
-						( int )$setting->getValue () );
+			if ( $setting->getOptions() & self::TYPE_BOOL ) {
+				$user->setOption( $setting->getKey(),
+						(int)$setting->getValue() );
 			} else {
-				$user->setOption ( $setting->getKey (), $setting->getValue () );
+				$user->setOption( $setting->getKey(), $setting->getValue() );
 			}
 		}
-		$user->saveSettings ();
-		self::deliverUsersSettings ( $orig_deliver );
+		$user->saveSettings();
+		self::deliverUsersSettings( $orig_deliver );
 		return true;
 	}
 
@@ -589,7 +590,6 @@ class BsConfig {
 	 * the constructor
 	 */
 	protected function __construct() {
-
 		$this->_mOptions = self::LEVEL_PRIVATE;
 	}
 
@@ -610,7 +610,7 @@ class BsConfig {
 	 */
 	protected function setAdapter( $adapter ) {
 		$this->_mAdapter = $adapter;
-		self::$prRegisterAdapter [ strtolower ( $adapter ) ] = $this;
+		self::$prRegisterAdapter [ strtolower( $adapter ) ] = $this;
 	}
 
 	/**
@@ -620,7 +620,7 @@ class BsConfig {
 	 */
 	protected function setExtension( $extension ) {
 		$this->_mExtension = $extension;
-		self::$prRegisterExtension [ strtolower ( $extension ) ] = $this;
+		self::$prRegisterExtension [ strtolower( $extension ) ] = $this;
 	}
 
 	/**
@@ -648,7 +648,7 @@ class BsConfig {
 	protected function setOptions( $options ) {
 		$this->_mOptions = $options;
 		if ( $options & self::RENDER_AS_JAVASCRIPT ) {
-			self::$prRegisterJavascript [ strtolower ( $this->_mKey ) ] = $this;
+			self::$prRegisterJavascript [ strtolower( $this->_mKey ) ] = $this;
 		}
 	}
 
@@ -706,7 +706,7 @@ class BsConfig {
 	 */
 	protected function _add( $value ) {
 		if ( $this->_mOptions & self::TYPE_OBJECT ) {
-			//@todo Fehlermeldung Typ unterstÃ¼tzt kein ADD
+			// @todo Fehlermeldung Typ unterstÃ¼tzt kein ADD
 			return null;
 		}
 		if ( $this->_mOptions & self::TYPE_INT ||
@@ -718,7 +718,7 @@ class BsConfig {
 		} elseif ( $this->_mOptions & self::TYPE_BOOL && $value ) {
 			$this->_mValue = $value;
 		} else {
-			$this->_mValue = array_merge_recursive ( $this->_mValue, $value );
+			$this->_mValue = array_merge_recursive( $this->_mValue, $value );
 		}
 		return $this->_mValue;
 	}
@@ -730,11 +730,11 @@ class BsConfig {
 	 */
 	protected function _get() {
 		if ( self::$prGetUsersSettings ) {
-			if ( ! is_null ( $this->_mUserValue ) ) {
+			if ( ! is_null( $this->_mUserValue ) ) {
 				return $this->_mUserValue;
 			}
 		}
-		if ( ! is_null ( $this->_mValue ) ) {
+		if ( ! is_null( $this->_mValue ) ) {
 			return $this->_mValue;
 		}
 		return $this->_mDefault;
@@ -747,7 +747,6 @@ class BsConfig {
 	 * @return mixed
 	 */
 	public function getValue() {
-
 		return $this->_get();
 	}
 
@@ -757,7 +756,6 @@ class BsConfig {
 	 * @return string
 	 */
 	public function getKey() {
-
 		return $this->_mKey;
 	}
 
@@ -767,7 +765,6 @@ class BsConfig {
 	 * @return string
 	 */
 	public function getAdapter() {
-
 		return $this->_mAdapter;
 	}
 
@@ -777,7 +774,6 @@ class BsConfig {
 	 * @return string
 	 */
 	public function getExtension() {
-
 		return $this->_mExtension;
 	}
 
@@ -787,7 +783,6 @@ class BsConfig {
 	 * @return String i18n
 	 */
 	public function getI18nExtension() {
-
 		return $this->_mExtension;
 	}
 
@@ -797,7 +792,6 @@ class BsConfig {
 	 * @return string
 	 */
 	public function getName() {
-
 		return $this->_mName;
 	}
 
@@ -807,8 +801,7 @@ class BsConfig {
 	 * @return string
 	 */
 	public function getI18nName() {
-
-		if ( is_string ( $this->_mI18n ) ) {
+		if ( is_string( $this->_mI18n ) ) {
 			return $this->_mI18n;
 		} else {
 			return $this->_mName;
@@ -821,7 +814,6 @@ class BsConfig {
 	 * @return int
 	 */
 	public function getOptions() {
-
 		return $this->_mOptions;
 	}
 
@@ -831,7 +823,6 @@ class BsConfig {
 	 * @return string
 	 */
 	public function getFieldMapping() {
-
 		return $this->_mFieldMapping;
 	}
 
@@ -843,7 +834,8 @@ class BsConfig {
 	public function getFieldDefinition( $sSection ) {
 		$aField = array(
 			'type' => $this->getFieldMapping(),
-			'label-message' => $this->getI18nName(), // a system message
+			// a system message
+			'label-message' => $this->getI18nName(),
 			'section' => strtolower( $sSection ),
 			'default' => $this->getValue()
 		);
@@ -864,8 +856,7 @@ class BsConfig {
 	 * @return string
 	 */
 	public function generateFieldId() {
-
-		return $this->getAdapter () . '_' . $this->getExtension () . '_' .
-				 $this->getName ();
+		return $this->getAdapter() . '_' . $this->getExtension() . '_' .
+				 $this->getName();
 	}
 }

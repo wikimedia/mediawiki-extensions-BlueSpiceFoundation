@@ -64,15 +64,15 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 			return;
 		}
 
-		foreach( $this->getTargets() as $match => $title ) {
-			if( !$target->equals( $title ) ) {
+		foreach ( $this->getTargets() as $match => $title ) {
+			if ( !$target->equals( $title ) ) {
 				continue;
 			}
 			return;
 		}
 
 		$linkWikiText = "[[";
-		if( !empty( $this->wikitext ) ) {
+		if ( !empty( $this->wikitext ) ) {
 			$linkWikiText = $separator . $linkWikiText;
 		}
 		$linkWikiText .= $target->getPrefixedText();

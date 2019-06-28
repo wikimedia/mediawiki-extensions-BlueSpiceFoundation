@@ -9,11 +9,11 @@ class HTMLIntFieldOverride extends HTMLIntField {
 		}
 
 		if ( isset( $this->options['range_min'] ) && $value < $this->options['range_min'] ) {
-			return $this->msg( 'htmlform-int-outofrange')->parseAsBlock();
+			return $this->msg( 'htmlform-int-outofrange' )->parseAsBlock();
 		}
 
 		if ( isset( $this->options['range_max'] ) && $value > $this->options['range_max'] ) {
-			return $this->msg( 'htmlform-int-outofrange')->parseAsBlock();
+			return $this->msg( 'htmlform-int-outofrange' )->parseAsBlock();
 		}
 
 		return true;
@@ -23,19 +23,19 @@ class HTMLIntFieldOverride extends HTMLIntField {
 		$attr = [
 			'value' => $value
 		];
-		if( isset( $this->mParams['min'] ) ) {
+		if ( isset( $this->mParams['min'] ) ) {
 			$attr['min'] = $this->mParams['min'];
 		}
-		if( isset( $this->mParams['max'] ) ) {
+		if ( isset( $this->mParams['max'] ) ) {
 			$attr['max'] = $this->mParams['max'];
 		}
-		if( isset( $this->mParams['step'] ) ) {
+		if ( isset( $this->mParams['step'] ) ) {
 			$attr['step'] = $this->mParams['step'];
 		}
-		if( isset( $this->mParams['pageStep'] ) ) {
+		if ( isset( $this->mParams['pageStep'] ) ) {
 			$attr['pageStep'] = $this->mParams['pageStep'];
 		}
-		if( isset( $this->mParams['showButtons'] ) ) {
+		if ( isset( $this->mParams['showButtons'] ) ) {
 			$attr['showButtons'] = $this->mParams['showButtons'];
 		}
 		$attr['isInteger'] = true;

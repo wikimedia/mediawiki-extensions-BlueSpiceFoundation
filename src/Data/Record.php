@@ -32,7 +32,7 @@ class Record implements IRecord, \JsonSerializable {
 	 * @return mixed
 	 */
 	public function get( $fieldName, $default = null ) {
-		if( isset( $this->dataSet->{$fieldName} ) ) {
+		if ( isset( $this->dataSet->{$fieldName} ) ) {
 			return $this->dataSet->{$fieldName};
 		}
 		return $default;
@@ -68,7 +68,7 @@ class Record implements IRecord, \JsonSerializable {
 	 * @return \Status
 	 */
 	public function getStatus() {
-		if( $this->status ) {
+		if ( $this->status ) {
 			return $this->status;
 		}
 		$this->status = \Status::newGood();

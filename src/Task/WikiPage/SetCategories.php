@@ -20,7 +20,7 @@ class SetCategories extends \BlueSpice\Task\WikiPage {
 		$categories = $this->getParam( static::PARAM_CATEGORIES );
 		$this->logger->debug( 'getParams', [ 'categories' => $categories ] );
 		$categoryTitles = $invalid = [];
-		foreach( $categories as $title ) {
+		foreach ( $categories as $title ) {
 			if ( !$title instanceof Title ) {
 				if ( method_exists( $title, '__toString' ) || is_string( $title ) ) {
 					$invalid[] = $title;
@@ -70,14 +70,14 @@ class SetCategories extends \BlueSpice\Task\WikiPage {
 	 * @return type
 	 */
 	protected function filterDiffTargets( array $array1, array $array2 ) {
-		return array_filter( $array1, function( Title $e ) use( $array2 ) {
-			foreach( $array2 as $target ) {
-				if( $e->equals( $target ) ) {
+		return array_filter( $array1, function ( Title $e ) use( $array2 ) {
+			foreach ( $array2 as $target ) {
+				if ( $e->equals( $target ) ) {
 					return false;
 				}
 			}
 			return true;
-		});
+		} );
 	}
 
 	/**

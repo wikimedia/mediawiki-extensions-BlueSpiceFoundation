@@ -63,7 +63,7 @@ HERE
 			'desc' => [
 				[
 					'name' => 'TemplateX/Item/Desc',
-					'params'=> [
+					'params' => [
 						'title' => 'Test A',
 						'date' => '2018/04/17',
 						'type' => 'A',
@@ -82,7 +82,7 @@ HERE
 			'desc' => [
 				[
 					'name' => 'TemplateX/Item/Desc',
-					'params'=> [
+					'params' => [
 						'title' => 'Test 1',
 						'date' => '2018/04/17',
 						'type' => 'A',
@@ -91,7 +91,7 @@ HERE
 				],
 				[
 					'name' => 'TemplateX/Item/Desc',
-					'params'=> [
+					'params' => [
 						'title' => 'Test 2',
 						'date' => '2018/04/18',
 						'type' => 'I',
@@ -100,14 +100,14 @@ HERE
 				],
 				[
 					'name' => 'TemplateX/Item/Desc',
-					'params'=> [
+					'params' => [
 						'title' => 'Test 3',
 						'date' => '2018/04/18'
 					]
 				],
 				[
 					'name' => 'TemplateX/Item/Desc',
-					'params'=> []
+					'params' => []
 				]
 			]
 		]

@@ -18,7 +18,7 @@ class ListUserEmails extends BSMaintenance {
 		$this->addOption( 'delimiter', 'Delimiter used to concatenate addresses', false, true, true );
 		$this->addOption( 'confirmed', 'Show only confirmed addresses', false, false, true );
 	}
-	
+
 	public function execute() {
 		$bConfirmed = (bool)$this->getOption( 'confirmed', false );
 		$sDelimiter = $this->getOption( 'delimiter', "\n" );
@@ -30,7 +30,7 @@ class ListUserEmails extends BSMaintenance {
 			return;
 		}
 		$aUserMails = array();
-		foreach( $aAllUserData as $aUserData ) {
+		foreach ( $aAllUserData as $aUserData ) {
 			if ( $bConfirmed && $aUserData['auth'] === null ) {
 				continue;
 			}
@@ -38,32 +38,31 @@ class ListUserEmails extends BSMaintenance {
 				$aUserMails[] = $aUserData['email'];
 			}
 		}
-		$this->output( count($aUserMails)." users found\n" );
+		$this->output( count( $aUserMails )." users found\n" );
 		$this->output( implode( $sDelimiter, $aUserMails ) );
 	}
-	
+
 	private function getUserData() {
 		$oDbr = wfGetDB( DB_REPLICA );
-		$rRes = $oDbr->select( 
-			'user',
+		$rRes = $oDbr->select( 'user',
 			array(
 				'user_email',
 				'user_email_authenticated'
 			)
 		);
-		
-		if( !$rRes ) {
+
+		if ( !$rRes ) {
 			return array();
 		}
-		
+
 		$aUser = array();
-		while( $aRow = $oDbr->fetchRow( $rRes ) ) {
+		while ( $aRow = $oDbr->fetchRow( $rRes ) ) {
 			$aUser[] = array(
 				'email' => $aRow['user_email'],
 				'auth'  => $aRow['user_email_authenticated']
 			);
 		}
-		
+
 		return $aUser;
 	}
 }

@@ -60,9 +60,8 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 	}
 
 	public function doValidation( $value ) {
-
-		//TODO: finalize implementation
-		if( $this->hasToExist && !MWNamespace::exists( $value ) ) {
+		// TODO: finalize implementation
+		if ( $this->hasToExist && !MWNamespace::exists( $value ) ) {
 			$this->addErrorMessage(
 				wfMessage(
 					'bs-validator-error-namespace-does-not-exist',
@@ -71,7 +70,7 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 			);
 		}
 
-		if( in_array( $value, $this->aBlacklist ) ) {
+		if ( in_array( $value, $this->aBlacklist ) ) {
 			$this->addErrorMessage(
 				wfMessage(
 					'bs-validator-error-namespace-on-blacklist',

@@ -28,7 +28,7 @@ class BSSkinSidebarTreeParser {
 	public function __construct( $skinTemplate, $wikiText = '', $rootNodeId = 'SIDEBAR' ) {
 		$this->skinTemplate = $skinTemplate;
 		$this->wikiTextSource = $wikiText;
-		if( empty( $this->wikiTextSource ) ) {
+		if ( empty( $this->wikiTextSource ) ) {
 			$this->wikiTextSource = wfMessage( 'sidebar' )->plain();
 		}
 		$this->rootNodeId = $rootNodeId;
@@ -43,9 +43,9 @@ class BSSkinSidebarTreeParser {
 		$dom = new DOMDocument();
 		$dom->loadHTML( "<html><body>$html</body></html>" );
 
-		$root = new BSTreeNode( $this->rootNodeId, null, new HashConfig([
+		$root = new BSTreeNode( $this->rootNodeId, null, new HashConfig( [
 			BSTreeNode::CONFIG_TEXT => $this->rootNodeId
-		]) );
+		] ) );
 		$this->convertDOMNodeAndAppendTreeNode(
 			$dom->getElementsByTagName( 'body' )->item( 0 ),
 			$root
@@ -61,18 +61,18 @@ class BSSkinSidebarTreeParser {
 	 */
 	protected function convertDOMNodeAndAppendTreeNode( $domNode, $parentNode ) {
 		$domUL = $domNode->getElementsByTagName( 'ul' )->item( 0 );
-		if( $domUL instanceof DOMElement && $domUL->childNodes->length > 0 ) {
-			foreach( $domUL->childNodes as $domLI ) {
-				if( $domLI instanceof DOMElement === false || strtolower( $domLI->nodeName ) !== 'li' ) {
+		if ( $domUL instanceof DOMElement && $domUL->childNodes->length > 0 ) {
+			foreach ( $domUL->childNodes as $domLI ) {
+				if ( $domLI instanceof DOMElement === false || strtolower( $domLI->nodeName ) !== 'li' ) {
 					continue;
 				}
 				$nodeValue = $this->getNodeValue( $domLI );
 				$config = $this->makeConfigFromNodeValue( $nodeValue );
 
-				//Permission check!
-				if( $config->has( 'targetTitle' ) ) {
-					if( !$config->get( 'targetTitle' )->userCan( 'read' ) ) {
-						//We skip all childnodes!
+				// Permission check!
+				if ( $config->has( 'targetTitle' ) ) {
+					if ( !$config->get( 'targetTitle' )->userCan( 'read' ) ) {
+						// We skip all childnodes!
 						continue;
 					}
 				}
@@ -92,8 +92,8 @@ class BSSkinSidebarTreeParser {
 	 */
 	protected function getNodeValue( $domNode ) {
 		$nodeValue = '';
-		foreach( $domNode->childNodes as $node ) {
-			if( $node instanceof DOMText === false ) {
+		foreach ( $domNode->childNodes as $node ) {
+			if ( $node instanceof DOMText === false ) {
 
 				continue;
 			}
@@ -107,34 +107,34 @@ class BSSkinSidebarTreeParser {
 		$target = $parts[0];
 		$text = $target;
 
-		if( isset( $parts[1] ) ) {
+		if ( isset( $parts[1] ) ) {
 			$text = $parts[1];
 		}
 
 		$targetMsg = wfMessage( $target );
-		if( $targetMsg->exists() ) {
+		if ( $targetMsg->exists() ) {
 			$target = $targetMsg->plain();
 		}
 
 		$textMsg = wfMessage( $text );
-		if( $textMsg->exists() ) {
+		if ( $textMsg->exists() ) {
 			$text = $textMsg->plain();
 		}
 
 		$iconUrl = '';
 		$iconCls = '';
-		if( isset( $parts[2] ) ) {
+		if ( isset( $parts[2] ) ) {
 			$text = $parts[2];
 		}
 
-		//TODO: Implement all this icons stuff!
+		// TODO: Implement all this icons stuff!
 		$cfg = [
 			'id' => Sanitizer::escapeId( $parts[0] ),
 			BSTreeNode::CONFIG_TEXT => $text
 		];
 
 		$targetTitle = Title::newFromText( $target );
-		if( $targetTitle instanceof Title ) {
+		if ( $targetTitle instanceof Title ) {
 			$cfg['targetTitle'] = $targetTitle;
 			$cfg['html'] = Linker::link( $targetTitle, $text );
 		}
@@ -149,11 +149,11 @@ class BSSkinSidebarTreeParser {
 	 * @return \BSTreeNode
 	 */
 	protected function makeNode( $parentNode, $config ) {
-		if( $config->get('id') === 'navigation' && $parentNode->isRoot() ) {
+		if ( $config->get( 'id' ) === 'navigation' && $parentNode->isRoot() ) {
 			$config = new MultiConfig( [
-				new HashConfig([
+				new HashConfig( [
 					BSTreeNode::CONFIG_EXPANDED => true
-				]),
+				] ),
 				$config
 			] );
 		}

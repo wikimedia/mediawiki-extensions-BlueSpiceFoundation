@@ -22,7 +22,7 @@ const COMPARISON_EQUALS_BOOL = '==';
 		}
 
 		// backwards compatibility
-		switch( $this->getComparison() ) {
+		switch ( $this->getComparison() ) {
 			case self::COMPARISON_EQUALS:
 				return $fieldValue == $filterValue;
 			case self::COMPARISON_NOT_EQUALS:

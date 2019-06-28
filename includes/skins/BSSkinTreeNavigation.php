@@ -62,7 +62,7 @@ abstract class BSSkinTreeNavigation {
 		$renderer = $this->makeTreeRenderer( $root );
 
 		$paths = $this->getPathsToExpand();
-		foreach( $paths as $path ) {
+		foreach ( $paths as $path ) {
 			$renderer->expandPath( $path );
 		}
 
@@ -80,9 +80,9 @@ abstract class BSSkinTreeNavigation {
 	 * @return \BSTreeRenderer
 	 */
 	protected function makeTreeRenderer( $root ) {
-		return new BSTreeRenderer( $root, new HashConfig([
+		return new BSTreeRenderer( $root, new HashConfig( [
 			BSTreeRenderer::CONFIG_ID => $this->getTreeId()
-		]) );
+		] ) );
 	}
 
 	protected function getTreeId() {

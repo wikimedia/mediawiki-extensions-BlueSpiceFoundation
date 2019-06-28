@@ -1,5 +1,5 @@
 <?php
-//icon licence: https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logos_lineup.svg
+// icon licence: https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logos_lineup.svg
 
 require_once( __DIR__ . '/BSMaintenance.php' );
 
@@ -17,15 +17,14 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 	public function execute() {
 		global $IP;
 
-		if( !( $this->getOption( 'source' ) === null ) ){
+		if ( !( $this->getOption( 'source' ) === null ) ) {
 			$sSourceDir = $this->getOption( 'source' );
 		}
 		else{
 			$sSourceDir = "$IP/extensions/BlueSpiceFoundation/resources/assets/file-type-icons";
 		}
 
-
-		if( !( $this->getOption( 'target' ) === null ) ){
+		if ( !( $this->getOption( 'target' ) === null ) ) {
 			$sTargetDir = $this->getOption( 'target' );
 		}
 		else{
@@ -35,23 +34,23 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 		$sourceHandler = opendir( $sSourceDir );
 		$targetHandler = opendir( $sTargetDir );
 
-		if( $sourceHandler && $targetHandler ){
+		if ( $sourceHandler && $targetHandler ) {
 
-			$this->output( "\n\ncopy file(s):\n");
+			$this->output( "\n\ncopy file(s):\n" );
 			$this->output( "Source: " . $sSourceDir . "" );
 			$this->output( "Target: " . $sTargetDir . "\n" );
 
-			while ( ( $fileName = readdir( $sourceHandler ) ) !== false ){
-				if( $fileName == "."  || $fileName == ".." ) {
+			while ( ( $fileName = readdir( $sourceHandler ) ) !== false ) {
+				if ( $fileName == "." || $fileName == ".." ) {
 					continue;
 				}
 
-				if( file_exists( $sTargetDir . "/" . $fileName ) ){
+				if ( file_exists( $sTargetDir . "/" . $fileName ) ) {
 					$this->output( $fileName . " ... exists" );
 					continue;
 				}
 
-				if( !copy( $sSourceDir . "/" . $fileName, $sTargetDir . "/" . $fileName ) ){
+				if ( !copy( $sSourceDir . "/" . $fileName, $sTargetDir . "/" . $fileName ) ) {
 					$this->output( $fileName . " ... failed" );
 					continue;
 				}
@@ -61,10 +60,10 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 			}
 		}
 		else{
-			if( !$sourceHandler ){
+			if ( !$sourceHandler ) {
 				$this->output( "source not valid\n" );
 			}
-			if( !$targetHandler ){
+			if ( !$targetHandler ) {
 				$this->output( "target not valid\n" );
 			}
 		}

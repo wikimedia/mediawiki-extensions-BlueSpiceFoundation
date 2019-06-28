@@ -24,8 +24,8 @@ class FilterFinder {
 	 * @return Filter|null
 	 */
 	public function findByField( $fieldName ) {
-		foreach( $this->filters as $filter ) {
-			if( $filter->getField() === $fieldName ) {
+		foreach ( $this->filters as $filter ) {
+			if ( $filter->getField() === $fieldName ) {
 				return $filter;
 			}
 		}

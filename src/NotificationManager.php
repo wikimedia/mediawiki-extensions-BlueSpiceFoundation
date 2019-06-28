@@ -55,9 +55,9 @@ class NotificationManager {
 	 * Runs functions registering all notifications
 	 */
 	protected function runRegisterFunctions() {
-		foreach( $this->registrationFuncRegistry->getAllKeys() as $regFuncIdx ) {
+		foreach ( $this->registrationFuncRegistry->getAllKeys() as $regFuncIdx ) {
 			$regFunc = $this->registrationFuncRegistry->getValue( $regFuncIdx );
-			//Call register function passing this manager
+			// Call register function passing this manager
 			call_user_func( $regFunc, $this );
 		}
 	}
@@ -70,7 +70,7 @@ class NotificationManager {
 	 * @param INotifier|null $notifier
 	 */
 	public function registerNotificationCategory( $key, $params = [], INotifier $notifier = null ) {
-		if( $notifier == null || $notifier instanceof INotifier == false ) {
+		if ( $notifier == null || $notifier instanceof INotifier == false ) {
 			$notifier = $this->notifier;
 		}
 
@@ -85,7 +85,7 @@ class NotificationManager {
 	 * @param INotifier|null $notifier
 	 */
 	public function registerNotification( $key, $params, INotifier $notifier = null ) {
-		if( $notifier == null || $notifier instanceof INotifier == false ) {
+		if ( $notifier == null || $notifier instanceof INotifier == false ) {
 			$notifier = $this->notifier;
 		}
 
@@ -100,7 +100,7 @@ class NotificationManager {
 	 * @param INotifier|null $notifier
 	 */
 	public function unRegisterNotification( $key, $notifier = null ) {
-		if( $notifier == null || $notifier instanceof INotifier == false ) {
+		if ( $notifier == null || $notifier instanceof INotifier == false ) {
 			$notifier = $this->notifier;
 		}
 
@@ -118,7 +118,7 @@ class NotificationManager {
 	 * @return INotification
 	 */
 	public function getNotificationObject( $key, $params, $notifier = null ) {
-		if( $notifier == null || $notifier instanceof INotifier == false ) {
+		if ( $notifier == null || $notifier instanceof INotifier == false ) {
 			$notifier = $this->notifier;
 		}
 
@@ -135,8 +135,8 @@ class NotificationManager {
 	 * @return \Status
 	 */
 	public function notify( $notification, $notifier = null ) {
-		if( $notifier == null || $notifier instanceof INotifier == false ) {
-			if( $this->notificationRegistry->hasKey( $notification->getKey() ) == false ) {
+		if ( $notifier == null || $notifier instanceof INotifier == false ) {
+			if ( $this->notificationRegistry->hasKey( $notification->getKey() ) == false ) {
 				return \Status::newFatal( 'Notification not registered' );
 			}
 			$notifier = $this->notificationRegistry->getValue( $notification->getKey() );

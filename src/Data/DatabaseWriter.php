@@ -42,15 +42,15 @@ abstract class DatabaseWriter extends Writer {
 	 * @return RecordSet
 	 */
 	public function write( $recordSet ) {
-		foreach( $recordSet->getRecords() as $record ) {
-			if( !$record->getStatus()->isOK() ) {
+		foreach ( $recordSet->getRecords() as $record ) {
+			if ( !$record->getStatus()->isOK() ) {
 				continue;
 			}
-			if( !$existingRecord = $this->getExistingRecord( $record ) ) {
+			if ( !$existingRecord = $this->getExistingRecord( $record ) ) {
 				$this->insert( $record );
 				continue;
 			}
-			$this->modify( $existingRecord, $record  );
+			$this->modify( $existingRecord, $record );
 		}
 		return $recordSet;
 	}
@@ -61,17 +61,17 @@ abstract class DatabaseWriter extends Writer {
 	 * @return RecordSet
 	 */
 	public function remove( $recordSet ) {
-		foreach( $recordSet->getRecords() as $record ) {
-			if( !$record->getStatus()->isOK() ) {
+		foreach ( $recordSet->getRecords() as $record ) {
+			if ( !$record->getStatus()->isOK() ) {
 				continue;
 			}
-			if( !$existingRecord = $this->getExistingRecord( $record ) ) {
+			if ( !$existingRecord = $this->getExistingRecord( $record ) ) {
 				$record->getStatus()->fatal(
 					"Record not found in table: ".$this->getTableName()
 				);
 				continue;
 			}
-			$this->delete( $existingRecord, $record  );
+			$this->delete( $existingRecord, $record );
 		}
 		return $recordSet;
 	}
@@ -92,7 +92,7 @@ abstract class DatabaseWriter extends Writer {
 			$record->getStatus()->fatal( $e );
 			return;
 		}
-		if( !$success ) {
+		if ( !$success ) {
 			$record->getStatus()->fatal(
 				"Error writing into: ".$this->getTableName()
 			);
@@ -117,7 +117,7 @@ abstract class DatabaseWriter extends Writer {
 			$record->getStatus()->fatal( $e );
 			return;
 		}
-		if( !$success ) {
+		if ( !$success ) {
 			$record->getStatus()->fatal(
 				"Error writing into: ".$this->getTableName()
 			);
@@ -141,7 +141,7 @@ abstract class DatabaseWriter extends Writer {
 			$record->getStatus()->fatal( $e );
 			return;
 		}
-		if( !$success ) {
+		if ( !$success ) {
 			$record->getStatus()->fatal(
 				"Error deleting from: ".$this->getTableName()
 			);
@@ -163,8 +163,8 @@ abstract class DatabaseWriter extends Writer {
 	 */
 	protected function makeUpdateFields( $existingRecord, $record ) {
 		$return = [];
-		foreach( (array)$record->getData() as $fieldName => $mValue ) {
-			if( in_array( $fieldName, $this->getIdentifierFields() ) ) {
+		foreach ( (array)$record->getData() as $fieldName => $mValue ) {
+			if ( in_array( $fieldName, $this->getIdentifierFields() ) ) {
 				continue;
 			}
 			$return[$fieldName] = $mValue;
@@ -179,7 +179,7 @@ abstract class DatabaseWriter extends Writer {
 	 */
 	protected function makeUpdateConditions( $existingRecord, $record ) {
 		$return = [];
-		foreach( $this->getIdentifierFields() as $fieldName ) {
+		foreach ( $this->getIdentifierFields() as $fieldName ) {
 			$return[$fieldName] = $existingRecord->get( $fieldName );
 		}
 		return $return;
@@ -192,7 +192,7 @@ abstract class DatabaseWriter extends Writer {
 	 */
 	protected function makeDeleteConditions( $existingRecord, $record ) {
 		$return = [];
-		foreach( $this->getIdentifierFields() as $fieldName ) {
+		foreach ( $this->getIdentifierFields() as $fieldName ) {
 			$return[$fieldName] = $existingRecord->get( $fieldName );
 		}
 		return $return;
@@ -208,7 +208,7 @@ abstract class DatabaseWriter extends Writer {
 			ReaderParams::PARAM_FILTER => $this->makeExistingRecordFilters( $record )
 		] ) );
 		$records = $recordSet->getRecords();
-		if( count( $records ) < 1 ) {
+		if ( count( $records ) < 1 ) {
 			return false;
 		}
 		return $records[0];
@@ -220,7 +220,7 @@ abstract class DatabaseWriter extends Writer {
 	 */
 	protected function makeExistingRecordFilters( $record ) {
 		$filters = [];
-		foreach( $this->getIdentifierFields() as $fieldName ) {
+		foreach ( $this->getIdentifierFields() as $fieldName ) {
 			$filters[] = $this->makeExistingRecordFilter(
 				$record,
 				$fieldName
@@ -261,10 +261,10 @@ abstract class DatabaseWriter extends Writer {
 	 */
 	protected function getFilterTypeFromFieldMapping( $fieldName ) {
 		$fieldType = $this->getFieldType( $fieldName );
-		if( $fieldType === FieldType::INT ) {
+		if ( $fieldType === FieldType::INT ) {
 			return 'numeric';
 		}
-		if( $fieldType === FieldType::FLOAT ) {
+		if ( $fieldType === FieldType::FLOAT ) {
 			return 'numeric';
 		}
 		return $fieldType;

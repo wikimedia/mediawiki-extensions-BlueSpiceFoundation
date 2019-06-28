@@ -16,7 +16,7 @@ class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 	 *
 	 * @return boolean
 	 */
-	protected function doProcess () {
+	protected function doProcess() {
 		$this->result = $this->getLockdown()->getLockState( $this->action )->getMessage();
 
 		return false;

@@ -80,20 +80,20 @@ class RoleManager {
 	 */
 	public function applyRoles() {
 		$this->resetGroupPermissions();
-		foreach( $this->groupRoles as $group => $roles ) {
-			foreach( $roles as $role => $active ) {
-				if( $this->roleExists( $role ) === false ) {
+		foreach ( $this->groupRoles as $group => $roles ) {
+			foreach ( $roles as $role => $active ) {
+				if ( $this->roleExists( $role ) === false ) {
 					wfDebugLog(
 						'BsRoleSystem',
 						__CLASS__ . ": Applying role $role failed because it does not exist!"
 					);
 					continue;
 				}
-				if( $active ) {
+				if ( $active ) {
 					$this->applyToGroup( $group, $role, self::ROLE_GRANT );
 				} else {
-					//DS: Maybe used in the future
-					#$this->applyToGroup( $group, $role, self::ROLE_DENY );
+					// DS: Maybe used in the future
+					# $this->applyToGroup( $group, $role, self::ROLE_DENY );
 				}
 			}
 		}
@@ -106,19 +106,19 @@ class RoleManager {
 	 * @param string $role Role name
 	 * @param bool $grant Grant or deny permissions in the role
 	 */
-	protected function applyToGroup ( $group, $role, $grant ) {
+	protected function applyToGroup( $group, $role, $grant ) {
 		$roleObject = $this->getRole( $role );
 		$rolePermissions = $roleObject->getPermissions();
-		foreach( $rolePermissions as $permission ) {
+		foreach ( $rolePermissions as $permission ) {
 			$this->groupPermissions[ $group ][ $permission ] = $grant;
 		}
 	}
 
 	protected function resetGroupPermissions() {
-		//All permissions, including 3rd party ones,
-		//which are not included in the registry are removed
+		// All permissions, including 3rd party ones,
+		// which are not included in the registry are removed
 		$this->groupPermissions = array_map(
-			function() {
+			function () {
 				return [];
 			},
 			$this->groupPermissions
@@ -132,7 +132,7 @@ class RoleManager {
 	 * @return array
 	 */
 	public function getGroupRoles( $group = '' ) {
-		if( $group && isset( $this->groupRoles[ $group ] ) ) {
+		if ( $group && isset( $this->groupRoles[ $group ] ) ) {
 			return [ $group => $this->groupRoles[ $group ] ];
 		}
 		return $this->groupRoles;
@@ -156,7 +156,7 @@ class RoleManager {
 	 * @param string $group GroupName
 	 */
 	public function removeRoleFromGroup( $role, $group ) {
-		if( isset( $this->groupRoles[ $group ][ $role ] ) ) {
+		if ( isset( $this->groupRoles[ $group ][ $role ] ) ) {
 			unset( $this->groupRoles[ $group ][ $role ] );
 		}
 	}
@@ -169,8 +169,8 @@ class RoleManager {
 	 */
 	public function registerRole( IRole $role, $groups = [] ) {
 		$this->addRole( $role );
-		if( !empty( $groups ) ) {
-			foreach( $groups as $groupName => $active ) {
+		if ( !empty( $groups ) ) {
+			foreach ( $groups as $groupName => $active ) {
 				$this->assignRoleToGroup( $role->getName(), $groupName, $active );
 			}
 		}
@@ -182,12 +182,12 @@ class RoleManager {
 	 * @param string $roleName
 	 */
 	public function unregisterRole( $roleName ) {
-		if( $this->roleExists( $roleName ) ) {
+		if ( $this->roleExists( $roleName ) ) {
 			$this->removeRole( $roleName );
 		}
-		foreach( $this->groupRoles as $group => $roles ) {
-			foreach( $roles as $role => $granted ) {
-				if( $roleName === $role ) {
+		foreach ( $this->groupRoles as $group => $roles ) {
+			foreach ( $roles as $role => $granted ) {
+				if ( $roleName === $role ) {
 					$this->removeRoleFromGroup( $role, $group );
 				}
 			}
@@ -207,16 +207,16 @@ class RoleManager {
 	public function addPermissionToRoles( $permission, $roles ) {
 		$oAdminRole = $this->getRole( 'admin' );
 		$oAdminRole->addPermission( $permission );
-		if( isset( $roles ) ) {
-			foreach( $roles as $role ) {
-				if( $this->roleExists ( $role ) === false ) {
+		if ( isset( $roles ) ) {
+			foreach ( $roles as $role ) {
+				if ( $this->roleExists( $role ) === false ) {
 					$roleObject = $this->roleFactory->makeRole( $role );
 					$this->registerRole( $roleObject );
 				} else {
 					$roleObject = $this->getRole( $role );
 				}
 
-				if( $roleObject instanceof IRole ) {
+				if ( $roleObject instanceof IRole ) {
 					$roleObject->addPermission( $permission );
 				}
 			}
@@ -256,26 +256,26 @@ class RoleManager {
 	 * @param string $sName
 	 * @return \BlueSpice\Permission\Role\IRole
 	 */
-	public function getRole ( $role ) {
-		if( $this->roleExists ( $role ) ) {
+	public function getRole( $role ) {
+		if ( $this->roleExists( $role ) ) {
 			return $this->roles[ $role ];
 		}
 		return null;
 	}
 
-	protected function addRole ( $roleObject ) {
+	protected function addRole( $roleObject ) {
 		$this->roles[ $roleObject->getName() ] = $roleObject;
 	}
 
-	protected function roleExists ( $roleName ) {
-		if( isset( $this->roles[ $roleName ] ) ) {
+	protected function roleExists( $roleName ) {
+		if ( isset( $this->roles[ $roleName ] ) ) {
 			return true;
 		}
 		return false;
 	}
 
-	protected function removeRole ( $roleName ) {
-		if( $this->roleExists ( $roleName ) ) {
+	protected function removeRole( $roleName ) {
+		if ( $this->roleExists( $roleName ) ) {
 			unset( $this->roles[ $roleName ] );
 		}
 	}
@@ -292,7 +292,7 @@ class RoleManager {
 
 	public function getRoleNamesAndPermissions() {
 		$rolesAndPermissions = [];
-		foreach( $this->roles as $roleName => $roleObject ) {
+		foreach ( $this->roles as $roleName => $roleObject ) {
 			$rolesAndPermissions[] = [
 				'role' => $roleName,
 				'permissions' => $roleObject->getPermissions()
@@ -302,7 +302,7 @@ class RoleManager {
 	}
 
 	protected function makePredefinedRoles() {
-		foreach( $this->predefinedRoles as $roleName => $class ) {
+		foreach ( $this->predefinedRoles as $roleName => $class ) {
 			$roleObject = $this->roleFactory->makeRole( $roleName );
 			$this->registerRole( $roleObject );
 		}
@@ -310,10 +310,10 @@ class RoleManager {
 
 	protected function makeRolesFromPermissions() {
 		$checked = [];
-		foreach( $this->permissionRegistry->getPermissions() as
+		foreach ( $this->permissionRegistry->getPermissions() as
 				 $permissionName => $permissionDescription ) {
 			$rolesAssigned = $permissionDescription->getRoles();
-			foreach( $rolesAssigned as $role ) {
+			foreach ( $rolesAssigned as $role ) {
 				if ( in_array( $role, $checked ) ) {
 					continue;
 				};

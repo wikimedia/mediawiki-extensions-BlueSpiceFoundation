@@ -127,33 +127,33 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		 * As we disable "needToken" of one of the following flags is set we
 		 * need to make sure that no task is being executed!
 		 */
-		if( isset( $aParams['schema'] ) ) {
+		if ( isset( $aParams['schema'] ) ) {
 			return $this->returnTaskDataSchema( $aParams['task'] );
 		}
-		if( isset( $aParams['examples'] ) ) {
+		if ( isset( $aParams['examples'] ) ) {
 			return $this->returnTaskDataExamples( $aParams['task'] );
 		}
 
-		//Avoid API warning: register the parameter used to bust browser cache
+		// Avoid API warning: register the parameter used to bust browser cache
 		$this->getMain()->getVal( '_' );
 		$sTask = $aParams['task'];
 
 		$sMethod = 'task_'.$sTask;
 		$oResult = $this->makeStandardReturn();
 
-		if( !is_callable( array( $this, $sMethod ) ) ) {
+		if ( !is_callable( array( $this, $sMethod ) ) ) {
 			$oResult->errors['task'] = "Task '$sTask' not implemented!";
 		}
 		else {
 			$res = $this->checkTaskPermission( $sTask );
-			if( !$res ) {
+			if ( !$res ) {
 				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
 					$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
 				} else {
 					$this->dieUsageMsg( 'badaccess-groups' );
 				}
 			}
-			if( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
+			if ( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
 				global $wgReadOnly;
 				$oResult->message = wfMessage( 'bs-readonly', $wgReadOnly )->plain();
 			}
@@ -162,7 +162,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', array( $this, $sTask, &$oTaskData , &$aParams ) );
 
 				$oResult = $this->validateTaskData( $sTask, $oTaskData );
-				if( empty( $oResult->errors ) && empty( $oResult->message ) ) {
+				if ( empty( $oResult->errors ) && empty( $oResult->message ) ) {
 					try {
 						$oResult = $this->$sMethod( $oTaskData , $aParams );
 					}
@@ -170,8 +170,9 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 						$oResult->success = false;
 						$oResult->message = $e->getMessage();
 						$mCode = method_exists( $e, 'getCodeString' ) ? $e->getCodeString() : $e->getCode();
-						if( $e instanceof DBError ) {
-							$mCode = 'dberror'; //TODO: error code for subtypes like DBQueryError or DBReadOnlyError?
+						if ( $e instanceof DBError ) {
+							// TODO: error code for subtypes like DBQueryError or DBReadOnlyError?
+							$mCode = 'dberror';
 						}
 						if ( $mCode === 0 ) {
 							$mCode = 'error-0';
@@ -185,23 +186,24 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			}
 		}
 
-		foreach( $oResult as $sFieldName => $mFieldValue ) {
-			if( $mFieldValue === null ) {
-				continue; //MW Api doesn't like NULL values
-			}
-
-			//Remove empty 'errors' array from respons as mw.Api in MW 1.30+
-			//will interpret this field as indicator for a failed request
-			if( $sFieldName === 'errors' && empty( $mFieldValue ) ) {
+		foreach ( $oResult as $sFieldName => $mFieldValue ) {
+			if ( $mFieldValue === null ) {
+				// MW Api doesn't like NULL values
 				continue;
 			}
-			$this->getResult()->addValue(null, $sFieldName, $mFieldValue);
+
+			// Remove empty 'errors' array from respons as mw.Api in MW 1.30+
+			// will interpret this field as indicator for a failed request
+			if ( $sFieldName === 'errors' && empty( $mFieldValue ) ) {
+				continue;
+			}
+			$this->getResult()->addValue( null, $sFieldName, $mFieldValue );
 		}
 	}
 
-	//trigger data update flag after content change over api
+	// trigger data update flag after content change over api
 	protected function runUpdates( $oTitle = null ) {
-		if( $oTitle === null ) {
+		if ( $oTitle === null ) {
 			$oTitle = $this->getTitle();
 		}
 		if ( $this->isWriteMode() && $oTitle->getNamespace() >= NS_MAIN ) {
@@ -243,9 +245,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			'timestamp' => null,
 			'relations' => null,
 			'comment' => null,
-			'deleted' =>  null,
+			'deleted' => null,
 			'publish' => null,
-			'type' => null //To allow overriding of class default
+			// To allow overriding of class default
+			'type' => null
 		);
 
 		$oTarget = $aOptions['target'];
@@ -263,7 +266,8 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			$sType = $aOptions['type'];
 		}
 
-		if ( $sType === null ) { //Not set on class, not set as call option
+		if ( $sType === null ) {
+			// Not set on class, not set as call option
 			return -1;
 		}
 
@@ -348,11 +352,11 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
-		$value = parent::getParameterFromSettings($paramName, $paramSettings, $parseLimit);
-		//Unfortunately there is no way to register custom types for parameters
+		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
+		// Unfortunately there is no way to register custom types for parameters
 		if ( in_array( $paramName, array( 'taskData', 'context' ) ) ) {
-			$value = FormatJson::decode($value);
-			if( empty($value) ) {
+			$value = FormatJson::decode( $value );
+			if ( empty( $value ) ) {
 				return new stdClass();
 			}
 		}
@@ -393,16 +397,16 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		  $this->getGlobalRequiredTaskPermissions()
 		);
 
-		if( empty($aTaskPermissions[$sTask]) ) {
+		if ( empty( $aTaskPermissions[$sTask] ) ) {
 			return;
 		}
-		//lookup permission for given task
-		foreach( $aTaskPermissions[$sTask] as $sPermission ) {
-			//check if user have needed permission
-			if( $this->getUser()->isAllowed( $sPermission ) ) {
+		// lookup permission for given task
+		foreach ( $aTaskPermissions[$sTask] as $sPermission ) {
+			// check if user have needed permission
+			if ( $this->getUser()->isAllowed( $sPermission ) ) {
 				continue;
 			}
-			//TODO: Reflect permission in error message
+			// TODO: Reflect permission in error message
 			return false;
 		}
 
@@ -421,7 +425,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 		$aTaskPermissions = $this->getRequiredTaskPermissions();
 		$arrReturn = array();
-		foreach( $aTaskPermissions as $sTask => $val ) {
+		foreach ( $aTaskPermissions as $sTask => $val ) {
 			$arrReturn[$sTask] = $this->checkTaskPermission( $sTask );
 		}
 
@@ -451,10 +455,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	protected function validateTaskData( $sTask, $oTaskData ) {
 		$aDefinitions = $this->oTasksSpec->getTaskDataDefinition( $sTask );
 		$oReturn = $this->makeStandardReturn();
-		if( $aDefinitions === false ) {
+		if ( $aDefinitions === false ) {
 			return $oReturn;
 		}
-		//TODO: Use ParamProcessor to validate params defined by
+		// TODO: Use ParamProcessor to validate params defined by
 		return $oReturn;
 	}
 
@@ -463,7 +467,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return string
 	 */
 	public function needsToken() {
-		if( $this->isTaskDataSchemaCall() || $this->isTaskDataExamplesCall() ) {
+		if ( $this->isTaskDataSchemaCall() || $this->isTaskDataExamplesCall() ) {
 			return false;
 		}
 
@@ -491,7 +495,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return WikiPage|null
 	 */
 	public function getWikiPage() {
-		if( $this->getTitle()->getNamespace() < 0 ) {
+		if ( $this->getTitle()->getNamespace() < 0 ) {
 			return null;
 		}
 		return parent::getWikiPage();
@@ -501,7 +505,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @see BSApiTasksBase::getWikiPage
 	 */
 	public function canUseWikiPage() {
-		if( $this->getWikiPage() === null ) {
+		if ( $this->getWikiPage() === null ) {
 			return false;
 		}
 		return parent::canUseWikiPage();
@@ -546,7 +550,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			'path' => wfScript( 'api' )
 		];
 
-		foreach( $this->oTasksSpec->getTaskNames() as $sTaskName ) {
+		foreach ( $this->oTasksSpec->getTaskNames() as $sTaskName ) {
 			$aMessages[$sTaskName] = [
 				'bs-api-task-taskdata-help',
 				wfExpandUrl( wfAssembleUrl( $aUrlParams + [
@@ -589,7 +593,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return \BSApiFormatJson
 	 */
 	public function getCustomPrinter() {
-		if( $this->isTaskDataSchemaCall() || $this->isTaskDataExamplesCall() ) {
+		if ( $this->isTaskDataSchemaCall() || $this->isTaskDataExamplesCall() ) {
 			return new BSApiFormatJson( $this->getMain(), 'jsonfm' );
 		}
 

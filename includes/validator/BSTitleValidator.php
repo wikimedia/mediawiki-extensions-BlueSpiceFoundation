@@ -50,7 +50,7 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 	 * @param Title $oTitle
 	 */
 	public function doValidation( $oTitle ) {
-		if( $this->hasToExist && !$oTitle->exists() ) {
+		if ( $this->hasToExist && !$oTitle->exists() ) {
 			$this->addErrorMessage(
 				wfMessage(
 					'bs-validator-error-title-does-not-exist',
@@ -59,7 +59,7 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 			);
 		}
 
-		if( in_array( $oTitle->getNamespace(), $this->aNamespaceBlacklist ) ) {
+		if ( in_array( $oTitle->getNamespace(), $this->aNamespaceBlacklist ) ) {
 			$this->addErrorMessage(
 				wfMessage(
 					'bs-validator-error-title-namespace-on-blacklist',

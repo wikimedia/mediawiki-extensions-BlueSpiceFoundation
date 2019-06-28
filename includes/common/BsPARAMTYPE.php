@@ -38,7 +38,7 @@ class BsPARAMTYPE {
 	 * No type checking.
 	 * @deprecated since version 3.1
 	 */
-	const RAW           =    64;
+	const RAW           = 64;
 
 	/**
 	 * DEPRECATED!
@@ -46,7 +46,7 @@ class BsPARAMTYPE {
 	 * Parameter has to be of type Int/Integer.
 	 * @deprecated since version 3.1
 	 */
-	const INT           =    128;
+	const INT           = 128;
 
 	/**
 	 * DEPRECATED!
@@ -54,7 +54,7 @@ class BsPARAMTYPE {
 	 * Parameter has to be of type Float.
 	 * @deprecated since version 3.1
 	 */
-	const FLOAT         =    256;
+	const FLOAT         = 256;
 
 	/**
 	 * DEPRECATED!
@@ -62,7 +62,7 @@ class BsPARAMTYPE {
 	 * Parameter has to be numeric.
 	 * @deprecated since version 3.1
 	 */
-	const NUMERIC       =    512;
+	const NUMERIC       = 512;
 
 	/**
 	 * DEPRECATED!
@@ -70,7 +70,7 @@ class BsPARAMTYPE {
 	 * Parameter has to be of type Boolean.
 	 * @deprecated since version 3.1
 	 */
-	const BOOL          =    1024;
+	const BOOL          = 1024;
 
 	/**
 	 * DEPRECATED!
@@ -78,7 +78,7 @@ class BsPARAMTYPE {
 	 * Parameter has to be of type String.
 	 * @deprecated since version 3.1
 	 */
-	const STRING        =   2048;
+	const STRING        = 2048;
 
 	/**
 	 * DEPRECATED!
@@ -88,7 +88,7 @@ class BsPARAMTYPE {
 	 * value.
 	 * @deprecated since version 3.1
 	 */
-	const SQL_STRING    =   4096;
+	const SQL_STRING    = 4096;
 
 	/**
 	 * DEPRECATED!
@@ -97,7 +97,7 @@ class BsPARAMTYPE {
 	 * There will be no type checking of the contained values.
 	 * @deprecated since version 3.1
 	 */
-	const ARRAY_MIXED   =   8192;
+	const ARRAY_MIXED   = 8192;
 
 	/**
 	 * DEPRECATED!
@@ -106,7 +106,7 @@ class BsPARAMTYPE {
 	 * Each contained value has to be of type Int/Integer.
 	 * @deprecated since version 3.1
 	 */
-	const ARRAY_INT     =  16384;
+	const ARRAY_INT     = 16384;
 
 	/**
 	 * DEPRECATED!
@@ -115,7 +115,7 @@ class BsPARAMTYPE {
 	 * Each contained value has to be of type Float.
 	 * @deprecated since version 3.1
 	 */
-	const ARRAY_FLOAT   =  32768;
+	const ARRAY_FLOAT   = 32768;
 
 	/**
 	 * DEPRECATED!
@@ -124,7 +124,7 @@ class BsPARAMTYPE {
 	 * Each contained value has to be numeric.
 	 * @deprecated since version 3.1
 	 */
-	const ARRAY_NUMERIC =  65536;
+	const ARRAY_NUMERIC = 65536;
 
 	/**
 	 * DEPRECATED!

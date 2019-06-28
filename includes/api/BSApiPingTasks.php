@@ -35,7 +35,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 			'examples' => [
 				[
 					'iArticleID' => 543,
-					'iNamespace' =>  10,
+					'iNamespace' => 10,
 					'sTitle' => 'Some page',
 					'iRevision' => 324,
 					'BsPingData' => [
@@ -91,57 +91,52 @@ class BSApiPingTasks extends BSApiTasksBase {
 	protected function task_ping( $oTaskData ) {
 		$oResponse = $this->makeStandardReturn();
 
-		//TODO: Params need very hard param processing!
+		// TODO: Params need very hard param processing!
 		$iArticleId = isset( $oTaskData->iArticleID )
 			? (int)$oTaskData->iArticleID
-			: 0
-		;
+			: 0;
 		$iNamespace = isset( $oTaskData->iNamespace )
 			? (int)$oTaskData->iNamespace
-			: 0
-		;
+			: 0;
 		$sTitle = isset( $oTaskData->sTitle )
 			? (string)$oTaskData->sTitle
-			: ''
-		;
+			: '';
 		$iRevision = isset( $oTaskData->iRevision )
 			? (int)$oTaskData->iRevision
-			: 0
-		;
+			: 0;
 		$aBSPingData = isset( $oTaskData->BsPingData )
 			? (array)$oTaskData->BsPingData
-			: array()
-		;
+			: array();
 
 		$oResponse->success = true;
 		$oResponse->payload = array();
-		if( empty($aBSPingData) ) {
+		if ( empty( $aBSPingData ) ) {
 			return $oResponse;
 		}
 
-		foreach( $aBSPingData as $oSinglePing ) {
-			if( !$oResponse->success ) {
+		foreach ( $aBSPingData as $oSinglePing ) {
+			if ( !$oResponse->success ) {
 				break;
 			}
-			if( empty($oSinglePing) || empty($oSinglePing->sRef) ) {
+			if ( empty( $oSinglePing ) || empty( $oSinglePing->sRef ) ) {
 				continue;
 			}
 
-			//Workaround: Each hook handler expect an array
+			// Workaround: Each hook handler expect an array
 			$aSinglePing = (array)$oSinglePing;
-			if( !isset($aSinglePing['aData']) ) {
+			if ( !isset( $aSinglePing['aData'] ) ) {
 				$aSinglePing['aData'] = array();
 			} else {
-				//TODO: Each data set needs very hard param processing too!
+				// TODO: Each data set needs very hard param processing too!
 				$aSinglePing['aData'] = (array)$aSinglePing['aData'];
 			}
-			//Workaround: Each hook handler expect an array not an object
-			foreach( $aSinglePing['aData'] as $iKey => $oData ) {
-				if( empty($oData) ) {
+			// Workaround: Each hook handler expect an array not an object
+			foreach ( $aSinglePing['aData'] as $iKey => $oData ) {
+				if ( empty( $oData ) ) {
 					$aSinglePing['aData'][$iKey] = array();
 					continue;
 				}
-				if( !$oData instanceof stdClass ) {
+				if ( !$oData instanceof stdClass ) {
 					continue;
 				}
 				$aSinglePing['aData'][$iKey] = (array)$oData;
@@ -152,7 +147,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 				"errors" => array(),
 				"message" => '',
 			);
-			//if hook returns false - overall success is false
+			// if hook returns false - overall success is false
 			$oResponse->success = Hooks::run( 'BsAdapterAjaxPingResult', array(
 				$aSinglePing['sRef'],
 				$aSinglePing['aData'],
@@ -161,7 +156,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 				$iNamespace,
 				$iRevision,
 				&$aSingleResult
-			));
+			) );
 			$oResponse->payload[$aSinglePing['sRef']] = $aSingleResult;
 		}
 

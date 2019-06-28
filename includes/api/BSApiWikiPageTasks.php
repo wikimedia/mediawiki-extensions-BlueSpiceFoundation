@@ -34,7 +34,7 @@ use BlueSpice\Api\Task;
 class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected $aTasks = array(
 		'setCategories' => [
-			//'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
+			// 'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
 			'examples' => [
 				[
 					'page_id' => 3234,
@@ -155,7 +155,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 					'page_title' => 'SomeNamespace:Some page title'
 				]
 			],
-			//'readonly' => true, //TODO migrate "$this->aReadTasks"
+			// 'readonly' => true, //TODO migrate "$this->aReadTasks"
 			'params' => [
 				'page_id' => [
 					'type' => 'integer',
@@ -232,7 +232,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		) );
 		$api = new \ApiMain( $req, true );
 		$api->execute();
-		foreach( ['message', 'errors', 'payload', 'payload_count', 'success'] as $path ) {
+		foreach ( [ 'message', 'errors', 'payload', 'payload_count', 'success' ] as $path ) {
 			if ( isset( $api->getResult()->getResultData()[$path] ) ) {
 				$response->{$path} = $api->getResult()->getResultData()[$path];
 			}
@@ -283,12 +283,12 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//get page and content
+		// get page and content
 		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ){
+		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$oContent = $oWikiPage->getContent();
 			$sText = '';
-			if( $oContent instanceof Content ) {
+			if ( $oContent instanceof Content ) {
 				$sText = $oContent->getNativeData();
 			}
 
@@ -298,16 +298,16 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		//Pattern for Category tags
+		// Pattern for Category tags
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):(.*?)\]\]#si";
 		$matches = [];
-		$matchCount = preg_match_all($sPattern, $sText, $matches, PREG_PATTERN_ORDER);
+		$matchCount = preg_match_all( $sPattern, $sText, $matches, PREG_PATTERN_ORDER );
 
 		$aCategories = [];
-		//normalize
-		foreach ( $matches[2] as $match ){
+		// normalize
+		foreach ( $matches[2] as $match ) {
 			$oCategoryTitle = Title::newFromText( $match, NS_CATEGORY );
 			if ( $oCategoryTitle instanceof Title === false ) {
 				continue;
@@ -388,7 +388,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		)->getDiscussionAmount();
 
 		$oResponse->success = true;
-		$oResponse->payload = $iCount ;
+		$oResponse->payload = $iCount;
 
 		return $oResponse;
 	}
@@ -412,8 +412,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oTitle = $this->getTitle();
 		}
 
-		//Actually this should never happen as $this->getTitle() will at least
-		//return title "Special:BadTitle"
+		// Actually this should never happen as $this->getTitle() will at least
+		// return title "Special:BadTitle"
 		if ( $oTitle instanceof Title === false ) {
 			throw new MWException(
 				wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain()
@@ -445,7 +445,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 		$oWikiPage = WikiPage::factory( $oTitle );
 		$oContent = $oWikiPage->getContent();
-		if( $oContent instanceof WikitextContent === false ) {
+		if ( $oContent instanceof WikitextContent === false ) {
 			$oResponse->message =
 				wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;

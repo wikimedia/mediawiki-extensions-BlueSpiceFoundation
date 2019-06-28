@@ -49,7 +49,7 @@ class TemplateFactory {
 		$parts = explode( TemplateHelper::SEPARATOR, $name );
 		$fileExt = array_slice( $parts, -1 )[0];
 
-		foreach( $this->registry->getAllKeys() as $registeredType ) {
+		foreach ( $this->registry->getAllKeys() as $registeredType ) {
 			if ( $fileExt !== $registeredType ) {
 				continue;
 			}

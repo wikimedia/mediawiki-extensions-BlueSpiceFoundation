@@ -19,7 +19,6 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 	 */
 	protected $fileSavePath = '';
 
-
 	/**
 	 *
 	 * @var \Psr\Log\LoggerInterface
@@ -60,7 +59,7 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 	 */
 	public function shouldRun( $runJobsTriggerHandler, $regKey ) {
 		$savedNextTS = $this->getSavedNextTimestamp( $regKey );
-		if( $this->currentRunTimestamp < $savedNextTS ) {
+		if ( $this->currentRunTimestamp < $savedNextTS ) {
 			return false;
 		}
 
@@ -68,9 +67,9 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 			->getInterval()
 			->getNextTimestamp( $this->currentRunTimestamp );
 
-		//TODO: Check 'runJobs.php' execution frequency (by convention
-		//"15 minutes") against '$newNextTS'. If fequency is to low to fullfill
-		//requested clock, emit error to LoggerInterface
+		// TODO: Check 'runJobs.php' execution frequency (by convention
+		// "15 minutes") against '$newNextTS'. If fequency is to low to fullfill
+		// requested clock, emit error to LoggerInterface
 
 		$this->saveNewNextTimestamp( $regKey, $newNextTS );
 
@@ -79,13 +78,13 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 
 	protected function loadPersistenceFile() {
 		if ( file_exists( $this->getPersistenceFilepath() ) ) {
-			$this->data = \FormatJson::decode (
+			$this->data = \FormatJson::decode(
 				file_get_contents( $this->getPersistenceFilepath() ),
 				true
 			);
 		}
 
-		if( !is_array( $this->data ) || empty( $this->data ) ) {
+		if ( !is_array( $this->data ) || empty( $this->data ) ) {
 			$this->data = [
 				static::DATA_KEY_LASTRUN => '',
 				static::DATA_KEY_NEXTRUNS => []
@@ -105,9 +104,10 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 	}
 
 	protected function getSavedNextTimestamp( $regKey ) {
-		if( !isset( $this->data[ static::DATA_KEY_NEXTRUNS ][ $regKey ] ) ) {
+		if ( !isset( $this->data[ static::DATA_KEY_NEXTRUNS ][ $regKey ] ) ) {
 			$dummyTS = new \DateTime();
-			$dummyTS->modify( '-1 hour' ); //Set to past, so handler runs
+			// Set to past, so handler runs
+			$dummyTS->modify( '-1 hour' );
 			return $dummyTS;
 		}
 

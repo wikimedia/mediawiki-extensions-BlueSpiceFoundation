@@ -9,12 +9,12 @@ abstract class Filter {
 	/**
 	 * Prior in extjs 4. Default in all existing filters in BlueSpice
 	 */
-	const COMPARISON_CONTAINS = 'ct'; //
+	const COMPARISON_CONTAINS = 'ct';
 
 	/**
 	 * Since extjs 6. Will be transformed into 'ct'
 	 */
-	const COMPARISON_LIKE = 'like'; //
+	const COMPARISON_LIKE = 'like';
 
 	/**
 	 * Prior in extjs 4. Default in all existing filters in BlueSpice
@@ -72,16 +72,16 @@ abstract class Filter {
 			? $params[static::KEY_PROPERTY]
 			: $params[static::KEY_FIELD];
 		$this->value = $params[static::KEY_VALUE];
-		if( isset( $params[ static::KEY_OPERATOR] ) ) {
-			//compatibility. The comparison parameter changed into operator in
-			//ExtJs 6
+		if ( isset( $params[ static::KEY_OPERATOR] ) ) {
+			// compatibility. The comparison parameter changed into operator in
+			// ExtJs 6
 			$params[static::KEY_COMPARISON] = $params[ static::KEY_OPERATOR];
 		}
-		if( !isset($params[static::KEY_COMPARISON] ) ) {
+		if ( !isset( $params[static::KEY_COMPARISON] ) ) {
 			$params[static::KEY_COMPARISON] = static::COMPARISON_EQUALS;
 		}
-		if( $params[static::KEY_COMPARISON] === static::COMPARISON_LIKE ) {
-			//compatibility. The comparison 'ct' changed into like in ExtJs 6
+		if ( $params[static::KEY_COMPARISON] === static::COMPARISON_LIKE ) {
+			// compatibility. The comparison 'ct' changed into like in ExtJs 6
 			$params[static::KEY_COMPARISON] = static::COMPARISON_CONTAINS;
 		}
 
@@ -118,7 +118,7 @@ abstract class Filter {
 	 * @return boolean
 	 */
 	public function matches( $dataSet ) {
-		if( $this->applied ) {
+		if ( $this->applied ) {
 			return true;
 		}
 		return $this->doesMatch( $dataSet );
@@ -150,8 +150,8 @@ abstract class Filter {
 	 */
 	public static function newCollectionFromArray( $filters ) {
 		$filterObjects = [];
-		foreach( $filters as $filter ) {
-			if( is_object(  $filter ) ) {
+		foreach ( $filters as $filter ) {
+			if ( is_object( $filter ) ) {
 				$filter = (array)$filter;
 			}
 			$filterObjects[] = static::makeFilter( $filter );

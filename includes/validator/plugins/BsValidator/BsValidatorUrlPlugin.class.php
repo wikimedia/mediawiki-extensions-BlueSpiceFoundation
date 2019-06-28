@@ -16,7 +16,6 @@
  */
 class BsValidatorUrlPlugin implements BsValidatorPlugin {
 
-
 	/**
 	 * DEPRECATED!
 	 * @deprecated since version 3.1 - Use ParamProcessor instead
@@ -37,7 +36,8 @@ class BsValidatorUrlPlugin implements BsValidatorPlugin {
 
 		$result = ( is_null( $params ) )
 			? filter_var( $validateThis, FILTER_VALIDATE_URL )
-			: filter_var( $validateThis, FILTER_VALIDATE_URL, $params ); // return is boolean
+			// return is boolean
+			: filter_var( $validateThis, FILTER_VALIDATE_URL, $params );
 
 		return ( $result === false )
 			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-url-validation-not-approved' )

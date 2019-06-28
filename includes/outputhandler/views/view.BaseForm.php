@@ -55,10 +55,10 @@ class ViewBaseForm extends ViewBaseElement {
 	}
 
 	protected function getAutoElementOpener() {
-		$enctype = empty( $this->_mEnctype ) ? '' : (' enctype="'.$this->_mEnctype.'"');
-		if($this->_mRenderAsExt) {
+		$enctype = empty( $this->_mEnctype ) ? '' : ( ' enctype="'.$this->_mEnctype.'"' );
+		if ( $this->_mRenderAsExt ) {
 			$validation = '';
-			if($this->_mValidationUrl) {
+			if ( $this->_mValidationUrl ) {
 				$validation = ' validate="'.$this->_mValidationUrl.'"';
 			}
 			// TODO MRG20100816: wozu ist das div denn da?

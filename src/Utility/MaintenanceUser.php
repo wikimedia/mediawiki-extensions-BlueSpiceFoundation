@@ -33,7 +33,7 @@ class MaintenanceUser {
 	 * @return boolean
 	 */
 	public function isMaintenanceUser( \User $user = null ) {
-		if( !$user ) {
+		if ( !$user ) {
 			return false;
 		}
 		return $user->getName() === $this->getUserName();
@@ -45,12 +45,11 @@ class MaintenanceUser {
 	 * @return \User
 	 */
 	public function getUser( $expireInSeconds = 10 ) {
-
 		$user = \User::newSystemUser(
 			$this->getUserName(),
 			$this->getOptions()
 		);
-		if( !$user ) {
+		if ( !$user ) {
 			throw new \MWException(
 				"Maintenace user '{$this->getUserName()}' could not be created"
 			);
@@ -74,15 +73,15 @@ class MaintenanceUser {
 	}
 
 	protected function addGroups( \User $user, $expiry ) {
-		//removed the group expiry feature for now, because this could end in
-		//deadlocks:
-		//Query: UPDATE `user_groups` SET ug_expiry = '20180813134139' WHERE ug_user = '16' AND ug_group = 'sysop'
-		//Function: UserGroupMembership::insert
-		//Error: 1213 Deadlock found when trying to get lock; try restarting transaction (db)
+		// removed the group expiry feature for now, because this could end in
+		// deadlocks:
+		// Query: UPDATE `user_groups` SET ug_expiry = '20180813134139' WHERE ug_user = '16' AND ug_group = 'sysop'
+		// Function: UserGroupMembership::insert
+		// Error: 1213 Deadlock found when trying to get lock; try restarting transaction (db)
 		$expiry = null;
 
-		foreach( $this->getGroups() as $group ) {
-			if( in_array( $group, $user->getGroups() ) ) {
+		foreach ( $this->getGroups() as $group ) {
+			if ( in_array( $group, $user->getGroups() ) ) {
 				continue;
 			}
 			$user->addGroup( $group, $expiry );
@@ -91,7 +90,7 @@ class MaintenanceUser {
 
 	protected function getExpiryTS( $expireInSeconds ) {
 		$expireInSeconds = (int)$expireInSeconds;
-		if( empty( $expireInSeconds ) || $expireInSeconds < 10 ) {
+		if ( empty( $expireInSeconds ) || $expireInSeconds < 10 ) {
 			$expireInSeconds = 10;
 		}
 		return ( new \DateTime( '+'.$expireInSeconds.' seconds' ) )

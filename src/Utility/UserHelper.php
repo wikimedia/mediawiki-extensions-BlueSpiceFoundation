@@ -19,11 +19,11 @@ class UserHelper {
 	 */
 	public function __construct( \User $user = null ) {
 		$this->user = $user;
-		if( $this->user ) {
+		if ( $this->user ) {
 			return;
 		}
 		$this->user = \RequestContext::getMain()->getUser();
-		if( !$this->user ) {
+		if ( !$this->user ) {
 			throw new \MWException( 'User is required for UserHelper' );
 		}
 	}

@@ -3,10 +3,9 @@
 class XmlMultiSelect extends XmlSelect {
 
 	public function addOption( $name, $value = false ) {
-
 		$value = ( $value !== false ) ? $value : $name;
 
-		$this->options[] = array($name => $value);
+		$this->options[] = array( $name => $value );
 	}
 
 	public static function formatOptions( $options, $default = false ) {
@@ -16,7 +15,7 @@ class XmlMultiSelect extends XmlSelect {
 			$default = array();
 		}
 
-		foreach( $options as $label => $value ) {
+		foreach ( $options as $label => $value ) {
 			if ( is_array( $value ) ) {
 				$contents = self::formatOptions( $value, $default );
 				$data .= Html::rawElement( 'optgroup', array( 'label' => $label ), $contents ) . "\n";

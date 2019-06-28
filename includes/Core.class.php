@@ -198,8 +198,8 @@ class BsCore {
 			return $handover;
 		}
 		if ( $options & BsPARAMTYPE::ARRAY_BOOL && is_array( $handover ) ) {
-			foreach ($handover as $key => $v) {
-				if (!is_bool($v)) {
+			foreach ( $handover as $key => $v ) {
+				if ( !is_bool( $v ) ) {
 					$handover[$key] = null;
 				}
 			}
@@ -251,13 +251,13 @@ class BsCore {
 	public static function sanitizeArrayEntry( $array, $key, $default = null, $options = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// TODO MRG20100725: Sollte $default nicht auch durch den sanitizer?
-		if (!is_array($array)) {
+		if ( !is_array( $array ) ) {
 			return $default;
 		}
-		if (!isset($array[$key])) {
+		if ( !isset( $array[$key] ) ) {
 			return $default;
 		}
-		return self::sanitize($array[$key], $default, $options);
+		return self::sanitize( $array[$key], $default, $options );
 	}
 
 	/**
@@ -311,13 +311,15 @@ class BsCore {
 	 */
 	public static function getRequestURI( $getUrlEncoded = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if (self::$prRequestUri === null) {
+		if ( self::$prRequestUri === null ) {
 			$requestUri = '';
-			if ( isset( $_SERVER['HTTP_X_REWRITE_URL'] ) ) { // check this first so IIS will catch
+			if ( isset( $_SERVER['HTTP_X_REWRITE_URL'] ) ) {
+				// check this first so IIS will catch
 				$requestUri = $_SERVER['HTTP_X_REWRITE_URL'];
 			} elseif ( isset( $_SERVER['REQUEST_URI'] ) ) {
 				$requestUri = $_SERVER['REQUEST_URI'];
-			} elseif ( isset( $_SERVER['ORIG_PATH_INFO'] ) ) { // IIS 5.0, PHP as CGI
+			} elseif ( isset( $_SERVER['ORIG_PATH_INFO'] ) ) {
+				// IIS 5.0, PHP as CGI
 				$requestUri = $_SERVER['ORIG_PATH_INFO'];
 				if ( !empty( $_SERVER['QUERY_STRING'] ) ) {
 					$requestUri .= '?' . $_SERVER['QUERY_STRING'];
@@ -420,7 +422,7 @@ class BsCore {
 		$aUserGroups = array_merge( [
 			'sysop'
 		], $aUserGroups );
-		if(!isset($bsgPermissionConfig[$sPermissionName])){
+		if ( !isset( $bsgPermissionConfig[$sPermissionName] ) ) {
 			if ( isset( $aConfig ) ) {
 				$bsgPermissionConfig[$sPermissionName] = $aConfig;
 			} else {

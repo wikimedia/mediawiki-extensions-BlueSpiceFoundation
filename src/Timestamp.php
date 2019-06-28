@@ -47,7 +47,7 @@ class Timestamp extends MWTimestamp {
 	) {
 		$diff = $ts->diff( $relativeTo );
 		$params = [];
-		foreach( $this->getAvailableAgeStrings() as $key => $msgKey ) {
+		foreach ( $this->getAvailableAgeStrings() as $key => $msgKey ) {
 			if ( count( $params ) > 1 ) {
 				break;
 			}
@@ -55,9 +55,9 @@ class Timestamp extends MWTimestamp {
 			$value = 0;
 			if ( $key === 'w' && $diff->d > 0 && ( $diff->d / 7 ) >= 1 ) {
 				$value = (int)( $diff->d / 7 );
-			} elseif( $key === 'd' && $diff->d > 0 && ( $diff->d / 7 ) > 1 ) {
+			} elseif ( $key === 'd' && $diff->d > 0 && ( $diff->d / 7 ) > 1 ) {
 				$value = (int)( $diff->d / 7 );
-			} elseif ( isset( $diff->{$key} )  ) {
+			} elseif ( isset( $diff->{$key} ) ) {
 				$value = $diff->{$key};
 			}
 

@@ -14,7 +14,7 @@ class NotificationRegistry implements \BlueSpice\IRegistry {
 	}
 
 	public function getValue( $key, $default = '' ) {
-		if( isset( $this->notifications[$key] ) ) {
+		if ( isset( $this->notifications[$key] ) ) {
 			return $this->notifications[$key];
 		}
 
@@ -38,7 +38,7 @@ class NotificationRegistry implements \BlueSpice\IRegistry {
 	 * @return boolean
 	 */
 	public function hasKey( $key ) {
-		if( isset( $this->notifications[$key] ) ) {
+		if ( isset( $this->notifications[$key] ) ) {
 			return true;
 		}
 

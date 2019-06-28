@@ -31,12 +31,12 @@ class BSTreeRenderer {
 		$this->root = $root;
 
 		$configs = [
-			new HashConfig([
+			new HashConfig( [
 				self::CONFIG_ROOT_VISIBLE => false
-			])
+			] )
 		];
 
-		if( $config instanceof Config ){
+		if ( $config instanceof Config ) {
 			array_unshift( $configs, $config );
 		}
 
@@ -46,7 +46,7 @@ class BSTreeRenderer {
 	public function render() {
 		$this->clearBuffer();
 		$nodes = $this->root->getChildNodes();
-		if( $this->config->get( self::CONFIG_ROOT_VISIBLE ) ) {
+		if ( $this->config->get( self::CONFIG_ROOT_VISIBLE ) ) {
 			$nodes = [ $this->root ];
 		}
 
@@ -62,14 +62,15 @@ class BSTreeRenderer {
 	 * @param BSTreeNode[] $nodes
 	 */
 	protected function renderNodeItems( $nodes, $level ) {
-		foreach( $nodes as $node ) {
+		foreach ( $nodes as $node ) {
 			$this->renderNodeItem( $node, $level );
 		}
 	}
 
 	public function expandPath( $path ) {
 		$path = explode( '/', $path );
-		array_shift( $path ); //We need to remove the trailing empty element as a path starts with '/'
+		// We need to remove the trailing empty element as a path starts with '/'
+		array_shift( $path );
 		$this->doExpandPath( $path, $this->root );
 	}
 
@@ -84,15 +85,15 @@ class BSTreeRenderer {
 	 */
 	protected function doExpandPath( $path, $node ) {
 		$firstElement = array_shift( $path );
-		if( Sanitizer::escapeId( $node->getId() ) !== $firstElement ) {
-			if( $firstElement !== '' || $node->isRoot() ) {
+		if ( Sanitizer::escapeId( $node->getId() ) !== $firstElement ) {
+			if ( $firstElement !== '' || $node->isRoot() ) {
 				return;
 			}
 		}
 
 		$node->expand();
 
-		foreach( $node->getChildNodes() as $childNode ) {
+		foreach ( $node->getChildNodes() as $childNode ) {
 			$this->doExpandPath( $path, $childNode );
 		}
 	}
@@ -127,7 +128,7 @@ class BSTreeRenderer {
 		$this->html .= Html::element( 'span', [ 'class' => 'bs-icon' ] );
 
 		$this->renderNode( $node );
-		if( $node->hasChildNodes() ) {
+		if ( $node->hasChildNodes() ) {
 			$this->html .= Html::openElement( 'ul' );
 			$this->renderNodeItems( $node->getChildNodes(), $level + 1 );
 			$this->html .= Html::closeElement( 'ul' );
@@ -140,7 +141,7 @@ class BSTreeRenderer {
 	 * @param int $level
 	 */
 	protected function renderIndent( $level ) {
-		for( $i = 0; $i < $level; $i++ ) {
+		for ( $i = 0; $i < $level; $i++ ) {
 			$this->html .= Html::element( 'span', [ 'class' => 'bs-treeindent' ] );
 		}
 	}
@@ -172,7 +173,6 @@ class BSTreeRenderer {
 
 		return implode( ' ', $classes );
 	}
-
 
 	/**
 	 *

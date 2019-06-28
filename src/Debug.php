@@ -21,7 +21,8 @@ class Debug {
 	 * @param array $params currently not in use
 	 */
 	public static function logSimpleCallStack( $params = [] ){
-		$backTrace = debug_backtrace(); //TODO: Use wfDebugBacktrace()?
+		// TODO: Use wfDebugBacktrace()?
+		$backTrace = debug_backtrace();
 		$length = count( $backTrace );
 		$stack = [];
 		for ( $i = 2; $i < $length; $i++ ) {
@@ -39,9 +40,10 @@ class Debug {
 	 * @param array $params currently not used
 	 */
 	public static function logCaller( $params = [] ){
-		$backTrace = debug_backtrace(); //TODO: Use wfDebugBacktrace()?
-		//Index of "2", because "0" is this method call and "1" is the caller
-		//of this method. But we want the caller of the caller of this method.
+		// TODO: Use wfDebugBacktrace()?
+		$backTrace = debug_backtrace();
+		// Index of "2", because "0" is this method call and "1" is the caller
+		// of this method. But we want the caller of the caller of this method.
 		$line = static::formatLine( $backTrace[2] );
 
 		static::writeLog( $line );
@@ -78,7 +80,7 @@ class Debug {
 			static::writeLog( $line );
 		}
 
-		if ( isset( $params['format'] ) && strtolower( $params['format'] ) == 'json') {
+		if ( isset( $params['format'] ) && strtolower( $params['format'] ) == 'json' ) {
 			$out = FormatJson::encode( $var, true );
 		}
 		else {

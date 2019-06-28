@@ -43,7 +43,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	public function makeData( $params ) {
 		$conds = [];
 
-		if( !empty( $this->namespaceWhitelist ) ) {
+		if ( !empty( $this->namespaceWhitelist ) ) {
 			$conds['rc_namespace'] = $this->namespaceWhitelist;
 		}
 
@@ -57,7 +57,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			]
 		);
 
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$this->appendRowToData( $row );
 		}
 
@@ -71,11 +71,12 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::USER_NAME => $row->rc_user_text,
 			Record::USER_DISPLAY_NAME => '',
 			Record::USER_LINK => '',
-			Record::PAGE_PREFIXED_TEXT => $title->getPrefixedText(), //Not expensive, as all required information available on instantiation
+			// Not expensive, as all required information available on instantiation
+			Record::PAGE_PREFIXED_TEXT => $title->getPrefixedText(),
 			Record::PAGE_NAMESPACE => $row->rc_namespace,
 			Record::PAGE_LINK => '',
 			Record::TIMESTAMP => '',
-			Record::RAW_TIMESTAMP =>$row->rc_timestamp,
+			Record::RAW_TIMESTAMP => $row->rc_timestamp,
 			Record::COMMENT_TEXT => htmlspecialchars( $row->rc_comment ),
 			Record::SOURCE => $row->rc_source,
 			Record::DIFF_URL => '',

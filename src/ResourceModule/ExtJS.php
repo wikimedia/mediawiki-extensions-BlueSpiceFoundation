@@ -13,7 +13,7 @@ class ExtJS extends \ResourceLoaderFileModule {
 		 * This is very bad, but as long as https://gerrit.wikimedia.org/r/c/389412/
 		 * is not merged CI will crash by an unresolved dependency
 		 */
-		if( \ExtensionRegistry::getInstance()->isLoaded( 'ExtJSBase' ) ) {
+		if ( \ExtensionRegistry::getInstance()->isLoaded( 'ExtJSBase' ) ) {
 			$dependencies[] = 'ext.extjsbase.MWExt';
 		}
 
@@ -25,7 +25,7 @@ class ExtJS extends \ResourceLoaderFileModule {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationLessVarsRegistry'
 		);
-		foreach( $registry->getAllKeys() as $key ) {
+		foreach ( $registry->getAllKeys() as $key ) {
 			$vars[$key] = $registry->getValue( $key, '¯\_(ツ)_/¯' );
 		}
 		return $vars;

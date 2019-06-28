@@ -38,11 +38,11 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		$response = $results[0];
 		$firstRow = (object)$response[ $this->getResultsNodeName() ][0];
 		$schema = $this->getStoreSchema();
-		foreach( $schema as $schemaFieldName => $config ) {
+		foreach ( $schema as $schemaFieldName => $config ) {
 			$this->assertObjectHasAttribute( $schemaFieldName, $firstRow, "Dataset misses field '$schemaFieldName'' from schema definition!" );
 			$value = $firstRow->{$schemaFieldName};
 
-			switch( $config['type'] ) {
+			switch ( $config['type'] ) {
 				case 'string':
 					$this->assertEquals( true, is_string( $value ), "Value of field '$schemaFieldName' is not a string" );
 					break;
@@ -78,7 +78,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		$aParams = array(
 			'action' => $this->getModuleName()
 		);
-		if( $this->sQuery ) {
+		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
 		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
@@ -107,7 +107,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 			'limit' => $limit,
 			'start' => $offset
 		);
-		if( $this->sQuery ) {
+		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
 		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
@@ -123,7 +123,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 			);
 		}
 
-		$this->assertLessThanOrEqual( $limit, count($response[ $this->getResultsNodeName() ]), 'Number of results exceeds limit' );
+		$this->assertLessThanOrEqual( $limit, count( $response[ $this->getResultsNodeName() ] ), 'Number of results exceeds limit' );
 	}
 
 	public function providePagingData() {
@@ -158,16 +158,16 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	public function testSingleFilter( $type, $comparison, $field, $value, $expectedTotal ) {
 		$aParams = array(
 			'action' => $this->getModuleName(),
-			'filter' => \FormatJson::encode([
+			'filter' => \FormatJson::encode( [
 				[
 					'type' => $type,
 					'comparison' => $comparison,
 					'field' => $field,
 					'value' => $value
 				]
-			])
+			] )
 		);
-		if( $this->sQuery ) {
+		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
 		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
@@ -197,7 +197,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 			'action' => $this->getModuleName(),
 			'filter' => \FormatJson::encode( $filters )
 		);
-		if( $this->sQuery ) {
+		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
 		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
@@ -220,7 +220,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		$aParams = array(
 			'action' => $this->getModuleName()
 		);
-		if( $this->sQuery ) {
+		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
 		$aParams = array_merge( $aParams, $this->getAdditionalParams() );
@@ -244,7 +244,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 * @return bool true if the pair was found
 	 */
 	protected function array_findNestedKeyValuePair( $haystack, $key, $value ) {
-		foreach( $haystack as $itemKey => $itemValue ) {
+		foreach ( $haystack as $itemKey => $itemValue ) {
 			if ( $itemKey == $key && $itemValue == $value ) {
 				return true;
 			}

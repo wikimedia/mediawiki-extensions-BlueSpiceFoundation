@@ -3,7 +3,7 @@
 class BsGroupHelper {
 
 	protected static $sLockModeGroup = 'lockmode';
-	
+
 	/**
 	 * Public getter for lockmode group. This is needed by some extensions.
 	 * @return string
@@ -82,7 +82,7 @@ class BsGroupHelper {
 	 */
 	public static function addTempGroupToUser( $oUser, $sGroupName ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if( in_array( $sGroupName, $oUser->getEffectiveGroups() ) ) {
+		if ( in_array( $sGroupName, $oUser->getEffectiveGroups() ) ) {
 			return true;
 		}
 		$oUser->addGroup( $sGroupName, wfTimestamp( TS_MW, time() + 60 ) );
@@ -111,16 +111,16 @@ class BsGroupHelper {
 		foreach ( $aPermissions as $sPermission ) {
 			$wgGroupPermissions[$sGroupName][$sPermission] = true;
 
-			//Check if Lockdown is in use
-			if( empty($aNamespaces) || !isset($GLOBALS['wgNamespacePermissionLockdown'])) {
+			// Check if Lockdown is in use
+			if ( empty( $aNamespaces ) || !isset( $GLOBALS['wgNamespacePermissionLockdown'] ) ) {
 				continue;
 			}
-			foreach( $aNamespaces as $iNs) {
-				if( isset($GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission]) ) {
-					if( in_array(
+			foreach ( $aNamespaces as $iNs ) {
+				if ( isset( $GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission] ) ) {
+					if ( in_array(
 						$sGroupName,
 						$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission]
-					)) {
+					) ) {
 						continue;
 					}
 				}
@@ -138,15 +138,15 @@ class BsGroupHelper {
 	public static function getUserInGroups( $aGroups ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		if ( !is_array( $aGroups ) ) {
-			$aGroups = array ( $aGroups );
+			$aGroups = array( $aGroups );
 		}
-		$aUser = array ();
+		$aUser = array();
 		$res = $dbr->select(
 			'user_groups',
-			array ( 'ug_user' ),
-			array ( 'ug_group' => $aGroups ),
+			array( 'ug_user' ),
+			array( 'ug_group' => $aGroups ),
 			__METHOD__,
-			array ( 'DISTINCT' )
+			array( 'DISTINCT' )
 			);
 		if ( !$res ) {
 			return $aUser;

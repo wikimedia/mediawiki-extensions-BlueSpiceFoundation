@@ -7,9 +7,9 @@ class BSRemoteAPIBase extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addOption('targetapi', 'Absolute path the target wiki\'s "api.php"', true, true);
-		$this->addOption('u', 'A valid username on the target wiki with sufficient write permissions', true, true);
-		$this->addOption('p', 'The users password for API login. If not provided as argument you will be promted for it', false, true);
+		$this->addOption( 'targetapi', 'Absolute path the target wiki\'s "api.php"', true, true );
+		$this->addOption( 'u', 'A valid username on the target wiki with sufficient write permissions', true, true );
+		$this->addOption( 'p', 'The users password for API login. If not provided as argument you will be promted for it', false, true );
 	}
 
 	protected $apiUrl = '';
@@ -24,20 +24,20 @@ class BSRemoteAPIBase extends BSMaintenance {
 	public function execute() {
 		$this->apiUrl = $this->getOption( 'targetapi' );
 		$this->username = $this->getOption( 'u' );
-		if( empty($this->username) ) {
-			$this->error( '"username" can not be empty');
+		if ( empty( $this->username ) ) {
+			$this->error( '"username" can not be empty' );
 			return;
 		}
 		$this->password = $this->getOption( 'p' );
-		if( $this->password === null ) {
-			$this->password = $this->readconsole('Password for user "'.$this->username.'": ');
+		if ( $this->password === null ) {
+			$this->password = $this->readconsole( 'Password for user "'.$this->username.'": ' );
 		}
-		if( empty($this->password) ) {
-			$this->error( '"password" can not be empty');
+		if ( empty( $this->password ) ) {
+			$this->error( '"password" can not be empty' );
 			return;
 		}
 
-		if( !$this->doAPILogin() ) {
+		if ( !$this->doAPILogin() ) {
 			$this->error( 'Authentication failed' );
 			return;
 		}
@@ -57,7 +57,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 			)
 		);
 
-		//Second pass
+		// Second pass
 		if ( $this->token !== null ) {
 			$options['postData']['lgtoken'] = $this->token;
 		}
@@ -81,7 +81,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 					$this->cookieJar = $req->getCookieJar();
 					return $this->doAPILogin();
 				}
-				elseif ( strtolower ( $response->login->result ) === 'success' ) {
+				elseif ( strtolower( $response->login->result ) === 'success' ) {
 					$this->cookieJar = $req->getCookieJar();
 					return true;
 				}
@@ -115,7 +115,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 
 		Http::$httpEngine = 'curl';
 		$req = MWHttpRequest::factory(
-			wfAppendQuery($this->apiUrl, $query)
+			wfAppendQuery( $this->apiUrl, $query )
 		);
 		$req->setCookieJar( $this->cookieJar );
 
@@ -123,7 +123,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 
 		if ( $status->isOK() ) {
 			$response = FormatJson::decode( $req->getContent() );
-			if( isset( $response->query ) && isset( $response->query->tokens ) && isset( $response->query->tokens->csrftoken ) ) {
+			if ( isset( $response->query ) && isset( $response->query->tokens ) && isset( $response->query->tokens->csrftoken ) ) {
 				$this->edittoken = $response->query->tokens->csrftoken;
 				return true;
 			}

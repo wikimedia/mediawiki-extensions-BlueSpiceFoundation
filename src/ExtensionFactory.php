@@ -58,17 +58,17 @@ class ExtensionFactory {
 	}
 
 	protected function factory( $name, $definition ) {
-		if( isset( $this->extensions[$name] ) ) {
+		if ( isset( $this->extensions[$name] ) ) {
 			return $this->extensions[$name];
 		}
 		$class = $definition['className'];
-		if( strpos( $class, "\\" ) !== 0 ) {
+		if ( strpos( $class, "\\" ) !== 0 ) {
 			$class = "\\$class";
 		}
 
-		if( !class_exists( $class ) ) {
-			//this may change in the future, as there is not much left, that
-			//would be written into the extensin classes
+		if ( !class_exists( $class ) ) {
+			// this may change in the future, as there is not much left, that
+			// would be written into the extensin classes
 			throw new \BsException(
 				"Class $class for Extension $name not found!"
 			);
@@ -85,13 +85,13 @@ class ExtensionFactory {
 	}
 
 	protected function legacyFactory( $name, $extension ) {
-		if( !$extension instanceof \BsExtensionMW ) {
+		if ( !$extension instanceof \BsExtensionMW ) {
 			return;
 		}
 
 		$core = \BsCore::getInstance();
-		//this is for extensions using the old mechanism and may have their
-		//own __constructor
+		// this is for extensions using the old mechanism and may have their
+		// own __constructor
 		$extension->setConfig( $this->config );
 		$extension->setContext(
 			\RequestContext::getMain()
@@ -108,12 +108,12 @@ class ExtensionFactory {
 	 * @return Extension[]
 	 */
 	public function getExtensions() {
-		if( $this->allExtensionsLoaded ) {
+		if ( $this->allExtensionsLoaded ) {
 			return $this->extensions;
 		}
 		$definitions = $this->extensionRegistry->getExtensionDefinitions();
-		foreach( $definitions as $name => $definition ) {
-			if( $name === 'BlueSpiceFoundation' ) {
+		foreach ( $definitions as $name => $definition ) {
+			if ( $name === 'BlueSpiceFoundation' ) {
 				continue;
 			}
 			$this->factory( $name, $definition );
@@ -129,7 +129,7 @@ class ExtensionFactory {
 	 */
 	public function getExtension( $name ) {
 		$extensions = $this->getExtensions();
-		if( isset( $extensions[$name] ) ) {
+		if ( isset( $extensions[$name] ) ) {
 			return $extensions[$name];
 		}
 		return null;

@@ -11,9 +11,9 @@
 
  */
 class BsConnectionHelper {
-	
+
 	public static function urlExists( $sUrl, $iTimeout = 3 ) {
-		$ctx = stream_context_create( array (
+		$ctx = stream_context_create( array(
 						'http' => array( 'timeout' => $iTimeout ) )
 			);
 		// TODO MRG (21.09.10 12:06): Performanz: würde hier ein Ping nicht reichen?
@@ -29,7 +29,7 @@ class BsConnectionHelper {
 		// sicherstellen dass da ein Gerät ist, aber nicht ob das "Dokument"
 		// verfügbar ist. Außerdem geht es primär um gen Timeout.
 		$sResponse = @file_get_contents( $sUrl, 0, $ctx );
-		$bUrlExists = ( empty ( $sResponse) ) ? false : true;
+		$bUrlExists = ( empty( $sResponse ) ) ? false : true;
 
 		return $bUrlExists;
 	}
@@ -43,13 +43,13 @@ class BsConnectionHelper {
 	public static function testUrlForTimeout( $sUrl, $fTimeout = 3.0 ) {
 		$iErrorNo = 0;
 		$sErrorMsg = '';
-		$aUrlInfo = parse_url($sUrl);
-		if ( isset($aUrlInfo['scheme']) && $aUrlInfo['scheme'] == 'https' ) {
+		$aUrlInfo = parse_url( $sUrl );
+		if ( isset( $aUrlInfo['scheme'] ) && $aUrlInfo['scheme'] == 'https' ) {
 			$iPort = isset( $aUrlInfo['port'] ) ? $aUrlInfo['port'] : 443;
-			@$pFile = fsockopen('ssl://' . $aUrlInfo['host'], $iPort, $iErrorNo, $sErrorMsg, $fTimeout );
+			@$pFile = fsockopen( 'ssl://' . $aUrlInfo['host'], $iPort, $iErrorNo, $sErrorMsg, $fTimeout );
 		} else {
 			$iPort = isset( $aUrlInfo['port'] ) ? $aUrlInfo['port'] : 80;
-			@$pFile = fsockopen($aUrlInfo['host'], $iPort, $iErrorNo, $sErrorMsg, $fTimeout );
+			@$pFile = fsockopen( $aUrlInfo['host'], $iPort, $iErrorNo, $sErrorMsg, $fTimeout );
 		}
 		return (bool)$pFile;
 	}

@@ -33,9 +33,9 @@ class BsLinkProvider {
 		$sLabel = ( empty( $sLabel ) ) ? $sUserDisplayName : $sLabel;
 		$sTitleArrtibute = ( empty( $sTitle ) ) ? 'title="'.$sLabel.'" ' : 'title="'.$sTitle.'" ';
 		$sHref = $oUser->getUserPage()->getFullURL();
-		if( !$oUser->getUserPage()->exists() ) {
+		if ( !$oUser->getUserPage()->exists() ) {
 			$aClasses[] = 'new';
-			//$sHref .= '?redlink=1';
+			// $sHref .= '?redlink=1';
 		}
 		// TODO MRG (21.09.10 12:49): makeAttributesFromArrays gehört eigentlich in den TagProvider, wa?
 		$sFurtherAttributes = self::makeAttributesFromArrays( $aClasses, $aStyles, $aAdditionalAttributes );
@@ -65,7 +65,6 @@ class BsLinkProvider {
 		return $linkHelper->getWikitext();
 	}
 
-
 	/**
 	 * Creates a WikiText link to the provided Title.
 	 * @deprecated since version 3.0.1 - Use \BlueSpice\Services::getInstance()
@@ -79,7 +78,7 @@ class BsLinkProvider {
 	public static function makeWikiLinkForTitleString( $sTitle, $sNamespaceText = '', $sLabel = '', $sJumpMark = '' )
 	{
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if( !empty( $sNamespaceText ) ) {
+		if ( !empty( $sNamespaceText ) ) {
 			$sNamespaceText .= ':';
 		}
 		return static::makeWikiLinkForTitle(
@@ -88,7 +87,6 @@ class BsLinkProvider {
 			$sJumpMark
 		);
 	}
-
 
 	/**
 	 * DEPRECATED!
@@ -123,20 +121,18 @@ class BsLinkProvider {
 		if ( !empty( $aClasses ) ) {
 			$sAttributes .= 'class="';
 
-			foreach( $aClasses as $sClassName ) {
+			foreach ( $aClasses as $sClassName ) {
 				$sAttributes .= $sClassName.' ';
 			}
 
 			$sAttributes .= substr( $sAttributes, -1, 1 ).'" ';
 		}
 
-		if ( !empty( $aStyles ) )
-		{
+		if ( !empty( $aStyles ) ) {
 			// TODO MRG (21.09.10 12:52): implementieren
 		}
 
-		if ( !empty( $aAdditionalAttributes ) )
-		{
+		if ( !empty( $aAdditionalAttributes ) ) {
 			// TODO MRG (21.09.10 12:52): implementieren
 		}
 

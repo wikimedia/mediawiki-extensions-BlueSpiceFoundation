@@ -40,7 +40,6 @@ class BooleanTest extends \PHPUnit\Framework\TestCase {
 		$this->assertFalse( $result );
 	}
 
-
 	/**
 	 * @dataProvider provideAppliesToValues
 	 * @param boolean $expecation
@@ -48,7 +47,7 @@ class BooleanTest extends \PHPUnit\Framework\TestCase {
 	 * @param mixed $filterValue
 	 * @param string $comparison
 	 */
-	public function testAppliesTo ( $expectation, $comparison, $fieldValue, $filterValue ) {
+	public function testAppliesTo( $expectation, $comparison, $fieldValue, $filterValue ) {
 		$filter = new Filter\Boolean( [
 			Filter\Boolean::KEY_FIELD => 'field_A',
 			Filter\Boolean::KEY_VALUE => $filterValue,
@@ -59,7 +58,7 @@ class BooleanTest extends \PHPUnit\Framework\TestCase {
 			'field_A' => $fieldValue
 		] );
 
-		if( $expectation ) {
+		if ( $expectation ) {
 			$this->assertTrue( $filter->matches( $dataSet ), 'Filter should apply' );
 		}
 		else {

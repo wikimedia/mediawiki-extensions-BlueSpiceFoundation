@@ -74,7 +74,7 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 		$resolvedTitles = $resolver->resolve();
 		$numResolvedTitles = count( $resolvedTitles );
 
-		for( $i = 0; $i < $numResolvedTitles; $i++ ) {
+		for ( $i = 0; $i < $numResolvedTitles; $i++ ) {
 			$resolvedTitle = $resolvedTitles[$i];
 			$expectedPrefixedText = $expectedPrefixedTexts[$i];
 
@@ -85,9 +85,9 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 
 	public function provideMediaWikiApiTitlesOrPageIdsData() {
 		return [
-			[ [ 'pageids' => '1|2' ], [ 'UTPage', 'TitleParamsResolverTest'], 'Should resolve from "pageids"' ],
-			[ [ 'pageids' => '2|-1' ], [ 'TitleParamsResolverTest'], 'Should resolve from "pageids" with invalid pageid' ],
-			[ [ 'titles' => 'UTPage|Help:TitleParamsResolverTest' ], [ 'UTPage', 'Help:TitleParamsResolverTest'], 'Should resolve from "titles"' ],
+			[ [ 'pageids' => '1|2' ], [ 'UTPage', 'TitleParamsResolverTest' ], 'Should resolve from "pageids"' ],
+			[ [ 'pageids' => '2|-1' ], [ 'TitleParamsResolverTest' ], 'Should resolve from "pageids" with invalid pageid' ],
+			[ [ 'titles' => 'UTPage|Help:TitleParamsResolverTest' ], [ 'UTPage', 'Help:TitleParamsResolverTest' ], 'Should resolve from "titles"' ],
 		];
 	}
 }

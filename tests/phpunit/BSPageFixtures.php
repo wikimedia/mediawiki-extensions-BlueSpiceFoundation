@@ -6,14 +6,13 @@ use BlueSpice\Tests\BSPageFixturesProvider;
 
 class BSPageFixtures {
 
-
 	/**
 	 *
 	 * @param BSApiTestCase $testcase
 	 * @param BSFixturesProvider|null $provider
 	 */
 	public function __construct( $testcase, $provider = null ) {
-		if( $provider === null ) {
+		if ( $provider === null ) {
 			$provider = new BSPageFixturesProvider();
 		}
 

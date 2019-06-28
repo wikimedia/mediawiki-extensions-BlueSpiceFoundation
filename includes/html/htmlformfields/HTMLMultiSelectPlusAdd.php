@@ -9,7 +9,7 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 	protected $allowAdditions = true;
 
 	function validate( $value, $alldata ) {
-		if( !is_array( $value ) ) {
+		if ( !is_array( $value ) ) {
 			return false;
 		}
 

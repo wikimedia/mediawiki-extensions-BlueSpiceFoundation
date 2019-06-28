@@ -12,12 +12,12 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 		$sNode = $this->getParameter( 'node' );
 		$aOptions = $this->getParameter( 'options' );
 
-		if( empty( $sNode ) ) {
+		if ( empty( $sNode ) ) {
 			return $this->makeNamespaceNodes( $sQuery, $aOptions );
 		}
 
 		$aNodeTextParts = explode( ':', $sNode, 2 );
-		if( empty( $aNodeTextParts[1] ) ) {
+		if ( empty( $aNodeTextParts[1] ) ) {
 			return $this->makeRootPageNodes( $aNodeTextParts[0], $sQuery, $aOptions );
 		}
 
@@ -50,24 +50,25 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	protected function makeNamespaceNodes( $sQuery, $aOptions = [] ) {
 		$aNamespaceIds = $this->getLanguage()->getNamespaceIds();
 		$aDataSets = array();
-		foreach( $aNamespaceIds as $iNamespaceId ) {
-			if( $iNamespaceId < 0 ) {
+		foreach ( $aNamespaceIds as $iNamespaceId ) {
+			if ( $iNamespaceId < 0 ) {
 				continue;
 			}
 
 			$oDummyTitle = Title::makeTitle( $iNamespaceId, 'X' );
-			if( !$oDummyTitle->userCan( 'read' ) ) {
+			if ( !$oDummyTitle->userCan( 'read' ) ) {
 				continue;
 			}
 
 			$sNodeText = $oDummyTitle->getNsText();
-			if( $iNamespaceId === NS_MAIN ) {
+			if ( $iNamespaceId === NS_MAIN ) {
 				$sNodeText = wfMessage( 'bs-ns_main' )->plain();
 			}
 
 			$oDataSet = new stdClass();
 			$oDataSet->text = $sNodeText;
-			$oDataSet->id = $oDummyTitle->getNsText().':'; // != $sNodeText
+			// != $sNodeText
+			$oDataSet->id = $oDummyTitle->getNsText().':';
 			$oDataSet->isNamespaceNode = true;
 			$oDataSet->leaf = false;
 			$oDataSet->expanded = false;
@@ -99,10 +100,10 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			)
 		);
 
-		foreach( $res as $row ) {
-			//Unfortunately there is not "NOT LIKE" in MW DBAL, therefore we
-			//filter out subpages manually
-			if( strpos( $row->page_title, '/' ) !== false ) {
+		foreach ( $res as $row ) {
+			// Unfortunately there is not "NOT LIKE" in MW DBAL, therefore we
+			// filter out subpages manually
+			if ( strpos( $row->page_title, '/' ) !== false ) {
 				continue;
 			}
 
@@ -134,7 +135,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			)
 		);
 
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$this->addDataSet( $aDataSets, $row, $oParent );
 		}
 
@@ -150,7 +151,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 */
 	protected function addDataSet( &$aDataSets, $row, $oParent = null ) {
 		$oTitle = Title::newFromRow( $row );
-		if( $oParent instanceof Title ) {
+		if ( $oParent instanceof Title ) {
 			$oBaseTitle = $oTitle->getBaseTitle();
 
 			/*
@@ -160,24 +161,26 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			 *  - A/B/C
 			 *  - A/B/D
 			 */
-			while( !$oBaseTitle->exists() && !$oTitle->getBaseTitle()->equals( $oParent ) ) {
+			while ( !$oBaseTitle->exists() && !$oTitle->getBaseTitle()->equals( $oParent ) ) {
 				$oTitle = $oBaseTitle;
 				$oBaseTitle = $oTitle->getBaseTitle();
 			}
-			if( !$oBaseTitle->equals( $oParent ) ) {
-				return; //We want only direct children
+			if ( !$oBaseTitle->equals( $oParent ) ) {
+				// We want only direct children
+				return;
 			}
 		}
 
-		if( !$oTitle->userCan( 'read' ) ) {
+		if ( !$oTitle->userCan( 'read' ) ) {
 			return;
 		}
 
 		$oDataSet = new stdClass();
 		$oDataSet->text = $oTitle->getSubpageText();
 		$oDataSet->id = $oTitle->getPrefixedDBkey();
-		if( $oTitle->getNamespace() === NS_MAIN ) {
-			$oDataSet->id = ':'.$oDataSet->id; //Rebuild full qualified path
+		if ( $oTitle->getNamespace() === NS_MAIN ) {
+			// Rebuild full qualified path
+			$oDataSet->id = ':'.$oDataSet->id;
 		}
 		$oDataSet->page_link = $this->oLinkRenderer->makeLink(
 			$oTitle,
@@ -187,7 +190,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 		$oDataSet->expanded = true;
 		$oDataSet->loaded = true;
 
-		if( $oTitle->hasSubpages() ) {
+		if ( $oTitle->hasSubpages() ) {
 			$oDataSet->leaf = false;
 			$oDataSet->expanded = false;
 			$oDataSet->loaded = false;

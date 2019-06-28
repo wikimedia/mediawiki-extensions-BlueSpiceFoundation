@@ -74,8 +74,8 @@ class Lockdown {
 	 */
 	public function getLockState( $action = 'read' ) {
 		if ( $action !== 'read' && !$this->getLockState()->isOK() ) {
-			//always check read first. If this fails there should not be another
-			//permission applied
+			// always check read first. If this fails there should not be another
+			// permission applied
 			return $this->getLockState();
 		}
 
@@ -116,13 +116,13 @@ class Lockdown {
 	 * @return IModule[]
 	 */
 	protected function getAppliedModules() {
-		if( $this->appliedModules !== null ) {
+		if ( $this->appliedModules !== null ) {
 			return $this->appliedModules;
 		}
 
 		$this->appliedModules = [];
-		foreach( $this->getModules() as $module ) {
-			if( !$module->applies( $this->title, $this->user ) ) {
+		foreach ( $this->getModules() as $module ) {
+			if ( !$module->applies( $this->title, $this->user ) ) {
 				continue;
 			}
 			$this->appliedModules[] = $module;
@@ -143,10 +143,10 @@ class Lockdown {
 	 * @return bool
 	 */
 	protected function isWhitelisted() {
-		if( !is_array( $this->config->get( 'WhitelistRead' ) ) ) {
+		if ( !is_array( $this->config->get( 'WhitelistRead' ) ) ) {
 			return false;
 		}
-		if( !in_array( $this->title->getPrefixedText(), $this->config->get( 'WhitelistRead' ) ) ) {
+		if ( !in_array( $this->title->getPrefixedText(), $this->config->get( 'WhitelistRead' ) ) ) {
 			return false;
 		}
 		return true;

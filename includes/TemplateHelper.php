@@ -40,7 +40,7 @@ class BSTemplateHelper {
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
-		foreach( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+		foreach ( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
 			if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
 				continue;
 			}
@@ -53,7 +53,7 @@ class BSTemplateHelper {
 				$thing['path']
 			);
 		}
-		if( !isset($aExtensions[$sExtName]) ) {
+		if ( !isset( $aExtensions[$sExtName] ) ) {
 			throw new BsException( "Unknowen Extension $sExtName" );
 		}
 		$sExtPath = $aExtensions[$sExtName]['extPath'];
@@ -61,7 +61,7 @@ class BSTemplateHelper {
 			$GLOBALS['wgExtensionDirectory'],
 			$sExtPath,
 			static::$sTemplatePath,
-		));
+		) );
 		$sTplDir = BsFileSystemHelper::normalizePath( $sTplDir );
 
 		$sFullPath = str_replace( $sTplDir, '', $sFullPath );
@@ -110,24 +110,24 @@ class BSTemplateHelper {
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
-		foreach( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+		foreach ( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
 			if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
 				continue;
 			}
 			$aExtensions[$thing['name']] = $thing;
 		}
-		foreach( $aExtensions as $sExtName => $aConfig ) {
+		foreach ( $aExtensions as $sExtName => $aConfig ) {
 			try {
 				$aTplDir = Services::getInstance()->getBSUtilityFactory()
 					->getTemplateHelper()->makeFullExtTemplatePathFromExtName(
 					$sExtName,
 					$aConfig
 				);
-			} catch( Exception $e ) {
+			} catch ( Exception $e ) {
 				continue;
 			}
-			$sPath = implode('/', $aTplDir);
-			if( !is_dir($sPath) ) {
+			$sPath = implode( '/', $aTplDir );
+			if ( !is_dir( $sPath ) ) {
 				continue;
 			}
 			$oRII = new RecursiveIteratorIterator(
@@ -136,8 +136,8 @@ class BSTemplateHelper {
 				),
 				RecursiveIteratorIterator::SELF_FIRST
 			);
-			foreach( $oRII as $oFile ) {
-				if( $oFile->isDir() ) {
+			foreach ( $oRII as $oFile ) {
+				if ( $oFile->isDir() ) {
 					continue;
 				}
 				$oFile instanceof SplFileObject;
@@ -146,7 +146,7 @@ class BSTemplateHelper {
 					$sExtName,
 					$sPath
 				);
-				if( isset($GLOBALS['bsgTemplates'][$sTplName]) ) {
+				if ( isset( $GLOBALS['bsgTemplates'][$sTplName] ) ) {
 					$aTplPath = explode( static::$sSeparator, $sTplName );
 					$sExtName = array_shift( $aTplPath );
 

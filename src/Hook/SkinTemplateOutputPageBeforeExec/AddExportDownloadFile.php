@@ -7,15 +7,15 @@ use BlueSpice\SkinData;
 class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBeforeExec {
 
 	protected function skipProcessing() {
-		if( $this->skin->getTitle()->getNamespace() != NS_FILE ) {
+		if ( $this->skin->getTitle()->getNamespace() != NS_FILE ) {
 			return true;
 		}
 
-		if( !$file = wfFindFile( $this->skin->getTitle() ) ) {
+		if ( !$file = wfFindFile( $this->skin->getTitle() ) ) {
 			return true;
 		}
 
-		if( $file->getHandler() instanceof \BitmapHandler ) {
+		if ( $file->getHandler() instanceof \BitmapHandler ) {
 			return true;
 		}
 
@@ -33,7 +33,7 @@ class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBefore
 				'class' => 'bs-ue-export-link',
 				'iconClass' => 'icon-download'
 			]
-		]);
+		] );
 		return true;
 	}
 

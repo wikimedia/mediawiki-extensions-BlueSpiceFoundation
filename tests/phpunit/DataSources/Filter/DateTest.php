@@ -47,18 +47,18 @@ class DateTest extends \PHPUnit\Framework\TestCase {
 	 * @param mixed $filterValue
 	 * @param string $comparison
 	 */
-	public function testAppliesTo ( $expectation, $comparison, $fieldValue, $filterValue ) {
-		$filter = new Filter\Date([
+	public function testAppliesTo( $expectation, $comparison, $fieldValue, $filterValue ) {
+		$filter = new Filter\Date( [
 			Filter::KEY_FIELD => 'field_A',
 			Filter::KEY_VALUE => $filterValue,
 			Filter::KEY_COMPARISON => $comparison
-		]);
+		] );
 
 		$dataSet = new Record( (object)[
 			'field_A' => $fieldValue
 		] );
 
-		if( $expectation ) {
+		if ( $expectation ) {
 			$this->assertTrue( $filter->matches( $dataSet ), 'Filter should apply' );
 		}
 		else {

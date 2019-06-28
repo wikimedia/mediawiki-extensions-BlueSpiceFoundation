@@ -36,7 +36,7 @@ abstract class WikiPage extends \BlueSpice\Task {
 	 */
 	protected function fetchCurrentRevisionWikiText() {
 		$content = $this->getWikiPage()->getContent();
-		if( $content instanceof WikitextContent === false ) {
+		if ( $content instanceof WikitextContent === false ) {
 			throw new Exception(
 				$this->msg( 'bs-wikipage-tasks-error-contentmodel' )->plain()
 			);

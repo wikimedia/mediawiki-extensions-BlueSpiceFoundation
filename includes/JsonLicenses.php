@@ -18,14 +18,14 @@ class JsonLicenses extends Licenses {
 	public function getJsonOutput() {
 		$this->json[] = $this->outputJsonOption( wfMessage( 'nolicense' )->text(), '' );
 		$this->makeJson( $this->getLicenses() );
-		return json_encode(array('items' => $this->json));
+		return json_encode( array( 'items' => $this->json ) );
 	}
 
 	protected function outputJsonOption( $text, $value, $depth = 0 ) {
 		return array(
 			'text' => $text,
 			'value' => "\n\n==".  wfMessage( 'license-header' )->inContentLanguage()->text()."==\n{{".$value."}}",
-			'indent'=> $depth
+			'indent' => $depth
 		);
 	}
 

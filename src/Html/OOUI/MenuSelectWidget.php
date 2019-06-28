@@ -43,17 +43,17 @@ class MenuSelectWidget extends SelectWidget {
 		$this->visible = false;
 		$this->addClasses( [ 'oo-ui-element-hidden' ] );
 
-		$this->registerConfigCallback( function( &$config ) {
-			if( $this->input ) {
+		$this->registerConfigCallback( function ( &$config ) {
+			if ( $this->input ) {
 				$config['input'] = $this->input;
 			}
-			if(  $this->widget ) {
+			if ( $this->widget ) {
 				$config['widget'] = $this->widget;
 			}
-			if( $this->width ) {
+			if ( $this->width ) {
 				$confg['width'] = $this->width;
 			}
-			if( $this->autoCloseIgnore ) {
+			if ( $this->autoCloseIgnore ) {
 				$config['autoCloseIgnore'] = $this->autoCloseIgnore;
 			}
 			$config['highlightsOnFilter'] = $this->hightlightOnFilter;
