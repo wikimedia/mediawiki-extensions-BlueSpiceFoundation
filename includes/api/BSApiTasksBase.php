@@ -64,20 +64,20 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * ];
 	 * @var array
 	 */
-	protected $aTasks = array();
+	protected $aTasks = [];
 
 	/**
 	 * Global available bs api tasks, can be called by task param, extends $aTasks
 	 * @var array
 	 */
-	protected $aGlobalTasks = array( 'getUserTaskPermissions' );
+	protected $aGlobalTasks = [ 'getUserTaskPermissions' ];
 
 	/**
 	 * Methods that can be executed even when the wiki is in read-mode, as
 	 * they do not alter the state/content of the wiki
 	 * @var array
 	 */
-	protected $aReadTasks = array();
+	protected $aReadTasks = [];
 
 	/**
 	 * Holds the context of the API call.
@@ -141,7 +141,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		$sMethod = 'task_'.$sTask;
 		$oResult = $this->makeStandardReturn();
 
-		if ( !is_callable( array( $this, $sMethod ) ) ) {
+		if ( !is_callable( [ $this, $sMethod ] ) ) {
 			$oResult->errors['task'] = "Task '$sTask' not implemented!";
 		}
 		else {
@@ -159,7 +159,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			}
 			else {
 				$oTaskData = $this->getParameter( 'taskData' );
-				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', array( $this, $sTask, &$oTaskData , &$aParams ) );
+				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', [ $this, $sTask, &$oTaskData , &$aParams ] );
 
 				$oResult = $this->validateTaskData( $sTask, $oTaskData );
 				if ( empty( $oResult->errors ) && empty( $oResult->message ) ) {
@@ -182,7 +182,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 					}
 				}
 
-				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', array( $this, $sTask, &$oResult, $oTaskData , $aParams ) );
+				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', [ $this, $sTask, &$oResult, $oTaskData , $aParams ] );
 			}
 		}
 
@@ -238,8 +238,8 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @param bool $bDoPublish
 	 * @return int Id of the newly created log entry or -1 on error
 	 */
-	protected function logTaskAction( $sAction, $aParams, $aOptions = array(), $bDoPublish = false ) {
-		$aOptions += array(
+	protected function logTaskAction( $sAction, $aParams, $aOptions = [], $bDoPublish = false ) {
+		$aOptions += [
 			'performer' => null,
 			'target' => null,
 			'timestamp' => null,
@@ -249,7 +249,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			'publish' => null,
 			// To allow overriding of class default
 			'type' => null
-		);
+		];
 
 		$oTarget = $aOptions['target'];
 		if ( $oTarget === null ) {
@@ -314,47 +314,47 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return array
 	 */
 	protected function getAllowedParams() {
-		return array(
-			'task' => array(
+		return [
+			'task' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => $this->oTasksSpec->getTaskNames(),
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-task',
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => $this->makeTaskHelpMessages()
-			),
-			'taskData' => array(
+			],
+			'taskData' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '{}',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-taskdata',
-			),
-			'context' => array(
+			],
+			'context' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '{}',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-context',
-			),
-			'schema' => array(
+			],
+			'schema' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-schema',
-			),
-			'examples' => array(
+			],
+			'examples' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-examples',
-			),
-			'format' => array(
+			],
+			'format' => [
 				ApiBase::PARAM_DFLT => 'json',
-				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
+				ApiBase::PARAM_TYPE => [ 'json', 'jsonfm' ],
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-format',
-			)
-		);
+			]
+		];
 	}
 
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
-		if ( in_array( $paramName, array( 'taskData', 'context' ) ) ) {
+		if ( in_array( $paramName, [ 'taskData', 'context' ] ) ) {
 			$value = FormatJson::decode( $value );
 			if ( empty( $value ) ) {
 				return new stdClass();
@@ -368,9 +368,9 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return type
 	 */
 	public function getDescription() {
-		return array(
+		return [
 			'BSApiTasksBase: This should be implemented by subclass'
-		);
+		];
 	}
 
 	/**
@@ -379,9 +379,9 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 */
 	public function getExamples() {
 		$aTaskNames = $this->oTasksSpec->getTaskNames();
-		return array(
+		return [
 			'api.php?action='.$this->getModuleName().'&task='.$aTaskNames[0].'&taskData={someKey:"someValue",isFalse:true}',
-		);
+		];
 	}
 
 	/**
@@ -424,7 +424,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		$oResponse = $this->makeStandardReturn();
 
 		$aTaskPermissions = $this->getRequiredTaskPermissions();
-		$arrReturn = array();
+		$arrReturn = [];
 		foreach ( $aTaskPermissions as $sTask => $val ) {
 			$arrReturn[$sTask] = $this->checkTaskPermission( $sTask );
 		}
@@ -442,7 +442,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return type
 	 */
 	protected function getRequiredTaskPermissions() {
-		return array();
+		return [];
 	}
 
 	/**
@@ -539,9 +539,9 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return array
 	 */
 	protected function getGlobalRequiredTaskPermissions() {
-		return array(
-			'getUserTaskPermissions' => array( 'read' )
-		);
+		return [
+			'getUserTaskPermissions' => [ 'read' ]
+		];
 	}
 
 	protected function makeTaskHelpMessages() {

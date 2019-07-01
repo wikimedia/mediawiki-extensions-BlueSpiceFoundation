@@ -19,18 +19,18 @@ class ResetUserImages extends Maintenance {
 
 			$dbw->delete(
 				'user_properties',
-				array(
+				[
 					'up_user' => $oUser->getId(),
 					'up_property' => 'MW::UserImage'
-				)
+				]
 			);
 			$dbw->insert(
 				'user_properties',
-				array(
+				[
 					'up_user' => $oUser->getId(),
 					'up_property' => 'MW::UserImage',
 					'up_value' => serialize( $sUserImage )
-				),
+				],
 				__METHOD__,
 				'IGNORE'
 			);

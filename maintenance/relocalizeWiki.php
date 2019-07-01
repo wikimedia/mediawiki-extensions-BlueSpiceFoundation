@@ -4,14 +4,14 @@ echo "Relocalize Wiki...\n";
 
 class RelocalizeWiki extends Maintenance {
 	public $bDryRun = false;
-	public $aFromNs = array();
-	public $aToNs = array();
+	public $aFromNs = [];
+	public $aToNs = [];
 	public $iCount = 0;
 	public $iPregCount = 0;
 	public $bEdited = false;
 	public $sOutput = '';
-	public $aNothingReplaced = array();
-	public $aSpecialFrom = array();
+	public $aNothingReplaced = [];
+	public $aSpecialFrom = [];
 // public $aSpecialTo = array();
 
 	public function __construct() {
@@ -44,9 +44,9 @@ class RelocalizeWiki extends Maintenance {
 		// workaround for bluespice namespacemanager bug
 		global $wgExtraNamespaces;
 		$sTempwgExtraNamespaces = $wgExtraNamespaces;
-		$wgExtraNamespaces = array();
+		$wgExtraNamespaces = [];
 
-		$aReturn = array();
+		$aReturn = [];
 
 		$oLang = Language::factory( $sLanguageCode );
 
@@ -64,15 +64,15 @@ class RelocalizeWiki extends Maintenance {
 	public function relocalizeWiki() {
 		$oDbw = wfGetDB( DB_MASTER );
 		$oRes = $oDbw->select(
-				array( 'page' )
+				[ 'page' ]
 				,
 				'page_id',
 				'',
 				__METHOD__,
-				array( 'ORDER BY' => 'page_id' )
+				[ 'ORDER BY' => 'page_id' ]
 		);
 
-		$aArticleIds = array();
+		$aArticleIds = [];
 		while ( $aData = $oRes->fetchRow() ) {
 			$aArticleIds[] = $aData['page_id'];
 		}
@@ -110,7 +110,7 @@ class RelocalizeWiki extends Maintenance {
 					}
 
 					if ( $sNsIndex === NS_SPECIAL ) {
-						$sArticleContent = preg_replace_callback( '#\[('.$sNsName.'\:(.*?))\]#si', array( $this, 'pregSpecialpageCallback' ), $sArticleContent, -1, $iPregSpecialCount );
+						$sArticleContent = preg_replace_callback( '#\[('.$sNsName.'\:(.*?))\]#si', [ $this, 'pregSpecialpageCallback' ], $sArticleContent, -1, $iPregSpecialCount );
 					} else {
 						$sArticleContent = str_replace( $sSearchFor, $sReplacement, $sArticleContent, $iCount );
 					}
@@ -118,7 +118,7 @@ class RelocalizeWiki extends Maintenance {
 					if ( $iCount !== 0 ) {
 						$this->sOutput .= 'Replaced "'.$sNsName.':" with "'.$this->aToNs['ns'][$sNsIndex].":\"\n";
 					}
-					$sArticleContent = preg_replace_callback( '#<gallery>(.*?)</gallery>#si', array( $this, 'pregImageCallback' ), $sArticleContent, -1, $iPregImageCount );
+					$sArticleContent = preg_replace_callback( '#<gallery>(.*?)</gallery>#si', [ $this, 'pregImageCallback' ], $sArticleContent, -1, $iPregImageCount );
 					if ( $iCount !== 0 || $iPregImageCount !== 0 || $iPregSpecialCount !== 0 ) {
 						$this->bEdited = true;
 					}

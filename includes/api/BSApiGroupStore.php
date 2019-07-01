@@ -37,7 +37,7 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 		global $wgAdditionalGroups, $wgImplicitGroups;
 		$this->sLcQuery = strtolower( $sQuery );
 
-		$aData = array();
+		$aData = [];
 		foreach ( BsGroupHelper::getAvailableGroups() as $sGroup ) {
 			if ( in_array( $sGroup, $wgImplicitGroups ) ) {
 				continue;
@@ -52,19 +52,19 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 				continue;
 			}
 
-			$aData[] = (object)array(
+			$aData[] = (object)[
 				'group_name' => $sGroup,
 				'additional_group' => isset( $wgAdditionalGroups[$sGroup] ),
 				'displayname' => $sDisplayName,
-			);
+			];
 		}
 		return $aData;
 	}
 
 	public function getRequiredPermissions() {
-		return parent::getRequiredPermissions() + array(
+		return parent::getRequiredPermissions() + [
 			'wikiadmin'
-		);
+		];
 	}
 
 	protected function queryApplies( $sGroup, $sDisplayName ) {

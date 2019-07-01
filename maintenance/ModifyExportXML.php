@@ -14,7 +14,7 @@ class ModifyExportXML extends Maintenance {
 		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
-	protected $aTitles = array();
+	protected $aTitles = [];
 	public function execute() {
 		$sInputFilePath    = $this->getOption( 'input' );
 		$sOutputFilePath   = $this->getOption( 'output' );
@@ -62,7 +62,7 @@ class ModifyExportXML extends Maintenance {
 				echo '<text> element in Revision id='.$iRevisionId.' (Article "'.$sArticleName.'") contains no text.'."\n";
 				continue;
 			}
-			$sText = preg_replace_callback( '#\[\[(.*?)\]\]#si', array( $this, 'modifyWikiLink' ), $sText );
+			$sText = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sText );
 			$oRevisionTextElement->removeChild( $oRevisionTextElement->firstChild );
 			$oRevisionTextElement->appendChild( $oDOMDoc->createTextNode( $sText ) );
 		}
@@ -77,7 +77,7 @@ class ModifyExportXML extends Maintenance {
 				echo '<comment> element in Revision id='.$iRevisionId.' (Article "'.$sArticleName.'") contains no text.'."\n";
 				continue;
 			}
-			$sComment = preg_replace_callback( '#\[\[(.*?)\]\]#si', array( $this, 'modifyWikiLink' ), $sComment );
+			$sComment = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sComment );
 			$oRevisionCommentElement->removeChild( $oRevisionCommentElement->firstChild );
 			$oRevisionCommentElement->appendChild( $oDOMDoc->createTextNode( $sComment ) );
 		}

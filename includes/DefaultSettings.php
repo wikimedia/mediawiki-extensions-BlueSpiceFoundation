@@ -31,11 +31,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 1 );
 }
 if ( !isset( $GLOBALS['wgFooterIcons']['poweredby']['bluespice'] ) ) {
-	$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = array(
+	$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = [
 		"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
 		"url" => "http://bluespice.com",
 		"alt" => "Powered by BlueSpice",
-	);
+	];
 }
 
 /*
@@ -362,9 +362,9 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
  * renamed of deleted and system NS that can not be modified. Used in
  * BlueSpiceExtensions/NamespaceManager and NamespaceHelper
  */
-$GLOBALS['bsgSystemNamespaces'] = array(
+$GLOBALS['bsgSystemNamespaces'] = [
 	// 1599 => 'NS_COOL_STUFF'
-);
+];
 
 /**
  * BsExtensionManager extension registration
@@ -377,13 +377,13 @@ $GLOBALS['bsgExtensions'] = [];
  *    BSExtension.Template.Name": "$wgExtensionsDirectory/MyExtension/PathToTemplateDir",
  * )
  */
-$GLOBALS['bsgTemplates'] = array();
+$GLOBALS['bsgTemplates'] = [];
 
 /*
  * ExtJSThemes
  */
-$GLOBALS["bsgExtJSThemes"] = array(
-	"white" => array(
+$GLOBALS["bsgExtJSThemes"] = [
+	"white" => [
 		'bs-extjs-theme-primary-text-color' => 'black',
 		'bs-extjs-theme-secondary-text-color' => 'black',
 		'bs-extjs-theme-primary-background-color' => 'white',
@@ -399,8 +399,8 @@ $GLOBALS["bsgExtJSThemes"] = array(
 		'bs-extjs-theme-btn-toolbar-noicon-border' => '1px solid black',
 		'bs-extjs-theme-tool-img-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/tools/tool-sprites-dark.png" )',
 		'bs-extjs-theme-btn-split-right-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/button/default-toolbar-small-s-arrow.png" )',
-	)
-);
+	]
+];
 
 $GLOBALS['bsgUserMiniProfileParams'] = [ 'width' => 40, 'height' => 40 ];
 $GLOBALS['bsgMiniProfileEnforceHeight'] = true;

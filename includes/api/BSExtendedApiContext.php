@@ -30,7 +30,7 @@ class BSExtendedApiContext {
 	 *
 	 * @var array
 	 */
-	protected $aRawContextData = array();
+	protected $aRawContextData = [];
 
 	/**
 	 * @param $oRequest WebRequest
@@ -46,7 +46,7 @@ class BSExtendedApiContext {
 		 * 'bluespice.api.js'
 		 * This is to meet standard MediaWiki behavior
 		 */
-		$aDefaultParams = array(
+		$aDefaultParams = [
 			'wgAction' => 'view',
 			'wgArticleId' => -1,
 			'wgCanonicalNamespace' => false,
@@ -57,7 +57,7 @@ class BSExtendedApiContext {
 			'wgRedirectedFrom' => null,
 			'wgRelevantPageName' => 'API',
 			'wgTitle' => 'API'
-		);
+		];
 
 		$aRequestParams = FormatJson::decode(
 			$oRequest->getVal( 'context', '{}' ),
@@ -74,13 +74,13 @@ class BSExtendedApiContext {
 		}
 
 		// TODO: Fallback if any of those is empty!
-		$aParams = array(
+		$aParams = [
 			'title'        => $oTitle,
 			'revision'     => Revision::newFromId( $aRequestParams['wgRevisionId'] ),
 			'specialpage'  => SpecialPageFactory::getPage( $aRequestParams['wgCanonicalSpecialPageName'] ),
 			'relevantpage' => Title::newFromText( $aRequestParams['wgRelevantPageName'] ),
 			'rawdata' => $aRequestParams
-		);
+		];
 
 		return new self( $aParams );
 	}

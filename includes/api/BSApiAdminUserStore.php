@@ -32,10 +32,10 @@
 class BSApiAdminUserStore extends BSApiUserStore {
 
 	protected function getRequiredPermissions() {
-		return array( 'wikiadmin' );
+		return [ 'wikiadmin' ];
 	}
 
-	protected function makeResultRow( $row, $aGroups = array() ) {
+	protected function makeResultRow( $row, $aGroups = [] ) {
 		$aResult = parent::makeResultRow( $row, $aGroups );
 		$aResult['user_email'] = isset( $row->user_email )
 			? $row->user_email

@@ -35,7 +35,7 @@ class BSInvalidParamException extends Exception {
 	 *
 	 * @var \ParamProcessor\ProcessingError[]
 	 */
-	protected $aErrors = array();
+	protected $aErrors = [];
 
 	/**
 	 *

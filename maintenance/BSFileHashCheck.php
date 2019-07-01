@@ -40,8 +40,8 @@ class BSFileHashCheck extends BSMaintenance {
 	 */
 	public function getFilePath( $oFileInfo, $sDir ) {
 		$sPathName = $oFileInfo->getPathname();
-		$sPathName = str_replace( array( '\\\\','\\' ), '/', $sPathName );
-		$sDir = str_replace( array( '\\\\','\\' ), '/', $sDir );
+		$sPathName = str_replace( [ '\\\\','\\' ], '/', $sPathName );
+		$sDir = str_replace( [ '\\\\','\\' ], '/', $sDir );
 		$sPathName = preg_replace( '#^'.preg_quote( $sDir ).'#', '', $sPathName );
 
 		return trim( $sPathName, '/' );
@@ -53,7 +53,7 @@ class BSFileHashCheck extends BSMaintenance {
 			true
 		);
 
-		$aErrors = array();
+		$aErrors = [];
 		foreach ( $aFileHashMap as $sRelPath => $sExpectedHash ) {
 			$oFileInfo = new SplFileInfo( $sDir . '/' . $sRelPath );
 			$sActualHash = $this->getFileHash( $oFileInfo );
@@ -76,7 +76,7 @@ class BSFileHashCheck extends BSMaintenance {
 			new RecursiveDirectoryIterator( $sDir )
 		);
 
-		$aFileHashMap = array();
+		$aFileHashMap = [];
 		foreach ( $oIterator as $name => $oFileInfo ) {
 			if ( $oFileInfo->isDir() ) {
 				continue;

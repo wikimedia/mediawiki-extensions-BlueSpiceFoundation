@@ -28,7 +28,7 @@ namespace BlueSpice;
 use BlueSpice\Content\Entity as EntityContent;
 
 class EntityFactory {
-	protected $storedById = array();
+	protected $storedById = [];
 
 	/**
 	 *

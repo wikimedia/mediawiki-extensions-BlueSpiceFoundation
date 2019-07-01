@@ -27,9 +27,9 @@ class DeployJavaWebApps extends BSMaintenance {
 		// TODO: Check write permission to $sRealTarget
 		// TODO: Check accessablility of $sBaseURL
 
-		$aReport = array();
+		$aReport = [];
 
-		Hooks::run( 'BSDeployJavaWebApps', array( $this, $sRealTarget, $sBaseURL, &$aReport ) );
+		Hooks::run( 'BSDeployJavaWebApps', [ $this, $sRealTarget, $sBaseURL, &$aReport ] );
 
 		$this->output( 'Deployment done.' );
 		$this->output( implode( "\n", $aReport ) );

@@ -30,7 +30,7 @@
  * @package BlueSpice_Foundation
  */
 class BSApiPingTasks extends BSApiTasksBase {
-	protected $aTasks = array(
+	protected $aTasks = [
 		'ping' => [
 			'examples' => [
 				[
@@ -74,18 +74,18 @@ class BSApiPingTasks extends BSApiTasksBase {
 				],
 			]
 		]
-	);
+	];
 
-	protected $aReadTasks = array( 'ping' );
+	protected $aReadTasks = [ 'ping' ];
 
 	/**
 	 * Configures the global permission requirements
 	 * @return array
 	 */
 	protected function getRequiredTaskPermissions() {
-		return array(
-			'ping' => array( 'read' )
-		);
+		return [
+			'ping' => [ 'read' ]
+		];
 	}
 
 	protected function task_ping( $oTaskData ) {
@@ -106,10 +106,10 @@ class BSApiPingTasks extends BSApiTasksBase {
 			: 0;
 		$aBSPingData = isset( $oTaskData->BsPingData )
 			? (array)$oTaskData->BsPingData
-			: array();
+			: [];
 
 		$oResponse->success = true;
-		$oResponse->payload = array();
+		$oResponse->payload = [];
 		if ( empty( $aBSPingData ) ) {
 			return $oResponse;
 		}
@@ -125,7 +125,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 			// Workaround: Each hook handler expect an array
 			$aSinglePing = (array)$oSinglePing;
 			if ( !isset( $aSinglePing['aData'] ) ) {
-				$aSinglePing['aData'] = array();
+				$aSinglePing['aData'] = [];
 			} else {
 				// TODO: Each data set needs very hard param processing too!
 				$aSinglePing['aData'] = (array)$aSinglePing['aData'];
@@ -133,7 +133,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 			// Workaround: Each hook handler expect an array not an object
 			foreach ( $aSinglePing['aData'] as $iKey => $oData ) {
 				if ( empty( $oData ) ) {
-					$aSinglePing['aData'][$iKey] = array();
+					$aSinglePing['aData'][$iKey] = [];
 					continue;
 				}
 				if ( !$oData instanceof stdClass ) {
@@ -142,13 +142,13 @@ class BSApiPingTasks extends BSApiTasksBase {
 				$aSinglePing['aData'][$iKey] = (array)$oData;
 			}
 
-			$aSingleResult = array(
+			$aSingleResult = [
 				"success" => false,
-				"errors" => array(),
+				"errors" => [],
 				"message" => '',
-			);
+			];
 			// if hook returns false - overall success is false
-			$oResponse->success = Hooks::run( 'BsAdapterAjaxPingResult', array(
+			$oResponse->success = Hooks::run( 'BsAdapterAjaxPingResult', [
 				$aSinglePing['sRef'],
 				$aSinglePing['aData'],
 				$iArticleId,
@@ -156,7 +156,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 				$iNamespace,
 				$iRevision,
 				&$aSingleResult
-			) );
+			] );
 			$oResponse->payload[$aSinglePing['sRef']] = $aSingleResult;
 		}
 

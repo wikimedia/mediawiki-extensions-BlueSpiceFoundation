@@ -22,7 +22,7 @@ class BSExportUsers extends BSMaintenance {
 			$oUserNode->appendChild( $oDOM->createElement( 'registration', wfTimestamp( TS_ISO_8601, $row->user_registration ) ) );
 			$oUserNode->appendChild( $oDOM->createElement( 'editcount', $row->user_editcount ) );
 
-			$res2 = $dbr->select( 'user_groups', '*', array( 'ug_user' => $row->user_id ) );
+			$res2 = $dbr->select( 'user_groups', '*', [ 'ug_user' => $row->user_id ] );
 			if ( $dbr->numRows( $res2 ) > 0 ) {
 				$oGroupsNode = $oDOM->createElement( 'groups' );
 				$oUserNode->appendChild( $oGroupsNode );
@@ -33,7 +33,7 @@ class BSExportUsers extends BSMaintenance {
 				}
 			}
 
-			$res3 = $dbr->select( 'user_properties', '*', array( 'up_user' => $row->user_id ) );
+			$res3 = $dbr->select( 'user_properties', '*', [ 'up_user' => $row->user_id ] );
 			if ( $dbr->numRows( $res3 ) > 0 ) {
 				$oPropertiesNode = $oDOM->createElement( 'properties' );
 				$oUserNode->appendChild( $oPropertiesNode );

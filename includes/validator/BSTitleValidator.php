@@ -35,7 +35,7 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 	 *
 	 * @var array
 	 */
-	protected $aNamespaceBlacklist = array();
+	protected $aNamespaceBlacklist = [];
 
 	/**
 	 *
