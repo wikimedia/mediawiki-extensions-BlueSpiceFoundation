@@ -614,7 +614,7 @@ function checkINIvalues( $iniOptions ) {
 
 function checkWritePerm( $checkFolders ) {
 	if ( !is_array( $checkFolders ) ) {
-		$checkFolders = array( [ $checkFolders, "" ] );
+		$checkFolders = [ [ $checkFolders, "" ] ];
 		$returnValue = "tf";
 	}
 

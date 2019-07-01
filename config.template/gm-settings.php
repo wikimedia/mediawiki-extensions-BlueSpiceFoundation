@@ -1,6 +1,6 @@
 <?php
 global $wgAdditionalGroups;
 
-$wgAdditionalGroups = array();
+$wgAdditionalGroups = [];
 
 $wgGroupPermissions = array_merge( $wgGroupPermissions, $wgAdditionalGroups );

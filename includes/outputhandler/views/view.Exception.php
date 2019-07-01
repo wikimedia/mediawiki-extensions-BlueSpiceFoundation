@@ -23,7 +23,7 @@ class ViewException extends ViewBaseElement {
 	}
 
 	function execute( $params = false ) {
-		$aOut = array();
+		$aOut = [];
 		$aOut[] = '<div class="bs-exception">';
 		$aOut[] = '  <h3>' . wfMessage( 'bs-exception-view-heading' )->plain() . '</h3>';
 		$aOut[] = '  <p>' . wfMessage( 'bs-exception-view-text' )->text() . '</p>';

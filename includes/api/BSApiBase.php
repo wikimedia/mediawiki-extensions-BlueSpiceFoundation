@@ -37,7 +37,7 @@ abstract class BSApiBase extends ApiBase {
 	 * @param array $aTitles Array of Title objects to check the requires permissions against
 	 * @param User|null $oUser the User object of the requesting user. Does a fallback to $this->getUser();
 	 */
-	protected function checkPermissions( $aTitles = array(), $oUser = null ) {
+	protected function checkPermissions( $aTitles = [], $oUser = null ) {
 		$aRequiredPermissions = $this->getRequiredPermissions();
 		if ( empty( $aRequiredPermissions ) ) {
 			// No need for further checking
@@ -79,13 +79,13 @@ abstract class BSApiBase extends ApiBase {
 	}
 
 	protected function getRequiredPermissions() {
-		return array( 'read' );
+		return [ 'read' ];
 	}
 
 	protected function getExamples() {
-		return array(
+		return [
 			'api.php?action='.$this->getModuleName(),
-		);
+		];
 	}
 
 	/**

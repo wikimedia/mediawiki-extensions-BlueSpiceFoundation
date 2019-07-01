@@ -30,7 +30,7 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 		// $sOptions will be used... maybe
 		$oResult = new stdClass();
 
-		$aCategories = array();
+		$aCategories = [];
 		$dbr = wfGetDB( DB_REPLICA );
 		// category table also tracks all deleted categories. So we need to double
 		// check with categorylinks and page table. Use case for this is a category
@@ -43,11 +43,11 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 		// (31.01.14) STM: Query had to be separated into two quieres because it was to expensive
 
 		$res = $dbr->select(
-			array( 'category', 'categorylinks' ),
-			array( 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ),
-			array( 'cat_title = cl_to' ),
+			[ 'category', 'categorylinks' ],
+			[ 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ],
+			[ 'cat_title = cl_to' ],
 			__METHOD__,
-			array( 'GROUP BY' => 'cat_title' )
+			[ 'GROUP BY' => 'cat_title' ]
 		);
 
 		foreach ( $res as $row ) {
@@ -71,9 +71,9 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 		}
 
 		$res = $dbr->select(
-			array( 'category', 'page' ),
-			array( 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ),
-			array( 'cat_title = page_title AND page_namespace = '.NS_CATEGORY )
+			[ 'category', 'page' ],
+			[ 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ],
+			[ 'cat_title = page_title AND page_namespace = '.NS_CATEGORY ]
 		);
 
 		foreach ( $res as $row ) {

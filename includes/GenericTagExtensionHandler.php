@@ -42,7 +42,7 @@ class BsGenericTagExtensionHandler {
 	 * ParamProcessor\ParamDefinition compatible list of parameter settings
 	 * @var array
 	 */
-	protected $aTagDef = array();
+	protected $aTagDef = [];
 
 	public function __construct( $sTagName, $aTagDef ) {
 		$this->sTagName = $sTagName;
@@ -61,7 +61,7 @@ class BsGenericTagExtensionHandler {
 			$aExtensionTags = $oExtension->makeTagExtensionDefinitions();
 			foreach ( $aExtensionTags as $sTagName => $aTagDef ) {
 				$oTagHandler = new self( $sTagName, $aTagDef );
-				$parser->setHook( $sTagName, array( $oTagHandler, 'handle' ) );
+				$parser->setHook( $sTagName, [ $oTagHandler, 'handle' ] );
 			}
 		}
 	}
@@ -93,7 +93,7 @@ class BsGenericTagExtensionHandler {
 		$aElementClasses[] = 'bs-tag';
 		$aElementClasses[] = $this->makeElementClassName();
 
-		$aAttributes = array();
+		$aAttributes = [];
 		if ( $this->aTagDef['titleMsg'] !== null ) {
 			$aAttributes[ 'title' ] = wfMessage( $this->aTagDef['titleMsg'] )->plain();
 		}
@@ -111,9 +111,9 @@ class BsGenericTagExtensionHandler {
 			if ( is_callable( $this->aTagDef['callback'] ) ) {
 				$sContent = call_user_func_array(
 					$this->aTagDef['callback'],
-					array(
+					[
 						$aProcessedInput, $aProcessedArgs, $parser, $frame
-					)
+					]
 				);
 			}
 		} catch ( Exception $ex ) {
@@ -142,20 +142,20 @@ class BsGenericTagExtensionHandler {
 			return $input;
 		}
 
-		$aInputParams = array(
+		$aInputParams = [
 			'input' => $input
-		);
+		];
 
 		$oProcessor = ParamProcessor\Processor::newDefault();
 		$oProcessor->setParameters(
 			$aInputParams,
-			array(
-				array(
+			[
+				[
 					'name' => 'input',
 					'message' => wfMessage( 'bs-tag-input-desc' )->plain()
-				)
+				]
 				+ $this->aTagDef['input']
-			)
+			]
 		);
 
 		$oResult = $oProcessor->processParameters();
@@ -183,7 +183,7 @@ class BsGenericTagExtensionHandler {
 		$this->checkForProcessingErrors( $oResult );
 		$aProcessedParams = $oResult->getParameters();
 
-		$aProcessedValues = array();
+		$aProcessedValues = [];
 		foreach ( $aProcessedParams as $oProcessedParam ) {
 			$aProcessedValues[$oProcessedParam->getName()] = $oProcessedParam->getValue();
 		}
@@ -208,16 +208,16 @@ class BsGenericTagExtensionHandler {
 	 * @return array
 	 */
 	protected function makeDefaultTagDefinition() {
-		return array(
+		return [
 			// Param definition for the contents of a tag
 			'input' => null,
 			// Param definition for the arguments of a tag
-			'params' => array(),
+			'params' => [],
 			// Whether or not to disable the parser cache for the page the tag is
 			// used on
 			'disableParserCache' => false,
 			// Additional CSS classes that should be added to the container element
-			'classes' => array(),
+			'classes' => [],
 			// A message key for the title attribute of the container element
 			'titleMsg' => null,
 			// The element name of the container element. Allows for inline tags.
@@ -234,10 +234,10 @@ class BsGenericTagExtensionHandler {
 			// container element
 			'callback' => null,
 			// ResourceLoader modules to be added to the ParserOutput
-			'modules' => array(),
+			'modules' => [],
 			// ResourceLoader modules (only CSS) to be added to the ParserOutput
-			'moduleStyles' => array()
-		);
+			'moduleStyles' => []
+		];
 	}
 
 	/**
@@ -264,9 +264,9 @@ class BsGenericTagExtensionHandler {
 
 		return Html::element(
 			$this->sTagName,
-			array(
+			[
 				'class' => 'bs-error bs-tag'
-			),
+			],
 			$ex->getMessage()
 		);
 	}
@@ -277,12 +277,12 @@ class BsGenericTagExtensionHandler {
 	 * @return array
 	 */
 	public function makeParamDefinitions() {
-		$aParamDefs = array();
+		$aParamDefs = [];
 		foreach ( $this->aTagDef['params'] as $sParamName => $aParamDef ) {
-			$aParamDefs[] = array(
+			$aParamDefs[] = [
 				'name' => $sParamName,
 				'message' => wfMessage( 'bs-tag-param-desc', $sParamName )->plain()
-			) + $aParamDef;
+			] + $aParamDef;
 		}
 
 		return $aParamDefs;
@@ -318,15 +318,15 @@ class BsGenericTagExtensionHandler {
 		foreach ( $ex->getErrors() as $oProcessingError ) {
 			$sHtml .= Html::element(
 				'div',
-				array(),
+				[],
 				$oProcessingError->getMessage()
 			);
 		}
 		return Html::rawElement(
 			'div',
-			array(
+			[
 				'class' => 'bs-error bs-tag'
-			),
+			],
 			$sHtml
 		);
 	}

@@ -16,23 +16,23 @@ class BsUserHelper {
 	 * @return array array of user ids
 	 */
 	public static function getUserIdsByRight( $sRight, $iLimit = 0, $iOffset = 0 ) {
-		$aReturn = array();
+		$aReturn = [];
 		$aGroups = BsGroupHelper::getGroupsByRight( $sRight );
 		if ( count( $aGroups ) < 1 ) {
 			return $aReturn;
 		}
 		$oDBr = wfGetDB( DB_REPLICA );
-		$aCond = array(
+		$aCond = [
 			'ug_group' => $aGroups
-		);
-		$aOptions = array();
+		];
+		$aOptions = [];
 		if ( $iLimit !== 0 ) {
 			$aOptions ['LIMIT'] = $iLimit;
 		}
 		if ( $iOffset !== 0 ) {
 			$aOptions ['OFFSET'] = $iOffset;
 		}
-		$oRes = $oDBr->select( 'user_groups', array( 'DISTINCT(ug_user)' ), $aCond, __METHOD__, $aOptions );
+		$oRes = $oDBr->select( 'user_groups', [ 'DISTINCT(ug_user)' ], $aCond, __METHOD__, $aOptions );
 		if ( !$oRes ) {
 			return $aReturn;
 		}

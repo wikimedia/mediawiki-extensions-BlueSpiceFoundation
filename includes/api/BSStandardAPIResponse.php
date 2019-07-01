@@ -9,12 +9,12 @@
  */
 class BSStandardAPIResponse {
 	// ExtJS
-	public $errors = array();
+	public $errors = [];
 	// ExtJS
 	public $success = false;
 
 	// Custom fields
 	public $message = '';
-	public $payload = array();
+	public $payload = [];
 	public $payload_count = 0;
 }

@@ -74,7 +74,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		foreach ( $this->getArgs() as $name => $val ) {
 			$method = "render_$name";
 			$renderedVal = $val;
-			if ( is_callable( array( $this, $method ) ) ) {
+			if ( is_callable( [ $this, $method ] ) ) {
 				$renderedVal = $this->$method( $val );
 			}
 			\Hooks::run( 'BSTemplateRendererGetRenderedArgs', [

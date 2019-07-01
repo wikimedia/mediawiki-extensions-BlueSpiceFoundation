@@ -26,19 +26,19 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	}
 
 	public function getAllowedParams() {
-		return parent::getAllowedParams() + array(
-			'node' => array(
+		return parent::getAllowedParams() + [
+			'node' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-wikisubpage-treestore-param-node',
-			),
-			'options' => array(
+			],
+			'options' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '{}',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-wikisubpage-treestore-param-options',
-			)
-		);
+			]
+		];
 	}
 
 	/**
@@ -49,7 +49,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 */
 	protected function makeNamespaceNodes( $sQuery, $aOptions = [] ) {
 		$aNamespaceIds = $this->getLanguage()->getNamespaceIds();
-		$aDataSets = array();
+		$aDataSets = [];
 		foreach ( $aNamespaceIds as $iNamespaceId ) {
 			if ( $iNamespaceId < 0 ) {
 				continue;
@@ -88,16 +88,16 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 * @return stdClass[]
 	 */
 	protected function makeRootPageNodes( $sNamespacePrefix, $sQuery, $aOptions = [] ) {
-		$aDataSets = array();
+		$aDataSets = [];
 
 		$oDummyTitle = Title::newFromText( $sNamespacePrefix.':X' );
 		$iNamespaceId = $oDummyTitle->getNamespace();
 		$res = $this->getDB()->select(
 			'page',
 			'*',
-			array(
+			[
 				'page_namespace' => $iNamespaceId
-			)
+			]
 		);
 
 		foreach ( $res as $row ) {
@@ -121,18 +121,18 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	 * @return array of objects
 	 */
 	protected function makePageNodes( $oParent, $sQuery, $aOptions = [] ) {
-		$aDataSets = array();
+		$aDataSets = [];
 
 		$res = $this->getDB()->select(
 			'page',
 			'*',
-			array(
+			[
 				'page_title '.$this->getDB()->buildLike(
 					$oParent->getDBkey() .'/' ,
 					$this->getDB()->anyString()
 				),
 				'page_namespace' => $oParent->getNamespace()
-			)
+			]
 		);
 
 		foreach ( $res as $row ) {

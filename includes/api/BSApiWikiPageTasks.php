@@ -30,7 +30,7 @@
  * @package BlueSpice_Foundation
  */
 class BSApiWikiPageTasks extends BSApiTasksBase {
-	protected $aTasks = array(
+	protected $aTasks = [
 		'setCategories' => [
 			// 'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
 			'examples' => [
@@ -189,7 +189,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 				]
 			]
 		]
-	);
+	];
 
 	protected $aReadTasks = [
 		'getDiscussionCount',
@@ -202,14 +202,14 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @return array
 	 */
 	protected function getRequiredTaskPermissions() {
-		return array(
-			'setCategories' => array( 'edit' ),
-			'getExplicitCategories' => array( 'read' ),
-			'addCategories' => array( 'edit' ),
-			'removeCategories' => array( 'edit' ),
-			'getDiscussionCount' => array( 'read' ),
-			'getTemplateTree' => array( 'read' )
-		);
+		return [
+			'setCategories' => [ 'edit' ],
+			'getExplicitCategories' => [ 'read' ],
+			'addCategories' => [ 'edit' ],
+			'removeCategories' => [ 'edit' ],
+			'getDiscussionCount' => [ 'read' ],
+			'getTemplateTree' => [ 'read' ]
+		];
 	}
 
 	/**
@@ -222,7 +222,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oResponse = $this->makeStandardReturn();
 
 		$aCategories = $oTaskData->categories;
-		$aCategories = ( !is_array( $aCategories ) ) ? array() : $aCategories;
+		$aCategories = ( !is_array( $aCategories ) ) ? [] : $aCategories;
 
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 
@@ -236,7 +236,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		}
 
 		// Check for category validity
-		$aInvalidCategories = array();
+		$aInvalidCategories = [];
 		foreach ( $aCategories as $sCategoryName ) {
 			if ( Category::newFromName( $sCategoryName ) === false ) {
 				$aInvalidCategories[] = $sCategoryName;
@@ -365,7 +365,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oCategoriesInPage = $this->task_getExplicitCategories( $oTaskData, $aParams );
 
 		$aCategories = $oTaskData->categories;
-		$aCategories = ( !is_array( $aCategories ) ) ? array() : $aCategories;
+		$aCategories = ( !is_array( $aCategories ) ) ? [] : $aCategories;
 
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 
@@ -378,7 +378,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		}
 
 		// Check for category validity
-		$aInvalidCategories = array();
+		$aInvalidCategories = [];
 		foreach ( $aCategories as $sCategoryName ) {
 			if ( Category::newFromName( $sCategoryName ) === false ) {
 				$aInvalidCategories[] = $sCategoryName;
@@ -455,7 +455,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		if ( count( $aCategoriesToRemove ) === 0 ) {
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-nothingtoremove' )->plain();
-			$oResponse->payload = array();
+			$oResponse->payload = [];
 			$oResponse->payload_count = 0;
 			return $oResponse;
 		}
@@ -602,11 +602,11 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected function makeCategoryTaskPayload( $pageId ) {
 		$oTitle = Title::newFromID( $pageId );
 		$result = $this->task_getExplicitCategories( (object)[ 'page_id' => $pageId ], [] );
-		return array(
+		return [
 			'page_id' => $oTitle->getArticleID(),
 			'page_prefixed_text' => $oTitle->getPrefixedText(),
 			'categories' => $result->payload
-		);
+		];
 	}
 
 	/**

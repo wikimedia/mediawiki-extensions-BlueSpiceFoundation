@@ -18,11 +18,11 @@ class BSDebug {
 	 * Default log location: php error_log
 	 * @param array $aParams currently not in use
 	 */
-	public static function logSimpleCallStack( $aParams = array() ){
+	public static function logSimpleCallStack( $aParams = [] ){
 		// TODO: Use wfDebugBacktrace()?
 		$aBackTrace = debug_backtrace();
 		$iLength = count( $aBackTrace );
-		$aStack = array();
+		$aStack = [];
 		for ( $i = 2; $i < $iLength; $i++ ) {
 			$aStack[] = self::formatLine( $aBackTrace[$i] );
 		}
@@ -37,7 +37,7 @@ class BSDebug {
 	 * Default log location: php error_log
 	 * @param array $aParams currently not used
 	 */
-	public static function logCaller( $aParams = array() ){
+	public static function logCaller( $aParams = [] ){
 		// TODO: Use wfDebugBacktrace()?
 		$aBackTrace = debug_backtrace();
 		// Index of "2", because "0" is this method call and "1" is the caller
@@ -53,7 +53,7 @@ class BSDebug {
 	 * @param array $aParams currently not used
 	 * @return string
 	 */
-	protected static function formatLine( $aBackTraceLine, $aParams = array() ) {
+	protected static function formatLine( $aBackTraceLine, $aParams = [] ) {
 		$sLine = '';
 		if ( isset( $aBackTraceLine['class'] ) ) {
 			$sLine = $aBackTraceLine['class'].'::';
@@ -71,7 +71,7 @@ class BSDebug {
 	 *   "format" => "json"
 	 *   "mark" => true
 	 */
-	public static function logVar( $mVar, $aParams = array() ) {
+	public static function logVar( $mVar, $aParams = [] ) {
 		if ( empty( $aParams['mark'] ) ) {
 			$aBackTrace = debug_backtrace();
 			$sLine = self::formatLine( $aBackTrace[1] );
@@ -95,7 +95,7 @@ class BSDebug {
 	 * @param mixed $mVar The variable to log
 	 * @param array $aParams see logVar
 	 */
-	public static function logVarConditionally( $bCondition, $mVar, $aParams = array() ) {
+	public static function logVarConditionally( $bCondition, $mVar, $aParams = [] ) {
 		if ( $bCondition ) {
 			self::logVar( $mVar, $aParams );
 		}

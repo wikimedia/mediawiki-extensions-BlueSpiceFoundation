@@ -12,10 +12,10 @@ class BsGroupHelper {
 		return self::$sLockModeGroup;
 	}
 
-	protected static $aGroups = array();
+	protected static $aGroups = [];
 
-	public static function getAvailableGroups( $aConf = array() ) {
-		$aBlacklist = array();
+	public static function getAvailableGroups( $aConf = [] ) {
+		$aBlacklist = [];
 
 		if ( isset( $aConf['blacklist'] ) ) {
 			if ( !is_array( $aConf['blacklist'] ) ) {
@@ -46,9 +46,9 @@ class BsGroupHelper {
 		return self::$aGroups;
 	}
 
-	public static function getGroupsByRight( $sRight, $aConf = array() ) {
+	public static function getGroupsByRight( $sRight, $aConf = [] ) {
 		global $wgGroupPermissions;
-		$aBlacklist = array();
+		$aBlacklist = [];
 
 		if ( isset( $aConf['blacklist'] ) ) {
 			if ( !is_array( $aConf['blacklist'] ) ) {
@@ -57,7 +57,7 @@ class BsGroupHelper {
 			$aBlacklist = $aConf['blacklist'];
 		}
 
-		$aGroups = array();
+		$aGroups = [];
 		foreach ( $wgGroupPermissions as $sGroup => $aPermissions ) {
 			if ( in_array( $sGroup, $aBlacklist ) ) {
 				continue;
@@ -99,13 +99,13 @@ class BsGroupHelper {
 	 * @param Array $aPermissions
 	 * @param Array $aNamespaces
 	 */
-	public static function addPermissionsToGroup( $sGroupName, $aPermissions, $aNamespaces = array() ) {
+	public static function addPermissionsToGroup( $sGroupName, $aPermissions, $aNamespaces = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		global $wgGroupPermissions;
 
 		$aNamespaces = array_diff(
 			$aNamespaces,
-			array( NS_MEDIA, NS_SPECIAL )
+			[ NS_MEDIA, NS_SPECIAL ]
 		);
 
 		foreach ( $aPermissions as $sPermission ) {
@@ -138,15 +138,15 @@ class BsGroupHelper {
 	public static function getUserInGroups( $aGroups ) {
 		$dbr = wfGetDB( DB_REPLICA );
 		if ( !is_array( $aGroups ) ) {
-			$aGroups = array( $aGroups );
+			$aGroups = [ $aGroups ];
 		}
-		$aUser = array();
+		$aUser = [];
 		$res = $dbr->select(
 			'user_groups',
-			array( 'ug_user' ),
-			array( 'ug_group' => $aGroups ),
+			[ 'ug_user' ],
+			[ 'ug_group' => $aGroups ],
 			__METHOD__,
-			array( 'DISTINCT' )
+			[ 'DISTINCT' ]
 			);
 		if ( !$res ) {
 			return $aUser;

@@ -126,7 +126,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * https://docs.sencha.com/extjs/4.2.1/#!/api/Ext.grid.column.Column
 	 */
 	protected function makeMetaData() {
-		return array();
+		return [];
 	}
 
 	/**
@@ -134,8 +134,8 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @param array $aData An array of plain old data objects
 	 * @param array $aMetaData An array of meta data items
 	 */
-	public function returnData( $aData, $aMetaData = array() ) {
-		Hooks::run( 'BSApiExtJSStoreBaseBeforeReturnData', array( $this, &$aData, &$aMetaData ) );
+	public function returnData( $aData, $aMetaData = [] ) {
+		Hooks::run( 'BSApiExtJSStoreBaseBeforeReturnData', [ $this, &$aData, &$aMetaData ] );
 		$result = $this->getResult();
 		$result->setIndexedTagName( $aData, $this->root );
 		$result->addValue( null, $this->root, $aData );
@@ -157,75 +157,75 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'sort' => array(
+		return [
+			'sort' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '[]',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-sort',
-			),
-			'group' => array(
+			],
+			'group' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '[]',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-group',
-			),
-			'filter' => array(
+			],
+			'filter' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => '[]',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-filter',
-			),
-			'page' => array(
+			],
+			'page' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => 0,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-page',
-			),
-			'limit' => array(
+			],
+			'limit' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => 25,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-limit',
-			),
-			'start' => array(
+			],
+			'start' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_DFLT => 0,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-start',
-			),
+			],
 
-			'callback' => array(
+			'callback' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-callback',
-			),
+			],
 
-			'query' => array(
+			'query' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-query',
-			),
-			'_dc' => array(
+			],
+			'_dc' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-dc',
-			),
-			'format' => array(
+			],
+			'format' => [
 				ApiBase::PARAM_DFLT => 'json',
-				ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
+				ApiBase::PARAM_TYPE => [ 'json', 'jsonfm' ],
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-format',
-			),
+			],
 			'context' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-context',
 			]
-		);
+		];
 	}
 
 	public function getParamDescription() {
-		return array(
+		return [
 			'sort' => 'JSON string with sorting info; deserializes to "array of objects" that hold field name and direction for each sorting option',
 			'group' => 'JSON string with grouping info; deserializes to "array of objects" that hold field name and direction for each grouping option',
 			'filter' => 'JSON string with filter info; deserializes to "array of objects" that hold field name, filter type, and filter value for each filtering option',
@@ -237,16 +237,16 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			'_dc' => '"Disable cache" flag',
 			'format' => 'The format of the output (only JSON or formatted JSON)',
 			'context' => 'Context in which the call is made'
-		);
+		];
 	}
 
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
-		if ( in_array( $paramName, array( 'sort', 'group', 'filter', 'context' ) ) ) {
+		if ( in_array( $paramName, [ 'sort', 'group', 'filter', 'context' ] ) ) {
 			$value = FormatJson::decode( $value );
 			if ( empty( $value ) ) {
-				return array();
+				return [];
 			}
 		}
 		return $value;
@@ -264,15 +264,15 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return array
 	 */
 	public function postProcessData( $aData ) {
-		if ( !Hooks::run( 'BSApiExtJSStoreBaseBeforePostProcessData', array( $this, &$aData ) ) ) {
+		if ( !Hooks::run( 'BSApiExtJSStoreBaseBeforePostProcessData', [ $this, &$aData ] ) ) {
 			return $aData;
 		}
 
-		$aProcessedData = array();
+		$aProcessedData = [];
 
 		// First, apply filter
-		$aProcessedData = array_filter( $aData, array( $this, 'filterCallback' ) );
-		Hooks::run( 'BSApiExtJSStoreBaseAfterFilterData', array( $this, &$aProcessedData ) );
+		$aProcessedData = array_filter( $aData, [ $this, 'filterCallback' ] );
+		Hooks::run( 'BSApiExtJSStoreBaseAfterFilterData', [ $this, &$aProcessedData ] );
 
 		// Next, apply sort
 		// usort($aProcessedData, array( $this, 'sortCallback') ); <-- had some performance issues
@@ -545,7 +545,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			$iEnd = $this->iFinalDataSetCount;
 		}
 
-		$aTrimmedData = array();
+		$aTrimmedData = [];
 		for ( $i = $iStart; $i < $iEnd; $i++ ) {
 			$aTrimmedData[] = $aProcessedData[$i];
 		}
@@ -564,14 +564,14 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		$aUnsortableProps = $this->getPropertyNamesBySpecValue(
 			self::PROP_SPEC_SORTABLE, false
 		);
-		$aParams = array();
+		$aParams = [];
 		for ( $i = 0; $i < $iCount; $i++ ) {
 			$sProperty = $aSort[$i]->property;
 			if ( in_array( $sProperty, $aUnsortableProps ) ) {
 				continue;
 			}
 			$sDirection = strtoupper( $aSort[$i]->direction );
-			$a{$sProperty} = array();
+			$a{$sProperty} = [];
 			foreach ( $aProcessedData as $iKey => $oDataSet ) {
 				$a{$sProperty}[$iKey] = $this->getSortValue( $oDataSet, $sProperty );
 			}

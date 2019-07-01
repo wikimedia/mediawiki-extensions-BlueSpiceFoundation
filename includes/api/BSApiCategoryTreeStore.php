@@ -3,24 +3,24 @@
 class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	protected function makeData( $sQuery = '' ) {
 		$sNode = $this->getParameter( 'node' );
-		$aResult = array();
+		$aResult = [];
 		$dbr = $this->getDB();
 
 		if ( $sNode === 'src' ) {
-			$aCategories = array();
-			$aSubCategories = array();
+			$aCategories = [];
+			$aSubCategories = [];
 
 			$resSubcats = $dbr->select(
-				array( 'page', 'categorylinks' ),
-				array( 'page_title AS cat_title' ),
-				array( 'page_namespace' => NS_CATEGORY ),
+				[ 'page', 'categorylinks' ],
+				[ 'page_title AS cat_title' ],
+				[ 'page_namespace' => NS_CATEGORY ],
 				__METHOD__,
-				array( 'ORDER BY page_title' ),
-				array( 'categorylinks' =>
-					array(
+				[ 'ORDER BY page_title' ],
+				[ 'categorylinks' =>
+					[
 						'INNER JOIN', 'page_id = cl_from'
-					)
-				)
+					]
+				]
 			);
 
 			foreach ( $resSubcats as $row ) {
@@ -28,12 +28,12 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 				$aSubCategories[] = $sCatTitle;
 			}
 
-			$aTables = array( 'page' );
-			$aFields = array( '*' );
-			$aConditions = array( 'page_namespace' => NS_CATEGORY );
+			$aTables = [ 'page' ];
+			$aFields = [ '*' ];
+			$aConditions = [ 'page_namespace' => NS_CATEGORY ];
 			$sMethod = __METHOD__;
-			$aOptions = array( '' );
-			$aJoinConds = array();
+			$aOptions = [ '' ];
+			$aJoinConds = [];
 
 			$aConditions[] = 'page_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')';
 
@@ -51,14 +51,14 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 			}
 
 			$resCategoryTable = $dbr->select(
-				array( 'category', 'categorylinks' ),
+				[ 'category', 'categorylinks' ],
 				'cat_title',
-				array(
+				[
 					'cat_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')',
 					'cat_title = cl_to'
-				),
+				],
 				__METHOD__,
-				array( 'GROUP BY cat_title' )
+				[ 'GROUP BY cat_title' ]
 			);
 
 			foreach ( $resCategoryTable as $row ) {
@@ -82,12 +82,12 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 			$aNodes = explode( '/', $sNode );
 			$sCatTitle = str_replace( '+', '/', str_replace( ' ', '_', array_pop( $aNodes ) ) );
 
-			$aTables = array( 'page', 'categorylinks' );
-			$aFields = array( 'page_title' );
-			$aConditions = array( 'cl_to' => $sCatTitle, 'page_namespace' => NS_CATEGORY );
+			$aTables = [ 'page', 'categorylinks' ];
+			$aFields = [ 'page_title' ];
+			$aConditions = [ 'cl_to' => $sCatTitle, 'page_namespace' => NS_CATEGORY ];
 			$sMethod = __METHOD__;
-			$aOptions = array( '' );
-			$aJoinConds = array( 'categorylinks' => array( 'INNER JOIN', 'page_id=cl_from' ) );
+			$aOptions = [ '' ];
+			$aJoinConds = [ 'categorylinks' => [ 'INNER JOIN', 'page_id=cl_from' ] ];
 
 			$resSubCategories = $dbr->select(
 				$aTables,
@@ -98,7 +98,7 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 				$aJoinConds
 			);
 
-			$aSubCategories = array();
+			$aSubCategories = [];
 
 			foreach ( $resSubCategories as $row ) {
 				$aSubCategories[] = $row->page_title;
@@ -131,12 +131,12 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	}
 
 	public function getAllowedParams() {
-		return parent::getAllowedParams() + array(
-			'node' => array(
+		return parent::getAllowedParams() + [
+			'node' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_DFLT => '',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-category-treestore-param-node',
-			)
-		);
+			]
+		];
 	}
 }

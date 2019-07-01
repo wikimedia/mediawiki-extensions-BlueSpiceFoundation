@@ -202,7 +202,7 @@ if ( isset( $text_exclude ) && isset( $text_include ) ) {
 // Namespace conditions
 $token = '';
 $qry_ns = '';
-$namespace = array();
+$namespace = [];
 if ( isset( $namespace_include ) ) {
 	$token = 'IN ';
 	$namespace = $namespace_include;
@@ -216,7 +216,7 @@ if ( $token ) {
 }
 
 $dbw =& wfGetDB( DB_MASTER );
-$res = $dbw->select( 'page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', array( 'order by' => 'page_title' ) );
+$res = $dbw->select( 'page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', [ 'order by' => 'page_title' ] );
 
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $wgGroupPermissions['*']['autoreview'] = true;
@@ -233,7 +233,7 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 	print "$cur_title_ns$cur_title\n=======================================================\n";
 
 	// Title conditions
-	$title_conds = array();
+	$title_conds = [];
 	if ( isset( $title_include ) ) {
 		$title_conds = $title_include;
 		$match = true;
@@ -268,7 +268,7 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 	}
 
 	// Text conditions
-	$text_conds = array();
+	$text_conds = [];
 	if ( isset( $text_include ) ) {
 		$text_conds = $text_include;
 		$match = false;
@@ -289,7 +289,7 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 	}
 
 	// this part is for text modification only (append, prefix, delete, replace)
-	if ( in_array( $mode, array( 'append','prefix','delete','replace' ) ) ) {
+	if ( in_array( $mode, [ 'append','prefix','delete','replace' ] ) ) {
 		# Modify the text
 		$old_text = $text;
 
@@ -391,7 +391,7 @@ echo PHP_EOL;
 
 # now for the category namespace
 $dbw =& wfGetDB( DB_MASTER );
-$res = $dbw->select( 'page', 'page_id, page_title', array( 'page_namespace' => NS_CATEGORY ), 'Database::select', array( 'order by' => 'page_title' ) );
+$res = $dbw->select( 'page', 'page_id, page_title', [ 'page_namespace' => NS_CATEGORY ], 'Database::select', [ 'order by' => 'page_title' ] );
 echo $dbw->numRows( $res ) . " articles in category namespace\n";
 foreach ( $res as $row ) {
 	$oldtitle = Title::newFromId( $row->page_id );

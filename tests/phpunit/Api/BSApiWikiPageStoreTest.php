@@ -75,10 +75,10 @@ class BSApiWikiPageStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	public function provideKeyItemData() {
-		return array(
+		return [
 			[ 'page_title', 'Зарегистрируйтесь_сейчас' ],
 			[ 'page_title', 'テスト' ],
 			[ 'page_namespace', 10 ]
-		);
+		];
 	}
 }

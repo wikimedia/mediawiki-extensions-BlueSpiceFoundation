@@ -53,7 +53,7 @@ class BsExtJSStoreParams {
 			return null;
 		}
 
-		return new self( array(
+		return new self( [
 			'limit'     => $iLimit,
 			'page'      => $iPage,
 			'start'     => $iStart,
@@ -63,7 +63,7 @@ class BsExtJSStoreParams {
 			'query'     => $sQuery,
 			'request'   => $oRequest,
 			'filter'    => $aFilter,
-		) );
+		] );
 	}
 
 	private function __construct( $aConf ) {

@@ -2,7 +2,7 @@
 
 class BsNamespaceHelper {
 
-	protected static $aNamespaceMap = array(
+	protected static $aNamespaceMap = [
 		-2 => 'NS_MEDIA',
 		-1 => 'NS_SPECIAL',
 		0 => 'NS_MAIN',
@@ -21,7 +21,7 @@ class BsNamespaceHelper {
 		13 => 'NS_HELP_TALK',
 		14 => 'NS_CATEGORY',
 		15 => 'NS_CATEGORY_TALK'
-	);
+	];
 
 	/**
 	 * returns the constantname for MW NS like 0 => NS_MAIN
@@ -105,7 +105,7 @@ class BsNamespaceHelper {
 	 */
 	public static function getNamespaceNamesAndAliases( $iNamespaceId ) {
 		global $wgContLang, $wgNamespaceAliases, $wgCanonicalNamespaceNames;
-		$aAliases = array();
+		$aAliases = [];
 
 		// get canonical name
 		$aAliases[] = $wgCanonicalNamespaceNames[$iNamespaceId];
@@ -163,15 +163,15 @@ class BsNamespaceHelper {
 		// make namespaces case insensitive
 		$sCSV = mb_strtolower( $sCSV );
 
-		if ( in_array( $sCSV, array( 'all', '-', '' ) ) ) {
+		if ( in_array( $sCSV, [ 'all', '-', '' ] ) ) {
 			// for compatibility reason the '-' is equivalent to 'all'
 			return array_keys( $wgContLang->getNamespaces() );
 		}
 
 		$aAmbiguousNS = explode( ',', $sCSV );
 		$aAmbiguousNS = array_map( 'trim', $aAmbiguousNS );
-		$aValidNamespaceIntIndexes = array();
-		$aInvalidNamespaces = array();
+		$aValidNamespaceIntIndexes = [];
+		$aInvalidNamespaces = [];
 
 		foreach ( $aAmbiguousNS as $vAmbiguousNS ) {
 			if ( is_numeric( $vAmbiguousNS ) ) {
@@ -221,9 +221,9 @@ class BsNamespaceHelper {
 	 * @param array $aExcludeIds
 	 * @return array
 	 */
-	public static function getNamespacesForSelectOptions( $aExcludeIds = array() ) {
+	public static function getNamespacesForSelectOptions( $aExcludeIds = [] ) {
 		global $wgContLang;
-		$aNamespaces = array();
+		$aNamespaces = [];
 
 		foreach ( $wgContLang->getNamespaces() as $sNamespace ) {
 			$iNsIndex = $wgContLang->getNsIndex( $sNamespace );

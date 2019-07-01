@@ -50,11 +50,11 @@ class BSTemplateHelper {
 			throw new BsException( "Unknowen Extension $sExtName" );
 		}
 		$sExtPath = $aExtensions[$sExtName]['extPath'];
-		$aTplDir = array(
+		$aTplDir = [
 			$GLOBALS['wgExtensionDirectory'],
 			$sExtPath,
 			static::$sTemplatePath
-		);
+		];
 		return $aTplDir;
 	}
 
@@ -81,11 +81,11 @@ class BSTemplateHelper {
 			throw new BsException( "Unknowen Extension $sExtName" );
 		}
 		$sExtPath = $aExtensions[$sExtName]['extPath'];
-		$sTplDir = implode( '/', array(
+		$sTplDir = implode( '/', [
 			$GLOBALS['wgExtensionDirectory'],
 			$sExtPath,
 			static::$sTemplatePath,
-		) );
+		] );
 		$sTplDir = BsFileSystemHelper::normalizePath( $sTplDir );
 
 		$sFullPath = str_replace( $sTplDir, '', $sFullPath );

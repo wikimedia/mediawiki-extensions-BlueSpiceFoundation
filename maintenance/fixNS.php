@@ -18,7 +18,7 @@ class FixNS extends Maintenance {
         $dbr = wfGetDB( DB_MASTER );
         $res = $dbr->select(
             "page",
-            array( "page_id", "page_title", "page_namespace" ),
+            [ "page_id", "page_title", "page_namespace" ],
             "page_namespace = 0",
             "page_namespace ".$dbr->buildLike( "%:%", $dbr->anyString() )
         );
@@ -40,15 +40,15 @@ class FixNS extends Maintenance {
                         if ( $nsData == $pageNS ) {
                             $dbr->update(
                                 "page",
-                                array(
+                                [
                                     "page_title = '".$pageName."'",
                                     "page_namespace = ".$nsKey
-                                ),
-                                array(
+                                ],
+                                [
                                     "page_title = '".$nsData.":".$pageName."'",
                                     "page_id = ".$pageId,
                                     "page_namespace = 0"
-                                )
+                                ]
                             );
                             $done = true;
                         }

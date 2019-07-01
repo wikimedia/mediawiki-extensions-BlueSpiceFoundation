@@ -11,7 +11,7 @@
 // PW:
 // TODO: use serialize
 // TODO: support MW < 1.17.0
-$options = array( 'help', 'execute', 'user', 'property', 'filtervalue', 'setvalue' );
+$options = [ 'help', 'execute', 'user', 'property', 'filtervalue', 'setvalue' ];
 require_once( 'BSMaintenance.php' );
 print_r( "\nMEDIAWIKI 1.17.0+ only!\n" );
 print_r( $options );
@@ -73,17 +73,17 @@ function updateUserProperties( $aUserStore, $options, $bDry ) {
 		if ( $aUserStore[$i]['value'] != "null" && $aUserStore[$i]['value'] != $options['setvalue'] ) {
 			if ( !$bDry ) {
 				$oDbw->replace( 'user_properties',
-						array( 'up_user' , 'up_property' ),
-						array( 'up_user' => $aUserStore[$i]['id'],
+						[ 'up_user' , 'up_property' ],
+						[ 'up_user' => $aUserStore[$i]['id'],
 								'up_property' => $options['property'],
 								'up_value' => $options['setvalue']
-						)
+						]
  );
 			}
 			$aUserStore[$i]['setvalue'] = $options['setvalue'];
 
 		}
-		displayMPCResult( array( $aUserStore[$i] ) );
+		displayMPCResult( [ $aUserStore[$i] ] );
 	}
 	echo "Dont forget to clear memcache :)";
 
@@ -101,7 +101,7 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 	$iCounter = count( $aUserStore );
 	for ( $i = 0; $i < $iCounter; $i++ ) {
 
-		$conditions = array();
+		$conditions = [];
 		$conditions[] = "up_user = '".$aUserStore[$i]['id']."'";
 		$conditions[] = "up_property = '".$property."'";
 
@@ -127,28 +127,28 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 function getMPCUser( $sGivenUser ) {
 	if ( $sGivenUser != "-1" ) {
 		if ( !ctype_digit( $sGivenUser ) ) {
-			$condition = array( 'user_name = \''.$sGivenUser.'\'' );
+			$condition = [ 'user_name = \''.$sGivenUser.'\'' ];
 		}
 		else {
-			$condition = array( 'user_id = '.$sGivenUser );
+			$condition = [ 'user_id = '.$sGivenUser ];
 		}
 	}
 
 	$oDbr = wfGetDB( DB_REPLICA );
 	$rRes = $oDbr->select( 'user',
-			array( 'user_id','user_name' ),
+			[ 'user_id','user_name' ],
 			$condition
  );
 
 	if ( !$rRes ) {
-		return array();
+		return [];
 	}
 
-	$aUser = array();
+	$aUser = [];
 	while ( $oRow = $oDbr->fetchRow( $rRes ) ) {
-		$aUser[] = array( 'id' => $oRow['user_id'],
+		$aUser[] = [ 'id' => $oRow['user_id'],
 						'name' => $oRow['user_name']
- );
+ ];
 	}
 
 	return $aUser;

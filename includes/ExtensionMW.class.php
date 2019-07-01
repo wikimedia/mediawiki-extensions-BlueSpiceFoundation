@@ -26,7 +26,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 */
 	protected $mCore = null;
 
-	protected $aStandardContext = array( '*', '*', '*' );
+	protected $aStandardContext = [ '*', '*', '*' ];
 
 	/**
 	 * @deprecated since version 3.0.0 - Use constructor instead
@@ -50,7 +50,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 */
 	public function getInfo() {
 		if ( !empty( $this->deprecatedSince ) ) {
-			return array(
+			return [
 				'path' => $this->mExtensionFile,
 				'name' => $this->mInfo[EXTINFO::NAME],
 				'version' => $this->mInfo[EXTINFO::VERSION],
@@ -59,19 +59,19 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 				'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION],
 				'status' => $this->sStatus,
 				'package' => $this->sPackage,
-			);
+			];
 		}
 		$aExtensions = ExtensionRegistry::getInstance()->getAllThings();
 		if ( empty( $aExtensions[$this->sName] ) ) {
-			return array(
+			return [
 				'status' => $this->sStatus,
 				'package' => $this->sPackage,
-			);
+			];
 		}
-		return $aExtensions[$this->sName] + array(
+		return $aExtensions[$this->sName] + [
 			'status' => $this->sStatus,
 			'package' => $this->sPackage,
-		);
+		];
 	}
 
 	/**
@@ -80,7 +80,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @param array $aConfig
 	 * @deprecated since version 3.0.0
 	 */
-	public function setup( $sExtName = "", $aConfig = array() ) {
+	public function setup( $sExtName = "", $aConfig = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
@@ -92,14 +92,14 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 				$this->mInfo[EXTINFO::VERSION]
 			);
 
-			$wgExtensionCredits[$this->mExtensionType][] = array(
+			$wgExtensionCredits[$this->mExtensionType][] = [
 				'path' => $this->mExtensionFile,
 				'name' => $this->mInfo[EXTINFO::NAME],
 				'version' => $sVersion,
 				'author' => $this->mInfo[EXTINFO::AUTHOR],
 				'url' => $this->mInfo[EXTINFO::URL],
 				'descriptionmsg' => $this->mInfo[EXTINFO::DESCRIPTION]
-			);
+			];
 			$this->deprecatedSince = $aConfig['deprecatedSince'];
 		}
 
@@ -127,7 +127,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		global $wgHooks;
 		// handle $method === 'on'.$hook as if $method == false
-		$register = ( $method && ( $method !== 'on' . $hook ) ) ? array( $this, $method ) : $this;
+		$register = ( $method && ( $method !== 'on' . $hook ) ) ? [ $this, $method ] : $this;
 		// do not set same hook twice
 		if ( isset( $wgHooks ) && isset( $wgHooks[$hook] )
 			&& is_array( $wgHooks[$hook] )
@@ -238,6 +238,6 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @return array
 	 */
 	public function makeTagExtensionDefinitions() {
-		return array();
+		return [];
 	}
 }

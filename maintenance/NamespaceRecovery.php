@@ -11,7 +11,7 @@
 // TODO: check if namespace (newns) exists
 // TODO: write log
 // TODO: add some logic
-$options = array( 'help', 'execute', 'oldns', 'newns' );
+$options = [ 'help', 'execute', 'oldns', 'newns' ];
 require_once( 'BSMaintenance.php' );
 print_r( $options );
 
@@ -43,27 +43,27 @@ function showHelp() {
 }
 
 function NSRecoveryController( $bDry, $options ) {
-	$aPages = getDataFromNSBackup( 'page', array( 'page_namespace' => $options['oldns'] ) );
+	$aPages = getDataFromNSBackup( 'page', [ 'page_namespace' => $options['oldns'] ] );
 
         if ( empty( $aPages ) ) {
             die( "backup for namespace ".$options['oldns']." not found" );
         }
-        $aRevisions = array();
-        $aTexts     = array();
+        $aRevisions = [];
+        $aTexts     = [];
         $numPages = count( $aPages );
         for ( $i = 0; $i < $numPages; $i++ ) {
-            $aRevisions[$i] = getDataFromNSBackup( 'revision', array( 'rev_page' => $aPages[$i]['page_id'] ) );
+            $aRevisions[$i] = getDataFromNSBackup( 'revision', [ 'rev_page' => $aPages[$i]['page_id'] ] );
 
             $numRevisions = count( $aRevisions[$i] );
             for ( $ir = 0; $ir < $numRevisions; $ir++ ) {
-                $aTexts[$i][$ir] = getDataFromNSBackup( 'text', array( 'old_id' => $aRevisions[$i][$ir]['rev_text_id'] ) );
+                $aTexts[$i][$ir] = getDataFromNSBackup( 'text', [ 'old_id' => $aRevisions[$i][$ir]['rev_text_id'] ] );
             }
         }
         // var_dump($aRevisions);
         setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options );
 }
 
-function getDataFromNSBackup( $sTable, $aConditions = array(), $aReturn = array() ) {
+function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
     $oDbr = wfGetDB( DB_REPLICA );
 
 	$sTable = 'bs_namespacemanager_backup_'.$sTable;
@@ -71,7 +71,7 @@ function getDataFromNSBackup( $sTable, $aConditions = array(), $aReturn = array(
     $rRes = $oDbr->select( $sTable, '*', $aConditions );
     var_dump( $oDbr->lastQuery() );
     if ( empty( $rRes ) ) {
-    	return array();
+    	return [];
     }
 
     foreach ( $rRes as $row ) {

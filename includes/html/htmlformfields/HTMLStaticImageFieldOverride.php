@@ -3,7 +3,7 @@
 class HTMLStaticImageFieldOverride extends HTMLInfoField {
 
 	function getInputHTML( $value ) {
-		return Xml::element( "img", array( 'src' => $value['src'] ) );
+		return Xml::element( "img", [ 'src' => $value['src'] ] );
 	}
 
 }

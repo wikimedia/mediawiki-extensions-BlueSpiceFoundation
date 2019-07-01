@@ -30,7 +30,7 @@
 
 class BsValidator {
 
-	protected static $prKnownPlugins = array();
+	protected static $prKnownPlugins = [];
 
 	/**
 	 * Call BsValidator::isValid to validate several types of user input
@@ -45,7 +45,7 @@ class BsValidator {
 	 * - BsValidator::isValid('Ip', '0.0.0.0');<br />
 	 * </p>
 	 */
-	public static function isValid( $type, $validateThis, $options = array() ) {
+	public static function isValid( $type, $validateThis, $options = [] ) {
 		if ( !is_array( $options ) ) {
 			throw new BsException( 'BsValidator::isValid called with 3rd param that is no array' );
 		}

@@ -68,7 +68,7 @@ abstract class StoreApiBase extends \BSApiBase {
 	 * @param \BlueSpice\Data\Schema|null $schema An array of meta data items
 	 */
 	protected function returnData( $resultSet, $schema = null ) {
-		\Hooks::run( 'BSApiStoreBaseBeforeReturnData', array( $this, &$resultSet, &$schema ) );
+		\Hooks::run( 'BSApiStoreBaseBeforeReturnData', [ $this, &$resultSet, &$schema ] );
 		$apiResult = $this->getResult();
 
 		// Unfortunately \ApiResult does not like \JsonSerializable[], so we
@@ -89,74 +89,74 @@ abstract class StoreApiBase extends \BSApiBase {
 	 * @return array
 	 */
 	public function getAllowedParams() {
-		return array(
-			'sort' => array(
+		return [
+			'sort' => [
 				\ApiBase::PARAM_TYPE => 'string',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_DFLT => '[]',
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-sort',
-			),
-			'group' => array(
+			],
+			'group' => [
 				\ApiBase::PARAM_TYPE => 'string',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_DFLT => '[]',
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-group',
-			),
-			'filter' => array(
+			],
+			'filter' => [
 				\ApiBase::PARAM_TYPE => 'string',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_DFLT => '[]',
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-filter',
-			),
-			'page' => array(
+			],
+			'page' => [
 				\ApiBase::PARAM_TYPE => 'integer',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_DFLT => 0,
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-page',
-			),
-			'limit' => array(
+			],
+			'limit' => [
 				\ApiBase::PARAM_TYPE => 'integer',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_DFLT => 25,
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-limit',
-			),
-			'start' => array(
+			],
+			'start' => [
 				\ApiBase::PARAM_TYPE => 'integer',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_DFLT => 0,
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-start',
-			),
-			'callback' => array(
+			],
+			'callback' => [
 				\ApiBase::PARAM_TYPE => 'string',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-callback',
-			),
-			'query' => array(
+			],
+			'query' => [
 				\ApiBase::PARAM_TYPE => 'string',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-query',
-			),
-			'_dc' => array(
+			],
+			'_dc' => [
 				\ApiBase::PARAM_TYPE => 'integer',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-dc',
-			),
-			'format' => array(
+			],
+			'format' => [
 				\ApiBase::PARAM_DFLT => 'json',
-				\ApiBase::PARAM_TYPE => array( 'json', 'jsonfm' ),
+				\ApiBase::PARAM_TYPE => [ 'json', 'jsonfm' ],
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-format',
-			),
-			'context' => array(
+			],
+			'context' => [
 				\ApiBase::PARAM_TYPE => 'string',
 				\ApiBase::PARAM_REQUIRED => false,
 				\ApiBase::PARAM_DFLT => '{}',
 				\ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-context',
-			),
-		);
+			],
+		];
 	}
 
 	public function getParamDescription() {
-		return array(
+		return [
 			'sort' => 'JSON string with sorting info; deserializes to "array of objects" that hold field name and direction for each sorting option',
 			'group' => 'JSON string with grouping info; deserializes to "array of objects" that hold field name and direction for each grouping option',
 			'filter' => 'JSON string with filter info; deserializes to "array of objects" that hold field name, filter type, and filter value for each filtering option',
@@ -168,7 +168,7 @@ abstract class StoreApiBase extends \BSApiBase {
 			'_dc' => '"Disable cache" flag',
 			'format' => 'The format of the output (only JSON or formatted JSON)',
 			'context' => 'JSON string encoded object with context data for the store',
-		);
+		];
 	}
 
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {

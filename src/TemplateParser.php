@@ -12,11 +12,11 @@ class TemplateParser extends \TemplateParser {
 		}
 
 		return \LightnCandy::compile(
-			$code, array(
+			$code, [
 			  // Do not add more flags here without discussion.
 			  // If you do add more flags, be sure to update unit tests as well.
 			  'flags' => \LightnCandy::FLAG_ERROR_EXCEPTION,
-			  'helpers' => array(
+			  'helpers' => [
 				  '_' => function ( $msg ) {
 					  if ( count( $msg ) > 1 ) {
 						  $msgKey = array_shift( $msg );
@@ -28,8 +28,8 @@ class TemplateParser extends \TemplateParser {
 				  '__' => function ( $msg ) {
 					  return wfMessage( $msg )->parse();
 				  },
-			  )
-			)
+			  ]
+			]
 		);
 	}
 

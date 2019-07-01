@@ -2,22 +2,22 @@
 
 class BSApiUserStore extends BSApiExtJSStoreBase {
 
-	protected $aGroups = array();
-	protected $aBlocks = array();
+	protected $aGroups = [];
+	protected $aBlocks = [];
 
 	protected function makeData( $sQuery = '' ) {
 		$dbr = $this->getDB();
 
-		$this->aGroups = array();
+		$this->aGroups = [];
 		$groupsRes = $dbr->select( 'user_groups', '*' );
 		foreach ( $groupsRes as $row ) {
 			if ( !isset( $this->aGroups[$row->ug_user] ) ) {
-				$this->aGroups[$row->ug_user] = array();
+				$this->aGroups[$row->ug_user] = [];
 			}
 			$this->aGroups[$row->ug_user][] = $row->ug_group;
 		}
 
-		$this->aBlocks = array();
+		$this->aBlocks = [];
 		$blocksRes = $dbr->select( 'ipblocks', '*' );
 		foreach ( $blocksRes as $row ) {
 			$this->aBlocks[$row->ipb_user] = $row->ipb_address;
@@ -29,7 +29,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 		// calculated. This would also be very expensive and a potential
 		// security issue.
 
-		$aData = array();
+		$aData = [];
 		$userRes = $dbr->select( 'user', '*' );
 		foreach ( $userRes as $aRow ) {
 			$aResRow = $this->makeResultRow( $aRow );
@@ -49,13 +49,13 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	 */
 	protected function makeResultRow( $row ) {
 		$oUserPageTitle = Title::makeTitle( NS_USER, $row->user_name );
-		return array(
+		return [
 			'user_id' => (int)$row->user_id,
 			'user_name' => $row->user_name,
 			'user_real_name' => $row->user_real_name,
 			'user_registration' => $row->user_registration,
 			'user_editcount' => (int)$row->user_editcount,
-			'groups' => isset( $this->aGroups[$row->user_id] ) ? $this->aGroups[$row->user_id] : array(),
+			'groups' => isset( $this->aGroups[$row->user_id] ) ? $this->aGroups[$row->user_id] : [],
 			'enabled' => isset( $this->aBlocks[$row->user_id] ) ? false : true,
 			'page_link' => $this->oLinkRenderer->makeLink(
 				$oUserPageTitle,
@@ -66,7 +66,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 			// legacy fields
 			'display_name' => $row->user_real_name == null ? $row->user_name : $row->user_real_name,
 			'page_prefixed_text' => $oUserPageTitle->getPrefixedText()
-		);
+		];
 	}
 
 	/**
@@ -97,11 +97,11 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 				}
 			}
 			if ( !$bEnabledFilterIsSet ) {
-				$value[] = (object)array(
+				$value[] = (object)[
 					'type' => 'boolean',
 					'value' => true,
 					'field' => 'enabled'
-				);
+				];
 			}
 		}
 

@@ -27,7 +27,7 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 	function getInputHTML( $value ) {
 		$html = $this->formatOptions( $this->mParams['options'], $value, 'multiselectplusadd' );
 
-		$attrs = array(
+		$attrs = [
 			'type' => 'button',
 			'id' => $this->mName . '-add',
 			'title' => wfMessage( 'bs-extjs-add' )->text(),
@@ -36,17 +36,17 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 			'class' => 'bsMultiSelectAddButton',
 			'onclick' => 'bs.util.addEntryToMultiSelect(this);',
 			'value' => '+'
-		);
+		];
 		$button = Html::element( 'input', $attrs );
 
-		$attrs = array(
+		$attrs = [
 			'type' => 'button',
 			'id' => $this->mName . '-delete',
 			'targetField' => $this->mName,
 			'class' => 'bsMultiSelectDeleteButton',
 			'onclick' => 'bs.util.deleteEntryFromMultiSelect(this);',
 			'value' => '-'
-		);
+		];
 		$button .= Html::element( 'input', $attrs );
 
 		return $html.'<div>'.$button.'</div>';

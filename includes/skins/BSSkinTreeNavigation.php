@@ -41,9 +41,9 @@ abstract class BSSkinTreeNavigation {
 
 		return Html::rawElement(
 			'div',
-			array(
+			[
 				'id' => $this->getContainerID(),
-			),
+			],
 			$this->renderTree()
 		);
 	}
@@ -52,9 +52,9 @@ abstract class BSSkinTreeNavigation {
 	 * @return string[] the resource loader modules needed by this component
 	 */
 	public function getResourceLoaderModules() {
-		return array(
+		return [
 			'ext.bluespice.skin.treenavigation'
-		);
+		];
 	}
 
 	protected function renderTree() {

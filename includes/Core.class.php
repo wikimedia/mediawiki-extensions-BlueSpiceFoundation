@@ -43,7 +43,7 @@ class BsCore {
 	 * Array of illegal chars in article title
 	 * @var array
 	 */
-	protected static $prForbiddenCharsInArticleTitle = array( '#', '<', '>', '[', ']', '|', '{', '}' );
+	protected static $prForbiddenCharsInArticleTitle = [ '#', '<', '>', '[', ']', '|', '{', '}' ];
 	/**
 	 * an array of adapter instances
 	 * @var array
@@ -75,7 +75,7 @@ class BsCore {
 	 * Simple caching mechanism for UserMiniProfiles
 	 * @var array
 	 */
-	protected static $aUserMiniProfiles = array();
+	protected static $aUserMiniProfiles = [];
 
 	protected static $bHtmlFormClassLoaded = false;
 
@@ -127,7 +127,7 @@ class BsCore {
 			if ( is_array( $handover ) ) {
 				return $handover;
 			}
-			return array( $handover );
+			return [ $handover ];
 		}
 		if ( $options & BsPARAMTYPE::NUMERIC ) {
 			if ( is_numeric( $handover ) ) {
@@ -381,7 +381,7 @@ class BsCore {
 	 * @param array $aParams The settings array for the mini profile view object
 	 * @return ViewUserMiniProfile A view with the users mini profile
 	 */
-	public function getUserMiniProfile( $oUser, $aParams = array() ) {
+	public function getUserMiniProfile( $oUser, $aParams = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$sParamsHash = md5( serialize( $aParams ) );
 		$sViewHash = $oUser->getName() . $sParamsHash;
@@ -394,7 +394,7 @@ class BsCore {
 		$oUserMiniProfileView->setOptions( $aParams );
 		$oUserMiniProfileView->setOption( 'user', $oUser );
 
-		Hooks::run( 'BSCoreGetUserMiniProfileBeforeInit', array( &$oUserMiniProfileView, &$oUser, &$aParams ) );
+		Hooks::run( 'BSCoreGetUserMiniProfileBeforeInit', [ &$oUserMiniProfileView, &$oUser, &$aParams ] );
 
 		$oUserMiniProfileView->init();
 
@@ -418,7 +418,7 @@ class BsCore {
 	 * The default here is ('type' = 'namespace')
 	 * @return void
 	 */
-	public function registerPermission( $sPermissionName, $aUserGroups = array(), $aConfig = array() ) {
+	public function registerPermission( $sPermissionName, $aUserGroups = [], $aConfig = [] ) {
 		global $wgGroupPermissions, $wgAvailableRights, $bsgPermissionConfig;
 
 		$aUserGroups = array_merge( [
@@ -428,7 +428,7 @@ class BsCore {
 			if ( isset( $aConfig ) ) {
 				$bsgPermissionConfig[$sPermissionName] = $aConfig;
 			} else {
-				$bsgPermissionConfig[$sPermissionName] = array( 'type' => 'namespace' );
+				$bsgPermissionConfig[$sPermissionName] = [ 'type' => 'namespace' ];
 			}
 		}
 		foreach ( $aUserGroups as $sGroup ) {

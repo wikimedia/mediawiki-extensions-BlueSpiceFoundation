@@ -7,7 +7,7 @@ class NullLogger extends ActionLogger {
 	public function __construct( $type = null, $performer = null, $target = null ) {
 	}
 
-	public function log( $action, $params, $options = array(), $publish = false ) {
+	public function log( $action, $params, $options = [], $publish = false ) {
 		return 0;
 	}
 }

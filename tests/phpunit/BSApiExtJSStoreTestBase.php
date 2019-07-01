@@ -75,9 +75,9 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 * @dataProvider provideKeyItemData
 	 */
 	public function testKeyItem( $keyItemKey, $keyItemValue ) {
-		$aParams = array(
+		$aParams = [
 			'action' => $this->getModuleName()
-		);
+		];
 		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
@@ -102,11 +102,11 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 * @dataProvider providePagingData
 	 */
 	public function testPaging( $limit, $offset ) {
-		$aParams = array(
+		$aParams = [
 			'action' => $this->getModuleName(),
 			'limit' => $limit,
 			'start' => $offset
-		);
+		];
 		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
@@ -127,14 +127,14 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	}
 
 	public function providePagingData() {
-		return array(
+		return [
 			[ 2, 0 ],
 			[ 2, 2 ],
 			[ 2, 4 ],
 			[ 4, 0 ],
 			[ 4, 4 ],
 			[ 4, 8 ]
-		);
+		];
 	}
 
 	/**
@@ -156,7 +156,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 * @dataProvider provideSingleFilterData
 	 */
 	public function testSingleFilter( $type, $comparison, $field, $value, $expectedTotal ) {
-		$aParams = array(
+		$aParams = [
 			'action' => $this->getModuleName(),
 			'filter' => \FormatJson::encode( [
 				[
@@ -166,7 +166,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 					'value' => $value
 				]
 			] )
-		);
+		];
 		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
@@ -193,10 +193,10 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 * @dataProvider provideMultipleFilterData
 	 */
 	public function testMultipleFilter( $filters, $expectedTotal ) {
-		$aParams = array(
+		$aParams = [
 			'action' => $this->getModuleName(),
 			'filter' => \FormatJson::encode( $filters )
-		);
+		];
 		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
@@ -217,9 +217,9 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	abstract public function provideMultipleFilterData();
 
 	protected function makeRequestParams() {
-		$aParams = array(
+		$aParams = [
 			'action' => $this->getModuleName()
-		);
+		];
 		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;
 		}
