@@ -12,7 +12,7 @@ class BsDOMHelper {
 	 * @param array $aElementNames
 	 * @return DOMElement | null
 	 */
-	public static function getPreviousDOMElementSibling( $oNode, $aElementNames = array() ) {
+	public static function getPreviousDOMElementSibling( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
@@ -30,7 +30,7 @@ class BsDOMHelper {
 	 * @param array $aElementNames
 	 * @return DOMElement | null
 	 */
-	public static function getNextDOMElementSibling( $oNode, $aElementNames = array() ) {
+	public static function getNextDOMElementSibling( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
@@ -48,7 +48,7 @@ class BsDOMHelper {
 	 * @param array $aElementNames
 	 * @return DOMElement | null
 	 */
-	public static function getParentDOMElement( $oNode, $aElementNames = array() ) {
+	public static function getParentDOMElement( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
@@ -66,7 +66,7 @@ class BsDOMHelper {
 	 * @param array $aElementNames
 	 * @return DOMElement | null
 	 */
-	public static function getFirstDOMElementChild( $oNode, $aElementNames = array() ) {
+	public static function getFirstDOMElementChild( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {
 			return null;
 		}
@@ -126,7 +126,7 @@ class BsDOMHelper {
 	 */
 	public static function getElementsByClassNames( $oDOMDoc, $aClassNames ) {
 		$oDOMXPath = new DOMXPath( $oDOMDoc );
-		$aClassQuery = array();
+		$aClassQuery = [];
 		foreach ( $aClassNames as $sClassName ) {
 			# //*[contains(concat(' ', normalize-space(@class), ' '), ' Test ')]
 			$aClassQuery[] = "contains(concat(' ', normalize-space(@class), ' '), ' $sClassName ')";
@@ -134,7 +134,7 @@ class BsDOMHelper {
 		$sQuery = '//*['.implode( ' or ', $aClassQuery ).']';
 		$oElements = $oDOMXPath->query( $sQuery );
 
-		$aElements = array();
+		$aElements = [];
 		foreach ( $oElements as $oElement ) {
 			$aElements[] = $oElement;
 		}
@@ -151,7 +151,7 @@ class BsDOMHelper {
 	 * names were found of provided list was no array
 	 */
 	public static function getElementsByTagNames( $oDOMDoc, $aTagnames ) {
-		$aElements = array();
+		$aElements = [];
 		if ( !is_array( $aTagnames ) ) {
 			return $aElements;
 		}

@@ -114,7 +114,7 @@ class BSExtractFiles extends BSMaintenance {
 			RecursiveIteratorIterator::SELF_FIRST
 		);
 
-		$this->sourceImages = array();
+		$this->sourceImages = [];
 		foreach ( $files as $path => $file ) {
 			$file instanceof SplFileInfo;
 			if ( !$file->isFile() ) {

@@ -39,32 +39,32 @@ class ConfirmUserEMail extends Maintenance {
 	private function getUser( $sGivenUser ) {
 		if ( $sGivenUser != "-1" ) {
 			if ( !ctype_digit( $sGivenUser ) ) {
-				$condition = array( 'user_name = \''.$sGivenUser.'\'' );
+				$condition = [ 'user_name = \''.$sGivenUser.'\'' ];
 			}
 			else {
-				$condition = array( 'user_id = '.$sGivenUser );
+				$condition = [ 'user_id = '.$sGivenUser ];
 			}
 		}
 
 		$oDbr = wfGetDB( DB_REPLICA );
 		$rRes = $oDbr->select( 'user',
-				array( 'user_id','user_name','user_email','user_email_authenticated' ),
+				[ 'user_id','user_name','user_email','user_email_authenticated' ],
 				$condition
  );
 
 		if ( !$rRes ) {
-			return array();
+			return [];
 		}
 
-		$aUser = array();
+		$aUser = [];
 		while ( $aRow = $oDbr->fetchRow( $rRes ) ) {
-			$aUser[] = array(
+			$aUser[] = [
 				'id'	=> $aRow['user_id'],
 				'name'	=> $aRow['user_name'],
 				'email' => $aRow['user_email'],
 				'setvalue' => $aRow['user_email_authenticated'],
 				'value'	=> 'authentification'
-			);
+			];
 		}
 
 		return $aUser;
@@ -84,8 +84,8 @@ class ConfirmUserEMail extends Maintenance {
 			if ( empty( $aUserStore[$i]['setvalue'] ) ) {
 				if ( $bExecute ) {
 					$oDbw->update( 'user',
-						array( 'user_email_authenticated' => date( 'YmdHis' ) ),
-						array( 'user_id' => $aUserStore[$i]['id'] )
+						[ 'user_email_authenticated' => date( 'YmdHis' ) ],
+						[ 'user_id' => $aUserStore[$i]['id'] ]
 					);
 				}
 				$aUserStore[$i]['setvalue'] = ' => confirmed';

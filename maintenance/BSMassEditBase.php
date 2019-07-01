@@ -3,8 +3,8 @@
 require_once( __DIR__.'/BSMaintenance.php' );
 
 class BSMassEditBase extends BSMaintenance {
-	protected $aFileMap = array();
-	protected $aPageNameMap = array();
+	protected $aFileMap = [];
+	protected $aPageNameMap = [];
 
 	protected $iTitleCount = 0;
 	protected $iModifiedTitleCount = 0;
@@ -62,7 +62,7 @@ class BSMassEditBase extends BSMaintenance {
 	 */
 	protected function getTitleList() {
 		$dbr = $this->getDB( DB_REPLICA );
-		$aTitles = array();
+		$aTitles = [];
 
 		$res = $dbr->select( 'page', '*' );
 		foreach ( $res as $row ) {
@@ -117,7 +117,7 @@ class BSMassEditBase extends BSMaintenance {
 	protected function modifyTextContent( $sContent, $oWikiPage ) {
 		$sNewContent = preg_replace_callback(
 			$this->getTextModificationRegexPatterns(),
-			array( $this, 'textModificationCallback' ),
+			[ $this, 'textModificationCallback' ],
 			$sContent
 		);
 

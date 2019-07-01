@@ -47,15 +47,15 @@ class BSRemoteAPIBase extends BSMaintenance {
 	}
 
 	public function doAPILogin() {
-		$options = array(
+		$options = [
 			'method' => 'POST',
-			'postData' => array(
+			'postData' => [
 				'action' => 'login',
 				'format' => 'json',
 				'lgname' => $this->username,
 				'lgpassword' => $this->password
-			)
-		);
+			]
+		];
 
 		// Second pass
 		if ( $this->token !== null ) {
@@ -93,10 +93,10 @@ class BSRemoteAPIBase extends BSMaintenance {
 	}
 
 	public function makePOSTRequest( $aOptions ) {
-		$options = array(
+		$options = [
 			'method' => 'POST',
 			'postData' => $aOptions
-		);
+		];
 
 		Http::$httpEngine = 'curl';
 		$request = MWHttpRequest::factory( $this->apiUrl, $options );
@@ -106,12 +106,12 @@ class BSRemoteAPIBase extends BSMaintenance {
 	}
 
 	public function getAPIEditToken() {
-		$query = array(
+		$query = [
 			'action' => 'query',
 			'format' => 'json',
 			'meta' => 'tokens',
 			'type' => 'csrf',
-		);
+		];
 
 		Http::$httpEngine = 'curl';
 		$req = MWHttpRequest::factory(

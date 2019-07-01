@@ -165,8 +165,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		}
 
 		// First query: Get all files and their pages
-		$aReturn = array();
-		$aUserNames = array();
+		$aReturn = [];
+		$aUserNames = [];
 		foreach ( $res as $oRow ) {
 			try {
 				$title = Title::makeTitle( NS_FILE, $oRow->img_name );
@@ -181,7 +181,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 			$aUserNames[$oImg->getUser( 'text' )] = '';
 
-			$aReturn[ $oRow->page_id ] = (object)array(
+			$aReturn[ $oRow->page_id ] = (object)[
 				'file_url' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_name' => $oImg->getName(),
 				'file_size' => $oImg->getSize(),
@@ -208,7 +208,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'page_latest' => (int)$oRow->page_latest,
 				'page_namespace' => (int)$oRow->page_namespace,
 				// Filled by a second step below
-				'page_categories' => array(),
+				'page_categories' => [],
 				'page_categories_links' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'page_is_redirect' => (bool)$oRow->page_is_redirect,
 
@@ -220,7 +220,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				// form here.
 				'page_is_new' => (bool)$oRow->page_is_new,
 				'page_touched' => $this->getLanguage()->userAdjust( $oRow->page_touched )
-			);
+			];
 		}
 
 		// Second query: Get all categories of each file page
@@ -229,8 +229,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			$oDbr = wfGetDB( DB_REPLICA );
 			$oCatRes = $oDbr->select(
 				'categorylinks',
-				array( 'cl_from', 'cl_to' ),
-				array( 'cl_from' => $aPageIds )
+				[ 'cl_from', 'cl_to' ],
+				[ 'cl_from' => $aPageIds ]
 			);
 			foreach ( $oCatRes as $oCatRow ) {
 				$aReturn[$oCatRow->cl_from]->page_categories[] = $oCatRow->cl_to;
@@ -243,8 +243,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			$oDbr = wfGetDB( DB_REPLICA );
 			$oUserRes = $oDbr->select(
 				'user',
-				array( 'user_name', 'user_real_name' ),
-				array( 'user_name' => array_keys( $aUserNames ) )
+				[ 'user_name', 'user_real_name' ],
+				[ 'user_name' => array_keys( $aUserNames ) ]
 			);
 
 			foreach ( $oUserRes as $oUserRow ) {
@@ -264,13 +264,13 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	protected function fetchCaseInsensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_REPLICA );
 
-		$aContidions = array(
+		$aContidions = [
 			'page_namespace' => NS_FILE,
 			'page_title = img_name',
 			// Needed for case insensitive quering; Maybe
 			'page_id = si_page'
 			// implement 'query' as a implicit filter on 'img_name' field?
-		);
+		];
 
 		if ( !empty( $sQuery ) ) {
 			$aContidions[] = "si_title ".$oDbr->buildLike(
@@ -282,7 +282,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		}
 
 		$res = $oDbr->select(
-			array( 'image', 'page', 'searchindex' ),
+			[ 'image', 'page', 'searchindex' ],
 			'*',
 			$aContidions,
 			__METHOD__
@@ -294,10 +294,10 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	protected function fetchCaseSensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_REPLICA );
 
-		$aContidions = array(
+		$aContidions = [
 			'page_namespace' => NS_FILE,
 			'page_title = img_name',
-		);
+		];
 
 		if ( !empty( $sQuery ) ) {
 			$aContidions[] = "img_name ".$oDbr->buildLike(
@@ -308,7 +308,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		}
 
 		$res = $oDbr->select(
-			array( 'image', 'page' ),
+			[ 'image', 'page' ],
 			'*',
 			$aContidions,
 			__METHOD__

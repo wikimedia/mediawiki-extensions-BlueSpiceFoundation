@@ -98,11 +98,11 @@ class BsConfig {
 	 *
 	 * @var array
 	 */
-	protected static $prSettings = array();
+	protected static $prSettings = [];
 
-	protected static $prRegisterAdapter = array();
+	protected static $prRegisterAdapter = [];
 
-	protected static $prRegisterExtension = array();
+	protected static $prRegisterExtension = [];
 
 	protected static $prGetUsersSettings = true;
 
@@ -111,7 +111,7 @@ class BsConfig {
 	 *
 	 * @var array
 	 */
-	protected static $prRegisterJavascript = array();
+	protected static $prRegisterJavascript = [];
 
 	// TODO MRG20100810: was ist mit path gemeint? bitte im kommentar erklÃ¤ren und ggf. besser benennen.
 	/**
@@ -190,7 +190,7 @@ class BsConfig {
 	public static function get( $sPath ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$mReturn = null;
-		if ( !Hooks::run( "BSCoreConfigGet", array( $sPath, &$mReturn ) ) ) {
+		if ( !Hooks::run( "BSCoreConfigGet", [ $sPath, &$mReturn ] ) ) {
 			return $mReturn;
 		}
 
@@ -288,9 +288,9 @@ class BsConfig {
 			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from DB' );
 			$dbr = wfGetDB( DB_REPLICA );
 			# query the settings from bs_settings
-			$aRows = array();
+			$aRows = [];
 			if ( $dbr->tableExists( 'bs_settings' ) ) {
-				$res = $dbr->select( 'bs_settings', array( $dbr->addIdentifierQuotes( 'key' ), $dbr->addIdentifierQuotes( 'value' ) ) );
+				$res = $dbr->select( 'bs_settings', [ $dbr->addIdentifierQuotes( 'key' ), $dbr->addIdentifierQuotes( 'value' ) ] );
 
 				while ( $row = $res->fetchObject() ) {
 					$aRows[] = $row;
@@ -320,7 +320,7 @@ class BsConfig {
 		}
 		$dbw->delete( 'bs_settings', '*' );
 
-		$aSettings = array();
+		$aSettings = [];
 
 		foreach ( self::$prSettings as $setting ) {
 			# if the setting is not a public or a user setting
@@ -342,18 +342,18 @@ class BsConfig {
 				$value = $setting->getValue();
 			}
 			# save the setting in the settings array
-			$aSettings[] = array(
+			$aSettings[] = [
 				$dbw->addIdentifierQuotes( 'key' ) => $setting->getKey(),
 				$dbw->addIdentifierQuotes( 'value' ) => serialize( $value )
-			);
+			];
 		}
 
-		Hooks::run( 'BsSettingsBeforeSaveSettings', array( &$aSettings ) );
+		Hooks::run( 'BsSettingsBeforeSaveSettings', [ &$aSettings ] );
 
 		# write the settings array to the database
 		$bReturn = $dbw->insert( 'bs_settings', $aSettings );
 
-		Hooks::run( 'BsSettingsAfterSaveSettings', array( $aSettings ) );
+		Hooks::run( 'BsSettingsAfterSaveSettings', [ $aSettings ] );
 
 		BsCacheHelper::invalidateCache(
 			BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' )
@@ -412,9 +412,9 @@ class BsConfig {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
 		$oDb = wfGetDB( DB_REPLICA );
-		$aUsers = array();
+		$aUsers = [];
 
-		$aConditions = array( 'up_property' => $sKey );
+		$aConditions = [ 'up_property' => $sKey ];
 		if ( $sSingleValFromMultiple ) {
 			$aConditions[] = 'up_value like "%'.$vValue.'%"';
 		} else {
@@ -832,13 +832,13 @@ class BsConfig {
 	 * @return array
 	 */
 	public function getFieldDefinition( $sSection ) {
-		$aField = array(
+		$aField = [
 			'type' => $this->getFieldMapping(),
 			// a system message
 			'label-message' => $this->getI18nName(),
 			'section' => strtolower( $sSection ),
 			'default' => $this->getValue()
-		);
+		];
 
 		// Field message and title for dialog
 		if ( $this->getFieldMapping() == 'multiselectplusadd' ) {

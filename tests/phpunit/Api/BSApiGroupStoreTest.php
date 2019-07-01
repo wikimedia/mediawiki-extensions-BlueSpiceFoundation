@@ -78,10 +78,10 @@ class BSApiGroupStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	public function provideKeyItemData() {
-		return array(
+		return [
 			[ 'group_name', 'sysop' ],
 			[ 'group_name', 'bot' ],
 			[ 'group_name', 'dummy' ]
-		);
+		];
 	}
 }

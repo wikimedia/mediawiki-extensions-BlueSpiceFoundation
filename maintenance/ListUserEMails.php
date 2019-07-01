@@ -29,7 +29,7 @@ class ListUserEmails extends BSMaintenance {
 			$this->output( "No users found" );
 			return;
 		}
-		$aUserMails = array();
+		$aUserMails = [];
 		foreach ( $aAllUserData as $aUserData ) {
 			if ( $bConfirmed && $aUserData['auth'] === null ) {
 				continue;
@@ -45,22 +45,22 @@ class ListUserEmails extends BSMaintenance {
 	private function getUserData() {
 		$oDbr = wfGetDB( DB_REPLICA );
 		$rRes = $oDbr->select( 'user',
-			array(
+			[
 				'user_email',
 				'user_email_authenticated'
-			)
+			]
 		);
 
 		if ( !$rRes ) {
-			return array();
+			return [];
 		}
 
-		$aUser = array();
+		$aUser = [];
 		while ( $aRow = $oDbr->fetchRow( $rRes ) ) {
-			$aUser[] = array(
+			$aUser[] = [
 				'email' => $aRow['user_email'],
 				'auth'  => $aRow['user_email_authenticated']
-			);
+			];
 		}
 
 		return $aUser;

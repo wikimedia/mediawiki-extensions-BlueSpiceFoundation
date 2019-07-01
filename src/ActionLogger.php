@@ -54,7 +54,7 @@ class ActionLogger {
 	 * @param boolean $publish Whether to list in recent changes or not
 	 * @return int
 	 */
-	public function log( $action, $params, $options = array(), $publish = false ) {
+	public function log( $action, $params, $options = [], $publish = false ) {
 		$options += [
 			self::OPT_PERFORMER => null,
 			self::OPT_TARGET => null,

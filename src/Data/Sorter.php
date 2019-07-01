@@ -33,7 +33,7 @@ class Sorter {
 				continue;
 			}
 
-			$valuesOf{$property} = array();
+			$valuesOf{$property} = [];
 			foreach ( $dataSets as $idx => $dataSet ) {
 				$valuesOf{$property}[$idx] =
 					$this->getSortValue( $dataSet, $property );

@@ -72,8 +72,8 @@ class BSApiUploadLicenseStoreTest extends BSApiExtJSStoreTestBase {
 	}
 
 	public function provideKeyItemData() {
-		return array(
+		return [
 			[ 'text', 'None selected' ]
-		);
+		];
 	}
 }

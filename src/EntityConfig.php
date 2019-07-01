@@ -117,7 +117,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 */
 	public function has( $method ) {
 		$method = "get_$method";
-		if ( is_callable( array( $this, $method ) ) ) {
+		if ( is_callable( [ $this, $method ] ) ) {
 			return true;
 		}
 		if ( isset( $this->defaults[$method] ) ) {
@@ -131,7 +131,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 * @return stdClass
 	 */
 	public function jsonSerialize() {
-		$aConfig = array();
+		$aConfig = [];
 		foreach ( get_class_methods( $this ) as $sMethod ) {
 			if ( strpos( $sMethod, 'get_' ) !== 0 ) {
 				continue;

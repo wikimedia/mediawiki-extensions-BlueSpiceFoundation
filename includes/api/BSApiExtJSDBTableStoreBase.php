@@ -34,7 +34,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 	 * will be done by the base class
 	 */
 	protected function makeData( $sQuery = '' ) {
-		$aData = array();
+		$aData = [];
 
 		$aFilter = $this->getParameter( 'filter' );
 
@@ -44,7 +44,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		$this->aOptions  = $this->makeOptions( $sQuery, $aFilter );
 		$this->aJoinOptions = $this->makeJoinOptions( $sQuery, $aFilter );
 
-		Hooks::run( 'BSApiExtJSDBTableStoreBeforeQuery' , array(
+		Hooks::run( 'BSApiExtJSDBTableStoreBeforeQuery' , [
 			$this,
 			$sQuery,
 			$aFilter,
@@ -54,7 +54,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			&$this->aOptions,
 			&$this->aJoinOptions,
 			&$aData,
-		) );
+		] );
 
 		$res = $this->getDB()->select(
 			$this->aTables,
@@ -77,7 +77,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			$aData[] = $oData;
 		}
 
-		Hooks::run( 'BSApiExtJSDBTableStoreAfterQuery' , array(
+		Hooks::run( 'BSApiExtJSDBTableStoreAfterQuery' , [
 			$this,
 			$sQuery,
 			$aFilter,
@@ -87,7 +87,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			$this->aOptions,
 			$this->aJoinOptions,
 			&$aData,
-		) );
+		] );
 
 		return $aData;
 	}
@@ -95,13 +95,13 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 	public abstract function makeTables( $sQuery, $aFilter );
 
 	public function makeFields( $sQuery, $aFilter ) {
-		return array(
+		return [
 			'*'
-		);
+		];
 	}
 
 	public function makeConditions( $sQuery, $aFilter ) {
-		$aReturn = array();
+		$aReturn = [];
 		if ( empty( $aFilter ) ) {
 			return $aReturn;
 		}
@@ -121,15 +121,15 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 	}
 
 	public function makeOptions( $sQuery, $aFilter ) {
-		return array(
+		return [
 
-		);
+		];
 	}
 
 	public function makeJoinOptions( $sQuery, $aFilter ) {
-		return array(
+		return [
 
-		);
+		];
 	}
 
 	/**
@@ -141,7 +141,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		return (object)$row;
 	}
 
-	public function buildConditionNumeric( $oFilter, $aReturn = array() ) {
+	public function buildConditionNumeric( $oFilter, $aReturn = [] ) {
 		if ( !is_numeric( $oFilter->value ) ) {
 			// TODO: Warning
 			return $aReturn;
@@ -165,7 +165,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		return $aReturn;
 	}
 
-	public function buildConditionString( $oFilter, $aReturn = array() ) {
+	public function buildConditionString( $oFilter, $aReturn = [] ) {
 		if ( !is_string( $oFilter->value ) ) {
 			// TODO: Warning
 			return $aReturn;
