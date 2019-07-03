@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirzali"
+			"Mirzali",
+			"1917 Ekim Devrimi"
 		]
 	},
-	"bs-upload-uploaddialogtitle": "Dosya bar ke",
+	"bs-upload-uploaddialogtitle": "Dosya bar kerê",
 	"bs-upload-license": "Lisans",
 	"bs-upload-categories": "Kategoriyi",
 	"bs-upload-descfilelabel": "Şınasnayış"
