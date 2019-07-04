@@ -110,6 +110,7 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 	 * @param Filter $filter
 	 */
 	protected function appendPreFilterCond( &$conds, Filter $filter ) {
+		$apply = true;
 		switch ( $filter->getComparison() ) {
 			case Filter::COMPARISON_EQUALS:
 				$conds[$filter->getField()] = $filter->getValue();
@@ -149,6 +150,11 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 			case Numeric::COMPARISON_LOWER_THAN:
 				$conds[] = "{$filter->getValue()} < {$filter->getField()}";
 				break;
+			default:
+				$apply = false;
+		}
+		if ( $apply ) {
+			$filter->setApplied();
 		}
 	}
 
@@ -171,7 +177,6 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 			}
 
 			$this->appendPreFilterCond( $conds, $filter );
-			$filter->setAppied();
 		}
 		return $conds;
 	}
