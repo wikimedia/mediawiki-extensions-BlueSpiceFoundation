@@ -8,7 +8,14 @@ class Editor extends Role {
 	 *
 	 * @return string
 	 */
-	function getName() {
+	public function getName() {
 		return "editor";
+	}
+
+	/**
+	 * @return string[]
+	 */
+	public function getRequiredPermissions() {
+		return [ 'read', 'edit' ];
 	}
 }

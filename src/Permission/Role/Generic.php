@@ -16,7 +16,14 @@ class Generic extends Role {
 	 *
 	 * @return string
 	 */
-	function getName() {
+	public function getName() {
 		return $this->name;
+	}
+
+	/**
+	 * @return string[]
+	 */
+	public function getRequiredPermissions() {
+		return [ 'read' ];
 	}
 }
