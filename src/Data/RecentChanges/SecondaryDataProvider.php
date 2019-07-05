@@ -44,21 +44,26 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 				$this->linkrenderer->makeLink( $user->getUserPage() );
 		}
 
-		$diffQuery = [
-			'type' => 'revision',
-			'curid' => $rawData->cur_id,
-			'oldid' => $rawData->last_oldid,
-			'diff' => $rawData->this_oldid
-		];
-		$rawData->diff_url = $title->getFullURL( $diffQuery );
-		$rawData->diff_link =
-			$this->linkrenderer->makeLink(
+		// whenever this is the first revision of a page do not generate a link to
+		// the diff, as it would be broken
+		$rawData->diff_url = '';
+		$rawData->diff_link = '';
+		if ( !empty( $rawData->last_oldid ) ) {
+			$diffQuery = [
+				'type' => 'revision',
+				'curid' => $rawData->cur_id,
+				'oldid' => $rawData->last_oldid,
+				'diff' => $rawData->this_oldid
+			];
+			$rawData->diff_url = $title->getFullURL( $diffQuery );
+			$rawData->diff_link =
+				$this->linkrenderer->makeLink(
 				$title,
 				wfMessage( 'difference-title', $title->getPrefixedText() ),
 				[],
 				$diffQuery
 			);
-
+		}
 		$histQuery = [
 			'curid' => $rawData->cur_id,
 			'action' => 'history'
