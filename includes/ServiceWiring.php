@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\DeferredNotificationStack;
 
 return [
 
@@ -212,4 +213,8 @@ return [
 		return new \BlueSpice\PageInfoElementFactory( $registry, $context, $config );
 	},
 
+	'BSDeferredNotificationStack' => function ( MediaWikiServices $services ) {
+		$request = \RequestContext::getMain()->getRequest();
+		return new DeferredNotificationStack( $request );
+	}
 ];

@@ -186,4 +186,13 @@ class Services extends ServicesDecorator {
 	public function getBSPageInfoElementFactory() {
 		return $this->getService( 'BSPageInfoElementFactory' );
 	}
+
+	/**
+	 *
+	 * @return DeferredNotificationStack
+	 */
+	public function getBSDeferredNotificationStack() {
+		return $this->getService( 'BSDeferredNotificationStack' );
+	}
+
 }

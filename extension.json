@@ -180,7 +180,8 @@
 				"bluespice/bluespice.api.js",
 				"bluespice/bluespice.treepanel.js",
 				"bluespice/bluespice.alerts.js",
-				"bluespice/bluespice.loadIndicator.js"
+				"bluespice/bluespice.loadIndicator.js",
+				"bluespice/bluespice.deferredNotifications.js"
 			],
 			"messages": [
 				"bs-years-duration",
@@ -554,7 +555,10 @@
 		],
 		"LinkerMakeMediaLinkFile": "\\BlueSpice\\Hook\\LinkerMakeMediaLinkFile\\AddDataAttributes::callback",
 		"ThumbnailBeforeProduceHTML": "\\BlueSpice\\Hook\\ThumbnailBeforeProduceHTML\\AddDataAttributes::callback",
-		"MakeGlobalVariablesScript": "\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback",
+		"MakeGlobalVariablesScript": [
+			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback",
+			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddDeferredNotifications::callback"
+		],
 		"LoadExtensionSchemaUpdates": [
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
