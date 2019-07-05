@@ -8,7 +8,14 @@ class Author extends Role {
 	 *
 	 * @return string
 	 */
-	function getName() {
+	public function getName() {
 		return "author";
+	}
+
+	/**
+	 * @return string[]
+	 */
+	public function getRequiredPermissions() {
+		return [ 'read', 'edit' ];
 	}
 }
