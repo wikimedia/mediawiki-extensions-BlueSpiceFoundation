@@ -5,11 +5,12 @@
 			"Sujiniku",
 			"2nd-player",
 			"Otokoume",
-			"Suyama"
+			"Suyama",
+			"神樂坂秀吉"
 		]
 	},
 	"bs-ns_main": "(ページ)",
-	"bs-ns_all": "(すべて)",
+	"bs-ns_all": "(全員)",
 	"bs-userbar_loginswitch_logout": "ログアウト",
 	"bs-userbar_loginswitch_login": "ログイン",
 	"bs-extended-search-tooltip-fulltext": "全文検索",

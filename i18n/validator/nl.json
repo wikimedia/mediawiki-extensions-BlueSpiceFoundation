@@ -16,5 +16,9 @@
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|de volgende waarde wordt toegestaan voor $1| $1 één van de volgende waarden is toegestaan}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "De opgegeven waarde is te laag. Het mag niet minder zijn dan $1.",
 	"bs-validator-integer-range-validation-too-high": "De opgegeven waarde is te hoog. Het mag niet groter zijn dan $1.",
+	"bs-validator-invalid-float": "Geen geldig kommagetal",
+	"bs-validator-invalid-integer": "Geen geldig geheel getal",
+	"bs-validator-invalid-coordinate": "Geen geldig coördinaat",
+	"bs-validator-invalid-parameter": "Deze parameter is niet toegestaan",
 	"bs-validator-missing-required": "Deze parameter is verplicht"
 }
