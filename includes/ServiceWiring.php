@@ -201,4 +201,15 @@ return [
 			$services->getService( 'BSUtilityFactory' )->getTemplateHelper()
 		);
 	},
+
+	'BSPageInfoElementFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+				'BlueSpiceFoundationPageInfoElementRegistry'
+			);
+		$context = \RequestContext::getMain();
+		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
+
+		return new \BlueSpice\PageInfoElementFactory( $registry, $context, $config );
+	},
+
 ];

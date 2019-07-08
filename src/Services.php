@@ -179,4 +179,11 @@ class Services extends ServicesDecorator {
 		return $this->getService( 'BSTemplateFactory' );
 	}
 
+	/**
+	 *
+	 * @return PageInfoElementFactory
+	 */
+	public function getBSPageInfoElementFactory() {
+		return $this->getService( 'BSPageInfoElementFactory' );
+	}
 }
