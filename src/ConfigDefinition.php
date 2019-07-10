@@ -2,7 +2,10 @@
 
 namespace BlueSpice;
 
-abstract class ConfigDefinition implements ISetting, ISettingPaths {
+use MessageLocalizer;
+use Message;
+
+abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocalizer {
 
 	/**
 	 *
@@ -129,5 +132,18 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths {
 	 */
 	public function isHidden() {
 		return false;
+	}
+
+	/**
+	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 *   or a MessageSpecifier.
+	 * @param mixed $params,... Normal message parameters
+	 * @return Message
+	 */
+	public function msg( $key ) {
+		return call_user_func_array(
+			[ $this->context, 'msg' ],
+			func_get_args()
+		);
 	}
 }
