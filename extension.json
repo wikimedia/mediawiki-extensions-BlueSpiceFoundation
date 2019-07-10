@@ -639,6 +639,14 @@
 		"MaintenanceUserName": {
 			"value": "BSMaintenance"
 		},
+		"RunJobsTriggerHandlerOptions": {
+			"value": {
+				"*": {
+					"basetime": [ 1, 0, 0 ],
+					"once-a-week-day": "sunday"
+				}
+			}
+		},
 		"CreditsProgrammers": {
 			"value": [
 				"Markus Glaser",

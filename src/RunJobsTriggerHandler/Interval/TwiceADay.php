@@ -9,9 +9,10 @@ class TwiceADay implements Interval {
 	/**
 	 *
 	 * @param \DateTime $currentRunTimestamp
+	 * @param array $options
 	 * @return \DateTime
 	 */
-	public function getNextTimestamp( $currentRunTimestamp ) {
+	public function getNextTimestamp( $currentRunTimestamp, $options ) {
 		$firstTS = clone $currentRunTimestamp;
 		$firstTS->setTime( 1, 0, 0 );
 

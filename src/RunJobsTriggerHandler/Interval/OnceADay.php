@@ -22,12 +22,12 @@ class OnceADay implements Interval {
 	/**
 	 *
 	 * @param \DateTime $currentRunTimestamp
+	 * @param array $options
 	 * @return \DateTime
 	 */
-	public function getNextTimestamp( $currentRunTimestamp ) {
+	public function getNextTimestamp( $currentRunTimestamp, $options ) {
 		$nextTS = clone $currentRunTimestamp;
-		// Set default to one o clock in the morning
-		$nextTS->setTime( 1, 0 );
+		$nextTS->setTime( ...$options['basetime'] );
 
 		for ( $i = 0; $i < static::$instanceCounter; $i++ ) {
 			if ( $i >= $this->instanceNumber ) {

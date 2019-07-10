@@ -2,6 +2,8 @@
 
 namespace BlueSpice\RunJobsTriggerHandler;
 
+use \Config;
+
 class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 
 	const DATA_KEY_LASTRUN = 'lastrun';
@@ -27,6 +29,12 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 
 	/**
 	 *
+	 * @var Config
+	 */
+	protected $config = null;
+
+	/**
+	 *
 	 * @var array
 	 */
 	protected $data = [];
@@ -36,10 +44,11 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 	 * @param \DateTime $currentRunTimestamp
 	 * @param string $fileSavePath
 	 */
-	public function __construct( $currentRunTimestamp, $fileSavePath, $logger ) {
+	public function __construct( $currentRunTimestamp, $fileSavePath, $logger, Config $config ) {
 		$this->currentRunTimestamp = $currentRunTimestamp;
 		$this->fileSavePath = $fileSavePath;
 		$this->logger = $logger;
+		$this->config = $config;
 
 		$this->loadPersistenceFile();
 	}
@@ -63,9 +72,13 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 			return false;
 		}
 
+		$options = $this->makeOptions( $regKey );
 		$newNextTS = $runJobsTriggerHandler
 			->getInterval()
-			->getNextTimestamp( $this->currentRunTimestamp );
+			->getNextTimestamp(
+				$this->currentRunTimestamp,
+				$options
+		);
 
 		// TODO: Check 'runJobs.php' execution frequency (by convention
 		// "15 minutes") against '$newNextTS'. If fequency is to low to fullfill
@@ -74,6 +87,23 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 		$this->saveNewNextTimestamp( $regKey, $newNextTS );
 
 		return true;
+	}
+
+	/**
+	 *
+	 * @param string $regKey
+	 * @return array
+	 */
+	protected function makeOptions( $regKey ) {
+		$options = (array)$this->config->get( 'RunJobsTriggerHandlerOptions' );
+		$handlerSpecificOptions = $options['*'];
+		if ( isset( $options[$regKey] ) ) {
+			$handlerSpecificOptions = array_merge(
+				$handlerSpecificOptions,
+				$options[$regKey]
+			);
+		}
+		return $handlerSpecificOptions;
 	}
 
 	protected function loadPersistenceFile() {
@@ -111,10 +141,8 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 			return $dummyTS;
 		}
 
-		$unixTS = wfTimestamp(
-			TS_UNIX,
-			$this->data[ static::DATA_KEY_NEXTRUNS ][ $regKey ]
-		);
+		$mediawikiTS = $this->data[ static::DATA_KEY_NEXTRUNS ][ $regKey ];
+		$unixTS = wfTimestamp( TS_UNIX, $mediawikiTS );
 
 		$savedTS = new \DateTime();
 		$savedTS->setTimestamp( $unixTS );
