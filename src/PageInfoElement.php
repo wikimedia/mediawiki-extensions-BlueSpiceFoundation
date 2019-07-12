@@ -76,6 +76,14 @@ abstract class PageInfoElement implements IPageInfoElement, MessageLocalizer {
 	 *
 	 * @return string
 	 */
+	public function getHtmlId() {
+		return '';
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	public function getMenu() {
 		return '';
 	}
