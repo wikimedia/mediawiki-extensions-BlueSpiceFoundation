@@ -58,6 +58,12 @@ interface IPageInfoElement {
 	 *
 	 * @return string
 	 */
+	public function getHtmlId();
+
+	/**
+	 *
+	 * @return string
+	 */
 	public function getMenu();
 
 	/**
