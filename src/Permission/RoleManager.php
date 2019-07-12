@@ -263,6 +263,22 @@ class RoleManager {
 		return null;
 	}
 
+	/**
+	 * Get the names of all the roles that contain giver permission
+	 *
+	 * @param string $perm
+	 * @return string[]
+	 */
+	public function getRolesWithPermission( $perm ) {
+		$roles = [];
+		foreach ( $this->roles as $roleName => $roleObject ) {
+			if ( in_array( $perm, $roleObject->getPermissions() ) ) {
+				$roles[] = $roleName;
+			}
+		}
+		return array_unique( $roles );
+	}
+
 	protected function addRole( $roleObject ) {
 		$this->roles[ $roleObject->getName() ] = $roleObject;
 	}

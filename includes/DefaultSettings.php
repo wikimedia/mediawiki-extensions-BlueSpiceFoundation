@@ -155,7 +155,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	"edit" => [
 		"type" => 'namespace',
 		"preventLockout" => '1',
-		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin' ]
+		"roles" => [ 'editor' ]
 	],
 	"editcontentmodel" => [
 		"type" => 'global',
@@ -296,7 +296,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	"read" => [
 		"type" => 'namespace',
 		"preventLockout" => '1',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [ 'reader' ]
 	],
 	"reupload" => [
 		"type" => 'global',

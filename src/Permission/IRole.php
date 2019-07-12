@@ -31,4 +31,9 @@ interface IRole {
 	 * @param string
 	 */
 	public function removePermission( $permission );
+
+	/**
+	 * @return string[]
+	 */
+	public function getRequiredPermissions();
 }
