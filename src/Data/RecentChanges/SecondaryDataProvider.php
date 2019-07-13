@@ -59,7 +59,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 			$rawData->diff_link =
 				$this->linkrenderer->makeLink(
 				$title,
-				wfMessage( 'difference-title', $title->getPrefixedText() ),
+				wfMessage( 'diff' ),
 				[],
 				$diffQuery
 			);
@@ -72,7 +72,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		$rawData->hist_link =
 			$this->linkrenderer->makeLink(
 				$title,
-				wfMessage( 'history-title', $title->getPrefixedText() ),
+				wfMessage( 'pagehist' ),
 				[],
 				$histQuery
 			);
