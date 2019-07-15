@@ -61,6 +61,11 @@ interface IPageInfoElement {
 	public function getHtmlId();
 
 	/**
+	 * @return array with html attributes data-*
+	 */
+	public function getHtmlDataAttribs();
+
+	/**
 	 *
 	 * @return string
 	 */
