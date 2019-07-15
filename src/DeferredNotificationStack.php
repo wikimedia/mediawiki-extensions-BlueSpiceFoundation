@@ -21,7 +21,7 @@ class DeferredNotificationStack {
         }
 
 		if ( !empty( $this->request->getCookie( 'notificationFlag' ) ) ) {
-			$this->request->getSession()->set( 'notificationInfo', null );
+			$this->request->getSession()->set( 'notificationInfo', [] );
 			$this->request->response()->clearCookie( 'notificationFlag' );
 		}
 	}
