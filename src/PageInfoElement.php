@@ -94,7 +94,7 @@ abstract class PageInfoElement implements IPageInfoElement, MessageLocalizer {
 	 */
 	public function msg( $key ) {
 		return call_user_func_array(
-			[ $this->getContext(), 'msg' ],
+			[ $this->context, 'msg' ],
 			func_get_args()
 		);
 	}
