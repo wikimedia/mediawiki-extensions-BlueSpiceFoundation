@@ -31,7 +31,7 @@ class BsTagFinder {
 	 */
 	public static function find( &$sText, $aTagnames ) {
 		Wikimedia\suppressWarnings();
-		$aResult = array();
+		$aResult = [];
 
 		$sXML = '<?xml encoding="UTF-8">'
 				. '<html xmlns:bs="http://www.blue-spice.org/XML/Schema-2011-09">'
@@ -51,13 +51,13 @@ class BsTagFinder {
 			$oElements = $oDOMDoc->getElementsByTagName( $aTagname );
 			if ( $oElements->length > 0 ) {
 				foreach ( $oElements as $oElement ) {
-					$aTag = array();
+					$aTag = [];
 					$aTag['name']    = $oElement->nodeName;
 					$aTag['content'] = trim( $oElement->textContent );
 					$aTag['isempty'] = !$oElement->hasChildNodes();
 
 					if ( $oElement->hasAttributes() ) {
-						$aTag['attributes'] = array();
+						$aTag['attributes'] = [];
 						foreach ( $oElement->attributes as $oAttribute ) {
 							$aTag['attributes'][ $oAttribute->name ] = $oAttribute->value;
 						}

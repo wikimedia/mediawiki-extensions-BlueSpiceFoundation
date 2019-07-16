@@ -134,7 +134,7 @@ abstract class BSNotifications {
 			if ( isset( $aParams[ 8 ] ) && is_array( $aParams[ 8 ] ) ) {
 				$aValues[ 'extra-params' ] = $aParams[ 8 ];
 			} else {
-				$aValues[ 'extra-params' ] = array();
+				$aValues[ 'extra-params' ] = [];
 			}
 		}
 

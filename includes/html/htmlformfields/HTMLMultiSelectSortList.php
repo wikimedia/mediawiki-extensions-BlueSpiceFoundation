@@ -11,7 +11,7 @@ class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 
 		$aValidated = $this->reValidate( $value, $this->mParams['options'] );
 
-		$aOptions = array();
+		$aOptions = [];
 		foreach ( $aValidated as $aOption ) {
 			$aOptions[] = $aOption['key'];
 		}
@@ -29,18 +29,18 @@ class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 	}
 
 	private function reValidate( $value, $aOptions ) {
-		$aValidated = array();
+		$aValidated = [];
 
 		foreach ( $value as $sValue ) {
 			if ( isset( $aOptions[$sValue] ) ) {
-				$aValidated[] = array( 'key' => $sValue, 'title' => $aOptions[$sValue] );
+				$aValidated[] = [ 'key' => $sValue, 'title' => $aOptions[$sValue] ];
 				unset( $aOptions[$sValue] );
 			}
 		}
 
 		if ( !empty( $aOptions ) ) {
 			foreach ( $aOptions as $key => $sOption ) {
-				$aValidated[] = array( 'key' => $key, 'title' => $sOption );
+				$aValidated[] = [ 'key' => $key, 'title' => $sOption ];
 			}
 		}
 

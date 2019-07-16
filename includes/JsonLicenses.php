@@ -12,21 +12,21 @@ class JsonLicenses extends Licenses {
 	protected $json;
 
 	public function __construct() {
-		parent::__construct( array( 'fieldname' => 'JsonLicenses' ) );
+		parent::__construct( [ 'fieldname' => 'JsonLicenses' ] );
 	}
 
 	public function getJsonOutput() {
 		$this->json[] = $this->outputJsonOption( wfMessage( 'nolicense' )->text(), '' );
 		$this->makeJson( $this->getLicenses() );
-		return json_encode( array( 'items' => $this->json ) );
+		return json_encode( [ 'items' => $this->json ] );
 	}
 
 	protected function outputJsonOption( $text, $value, $depth = 0 ) {
-		return array(
+		return [
 			'text' => $text,
 			'value' => "\n\n==".  wfMessage( 'license-header' )->inContentLanguage()->text()."==\n{{".$value."}}",
 			'indent' => $depth
-		);
+		];
 	}
 
 	protected function makeJson( $tagset, $depth = 0 ) {

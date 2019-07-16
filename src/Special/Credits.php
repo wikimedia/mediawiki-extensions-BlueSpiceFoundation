@@ -4,7 +4,7 @@ namespace BlueSpice\Special;
 
 class Credits extends \BlueSpice\SpecialPage {
 
-	private $aTranslators = array();
+	private $aTranslators = [];
 
 	public function __construct() {
 		parent::__construct( 'SpecialCredits' );
@@ -104,10 +104,10 @@ class Credits extends \BlueSpice\SpecialPage {
 
 	protected function generateTranslatorsList() {
 		global $IP;
-		$aPaths = array(
+		$aPaths = [
 			$IP . '/extensions/',
 			$IP . '/skins/'
-		);
+		];
 
 		$translators = [];
 		foreach ( $aPaths as $sPath ) {

@@ -65,17 +65,17 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	public function makeTables( $sQuery, $aFilter ) {
-		return array(
+		return [
 			'page'
-		);
+		];
 	}
 
 	public function makeFields( $sQuery, $aFilter ) {
-		return array(
+		return [
 			'page_id',
 			'page_namespace',
 			'page_title'
-		);
+		];
 	}
 
 	public function postProcessData( $aData ) {

@@ -151,7 +151,7 @@ class Task extends Api {
 			$parseLimit
 		);
 		// Unfortunately there is no way to register custom types for parameters
-		if ( in_array( $paramName, array( 'taskData', 'context' ) ) ) {
+		if ( in_array( $paramName, [ 'taskData', 'context' ] ) ) {
 			$value = FormatJson::decode( $value );
 			if ( empty( $value ) ) {
 				return new stdClass();

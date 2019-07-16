@@ -13,8 +13,8 @@ class ViewWidget extends ViewBaseElement {
 	protected $_mTitle        = '';
 	protected $_mBody         = '';
 	protected $_mTooltip      = '';
-	protected $_mAdditionalTitleClasses = array();
-	protected $_mAdditionalBodyClasses  = array();
+	protected $_mAdditionalTitleClasses = [];
+	protected $_mAdditionalBodyClasses  = [];
 
 	public function execute( $params = false ) {
 		$this->checkProperties();
@@ -31,7 +31,7 @@ class ViewWidget extends ViewBaseElement {
 			$oReturn->additionalBodyClasses = $this->_mAdditionalBodyClasses;
 			return $oReturn;
 		}
-		$aOut = array();
+		$aOut = [];
 		$aOut[] = '<div class="bs-widget'.$this->_mDefaultViewstate.'" id="bs-widget-'.$this->_mId.'" title="'.$this->_mTooltip.'">';
 		$aOut[] = '  <div class="bs-widget-head">';
 		$aOut[] = '    <h5 class="bs-widget-title '.$sAdditionalTitleClasses.'">'.$this->_mTitle.'</h5>';

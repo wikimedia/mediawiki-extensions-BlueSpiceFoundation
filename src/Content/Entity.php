@@ -74,13 +74,13 @@ class Entity extends \JsonContent {
 	 * @return string HTML
 	 */
 	protected function objectTable( $mapping ) {
-		$rows = array();
+		$rows = [];
 
 		foreach ( $mapping as $key => $val ) {
 			$rows[] = $this->objectRow( $key, $val );
 		}
-		return \Xml::tags( 'table', array( 'class' => 'mw-json' ),
-			\Xml::tags( 'tbody', array(), join( "\n", $rows ) )
+		return \Xml::tags( 'table', [ 'class' => 'mw-json' ],
+			\Xml::tags( 'tbody', [], join( "\n", $rows ) )
 		);
 	}
 
@@ -91,9 +91,9 @@ class Entity extends \JsonContent {
 	 * @return string HTML.
 	 */
 	protected function objectRow( $key, $val ) {
-		$th = \Xml::elementClean( 'th', array(), $key );
+		$th = \Xml::elementClean( 'th', [], $key );
 		if ( is_array( $val ) ) {
-			$td = \Xml::tags( 'td', array(), self::objectTable( $val ) );
+			$td = \Xml::tags( 'td', [], self::objectTable( $val ) );
 		} else {
 			if ( is_string( $val ) ) {
 				$val = '"' . $val . '"';
@@ -101,10 +101,10 @@ class Entity extends \JsonContent {
 				$val = \FormatJson::encode( $val );
 			}
 
-			$td = \Xml::elementClean( 'td', array( 'class' => 'value' ), $val );
+			$td = \Xml::elementClean( 'td', [ 'class' => 'value' ], $val );
 		}
 
-		return \Xml::tags( 'tr', array(), $th . $td );
+		return \Xml::tags( 'tr', [], $th . $td );
 	}
 
 	/**
@@ -124,11 +124,11 @@ class Entity extends \JsonContent {
 		$res = $dbw->selectRow(
 			'page',
 			'page_title',
-			array( 'page_namespace' => $entity::NS ),
+			[ 'page_namespace' => $entity::NS ],
 			__METHOD__,
-			array(
+			[
 				'ORDER BY' => 'LENGTH( page_title ) DESC, page_title DESC'
-			)
+			]
 		);
 
 		if ( $res ) {

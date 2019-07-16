@@ -34,7 +34,7 @@
  */
 class BsValidator {
 
-	protected static $prKnownPlugins = array();
+	protected static $prKnownPlugins = [];
 
 	/**
 	 * DEPRECATED!
@@ -51,7 +51,7 @@ class BsValidator {
 	 * - BsValidator::isValid('Ip', '0.0.0.0');<br />
 	 * </p>
 	 */
-	public static function isValid( $type, $validateThis, $options = array() ) {
+	public static function isValid( $type, $validateThis, $options = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( !is_array( $options ) ) {
 			throw new BsException( 'BsValidator::isValid called with 3rd param that is no array' );

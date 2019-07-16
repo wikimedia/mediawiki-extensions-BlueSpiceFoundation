@@ -13,25 +13,25 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 	 * @return array of objects
 	 */
 	protected function makeData( $sQuery = '' ) {
-		$aOptions = $this->getParameter( 'options' ) + array(
+		$aOptions = $this->getParameter( 'options' ) + [
 			'limit' => 250,
-			'namespaces' => array(),
+			'namespaces' => [],
 			'returnQuery' => false
-		);
+		];
 
 		$sNormQuery = strtolower( $sQuery );
 		$sNormQuery = str_replace( '_', ' ', $sNormQuery );
 
 		// See JS BS.model.Title
-		$aData = array();
-		$aDataSet = array(
+		$aData = [];
+		$aDataSet = [
 			'page_id' => 0,
 			'page_namespace' => 0,
 			'page_title' => '',
 			'prefixedText' => '',
 			'displayText' => '',
 			'type' => 'wikipage'
-		);
+		];
 
 		$contLang = $this->getServices()->getContentLanguage();
 		if ( empty( $aOptions['namespaces'] ) ) {
@@ -85,11 +85,11 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			}
 			$aNsCondition[] = $iNsId;
 			if ( empty( $sNormQuery ) || strpos( $sNormNSText, $sNormQuery ) === 0 ) {
-				$aData[] = (object)( array(
+				$aData[] = (object)( [
 					'type' => 'namespace',
 					'prefixedText' => $sNamespaceText.':',
 					'displayText' => $sNamespaceText.':'
-				) + $aDataSet );
+				] + $aDataSet );
 			}
 		}
 
@@ -126,7 +126,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		// We want LIKE operator behind every term,
 		// so multi term queries also bring results
 		$sOp = $dbr->anyString();
-		$aLike = $aNormalLike = array( '', $sOp );
+		$aLike = $aNormalLike = [ '', $sOp ];
 		$aParams = explode( ' ', str_replace( '/', ' ', $oQueryTitle->getText() ) );
 		$oSearchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
 		foreach ( $aParams as $sParam ) {
@@ -136,10 +136,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			$aNormalLike[] = $sOp;
 		}
 
-		$aConditions = array(
+		$aConditions = [
 			'page_id = si_page',
 			'si_title '. $dbr->buildLike( $aLike ) . ' OR si_title ' . $dbr->buildLike( $aNormalLike ),
-		);
+		];
 
 		$aConditions['page_namespace'] = $aNsCondition;
 		if ( $oQueryTitle->getNamespace() !== NS_MAIN || strpos( $sNormQuery, ':' ) === 0 ) {
@@ -150,16 +150,16 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		}
 
 		$res = $dbr->select(
-			array( 'page', 'searchindex' ),
-			array( 'page_id', 'page_title' ),
+			[ 'page', 'searchindex' ],
+			[ 'page_id', 'page_title' ],
 			$aConditions,
 			__METHOD__,
-			array(
+			[
 				'LIMIT' => $aOptions['limit']
-			)
+			]
 		);
 
-		$aTitles = array();
+		$aTitles = [];
 		foreach ( $res as $row ) {
 			if ( $oQueryTitle->getNamespace() === NS_MEDIA ) {
 				$oTitle = Title::newFromText( $row->page_title, NS_MEDIA );
@@ -195,14 +195,14 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 				$pagetype = 'directsearch';
 			}
 
-			$aData[] = (object)( array(
+			$aData[] = (object)( [
 				'type' => $pagetype,
 				'page_id' => $oTitle->getArticleId(),
 				'page_namespace' => $oTitle->getNamespace(),
 				'page_title' => $oTitle->getText(),
 				'prefixedText' => $sPrefixedText,
 				'displayText' => $sPrefixedText
-			) + $aDataSet );
+			] + $aDataSet );
 		}
 
 		// Step 3: Find Specialpages
@@ -220,7 +220,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			return $aData;
 		}
 		$aSpecialPages = SpecialPageFactory::getNames();
-		$aSPDataSets = array();
+		$aSPDataSets = [];
 		$sSpecialNmspPrefix = $this->getLanguage()->getNsText( NS_SPECIAL );
 
 		$normQueryParts = explode( ':', $sNormQuery, 2 );
@@ -255,14 +255,14 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 			$sSPText = $oSpecialPage->getPageTitle()->getPrefixedText();
 
-			$aSPDataSets[] = (object)( array(
+			$aSPDataSets[] = (object)( [
 				'type' => 'specialpage',
 				'page_id' => 0,
 				'page_namespace' => NS_SPECIAL,
 				'page_title' => $sSpecialPageName,
 				'prefixedText' => $sSPText,
 				'displayText' => $sSpecialNmspPrefix . ':' .  $sSPDisplayText
-			) + $aDataSet );
+			] + $aDataSet );
 
 		}
 
@@ -273,12 +273,12 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 	public function getAllowedParams() {
 		$aParams = parent::getAllowedParams();
-		$aParams['options'] = array(
+		$aParams['options'] = [
 			ApiBase::PARAM_TYPE => 'string',
 			ApiBase::PARAM_REQUIRED => false,
 			ApiBase::PARAM_DFLT => '{}',
 			ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-options',
-		);
+		];
 		return $aParams;
 	}
 
@@ -288,7 +288,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		if ( $paramName == 'options' ) {
 			$value = FormatJson::decode( $value, true );
 			if ( $value === null ) {
-				return array();
+				return [];
 			}
 		}
 		return $value;

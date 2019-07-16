@@ -8,22 +8,22 @@ class AddParamDefinitions extends \BlueSpice\Hook\SetupAfterCache {
 		if ( !isset( $GLOBALS['wgParamDefinitions'] ) ) {
 			$GLOBALS['wgParamDefinitions'] = [];
 		}
-		$GLOBALS['wgParamDefinitions'] += array(
-			'titlelist' => array(
+		$GLOBALS['wgParamDefinitions'] += [
+			'titlelist' => [
 				'definition' => 'BSTitleListParam',
 				// TODO: Find way to define parser and validator in definition
 				// class rather than in global registration
 				'string-parser' => 'BSTitleParser'
-			),
-			'namespacelist' => array(
+			],
+			'namespacelist' => [
 				'definition' => 'BSNamespaceListParam',
 				'string-parser' => 'BSNamespaceParser'
-			),
-			'categorylist' => array(
+			],
+			'categorylist' => [
 				'definition' => 'BSCategoryListParam',
 				'string-parser' => 'BSCategoryParser'
-			)
-		);
+			]
+		];
 
 		return true;
 	}
