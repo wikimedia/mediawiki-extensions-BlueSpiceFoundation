@@ -6,7 +6,7 @@ interface IReader {
 
 	/**
 	 *
-	 * @param  ReaderParams $params
+	 * @param ReaderParams $params
 	 * @return ResultSet
 	 */
 	public function read( $params );

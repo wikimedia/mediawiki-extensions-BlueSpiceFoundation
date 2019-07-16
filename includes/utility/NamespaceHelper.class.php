@@ -155,7 +155,7 @@ class BsNamespaceHelper {
 	public static function getNamespaceIdsFromAmbiguousCSVString( $sCSV = '' ) {
 		if ( !isset( $sCSV ) || !is_string( $sCSV ) ) {
 			throw new \MWException(
-				__CLASS__.":".__METHOD__.' - expects comma separated string'
+				__CLASS__ . ":" . __METHOD__ . ' - expects comma separated string'
 			);
 		}
 		global $wgContLang;

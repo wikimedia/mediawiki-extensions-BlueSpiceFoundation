@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\Hook\PageContentSaveComplete;
+
 class InvalidateArticleHelper extends \BlueSpice\Hook\PageContentSaveComplete {
 
 	protected function skipProcessing() {

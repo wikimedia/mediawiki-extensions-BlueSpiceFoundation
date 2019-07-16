@@ -93,7 +93,7 @@ class MaintenanceUser {
 		if ( empty( $expireInSeconds ) || $expireInSeconds < 10 ) {
 			$expireInSeconds = 10;
 		}
-		return ( new \DateTime( '+'.$expireInSeconds.' seconds' ) )
+		return ( new \DateTime( '+' . $expireInSeconds . ' seconds' ) )
 			->format( 'YmdHis' );
 	}
 }

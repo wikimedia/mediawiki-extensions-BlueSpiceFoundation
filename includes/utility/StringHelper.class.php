@@ -14,9 +14,9 @@ class BsStringHelper {
 
 	/**
 	 * Reduces the length of a string in a smart way.
-	 * @param String  $sString The string that as to be shortened. I.e. 'The quick brown fox jumps over the lazy dog'
-	 * @param Array   $aOptions Contains configuration options for the shorten logic. I. e.
-	 *<code>
+	 * @param String $sString The string that as to be shortened. I.e. 'The quick brown fox jumps over the lazy dog'
+	 * @param Array $aOptions Contains configuration options for the shorten logic. I. e.
+	 * <code>
 	 *                array(
 	 *                   'max-length'          => 20,
 	 *                   'ignore-word-borders' => true,
@@ -29,10 +29,10 @@ class BsStringHelper {
 	 * <code>position</code>: Where to remove characters? Possible values: <code>['end'|'middle'|'start']</code>. Default is <code>'end'</code>
 	 * <code>ellipsis-characters</code>: Which characters should be used as placeholders? Default is <code>'...'</code>
 	 * @return String Depending on additional parameters something like:
-	 *			'The quick...'
-	 *			'The quick br...' (<code>'ignore-word-borders' => true</code>)
-	 *          'The ... dog' (<code>'position' => 'middle'</code>)
-	 *          '... lazy dog' (<code>'position' => 'start'</code>)
+	 *     'The quick...'
+	 *     'The quick br...' (<code>'ignore-word-borders' => true</code>)
+	 *     'The ... dog' (<code>'position' => 'middle'</code>)
+	 *     '... lazy dog' (<code>'position' => 'start'</code>)
 	 */
 	public static function shorten( $sString, $aOptions ) {
 		$iMaxLength = BsCore::sanitizeArrayEntry( $aOptions, 'max-length', 15, BsPARAMTYPE::INT );
@@ -64,7 +64,7 @@ class BsStringHelper {
 					$iEndIndex   = $iGivenStringLength - $iStartIndex - $iEllipsisCharactersLength;
 					$sStart      = mb_substr( $sString, 0, $iStartIndex );
 					$sEnd        = mb_substr( $sString, $iEndIndex );
-					$sShortendString = $sStart.$sEllipsisCharaters.$sEnd;
+					$sShortendString = $sStart . $sEllipsisCharaters . $sEnd;
 					break;
 				default:
 					$sShortendString = mb_substr( $sString, 0, $iMaxLengthWithoutEllipsis );
@@ -87,7 +87,7 @@ class BsStringHelper {
 					}
 					$sWrappedString = wordwrap( $sString, $iMaxLength, '@@@' );
 					$aWrappedStrings = explode( '@@@', $sWrappedString );
-					$sShortendString = $aWrappedStrings[0].$sEllipsisCharaters;
+					$sShortendString = $aWrappedStrings[0] . $sEllipsisCharaters;
 					break;
 			}
 		}

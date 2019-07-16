@@ -124,7 +124,7 @@ class BsGenericTagExtensionHandler {
 
 			$aAttributes['params'] = FormatJson::encode( $aProcessedArgs );
 			$parser->getOutput()->setProperty(
-				'bs-tag-'.$this->sTagName, $aAttributes['params']
+				'bs-tag-' . $this->sTagName, $aAttributes['params']
 			);
 
 			if ( is_callable( $this->aTagDef['callback'] ) ) {
@@ -268,7 +268,7 @@ class BsGenericTagExtensionHandler {
 		if ( strpos( $this->sTagName, 'bs:' ) === 0 ) {
 			$sPrefix = '';
 		}
-		return str_replace( ':', '-', $sPrefix.$this->sTagName );
+		return str_replace( ':', '-', $sPrefix . $this->sTagName );
 	}
 
 	/**

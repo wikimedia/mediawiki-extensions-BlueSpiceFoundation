@@ -1,6 +1,6 @@
 <?php
 
-require_once( __DIR__.'/BSMaintenance.php' );
+require_once __DIR__ . '/BSMaintenance.php';
 
 abstract class BSBatchFileProcessorBase extends BSMaintenance {
 
@@ -39,19 +39,18 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 				);
 				continue;
 			}
-			$this->output( 'Processing ' . $oFile->getPathname().' ...' );
+			$this->output( 'Processing ' . $oFile->getPathname() . ' ...' );
 			$mResult = $this->processFile( $oFile );
 			if ( $mResult !== true ) {
 				$this->error( '... error:' . $mResult );
-			}
-			else {
+			} else {
 				$this->output( '... done.' );
 				$iProcessedFiles++;
 			}
 		}
 
-		$this->output( $iProcessedFiles.' file(s) processed.' );
-		$this->output( count( $this->aErrors ).' errors(s) occurred.' );
+		$this->output( $iProcessedFiles . ' file(s) processed.' );
+		$this->output( count( $this->aErrors ) . ' errors(s) occurred.' );
 		if ( count( $this->aErrors ) > 0 ) {
 			$this->output(
 				implode( "\n", $this->aErrors )
@@ -78,7 +77,7 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	 */
 	public function getFileList() {
 		$sPath = realpath( $this->sSrc );
-		$this->output( 'Fetching file list from "'.$sPath.'" ...' );
+		$this->output( 'Fetching file list from "' . $sPath . '" ...' );
 
 		$oFiles = new RecursiveIteratorIterator(
 			new RecursiveDirectoryIterator( $sPath ),
@@ -108,5 +107,5 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	 *
 	 * @param SplFileInfo $oFile
 	 */
-	public abstract function processFile( $oFile );
+	abstract public function processFile( $oFile );
 }

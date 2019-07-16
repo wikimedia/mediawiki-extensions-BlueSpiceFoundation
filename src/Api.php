@@ -87,7 +87,7 @@ abstract class Api extends ApiBase {
 
 	protected function getExamples() {
 		return [
-			'api.php?action='.$this->getModuleName(),
+			'api.php?action=' . $this->getModuleName(),
 		];
 	}
 

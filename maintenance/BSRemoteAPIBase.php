@@ -1,6 +1,6 @@
 <?php
 
-require_once( __DIR__.'/BSMaintenance.php' );
+require_once __DIR__ . '/BSMaintenance.php';
 
 class BSRemoteAPIBase extends BSMaintenance {
 
@@ -30,7 +30,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 		}
 		$this->password = $this->getOption( 'p' );
 		if ( $this->password === null ) {
-			$this->password = $this->readconsole( 'Password for user "'.$this->username.'": ' );
+			$this->password = $this->readconsole( 'Password for user "' . $this->username . '": ' );
 		}
 		if ( empty( $this->password ) ) {
 			$this->error( '"password" can not be empty' );
@@ -80,8 +80,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 					$this->token = $response->login->token;
 					$this->cookieJar = $req->getCookieJar();
 					return $this->doAPILogin();
-				}
-				elseif ( strtolower( $response->login->result ) === 'success' ) {
+				} elseif ( strtolower( $response->login->result ) === 'success' ) {
 					$this->cookieJar = $req->getCookieJar();
 					return true;
 				}

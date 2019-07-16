@@ -55,19 +55,19 @@ class ViewBaseForm extends ViewBaseElement {
 	}
 
 	protected function getAutoElementOpener() {
-		$enctype = empty( $this->_mEnctype ) ? '' : ( ' enctype="'.$this->_mEnctype.'"' );
+		$enctype = empty( $this->_mEnctype ) ? '' : ( ' enctype="' . $this->_mEnctype . '"' );
 		if ( $this->_mRenderAsExt ) {
 			$validation = '';
 			if ( $this->_mValidationUrl ) {
-				$validation = ' validate="'.$this->_mValidationUrl.'"';
+				$validation = ' validate="' . $this->_mValidationUrl . '"';
 			}
 			// TODO MRG20100816: wozu ist das div denn da?
-			return '<div id="'.$this->_mId.'wrap"></div>'
-					.'<'.$this->_mAutoElement.' id="'.$this->_mId.'"'
-					.' renderAsExt="true"'.$validation.' method="'.$this->_mMethod
-					.'" action="'.$this->_mActionUrl.'"'.$enctype.'>';
+			return '<div id="' . $this->_mId . 'wrap"></div>'
+					. '<' . $this->_mAutoElement . ' id="' . $this->_mId . '"'
+					. ' renderAsExt="true"' . $validation . ' method="' . $this->_mMethod
+					. '" action="' . $this->_mActionUrl . '"' . $enctype . '>';
 		}
-		return '<'.$this->_mAutoElement.' id="'.$this->_mId.'" action="'.$this->_mActionUrl.'" method="'.$this->_mMethod.'"'.$enctype.'>';
+		return '<' . $this->_mAutoElement . ' id="' . $this->_mId . '" action="' . $this->_mActionUrl . '" method="' . $this->_mMethod . '"' . $enctype . '>';
 	}
 
 }

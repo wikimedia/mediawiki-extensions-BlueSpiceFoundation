@@ -19,12 +19,12 @@ class ViewFormElementSelectbox extends ViewFormElement {
 	public function execute( $params = false ) {
 		$output = '';
 		if ( $this->_mLabel != '' ) {
-			$output .= '<label for="'.$this->_mId.'">'.$this->_mLabel.':</label>'."\n";
+			$output .= '<label for="' . $this->_mId . '">' . $this->_mLabel . ':</label>' . "\n";
 			$title = $this->_mLabel;
 		}
-		$output .= '<select id="'.$this->_mId.'" name="'.$this->_mName.'">';
+		$output .= '<select id="' . $this->_mId . '" name="' . $this->_mName . '">';
 		foreach ( $this->_mData as $data ) {
-			$output .= '<option value="'.$data['value'].'">'.$data['label'].'</option>';
+			$output .= '<option value="' . $data['value'] . '">' . $data['label'] . '</option>';
 		}
 		$output .= '</select>';
 		return $output;

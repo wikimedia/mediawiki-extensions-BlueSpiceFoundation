@@ -50,7 +50,7 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 			if ( $this->clearInputOnChoose ) {
 				$config['clearInputOnChoose'] = $this->clearInputOnChoose;
 			}
-			if ( ! empty( $this->menuConfig ) ) {
+			if ( !empty( $this->menuConfig ) ) {
 				$config['menu'] = $this->menuConfig;
 			}
 			if ( $this->options ) {

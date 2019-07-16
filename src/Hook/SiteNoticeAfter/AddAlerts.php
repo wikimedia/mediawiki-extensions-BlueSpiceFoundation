@@ -50,7 +50,7 @@ class AddAlerts extends SiteNoticeAfter {
 		}
 
 		$this->container = Html::rawElement(
-			'div' ,
+			'div',
 			[
 				'id' => 'bs-alert-container'
 			],

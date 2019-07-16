@@ -27,5 +27,5 @@ abstract class AbstractStaticFile extends File {
 	/**
 	 * @return string
 	 */
-	protected abstract function getAbsolutePath();
+	abstract protected function getAbsolutePath();
 }

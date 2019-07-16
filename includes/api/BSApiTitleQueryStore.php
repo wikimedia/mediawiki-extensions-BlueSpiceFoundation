@@ -81,7 +81,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			$sNormNSText = "$sNormNSText:";
 
 			// Only namespaces a user has the read permission for
-			$oDummyTitle = Title::newFromText( $sNamespaceText.':X' );
+			$oDummyTitle = Title::newFromText( $sNamespaceText . ':X' );
 			if ( $oDummyTitle->userCan( 'read' ) === false ) {
 				continue;
 			}
@@ -89,8 +89,8 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			if ( empty( $sNormQuery ) || strpos( $sNormNSText, $sNormQuery ) === 0 ) {
 				$aData[] = (object)( [
 					'type' => 'namespace',
-					'prefixedText' => $sNamespaceText.':',
-					'displayText' => $sNamespaceText.':'
+					'prefixedText' => $sNamespaceText . ':',
+					'displayText' => $sNamespaceText . ':'
 				] + $aDataSet );
 			}
 		}
@@ -140,7 +140,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 		$aConditions = [
 			'page_id = si_page',
-			'si_title '. $dbr->buildLike( $aLike ) . ' OR si_title ' . $dbr->buildLike( $aNormalLike ),
+			'si_title ' . $dbr->buildLike( $aLike ) . ' OR si_title ' . $dbr->buildLike( $aNormalLike ),
 		];
 
 		$aConditions['page_namespace'] = $aNsCondition;
@@ -263,7 +263,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 				'page_namespace' => NS_SPECIAL,
 				'page_title' => $sSpecialPageName,
 				'prefixedText' => $sSPText,
-				'displayText' => $sSpecialNmspPrefix . ':' .  $sSPDisplayText
+				'displayText' => $sSpecialNmspPrefix . ':' . $sSPDisplayText
 			] + $aDataSet );
 
 		}

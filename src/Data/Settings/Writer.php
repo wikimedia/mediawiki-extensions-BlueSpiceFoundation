@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\Data\Settings;
+
 use BlueSpice\Data\RecordSet;
 
 class Writer extends \BlueSpice\Data\DatabaseWriter {

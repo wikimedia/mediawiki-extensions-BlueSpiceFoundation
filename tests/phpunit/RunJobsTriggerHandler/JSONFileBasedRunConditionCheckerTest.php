@@ -17,7 +17,7 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 		parent::setUp();
 
 		$this->tmpJSONPathname = sys_get_temp_dir() . '/runJobsTriggerData.json';
-		$this->fixtureJSONPathname = __DIR__. '/../json/runJobsTriggerData.json';
+		$this->fixtureJSONPathname = __DIR__ . '/../json/runJobsTriggerData.json';
 	}
 
 	public function testShouldRun() {
@@ -160,7 +160,6 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 			$persistedData[Checker::DATA_KEY_NEXTRUNS]['handler3'],
 			'Field for "next-run" of "handler2" should be changed'
 		);
-
 	}
 
 	protected function ensureTestJSON() {

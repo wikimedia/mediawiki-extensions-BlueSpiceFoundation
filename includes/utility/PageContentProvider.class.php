@@ -174,7 +174,7 @@ class BsPageContentProvider {
 			$sHtmlContent = utf8_encode( $sHtmlContent );
 			wfDebug(
 				'BsPageContentProvider::getDOMDocumentContentFor: Content of '
-				.'Title "'.$oTitle->getPrefixedText().'" was not UTF8 encoded.'
+				. 'Title "' . $oTitle->getPrefixedText() . '" was not UTF8 encoded.'
 			);
 		}
 
@@ -240,7 +240,7 @@ class BsPageContentProvider {
 	 * @global User $wgUser
 	 * @global OutputPage $wgOut
 	 */
-	public function getHTMLContentFor( $oTitle, $aParams = [] ){
+	public function getHTMLContentFor( $oTitle, $aParams = [] ) {
 		global $wgRequest, $wgUser, $wgOut;
 		$aParams = array_merge(
 			[
@@ -320,10 +320,10 @@ class BsPageContentProvider {
 			}
 			wfDebug(
 				'BsPageContentProvider::getHTMLContentFor: Exception of type '
-					.get_class( $e )
-					.' thrown on title '
-					.$oTitle->getPrefixedText()
-					.'. Continuing happily.'
+					. get_class( $e )
+					. ' thrown on title '
+					. $oTitle->getPrefixedText()
+					. '. Continuing happily.'
 			);
 		}
 
@@ -334,8 +334,8 @@ class BsPageContentProvider {
 			$wgRequest->response()->header( "HTTP/1.1 200 OK", true );
 			wfDebug(
 				'BsPageContentProvider::getHTMLContentFor: Title "'
-					.$oTitle->getPrefixedText()
-					.'" does not exist and caused MW to set HTTP 404 Header.'
+					. $oTitle->getPrefixedText()
+					. '" does not exist and caused MW to set HTTP 404 Header.'
 			);
 		}
 
@@ -351,7 +351,7 @@ class BsPageContentProvider {
 		$sHTML = empty( $sHTML ) ? $context->getOutput()->getHTML() : $sHTML;
 
 		if ( !empty( $sError ) ) {
-			$sHTML .= '<div class="bs-error">'.$sError.'</div>';
+			$sHTML .= '<div class="bs-error">' . $sError . '</div>';
 		}
 
 		$this->makeInternalAnchorNamesUnique( $sHTML, $oTitle, $aParams );
@@ -360,8 +360,8 @@ class BsPageContentProvider {
 			$sHTML = sprintf(
 				$this->getTemplate(),
 				$this->getWrapperAttributes( $oTitle ),
-				'bs-ue-jumpmark-'.
-				md5( $oTitle->getPrefixedText().$aParams['oldid'] ),
+				'bs-ue-jumpmark-' .
+				md5( $oTitle->getPrefixedText() . $aParams['oldid'] ),
 				empty( $sTitle ) ? $oTitle->getPrefixedText() : $sTitle,
 				$sHTML
 			);
@@ -379,7 +379,7 @@ class BsPageContentProvider {
 	* @return string
 	*/
 	protected function getWrapperAttributes( $oTitle ) {
-		$cssClass = Sanitizer::escapeClass( 'page-'.$oTitle->getPrefixedDBKey() );
+		$cssClass = Sanitizer::escapeClass( 'page-' . $oTitle->getPrefixedDBKey() );
 		return "class=\"bs-page-content $cssClass\"";
 	}
 
@@ -548,25 +548,25 @@ class BsPageContentProvider {
 		$sPatternQuotedArticleTitle = preg_quote( str_replace( ' ', '_', $oTitle->getPrefixedText() ) );
 
 		foreach ( $aMatches[2] as $sAnchorName ) {
-			$sUniqueAnchorName = md5( $oTitle->getPrefixedText().$sAnchorName.$aParams['oldid'].$aParams['entropy'] );
+			$sUniqueAnchorName = md5( $oTitle->getPrefixedText() . $sAnchorName . $aParams['oldid'] . $aParams['entropy'] );
 
 			$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
 			// In TOC
-			$aPatterns[]     = '|<a href="#'.$sPatternQuotedAnchorName.'"><span class="tocnumber">|si';
-			$aReplacements[] = '<a href="#'.$sUniqueAnchorName.'"><span class="tocnumber">';
+			$aPatterns[]     = '|<a href="#' . $sPatternQuotedAnchorName . '"><span class="tocnumber">|si';
+			$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"><span class="tocnumber">';
 
 			// Every single headline
-			$aPatterns[]     = '|<a name="'.$sPatternQuotedAnchorName.'" id="'.$sPatternQuotedAnchorName.'"></a>|si';
-			$aReplacements[] = '<a name="'.$sUniqueAnchorName.'" id="'.$sUniqueAnchorName.'"></a>';
+			$aPatterns[]     = '|<a name="' . $sPatternQuotedAnchorName . '" id="' . $sPatternQuotedAnchorName . '"></a>|si';
+			$aReplacements[] = '<a name="' . $sUniqueAnchorName . '" id="' . $sUniqueAnchorName . '"></a>';
 
 			// In text
 			// TODO: What about index.php?title=abc links?
-			$aPatterns[]     = '|<a href="(/index\.php/'.$sPatternQuotedArticleTitle.')?#'.$sPatternQuotedAnchorName.'"|si';
-			$aReplacements[] = '<a href="#'.$sUniqueAnchorName.'"';
+			$aPatterns[]     = '|<a href="(/index\.php/' . $sPatternQuotedArticleTitle . ')?#' . $sPatternQuotedAnchorName . '"|si';
+			$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"';
 
 			// Every single headline new
-			$aPatterns[]     = '|<span class="mw-headline" id="'.$sPatternQuotedAnchorName.'"|si';
-			$aReplacements[] = '<span class="mw-headline" id="'.$sUniqueAnchorName.'"';
+			$aPatterns[]     = '|<span class="mw-headline" id="' . $sPatternQuotedAnchorName . '"|si';
+			$aReplacements[] = '<span class="mw-headline" id="' . $sUniqueAnchorName . '"';
 		}
 
 		$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );

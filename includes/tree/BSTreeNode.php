@@ -153,7 +153,7 @@ class BSTreeNode {
 			$basePath = $this->parentNode->getPath();
 		}
 
-		return $basePath . '/' .$this->getId();
+		return $basePath . '/' . $this->getId();
 	}
 
 	/**
@@ -170,8 +170,7 @@ class BSTreeNode {
 	public function expand() {
 		if ( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
 			$this->expanded = true;
-		}
-		else {
+		} else {
 			throw new MWException( "Node {$this->getPath()} can not be expanded!" );
 		}
 	}
@@ -182,8 +181,7 @@ class BSTreeNode {
 	public function collapse() {
 		if ( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
 			$this->expanded = false;
-		}
-		else {
+		} else {
 			throw new MWException( "Node {$this->getPath()} can not be collapsed!" );
 		}
 	}

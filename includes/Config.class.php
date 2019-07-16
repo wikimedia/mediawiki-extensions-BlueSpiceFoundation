@@ -282,10 +282,10 @@ class BsConfig {
 		$aData = BsCacheHelper::get( $sKey );
 
 		if ( $aData !== false ) {
-			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from cache' );
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching settings from cache' );
 			$aRows = $aData;
 		} else {
-			wfDebugLog( 'BsMemcached' , __CLASS__.': Fetching settings from DB' );
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching settings from DB' );
 			$dbr = wfGetDB( DB_REPLICA );
 			# query the settings from bs_settings
 			$aRows = [];
@@ -325,13 +325,13 @@ class BsConfig {
 		foreach ( self::$prSettings as $setting ) {
 			# if the setting is not a public or a user setting
 			# go to the next setting
-			if ( ! ( $setting->getOptions() &
+			if ( !( $setting->getOptions() &
 					( self::LEVEL_PUBLIC | self::LEVEL_USER ) ) ) {
 				continue;
 			}
 			# if the setting is not a default setting go to the next
 			# setting
-			if ( $setting->getOptions() & BsConfig::NO_DEFAULT ) {
+			if ( $setting->getOptions() & self::NO_DEFAULT ) {
 				continue;
 			}
 			# if the setting is a boolean type then make sure, it
@@ -378,7 +378,7 @@ class BsConfig {
 		} else {
 			$oUser = User::newFromName( $mUser );
 		}
-		$bOrigDeliverFlag = BsConfig::deliverUsersSettings( false );
+		$bOrigDeliverFlag = self::deliverUsersSettings( false );
 		// This is needed in MW 1.17. For some strange reason, array keys are rendered with _, not : .
 		// Beware, in getUsersForVar, the value is being read manually, so no replacement is necessary.
 		// Todo: either store all values with underscore or read all values manually to get consistent behaviour.
@@ -394,7 +394,7 @@ class BsConfig {
 			$mReturn = $oSettingsObject->getValue();
 		}
 
-		BsConfig::deliverUsersSettings( $bOrigDeliverFlag );
+		self::deliverUsersSettings( $bOrigDeliverFlag );
 		return $mReturn;
 	}
 
@@ -416,7 +416,7 @@ class BsConfig {
 
 		$aConditions = [ 'up_property' => $sKey ];
 		if ( $sSingleValFromMultiple ) {
-			$aConditions[] = 'up_value like "%'.$vValue.'%"';
+			$aConditions[] = 'up_value like "%' . $vValue . '%"';
 		} else {
 				$aConditions['up_value'] = ( $bSerialized ) ? serialize( $vValue ) : $vValue;
 		}
@@ -454,15 +454,15 @@ class BsConfig {
 			}
 		}
 
-		$vars = BsConfig::getRegisteredVars();
+		$vars = self::getRegisteredVars();
 		foreach ( $vars as $var ) {
 			$iOptions = $var->getOptions();
-			if ( ! ( $iOptions & ( BsConfig::LEVEL_USER ) ) ) {
+			if ( !( $iOptions & ( self::LEVEL_USER ) ) ) {
 				continue;
 			}
 
 			$options = $var->getOptions();
-			if ( ! ( $options & ( BsConfig::LEVEL_PUBLIC | BsConfig::LEVEL_USER ) ) ) {
+			if ( !( $options & ( self::LEVEL_PUBLIC | self::LEVEL_USER ) ) ) {
 				continue;
 			}
 
@@ -483,14 +483,14 @@ class BsConfig {
 	 */
 	public static function saveUserSettings( $user ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if ( ! is_object( $user ) ) {
+		if ( !is_object( $user ) ) {
 			$user = User::newFromName( $user );
 		}
 
 		$orig_deliver = self::deliverUsersSettings( true );
 
 		foreach ( self::$prSettings as $setting ) {
-			if ( ! ( $setting->getOptions() & ( self::LEVEL_USER ) ) ) {
+			if ( !( $setting->getOptions() & ( self::LEVEL_USER ) ) ) {
 				continue;
 			}
 			if ( $setting->getOptions() & self::TYPE_BOOL ) {
@@ -730,11 +730,11 @@ class BsConfig {
 	 */
 	protected function _get() {
 		if ( self::$prGetUsersSettings ) {
-			if ( ! is_null( $this->_mUserValue ) ) {
+			if ( !is_null( $this->_mUserValue ) ) {
 				return $this->_mUserValue;
 			}
 		}
-		if ( ! is_null( $this->_mValue ) ) {
+		if ( !is_null( $this->_mValue ) ) {
 			return $this->_mValue;
 		}
 		return $this->_mDefault;

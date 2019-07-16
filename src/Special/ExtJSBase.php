@@ -20,7 +20,7 @@ abstract class ExtJSBase extends SpecialPage {
 		$attributes = array_merge( [
 			'id' => $this->getId(),
 			'class' => implode( ' ', $this->getClasses() )
- 		], $this->getAttributes() );
+		], $this->getAttributes() );
 		$container = Html::openElement( 'div', $attributes );
 		$container .= $this->getLoadPlaceholder();
 		$container .= Html::closeElement( 'div' );

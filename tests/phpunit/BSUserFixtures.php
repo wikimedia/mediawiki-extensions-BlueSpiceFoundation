@@ -49,7 +49,7 @@ class BSUserFixtures {
 	}
 
 	protected function makeKey( $userName ) {
-		return "bs-user-".strtolower( $userName );
+		return "bs-user-" . strtolower( $userName );
 	}
 
 }

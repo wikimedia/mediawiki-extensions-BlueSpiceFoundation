@@ -25,6 +25,7 @@
  * @filesource
  */
 namespace BlueSpice;
+
 use BlueSpice\Content\Entity as EntityContent;
 use MediaWiki\MediaWikiServices;
 use BlueSpice\Renderer\Entity as Renderer;

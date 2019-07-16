@@ -86,7 +86,7 @@ abstract class Reader implements IReader {
 	 * @param ReaderParams $params
 	 * @return IPrimaryDataProvider
 	 */
-	protected abstract function makePrimaryDataProvider( $params );
+	abstract protected function makePrimaryDataProvider( $params );
 
 	/**
 	 * @param ReaderParams $params
@@ -118,5 +118,5 @@ abstract class Reader implements IReader {
 	/**
 	 * @return ISecondaryDataProvider | null to skip
 	 */
-	protected abstract function makeSecondaryDataProvider();
+	abstract protected function makeSecondaryDataProvider();
 }

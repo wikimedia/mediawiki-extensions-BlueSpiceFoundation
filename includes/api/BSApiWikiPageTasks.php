@@ -292,8 +292,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 				$sText = $oContent->getNativeData();
 			}
 
-		}
-		else {
+		} else {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
 		}

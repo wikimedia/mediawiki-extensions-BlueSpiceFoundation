@@ -60,7 +60,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 			'page_link' => $this->oLinkRenderer->makeLink(
 				$oUserPageTitle,
 				// The whitespace is to aviod automatic rewrite to user_real_name by BSF
-				$row->user_name.' '
+				$row->user_name . ' '
 			),
 
 			// legacy fields

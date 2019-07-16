@@ -60,8 +60,7 @@ class DateTest extends \PHPUnit\Framework\TestCase {
 
 		if ( $expectation ) {
 			$this->assertTrue( $filter->matches( $dataSet ), 'Filter should apply' );
-		}
-		else {
+		} else {
 			$this->assertFalse( $filter->matches( $dataSet ), 'Filter should not apply' );
 		}
 	}

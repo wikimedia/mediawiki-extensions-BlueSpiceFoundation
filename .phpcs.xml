@@ -3,16 +3,7 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="Generic.Files.LineLength.TooLong" />
 		<exclude name="Generic.Formatting.MultipleStatementAlignment.IncorrectWarning" />
-		<exclude name="Generic.Formatting.SpaceAfterCast.TooMuchSpace" />
-		<exclude name="Generic.Formatting.SpaceAfterNot.Incorrect" />
-		<exclude name="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma" />
-		<exclude name="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma" />
-		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine" />
-		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.SpaceBeforeBrace" />
 		<exclude name="Generic.PHP.NoSilencedErrors.Discouraged" />
-		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
-		<exclude name="MediaWiki.AlternativeSyntax.AlternativeSyntax.AlternativeSyntax" />
-		<exclude name="MediaWiki.AlternativeSyntax.ShortCastSyntax.NotShortIntForm" />
 		<exclude name="MediaWiki.Classes.UnusedUseStatement.UnusedUse" />
 		<exclude name="MediaWiki.Commenting.FunctionAnnotations.UnrecognizedAnnotation" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.ExtraParamComment" />
@@ -30,18 +21,11 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortIntParam" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.ParamNameNoMatch" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.PluralParams" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.SpacingAfterParamName" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.SpacingAfterParamType" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.SpacingBeforeParamType" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.SpacingDocStar" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.SyntaxAlignedDocClose" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.SyntaxAlignedDocStar" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle" />
 		<exclude name="MediaWiki.Commenting.MissingCovers.MissingCovers" />
 		<exclude name="MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures" />
-		<exclude name="MediaWiki.ControlStructures.IfElseStructure.SpaceAfterElse" />
-		<exclude name="MediaWiki.ControlStructures.IfElseStructure.SpaceBeforeElse" />
-		<exclude name="MediaWiki.ExtraCharacters.ParenthesesAroundKeyword.ParenthesesAroundKeywords" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
@@ -49,22 +33,13 @@
 		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix" />
 		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.wgPrefix" />
 		<exclude name="MediaWiki.Usage.AssignmentInReturn.AssignmentInReturn" />
-		<exclude name="MediaWiki.Usage.DirUsage.FunctionFound" />
-		<exclude name="MediaWiki.Usage.ForbiddenFunctions.each" />
-		<exclude name="MediaWiki.Usage.ForbiddenFunctions.join" />
 		<exclude name="MediaWiki.Usage.SuperGlobalsUsage.SuperGlobals" />
 		<exclude name="MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgTitle" />
 		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables" />
 		<exclude name="PSR2.Classes.PropertyDeclaration.Underscore" />
 		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
-		<exclude name="PSR2.Methods.FunctionClosingBrace.SpacingBeforeClose" />
-		<exclude name="PSR2.Methods.MethodDeclaration.AbstractAfterVisibility" />
 		<exclude name="PSR2.Methods.MethodDeclaration.Underscore" />
-		<exclude name="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter" />
-		<exclude name="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse" />
-		<exclude name="Squiz.Classes.SelfMemberReference.NotUsed" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
-		<exclude name="Squiz.Strings.ConcatenationSpacing.PaddingFound" />
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>

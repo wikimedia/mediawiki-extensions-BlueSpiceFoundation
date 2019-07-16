@@ -32,14 +32,14 @@ class ViewFormElementLabel extends ViewFormElement {
 	}
 
 	public function execute( $params = false ) {
-		$output = '<label id="'.$this->_mId.'" ';
+		$output = '<label id="' . $this->_mId . '" ';
 		if ( $this->bUseAutoWidth ) {
 			$output .= 'class="label_use_auto_width" ';
 		}
 		if ( $this->_mForId ) {
-			$output .= 'for="'.$this->_mForId.'" ';
+			$output .= 'for="' . $this->_mForId . '" ';
 		}
-		$output .= '>'.$this->_mData['text'].'</label>';
+		$output .= '>' . $this->_mData['text'] . '</label>';
 		return $output;
 	}
 
