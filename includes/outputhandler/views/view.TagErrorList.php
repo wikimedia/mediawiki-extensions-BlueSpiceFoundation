@@ -32,7 +32,7 @@ class ViewTagErrorList extends ViewBaseElement {
 
 	public function execute( $params = false ) {
 		$out = '<fieldset class="bsErrorFieldset">';
-		$out .= '<legend class="bsErrorLegend">'.wfMessage( 'bs-viewtagerrorlist-legend', $this->mSenderName )->plain().'</legend>';
+		$out .= '<legend class="bsErrorLegend">' . wfMessage( 'bs-viewtagerrorlist-legend', $this->mSenderName )->plain() . '</legend>';
 		$out .= parent::execute();
 		$out .= '</fieldset>';
 		return $out;

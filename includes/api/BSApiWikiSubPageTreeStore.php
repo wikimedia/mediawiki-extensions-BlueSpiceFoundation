@@ -68,7 +68,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			$oDataSet = new stdClass();
 			$oDataSet->text = $sNodeText;
 			// != $sNodeText
-			$oDataSet->id = $oDummyTitle->getNsText().':';
+			$oDataSet->id = $oDummyTitle->getNsText() . ':';
 			$oDataSet->isNamespaceNode = true;
 			$oDataSet->leaf = false;
 			$oDataSet->expanded = false;
@@ -90,7 +90,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	protected function makeRootPageNodes( $sNamespacePrefix, $sQuery, $aOptions = [] ) {
 		$aDataSets = [];
 
-		$oDummyTitle = Title::newFromText( $sNamespacePrefix.':X' );
+		$oDummyTitle = Title::newFromText( $sNamespacePrefix . ':X' );
 		$iNamespaceId = $oDummyTitle->getNamespace();
 		$res = $this->getDB()->select(
 			'page',
@@ -127,8 +127,8 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			'page',
 			'*',
 			[
-				'page_title '.$this->getDB()->buildLike(
-					$oParent->getDBkey() .'/' ,
+				'page_title ' . $this->getDB()->buildLike(
+					$oParent->getDBkey() . '/',
 					$this->getDB()->anyString()
 				),
 				'page_namespace' => $oParent->getNamespace()
@@ -180,7 +180,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 		$oDataSet->id = $oTitle->getPrefixedDBkey();
 		if ( $oTitle->getNamespace() === NS_MAIN ) {
 			// Rebuild full qualified path
-			$oDataSet->id = ':'.$oDataSet->id;
+			$oDataSet->id = ':' . $oDataSet->id;
 		}
 		$oDataSet->page_link = $this->oLinkRenderer->makeLink(
 			$oTitle,

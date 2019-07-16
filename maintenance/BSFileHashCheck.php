@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class BSFileHashCheck extends BSMaintenance {
 	public function __construct() {
@@ -42,7 +42,7 @@ class BSFileHashCheck extends BSMaintenance {
 		$sPathName = $oFileInfo->getPathname();
 		$sPathName = str_replace( [ '\\\\','\\' ], '/', $sPathName );
 		$sDir = str_replace( [ '\\\\','\\' ], '/', $sDir );
-		$sPathName = preg_replace( '#^'.preg_quote( $sDir ).'#', '', $sPathName );
+		$sPathName = preg_replace( '#^' . preg_quote( $sDir ) . '#', '', $sPathName );
 
 		return trim( $sPathName, '/' );
 	}
@@ -64,8 +64,7 @@ class BSFileHashCheck extends BSMaintenance {
 
 		if ( empty( $aErrors ) ) {
 			$this->output( 'Code base check OK!' );
-		}
-		else {
+		} else {
 			$this->output( 'Code base check FAILED! There are changes in the following files:' );
 			$this->output( implode( "\n* ", $aErrors ) );
 		}

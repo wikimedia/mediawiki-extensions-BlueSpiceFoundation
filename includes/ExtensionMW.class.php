@@ -74,8 +74,8 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
 			// Extension credits that will show up on Special:Version
 
-		$this->mResourcePath = $GLOBALS['wgScriptPath']."/extensions"
-			.$aConfig['extPath'].'/resources';
+		$this->mResourcePath = $GLOBALS['wgScriptPath'] . "/extensions"
+			. $aConfig['extPath'] . '/resources';
 
 		$this->sPackage = $aConfig['package'];
 		$this->sStatus = $aConfig['status'];
@@ -184,9 +184,9 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	public function getImagePath( $bResources = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( $bResources ) {
-			return $this->getResourcePath().'/images/';
+			return $this->getResourcePath() . '/images/';
 		}
-		return dirname( $this->getResourcePath() ).'/images/';
+		return dirname( $this->getResourcePath() ) . '/images/';
 	}
 
 	/**

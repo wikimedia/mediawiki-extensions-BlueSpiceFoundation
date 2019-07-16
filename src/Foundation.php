@@ -19,7 +19,7 @@ class Foundation {
 	 */
 	protected $services = null;
 
-	public static function onRegistry(){
+	public static function onRegistry() {
 		require_once dirname( __DIR__ ) . "/includes/Defines.php";
 		require_once dirname( __DIR__ ) . "/includes/DefaultSettings.php";
 		require_once dirname( __DIR__ ) . "/includes/GlobalFunctions.php";

@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice;
+
 use BlueSpice\Data\Settings\Store;
 use BlueSpice\Data\Settings\Record;
 use BlueSpice\Context;

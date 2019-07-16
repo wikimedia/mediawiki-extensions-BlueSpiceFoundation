@@ -26,6 +26,7 @@
  * @filesource
  */
 namespace BlueSpice;
+
 use MediaWiki\MediaWikiServices;
 use BlueSpice\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;

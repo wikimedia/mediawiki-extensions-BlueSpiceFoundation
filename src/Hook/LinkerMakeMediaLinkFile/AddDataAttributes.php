@@ -22,8 +22,7 @@ class AddDataAttributes extends \BlueSpice\Hook\LinkerMakeMediaLinkFile {
 			$this->attribs['data-bs-filename'] = $this->file->getName();
 			$this->attribs['data-bs-filetimestamp']
 				= $this->file->getTimestamp();
-		}
-		else {
+		} else {
 			$attribs['data-bs-filename'] = $this->title->getText();
 			$attribs['data-bs-filetimestamp'] = '';
 		}

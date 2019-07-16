@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
 abstract class TitleMoveComplete extends Hook {

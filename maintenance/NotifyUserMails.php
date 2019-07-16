@@ -12,7 +12,7 @@
 // TODO: use serialize
 // TODO: support MW < 1.17.0
 $options = [ 'help', 'execute', 'user', ];
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 print_r( $options );
 
 $bDry = true;
@@ -22,12 +22,10 @@ if ( isset( $options['execute'] ) ) {
 
 if ( isset( $options['help'] ) ) {
 	showHelp();
-}
-else {
+} else {
 	if ( isset( $options['user'] ) ) {
 		notifyUserMailController( $bDry, $options );
-	}
-	else {
+	} else {
 		showHelp();
 	}
 }
@@ -53,18 +51,18 @@ function notifyUserMailController( $bDry, $options ) {
 function getUser( $sGivenUser ) {
 	if ( $sGivenUser != "-1" ) {
 		if ( !ctype_digit( $sGivenUser ) ) {
-			$condition = [ 'user_name = \''.$sGivenUser.'\'' ];
-		}
-		else {
-			$condition = [ 'user_id = '.$sGivenUser ];
+			$condition = [ 'user_name = \'' . $sGivenUser . '\'' ];
+		} else {
+			$condition = [ 'user_id = ' . $sGivenUser ];
 		}
 	}
 
 	$oDbr = wfGetDB( DB_REPLICA );
-	$rRes = $oDbr->select( 'user',
-			[ 'user_id','user_name' ],
-			$condition
- );
+	$rRes = $oDbr->select(
+		'user',
+		[ 'user_id','user_name' ],
+		$condition
+	);
 
 	if ( !$rRes ) {
 		return [];
@@ -72,9 +70,7 @@ function getUser( $sGivenUser ) {
 
 	$aUser = [];
 	while ( $oRow = $oDbr->fetchRow( $rRes ) ) {
-		$aUser[] = [ 'id' => $oRow['user_id'],
-						'name' => $oRow['user_name']
- ];
+		$aUser[] = [ 'id' => $oRow['user_id'], 'name' => $oRow['user_name'] ];
 	}
 
 	return $aUser;
@@ -110,7 +106,7 @@ function NotifyUser( $aUserStore, $options, $bDry ) {
 
 function displayResult( $aUserStore ) {
 	foreach ( $aUserStore as $aUser ) {
-			$sSetvalue = !empty( $aUser["setvalue"] ) ? ' => '.$aUser["setvalue"] : '';
-			echo $aUser["name"].": ".$aUser["value"].$sSetvalue."\n";
+		$sSetvalue = !empty( $aUser["setvalue"] ) ? ' => ' . $aUser["setvalue"] : '';
+		echo $aUser["name"] . ": " . $aUser["value"] . $sSetvalue . "\n";
 	}
 }

@@ -1,5 +1,6 @@
 <?php
 namespace BlueSpice;
+
 use FormatJson;
 use MWException;
 
@@ -16,9 +17,9 @@ class DeferredNotificationStack {
 	public function __construct( $request ) {
 		$this->request = $request;
 
-        if ( defined( 'MW_NO_SESSION' ) ) {
-            throw new MWException( "No session available" );
-        }
+		if ( defined( 'MW_NO_SESSION' ) ) {
+			throw new MWException( "No session available" );
+		}
 
 		if ( !empty( $this->request->getCookie( 'notificationFlag' ) ) ) {
 			$this->request->getSession()->set( 'notificationInfo', [] );

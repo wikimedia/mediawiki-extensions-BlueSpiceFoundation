@@ -76,7 +76,7 @@ abstract class Base implements IPageTool {
 	/**
 	 * @return string
 	 */
-	protected abstract function doGetHtml();
+	abstract protected function doGetHtml();
 
 	/**
 	 *

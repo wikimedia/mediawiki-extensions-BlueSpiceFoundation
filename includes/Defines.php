@@ -33,14 +33,14 @@ if ( !defined( 'WIKI_FARMING' ) ) {
 
 	if ( !defined( 'BS_DATA_DIR' ) ) {
 		// Future
-		define( 'BS_DATA_DIR',  $sTMPUploadDir. DIRECTORY_SEPARATOR . 'bluespice' );
+		define( 'BS_DATA_DIR',  $sTMPUploadDir . DIRECTORY_SEPARATOR . 'bluespice' );
 	}
 	if ( !defined( 'BS_CACHE_DIR' ) ) {
 		// $wgCacheDirectory?
-		define( 'BS_CACHE_DIR', $sTMPCacheDir. DIRECTORY_SEPARATOR . 'bluespice' );
+		define( 'BS_CACHE_DIR', $sTMPCacheDir . DIRECTORY_SEPARATOR . 'bluespice' );
 	}
 	if ( !defined( 'BS_DATA_PATH' ) ) {
-		define( 'BS_DATA_PATH', $sTMPUploadPath. '/bluespice' );
+		define( 'BS_DATA_PATH', $sTMPUploadPath . '/bluespice' );
  }
 }
 

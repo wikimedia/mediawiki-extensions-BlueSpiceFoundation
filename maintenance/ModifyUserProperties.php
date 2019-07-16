@@ -12,7 +12,7 @@
 // TODO: use serialize
 // TODO: support MW < 1.17.0
 $options = [ 'help', 'execute', 'user', 'property', 'filtervalue', 'setvalue' ];
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 print_r( "\nMEDIAWIKI 1.17.0+ only!\n" );
 print_r( $options );
 
@@ -23,12 +23,10 @@ if ( isset( $options['execute'] ) ) {
 
 if ( isset( $options['help'] ) ) {
 	showHelp();
-}
-else {
+} else {
 	if ( isset( $options['property'] ) && isset( $options['user'] ) ) {
 		modifyPropertiesController( $bDry, $options );
-	}
-	else {
+	} else {
 		showHelp();
 	}
 }
@@ -72,13 +70,15 @@ function updateUserProperties( $aUserStore, $options, $bDry ) {
 	for ( $i = 0; $i < $iCounter; $i++ ) {
 		if ( $aUserStore[$i]['value'] != "null" && $aUserStore[$i]['value'] != $options['setvalue'] ) {
 			if ( !$bDry ) {
-				$oDbw->replace( 'user_properties',
-						[ 'up_user' , 'up_property' ],
-						[ 'up_user' => $aUserStore[$i]['id'],
-								'up_property' => $options['property'],
-								'up_value' => $options['setvalue']
-						]
- );
+				$oDbw->replace(
+					'user_properties',
+					[ 'up_user' , 'up_property' ],
+					[
+						'up_user' => $aUserStore[$i]['id'],
+						'up_property' => $options['property'],
+						'up_value' => $options['setvalue']
+					]
+				);
 			}
 			$aUserStore[$i]['setvalue'] = $options['setvalue'];
 
@@ -86,13 +86,12 @@ function updateUserProperties( $aUserStore, $options, $bDry ) {
 		displayMPCResult( [ $aUserStore[$i] ] );
 	}
 	echo "Dont forget to clear memcache :)";
-
 }
 
 function displayMPCResult( $aUserStore ) {
 	foreach ( $aUserStore as $aUser ) {
-			$sSetvalue = !empty( $aUser["setvalue"] ) ? ' => '.$aUser["setvalue"] : '';
-			echo $aUser["name"].": ".$aUser["value"].$sSetvalue."\n";
+		$sSetvalue = !empty( $aUser["setvalue"] ) ? ' => ' . $aUser["setvalue"] : '';
+		echo $aUser["name"] . ": " . $aUser["value"] . $sSetvalue . "\n";
 	}
 }
 function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
@@ -102,11 +101,11 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 	for ( $i = 0; $i < $iCounter; $i++ ) {
 
 		$conditions = [];
-		$conditions[] = "up_user = '".$aUserStore[$i]['id']."'";
-		$conditions[] = "up_property = '".$property."'";
+		$conditions[] = "up_user = '" . $aUserStore[$i]['id'] . "'";
+		$conditions[] = "up_property = '" . $property . "'";
 
 		if ( isset( $filtervalue ) ) {
-			$conditions[] = "up_value = '".$filtervalue."'";
+			$conditions[] = "up_value = '" . $filtervalue . "'";
 		}
 
 		$rRes = $oDbr->selectRow( 'user_properties',
@@ -127,18 +126,18 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 function getMPCUser( $sGivenUser ) {
 	if ( $sGivenUser != "-1" ) {
 		if ( !ctype_digit( $sGivenUser ) ) {
-			$condition = [ 'user_name = \''.$sGivenUser.'\'' ];
-		}
-		else {
-			$condition = [ 'user_id = '.$sGivenUser ];
+			$condition = [ 'user_name = \'' . $sGivenUser . '\'' ];
+		} else {
+			$condition = [ 'user_id = ' . $sGivenUser ];
 		}
 	}
 
 	$oDbr = wfGetDB( DB_REPLICA );
-	$rRes = $oDbr->select( 'user',
-			[ 'user_id','user_name' ],
-			$condition
- );
+	$rRes = $oDbr->select(
+		'user',
+		[ 'user_id','user_name' ],
+		$condition
+	);
 
 	if ( !$rRes ) {
 		return [];
@@ -146,9 +145,7 @@ function getMPCUser( $sGivenUser ) {
 
 	$aUser = [];
 	while ( $oRow = $oDbr->fetchRow( $rRes ) ) {
-		$aUser[] = [ 'id' => $oRow['user_id'],
-						'name' => $oRow['user_name']
- ];
+		$aUser[] = [ 'id' => $oRow['user_id'], 'name' => $oRow['user_name'] ];
 	}
 
 	return $aUser;

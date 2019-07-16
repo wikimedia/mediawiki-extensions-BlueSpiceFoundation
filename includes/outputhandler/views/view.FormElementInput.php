@@ -41,10 +41,10 @@ class ViewFormElementInput extends ViewFormElement {
 		$validate = ( $this->_mValidate ) ? ' validate="true"' : '';
 		$linebreak = ( $this->_mLinebreak ) ? "<br />\n" : "\n";
 		if ( $this->_mLabel != '' ) {
-			$output .= '<label for="'.$this->_mId.'">'.$this->_mLabel.':</label>'."\n";
+			$output .= '<label for="' . $this->_mId . '">' . $this->_mLabel . ':</label>' . "\n";
 			$title = $this->_mLabel;
 		}
-		$output .= '<input id="'.$this->_mId.'" name="'.$this->_mName.'" bntype="text"'.$validate.' title="'.$title.'" type="'.$this->_mType.'" value="'.$this->_mValue.'" />'.$linebreak;
+		$output .= '<input id="' . $this->_mId . '" name="' . $this->_mName . '" bntype="text"' . $validate . ' title="' . $title . '" type="' . $this->_mType . '" value="' . $this->_mValue . '" />' . $linebreak;
 		return $output;
 	}
 }

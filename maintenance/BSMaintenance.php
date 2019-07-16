@@ -22,7 +22,7 @@ abstract class BSMaintenance extends Maintenance {
 	 * @param $die Int: if > 0, go ahead and die out using this int as the code
 	 */
 	public function error( $err, $die = 0 ) {
-		$this->appendOutputBuffer( $err."\n", $die );
+		$this->appendOutputBuffer( $err . "\n", $die );
 		parent::error( $err, $die );
 	}
 

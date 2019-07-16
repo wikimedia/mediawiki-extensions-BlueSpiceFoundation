@@ -8,7 +8,7 @@
  * @license GPL-3.0-only
  */
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class ListUserEmails extends BSMaintenance {
 
@@ -38,7 +38,7 @@ class ListUserEmails extends BSMaintenance {
 				$aUserMails[] = $aUserData['email'];
 			}
 		}
-		$this->output( count( $aUserMails )." users found\n" );
+		$this->output( count( $aUserMails ) . " users found\n" );
 		$this->output( implode( $sDelimiter, $aUserMails ) );
 	}
 

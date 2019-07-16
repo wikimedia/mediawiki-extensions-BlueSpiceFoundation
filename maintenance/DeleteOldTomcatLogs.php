@@ -9,7 +9,7 @@
  */
 
 $options = [ 'help', 'logdir', 'execute' ];
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 print_r( "need to have permissions on log directory\n" );
 print_r( $options );
 
@@ -20,12 +20,10 @@ if ( isset( $options['execute'] ) ) {
 
 if ( isset( $options['help'] ) ) {
 	showHelp();
-}
-else {
+} else {
 	if ( isset( $options['logdir'] ) ) {
 		deleteOldTomcatLogs( $bDry, $options );
-	}
-	else {
+	} else {
 		showHelp();
 	}
 }
@@ -42,19 +40,18 @@ function deleteOldTomcatLogs( $bDry, $options ) {
 	if ( $handle = opendir( $options['logdir'] ) ) {
 		while ( false !== ( $file = readdir( $handle ) ) ) {
 			if ( !empty( $file )
-					&& preg_match( '/.(\d{4})\-(\d{2})\-(\d{2}).log/', $file, $hits )
-					&& $hits
-					&& $hits[1].$hits[2].$hits[3] != date( 'Ymd' )
- ) {
+				&& preg_match( '/.(\d{4})\-(\d{2})\-(\d{2}).log/', $file, $hits )
+				&& $hits
+				&& $hits[1] . $hits[2] . $hits[3] != date( 'Ymd' )
+			) {
 				if ( $bDry == false ) {
-					unlink( $options['logdir'].'\\'.$file );
+					unlink( $options['logdir'] . '\\' . $file );
 				}
-				echo ( 'deleted: '.$file." \n" );
+				echo ( 'deleted: ' . $file . " \n" );
 			}
 		}
 		closedir( $handle );
-	}
-	else {
-		echo 'Directory not found! '.$options['logdir'];
+	} else {
+		echo 'Directory not found! ' . $options['logdir'];
 	}
 }

@@ -198,7 +198,7 @@ abstract class Store extends Api {
 	/**
 	 * @return \BlueSpice\Data\IStore
 	 */
-	protected abstract function makeDataStore();
+	abstract protected function makeDataStore();
 
 	/**
 	 *

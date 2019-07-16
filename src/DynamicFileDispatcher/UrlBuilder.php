@@ -41,7 +41,7 @@ class UrlBuilder {
 		];
 
 		return $this->config->get( 'ScriptPath' )
-			."$this->dynamicFilePath?"
-			.wfArrayToCgi( $urlArr, $dfd->getParams() );
+			. "$this->dynamicFilePath?"
+			. wfArrayToCgi( $urlArr, $dfd->getParams() );
 	}
 }

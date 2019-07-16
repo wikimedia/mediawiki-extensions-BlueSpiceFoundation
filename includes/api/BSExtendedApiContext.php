@@ -36,7 +36,7 @@ class BSExtendedApiContext {
 	 * @param $oRequest WebRequest
 	 * @return BSExtendedApiContext
 	 */
-	public static function newFromRequest( $oRequest = null ){
+	public static function newFromRequest( $oRequest = null ) {
 		if ( $oRequest === null ) {
 			$oRequest = RequestContext::getMain()->getRequest();
 		}
@@ -126,7 +126,7 @@ class BSExtendedApiContext {
 	 * otherwise NULL
 	 * @return SpecialPage
 	 */
-	public function getSpecialPage(){
+	public function getSpecialPage() {
 		return $this->oSpecialPage;
 	}
 

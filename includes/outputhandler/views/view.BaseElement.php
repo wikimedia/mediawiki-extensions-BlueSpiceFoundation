@@ -67,11 +67,11 @@ class ViewBaseElement {
 	 */
 	public function __construct() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$this->_mId = 'bs-element-'.self::getAutoId();
+		$this->_mId = 'bs-element-' . self::getAutoId();
 		$this->config = \MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 	}
 
-	public function __toString(){
+	public function __toString() {
 		return $this->execute();
 	}
 
@@ -167,7 +167,7 @@ class ViewBaseElement {
 	 */
 	public function setOptions( $aOptions ) {
 		if ( !is_array( $aOptions ) ) {
-			error_log( 'Parameter not an array or array empty, '.__METHOD__.' in '.__FILE__.' line '.__LINE__ );
+			error_log( 'Parameter not an array or array empty, ' . __METHOD__ . ' in ' . __FILE__ . ' line ' . __LINE__ );
 			return $this;
 		}
 		$this->mOptions = array_merge( $this->mOptions, $aOptions );
@@ -221,8 +221,7 @@ class ViewBaseElement {
 		}
 		if ( $key && ( is_numeric( $key ) || is_string( $key ) ) ) {
 			$this->_mItems[$key] = $item;
-		}
-		else {
+		} else {
 			$this->_mItems[] = $item;
 		}
 		return $item;
@@ -237,7 +236,7 @@ class ViewBaseElement {
 	/**
 	 *
 	 * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
-     * \BlueSpice\TemplateRenderer instead
+	 * \BlueSpice\TemplateRenderer instead
 	 * @return String Returns the output of this element.
 	 */
 	public function execute( $params = false ) {
@@ -248,8 +247,7 @@ class ViewBaseElement {
 			foreach ( $this->_mData as $dataSet ) {
 				$output .= $this->processData( $dataSet );
 			}
-		}
-		elseif ( count( $this->_mItems ) ) {
+		} elseif ( count( $this->_mItems ) ) {
 			if ( $this->_mTemplate != '' ) {
 				$output = $this->_mTemplate;
 				$output = preg_replace_callback(
@@ -257,16 +255,14 @@ class ViewBaseElement {
 					[ $this, 'processItem' ],
 					$output
 				);
-			}
-			else {
+			} else {
 				$output .= $this->getAutoElementOpener();
 				foreach ( $this->_mItems as $item ) {
 					$output .= $item->execute();
 				}
 				$output .= $this->getAutoElementCloser();
 			}
-		}
-		else {
+		} else {
 			return '';
 		}
 		if ( $this->_mAutoWrap && is_string( $this->_mAutoWrap ) ) {
@@ -285,10 +281,9 @@ class ViewBaseElement {
 				$output
 			);
 			foreach ( $dataSet as $key => $value ) {
-				$output = str_replace( '{'.$key.'}', $value, $output );
+				$output = str_replace( '{' . $key . '}', $value, $output );
 			}
-		}
-		else {
+		} else {
 			foreach ( $dataSet as $key => $value ) {
 				$output = $this->getAutoElementOpener();
 				$output .= $value;
@@ -316,8 +311,7 @@ class ViewBaseElement {
 				if ( isset( $this->_mPresentDataset[$token] )
 				) {
 					$params[$token] = $this->_mPresentDataset[$token];
-				}
-				else {
+				} else {
 					$params[$token] = null;
 				}
 			}
@@ -333,14 +327,14 @@ class ViewBaseElement {
 		}
 
 		// TODO MRG20100816: Wahrscheinlich brauchen wir noch eine autoElementClass.
-		return '<'.$this->_mAutoElement.' id="'.$this->_mId.'">';
+		return '<' . $this->_mAutoElement . ' id="' . $this->_mId . '">';
 	}
 
 	protected function getAutoElementCloser() {
 		if ( !$this->_mAutoElement ) {
 			return '';
 		}
-		return '</'.$this->_mAutoElement.'>';
+		return '</' . $this->_mAutoElement . '>';
 	}
 
 	// TODO MRG20100831: comment
@@ -353,15 +347,15 @@ class ViewBaseElement {
 			$glue = ( strpos( $href, '?' ) === false )
 				? '?'
 				: '&';
-			$href = $href.$glue.$options['query'];
+			$href = $href . $glue . $options['query'];
 		}
 		$out = '<a '
-			.'href="'.$href.'" ';
+			. 'href="' . $href . '" ';
 		if ( isset( $options['title'] ) ) {
-			$out .= 'title="'.$options['title'].'" ';
+			$out .= 'title="' . $options['title'] . '" ';
 		}
 		if ( isset( $options['class'] ) ) {
-			$out .= 'class="'.$options['class'].'" ';
+			$out .= 'class="' . $options['class'] . '" ';
 		}
 		if ( isset( $options['openInNewWindow'] ) ) {
 			$out .= 'target="_blank" ';

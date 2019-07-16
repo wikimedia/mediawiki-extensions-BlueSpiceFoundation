@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class BSExtractFiles extends BSMaintenance {
 

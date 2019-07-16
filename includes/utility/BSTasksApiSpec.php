@@ -43,11 +43,9 @@ class BSTasksApiSpec {
 		foreach ( $this->aInitialConfig as $mKey => $mValue ) {
 			if ( is_string( $mKey ) && is_array( $mValue ) ) {
 				$this->aTaskNames[] = $mKey;
-			}
-			elseif ( is_int( $mKey ) && is_string( $mValue ) ) {
+			} elseif ( is_int( $mKey ) && is_string( $mValue ) ) {
 				$this->aTaskNames[] = $mValue;
-			}
-			else {
+			} else {
 				throw new MWException( 'Unsupported TaskAPI spec format!' );
 			}
 		}
@@ -83,11 +81,10 @@ class BSTasksApiSpec {
 				// Explicitly set?
 				$oMsg = wfMessage( $sDesc );
 				$aProps[$sParamName]['description'] = $oMsg->exists() ? $oMsg->plain() : $sDesc;
-			}
-			else {
+			} else {
 				// Maybe there is a generic description available
 				// 'page_id' => 'bs-api-task-taskData-page-id'
-				$oMsgDefault = wfMessage( 'bs-api-task-taskData-'. str_replace( '_', '-',  $sParamName ) );
+				$oMsgDefault = wfMessage( 'bs-api-task-taskData-' . str_replace( '_', '-',  $sParamName ) );
 				if ( $oMsgDefault->exists() ) {
 					$aProps[$sParamName]['description'] = $oMsgDefault->plain();
 				}

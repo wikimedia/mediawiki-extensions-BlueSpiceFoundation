@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Api;
 
 use BlueSpice\Tests\BSApiExtJSStoreTestBase;
+
 /**
  * The base fixture has changed since MW 1.27. Therefore the test is marked
  * broken until BlueSpice updates its compatibility.

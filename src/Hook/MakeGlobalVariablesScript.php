@@ -25,6 +25,7 @@
  * @filesource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
 abstract class MakeGlobalVariablesScript extends Hook {
@@ -43,7 +44,7 @@ abstract class MakeGlobalVariablesScript extends Hook {
 
 	/**
 	 *
-	 * @param array$vars
+	 * @param array $vars
 	 * @param \OutputPage $out
 	 * @return boolean
 	 */

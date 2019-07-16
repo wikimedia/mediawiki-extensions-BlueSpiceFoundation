@@ -337,7 +337,7 @@ class BsFileSystemHelper {
 		$it = new RecursiveDirectoryIterator(
 			BS_DATA_DIR . "/$sSource/$sFolderName"
 		);
-		BsFileSystemHelper::ensureDataDirectory( "$sDestination/$sFolderName" );
+		self::ensureDataDirectory( "$sDestination/$sFolderName" );
 		$files = new RecursiveIteratorIterator( $it, RecursiveIteratorIterator::CHILD_FIRST );
 		foreach ( $files as $file ) {
 			if ( $file->getFilename() === '.' || $file->getFilename() === '..' ) {
@@ -570,7 +570,7 @@ class BsFileSystemHelper {
 		}
 		$rNewImage = imagecreatetruecolor( $iNewWidth, $iNewHeight );
 		imagealphablending( $rNewImage, false );
-		imagesavealpha( $rNewImage,true );
+		imagesavealpha( $rNewImage, true );
 		$iTransparent = imagecolorallocatealpha( $rNewImage, 255, 255, 255, 127 );
 		imagefilledrectangle( $rNewImage, 0, 0, $iNewWidth, $iNewHeight, $iTransparent );
 		imagecopyresampled( $rNewImage, $rImage, 0, 0, 0, 0, $iNewWidth, $iNewHeight, $iWidth, $iHeight );
@@ -671,7 +671,7 @@ class BsFileSystemHelper {
 	 * @param string $sFileContent
 	 * @return Status
 	 */
-	public static function saveBase64ToTmp( $sFileName, $sFileContent ){
+	public static function saveBase64ToTmp( $sFileName, $sFileContent ) {
 		$sFileName = self::makeTmpFileName( $sFileName );
 		$sFileName = wfTempDir() . "/" . basename( $sFileName );
 
@@ -682,8 +682,7 @@ class BsFileSystemHelper {
 		$bFile = file_put_contents( $sFileName, $sFileContent );
 		if ( $bFile === 0 || $bFile === false ) {
 			return Status::newFatal( wfMessage( 'bs-filesystemhelper-save-base64-error' ) );
-		}
-		else {
+		} else {
 			return Status::newGood( $sFileName );
 		}
 	}
@@ -700,7 +699,7 @@ class BsFileSystemHelper {
 	 * @param boolean $bIgnoreWarnings
 	 * @return Status
 	 */
-	public static function uploadLocalFile( $sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false, $bIgnoreWarnings = true ){
+	public static function uploadLocalFile( $sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false, $bIgnoreWarnings = true ) {
 		global $wgLocalFileRepo, $wgUser;
 		$oUploadStash = new UploadStash( new LocalRepo( $wgLocalFileRepo ), $wgUser );
 		$oUploadFile = $oUploadStash->stashFile( $sFilename, "file" );
@@ -747,8 +746,7 @@ class BsFileSystemHelper {
 			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
 
 			return Status::newGood( $oRepoFile->getUrl(), true );
-		}
-		else{
+		} else {
 			return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-local-error-create' ) );
 		}
 	}

@@ -471,14 +471,13 @@ $cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class
 
 function checkMediaWikiHomeDir( $mwVersion ) {
 	if ( !file_exists( __DIR__ . "/cache" ) ||
-             !file_exists( __DIR__ . "/images" ) ||
-             !file_exists( __DIR__ . "/extensions" ) ||
-             !file_exists( __DIR__ . "/RELEASE-NOTES-" . $mwVersion ) ) {
+		!file_exists( __DIR__ . "/images" ) ||
+		!file_exists( __DIR__ . "/extensions" ) ||
+		!file_exists( __DIR__ . "/RELEASE-NOTES-" . $mwVersion ) ) {
 		return "<div id=\"notMW\">It looks like you are using this installation check outside of a MediaWiki {$mwVersion} installation.<br />Probably some checks will fail.</div>\n";
 	}
 
 	return false;
-
 }
 
 function checkPHPversion( $phpversion ) {
@@ -488,16 +487,13 @@ function checkPHPversion( $phpversion ) {
 
 	if ( version_compare( $phpversion, $cfgPHPversion['min'], '<' ) ) {
 		$sResult .= "<span class=\"fail\">FAILED!</span> This version is not compatible with BlueSpice. Please upgrade to version >= {$cfgPHPversion['min']}.";
-	}
-	elseif ( version_compare( $phpversion, $cfgPHPversion['opt'], '!=' ) ) {
+	} elseif ( version_compare( $phpversion, $cfgPHPversion['opt'], '!=' ) ) {
 		$sResult .= "<span class=\"warn\">WARNING!</span> You should use version {$cfgPHPversion['opt']} for full compatibility.";
-	}
-	else {
+	} else {
 		$sResult .= "<span class=\"ok\">OK</span>";
 	}
 
 	return $sResult;
-
 }
 
 function checkExtensions( $requiredExtensions ) {
@@ -511,14 +507,12 @@ function checkExtensions( $requiredExtensions ) {
 
 		if ( extension_loaded( $extension ) ) {
 			$sReturn .= "<span class=\"ok\">OK</span><br/>";
-		}
-		else {
+		} else {
 			$sReturn .= "{$helptext}<br/>";
 		}
 	}
 
 	return $sReturn . "\n";
-
 }
 
 function checkFileUpload() {
@@ -529,21 +523,17 @@ function checkFileUpload() {
 
 	if ( $fileUploads != "1" ) {
 		$sReturn .= "<span class=\"warn\">WARNING!</span> ..... File upload is not enabled. To enable please change the file_uploads option in your php.ini.";
-	}
-	elseif ( empty( $uploadTmpDir ) ) {
+	} elseif ( empty( $uploadTmpDir ) ) {
 		$sReturn .= "<span class=\"warn\">WARNING!</span> ..... File upload is enabled but upload_tmp_dir is not set. Make sure your system's temp dir is writable by the web server.";
-	}
-	else {
+	} else {
 		if ( checkWritePerm( $uploadTmpDir ) == true ) {
 			$sReturn .= "<span class=\"ok\">OK</span> ..... File upload is enabled and the upload_tmp_dir ({$uploadTmpDir}) is writable.";
-		}
-		else {
+		} else {
 			$sReturn .= "<span class=\"fail\">FAILED!</span> ..... File upload is enabled but the upload_tmp_dir ({$uploadTmpDir}) is not writable.";
 		}
 	}
 
 	return $sReturn;
-
 }
 
 function checkSessionSavePath() {
@@ -553,13 +543,11 @@ function checkSessionSavePath() {
 
 	if ( checkWritePerm( $sessionSavePath ) == true ) {
 		$sReturn .= "<span class=\"ok\">OK</span> ..... session.save_path ({$sessionSavePath}) is writable.";
-	}
-	else {
+	} else {
 		$sReturn .= "<span class=\"fail\">FAILED!</span> ..... session.save_path ({$sessionSavePath}) is not writable.";
 	}
 
-        return $sReturn;
-
+	return $sReturn;
 }
 
 function checkINIvalues( $iniOptions ) {
@@ -586,14 +574,12 @@ function checkINIvalues( $iniOptions ) {
 				$sReturn .= "..... {$helptext}<br/>";
 				$iniOptionChecked[$iniOption] = true;
 			}
-		}
-		elseif ( $checkOperator == "!=" ) {
+		} elseif ( $checkOperator == "!=" ) {
 			if ( $iniValue == $checkValue ) {
 				$sReturn .= "..... {$helptext}<br/>";
 				$iniOptionChecked[$iniOption] = true;
 			}
-		}
-		elseif ( $checkOperator == ">=" ) {
+		} elseif ( $checkOperator == ">=" ) {
 			if ( $iniValue < $checkValue ) {
 				$sReturn .= "..... {$helptext}<br/>";
 				$iniOptionChecked[$iniOption] = true;
@@ -609,7 +595,6 @@ function checkINIvalues( $iniOptions ) {
 	}
 
 	return $sReturn . "\n";
-
 }
 
 function checkWritePerm( $checkFolders ) {
@@ -628,8 +613,7 @@ function checkWritePerm( $checkFolders ) {
 
 		if ( !isset( $returnValue ) ) {
 			$folder = __DIR__ . $checkFolder;
-		}
-		else {
+		} else {
 			$folder = $checkFolder;
 		}
 
@@ -645,8 +629,7 @@ function checkWritePerm( $checkFolders ) {
 				$returnValue = false;
 			}
 			$sReturn .= "{$helptext}<br />";
-		}
-		else {
+		} else {
 			if ( isset( $returnValue ) ) {
 				$returnValue = true;
 			}
@@ -658,11 +641,9 @@ function checkWritePerm( $checkFolders ) {
 
 	if ( isset( $returnValue ) ) {
 		return $returnValue;
-	}
-	else {
+	} else {
 		return $sReturn . "\n";
 	}
-
 }
 
 function checkFiles( $checkFiles ) {
@@ -678,15 +659,13 @@ function checkFiles( $checkFiles ) {
 
 		if ( !file_exists( $file ) ) {
 			$sReturn .= "{$helptext}<br />";
-		}
-		else {
+		} else {
 			$sReturn .= "<span class=\"ok\">OK</span><br />";
 		}
 
 	}
 
 	return $sReturn . "\n";
-
 }
 
 function checkMail() {
@@ -699,13 +678,11 @@ function checkMail() {
 
 	if ( !$smtpConnection ) {
 		$sReturn .= "<span class=\"warn\">WARNING!</span> Mail will not work. Error message: <i>{$errno}: {$errstr}</i>";
-	}
-	else {
+	} else {
 		$sReturn .= "<span class=\"ok\">OK</span> ..... connection to SMTP server was successful.";
 	}
 
 	return $sReturn;
-
 }
 
 function checkSSO() {
@@ -713,11 +690,9 @@ function checkSSO() {
 
 	if ( isset( $_SERVER['REMOTE_USER'] ) ) {
 		$sReturn .= "<span class=\"ok\">OK</span> ..... \$_SERVER['REMOTE_USER'] is set ({$_SERVER['REMOTE_USER']}), you can configure Single Sign On.";
-	}
-	else {
+	} else {
 		$sReturn .= "<span class=\"warn\">WARNING!</span> \$_SERVER['REMOTE_USER'] is not set. If you want to use Single Sign On please configure the authentication type of your webserver.</span>";
 	}
 
 	return $sReturn;
-
 }

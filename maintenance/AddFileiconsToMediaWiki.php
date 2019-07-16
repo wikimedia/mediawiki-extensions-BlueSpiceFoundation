@@ -1,7 +1,7 @@
 <?php
 // icon licence: https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logos_lineup.svg
 
-require_once( __DIR__ . '/BSMaintenance.php' );
+require_once __DIR__ . '/BSMaintenance.php';
 
 class AddFileiconsToMediaWiki extends BSMaintenance {
 	public function __construct() {
@@ -19,15 +19,13 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 
 		if ( !( $this->getOption( 'source' ) === null ) ) {
 			$sSourceDir = $this->getOption( 'source' );
-		}
-		else{
+		} else {
 			$sSourceDir = "$IP/extensions/BlueSpiceFoundation/resources/assets/file-type-icons";
 		}
 
 		if ( !( $this->getOption( 'target' ) === null ) ) {
 			$sTargetDir = $this->getOption( 'target' );
-		}
-		else{
+		} else {
 			$sTargetDir = "$IP/resources/assets/file-type-icons";
 		}
 
@@ -53,13 +51,11 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 				if ( !copy( $sSourceDir . "/" . $fileName, $sTargetDir . "/" . $fileName ) ) {
 					$this->output( $fileName . " ... failed" );
 					continue;
-				}
-				else{
+				} else {
 					$this->output( $fileName . " ... success" );
 				}
 			}
-		}
-		else{
+		} else {
 			if ( !$sourceHandler ) {
 				$this->output( "source not valid\n" );
 			}

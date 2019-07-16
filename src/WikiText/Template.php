@@ -150,8 +150,7 @@ class Template {
 
 		if ( in_array( $firstChar, $this->specialWikiTextMarkupFirstChars ) ) {
 			$this->buffer[] = "\n";
-		}
-		else if ( $isNamedParameter ) {
+		} else if ( $isNamedParameter ) {
 			$this->buffer[] = ' ';
 		}
 
@@ -161,8 +160,7 @@ class Template {
 	protected function prepareParamValue( $paramValue ) {
 		if ( is_array( $paramValue ) ) {
 			$newParamValue = implode( '', $paramValue );
-		}
-		else {
+		} else {
 			$newParamValue = $paramValue;
 		}
 

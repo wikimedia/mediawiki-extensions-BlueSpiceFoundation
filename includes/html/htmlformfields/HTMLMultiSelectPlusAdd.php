@@ -49,7 +49,7 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 		];
 		$button .= Html::element( 'input', $attrs );
 
-		return $html.'<div>'.$button.'</div>';
+		return $html . '<div>' . $button . '</div>';
 	}
 
 }

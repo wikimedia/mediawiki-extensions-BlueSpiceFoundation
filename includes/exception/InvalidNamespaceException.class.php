@@ -15,7 +15,7 @@ class BsInvalidNamespaceException extends BsException {
 	 * @param array $aInvalidNamespaces
 	 * @throws InvalidArgumentException
 	 */
-	public function setListOfInvalidNamespaces( $aInvalidNamespaces ){
+	public function setListOfInvalidNamespaces( $aInvalidNamespaces ) {
 		if ( is_array( $aInvalidNamespaces ) ) {
 			$this->mListOfInvalidNamespaces = $aInvalidNamespaces;
 		} else {
@@ -27,7 +27,7 @@ class BsInvalidNamespaceException extends BsException {
 	 * Getter for internal list of invalid namespaces
 	 * @return array
 	 */
-	public function getListOfInvalidNamespaces(){
+	public function getListOfInvalidNamespaces() {
 		return $this->mListOfInvalidNamespaces;
 	}
 
@@ -36,7 +36,7 @@ class BsInvalidNamespaceException extends BsException {
 	 * @param array $aValidNamespaces
 	 * @throws InvalidArgumentException
 	 */
-	public function setListOfValidNamespaces( $aValidNamespaces ){
+	public function setListOfValidNamespaces( $aValidNamespaces ) {
 		if ( is_array( $aValidNamespaces ) ) {
 			$this->mListOfValidNamespaces = $aValidNamespaces;
 		} else {
@@ -48,7 +48,7 @@ class BsInvalidNamespaceException extends BsException {
 	 * Getter for internal list of valid namespaces
 	 * @return array
 	 */
-	public function getListOfValidNamespaces(){
+	public function getListOfValidNamespaces() {
 		return $this->mListOfValidNamespaces;
 	}
 }
