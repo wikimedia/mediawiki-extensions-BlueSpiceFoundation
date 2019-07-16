@@ -23,7 +23,7 @@ class AddAssetsPaths extends ResourceLoaderGetConfigVars {
 		$paths = [];
 
 		foreach ( $definitions as $sName => $definition ) {
-			$paths[$sName] = $extensionAssetsPath.$definition['extPath'];
+			$paths[$sName] = $extensionAssetsPath . $definition['extPath'];
 		}
 
 		return [ 'bsExtensionManagerAssetsPaths' => $paths ];

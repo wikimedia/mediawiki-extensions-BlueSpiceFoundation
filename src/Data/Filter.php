@@ -164,5 +164,5 @@ abstract class Filter {
 		return FilterFactory::newFromArray( $filter );
 	}
 
-	protected abstract function doesMatch( $dataSet );
+	abstract protected function doesMatch( $dataSet );
 }

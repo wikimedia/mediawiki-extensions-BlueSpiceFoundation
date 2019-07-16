@@ -25,6 +25,7 @@
  * @filesource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
 abstract class BeforePageDisplay extends Hook {

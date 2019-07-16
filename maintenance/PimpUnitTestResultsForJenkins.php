@@ -1,5 +1,5 @@
 <?php
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class BSPimpUnitTestResultsForJenkins extends BSMaintenance {
 	public function __construct() {

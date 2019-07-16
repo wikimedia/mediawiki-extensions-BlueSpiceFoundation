@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\Permission;
+
 use BlueSpice\Permission;
 
 class Registry {

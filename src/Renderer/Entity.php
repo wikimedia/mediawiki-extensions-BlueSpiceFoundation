@@ -1,5 +1,6 @@
 <?php
 namespace BlueSpice\Renderer;
+
 use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\Renderer\Params;
 
@@ -30,7 +31,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 		);
 		if ( !$this->context instanceof \IContextSource ) {
 			throw new \MWException(
-				'"\IContextSource" must be given by ' . static::PARAM_CONTEXT. ' param'
+				'"\IContextSource" must be given by ' . static::PARAM_CONTEXT . ' param'
 			);
 		}
 		$this->entity = $params->get(
@@ -39,7 +40,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 		);
 		if ( !$this->entity instanceof \BlueSpice\Entity ) {
 			throw new \MWException(
-				'"\BlueSpice\Entity" must be given by ' . static::PARAM_ENTITY. ' param'
+				'"\BlueSpice\Entity" must be given by ' . static::PARAM_ENTITY . ' param'
 			);
 		}
 

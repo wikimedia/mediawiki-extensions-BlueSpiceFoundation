@@ -117,7 +117,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * @return array - Full list of of data objects. Filters, paging, sorting
 	 * will be done by the base class
 	 */
-	protected abstract function makeData( $sQuery = '' );
+	abstract protected function makeData( $sQuery = '' );
 
 	/**
 	 * @return array - a meta data specification in form
@@ -307,8 +307,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			if ( $oA->$sProperty !== $oB->$sProperty ) {
 				if ( $sDirection === 'ASC' ) {
 					return $oA->$sProperty < $oB->$sProperty ? -1 : 1;
-				}
-				else {
+				} else {
 					// 'DESC'
 					return $oA->$sProperty > $oB->$sProperty ? -1 : 1;
 				}
@@ -579,8 +578,7 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 			$aParams[] = $a{$sProperty};
 			if ( $sDirection === 'ASC' ) {
 				$aParams[] = SORT_ASC;
-			}
-			else {
+			} else {
 				$aParams[] = SORT_DESC;
 			}
 			$aParams[] = $this->getSortFlags( $sProperty );

@@ -27,6 +27,7 @@
  * @filesource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
 abstract class BsFoundationBeforeMakeGlobalVariablesScript extends Hook {

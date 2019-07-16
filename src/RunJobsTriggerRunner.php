@@ -92,8 +92,7 @@ class RunJobsTriggerRunner {
 					$message .= $ex->getTraceAsString();
 					$this->logger->critical( $message );
 				}
-			}
-			else {
+			} else {
 				$this->logger->info(
 					"Skipped run of hanlder for '$regKey' due to"
 					. "run-condition-check"
@@ -130,8 +129,7 @@ class RunJobsTriggerRunner {
 			$this->logger->info(
 				"Successfully ran handler for '$regKey'"
 			);
-		}
-		else {
+		} else {
 			$messageText = $status->getMessage()->plain();
 			$this->logger->error(
 				"There was a error during run of handler for '$regKey':"

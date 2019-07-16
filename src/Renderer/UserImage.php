@@ -1,5 +1,6 @@
 <?php
 namespace BlueSpice\Renderer;
+
 use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\Renderer\Params;
 use BlueSpice\DynamicFileDispatcher\Params as DFDParams;

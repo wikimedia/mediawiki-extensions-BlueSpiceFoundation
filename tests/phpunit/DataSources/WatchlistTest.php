@@ -71,8 +71,8 @@ class WatchlistTest extends \MediaWikiTestCase {
 		$records = $resultSet->getRecords();
 		$total = $resultSet->getTotal();
 
-		$this->assertEquals( 9 , count( $records ), 'Count of datasets in result is wrong' );
-		$this->assertEquals( 9 , $total, 'Count of total datasets is wrong' );
+		$this->assertEquals( 9, count( $records ), 'Count of datasets in result is wrong' );
+		$this->assertEquals( 9, $total, 'Count of total datasets is wrong' );
 	}
 
 	/**

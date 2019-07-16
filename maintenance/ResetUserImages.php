@@ -1,6 +1,6 @@
 <?php
 
-require_once( __DIR__ . '/Maintenance.php' );
+require_once __DIR__ . '/Maintenance.php';
 
 class ResetUserImages extends Maintenance {
 
@@ -15,7 +15,7 @@ class ResetUserImages extends Maintenance {
 		$res = $dbw->select( 'user', 'user_id' );
 		while ( $row = $dbw->fetchObject( $res ) ) {
 			$oUser = User::newFromId( $row->user_id );
-			$sUserImage = $oUser->getName().'.jpg';
+			$sUserImage = $oUser->getName() . '.jpg';
 
 			$dbw->delete(
 				'user_properties',
@@ -34,10 +34,10 @@ class ResetUserImages extends Maintenance {
 				__METHOD__,
 				'IGNORE'
 			);
-			echo 'Reseted user ' . $oUser->getName() . ' new value '. $sUserImage. "\n";
+			echo 'Reseted user ' . $oUser->getName() . ' new value ' . $sUserImage . "\n";
 		}
 	}
 }
 
 $maintClass = "ResetUserImages";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

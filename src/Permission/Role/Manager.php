@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\Permission\Role;
+
 use BlueSpice\Permission\Role\IRole;
 use BlueSpice\Permission\Role\Role;
 

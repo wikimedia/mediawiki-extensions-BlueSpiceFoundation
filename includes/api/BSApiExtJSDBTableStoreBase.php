@@ -44,7 +44,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		$this->aOptions  = $this->makeOptions( $sQuery, $aFilter );
 		$this->aJoinOptions = $this->makeJoinOptions( $sQuery, $aFilter );
 
-		Hooks::run( 'BSApiExtJSDBTableStoreBeforeQuery' , [
+		Hooks::run( 'BSApiExtJSDBTableStoreBeforeQuery', [
 			$this,
 			$sQuery,
 			$aFilter,
@@ -77,7 +77,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			$aData[] = $oData;
 		}
 
-		Hooks::run( 'BSApiExtJSDBTableStoreAfterQuery' , [
+		Hooks::run( 'BSApiExtJSDBTableStoreAfterQuery', [
 			$this,
 			$sQuery,
 			$aFilter,
@@ -92,7 +92,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		return $aData;
 	}
 
-	public abstract function makeTables( $sQuery, $aFilter );
+	abstract public function makeTables( $sQuery, $aFilter );
 
 	public function makeFields( $sQuery, $aFilter ) {
 		return [
@@ -175,13 +175,13 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		$oDB = $this->getDB();
 		switch ( $oFilter->comparison ) {
 			case 'ew':
-				$aReturn[] = $oFilter->field." ".$oDB->buildLike(
+				$aReturn[] = $oFilter->field . " " . $oDB->buildLike(
 					$oDB->anyString(),
 					$sFilterValue
 				);
 				break;
 			case 'sw':
-				$aReturn[] = $oFilter->field." ".$oDB->buildLike(
+				$aReturn[] = $oFilter->field . " " . $oDB->buildLike(
 					$sFilterValue,
 					$oDB->anyString()
 				);
@@ -193,7 +193,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 				$aReturn[] = "$oFilter->field != $sFilterValue";
 				break;
 			case 'ct':
-				$aReturn[] = $oFilter->field." ".$oDB->buildLike(
+				$aReturn[] = $oFilter->field . " " . $oDB->buildLike(
 					$oDB->anyString(),
 					$sFilterValue,
 					$oDB->anyString()

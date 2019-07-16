@@ -22,7 +22,7 @@ class BsExtJSStoreParams {
 	 * Factory method for BsExtJSStoreParams.
 	 * @return null|BsExtJSStoreParams
 	 */
-	public static function newFromRequest(){
+	public static function newFromRequest() {
 		$oRequest = RequestContext::getMain()->getRequest();
 
 		// Mandatory (?)
@@ -143,7 +143,7 @@ class BsExtJSStoreParams {
 		$result = FormatJson::encode( $mData );
 		if ( !empty( $this->sCallback ) ) {
 			$result = sprintf(
-				$this->sCallback.'( %s );',
+				$this->sCallback . '( %s );',
 				$result
 			);
 		}

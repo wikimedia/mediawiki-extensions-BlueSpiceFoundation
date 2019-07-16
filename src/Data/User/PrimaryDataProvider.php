@@ -82,7 +82,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 					$filter->setApplied();
 					break;
 				case StringValue::COMPARISON_CONTAINS:
-					$conds[] = "$fieldName ".$this->db->buildLike(
+					$conds[] = "$fieldName " . $this->db->buildLike(
 						$this->db->anyString(),
 						$filter->getValue(),
 						$this->db->anyString()
@@ -90,7 +90,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 					$filter->setApplied();
 					break;
 				case StringValue::COMPARISON_NOT_CONTAINS:
-					$conds[] = "$fieldName NOT ".$this->db->buildLike(
+					$conds[] = "$fieldName NOT " . $this->db->buildLike(
 						$this->db->anyString(),
 						$filter->getValue(),
 						$this->db->anyString()
@@ -98,14 +98,14 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 					$filter->setApplied();
 					break;
 				case StringValue::COMPARISON_STARTS_WITH:
-					$conds[] = "$fieldName ".$this->db->buildLike(
+					$conds[] = "$fieldName " . $this->db->buildLike(
 						$filter->getValue(),
 						$this->db->anyString()
 					);
 					$filter->setApplied();
 					break;
 				case StringValue::COMPARISON_ENDS_WITH:
-					$conds[] = "$fieldName ".$this->db->buildLike(
+					$conds[] = "$fieldName " . $this->db->buildLike(
 						$this->db->anyString(),
 						$filter->getValue()
 					);

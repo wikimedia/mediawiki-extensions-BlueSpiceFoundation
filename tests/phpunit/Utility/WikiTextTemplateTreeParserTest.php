@@ -14,7 +14,7 @@ class WikiTextTemplateTreeParserTest extends \PHPUnit\Framework\TestCase {
 	 */
 	public function testGetArray( $wikiText, $expectedArray ) {
 		$parser = new WikiTextTemplateTreeParser( $wikiText );
-		$this->assertEquals( $expectedArray , $parser->getArray() );
+		$this->assertEquals( $expectedArray, $parser->getArray() );
 	}
 
 	public function provideGetArrayData() {

@@ -18,7 +18,7 @@ class BSDebug {
 	 * Default log location: php error_log
 	 * @param array $aParams currently not in use
 	 */
-	public static function logSimpleCallStack( $aParams = [] ){
+	public static function logSimpleCallStack( $aParams = [] ) {
 		// TODO: Use wfDebugBacktrace()?
 		$aBackTrace = debug_backtrace();
 		$iLength = count( $aBackTrace );
@@ -37,7 +37,7 @@ class BSDebug {
 	 * Default log location: php error_log
 	 * @param array $aParams currently not used
 	 */
-	public static function logCaller( $aParams = [] ){
+	public static function logCaller( $aParams = [] ) {
 		// TODO: Use wfDebugBacktrace()?
 		$aBackTrace = debug_backtrace();
 		// Index of "2", because "0" is this method call and "1" is the caller
@@ -56,7 +56,7 @@ class BSDebug {
 	protected static function formatLine( $aBackTraceLine, $aParams = [] ) {
 		$sLine = '';
 		if ( isset( $aBackTraceLine['class'] ) ) {
-			$sLine = $aBackTraceLine['class'].'::';
+			$sLine = $aBackTraceLine['class'] . '::';
 		}
 		$sLine .= $aBackTraceLine['function'];
 
@@ -81,9 +81,9 @@ class BSDebug {
 		if ( isset( $aParams['format'] ) && strtolower( $aParams['format'] ) == 'json' ) {
 			$sOut = FormatJson::encode( $mVar, true );
 		}
-		else {
+ else {
 			$sOut = var_export( $mVar, true );
-		}
+	}
 
 		self::writeLog( $sOut );
 	}

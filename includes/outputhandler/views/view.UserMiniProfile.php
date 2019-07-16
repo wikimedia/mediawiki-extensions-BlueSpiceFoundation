@@ -3,6 +3,7 @@
 use BlueSpice\DynamicFileDispatcher\Params;
 use BlueSpice\Services;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage;
+
 /**
  * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
  * \BlueSpice\TemplateRenderer instead
@@ -26,7 +27,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		}
 
 		if ( isset( $this->mOptions['print'] ) && $this->mOptions['print'] === true ) {
-			return $this->mOptions['userdisplayname'].', ';
+			return $this->mOptions['userdisplayname'] . ', ';
 		}
 
 		$aClasses = isset( $this->mOptions['classes'] ) && is_array( $this->mOptions['classes'] )
@@ -44,11 +45,11 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$url = $dfdUrlBuilder->build( new Params( $params ) );
 
 		$aOut = [];
-		$aOut[] = '<div class="'.  implode( ' ', $aClasses ).'" title="'.$this->mOptions['userdisplayname'].'">';
-		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' : '<a class="bs-block" href="'.$this->mOptions['linktargethref'].'">';
-		$aOut[] = '<img alt="'.$this->mOptions['userdisplayname'].'"';
-		$aOut[] = 'src="'.$url.'"';
-		$aOut[] = 'width="'.$this->mOptions['width'].'"';
+		$aOut[] = '<div class="' . implode( ' ', $aClasses ) . '" title="' . $this->mOptions['userdisplayname'] . '">';
+		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' : '<a class="bs-block" href="' . $this->mOptions['linktargethref'] . '">';
+		$aOut[] = '<img alt="' . $this->mOptions['userdisplayname'] . '"';
+		$aOut[] = 'src="' . $url . '"';
+		$aOut[] = 'width="' . $this->mOptions['width'] . '"';
 		$aOut[] = '/>';
 		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '</span>' : '</a>';
 		$aOut[] = '</div>';
@@ -72,7 +73,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 
 		$oUser = $this->mOptions['user'];
 		if ( !$oUser instanceof User ) {
-			throw new BsException( "No User Given. ".__CLASS__." ".__METHOD__ );
+			throw new BsException( "No User Given. " . __CLASS__ . " " . __METHOD__ );
 		}
 
 		if ( !isset( $this->mOptions['width'] ) ) {

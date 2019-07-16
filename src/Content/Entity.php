@@ -33,7 +33,6 @@ class Entity extends \JsonContent {
 			return null;
 		}
 		return \FormatJson::encode( $decoded, true );
-
 	}
 
 	/**
@@ -80,7 +79,7 @@ class Entity extends \JsonContent {
 			$rows[] = $this->objectRow( $key, $val );
 		}
 		return \Xml::tags( 'table', [ 'class' => 'mw-json' ],
-			\Xml::tags( 'tbody', [], join( "\n", $rows ) )
+			\Xml::tags( 'tbody', [], implode( "\n", $rows ) )
 		);
 	}
 

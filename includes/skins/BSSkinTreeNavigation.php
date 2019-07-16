@@ -30,7 +30,7 @@ abstract class BSSkinTreeNavigation {
 		return $this->mSkinTemplate;
 	}
 
-	protected abstract function getContainerID();
+	abstract protected function getContainerID();
 
 	/**
 	 *

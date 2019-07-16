@@ -13,6 +13,6 @@ abstract class SecondaryDataProvider implements ISecondaryDataProvider {
 		return $dataSets;
 	}
 
-	protected abstract function doExtend( &$dataSet );
+	abstract protected function doExtend( &$dataSet );
 
 }

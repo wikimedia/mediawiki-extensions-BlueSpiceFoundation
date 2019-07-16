@@ -123,13 +123,12 @@ abstract class BSApiTasksBase extends BSApiBase {
 		$this->getMain()->getVal( '_' );
 		$sTask = $aParams['task'];
 
-		$sMethod = 'task_'.$sTask;
+		$sMethod = 'task_' . $sTask;
 		$oResult = $this->makeStandardReturn();
 
 		if ( !is_callable( [ $this, $sMethod ] ) ) {
 			$oResult->errors['task'] = "Task '$sTask' not implemented!";
-		}
-		else {
+		} else {
 			$res = $this->checkTaskPermission( $sTask );
 			if ( !$res ) {
 				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
@@ -141,15 +140,14 @@ abstract class BSApiTasksBase extends BSApiBase {
 			if ( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
 				global $wgReadOnly;
 				$oResult->message = wfMessage( 'bs-readonly', $wgReadOnly )->plain();
-			}
-			else {
+			} else {
 				$oTaskData = $this->getParameter( 'taskData' );
 				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', [ $this, $sTask, &$oTaskData , &$aParams ] );
 
 				$oResult = $this->validateTaskData( $sTask, $oTaskData );
 				if ( empty( $oResult->errors ) && empty( $oResult->message ) ) {
 					try {
-						$oResult = $this->$sMethod( $oTaskData , $aParams );
+						$oResult = $this->$sMethod( $oTaskData, $aParams );
 					}
 					catch ( Exception $e ) {
 						$oResult->success = false;
@@ -378,7 +376,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	public function getExamples() {
 		$aTaskNames = $this->oTasksSpec->getTaskNames();
 		return [
-			'api.php?action='.$this->getModuleName().'&task='.$aTaskNames[0].'&taskData={someKey:"someValue",isFalse:true}',
+			'api.php?action=' . $this->getModuleName() . '&task=' . $aTaskNames[0] . '&taskData={someKey:"someValue",isFalse:true}',
 		];
 	}
 
@@ -418,7 +416,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 	 * @param Array $oTaskData can be empty, default param for task
 	 * @return Array Elements of $oTasks with boolean attributes for grant / deny on each task provided by called api-class
 	 */
-	public function task_getUserTaskPermissions( $oTaskData ){
+	public function task_getUserTaskPermissions( $oTaskData ) {
 		$oResponse = $this->makeStandardReturn();
 
 		$aTaskPermissions = $this->getRequiredTaskPermissions();
@@ -431,7 +429,6 @@ abstract class BSApiTasksBase extends BSApiBase {
 		$oResponse->success = true;
 
 		return $oResponse;
-
 	}
 
 	/**

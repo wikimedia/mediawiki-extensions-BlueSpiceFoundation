@@ -23,7 +23,7 @@ if ( $numcats < 1 ) {
 
 echo "Found $numcats categories to replace:" . PHP_EOL . PHP_EOL;
 for ( $i = 0; $i < $numcats; $i++ ) {
-	echo 1 + $i.": {$oldcats[$i]} --> {$newcats[$i]}" . PHP_EOL;
+	echo 1 + $i . ": {$oldcats[$i]} --> {$newcats[$i]}" . PHP_EOL;
 }
 if ( PHP_OS == "WINNT" ) {
 	echo PHP_EOL;
@@ -31,10 +31,10 @@ if ( PHP_OS == "WINNT" ) {
 }
 echo PHP_EOL;
 echo "Are you sure you want to do this?  Type 'yes' to continue: ";
-$handle = fopen( "php://stdin","r" );
+$handle = fopen( "php://stdin", "r" );
 $line = fgets( $handle );
 if ( trim( $line ) != 'yes' ) {
-	exit( "ABORTING!".PHP_EOL );
+	exit( "ABORTING!" . PHP_EOL );
 }
 
 $oldcatspatterns = array_map( 'old_to_regex', $oldcats );
@@ -115,7 +115,7 @@ This script is based loosely on maintenance/edit.php of MediaWiki.
 // $optionsWithArgs = array( 'u', 's' );
 
 // include MediaWiki's command line tools
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 // TODO: Das in ein options.php file tun, das per Parameter aufgerufen wird
 
@@ -212,7 +212,7 @@ if ( isset( $namespace_exclude ) ) {
 	$namespace = $namespace_exclude;
 }
 if ( $token ) {
-	$qry_ns = 'page_namespace '.$token.' ("'.implode( '","', $namespace ).'")';
+	$qry_ns = 'page_namespace ' . $token . ' ("' . implode( '","', $namespace ) . '")';
 }
 
 $dbw =& wfGetDB( DB_MASTER );
@@ -296,11 +296,10 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 		if ( $mode == 'append' ) {
 			$text .= $append_text;
 		} else if ( $mode == 'prefix' ) {
-			$text = $prefix_text.$text;
+			$text = $prefix_text . $text;
 		} else if ( $mode == 'delete' ) {
 			$text = preg_replace( $delete_text, '', $text );
-		}
-		else if ( $mode == 'replace' ) {
+		} else if ( $mode == 'replace' ) {
 			$text = preg_replace( $replace_search, $replace_with, $text, -1, $repcount );
 		}
 
@@ -317,7 +316,7 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 		if ( $testing ) {
 			print "testing.\n";
 			if ( $verbose ) {
-				print $text."\n--------------------------------------------------------------------------------\n\n";
+				print $text . "\n--------------------------------------------------------------------------------\n\n";
 			}
 			continue;
 		}
@@ -376,7 +375,7 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 }
 
 function hw_error( $msg ) {
-	echo 'ERROR: '.$msg;
+	echo 'ERROR: ' . $msg;
 	exit();
 }
 
@@ -431,7 +430,7 @@ foreach ( $res as $row ) {
 				( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
 				( $noRC ? EDIT_SUPPRESS_RC : 0 )
 			);
-		        if ($redirstat->isGood()) echo "successful\n";
+				if ($redirstat->isGood()) echo "successful\n";
 			else echo "failed\n";
 			*/
 			echo "Deleting $oldtitletext : ";

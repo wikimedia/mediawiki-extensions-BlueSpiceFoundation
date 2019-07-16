@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice;
+
 use BlueSpice\Renderer\Params;
 
 class RendererFactory {

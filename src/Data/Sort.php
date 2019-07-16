@@ -49,7 +49,7 @@ class Sort {
 	 * @return string
 	 */
 	public function __toString() {
-		return $this->getProperty().' '.$this->getDirection();
+		return $this->getProperty() . ' ' . $this->getDirection();
 	}
 
 		/**

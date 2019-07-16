@@ -22,7 +22,7 @@ This script is based loosely on maintenance/edit.php of MediaWiki.
 */
 
 // include MediaWiki's command line tools
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 $userName    = 'WikiBot';
 $summary     = 'Some meaningful description';
@@ -129,7 +129,7 @@ if ( isset( $namespace_exclude ) ) {
 	$namespace = $namespace_exclude;
 }
 if ( $token ) {
-	$qry_ns = 'page_namespace '.$token.' ("'.implode( '","', $namespace ).'")';
+	$qry_ns = 'page_namespace ' . $token . ' ("' . implode( '","', $namespace ) . '")';
 }
 
 $dbw =& wfGetDB( DB_MASTER );
@@ -208,11 +208,10 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 		if ( $mode == 'append' ) {
 			$text .= $append_text;
 		} else if ( $mode == 'prefix' ) {
-			$text = $prefix_text.$text;
+			$text = $prefix_text . $text;
 		} else if ( $mode == 'delete' ) {
 			$text = preg_replace( $delete_text, '', $text );
-		}
-		else if ( $mode == 'replace' ) {
+		} else if ( $mode == 'replace' ) {
 			$text = preg_replace( $replace_search, $replace_with, $text );
 		}
 
@@ -228,7 +227,7 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 		if ( $testing ) {
 			print "testing.\n";
 			if ( $verbose ) {
-				print $text."\n--------------------------------------------------------------------------------\n\n";
+				print $text . "\n--------------------------------------------------------------------------------\n\n";
 			}
 			continue;
 		}
@@ -281,6 +280,6 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 echo "\n\n-- " . ( $testing ? "Would have m" : "M" ) . "odified $hits articles.\n";
 
 function error( $msg ) {
-	echo 'ERROR: '.$msg;
+	echo 'ERROR: ' . $msg;
 	exit();
 }

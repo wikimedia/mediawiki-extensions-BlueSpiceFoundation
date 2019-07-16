@@ -25,6 +25,7 @@
  * @filesource
  */
 namespace BlueSpice;
+
 use BlueSpice\Renderer\Params;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;

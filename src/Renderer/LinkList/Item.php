@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\Renderer\LinkList;
+
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 use BlueSpice\Renderer\Params;

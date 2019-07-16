@@ -26,6 +26,7 @@
  * @filesource
  */
 namespace BlueSpice;
+
 use BlueSpice\Services;
 
 /**

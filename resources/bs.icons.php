@@ -122,12 +122,12 @@ switch ( $iconSet ) {
 		$number = '';
 
 		if ( preg_match( '#^\.(bs-)?icon-#', $lines[$i] ) ) {
-			$pos = strpos( $lines[$i],':' );
-			$className = substr( $lines[$i],1,$pos - 1 );
+			$pos = strpos( $lines[$i], ':' );
+			$className = substr( $lines[$i], 1, $pos - 1 );
 
 			if ( preg_match( '#content: "#', $lines[$i + 1] ) ) {
-				$pos = strpos( $lines[$i + 1],'"' );
-				$number = substr( $lines[$i + 1],12,$pos - 6 );
+				$pos = strpos( $lines[$i + 1], '"' );
+				$number = substr( $lines[$i + 1], 12, $pos - 6 );
 			}
  ?>
 		<td class="icon"><a href="#" class="<?php echo $className;?>"></a></td>
@@ -136,7 +136,7 @@ switch ( $iconSet ) {
 <?php
 		if ( $rowcount < 3 ) {
 				$rowcount++;
-		}else if ( $rowcount == 3 ) {
+		} else if ( $rowcount == 3 ) {
 				$rowcount = 0;
 				echo "\t\t</tr>\n\t\t<tr>\n";
 		}

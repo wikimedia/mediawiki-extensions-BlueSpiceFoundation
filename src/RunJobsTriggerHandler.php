@@ -59,7 +59,7 @@ abstract class RunJobsTriggerHandler implements IRunJobsTriggerHandler {
 	/**
 	 * @return \Status
 	 */
-	protected abstract function doRun();
+	abstract protected function doRun();
 
 	/**
 	 *

@@ -124,12 +124,12 @@ abstract class Hook implements MessageLocalizer {
 			return true;
 		}
 
-		\Profiler::instance()->scopedProfileIn( "Hook ". __METHOD__ );
+		\Profiler::instance()->scopedProfileIn( "Hook " . __METHOD__ );
 		$result = $this->doProcess();
 		return $result;
 	}
 
-	protected abstract function doProcess();
+	abstract protected function doProcess();
 
 	/**
 	 * Allow subclasses to define a skip condition

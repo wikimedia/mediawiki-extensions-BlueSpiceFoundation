@@ -25,6 +25,7 @@
  * @filesource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;

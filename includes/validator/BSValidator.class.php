@@ -62,7 +62,7 @@ class BsValidator {
 			self::$prKnownPlugins[] = $type;
 		}
 
-		$validationResult = call_user_func( $plugin.'::isValid', $validateThis, $options );
+		$validationResult = call_user_func( $plugin . '::isValid', $validateThis, $options );
 
 		if ( is_object( $validationResult ) && ( $validationResult instanceof BsValidatorResponse ) ) {
 			return ( array_key_exists( 'fullResponse', $options ) && $options['fullResponse'] )

@@ -46,10 +46,10 @@ class BsArticleHelper {
 		$aData = BsCacheHelper::get( $sKey );
 
 		if ( $aData !== false ) {
-			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching discussion amounts from cache' );
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching discussion amounts from cache' );
 			$iCount = $aData['iCount'];
 		} else {
-			wfDebugLog( 'BsMemcached', __CLASS__.': Fetching discussion amounts from DB' );
+			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching discussion amounts from DB' );
 			$dbr = wfGetDB( DB_REPLICA );
 			// a new revision (rev_id) is also created on page move. So use rev_text_id
 			$res = $dbr->select(

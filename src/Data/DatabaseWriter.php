@@ -67,7 +67,7 @@ abstract class DatabaseWriter extends Writer {
 			}
 			if ( !$existingRecord = $this->getExistingRecord( $record ) ) {
 				$record->getStatus()->fatal(
-					"Record not found in table: ".$this->getTableName()
+					"Record not found in table: " . $this->getTableName()
 				);
 				continue;
 			}
@@ -94,7 +94,7 @@ abstract class DatabaseWriter extends Writer {
 		}
 		if ( !$success ) {
 			$record->getStatus()->fatal(
-				"Error writing into: ".$this->getTableName()
+				"Error writing into: " . $this->getTableName()
 			);
 		}
 	}
@@ -119,7 +119,7 @@ abstract class DatabaseWriter extends Writer {
 		}
 		if ( !$success ) {
 			$record->getStatus()->fatal(
-				"Error writing into: ".$this->getTableName()
+				"Error writing into: " . $this->getTableName()
 			);
 		}
 	}
@@ -143,7 +143,7 @@ abstract class DatabaseWriter extends Writer {
 		}
 		if ( !$success ) {
 			$record->getStatus()->fatal(
-				"Error deleting from: ".$this->getTableName()
+				"Error deleting from: " . $this->getTableName()
 			);
 		}
 	}

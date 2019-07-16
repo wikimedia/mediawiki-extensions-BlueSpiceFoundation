@@ -294,7 +294,7 @@ class BsCore {
 		// TODO MRG20110707: Check it this cannot be unified
 
 		if ( $nocache ) {
-			wfDebug( __METHOD__.': Use of $nocache parameter is deprecated. There is no caching anyway.' );
+			wfDebug( __METHOD__ . ': Use of $nocache parameter is deprecated. There is no caching anyway.' );
 		}
 
 		if ( !( $oTitle instanceof Title ) ) {
@@ -483,7 +483,7 @@ class BsCore {
 	 * @param Parser $oParser
 	 * @param Title $oTitle
 	 */
-	public static function addTemplateLinkDependency( $oParser, $oTitle )  {
+	public static function addTemplateLinkDependency( $oParser, $oTitle ) {
 		$oRevision = Revision::newFromTitle( $oTitle );
 		$iPageId = $oRevision ? $oRevision->getPage() : 0;
 		$iRevId  = $oRevision ? $oRevision->getId() : 0;

@@ -30,7 +30,7 @@ abstract class IconBase extends Base {
 	/**
 	 * @return string
 	 */
-	protected abstract function getIconClass();
+	abstract protected function getIconClass();
 
 	/**
 	 * @return string[]
@@ -42,11 +42,11 @@ abstract class IconBase extends Base {
 	/**
 	 * @return \Message
 	 */
-	protected abstract function getToolTip();
+	abstract protected function getToolTip();
 
 	/**
 	 * @return string
 	 */
-	protected abstract function getUrl();
+	abstract protected function getUrl();
 
 }

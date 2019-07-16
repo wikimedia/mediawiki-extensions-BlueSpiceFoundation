@@ -263,10 +263,10 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 				$sText = $oContent->getNativeData();
 			}
 		}
-		else {
+ else {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
-		}
+	}
 
 		// Remove all category links before adding the new ones
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
@@ -286,12 +286,12 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		if ( !$oStatus->isGood() ) {
 			$oResponse->message = $oStatus->getMessage();
 		}
-		else {
+ else {
 			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
 			DataUpdate::runUpdates( $oUpdates );
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
-		}
+	}
 
 		return $oResponse;
 	}
@@ -323,8 +323,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 				$sText = $oContent->getNativeData();
 			}
 
-		}
-		else {
+		} else {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
 		}
@@ -412,14 +411,14 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			}
 
 		}
-		else {
+ else {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
-		}
+	}
 
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		foreach ( $aNewCategories as $sCategoryToAdd ) {
-			$sText .= "\n[[" . $sLocalNSName . ":".$sCategoryToAdd."]]";
+			$sText .= "\n[[" . $sLocalNSName . ":" . $sCategoryToAdd . "]]";
 		}
 
 		$oContent = ContentHandler::makeContent( $sText, $oTitle );
@@ -431,13 +430,13 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		if ( !$oStatus->isGood() ) {
 			$oResponse->message = $oStatus->getMessage();
 		}
-		else {
+ else {
 			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
 			DataUpdate::runUpdates( $oUpdates );
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
 			$oResponse->payload = $this->makeCategoryTaskPayload( $oTitle->getArticleID() );
-		}
+	}
 
 		return $oResponse;
 	}
@@ -480,10 +479,10 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			}
 
 		}
-		else {
+ else {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
-		}
+	}
 
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
@@ -503,12 +502,12 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		if ( !$oStatus->isGood() ) {
 			$oResponse->message = $oStatus->getMessage();
 		}
-		else {
+ else {
 			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
 			DataUpdate::runUpdates( $oUpdates );
 			$oResponse->success = true;
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
-		}
+	}
 
 		return $oResponse;
 	}
