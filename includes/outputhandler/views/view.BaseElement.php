@@ -45,14 +45,14 @@ class ViewBaseElement {
 
 	// TODO MRG20100816: Bitte kurzen Kommentar zum Zweck der Variablen
 	protected $_mAutoElement    = 'div';
-	protected $_mData           = array();
+	protected $_mData           = [];
 	protected $_mId             = null;
-	protected $_mItems          = array();
+	protected $_mItems          = [];
 	protected $_mTemplate       = '';
 	protected $_mAutoWrap       = false;
 	protected $_mPresentDataset = null;
 	protected $mI18N            = null;
-	protected $mOptions         = array();
+	protected $mOptions         = [];
 
 	/**
 	 *
@@ -254,7 +254,7 @@ class ViewBaseElement {
 				$output = $this->_mTemplate;
 				$output = preg_replace_callback(
 					'/###([-_|A-Za-z0-9]*?)###/',
-					array( $this, 'processItem' ),
+					[ $this, 'processItem' ],
 					$output
 				);
 			}
@@ -281,7 +281,7 @@ class ViewBaseElement {
 			$output = $this->_mTemplate;
 			$output = preg_replace_callback(
 				'/###([-_|A-Za-z0-9]*?)###/',
-				array( $this, 'processItem' ),
+				[ $this, 'processItem' ],
 				$output
 			);
 			foreach ( $dataSet as $key => $value ) {
@@ -311,7 +311,7 @@ class ViewBaseElement {
 			return '';
 		}
 		if ( count( $tokens ) ) {
-			$params = array();
+			$params = [];
 			foreach ( $tokens as $token ) {
 				if ( isset( $this->_mPresentDataset[$token] )
 				) {
@@ -344,7 +344,7 @@ class ViewBaseElement {
 	}
 
 	// TODO MRG20100831: comment
-	protected function renderLink( $options = array(), $content ) {
+	protected function renderLink( $options = [], $content ) {
 		$glue = '';
 		$href = isset( $options['href'] )
 			? $options['href']

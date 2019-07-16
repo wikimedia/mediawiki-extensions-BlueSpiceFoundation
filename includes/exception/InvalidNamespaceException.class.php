@@ -7,8 +7,8 @@
  */
 
 class BsInvalidNamespaceException extends BsException {
-	private $mListOfInvalidNamespaces = array();
-	private $mListOfValidNamespaces = array();
+	private $mListOfInvalidNamespaces = [];
+	private $mListOfValidNamespaces = [];
 
 	/**
 	 * Setter for internal list of invalid namespaces

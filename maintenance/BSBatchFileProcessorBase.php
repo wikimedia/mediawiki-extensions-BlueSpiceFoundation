@@ -7,9 +7,9 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	protected $sSrc = '';
 	protected $sDest = __DIR__;
 	protected $oCurrentFile = null;
-	protected $aFiles = array();
-	protected $aFileExtensionWhitelist = array();
-	protected $aErrors = array();
+	protected $aFiles = [];
+	protected $aFileExtensionWhitelist = [];
+	protected $aErrors = [];
 
 	public function __construct() {
 		parent::__construct();
@@ -85,7 +85,7 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 			RecursiveIteratorIterator::SELF_FIRST
 		);
 
-		$aFiles = array();
+		$aFiles = [];
 		foreach ( $oFiles as $sPath => $oFile ) {
 			if ( $oFile instanceof SplFileInfo === false ) {
 				$this->error( 'Not a valid SplFileInfo object: ' . $sPath );

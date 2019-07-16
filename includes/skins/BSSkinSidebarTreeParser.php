@@ -164,11 +164,11 @@ class BSSkinSidebarTreeParser {
 	protected function parseWikiText() {
 		$params = new DerivativeRequest(
 			$this->skinTemplate->getSkin()->getRequest(),
-			array(
+			[
 				'action' => 'parse',
 				'text' => $this->wikiTextSource,
 				'title' => $this->skinTemplate->getSkin()->getTitle()->getPrefixedDBkey(),
-			)
+			]
 		);
 
 		$api = new ApiMain( $params );

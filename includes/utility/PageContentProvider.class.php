@@ -17,7 +17,7 @@ class BsPageContentProvider {
 	protected $sTemplate                 = false;
 	public $bEncapsulateContent       = true;
 	protected $oTidy                     = null;
-	public $aTidyConfig               = array();
+	public $aTidyConfig               = [];
 
 	public static $oInstance             = null;
 
@@ -27,7 +27,7 @@ class BsPageContentProvider {
 		}
 
 		// Default Template
-		$sTemplate = array();
+		$sTemplate = [];
 		$sTemplate[] = '<div %s>';
 		// jump-anchor
 		$sTemplate[] = '<a name="%s"></a>';
@@ -54,13 +54,13 @@ class BsPageContentProvider {
 			return $this->oTidy;
 		}
 
-		$this->aTidyConfig = array(
+		$this->aTidyConfig = [
 				'output-xhtml'     => true,
 				'numeric-entities' => true,
 				'hide-comments'    => true,
 				'wrap'             => 0,
 				'show-body-only'   => true
-		);
+		];
 
 		$this->oTidy = new Tidy();
 		return $this->oTidy;
@@ -161,7 +161,7 @@ class BsPageContentProvider {
 	 * @param Array $aParams Contains processing information, like the requested revision id (oldid) and wether to follow redirects or not.
 	 * @return DOMDocument The Articles HTML output, wrapped in a '<div class="bs-page-content">' and with the title and the "bodyContent" in a DOMDocument.
 	 */
-	public function getDOMDocumentContentFor( $oTitle, $aParams = array() ) {
+	public function getDOMDocumentContentFor( $oTitle, $aParams = [] ) {
 		$oDOMDoc = new DOMDocument();
 
 		$bOldValueOfEncapsulateContent = $this->bEncapsulateContent;
@@ -240,14 +240,14 @@ class BsPageContentProvider {
 	 * @global User $wgUser
 	 * @global OutputPage $wgOut
 	 */
-	public function getHTMLContentFor( $oTitle, $aParams = array() ){
+	public function getHTMLContentFor( $oTitle, $aParams = [] ){
 		global $wgRequest, $wgUser, $wgOut;
 		$aParams = array_merge(
-			array(
+			[
 				'oldid'            => 0,
 				'follow-redirects' => false,
 				'entropy'          => 0,
-			),
+			],
 			$aParams
 		);
 
@@ -389,19 +389,19 @@ class BsPageContentProvider {
 	 * @param Array $aParams Contains processing information, like the requested revision id (oldid) and wether to follow redirects or not.
 	 * @return String WikiText of the desired Article
 	 */
-	public function getWikiTextContentFor( Title $oTitle, $aParams = array() ) {
+	public function getWikiTextContentFor( Title $oTitle, $aParams = [] ) {
 		// TODO: Dispatch for different types [SpecialPage?, CategoryPage?, ImagePage? --> What WikiText could be received?]
 		return $this->getWikiTextContentForArticle( $oTitle, $aParams );
 	}
 
-	private function getWikiTextContentForArticle( Title $oTitle, $aParams = array() ) {
+	private function getWikiTextContentForArticle( Title $oTitle, $aParams = [] ) {
 		$aParams = array_merge(
-			array(
+			[
 				'oldid'            => 0,
 				'follow-redirects' => false,
 				'entropy'          => 0,
 				'expand-templates' => false
-			),
+			],
 			$aParams
 		);
 
@@ -429,7 +429,7 @@ class BsPageContentProvider {
 	 * @param Array $aParams
 	 * @return Title
 	 */
-	public function getRedirectTargetRecursiveFrom( Title $oTitle, $aParams = array() ) {
+	public function getRedirectTargetRecursiveFrom( Title $oTitle, $aParams = [] ) {
 		return ContentHandler::makeContent(
 			$this->getWikiTextContentFor( $oTitle, $aParams ),
 			null,
@@ -443,7 +443,7 @@ class BsPageContentProvider {
 	 * @param Array $aParams
 	 * @return Array_of_Title
 	 */
-	public function getRedirectChainRecursiveFrom( Title $oTitle, $aParams = array() ) {
+	public function getRedirectChainRecursiveFrom( Title $oTitle, $aParams = [] ) {
 		return ContentHandler::makeContent(
 			$this->getWikiTextContentFor( $oTitle, $aParams ),
 			null,
@@ -457,7 +457,7 @@ class BsPageContentProvider {
 	 * @param Array $aParams
 	 * @return Title
 	 */
-	public function getRedirectTargetFrom( Title $oTitle, $aParams = array() ) {
+	public function getRedirectTargetFrom( Title $oTitle, $aParams = [] ) {
 		return Title::newFromRedirect( $this->getWikiTextContentFor( $oTitle, $aParams ) );
 	}
 
@@ -536,14 +536,14 @@ class BsPageContentProvider {
 	}
 
 	private function makeInternalAnchorNamesUnique( &$sHTML, $oTitle, $aParams ) {
-		$aMatches = array();
+		$aMatches = [];
 		// TODO RBV (19.07.12 09:29): Use DOM!
 		// TODO RBV (09.09.11 11:48): What if there is no TOC?
 		// Finds all TOC links
 		preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber">)|si', $sHTML, $aMatches );
 
-		$aPatterns     = array();
-		$aReplacements = array();
+		$aPatterns     = [];
+		$aReplacements = [];
 
 		$sPatternQuotedArticleTitle = preg_quote( str_replace( ' ', '_', $oTitle->getPrefixedText() ) );
 

@@ -8,7 +8,7 @@
  * @license GPL-3.0-only
  */
 
-$options = array( 'help', 'logdir', 'execute' );
+$options = [ 'help', 'logdir', 'execute' ];
 require_once( 'BSMaintenance.php' );
 print_r( "need to have permissions on log directory\n" );
 print_r( $options );

@@ -41,7 +41,7 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 	 *
 	 * @var array
 	 */
-	protected $aBlacklist = array();
+	protected $aBlacklist = [];
 
 	/**
 	 *

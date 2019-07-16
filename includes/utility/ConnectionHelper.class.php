@@ -13,8 +13,8 @@
 class BsConnectionHelper {
 
 	public static function urlExists( $sUrl, $iTimeout = 3 ) {
-		$ctx = stream_context_create( array(
-						'http' => array( 'timeout' => $iTimeout ) )
+		$ctx = stream_context_create( [
+						'http' => [ 'timeout' => $iTimeout ] ]
 			);
 		// TODO MRG (21.09.10 12:06): Performanz: würde hier ein Ping nicht reichen?
 		// TODO MRG (21.09.10 12:06): Security: es erscheint mir sehr unsicher, Daten von

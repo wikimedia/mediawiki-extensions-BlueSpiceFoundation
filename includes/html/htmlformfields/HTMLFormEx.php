@@ -10,7 +10,7 @@ class HTMLFormEx extends HTMLForm {
 		$tableHtml = '';
 		$subsectionHtml = '';
 		$hasLeftColumn = false;
-		$map = array();
+		$map = [];
 		foreach ( $fields as $key => $value ) {
 			$sKey = $this->mMessagePrefix . '-' . strtolower( $key );
 			$map[$key] = wfMessage( $sKey )->plain();
@@ -31,35 +31,35 @@ class HTMLFormEx extends HTMLForm {
 				}
 			} elseif ( is_array( $value ) ) {
 				$section = $this->displaySection( $value, $key );
-				$subsectionHtml .= self::fieldset( $legend, $section, array( 'class' => 'bs-prefs', 'id' => $sectionName.$key ) ) . "\n";
+				$subsectionHtml .= self::fieldset( $legend, $section, [ 'class' => 'bs-prefs', 'id' => $sectionName.$key ] ) . "\n";
 			}
 		}
 
-		$classes = array();
+		$classes = [];
 		if ( !$hasLeftColumn ) {
 			// Avoid strange spacing when no labels exist
 			$classes[] = 'mw-htmlform-nolabel';
 		}
-		$attribs = array(
+		$attribs = [
 			'class' => implode( ' ', $classes ),
-		);
+		];
 		if ( $sectionName ) {
 			$attribs['id'] = Sanitizer::escapeId( "mw-htmlform-$sectionName" );
 		}
 
 		$tableHtml = Html::rawElement( 'table', $attribs,
-			Html::rawElement( 'tbody', array(), "\n$tableHtml\n" ) ) . "\n";
+			Html::rawElement( 'tbody', [], "\n$tableHtml\n" ) ) . "\n";
 
 		return $subsectionHtml . "\n" . $tableHtml;
 	}
 
-	public static function fieldset( $legend = false, $content = false, $attribs = array() ) {
+	public static function fieldset( $legend = false, $content = false, $attribs = [] ) {
 		$s = Xml::openElement( 'fieldset', $attribs ) . "\n";
 		if ( $legend ) {
-			$s .= Xml::element( 'legend', array( 'class' => 'bs-prefs-head' ), $legend." " ) . "\n";
+			$s .= Xml::element( 'legend', [ 'class' => 'bs-prefs-head' ], $legend." " ) . "\n";
 		}
 		if ( $content !== false ) {
-			$s .= Xml::openElement( 'div', array( 'class' => 'bs-prefs-body' ) );
+			$s .= Xml::openElement( 'div', [ 'class' => 'bs-prefs-body' ] );
 			$s .= $content . "\n";
 			$s .= Xml::closeElement( 'div' );
 			$s .= Xml::closeElement( 'fieldset' ) . "\n";

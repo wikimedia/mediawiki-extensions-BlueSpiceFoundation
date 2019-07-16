@@ -5,7 +5,7 @@ require_once getenv( 'MW_INSTALL_PATH' ) !== false
 	: __DIR__ . '/../../../maintenance/Maintenance.php';
 
 abstract class BSMaintenance extends Maintenance {
-	protected $aOutputBuffer = array();
+	protected $aOutputBuffer = [];
 
 	public function __construct() {
 		parent::__construct();

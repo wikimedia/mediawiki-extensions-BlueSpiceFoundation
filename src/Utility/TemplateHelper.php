@@ -69,11 +69,11 @@ class TemplateHelper {
 			throw new \BsException( "Unknown Extension $extName" );
 		}
 		$extPath = $extensions[$extName]['extPath'];
-		$tplDirParts = array(
+		$tplDirParts = [
 			$GLOBALS['wgExtensionDirectory'],
 			$extPath,
 			static::TEMPLATE_PATH
-		);
+		];
 		return $tplDirParts;
 	}
 }

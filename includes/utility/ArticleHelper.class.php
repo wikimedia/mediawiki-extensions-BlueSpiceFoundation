@@ -9,7 +9,7 @@ class BsArticleHelper {
 	protected $oTitle = null;
 	protected $bIsLoaded = false;
 
-	protected static $aInstances = array();
+	protected static $aInstances = [];
 
 	/**
 	 * Protected constructor. Instances can be obtained through the factory
@@ -63,12 +63,12 @@ class BsArticleHelper {
 			$res = $dbr->select(
 				'revision',
 				'DISTINCT rev_text_id',
-				array( 'rev_page' => $iTalkPageId ),
+				[ 'rev_page' => $iTalkPageId ],
 				__METHOD__
 			);
 			$iCount = $dbr->numRows( $res );
 
-			BsCacheHelper::set( $sKey, array( 'iCount' => $iCount ) );
+			BsCacheHelper::set( $sKey, [ 'iCount' => $iCount ] );
 		}
 
 		return $iCount;

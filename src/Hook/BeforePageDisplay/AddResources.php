@@ -102,7 +102,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	 * @return array
 	 */
 	protected function lcNormalizeArray( $data ) {
-		$normalized = array();
+		$normalized = [];
 		foreach ( $data as $item ) {
 			$normalized[] = strtolower( $item );
 		}

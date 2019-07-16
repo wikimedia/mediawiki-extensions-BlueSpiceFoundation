@@ -32,7 +32,7 @@ use BlueSpice\Api\Task;
  * @package BlueSpice_Foundation
  */
 class BSApiWikiPageTasks extends BSApiTasksBase {
-	protected $aTasks = array(
+	protected $aTasks = [
 		'setCategories' => [
 			// 'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
 			'examples' => [
@@ -191,7 +191,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 				]
 			]
 		]
-	);
+	];
 
 	protected $aReadTasks = [
 		'getDiscussionCount',
@@ -204,14 +204,14 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @return array
 	 */
 	protected function getRequiredTaskPermissions() {
-		return array(
-			'setCategories' => array( 'edit' ),
-			'getExplicitCategories' => array( 'read' ),
-			'addCategories' => array( 'edit' ),
-			'removeCategories' => array( 'edit' ),
-			'getDiscussionCount' => array( 'read' ),
-			'getTemplateTree' => array( 'read' )
-		);
+		return [
+			'setCategories' => [ 'edit' ],
+			'getExplicitCategories' => [ 'read' ],
+			'addCategories' => [ 'edit' ],
+			'removeCategories' => [ 'edit' ],
+			'getDiscussionCount' => [ 'read' ],
+			'getTemplateTree' => [ 'read' ]
+		];
 	}
 
 	protected function legacyWikiPageTaskCategory( \stdClass $taskData, $response, $task ) {
@@ -251,7 +251,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected function task_setCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
 		$oTaskData->categories = !is_array( $oTaskData->categories )
-			? array()
+			? []
 			: $oTaskData->categories;
 		$oTaskData->categories = implode( '|', $oTaskData->categories );
 		if ( empty( $oTaskData->categories ) ) {
@@ -333,7 +333,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected function task_addCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
 		$oTaskData->categories = !is_array( $oTaskData->categories )
-			? array()
+			? []
 			: $oTaskData->categories;
 		$oTaskData->categories = implode( '|', $oTaskData->categories );
 		if ( empty( $oTaskData->categories ) ) {
@@ -358,7 +358,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected function task_removeCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
 		$oTaskData->categories = !is_array( $oTaskData->categories )
-			? array()
+			? []
 			: $oTaskData->categories;
 		$oTaskData->categories = implode( '|', $oTaskData->categories );
 		if ( empty( $oTaskData->categories ) ) {
@@ -426,11 +426,11 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	protected function makeCategoryTaskPayload( $pageId ) {
 		$oTitle = Title::newFromID( $pageId );
 		$result = $this->task_getExplicitCategories( (object)[ 'page_id' => $pageId ], [] );
-		return array(
+		return [
 			'page_id' => $oTitle->getArticleID(),
 			'page_prefixed_text' => $oTitle->getPrefixedText(),
 			'categories' => $result->payload
-		);
+		];
 	}
 
 	/**

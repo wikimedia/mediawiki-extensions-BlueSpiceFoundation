@@ -644,10 +644,10 @@ class BsFileSystemHelper {
 	 * Maps invalid FS chars to placeholders
 	 * @var array
 	 */
-	public static $aFSCharMap = array(
+	public static $aFSCharMap = [
 		// MediaWiki NSFileRepo makes it possible to have filenames with colons. Unfortunately we cannot have a colon in a filesystem path
 		':' => '_COLON_'
-	);
+	];
 
 	protected static function makeTmpFileName( $sFileName ) {
 		$sTmpFileName = $sFileName;

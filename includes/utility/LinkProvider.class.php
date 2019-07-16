@@ -25,7 +25,7 @@ class BsLinkProvider {
 	 * @param Array $aAdditionalAttributes If special attributes are required, you can pass them in an associative array. Attention: attibutes that can be set by parameter (style, class, title, ...) are not allowed! I.e. $arAdditionalAttributes = array( 'target' => '_blank', 'name' => 'Mithrandir', 'title' => 'Not a mage' ) will result in <a href="[...]" title="Gandalf" [...] target="_blank" name="Mithrandir">[...]</a>
 	 * @return String Something like '<a href="[...]index.php?title=Gandalf$action=edit" title="Gandalf" [...]>the White Wizard</a>'
 	 */
-	public static function makeAnchorTagForUser( User $oUser, $sLabel = '', $sTitle = '', $bRelative = true, $aAdditionalQueryString = array(), $aClasses = array(), $aStyles = array(), $aAdditionalAttributes = array() ) {
+	public static function makeAnchorTagForUser( User $oUser, $sLabel = '', $sTitle = '', $bRelative = true, $aAdditionalQueryString = [], $aClasses = [], $aStyles = [], $aAdditionalAttributes = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$sUserDisplayName = \BlueSpice\Services::getInstance()
 			->getBSUtilityFactory()->getUserHelper( $oUser )->getDisplayName();
@@ -112,7 +112,7 @@ class BsLinkProvider {
 	 * @param array $aAdditionalAttributes
 	 * @return string
 	 */
-	private static function makeAttributesFromArrays( $aClasses = array(), $aStyles = array(), $aAdditionalAttributes = array() ) {
+	private static function makeAttributesFromArrays( $aClasses = [], $aStyles = [], $aAdditionalAttributes = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// TODO MRG (21.09.10 12:53): ich würde generell das Vorgehen über Option-Arrays bevorzugen. Warum sollten Klassen
 		// und Styles eine Sonderstellung haben?
@@ -150,7 +150,7 @@ class BsLinkProvider {
 	 * @param Array $aOptions
 	 * @return String Link
 	 */
-	public static function makeLink( $oTitle, $sHtml = null, $aCustomAttribs = array(), $aQuery = array(), $aOptions = array() ) {
+	public static function makeLink( $oTitle, $sHtml = null, $aCustomAttribs = [], $aQuery = [], $aOptions = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return Linker::link( $oTitle, $sHtml, $aCustomAttribs, $aQuery, $aOptions );
 	}

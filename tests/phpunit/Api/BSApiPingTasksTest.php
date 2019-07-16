@@ -23,7 +23,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 		$this->insertPage( 'Test page', 'Dummy text' );
 
 		$wgHooks['BsAdapterAjaxPingResult'] = [];
-		$wgHooks['BsAdapterAjaxPingResult'][] = array( $this, 'onBsAdapterAjaxPingResult' );
+		$wgHooks['BsAdapterAjaxPingResult'][] = [ $this, 'onBsAdapterAjaxPingResult' ];
 	}
 
 	public function testPing() {

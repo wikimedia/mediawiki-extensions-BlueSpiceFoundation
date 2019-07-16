@@ -12,7 +12,7 @@ use BlueSpice\DynamicFileDispatcher\UserProfileImage;
  */
 class ViewUserMiniProfile extends ViewBaseElement {
 
-	private $aDefaultClasses = array( 'bs-userminiprofile' );
+	private $aDefaultClasses = [ 'bs-userminiprofile' ];
 	private $bIsInit = false;
 
 	/**
@@ -43,7 +43,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$dfdUrlBuilder = Services::getInstance()->getBSDynamicFileDispatcherUrlBuilder();
 		$url = $dfdUrlBuilder->build( new Params( $params ) );
 
-		$aOut = array();
+		$aOut = [];
 		$aOut[] = '<div class="'.  implode( ' ', $aClasses ).'" title="'.$this->mOptions['userdisplayname'].'">';
 		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' : '<a class="bs-block" href="'.$this->mOptions['linktargethref'].'">';
 		$aOut[] = '<img alt="'.$this->mOptions['userdisplayname'].'"';
@@ -99,7 +99,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			);
 		}
 
-		Hooks::run( 'UserMiniProfileAfterInit', array( $this ) );
+		Hooks::run( 'UserMiniProfileAfterInit', [ $this ] );
 		$this->bIsInit = true;
 	}
 
