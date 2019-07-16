@@ -30,7 +30,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		$( this.getEl().dom ).on( 'click', '.actions a', $.proxy( function( e ) {
 			e.preventDefault();
 
-			var recordIdx = $( e.target ).parents( '.thumbnail' )
+			var recordIdx = $( e.target ).parents( '.recordindex' )
 				.data( 'recordindex' );
 
 			var record = this.commonStore.getAt( recordIdx );
@@ -94,7 +94,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		return new Ext.XTemplate(
 			addIcon,
 			'<tpl for=".">',
-				'<div class="thumbnail storeitem <tpl if="this.hasMenu(values)">has-actions</tpl>">',
+				'<div class="thumbnail recordindex storeitem <tpl if="this.hasMenu(values)">has-actions</tpl>">',
 					'<div class="caption">',
 						'<a style="display:block;" href="{[this.makeMainLinkUrl(values)]}" title="Read">',
 							'<span class="title">{[this.makeThumbnailCaptionTitle(values)]}</span>',
