@@ -20,4 +20,5 @@ class Record extends \BlueSpice\Data\Record {
 	const CUR_ID = 'cur_id';
 	const LAST_OLDID = 'last_oldid';
 	const THIS_OLDID = 'this_oldid';
+	const EXISTS = 'exists';
 }

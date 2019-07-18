@@ -51,9 +51,7 @@ class ArticlePreviewImage extends Module {
 				$this->params[static::REVISION]
 			);
 			if ( !$revision ) {
-				throw new \MWException(
-					"Invalid revid: {$this->params[static::REVISION]}"
-				);
+				$this->params[static::REVISION] = 0;
 			}
 		} else {
 			$this->params[static::REVISION] = 0;
