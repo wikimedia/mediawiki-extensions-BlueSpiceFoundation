@@ -27,10 +27,10 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 
 	onRender: function ( parentNode, containerIdx ) {
 		//TODO: This can probably be done with ExtJS too
-		$( this.getEl().dom ).on( 'click', '.actions a', $.proxy( function( e ) {
+		$( this.getEl().dom ).on( 'click', '.menu-trigger', $.proxy( function( e ) {
 			e.preventDefault();
 
-			var recordIdx = $( e.target ).parents( '.recordindex' )
+			var recordIdx = $( e.target ).parents( '.thumbnail' )
 				.data( 'recordindex' );
 
 			var record = this.commonStore.getAt( recordIdx );
@@ -94,10 +94,12 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		return new Ext.XTemplate(
 			addIcon,
 			'<tpl for=".">',
-				'<div class="thumbnail recordindex storeitem <tpl if="this.hasMenu(values)">has-actions</tpl>">',
+				'<div class="thumbnail storeitem <tpl if="this.hasMenu(values)">has-actions</tpl>">',
 					'<div class="caption">',
+						'<span class="title">',
+							'<a style="display:block;" <tpl if="!exists">class="new"</tpl> href="{[this.makeMainLinkUrl(values)]}" title="Read">{[this.makeThumbnailCaptionTitle(values)]}</a>',
+						'</span>',
 						'<a style="display:block;" href="{[this.makeMainLinkUrl(values)]}" title="Read">',
-							'<span class="title">{[this.makeThumbnailCaptionTitle(values)]}</span>',
 							'<div class="image">',
 								'<img src="{[this.makeThumbnailImageSrc(values)]}" title="{[this.makeThumbnailImageTitle(values)]}" alt="{[this.makeThumbnailImageAlt(values)]}" onload="$(this).parent().addClass( \'loaded\' );">',
 							'</div>',

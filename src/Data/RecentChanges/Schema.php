@@ -93,6 +93,11 @@ class Schema extends \BlueSpice\Data\Schema {
 				self::FILTERABLE => true,
 				self::SORTABLE => true,
 				self::TYPE => FieldType::INT
+			],
+			Record::EXISTS => [
+				self::FILTERABLE => false,
+				self::SORTABLE => false,
+				self::TYPE => FieldType::BOOLEAN
 			]
 		] );
 	}

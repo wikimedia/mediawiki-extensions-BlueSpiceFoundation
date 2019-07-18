@@ -18,6 +18,7 @@ Ext.define('BS.store.ApiRecentChanges', {
 		'hist_link',
 		'cur_id',
 		'last_oldid',
-		'this_oldid'
+		'this_oldid',
+		'exists',
 	]
 });
