@@ -28,7 +28,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 			]
 		);
 
-		return $container.$assocField;
+		return $container . $assocField;
 	}
 
 	protected function getDefaultOptions() {

@@ -31,7 +31,7 @@ class HTMLFormEx extends HTMLForm {
 				}
 			} elseif ( is_array( $value ) ) {
 				$section = $this->displaySection( $value, $key );
-				$subsectionHtml .= self::fieldset( $legend, $section, [ 'class' => 'bs-prefs', 'id' => $sectionName.$key ] ) . "\n";
+				$subsectionHtml .= self::fieldset( $legend, $section, [ 'class' => 'bs-prefs', 'id' => $sectionName . $key ] ) . "\n";
 			}
 		}
 
@@ -56,7 +56,7 @@ class HTMLFormEx extends HTMLForm {
 	public static function fieldset( $legend = false, $content = false, $attribs = [] ) {
 		$s = Xml::openElement( 'fieldset', $attribs ) . "\n";
 		if ( $legend ) {
-			$s .= Xml::element( 'legend', [ 'class' => 'bs-prefs-head' ], $legend." " ) . "\n";
+			$s .= Xml::element( 'legend', [ 'class' => 'bs-prefs-head' ], $legend . " " ) . "\n";
 		}
 		if ( $content !== false ) {
 			$s .= Xml::openElement( 'div', [ 'class' => 'bs-prefs-body' ] );

@@ -273,7 +273,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		];
 
 		if ( !empty( $sQuery ) ) {
-			$aContidions[] = "si_title ".$oDbr->buildLike(
+			$aContidions[] = "si_title " . $oDbr->buildLike(
 				$oDbr->anyString(),
 				// make case insensitive!
 				strtolower( $sQuery ),
@@ -300,7 +300,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		];
 
 		if ( !empty( $sQuery ) ) {
-			$aContidions[] = "img_name ".$oDbr->buildLike(
+			$aContidions[] = "img_name " . $oDbr->buildLike(
 				$oDbr->anyString(),
 				str_replace( ' ', '_', $sQuery ),
 				$oDbr->anyString()

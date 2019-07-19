@@ -33,12 +33,11 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 			$store = Services::getInstance()->getRevisionStore();
 			$this->revision = $store->getRevisionByTitle( $title );
 		}
-
 	}
 
 	protected function getSourcePath() {
 		return $GLOBALS['wgExtensionDirectory']
-			."/BlueSpiceFoundation/resources/assets/article-preview-images/dummy.png";
+			. "/BlueSpiceFoundation/resources/assets/article-preview-images/dummy.png";
 	}
 
 	/**
@@ -48,7 +47,7 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 	 */
 	public function setHeaders( \WebResponse $response ) {
 		$response->header(
-			'Content-type: '.$this->getMimeType(),
+			'Content-type: ' . $this->getMimeType(),
 			true
 		);
 

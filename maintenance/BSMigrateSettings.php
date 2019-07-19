@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 use Wikimedia\Rdbms\DBQueryError;
 

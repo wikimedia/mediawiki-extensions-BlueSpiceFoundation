@@ -19,14 +19,14 @@ class BsTagFinder {
 	 * array( 'bookmeta', 'sometag', ... );
 	 * @return array Multidimensional array with found tags and their data or empty array if tag was not found. For example:
 	 * array( array( 'tagname'    => 'bookmeta',
-	 *				 'isempty'    => false,
-	 *				 'attributes' => array( 'subtitle'  => 'Some subtitle',
-	 *									    'classified => 'false' ),
-	 *				 'content     => 'There is <b>Text</b> with markup'
-	 *				),
-	 *		 array( 'tagname' => 'bookmeta', ...),
-	 *		 array( 'tagname' => 'sometag', ...),
-	 *		 ...
+	 * 				 'isempty'    => false,
+	 * 				 'attributes' => array( 'subtitle'  => 'Some subtitle',
+	 * 									    'classified => 'false' ),
+	 * 				 'content     => 'There is <b>Text</b> with markup'
+	 * 				),
+	 * 		 array( 'tagname' => 'bookmeta', ...),
+	 * 		 array( 'tagname' => 'sometag', ...),
+	 * 		 ...
 	 * );
 	 */
 	public static function find( &$sText, $aTagnames ) {
@@ -36,7 +36,7 @@ class BsTagFinder {
 		$sXML = '<?xml encoding="UTF-8">'
 				. '<html xmlns:bs="http://www.blue-spice.org/XML/Schema-2011-09">'
 				. '<body>'
-				.$sText
+				. $sText
 				. '</body>'
 				. '</html>';
 		$sXML = Validator::cleanUp( $sXML );

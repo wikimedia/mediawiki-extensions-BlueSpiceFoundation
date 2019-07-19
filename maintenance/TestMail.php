@@ -6,7 +6,7 @@
  */
 
 // HINT: https://www.mediawiki.org/wiki/Manual:Writing_maintenance_scripts
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class TestMail extends BSMaintenance {
 
@@ -41,8 +41,7 @@ class TestMail extends BSMaintenance {
 			if ( Sanitizer::validateEmail( $sRecipient ) ) {
 				$oRecipientAddress = new MailAddress( $sRecipient );
 			}
-		}
-		else if ( $oRecipient->getEmail() ) {
+		} else if ( $oRecipient->getEmail() ) {
 			// not empty, false or things like this
 			$oRecipientAddress = new MailAddress( $oRecipient->getEmail() );
 		}
@@ -59,8 +58,7 @@ class TestMail extends BSMaintenance {
 
 		if ( $oStatus->isGood() ) {
 			$this->output( "Mail send\n" );
-		}
-		else {
+		} else {
 			$this->output( $oStatus->getMessage() );
 		}
 	}

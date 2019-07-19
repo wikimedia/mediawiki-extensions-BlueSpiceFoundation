@@ -26,6 +26,7 @@
  * @filesource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
 abstract class BSMigrateSettingsSetNewSettings extends Hook {

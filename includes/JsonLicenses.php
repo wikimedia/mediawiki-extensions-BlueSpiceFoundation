@@ -24,7 +24,7 @@ class JsonLicenses extends Licenses {
 	protected function outputJsonOption( $text, $value, $depth = 0 ) {
 		return [
 			'text' => $text,
-			'value' => "\n\n==".  wfMessage( 'license-header' )->inContentLanguage()->text()."==\n{{".$value."}}",
+			'value' => "\n\n==" . wfMessage( 'license-header' )->inContentLanguage()->text() . "==\n{{" . $value . "}}",
 			'indent' => $depth
 		];
 	}
@@ -34,8 +34,7 @@ class JsonLicenses extends Licenses {
 			if ( is_array( $val ) ) {
 				$this->json[] = $this->outputJsonOption( $key, '', $depth );
 				$this->makeJson( $val, $depth + 1 );
-			}
-			else {
+			} else {
 				$this->json[] = $this->outputJsonOption( $val->text, $val->template, $depth );
 			}
 		}

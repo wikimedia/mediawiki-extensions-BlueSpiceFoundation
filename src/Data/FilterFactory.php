@@ -30,8 +30,7 @@ class FilterFactory {
 		$typeMap = static::getTypeMap();
 		if ( isset( $typeMap[$filter[Filter::KEY_TYPE]] ) ) {
 			return new $typeMap[$filter[Filter::KEY_TYPE]]( $filter );
-		}
-		else {
+		} else {
 			throw new \UnexpectedValueException(
 				"No filter class for '{$filter[Filter::KEY_TYPE]}' available!"
 			);

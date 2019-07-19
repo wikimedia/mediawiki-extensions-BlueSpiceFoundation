@@ -26,6 +26,7 @@
  * @filesource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
 abstract class SearchGetNearMatchComplete extends Hook {
@@ -52,7 +53,7 @@ abstract class SearchGetNearMatchComplete extends Hook {
 		$hookHandler = new $className(
 			null,
 			null,
-		    $term,
+			$term,
 			$title
 		);
 		return $hookHandler->process();

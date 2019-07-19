@@ -123,7 +123,7 @@ class InternalLinksHelper {
 		}
 
 		if ( $target->getNamespace() !== NS_MAIN ) {
-			if ( $leadingColon && in_array( $target->getNamespace() , [ NS_FILE, NS_CATEGORY ] ) ) {
+			if ( $leadingColon && in_array( $target->getNamespace(), [ NS_FILE, NS_CATEGORY ] ) ) {
 				$linkWikiText .= ':';
 			}
 			$linkWikiText .= \MWNamespace::getCanonicalName(

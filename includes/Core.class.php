@@ -289,7 +289,7 @@ class BsCore {
 		// TODO MRG20110707: Check it this cannot be unified
 
 		if ( $nocache ) {
-			wfDebug( __METHOD__.': Use of $nocache parameter is deprecated. There is no caching anyway.' );
+			wfDebug( __METHOD__ . ': Use of $nocache parameter is deprecated. There is no caching anyway.' );
 		}
 
 		if ( !( $oTitle instanceof Title ) ) {

@@ -32,11 +32,11 @@ class ViewWidget extends ViewBaseElement {
 			return $oReturn;
 		}
 		$aOut = [];
-		$aOut[] = '<div class="bs-widget'.$this->_mDefaultViewstate.'" id="bs-widget-'.$this->_mId.'" title="'.$this->_mTooltip.'">';
+		$aOut[] = '<div class="bs-widget' . $this->_mDefaultViewstate . '" id="bs-widget-' . $this->_mId . '" title="' . $this->_mTooltip . '">';
 		$aOut[] = '  <div class="bs-widget-head">';
-		$aOut[] = '    <h5 class="bs-widget-title '.$sAdditionalTitleClasses.'">'.$this->_mTitle.'</h5>';
+		$aOut[] = '    <h5 class="bs-widget-title ' . $sAdditionalTitleClasses . '">' . $this->_mTitle . '</h5>';
 		$aOut[] = '  </div>';
-		$aOut[] = '  <div class="bs-widget-body '.$sAdditionalBodyClasses.'">';
+		$aOut[] = '  <div class="bs-widget-body ' . $sAdditionalBodyClasses . '">';
 		$aOut[] = $this->_mBody;
 		$aOut[] = '  </div>';
 		$aOut[] = '</div>';
@@ -60,7 +60,7 @@ class ViewWidget extends ViewBaseElement {
 			foreach ( $this->_mItems as $oViewItem ) {
 				$this->_mBody .= $oViewItem->execute();
 			}
-			}else {
+			} else {
 				$this->_mBody = '<ul><li><em>' . wfMessage( 'bs-no-information-available' )->plain() . '</em></li></ul>';
 			}
 		}
@@ -93,12 +93,11 @@ class ViewWidget extends ViewBaseElement {
 
 	public function setDefaultViewstate( $sDefaultViewstate ) {
 		if ( $sDefaultViewstate != 'expanded' || $sDefaultViewstate != 'collapsed' ) {
-			throw new BsException( '"'.$sDefaultViewstate.'" is not a vaild viewstate. Possible values are "expanded"|"collapsed"' );
+			throw new BsException( '"' . $sDefaultViewstate . '" is not a vaild viewstate. Possible values are "expanded"|"collapsed"' );
 		}
 		if ( $sDefaultViewstate == 'collapsed' ) {
 			$this->_mDefaultViewstate = ' bs-widget-viewstate-collapsed';
-		}
-		else{
+		} else {
 			$this->_mDefaultViewstate = '';
 		}
 		return $this;

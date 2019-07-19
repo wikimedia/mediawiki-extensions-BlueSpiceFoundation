@@ -31,7 +31,7 @@ class BsLinkProvider {
 			->getBSUtilityFactory()->getUserHelper( $oUser )->getDisplayName();
 
 		$sLabel = ( empty( $sLabel ) ) ? $sUserDisplayName : $sLabel;
-		$sTitleArrtibute = ( empty( $sTitle ) ) ? 'title="'.$sLabel.'" ' : 'title="'.$sTitle.'" ';
+		$sTitleArrtibute = ( empty( $sTitle ) ) ? 'title="' . $sLabel . '" ' : 'title="' . $sTitle . '" ';
 		$sHref = $oUser->getUserPage()->getFullURL();
 		if ( !$oUser->getUserPage()->exists() ) {
 			$aClasses[] = 'new';
@@ -54,8 +54,7 @@ class BsLinkProvider {
 	 * @param String $sJumpMark You can add a jumpmark to the link to go to a specific section of the page. I.e. $sJumpMark = 'vita'
 	 * @return String Something like [[Mordor#Shelob|Giant spider in Mordor]]
 	 */
-	public static function makeWikiLinkForTitle( Title $oTitle, $sLabel = '', $sJumpMark = '' )
-	{
+	public static function makeWikiLinkForTitle( Title $oTitle, $sLabel = '', $sJumpMark = '' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$util = \BlueSpice\Services::getInstance()->getBSUtilityFactory();
 		$linkHelper = $util->getWikiTextLinksHelper( '' )
@@ -75,8 +74,7 @@ class BsLinkProvider {
 	 * @param String $sJumpMark You can add a jumpmark to the link to go to a specific section of the page. I.e. $sJumpMark = 'vita'
 	 * @return String Something like [[Mordor#Shelob|Giant spider in Mordor]]
 	 */
-	public static function makeWikiLinkForTitleString( $sTitle, $sNamespaceText = '', $sLabel = '', $sJumpMark = '' )
-	{
+	public static function makeWikiLinkForTitleString( $sTitle, $sNamespaceText = '', $sLabel = '', $sJumpMark = '' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( !empty( $sNamespaceText ) ) {
 			$sNamespaceText .= ':';
@@ -122,10 +120,10 @@ class BsLinkProvider {
 			$sAttributes .= 'class="';
 
 			foreach ( $aClasses as $sClassName ) {
-				$sAttributes .= $sClassName.' ';
+				$sAttributes .= $sClassName . ' ';
 			}
 
-			$sAttributes .= substr( $sAttributes, -1, 1 ).'" ';
+			$sAttributes .= substr( $sAttributes, -1, 1 ) . '" ';
 		}
 
 		if ( !empty( $aStyles ) ) {

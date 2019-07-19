@@ -71,7 +71,7 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 			foreach ( $aCategories as $sCategory ) {
 				$oTmpCat = Category::newFromName( $sCategory );
 				if ( $oTmpCat instanceof Category ) {
-    }
+				}
 				$oCategory = new stdClass();
 				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
 				$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;

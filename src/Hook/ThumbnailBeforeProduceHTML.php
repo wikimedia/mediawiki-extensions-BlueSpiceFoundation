@@ -25,6 +25,7 @@
  * @thumbnailsource
  */
 namespace BlueSpice\Hook;
+
 use BlueSpice\Hook;
 
 abstract class ThumbnailBeforeProduceHTML extends Hook {

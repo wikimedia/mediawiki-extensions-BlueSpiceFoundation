@@ -28,9 +28,9 @@ class ViewFormElementFieldset extends ViewFormElement {
 	}
 
 	public function renderFieldset() {
-		$output = '<fieldset id="'.$this->_mId.'">';
+		$output = '<fieldset id="' . $this->_mId . '">';
 		if ( $this->_mLabel != '' ) {
-			$output .= '<legend>'.$this->_mLabel.'</legend>';
+			$output .= '<legend>' . $this->_mLabel . '</legend>';
 		}
 		if ( count( $this->_mItems ) ) {
 			foreach ( $this->_mItems as $item ) {

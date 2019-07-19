@@ -1,6 +1,6 @@
 <?php
 
-require_once( __DIR__.'/BSMaintenance.php' );
+require_once __DIR__ . '/BSMaintenance.php';
 
 class BSMassEditBase extends BSMaintenance {
 	protected $aFileMap = [];
@@ -44,16 +44,15 @@ class BSMassEditBase extends BSMaintenance {
 			if ( !$oStatus->isOK() ) {
 				$this->error( "--> Content of page {$oTitle->getPrefixedText()} could not be modified: {$oStatus->getMessage()->plain()}" );
 				$this->iFailureTitleCount++;
-			}
-			else {
+			} else {
 				$this->output( "--> Content of page {$oTitle->getPrefixedText()} has successfully been modified" );
 				$this->iModifiedTitleCount++;
 			}
 		}
 
-		$this->output( 'Processed Titles: '.$this->iTitleCount );
-		$this->output( 'Modified contents: '.$this->iModifiedTitleCount );
-		$this->output( 'Failed modifications: '.$this->iFailureTitleCount );
+		$this->output( 'Processed Titles: ' . $this->iTitleCount );
+		$this->output( 'Modified contents: ' . $this->iModifiedTitleCount );
+		$this->output( 'Failed modifications: ' . $this->iFailureTitleCount );
 	}
 
 	/**
@@ -134,7 +133,7 @@ class BSMassEditBase extends BSMaintenance {
 	 * @return string
 	 */
 	protected function getEditSummay( $oWikiPage ) {
-		return "Modified by script '".  get_class( $this )."'";
+		return "Modified by script '" . get_class( $this ) . "'";
 	}
 
 	/**

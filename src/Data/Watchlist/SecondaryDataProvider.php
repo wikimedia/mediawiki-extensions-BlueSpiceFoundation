@@ -18,7 +18,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		$this->linkrenderer = $linkrenderer;
 	}
 
-	protected function doExtend( &$dataSet ){
+	protected function doExtend( &$dataSet ) {
 		$user = \User::newFromId( $dataSet->get( Record::USER_ID ) );
 		$dataSet->set(
 			Record::USER_LINK,

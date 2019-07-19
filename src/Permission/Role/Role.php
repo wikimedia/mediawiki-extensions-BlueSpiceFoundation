@@ -1,5 +1,6 @@
 <?php
 namespace BlueSpice\Permission\Role;
+
 use BlueSpice\Permission\IRole;
 use BlueSpice\Permission\PermissionRegistry;
 use BlueSpice\Services;

@@ -112,8 +112,7 @@ class BsDOMHelper {
 	public static function insertAfter( $oNode, $oRefNode ) {
 		if ( $oRefNode->nextSibling instanceof DOMNode ) {
 			$oRefNode->parentNode->insertBefore( $oNode, $oRefNode->nextSibling );
-		}
-		else {
+		} else {
 			$oRefNode->parentNode->appendChild( $oNode );
 		}
 	}
@@ -131,7 +130,7 @@ class BsDOMHelper {
 			# //*[contains(concat(' ', normalize-space(@class), ' '), ' Test ')]
 			$aClassQuery[] = "contains(concat(' ', normalize-space(@class), ' '), ' $sClassName ')";
 		}
-		$sQuery = '//*['.implode( ' or ', $aClassQuery ).']';
+		$sQuery = '//*[' . implode( ' or ', $aClassQuery ) . ']';
 		$oElements = $oDOMXPath->query( $sQuery );
 
 		$aElements = [];

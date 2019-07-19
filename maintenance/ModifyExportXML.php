@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class ModifyExportXML extends Maintenance {
 
@@ -25,14 +25,14 @@ class ModifyExportXML extends Maintenance {
 		$oDOMDoc = new DOMDocument( '1.0', 'UTF-8' );
 		$oDOMDoc->load( $sInputFilePath );
 
-		echo "\n".'Removing <siteinfo> tag(s)...'."\n";
+		echo "\n" . 'Removing <siteinfo> tag(s)...' . "\n";
 		$oSiteInfoElements = $oDOMDoc->getElementsByTagName( "siteinfo" );
 		foreach ( $oSiteInfoElements as $oSiteInfoElement ) {
 			$oSiteInfoElement->parentNode->removeChild( $oSiteInfoElement );
-			echo 'done.'."\n";
+			echo 'done.' . "\n";
 		}
 
-		echo "\n".'Modifying titles...'."\n";
+		echo "\n" . 'Modifying titles...' . "\n";
 		$oTitleElements = $oDOMDoc->getElementsByTagName( "title" );
 		foreach ( $oTitleElements as $oTitleElement ) {
 			// HINT: http://www.php.net/manual/de/class.domnode.php#95545
@@ -41,25 +41,24 @@ class ModifyExportXML extends Maintenance {
 			$aTitleParts = explode( ":", $sOldTitle, 2 );
 			$aPotentialNamespaceText = strtoupper( trim( $aTitleParts[0] ) );
 			if ( $aPotentialNamespaceText == $sOldNamespaceText ) {
-				$sNewTitle = $sNamespaceText.':'.$aTitleParts[1];
-			}
-			else {
-				$sNewTitle = $sNamespaceText.':'.$sOldTitle;
+				$sNewTitle = $sNamespaceText . ':' . $aTitleParts[1];
+			} else {
+				$sNewTitle = $sNamespaceText . ':' . $sOldTitle;
 			}
 			$this->aTitles[$sOldTitle] = $sNewTitle;
 			$oTitleElement->removeChild( $oTitleElement->firstChild );
 			$oTitleElement->appendChild( $oDOMDoc->createTextNode( $sNewTitle ) );
-			echo '"'.$sOldTitle.'" --> "'.$sNewTitle.'"'."\n";
+			echo '"' . $sOldTitle . '" --> "' . $sNewTitle . '"' . "\n";
 		}
 
-		echo "\n".'Modifying revision texts...'."\n";
+		echo "\n" . 'Modifying revision texts...' . "\n";
 		$oRevisionTextElements = $oDOMDoc->getElementsByTagName( "text" );
 		foreach ( $oRevisionTextElements as $oRevisionTextElement ) {
 			$sText = trim( $oRevisionTextElement->textContent );
 			if ( strlen( $sText ) == 0 ) {
 				$iRevisionId  = $oRevisionTextElement->parentNode->getElementsByTagName( 'id' )->item( 0 )->textContent;
 				$sArticleName = $oRevisionTextElement->parentNode->parentNode->getElementsByTagName( 'title' )->item( 0 )->textContent;
-				echo '<text> element in Revision id='.$iRevisionId.' (Article "'.$sArticleName.'") contains no text.'."\n";
+				echo '<text> element in Revision id=' . $iRevisionId . ' (Article "' . $sArticleName . '") contains no text.' . "\n";
 				continue;
 			}
 			$sText = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sText );
@@ -67,14 +66,14 @@ class ModifyExportXML extends Maintenance {
 			$oRevisionTextElement->appendChild( $oDOMDoc->createTextNode( $sText ) );
 		}
 
-		echo "\n".'Modifying comments...'."\n";
+		echo "\n" . 'Modifying comments...' . "\n";
 		$oRevisionCommentElements = $oDOMDoc->getElementsByTagName( "comment" );
 		foreach ( $oRevisionCommentElements as $oRevisionCommentElement ) {
 			$sComment = trim( $oRevisionCommentElement->textContent );
 			if ( strlen( $sComment ) == 0 ) {
 				$iRevisionId  = $oRevisionTextElement->parentNode->getElementsByTagName( 'id' )->item( 0 )->textContent;
 				$sArticleName = $oRevisionTextElement->parentNode->parentNode->getElementsByTagName( 'title' )->item( 0 )->textContent;
-				echo '<comment> element in Revision id='.$iRevisionId.' (Article "'.$sArticleName.'") contains no text.'."\n";
+				echo '<comment> element in Revision id=' . $iRevisionId . ' (Article "' . $sArticleName . '") contains no text.' . "\n";
 				continue;
 			}
 			$sComment = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sComment );
@@ -88,10 +87,9 @@ class ModifyExportXML extends Maintenance {
 		// $vWrittenBytes = file_put_contents( $sOutputFilePath, html_entity_decode( $sXML ) );
 
 		if ( $vWrittenBytes === false ) {
-			echo 'An error occurred. Output file could not be saved.'."\n";
-		}
-		else {
-			echo 'Success. '.$vWrittenBytes.' Bytes have been written to "'.$sOutputFilePath.'".'."\n";
+			echo 'An error occurred. Output file could not be saved.' . "\n";
+		} else {
+			echo 'Success. ' . $vWrittenBytes . ' Bytes have been written to "' . $sOutputFilePath . '".' . "\n";
 		}
 	}
 
@@ -99,17 +97,17 @@ class ModifyExportXML extends Maintenance {
 		$aLinkParts = explode( '|', $aMatches[1], 2 );
 		$sLinkPart  = trim( $aLinkParts[0] );
 		if ( !isset( $this->aTitles[$sLinkPart] ) ) {
-			echo 'Skipping "'. $aMatches[0].'". Key "'.$sLinkPart.'" was not found.'."\n";
+			echo 'Skipping "' . $aMatches[0] . '". Key "' . $sLinkPart . '" was not found.' . "\n";
 			// Only modify links that have changed.
 			return $aMatches[0];
 		}
-		$sNewWikiLink = '[['.$this->aTitles[ $sLinkPart ];
+		$sNewWikiLink = '[[' . $this->aTitles[ $sLinkPart ];
 		if ( isset( $aLinkParts[1] ) ) {
 			// Add optional description text
-			$sNewWikiLink .= '|'.$aLinkParts[1];
+			$sNewWikiLink .= '|' . $aLinkParts[1];
 		}
 		$sNewWikiLink .= ']]';
-		echo '"'.$aMatches[0].'" --> "'.$sNewWikiLink.'"'."\n";
+		echo '"' . $aMatches[0] . '" --> "' . $sNewWikiLink . '"' . "\n";
 		return $sNewWikiLink;
 	}
 }

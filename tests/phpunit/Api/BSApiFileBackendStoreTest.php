@@ -21,8 +21,8 @@ class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {
 
 		$this->filenames = [
 			dirname( __DIR__ ) . "/data/images/demoImage.png",
-			dirname( __DIR__ ). "/data/images/test.jpg",
-			dirname( __DIR__ ). "/data/images/test.png",
+			dirname( __DIR__ ) . "/data/images/test.jpg",
+			dirname( __DIR__ ) . "/data/images/test.png",
 		];
 
 		foreach ( $this->filenames as $filename ) {
@@ -30,7 +30,7 @@ class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {
 		}
 	}
 
-	protected function createStoreFixtureData(){
+	protected function createStoreFixtureData() {
 		return 3;
 	}
 

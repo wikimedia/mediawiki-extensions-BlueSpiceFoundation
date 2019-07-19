@@ -1,6 +1,6 @@
 <?php
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
@@ -21,12 +21,12 @@ class BSImportUsers extends BSMaintenance {
 			$sUserName = $this->getChildNodeValue( $oUserNode, 'name' );
 			$oUser = User::newFromName( $sUserName );
 			if ( $oUser instanceof User === false ) {
-				$this->output( $sUserName.' is not a valid username' );
+				$this->output( $sUserName . ' is not a valid username' );
 				continue;
 			}
 
 			if ( $oUser->getId() !== 0 ) {
-				$this->output( $oUser->getName().'already exists. UserID: '.$oUser->getId() );
+				$this->output( $oUser->getName() . 'already exists. UserID: ' . $oUser->getId() );
 				// TODO: make optional
 				$this->output( 'Skipping!' );
 				continue;
@@ -54,10 +54,9 @@ class BSImportUsers extends BSMaintenance {
 
 			$oStatus = $oUser->addToDatabase();
 			if ( $oStatus->isOK() ) {
-				$this->output( $oUser->getName().' successfully added to database. UserID: '.$oUser->getId() );
-			}
-			else {
-				$this->error( $oUser->getName().' could not be added to database. Message '.$oStatus->getMessage()->plain() );
+				$this->output( $oUser->getName() . ' successfully added to database. UserID: ' . $oUser->getId() );
+			} else {
+				$this->error( $oUser->getName() . ' could not be added to database. Message ' . $oStatus->getMessage()->plain() );
 				continue;
 			}
 
@@ -89,10 +88,9 @@ class BSImportUsers extends BSMaintenance {
 				$oWikiPage = WikiPage::factory( $oUser->getUserPage() );
 				$oEditStatus = $oWikiPage->doEditContent( $oContent, __CLASS__ );
 				if ( $oEditStatus->isOK() ) {
-					$this->output( 'Page '.$oUser->getUserPage()->getPrefixedText().' successfully created.' );
-				}
-				else {
-					$this->error( 'Page '.$oUser->getUserPage()->getPrefixedText().' could not be created. Message: '.$oEditStatus->getMessage()->plain() );
+					$this->output( 'Page ' . $oUser->getUserPage()->getPrefixedText() . ' successfully created.' );
+				} else {
+					$this->error( 'Page ' . $oUser->getUserPage()->getPrefixedText() . ' could not be created. Message: ' . $oEditStatus->getMessage()->plain() );
 				}
 			}
 		}

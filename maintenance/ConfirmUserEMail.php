@@ -8,7 +8,7 @@
  * @license GPL-3.0-only
  */
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class ConfirmUserEMail extends Maintenance {
 
@@ -39,18 +39,18 @@ class ConfirmUserEMail extends Maintenance {
 	private function getUser( $sGivenUser ) {
 		if ( $sGivenUser != "-1" ) {
 			if ( !ctype_digit( $sGivenUser ) ) {
-				$condition = [ 'user_name = \''.$sGivenUser.'\'' ];
-			}
-			else {
-				$condition = [ 'user_id = '.$sGivenUser ];
+				$condition = [ 'user_name = \'' . $sGivenUser . '\'' ];
+			} else {
+				$condition = [ 'user_id = ' . $sGivenUser ];
 			}
 		}
 
 		$oDbr = wfGetDB( DB_REPLICA );
-		$rRes = $oDbr->select( 'user',
-				[ 'user_id','user_name','user_email','user_email_authenticated' ],
-				$condition
- );
+		$rRes = $oDbr->select(
+			'user',
+			[ 'user_id','user_name','user_email','user_email_authenticated' ],
+			$condition
+		);
 
 		if ( !$rRes ) {
 			return [];
@@ -76,7 +76,7 @@ class ConfirmUserEMail extends Maintenance {
 		$iCounter = count( $aUserStore );
 		for ( $i = 0; $i < $iCounter; $i++ ) {
 			if ( !$bForce ) {
-				if ( empty( $aUserStore[$i]['email'] ) || !strpos( $aUserStore[$i]['email'],'@' ) ) {
+				if ( empty( $aUserStore[$i]['email'] ) || !strpos( $aUserStore[$i]['email'], '@' ) ) {
 					$aUserStore[$i]['setvalue'] = ' ERROR: E-Mail not valid';
 					continue;
 				}
@@ -99,7 +99,7 @@ class ConfirmUserEMail extends Maintenance {
 
 	private function displayResult( $aUserStore ) {
 		foreach ( $aUserStore as $aUser ) {
-			$this->output( $aUser["name"].": ".$aUser["value"].$aUser["setvalue"]."\n" );
+			$this->output( $aUser["name"] . ": " . $aUser["value"] . $aUser["setvalue"] . "\n" );
 		}
 	}
 

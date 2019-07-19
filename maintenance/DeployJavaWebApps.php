@@ -5,7 +5,7 @@
  * @author Robert Vogel <vogel@hallowelt.com>
  */
 
-require_once( 'BSMaintenance.php' );
+require_once 'BSMaintenance.php';
 
 class DeployJavaWebApps extends BSMaintenance {
 
