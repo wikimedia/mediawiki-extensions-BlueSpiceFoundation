@@ -22,7 +22,7 @@ class ViewException extends ViewBaseElement {
 		$this->oException = $oException;
 	}
 
-	function execute( $params = false ) {
+	public function execute( $params = false ) {
 		$aOut = [];
 		$aOut[] = '<div class="bs-exception">';
 		$aOut[] = '  <h3>' . wfMessage( 'bs-exception-view-heading' )->plain() . '</h3>';

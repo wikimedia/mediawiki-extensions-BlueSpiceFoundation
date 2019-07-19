@@ -1,7 +1,7 @@
 <?php
 
 class HTMLIntFieldOverride extends HTMLIntField {
-	function validate( $value, $alldata ) {
+	public function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 
 		if ( $p !== true ) {
@@ -19,7 +19,7 @@ class HTMLIntFieldOverride extends HTMLIntField {
 		return true;
 	}
 
-	function getInputOOUI( $value ) {
+	public function getInputOOUI( $value ) {
 		$attr = [
 			'value' => $value
 		];

@@ -2,7 +2,7 @@
 
 class HTMLCheckFieldOverride extends HTMLCheckField {
 
-	function getInputHTML( $value ) {
+	public function getInputHTML( $value ) {
 		if ( !empty( $this->mParams['invert'] ) ) {
 			$value = !$value;
 		}
@@ -16,7 +16,7 @@ class HTMLCheckFieldOverride extends HTMLCheckField {
 		return Xml::check( $this->mName, $value, $attr );
 	}
 
-	function getLabel() {
+	public function getLabel() {
 		return $this->mLabel;
 	}
 

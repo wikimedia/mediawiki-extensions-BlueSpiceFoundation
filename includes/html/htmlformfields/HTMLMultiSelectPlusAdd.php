@@ -8,7 +8,7 @@
 class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 	protected $allowAdditions = true;
 
-	function validate( $value, $alldata ) {
+	public function validate( $value, $alldata ) {
 		if ( !is_array( $value ) ) {
 			return false;
 		}
@@ -24,7 +24,7 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 		return $attr;
 	}
 
-	function getInputHTML( $value ) {
+	public function getInputHTML( $value ) {
 		$html = $this->formatOptions( $this->mParams['options'], $value, 'multiselectplusadd' );
 
 		$attrs = [

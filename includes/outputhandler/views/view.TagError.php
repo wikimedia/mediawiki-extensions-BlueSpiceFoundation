@@ -28,7 +28,7 @@ class ViewTagError extends ViewBaseElement {
 	}
 
 	// TODO MRG (01.09.10 02:00): Move sender name to tagerrorlist
-	function execute( $params = false ) {
+	public function execute( $params = false ) {
 		$out = '';
 		// TODO MRG (01.09.10 02:01): remove style attribute
 		$out .= '<div class="bsTagError">';
