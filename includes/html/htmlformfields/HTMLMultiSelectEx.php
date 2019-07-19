@@ -6,7 +6,7 @@
  * @author Sebastian Ulbricht <x_lilu_x@gmx.de>
  */
 class HTMLMultiSelectEx extends HTMLMultiSelectField {
-	function validate( $value, $alldata ) {
+	public function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 		if ( $p !== true ) {
 			return $p;
@@ -53,7 +53,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $attr;
 	}
 
-	function getInputOOUI( $value ) {
+	public function getInputOOUI( $value ) {
 		$this->mParent->getOutput()->addModules( 'oojs-ui-widgets' );
 
 		$attr = $this->getOOUIAttributes();
@@ -76,7 +76,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $widget;
 	}
 
-	function getOptionsOOUI() {
+	public function getOptionsOOUI() {
 		$options = $this->getOptions();
 
 		if ( empty( $options ) ) {
@@ -101,7 +101,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $oouiOptions;
 	}
 
-	function getInputHTML( $value ) {
+	public function getInputHTML( $value ) {
 		\RequestContext::getMain()->getOutput()->addModules( 'ext.bluespice.html.formfields.multiselect' );
 
 		$aOptions = ( isset( $this->mParams['options'] ) ) ? $this->mParams['options'] : [];
@@ -110,7 +110,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $html;
 	}
 
-	function formatOptions( $options, $value, $class = "multiselectex" ) {
+	public function formatOptions( $options, $value, $class = "multiselectex" ) {
 		$select = new XmlMultiSelect( $this->mName . '[]', $this->mID, $value );
 		$select->setAttribute( 'size', 5 );
 		$select->setAttribute( 'multiple', 'true' );
@@ -135,7 +135,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $select->getHTML();
 	}
 
-	function loadDataFromRequest( $request ) {
+	public function loadDataFromRequest( $request ) {
 		# won't work with getCheck
 		if ( $request->getCheck( 'wpEditToken' ) ) {
 			$arr = $request->getArray( $this->mName );
@@ -150,7 +150,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		}
 	}
 
-	function getDefault() {
+	public function getDefault() {
 		if ( isset( $this->mDefault ) ) {
 			return $this->mDefault;
 		} else {
