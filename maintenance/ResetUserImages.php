@@ -10,7 +10,7 @@ class ResetUserImages extends Maintenance {
 		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
-	function execute() {
+	public function execute() {
 		$dbw = wfGetDB( DB_MASTER );
 		$res = $dbw->select( 'user', 'user_id' );
 		while ( $row = $dbw->fetchObject( $res ) ) {
