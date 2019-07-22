@@ -26,7 +26,7 @@ class BsValidatorIntegerRangePlugin implements BsValidatorPlugin {
 		if ( is_numeric( $validateThis ) ) {
 			if ( isset( $options['lowerBoundary'] ) && ( $validateThis < $options['lowerBoundary'] ) ) {
 				$response = new BsValidatorResponse( 1, 'Validator', 'bs-validator-integer-range-validation-too-low', $options['lowerBoundary'] );
-			} else if ( isset( $options['upperBoundary'] ) && ( $validateThis > $options['upperBoundary'] ) ) {
+			} elseif ( isset( $options['upperBoundary'] ) && ( $validateThis > $options['upperBoundary'] ) ) {
 				$response = new BsValidatorResponse( 2, 'Validator', 'bs-validator-integer-range-validation-too-high', $options['upperBoundary'] );
 			} else {
 				$response = new BsValidatorResponse( 0, 'Validator', 'bs-validator-integer-range-validation-approved' );

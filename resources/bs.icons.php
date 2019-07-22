@@ -136,7 +136,7 @@ switch ( $iconSet ) {
 <?php
 		if ( $rowcount < 3 ) {
 				$rowcount++;
-		} else if ( $rowcount == 3 ) {
+		} elseif ( $rowcount == 3 ) {
 				$rowcount = 0;
 				echo "\t\t</tr>\n\t\t<tr>\n";
 		}
