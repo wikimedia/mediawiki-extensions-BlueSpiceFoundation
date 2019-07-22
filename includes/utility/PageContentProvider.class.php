@@ -313,7 +313,7 @@ class BsPageContentProvider {
 		catch ( Exception $e ) {
 			if ( $e instanceof PermissionsError ) {
 				$wgOut->showPermissionsErrorPage( $e->errors, $e->permission );
-			} else if ( $e instanceof ErrorPageError ) {
+			} elseif ( $e instanceof ErrorPageError ) {
 				$wgOut->showErrorPage( $e->title, $e->msg, $e->params );
 			} else {
 				$sError = $e->getMessage();

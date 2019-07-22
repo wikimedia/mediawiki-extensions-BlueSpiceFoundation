@@ -186,7 +186,7 @@ class BsNamespaceHelper {
 				if ( $vAmbiguousNS == wfMessage( 'bs-ns_main' )->plain()
 					|| strcmp( $vAmbiguousNS, "main" ) === 0 ) {
 					$iNamespaceIdFromText = 0;
-				} else if ( $vAmbiguousNS == '' ) {
+				} elseif ( $vAmbiguousNS == '' ) {
 					$iNamespaceIdFromText = 0;
 				} else {
 					// Given value is a namespace text.

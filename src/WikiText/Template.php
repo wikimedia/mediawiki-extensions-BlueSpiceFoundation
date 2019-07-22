@@ -150,7 +150,7 @@ class Template {
 
 		if ( in_array( $firstChar, $this->specialWikiTextMarkupFirstChars ) ) {
 			$this->buffer[] = "\n";
-		} else if ( $isNamedParameter ) {
+		} elseif ( $isNamedParameter ) {
 			$this->buffer[] = ' ';
 		}
 

@@ -91,7 +91,7 @@ class TitleParamsResolver {
 		$pageIds = [];
 		if ( $this->isPageIdParam( $paramName ) ) {
 			$pageIds = [ $paramValue ];
-		} else if ( $this->isPageIdsParam( $paramName ) ) {
+		} elseif ( $this->isPageIdsParam( $paramName ) ) {
 			$pageIds = explode( '|', $paramValue );
 		}
 
@@ -115,7 +115,7 @@ class TitleParamsResolver {
 		$pageNames = [];
 		if ( $this->isPageNameParam( $paramName ) ) {
 			$pageNames = [ $paramValue ];
-		} else if ( $this->isPageNamesParam( $paramName ) ) {
+		} elseif ( $this->isPageNamesParam( $paramName ) ) {
 			$pageNames = explode( '|', $paramValue );
 		}
 
@@ -139,7 +139,7 @@ class TitleParamsResolver {
 		$revisionIds = [];
 		if ( $this->isRevisionIdParam( $paramName ) ) {
 			$revisionIds = [ $paramValue ];
-		} else if ( $this->isRevisionIdsParam( $paramName ) ) {
+		} elseif ( $this->isRevisionIdsParam( $paramName ) ) {
 			$revisionIds = explode( '|', $paramValue );
 		}
 
