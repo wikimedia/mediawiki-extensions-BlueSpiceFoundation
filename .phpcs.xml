@@ -38,7 +38,6 @@
 		<exclude name="MediaWiki.VariableAnalysis.ForbiddenGlobalVariables.ForbiddenGlobal$wgTitle" />
 		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables" />
 		<exclude name="PSR2.Classes.PropertyDeclaration.Underscore" />
-		<exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed" />
 		<exclude name="PSR2.Methods.MethodDeclaration.Underscore" />
 	</rule>
 	<file>.</file>
