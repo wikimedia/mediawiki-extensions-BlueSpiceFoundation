@@ -39,22 +39,22 @@ return [
 		);
 	},
 
-	'BSEntityRegistry' => function ( MediaWikiServices $services ) {
-		return new \BlueSpice\EntityRegistry(
-			$services->getConfigFactory()->makeConfig( 'bsg' )
-		);
-	},
-
 	'BSEntityConfigFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationEntityRegistry'
+		);
 		return new \BlueSpice\EntityConfigFactory(
-			$services->getService( 'BSEntityRegistry' ),
+			$registry,
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
 
 	'BSEntityFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationEntityRegistry'
+		);
 		return new \BlueSpice\EntityFactory(
-			$services->getService( 'BSEntityRegistry' ),
+			$registry,
 			$services->getService( 'BSEntityConfigFactory' ),
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
