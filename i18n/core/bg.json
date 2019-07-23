@@ -18,6 +18,7 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "Показване подробностите на грешката",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Скриване подробностите на грешката",
 	"bs-viewtagerrorlist-legend": "$1 – Грешка",
+	"bs-permissionerror": "Грешка при правата за достъп!",
 	"bs-imagepage-download-text": "Изтегляне",
 	"bs-ns": "Именно пространство",
 	"bs-graphicallist-action-close": "Затваряне",
