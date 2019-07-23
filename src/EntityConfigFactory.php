@@ -27,23 +27,37 @@
  */
 namespace BlueSpice;
 
-use MediaWiki\MediaWikiServices;
+use Config;
 
 /**
  * EntityConfigFactory class for BlueSpice
  * @package BlueSpiceFoundation
  */
 class EntityConfigFactory {
+	/**
+	 *
+	 * @var EntityConfig[]
+	 */
 	protected $entityConfigs = null;
 
+	/**
+	 *
+	 * @var Config
+	 */
 	protected $config = null;
+
+	/**
+	 *
+	 * @var ExtensionAttributeBasedRegistry
+	 */
 	protected $entityRegistry = null;
 
 	/**
-	 * @param \EntityRegistry
-	 * @param \Config $config
+	 * @param ExtensionAttributeBasedRegistry
+	 * @param Config $config
 	 */
-	public function __construct( $entityRegistry, $config ) {
+	public function __construct( ExtensionAttributeBasedRegistry $entityRegistry,
+		Config $config ) {
 		$this->entityRegistry = $entityRegistry;
 		$this->config = $config;
 	}
@@ -61,18 +75,14 @@ class EntityConfigFactory {
 			return $this->entityConfigs[$type];
 		}
 		$this->entityConfigs = [];
-		// TODO: Check params and classes
-		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'BSEntityRegistry'
-		);
-		$entityDefinitions = $entityRegistry->getEntityDefinitions();
 		$defaults = [];
 
 		// Deprecated: This hook should not be used anymore - Use the bluespice
 		// global config mechanism instead
 		\Hooks::run( 'BSEntityConfigDefaults', [ &$defaults ] );
-		foreach ( $entityDefinitions as $key => $sConfigClass ) {
-			$this->entityConfigs[$key] = new $sConfigClass(
+		foreach ( $this->entityRegistry->getAllKeys() as $key ) {
+			$configClass = $this->entityRegistry->getValue( $key );
+			$this->entityConfigs[$key] = new $configClass(
 				$this->config,
 				$key,
 				// deprecated

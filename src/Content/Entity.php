@@ -1,6 +1,8 @@
 <?php
 namespace BlueSpice\Content;
 
+use BlueSpice\Entity as EntityBase;
+
 class Entity extends \JsonContent {
 
 	public function __construct( $text, $modelId = '' ) {
@@ -108,16 +110,17 @@ class Entity extends \JsonContent {
 
 	/**
 	 * Returns a generated id for a given entity.
-	 * @param \BlueSpice\Entity $entity
+	 * @param EntityBase $entity
 	 * @return int
 	 */
-	public static function generateID( \BlueSpice\Entity $entity ) {
+	public static function generateID( EntityBase $entity ) {
 		// this is the case if the current Entity is new (no Title created yet)
 		// Get the page_title of the last created title in entity namespace and
 		// add +1. Entities are stored like: MYEntityNamespace:1,
 		// MYEntityNamespace:2, MYEntityNamespace:3
-		if ( (int)$entity->getID() > 0 ) {
-			return $entity->getID();
+		$id = (int)$entity->get( EntityBase::ATTR_ID, 0 );
+		if ( $id > 0 ) {
+			return $id;
 		}
 		$dbw = wfGetDB( DB_MASTER );
 		$res = $dbw->selectRow(

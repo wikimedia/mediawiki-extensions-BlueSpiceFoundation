@@ -27,7 +27,6 @@
  */
 namespace BlueSpice;
 
-use MediaWiki\MediaWikiServices;
 use BlueSpice\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
 
@@ -73,9 +72,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 */
 	public static function factory( $type ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$configFactory = MediaWikiServices::getInstance()->getService(
-			'BSEntityConfigFactory'
-		);
+		$configFactory = Services::getInstance()->getBSEntityConfigFactory();
 		return $configFactory->newFromType( $type );
 	}
 
@@ -92,7 +89,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 		if ( $this->config ) {
 			return $this->config;
 		}
-		$this->config = MediaWikiServices::getInstance()
+		$this->config = Services::getInstance()
 			->getConfigFactory()->makeConfig( 'bsg' );
 		return $this->config;
 	}
@@ -157,10 +154,6 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	abstract protected function addGetterDefaults();
 	abstract protected function get_EntityClass();
 	abstract protected function get_StoreClass();
-
-	protected function get_ContentClass() {
-		return "\\BlueSpice\\Content\\Entity";
-	}
 
 	protected function get_Renderer() {
 		return "entity";
