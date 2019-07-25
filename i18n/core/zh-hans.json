@@ -98,5 +98,7 @@
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。",
-	"bs-notifications-agent-anon": "匿名用户"
+	"bs-notifications-agent-anon": "匿名用户",
+	"bs-lockdown-groups-permissionerror": "操作“$1”由于下列{{PLURAL:$2|原因}}不可用：$3",
+	"action-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。"
 }

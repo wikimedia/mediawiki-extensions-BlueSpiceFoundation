@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Mjälten"
 		]
 	},
 	"bs-deferred-action-status-pending": "Väntande.",
@@ -18,5 +19,6 @@
 	"bs-deferred-action-apiremovecategories-description": "Ta bort kategorier från '$1'.",
 	"bs-deferred-action-apisetcategories-description": "Ändra kategorier på \"$1\".",
 	"bs-deferred-action-apimovepage-description": "Flytta \"$1\" till \"$2\".",
-	"bs-deferred-action-apideletepage-description": "Radera \"$1\"."
+	"bs-deferred-action-apideletepage-description": "Radera \"$1\".",
+	"bs-deferred-batch-title": "Partiprosessering"
 }

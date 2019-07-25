@@ -71,7 +71,7 @@
 	"bs-pref-fileextensions": "Extensiones de archivos permitidas:",
 	"bs-pref-imageextensions": "Extensiones de imágenes permitidas:",
 	"bs-pref-logopath": "Ruta del logo:",
-	"bs-pref-faviconpath": "Ruta del «favicon»:",
+	"bs-pref-faviconpath": "Ruta del favicono:",
 	"bs-pref-defaultuserimage": "Avatar de usuario predeterminado:",
 	"bs-pref-miniprofileenforceheight": "Forzar altura de avatar de usuario",
 	"bs-pref-anonuserimage": "Avatar de usuario anónimo:",
@@ -95,5 +95,7 @@
 	"bs-graphicallist-action-preview": "Previsualizar",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
-	"bs-notifications-agent-anon": "usuario anónimo"
+	"bs-notifications-agent-anon": "usuario anónimo",
+	"bs-lockdown-groups-permissionerror": "La acción «$1» no está disponible por {{PLURAL:$2|el motivo siguiente|los motivos siguientes}}: $3",
+	"action-wikiadmin": "mostrar páginas de administración de BlueSpice"
 }

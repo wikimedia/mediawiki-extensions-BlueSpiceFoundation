@@ -4,7 +4,8 @@
 			"Hwangjy9",
 			"Kurousagi",
 			"아라",
-			"Ykhwong"
+			"Ykhwong",
+			"Son77391"
 		]
 	},
 	"bs-deferred-action-status-running": "실행 중...",
@@ -17,5 +18,10 @@
 	"bs-deferred-batch-description": "설명",
 	"bs-deferred-batch-status": "상태",
 	"bs-deferred-action-apimovepage-description": "\"$1\"을(를) \"$2\"(으)로 이동합니다.",
-	"bs-deferred-action-apideletepage-description": "\"$1\" 삭제."
+	"bs-deferred-action-apideletepage-description": "\"$1\" 삭제.",
+	"bs-deferred-action-status-pending": "보류 중입니다.",
+	"bs-deferred-batch-actions": "조치",
+	"bs-deferred-action-apiaddcategories-description": "'$1'에 분류를 추가합니다.",
+	"bs-deferred-action-apiremovecategories-description": "'$1'에서 분류를 제거합니다.",
+	"bs-deferred-action-apisetcategories-description": "'$1'에 분류를 설정합니다."
 }

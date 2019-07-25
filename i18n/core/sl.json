@@ -5,5 +5,6 @@
 			"Dbc334"
 		]
 	},
-	"right-wikiadmin": "Uporabljeno v mnogih razširitvah BlueSpice za morebitno nevarna administratorska opravila, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami"
+	"right-wikiadmin": "Uporabljeno v mnogih razširitvah BlueSpice za morebitno nevarna administratorska opravila, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami",
+	"action-wikiadmin": "uporabljeno v mnogih razširitvah BlueSpice za morebitno nevarna skrbniška opravila, kot so upravljanje uporabnikov, pravic in globalne konfiguracije"
 }

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"bs-filerepo-labelupload": "Подигни",
+	"bs-filerepo-labelfilter": "Филтрирај",
+	"bs-filerepo-headerfilename": "Име на податотеката",
+	"bs-filerepo-headerfilesize": "Големина",
+	"bs-filerepo-headerpagecategories": "Категории",
+	"bs-filerepo-headerfilewidth": "Ширина",
+	"bs-filerepo-headerfileheight": "Висина",
+	"bs-filerepo-headerfilemimetype": "MIME-тип",
+	"bs-filerepo-headerfileusertext": "Корисник",
+	"bs-filerepo-headerfileextension": "Додаток",
+	"bs-filerepo-headerfiletimestamp": "Подигнато",
+	"bs-filerepo-headerfilemediatype": "Тип на медиум",
+	"bs-filerepo-headerfiledescription": "Опис",
+	"bs-filerepo-headerfilethumbnail": "Минијатура",
+	"bs-filerepo-yes": "Да",
+	"bs-filerepo-no": "Не",
+	"bs-filerepo-pagesize": "Ставки по страница"
+}

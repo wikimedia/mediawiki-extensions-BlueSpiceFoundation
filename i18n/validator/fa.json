@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"FarsiNevis"
+		]
+	},
+	"bs-validator-email-validation-approved": "اعتبارسنجی نشانی ایمیل با موفقیت انجام گرفت.",
+	"bs-validator-email-validation-not-approved": "اعتبارسنجی نشانی ایمیل، با شکست مواجه شد.",
+	"bs-validator-url-validation-approved": "اعتبارسنجی نشانی وب با موفقیت انجام گرفت.",
+	"bs-validator-url-validation-not-approved": "اعتبارسنجی نشانی وب با شکست مواجه شد.",
+	"bs-validator-arg-count-validation-approved": "اعتبارسنجی شاخصهٔ «شمار» با موفقیت انجام گرفت.",
+	"bs-validator-arg-count-validation-not-approved": "اعتبارسنجی شاخصهٔ «شمار» با شکست مواجه شد.",
+	"bs-validator-set-validation-approved": "اعتبارسنجی $1 با موفقیت انجام گرفت.",
+	"bs-validator-invalid-integer": "عدد صحیح معتبری نیست",
+	"bs-validator-invalid-string": "یک رشتهٔ معتبر نیست.",
+	"bs-validator-invalid-parameter": "این پارامتر، غیر مجاز است",
+	"bs-validator-missing-required": "این پارامتر، ضروری است"
+}

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "بارگذاری پرونده",
@@ -10,5 +11,16 @@
 	"bs-upload-license": "مجوز",
 	"bs-upload-categories": "رده‌ها",
 	"bs-upload-error": "خطا",
-	"bs-upload-details": "جزئیات"
+	"bs-upload-details": "جزئیات",
+	"bs-upload-uploadfileemptytext": "پروندهٔ جدیدی وارد کنید...",
+	"bs-upload-uploaddestfilelabel": "نام پروندهٔ مقصد",
+	"bs-upload-allowedfiletypesare": "انواع معتبر پرونده عبارت‌اند از:",
+	"bs-upload-uploadwatchthislabel": "پی‌گیری این پرونده",
+	"bs-upload-uploadignorewarningslabel": "چشم‌پوشی از همهٔ هشدارها",
+	"bs-upload-upload-waitmessage": "بارگذاری در حال پیشرفت است...",
+	"bs-upload-error-long": "خطا در فرایند بارگذاری",
+	"bs-upload-filetypenotsupported": "این نوع پرونده پشتیبانی نمی‌شود",
+	"bs-upload-uploadwarningdialog-title": "بارگذاری پرونده: هشدارها",
+	"bs-upload-uploadwarningdialog-intro": "هشدارهای زیر در حین بارگذاری پرونده صادر شد",
+	"bs-upload-uploadwarningdialog-warning-exists": "پرونده‌ای با نام «$1» از قبل وجود دارد"
 }

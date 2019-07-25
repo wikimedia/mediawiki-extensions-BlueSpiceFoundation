@@ -14,5 +14,7 @@
 	"bs-filerepo-headerfiledescription": "Kuvaus",
 	"bs-filerepo-headerfilethumbnail": "Pienoiskuva",
 	"bs-filerepo-yes": "Kyllä",
-	"bs-filerepo-no": "Ei"
+	"bs-filerepo-no": "Ei",
+	"bs-filerepo-labelupload": "Tallenna",
+	"bs-filerepo-headerfiletimestamp": "Tallennettu"
 }

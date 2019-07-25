@@ -3,7 +3,8 @@
 		"authors": [
 			"Obsuser",
 			"Acamicamacaraca",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"apihelp-bs-wikipage-tasks-description": "Пружа важне операције за странице на викију",
@@ -25,5 +26,16 @@
 	"apihelp-bs-task-param-examples": "Приказ примера радних параметара",
 	"bs-api-task-taskData-page-id": "ID непостојеће вики странице",
 	"bs-api-task-taskData-page-title": "Валидан наслов вики странице",
-	"bs-api-task-wikipagetasks-taskData-categories": "Низ стрингова. Вредности морају да буду валидна имена категорија."
+	"bs-api-task-wikipagetasks-taskData-categories": "Низ стрингова. Вредности морају да буду валидна имена категорија.",
+	"apihelp-bs-store-param-limit": "Број резултата за враћање",
+	"apihelp-bs-wikisubpage-treestore-description": "Излистава списак специфичне викистранице",
+	"apihelp-bs-wikisubpage-treestore-summary": "Излистава списак специфичне вики странице",
+	"apihelp-bs-wikisubpage-treestore-param-node": "Префиксиран назив викистранице",
+	"apihelp-bs-upload-license-store-description": "Излистава списак свих доступних лиценци за отпремање датотека",
+	"apihelp-bs-upload-license-store-summary": "Излистава списак свих доступних лиценци за отпремање датотека",
+	"apihelp-bs-category-treestore-description": "Излистава подкатегорије специфичне категорије",
+	"apihelp-bs-category-treestore-summary": "Излистава подкатегорије специфичне категорије",
+	"apihelp-bs-category-treestore-param-node": "Путања категорија раздвојене косом цртом",
+	"apihelp-bs-watchlist-store-summary": "Списак свих уноса у списку надгледања. Дозвољава сортирање, филтрирање и пагинацију. Имплементира параметре за складиштење.",
+	"apihelp-bs-recentchanges-store-summary": "Приказује све скорашње измене. Дозвољава сортирање, филтрирање и пагинацију. Имплементира параметре за складиштење."
 }

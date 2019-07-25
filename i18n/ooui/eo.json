@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Aldoni novan...",
+	"bs-ooui-key-value-input-widget-key-label": "Ŝlosilo",
+	"bs-ooui-key-value-input-widget-value-label": "Valoro",
+	"bs-ooui-key-value-input-widget-add-button-label": "Aldoni",
+	"bs-ooui-key-value-input-widget-add-form-label": "Aldoni novan eron",
+	"bs-ooui-key-value-input-widget-error-message": "Ĉiuj postulataj kampoj devas esti provizitaj!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Neniu valoro estis provizita!"
+}

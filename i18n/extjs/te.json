@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kiranmayee"
+			"Kiranmayee",
+			"Veeven"
 		]
 	},
 	"bs-extjs-filters": "వడపోతలు",
@@ -10,5 +11,21 @@
 	"bs-extjs-filter-contains": "కలిగిన",
 	"bs-extjs-filter-contains-not": "కలిగి వుండదు",
 	"bs-extjs-filter-starts-with": "తో మొదలయ్యిన",
-	"bs-extjs-filter-ends-with": "తో ముగుస్తుంది"
+	"bs-extjs-filter-ends-with": "తో ముగుస్తుంది",
+	"bs-extjs-ok": "సరే",
+	"bs-extjs-cancel": "రద్దుచేయి",
+	"bs-extjs-yes": "అవును",
+	"bs-extjs-no": "కాదు",
+	"bs-extjs-save": "భద్రపరుచు",
+	"bs-extjs-delete": "తొలగించు",
+	"bs-extjs-add": "చేర్చు",
+	"bs-extjs-remove": "తీసివెయ్యి",
+	"bs-extjs-actions-column-header": "చర్యలు",
+	"bs-extjs-warning": "హెచ్చరిక",
+	"bs-extjs-close": "మూసివేయి",
+	"bs-extjs-label-user": "వాడుకరి",
+	"bs-extjs-label-namespace": "పేరుబరి",
+	"bs-extjs-label-page": "పేజీ",
+	"bs-extjs-tools-trigger-text": "పనిముట్లు",
+	"bs-extjs-flyout-tab-grid-label": "వివరాలు"
 }

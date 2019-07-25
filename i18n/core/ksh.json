@@ -61,5 +61,6 @@
 	"bs-validator-error-namespace-does-not-exist": "Dadd Appachtemang jidd_et nit: $1",
 	"bs-validator-error-title-does-not-exist": "Di Sigg jidd_et nit: $1",
 	"bs-bluespice": "<i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"„Blou Jewöhz“\">Blue-Spice</i>",
-	"right-wikiadmin": "Sigge för et Verwallde vun  BlueSpice aanzeije"
+	"right-wikiadmin": "Sigge för et Verwallde vun  BlueSpice aanzeije",
+	"action-wikiadmin": "Sigge för et Verwallde vun  BlueSpice aanzeije"
 }

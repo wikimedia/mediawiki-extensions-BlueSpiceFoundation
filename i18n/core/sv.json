@@ -6,7 +6,8 @@
 			"Fader",
 			"Lokal Profil",
 			"Warrakkk",
-			"Jopparn"
+			"Jopparn",
+			"Mjälten"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -81,5 +82,13 @@
 	"bs-export-menu-print-title": "Visar en utskriftsvänlig version av sidan",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Används på många BlueSpices-tillägg för potentiellt farliga administrativa uppgifter som att hantera användare, behörigheter, global konfiguration",
-	"bs-notifications-agent-anon": "anonym användare"
+	"bs-notifications-agent-anon": "anonym användare",
+	"bs-parser-error-invalid-title": "Ogiltig titel: $1.",
+	"bs-validator-error-namespace-on-blacklist": "Namnrymd är inte tillåten: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Sida inte tillåten: $1",
+	"bs-graphicallist-action-close": "Stäng",
+	"bs-graphicallist-action-list": "Lista",
+	"bs-graphicallist-action-preview": "Förhandsgranska",
+	"bs-bluespice-mediawiki": "BlueSpice-Mediawiki",
+	"action-wikiadmin": "Visa BlueSpices administrationssidor"
 }

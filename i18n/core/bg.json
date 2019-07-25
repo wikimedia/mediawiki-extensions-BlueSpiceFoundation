@@ -23,5 +23,6 @@
 	"bs-graphicallist-action-close": "Затваряне",
 	"bs-graphicallist-action-list": "Списък",
 	"bs-graphicallist-action-preview": "Предварителен преглед",
-	"bs-notifications-agent-anon": "анонимен потребител"
+	"bs-notifications-agent-anon": "анонимен потребител",
+	"bs-permissionerror": "Грешка при правата за достъп!"
 }

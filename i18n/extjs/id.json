@@ -4,7 +4,8 @@
 			"C5st4wr6ch",
 			"Raynasution",
 			"Arifin.wijaya",
-			"J Nia30"
+			"J Nia30",
+			"Palladin911"
 		]
 	},
 	"bs-extjs-ok": "Oke",
@@ -45,5 +46,7 @@
 	"bs-extjs-filter-bool-no": "tidak",
 	"bs-extjs-title-success": "Sukses",
 	"bs-extjs-title-warning": "Peringatan",
-	"bs-extjs-categoryboxselect-emptytext": "Tambah kategori"
+	"bs-extjs-categoryboxselect-emptytext": "Tambah kategori",
+	"bs-extjs-copy": "Salin",
+	"bs-extjs-pageexport-list-format-link-label": "Pranala"
 }

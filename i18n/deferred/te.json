@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Veeven"
+		]
+	},
+	"bs-deferred-batch-progress-desc": "పురోగతి",
+	"bs-deferred-batch-actions": "చర్యలు",
+	"bs-deferred-batch-description": "వివరణ",
+	"bs-deferred-batch-status": "స్థితి"
+}

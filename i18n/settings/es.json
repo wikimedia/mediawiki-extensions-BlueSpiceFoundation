@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Ryo567"
 		]
 	},
 	"bs-setting-path-extension": "Extensión",
@@ -16,5 +17,6 @@
 	"bs-setting-path-communication": "Comunicación",
 	"bs-setting-path-administration": "Administración",
 	"bs-setting-path-qualityassurance": "Control de calidad",
-	"bs-setting-path-export": "Exportación"
+	"bs-setting-path-export": "Exportación",
+	"bs-setting-path-feature": "Característica"
 }

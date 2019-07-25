@@ -8,13 +8,16 @@
 			"Happy13241",
 			"Vlad5250",
 			"Alexandr Efremov",
-			"Romanko Mikhail"
+			"Romanko Mikhail",
+			"DmitTrix",
+			"Movses",
+			"INS Pirat"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",
 	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
-	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с данными контекста для хранилища",
+	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с контекстными данными для хранилища",
 	"apihelp-bs-task-param-format": "Формат результата",
 	"bs-wikipage-tasks-error-contentmodel": "Эта задача не может быть выполнена с использованием модели содержания данной страницы.",
 	"bs-wikipage-tasks-error-page-not-valid": "Предоставленная страница недействительна.",
@@ -29,5 +32,7 @@
 	"bs-api-task-taskData-page-id": "Идентификатор существующей вики-страницы",
 	"bs-api-task-taskData-page-title": "Допустимое название вики-страницы",
 	"bs-api-task-wikipagetasks-taskData-categories": "Массив строк. Значения должны быть допустимыми именами категорий.",
-	"apihelp-bs-recentchanges-store-summary": "Перечисляет все недавние правки. Разрешает сортировку, фильтр и разбиение на страницы. Реализовывает параметры хранения."
+	"apihelp-bs-recentchanges-store-summary": "Перечисляет все недавние правки. Разрешает сортировку, фильтр и разбиение на страницы. Реализовывает параметры хранения.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Неправильная категория|Неправильные категории}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Категории успешно заданы."
 }

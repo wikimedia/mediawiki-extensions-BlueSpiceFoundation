@@ -91,5 +91,7 @@
 	"bs-bluespice-mediawiki": "بلوسبايس ميدياويكي",
 	"bs-bluespice": "بلوسبايس",
 	"right-wikiadmin": "تُستخدَم في العديد من امتدادات BlueSpice للمهام الإدارية الخطيرة المحتملة مثل إدارة المستخدمين والصلاحيات والتكوين العالمي",
-	"bs-notifications-agent-anon": "مستخدم مجهول"
+	"bs-notifications-agent-anon": "مستخدم مجهول",
+	"bs-lockdown-groups-permissionerror": "الإجراء \"$1\" غير متاح {{PLURAL:$2|للسبب التالي|للأسباب التالية}}: $3",
+	"action-wikiadmin": "تستخدم في العديد من امتدادات BlueSpice للمهام الإدارية الخطيرة المحتملة مثل إدارة المستخدمين والصلاحيات والتكوين العالمي"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"Subi",
 			"Sator",
-			"Mikel Ibaiba"
+			"Mikel Ibaiba",
+			"An13sa"
 		]
 	},
 	"bs-extjs-ok": "Ados",
@@ -20,7 +21,7 @@
 	"bs-extjs-error": "Errorea",
 	"bs-extjs-confirm": "Baieztatu",
 	"bs-extjs-loading": "Kargatzen...",
-	"bs-extjs-pageSize": "Orriaren tamaina",
+	"bs-extjs-pageSize": "Sarrerak orriko",
 	"bs-extjs-actions-column-header": "Ekintzak",
 	"bs-extjs-warning": "Oharra",
 	"bs-extjs-saving": "gordetzen...",

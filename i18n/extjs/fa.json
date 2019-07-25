@@ -5,7 +5,8 @@
 			"Alirezaaa",
 			"Arash.pt",
 			"Alifakoor",
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -22,7 +23,7 @@
 	"bs-extjs-error": "خطا",
 	"bs-extjs-confirm": "تأیید",
 	"bs-extjs-loading": "در حال بارگیری...",
-	"bs-extjs-pageSize": "حجم صفحه",
+	"bs-extjs-pageSize": "تعداد مدخل‌ها در هر صفحه",
 	"bs-extjs-actions-column-header": "فعالیت‌ها",
 	"bs-extjs-warning": "هشدار",
 	"bs-extjs-saving": "در حال ذخیره‌سازی...",
@@ -64,5 +65,12 @@
 	"bs-extjs-tools-trigger-text": "ابزارها",
 	"bs-extjs-flyout-tab-thumbs-label": "بندانگشتی",
 	"bs-extjs-flyout-tab-grid-label": "جزئیات",
-	"bs-extjs-flyout-add-label": "افزودن آیتم"
+	"bs-extjs-flyout-add-label": "افزودن آیتم",
+	"bs-extjs-titlecombo-newpagehint": "صفحه وجود ندارد!",
+	"bs-extjs-pageexport-dialog-title": "برون‌بری صفحه‌ها",
+	"bs-extjs-pageexport-list-format-label": "قالب فهرست",
+	"bs-extjs-pageexport-list-format-plain-label": "متن ساده",
+	"bs-extjs-pageexport-general-error": "خطا در برون‌بری",
+	"bs-extjs-pageexport-success": "برون‌بری موفق",
+	"bs-extjs-pageexport-error-invalid-title": "نام فهرست، نامعتبر است"
 }

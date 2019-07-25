@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Mirin"
 		]
 	},
-	"bs-credits-translators": "Tradukantoj"
+	"bs-credits-translators": "Tradukantoj",
+	"bs-credits-contributors": "Kontribuintoj",
+	"bs-credits-translation": "Traduko"
 }

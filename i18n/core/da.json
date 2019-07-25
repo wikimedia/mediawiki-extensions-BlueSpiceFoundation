@@ -32,5 +32,6 @@
 	"bs-graphicallist-action-close": "Luk",
 	"bs-graphicallist-action-list": "Liste",
 	"bs-graphicallist-action-preview": "Forhåndsvisning",
-	"bs-notifications-agent-anon": "anonym bruger"
+	"bs-notifications-agent-anon": "anonym bruger",
+	"bs-filesystemhelper-save-base64-error": "Filen kunne ikke gemmes."
 }

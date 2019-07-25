@@ -6,5 +6,11 @@
 	},
 	"bs-upload-categories": "ကဏ္ဍများ",
 	"bs-upload-upload-waitmessage": "အက်ပလုဒ်တင်ခြင်း ဆောင်ရွက်နေဆဲ...",
-	"bs-upload-descfilelabel": "ဖော်ပြချက်"
+	"bs-upload-descfilelabel": "ဖော်ပြချက်",
+	"bs-upload-uploadbuttontext": "ရှာဖွေလှန်လှောရန်",
+	"bs-upload-license": "လိုင်စင်",
+	"bs-upload-uploadwatchthislabel": "ဤဖိုင်အား စောင့်ကြည့်ရန်",
+	"bs-upload-uploadignorewarningslabel": "မည်သည့်သတိပေးချက်ကိုမဆို လျစ်လျူရှုရန်",
+	"bs-upload-error": "အမှား",
+	"bs-upload-details": "အသေးစိတ်များ"
 }

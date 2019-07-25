@@ -1,12 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-setting-path-extension": "افزونه",
 	"bs-setting-path-system": "سامانه",
 	"bs-setting-path-editor": "ویرایشگر",
 	"bs-setting-path-customizing": "شخصی سازی",
-	"bs-setting-path-export": "برون‌ریزی"
+	"bs-setting-path-export": "برون‌ریزی",
+	"bs-setting-path-package": "بسته",
+	"bs-setting-path-dataanalysis": "تحلیل داده‌ها",
+	"bs-setting-path-personalisation": "شخصی‌سازی",
+	"bs-setting-path-contentstructuring": "ساختاربندی محتوا",
+	"bs-setting-path-communication": "ارتباط",
+	"bs-setting-path-administration": "مدیریت",
+	"bs-setting-path-qualityassurance": "تضمین کیفیت"
 }

@@ -71,5 +71,7 @@
 	"bs-exttype-bluespice": "Rozszerzenia BlueSpice",
 	"bs-export-menu-print-text": "Drukuj",
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
-	"bs-notifications-agent-anon": "anonimowy użytkownik"
+	"bs-notifications-agent-anon": "anonimowy użytkownik",
+	"bs-graphicallist-action-close": "Zamknij",
+	"bs-graphicallist-action-preview": "Podgląd"
 }

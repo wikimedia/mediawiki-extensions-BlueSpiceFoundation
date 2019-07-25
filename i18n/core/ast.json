@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Xuacu",
-			"Crucifunked"
+			"Crucifunked",
+			"Fitoschido"
 		]
 	},
 	"bluespicefoundation-desc": "Fai que Mediawiki tea preparáu pa les empreses",
@@ -90,5 +91,7 @@
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
-	"bs-notifications-agent-anon": "usuariu anónimu"
+	"bs-notifications-agent-anon": "usuariu anónimu",
+	"bs-lockdown-groups-permissionerror": "L'acción «$1» nun ta disponible {{PLURAL:$2|pol motivu siguiente|polos motivos siguientes}}: $3",
+	"action-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global"
 }

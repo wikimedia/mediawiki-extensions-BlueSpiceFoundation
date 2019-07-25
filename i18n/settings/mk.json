@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"bs-setting-path-feature": "Функција",
+	"bs-setting-path-extension": "Додаток",
+	"bs-setting-path-package": "Пакет",
+	"bs-setting-path-system": "Систем",
+	"bs-setting-path-dataanalysis": "Анализа на податоци",
+	"bs-setting-path-editor": "Уредник"
+}

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"bluespicefoundation-desc": "Ја прави МедијаВики подготвена за претприемништво",
@@ -89,5 +90,7 @@
 	"bs-bluespice-mediawiki": "BlueSpice МедијаВики",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Се користи во многу додатоци за BlueSpice за потенцијално опасни административни задачи како раководење со корисници, дозволи и глобално поставување",
-	"bs-notifications-agent-anon": "анонимен корисник"
+	"bs-notifications-agent-anon": "анонимен корисник",
+	"bs-lockdown-groups-permissionerror": "Дејството „$1“ е недостапно поради {{PLURAL:$2|следнава причина|следниве причини}}: $3",
+	"action-wikiadmin": "се користи во многу додатоци за BlueSpice за потенцијално опасни административни задачи како раководење со корисници, дозволи и глобално поставување"
 }

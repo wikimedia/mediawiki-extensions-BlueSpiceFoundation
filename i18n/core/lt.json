@@ -78,5 +78,6 @@
 	"bs-exttype-bluespice": "BlueSpice plėtiniai",
 	"bs-export-menu-print-text": "Spausdinti",
 	"bs-export-menu-print-title": "Rodo šio puslapio versiją spausdinimui",
-	"right-wikiadmin": "Rodyti BlueSpice administracijos puslapius"
+	"right-wikiadmin": "Rodyti BlueSpice administracijos puslapius",
+	"action-wikiadmin": "rodyti BlueSpice administracijos puslapius"
 }
