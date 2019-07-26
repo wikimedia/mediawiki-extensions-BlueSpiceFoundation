@@ -89,29 +89,29 @@ class BsFormatConverter {
 			$sDateTimeOut = $sMonths
 				? wfMessage( 'bs-two-units-ago', $sYears, $sMonths )->plain()
 				: wfMessage( 'bs-one-unit-ago', $sYears )->plain();
-		} else if ( $iMonths > 0 ) {
+		} elseif ( $iMonths > 0 ) {
 			$sDateTimeOut = $sWeeks
 				? wfMessage( 'bs-two-units-ago', $sMonths, $sWeeks )->plain()
 				: wfMessage( 'bs-one-unit-ago', $sMonths )->plain();
-		} else if ( $iWeeks > 0 ) {
+		} elseif ( $iWeeks > 0 ) {
 			$sDateTimeOut = $sDays
 				? wfMessage( 'bs-two-units-ago', $sWeeks, $sDays )->plain()
 				: wfMessage( 'bs-one-unit-ago', $sWeeks )->plain();
-		} else if ( $iDays > 0 ) {
+		} elseif ( $iDays > 0 ) {
 			$sDateTimeOut = $sHrs
 				? wfMessage( 'bs-two-units-ago', $sDays, $sHrs )->plain()
 				: wfMessage( 'bs-one-unit-ago', $sDays )->plain();
-		} else if ( $iHrs > 0 ) {
+		} elseif ( $iHrs > 0 ) {
 			$sDateTimeOut = $sMins
 				? wfMessage( 'bs-two-units-ago', $sHrs, $sMins )->plain()
 				: wfMessage( 'bs-one-unit-ago', $sHrs )->plain();
-		} else if ( $iMins > 0 ) {
+		} elseif ( $iMins > 0 ) {
 			$sDateTimeOut = $sSecs
 				? wfMessage( 'bs-two-units-ago', $sMins, $sSecs )->plain()
 				: wfMessage( 'bs-one-unit-ago', $sMins )->plain();
-		} else if ( $iSecs > 0 ) {
+		} elseif ( $iSecs > 0 ) {
 			$sDateTimeOut = wfMessage( 'bs-one-unit-ago', $sSecs )->plain();
-		} else if ( $iSecs == 0 ) {
+		} elseif ( $iSecs == 0 ) {
 			$sDateTimeOut = wfMessage( 'bs-now' )->plain();
 		}
 

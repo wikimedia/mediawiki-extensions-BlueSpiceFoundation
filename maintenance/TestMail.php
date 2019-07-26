@@ -41,7 +41,7 @@ class TestMail extends BSMaintenance {
 			if ( Sanitizer::validateEmail( $sRecipient ) ) {
 				$oRecipientAddress = new MailAddress( $sRecipient );
 			}
-		} else if ( $oRecipient->getEmail() ) {
+		} elseif ( $oRecipient->getEmail() ) {
 			// not empty, false or things like this
 			$oRecipientAddress = new MailAddress( $oRecipient->getEmail() );
 		}

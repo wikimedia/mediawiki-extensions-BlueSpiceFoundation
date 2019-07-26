@@ -207,11 +207,11 @@ while ( $row = mysql_fetch_array( $res->result ) ) {
 
 		if ( $mode == 'append' ) {
 			$text .= $append_text;
-		} else if ( $mode == 'prefix' ) {
+		} elseif ( $mode == 'prefix' ) {
 			$text = $prefix_text . $text;
-		} else if ( $mode == 'delete' ) {
+		} elseif ( $mode == 'delete' ) {
 			$text = preg_replace( $delete_text, '', $text );
-		} else if ( $mode == 'replace' ) {
+		} elseif ( $mode == 'replace' ) {
 			$text = preg_replace( $replace_search, $replace_with, $text );
 		}
 
