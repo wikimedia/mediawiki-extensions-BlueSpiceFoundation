@@ -2,7 +2,6 @@
 
 namespace BlueSpice\DynamicFileDispatcher\UserProfileImage;
 
-use \BlueSpice\DynamicFileDispatcher\Module;
 use BlueSpice\DynamicFileDispatcher\AbstractStaticFile;
 
 class DefaultImage extends AbstractStaticFile {

@@ -3,8 +3,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\Services;
-
 class Foundation {
 
 	/**

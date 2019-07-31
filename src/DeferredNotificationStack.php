@@ -1,7 +1,6 @@
 <?php
 namespace BlueSpice;
 
-use FormatJson;
 use MWException;
 
 class DeferredNotificationStack {

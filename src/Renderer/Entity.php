@@ -5,7 +5,6 @@ use MWException;
 use Config;
 use IContextSource;
 use FormatJson;
-use BlueSpice\Renderer\Params;
 use BlueSpice\Utility\CacheHelper;
 use MediaWiki\Linker\LinkRenderer;
 

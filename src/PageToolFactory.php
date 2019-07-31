@@ -2,8 +2,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\IPageTool;
-
 class PageToolFactory {
 
 	/**

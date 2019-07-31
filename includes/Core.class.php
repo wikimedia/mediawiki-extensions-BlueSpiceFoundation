@@ -30,7 +30,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
-use MediaWiki\MediaWikiServices;
 
 /**
  * DEPRECATED

@@ -2,7 +2,6 @@
 
 namespace BlueSpice\Tag;
 
-use BlueSpice\Tag\MarkerType;
 use BlueSpice\ParamProcessor\ProcessingErrorMessageTranslator;
 
 class GenericHandler {

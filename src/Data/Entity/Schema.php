@@ -3,7 +3,6 @@
 namespace BlueSpice\Data\Entity;
 
 use MediaWiki\MediaWikiServices;
-use BlueSpice\EntityConfig;
 use BlueSpice\Data\FieldType;
 
 class Schema extends \BlueSpice\Data\Schema {
