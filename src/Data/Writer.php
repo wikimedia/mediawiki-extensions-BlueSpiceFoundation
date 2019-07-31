@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Data;
 
-use \BlueSpice\Data\IWriter;
-
 abstract class Writer implements IWriter {
 
 	/**

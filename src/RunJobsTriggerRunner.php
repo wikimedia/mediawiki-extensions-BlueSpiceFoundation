@@ -2,7 +2,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\ExtensionAttributeBasedRegistry;
 use MediaWiki\Logger\LoggerFactory;
 use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
 

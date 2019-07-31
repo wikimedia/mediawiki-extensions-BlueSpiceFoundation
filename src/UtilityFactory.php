@@ -27,8 +27,6 @@
  */
 namespace BlueSpice;
 
-use BlueSpice\Services;
-
 /**
  * UtilityFactory class for BlueSpice
  * @package BlueSpiceFoundation

@@ -37,10 +37,8 @@ use Status;
 use ApiMessage;
 use BlueSpice\Api\Format\Json;
 use BlueSpice\Api\ErrorFormatter;
-use BlueSpice\Services;
 use WikiPage;
 use BSExtendedApiContext;
-use BlueSpice\Context;
 
 /**
  * Api base class in BlueSpice

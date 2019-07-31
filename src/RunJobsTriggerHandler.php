@@ -2,7 +2,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\IRunJobsTriggerHandler;
 use BlueSpice\RunJobsTriggerHandler\Interval\OnceADay;
 
 abstract class RunJobsTriggerHandler implements IRunJobsTriggerHandler {

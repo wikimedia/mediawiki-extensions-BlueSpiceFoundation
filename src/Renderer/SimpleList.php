@@ -5,7 +5,6 @@ namespace BlueSpice\Renderer;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\Params;
 use BlueSpice\Renderer\SimpleList\Item;
 
 class SimpleList extends \BlueSpice\Renderer {

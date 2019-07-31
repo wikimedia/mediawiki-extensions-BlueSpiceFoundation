@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Html\OOUI;
 
-use OOUI\InputWidget;
-
 class MenuOptionWidget extends \OOUI\Widget {
 	use \OOUI\LabelElement;
 

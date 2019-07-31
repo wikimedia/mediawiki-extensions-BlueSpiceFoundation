@@ -3,7 +3,6 @@
 namespace BlueSpice\Html\OOUI;
 
 use OOUI\Widget;
-use BlueSpice\Html\OOUI\TagItemWidget;
 
 class TagMultiselectWidget extends Widget {
 	use \OOUI\IconElement;

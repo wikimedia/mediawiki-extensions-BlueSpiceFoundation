@@ -2,9 +2,6 @@
 
 namespace BlueSpice\Data;
 
-use BlueSpice\Data\Sort;
-use BlueSpice\Data\Filter;
-
 class ReaderParams {
 	const LIMIT_INFINITE = -1;
 

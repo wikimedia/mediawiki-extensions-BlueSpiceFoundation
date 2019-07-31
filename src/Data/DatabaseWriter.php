@@ -2,9 +2,6 @@
 
 namespace BlueSpice\Data;
 
-use BlueSpice\Data\RecordSet;
-use BlueSpice\Data\ReaderParams;
-
 abstract class DatabaseWriter extends Writer {
 
 	/**

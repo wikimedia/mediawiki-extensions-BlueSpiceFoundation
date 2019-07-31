@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Html\OOUI;
 
-use OOUI\InputWidget;
-
 class MenuSelectWidget extends SelectWidget {
 	use \BlueSpice\Html\OOUI\ClippableElement;
 	use \BlueSpice\Html\OOUI\FloatableElement;
