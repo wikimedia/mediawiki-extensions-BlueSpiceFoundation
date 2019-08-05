@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tofeiku"
+		]
+	},
+	"bs-ns_main": "(Laman)",
+	"bs-ns_all": "(semua)",
+	"bs-userbar_loginswitch_logout": "Log keluar",
+	"bs-userbar_loginswitch_login": "Log masuk",
+	"bs-userpagesettings-legend": "Tetapan pengguna",
+	"bs-imagepage-download-text": "Muat turun",
+	"bs-ns": "Ruang nama",
+	"bs-from-something": "(dari $1)",
+	"bs-parser-error-invalid-namespace": "Ruang nama tidak sah: $1",
+	"bs-parser-error-invalid-title": "Tajuk tidak sah: $1",
+	"bs-validator-error-namespace-does-not-exist": "Ruang nama tidak wujud: $1",
+	"bs-validator-error-namespace-on-blacklist": "Ruang nama tidak dibenarkan: $1",
+	"bs-validator-error-title-does-not-exist": "Laman tidak wujud: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Laman tidak dibenarkan: $1",
+	"bs-export-menu-print-text": "Cetak",
+	"bs-graphicallist-action-close": "Tutup",
+	"bs-graphicallist-action-list": "Senarai"
+}
