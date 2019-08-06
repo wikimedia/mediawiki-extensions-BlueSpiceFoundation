@@ -194,6 +194,9 @@
 				"bs-two-units-ago",
 				"bs-one-unit-ago",
 				"bs-now"
+			],
+			"dependencies": [
+				"mediawiki.api"
 			]
 		},
 		"ext.bluespice.extjs": {
