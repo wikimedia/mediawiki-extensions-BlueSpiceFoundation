@@ -52,7 +52,7 @@ class Sort {
 		return $this->getProperty() . ' ' . $this->getDirection();
 	}
 
-		/**
+	/**
 	 *
 	 * @param stdClass[]|array[] $sorts
 	 * @return Sort[]
