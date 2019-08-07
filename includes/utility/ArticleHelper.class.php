@@ -42,7 +42,7 @@ class BsArticleHelper {
 	 */
 	public function getDiscussionAmount() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$oTalkPage   = $this->oTitle->getTalkPageIfDefined();
+		$oTalkPage = $this->oTitle->getTalkPageIfDefined();
 
 		if ( !$oTalkPage ) {
 			return 0;

@@ -58,7 +58,7 @@ abstract class LinkerMakeMediaLinkFile extends Hook {
 	 *
 	 * @var string
 	 */
-	protected $ret  = '';
+	protected $ret = '';
 
 	/**
 	 * @param \Title $title
