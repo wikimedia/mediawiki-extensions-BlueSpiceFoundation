@@ -3,10 +3,9 @@
 namespace BlueSpice\Data\Entity;
 
 use MediaWiki\MediaWikiServices;
-use BlueSpice\EntityConfig;
 use BlueSpice\Data\FieldType;
 use BlueSpice\ExtensionAttributeBasedRegistry;
-use BlueSpice\Social\EntityConfig;
+use BlueSpice\EntityConfig;
 
 class Schema extends \BlueSpice\Data\Schema {
 	const STORABLE = 'storeable';
