@@ -11,7 +11,8 @@
 			"Romanko Mikhail",
 			"DmitTrix",
 			"Movses",
-			"INS Pirat"
+			"INS Pirat",
+			"Radmir Far"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",
@@ -19,6 +20,7 @@
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
 	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с контекстными данными для хранилища",
 	"apihelp-bs-task-param-format": "Формат результата",
+	"apihelp-bs-task-param-token": "Для доступа к модулю API нужен токен",
 	"bs-wikipage-tasks-error-contentmodel": "Эта задача не может быть выполнена с использованием модели содержания данной страницы.",
 	"bs-wikipage-tasks-error-page-not-valid": "Предоставленная страница недействительна.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Измененные категории.",
