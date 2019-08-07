@@ -151,7 +151,7 @@ class BsGroupHelper {
 		if ( !$res ) {
 			return $aUser;
 		}
-		while ( $row = $res->fetchObject() ) {
+		foreach ( $res as $row ) {
 			$aUser [] = User::newFromId( $row->ug_user );
 		}
 		return $aUser;

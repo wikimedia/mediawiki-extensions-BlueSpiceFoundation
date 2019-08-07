@@ -27,7 +27,8 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 	}
 
 	protected function makeNewName( $oldName ) {
-		if ( $deviatingName = $this->fromDeviatingNames( $oldName ) ) {
+		$deviatingName = $this->fromDeviatingNames( $oldName );
+		if ( $deviatingName ) {
 			return $deviatingName;
 		}
 

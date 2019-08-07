@@ -71,7 +71,8 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		}
 
 		foreach ( $res as $row ) {
-			if ( !$oData = $this->makeDataSet( $row ) ) {
+			$oData = $this->makeDataSet( $row );
+			if ( !$oData ) {
 				continue;
 			}
 			$aData[] = $oData;

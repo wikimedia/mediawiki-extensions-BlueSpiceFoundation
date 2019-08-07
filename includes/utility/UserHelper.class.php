@@ -36,7 +36,7 @@ class BsUserHelper {
 		if ( !$oRes ) {
 			return $aReturn;
 		}
-		while ( $oRow = $oRes->fetchObject() ) {
+		foreach ( $oRes as $oRow ) {
 			$aReturn [] = (int)$oRow->ug_user;
 		}
 		return $aReturn;

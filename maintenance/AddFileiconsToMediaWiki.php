@@ -38,6 +38,7 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 			$this->output( "Source: " . $sSourceDir . "" );
 			$this->output( "Target: " . $sTargetDir . "\n" );
 
+			// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
 			while ( ( $fileName = readdir( $sourceHandler ) ) !== false ) {
 				if ( $fileName == "." || $fileName == ".." ) {
 					continue;

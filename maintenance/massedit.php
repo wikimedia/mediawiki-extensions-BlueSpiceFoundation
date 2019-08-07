@@ -138,7 +138,8 @@ $res = $dbw->select( 'page', 'page_title, page_namespace, page_id', $qry_ns, 'Da
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $hits = 0;
 
-while ( $row = mysql_fetch_array( $res->result ) ) {
+foreach ( $res as $row ) {
+	$row = (array)$row;
 	$cur_title    = $row['page_title'];
 	$cur_title_ns = MWNamespace::getCanonicalName( $row['page_namespace'] );
 	$cur_title_ns = ( $cur_title_ns ) ? "$cur_title_ns:" : "";
