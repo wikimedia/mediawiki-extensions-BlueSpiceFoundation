@@ -19,7 +19,7 @@ class BsPageContentProvider {
 	protected $oTidy                     = null;
 	public $aTidyConfig               = [];
 
-	public static $oInstance             = null;
+	public static $oInstance = null;
 
 	protected function getTemplate() {
 		if ( $this->sTemplate !== false ) {

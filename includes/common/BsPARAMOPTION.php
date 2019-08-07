@@ -46,5 +46,5 @@ class BsPARAMOPTION {
 	 * Attempt to sanitize the value, even if type checking
 	 * fails.
 	 */
-	const CLEANUP_STRING   = 1048576;
+	const CLEANUP_STRING = 1048576;
 }

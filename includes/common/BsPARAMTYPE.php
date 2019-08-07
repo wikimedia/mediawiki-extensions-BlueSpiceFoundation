@@ -34,37 +34,37 @@ class BsPARAMTYPE {
 	 * BsPARAMTYPE::RAW
 	 * No type checking.
 	 */
-	const RAW           = 64;
+	const RAW = 64;
 
 	/**
 	 * BsPARAMTYPE::INT
 	 * Parameter has to be of type Int/Integer.
 	 */
-	const INT           = 128;
+	const INT = 128;
 
 	/**
 	 * BsPARAMTYPE::FLOAT
 	 * Parameter has to be of type Float.
 	 */
-	const FLOAT         = 256;
+	const FLOAT = 256;
 
 	/**
 	 * BsPARAMTYPE::NUMERIC
 	 * Parameter has to be numeric.
 	 */
-	const NUMERIC       = 512;
+	const NUMERIC = 512;
 
 	/**
 	 * BsPARAMTYPE::BOOL
 	 * Parameter has to be of type Boolean.
 	 */
-	const BOOL          = 1024;
+	const BOOL = 1024;
 
 	/**
 	 * BsPARAMTYPE::STRING
 	 * Parameter has to be of type String.
 	 */
-	const STRING        = 2048;
+	const STRING = 2048;
 
 	/**
 	 * BsPARAMTYPE::SQL_STRING
@@ -72,28 +72,28 @@ class BsPARAMTYPE {
 	 * Several operations will be executed to prevent SQL injection by this
 	 * value.
 	 */
-	const SQL_STRING    = 4096;
+	const SQL_STRING = 4096;
 
 	/**
 	 * BsPARAMTYPE::ARRAY_MIXED
 	 * Parameter has to be an Array.
 	 * There will be no type checking of the contained values.
 	 */
-	const ARRAY_MIXED   = 8192;
+	const ARRAY_MIXED = 8192;
 
 	/**
 	 * BsPARAMTYPE::INT
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type Int/Integer.
 	 */
-	const ARRAY_INT     = 16384;
+	const ARRAY_INT = 16384;
 
 	/**
 	 * BsPARAMTYPE::ARRAY_FLOAT
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type Float.
 	 */
-	const ARRAY_FLOAT   = 32768;
+	const ARRAY_FLOAT = 32768;
 
 	/**
 	 * BsPARAMTYPE::ARRAY_NUMERIC
@@ -107,12 +107,12 @@ class BsPARAMTYPE {
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type Boolean.
 	 */
-	const ARRAY_BOOL    = 131072;
+	const ARRAY_BOOL = 131072;
 
 	/**
 	 * BsPARAMTYPE::ARRAY_STRING
 	 * Parameter has to be an Array.
 	 * Each contained value has to be of type String.
 	 */
-	const ARRAY_STRING  = 262144;
+	const ARRAY_STRING = 262144;
 }

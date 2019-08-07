@@ -21,11 +21,11 @@ if ( !defined( 'WIKI_FARMING' ) ) {
 	}
 
 	// New constants
-	$sTMPUploadDir  = empty( $GLOBALS['wgUploadDirectory'] )
+	$sTMPUploadDir = empty( $GLOBALS['wgUploadDirectory'] )
 		? $GLOBALS['IP'] . DIRECTORY_SEPARATOR . 'images'
 		: $GLOBALS['wgUploadDirectory'];
 
-	$sTMPCacheDir   = empty( $GLOBALS['wgFileCacheDirectory'] )
+	$sTMPCacheDir = empty( $GLOBALS['wgFileCacheDirectory'] )
 		? $sTMPUploadDir . DIRECTORY_SEPARATOR . 'cache'
 		: $GLOBALS['wgFileCacheDirectory'];
 

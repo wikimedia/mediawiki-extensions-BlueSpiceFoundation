@@ -34,7 +34,7 @@ abstract class UserCan extends Hook {
 	 *
 	 * @var \Title
 	 */
-	protected $title  = null;
+	protected $title = null;
 
 	/**
 	 *

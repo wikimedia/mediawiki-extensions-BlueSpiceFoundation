@@ -46,7 +46,7 @@ abstract class ThumbnailBeforeProduceHTML extends Hook {
 	 *
 	 * @var array
 	 */
-	protected $linkAttribs  = [];
+	protected $linkAttribs = [];
 
 	/**
 	 * @param \ThumbnailImage $thumbnail
