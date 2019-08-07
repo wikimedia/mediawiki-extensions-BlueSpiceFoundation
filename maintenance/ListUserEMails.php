@@ -56,10 +56,10 @@ class ListUserEmails extends BSMaintenance {
 		}
 
 		$aUser = [];
-		while ( $aRow = $oDbr->fetchRow( $rRes ) ) {
+		foreach ( $rRes as $aRow ) {
 			$aUser[] = [
-				'email' => $aRow['user_email'],
-				'auth'  => $aRow['user_email_authenticated']
+				'email' => $aRow->user_email,
+				'auth'  => $aRow->user_email_authenticated
 			];
 		}
 

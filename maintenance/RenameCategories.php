@@ -225,8 +225,8 @@ $wgFlaggedRevsAutoReview = true;
 $matches = 0;
 $inarticlematches = 0;
 
-while ( $row = mysql_fetch_array( $res->result ) ) {
-
+foreach ( $res as $row ) {
+	$row = (array)$row;
 	$cur_title = $row['page_title'];
 	$cur_title_ns = MWNamespace::getCanonicalName( $row['page_namespace'] );
 	$cur_title_ns = ( $cur_title_ns ) ? "$cur_title_ns:" : "";
@@ -380,7 +380,7 @@ function hw_error( $msg ) {
 }
 
 echo "\n\n------------\nArticles modified: $matches\n";
-if ( $mode = "replace" || $mode = "grep" ) {
+if ( $mode == "replace" || $mode == "grep" ) {
 	echo "Total replacements: $inarticlematches\n";
 }
 

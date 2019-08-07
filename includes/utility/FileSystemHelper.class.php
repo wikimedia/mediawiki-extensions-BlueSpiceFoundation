@@ -163,6 +163,7 @@ class BsFileSystemHelper {
 		}
 		$rDir = opendir( $sSource );
 		wfMkdirParents( $sDestination );
+		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
 		while ( false !== ( $sFileName = readdir( $rDir ) ) ) {
 			if ( ( $sFileName != '.' ) && ( $sFileName != '..' ) ) {
 				if ( is_dir( "$sSource/$sFileName" ) ) {

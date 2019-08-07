@@ -57,12 +57,12 @@ class ConfirmUserEMail extends Maintenance {
 		}
 
 		$aUser = [];
-		while ( $aRow = $oDbr->fetchRow( $rRes ) ) {
+		foreach ( $rRes as $aRow ) {
 			$aUser[] = [
-				'id'	=> $aRow['user_id'],
-				'name'	=> $aRow['user_name'],
-				'email' => $aRow['user_email'],
-				'setvalue' => $aRow['user_email_authenticated'],
+				'id'	=> $aRow->user_id,
+				'name'	=> $aRow->user_name,
+				'email' => $aRow->user_email,
+				'setvalue' => $aRow->user_email_authenticated,
 				'value'	=> 'authentification'
 			];
 		}

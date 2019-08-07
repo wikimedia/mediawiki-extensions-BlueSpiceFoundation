@@ -37,7 +37,9 @@ function showHelp() {
 }
 
 function deleteOldTomcatLogs( $bDry, $options ) {
+	// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
 	if ( $handle = opendir( $options['logdir'] ) ) {
+		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
 		while ( false !== ( $file = readdir( $handle ) ) ) {
 			if ( !empty( $file )
 				&& preg_match( '/.(\d{4})\-(\d{2})\-(\d{2}).log/', $file, $hits )

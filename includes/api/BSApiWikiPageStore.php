@@ -92,7 +92,8 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	public function makeDataSet( $row ) {
-		if ( !$oTitle = Title::newFromRow( $row ) ) {
+		$oTitle = Title::newFromRow( $row );
+		if ( !$oTitle ) {
 			return false;
 		}
 		return $oTitle->userCan( 'read', $this->getUser() )

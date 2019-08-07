@@ -44,7 +44,8 @@ class Schema extends \BlueSpice\Data\Schema {
 			'BSEntityConfigFactory'
 		);
 		foreach ( $registry->getAllKeys() as $type ) {
-			if ( !$entityConfig = $configFactory->newFromType( $type ) ) {
+			$entityConfig = $configFactory->newFromType( $type );
+			if ( !$entityConfig ) {
 				continue;
 			}
 			$entityConfigs[] = $entityConfig;

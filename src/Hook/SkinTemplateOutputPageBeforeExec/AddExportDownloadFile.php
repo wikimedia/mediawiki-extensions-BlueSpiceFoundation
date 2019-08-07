@@ -11,7 +11,8 @@ class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBefore
 			return true;
 		}
 
-		if ( !$file = wfFindFile( $this->skin->getTitle() ) ) {
+		$file = wfFindFile( $this->skin->getTitle() );
+		if ( !$file ) {
 			return true;
 		}
 

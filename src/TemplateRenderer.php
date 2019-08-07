@@ -172,7 +172,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	protected function getFromCache() {
-		if ( !$cacheKey = $this->getCacheKey() ) {
+		$cacheKey = $this->getCacheKey();
+		if ( !$cacheKey ) {
 			return false;
 		}
 		if ( $this->hasCacheEntry() ) {
@@ -183,7 +184,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	protected function hasCacheEntry() {
-		if ( !$cacheKey = $this->getCacheKey() ) {
+		$cacheKey = $this->getCacheKey();
+		if ( !$cacheKey ) {
 			return false;
 		}
 		return isset( static::$cache[$cacheKey] );
@@ -204,7 +206,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @return boolean
 	 */
 	protected function appendCache( $content ) {
-		if ( !$cacheKey = $this->getCacheKey() ) {
+		$cacheKey = $this->getCacheKey();
+		if ( !$cacheKey ) {
 			return false;
 		}
 		$this->getCacheHelper()->set(
@@ -221,7 +224,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @return boolean
 	 */
 	public function invalidate() {
-		if ( !$cacheKey = $this->getCacheKey() ) {
+		$cacheKey = $this->getCacheKey();
+		if ( !$cacheKey ) {
 			return false;
 		}
 
