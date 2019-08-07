@@ -2,8 +2,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\INotification;
-
 /**
  * Generic empty notification
  */

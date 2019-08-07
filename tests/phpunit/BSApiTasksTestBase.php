@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Tests;
 
-use BlueSpice\Tests\BSApiTestCase;
-
 abstract class BSApiTasksTestBase extends BSApiTestCase {
 
 	abstract protected function getModuleName();

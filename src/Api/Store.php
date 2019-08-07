@@ -2,7 +2,6 @@
 
 namespace BlueSpice\Api;
 
-use WikiPage;
 use BlueSpice\Api;
 use BlueSpice\Data\RecordConverter;
 use BlueSpice\Data\ReaderParams;

@@ -2,7 +2,6 @@
 
 namespace BlueSpice\Renderer;
 
-use BlueSpice\Renderer\Params;
 use BlueSpice\Renderer\LinkList\Item;
 
 class LinkList extends SimpleList {

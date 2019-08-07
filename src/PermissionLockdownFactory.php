@@ -5,10 +5,8 @@ namespace BlueSpice;
 use Title;
 use User;
 use Status;
-use BlueSpice\ExtensionAttributeBasedRegistry;
 use Config;
 use IContextSource;
-use BlueSpice\Services;
 use BlueSpice\Permission\Lockdown;
 use MediaWiki\Permissions\PermissionManager;
 

@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Data;
 
-use \BlueSpice\Data\IReader;
-
 abstract class Reader implements IReader {
 
 	/**

@@ -7,7 +7,6 @@ use BlueSpice\Data\FilterFinder;
 use BlueSpice\Data\Filter;
 use BlueSpice\Data\Filter\StringValue;
 use BlueSpice\Data\Filter\Numeric;
-use BlueSpice\Data\User\Schema;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 

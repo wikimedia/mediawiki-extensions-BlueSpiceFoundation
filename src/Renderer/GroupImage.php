@@ -3,7 +3,6 @@ namespace BlueSpice\Renderer;
 
 use Config;
 use IContextSource;
-use BlueSpice\Renderer\Params;
 use BlueSpice\Utility\CacheHelper;
 use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\DynamicFileDispatcher\Params as DFDParams;

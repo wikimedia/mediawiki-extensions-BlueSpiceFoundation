@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Tests;
 
-use BlueSpice\Tests\BSPageFixturesProvider;
-
 class BSPageFixtures {
 
 	/**

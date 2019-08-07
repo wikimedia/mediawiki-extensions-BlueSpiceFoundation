@@ -2,10 +2,6 @@
 
 namespace BlueSpice\Tests;
 
-use BlueSpice\Tests\BSApiTestCase;
-use BlueSpice\Tests\BSPageFixtures;
-use BlueSpice\Tests\BSUserFixtures;
-
 /**
  * @group medium
  * @group Database

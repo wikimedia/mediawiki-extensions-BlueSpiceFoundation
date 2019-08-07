@@ -7,7 +7,6 @@ use User;
 use RequestContext;
 use BlueSpice\Utility\CacheHelper;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\Params;
 use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage;
 use BlueSpice\Services;

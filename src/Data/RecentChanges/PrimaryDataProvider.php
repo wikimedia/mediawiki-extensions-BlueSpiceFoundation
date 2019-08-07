@@ -3,8 +3,6 @@
 namespace BlueSpice\Data\RecentChanges;
 
 use \BlueSpice\Data\IPrimaryDataProvider;
-use \BlueSpice\Data\Filter;
-use \BlueSpice\Data\FilterFinder;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 

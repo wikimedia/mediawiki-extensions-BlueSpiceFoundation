@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Html\OOUI;
 
-use OOUI\InputWidget;
-
 class MenuTagMultiselectWidget extends TagMultiselectWidget {
 	protected $options = [];
 
