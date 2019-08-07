@@ -52,5 +52,5 @@ class BsPARAMOPTION {
 	 * fails.
 	 * @deprecated since version 3.1
 	 */
-	const CLEANUP_STRING   = 1048576;
+	const CLEANUP_STRING = 1048576;
 }

@@ -44,28 +44,28 @@ class BsPARAM {
 	 * Use super global array $_GET
 	 * @deprecated since version 3.1
 	 */
-	const GET     = 2;
+	const GET = 2;
 	/**
 	 * DEPRECATED!
 	 * BsPARAM::POST
 	 * Use super global array $_POST
 	 * @deprecated since version 3.1
 	 */
-	const POST    = 4;
+	const POST = 4;
 	/**
 	 * DEPRECATED!
 	 * BsPARAM::FILES
 	 * Use super global array $_FILES
 	 * @deprecated since version 3.1
 	 */
-	const FILES   = 8;
+	const FILES = 8;
 	/**
 	 * DEPRECATED!
 	 * BsPARAM::COOKIE
 	 * Use super global array $_COOKIE
 	 * @deprecated since version 3.1
 	 */
-	const COOKIE  = 16;
+	const COOKIE = 16;
 	/**
 	 * DEPRECATED!
 	 * BsPARAM::SESSION
@@ -79,5 +79,5 @@ class BsPARAM {
 	 * Use super global array $_SERVER
 	 * @deprecated since version 3.1
 	 */
-	const SERVER  = 64;
+	const SERVER = 64;
 }
