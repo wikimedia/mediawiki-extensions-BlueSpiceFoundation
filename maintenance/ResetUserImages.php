@@ -13,7 +13,7 @@ class ResetUserImages extends Maintenance {
 	public function execute() {
 		$dbw = wfGetDB( DB_MASTER );
 		$res = $dbw->select( 'user', 'user_id' );
-		while ( $row = $dbw->fetchObject( $res ) ) {
+		foreach ( $res as $row ) {
 			$oUser = User::newFromId( $row->user_id );
 			$sUserImage = $oUser->getName() . '.jpg';
 

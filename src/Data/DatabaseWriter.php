@@ -43,7 +43,8 @@ abstract class DatabaseWriter extends Writer {
 			if ( !$record->getStatus()->isOK() ) {
 				continue;
 			}
-			if ( !$existingRecord = $this->getExistingRecord( $record ) ) {
+			$existingRecord = $this->getExistingRecord( $record );
+			if ( !$existingRecord ) {
 				$this->insert( $record );
 				continue;
 			}
@@ -62,7 +63,8 @@ abstract class DatabaseWriter extends Writer {
 			if ( !$record->getStatus()->isOK() ) {
 				continue;
 			}
-			if ( !$existingRecord = $this->getExistingRecord( $record ) ) {
+			$existingRecord = $this->getExistingRecord( $record );
+			if ( !$existingRecord ) {
 				$record->getStatus()->fatal(
 					"Record not found in table: " . $this->getTableName()
 				);

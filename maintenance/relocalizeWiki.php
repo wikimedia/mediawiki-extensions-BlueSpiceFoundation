@@ -72,8 +72,8 @@ class RelocalizeWiki extends Maintenance {
 		);
 
 		$aArticleIds = [];
-		while ( $aData = $oRes->fetchRow() ) {
-			$aArticleIds[] = $aData['page_id'];
+		foreach ( $oRes as $row ) {
+			$aArticleIds[] = $row->page_id;
 		}
 
 		foreach ( $aArticleIds as $iArticleId ) {

@@ -292,7 +292,7 @@ class BsConfig {
 			if ( $dbr->tableExists( 'bs_settings' ) ) {
 				$res = $dbr->select( 'bs_settings', [ $dbr->addIdentifierQuotes( 'key' ), $dbr->addIdentifierQuotes( 'value' ) ] );
 
-				while ( $row = $res->fetchObject() ) {
+				foreach ( $res as $row ) {
 					$aRows[] = $row;
 				}
 			}
@@ -426,7 +426,7 @@ class BsConfig {
 				$aConditions
 		);
 
-		while ( $oRow = $rRes->fetchObject() ) {
+		foreach ( $rRes as $oRow ) {
 			if ( $sSingleValFromMultiple ) {
 				foreach ( unserialize( $oRow->up_value ) as $value ) {
 					if ( $value === $vValue ) {

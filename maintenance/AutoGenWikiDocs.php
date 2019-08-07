@@ -68,6 +68,7 @@ class AutoGenWikiDocs extends BSMaintenance {
 		$path = $GLOBALS['IP'] . "/$baseDir";
 		$dir = dir( $path );
 
+		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
 		while ( ( $entry = $dir->read() ) !== false ) {
 			if ( $entry === '.' || $entry === '..' ) {
 				continue;

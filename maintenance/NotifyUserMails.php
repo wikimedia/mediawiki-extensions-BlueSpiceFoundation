@@ -69,8 +69,8 @@ function getUser( $sGivenUser ) {
 	}
 
 	$aUser = [];
-	while ( $oRow = $oDbr->fetchRow( $rRes ) ) {
-		$aUser[] = [ 'id' => $oRow['user_id'], 'name' => $oRow['user_name'] ];
+	foreach ( $rRes as $oRow ) {
+		$aUser[] = [ 'id' => $oRow->user_id, 'name' => $oRow->user_name ];
 	}
 
 	return $aUser;

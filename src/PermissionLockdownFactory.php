@@ -55,7 +55,8 @@ class PermissionLockdownFactory {
 	 * @return Lockdown
 	 */
 	public function newFromTitleAndUserRelation( Title $title, User $user ) {
-		if ( $instance = $this->getLockownFromCache( $title, $user ) ) {
+		$instance = $this->getLockownFromCache( $title, $user );
+		if ( $instance ) {
 			return $instance;
 		}
 		return $this->newLockdown( $title, $user );

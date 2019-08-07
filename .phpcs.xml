@@ -23,7 +23,6 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.SyntaxAlignedDocStar" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle" />
 		<exclude name="MediaWiki.Commenting.MissingCovers.MissingCovers" />
-		<exclude name="MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
