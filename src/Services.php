@@ -46,14 +46,6 @@ class Services extends ServicesDecorator {
 
 	/**
 	 *
-	 * @return EntityRegistry
-	 */
-	public function getBSEntityRegistry() {
-		return $this->getService( 'BSEntityRegistry' );
-	}
-
-	/**
-	 *
 	 * @return EntityConfigFactory
 	 */
 	public function getBSEntityConfigFactory() {

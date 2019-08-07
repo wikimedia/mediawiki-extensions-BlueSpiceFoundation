@@ -4,6 +4,8 @@ namespace BlueSpice\Data\Entity;
 
 use MediaWiki\MediaWikiServices;
 use BlueSpice\Data\FieldType;
+use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\Social\EntityConfig;
 
 class Schema extends \BlueSpice\Data\Schema {
 	const STORABLE = 'storeable';
@@ -31,17 +33,17 @@ class Schema extends \BlueSpice\Data\Schema {
 
 	/**
 	 *
-	 * @return \BlueSpice\Social\EntityConfig[]
+	 * @return EntityConfig[]
 	 */
 	protected function getEntityConfigs() {
 		$entityConfigs = [];
-		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'BSEntityRegistry'
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationEntityRegistry'
 		);
 		$configFactory = MediaWikiServices::getInstance()->getService(
 			'BSEntityConfigFactory'
 		);
-		foreach ( $entityRegistry->getTypes() as $type ) {
+		foreach ( $registry->getAllKeys() as $type ) {
 			if ( !$entityConfig = $configFactory->newFromType( $type ) ) {
 				continue;
 			}

@@ -2,35 +2,50 @@
 
 namespace BlueSpice\Data\Entity;
 
-abstract class Writer implements \BlueSpice\Data\IWriter {
+use Exception;
+use Status;
+use IContextSource;
+use BlueSpice\Entity;
+use BlueSpice\Data\IWriter;
+use BlueSpice\Data\RecordSet;
+
+abstract class Writer implements IWriter {
 
 	/**
 	 *
-	 * @var \IContextSource
+	 * @var IContextSource
 	 */
 	protected $context = null;
 
-	public function __construct( \IContextSource $context = null, \Config $config = null ) {
+	/**
+	 *
+	 * @param IContextSource $context
+	 */
+	public function __construct( IContextSource $context ) {
 		$this->context = $context;
-		if ( $this->context === null ) {
-			$this->context = \RequestContext::getMain();
-		}
-		$this->config = $config;
-		if ( $this->config === null ) {
-			$this->config = \MediaWiki\MediaWikiServices::getInstance()->getMainConfig();
-		}
 	}
 
+	/**
+	 *
+	 * @return Schema
+	 */
 	public function getSchema() {
 		return new Schema();
 	}
 
 	/**
 	 *
-	 * @param array $dataSet
-	 * @return \Status
+	 * @param RecordSet $recordSet
+	 * @throws Exception
 	 */
-	public function write( $dataSet ) {
-		throw new Exception( 'Writing entity store is not supported yet' );
+	public function write( $recordSet ) {
+		throw new Exception( 'write mode is not supported' );
 	}
+
+	/**
+	 * Create or Update given records
+	 * @param $entity Entity
+	 * @return Status
+	 */
+	abstract public function writeEntity( Entity $entity );
 }

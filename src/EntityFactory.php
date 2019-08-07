@@ -26,54 +26,71 @@
  */
 namespace BlueSpice;
 
+use Config;
+use Title;
+use BsPageContentProvider;
 use BlueSpice\Content\Entity as EntityContent;
+use BlueSpice\Data\Entity\IStore;
 
 class EntityFactory {
 	protected $storedById = [];
 
 	/**
 	 *
-	 * @var \BlueSpice\EntityRegistry
+	 * @var ExtensionAttributeBasedRegistry
 	 */
 	protected $entityRegistry = null;
 
 	/**
 	 *
-	 * @var \BlueSpice\EntityConfigFactory
+	 * @var EntityConfigFactory
 	 */
 	protected $configFactory = null;
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 * @param \BlueSpice\EntityRegistry $entityRegistry
-	 * @param \BlueSpice\EntityConfigFactory $configFactory
-	 * @param \Config $config
+	 * @param ExtensionAttributeBasedRegistry $entityRegistry
+	 * @param EntityConfigFactory $configFactory
+	 * @param Config $config
 	 * @return Entity | null
 	 */
-	public function __construct( $entityRegistry, $configFactory, $config ) {
+	public function __construct( ExtensionAttributeBasedRegistry $entityRegistry,
+		EntityConfigFactory $configFactory, Config $config ) {
 		$this->entityRegistry = $entityRegistry;
 		$this->configFactory = $configFactory;
 		$this->config = $config;
 	}
 
-	protected function factory( $type, $data ) {
-		$entityConfig = $this->configFactory->newFromType( $type );
-		if ( !$entityConfig instanceof EntityConfig ) {
-			// TODO: Return a DummyEntity instead of null.
-			return null;
+	/**
+	 *
+	 * @param string $type
+	 * @param \stdClass $data
+	 * @return Entity
+	 * @throws MWException
+	 */
+	protected function factory( $type, $data, EntityConfig $entityConfig = null,
+		IStore $store = null ) {
+		if ( !$entityConfig ) {
+			$entityConfig = $this->makeConfig( $type );
 		}
-
+		if ( !$store ) {
+			$store = $this->makeStore( $type, $entityConfig );
+			if ( !$store instanceof IStore ) {
+				// TODO: Return a DummyEntity instead of null.
+				return null;
+			}
+		}
 		$entityClass = $entityConfig->get( 'EntityClass' );
-		return $entityClass::newFromFactory( $data, $entityConfig, $this );
+		return $entityClass::newFromFactory( $data, $entityConfig, $store, $this );
 	}
 
 	/**
-	 * Get Entity by EntityContent Object, wrapper for newFromObject
+	 * Get ContentEntity by EntityContent Object, wrapper for newFromObject
 	 * @param EntityContent $sContent
 	 * @return Entity | null
 	 */
@@ -100,18 +117,12 @@ class EntityFactory {
 			return null;
 		}
 
-		if ( !$this->entityRegistry->hasType( $object->type ) ) {
+		if ( !$this->entityRegistry->getValue( $object->type ) ) {
 			return null;
 		}
 
-		if ( !empty( $object->id ) && (int)$object->id !== 0 ) {
-			$entityConfig = $this->configFactory->newFromType( $object->type );
-			if ( !$entityConfig instanceof EntityConfig ) {
-				// TODO: Return a DummyEntity instead of null.
-				return null;
-			}
-			$entityClass = $entityConfig->get( 'EntityClass' );
-			return $this->newFromID( $object->id, $entityClass::NS );
+		if ( !empty( $object->id ) ) {
+			return $this->newFromID( $object->id, $object->type );
 		}
 
 		$instance = $this->factory(
@@ -126,50 +137,50 @@ class EntityFactory {
 
 	/**
 	 * Get Entity from ID
-	 * @param int $id
-	 * @param int $ns
+	 * @param mixed $id
+	 * @param string|int $type - int namespace is used for legecy content entities
 	 * @param boolean $reload
 	 * @return Entity | null
 	 */
-	public function newFromID( $id, $ns, $reload = false ) {
-		if ( !is_numeric( $id ) || !is_numeric( $ns ) ) {
+	public function newFromID( $id, $type, $reload = false ) {
+		if ( empty( $id ) ) {
 			return null;
 		}
-		$id = (int)$id;
-		$ns = (int)$ns;
-
 		$instance = null;
+		if ( is_numeric( $type ) ) {
+			$type = $this->makeTypeFromLegacyContentEntity( $id, $type );
+		}
+
+		if ( !$type ) {
+			return null;
+		}
 		if ( !$reload ) {
-			$instance = $this->getInstanceFromCacheByID( $id, $ns );
+			$instance = $this->getInstanceFromCacheByID( $id, $type );
 		}
 		if ( $instance ) {
 			return $instance;
 		}
 
-		$title = \Title::makeTitle( $ns, $id );
-
-		if ( !$title || !$title->exists() ) {
+		$config = $this->makeConfig( $type );
+		$store = $this->makeStore( $type, $config );
+		if ( !$store ) {
 			return null;
 		}
 
-		$sText = \BsPageContentProvider::getInstance()->getContentFromTitle(
-			$title
+		$data = $store->getReader()->resolveNativeDataFromID(
+			$id,
+			$config
 		);
 
-		$content = new EntityContent( $sText );
-		$data = (object)$content->getData()->getValue();
-
-		if ( empty( $data->type ) ) {
-			return null;
-		}
-
-		if ( !$this->entityRegistry->hasType( $data->type ) ) {
+		if ( !$data ) {
 			return null;
 		}
 
 		$instance = $this->factory(
 			$data->type,
-			$data
+			$data,
+			$config,
+			$store
 		);
 		if ( !$instance instanceof Entity ) {
 			return null;
@@ -178,12 +189,46 @@ class EntityFactory {
 	}
 
 	/**
-	 * Main method for getting a Entity from a Title
-	 * @param \Title|null $title
+	 *
+	 * @param string $type
+	 * @return EntityConfig
+	 */
+	protected function makeConfig( $type ) {
+		$entityConfig = $this->configFactory->newFromType( $type );
+		if ( !$entityConfig instanceof EntityConfig ) {
+			return null;
+		}
+		return $entityConfig;
+	}
+
+	/**
+	 *
+	 * @param string $type
+	 * @param EntityConfig|null $entityConfig
+	 * @return IStore|null
+	 */
+	protected function makeStore( $type, EntityConfig $entityConfig = null ) {
+		if ( !$entityConfig ) {
+			$entityConfig = $this->makeConfig( $type );
+		}
+		if ( !$entityConfig ) {
+			return null;
+		}
+		$storeClass = $entityConfig->get( 'StoreClass' );
+		if ( !class_exists( $storeClass ) ) {
+			return null;
+		}
+		$store = new $storeClass();
+		return $store;
+	}
+
+	/**
+	 * Main method for getting a ContentEntity from a Title
+	 * @param Title|null $title
 	 * @param boolean $reload
 	 * @return Entity | null
 	 */
-	public function newFromSourceTitle( \Title $title = null, $reload = false ) {
+	public function newFromSourceTitle( Title $title = null, $reload = false ) {
 		if ( !$title ) {
 			return null;
 		}
@@ -198,10 +243,10 @@ class EntityFactory {
 	 * @return Entity
 	 */
 	protected function appendCache( Entity &$oInstance ) {
-		if ( $this->hasCacheEntry( $oInstance->getID(), $oInstance::NS ) ) {
+		if ( $this->hasCacheEntry( $oInstance->get( Entity::ATTR_ID ), $oInstance::NS ) ) {
 			return $oInstance;
 		}
-		$this->storedById[$oInstance::NS][$oInstance->getID()] = $oInstance;
+		$this->storedById[$oInstance::NS][$oInstance->get( Entity::ATTR_ID )] = $oInstance;
 		return $oInstance;
 	}
 
@@ -211,10 +256,10 @@ class EntityFactory {
 	 * @return Entity
 	 */
 	public function detachCache( Entity &$oInstance ) {
-		if ( !$this->hasCacheEntry( $oInstance->getID(), $oInstance::NS ) ) {
+		if ( !$this->hasCacheEntry( $oInstance->get( Entity::ATTR_ID ), $oInstance::NS ) ) {
 			return $oInstance;
 		}
-		unset( $this->storedById[$oInstance::NS][$oInstance->getID()] );
+		unset( $this->storedById[$oInstance::NS][$oInstance->get( Entity::ATTR_ID )] );
 		return $oInstance;
 	}
 
@@ -223,14 +268,49 @@ class EntityFactory {
 	 * @param int $id
 	 * @return Entity
 	 */
-	protected function getInstanceFromCacheByID( $id, $ns = -1 ) {
-		if ( !$this->hasCacheEntry( $id, $ns ) ) {
+	protected function getInstanceFromCacheByID( $id, $type ) {
+		if ( !$this->hasCacheEntry( $id, $type ) ) {
 			return null;
 		}
-		return $this->storedById[$ns][(int)$id];
+		return $this->storedById[$type][$id];
 	}
 
-	protected function hasCacheEntry( $id, $ns = -1 ) {
-		return isset( $this->storedById[$ns][(int)$id] );
+	/**
+	 *
+	 * @param mixed $id
+	 * @param string $type
+	 * @return bool
+	 */
+	protected function hasCacheEntry( $id, $type ) {
+		return isset( $this->storedById[$type][$id] );
 	}
+
+	/**
+	 *
+	 * @param mixed $id
+	 * @param int $type
+	 * @return string|bool
+	 */
+	protected function makeTypeFromLegacyContentEntity( $id, $type ) {
+		$title = Title::makeTitle( $type, $id );
+		if ( !$title || !$title->exists() ) {
+			return false;
+		}
+
+		$text = BsPageContentProvider::getInstance()->getContentFromTitle(
+			$title
+		);
+		$content = new EntityContent( $text );
+		$data = (object)$content->getData()->getValue();
+
+		if ( empty( $data->type ) ) {
+			return false;
+		}
+		if ( !$this->entityRegistry->getValue( $data->type ) ) {
+			return false;
+		}
+
+		return $data->type;
+	}
+
 }
