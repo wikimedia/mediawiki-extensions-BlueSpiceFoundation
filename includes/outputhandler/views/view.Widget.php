@@ -9,12 +9,18 @@ class ViewWidget extends ViewBaseElement {
 	 * Possible values 'expanded'|'collapsed'
 	 * @var string
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mDefaultViewstate = '';
-	protected $_mTitle        = '';
-	protected $_mBody         = '';
-	protected $_mTooltip      = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mTitle = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mBody = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mTooltip = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mAdditionalTitleClasses = [];
-	protected $_mAdditionalBodyClasses  = [];
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mAdditionalBodyClasses = [];
 
 	public function execute( $params = false ) {
 		$this->checkProperties();

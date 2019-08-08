@@ -19,10 +19,14 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewFormElement extends ViewBaseElement {
-	protected $_mLabel			= '';
-	protected $_mName			= '';
-	protected $_mType			= '';
-	protected $_mValue			= '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mLabel = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mName = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mType = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mValue = '';
 
 	public function setLabel( $label ) {
 		$this->_mLabel = $label;

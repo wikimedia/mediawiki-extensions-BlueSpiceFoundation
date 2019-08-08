@@ -18,11 +18,16 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewBaseForm extends ViewBaseElement {
-	protected $_mMethod			= 'post';
-	protected $_mEnctype		= 'multipart/form-data';
-	protected $_mRenderAsExt	= false;
-	protected $_mActionUrl		= '';
-	protected $_mValidationUrl	= null;
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mMethod = 'post';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mEnctype = 'multipart/form-data';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mRenderAsExt = false;
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mActionUrl = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mValidationUrl = null;
 
 	public function  __construct() {
 		parent::__construct();

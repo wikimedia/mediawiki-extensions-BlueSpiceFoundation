@@ -18,6 +18,7 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewFormElementLabel extends ViewFormElement {
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mForId = '';
 	protected $bUseAutoWidth = false;
 
