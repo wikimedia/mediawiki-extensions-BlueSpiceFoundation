@@ -18,7 +18,9 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewFormElementInput extends ViewFormElement {
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mValidate = false;
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mLinebreak = true;
 
 	public function __construct() {
