@@ -521,6 +521,7 @@ class BsConfig {
 	 *
 	 * @var string
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mKey = null;
 
 	/**
@@ -528,6 +529,7 @@ class BsConfig {
 	 *
 	 * @var string
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mAdapter = null;
 
 	/**
@@ -535,6 +537,7 @@ class BsConfig {
 	 *
 	 * @var string
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mExtension = null;
 
 	/**
@@ -542,6 +545,7 @@ class BsConfig {
 	 *
 	 * @var string
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mName = null;
 
 	/**
@@ -549,6 +553,7 @@ class BsConfig {
 	 *
 	 * @var int
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mOptions = null;
 
 	/**
@@ -556,6 +561,7 @@ class BsConfig {
 	 *
 	 * @var mixed
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mDefault = null;
 
 	/**
@@ -563,6 +569,7 @@ class BsConfig {
 	 *
 	 * @var mixed
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mValue = null;
 
 	/**
@@ -570,11 +577,13 @@ class BsConfig {
 	 *
 	 * @var mixed
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mUserValue = null;
 
 	/**
 	 * the i18n key for this variable
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mI18n = null;
 
 	/**
@@ -584,6 +593,7 @@ class BsConfig {
 	 *
 	 * @var string
 	 */
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mFieldMapping = null;
 
 	/**
@@ -685,10 +695,12 @@ class BsConfig {
 	 *
 	 * @param mixed $value
 	 */
+	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _set( $value ) {
 		$this->_mValue = $value;
 	}
 
+	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _setUserValue( $value ) {
 		$this->_mUserValue = $value;
 	}
@@ -704,6 +716,7 @@ class BsConfig {
 	 * @param mixed $value
 	 * @return mixed the value after the addition
 	 */
+	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _add( $value ) {
 		if ( $this->_mOptions & self::TYPE_OBJECT ) {
 			// @todo Fehlermeldung Typ unterstÃ¼tzt kein ADD
@@ -728,6 +741,7 @@ class BsConfig {
 	 *
 	 * @return mixed
 	 */
+	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _get() {
 		if ( self::$prGetUsersSettings ) {
 			if ( !is_null( $this->_mUserValue ) ) {
