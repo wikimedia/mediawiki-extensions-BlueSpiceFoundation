@@ -34,6 +34,7 @@ use BlueSpice\Data\Entity\IStore;
 
 class EntityFactory {
 	protected $storedById = [];
+	protected $legacyTypeCache = [];
 
 	/**
 	 *
@@ -292,6 +293,9 @@ class EntityFactory {
 	 * @return string|bool
 	 */
 	protected function makeTypeFromLegacyContentEntity( $id, $type ) {
+		if ( isset( $this->legacyTypeCache[$type][$id] ) ) {
+			return $this->legacyTypeCache[$type][$id];
+		}
 		$title = Title::makeTitle( $type, $id );
 		if ( !$title || !$title->exists() ) {
 			return false;
@@ -309,7 +313,7 @@ class EntityFactory {
 		if ( !$this->entityRegistry->getValue( $data->type ) ) {
 			return false;
 		}
-
+		$this->legacyTypeCache[$type][$id] = $data->type;
 		return $data->type;
 	}
 
