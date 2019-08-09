@@ -3,11 +3,13 @@
 namespace BlueSpice\Data\Watchlist;
 
 use \BlueSpice\Data\DatabaseReader;
+use MWNamespace;
 
 class Reader extends DatabaseReader {
 
 	protected function makePrimaryDataProvider( $params ) {
-		return new PrimaryDataProvider( $this->db );
+		$contentNamespaces = MWNamespace::getContentNamespaces();
+		return new PrimaryDataProvider( $this->db, $contentNamespaces );
 	}
 
 	protected function makeSecondaryDataProvider() {
