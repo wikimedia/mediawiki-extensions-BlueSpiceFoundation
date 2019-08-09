@@ -91,6 +91,7 @@
 				"bs-color-neutral2": "#ABABAB",
 				"bs-color-neutral3": "#C4C4C4",
 				"bs-color-neutral4": "#787878",
+				"bs-color-secondary-information": "darken( @bs-color-neutral, 17.3% )",
 				"bs-color-progressive": "#347bff",
 				"bs-color-contructive": "#00af89",
 				"bs-color-destructive": "#d11d13",
