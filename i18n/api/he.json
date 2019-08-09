@@ -28,5 +28,6 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "אינך רשאי לקרוא את הדף '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "אין קטגוריות להסרה",
 	"bs-api-task-taskData-page-id": "המזהה של דף ויקי קיים",
-	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי"
+	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי",
+	"bs-wikipage-tasks-error-page-not-valid": "הדף שצוין אינו תקין."
 }

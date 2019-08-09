@@ -55,5 +55,10 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturoj",
 	"bs-extjs-flyout-tab-thumbs-title": "Ŝalti vidojn de miniaturoj",
 	"bs-extjs-flyout-tab-grid-label": "Detaloj",
-	"bs-extjs-flyout-add-label": "Aldoni eron"
+	"bs-extjs-flyout-add-label": "Aldoni eron",
+	"bs-extjs-reset": "Restarigi",
+	"bs-extjs-title-warning": "Averto",
+	"bs-extjs-filter-date-after": "Post",
+	"bs-extjs-filter-date-before": "Antaŭ",
+	"bs-extjs-filter-date-on": "Ĉe"
 }

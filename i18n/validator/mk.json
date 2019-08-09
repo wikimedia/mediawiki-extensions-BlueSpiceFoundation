@@ -16,5 +16,6 @@
 	"bs-validator-integer-range-validation-too-low": "Укажаната вредност е прениска. Не треба да биде помала од $1.",
 	"bs-validator-integer-range-validation-too-high": "Укажаната вредност е превисока. Не треба да биде поголема од $1.",
 	"bs-validator-invalid-parameter": "Овој параметар не е дозволен",
-	"bs-validator-missing-required": "Овој параметар е задолжителен"
+	"bs-validator-missing-required": "Овој параметар е задолжителен",
+	"bs-validator-value-not-recognized": "Вредноста не можеше да се обработи"
 }
