@@ -20,5 +20,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Неважечка категорија|Неважечки категории}}: $1",
 	"apihelp-bs-wikipage-store-description": "Ги наведува сите викистраници. Овозможува подредување, филтрирање и страничење. Применува параметри за ExtJS Store.",
 	"apihelp-bs-wikipage-store-summary": "Ги наведува сите викистраници. Овозможува подредување, филтрирање и страничење. Применува параметри за ExtJS Store.",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Немате дозвола да ја читате страницата „$1“.",
 	"bs-api-task-taskdata-help": "[$1 Шема], [$2 параметарски примери]"
 }
