@@ -32,12 +32,16 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	protected $db = null;
 
+	protected $namespaceWhitelist = [];
+
 	/**
 	 *
 	 * @param \Wikimedia\Rdbms\IDatabase $db
+	 * @param int[] $namespaceWhitelist
 	 */
-	public function __construct( $db ) {
+	public function __construct( $db, $namespaceWhitelist ) {
 		$this->db = $db;
+		$this->namespaceWhitelist = $namespaceWhitelist;
 	}
 
 	/**
@@ -81,6 +85,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		if ( $userIdFilter instanceof Filter ) {
 			$conds['wl_user'] = $userIdFilter->getValue();
 		}
+		$conds['wl_namespace'] = array_values( $this->namespaceWhitelist );
 
 		return $conds;
 	}
