@@ -5,6 +5,8 @@
  * @author Robert Vogel <vogel@hallowelt.com>
  */
 
+use UtfNormal\Validator;
+
 // HINT: https://www.mediawiki.org/wiki/Manual:Writing_maintenance_scripts
 require_once 'BSMaintenance.php';
 
@@ -416,12 +418,12 @@ class AutoGenWikiDocs extends BSMaintenance {
 
 	private function xmlTemplatePage( $page ) {
 		$xml = '	<page>' . "\n";
-		$xml .= '		<title>' . htmlspecialchars( UtfNormal::cleanUp( $page['title'] ) ) . '</title>' . "\n";
+		$xml .= '		<title>' . htmlspecialchars( Validator::cleanUp( $page['title'] ) ) . '</title>' . "\n";
 		$xml .= '		<revision>' . "\n";
 		$xml .= '			<model>wikitext</model>' . "\n";
 		$xml .= '			<format>text/x-wiki</format>' . "\n";
 		$xml .= '			<text xml:space="preserve" bytes="' . mb_strlen( $page['content'] ) . '">';
-		$xml .= htmlspecialchars( UtfNormal::cleanUp( $page['content'] ) );
+		$xml .= htmlspecialchars( Validator::cleanUp( $page['content'] ) );
 		$xml .= '			</text>' . "\n";
 		$xml .= '		</revision>' . "\n";
 		$xml .= '	</page>' . "\n";
