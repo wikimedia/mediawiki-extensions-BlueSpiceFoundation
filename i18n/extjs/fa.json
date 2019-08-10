@@ -68,6 +68,7 @@
 	"bs-extjs-pageexport-overwrite-label": "رونویسی",
 	"bs-extjs-pageexport-general-error": "خطا در برون‌بری",
 	"bs-extjs-pageexport-success": "برون‌بری موفق",
+	"bs-extjs-export-search-summary-text": "تولید شده به‌وسیلهٔ PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "نام فهرست، نامعتبر است",
 	"bs-extjs-tools-trigger-text": "ابزارها",
 	"bs-extjs-flyout-tab-thumbs-label": "بندانگشتی",
