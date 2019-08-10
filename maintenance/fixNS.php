@@ -12,6 +12,7 @@ class FixNS extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( '' );
+		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
 	public function execute() {
