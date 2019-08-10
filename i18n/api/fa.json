@@ -13,5 +13,7 @@
 	"apihelp-bs-wikisubpage-treestore-param-options": "فهرست گزینه ها",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "شما مجاز به خواندن صفحهٔ «$1» نیستید.",
 	"bs-wikipage-tasks-error-nothingtoremove": "هیچ رده‌ای برای حذف نیست.",
+	"apihelp-bs-category-treestore-description": "فهرست‌های زیررده‌های یک ردهٔ خاص",
+	"apihelp-bs-category-treestore-summary": "فهرست‌های زیررده‌های یک ردهٔ خاص",
 	"bs-api-task-taskData-page-title": "عنوان معتبری مربوط به یک صفحهٔ ویکی"
 }
