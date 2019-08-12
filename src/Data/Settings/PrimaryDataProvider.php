@@ -34,11 +34,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$this->data = [];
 		// workaround for the upgrade process. The new settings cannot be
 		// accessed before they are migrated
-		if ( !$this->db->tableExists( 'bs_settings3' ) ) {
+		if ( !$this->db->tableExists( 'bs_settings3', __METHOD__ ) ) {
 			return $this->data;
 		}
 
-		$res = $this->db->select( 'bs_settings3', '*' );
+		$res = $this->db->select( 'bs_settings3', '*', '', __METHOD__ );
 		foreach ( $res as $row ) {
 			$this->appendRowToData( $row );
 		}
