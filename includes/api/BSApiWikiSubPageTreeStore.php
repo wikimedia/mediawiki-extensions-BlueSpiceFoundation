@@ -97,7 +97,8 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			'*',
 			[
 				'page_namespace' => $iNamespaceId
-			]
+			],
+			__METHOD__
 		);
 
 		foreach ( $res as $row ) {
@@ -132,7 +133,8 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 					$this->getDB()->anyString()
 				),
 				'page_namespace' => $oParent->getNamespace()
-			]
+			],
+			__METHOD__
 		);
 
 		foreach ( $res as $row ) {

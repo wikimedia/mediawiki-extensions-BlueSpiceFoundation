@@ -230,7 +230,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			$oCatRes = $oDbr->select(
 				'categorylinks',
 				[ 'cl_from', 'cl_to' ],
-				[ 'cl_from' => $aPageIds ]
+				[ 'cl_from' => $aPageIds ],
+				__METHOD__
 			);
 			foreach ( $oCatRes as $oCatRow ) {
 				$aReturn[$oCatRow->cl_from]->page_categories[] = $oCatRow->cl_to;
@@ -244,7 +245,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			$oUserRes = $oDbr->select(
 				'user',
 				[ 'user_name', 'user_real_name' ],
-				[ 'user_name' => array_keys( $aUserNames ) ]
+				[ 'user_name' => array_keys( $aUserNames ) ],
+				__METHOD__
 			);
 
 			foreach ( $oUserRes as $oUserRow ) {
