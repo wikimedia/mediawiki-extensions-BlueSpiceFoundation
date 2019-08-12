@@ -9,7 +9,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 		$dbr = $this->getDB();
 
 		$this->aGroups = [];
-		$groupsRes = $dbr->select( 'user_groups', '*' );
+		$groupsRes = $dbr->select( 'user_groups', '*', '', __METHOD__ );
 		foreach ( $groupsRes as $row ) {
 			if ( !isset( $this->aGroups[$row->ug_user] ) ) {
 				$this->aGroups[$row->ug_user] = [];
@@ -18,7 +18,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 		}
 
 		$this->aBlocks = [];
-		$blocksRes = $dbr->select( 'ipblocks', '*' );
+		$blocksRes = $dbr->select( 'ipblocks', '*', '', __METHOD__ );
 		foreach ( $blocksRes as $row ) {
 			$this->aBlocks[$row->ipb_user] = $row->ipb_address;
 		}
@@ -30,7 +30,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 		// security issue.
 
 		$aData = [];
-		$userRes = $dbr->select( 'user', '*' );
+		$userRes = $dbr->select( 'user', '*', '', __METHOD__ );
 		foreach ( $userRes as $aRow ) {
 			$aResRow = $this->makeResultRow( $aRow );
 			if ( !$aResRow ) {

@@ -73,7 +73,8 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 		$res = $dbr->select(
 			[ 'category', 'page' ],
 			[ 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ],
-			[ 'cat_title = page_title AND page_namespace = ' . NS_CATEGORY ]
+			[ 'cat_title = page_title AND page_namespace = ' . NS_CATEGORY ],
+			__METHOD__
 		);
 
 		foreach ( $res as $row ) {
