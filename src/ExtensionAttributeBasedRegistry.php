@@ -56,4 +56,16 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 		$registry = $this->extensionRegistry->getAttribute( $this->attribName );
 		return array_keys( $registry );
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
+	public function getAllValues() {
+		$all = [];
+		foreach ( $this->getAllKeys() as $key ) {
+			$all[$key] = $this->getValue( $key );
+		}
+		return $all;
+	}
 }
