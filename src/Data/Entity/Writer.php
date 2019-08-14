@@ -6,10 +6,10 @@ use Exception;
 use Status;
 use IContextSource;
 use BlueSpice\Entity;
-use BlueSpice\Data\IWriter;
+use BlueSpice\Data\IWriter as IBaseWriter;
 use BlueSpice\Data\RecordSet;
 
-abstract class Writer implements IWriter {
+abstract class Writer implements IWriter, IBaseWriter {
 
 	/**
 	 *
