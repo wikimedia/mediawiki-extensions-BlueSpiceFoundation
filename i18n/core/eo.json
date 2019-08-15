@@ -47,6 +47,7 @@
 	"bs-pref-imageextensions": "Permesataj bildaj dosiersufiksoj:",
 	"bs-pref-logopath": "Dosierindiko al emblemo:",
 	"bs-pref-faviconpath": "Dosierindiko al retpaĝikono:",
+	"bs-parser-error-invalid-namespace": "Ne valida nomspaco: $1",
 	"bs-parser-error-invalid-title": "Ne valida titolo: $1",
 	"bs-validator-error-namespace-does-not-exist": "Nomspaco ne ekzistas: $1",
 	"bs-validator-error-namespace-on-blacklist": "Nomspaco ne permesata: $1",
@@ -57,5 +58,7 @@
 	"bs-graphicallist-action-close": "Malfermi",
 	"bs-graphicallist-action-list": "Listo",
 	"bs-graphicallist-action-preview": "Antaŭrigardi",
+	"bs-bluespice-mediawiki": "MediaVikio BlueSpice",
+	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "anonimulo"
 }
