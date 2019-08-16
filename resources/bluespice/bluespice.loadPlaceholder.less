@@ -1,12 +1,15 @@
 .placeholder-loader {
+	padding-top: 15px;
+
 	[class^="bs-placeholder-item"] {
 		background-color: @bs-color-neutral3;
-		-webkit-animation: fadeinout 2s linear forwards infinite;
-		animation: fadeinout 2s linear forwards infinite;
+		-webkit-animation: fadeinout 4s linear forwards infinite;
+		animation: fadeinout 4s linear forwards infinite;
 	}
 	.bs-placeholder-item-circle {
-		width: 50px;
-		height: 50px;
+		background-color: lighten( @bs-color-neutral3 , 10% );
+		width: 32px;
+		height: 32px;
 		border-radius: 100%;
 		margin-right: 10px;
 		display: inline-block;
@@ -29,14 +32,14 @@
 			background-color: @bs-background-neutral;
 			height: 30px;
 			width: 20%;
-			border: 2px solid @bs-color-neutral3;
+			border: 1px solid @bs-color-neutral3;
 			display: table-cell;
 			border-right: none;
 			&:last-of-type {
 				border-right: 1px;
 			}
 			.bs-placeholder-item-grid-cell-text {
-				background-color: @bs-color-neutral3;
+				background-color: lighten( @bs-color-neutral3, 10% );
 				height: 15px;
 				width: 80%;
 				margin: auto;
@@ -49,17 +52,22 @@
 				margin-top: 15px;
 			}
 		}
+	}
 
+	.bs-crud-buttons {
+		.bs-placeholder-item-circle {
+			margin: 0 12px;
+		}
 	}
 }
 
 @-webkit-keyframes fadeinout {
-	0%,100% { opacity: 0.5; }
+	0%,100% { opacity: 0.7; }
 	50% { opacity: 1; }
 }
 
 @keyframes fadeinout {
-	0%,100% { opacity: 0.5; }
+	0%,100% { opacity: 0.7; }
 	50% { opacity: 1; }
 }
 
@@ -71,6 +79,7 @@
 			.bs-placeholder-item-rect {
 				float: right;
 				&.full {
+					background-color: lighten( @bs-color-neutral3 , 10% );
 					float: none;
 					width: 100%;
 				}
