@@ -244,10 +244,12 @@ class EntityFactory {
 	 * @return Entity
 	 */
 	protected function appendCache( Entity &$oInstance ) {
-		if ( $this->hasCacheEntry( $oInstance->get( Entity::ATTR_ID ), $oInstance::NS ) ) {
+		if ( $this->hasCacheEntry( $oInstance->get( Entity::ATTR_ID ),
+			$oInstance->get( Entity::TYPE ) ) ) {
 			return $oInstance;
 		}
-		$this->storedById[$oInstance::NS][$oInstance->get( Entity::ATTR_ID )] = $oInstance;
+		$this->storedById[$oInstance->get( Entity::TYPE )]
+			[$oInstance->get( Entity::ATTR_ID )] = $oInstance;
 		return $oInstance;
 	}
 
@@ -257,10 +259,12 @@ class EntityFactory {
 	 * @return Entity
 	 */
 	public function detachCache( Entity &$oInstance ) {
-		if ( !$this->hasCacheEntry( $oInstance->get( Entity::ATTR_ID ), $oInstance::NS ) ) {
+		if ( !$this->hasCacheEntry( $oInstance->get( Entity::ATTR_ID ),
+			$oInstance->get( Entity::TYPE ) ) ) {
 			return $oInstance;
 		}
-		unset( $this->storedById[$oInstance::NS][$oInstance->get( Entity::ATTR_ID )] );
+		unset( $this->storedById[$oInstance->get( Entity::TYPE )]
+			[$oInstance->get( Entity::ATTR_ID )] );
 		return $oInstance;
 	}
 
