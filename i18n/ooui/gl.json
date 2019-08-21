@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Navhy"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Engadir novo...",
+	"bs-ooui-key-value-input-widget-key-label": "Chave",
+	"bs-ooui-key-value-input-widget-value-label": "Valor",
+	"bs-ooui-key-value-input-widget-add-button-label": "Engadir",
+	"bs-ooui-key-value-input-widget-add-form-label": "Engadir nova entrada",
+	"bs-ooui-key-value-input-widget-error-message": "Tódolos campos requiridos teñen que ficar cheos!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Non hai valores estabelecidos!"
+}
