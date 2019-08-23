@@ -100,5 +100,6 @@
 	"prefs-bluespice": "{{optional}}\nUsed in [[Special:Preferences]], tab \"BlueSpice\"\n\nRefers to {{msg-mw|Bs-bluespice}}",
 	"action-wikiadmin": "Special permission used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration etc...\nShould only be given to the \"sysop\" group.\n{{doc-action|wikiadmin}}",
 	"right-wikiadmin": "Special permission used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration etc...\nShould only be given to the \"sysop\" group.\n{{doc-right|wikiadmin}}",
-	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous"
+	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous",
+	"protect-level-editor": "Used as protect level.\n\nSee example: {{canonicalurl:Main_Page|action=info}}"
 }

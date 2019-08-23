@@ -95,5 +95,6 @@
 	"prefs-bluespice": "{{int:bs-bluespice}}",
 	"action-wikiadmin": "used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration",
 	"right-wikiadmin": "Used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration",
-	"bs-notifications-agent-anon": "anonymous user"
+	"bs-notifications-agent-anon": "anonymous user",
+	"protect-level-editor": "Allow only editors and administrators"
 }
