@@ -101,7 +101,11 @@
 				"bs-color-info": "#d9edf7",
 				"bs-background-neutral": "#FFFFFF",
 				"bs-background-primary": "none",
-				"bs-loading-indicator-color": "#ffae00"
+				"bs-loading-indicator-color": "#ffae00",
+				"bs-color-link": "#0060DF",
+				"bs-color-link-hover": "#006EFF",
+				"bs-color-link-new": "#B73A3A",
+				"bs-color-link-new-hover": "#E92121"
 			},
 			"TargetCacheRegistry": {
 				"title": "\\BlueSpice\\TargetCache\\Title"
