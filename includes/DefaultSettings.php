@@ -203,7 +203,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"editprotected" => [
 		"type" => 'namespace',
-		"roles" => [ 'admin', 'editor', 'maintenanceadmin' ]
+		"roles" => [ 'admin', 'maintenanceadmin' ]
 	],
 	"editsemiprotected" => [
 		"type" => 'namespace',
@@ -367,7 +367,15 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"type" => 'global',
 		"roles" => [ "accountmanager", "accountselfcreate", "admin", "author", "bot", "commenter", "editor", "maintenanceadmin", "reviewer", "structuremanager" ]
 	],
+	"editor" => [
+		"type" => 'global',
+		"roles" => [ "editor", "maintenanceadmin", "admin" ]
+	]
 ];
+
+// Introduce new semiprotected restriction level - editor is a permission in this case
+$GLOBALS['wgSemiprotectedRestrictionLevels'] = [ 'editor' ];
+$GLOBALS['wgRestrictionLevels'] = [ '', 'editor', 'sysop' ];
 
 /**
  * Allows extensions to distinguish between normal content NS, that can be
