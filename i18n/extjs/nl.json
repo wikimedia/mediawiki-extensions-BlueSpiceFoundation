@@ -10,7 +10,8 @@
 			"Mainframe98",
 			"Patio",
 			"KlaasZ4usV",
-			"Xbaked potatox"
+			"Xbaked potatox",
+			"Rots61"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -70,6 +71,8 @@
 	"bs-extjs-pageexport-list-format-link-label": "Koppeling",
 	"bs-extjs-pageexport-overwrite-label": "Overschrijven",
 	"bs-extjs-pageexport-error-invalid-title": "Ongeldige lijstnaam",
+	"bs-extjs-tools-trigger-title": "Klik hier om het hulpmiddelenmenu te openen.",
+	"bs-extjs-tools-trigger-text": "Hulpmiddelen",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturen",
 	"bs-extjs-flyout-tab-grid-label": "Details",
 	"bs-extjs-flyout-add-title": "Klik hier om een nieuw item toe te voegen",

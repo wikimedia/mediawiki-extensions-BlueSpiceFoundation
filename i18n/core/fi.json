@@ -6,7 +6,8 @@
 			"Silvonen",
 			"01miki10",
 			"Pyscowicz",
-			"Surjection"
+			"Surjection",
+			"Pxos"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -69,5 +70,6 @@
 	"bs-graphicallist-action-close": "Sulje",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
-	"right-wikiadmin": "Käytetään monissa BlueSpice-laajennuksissa mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista, varten"
+	"right-wikiadmin": "Käytetään monissa BlueSpice-laajennuksissa mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista, varten",
+	"protect-level-editor": "Salli vain seulojat"
 }

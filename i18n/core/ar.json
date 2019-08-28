@@ -3,7 +3,8 @@
 		"authors": [
 			"محمد أحمد عبد الفتاح",
 			"ديفيد",
-			"Meno25"
+			"Meno25",
+			"Sonic N800"
 		]
 	},
 	"bluespicefoundation-desc": "يجعل مشروع ميدياويكي جاهزا",
@@ -24,7 +25,7 @@
 	"bs-mins-duration": "{{PLURAL:$1|دقيقة واحدة|$1 دقائق}}",
 	"bs-secs-duration": "{{PLURAL:$1|ثانية واحدة|$1 ثوانٍ}}",
 	"bs-two-units-ago": "$1 ومنذ $2",
-	"bs-one-unit-ago": "منذ $1",
+	"bs-one-unit-ago": "قبل $1",
 	"bs-now": "الآن",
 	"bs-email-greeting-receiver": "{{GENDER:$1|مرحبا سيد $2|مرحبا سيدة $2|مرحبا $2}}،",
 	"bs-email-footer": "تم إنشاء هذه الرسالة تلقائيًا بوساطة $1، رجاءً لا ترد على هذا البريد الإلكتروني.",
@@ -93,5 +94,6 @@
 	"bs-bluespice": "بلوسبايس",
 	"action-wikiadmin": "تستخدم في العديد من امتدادات BlueSpice للمهام الإدارية الخطيرة المحتملة مثل إدارة المستخدمين والصلاحيات والتكوين العالمي",
 	"right-wikiadmin": "تُستخدَم في العديد من امتدادات BlueSpice للمهام الإدارية الخطيرة المحتملة مثل إدارة المستخدمين والصلاحيات والتكوين العالمي",
-	"bs-notifications-agent-anon": "مستخدم مجهول"
+	"bs-notifications-agent-anon": "مستخدم مجهول",
+	"protect-level-editor": "السماح فقط للمحررين والإداريين"
 }

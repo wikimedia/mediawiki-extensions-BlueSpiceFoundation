@@ -3,7 +3,8 @@
 		"authors": [
 			"Chrumps",
 			"Alan ffm",
-			"Pio387"
+			"Pio387",
+			"Rzuwig"
 		]
 	},
 	"bs-ns_main": "(Strony)",
@@ -73,5 +74,6 @@
 	"bs-graphicallist-action-close": "Zamknij",
 	"bs-graphicallist-action-preview": "Podgląd",
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
-	"bs-notifications-agent-anon": "anonimowy użytkownik"
+	"bs-notifications-agent-anon": "anonimowy użytkownik",
+	"protect-level-editor": "Dozwolone tylko dla redaktorów"
 }
