@@ -4,6 +4,9 @@ namespace BlueSpice\Data;
 
 class Sort {
 
+	const KEY_PROPERTY = 'property';
+	const KEY_DIRECTION = 'direction';
+
 	const ASCENDING = 'ASC';
 	const DESCENDING = 'DESC';
 
@@ -65,8 +68,8 @@ class Sort {
 			}
 
 			$sortObjects[] = new Sort(
-				$sort->property,
-				isset( $sort->direction ) ? $sort->direction : null
+				$sort->{static::KEY_PROPERTY},
+				isset( $sort->{static::KEY_DIRECTION} ) ? $sort->{static::KEY_DIRECTION} : null
 			);
 		}
 		return $sortObjects;
