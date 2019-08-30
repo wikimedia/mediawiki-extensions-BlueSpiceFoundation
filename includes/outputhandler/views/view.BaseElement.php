@@ -33,6 +33,7 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewBaseElement {
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected static $_prAutoId = 0;
 
 	/**
@@ -44,15 +45,22 @@ class ViewBaseElement {
 	}
 
 	// TODO MRG20100816: Bitte kurzen Kommentar zum Zweck der Variablen
-	protected $_mAutoElement    = 'div';
-	protected $_mData           = [];
-	protected $_mId             = null;
-	protected $_mItems          = [];
-	protected $_mTemplate       = '';
-	protected $_mAutoWrap       = false;
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mAutoElement = 'div';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mData = [];
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mId = null;
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mItems = [];
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mTemplate = '';
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	protected $_mAutoWrap = false;
+	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mPresentDataset = null;
-	protected $mI18N            = null;
-	protected $mOptions         = [];
+	protected $mI18N = null;
+	protected $mOptions = [];
 
 	/**
 	 *
