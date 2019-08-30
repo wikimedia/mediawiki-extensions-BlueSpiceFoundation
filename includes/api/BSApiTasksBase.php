@@ -38,6 +38,12 @@ use BlueSpice\Api\Response\Standard;
 abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	/**
+	 *
+	 * @var \Wikimedia\Rdbms\IDatabase;
+	 */
+	protected $mMasterDB = null;
+
+	/**
 	 * This is the default log the API writes to. It needs to be registered
 	 * in $wgLogTypes
 	 * @var string
@@ -603,5 +609,17 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	protected function isTaskDataExamplesCall() {
 		return $this->getRequest()->getVal( 'examples', null ) !== null;
+	}
+
+	/**
+	 * Gets a default master DB connection object
+	 * @return IDatabase
+	 */
+	protected function getDB() {
+		if ( !isset( $this->mMasterDB ) ) {
+			$this->mMasterDB = wfGetDB( DB_MASTER, 'api' );
+		}
+
+		return $this->mMasterDB;
 	}
 }
