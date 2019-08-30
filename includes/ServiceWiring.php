@@ -65,14 +65,6 @@ return [
 		return new \BlueSpice\AdminToolFactory( $attribute );
 	},
 
-	'BSPageToolFactory' => function ( MediaWikiServices $services ) {
-		$registry = new ExtensionAttributeBasedRegistry( 'BlueSpiceFoundationPageToolRegistry' );
-		$context = \RequestContext::getMain();
-		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
-
-		return new \BlueSpice\PageToolFactory( $registry, $context, $config );
-	},
-
 	'BSTagFactory' => function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry( 'BlueSpiceFoundationTagRegistry' );
 		return new \BlueSpice\TagFactory( $registry );
