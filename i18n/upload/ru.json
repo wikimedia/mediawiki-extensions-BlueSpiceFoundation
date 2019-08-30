@@ -25,6 +25,7 @@
 	"bs-upload-details": "Детали",
 	"bs-upload-uploadwarningdialog-title": "Загрузка файла: Предупреждения",
 	"bs-upload-uploadwarningdialog-intro": "При попытке загрузить файл возникли следующие предупреждения",
+	"bs-upload-uploadwarningdialog-outro": "Кликните «{{int:bs-extjs-ok}}», чтобы игнорировать предупреждения и загрузить файл, или кликните «{{int:bs-extjs-cancel}}», чтобы вернуться к форме загрузки",
 	"bs-upload-uploadwarningdialog-warning-exists": "Файл с именем \"$1\" уже существует",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Имеется копия|Имеются копии}} этого файла",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Неизвестное предупреждение с кодом \"$1\""
