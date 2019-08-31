@@ -91,5 +91,6 @@
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "mostrar páxinas de administración de BlueSpice",
-	"right-wikiadmin": "Úsase en moitas extensións de BlueSpice para posibles tarefas administrativas perigrosas, como administrar usuarios, permisos, configuración global"
+	"right-wikiadmin": "Úsase en moitas extensións de BlueSpice para posibles tarefas administrativas perigrosas, como administrar usuarios, permisos, configuración global",
+	"bs-notifications-agent-anon": "usuario anónimo"
 }
