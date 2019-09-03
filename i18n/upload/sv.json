@@ -10,6 +10,7 @@
 	"bs-upload-uploadbuttontext": "Bläddra",
 	"bs-upload-uploadfilefieldlabel": "Filnamn",
 	"bs-upload-uploadfileemptytext": "Infoga ny fil...",
+	"bs-upload-uploaddestfilelabel": "Destinationens filnamn",
 	"bs-upload-allowedfiletypesare": "Giltiga filtyper är:",
 	"bs-upload-license": "Licens",
 	"bs-upload-uploadwatchthislabel": "Bevaka den här filen",

@@ -16,6 +16,7 @@
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Endast följande värde är tillåtet för $1|För $1 är endast ett av följande värden tillåtna}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Det angivna värdet är för lågt. Det bör inte vara mindre än $1.",
 	"bs-validator-integer-range-validation-too-high": "Det angivna värdet är för högt. Det bör inte vara högre än $1.",
+	"bs-validator-value-not-recognized": "Värdet kunde inte bearbetas",
 	"bs-validator-invalid-boolean": "Inte en godkänd boolean",
 	"bs-validator-invalid-float": "Ogiltigt flytttal",
 	"bs-validator-invalid-integer": "Ogiltigt heltal",
