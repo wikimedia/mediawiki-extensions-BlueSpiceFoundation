@@ -168,15 +168,17 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 		$fields = array_values( $this->schema->getFilterableFields() );
 		$filterFinder = new FilterFinder( $params->getFilter() );
 		foreach ( $fields as $fieldName ) {
-			$filter = $filterFinder->findByField( $fieldName );
-			if ( !$filter instanceof Filter ) {
-				continue;
-			}
-			if ( $this->skipPreFilter( $filter ) ) {
-				continue;
-			}
+			$filters = $filterFinder->findAllFiltersByField( $fieldName );
+			foreach ( $filters as $filter ) {
+				if ( !$filter instanceof Filter ) {
+					continue;
+				}
+				if ( $this->skipPreFilter( $filter ) ) {
+					continue;
+				}
 
-			$this->appendPreFilterCond( $conds, $filter );
+				$this->appendPreFilterCond( $conds, $filter );
+			}
 		}
 		return $conds;
 	}
