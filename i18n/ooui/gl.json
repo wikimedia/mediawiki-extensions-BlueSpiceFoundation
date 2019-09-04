@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Navhy"
+			"Navhy",
+			"Iváns"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Engadir novo...",
