@@ -47,6 +47,7 @@ use VirtualRESTServiceClient;
 use MediaWiki\Interwiki\InterwikiLookup;
 use Language;
 use MediaWiki\Permissions\PermissionManager;
+use NamespaceInfo;
 
 class ServicesDecorator extends ServiceContainer {
 
@@ -481,5 +482,13 @@ class ServicesDecorator extends ServiceContainer {
 	 */
 	public function getPermissionManager() {
 		return $this->getService( 'PermissionManager' );
+	}
+
+	/**
+	 * @since 1.34
+	 * @return NamespaceInfo
+	 */
+	public function getNamespaceInfo() : NamespaceInfo {
+		return $this->getService( 'NamespaceInfo' );
 	}
 }
