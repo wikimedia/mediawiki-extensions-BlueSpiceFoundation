@@ -14,6 +14,8 @@ class Record extends \BlueSpice\Data\Record {
 	const SOURCE = 'source';
 	const DIFF_URL = 'diff_url';
 	const DIFF_LINK = 'diff_link';
+	const OLDID_URL = 'oldid_url';
+	const OLDID_LINK = 'oldid_link';
 	const HIST_URL = 'hist_link';
 	const HIST_LINK = 'hist_url';
 	const RAW_TIMESTAMP = 'raw_timestamp';

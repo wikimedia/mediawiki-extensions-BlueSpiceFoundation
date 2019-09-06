@@ -77,6 +77,15 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 				$histQuery
 			);
 
+		$oldIdQuery = [ 'oldid' => $rawData->last_oldid ];
+		$rawData->{Record::OLDID_URL} = $title->getFullURL( $oldIdQuery );
+		$rawData->{Record::OLDID_LINK} = $this->linkrenderer->makeLink(
+			$title,
+			null,
+			[],
+			$oldIdQuery
+		);
+
 		$rawData->timestamp = $this->context->getLanguage()->userTimeAndDate(
 			$rawData->raw_timestamp,
 			$this->context->getUser()
