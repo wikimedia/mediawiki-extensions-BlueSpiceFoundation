@@ -79,6 +79,16 @@ class Schema extends \BlueSpice\Data\Schema {
 				self::SORTABLE => false,
 				self::TYPE => FieldType::STRING
 			],
+			Record::OLDID_URL => [
+				self::FILTERABLE => false,
+				self::SORTABLE => false,
+				self::TYPE => FieldType::STRING
+			],
+			Record::OLDID_LINK => [
+				self::FILTERABLE => false,
+				self::SORTABLE => false,
+				self::TYPE => FieldType::STRING
+			],
 			Record::CUR_ID => [
 				self::FILTERABLE => true,
 				self::SORTABLE => true,
