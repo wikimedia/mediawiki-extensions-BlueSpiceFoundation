@@ -43,8 +43,8 @@ abstract class BsSettingsBeforeSaveSettings extends Hook {
 	/**
 	 * Located in BsConfig::saveSettings. Enables modification of the settings
 	 * before they are saved.
-	 * @param array $settings
-	 * @return boolean
+	 * @param array &$settings
+	 * @return bool
 	 */
 	public static function callback( &$settings ) {
 		$className = static::class;
@@ -59,7 +59,7 @@ abstract class BsSettingsBeforeSaveSettings extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $settings
+	 * @param array &$settings
 	 */
 	public function __construct( $context, $config, &$settings ) {
 		parent::__construct( $context, $config );

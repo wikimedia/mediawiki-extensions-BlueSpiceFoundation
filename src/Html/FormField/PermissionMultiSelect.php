@@ -6,6 +6,10 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 
 	private $params;
 
+	/**
+	 *
+	 * @param array $params
+	 */
 	public function __construct( $params ) {
 		if ( isset( $params['type'] ) ) {
 			$type = $params['type'];
@@ -27,6 +31,10 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 		$this->permissions = $config->get( 'PermissionConfigDefault' );
 	}
 
+	/**
+	 *
+	 * @param string $type
+	 */
 	protected function makeOptions( $type ) {
 		$this->options = [];
 		foreach ( $this->permissions as $permKey => $permVal ) {

@@ -42,7 +42,7 @@ abstract class UserLoggedIn extends Hook {
 	/**
 	 *
 	 * @param User $user
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $user ) {
 		$className = static::class;

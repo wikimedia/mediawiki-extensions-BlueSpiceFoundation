@@ -78,12 +78,12 @@ abstract class BsAdapterAjaxPingResult extends Hook {
 	 * and abort any further processing.
 	 * @param string $reference
 	 * @param array $params
-	 * @param integer $articleId
+	 * @param int $articleId
 	 * @param string $titleText
-	 * @param integer $namespaceIndex
-	 * @param integer $revisionId
-	 * @param array $singleResults
-	 * @return boolean
+	 * @param int $namespaceIndex
+	 * @param int $revisionId
+	 * @param array &$singleResults
+	 * @return bool
 	 */
 	public static function callback( $reference, $params, $articleId, $titleText, $namespaceIndex, $revisionId, &$singleResults ) {
 		$className = static::class;
@@ -106,11 +106,11 @@ abstract class BsAdapterAjaxPingResult extends Hook {
 	 * @param \Config $config
 	 * @param string $reference
 	 * @param array $params
-	 * @param integer $articleId
+	 * @param int $articleId
 	 * @param string $titleText
-	 * @param integer $namespaceIndex
-	 * @param integer $revisionId
-	 * @param array $singleResults
+	 * @param int $namespaceIndex
+	 * @param int $revisionId
+	 * @param array &$singleResults
 	 */
 	public function __construct( $context, $config, $reference, $params, $articleId, $titleText, $namespaceIndex, $revisionId, &$singleResults ) {
 		parent::__construct( $context, $config );

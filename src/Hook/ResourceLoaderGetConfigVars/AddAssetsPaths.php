@@ -6,6 +6,10 @@ use BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 class AddAssetsPaths extends ResourceLoaderGetConfigVars {
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->vars = array_merge(
 			$this->vars,
@@ -14,6 +18,10 @@ class AddAssetsPaths extends ResourceLoaderGetConfigVars {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getSettingsToExpose() {
 		$extensionAssetsPath = $this->getConfig()->get( 'ExtensionAssetsPath' );
 		$registry = $this->getServices()->getService(

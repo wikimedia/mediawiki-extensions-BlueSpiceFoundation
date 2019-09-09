@@ -20,9 +20,9 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 
 	/**
 	 * @param \BlueSpice\Api\Store $store
-	 * @param \BlueSpice\Data\ResultSet $resultSet
-	 * @param \BlueSpice\Data\Schema $schema
-	 * @return boolean
+	 * @param \BlueSpice\Data\ResultSet &$resultSet
+	 * @param \BlueSpice\Data\Schema &$schema
+	 * @return bool
 	 */
 	public static function callback( $store, &$resultSet, &$schema ) {
 		$className = static::class;
@@ -41,8 +41,8 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \BlueSpice\Api\Store $store
-	 * @param \BlueSpice\Data\ResultSet $resultSet
-	 * @param \BlueSpice\Data\Schema $schema
+	 * @param \BlueSpice\Data\ResultSet &$resultSet
+	 * @param \BlueSpice\Data\Schema &$schema
 	 */
 	public function __construct( $context, $config, $store, &$resultSet, &$schema ) {
 		parent::__construct( $context, $config );

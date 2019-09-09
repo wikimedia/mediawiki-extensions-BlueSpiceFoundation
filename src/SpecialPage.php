@@ -21,6 +21,10 @@ abstract class SpecialPage extends \SpecialPage {
 		$this->outputHeader();
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getGroupName() {
 		return 'bluespice';
 	}

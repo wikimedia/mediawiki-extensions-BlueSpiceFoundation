@@ -11,7 +11,7 @@ abstract class PageInfoElement implements IPageInfoElement, MessageLocalizer {
 
 	/**
 	 *
-	 * @var ContextSource
+	 * @var IContextSource
 	 */
 	protected $context = null;
 
@@ -25,6 +25,7 @@ abstract class PageInfoElement implements IPageInfoElement, MessageLocalizer {
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
+	 * @return IPageInfoElement
 	 */
 	public static function factory( IContextSource $context, Config $config ) {
 		return new static( $context, $config );
@@ -96,7 +97,12 @@ abstract class PageInfoElement implements IPageInfoElement, MessageLocalizer {
 	}
 
 	/**
+	 * Get a Message object with context set
+	 * Parameters are the same as wfMessage()
 	 *
+	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 *   or a MessageSpecifier.
+	 * @param mixed $args,...
 	 * @return Message
 	 */
 	public function msg( $key ) {

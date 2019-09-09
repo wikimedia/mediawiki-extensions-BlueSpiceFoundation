@@ -5,6 +5,10 @@ namespace BlueSpice\Hook\LoadExtensionSchemaUpdates;
 use BlueSpice\Hook\LoadExtensionSchemaUpdates;
 
 class AddBlueSpice3SettingsAndMigrationMaintenanceScript extends LoadExtensionSchemaUpdates {
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->updater->addExtensionTable(
 			'bs_settings3',
@@ -17,6 +21,10 @@ class AddBlueSpice3SettingsAndMigrationMaintenanceScript extends LoadExtensionSc
 		return true;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getExtensionPath() {
 		return dirname( dirname( dirname( __DIR__ ) ) );
 	}

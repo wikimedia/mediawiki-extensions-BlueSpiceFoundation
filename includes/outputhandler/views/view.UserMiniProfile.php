@@ -104,14 +104,26 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$this->bIsInit = true;
 	}
 
+	/**
+	 *
+	 * @param string $sSrc
+	 */
 	public function setUserImageSrc( $sSrc ) {
 		$this->mOptions['userimagesrc'] = $sSrc;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getUserImageSrc() {
 		return $this->mOptions['userimagesrc'];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getOptions() {
 		return $this->mOptions;
 	}

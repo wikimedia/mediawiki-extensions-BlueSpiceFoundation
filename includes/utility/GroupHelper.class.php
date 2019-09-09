@@ -14,6 +14,11 @@ class BsGroupHelper {
 
 	protected static $aGroups = [];
 
+	/**
+	 *
+	 * @param array $aConf
+	 * @return array
+	 */
 	public static function getAvailableGroups( $aConf = [] ) {
 		$aBlacklist = [];
 
@@ -46,6 +51,13 @@ class BsGroupHelper {
 		return self::$aGroups;
 	}
 
+	/**
+	 *
+	 * @global Array $wgGroupPermissions
+	 * @param string $sRight
+	 * @param array $aConf
+	 * @return array
+	 */
 	public static function getGroupsByRight( $sRight, $aConf = [] ) {
 		global $wgGroupPermissions;
 		$aBlacklist = [];

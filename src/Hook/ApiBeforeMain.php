@@ -40,8 +40,8 @@ abstract class ApiBeforeMain extends Hook {
 
 	/**
 	 *
-	 * @param \ApiMain $main
-	 * @return boolean
+	 * @param \ApiMain &$main
+	 * @return bool
 	 */
 	public static function callback( &$main ) {
 		$className = static::class;
@@ -57,7 +57,7 @@ abstract class ApiBeforeMain extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \ApiMain $main
+	 * @param \ApiMain &$main
 	 */
 	public function __construct( $context, $config, &$main ) {
 		parent::__construct( $context, $config );

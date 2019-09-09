@@ -40,8 +40,8 @@ abstract class UserMiniProfileAfterInit extends Hook {
 	 * This is a BlueSpice hook (missing the BS prefix)
 	 * Located in \ViewUserMiniProfile::init. After the user miniprofile was
 	 * initialized
-	 * @param \ViewUserMiniProfile $userMiniProfileView
-	 * @return boolean
+	 * @param \ViewUserMiniProfile &$userMiniProfileView
+	 * @return bool
 	 */
 	public static function callback( &$userMiniProfileView ) {
 		$className = static::class;
@@ -56,7 +56,7 @@ abstract class UserMiniProfileAfterInit extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \ViewUserMiniProfile $userMiniProfileView
+	 * @param \ViewUserMiniProfile &$userMiniProfileView
 	 */
 	public function __construct( $context, $config, &$userMiniProfileView ) {
 		parent::__construct( $context, $config );

@@ -39,8 +39,8 @@ abstract class SearchableNamespaces extends Hook {
 
 	/**
 	 *
-	 * @param array $namespaces
-	 * @return boolean
+	 * @param array &$namespaces
+	 * @return bool
 	 */
 	public static function callback( &$namespaces ) {
 		$className = static::class;
@@ -56,8 +56,7 @@ abstract class SearchableNamespaces extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $namespaces
-	 * @param boolean $result
+	 * @param array &$namespaces
 	 */
 	public function __construct( $context, $config, &$namespaces ) {
 		parent::__construct( $context, $config );

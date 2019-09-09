@@ -30,7 +30,7 @@
  * @filesource
  */
 // TODO SU (27.06.11 14:46): Core contaminations entfernen (evtl. hookähnliches methoden in jeweiligen adapter implementieren)
-
+// phpcs:ignoreFile
 /**
  * the BsConfig class
  *
@@ -695,12 +695,10 @@ class BsConfig {
 	 *
 	 * @param mixed $value
 	 */
-	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _set( $value ) {
 		$this->_mValue = $value;
 	}
 
-	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _setUserValue( $value ) {
 		$this->_mUserValue = $value;
 	}
@@ -716,7 +714,6 @@ class BsConfig {
 	 * @param mixed $value
 	 * @return mixed the value after the addition
 	 */
-	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _add( $value ) {
 		if ( $this->_mOptions & self::TYPE_OBJECT ) {
 			// @todo Fehlermeldung Typ unterstÃ¼tzt kein ADD
@@ -741,7 +738,6 @@ class BsConfig {
 	 *
 	 * @return mixed
 	 */
-	// phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 	protected function _get() {
 		if ( self::$prGetUsersSettings ) {
 			if ( !is_null( $this->_mUserValue ) ) {

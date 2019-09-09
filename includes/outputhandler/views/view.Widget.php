@@ -22,6 +22,11 @@ class ViewWidget extends ViewBaseElement {
 	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mAdditionalBodyClasses = [];
 
+	/**
+	 *
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$this->checkProperties();
 
@@ -72,31 +77,62 @@ class ViewWidget extends ViewBaseElement {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $sTitle
+	 * @return ViewWidget
+	 */
 	public function setTitle( $sTitle ) {
 		$this->_mTitle = $sTitle;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $sBody
+	 * @return ViewWidget
+	 */
 	public function setBody( $sBody ) {
 		$this->_mBody = $sBody;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $sTooltip
+	 * @return ViewWidget
+	 */
 	public function setTooltip( $sTooltip ) {
 		$this->_mTooltip = $sTooltip;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param array $aAdditionalTitleClasses
+	 * @return ViewWidget
+	 */
 	public function setAdditionalTitleClasses( $aAdditionalTitleClasses ) {
 		$this->_mAdditionalTitleClasses = $aAdditionalTitleClasses;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param array $aAdditionalBodyClasses
+	 * @return ViewWidget
+	 */
 	public function setAdditionalBodyClasses( $aAdditionalBodyClasses ) {
 		$this->_mAdditionalBodyClasses = $aAdditionalBodyClasses;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $sDefaultViewstate
+	 * @return ViewWidget
+	 * @throws BsException
+	 */
 	public function setDefaultViewstate( $sDefaultViewstate ) {
 		if ( $sDefaultViewstate != 'expanded' || $sDefaultViewstate != 'collapsed' ) {
 			throw new BsException( '"' . $sDefaultViewstate . '" is not a vaild viewstate. Possible values are "expanded"|"collapsed"' );

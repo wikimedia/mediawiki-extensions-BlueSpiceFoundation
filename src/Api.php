@@ -79,10 +79,18 @@ abstract class Api extends ApiBase {
 		}
 	}
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	protected function getRequiredPermissions() {
 		return [ 'read' ];
 	}
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	protected function getExamples() {
 		return [
 			'api.php?action=' . $this->getModuleName(),

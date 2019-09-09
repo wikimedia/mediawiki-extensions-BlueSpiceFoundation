@@ -47,7 +47,7 @@ abstract class BSEntitySetValuesByObject extends Hook {
 	 * are stored in the entity
 	 * @param Entity $entity
 	 * @param \stdClass $data
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $entity, $data ) {
 		$className = static::class;

@@ -49,7 +49,7 @@ class UtilityFactory {
 	/**
 	 *
 	 * @param array $params
-	 * @params \Title|null $default
+	 * @param \Title|null $default
 	 * @return \BlueSpice\Utility\TitleParamsResolver
 	 */
 	public function getTitleParamsResolver( $params, $default = null ) {
@@ -105,6 +105,7 @@ class UtilityFactory {
 	}
 
 	/**
+	 * @param \Title $title
 	 * @return \BlueSpice\Utility\PagePropHelper
 	 */
 	public function getPagePropHelper( \Title $title ) {

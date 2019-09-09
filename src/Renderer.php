@@ -157,11 +157,19 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 		return $this->context;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function makeTagContent() {
 		$text = new HtmlArmor( $this->args[static::PARAM_CONTENT] );
 		return HtmlArmor::getHtml( $text );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getOpenTag() {
 		return Html::openElement(
 			$this->args[static::PARAM_TAG],
@@ -169,6 +177,10 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 		);
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function makeTagAttribs() {
 		$attrbs = [];
 		if ( $this->args[static::PARAM_CLASS] ) {
@@ -185,6 +197,10 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 		return $attrbs;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getCloseTag() {
 		return Html::closeElement( $this->args[static::PARAM_TAG] );
 	}

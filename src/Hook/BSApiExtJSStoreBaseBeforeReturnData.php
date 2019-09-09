@@ -51,9 +51,9 @@ abstract class BSApiExtJSStoreBaseBeforeReturnData extends Hook {
 	 * Located in BSApiExtJSStoreBase::returnData. Before the result gets
 	 * returned
 	 * @param \BSApiExtJSStoreBase $store
-	 * @param array $dataItems
-	 * @param array $metaDataItems
-	 * @return boolean
+	 * @param array &$dataItems
+	 * @param array &$metaDataItems
+	 * @return bool
 	 */
 	public static function callback( $store, &$dataItems, &$metaDataItems ) {
 		$className = static::class;
@@ -71,8 +71,8 @@ abstract class BSApiExtJSStoreBaseBeforeReturnData extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \BSApiExtJSStoreBase $store
-	 * @param array $dataItems
-	 * @param array $metaDataItems
+	 * @param array &$dataItems
+	 * @param array &$metaDataItems
 	 */
 	public function __construct( $context, $config, $store, &$dataItems, &$metaDataItems ) {
 		parent::__construct( $context, $config );

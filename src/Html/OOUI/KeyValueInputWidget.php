@@ -17,6 +17,10 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	protected $valueContainer;
 	protected $addContainer;
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( array $config = [] ) {
 		$this->value = isset( $config['value'] ) ? $config['value'] : [];
 		$this->labelsOnlyOnFirst = isset( $config['labelsOnlyOnFirst'] ) ?
@@ -69,10 +73,20 @@ class KeyValueInputWidget extends \OOUI\Widget {
 		$this->valueContainer->appendContent( $label );
 	}
 
+	/**
+	 *
+	 * @param array $config
+	 * @return null
+	 */
 	protected function getInputElement( $config ) {
 		return null;
 	}
 
+	/**
+	 *
+	 * @param array $values
+	 * @return KeyValueInputWidget
+	 */
 	public function setValue( $values ) {
 		$first = true;
 		foreach ( $values as $key => $value ) {
@@ -154,6 +168,11 @@ class KeyValueInputWidget extends \OOUI\Widget {
 		$this->appendContent( $this->addContainer );
 	}
 
+	/**
+	 *
+	 * @param array &$config
+	 * @return array
+	 */
 	public function getConfig( &$config ) {
 		if ( $this->keyLabel ) {
 			$config['keyLabel'] = $this->keyLabel;
@@ -180,6 +199,10 @@ class KeyValueInputWidget extends \OOUI\Widget {
 		return parent::getConfig( $config );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getJavaScriptClassName() {
 		return "bs.ui.widget.KeyValueInputWidget";
 	}

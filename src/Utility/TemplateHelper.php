@@ -55,6 +55,13 @@ class TemplateHelper {
 		return $tplDir;
 	}
 
+	/**
+	 *
+	 * @param string $extName
+	 * @param array $config
+	 * @return array
+	 * @throws \BsException
+	 */
 	public function makeFullExtTemplatePathFromExtName( $extName, $config = [] ) {
 		if ( isset( $config['type'] ) && $config['type'] === 'skin' ) {
 			return [

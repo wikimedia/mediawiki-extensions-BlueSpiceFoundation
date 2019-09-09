@@ -30,6 +30,10 @@
  * @package BlueSpice_Foundation
  */
 class BSApiPingTasks extends BSApiTasksBase {
+	/**
+	 *
+	 * @var array
+	 */
 	protected $aTasks = [
 		'ping' => [
 			'examples' => [
@@ -76,6 +80,10 @@ class BSApiPingTasks extends BSApiTasksBase {
 		]
 	];
 
+	/**
+	 *
+	 * @var string[]
+	 */
 	protected $aReadTasks = [ 'ping' ];
 
 	/**
@@ -88,6 +96,11 @@ class BSApiPingTasks extends BSApiTasksBase {
 		];
 	}
 
+	/**
+	 *
+	 * @param \stdClass $oTaskData
+	 * @return \BlueSpice\Api\Response\Standard
+	 */
 	protected function task_ping( $oTaskData ) {
 		$oResponse = $this->makeStandardReturn();
 

@@ -7,11 +7,23 @@ class Schema extends \ArrayObject {
 	const SORTABLE = 'sortable';
 	const TYPE = 'type';
 
+	/**
+	 *
+	 * @param mixed $key
+	 * @param mixed $value
+	 * @return array
+	 */
 	protected function filterFields( $key, $value ) {
 		$entries = $this->filterEntries( $key, $value );
 		return array_keys( $entries );
 	}
 
+	/**
+	 *
+	 * @param mixed $key
+	 * @param mixed $value
+	 * @return array
+	 */
 	protected function filterEntries( $key, $value ) {
 		$callback = function ( $entry ) use( $key, $value ) {
 			return array_key_exists( $key, $entry )

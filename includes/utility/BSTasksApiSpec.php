@@ -5,6 +5,10 @@ class BSTasksApiSpec {
 
 	protected $aTaskNames = [];
 
+	/**
+	 *
+	 * @param array $aTasks
+	 */
 	public function __construct( $aTasks ) {
 		$this->aInitialConfig = $aTasks;
 		$this->extractTaskNames();
@@ -69,6 +73,11 @@ class BSTasksApiSpec {
 		];
 	}
 
+	/**
+	 *
+	 * @param string $sTaskName
+	 * @return array
+	 */
 	protected function makeTaskDataProperties( $sTaskName ) {
 		$aProps = [];
 		if ( !isset( $this->aInitialConfig[$sTaskName]['params'] ) ) {

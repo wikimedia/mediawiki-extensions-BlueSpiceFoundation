@@ -31,10 +31,20 @@
  */
 class BSApiAdminUserStore extends BSApiUserStore {
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getRequiredPermissions() {
 		return [ 'wikiadmin' ];
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 * @param array $aGroups
+	 * @return array
+	 */
 	protected function makeResultRow( $row, $aGroups = [] ) {
 		$aResult = parent::makeResultRow( $row, $aGroups );
 		$aResult['user_email'] = isset( $row->user_email )

@@ -65,8 +65,11 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 	 * Located in \BSMigrateSettings::fromDeviatingNames. Use change the new
 	 * name of the setting.
 	 * @param string $oldName
-	 * @param string $newName
-	 * @return boolean
+	 * @param string &$newName
+	 * @param string $oldValue
+	 * @param string &$newValue
+	 * @param bool &$skip
+	 * @return bool
 	 */
 	public static function callback( $oldName, &$newName, $oldValue, &$newValue, &$skip ) {
 		$className = static::class;
@@ -86,7 +89,11 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param string $oldName
-	 * @param string $newName
+	 * @param string &$newName
+	 * @param string $oldValue
+	 * @param string &$newValue
+	 * @param bool &$skip
+	 * @return bool
 	 */
 	public function __construct( $context, $config, $oldName, &$newName, $oldValue, &$newValue, &$skip ) {
 		parent::__construct( $context, $config );

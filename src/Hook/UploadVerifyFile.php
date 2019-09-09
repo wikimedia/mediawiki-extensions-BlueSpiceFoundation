@@ -52,8 +52,8 @@ abstract class UploadVerifyFile extends Hook {
 	 *
 	 * @param \UploadBase $upload
 	 * @param string $mime
-	 * @param true | array $error
-	 * @return boolean
+	 * @param true | array &$error
+	 * @return bool
 	 */
 	public static function callback( $upload, $mime, &$error ) {
 		$className = static::class;
@@ -71,9 +71,9 @@ abstract class UploadVerifyFile extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \UploadBase $upload
+	 * @param \UploadBase &$upload
 	 * @param string $mime
-	 * @param true | array $error
+	 * @param true | array &$error
 	 */
 	public function __construct( $context, $config, &$upload, $mime, &$error ) {
 		parent::__construct( $context, $config );

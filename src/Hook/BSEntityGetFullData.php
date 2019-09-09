@@ -46,8 +46,8 @@ abstract class BSEntityGetFullData extends Hook {
 	 * Located in \BlueSpice\Entity::getFullData. Before the full set of values
 	 * stored in the entity is returned
 	 * @param Entity $entity
-	 * @param array $data
-	 * @return boolean
+	 * @param array &$data
+	 * @return bool
 	 */
 	public static function callback( $entity, &$data ) {
 		$className = static::class;
@@ -64,7 +64,7 @@ abstract class BSEntityGetFullData extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param Entity $entity
-	 * @param array $data
+	 * @param array &$data
 	 */
 	public function __construct( $context, $config, $entity, &$data ) {
 		parent::__construct( $context, $config );

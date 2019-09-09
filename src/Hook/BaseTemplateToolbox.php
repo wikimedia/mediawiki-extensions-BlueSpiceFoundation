@@ -47,8 +47,8 @@ abstract class BaseTemplateToolbox extends Hook {
 	/**
 	 *
 	 * @param \BaseTemplate $baseTemplate
-	 * @param array $toolbox
-	 * @return boolean
+	 * @param array &$toolbox
+	 * @return bool
 	 */
 	public static function callback( $baseTemplate, &$toolbox ) {
 		$className = static::class;
@@ -66,7 +66,7 @@ abstract class BaseTemplateToolbox extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \BaseTemplate $baseTemplate
-	 * @param array $toolbox
+	 * @param array &$toolbox
 	 */
 	public function __construct( $context, $config, $baseTemplate, &$toolbox ) {
 		parent::__construct( $context, $config );

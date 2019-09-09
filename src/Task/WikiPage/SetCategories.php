@@ -12,7 +12,6 @@ class SetCategories extends \BlueSpice\Task\WikiPage {
 	const PARAM_CATEGORIES = 'categories';
 
 	/**
-	 * @param array $params
 	 * @return Status
 	 */
 	protected function doExecute() {

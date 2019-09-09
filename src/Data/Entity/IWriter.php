@@ -14,7 +14,7 @@ use BlueSpice\Entity;
 interface IWriter {
 	/**
 	 * Create or Update given entity
-	 * @param $entity Entity
+	 * @param Entity $entity
 	 * @return Status
 	 */
 	public function writeEntity( Entity $entity );

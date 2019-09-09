@@ -9,10 +9,20 @@ namespace BlueSpice;
 class NotificationRegistry implements \BlueSpice\IRegistry {
 	protected $notifications;
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getAllKeys() {
 		return array_keys( $this->notifications );
 	}
 
+	/**
+	 *
+	 * @param string $key
+	 * @param mixed $default
+	 * @return mixed
+	 */
 	public function getValue( $key, $default = '' ) {
 		if ( isset( $this->notifications[$key] ) ) {
 			return $this->notifications[$key];
@@ -35,7 +45,7 @@ class NotificationRegistry implements \BlueSpice\IRegistry {
 	 * Checks if specified notification key is registered
 	 *
 	 * @param string $key
-	 * @return boolean
+	 * @return bool
 	 */
 	public function hasKey( $key ) {
 		if ( isset( $this->notifications[$key] ) ) {

@@ -2,19 +2,22 @@
 
 namespace BlueSpice\Hook;
 
+use MediaWiki\MediaWikiServices as Services;
+use IContextSource;
+use Config;
 use BlueSpice\Hook;
 
 abstract class MediaWikiServices extends Hook {
 	/**
 	 *
-	 * @var \MediaWiki\MediaWikiServices
+	 * @var Services
 	 */
 	protected $services;
 
 	/**
 	 *
-	 * @param \MediaWiki\MediaWikiServices $services
-	 * @return boolean
+	 * @param Services $services
+	 * @return bool
 	 */
 	public static function callback( $services ) {
 		$className = static::class;
@@ -26,6 +29,12 @@ abstract class MediaWikiServices extends Hook {
 		return $hookHandler->process();
 	}
 
+	/**
+	 *
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param Services $services
+	 */
 	public function __construct( $context, $config, $services ) {
 		parent::__construct( $context, $config );
 

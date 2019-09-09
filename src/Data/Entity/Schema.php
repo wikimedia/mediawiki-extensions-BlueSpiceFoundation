@@ -11,6 +11,10 @@ class Schema extends \BlueSpice\Data\Schema {
 	const STORABLE = 'storeable';
 	const INDEXABLE = 'indexable';
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getDefaultFieldDefinition() {
 		return [
 			self::FILTERABLE => true,
@@ -21,6 +25,11 @@ class Schema extends \BlueSpice\Data\Schema {
 		];
 	}
 
+	/**
+	 *
+	 * @param array $fieldDefinition
+	 * @return array
+	 */
 	protected function fillMissingWithDefaults( $fieldDefinition ) {
 		foreach ( $this->getDefaultFieldDefinition() as $key => $defaultVal ) {
 			if ( array_key_exists( $key, $fieldDefinition ) ) {

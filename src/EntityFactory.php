@@ -71,6 +71,8 @@ class EntityFactory {
 	 *
 	 * @param string $type
 	 * @param \stdClass $data
+	 * @param EntityConfig|null $entityConfig
+	 * @param IStore|null $store
 	 * @return Entity
 	 * @throws MWException
 	 */
@@ -140,7 +142,7 @@ class EntityFactory {
 	 * Get Entity from ID
 	 * @param mixed $id
 	 * @param string|int $type - int namespace is used for legecy content entities
-	 * @param boolean $reload
+	 * @param bool $reload
 	 * @return Entity | null
 	 */
 	public function newFromID( $id, $type, $reload = false ) {
@@ -226,7 +228,7 @@ class EntityFactory {
 	/**
 	 * Main method for getting a ContentEntity from a Title
 	 * @param Title|null $title
-	 * @param boolean $reload
+	 * @param bool $reload
 	 * @return Entity | null
 	 */
 	public function newFromSourceTitle( Title $title = null, $reload = false ) {
@@ -240,7 +242,7 @@ class EntityFactory {
 
 	/**
 	 * Adds a Entity to the cache
-	 * @param Entity $oInstance
+	 * @param Entity &$oInstance
 	 * @return Entity
 	 */
 	protected function appendCache( Entity &$oInstance ) {
@@ -255,7 +257,7 @@ class EntityFactory {
 
 	/**
 	 * Removes a Entity from the cache if it's in
-	 * @param Entity $oInstance
+	 * @param Entity &$oInstance
 	 * @return Entity
 	 */
 	public function detachCache( Entity &$oInstance ) {
@@ -270,7 +272,8 @@ class EntityFactory {
 
 	/**
 	 * Gets a instance of the Entity from the cache by ID
-	 * @param int $id
+	 * @param mixed $id
+	 * @param string $type
 	 * @return Entity
 	 */
 	protected function getInstanceFromCacheByID( $id, $type ) {

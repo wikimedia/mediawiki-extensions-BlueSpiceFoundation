@@ -40,6 +40,7 @@ class Task extends Api {
 	/**
 	 *
 	 * @param ITask $task
+	 * @param array $processedArgs
 	 * @return Status
 	 */
 	protected function getProcessedArgs( ITask $task, array $processedArgs = [] ) {
@@ -144,6 +145,15 @@ class Task extends Api {
 		];
 	}
 
+	/**
+	 * Using the settings determine the value for the given parameter
+	 *
+	 * @param string $paramName Parameter name
+	 * @param array|mixed $paramSettings Default value or an array of settings
+	 *  using PARAM_* constants.
+	 * @param bool $parseLimit Whether to parse and validate 'limit' parameters
+	 * @return mixed Parameter value
+	 */
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings(
 			$paramName,

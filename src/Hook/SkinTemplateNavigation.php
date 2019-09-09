@@ -44,9 +44,9 @@ abstract class SkinTemplateNavigation extends Hook {
 
 	/**
 	 *
-	 * @param \SkinTemplate $sktemplate
-	 * @param array $links
-	 * @return boolean
+	 * @param \SkinTemplate &$sktemplate
+	 * @param array &$links
+	 * @return bool
 	 */
 	public static function callback( &$sktemplate, &$links ) {
 		$className = static::class;
@@ -63,8 +63,8 @@ abstract class SkinTemplateNavigation extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \SkinTemplate $sktemplate
-	 * @param array $links
+	 * @param \SkinTemplate &$sktemplate
+	 * @param array &$links
 	 */
 	public function __construct( $context, $config, &$sktemplate, &$links ) {
 		parent::__construct( $context, $config );

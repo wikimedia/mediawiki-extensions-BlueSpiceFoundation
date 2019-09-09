@@ -6,7 +6,7 @@
  * @param string $line
  */
 function bsDebugLog( $line ) {
-	return \BlueSpice\Debug::log( $line );
+	\BlueSpice\Debug::log( $line );
 }
 
 /**
@@ -15,7 +15,7 @@ function bsDebugLog( $line ) {
  * @param array $params currently not in use
  */
 function bsDebugLogSimpleCallStack( array $params = [] ) {
-	return \BlueSpice\Debug::logSimpleCallStack( $params );
+	\BlueSpice\Debug::logSimpleCallStack( $params );
 }
 
 /**
@@ -24,7 +24,7 @@ function bsDebugLogSimpleCallStack( array $params = [] ) {
  * @param array $params currently not used
  */
 function bsDebugLogCaller( array $params = [] ) {
-	return \BlueSpice\Debug::logCaller( $params );
+	\BlueSpice\Debug::logCaller( $params );
 }
 
 /**
@@ -36,7 +36,7 @@ function bsDebugLogCaller( array $params = [] ) {
  *   "mark" => true
  */
 function bsDebugLogVar( $var, array $params = [] ) {
-	return \BlueSpice\Debug::logVar( $var, $params );
+	\BlueSpice\Debug::logVar( $var, $params );
 }
 
 /**
@@ -47,5 +47,5 @@ function bsDebugLogVar( $var, array $params = [] ) {
  * @param array $params see logVar
  */
 function bsDebugLogVarConditionally( $condition, $var, array $params = [] ) {
-	return \BlueSpice\Debug::logVarConditionally( $condition, $var, $params );
+	\BlueSpice\Debug::logVarConditionally( $condition, $var, $params );
 }

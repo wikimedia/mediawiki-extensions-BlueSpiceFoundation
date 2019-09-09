@@ -11,7 +11,6 @@ class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	const PARAM_LANGUAGE_LINKS = 'languagelinks';
 
 	/**
-	 * @param array $params
 	 * @return Status
 	 */
 	protected function doExecute() {

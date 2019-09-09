@@ -10,6 +10,10 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 	protected $menu;
 	protected $menuConfig;
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( array $config = [] ) {
 		parent::__construct( $config );
 
@@ -60,18 +64,36 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 		} );
 	}
 
+	/**
+	 *
+	 * @param array &$config
+	 * @return array
+	 */
 	public function getConfig( &$config ) {
 		return parent::getConfig( $config );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getJavaScriptClassName() {
 		return 'OO.ui.MenuTagMultiselectWidget';
 	}
 
+	/**
+	 *
+	 * @param array $config
+	 * @return \BlueSpice\Html\OOUI\MenuSelectWidget
+	 */
 	protected function makeMenuWidget( $config ) {
 		return new MenuSelectWidget( $config );
 	}
 
+	/**
+	 *
+	 * @param array $options
+	 */
 	public function addOptions( $options ) {
 		$items = [];
 		foreach ( $options as $option ) {

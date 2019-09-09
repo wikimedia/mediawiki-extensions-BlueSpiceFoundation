@@ -9,7 +9,7 @@ class Title extends Range {
 	 * dataset
 	 *
 	 * @param \BlueSpice\Data\Record $dataSet
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doesMatch( $dataSet ) {
 		if ( !is_string( $this->getValue() ) ) {
@@ -38,6 +38,10 @@ class Title extends Range {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return int
+	 */
 	protected function getDefaultTitleNamespace() {
 		return NS_MAIN;
 	}

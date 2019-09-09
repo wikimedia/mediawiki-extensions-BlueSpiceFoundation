@@ -58,7 +58,7 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @param $id int|string
+	 * @param int|string $id
 	 * @param BSTreeNode|null $parentNode
 	 * @param Config $config
 	 */
@@ -85,6 +85,12 @@ class BSTreeNode {
 		$this->expanded = $config->get( self::CONFIG_EXPANDED );
 	}
 
+	/**
+	 *
+	 * @param string $key
+	 * @param mixed $default
+	 * @return mixed
+	 */
 	public function get( $key, $default ) {
 		if ( $this->config->has( $key ) ) {
 			return $this->config->get( $key );
@@ -137,7 +143,7 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isExpanded() {
 		return $this->expanded;
@@ -158,7 +164,7 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isRoot() {
 		return $this->parentNode === null;
@@ -188,7 +194,7 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isExpandable() {
 		return $this->get( self::CONFIG_EXPANDABLE, true );
@@ -196,7 +202,7 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isCollapsible() {
 		return $this->isExpandable();
@@ -204,7 +210,7 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isLeaf() {
 		return $this->get( self::CONFIG_IS_LEAF, false );

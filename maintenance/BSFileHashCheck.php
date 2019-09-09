@@ -47,6 +47,11 @@ class BSFileHashCheck extends BSMaintenance {
 		return trim( $sPathName, '/' );
 	}
 
+	/**
+	 *
+	 * @param string $sHashes
+	 * @param string $sDir
+	 */
 	protected function checkDirectoryContents( $sHashes, $sDir ) {
 		$aFileHashMap = FormatJson::decode(
 			file_get_contents( $sHashes ),
@@ -70,6 +75,11 @@ class BSFileHashCheck extends BSMaintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $sHashes
+	 * @param string $sDir
+	 */
 	protected function createHashFile( $sHashes, $sDir ) {
 		$oIterator = new RecursiveIteratorIterator(
 			new RecursiveDirectoryIterator( $sDir )

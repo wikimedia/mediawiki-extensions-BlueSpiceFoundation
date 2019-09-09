@@ -55,11 +55,11 @@ abstract class WebResponseSetCookie extends Hook {
 	protected $options = [];
 
 	/**
-	 * @param string $name
-	 * @param string $value
-	 * @param integer $expire
-	 * @param array $options
-	 * @return boolean
+	 * @param string &$name
+	 * @param string &$value
+	 * @param int &$expire
+	 * @param array &$options
+	 * @return bool
 	 */
 	public static function callback( &$name, &$value, &$expire, &$options ) {
 		$className = static::class;
@@ -77,10 +77,10 @@ abstract class WebResponseSetCookie extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param string $name
-	 * @param string $value
-	 * @param integer $expire
-	 * @param array $options
+	 * @param string &$name
+	 * @param string &$value
+	 * @param int &$expire
+	 * @param array &$options
 	 */
 	public function __construct( $context, $config, &$name, &$value, &$expire, &$options ) {
 		parent::__construct( $context, $config );

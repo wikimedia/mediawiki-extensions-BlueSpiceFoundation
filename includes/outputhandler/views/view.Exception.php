@@ -17,11 +17,20 @@
 class ViewException extends ViewBaseElement {
 	protected $oException = null;
 
+	/**
+	 *
+	 * @param Exception $oException
+	 */
 	public function  __construct( Exception $oException ) {
 		parent::__construct();
 		$this->oException = $oException;
 	}
 
+	/**
+	 *
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$aOut = [];
 		$aOut[] = '<div class="bs-exception">';

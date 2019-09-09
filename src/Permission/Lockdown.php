@@ -47,6 +47,7 @@ class Lockdown {
 
 	/**
 	 *
+	 * @param Config $config
 	 * @param Title $title
 	 * @param User $user
 	 * @param IModule[] $modules

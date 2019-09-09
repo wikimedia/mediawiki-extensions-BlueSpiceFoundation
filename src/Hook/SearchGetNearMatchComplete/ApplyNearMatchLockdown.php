@@ -11,7 +11,7 @@ class ApplyNearMatchLockdown extends \BlueSpice\Hook\SearchGetNearMatchComplete 
 	 * Checks if user has permission to view
 	 * title that has been found
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doProcess() {
 		$this->setUp();

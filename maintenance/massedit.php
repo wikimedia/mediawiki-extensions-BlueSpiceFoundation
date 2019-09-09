@@ -280,6 +280,10 @@ foreach ( $res as $row ) {
 
 echo "\n\n-- " . ( $testing ? "Would have m" : "M" ) . "odified $hits articles.\n";
 
+/**
+ *
+ * @param string $msg
+ */
 function error( $msg ) {
 	echo 'ERROR: ' . $msg;
 	exit();

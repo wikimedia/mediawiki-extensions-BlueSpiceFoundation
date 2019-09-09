@@ -98,18 +98,18 @@ abstract class PageContentSaveComplete extends Hook {
 
 	/**
 	 *
-	 * @param \WikiPage $wikipage
-	 * @param \User $user
+	 * @param \WikiPage &$wikipage
+	 * @param \User &$user
 	 * @param \Content $content
 	 * @param string $summary
-	 * @param boolean $isMinor
-	 * @param boolean $isWatch
+	 * @param bool $isMinor
+	 * @param bool $isWatch
 	 * @param int $section
-	 * @param int $flags
+	 * @param int &$flags
 	 * @param \Revision $revision
-	 * @param \Status $status
+	 * @param \Status &$status
 	 * @param int $baseRevId
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( &$wikipage, &$user, $content, $summary, $isMinor, $isWatch, $section, &$flags, $revision, &$status, $baseRevId ) {
 		$className = static::class;
@@ -135,16 +135,16 @@ abstract class PageContentSaveComplete extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \WikiPage $wikipage
-	 * @param \User $user
+	 * @param \WikiPage &$wikipage
+	 * @param \User &$user
 	 * @param \Content $content
 	 * @param string $summary
-	 * @param boolean $isMinor
-	 * @param boolean $isWatch
+	 * @param bool $isMinor
+	 * @param bool $isWatch
 	 * @param int $section
-	 * @param int $flags
+	 * @param int &$flags
 	 * @param \Revision $revision
-	 * @param \Status $status
+	 * @param \Status &$status
 	 * @param int $baseRevId
 	 */
 	public function __construct( $context, $config, &$wikipage, &$user, $content, $summary, $isMinor, $isWatch, $section, &$flags, $revision, &$status, $baseRevId ) {

@@ -46,8 +46,8 @@ abstract class BSCoreConfigGet extends Hook {
 	 * Located in BsConfig::get. Enables modification of the value of the
 	 * BSConfig variable specified by path.
 	 * @param string $path
-	 * @param mixed $return
-	 * @return boolean
+	 * @param mixed &$returnResult
+	 * @return bool
 	 */
 	public static function callback( $path, &$returnResult ) {
 		$className = static::class;
@@ -64,7 +64,7 @@ abstract class BSCoreConfigGet extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param string $path
-	 * @param mixed $return
+	 * @param mixed &$returnResult
 	 */
 	public function __construct( $context, $config, $path, &$returnResult ) {
 		parent::__construct( $context, $config );

@@ -13,7 +13,7 @@ interface IWriter {
 
 	/**
 	 * Delete given records
-	 * @param RecordSet $dataSet
+	 * @param RecordSet $recordSet
 	 * @return RecordSet
 	 */
 	public function remove( $recordSet );

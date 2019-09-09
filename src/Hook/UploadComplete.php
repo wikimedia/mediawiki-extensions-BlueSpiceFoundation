@@ -38,8 +38,8 @@ abstract class UploadComplete extends Hook {
 
 	/**
 	 *
-	 * @param \UploadBase $upload
-	 * @return boolean
+	 * @param \UploadBase &$upload
+	 * @return bool
 	 */
 	public static function callback( &$upload ) {
 		$className = static::class;
@@ -55,7 +55,7 @@ abstract class UploadComplete extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \UploadBase $upload
+	 * @param \UploadBase &$upload
 	 */
 	public function __construct( $context, $config, &$upload ) {
 		parent::__construct( $context, $config );

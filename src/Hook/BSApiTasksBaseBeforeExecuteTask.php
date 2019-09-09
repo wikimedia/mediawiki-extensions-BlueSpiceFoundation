@@ -57,9 +57,9 @@ abstract class BSApiTasksBaseBeforeExecuteTask extends Hook {
 	 * Located in BSApiTasksBase::execute. Before the requested task get called.
 	 * @param \BSApiTasksBase $taskApi
 	 * @param string $taskKey
-	 * @param \stdClass $taskData
-	 * @param array $params
-	 * @return boolean
+	 * @param \stdClass &$taskData
+	 * @param array &$params
+	 * @return bool
 	 */
 	public static function callback( $taskApi, $taskKey, &$taskData, &$params ) {
 		$className = static::class;
@@ -79,8 +79,8 @@ abstract class BSApiTasksBaseBeforeExecuteTask extends Hook {
 	 * @param \Config $config
 	 * @param \BSApiTasksBase $taskApi
 	 * @param string $taskKey
-	 * @param \stdClass $taskData
-	 * @param array $params
+	 * @param \stdClass &$taskData
+	 * @param array &$params
 	 */
 	public function __construct( $context, $config, $taskApi, $taskKey, &$taskData, &$params ) {
 		parent::__construct( $context, $config );

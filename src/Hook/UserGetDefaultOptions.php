@@ -38,7 +38,7 @@ abstract class UserGetDefaultOptions extends Hook {
 
 	/**
 	 *
-	 * @param array $defaultOptions
+	 * @param array &$defaultOptions
 	 * @return type
 	 */
 	public static function callback( &$defaultOptions ) {
@@ -55,7 +55,7 @@ abstract class UserGetDefaultOptions extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $defaultOptions
+	 * @param array &$defaultOptions
 	 */
 	public function __construct( $context, $config, &$defaultOptions ) {
 		parent::__construct( $context, $config );

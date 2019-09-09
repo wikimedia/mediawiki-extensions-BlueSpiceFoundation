@@ -37,6 +37,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	/**
 	 *
 	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @return Record[]
 	 */
 	public function makeData( $params ) {
 		$conds = [];
@@ -62,6 +63,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $this->data;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 */
 	protected function appendRowToData( $row ) {
 		$title = \Title::makeTitle( $row->rc_namespace, $row->rc_title );
 

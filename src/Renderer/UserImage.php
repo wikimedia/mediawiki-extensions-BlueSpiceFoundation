@@ -91,6 +91,11 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		return "BlueSpiceFoundation.UserImage";
 	}
 
+	/**
+	 *
+	 * @param mixed $val
+	 * @return string
+	 */
 	protected function render_imagesrc( $val ) {
 		$params = [
 			DFDParams::MODULE => UserProfileImage::MODULE_NAME,
@@ -104,6 +109,10 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		return $dfdUrlBuilder->build( new DFDParams( $params ) );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getCacheKey() {
 		return $this->getCacheHelper()->getCacheKey(
 			'BSFoundation',

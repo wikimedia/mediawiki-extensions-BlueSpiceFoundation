@@ -8,6 +8,10 @@ use Html;
 
 abstract class ExtJSBase extends SpecialPage {
 
+	/**
+	 *
+	 * @param string $par
+	 */
 	public function execute( $par ) {
 		parent::execute( $par );
 
@@ -70,6 +74,10 @@ abstract class ExtJSBase extends SpecialPage {
 		return [];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getLoadPlaceholderTemplateName() {
 		return 'ExtJSGeneric';
 	}

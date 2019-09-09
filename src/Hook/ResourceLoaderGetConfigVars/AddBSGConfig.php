@@ -7,6 +7,10 @@ use BlueSpice\ConfigDefinition;
 
 class AddBSGConfig extends ResourceLoaderGetConfigVars {
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->vars = array_merge(
 			$this->vars,
@@ -15,6 +19,10 @@ class AddBSGConfig extends ResourceLoaderGetConfigVars {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getSettingsToExpose() {
 		$cfgVars = [];
 		$cfgDefFactory = $this->getServices()->getService(

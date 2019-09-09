@@ -133,7 +133,7 @@ abstract class Hook implements MessageLocalizer, IServiceProvider {
 
 	/**
 	 * Allow subclasses to define a skip condition
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function skipProcessing() {
 		return false;
@@ -141,7 +141,7 @@ abstract class Hook implements MessageLocalizer, IServiceProvider {
 
 	/**
 	 * Convenience method for subclasses
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function skipProcessingForAnon() {
 		return false;
@@ -149,7 +149,7 @@ abstract class Hook implements MessageLocalizer, IServiceProvider {
 
 	/**
 	 * Convenience method for subclasses
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function skipProcessingForSpecialPages() {
 		return false;

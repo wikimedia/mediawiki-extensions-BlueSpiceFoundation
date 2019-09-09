@@ -35,7 +35,7 @@ class Filterer {
 	/**
 	 *
 	 * @param object $dataSet
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function matchFilter( $dataSet ) {
 		foreach ( $this->filters as $filter ) {

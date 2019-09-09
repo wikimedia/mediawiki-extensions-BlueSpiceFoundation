@@ -27,6 +27,7 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param IContextSource|null $context
 	 * @param string $name | ''
+	 * @param CacheHelper|null $cacheHelper
 	 */
 	protected function __construct( Config $config, Params $params,
 		LinkRenderer $linkRenderer = null, IContextSource $context = null,

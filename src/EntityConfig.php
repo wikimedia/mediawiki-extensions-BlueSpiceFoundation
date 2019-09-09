@@ -53,6 +53,8 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	/**
 	 *
 	 * @param type $config
+	 * @param string $type
+	 * @param array $defaults
 	 */
 	public function __construct( $config, $type, $defaults = [] ) {
 		$this->config = $config;
@@ -76,6 +78,11 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 		return $configFactory->newFromType( $type );
 	}
 
+	/**
+	 *
+	 * @param string $sOption
+	 * @return mixed
+	 */
 	protected function getDefault( $sOption ) {
 		if ( isset( $this->defaults[$sOption] ) ) {
 			return $this->defaults[$sOption];
@@ -85,6 +92,10 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 			: false;
 	}
 
+	/**
+	 *
+	 * @return \Config
+	 */
 	protected function getConfig() {
 		if ( $this->config ) {
 			return $this->config;
@@ -151,18 +162,44 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 		return $this->type;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	abstract protected function addGetterDefaults();
+
+	/**
+	 *
+	 * @return string
+	 */
 	abstract protected function get_EntityClass();
+
+	/**
+	 *
+	 * @return string
+	 */
 	abstract protected function get_StoreClass();
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_Renderer() {
 		return "entity";
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function get_RenderTemplate() {
 		return 'BlueSpiceFoundation.Entity';
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function get_AttributeDefinitions() {
 		$attributeDefinitions = [
 			Entity::ATTR_ID => [

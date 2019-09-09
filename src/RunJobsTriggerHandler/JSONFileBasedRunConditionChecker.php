@@ -43,6 +43,8 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 	 *
 	 * @param \DateTime $currentRunTimestamp
 	 * @param string $fileSavePath
+	 * @param \Psr\Log\LoggerInterface $logger
+	 * @param Config $config
 	 */
 	public function __construct( $currentRunTimestamp, $fileSavePath, $logger, Config $config ) {
 		$this->currentRunTimestamp = $currentRunTimestamp;
@@ -64,7 +66,7 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 	 *
 	 * @param \BlueSpice\RunJobsTriggerHandler $runJobsTriggerHandler
 	 * @param string $regKey
-	 * @return boolean
+	 * @return bool
 	 */
 	public function shouldRun( $runJobsTriggerHandler, $regKey ) {
 		$savedNextTS = $this->getSavedNextTimestamp( $regKey );
@@ -129,10 +131,19 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 		);
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getPersistenceFilepath() {
 		return $this->fileSavePath . '/runJobsTriggerData.json';
 	}
 
+	/**
+	 *
+	 * @param string $regKey
+	 * @return \DateTime
+	 */
 	protected function getSavedNextTimestamp( $regKey ) {
 		if ( !isset( $this->data[ static::DATA_KEY_NEXTRUNS ][ $regKey ] ) ) {
 			$dummyTS = new \DateTime();
@@ -150,6 +161,11 @@ class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 		return $savedTS;
 	}
 
+	/**
+	 *
+	 * @param string $regKey
+	 * @param string $newNextTS
+	 */
 	protected function saveNewNextTimestamp( $regKey, $newNextTS ) {
 		$this->data[ static::DATA_KEY_NEXTRUNS ][ $regKey ] =
 			wfTimestamp( TS_MW, $newNextTS );

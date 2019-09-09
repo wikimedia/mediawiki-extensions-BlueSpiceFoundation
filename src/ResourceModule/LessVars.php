@@ -3,6 +3,11 @@
 namespace BlueSpice\ResourceModule;
 
 class LessVars extends \ResourceLoaderFileModule {
+	/**
+	 *
+	 * @param \ResourceLoaderContext $context
+	 * @return array
+	 */
 	public function getLessVars( \ResourceLoaderContext $context ) {
 		$vars = parent::getLessVars( $context );
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(

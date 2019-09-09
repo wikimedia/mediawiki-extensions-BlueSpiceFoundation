@@ -42,6 +42,12 @@ function showHelp() {
 	echo( " --setvalue : set value of given property\n\n" );
 }
 
+/**
+ *
+ * @param bool $bDry
+ * @param array $options
+ * @return void
+ */
 function modifyPropertiesController( $bDry, $options ) {
 	$aUserStore = getMPCUser( $options['user'] );
 	if ( empty( $aUserStore ) ) {
@@ -63,6 +69,12 @@ function modifyPropertiesController( $bDry, $options ) {
 	updateUserProperties( $aUserStore, $options, $bDry );
 }
 
+/**
+ *
+ * @param array $aUserStore
+ * @param array $options
+ * @param bool $bDry
+ */
 function updateUserProperties( $aUserStore, $options, $bDry ) {
 	$oDbw = wfGetDB( DB_MASTER );
 
@@ -88,12 +100,24 @@ function updateUserProperties( $aUserStore, $options, $bDry ) {
 	echo "Dont forget to clear memcache :)";
 }
 
+/**
+ *
+ * @param array $aUserStore
+ */
 function displayMPCResult( $aUserStore ) {
 	foreach ( $aUserStore as $aUser ) {
 		$sSetvalue = !empty( $aUser["setvalue"] ) ? ' => ' . $aUser["setvalue"] : '';
 		echo $aUser["name"] . ": " . $aUser["value"] . $sSetvalue . "\n";
 	}
 }
+
+/**
+ *
+ * @param array $aUserStore
+ * @param string $property
+ * @param bool $filtervalue
+ * @return array
+ */
 function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 	$oDbr = wfGetDB( DB_REPLICA );
 
@@ -123,6 +147,11 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 	return array_values( $aUserStore );
 }
 
+/**
+ *
+ * @param string $sGivenUser
+ * @return array
+ */
 function getMPCUser( $sGivenUser ) {
 	if ( $sGivenUser != "-1" ) {
 		if ( !ctype_digit( $sGivenUser ) ) {

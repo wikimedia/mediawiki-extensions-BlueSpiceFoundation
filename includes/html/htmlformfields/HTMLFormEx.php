@@ -6,6 +6,14 @@
  */
 class HTMLFormEx extends HTMLForm {
 
+	/**
+	 *
+	 * @param array $fields
+	 * @param string $sectionName
+	 * @param string $fieldsetIDPrefix
+	 * @param bool &$hasUserVisibleFields
+	 * @return string
+	 */
 	public function displaySection( $fields, $sectionName = '', $fieldsetIDPrefix = '', &$hasUserVisibleFields = false ) {
 		$tableHtml = '';
 		$subsectionHtml = '';
@@ -53,6 +61,13 @@ class HTMLFormEx extends HTMLForm {
 		return $subsectionHtml . "\n" . $tableHtml;
 	}
 
+	/**
+	 *
+	 * @param string|false $legend
+	 * @param string|false $content
+	 * @param array $attribs
+	 * @return string
+	 */
 	public static function fieldset( $legend = false, $content = false, $attribs = [] ) {
 		$s = Xml::openElement( 'fieldset', $attribs ) . "\n";
 		if ( $legend ) {

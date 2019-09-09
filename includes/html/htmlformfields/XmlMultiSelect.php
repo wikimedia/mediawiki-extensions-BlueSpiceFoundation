@@ -2,12 +2,23 @@
 
 class XmlMultiSelect extends XmlSelect {
 
+	/**
+	 *
+	 * @param string $name
+	 * @param mixed|false $value
+	 */
 	public function addOption( $name, $value = false ) {
 		$value = ( $value !== false ) ? $value : $name;
 
 		$this->options[] = [ $name => $value ];
 	}
 
+	/**
+	 *
+	 * @param array $options
+	 * @param array|false $default
+	 * @return string
+	 */
 	public static function formatOptions( $options, $default = false ) {
 		$data = '';
 

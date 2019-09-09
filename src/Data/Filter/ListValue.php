@@ -23,7 +23,7 @@ class ListValue extends Filter {
 	/**
 	 * Performs list filtering based on given filter of type array on a dataset
 	 * @param \BlueSpice\Data\Record $dataSet
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doesMatch( $dataSet ) {
 		if ( !is_array( $this->getValue() ) ) {

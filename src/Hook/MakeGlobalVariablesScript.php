@@ -26,6 +26,9 @@
  */
 namespace BlueSpice\Hook;
 
+use IContextSource;
+use Config;
+use OutputPage;
 use BlueSpice\Hook;
 
 abstract class MakeGlobalVariablesScript extends Hook {
@@ -38,15 +41,15 @@ abstract class MakeGlobalVariablesScript extends Hook {
 
 	/**
 	 *
-	 * @var \OutputPage
+	 * @var OutputPage
 	 */
 	protected $out = null;
 
 	/**
 	 *
-	 * @param array $vars
-	 * @param \OutputPage $out
-	 * @return boolean
+	 * @param array &$vars
+	 * @param OutputPage $out
+	 * @return bool
 	 */
 	public static function callback( &$vars, $out ) {
 		$className = static::class;
@@ -59,6 +62,13 @@ abstract class MakeGlobalVariablesScript extends Hook {
 		return $hookHandler->process();
 	}
 
+	/**
+	 *
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param array &$vars
+	 * @param OutputPage $out
+	 */
 	public function __construct( $context, $config, &$vars, $out ) {
 		parent::__construct( $context, $config );
 

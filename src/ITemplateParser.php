@@ -5,7 +5,7 @@ namespace BlueSpice;
 interface ITemplateParser {
 
 	/**
-	 * @param string name
+	 * @param string $templateName
 	 * @param array $args
 	 * @param array $scopes
 	 * @return string Rendered template

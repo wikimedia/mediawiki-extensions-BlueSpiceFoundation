@@ -55,7 +55,7 @@ abstract class WikiPage extends \BlueSpice\Task {
 	}
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function shouldRunUpdates() {
 		return true;

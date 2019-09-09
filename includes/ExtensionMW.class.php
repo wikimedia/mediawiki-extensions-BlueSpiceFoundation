@@ -199,6 +199,10 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 		return $this->mExtensionKey;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getExtensionPath() {
 		return "/{$this->getName()}";
 	}

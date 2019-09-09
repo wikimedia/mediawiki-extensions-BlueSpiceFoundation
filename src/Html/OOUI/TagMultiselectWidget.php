@@ -24,8 +24,16 @@ class TagMultiselectWidget extends Widget {
 	protected $selected;
 	protected $placeholder;
 
+	/**
+	 *
+	 * @var array
+	 */
 	protected $allowedInputPositions = [ 'inline', 'outline', 'none' ];
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( array $config = [] ) {
 		// Parent constructor
 		parent::__construct( $config );
@@ -74,6 +82,11 @@ class TagMultiselectWidget extends Widget {
 		}
 	}
 
+	/**
+	 *
+	 * @param mixed $value
+	 * @return TagMultiselectWidget
+	 */
 	public function setValue( $value ) {
 		if ( !is_array( $value ) ) {
 			$value = [ $value ];
@@ -90,6 +103,12 @@ class TagMultiselectWidget extends Widget {
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $data
+	 * @param string $label
+	 * @return bool
+	 */
 	protected function addTag( $data, $label = '' ) {
 		if ( $this->isAllowedData( $data ) || $this->allowDisplayInvalidTypes ) {
 			$newItemWidget = $this->createTagItemWidget( $data, $label );
@@ -99,11 +118,22 @@ class TagMultiselectWidget extends Widget {
 		return false;
 	}
 
+	/**
+	 *
+	 * @param string $data
+	 * @param string $label
+	 * @return \BlueSpice\Html\OOUI\TagItemWidget
+	 */
 	protected function createTagItemWidget( $data, $label = '' ) {
 		$label = ( $label != '' ) ? $label : $data;
 		return new TagItemWidget( [ 'data' => $data, 'label' => $label ] );
 	}
 
+	/**
+	 *
+	 * @param string $data
+	 * @return bool
+	 */
 	protected function isAllowedData( $data ) {
 		if ( $this->allowArbitrary ) {
 			return true;
@@ -116,14 +146,27 @@ class TagMultiselectWidget extends Widget {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAllowedValues() {
 		return $this->allowedValues;
 	}
 
+	/**
+	 *
+	 * @param array &$config
+	 * @return array
+	 */
 	public function getConfig( &$config ) {
 		return parent::getConfig( $config );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getJavaScriptClassName() {
 		return "OO.ui.TagMultiselectWidget";
 	}

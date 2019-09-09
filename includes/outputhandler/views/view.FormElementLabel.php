@@ -22,16 +22,31 @@ class ViewFormElementLabel extends ViewFormElement {
 	protected $_mForId = '';
 	protected $bUseAutoWidth = false;
 
+	/**
+	 *
+	 * @param string $sForId
+	 * @return ViewFormElementLabel
+	 */
 	public function setFor( $sForId ) {
 		$this->_mForId = $sForId;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $sText
+	 * @return ViewFormElementLabel
+	 */
 	public function setText( $sText ) {
 		$this->_mData['text'] = $sText;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param array|bool $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$output = '<label id="' . $this->_mId . '" ';
 		if ( $this->bUseAutoWidth ) {
@@ -44,6 +59,10 @@ class ViewFormElementLabel extends ViewFormElement {
 		return $output;
 	}
 
+	/**
+	 *
+	 * @param bool $bUseAutoWidth
+	 */
 	public function useAutoWidth( $bUseAutoWidth = true ) {
 		$this->bUseAutoWidth = $bUseAutoWidth;
 	}

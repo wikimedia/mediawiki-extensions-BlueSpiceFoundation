@@ -6,10 +6,18 @@ use Wikimedia\Rdbms\DBQueryError;
 
 class BSMigrateSettings extends LoggedUpdateMaintenance {
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function noDataToMigrate() {
 		return $this->getDB( DB_REPLICA )->tableExists( 'bs_settings' ) === false;
 	}
 
+	/**
+	 *
+	 * @var array
+	 */
 	protected $oldData = [];
 	protected function readOldData() {
 		$res = $this->getDB( DB_REPLICA )->select( 'bs_settings', '*' );
@@ -18,6 +26,10 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @var array
+	 */
 	protected $newData = [];
 	protected function convertData() {
 		$skipSettings = $this->getSkipSettings();
@@ -48,6 +60,10 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getSkipSettings() {
 		return [
 			'MW::DefaultUserImage',
@@ -73,6 +89,12 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		];
 	}
 
+	/**
+	 *
+	 * @param string $oldName
+	 * @return string
+	 * @throws Exception
+	 */
 	protected function makeNewName( $oldName ) {
 		$deviatingName = $this->fromDeviatingNames( $oldName );
 		if ( $deviatingName ) {
@@ -92,6 +114,11 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		return $newName;
 	}
 
+	/**
+	 *
+	 * @param string $oldName
+	 * @return bool|string
+	 */
 	protected function fromDeviatingNames( $oldName ) {
 		if ( $oldName === 'MW::LogoPath' ) {
 			return 'Logo';
@@ -128,12 +155,21 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $serializedValue
+	 * @return string
+	 */
 	protected function convertValue( $serializedValue ) {
 		$newValue = unserialize( $serializedValue );
 
 		return FormatJson::encode( $newValue );
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doDBUpdates() {
 		if ( $this->noDataToMigrate() ) {
 			$this->output( "bs_settings -> bs_settings3: No data to migrate" );
@@ -146,6 +182,10 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getUpdateKey() {
 		return 'bs_settings3-migration';
 	}

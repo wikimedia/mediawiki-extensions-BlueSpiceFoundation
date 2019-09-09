@@ -53,7 +53,7 @@ class EntityConfigFactory {
 	protected $entityRegistry = null;
 
 	/**
-	 * @param ExtensionAttributeBasedRegistry
+	 * @param ExtensionAttributeBasedRegistry $entityRegistry
 	 * @param Config $config
 	 */
 	public function __construct( ExtensionAttributeBasedRegistry $entityRegistry,

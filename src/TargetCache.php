@@ -39,8 +39,9 @@ abstract class TargetCache implements ITargetCache {
 
 	/**
 	 *
+	 * @param string $type
 	 * @param \Config $config
-	 * @param CacheHelper
+	 * @param CacheHelper $cacheHelper
 	 */
 	public function __construct( $type, \Config $config, CacheHelper $cacheHelper ) {
 		$this->type = $type;
@@ -89,6 +90,7 @@ abstract class TargetCache implements ITargetCache {
 	/**
 	 *
 	 * @param ITarget $target
+	 * @param string $action
 	 */
 	public function invalidateAll( $target, $action = '' ) {
 		foreach ( $this->getRegistry()->getAllKeys() as $key ) {

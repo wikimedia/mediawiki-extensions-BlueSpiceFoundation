@@ -15,6 +15,7 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	/**
 	 *
 	 * @param string &$wikitext
+	 * @param Services $services
 	 */
 	public function __construct( &$wikitext, Services $services ) {
 		parent::__construct( $wikitext );
@@ -58,6 +59,8 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	 * @param \Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
+	 * @param bool $leadingColon
+	 * @param string $separator
 	 */
 	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
 		if ( !$this->isValidInterwikiLink( $target ) ) {
@@ -90,7 +93,7 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 			return;
 		}
 
-		return parent::removeTarget( $target, $removeAllOccurrences );
+		parent::removeTarget( $target, $removeAllOccurrences );
 	}
 
 }

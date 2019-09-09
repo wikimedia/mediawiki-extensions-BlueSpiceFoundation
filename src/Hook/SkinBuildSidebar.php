@@ -45,8 +45,8 @@ abstract class SkinBuildSidebar extends Hook {
 	/**
 	 *
 	 * @param \Skin $skin
-	 * @param array $bar
-	 * @return boolean
+	 * @param array &$bar
+	 * @return bool
 	 */
 	public static function callback( \Skin $skin, &$bar ) {
 		$className = static::class;
@@ -64,7 +64,7 @@ abstract class SkinBuildSidebar extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \Skin $skin
-	 * @param array $bar
+	 * @param array &$bar
 	 */
 	public function __construct( $context, $config, $skin, &$bar ) {
 		parent::__construct( $context, $config );

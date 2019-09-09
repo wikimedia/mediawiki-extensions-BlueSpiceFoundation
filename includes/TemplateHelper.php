@@ -34,6 +34,13 @@ class BSTemplateHelper {
 	protected static $sSeparator = '.';
 	protected static $sFileExt = '.mustache';
 
+	/**
+	 *
+	 * @param string $sExtName
+	 * @param string $sFullPath
+	 * @return string
+	 * @throws BsException
+	 */
 	protected static function makeTemplateNameFromPath( $sExtName, $sFullPath ) {
 		$sFullPath = BsFileSystemHelper::normalizePath( $sFullPath );
 		$registry = Services::getInstance()->getService(

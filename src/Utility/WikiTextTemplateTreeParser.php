@@ -72,6 +72,11 @@ class WikiTextTemplateTreeParser {
 		);
 	}
 
+	/**
+	 *
+	 * @param string $wikiText
+	 * @return array
+	 */
 	protected function findMarkers( $wikiText ) {
 		$marker = [];
 		preg_replace_callback(
@@ -85,6 +90,11 @@ class WikiTextTemplateTreeParser {
 		return $marker;
 	}
 
+	/**
+	 *
+	 * @param array $markers
+	 * @param array &$result
+	 */
 	protected function resolveAndAddToResult( $markers, &$result ) {
 		foreach ( $markers as $marker ) {
 			$descriptor = [

@@ -32,6 +32,10 @@ use BlueSpice\Api\Task;
  * @package BlueSpice_Foundation
  */
 class BSApiWikiPageTasks extends BSApiTasksBase {
+	/**
+	 *
+	 * @var array
+	 */
 	protected $aTasks = [
 		'setCategories' => [
 			// 'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
@@ -193,6 +197,10 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		]
 	];
 
+	/**
+	 *
+	 * @var string[]
+	 */
 	protected $aReadTasks = [
 		'getDiscussionCount',
 		'getExplicitCategories',
@@ -214,6 +222,13 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		];
 	}
 
+	/**
+	 *
+	 * @param \stdClass $taskData
+	 * @param \stdClass $response
+	 * @param string $task
+	 * @return \stdClass
+	 */
 	protected function legacyWikiPageTaskCategory( \stdClass $taskData, $response, $task ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
@@ -422,6 +437,11 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		return $oTitle;
 	}
 
+	/**
+	 *
+	 * @param int $pageId
+	 * @return array
+	 */
 	protected function makeCategoryTaskPayload( $pageId ) {
 		$oTitle = Title::newFromID( $pageId );
 		$result = $this->task_getExplicitCategories( (object)[ 'page_id' => $pageId ], [] );

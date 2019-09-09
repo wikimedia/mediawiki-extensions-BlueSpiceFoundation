@@ -42,10 +42,10 @@ abstract class BsSettingsAfterSaveSettings extends Hook {
 
 	/**
 	 * Located in BsConfig::saveSettings. After the settings have been saved.
-	 * @param array $settings
-	 * @return boolean
+	 * @param array &$settings
+	 * @return bool
 	 */
-	public static function callback( $settings ) {
+	public static function callback( &$settings ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -58,7 +58,7 @@ abstract class BsSettingsAfterSaveSettings extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $settings
+	 * @param array &$settings
 	 */
 	public function __construct( $context, $config, &$settings ) {
 		parent::__construct( $context, $config );

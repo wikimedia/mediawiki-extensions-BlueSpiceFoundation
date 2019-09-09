@@ -45,7 +45,7 @@ abstract class UserSaveOptions extends Hook {
 	/**
 	 *
 	 * @param \User $user
-	 * @param array $options
+	 * @param array &$options
 	 * @return type
 	 */
 	public static function callback( $user, &$options ) {
@@ -64,7 +64,7 @@ abstract class UserSaveOptions extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \User $user
-	 * @param array $options
+	 * @param array &$options
 	 */
 	public function __construct( $context, $config, $user, &$options ) {
 		parent::__construct( $context, $config );

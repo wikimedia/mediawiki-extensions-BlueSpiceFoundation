@@ -7,6 +7,10 @@ trait ClippableElement {
 
 	protected $clippableContainer;
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function initializeClippableElement( array $config = [] ) {
 		if ( isset( $config['clippableContainer'] ) ) {
 			$this->setClippableContainer( $config['clippableContainer'] );
@@ -16,10 +20,18 @@ trait ClippableElement {
 		$this->setClippableElement( $clippable );
 	}
 
+	/**
+	 *
+	 * @param \OOUI\Element $clippableContainer
+	 */
 	protected function setClippableContainer( $clippableContainer ) {
 		$this->clippableContainer = $clippableContainer;
 	}
 
+	/**
+	 *
+	 * @param \OOUI\Element $clippable
+	 */
 	protected function setClippableElement( $clippable ) {
 		if ( $this->clippable && $this->clippable instanceof \OOUI\Tag ) {
 			$this->clippable->removeClasses( [ "oo-ui-clippableElement-clippable" ] );

@@ -19,6 +19,10 @@ class ViewTagErrorList extends ViewBaseElement {
 
 	protected $mSenderName;
 
+	/**
+	 *
+	 * @param ViewBaseElement|BsExtensionMW|null $sender
+	 */
 	public function __construct( $sender = null ) {
 		parent::__construct();
 		if ( $sender && ( $sender instanceof BsExtensionMW ) ) {
@@ -26,10 +30,19 @@ class ViewTagErrorList extends ViewBaseElement {
 		}
 	}
 
+	/**
+	 *
+	 * @return int
+	 */
 	public function hasEntries() {
 		return count( $this->_mItems );
 	}
 
+	/**
+	 *
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$out = '<fieldset class="bsErrorFieldset">';
 		$out .= '<legend class="bsErrorLegend">' . wfMessage( 'bs-viewtagerrorlist-legend', $this->mSenderName )->plain() . '</legend>';

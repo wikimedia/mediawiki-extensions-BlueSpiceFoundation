@@ -3,8 +3,16 @@
 namespace BlueSpice;
 
 class AdminToolFactory {
+	/**
+	 *
+	 * @var array
+	 */
 	protected $classes = [];
 
+	/**
+	 *
+	 * @param array $classes
+	 */
 	public function __construct( $classes ) {
 		$this->classes = $classes;
 	}

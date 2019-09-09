@@ -26,6 +26,12 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $oldName
+	 * @return string
+	 * @throws Exception
+	 */
 	protected function makeNewName( $oldName ) {
 		$deviatingName = $this->fromDeviatingNames( $oldName );
 		if ( $deviatingName ) {
@@ -47,6 +53,11 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		return $newName;
 	}
 
+	/**
+	 *
+	 * @param string $oldName
+	 * @return string|false
+	 */
 	protected function fromDeviatingNames( $oldName ) {
 		$newName = false;
 		\Hooks::run( 'BSMigrateUserPropertiesFromDeviatingNames', [
@@ -134,6 +145,10 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doDBUpdates() {
 		$this->readOldData();
 		$this->convertData();
@@ -142,6 +157,10 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getUpdateKey() {
 		return 'bs_userproperties-migration';
 	}

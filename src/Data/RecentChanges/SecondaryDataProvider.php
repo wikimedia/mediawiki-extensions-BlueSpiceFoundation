@@ -27,7 +27,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 
 	/**
 	 *
-	 * @param Record $dataSet
+	 * @param Record &$dataSet
 	 */
 	protected function doExtend( &$dataSet ) {
 		$rawData = $dataSet->getData();

@@ -26,20 +26,23 @@
  */
 namespace BlueSpice\Hook;
 
+use IContextSource;
+use Config;
+use User;
 use BlueSpice\Hook;
 
 abstract class UserSaveSettings extends Hook {
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
 	/**
 	 * Called directly after user preferences have been saved.
-	 * @param \User $user
-	 * @return boolean
+	 * @param User $user
+	 * @return bool
 	 */
 	public static function callback( $user ) {
 		$className = static::class;
@@ -51,6 +54,12 @@ abstract class UserSaveSettings extends Hook {
 		return $hookHandler->process();
 	}
 
+	/**
+	 *
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param User $user
+	 */
 	public function __construct( $context, $config, $user ) {
 		parent::__construct( $context, $config );
 

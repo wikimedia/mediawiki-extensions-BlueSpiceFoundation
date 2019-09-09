@@ -11,6 +11,7 @@ use BlueSpice\Services;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use BlueSpice\Permission\Lockdown\Module\Groups\ISubModule;
 use BlueSpice\Permission\Lockdown\Module;
+use BlueSpice\Permission\Lockdown\IModule;
 
 class Groups extends Module {
 
@@ -79,6 +80,7 @@ class Groups extends Module {
 	 * @param IContextSource $context
 	 * @param Services $services
 	 * @param ExtensionAttributeBasedRegistry|null $registry
+	 * @return IModule
 	 */
 	public static function getInstance( Config $config,
 		IContextSource $context, Services $services,
@@ -180,7 +182,10 @@ class Groups extends Module {
 
 	/**
 	 *
-	 * @param tring[] $groups
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param string[] $groups
 	 * @return string[]
 	 */
 	protected function getAppliedGroups( Title $title, User $user, $action, array $groups = [] ) {
@@ -245,6 +250,8 @@ class Groups extends Module {
 	/**
 	 * Collects the registered subsubModule that apply to the current user and title
 	 * relation
+	 * @param Title $title
+	 * @param User $user
 	 * @return ISubModule[]
 	 */
 	protected function getAppliedSubModules( Title $title, User $user ) {
