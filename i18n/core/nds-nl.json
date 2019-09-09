@@ -4,7 +4,7 @@
 			"Servien"
 		]
 	},
-	"bs-userbar_loginswitch_logout": "Ofmelden",
+	"bs-userbar_loginswitch_logout": "Afmelden",
 	"bs-years-duration": "{{PLURAL:$1|één jaor|$1 jaor}}",
 	"bs-months-duration": "{{PLURAL:$1|een maond|$1 maonden}}",
 	"bs-two-units-ago": "$1 en $2 elejen"
