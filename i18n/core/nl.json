@@ -81,6 +81,7 @@
 	"bs-pref-deleteduserimage": "Avatar voor verwijderde gebruiker:",
 	"bs-pref-bspinginterval": "Ping-interval (in seconden):",
 	"bs-pref-testmode": "Testmodus activeren",
+	"bs-tag-param-desc": "Waarde van het elementattribuut '$1'",
 	"bs-parser-error-invalid-namespace": "Ongeldige naamruimte: $1",
 	"bs-parser-error-invalid-title": "Ongeldige titel: $1",
 	"bs-validator-error-namespace-does-not-exist": "Naamruimte bestaat niet: $1",
@@ -96,5 +97,6 @@
 	"bs-graphicallist-action-preview": "Voorvertoning",
 	"action-wikiadmin": "Toon BlueSpice's beheerpagina's",
 	"right-wikiadmin": "Toon BlueSpice's beheerpagina's",
-	"bs-notifications-agent-anon": "anonieme gebruiker"
+	"bs-notifications-agent-anon": "anonieme gebruiker",
+	"protect-level-editor": "Alleen bewerkers en beheerders toestaan"
 }

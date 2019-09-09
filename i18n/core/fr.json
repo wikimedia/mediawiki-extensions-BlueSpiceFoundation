@@ -6,7 +6,8 @@
 			"Benjozork",
 			"Wladek92",
 			"Urhixidur",
-			"Pols12"
+			"Pols12",
+			"Thibaut120094"
 		]
 	},
 	"bluespicefoundation-desc": "Rend Médiawiki prêt pour l’entreprise",
@@ -92,7 +93,7 @@
 	"bs-graphicallist-action-close": "Fermer",
 	"bs-graphicallist-action-list": "Lister",
 	"bs-graphicallist-action-preview": "Aperçu",
-	"bs-bluespice-mediawiki": "MédiaWiki BlueSpice",
+	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "utilisé dans beaucoup de modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d’accès, de la configuration globale",
 	"right-wikiadmin": "Utilisé dans beaucoup de modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d'accès, de la configuration globale",

@@ -13,6 +13,7 @@
 	"bs-validator-set-validation-approved": "$1이(가) 성공적으로 검증되었습니다.",
 	"bs-validator-value-not-recognized": "값을 처리할 수 없습니다",
 	"bs-validator-invalid-boolean": "유효한 불리언이 아닙니다",
+	"bs-validator-invalid-float": "유효한 float가 아닙니다",
 	"bs-validator-invalid-integer": "유효한 정수가 아닙니다",
 	"bs-validator-invalid-string": "유효한 문자열이 아닙니다",
 	"bs-validator-invalid-coordinate": "유효한 좌표가 아닙니다",
