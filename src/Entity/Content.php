@@ -84,9 +84,9 @@ abstract class Content extends \BlueSpice\Entity {
 	}
 
 	/**
-	* Get the last touched timestamp
-	* @return string|boolean Last-touched timestamp, false if entity was not saved yet
-	*/
+	 * Get the last touched timestamp
+	 * @return string|bool Last-touched timestamp, false if entity was not saved yet
+	 */
 	public function getTimestampTouched() {
 		if ( !$this->exists() ) {
 			return false;
@@ -99,9 +99,9 @@ abstract class Content extends \BlueSpice\Entity {
 	}
 
 	/**
-	* Get the oldest revision timestamp of this entity
-	* @return string|boolean Created timestamp, false if entity was not saved yet
-	*/
+	 * Get the oldest revision timestamp of this entity
+	 * @return string|bool Created timestamp, false if entity was not saved yet
+	 */
 	public function getTimestampCreated() {
 		if ( !$this->exists() ) {
 			return false;
@@ -115,6 +115,8 @@ abstract class Content extends \BlueSpice\Entity {
 
 	/**
 	 * Saves the current Entity
+	 * @param User|null $oUser
+	 * @param array $aOptions
 	 * @return Status
 	 */
 	public function save( User $oUser = null, $aOptions = [] ) {
@@ -128,6 +130,7 @@ abstract class Content extends \BlueSpice\Entity {
 
 	/**
 	 * Gets the Entity attributes formated for the api
+	 * @param array $data
 	 * @return array
 	 */
 	public function getFullData( $data = [] ) {
@@ -142,7 +145,7 @@ abstract class Content extends \BlueSpice\Entity {
 
 	/**
 	 * Checks, if the current Entity exists in the Wiki
-	 * @return boolean
+	 * @return bool
 	 */
 	public function exists() {
 		if ( !parent::exists() ) {

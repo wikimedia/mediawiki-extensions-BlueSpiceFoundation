@@ -38,8 +38,8 @@ abstract class ParserFirstCallInit extends Hook {
 
 	/**
 	 *
-	 * @param \Parser $parser
-	 * @return boolean
+	 * @param \Parser &$parser
+	 * @return bool
 	 */
 	public static function callback( &$parser ) {
 		$className = static::class;
@@ -55,7 +55,7 @@ abstract class ParserFirstCallInit extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \Parser $parser
+	 * @param \Parser &$parser
 	 */
 	public function __construct( $context, $config, &$parser ) {
 		parent::__construct( $context, $config );

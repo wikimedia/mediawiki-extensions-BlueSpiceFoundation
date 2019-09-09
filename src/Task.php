@@ -179,7 +179,7 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	abstract protected function doExecute();
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function shouldRunUpdates() {
 		return false;

@@ -29,6 +29,7 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 	/**
 	 *
 	 * @param IDatabase $db
+	 * @param Schema $schema
 	 */
 	public function __construct( IDatabase $db, Schema $schema ) {
 		$this->db = $db;
@@ -106,7 +107,7 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param array $conds
+	 * @param array &$conds
 	 * @param Filter $filter
 	 */
 	protected function appendPreFilterCond( &$conds, Filter $filter ) {

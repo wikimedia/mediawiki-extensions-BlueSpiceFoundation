@@ -34,13 +34,15 @@ class CategoryLinksHelper extends InternalLinksHelper {
 	 * @param \Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
+	 * @param bool $leadingColon
+	 * @param string $separator
 	 */
 	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
 		if ( $target->getNamespace() !== NS_CATEGORY ) {
 			return;
 		}
 
-		return parent::addTarget( $target, false, false, false, "\n" );
+		parent::addTarget( $target, false, false, false, "\n" );
 	}
 
 	/**
@@ -52,6 +54,6 @@ class CategoryLinksHelper extends InternalLinksHelper {
 		if ( $target->getNamespace() !== NS_CATEGORY ) {
 			return;
 		}
-		return parent::removeTarget( $target, $removeAllOccurrences );
+		parent::removeTarget( $target, $removeAllOccurrences );
 	}
 }

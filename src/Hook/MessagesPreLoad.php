@@ -53,9 +53,9 @@ abstract class MessagesPreLoad extends Hook {
 	/**
 	 *
 	 * @param string $title
-	 * @param string $message
+	 * @param string &$message
 	 * @param string $code
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $title, &$message, $code ) {
 		$className = static::class;
@@ -74,7 +74,7 @@ abstract class MessagesPreLoad extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param string $title
-	 * @param string $message
+	 * @param string &$message
 	 * @param string $code
 	 */
 	public function __construct( $context, $config, $title, &$message, $code ) {

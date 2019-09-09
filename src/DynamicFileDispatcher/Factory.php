@@ -19,7 +19,7 @@ class Factory {
 	 *
 	 * @param Params $params
 	 * @param \IContextSource|null $context
-	 * @param boolean $secure - set to false when internal use, to improve
+	 * @param bool $secure - set to false when internal use, to improve
 	 * performance
 	 * @return Module
 	 * @throws \MWException
@@ -60,6 +60,11 @@ class Factory {
 		return $instance;
 	}
 
+	/**
+	 *
+	 * @param string $moduleName
+	 * @return Module|false
+	 */
 	protected function getModule( $moduleName ) {
 		$modules = $this->getModules();
 		if ( !isset( $modules[$moduleName] ) ) {
@@ -68,6 +73,10 @@ class Factory {
 		return $modules[$moduleName];
 	}
 
+	/**
+	 *
+	 * @return Module[]
+	 */
 	protected function getModules() {
 		if ( $this->modules ) {
 			return $this->modules;

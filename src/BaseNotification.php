@@ -21,7 +21,16 @@ class BaseNotification implements \BlueSpice\INotification {
 	 */
 	protected $agent;
 
+	/**
+	 *
+	 * @var array
+	 */
 	protected $audience = [];
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $extra = [];
 
 	/**
@@ -42,6 +51,13 @@ class BaseNotification implements \BlueSpice\INotification {
 	 */
 	protected $secondaryLinks = [];
 
+	/**
+	 *
+	 * @param string $key
+	 * @param \User $agent
+	 * @param \Title|null $title
+	 * @param array $extraParams
+	 */
 	public function __construct( $key, \User $agent, $title = null, $extraParams = [] ) {
 		$this->key = $key;
 		$this->setAgent( $agent );
@@ -92,7 +108,7 @@ class BaseNotification implements \BlueSpice\INotification {
 
 	/**
 	 *
-	 * @param type boolean
+	 * @param bool $value
 	 */
 	protected function setImmediateEmail( $value = true ) {
 		$this->immediateEmail = $value;
@@ -102,7 +118,7 @@ class BaseNotification implements \BlueSpice\INotification {
 	 * Whether mail for this notification should
 	 * be sent immediately regardless of user settings
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function sendImmediateEmail() {
 		return $this->immediateEmail;
@@ -120,7 +136,7 @@ class BaseNotification implements \BlueSpice\INotification {
 	 * Whether job queue should be used
 	 * to send this notification
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function useJobQueue() {
 		return $this->useJobQueue;
@@ -204,6 +220,7 @@ class BaseNotification implements \BlueSpice\INotification {
 	 * Returns real name of the user (defaults to agent),
 	 * if available, otherwise username.
 	 *
+	 * @param \User|null $user
 	 * @return string
 	 */
 	protected function getUserRealName( $user = null ) {

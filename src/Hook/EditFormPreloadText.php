@@ -44,9 +44,9 @@ abstract class EditFormPreloadText extends Hook {
 
 	/**
 	 *
-	 * @param string $text
-	 * @param \Title $title
-	 * @return boolean
+	 * @param string &$text
+	 * @param \Title &$title
+	 * @return bool
 	 */
 	public static function callback( &$text, &$title ) {
 		$className = static::class;
@@ -63,8 +63,8 @@ abstract class EditFormPreloadText extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param string $text
-	 * @param \Title $title
+	 * @param string &$text
+	 * @param \Title &$title
 	 */
 	public function __construct( $context, $config, &$text, &$title ) {
 		parent::__construct( $context, $config );

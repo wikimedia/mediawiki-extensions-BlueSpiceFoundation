@@ -51,7 +51,7 @@ class ActionLogger {
 	 * @param string $action
 	 * @param array $params
 	 * @param array $options
-	 * @param boolean $publish Whether to list in recent changes or not
+	 * @param bool $publish Whether to list in recent changes or not
 	 * @return int
 	 */
 	public function log( $action, $params, $options = [], $publish = false ) {
@@ -103,6 +103,11 @@ class ActionLogger {
 		return $entryId;
 	}
 
+	/**
+	 *
+	 * @param string $subtype
+	 * @return \ManualLogEntry
+	 */
 	protected function newLogEntry( $subtype ) {
 		return new \ManualLogEntry( $this->type, $subtype );
 	}

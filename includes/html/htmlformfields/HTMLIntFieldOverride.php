@@ -1,6 +1,12 @@
 <?php
 
 class HTMLIntFieldOverride extends HTMLIntField {
+	/**
+	 *
+	 * @param int $value
+	 * @param array $alldata
+	 * @return bool
+	 */
 	public function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 
@@ -19,6 +25,11 @@ class HTMLIntFieldOverride extends HTMLIntField {
 		return true;
 	}
 
+	/**
+	 *
+	 * @param int $value
+	 * @return \BlueSpice\Html\OOUI\NumberInputWidget
+	 */
 	public function getInputOOUI( $value ) {
 		$attr = [
 			'value' => $value

@@ -17,6 +17,10 @@ class UserProfileImage extends Module {
 	 */
 	protected $user = null;
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getParamDefinition() {
 		return array_merge( parent::getParamDefinition(), [
 			static::USERNAME => [

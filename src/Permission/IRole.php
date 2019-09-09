@@ -22,13 +22,13 @@ interface IRole {
 
 	/**
 	 * Adds single permission to the role
-	 * @param string
+	 * @param string $permission
 	 */
 	public function addPermission( $permission );
 
 	/**
 	 * Removes single permission from the role
-	 * @param string
+	 * @param string $permission
 	 */
 	public function removePermission( $permission );
 

@@ -115,7 +115,7 @@ abstract class Filter {
 	/**
 	 *
 	 * @param \BlueSpice\Data\Record $dataSet
-	 * @return boolean
+	 * @return bool
 	 */
 	public function matches( $dataSet ) {
 		if ( $this->applied ) {
@@ -137,7 +137,7 @@ abstract class Filter {
 
 	/**
 	 *
-	 * @param boolean $applied
+	 * @param bool $applied
 	 */
 	public function setApplied( $applied = true ) {
 		$this->applied = $applied;
@@ -160,9 +160,18 @@ abstract class Filter {
 		return $filterObjects;
 	}
 
+	/**
+	 *
+	 * @param stdClass|array $filter
+	 * @return Filter
+	 */
 	protected static function makeFilter( $filter ) {
 		return FilterFactory::newFromArray( $filter );
 	}
 
+	/**
+	 * @param IRecord $dataSet
+	 * @return bool
+	 */
 	abstract protected function doesMatch( $dataSet );
 }

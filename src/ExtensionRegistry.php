@@ -48,7 +48,8 @@ class ExtensionRegistry {
 
 	/**
 	 *
-	 * @param name $config
+	 * @param \ExtensionRegistry $extensionRegistry
+	 * @param \Config $config
 	 */
 	public function __construct( $extensionRegistry, $config ) {
 		$this->extensionRegistry = $extensionRegistry;
@@ -94,6 +95,13 @@ class ExtensionRegistry {
 		return true;
 	}
 
+	/**
+	 *
+	 * @param string $name
+	 * @param array $definition
+	 * @return array
+	 * @throws \BsException
+	 */
 	protected function makeExtensionDefinition( $name, $definition ) {
 		$allThings = $this->extensionRegistry->getAllThings();
 

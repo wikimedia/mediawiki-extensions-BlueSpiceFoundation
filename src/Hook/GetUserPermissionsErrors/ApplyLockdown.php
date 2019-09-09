@@ -14,7 +14,7 @@ class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 	 * Checks if requested action belongs to a role
 	 * that is explicitly granted only to some groups
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doProcess() {
 		$this->result = $this->getLockdown()->getLockState( $this->action )->getMessage();

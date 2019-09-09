@@ -45,7 +45,7 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 
 	/**
 	 *
-	 * @param boolean $hasToExist
+	 * @param bool $hasToExist
 	 */
 	public function setHasToExist( $hasToExist ) {
 		$this->hasToExist = $hasToExist;
@@ -59,6 +59,10 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 		$this->aBlacklist = $aBlacklist;
 	}
 
+	/**
+	 *
+	 * @param mixed $value
+	 */
 	public function doValidation( $value ) {
 		// TODO: finalize implementation
 		if ( $this->hasToExist && !MWNamespace::exists( $value ) ) {

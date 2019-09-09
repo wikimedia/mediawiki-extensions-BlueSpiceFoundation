@@ -49,13 +49,17 @@ class RoleManager {
 	 */
 	protected $predefinedRoles;
 
+	/**
+	 *
+	 * @var IRole[]
+	 */
 	protected $roles = [];
 
 	/**
 	 * Manager constructor.
-	 * @param array $groupPermission
-	 * @param array $roleGroups
-	 * @param boolean $roleSystemEnabled
+	 * @param array &$groupPermission
+	 * @param array &$roleGroups
+	 * @param bool &$roleSystemEnabled
 	 * @param array $predefinedRoles
 	 * @param PermissionRegistry $permissionRegistry
 	 * @param RoleFactory $roleFactory
@@ -164,7 +168,7 @@ class RoleManager {
 	/**
 	 * Register new role
 	 *
-	 * @param IRole
+	 * @param IRole $role
 	 * @param array $groups Groups to assign the role to
 	 */
 	public function registerRole( IRole $role, $groups = [] ) {
@@ -253,8 +257,8 @@ class RoleManager {
 	/**
 	 * Returns Role object based on name
 	 *
-	 * @param string $sName
-	 * @return \BlueSpice\Permission\Role\IRole
+	 * @param IRole $role
+	 * @return IRole|null
 	 */
 	public function getRole( $role ) {
 		if ( $this->roleExists( $role ) ) {
@@ -279,10 +283,19 @@ class RoleManager {
 		return array_unique( $roles );
 	}
 
+	/**
+	 *
+	 * @param IRole $roleObject
+	 */
 	protected function addRole( $roleObject ) {
 		$this->roles[ $roleObject->getName() ] = $roleObject;
 	}
 
+	/**
+	 *
+	 * @param string $roleName
+	 * @return bool
+	 */
 	protected function roleExists( $roleName ) {
 		if ( isset( $this->roles[ $roleName ] ) ) {
 			return true;
@@ -290,6 +303,10 @@ class RoleManager {
 		return false;
 	}
 
+	/**
+	 *
+	 * @param string $roleName
+	 */
 	protected function removeRole( $roleName ) {
 		if ( $this->roleExists( $roleName ) ) {
 			unset( $this->roles[ $roleName ] );
@@ -306,6 +323,10 @@ class RoleManager {
 		return array_keys( $this->roles );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getRoleNamesAndPermissions() {
 		$rolesAndPermissions = [];
 		foreach ( $this->roles as $roleName => $roleObject ) {
@@ -332,7 +353,7 @@ class RoleManager {
 			foreach ( $rolesAssigned as $role ) {
 				if ( in_array( $role, $checked ) ) {
 					continue;
-				};
+				}
 
 				$checked[] = $role;
 				if ( $this->isRolePredefined( $role ) === false ) {
@@ -343,6 +364,11 @@ class RoleManager {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $roleName
+	 * @return bool
+	 */
 	protected function isRolePredefined( $roleName ) {
 		if ( isset( $this->predefinedRoles[$roleName] ) ) {
 			return true;

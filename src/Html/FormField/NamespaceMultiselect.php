@@ -8,6 +8,11 @@ class NamespaceMultiselect extends \HTMLFormField {
 	const OPTION_ONLY_CUSTOM = 'only-custom-namespaces';
 	const OPTION_BLACKLIST = 'namespace-blacklist';
 
+	/**
+	 *
+	 * @param string $value
+	 * @return string
+	 */
 	public function getInputHTML( $value ) {
 		$this->mParent->getOutput()->addModules( 'ext.bluespice.html.formfields' );
 
@@ -31,6 +36,10 @@ class NamespaceMultiselect extends \HTMLFormField {
 		return $container . $assocField;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getDefaultOptions() {
 		return [
 			static::OPTION_HIDE_TALK => false,
@@ -40,10 +49,18 @@ class NamespaceMultiselect extends \HTMLFormField {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getClassString() {
 		return "{$this->mClass} bs-html-formfield-namespacemultiselect";
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getStoreData() {
 		$options = $this->getOptions();
 		$availableNamespaces = [];
@@ -88,6 +105,10 @@ class NamespaceMultiselect extends \HTMLFormField {
 		return \FormatJson::encode( $availableNamespaces );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getOptions() {
 		$options = parent::getOptions();
 		if ( $options === null ) {

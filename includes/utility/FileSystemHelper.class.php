@@ -65,8 +65,9 @@ class BsFileSystemHelper {
 
 	/**
 	 * Saves a file to a subdirectory of BS_CACHE_DIR
-	 * @param string $sSubDirName
+	 * @param string $sFileName
 	 * @param mixed $data
+	 * @param string $sSubDirName
 	 * @return Status
 	 */
 	public static function saveToCacheDirectory( $sFileName, $data, $sSubDirName = '' ) {
@@ -89,8 +90,9 @@ class BsFileSystemHelper {
 
 	/**
 	 * Saves a file to a subdirectory of BS_DATA_DIR
-	 * @param string $sSubDirName
+	 * @param string $sFileName
 	 * @param mixed $data
+	 * @param string $sSubDirName
 	 * @return Status
 	 */
 	public static function saveToDataDirectory( $sFileName, $data, $sSubDirName = '' ) {
@@ -187,7 +189,7 @@ class BsFileSystemHelper {
 	 * Get a file object from a repo by the name of the repo
 	 * @param String $sFileName
 	 * @param String $sRepoName
-	 * @return boolean|\File
+	 * @return bool|\File
 	 */
 	public static function getFileFromRepoName( $sFileName, $sRepoName ) {
 		$oFileRepo = RepoGroup::singleton()->getRepoByName( $sRepoName );
@@ -243,9 +245,10 @@ class BsFileSystemHelper {
 
 	/**
 	 * Copies a file defined by name from a source to a destination folder
-	 * @param String $sFileName
-	 * @param String $sSource
-	 * @param String $sDestination
+	 * @param string $sFileName
+	 * @param string $sSource
+	 * @param string $sDestination
+	 * @param bool $bOverwrite
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function copyFile( $sFileName, $sSource, $sDestination, $bOverwrite = true ) {
@@ -299,7 +302,7 @@ class BsFileSystemHelper {
 	 * @param string $sFolderName
 	 * @param string $sSource
 	 * @param string $sDestination
-	 * @param boolean $bOverwrite
+	 * @param bool $bOverwrite
 	 * @return Status
 	 */
 	public static function copyFolder( $sFolderName, $sSource, $sDestination, $bOverwrite = true ) {
@@ -364,7 +367,7 @@ class BsFileSystemHelper {
 	 * Rename a folder
 	 * @param String $sSource
 	 * @param String $sDestination
-	 * @param boolean $bOverwrite
+	 * @param bool $bOverwrite
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function renameFolder( $sSource, $sDestination, $bOverwrite = true ) {
@@ -426,7 +429,8 @@ class BsFileSystemHelper {
 
 	/**
 	 * Deletes a folder with all its content
-	 * @param String $sDir
+	 * @param string $sDir
+	 * @param bool $bIfExists
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function deleteFolder( $sDir, $bIfExists = false ) {
@@ -585,6 +589,7 @@ class BsFileSystemHelper {
 	/**
 	 * Do a proper traversal check if $sPath exists, a string check otherwise
 	 * @param string $sPath Filepath
+	 * @param bool $bIsAbsolute
 	 * @return bool
 	 */
 	public static function hasTraversal( $sPath, $bIsAbsolute = false ) {
@@ -650,6 +655,11 @@ class BsFileSystemHelper {
 		':' => '_COLON_'
 	];
 
+	/**
+	 *
+	 * @param string $sFileName
+	 * @return string
+	 */
 	protected static function makeTmpFileName( $sFileName ) {
 		$sTmpFileName = $sFileName;
 		foreach ( self::$aFSCharMap as $search => $replace ) {
@@ -658,6 +668,11 @@ class BsFileSystemHelper {
 		return $sTmpFileName;
 	}
 
+	/**
+	 *
+	 * @param string $sTmpFileName
+	 * @return string
+	 */
 	protected static function restoreFileName( $sTmpFileName ) {
 		$sFileName = $sTmpFileName;
 		foreach ( self::$aFSCharMap as $replace => $search ) {
@@ -693,11 +708,11 @@ class BsFileSystemHelper {
 	 * @global FileRepo $wgLocalFileRepo
 	 * @global User $wgUser
 	 * @param string $sFilename
-	 * @param boolean $bDeleteSrc
+	 * @param bool $bDeleteSrc
 	 * @param string $sComment
 	 * @param string $sPageText
-	 * @param boolean $bWatch
-	 * @param boolean $bIgnoreWarnings
+	 * @param bool $bWatch
+	 * @param bool $bIgnoreWarnings
 	 * @return Status
 	 */
 	public static function uploadLocalFile( $sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false, $bIgnoreWarnings = true ) {

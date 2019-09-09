@@ -34,31 +34,60 @@ class ViewBaseForm extends ViewBaseElement {
 		$this->_mAutoElement = 'form';
 	}
 
+	/**
+	 *
+	 * @param bool $state
+	 * @return ViewBaseForm
+	 */
 	public function renderAsExtFormPanel( $state = true ) {
 		$this->_mRenderAsExt = $state;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $url
+	 * @return ViewBaseForm
+	 */
 	public function setActionUrl( $url ) {
 		$this->_mActionUrl = $url;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $method
+	 * @return ViewBaseForm
+	 */
 	public function setMethod( $method ) {
 		$this->_mMethod = $method;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $enc
+	 * @return ViewBaseForm
+	 */
 	public function setEnctype( $enc ) {
 		$this->_mEnctype = $enc;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $url
+	 * @return ViewBaseForm
+	 */
 	public function setValidationUrl( $url ) {
 		$this->_mValidationUrl = $url;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getAutoElementOpener() {
 		$enctype = empty( $this->_mEnctype ) ? '' : ( ' enctype="' . $this->_mEnctype . '"' );
 		if ( $this->_mRenderAsExt ) {

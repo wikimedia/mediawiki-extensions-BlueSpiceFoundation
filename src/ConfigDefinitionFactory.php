@@ -51,6 +51,10 @@ class ConfigDefinitionFactory {
 		return array_keys( $this->getConfigDefinitions() );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getConfigDefinitions() {
 		if ( $this->configDefinitions ) {
 			return $this->configDefinitions;

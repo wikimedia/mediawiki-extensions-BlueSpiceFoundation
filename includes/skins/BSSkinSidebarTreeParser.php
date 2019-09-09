@@ -24,6 +24,7 @@ class BSSkinSidebarTreeParser {
 	 *
 	 * @param BaseTemplate $skinTemplate
 	 * @param string $wikiText
+	 * @param string $rootNodeId
 	 */
 	public function __construct( $skinTemplate, $wikiText = '', $rootNodeId = 'SIDEBAR' ) {
 		$this->skinTemplate = $skinTemplate;
@@ -102,6 +103,11 @@ class BSSkinSidebarTreeParser {
 		return trim( $nodeValue );
 	}
 
+	/**
+	 *
+	 * @param string $nodeValue
+	 * @return \HashConfig
+	 */
 	protected function makeConfigFromNodeValue( $nodeValue ) {
 		$parts = explode( '|', $nodeValue );
 		$target = $parts[0];

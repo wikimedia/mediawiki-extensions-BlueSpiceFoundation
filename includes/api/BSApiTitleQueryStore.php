@@ -271,6 +271,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		return $aData;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		$aParams = parent::getAllowedParams();
 		$aParams['options'] = [
@@ -282,6 +286,15 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		return $aParams;
 	}
 
+	/**
+	 * Using the settings determine the value for the given parameter
+	 *
+	 * @param string $paramName Parameter name
+	 * @param array|mixed $paramSettings Default value or an array of settings
+	 *  using PARAM_* constants.
+	 * @param bool $parseLimit Whether to parse and validate 'limit' parameters
+	 * @return mixed Parameter value
+	 */
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters

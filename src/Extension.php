@@ -47,6 +47,12 @@ abstract class Extension extends Context implements JsonSerializable {
 		return $this->getInfo();
 	}
 
+	/**
+	 *
+	 * @param array $definition
+	 * @param IContextSource $context
+	 * @param Config $config
+	 */
 	public function __construct( array $definition, IContextSource $context, Config $config ) {
 		$this->initDataFromDefinition( $definition );
 		parent::__construct( $context, $config );

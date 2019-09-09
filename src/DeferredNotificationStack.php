@@ -12,6 +12,7 @@ class DeferredNotificationStack {
 
 	/**
 	 * DeferredNotificationStack constructor.
+	 * @param \Webrequest $request
 	 */
 	public function __construct( $request ) {
 		$this->request = $request;

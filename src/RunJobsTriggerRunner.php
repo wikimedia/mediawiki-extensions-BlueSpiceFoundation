@@ -100,12 +100,22 @@ class RunJobsTriggerRunner {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $regKey
+	 * @return bool
+	 */
 	protected function shouldRunCurrentHandler( $regKey ) {
 		return $this->runConditionChecker->shouldRun(
 			$this->currentTriggerHandler, $regKey
 		);
 	}
 
+	/**
+	 *
+	 * @param string $regKey
+	 * @throws \Exception
+	 */
 	protected function checkHandlerInterface( $regKey ) {
 		$doesImplementInterface =
 			$this->currentTriggerHandler instanceof IRunJobsTriggerHandler;

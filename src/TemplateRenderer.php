@@ -171,6 +171,10 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		return $args;
 	}
 
+	/**
+	 *
+	 * @return string|false
+	 */
 	protected function getFromCache() {
 		$cacheKey = $this->getCacheKey();
 		if ( !$cacheKey ) {
@@ -191,10 +195,18 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		return isset( static::$cache[$cacheKey] );
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function getCacheKey() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return int
+	 */
 	protected function getCacheExpiryTime() {
 		// 24h - max
 		return 60 * 1440;
@@ -203,7 +215,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	/**
 	 *
 	 * @param string $content
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function appendCache( $content ) {
 		$cacheKey = $this->getCacheKey();
@@ -221,7 +233,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 
 	/**
 	 * Invalidates the cache entry for this renderer
-	 * @return boolean
+	 * @return bool
 	 */
 	public function invalidate() {
 		$cacheKey = $this->getCacheKey();

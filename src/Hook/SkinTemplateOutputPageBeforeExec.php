@@ -44,9 +44,9 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 
 	/**
 	 *
-	 * @param \SkinTemplate $skin
-	 * @param \QuickTemplate template
-	 * @return boolean
+	 * @param \SkinTemplate &$skin
+	 * @param \QuickTemplate &$template
+	 * @return bool
 	 */
 	public static function callback( &$skin, &$template ) {
 		$className = static::class;
@@ -63,8 +63,8 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \SkinTemplate $skin
-	 * @param \QuickTemplate template
+	 * @param \SkinTemplate &$skin
+	 * @param \QuickTemplate &$template
 	 */
 	public function __construct( $context, $config, &$skin, &$template ) {
 		parent::__construct( $context, $config );

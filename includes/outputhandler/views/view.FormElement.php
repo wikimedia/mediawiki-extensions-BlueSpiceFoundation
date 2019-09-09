@@ -28,31 +28,61 @@ class ViewFormElement extends ViewBaseElement {
 	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mValue = '';
 
+	/**
+	 *
+	 * @param string $label
+	 * @return ViewFormElement
+	 */
 	public function setLabel( $label ) {
 		$this->_mLabel = $label;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $separator
+	 * @return ViewFormElement
+	 */
 	public function setLabelSeparator( $separator ) {
 		$this->_mLabelSeparator = $separator;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $name
+	 * @return ViewFormElement
+	 */
 	public function setName( $name ) {
 		$this->_mName = $name;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param string $type
+	 * @return ViewFormElement
+	 */
 	public function setType( $type ) {
 		$this->_mType = $type;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param mixed $value
+	 * @return ViewFormElement
+	 */
 	public function setValue( $value ) {
 		$this->_mValue = $value;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		return '';
 	}

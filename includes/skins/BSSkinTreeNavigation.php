@@ -30,6 +30,9 @@ abstract class BSSkinTreeNavigation {
 		return $this->mSkinTemplate;
 	}
 
+	/**
+	 * @return string
+	 */
 	abstract protected function getContainerID();
 
 	/**
@@ -85,10 +88,18 @@ abstract class BSSkinTreeNavigation {
 		] ) );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getTreeId() {
 		return $this->getContainerID() . '-tree';
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getPathsToExpand() {
 		$webRequest = $this->getSkinTemplate()->getSkin()->getRequest();
 		$cookie = $webRequest->getCookie( $this->getTreeId() );

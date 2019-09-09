@@ -58,6 +58,7 @@ class TaskFactory {
 	 *
 	 * @param string $key
 	 * @param Context $context
+	 * @param IPermissionChecker|null $permissionChecker
 	 * @return ITask
 	 */
 	public function get( $key, Context $context, IPermissionChecker $permissionChecker = null ) {

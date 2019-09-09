@@ -63,10 +63,10 @@ abstract class BSApiTasksBaseAfterExecuteTask extends Hook {
 	 * Located in BSApiTasksBase::execute. After the requested task was called.
 	 * @param \BSApiTasksBase $taskApi
 	 * @param string $taskKey
-	 * @param \stdClass $result
+	 * @param \stdClass &$result
 	 * @param \stdClass $taskData
 	 * @param array $params
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $taskApi, $taskKey, &$result, $taskData, $params ) {
 		$className = static::class;
@@ -87,7 +87,7 @@ abstract class BSApiTasksBaseAfterExecuteTask extends Hook {
 	 * @param \Config $config
 	 * @param \BSApiTasksBase $taskApi
 	 * @param string $taskKey
-	 * @param \stdClass $result
+	 * @param \stdClass &$result
 	 * @param \stdClass $taskData
 	 * @param array $params
 	 */

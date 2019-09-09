@@ -7,6 +7,10 @@ use BlueSpice\Html\FormField\GroupMultiSelect;
 
 abstract class GroupList extends \BlueSpice\ConfigDefinition {
 
+	/**
+	 *
+	 * @return GroupMultiSelect
+	 */
 	public function getHtmlFormField() {
 		return new GroupMultiSelect( [
 			'parent' => new HTMLForm( [] ),
@@ -18,6 +22,10 @@ abstract class GroupList extends \BlueSpice\ConfigDefinition {
 		] );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getBlacklist() {
 		return [];
 	}

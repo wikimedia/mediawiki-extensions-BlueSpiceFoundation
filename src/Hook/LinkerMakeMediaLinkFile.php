@@ -63,10 +63,10 @@ abstract class LinkerMakeMediaLinkFile extends Hook {
 	/**
 	 * @param \Title $title
 	 * @param \File $file
-	 * @param string $html
-	 * @param array $attribs
-	 * @param string $ret
-	 * @return boolean Always true to keep hook running
+	 * @param string &$html
+	 * @param array &$attribs
+	 * @param string &$ret
+	 * @return bool Always true to keep hook running
 	 */
 	public static function callback( \Title $title, $file, &$html, &$attribs, &$ret ) {
 		$className = static::class;
@@ -88,9 +88,9 @@ abstract class LinkerMakeMediaLinkFile extends Hook {
 	 * @param \Config $config
 	 * @param \Title $title
 	 * @param \File $file
-	 * @param string $html
-	 * @param array $attribs
-	 * @param string $ret
+	 * @param string &$html
+	 * @param array &$attribs
+	 * @param string &$ret
 	 */
 	public function __construct( $context, $config, \Title $title, $file, &$html, &$attribs, &$ret ) {
 		parent::__construct( $context, $config );

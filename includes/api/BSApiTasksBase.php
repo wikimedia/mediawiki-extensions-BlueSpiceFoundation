@@ -355,6 +355,15 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		];
 	}
 
+	/**
+	 * Using the settings determine the value for the given parameter
+	 *
+	 * @param string $paramName Parameter name
+	 * @param array|mixed $paramSettings Default value or an array of settings
+	 *  using PARAM_* constants.
+	 * @param bool $parseLimit Whether to parse and validate 'limit' parameters
+	 * @return mixed Parameter value
+	 */
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
@@ -369,7 +378,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	/**
 	 * Returns the basic description for this module
-	 * @return type
+	 * @return array
 	 */
 	public function getDescription() {
 		return [
@@ -379,7 +388,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	/**
 	 * Returns the basic example
-	 * @return type
+	 * @return array
 	 */
 	public function getExamples() {
 		$aTaskNames = $this->oTasksSpec->getTaskNames();
@@ -391,7 +400,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	/**
 	 *
 	 * @param string $sTask
-	 * @return boolean null if requested task not in list
+	 * @return bool null if requested task not in list
 	 * true if allowed
 	 * false if not found in permission table of current user -> set in permission manager, group based
 	 */
@@ -506,6 +515,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	/**
 	 * @see BSApiTasksBase::getWikiPage
+	 * @return bool
 	 */
 	public function canUseWikiPage() {
 		if ( $this->getWikiPage() === null ) {
@@ -547,6 +557,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function makeTaskHelpMessages() {
 		$aMessages = [];
 		$aUrlParams = [
@@ -576,6 +590,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		return $aMessages;
 	}
 
+	/**
+	 *
+	 * @param string $sTaskName
+	 */
 	protected function returnTaskDataSchema( $sTaskName ) {
 		$this->getResult()->addValue(
 			null,
@@ -584,6 +602,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		);
 	}
 
+	/**
+	 *
+	 * @param string $sTaskName
+	 */
 	protected function returnTaskDataExamples( $sTaskName ) {
 		$this->getResult()->addValue(
 			null,

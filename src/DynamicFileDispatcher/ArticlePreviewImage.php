@@ -10,6 +10,10 @@ class ArticlePreviewImage extends Module {
 	const WIDTH = 'width';
 	const HEIGHT = 'height';
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getParamDefinition() {
 		return array_merge( parent::getParamDefinition(), [
 			static::TITLETEXT => [

@@ -6,6 +6,7 @@ namespace BlueSpice;
 
 use LightnCandy;
 use RuntimeException;
+use Message;
 use MessageLocalizer;
 use RequestContext;
 
@@ -51,9 +52,12 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 	}
 
 	/**
-	 * * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
+	 * Get a Message object with context set
+	 * Parameters are the same as wfMessage()
+	 *
+	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
 	 *   or a MessageSpecifier.
-	 * @param mixed $params,... Normal message parameters
+	 * @param mixed $args,...
 	 * @return Message
 	 */
 	public function msg( $key ) {

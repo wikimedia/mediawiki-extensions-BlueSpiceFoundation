@@ -25,6 +25,10 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 		return $this->makePageNodes( $oParent, $sQuery, $aOptions );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'node' => [
@@ -146,7 +150,7 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 
 	/**
 	 *
-	 * @param stdClass[] $aDataSets
+	 * @param stdClass[] &$aDataSets
 	 * @param stdClass $row
 	 * @param Title|null $oParent
 	 * @return void

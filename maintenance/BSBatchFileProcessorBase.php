@@ -63,8 +63,8 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	 * this for non-error output
 	 *
 	 * BSMaintenance: Public to allow hook callbacks to write output.
-	 * @param $err String: the error to display
-	 * @param $die Int: if > 0, go ahead and die out using this int as the code
+	 * @param string $err String: the error to display
+	 * @param int $die Int: if > 0, go ahead and die out using this int as the code
 	 */
 	public function error( $err, $die = 0 ) {
 		$this->aErrors[] = $err;

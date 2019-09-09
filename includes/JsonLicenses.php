@@ -15,12 +15,23 @@ class JsonLicenses extends Licenses {
 		parent::__construct( [ 'fieldname' => 'JsonLicenses' ] );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getJsonOutput() {
 		$this->json[] = $this->outputJsonOption( wfMessage( 'nolicense' )->text(), '' );
 		$this->makeJson( $this->getLicenses() );
 		return json_encode( [ 'items' => $this->json ] );
 	}
 
+	/**
+	 *
+	 * @param string $text
+	 * @param string $value
+	 * @param int $depth
+	 * @return array
+	 */
 	protected function outputJsonOption( $text, $value, $depth = 0 ) {
 		return [
 			'text' => $text,
@@ -29,6 +40,11 @@ class JsonLicenses extends Licenses {
 		];
 	}
 
+	/**
+	 *
+	 * @param array $tagset
+	 * @param int $depth
+	 */
 	protected function makeJson( $tagset, $depth = 0 ) {
 		foreach ( $tagset as $key => $val ) {
 			if ( is_array( $val ) ) {

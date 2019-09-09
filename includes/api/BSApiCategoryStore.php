@@ -26,6 +26,11 @@
  */
 class BSApiCategoryStore extends BSApiExtJSStoreBase {
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @return array
+	 */
 	protected function makeData( $sQuery = '' ) {
 		// $sOptions will be used... maybe
 		$oResult = new stdClass();

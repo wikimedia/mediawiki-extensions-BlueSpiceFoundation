@@ -18,6 +18,7 @@ class RoleFactory {
 	/**
 	 *
 	 * @param array $roleCallbacks
+	 * @param PermissionRegistry $permissionRegistry
 	 */
 	public function __construct( $roleCallbacks, $permissionRegistry ) {
 		$this->roleCallbacks = $roleCallbacks;

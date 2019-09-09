@@ -32,6 +32,11 @@ class NotificationManager {
 	 */
 	protected $config;
 
+	/**
+	 *
+	 * @param ExtensionAttributeBasedRegistry $regFuncRegistry
+	 * @param \Config $config
+	 */
 	public function __construct( $regFuncRegistry, $config ) {
 		$this->notificationRegistry = new NotificationRegistry();
 		$this->registrationFuncRegistry = $regFuncRegistry;
@@ -74,7 +79,7 @@ class NotificationManager {
 			$notifier = $this->notifier;
 		}
 
-		return $notifier->registerNotificationCategory( $key, $params );
+		$notifier->registerNotificationCategory( $key, $params );
 	}
 
 	/**
@@ -90,7 +95,7 @@ class NotificationManager {
 		}
 
 		$this->notificationRegistry->addValue( $key, $notifier );
-		return $notifier->registerNotification( $key, $params );
+		$notifier->registerNotification( $key, $params );
 	}
 
 	/**
@@ -104,7 +109,7 @@ class NotificationManager {
 			$notifier = $this->notifier;
 		}
 
-		return $notifier->unRegisterNotification( $key );
+		$notifier->unRegisterNotification( $key );
 	}
 
 	/**

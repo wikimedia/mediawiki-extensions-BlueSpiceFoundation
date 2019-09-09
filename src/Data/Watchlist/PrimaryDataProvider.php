@@ -32,6 +32,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	protected $db = null;
 
+	/**
+	 *
+	 * @var array
+	 */
 	protected $namespaceWhitelist = [];
 
 	/**
@@ -47,6 +51,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	/**
 	 *
 	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @return Record[]
 	 */
 	public function makeData( $params ) {
 		$res = $this->db->select(
@@ -90,6 +95,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $conds;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 */
 	protected function appendRowToData( $row ) {
 		$title = \Title::makeTitle( $row->wl_namespace, $row->wl_title );
 

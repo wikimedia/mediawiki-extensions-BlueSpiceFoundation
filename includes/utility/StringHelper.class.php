@@ -99,7 +99,7 @@ class BsStringHelper {
 	 * Source: http://stackoverflow.com/questions/1369936/check-to-see-if-a-string-is-serialized
 	 * Verifies if a variable is potentially serialized (stumbled upon this in wordpress) -- seems to work
 	 * @param type $data
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function isSerialized( $data ) {
 		// if it isn't a string, it isn't serialized
@@ -152,6 +152,7 @@ class BsStringHelper {
 	 * 'neq' --> 'Not equals' <br/>
 	 * @param string $sHaystack
 	 * @param string $sNeedle
+	 * @param bool $bCaseSensitive
 	 * @return bool
 	 */
 	public static function filter( $sOp, $sHaystack, $sNeedle, $bCaseSensitive = false ) {

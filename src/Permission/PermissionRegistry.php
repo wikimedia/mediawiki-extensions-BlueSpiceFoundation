@@ -3,11 +3,32 @@
 namespace BlueSpice\Permission;
 
 class PermissionRegistry {
+	/**
+	 *
+	 * @var PermissionRegistry
+	 */
 	private static $instance;
+	/**
+	 *
+	 * @var array
+	 */
 	protected $permissionConfigDefault;
+	/**
+	 *
+	 * @var array
+	 */
 	protected $permissionConfig = [];
+	/**
+	 *
+	 * @var array
+	 */
 	protected $permissions = [];
 
+	/**
+	 *
+	 * @param array $permissionConfigDefault
+	 * @param array $permissionConfig
+	 */
 	protected function __construct( $permissionConfigDefault, $permissionConfig ) {
 		$this->permissionConfigDefault = $permissionConfigDefault;
 		$this->permissionConfig = is_array( $permissionConfig ) ? $permissionConfig : [];
@@ -62,6 +83,12 @@ class PermissionRegistry {
 		return self::$instance;
 	}
 
+	/**
+	 *
+	 * @param array $defaultPermissionConfig
+	 * @param array $permissionConfig
+	 * @return PermissionRegistry
+	 */
 	protected static function newInstance( $defaultPermissionConfig, $permissionConfig ) {
 		return new static( $defaultPermissionConfig, $permissionConfig );
 	}

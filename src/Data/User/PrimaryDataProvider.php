@@ -38,6 +38,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	/**
 	 *
 	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @return Record[]
 	 */
 	public function makeData( $params ) {
 		$this->data = [];
@@ -149,6 +150,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $conds;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 * @return void
+	 */
 	protected function appendRowToData( $row ) {
 		if ( $this->params->getQuery() !== '' ) {
 			$bApply = \BsStringHelper::filter(

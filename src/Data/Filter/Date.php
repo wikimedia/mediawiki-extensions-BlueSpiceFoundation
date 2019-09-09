@@ -9,7 +9,7 @@ class Date extends Range {
 	 * "Ext.ux.grid.filter.DateFilter" by default sends filter value in format
 	 * of m/d/Y
 	 * @param \BlueSpice\Data\Record $dataSet
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doesMatch( $dataSet ) {
 		// Format: "m/d/Y"

@@ -6,6 +6,11 @@
  */
 class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 
+	/**
+	 *
+	 * @param mixed|false $value
+	 * @return string
+	 */
 	public function getInputHTML( $value ) {
 		$this->mParent->getOutput()->addModules( 'ext.bluespice.html.formfields.sortable' );
 
@@ -28,6 +33,12 @@ class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 		return $sHTMLList . $html;
 	}
 
+	/**
+	 *
+	 * @param mixed|false $value
+	 * @param array $aOptions
+	 * @return array
+	 */
 	private function reValidate( $value, $aOptions ) {
 		$aValidated = [];
 

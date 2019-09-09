@@ -11,7 +11,7 @@ use BlueSpice\Entity;
 
 abstract class Content extends Writer {
 	/**
-	 * @param $entity Entity
+	 * @param Entity $entity
 	 * @return Status
 	 */
 	public function writeEntity( Entity $entity ) {

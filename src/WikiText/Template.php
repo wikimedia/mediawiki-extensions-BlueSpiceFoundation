@@ -77,7 +77,7 @@ class Template {
 
 	/**
 	 *
-	 * @param boolean $renderFormatted
+	 * @param bool $renderFormatted
 	 * @return Template
 	 */
 	public function setRenderFormatted( $renderFormatted = true ) {
@@ -144,6 +144,11 @@ class Template {
 
 	protected $specialWikiTextMarkupFirstChars = [ '*', '#', ':' ];
 
+	/**
+	 *
+	 * @param mixed $paramValue
+	 * @param bool $isNamedParameter
+	 */
 	protected function appendParamValue( $paramValue, $isNamedParameter ) {
 		$preparedParamValue = $this->prepareParamValue( $paramValue );
 		$firstChar = substr( $preparedParamValue, 0, 1 );
@@ -157,6 +162,11 @@ class Template {
 		$this->buffer[] = $preparedParamValue;
 	}
 
+	/**
+	 *
+	 * @param mixed $paramValue
+	 * @return string
+	 */
 	protected function prepareParamValue( $paramValue ) {
 		if ( is_array( $paramValue ) ) {
 			$newParamValue = implode( '', $paramValue );

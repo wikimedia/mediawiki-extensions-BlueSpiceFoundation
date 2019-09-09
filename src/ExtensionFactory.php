@@ -57,6 +57,13 @@ class ExtensionFactory {
 		$this->config = $config;
 	}
 
+	/**
+	 *
+	 * @param string $name
+	 * @param array $definition
+	 * @return Extension
+	 * @throws \BsException
+	 */
 	protected function factory( $name, $definition ) {
 		if ( isset( $this->extensions[$name] ) ) {
 			return $this->extensions[$name];
@@ -84,6 +91,12 @@ class ExtensionFactory {
 		return $this->extensions[$name];
 	}
 
+	/**
+	 *
+	 * @param string $name
+	 * @param \BsExtensionMW $extension
+	 * @return void
+	 */
 	protected function legacyFactory( $name, $extension ) {
 		if ( !$extension instanceof \BsExtensionMW ) {
 			return;

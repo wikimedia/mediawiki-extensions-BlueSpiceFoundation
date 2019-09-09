@@ -7,8 +7,15 @@ use BlueSpice\Data\Settings\Record;
 
 class Config extends \MultiConfig {
 
+	/**
+	 *
+	 * @var \HashConfig
+	 */
 	protected $databaseConfig = null;
 
+	/**
+	 *
+	 */
 	public function __construct() {
 		$this->databaseConfig = $this->makeDatabaseConfig();
 		parent::__construct( [
@@ -29,13 +36,17 @@ class Config extends \MultiConfig {
 
 	/**
 	 * Invalidates the cache of config stored in the database
-	 * @return boolean
+	 * @return bool
 	 */
 	public function invalidateCache() {
 		$this->databaseConfig = $this->makeDatabaseConfig();
 		return true;
 	}
 
+	/**
+	 *
+	 * @return \HashConfig
+	 */
 	protected function makeDatabaseConfig() {
 		$hash = [];
 		$store = $this->getStore();
@@ -53,6 +64,10 @@ class Config extends \MultiConfig {
 		return new \HashConfig( $hash );
 	}
 
+	/**
+	 *
+	 * @return Store
+	 */
 	protected function getStore() {
 		return new Store(
 			new Context( \RequestContext::getMain(), $this ),

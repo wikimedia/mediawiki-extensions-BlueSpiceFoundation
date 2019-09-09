@@ -18,6 +18,10 @@ class SpecialWikiAdmin extends \BlueSpice\SpecialPage {
 		parent::__construct( 'WikiAdmin', '', false );
 	}
 
+	/**
+	 *
+	 * @param string $par
+	 */
 	public function execute( $par ) {
 		parent::execute( $par );
 		$oOutputPage = $this->getOutput();

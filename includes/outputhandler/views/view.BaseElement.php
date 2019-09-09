@@ -172,6 +172,7 @@ class ViewBaseElement {
 	/**
 	 * Set multiple options to protected array 'mOptions'
 	 * @param array $aOptions Associative array with new keys and values to be stored in 'mOptions'
+	 * @return ViewBaseElement
 	 */
 	public function setOptions( $aOptions ) {
 		if ( !is_array( $aOptions ) ) {
@@ -206,6 +207,11 @@ class ViewBaseElement {
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param array $dataSet
+	 * @return ViewBaseElement
+	 */
 	public function addCompleteDataset( array $dataSet ) {
 		$this->_mData = $dataSet;
 		return $this;
@@ -245,6 +251,7 @@ class ViewBaseElement {
 	 *
 	 * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
 	 * \BlueSpice\TemplateRenderer instead
+	 * @param array|false $params
 	 * @return String Returns the output of this element.
 	 */
 	public function execute( $params = false ) {
@@ -279,6 +286,11 @@ class ViewBaseElement {
 		return $output;
 	}
 
+	/**
+	 *
+	 * @param array $dataSet
+	 * @return string
+	 */
 	protected function processData( $dataSet ) {
 		$this->_mPresentDataset = $dataSet;
 		if ( $this->_mTemplate != '' ) {
@@ -303,6 +315,11 @@ class ViewBaseElement {
 		return $output;
 	}
 
+	/**
+	 *
+	 * @param array $matches
+	 * @return string
+	 */
 	protected function processItem( $matches ) {
 		$request = $matches[1];
 
@@ -338,6 +355,10 @@ class ViewBaseElement {
 		return '<' . $this->_mAutoElement . ' id="' . $this->_mId . '">';
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getAutoElementCloser() {
 		if ( !$this->_mAutoElement ) {
 			return '';

@@ -24,6 +24,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param IContextSource|null $context
 	 * @param string $name | ''
+	 * @param CacheHelper|null $cacheHelper
 	 */
 	protected function __construct( Config $config, Params $params,
 		LinkRenderer $linkRenderer = null, IContextSource $context = null,
@@ -59,6 +60,11 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 		$this->args[static::PARAM_TAG] = 'div';
 	}
 
+	/**
+	 *
+	 * @param mixed $val
+	 * @return string
+	 */
 	protected function render_content( $val ) {
 		return FormatJson::encode( $this->getEntity(), true );
 	}

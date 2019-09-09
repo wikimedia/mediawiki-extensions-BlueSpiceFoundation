@@ -10,12 +10,20 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 
 	protected $iFixtureTotal = 0;
 	protected $sQuery = '';
+
+	/**
+	 * @return array
+	 */
 	abstract protected function getStoreSchema();
 
 	/**
 	 * @return int Total count of fixture data sets available to the test
 	 */
 	abstract protected function createStoreFixtureData();
+
+	/**
+	 * @return string
+	 */
 	abstract protected function getModuleName();
 
 	protected function setUp() {
@@ -68,8 +76,8 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	}
 
 	/**
-	 * @param $keyItemKey The array key of an item to look for
-	 * @param $keyItemValue The array value of an item to look for
+	 * @param mixed $keyItemKey The array key of an item to look for
+	 * @param mixed $keyItemValue The array value of an item to look for
 	 *
 	 * @dataProvider provideKeyItemData
 	 */
@@ -95,8 +103,8 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	}
 
 	/**
-	 * @param $limit
-	 * @param $offset
+	 * @param int $limit
+	 * @param int $offset
 	 *
 	 * @dataProvider providePagingData
 	 */
@@ -146,11 +154,11 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 * }
 	 * ]
 	 *
-	 * @param $type
-	 * @param $field
-	 * @param $value
-	 * @param $comparison
-	 * @param $expectedTotal
+	 * @param string $type
+	 * @param string $comparison
+	 * @param string $field
+	 * @param mixed $value
+	 * @param \stdClass $expectedTotal
 	 *
 	 * @dataProvider provideSingleFilterData
 	 */
@@ -186,8 +194,8 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	abstract public function provideSingleFilterData();
 
 	/**
-	 * @param $filters
-	 * @param $expectedTotal
+	 * @param string $filters
+	 * @param \stdClass $expectedTotal
 	 *
 	 * @dataProvider provideMultipleFilterData
 	 */
@@ -229,7 +237,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 
 	/**
 	 * Indicates whether the total count of a store should be tested
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function skipAssertTotal() {
 		return false;

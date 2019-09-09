@@ -56,8 +56,8 @@ abstract class BSMigrateSettingsSetNewSettings extends Hook {
 	 *
 	 * @param string $newName
 	 * @param string $newValue
-	 * @param boolean $set
-	 * @return boolean
+	 * @param bool &$set
+	 * @return bool
 	 */
 	public static function callback( $newName, $newValue, &$set ) {
 		$className = static::class;
@@ -76,13 +76,13 @@ abstract class BSMigrateSettingsSetNewSettings extends Hook {
 	 * @param \Config $config
 	 * @param string $newName
 	 * @param string $newValue
-	 * @param boolean $set
+	 * @param bool &$set
 	 */
 	public function __construct( $context, $config, $newName, $newValue, &$set ) {
 		parent::__construct( $context, $config );
 
-		$this->newName = &$newName;
-		$this->newValue = &$newValue;
+		$this->newName = $newName;
+		$this->newValue = $newValue;
 		$this->set = &$set;
 	}
 }

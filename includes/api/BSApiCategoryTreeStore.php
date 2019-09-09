@@ -1,6 +1,11 @@
 <?php
 
 class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
+	/**
+	 *
+	 * @param string $sQuery
+	 * @return array
+	 */
 	protected function makeData( $sQuery = '' ) {
 		$sNode = $this->getParameter( 'node' );
 		$aResult = [];
@@ -118,6 +123,11 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		return $aResult;
 	}
 
+	/**
+	 *
+	 * @param array $aProcessedData
+	 * @return array
+	 */
 	public function trimData( $aProcessedData ) {
 		/**
 		 * In a tree store paging is not anted in most cases
@@ -130,6 +140,10 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		return parent::trimData( $aProcessedData );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'node' => [

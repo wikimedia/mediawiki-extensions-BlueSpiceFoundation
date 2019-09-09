@@ -160,7 +160,8 @@ abstract class Entity implements JsonSerializable {
 	 * 'BSEntityFactory' instead
 	 * @param \stdClass $data
 	 * @param EntityConfig $config
-	 * @param EntityFactory $entityFactory
+	 * @param IStore $store
+	 * @param EntityFactory|null $entityFactory
 	 * @return \static
 	 */
 	public static function newFromFactory( \stdClass $data, EntityConfig $config,
@@ -183,6 +184,8 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Saves the current Entity
+	 * @param User|null $user
+	 * @param array $aOptions
 	 * @return Status
 	 */
 	public function save( User $user = null, $aOptions = [] ) {
@@ -278,6 +281,7 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Gets the Entity attributes formated for the api
+	 * @param array $data
 	 * @return array
 	 */
 	public function getFullData( $data = [] ) {
@@ -332,7 +336,7 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Checks, if the current Entity exists in the Wiki
-	 * @return boolean
+	 * @return bool
 	 */
 	public function exists() {
 		return !empty( $this->get( static::ATTR_ID, 0 ) );
@@ -340,7 +344,7 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Checks if this entity is marked as archived
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isArchived() {
 		return $this->get( static::ATTR_ARCHIVED, false ) !== false;
@@ -348,7 +352,7 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Checks if there are unsaved changes
-	 * @return boolean
+	 * @return bool
 	 */
 	public function hasUnsavedChanges() {
 		return (bool)$this->bUnsavedChanges;
@@ -392,7 +396,7 @@ abstract class Entity implements JsonSerializable {
 	/**
 	 * Checks if the given User is the owner of this entity
 	 * @param User $user
-	 * @return boolean
+	 * @return bool
 	 */
 	public function userIsOwner( User $user ) {
 		if ( $user->isAnon() || $this->get( static::ATTR_OWNER_ID, 0 ) < 1 ) {

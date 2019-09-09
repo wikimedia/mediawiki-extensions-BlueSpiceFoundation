@@ -50,7 +50,7 @@ class TitleParamsResolver {
 	/**
 	 *
 	 * @param array $params
-	 * @params \Title|null $default
+	 * @param \Title|null $default
 	 */
 	public function __construct( $params, $default = null ) {
 		$this->params = $params;
@@ -87,6 +87,11 @@ class TitleParamsResolver {
 		return array_values( $this->titles );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @param mixed $paramValue
+	 */
 	protected function resolvePageIds( $paramName, $paramValue ) {
 		$pageIds = [];
 		if ( $this->isPageIdParam( $paramName ) ) {
@@ -103,14 +108,29 @@ class TitleParamsResolver {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageIdParam( $paramName ) {
 		return in_array( $paramName, [ 'pageid', 'page_id', 'pid' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageIdsParam( $paramName ) {
 		return in_array( $paramName, [ 'pageids' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @param mixed $paramValue
+	 */
 	protected function resolvePageNames( $paramName, $paramValue ) {
 		$pageNames = [];
 		if ( $this->isPageNameParam( $paramName ) ) {
@@ -127,14 +147,29 @@ class TitleParamsResolver {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageNameParam( $paramName ) {
 		return in_array( $paramName, [ 'title', 'page', 'target' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageNamesParam( $paramName ) {
 		return in_array( $paramName, [ 'titles' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @param mixed $paramValue
+	 */
 	protected function resolveRevisionIds( $paramName, $paramValue ) {
 		$revisionIds = [];
 		if ( $this->isRevisionIdParam( $paramName ) ) {
@@ -154,10 +189,20 @@ class TitleParamsResolver {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isRevisionIdParam( $paramName ) {
 		return in_array( $paramName, [ 'revid', 'oldid', 'previd', 'baserevid' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isRevisionIdsParam( $paramName ) {
 		return in_array( $paramName, [ 'revids' ] );
 	}

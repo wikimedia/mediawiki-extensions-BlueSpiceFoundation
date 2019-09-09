@@ -16,6 +16,11 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewFormElementSelectbox extends ViewFormElement {
+	/**
+	 *
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$output = '';
 		if ( $this->_mLabel != '' ) {

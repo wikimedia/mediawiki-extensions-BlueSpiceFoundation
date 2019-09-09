@@ -45,7 +45,7 @@ abstract class BSEntityConfigDefaults extends Hook {
 	 * when a EntityConfig does not have a method get_<settingsKey>
 	 * @deprecated since version 3.0.0 - Use the bluespice global config
 	 * mechanism instead
-	 * @param array $defaultSettings
+	 * @param array &$defaultSettings
 	 * @return boolean
 	 */
 	public static function callback( &$defaultSettings ) {
@@ -62,7 +62,7 @@ abstract class BSEntityConfigDefaults extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $defaultSettings
+	 * @param array &$defaultSettings
 	 */
 	public function __construct( $context, $config, &$defaultSettings ) {
 		parent::__construct( $context, $config );

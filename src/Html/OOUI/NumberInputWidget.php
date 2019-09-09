@@ -15,18 +15,23 @@ class NumberInputWidget extends \OOUI\TextInputWidget {
 
 	/**
 	 * @param array $config Configuration options
-	 * @param int $config['placeholder'] Placeholder number
-	 * @param bool $config['autofocus'] Ask the browser to focus this widget, using the 'autofocus'
-	 *   HTML attribute (default: false)
-	 * @param bool $config['readOnly'] Prevent changes (default: false)
-	 * @param number $config['min'] Minimum input allowed
-	 * @param number $config['max'] Maximum input allowed
-	 * @param number $config['step'] Stepping delta (default: 1)
-	 * @param number $config['pageStep'] Stepping delta (page-up and page-down)
-	 * @param number $config['isInteger'] Only integers are allowed
-	 * @param number $config['showButtons'] Show increment and decrement buttons (default: true)
-	 * @param bool $config['required'] Mark the field as required.
-	 *   Implies `indicator: 'required'`. Note that `false` & setting `indicator: 'required'
+	 *      - string $config['type'] HTML tag `type` attribute: 'text', 'password', 'email',
+	 *          'url' or 'number'. (default: 'text')
+	 *      - string $config['placeholder'] Placeholder text
+	 *      - bool $config['autofocus'] Ask the browser to focus this widget, using the 'autofocus'
+	 *          HTML attribute (default: false)
+	 *      - bool $config['readOnly'] Prevent changes (default: false)
+	 *      - int $config['maxLength'] Maximum allowed number of characters to input
+	 *          For unfortunate historical reasons, this counts the number of UTF-16 code units rather
+	 *          than Unicode codepoints, which means that codepoints outside the Basic Multilingual
+	 *          Plane (e.g. many emojis) count as 2 characters each.
+	 *      - bool $config['required'] Mark the field as required.
+	 *          Implies `indicator: 'required'`. Note that `false` & setting `indicator: 'required'
+	 *          will result in no indicator shown. (default: false)
+	 *      - bool $config['autocomplete'] If the field should support autocomplete
+	 *          or not (default: true)
+	 *      - bool $config['spellcheck'] If the field should support spellcheck
+	 *          or not (default: browser-dependent)
 	 * @param-taint $config escapes_html
 	 */
 	public function __construct( array $config = [] ) {
@@ -69,6 +74,11 @@ class NumberInputWidget extends \OOUI\TextInputWidget {
 		] );
 	}
 
+	/**
+	 *
+	 * @param array &$config
+	 * @return array
+	 */
 	public function getConfig( &$config ) {
 		$min = $this->input->getAttribute( 'min' );
 		if ( $min !== null ) {
@@ -91,6 +101,10 @@ class NumberInputWidget extends \OOUI\TextInputWidget {
 		return parent::getConfig( $config );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getJavaScriptClassName() {
 		return "OO.ui.NumberInputWidget";
 	}

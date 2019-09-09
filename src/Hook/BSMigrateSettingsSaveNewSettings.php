@@ -42,7 +42,7 @@ abstract class BSMigrateSettingsSaveNewSettings extends Hook {
 	 * Use it to persist settings
 	 *
 	 * @param array $newData
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $newData ) {
 		$className = static::class;

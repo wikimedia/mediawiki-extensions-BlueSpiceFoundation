@@ -10,6 +10,7 @@ use IContextSource;
 use Config;
 use BlueSpice\Services;
 use BlueSpice\Permission\Lockdown\Module;
+use BlueSpice\Permission\Lockdown\IModule;
 
 class Namespaces extends Module {
 
@@ -44,6 +45,7 @@ class Namespaces extends Module {
 	 * @param IContextSource $context
 	 * @param Services $services
 	 * @param RoleManager|null $manager
+	 * @return IModule
 	 */
 	public static function getInstance( Config $config, IContextSource $context,
 		Services $services, RoleManager $manager = null ) {

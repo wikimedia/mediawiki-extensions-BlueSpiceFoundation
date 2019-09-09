@@ -44,7 +44,7 @@ abstract class Writer implements IWriter, IBaseWriter {
 
 	/**
 	 * Create or Update given records
-	 * @param $entity Entity
+	 * @param Entity $entity
 	 * @return Status
 	 */
 	abstract public function writeEntity( Entity $entity );

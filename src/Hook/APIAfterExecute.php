@@ -44,7 +44,7 @@ abstract class APIAfterExecute extends Hook {
 	/**
 	 *
 	 * @param ApiBase &$module
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( &$module ) {
 		$className = static::class;

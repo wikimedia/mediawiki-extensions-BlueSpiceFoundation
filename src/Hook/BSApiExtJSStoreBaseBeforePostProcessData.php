@@ -45,8 +45,8 @@ abstract class BSApiExtJSStoreBaseBeforePostProcessData extends Hook {
 	 * Located in BSApiExtJSStoreBase::postProcessData. Before the result gets
 	 * processed. Return false to abort any post processing.
 	 * @param \BSApiExtJSStoreBase $store
-	 * @param array $dataItems
-	 * @return boolean
+	 * @param array &$dataItems
+	 * @return bool
 	 */
 	public static function callback( $store, &$dataItems ) {
 		$className = static::class;
@@ -63,7 +63,7 @@ abstract class BSApiExtJSStoreBaseBeforePostProcessData extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \BSApiExtJSStoreBase $store
-	 * @param array $dataItems
+	 * @param array &$dataItems
 	 */
 	public function __construct( $context, $config, $store, &$dataItems ) {
 		parent::__construct( $context, $config );

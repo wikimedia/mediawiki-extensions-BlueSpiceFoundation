@@ -4,12 +4,16 @@ namespace BlueSpice\Hook\BeforePageDisplay;
 
 class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->addModuleStyles();
 		$this->overwriteGlobals();
 		$this->addModules();
 		$this->addJSConfigVars();
 		$this->addLegacyJSConfigVars();
+		return true;
 	}
 
 	protected function overwriteGlobals() {
@@ -111,6 +115,10 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 		);
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function getArticlePreviewCaptureNotDefault() {
 		$extRegistry = \ExtensionRegistry::getInstance();
 		$modules = $extRegistry->getAttribute(

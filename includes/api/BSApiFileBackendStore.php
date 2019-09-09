@@ -32,6 +32,10 @@ use BlueSpice\Services;
 
 class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function makeMetaData() {
 		return [
 			'properties' => [
@@ -151,6 +155,11 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		];
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @return array
+	 */
 	public function makeData( $sQuery = '' ) {
 		$res = $this->fetchCaseInsensitive( $sQuery );
 
@@ -263,6 +272,11 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		return array_values( $aReturn );
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @return \stdClass
+	 */
 	protected function fetchCaseInsensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_REPLICA );
 
@@ -293,6 +307,11 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		return $res;
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @return \stdClass
+	 */
 	protected function fetchCaseSensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_REPLICA );
 
@@ -319,6 +338,11 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		return $res;
 	}
 
+	/**
+	 *
+	 * @param array $aTrimmedData
+	 * @return array
+	 */
 	protected function addSecondaryFields( $aTrimmedData ) {
 		$linkRenderer = Services::getInstance()->getLinkRenderer();
 		foreach ( $aTrimmedData as $oDataSet ) {
@@ -351,6 +375,12 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		return $aTrimmedData;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $oFilter
+	 * @param array $aDataSet
+	 * @return array
+	 */
 	public function filterString( $oFilter, $aDataSet ) {
 		$aSpecialFilterFields = [ 'page_categories', 'page_categories_links' ];
 		if ( !in_array( $oFilter->field, $aSpecialFilterFields ) ) {

@@ -10,6 +10,10 @@ class GenericHandler {
 	const TAG_SPAN = 'span';
 	const TAG_BUTTON = 'button';
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getValidElementNames() {
 		return [
 			static::TAG_BUTTON,
@@ -239,10 +243,18 @@ class GenericHandler {
 		}
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function hasErrors() {
 		return !empty( $this->errors );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function makeErrorOutput() {
 		$out = [];
 		$translator = new ProcessingErrorMessageTranslator();
@@ -258,6 +270,11 @@ class GenericHandler {
 		return implode( "\n", $out );
 	}
 
+	/**
+	 *
+	 * @param string $elementName
+	 * @return bool
+	 */
 	protected function isValidContainerElementName( $elementName ) {
 		return in_array( $elementName, $this->getValidElementNames() );
 	}
@@ -284,6 +301,11 @@ class GenericHandler {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $errorKey
+	 * @return string
+	 */
 	protected function makeErrorLabel( $errorKey ) {
 		$keyParts = explode( '-', $errorKey, 2 );
 		$argName = end( $keyParts );

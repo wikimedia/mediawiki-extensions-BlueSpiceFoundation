@@ -14,6 +14,10 @@ class Writer extends \BlueSpice\Data\DatabaseWriter {
 		parent::__construct( $reader, $loadBalancer, $context, $context->getConfig() );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getTableName() {
 		return 'bs_settings3';
 	}
@@ -21,6 +25,7 @@ class Writer extends \BlueSpice\Data\DatabaseWriter {
 	/**
 	 *
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return array
 	 */
 	protected function makeInsertFields( $record ) {
 		$fields = parent::makeInsertFields( $record );
@@ -32,6 +37,7 @@ class Writer extends \BlueSpice\Data\DatabaseWriter {
 	 *
 	 * @param \BlueSpice\Data\IRecord $existingRecord
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return array
 	 */
 	protected function makeUpdateFields( $existingRecord, $record ) {
 		$fields = parent::makeUpdateFields( $existingRecord, $record );
@@ -47,6 +53,10 @@ class Writer extends \BlueSpice\Data\DatabaseWriter {
 		return new Schema();
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getIdentifierFields() {
 		return [ Record::NAME ];
 	}

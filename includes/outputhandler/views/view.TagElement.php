@@ -21,6 +21,11 @@ class ViewTagElement extends ViewBaseElement {
 		$this->_mAutoElement = 'p';
 	}
 
+	/**
+	 *
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		return '<' . $this->_mAutoElement . ' id="' . $this->_mId . '"></' . $this->_mAutoElement . '>';
 	}

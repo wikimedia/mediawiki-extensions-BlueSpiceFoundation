@@ -46,6 +46,11 @@ class BSUserFixtures {
 		return $users;
 	}
 
+	/**
+	 *
+	 * @param string $userName
+	 * @return string
+	 */
 	protected function makeKey( $userName ) {
 		return "bs-user-" . strtolower( $userName );
 	}
