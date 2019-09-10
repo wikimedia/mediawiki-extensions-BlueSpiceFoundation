@@ -30,6 +30,7 @@
  */
 
 use BlueSpice\Api\Response\Standard;
+use BlueSpice\UtilityFactory;
 
 /**
  * Api base class for simple tasks in BlueSpice
@@ -98,6 +99,12 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	protected $oTasksSpec = null;
 
 	/**
+	 *
+	 * @var UtilityFactory
+	 */
+	protected $utilityFactory = null;
+
+	/**
 	 * DEPRECATED!
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName Name of this module
@@ -110,6 +117,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		$this->oTasksSpec = new BSTasksApiSpec( $this->aTasks );
+		$this->utilityFactory = $this->getServices()->getBSUtilityFactory();
 		parent::__construct( $mainModule, $moduleName, $modulePrefix );
 	}
 
@@ -152,11 +160,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		} else {
 			$res = $this->checkTaskPermission( $sTask );
 			if ( !$res ) {
-				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-					$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
-				} else {
-					$this->dieUsageMsg( 'badaccess-groups' );
-				}
+				$this->dieWithPermissionError();
 			}
 			if ( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
 				global $wgReadOnly;
@@ -164,6 +168,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			} else {
 				$oTaskData = $this->getParameter( 'taskData' );
 				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', [ $this, $sTask, &$oTaskData , &$aParams ] );
+				$this->checkTaskPermissionsAgainstTaskDataTitles( $sTask, $oTaskData );
 
 				$oResult = $this->validateTaskData( $sTask, $oTaskData );
 				if ( empty( $oResult->errors ) && empty( $oResult->message ) ) {
@@ -403,21 +408,18 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	/**
 	 *
 	 * @param string $sTask
-	 * @return bool null if requested task not in list
+	 * @return mixed bool|null if requested task not in list
 	 * true if allowed
 	 * false if not found in permission table of current user -> set in permission manager, group based
 	 */
 	public function checkTaskPermission( $sTask ) {
-		$aTaskPermissions = array_merge(
-		  $this->getRequiredTaskPermissions(),
-		  $this->getGlobalRequiredTaskPermissions()
-		);
+		$taskPermissions = $this->getTaskPermissions( $sTask );
 
-		if ( empty( $aTaskPermissions[$sTask] ) ) {
-			return;
+		if ( empty( $taskPermissions ) ) {
+			return null;
 		}
 		// lookup permission for given task
-		foreach ( $aTaskPermissions[$sTask] as $sPermission ) {
+		foreach ( $taskPermissions as $sPermission ) {
 			// check if user have needed permission
 			if ( $this->getUser()->isAllowed( $sPermission ) ) {
 				continue;
@@ -647,4 +649,40 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 		return $this->mMasterDB;
 	}
+
+	protected function dieWithPermissionError() {
+		if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+			$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
+		} else {
+			$this->dieUsageMsg( 'badaccess-groups' );
+		}
+	}
+
+	/**
+	 *
+	 * @param string $task
+	 * @param stdClass $taskData
+	 */
+	protected function checkTaskPermissionsAgainstTaskDataTitles( $task, $taskData ) {
+		$titleParamResolver = $this->utilityFactory->getTitleParamsResolver( (array)$taskData );
+		$titlesToTest = $titleParamResolver->resolve();
+		$permissionsToTest = $this->getTaskPermissions( $task );
+		foreach ( $titlesToTest as $title ) {
+			foreach ( $permissionsToTest as $permission ) {
+				if ( !$title->userCan( $permission, $this->getUser() ) ) {
+					$this->dieWithPermissionError();
+				}
+			}
+		}
+	}
+
+	private function getTaskPermissions( $task ) {
+		$taskPermissions = array_merge(
+			$this->getRequiredTaskPermissions(),
+			$this->getGlobalRequiredTaskPermissions()
+		);
+
+		return $taskPermissions[$task];
+	}
+
 }
