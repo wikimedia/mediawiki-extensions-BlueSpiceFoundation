@@ -163,7 +163,12 @@ class ViewBaseElement {
 		return $this->_mTemplate;
 	}
 
-	// TODO MRG20100831: comment
+	/**
+	 *
+	 * @param string $key
+	 * @param mixed $value
+	 * @return ViewBaseElement
+	 */
 	public function setOption( $key, $value ) {
 		$this->mOptions[$key] = $value;
 		return $this;
@@ -183,7 +188,11 @@ class ViewBaseElement {
 		return $this;
 	}
 
-	// TODO MRG20100831: comment
+	/**
+	 *
+	 * @param string $key
+	 * @return mixed|false
+	 */
 	public function getOption( $key ) {
 		if ( isset( $this->mOptions[$key] ) ) {
 			return $this->mOptions[$key];
@@ -345,7 +354,10 @@ class ViewBaseElement {
 		return $this->_mItems[$item]->execute();
 	}
 
-	// TODO MRG20100816: Kommentar: Das sollte in der Regel überschrieben werden.
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getAutoElementOpener() {
 		if ( !$this->_mAutoElement ) {
 			return '';
@@ -366,7 +378,12 @@ class ViewBaseElement {
 		return '</' . $this->_mAutoElement . '>';
 	}
 
-	// TODO MRG20100831: comment
+	/**
+	 *
+	 * @param array $options
+	 * @param string $content
+	 * @return string
+	 */
 	protected function renderLink( $options = [], $content ) {
 		$glue = '';
 		$href = isset( $options['href'] )
