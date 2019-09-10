@@ -165,9 +165,11 @@ class BsStringHelper {
 				return $sNeedle === '' ||
 					strrpos( $sHaystack, $sNeedle, - strlen( $sHaystack ) ) !== false;
 			case self::FILTER_ENDSWITH:
-				return $sNeedle === '' ||
-					( ( $temp = strlen( $sHaystack ) - strlen( $sNeedle ) ) >= 0
-					&& strpos( $sHaystack, $sNeedle, $temp ) !== false );
+				$needleLen = strlen( $sNeedle );
+				if ( $needleLen < 1 ) {
+					return true;
+				}
+				return substr( $sHaystack, -$needleLen ) === $sNeedle;
 			case self::FILTER_CONTAINS:
 			case self::FILTER_LIKE:
 				return strpos( $sHaystack, $sNeedle ) !== false;
