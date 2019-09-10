@@ -24,12 +24,12 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 	 *
 	 * @param array $params
 	 * @param string $expectedPrefixedText
-	 * @param \Title $defaultTitle
+	 * @param \Title[] $defaultTitles
 	 * @param string $message
 	 * @dataProvider provideMediaWikiApiTitleOrPageIdData
 	 */
-	public function testMediaWikiApiTitleOrPageId( $params, $expectedPrefixedText, $defaultTitle, $message ) {
-		$resolver = new TitleParamsResolver( $params, $defaultTitle );
+	public function testMediaWikiApiTitleOrPageId( $params, $expectedPrefixedText, $defaultTitles, $message ) {
+		$resolver = new TitleParamsResolver( $params, $defaultTitles );
 		$resolvedTitles = $resolver->resolve();
 		$resolvedTitle = $resolvedTitles[0];
 
@@ -53,10 +53,10 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 			[ [ 'title' => 'TitleParamsResolverTest' ], 'TitleParamsResolverTest', null, 'Should resolve from "title"' ],
 			[ [ 'target' => 'TitleParamsResolverTest' ], 'TitleParamsResolverTest', null, 'Should resolve from "target"' ],
 			[ [ 'page' => 'Help:TitleParamsResolverTest' ], 'Help:TitleParamsResolverTest', null, 'Should resolve from "page"' ],
-			[ [ 'pageid' => -1 ], $mainPageTitleText, $mainPage, 'With invalid "page_id", should fallback to "default"' ],
-			[ [ 'title' => 'Invalid[Title]' ], $mainPageTitleText, $mainPage, 'With invalid "title", should fallback to "default"' ],
-			[ [ 'target' => 'Invalid[Title]' ], $mainPageTitleText, $mainPage, 'With invalid "target", should fallback to "default"' ],
-			[ [ 'page' => 'Invalid[Title]' ], $mainPageTitleText, $mainPage, 'With invalid "page", should fallback to "default"' ],
+			[ [ 'pageid' => -1 ], $mainPageTitleText, [ $mainPage ], 'With invalid "page_id", should fallback to "default"' ],
+			[ [ 'title' => 'Invalid[Title]' ], $mainPageTitleText, [ $mainPage ], 'With invalid "title", should fallback to "default"' ],
+			[ [ 'target' => 'Invalid[Title]' ], $mainPageTitleText, [ $mainPage ], 'With invalid "target", should fallback to "default"' ],
+			[ [ 'page' => 'Invalid[Title]' ], $mainPageTitleText, [ $mainPage ], 'With invalid "page", should fallback to "default"' ],
 			[ [ 'revid' => 1 ], 'UTPage', null, 'Should resolve from "revid"' ],
 			[ [ 'oldid' => 1 ], 'UTPage', null, 'Should resolve from "oldid"' ]
 		];

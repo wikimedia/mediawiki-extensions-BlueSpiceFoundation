@@ -49,10 +49,10 @@ class UtilityFactory {
 	/**
 	 *
 	 * @param array $params
-	 * @param \Title|null $default
+	 * @param \Title[] $default
 	 * @return \BlueSpice\Utility\TitleParamsResolver
 	 */
-	public function getTitleParamsResolver( $params, $default = null ) {
+	public function getTitleParamsResolver( $params, $default = [] ) {
 		return new \BlueSpice\Utility\TitleParamsResolver( $params, $default );
 	}
 
