@@ -31,7 +31,11 @@ class ViewTagError extends ViewBaseElement {
 		$this->mErrorMsg = $msg;
 	}
 
-	// TODO MRG (01.09.10 02:00): Move sender name to tagerrorlist
+	/**
+	 * TODO MRG (01.09.10 02:00): Move sender name to tagerrorlist
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$out = '';
 		// TODO MRG (01.09.10 02:01): remove style attribute

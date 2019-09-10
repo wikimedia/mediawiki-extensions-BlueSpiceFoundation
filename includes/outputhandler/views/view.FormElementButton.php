@@ -23,10 +23,14 @@ class ViewFormElementButton extends ViewFormElement {
 		$this->_mType = 'submit';
 	}
 
-	// TODO MRG20100816: Wofür brauchen wir den bntype?
-	// TODO MRG20100816: value=1 nur als default, das muss überschreibbar sein
-	// TODO MRG20100816: Das br muss optional sein
-	// TODO MRG (01.09.10 16:33): Inhalt des title-Attributs sollte nochmal überprüft werden.
+	/**
+	 * TODO MRG20100816: Wofür brauchen wir den bntype?
+	 * TODO MRG20100816: value=1 nur als default, das muss überschreibbar sein
+	 * TODO MRG20100816: Das br muss optional sein
+	 * TODO MRG (01.09.10 16:33): Inhalt des title-Attributs sollte nochmal überprüft werden.
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		return '<button id="' . $this->_mId . '" name="' . $this->_mName . '" bntype="button" type="' . $this->_mType . '" value="' . ( $this->_mValue ? $this->_mValue : 1 ) . '">' . $this->_mLabel . '</button>' . "\n<br />\n";
 	}

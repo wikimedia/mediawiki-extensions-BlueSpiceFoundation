@@ -307,7 +307,11 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		return $value;
 	}
 
-	// Sorting does not work here, so skip it
+	/**
+	 * Sorting does not work here, so skip it
+	 * @param array $aProcessedData
+	 * @return array
+	 */
 	public function sortData( $aProcessedData ) {
 		return $aProcessedData;
 	}
