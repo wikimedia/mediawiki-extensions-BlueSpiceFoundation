@@ -12,7 +12,6 @@ class RelocalizeWiki extends Maintenance {
 	public $sOutput = '';
 	public $aNothingReplaced = [];
 	public $aSpecialFrom = [];
-// public $aSpecialTo = array();
 
 	public function __construct() {
 		parent::__construct();

@@ -205,7 +205,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		}
 	}
 
-	// trigger data update flag after content change over api
+	/**
+	 * trigger data update flag after content change over api
+	 * @param Title|null $oTitle
+	 */
 	protected function runUpdates( $oTitle = null ) {
 		if ( $oTitle === null ) {
 			$oTitle = $this->getTitle();
@@ -524,7 +527,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		return parent::canUseWikiPage();
 	}
 
-	/*
+	/**
 	 * Set to false for all read modules
 	 *
 	 * @return bool
