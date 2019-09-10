@@ -375,9 +375,9 @@ class BsPageContentProvider {
 	}
 
 	/**
-	* @param \Title $oTitle
-	* @return string
-	*/
+	 * @param \Title $oTitle
+	 * @return string
+	 */
 	protected function getWrapperAttributes( $oTitle ) {
 		$cssClass = Sanitizer::escapeClass( 'page-' . $oTitle->getPrefixedDBKey() );
 		return "class=\"bs-page-content $cssClass\"";
