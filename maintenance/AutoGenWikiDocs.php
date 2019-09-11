@@ -36,7 +36,7 @@ class AutoGenWikiDocs extends BSMaintenance {
 		$this->addOption( 'file', 'Filename for output XML', false, true );
 		$this->addOption( 'lang', 'The language', false, true );
 		$this->addOption( 'admin', 'Create extended documentation', false, false );
-		$this->addOption( 'label', 'Use labeled sections (for use with Extension:LabeledSectionTransclusion)', false, false );
+		$this->addOption( 'label', 'Use labeled sections', false, false );
 	}
 
 	public function execute() {
@@ -146,7 +146,7 @@ class AutoGenWikiDocs extends BSMaintenance {
 		$templateString = '';
 		/* Template to open the table */
 		if ( $this->labeledSection !== false ) {
-			$templateString .= "<section begin=$templateName />";
+			$templateString .= "==$templateName==\n";
 		}
 		$templateString .= "{{" . $templateName . "Open}}\n";
 
@@ -161,10 +161,6 @@ class AutoGenWikiDocs extends BSMaintenance {
 
 		/* Template to close the table*/
 		$templateString .= "{{" . $templateName . "Close}}";
-
-		if ( $this->labeledSection !== false ) {
-			$templateString .= "<section end=$templateName />";
-		}
 
 		$templateString .= "\n";
 
