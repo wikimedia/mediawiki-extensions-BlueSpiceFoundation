@@ -49,6 +49,7 @@ class BsNamespaceHelper {
 			//$sContantValue -> $sContantName;
 		}
 		*/
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 		global $bsgSystemNamespaces;
 		return self::$aNamespaceMap + $bsgSystemNamespaces;
 	}
