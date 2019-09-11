@@ -416,6 +416,7 @@ class BsCore {
 	 * @return void
 	 */
 	public function registerPermission( $sPermissionName, $aUserGroups = [], $aConfig = [] ) {
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 		global $wgGroupPermissions, $wgAvailableRights, $bsgPermissionConfig;
 
 		$aUserGroups = array_merge( [
@@ -475,6 +476,7 @@ class BsCore {
 	 */
 	public static function getMediaWikiWebrootPath() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 		global $wgScriptPath, $IP;
 		return str_replace( $wgScriptPath, '', str_replace( '\\', '/', $IP ) );
 	}

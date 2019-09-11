@@ -66,7 +66,6 @@ class ViewUserMiniProfile extends ViewBaseElement {
 	 * @return null
 	 */
 	public function init( $bReInit = false ) {
-		global $wgUrlProtocols;
 		if ( $this->bIsInit == true && $bReInit == false ) {
 			return;
 		}

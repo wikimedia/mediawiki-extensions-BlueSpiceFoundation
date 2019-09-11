@@ -123,10 +123,9 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	protected function generateTranslatorsList() {
-		global $IP;
 		$aPaths = [
-			$IP . '/extensions/',
-			$IP . '/skins/'
+			$this->getConfig()->get( 'ExtensionDirectory' ),
+			$this->getConfig()->get( 'StyleDirectory' ),
 		];
 
 		$translators = [];

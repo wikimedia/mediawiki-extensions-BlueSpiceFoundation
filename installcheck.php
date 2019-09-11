@@ -491,6 +491,7 @@ function checkMediaWikiHomeDir( $mwVersion ) {
  * @return string
  */
 function checkPHPversion( $phpversion ) {
+	// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 	global $cfgPHPversion;
 
 	$sResult = "PHP version is {$phpversion} ..... ";

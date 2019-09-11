@@ -71,8 +71,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	public function setup( $sExtName = "", $aConfig = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
-		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
-			// Extension credits that will show up on Special:Version
+		// Extension credits that will show up on Special:Version
 
 		$this->mResourcePath = $GLOBALS['wgScriptPath'] . "/extensions"
 			. $aConfig['extPath'] . '/resources';
