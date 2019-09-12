@@ -5,7 +5,7 @@
  * Description: Checks the compatibility of your server setup to install BlueSpice MediaWiki
  * Authors: Marc Reymann, Benedikt Hofmann
  *
- * Copyright (C) 2018 Hallo Welt! GmbH, All rights reserved.
+ * Copyright (C) 2019 Hallo Welt! GmbH, All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ $cfgMWversion = "1.31";
 
 // PHP version
 $cfgPHPversion['min'] = '7.0';
-$cfgPHPversion['opt'] = '7.0';
+$cfgPHPversion['opt'] = '7.3';
 
 // PHP extensions to check
 $cfgRequiredExtensions[] = [ "curl",           "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use curl in the extended search." ];
@@ -46,8 +46,8 @@ $cfgRequiredExtensions[] = [ "xsl",            "<span class=\"fail\">FAILED!</sp
 $cfgRequiredExtensions[] = [ "zip",            "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use ZIP compression." ];
 $cfgRequiredExtensions[] = [ "Zend OPcache",   "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use a fast bytecode cache." ];
 
-// PHP ini values#
-# $cfgINIoptions[] = [ "date.timezone",       "!=", "Off",  "<span class=\"warn\">WARNING!</span> You should set this to your local timezone." ];
+// PHP ini values
+$cfgINIoptions[] = [ "date.timezone",       "!=", "Off",  "<span class=\"warn\">WARNING!</span> You should set this to your local timezone." ];
 $cfgINIoptions[] = [ "memory_limit",        ">=", "128",  "<span class=\"warn\">WARNING!</span> You should increase this value to 128M or higher." ];
 $cfgINIoptions[] = [ "max_execution_time",  ">=", "120",  "<span class=\"warn\">WARNING!</span> You should increase this value to 120 or higher." ];
 $cfgINIoptions[] = [ "post_max_size",       ">=", "32",   "<span class=\"warn\">WARNING!</span> You should increase this value to 32M or higher." ];
@@ -403,6 +403,7 @@ $cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class
 
 	<body>
 		<div id="content">
+
 			<div id="header"><h1>BlueSpice MediaWiki &ndash; Install-Check</h1></div>
 
 			<?php echo checkMediaWikiHomeDir( $cfgMWversion );?>
@@ -485,9 +486,12 @@ function checkPHPversion( $phpversion ) {
 
 	$sResult = "PHP version is {$phpversion} ..... ";
 
-	if ( version_compare( $phpversion, $cfgPHPversion['min'], '<' ) ) {
+	$aPHPversion = explode( '.', $phpversion );
+	$sPHPversion = $aPHPversion[0] . '.' . $aPHPversion[1];
+
+	if ( version_compare( $sPHPversion, $cfgPHPversion['min'], '<' ) ) {
 		$sResult .= "<span class=\"fail\">FAILED!</span> This version is not compatible with BlueSpice. Please upgrade to version >= {$cfgPHPversion['min']}.";
-	} elseif ( version_compare( $phpversion, $cfgPHPversion['opt'], '!=' ) ) {
+	} elseif ( version_compare( $sPHPversion, $cfgPHPversion['opt'], '!=' ) ) {
 		$sResult .= "<span class=\"warn\">WARNING!</span> You should use version {$cfgPHPversion['opt']} for full compatibility.";
 	} else {
 		$sResult .= "<span class=\"ok\">OK</span>";
@@ -558,10 +562,7 @@ function checkINIvalues( $iniOptions ) {
 
 		list( $iniOption, $checkOperator, $checkValue, $helptext ) = $value;
 
-		$checkValue = preg_replace( "/[^0-9]/", "", $checkValue );
-
 		$iniValue = ini_get( $iniOption );
-		$iniValue = preg_replace( "/[^0-9]/", "", $checkValue );
 
 		if ( empty( $iniValue ) ) {
 			$iniValue = "0";
@@ -569,27 +570,32 @@ function checkINIvalues( $iniOptions ) {
 
 		$sReturn .= "\nChecking: {$iniOption} ({$iniValue}) ";
 
+		$iniCheckValue = $iniValue;
+
+		if ( substr( $iniValue, strlen( $iniValue ) - 1 ) == 'M' ) {
+			$iniCheckValue = substr( $iniValue, 0, strlen( $iniValue ) - 1 );
+		}
+
+		$iniOptionChecked[$iniOption] = false;
+
 		if ( $checkOperator == "==" ) {
-			if ( $iniValue != $checkValue ) {
-				$sReturn .= "..... {$helptext}<br/>";
+			if ( $iniCheckValue != $checkValue ) {
 				$iniOptionChecked[$iniOption] = true;
 			}
 		} elseif ( $checkOperator == "!=" ) {
-			if ( $iniValue == $checkValue ) {
-				$sReturn .= "..... {$helptext}<br/>";
+			if ( $iniCheckValue == $checkValue ) {
 				$iniOptionChecked[$iniOption] = true;
 			}
 		} elseif ( $checkOperator == ">=" ) {
-			if ( $iniValue < $checkValue ) {
-				$sReturn .= "..... {$helptext}<br/>";
+			if ( $iniCheckValue < $checkValue || in_array( [ '0', '1' ] ) ) {
 				$iniOptionChecked[$iniOption] = true;
 			}
 		}
 
-		if ( isset( $iniOptionChecked[$iniOption] ) && $iniOptionChecked[$iniOption] == true ) {
+		if ( isset( $iniOptionChecked[$iniOption] ) && $iniOptionChecked[$iniOption] != true ) {
 			$sReturn .= "..... <span class=\"ok\">OK</span><br/>";
 		} else {
-			$sReturn .= "..... <span class=\"warn\">FAILED</span><br/>";
+			$sReturn .= "..... {$helptext}<br/>";
 		}
 
 	}
@@ -668,6 +674,10 @@ function checkFiles( $checkFiles ) {
 	return $sReturn . "\n";
 }
 
+/**
+ *
+ * @return string
+ */
 function checkMail() {
 	$sReturn = '';
 
@@ -685,6 +695,10 @@ function checkMail() {
 	return $sReturn;
 }
 
+/**
+ *
+ * @return string
+ */
 function checkSSO() {
 	$sReturn = '';
 
