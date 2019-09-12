@@ -324,7 +324,8 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		var toolsMenu = this.makeTooleMenu( record );
 		if( toolsMenu ) {
 			var offset = $(toolsTriggerEl).offset();
-			toolsMenu.showAt( offset.left, offset.top );
+			var marginTop = offset.top + $(toolsTriggerEl).parent().height();
+			toolsMenu.showAt( offset.left,  marginTop );
 		}
 	},
 
