@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Data;
 
+use FormatJson;
+
 class Sorter {
 
 	/**
