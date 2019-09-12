@@ -17,11 +17,11 @@ class Schema extends \BlueSpice\Data\Schema {
 	 */
 	protected function getDefaultFieldDefinition() {
 		return [
-			self::FILTERABLE => true,
-			self::SORTABLE => true,
-			self::TYPE => FieldType::STRING,
-			self::STORABLE => true,
-			self::INDEXABLE => true,
+			static::FILTERABLE => true,
+			static::SORTABLE => true,
+			static::TYPE => FieldType::STRING,
+			static::STORABLE => true,
+			static::INDEXABLE => true,
 		];
 	}
 
@@ -80,27 +80,27 @@ class Schema extends \BlueSpice\Data\Schema {
 	 * @return string[]
 	 */
 	public function getIndexableFields() {
-		return $this->filterFields( self::INDEXABLE, true );
+		return $this->filterFields( static::INDEXABLE, true );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getStorableFields() {
-		return $this->filterFields( self::STORABLE, true );
+		return $this->filterFields( static::STORABLE, true );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getUnindexableFields() {
-		return $this->filterFields( self::INDEXABLE, false );
+		return $this->filterFields( static::INDEXABLE, false );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getUnstorableFields() {
-		return $this->filterFields( self::STORABLE, false );
+		return $this->filterFields( static::STORABLE, false );
 	}
 }
