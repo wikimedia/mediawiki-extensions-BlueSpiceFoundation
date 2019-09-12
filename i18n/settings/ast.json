@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"bs-setting-path-feature": "Carauterística",
+	"bs-setting-path-extension": "Estensión",
+	"bs-setting-path-package": "Paquete",
+	"bs-setting-path-system": "Sistema",
+	"bs-setting-path-dataanalysis": "Analís de datos",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-personalisation": "Personalización",
+	"bs-setting-path-communication": "Comunicación",
+	"bs-setting-path-administration": "Alministración",
+	"bs-setting-path-qualityassurance": "Control de calidá",
+	"bs-setting-path-export": "Esportar"
+}

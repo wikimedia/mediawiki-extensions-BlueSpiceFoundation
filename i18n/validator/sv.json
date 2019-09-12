@@ -22,5 +22,6 @@
 	"bs-validator-invalid-string": "Ogiltig sträng",
 	"bs-validator-invalid-coordinate": "Ogiltig koordinat",
 	"bs-validator-invalid-parameter": "Denna parameter är inte tillåten",
-	"bs-validator-missing-required": "Denna parameter är obligatorisk."
+	"bs-validator-missing-required": "Denna parameter är obligatorisk.",
+	"bs-validator-value-not-recognized": "Värdet kunde inte bearbetas"
 }

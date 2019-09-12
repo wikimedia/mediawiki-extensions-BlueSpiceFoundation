@@ -8,5 +8,6 @@
 	"bs-setting-path-package": "Pako",
 	"bs-setting-path-system": "Sistemo",
 	"bs-setting-path-dataanalysis": "Analizo de dateno",
-	"bs-setting-path-skinning": "Etoso"
+	"bs-setting-path-skinning": "Etoso",
+	"bs-setting-path-export": "Elporti"
 }

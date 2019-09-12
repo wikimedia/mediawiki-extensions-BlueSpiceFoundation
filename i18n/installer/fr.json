@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Thibaut120094"
 		]
 	},
-	"bs-installer-title": "Installation de MédiaWiki $1 et BlueSpice $2"
+	"bs-installer-title": "Installation de MediaWiki $1 et BlueSpice $2"
 }

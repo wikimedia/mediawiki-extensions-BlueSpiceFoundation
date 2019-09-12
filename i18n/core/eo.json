@@ -54,5 +54,11 @@
 	"bs-graphicallist-action-close": "Malfermi",
 	"bs-graphicallist-action-list": "Listo",
 	"bs-graphicallist-action-preview": "Antaŭrigardi",
-	"bs-notifications-agent-anon": "anonimulo"
+	"bs-notifications-agent-anon": "anonimulo",
+	"bs-filesystemhelper-file-not-exists": "La dosiero <code>$1</code> ne ekzistas.",
+	"bs-filesystemhelper-folder-already-exists": "La dosierujo <code>$1</code> jam ekzistas.",
+	"bs-filesystemhelper-folder-not-exists": "La dosierujo <code>$1</code> ne ekzistas.",
+	"bs-parser-error-invalid-namespace": "Ne valida nomspaco: $1",
+	"bs-bluespice-mediawiki": "MediaVikio BlueSpice",
+	"bs-bluespice": "BlueSpice"
 }

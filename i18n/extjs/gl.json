@@ -4,7 +4,9 @@
 			"Vivaelcelta",
 			"Toliño",
 			"Elisardojm",
-			"Banjo"
+			"Banjo",
+			"Navhy",
+			"Iváns"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",
@@ -21,7 +23,7 @@
 	"bs-extjs-error": "Erro",
 	"bs-extjs-confirm": "Confirmar",
 	"bs-extjs-loading": "Cargando...",
-	"bs-extjs-pageSize": "Tamaño da páxina",
+	"bs-extjs-pageSize": "Entradas por páxina",
 	"bs-extjs-actions-column-header": "Accións",
 	"bs-extjs-warning": "Aviso",
 	"bs-extjs-saving": "gardando...",
@@ -69,5 +71,6 @@
 	"bs-extjs-tools-trigger-text": "Ferramentas",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturas",
 	"bs-extjs-flyout-tab-grid-label": "Detalles",
-	"bs-extjs-flyout-add-label": "Engadir elemento"
+	"bs-extjs-flyout-add-label": "Engadir elemento",
+	"bs-extjs-label-directsearch": "Procurar"
 }

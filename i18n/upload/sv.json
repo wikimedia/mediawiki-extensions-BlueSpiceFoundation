@@ -26,5 +26,6 @@
 	"bs-upload-uploadwarningdialog-outro": "Klicka på \"{{int:bs-extjs-ok}}\" för att ignorera varningar och ladda upp filen, klicka på \"{{int:bs-extjs-cancel}}\" för att återvända till uppladdningsformuläret",
 	"bs-upload-uploadwarningdialog-warning-exists": "Det finns redan en fil med namnet \"$1\"",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "Det finns {{PLURAL:$1|en dubblett|dubbletter}} av denna fil",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Okänd varning med felkoden \"$1\""
+	"bs-upload-uploadwarningdialog-warning-unknown": "Okänd varning med felkoden \"$1\"",
+	"bs-upload-uploaddestfilelabel": "Destinationens filnamn"
 }

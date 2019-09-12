@@ -20,5 +20,6 @@
 	"bs-deferred-batch-status": "Status",
 	"bs-deferred-action-apiaddcategories-description": "Categorieën toevoegen aan '$1'.",
 	"bs-deferred-action-apimovepage-description": "\"$1\" hernoemen naar \"$2\".",
-	"bs-deferred-action-apideletepage-description": "\"$1\" verwijderen."
+	"bs-deferred-action-apideletepage-description": "\"$1\" verwijderen.",
+	"bs-deferred-action-apiremovecategories-description": "Categorieën verwijderen van '$1'."
 }

@@ -13,5 +13,7 @@
 	"bs-wikipage-tasks-setcategories-success": "رده‌ها با موفقیت تعیین شده‌اند.",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "شما مجاز به خواندن صفحهٔ «$1» نیستید.",
 	"bs-wikipage-tasks-error-nothingtoremove": "هیچ رده‌ای برای حذف نیست.",
-	"bs-api-task-taskData-page-title": "عنوان معتبری مربوط به یک صفحهٔ ویکی"
+	"bs-api-task-taskData-page-title": "عنوان معتبری مربوط به یک صفحهٔ ویکی",
+	"apihelp-bs-category-treestore-description": "فهرست‌های زیررده‌های یک ردهٔ خاص",
+	"apihelp-bs-category-treestore-summary": "فهرست‌های زیررده‌های یک ردهٔ خاص"
 }
