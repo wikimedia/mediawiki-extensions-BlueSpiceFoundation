@@ -17,5 +17,6 @@
 	"bs-validator-invalid-string": "유효한 문자열이 아닙니다",
 	"bs-validator-invalid-coordinate": "유효한 좌표가 아닙니다",
 	"bs-validator-invalid-parameter": "이 변수는 허용되지 않습니다",
-	"bs-validator-missing-required": "이 변수는 필수입니다"
+	"bs-validator-missing-required": "이 변수는 필수입니다",
+	"bs-validator-invalid-float": "유효한 float가 아닙니다"
 }

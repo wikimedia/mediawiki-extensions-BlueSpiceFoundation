@@ -72,5 +72,6 @@
 	"bs-extjs-pageexport-list-format-plain-label": "متن ساده",
 	"bs-extjs-pageexport-general-error": "خطا در برون‌بری",
 	"bs-extjs-pageexport-success": "برون‌بری موفق",
-	"bs-extjs-pageexport-error-invalid-title": "نام فهرست، نامعتبر است"
+	"bs-extjs-pageexport-error-invalid-title": "نام فهرست، نامعتبر است",
+	"bs-extjs-export-search-summary-text": "تولید شده به‌وسیلهٔ PageExport"
 }

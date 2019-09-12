@@ -7,5 +7,10 @@
 	"apihelp-bs-store-param-limit": "Nombro de liverotaj rezultoj",
 	"bs-wikipage-tasks-error-page-not-valid": "La provizita paĝo ne estas valida.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ŝanĝis kategoriojn.",
-	"apihelp-bs-wikisubpage-treestore-param-options": "Listo de opcioj"
+	"apihelp-bs-wikisubpage-treestore-param-options": "Listo de opcioj",
+	"apihelp-bs-task-param-format": "La aranĝo de la rezulto",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Vi ne havas la rajton redakti la paĝon \"$1\".",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ne valida kategorio|Ne validaj kategorioj}}: $1",
+	"apihelp-bs-wikisubpage-treestore-param-node": "La kunprefiksa titolo de la vikipaĝo",
+	"bs-api-task-taskData-page-title": "Valida titolo de vikia paĝo"
 }

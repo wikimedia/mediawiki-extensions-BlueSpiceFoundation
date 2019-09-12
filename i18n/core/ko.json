@@ -86,5 +86,6 @@
 	"bs-bluespice-mediawiki": "블루스파이스 미디어위키",
 	"bs-notifications-agent-anon": "익명 사용자",
 	"bs-pref-miniprofileenforceheight": "사용자 아바타의 높이 강제 설정",
-	"bs-pref-testmode": "테스트 모드 활성화"
+	"bs-pref-testmode": "테스트 모드 활성화",
+	"protect-level-editor": "편집자와 관리자만 허용"
 }

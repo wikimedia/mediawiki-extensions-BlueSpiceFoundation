@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Mirin"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Alŝuti dosieron",
@@ -11,5 +12,13 @@
 	"bs-upload-categories": "Kategorioj",
 	"bs-upload-error": "Eraro",
 	"bs-upload-descfilelabel": "Priskribo",
-	"bs-upload-details": "Detaloj"
+	"bs-upload-details": "Detaloj",
+	"bs-upload-uploadfileemptytext": "Enmeti novan dosieron...",
+	"bs-upload-uploaddestfilelabel": "Celdosiernomo",
+	"bs-upload-allowedfiletypesare": "Jen la validaj dosiertipoj:",
+	"bs-upload-uploadwatchthislabel": "Atenti ĉi tiun dosieron",
+	"bs-upload-uploadignorewarningslabel": "Ignori ĉiajn avertojn",
+	"bs-upload-upload-waitmessage": "Alŝutante...",
+	"bs-upload-error-long": "Eraro okazis dum alŝutado",
+	"bs-upload-uploadwarningdialog-warning-exists": "Dosiero kun nomo \"$1\" jam ekzistas"
 }
