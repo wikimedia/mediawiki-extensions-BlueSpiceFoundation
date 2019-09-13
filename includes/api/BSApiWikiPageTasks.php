@@ -233,14 +233,22 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
 		$title = $this->getTitleFromTaskData( $taskData );
+
 		$rawContext = $this->getParameter( Task::PARAM_CONTEXT );
-		if ( $title && $title->exists() ) {
-			$rawContext->wgArticleId = $title->getArticleID();
+		if ( $title instanceof Title ) {
+			$rawContext->wgArticleId = 0;
+			if ( $title->exists() ) {
+				$rawContext->wgArticleId = $title->getArticleID();
+			}
 			$rawContext->wgNamespaceNumber = $title->getNamespace();
-			$rawContext->wgPageName = $title->getFullText();
-			$rawContext->wgTitle = $title->getFullText();
+			$rawContext->wgPageName = $title->getPrefixedText();
+			$rawContext->wgRelevantPageName = $title->getPrefixedText();
+			$rawContext->wgTitle = $title->getText();
+			$rawContext->wgCanonicalNamespace = MWNamespace::getCanonicalName( $title->getNamespace() );
+			$rawContext->wgCanonicalSpecialPageName = false;
 		}
-		$req = new \FauxRequest( array_merge(
+
+		$req = new FauxRequest( array_merge(
 			[ Task::PARAM_TASK_DATA => \FormatJson::encode( $taskData ) ],
 			[ Task::PARAM_CONTEXT => \FormatJson::encode( $rawContext ) ],
 			[ 'action' => 'bs-task', Task::PARAM_TASK => $task ]

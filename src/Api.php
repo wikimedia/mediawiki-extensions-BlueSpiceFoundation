@@ -164,18 +164,21 @@ abstract class Api extends ApiBase {
 		if ( $context->getRequest()->getVal( 'action', '' ) !== $this->getModuleName() ) {
 			return $context;
 		}
-		// TODO: Replace this class with something more modular wich extends the
+		// TODO: Replace this class with something more modular which extends the
 		// context only if is aditional data and this module is actially called
 		// by WebRequest
 		$extendedContext = BSExtendedApiContext::newFromRequest(
 			$context->getRequest()
 		);
+
 		$context->setTitle( $extendedContext->getTitle() );
-		if ( $context->getTitle()->getArticleID() > 0 ) {
+		if ( $extendedContext->getTitle()->getNamespace() > -1 ) {
+			// Page does not have to exist, but it must be in a "real" NS
 			$context->setWikiPage(
 				WikiPage::factory( $context->getTitle() )
 			);
 		}
+
 		return new Context( $context, $this->getConfig() );
 	}
 
