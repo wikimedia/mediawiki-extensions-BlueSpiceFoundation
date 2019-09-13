@@ -7,12 +7,15 @@ use Status;
 use BlueSpice\ParamProcessor\ParamDefinition;
 use BlueSpice\ParamProcessor\ParamType;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
+use MWException;
+use BlueSpice\Task\WikiPage as WikiPageTask;
 
-class SetCategories extends \BlueSpice\Task\WikiPage {
+class SetCategories extends WikiPageTask {
 	const PARAM_CATEGORIES = 'categories';
 
 	/**
 	 * @return Status
+	 * @throws MWException
 	 */
 	protected function doExecute() {
 		$status = Status::newGood();
@@ -26,6 +29,7 @@ class SetCategories extends \BlueSpice\Task\WikiPage {
 				}
 				continue;
 			}
+
 			if ( $title->getNamespace() === NS_CATEGORY ) {
 				$categoryTitles[] = $title;
 				continue;
@@ -37,6 +41,7 @@ class SetCategories extends \BlueSpice\Task\WikiPage {
 			}
 			$categoryTitles[] = $category;
 		}
+
 		if ( !empty( $invalid ) ) {
 			$this->logger->debug( 'invalidCategories', [ 'categories' => $categories ] );
 			$status->error( $this->msg(
@@ -48,6 +53,7 @@ class SetCategories extends \BlueSpice\Task\WikiPage {
 		if ( !$status->isOK() ) {
 			return $status;
 		}
+
 		$wikiText = $this->fetchCurrentRevisionWikiText();
 		$helper = $this->getCategoryLinksHelper( $wikiText );
 
