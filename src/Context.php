@@ -1,11 +1,25 @@
 <?php
 namespace BlueSpice;
 
-class Context implements \IContextSource {
+use IBufferingStatsdDataFactory;
+use IContextSource;
+use Title;
+use User;
+use Config;
+use Language;
+use WebRequest;
+use Skin;
+use Timing;
+use WikiPage;
+use Message;
+use MessageSpecifier;
+use OutputPage;
+
+class Context implements IContextSource {
 
 	/**
 	 *
-	 * @var \IContextSource
+	 * @var IContextSource
 	 */
 	protected $context = null;
 
@@ -20,7 +34,7 @@ class Context implements \IContextSource {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 */
-	public function __construct( \IContextSource $context, \Config $config ) {
+	public function __construct( IContextSource $context, Config $config ) {
 		$this->context = $context;
 		$this->config = $config;
 	}
@@ -52,7 +66,7 @@ class Context implements \IContextSource {
 	 * Get the site configuration
 	 *
 	 * @since 1.23
-	 * @return \Config
+	 * @return Config
 	 */
 	public function getConfig() {
 		return $this->config;
