@@ -34,7 +34,8 @@ class Task extends Api {
 			$status->fatal( $e->getMessage() );
 		}
 
-		$converter = new StatusConverter( $this, $status );
+		$api = $this;
+		$converter = new StatusConverter( $api, $status );
 		$converter->convert();
 	}
 
