@@ -2,18 +2,20 @@
 
 namespace BlueSpice\Task;
 
+use BlueSpice\Task;
 use Exception;
 use Status;
 use WikitextContent;
+use MWException;
 
-abstract class WikiPage extends \BlueSpice\Task {
+abstract class WikiPage extends Task {
 
 	/**
-	 *
 	 * @param string $wikitext
 	 * @return Status
+	 * @throws MWException
 	 */
-	protected function saveWikiPage( $wikitext ) {
+	protected function saveWikiPage( $wikitext = '' ) {
 		$this->logger->debug( 'saveWikiPage', [ 'wikitext' => $wikitext ] );
 		return $this->getWikiPage()->doEditContent(
 			new WikitextContent( $wikitext ),
@@ -35,6 +37,10 @@ abstract class WikiPage extends \BlueSpice\Task {
 	 * @throws Exception
 	 */
 	protected function fetchCurrentRevisionWikiText() {
+		if ( $this->getWikiPage()->getTitle()->exists() === false ) {
+			return '';
+		}
+
 		$content = $this->getWikiPage()->getContent();
 		if ( $content instanceof WikitextContent === false ) {
 			throw new Exception(
@@ -47,7 +53,6 @@ abstract class WikiPage extends \BlueSpice\Task {
 	}
 
 	/**
-	 *
 	 * @return \WikiPage
 	 */
 	protected function getWikiPage() {
