@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Rail"
 		]
 	},
 	"bs-filerepo-labelupload": "Prześlij",
@@ -15,6 +16,7 @@
 	"bs-filerepo-headerfileusertext": "Użytkownik",
 	"bs-filerepo-headerfileextension": "Rozszerzenie",
 	"bs-filerepo-headerfiletimestamp": "Przesłano",
+	"bs-filerepo-headerfilemediatype": "Rodzaj multimediów",
 	"bs-filerepo-headerfiledescription": "Opis",
 	"bs-filerepo-headerfilethumbnail": "Miniatura",
 	"bs-filerepo-yes": "Tak",
