@@ -8,6 +8,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	commonStoreApiAction: 'bs-wikipage-store',
 	pageSize: 25,
 	defaultTab: '',
+	tabIndexMap: {},
 
 	constructor: function( cfg ) {
 		cfg.height = cfg.height || this.calcDefaultHeight( cfg.renderTo );
@@ -58,6 +59,9 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		this.tabDataView = this.makeDataViewPanel();
 		this.tabGrid = this.makeGridPanel();
 
+		this.tabIndexMap.dataviewpanel = this.tabDataView;
+		this.tabIndexMap.gridviewpanel = this.tabGrid;
+
 		return [
 			this.tabDataView,
 			this.tabGrid
@@ -65,9 +69,8 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 	},
 
 	makeDataViewPanel: function() {
-		return {
+		return new Ext.panel.Panel( {
 			iconCls: 'icon-thumbs',
-			id: 'dataviewpanel',
 			title: mw.message( 'bs-extjs-flyout-tab-thumbs-label' ).text(),
 			tooltip: mw.message( 'bs-extjs-flyout-tab-thumbs-title' ).text(),
 			cls: 'preview',
@@ -84,7 +87,7 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 					displayInfo : true
 				} )
 			]
-		};
+		} );
 	},
 
 	makeDataViewPanelTemplate: function() {
@@ -288,7 +291,6 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		}
 
 		return new Ext.grid.Panel( {
-			id: 'gridviewpanel',
 			iconCls: 'icon-grid',
 			cls: 'list',
 			title: mw.message( 'bs-extjs-flyout-tab-grid-label' ).text(),
@@ -359,10 +361,14 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 		} );
 	},
 
+	/**
+	 * @returns {Ext.Component}|null
+	 */
 	getInitialActiveTab: function() {
 		if( !this.defaultTab || this.defaultTab === '' ) {
 			return null;
 		}
-		return this.defaultTab;
+
+		return this.tabIndexMap[ this.defaultTab ] || null;
 	}
 });
