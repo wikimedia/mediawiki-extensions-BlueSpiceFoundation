@@ -612,7 +612,7 @@
 		"BlueSpiceExtInfo": {
 			"value": {
 				"name": "BlueSpice",
-				"version": "3.1.0-alpha",
+				"version": "3.1.0",
 				"status": "stable",
 				"package": "BlueSpice Free",
 				"url": "https://bluespice.com",
