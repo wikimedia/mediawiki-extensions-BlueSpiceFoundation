@@ -63,7 +63,7 @@ Ext.define( 'BS.action.APICategoryOperation', {
 			title = mw.Title.newFromText( set.page_title );
 		}
 
-		context.wgCanonicalNamespace = title.getNamespacePrefix();
+		context.wgCanonicalNamespace = title.getNamespacePrefix().split( ':' ).shift();
 		context.wgPageName = title.getPrefixedText();
 		context.wgNamespaceNumber = title.getNamespaceId();
 		context.wgRedirectedFrom = title.getPrefixedText();
