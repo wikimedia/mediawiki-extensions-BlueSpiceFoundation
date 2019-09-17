@@ -7,6 +7,11 @@ use Exception;
 use Status;
 use WikitextContent;
 use MWException;
+use Revision;
+use EditPage;
+use RequestContext;
+use DeferredUpdates;
+use MWCallableUpdate;
 
 abstract class WikiPage extends Task {
 
@@ -17,13 +22,35 @@ abstract class WikiPage extends Task {
 	 */
 	protected function saveWikiPage( $wikitext = '' ) {
 		$this->logger->debug( 'saveWikiPage', [ 'wikitext' => $wikitext ] );
-		return $this->getWikiPage()->doEditContent(
+		$status = $this->getWikiPage()->doEditContent(
 			new WikitextContent( $wikitext ),
 			$this->getSaveWikiPageSummary(),
 			0,
 			false,
 			$this->getContext()->getUser()
 		);
+		if ( $status->isGood() ) {
+			$statusValue = $status->getValue();
+			if ( !is_array( $statusValue ) || !isset( $statusValue['revision'] ) ) {
+				return $status;
+			}
+			/** @var Revision $revision */
+			$revision = $status->getValue()['revision'];
+			$cookieName = EditPage::POST_EDIT_COOKIE_KEY_PREFIX . $revision->getId();
+			// Must use main, since $this->getContext() returns different context
+			$response = RequestContext::getMain()->getRequest()->response();
+			DeferredUpdates::addUpdate(
+				new MWCallableUpdate(
+					function () use (
+						$cookieName, $response
+					) {
+						$response->clearCookie( $cookieName );
+					}
+				)
+			);
+
+		}
+		return $status;
 	}
 
 	/**
