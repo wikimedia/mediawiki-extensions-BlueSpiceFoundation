@@ -10,21 +10,27 @@ Ext.define( 'BS.action.APICategoryOperation', {
 		this.actionStatus = BS.action.Base.STATUS_RUNNING;
 
 		var set = {
-			categories: this.categories,
-			page_title: this.pageTitle
+			categories: this.categories
 		};
+		if ( this.pageId !== -1 ) {
+			set.page_id = this.pageId;
+		} else if ( this.pageTitle !== '' ) {
+			set.page_title = this.pageTitle;
+		}
 
-		this.doAPIAddCategories( dfd, set );
+		this.doCategoryOperation( dfd, set );
 
 		return dfd.promise();
 	},
 
-	doAPIAddCategories: function( dfd, set ){
+	doCategoryOperation: function( dfd, taskData ){
 		var me = this;
 
-		var taskData = {
-			categories: set.categories.join( '|' )
-		};
+		if ( taskData.categories.length > 0 ) {
+			taskData.categories = taskData.categories.join( '|' );
+		} else {
+			delete( taskData.categories );
+		}
 
 		bs.api.tasks.exec(
 			'wikipage',
@@ -32,16 +38,16 @@ Ext.define( 'BS.action.APICategoryOperation', {
 			taskData,
 			{
 				useService: true,
-				context: this.getContextObject( set )
+				context: this.getContextObject( taskData )
 			}
 		).fail(function( response ){
 			me.actionStatus = BS.action.Base.STATUS_ERROR;
-			dfd.reject( me, set, response);
+			dfd.reject( me, taskData, response);
 		})
 			.done(function( response ) {
 				if( !response.success ){
 					me.actionStatus = BS.action.Base.STATUS_ERROR;
-					dfd.reject( me, set, response );
+					dfd.reject( me, taskData, response );
 				}
 				this.actionStatus = BS.action.Base.STATUS_DONE;
 				dfd.resolve( me );
