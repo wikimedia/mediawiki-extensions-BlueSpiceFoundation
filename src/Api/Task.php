@@ -33,6 +33,7 @@ class Task extends Api {
 		} catch ( Exception $e ) {
 			$status->fatal( $e->getMessage() );
 		}
+
 		$converter = new StatusConverter( $this, $status );
 		$converter->convert();
 	}
