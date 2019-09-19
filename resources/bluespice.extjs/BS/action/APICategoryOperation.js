@@ -49,7 +49,7 @@ Ext.define( 'BS.action.APICategoryOperation', {
 					me.actionStatus = BS.action.Base.STATUS_ERROR;
 					dfd.reject( me, taskData, response );
 				}
-				this.actionStatus = BS.action.Base.STATUS_DONE;
+				me.actionStatus = BS.action.Base.STATUS_DONE;
 				dfd.resolve( me );
 			});
 	},
