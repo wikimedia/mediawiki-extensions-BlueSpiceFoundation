@@ -75,5 +75,6 @@
 	"bs-extjs-flyout-tab-grid-title": "Префрли на преглед на подробностите",
 	"bs-extjs-flyout-add-title": "Стиснете тука за да додадете нов предмет",
 	"bs-extjs-flyout-add-label": "Додај предмет",
-	"bs-extjs-tools-trigger-title": "Стиснете овде да го отворите менито за алатки"
+	"bs-extjs-tools-trigger-title": "Стиснете овде да го отворите менито за алатки",
+	"bs-extjs-pageexport-required-text": "Името на списокот не може да биде празно и барем една страница мора да биде избрана"
 }

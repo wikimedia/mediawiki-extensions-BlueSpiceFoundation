@@ -4,7 +4,8 @@
 			"Metalhead64",
 			"Inkowik",
 			"Umherirrender",
-			"Hwboehm"
+			"Hwboehm",
+			"Mglaser"
 		]
 	},
 	"bluespicefoundation-desc": "Macht MediaWiki bereit für Unternehmen",
@@ -94,5 +95,6 @@
 	"right-wikiadmin": "In vielen BlueSpice-Erweiterungen verwendet für potentiell gefährliche administrative Aufgaben wie die Verwaltung von Benutzern, Berechtigungen oder der globalen Konfiguration.",
 	"bs-notifications-agent-anon": "anonymer Benutzer",
 	"bs-lockdown-groups-permissionerror": "Die Aktion „$1“ ist aus {{PLURAL:$2|dem folgenden Grund|den folgenden Gründen}} nicht verfügbar: $3",
-	"action-wikiadmin": "BlueSpice-Administrationsseiten anzuzeigen"
+	"action-wikiadmin": "BlueSpice-Administrationsseiten anzuzeigen",
+	"protect-level-editor": "Nur Redakteuren und Administratoren erlauben"
 }
