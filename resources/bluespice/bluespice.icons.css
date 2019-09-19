@@ -439,6 +439,22 @@
 	font-family: "icomoon" !important;
 	content: "\e92b";
 }
+.icon-file-word:before {
+	content: "\eae1";
+}
+
+.icon-file-excel:before {
+	content: "\eae2";
+}
+
+.icon-file-powerpoint {
+	font-family: "fontawesome" !important;
+	content: "\f1c4";
+}
+
+.icon-file {
+	content: "\e924";
+}
 
 .icon-users:before {
 	content: "\e972";
