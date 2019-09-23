@@ -7,6 +7,7 @@
 	},
 	"apihelp-bs-store-param-limit": "Liczba zwracanych wyników",
 	"apihelp-bs-store-param-format": "Format danych wyjściowych (tylko JSON lub sformatowany JSON)",
+	"apihelp-bs-task-param-task": "Zadanie, które powinno zostać wykonane",
 	"apihelp-bs-task-param-format": "Format danych wyjściowych",
 	"bs-wikipage-tasks-error-page-not-valid": "Podana strona nie jest poprawna.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Zmienione kategorie.",
