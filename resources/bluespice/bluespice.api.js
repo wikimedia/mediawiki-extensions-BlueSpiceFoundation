@@ -201,7 +201,7 @@
 		var params = $.extend( {
 			task: task,
 			taskData: JSON.stringify( data ),
-			token: mw.user.tokens.get( 'editToken' )
+			token: mw.user.tokens.get( 'csrfToken' )
 		}, additionalParams );
 
 		return _makeUrl(
