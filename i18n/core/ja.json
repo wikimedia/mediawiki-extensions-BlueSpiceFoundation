@@ -6,7 +6,8 @@
 			"2nd-player",
 			"Otokoume",
 			"Suyama",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Reiwa period"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -15,6 +16,7 @@
 	"bs-userbar_loginswitch_login": "ログイン",
 	"bs-extended-search-tooltip-fulltext": "全文検索",
 	"bs-extended-search-textfield-defaultvalue": "検索...",
+	"bs-extended-search-textfield-tooltip": "wiki内を検索",
 	"bs-no-information-available": "利用できる情報はありません",
 	"bs-years-duration": "{{PLURAL:$1|$1年}}",
 	"bs-months-duration": "{{PLURAL:$1|$1か月}}",
