@@ -2,7 +2,13 @@
 
 namespace BlueSpice;
 
+use ExtensionRegistry;
+
 class ExtensionAttributeBasedRegistry implements IRegistry {
+
+	const OVERRIDE_SET = 'set';
+	const OVERRIDE_MERGE = 'merge';
+	const OVERRIDE_REMOVE = 'remove';
 
 	/**
 	 *
@@ -18,14 +24,34 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 
 	/**
 	 *
+	 * @var array
+	 */
+	protected $overrides = [];
+
+	/**
+	 *
 	 * @param string $attribName
 	 * @param \ExtensionRegistry|null $extensionRegistry
+	 * @param array|null $overrides
 	 */
-	public function __construct( $attribName, $extensionRegistry = null ) {
+	public function __construct( $attribName, $extensionRegistry = null, $overrides = null ) {
 		$this->attribName = $attribName;
 		$this->extensionRegistry = $extensionRegistry;
+		$this->overrides = $overrides;
+
 		if ( $this->extensionRegistry === null ) {
-			$this->extensionRegistry = \ExtensionRegistry::getInstance();
+			$this->extensionRegistry = ExtensionRegistry::getInstance();
+		}
+
+		if ( $this->overrides === null ) {
+			$services = Services::getInstance();
+			$config = $services->getConfigFactory()->makeConfig( 'bsg' );
+			$configOverrides = $config->get( 'ExtensionAttributeRegistryOverrides' );
+
+			$this->overrides = [];
+			if ( isset( $configOverrides[ $attribName ] ) ) {
+				$this->overrides = $configOverrides[ $attribName ];
+			}
 		}
 	}
 
@@ -36,7 +62,7 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 	 * @return string
 	 */
 	public function getValue( $key, $default = '' ) {
-		$registry = $this->extensionRegistry->getAttribute( $this->attribName );
+		$registry = $this->getRegistryArray();
 		$value = isset( $registry[$key] ) ? $registry[$key] : $default;
 
 		if ( is_array( $value ) ) {
@@ -53,7 +79,7 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 	 * @return string[]
 	 */
 	public function getAllKeys() {
-		$registry = $this->extensionRegistry->getAttribute( $this->attribName );
+		$registry = $this->getRegistryArray();
 		return array_keys( $registry );
 	}
 
@@ -68,4 +94,32 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 		}
 		return $all;
 	}
+
+	/**
+	 *
+	 * @return array
+	 */
+	protected function getRegistryArray() {
+		$registry = $this->extensionRegistry->getAttribute( $this->attribName );
+		if ( isset( $this->overrides[static::OVERRIDE_SET ] ) ) {
+			$registry = $this->overrides[static::OVERRIDE_SET ];
+		} else {
+			if ( isset( $this->overrides[static::OVERRIDE_MERGE ] ) ) {
+				$registry = array_merge(
+					$registry,
+					$this->overrides[static::OVERRIDE_MERGE ]
+				);
+			}
+			if ( isset( $this->overrides[static::OVERRIDE_REMOVE ] ) ) {
+				foreach ( $this->overrides[static::OVERRIDE_REMOVE ] as $removeKey ) {
+					if ( isset( $registry[ $removeKey ] ) ) {
+						unset( $registry[ $removeKey ] );
+					}
+				}
+			}
+		}
+
+		return $registry;
+	}
+
 }
