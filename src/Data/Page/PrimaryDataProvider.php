@@ -5,6 +5,7 @@ namespace BlueSpice\Data\Page;
 use IContextSource;
 use Title;
 use User;
+use Hooks;
 use Wikimedia\Rdbms\IDatabase;
 use BlueSpice\Services;
 use BlueSpice\Data\ReaderParams;
@@ -40,6 +41,11 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 		}
 
 		$record = $this->getRecordFromTitle( $title );
+		Hooks::run( 'BSPageStoreDataProviderBeforeAppendRow', [
+			$this,
+			$record,
+			$title,
+		] );
 		if ( $record ) {
 			$this->data[] = $record;
 		}
