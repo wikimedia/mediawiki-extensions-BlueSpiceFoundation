@@ -61,7 +61,7 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 	/**
 	 *
 	 * @param ReaderParams $params
-	 * @return Records[]
+	 * @return Record[]
 	 */
 	public function makeData( $params ) {
 		$this->data = [];
