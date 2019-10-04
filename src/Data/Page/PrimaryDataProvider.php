@@ -38,13 +38,28 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 		if ( !$title || !$this->userCanRead( $title ) ) {
 			return;
 		}
-		$fields = [ Record::ID, Record::NS, Record::TITLE, Record::IS_REDIRECT,
-			Record::ID_NEW, Record::TOUCHED, Record::LATEST, Record::CONTENT_MODEL ];
-		$data = [];
-		foreach ( $fields as $key ) {
-			$data[ $key ] = $row->{$key};
+
+		$record = $this->getRecordFromTitle( $title );
+		if ( $record ) {
+			$this->data[] = $record;
 		}
-		$this->data[] = new Record( (object)$data );
+	}
+
+	/**
+	 * @param Title $title
+	 * @return Record|false to skip given title
+	 */
+	protected function getRecordFromTitle( Title $title ) {
+		return new Record( (object)[
+			Record::ID => $title->getArticleID(),
+			Record::NS => $title->getNamespace(),
+			Record::TITLE => $title->getDBkey(),
+			Record::IS_REDIRECT => $title->isRedirect(),
+			Record::IS_NEW => $title->isNewPage(),
+			Record::TOUCHED => $title->getTouched(),
+			Record::LATEST => $title->getLatestRevID(),
+			Record::CONTENT_MODEL => $title->getContentModel()
+		] );
 	}
 
 	/**
