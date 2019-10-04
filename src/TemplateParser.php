@@ -57,14 +57,11 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 	 *
 	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
 	 *   or a MessageSpecifier.
-	 * @param mixed $args,...
+	 * @param mixed ...$params
 	 * @return Message
 	 */
-	public function msg( $key ) {
-		return call_user_func_array(
-			[ RequestContext::getMain(), 'msg' ],
-			func_get_args()
-		);
+	public function msg( $key, ...$params ) {
+		return RequestContext::getMain()->msg( $key, ...$params );
 	}
 
 }

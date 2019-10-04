@@ -141,13 +141,10 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 	/**
 	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
 	 *   or a MessageSpecifier.
-	 * @param mixed $params,... Normal message parameters
+	 * @param mixed ...$params Normal message parameters
 	 * @return Message
 	 */
-	public function msg( $key ) {
-		return call_user_func_array(
-			[ $this->context, 'msg' ],
-			func_get_args()
-		);
+	public function msg( $key, ...$params ) {
+		return $this->context->msg( $key, ...$params );
 	}
 }

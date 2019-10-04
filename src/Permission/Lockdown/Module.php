@@ -70,14 +70,11 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 	/**
 	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
 	 *   or a MessageSpecifier.
-	 * @param mixed $params,... Normal message parameters
+	 * @param mixed ...$params Normal message parameters
 	 * @return Message
 	 */
-	public function msg( $key ) {
-		return call_user_func_array(
-			[ $this->getContext(), 'msg' ],
-			func_get_args()
-		);
+	public function msg( $key, ...$params ) {
+		return $this->getContext()->msg( $key, ...$params );
 	}
 
 	/**
