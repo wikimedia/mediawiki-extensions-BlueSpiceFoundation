@@ -115,8 +115,8 @@ class Context implements IContextSource {
 	/**
 	 * @inheritDoc
 	 */
-	public function msg( $key ) {
-		return $this->context->msg( $key );
+	public function msg( $key, ...$params ) {
+		return $this->context->msg( $key, ...$params );
 	}
 
 }
