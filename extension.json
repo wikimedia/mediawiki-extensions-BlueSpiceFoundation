@@ -797,6 +797,14 @@
 		},
 		"LessVars": {
 			"value": {}
+		},
+		"ExtensionAttributeRegistryOverrides": {
+			"@note0": "Key is the full extension attribute name, e.g. `BlueSpiceFoundationLessVarsRegistry`",
+			"@note1": "Value is a array that supports three keys:",
+			"@note2": "`set`: Contains an associative array that completely replaces the original value of the attribute.",
+			"@note3": "`merge`: Contains an associative array the will be merged with the original value of the attribute. Will not be evaluated if `set` is defined.",
+			"@note4": "`remove`: Contains a indexed array of keys that should be removed from the original value of the attribute. Will not be evaluated if `set` is defined.",
+			"value": {}
 		}
 	},
 	"ConfigRegistry": {
