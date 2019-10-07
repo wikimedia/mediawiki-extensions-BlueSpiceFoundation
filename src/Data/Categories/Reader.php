@@ -15,8 +15,7 @@ class Reader extends DatabaseReader {
 	 */
 	protected function makePrimaryDataProvider( $params ) {
 		return new PrimaryDataProvider(
-			$this->db,
-			$this->getContentNamespaceIds()
+			$this->db
 		);
 	}
 

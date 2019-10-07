@@ -25,18 +25,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @var int[]
-	 */
-	protected $namespaceWhitelist = [];
-
-	/**
-	 *
 	 * @param IDatabase $db
-	 * @param array $namespaceWhitelist
 	 */
-	public function __construct( $db, $namespaceWhitelist = [] ) {
+	public function __construct( $db ) {
 		$this->db = $db;
-		$this->namespaceWhitelist = $namespaceWhitelist;
 	}
 
 	/**
