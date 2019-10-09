@@ -54,7 +54,7 @@ abstract class EntityConfig implements JsonSerializable, Config {
 
 	/**
 	 *
-	 * @param type $config
+	 * @param Config $config
 	 * @param string $type
 	 * @param array $defaults
 	 */
