@@ -5,6 +5,9 @@
  * @package BlueSpice_AdapterMW
  * @subpackage Utility
  */
+
+use MWTidy;
+
 class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
 	protected $oOriginalGlobalParser     = null;
@@ -17,8 +20,6 @@ class BsPageContentProvider {
 	public    $oParserOptions            = null;
 	protected $sTemplate                 = false; // TODO RBV (21.01.11 17:09): Better templating...
 	public    $bEncapsulateContent       = true;
-	protected $oTidy                     = null;
-	public    $aTidyConfig               = array();
 
 	public static $oInstance             = null;
 
@@ -42,27 +43,6 @@ class BsPageContentProvider {
 		//difficult to traverse DOM
 
 		return $this->sTemplate;
-	}
-
-	/**
-	 * Lazy instantiation of Tidy
-	 * @return Tidy
-	 */
-	protected function getTidy() {
-		if( $this->oTidy !== null ) {
-			return $this->oTidy;
-		}
-
-		$this->aTidyConfig = array(
-				'output-xhtml'     => true,
-				'numeric-entities' => true,
-				'hide-comments'    => true,
-				'wrap'             => 0,
-				'show-body-only'   => true
-		);
-
-		$this->oTidy = new Tidy();
-		return $this->oTidy;
 	}
 
 	/**
@@ -180,26 +160,6 @@ class BsPageContentProvider {
 
 		$oDOMDoc->loadXML( $sHtmlContent );
 
-		/*
-		 * This is experimental code to get rid of the HTML Tidy dependency.
-		 * Unforunately there are several issues with this approach. I. e.
-		 * with UTF-8 content.
-		 * In UEModulePDF/includes/PDFServlet.class.php:35 we use
-		 * DOMDocument::saveXML instead od ::saveHTML which also causes trouble
-		 *
-		$sHtmlContent = mb_convert_encoding($sHtmlContent,
-											'HTML-ENTITIES', "UTF-8");
-		$oDOMDoc->recover = true;
-		Wikimedia\suppressWarnings();
-		$oDOMDoc->loadHTML( $sHtmlContent );
-		Wikimedia\restoreWarnings();
-		 */
-
-		/*
-		 * Fixing Tidy bug: http://sourceforge.net/tracker/index.php?func=detail&aid=1532698&group_id=27659&atid=390963
-		 * TODO RBV (06.03.12 15:14): Find better solution than
-		 * http://stackoverflow.com/questions/3834319/trim-only-the-first-and-last-occurrence-of-a-character-in-a-string-php/3834391#3834391
-		 */
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
 		foreach( $oPreTags as $oPreTag ) {
 			if( !($oPreTag->firstChild instanceof DOMText ) ){
@@ -362,11 +322,8 @@ class BsPageContentProvider {
 			);
 		}
 
-		return $this->getTidy()->repairString(
-			$sHTML,
-			$this->aTidyConfig,
-			'utf8'
-		);
+		$tidy = MWTidy::singleton();
+		return $tidy->tidy( $sHTML );
 	}
 
 	/**
