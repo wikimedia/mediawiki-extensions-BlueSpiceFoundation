@@ -19,9 +19,6 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 	 * @throws RuntimeException
 	 */
 	protected function compile( $code ) {
-		if ( !class_exists( 'LightnCandy' ) ) {
-			throw new RuntimeException( 'LightnCandy class not defined' );
-		}
 		$helpers = $this->getCompileHelpers();
 		return LightnCandy::compile( $code, [
 			'flags' => $this->compileFlags,
