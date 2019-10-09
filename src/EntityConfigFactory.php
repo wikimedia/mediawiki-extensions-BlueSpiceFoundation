@@ -81,13 +81,27 @@ class EntityConfigFactory {
 		// global config mechanism instead
 		\Hooks::run( 'BSEntityConfigDefaults', [ &$defaults ] );
 		foreach ( $this->entityRegistry->getAllKeys() as $key ) {
-			$configClass = $this->entityRegistry->getValue( $key );
-			$this->entityConfigs[$key] = new $configClass(
+			$callable = $this->entityRegistry->getValue( $key );
+			if ( !is_callable( $callable ) ) {
+				// deprecated since 3.1.1
+				$this->entityConfigs[$key] = new $callable(
+					$this->config,
+					$key,
+					// deprecated
+					$defaults
+				);
+				wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+				continue;
+			}
+			$instance = call_user_func_array( $callable, [
 				$this->config,
 				$key,
-				// deprecated
-				$defaults
-			);
+				Services::getInstance()
+			] );
+			if ( !$instance ) {
+				continue;
+			}
+			$this->entityConfigs[$key] = $instance;
 		}
 
 		if ( !isset( $this->entityConfigs[$type] ) ) {
