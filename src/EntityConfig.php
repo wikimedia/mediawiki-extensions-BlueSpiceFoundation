@@ -171,17 +171,13 @@ abstract class EntityConfig implements JsonSerializable, Config {
 	 *
 	 * @return string
 	 */
-	protected function get_EntityClass() {
-		return '';
-	}
+	abstract protected function get_EntityClass();
 
 	/**
 	 *
 	 * @return string
 	 */
-	protected function get_StoreClass() {
-		return '';
-	}
+	abstract protected function get_StoreClass();
 
 	/**
 	 *
