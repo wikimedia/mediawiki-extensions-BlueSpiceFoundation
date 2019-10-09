@@ -27,6 +27,8 @@
  */
 namespace BlueSpice;
 
+use JsonSerializable;
+use Config;
 use BlueSpice\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
 
@@ -34,13 +36,13 @@ use BlueSpice\Data\FieldType;
  * EntityConfig class for BlueSpice
  * @package BlueSpiceFoundation
  */
-abstract class EntityConfig implements \JsonSerializable, \Config {
+abstract class EntityConfig implements JsonSerializable, Config {
 
 	protected $type = '';
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 
@@ -56,26 +58,13 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 * @param string $type
 	 * @param array $defaults
 	 */
-	public function __construct( $config, $type, $defaults = [] ) {
+	public function __construct( $config, $type = '', $defaults = [] ) {
 		$this->config = $config;
 		$this->type = $type;
 		$this->defaults = array_merge(
 			$this->addGetterDefaults(),
 			$defaults
 		);
-	}
-
-	/**
-	 * EntityConfig factory
-	 * @deprecated since version 3.0.0 - Use MediaWikiService
-	 * 'EntityConfigFactory' instead
-	 * @param string $type - Entity type
-	 * @return EntityConfig - or null
-	 */
-	public static function factory( $type ) {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$configFactory = Services::getInstance()->getBSEntityConfigFactory();
-		return $configFactory->newFromType( $type );
 	}
 
 	/**
@@ -94,9 +83,9 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 
 	/**
 	 *
-	 * @return \Config
+	 * @return Config
 	 */
-	protected function getConfig() {
+	final protected function getConfig() {
 		if ( $this->config ) {
 			return $this->config;
 		}
@@ -141,6 +130,14 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 */
 	public function jsonSerialize() {
 		$aConfig = [];
+		foreach ( get_class_methods( $this->getConfig() ) as $sMethod ) {
+			if ( strpos( $sMethod, 'get_' ) !== 0 ) {
+				continue;
+			}
+			// remove the get_
+			$sVarName = substr( $sMethod, 4 );
+			$aConfig[$sVarName] = $this->getConfig()->get( $sVarName );
+		}
 		foreach ( get_class_methods( $this ) as $sMethod ) {
 			if ( strpos( $sMethod, 'get_' ) !== 0 ) {
 				continue;
@@ -158,7 +155,7 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	/**
 	 * @return string - EntityConfig type
 	 */
-	public function getType() {
+	final public function getType() {
 		return $this->type;
 	}
 
@@ -166,19 +163,25 @@ abstract class EntityConfig implements \JsonSerializable, \Config {
 	 *
 	 * @return array
 	 */
-	abstract protected function addGetterDefaults();
+	protected function addGetterDefaults() {
+		return [];
+	}
 
 	/**
 	 *
 	 * @return string
 	 */
-	abstract protected function get_EntityClass();
+	protected function get_EntityClass() {
+		return '';
+	}
 
 	/**
 	 *
 	 * @return string
 	 */
-	abstract protected function get_StoreClass();
+	protected function get_StoreClass() {
+		return '';
+	}
 
 	/**
 	 *
