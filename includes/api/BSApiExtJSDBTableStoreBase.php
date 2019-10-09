@@ -93,14 +93,31 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		return $aData;
 	}
 
+	/**
+	 * @param string $sQuery
+	 * @param array $aFilter
+	 * @return array
+	 */
 	abstract public function makeTables( $sQuery, $aFilter );
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @param array $aFilter
+	 * @return array
+	 */
 	public function makeFields( $sQuery, $aFilter ) {
 		return [
 			'*'
 		];
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @param array $aFilter
+	 * @return array
+	 */
 	public function makeConditions( $sQuery, $aFilter ) {
 		$aReturn = [];
 		if ( empty( $aFilter ) ) {
@@ -121,12 +138,24 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		return $aReturn;
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @param array $aFilter
+	 * @return array
+	 */
 	public function makeOptions( $sQuery, $aFilter ) {
 		return [
 
 		];
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @param array $aFilter
+	 * @return array
+	 */
 	public function makeJoinOptions( $sQuery, $aFilter ) {
 		return [
 
@@ -142,6 +171,12 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		return (object)$row;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $oFilter
+	 * @param array $aReturn
+	 * @return array
+	 */
 	public function buildConditionNumeric( $oFilter, $aReturn = [] ) {
 		if ( !is_numeric( $oFilter->value ) ) {
 			// TODO: Warning
@@ -166,6 +201,12 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		return $aReturn;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $oFilter
+	 * @param array $aReturn
+	 * @return array
+	 */
 	public function buildConditionString( $oFilter, $aReturn = [] ) {
 		if ( !is_string( $oFilter->value ) ) {
 			// TODO: Warning

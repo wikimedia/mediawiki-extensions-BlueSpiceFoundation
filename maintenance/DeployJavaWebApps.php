@@ -17,8 +17,6 @@ class DeployJavaWebApps extends BSMaintenance {
 	}
 
 	public function execute() {
-		global $wgPasswordSender;
-
 		$sTarget  = $this->getOption( 'target' );
 		$sBaseURL = $this->getOption( 'baseURL' );
 

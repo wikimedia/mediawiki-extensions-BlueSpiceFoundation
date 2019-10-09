@@ -53,7 +53,7 @@ abstract class BSEntityDeleteComplete extends Hook {
 	 * @param Entity $entity
 	 * @param \Status $status
 	 * @param \User $user
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $entity, $status, $user ) {
 		$className = static::class;

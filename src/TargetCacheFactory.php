@@ -34,6 +34,7 @@ class TargetCacheFactory {
 	 *
 	 * @param IRegistry $registry
 	 * @param \Config $config
+	 * @param CacheHelper $cacheHelper
 	 */
 	public function __construct( $registry, \Config $config, CacheHelper $cacheHelper ) {
 		$this->registry = $registry;

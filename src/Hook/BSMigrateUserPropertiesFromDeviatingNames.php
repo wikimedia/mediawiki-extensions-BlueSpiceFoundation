@@ -46,8 +46,8 @@ abstract class BSMigrateUserPropertiesFromDeviatingNames extends Hook {
 	 * Located in \BSMigrateUserProperties::fromDeviatingNames. Use change the
 	 * new name of the user property.
 	 * @param string $oldName
-	 * @param string $newName
-	 * @return boolean
+	 * @param string &$newName
+	 * @return bool
 	 */
 	public static function callback( $oldName, &$newName ) {
 		$className = static::class;
@@ -64,7 +64,7 @@ abstract class BSMigrateUserPropertiesFromDeviatingNames extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param string $oldName
-	 * @param string $newName
+	 * @param string &$newName
 	 */
 	public function __construct( $context, $config, $oldName, &$newName ) {
 		parent::__construct( $context, $config );

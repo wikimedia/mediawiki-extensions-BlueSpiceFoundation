@@ -4,7 +4,9 @@
 			"Reza1615",
 			"Alirezaaa",
 			"Arash.pt",
-			"Alifakoor"
+			"Alifakoor",
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -21,7 +23,7 @@
 	"bs-extjs-error": "خطا",
 	"bs-extjs-confirm": "تأیید",
 	"bs-extjs-loading": "در حال بارگیری...",
-	"bs-extjs-pageSize": "حجم صفحه",
+	"bs-extjs-pageSize": "تعداد مدخل‌ها در هر صفحه",
 	"bs-extjs-actions-column-header": "فعالیت‌ها",
 	"bs-extjs-warning": "هشدار",
 	"bs-extjs-saving": "در حال ذخیره‌سازی...",
@@ -30,6 +32,7 @@
 	"bs-extjs-label-user": "کاربر",
 	"bs-extjs-label-namespace": "فضای نام",
 	"bs-extjs-label-page": "صفحه",
+	"bs-extjs-label-directsearch": "جستجو",
 	"bs-extjs-upload": "بارگذاری",
 	"bs-extjs-browse": "مرور",
 	"bs-extjs-uploading": "در حال بارگذاری...",
@@ -55,5 +58,20 @@
 	"bs-extjs-filter-date-after": "بعد",
 	"bs-extjs-filter-date-before": "قبل",
 	"bs-extjs-filter-date-on": "روشن",
-	"bs-extjs-filter-date-filter": "پالایه"
+	"bs-extjs-filter-date-filter": "پالایه",
+	"bs-extjs-pageexport-list-name-label": "نام فهرست",
+	"bs-extjs-pageexport-list-format-link-label": "پیوند",
+	"bs-extjs-pageexport-overwrite-label": "رونویسی",
+	"bs-extjs-tools-trigger-text": "ابزارها",
+	"bs-extjs-flyout-tab-thumbs-label": "بندانگشتی",
+	"bs-extjs-flyout-tab-grid-label": "جزئیات",
+	"bs-extjs-flyout-add-label": "افزودن آیتم",
+	"bs-extjs-titlecombo-newpagehint": "صفحه وجود ندارد!",
+	"bs-extjs-pageexport-dialog-title": "برون‌بری صفحه‌ها",
+	"bs-extjs-pageexport-list-format-label": "قالب فهرست",
+	"bs-extjs-pageexport-list-format-plain-label": "متن ساده",
+	"bs-extjs-pageexport-general-error": "خطا در برون‌بری",
+	"bs-extjs-pageexport-success": "برون‌بری موفق",
+	"bs-extjs-pageexport-error-invalid-title": "نام فهرست، نامعتبر است",
+	"bs-extjs-export-search-summary-text": "تولید شده به‌وسیلهٔ PageExport"
 }

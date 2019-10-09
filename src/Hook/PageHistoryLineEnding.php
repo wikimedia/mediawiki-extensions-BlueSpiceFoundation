@@ -41,10 +41,10 @@ abstract class PageHistoryLineEnding extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \HistoryPager $history
-	 * @param \stdClass $row
-	 * @param string $s
-	 * @param array $classes
-	 * @param array $attribs
+	 * @param \stdClass &$row
+	 * @param string &$s
+	 * @param array &$classes
+	 * @param array &$attribs
 	 */
 	public function __construct( $context, $config, $history, &$row, &$s, &$classes, &$attribs ) {
 		parent::__construct( $context, $config );
@@ -59,11 +59,11 @@ abstract class PageHistoryLineEnding extends Hook {
 	/**
 	 *
 	 * @param \HistoryPager $history
-	 * @param \stdClass $row
-	 * @param string $s
-	 * @param string $classes
-	 * @param array $attribs
-	 * @return boolean
+	 * @param \stdClass &$row
+	 * @param string &$s
+	 * @param string &$classes
+	 * @param array &$attribs
+	 * @return bool
 	 */
 	public static function callback( $history, &$row, &$s, &$classes, &$attribs ) {
 		$className = static::class;

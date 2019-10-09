@@ -26,26 +26,10 @@
  */
 
 /**
+ * DEPRECATED
  * Api json formal class in BlueSpice
+ * @deprecated since version 3.1 - use \BlueSpice\Api\Format\Json instead
  * @package BlueSpice_Foundation
  */
-class BSApiFormatJson extends ApiFormatJson {
-	public function getAllowedParams() {
-		$aParams = parent::getAllowedParams();
-		if ( isset( $aParams['formatversion'] ) ) {
-
-			/*
-			 * This is needed for most ExtJS frontent components.
-			 * New MediaWiki versions normalize JSON output in a way that
-			 * fields with boolean true are converted to fields with empty
-			 * string value and fields with boolean false just get removed from
-			 * the JSON string. This breaks some ExtJS logic (mainly store
-			 * implementations)
-			 * Changing the 'formatversion' to 2, disables this behavior
-			 */
-			$aParams['formatversion'][ApiBase::PARAM_DFLT] = 2;
-		}
-
-		return $aParams;
-	}
+class BSApiFormatJson extends \BlueSpice\Api\Format\Json {
 }

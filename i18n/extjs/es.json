@@ -4,7 +4,9 @@
 			"Fitoschido",
 			"Frammm",
 			"Macofe",
-			"Joaquin1001"
+			"Joaquin1001",
+			"Carlosmg.dg",
+			"Mynor Archila"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",
@@ -21,7 +23,7 @@
 	"bs-extjs-error": "Error",
 	"bs-extjs-confirm": "Confirmar",
 	"bs-extjs-loading": "Cargando…",
-	"bs-extjs-pageSize": "Tamaño de página",
+	"bs-extjs-pageSize": "Entradas por página",
 	"bs-extjs-actions-column-header": "Acciones",
 	"bs-extjs-warning": "Aviso",
 	"bs-extjs-saving": "guardando…",
@@ -30,6 +32,7 @@
 	"bs-extjs-label-user": "Usuario",
 	"bs-extjs-label-namespace": "Espacio de nombres",
 	"bs-extjs-label-page": "Página",
+	"bs-extjs-label-directsearch": "Buscar",
 	"bs-extjs-titlecombo-newpagehint": "La página no existe.",
 	"bs-extjs-upload": "Cargar",
 	"bs-extjs-browse": "Explorar",

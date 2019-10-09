@@ -34,8 +34,8 @@ abstract class SoftwareInfo extends Hook {
 
 	/**
 	 * Called by Special:Version for returning information about the software
-	 * @param array $software
-	 * @return boolean
+	 * @param array &$software
+	 * @return bool
 	 */
 	public static function callback( &$software ) {
 		$className = static::class;
@@ -50,7 +50,7 @@ abstract class SoftwareInfo extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $software
+	 * @param array &$software
 	 */
 	public function __construct( $context, $config, &$software ) {
 		parent::__construct( $context, $config );

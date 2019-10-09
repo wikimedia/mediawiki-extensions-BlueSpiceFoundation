@@ -60,8 +60,8 @@ abstract class BSTemplateRendererGetRenderedArgs extends \BlueSpice\Hook {
 	 * @param TemplateRenderer $renderer
 	 * @param string $name
 	 * @param mixed $val
-	 * @param string $renderedVal
-	 * @return boolean
+	 * @param string &$renderedVal
+	 * @return bool
 	 */
 	public static function callback( $renderer, $name, $val, &$renderedVal ) {
 		$className = static::class;
@@ -82,7 +82,7 @@ abstract class BSTemplateRendererGetRenderedArgs extends \BlueSpice\Hook {
 	 * @param TemplateRenderer $renderer
 	 * @param string $name
 	 * @param mixed $val
-	 * @param string $renderedVal
+	 * @param string &$renderedVal
 	 */
 	public function __construct( $context, $config, $renderer, $name, $val, &$renderedVal ) {
 		parent::__construct( $context, $config );

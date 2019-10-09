@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 /**
  * This class provides the rendered content of different kinds of pages, including SpecialPage, CategoryPage, ImagePage and Article.
  * @package BlueSpice_AdapterMW
@@ -192,9 +193,9 @@ class BsPageContentProvider {
 		$sHtmlContent = mb_convert_encoding($sHtmlContent,
 											'HTML-ENTITIES', "UTF-8");
 		$oDOMDoc->recover = true;
-		wfSuppressWarnings();
+		Wikimedia\suppressWarnings();
 		$oDOMDoc->loadHTML( $sHtmlContent );
-		wfRestoreWarnings();
+		Wikimedia\restoreWarnings();
 		 */
 
 		/*
@@ -375,9 +376,9 @@ class BsPageContentProvider {
 	}
 
 	/**
-	* @param \Title $oTitle
-	* @return string
-	*/
+	 * @param \Title $oTitle
+	 * @return string
+	 */
 	protected function getWrapperAttributes( $oTitle ) {
 		$cssClass = Sanitizer::escapeClass( 'page-' . $oTitle->getPrefixedDBKey() );
 		return "class=\"bs-page-content $cssClass\"";

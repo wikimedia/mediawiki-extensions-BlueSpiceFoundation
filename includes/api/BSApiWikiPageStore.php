@@ -64,12 +64,24 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		return $aNewData;
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @param array $aFilter
+	 * @return array
+	 */
 	public function makeTables( $sQuery, $aFilter ) {
 		return [
 			'page'
 		];
 	}
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @param array $aFilter
+	 * @return array
+	 */
 	public function makeFields( $sQuery, $aFilter ) {
 		return [
 			'page_id',
@@ -78,6 +90,11 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		];
 	}
 
+	/**
+	 *
+	 * @param array $aData
+	 * @return array
+	 */
 	public function postProcessData( $aData ) {
 		// Before we trim, we save the count
 		$this->iFinalDataSetCount = count( $aData );
@@ -91,6 +108,11 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		return $aProcessedData;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 * @return bool
+	 */
 	public function makeDataSet( $row ) {
 		$oTitle = Title::newFromRow( $row );
 		if ( !$oTitle ) {
@@ -101,6 +123,11 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 			: false;
 	}
 
+	/**
+	 *
+	 * @param array $aTrimmedData
+	 * @return array
+	 */
 	protected function addSecondaryFields( $aTrimmedData ) {
 		$oLinkRenderer = Services::getInstance()->getLinkRenderer();
 		foreach ( $aTrimmedData as &$oDataSet ) {

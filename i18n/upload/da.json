@@ -4,6 +4,8 @@
 			"Saederup92"
 		]
 	},
+	"bs-upload-uploadfilefieldlabel": "Filnavn",
+	"bs-upload-uploadfileemptytext": "Indsæt ny fil...",
 	"bs-upload-license": "Licens",
 	"bs-upload-uploadwatchthislabel": "Overvåg filen",
 	"bs-upload-categories": "Kategorier",

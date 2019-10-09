@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Rail"
 		]
 	},
 	"bs-filerepo-labelupload": "Prześlij",
@@ -19,5 +20,6 @@
 	"bs-filerepo-headerfilethumbnail": "Miniatura",
 	"bs-filerepo-yes": "Tak",
 	"bs-filerepo-no": "Nie",
-	"bs-filerepo-pagesize": "Rozmiar strony"
+	"bs-filerepo-pagesize": "Rozmiar strony",
+	"bs-filerepo-headerfilemediatype": "Rodzaj multimediów"
 }

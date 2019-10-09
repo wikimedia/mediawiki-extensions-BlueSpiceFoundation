@@ -19,7 +19,7 @@
 	"bs-extjs-error": "Virhe",
 	"bs-extjs-confirm": "Vahvista",
 	"bs-extjs-loading": "Ladataan...",
-	"bs-extjs-pageSize": "Sivun koko",
+	"bs-extjs-pageSize": "Merkintöjä sivua kohden",
 	"bs-extjs-actions-column-header": "Toiminnot",
 	"bs-extjs-warning": "Varoitus",
 	"bs-extjs-saving": "tallennetaan...",
@@ -27,7 +27,11 @@
 	"bs-extjs-label-user": "Käyttäjä",
 	"bs-extjs-label-namespace": "Nimiavaruus",
 	"bs-extjs-label-page": "Sivu",
+	"bs-extjs-label-directsearch": "Haku",
+	"bs-extjs-titlecombo-newpagehint": "Sivua ei ole olemassa!",
+	"bs-extjs-upload": "Tallenna",
 	"bs-extjs-browse": "Selaa",
+	"bs-extjs-allns": "(kaikki)",
 	"bs-extjs-filter-bool-yes": "kyllä",
 	"bs-extjs-filter-bool-no": "ei",
 	"bs-extjs-title-warning": "Varoitus",
@@ -41,5 +45,11 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Sivukokoelma",
 	"bs-pagecollection-prefix": "\nSivukokoelma",
 	"bs-extjs-pageexport-success": "Vienti onnistui",
-	"bs-extjs-pageexport-error-invalid-title": "Luettelon nimi on virheellinen"
+	"bs-extjs-pageexport-error-invalid-title": "Luettelon nimi on virheellinen",
+	"bs-extjs-combo-box-default-placeholder": "Kirjoita suodattaaksesi...",
+	"bs-extjs-tools-trigger-text": "Työkalut",
+	"bs-extjs-flyout-tab-thumbs-label": "Pienoiskuvat",
+	"bs-extjs-flyout-tab-grid-label": "Tiedot",
+	"bs-extjs-flyout-add-title": "Klikkaa tästä lisätäksesi uuden kohteen",
+	"bs-extjs-flyout-add-label": "Lisää kohde"
 }

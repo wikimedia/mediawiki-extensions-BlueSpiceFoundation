@@ -26,9 +26,92 @@
  */
 namespace BlueSpice;
 
+use Config;
+use IContextSource;
+use BlueSpice\Renderer\Params;
+use BlueSpice\Utility\CacheHelper;
+use MediaWiki\Linker\LinkRenderer;
+
 abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 
 	protected static $cache = [];
+
+	/**
+	 *
+	 * @var CacheHelper
+	 */
+	protected $cacheHelper = null;
+
+	/**
+	 *
+	 * @var TemplateFactory
+	 */
+	protected $templateFactory = null;
+
+	/**
+	 * Constructor
+	 * @param Config $config
+	 * @param Params $params
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string $name | ''
+	 * @param CacheHelper|null $cacheHelper
+	 * @param TemplateFactory|null $templateFactory
+	 */
+	protected function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '', CacheHelper $cacheHelper = null,
+		TemplateFactory $templateFactory = null ) {
+		parent::__construct( $config, $params, $linkRenderer, $context, $name );
+
+		$this->cacheHelper = $cacheHelper;
+		$this->templateFactory = $templateFactory;
+	}
+
+	/**
+	 *
+	 * @param string $name
+	 * @param Services $services
+	 * @param Config $config
+	 * @param Params $params
+	 * @param IContextSource|null $context
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param CacheHelper|null $cacheHelper
+	 * @param TemplateFactory|null $templateFactory
+	 * @return Renderer
+	 */
+	public static function factory( $name, Services $services, Config $config, Params $params,
+		IContextSource $context = null, LinkRenderer $linkRenderer = null,
+		CacheHelper $cacheHelper = null, TemplateFactory $templateFactory = null ) {
+		if ( !$context ) {
+			$context = $params->get(
+				static::PARAM_CONTEXT,
+				false
+			);
+			if ( !$context instanceof IContextSource ) {
+				$context = \RequestContext::getMain();
+			}
+		}
+		if ( !$linkRenderer ) {
+			$linkRenderer = $services->getLinkRenderer();
+		}
+		if ( !$cacheHelper ) {
+			$cacheHelper = $services->getBSUtilityFactory()->getCacheHelper();
+		}
+		if ( !$templateFactory ) {
+			$templateFactory = $services->getBSTemplateFactory();
+		}
+
+		return new static(
+			$config,
+			$params,
+			$linkRenderer,
+			$context,
+			$name,
+			$cacheHelper,
+			$templateFactory
+		);
+	}
 
 	/**
 	 * Returns a rendered template as HTML markup
@@ -49,8 +132,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 			return $content;
 		}
 
-		$content = \BSTemplateHelper::process(
-			$this->getTemplateName(),
+		$template = $this->getTemplateFactory()->get( $this->getTemplateName() );
+		$content = $template->process(
 			$this->getRenderedArgs()
 		);
 		$this->appendCache( $content );
@@ -88,6 +171,10 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		return $args;
 	}
 
+	/**
+	 *
+	 * @return string|false
+	 */
 	protected function getFromCache() {
 		$cacheKey = $this->getCacheKey();
 		if ( !$cacheKey ) {
@@ -96,7 +183,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		if ( $this->hasCacheEntry() ) {
 			return static::$cache[$cacheKey];
 		}
-		static::$cache[$cacheKey] = \BsCacheHelper::get( $cacheKey );
+		static::$cache[$cacheKey] = $this->getCacheHelper()->get( $cacheKey );
 		return static::$cache[$cacheKey];
 	}
 
@@ -108,10 +195,18 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		return isset( static::$cache[$cacheKey] );
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function getCacheKey() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return int
+	 */
 	protected function getCacheExpiryTime() {
 		// 24h - max
 		return 60 * 1440;
@@ -120,14 +215,14 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	/**
 	 *
 	 * @param string $content
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function appendCache( $content ) {
 		$cacheKey = $this->getCacheKey();
 		if ( !$cacheKey ) {
 			return false;
 		}
-		\BsCacheHelper::set(
+		$this->getCacheHelper()->set(
 			$cacheKey,
 			$content,
 			$this->getCacheExpiryTime()
@@ -138,7 +233,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 
 	/**
 	 * Invalidates the cache entry for this renderer
-	 * @return boolean
+	 * @return bool
 	 */
 	public function invalidate() {
 		$cacheKey = $this->getCacheKey();
@@ -149,6 +244,35 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		if ( isset( static::$cache[$cacheKey] ) ) {
 			unset( static::$cache[$cacheKey] );
 		}
-		return \BsCacheHelper::invalidateCache( $cacheKey );
+		return $this->getCacheHelper()->invalidate( $cacheKey );
+	}
+
+	/**
+	 *
+	 * @return CacheHelper
+	 */
+	protected function getCacheHelper() {
+		if ( !$this->cacheHelper ) {
+			$this->cacheHelper = Services::getInstance()->getBSUtilityFactory()
+				->getCacheHelper();
+			// Deprecated since 3.1! All sub classes should be registered with a factory
+			// callback and inject CacheHelper
+			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		}
+		return $this->cacheHelper;
+	}
+
+	/**
+	 *
+	 * @return TemplateFactory
+	 */
+	protected function getTemplateFactory() {
+		if ( !$this->templateFactory ) {
+			$this->templateFactory = Services::getInstance()->getBSTemplateFactory();
+			// Deprecated since 3.1! All sub classes should be registered with a factory
+			// callback and inject TemplateFactory
+			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		}
+		return $this->templateFactory;
 	}
 }

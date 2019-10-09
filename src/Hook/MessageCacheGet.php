@@ -37,7 +37,7 @@ abstract class MessageCacheGet extends Hook {
 	protected $lckey = null;
 
 	/**
-	 * @param string $lckey
+	 * @param string &$lckey
 	 * @return mixed
 	 */
 	public static function callback( &$lckey ) {
@@ -54,7 +54,7 @@ abstract class MessageCacheGet extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param string $lckey
+	 * @param string &$lckey
 	 */
 	public function __construct( $context, $config, &$lckey ) {
 		parent::__construct( $context, $config );

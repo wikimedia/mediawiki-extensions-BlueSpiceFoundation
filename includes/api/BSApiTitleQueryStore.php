@@ -2,6 +2,8 @@
 
 // api.php?action=bs-titlequery-store&format=jsonfm&options={%22namespaces%22:[-1,0,2,4,6,8,10,12,14,3000],%20%22returnQuery%22:true}&query=Date
 
+use MediaWiki\MediaWikiServices;
+
 class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 	/**
@@ -128,7 +130,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		$sOp = $dbr->anyString();
 		$aLike = $aNormalLike = [ '', $sOp ];
 		$aParams = explode( ' ', str_replace( '/', ' ', $oQueryTitle->getText() ) );
-		$oSearchEngine = SearchEngine::create();
+		$oSearchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
 		foreach ( $aParams as $sParam ) {
 			$aLike[] = $sParam;
 			$aLike[] = $sOp;
@@ -271,6 +273,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		return $aData;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		$aParams = parent::getAllowedParams();
 		$aParams['options'] = [
@@ -282,6 +288,15 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		return $aParams;
 	}
 
+	/**
+	 * Using the settings determine the value for the given parameter
+	 *
+	 * @param string $paramName Parameter name
+	 * @param array|mixed $paramSettings Default value or an array of settings
+	 *  using PARAM_* constants.
+	 * @param bool $parseLimit Whether to parse and validate 'limit' parameters
+	 * @return mixed Parameter value
+	 */
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
@@ -294,7 +309,11 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		return $value;
 	}
 
-	// Sorting does not work here, so skip it
+	/**
+	 * Sorting does not work here, so skip it
+	 * @param array $aProcessedData
+	 * @return array
+	 */
 	public function sortData( $aProcessedData ) {
 		return $aProcessedData;
 	}

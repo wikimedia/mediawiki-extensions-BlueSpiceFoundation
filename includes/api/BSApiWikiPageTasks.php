@@ -25,11 +25,17 @@
  * @filesource
  */
 
+use BlueSpice\Api\Task;
+
 /**
  * Provides common tasks that can be performed on a WikiPage
  * @package BlueSpice_Foundation
  */
 class BSApiWikiPageTasks extends BSApiTasksBase {
+	/**
+	 *
+	 * @var array
+	 */
 	protected $aTasks = [
 		'setCategories' => [
 			// 'permissions' => [], //TODO migrate "getRequiredTaskPermissions"
@@ -191,6 +197,10 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		]
 	];
 
+	/**
+	 *
+	 * @var string[]
+	 */
 	protected $aReadTasks = [
 		'getDiscussionCount',
 		'getExplicitCategories',
@@ -214,93 +224,75 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 	/**
 	 *
+	 * @param \stdClass $taskData
+	 * @param \stdClass $response
+	 * @param string $task
+	 * @return \stdClass
+	 */
+	protected function legacyWikiPageTaskCategory( \stdClass $taskData, $response, $task ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+
+		$title = $this->getTitleFromTaskData( $taskData );
+
+		$rawContext = $this->getParameter( Task::PARAM_CONTEXT );
+		if ( $title instanceof Title ) {
+			$rawContext->wgArticleId = 0;
+			if ( $title->exists() ) {
+				$rawContext->wgArticleId = $title->getArticleID();
+			}
+			$rawContext->wgNamespaceNumber = $title->getNamespace();
+			$rawContext->wgPageName = $title->getPrefixedText();
+			$rawContext->wgRelevantPageName = $title->getPrefixedText();
+			$rawContext->wgTitle = $title->getText();
+			$rawContext->wgCanonicalNamespace = MWNamespace::getCanonicalName( $title->getNamespace() );
+			$rawContext->wgCanonicalSpecialPageName = false;
+		}
+
+		$req = new FauxRequest( array_merge(
+			[ Task::PARAM_TASK_DATA => \FormatJson::encode( $taskData ) ],
+			[ Task::PARAM_CONTEXT => \FormatJson::encode( $rawContext ) ],
+			[ 'action' => 'bs-task', Task::PARAM_TASK => $task ]
+		) );
+		$api = new \ApiMain( $req, true );
+		$api->execute();
+		foreach ( [ 'message', 'errors', 'payload', 'payload_count', 'success' ] as $path ) {
+			if ( isset( $api->getResult()->getResultData()[$path] ) ) {
+				$response->{$path} = $api->getResult()->getResultData()[$path];
+			}
+		}
+		return $response;
+	}
+
+	/**
+	 * DEPRECATED
+	 * @deprecated since version 3.1 - use new task api with task
+	 * 'wikipage-setcategories'
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_setCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
-
-		$aCategories = $oTaskData->categories;
-		$aCategories = ( !is_array( $aCategories ) ) ? [] : $aCategories;
-
-		$oTitle = $this->getTitleFromTaskData( $oTaskData );
-
-		// Check for actual title permissions
-		if ( !$oTitle->userCan( 'edit' ) ) {
-			$oResponse->message = wfMessage(
-				'bs-wikipage-tasks-error-page-edit-not-allowed',
-				$oTitle->getPrefixedText()
-			)->plain();
-			return $oResponse;
+		$oTaskData->categories = !is_array( $oTaskData->categories )
+			? []
+			: $oTaskData->categories;
+		$oTaskData->categories = implode( '|', $oTaskData->categories );
+		if ( empty( $oTaskData->categories ) ) {
+			unset( $oTaskData->categories );
 		}
 
-		// Check for category validity
-		$aInvalidCategories = [];
-		foreach ( $aCategories as $sCategoryName ) {
-			if ( Category::newFromName( $sCategoryName ) === false ) {
-				$aInvalidCategories[] = $sCategoryName;
-			}
-		}
-
-		if ( !empty( $aInvalidCategories ) ) {
-			$iCount = count( $aInvalidCategories );
-			$oResponse->message = wfMessage(
-				'bs-wikipage-tasks-error-categories-not-valid',
-				implode( ', ', $aInvalidCategories ),
-				$iCount
-			)->text();
-			$oResponse->payload = $aInvalidCategories;
-			$oResponse->payload_count = $iCount;
-			return $oResponse;
-		}
-
-		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
-			$oContent = $oWikiPage->getContent();
-			$sText = '';
-			if ( $oContent instanceof Content ) {
-				$sText = $oContent->getNativeData();
-			}
-		}
- else {
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
-			return $oResponse;
-	}
-
-		// Remove all category links before adding the new ones
-		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
-		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
-		$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):.*?\]\]#si";
-		$sText = preg_replace( $sPattern, '', $sText );
-
-		foreach ( $aCategories as $sCategoryName ) {
-			$sText .= "\n[[" . $sLocalNSName . ":$sCategoryName]]";
-		}
-		$oContent = ContentHandler::makeContent( $sText, $oTitle );
-		$oStatus = $oWikiPage->doEditContent(
-			$oContent,
-			wfMessage( 'bs-wikipage-tasks-setcategories-edit-summary' )->plain()
+		return $this->legacyWikiPageTaskCategory(
+			$oTaskData,
+			$oResponse,
+			'wikipage-setcategories'
 		);
-
-		if ( !$oStatus->isGood() ) {
-			$oResponse->message = $oStatus->getMessage();
-		}
- else {
-			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
-			DataUpdate::runUpdates( $oUpdates );
-			$oResponse->success = true;
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
-	}
-
-		return $oResponse;
 	}
 
 	/**
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_getExplicitCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
@@ -353,209 +345,64 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
+	 * DEPRECATED
+	 * @deprecated since version 3.1 - use new task api with task
+	 * 'wikipage-addcategories'
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_addCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
-
-		$oCategoriesInPage = $this->task_getExplicitCategories( $oTaskData, $aParams );
-
-		$aCategories = $oTaskData->categories;
-		$aCategories = ( !is_array( $aCategories ) ) ? [] : $aCategories;
-
-		$oTitle = $this->getTitleFromTaskData( $oTaskData );
-
-		if ( !$oTitle->userCan( 'edit' ) ) {
-			$oResponse->message = wfMessage(
-				'bs-wikipage-tasks-error-page-edit-not-allowed',
-				$oTitle->getPrefixedText()
-			)->plain();
-			return $oResponse;
+		$oTaskData->categories = !is_array( $oTaskData->categories )
+			? []
+			: $oTaskData->categories;
+		$oTaskData->categories = implode( '|', $oTaskData->categories );
+		if ( empty( $oTaskData->categories ) ) {
+			unset( $oTaskData->categories );
 		}
 
-		// Check for category validity
-		$aInvalidCategories = [];
-		foreach ( $aCategories as $sCategoryName ) {
-			if ( Category::newFromName( $sCategoryName ) === false ) {
-				$aInvalidCategories[] = $sCategoryName;
-			}
-		}
-
-		if ( !empty( $aInvalidCategories ) ) {
-			$iCount = count( $aInvalidCategories );
-			$oResponse->message = wfMessage(
-				'bs-wikipage-tasks-error-categories-not-valid',
-				implode( ', ', $aInvalidCategories ),
-				$iCount
-			)->text();
-			$oResponse->payload = $aInvalidCategories;
-			$oResponse->payload_count = $iCount;
-			return $oResponse;
-		}
-
-		if ( $oCategoriesInPage->payload_count > 0 ) {
-			$aNewCategories = array_diff( $aCategories, $oCategoriesInPage->payload );
-		} else {
-			$aNewCategories = $aCategories;
-		}
-
-		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
-			$oContent = $oWikiPage->getContent();
-			$sText = '';
-			if ( $oContent instanceof Content ) {
-				$sText = $oContent->getNativeData();
-			}
-
-		}
- else {
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
-			return $oResponse;
-	}
-
-		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
-		foreach ( $aNewCategories as $sCategoryToAdd ) {
-			$sText .= "\n[[" . $sLocalNSName . ":" . $sCategoryToAdd . "]]";
-		}
-
-		$oContent = ContentHandler::makeContent( $sText, $oTitle );
-		$oStatus = $oWikiPage->doEditContent(
-			$oContent,
-			wfMessage( 'bs-wikipage-tasks-setcategories-edit-summary' )->plain()
+		return $this->legacyWikiPageTaskCategory(
+			$oTaskData,
+			$oResponse,
+			'wikipage-addcategories'
 		);
-
-		if ( !$oStatus->isGood() ) {
-			$oResponse->message = $oStatus->getMessage();
-		}
- else {
-			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
-			DataUpdate::runUpdates( $oUpdates );
-			$oResponse->success = true;
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
-			$oResponse->payload = $this->makeCategoryTaskPayload( $oTitle->getArticleID() );
-	}
-
-		return $oResponse;
 	}
 
 	/**
-	 *
+	 * DEPRECATED
+	 * @deprecated since version 3.1 - use new task api with task
+	 * 'wikipage-removecategories'
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_removeCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
-		$aCategoriesToRemove = $oTaskData->categories;
-
-		if ( count( $aCategoriesToRemove ) === 0 ) {
-			$oResponse->message = wfMessage(
-				'bs-wikipage-tasks-error-nothingtoremove' )->plain();
-			$oResponse->payload = [];
-			$oResponse->payload_count = 0;
-			return $oResponse;
+		$oTaskData->categories = !is_array( $oTaskData->categories )
+			? []
+			: $oTaskData->categories;
+		$oTaskData->categories = implode( '|', $oTaskData->categories );
+		if ( empty( $oTaskData->categories ) ) {
+			unset( $oTaskData->categories );
 		}
 
-		$oTitle = $this->getTitleFromTaskData( $oTaskData );
-
-		if ( !$oTitle->userCan( 'edit' ) ) {
-			$oResponse->message = wfMessage(
-				'bs-wikipage-tasks-error-page-edit-not-allowed',
-				$oTitle->getPrefixedText()
-			)->plain();
-			return $oResponse;
-		}
-
-		// get page and content
-		$oWikiPage = WikiPage::factory( $oTitle );
-		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
-			$oContent = $oWikiPage->getContent();
-			$sText = '';
-			if ( $oContent instanceof Content ) {
-				$sText = $oContent->getNativeData();
-			}
-
-		}
- else {
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
-			return $oResponse;
-	}
-
-		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
-		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
-		foreach ( $aCategoriesToRemove as $sToRemove ) {
-			$linksToRemove = $this->findCategoryLinksInText( $sToRemove, $sText );
-			foreach ( $linksToRemove as $linkToRemove ) {
-				$sText = str_replace( $linkToRemove, '', $sText );
-			}
-		}
-		// TODO: remove blank lines from page
-		$oContent = ContentHandler::makeContent( $sText, $oTitle );
-		$oStatus = $oWikiPage->doEditContent(
-			$oContent,
-			wfMessage( 'bs-wikipage-tasks-setcategories-edit-summary' )->plain()
+		return $this->legacyWikiPageTaskCategory(
+			$oTaskData,
+			$oResponse,
+			'wikipage-removecategories'
 		);
-
-		if ( !$oStatus->isGood() ) {
-			$oResponse->message = $oStatus->getMessage();
-		}
- else {
-			$oUpdates = $oContent->getSecondaryDataUpdates( $oWikiPage->getTitle() );
-			DataUpdate::runUpdates( $oUpdates );
-			$oResponse->success = true;
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-setcategories-success' )->plain();
-	}
-
-		return $oResponse;
-	}
-
-	/**
-	 * Parses all internal links on page into Title objects
-	 * and compares to the category title we need.
-	 *
-	 * @param string $category
-	 * @param string $text
-	 * @return array Links texts for requested category
-	 */
-	protected function findCategoryLinksInText( $category, $text ) {
-		$categoryTitle = Title::makeTitle( NS_CATEGORY, $category );
-		if ( $categoryTitle instanceof Title === false ) {
-			return [];
-		}
-
-		$categoryLinkText = [];
-		$internalLinks = [];
-		preg_match_all( '#\[\[(.*?)\]\]#si', $text, $internalLinks );
-
-		if ( !isset( $internalLinks[1] ) && count( $internalLinks[1] ) === 0 ) {
-			return [];
-		}
-		foreach ( $internalLinks[1] as $key => $pageName ) {
-			if ( strpos( '|', $pageName ) !== false ) {
-				$pageName = explode( '|', $pageName )[0];
-			}
-			$titleToTest = \Title::newFromText( $pageName );
-			if ( $titleToTest instanceof \Title === false ) {
-				continue;
-			}
-			if ( $categoryTitle->equals( $titleToTest ) ) {
-				$categoryLinkText[] = $internalLinks[0][$key];
-			}
-		}
-
-		return $categoryLinkText;
 	}
 
 	/**
 	 *
+	 * @deprecated since version 3.1 - Not in use anymore
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_getDiscussionCount( $oTaskData, $aParams ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$oResponse = $this->makeStandardReturn();
 
 		$iCount = BsArticleHelper::getInstance(
@@ -598,6 +445,11 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		return $oTitle;
 	}
 
+	/**
+	 *
+	 * @param int $pageId
+	 * @return array
+	 */
 	protected function makeCategoryTaskPayload( $pageId ) {
 		$oTitle = Title::newFromID( $pageId );
 		$result = $this->task_getExplicitCategories( (object)[ 'page_id' => $pageId ], [] );
@@ -612,7 +464,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
-	 * @return BSStandardAPIResponse
+	 * @return \BlueSpice\Api\Response\Standard
 	 */
 	protected function task_getTemplateTree( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();

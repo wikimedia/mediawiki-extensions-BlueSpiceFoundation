@@ -1,7 +1,7 @@
 {
 	"name": "BlueSpiceFoundation",
 	"license-name": "GPL-3.0-only",
-	"version": "3.0.1",
+	"version": "3.1.0",
 	"author": [
 		"[https://www.hallowelt.com Hallo Welt! GmbH]"
 	],
@@ -9,9 +9,9 @@
 	"descriptionmsg": "bluespicefoundation-desc",
 	"type": "bluespice",
 	"requires": {
-		"MediaWiki": ">= 1.31.0",
+		"MediaWiki": "~1.31",
 		"extensions": {
-			"ExtJSBase": "*"
+			"ExtJSBase": "~1.31"
 		}
 	},
 	"attributes": {
@@ -36,14 +36,23 @@
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
 			"AdminToolRegistry": {},
-			"PageToolRegistry": {},
+			"PageInfoElementRegistry": {},
 			"TagRegistry": {},
+			"PermissionRegistry": {},
+			"RoleRegistry": {
+				"admin": "\\BlueSpice\\Permission\\Role\\Admin::factory",
+				"editor": "\\BlueSpice\\Permission\\Role\\Editor::factory",
+				"reader": "\\BlueSpice\\Permission\\Role\\Reader::factory",
+				"author": "\\BlueSpice\\Permission\\Role\\Author::factory",
+				"reviewer": "\\BlueSpice\\Permission\\Role\\Reviewer::factory",
+				"accountmanager": "\\BlueSpice\\Permission\\Role\\AccountManager::factory"
+			},
 			"RendererRegistry": {
-				"list": "\\BlueSpice\\Renderer\\SimpleList",
-				"linklist": "\\BlueSpice\\Renderer\\LinkList",
-				"userimage": "\\BlueSpice\\Renderer\\UserImage",
-				"groupimage": "\\BlueSpice\\Renderer\\GroupImage",
-				"entity": "\\BlueSpice\\Renderer\\Entity"
+				"list": "\\BlueSpice\\Renderer\\SimpleList::factory",
+				"linklist": "\\BlueSpice\\Renderer\\LinkList::factory",
+				"userimage": "\\BlueSpice\\Renderer\\UserImage::factory",
+				"groupimage": "\\BlueSpice\\Renderer\\GroupImage::factory",
+				"entity": "\\BlueSpice\\Renderer\\Entity::factory"
 			},
 			"SkinDataRendererRegistry": {
 				"bs_navigation_site": "\\BlueSpice\\Renderer\\TreeNavigation",
@@ -81,6 +90,7 @@
 				"bs-color-neutral2": "#ABABAB",
 				"bs-color-neutral3": "#C4C4C4",
 				"bs-color-neutral4": "#787878",
+				"bs-color-secondary-information": "darken( @bs-color-neutral, 17.3% )",
 				"bs-color-progressive": "#347bff",
 				"bs-color-contructive": "#00af89",
 				"bs-color-destructive": "#d11d13",
@@ -89,13 +99,36 @@
 				"bs-color-error": "#f2dede",
 				"bs-color-info": "#d9edf7",
 				"bs-background-neutral": "#FFFFFF",
-				"bs-background-primary": "none"
+				"bs-background-primary": "none",
+				"bs-loading-indicator-color": "#ffae00",
+				"bs-color-link": "#0060DF",
+				"bs-color-link-hover": "#006EFF",
+				"bs-color-link-new": "#B73A3A",
+				"bs-color-link-new-hover": "#E92121"
 			},
 			"TargetCacheRegistry": {
 				"title": "\\BlueSpice\\TargetCache\\Title"
 			},
 			"TargetCacheTitleRegistry": {
 				"pageprops": "\\BlueSpice\\TargetCacheHandler"
+			},
+			"PermissionLockdownRegistry": {
+				"namespaces": "\\BlueSpice\\Permission\\Lockdown\\Module\\Namespaces::getInstance",
+				"groups": "\\BlueSpice\\Permission\\Lockdown\\Module\\Groups::getInstance"
+			},
+			"PermissionLockdownGroupModuleRegistry": {},
+			"TaskRegistry": {
+				"wikipage-setlanguagelinks": "\\BlueSpice\\Task\\WikiPage\\SetLanguageLinks::factory",
+				"wikipage-setcategories": "\\BlueSpice\\Task\\WikiPage\\SetCategories::factory",
+				"wikipage-addcategories": "\\BlueSpice\\Task\\WikiPage\\AddCategories::factory",
+				"wikipage-removecategories": "\\BlueSpice\\Task\\WikiPage\\RemoveCategories::factory"
+			},
+			"TemplateHanderRegistry": {
+				"mustache": "\\BlueSpice\\Template\\Mustache::factory"
+			},
+			"LoadPlaceholders":  {
+				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder",
+				"ExtJSGeneric":  "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
 			}
 		}
 	},
@@ -123,8 +156,9 @@
 		"bs-ping-tasks": "BSApiPingTasks",
 		"bs-upload-license-store": "BSApiUploadLicenseStore",
 		"bs-category-treestore": "BSApiCategoryTreeStore",
-		"bs-watchlist-store": "BlueSpice\\Api\\WatchlistStore",
-		"bs-recentchanges-store": "BlueSpice\\Api\\RecentChangesStore"
+		"bs-watchlist-store": "BlueSpice\\Api\\Store\\Watchlist",
+		"bs-recentchanges-store": "BlueSpice\\Api\\Store\\RecentChanges",
+		"bs-task": "\\BlueSpice\\Api\\Task"
 	},
 	"GroupPermissions": {
 		"sysop": {
@@ -149,7 +183,9 @@
 				"bluespice/bluespice.tooltip.js",
 				"bluespice/bluespice.api.js",
 				"bluespice/bluespice.treepanel.js",
-				"bluespice/bluespice.alerts.js"
+				"bluespice/bluespice.alerts.js",
+				"bluespice/bluespice.loadIndicator.js",
+				"bluespice/bluespice.deferredNotifications.js"
 			],
 			"messages": [
 				"bs-years-duration",
@@ -164,7 +200,6 @@
 				"bs-now"
 			],
 			"dependencies": [
-				"ext.bluespice.templates",
 				"mediawiki.api"
 			]
 		},
@@ -174,6 +209,7 @@
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice.extjs/bluespice.extjs.js",
+				"bluespice.extjs/bluespice.extjs.loadPlaceholder.js",
 				"bluespice.extjs/BS/override/grid/column/Action.js"
 			],
 			"styles": [
@@ -315,7 +351,7 @@
 				"bs-upload-uploadwarningdialog-warning-unknown"
 			],
 			"dependencies": [
-				"mediawiki.api.upload"
+				"mediawiki.api"
 			]
 		},
 		"ext.bluespice.extjs.filerepo": {
@@ -348,7 +384,9 @@
 				"bluespice/bluespice.css",
 				"bluespice/bluespice.icons.css",
 				"bluespice/bluespice.ui.basic.less",
-				"bluespice/bluespice.treepanel.less"
+				"bluespice/bluespice.treepanel.less",
+				"bluespice/bluespice.loadIndicator.less",
+				"bluespice/bluespice.loadPlaceholder.less"
 			],
 			"class": "\\BlueSpice\\ResourceModule\\LessVars"
 		},
@@ -458,9 +496,6 @@
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": "bluespice/bluespice.testsystem.js"
-		},
-		"ext.bluespice.templates": {
-			"class": "ResourceLoaderBSTemplateModule"
 		}
 	},
 	"MessagesDirs": {
@@ -514,14 +549,20 @@
 			"\\BlueSpice\\Hook\\SetupAfterCache\\AddParamDefinitions::callback"
 		],
 		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
-		"BeforePageDisplay": "\\BlueSpice\\Hook\\BeforePageDisplay\\AddResources::callback",
+		"BeforePageDisplay": [
+			"\\BlueSpice\\Hook\\BeforePageDisplay\\AddResources::callback",
+			"\\BlueSpice\\Hook\\BeforePageDisplay\\AddLoadingIndicator::callback"
+		],
 		"HtmlPageLinkRendererEnd": [
 			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataUserName::callback",
 			"BlueSpice\\Hook\\HtmlPageLinkRendererEnd\\AddDataTitle::callback"
 		],
 		"LinkerMakeMediaLinkFile": "\\BlueSpice\\Hook\\LinkerMakeMediaLinkFile\\AddDataAttributes::callback",
 		"ThumbnailBeforeProduceHTML": "\\BlueSpice\\Hook\\ThumbnailBeforeProduceHTML\\AddDataAttributes::callback",
-		"MakeGlobalVariablesScript": "\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback",
+		"MakeGlobalVariablesScript": [
+			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback",
+			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddDeferredNotifications::callback"
+		],
 		"LoadExtensionSchemaUpdates": [
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
@@ -550,7 +591,7 @@
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddPingInterval::callback"
 		],
 		"getUserPermissionsErrors": [
-			"BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyNamespaceRolesLockdown::callback"
+			"\\BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyLockdown::callback"
 		],
 		"SearchableNamespaces": [
 			"BlueSpice\\Hook\\SearchableNamespaces\\ApplySearchableNamespacesLockdown::callback"
@@ -571,7 +612,7 @@
 		"BlueSpiceExtInfo": {
 			"value": {
 				"name": "BlueSpice",
-				"version": "3.0.1",
+				"version": "3.1.0",
 				"status": "stable",
 				"package": "BlueSpice Free",
 				"url": "https://bluespice.com",
@@ -609,6 +650,14 @@
 		"MaintenanceUserName": {
 			"value": "BSMaintenance"
 		},
+		"RunJobsTriggerHandlerOptions": {
+			"value": {
+				"*": {
+					"basetime": [ 1, 0, 0 ],
+					"once-a-week-day": "sunday"
+				}
+			}
+		},
 		"CreditsProgrammers": {
 			"value": [
 				"Markus Glaser",
@@ -635,7 +684,11 @@
 				"Dejan Savuljesku",
 				"Josef Konrad",
 				"Philipp Pirzer",
-				"Peter Böhm"
+				"Peter Böhm",
+				"Gökhan Geyik",
+				"Oleksandr Pinchuck",
+				"Dmitry Shevliakov",
+				"Jenya Punchenko"
 			]
 		},
 		"CreditsDesignAndTesting": {
@@ -658,7 +711,9 @@
 				"Luisa Roth",
 				"Ljubica Sireta",
 				"David Schweiger",
-				"Florian Bäckmann"
+				"Florian Bäckmann",
+				"Alexander Ziegltrum",
+				"Margit Link-Rodrigue"
 			]
 		},
 		"CreditsContributors": {
@@ -669,16 +724,22 @@
 				"addshore",
 				"Albert221",
 				"Amir Sarabadani",
+				"Ammar",
+				"Ammarpad",
 				"amritsreekumar",
 				"Antoine Musso",
 				"Aryeh Gregor",
 				"Aude",
 				"Basil Hershberger",
+				"Bill Pirkle",
 				"Brad Jorsch",
 				"Chad Horohoe",
 				"Christian Aistleitner",
+				"DannyS712",
 				"David Sn",
 				"Demon",
+				"Derick Alangi",
+				"DrishyaR",
 				"Florian",
 				"Florianschmidtwelzow",
 				"Fomafix",
@@ -686,6 +747,7 @@
 				"Gergő Tisza",
 				"Guycn2",
 				"hexmode",
+				"Holger Knust",
 				"idakuch",
 				"James D. Forrester",
 				"Jayprakash12345",
@@ -700,6 +762,7 @@
 				"Max Semenik",
 				"MaxSem",
 				"MtDu",
+				"Nikita Rana",
 				"OmkarJ",
 				"Ori Livneh",
 				"Paladox",
@@ -707,6 +770,7 @@
 				"Prateek Saxena",
 				"Purodha",
 				"QChris",
+				"Rafid Aslam",
 				"Raimond Spekking",
 				"Raymond",
 				"RazeSoldier",
@@ -776,8 +840,6 @@
 		"BSNamespaceListParam": "includes/paramdefinition/BSNamespaceListParam.php",
 		"BSNamespaceParser": "includes/parser/BSNamespaceParser.php",
 		"BSNamespaceValidator": "includes/validator/BSNamespaceValidator.php",
-		"BsExtJSStoreParams": "includes/ExtJSStoreParams.php",
-		"BsExtJSSortParam": "includes/BsExtJSSortParam.php",
 		"BSNotifications": "includes/Notifications.class.php",
 		"BSStandardAPIResponse": "includes/api/BSStandardAPIResponse.php",
 		"BSExtendedApiContext": "includes/api/BSExtendedApiContext.php",
@@ -846,7 +908,6 @@
 		"BsPARAMOPTION": "includes/common/BsPARAMOPTION.php",
 		"EXTINFO": "includes/common/EXTINFO.php",
 		"BSTemplateHelper": "includes/TemplateHelper.php",
-		"ResourceLoaderBSTemplateModule": "includes/resourceloader/ResourceLoaderBSTemplateModule.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
 		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"

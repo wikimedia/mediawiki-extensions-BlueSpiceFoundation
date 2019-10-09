@@ -25,8 +25,7 @@ if ( isset( $options['help'] ) ) {
 } else {
 	if ( isset( $options['oldns'] ) && $options['oldns'] > 100 ) {
 		NSRecoveryController( $bDry, $options );
-	}
- else {
+	} else {
 		showHelp();
 	}
 }
@@ -41,6 +40,11 @@ function showHelp() {
 	echo( "\n" );
 }
 
+/**
+ *
+ * @param bool $bDry
+ * @param array $options
+ */
 function NSRecoveryController( $bDry, $options ) {
 	$aPages = getDataFromNSBackup( 'page', [ 'page_namespace' => $options['oldns'] ] );
 
@@ -62,6 +66,13 @@ function NSRecoveryController( $bDry, $options ) {
 		setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options );
 }
 
+/**
+ *
+ * @param string $sTable
+ * @param array $aConditions
+ * @param array $aReturn
+ * @return array
+ */
 function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
 	$oDbr = wfGetDB( DB_REPLICA );
 
@@ -80,6 +91,14 @@ function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
 	return $aReturn;
 }
 
+/**
+ *
+ * @param array $aPages
+ * @param array $aRevisions
+ * @param array $aTexts
+ * @param bool $bDry
+ * @param array $options
+ */
 function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
 	$oDbr = wfGetDB( DB_MASTER );
 	$numPages = count( $aPages );

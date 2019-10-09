@@ -14,6 +14,10 @@ trait FloatableElement {
 	protected $validVerticalPositions = [ 'below', 'above', 'top', 'bottom', 'center' ];
 	protected $validHorizontalPositions = [ 'before', 'after', 'start', 'end', 'center' ];
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function initializeFloatableElement( array $config = [] ) {
 		$this->floatableContainer = $config[ 'floatableContainer' ];
 
@@ -35,6 +39,10 @@ trait FloatableElement {
 		}
 	}
 
+	/**
+	 *
+	 * @param \OOUI\Element $floatableElement
+	 */
 	protected function setFloatableElement( $floatableElement ) {
 		if ( $this->floatable instanceof \OOUI\Tag ) {
 			$this->floatable->removeClasses( [ 'oo-ui-floatableElement-floatable' ] );
@@ -44,6 +52,11 @@ trait FloatableElement {
 		$this->floatable = $floatableElement;
 	}
 
+	/**
+	 *
+	 * @param string $verticalPosition
+	 * @return void
+	 */
 	protected function setVerticalPosition( $verticalPosition ) {
 		if ( in_array( $verticalPosition, $this->validVerticalPositions ) === false ) {
 			return;
@@ -54,6 +67,11 @@ trait FloatableElement {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $horizontalPosition
+	 * @return void
+	 */
 	protected function setHorizontalPosition( $horizontalPosition ) {
 		if ( in_array( $horizontalPosition, $this->validHorizontalPositions ) === false ) {
 			return;

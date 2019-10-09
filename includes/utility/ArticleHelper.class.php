@@ -35,11 +35,19 @@ class BsArticleHelper {
 	}
 
 	/**
+	 * DEPRECADED
 	 * Fetches the number of edits in the discussion page of the given Title.
+	 * @deprecated since version 3.1 - Not in use anymore
 	 * @return int The number of edits of the talk page
 	 */
 	public function getDiscussionAmount() {
-		$oTalkPage   = $this->oTitle->getTalkPage();
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		$oTalkPage = $this->oTitle->getTalkPageIfDefined();
+
+		if ( !$oTalkPage ) {
+			return 0;
+		}
+
 		$iTalkPageId = $oTalkPage->getArticleID();
 
 		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'getDiscussionAmount', $iTalkPageId );
@@ -67,34 +75,43 @@ class BsArticleHelper {
 	}
 
 	/**
-	 *
+	 * DEPRECATED
+	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
+	 * ->getBSUtilityFactory()->getPagePropHelper( \Title )->getPageProp instead
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
 	 * @return string|null
 	 */
 	public function getPageProp( $sPropName, $bDoLoad = false ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$helper = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProp( $sPropName );
 	}
 
 	/**
-	 *
+	 * DEPRECATED
+	 * @deprecated since version 3.1 - Use \FormatJson::decode in your code
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
 	 * @return sdtClass|true|false|null See PHP documentation for json_decode()
 	 */
 	public function getJSONPageProp( $sPropName, $bDoLoad = false ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return json_decode(
 			$this->getPageProp( $sPropName, $bDoLoad )
 		);
 	}
 
 	/**
-	 * @param bool $bDoLoad
+	 * DEPRECATED
+	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
+	 * ->getBSUtilityFactory()->getPagePropHelper( \Title )->getPageProps instead
+	 * @param type $bDoLoad
 	 * @return array
 	 */
 	public function getPageProps( $bDoLoad = false ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$helper = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProps();
@@ -115,7 +132,7 @@ class BsArticleHelper {
 	public function invalidate() {
 		$this->bIsLoaded = false;
 
-		if ( !$this->oTitle->exists() ) {
+		if ( !$this->oTitle->exists() || !$this->oTitle->getTalkPageIfDefined() ) {
 			return true;
 		}
 

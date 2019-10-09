@@ -19,8 +19,9 @@ class Record implements IRecord, \JsonSerializable {
 	/**
 	 *
 	 * @param \stdClass $dataSet
+	 * @param \Status|null $status
 	 */
-	public function __construct( $dataSet, \Status $status = null ) {
+	public function __construct( \stdClass $dataSet, \Status $status = null ) {
 		$this->dataSet = $dataSet;
 		$this->status = $status;
 	}

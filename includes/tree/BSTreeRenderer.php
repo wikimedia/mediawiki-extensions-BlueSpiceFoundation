@@ -60,6 +60,7 @@ class BSTreeRenderer {
 	/**
 	 *
 	 * @param BSTreeNode[] $nodes
+	 * @param int $level
 	 */
 	protected function renderNodeItems( $nodes, $level ) {
 		foreach ( $nodes as $node ) {
@@ -67,6 +68,10 @@ class BSTreeRenderer {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $path
+	 */
 	public function expandPath( $path ) {
 		$path = explode( '/', $path );
 		// We need to remove the trailing empty element as a path starts with '/'

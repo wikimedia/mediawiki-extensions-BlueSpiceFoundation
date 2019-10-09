@@ -69,7 +69,7 @@ class CacheHelper {
 	/**
 	 * Invalidate cache for given key
 	 * @param string $key
-	 * @return boolean | true if key is deleted false if at least one key failed to invalidate
+	 * @return bool | true if key is deleted false if at least one key failed to invalidate
 	 */
 	public function invalidate( $key ) {
 		$res = $this->getCache()->delete( $key );

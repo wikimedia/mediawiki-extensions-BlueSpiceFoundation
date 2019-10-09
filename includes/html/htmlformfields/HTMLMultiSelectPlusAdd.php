@@ -8,6 +8,12 @@
 class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 	protected $allowAdditions = true;
 
+	/**
+	 *
+	 * @param mixed|false $value
+	 * @param array $alldata
+	 * @return bool
+	 */
 	public function validate( $value, $alldata ) {
 		if ( !is_array( $value ) ) {
 			return false;
@@ -16,6 +22,10 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getOOUIAttributes() {
 		$attr = parent::getOOUIAttributes();
 
@@ -24,6 +34,11 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 		return $attr;
 	}
 
+	/**
+	 *
+	 * @param mixed|false $value
+	 * @return string
+	 */
 	public function getInputHTML( $value ) {
 		$html = $this->formatOptions( $this->mParams['options'], $value, 'multiselectplusadd' );
 

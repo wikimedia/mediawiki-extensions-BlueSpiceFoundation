@@ -32,11 +32,21 @@ class ViewFormElementInput extends ViewFormElement {
 		$this->_mLinebreak = false;
 	}
 
+	/**
+	 *
+	 * @param bool $state
+	 * @return ViewFormElementInput
+	 */
 	public function setValidate( $state = true ) {
 		$this->_mValidate = $state;
 		return $this;
 	}
 
+	/**
+	 *
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$output = '';
 		$title = '';

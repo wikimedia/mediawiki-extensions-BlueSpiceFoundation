@@ -45,7 +45,7 @@ abstract class UserGetRights extends Hook {
 	/**
 	 *
 	 * @param \User $user
-	 * @param array $rights
+	 * @param array &$rights
 	 * @return type
 	 */
 	public static function callback( $user, &$rights ) {
@@ -64,7 +64,7 @@ abstract class UserGetRights extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \User $user
-	 * @param array $rights
+	 * @param array &$rights
 	 */
 	public function __construct( $context, $config, $user, &$rights ) {
 		parent::__construct( $context, $config );

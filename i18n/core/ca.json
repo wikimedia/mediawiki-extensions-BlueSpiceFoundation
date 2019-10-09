@@ -35,5 +35,6 @@
 	"bs-pref-fileextensions": "Extensions de fitxers permesses:",
 	"bs-graphicallist-action-close": "Tanca",
 	"bs-graphicallist-action-list": "Llista",
-	"bs-graphicallist-action-preview": "Previsualitza"
+	"bs-graphicallist-action-preview": "Previsualitza",
+	"bs-lockdown-groups-permissionerror": "L’operació «$1» no està disponible {{PLURAL:$2|pel motiu següent|pels motius següents}}: $3"
 }

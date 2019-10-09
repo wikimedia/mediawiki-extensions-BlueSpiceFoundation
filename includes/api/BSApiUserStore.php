@@ -2,9 +2,22 @@
 
 class BSApiUserStore extends BSApiExtJSStoreBase {
 
+	/**
+	 *
+	 * @var array
+	 */
 	protected $aGroups = [];
+	/**
+	 *
+	 * @var array
+	 */
 	protected $aBlocks = [];
 
+	/**
+	 *
+	 * @param string $sQuery
+	 * @return array
+	 */
 	protected function makeData( $sQuery = '' ) {
 		$dbr = $this->getDB();
 
@@ -110,7 +123,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 
 	/**
 	 * @param object $aDataSet
-	 * @return boolean
+	 * @return bool
 	 */
 	public function filterCallback( $aDataSet ) {
 		$bFilterApplies = $this->filterUserName(
@@ -129,7 +142,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	 * query parameter
 	 * @param string $sQuery
 	 * @param oject $aDataSet
-	 * @return boolean true if filter applies, false if not
+	 * @return bool true if filter applies, false if not
 	 */
 	public function filterUserName( $sQuery, $aDataSet ) {
 		if ( empty( $sQuery ) || !is_string( $sQuery ) ) {

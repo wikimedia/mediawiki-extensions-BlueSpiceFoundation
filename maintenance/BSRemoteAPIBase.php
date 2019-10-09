@@ -91,6 +91,11 @@ class BSRemoteAPIBase extends BSMaintenance {
 		return false;
 	}
 
+	/**
+	 *
+	 * @param array $aOptions
+	 * @return MWHttpRequest
+	 */
 	public function makePOSTRequest( $aOptions ) {
 		$options = [
 			'method' => 'POST',
@@ -104,6 +109,10 @@ class BSRemoteAPIBase extends BSMaintenance {
 		return $request;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function getAPIEditToken() {
 		$query = [
 			'action' => 'query',

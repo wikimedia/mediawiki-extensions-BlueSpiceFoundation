@@ -1,14 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615"
+			"Reza1615",
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-deferred-action-status-pending": "در انتظار.",
 	"bs-deferred-action-status-done": "انجام شد.",
 	"bs-deferred-action-status-error": "ناموفق بود.",
 	"bs-deferred-action-apieditpage-description": "ویرایش «$1».",
+	"bs-deferred-batch-progress-desc": "پیشرفت",
 	"bs-deferred-batch-actions": "عملکردها",
 	"bs-deferred-batch-description": "توضیح",
-	"bs-deferred-batch-status": "وضعیت"
+	"bs-deferred-batch-status": "وضعیت",
+	"bs-deferred-action-apideletepage-description": "حذف «$1».",
+	"bs-deferred-action-status-running": "در حال اجرا...",
+	"bs-deferred-action-apiaddcategories-description": "افزودن رده‌ها به «$1»",
+	"bs-deferred-action-apiremovecategories-description": "حذف رده‌ها از «$1»",
+	"bs-deferred-action-apimovepage-description": "انتقال «$1» به «$2»",
+	"bs-deferred-action-apisetcategories-description": "رده‌های «$1» را تعیین کن."
 }

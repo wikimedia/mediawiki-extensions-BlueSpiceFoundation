@@ -6,6 +6,12 @@
  * @author Sebastian Ulbricht <x_lilu_x@gmx.de>
  */
 class HTMLMultiSelectEx extends HTMLMultiSelectField {
+	/**
+	 *
+	 * @param array $value
+	 * @param array $alldata
+	 * @return bool
+	 */
 	public function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 		if ( $p !== true ) {
@@ -19,6 +25,10 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return true;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getOOUIAttributes() {
 		$attr = [];
 		$attr += OOUI\Element::configFromHtmlAttributes(
@@ -53,6 +63,11 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $attr;
 	}
 
+	/**
+	 *
+	 * @param array $value
+	 * @return \BlueSpice\Html\OOUI\TagMultiselectWidget
+	 */
 	public function getInputOOUI( $value ) {
 		$this->mParent->getOutput()->addModules( 'oojs-ui-widgets' );
 
@@ -76,6 +91,10 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $widget;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getOptionsOOUI() {
 		$options = $this->getOptions();
 
@@ -101,6 +120,11 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $oouiOptions;
 	}
 
+	/**
+	 *
+	 * @param array $value
+	 * @return string
+	 */
 	public function getInputHTML( $value ) {
 		\RequestContext::getMain()->getOutput()->addModules( 'ext.bluespice.html.formfields.multiselect' );
 
@@ -110,6 +134,13 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $html;
 	}
 
+	/**
+	 *
+	 * @param array $options
+	 * @param array $value
+	 * @param string $class
+	 * @return string
+	 */
 	public function formatOptions( $options, $value, $class = "multiselectex" ) {
 		$select = new XmlMultiSelect( $this->mName . '[]', $this->mID, $value );
 		$select->setAttribute( 'size', 5 );
@@ -135,6 +166,11 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $select->getHTML();
 	}
 
+	/**
+	 *
+	 * @param \WebRequest $request
+	 * @return array
+	 */
 	public function loadDataFromRequest( $request ) {
 		# won't work with getCheck
 		if ( $request->getCheck( 'wpEditToken' ) ) {
@@ -150,6 +186,10 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		}
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getDefault() {
 		if ( isset( $this->mDefault ) ) {
 			return $this->mDefault;
@@ -158,6 +198,10 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		}
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function needsLabel() {
 		return true;
 	}

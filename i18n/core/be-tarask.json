@@ -1,8 +1,34 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Nerogaf"
 		]
 	},
-	"bs-bluespice": "BlueSpice"
+	"bs-ns_main": "(Старонкі)",
+	"bs-ns_all": "(усе)",
+	"bs-userbar_loginswitch_logout": "Выйсьці",
+	"bs-userbar_loginswitch_login": "Увайсьці",
+	"bs-extended-search-textfield-tooltip": "Пошук у вікі",
+	"bs-no-information-available": "Няма даступных зьвестак",
+	"bs-one-unit-ago": "$1 таму",
+	"bs-now": "толькі што",
+	"bs-userpagesettings-legend": "Налады ўдзельніка",
+	"bs-userpreferences-link-text": "Дадатковыя налады ўдзельніка",
+	"bs-viewtagerrorlist-legend": "$1 — памылка",
+	"bs-permissionerror": "Памылка дазволу!",
+	"bs-navigation-instructions": "Інструкцыі",
+	"bs-navigation-support": "Падтрымка",
+	"bs-navigation-contact": "Сувязь",
+	"bs-imagepage-download-text": "Спампаваць",
+	"bs-ns": "Прастора назваў",
+	"bs-from-something": "(з $1)",
+	"bs-pref-fileextensions": "Дазволеныя пашырэньні файлаў:",
+	"bs-pref-imageextensions": "Дазволеныя пашырэньні выяваў:",
+	"bs-export-menu-print-text": "Друкаваць",
+	"bs-graphicallist-action-close": "Зачыніць",
+	"bs-graphicallist-action-list": "Сьпіс",
+	"bs-graphicallist-action-preview": "Перадпрагляд",
+	"bs-bluespice": "BlueSpice",
+	"bs-notifications-agent-anon": "ананімны ўдзельнік"
 }

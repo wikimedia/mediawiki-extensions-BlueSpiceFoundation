@@ -45,8 +45,8 @@ abstract class BSEntityConfigAttributeDefinitions extends Hook {
 	 * Located in \BlueSpice\EntityConfig::get_AttributeDefinitions. Use this
 	 * hook to inject entity attribute definitions.
 	 * @param \BlueSpice\EntityConfig $entityConfig
-	 * @param array $attributeDefinitions
-	 * @return boolean
+	 * @param array &$attributeDefinitions
+	 * @return bool
 	 */
 	public static function callback( \BlueSpice\EntityConfig $entityConfig, &$attributeDefinitions ) {
 		$className = static::class;
@@ -63,7 +63,7 @@ abstract class BSEntityConfigAttributeDefinitions extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \BlueSpice\EntityConfig $entityConfig
-	 * @param array $attributeDefinitions
+	 * @param array &$attributeDefinitions
 	 */
 	public function __construct( $context, $config, $entityConfig, &$attributeDefinitions ) {
 		parent::__construct( $context, $config );

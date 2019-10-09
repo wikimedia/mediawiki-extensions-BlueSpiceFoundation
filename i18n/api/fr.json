@@ -44,7 +44,7 @@
 	"bs-wikipage-tasks-error-contentmodel": "La tâche n'a pas pu être effectuées avec le modèle de contenu de la page fournie.",
 	"bs-wikipage-tasks-error-page-not-valid": "La page spécifiée n'est pas valide.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Catégories modifiées.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Vous n’êtes pas autorisé(e) à modifier la page « $1 ».",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Vous n’êtes pas autorisé(e) à modifier la page « $1 ».",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Catégorie invalide|Catégories invalides}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Les catégories ont été définies avec succès.",
 	"apihelp-bs-wikipage-store-description": "Liste toutes les pages Wiki. Autorise le tri, le fltrage et la mise en forme. Implémente les paramètres de ExtJS Store.",
@@ -69,5 +69,7 @@
 	"bs-api-task-taskData-page-title": "Un titre valide de page wiki",
 	"bs-api-task-wikipagetasks-taskData-categories": "Tableau de chaînes. Les valeurs doivent être des noms de catégories valides.",
 	"apihelp-bs-watchlist-store-summary": "Liste toutes les entrées des listes de suivi. Permet le tri, le filtrage et la mise en forme. Implémente les paramètres store.",
-	"apihelp-bs-recentchanges-store-summary": "Affiche l'ensemble des modifications récentes. Permet de trier, de filtrer et de mettre en forme. Implémente la sauvegarde des paramètres."
+	"apihelp-bs-recentchanges-store-summary": "Affiche l'ensemble des modifications récentes. Permet de trier, de filtrer et de mettre en forme. Implémente la sauvegarde des paramètres.",
+	"apihelp-bs-task-summary": "Fournit le point de terminaison de l’API pour l’exécution de tâches enregistrées",
+	"apihelp-bs-task-description": "Fournit le point de terminaison de l’API pour l’exécution de tâches enregistrées"
 }

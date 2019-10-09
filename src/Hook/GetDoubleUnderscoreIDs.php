@@ -36,9 +36,8 @@ abstract class GetDoubleUnderscoreIDs extends \BlueSpice\Hook {
 
 	/**
 	 *
-	 * @param array $doubleUnderscoreIDs
-	 * @param string $text
-	 * @return boolean
+	 * @param array &$doubleUnderscoreIDs
+	 * @return bool
 	 */
 	public static function callback( &$doubleUnderscoreIDs ) {
 		$className = static::class;
@@ -54,7 +53,7 @@ abstract class GetDoubleUnderscoreIDs extends \BlueSpice\Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $doubleUnderscoreIDs
+	 * @param array &$doubleUnderscoreIDs
 	 */
 	public function __construct( $context, $config, &$doubleUnderscoreIDs ) {
 		parent::__construct( $context, $config );

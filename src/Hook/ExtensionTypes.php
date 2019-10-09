@@ -38,8 +38,8 @@ abstract class ExtensionTypes extends Hook {
 
 	/**
 	 *
-	 * @param array $extTypes
-	 * @return boolean
+	 * @param array &$extTypes
+	 * @return bool
 	 */
 	public static function callback( &$extTypes ) {
 		$className = static::class;
@@ -55,7 +55,7 @@ abstract class ExtensionTypes extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $extTypes
+	 * @param array &$extTypes
 	 */
 	public function __construct( $context, $config, &$extTypes ) {
 		parent::__construct( $context, $config );

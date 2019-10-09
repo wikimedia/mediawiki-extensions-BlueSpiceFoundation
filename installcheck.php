@@ -29,7 +29,7 @@
 $cfgMWversion = "1.31";
 
 // PHP version
-$cfgPHPversion['min'] = '7.0';
+$cfgPHPversion['min'] = '7.2';
 $cfgPHPversion['opt'] = '7.3';
 
 // PHP extensions to check
@@ -470,6 +470,11 @@ $cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class
 
 // Functions ======================================================================================================================
 
+/**
+ *
+ * @param string $mwVersion
+ * @return string|false
+ */
 function checkMediaWikiHomeDir( $mwVersion ) {
 	if ( !file_exists( __DIR__ . "/cache" ) ||
 		!file_exists( __DIR__ . "/images" ) ||
@@ -481,7 +486,13 @@ function checkMediaWikiHomeDir( $mwVersion ) {
 	return false;
 }
 
+/**
+ *
+ * @param string $phpversion
+ * @return string
+ */
 function checkPHPversion( $phpversion ) {
+	// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 	global $cfgPHPversion;
 
 	$sResult = "PHP version is {$phpversion} ..... ";
@@ -500,6 +511,11 @@ function checkPHPversion( $phpversion ) {
 	return $sResult;
 }
 
+/**
+ *
+ * @param array $requiredExtensions
+ * @return string
+ */
 function checkExtensions( $requiredExtensions ) {
 	$sReturn = '';
 
@@ -519,6 +535,10 @@ function checkExtensions( $requiredExtensions ) {
 	return $sReturn . "\n";
 }
 
+/**
+ *
+ * @return string
+ */
 function checkFileUpload() {
 	$sReturn = '';
 
@@ -540,6 +560,10 @@ function checkFileUpload() {
 	return $sReturn;
 }
 
+/**
+ *
+ * @return string
+ */
 function checkSessionSavePath() {
 	$sReturn = '';
 
@@ -554,6 +578,11 @@ function checkSessionSavePath() {
 	return $sReturn;
 }
 
+/**
+ *
+ * @param array $iniOptions
+ * @return string
+ */
 function checkINIvalues( $iniOptions ) {
 	$sReturn = '';
 	$iniOptionChecked = [];
@@ -603,6 +632,11 @@ function checkINIvalues( $iniOptions ) {
 	return $sReturn . "\n";
 }
 
+/**
+ *
+ * @param array $checkFolders
+ * @return string|bool
+ */
 function checkWritePerm( $checkFolders ) {
 	if ( !is_array( $checkFolders ) ) {
 		$checkFolders = [ [ $checkFolders, "" ] ];
@@ -652,6 +686,11 @@ function checkWritePerm( $checkFolders ) {
 	}
 }
 
+/**
+ *
+ * @param array $checkFiles
+ * @return string
+ */
 function checkFiles( $checkFiles ) {
 	$sReturn = '';
 

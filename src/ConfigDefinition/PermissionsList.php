@@ -6,6 +6,10 @@ use BlueSpice\Html\FormField\PermissionMultiSelect;
 
 abstract class PermissionsList extends \BlueSpice\ConfigDefinition {
 
+	/**
+	 *
+	 * @return PermissionMultiSelect
+	 */
 	public function getHtmlFormField() {
 		return new PermissionMultiSelect( [
 			'parent' => new \HTMLForm( [] ),
@@ -17,6 +21,10 @@ abstract class PermissionsList extends \BlueSpice\ConfigDefinition {
 		] );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getPermissionType() {
 		return 'namespace';
 	}

@@ -7,7 +7,9 @@
 			"Ronel1",
 			"Eladk",
 			"ערן",
-			"Guycn2"
+			"Guycn2",
+			"YaronSh",
+			"Steeve815"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -30,8 +32,8 @@
 	"bs-two-units-ago": "לפני $1 ו$2",
 	"bs-one-unit-ago": "לפני $1",
 	"bs-now": "עכשיו",
-	"bs-email-greeting-receiver": "{{GENDER:$1|שלום מר $1|שלום גברת $1|שלום $1}},",
-	"bs-email-footer": "הודעה זו נוצרה באופן אוטמטי. נא לא להשיב לאימייל זה.",
+	"bs-email-greeting-receiver": "{{GENDER:$1|שלום מר $2|שלום גברת $2|שלום $2}},",
+	"bs-email-footer": "הודעה זו נוצרה באופן אוטמטי על ידי $1. נא לא להשיב לאימייל זה.",
 	"bs-userpagesettings-legend": "העדפות",
 	"bs-userpreferences-link-text": "העדפות נוספות",
 	"bs-userpreferences-link-title": "הצגת העדפות אישיות",
@@ -79,7 +81,16 @@
 	"bs-exttype-bluespice": "הרחבות BlueSpice",
 	"bs-export-menu-print-text": "הדפסה",
 	"bs-export-menu-print-title": "הצגת גרסת הדפסה של הדף",
+	"bs-graphicallist-action-close": "סגירה",
+	"bs-graphicallist-action-list": "רשימה",
+	"bs-graphicallist-action-preview": "תצוגה מקדימה",
 	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "צפייה בדפי ניהול של BlueSpice"
+	"right-wikiadmin": "צפייה בדפי ניהול של BlueSpice",
+	"bs-notifications-agent-anon": "משתמש אלמוני",
+	"bs-lockdown-groups-permissionerror": "הפעולה \"$1\" לא זמינה בגלל {{PLURAL:$2|הסיבה הבאה|הסיבות הבאות}}: $3",
+	"bs-filesystemhelper-folder-rename-error": "לא ניתן לשנות את שם התיקייה <code>$1</code> לשם <code>$2</code>.",
+	"bs-pref-anonuserimage": "אווטאר של משתמש אנונימי:",
+	"bs-pref-deleteduserimage": "אווטאר מחוק של משתמש:",
+	"action-wikiadmin": "לצפות בדפי ניהול של BlueSpice"
 }

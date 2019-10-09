@@ -13,7 +13,7 @@ class BsTagFinder {
 
 	/**
 	 * Searches s string for occurence of given tags and returns array of tags with some meta information
-	 * @param string $sText Some kind of text with containing xml formatted string. For example:
+	 * @param string &$sText Some kind of text with containing xml formatted string. For example:
 	 * ...text...<div>Some Text <bookmeta subtitle="Some subtitle" classified="false">There is <b>Text</b> with markup</bookmeta> Again some Text <bookmeta /> and <sometag /></div>...text...
 	 * @param array $aTagnames Array of tagnames to be searched for. For example:
 	 * array( 'bookmeta', 'sometag', ... );
@@ -30,7 +30,7 @@ class BsTagFinder {
 	 * );
 	 */
 	public static function find( &$sText, $aTagnames ) {
-		wfSuppressWarnings();
+		Wikimedia\suppressWarnings();
 		$aResult = [];
 
 		$sXML = '<?xml encoding="UTF-8">'
@@ -67,7 +67,7 @@ class BsTagFinder {
 				}
 			}
 		}
-		wfRestoreWarnings();
+		Wikimedia\restoreWarnings();
 		return $aResult;
 	}
 }

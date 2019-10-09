@@ -38,8 +38,8 @@ abstract class SpecialPageInitList extends Hook {
 
 	/**
 	 *
-	 * @param array $list
-	 * @return boolean
+	 * @param array &$list
+	 * @return bool
 	 */
 	public static function callback( &$list ) {
 		$className = static::class;
@@ -55,7 +55,7 @@ abstract class SpecialPageInitList extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $list
+	 * @param array &$list
 	 */
 	public function __construct( $context, $config, &$list ) {
 		parent::__construct( $context, $config );

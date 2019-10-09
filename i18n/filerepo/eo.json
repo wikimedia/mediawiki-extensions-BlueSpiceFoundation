@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Mirin"
 		]
 	},
 	"bs-filerepo-labelupload": "Alŝuti",
@@ -13,5 +14,12 @@
 	"bs-filerepo-headerfiledescription": "Priskribo",
 	"bs-filerepo-headerfilethumbnail": "Bildeto",
 	"bs-filerepo-yes": "Jes",
-	"bs-filerepo-no": "Ne"
+	"bs-filerepo-no": "Ne",
+	"bs-filerepo-labelfilter": "Filtri",
+	"bs-filerepo-headerfilesize": "Grando",
+	"bs-filerepo-headerfilewidth": "Larĝo",
+	"bs-filerepo-headerfileheight": "Alto",
+	"bs-filerepo-headerfileextension": "Dosiersufikso",
+	"bs-filerepo-headerfilemediatype": "Dosiertipo de aŭdvidaĵo",
+	"bs-filerepo-pagesize": "Nombro de eroj en paĝo"
 }

@@ -21,13 +21,21 @@ class ViewTagError extends ViewBaseElement {
 	protected $mErrorMsg;
 	protected $mSenderName;
 
+	/**
+	 *
+	 * @param string $msg
+	 */
 	public function  __construct( $msg ) {
 		parent::__construct();
 		$this->mLineFeed = '<br />';
 		$this->mErrorMsg = $msg;
 	}
 
-	// TODO MRG (01.09.10 02:00): Move sender name to tagerrorlist
+	/**
+	 * TODO MRG (01.09.10 02:00): Move sender name to tagerrorlist
+	 * @param array|false $params
+	 * @return string
+	 */
 	public function execute( $params = false ) {
 		$out = '';
 		// TODO MRG (01.09.10 02:01): remove style attribute

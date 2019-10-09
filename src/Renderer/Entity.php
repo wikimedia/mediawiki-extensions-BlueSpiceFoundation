@@ -1,12 +1,15 @@
 <?php
 namespace BlueSpice\Renderer;
 
+use MWException;
+use Config;
+use IContextSource;
+use FormatJson;
+use BlueSpice\Utility\CacheHelper;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\Params;
 
 class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 	const PARAM_ENTITY = 'entity';
-	const PARAM_CONTEXT = 'context';
 
 	/**
 	 *
@@ -15,22 +18,31 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 	protected $entity = null;
 
 	/**
-	 *
-	 * @var \IContextSource
-	 */
-	protected $context = null;
-
-	/**
 	 * Constructor
+	 * @param Config $config
+	 * @param Params $params
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string $name | ''
+	 * @param CacheHelper|null $cacheHelper
 	 */
-	public function __construct( \Config $config, Params $params, LinkRenderer $linkRenderer = null ) {
-		parent::__construct( $config, $params, $linkRenderer );
+	protected function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '', CacheHelper $cacheHelper = null ) {
+		parent::__construct(
+			$config,
+			$params,
+			$linkRenderer,
+			$context,
+			$name,
+			$cacheHelper
+		);
 		$this->context = $params->get(
 			static::PARAM_CONTEXT,
 			null
 		);
-		if ( !$this->context instanceof \IContextSource ) {
-			throw new \MWException(
+		if ( !$this->context instanceof IContextSource ) {
+			throw new MWException(
 				'"\IContextSource" must be given by ' . static::PARAM_CONTEXT . ' param'
 			);
 		}
@@ -39,7 +51,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 			null
 		);
 		if ( !$this->entity instanceof \BlueSpice\Entity ) {
-			throw new \MWException(
+			throw new MWException(
 				'"\BlueSpice\Entity" must be given by ' . static::PARAM_ENTITY . ' param'
 			);
 		}
@@ -48,8 +60,13 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 		$this->args[static::PARAM_TAG] = 'div';
 	}
 
+	/**
+	 *
+	 * @param mixed $val
+	 * @return string
+	 */
 	protected function render_content( $val ) {
-		return \FormatJson::encode( $this->getEntity(), true );
+		return FormatJson::encode( $this->getEntity(), true );
 	}
 
 	/**
@@ -66,14 +83,6 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 	 */
 	public function getEntity() {
 		return $this->entity;
-	}
-
-	/**
-	 *
-	 * @return \IContextSource
-	 */
-	public function getContext() {
-		return $this->context;
 	}
 
 	/**

@@ -5,7 +5,9 @@
 			"Macofe",
 			"Benjozork",
 			"Wladek92",
-			"Urhixidur"
+			"Urhixidur",
+			"Pols12",
+			"Thibaut120094"
 		]
 	},
 	"bluespicefoundation-desc": "Rend Médiawiki prêt pour l’entreprise",
@@ -40,7 +42,7 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "Masquer les détails de l’erreur",
 	"bs-viewtagerrorlist-legend": "$1 - Erreur",
 	"bs-readonly": "La base de données est actuellement verrouillée pour de nouvelles entrées et d’autres modifications, probablement par une routine de maintenance de la base de données, après laquelle tout reviendra à la normale. L’administrateur qui l’a verrouillée a offert l’explication suivante : $1",
-	"bs-imageofotheruser": "Vous n’êtes pas autorisé à importer une image pour un autre utilisateur.",
+	"bs-imageofotheruser": "Vous n’êtes pas autorisé à téléverser une image pour un autre utilisateur.",
 	"bs-permissionerror": "Erreur de droit !",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> n’est pas un répertoire valide.",
 	"bs-filesystemhelper-has-path-traversal": "Traversée de chemin détectée !",
@@ -90,8 +92,11 @@
 	"bs-graphicallist-action-close": "Fermer",
 	"bs-graphicallist-action-list": "Lister",
 	"bs-graphicallist-action-preview": "Aperçu",
-	"bs-bluespice-mediawiki": "MédiaWiki BlueSpice",
+	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Utilisé dans beaucoup de modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d'accès, de la configuration globale",
-	"bs-notifications-agent-anon": "utilisateur anonyme"
+	"bs-notifications-agent-anon": "utilisateur anonyme",
+	"bs-lockdown-groups-permissionerror": "L'action « $1 » n'est pas disponible pour {{PLURAL:$2|la raison suivante|les raisons suivantes}} : $3",
+	"action-wikiadmin": "utilisé dans beaucoup de modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d’accès, de la configuration globale",
+	"protect-level-editor": "Autoriser seulement les éditeurs et les administrateurs"
 }

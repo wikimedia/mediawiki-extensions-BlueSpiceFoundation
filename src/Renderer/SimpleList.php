@@ -2,15 +2,26 @@
 
 namespace BlueSpice\Renderer;
 
+use Config;
+use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\Params;
 use BlueSpice\Renderer\SimpleList\Item;
 
 class SimpleList extends \BlueSpice\Renderer {
 	const PARAM_ITEMS = 'items';
 
-	public function __construct( \Config $config, Params $params, LinkRenderer $linkRenderer = null ) {
-		parent::__construct( $config, $params, $linkRenderer );
+	/**
+	 *
+	 * @param Config $config
+	 * @param Params $params
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string | '' $name
+	 */
+	public function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '' ) {
+		parent::__construct( $config, $params, $linkRenderer, $context );
 		$this->args[static::PARAM_ITEMS] = $params->get(
 			static::PARAM_ITEMS,
 			[]

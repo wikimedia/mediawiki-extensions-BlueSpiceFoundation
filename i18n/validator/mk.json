@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bjankuloski06"
+			"Bjankuloski06",
+			"Vlad5250"
 		]
 	},
 	"bs-validator-email-validation-approved": "Е-поштата е успешно потврдена.",
@@ -13,5 +14,8 @@
 	"bs-validator-set-validation-approved": "$1 е успешно потврдено.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|За $1 е допуштена само следнава вредност|За $1 се допуштени само следниве вредности}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Укажаната вредност е прениска. Не треба да биде помала од $1.",
-	"bs-validator-integer-range-validation-too-high": "Укажаната вредност е превисока. Не треба да биде поголема од $1."
+	"bs-validator-integer-range-validation-too-high": "Укажаната вредност е превисока. Не треба да биде поголема од $1.",
+	"bs-validator-invalid-parameter": "Овој параметар не е дозволен",
+	"bs-validator-missing-required": "Овој параметар е задолжителен",
+	"bs-validator-value-not-recognized": "Вредноста не можеше да се обработи"
 }

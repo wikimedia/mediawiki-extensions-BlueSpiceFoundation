@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Moud hosny",
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "يسرد جميع الملفات من النهاية الخلفية للملف، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
@@ -15,8 +16,8 @@
 	"apihelp-bs-adminuser-store-summary": "يسرد جميع المستخدمين من قاعدة البيانات ببيانات حساسة إضافية، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
 	"apihelp-bs-group-store-description": "يسرد كل المجموعات باستثناء $wgImplicitGroups، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
 	"apihelp-bs-group-store-summary": "يسرد كل المجموعات باستثناء $wgImplicitGroups، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
-	"apihelp-bs-interwiki-store-description": "يسرد جميع روابط الإنترويكي، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
-	"apihelp-bs-interwiki-store-summary": "يسرد جميع روابط الإنترويكي، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
+	"apihelp-bs-interwiki-store-description": "يسرد جميع وصلات الإنترويكي، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
+	"apihelp-bs-interwiki-store-summary": "يسرد جميع وصلات الإنترويكي، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
 	"apihelp-bs-titlequery-store-description": "يسرد عناوين الصفحات و(اختياريا) بادئات النطاقات بناء على مصطلح الاستعلام، ينفذ وسائط مخزن ExtJS.",
 	"apihelp-bs-titlequery-store-summary": "يسرد عناوين الصفحات و(اختياريا) بادئات النطاقات بناء على مصطلح الاستعلام، ينفذ وسائط مخزن ExtJS.",
 	"apihelp-bs-wikipage-tasks-description": "يوفر عمليات مشتركة لصفحات الويكي",
@@ -66,5 +67,7 @@
 	"bs-api-task-taskData-page-title": "عنوان صالح لصفحة ويكي",
 	"bs-api-task-wikipagetasks-taskData-categories": "مجموعة من السلاسل، يجب أن تكون القيم أسماء تصنيفات صالحة.",
 	"apihelp-bs-watchlist-store-summary": "يسرد كافة  إدخالات قائمة المراقبة، يتيح الفرز وترقيم الصفحات، ينفذ وسائط مخزن.",
-	"apihelp-bs-recentchanges-store-summary": "يسرد كل التغييرات الحديثة، يتيح الفرز وترقيم الصفحات، ينفذ وسائط مخزن."
+	"apihelp-bs-recentchanges-store-summary": "يسرد كل التغييرات الحديثة، يتيح الفرز وترقيم الصفحات، ينفذ وسائط مخزن.",
+	"apihelp-bs-task-summary": "يوفر نقطة نهاية API لتنفيذ المهام المسجلة",
+	"apihelp-bs-task-description": "يوفر نقطة نهاية API لتنفيذ المهام المسجلة"
 }

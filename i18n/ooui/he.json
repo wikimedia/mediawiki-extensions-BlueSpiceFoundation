@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"YaronSh"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "הוספת חדש…",
+	"bs-ooui-key-value-input-widget-key-label": "מפתח",
+	"bs-ooui-key-value-input-widget-value-label": "ערך",
+	"bs-ooui-key-value-input-widget-add-button-label": "הוספה",
+	"bs-ooui-key-value-input-widget-add-form-label": "הוספת רשומה חדשה",
+	"bs-ooui-key-value-input-widget-error-message": "יש להגדיר את כל השדות הנדרשים!",
+	"bs-ooui-key-value-input-widget-no-values-label": "לא הוגדרו ערכים!"
+}

@@ -39,7 +39,7 @@ abstract class Module {
 	 * @param Params $params
 	 * @param \Config $config
 	 * @param \IContextSource $context
-	 * @param boolean $secure - set to false when internal use, to improve
+	 * @param bool $secure - set to false when internal use, to improve
 	 * performance
 	 * @return DynamicFileDispatcher
 	 * @throws \MWException
@@ -137,14 +137,26 @@ abstract class Module {
 		}
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function isTitleRequired() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function mustRequiredTitleExist() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getPermissionKey() {
 		return 'read';
 	}

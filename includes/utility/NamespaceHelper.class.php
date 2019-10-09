@@ -49,6 +49,7 @@ class BsNamespaceHelper {
 			//$sContantValue -> $sContantName;
 		}
 		*/
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 		global $bsgSystemNamespaces;
 		return self::$aNamespaceMap + $bsgSystemNamespaces;
 	}
@@ -240,7 +241,7 @@ class BsNamespaceHelper {
 	 * Checks if a user has a given permission on a given namepsace
 	 * @param Integer $iID namespace
 	 * @param String $sPermission permission
-	 * @return boolean returns true if user is allowed , otherwise false
+	 * @return bool returns true if user is allowed , otherwise false
 	 */
 	public static function checkNamespacePermission( $iID, $sPermission ) {
 		if ( !is_numeric( $iID ) ) {

@@ -31,4 +31,15 @@ class FilterFinder {
 		}
 		return null;
 	}
+
+	/**
+	 *
+	 * @param string $fieldName
+	 * @return Filter[]
+	 */
+	public function findAllFiltersByField( $fieldName ) {
+		return array_filter( $this->filters, function ( $e ) use ( $fieldName ) {
+			return $e->getField() === $fieldName;
+		} );
+	}
 }

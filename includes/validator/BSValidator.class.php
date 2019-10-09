@@ -28,13 +28,19 @@
  * FILTER_VALIDATE_REGEXP
 */
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.1 - Use ParamProcessor instead
+ */
 class BsValidator {
 
 	protected static $prKnownPlugins = [];
 
 	/**
+	 * DEPRECATED!
 	 * Call BsValidator::isValid to validate several types of user input
 	 * The return value is boolean per default but can be set to BsValidatorResponse via $opstions['fullResponse'] = true
+	 * @deprecated since version 3.1 - Use ParamProcessor instead
 	 * @param string $type of 'Email', 'Url', ...
 	 * @param string $validateThis user input to be validated
 	 * @param array $options is optional and may contain parameters for the validation-plugin
@@ -46,6 +52,7 @@ class BsValidator {
 	 * </p>
 	 */
 	public static function isValid( $type, $validateThis, $options = [] ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( !is_array( $options ) ) {
 			throw new BsException( 'BsValidator::isValid called with 3rd param that is no array' );
 		}

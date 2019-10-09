@@ -16,6 +16,11 @@ class LimitOffsetTrimmer implements ITrimmer {
 	 */
 	protected $offset = 0;
 
+	/**
+	 *
+	 * @param int $limit
+	 * @param int $offset
+	 */
 	public function __construct( $limit = 25, $offset = 0 ) {
 		$this->limit = $limit;
 		$this->offset = $offset;

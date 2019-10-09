@@ -3,9 +3,12 @@
 
 namespace BlueSpice\Utility;
 
+use BlueSpice\Services;
 use BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\FileLinksHelper;
+use BlueSpice\Utility\WikiTextLinksHelper\InterwikiLinksHelper;
+use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
 
 class WikiTextLinksHelper {
 
@@ -18,6 +21,8 @@ class WikiTextLinksHelper {
 	protected $categories = null;
 	protected $links = null;
 	protected $files = null;
+	protected $interwikiLinks = null;
+	protected $interlanguageLinks = null;
 
 	/**
 	 *
@@ -63,4 +68,33 @@ class WikiTextLinksHelper {
 		return $this->files;
 	}
 
+	/**
+	 *
+	 * @return InterwikiLinksHelper
+	 */
+	public function getInterwikiLinksHelper() {
+		if ( $this->interwikiLinks ) {
+			return $this->interwikiLinks;
+		}
+		$this->interwikiLinks = new InterwikiLinksHelper(
+			$this->wikitext,
+			Services::getInstance()
+		);
+		return $this->interwikiLinks;
+	}
+
+	/**
+	 *
+	 * @return InterlanguageLinksHelper
+	 */
+	public function getLanguageLinksHelper() {
+		if ( $this->interlanguageLinks ) {
+			return $this->interlanguageLinks;
+		}
+		$this->interlanguageLinks = new InterlanguageLinksHelper(
+			$this->wikitext,
+			Services::getInstance()
+		);
+		return $this->interlanguageLinks;
+	}
 }

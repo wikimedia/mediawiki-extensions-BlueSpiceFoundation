@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"bs-validator-invalid-boolean": "Ne estas valida bulea valoro",
+	"bs-validator-invalid-float": "Ne estas valida glitkoma nombro",
+	"bs-validator-invalid-integer": "Ne estas valida entjero",
+	"bs-validator-invalid-string": "Ne estas valida signoĉeno",
+	"bs-validator-invalid-coordinate": "Ne estas valida koordinato",
+	"bs-validator-invalid-parameter": "Ĉi tiu parametro ne estas permesata",
+	"bs-validator-missing-required": "Ĉi tiu parametro estas postulata"
+}

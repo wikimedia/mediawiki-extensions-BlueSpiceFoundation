@@ -9,7 +9,8 @@
 			"Fengchao",
 			"御坂美琴",
 			"Yfdyh000",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"佛壁灯"
 		]
 	},
 	"bluespicefoundation-desc": "使MediaWiki准备好企业化",
@@ -87,6 +88,7 @@
 	"bs-validator-error-namespace-on-blacklist": "名字空间不被允许：$1",
 	"bs-validator-error-title-does-not-exist": "页面不存在：$1",
 	"bs-validator-error-title-namespace-on-blacklist": "页面不被允许：$1",
+	"bs-parser-error-invalid-category-title": "页面非有效分类：$1",
 	"bs-exttype-bluespice": "BlueSpice扩展",
 	"bs-export-menu-print-text": "打印",
 	"bs-export-menu-print-title": "显示页面的可打印版本",
@@ -95,6 +97,8 @@
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "显示BlueSpice管理员页面",
-	"bs-notifications-agent-anon": "匿名用户"
+	"right-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。",
+	"bs-notifications-agent-anon": "匿名用户",
+	"bs-lockdown-groups-permissionerror": "操作“$1”由于下列{{PLURAL:$2|原因}}不可用：$3",
+	"action-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。"
 }

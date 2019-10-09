@@ -2,10 +2,19 @@
 
 namespace BlueSpice;
 
-interface ITask {
+use Status;
+
+interface ITask extends IParamProvider {
 
 	/**
-	 * @return \Status
+	 * @param array $params
+	 * @param Status|null $status
+	 * @return Status
 	 */
-	public function execute();
+	public function execute( array $params = [], Status $status = null );
+
+	/**
+	 * @return string[]
+	 */
+	public function getTaskPermissions();
 }

@@ -62,7 +62,7 @@ abstract class FileDeleteComplete extends Hook {
 	 * @param \WikiPage $wikipage
 	 * @param \User $user
 	 * @param string $reason
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $file, $oldimage, $wikipage, $user, $reason ) {
 		$className = static::class;

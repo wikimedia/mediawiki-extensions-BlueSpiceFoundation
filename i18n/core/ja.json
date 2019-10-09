@@ -5,7 +5,8 @@
 			"Sujiniku",
 			"2nd-player",
 			"Otokoume",
-			"Suyama"
+			"Suyama",
+			"神樂坂秀吉"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -59,5 +60,6 @@
 	"bs-pref-deleteduserimage": "削除された利用者のアバター:",
 	"bs-graphicallist-action-close": "閉じる",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "BlueSpice 管理ページを表示"
+	"right-wikiadmin": "BlueSpice 管理ページを表示",
+	"action-wikiadmin": "BlueSpice 管理ページの表示"
 }

@@ -2,9 +2,6 @@
 
 namespace BlueSpice\Data;
 
-use BlueSpice\Data\RecordSet;
-use BlueSpice\Data\ReaderParams;
-
 abstract class DatabaseWriter extends Writer {
 
 	/**
@@ -19,8 +16,14 @@ abstract class DatabaseWriter extends Writer {
 	 */
 	protected $reader = null;
 
+	/**
+	 * @return array
+	 */
 	abstract protected function getIdentifierFields();
 
+	/**
+	 * @return string
+	 */
 	abstract protected function getTableName();
 
 	/**
@@ -81,6 +84,7 @@ abstract class DatabaseWriter extends Writer {
 	/**
 	 *
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return void
 	 */
 	protected function insert( $record ) {
 		$record->getData();
@@ -105,6 +109,7 @@ abstract class DatabaseWriter extends Writer {
 	 *
 	 * @param \BlueSpice\Data\IRecord $existingRecord
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return void
 	 */
 	protected function modify( $existingRecord, $record ) {
 		$record->getData();
@@ -130,6 +135,7 @@ abstract class DatabaseWriter extends Writer {
 	 *
 	 * @param \BlueSpice\Data\IRecord $existingRecord
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return void
 	 */
 	protected function delete( $existingRecord, $record ) {
 		$record->getData();
@@ -153,6 +159,7 @@ abstract class DatabaseWriter extends Writer {
 	/**
 	 *
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return array
 	 */
 	protected function makeInsertFields( $record ) {
 		return (array)$record->getData();
@@ -162,6 +169,7 @@ abstract class DatabaseWriter extends Writer {
 	 *
 	 * @param \BlueSpice\Data\IRecord $existingRecord
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return array
 	 */
 	protected function makeUpdateFields( $existingRecord, $record ) {
 		$return = [];
@@ -178,6 +186,7 @@ abstract class DatabaseWriter extends Writer {
 	 *
 	 * @param \BlueSpice\Data\IRecord $existingRecord
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return array
 	 */
 	protected function makeUpdateConditions( $existingRecord, $record ) {
 		$return = [];
@@ -191,6 +200,7 @@ abstract class DatabaseWriter extends Writer {
 	 *
 	 * @param \BlueSpice\Data\IRecord $existingRecord
 	 * @param \BlueSpice\Data\IRecord $record
+	 * @return array
 	 */
 	protected function makeDeleteConditions( $existingRecord, $record ) {
 		$return = [];
@@ -203,6 +213,7 @@ abstract class DatabaseWriter extends Writer {
 	/**
 	 *
 	 * @param BlueSpice\Data\Record $record
+	 * @return BlueSpice\Data\Record
 	 */
 	protected function getExistingRecord( $record ) {
 		$recordSet = $this->reader->read( new ReaderParams( [
@@ -219,6 +230,7 @@ abstract class DatabaseWriter extends Writer {
 	/**
 	 *
 	 * @param BlueSpice\Data\Record $record
+	 * @return array
 	 */
 	protected function makeExistingRecordFilters( $record ) {
 		$filters = [];
@@ -234,6 +246,8 @@ abstract class DatabaseWriter extends Writer {
 	/**
 	 *
 	 * @param BlueSpice\Data\Record $record
+	 * @param string $fieldName
+	 * @return array
 	 */
 	protected function makeExistingRecordFilter( $record, $fieldName ) {
 		return [

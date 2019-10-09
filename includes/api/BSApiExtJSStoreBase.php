@@ -58,17 +58,11 @@
 use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\Services;
 
-abstract class BSApiExtJSStoreBase extends BSApiBase {
+abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
 	const SECONDARY_FIELD_PLACEHOLDER = '<added as secondary field>';
 	const PROP_SPEC_FILTERABLE = 'filterable';
 	const PROP_SPEC_SORTABLE = 'sortable';
-
-	/**
-	 * The current parameters sent by the ExtJS store
-	 * @var BsExtJSStoreParams
-	 */
-	protected $oStoreParams = null;
 
 	/**
 	 * Automatically set within 'postProcessData' method
@@ -147,15 +141,8 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	/**
 	 *
-	 * @return BsExtJSStoreParams
+	 * @return array
 	 */
-	protected function getStoreParams() {
-		if ( $this->oStoreParams === null ) {
-			$this->oStoreParams = BsExtJSStoreParams::newFromRequest();
-		}
-		return $this->oStoreParams;
-	}
-
 	public function getAllowedParams() {
 		return [
 			'sort' => [
@@ -224,22 +211,15 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		];
 	}
 
-	public function getParamDescription() {
-		return [
-			'sort' => 'JSON string with sorting info; deserializes to "array of objects" that hold field name and direction for each sorting option',
-			'group' => 'JSON string with grouping info; deserializes to "array of objects" that hold field name and direction for each grouping option',
-			'filter' => 'JSON string with filter info; deserializes to "array of objects" that hold field name, filter type, and filter value for each filtering option',
-			'page' => 'Allows server side calculation of start/limit',
-			'limit' => 'Number of results to return',
-			'start' => 'The offset to start the result list from',
-			'query' => 'Similar to "filter", but the provided value serves as a filter only for the "value" field of an ExtJS component',
-			'callback' => 'A method name in the client code that should be called in the response (JSONP)',
-			'_dc' => '"Disable cache" flag',
-			'format' => 'The format of the output (only JSON or formatted JSON)',
-			'context' => 'Context in which the call is made'
-		];
-	}
-
+	/**
+	 * Using the settings determine the value for the given parameter
+	 *
+	 * @param string $paramName Parameter name
+	 * @param array|mixed $paramSettings Default value or an array of settings
+	 *  using PARAM_* constants.
+	 * @param bool $parseLimit Whether to parse and validate 'limit' parameters
+	 * @return mixed Parameter value
+	 */
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
@@ -252,6 +232,12 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 		return $value;
 	}
 
+	/**
+	 * Get a value for the given parameter
+	 * @param string $paramName Parameter name
+	 * @param bool $parseLimit See extractRequestParams()
+	 * @return mixed Parameter value
+	 */
 	public function getParameter( $paramName, $parseLimit = true ) {
 		// Make this public, so hook handler could get the params
 		return parent::getParameter( $paramName, $parseLimit );
@@ -293,8 +279,8 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	/**
 	 * Applies all sorters provided by the store
 	 * --> has performance issues on large dataset; Code kept for documentation
-	 * @param object $oA
-	 * @param object $oB
+	 * @param \stdClass $oA
+	 * @param \stdClass $oB
 	 * @return int
 	 */
 	public function sortCallback( $oA, $oB ) {
@@ -318,8 +304,8 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	/**
 	 *
-	 * @param object $aDataSet
-	 * @return boolean
+	 * @param \stdClass $aDataSet
+	 * @return bool
 	 */
 	public function filterCallback( $aDataSet ) {
 		$aFilter = $this->getParameter( 'filter' );
@@ -400,9 +386,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	/**
 	 * Performs string filtering based on given filter of type string on a dataset
-	 * @param object $oFilter
-	 * @param oject $aDataSet
-	 * @return boolean true if filter applies, false if not
+	 * @param \stdClass $oFilter
+	 * @param \stdClass $aDataSet
+	 * @return bool true if filter applies, false if not
 	 */
 	public function filterString( $oFilter, $aDataSet ) {
 		if ( !is_string( $oFilter->value ) ) {
@@ -421,9 +407,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	/**
 	 * Performs numeric filtering based on given filter of type integer on a
 	 * dataset
-	 * @param object $oFilter
-	 * @param oject $aDataSet
-	 * @return boolean true if filter applies, false if not
+	 * @param \stdClass $oFilter
+	 * @param \stdClass $aDataSet
+	 * @return bool true if filter applies, false if not
 	 */
 	public function filterNumeric( $oFilter, $aDataSet ) {
 		if ( !is_numeric( $oFilter->value ) ) {
@@ -447,9 +433,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	/**
 	 * Performs list filtering based on given filter of type array on a dataset
-	 * @param object $oFilter
-	 * @param oject $aDataSet
-	 * @return boolean true if filter applies, false if not
+	 * @param \stdClass $oFilter
+	 * @param \stdClass $aDataSet
+	 * @return bool true if filter applies, false if not
 	 */
 	public function filterList( $oFilter, $aDataSet ) {
 		if ( !is_array( $oFilter->value ) ) {
@@ -470,9 +456,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	/**
 	 * Performs filtering based on given filter of type bool on a dataset
-	 * @param object $oFilter
-	 * @param object $aDataSet
-	 * @return boolean true if filter applies, false if not
+	 * @param \stdClass $oFilter
+	 * @param \stdClass $aDataSet
+	 * @return bool true if filter applies, false if not
 	 */
 	public function filterBoolean( $oFilter, $aDataSet ) {
 		return $oFilter->value == $aDataSet->{ $oFilter->field };
@@ -482,8 +468,9 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 	 * Performs filtering based on given filter of type date on a dataset
 	 * "Ext.ux.grid.filter.DateFilter" by default sends filter value in format
 	 * of m/d/Y
-	 * @param object $oFilter
-	 * @param object $aDataSet
+	 * @param \stdClass $oFilter
+	 * @param \stdClass $aDataSet
+	 * @return bool
 	 */
 	public function filterDate( $oFilter, $aDataSet ) {
 		// Format: "m/d/Y"
@@ -507,9 +494,10 @@ abstract class BSApiExtJSStoreBase extends BSApiBase {
 
 	/**
 	 * Performs string filtering based on given filter of type title on a dataset
-	 * @param object $oFilter
-	 * @param oject $aDataSet
-	 * @return boolean true if filter applies, false if not
+	 * @param \stdClass $oFilter
+	 * @param \stdClass $aDataSet
+	 * @param int $iDefaultNs
+	 * @return bool true if filter applies, false if not
 	 */
 	public function filterTitle( $oFilter, $aDataSet, $iDefaultNs = NS_MAIN ) {
 		if ( !is_string( $oFilter->value ) ) {

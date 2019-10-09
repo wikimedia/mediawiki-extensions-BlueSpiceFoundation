@@ -50,9 +50,9 @@ abstract class ThumbnailBeforeProduceHTML extends Hook {
 
 	/**
 	 * @param \ThumbnailImage $thumbnail
-	 * @param array $attribs
-	 * @param array $linkAttribs
-	 * @return boolean Always true to keep hook running
+	 * @param array &$attribs
+	 * @param array &$linkAttribs
+	 * @return bool Always true to keep hook running
 	 */
 	public static function callback( $thumbnail, &$attribs, &$linkAttribs ) {
 		$className = static::class;
@@ -71,8 +71,8 @@ abstract class ThumbnailBeforeProduceHTML extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \ThumbnailImage $thumbnail
-	 * @param array $attribs
-	 * @param array $linkAttribs
+	 * @param array &$attribs
+	 * @param array &$linkAttribs
 	 */
 	public function __construct( $context, $config, $thumbnail, &$attribs, &$linkAttribs ) {
 		parent::__construct( $context, $config );

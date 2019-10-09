@@ -12,6 +12,12 @@
  */
 class BsConnectionHelper {
 
+	/**
+	 *
+	 * @param string $sUrl
+	 * @param int $iTimeout
+	 * @return bool
+	 */
 	public static function urlExists( $sUrl, $iTimeout = 3 ) {
 		$ctx = stream_context_create( [
 						'http' => [ 'timeout' => $iTimeout ] ]

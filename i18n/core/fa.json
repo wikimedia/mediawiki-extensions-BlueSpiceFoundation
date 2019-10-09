@@ -5,7 +5,9 @@
 			"Rtemis",
 			"Alirezaaa",
 			"Ebraminio",
-			"Huji"
+			"Huji",
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-ns_main": "(صفحات)",
@@ -73,5 +75,21 @@
 	"bs-pref-anonuserimage": "نماد کاربر ناشناس:",
 	"bs-pref-deleteduserimage": "نماد کاربر پاک‌شده:",
 	"bs-pref-bspinginterval": "بازه پینگ (به ثانیه):",
-	"bs-pref-testmode": "فعال کردن حالت آزمایش"
+	"bs-pref-testmode": "فعال کردن حالت آزمایش",
+	"bs-graphicallist-action-close": "بستن",
+	"bs-graphicallist-action-list": "فهرست",
+	"bs-graphicallist-action-preview": "پیش‌نمایش",
+	"bs-notifications-agent-anon": "کاربر ناشناس",
+	"bs-parser-error-invalid-namespace": "فضای نام نامعتبر: $1",
+	"bs-parser-error-invalid-title": "عنوان نامعتبر: $1",
+	"bs-validator-error-namespace-does-not-exist": "فضای نام وجود ندارد: $1",
+	"bs-validator-error-namespace-on-blacklist": "فضای نام، مجاز نیست: $1",
+	"bs-validator-error-title-does-not-exist": "صفحه وجود ندارد: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "صفحه مجاز نیست: $1",
+	"bs-parser-error-invalid-category-title": "صفحه، یک ردهٔ معتبر نیست: $1",
+	"bs-exttype-bluespice": "افزونه‌های «چاشنی آبی»",
+	"bs-export-menu-print-text": "چاپ",
+	"bs-export-menu-print-title": "نسخهٔ قابل چاپ این صفحه را نمایش می‌دهد",
+	"bs-bluespice-mediawiki": "مدیاویکی «چاشنی آبی»",
+	"bs-bluespice": "چاشنی آبی"
 }

@@ -89,13 +89,13 @@ abstract class BSApiExtJSDBTableStoreBeforeQuery extends Hook {
 	 * @param \BSApiExtJSDBTableStoreBase $store
 	 * @param string $queryString
 	 * @param array $filters
-	 * @param array $tables
-	 * @param array $fields
-	 * @param array $conditions
-	 * @param array $options
-	 * @param array $joinOptions
-	 * @param array $dataItems
-	 * @return boolean
+	 * @param array &$tables
+	 * @param array &$fields
+	 * @param array &$conditions
+	 * @param array &$options
+	 * @param array &$joinOptions
+	 * @param array &$dataItems
+	 * @return bool
 	 */
 	public static function callback( $store, $queryString, $filters, &$tables, &$fields, &$conditions, &$options, &$joinOptions, &$dataItems ) {
 		$className = static::class;
@@ -121,12 +121,12 @@ abstract class BSApiExtJSDBTableStoreBeforeQuery extends Hook {
 	 * @param \BSApiExtJSDBTableStoreBase $store
 	 * @param string $queryString
 	 * @param array $filters
-	 * @param array $tables
-	 * @param array $fields
-	 * @param array $conditions
-	 * @param array $options
-	 * @param array $joinOptions
-	 * @param array $dataItems
+	 * @param array &$tables
+	 * @param array &$fields
+	 * @param array &$conditions
+	 * @param array &$options
+	 * @param array &$joinOptions
+	 * @param array &$dataItems
 	 */
 	public function __construct( $context, $config, $store, $queryString, $filters, &$tables, &$fields, &$conditions, &$options, &$joinOptions, &$dataItems ) {
 		parent::__construct( $context, $config );

@@ -38,8 +38,8 @@ abstract class ResourceLoaderGetConfigVars extends Hook {
 
 	/**
 	 *
-	 * @param array $parser
-	 * @return boolean
+	 * @param array &$vars
+	 * @return bool
 	 */
 	public static function callback( &$vars ) {
 		$className = static::class;
@@ -55,7 +55,7 @@ abstract class ResourceLoaderGetConfigVars extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $vars
+	 * @param array &$vars
 	 */
 	public function __construct( $context, $config, &$vars ) {
 		parent::__construct( $context, $config );

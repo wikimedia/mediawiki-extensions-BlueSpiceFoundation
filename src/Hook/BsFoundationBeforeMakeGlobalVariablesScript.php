@@ -51,8 +51,8 @@ abstract class BsFoundationBeforeMakeGlobalVariablesScript extends Hook {
 	 * before the javascript globals for BlueSpice get added to the javascript
 	 * globals
 	 * @param \User $user
-	 * @param array $scriptSettings
-	 * @return boolean
+	 * @param array &$scriptSettings
+	 * @return bool
 	 */
 	public static function callback( $user, &$scriptSettings ) {
 		$className = static::class;
@@ -68,6 +68,8 @@ abstract class BsFoundationBeforeMakeGlobalVariablesScript extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
+	 * @param \User $user
+	 * @param array &$scriptSettings
 	 */
 	public function __construct( $context, $config, $user, &$scriptSettings ) {
 		parent::__construct( $context, $config );

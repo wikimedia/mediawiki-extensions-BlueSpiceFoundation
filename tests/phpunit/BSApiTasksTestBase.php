@@ -2,10 +2,11 @@
 
 namespace BlueSpice\Tests;
 
-use BlueSpice\Tests\BSApiTestCase;
-
 abstract class BSApiTasksTestBase extends BSApiTestCase {
 
+	/**
+	 * @return string
+	 */
 	abstract protected function getModuleName();
 
 	protected function setUp() {
@@ -14,6 +15,12 @@ abstract class BSApiTasksTestBase extends BSApiTestCase {
 		$this->doLogin();
 	}
 
+	/**
+	 *
+	 * @param string $taskName
+	 * @param \stdClass $taskData
+	 * @return \stdClass
+	 */
 	protected function executeTask( $taskName, $taskData ) {
 		$results = $this->doApiRequestWithToken( [
 			'action' => $this->getModuleName(),

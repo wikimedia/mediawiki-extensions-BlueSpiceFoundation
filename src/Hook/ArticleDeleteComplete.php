@@ -68,13 +68,13 @@ abstract class ArticleDeleteComplete extends Hook {
 
 	/**
 	 *
-	 * @param \WikiPage $wikipage
-	 * @param \User $user
+	 * @param \WikiPage &$wikipage
+	 * @param \User &$user
 	 * @param string $reason
-	 * @param integer $id
+	 * @param int $id
 	 * @param \Content $content
 	 * @param \LogEntry $logEntry
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( &$wikipage, &$user, $reason, $id, $content, $logEntry ) {
 		$className = static::class;
@@ -95,10 +95,10 @@ abstract class ArticleDeleteComplete extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \WikiPage $wikipage
-	 * @param \User $user
+	 * @param \WikiPage &$wikipage
+	 * @param \User &$user
 	 * @param string $reason
-	 * @param integer $id
+	 * @param int $id
 	 * @param \Content $content
 	 * @param \LogEntry $logEntry
 	 */

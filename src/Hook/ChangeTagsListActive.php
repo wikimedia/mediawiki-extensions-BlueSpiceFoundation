@@ -38,8 +38,8 @@ abstract class ChangeTagsListActive extends Hook {
 
 	/**
 	 *
-	 * @param array $tags
-	 * @return boolean
+	 * @param array &$tags
+	 * @return bool
 	 */
 	public static function callback( &$tags ) {
 		$className = static::class;
@@ -55,7 +55,7 @@ abstract class ChangeTagsListActive extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $tags
+	 * @param array &$tags
 	 */
 	public function __construct( $context, $config, &$tags ) {
 		parent::__construct( $context, $config );

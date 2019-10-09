@@ -5,7 +5,9 @@
 			"Toliño",
 			"Elisardojm",
 			"Fitoschido",
-			"Banjo"
+			"Banjo",
+			"Navhy",
+			"Iváns"
 		]
 	},
 	"bs-ns_main": "(Páxinas)",
@@ -13,9 +15,9 @@
 	"bs-tab_navigation": "Navegación",
 	"bs-userbar_loginswitch_logout": "Saír",
 	"bs-userbar_loginswitch_login": "Acceder ao sistema",
-	"bs-extended-search-tooltip-fulltext": "Busca de texto completo",
+	"bs-extended-search-tooltip-fulltext": "Procura de texto completo",
 	"bs-extended-search-textfield-defaultvalue": "Procurar...",
-	"bs-extended-search-textfield-tooltip": "Buscar no wiki",
+	"bs-extended-search-textfield-tooltip": "Procurar na wiki",
 	"bs-no-information-available": "Non hai información dispoñible",
 	"bs-years-duration": "{{PLURAL:$1|un ano|$1 anos}}",
 	"bs-months-duration": "{{PLURAL:$1|un mes|$1 meses}}",
@@ -89,5 +91,7 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Úsase en moitas extensións de BlueSpice para posibles tarefas administrativas perigrosas, como administrar usuarios, permisos, configuración global"
+	"right-wikiadmin": "Úsase en moitas extensións de BlueSpice para posibles tarefas administrativas perigrosas, como administrar usuarios, permisos, configuración global",
+	"action-wikiadmin": "mostrar páxinas de administración de BlueSpice",
+	"bs-notifications-agent-anon": "usuario anónimo"
 }

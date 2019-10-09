@@ -2,7 +2,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\ExtensionAttributeBasedRegistry;
 use MediaWiki\Logger\LoggerFactory;
 use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
 
@@ -101,12 +100,22 @@ class RunJobsTriggerRunner {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $regKey
+	 * @return bool
+	 */
 	protected function shouldRunCurrentHandler( $regKey ) {
 		return $this->runConditionChecker->shouldRun(
 			$this->currentTriggerHandler, $regKey
 		);
 	}
 
+	/**
+	 *
+	 * @param string $regKey
+	 * @throws \Exception
+	 */
 	protected function checkHandlerInterface( $regKey ) {
 		$doesImplementInterface =
 			$this->currentTriggerHandler instanceof IRunJobsTriggerHandler;
@@ -157,7 +166,8 @@ class RunJobsTriggerRunner {
 		$runConditionChecker = new JSONFileBasedRunConditionChecker(
 			new \DateTime(),
 			BSDATADIR,
-			$logger
+			$logger,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 
 		$runner = new \BlueSpice\RunJobsTriggerRunner(

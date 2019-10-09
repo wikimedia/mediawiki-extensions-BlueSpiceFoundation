@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amirsara",
+			"FarsiNevis"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "افزودن جدید…",
+	"bs-ooui-key-value-input-widget-key-label": "کلید",
+	"bs-ooui-key-value-input-widget-value-label": "مقدار",
+	"bs-ooui-key-value-input-widget-add-button-label": "افزودن",
+	"bs-ooui-key-value-input-widget-add-form-label": "افزودن ورودی تازه",
+	"bs-ooui-key-value-input-widget-error-message": "همهٔ مقدارهای لازم باید وارد شوند!",
+	"bs-ooui-key-value-input-widget-no-values-label": "مقداری داده نشده است!"
+}

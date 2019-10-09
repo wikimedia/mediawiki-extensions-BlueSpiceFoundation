@@ -7,7 +7,6 @@ use BlueSpice\Data\FilterFinder;
 use BlueSpice\Data\Filter;
 use BlueSpice\Data\Filter\StringValue;
 use BlueSpice\Data\Filter\Numeric;
-use BlueSpice\Data\User\Schema;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
@@ -39,6 +38,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	/**
 	 *
 	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @return Record[]
 	 */
 	public function makeData( $params ) {
 		$this->data = [];
@@ -150,6 +150,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $conds;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 * @return void
+	 */
 	protected function appendRowToData( $row ) {
 		if ( $this->params->getQuery() !== '' ) {
 			$bApply = \BsStringHelper::filter(

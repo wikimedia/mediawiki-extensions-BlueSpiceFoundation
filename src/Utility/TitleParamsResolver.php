@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Utility;
 
+use Title;
+
 /**
  * A lot of MediaWiki (Web)APIs accept a title context information (e.g.
  * ApiParse)
@@ -37,40 +39,36 @@ class TitleParamsResolver {
 
 	/**
 	 *
-	 * @var \Title[]
+	 * @var Title[]
 	 */
 	protected $titles = null;
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $default = null;
 
 	/**
 	 *
 	 * @param array $params
-	 * @params \Title|null $default
+	 * @param Title[] $default
 	 */
-	public function __construct( $params, $default = null ) {
+	public function __construct( $params, $default = [] ) {
 		$this->params = $params;
 		$this->default = $default;
-
-		if ( $this->default === null ) {
-			// Question: Better be "\Title::newMainPage()"?
-			$this->default = \Title::makeTitle( NS_SPECIAL, 'Badtitle/dummy title' );
-		}
 	}
 
 	/**
 	 *
-	 * @return \Title[] all titles that could be found in the provided params
+	 * @return Title[] all titles that could be found in the provided params
 	 */
 	public function resolve() {
 		foreach ( $this->params as $paramName => $paramValue ) {
-			$this->resolvePageIds( $paramName, $paramValue );
-			$this->resolvePageNames( $paramName, $paramValue );
-			$this->resolveRevisionIds( $paramName, $paramValue );
+			$lcParamName = strtolower( $paramName );
+			$this->resolvePageIds( $lcParamName, $paramValue );
+			$this->resolvePageNames( $lcParamName, $paramValue );
+			$this->resolveRevisionIds( $lcParamName, $paramValue );
 		}
 
 		return $this->getResultOrDefault();
@@ -78,15 +76,20 @@ class TitleParamsResolver {
 
 	/**
 	 *
-	 * @return \Title[]
+	 * @return Title[]
 	 */
 	protected function getResultOrDefault() {
 		if ( empty( $this->titles ) ) {
-			return [ $this->default ];
+			return $this->default;
 		}
 		return array_values( $this->titles );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @param mixed $paramValue
+	 */
 	protected function resolvePageIds( $paramName, $paramValue ) {
 		$pageIds = [];
 		if ( $this->isPageIdParam( $paramName ) ) {
@@ -96,21 +99,36 @@ class TitleParamsResolver {
 		}
 
 		foreach ( $pageIds as $pageId ) {
-			$title = \Title::newFromID( $pageId );
-			if ( $title instanceof \Title ) {
+			$title = Title::newFromID( $pageId );
+			if ( $title instanceof Title ) {
 				$this->titles[$title->getPrefixedDBkey()] = $title;
 			}
 		}
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageIdParam( $paramName ) {
-		return in_array( $paramName, [ 'pageid', 'page_id', 'pid' ] );
+		return in_array( $paramName, [ 'pageid', 'page_id', 'pid', 'iarticleid' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageIdsParam( $paramName ) {
-		return in_array( $paramName, [ 'pageids' ] );
+		return in_array( $paramName, [ 'pageids', 'page_ids', 'pids' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @param mixed $paramValue
+	 */
 	protected function resolvePageNames( $paramName, $paramValue ) {
 		$pageNames = [];
 		if ( $this->isPageNameParam( $paramName ) ) {
@@ -120,21 +138,36 @@ class TitleParamsResolver {
 		}
 
 		foreach ( $pageNames as $pageName ) {
-			$title = \Title::newFromText( $pageName );
-			if ( $title instanceof  \Title ) {
+			$title = Title::newFromText( $pageName );
+			if ( $title instanceof  Title ) {
 				$this->titles[$title->getPrefixedDBkey()] = $title;
 			}
 		}
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageNameParam( $paramName ) {
-		return in_array( $paramName, [ 'title', 'page', 'target' ] );
+		return in_array( $paramName, [ 'title', 'page', 'target', 'pagename' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isPageNamesParam( $paramName ) {
-		return in_array( $paramName, [ 'titles' ] );
+		return in_array( $paramName, [ 'titles', 'pages', 'targets', 'pagename' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @param mixed $paramValue
+	 */
 	protected function resolveRevisionIds( $paramName, $paramValue ) {
 		$revisionIds = [];
 		if ( $this->isRevisionIdParam( $paramName ) ) {
@@ -147,19 +180,29 @@ class TitleParamsResolver {
 			$revision = \Revision::newFromId( $revId );
 			if ( $revision instanceof \Revision ) {
 				$title = $revision->getTitle();
-				if ( $title instanceof  \Title ) {
+				if ( $title instanceof  Title ) {
 					$this->titles[$title->getPrefixedDBkey()] = $title;
 				}
 			}
 		}
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isRevisionIdParam( $paramName ) {
 		return in_array( $paramName, [ 'revid', 'oldid', 'previd', 'baserevid' ] );
 	}
 
+	/**
+	 *
+	 * @param string $paramName
+	 * @return bool
+	 */
 	protected function isRevisionIdsParam( $paramName ) {
-		return in_array( $paramName, [ 'revids' ] );
+		return in_array( $paramName, [ 'revids', 'oldids', 'previds', 'baserevids' ] );
 	}
 
 }

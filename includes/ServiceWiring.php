@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\DeferredNotificationStack;
 
 return [
 
@@ -38,22 +39,22 @@ return [
 		);
 	},
 
-	'BSEntityRegistry' => function ( MediaWikiServices $services ) {
-		return new \BlueSpice\EntityRegistry(
-			$services->getConfigFactory()->makeConfig( 'bsg' )
-		);
-	},
-
 	'BSEntityConfigFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationEntityRegistry'
+		);
 		return new \BlueSpice\EntityConfigFactory(
-			$services->getService( 'BSEntityRegistry' ),
+			$registry,
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
 
 	'BSEntityFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationEntityRegistry'
+		);
 		return new \BlueSpice\EntityFactory(
-			$services->getService( 'BSEntityRegistry' ),
+			$registry,
 			$services->getService( 'BSEntityConfigFactory' ),
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
@@ -64,31 +65,46 @@ return [
 		return new \BlueSpice\AdminToolFactory( $attribute );
 	},
 
-	'BSPageToolFactory' => function ( MediaWikiServices $services ) {
-		$registry = new ExtensionAttributeBasedRegistry( 'BlueSpiceFoundationPageToolRegistry' );
-		$context = \RequestContext::getMain();
-		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
-
-		return new \BlueSpice\PageToolFactory( $registry, $context, $config );
-	},
-
 	'BSTagFactory' => function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry( 'BlueSpiceFoundationTagRegistry' );
 		return new \BlueSpice\TagFactory( $registry );
 	},
 
+	'BSRoleFactory' => function ( MediaWikiServices $services ) {
+		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoleRegistry' );
+		return new \BlueSpice\Permission\RoleFactory(
+			$roles,
+			$services->getService( 'BSPermissionRegistry' )
+		);
+	},
+
 	'BSRoleManager' => function ( MediaWikiServices $services ) {
-		return \BlueSpice\Permission\Role\Manager::getInstance(
-				$GLOBALS[ 'wgGroupPermissions' ],
-				$GLOBALS[ 'bsgGroupRoles' ],
-				$GLOBALS[ 'bsgEnableRoleSystem' ]
+		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoles' );
+		return new \BlueSpice\Permission\RoleManager(
+			$GLOBALS[ 'wgGroupPermissions' ],
+			$GLOBALS[ 'bsgGroupRoles' ],
+			$GLOBALS[ 'bsgEnableRoleSystem' ],
+			$roles,
+			$services->getService( 'BSPermissionRegistry' ),
+			$services->getService( 'BSRoleFactory' )
 		);
 	},
 
 	'BSPermissionRegistry' => function ( MediaWikiServices $services ) {
-		return \BlueSpice\Permission\Registry::getInstance(
+		return \BlueSpice\Permission\PermissionRegistry::getInstance(
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
 			$GLOBALS[ 'bsgPermissionConfig' ]
+		);
+	},
+
+	'BSPermissionLockdownFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationPermissionLockdownRegistry'
+		);
+		return new \BlueSpice\PermissionLockdownFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' ),
+			\RequestContext::getMain()
 		);
 	},
 
@@ -120,6 +136,17 @@ return [
 		);
 
 		return new \BlueSpice\SettingPathFactory(
+			$registry,
+			$services->getConfigFactory()->makeConfig( 'bsg' )
+		);
+	},
+
+	'BSTaskFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationTaskRegistry'
+		);
+
+		return new \BlueSpice\TaskFactory(
 			$registry,
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
@@ -158,4 +185,28 @@ return [
 		return $services->getService( 'BSTargetCacheFactory' )->get( 'title' );
 	},
 
+	'BSTemplateFactory' => function ( MediaWikiServices $services ) {
+		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationTemplateHanderRegistry'
+		);
+		return new \BlueSpice\TemplateFactory(
+			$registry,
+			$services->getService( 'BSUtilityFactory' )->getTemplateHelper()
+		);
+	},
+
+	'BSPageInfoElementFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+				'BlueSpiceFoundationPageInfoElementRegistry'
+			);
+		$context = \RequestContext::getMain();
+		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
+
+		return new \BlueSpice\PageInfoElementFactory( $registry, $context, $config );
+	},
+
+	'BSDeferredNotificationStack' => function ( MediaWikiServices $services ) {
+		$request = \RequestContext::getMain()->getRequest();
+		return new DeferredNotificationStack( $request );
+	}
 ];

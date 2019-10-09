@@ -10,6 +10,10 @@ class Credits extends \BlueSpice\SpecialPage {
 		parent::__construct( 'SpecialCredits' );
 	}
 
+	/**
+	 *
+	 * @param string $par
+	 */
 	public function execute( $par ) {
 		parent::execute( $par );
 
@@ -55,6 +59,12 @@ class Credits extends \BlueSpice\SpecialPage {
 		$this->getOutput()->addHTML( $html );
 	}
 
+	/**
+	 *
+	 * @param array $headElements
+	 * @param string $html
+	 * @return string
+	 */
 	protected function renderOpenTable( $headElements, $html = '' ) {
 		$html .= \Html::openElement( 'table', [
 			'class' => 'wikitable',
@@ -68,6 +78,12 @@ class Credits extends \BlueSpice\SpecialPage {
 		return $html;
 	}
 
+	/**
+	 *
+	 * @param array $list
+	 * @param string $hmtl
+	 * @return string
+	 */
 	protected function renderNameList( $list, $hmtl = '' ) {
 		$hmtl .= \Html::openElement( 'ul' );
 		foreach ( $list as $entry ) {
@@ -77,6 +93,10 @@ class Credits extends \BlueSpice\SpecialPage {
 		return $hmtl;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getTranslatorsList() {
 		$key = \BsCacheHelper::getCacheKey(
 			'BlueSpice',
@@ -103,10 +123,9 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	protected function generateTranslatorsList() {
-		global $IP;
 		$aPaths = [
-			$IP . '/extensions/',
-			$IP . '/skins/'
+			$this->getConfig()->get( 'ExtensionDirectory' ),
+			$this->getConfig()->get( 'StyleDirectory' ),
 		];
 
 		$translators = [];
@@ -120,6 +139,11 @@ class Credits extends \BlueSpice\SpecialPage {
 		return $translators;
 	}
 
+	/**
+	 *
+	 * @param string $dir
+	 * @param array &$translators
+	 */
 	protected function readInTranslators( $dir, &$translators = [] ) {
 		$iterator = new \RegexIterator(
 			new \RecursiveIteratorIterator(
@@ -150,6 +174,11 @@ class Credits extends \BlueSpice\SpecialPage {
 		}
 	}
 
+	/**
+	 *
+	 * @param array $content
+	 * @param array &$translators
+	 */
 	protected function readInTranslatorsFile( $content, &$translators ) {
 		foreach ( $content as $data ) {
 			if ( !$data instanceof \stdClass || empty( $data->authors ) ) {

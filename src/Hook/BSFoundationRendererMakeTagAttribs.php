@@ -54,7 +54,7 @@ abstract class BSFoundationRendererMakeTagAttribs extends Hook {
 	 * tags attributes.
 	 * @param \BlueSpice\Renderer $renderer
 	 * @param array $args
-	 * @param array $attribs
+	 * @param array &$attribs
 	 * @return type
 	 */
 	public static function callback( $renderer, $args, &$attribs ) {
@@ -74,7 +74,7 @@ abstract class BSFoundationRendererMakeTagAttribs extends Hook {
 	 * @param \Config $config
 	 * @param \BlueSpice\Renderer $renderer
 	 * @param array $args
-	 * @param array $attribs
+	 * @param array &$attribs
 	 */
 	public function __construct( $context, $config, $renderer, $args, &$attribs ) {
 		parent::__construct( $context, $config );

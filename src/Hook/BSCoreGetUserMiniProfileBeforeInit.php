@@ -51,10 +51,10 @@ abstract class BSCoreGetUserMiniProfileBeforeInit extends Hook {
 	/**
 	 * Located in \BsCore::getUserMiniProfile. Before the created user mini
 	 * profile view is initialized and returned.
-	 * @param \ViewUserMiniProfile $userMiniProfileView
-	 * @param \User $user
-	 * @param array $params
-	 * @return boolean
+	 * @param \ViewUserMiniProfile &$userMiniProfileView
+	 * @param \User &$user
+	 * @param array &$params
+	 * @return bool
 	 */
 	public static function callback( &$userMiniProfileView, &$user, &$params ) {
 		$className = static::class;
@@ -71,9 +71,9 @@ abstract class BSCoreGetUserMiniProfileBeforeInit extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \ViewUserMiniProfile $userMiniProfileView
-	 * @param \User $user
-	 * @param array $params
+	 * @param \ViewUserMiniProfile &$userMiniProfileView
+	 * @param \User &$user
+	 * @param array &$params
 	 */
 	public function __construct( $context, $config, &$userMiniProfileView, &$user, &$params ) {
 		parent::__construct( $context, $config );

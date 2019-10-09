@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ted Masters",
+			"StanProg"
+		]
+	},
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Нямате разрешение да редактирате страницата „$1“."
+}

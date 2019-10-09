@@ -6,6 +6,10 @@
  * @author Mathias Scheer
  */
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.1 - Use ParamProcessor instead
+ */
 class BsValidatorEmailPlugin implements BsValidatorPlugin {
 
 	/*
@@ -63,9 +67,17 @@ class BsValidatorEmailPlugin implements BsValidatorPlugin {
 	errata].
 	*/
 
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use ParamProcessor instead
+	 * @param mixed $email the value to be checked against
+	 * @param array $options
+	 * @return BsValidatorResponse If type is not BsValidatorResponse an error is thrown
+	 */
 	public static function isValid( $email, $options ) {
-		$result = filter_var( $email, FILTER_VALIDATE_EMAIL );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// return is boolean
+		$result = filter_var( $email, FILTER_VALIDATE_EMAIL );
 		return ( $result === false )
 			? new BsValidatorResponse( 1, 'Validator', 'bs-validator-email-validation-not-approved' )
 			: new BsValidatorResponse( 0, 'Validator', 'bs-validator-email-validation-approved' );

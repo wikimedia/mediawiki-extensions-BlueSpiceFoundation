@@ -33,7 +33,7 @@ abstract class SetupAfterCache extends Hook {
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback() {
 		$className = static::class;

@@ -17,7 +17,7 @@
 	"apihelp-bs-group-store-summary": "Lista todos os grupos excepto $wgImplicitGroups. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-interwiki-store-description": "Lista todas as ligazóns interwiki. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Lista todas as ligazóns interwiki. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
-	"apihelp-bs-titlequery-store-description": "Lista os títulos de páxina e (opcionalmente) os prefixos de espazo de nomes baseándose nun termo de busca. Proporciona os parámetros ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Lista os títulos de páxina e (opcionalmente) os prefixos de espazo de nomes baseándose nun termo de procura. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-titlequery-store-summary": "Lista os títulos de páxina e (opcionalmente) os prefixos de espazo de nomes baseándose nun termo de busca. Proporciona os parámetros ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Proporciona operacións comúns para WikiPages",
 	"apihelp-bs-wikipage-tasks-summary": "Proporciona operacións comúns para WikiPages",

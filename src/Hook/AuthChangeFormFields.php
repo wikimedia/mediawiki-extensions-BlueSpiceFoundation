@@ -58,9 +58,9 @@ abstract class AuthChangeFormFields extends Hook {
 	 *
 	 * @param array $requests
 	 * @param array $fieldInfo
-	 * @param array $formDescriptor
+	 * @param array &$formDescriptor
 	 * @param string $action
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $requests, $fieldInfo, &$formDescriptor, $action ) {
 		$className = static::class;
@@ -81,7 +81,7 @@ abstract class AuthChangeFormFields extends Hook {
 	 * @param \Config $config
 	 * @param array $requests
 	 * @param array $fieldInfo
-	 * @param array $formDescriptor
+	 * @param array &$formDescriptor
 	 * @param string $action
 	 */
 	public function __construct( $context, $config, $requests, $fieldInfo, &$formDescriptor, $action ) {

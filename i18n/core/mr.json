@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"V.narsikar"
+			"V.narsikar",
+			"Sureshkhole"
 		]
 	},
 	"bs-ns_main": "(पाने)",
 	"bs-ns_all": "(सर्व)",
 	"bs-tab_navigation": "सुचालन",
 	"bs-userbar_loginswitch_logout": "सनोंद-निर्गम",
-	"bs-userbar_loginswitch_login": "सनोंद-प्रवेश करा",
+	"bs-userbar_loginswitch_login": "आल्याची नोंद करा",
 	"bs-extended-search-tooltip-fulltext": "पूर्णमजकूर शोध",
 	"bs-extended-search-textfield-defaultvalue": "शोधा...",
 	"bs-extended-search-textfield-tooltip": "विकि शोधा",

@@ -2,6 +2,12 @@
 
 class HTMLTextFieldOverride extends HTMLTextField {
 
+	/**
+	 *
+	 * @param mixed $value
+	 * @param array $alldata
+	 * @return bool
+	 */
 	public function validate( $value, $alldata ) {
 		$p = parent::validate( $value, $alldata );
 

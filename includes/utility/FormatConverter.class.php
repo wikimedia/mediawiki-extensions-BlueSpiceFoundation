@@ -9,28 +9,26 @@
 class BsFormatConverter {
 
 	/**
+	 * DEPRECATED
 	 * Converts a typical MediaWiki timestamp String into an age string, e.g. "2 minutes ago".
+	 * @deprecated since version 3.1 - Use \BlueSpice\Timestamp->getAgeString instead
 	 * @param string $sMwTimestamp a MediaWiki timestamp
 	 * @return string A internationalized age string.
 	 */
 	public static function mwTimestampToAgeString( $sMwTimestamp, $bNormalizeToUTC = false ) {
-		if ( $bNormalizeToUTC ) {
-			$sOldTZ = date_default_timezone_get();
-			date_default_timezone_set( 'UTC' );
-		}
-		$sDate = self::timestampToAgeString( strtotime( $sMwTimestamp ) );
-		if ( $bNormalizeToUTC ) {
-			date_default_timezone_set( $sOldTZ );
-		}
-		return $sDate;
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		return ( new \BlueSpice\Timestamp( $sMwTimestamp ) )->getAgeString();
 	}
 
 	/**
+	 * DEPRECATED
 	 * Converts a typical UNIX timestamp String into an age string, e.g. "2 minutes ago".
+	 * @deprecated since version 3.1 - Use \BlueSpice\Timestamp->getAgeString instead
 	 * @param type $sTimestamp a UNIX timestamp
 	 * @return type A internationalized age string.
 	 */
 	public static function timestampToAgeString( $sTimestamp ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		/* Idea by sandydakam, http://phpcentral.com/206-php-script-for-duration-calculator.html */
 
 		// There is also a javascript version of this method in ArticleInfo.js (should better be in BlueSpice framework)

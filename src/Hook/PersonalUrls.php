@@ -52,10 +52,10 @@ abstract class PersonalUrls extends Hook {
 
 	/**
 	 *
-	 * @param array $personal_urls
+	 * @param array &$personal_urls
 	 * @param Title $title
 	 * @param SkinTemplate $skin
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( &$personal_urls, $title, $skin ) {
 		$className = static::class;
@@ -74,7 +74,7 @@ abstract class PersonalUrls extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param array $personal_urls
+	 * @param array &$personal_urls
 	 * @param Title $title
 	 * @param SkinTemplate $skin
 	 */

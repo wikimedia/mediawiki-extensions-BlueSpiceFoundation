@@ -45,8 +45,8 @@ abstract class SearchGetNearMatchComplete extends Hook {
 	/**
 	 *
 	 * @param string $term
-	 * @param \Title $title
-	 * @return boolean
+	 * @param \Title &$title
+	 * @return bool
 	 */
 	public static function callback( $term, &$title ) {
 		$className = static::class;
@@ -64,8 +64,7 @@ abstract class SearchGetNearMatchComplete extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param string $term
-	 * @param \Title $title
-	 * @param boolean $result
+	 * @param \Title &$title
 	 */
 	public function __construct( $context, $config, $term, &$title ) {
 		parent::__construct( $context, $config );

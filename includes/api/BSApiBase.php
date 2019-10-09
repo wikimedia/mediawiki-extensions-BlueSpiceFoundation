@@ -27,83 +27,10 @@
  */
 
 /**
+ * DEPRECATED
+ * @deprecated since version 3.1 - Use \BlueSpice\Api instead
  * Api base class in BlueSpice
  * @package BlueSpice_Foundation
  */
-abstract class BSApiBase extends ApiBase {
-	/**
-	 * Checks access permissions based on a list of titles and permissions. If
-	 * one of it fails the API processing is ended with an appropriate message
-	 * @param array $aTitles Array of Title objects to check the requires permissions against
-	 * @param User|null $oUser the User object of the requesting user. Does a fallback to $this->getUser();
-	 */
-	protected function checkPermissions( $aTitles = [], $oUser = null ) {
-		$aRequiredPermissions = $this->getRequiredPermissions();
-		if ( empty( $aRequiredPermissions ) ) {
-			// No need for further checking
-			return;
-		}
-
-		if ( $oUser instanceof User === false ) {
-			$oUser = $this->getUser();
-		}
-
-		$status = Status::newGood();
-		foreach ( $aTitles as $oTitle ) {
-			if ( $oTitle instanceof Title === false ) {
-				continue;
-			}
-			foreach ( $aRequiredPermissions as $sPermission ) {
-				foreach ( $oTitle->getUserPermissionsErrors( $sPermission, $oUser ) as $error ) {
-					$status->fatal(
-						ApiMessage::create( $error, null, [ 'title' => $oTitle->getPrefixedText() ] )
-					);
-				}
-			}
-		}
-
-		// Fallback if not conrete title was provided
-		if ( empty( $aTitles ) ) {
-			foreach ( $aRequiredPermissions as $sPermission ) {
-				if ( $oUser->isAllowed( $sPermission ) === false ) {
-					$status->fatal(
-						[ 'apierror-permissiondenied', $this->msg( "action-$sPermission" ) ]
-					);
-				}
-			}
-		}
-
-		if ( !$status->isOK() ) {
-			$this->dieStatus( $status );
-		}
-	}
-
-	protected function getRequiredPermissions() {
-		return [ 'read' ];
-	}
-
-	protected function getExamples() {
-		return [
-			'api.php?action=' . $this->getModuleName(),
-		];
-	}
-
-	/**
-	 * Custom output printer for JSON. See class BSApiFormatJson for details
-	 * @return BSApiFormatJson
-	 */
-	public function getCustomPrinter() {
-		return new BSApiFormatJson( $this->getMain(), $this->getParameter( 'format' ) );
-	}
-
-	/**
-	 * Get the Config object
-	 *
-	 * @since 1.23
-	 * @return Config
-	 */
-	public function getConfig() {
-		return \MediaWiki\MediaWikiServices::getInstance()
-			->getConfigFactory()->makeConfig( 'bsg' );
-	}
+abstract class BSApiBase extends \BlueSpice\Api {
 }

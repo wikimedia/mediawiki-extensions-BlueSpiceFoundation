@@ -3,38 +3,12 @@
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
 		<exclude name="Generic.Files.LineLength.TooLong" />
 		<exclude name="Generic.PHP.NoSilencedErrors.Discouraged" />
-		<exclude name="MediaWiki.Classes.UnusedUseStatement.UnusedUse" />
 		<exclude name="MediaWiki.Commenting.FunctionAnnotations.UnrecognizedAnnotation" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.ExtraParamComment" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationProtected" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamComment" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamName" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.MissingParamTag" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.MissingReturn" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.NotParenthesisParamType" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.NotPunctuationParam" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.NotPunctuationReturn" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortBoolParam" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortBoolReturn" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortIntParam" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.ParamNameNoMatch" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.PluralParams" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.SyntaxAlignedDocClose" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.SyntaxAlignedDocStar" />
-		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle" />
 		<exclude name="MediaWiki.Commenting.MissingCovers.MissingCovers" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
 		<exclude name="MediaWiki.NamingConventions.PrefixedGlobalFunctions.wfPrefix" />
-		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix" />
-		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.wgPrefix" />
-		<exclude name="MediaWiki.Usage.AssignmentInReturn.AssignmentInReturn" />
-		<exclude name="MediaWiki.Usage.SuperGlobalsUsage.SuperGlobals" />
-		<exclude name="MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgTitle" />
-		<exclude name="MediaWiki.VariableAnalysis.ForbiddenGlobalVariables.ForbiddenGlobal$wgTitle" />
-		<exclude name="MediaWiki.VariableAnalysis.UnusedGlobalVariables" />
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>

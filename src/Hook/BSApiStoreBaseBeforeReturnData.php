@@ -6,7 +6,7 @@ use BlueSpice\Hook;
 
 abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	/**
-	 * @var \BlueSpice\StoreApiBase
+	 * @var \BlueSpice\Api\Store
 	 */
 	protected $store;
 	/**
@@ -19,9 +19,9 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	protected $schema;
 
 	/**
-	 * @param \BlueSpice\StoreApiBase $store
-	 * @param \BlueSpice\Data\ResultSet $resultSet
-	 * @param \BlueSpice\Data\Schema $schema
+	 * @param \BlueSpice\Api\Store $store
+	 * @param \BlueSpice\Data\ResultSet &$resultSet
+	 * @param \BlueSpice\Data\Schema &$schema
 	 * @return bool
 	 */
 	public static function callback( $store, &$resultSet, &$schema ) {
@@ -40,9 +40,9 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \BlueSpice\StoreApiBase $store
-	 * @param \BlueSpice\Data\ResultSet $resultSet
-	 * @param \BlueSpice\Data\Schema $schema
+	 * @param \BlueSpice\Api\Store $store
+	 * @param \BlueSpice\Data\ResultSet &$resultSet
+	 * @param \BlueSpice\Data\Schema &$schema
 	 */
 	public function __construct( $context, $config, $store, &$resultSet, &$schema ) {
 		parent::__construct( $context, $config );

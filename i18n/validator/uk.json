@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Base",
-			"Ата"
+			"Ата",
+			"Piramidion"
 		]
 	},
 	"bs-validator-email-validation-approved": "Адресу електронної пошти було успішно підтверджено.",
@@ -14,5 +15,13 @@
 	"bs-validator-set-validation-approved": "$1 було успішно перевірено.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Лише подане значення дозволене для $1|Для $1 дозволене лише одне з поданих значень}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Вказано надто мале значення. Воно не повинно бути менше, ніж $1.",
-	"bs-validator-integer-range-validation-too-high": "Вказано надто велике значення. Воно не повинно бути більше, ніж $1."
+	"bs-validator-integer-range-validation-too-high": "Вказано надто велике значення. Воно не повинно бути більше, ніж $1.",
+	"bs-validator-value-not-recognized": "Значення не вдалося опрацювати",
+	"bs-validator-invalid-boolean": "Недійсне логічне значення",
+	"bs-validator-invalid-float": "Недійсне число з рухомою комою",
+	"bs-validator-invalid-integer": "Недійсне ціле число",
+	"bs-validator-invalid-string": "Недійсний рядок",
+	"bs-validator-invalid-coordinate": "Недійсна координата",
+	"bs-validator-invalid-parameter": "Цей параметр недозволений",
+	"bs-validator-missing-required": "Цей параметр обов'язковий"
 }

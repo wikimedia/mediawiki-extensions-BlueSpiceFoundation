@@ -26,7 +26,10 @@
  */
 
 /**
+ * DEPRECATED!
  * BsGenericTagExtensionHandler class in BlueSpice
+ * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+ * attribute in extension.json
  * @package BlueSpice_Foundation
  */
 class BsGenericTagExtensionHandler {
@@ -44,16 +47,28 @@ class BsGenericTagExtensionHandler {
 	 */
 	protected $aTagDef = [];
 
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+	 * attribute in extension.json
+	 * @param string $sTagName
+	 * @param array $aTagDef
+	 */
 	public function __construct( $sTagName, $aTagDef ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->sTagName = $sTagName;
 		$this->aTagDef = $this->extendTagDefinition( $aTagDef );
 	}
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+	 * attribute in extension.json
 	 * @param BsExtensionMW[] $aExtensions
 	 * @param Parser $parser
 	 */
 	public static function setupHandlers( $aExtensions, $parser ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		foreach ( $aExtensions as $oExtension ) {
 			if ( !$oExtension instanceof BlueSpice\ITagExtensionDefinitionProvider ) {
 				continue;
@@ -67,7 +82,10 @@ class BsGenericTagExtensionHandler {
 	}
 
 	/**
+	 * DEPRECATED!
 	 * Does the actual tag handling and outputs the HTML
+	 * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+	 * attribute in extension.json
 	 * @param string $input
 	 * @param array $args
 	 * @param Parser $parser
@@ -75,6 +93,7 @@ class BsGenericTagExtensionHandler {
 	 * @return string
 	 */
 	public function handle( $input, array $args, Parser $parser, PPFrame $frame ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( $this->aTagDef['disableParserCache'] === true ) {
 			$parser->disableCache();
 		}
@@ -253,11 +272,16 @@ class BsGenericTagExtensionHandler {
 	}
 
 	/**
+	 * DEPRECATED!
 	 * Generates the output in case of an exception
+	 * Does the actual tag handling and outputs the HTML
+	 * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+	 * attribute in extension.json
 	 * @param Exception $ex
 	 * @return string
 	 */
 	public function makeExceptionOutput( $ex ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( $ex instanceof BSInvalidParamException ) {
 			return $this->makeInvalidParamExceptionOutput( $ex );
 		}
@@ -272,11 +296,15 @@ class BsGenericTagExtensionHandler {
 	}
 
 	/**
+	 * DEPRECATED!
 	 * Creates ParamProcessor\ParamDefinition compatible definitions based on
 	 * the tag definition
+	 * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+	 * attribute in extension.json
 	 * @return array
 	 */
 	public function makeParamDefinitions() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$aParamDefs = [];
 		foreach ( $this->aTagDef['params'] as $sParamName => $aParamDef ) {
 			$aParamDefs[] = [
@@ -289,6 +317,7 @@ class BsGenericTagExtensionHandler {
 	}
 
 	/**
+	 * DEPRECATED!
 	 * Checks if ParamProcessrs has found any errors on the parameters that
 	 * did not result in an exception already and throw an exception to display
 	 * the errors to the user.
@@ -296,10 +325,13 @@ class BsGenericTagExtensionHandler {
 	 * TODO: This is somewhat bad behavior. Unfortunately at the moment
 	 * ParamProcessor does not provide a better mechanism for this, or I am not
 	 * aware of it.
+	 * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+	 * attribute in extension.json
 	 * @param \ParamProcessor\ProcessingResult $oResult
 	 * @throws BSInvalidParamException
 	 */
 	public function checkForProcessingErrors( $oResult ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$aErrors = $oResult->getErrors();
 		if ( !empty( $aErrors ) ) {
 			$ex = new BSInvalidParamException();
@@ -309,11 +341,15 @@ class BsGenericTagExtensionHandler {
 	}
 
 	/**
+	 * DEPRECATED!
 	 * Generates the HTML output that tells the user what went wrong
+	 * @deprecated since version 3.1 - Use BlueSpiceFoundationTagRegistry
+	 * attribute in extension.json
 	 * @param BSInvalidParamException $ex
 	 * @return string
 	 */
 	public function makeInvalidParamExceptionOutput( $ex ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$sHtml = '';
 		foreach ( $ex->getErrors() as $oProcessingError ) {
 			$sHtml .= Html::element(

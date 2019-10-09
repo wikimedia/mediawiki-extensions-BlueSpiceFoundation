@@ -107,6 +107,8 @@ class InternalLinksHelper {
 	 * @param \Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
+	 * @param bool $leadingColon
+	 * @param string $separator
 	 */
 	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
 		if ( !$addDuplicates ) {
@@ -159,6 +161,7 @@ class InternalLinksHelper {
 	 *
 	 * @param \Title[] $links
 	 * @param bool|true $addDuplicates
+	 * @param string $separator
 	 * @return InternalLinksHelper
 	 */
 	public function addTargets( $links, $addDuplicates = true, $separator = "\n" ) {

@@ -30,20 +30,16 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
-use MediaWiki\MediaWikiServices;
 
 /**
+ * DEPRECATED
  * The BsCore
+ * @deprecated since version 3.1.0 - Fully deprecated now, will be removed soon
  * @package BlueSpice_Core
  * @subpackage Core
  */
 class BsCore {
 
-	/**
-	 * Array of illegal chars in article title
-	 * @var array
-	 */
-	protected static $prForbiddenCharsInArticleTitle = [ '#', '<', '>', '[', ']', '|', '{', '}' ];
 	/**
 	 * an array of adapter instances
 	 * @var array
@@ -77,17 +73,14 @@ class BsCore {
 	 */
 	protected static $aUserMiniProfiles = [];
 
-	protected static $bHtmlFormClassLoaded = false;
-
-	public static function getForbiddenCharsInArticleTitle() {
-		return self::$prForbiddenCharsInArticleTitle;
-	}
-
 	/**
+	 * DEPRECATED
 	 * Used to access the singleton BlueSpice object.
+	 * @deprecated since version 3.1.0 - BsCore will be removed
 	 * @return BsCore Singleton instance of BlueSpice object.
 	 */
 	public static function getInstance() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( self::$oInstance === null ) {
 			self::$oInstance = new BsCore();
 		}
@@ -95,9 +88,11 @@ class BsCore {
 	}
 
 	/**
+	 * DEPRECATED
 	 * When retrieving data from sources different from the BsCore::getParam()
 	 * method, use this interface to sanitize the value. For security reasons it
 	 * is strongly recommended to use this method!
+	 * @deprecated since version 3.0.1 - use \BlueSpice\ParamProcessor instead
 	 * @param mixed $handover The value that has to be sanitized.
 	 * @param mixed $default A default value that gets returned, if the
 	 * submitted value is not valid or does not match the requested BsPARAMTYPE.
@@ -108,6 +103,7 @@ class BsCore {
 	 * value.
 	 */
 	public static function sanitize( $handover, $default = false, $options = BsPARAMTYPE::STRING ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// TODO MRG20100725: Ist die Reihenfolge hier Ã¼berlegt? Was ist, wenn ich BsPARAMTYPE::INT & BsPARAMTYPE::STRING angebe?
 		// TODO MRG20100725: Kann man das nicht mit getParam zusammenschalten, so dass diese Funktion sanitize verwendet?
 		// TODO MRG20100725: Sollte $default nicht auch durch den sanitizer?
@@ -240,6 +236,7 @@ class BsCore {
 	 * When retrieving data from sources different from the BsCore::getParam()
 	 * method, use this interface to sanitize an array. For security reasons it
 	 * is strongly recommended to use this method!
+	 * @deprecated since version 3.1.0 - Use \BlueSpice\ParamProcessor instead
 	 * @param array $array The array that has to be sanitized.
 	 * @param string $key
 	 * @param array|null $default A default array that gets returned, if the
@@ -251,6 +248,7 @@ class BsCore {
 	 * array.
 	 */
 	public static function sanitizeArrayEntry( $array, $key, $default = null, $options = null ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		// TODO MRG20100725: Sollte $default nicht auch durch den sanitizer?
 		if ( !is_array( $array ) ) {
 			return $default;
@@ -261,16 +259,11 @@ class BsCore {
 		return self::sanitize( $array[$key], $default, $options );
 	}
 
-	/* Returns the filesystem path of the core installation
-	 * @return String Filesystempath to the core installation
-	 */
-
-	public static function getFileSystemPath() {
-		return BSROOTDIR;
-	}
-
 	/**
+	 * DEPRECATED
 	 * Parses WikiText into HTML
+	 * @deprecated since version 3.1.0 - use \Parser->recursiveTagParseFully
+	 * when available or do a DerivativeRequest with action parse
 	 * @param string $sText WikiText
 	 * @param Title $oTitle
 	 * @param bool $nocache DISFUNCTIONAL and therefore DEPRECATED. There is no chaching anyway.
@@ -278,6 +271,7 @@ class BsCore {
 	 * @return string The HTML result
 	 */
 	public function parseWikiText( $sText, $oTitle, $nocache = false, $numberheadings = null ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( !self::$oLocalParser ) {
 			self::$oLocalParser = new Parser();
 		}
@@ -307,12 +301,15 @@ class BsCore {
 	}
 
 	/**
+	 * DEPRECATED
 	 * Determines the request URI for Apache and IIS
 	 *
+	 * @deprecated since version 3.1.0 - not in use anymore
 	 * @param bool $getUrlEncoded set to true to get URI url encoded
 	 * @return string the requested URI
 	 */
 	public static function getRequestURI( $getUrlEncoded = false ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( self::$prRequestUri === null ) {
 			$requestUri = '';
 			if ( isset( $_SERVER['HTTP_X_REWRITE_URL'] ) ) {
@@ -419,6 +416,7 @@ class BsCore {
 	 * @return void
 	 */
 	public function registerPermission( $sPermissionName, $aUserGroups = [], $aConfig = [] ) {
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 		global $wgGroupPermissions, $wgAvailableRights, $bsgPermissionConfig;
 
 		$aUserGroups = array_merge( [
@@ -467,52 +465,19 @@ class BsCore {
 	}
 
 	/**
-	 * Make the page being parsed have a dependency on $page via the templatelinks table.
-	 * https://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
-	 * @param Parser $oParser
-	 * @param String $sTitle
-	 */
-	public static function addTemplateLinkDependencyByText( $oParser, $sTitle ) {
-		$oTitle = Title::newFromText( $sTitle );
-		static::addTemplateLinkDependency( $oParser, $oTitle );
-	}
-
-	/**
-	 * Make the page being parsed have a dependency on $page via the templatelinks table.
-	 * https://www.mediawiki.org/wiki/Manual:Tag_extensions#Regenerating_the_page_when_another_page_is_edited
-	 * @param Parser $oParser
-	 * @param Title $oTitle
-	 */
-	public static function addTemplateLinkDependency( $oParser, $oTitle ) {
-		$oRevision = Revision::newFromTitle( $oTitle );
-		$iPageId = $oRevision ? $oRevision->getPage() : 0;
-		$iRevId  = $oRevision ? $oRevision->getId() : 0;
-
-		// Register dependency in templatelinks
-		$oParser->getOutput()->addTemplate(
-			$oTitle,
-			$iPageId,
-			$iRevId
-		);
-	}
-
-	/**
-	 * Returns the MediaWiki include path variable
-	 * @global String $IP MediaWiki include path variable
-	 * @return String MediaWiki include path variable
-	 */
-	public static function getMediaWikiIncludePath() {
-		global $IP;
-		return str_replace( '\\', '/', $IP );
-	}
-
-	/**
+	 * DEPRECATED
 	 * Returns the filesystempath to the webroot directory in which MediaWiki is installed.
-	 * @global String $wgScriptPath The relative path from the webroot for hyperlinks.
-	 * @return String Webroot directory in which MediaWiki is installed
+	 * @deprecated since version 3.1.0 - This looks partialy broken, when
+	 * scriptPath is only one letter it may gets replaced numerous times i.e
+	 * If you really need something weird like this, calculate this yourself ;)
+	 * @global string $wgScriptPath The relative path from the webroot for hyperlinks.
+	 * @global string $IP
+	 * @return string Webroot directory in which MediaWiki is installed
 	 */
 	public static function getMediaWikiWebrootPath() {
-		global $wgScriptPath;
-		return str_replace( $wgScriptPath, '', self::getMediaWikiIncludePath() );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
+		global $wgScriptPath, $IP;
+		return str_replace( $wgScriptPath, '', str_replace( '\\', '/', $IP ) );
 	}
 }

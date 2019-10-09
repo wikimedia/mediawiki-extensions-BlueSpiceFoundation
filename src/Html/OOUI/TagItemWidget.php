@@ -11,6 +11,10 @@ class TagItemWidget extends \OOUI\Widget {
 	protected $valid;
 	protected $fixed;
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( array $config = [] ) {
 		// Parent constructor
 		parent::__construct( $config );
@@ -33,10 +37,20 @@ class TagItemWidget extends \OOUI\Widget {
 		$this->appendContent( $this->label, $this->closeButton );
 	}
 
+	/**
+	 *
+	 * @param array $config
+	 * @return null
+	 */
 	protected function getInputElement( $config ) {
 		return null;
 	}
 
+	/**
+	 *
+	 * @param array &$config
+	 * @return array
+	 */
 	public function getConfig( &$config ) {
 		if ( $this->valid ) {
 			$config['valid'] = $this->valid;
@@ -47,6 +61,10 @@ class TagItemWidget extends \OOUI\Widget {
 		return parent::getConfig( $config );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getJavaScriptClassName() {
 		return "OO.ui.TagItemWidget";
 	}

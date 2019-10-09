@@ -2,11 +2,13 @@
 
 namespace BlueSpice\Html\OOUI;
 
-use OOUI\InputWidget;
-
 class SelectWidget extends \OOUI\Widget {
 	use \OOUI\GroupElement;
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( array $config = [] ) {
 		// Parent constructor
 		parent::__construct( $config );
@@ -24,14 +26,28 @@ class SelectWidget extends \OOUI\Widget {
 		$this->appendContent( $this->group );
 	}
 
+	/**
+	 *
+	 * @param array $config
+	 * @return null
+	 */
 	protected function getInputElement( $config ) {
 		return null;
 	}
 
+	/**
+	 *
+	 * @param array &$config
+	 * @return array
+	 */
 	public function getConfig( &$config ) {
 		return parent::getConfig( $config );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getJavaScriptClassName() {
 		return "OO.ui.SelectWidget";
 	}

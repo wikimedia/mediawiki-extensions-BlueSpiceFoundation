@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nerogaf",
+			"Red Winged Duck"
+		]
+	},
+	"bs-deferred-action-status-pending": "Чаканьне.",
+	"bs-deferred-action-status-running": "Запускаецца...",
+	"bs-deferred-action-status-done": "Зроблена.",
+	"bs-deferred-action-status-error": "Памылка.",
+	"bs-deferred-action-apicopypage-description": "Скапіяваць «$1» у «$2».",
+	"bs-deferred-action-apieditpage-description": "Рэдагаваць «$1».",
+	"bs-deferred-batch-title": "Пакетная апрацоўка",
+	"bs-deferred-batch-progress-desc": "Рух",
+	"bs-deferred-batch-actions": "Дзеяньні",
+	"bs-deferred-batch-description": "Апісаньне",
+	"bs-deferred-batch-status": "Стан",
+	"bs-deferred-action-apiaddcategories-description": "Дадаць катэгорыі да «$1».",
+	"bs-deferred-action-apiremovecategories-description": "Выдаліць катэгорыі з «$1».",
+	"bs-deferred-action-apisetcategories-description": "Усталяваць катэгорыі для «$1».",
+	"bs-deferred-action-apimovepage-description": "Перанос «$1» у «$2».",
+	"bs-deferred-action-apideletepage-description": "Выдаліць «$1»."
+}

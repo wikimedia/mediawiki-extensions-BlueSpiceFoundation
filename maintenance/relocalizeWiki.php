@@ -12,7 +12,6 @@ class RelocalizeWiki extends Maintenance {
 	public $sOutput = '';
 	public $aNothingReplaced = [];
 	public $aSpecialFrom = [];
-// public $aSpecialTo = array();
 
 	public function __construct() {
 		parent::__construct();
@@ -39,6 +38,11 @@ class RelocalizeWiki extends Maintenance {
 		$this->relocalizeWiki();
 	}
 
+	/**
+	 *
+	 * @param string $sLanguageCode
+	 * @return array
+	 */
 	public function getNamespaceIndexes( $sLanguageCode ) {
 		// workaround for bluespice namespacemanager bug
 		global $wgExtraNamespaces;
@@ -144,6 +148,11 @@ class RelocalizeWiki extends Maintenance {
 		echo "\n\nNothing replaced on Article(s) with ID(s): " . implode( ',', $this->aNothingReplaced );
 	}
 
+	/**
+	 *
+	 * @param string &$input
+	 * @return string
+	 */
 	public function pregImageCallback( &$input ) {
 		$iCountNsName = 0;
 		$iCountNsAlias = 0;
@@ -164,6 +173,11 @@ class RelocalizeWiki extends Maintenance {
 		return $input[0];
 	}
 
+	/**
+	 *
+	 * @param string &$input
+	 * @return string
+	 */
 	public function pregSpecialpageCallback( &$input ) {
 		$aReplace = explode( '|', $input[2] );
 		$aReplace[0] = trim( $aReplace[0] );

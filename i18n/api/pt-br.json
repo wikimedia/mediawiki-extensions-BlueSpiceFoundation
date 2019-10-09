@@ -66,5 +66,7 @@
 	"bs-api-task-taskData-page-title": "Um título válido para uma página wiki",
 	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de textos. Os valores têm de ser nomes de categoria válidos.",
 	"apihelp-bs-watchlist-store-summary": "Lista todas as entradas da lista de páginas vigiadas. Permite ordenar, filtrar e paginar. Implementa os parâmetros store.",
-	"apihelp-bs-recentchanges-store-summary": "Lista todas as mudanças recentes. Permite ordenar, filtrar e paginar. Implementa os parâmetros store."
+	"apihelp-bs-recentchanges-store-summary": "Lista todas as mudanças recentes. Permite ordenar, filtrar e paginar. Implementa os parâmetros store.",
+	"apihelp-bs-task-summary": "Fornece o terminal da API para executar tarefas registradas",
+	"apihelp-bs-task-description": "Fornece o terminal da API para executar tarefas registradas"
 }

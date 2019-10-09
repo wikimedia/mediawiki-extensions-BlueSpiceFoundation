@@ -38,6 +38,12 @@ function showHelp() {
 	echo( " --execute : Actually modify\n" );
 }
 
+/**
+ *
+ * @param bool $bDry
+ * @param array $options
+ * @return void
+ */
 function notifyUserMailController( $bDry, $options ) {
 	$aUserStore = getUser( $options['user'] );
 	if ( empty( $aUserStore ) ) {
@@ -48,6 +54,11 @@ function notifyUserMailController( $bDry, $options ) {
 	// NotifyUser($aUserStore, $options, $bDry);
 }
 
+/**
+ *
+ * @param string $sGivenUser
+ * @return array
+ */
 function getUser( $sGivenUser ) {
 	if ( $sGivenUser != "-1" ) {
 		if ( !ctype_digit( $sGivenUser ) ) {
@@ -76,6 +87,12 @@ function getUser( $sGivenUser ) {
 	return $aUser;
 }
 
+/**
+ *
+ * @param array $aUserStore
+ * @param array $options
+ * @param bool $bDry
+ */
 function NotifyUser( $aUserStore, $options, $bDry ) {
 	$oDbw = wfGetDB( DB_MASTER );
 
@@ -104,6 +121,10 @@ function NotifyUser( $aUserStore, $options, $bDry ) {
 	}
 }
 
+/**
+ *
+ * @param array $aUserStore
+ */
 function displayResult( $aUserStore ) {
 	foreach ( $aUserStore as $aUser ) {
 		$sSetvalue = !empty( $aUser["setvalue"] ) ? ' => ' . $aUser["setvalue"] : '';

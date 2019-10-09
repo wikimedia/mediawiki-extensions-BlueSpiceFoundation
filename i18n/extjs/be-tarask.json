@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nerogaf",
+			"Red Winged Duck"
+		]
+	},
+	"bs-extjs-ok": "Добра",
+	"bs-extjs-cancel": "Скасаваць",
+	"bs-extjs-yes": "Так",
+	"bs-extjs-no": "Не",
+	"bs-extjs-save": "Захаваць",
+	"bs-extjs-delete": "Выдаліць",
+	"bs-extjs-add": "Дадаць",
+	"bs-extjs-remove": "Выдаліць",
+	"bs-extjs-edit": "Рэдагаваць",
+	"bs-extjs-copy": "Скапіяваць",
+	"bs-extjs-hint": "Падказка",
+	"bs-extjs-error": "Памылка",
+	"bs-extjs-confirm": "Пацьвердзіць",
+	"bs-extjs-loading": "Загрузка…",
+	"bs-extjs-actions-column-header": "Дзеяньні",
+	"bs-extjs-warning": "Папярэджаньне",
+	"bs-extjs-saving": "захаваньне...",
+	"bs-extjs-reset": "Скінуць",
+	"bs-extjs-close": "Зачыніць",
+	"bs-extjs-label-user": "Удзельнік",
+	"bs-extjs-label-namespace": "Прастора назваў",
+	"bs-extjs-label-page": "Старонка",
+	"bs-extjs-label-directsearch": "Пошук",
+	"bs-extjs-titlecombo-newpagehint": "Старонка не існуе!",
+	"bs-extjs-upload": "Загрузіць",
+	"bs-extjs-browse": "Праглядзець",
+	"bs-extjs-uploading": "Загрузка…",
+	"bs-extjs-allns": "(усе)",
+	"bs-extjs-mainns": "(Асноўная)",
+	"bs-extjs-filters": "Фільтры",
+	"bs-extjs-filter-bool-yes": "так",
+	"bs-extjs-filter-bool-no": "не"
+}

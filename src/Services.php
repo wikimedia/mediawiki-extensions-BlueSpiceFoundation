@@ -46,14 +46,6 @@ class Services extends ServicesDecorator {
 
 	/**
 	 *
-	 * @return EntityRegistry
-	 */
-	public function getBSEntityRegistry() {
-		return $this->getService( 'BSEntityRegistry' );
-	}
-
-	/**
-	 *
 	 * @return EntityConfigFactory
 	 */
 	public function getBSEntityConfigFactory() {
@@ -74,14 +66,6 @@ class Services extends ServicesDecorator {
 	 */
 	public function getBSAdminToolFactory() {
 		return $this->getService( 'BSAdminToolFactory' );
-	}
-
-	/**
-	 *
-	 * @return PageToolFactory
-	 */
-	public function getBSPageToolFactory() {
-		return $this->getService( 'BSPageToolFactory' );
 	}
 
 	/**
@@ -117,6 +101,14 @@ class Services extends ServicesDecorator {
 
 	/**
 	 *
+	 * @return TaskFactory
+	 */
+	public function getBSTaskFactory() {
+		return $this->getService( 'BSTaskFactory' );
+	}
+
+	/**
+	 *
 	 * @return UtilityFactory
 	 */
 	public function getBSUtilityFactory() {
@@ -145,6 +137,46 @@ class Services extends ServicesDecorator {
 	 */
 	public function getBSTargetCacheTitle() {
 		return $this->getService( 'BSTargetCacheTitle' );
+	}
+
+	/**
+	 *
+	 * @return PermissionLockdownFactory
+	 */
+	public function getBSPermissionLockdownFactory() {
+		return $this->getService( 'BSPermissionLockdownFactory' );
+	}
+
+	/**
+	 *
+	 * @return \BlueSpice\Permission\Role\Manager
+	 */
+	public function getBSRoleManager() {
+		return $this->getService( 'BSRoleManager' );
+	}
+
+	/**
+	 *
+	 * @return TemplateFactory
+	 */
+	public function getBSTemplateFactory() {
+		return $this->getService( 'BSTemplateFactory' );
+	}
+
+	/**
+	 *
+	 * @return PageInfoElementFactory
+	 */
+	public function getBSPageInfoElementFactory() {
+		return $this->getService( 'BSPageInfoElementFactory' );
+	}
+
+	/**
+	 *
+	 * @return DeferredNotificationStack
+	 */
+	public function getBSDeferredNotificationStack() {
+		return $this->getService( 'BSDeferredNotificationStack' );
 	}
 
 }

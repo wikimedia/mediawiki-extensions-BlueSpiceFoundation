@@ -18,6 +18,7 @@ class PagePropHelper {
 	protected $title = null;
 
 	/**
+	 * @param \BlueSpice\Services $services
 	 * @param Title $title
 	 */
 	public function __construct( $services, \Title $title ) {

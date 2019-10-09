@@ -65,13 +65,13 @@ abstract class BeforeInitialize extends Hook {
 	protected $mediaWiki;
 
 	/**
-	 * @param \Title $title
-	 * @param \Article|null $article
-	 * @param \OutputPage $output
-	 * @param \User $user
+	 * @param \Title &$title
+	 * @param \Article|null &$article
+	 * @param \OutputPage &$output
+	 * @param \User &$user
 	 * @param \WebRequest $request
 	 * @param \MediaWiki $mediaWiki
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( &$title, &$article, &$output, &$user, $request, $mediaWiki ) {
 		$className = static::class;
@@ -91,10 +91,10 @@ abstract class BeforeInitialize extends Hook {
 	/**
 	 * @param \ContextSource $context
 	 * @param \Config $config
-	 * @param \Title $title
-	 * @param \Article|null $article
-	 * @param \OutputPage $output
-	 * @param \User $user
+	 * @param \Title &$title
+	 * @param \Article|null &$article
+	 * @param \OutputPage &$output
+	 * @param \User &$user
 	 * @param \WebRequest $request
 	 * @param \MediaWiki $mediaWiki
 	 */

@@ -15,18 +15,18 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 	 * @return bool allow other hooked methods to be executed. Always true.
 	 */
 	public function execute() {
-		global $IP;
+		$ip = $this->getConfig()->get( 'IP' );
 
 		if ( !( $this->getOption( 'source' ) === null ) ) {
 			$sSourceDir = $this->getOption( 'source' );
 		} else {
-			$sSourceDir = "$IP/extensions/BlueSpiceFoundation/resources/assets/file-type-icons";
+			$sSourceDir = "$ip/extensions/BlueSpiceFoundation/resources/assets/file-type-icons";
 		}
 
 		if ( !( $this->getOption( 'target' ) === null ) ) {
 			$sTargetDir = $this->getOption( 'target' );
 		} else {
-			$sTargetDir = "$IP/resources/assets/file-type-icons";
+			$sTargetDir = "$ip/resources/assets/file-type-icons";
 		}
 
 		$sourceHandler = opendir( $sSourceDir );

@@ -257,7 +257,7 @@ foreach ( $res as $row ) {
 			$new_title = preg_replace( $move_from, $move_to, $cur_title );
 
 			if ( $new_title == $cur_title ) {
-				continue;
+				break;
 			}
 
 			echo "Moving title \"$cur_title\" to \"$new_title\" (NS:$ns): ";
@@ -265,7 +265,7 @@ foreach ( $res as $row ) {
 			// Only testing
 			if ( $testing ) {
 				echo "testing\n";
-				continue;
+				break;
 			}
 
 			// Actual modification
@@ -280,6 +280,10 @@ foreach ( $res as $row ) {
 
 echo "\n\n-- " . ( $testing ? "Would have m" : "M" ) . "odified $hits articles.\n";
 
+/**
+ *
+ * @param string $msg
+ */
 function error( $msg ) {
 	echo 'ERROR: ' . $msg;
 	exit();

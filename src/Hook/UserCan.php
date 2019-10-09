@@ -26,19 +26,23 @@
  */
 namespace BlueSpice\Hook;
 
+use IContextSource;
+use Config;
+use User;
+use Title;
 use BlueSpice\Hook;
 
 abstract class UserCan extends Hook {
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
@@ -56,11 +60,11 @@ abstract class UserCan extends Hook {
 
 	/**
 	 *
-	 * @param \Title $title
-	 * @param \User $user
+	 * @param Title &$title
+	 * @param User &$user
 	 * @param string $action
-	 * @param boolean $result
-	 * @return boolean
+	 * @param bool &$result
+	 * @return bool
 	 */
 	public static function callback( &$title, &$user, $action, &$result ) {
 		$className = static::class;
@@ -75,6 +79,15 @@ abstract class UserCan extends Hook {
 		return $hookHandler->process();
 	}
 
+	/**
+	 *
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param Title &$title
+	 * @param User &$user
+	 * @param string $action
+	 * @param bool &$result
+	 */
 	public function __construct( $context, $config, &$title, &$user, $action, &$result ) {
 		parent::__construct( $context, $config );
 

@@ -58,8 +58,8 @@ abstract class GetUserPermissionsErrors extends Hook {
 	 * @param \Title $title
 	 * @param \User $user
 	 * @param string $action
-	 * @param array $result
-	 * @return boolean
+	 * @param array &$result
+	 * @return bool
 	 */
 	public static function callback( $title, $user, $action, &$result ) {
 		$className = static::class;
@@ -80,7 +80,7 @@ abstract class GetUserPermissionsErrors extends Hook {
 	 * @param \Title $title
 	 * @param \User $user
 	 * @param string $action
-	 * @param array $result
+	 * @param array &$result
 	 */
 	public function __construct( $context, $config, $title, $user, $action, &$result ) {
 		parent::__construct( $context, $config );

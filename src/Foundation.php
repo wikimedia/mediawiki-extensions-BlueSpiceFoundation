@@ -3,8 +3,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\Services;
-
 class Foundation {
 
 	/**
@@ -22,6 +20,7 @@ class Foundation {
 	public static function onRegistry() {
 		require_once dirname( __DIR__ ) . "/includes/Defines.php";
 		require_once dirname( __DIR__ ) . "/includes/DefaultSettings.php";
+		require_once dirname( __DIR__ ) . "/includes/GlobalFunctions.php";
 
 		// currently there is no other way
 		\HTMLForm::$typeMappings['staticimage'] = 'HTMLStaticImageFieldOverride';

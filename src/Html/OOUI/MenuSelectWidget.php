@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Html\OOUI;
 
-use OOUI\InputWidget;
-
 class MenuSelectWidget extends SelectWidget {
 	use \BlueSpice\Html\OOUI\ClippableElement;
 	use \BlueSpice\Html\OOUI\FloatableElement;
@@ -19,6 +17,10 @@ class MenuSelectWidget extends SelectWidget {
 	protected $width;
 	protected $visible;
 
+	/**
+	 *
+	 * @param array $config
+	 */
 	public function __construct( array $config = [] ) {
 		// Parent constructor
 		parent::__construct( $config );
@@ -63,10 +65,19 @@ class MenuSelectWidget extends SelectWidget {
 		} );
 	}
 
+	/**
+	 *
+	 * @param array &$config
+	 * @return array
+	 */
 	public function getConfig( &$config ) {
 		return parent::getConfig( $config );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getJavaScriptClassName() {
 		return "OO.ui.MenuSelectWidget";
 	}

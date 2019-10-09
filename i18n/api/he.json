@@ -2,7 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"MojoMann",
-			"Guycn2"
+			"Guycn2",
+			"YaronSh",
+			"Erelon",
+			"Steeve815"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
@@ -11,5 +14,20 @@
 	"apihelp-bs-wikipage-tasks-description": "מספק פעולות נפוצות ל-WikiPages",
 	"apihelp-bs-store-param-page": "מאפשר חישוב התחלה/גבול מצד שרת",
 	"apihelp-bs-store-param-limit": "מספר התוצאות להשיב",
-	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון."
+	"apihelp-bs-task-param-format": "תסדיר התוצאה.",
+	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",
+	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון.",
+	"apihelp-bs-task-summary": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
+	"apihelp-bs-task-description": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
+	"apihelp-bs-store-param-dc": "דגל <code>Disable cache</code>",
+	"apihelp-bs-task-param-task": "המשימה שאמורה לפעול",
+	"bs-wikipage-tasks-setcategories-edit-summary": "קטגוריות ששונו.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "אינכם מורשים לערוך את הדף \"$1\".",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|קטגוריה לא־תקינה|קטגוריות לא־תקינות}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "הקטגוריות הוגדרו בהצלחה.",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "אינך רשאי לקרוא את הדף '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "אין קטגוריות להסרה",
+	"bs-api-task-taskData-page-id": "המזהה של דף ויקי קיים",
+	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי",
+	"bs-wikipage-tasks-error-page-not-valid": "הדף שצוין אינו תקין."
 }

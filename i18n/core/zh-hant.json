@@ -11,8 +11,8 @@
 		]
 	},
 	"bluespicefoundation-desc": "讓 MediaWiki 企業化就緒",
-	"bs-ns_main": "(頁面)",
-	"bs-ns_all": "(全部)",
+	"bs-ns_main": "（頁面）",
+	"bs-ns_all": "（全部）",
 	"bs-tab_navigation": "導覽",
 	"bs-userbar_loginswitch_logout": "登出",
 	"bs-userbar_loginswitch_login": "登入",
@@ -95,5 +95,8 @@
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
-	"bs-notifications-agent-anon": "匿名使用者"
+	"bs-notifications-agent-anon": "匿名使用者",
+	"bs-lockdown-groups-permissionerror": "出於以下{{PLURAL:$2|原因}}「$1」操作無效：$3",
+	"action-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
+	"protect-level-editor": "只允許編輯者和管理員"
 }

@@ -2,8 +2,6 @@
 
 namespace BlueSpice\DynamicFileDispatcher;
 
-use BlueSpice\DynamicFileDispatcher\Module;
-
 abstract class File {
 	/**
 	 *

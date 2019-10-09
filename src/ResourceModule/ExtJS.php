@@ -3,6 +3,12 @@
 namespace BlueSpice\ResourceModule;
 
 class ExtJS extends \ResourceLoaderFileModule {
+
+	/**
+	 *
+	 * @param \ResourceLoaderContext|null $context
+	 * @return array
+	 */
 	public function getDependencies( \ResourceLoaderContext $context = null ) {
 		$dependencies = [
 			'mediawiki.Title',
@@ -20,6 +26,11 @@ class ExtJS extends \ResourceLoaderFileModule {
 		return $dependencies;
 	}
 
+	/**
+	 *
+	 * @param \ResourceLoaderContext $context
+	 * @return array
+	 */
 	public function getLessVars( \ResourceLoaderContext $context ) {
 		$vars = parent::getLessVars( $context );
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(

@@ -10,13 +10,13 @@
 	"bs-ns_main": "(Peli)",
 	"bs-ns_all": "(pêro)",
 	"bs-tab_navigation": "Pusula",
-	"bs-userbar_loginswitch_logout": "Veciyayış",
-	"bs-userbar_loginswitch_login": "Cıkewtış",
-	"bs-extended-search-textfield-defaultvalue": "Geyreno...",
+	"bs-userbar_loginswitch_logout": "Bıveciye",
+	"bs-userbar_loginswitch_login": "Cı kewe",
+	"bs-extended-search-textfield-defaultvalue": "Cıgeyrayış...",
 	"bs-extended-search-textfield-tooltip": "Wiki de cı geyre",
 	"bs-years-duration": "{{PLURAL:$1|yew serre|$1 serri}}",
 	"bs-months-duration": "{{PLURAL:$1|yew aşme|$1 aşmi}}",
-	"bs-weeks-duration": "{{PLURAL:$1|yew hefte|$1 heftey}}",
+	"bs-weeks-duration": "{{PLURAL:$1|yew hefte|$1 hefteyi}}",
 	"bs-days-duration": "{{PLURAL:$1|yew roce|$1 roci}}",
 	"bs-hours-duration": "{{PLURAL:$1|yew saete|$1 saeti}}",
 	"bs-mins-duration": "{{PLURAL:$1|yew deqa|$1 deqey}}",
@@ -33,5 +33,8 @@
 	"bs-navigation-support": "Destek",
 	"bs-navigation-contact": "İrtıbat",
 	"bs-imagepage-download-text": "Biya war",
-	"bs-exttype-bluespice": "Derganeyê BlueSpice"
+	"bs-ns": "Heruna nameyan",
+	"bs-from-something": "($1 ra)",
+	"bs-exttype-bluespice": "Derganeyê BlueSpice",
+	"bs-graphicallist-action-close": "Kip ke"
 }

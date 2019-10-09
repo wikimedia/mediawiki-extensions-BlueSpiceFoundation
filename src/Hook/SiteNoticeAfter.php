@@ -45,9 +45,9 @@ abstract class SiteNoticeAfter extends Hook {
 	protected $skin = null;
 
 	/**
-	 * @param string $siteNotice
+	 * @param string &$siteNotice
 	 * @param Skin $skin
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( &$siteNotice, $skin ) {
 		$className = static::class;
@@ -64,7 +64,7 @@ abstract class SiteNoticeAfter extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param string $siteNotice
+	 * @param string &$siteNotice
 	 * @param Skin $skin
 	 */
 	public function __construct( $context, $config, &$siteNotice, $skin ) {

@@ -9,7 +9,7 @@
 			"Mansil alfalb"
 		]
 	},
-	"bluespicefoundation-desc": "Torna o MediaWiki pronto para empresas",
+	"bluespicefoundation-desc": "Prepara o MediaWiki para uso empresarial",
 	"bs-ns_main": "(Páginas)",
 	"bs-ns_all": "(todos)",
 	"bs-tab_navigation": "Navegação",
@@ -29,7 +29,7 @@
 	"bs-two-units-ago": "Há $1 e $2",
 	"bs-one-unit-ago": "Há $1",
 	"bs-now": "agora",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Olá Sr. $2|Olá Srª $2|Olá $2}},",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Olá Sr. $2|Olá Sr.ª $2|Olá $2}},",
 	"bs-email-footer": "Esta mensagem foi gerada automaticamente pela wiki $1. Não responda a esta mensagem, por favor.",
 	"bs-userpagesettings-legend": "Configurações do utilizador",
 	"bs-userpreferences-link-text": "Mais configurações do utilizador",
@@ -41,7 +41,7 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "Esconder detalhes do erro",
 	"bs-viewtagerrorlist-legend": "$1 - Erro",
 	"bs-readonly": "A base de dados está atualmente bloqueada para novas entradas e outras modificações, provavelmente para manutenção de rotina, depois da qual voltará à normalidade. O administrador responsável pelo bloqueio deu a seguinte explicação: $1",
-	"bs-imageofotheruser": "Não tem permissão para carregar uma imagem em nome de outro(a) utilizador(a).",
+	"bs-imageofotheruser": "Não tem permissão para carregar uma imagem em nome de outro utilizador.",
 	"bs-permissionerror": "Erro de permissão!",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> não é um diretório válido.",
 	"bs-filesystemhelper-has-path-traversal": "Foi detetado um salto indevido de caminho (path traversal)!",
@@ -64,7 +64,7 @@
 	"bs-navigation-support": "Suporte",
 	"bs-navigation-contact": "Contacto",
 	"bs-imagepage-download-text": "Descarregar",
-	"bs-ns": "Domínio",
+	"bs-ns": "Domínio/espaço nominal",
 	"bs-from-something": "(de $1)",
 	"bs-pref-fileextensions": "Extensões de ficheiro permitidas:",
 	"bs-pref-imageextensions": "Extensões de imagens permitidas:",
@@ -80,8 +80,8 @@
 	"bs-tag-param-desc": "Valor do atributo '$1' do elemento",
 	"bs-parser-error-invalid-namespace": "Espaço nominal inválido: $1",
 	"bs-parser-error-invalid-title": "Título inválido: $1",
-	"bs-validator-error-namespace-does-not-exist": "Domínio não existe: $1",
-	"bs-validator-error-namespace-on-blacklist": "Domínio não permitido: $1",
+	"bs-validator-error-namespace-does-not-exist": "Domínio/espaço nominal não existe: $1",
+	"bs-validator-error-namespace-on-blacklist": "Domínio/espaço nominal não permitido: $1",
 	"bs-validator-error-title-does-not-exist": "Página não existe: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Página não permitida: $1",
 	"bs-parser-error-invalid-category-title": "A página não é uma categoria válida: $1",
@@ -94,5 +94,7 @@
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Usado na extensão BlueSpice para tarefas administrativas possivelmente perigosas, como a administração de utilizadores e permissões, e a configuração global",
-	"bs-notifications-agent-anon": "utilizador anónimo"
+	"bs-notifications-agent-anon": "utilizador anónimo",
+	"bs-lockdown-groups-permissionerror": "A operação \"$1\" não está disponível {{PLURAL:$2|pela seguinte razão|pelas seguintes razões}}: $3",
+	"action-wikiadmin": "usado em muitas extensões BlueSpice para tarefas administrativas potencialmente perigosas como a gestão de utilizadores e de permissões, e a configuração global"
 }

@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"StanProg"
+			"StanProg",
+			"Ted Masters"
 		]
 	},
+	"bs-setting-path-feature": "Функция",
+	"bs-setting-path-extension": "Разширение",
+	"bs-setting-path-package": "Пакет",
+	"bs-setting-path-system": "Система",
+	"bs-setting-path-dataanalysis": "Анализ на данни",
+	"bs-setting-path-editor": "Редактор",
 	"bs-setting-path-export": "Изнасяне"
 }

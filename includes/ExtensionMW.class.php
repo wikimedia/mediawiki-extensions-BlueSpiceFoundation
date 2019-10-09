@@ -83,8 +83,9 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	public function setup( $sExtName = "", $aConfig = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 		global $wgExtensionCredits, $bsgBlueSpiceExtInfo;
-			// Extension credits that will show up on Special:Version
+		// Extension credits that will show up on Special:Version
 		if ( !empty( $aConfig['deprecatedSince'] ) ) {
 			$sVersion = str_replace(
 				'default',
@@ -199,6 +200,10 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 		return $this->mExtensionKey;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getExtensionPath() {
 		return "/{$this->getName()}";
 	}

@@ -2,7 +2,6 @@
 
 namespace BlueSpice;
 
-use BlueSpice\IRunJobsTriggerHandler;
 use BlueSpice\RunJobsTriggerHandler\Interval\OnceADay;
 
 abstract class RunJobsTriggerHandler implements IRunJobsTriggerHandler {
@@ -26,8 +25,8 @@ abstract class RunJobsTriggerHandler implements IRunJobsTriggerHandler {
 	protected $notifier = null;
 
 	/**
-	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 * @param \Config $config
+	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 * @param INotifier $notifier
 	 * @return IRunJobsTriggerHandler
 	 */

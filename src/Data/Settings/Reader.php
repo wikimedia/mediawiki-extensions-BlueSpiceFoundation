@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\Settings;
 
+use BlueSpice\Data\ReaderParams;
 use \BlueSpice\Data\DatabaseReader;
 
 class Reader extends DatabaseReader {
@@ -14,14 +15,27 @@ class Reader extends DatabaseReader {
 		parent::__construct( $loadBalancer, $context, $context->getConfig() );
 	}
 
+	/**
+	 *
+	 * @param ReaderParams $params
+	 * @return PrimaryDataProvider
+	 */
 	protected function makePrimaryDataProvider( $params ) {
 		return new PrimaryDataProvider( $this->db );
 	}
 
+	/**
+	 *
+	 * @return null
+	 */
 	protected function makeSecondaryDataProvider() {
 		return null;
 	}
 
+	/**
+	 *
+	 * @return Schema
+	 */
 	public function getSchema() {
 		return new Schema();
 	}

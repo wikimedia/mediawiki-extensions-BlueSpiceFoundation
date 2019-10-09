@@ -40,7 +40,7 @@ abstract class BSEntityInvalidate extends Hook {
 	 * Located in \BlueSpice\Entity::invalidateCache. After the entity was
 	 * invalidated.
 	 * @param Entity $entity
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $entity ) {
 		$className = static::class;

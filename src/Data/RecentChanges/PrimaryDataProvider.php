@@ -3,8 +3,6 @@
 namespace BlueSpice\Data\RecentChanges;
 
 use \BlueSpice\Data\IPrimaryDataProvider;
-use \BlueSpice\Data\Filter;
-use \BlueSpice\Data\FilterFinder;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
@@ -39,6 +37,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	/**
 	 *
 	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @return Record[]
 	 */
 	public function makeData( $params ) {
 		$conds = [];
@@ -64,6 +63,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $this->data;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 */
 	protected function appendRowToData( $row ) {
 		$title = \Title::makeTitle( $row->rc_namespace, $row->rc_title );
 
@@ -83,6 +86,8 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::DIFF_LINK => '',
 			Record::HIST_URL => '',
 			Record::HIST_LINK => '',
+			Record::OLDID_URL => '',
+			Record::OLDID_LINK => '',
 			Record::CUR_ID => $row->rc_cur_id,
 			Record::LAST_OLDID => $row->rc_last_oldid,
 			Record::THIS_OLDID => $row->rc_this_oldid,

@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"bs-extjs-portal-height": "Alto",
+	"bs-extjs-portal-count": "Eroj",
+	"bs-extjs-portal-timespan-week": "Semajno",
+	"bs-extjs-portal-timespan-month": "Monato",
+	"bs-extjs-portal-timespan-alltime": "Ĉiam"
+}

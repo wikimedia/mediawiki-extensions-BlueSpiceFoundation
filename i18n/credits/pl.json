@@ -3,7 +3,8 @@
 		"authors": [
 			"Chrumps",
 			"Vengir",
-			"Pio387"
+			"Pio387",
+			"Rail"
 		]
 	},
 	"bs-credits-programmers": "Programiści",
@@ -11,5 +12,6 @@
 	"bs-credits-contributors": "Autorzy",
 	"bs-credits-translators": "Tłumacze",
 	"bs-credits-translation": "Tłumaczenie",
-	"bs-credits-th": "Podziękowania dla wszystkich tłumaczy od $1."
+	"bs-credits-th": "Podziękowania dla wszystkich tłumaczy od $1.",
+	"specialcredits": "Autorzy BlueSpice"
 }

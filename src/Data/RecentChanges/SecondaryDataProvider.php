@@ -27,7 +27,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 
 	/**
 	 *
-	 * @param Record $dataSet
+	 * @param Record &$dataSet
 	 */
 	protected function doExtend( &$dataSet ) {
 		$rawData = $dataSet->getData();
@@ -59,7 +59,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 			$rawData->diff_link =
 				$this->linkrenderer->makeLink(
 				$title,
-				wfMessage( 'difference-title', $title->getPrefixedText() ),
+				wfMessage( 'diff' ),
 				[],
 				$diffQuery
 			);
@@ -72,10 +72,19 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		$rawData->hist_link =
 			$this->linkrenderer->makeLink(
 				$title,
-				wfMessage( 'history-title', $title->getPrefixedText() ),
+				wfMessage( 'pagehist' ),
 				[],
 				$histQuery
 			);
+
+		$oldIdQuery = [ 'oldid' => $rawData->last_oldid ];
+		$rawData->{Record::OLDID_URL} = $title->getFullURL( $oldIdQuery );
+		$rawData->{Record::OLDID_LINK} = $this->linkrenderer->makeLink(
+			$title,
+			null,
+			[],
+			$oldIdQuery
+		);
 
 		$rawData->timestamp = $this->context->getLanguage()->userTimeAndDate(
 			$rawData->raw_timestamp,

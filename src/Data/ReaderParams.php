@@ -2,9 +2,6 @@
 
 namespace BlueSpice\Data;
 
-use BlueSpice\Data\Sort;
-use BlueSpice\Data\Filter;
-
 class ReaderParams {
 	const LIMIT_INFINITE = -1;
 
@@ -56,6 +53,12 @@ class ReaderParams {
 		$this->setFilter( $params );
 	}
 
+	/**
+	 *
+	 * @param mixed &$property
+	 * @param array $source
+	 * @param string $field
+	 */
 	protected function setIfAvailable( &$property, $source, $field ) {
 		if ( isset( $source[$field] ) ) {
 			$property = $source[$field];
@@ -104,6 +107,11 @@ class ReaderParams {
 		return $this->filter;
 	}
 
+	/**
+	 *
+	 * @param array $params
+	 * @return void
+	 */
 	protected function setSort( $params ) {
 		if ( !isset( $params[static::PARAM_SORT] )
 			|| !is_array( $params[static::PARAM_SORT] ) ) {
@@ -113,6 +121,11 @@ class ReaderParams {
 		$this->sort = Sort::newCollectionFromArray( $params[static::PARAM_SORT] );
 	}
 
+	/**
+	 *
+	 * @param array $params
+	 * @return void
+	 */
 	protected function setFilter( $params ) {
 		if ( !isset( $params[static::PARAM_FILTER] )
 			|| !is_array( $params[static::PARAM_FILTER] ) ) {

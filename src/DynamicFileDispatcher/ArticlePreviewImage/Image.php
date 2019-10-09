@@ -24,6 +24,7 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 	 *
 	 * @param Module $dfd
 	 * @param \Title $title
+	 * @param RevisionRecord|null $revision
 	 */
 	public function __construct( Module $dfd, \Title $title, RevisionRecord $revision = null ) {
 		parent::__construct( $dfd );
@@ -35,6 +36,10 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 		}
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getSourcePath() {
 		return $GLOBALS['wgExtensionDirectory']
 			. "/BlueSpiceFoundation/resources/assets/article-preview-images/dummy.png";
@@ -54,6 +59,10 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 		readfile( $this->getSourcePath() );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getMimeType() {
 		return 'image/png';
 	}

@@ -89,5 +89,14 @@
 	"bs-exttype-bluespice": "BlueSpice uitbreidingen",
 	"bs-export-menu-print-text": "Afdrukken",
 	"bs-export-menu-print-title": "Toont een printbare versie van de pagina",
-	"right-wikiadmin": "Toon BlueSpice's beheerpagina's"
+	"bs-graphicallist-action-close": "Sluiten",
+	"bs-graphicallist-action-list": "Lijst",
+	"bs-graphicallist-action-preview": "Voorvertoning",
+	"right-wikiadmin": "Toon BlueSpice's beheerpagina's",
+	"bs-notifications-agent-anon": "anonieme gebruiker",
+	"bs-lockdown-groups-permissionerror": "De handeling \"$1\" is niet beschikbaar vanwege de volgende {{PLURAL:$2|reden|reneden}}: $3",
+	"bs-parser-error-invalid-category-title": "Pagina is geen geldige categorie: $1",
+	"action-wikiadmin": "Toon BlueSpice's beheerpagina's",
+	"bs-tag-param-desc": "Waarde van het elementattribuut '$1'",
+	"protect-level-editor": "Alleen bewerkers en beheerders toestaan"
 }

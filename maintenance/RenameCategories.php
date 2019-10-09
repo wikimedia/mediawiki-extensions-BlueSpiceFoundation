@@ -39,6 +39,11 @@ if ( trim( $line ) != 'yes' ) {
 
 $oldcatspatterns = array_map( 'old_to_regex', $oldcats );
 
+/**
+ *
+ * @param string $rawcat
+ * @return string
+ */
 function old_to_regex( $rawcat ) {
 	$rawcat = trim( $rawcat );
 	# escape special regex characters plus the hash delimiter we'll use
@@ -55,6 +60,11 @@ var_dump( $oldcatspatterns );
 
 $newcatspatterns = array_map( 'new_to_pattern', $newcats );
 
+/**
+ *
+ * @param string $rawcat
+ * @return string
+ */
 function new_to_pattern( $rawcat ) {
 	$rawcat = trim( $rawcat );
 	$rawcat = '[[$1:' . $rawcat . ']]';
@@ -65,6 +75,11 @@ var_dump( $newcatspatterns );
 
 $oldtitlepatterns = array_map( 'oldtitle_to_regex', $oldcats );
 
+/**
+ *
+ * @param string $rawcat
+ * @return string
+ */
 function oldtitle_to_regex( $rawcat ) {
 	$rawcat = trim( $rawcat );
 	# escape special regex characters plus the hash delimiter we'll use
@@ -79,6 +94,11 @@ var_dump( $oldtitlepatterns );
 
 $newtitlepatterns = array_map( 'newtitle_to_pattern', $newcats );
 
+/**
+ *
+ * @param string $rawcat
+ * @return string
+ */
 function newtitle_to_pattern( $rawcat ) {
 	$rawcat = trim( $rawcat );
 	return $rawcat;
@@ -345,7 +365,7 @@ foreach ( $res as $row ) {
 			$new_title = preg_replace( $move_from, $move_to, $cur_title );
 
 			if ( $new_title == $cur_title ) {
-				continue;
+				break;
 			}
 
 			echo "Moving title \"$cur_title\" to \"$new_title\" (NS:$ns): ";
@@ -353,7 +373,7 @@ foreach ( $res as $row ) {
 			// Only testing
 			if ( $testing ) {
 				echo "testing\n";
-				continue;
+				break;
 			}
 
 			// Actual modification
@@ -374,6 +394,10 @@ foreach ( $res as $row ) {
 
 }
 
+/**
+ *
+ * @param string $msg
+ */
 function hw_error( $msg ) {
 	echo 'ERROR: ' . $msg;
 	exit();

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"KATRINE1993"
 		]
 	},
 	"apihelp-bs-wikipage-tasks-description": "Παρέχει συνηθισμένες λειτουργίες για τις WikiPages",
@@ -16,5 +17,6 @@
 	"apihelp-bs-wikisubpage-treestore-param-node": "Ο προθεματοποιημένος τίτλος της βικισελίδας",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Κατάλογος επιλογών",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Δεν σας επιτρέπεται να διαβάσετε την σελίδα '$1'.",
-	"bs-wikipage-tasks-error-nothingtoremove": "Δεν υπάρχουν κατηγορίες για αφαίρεση"
+	"bs-wikipage-tasks-error-nothingtoremove": "Δεν υπάρχουν κατηγορίες για αφαίρεση",
+	"apihelp-bs-task-summary": "Δίνει το τελικό σημείο του ΑΡΙ για την εκτέλεση έργων που ήδη έχουν εγγραφεί"
 }

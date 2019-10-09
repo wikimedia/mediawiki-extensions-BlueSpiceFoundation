@@ -1,5 +1,6 @@
 <?php
 /**
+ * DEPRECATED!
  * Provides the base task api for BlueSpice.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -18,6 +19,9 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
+ * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
+ * the TaskRegistry in extension.json to be able to call your task in the new
+ * generic task api BlueSpice\Api\Task with 'bs-task'
  * @author     Patric Wirth <wirth@hallowelt.com>
  * @package    Bluespice_Foundation
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
@@ -25,11 +29,20 @@
  * @filesource
  */
 
+use BlueSpice\Api\Response\Standard;
+use BlueSpice\UtilityFactory;
+
 /**
  * Api base class for simple tasks in BlueSpice
  * @package BlueSpice_Foundation
  */
-abstract class BSApiTasksBase extends BSApiBase {
+abstract class BSApiTasksBase extends \BlueSpice\Api {
+
+	/**
+	 *
+	 * @var \Wikimedia\Rdbms\IDatabase;
+	 */
+	protected $mMasterDB = null;
 
 	/**
 	 * This is the default log the API writes to. It needs to be registered
@@ -86,25 +99,42 @@ abstract class BSApiTasksBase extends BSApiBase {
 	protected $oTasksSpec = null;
 
 	/**
+	 *
+	 * @var UtilityFactory
+	 */
+	protected $utilityFactory = null;
+
+	/**
+	 * DEPRECATED!
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName Name of this module
 	 * @param string $modulePrefix Prefix to use for parameter names
+	 * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
+	 * the TaskRegistry in extension.json to be able to call your task in the new
+	 * generic task api BlueSpice\Api\Task with 'bs-task'
 	 */
 	public function __construct( \ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		$this->oTasksSpec = new BSTasksApiSpec( $this->aTasks );
+		$this->utilityFactory = $this->getServices()->getBSUtilityFactory();
 		parent::__construct( $mainModule, $moduleName, $modulePrefix );
 	}
 
 	/**
+	 * DEPRECATED!
 	 * The execute() method will be invoked directly by ApiMain immediately
 	 * before the result of the module is output. Aside from the
 	 * constructor, implementations should assume that no other methods
 	 * will be called externally on the module before the result is
 	 * processed.
+	 * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
+	 * the TaskRegistry in extension.json to be able to call your task in the new
+	 * generic task api BlueSpice\Api\Task with 'bs-task'
 	 * @return null
 	 */
 	public function execute() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$aParams = $this->extractRequestParams();
 
 		/**
@@ -117,7 +147,6 @@ abstract class BSApiTasksBase extends BSApiBase {
 		if ( isset( $aParams['examples'] ) ) {
 			return $this->returnTaskDataExamples( $aParams['task'] );
 		}
-		$this->initContext();
 
 		// Avoid API warning: register the parameter used to bust browser cache
 		$this->getMain()->getVal( '_' );
@@ -131,11 +160,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 		} else {
 			$res = $this->checkTaskPermission( $sTask );
 			if ( !$res ) {
-				if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-					$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
-				} else {
-					$this->dieUsageMsg( 'badaccess-groups' );
-				}
+				$this->dieWithPermissionError();
 			}
 			if ( wfReadOnly() && !in_array( $sTask, $this->aReadTasks ) ) {
 				global $wgReadOnly;
@@ -143,6 +168,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 			} else {
 				$oTaskData = $this->getParameter( 'taskData' );
 				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', [ $this, $sTask, &$oTaskData , &$aParams ] );
+				$this->checkTaskPermissionsAgainstTaskDataTitles( $sTask, $oTaskData );
 
 				$oResult = $this->validateTaskData( $sTask, $oTaskData );
 				if ( empty( $oResult->errors ) && empty( $oResult->message ) ) {
@@ -184,7 +210,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 		}
 	}
 
-	// trigger data update flag after content change over api
+	/**
+	 * trigger data update flag after content change over api
+	 * @param Title|null $oTitle
+	 */
 	protected function runUpdates( $oTitle = null ) {
 		if ( $oTitle === null ) {
 			$oTitle = $this->getTitle();
@@ -200,10 +229,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 	/**
 	 * Standard return object
 	 * Every task should return this!
-	 * @return BSStandardAPIResponse
+	 * @return Standard
 	 */
 	protected function makeStandardReturn() {
-		return new BSStandardAPIResponse();
+		return new Standard();
 	}
 
 	/**
@@ -334,6 +363,15 @@ abstract class BSApiTasksBase extends BSApiBase {
 		];
 	}
 
+	/**
+	 * Using the settings determine the value for the given parameter
+	 *
+	 * @param string $paramName Parameter name
+	 * @param array|mixed $paramSettings Default value or an array of settings
+	 *  using PARAM_* constants.
+	 * @param bool $parseLimit Whether to parse and validate 'limit' parameters
+	 * @return mixed Parameter value
+	 */
 	protected function getParameterFromSettings( $paramName, $paramSettings, $parseLimit ) {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
@@ -347,21 +385,8 @@ abstract class BSApiTasksBase extends BSApiBase {
 	}
 
 	/**
-	 * Returns the basic param descriptions
-	 * @return array
-	 */
-	public function getParamDescription() {
-		return [
-			'task' => 'The task that should be executed',
-			'taskData' => 'JSON string encoded object with arbitrary data for the task',
-			'context' => 'JSON string encoded object with context data for the task',
-			'format' => 'The format of the result',
-		];
-	}
-
-	/**
 	 * Returns the basic description for this module
-	 * @return type
+	 * @return array
 	 */
 	public function getDescription() {
 		return [
@@ -371,7 +396,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 	/**
 	 * Returns the basic example
-	 * @return type
+	 * @return array
 	 */
 	public function getExamples() {
 		$aTaskNames = $this->oTasksSpec->getTaskNames();
@@ -383,21 +408,18 @@ abstract class BSApiTasksBase extends BSApiBase {
 	/**
 	 *
 	 * @param string $sTask
-	 * @return boolean null if requested task not in list
+	 * @return mixed bool|null if requested task not in list
 	 * true if allowed
 	 * false if not found in permission table of current user -> set in permission manager, group based
 	 */
 	public function checkTaskPermission( $sTask ) {
-		$aTaskPermissions = array_merge(
-		  $this->getRequiredTaskPermissions(),
-		  $this->getGlobalRequiredTaskPermissions()
-		);
+		$taskPermissions = $this->getTaskPermissions( $sTask );
 
-		if ( empty( $aTaskPermissions[$sTask] ) ) {
-			return;
+		if ( empty( $taskPermissions ) ) {
+			return null;
 		}
 		// lookup permission for given task
-		foreach ( $aTaskPermissions[$sTask] as $sPermission ) {
+		foreach ( $taskPermissions as $sPermission ) {
 			// check if user have needed permission
 			if ( $this->getUser()->isAllowed( $sPermission ) ) {
 				continue;
@@ -470,20 +492,6 @@ abstract class BSApiTasksBase extends BSApiBase {
 	}
 
 	/**
-	 * Initializes the context of the API call
-	 */
-	public function initContext() {
-		$this->oExtendedContext = BSExtendedApiContext::newFromRequest( $this->getRequest() );
-		$this->getContext()->setTitle( $this->oExtendedContext->getTitle() );
-		if ( $this->getTitle()->getArticleID() > 0 ) {
-			// TODO: Check for subtypes like WikiFilePage or WikiCategoryPage
-			$this->getContext()->setWikiPage(
-				WikiPage::factory( $this->getTitle() )
-			);
-		}
-	}
-
-	/**
 	 * MediaWiki initializes all calls to 'api.php' with a Title of 'API'.
 	 * By setting the Title object that is provided by our own context
 	 * source (the client, e.g. in 'bluespice.api.js/_getContext') we
@@ -512,6 +520,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 
 	/**
 	 * @see BSApiTasksBase::getWikiPage
+	 * @return bool
 	 */
 	public function canUseWikiPage() {
 		if ( $this->getWikiPage() === null ) {
@@ -520,7 +529,7 @@ abstract class BSApiTasksBase extends BSApiBase {
 		return parent::canUseWikiPage();
 	}
 
-	/*
+	/**
 	 * Set to false for all read modules
 	 *
 	 * @return bool
@@ -553,6 +562,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function makeTaskHelpMessages() {
 		$aMessages = [];
 		$aUrlParams = [
@@ -582,6 +595,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 		return $aMessages;
 	}
 
+	/**
+	 *
+	 * @param string $sTaskName
+	 */
 	protected function returnTaskDataSchema( $sTaskName ) {
 		$this->getResult()->addValue(
 			null,
@@ -590,6 +607,10 @@ abstract class BSApiTasksBase extends BSApiBase {
 		);
 	}
 
+	/**
+	 *
+	 * @param string $sTaskName
+	 */
 	protected function returnTaskDataExamples( $sTaskName ) {
 		$this->getResult()->addValue(
 			null,
@@ -616,4 +637,52 @@ abstract class BSApiTasksBase extends BSApiBase {
 	protected function isTaskDataExamplesCall() {
 		return $this->getRequest()->getVal( 'examples', null ) !== null;
 	}
+
+	/**
+	 * Gets a default master DB connection object
+	 * @return IDatabase
+	 */
+	protected function getDB() {
+		if ( !isset( $this->mMasterDB ) ) {
+			$this->mMasterDB = wfGetDB( DB_MASTER, 'api' );
+		}
+
+		return $this->mMasterDB;
+	}
+
+	protected function dieWithPermissionError() {
+		if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+			$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
+		} else {
+			$this->dieUsageMsg( 'badaccess-groups' );
+		}
+	}
+
+	/**
+	 *
+	 * @param string $task
+	 * @param stdClass $taskData
+	 */
+	protected function checkTaskPermissionsAgainstTaskDataTitles( $task, $taskData ) {
+		$titleParamResolver = $this->utilityFactory->getTitleParamsResolver( (array)$taskData );
+		$titlesToTest = $titleParamResolver->resolve();
+		$permissionsToTest = $this->getTaskPermissions( $task );
+		foreach ( $titlesToTest as $title ) {
+			foreach ( $permissionsToTest as $permission ) {
+				if ( !$title->userCan( $permission, $this->getUser() ) ) {
+					$this->dieWithPermissionError();
+				}
+			}
+		}
+	}
+
+	private function getTaskPermissions( $task ) {
+		$taskPermissions = array_merge(
+			$this->getRequiredTaskPermissions(),
+			$this->getGlobalRequiredTaskPermissions()
+		);
+
+		return $taskPermissions[$task];
+	}
+
 }

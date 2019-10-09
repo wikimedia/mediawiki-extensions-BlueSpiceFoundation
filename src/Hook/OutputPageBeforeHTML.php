@@ -44,9 +44,9 @@ abstract class OutputPageBeforeHTML extends Hook {
 
 	/**
 	 *
-	 * @param \OutputPage $out
-	 * @param string $text
-	 * @return boolean
+	 * @param \OutputPage &$out
+	 * @param string &$text
+	 * @return bool
 	 */
 	public static function callback( &$out, &$text ) {
 		$className = static::class;
@@ -63,8 +63,8 @@ abstract class OutputPageBeforeHTML extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \OutputPage $out
-	 * @param string $text
+	 * @param \OutputPage &$out
+	 * @param string &$text
 	 */
 	public function __construct( $context, $config, &$out, &$text ) {
 		parent::__construct( $context, $config );

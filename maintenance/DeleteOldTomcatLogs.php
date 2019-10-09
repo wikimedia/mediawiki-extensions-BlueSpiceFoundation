@@ -36,6 +36,11 @@ function showHelp() {
 	echo( " --execute : realy delete logs \n\n" );
 }
 
+/**
+ *
+ * @param bool $bDry
+ * @param array $options
+ */
 function deleteOldTomcatLogs( $bDry, $options ) {
 	// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
 	if ( $handle = opendir( $options['logdir'] ) ) {

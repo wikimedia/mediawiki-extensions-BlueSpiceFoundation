@@ -4,12 +4,16 @@ namespace BlueSpice\Hook\BeforePageDisplay;
 
 class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->addModuleStyles();
 		$this->overwriteGlobals();
 		$this->addModules();
 		$this->addJSConfigVars();
 		$this->addLegacyJSConfigVars();
+		return true;
 	}
 
 	protected function overwriteGlobals() {
@@ -55,14 +59,14 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 			$this->out->addJsConfigVars( "bsg$name", $config );
 		}
 
-		$this->addLecagyJSConfigVarNames( $configs );
+		$this->addLegacyJSConfigVarNames( $configs );
 	}
 
 	/**
 	 * Old var names "bs<Config>" are still heavily in use
 	 * @param array $configs
 	 */
-	protected function addLecagyJSConfigVarNames( $configs ) {
+	protected function addLegacyJSConfigVarNames( $configs ) {
 		foreach ( $configs as $name => $config ) {
 			$this->out->addJsConfigVars( "bs$name", $config );
 		}
@@ -111,6 +115,10 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 		);
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function getArticlePreviewCaptureNotDefault() {
 		$extRegistry = \ExtensionRegistry::getInstance();
 		$modules = $extRegistry->getAttribute(

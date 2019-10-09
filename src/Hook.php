@@ -29,7 +29,7 @@ namespace BlueSpice;
 use MessageLocalizer;
 use Message;
 
-abstract class Hook implements MessageLocalizer {
+abstract class Hook implements MessageLocalizer, IServiceProvider {
 
 	/**
 	 *
@@ -90,7 +90,7 @@ abstract class Hook implements MessageLocalizer {
 	 *
 	 * @return Services
 	 */
-	protected function getServices() {
+	public function getServices() {
 		return Services::getInstance();
 	}
 
@@ -133,7 +133,7 @@ abstract class Hook implements MessageLocalizer {
 
 	/**
 	 * Allow subclasses to define a skip condition
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function skipProcessing() {
 		return false;
@@ -141,7 +141,7 @@ abstract class Hook implements MessageLocalizer {
 
 	/**
 	 * Convenience method for subclasses
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function skipProcessingForAnon() {
 		return false;
@@ -149,7 +149,7 @@ abstract class Hook implements MessageLocalizer {
 
 	/**
 	 * Convenience method for subclasses
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function skipProcessingForSpecialPages() {
 		return false;

@@ -48,7 +48,7 @@ abstract class ArticleContentOnDiff extends Hook {
 	 *
 	 * @param \DiffEngine $diffEngine
 	 * @param \OutputPage $output
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $diffEngine, $output ) {
 		$className = static::class;

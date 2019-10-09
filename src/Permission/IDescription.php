@@ -4,8 +4,8 @@ namespace BlueSpice\Permission;
 
 interface IDescription {
 	/**
-	 * @param string
-	 * @param array
+	 * @param string $name
+	 * @param array $config
 	 */
 	public function __construct( $name, $config );
 
@@ -35,7 +35,7 @@ interface IDescription {
 	public function getRoles();
 
 	/**
-	 * @param string
+	 * @param string $name
 	 * @return mixed
 	 */
 	public function getProperty( $name );

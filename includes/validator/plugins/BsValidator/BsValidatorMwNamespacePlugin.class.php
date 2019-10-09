@@ -1,7 +1,20 @@
 <?php
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.1 - Use ParamProcessor instead
+ */
 class BsValidatorMwNamespacePlugin implements BsValidatorPlugin {
+
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.1 - Use ParamProcessor instead
+	 * @param mixed $mwNamespace the value to be checked against
+	 * @param array $options
+	 * @return BsValidatorResponse If type is not BsValidatorResponse an error is thrown
+	 */
 	public static function isValid( $mwNamespace, $options ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( strlen( $mwNamespace ) > 16 ) {
 			return new BsValidatorResponse( 1, 'NamespaceManager', 'mw_ns_2long' );
 		}

@@ -25,8 +25,16 @@ Ext.define( 'BS.panel.BatchActions', {
 					}
 				]
 			},
+			plugins: [
+				new Ext.grid.plugin.RowExpander( {
+					rowBodyTpl: new Ext.XTemplate(
+							'<tpl for="errors">',
+							'<p>{#} {message}</p>',
+							'</tpl>' )
+				} )
+			],
 			store: new Ext.data.JsonStore({
-				fields: ['description', 'state' ]
+				fields: ['description', 'state', 'errors']
 			})
 		});
 
@@ -59,7 +67,8 @@ Ext.define( 'BS.panel.BatchActions', {
 
 			storeData.push({
 				description: data[i].getDescription(),
-				state: data[i].getStatusText()
+				state: data[i].getStatusText(),
+				errors: []
 			});
 		}
 
@@ -87,6 +96,7 @@ Ext.define( 'BS.panel.BatchActions', {
 		var promise = this.currentActions[index].execute();
 		var record = me.gdActions.getStore().getAt( index );
 		record.set( 'state', me.currentActions[index].getStatusText() );
+		record.set( 'errors', me.currentActions[index].getErrors() );
 		promise.done(function() {
 			me.actionComplete( index, record );
 		})
@@ -103,6 +113,7 @@ Ext.define( 'BS.panel.BatchActions', {
 
 	actionComplete: function( index, record ) {
 		record.set( 'state', this.currentActions[index].getStatusText() );
+		record.set( 'errors', this.currentActions[index].getErrors() );
 		var progress = (index + 1) / this.currentActions.length;
 		this.fireEvent( 'actioncomplete', this, progress );
 		this.pbActions.updateProgress(

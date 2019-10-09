@@ -5,6 +5,10 @@ require_once getenv( 'MW_INSTALL_PATH' ) !== false
 	: __DIR__ . '/../../../maintenance/Maintenance.php';
 
 abstract class BSMaintenance extends Maintenance {
+	/**
+	 *
+	 * @var array
+	 */
 	protected $aOutputBuffer = [];
 
 	public function __construct() {
@@ -18,8 +22,8 @@ abstract class BSMaintenance extends Maintenance {
 	 * this for non-error output
 	 *
 	 * BSMaintenance: Public to allow hook callbacks to write output.
-	 * @param $err String: the error to display
-	 * @param $die Int: if > 0, go ahead and die out using this int as the code
+	 * @param string $err String: the error to display
+	 * @param int $die Int: if > 0, go ahead and die out using this int as the code
 	 */
 	public function error( $err, $die = 0 ) {
 		$this->appendOutputBuffer( $err . "\n", $die );
@@ -32,8 +36,8 @@ abstract class BSMaintenance extends Maintenance {
 	 *
 	 * BSMaintenance: Public to allow hook callbacks to write output.
 	 * Adds a line break.
-	 * @param $out String: the text to show to the user
-	 * @param $channel Mixed: unique identifier for the channel. See
+	 * @param string $out String: the text to show to the user
+	 * @param mixed|null $channel Mixed: unique identifier for the channel. See
 	 *     function outputChanneled.
 	 */
 	public function output( $out, $channel = null ) {

@@ -157,6 +157,11 @@ class BSMassEditBase extends BSMaintenance {
 		return $aMatches[0];
 	}
 
+	/**
+	 *
+	 * @param string $sContent
+	 * @param string $sNewContent
+	 */
 	protected function outputDiff( $sContent, $sNewContent ) {
 		$oDiff = new Diff(
 			explode( "\n", $sContent ),
@@ -171,6 +176,10 @@ class BSMassEditBase extends BSMaintenance {
 		}
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function isVerbose() {
 		return (bool)$this->getOption( 'verbose', false );
 	}

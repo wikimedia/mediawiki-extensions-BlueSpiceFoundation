@@ -8,7 +8,7 @@ class Numeric extends Range {
 	 * dataset
 	 *
 	 * @param \BlueSpice\Data\Record $dataSet
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doesMatch( $dataSet ) {
 		if ( !is_numeric( $this->getValue() ) ) {

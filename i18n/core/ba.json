@@ -53,5 +53,6 @@
 	"bs-pref-deleteduserimage": "Алыҫтағы ҡатнашыусыны аватары:",
 	"bs-pref-bspinginterval": "Пинг интервалы (секундтарҙа):",
 	"bs-pref-testmode": "Тест режимын индереү",
-	"right-wikiadmin": "BlueSpice хакимиәте битен күрһәтергә"
+	"right-wikiadmin": "BlueSpice хакимиәте битен күрһәтергә",
+	"action-wikiadmin": "BlueSpice хакимиәте битен күрһәтергә"
 }

@@ -30,7 +30,7 @@
  * @filesource
  */
 // TODO SU (27.06.11 14:46): Core contaminations entfernen (evtl. hookähnliches methoden in jeweiligen adapter implementieren)
-
+// phpcs:ignoreFile
 /**
  * the BsConfig class
  *

@@ -34,15 +34,24 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param \Wikimedia\Rdbms\IDatabase $db
+	 * @var array
 	 */
-	public function __construct( $db ) {
+	protected $namespaceWhitelist = [];
+
+	/**
+	 *
+	 * @param \Wikimedia\Rdbms\IDatabase $db
+	 * @param int[] $namespaceWhitelist
+	 */
+	public function __construct( $db, $namespaceWhitelist ) {
 		$this->db = $db;
+		$this->namespaceWhitelist = $namespaceWhitelist;
 	}
 
 	/**
 	 *
 	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @return Record[]
 	 */
 	public function makeData( $params ) {
 		$res = $this->db->select(
@@ -81,10 +90,15 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		if ( $userIdFilter instanceof Filter ) {
 			$conds['wl_user'] = $userIdFilter->getValue();
 		}
+		$conds['wl_namespace'] = array_values( $this->namespaceWhitelist );
 
 		return $conds;
 	}
 
+	/**
+	 *
+	 * @param \stdClass $row
+	 */
 	protected function appendRowToData( $row ) {
 		$title = \Title::makeTitle( $row->wl_namespace, $row->wl_title );
 

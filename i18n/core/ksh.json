@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Hwboehm"
 		]
 	},
 	"bs-ns_main": "(Sigge)",
@@ -53,12 +54,13 @@
 	"bs-navigation-contact": "Kuntak",
 	"bs-imagepage-download-text": "Eronger lahde",
 	"bs-ns": "Appachtemang",
-	"bs-from-something": "(us/vun/fröhjer/uew. $1)\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Bs-from-something/ksh\n-->",
+	"bs-from-something": "(vun $1)",
 	"bs-pref-fileextensions": "Zohjelohße Ändonge vun de Dateinahme:",
 	"bs-pref-imageextensions": "Zohjelohße Ändonge vun de Dateinahme för Bellder:",
 	"bs-parser-error-invalid-title": "Di Övverschreff för di Sigg jeiht nit: $1",
 	"bs-validator-error-namespace-does-not-exist": "Dadd Appachtemang jidd_et nit: $1",
 	"bs-validator-error-title-does-not-exist": "Di Sigg jidd_et nit: $1",
 	"bs-bluespice": "<i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"„Blou Jewöhz“\">Blue-Spice</i>",
-	"right-wikiadmin": "Sigge för et Verwallde vun  BlueSpice aanzeije"
+	"right-wikiadmin": "Sigge för et Verwallde vun  BlueSpice aanzeije",
+	"action-wikiadmin": "Sigge för et Verwallde vun  BlueSpice aanzeije"
 }

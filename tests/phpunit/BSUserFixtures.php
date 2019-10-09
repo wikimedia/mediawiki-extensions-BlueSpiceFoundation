@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Tests;
 
-use BlueSpice\Tests\BSUserFixturesProvider;
-
 class BSUserFixtures {
 
 	/**
@@ -48,6 +46,11 @@ class BSUserFixtures {
 		return $users;
 	}
 
+	/**
+	 *
+	 * @param string $userName
+	 * @return string
+	 */
 	protected function makeKey( $userName ) {
 		return "bs-user-" . strtolower( $userName );
 	}

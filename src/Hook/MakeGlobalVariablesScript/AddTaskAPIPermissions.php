@@ -33,7 +33,7 @@ class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 	 * }
 	 * example to get value in js (don't forget to catch unavailable values):
 	 * mw.config.get( 'bsgTaskAPIPermissions' ).interwikilinks.editInterWikiLink //true;
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doProcess() {
 		$taskPermissions = [];

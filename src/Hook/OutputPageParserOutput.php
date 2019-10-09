@@ -48,7 +48,7 @@ abstract class OutputPageParserOutput extends Hook {
 	 *
 	 * @param OutputPage $out
 	 * @param ParserOutput $parserOutput
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( $out, $parserOutput ) {
 		$className = static::class;

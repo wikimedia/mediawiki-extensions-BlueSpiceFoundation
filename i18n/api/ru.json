@@ -6,18 +6,35 @@
 			"Alexey zakharenkov",
 			"Facenapalm",
 			"Happy13241",
-			"Vlad5250"
+			"Vlad5250",
+			"Alexandr Efremov",
+			"Romanko Mikhail",
+			"DmitTrix",
+			"Movses",
+			"INS Pirat",
+			"Radmir Far"
 		]
 	},
+	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",
 	"apihelp-bs-store-param-dc": "Флаг <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "Формат вывода (только JSON или форматированный JSON)",
-	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с данными контекста для хранилища",
+	"apihelp-bs-store-param-context": "JSON-строковый кодированный объект с контекстными данными для хранилища",
+	"apihelp-bs-task-param-format": "Формат результата",
 	"bs-wikipage-tasks-error-contentmodel": "Эта задача не может быть выполнена с использованием модели содержания данной страницы.",
+	"bs-wikipage-tasks-error-page-not-valid": "Предоставленная страница недействительна.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Измененные категории.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Список опций",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Вам не разрешено редактировать страницу \"$1\".",
+	"bs-wikipage-tasks-error-nothingtoremove": "Нет категорий для удаления",
+	"bs-api-task-taskdata-help": "[$1 схема], [$2 примеры параметров]",
 	"apihelp-bs-task-param-schema": "Показывает JSON-схему для параметров задачи",
 	"apihelp-bs-task-param-examples": "Показать примеры параметров задачи",
 	"bs-api-task-taskData-page-id": "Идентификатор существующей вики-страницы",
 	"bs-api-task-taskData-page-title": "Допустимое название вики-страницы",
 	"bs-api-task-wikipagetasks-taskData-categories": "Массив строк. Значения должны быть допустимыми именами категорий.",
-	"apihelp-bs-recentchanges-store-summary": "Перечисляет все недавние правки. Разрешает сортировку, фильтр и разбиение на страницы. Реализовывает параметры хранения."
+	"apihelp-bs-recentchanges-store-summary": "Перечисляет все недавние правки. Разрешает сортировку, фильтр и разбиение на страницы. Реализовывает параметры хранения.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Неправильная категория|Неправильные категории}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Категории успешно заданы.",
+	"apihelp-bs-task-param-token": "Для доступа к модулю API нужен токен"
 }

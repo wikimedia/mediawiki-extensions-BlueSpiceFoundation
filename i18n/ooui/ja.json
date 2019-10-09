@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"bs-ooui-key-value-input-widget-key-label": "キー",
+	"bs-ooui-key-value-input-widget-value-label": "値",
+	"bs-ooui-key-value-input-widget-add-button-label": "追加"
+}

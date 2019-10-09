@@ -61,6 +61,7 @@
 	"bs-navigation-contact": "연락하기",
 	"bs-imagepage-download-text": "다운로드",
 	"bs-ns": "이름공간",
+	"bs-from-something": "($1에서)",
 	"bs-pref-fileextensions": "허가된 파일 확장자:",
 	"bs-pref-imageextensions": "허가된 이메일 확장자:",
 	"bs-pref-logopath": "로고 경로:",
@@ -69,6 +70,12 @@
 	"bs-pref-anonuserimage": "익명 사용자 아바타:",
 	"bs-pref-deleteduserimage": "삭제된 사용자 아바타:",
 	"bs-pref-bspinginterval": "핑 간격 (초):",
+	"bs-parser-error-invalid-namespace": "유효하지 않은 이름공간: $1",
+	"bs-parser-error-invalid-title": "유효하지 않은 제목: $1",
+	"bs-validator-error-namespace-does-not-exist": "이름공간이 존재하지 않습니다: $1",
+	"bs-validator-error-namespace-on-blacklist": "이름공간이 허용되지 않습니다: $1",
+	"bs-validator-error-title-does-not-exist": "문서가 존재하지 않습니다: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "문서가 허용되지 않습니다: $1",
 	"bs-parser-error-invalid-category-title": "문서는 유효하지 않은 분류입니다: $1",
 	"bs-exttype-bluespice": "BlueSpice 확장 기능",
 	"bs-export-menu-print-text": "인쇄",
@@ -77,5 +84,8 @@
 	"bs-graphicallist-action-list": "목록",
 	"bs-graphicallist-action-preview": "미리 보기",
 	"bs-bluespice-mediawiki": "블루스파이스 미디어위키",
-	"bs-notifications-agent-anon": "익명 사용자"
+	"bs-notifications-agent-anon": "익명 사용자",
+	"bs-pref-miniprofileenforceheight": "사용자 아바타의 높이 강제 설정",
+	"bs-pref-testmode": "테스트 모드 활성화",
+	"protect-level-editor": "편집자와 관리자만 허용"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Bengtsson96"
+			"Bengtsson96",
+			"Mjälten"
 		]
 	},
 	"apihelp-bs-user-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
@@ -33,5 +34,9 @@
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parameterexempel]",
 	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn.",
-	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar."
+	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar.",
+	"apihelp-bs-task-param-task": "Uppgiften som bör utföras",
+	"apihelp-bs-task-param-taskdata": "JSON-sträng-kodat objekt med godtycklig data för uppgiften",
+	"bs-wikipage-tasks-error-page-not-valid": "Den angivna sidan är inte giltig.",
+	"apihelp-bs-task-param-examples": "Visa exempel med task parameters"
 }

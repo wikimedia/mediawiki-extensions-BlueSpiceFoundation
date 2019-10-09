@@ -33,7 +33,7 @@ class BSExtendedApiContext {
 	protected $aRawContextData = [];
 
 	/**
-	 * @param $oRequest WebRequest
+	 * @param WebRequest|null $oRequest
 	 * @return BSExtendedApiContext
 	 */
 	public static function newFromRequest( $oRequest = null ) {
@@ -103,7 +103,7 @@ class BSExtendedApiContext {
 
 	/**
 	 * Whether the context Title is a SpecialPage
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isSpecialPage() {
 		return $this->oTitle->isSpecialPage();

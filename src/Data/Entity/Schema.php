@@ -3,23 +3,33 @@
 namespace BlueSpice\Data\Entity;
 
 use MediaWiki\MediaWikiServices;
-use BlueSpice\EntityConfig;
 use BlueSpice\Data\FieldType;
+use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\EntityConfig;
 
 class Schema extends \BlueSpice\Data\Schema {
 	const STORABLE = 'storeable';
 	const INDEXABLE = 'indexable';
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getDefaultFieldDefinition() {
 		return [
-			self::FILTERABLE => true,
-			self::SORTABLE => true,
-			self::TYPE => FieldType::STRING,
-			self::STORABLE => true,
-			self::INDEXABLE => true,
+			static::FILTERABLE => true,
+			static::SORTABLE => true,
+			static::TYPE => FieldType::STRING,
+			static::STORABLE => true,
+			static::INDEXABLE => true,
 		];
 	}
 
+	/**
+	 *
+	 * @param array $fieldDefinition
+	 * @return array
+	 */
 	protected function fillMissingWithDefaults( $fieldDefinition ) {
 		foreach ( $this->getDefaultFieldDefinition() as $key => $defaultVal ) {
 			if ( array_key_exists( $key, $fieldDefinition ) ) {
@@ -32,17 +42,17 @@ class Schema extends \BlueSpice\Data\Schema {
 
 	/**
 	 *
-	 * @return \BlueSpice\Social\EntityConfig[]
+	 * @return EntityConfig[]
 	 */
 	protected function getEntityConfigs() {
 		$entityConfigs = [];
-		$entityRegistry = MediaWikiServices::getInstance()->getService(
-			'BSEntityRegistry'
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationEntityRegistry'
 		);
 		$configFactory = MediaWikiServices::getInstance()->getService(
 			'BSEntityConfigFactory'
 		);
-		foreach ( $entityRegistry->getTypes() as $type ) {
+		foreach ( $registry->getAllKeys() as $type ) {
 			$entityConfig = $configFactory->newFromType( $type );
 			if ( !$entityConfig ) {
 				continue;
@@ -70,27 +80,27 @@ class Schema extends \BlueSpice\Data\Schema {
 	 * @return string[]
 	 */
 	public function getIndexableFields() {
-		return $this->filterFields( self::INDEXABLE, true );
+		return $this->filterFields( static::INDEXABLE, true );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getStorableFields() {
-		return $this->filterFields( self::STORABLE, true );
+		return $this->filterFields( static::STORABLE, true );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getUnindexableFields() {
-		return $this->filterFields( self::INDEXABLE, false );
+		return $this->filterFields( static::INDEXABLE, false );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getUnstorableFields() {
-		return $this->filterFields( self::STORABLE, false );
+		return $this->filterFields( static::STORABLE, false );
 	}
 }

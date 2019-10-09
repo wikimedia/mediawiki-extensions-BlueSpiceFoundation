@@ -4,5 +4,12 @@
 			"Mirzali"
 		]
 	},
-	"bs-filerepo-headerpagecategories": "Kategoriyi"
+	"bs-filerepo-labelupload": "Bar ke",
+	"bs-filerepo-labelfilter": "Parzûn",
+	"bs-filerepo-headerpagecategories": "Kategoriyi",
+	"bs-filerepo-headerfiletimestamp": "Bar biyo",
+	"bs-filerepo-headerfiledescription": "Şınasnayış",
+	"bs-filerepo-yes": "Eya",
+	"bs-filerepo-no": "Nê",
+	"bs-filerepo-headerfilethumbnail": "Resımo qıckek"
 }

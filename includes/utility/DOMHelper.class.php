@@ -166,7 +166,7 @@ class BsDOMHelper {
 	/**
 	 * Tries to remove a DOMElement from the DOM tree.
 	 * @param DOMElement $oEl
-	 * @return boolean true on success, false if the operation could not be
+	 * @return bool true on success, false if the operation could not be
 	 * performed
 	 */
 	public static function removeElement( $oEl ) {

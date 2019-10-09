@@ -66,7 +66,6 @@ class ViewUserMiniProfile extends ViewBaseElement {
 	 * @return null
 	 */
 	public function init( $bReInit = false ) {
-		global $wgUrlProtocols;
 		if ( $this->bIsInit == true && $bReInit == false ) {
 			return;
 		}
@@ -104,14 +103,26 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$this->bIsInit = true;
 	}
 
+	/**
+	 *
+	 * @param string $sSrc
+	 */
 	public function setUserImageSrc( $sSrc ) {
 		$this->mOptions['userimagesrc'] = $sSrc;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getUserImageSrc() {
 		return $this->mOptions['userimagesrc'];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getOptions() {
 		return $this->mOptions;
 	}

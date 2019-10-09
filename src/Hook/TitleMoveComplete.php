@@ -49,14 +49,14 @@ abstract class TitleMoveComplete extends Hook {
 
 	/**
 	 *
-	 * @param \Title $title
-	 * @param \Title $newTitle
+	 * @param \Title &$title
+	 * @param \Title &$newTitle
 	 * @param \User $user
 	 * @param int $oldid
 	 * @param int $newid
 	 * @param string $reason
 	 * @param \Revision $revision
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function callback( &$title, &$newTitle, $user, $oldid, $newid, $reason, $revision ) {
 		$className = static::class;
@@ -78,8 +78,8 @@ abstract class TitleMoveComplete extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \Title $title
-	 * @param \Title $newTitle
+	 * @param \Title &$title
+	 * @param \Title &$newTitle
 	 * @param \User $user
 	 * @param int $oldid
 	 * @param int $newid

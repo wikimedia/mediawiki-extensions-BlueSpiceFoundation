@@ -45,8 +45,8 @@ abstract class GetPreferences extends Hook {
 	/**
 	 *
 	 * @param \User $user
-	 * @param array $preferences
-	 * @return boolean
+	 * @param array &$preferences
+	 * @return bool
 	 */
 	public static function callback( $user, &$preferences ) {
 		$className = static::class;
@@ -64,9 +64,9 @@ abstract class GetPreferences extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \User $user
-	 * @param array $preferences
+	 * @param array &$preferences
 	 */
-	public function __construct( $context, $config, &$user, &$preferences ) {
+	public function __construct( $context, $config, $user, &$preferences ) {
 		parent::__construct( $context, $config );
 
 		$this->user = $user;

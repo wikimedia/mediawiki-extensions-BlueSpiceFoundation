@@ -1,4 +1,5 @@
 <?php
+// phpcs:ignoreFile
 $iconSet = isset( $_GET['icons'] ) ? $_GET['icons'] : 'bluespice';
 switch ( $iconSet ) {
 	case 'icomoon':

@@ -66,6 +66,33 @@ class ServicesDecorator extends ServiceContainer {
 	}
 
 	/**
+	 * Returns true if a service is defined for $name, that is, if a call to getService( $name )
+	 * would return a service instance.
+	 *
+	 * @param string $name
+	 *
+	 * @return bool
+	 */
+	public function hasService( $name ) {
+		return MediaWikiServices::getInstance()->hasService( $name );
+	}
+
+	 /**
+	  * Returns true if the container can return an entry for the given identifier.
+	  * Returns false otherwise.
+	  *
+	  * `has($id)` returning true does not mean that `get($id)` will not throw an exception.
+	  * It does however mean that `get($id)` will not throw a `NotFoundExceptionInterface`.
+	  *
+	  * @param string $name Identifier of the entry to look for.
+	  *
+	  * @return bool
+	  */
+	public function has( $name ) {
+		return MediaWikiServices::getInstance()->has( $name );
+	}
+
+	/**
 	 * Returns the Config object containing the bootstrap configuration.
 	 * Bootstrap configuration would typically include database credentials
 	 * and other information that may be needed before the ConfigFactory

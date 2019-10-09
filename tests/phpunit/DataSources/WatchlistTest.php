@@ -27,6 +27,9 @@ class WatchlistTest extends \MediaWikiTestCase {
 			[ 1, 1, 'Test B', '19700101000000' ],
 			[ 1, 0, 'Test C', null ],
 			[ 1, 0, 'Test D', null ],
+			[ 1, 0, 'Test E', null ],
+			[ 1, 0, 'Test F', null ],
+			[ 1, 0, 'Test G', null ],
 			[ 2, 0, 'Test A', null ],
 			[ 2, 1, 'Test A', null ],
 			[ 2, 0, 'Test B', null ]

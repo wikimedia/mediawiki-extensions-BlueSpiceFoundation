@@ -1,8 +1,12 @@
 <?php
 namespace BlueSpice\Renderer;
 
+use Config;
+use IContextSource;
+use User;
+use RequestContext;
+use BlueSpice\Utility\CacheHelper;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\Params;
 use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage;
 use BlueSpice\Services;
@@ -19,16 +23,32 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 	protected $user = null;
 
 	/**
-	 * Constructor
+	 *
+	 * @param Config $config
+	 * @param Params $params
+	 * @param LinkRenderer|null $linkRenderer
+	 * @param IContextSource|null $context
+	 * @param string | '' $name
+	 * @param CacheHelper|null $cacheHelper
 	 */
-	public function __construct( \Config $config, Params $params, LinkRenderer $linkRenderer = null ) {
-		parent::__construct( $config, $params, $linkRenderer );
+	public function __construct( Config $config, Params $params,
+		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		$name = '', CacheHelper $cacheHelper = null ) {
+		parent::__construct(
+			$config,
+			$params,
+			$linkRenderer,
+			$context,
+			$name,
+			$cacheHelper
+		);
+
 		$this->user = $params->get(
 			static::PARAM_USER,
-			\RequestContext::getMain()->getUser()
+			RequestContext::getMain()->getUser()
 		);
-		if ( !$this->user instanceof \User ) {
-			$this->user = \RequestContext::getMain()->getUser();
+		if ( !$this->user instanceof User ) {
+			$this->user = RequestContext::getMain()->getUser();
 		}
 		$this->args[static::PARAM_WIDTH] = $params->get(
 			static::PARAM_WIDTH,
@@ -57,7 +77,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 
 	/**
 	 *
-	 * @return \User
+	 * @return User
 	 */
 	public function getUser() {
 		return $this->user;
@@ -71,6 +91,11 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		return "BlueSpiceFoundation.UserImage";
 	}
 
+	/**
+	 *
+	 * @param mixed $val
+	 * @return string
+	 */
 	protected function render_imagesrc( $val ) {
 		$params = [
 			DFDParams::MODULE => UserProfileImage::MODULE_NAME,
@@ -84,8 +109,12 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		return $dfdUrlBuilder->build( new DFDParams( $params ) );
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getCacheKey() {
-		return \BsCacheHelper::getCacheKey(
+		return $this->getCacheHelper()->getCacheKey(
 			'BSFoundation',
 			'TemplateRenderer',
 			'UserImage',

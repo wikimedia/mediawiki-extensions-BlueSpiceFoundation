@@ -8,7 +8,10 @@
 			"Mouse21",
 			"Meshkov.a",
 			"Shaleych",
-			"Vlad5250"
+			"Vlad5250",
+			"Diralik",
+			"DmitTrix",
+			"Dicto23456"
 		]
 	},
 	"bluespicefoundation-desc": "Делает MediaWiki готовой для предприятия",
@@ -80,10 +83,10 @@
 	"bs-pref-testmode": "Включить тестовый режим",
 	"bs-tag-input-desc": "Значение содержания элемента",
 	"bs-tag-param-desc": "Значение содержания элемента '$1'",
-	"bs-parser-error-invalid-namespace": "Недопустимое пространство имен: $1",
+	"bs-parser-error-invalid-namespace": "Недопустимое пространство имён: $1",
 	"bs-parser-error-invalid-title": "Недопустимое название: $1",
-	"bs-validator-error-namespace-does-not-exist": "Пространства имен не существует: $1",
-	"bs-validator-error-namespace-on-blacklist": "Пространства имен не разрешено: $1",
+	"bs-validator-error-namespace-does-not-exist": "Пространства имён не существует: $1",
+	"bs-validator-error-namespace-on-blacklist": "Пространства имён не разрешено: $1",
 	"bs-validator-error-title-does-not-exist": "Страницы не существует: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Страница не разрешена: $1",
 	"bs-parser-error-invalid-category-title": "Страница не в действительной категории: $1",
@@ -96,5 +99,8 @@
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Используется во многих расширениях BlueSpice для потенциально опасных административных задач, таких как управление пользователями, разрешениями и глобальная конфигурация",
-	"bs-notifications-agent-anon": "анонимный участник"
+	"bs-notifications-agent-anon": "анонимный участник",
+	"bs-lockdown-groups-permissionerror": "Действие \"$1\" невозможно выполнить по {{PLURAL:$2|следующей причине|следующим причинам}}: $3",
+	"action-wikiadmin": "используется во многих расширениях BlueSpice для потенциально опасных административных задач, таких как управление пользователями, разрешениями и глобальная конфигурация",
+	"protect-level-editor": "Разрешено только редакторам и администраторам"
 }

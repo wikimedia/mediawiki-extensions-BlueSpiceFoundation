@@ -27,8 +27,6 @@
  */
 namespace BlueSpice;
 
-use BlueSpice\Services;
-
 /**
  * UtilityFactory class for BlueSpice
  * @package BlueSpiceFoundation
@@ -51,10 +49,10 @@ class UtilityFactory {
 	/**
 	 *
 	 * @param array $params
-	 * @params \Title|null $default
+	 * @param \Title[] $default
 	 * @return \BlueSpice\Utility\TitleParamsResolver
 	 */
-	public function getTitleParamsResolver( $params, $default = null ) {
+	public function getTitleParamsResolver( $params, $default = [] ) {
 		return new \BlueSpice\Utility\TitleParamsResolver( $params, $default );
 	}
 
@@ -107,9 +105,17 @@ class UtilityFactory {
 	}
 
 	/**
+	 * @param \Title $title
 	 * @return \BlueSpice\Utility\PagePropHelper
 	 */
 	public function getPagePropHelper( \Title $title ) {
 		return new \BlueSpice\Utility\PagePropHelper( $this->services, $title );
+	}
+
+	/**
+	 * @return \BlueSpice\Utility\TemplateHelper
+	 */
+	public function getTemplateHelper() {
+		return new \BlueSpice\Utility\TemplateHelper( $this->services );
 	}
 }

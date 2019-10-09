@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mainframe98",
+			"Rots61"
+		]
+	},
+	"bs-setting-path-feature": "Functie",
+	"bs-setting-path-extension": "Uitbreiding",
+	"bs-setting-path-package": "Pakket",
+	"bs-setting-path-system": "Systeem",
+	"bs-setting-path-editor": "Bewerker",
+	"bs-setting-path-search": "Zoeken en Navigeren",
+	"bs-setting-path-personalisation": "Personalizatie",
+	"bs-setting-path-communication": "Communicatie",
+	"bs-setting-path-administration": "Beheer",
+	"bs-setting-path-export": "Exporteren"
+}

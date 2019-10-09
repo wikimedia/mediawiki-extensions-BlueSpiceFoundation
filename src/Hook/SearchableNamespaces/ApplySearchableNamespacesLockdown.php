@@ -11,7 +11,7 @@ class ApplySearchableNamespacesLockdown extends \BlueSpice\Hook\SearchableNamesp
 	 * Checks if current user has permissions
 	 * to search in particular namespace
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	protected function doProcess() {
 		$this->setUp();

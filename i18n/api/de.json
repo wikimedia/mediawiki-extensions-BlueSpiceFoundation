@@ -68,5 +68,7 @@
 	"bs-api-task-taskData-page-title": "Ein gültiger Titel einer Seite",
 	"bs-api-task-wikipagetasks-taskData-categories": "Anordnung von Zeichenfolgen. Werte müssen gültige Kategorienamen sein.",
 	"apihelp-bs-watchlist-store-summary": "Listet alle Beobachtungslisteneinträge auf. Erlaubt die Sortierung, Filterung und Nummerierung. Implementiert Speicherparameter.",
-	"apihelp-bs-recentchanges-store-summary": "Listet alle Letzten Änderungen auf. Erlaubt die Sortierung, Filterung und seitenweise Anzeige. Implementiert „Store“-Parameter."
+	"apihelp-bs-recentchanges-store-summary": "Listet alle Letzten Änderungen auf. Erlaubt die Sortierung, Filterung und seitenweise Anzeige. Implementiert „Store“-Parameter.",
+	"apihelp-bs-task-summary": "Stellt den API-Endpunkt zur Ausführung registrierter Aufgaben bereit",
+	"apihelp-bs-task-description": "Stellt den API-Endpunkt zur Ausführung registrierter Aufgaben bereit"
 }

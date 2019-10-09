@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Joetaras"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Aggiungi nuovo...",
@@ -9,5 +10,6 @@
 	"bs-ooui-key-value-input-widget-value-label": "Valore",
 	"bs-ooui-key-value-input-widget-add-button-label": "Aggiungi",
 	"bs-ooui-key-value-input-widget-error-message": "Tutti i campi obbligatori devono essere impostati!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Nessun valore impostato!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Nessun valore impostato!",
+	"bs-ooui-key-value-input-widget-add-form-label": "Aggiungi una nuova voce"
 }

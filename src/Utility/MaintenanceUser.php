@@ -30,7 +30,7 @@ class MaintenanceUser {
 	/**
 	 *
 	 * @param \User|null $user
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isMaintenanceUser( \User $user = null ) {
 		if ( !$user ) {
@@ -40,7 +40,7 @@ class MaintenanceUser {
 	}
 
 	/**
-	 * @param integer $expireInSeconds - Expire the users groups after the next
+	 * @param int $expireInSeconds - Expire the users groups after the next
 	 * x seconds. min 10 seconds
 	 * @return \User
 	 */
@@ -60,6 +60,10 @@ class MaintenanceUser {
 		return $user;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getOptions() {
 		return [
 			'validate' => 'valid',
@@ -68,10 +72,19 @@ class MaintenanceUser {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected function getGroups() {
 		return [ 'sysop', 'bureaucrat', 'bot' ];
 	}
 
+	/**
+	 *
+	 * @param \User $user
+	 * @param int|null $expiry
+	 */
 	protected function addGroups( \User $user, $expiry ) {
 		// removed the group expiry feature for now, because this could end in
 		// deadlocks:
@@ -88,6 +101,11 @@ class MaintenanceUser {
 		}
 	}
 
+	/**
+	 *
+	 * @param int $expireInSeconds
+	 * @return string
+	 */
 	protected function getExpiryTS( $expireInSeconds ) {
 		$expireInSeconds = (int)$expireInSeconds;
 		if ( empty( $expireInSeconds ) || $expireInSeconds < 10 ) {

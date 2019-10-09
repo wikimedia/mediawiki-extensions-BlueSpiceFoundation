@@ -73,11 +73,11 @@ abstract class HtmlPageLinkRendererEnd extends Hook {
 	 * to add more functionality to the UI.
 	 * @param LinkRenderer $linkRenderer
 	 * @param LinkTarget $target
-	 * @param boolean $isKnown
-	 * @param string | \HtmlArmor $text
-	 * @param array $attribs
-	 * @param string $ret
-	 * @return boolean Always true to keep hook running
+	 * @param bool $isKnown
+	 * @param string | \HtmlArmor &$text
+	 * @param array &$attribs
+	 * @param string &$ret
+	 * @return bool Always true to keep hook running
 	 */
 	public static function callback( LinkRenderer $linkRenderer, LinkTarget $target, $isKnown, &$text, &$attribs, &$ret ) {
 		$className = static::class;
@@ -100,10 +100,10 @@ abstract class HtmlPageLinkRendererEnd extends Hook {
 	 * @param \Config $config
 	 * @param LinkRenderer $linkRenderer
 	 * @param LinkTarget $target
-	 * @param boolean $isKnown
-	 * @param string | \HtmlArmor $text
-	 * @param array $attribs
-	 * @param string $ret
+	 * @param bool $isKnown
+	 * @param string | \HtmlArmor &$text
+	 * @param array &$attribs
+	 * @param string &$ret
 	 */
 	public function __construct( $context, $config, LinkRenderer $linkRenderer, LinkTarget $target, $isKnown, &$text, &$attribs, &$ret ) {
 		parent::__construct( $context, $config );

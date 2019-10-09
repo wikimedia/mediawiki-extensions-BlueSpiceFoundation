@@ -86,6 +86,10 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 		return "bsg" . $this->getName();
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_SYSTEM . '/' . static::EXTENSION_FOUNDATION,
@@ -96,7 +100,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 
 	/**
 	 * Returns if the config is a ResourceLoader variable
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isRLConfigVar() {
 		return false;
@@ -128,7 +132,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 
 	/**
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function isHidden() {
 		return false;

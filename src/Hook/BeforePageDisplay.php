@@ -44,9 +44,9 @@ abstract class BeforePageDisplay extends Hook {
 
 	/**
 	 *
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
-	 * @return boolean
+	 * @param \OutputPage &$out
+	 * @param \Skin &$skin
+	 * @return bool
 	 */
 	public static function callback( &$out, &$skin ) {
 		$className = static::class;
@@ -63,8 +63,8 @@ abstract class BeforePageDisplay extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \OutputPage $out
-	 * @param \Skin $skin
+	 * @param \OutputPage &$out
+	 * @param \Skin &$skin
 	 */
 	public function __construct( $context, $config, &$out, &$skin ) {
 		parent::__construct( $context, $config );

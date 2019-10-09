@@ -81,8 +81,23 @@
 	font-family: 'fontawesome' !important;
 }
 
+.bs-icon-arrow-up:before {
+	content: '\f077';
+	font-family: 'fontawesome' !important;
+}
+
 .bs-icon-arrow-down:before {
 	content: '\f078';
+	font-family: 'fontawesome' !important;
+}
+
+.bs-icon-arrow-left:before {
+	content: '\f053';
+	font-family: 'fontawesome' !important;
+}
+
+.bs-icon-arrow-right:before {
+	content: '\f054';
 	font-family: 'fontawesome' !important;
 }
 
@@ -267,6 +282,11 @@
 	content: "\e94d";
 }
 
+.bs-icon-purge:before {
+	content: "\f12d";
+	font-family: "fontawesome" !important;
+}
+
 .bs-icon-checkmark-circle:before {
 	content: "\f058";
 	font-family: "fontawesome" !important;
@@ -419,6 +439,22 @@
 	font-family: "icomoon" !important;
 	content: "\e92b";
 }
+.icon-file-word:before {
+	content: "\eae1";
+}
+
+.icon-file-excel:before {
+	content: "\eae2";
+}
+
+.icon-file-powerpoint {
+	font-family: "fontawesome" !important;
+	content: "\f1c4";
+}
+
+.icon-file {
+	content: "\e924";
+}
 
 .icon-users:before {
 	content: "\e972";
@@ -457,14 +493,18 @@
 }
 .icon-bluespice-logo-color:before {
 	font-family: 'bluespice-logo' !important;
-	content: "\e900";
-	color: rgb(62, 83, 137);
+	content: "\e901";
+	color: rgb(183, 58, 58);
 }
 .icon-bluespice-logo-color:after {
 	font-family: 'bluespice-logo' !important;
-	content: "\e901";
-	margin: -1em;
-	color: rgb(183, 58, 58);
+	content: "\e902";
+	margin: -1.2em;
+	color: rgb(62, 83, 137);
+}
+.icon-category-tag-outline:before {
+	font-family: 'bluespice-logo' !important;
+	content: "\e903";
 }
 
 .bs-icon-plus-circle::before,

@@ -2,8 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Marmase",
-			"Mirzali"
+			"Mirzali",
+			"Orbot707"
 		]
 	},
-	"bs-credits-contributors": "İştırakkerdoği"
+	"specialcredits": "Krediyê BlueSpiceyi",
+	"bs-credits-programmers": "Programwani",
+	"bs-credits-dnt": "Dizayn û testkerdış",
+	"bs-credits-contributors": "İştırakkerdoği",
+	"bs-credits-translators": "Açarnayoği",
+	"bs-credits-translation": "Açarnayış",
+	"bs-credits-th": "$1 rê çarnayoğa pêroyın rê teşekur keme."
 }

@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Xubir ficheru",
+	"bs-upload-uploadbuttontext": "Esaminar",
+	"bs-upload-uploadfilefieldlabel": "Nome del ficheru",
+	"bs-upload-license": "Llicencia",
+	"bs-upload-uploadwatchthislabel": "Vixilar esti ficheru",
+	"bs-upload-uploadignorewarningslabel": "Inorar tolos avisos",
+	"bs-upload-categories": "Categoríes",
+	"bs-upload-upload-waitmessage": "Carga en cursu…",
+	"bs-upload-error": "Error",
+	"bs-upload-descfilelabel": "Descripción",
+	"bs-upload-error-long": "Error nel procesu de carga",
+	"bs-upload-filetypenotsupported": "Esti tipu de ficheru nun tien encontu",
+	"bs-upload-details": "Detalles"
+}

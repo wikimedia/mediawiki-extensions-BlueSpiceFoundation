@@ -27,6 +27,10 @@
  */
 class BSApiGroupStore extends BSApiExtJSStoreBase {
 
+	/**
+	 *
+	 * @var string
+	 */
 	protected $sLcQuery = '';
 
 	/**
@@ -61,12 +65,22 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 		return $aData;
 	}
 
+	/**
+	 *
+	 * @return string[]
+	 */
 	public function getRequiredPermissions() {
 		return parent::getRequiredPermissions() + [
 			'wikiadmin'
 		];
 	}
 
+	/**
+	 *
+	 * @param string $sGroup
+	 * @param string $sDisplayName
+	 * @return bool
+	 */
 	protected function queryApplies( $sGroup, $sDisplayName ) {
 		if ( empty( $this->sLcQuery ) ) {
 			return true;

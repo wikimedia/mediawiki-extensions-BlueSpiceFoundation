@@ -4,7 +4,17 @@
 			"Pyscowicz"
 		]
 	},
+	"bs-filerepo-headerfilename": "Tiedostonimi",
+	"bs-filerepo-headerfilesize": "Koko",
 	"bs-filerepo-headerpagecategories": "Luokat",
+	"bs-filerepo-headerfilewidth": "Leveys",
+	"bs-filerepo-headerfileheight": "Korkeus",
+	"bs-filerepo-headerfileusertext": "Käyttäjä",
+	"bs-filerepo-headerfilemediatype": "Median tyyppi",
+	"bs-filerepo-headerfiledescription": "Kuvaus",
+	"bs-filerepo-headerfilethumbnail": "Pienoiskuva",
 	"bs-filerepo-yes": "Kyllä",
-	"bs-filerepo-no": "Ei"
+	"bs-filerepo-no": "Ei",
+	"bs-filerepo-labelupload": "Tallenna",
+	"bs-filerepo-headerfiletimestamp": "Tallennettu"
 }

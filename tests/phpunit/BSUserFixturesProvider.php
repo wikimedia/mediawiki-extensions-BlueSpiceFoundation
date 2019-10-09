@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Tests;
 
-use BlueSpice\Tests\BSFixturesProvider;
-
 class BSUserFixturesProvider implements BSFixturesProvider {
 
 	/**

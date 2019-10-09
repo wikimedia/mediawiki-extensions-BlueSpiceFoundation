@@ -34,12 +34,14 @@ class FileLinksHelper extends InternalLinksHelper {
 	 * @param \Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
+	 * @param bool $leadingColon
+	 * @param string $separator
 	 */
 	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
 		if ( $target->getNamespace() !== NS_FILE ) {
 			return;
 		}
-		return parent::addTarget( $target, $text, $addDuplicates, false, $separator );
+		parent::addTarget( $target, $text, $addDuplicates, false, $separator );
 	}
 
 	/**
@@ -51,6 +53,6 @@ class FileLinksHelper extends InternalLinksHelper {
 		if ( $target->getNamespace() !== NS_FILE ) {
 			return;
 		}
-		return parent::removeTarget( $target, $removeAllOccurrences );
+		parent::removeTarget( $target, $removeAllOccurrences );
 	}
 }
