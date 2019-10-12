@@ -32,7 +32,7 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	 * @dataProvider provideFromUrlWithExceptionData
 	 */
 	public function testFromUrlException( $url, $exception ) {
-		$this->setExpectedException( $exception );
+		$this->expectException( $exception );
 
 		$parser = new UrlTitleParser( $url, MediaWikiServices::getInstance()->getMainConfig() );
 		$title = $parser->parseTitle();
