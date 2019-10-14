@@ -2,8 +2,11 @@
 
 namespace BlueSpice;
 
+use BlueSpice\RunJobsTriggerHandler\Job\RunRunJobsTriggerHandlerRunner;
 use MediaWiki\Logger\LoggerFactory;
 use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
+use ConfigException;
+use JobQueueGroup;
 
 class RunJobsTriggerRunner {
 
@@ -150,11 +153,23 @@ class RunJobsTriggerRunner {
 	/**
 	 * Called from $wgExtensionFunctions
 	 */
-	public static function run() {
+	public static function runDeferred() {
 		if ( !defined( 'MEDIAWIKI_JOB_RUNNER' ) ) {
 			return;
 		}
 
+		JobQueueGroup::singleton()->push(
+			new RunRunJobsTriggerHandlerRunner()
+		);
+	}
+
+	/**
+	 * Runs the runner immediately
+	 *
+	 * @return bool
+	 * @throws ConfigException
+	 */
+	public static function run() {
 		$services = \BlueSpice\Services::getInstance();
 
 		$registry = new ExtensionAttributeBasedRegistry(
@@ -180,5 +195,7 @@ class RunJobsTriggerRunner {
 		);
 
 		$runner->execute();
+
+		return true;
 	}
 }
