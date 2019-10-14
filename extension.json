@@ -133,7 +133,7 @@
 		}
 	},
 	"ExtensionFunctions": [
-		"\\BlueSpice\\RunJobsTriggerRunner::run"
+		"\\BlueSpice\\RunJobsTriggerRunner::runDeferred"
 	],
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
@@ -919,6 +919,9 @@
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
 		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
+	},
+	"JobClasses": {
+		"runRunJobsTriggerHandlerRunner": "BlueSpice\\RunJobsTriggerHandler\\Job\\RunRunJobsTriggerHandlerRunner"
 	},
 	"manifest_version": 2,
 	"load_composer_autoloader": true,
