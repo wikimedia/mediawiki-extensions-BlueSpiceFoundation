@@ -91,7 +91,8 @@ abstract class BSApiTasksBaseAfterExecuteTask extends Hook {
 	 * @param \stdClass $taskData
 	 * @param array $params
 	 */
-	public function __construct( $context, $config, $taskApi, $taskKey, &$result, $taskData, $params ) {
+	public function __construct( $context, $config, $taskApi, $taskKey, &$result, $taskData,
+		$params ) {
 		parent::__construct( $context, $config );
 
 		$this->taskApi = $taskApi;

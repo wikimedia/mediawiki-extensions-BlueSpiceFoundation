@@ -58,7 +58,8 @@ class RunJobsTriggerRunner {
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 * @param INotifier $notifier
 	 */
-	public function __construct( $registry, $logger, $runConditionChecker, $config, $loadBalancer, $notifier ) {
+	public function __construct( $registry, $logger, $runConditionChecker, $config,
+		$loadBalancer, $notifier ) {
 		$this->registry = $registry;
 		$this->logger = $logger;
 		$this->runConditionChecker = $runConditionChecker;

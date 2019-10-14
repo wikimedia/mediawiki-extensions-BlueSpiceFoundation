@@ -13,15 +13,19 @@
 
 // Last Review: MRG20100813
 
-// TODO MRG20100813: Wir müssen überlegen, wofür wir eigene Exceptions brauchen. Ich schlage vor, dass wir sie einsetzen,
-// wenn ein nicht fataler Fehler passiert, der direkt mit blue spice zusammenhängt. Z.B. das Einbinden von Extensions, die
-// nicht mit den richtigen Dependencies ausgestattet sind, oder beim Abrufen externer Quellen wie solr.
-// Diese Exceptions sollten wir aufdröseln, also eine Klasse BsExtensionException, BsSolrException etc. Hier ist noch a bisserl
-// Konzeption notwendig.
-// MSC20101103: Das alles könnten wir doch über den Parameter $code abfangen, oder? Wir könnten dann BsException::EXTENSION=1
-// und BsException::SOLR=2 ebenso wie BsException::FATALERROR=16 als bitkodierte Konstanten der Klasse definieren. Eine
+// TODO MRG20100813: Wir müssen überlegen, wofür wir eigene Exceptions brauchen.
+// Ich schlage vor, dass wir sie einsetzen, wenn ein nicht fataler Fehler passiert,
+// der direkt mit blue spice zusammenhängt. Z.B. das Einbinden von Extensions, die
+// nicht mit den richtigen Dependencies ausgestattet sind, oder beim Abrufen externer
+// Quellen wie solr.
+// Diese Exceptions sollten wir aufdröseln, also eine Klasse BsExtensionException,
+// BsSolrException etc. Hier ist noch a bisserl Konzeption notwendig.
+// MSC20101103: Das alles könnten wir doch über den Parameter $code abfangen, oder?
+// Wir könnten dann BsException::EXTENSION=1 und BsException::SOLR=2 ebenso wie
+// BsException::FATALERROR=16 als bitkodierte Konstanten der Klasse definieren. Eine
 // BsException würde dann wie folgt geworfen:
-// throw new BsException( 'Can not connect to search server', BsException::SOLR|BsException::FATAL );
+// throw new BsException( 'Can not connect to search server',
+// BsException::SOLR|BsException::FATAL );
 
 /**
  * DEPRECATED!
@@ -34,11 +38,13 @@ class BsException extends Exception {
 	 * DEPRECATED!
 	 * Extended constructor method of the BsException class.
 	 * @deprecated since version 3.1
-	 * @param String $sMessage The literal message fore the exception, or a I18N key for the provided I18N repository object
+	 * @param String $sMessage The literal message fore the exception, or a I18N key for the
+	 * provided I18N repository object
 	 * @param Integer $iCode Classic errorcode
 	 * @param Exception|null $oPreviousException For use in a chain of try-catch blocks.
 	 */
-	public function __construct( $sMessage = '', $iCode = 0, Exception $oPreviousException = null ) {
+	public function __construct( $sMessage = '', $iCode = 0,
+		Exception $oPreviousException = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->sMessage = $sMessage;
 

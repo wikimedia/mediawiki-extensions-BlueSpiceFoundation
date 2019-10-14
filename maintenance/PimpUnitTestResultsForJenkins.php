@@ -41,7 +41,11 @@ class BSPimpUnitTestResultsForJenkins extends BSMaintenance {
 			if ( !$parentSuiteNode->hasAttribute( 'file' ) ) {
 				$parentSuiteNode = $parentSuiteNode->parentNode;
 			}
-			$filename = preg_replace( "/^.*?extensions.(.*).tests.*$/", "$1", $parentSuiteNode->getAttribute( 'file' ) );
+			$filename = preg_replace(
+				"/^.*?extensions.(.*).tests.*$/",
+				"$1",
+				$parentSuiteNode->getAttribute( 'file' )
+			);
 			$filename = str_replace( [ "/", "\\" ], "::", $filename );
 
 			// Compile new class name for jenkins

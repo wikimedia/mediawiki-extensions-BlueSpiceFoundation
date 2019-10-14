@@ -40,7 +40,8 @@ class ListValue extends Filter {
 
 		$intersection = array_intersect( $fieldValues, $this->getValue() );
 
-		if ( $this->getComparison() === static::COMPARISON_CONTAINS || $this->getComparison() === static::COMPARISON_IN ) {
+		if ( $this->getComparison() === static::COMPARISON_CONTAINS
+			|| $this->getComparison() === static::COMPARISON_IN ) {
 			if ( empty( $intersection ) ) {
 				return false;
 			}

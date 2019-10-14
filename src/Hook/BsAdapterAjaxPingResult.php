@@ -85,7 +85,8 @@ abstract class BsAdapterAjaxPingResult extends Hook {
 	 * @param array &$singleResults
 	 * @return bool
 	 */
-	public static function callback( $reference, $params, $articleId, $titleText, $namespaceIndex, $revisionId, &$singleResults ) {
+	public static function callback( $reference, $params, $articleId, $titleText, $namespaceIndex,
+		$revisionId, &$singleResults ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -112,7 +113,8 @@ abstract class BsAdapterAjaxPingResult extends Hook {
 	 * @param int $revisionId
 	 * @param array &$singleResults
 	 */
-	public function __construct( $context, $config, $reference, $params, $articleId, $titleText, $namespaceIndex, $revisionId, &$singleResults ) {
+	public function __construct( $context, $config, $reference, $params, $articleId, $titleText,
+		$namespaceIndex, $revisionId, &$singleResults ) {
 		parent::__construct( $context, $config );
 
 		$this->reference = $reference;

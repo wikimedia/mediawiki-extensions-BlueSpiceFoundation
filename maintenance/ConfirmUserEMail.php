@@ -15,7 +15,12 @@ class ConfirmUserEMail extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addOption( 'user', 'confirm e-mail adress of this user [name or id] [-1 = all users]', true, true );
+		$this->addOption(
+			'user',
+			'confirm e-mail adress of this user [name or id] [-1 = all users]',
+			true,
+			true
+		);
 		$this->addOption( 'force', 'confirm user without e-mail', false, false );
 		$this->addOption( 'execute', 'execute modify', false, false );
 		$this->requireExtension( 'BlueSpiceFoundation' );

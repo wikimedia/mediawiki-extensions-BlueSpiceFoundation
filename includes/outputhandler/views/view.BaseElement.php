@@ -76,7 +76,8 @@ class ViewBaseElement {
 	public function __construct() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->_mId = 'bs-element-' . self::getAutoId();
-		$this->config = \MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+		$this->config = \MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()
+			->makeConfig( 'bsg' );
 	}
 
 	public function __toString() {
@@ -110,7 +111,8 @@ class ViewBaseElement {
 
 	/**
 	 * Set the id of the element
-	 * @param String $id The id should be unique for this http request because it´s used as html element id.
+	 * @param String $id The id should be unique for this http request because it´s
+	 * used as html element id.
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
 	public function setId( $id ) {
@@ -176,12 +178,14 @@ class ViewBaseElement {
 
 	/**
 	 * Set multiple options to protected array 'mOptions'
-	 * @param array $aOptions Associative array with new keys and values to be stored in 'mOptions'
+	 * @param array $aOptions Associative array with new keys and values to be stored in
+	 * 'mOptions'
 	 * @return ViewBaseElement
 	 */
 	public function setOptions( $aOptions ) {
 		if ( !is_array( $aOptions ) ) {
-			error_log( 'Parameter not an array or array empty, ' . __METHOD__ . ' in ' . __FILE__ . ' line ' . __LINE__ );
+			error_log( 'Parameter not an array or array empty, '
+				. __METHOD__ . ' in ' . __FILE__ . ' line ' . __LINE__ );
 			return $this;
 		}
 		$this->mOptions = array_merge( $this->mOptions, $aOptions );
@@ -238,7 +242,8 @@ class ViewBaseElement {
 		if ( !( $item instanceof ViewBaseElement ) ) {
 			return false;
 		}
-		// better: if( empty( $item ) ), see second note on http://www.php.net/manual/en/types.comparisons.php
+		// better: if( empty( $item ) ), see second note on
+		// http://www.php.net/manual/en/types.comparisons.php
 		if ( !$item ) {
 			return false;
 		}
@@ -332,7 +337,8 @@ class ViewBaseElement {
 	protected function processItem( $matches ) {
 		$request = $matches[1];
 
-		// TODO MRG20100816: Ist diese Token-Syntax irgendwo beschrieben? Ausserdem müssen wir sicherstellen, dass
+		// TODO MRG20100816: Ist diese Token-Syntax irgendwo beschrieben? Ausserdem
+		// müssen wir sicherstellen, dass
 		// | nicht anderweitig verwendet wird.
 		$tokens = explode( '|', $request );
 		$item = array_shift( $tokens );

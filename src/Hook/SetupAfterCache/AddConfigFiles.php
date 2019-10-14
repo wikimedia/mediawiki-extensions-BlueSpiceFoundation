@@ -8,11 +8,13 @@ class AddConfigFiles extends \BlueSpice\Hook\SetupAfterCache {
 		// phpcs:ignore MediaWiki.VariableAnalysis.UnusedGlobalVariables
 		global $wgExtensionFunctions, $wgGroupPermissions, $wgWhitelistRead, $wgMaxUploadSize;
 		// phpcs:ignore MediaWiki.VariableAnalysis.UnusedGlobalVariables
-		global $wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown, $wgNonincludableNamespaces;
+		global $wgNamespacePermissionLockdown, $wgSpecialPageLockdown, $wgActionLockdown;
 		// phpcs:ignore MediaWiki.VariableAnalysis.UnusedGlobalVariables
-		global $wgExtraNamespaces, $wgContentNamespaces, $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault;
+		global $wgNonincludableNamespaces, $wgExtraNamespaces, $wgContentNamespaces;
 		// phpcs:ignore MediaWiki.VariableAnalysis.UnusedGlobalVariables
-		global $wgLocalisationCacheConf, $wgAutoloadLocalClasses, $wgFlaggedRevsNamespaces, $wgNamespaceAliases, $wgVersion;
+		global $wgNamespacesWithSubpages, $wgNamespacesToBeSearchedDefault, $wgLocalisationCacheConf;
+		// phpcs:ignore MediaWiki.VariableAnalysis.UnusedGlobalVariables
+		global $wgAutoloadLocalClasses, $wgFlaggedRevsNamespaces, $wgNamespaceAliases, $wgVersion;
 		/*
 		 * TODO: All those globals above can be removed once all included
 		 * settings files use $GLOBALS['wg...'] to access them

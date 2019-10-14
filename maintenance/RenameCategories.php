@@ -236,7 +236,13 @@ if ( $token ) {
 }
 
 $dbw =& wfGetDB( DB_MASTER );
-$res = $dbw->select( 'page', 'page_title, page_namespace, page_id', $qry_ns, 'Database::select', [ 'order by' => 'page_title' ] );
+$res = $dbw->select(
+	'page',
+	'page_title, page_namespace, page_id',
+	$qry_ns,
+	'Database::select',
+	[ 'order by' => 'page_title' ]
+);
 
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $wgGroupPermissions['*']['autoreview'] = true;
@@ -336,7 +342,8 @@ foreach ( $res as $row ) {
 		if ( $testing ) {
 			print "testing.\n";
 			if ( $verbose ) {
-				print $text . "\n--------------------------------------------------------------------------------\n\n";
+				print $text . "\n-----------------------------------------------------"
+				. "---------------------------\n\n";
 			}
 			continue;
 		}
@@ -414,7 +421,13 @@ echo PHP_EOL;
 
 # now for the category namespace
 $dbw =& wfGetDB( DB_MASTER );
-$res = $dbw->select( 'page', 'page_id, page_title', [ 'page_namespace' => NS_CATEGORY ], 'Database::select', [ 'order by' => 'page_title' ] );
+$res = $dbw->select(
+	'page',
+	'page_id, page_title',
+	[ 'page_namespace' => NS_CATEGORY ],
+	'Database::select',
+	[ 'order by' => 'page_title' ]
+);
 echo $dbw->numRows( $res ) . " articles in category namespace\n";
 foreach ( $res as $row ) {
 	$oldtitle = Title::newFromId( $row->page_id );

@@ -29,8 +29,9 @@ try {
 	$dfdFactory = \MediaWiki\MediaWikiServices::getInstance()->getService(
 		'BSDynamicFileDispatcherFactory'
 	);
+	$request = \RequestContext::getMain()->getRequest();
 	$dfd = $dfdFactory->newFromParams(
-		new \BlueSpice\DynamicFileDispatcher\RequestParams( [], \RequestContext::getMain()->getRequest() ),
+		new \BlueSpice\DynamicFileDispatcher\RequestParams( [], $request ),
 		\RequestContext::getMain(),
 		true
 	);

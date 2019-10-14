@@ -3,10 +3,11 @@
 
 // TODO MRG20100724: Ist das ok beim Hosting (index.php ist hier symlinked)
 /* Lilu:
- * Bei Symlinks wird es Probleme geben, da __FILE__ den absoluten Pfad inkl. aufgelöster Symlinks enthält.
- * Lösung wäre für das Hosting ein gemeinsam genutzter Core mit separater Konfiguration pro Präsenz.
- * Dies sollte sich ohne Probleme umsetzen lassen, da BlueSpice ja so designed ist, dass der Core in einem
- * separaten Verzeichnis liegen kann.
+ * Bei Symlinks wird es Probleme geben, da __FILE__ den absoluten Pfad inkl. aufgelöster
+ * Symlinks enthält. Lösung wäre für das Hosting ein gemeinsam genutzter Core mit separater
+ * Konfiguration pro Präsenz.
+ * Dies sollte sich ohne Probleme umsetzen lassen, da BlueSpice ja so designed ist, dass der
+ * Core in einem separaten Verzeichnis liegen kann.
  */
 if ( !defined( 'WIKI_FARMING' ) ) {
 	if ( !defined( 'BSROOTDIR' ) ) {
@@ -29,7 +30,9 @@ if ( !defined( 'WIKI_FARMING' ) ) {
 		? $sTMPUploadDir . DIRECTORY_SEPARATOR . 'cache'
 		: $GLOBALS['wgFileCacheDirectory'];
 
-	$sTMPUploadPath = empty( $GLOBALS['wgUploadPath'] ) ? $GLOBALS['wgScriptPath'] . "/images" : $GLOBALS['wgUploadPath'];
+	$sTMPUploadPath = empty( $GLOBALS['wgUploadPath'] )
+		? $GLOBALS['wgScriptPath'] . "/images"
+		: $GLOBALS['wgUploadPath'];
 
 	if ( !defined( 'BS_DATA_DIR' ) ) {
 		// Future

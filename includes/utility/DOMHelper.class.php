@@ -1,6 +1,7 @@
 <?php
 /**
- * This class provides functions for common tasks while working with MediaWiki Article/Title objects.
+ * This class provides functions for common tasks while working with MediaWiki
+ * Article/Title objects.
  * @package BlueSpice_AdapterMW
  * @subpackage Utility
  */
@@ -118,7 +119,8 @@ class BsDOMHelper {
 	}
 
 	/**
-	 * HINT: http://stackoverflow.com/questions/1604471/how-can-i-find-an-element-by-css-class-with-xpath
+	 * HINT:
+	 * http://stackoverflow.com/questions/1604471/how-can-i-find-an-element-by-css-class-with-xpath
 	 * @param DOMDocument $oDOMDoc
 	 * @param array $aClassNames
 	 * @return array of DOMElement

@@ -56,9 +56,12 @@ class ModifyExportXML extends Maintenance {
 		foreach ( $oRevisionTextElements as $oRevisionTextElement ) {
 			$sText = trim( $oRevisionTextElement->textContent );
 			if ( strlen( $sText ) == 0 ) {
-				$iRevisionId  = $oRevisionTextElement->parentNode->getElementsByTagName( 'id' )->item( 0 )->textContent;
-				$sArticleName = $oRevisionTextElement->parentNode->parentNode->getElementsByTagName( 'title' )->item( 0 )->textContent;
-				echo '<text> element in Revision id=' . $iRevisionId . ' (Article "' . $sArticleName . '") contains no text.' . "\n";
+				$iRevisionId  = $oRevisionTextElement->parentNode
+					->getElementsByTagName( 'id' )->item( 0 )->textContent;
+				$sArticleName = $oRevisionTextElement->parentNode->parentNode
+					->getElementsByTagName( 'title' )->item( 0 )->textContent;
+				echo '<text> element in Revision id=' . $iRevisionId
+					. ' (Article "' . $sArticleName . '") contains no text.' . "\n";
 				continue;
 			}
 			$sText = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sText );
@@ -71,9 +74,12 @@ class ModifyExportXML extends Maintenance {
 		foreach ( $oRevisionCommentElements as $oRevisionCommentElement ) {
 			$sComment = trim( $oRevisionCommentElement->textContent );
 			if ( strlen( $sComment ) == 0 ) {
-				$iRevisionId  = $oRevisionTextElement->parentNode->getElementsByTagName( 'id' )->item( 0 )->textContent;
-				$sArticleName = $oRevisionTextElement->parentNode->parentNode->getElementsByTagName( 'title' )->item( 0 )->textContent;
-				echo '<comment> element in Revision id=' . $iRevisionId . ' (Article "' . $sArticleName . '") contains no text.' . "\n";
+				$iRevisionId  = $oRevisionTextElement->parentNode
+					->getElementsByTagName( 'id' )->item( 0 )->textContent;
+				$sArticleName = $oRevisionTextElement->parentNode->parentNode
+					->getElementsByTagName( 'title' )->item( 0 )->textContent;
+				echo '<comment> element in Revision id=' . $iRevisionId
+					. ' (Article "' . $sArticleName . '") contains no text.' . "\n";
 				continue;
 			}
 			$sComment = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sComment );
@@ -82,14 +88,15 @@ class ModifyExportXML extends Maintenance {
 		}
 
 		$vWrittenBytes = $oDOMDoc->save( $sOutputFilePath );
-		// Alternative to prevent DOMDocument from rewriting all unicode chars as entities. But: seems to be unnecessary, due to the MediaWiki import.
+		// Alternative to prevent DOMDocument from rewriting all unicode chars as entities.
+		// But: seems to be unnecessary, due to the MediaWiki import.
 		// $sXML = $oDOMDoc->saveXML();
 		// $vWrittenBytes = file_put_contents( $sOutputFilePath, html_entity_decode( $sXML ) );
 
 		if ( $vWrittenBytes === false ) {
 			echo 'An error occurred. Output file could not be saved.' . "\n";
 		} else {
-			echo 'Success. ' . $vWrittenBytes . ' Bytes have been written to "' . $sOutputFilePath . '".' . "\n";
+			echo "Success. $vWrittenBytes Bytes have been written to \" $sOutputFilePath \".\n";
 		}
 	}
 

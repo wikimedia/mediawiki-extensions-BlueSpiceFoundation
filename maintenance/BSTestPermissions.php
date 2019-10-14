@@ -48,7 +48,9 @@ class BSTestPermissions extends BSMaintenance {
 	}
 
 	protected function outputTestParameters() {
-		$this->output( "--------------------------------------------------------------------------------" );
+		$this->output(
+			"--------------------------------------------------------------------------------"
+		);
 		$this->output( sprintf(
 			"User: %s (ID:%d) | Title: %s (ID:%d) | Permission: %s",
 			$this->testUser->getName(),
@@ -62,7 +64,9 @@ class BSTestPermissions extends BSMaintenance {
 
 	protected function testPermission() {
 		RequestContext::getMain()->setUser( $this->testUser );
-		$this->output( "--------------------------------------------------------------------------------" );
+		$this->output(
+			"--------------------------------------------------------------------------------"
+		);
 		$permission = $this->getOption( 'permission' );
 		$result = FormatJson::encode(
 			$this->testTitle->userCan( $permission, $this->testUser )

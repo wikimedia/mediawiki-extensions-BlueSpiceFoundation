@@ -5,8 +5,18 @@ require_once 'BSMaintenance.php';
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
 		$this->addOption( 'src', 'The path to the source file', true, true );
-		$this->addOption( 'defaultpw', 'A password that should be set for any new user', false, true );
-		$this->addOption( 'createuserpage', 'Wether or not a user page should be created (<userpage> element needs to be available)', false, false );
+		$this->addOption(
+			'defaultpw',
+			'A password that should be set for any new user',
+			false,
+			true
+		);
+		$this->addOption(
+			'createuserpage',
+			'Wether or not a user page should be created (<userpage> element needs to be available)',
+			false,
+			false
+		);
 
 		parent::__construct();
 	}
@@ -54,9 +64,14 @@ class BSImportUsers extends BSMaintenance {
 
 			$oStatus = $oUser->addToDatabase();
 			if ( $oStatus->isOK() ) {
-				$this->output( $oUser->getName() . ' successfully added to database. UserID: ' . $oUser->getId() );
+				$this->output(
+					$oUser->getName() . ' successfully added to database. UserID: ' . $oUser->getId()
+				);
 			} else {
-				$this->error( $oUser->getName() . ' could not be added to database. Message ' . $oStatus->getMessage()->plain() );
+				$this->error(
+					$oUser->getName() . ' could not be added to database. Message '
+					. $oStatus->getMessage()->plain()
+				);
 				continue;
 			}
 
@@ -88,9 +103,15 @@ class BSImportUsers extends BSMaintenance {
 				$oWikiPage = WikiPage::factory( $oUser->getUserPage() );
 				$oEditStatus = $oWikiPage->doEditContent( $oContent, __CLASS__ );
 				if ( $oEditStatus->isOK() ) {
-					$this->output( 'Page ' . $oUser->getUserPage()->getPrefixedText() . ' successfully created.' );
+					$this->output(
+						'Page ' . $oUser->getUserPage()->getPrefixedText() . ' successfully created.'
+					);
 				} else {
-					$this->error( 'Page ' . $oUser->getUserPage()->getPrefixedText() . ' could not be created. Message: ' . $oEditStatus->getMessage()->plain() );
+					$this->error(
+						'Page ' . $oUser->getUserPage()->getPrefixedText()
+						. ' could not be created. Message: '
+						. $oEditStatus->getMessage()->plain()
+					);
 				}
 			}
 		}

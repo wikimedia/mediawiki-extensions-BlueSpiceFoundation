@@ -18,13 +18,16 @@ class ProcessingErrorMessageTranslator {
 		'#Not a float#' => 'bs-validator-invalid-float',
 		'#Not an integer#' => 'bs-validator-invalid-integer',
 		'#Not a string#' => 'bs-validator-invalid-string',
-		'#Unable to explode coordinate segment by degree symbol \((.*?)\)#' => 'bs-validator-invalid-coordinate',
+		'#Unable to explode coordinate segment by degree symbol \((.*?)\)#'
+			=> 'bs-validator-invalid-coordinate',
 		'#Did not find degree symbol \((.*?)\)#' => 'bs-validator-invalid-coordinate',
 		'#Unable to split input into two coordinate segments#' => 'bs-validator-invalid-coordinate',
 		'#The format of the coordinate could not be determined.#' => 'bs-validator-invalid-coordinate',
-		'#The format of the coordinate could not be determined. Parsing failed.#' => 'bs-validator-invalid-coordinate',
+		'#The format of the coordinate could not be determined. Parsing failed.#'
+			=> 'bs-validator-invalid-coordinate',
 		'#Not a valid geographical coordinate#' => 'bs-validator-invalid-coordinate',
-		'#(.*?): Unable to split string (.*?) into two coordinate segments#' => 'bs-validator-invalid-coordinate',
+		'#(.*?): Unable to split string (.*?) into two coordinate segments#'
+			=> 'bs-validator-invalid-coordinate',
 
 		// https://github.com/JeroenDeDauw/ParamProcessor/search?l=PHP&q=registerNewError&type=&utf8=%E2%9C%93
 		"#(.*?) is not a valid parameter#" => 'bs-validator-invalid-parameter',

@@ -84,7 +84,8 @@ abstract class AuthChangeFormFields extends Hook {
 	 * @param array &$formDescriptor
 	 * @param string $action
 	 */
-	public function __construct( $context, $config, $requests, $fieldInfo, &$formDescriptor, $action ) {
+	public function __construct( $context, $config, $requests, $fieldInfo, &$formDescriptor,
+		$action ) {
 		parent::__construct( $context, $config );
 
 		$this->requests = $requests;

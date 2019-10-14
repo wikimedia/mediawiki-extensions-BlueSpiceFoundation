@@ -45,8 +45,11 @@ class ViewUserMiniProfile extends ViewBaseElement {
 		$url = $dfdUrlBuilder->build( new Params( $params ) );
 
 		$aOut = [];
-		$aOut[] = '<div class="' . implode( ' ', $aClasses ) . '" title="' . $this->mOptions['userdisplayname'] . '">';
-		$aOut[] = empty( $this->mOptions['linktargethref'] ) ? '<span class="bs-block">' : '<a class="bs-block" href="' . $this->mOptions['linktargethref'] . '">';
+		$aOut[] = "<div class='" . implode( ' ', $aClasses )
+			. "' title='{$this->mOptions['userdisplayname']}'>";
+		$aOut[] = empty( $this->mOptions['linktargethref'] )
+			? '<span class="bs-block">'
+			: '<a class="bs-block" href="' . $this->mOptions['linktargethref'] . '">';
 		$aOut[] = '<img alt="' . $this->mOptions['userdisplayname'] . '"';
 		$aOut[] = 'src="' . $url . '"';
 		$aOut[] = 'width="' . $this->mOptions['width'] . '"';

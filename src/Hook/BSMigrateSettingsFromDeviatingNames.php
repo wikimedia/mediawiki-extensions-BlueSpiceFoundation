@@ -95,7 +95,8 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 	 * @param bool &$skip
 	 * @return bool
 	 */
-	public function __construct( $context, $config, $oldName, &$newName, $oldValue, &$newValue, &$skip ) {
+	public function __construct( $context, $config, $oldName, &$newName, $oldValue, &$newValue,
+		&$skip ) {
 		parent::__construct( $context, $config );
 
 		$this->oldName = $oldName;

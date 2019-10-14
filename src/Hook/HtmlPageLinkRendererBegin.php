@@ -78,7 +78,8 @@ abstract class HtmlPageLinkRendererBegin extends Hook {
 	 * @param string &$ret
 	 * @return bool Always true to keep hook running
 	 */
-	public static function callback( LinkRenderer $linkRenderer, LinkTarget $target, &$text, &$extraAttribs, &$query, &$ret ) {
+	public static function callback( LinkRenderer $linkRenderer, LinkTarget $target, &$text,
+		&$extraAttribs, &$query, &$ret ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -104,7 +105,8 @@ abstract class HtmlPageLinkRendererBegin extends Hook {
 	 * @param string &$query
 	 * @param string &$ret
 	 */
-	public function __construct( $context, $config, LinkRenderer $linkRenderer, LinkTarget $target, &$text, &$extraAttribs, &$query, &$ret ) {
+	public function __construct( $context, $config, LinkRenderer $linkRenderer, LinkTarget $target,
+		&$text, &$extraAttribs, &$query, &$ret ) {
 		parent::__construct( $context, $config );
 
 		$this->linkRenderer = $linkRenderer;

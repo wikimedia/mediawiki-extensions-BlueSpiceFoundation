@@ -45,7 +45,9 @@ class PermissionRegistry {
 		// This is run after default config has been set
 		// to be used to override default permission definition
 		// Include pemissions from $bsgPermissionConfig as well
-		$permissionConfigFromExtensions = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationPermissionRegistry' );
+		$permissionConfigFromExtensions = \ExtensionRegistry::getInstance()->getAttribute(
+			'BlueSpiceFoundationPermissionRegistry'
+		);
 		if ( is_array( $permissionConfigFromExtensions ) ) {
 			$this->permissionConfig = array_merge(
 				$permissionConfigFromExtensions,
