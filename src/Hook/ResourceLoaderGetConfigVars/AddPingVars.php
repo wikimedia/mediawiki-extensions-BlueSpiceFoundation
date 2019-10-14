@@ -4,7 +4,7 @@ namespace BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 use BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
-class AddPingInterval extends ResourceLoaderGetConfigVars {
+class AddPingVars extends ResourceLoaderGetConfigVars {
 
 	/**
 	 *
@@ -13,6 +13,9 @@ class AddPingInterval extends ResourceLoaderGetConfigVars {
 	protected function doProcess() {
 		$this->vars['bsgPingInterval'] = $this->getConfig()->get(
 			'PingInterval'
+		);
+		$this->vars['bsgPingOnInit'] = $this->getConfig()->get(
+			'PingOnInit'
 		);
 		return true;
 	}
