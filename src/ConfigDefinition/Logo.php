@@ -9,10 +9,13 @@ class Logo extends StringSetting {
 	 * @return array
 	 */
 	public function getPaths() {
+		$feature = static::FEATURE_SKINNING;
+		$ext = static::EXTENSION_FOUNDATION;
+		$package = static::PACKAGE_FREE;
 		return [
-			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_SKINNING . '/' . static::EXTENSION_FOUNDATION,
-			static::MAIN_PATH_EXTENSION . '/' . static::EXTENSION_FOUNDATION . '/' . static::FEATURE_SKINNING,
-			static::MAIN_PATH_PACKAGE . '/' . static::PACKAGE_FREE . '/' . static::EXTENSION_FOUNDATION,
+			static::MAIN_PATH_FEATURE . "/$feature/$ext",
+			static::MAIN_PATH_EXTENSION . "/$ext/$feature",
+			static::MAIN_PATH_PACKAGE . "/$package/$ext",
 		];
 	}
 

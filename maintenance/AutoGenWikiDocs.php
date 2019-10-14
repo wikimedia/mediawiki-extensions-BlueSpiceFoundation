@@ -411,8 +411,9 @@ class AutoGenWikiDocs extends BSMaintenance {
 	}
 
 	private function xmlTemplatePage( $page ) {
+		$title = htmlspecialchars( UtfNormal::cleanUp( $page['title'] ) );
 		$xml = '	<page>' . "\n";
-		$xml .= '		<title>' . htmlspecialchars( UtfNormal::cleanUp( $page['title'] ) ) . '</title>' . "\n";
+		$xml .= '		<title>' . $title . '</title>' . "\n";
 		$xml .= '		<revision>' . "\n";
 		$xml .= '			<model>wikitext</model>' . "\n";
 		$xml .= '			<format>text/x-wiki</format>' . "\n";

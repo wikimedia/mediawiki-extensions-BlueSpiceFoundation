@@ -104,17 +104,24 @@ class BsCore {
 	 */
 	public static function sanitize( $handover, $default = false, $options = BsPARAMTYPE::STRING ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		// TODO MRG20100725: Ist die Reihenfolge hier Ã¼berlegt? Was ist, wenn ich BsPARAMTYPE::INT & BsPARAMTYPE::STRING angebe?
-		// TODO MRG20100725: Kann man das nicht mit getParam zusammenschalten, so dass diese Funktion sanitize verwendet?
+		// TODO MRG20100725: Ist die Reihenfolge hier Ã¼berlegt? Was ist, wenn ich
+		// BsPARAMTYPE::INT & BsPARAMTYPE::STRING angebe?
+		// TODO MRG20100725: Kann man das nicht mit getParam zusammenschalten, so dass
+		// diese Funktion sanitize verwendet?
 		// TODO MRG20100725: Sollte $default nicht auch durch den sanitizer?
 		/* Lilu:
-		 * Die Reihenfolge ist meiner Meinung nach unerheblich, da immer nur der erste BsPARAMTYPE, der einen Treffer landet,
+		 * Die Reihenfolge ist meiner Meinung nach unerheblich, da immer nur der erste
+		 * BsPARAMTYPE, der einen Treffer landet,
 		 * zurÃ¼ckgegeben wird.
-		 * Eine Trennung zwischen getParam und sanitize besteht, da man bei getParam angeben kann, ob man im Fehlerfall
-		 * Default-Werte verwenden mÃ¶chte oder versucht werden soll, die Daten mit sanitize zu bereinigen.
-		 * Ich denke, das jeder Programmierer seinen Extensions passende Default-Werte liefern sollte.
-		 * Beim Sanitizen der Default-Werte entsteht sonst ggf. das Problem, das wir keinen gÃ¼ltigen Wert zurÃ¼ckgeben kÃ¶nnen. (null?)
-		 * Das wÃ¼rde einen groÃŸen Vorteil des Sanitizers (die nicht mehr benÃ¶tigte GÃ¼ltigkeitsprÃ¼fung) wieder aushebeln.
+		 * Eine Trennung zwischen getParam und sanitize besteht, da man bei getParam angeben
+		 * kann, ob man im Fehlerfall Default-Werte verwenden mÃ¶chte oder versucht werden
+		 * soll, die Daten mit sanitize zu bereinigen.
+		 * Ich denke, das jeder Programmierer seinen Extensions passende Default-Werte
+		 * liefern sollte.
+		 * Beim Sanitizen der Default-Werte entsteht sonst ggf. das Problem, das wir
+		 * keinen gÃ¼ltigen Wert zurÃ¼ckgeben kÃ¶nnen. (null?)
+		 * Das wÃ¼rde einen groÃŸen Vorteil des Sanitizers (die nicht mehr benÃ¶tigte
+		 * GÃ¼ltigkeitsprÃ¼fung) wieder aushebeln.
 		 */
 		if ( $options & BsPARAMTYPE::RAW ) {
 			return $handover;
@@ -221,7 +228,8 @@ class BsCore {
 		 * - htmlentieties() um die HTML Eingaben abzufangen
 		 *    => html_entity_decode() um die Umwandlung rÃ¼ckgÃ¤ngig zu machen
 		 * - htmlspecialchars() - Wandelt Sonderzeichen in HTML-Codes um
-		 * ==> neither htmlentities() nor htmlspecialchars() are used in directory bluespice-mw or beyond (exc. GeSHi)
+		 * ==> neither htmlentities() nor htmlspecialchars() are used in directory
+		 * bluespice-mw or beyond (exc. GeSHi)
 		 * - escapeshellcmd()
 		 * - escapeshellarg()
 		 * ==> Only used in Rss/extlib/Snoopy.class.inc and GeSHi
@@ -295,7 +303,11 @@ class BsCore {
 			return '';
 		}
 
-		$output = self::$oLocalParser->parse( $sText, $oTitle, self::$oLocalParserOptions, true )->getText();
+		$output = self::$oLocalParser->parse(
+			$sText,
+			$oTitle,
+			self::$oLocalParserOptions, true
+		)->getText();
 
 		return $output;
 	}
@@ -343,9 +355,11 @@ class BsCore {
 	 * @param bool $bSilent
 	 * @return bool
 	 */
-	public static function checkAccessAdmission( $sPermission = 'read', $sI18NInstanceKey = 'BlueSpice', $sI18NMessageKey = 'not_allowed', $bSilent = true ) {
+	public static function checkAccessAdmission( $sPermission = 'read',
+		$sI18NInstanceKey = 'BlueSpice', $sI18NMessageKey = 'not_allowed', $bSilent = true ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		// TODO MRG28072010: isAllowed prüft nicht gegen die Artikel. D.H. die Rechte sind nicht per Namespace überprüfbar
+		// TODO MRG28072010: isAllowed prüft nicht gegen die Artikel. D.H. die Rechte sind
+		// nicht per Namespace überprüfbar
 		$oUser = self::loadCurrentUser();
 		if ( $oUser->isAllowed( $sPermission ) ) {
 			return true;
@@ -391,7 +405,11 @@ class BsCore {
 		$oUserMiniProfileView->setOptions( $aParams );
 		$oUserMiniProfileView->setOption( 'user', $oUser );
 
-		Hooks::run( 'BSCoreGetUserMiniProfileBeforeInit', [ &$oUserMiniProfileView, &$oUser, &$aParams ] );
+		Hooks::run( 'BSCoreGetUserMiniProfileBeforeInit', [
+			&$oUserMiniProfileView,
+			&$oUser,
+			&$aParams
+		] );
 
 		$oUserMiniProfileView->init();
 

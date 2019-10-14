@@ -111,7 +111,8 @@ abstract class PageContentInsertComplete extends Hook {
 	 * @param int $baseRevId
 	 * @return bool
 	 */
-	public static function callback( &$wikipage, &$user, $content, $summary, $isMinor, $isWatch, $section, &$flags, $revision, &$status, $baseRevId ) {
+	public static function callback( &$wikipage, &$user, $content, $summary, $isMinor, $isWatch,
+		$section, &$flags, $revision, &$status, $baseRevId ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -147,7 +148,8 @@ abstract class PageContentInsertComplete extends Hook {
 	 * @param \Status &$status
 	 * @param int $baseRevId
 	 */
-	public function __construct( $context, $config, &$wikipage, &$user, $content, $summary, $isMinor, $isWatch, $section, &$flags, $revision, &$status, $baseRevId ) {
+	public function __construct( $context, $config, &$wikipage, &$user, $content, $summary, $isMinor,
+		$isWatch, $section, &$flags, $revision, &$status, $baseRevId ) {
 		parent::__construct( $context, $config );
 
 		$this->wikipage =& $wikipage;

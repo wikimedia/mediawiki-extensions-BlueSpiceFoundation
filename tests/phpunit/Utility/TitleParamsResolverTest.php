@@ -28,7 +28,8 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 	 * @param string $message
 	 * @dataProvider provideMediaWikiApiTitleOrPageIdData
 	 */
-	public function testMediaWikiApiTitleOrPageId( $params, $expectedPrefixedText, $defaultTitles, $message ) {
+	public function testMediaWikiApiTitleOrPageId( $params, $expectedPrefixedText,
+		$defaultTitles, $message ) {
 		$resolver = new TitleParamsResolver( $params, $defaultTitles );
 		$resolvedTitles = $resolver->resolve();
 		$resolvedTitle = $resolvedTitles[0];
@@ -48,18 +49,57 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 		 * provider methods before "setUp" so we also can not use the id
 		 * returned by "$this-insertPage".
 		 */
-		return [
-			[ [ 'pageid' => 1 ], 'UTPage', null, 'Should resolve from "pageid"' ],
-			[ [ 'title' => 'TitleParamsResolverTest' ], 'TitleParamsResolverTest', null, 'Should resolve from "title"' ],
-			[ [ 'target' => 'TitleParamsResolverTest' ], 'TitleParamsResolverTest', null, 'Should resolve from "target"' ],
-			[ [ 'page' => 'Help:TitleParamsResolverTest' ], 'Help:TitleParamsResolverTest', null, 'Should resolve from "page"' ],
-			[ [ 'pageid' => -1 ], $mainPageTitleText, [ $mainPage ], 'With invalid "page_id", should fallback to "default"' ],
-			[ [ 'title' => 'Invalid[Title]' ], $mainPageTitleText, [ $mainPage ], 'With invalid "title", should fallback to "default"' ],
-			[ [ 'target' => 'Invalid[Title]' ], $mainPageTitleText, [ $mainPage ], 'With invalid "target", should fallback to "default"' ],
-			[ [ 'page' => 'Invalid[Title]' ], $mainPageTitleText, [ $mainPage ], 'With invalid "page", should fallback to "default"' ],
-			[ [ 'revid' => 1 ], 'UTPage', null, 'Should resolve from "revid"' ],
-			[ [ 'oldid' => 1 ], 'UTPage', null, 'Should resolve from "oldid"' ]
-		];
+		return [ [
+			[ 'pageid' => 1 ],
+			'UTPage',
+			null,
+			'Should resolve from "pageid"'
+		], [
+			[ 'title' => 'TitleParamsResolverTest' ],
+			'TitleParamsResolverTest',
+			null,
+			'Should resolve from "title"'
+		], [
+			[ 'target' => 'TitleParamsResolverTest' ],
+			'TitleParamsResolverTest',
+			null,
+			'Should resolve from "target"'
+		], [
+			[ 'page' => 'Help:TitleParamsResolverTest' ],
+			'Help:TitleParamsResolverTest',
+			null,
+			'Should resolve from "page"'
+		], [
+			[ 'pageid' => -1 ],
+			$mainPageTitleText,
+			[ $mainPage ],
+			'With invalid "page_id", should fallback to "default"'
+		], [
+			[ 'title' => 'Invalid[Title]' ],
+			$mainPageTitleText,
+			[ $mainPage ],
+			'With invalid "title", should fallback to "default"'
+		], [
+			[ 'target' => 'Invalid[Title]' ],
+			$mainPageTitleText,
+			[ $mainPage ],
+			'With invalid "target", should fallback to "default"'
+		], [
+			[ 'page' => 'Invalid[Title]' ],
+			$mainPageTitleText,
+			[ $mainPage ],
+			'With invalid "page", should fallback to "default"'
+		], [
+			[ 'revid' => 1 ],
+			'UTPage',
+			null,
+			'Should resolve from "revid"'
+		], [
+			[ 'oldid' => 1 ],
+			'UTPage',
+			null,
+			'Should resolve from "oldid"'
+		] ];
 	}
 
 	/**
@@ -84,10 +124,18 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 	}
 
 	public function provideMediaWikiApiTitlesOrPageIdsData() {
-		return [
-			[ [ 'pageids' => '1|2' ], [ 'UTPage', 'TitleParamsResolverTest' ], 'Should resolve from "pageids"' ],
-			[ [ 'pageids' => '2|-1' ], [ 'TitleParamsResolverTest' ], 'Should resolve from "pageids" with invalid pageid' ],
-			[ [ 'titles' => 'UTPage|Help:TitleParamsResolverTest' ], [ 'UTPage', 'Help:TitleParamsResolverTest' ], 'Should resolve from "titles"' ],
-		];
+		return [ [
+			[ 'pageids' => '1|2' ],
+			[ 'UTPage', 'TitleParamsResolverTest' ],
+			'Should resolve from "pageids"'
+		], [
+			[ 'pageids' => '2|-1' ],
+			[ 'TitleParamsResolverTest' ],
+			'Should resolve from "pageids" with invalid pageid'
+		], [
+			[ 'titles' => 'UTPage|Help:TitleParamsResolverTest' ],
+			[ 'UTPage', 'Help:TitleParamsResolverTest' ],
+			'Should resolve from "titles"'
+		], ];
 	}
 }

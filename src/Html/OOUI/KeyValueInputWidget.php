@@ -22,27 +22,36 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
-		$this->value = isset( $config['value'] ) ? $config['value'] : [];
-		$this->labelsOnlyOnFirst = isset( $config['labelsOnlyOnFirst'] ) ?
-			(bool)$config['labelsOnlyOnFirst'] : true;
+		$this->value = isset( $config['value'] )
+			? $config['value']
+			: [];
+		$this->labelsOnlyOnFirst = isset( $config['labelsOnlyOnFirst'] )
+			? (bool)$config['labelsOnlyOnFirst']
+			: true;
 
-		$this->valueRequired = isset( $config['valueRequired'] ) ?
-			(bool)$config['valueRequired'] : false;
+		$this->valueRequired = isset( $config['valueRequired'] )
+			? (bool)$config['valueRequired']
+			: false;
 
-		$this->keyLabel = isset( $config['keyLabel'] ) ?
-			$config['keyLabel'] : wfMessage( 'bs-ooui-key-value-input-widget-key-label' )->plain();
+		$this->keyLabel = isset( $config['keyLabel'] )
+			? $config['keyLabel']
+			: wfMessage( 'bs-ooui-key-value-input-widget-key-label' )->plain();
 
-		$this->valueLabel = isset( $config['valueLabel'] ) ?
-			$config['valueLabel'] : wfMessage( 'bs-ooui-key-value-input-widget-value-label' )->plain();
+		$this->valueLabel = isset( $config['valueLabel'] )
+			? $config['valueLabel']
+			: wfMessage( 'bs-ooui-key-value-input-widget-value-label' )->plain();
 
-		$this->addNewFormLabel = isset( $config['addNewFormLabel'] ) ?
-			$config['addNewFormLabel'] : wfMessage( 'bs-ooui-key-value-input-widget-add-form-label' )->plain();
+		$this->addNewFormLabel = isset( $config['addNewFormLabel'] )
+			? $config['addNewFormLabel']
+			: wfMessage( 'bs-ooui-key-value-input-widget-add-form-label' )->plain();
 
-		$this->keyReadOnly = isset( $config['keyReadOnly'] ) ?
-			(bool)$config['keyReadOnly'] : false;
+		$this->keyReadOnly = isset( $config['keyReadOnly'] )
+			? (bool)$config['keyReadOnly']
+			: false;
 
-		$this->allowAdditions = isset( $config['allowAdditions'] ) ?
-			(bool)$config['allowAdditions'] : false;
+		$this->allowAdditions = isset( $config['allowAdditions'] )
+			? (bool)$config['allowAdditions']
+			: false;
 
 		$this->separator = new \OOUI\Tag();
 		$this->separator->addClasses( [ 'bs-ooui-keyValueInputWidget-separator' ] );
@@ -123,7 +132,12 @@ class KeyValueInputWidget extends \OOUI\Widget {
 			] );
 			$deleteButton->addClasses( [ 'bs-ooui-widget-keyValueInputWidget-remove-btn' ] );
 
-			$this->valueContainer->appendContent( $keyLayout, $valueLayout, $deleteButton, $this->separator );
+			$this->valueContainer->appendContent(
+				$keyLayout,
+				$valueLayout,
+				$deleteButton,
+				$this->separator
+			);
 
 			$first = false;
 		}
@@ -132,7 +146,9 @@ class KeyValueInputWidget extends \OOUI\Widget {
 
 	protected function addNewValueForm() {
 		$this->addContainer = new \OOUI\Tag();
-		$this->addContainer->addClasses( [ 'bs-ooui-widget-keyValueInputWidget-add-container' ] );
+		$this->addContainer->addClasses( [
+			'bs-ooui-widget-keyValueInputWidget-add-container'
+		] );
 
 		if ( $this->addNewFormLabel !== '' ) {
 			$this->addContainer->appendContent( new \OOUI\LabelWidget( [

@@ -7,9 +7,24 @@ class BSRemoteAPIBase extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addOption( 'targetapi', 'Absolute path the target wiki\'s "api.php"', true, true );
-		$this->addOption( 'u', 'A valid username on the target wiki with sufficient write permissions', true, true );
-		$this->addOption( 'p', 'The users password for API login. If not provided as argument you will be promted for it', false, true );
+		$this->addOption(
+			'targetapi',
+			'Absolute path the target wiki\'s "api.php"',
+			true,
+			true
+		);
+		$this->addOption(
+			'u',
+			'A valid username on the target wiki with sufficient write permissions',
+			true,
+			true
+		);
+		$this->addOption(
+			'p',
+			'The users password for API login. If not provided as argument you will be promted for it',
+			false,
+			true
+		);
 	}
 
 	protected $apiUrl = '';
@@ -131,7 +146,8 @@ class BSRemoteAPIBase extends BSMaintenance {
 
 		if ( $status->isOK() ) {
 			$response = FormatJson::decode( $req->getContent() );
-			if ( isset( $response->query ) && isset( $response->query->tokens ) && isset( $response->query->tokens->csrftoken ) ) {
+			if ( isset( $response->query ) && isset( $response->query->tokens )
+				&& isset( $response->query->tokens->csrftoken ) ) {
 				$this->edittoken = $response->query->tokens->csrftoken;
 				return true;
 			}

@@ -191,7 +191,13 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 					}
 				}
 
-				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', [ $this, $sTask, &$oResult, $oTaskData , $aParams ] );
+				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', [
+					$this,
+					$sTask,
+					&$oResult,
+					$oTaskData,
+					$aParams
+				] );
 			}
 		}
 
@@ -401,7 +407,8 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	public function getExamples() {
 		$aTaskNames = $this->oTasksSpec->getTaskNames();
 		return [
-			'api.php?action=' . $this->getModuleName() . '&task=' . $aTaskNames[0] . '&taskData={someKey:"someValue",isFalse:true}',
+			'api.php?action=' . $this->getModuleName() . '&task=' . $aTaskNames[0]
+			. '&taskData={someKey:"someValue",isFalse:true}',
 		];
 	}
 
@@ -436,7 +443,8 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * This can be used to show / hide ui elements
 	 *
 	 * @param Array $oTaskData can be empty, default param for task
-	 * @return Array Elements of $oTasks with boolean attributes for grant / deny on each task provided by called api-class
+	 * @return Array Elements of $oTasks with boolean attributes for grant / deny on each task
+	 * provided by called api-class
 	 */
 	public function task_getUserTaskPermissions( $oTaskData ) {
 		$oResponse = $this->makeStandardReturn();

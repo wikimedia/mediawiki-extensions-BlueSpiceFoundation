@@ -116,8 +116,10 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 
 	/**
 	 * register hooks
-	 * @example $this->setHook('ParserFirstCallInit'); // register the method onParserFirstCallInit() to  hook ParserFirstCallInit
-	 * @example $this->setHook('ParserFirstCallInit', 'initParser'); // register the method initParser() to  hook ParserFirstCallInit
+	 * @example $this->setHook('ParserFirstCallInit'); // register the method
+	 * onParserFirstCallInit() to  hook ParserFirstCallInit
+	 * @example $this->setHook('ParserFirstCallInit', 'initParser');
+	 * // register the method initParser() to hook ParserFirstCallInit
 	 * @global array $wgHooks
 	 * @param string $hook name of the hook to register to
 	 * @param string $method (optional) name of method register to

@@ -109,7 +109,8 @@ abstract class PageContentSave extends Hook {
 	 * @param \Status &$status
 	 * @return bool
 	 */
-	public static function callback( &$wikipage, &$user, &$content, &$summary, $isMinor, $isWatch, $section, &$flags, &$status ) {
+	public static function callback( &$wikipage, &$user, &$content, &$summary, $isMinor, $isWatch,
+		$section, &$flags, &$status ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -141,7 +142,8 @@ abstract class PageContentSave extends Hook {
 	 * @param int &$flags
 	 * @param \Status &$status
 	 */
-	public function __construct( $context, $config, &$wikipage, &$user, &$content, &$summary, $isMinor, $isWatch, $section, &$flags, &$status ) {
+	public function __construct( $context, $config, &$wikipage, &$user, &$content, &$summary, $isMinor,
+		$isWatch, $section, &$flags, &$status ) {
 		parent::__construct( $context, $config );
 
 		$this->wikipage =& $wikipage;

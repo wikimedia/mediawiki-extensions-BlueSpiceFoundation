@@ -30,15 +30,30 @@ class MenuSelectWidget extends SelectWidget {
 		$this->initializeFloatableElement( $config );
 
 		$this->originalVerticalPosition = $this->verticalPosition;
-		$this->autoHide = isset( $config['autoHide'] ) ? (bool)$config['autoHide'] : true;
-		$this->hideOnChoose = isset( $config['hideOnChoose'] ) ? (bool)$config['hideOnChoose'] : true;
-		$this->filterFromInput = isset( $config['filterFromInput'] ) ? (bool)$config['filterFromInput'] : false;
-		$this->input = isset( $config['input'] ) ? $config['input'] : null;
-		$this->widget = isset( $config['widget'] ) ? $config['widget'] : null;
-		$this->autoCloseIgnore = isset( $config['autoCloseIgnore'] ) ?
-			$config['autoCloseIgnore'] : new \OOUI\Tag( '' );
-		$this->hightlightOnFilter = isset( $config['hightlightOnFilter'] ) ? (bool)$config['hightlightOnFilter'] : false;
-		$this->width = isset( $config['width'] ) ? $config['width'] : null;
+		$this->autoHide = isset( $config['autoHide'] )
+			? (bool)$config['autoHide']
+			: true;
+		$this->hideOnChoose = isset( $config['hideOnChoose'] )
+			? (bool)$config['hideOnChoose']
+			: true;
+		$this->filterFromInput = isset( $config['filterFromInput'] )
+			? (bool)$config['filterFromInput']
+			: false;
+		$this->input = isset( $config['input'] )
+			? $config['input']
+			: null;
+		$this->widget = isset( $config['widget'] )
+			? $config['widget']
+			: null;
+		$this->autoCloseIgnore = isset( $config['autoCloseIgnore'] )
+			? $config['autoCloseIgnore']
+			: new \OOUI\Tag( '' );
+		$this->hightlightOnFilter = isset( $config['hightlightOnFilter'] )
+			? (bool)$config['hightlightOnFilter']
+			: false;
+		$this->width = isset( $config['width'] )
+			? $config['width']
+			: null;
 
 		$this->addClasses( [ "oo-ui-menuSelectWidget" ] );
 

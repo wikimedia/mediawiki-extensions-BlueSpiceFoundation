@@ -34,7 +34,8 @@ class BSApiInterwikiStore extends BSApiExtJSStoreBase {
 	 * will be done by the base class
 	 */
 	protected function makeData( $sQuery = '' ) {
-		$aInterwikiData = \MediaWiki\MediaWikiServices::getInstance()->getInterwikiLookup()->getAllPrefixes();
+		$aInterwikiData = \MediaWiki\MediaWikiServices::getInstance()
+			->getInterwikiLookup()->getAllPrefixes();
 
 		$aData = [];
 		foreach ( $aInterwikiData as $a ) {

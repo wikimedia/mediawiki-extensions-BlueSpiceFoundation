@@ -12,7 +12,9 @@ class BsFileSystemHelper {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if ( !empty( $sSubDirName ) && !preg_match( '#^[a-zA-Z/\\\]+#', $sSubDirName ) ) {
-			return Status::newFatal( 'Requested subdirectory of ' . BS_CACHE_DIR . ' contains illegal chars' );
+			return Status::newFatal(
+				'Requested subdirectory of ' . BS_CACHE_DIR . ' contains illegal chars'
+			);
 		}
 		if ( !is_dir( BS_CACHE_DIR ) ) {
 			if ( !mkdir( BS_CACHE_DIR, 0777, true ) ) {
@@ -42,7 +44,9 @@ class BsFileSystemHelper {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		if ( !empty( $sSubDirName ) && !preg_match( '#^[a-zA-Z/\\\]+#', $sSubDirName ) ) {
-			return Status::newFatal( 'Requested subdirectory of ' . BS_DATA_DIR . ' contains illegal chars' );
+			return Status::newFatal(
+				'Requested subdirectory of ' . BS_DATA_DIR . ' contains illegal chars'
+			);
 		}
 		if ( !is_dir( BS_DATA_DIR ) ) {
 			if ( !mkdir( BS_DATA_DIR, 0777, true ) ) {
@@ -50,7 +54,9 @@ class BsFileSystemHelper {
 			}
 		}
 
-		$sFullPath = strpos( $sSubDirName, BS_DATA_DIR ) === 0 ? $sSubDirName : BS_DATA_DIR . "/$sSubDirName";
+		$sFullPath = strpos( $sSubDirName, BS_DATA_DIR ) === 0
+			? $sSubDirName
+			: BS_DATA_DIR . "/$sSubDirName";
 		if ( empty( $sFullPath ) ) {
 			return Status::newGood( BS_DATA_DIR );
 		} elseif ( is_dir( $sFullPath ) ) {
@@ -252,7 +258,8 @@ class BsFileSystemHelper {
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function copyFile( $sFileName, $sSource, $sDestination, $bOverwrite = true ) {
-		if ( self::hasTraversal( "$sSource/$sFileName" ) || self::hasTraversal( "$sDestination/$sFileName" ) ) {
+		if ( self::hasTraversal( "$sSource/$sFileName" )
+			|| self::hasTraversal( "$sDestination/$sFileName" ) ) {
 			return Status::newFatal( wfMessage(
 				"bs-filesystemhelper-has-path-traversal"
 			) );
@@ -306,7 +313,8 @@ class BsFileSystemHelper {
 	 * @return Status
 	 */
 	public static function copyFolder( $sFolderName, $sSource, $sDestination, $bOverwrite = true ) {
-		if ( self::hasTraversal( "$sSource/$sFolderName" ) || self::hasTraversal( "$sDestination/$sFolderName" ) ) {
+		if ( self::hasTraversal( "$sSource/$sFolderName" )
+			|| self::hasTraversal( "$sDestination/$sFolderName" ) ) {
 			return Status::newFatal( wfMessage(
 				"bs-filesystemhelper-has-path-traversal"
 			) );
@@ -356,7 +364,9 @@ class BsFileSystemHelper {
 					BS_DATA_DIR . "/$sDestination/$sFolderName/{$file->getFileName()}"
 				);
 				if ( !$bStatus ) {
-					return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-copy-error", $file->getFileName() ) );
+					return Status::newFatal(
+						wfMessage( "bs-filesystemhelper-folder-copy-error", $file->getFileName() )
+					);
 				}
 			}
 		}
@@ -395,7 +405,11 @@ class BsFileSystemHelper {
 		if ( $bStatus ) {
 			return Status::newGood();
 		} else {
-			return Status::newFatal( wfMessage( "bs-filesystemhelper-folder-rename-error", $sSource, $sDestination ) );
+			return Status::newFatal( wfMessage(
+				"bs-filesystemhelper-folder-rename-error",
+				$sSource,
+				$sDestination
+			) );
 		}
 	}
 
@@ -478,7 +492,10 @@ class BsFileSystemHelper {
 		$oWebRequest = new WebRequest();
 		$oWebRequestUpload = $oWebRequest->getUpload( $sName );
 		$oUploadFromFile = new UploadFromFile();
-		$oUploadFromFile->initialize( RequestContext::getMain()->getRequest()->getVal( 'name' ), $oWebRequestUpload );
+		$oUploadFromFile->initialize(
+			RequestContext::getMain()->getRequest()->getVal( 'name' ),
+			$oWebRequestUpload
+		);
 		$aStatus = $oUploadFromFile->verifyUpload();
 		if ( $aStatus['status'] != 0 ) {
 			return Status::newFatal(
@@ -491,8 +508,11 @@ class BsFileSystemHelper {
 
 		$sRemoteFileName = $oWebRequestUpload->getName();
 		$sRemoteFileExt = pathinfo( $sRemoteFileName, PATHINFO_EXTENSION );
-		if ( $sRequiredExtension && ( strtolower( $sRemoteFileExt ) != strtolower( $sRequiredExtension ) ) ) {
-			return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-wrong-ext', $sRequiredExtension ) );
+		if ( $sRequiredExtension
+			&& ( strtolower( $sRemoteFileExt ) != strtolower( $sRequiredExtension ) ) ) {
+			return Status::newFatal(
+				wfMessage( 'bs-filesystemhelper-upload-wrong-ext', $sRequiredExtension )
+			);
 		}
 
 		$oStatus = self::ensureDataDirectory( $sDir );
@@ -527,16 +547,13 @@ class BsFileSystemHelper {
 		$aStatus = $oUploadFromFile->verifyUpload();
 
 		if ( $aStatus['status'] != 0 ) {
-			return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode( $aStatus['status'] ) . '}}' )->parse() );
+			return Status::newFatal( wfMessage(
+				'bs-filesystemhelper-upload-err-code',
+				'{{int:' . UploadBase::getVerificationErrorCode( $aStatus['status'] ) . '}}'
+			)->parse() );
 		}
 
 		$sRemoteFileName = $oWebRequestUpload->getName();
-		/*
-		  $sRemoteFileExt = pathinfo($sRemoteFileName, PATHINFO_EXTENSION);
-		  if ($sRequiredExtension && strtolower($sRemoteFileExt) != strtolower($sRequiredExtension)) {
-		  return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-wrong-ext', $sRequiredExtension ) );
-		  }
-		 */
 
 		$oStatus = self::ensureDataDirectory( $sDir );
 		if ( !$oStatus->isGood() ) {
@@ -651,7 +668,8 @@ class BsFileSystemHelper {
 	 * @var array
 	 */
 	public static $aFSCharMap = [
-		// MediaWiki NSFileRepo makes it possible to have filenames with colons. Unfortunately we cannot have a colon in a filesystem path
+		// MediaWiki NSFileRepo makes it possible to have filenames with colons
+		// Unfortunately we cannot have a colon in a filesystem path
 		':' => '_COLON_'
 	];
 
@@ -715,14 +733,17 @@ class BsFileSystemHelper {
 	 * @param bool $bIgnoreWarnings
 	 * @return Status
 	 */
-	public static function uploadLocalFile( $sFilename, $bDeleteSrc = false, $sComment = "", $sPageText = "", $bWatch = false, $bIgnoreWarnings = true ) {
+	public static function uploadLocalFile( $sFilename, $bDeleteSrc = false, $sComment = "",
+		$sPageText = "", $bWatch = false, $bIgnoreWarnings = true ) {
 		global $wgLocalFileRepo, $wgUser;
 		$oUploadStash = new UploadStash( new LocalRepo( $wgLocalFileRepo ), $wgUser );
 		$oUploadFile = $oUploadStash->stashFile( $sFilename, "file" );
 		$sTargetFileName = basename( self::restoreFileName( $sFilename ) );
 
 		if ( $oUploadFile === false ) {
-			return Status::newFailure( wfMessage( 'bs-filesystemhelper-upload-local-error-stash-file' )->plain() );
+			return Status::newFailure(
+				wfMessage( 'bs-filesystemhelper-upload-local-error-stash-file' )->plain()
+			);
 		}
 
 		$oUploadFromStash = new UploadFromStash( $wgUser, $oUploadStash, $wgLocalFileRepo );
@@ -742,7 +763,10 @@ class BsFileSystemHelper {
 
 		if ( $aStatus['status'] != UploadBase::OK ) {
 			return Status::newFatal(
-				wfMessage( 'bs-filesystemhelper-upload-err-code', '{{int:' . UploadBase::getVerificationErrorCode( $aStatus['status'] ) . '}}' )->parse()
+				wfMessage(
+					'bs-filesystemhelper-upload-err-code',
+					'{{int:' . UploadBase::getVerificationErrorCode( $aStatus['status'] ) . '}}'
+				)->parse()
 			);
 		}
 		$status = $oUploadFromStash->performUpload( $sComment, $sPageText, $bWatch, $wgUser );

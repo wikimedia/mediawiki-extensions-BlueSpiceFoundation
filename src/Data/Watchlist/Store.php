@@ -25,7 +25,10 @@ class Store implements \BlueSpice\Data\IStore {
 	 * @return Reader
 	 */
 	public function getReader() {
-		return new Reader( \MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer(), $this->context );
+		return new Reader(
+			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			$this->context
+		);
 	}
 
 	/**

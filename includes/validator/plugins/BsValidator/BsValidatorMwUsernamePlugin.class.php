@@ -1,6 +1,7 @@
 <?php
 
-// @todo: Hier wird nicht die Eingabe validiert, sondern bereits der angepaßte Name (z.B. _ ersetzt durch " ").
+// @todo: Hier wird nicht die Eingabe validiert, sondern bereits der angepaßte
+// Name (z.B. _ ersetzt durch " ").
 // Es ist also zusätzlich ein Mechanismus zur Validierung der Benutzereingabe erforderlich.
 
 /**
@@ -22,7 +23,8 @@ class BsValidatorMwUsernamePlugin implements BsValidatorPlugin {
 			return new BsValidatorResponse( 1, 'UserManager', 'enter_user' );
 		}
 
-		if ( strpos( $mwUsername, '\\' ) !== false || !is_string( $mwUsername ) || strlen( $mwUsername ) < 2 ) {
+		if ( strpos( $mwUsername, '\\' ) !== false || !is_string( $mwUsername )
+			|| strlen( $mwUsername ) < 2 ) {
 			return new BsValidatorResponse( 2, 'UserManager', 'invalid_uname' );
 		}
 

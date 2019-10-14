@@ -86,7 +86,9 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	 * @param Notifier $notifier
 	 * @param IPermissionChecker $permissionChecker
 	 */
-	protected function __construct( Services $services, Context $context, LoggerInterface $logger, ActionLogger $actionLogger, INotifier $notifier, IPermissionChecker $permissionChecker ) {
+	protected function __construct( Services $services, Context $context,
+		LoggerInterface $logger, ActionLogger $actionLogger, INotifier $notifier,
+		IPermissionChecker $permissionChecker ) {
 		$this->services = $services;
 		$this->context = $context;
 		$this->actionLogger = $actionLogger;
@@ -101,7 +103,8 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	 * @param IPermissionChecker|null $permissionChecker
 	 * @return ITask
 	 */
-	public static function factory( Services $services, Context $context, IPermissionChecker $permissionChecker = null ) {
+	public static function factory( Services $services, Context $context,
+		IPermissionChecker $permissionChecker = null ) {
 		$actionLogger = new NullLogger();
 		$logger = LoggerFactory::getInstance( static::class );
 		$notifier = $services->getBSNotificationManager()->getNotifier();

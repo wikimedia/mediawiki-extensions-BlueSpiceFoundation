@@ -52,31 +52,40 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	public function provideFromUrlWithTitleData() {
 		return [
 			'normal-with-index' => [
-				'http://tollerserver.de/index.php?title=Sometitle&do=something', 'Sometitle'
+				'http://tollerserver.de/index.php?title=Sometitle&do=something',
+				'Sometitle'
 			],
 			'normal-without-index' => [
-				'http://tollerserver.de/Some_title?a=b', 'Some title'
+				'http://tollerserver.de/Some_title?a=b',
+				'Some title'
 			],
 			'subpage-without-index' => [
-				'http://tollerserver.de/Some_title/some/Sub', 'Some title/some/Sub'
+				'http://tollerserver.de/Some_title/some/Sub',
+				'Some title/some/Sub'
 			],
 			'prefixed-with-index' => [
-				'http://tollerserver.de/index.php?title=Prefix%3ASome_title', 'Prefix:Some title'
+				'http://tollerserver.de/index.php?title=Prefix%3ASome_title',
+				'Prefix:Some title'
 			],
 			'prefixed-without-index' => [
-				'http://tollerserver.de/Prefix%3ASome_title', 'Prefix:Some title'
+				'http://tollerserver.de/Prefix%3ASome_title',
+				'Prefix:Some title'
 			],
 			'normal-with-umlauts' => [
-				'http://tollerserver.de/S%C3%B6me_title', 'Söme title'
+				'http://tollerserver.de/S%C3%B6me_title',
+				'Söme title'
 			],
 			'subpage-with-umlauts' => [
-				'http://tollerserver.de/Hallo/S%C3%B6me_title', 'Hallo/Söme title'
+				'http://tollerserver.de/Hallo/S%C3%B6me_title',
+				'Hallo/Söme title'
 			],
 			'subpage-with-query' => [
-				'http://tollerserver.de/Hallo/S%C3%B6me_title?debug=true&weil_so_schoen_is=nochwas', 'Hallo/Söme title'
+				'http://tollerserver.de/Hallo/S%C3%B6me_title?debug=true&weil_so_schoen_is=nochwas',
+				'Hallo/Söme title'
 			],
 			'non-existing-namespace' => [
-				'http://tollerserver.de/SomeNS:A_Tollesache_das/Wenn_es_geht', 'SomeNS:A Tollesache das/Wenn es geht'
+				'http://tollerserver.de/SomeNS:A_Tollesache_das/Wenn_es_geht',
+				'SomeNS:A Tollesache das/Wenn es geht'
 			]
 			// .. Umlauts, Namespace prefixes...
 		];

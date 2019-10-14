@@ -113,15 +113,33 @@ class RelocalizeWiki extends Maintenance {
 					}
 
 					if ( $sNsIndex === NS_SPECIAL ) {
-						$sArticleContent = preg_replace_callback( '#\[(' . $sNsName . '\:(.*?))\]#si', [ $this, 'pregSpecialpageCallback' ], $sArticleContent, -1, $iPregSpecialCount );
+						$sArticleContent = preg_replace_callback(
+							'#\[(' . $sNsName . '\:(.*?))\]#si',
+							[ $this, 'pregSpecialpageCallback' ],
+							$sArticleContent,
+							-1,
+							$iPregSpecialCount
+						);
 					} else {
-						$sArticleContent = str_replace( $sSearchFor, $sReplacement, $sArticleContent, $iCount );
+						$sArticleContent = str_replace(
+							$sSearchFor,
+							$sReplacement,
+							$sArticleContent,
+							$iCount
+						);
 					}
 
 					if ( $iCount !== 0 ) {
-						$this->sOutput .= 'Replaced "' . $sNsName . ':" with "' . $this->aToNs['ns'][$sNsIndex] . ":\"\n";
+						$this->sOutput .= 'Replaced "' . $sNsName . ':" with "'
+							. $this->aToNs['ns'][$sNsIndex] . ":\"\n";
 					}
-					$sArticleContent = preg_replace_callback( '#<gallery>(.*?)</gallery>#si', [ $this, 'pregImageCallback' ], $sArticleContent, -1, $iPregImageCount );
+					$sArticleContent = preg_replace_callback(
+						'#<gallery>(.*?)</gallery>#si',
+						[ $this, 'pregImageCallback' ],
+						$sArticleContent,
+						-1,
+						$iPregImageCount
+					);
 					if ( $iCount !== 0 || $iPregImageCount !== 0 || $iPregSpecialCount !== 0 ) {
 						$this->bEdited = true;
 					}
@@ -156,17 +174,29 @@ class RelocalizeWiki extends Maintenance {
 	public function pregImageCallback( &$input ) {
 		$iCountNsName = 0;
 		$iCountNsAlias = 0;
-		$input[0] = str_replace( $this->aFromNs['ns'][NS_FILE] . ':', $this->aToNs['ns'][NS_FILE] . ':', $input[0], $iCountNsName );
+		$input[0] = str_replace(
+			$this->aFromNs['ns'][NS_FILE] . ':',
+			$this->aToNs['ns'][NS_FILE] . ':',
+			$input[0],
+			$iCountNsName
+		);
 		if ( $iCountNsName !== 0 ) {
 			for ( $i = 1; $i <= $iCountNsName; $i++ ) {
-				$this->sOutput .= "Replaced " . '"' . $this->aFromNs['ns'][NS_FILE] . ':" with "' . $this->aToNs['ns'][NS_FILE] . ':"' . "\n";
+				$this->sOutput .= "Replaced " . '"' . $this->aFromNs['ns'][NS_FILE]
+					. ':" with "' . $this->aToNs['ns'][NS_FILE] . ':"' . "\n";
 			}
 		}
 		if ( isset( $this->aFromNs['alias'][NS_FILE] ) ) {
-			$input[0] = str_replace( $this->aFromNs['alias'][NS_FILE] . ':', $this->aToNs['ns'][NS_FILE] . ':', $input[0], $iCountNsAlias );
+			$input[0] = str_replace(
+				$this->aFromNs['alias'][NS_FILE] . ':',
+				$this->aToNs['ns'][NS_FILE] . ':',
+				$input[0],
+				$iCountNsAlias
+			);
 			if ( $iCountNsAlias !== 0 ) {
 				for ( $i = 1; $i <= $iCountNsAlias; $i++ ) {
-					$this->sOutput .= "Replaced " . '"' . $this->aFromNs['alias'][NS_FILE] . ':" with "' . $this->aToNs['ns'][NS_FILE] . ':"' . "\n";
+					$this->sOutput .= "Replaced " . '"' . $this->aFromNs['alias'][NS_FILE]
+						. ':" with "' . $this->aToNs['ns'][NS_FILE] . ':"' . "\n";
 				}
 			}
 		}
@@ -197,8 +227,14 @@ class RelocalizeWiki extends Maintenance {
 			return $input[0];
 		}
 
-		$input[0] = str_replace( $this->aFromNs['ns'][NS_SPECIAL] . ':' . $aReplace[0], $this->aToNs['ns'][NS_SPECIAL] . ':' . $oSpecialPage->getName(), $input[0] );
-		$this->sOutput .= 'Replaced "' . $this->aFromNs['ns'][NS_SPECIAL] . ':' . $aReplace[0] . '" with "' . $this->aToNs['ns'][NS_SPECIAL] . ':' . $oSpecialPage->getName() . '"' . "\n";
+		$input[0] = str_replace(
+			$this->aFromNs['ns'][NS_SPECIAL] . ':' . $aReplace[0],
+			$this->aToNs['ns'][NS_SPECIAL] . ':' . $oSpecialPage->getName(),
+			$input[0]
+		);
+		$this->sOutput .= 'Replaced "' . $this->aFromNs['ns'][NS_SPECIAL]
+			. ':' . $aReplace[0] . '" with "' . $this->aToNs['ns'][NS_SPECIAL]
+			. ':' . $oSpecialPage->getName() . '"' . "\n";
 
 		return $input[0];
 	}
