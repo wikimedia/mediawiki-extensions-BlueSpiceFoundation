@@ -47,9 +47,19 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 		);
 
 		$this->assertTrue( $oResponse->success, 'Entire ping task failed' );
-		$this->assertArrayHasKey( 'DummyRef', $oResponse->payload, "Response does not contain passed key" );
-		$this->assertArrayHasKey( 'success', $oResponse->payload['DummyRef'], "Single response does not contain key 'success'" );
-		$this->assertTrue( $oResponse->payload['DummyRef']['success'], "Single ping task returned false" );
+		$this->assertArrayHasKey(
+			'DummyRef',
+			$oResponse->payload, "Response does not contain passed key"
+		);
+		$this->assertArrayHasKey(
+			'success',
+			$oResponse->payload['DummyRef'],
+			"Single response does not contain key 'success'"
+		);
+		$this->assertTrue(
+			$oResponse->payload['DummyRef']['success'],
+			"Single ping task returned false"
+		);
 	}
 
 	/**
@@ -62,7 +72,8 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	 * @param integer $iRevision
 	 * @param array $aSingleResult
 	 */
-	public static function onBsAdapterAjaxPingResult( $sRef, $aData, $iArticleId, $sTitle, $iNamespace, $iRevision, &$aSingleResult ) {
+	public static function onBsAdapterAjaxPingResult( $sRef, $aData, $iArticleId, $sTitle,
+		$iNamespace, $iRevision, &$aSingleResult ) {
 		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
 
 		if ( $iArticleId != $oTitle->getArticleID() ) {

@@ -5,8 +5,18 @@ require_once 'BSMaintenance.php';
 class BSFileHashCheck extends BSMaintenance {
 	public function __construct() {
 		$this->addOption( 'dir', 'The path to the directory to process', true, true );
-		$this->addOption( 'hashes', 'The JSON file with the CRC checksums to check against', true, true );
-		$this->addOption( 'mode', 'check|create - whether to check against the directory contents or to create the JSON file', false, false );
+		$this->addOption(
+			'hashes',
+			'The JSON file with the CRC checksums to check against',
+			true,
+			true
+		);
+		$this->addOption(
+			'mode',
+			'check|create - whether to check against the directory contents or to create the JSON file',
+			false,
+			false
+		);
 
 		parent::__construct();
 	}

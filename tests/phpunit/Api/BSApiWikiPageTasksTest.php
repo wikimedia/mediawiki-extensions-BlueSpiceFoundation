@@ -21,7 +21,10 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	public function setUp() {
 		parent::setUp();
 
-		$this->insertPage( 'Category Test', '[[Category:Mouse]] [[Category:Bird]] [[Category:Pink unicorn]]' );
+		$this->insertPage(
+			'Category Test',
+			'[[Category:Mouse]] [[Category:Bird]] [[Category:Pink unicorn]]'
+		);
 	}
 
 	public function testAddCategoriesSucceeds() {
@@ -42,7 +45,11 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			]
 		);
 
-		$this->assertEquals( true, $response->success, "Adding categories failed where it should have succeeded" );
+		$this->assertEquals(
+			true,
+			$response->success,
+			"Adding categories failed where it should have succeeded"
+		);
 
 		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
@@ -76,7 +83,11 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			]
 		);
 
-		$this->assertEquals( true, $response->success, "Setting categories failed where it should have succeeded" );
+		$this->assertEquals(
+			true,
+			$response->success,
+			"Setting categories failed where it should have succeeded"
+		);
 
 		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
@@ -108,7 +119,11 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			]
 		);
 
-		$this->assertEquals( true, $response->success, "Removing categories failed where it should have succeeded" );
+		$this->assertEquals(
+			true,
+			$response->success,
+			"Removing categories failed where it should have succeeded"
+		);
 
 		$oWikiPage = \WikiPage::factory( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();

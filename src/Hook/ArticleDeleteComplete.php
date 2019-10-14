@@ -102,7 +102,8 @@ abstract class ArticleDeleteComplete extends Hook {
 	 * @param \Content $content
 	 * @param \LogEntry $logEntry
 	 */
-	public function __construct( $context, $config, &$wikipage, &$user, $reason, $id, $content, $logEntry ) {
+	public function __construct( $context, $config, &$wikipage, &$user, $reason, $id, $content,
+		$logEntry ) {
 		parent::__construct( $context, $config );
 
 		$this->wikipage = &$wikipage;

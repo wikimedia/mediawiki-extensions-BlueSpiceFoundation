@@ -25,7 +25,8 @@ class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 		$sHTMLList = '<ul class="multiselectsortlist">';
 
 		foreach ( $aValidated as $aOption ) {
-			$sHTMLList .= '<li class="multiselectsortlistitem bs-multiselect-item" data-value="' . $aOption['key'] . '">' . $aOption['title'] . '</li>';
+			$sHTMLList .= '<li class="multiselectsortlistitem bs-multiselect-item" data-value="'
+				. $aOption['key'] . '">' . $aOption['title'] . '</li>';
 		}
 
 		$sHTMLList .= '</ul>';

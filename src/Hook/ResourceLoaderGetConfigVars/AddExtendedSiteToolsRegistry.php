@@ -24,7 +24,9 @@ class AddExtendedSiteToolsRegistry extends ResourceLoaderGetConfigVars {
 	 */
 	protected function getSettingsToExpose() {
 		$registry = \ExtensionRegistry::getInstance();
-		$extendedSiteToolsRegistry = $registry->getAttribute( 'BlueSpiceFoundationExtendedSiteToolsRegistry' );
+		$extendedSiteToolsRegistry = $registry->getAttribute(
+			'BlueSpiceFoundationExtendedSiteToolsRegistry'
+		);
 		return [ 'bsExtendedSiteToolsRegistry' => $extendedSiteToolsRegistry ];
 	}
 }

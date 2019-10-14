@@ -24,7 +24,8 @@ class BsCacheHelper {
 	}
 
 	/**
-	 * Get a cache key, depending on given params like getCacheKey( 'MyExtension', 'MyStuff', myID, etc )
+	 * Get a cache key, depending on given params like
+	 * getCacheKey( 'MyExtension', 'MyStuff', myID, etc )
 	 * Use of multiple params (func_get_args)
 	 * @deprecated since version 3.1.0 - Use Services::getInstance()
 	 * ->getBSUtilityFactory()->getCacheHelper() instead

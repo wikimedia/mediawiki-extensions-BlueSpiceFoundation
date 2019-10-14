@@ -16,7 +16,8 @@ interface ITag {
 	 *
 	 * @return IHandler
 	 */
-	public function getHandler( $processedInput, array $processedArgs, \Parser $parser, \PPFrame $frame );
+	public function getHandler( $processedInput, array $processedArgs, \Parser $parser,
+		\PPFrame $frame );
 
 	/**
 	 * @return string

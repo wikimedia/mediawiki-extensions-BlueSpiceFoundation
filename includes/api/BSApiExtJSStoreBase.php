@@ -619,7 +619,8 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	protected function getSortValueFromList( $aValues, $oDataSet, $sProperty ) {
 		$sCombinedValue = '';
 		foreach ( $aValues as $sValue ) {
-			// PHP 7 workaround. In PHP 7 cast throws no exception. It's a fatal error so i can't catch it :-(
+			// PHP 7 workaround. In PHP 7 cast throws no exception. It's a fatal error
+			// so i can't catch it :-(
 			if ( $this->canBeCastedToString( $sValue ) ) {
 				$sCombinedValue .= (string)$sValue;
 			} else {

@@ -14,13 +14,27 @@ class BSExportUsers extends BSMaintenance {
 			$oUserNode = $oDOM->createElement( 'user' );
 			$oUsersNode->appendChild( $oUserNode );
 
-			$oUserNode->appendChild( $oDOM->createElement( 'name', $row->user_name ) );
-			$oUserNode->appendChild( $oDOM->createElement( 'id', $row->user_id ) );
-			$oUserNode->appendChild( $oDOM->createElement( 'realname', $row->user_real_name ) );
-			$oUserNode->appendChild( $oDOM->createElement( 'email', $row->user_email ) );
-			$oUserNode->appendChild( $oDOM->createElement( 'touched', wfTimestamp( TS_ISO_8601, $row->user_touched ) ) );
-			$oUserNode->appendChild( $oDOM->createElement( 'registration', wfTimestamp( TS_ISO_8601, $row->user_registration ) ) );
-			$oUserNode->appendChild( $oDOM->createElement( 'editcount', $row->user_editcount ) );
+			$oUserNode->appendChild(
+				$oDOM->createElement( 'name', $row->user_name )
+			);
+			$oUserNode->appendChild(
+				$oDOM->createElement( 'id', $row->user_id )
+			);
+			$oUserNode->appendChild(
+				$oDOM->createElement( 'realname', $row->user_real_name )
+			);
+			$oUserNode->appendChild(
+				$oDOM->createElement( 'email', $row->user_email )
+			);
+			$oUserNode->appendChild(
+				$oDOM->createElement( 'touched', wfTimestamp( TS_ISO_8601, $row->user_touched ) )
+			);
+			$oUserNode->appendChild(
+				$oDOM->createElement( 'registration', wfTimestamp( TS_ISO_8601, $row->user_registration ) )
+			);
+			$oUserNode->appendChild(
+				$oDOM->createElement( 'editcount', $row->user_editcount )
+			);
 
 			$res2 = $dbr->select( 'user_groups', '*', [ 'ug_user' => $row->user_id ] );
 			if ( $dbr->numRows( $res2 ) > 0 ) {

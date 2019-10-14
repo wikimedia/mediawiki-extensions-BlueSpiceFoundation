@@ -1,6 +1,7 @@
 <?php
 /**
- * This class provides functions for common tasks while working with MediaWiki Article/Title objects.
+ * This class provides functions for common tasks while working with MediaWiki
+ * Article/Title objects.
  * @package BlueSpice_AdapterMW
  * @subpackage Utility
  */
@@ -50,7 +51,12 @@ class BsArticleHelper {
 
 		$iTalkPageId = $oTalkPage->getArticleID();
 
-		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'ArticleHelper', 'getDiscussionAmount', $iTalkPageId );
+		$sKey = BsCacheHelper::getCacheKey(
+			'BlueSpice',
+			'ArticleHelper',
+			'getDiscussionAmount',
+			$iTalkPageId
+		);
 		$aData = BsCacheHelper::get( $sKey );
 
 		if ( $aData !== false ) {

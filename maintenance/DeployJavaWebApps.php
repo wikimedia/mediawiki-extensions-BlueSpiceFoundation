@@ -12,8 +12,18 @@ class DeployJavaWebApps extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
 
-		$this->addOption( 'target', 'The path to the Jave Application Server\'s "webapps" directory', true, true );
-		$this->addOption( 'baseURL', 'The url the Java Application Server can be accessed with', false, true );
+		$this->addOption(
+			'target',
+			'The path to the Jave Application Server\'s "webapps" directory',
+			true,
+			true
+		);
+		$this->addOption(
+			'baseURL',
+			'The url the Java Application Server can be accessed with',
+			false,
+			true
+		);
 	}
 
 	public function execute() {

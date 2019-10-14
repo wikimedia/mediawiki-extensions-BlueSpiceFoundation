@@ -20,7 +20,11 @@ class MenuOptionWidget extends \OOUI\Widget {
 
 		$this->appendContent( $this->label );
 
-		$this->addClasses( [ "oo-ui-menuOptionWidget", "oo-ui-optionWidget", "oo-ui-decoratedOptionWidget" ] );
+		$this->addClasses( [
+			"oo-ui-menuOptionWidget",
+			"oo-ui-optionWidget",
+			"oo-ui-decoratedOptionWidget"
+		] );
 	}
 
 	/**

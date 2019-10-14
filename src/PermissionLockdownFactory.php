@@ -40,7 +40,8 @@ class PermissionLockdownFactory {
 	 * @param Config $config
 	 * @param IContextSource $context
 	 */
-	public function __construct( ExtensionAttributeBasedRegistry $registry, Config $config, IContextSource $context ) {
+	public function __construct( ExtensionAttributeBasedRegistry $registry, Config $config,
+		IContextSource $context ) {
 		$this->registry = $registry;
 		$this->config = $config;
 		$this->context = $context;

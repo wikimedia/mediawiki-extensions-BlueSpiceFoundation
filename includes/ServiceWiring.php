@@ -61,7 +61,9 @@ return [
 	},
 
 	'BSAdminToolFactory' => function ( MediaWikiServices $services ) {
-		$attribute = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationAdminToolRegistry' );
+		$attribute = \ExtensionRegistry::getInstance()->getAttribute(
+			'BlueSpiceFoundationAdminToolRegistry'
+		);
 		return new \BlueSpice\AdminToolFactory( $attribute );
 	},
 
@@ -71,7 +73,9 @@ return [
 	},
 
 	'BSRoleFactory' => function ( MediaWikiServices $services ) {
-		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoleRegistry' );
+		$roles = \ExtensionRegistry::getInstance()->getAttribute(
+			'BlueSpiceFoundationRoleRegistry'
+		);
 		return new \BlueSpice\Permission\RoleFactory(
 			$roles,
 			$services->getService( 'BSPermissionRegistry' )

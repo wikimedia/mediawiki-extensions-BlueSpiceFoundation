@@ -177,17 +177,29 @@ class TagMultiselectWidget extends Widget {
 	 * @param array $config
 	 */
 	protected function setConfigAttributes( $config ) {
-		$this->allowArbitrary = isset( $config['allowArbitrary'] ) ? (bool)$config['allowArbitrary'] : false;
+		$this->allowArbitrary = isset( $config['allowArbitrary'] )
+			? (bool)$config['allowArbitrary']
+			: false;
 		$this->inputPosition = 'inline';
 		if ( isset( $config['inputPosition'] )
 			&& in_array( $config['inputPosition'], $this->allowedInputPositions ) ) {
 			$this->inputPosition = $config['inputPosition'];
 		}
-		$this->allowEditTags = isset( $config['allowEditTags'] ) ? (bool)$config['allowEditTags'] : false;
-		$this->allowDuplicates = isset( $config['allowDuplicates'] ) ? (bool)$config['allowDuplicates'] : false;
-		$this->allowedValues = isset( $config['allowedValues'] ) ? $config['allowedValues'] : [];
-		$this->allowDisplayInvalidTags = isset( $config['allowDisplayInvalidTags'] ) ? (bool)$config['allowDisplayInvalidTags'] : false;
-		$this->selected = isset( $config['selected'] ) && is_array( $config['selected'] ) ? $config['selected'] : [];
+		$this->allowEditTags = isset( $config['allowEditTags'] )
+			? (bool)$config['allowEditTags']
+			: false;
+		$this->allowDuplicates = isset( $config['allowDuplicates'] )
+			? (bool)$config['allowDuplicates']
+			: false;
+		$this->allowedValues = isset( $config['allowedValues'] )
+			? $config['allowedValues']
+			: [];
+		$this->allowDisplayInvalidTags = isset( $config['allowDisplayInvalidTags'] ) ?
+			(bool)$config['allowDisplayInvalidTags']
+			: false;
+		$this->selected = isset( $config['selected'] ) && is_array( $config['selected'] )
+			? $config['selected']
+			: [];
 		// Setting placeholder on infuse will trigger "change" event of input,
 		// which will trigger filtering, which will ultimately hide the menu,
 		// making it positioning imposible. This is OOUI/browser bug.
