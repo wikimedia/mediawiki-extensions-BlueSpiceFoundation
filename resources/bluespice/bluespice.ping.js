@@ -2,7 +2,8 @@
 /*jshint -W020 */
 BSPing = {
 	interval: 0,
-	aListeners:[],
+	aListeners: [],
+	isInit: !!mw.config.get( 'bsgPingOnInit' ),
 
 	init: function() {
 		$(document).triggerHandler('BSPingInit', [BSPing]);
@@ -14,7 +15,14 @@ BSPing = {
 	ping: function() {
 		var aListenersToGo = BSPing.calculateInterval();
 		if ( aListenersToGo.length < 1 ) {
-			BSPing.timeout = setTimeout( BSPing.ping, BSPing.interval);
+			if ( this.isInit ) {
+				$( function() {
+					this.ping();
+				}.bind( this ) );
+				this.isInit = false;
+			} else {
+				BSPing.timeout = setTimeout( BSPing.ping, BSPing.interval );
+			}
 			return;
 		}
 
@@ -55,7 +63,7 @@ BSPing = {
 
 		for ( var i = 0; i < BSPing.aListeners.length; i++) {
 			BSPing.aListeners[i].iInterval = (BSPing.aListeners[i].iInterval - BSPing.interval);
-			if ( BSPing.aListeners[i].iInterval > 0 ) {
+			if ( !this.isInit && BSPing.aListeners[i].iInterval > 0 ) {
 				currTMPListeners.push( BSPing.aListeners[i] );
 				continue;
 			}
