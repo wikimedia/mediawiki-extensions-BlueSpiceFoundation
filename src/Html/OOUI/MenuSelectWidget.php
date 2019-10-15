@@ -68,7 +68,7 @@ class MenuSelectWidget extends SelectWidget {
 				$config['widget'] = $this->widget;
 			}
 			if ( $this->width ) {
-				$confg['width'] = $this->width;
+				$config['width'] = $this->width;
 			}
 			if ( $this->autoCloseIgnore ) {
 				$config['autoCloseIgnore'] = $this->autoCloseIgnore;
