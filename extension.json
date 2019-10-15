@@ -599,7 +599,11 @@
 		"SearchGetNearMatchComplete": [
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
-		"SiteNoticeAfter": "BlueSpice\\Hook\\SiteNoticeAfter\\AddAlerts::callback"
+		"SiteNoticeAfter": "BlueSpice\\Hook\\SiteNoticeAfter\\AddAlerts::callback",
+		"BeforeParserFetchTemplateAndtitle": [
+			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndtitle\\CheckTransclusionPermissions::callback"
+		]
+
 	},
 	"config_prefix": "bsg",
 	"config": {
