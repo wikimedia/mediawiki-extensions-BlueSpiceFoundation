@@ -588,7 +588,7 @@
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddGraphicalListRegistry::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddExtendedSiteToolsRegistry::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback",
-			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddPingInterval::callback"
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddPingVars::callback"
 		],
 		"getUserPermissionsErrors": [
 			"\\BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyLockdown::callback"
@@ -797,6 +797,11 @@
 		},
 		"LessVars": {
 			"value": {}
+		},
+		"PingOnInit": {
+			"descriptionmsg": "bs-ping-on-init-desc",
+			"public": true,
+			"value": false
 		}
 	},
 	"ConfigRegistry": {
