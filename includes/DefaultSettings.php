@@ -34,7 +34,7 @@ if ( !isset( $GLOBALS['wgFooterIcons']['poweredby']['bluespice'] ) ) {
 	$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = [
 		"src" => $GLOBALS['wgScriptPath']
 			. "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
-		"url" => "http://bluespice.com",
+		"url" => "https://bluespice.com",
 		"alt" => "Powered by BlueSpice",
 	];
 }
