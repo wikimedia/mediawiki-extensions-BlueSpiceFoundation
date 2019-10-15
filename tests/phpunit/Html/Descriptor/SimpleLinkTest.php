@@ -40,7 +40,7 @@ class SimpleLinkTest extends TestCase {
 		$link = new SimpleLink( [
 			'label' => 'Some label',
 			'tooltip' => 'Some tooltip',
-			'href' => 'http://www.bluespice.com',
+			'href' => 'https://bluespice.com',
 			'data-attributes' => [
 				'some' => 'value'
 			]
@@ -51,7 +51,7 @@ class SimpleLinkTest extends TestCase {
 		$this->assertEmpty( $link->getIcon() );
 		$this->assertEquals( 'Some label', $link->getLabel() );
 		$this->assertEquals( 'Some tooltip', $link->getTooltip() );
-		$this->assertEquals( 'http://www.bluespice.com', $link->getHref() );
+		$this->assertEquals( 'https://bluespice.com', $link->getHref() );
 		$this->assertArrayHasKey( 'some', $link->getDataAttributes() );
 	}
 
