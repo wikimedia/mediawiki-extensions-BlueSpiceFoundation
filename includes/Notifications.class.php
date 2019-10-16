@@ -18,7 +18,7 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Patric Wirth <wirth@hallowelt.com>
+ * @author     Patric Wirth
  * @author     Sebastian Ulbricht <o0lilu0o1980@gmail.com>
  * @package    Bluespice_Foundation
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
