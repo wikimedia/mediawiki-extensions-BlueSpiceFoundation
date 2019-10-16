@@ -99,5 +99,6 @@
 	"action-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
 	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
 	"bs-notifications-agent-anon": "匿名使用者",
-	"protect-level-editor": "只允許編輯者和管理員"
+	"protect-level-editor": "只允許編輯者和管理員",
+	"bs-ping-on-init-desc": "在頁面載入後是否應立刻發送 ping 請求"
 }
