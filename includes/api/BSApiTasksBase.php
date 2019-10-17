@@ -22,7 +22,7 @@
  * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
  * the TaskRegistry in extension.json to be able to call your task in the new
  * generic task api BlueSpice\Api\Task with 'bs-task'
- * @author     Patric Wirth <wirth@hallowelt.com>
+ * @author     Patric Wirth
  * @package    Bluespice_Foundation
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only

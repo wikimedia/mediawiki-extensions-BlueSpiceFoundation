@@ -18,7 +18,7 @@
  * This thumbnail is part of BlueSpice MediaWiki
  * For further information visit http://bluespice.com
  *
- * @author     Patric WIrth <wirth@hallowelt.com>
+ * @author     Patric WIrth
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only

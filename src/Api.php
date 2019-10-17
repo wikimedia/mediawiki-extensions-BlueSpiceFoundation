@@ -19,7 +19,7 @@
  * For further information visit http://bluespice.com
  *
  * @author     Robert Vogel <vogel@hallowelt.com>
- * @author     Patric Wirth <wirth@hallowelt.com>
+ * @author     Patric Wirth
  * @package    Bluespice_Foundation
  * @copyright  Copyright (C) 2018 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
