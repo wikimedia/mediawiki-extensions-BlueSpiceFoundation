@@ -37,7 +37,8 @@ class FileLinksHelper extends InternalLinksHelper {
 	 * @param bool $leadingColon
 	 * @param string $separator
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
+	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true,
+		$separator = "\n" ) {
 		if ( $target->getNamespace() !== NS_FILE ) {
 			return;
 		}

@@ -55,7 +55,8 @@ abstract class Role implements IRole {
 	/**
 	 * Adds single permission to the role
 	 * @deprecated Since 3.1 - Implement and register role class (implements IRole)
-	 * or add permission to role using "BlueSpiceFoundationPermissionRegistry" attribute or global var
+	 * or add permission to role using "BlueSpiceFoundationPermissionRegistry"
+	 * attribute or global var
 	 * @param string $permission
 	 */
 	public function addPermission( $permission ) {
@@ -104,7 +105,8 @@ abstract class Role implements IRole {
 	/**
 	 * Removes single permission from the role
 	 * @deprecated Since 3.1 - Implement and register role class (implements IRole)
-	 * or remove roles from permission using "BlueSpiceFoundationPermissionRegistry" attribute or global var
+	 * or remove roles from permission using "BlueSpiceFoundationPermissionRegistry"
+	 * attribute or global var
 	 * @param string $permission
 	 */
 	public function removePermission( $permission ) {

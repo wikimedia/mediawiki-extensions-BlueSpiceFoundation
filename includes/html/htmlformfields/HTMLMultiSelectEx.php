@@ -126,7 +126,9 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	 * @return string
 	 */
 	public function getInputHTML( $value ) {
-		\RequestContext::getMain()->getOutput()->addModules( 'ext.bluespice.html.formfields.multiselect' );
+		\RequestContext::getMain()->getOutput()->addModules(
+			'ext.bluespice.html.formfields.multiselect'
+		);
 
 		$aOptions = ( isset( $this->mParams['options'] ) ) ? $this->mParams['options'] : [];
 		$html = $this->formatOptions( $aOptions, $value );

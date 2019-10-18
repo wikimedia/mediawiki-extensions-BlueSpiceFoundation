@@ -98,7 +98,8 @@ abstract class BeforeInitialize extends Hook {
 	 * @param \WebRequest $request
 	 * @param \MediaWiki $mediaWiki
 	 */
-	public function __construct( $context, $config, &$title, &$article, &$output, &$user, $request, $mediaWiki ) {
+	public function __construct( $context, $config, &$title, &$article, &$output, &$user, $request,
+		$mediaWiki ) {
 		parent::__construct( $context, $config );
 
 		$this->title =& $title;

@@ -46,30 +46,60 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		$firstRow = (object)$response[ $this->getResultsNodeName() ][0];
 		$schema = $this->getStoreSchema();
 		foreach ( $schema as $schemaFieldName => $config ) {
-			$this->assertObjectHasAttribute( $schemaFieldName, $firstRow, "Dataset misses field '$schemaFieldName'' from schema definition!" );
+			$this->assertObjectHasAttribute(
+				$schemaFieldName,
+				$firstRow,
+				"Dataset misses field '$schemaFieldName'' from schema definition!"
+			);
 			$value = $firstRow->{$schemaFieldName};
 
 			switch ( $config['type'] ) {
 				case 'string':
-					$this->assertEquals( true, is_string( $value ), "Value of field '$schemaFieldName' is not a string" );
+					$this->assertEquals(
+						true,
+						is_string( $value ),
+						"Value of field '$schemaFieldName' is not a string"
+					);
 					break;
 				case 'list':
-					$this->assertEquals( true, is_array( $value ), "Value of field '$schemaFieldName' is not a list" );
+					$this->assertEquals(
+						true,
+						is_array( $value ),
+						"Value of field '$schemaFieldName' is not a list"
+					);
 					break;
 				case 'numeric':
-					$this->assertEquals( true, is_numeric( $value ), "Value of field '$schemaFieldName' is not a number" );
+					$this->assertEquals(
+						true,
+						is_numeric( $value ),
+						"Value of field '$schemaFieldName' is not a number"
+					);
 					break;
 				case 'boolean':
-					$this->assertEquals( true, is_bool( $value ), "Value of field '$schemaFieldName' is not a boolean" );
+					$this->assertEquals(
+						true,
+						is_bool( $value ),
+						"Value of field '$schemaFieldName' is not a boolean"
+					);
 					break;
 				case 'date':
-					$this->assertNotEquals( -1, strtotime( $value ), "Value of field '$schemaFieldName' is not a valid date format" );
+					$this->assertNotEquals(
+						-1,
+						strtotime( $value ),
+						"Value of field '$schemaFieldName' is not a valid date format"
+					);
 					break;
 				case 'title':
-					$this->assertNotNull( \Title::newFromText( $value ), "Value of field '$schemaFieldName' is not a valid title" );
+					$this->assertNotNull(
+						\Title::newFromText( $value ),
+						"Value of field '$schemaFieldName' is not a valid title"
+					);
 					break;
 				case 'templatetitle':
-					$this->assertNotNull( \Title::newFromText( $value, NS_TEMPLATE ), "Value of field '$schemaFieldName' is not a valid template title" );
+					$this->assertNotNull(
+						\Title::newFromText( $value, NS_TEMPLATE ),
+						"Value of field '$schemaFieldName' is not a valid template title"
+					);
 					break;
 			}
 		}
@@ -130,7 +160,11 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 			);
 		}
 
-		$this->assertLessThanOrEqual( $limit, count( $response[ $this->getResultsNodeName() ] ), 'Number of results exceeds limit' );
+		$this->assertLessThanOrEqual(
+			$limit,
+			count( $response[ $this->getResultsNodeName() ] ),
+			'Number of results exceeds limit'
+		);
 	}
 
 	public function providePagingData() {

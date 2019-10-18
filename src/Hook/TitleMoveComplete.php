@@ -58,7 +58,8 @@ abstract class TitleMoveComplete extends Hook {
 	 * @param \Revision $revision
 	 * @return bool
 	 */
-	public static function callback( &$title, &$newTitle, $user, $oldid, $newid, $reason, $revision ) {
+	public static function callback( &$title, &$newTitle, $user, $oldid, $newid, $reason,
+		$revision ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -86,7 +87,8 @@ abstract class TitleMoveComplete extends Hook {
 	 * @param string $reason
 	 * @param \Revision $revision
 	 */
-	public function __construct( $context, $config, &$title, &$newTitle, $user, $oldid, $newid, $reason, $revision ) {
+	public function __construct( $context, $config, &$title, &$newTitle, $user, $oldid, $newid,
+		$reason, $revision ) {
 		parent::__construct( $context, $config );
 
 		$this->title =& $title;

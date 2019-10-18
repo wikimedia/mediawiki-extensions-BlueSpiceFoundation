@@ -32,7 +32,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 if ( !isset( $GLOBALS['wgFooterIcons']['poweredby']['bluespice'] ) ) {
 	$GLOBALS['wgFooterIcons']['poweredby']['bluespice'] = [
-		"src" => $GLOBALS['wgScriptPath'] . "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
+		"src" => $GLOBALS['wgScriptPath']
+			. "/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-poweredby_bluespice_88x31.png",
 		"url" => "http://bluespice.com",
 		"alt" => "Powered by BlueSpice",
 	];
@@ -89,7 +90,16 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"autoconfirmed" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'editor', 'maintenanceadmin', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'editor',
+			'maintenanceadmin',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"autocreateaccount" => [
 		"type" => 'global',
@@ -179,27 +189,93 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"editmyoptions" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"editmyprivateinfo" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"editmyusercss" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"editmyuserjs" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"editmyuserjson" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"editmywatchlist" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"editprotected" => [
 		"type" => 'namespace',
@@ -328,7 +404,14 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"suppressredirect" => [
 		"type" => 'global',
-		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'admin',
+			'author',
+			'editor',
+			'maintenanceadmin',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"unblockself" => [
 		"type" => 'global',
@@ -352,11 +435,33 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"viewmyprivateinfo" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"viewmywatchlist" => [
 		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'author', 'bot', 'commenter', 'editor', 'maintenanceadmin', 'reader', 'reviewer', 'structuremanager' ]
+		"roles" => [
+			'accountmanager',
+			'admin',
+			'author',
+			'bot',
+			'commenter',
+			'editor',
+			'maintenanceadmin',
+			'reader',
+			'reviewer',
+			'structuremanager'
+		]
 	],
 	"wikiadmin" => [
 		"type" => 'global',
@@ -365,7 +470,18 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"writeapi" => [
 		"type" => 'global',
-		"roles" => [ "accountmanager", "accountselfcreate", "admin", "author", "bot", "commenter", "editor", "maintenanceadmin", "reviewer", "structuremanager" ]
+		"roles" => [
+			"accountmanager",
+			"accountselfcreate",
+			"admin",
+			"author",
+			"bot",
+			"commenter",
+			"editor",
+			"maintenanceadmin",
+			"reviewer",
+			"structuremanager"
+		]
 	],
 	"editor" => [
 		"type" => 'global',
@@ -417,8 +533,10 @@ $GLOBALS["bsgExtJSThemes"] = [
 		'bs-extjs-theme-panel-header-horizontal-border' => '1px solid @bs-color-neutral4',
 		'bs-extjs-theme-panel-header-vertical-border' => '1px solid @bs-color-neutral4',
 		'bs-extjs-theme-btn-toolbar-noicon-border' => '1px solid black',
-		'bs-extjs-theme-tool-img-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/tools/tool-sprites-dark.png" )',
-		'bs-extjs-theme-btn-split-right-image' => 'url( "/extensions/BlueSpiceFoundation/resources/bluespice.extjs/bluespice-theme/images/button/default-toolbar-small-s-arrow.png" )',
+		'bs-extjs-theme-tool-img-image' => 'url( "/extensions/BlueSpiceFoundation/resources/'
+			. 'bluespice.extjs/bluespice-theme/images/tools/tool-sprites-dark.png" )',
+		'bs-extjs-theme-btn-split-right-image' => 'url( "/extensions/BlueSpiceFoundation/resources/'
+			. 'bluespice.extjs/bluespice-theme/images/button/default-toolbar-small-s-arrow.png" )',
 	]
 ];
 

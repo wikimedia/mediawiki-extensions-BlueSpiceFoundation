@@ -152,7 +152,9 @@ class BsNamespaceHelper {
 
 	/**
 	 * Resolves a given ambigous list of namespaces into a array of integer namespace ids
-	 * @param string $sCSV Comma separated list of integer and string namespaces, i.e. "4, 14, SomeNamespace, 7". The strings "all", "-" and the empty string "" will result in an array of all available namespaces.
+	 * @param string $sCSV Comma separated list of integer and string namespaces,
+	 * i.e. "4, 14, SomeNamespace, 7". The strings "all", "-" and the empty string "" will
+	 * result in an array of all available namespaces.
 	 * @return array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */

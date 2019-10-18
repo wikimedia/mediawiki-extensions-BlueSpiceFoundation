@@ -24,15 +24,35 @@ class BsValidatorIntegerRangePlugin implements BsValidatorPlugin {
 	public static function isValid( $validateThis, $options ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( is_numeric( $validateThis ) ) {
-			if ( isset( $options['lowerBoundary'] ) && ( $validateThis < $options['lowerBoundary'] ) ) {
-				$response = new BsValidatorResponse( 1, 'Validator', 'bs-validator-integer-range-validation-too-low', $options['lowerBoundary'] );
-			} elseif ( isset( $options['upperBoundary'] ) && ( $validateThis > $options['upperBoundary'] ) ) {
-				$response = new BsValidatorResponse( 2, 'Validator', 'bs-validator-integer-range-validation-too-high', $options['upperBoundary'] );
+			if ( isset( $options['lowerBoundary'] )
+				&& ( $validateThis < $options['lowerBoundary'] ) ) {
+				$response = new BsValidatorResponse(
+					1,
+					'Validator',
+					'bs-validator-integer-range-validation-too-low',
+					$options['lowerBoundary']
+				);
+			} elseif ( isset( $options['upperBoundary'] )
+				&& ( $validateThis > $options['upperBoundary'] ) ) {
+				$response = new BsValidatorResponse(
+					2,
+					'Validator',
+					'bs-validator-integer-range-validation-too-high',
+					$options['upperBoundary']
+				);
 			} else {
-				$response = new BsValidatorResponse( 0, 'Validator', 'bs-validator-integer-range-validation-approved' );
+				$response = new BsValidatorResponse(
+					0,
+					'Validator',
+					'bs-validator-integer-range-validation-approved'
+				);
 			}
 		} else {
-			$response = new BsValidatorResponse( 3, 'Validator', 'bs-validator-integer-range-validation-no-integer' );
+			$response = new BsValidatorResponse(
+				3,
+				'Validator',
+				'bs-validator-integer-range-validation-no-integer'
+			);
 		}
 		return $response;
 	}

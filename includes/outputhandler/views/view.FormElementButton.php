@@ -32,6 +32,8 @@ class ViewFormElementButton extends ViewFormElement {
 	 * @return string
 	 */
 	public function execute( $params = false ) {
-		return '<button id="' . $this->_mId . '" name="' . $this->_mName . '" bntype="button" type="' . $this->_mType . '" value="' . ( $this->_mValue ? $this->_mValue : 1 ) . '">' . $this->_mLabel . '</button>' . "\n<br />\n";
+		return '<button id="' . $this->_mId . '" name="' . $this->_mName . '" bntype="button" type="'
+			. $this->_mType . '" value="' . ( $this->_mValue ? $this->_mValue : 1 ) . '">'
+			. $this->_mLabel . '</button>' . "\n<br />\n";
 	}
 }

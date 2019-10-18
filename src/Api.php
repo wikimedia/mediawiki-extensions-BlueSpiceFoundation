@@ -49,7 +49,8 @@ abstract class Api extends ApiBase {
 	 * Checks access permissions based on a list of titles and permissions. If
 	 * one of it fails the API processing is ended with an appropriate message
 	 * @param Title[] $titles Array of Title objects to check the requires permissions against
-	 * @param User|null $user the User object of the requesting user. Does a fallback to $this->getUser();
+	 * @param User|null $user the User object of the requesting user. Does a fallback to
+	 * $this->getUser();
 	 */
 	protected function checkPermissions( $titles = [], $user = null ) {
 		if ( empty( $this->getRequiredPermissions() ) ) {
@@ -199,7 +200,8 @@ abstract class Api extends ApiBase {
 	 * @param Title|null $title
 	 * @return null
 	 */
-	protected function checkPermission( Status $status, User $user, $permission, Title $title = null ) {
+	protected function checkPermission( Status $status, User $user, $permission,
+		Title $title = null ) {
 		if ( !$status->isOK() ) {
 			return;
 		}

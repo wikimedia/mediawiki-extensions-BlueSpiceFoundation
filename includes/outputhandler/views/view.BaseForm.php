@@ -101,7 +101,8 @@ class ViewBaseForm extends ViewBaseElement {
 					. ' renderAsExt="true"' . $validation . ' method="' . $this->_mMethod
 					. '" action="' . $this->_mActionUrl . '"' . $enctype . '>';
 		}
-		return '<' . $this->_mAutoElement . ' id="' . $this->_mId . '" action="' . $this->_mActionUrl . '" method="' . $this->_mMethod . '"' . $enctype . '>';
+		return '<' . $this->_mAutoElement . ' id="' . $this->_mId . '" action="'
+			. $this->_mActionUrl . '" method="' . $this->_mMethod . '"' . $enctype . '>';
 	}
 
 }

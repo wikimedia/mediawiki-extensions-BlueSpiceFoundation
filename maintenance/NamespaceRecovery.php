@@ -55,11 +55,17 @@ function NSRecoveryController( $bDry, $options ) {
 	$aTexts     = [];
 	$numPages = count( $aPages );
 	for ( $i = 0; $i < $numPages; $i++ ) {
-		$aRevisions[$i] = getDataFromNSBackup( 'revision', [ 'rev_page' => $aPages[$i]['page_id'] ] );
+		$aRevisions[$i] = getDataFromNSBackup(
+			'revision',
+			[ 'rev_page' => $aPages[$i]['page_id'] ]
+		);
 
 		$numRevisions = count( $aRevisions[$i] );
 		for ( $ir = 0; $ir < $numRevisions; $ir++ ) {
-			$aTexts[$i][$ir] = getDataFromNSBackup( 'text', [ 'old_id' => $aRevisions[$i][$ir]['rev_text_id'] ] );
+			$aTexts[$i][$ir] = getDataFromNSBackup(
+				'text',
+				[ 'old_id' => $aRevisions[$i][$ir]['rev_text_id'] ]
+			);
 		}
 	}
 	// var_dump($aRevisions);
@@ -116,24 +122,6 @@ function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
 		$numRevisions = count( $aRevisions[$iP] );
 		for ( $iR = 0; $iR < $numRevisions; $iR++ ) {
 			echo 'Revision';
-			/*if( empty( $aTexts[$iP][$iR] ) ) {
-				echo "error: ".$aPages[$iP]['page_id']." -> ".$aRevisions[$iP][$iR]." - no text found !not recovered\n";
-				continue;
-			}
-
-			$rRes = $oDbr->select('revision', 'rev_id' , array('rev_id' => $aRevisions[$iP][$iR]['rev_id']) );
-			if( $rRes->fetchRow() ) {
-				echo "error: ".$aPages[$iP]['page_title']."->".$aRevisions[$iP][$iR]['rev_id']." already exists\n";
-				continue;
-			}
-
-			$rRes = $oDbr->select('text', 'old_id' , array('old_id' => $aTexts[$iP][$iR][0]['old_id']) );
-			if( $rRes->fetchRow() ) {
-				echo "error: ".$aPages[$iP]['page_title']."->".$aRevisions[$iP][$iR]['rev_id']."->".$aTexts[$iP][$iR][0]['old_id']." already exists\n";
-				continue;
-			}
-			*/
-			// var_dump($aTexts[$iP][$iR][0]);
 			if ( !$bDry && $options['execute'] ) {
 				$oDbr->insert( 'text', $aTexts[$iP][$iR][0] );
 				$oDbr->insert( 'revision', $aRevisions[$iP][$iR] );

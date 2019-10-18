@@ -14,7 +14,8 @@ class BsStringHelper {
 
 	/**
 	 * Reduces the length of a string in a smart way.
-	 * @param String $sString The string that as to be shortened. I.e. 'The quick brown fox jumps over the lazy dog'
+	 * @param String $sString The string that as to be shortened. I.e. 'The quick brown fox
+	 * jumps over the lazy dog'
 	 * @param Array $aOptions Contains configuration options for the shorten logic. I. e.
 	 * <code>
 	 *                array(
@@ -24,10 +25,14 @@ class BsStringHelper {
 	 *                   'ellipsis-characters' => '[...]'
 	 *                )
 	 * </code>
-	 * <code>max-length</code>: Maximum length of the resulting string. May be shorter if word borders force it. Default is <code>15</code>.
-	 * <code>ignore-word-borders</code>: Should words be cut off in the middle? Default is <code>false</code>.
-	 * <code>position</code>: Where to remove characters? Possible values: <code>['end'|'middle'|'start']</code>. Default is <code>'end'</code>
-	 * <code>ellipsis-characters</code>: Which characters should be used as placeholders? Default is <code>'...'</code>
+	 * <code>max-length</code>: Maximum length of the resulting string. May be shorter if
+	 * word borders force it. Default is <code>15</code>.
+	 * <code>ignore-word-borders</code>: Should words be cut off in the middle? Default
+	 * is <code>false</code>.
+	 * <code>position</code>: Where to remove characters? Possible values:
+	 * <code>['end'|'middle'|'start']</code>. Default is <code>'end'</code>
+	 * <code>ellipsis-characters</code>: Which characters should be used as placeholders?
+	 * Default is <code>'...'</code>
 	 * @return String Depending on additional parameters something like:
 	 *     'The quick...'
 	 *     'The quick br...' (<code>'ignore-word-borders' => true</code>)
@@ -35,10 +40,30 @@ class BsStringHelper {
 	 *     '... lazy dog' (<code>'position' => 'start'</code>)
 	 */
 	public static function shorten( $sString, $aOptions ) {
-		$iMaxLength = BsCore::sanitizeArrayEntry( $aOptions, 'max-length', 15, BsPARAMTYPE::INT );
-		$bIgnoreWordBorders = BsCore::sanitizeArrayEntry( $aOptions, 'ignore-word-borders', true,  BsPARAMTYPE::BOOL );
-		$sPosition = BsCore::sanitizeArrayEntry( $aOptions, 'position', 'end', BsPARAMTYPE::STRING );
-		$sEllipsisCharaters = BsCore::sanitizeArrayEntry( $aOptions, 'ellipsis-characters', '...', BsPARAMTYPE::STRING );
+		$iMaxLength = BsCore::sanitizeArrayEntry(
+			$aOptions,
+			'max-length',
+			15,
+			BsPARAMTYPE::INT
+		);
+		$bIgnoreWordBorders = BsCore::sanitizeArrayEntry(
+			$aOptions,
+			'ignore-word-borders',
+			true,
+			BsPARAMTYPE::BOOL
+		);
+		$sPosition = BsCore::sanitizeArrayEntry(
+			$aOptions,
+			'position',
+			'end',
+			BsPARAMTYPE::STRING
+		);
+		$sEllipsisCharaters = BsCore::sanitizeArrayEntry(
+			$aOptions,
+			'ellipsis-characters',
+			'...',
+			BsPARAMTYPE::STRING
+		);
 
 		if ( $iMaxLength <= 0 ) {
 			return $sString;
@@ -57,7 +82,10 @@ class BsStringHelper {
 			switch ( $sPosition ) {
 				case 'start':
 					$sShortendString = $sEllipsisCharaters;
-					$sShortendString .= mb_substr( $sString, $iGivenStringLength - $iMaxLengthWithoutEllipsis );
+					$sShortendString .= mb_substr(
+						$sString,
+						$iGivenStringLength - $iMaxLengthWithoutEllipsis
+					);
 					break;
 				case 'middle':
 					$iStartIndex = ceil( $iMaxLengthWithoutEllipsis / 2 );
@@ -81,7 +109,11 @@ class BsStringHelper {
 					break;
 				default:
 					if ( substr_count( $sString, ' ' ) == 0 ) {
-						$sShortendString = mb_substr( $sString, 0, $iMaxLengthWithoutEllipsis );
+						$sShortendString = mb_substr(
+							$sString,
+							0,
+							$iMaxLengthWithoutEllipsis
+						);
 						$sShortendString .= $sEllipsisCharaters;
 						break;
 					}
@@ -97,7 +129,8 @@ class BsStringHelper {
 
 	/**
 	 * Source: http://stackoverflow.com/questions/1369936/check-to-see-if-a-string-is-serialized
-	 * Verifies if a variable is potentially serialized (stumbled upon this in wordpress) -- seems to work
+	 * Verifies if a variable is potentially serialized (stumbled upon this in wordpress)
+	 * -- seems to work
 	 * @param type $data
 	 * @return bool
 	 */

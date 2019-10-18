@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Hook\SoftwareInfo;
 
+use SpecialPage;
+
 class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 
 	protected static $configName = 'bsg';
@@ -9,7 +11,9 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 	protected function doProcess() {
 		$extInfo = $this->getConfig()->get( 'BlueSpiceExtInfo' );
 
-		$this->softwareInfo['[http://bluespice.com/ ' . $extInfo['name'] . '] ([' . \SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL() . ' Credits])'] = $extInfo['version'];
+		$link = SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL();
+		$this->softwareInfo["[http://bluespice.com/{$extInfo['name']}] ([$link Credits])"]
+			= $extInfo['version'];
 		return true;
 	}
 }

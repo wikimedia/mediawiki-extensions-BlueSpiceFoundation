@@ -35,7 +35,8 @@ abstract class Handler implements IHandler {
 	 * @param \Parser $parser
 	 * @param \PPFrame $frame
 	 */
-	public function __construct( $processedInput, array $processedArgs, \Parser $parser, \PPFrame $frame ) {
+	public function __construct( $processedInput, array $processedArgs, \Parser $parser,
+		\PPFrame $frame ) {
 		$this->processedInput = $processedInput;
 		$this->processedArgs = $processedArgs;
 		$this->parser = $parser;

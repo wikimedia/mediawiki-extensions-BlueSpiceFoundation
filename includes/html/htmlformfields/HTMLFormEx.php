@@ -14,7 +14,8 @@ class HTMLFormEx extends HTMLForm {
 	 * @param bool &$hasUserVisibleFields
 	 * @return string
 	 */
-	public function displaySection( $fields, $sectionName = '', $fieldsetIDPrefix = '', &$hasUserVisibleFields = false ) {
+	public function displaySection( $fields, $sectionName = '', $fieldsetIDPrefix = '',
+		&$hasUserVisibleFields = false ) {
 		$tableHtml = '';
 		$subsectionHtml = '';
 		$hasLeftColumn = false;
@@ -39,7 +40,11 @@ class HTMLFormEx extends HTMLForm {
 				}
 			} elseif ( is_array( $value ) ) {
 				$section = $this->displaySection( $value, $key );
-				$subsectionHtml .= self::fieldset( $legend, $section, [ 'class' => 'bs-prefs', 'id' => $sectionName . $key ] ) . "\n";
+				$subsectionHtml .= self::fieldset(
+					$legend,
+					$section,
+					[ 'class' => 'bs-prefs', 'id' => $sectionName . $key ]
+				) . "\n";
 			}
 		}
 

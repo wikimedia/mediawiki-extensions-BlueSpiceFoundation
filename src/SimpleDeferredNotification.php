@@ -14,7 +14,8 @@ class SimpleDeferredNotification implements IDeferredNotification {
 	/**
 	 * Must be an array with the following keys:
 	 * - 'message': a \Message object
-	 * - 'options': an array of options compatible to https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/mw.notification-property-defaults
+	 * - 'options': an array of options compatible to
+	 * https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/mw.notification-property-defaults
 	 * @param array $notificationInfo
 	 */
 	public function __construct( $notificationInfo ) {
@@ -23,7 +24,9 @@ class SimpleDeferredNotification implements IDeferredNotification {
 		}
 
 		$this->message = $notificationInfo['message'];
-		$this->options = isset( $notificationInfo['options'] ) ? $notificationInfo['options'] : [];
+		$this->options = isset( $notificationInfo['options'] )
+			? $notificationInfo['options']
+			: [];
 	}
 
 	/**

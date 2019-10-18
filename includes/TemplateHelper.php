@@ -98,7 +98,8 @@ class BSTemplateHelper {
 	 * @param boolean $bForceRecompile
 	 * @return string
 	 */
-	public static function process( $sTplName, array $args = [], array $scopes = [], $bForceRecompile = false ) {
+	public static function process( $sTplName, array $args = [], array $scopes = [],
+		$bForceRecompile = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$template = Services::getInstance()->getBSTemplateFactory()->get( $sTplName );
 		return $template->process( $args, $scopes );

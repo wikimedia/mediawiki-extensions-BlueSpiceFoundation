@@ -32,38 +32,109 @@ $cfgMWversion = "1.34";
 $cfgPHPversion['min'] = '7.2';
 $cfgPHPversion['opt'] = '7.3';
 
+$fail = "<span class=\"fail\">FAILED!</span>";
+$warn = "<span class=\"warn\">WARNING!</span>";
+
 // PHP extensions to check
-$cfgRequiredExtensions[] = [ "curl",           "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use curl in the extended search." ];
-$cfgRequiredExtensions[] = [ "gd",             "<span class=\"fail\">FAILED!</span>" ];
-$cfgRequiredExtensions[] = [ "intl",           "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use internationalization." ];
-$cfgRequiredExtensions[] = [ "json",           "<span class=\"fail\">FAILED!</span>" ];
-$cfgRequiredExtensions[] = [ "ldap",           "<span class=\"warn\">WARNING!</span> This extension is needed if you want to connect to an ldap directory." ];
-$cfgRequiredExtensions[] = [ "mbstring",       "<span class=\"fail\">FAILED!</span>" ];
-$cfgRequiredExtensions[] = [ "mysqli",         "<span class=\"fail\">FAILED!</span>" ];
-$cfgRequiredExtensions[] = [ "pcre",           "<span class=\"fail\">FAILED!</span>" ];
-$cfgRequiredExtensions[] = [ "tidy",           "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use the universal export module." ];
-$cfgRequiredExtensions[] = [ "xsl",            "<span class=\"fail\">FAILED!</span>" ];
-$cfgRequiredExtensions[] = [ "zip",            "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use ZIP compression." ];
-$cfgRequiredExtensions[] = [ "Zend OPcache",   "<span class=\"warn\">WARNING!</span> This extension is needed if you want to use a fast bytecode cache." ];
+$cfgRequiredExtensions[] = [
+	"curl",
+	"$warn This extension is needed if you want to use curl in the extended search."
+];
+$cfgRequiredExtensions[] = [
+	"gd",
+	$fail
+];
+$cfgRequiredExtensions[] = [
+	"intl",
+	"$warn This extension is needed if you want to use internationalization."
+];
+$cfgRequiredExtensions[] = [
+	"json",
+	$fail
+];
+$cfgRequiredExtensions[] = [
+	"ldap",
+	"$warn This extension is needed if you want to connect to an ldap directory."
+];
+$cfgRequiredExtensions[] = [
+	"mbstring",
+	$fail
+];
+$cfgRequiredExtensions[] = [
+	"mysqli",
+	$fail
+];
+$cfgRequiredExtensions[] = [
+	"pcre",
+	$fail
+];
+$cfgRequiredExtensions[] = [
+	"tidy",
+	"$warn This extension is needed if you want to use the universal export module."
+];
+$cfgRequiredExtensions[] = [
+	"xsl",
+	$fail
+];
+$cfgRequiredExtensions[] = [
+	"zip",
+	"$warn This extension is needed if you want to use ZIP compression."
+];
+$cfgRequiredExtensions[] = [
+	"Zend OPcache",
+	"$warn This extension is needed if you want to use a fast bytecode cache."
+];
 
 // PHP ini values
-$cfgINIoptions[] = [ "date.timezone",       "!=", "Off",  "<span class=\"warn\">WARNING!</span> You should set this to your local timezone." ];
-$cfgINIoptions[] = [ "memory_limit",        ">=", "128",  "<span class=\"warn\">WARNING!</span> You should increase this value to 128M or higher." ];
-$cfgINIoptions[] = [ "max_execution_time",  ">=", "120",  "<span class=\"warn\">WARNING!</span> You should increase this value to 120 or higher." ];
-$cfgINIoptions[] = [ "post_max_size",       ">=", "32",   "<span class=\"warn\">WARNING!</span> You should increase this value to 32M or higher." ];
-$cfgINIoptions[] = [ "upload_max_filesize", ">=", "32",   "<span class=\"warn\">WARNING!</span> You should increase this value to 32M or higher." ];
-$cfgINIoptions[] = [ "memory_limit",        ">=", "256",  "<span class=\"warn\">WARNING!</span> You should increase this value to 256M or higher." ];
+$cfgINIoptions[] = [
+	"date.timezone",
+	"!=",
+	"Off",
+	"$warn You should set this to your local timezone."
+];
+$cfgINIoptions[] = [
+	"memory_limit",
+	">=",
+	"128",
+	"$warn You should increase this value to 128M or higher."
+];
+$cfgINIoptions[] = [
+	"max_execution_time",
+	">=",
+	"120",
+	"$warn You should increase this value to 120 or higher."
+];
+$cfgINIoptions[] = [
+	"post_max_size",
+	">=",
+	"32",
+	"$warn You should increase this value to 32M or higher."
+];
+$cfgINIoptions[] = [
+	"upload_max_filesize",
+	">=",
+	"32",
+	"$warn You should increase this value to 32M or higher."
+];
+$cfgINIoptions[] = [
+	"memory_limit",
+	">=",
+	"256",
+	"$warn You should increase this value to 256M or higher."
+];
 
 // Writable folders
-$cfgWritableFolders[] = [ "/cache",                                 "<span class=\"fail\">FAILED!</span>" ];
-$cfgWritableFolders[] = [ "/images",                                "<span class=\"fail\">FAILED!</span>" ];
-$cfgWritableFolders[] = [ "/extensions/BlueSpiceFoundation/config", "<span class=\"fail\">FAILED!</span>" ];
-$cfgWritableFolders[] = [ "/extensions/BlueSpiceFoundation/data",   "<span class=\"fail\">FAILED!</span>" ];
-$cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class=\"warn\">WARNING!</span> This folder is only needed for BlueSpice pro" ];
+$cfgWritableFolders = [
+	[ "/cache", $fail ],
+	[ "/images", $fail ],
+	[ "/extensions/BlueSpiceFoundation/config", $fail ],
+	[ "/extensions/BlueSpiceFoundation/data", $fail ],
+	[ "/extensions/Widgets/compiled_templates", "$warn This folder is only needed for BlueSpice pro" ],
+];
 
-// Files to check
-# $cfgFilesToCheck[] = [ "/extensions/BlueSpiceExtensions/BlueSpiceExtensions.local.php", "<span class=\"warn\">WARNING!</span> BlueSpice will load it's default extensions." ];
+$cfgFilesToCheck = [];
 
+$helplink = "https://en.help.bluespice.com/wiki/Setup:Installation_Manual";
 ?>
 <!DOCTYPE html>
 
@@ -441,14 +512,27 @@ $cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class
 			<div class="section">
 				<h2>Checking write access</h2>
 				<p><?php echo checkWritePerm( $cfgWritableFolders );?></p>
-				<p class="infobox"><a href="https://en.help.bluespice.com/wiki/Setup:Installation_Manual/Security_Settings/File_System_Permissions" target="_blank"><b>&#9432;</b>&nbsp;&nbsp;&nbsp;For more information refer to the related article in the BlueSpice Helpdesk</a></p>
+				<p class="infobox">
+					<a href="<?php echo $helplink; ?>/Security_Settings/File_System_Permissions"
+					   target="_blank">
+						<b>&#9432;</b>
+						&nbsp;&nbsp;&nbsp;For more information refer to the related article in the
+						BlueSpice Helpdesk
+					</a>
+				</p>
 			</div>
 
 <!--
 			<div class="section">
 				<h2>Checking files</h2>
 				<p><?php echo checkFiles( $cfgFilesToCheck );?></p>
-				<p class="infobox"><a href="https://en.help.bluespice.com/wiki/Setup:Installation_Manual/Advanced/Activation_and_deactivation_of_BlueSpice-extensions" target="_blank"><b>&#9432;</b>&nbsp;&nbsp;&nbsp;For more information refer to the related article in the BlueSpice Helpdesk</a></p>
+				<p class="infobox">
+					<a href="<?php echo $helplink; ?>/Advanced/Activation_and_deactivation_of_BlueSpice-extensions"
+					   target="_blank">
+						<b>&#9432;</b>
+						&nbsp;&nbsp;&nbsp;For more information refer to the related article in the BlueSpice Helpdesk
+					</a>
+				</p>
 			</div>
 //-->
 
@@ -468,7 +552,7 @@ $cfgWritableFolders[] = [ "/extensions/Widgets/compiled_templates", "<span class
 </html>
 <?php
 
-// Functions ======================================================================================================================
+// Functions ====================================================================
 
 /**
  *
@@ -480,7 +564,10 @@ function checkMediaWikiHomeDir( $mwVersion ) {
 		!file_exists( __DIR__ . "/images" ) ||
 		!file_exists( __DIR__ . "/extensions" ) ||
 		!file_exists( __DIR__ . "/RELEASE-NOTES-" . $mwVersion ) ) {
-		return "<div id=\"notMW\">It looks like you are using this installation check outside of a MediaWiki {$mwVersion} installation.<br />Probably some checks will fail.</div>\n";
+		return "<div id=\"notMW\">"
+			. "It looks like you are using this installation check outside of a"
+			. "MediaWiki {$mwVersion} installation."
+			. "<br />Probably some checks will fail.</div>\n";
 	}
 
 	return false;
@@ -501,9 +588,12 @@ function checkPHPversion( $phpversion ) {
 	$sPHPversion = $aPHPversion[0] . '.' . $aPHPversion[1];
 
 	if ( version_compare( $sPHPversion, $cfgPHPversion['min'], '<' ) ) {
-		$sResult .= "<span class=\"fail\">FAILED!</span> This version is not compatible with BlueSpice. Please upgrade to version >= {$cfgPHPversion['min']}.";
+		$sResult .= "<span class=\"fail\">FAILED!</span>"
+				. " This version is not compatible with BlueSpice."
+				. " Please upgrade to version >= {$cfgPHPversion['min']}.";
 	} elseif ( version_compare( $sPHPversion, $cfgPHPversion['opt'], '!=' ) ) {
-		$sResult .= "<span class=\"warn\">WARNING!</span> You should use version {$cfgPHPversion['opt']} for full compatibility.";
+		$sResult .= "<span class=\"warn\">WARNING!</span>"
+				. " You should use version {$cfgPHPversion['opt']} for full compatibility.";
 	} else {
 		$sResult .= "<span class=\"ok\">OK</span>";
 	}
@@ -546,14 +636,20 @@ function checkFileUpload() {
 	$uploadTmpDir = ini_get( "upload_tmp_dir" );
 
 	if ( $fileUploads != "1" ) {
-		$sReturn .= "<span class=\"warn\">WARNING!</span> ..... File upload is not enabled. To enable please change the file_uploads option in your php.ini.";
+		$sReturn .= "<span class=\"warn\">WARNING!</span>"
+			. " ..... File upload is not enabled."
+			. " To enable please change the file_uploads option in your php.ini.";
 	} elseif ( empty( $uploadTmpDir ) ) {
-		$sReturn .= "<span class=\"warn\">WARNING!</span> ..... File upload is enabled but upload_tmp_dir is not set. Make sure your system's temp dir is writable by the web server.";
+		$sReturn .= "<span class=\"warn\">WARNING!</span>"
+			. " ..... File upload is enabled but upload_tmp_dir is not set."
+			. " Make sure your system's temp dir is writable by the web server.";
 	} else {
 		if ( checkWritePerm( $uploadTmpDir ) == true ) {
-			$sReturn .= "<span class=\"ok\">OK</span> ..... File upload is enabled and the upload_tmp_dir ({$uploadTmpDir}) is writable.";
+			$sReturn .= "<span class=\"ok\">OK</span>"
+				. " ..... File upload is enabled and the upload_tmp_dir ({$uploadTmpDir}) is writable.";
 		} else {
-			$sReturn .= "<span class=\"fail\">FAILED!</span> ..... File upload is enabled but the upload_tmp_dir ({$uploadTmpDir}) is not writable.";
+			$sReturn .= "<span class=\"fail\">FAILED!</span>"
+				. " ..... File upload is enabled but the upload_tmp_dir ({$uploadTmpDir}) is not writable.";
 		}
 	}
 
@@ -570,9 +666,11 @@ function checkSessionSavePath() {
 	$sessionSavePath = ini_get( "session.save_path" );
 
 	if ( checkWritePerm( $sessionSavePath ) == true ) {
-		$sReturn .= "<span class=\"ok\">OK</span> ..... session.save_path ({$sessionSavePath}) is writable.";
+		$sReturn .= "<span class=\"ok\">OK</span>"
+			. " ..... session.save_path ({$sessionSavePath}) is writable.";
 	} else {
-		$sReturn .= "<span class=\"fail\">FAILED!</span> ..... session.save_path ({$sessionSavePath}) is not writable.";
+		$sReturn .= "<span class=\"fail\">FAILED!</span>"
+			. " ..... session.save_path ({$sessionSavePath}) is not writable.";
 	}
 
 	return $sReturn;
@@ -726,9 +824,11 @@ function checkMail() {
 	$smtpConnection = @fsockopen( "tcp://{$smtpHost}", $smtpPort, $errno, $errstr, 5 );
 
 	if ( !$smtpConnection ) {
-		$sReturn .= "<span class=\"warn\">WARNING!</span> Mail will not work. Error message: <i>{$errno}: {$errstr}</i>";
+		$sReturn .= "<span class=\"warn\">WARNING!</span>"
+			. " Mail will not work. Error message: <i>{$errno}: {$errstr}</i>";
 	} else {
-		$sReturn .= "<span class=\"ok\">OK</span> ..... connection to SMTP server was successful.";
+		$sReturn .= "<span class=\"ok\">OK</span>"
+			. " ..... connection to SMTP server was successful.";
 	}
 
 	return $sReturn;
@@ -742,9 +842,14 @@ function checkSSO() {
 	$sReturn = '';
 
 	if ( isset( $_SERVER['REMOTE_USER'] ) ) {
-		$sReturn .= "<span class=\"ok\">OK</span> ..... \$_SERVER['REMOTE_USER'] is set ({$_SERVER['REMOTE_USER']}), you can configure Single Sign On.";
+		$sReturn .= "<span class=\"ok\">OK</span>"
+			. " ..... \$_SERVER['REMOTE_USER'] is set ({$_SERVER['REMOTE_USER']}),"
+			. " you can configure Single Sign On.";
 	} else {
-		$sReturn .= "<span class=\"warn\">WARNING!</span> \$_SERVER['REMOTE_USER'] is not set. If you want to use Single Sign On please configure the authentication type of your webserver.</span>";
+		$sReturn .= "<span class=\"warn\">WARNING!</span>"
+				. " \$_SERVER['REMOTE_USER'] is not set."
+				. " If you want to use Single Sign On please configure the authentication"
+				. " type of your webserver.";
 	}
 
 	return $sReturn;

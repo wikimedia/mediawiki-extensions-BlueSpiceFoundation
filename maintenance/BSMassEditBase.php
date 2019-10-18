@@ -13,7 +13,12 @@ class BSMassEditBase extends BSMaintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addOption( 'dry', 'Do not really modify contents' );
-		$this->addOption( 'verbose', 'Whether or not to output additional information', false, false );
+		$this->addOption(
+			'verbose',
+			'Whether or not to output additional information',
+			false,
+			false
+		);
 	}
 
 	public function execute() {
@@ -42,10 +47,15 @@ class BSMassEditBase extends BSMaintenance {
 				$this->getEditSummay( $oWikiPage )
 			);
 			if ( !$oStatus->isOK() ) {
-				$this->error( "--> Content of page {$oTitle->getPrefixedText()} could not be modified: {$oStatus->getMessage()->plain()}" );
+				$this->error(
+					"--> Content of page {$oTitle->getPrefixedText()} could not be modified: "
+					. "{$oStatus->getMessage()->plain()}"
+				);
 				$this->iFailureTitleCount++;
 			} else {
-				$this->output( "--> Content of page {$oTitle->getPrefixedText()} has successfully been modified" );
+				$this->output(
+					"--> Content of page {$oTitle->getPrefixedText()} has successfully been modified"
+				);
 				$this->iModifiedTitleCount++;
 			}
 		}

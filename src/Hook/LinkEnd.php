@@ -77,7 +77,8 @@ abstract class LinkEnd extends Hook {
 	 * @param string &$ret
 	 * @return bool Always true to keep hook running
 	 */
-	public static function callback( \DummyLinker $dummy, \Title $target, $options, &$html, &$attribs, &$ret ) {
+	public static function callback( \DummyLinker $dummy, \Title $target, $options, &$html,
+		&$attribs, &$ret ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -103,7 +104,8 @@ abstract class LinkEnd extends Hook {
 	 * @param array &$attribs
 	 * @param string &$ret
 	 */
-	public function __construct( $context, $config, \DummyLinker $dummy, \Title $target, $options, &$html, &$attribs, &$ret ) {
+	public function __construct( $context, $config, \DummyLinker $dummy, \Title $target, $options,
+		&$html, &$attribs, &$ret ) {
 		parent::__construct( $context, $config );
 
 		$this->dummy =& $dummy;

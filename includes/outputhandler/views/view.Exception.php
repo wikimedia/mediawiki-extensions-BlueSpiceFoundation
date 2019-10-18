@@ -42,8 +42,12 @@ class ViewException extends ViewBaseElement {
 		$aOut[] = '  <p>' . wfMessage( 'bs-exception-view-admin-hint' )->text() . '</p>';
 		$aOut[] = '  <hr />';
 		$aOut[] = '  <span class="bs-exception-stacktrace-toggle">';
-		$aOut[] = '    <span style="display:none;">' . wfMessage( 'bs-exception-view-stacktrace-toggle-show-text' )->text() . '</span>';
-		$aOut[] = '    <span style="display:none;">' . wfMessage( 'bs-exception-view-stacktrace-toggle-hide-text' )->text() . '</span>';
+		$aOut[] = '    <span style="display:none;">'
+			. wfMessage( 'bs-exception-view-stacktrace-toggle-show-text' )->text()
+			. '</span>';
+		$aOut[] = '    <span style="display:none;">'
+			. wfMessage( 'bs-exception-view-stacktrace-toggle-hide-text' )->text()
+			. '</span>';
 		$aOut[] = '  </span>';
 		$aOut[] = '  <div class="bs-exception-stacktrace">';
 		$aOut[] = '   <pre>';

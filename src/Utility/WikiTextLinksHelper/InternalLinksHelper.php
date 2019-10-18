@@ -110,7 +110,8 @@ class InternalLinksHelper {
 	 * @param bool $leadingColon
 	 * @param string $separator
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true, $separator = "\n" ) {
+	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true,
+		$separator = "\n" ) {
 		if ( !$addDuplicates ) {
 			foreach ( $this->getTargets() as $match => $title ) {
 				if ( !$target->equals( $title ) ) {

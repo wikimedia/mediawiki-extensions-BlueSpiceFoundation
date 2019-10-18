@@ -64,7 +64,8 @@ class RoleManager {
 	 * @param PermissionRegistry $permissionRegistry
 	 * @param RoleFactory $roleFactory
 	 */
-	public function __construct( &$groupPermission, &$roleGroups, &$roleSystemEnabled, $predefinedRoles, $permissionRegistry, $roleFactory ) {
+	public function __construct( &$groupPermission, &$roleGroups, &$roleSystemEnabled,
+		$predefinedRoles, $permissionRegistry, $roleFactory ) {
 		$this->groupRoles =& $roleGroups;
 		$this->groupPermissions =& $groupPermission;
 		$this->roleSystemEnabled =& $roleSystemEnabled;

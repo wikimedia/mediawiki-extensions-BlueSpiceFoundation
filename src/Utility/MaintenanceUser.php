@@ -88,7 +88,8 @@ class MaintenanceUser {
 	protected function addGroups( \User $user, $expiry ) {
 		// removed the group expiry feature for now, because this could end in
 		// deadlocks:
-		// Query: UPDATE `user_groups` SET ug_expiry = '20180813134139' WHERE ug_user = '16' AND ug_group = 'sysop'
+		// Query: UPDATE `user_groups` SET ug_expiry = '20180813134139'
+		// WHERE ug_user = '16' AND ug_group = 'sysop'
 		// Function: UserGroupMembership::insert
 		// Error: 1213 Deadlock found when trying to get lock; try restarting transaction (db)
 		$expiry = null;
