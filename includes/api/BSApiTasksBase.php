@@ -17,7 +17,7 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
  * This file is part of BlueSpice MediaWiki
- * For further information visit http://bluespice.com
+ * For further information visit https://bluespice.com
  *
  * @deprecated since version 3.1 - Implement \BluseSpice\ITask and use
  * the TaskRegistry in extension.json to be able to call your task in the new
