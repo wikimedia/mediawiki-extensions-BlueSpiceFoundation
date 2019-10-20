@@ -26,7 +26,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 */
 	abstract protected function getModuleName();
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->doLogin();

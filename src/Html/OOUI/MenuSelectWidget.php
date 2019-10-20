@@ -3,8 +3,8 @@
 namespace BlueSpice\Html\OOUI;
 
 class MenuSelectWidget extends SelectWidget {
-	use \BlueSpice\Html\OOUI\ClippableElement;
-	use \BlueSpice\Html\OOUI\FloatableElement;
+	use BlueSpice\Html\OOUI\ClippableElement;
+	use BlueSpice\Html\OOUI\FloatableElement;
 
 	protected $originalVerticalPosition;
 	protected $autoHide;

@@ -18,6 +18,7 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	 * @var IContextSource
 	 */
 	protected $context = null;
+
 	/**
 	 *
 	 * @param IDatabase $db

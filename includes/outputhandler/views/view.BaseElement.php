@@ -259,9 +259,9 @@ class ViewBaseElement {
 		return count( $this->_mItems );
 	}
 
-	// TODO MRG20100816: Kennzeichnen, dass diese Funktion rekursiv aufgerufen wird.
-	// TODO MRG20100816: Genauer kommentieren
 	/**
+	 * TODO MRG20100816: Kennzeichnen, dass diese Funktion rekursiv aufgerufen wird.
+	 * TODO MRG20100816: Genauer kommentieren
 	 *
 	 * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
 	 * \BlueSpice\TemplateRenderer instead

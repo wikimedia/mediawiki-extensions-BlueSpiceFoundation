@@ -345,8 +345,9 @@ class BsCore {
 		return ( self::$prUrlIsEncoded ? urldecode( self::$prRequestUri ) : self::$prRequestUri );
 	}
 
-	// TODO MRG (09.12.10 11:21): Habe silent im Standard auf true gesetzt. Echo ist ohnehin nicht gut.
 	/**
+	 * TODO MRG (09.12.10 11:21): Habe silent im Standard auf true gesetzt. Echo ist ohnehin nicht gut.
+	 *
 	 * @deprecated since version 3.0.0 - use \Title->userCan() or
 	 * \User->isAllowed()
 	 * @param string $sPermission

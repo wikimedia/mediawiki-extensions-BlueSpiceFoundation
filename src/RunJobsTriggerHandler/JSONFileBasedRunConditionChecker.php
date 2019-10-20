@@ -2,7 +2,7 @@
 
 namespace BlueSpice\RunJobsTriggerHandler;
 
-use \Config;
+use Config;
 
 class JSONFileBasedRunConditionChecker implements IRunConditionChecker {
 

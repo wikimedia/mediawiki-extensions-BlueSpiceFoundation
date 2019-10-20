@@ -10,7 +10,7 @@ namespace BlueSpice\Tests;
  */
 class BSFixturesTest extends BSApiTestCase {
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 		new BSPageFixtures( $this );
 		new BSUserFixtures( $this );

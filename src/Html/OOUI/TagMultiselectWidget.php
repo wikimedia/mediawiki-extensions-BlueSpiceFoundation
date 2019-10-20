@@ -2,12 +2,15 @@
 
 namespace BlueSpice\Html\OOUI;
 
+use OOUI\GroupElement;
+use OOUI\IconElement;
+use OOUI\IndicatorElement;
 use OOUI\Widget;
 
 class TagMultiselectWidget extends Widget {
-	use \OOUI\IconElement;
-	use \OOUI\IndicatorElement;
-	use \OOUI\GroupElement;
+	use IconElement;
+	use IndicatorElement;
+	use GroupElement;
 
 	protected $handle;
 	protected $input;

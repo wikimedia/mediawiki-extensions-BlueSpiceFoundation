@@ -12,7 +12,7 @@ use BlueSpice\Utility\TitleParamsResolver;
  */
 class TitleParamsResolverTest extends \MediaWikiTestCase {
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$this->tablesUsed += [ 'page', 'revision', 'text' ];
 

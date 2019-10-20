@@ -8,7 +8,7 @@ use BlueSpice\Utility\UrlTitleParser;
 
 class UrlTitleParserTest extends MediaWikiTestCase {
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$this->setMwGlobals( 'wgServer', 'http://tollerserver.de' );
 		$this->setMwGlobals( 'wgScriptPath', '/' );

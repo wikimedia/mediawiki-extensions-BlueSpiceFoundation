@@ -15,6 +15,7 @@ class ModifyExportXML extends Maintenance {
 	}
 
 	protected $aTitles = [];
+
 	public function execute() {
 		$sInputFilePath    = $this->getOption( 'input' );
 		$sOutputFilePath   = $this->getOption( 'output' );

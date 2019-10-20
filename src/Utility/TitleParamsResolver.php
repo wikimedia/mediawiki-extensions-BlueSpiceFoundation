@@ -139,7 +139,7 @@ class TitleParamsResolver {
 
 		foreach ( $pageNames as $pageName ) {
 			$title = Title::newFromText( $pageName );
-			if ( $title instanceof  Title ) {
+			if ( $title instanceof Title ) {
 				$this->titles[$title->getPrefixedDBkey()] = $title;
 			}
 		}
@@ -180,7 +180,7 @@ class TitleParamsResolver {
 			$revision = \Revision::newFromId( $revId );
 			if ( $revision instanceof \Revision ) {
 				$title = $revision->getTitle();
-				if ( $title instanceof  Title ) {
+				if ( $title instanceof Title ) {
 					$this->titles[$title->getPrefixedDBkey()] = $title;
 				}
 			}

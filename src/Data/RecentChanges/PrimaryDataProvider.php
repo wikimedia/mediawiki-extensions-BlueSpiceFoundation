@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
-use \BlueSpice\Data\IPrimaryDataProvider;
+use BlueSpice\Data\IPrimaryDataProvider;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 

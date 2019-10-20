@@ -21,6 +21,7 @@ class GenericHandler {
 			static::TAG_SPAN
 		];
 	}
+
 	/**
 	 *
 	 * @var ITag

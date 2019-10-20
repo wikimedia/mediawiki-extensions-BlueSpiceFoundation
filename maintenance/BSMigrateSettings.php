@@ -19,6 +19,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	 * @var array
 	 */
 	protected $oldData = [];
+
 	protected function readOldData() {
 		$res = $this->getDB( DB_REPLICA )->select( 'bs_settings', '*' );
 		foreach ( $res as $row ) {
@@ -31,6 +32,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	 * @var array
 	 */
 	protected $newData = [];
+
 	protected function convertData() {
 		$skipSettings = $this->getSkipSettings();
 

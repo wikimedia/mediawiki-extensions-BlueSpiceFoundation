@@ -46,7 +46,7 @@ class ApplySearchableNamespacesLockdown extends \BlueSpice\Hook\SearchableNamesp
 		return true;
 	}
 
-	protected function setUp() {
+	protected function setUp() : void {
 		$config = $this->getConfig();
 		$this->namespaceRolesLockdown = $config->get( 'NamespaceRolesLockdown' );
 

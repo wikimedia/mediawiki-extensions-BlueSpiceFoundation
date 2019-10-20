@@ -20,7 +20,7 @@ class BSApiTestCase extends \ApiTestCase {
 		static::$userFixtures = $userFixtures;
 	}
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		if ( static::$userFixtures instanceof BSUserFixtures ) {

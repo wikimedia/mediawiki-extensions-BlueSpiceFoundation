@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Tests;
 
+use MWException;
+
 /**
  * @group BlueSpice
  */
@@ -30,19 +32,15 @@ class BSTasksApiSpecTest extends \MediaWikiTestCase {
 		$this->assertArrayEquals( $aTasks, $oSpec3->getTaskNames() );
 	}
 
-	/**
-	 * @expectedException MWException
-	 */
 	public function testUnsupportedTaskSpecException1() {
+		$this->expectException( MWException::class );
 		new \BSTasksApiSpec( [
 			'is a string' => 'is not an array'
 		] );
 	}
 
-	/**
-	 * @expectedException MWException
-	 */
 	public function testUnsupportedTaskSpecException2() {
+		$this->expectException( MWException::class );
 		new \BSTasksApiSpec( [
 			0 => [ 'key is int, but value is not array' ]
 		] );

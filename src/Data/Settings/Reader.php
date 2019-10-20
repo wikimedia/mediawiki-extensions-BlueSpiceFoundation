@@ -3,7 +3,7 @@
 namespace BlueSpice\Data\Settings;
 
 use BlueSpice\Data\ReaderParams;
-use \BlueSpice\Data\DatabaseReader;
+use BlueSpice\Data\DatabaseReader;
 
 class Reader extends DatabaseReader {
 	/**

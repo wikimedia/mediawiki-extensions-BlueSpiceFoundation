@@ -75,6 +75,7 @@ class Entity extends \JsonContent {
 			$output
 		);
 	}
+
 	/**
 	 * Constructs an HTML representation of a JSON object.
 	 * @param array $mapping

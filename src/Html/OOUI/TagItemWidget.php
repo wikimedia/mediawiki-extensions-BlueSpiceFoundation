@@ -2,9 +2,13 @@
 
 namespace BlueSpice\Html\OOUI;
 
-class TagItemWidget extends \OOUI\Widget {
-	use \OOUI\LabelElement;
-	use \OOUI\FlaggedElement;
+use OOUI\FlaggedElement;
+use OOUI\LabelElement;
+use OOUI\Widget;
+
+class TagItemWidget extends Widget {
+	use LabelElement;
+	use FlaggedElement;
 
 	protected $closeButton;
 

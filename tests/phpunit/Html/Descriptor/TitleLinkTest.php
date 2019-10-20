@@ -4,7 +4,7 @@ namespace BlueSpice\Tests\Html\Descriptor;
 
 use PHPUnit\Framework\TestCase;
 use BlueSpice\Html\Descriptor\TitleLink;
-use \BlueSpice\Html\Descriptor\ILink;
+use BlueSpice\Html\Descriptor\ILink;
 
 class TitleLinkTest extends TestCase {
 

@@ -27,6 +27,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 * @var \BlueSpice\Data\ReaderParams
 	 */
 	protected $params = null;
+
 	/**
 	 *
 	 * @param \Wikimedia\Rdbms\IDatabase $db

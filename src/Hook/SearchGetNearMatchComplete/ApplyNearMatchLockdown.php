@@ -47,7 +47,7 @@ class ApplyNearMatchLockdown extends \BlueSpice\Hook\SearchGetNearMatchComplete 
 		return false;
 	}
 
-	protected function setUp() {
+	protected function setUp() : void {
 		$config = $this->getConfig();
 		$this->namespaceRolesLockdown = $config->get( 'NamespaceRolesLockdown' );
 

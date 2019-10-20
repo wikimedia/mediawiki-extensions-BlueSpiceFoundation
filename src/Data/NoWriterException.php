@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data;
 
-use \Exception;
+use Exception;
 
 class NoWriterException extends Exception {
 	/**

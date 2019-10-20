@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests\DataSources;
 
-use \BlueSpice\Data\ReaderParams;
+use BlueSpice\Data\ReaderParams;
 
 /**
  * @group BlueSpice

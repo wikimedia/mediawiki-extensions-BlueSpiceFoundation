@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests;
 
-use \MediaWiki\MediaWikiServices;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @group Database
@@ -13,7 +13,7 @@ use \MediaWiki\MediaWikiServices;
 class ConfigTest extends \MediaWikiTestCase {
 	protected $tablesUsed = [ 'bs_settings3' ];
 
-	public function setUp() {
+	public function setUp() : void {
 		parent::setUp();
 
 		$GLOBALS['bsgUnitTestSetting']  = 5;

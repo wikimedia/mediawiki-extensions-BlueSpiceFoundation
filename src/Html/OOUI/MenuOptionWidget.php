@@ -2,8 +2,11 @@
 
 namespace BlueSpice\Html\OOUI;
 
-class MenuOptionWidget extends \OOUI\Widget {
-	use \OOUI\LabelElement;
+use OOUI\LabelElement;
+use OOUI\Widget;
+
+class MenuOptionWidget extends Widget {
+	use LabelElement;
 
 	protected $options = [];
 	protected $handle = [];

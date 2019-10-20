@@ -2,8 +2,11 @@
 
 namespace BlueSpice\Html\OOUI;
 
-class SelectWidget extends \OOUI\Widget {
-	use \OOUI\GroupElement;
+use OOUI\GroupElement;
+use OOUI\Widget;
+
+class SelectWidget extends Widget {
+	use GroupElement;
 
 	/**
 	 *

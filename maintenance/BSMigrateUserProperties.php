@@ -5,6 +5,7 @@ require_once 'BSMaintenance.php';
 class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 
 	protected $oldData = [];
+
 	protected function readOldData() {
 		$res = $this->getDB( DB_REPLICA )->select( 'user_properties', '*' );
 		foreach ( $res as $row ) {
@@ -19,6 +20,7 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 	}
 
 	protected $newData = [];
+
 	protected function convertData() {
 		foreach ( $this->oldData as $oldName => $values ) {
 			$newName = $this->makeNewName( $oldName );

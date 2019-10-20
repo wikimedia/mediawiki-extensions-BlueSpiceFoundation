@@ -34,6 +34,7 @@
 class BsException extends Exception {
 
 	protected $sMessage = '';
+
 	/**
 	 * DEPRECATED!
 	 * Extended constructor method of the BsException class.

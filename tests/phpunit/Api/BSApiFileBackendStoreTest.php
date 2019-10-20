@@ -16,7 +16,7 @@ class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {
 
 	protected $iFixtureTotal = 3;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 
 		$this->filenames = [
