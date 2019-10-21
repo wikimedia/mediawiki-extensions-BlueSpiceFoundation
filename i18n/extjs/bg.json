@@ -6,6 +6,7 @@
 			"Ted Masters"
 		]
 	},
+	"bs-extjs-ok": "Добре",
 	"bs-extjs-cancel": "Отказ",
 	"bs-extjs-yes": "Да",
 	"bs-extjs-no": "Не",
@@ -26,6 +27,7 @@
 	"bs-extjs-label-namespace": "Именно пространство",
 	"bs-extjs-label-page": "Страница",
 	"bs-extjs-label-directsearch": "Търсене",
+	"bs-extjs-upload": "Качване",
 	"bs-extjs-browse": "Преглеждане",
 	"bs-extjs-uploading": "Качване...",
 	"bs-extjs-allns": "(всички)",
