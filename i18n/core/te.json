@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kiranmayee",
-			"Veeven"
+			"Veeven",
+			"Chaduvari"
 		]
 	},
 	"bs-ns_main": "(ప్రతులు)",
@@ -18,7 +19,7 @@
 	"bs-hours-duration": "{{PLURAL:$1|ఒక గంట|$1 గంటల}}",
 	"bs-mins-duration": "{{PLURAL:$1|ఒక నిమిషం|$1 నిమిషాల}}",
 	"bs-secs-duration": "{{PLURAL:$1|$1 క్షణం|$1 క్షణాల}}",
-	"bs-two-units-ago": "$1 మరియు $2 క్రితం",
+	"bs-two-units-ago": "$1, $2 క్రితం",
 	"bs-one-unit-ago": "$1 క్రితం",
 	"bs-now": "ఇప్పుడు",
 	"bs-userpagesettings-legend": "వాడుకరి అమరికలు",
