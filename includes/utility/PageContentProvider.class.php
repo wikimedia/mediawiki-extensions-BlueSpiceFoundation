@@ -6,8 +6,6 @@
  * @subpackage Utility
  */
 
-use MWTidy;
-
 class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
 	protected $oOriginalGlobalParser     = null;
