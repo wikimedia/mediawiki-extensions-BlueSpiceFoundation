@@ -14,5 +14,13 @@
 	"bs-validator-set-validation-approved": "Valideringen av $1 var vellykket.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Kun følgende verdier er tillatt for $1|For $1 er bare én av følgende verdier tillatt}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Den angitte verdien er for lav. Den må ikke være mindre enn $1.",
-	"bs-validator-integer-range-validation-too-high": "Den angitte verdien er for høy. Den må ikke være høyere enn $1."
+	"bs-validator-integer-range-validation-too-high": "Den angitte verdien er for høy. Den må ikke være høyere enn $1.",
+	"bs-validator-value-not-recognized": "Verdien kunne ikke behandles",
+	"bs-validator-invalid-boolean": "Ikke en gyldig boolsk verdi",
+	"bs-validator-invalid-float": "Ikke et gyldig flyttall",
+	"bs-validator-invalid-integer": "Ikke et gyldig heltall",
+	"bs-validator-invalid-string": "Ikke en gyldig streng",
+	"bs-validator-invalid-coordinate": "Ikke en gyldig koordinat",
+	"bs-validator-invalid-parameter": "Denne parameteren er ikke tillatt",
+	"bs-validator-missing-required": "Denne parameteren er påkrevd"
 }

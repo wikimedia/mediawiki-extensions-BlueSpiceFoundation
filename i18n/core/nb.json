@@ -39,6 +39,7 @@
 	"bs-readonly": "Databasen er for tiden låst for nye oppslag og andre endringer, trolig på grunn av rutinemessig vedlikehold. Administratoren som låste den ga følgende forklaring: $1",
 	"bs-imageofotheruser": "Du har ikke tillatelse til å laste opp et bilde for en annen bruker.",
 	"bs-permissionerror": "Rettighetsfeil!",
+	"bs-lockdown-groups-permissionerror": "Handlingen «$1» er ikke tilgjengelig av følgende {{PLURAL:$2|årsak|årsaker}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> er ikke en gyldig mappe.",
 	"bs-filesystemhelper-has-path-traversal": "Stikryssing oppdaget!",
 	"bs-filesystemhelper-file-not-exists": "Fila <code>$1</code> finnes ikke.",
@@ -89,7 +90,9 @@
 	"bs-graphicallist-action-preview": "Forhåndsvis",
 	"bs-bluespice-mediawiki": "BlueSpice-MediaWiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "vise BlueSpice-administrasjonssider",
+	"action-wikiadmin": "brukes i mange BlueSpice-utvidelser for potensielt farlige administrative oppgaver som brukerbehandling, tillatelser og global konfigurasjon",
 	"right-wikiadmin": "Brukt i mange BlueSpice-utvidelser for potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon",
-	"bs-notifications-agent-anon": "anonym bruker"
+	"bs-notifications-agent-anon": "anonym bruker",
+	"protect-level-editor": "Tillat kun redaktører og administratorer",
+	"bs-ping-on-init-desc": "Skal ping-forespørsler sendes umiddelbart etter sidelasting?"
 }

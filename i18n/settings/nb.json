@@ -2,9 +2,23 @@
 	"@metadata": {
 		"authors": [
 			"JohSan65",
-			"Imre Eilertsen"
+			"Imre Eilertsen",
+			"Jon Harald Søby"
 		]
 	},
+	"bs-setting-path-feature": "Funksjon",
+	"bs-setting-path-extension": "Utvidelse",
+	"bs-setting-path-package": "Pakke",
+	"bs-setting-path-system": "System",
+	"bs-setting-path-dataanalysis": "Dataanalyse",
+	"bs-setting-path-editor": "Bidragsyter",
+	"bs-setting-path-search": "Søk og navigasjon",
+	"bs-setting-path-personalisation": "Personalisering",
+	"bs-setting-path-skinning": "Utseende",
+	"bs-setting-path-customizing": "Tilpasning",
+	"bs-setting-path-contentstructuring": "Innholdsstrukturering",
 	"bs-setting-path-communication": "Kommunikasjon",
-	"bs-setting-path-qualityassurance": "Kvalitetssikring."
+	"bs-setting-path-administration": "Administrasjon",
+	"bs-setting-path-qualityassurance": "Kvalitetssikring.",
+	"bs-setting-path-export": "Eksporter"
 }
