@@ -95,7 +95,7 @@ class BsGenericTagExtensionHandler {
 	public function handle( $input, array $args, Parser $parser, PPFrame $frame ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( $this->aTagDef['disableParserCache'] === true ) {
-			$parser->disableCache();
+			$parser->getOutput()->updateCacheExpiry( 0 );
 		}
 
 		if ( $this->aTagDef['parseInput'] === true ) {
