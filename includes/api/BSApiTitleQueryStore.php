@@ -10,7 +10,6 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 	 * Returns a List of Titles for the client side
 	 * @param string $sQuery A (maybe prefixed) title, or parts of a title
 	 * that the store should look for
-	 * @global Language $wgContLang
 	 * @return array of objects
 	 */
 	protected function makeData( $sQuery = '' ) {

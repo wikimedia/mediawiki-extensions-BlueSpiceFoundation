@@ -98,9 +98,6 @@ class BsNamespaceHelper {
 
 	/**
 	 * Returns all possible active names and aliases for a given namespace, including localized forms.
-	 * @global Language $wgContLang MediaWiki object for content language
-	 * @global array $wgNamespaceAliases stores all the namespace aliases
-	 * @global array $wgCanonicalNamespaceNames stores generic namespace names
 	 * @param int $iNamespaceId number of namespace index
 	 * @return array List of namespace names
 	 */
@@ -220,7 +217,6 @@ class BsNamespaceHelper {
 
 	/**
 	 * Creates an array for the HTMLFormField class for select boxes.
-	 * @global Language $wgContLang
 	 * @param array $aExcludeIds
 	 * @return array
 	 */
