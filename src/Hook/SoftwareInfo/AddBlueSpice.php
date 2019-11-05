@@ -12,7 +12,7 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 		$extInfo = $this->getConfig()->get( 'BlueSpiceExtInfo' );
 
 		$link = SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL();
-		$this->softwareInfo["[https://bluespice.com/{$extInfo['name']}] ([$link Credits])"]
+		$this->softwareInfo["[https://bluespice.com {$extInfo['name']}] ([$link Credits])"]
 			= $extInfo['version'];
 		return true;
 	}
