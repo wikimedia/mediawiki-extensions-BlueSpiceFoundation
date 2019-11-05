@@ -108,7 +108,6 @@ abstract class Api extends ApiBase {
 
 	/**
 	 *
-	 * @global type $wgContLang
 	 * @return ErrorFormatter
 	 */
 	public function getErrorFormatter() {

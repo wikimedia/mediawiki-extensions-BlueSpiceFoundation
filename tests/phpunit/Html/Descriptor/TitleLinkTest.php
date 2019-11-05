@@ -9,7 +9,7 @@ use \BlueSpice\Html\Descriptor\ILink;
 class TitleLinkTest extends TestCase {
 
 	/**
-	 * @convers TitleLink::__construct
+	 * @covers TitleLink::__construct
 	 */
 	public function testConstructor() {
 		$context = $this->createMock( '\IContextSource' );
@@ -21,7 +21,7 @@ class TitleLinkTest extends TestCase {
 	}
 
 	/**
-	 * @convers TitleLink::getCSSClasses
+	 * @covers TitleLink::getCSSClasses
 	 */
 	public function testExistingTitle() {
 		$context = $this->createMock( '\IContextSource' );
@@ -37,7 +37,7 @@ class TitleLinkTest extends TestCase {
 	}
 
 	/**
-	 * @convers TitleLink::getCSSClasses
+	 * @covers TitleLink::getCSSClasses
 	 */
 	public function testNotExistingTitle() {
 		$context = $this->createMock( '\IContextSource' );

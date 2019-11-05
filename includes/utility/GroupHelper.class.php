@@ -53,7 +53,6 @@ class BsGroupHelper {
 
 	/**
 	 *
-	 * @global Array $wgGroupPermissions
 	 * @param string $sRight
 	 * @param array $aConf
 	 * @return array
@@ -106,7 +105,6 @@ class BsGroupHelper {
 	 * DEPRECATED!
 	 * @deprecated since version 3.0.2 - Do not assign permissions temporarily,
 	 * as this is broken
-	 * @global Array $wgGroupPermissions
 	 * @param String $sGroupName
 	 * @param Array $aPermissions
 	 * @param Array $aNamespaces
