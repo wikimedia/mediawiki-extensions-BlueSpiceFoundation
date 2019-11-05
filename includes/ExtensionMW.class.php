@@ -85,11 +85,10 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 
 	/**
 	 * register hooks
-	 * @example $this->setHook('ParserFirstCallInit'); // register the method
+	 * example: $this->setHook('ParserFirstCallInit'); // register the method
 	 * onParserFirstCallInit() to  hook ParserFirstCallInit
-	 * @example $this->setHook('ParserFirstCallInit', 'initParser');
+	 * example: $this->setHook('ParserFirstCallInit', 'initParser');
 	 * // register the method initParser() to hook ParserFirstCallInit
-	 * @global array $wgHooks
 	 * @param string $hook name of the hook to register to
 	 * @param string $method (optional) name of method register to
 	 * @param bool $bExecuteFirst set this method to be first to be executed when hook triggered
@@ -147,8 +146,6 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 
 	/**
 	 * Returns the resource path for the current extension
-	 * @global string $IP
-	 * @global string $wgScriptPath
 	 * @return string
 	 */
 	public function getResourcePath() {

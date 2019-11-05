@@ -532,7 +532,6 @@ class BsFileSystemHelper {
 
 	/**
 	 * Converts uploaded image to PNG
-	 * @global WebRequest $wgRequest
 	 * @param string $sName
 	 * @param string $sDir
 	 * @param string $sFileName
@@ -723,8 +722,6 @@ class BsFileSystemHelper {
 
 	/**
 	 * Saves a file from the server filesystem to the local file repo
-	 * @global FileRepo $wgLocalFileRepo
-	 * @global User $wgUser
 	 * @param string $sFilename
 	 * @param bool $bDeleteSrc
 	 * @param string $sComment

@@ -102,8 +102,6 @@ class BsNamespaceHelper {
 
 	/**
 	 * Returns all possible active names and aliases for a given namespace, including localized forms.
-	 * @global array $wgNamespaceAliases stores all the namespace aliases
-	 * @global array $wgCanonicalNamespaceNames stores generic namespace names
 	 * @param int $iNamespaceId number of namespace index
 	 * @return array List of namespace names
 	 */

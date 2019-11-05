@@ -489,8 +489,6 @@ class BsCore {
 	 * @deprecated since version 3.1.0 - This looks partialy broken, when
 	 * scriptPath is only one letter it may gets replaced numerous times i.e
 	 * If you really need something weird like this, calculate this yourself ;)
-	 * @global string $wgScriptPath The relative path from the webroot for hyperlinks.
-	 * @global string $IP
 	 * @return string Webroot directory in which MediaWiki is installed
 	 */
 	public static function getMediaWikiWebrootPath() {
