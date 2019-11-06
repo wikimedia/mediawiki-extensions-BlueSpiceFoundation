@@ -7,7 +7,8 @@
 			"01miki10",
 			"Pyscowicz",
 			"Surjection",
-			"Pxos"
+			"Pxos",
+			"Cxz"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -71,5 +72,5 @@
 	"right-wikiadmin": "Käytetään monissa BlueSpice-laajennuksissa mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista, varten",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
-	"protect-level-editor": "Salli vain seulojat"
+	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät"
 }

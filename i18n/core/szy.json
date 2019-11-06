@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Benel"
+		]
+	},
+	"bs-from-something": "(namakay $1)",
+	"bs-validator-error-title-does-not-exist": "kasabelih nayai’ tu: $1"
+}

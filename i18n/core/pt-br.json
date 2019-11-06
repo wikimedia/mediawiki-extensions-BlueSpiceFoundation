@@ -94,5 +94,6 @@
 	"bs-notifications-agent-anon": "usuário anônimo",
 	"bs-lockdown-groups-permissionerror": "A ação \"$1\" não está disponível {{PLURAL:$2|pelo seguinte motivo|pelos seguintes motivos}}: $3",
 	"action-wikiadmin": "usado em muitas extensões do BlueSpice para tarefas administrativas potencialmente perigosas, como gerenciamento de usuários, permissões, configuração global",
-	"protect-level-editor": "Permitir apenas editores e administradores"
+	"protect-level-editor": "Permitir apenas editores e administradores",
+	"bs-ping-on-init-desc": "Deve ser enviado um pedido ''ping'' imediatamente após os carregamentos de página"
 }

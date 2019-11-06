@@ -6,5 +6,6 @@
 	},
 	"bs-validator-invalid-string": "מחרוזת לא תקינה",
 	"bs-validator-invalid-coordinate": "קואורדינטה לא תקינה",
-	"bs-validator-missing-required": "פרמטר זה נדרש"
+	"bs-validator-missing-required": "פרמטר זה נדרש",
+	"bs-validator-invalid-boolean": "ערך בוליאני לא תקין"
 }

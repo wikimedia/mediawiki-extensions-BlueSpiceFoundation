@@ -9,12 +9,12 @@
 	"bs-filerepo-headerfileheight": "Visina",
 	"bs-filerepo-headerfilemimetype": "MIME tip",
 	"bs-filerepo-headerfileusertext": "Korisnik",
-	"bs-filerepo-headerfileextension": "Ekstenzija",
-	"bs-filerepo-headerfiletimestamp": "Postavljeno",
-	"bs-filerepo-headerfilemediatype": "Vrsta medija",
+	"bs-filerepo-headerfileextension": "Dodatak",
+	"bs-filerepo-headerfiletimestamp": "Otpremljeno",
+	"bs-filerepo-headerfilemediatype": "Tip medija",
 	"bs-filerepo-headerfiledescription": "Opis",
 	"bs-filerepo-headerfilethumbnail": "Minijatura",
 	"bs-filerepo-yes": "Da",
 	"bs-filerepo-no": "Ne",
-	"bs-filerepo-pagesize": "Veličina stranice"
+	"bs-filerepo-pagesize": "Unosi po stranici"
 }

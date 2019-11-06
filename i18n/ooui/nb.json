@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kingu"
+			"Kingu",
+			"Jon Harald Søby"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Legg til ny…"
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Legg til ny…",
+	"bs-ooui-key-value-input-widget-key-label": "Nøkkel",
+	"bs-ooui-key-value-input-widget-value-label": "Verdi",
+	"bs-ooui-key-value-input-widget-add-button-label": "Legg til",
+	"bs-ooui-key-value-input-widget-add-form-label": "Legg til ny oppføring",
+	"bs-ooui-key-value-input-widget-error-message": "Alle påkrevde felt må være satt!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Ingen verdier satt!"
 }

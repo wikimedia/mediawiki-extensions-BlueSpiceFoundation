@@ -91,5 +91,8 @@
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Brukt i mange BlueSpice-utvidelser for potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon",
 	"bs-notifications-agent-anon": "anonym bruker",
-	"action-wikiadmin": "vise BlueSpice-administrasjonssider"
+	"action-wikiadmin": "brukes i mange BlueSpice-utvidelser for potensielt farlige administrative oppgaver som brukerbehandling, tillatelser og global konfigurasjon",
+	"bs-lockdown-groups-permissionerror": "Handlingen «$1» er ikke tilgjengelig av følgende {{PLURAL:$2|årsak|årsaker}}: $3",
+	"protect-level-editor": "Tillat kun redaktører og administratorer",
+	"bs-ping-on-init-desc": "Skal ping-forespørsler sendes umiddelbart etter sidelasting?"
 }
