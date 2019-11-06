@@ -3,6 +3,41 @@ Copyright 2019 by Hallo Welt! GmbH
 https://bluespice.com
 https://hallowelt.com
 
+== BlueSpice 3.1.1 ===
+BlueSpice 3.1.1 is a patch release.
+This is a stable release.
+
+===Fixes===
+* FlaggedRevsConnector: align colors for highlighting draft in version history (#5683)
+* Fix links to documentation (#13552)
+* Privacy: Change avatar after anonymisation (#14216)
+* SocialEntities show up in watched pages (#14681)
+* Indexing huge PDFs fails (#15725)
+* Ping request should start immediately on page-load (#16467)
+* Namespace select box in Special:CategoryTree is overlapped by header (#16534)
+* Privacy policy links should link to project namespace (#16594)
+* VisualEditor table inspector UI is broken in BlueSpice free (#16612)
+* AND OR operators must work in search term (#16613)
+* Wrong link for "Add attachment" (#16629)
+* Table formatting is lost on change between edit modes (#16639)
+* HideTitle should also hide FlaggedRevs information (#16738)
+* Use ssl to link to bluespice.com everywhere in the software (#16789)
+* Width is ignored in menu select widgets (#16790)
+* Subitems in header menu are displayed all the time (#16808)
+* BlueSpiceInsertLink missing message (#16872)
+* ExtendedStatistics special pages ignores permission statistic-viewspecialpage (#16951)
+* Add attachments button out of line (#16993)
+* Remove dependency to PHP Tidy extension (#16997)
+* Smartlist fatal error in mode whatlinkshere when no target given (#17008)
+* Privacy: fix gender in anonymisation log (#17015)
+* Update repo file on WebDAV update (#17069)
+* Add article button is displayed in mobile view when left sidebar is open (#17077)
+* Fix mobile navigation-main height and user button icon (#17078)
+* BlueSpiceAvatars needs 'editToken' replaced with 'csrfToken' (T233546)
+* BlueSpiceExtendedStatistics needs 'editToken' replaced with 'csrfToken' (T233547)
+* BlueSpiceFoundation needs 'editToken' replaced with 'csrfToken' (T233548)
+* Checkup code passing $this by reference with a temporary variable (T234118)
+
 == BlueSpice 3.1 ==
 BlueSpice 3.1 is a minor release.
 This is a stable release.
