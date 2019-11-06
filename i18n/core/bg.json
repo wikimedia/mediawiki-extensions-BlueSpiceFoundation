@@ -24,5 +24,7 @@
 	"bs-graphicallist-action-list": "Списък",
 	"bs-graphicallist-action-preview": "Предварителен преглед",
 	"bs-notifications-agent-anon": "анонимен потребител",
-	"bs-permissionerror": "Грешка при правата за достъп!"
+	"bs-permissionerror": "Грешка при правата за достъп!",
+	"bs-navigation-support": "Поддръжка",
+	"bs-export-menu-print-text": "Отпечатване"
 }

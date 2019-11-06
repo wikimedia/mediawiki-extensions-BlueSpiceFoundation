@@ -52,5 +52,7 @@
 	"bs-extjs-tools-trigger-text": "Инструменти",
 	"bs-extjs-flyout-tab-thumbs-label": "Миниатюри",
 	"bs-extjs-flyout-tab-grid-label": "Подробности",
-	"bs-extjs-label-directsearch": "Търсене"
+	"bs-extjs-label-directsearch": "Търсене",
+	"bs-extjs-ok": "Добре",
+	"bs-extjs-upload": "Качване"
 }

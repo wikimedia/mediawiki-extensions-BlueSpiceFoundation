@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Benojan"
+			"Benojan",
+			"飞舞回堂前"
 		]
 	},
 	"bs-ooui-key-value-input-widget-value-label": "值",
 	"bs-ooui-key-value-input-widget-add-button-label": "加",
 	"bs-ooui-key-value-input-widget-add-form-label": "加新条",
-	"bs-ooui-key-value-input-widget-error-message": "一切必填个格子都约填起！",
+	"bs-ooui-key-value-input-widget-error-message": "一切必填个字段侪要设置！",
 	"bs-ooui-key-value-input-widget-no-values-label": "呒值填起！"
 }

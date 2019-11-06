@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Stryn",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Silvonen",
+			"Cxz"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -50,6 +52,8 @@
 	"bs-extjs-tools-trigger-text": "Työkalut",
 	"bs-extjs-flyout-tab-thumbs-label": "Pienoiskuvat",
 	"bs-extjs-flyout-tab-grid-label": "Tiedot",
-	"bs-extjs-flyout-add-title": "Klikkaa tästä lisätäksesi uuden kohteen",
-	"bs-extjs-flyout-add-label": "Lisää kohde"
+	"bs-extjs-flyout-add-title": "Napsauta tästä lisätäksesi uuden kohteen",
+	"bs-extjs-flyout-add-label": "Lisää kohde",
+	"bs-extjs-filter-contains": "sisältää",
+	"bs-extjs-filter-contains-not": "ei sisällä"
 }

@@ -6,5 +6,6 @@
 	},
 	"bs-upload-license": "Лиценз",
 	"bs-upload-error": "Грешка",
-	"bs-upload-descfilelabel": "Описание"
+	"bs-upload-descfilelabel": "Описание",
+	"bs-upload-uploaddialogtitle": "Качване на файл"
 }

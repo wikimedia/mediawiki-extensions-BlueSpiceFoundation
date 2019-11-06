@@ -29,5 +29,6 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "אין קטגוריות להסרה",
 	"bs-api-task-taskData-page-id": "המזהה של דף ויקי קיים",
 	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי",
-	"bs-wikipage-tasks-error-page-not-valid": "הדף שצוין אינו תקין."
+	"bs-wikipage-tasks-error-page-not-valid": "הדף שצוין אינו תקין.",
+	"apihelp-bs-wikipage-tasks-summary": "מספק פעולות נפוצות ל־WikiPages"
 }

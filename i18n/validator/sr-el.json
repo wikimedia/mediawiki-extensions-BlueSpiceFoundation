@@ -1,0 +1,16 @@
+{
+	"@metadata": [],
+	"bs-validator-email-validation-approved": "Imejl adresa je uspešno potvrđena.",
+	"bs-validator-email-validation-not-approved": "Imejl adresa ne može biti potvrđena.",
+	"bs-validator-url-validation-approved": "Link je uspešno potvrđen.",
+	"bs-validator-url-validation-not-approved": "Link ne može biti potvrđen.",
+	"bs-validator-arg-count-validation-approved": "Atribut \"count\" je uspešno potvrđen.",
+	"bs-validator-arg-count-validation-not-approved": "Atribut \"count\" ne može biti potvrđen.",
+	"bs-validator-set-validation-approved": "$1 je uspešno potvrđen.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Samo navedene vrednosti su dozvoljene za $1|Za $1 samo jedna od navedenih vrednosti su dozvoljene}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Navedena vrednost je veoma slaba. Ne bi trebala biti manja od $1.",
+	"bs-validator-integer-range-validation-too-high": "Navedena vrednost je veoma visoka. Ne bi trebala da bude veća od $1.",
+	"bs-validator-value-not-recognized": "Nije moguće obraditi vrednost",
+	"bs-validator-invalid-parameter": "Ovaj parametar nije dozvoljen",
+	"bs-validator-missing-required": "Ovaj parametar je preporučen"
+}

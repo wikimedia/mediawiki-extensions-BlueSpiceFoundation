@@ -15,5 +15,6 @@
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lista opcji",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Nie masz uprawnień do czytania strony '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Brak kategorii do usunięcia",
-	"bs-api-task-taskData-page-title": "Prawidłowy tytuł strony wiki"
+	"bs-api-task-taskData-page-title": "Prawidłowy tytuł strony wiki",
+	"apihelp-bs-task-param-task": "Zadanie, które powinno zostać wykonane"
 }
