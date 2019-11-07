@@ -118,7 +118,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 			'BSFoundation',
 			'TemplateRenderer',
 			'UserImage',
-			$this->getUser()->getID(),
+			$this->getUser()->getName(),
 			$this->args[static::PARAM_WIDTH],
 			$this->args[static::PARAM_HEIGHT]
 		);
