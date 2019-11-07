@@ -3,7 +3,8 @@
 		"authors": [
 			"Otokoume",
 			"2nd-player",
-			"Suyama"
+			"Suyama",
+			"Reiwa period"
 		]
 	},
 	"apihelp-bs-user-store-description": "データベースからすべての利用者を一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
@@ -12,5 +13,6 @@
 	"apihelp-bs-store-param-limit": "返す結果の数",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "あなたはページ「$1」での編集が許可されていません。",
 	"bs-wikipage-tasks-error-categories-not-valid": "無効な{{PLURAL:$2|カテゴリ}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "カテゴリを設定しました。"
+	"bs-wikipage-tasks-setcategories-success": "カテゴリを設定しました。",
+	"bs-api-task-taskData-page-id": "存在するwikiページのID"
 }

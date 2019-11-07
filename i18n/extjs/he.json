@@ -77,5 +77,6 @@
 	"bs-extjs-filter-less-than": "קטן מ־",
 	"bs-extjs-filter-date-on": "פעיל",
 	"bs-extjs-pageexport-success": "הייצוא בוצע בהצלחה",
-	"bs-extjs-pageexport-error-invalid-title": "שם הרשימה אינו תקין"
+	"bs-extjs-pageexport-error-invalid-title": "שם הרשימה אינו תקין",
+	"bs-extjs-pageexport-pagecollection-prefix": "אוסף דפים"
 }

@@ -8,7 +8,8 @@
 			"Macofe",
 			"Amitie 10g",
 			"Jelou",
-			"Tiberius1701"
+			"Tiberius1701",
+			"Hasley"
 		]
 	},
 	"bluespicefoundation-desc": "Habilita a MediaWiki para la empresa",
@@ -97,5 +98,6 @@
 	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
 	"bs-notifications-agent-anon": "usuario anónimo",
 	"bs-lockdown-groups-permissionerror": "La acción «$1» no está disponible por {{PLURAL:$2|el motivo siguiente|los motivos siguientes}}: $3",
-	"action-wikiadmin": "mostrar páginas de administración de BlueSpice"
+	"action-wikiadmin": "mostrar páginas de administración de BlueSpice",
+	"protect-level-editor": "Solo editores y administradores"
 }

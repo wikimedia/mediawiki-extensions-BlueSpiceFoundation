@@ -6,7 +6,8 @@
 			"2nd-player",
 			"Otokoume",
 			"Suyama",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Reiwa period"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -61,5 +62,6 @@
 	"bs-graphicallist-action-close": "閉じる",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "BlueSpice 管理ページを表示",
-	"action-wikiadmin": "BlueSpice 管理ページの表示"
+	"action-wikiadmin": "BlueSpice 管理ページの表示",
+	"bs-extended-search-textfield-tooltip": "wiki内を検索"
 }

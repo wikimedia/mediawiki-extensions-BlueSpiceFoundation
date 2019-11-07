@@ -96,5 +96,7 @@
 	"right-wikiadmin": "Usado na extensão BlueSpice para tarefas administrativas possivelmente perigosas, como a administração de utilizadores e permissões, e a configuração global",
 	"bs-notifications-agent-anon": "utilizador anónimo",
 	"bs-lockdown-groups-permissionerror": "A operação \"$1\" não está disponível {{PLURAL:$2|pela seguinte razão|pelas seguintes razões}}: $3",
-	"action-wikiadmin": "usado em muitas extensões BlueSpice para tarefas administrativas potencialmente perigosas como a gestão de utilizadores e de permissões, e a configuração global"
+	"action-wikiadmin": "usado em muitas extensões BlueSpice para tarefas administrativas potencialmente perigosas como a gestão de utilizadores e de permissões, e a configuração global",
+	"protect-level-editor": "Permitir só editores e administradores",
+	"bs-ping-on-init-desc": "Deve ser enviado um pedido ''ping'' imediatamente após os carregamentos de página"
 }
