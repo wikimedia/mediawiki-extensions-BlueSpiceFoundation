@@ -6,10 +6,11 @@
 			"TomT0m",
 			"Urhixidur",
 			"Wladek92",
-			"Zarisi"
+			"Zarisi",
+			"Verdy p"
 		]
 	},
-	"bs-extjs-ok": "Ok",
+	"bs-extjs-ok": "OK",
 	"bs-extjs-cancel": "Annuler",
 	"bs-extjs-yes": "Oui",
 	"bs-extjs-no": "Non",
@@ -22,7 +23,7 @@
 	"bs-extjs-hint": "Astuce",
 	"bs-extjs-error": "Erreur",
 	"bs-extjs-confirm": "Confirmer",
-	"bs-extjs-loading": "Chargement en cours…",
+	"bs-extjs-loading": "Chargement en cours...",
 	"bs-extjs-pageSize": "Entrées par page",
 	"bs-extjs-actions-column-header": "Actions",
 	"bs-extjs-warning": "Avertissement",
@@ -36,7 +37,7 @@
 	"bs-extjs-titlecombo-newpagehint": "La page n’existe pas !",
 	"bs-extjs-upload": "Téléverser",
 	"bs-extjs-browse": "Naviguer",
-	"bs-extjs-uploading": "Téléversement en cours…",
+	"bs-extjs-uploading": "Téléversement en cours...",
 	"bs-extjs-confirmNavigationTitle": "Suivre le lien",
 	"bs-extjs-confirmNavigationText": "Voulez-vous vraiment suivre ce lien ? Tous les paramètres dynamiques comme le filtrage ou le tri sur la page actuelle seront perdus.",
 	"bs-extjs-allns": "(tous)",
@@ -74,13 +75,13 @@
 	"bs-extjs-pageexport-required-text": "La liste de noms ne peut pas être vide et au moins une page doit être sélectionnée",
 	"bs-extjs-export-search-summary-text": "Généré par PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Le nom de la liste n’est pas valide",
-	"bs-extjs-combo-box-default-placeholder": "Type à filtrer ...",
-	"bs-extjs-tools-trigger-title": "Cliquer ici pour ouvrir le menu outils",
+	"bs-extjs-combo-box-default-placeholder": "Type à filtrer...",
+	"bs-extjs-tools-trigger-title": "Cliquer ici pour ouvrir le menu des outils",
 	"bs-extjs-tools-trigger-text": "Outils",
 	"bs-extjs-flyout-tab-thumbs-label": "Vignettes",
 	"bs-extjs-flyout-tab-thumbs-title": "Basculer en affichage vignette",
 	"bs-extjs-flyout-tab-grid-label": "Détails",
-	"bs-extjs-flyout-tab-grid-title": "Basculer vers l'affichage détaillé",
+	"bs-extjs-flyout-tab-grid-title": "Basculer vers l’affichage détaillé",
 	"bs-extjs-flyout-add-title": "Cliquer ici pour ajouter un nouvel élément",
 	"bs-extjs-flyout-add-label": "Ajouter un élément"
 }
