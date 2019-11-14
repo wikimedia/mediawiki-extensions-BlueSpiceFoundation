@@ -371,7 +371,16 @@
 	}
 
 	function _convertMWTimestampToDate( ts ) {
-		return new Date( _convertMWTimestampToISO( ts ) );
+		// ts = YYYYMMDDHHMMSS
+		var tsSplit = ts.match( /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/ );
+		var year 	= parseInt( tsSplit[1] );
+		var month 	= parseInt( tsSplit[2] );
+		var day 	= parseInt( tsSplit[3] );
+		var hour 	= parseInt( tsSplit[4] );
+		var minute 	= parseInt( tsSplit[5] );
+		var second 	= parseInt( tsSplit[6] );
+
+		return new Date(year, month-1, day, hour, minute, second);
 	}
 
 	/**
