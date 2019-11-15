@@ -101,10 +101,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 			'structuremanager'
 		]
 	],
-	"autocreateaccount" => [
-		"type" => 'global',
-		"roles" => [ 'reader' ]
-	],
 	"autopatrol" => [
 		"type" => 'global',
 		"roles" => [ 'bot', 'editor', 'maintenanceadmin' ]
