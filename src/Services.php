@@ -141,6 +141,14 @@ class Services extends ServicesDecorator {
 
 	/**
 	 *
+	 * @return Permission\PermissionRegistry
+	 */
+	public function getBSPermissionRegistry() {
+		return $this->getService( 'BSPermissionRegistry' );
+	}
+
+	/**
+	 *
 	 * @return PermissionLockdownFactory
 	 */
 	public function getBSPermissionLockdownFactory() {
