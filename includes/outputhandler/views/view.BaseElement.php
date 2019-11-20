@@ -28,6 +28,8 @@
 // TODO MRG20100816: Changelog
 
 // TODO MRG20100816: Kommentare
+use BlueSpice\Services;
+
 /**
  * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
  * \BlueSpice\TemplateRenderer instead
@@ -76,7 +78,7 @@ class ViewBaseElement {
 	public function __construct() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->_mId = 'bs-element-' . self::getAutoId();
-		$this->config = \MediaWiki\MediaWikiServices::getInstance()->getConfigFactory()
+		$this->config = Services::getInstance()->getConfigFactory()
 			->makeConfig( 'bsg' );
 	}
 

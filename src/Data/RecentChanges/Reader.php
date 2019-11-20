@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
+use BlueSpice\Services;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\DatabaseReader;
 use MWNamespace;
@@ -26,7 +27,7 @@ class Reader extends DatabaseReader {
 	 */
 	protected function makeSecondaryDataProvider() {
 		return new SecondaryDataProvider(
-			\MediaWiki\MediaWikiServices::getInstance()->getLinkRenderer(),
+			Services::getInstance()->getLinkRenderer(),
 			$this->context
 		);
 	}

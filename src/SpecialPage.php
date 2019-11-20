@@ -35,8 +35,7 @@ abstract class SpecialPage extends \SpecialPage {
 	 * @since 1.24
 	 */
 	public function getConfig() {
-		return \MediaWiki\MediaWikiServices::getInstance()
-			->getConfigFactory()->makeConfig( 'bsg' );
+		return Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 	}
 
 	/**

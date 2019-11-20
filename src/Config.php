@@ -71,7 +71,7 @@ class Config extends \MultiConfig {
 	protected function getStore() {
 		return new Store(
 			new Context( \RequestContext::getMain(), $this ),
-			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
+			Services::getInstance()->getDBLoadBalancer()
 		);
 	}
 

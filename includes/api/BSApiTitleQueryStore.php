@@ -2,7 +2,7 @@
 
 // api.php?action=bs-titlequery-store&format=jsonfm&options={%22namespaces%22:[-1,0,2,4,6,8,10,12,14,3000],%20%22returnQuery%22:true}&query=Date
 
-use MediaWiki\MediaWikiServices;
+use BlueSpice\Services;
 
 class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
@@ -128,7 +128,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		$sOp = $dbr->anyString();
 		$aLike = $aNormalLike = [ '', $sOp ];
 		$aParams = explode( ' ', str_replace( '/', ' ', $oQueryTitle->getText() ) );
-		$oSearchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
+		$oSearchEngine = Services::getInstance()->getSearchEngineFactory()->create();
 		foreach ( $aParams as $sParam ) {
 			$aLike[] = $sParam;
 			$aLike[] = $sOp;

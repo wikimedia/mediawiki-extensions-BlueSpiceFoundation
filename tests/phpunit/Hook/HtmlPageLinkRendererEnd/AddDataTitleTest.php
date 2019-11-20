@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
+use BlueSpice\Services;
+
 class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 
 	public function testCanConstruct() {
@@ -13,8 +15,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()
-			->getLinkRenderer();
+		$linkRenderer = Services::getInstance()->getLinkRenderer();
 		$title = \Title::newMainPage();
 		$isKnown = true;
 		$html = new \HtmlArmor( '' );
@@ -46,8 +47,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = \MediaWiki\MediaWikiServices::getInstance()
-			->getLinkRenderer();
+		$linkRenderer = Services::getInstance()->getLinkRenderer();
 		$title = \Title::newMainPage();
 		$html = new \HtmlArmor( '' );
 		$isKnown = true;
