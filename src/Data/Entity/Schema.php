@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Entity;
 
-use MediaWiki\MediaWikiServices;
+use BlueSpice\Services;
 use BlueSpice\Data\FieldType;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use BlueSpice\EntityConfig;
@@ -49,9 +49,7 @@ class Schema extends \BlueSpice\Data\Schema {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationEntityRegistry'
 		);
-		$configFactory = MediaWikiServices::getInstance()->getService(
-			'BSEntityConfigFactory'
-		);
+		$configFactory = Services::getInstance()->getBSEntityConfigFactory();
 		foreach ( $registry->getAllKeys() as $type ) {
 			$entityConfig = $configFactory->newFromType( $type );
 			if ( !$entityConfig ) {

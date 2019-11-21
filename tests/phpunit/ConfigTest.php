@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests;
 
-use MediaWiki\MediaWikiServices;
+use BlueSpice\Services;
 
 /**
  * @group Database
@@ -28,14 +28,13 @@ class ConfigTest extends \MediaWikiTestCase {
 			's_value' => '"9"'
 		] );
 		$config = new \BlueSpice\Config(
-			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
+			Services::getInstance()->getDBLoadBalancer()
 		);
 		$config->invalidateCache();
 	}
 
 	public function testFactoryReturn() {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()
-			->makeConfig( 'bsg' );
+		$config = Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 
 		$this->assertInstanceOf(
 			// Can be discussed whether just \Config is sufficient to test
@@ -47,7 +46,7 @@ class ConfigTest extends \MediaWikiTestCase {
 
 	public function testDatabasePreval() {
 		$config = new \BlueSpice\Config(
-			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
+			Services::getInstance()->getDBLoadBalancer()
 		);
 		$this->assertEquals(
 			9,
@@ -58,7 +57,7 @@ class ConfigTest extends \MediaWikiTestCase {
 
 	public function testGlobalVarDefaulting() {
 		$config = new \BlueSpice\Config(
-			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
+			Services::getInstance()->getDBLoadBalancer()
 		);
 
 		$this->assertArrayEquals(

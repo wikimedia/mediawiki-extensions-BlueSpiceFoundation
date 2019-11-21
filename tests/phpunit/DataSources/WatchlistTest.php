@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Tests\DataSources;
 
+use BlueSpice\Services;
+
 /**
  * @group BlueSpice
  * @group BlueSpiceFoundation
@@ -84,7 +86,7 @@ class WatchlistTest extends \MediaWikiTestCase {
 	 */
 	protected function makeInstance() {
 		return new \BlueSpice\Data\Watchlist\Reader(
-			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
+			Services::getInstance()->getDBLoadBalancer()
 		);
 	}
 }

@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Tests\Utility;
 
-use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
+use BlueSpice\Services;
 use BlueSpice\Utility\UrlTitleParser;
 
 class UrlTitleParserTest extends MediaWikiTestCase {
@@ -20,7 +20,7 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	 * @dataProvider provideFromUrlWithTitleData
 	 */
 	public function testFromUrl( $url, $expectation ) {
-		$parser = new UrlTitleParser( $url, MediaWikiServices::getInstance()->getMainConfig() );
+		$parser = new UrlTitleParser( $url, Services::getInstance()->getMainConfig() );
 		$title = $parser->parseTitle();
 
 		$this->assertEquals( $expectation, $title->getFullText() );
@@ -34,7 +34,7 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	public function testFromUrlException( $url, $exception ) {
 		$this->expectException( $exception );
 
-		$parser = new UrlTitleParser( $url, MediaWikiServices::getInstance()->getMainConfig() );
+		$parser = new UrlTitleParser( $url, Services::getInstance()->getMainConfig() );
 		$title = $parser->parseTitle();
 	}
 

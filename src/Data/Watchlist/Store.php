@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\Watchlist;
 
+use BlueSpice\Services;
 use BlueSpice\Data\NoWriterException;
 
 class Store implements \BlueSpice\Data\IStore {
@@ -26,7 +27,7 @@ class Store implements \BlueSpice\Data\IStore {
 	 */
 	public function getReader() {
 		return new Reader(
-			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			Services::getInstance()->getDBLoadBalancer(),
 			$this->context
 		);
 	}
