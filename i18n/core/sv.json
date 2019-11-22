@@ -10,6 +10,7 @@
 			"Mjälten"
 		]
 	},
+	"bluespicefoundation-desc": "Få MediaWiki för företag redo",
 	"bs-ns_main": "(Sidor)",
 	"bs-ns_all": "(alla)",
 	"bs-tab_navigation": "Navigering",
@@ -75,6 +76,7 @@
 	"bs-pref-deleteduserimage": "Avatar för raderad användare:",
 	"bs-pref-bspinginterval": "Ping-intervall (i sekunder):",
 	"bs-pref-testmode": "Aktivera testläge",
+	"bs-tag-input-desc": "Värdet för elementets innehåll",
 	"bs-parser-error-invalid-namespace": "Ogiltig namnrymd: $1",
 	"bs-parser-error-invalid-title": "Ogiltig titel: $1.",
 	"bs-validator-error-namespace-on-blacklist": "Namnrymd är inte tillåten: $1",
