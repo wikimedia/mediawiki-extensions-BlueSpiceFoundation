@@ -12,7 +12,7 @@
 	"bs-validator-arg-count-validation-approved": "Attributtet «count» har blitt validert.",
 	"bs-validator-arg-count-validation-not-approved": "Attributtet «count» kunne ikke valideres.",
 	"bs-validator-set-validation-approved": "Valideringen av $1 var vellykket.",
-	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Kun følgende verdier er tillatt for $1|For $1 er bare én av følgende verdier tillatt}}: $2.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Kun følgende verdi er tillatt for $1|For $1 er bare én av følgende verdier tillatt}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Den angitte verdien er for lav. Den må ikke være mindre enn $1.",
 	"bs-validator-integer-range-validation-too-high": "Den angitte verdien er for høy. Den må ikke være høyere enn $1.",
 	"bs-validator-value-not-recognized": "Verdien kunne ikke behandles",
