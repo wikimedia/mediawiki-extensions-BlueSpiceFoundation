@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Wikitoni"
+			"Wikitoni",
+			"Tizven"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Elenca tutti i file dal backend. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
@@ -43,6 +44,7 @@
 	"apihelp-bs-wikipage-store-summary": "Elenca tutte le pagine wiki. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-wikisubpage-treestore-description": "Elenca le sottopagine di una pagina specifica",
 	"apihelp-bs-wikisubpage-treestore-summary": "Elenca le sottopagine di una pagina specifica",
+	"apihelp-bs-wikisubpage-treestore-param-node": "Il titolo con prefisso della pagina wiki",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Elenco di opzioni",
 	"apihelp-bs-upload-license-store-description": "Elenca tutte le licenze disponibili per il caricamento di un file",
 	"apihelp-bs-upload-license-store-summary": "Elenca tutte le licenze disponibili per un file caricato",

@@ -5,7 +5,8 @@
 			"PeppeAeco",
 			"LACLARETTA",
 			"Macofe",
-			"Selven"
+			"Selven",
+			"Tizven"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -65,12 +66,16 @@
 	"bs-extjs-pageexport-overwrite-label": "Sovrascrivi",
 	"bs-extjs-pageexport-general-error": "Errore esportazione",
 	"bs-extjs-pageexport-success": "Esportazione corretta",
+	"bs-extjs-pageexport-required-text": "Il nome dell'elenco non può essere vuoto o almeno una pagina deve essere selezionata",
 	"bs-extjs-export-search-summary-text": "Generato da PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Il nome dell'elenco non è valido",
+	"bs-extjs-combo-box-default-placeholder": "Digita il filtro",
 	"bs-extjs-tools-trigger-title": "Clicca qui per aprire il menu degli strumenti",
 	"bs-extjs-tools-trigger-text": "Strumenti",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniature",
+	"bs-extjs-flyout-tab-thumbs-title": "Passa alla vista miniature",
 	"bs-extjs-flyout-tab-grid-label": "Dettagli",
+	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio",
 	"bs-extjs-flyout-add-title": "Clicca qui per aggiungere un nuovo elemento",
 	"bs-extjs-flyout-add-label": "Aggiungi elemento"
 }

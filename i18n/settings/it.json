@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Tizven"
 		]
 	},
 	"bs-setting-path-feature": "Caratteristica",
 	"bs-setting-path-extension": "Estensione",
 	"bs-setting-path-system": "Sistema",
+	"bs-setting-path-dataanalysis": "Analisi dati",
 	"bs-setting-path-search": "Ricerca e navigazione",
 	"bs-setting-path-personalisation": "Personalizzazione",
 	"bs-setting-path-customizing": "Personalizzazione",

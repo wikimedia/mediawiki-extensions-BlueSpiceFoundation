@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Toadino2",
-			"Beta16"
+			"Beta16",
+			"Tizven"
 		]
 	},
 	"bs-validator-email-validation-approved": "L'indirizzo email è stato convalidato correttamente.",
@@ -15,6 +16,7 @@
 	"bs-validator-set-validation-not-approved": "Per $1 è consentito {{PLURAL:$3|solo il seguente valore|solo uno di seguenti valori}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Il valore fornito è troppo basso. Non dovrebbe essere minore di $1.",
 	"bs-validator-integer-range-validation-too-high": "Il valore fornito è troppo alto. Non dovrebbe essere maggiore di $1.",
+	"bs-validator-value-not-recognized": "Il valore non può essere elaborato",
 	"bs-validator-invalid-parameter": "Questo parametro non è consentito",
 	"bs-validator-missing-required": "Questo parametro è obbligatorio"
 }
