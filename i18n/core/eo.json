@@ -3,7 +3,8 @@
 		"authors": [
 			"Robin van der Vliet",
 			"Lucas",
-			"Mirin"
+			"Mirin",
+			"Zarisi"
 		]
 	},
 	"bs-ns_main": "(Paĝoj)",
@@ -22,6 +23,7 @@
 	"bs-hours-duration": "{{PLURAL:$1|unu horon|$1 horojn}}",
 	"bs-mins-duration": "{{PLURAL:$1|unu minuton|$1 minutojn}}",
 	"bs-secs-duration": "{{PLURAL:$1|unu sekundon|$1 sekundojn}}",
+	"bs-two-units-ago": "$1 kaj $2 antaŭ",
 	"bs-one-unit-ago": "antaŭ $1",
 	"bs-now": "nun",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Saluton, S-ro $2|Saluton, S-ino $2|Saluton, $2}},",

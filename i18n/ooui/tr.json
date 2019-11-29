@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dual"
+			"Dual",
+			"BaRaN6161 TURK"
 		]
 	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Yeni ekle...",
 	"bs-ooui-key-value-input-widget-key-label": "Anahtar kelime",
 	"bs-ooui-key-value-input-widget-value-label": "Değer",
 	"bs-ooui-key-value-input-widget-add-button-label": "Ekle",

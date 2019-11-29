@@ -1,13 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirin"
+			"Mirin",
+			"Zarisi"
 		]
 	},
 	"bs-setting-path-feature": "Trajto",
 	"bs-setting-path-package": "Pako",
 	"bs-setting-path-system": "Sistemo",
 	"bs-setting-path-dataanalysis": "Analizo de dateno",
+	"bs-setting-path-editor": "Redaktoro",
 	"bs-setting-path-skinning": "Etoso",
+	"bs-setting-path-communication": "Komuniko",
+	"bs-setting-path-administration": "Administrilo",
 	"bs-setting-path-export": "Elporti"
 }
