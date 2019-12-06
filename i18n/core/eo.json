@@ -3,7 +3,8 @@
 		"authors": [
 			"Robin van der Vliet",
 			"Lucas",
-			"Mirin"
+			"Mirin",
+			"Zarisi"
 		]
 	},
 	"bs-userbar_loginswitch_logout": "Elsaluti",
@@ -60,5 +61,6 @@
 	"bs-filesystemhelper-folder-not-exists": "La dosierujo <code>$1</code> ne ekzistas.",
 	"bs-parser-error-invalid-namespace": "Ne valida nomspaco: $1",
 	"bs-bluespice-mediawiki": "MediaVikio BlueSpice",
-	"bs-bluespice": "BlueSpice"
+	"bs-bluespice": "BlueSpice",
+	"bs-two-units-ago": "$1 kaj $2 antaŭ"
 }

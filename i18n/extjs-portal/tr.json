@@ -1,10 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sayginer"
+			"Sayginer",
+			"BaRaN6161 TURK"
 		]
 	},
 	"bs-extjs-portal-timespan-week": "Hafta",
 	"bs-extjs-portal-timespan-month": "Ay",
-	"bs-extjs-portal-timespan-alltime": "Tüm zamanlar"
+	"bs-extjs-portal-timespan-alltime": "Tüm zamanlar",
+	"bs-extjs-portal-config": "Portleti yapılandır:",
+	"bs-extjs-portal-title": "Portlet başlığı",
+	"bs-extjs-portal-height": "Yükseklik",
+	"bs-extjs-portal-count": "Girdileri",
+	"bs-extjs-portal-timespan": "Zaman aralığı"
 }

@@ -5,7 +5,8 @@
 			"PeppeAeco",
 			"LACLARETTA",
 			"Macofe",
-			"Selven"
+			"Selven",
+			"Tizven"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -72,5 +73,9 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Miniature",
 	"bs-extjs-flyout-tab-grid-label": "Dettagli",
 	"bs-extjs-flyout-add-title": "Clicca qui per aggiungere un nuovo elemento",
-	"bs-extjs-flyout-add-label": "Aggiungi elemento"
+	"bs-extjs-flyout-add-label": "Aggiungi elemento",
+	"bs-extjs-pageexport-required-text": "Il nome dell'elenco non può essere vuoto o almeno una pagina deve essere selezionata",
+	"bs-extjs-combo-box-default-placeholder": "Digita per filtrare...",
+	"bs-extjs-flyout-tab-thumbs-title": "Passa alla vista miniature",
+	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio"
 }

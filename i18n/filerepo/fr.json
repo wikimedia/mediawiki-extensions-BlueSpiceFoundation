@@ -3,11 +3,12 @@
 		"authors": [
 			"Gomoko",
 			"Urhixidur",
-			"Wladek92"
+			"Wladek92",
+			"Verdy p"
 		]
 	},
 	"bs-filerepo-labelupload": "Téléverser",
-	"bs-filerepo-labelfilter": "Filtre",
+	"bs-filerepo-labelfilter": "Filtrer",
 	"bs-filerepo-headerfilename": "Nom de fichier",
 	"bs-filerepo-headerfilesize": "Taille",
 	"bs-filerepo-headerpagecategories": "Catégories",

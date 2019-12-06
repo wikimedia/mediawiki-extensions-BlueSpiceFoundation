@@ -4,7 +4,8 @@
 			"Josve05a",
 			"WikiPhoenix",
 			"Jopparn",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Mjälten"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -76,5 +77,8 @@
 	"bs-extjs-tools-trigger-text": "Verktyg",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniatyrer",
 	"bs-extjs-flyout-tab-grid-label": "Detaljer",
-	"bs-extjs-flyout-add-label": "Lägg till element"
+	"bs-extjs-flyout-add-label": "Lägg till element",
+	"bs-extjs-flyout-tab-thumbs-title": "Byt till miniatyrbildvisning",
+	"bs-extjs-flyout-tab-grid-title": "Byt till detaljvisning",
+	"bs-extjs-flyout-add-title": "Klick här för att tillfoga ett nytt element"
 }
