@@ -3,6 +3,36 @@ Copyright 2019 by Hallo Welt! GmbH
 https://bluespice.com
 https://hallowelt.com
 
+== BlueSpice 3.1.2 ===
+BlueSpice 3.1.2 is a patch release.
+This is a stable release.
+
+===Fixes===
+* Help links in VisualEditor are confusing (#13163)
+* VisualEditor autosave dialog shows up even when there are no unsaved changes (#13364)
+* Book manager: mass add via categories cuts off after 25 articles (#14299)
+* New page creation in IE behaves strange (#15495)
+* Embed file button in VisualEditor points to detail page instead (#16711)
+* VisualEditor: Media: links are transformed to point to a special page (#16886)
+* Broken link to Reminder management in Reminder flyout (#16934)
+* Changing text color via VisualEditor inspector fails in wiki text mode (#17035)
+* VisualEditor breaks Media links with umlauts (#17085)
+* Misalignment of lists containing blank lines (#17126)
+* Database error after login (#17136)
+* Remote authentication is not working without autocreateaccount permission (#17186)
+* RSS-Feeder produces fatal error in "Follow own" option (#17200)
+* Talk pages can be created for non existing subject pages, but lead to fatal errors (#17209)
+* Auto-generated avatar not working when using `img_auth.php` (#17221)
+* CustomMenu registry not working properly (#17222)
+* BlueSpiceSmartlist: toplist tag broken (#17233)
+* Expiry form elements ignore permissions (#17439)
+* Refine boost of recently modified pages (#17472)
+* Migrate social discussions to standard talk page (#17473)
+* Table header in pdf is not replicated on every page (#17474)
+* Issues with display of old blog articles in Safari (#17475)
+* Flaky PHPUnit failures on PHP 7.1 for BlueSpiceNamespaceManager (T218525)
+* Avatar with img_auth.php (SF495)
+
 == BlueSpice 3.1.1 ===
 BlueSpice 3.1.1 is a patch release.
 This is a stable release.
