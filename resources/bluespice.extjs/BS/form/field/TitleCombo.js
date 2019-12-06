@@ -76,12 +76,14 @@ Ext.define('BS.form.field.TitleCombo', {
 	excludeIds: false,
 
 	constructor: function( conf ) {
+		conf.forceSelection = conf.hasOwnProperty( 'forceSelection' ) ?
+			conf.forceSelection : true;
+
 		//May not be overridden
 		conf.queryMode = 'remote';
 		conf.displayField = 'displayText';
 		conf.valueField = 'prefixedText';
 		conf.typeAhead = true;
-		conf.forceSelection = true;
 
 		this.callParent([conf]);
 	},
