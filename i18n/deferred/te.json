@@ -4,6 +4,8 @@
 			"Veeven"
 		]
 	},
+	"bs-deferred-action-status-done": "పూర్తయింది.",
+	"bs-deferred-action-status-error": "విఫలమైంది.",
 	"bs-deferred-batch-progress-desc": "పురోగతి",
 	"bs-deferred-batch-actions": "చర్యలు",
 	"bs-deferred-batch-description": "వివరణ",

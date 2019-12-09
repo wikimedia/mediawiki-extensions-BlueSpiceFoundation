@@ -26,6 +26,8 @@
 	"bs-extjs-filter-contains-not": "కలిగి వుండదు",
 	"bs-extjs-filter-starts-with": "తో మొదలయ్యిన",
 	"bs-extjs-filter-ends-with": "తో ముగుస్తుంది",
+	"bs-extjs-title-warning": "హెచ్చరిక",
+	"bs-extjs-categorytree-title": "వర్గాలు",
 	"bs-extjs-tools-trigger-text": "పనిముట్లు",
 	"bs-extjs-flyout-tab-grid-label": "వివరాలు"
 }
