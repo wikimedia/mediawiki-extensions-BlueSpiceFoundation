@@ -298,8 +298,13 @@ Ext.define( 'BS.flyout.TabbedDataViewBase', {
 			store: this.commonStore,
 			columns: this.makeGridPanelColums(),
 			dockedItems: dockedItems,
-			plugins: this.makeGridPlugins()
+			plugins: this.makeGridPlugins(),
+			features: this.makeGridFeatures()
 		} );
+	},
+
+	makeGridFeatures: function() {
+		return [];
 	},
 
 	makeGridPlugins: function() {
