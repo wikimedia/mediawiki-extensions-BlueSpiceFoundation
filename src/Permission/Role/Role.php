@@ -129,8 +129,9 @@ abstract class Role implements IRole {
 	 * @param string $roleName
 	 */
 	protected function loadPermissionsForRole( $roleName ) {
-		foreach ( $this->permissionRegistry->getPermissions() as
-				 $permissionName => $permissionDescription ) {
+		foreach (
+			$this->permissionRegistry->getPermissions() as $permissionName => $permissionDescription
+		) {
 			$rolesAssigned = $permissionDescription->getRoles();
 			if ( !in_array( $roleName, $rolesAssigned ) ) {
 				continue;
