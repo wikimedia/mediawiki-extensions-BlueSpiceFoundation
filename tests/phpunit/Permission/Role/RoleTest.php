@@ -2,54 +2,66 @@
 
 namespace BlueSpice\Tests\Permission\Role;
 
-use PHPUnit\Framework\TestCase;
-use BlueSpice\Permission\Role\Role;
+use BlueSpice\Permission\PermissionRegistry;
+use BlueSpice\Permission\RoleFactory;
+use MediaWikiTestCase;
 
-class RoleTest extends TestCase {
+/** @covers \BlueSpice\Permission\Role\Role */
+class RoleTest extends MediaWikiTestCase {
+	public static function setUpBeforeClass() {
+		parent::setUpBeforeClass();
+		$GLOBALS['bsgPermissionConfig']['read'] = [ 'roles' => [ 'dummy', 'admin' ] ];
+	}
 
-	/**
-	 * @covers BlueSpice\Permission\Role\Role::newFromNameAndPermissions
-	 */
-	public function testNewFromNameAndPermissions() {
-		$role = Role::newFromNameAndPermissions( 'some_role_name' );
-
-		$this->assertInstanceOf(
-			'BlueSpice\Permission\Role\Role',
-			$role
+	protected function getFreshRoleFactory() {
+		return new RoleFactory( [],
+			PermissionRegistry::newInstance(
+				$GLOBALS['bsgPermissionConfigDefault'],
+				$GLOBALS['bsgPermissionConfig']
+			)
 		);
 	}
 
-	/**
-	 * @covers BlueSpice\Permission\Role\Role::getName
-	 */
-	public function testGetName() {
-		$role = Role::newFromNameAndPermissions( 'some_role_name' );
-		$this->assertEquals( 'some_role_name', $role->getName() );
+	public function testRoleCreation() {
+		$roleFactory = $this->getFreshRoleFactory();
+		$role = $roleFactory->makeRole( 'dummy' );
+		$this->assertSame(
+			'dummy', $role->getName(),
+			'Role name should be the same as the one passed'
+		);
+
+		$this->assertArrayEquals( [ 'read' ], $role->getPermissions() );
 	}
 
-	/**
-	 * @covers BlueSpice\Permission\Role\Role::getPermissions
-	 */
-	public function testGetPermissions() {
-		$role = Role::newFromNameAndPermissions( 'some_role_name', [ 'A', 'B', 'C' ] );
-		$this->assertEquals( [ 'A', 'B', 'C' ], $role->getPermissions() );
+	public function testAddingPermissions() {
+		$roleFactory = $this->getFreshRoleFactory();
+		$role = $roleFactory->makeRole( 'dummy' );
+		$role->addPermission( 'edit' );
+		$role->addPermission( 'dummypermission' );
+
+		$this->assertTrue(
+			in_array( 'edit', $role->getPermissions() ),
+			'Role should have edit permission'
+		);
+		$this->assertTrue(
+			in_array( 'dummypermission', $role->getPermissions() ),
+			'Role should have dummypermission permission'
+		);
 	}
 
-	/**
-	 * @covers BlueSpice\Permission\Role\Role::addPermission
-	 */
-	public function testAddPermission() {
-		$role = Role::newFromNameAndPermissions( 'some_role_name', [ 'A', 'B', 'C' ] );
-		$role->addPermission( 'D' );
-		$this->assertEquals( [ 'A', 'B', 'C', 'D' ], $role->getPermissions() );
-	}
+	public function testRemovingPermissions() {
+		$roleFactory = $this->getFreshRoleFactory();
+		$role = $roleFactory->makeRole( 'dummy' );
+		$role->removePermission( 'edit' );
+		$role->removePermission( 'dummypermission' );
 
-	/**
-	 * @covers BlueSpice\Permission\Role\Role::removePermission
-	 */
-	public function testRemovePermission() {
-		$role = Role::newFromNameAndPermissions( 'some_role_name', [ 'A', 'B', 'C' ] );
-		$role->removePermission( 'C' );
-		$this->assertEquals( [ 'A', 'B' ], $role->getPermissions() );
+		$this->assertFalse(
+			in_array( 'edit', $role->getPermissions() ),
+			'Role should not have edit permission'
+		);
+		$this->assertFalse(
+			in_array( 'dummypermission', $role->getPermissions() ),
+			'Role should not have dummypermission permission'
+		);
 	}
 }
