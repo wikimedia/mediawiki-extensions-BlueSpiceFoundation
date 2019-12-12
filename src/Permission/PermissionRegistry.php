@@ -91,7 +91,7 @@ class PermissionRegistry {
 	 * @param array $permissionConfig
 	 * @return PermissionRegistry
 	 */
-	protected static function newInstance( $defaultPermissionConfig, $permissionConfig ) {
+	public static function newInstance( $defaultPermissionConfig, $permissionConfig ) {
 		return new static( $defaultPermissionConfig, $permissionConfig );
 	}
 

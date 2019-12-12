@@ -65,7 +65,8 @@ class Namespaces extends Module {
 		if ( !$this->isAffected( $title ) ) {
 			return false;
 		}
-		return $title->getNamespace() > 0;
+
+		return $title->getNamespace() >= 0;
 	}
 
 	/**
