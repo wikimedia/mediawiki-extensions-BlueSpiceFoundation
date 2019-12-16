@@ -92,5 +92,6 @@
 	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "Visa BlueSpices administrationssidor",
 	"right-wikiadmin": "Används på många BlueSpices-tillägg för potentiellt farliga administrativa uppgifter som att hantera användare, behörigheter, global konfiguration",
-	"bs-notifications-agent-anon": "anonym användare"
+	"bs-notifications-agent-anon": "anonym användare",
+	"protect-level-editor": "Tillåt endast mallredigerare och administratörer"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hedda"
+			"Hedda",
+			"BaRaN6161 TURK"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Dosya arka ucundaki tüm dosyaları listeler. Sıralamaya, filtrelemeye ve sayfalandırmaya izin verir. ExtJS Store parametrelerini uygular.",
@@ -25,5 +26,47 @@
 	"apihelp-bs-store-param-filter": "Filtre bilgisine sahip JSON dizesi; alan adını, filtre türünü ve her filtreleme seçeneği için filtre değerini barındıran <code>nesnelerin dizisine</code> deserialize eder",
 	"apihelp-bs-store-param-page": "Sunucu tarafında başlangıç/limit hesaplamasına izin verir",
 	"apihelp-bs-store-param-limit": "Geri dönülecek sonuç sayısı",
-	"apihelp-bs-store-param-start": "Sonuç listesini başlatmak için ofset"
+	"apihelp-bs-store-param-start": "Sonuç listesini başlatmak için ofset",
+	"apihelp-bs-store-param-callback": "İstemci kodunda yanıtta çağrılması gereken bir yöntem adı (JSONP)",
+	"apihelp-bs-store-param-query": "<var>filter</var>'a benzer, ancak sağlanan değer bir ExtJS bileşeninin yalnızca <var>value</var> alanı için bir filtre işlevi görür.",
+	"apihelp-bs-store-param-dc": "<code>Disable cache</code> bayrağı",
+	"apihelp-bs-store-param-format": "Çıktının biçimi (yalnızca JSON veya biçimlendirilmiş JSON)",
+	"apihelp-bs-store-param-options": "Mağazayı bir JSON dizesi biçiminde yapılandırmak için isteğe bağlı seçenekler",
+	"apihelp-bs-store-param-context": "JSON string kodlanmış nesne, mağaza için bağlam verilerini içerir",
+	"apihelp-bs-task-param-task": "Yürütülmesi gereken görev",
+	"apihelp-bs-task-param-taskdata": "JSON dizesi görev için rasgele veri içeren kodlanmış nesne",
+	"apihelp-bs-task-param-context": "JSON dizesi görev için rasgele veri içeren kodlanmış nesne",
+	"apihelp-bs-task-param-format": "Sonucun formatı",
+	"apihelp-bs-task-param-token": "API modülüne erişmek için gerekli belirteç",
+	"bs-wikipage-tasks-error-contentmodel": "Görev, sağlanan sayfanın içerik modeliyle gerçekleştirilemedi.",
+	"bs-wikipage-tasks-error-page-not-valid": "Sağlanan sayfa geçerli değil.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Değişen kategoriler.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "\"$1\" sayfasını düzenleme izniniz yok.",
+	"bs-wikipage-tasks-error-categories-not-valid": "Geçersiz {{PLURAL:$2|kategori|kategori}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Kategoriler başarıyla ayarlandı.",
+	"apihelp-bs-wikipage-store-description": "Tüm wiki sayfalarını listeler. Sıralama, filtreleme ve sayfalamaya izin verir. ExtJS Mağazası parametrelerini uygular.",
+	"apihelp-bs-wikipage-store-summary": "Tüm wiki sayfalarını listeler. Sıralama, filtreleme ve sayfalamaya izin verir. ExtJS Mağazası parametrelerini uygular.",
+	"apihelp-bs-ping-tasks-description": "Sürekli veri değişimi sağlayan ping görevi",
+	"apihelp-bs-ping-tasks-summary": "Sürekli veri değişimi sağlayan ping görevi",
+	"apihelp-bs-wikisubpage-treestore-description": "Belirli bir wiki sayfa alt sayfalarını listeler",
+	"apihelp-bs-wikisubpage-treestore-summary": "Belirli bir wiki sayfa alt sayfalarını listeler",
+	"apihelp-bs-wikisubpage-treestore-param-node": "Wiki sayfasının önek başlığı",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Seçeneklerin listesi",
+	"apihelp-bs-upload-license-store-description": "Bir dosya yükleme için mevcut tüm lisansları listeler",
+	"apihelp-bs-upload-license-store-summary": "Bir dosya yükleme için mevcut tüm lisansları listeler",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "'$1' sayfasını okumanıza izin verilmiyor.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Kaldırılacak kategori yok",
+	"apihelp-bs-category-treestore-description": "Belirli bir kategorinin alt kategorilerini listeler",
+	"apihelp-bs-category-treestore-summary": "Belirli bir kategorinin alt kategorilerini listeler",
+	"apihelp-bs-category-treestore-param-node": "Eğik çizgiyle ayrılmış kategorilerden oluşan bir yol",
+	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parametre örnekleri]",
+	"apihelp-bs-task-param-schema": "Görev parametreleri için JSON şemasını göster",
+	"apihelp-bs-task-param-examples": "Görev parametreleri örneklerini göster",
+	"bs-api-task-taskData-page-id": "Mevcut bir wiki sayfasının kimliği",
+	"bs-api-task-taskData-page-title": "Bir wiki sayfasının geçerli bir başlığı",
+	"bs-api-task-wikipagetasks-taskData-categories": "Dizelerin dizisi. Değerlerin geçerli kategori adları olması gerekir.",
+	"apihelp-bs-watchlist-store-summary": "Tüm izleme listesi girişlerini listeler. Sıralama, filtreleme ve sayfalamaya izin verir. Mağaza parametrelerini uygular.",
+	"apihelp-bs-recentchanges-store-summary": "Son değişikliklerin tümünü listeler. Sıralama, filtreleme ve sayfalamaya izin verir. Mağaza parametrelerini uygular.",
+	"apihelp-bs-task-summary": "Kayıtlı görevleri yürütmek için API bitiş noktası sağlar",
+	"apihelp-bs-task-description": "Kayıtlı görevleri yürütmek için API bitiş noktası sağlar"
 }

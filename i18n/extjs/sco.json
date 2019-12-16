@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Reid"
+			"John Reid",
+			"MJL"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -18,7 +19,7 @@
 	"bs-extjs-confirm": "Confirm",
 	"bs-extjs-loading": "Laidin...",
 	"bs-extjs-pageSize": "Page size",
-	"bs-extjs-actions-column-header": "Actions",
+	"bs-extjs-actions-column-header": "Aictions",
 	"bs-extjs-warning": "Warnisment",
 	"bs-extjs-saving": "hainin...",
 	"bs-extjs-reset": "Reset",

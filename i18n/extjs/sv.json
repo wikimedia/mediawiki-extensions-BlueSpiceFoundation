@@ -74,6 +74,7 @@
 	"bs-extjs-export-search-summary-text": "Genererad av PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Namnet på listan är ogiltig",
 	"bs-extjs-combo-box-default-placeholder": "Skriv för att filtrera...",
+	"bs-extjs-tools-trigger-title": "Klick här för att öppna verktygsmenyn",
 	"bs-extjs-tools-trigger-text": "Verktyg",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniatyrer",
 	"bs-extjs-flyout-tab-thumbs-title": "Byt till miniatyrbildvisning",

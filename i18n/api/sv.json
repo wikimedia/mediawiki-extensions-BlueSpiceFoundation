@@ -14,6 +14,7 @@
 	"apihelp-bs-interwiki-store-description": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-titlequery-store-description": "Listar sidtitlar och (valfritt) namnrymdsprefix baserat på en frågeterm. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-wikipage-tasks-description": "Tillhandahåller vanliga åtgärder för WikiPages",
+	"apihelp-bs-store-param-page": "Gör det möjlig att räkna ut start/limit på vaktmästarsidan",
 	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
 	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
 	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera cache</code>",

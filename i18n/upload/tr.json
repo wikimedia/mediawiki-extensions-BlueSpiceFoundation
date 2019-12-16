@@ -2,10 +2,30 @@
 	"@metadata": {
 		"authors": [
 			"Dual",
-			"Mirzali"
+			"Mirzali",
+			"BaRaN6161 TURK"
 		]
 	},
+	"bs-upload-uploaddialogtitle": "Dosya yükle",
+	"bs-upload-uploadbuttontext": "Göz at",
+	"bs-upload-uploadfilefieldlabel": "Dosya adı",
+	"bs-upload-uploadfileemptytext": "Yeni dosya ekle...",
+	"bs-upload-uploaddestfilelabel": "Hedef dosya adı",
+	"bs-upload-allowedfiletypesare": "Geçerli dosya türleri:",
+	"bs-upload-license": "Lisans",
+	"bs-upload-uploadwatchthislabel": "Bu dosyayı izle",
+	"bs-upload-uploadignorewarningslabel": "Tüm uyarıları yoksay",
+	"bs-upload-categories": "Kategoriler",
 	"bs-upload-upload-waitmessage": "Yükleme devam ediyor...",
 	"bs-upload-error": "Hata",
-	"bs-upload-uploadwarningdialog-intro": "Dosyayı yüklemeye çalışırken aşağıdaki hatalar meydana geldi"
+	"bs-upload-descfilelabel": "Açıklama",
+	"bs-upload-error-long": "Yükleme işleminde hata",
+	"bs-upload-filetypenotsupported": "Dosya türü desteklenmiyor",
+	"bs-upload-details": "Ayrıntılar",
+	"bs-upload-uploadwarningdialog-title": "Dosya yükle: Uyarılar",
+	"bs-upload-uploadwarningdialog-intro": "Dosyayı yüklemeye çalışırken aşağıdaki hatalar meydana geldi",
+	"bs-upload-uploadwarningdialog-outro": "Uyarıları yok saymak ve dosyayı yüklemek için \"{{int:bs-extjs-ok}}\" düğmesini tıklayın, yükleme formuna geri dönmek için \"{{int:bs-extjs-cancel}}\" düğmesini tıklayın.",
+	"bs-upload-uploadwarningdialog-warning-exists": "\"$1\" adında bir dosya zaten var",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Bu dosyanın {{PLURAL:$1|bir kopyası| kopyasıdır}}",
+	"bs-upload-uploadwarningdialog-warning-unknown": "\"$1\" kodlu bilinmeyen uyarı"
 }
