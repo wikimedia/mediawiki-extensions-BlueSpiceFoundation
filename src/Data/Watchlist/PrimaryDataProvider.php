@@ -5,6 +5,7 @@ namespace BlueSpice\Data\Watchlist;
 use BlueSpice\Data\Filter;
 use BlueSpice\Data\FilterFinder;
 use BlueSpice\Data\IPrimaryDataProvider;
+use User;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
@@ -40,12 +41,20 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
+	 * @var User
+	 */
+	protected $user = null;
+
+	/**
+	 *
 	 * @param \Wikimedia\Rdbms\IDatabase $db
 	 * @param int[] $namespaceWhitelist
+	 * @param User|null $user
 	 */
-	public function __construct( $db, $namespaceWhitelist ) {
+	public function __construct( $db, $namespaceWhitelist, $user = null ) {
 		$this->db = $db;
 		$this->namespaceWhitelist = $namespaceWhitelist;
+		$this->user = $user;
 	}
 
 	/**
@@ -90,6 +99,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		if ( $userIdFilter instanceof Filter ) {
 			$conds['wl_user'] = $userIdFilter->getValue();
 		}
+
+		if ( $this->user instanceof User ) {
+			$conds['wl_user'] = $this->user->getId();
+		}
+
 		$conds['wl_namespace'] = array_values( $this->namespaceWhitelist );
 
 		return $conds;

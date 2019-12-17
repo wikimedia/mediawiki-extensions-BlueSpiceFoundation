@@ -5,9 +5,31 @@ namespace BlueSpice\Data\Watchlist;
 use BlueSpice\Data\DatabaseReader;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Services;
+use Config;
+use IContextSource;
 use MWNamespace;
+use Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {
+
+	/**
+	 *
+	 * @var boolean
+	 */
+	protected $filterForContextUser = false;
+
+	/**
+	 *
+	 * @param LoadBalancer $loadBalancer
+	 * @param IContextSource|null $context
+	 * @param Config|null $config
+	 * @param bool $filterForContextUser
+	 */
+	public function __construct( $loadBalancer, IContextSource $context = null,
+			Config $config = null, $filterForContextUser = false ) {
+		parent::__construct( $loadBalancer, $context, $config );
+		$this->filterForContextUser = $filterForContextUser;
+	}
 
 	/**
 	 *
@@ -16,7 +38,12 @@ class Reader extends DatabaseReader {
 	 */
 	protected function makePrimaryDataProvider( $params ) {
 		$contentNamespaces = MWNamespace::getContentNamespaces();
-		return new PrimaryDataProvider( $this->db, $contentNamespaces );
+		$contextUser = null;
+		if ( $this->filterForContextUser ) {
+			$contextUser = $this->context->getUser();
+		}
+
+		return new PrimaryDataProvider( $this->db, $contentNamespaces, $contextUser );
 	}
 
 	/**
