@@ -14,10 +14,18 @@ class Store implements \BlueSpice\Data\IStore {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @var boolean
 	 */
-	public function __construct( $context ) {
+	protected $filterForContextUser = false;
+
+	/**
+	 *
+	 * @param \IContextSource $context
+	 * @param bool $filterForContextUser
+	 */
+	public function __construct( $context, $filterForContextUser = false ) {
 		$this->context = $context;
+		$this->filterForContextUser = $filterForContextUser;
 	}
 
 	/**
@@ -27,7 +35,9 @@ class Store implements \BlueSpice\Data\IStore {
 	public function getReader() {
 		return new Reader(
 			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer(),
-			$this->context
+			$this->context,
+			null,
+			$this->filterForContextUser
 		);
 	}
 
