@@ -4,35 +4,17 @@ use BlueSpice\Services;
 
 class BsNamespaceHelper {
 
-	protected static $aNamespaceMap = [
-		-2 => 'NS_MEDIA',
-		-1 => 'NS_SPECIAL',
-		0 => 'NS_MAIN',
-		1 => 'NS_TALK',
-		2 => 'NS_USER',
-		3 => 'NS_USER_TALK',
-		4 => 'NS_PROJECT',
-		5 => 'NS_PROJECT_TALK',
-		6 => 'NS_FILE',
-		7 => 'NS_FILE_TALK',
-		8 => 'NS_MEDIAWIKI',
-		9 => 'NS_MEDIAWIKI_TALK',
-		10 => 'NS_TEMPLATE',
-		11 => 'NS_TEMPLATE_TALK',
-		12 => 'NS_HELP',
-		13 => 'NS_HELP_TALK',
-		14 => 'NS_CATEGORY',
-		15 => 'NS_CATEGORY_TALK'
-	];
+	protected static $namespaceConstants = null;
 
 	/**
 	 * returns the constantname for MW NS like 0 => NS_MAIN
-	 * @param type $iNamespaceId
+	 * @param int $iNamespaceId
 	 * @return string
 	 */
 	public static function getMwNamespaceConstant( $iNamespaceId ) {
-		if ( isset( self::$aNamespaceMap[$iNamespaceId] ) ) {
-			return self::$aNamespaceMap[$iNamespaceId];
+		self::getMwNamespaceConstants();
+		if ( isset( self::$namespaceConstants[$iNamespaceId] ) ) {
+			return self::$namespaceConstants[$iNamespaceId];
 		} else {
 			return '';
 		}
@@ -40,20 +22,56 @@ class BsNamespaceHelper {
 
 	/**
 	 * Returns array with MW NS Mapping
-	 * @return Array
+	 * @return array
 	 */
 	public static function getMwNamespaceConstants() {
-		// TODO: Use this logic for contants mapping
-		/*
-		$aConsts = get_defined_constants(true);
-		foreach($aConsts['user'] as $sContantName => $sContantValue ) {
-			if(substr($sContantName, 0, 3) != 'NS_' ) continue;
-			//$sContantValue -> $sContantName;
+		if ( self::$namespaceConstants === null ) {
+			$ns = MWNamespace::getCanonicalNamespaces();
+			foreach ( $ns as $id => &$name ) {
+				$name = self::getNamespaceConstName( $id, $name );
+			}
+
+			self::$namespaceConstants = $ns + $GLOBALS['bsgSystemNamespaces'];
 		}
-		*/
-		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
-		global $bsgSystemNamespaces;
-		return self::$aNamespaceMap + $bsgSystemNamespaces;
+
+		return self::$namespaceConstants;
+	}
+
+	/**
+	 * @param int $iNS
+	 * @param string $name
+	 * @return string
+	 */
+	public static function getNamespaceConstName( $iNS, $name ) {
+		// find existing NS_ definitions
+		$aNSConstants = [];
+		foreach ( get_defined_constants() as $key => $value ) {
+			if ( strpos( $key, "NS_" ) === 0
+				// ugly solution to identify smw namespaces as they don't adhere to the convention
+				|| strpos( $key, "SMW_NS_" ) === 0
+				|| strpos( $key, "SF_NS_" ) === 0
+				|| strpos( $key, "PF_NS_" ) === 0
+			) {
+				$aNSConstants[$key] = $value;
+			}
+		}
+
+		$aNSConstants = array_flip( $aNSConstants );
+
+		// Use existing constant name if possible
+		if ( isset( $aNSConstants[$iNS] ) ) {
+			$sConstName = $aNSConstants[$iNS];
+		} else {
+			// If compatible, use namespace name as const name
+			if ( preg_match( "/^[a-zA-Z0-9_]{3,}$/", $name ) ) {
+				$sConstName = 'NS_' . strtoupper( $name );
+			} else {
+				// Otherwise use namespace number
+				$sConstName = 'NS_' . $iNS;
+			}
+		}
+
+		return $sConstName;
 	}
 
 	/**
