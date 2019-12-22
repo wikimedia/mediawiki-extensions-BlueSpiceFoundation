@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Otokoume",
-			"Shirayuki"
+			"Shirayuki",
+			"Aefgh39622"
 		]
 	},
 	"bs-deferred-action-status-done": "完了。",
 	"bs-deferred-action-status-error": "失敗しました。",
+	"bs-deferred-batch-progress-desc": "進捗",
 	"bs-deferred-batch-actions": "操作",
 	"bs-deferred-batch-description": "説明",
 	"bs-deferred-batch-status": "状態",

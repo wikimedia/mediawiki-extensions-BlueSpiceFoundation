@@ -7,11 +7,13 @@
 			"Otokoume",
 			"Suyama",
 			"神樂坂秀吉",
-			"Reiwa period"
+			"Reiwa period",
+			"Aefgh39622"
 		]
 	},
 	"bs-ns_main": "(ページ)",
 	"bs-ns_all": "(すべて)",
+	"bs-tab_navigation": "ナビゲーション",
 	"bs-userbar_loginswitch_logout": "ログアウト",
 	"bs-userbar_loginswitch_login": "ログイン",
 	"bs-extended-search-tooltip-fulltext": "全文検索",
@@ -30,6 +32,7 @@
 	"bs-email-footer": "このメッセージは$1によって自動的に生成されました。このメールには返信なさらないようお願いします。",
 	"bs-userpagesettings-legend": "利用者設定",
 	"bs-userpreferences-link-text": "その他の利用者設定",
+	"bs-userpreferences-link-title": "個人ユーザー設定を表示する",
 	"bs-exception-view-heading": "エラーが発生しました",
 	"bs-exception-view-text": "リクエストを処理する際に以下のエラーが発生しました:",
 	"bs-exception-view-admin-hint": "システム管理者にお問い合わせください。",
@@ -56,12 +59,18 @@
 	"bs-navigation-contact": "お問い合わせ",
 	"bs-imagepage-download-text": "ダウンロード",
 	"bs-ns": "名前空間",
+	"bs-from-something": "($1 より)",
+	"bs-pref-fileextensions": "許可されたファイル拡張子:",
+	"bs-pref-imageextensions": "許可された画像拡張子:",
 	"bs-pref-faviconpath": "favicon のパス:",
 	"bs-pref-defaultuserimage": "利用者の既定のアバター:",
 	"bs-pref-anonuserimage": "匿名利用者のアバター:",
 	"bs-pref-deleteduserimage": "削除された利用者のアバター:",
 	"bs-graphicallist-action-close": "閉じる",
+	"bs-graphicallist-action-preview": "プレビュー",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "BlueSpice 管理ページの表示",
-	"right-wikiadmin": "BlueSpice 管理ページを表示"
+	"right-wikiadmin": "BlueSpice 管理ページを表示",
+	"bs-notifications-agent-anon": "匿名ユーザー"
 }
