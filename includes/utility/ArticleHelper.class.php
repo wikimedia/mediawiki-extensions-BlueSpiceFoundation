@@ -100,7 +100,7 @@ class BsArticleHelper {
 	 * @deprecated since version 3.1 - Use \FormatJson::decode in your code
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
-	 * @return sdtClass|true|false|null See PHP documentation for json_decode()
+	 * @return sdtClass|bool|null See PHP documentation for json_decode()
 	 */
 	public function getJSONPageProp( $sPropName, $bDoLoad = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
