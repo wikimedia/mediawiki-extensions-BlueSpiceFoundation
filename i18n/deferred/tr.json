@@ -15,7 +15,7 @@
 	"bs-deferred-batch-title": "Toplu işleniyor",
 	"bs-deferred-batch-progress-desc": "İlerleme",
 	"bs-deferred-batch-actions": "Eylemler",
-	"bs-deferred-batch-description": "Tanımlama",
+	"bs-deferred-batch-description": "Açıklama",
 	"bs-deferred-batch-status": "Durum",
 	"bs-deferred-action-apiaddcategories-description": "'$1' için kategori ekle",
 	"bs-deferred-action-apiremovecategories-description": "'$1' içinden kategorileri kaldırın.",
