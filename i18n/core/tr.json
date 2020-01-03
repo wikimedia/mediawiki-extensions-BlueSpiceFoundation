@@ -12,7 +12,7 @@
 	"bs-userbar_loginswitch_logout": "Oturumu kapat",
 	"bs-userbar_loginswitch_login": "Oturum aç",
 	"bs-extended-search-tooltip-fulltext": "Tam metin arama",
-	"bs-extended-search-textfield-defaultvalue": "Arama...",
+	"bs-extended-search-textfield-defaultvalue": "Ara...",
 	"bs-extended-search-textfield-tooltip": "Wiki ara",
 	"bs-no-information-available": "Herhangi bir bilgi bulunmamaktadır",
 	"bs-years-duration": "{{PLURAL:$1|$1 yıl|$1 yıl}}",
