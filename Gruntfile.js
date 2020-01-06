@@ -1,17 +1,16 @@
-/*jshint node:true */
 module.exports = function ( grunt ) {
-	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
-	grunt.loadNpmTasks( 'grunt-jsonlint' );
+	grunt.loadNpmTasks( 'grunt-eslint' );
 	grunt.loadNpmTasks( 'grunt-banana-checker' );
 
 	var conf = grunt.file.readJSON( 'extension.json' );
 	grunt.initConfig( {
-		jshint: {
+		eslint: {
 			options: {
-				jshintrc: true
+			  extensions: [ '.js', '.json' ],
+			  cache: true
 			},
-			all: [
-				'**/*.js',
+			target: [
+				'**/*.{js,json}',
 				'!node_modules/**',
 				'!vendor/**',
 				'!resources/bluespice.extjs/Ext.ux/**',
@@ -25,17 +24,9 @@ module.exports = function ( grunt ) {
 					requireLowerCase: 'initial'
 				}
 			}
-		),
-		jsonlint: {
-			all: [
-				'*.json',
-				'**/*.json',
-				'!node_modules/**',
-				'!vendor/**'
-			]
-		}
+		)
 	} );
 
-	grunt.registerTask( 'test', [ 'jshint', 'jsonlint', 'banana' ] );
+	grunt.registerTask( 'test', [ 'eslint', 'banana' ] );
 	grunt.registerTask( 'default', 'test' );
 };
