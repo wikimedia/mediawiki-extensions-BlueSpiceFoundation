@@ -6,7 +6,8 @@
 			"LACLARETTA",
 			"Macofe",
 			"Selven",
-			"Tizven"
+			"Tizven",
+			"Dansita"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -32,6 +33,8 @@
 	"bs-extjs-label-user": "Utente",
 	"bs-extjs-label-namespace": "Namespace",
 	"bs-extjs-label-page": "Pagina",
+	"bs-extjs-label-directsearch": "Cerca",
+	"bs-extjs-titlecombo-newpagehint": "La pagina non esiste!",
 	"bs-extjs-upload": "Carica",
 	"bs-extjs-browse": "Esplora",
 	"bs-extjs-uploading": "Caricamento in corso…",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Dansita"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Carica un file",
@@ -20,6 +21,7 @@
 	"bs-upload-error-long": "Errore nel processo di caricamento",
 	"bs-upload-filetypenotsupported": "Il tipo di file non è supportato",
 	"bs-upload-details": "Dettagli",
+	"bs-upload-uploadwarningdialog-title": "Caricamento file: Avvisi",
 	"bs-upload-uploadwarningdialog-warning-exists": "Un file con nome \"$1\" esiste già",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|C'è un duplicato|Ci sono duplicati}} di questo file"
 }

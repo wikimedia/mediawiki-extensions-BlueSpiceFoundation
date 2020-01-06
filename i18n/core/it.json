@@ -7,9 +7,11 @@
 			"Macofe",
 			"LACLARETTA",
 			"Gianfranco",
-			"Tizven"
+			"Tizven",
+			"Dansita"
 		]
 	},
+	"bluespicefoundation-desc": "Rendi MediaWiki enterprise pronto all'uso",
 	"bs-ns_main": "(Pagine)",
 	"bs-ns_all": "(tutti)",
 	"bs-tab_navigation": "Navigazione",
@@ -43,6 +45,7 @@
 	"bs-readonly": "In questo momento il database è bloccato e non sono possibili aggiunte o modifiche agli elementi. Il blocco è di solito legato a operazioni di manutenzione ordinaria, al termine delle quali il database è di nuovo accessibile.\n\nL'amministratore di sistema che ha imposto il blocco ha fornito questa spiegazione: $1",
 	"bs-imageofotheruser": "Non ti è consentito caricare un'immagine per un altro utente.",
 	"bs-permissionerror": "Permessi non sufficienti!",
+	"bs-lockdown-groups-permissionerror": "L'azione \"$1\" non è disponibile per {{PLURAL:$2|la seguente ragione|le seguenti ragioni}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> non è una directory valida.",
 	"bs-filesystemhelper-has-path-traversal": "Percorso trasversale rilevato!",
 	"bs-filesystemhelper-file-not-exists": "Il file <code>$1</code> non esiste.",
@@ -91,7 +94,11 @@
 	"bs-graphicallist-action-close": "Chiudi",
 	"bs-graphicallist-action-list": "Elenco",
 	"bs-graphicallist-action-preview": "Anteprima",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "utilizzato in molte estensioni BlueSpice per attività amministrative potenzialmente pericolose come la gestione di utenti, permessi, configurazione globale",
 	"right-wikiadmin": "Utilizzato in molte estensioni BlueSpice per potenziali attività amministrative pericolose come la gestione di utenti, permessi, configurazione globale",
-	"bs-notifications-agent-anon": "utente anonimo"
+	"bs-notifications-agent-anon": "utente anonimo",
+	"protect-level-editor": "Consentito solo per gli editori e gli amministratori",
+	"bs-ping-on-init-desc": "La richiesta di ping dovrebbe essere richiesta subito dopo il caricamento della pagina"
 }
