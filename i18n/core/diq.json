@@ -36,5 +36,7 @@
 	"bs-ns": "Heruna nameyan",
 	"bs-from-something": "($1 ra)",
 	"bs-exttype-bluespice": "Derganeyê BlueSpice",
-	"bs-graphicallist-action-close": "Kip ke"
+	"bs-graphicallist-action-close": "Kip ke",
+	"bs-graphicallist-action-list": "Liste",
+	"bs-graphicallist-action-preview": "Verqayt"
 }
