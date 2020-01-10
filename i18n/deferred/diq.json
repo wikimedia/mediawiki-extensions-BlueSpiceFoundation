@@ -11,6 +11,8 @@
 	"bs-deferred-action-status-error": "Ebe ser nêkewt.",
 	"bs-deferred-action-apicopypage-description": "$1 ra $2 kopya biyo",
 	"bs-deferred-action-apieditpage-description": "\"$1\"i bıvurne.",
+	"bs-deferred-batch-progress-desc": "Averşiyayış",
+	"bs-deferred-batch-actions": "Hereketi",
 	"bs-deferred-batch-description": "Şınasnayış",
 	"bs-deferred-batch-status": "Weziyet",
 	"bs-deferred-action-apideletepage-description": "\"$1\" bestere."
