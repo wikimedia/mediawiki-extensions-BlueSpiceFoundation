@@ -29,6 +29,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
+
+use BlueSpice\Services;
+
 // TODO SU (27.06.11 14:46): Core contaminations entfernen (evtl. hookähnliches methoden in jeweiligen adapter implementieren)
 // phpcs:ignoreFile
 /**
@@ -278,8 +281,9 @@ class BsConfig {
 	 */
 	public static function loadSettings() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$sKey = BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' );
-		$aData = BsCacheHelper::get( $sKey );
+		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$sKey = $cacheHelper->getCacheKey( 'BlueSpice', 'BsConfig', 'settings' );
+		$aData = $cacheHelper->get( $sKey );
 
 		if ( $aData !== false ) {
 			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching settings from cache' );
@@ -297,7 +301,7 @@ class BsConfig {
 				}
 			}
 			// max cache time 24h
-			BsCacheHelper::set( $sKey, $aRows, 60 * 1440 );
+			$cacheHelper->set( $sKey, $aRows, 60 * 1440 );
 		}
 		# unserialize and save every setting in the config class
 		foreach ( $aRows as $row ) {
@@ -313,6 +317,7 @@ class BsConfig {
 	 */
 	public static function saveSettings() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
 		$dbw = wfGetDB( DB_MASTER );
 
 		if ( !$dbw->tableExists( 'bs_settings' ) ) {
@@ -355,8 +360,8 @@ class BsConfig {
 
 		Hooks::run( 'BsSettingsAfterSaveSettings', [ $aSettings ] );
 
-		BsCacheHelper::invalidateCache(
-			BsCacheHelper::getCacheKey( 'BlueSpice', 'BsConfig', 'settings' )
+		$cacheHelper->invalidate(
+			$cacheHelper->getCacheKey( 'BlueSpice', 'BsConfig', 'settings' )
 		);
 
 		return $bReturn;
