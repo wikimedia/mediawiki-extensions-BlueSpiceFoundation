@@ -4,5 +4,6 @@
 			"Joao Xavier"
 		]
 	},
-	"bs-extjs-ok": "O.K."
+	"bs-extjs-ok": "O.K.",
+	"bs-extjs-label-namespace": "'Namespace'"
 }

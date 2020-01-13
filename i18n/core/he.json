@@ -9,7 +9,8 @@
 			"ערן",
 			"Guycn2",
 			"YaronSh",
-			"Steeve815"
+			"Steeve815",
+			"Ghsuvr"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -90,7 +91,7 @@
 	"bs-graphicallist-action-preview": "תצוגה מקדימה",
 	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "לצפות בדפי ניהול של BlueSpice",
-	"right-wikiadmin": "צפייה בדפי ניהול של BlueSpice",
+	"action-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
+	"right-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
 	"bs-notifications-agent-anon": "משתמש אלמוני"
 }
