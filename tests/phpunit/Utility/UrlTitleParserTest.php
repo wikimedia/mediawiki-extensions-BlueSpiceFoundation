@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Tests\Utility;
 
-use MediaWikiTestCase;
 use BlueSpice\Services;
 use BlueSpice\Utility\UrlTitleParser;
+use MediaWikiTestCase;
 
 class UrlTitleParserTest extends MediaWikiTestCase {
 

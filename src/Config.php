@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use BlueSpice\Data\Settings\Store;
 use BlueSpice\Data\Settings\Record;
+use BlueSpice\Data\Settings\Store;
 
 class Config extends \MultiConfig {
 

@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Task\WikiPage;
 
-use Title;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
+use Title;
 
 class RemoveCategories extends SetCategories {
 

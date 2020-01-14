@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Data\User;
 
-use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\DatabaseReader;
+use BlueSpice\Data\ReaderParams;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {

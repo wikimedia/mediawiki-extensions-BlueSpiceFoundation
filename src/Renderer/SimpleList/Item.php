@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Renderer\SimpleList;
 
+use BlueSpice\Renderer\Params;
 use Config;
 use IContextSource;
-use BlueSpice\Renderer\Params;
 use MediaWiki\Linker\LinkRenderer;
 
 class Item extends \BlueSpice\Renderer {

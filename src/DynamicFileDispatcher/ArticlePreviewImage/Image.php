@@ -3,8 +3,8 @@
 namespace BlueSpice\DynamicFileDispatcher\ArticlePreviewImage;
 
 use BlueSpice\DynamicFileDispatcher\Module;
-use MediaWiki\Storage\RevisionRecord;
 use BlueSpice\Services;
+use MediaWiki\Storage\RevisionRecord;
 
 class Image extends \BlueSpice\DynamicFileDispatcher\File {
 

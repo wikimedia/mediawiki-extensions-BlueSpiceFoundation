@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Html\FormField;
 
-use Message;
 use BsGroupHelper;
+use Message;
 
 class GroupMultiSelect extends \HTMLMultiSelectEx {
 

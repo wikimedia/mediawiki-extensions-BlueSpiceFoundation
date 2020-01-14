@@ -2,10 +2,10 @@
 
 namespace BlueSpice\EntityConfig;
 
-use BlueSpice\EntityConfig;
 use BlueSpice\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
 use BlueSpice\Entity\Content as ContentEntity;
+use BlueSpice\EntityConfig;
 
 abstract class Content extends EntityConfig {
 

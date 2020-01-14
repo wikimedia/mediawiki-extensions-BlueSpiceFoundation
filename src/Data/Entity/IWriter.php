@@ -8,8 +8,8 @@
 
 namespace BlueSpice\Data\Entity;
 
-use Status;
 use BlueSpice\Entity;
+use Status;
 
 interface IWriter {
 	/**

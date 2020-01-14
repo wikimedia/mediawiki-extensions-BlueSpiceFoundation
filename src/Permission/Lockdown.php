@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Permission;
 
+use BlueSpice\Permission\Lockdown\IModule;
+use Config;
+use Status;
 use Title;
 use User;
-use Status;
-use Config;
-use BlueSpice\Permission\Lockdown\IModule;
 
 class Lockdown {
 	/**

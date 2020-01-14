@@ -4,11 +4,11 @@
 namespace BlueSpice\Utility;
 
 use BlueSpice\Services;
-use BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\FileLinksHelper;
-use BlueSpice\Utility\WikiTextLinksHelper\InterwikiLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
+use BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper;
+use BlueSpice\Utility\WikiTextLinksHelper\InterwikiLinksHelper;
 
 class WikiTextLinksHelper {
 

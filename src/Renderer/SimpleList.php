@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Renderer;
 
+use BlueSpice\Renderer\SimpleList\Item;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\Renderer\SimpleList\Item;
 
 class SimpleList extends \BlueSpice\Renderer {
 	const PARAM_ITEMS = 'items';

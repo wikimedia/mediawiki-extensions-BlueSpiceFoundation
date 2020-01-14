@@ -26,10 +26,10 @@
  */
 namespace BlueSpice\Hook;
 
-use User;
-use IContextSource;
-use Config;
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use User;
 
 abstract class UserLoggedIn extends Hook {
 

@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Data\Categories;
 
-use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\DatabaseReader;
+use BlueSpice\Data\ReaderParams;
 use BlueSpice\Services;
 
 class Reader extends DatabaseReader {

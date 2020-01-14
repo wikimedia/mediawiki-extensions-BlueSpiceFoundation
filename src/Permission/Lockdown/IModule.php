@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Permission\Lockdown;
 
+use Message;
 use Title;
 use User;
-use Message;
 
 interface IModule {
 

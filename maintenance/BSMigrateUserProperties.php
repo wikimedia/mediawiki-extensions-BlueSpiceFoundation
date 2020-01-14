@@ -71,14 +71,14 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 
 	/**
 	 * Test data:
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::INT', 'i:500;' );
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::FLOAT', 'd:1.5;' );
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::BOOL_TRUE', 'b:1;' );
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::BOOL_FALSE', 'b:0;' );
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::STRING', 's:5:"hello";' );
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::ARRAY', 'a:2:{i:0;i:3000;i:1;i:3001;}' );
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::OBJECT', 'O:8:"stdClass":1:{s:1:"A";i:5;}' );
-		INSERT INTO user_properties VALUES( 234, 'MW::ABC::NOTSERIALIZED', 'not serialized' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::INT', 'i:500;' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::FLOAT', 'd:1.5;' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::BOOL_TRUE', 'b:1;' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::BOOL_FALSE', 'b:0;' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::STRING', 's:5:"hello";' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::ARRAY', 'a:2:{i:0;i:3000;i:1;i:3001;}' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::OBJECT', 'O:8:"stdClass":1:{s:1:"A";i:5;}' );
+	 * INSERT INTO user_properties VALUES( 234, 'MW::ABC::NOTSERIALIZED', 'not serialized' );
 	 */
 	protected function saveConvertedData() {
 		foreach ( $this->newData as $newName => $values ) {

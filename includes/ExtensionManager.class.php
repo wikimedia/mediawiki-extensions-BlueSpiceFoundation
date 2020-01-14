@@ -10,8 +10,8 @@
  * @author Stephan Muggli <muggli@hallowelt.com>
  */
 // Last Review: MRG20100813
-use BlueSpice\Services;
 use BlueSpice\Extension;
+use BlueSpice\Services;
 
 /**
  * @deprecated since version 3.0.0

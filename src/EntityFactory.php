@@ -26,11 +26,11 @@
  */
 namespace BlueSpice;
 
-use Config;
-use Title;
-use BsPageContentProvider;
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\IStore;
+use BsPageContentProvider;
+use Config;
+use Title;
 
 class EntityFactory {
 	protected $storedById = [];

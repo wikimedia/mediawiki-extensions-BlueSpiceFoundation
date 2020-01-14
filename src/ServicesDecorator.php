@@ -2,8 +2,6 @@
 
 namespace BlueSpice;
 
-use MediaWiki\MediaWikiServices;
-
 use ActorMigration;
 use CommentStore;
 use Config;
@@ -13,7 +11,15 @@ use CryptRand;
 use EventRelayerGroup;
 use GenderCache;
 use IBufferingStatsdDataFactory;
+use Language;
+use LinkCache;
+use MediaHandlerFactory;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Interwiki\InterwikiLookup;
+use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Linker\LinkRendererFactory;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Preferences\PreferencesFactory;
 use MediaWiki\Shell\CommandFactory;
 use MediaWiki\Storage\BlobStore;
@@ -22,14 +28,8 @@ use MediaWiki\Storage\NameTableStore;
 use MediaWiki\Storage\RevisionFactory;
 use MediaWiki\Storage\RevisionLookup;
 use MediaWiki\Storage\RevisionStore;
-use Wikimedia\Rdbms\LBFactory;
-use LinkCache;
-use Wikimedia\Rdbms\LoadBalancer;
-use MediaHandlerFactory;
-use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\Linker\LinkRendererFactory;
-use Wikimedia\Services\ServiceContainer;
 use MimeAnalyzer;
+use NamespaceInfo;
 use Parser;
 use ParserCache;
 use ProxyLookup;
@@ -38,16 +38,15 @@ use SearchEngineConfig;
 use SearchEngineFactory;
 use SiteLookup;
 use SiteStore;
-use WatchedItemStoreInterface;
-use WatchedItemQueryService;
 use SkinFactory;
 use TitleFormatter;
 use TitleParser;
 use VirtualRESTServiceClient;
-use MediaWiki\Interwiki\InterwikiLookup;
-use Language;
-use MediaWiki\Permissions\PermissionManager;
-use NamespaceInfo;
+use WatchedItemQueryService;
+use WatchedItemStoreInterface;
+use Wikimedia\Rdbms\LBFactory;
+use Wikimedia\Rdbms\LoadBalancer;
+use Wikimedia\Services\ServiceContainer;
 
 class ServicesDecorator extends ServiceContainer {
 

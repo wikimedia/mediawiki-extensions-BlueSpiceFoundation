@@ -2,12 +2,12 @@
 
 namespace BlueSpice\Renderer\LinkList;
 
+use BlueSpice\Renderer\Params;
 use Config;
-use IContextSource;
 use HtmlArmor;
+use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
-use BlueSpice\Renderer\Params;
 
 class Item extends \BlueSpice\Renderer\SimpleList\Item {
 	const PARAM_TARGET = 'target';

@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Tests;
 
-use PHPUnit\Framework\TestCase;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use ExtensionRegistry;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers ExtensionAttributeBasedRegistry

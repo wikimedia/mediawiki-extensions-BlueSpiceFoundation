@@ -2,15 +2,15 @@
 
 namespace BlueSpice\Permission\Lockdown\Module;
 
+use BlueSpice\Permission\Lockdown\IModule;
+use BlueSpice\Permission\Lockdown\Module;
 use BlueSpice\Permission\RoleManager;
+use BlueSpice\Services;
+use Config;
+use IContextSource;
 use Message;
 use Title;
 use User;
-use IContextSource;
-use Config;
-use BlueSpice\Services;
-use BlueSpice\Permission\Lockdown\Module;
-use BlueSpice\Permission\Lockdown\IModule;
 
 class Namespaces extends Module {
 

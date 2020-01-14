@@ -26,10 +26,10 @@
  */
 namespace BlueSpice\Hook;
 
-use IContextSource;
-use Config;
-use User;
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use User;
 
 /**
  * Called to authenticate users on external/environmental means; occurs after session

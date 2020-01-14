@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use MessageLocalizer;
 use Message;
+use MessageLocalizer;
 
 abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocalizer {
 

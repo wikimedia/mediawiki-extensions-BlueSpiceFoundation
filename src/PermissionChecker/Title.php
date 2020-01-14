@@ -2,8 +2,8 @@
 
 namespace BlueSpice\PermissionChecker;
 
-use User;
 use IContextSource;
+use User;
 
 class Title implements \BlueSpice\IPermissionChecker {
 

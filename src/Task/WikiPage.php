@@ -3,15 +3,15 @@
 namespace BlueSpice\Task;
 
 use BlueSpice\Task;
+use DeferredUpdates;
+use EditPage;
 use Exception;
+use MWCallableUpdate;
+use MWException;
+use RequestContext;
+use Revision;
 use Status;
 use WikitextContent;
-use MWException;
-use Revision;
-use EditPage;
-use RequestContext;
-use DeferredUpdates;
-use MWCallableUpdate;
 
 abstract class WikiPage extends Task {
 

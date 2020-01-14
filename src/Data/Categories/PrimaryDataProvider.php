@@ -4,8 +4,8 @@ namespace BlueSpice\Data\Categories;
 
 use BlueSpice\Data\IPrimaryDataProvider;
 use BlueSpice\Data\ReaderParams;
-use Title;
 use stdClass;
+use Title;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 

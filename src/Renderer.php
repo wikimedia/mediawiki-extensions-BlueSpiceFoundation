@@ -26,15 +26,15 @@
  */
 namespace BlueSpice;
 
+use BlueSpice\Renderer\Params;
 use Config;
-use IContextSource;
+use Hooks;
 use Html;
 use HtmlArmor;
-use Hooks;
+use IContextSource;
+use MediaWiki\Linker\LinkRenderer;
 use Message;
 use MessageLocalizer;
-use BlueSpice\Renderer\Params;
-use MediaWiki\Linker\LinkRenderer;
 
 abstract class Renderer implements IRenderer, MessageLocalizer {
 	const PARAM_CONTEXT = 'context';

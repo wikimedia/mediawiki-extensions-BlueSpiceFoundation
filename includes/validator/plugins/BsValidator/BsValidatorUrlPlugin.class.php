@@ -34,7 +34,7 @@ class BsValidatorUrlPlugin implements BsValidatorPlugin {
 			$validateThis = str_replace( '-', '_', $validateThis );
 		}
 
-		$result = ( is_null( $params ) )
+		$result = ( $params === null )
 			? filter_var( $validateThis, FILTER_VALIDATE_URL )
 			// return is boolean
 			: filter_var( $validateThis, FILTER_VALIDATE_URL, $params );

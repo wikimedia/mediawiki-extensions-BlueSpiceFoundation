@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use User;
 use Title;
+use User;
 
 class NullLogger extends ActionLogger {
 

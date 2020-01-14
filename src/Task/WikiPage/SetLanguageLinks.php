@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Task\WikiPage;
 
-use Title;
 use BlueSpice\ParamProcessor\ParamDefinition;
 use BlueSpice\ParamProcessor\ParamType;
 use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
+use Title;
 
 class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	const PARAM_LANGUAGE_LINKS = 'languagelinks';

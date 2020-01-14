@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\Watchlist;
 
-use BlueSpice\Services;
-use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\DatabaseReader;
+use BlueSpice\Data\ReaderParams;
+use BlueSpice\Services;
 use MWNamespace;
 
 class Reader extends DatabaseReader {

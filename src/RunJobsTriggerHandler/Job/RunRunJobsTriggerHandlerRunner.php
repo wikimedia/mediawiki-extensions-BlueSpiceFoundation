@@ -3,9 +3,9 @@
 namespace BlueSpice\RunJobsTriggerHandler\Job;
 
 use BlueSpice\RunJobsTriggerRunner;
-use Title;
-use Job;
 use ConfigException;
+use Job;
+use Title;
 
 class RunRunJobsTriggerHandlerRunner extends Job {
 	/**

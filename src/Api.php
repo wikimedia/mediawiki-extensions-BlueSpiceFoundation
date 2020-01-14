@@ -28,17 +28,17 @@
 
 namespace BlueSpice;
 
-use RequestContext;
-use Language;
 use ApiBase;
-use User;
-use Title;
-use Status;
 use ApiMessage;
-use BlueSpice\Api\Format\Json;
 use BlueSpice\Api\ErrorFormatter;
-use WikiPage;
+use BlueSpice\Api\Format\Json;
 use BSExtendedApiContext;
+use Language;
+use RequestContext;
+use Status;
+use Title;
+use User;
+use WikiPage;
 
 /**
  * Api base class in BlueSpice

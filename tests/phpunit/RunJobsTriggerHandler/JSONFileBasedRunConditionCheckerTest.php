@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Tests\RunJobsTriggerHandler;
 
-use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker as Checker;
-use Psr\Log\LoggerInterface;
 use BlueSpice\RunJobsTriggerHandler;
 use BlueSpice\RunJobsTriggerHandler\Interval\OnceADay;
+use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker as Checker;
 use HashConfig;
+use Psr\Log\LoggerInterface;
 
 class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 
@@ -74,19 +74,19 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 			'Field for "last-run" should be updated'
 		);
 
-		$this->assertEquals(
+		$this->assertSame(
 			'19700102010000',
 			$persistedData[Checker::DATA_KEY_NEXTRUNS]['handler1'],
 			'Field for "next-run" of "handler1" should be updated'
 		);
 
-		$this->assertEquals(
+		$this->assertSame(
 			'19700101020000',
 			$persistedData[Checker::DATA_KEY_NEXTRUNS]['handler2'],
 			'Field for "next-run" of "handler2" should NOT be changed'
 		);
 
-		$this->assertEquals(
+		$this->assertSame(
 			'19700101030000',
 			$persistedData[Checker::DATA_KEY_NEXTRUNS]['handler3'],
 			'Field for "next-run" of "handler3" should NOT be changed'
@@ -143,19 +143,19 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 			'Field for "last-run" should be updated'
 		);
 
-		$this->assertEquals(
+		$this->assertSame(
 			'19700101050000',
 			$persistedData[Checker::DATA_KEY_NEXTRUNS]['handler1'],
 			'Field for "next-run" of "handler1" should be updated'
 		);
 
-		$this->assertEquals(
+		$this->assertSame(
 			'19700102010000',
 			$persistedData[Checker::DATA_KEY_NEXTRUNS]['handler2'],
 			'Field for "next-run" of "handler2" should be changed'
 		);
 
-		$this->assertEquals(
+		$this->assertSame(
 			'19700102032515',
 			$persistedData[Checker::DATA_KEY_NEXTRUNS]['handler3'],
 			'Field for "next-run" of "handler2" should be changed'

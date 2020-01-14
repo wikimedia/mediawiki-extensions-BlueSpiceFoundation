@@ -27,10 +27,10 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
 use Parser;
 use Title;
-use IContextSource;
-use Config;
 
 abstract class BeforeParserFetchTemplateAndtitle extends Hook {
 

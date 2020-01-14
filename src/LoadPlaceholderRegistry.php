@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use TemplateParser;
 use RuntimeException;
+use TemplateParser;
 
 class LoadPlaceholderRegistry extends ExtensionAttributeBasedRegistry {
 

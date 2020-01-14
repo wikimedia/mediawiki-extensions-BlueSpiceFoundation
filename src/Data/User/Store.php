@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Data\User;
 
-use Wikimedia\Rdbms\LoadBalancer;
 use BlueSpice\Data\NoWriterException;
+use Wikimedia\Rdbms\LoadBalancer;
 
 class Store implements \BlueSpice\Data\IStore {
 

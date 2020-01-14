@@ -26,8 +26,8 @@
  */
 namespace BlueSpice\Hook;
 
-use BlueSpice\Hook;
 use BlueSpice\Entity;
+use BlueSpice\Hook;
 
 abstract class BSEntityDeleteComplete extends Hook {
 	/**

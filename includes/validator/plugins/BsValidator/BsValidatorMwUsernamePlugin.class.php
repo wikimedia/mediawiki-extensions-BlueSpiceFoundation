@@ -19,7 +19,7 @@ class BsValidatorMwUsernamePlugin implements BsValidatorPlugin {
 	 */
 	public static function isValid( $mwUsername, $options ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if ( is_null( $mwUsername ) || $mwUsername == '' ) {
+		if ( $mwUsername === null || $mwUsername == '' ) {
 			return new BsValidatorResponse( 1, 'UserManager', 'enter_user' );
 		}
 

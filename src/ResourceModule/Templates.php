@@ -25,9 +25,9 @@
  */
 namespace BlueSpice\ResourceModule;
 
-use ResourceLoaderFileModule;
 use BlueSpice\Services;
 use BlueSpice\TemplateFactory;
+use ResourceLoaderFileModule;
 
 class Templates extends ResourceLoaderFileModule {
 

@@ -27,10 +27,10 @@
  */
 namespace BlueSpice;
 
-use JsonSerializable;
-use Config;
 use BlueSpice\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
+use Config;
+use JsonSerializable;
 
 /**
  * EntityConfig class for BlueSpice

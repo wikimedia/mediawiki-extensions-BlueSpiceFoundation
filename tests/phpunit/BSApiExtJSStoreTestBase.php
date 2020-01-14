@@ -55,29 +55,29 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 
 			switch ( $config['type'] ) {
 				case 'string':
-					$this->assertEquals(
-						true,
+					$this->assertTrue(
+
 						is_string( $value ),
 						"Value of field '$schemaFieldName' is not a string"
 					);
 					break;
 				case 'list':
-					$this->assertEquals(
-						true,
+					$this->assertTrue(
+
 						is_array( $value ),
 						"Value of field '$schemaFieldName' is not a list"
 					);
 					break;
 				case 'numeric':
-					$this->assertEquals(
-						true,
+					$this->assertTrue(
+
 						is_numeric( $value ),
 						"Value of field '$schemaFieldName' is not a number"
 					);
 					break;
 				case 'boolean':
-					$this->assertEquals(
-						true,
+					$this->assertTrue(
+
 						is_bool( $value ),
 						"Value of field '$schemaFieldName' is not a boolean"
 					);

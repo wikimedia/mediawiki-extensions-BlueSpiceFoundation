@@ -26,10 +26,10 @@
  */
 namespace BlueSpice\Hook;
 
-use IContextSource;
-use Config;
-use OutputPage;
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use OutputPage;
 
 abstract class MakeGlobalVariablesScript extends Hook {
 

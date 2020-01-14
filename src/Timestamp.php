@@ -3,8 +3,8 @@
 namespace BlueSpice;
 
 use MWTimestamp;
-use User;
 use RequestContext;
+use User;
 
 class Timestamp extends MWTimestamp {
 

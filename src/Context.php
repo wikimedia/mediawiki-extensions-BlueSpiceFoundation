@@ -1,8 +1,8 @@
 <?php
 namespace BlueSpice;
 
-use IContextSource;
 use Config;
+use IContextSource;
 
 class Context implements IContextSource {
 

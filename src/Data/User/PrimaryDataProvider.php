@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Data\User;
 
-use BlueSpice\Data\IPrimaryDataProvider;
-use BlueSpice\Data\FilterFinder;
 use BlueSpice\Data\Filter;
-use BlueSpice\Data\Filter\StringValue;
 use BlueSpice\Data\Filter\Numeric;
+use BlueSpice\Data\Filter\StringValue;
+use BlueSpice\Data\FilterFinder;
+use BlueSpice\Data\IPrimaryDataProvider;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 

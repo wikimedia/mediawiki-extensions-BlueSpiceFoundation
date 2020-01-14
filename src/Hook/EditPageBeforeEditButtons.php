@@ -26,10 +26,10 @@
  */
 namespace BlueSpice\Hook;
 
-use IContextSource;
+use BlueSpice\Hook;
 use Config;
 use EditPage;
-use BlueSpice\Hook;
+use IContextSource;
 
 abstract class EditPageBeforeEditButtons extends Hook {
 

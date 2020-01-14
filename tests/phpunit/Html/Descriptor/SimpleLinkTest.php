@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Tests\Html\Descriptor;
 
+use BlueSpice\Html\Descriptor\SimpleLink;
 use Exception;
 use PHPUnit\Framework\TestCase;
-use BlueSpice\Html\Descriptor\SimpleLink;
 
 class SimpleLinkTest extends TestCase {
 

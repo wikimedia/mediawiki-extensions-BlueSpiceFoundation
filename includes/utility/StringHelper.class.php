@@ -8,7 +8,7 @@
  * $LastChangedDate: 2013-06-12 15:58:22 +0200 (Mi, 12 Jun 2013) $
  * $LastChangedBy: rvogel $
  * $Rev: 9700 $
-
+ *
  */
 class BsStringHelper {
 

@@ -26,9 +26,9 @@
  */
 namespace BlueSpice\Entity;
 
+use Status;
 use Title;
 use User;
-use Status;
 
 abstract class Content extends \BlueSpice\Entity {
 	const NS = -1;
@@ -121,7 +121,7 @@ abstract class Content extends \BlueSpice\Entity {
 	 */
 	public function save( User $oUser = null, $aOptions = [] ) {
 		$oTitle = $this->getTitle();
-		if ( is_null( $oTitle ) ) {
+		if ( $oTitle === null ) {
 			return Status::newFatal( 'Related Title error' );
 		}
 
@@ -152,7 +152,7 @@ abstract class Content extends \BlueSpice\Entity {
 			return false;
 		}
 		$oTitle = $this->getTitle();
-		if ( is_null( $oTitle ) ) {
+		if ( $oTitle === null ) {
 			return false;
 		}
 		return $oTitle->exists();

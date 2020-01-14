@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
-use BlueSpice\Hook\ResourceLoaderGetConfigVars;
 use BlueSpice\ConfigDefinition;
+use BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 class AddBSGConfig extends ResourceLoaderGetConfigVars {
 

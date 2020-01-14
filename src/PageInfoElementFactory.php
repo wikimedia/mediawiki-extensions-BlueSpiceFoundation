@@ -2,9 +2,9 @@
 
 namespace BlueSpice;
 
-use MWException;
-use IContextSource;
 use Config;
+use IContextSource;
+use MWException;
 
 class PageInfoElementFactory {
 

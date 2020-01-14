@@ -2,10 +2,10 @@
 
 namespace BlueSpice;
 
-use IContextSource;
-use MessageLocalizer;
-use Message;
 use Config;
+use IContextSource;
+use Message;
+use MessageLocalizer;
 
 abstract class PageInfoElement implements IPageInfoElement, MessageLocalizer {
 

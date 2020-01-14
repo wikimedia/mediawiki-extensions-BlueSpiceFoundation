@@ -26,8 +26,8 @@
  */
 namespace BlueSpice;
 
-use MessageLocalizer;
 use Message;
+use MessageLocalizer;
 
 abstract class Hook implements MessageLocalizer, IServiceProvider {
 

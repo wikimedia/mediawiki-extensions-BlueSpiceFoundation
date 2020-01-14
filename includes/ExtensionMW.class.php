@@ -106,7 +106,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 			&& ( $wgHooks[$hook][0] instanceof Closure ) )
 			&& in_array( $register, $wgHooks[$hook], true ) ) {
 			return;
-		};
+		}
 		if ( $bExecuteFirst && isset( $wgHooks[$hook] ) ) {
 			array_unshift( $wgHooks[$hook], $register );
 		} else {

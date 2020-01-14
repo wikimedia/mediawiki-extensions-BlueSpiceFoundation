@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\Categories;
 
+use BlueSpice\Data\IStore;
 use BlueSpice\Data\NoWriterException;
 use BlueSpice\Services;
-use BlueSpice\Data\IStore;
 
 class Store implements IStore {
 

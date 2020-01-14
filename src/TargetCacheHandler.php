@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use BlueSpice\Utility\CacheHelper;
 use BlueSpice\TargetCache\ITarget;
+use BlueSpice\Utility\CacheHelper;
 
 class TargetCacheHandler implements ITargetCacheHandler {
 

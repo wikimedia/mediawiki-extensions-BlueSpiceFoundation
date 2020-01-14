@@ -3,10 +3,10 @@
 namespace BlueSpice;
 
 use BlueSpice\RunJobsTriggerHandler\Job\RunRunJobsTriggerHandlerRunner;
-use MediaWiki\Logger\LoggerFactory;
 use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
 use ConfigException;
 use JobQueueGroup;
+use MediaWiki\Logger\LoggerFactory;
 
 class RunJobsTriggerRunner {
 

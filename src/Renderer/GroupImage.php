@@ -1,13 +1,13 @@
 <?php
 namespace BlueSpice\Renderer;
 
+use BlueSpice\DynamicFileDispatcher\GroupImage as DFDGroupImage;
+use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
+use BlueSpice\Services;
+use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
-use BlueSpice\Utility\CacheHelper;
 use MediaWiki\Linker\LinkRenderer;
-use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
-use BlueSpice\DynamicFileDispatcher\GroupImage as DFDGroupImage;
-use BlueSpice\Services;
 
 class GroupImage extends \BlueSpice\TemplateRenderer {
 	const PARAM_WIDTH = 'width';

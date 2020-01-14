@@ -26,11 +26,11 @@
  */
 namespace BlueSpice\Hook;
 
-use IContextSource;
+use BlueSpice\Hook;
 use Config;
+use IContextSource;
 use OutputPage;
 use Skin;
-use BlueSpice\Hook;
 
 abstract class OutputPageBodyAttributes extends Hook {
 

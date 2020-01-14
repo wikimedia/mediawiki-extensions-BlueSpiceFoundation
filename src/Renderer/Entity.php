@@ -1,12 +1,12 @@
 <?php
 namespace BlueSpice\Renderer;
 
-use MWException;
-use Config;
-use IContextSource;
-use FormatJson;
 use BlueSpice\Utility\CacheHelper;
+use Config;
+use FormatJson;
+use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use MWException;
 
 class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 	const PARAM_ENTITY = 'entity';

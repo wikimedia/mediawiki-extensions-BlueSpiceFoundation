@@ -2,13 +2,13 @@
 
 namespace BlueSpice\Task\WikiPage;
 
-use Title;
-use Status;
 use BlueSpice\ParamProcessor\ParamDefinition;
 use BlueSpice\ParamProcessor\ParamType;
+use BlueSpice\Task\WikiPage as WikiPageTask;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 use MWException;
-use BlueSpice\Task\WikiPage as WikiPageTask;
+use Status;
+use Title;
 
 class SetCategories extends WikiPageTask {
 	const PARAM_CATEGORIES = 'categories';

@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use Exception;
 use BlueSpice\Utility\TemplateHelper;
+use Exception;
 
 class TemplateFactory {
 

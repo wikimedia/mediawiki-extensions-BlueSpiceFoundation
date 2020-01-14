@@ -28,10 +28,10 @@
 
 namespace BlueSpice\Hook;
 
-use IContextSource;
-use Config;
 use ApiBase;
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
 
 abstract class APIAfterExecute extends Hook {
 

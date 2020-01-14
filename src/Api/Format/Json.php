@@ -27,8 +27,8 @@
 
 namespace BlueSpice\Api\Format;
 
-use ApiFormatJson;
 use ApiBase;
+use ApiFormatJson;
 
 /**
  * Api json formal class in BlueSpice

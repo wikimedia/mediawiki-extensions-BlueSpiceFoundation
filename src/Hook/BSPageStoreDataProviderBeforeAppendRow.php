@@ -26,12 +26,12 @@
  */
 namespace BlueSpice\Hook;
 
-use IContextSource;
-use Config;
-use Title;
-use BlueSpice\Hook;
 use BlueSpice\Data\Page\PrimaryDataProvider;
 use BlueSpice\Data\Page\Record;
+use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use Title;
 
 abstract class BSPageStoreDataProviderBeforeAppendRow extends Hook {
 	/**

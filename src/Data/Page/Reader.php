@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Data\Page;
 
+use BlueSpice\Data\DatabaseReader;
+use BlueSpice\Data\ReaderParams;
 use IContextSource;
 use Wikimedia\Rdbms\LoadBalancer;
-use BlueSpice\Data\ReaderParams;
-use BlueSpice\Data\DatabaseReader;
 
 class Reader extends DatabaseReader {
 	/**

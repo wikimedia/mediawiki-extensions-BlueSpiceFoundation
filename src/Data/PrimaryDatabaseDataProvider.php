@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data;
 
-use Wikimedia\Rdbms\IDatabase;
 use BlueSpice\Data\Filter\Numeric;
 use BlueSpice\Data\Filter\StringValue;
+use Wikimedia\Rdbms\IDatabase;
 
 abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 

@@ -2,13 +2,13 @@
 
 namespace BlueSpice\Permission\Lockdown;
 
-use User;
-use Config;
-use Message;
-use BlueSpice\Services;
-use IContextSource;
 use BlueSpice\IServiceProvider;
+use BlueSpice\Services;
+use Config;
+use IContextSource;
+use Message;
 use MessageLocalizer;
+use User;
 
 abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 

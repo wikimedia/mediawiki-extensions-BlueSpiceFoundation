@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
-use BlueSpice\Services;
 use BlueSpice\Data\NoWriterException;
+use BlueSpice\Services;
 
 class Store implements \BlueSpice\Data\IStore {
 

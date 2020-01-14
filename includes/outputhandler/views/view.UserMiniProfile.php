@@ -1,8 +1,8 @@
 <?php
 
 use BlueSpice\DynamicFileDispatcher\Params;
-use BlueSpice\Services;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage;
+use BlueSpice\Services;
 
 /**
  * DEPRECATED! You may want to use a \BlueSpice\Renderer or a

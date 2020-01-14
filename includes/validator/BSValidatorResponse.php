@@ -55,12 +55,12 @@ class BsValidatorResponse {
 	 */
 	public function getI18N() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if ( is_null( $this->mI18NInstanceName ) ) {
+		if ( $this->mI18NInstanceName === null ) {
 			return false;
 		}
 
-		if ( is_null( $this->mI18NRenderedString ) ) {
-			$this->mI18NRenderedString = ( is_null( $this->mI18NTokens ) )
+		if ( $this->mI18NRenderedString === null ) {
+			$this->mI18NRenderedString = ( $this->mI18NTokens === null )
 				? wfMessage( $this->mI18NMessageKey )->text()
 				// TODO MRG (08.02.11 00:08): msg wurde modifiziert, $default gibts nicht mehr.
 				// @Robert: macht Tokens von $default Gebrauch?

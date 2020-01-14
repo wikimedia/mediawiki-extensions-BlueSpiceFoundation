@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Tests;
 
-use PHPUnit\Framework\TestCase;
-use BlueSpice\ListSorter;
 use BlueSpice\IListPositionProvider;
+use BlueSpice\ListSorter;
+use PHPUnit\Framework\TestCase;
 use stdClass;
 
 class ListSorterTest extends TestCase {

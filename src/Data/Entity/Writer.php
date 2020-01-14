@@ -2,12 +2,12 @@
 
 namespace BlueSpice\Data\Entity;
 
-use Exception;
-use Status;
-use IContextSource;
-use BlueSpice\Entity;
 use BlueSpice\Data\IWriter as IBaseWriter;
 use BlueSpice\Data\RecordSet;
+use BlueSpice\Entity;
+use Exception;
+use IContextSource;
+use Status;
 
 abstract class Writer implements IWriter, IBaseWriter {
 

@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Data\Page;
 
+use BlueSpice\Data\IStore;
+use BlueSpice\Data\NoWriterException;
 use IContextSource;
 use Wikimedia\Rdbms\LoadBalancer;
-use BlueSpice\Data\NoWriterException;
-use BlueSpice\Data\IStore;
 
 class Store implements IStore {
 

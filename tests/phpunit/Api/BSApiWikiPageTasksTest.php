@@ -45,8 +45,8 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			]
 		);
 
-		$this->assertEquals(
-			true,
+		$this->assertTrue(
+
 			$response->success,
 			"Adding categories failed where it should have succeeded"
 		);
@@ -83,8 +83,8 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			]
 		);
 
-		$this->assertEquals(
-			true,
+		$this->assertTrue(
+
 			$response->success,
 			"Setting categories failed where it should have succeeded"
 		);
@@ -119,8 +119,8 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			]
 		);
 
-		$this->assertEquals(
-			true,
+		$this->assertTrue(
+
 			$response->success,
 			"Removing categories failed where it should have succeeded"
 		);

@@ -2,11 +2,11 @@
 
 namespace BlueSpice;
 
-use Skin;
-use Wikimedia\Rdbms\LoadBalancer;
-use Wikimedia\Rdbms\IDatabase;
 use Config;
+use Skin;
 use User;
+use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\LoadBalancer;
 
 abstract class AlertProviderBase implements IAlertProvider {
 

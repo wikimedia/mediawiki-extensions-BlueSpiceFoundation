@@ -26,10 +26,10 @@
  */
 namespace BlueSpice;
 
-use Config;
-use IContextSource;
 use BlueSpice\Renderer\Params;
 use BlueSpice\Utility\CacheHelper;
+use Config;
+use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 
 abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {

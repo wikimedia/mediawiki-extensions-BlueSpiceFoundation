@@ -27,12 +27,12 @@
  */
 namespace BlueSpice\Hook;
 
-use Title;
+use BlueSpice\Hook;
 use Config;
 use Content;
-use ParserOutput;
 use IContextSource;
-use BlueSpice\Hook;
+use ParserOutput;
+use Title;
 
 abstract class SecondaryDataUpdates extends Hook {
 

@@ -26,17 +26,17 @@
  */
 namespace BlueSpice;
 
-use JsonSerializable;
-use Exception;
-use MWException;
-use Status;
-use IContextSource;
-use RequestContext;
-use Hooks;
-use User;
+use BlueSpice\Data\Entity\IStore;
 use BlueSpice\Renderer\Entity as Renderer;
 use BlueSpice\Renderer\Params;
-use BlueSpice\Data\Entity\IStore;
+use Exception;
+use Hooks;
+use IContextSource;
+use JsonSerializable;
+use MWException;
+use RequestContext;
+use Status;
+use User;
 
 abstract class Entity implements JsonSerializable {
 	const TYPE = '';

@@ -4,7 +4,7 @@
  *
  * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @author Thomas Lorenz, Robert Vogel
-
+ *
  */
 
 use UtfNormal\Validator;

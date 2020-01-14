@@ -3,36 +3,36 @@
 namespace BlueSpice\Api;
 
 use BlueSpice\Api;
-use BlueSpice\Data\RecordConverter;
 use BlueSpice\Data\ReaderParams;
+use BlueSpice\Data\RecordConverter;
 
 /**
  * Example request parameters of an ExtJS store
-
-	_dc:1430126252980
-	filter:[
-		{
-			"type":"string",
-			"comparison":"ct",
-			"value":"some text ...",
-			"field":"someField"
-		}
-	]
-	group:[
-		{
-			"property":"someOtherField",
-			"direction":"ASC"
-		}
-	]
-	sort:[
-		{
-			"property":"someOtherField",
-			"direction":"ASC"
-		}
-	]
-	page:1
-	start:0
-	limit:25
+ *
+ * _dc:1430126252980
+ * filter:[
+ * {
+ * "type":"string",
+ * "comparison":"ct",
+ * "value":"some text ...",
+ * "field":"someField"
+ * }
+ * ]
+ * group:[
+ * {
+ * "property":"someOtherField",
+ * "direction":"ASC"
+ * }
+ * ]
+ * sort:[
+ * {
+ * "property":"someOtherField",
+ * "direction":"ASC"
+ * }
+ * ]
+ * page:1
+ * start:0
+ * limit:25
  */
 abstract class Store extends Api {
 

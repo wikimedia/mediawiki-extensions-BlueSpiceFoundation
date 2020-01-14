@@ -2,8 +2,8 @@
 
 namespace BlueSpice\ConfigDefinition;
 
-use HTMLForm;
 use BlueSpice\Html\FormField\GroupMultiSelect;
+use HTMLForm;
 
 abstract class GroupList extends \BlueSpice\ConfigDefinition {
 

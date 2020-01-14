@@ -2,12 +2,12 @@
 
 namespace BlueSpice\Data\Entity\Writer;
 
-use Exception;
-use FormatJson;
-use WikiPage;
-use Status;
 use BlueSpice\Data\Entity\Writer;
 use BlueSpice\Entity;
+use Exception;
+use FormatJson;
+use Status;
+use WikiPage;
 
 abstract class Content extends Writer {
 	/**

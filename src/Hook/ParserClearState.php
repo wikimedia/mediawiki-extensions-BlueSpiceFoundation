@@ -26,8 +26,8 @@
  */
 namespace BlueSpice\Hook;
 
-use Parser;
 use BlueSpice\Hook;
+use Parser;
 
 abstract class ParserClearState extends Hook {
 

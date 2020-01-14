@@ -27,12 +27,12 @@
 
 namespace BlueSpice;
 
-use Status;
-use MessageLocalizer;
-use Message;
-use WikiPage;
-use Psr\Log\LoggerInterface;
 use MediaWiki\Logger\LoggerFactory;
+use Message;
+use MessageLocalizer;
+use Psr\Log\LoggerInterface;
+use Status;
+use WikiPage;
 
 abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 

@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Data\Entity;
 
-use BlueSpice\Services;
 use BlueSpice\Data\FieldType;
-use BlueSpice\ExtensionAttributeBasedRegistry;
 use BlueSpice\EntityConfig;
+use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\Services;
 
 class Schema extends \BlueSpice\Data\Schema {
 	const STORABLE = 'storeable';

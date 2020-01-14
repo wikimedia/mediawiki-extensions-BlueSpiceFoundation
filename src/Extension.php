@@ -26,9 +26,9 @@
  */
 namespace BlueSpice;
 
+use Config;
 use ConfigException;
 use IContextSource;
-use Config;
 use JsonSerializable;
 
 abstract class Extension extends Context implements JsonSerializable {

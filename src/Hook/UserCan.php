@@ -26,11 +26,11 @@
  */
 namespace BlueSpice\Hook;
 
-use IContextSource;
-use Config;
-use User;
-use Title;
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use Title;
+use User;
 
 abstract class UserCan extends Hook {
 

@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Template;
 
-use BlueSpice\Services;
 use BlueSpice\ITemplateParser;
+use BlueSpice\Services;
 use BlueSpice\Utility\TemplateHelper;
 
 class Mustache extends \BlueSpice\Template {

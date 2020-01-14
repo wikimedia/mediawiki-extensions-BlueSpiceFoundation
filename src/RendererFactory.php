@@ -2,9 +2,9 @@
 
 namespace BlueSpice;
 
-use IContextSource;
-use Config;
 use BlueSpice\Renderer\Params;
+use Config;
+use IContextSource;
 
 class RendererFactory implements IServiceProvider {
 

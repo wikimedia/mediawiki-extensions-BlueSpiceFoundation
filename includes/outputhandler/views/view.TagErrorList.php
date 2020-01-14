@@ -9,7 +9,7 @@
  * $LastChangedDate: 2013-02-26 16:27:57 +0100 (Di, 26 Feb 2013) $
  * $LastChangedBy: pwirth $
  * $Rev: 8734 $
-
+ *
  */
 /**
  * DEPRECATED! You may want to use a \BlueSpice\Renderer or a

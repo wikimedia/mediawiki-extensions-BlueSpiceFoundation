@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Data\Entity\Reader;
 
-use Title;
-use BlueSpice\EntityConfig;
 use BlueSpice\Content\Entity as EntityContent;
+use BlueSpice\EntityConfig;
 use BsPageContentProvider;
+use Title;
 
 abstract class Content extends \BlueSpice\Data\Entity\Reader {
 	/**

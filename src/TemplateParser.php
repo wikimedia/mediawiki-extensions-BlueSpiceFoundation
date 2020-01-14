@@ -5,10 +5,10 @@
 namespace BlueSpice;
 
 use LightnCandy;
-use RuntimeException;
 use Message;
 use MessageLocalizer;
 use RequestContext;
+use RuntimeException;
 
 class TemplateParser extends \TemplateParser implements ITemplateParser, MessageLocalizer {
 

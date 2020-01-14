@@ -2,13 +2,13 @@
 
 namespace BlueSpice;
 
-use Title;
-use User;
-use Status;
+use BlueSpice\Permission\Lockdown;
 use Config;
 use IContextSource;
-use BlueSpice\Permission\Lockdown;
 use MediaWiki\Permissions\PermissionManager;
+use Status;
+use Title;
+use User;
 
 class PermissionLockdownFactory {
 

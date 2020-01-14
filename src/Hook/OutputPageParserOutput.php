@@ -26,9 +26,9 @@
  */
 namespace BlueSpice\Hook;
 
+use BlueSpice\Hook;
 use OutputPage;
 use ParserOutput;
-use BlueSpice\Hook;
 
 abstract class OutputPageParserOutput extends Hook {
 

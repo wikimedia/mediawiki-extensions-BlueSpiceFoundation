@@ -5,7 +5,7 @@
  * Part of BlueSpice MediaWiki
  *
  * @author     Markus Glaser <glaser@hallowelt.com>, Sebastian Ulbricht
-
+ *
  * @package    BlueSpice_Core
  * @subpackage Views
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.

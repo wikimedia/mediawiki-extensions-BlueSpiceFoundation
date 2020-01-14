@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\Watchlist;
 
-use BlueSpice\Data\IPrimaryDataProvider;
 use BlueSpice\Data\Filter;
 use BlueSpice\Data\FilterFinder;
+use BlueSpice\Data\IPrimaryDataProvider;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 

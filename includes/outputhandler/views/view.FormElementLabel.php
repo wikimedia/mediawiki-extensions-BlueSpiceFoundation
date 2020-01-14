@@ -9,7 +9,7 @@
  * $LastChangedDate: 2010-07-18 01:13:04 +0200 (So, 18 Jul 2010) $
  * $LastChangedBy: mglaser $
  * $Rev: 314 $
-
+ *
  */
 
 // Last review MRG20100816

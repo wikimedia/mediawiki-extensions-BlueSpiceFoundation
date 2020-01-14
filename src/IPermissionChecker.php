@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use User;
 use IContextSource;
+use User;
 
 interface IPermissionChecker {
 

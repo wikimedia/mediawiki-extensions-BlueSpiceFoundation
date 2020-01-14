@@ -2,16 +2,16 @@
 
 namespace BlueSpice\Permission\Lockdown\Module;
 
+use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\Permission\Lockdown\IModule;
+use BlueSpice\Permission\Lockdown\Module;
+use BlueSpice\Permission\Lockdown\Module\Groups\ISubModule;
+use BlueSpice\Services;
+use Config;
+use IContextSource;
 use Message;
 use Title;
 use User;
-use IContextSource;
-use Config;
-use BlueSpice\Services;
-use BlueSpice\ExtensionAttributeBasedRegistry;
-use BlueSpice\Permission\Lockdown\Module\Groups\ISubModule;
-use BlueSpice\Permission\Lockdown\Module;
-use BlueSpice\Permission\Lockdown\IModule;
 
 class Groups extends Module {
 

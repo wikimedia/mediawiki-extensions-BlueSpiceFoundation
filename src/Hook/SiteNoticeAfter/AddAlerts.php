@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Hook\SiteNoticeAfter;
 
-use BlueSpice\Hook\SiteNoticeAfter;
 use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\Hook\SiteNoticeAfter;
 use BlueSpice\IAlertProvider;
-use Html;
 use Exception;
+use Html;
 
 class AddAlerts extends SiteNoticeAfter {
 

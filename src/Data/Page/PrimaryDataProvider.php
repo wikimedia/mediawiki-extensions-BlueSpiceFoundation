@@ -2,14 +2,14 @@
 
 namespace BlueSpice\Data\Page;
 
+use BlueSpice\Data\PrimaryDatabaseDataProvider;
+use BlueSpice\Data\ReaderParams;
+use BlueSpice\Services;
+use Hooks;
 use IContextSource;
 use Title;
 use User;
-use Hooks;
 use Wikimedia\Rdbms\IDatabase;
-use BlueSpice\Services;
-use BlueSpice\Data\ReaderParams;
-use BlueSpice\Data\PrimaryDatabaseDataProvider;
 
 class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 

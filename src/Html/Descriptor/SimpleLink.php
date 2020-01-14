@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Html\Descriptor;
 
-use RawMessage;
 use Exception;
+use RawMessage;
 
 class SimpleLink implements ILink {
 

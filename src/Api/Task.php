@@ -2,15 +2,15 @@
 
 namespace BlueSpice\Api;
 
-use Status;
-use FormatJson;
-use BlueSpice\ITask;
-use BlueSpice\IPermissionChecker;
 use BlueSpice\Api;
 use BlueSpice\Api\Task\StatusConverter;
-use BlueSpice\ParamProcessor\Processor;
+use BlueSpice\IPermissionChecker;
+use BlueSpice\ITask;
 use BlueSpice\ParamProcessor\Options;
+use BlueSpice\ParamProcessor\Processor;
 use Exception;
+use FormatJson;
+use Status;
 
 class Task extends Api {
 	const PARAM_TASK = 'task';

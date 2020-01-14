@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Tests\DataSources;
 
-use BlueSpice\Data\Filterer;
 use BlueSpice\Data\Filter;
+use BlueSpice\Data\Filterer;
 use BlueSpice\Data\Record;
 
 /**

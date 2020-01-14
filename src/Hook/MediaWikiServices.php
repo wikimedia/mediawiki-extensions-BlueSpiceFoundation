@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Hook;
 
-use MediaWiki\MediaWikiServices as Services;
-use IContextSource;
-use Config;
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use MediaWiki\MediaWikiServices as Services;
 
 abstract class MediaWikiServices extends Hook {
 	/**

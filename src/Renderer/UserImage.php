@@ -1,15 +1,15 @@
 <?php
 namespace BlueSpice\Renderer;
 
-use Config;
-use IContextSource;
-use User;
-use RequestContext;
-use BlueSpice\Utility\CacheHelper;
-use MediaWiki\Linker\LinkRenderer;
 use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage;
 use BlueSpice\Services;
+use BlueSpice\Utility\CacheHelper;
+use Config;
+use IContextSource;
+use MediaWiki\Linker\LinkRenderer;
+use RequestContext;
+use User;
 
 class UserImage extends \BlueSpice\TemplateRenderer {
 	const PARAM_WIDTH = 'width';

@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Tests\DataSources;
 
-use BlueSpice\Data\Sorter;
-use BlueSpice\Data\Sort;
 use BlueSpice\Data\Record;
+use BlueSpice\Data\Sort;
+use BlueSpice\Data\Sorter;
 
 /**
  * @group BlueSpice
