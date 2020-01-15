@@ -33,6 +33,9 @@ class ConfigTest extends \MediaWikiTestCase {
 		$config->invalidateCache();
 	}
 
+	/**
+	 * @covers \BlueSpice\Config::__construct
+	 */
 	public function testFactoryReturn() {
 		$config = MediaWikiServices::getInstance()->getConfigFactory()
 			->makeConfig( 'bsg' );
@@ -45,6 +48,9 @@ class ConfigTest extends \MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Config::get
+	 */
 	public function testDatabasePreval() {
 		$config = new \BlueSpice\Config(
 			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()
@@ -56,6 +62,9 @@ class ConfigTest extends \MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Config::get
+	 */
 	public function testGlobalVarDefaulting() {
 		$config = new \BlueSpice\Config(
 			\MediaWiki\MediaWikiServices::getInstance()->getDBLoadBalancer()

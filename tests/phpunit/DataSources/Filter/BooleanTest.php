@@ -10,6 +10,9 @@ use BlueSpice\Data\Record;
  * @group BlueSpiceFoundation
  */
 class BooleanTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers \BlueSpice\Data\Filter\Boolean::matches
+	 */
 	public function testPositive() {
 		$filter = new Filter\Boolean( [
 			'field' => 'field1',
@@ -25,6 +28,9 @@ class BooleanTest extends \PHPUnit\Framework\TestCase {
 		$this->assertTrue( $result );
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\Filter\Boolean::matches
+	 */
 	public function testNegative() {
 		$filter = new Filter\Boolean( [
 			'field' => 'field1',
@@ -42,10 +48,11 @@ class BooleanTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider provideAppliesToValues
-	 * @param boolean $expecation
+	 * @param bool $expectation
+	 * @param string $comparison
 	 * @param mixed $fieldValue
 	 * @param mixed $filterValue
-	 * @param string $comparison
+	 * @covers \BlueSpice\Data\Filter\Boolean::matches
 	 */
 	public function testAppliesTo( $expectation, $comparison, $fieldValue, $filterValue ) {
 		$filter = new Filter\Boolean( [

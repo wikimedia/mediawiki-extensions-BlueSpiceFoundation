@@ -5,6 +5,9 @@ namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 class AddDataUserNameTest extends \MediaWikiTestCase {
 	protected $testUserName = 'wiki Sysöp';
 
+	/**
+	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::__construct
+	 */
 	public function testCanConstruct() {
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
@@ -37,6 +40,9 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::process
+	 */
 	public function testProcessUserPageWithRename() {
 		define( 'BS_ADD_DATA_USER_NAME_TEST', true );
 		$testuser = \User::newFromName( $this->testUserName );
@@ -80,6 +86,9 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::process
+	 */
 	public function testProcessUserPageWithOutRename() {
 		$testuser = \User::newFromName( $this->testUserName );
 		$testuser->addToDatabase();
@@ -122,6 +131,9 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::process
+	 */
 	public function testProcessNoProcess() {
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()

@@ -77,6 +77,7 @@ class SorterTest extends \PHPUnit\Framework\TestCase {
 	 * @param array $sort
 	 * @param array $expectedSorting
 	 * @dataProvider provideSortData
+	 * @covers \BlueSpice\Data\Sorter::sort
 	 */
 	public function testSort( $sort, $expectedSorting ) {
 		$sorter = new Sorter( Sort::newCollectionFromArray( $sort ) );

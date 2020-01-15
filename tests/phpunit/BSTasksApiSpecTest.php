@@ -7,6 +7,9 @@ namespace BlueSpice\Tests;
  */
 class BSTasksApiSpecTest extends \MediaWikiTestCase {
 
+	/**
+	 * @covers \BSTasksApiSpec::getTaskNames
+	 */
 	public function testGetTaskNames() {
 		$aTasks = [ 'test1', 'test2', 'test3' ];
 		$oSpec = new \BSTasksApiSpec( $aTasks );
@@ -31,6 +34,7 @@ class BSTasksApiSpecTest extends \MediaWikiTestCase {
 	}
 
 	/**
+	 * @covers \BSTasksApiSpec::__construct
 	 * @expectedException MWException
 	 */
 	public function testUnsupportedTaskSpecException1() {
@@ -40,6 +44,7 @@ class BSTasksApiSpecTest extends \MediaWikiTestCase {
 	}
 
 	/**
+	 * @covers \BSTasksApiSpec::__construct
 	 * @expectedException MWException
 	 */
 	public function testUnsupportedTaskSpecException2() {

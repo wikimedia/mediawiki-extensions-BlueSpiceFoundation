@@ -82,6 +82,7 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	 * @group Broken
 	 * @param int $limit
 	 * @param int $offset
+	 * @covers \BSApiTitleQueryStore::makeData
 	 */
 	public function testPaging( $limit, $offset ) {
 		parent::testPaging( $limit, $offset );
@@ -91,6 +92,7 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	 * @group Broken
 	 * @param array $filters
 	 * @param integer $expectedTotal
+	 * @covers \BSApiTitleQueryStore::makeData
 	 */
 	public function testMultipleFilter( $filters, $expectedTotal ) {
 		parent::testMultipleFilter( $filters, $expectedTotal );

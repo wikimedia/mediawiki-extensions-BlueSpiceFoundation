@@ -10,6 +10,9 @@ use BlueSpice\Data\Record;
  * @group BlueSpiceFoundation
  */
 class ListValueTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers \BlueSpice\Data\Filter\ListValue::matches
+	 */
 	public function testPositive() {
 		$filter = new Filter\ListValue( [
 			'field' => 'field1',
@@ -25,6 +28,9 @@ class ListValueTest extends \PHPUnit\Framework\TestCase {
 		$this->assertTrue( $result );
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\Filter\ListValue::matches
+	 */
 	public function testNegative() {
 		$filter = new Filter\ListValue( [
 			'field' => 'field1',
