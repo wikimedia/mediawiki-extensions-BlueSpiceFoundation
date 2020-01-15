@@ -10,6 +10,9 @@ use BlueSpice\Data\Record;
  * @group BlueSpiceFoundation
  */
 class NumericTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers \BlueSpice\Data\Filter\Numeric::matches
+	 */
 	public function testPositive() {
 		$filter = new Filter\Numeric( [
 			'field' => 'field1',
@@ -25,6 +28,9 @@ class NumericTest extends \PHPUnit\Framework\TestCase {
 		$this->assertTrue( $result );
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\Filter\Numeric::matches
+	 */
 	public function testNegative() {
 		$filter = new Filter\Numeric( [
 			'field' => 'field1',

@@ -26,6 +26,9 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 		$wgHooks['BsAdapterAjaxPingResult'][] = [ $this, 'onBsAdapterAjaxPingResult' ];
 	}
 
+	/**
+	 * @covers \BSApiPingTasks::task_ping
+	 */
 	public function testPing() {
 		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
 		$oWikiPage = \WikiPage::factory( $oTitle );

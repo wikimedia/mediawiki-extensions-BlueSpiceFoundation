@@ -2,22 +2,23 @@
 
 namespace BlueSpice\Tests\Html\Descriptor;
 
+use Exception;
 use PHPUnit\Framework\TestCase;
 use BlueSpice\Html\Descriptor\SimpleLink;
 
 class SimpleLinkTest extends TestCase {
 
 	/**
-	 * @expectedException \Exception
-	 * @expectedExceptionMessage Field 'label' must be provided!
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::__construct
+	 * @expectedException Exception
 	 */
 	public function testConstructorExceptionLabel() {
 		$link = new SimpleLink( [] );
 	}
 
 	/**
-	 * @expectedException \Exception
-	 * @expectedExceptionMessage Field 'tooltip' must be provided!
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::__construct
+	 * @expectedException Exception
 	 */
 	public function testConstructorExceptionTooltip() {
 		$link = new SimpleLink( [
@@ -26,8 +27,8 @@ class SimpleLinkTest extends TestCase {
 	}
 
 	/**
-	 * @expectedException \Exception
-	 * @expectedExceptionMessage Field 'href' must be provided!
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::__construct
+	 * @expectedException Exception
 	 */
 	public function testConstructorExceptionHref() {
 		$link = new SimpleLink( [
@@ -36,6 +37,9 @@ class SimpleLinkTest extends TestCase {
 		] );
 	}
 
+	/**
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::getFromData
+	 */
 	public function testAllGetters() {
 		$link = new SimpleLink( [
 			'label' => 'Some label',

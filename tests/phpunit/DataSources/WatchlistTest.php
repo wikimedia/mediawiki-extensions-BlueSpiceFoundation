@@ -54,6 +54,9 @@ class WatchlistTest extends \MediaWikiTestCase {
 		}
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\Watchlist\Reader::__construct
+	 */
 	public function testCanConstruct() {
 		$loadBalancer = $this->getMockBuilder( '\Wikimedia\Rdbms\LoadBalancer' )
 			->disableOriginalConstructor()
@@ -67,6 +70,9 @@ class WatchlistTest extends \MediaWikiTestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\Watchlist\Reader::read
+	 */
 	public function testUnfilteredFetching() {
 		$watchlist = $this->makeInstance();
 		$resultSet = $watchlist->read( new \BlueSpice\Data\ReaderParams() );

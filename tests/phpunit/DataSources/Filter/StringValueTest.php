@@ -10,6 +10,9 @@ use BlueSpice\Data\Record;
  * @group BlueSpiceFoundation
  */
 class StringValueTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers \BlueSpice\Data\Filter\StringValue::matches
+	 */
 	public function testPositive() {
 		$filter = new Filter\StringValue( [
 			'field' => 'field1',
@@ -25,6 +28,9 @@ class StringValueTest extends \PHPUnit\Framework\TestCase {
 		$this->assertTrue( $result );
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\Filter\StringValue::matches
+	 */
 	public function testNegative() {
 		$filter = new Filter\StringValue( [
 			'field' => 'field1',

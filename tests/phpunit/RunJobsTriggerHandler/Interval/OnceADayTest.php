@@ -5,6 +5,9 @@ namespace BlueSpice\Tests\RunJobsTriggerHandler\Interval;
 use BlueSpice\RunJobsTriggerHandler\Interval\OnceADay;
 
 class OnceADayTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers BlueSpice\RunJobsTriggerHandler\Interval\OnceADay::getNextTimestamp
+	 */
 	public function testCurrentDay() {
 		OnceADay::resetInstanceCounter();
 
@@ -19,6 +22,9 @@ class OnceADayTest extends \PHPUnit\Framework\TestCase {
 		$this->assertEquals( $expectedNextTS, $nextTS, 'Should be same day' );
 	}
 
+	/**
+	 * @covers BlueSpice\RunJobsTriggerHandler\Interval\OnceADay::getNextTimestamp
+	 */
 	public function testNextDay() {
 		OnceADay::resetInstanceCounter();
 
@@ -33,6 +39,9 @@ class OnceADayTest extends \PHPUnit\Framework\TestCase {
 		$this->assertEquals( $expectedNextTS, $nextTS, 'Should be next day' );
 	}
 
+	/**
+	 * @covers BlueSpice\RunJobsTriggerHandler\Interval\OnceADay::getNextTimestamp
+	 */
 	public function testMultiInstanceSpreading() {
 		OnceADay::resetInstanceCounter();
 
@@ -58,6 +67,9 @@ class OnceADayTest extends \PHPUnit\Framework\TestCase {
 		$this->assertEquals( $expectedNextTS3, $nextTS3, 'Should be shifted by 30 minutes' );
 	}
 
+	/**
+	 * @covers BlueSpice\RunJobsTriggerHandler\Interval\OnceADay::getNextTimestamp
+	 */
 	public function testBasetimeOverride() {
 		OnceADay::resetInstanceCounter();
 

@@ -4,6 +4,9 @@ namespace BlueSpice\Tests\Hook\SoftwareInfo;
 
 class AddBlueSpiceTest extends \PHPUnit\Framework\TestCase {
 
+	/**
+	 * @covers \BlueSpice\Hook\SoftwareInfo\AddBlueSpice::__construct
+	 */
 	public function testCanConstruct() {
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
@@ -25,6 +28,9 @@ class AddBlueSpiceTest extends \PHPUnit\Framework\TestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Hook\SoftwareInfo\AddBlueSpice::process
+	 */
 	public function testProcess() {
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()

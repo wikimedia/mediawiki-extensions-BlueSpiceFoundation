@@ -9,6 +9,9 @@ use \BlueSpice\Data\ReaderParams;
  * @group BlueSpiceFoundation
  */
 class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers BlueSpice\Data\ReaderParams::__construct
+	 */
 	public function testInitFromArray() {
 		$params = new ReaderParams( [
 			'query' => 'Some query',
