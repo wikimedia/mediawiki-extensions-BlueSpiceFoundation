@@ -8,12 +8,18 @@ use PHPUnit\Framework\TestCase;
 
 class SimpleLinkTest extends TestCase {
 
+	/**
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::__construct
+	 */
 	public function testConstructorExceptionLabel() {
 		$this->expectException( Exception::class );
 		$this->expectExceptionMessage( "Field 'label' must be provided!" );
 		$link = new SimpleLink( [] );
 	}
 
+	/**
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::__construct
+	 */
 	public function testConstructorExceptionTooltip() {
 		$this->expectException( Exception::class );
 		$this->expectExceptionMessage( "Field 'tooltip' must be provided!" );
@@ -22,6 +28,9 @@ class SimpleLinkTest extends TestCase {
 		] );
 	}
 
+	/**
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::__construct
+	 */
 	public function testConstructorExceptionHref() {
 		$this->expectException( Exception::class );
 		$this->expectExceptionMessage( "Field 'href' must be provided!" );
@@ -31,6 +40,9 @@ class SimpleLinkTest extends TestCase {
 		] );
 	}
 
+	/**
+	 * @covers BlueSpice\Html\Descriptor\SimpleLink::getFromData
+	 */
 	public function testAllGetters() {
 		$link = new SimpleLink( [
 			'label' => 'Some label',

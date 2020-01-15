@@ -9,6 +9,9 @@ use MWException;
  */
 class BSTasksApiSpecTest extends \MediaWikiTestCase {
 
+	/**
+	 * @covers \BSTasksApiSpec::getTaskNames
+	 */
 	public function testGetTaskNames() {
 		$aTasks = [ 'test1', 'test2', 'test3' ];
 		$oSpec = new \BSTasksApiSpec( $aTasks );
@@ -32,6 +35,9 @@ class BSTasksApiSpecTest extends \MediaWikiTestCase {
 		$this->assertArrayEquals( $aTasks, $oSpec3->getTaskNames() );
 	}
 
+	/**
+	 * @covers \BSTasksApiSpec::__construct
+	 */
 	public function testUnsupportedTaskSpecException1() {
 		$this->expectException( MWException::class );
 		new \BSTasksApiSpec( [
@@ -39,6 +45,9 @@ class BSTasksApiSpecTest extends \MediaWikiTestCase {
 		] );
 	}
 
+	/**
+	 * @covers \BSTasksApiSpec::__construct
+	 */
 	public function testUnsupportedTaskSpecException2() {
 		$this->expectException( MWException::class );
 		new \BSTasksApiSpec( [

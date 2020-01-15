@@ -18,6 +18,7 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	 * @param $url
 	 * @param $expectation
 	 * @dataProvider provideFromUrlWithTitleData
+	 * @covers \BlueSpice\Utility\UrlTitleParser::parseTitle
 	 */
 	public function testFromUrl( $url, $expectation ) {
 		$parser = new UrlTitleParser( $url, Services::getInstance()->getMainConfig() );
@@ -30,6 +31,7 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	 * @param $url
 	 * @param $exception
 	 * @dataProvider provideFromUrlWithExceptionData
+	 * @covers \BlueSpice\Utility\UrlTitleParser::parseTitle
 	 */
 	public function testFromUrlException( $url, $exception ) {
 		$this->expectException( $exception );

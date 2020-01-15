@@ -16,11 +16,17 @@ class BSFixturesTest extends BSApiTestCase {
 		new BSUserFixtures( $this );
 	}
 
+	/**
+	 * @covers \Title::newFromText
+	 */
 	public function testPageFixtures() {
 		$title = \Title::newFromText( 'Template:Hello World' );
 		$this->assertTrue( $title->exists(), 'Title should be known' );
 	}
 
+	/**
+	 * @covers \User::newFromName
+	 */
 	public function testUserFixtures() {
 		$user = \User::newFromName( 'Paul' );
 		$this->assertFalse( $user->isAnon(), "User should be known" );
