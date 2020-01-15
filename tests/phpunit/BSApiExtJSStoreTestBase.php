@@ -152,10 +152,9 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		$response = $results[0];
 
 		if ( !$this->skipAssertTotal() ) {
-			$this->assertAttributeEquals(
+			$this->assertSame(
 				$this->iFixtureTotal,
-				'total',
-				(object)$response,
+				$response['total'],
 				'Field "total" contains wrong value'
 			);
 		}
@@ -217,10 +216,9 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 
 		$response = $results[0];
 
-		$this->assertAttributeEquals(
+		$this->assertSame(
 			$expectedTotal,
-			'total',
-			(object)$response,
+			$response['total'],
 			'Field "total" contains wrong value'
 		);
 	}
@@ -247,10 +245,9 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 
 		$response = $results[0];
 
-		$this->assertAttributeEquals(
+		$this->assertSame(
 			$expectedTotal,
-			'total',
-			(object)$response,
+			$response['total'],
 			'Field "total" contains wrong value'
 		);
 	}
