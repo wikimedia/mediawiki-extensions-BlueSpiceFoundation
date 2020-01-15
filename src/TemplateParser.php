@@ -4,7 +4,6 @@
 
 namespace BlueSpice;
 
-use LightnCandy;
 use Message;
 use MessageLocalizer;
 use RequestContext;
@@ -20,7 +19,13 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 	 */
 	protected function compile( $code ) {
 		$helpers = $this->getCompileHelpers();
-		return LightnCandy::compile( $code, [
+		if ( class_exists( '\LightnCandy\LightnCandy' ) ) {
+			// MediaWiki 1.35+
+			$class = '\LightnCandy\LightnCandy';
+		} else {
+			$class = '\LightnCandy';
+		}
+		return $class::compile( $code, [
 			'flags' => $this->compileFlags,
 			'basedir' => $this->templateDir,
 			'fileext' => '.mustache',
