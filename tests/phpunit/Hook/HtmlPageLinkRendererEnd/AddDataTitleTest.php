@@ -6,6 +6,9 @@ use BlueSpice\Services;
 
 class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 
+	/**
+	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle::__construct
+	 */
 	public function testCanConstruct() {
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
@@ -37,6 +40,9 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle::process
+	 */
 	public function testProcess() {
 		define( 'BS_ADD_DATA_TITLE_TEST', true );
 		$context = $this->getMockBuilder( '\RequestContext' )

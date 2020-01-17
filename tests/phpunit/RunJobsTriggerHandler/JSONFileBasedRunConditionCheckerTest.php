@@ -20,6 +20,9 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 		$this->fixtureJSONPathname = __DIR__ . '/../json/runJobsTriggerData.json';
 	}
 
+	/**
+	 * @covers \BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker::shouldRun
+	 */
 	public function testShouldRun() {
 		$this->ensureTestJSON();
 
@@ -41,6 +44,9 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 		$this->assertFalse( $checker->shouldRun( $dummyHandler, 'handler3' ) );
 	}
 
+	/**
+	 * @covers \BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker::savePersistenceFile
+	 */
 	public function testDataPersistence() {
 		$this->ensureTestJSON();
 		OnceADay::resetInstanceCounter();
@@ -93,6 +99,9 @@ class JSONFileBasedRunConditionCheckerTest extends \PHPUnit\Framework\TestCase {
 		);
 	}
 
+	/**
+	 * @covers \BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker::shouldRun
+	 */
 	public function testPerHandlerOptionOverride() {
 		$this->ensureTestJSON();
 		OnceADay::resetInstanceCounter();

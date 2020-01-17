@@ -10,6 +10,9 @@ use BlueSpice\Data\Record;
  * @group BlueSpiceFoundation
  */
 class TemplateTitleTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers \BlueSpice\Data\Filter\TemplateTitle::matches
+	 */
 	public function testPositive() {
 		$filter = new Filter\TemplateTitle( [
 			'field' => 'field1',
@@ -25,6 +28,9 @@ class TemplateTitleTest extends \PHPUnit\Framework\TestCase {
 		$this->assertTrue( $result );
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\Filter\TemplateTitle::matches
+	 */
 	public function testNegative() {
 		$filter = new Filter\TemplateTitle( [
 			'field' => 'field1',

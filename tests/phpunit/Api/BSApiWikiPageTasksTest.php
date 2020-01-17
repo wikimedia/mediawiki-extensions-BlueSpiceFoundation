@@ -27,6 +27,9 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 		);
 	}
 
+	/**
+	 * @covers \BSApiWikiPageTasks::task_addCategories
+	 */
 	public function testAddCategoriesSucceeds() {
 		$oTitle = \Title::newFromText( 'Category Test' );
 		$aTestCategories = [
@@ -69,6 +72,9 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 		);
 	}
 
+	/**
+	 * @covers \BSApiWikiPageTasks::task_setCategories
+	 */
 	public function testSetCategoriesSucceeds() {
 		$oTitle = \Title::newFromText( 'Category Test' );
 		$aTestCategories = [
@@ -108,6 +114,9 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 		);
 	}
 
+	/**
+	 * @covers \BSApiWikiPageTasks::task_removeCategories
+	 */
 	public function testRemoveCategoriesSucceeds() {
 		$oTitle = \Title::newFromText( 'Category Test' );
 

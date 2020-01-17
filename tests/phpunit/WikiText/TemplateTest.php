@@ -3,6 +3,9 @@
 namespace BlueSpice\Tests\WikiText;
 
 class TemplateTest extends \PHPUnit\Framework\TestCase {
+	/**
+	 * @covers \BlueSpice\WikiText\Template::render
+	 */
 	public function testSimpleIndexedParams() {
 		$template = new \BlueSpice\WikiText\Template( 'TestTemplate', [
 			'Value 1', 'Value 2', 'Value 3'
@@ -28,6 +31,9 @@ HERE;
 		$this->assertEquals( $expectedWikiText, $wikiText );
 	}
 
+	/**
+	 * @covers \BlueSpice\WikiText\Template::render
+	 */
 	public function testSimpleNamedParams() {
 		$template = new \BlueSpice\WikiText\Template( 'TestTemplate', [
 			'param1' => 'Value 1',
@@ -55,7 +61,10 @@ HERE;
 		$this->assertEquals( $expectedWikiText, $wikiText );
 	}
 
-		public function testSimpleMixedParams() {
+	/**
+	 * @covers \BlueSpice\WikiText\Template::render
+	 */
+	public function testSimpleMixedParams() {
 		$template = new \BlueSpice\WikiText\Template( 'TestTemplate', [
 			'param1' => 'Value 1',
 			'Value 2',
@@ -80,8 +89,11 @@ HERE;
 HERE;
 
 		$this->assertEquals( $expectedWikiText, $wikiText );
-	 }
+	}
 
+	/**
+	 * @covers \BlueSpice\WikiText\Template::render
+	 */
 	public function testComplexNamedParams() {
 		$template = new \BlueSpice\WikiText\Template( 'TestTemplate', [
 			'param1' => 'Value 1',
@@ -123,6 +135,9 @@ HERE;
 		$this->assertEquals( $expectedWikiText, $wikiText );
 	}
 
+	/**
+	 * @covers \BlueSpice\WikiText\Template::render
+	 */
 	public function testAutoLinebreakOnCertainWikiTextParamValues() {
 		$template = new \BlueSpice\WikiText\Template( 'TestTemplate', [
 			'param1' => [

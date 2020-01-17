@@ -27,6 +27,7 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 	 * @param \Title[] $defaultTitles
 	 * @param string $message
 	 * @dataProvider provideMediaWikiApiTitleOrPageIdData
+	 * @covers \BlueSpice\Utility\TitleParamsResolver::resolve
 	 */
 	public function testMediaWikiApiTitleOrPageId( $params, $expectedPrefixedText,
 		$defaultTitles, $message ) {
@@ -108,6 +109,7 @@ class TitleParamsResolverTest extends \MediaWikiTestCase {
 	 * @param string[] $expectedPrefixedTexts
 	 * @param string $message
 	 * @dataProvider provideMediaWikiApiTitlesOrPageIdsData
+	 * @covers \BlueSpice\Utility\TitleParamsResolver::resolve
 	 */
 	public function testMediaWikiApiTitlesOrPageIds( $params, $expectedPrefixedTexts, $message ) {
 		$resolver = new TitleParamsResolver( $params );

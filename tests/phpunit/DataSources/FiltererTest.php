@@ -60,9 +60,10 @@ class FiltererTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 *
-	 * @param array $filter
+	 * @param array $filters
 	 * @param array $expectedCount
 	 * @dataProvider provideFilterData
+	 * @covers BlueSpice\Data\Filterer::filter
 	 */
 	public function testFilter( $filters, $expectedCount ) {
 		$filterer = new Filterer( Filter::newCollectionFromArray( $filters ) );

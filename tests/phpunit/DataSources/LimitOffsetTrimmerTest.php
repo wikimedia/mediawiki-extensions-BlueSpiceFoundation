@@ -32,6 +32,9 @@ class LimitOffsetTrimmerTest extends \PHPUnit\Framework\TestCase {
 		'Thirteen'
 	];
 
+	/**
+	 * @covers \BlueSpice\Data\LimitOffsetTrimmer::trim
+	 */
 	public function testNormalPage() {
 		$trimmer = new LimitOffsetTrimmer( 5, 5 );
 		$trimmedData = $trimmer->trim( $this->testDataSets );
@@ -40,6 +43,9 @@ class LimitOffsetTrimmerTest extends \PHPUnit\Framework\TestCase {
 		$this->assertEquals( $trimmedData[0], 'Five' );
 	}
 
+	/**
+	 * @covers \BlueSpice\Data\LimitOffsetTrimmer::trim
+	 */
 	public function testLastPage() {
 		$trimmer = new LimitOffsetTrimmer( 5, 10 );
 		$trimmedData = $trimmer->trim( $this->testDataSets );
