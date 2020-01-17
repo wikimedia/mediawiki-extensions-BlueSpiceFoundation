@@ -16,7 +16,8 @@ Ext.define('BS.store.BSApi', {
 					rootProperty: 'results',
 					idProperty: 'id',
 					totalProperty: 'total'
-				}
+				},
+				timeout: 30 * 60 * 1000 //30 minutes
 			},
 			autoLoad: true,
 			remoteSort: true,
