@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Special;
 
+use BlueSpice\Services;
+
 class Credits extends \BlueSpice\SpecialPage {
 
 	private $aTranslators = [];
@@ -98,12 +100,13 @@ class Credits extends \BlueSpice\SpecialPage {
 	 * @return array
 	 */
 	protected function getTranslatorsList() {
-		$key = \BsCacheHelper::getCacheKey(
+		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$key = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'Credits',
 			'Translators'
 		);
-		$translators = \BsCacheHelper::get( $key );
+		$translators = $cacheHelper->get( $key );
 
 		if ( $translators !== false ) {
 			wfDebugLog(
@@ -117,7 +120,7 @@ class Credits extends \BlueSpice\SpecialPage {
 			);
 			$translators = $this->generateTranslatorsList();
 			// Keep list for one day
-			\BsCacheHelper::set( $key, $translators, 86400 );
+			$cacheHelper->set( $key, $translators, 86400 );
 		}
 		return $translators;
 	}

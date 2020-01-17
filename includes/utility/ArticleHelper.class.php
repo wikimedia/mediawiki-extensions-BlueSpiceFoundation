@@ -1,4 +1,7 @@
 <?php
+
+use BlueSpice\Services;
+
 /**
  * This class provides functions for common tasks while working with MediaWiki
  * Article/Title objects.
@@ -51,13 +54,14 @@ class BsArticleHelper {
 
 		$iTalkPageId = $oTalkPage->getArticleID();
 
-		$sKey = BsCacheHelper::getCacheKey(
+		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',
 			'getDiscussionAmount',
 			$iTalkPageId
 		);
-		$aData = BsCacheHelper::get( $sKey );
+		$aData = $cacheHelper->get( $sKey );
 
 		if ( $aData !== false ) {
 			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching discussion amounts from cache' );
@@ -74,7 +78,7 @@ class BsArticleHelper {
 			);
 			$iCount = $dbr->numRows( $res );
 
-			BsCacheHelper::set( $sKey, [ 'iCount' => $iCount ] );
+			$cacheHelper->set( $sKey, [ 'iCount' => $iCount ] );
 		}
 
 		return $iCount;
@@ -142,14 +146,15 @@ class BsArticleHelper {
 			return true;
 		}
 
-		$sKey = BsCacheHelper::getCacheKey(
+		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',
 			'getDiscussionAmount',
 			$this->oTitle->getTalkPage()->getArticleID()
 		);
 
-		BsCacheHelper::invalidateCache( $sKey );
+		$cacheHelper->invalidate( $sKey );
 	}
 
 	/**

@@ -2,6 +2,7 @@
 
 use BlueSpice\Extension;
 use BlueSpice\ITagExtensionDefinitionProvider;
+use BlueSpice\Services;
 
 /**
  * @deprecated since version 3.0.0 - Use \BlueSpice\Extension instead
@@ -199,7 +200,8 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 */
 	public function getCacheKey( $sSubKey = 'default' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return \BsCacheHelper::getCacheKey(
+		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		return $cacheHelper->getCacheKey(
 			'BlueSpice',
 			$this->getName(),
 			$sSubKey
