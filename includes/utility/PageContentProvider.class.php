@@ -159,7 +159,7 @@ class BsPageContentProvider {
 
 		$this->bEncapsulateContent = $bOldValueOfEncapsulateContent;
 
-		$oDOMDoc->loadXML( $sHtmlContent );
+		$oDOMDoc->loadHTML( $sHtmlContent );
 
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
 		foreach ( $oPreTags as $oPreTag ) {
