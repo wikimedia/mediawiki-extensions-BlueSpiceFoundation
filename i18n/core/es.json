@@ -9,7 +9,8 @@
 			"Amitie 10g",
 			"Jelou",
 			"Tiberius1701",
-			"Hasley"
+			"Hasley",
+			"Agusbou2015"
 		]
 	},
 	"bluespicefoundation-desc": "Habilita a MediaWiki para la empresa",
@@ -96,7 +97,7 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Previsualizar",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "mostrar páginas de administración de BlueSpice",
+	"action-wikiadmin": "utilizado en muchas extensiones de BlueSpice para tareas administrativas potencialmente peligrosas como la gestión de usuarios, permisos, configuración global",
 	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
 	"bs-notifications-agent-anon": "usuario anónimo",
 	"protect-level-editor": "Solo editores y administradores"

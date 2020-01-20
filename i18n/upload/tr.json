@@ -26,6 +26,6 @@
 	"bs-upload-uploadwarningdialog-intro": "Dosyayı yüklemeye çalışırken aşağıdaki hatalar meydana geldi",
 	"bs-upload-uploadwarningdialog-outro": "Uyarıları yok saymak ve dosyayı yüklemek için \"{{int:bs-extjs-ok}}\" düğmesini tıklayın, yükleme formuna geri dönmek için \"{{int:bs-extjs-cancel}}\" düğmesini tıklayın.",
 	"bs-upload-uploadwarningdialog-warning-exists": "\"$1\" adında bir dosya zaten var",
-	"bs-upload-uploadwarningdialog-warning-duplicate": "Bu dosyanın {{PLURAL:$1|bir kopyası| kopyasıdır}}",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Bu dosyanın {{PLURAL:$1|bir kopyası|kopyasıdır}}",
 	"bs-upload-uploadwarningdialog-warning-unknown": "\"$1\" kodlu bilinmeyen uyarı"
 }

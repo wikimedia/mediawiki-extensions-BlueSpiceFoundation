@@ -3,23 +3,24 @@
 		"authors": [
 			"Captantrips",
 			"Vito Genovese",
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"SwornToTranslate29"
 		]
 	},
 	"bs-deferred-action-status-pending": "Beklemede.",
 	"bs-deferred-action-status-running": "Çalıştırılıyor...",
 	"bs-deferred-action-status-done": "Yapıldı.",
 	"bs-deferred-action-status-error": "Başarısız.",
-	"bs-deferred-action-apicopypage-description": "\"$1\" adresini \"$2\" kopyala.",
+	"bs-deferred-action-apicopypage-description": "\"$1\"'i \"$2\"'ye kopyala.",
 	"bs-deferred-action-apieditpage-description": "\"$1\" adlı sayfayı düzenle.",
 	"bs-deferred-batch-title": "Toplu işleniyor",
 	"bs-deferred-batch-progress-desc": "İlerleme",
 	"bs-deferred-batch-actions": "Eylemler",
 	"bs-deferred-batch-description": "Açıklama",
 	"bs-deferred-batch-status": "Durum",
-	"bs-deferred-action-apiaddcategories-description": "'$1' için kategori ekle",
+	"bs-deferred-action-apiaddcategories-description": "'$1' için kategoriler ekle.",
 	"bs-deferred-action-apiremovecategories-description": "'$1' içinden kategorileri kaldırın.",
 	"bs-deferred-action-apisetcategories-description": "'$1' kategorilerini ayarlayın.",
-	"bs-deferred-action-apimovepage-description": "\"$1\" adresini \"$2\" taşı.",
+	"bs-deferred-action-apimovepage-description": "\"$1\"'i \"$2\"'ye taşı.",
 	"bs-deferred-action-apideletepage-description": "\"$1\" sayfasını sil."
 }

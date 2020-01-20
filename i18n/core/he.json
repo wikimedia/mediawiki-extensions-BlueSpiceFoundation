@@ -10,7 +10,8 @@
 			"Guycn2",
 			"YaronSh",
 			"Steeve815",
-			"Ghsuvr"
+			"Ghsuvr",
+			"Amire80"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -23,7 +24,7 @@
 	"bs-extended-search-textfield-defaultvalue": "חיפוש...",
 	"bs-extended-search-textfield-tooltip": "חיפוש בוויקי",
 	"bs-no-information-available": "אין מידע זמין",
-	"bs-years-duration": "{{PLURAL:$1|שנה אחת|$1 שנים}}",
+	"bs-years-duration": "{{PLURAL:$1|שנה אחת|שנתיים|$1 שנה|$1 שנים}}",
 	"bs-months-duration": "{{PLURAL:$1|חודש אחד|$1 חודשים}}",
 	"bs-weeks-duration": "{{PLURAL:$1|שבוע אחד|$1 שבועות}}",
 	"bs-days-duration": "{{PLURAL:$1|יום אחד|$1 ימים}}",
