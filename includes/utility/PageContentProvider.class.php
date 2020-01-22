@@ -193,11 +193,10 @@ class BsPageContentProvider {
 	 * @param Array $aParams Contains processing information, like the requested revision id (oldid) and wether to follow redirects or not.
 	 * @return string The pages HTML output, wrapped in a '<div class="bs-page-content">' and with the title and the "bodyContent", if $this->bEncapsulateContent was not false.
 	 * @global WebRequest $wgRequest
-	 * @global User $wgUser
 	 * @global OutputPage $wgOut
 	 */
 	public function getHTMLContentFor( $oTitle, $aParams = array() ){
-		global $wgRequest, $wgUser, $wgOut;
+		global $wgRequest, $wgOut;
 		$aParams = array_merge(
 			array(
 				'oldid'            => 0,
@@ -214,6 +213,7 @@ class BsPageContentProvider {
 		}
 
 		$oTitle = ( $oRedirectTarget == null ) ? $oTitle : $oRedirectTarget;
+		$user = RequestContext::getMain()->getUser();
 
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$context->setRequest(
@@ -225,7 +225,7 @@ class BsPageContentProvider {
 				$wgRequest->wasPosted() )
 		);
 		$context->setTitle( $oTitle );
-		$context->setUser( $wgUser );
+		$context->setUser( $user );
 		$context->setSkin( $wgOut->getSkin() );
 		//Prevent "BeforePageDisplay" hook
 		$context->getOutput()->setArticleBodyOnly( true ); //TODO: redundant?
