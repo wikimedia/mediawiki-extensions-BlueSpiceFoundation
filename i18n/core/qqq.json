@@ -103,5 +103,7 @@
 	"right-wikiadmin": "Special permission used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration etc...\nShould only be given to the \"sysop\" group.\n{{doc-right|wikiadmin}}",
 	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous",
 	"protect-level-editor": "Used as protect level.\n\nSee example: {{canonicalurl:Main_Page|action=info}}",
-	"bs-ping-on-init-desc": "Description for configuration variable $bsgPingOnInit"
+	"bs-ping-on-init-desc": "Description for configuration variable $bsgPingOnInit",
+	"right-editor": "{{doc-right|editor}}",
+	"action-editor": "{{doc-action|editor}}"
 }
