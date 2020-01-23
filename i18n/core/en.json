@@ -98,5 +98,7 @@
 	"right-wikiadmin": "Used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration",
 	"bs-notifications-agent-anon": "anonymous user",
 	"protect-level-editor": "Allow only editors and administrators",
-	"bs-ping-on-init-desc": "Should ping request be sent immediately after page loads"
+	"bs-ping-on-init-desc": "Should ping request be sent immediately after page loads",
+	"right-editor": "Be granted all permissions from the role \"editor\" for protected pages in editor restriction when the role system is activated",
+	"action-editor": "be granted all permissions from the role \"editor\" for protected pages in editor restriction when the role system is activated"
 }
