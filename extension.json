@@ -162,12 +162,22 @@
 		"bs-task": "\\BlueSpice\\Api\\Task"
 	},
 	"GroupPermissions": {
+		"*": {
+			"wikiadmin": false,
+			"editor": false
+		},
+		"user": {
+			"wikiadmin": false,
+			"editor": false
+		},
 		"sysop": {
-			"wikiadmin": true
+			"wikiadmin": true,
+			"editor": false
 		}
 	},
 	"AvailableRights": [
-		"wikiadmin"
+		"wikiadmin",
+		"editor"
 	],
 	"ResourceModules": {
 		"ext.bluespice": {
