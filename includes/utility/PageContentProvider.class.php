@@ -213,7 +213,6 @@ class BsPageContentProvider {
 		}
 
 		$oTitle = ( $oRedirectTarget == null ) ? $oTitle : $oRedirectTarget;
-		$user = RequestContext::getMain()->getUser();
 
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$context->setRequest(
@@ -225,7 +224,6 @@ class BsPageContentProvider {
 				$wgRequest->wasPosted() )
 		);
 		$context->setTitle( $oTitle );
-		$context->setUser( $user );
 		$context->setSkin( $wgOut->getSkin() );
 		//Prevent "BeforePageDisplay" hook
 		$context->getOutput()->setArticleBodyOnly( true ); //TODO: redundant?
