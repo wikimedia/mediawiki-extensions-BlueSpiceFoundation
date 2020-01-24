@@ -4,8 +4,8 @@ namespace BlueSpice\Data\Entity\Reader;
 
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\EntityConfig;
-use BsPageContentProvider;
 use Title;
+use WikiPage;
 
 abstract class Content extends \BlueSpice\Data\Entity\Reader {
 	/**
@@ -25,9 +25,7 @@ abstract class Content extends \BlueSpice\Data\Entity\Reader {
 			return null;
 		}
 
-		$text = BsPageContentProvider::getInstance()->getContentFromTitle(
-			$title
-		);
+		$text = WikiPage::factory( $title )->getContent()->getNativeData();
 
 		$content = new EntityContent( $text );
 		$data = (object)$content->getData()->getValue();
