@@ -100,5 +100,7 @@
 	"right-wikiadmin": "Utilisé dans de nombreux modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d'accès, de la configuration globale",
 	"bs-notifications-agent-anon": "utilisateur anonyme",
 	"protect-level-editor": "Autoriser seulement les éditeurs et les administrateurs",
-	"bs-ping-on-init-desc": "Indique si une requête ping devrait être envoyée immédiatement après le chargement de la page"
+	"bs-ping-on-init-desc": "Indique si une requête ping devrait être envoyée immédiatement après le chargement de la page",
+	"right-editor": "Bénéficiez de toutes les autorisations du rôle « éditeur » pour les pages protégées concernant la restriction de l'éditeur lorsque le système de rôles est activé",
+	"action-editor": "bénéficiez de toutes les autorisations du rôle « éditeur » pour les pages protégées concernant la restriction de l'éditeur lorsque le système de rôles est activé"
 }

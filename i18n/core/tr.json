@@ -94,5 +94,7 @@
 	"right-wikiadmin": "Birçok BlueSpice uzantısında, kullanıcıları yönetme, izinler, genel yapılandırma gibi potansiyel tehlikeli idari görevler için kullanılır",
 	"bs-notifications-agent-anon": "anonim kullanıcı",
 	"protect-level-editor": "Yalnızca editörlere ve yöneticilere izin ver",
-	"bs-ping-on-init-desc": "Sayfa yüklendikten hemen sonra ping isteği gönderilmelidir."
+	"bs-ping-on-init-desc": "Sayfa yüklendikten hemen sonra ping isteği gönderilmelidir.",
+	"right-editor": "Rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alın",
+	"action-editor": "rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alınabilir"
 }
