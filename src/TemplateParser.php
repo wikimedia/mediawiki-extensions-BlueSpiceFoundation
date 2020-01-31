@@ -14,10 +14,11 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 	/**
 	 * Compile the Mustache code into PHP code using LightnCandy
 	 * @param string $code Mustache code
+	 * @param string $filename File name the code came from; only used for error reporting
 	 * @return string PHP code (with '<?php')
 	 * @throws RuntimeException
 	 */
-	protected function compile( $code ) {
+	protected function compile( $code, $filename ) {
 		$helpers = $this->getCompileHelpers();
 		if ( class_exists( '\LightnCandy\LightnCandy' ) ) {
 			// MediaWiki 1.35+
