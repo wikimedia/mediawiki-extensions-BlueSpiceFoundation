@@ -53,7 +53,7 @@ class Json extends ApiFormatJson {
 			 * implementations)
 			 * Changing the 'formatversion' to 2, disables this behavior
 			 */
-			$params['formatversion'][ApiBase::PARAM_DFLT] = 2;
+			$params['formatversion'][ApiBase::PARAM_DFLT] = '2';
 		}
 
 		return $params;
