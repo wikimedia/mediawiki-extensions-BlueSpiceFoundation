@@ -5,7 +5,8 @@
 			"Guycn2",
 			"YaronSh",
 			"Erelon",
-			"Steeve815"
+			"Steeve815",
+			"Ghsuvr"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
@@ -30,5 +31,14 @@
 	"bs-api-task-taskData-page-id": "המזהה של דף ויקי קיים",
 	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי",
 	"bs-wikipage-tasks-error-page-not-valid": "הדף שצוין אינו תקין.",
-	"apihelp-bs-wikipage-tasks-summary": "מספק פעולות נפוצות ל־WikiPages"
+	"apihelp-bs-wikipage-tasks-summary": "מספק פעולות נפוצות ל־WikiPages",
+	"apihelp-bs-filebackend-store-summary": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-user-store-summary": "מציג את כל המשתמשים ממסד הנתונים. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-category-store-description": "מציג את כל הקטגוריות. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-category-store-summary": "מציג את כל הקטגוריות. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-adminuser-store-description": "מציג את כל המשתמשים ממסד הנתונים עם מידע רגיש נוסף. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-adminuser-store-summary": "מציג את כל המשתמשים ממסד הנתונים עם מידע רגיש נוסף. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-group-store-summary": "מציג את כל הקבוצות חוץ מ-$wgImplicitGroups. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-interwiki-store-description": "מציג את כל קישורי הויקי הפנימיים. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-interwiki-store-summary": "מציג את כל קישורי הויקי הפנימיים. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS."
 }

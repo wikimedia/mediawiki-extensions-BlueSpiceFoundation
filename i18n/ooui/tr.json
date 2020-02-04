@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dual"
+			"Dual",
+			"BaRaN6161 TURK"
 		]
 	},
-	"bs-ooui-key-value-input-widget-key-label": "Anahtar kelime",
+	"bs-ooui-key-value-input-widget-key-label": "Anahtar",
 	"bs-ooui-key-value-input-widget-value-label": "Değer",
 	"bs-ooui-key-value-input-widget-add-button-label": "Ekle",
 	"bs-ooui-key-value-input-widget-add-form-label": "Yeni girdi ekle",
-	"bs-ooui-key-value-input-widget-error-message": "Tüm gerekli alanlar doldudulmalı!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Hiç değer girilmedi!"
+	"bs-ooui-key-value-input-widget-error-message": "Tüm gerekli alanlar doldurulmalıdır!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Hiç değer girilmedi!",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Yeni ekle..."
 }

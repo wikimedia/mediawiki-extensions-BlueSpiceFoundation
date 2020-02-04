@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Verdy p"
+			"Verdy p",
+			"Thibaut120094"
 		]
 	},
-	"bs-extjs-portal-config": "Configurer le portlet :",
+	"bs-extjs-portal-config": "Configurer le portlet :",
 	"bs-extjs-portal-title": "Titre du portlet",
 	"bs-extjs-portal-height": "Hauteur",
 	"bs-extjs-portal-count": "Entrées",

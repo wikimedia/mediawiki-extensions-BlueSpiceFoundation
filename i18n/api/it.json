@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Wikitoni"
+			"Wikitoni",
+			"Tizven"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Elenca tutti i file dal backend. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
@@ -51,5 +52,6 @@
 	"apihelp-bs-category-treestore-summary": "Elenca le sottocategorie di una specifica categoria",
 	"apihelp-bs-category-treestore-param-node": "Un percorso di categorie separate da slash",
 	"bs-api-task-taskData-page-id": "L'ID di una pagina wiki esistente",
-	"bs-api-task-taskData-page-title": "Un titolo valido di una pagina wiki"
+	"bs-api-task-taskData-page-title": "Un titolo valido di una pagina wiki",
+	"apihelp-bs-wikisubpage-treestore-param-node": "Il titolo con prefisso della pagina wiki"
 }

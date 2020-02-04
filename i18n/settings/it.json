@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Tizven",
+			"Dansita"
 		]
 	},
 	"bs-setting-path-feature": "Caratteristica",
@@ -13,5 +15,8 @@
 	"bs-setting-path-contentstructuring": "Struttura dei contenuti",
 	"bs-setting-path-communication": "Comunicazione",
 	"bs-setting-path-administration": "Amministrazione",
-	"bs-setting-path-export": "Esporta"
+	"bs-setting-path-export": "Esporta",
+	"bs-setting-path-package": "Pacchetto",
+	"bs-setting-path-dataanalysis": "Analisi dati",
+	"bs-setting-path-editor": "Editor"
 }

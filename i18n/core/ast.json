@@ -93,5 +93,7 @@
 	"right-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
 	"bs-notifications-agent-anon": "usuariu anónimu",
 	"bs-lockdown-groups-permissionerror": "L'acción «$1» nun ta disponible {{PLURAL:$2|pol motivu siguiente|polos motivos siguientes}}: $3",
-	"action-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global"
+	"action-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
+	"protect-level-editor": "Permitir sólo a los editores y alministradores",
+	"bs-ping-on-init-desc": "Si la solicitú de ping s'unvia darréu tres cargar la páxina"
 }

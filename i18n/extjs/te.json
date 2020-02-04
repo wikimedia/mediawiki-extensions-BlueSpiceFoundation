@@ -27,5 +27,7 @@
 	"bs-extjs-label-namespace": "పేరుబరి",
 	"bs-extjs-label-page": "పేజీ",
 	"bs-extjs-tools-trigger-text": "పనిముట్లు",
-	"bs-extjs-flyout-tab-grid-label": "వివరాలు"
+	"bs-extjs-flyout-tab-grid-label": "వివరాలు",
+	"bs-extjs-title-warning": "హెచ్చరిక",
+	"bs-extjs-categorytree-title": "వర్గాలు"
 }

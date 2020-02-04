@@ -37,5 +37,10 @@
 	"bs-extjs-title-warning": "Tembe kem",
 	"bs-extjs-categorytree-title": "Kategoriyi",
 	"bs-extjs-filter-date-filter": "Parzûn",
-	"bs-extjs-flyout-tab-thumbs-label": "Resımê qıckeki"
+	"bs-extjs-flyout-tab-thumbs-label": "Resımê qıckeki",
+	"bs-extjs-label-page": "Pele",
+	"bs-extjs-label-directsearch": "Cı geyre",
+	"bs-extjs-filter-bool-no": "nê",
+	"bs-extjs-pageexport-list-format-link-label": "Gıre",
+	"bs-extjs-tools-trigger-text": "Haceti"
 }

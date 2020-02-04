@@ -100,5 +100,7 @@
 	"bs-lockdown-groups-permissionerror": "出於以下{{PLURAL:$2|原因}}「$1」操作無效：$3",
 	"action-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
 	"protect-level-editor": "只允許編輯者和管理員",
-	"bs-ping-on-init-desc": "在頁面載入後是否應立刻發送 ping 請求"
+	"bs-ping-on-init-desc": "在頁面載入後是否應立刻發送 ping 請求",
+	"right-editor": "當身份系統啟動時，向受編輯者限制的保護頁面授予所有「編輯者」身份權限",
+	"action-editor": "當身份系統啟動時，向受編輯者限制的保護頁面授予所有「編輯者」身份權限"
 }

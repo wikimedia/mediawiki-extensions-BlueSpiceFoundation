@@ -8,5 +8,6 @@
 	"bs-filerepo-headerfilewidth": "వెడల్పు",
 	"bs-filerepo-headerfileheight": "ఎత్తు",
 	"bs-filerepo-headerfileusertext": "వాడుకరి",
-	"bs-filerepo-headerfiledescription": "వివరణ"
+	"bs-filerepo-headerfiledescription": "వివరణ",
+	"bs-filerepo-headerfilesize": "పరిమాణం"
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"Yekrats",
 			"Robin van der Vliet",
-			"Mirin"
+			"Mirin",
+			"Zarisi"
 		]
 	},
 	"bs-extjs-cancel": "Nuligi",
@@ -72,5 +73,6 @@
 	"bs-extjs-pageexport-success": "Elportado sukcesis",
 	"bs-extjs-export-search-summary-text": "Produktita de PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Nomo de la listo ne estas valida",
-	"bs-extjs-combo-box-default-placeholder": "Entajpu por filtri..."
+	"bs-extjs-combo-box-default-placeholder": "Entajpu por filtri...",
+	"bs-extjs-pageexport-overwrite-label": "Anstataŭigi"
 }

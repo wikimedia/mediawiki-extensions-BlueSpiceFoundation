@@ -46,5 +46,6 @@
 	"bs-filesystemhelper-upload-err-code": "Ne povis sendar l'arkivo: $1",
 	"bs-filesystemhelper-upload-unsupported-type": "La tipo di arkivo ne esas aceptata.",
 	"bs-filesystemhelper-save-base64-error": "L'arkivo ne povis prezervesar.",
-	"bs-filesystemhelper-upload-base64-error": "Ne povis sendar l'arkivo."
+	"bs-filesystemhelper-upload-base64-error": "Ne povis sendar l'arkivo.",
+	"bs-ns": "'Namespace'"
 }

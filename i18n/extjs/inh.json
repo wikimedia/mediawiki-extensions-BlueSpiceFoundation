@@ -8,5 +8,7 @@
 	"bs-extjs-copy": "Кеп яккха",
 	"bs-extjs-label-user": "Доакъашхо",
 	"bs-extjs-filters": "Луттаргаш",
-	"bs-extjs-filter-date-filter": "Луттарг"
+	"bs-extjs-filter-date-filter": "Луттарг",
+	"bs-extjs-confirm": "Бакъде",
+	"bs-extjs-pageSize": "Цхьан оагIона тIа хьагойтарий дукхал"
 }
