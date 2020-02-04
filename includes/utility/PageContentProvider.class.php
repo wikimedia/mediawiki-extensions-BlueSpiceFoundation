@@ -16,7 +16,9 @@ class BsPageContentProvider {
 	protected $oOriginalMainRequestContextOutputPage = null;
 
 	public    $oParserOptions            = null;
-	protected $sTemplate                 = false; // TODO RBV (21.01.11 17:09): Better templating...
+
+	// TODO RBV (21.01.11 17:09): Better templating...
+	protected $sTemplate                 = false; 
 	public    $bEncapsulateContent       = true;
 
 	public static $oInstance             = null;
@@ -145,8 +147,8 @@ class BsPageContentProvider {
 
 		$sHtmlContent = $this->getHTMLContentFor( $oTitle, $aParams );
 
-		//To avoid strange errors... should never happen.
-		if ( !mb_check_encoding( $sHtmlContent, 'utf8') ) {
+		// To avoid strange errors... should never happen.
+		if ( !mb_check_encoding( $sHtmlContent, 'utf8' ) ) {
 			$sHtmlContent = utf8_encode( $sHtmlContent );
 			wfDebug(
 				'BsPageContentProvider::getDOMDocumentContentFor: Content of '
@@ -156,7 +158,7 @@ class BsPageContentProvider {
 
 		$this->bEncapsulateContent = $bOldValueOfEncapsulateContent;
 
-		$oDOMDoc->loadHTML( $sHtmlContent );
+		$oDOMDoc->loadHTML( '<?xml encoding="utf-8" ?>' . $sHtmlContent );
 
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
 		foreach( $oPreTags as $oPreTag ) {
