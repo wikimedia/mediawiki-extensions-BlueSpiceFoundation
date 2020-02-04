@@ -31,5 +31,7 @@
 	"bs-navigation-instructions": "సూచనలు",
 	"bs-ns": "పేరుబరి",
 	"bs-from-something": "($1 నుండి)",
-	"bs-graphicallist-action-close": "మూసివేయి"
+	"bs-graphicallist-action-close": "మూసివేయి",
+	"bs-graphicallist-action-list": "జాబితా",
+	"bs-graphicallist-action-preview": "మునుజూపు"
 }

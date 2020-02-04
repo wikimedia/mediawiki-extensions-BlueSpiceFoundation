@@ -13,5 +13,7 @@
 	"bs-deferred-action-apieditpage-description": "\"$1\"i bıvurne.",
 	"bs-deferred-batch-description": "Şınasnayış",
 	"bs-deferred-batch-status": "Weziyet",
-	"bs-deferred-action-apideletepage-description": "\"$1\" bestere."
+	"bs-deferred-action-apideletepage-description": "\"$1\" bestere.",
+	"bs-deferred-batch-progress-desc": "Averşiyayış",
+	"bs-deferred-batch-actions": "Hereketi"
 }

@@ -7,5 +7,7 @@
 	"bs-deferred-batch-progress-desc": "పురోగతి",
 	"bs-deferred-batch-actions": "చర్యలు",
 	"bs-deferred-batch-description": "వివరణ",
-	"bs-deferred-batch-status": "స్థితి"
+	"bs-deferred-batch-status": "స్థితి",
+	"bs-deferred-action-status-done": "పూర్తయింది.",
+	"bs-deferred-action-status-error": "విఫలమైంది."
 }

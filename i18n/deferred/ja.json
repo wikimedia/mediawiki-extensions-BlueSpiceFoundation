@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Otokoume",
-			"Shirayuki"
+			"Shirayuki",
+			"Aefgh39622"
 		]
 	},
 	"bs-deferred-action-status-done": "完了。",
@@ -12,5 +13,6 @@
 	"bs-deferred-batch-status": "状態",
 	"bs-deferred-action-apiremovecategories-description": "「$1」からカテゴリを除去。",
 	"bs-deferred-action-apimovepage-description": "「$1」を「$2」に移動します。",
-	"bs-deferred-action-apideletepage-description": "「$1」を削除。"
+	"bs-deferred-action-apideletepage-description": "「$1」を削除。",
+	"bs-deferred-batch-progress-desc": "進捗"
 }

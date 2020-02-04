@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"bs-validator-email-validation-approved": "E-posta adresi başarıyla doğrulandı.",
+	"bs-validator-email-validation-not-approved": "E-posta adresi doğrulanamadı.",
+	"bs-validator-url-validation-approved": "URL başarıyla doğrulandı.",
+	"bs-validator-url-validation-not-approved": "URL doğrulanamadı.",
+	"bs-validator-arg-count-validation-approved": "\"Sayı\" niteliği başarıyla doğrulandı.",
+	"bs-validator-arg-count-validation-not-approved": "\"Sayı\" niteliği doğrulanamadı.",
+	"bs-validator-set-validation-approved": "$1 başarıyla doğrulandı.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|$1 için yalnızca aşağıdaki değere izin verilir|$1 için aşağıdaki değerlerden sadece birine izin verilir}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "Sağlanan değer çok düşük. $1'den az olmamalıdır.",
+	"bs-validator-integer-range-validation-too-high": "Sağlanan değer çok yüksek. $1'den büyük olmamalıdır.",
+	"bs-validator-value-not-recognized": "Değer işlenemedi",
+	"bs-validator-invalid-boolean": "Geçerli bir boole değil",
+	"bs-validator-invalid-float": "Geçerli bir kayan nokta değil",
+	"bs-validator-invalid-integer": "Geçerli bir tamsayı değil",
+	"bs-validator-invalid-string": "Geçerli bir dize değil",
+	"bs-validator-invalid-coordinate": "Geçerli bir koordinat değil",
+	"bs-validator-invalid-parameter": "Bu parametreye izin verilmiyor",
+	"bs-validator-missing-required": "Bu parametre gerekli"
+}

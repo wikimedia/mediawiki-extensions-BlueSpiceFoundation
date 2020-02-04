@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"bs-setting-path-feature": "Özellik",
+	"bs-setting-path-extension": "Uzantı",
+	"bs-setting-path-package": "Paket",
+	"bs-setting-path-system": "Sistem",
+	"bs-setting-path-dataanalysis": "Veri analizi",
+	"bs-setting-path-editor": "Editör",
+	"bs-setting-path-search": "Arama ve Gezinme",
+	"bs-setting-path-personalisation": "Kişiselleştirme",
+	"bs-setting-path-skinning": "Stiller",
+	"bs-setting-path-customizing": "Özelleştirme",
+	"bs-setting-path-contentstructuring": "İçerik yapılandırma",
+	"bs-setting-path-communication": "İletişim",
+	"bs-setting-path-administration": "Yönetim",
+	"bs-setting-path-qualityassurance": "Kalite güvencesi",
+	"bs-setting-path-export": "Dışa aktar"
+}

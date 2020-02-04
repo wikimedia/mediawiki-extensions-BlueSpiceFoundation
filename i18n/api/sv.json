@@ -16,7 +16,7 @@
 	"apihelp-bs-wikipage-tasks-description": "Tillhandahåller vanliga åtgärder för WikiPages",
 	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
 	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
-	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera cache</code>",
+	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera mellanlager</code>",
 	"apihelp-bs-store-param-format": "Formatet för utmatningen (endast JSON eller formaterad JSON)",
 	"apihelp-bs-task-param-format": "Format för resultatet",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
@@ -38,5 +38,7 @@
 	"apihelp-bs-task-param-task": "Uppgiften som bör utföras",
 	"apihelp-bs-task-param-taskdata": "JSON-sträng-kodat objekt med godtycklig data för uppgiften",
 	"bs-wikipage-tasks-error-page-not-valid": "Den angivna sidan är inte giltig.",
-	"apihelp-bs-task-param-examples": "Visa exempel med task parameters"
+	"apihelp-bs-task-param-examples": "Visa exempel med task parameters",
+	"apihelp-bs-filebackend-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-store-param-page": "Gör det möjlig att räkna ut start/limit på vaktmästarsidan"
 }

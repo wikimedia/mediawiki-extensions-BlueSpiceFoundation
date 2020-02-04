@@ -95,5 +95,7 @@
 	"bs-lockdown-groups-permissionerror": "A ação \"$1\" não está disponível {{PLURAL:$2|pelo seguinte motivo|pelos seguintes motivos}}: $3",
 	"action-wikiadmin": "usado em muitas extensões do BlueSpice para tarefas administrativas potencialmente perigosas, como gerenciamento de usuários, permissões, configuração global",
 	"protect-level-editor": "Permitir apenas editores e administradores",
-	"bs-ping-on-init-desc": "Deve ser enviado um pedido ''ping'' imediatamente após os carregamentos de página"
+	"bs-ping-on-init-desc": "Deve ser enviado um pedido ''ping'' imediatamente após os carregamentos de página",
+	"right-editor": "Ser concedidas todas as permissões do papel \"editor\" para páginas protegidas na restrição do editor quando o sistema de papéis estiver ativado",
+	"action-editor": "conceder todas as permissões da função \"editor\" para páginas protegidas na restrição do editor quando o sistema de funções estiver ativado"
 }
