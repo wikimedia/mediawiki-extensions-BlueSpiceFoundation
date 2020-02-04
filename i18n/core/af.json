@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joris Darlington Quarshie"
+		]
+	},
+	"right-editor": "Toestaan alle regte van die rol \"redakteur\" vir beskermde bladsye in redakteurbeperking wanneer die rolstelsel geaktiveer is",
+	"action-editor": "kry alle regte van die rol \"redakteur\" vir beskermde bladsye in redakteurbeperking wanneer die rolstelsel geaktiveer is"
+}

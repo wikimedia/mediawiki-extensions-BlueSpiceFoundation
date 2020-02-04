@@ -9,7 +9,9 @@
 			"ערן",
 			"Guycn2",
 			"YaronSh",
-			"Steeve815"
+			"Steeve815",
+			"Ghsuvr",
+			"Amire80"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -22,7 +24,7 @@
 	"bs-extended-search-textfield-defaultvalue": "חיפוש...",
 	"bs-extended-search-textfield-tooltip": "חיפוש בוויקי",
 	"bs-no-information-available": "אין מידע זמין",
-	"bs-years-duration": "{{PLURAL:$1|שנה אחת|$1 שנים}}",
+	"bs-years-duration": "{{PLURAL:$1|שנה אחת|שנתיים|$1 שנה|$1 שנים}}",
 	"bs-months-duration": "{{PLURAL:$1|חודש אחד|$1 חודשים}}",
 	"bs-weeks-duration": "{{PLURAL:$1|שבוע אחד|$1 שבועות}}",
 	"bs-days-duration": "{{PLURAL:$1|יום אחד|$1 ימים}}",
@@ -86,11 +88,20 @@
 	"bs-graphicallist-action-preview": "תצוגה מקדימה",
 	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "צפייה בדפי ניהול של BlueSpice",
+	"right-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
 	"bs-notifications-agent-anon": "משתמש אלמוני",
 	"bs-lockdown-groups-permissionerror": "הפעולה \"$1\" לא זמינה בגלל {{PLURAL:$2|הסיבה הבאה|הסיבות הבאות}}: $3",
 	"bs-filesystemhelper-folder-rename-error": "לא ניתן לשנות את שם התיקייה <code>$1</code> לשם <code>$2</code>.",
 	"bs-pref-anonuserimage": "אווטאר של משתמש אנונימי:",
 	"bs-pref-deleteduserimage": "אווטאר מחוק של משתמש:",
-	"action-wikiadmin": "לצפות בדפי ניהול של BlueSpice"
+	"action-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
+	"bs-filesystemhelper-has-path-traversal": "נתיב מעבר התגלה!",
+	"bs-filesystemhelper-upload-local-error-stash-file": "לא ניתן היה להעביר את הקובץ למצב ההעלאה.",
+	"bs-pref-miniprofileenforceheight": "כוח הגובה של אווטאר המשתמש",
+	"bs-pref-bspinginterval": "מרווח פינג (בשניות):",
+	"bs-tag-input-desc": "ערך תוכן האלמנט",
+	"bs-tag-param-desc": "ערך תכונת האלמנט '$1'",
+	"bs-parser-error-invalid-category-title": "הדף אינו קטגוריה חוקית: $1",
+	"protect-level-editor": "לאפשר רק לעורכים ומנהלים",
+	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מיד לאחר טעינת העמוד"
 }

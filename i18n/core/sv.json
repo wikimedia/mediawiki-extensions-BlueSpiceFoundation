@@ -92,5 +92,8 @@
 	"bs-bluespice-mediawiki": "BlueSpice-Mediawiki",
 	"action-wikiadmin": "Visa BlueSpices administrationssidor",
 	"bluespicefoundation-desc": "Få MediaWiki för företag redo",
-	"bs-tag-input-desc": "Värdet för elementets innehåll"
+	"bs-tag-input-desc": "Värdet för elementets innehåll",
+	"bs-exttype-bluespice": "BlueSpice-utvidgningar",
+	"protect-level-editor": "Tillåt endast mallredigerare och administratörer",
+	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?"
 }

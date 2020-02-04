@@ -7,7 +7,8 @@
 			"Otokoume",
 			"Suyama",
 			"神樂坂秀吉",
-			"Reiwa period"
+			"Reiwa period",
+			"Aefgh39622"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -63,5 +64,13 @@
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "BlueSpice 管理ページを表示",
 	"action-wikiadmin": "BlueSpice 管理ページの表示",
-	"bs-extended-search-textfield-tooltip": "wiki内を検索"
+	"bs-extended-search-textfield-tooltip": "wiki内を検索",
+	"bs-tab_navigation": "ナビゲーション",
+	"bs-userpreferences-link-title": "個人ユーザー設定を表示する",
+	"bs-from-something": "($1 より)",
+	"bs-pref-fileextensions": "許可されたファイル拡張子:",
+	"bs-pref-imageextensions": "許可された画像拡張子:",
+	"bs-graphicallist-action-preview": "プレビュー",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-notifications-agent-anon": "匿名ユーザー"
 }

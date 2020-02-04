@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joao Xavier"
+		]
+	},
+	"bs-extjs-ok": "O.K.",
+	"bs-extjs-cancel": "Anular",
+	"bs-extjs-label-namespace": "'Namespace'"
+}

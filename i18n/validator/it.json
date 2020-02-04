@@ -3,7 +3,8 @@
 		"authors": [
 			"Toadino2",
 			"Beta16",
-			"Tizven"
+			"Tizven",
+			"Dansita"
 		]
 	},
 	"bs-validator-email-validation-approved": "L'indirizzo email è stato convalidato correttamente.",
@@ -18,5 +19,10 @@
 	"bs-validator-integer-range-validation-too-high": "Il valore fornito è troppo alto. Non dovrebbe essere maggiore di $1.",
 	"bs-validator-invalid-parameter": "Questo parametro non è consentito",
 	"bs-validator-missing-required": "Questo parametro è obbligatorio",
-	"bs-validator-value-not-recognized": "Il valore non può essere elaborato"
+	"bs-validator-value-not-recognized": "Il valore non può essere elaborato",
+	"bs-validator-invalid-boolean": "Non è un valore booleano valido",
+	"bs-validator-invalid-float": "Non è un valore float valido",
+	"bs-validator-invalid-integer": "Non è un intero valido",
+	"bs-validator-invalid-string": "Non è una stringa valida",
+	"bs-validator-invalid-coordinate": "Non è una coordinata valida"
 }

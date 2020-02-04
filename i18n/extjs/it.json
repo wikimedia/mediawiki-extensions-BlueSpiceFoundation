@@ -6,7 +6,8 @@
 			"LACLARETTA",
 			"Macofe",
 			"Selven",
-			"Tizven"
+			"Tizven",
+			"Dansita"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -77,5 +78,7 @@
 	"bs-extjs-pageexport-required-text": "Il nome dell'elenco non può essere vuoto o almeno una pagina deve essere selezionata",
 	"bs-extjs-combo-box-default-placeholder": "Digita per filtrare...",
 	"bs-extjs-flyout-tab-thumbs-title": "Passa alla vista miniature",
-	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio"
+	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio",
+	"bs-extjs-label-directsearch": "Cerca",
+	"bs-extjs-titlecombo-newpagehint": "La pagina non esiste!"
 }

@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"BaRaN6161 TURK"
+		]
+	},
+	"bs-filerepo-labelupload": "Yükle",
+	"bs-filerepo-labelfilter": "Filtre",
+	"bs-filerepo-headerfilename": "Dosya adı",
+	"bs-filerepo-headerfilesize": "Boyut",
+	"bs-filerepo-headerpagecategories": "Kategoriler",
+	"bs-filerepo-headerfilewidth": "Genişlik",
+	"bs-filerepo-headerfileheight": "Yükseklik",
+	"bs-filerepo-headerfilemimetype": "MIME türü",
+	"bs-filerepo-headerfileusertext": "Kullanıcı",
+	"bs-filerepo-headerfileextension": "Uzantı",
+	"bs-filerepo-headerfiletimestamp": "Yüklendi",
+	"bs-filerepo-headerfilemediatype": "Medya türü",
+	"bs-filerepo-headerfiledescription": "Açıklama",
+	"bs-filerepo-headerfilethumbnail": "Küçük resim",
+	"bs-filerepo-yes": "Evet",
+	"bs-filerepo-no": "Hayır",
+	"bs-filerepo-pagesize": "Sayfa başına giriş sayısı"
+}

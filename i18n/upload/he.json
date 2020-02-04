@@ -3,7 +3,8 @@
 		"authors": [
 			"Or",
 			"YaronSh",
-			"Steeve815"
+			"Steeve815",
+			"Amire80"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "העלאת קובץ",
@@ -24,5 +25,5 @@
 	"bs-upload-details": "פרטים",
 	"bs-upload-uploadwarningdialog-title": "העלאת קובץ: אזהרות",
 	"bs-upload-uploadwarningdialog-warning-exists": "קובץ בעל השם \"$1\" כבר קיים",
-	"bs-upload-uploadwarningdialog-warning-unknown": "שגיאה בלתי ידועה, קוד \"$1\""
+	"bs-upload-uploadwarningdialog-warning-unknown": "שגיאה בלתי־ידועה, קוד \"$1\""
 }

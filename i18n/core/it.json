@@ -7,7 +7,8 @@
 			"Macofe",
 			"LACLARETTA",
 			"Gianfranco",
-			"Tizven"
+			"Tizven",
+			"Dansita"
 		]
 	},
 	"bs-ns_main": "(Pagine)",
@@ -93,5 +94,11 @@
 	"action-wikiadmin": "utilizzato in molte estensioni BlueSpice per attività amministrative potenzialmente pericolose come la gestione di utenti, permessi, configurazione globale",
 	"bs-parser-error-invalid-category-title": "La pagina non è una categoria valida: $1",
 	"bs-graphicallist-action-preview": "Anteprima",
-	"bs-notifications-agent-anon": "utente anonimo"
+	"bs-notifications-agent-anon": "utente anonimo",
+	"bluespicefoundation-desc": "Rendi MediaWiki enterprise pronto all'uso",
+	"bs-lockdown-groups-permissionerror": "L'azione \"$1\" non è disponibile per {{PLURAL:$2|la seguente ragione|le seguenti ragioni}}: $3",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-bluespice": "BlueSpice",
+	"protect-level-editor": "Consentito solo per gli editori e gli amministratori",
+	"bs-ping-on-init-desc": "La richiesta di ping dovrebbe essere richiesta subito dopo il caricamento della pagina"
 }

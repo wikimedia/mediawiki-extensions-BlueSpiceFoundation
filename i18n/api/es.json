@@ -5,7 +5,8 @@
 			"Macofe",
 			"Idontknow",
 			"Fitoschido",
-			"Josecurioso"
+			"Josecurioso",
+			"Nancystodd"
 		]
 	},
 	"apihelp-bs-wikipage-tasks-description": "Proporciona operaciones comunes para páginas wiki",
@@ -36,5 +37,22 @@
 	"bs-api-task-taskData-page-id": "El identificador de una página existente del wiki",
 	"bs-api-task-taskData-page-title": "Un título válido de una página wiki",
 	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de cadenas. Los valores deben ser nombres de categorías válidos.",
-	"apihelp-bs-watchlist-store-summary": "Enumera todas las entradas de la lista de seguimiento. Permite su ordenamiento y filtrado y consultarlas mediante paginación. Implementa parámetros de almacenamiento."
+	"apihelp-bs-watchlist-store-summary": "Enumera todas las entradas de la lista de seguimiento. Permite su ordenamiento y filtrado y consultarlas mediante paginación. Implementa parámetros de almacenamiento.",
+	"apihelp-bs-filebackend-store-description": "Enumera todos los archivos del archivo de fondo. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-filebackend-store-summary": "Enumera todos los archivos del archivo de fondo. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-user-store-description": "Enumera todos los usuarios de la base de datos. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-user-store-summary": "Enumera todos los usuarios de la base de datos. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-category-store-description": "Enumera todas las categorías. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-category-store-summary": "Enumera todas las categorías. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-adminuser-store-description": "Enumera todos los usuarios de la base de datos con datos confidenciales adicionales. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-adminuser-store-summary": "Enumera todos los usuarios de la base de datos con datos confidenciales adicionales. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-group-store-summary": "Enumera todos los grupos excepto $wgImplicitGroups. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-interwiki-store-description": "Enumera todos los enlaces interwiki. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-interwiki-store-summary": "Enumera todos los enlaces interwiki. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-titlequery-store-description": "Enumera títulos de página y (opcionalmente) prefijos de espacio de nombres basados ​​en un término de consulta. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-titlequery-store-summary": "Enumera títulos de página y (opcionalmente) prefijos de espacio de nombres basados ​​en un término de consulta. Implementa los parámetros de almacenamiento de ExtJS.",
+	"apihelp-bs-wikipage-tasks-summary": "Proporciona operaciones comunes para páginas wiki",
+	"apihelp-bs-store-param-sort": "Cadena JSON con información de clasificación; se deserializa a <code>matriz de objetos</code> que contienen el nombre y la dirección del campo para cada opción de clasificación",
+	"apihelp-bs-store-param-group": "Cadena JSON con información de agrupamiento; se deserializa a <code>matriz de objetos</code> que contienen el nombre y la dirección del campo para cada opción de agrupamiento",
+	"apihelp-bs-store-param-filter": "Cadena JSON con información de filtro; se deserializa a <code>matriz de objetos</code> que contienen nombre de campo, tipo de filtro y valor de filtro para cada opción de filtrado"
 }
