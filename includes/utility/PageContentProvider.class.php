@@ -147,7 +147,6 @@ class BsPageContentProvider {
 		$this->bEncapsulateContent = true;
 
 		$sHtmlContent = $this->getHTMLContentFor( $oTitle, $aParams );
-
 		// To avoid strange errors... should never happen.
 		if ( !mb_check_encoding( $sHtmlContent, 'utf8' ) ) {
 			$sHtmlContent = utf8_encode( $sHtmlContent );
@@ -159,7 +158,7 @@ class BsPageContentProvider {
 
 		$this->bEncapsulateContent = $bOldValueOfEncapsulateContent;
 
-		$oDOMDoc->loadHTML( $sHtmlContent );
+		$oDOMDoc->loadHTML( '<?xml encoding="utf-8" ?>' . $sHtmlContent );
 
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
 		foreach ( $oPreTags as $oPreTag ) {
