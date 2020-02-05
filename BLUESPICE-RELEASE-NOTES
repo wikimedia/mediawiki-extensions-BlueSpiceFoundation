@@ -1,7 +1,50 @@
 BlueSpice
-Copyright 2019 by Hallo Welt! GmbH
+Copyright 2020 by Hallo Welt! GmbH
 https://bluespice.com
 https://hallowelt.com
+
+== BlueSpice 3.1.3 ==
+BlueSpice 3.1.3 is a patch release.
+This is a stable release.
+
+===Fixes===
+* Error when trying to save redirect pages in VisualEditor (#12766)
+* NamespaceManager does not allow adding multiple namespaces without reloading the page (#13736)
+* Editing talk namespaces in Namespace manager destroys the following namespace (#13862)
+* Meaningless options for sorting offered in SearchCenter options (#14411)
+* Timeout too short for certain API calls in WikiExplorer (#14917)
+* All chapters of a book are shown on the same level in PDF table of contents (#15412)
+* Rating cannot be enabled in namespaces (#15947)
+* Create new page from full text search with a namespace filter set ignores the namespace (#16258)
+* TagCloud cannot be used with InsertMagic in VisualEditor (#16861)
+* Page assignments manager shows no entries (#16911)
+* SocialEntity entries show up in standard logs and managers (#17073)
+* Content in tables gets different font sizes (#17132)
+* BlueSpiceAvatars ignores upload directory setting (#17151)
+* Duplicate page function is only available in main and talk namespace (#17349)
+* Unexpected update of links in duplicated books (#17390)
+* In Bookshelf, the OK button in the meta data dialog is always disabled (#17560)
+* Cannot read protect main namespace (#17644)
+* PDF-Export does not handle stylings from Extension:TemplateStyles (#17697)
+* PDF export fails when "external" Interwiki link exists on page (#17720)
+* Add CLI script for management (#17737)
+* Cannot specify  per-page PDF export templates using bs:ueparams tag (#17738)
+* Watchlist dialog shows enties from other users (#17741)
+* Cookie consent cookie are deleted after some time (#17748)
+* Label for the notification preferences are not clear (#17753)
+* Name of the talk namespace is not updated when namespace name changes (#17813)
+* Allowing browsing for file from "insert file link" dialog in VisualEditor is confusing (#17849)
+* VisualEditor sometimes stuck while loading (#17869)
+* Lists are not formatted correctly (#17874)
+* Exception when exporting Talk pages to PDF (#17914)
+* JavaScript errors while using ConfigManager (#17936)
+* No filters in extended file list (#18042)
+* Page cannot be saved after editing (#18088)
+* Table styles cannot be applied (#18104)
+* Additional table functionality in VisualEditor (#18105)
+* Articles in first draft are visible to anonymous users (#18109)
+* Double encoded UTF-8 characters in PDF export (#18130)
+* Fix common typos in code (T201491)
 
 == BlueSpice 3.1.2 ===
 BlueSpice 3.1.2 is a patch release.
