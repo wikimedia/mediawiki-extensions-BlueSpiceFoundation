@@ -94,5 +94,7 @@
 	"right-wikiadmin": "Brukt i mange BlueSpice-utvidelser for potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon",
 	"bs-notifications-agent-anon": "anonym bruker",
 	"protect-level-editor": "Tillat kun redaktører og administratorer",
-	"bs-ping-on-init-desc": "Skal ping-forespørsler sendes umiddelbart etter sidelasting?"
+	"bs-ping-on-init-desc": "Skal ping-forespørsler sendes umiddelbart etter sidelasting?",
+	"right-editor": "Få alle tillatelser fra rollen «bidragsyter» for beskyttede sider når rollesystemet aktiveres",
+	"action-editor": "Få alle tillatelser fra rollen «bidragsyter» for beskyttede sider når rollesystemet aktiveres"
 }
