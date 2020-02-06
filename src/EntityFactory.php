@@ -28,9 +28,9 @@ namespace BlueSpice;
 
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\IStore;
-use BsPageContentProvider;
 use Config;
 use Title;
+use WikiPage;
 
 class EntityFactory {
 	protected $storedById = [];
@@ -308,9 +308,7 @@ class EntityFactory {
 			return false;
 		}
 
-		$text = BsPageContentProvider::getInstance()->getContentFromTitle(
-			$title
-		);
+		$text = WikiPage::factory( $title )->getContent()->getNativeData();
 		$content = new EntityContent( $text );
 		$data = (object)$content->getData()->getValue();
 
