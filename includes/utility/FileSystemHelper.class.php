@@ -722,6 +722,7 @@ class BsFileSystemHelper {
 
 	/**
 	 * Saves a file from the server filesystem to the local file repo
+	 * uploadLocalfile2 is preferred when a context user is available
 	 * @param string $sFilename
 	 * @param bool $bDeleteSrc
 	 * @param string $sComment
@@ -732,8 +733,40 @@ class BsFileSystemHelper {
 	 */
 	public static function uploadLocalFile( $sFilename, $bDeleteSrc = false, $sComment = "",
 		$sPageText = "", $bWatch = false, $bIgnoreWarnings = true ) {
-		global $wgLocalFileRepo, $wgUser;
-		$oUploadStash = new UploadStash( new LocalRepo( $wgLocalFileRepo ), $wgUser );
+		$user = RequestContext::getMain()->getUser();
+		return self::uploadLocalFileWithUser(
+			$sFilename,
+			$user,
+			$bDeleteSrc,
+			$sComment,
+			$sPageText,
+			$bWatch,
+			$bIgnoreWarnings
+		);
+	}
+
+	/**
+	 * Saves a file from the server filesystem to the local file repo
+	 * @param string $sFilename
+	 * @param User $user
+	 * @param bool $bDeleteSrc
+	 * @param string $sComment
+	 * @param string $sPageText
+	 * @param bool $bWatch
+	 * @param bool $bIgnoreWarnings
+	 * @return Status
+	 */
+	public static function uploadLocalFileWithUser(
+		$sFilename,
+		User $user,
+		$bDeleteSrc = false,
+		$sComment = "",
+		$sPageText = "",
+		$bWatch = false,
+		$bIgnoreWarnings = true
+	) {
+		global $wgLocalFileRepo;
+		$oUploadStash = new UploadStash( new LocalRepo( $wgLocalFileRepo ), $user );
 		$oUploadFile = $oUploadStash->stashFile( $sFilename, "file" );
 		$sTargetFileName = basename( self::restoreFileName( $sFilename ) );
 
@@ -743,7 +776,7 @@ class BsFileSystemHelper {
 			);
 		}
 
-		$oUploadFromStash = new UploadFromStash( $wgUser, $oUploadStash, $wgLocalFileRepo );
+		$oUploadFromStash = new UploadFromStash( $user, $oUploadStash, $wgLocalFileRepo );
 		$oUploadFromStash->initialize( $oUploadFile->getFileKey(), $sTargetFileName );
 		$aStatus = $oUploadFromStash->verifyUpload();
 
@@ -766,7 +799,7 @@ class BsFileSystemHelper {
 				)->parse()
 			);
 		}
-		$status = $oUploadFromStash->performUpload( $sComment, $sPageText, $bWatch, $wgUser );
+		$status = $oUploadFromStash->performUpload( $sComment, $sPageText, $bWatch, $user );
 		$oUploadFromStash->cleanupTempFile();
 
 		if ( file_exists( $sFilename ) && $bDeleteSrc ) {
