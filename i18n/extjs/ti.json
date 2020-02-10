@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joanmp17"
+		]
+	},
+	"bs-extjs-cancel": "ኣትርፍ",
+	"bs-extjs-yes": "እወ",
+	"bs-extjs-no": "ኣይፋል",
+	"bs-extjs-save": "ኣቐምጥ",
+	"bs-extjs-delete": "ሰረዘ",
+	"bs-extjs-add": "ወስኽ",
+	"bs-extjs-remove": "ኣልግስ",
+	"bs-extjs-edit": "የዐርይ",
+	"bs-extjs-copy": "ቅዳሕ",
+	"bs-extjs-close": "ዕጸው",
+	"bs-extjs-label-user": "ተጠቃሚ",
+	"bs-extjs-label-page": "ገጽ",
+	"bs-extjs-label-directsearch": "ምድላይ"
+}
