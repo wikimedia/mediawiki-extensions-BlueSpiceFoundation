@@ -721,8 +721,9 @@ class BsFileSystemHelper {
 	}
 
 	/**
+	 * DEPRECATED
 	 * Saves a file from the server filesystem to the local file repo
-	 * uploadLocalfile2 is preferred when a context user is available
+	 * @deprecated since 3.3, use uploadLocalFileWithUser
 	 * @param string $sFilename
 	 * @param bool $bDeleteSrc
 	 * @param string $sComment
@@ -733,6 +734,7 @@ class BsFileSystemHelper {
 	 */
 	public static function uploadLocalFile( $sFilename, $bDeleteSrc = false, $sComment = "",
 		$sPageText = "", $bWatch = false, $bIgnoreWarnings = true ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'Use uploadLocalFileWithUser' );
 		$user = RequestContext::getMain()->getUser();
 		return self::uploadLocalFileWithUser(
 			$sFilename,
