@@ -27,4 +27,12 @@ class ImageExtensions extends ArraySetting {
 	public function getHtmlFormField() {
 		return new \HTMLMultiSelectPlusAdd( $this->makeFormFieldParams() );
 	}
+
+	/**
+	 *
+	 * @return string | null
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-pref-imageextensions-help';
+	}
 }

@@ -97,5 +97,6 @@
 	"bs-lockdown-groups-permissionerror": "Die Aktion „$1“ ist aus {{PLURAL:$2|dem folgenden Grund|den folgenden Gründen}} nicht verfügbar: $3",
 	"action-wikiadmin": "BlueSpice-Administrationsseiten anzuzeigen",
 	"protect-level-editor": "Nur Redakteuren und Administratoren erlauben",
-	"bs-pref-fileextensions-help": "Dateitypen, die für das Hochladen in das Wiki freigegeben sind.  Einige Typen (z.B. html, js, php, cgi, exe) sind aus Sicherheitsgründen nicht erlaubt, auch wenn sie hier aufgelistet werden."
+	"bs-pref-fileextensions-help": "Dateitypen, die für das Hochladen in das Wiki freigegeben sind.  Einige Typen (z.B. html, js, php, cgi, exe) sind aus Sicherheitsgründen nicht erlaubt, auch wenn sie hier aufgelistet werden.",
+	"bs-pref-imageextensions-help": "Bilddateiformate, die für das Hochladen freigegeben sind. Mögliche Webformate: gif, png, jpg, jpeg. Weitere Bildformate: tiff, bmp"
 }
