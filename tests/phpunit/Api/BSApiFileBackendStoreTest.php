@@ -25,8 +25,10 @@ class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {
 			dirname( __DIR__ ) . "/data/images/test.png",
 		];
 
+		$user = $this->getTestUser()->getUser();
+
 		foreach ( $this->filenames as $filename ) {
-			$status = \BsFileSystemHelper::uploadLocalFile( $filename );
+			$status = \BsFileSystemHelper::uploadLocalFileWithUser( $filename, $user );
 		}
 	}
 
