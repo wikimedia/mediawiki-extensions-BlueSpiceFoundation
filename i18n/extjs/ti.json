@@ -4,6 +4,7 @@
 			"Joanmp17"
 		]
 	},
+	"bs-extjs-ok": "ሕራይ",
 	"bs-extjs-cancel": "ኣትርፍ",
 	"bs-extjs-yes": "እወ",
 	"bs-extjs-no": "ኣይፋል",
@@ -13,8 +14,20 @@
 	"bs-extjs-remove": "ኣልግስ",
 	"bs-extjs-edit": "የዐርይ",
 	"bs-extjs-copy": "ቅዳሕ",
+	"bs-extjs-error": "ጌጋ",
+	"bs-extjs-confirm": "ኣረጋገጸ",
+	"bs-extjs-warning": "መጠንቀቕታ",
+	"bs-extjs-reset": "ከምብሓዱሽ ጀምር",
 	"bs-extjs-close": "ዕጸው",
 	"bs-extjs-label-user": "ተጠቃሚ",
 	"bs-extjs-label-page": "ገጽ",
-	"bs-extjs-label-directsearch": "ምድላይ"
+	"bs-extjs-label-directsearch": "ምድላይ",
+	"bs-extjs-mainns": "(መበገሲ)",
+	"bs-extjs-filter-bool-yes": "እወ",
+	"bs-extjs-filter-bool-no": "ኣይፋል",
+	"bs-extjs-title-success": "ዓወት",
+	"bs-extjs-title-warning": "መጠንቀቕታ",
+	"bs-extjs-categorytree-title": "ምድቦት",
+	"bs-extjs-tools-trigger-text": "መሳርሒታት",
+	"bs-extjs-flyout-tab-grid-label": "ዝርዝሪት"
 }
