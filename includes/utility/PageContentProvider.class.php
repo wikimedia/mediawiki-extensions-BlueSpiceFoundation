@@ -18,7 +18,7 @@ class BsPageContentProvider {
 	public    $oParserOptions            = null;
 
 	// TODO RBV (21.01.11 17:09): Better templating...
-	protected $sTemplate                 = false; 
+	protected $sTemplate                 = false;
 	public    $bEncapsulateContent       = true;
 
 	public static $oInstance             = null;
@@ -47,7 +47,6 @@ class BsPageContentProvider {
 
 	/**
 	 * Lazy instantiation of ParserOptions
-	 * @global User $wgUser
 	 * @return ParserOptions
 	 */
 	protected function getParserOptions() {
@@ -55,10 +54,10 @@ class BsPageContentProvider {
 			return $this->oParserOptions;
 		}
 
-		global $wgUser;
-
 		//Default ParserOptions
-		$this->oParserOptions = ParserOptions::newFromUser( $wgUser );
+		$this->oParserOptions = ParserOptions::newFromUser(
+			RequestContext::getmain()->getUser()
+		);
 		$this->oParserOptions->setTidy( true );
 		$this->oParserOptions->setRemoveComments( true );
 
