@@ -100,5 +100,6 @@
 	"protect-level-editor": "Allow only editors and administrators",
 	"bs-ping-on-init-desc": "Should ping request be sent immediately after page loads",
 	"right-editor": "Be granted all permissions from the role \"editor\" for protected pages in editor restriction when the role system is activated",
-	"action-editor": "be granted all permissions from the role \"editor\" for protected pages in editor restriction when the role system is activated"
+	"action-editor": "be granted all permissions from the role \"editor\" for protected pages in editor restriction when the role system is activated",
+	"bs-pref-fileextensions-help": "File types that can be uploaded to the wiki. Some types (e.g., html, js, php, cgi, exe) are not permitted for security reasons even if they have been added here."
 }

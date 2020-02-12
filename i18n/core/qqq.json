@@ -105,5 +105,6 @@
 	"protect-level-editor": "Used as protect level.\n\nSee example: {{canonicalurl:Main_Page|action=info}}",
 	"bs-ping-on-init-desc": "Description for configuration variable $bsgPingOnInit",
 	"right-editor": "{{doc-right|editor}}",
-	"action-editor": "{{doc-action|editor}}"
+	"action-editor": "{{doc-action|editor}}",
+	"bs-pref-fileextensions-help": "Description for config variable \"FileExtensions\""
 }
