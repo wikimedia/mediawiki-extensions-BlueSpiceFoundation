@@ -22,6 +22,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Preferences\PreferencesFactory;
 use MediaWiki\Shell\CommandFactory;
+use MediaWiki\Special\SpecialPageFactory;
 use MediaWiki\Storage\BlobStore;
 use MediaWiki\Storage\BlobStoreFactory;
 use MediaWiki\Storage\NameTableStore;
@@ -516,5 +517,13 @@ class ServicesDecorator extends ServiceContainer {
 	 */
 	public function getNamespaceInfo() : NamespaceInfo {
 		return $this->getService( 'NamespaceInfo' );
+	}
+
+	/**
+	 * @since 1.35
+	 * @return SpecialPageFactory
+	 */
+	public function getSpecialPageFactory() : SpecialPageFactory {
+		return $this->getService( 'SpecialPageFactory' );
 	}
 }
