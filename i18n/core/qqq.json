@@ -6,7 +6,8 @@
 			"Beta16",
 			"Mar(c)",
 			"Liuxinyu970226",
-			"Umherirrender"
+			"Umherirrender",
+			"Patric Wirth"
 		]
 	},
 	"bluespicefoundation-desc": "{{desc|name=BlueSpiceFoundation|url=https://www.mediawiki.org/wiki/BlueSpice}}",
@@ -106,5 +107,6 @@
 	"bs-ping-on-init-desc": "Description for configuration variable $bsgPingOnInit",
 	"right-editor": "{{doc-right|editor}}",
 	"action-editor": "{{doc-action|editor}}",
-	"bs-pref-fileextensions-help": "Description for config variable \"FileExtensions\""
+	"bs-pref-fileextensions-help": "Description for config variable \"FileExtensions\"",
+	"bs-pref-imageextensions-help": "Description for config variable \"ImageExtensions\""
 }
