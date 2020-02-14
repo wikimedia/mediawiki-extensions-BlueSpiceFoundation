@@ -219,7 +219,8 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		if ( !in_array( NS_SPECIAL, $aOptions['namespaces'] ) ) {
 			return $aData;
 		}
-		$aSpecialPages = SpecialPageFactory::getNames();
+		$specialpageFactory = $this->getServices()->getSpecialPageFactory();
+		$aSpecialPages = $specialpageFactory->getNames();
 		$aSPDataSets = [];
 		$sSpecialNmspPrefix = $this->getLanguage()->getNsText( NS_SPECIAL );
 
@@ -228,7 +229,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 		foreach ( $aSpecialPages as $sSpecialPageName ) {
 
-			$oSpecialPage = SpecialPageFactory::getPage( $sSpecialPageName );
+			$oSpecialPage = $specialpageFactory->getPage( $sSpecialPageName );
 			if ( !( $oSpecialPage instanceof SpecialPage ) ) {
 				wfDebug( __METHOD__ . ': "' . $sSpecialPageName . '" is not a valid SpecialPage' );
 				continue;
