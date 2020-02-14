@@ -103,5 +103,6 @@
 	"bs-ping-on-init-desc": "在頁面載入後是否應立刻發送 ping 請求",
 	"right-editor": "當身份系統啟動時，向受編輯者限制的保護頁面授予所有「編輯者」身份權限",
 	"action-editor": "當身份系統啟動時，向受編輯者限制的保護頁面授予所有「編輯者」身份權限",
-	"bs-pref-fileextensions-help": "檔案類型可以上傳到 wiki。某些類型（例如：html、js、php、cgi、exe）出於資安因素而不被允許，即使已在此添加了它們。"
+	"bs-pref-fileextensions-help": "檔案類型可以上傳到 wiki。某些類型（例如：html、js、php、cgi、exe）出於資安因素而不被允許，即使已在此添加了它們。",
+	"bs-pref-imageextensions-help": "可以上傳到 wiki 的圖片檔案類型。可行的網路格式：gif、png、jpg、jpeg。其它的圖片格式：tiff、bmp"
 }

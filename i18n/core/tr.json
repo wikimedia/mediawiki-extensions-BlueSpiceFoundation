@@ -97,5 +97,6 @@
 	"bs-ping-on-init-desc": "Sayfa yüklendikten hemen sonra ping isteği gönderilmelidir.",
 	"right-editor": "Rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alın",
 	"action-editor": "rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alınabilir",
-	"bs-pref-fileextensions-help": "Vikiye yüklenebilecek dosya türleri. Bazı türlere (örn. Html, js, php, cgi, exe), buraya eklenmiş olsalar bile güvenlik nedeniyle izin verilmez."
+	"bs-pref-fileextensions-help": "Vikiye yüklenebilecek dosya türleri. Bazı türlere (örn. Html, js, php, cgi, exe), buraya eklenmiş olsalar bile güvenlik nedeniyle izin verilmez.",
+	"bs-pref-imageextensions-help": "Vikiye yüklenebilecek resim dosyası türleri. Olası web formatları: gif, png, jpg, jpeg. Diğer görüntü formatları: tiff, bmp"
 }

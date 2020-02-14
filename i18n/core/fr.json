@@ -8,7 +8,8 @@
 			"Urhixidur",
 			"Pols12",
 			"Thibaut120094",
-			"Verdy p"
+			"Verdy p",
+			"Derugon"
 		]
 	},
 	"bluespicefoundation-desc": "Rend MediaWiki prêt pour l’entreprise",
@@ -102,5 +103,7 @@
 	"protect-level-editor": "Autoriser seulement les éditeurs et les administrateurs",
 	"bs-ping-on-init-desc": "Indique si une requête ping devrait être envoyée immédiatement après le chargement de la page",
 	"right-editor": "Bénéficiez de toutes les autorisations du rôle « éditeur » pour les pages protégées concernant la restriction de l'éditeur lorsque le système de rôles est activé",
-	"action-editor": "bénéficiez de toutes les autorisations du rôle « éditeur » pour les pages protégées concernant la restriction de l'éditeur lorsque le système de rôles est activé"
+	"action-editor": "bénéficiez de toutes les autorisations du rôle « éditeur » pour les pages protégées concernant la restriction de l'éditeur lorsque le système de rôles est activé",
+	"bs-pref-fileextensions-help": "Types de fichier qui peuvent être téléchargés sur le wiki. Certains types (par ex., html, js, php, cgi, exe) sont interdits pour des raisons de sécurité, même s’ils ont été ajoutés ici.",
+	"bs-pref-imageextensions-help": "Types de fichier d’image qui peuvent être téléversés sur le wiki. Formats web possibles : gif, png, jpg, jpeg. Autres formats d’images : tiff, bmp"
 }
