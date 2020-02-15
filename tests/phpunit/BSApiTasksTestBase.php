@@ -9,12 +9,6 @@ abstract class BSApiTasksTestBase extends BSApiTestCase {
 	 */
 	abstract protected function getModuleName();
 
-	protected function setUp() : void {
-		parent::setUp();
-
-		$this->doLogin();
-	}
-
 	/**
 	 *
 	 * @param string $taskName

@@ -26,12 +26,6 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 */
 	abstract protected function getModuleName();
 
-	protected function setUp() : void {
-		parent::setUp();
-
-		$this->doLogin();
-	}
-
 	public function addDBDataOnce() {
 		// Caution: this is only called once per testsuite, not per test.
 		$this->createStoreFixtureData();
