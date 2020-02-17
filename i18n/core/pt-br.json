@@ -97,5 +97,7 @@
 	"protect-level-editor": "Permitir apenas editores e administradores",
 	"bs-ping-on-init-desc": "Deve ser enviado um pedido ''ping'' imediatamente após os carregamentos de página",
 	"right-editor": "Ser concedidas todas as permissões do papel \"editor\" para páginas protegidas na restrição do editor quando o sistema de papéis estiver ativado",
-	"action-editor": "conceder todas as permissões da função \"editor\" para páginas protegidas na restrição do editor quando o sistema de funções estiver ativado"
+	"action-editor": "conceder todas as permissões da função \"editor\" para páginas protegidas na restrição do editor quando o sistema de funções estiver ativado",
+	"bs-pref-fileextensions-help": "Tipos de arquivos que podem ser carregados na wiki. Alguns tipos (por exemplo, html, js, php, cgi, exe) não são permitidos por razões de segurança, mesmo que tenham sido adicionados aqui.",
+	"bs-pref-imageextensions-help": "Tipos de arquivos de imagem que podem ser carregados no wiki. Formatos possíveis da web: gif, png, jpg, jpeg. Outros formatos de imagem: tiff, bmp"
 }

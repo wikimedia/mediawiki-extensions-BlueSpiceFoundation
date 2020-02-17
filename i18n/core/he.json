@@ -11,7 +11,8 @@
 			"YaronSh",
 			"Steeve815",
 			"Ghsuvr",
-			"Amire80"
+			"Amire80",
+			"דגש חזק"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -103,5 +104,6 @@
 	"right-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
 	"bs-notifications-agent-anon": "משתמש אלמוני",
 	"protect-level-editor": "לאפשר רק לעורכים ומנהלים",
-	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מיד לאחר טעינת העמוד"
+	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מיד לאחר טעינת העמוד",
+	"bs-pref-imageextensions-help": "סוגי קבצי תמונות שאותם ניתן להעלות לוויקי. פורמטים אפשריים באינטרנט: gif, png, jpg, jpeg. פורמטים אחרים של תמונות: tiff, bmp."
 }
