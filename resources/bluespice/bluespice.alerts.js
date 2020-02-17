@@ -50,6 +50,8 @@
 			var id = $box.data( 'bs-alert-id' );
 			_alerts[id] = $box;
 		} );
+
+		wireDismissableAlertButtons();
 	});
 
 	bs.alerts = {
@@ -62,4 +64,20 @@
 		TYPE_WARNING: 'warning',
 		TYPE_DANGER: 'danger'
 	};
+
+
+	function wireDismissableAlertButtons() {
+		$( '.dismiss-btn' ).each( function( k, el ) {
+			var $button = $( el );
+			var btn = OO.ui.infuse( $button );
+			btn.connect( btn, {
+				click: function() {
+					var $alert = this.$element.parents( '.alert' );
+					mw.hook( 'bs.alert.dismiss' ).fire( $alert, this );
+					$alert.remove();
+				}
+			} );
+		} );
+	}
+
 })( mediaWiki, jQuery, blueSpice, document );
