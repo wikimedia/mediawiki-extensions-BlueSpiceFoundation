@@ -121,7 +121,7 @@ class BsPageContentProvider {
 
 			//FIX for #HW20130072210000028
 			//Manually expand templates to allow bookshelf tags via template
-			$oParser = new Parser();
+			$oParser = MediaWikiServices::getInstance()->getParserFactory()->create();
 			$oParser->Options( $this->getParserOptions() ); //TODO: needed? below
 			$sContent = $oParser->preprocess(
 				$sContent,
@@ -442,7 +442,7 @@ class BsPageContentProvider {
 		$this->oOriginalMainRequestContextOutputPage
 			= RequestContext::getMain()->getOutput();
 
-		$wgParser = new Parser();
+		$wgParser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$wgParser->Options( $this->getParserOptions() );
 
 		$wgOut = new OutputPage( $context );

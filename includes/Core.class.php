@@ -281,7 +281,7 @@ class BsCore {
 	public function parseWikiText( $sText, $oTitle, $nocache = false, $numberheadings = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		if ( !self::$oLocalParser ) {
-			self::$oLocalParser = new Parser();
+			self::$oLocalParser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		}
 		if ( !self::$oLocalParserOptions ) {
 			self::$oLocalParserOptions = new ParserOptions();
