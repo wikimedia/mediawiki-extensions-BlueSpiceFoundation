@@ -6,6 +6,8 @@
  * @subpackage Utility
  */
 
+use MediaWiki\MediaWikiServices;
+
 class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
 	protected $oOriginalGlobalParser     = null;
