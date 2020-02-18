@@ -74,11 +74,11 @@ Ext.define( 'BS.CRUDGridPanel', {
 	makeGridDefaultConf: function() {
 		return {
 			cls: 'bs-extjs-crud-grid',
-			//Simple
 			border: false,
 			enableHdMenu: false,
 			//hideHeaders: true,
 			loadMask: true,
+			minHeight: 200,
 			autoHeight: true,
 			//region: 'center',
 			stripeRows: true,
