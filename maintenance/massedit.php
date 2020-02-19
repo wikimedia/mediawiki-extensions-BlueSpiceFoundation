@@ -241,7 +241,7 @@ foreach ( $res as $row ) {
 		}
 
 		// Actual modification
-		$success = $article->doEditContent(
+		$success = $wikipage->doEditContent(
 			ContentHandler::makeContent( $text, $title ),
 			$summary,
 			( $minor ? EDIT_MINOR : 0 ) |

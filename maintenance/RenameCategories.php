@@ -349,7 +349,7 @@ foreach ( $res as $row ) {
 		}
 
 		// Actual modification
-		$success = $article->doEditContent(
+		$success = $wikipage->doEditContent(
 			ContentHandler::makeContent( $text, $title ),
 			$summary,
 			( $minor ? EDIT_MINOR : 0 ) |
@@ -444,7 +444,7 @@ foreach ( $res as $row ) {
 		if ( !$testing ) {
 			$newtitle = Title::newFromText( $newtitletext, NS_CATEGORY );
 			$newarticle = new Article( $newtitle );
-			$savestat = $newarticle->doEditContent(
+			$savestat = $newarticle->getPage()->doEditContent(
 				ContentHandler::makeContent( $oldarticlecontent, $newtitle ),
 				$summary,
 				( $minor ? EDIT_MINOR : 0 ) |
@@ -459,7 +459,7 @@ foreach ( $res as $row ) {
 			}
 			/*
 			echo "Creating redirect from $oldtitletext to $newtitletext : ";
-			$redirstat = $oldarticle->doEditContent(
+			$redirstat = $oldwikipage->doEditContent(
 				ContentHandler::makeContent( "#REDIRECT [[:$newtitle]]", $oldTitle ),
 				$summary,
 				( $minor ? EDIT_MINOR : 0 ) |

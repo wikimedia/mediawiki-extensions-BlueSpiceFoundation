@@ -82,7 +82,6 @@ class RelocalizeWiki extends Maintenance {
 
 		foreach ( $aArticleIds as $iArticleId ) {
 			$this->bEdited = false;
-			$oArticle = Article::newFromID( $iArticleId );
 			// Article::fetchContent() is deprecated.
 			// Replaced by WikiPage::getContent()::getNativeData()
 			$oWikiPage = WikiPage::newFromID( $iArticleId );
@@ -148,8 +147,8 @@ class RelocalizeWiki extends Maintenance {
 
 			if ( $this->bEdited ) {
 				if ( !$this->bDryRun ) {
-					$oArticle->doEditContent(
-						ContentHandler::makeContent( $sArticleContent, $oArticle->getTitle() ),
+					$oWikiPage->doEditContent(
+						ContentHandler::makeContent( $sArticleContent, $oWikiPage->getTitle() ),
 						$sArticleContent,
 						'/* Changed Localisation */',
 						EDIT_FORCE_BOT | EDIT_MINOR | EDIT_SUPPRESS_RC
