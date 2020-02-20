@@ -98,5 +98,6 @@
 	"action-wikiadmin": "Toon BlueSpice's beheerpagina's",
 	"right-wikiadmin": "Toon BlueSpice's beheerpagina's",
 	"bs-notifications-agent-anon": "anonieme gebruiker",
-	"protect-level-editor": "Alleen bewerkers en beheerders toestaan"
+	"protect-level-editor": "Alleen bewerkers en beheerders toestaan",
+	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp"
 }

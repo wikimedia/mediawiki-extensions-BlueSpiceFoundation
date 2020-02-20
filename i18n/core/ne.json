@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Drjpoudel"
+			"Drjpoudel",
+			"हिमाल सुबेदी"
 		]
 	},
+	"bs-userbar_loginswitch_logout": "निर्गमन",
+	"bs-imagepage-download-text": "डाउनलोड गरिएकाे",
 	"bs-graphicallist-action-preview": "पूर्वावलोकन"
 }

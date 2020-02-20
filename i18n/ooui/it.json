@@ -11,5 +11,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Aggiungi",
 	"bs-ooui-key-value-input-widget-add-form-label": "Aggiungi una nuova voce",
 	"bs-ooui-key-value-input-widget-error-message": "Tutti i campi obbligatori devono essere impostati!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Nessun valore impostato!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Nessun valore impostato!",
+	"bs-ooui-btn-dismiss-alert-title": "Nascondi"
 }
