@@ -4,6 +4,7 @@ namespace BlueSpice\Tests\Permission\Lockdown;
 
 use BlueSpice\Permission\Lockdown\Module\Namespaces;
 use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use Title;
 use User;
@@ -41,6 +42,7 @@ class NamespaceLockdownTest extends MediaWikiTestCase {
 	public function testLocking( Title $title, $shouldApply ) {
 		$this->setModule();
 		$this->setMwGlobals( 'bsgNamespaceRolesLockdown', [] );
+		$mwPermissionManager = MediaWikiServices::getInstance()->getPermissionManager();
 
 		$appliedNotSet = $this->module->applies( $title, $this->user );
 		$this->setMwGlobals( 'bsgNamespaceRolesLockdown', [
@@ -65,7 +67,7 @@ class NamespaceLockdownTest extends MediaWikiTestCase {
 		}
 
 		$this->assertTrue(
-			$title->userCan( 'read', $this->user ),
+			$mwPermissionManager->userCan( 'read', $this->user, $title ),
 			'Users in "user" group should be able to read ' .
 			$title->getPrefixedDBkey() . ' when its locked down to "user" group'
 		);
@@ -73,7 +75,7 @@ class NamespaceLockdownTest extends MediaWikiTestCase {
 			$title->getNamespace() => [ 'reader' => [ 'sysop' ] ]
 		] );
 		$this->assertFalse(
-			$title->userCan( 'read', $this->user ),
+			$mwPermissionManager->userCan( 'read', $this->user, $title ),
 			'Users in "user" group should not be able to read ' .
 			$title->getPrefixedDBkey() . ' when its locked down to "sysop" group'
 		);
