@@ -10,5 +10,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Додај",
 	"bs-ooui-key-value-input-widget-add-form-label": "Додај нови унос",
 	"bs-ooui-key-value-input-widget-error-message": "Сва неопходна поља морају да буду попуњена.",
-	"bs-ooui-key-value-input-widget-no-values-label": "Нема постављених вредности."
+	"bs-ooui-key-value-input-widget-no-values-label": "Нема постављених вредности.",
+	"bs-ooui-btn-dismiss-alert-title": "Одбаци"
 }

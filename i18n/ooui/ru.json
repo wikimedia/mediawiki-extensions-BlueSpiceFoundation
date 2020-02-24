@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Shaleych",
-			"Vlad5250"
+			"Vlad5250",
+			"Alexander Yukal"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Добавить новый...",
@@ -11,5 +12,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Добавить",
 	"bs-ooui-key-value-input-widget-add-form-label": "Добавить новую запись",
 	"bs-ooui-key-value-input-widget-error-message": "Необходимо заполнить все необходимые поля!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значений!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значений!",
+	"bs-ooui-btn-dismiss-alert-title": "Отклонить"
 }

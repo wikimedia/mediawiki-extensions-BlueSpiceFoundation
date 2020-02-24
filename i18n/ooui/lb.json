@@ -6,5 +6,6 @@
 	},
 	"bs-ooui-key-value-input-widget-key-label": "Schlëssel",
 	"bs-ooui-key-value-input-widget-value-label": "Wäert",
-	"bs-ooui-key-value-input-widget-no-values-label": "Keng Wäerter festgeluecht!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Keng Wäerter festgeluecht!",
+	"bs-ooui-btn-dismiss-alert-title": "Verwerfen"
 }
