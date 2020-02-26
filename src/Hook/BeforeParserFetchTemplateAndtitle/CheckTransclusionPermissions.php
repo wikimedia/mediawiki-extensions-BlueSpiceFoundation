@@ -13,7 +13,9 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndtitle {
 	 */
 	protected function doProcess() {
 		$user = $this->parser->getUser();
-		if ( !$this->title->userCan( 'read', $user ) ) {
+		$mwPermissionManager = $this->getServices()->getPermissionManager();
+
+		if ( $mwPermissionManager->userCan( 'read', $user, $this->title ) ) {
 			$this->skip = true;
 			return false;
 		}
