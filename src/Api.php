@@ -34,6 +34,7 @@ use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Api\Format\Json;
 use BSExtendedApiContext;
 use Language;
+use MediaWiki\MediaWikiServices;
 use RequestContext;
 use Status;
 use Title;
@@ -212,7 +213,10 @@ abstract class Api extends ApiBase {
 			}
 			return;
 		}
-		foreach ( $title->getUserPermissionsErrors( $permission, $user ) as $error ) {
+
+		$errors = MediaWikiServices::getInstance()->getPermissionManager()
+			->getPermissionErrors( $permission, $user, $title );
+		foreach ( $errors as $error ) {
 			$status->fatal(
 				ApiMessage::create(
 					$error,
