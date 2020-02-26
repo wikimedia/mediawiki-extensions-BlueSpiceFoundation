@@ -10,5 +10,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "הוספה",
 	"bs-ooui-key-value-input-widget-add-form-label": "הוספת רשומה חדשה",
 	"bs-ooui-key-value-input-widget-error-message": "יש להגדיר את כל השדות הנדרשים!",
-	"bs-ooui-key-value-input-widget-no-values-label": "לא הוגדרו ערכים!"
+	"bs-ooui-key-value-input-widget-no-values-label": "לא הוגדרו ערכים!",
+	"bs-ooui-btn-dismiss-alert-title": "התעלמות"
 }
