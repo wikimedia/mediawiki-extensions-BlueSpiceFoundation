@@ -72,15 +72,17 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$distinctUserIds = [];
 		$distinctNamespaceIds = [];
 		foreach ( $res as $row ) {
-			$distinctUserIds[$row->wl_user] = true;
-			$distinctNamespaceIds[$row->wl_namespace] = true;
+			$distinctUserIds[(int)$row->wl_user] = true;
+			$distinctNamespaceIds[(int)$row->wl_namespace] = true;
 			$this->appendRowToData( $row );
 		}
 
+		if ( empty( $distinctUserIds ) || empty( $distinctNamespaceIds ) ) {
+			return $this->data;
+		}
 		$this->userIds = array_keys( $distinctUserIds );
-		$this->addUserFields();
-
 		$this->namespaceIds = array_keys( $distinctNamespaceIds );
+		$this->addUserFields();
 		$this->addTitleFields();
 
 		return $this->data;
@@ -115,6 +117,9 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	protected function appendRowToData( $row ) {
 		$title = \Title::makeTitle( $row->wl_namespace, $row->wl_title );
+		if ( !$title->isValid() ) {
+			return;
+		}
 
 		$this->data[] = new Record( (object)[
 			Record::USER_ID => $row->wl_user,
