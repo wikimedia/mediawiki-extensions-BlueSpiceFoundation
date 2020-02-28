@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"bs-deferred-action-status-done": "เสร็จสิ้น",
+	"bs-deferred-action-apieditpage-description": "แก้ไข \"$1\"",
+	"bs-deferred-batch-actions": "การกระทำ",
+	"bs-deferred-batch-description": "คำอธิบาย",
+	"bs-deferred-batch-status": "สถานะ"
+}
