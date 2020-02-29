@@ -77,7 +77,9 @@ class BSExtendedApiContext {
 		$aParams = [
 			'title'        => $oTitle,
 			'revision'     => Revision::newFromId( $aRequestParams['wgRevisionId'] ),
-			'specialpage'  => SpecialPageFactory::getPage( $aRequestParams['wgCanonicalSpecialPageName'] ),
+			'specialpage'  => \MediaWiki\MediaWikiServices::getInstance()
+				->getSpecialPageFactory()
+				->getPage( $aRequestParams['wgCanonicalSpecialPageName'] ),
 			'relevantpage' => Title::newFromText( $aRequestParams['wgRelevantPageName'] ),
 			'rawdata' => $aRequestParams
 		];

@@ -253,7 +253,9 @@ class BsPageContentProvider {
 					 * are needed by the special page (i.e. All Pages) have to
 					 * be present in $wgRequest / the context
 					 */
-					SpecialPageFactory::executePath( $oTitle, $context );
+					MediaWikiServices::getInstance()
+						->getSpecialPageFactory()
+						->executePath( $oTitle, $context );
 					$sHTML = $context->getOutput()->getHTML();
 					break;
 
