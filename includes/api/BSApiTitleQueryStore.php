@@ -65,6 +65,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			$aNsCondition[] = 0;
 		}
 		asort( $aNamespaces );
+		$pm = \MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
 		foreach ( $aNamespaces as $iNsId => $sNamespaceText ) {
 			if ( empty( $sNamespaceText ) ) {
 				continue;
@@ -80,7 +81,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 			// Only namespaces a user has the read permission for
 			$oDummyTitle = Title::newFromText( $sNamespaceText . ':X' );
-			if ( $oDummyTitle->userCan( 'read' ) === false ) {
+			if ( $pm->userCan( 'read', $this->getUser(), $oDummyTitle ) === false ) {
 				continue;
 			}
 			$aNsCondition[] = $iNsId;
@@ -166,7 +167,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			} else {
 				$oTitle = Title::newFromID( $row->page_id );
 			}
-			if ( $oTitle->userCan( 'read' ) === false ) {
+			if ( $pm->userCan( 'read', $this->getUser(), $oTitle ) === false ) {
 				continue;
 			}
 

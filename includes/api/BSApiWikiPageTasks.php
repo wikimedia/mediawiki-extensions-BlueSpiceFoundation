@@ -298,7 +298,10 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oResponse = $this->makeStandardReturn();
 		$oTitle = $oTitle = $this->getTitleFromTaskData( $oTaskData );
 
-		if ( !$oTitle->userCan( 'read' ) ) {
+		if ( !\MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan( 'read', $this->getUser(), $oTitle )
+		) {
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-page-read-not-allowed',
 				$oTitle->getPrefixedText()

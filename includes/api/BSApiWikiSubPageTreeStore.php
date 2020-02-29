@@ -60,7 +60,10 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			}
 
 			$oDummyTitle = Title::makeTitle( $iNamespaceId, 'X' );
-			if ( !$oDummyTitle->userCan( 'read' ) ) {
+			if ( !\MediaWiki\MediaWikiServices::getInstance()
+				->getPermissionManager()
+				->userCan( 'read', $this->getUser(), $oDummyTitle )
+			) {
 				continue;
 			}
 
@@ -177,7 +180,10 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			}
 		}
 
-		if ( !$oTitle->userCan( 'read' ) ) {
+		if ( !( \MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan( 'read', $this->getUser(), $oTitle )
+		) ) {
 			return;
 		}
 

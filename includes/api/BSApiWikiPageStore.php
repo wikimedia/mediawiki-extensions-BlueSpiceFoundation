@@ -118,9 +118,11 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		if ( !$oTitle ) {
 			return false;
 		}
-		return $oTitle->userCan( 'read', $this->getUser() )
-			? parent::makeDataSet( $row )
-			: false;
+		return \MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan( 'read', $this->getUser(), $oTitle )
+				? parent::makeDataSet( $row )
+				: false;
 	}
 
 	/**

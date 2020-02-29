@@ -63,6 +63,8 @@ class BSSkinSidebarTreeParser {
 	protected function convertDOMNodeAndAppendTreeNode( $domNode, $parentNode ) {
 		$domUL = $domNode->getElementsByTagName( 'ul' )->item( 0 );
 		if ( $domUL instanceof DOMElement && $domUL->childNodes->length > 0 ) {
+			$pm = \MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
+			$user = \RequestContext::getMain()->getUser();
 			foreach ( $domUL->childNodes as $domLI ) {
 				if ( $domLI instanceof DOMElement === false || strtolower( $domLI->nodeName ) !== 'li' ) {
 					continue;
@@ -72,7 +74,7 @@ class BSSkinSidebarTreeParser {
 
 				// Permission check!
 				if ( $config->has( 'targetTitle' ) ) {
-					if ( !$config->get( 'targetTitle' )->userCan( 'read' ) ) {
+					if ( !$pm->userCan( 'read', $user, $config->get( 'targetTitle' ) ) ) {
 						// We skip all childnodes!
 						continue;
 					}

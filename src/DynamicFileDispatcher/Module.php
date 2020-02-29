@@ -119,8 +119,11 @@ abstract class Module {
 	 */
 	protected function checkPermissions( $params ) {
 		$user = $this->getContext()->getUser();
+		$pm = \MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager();
+
 		if ( !$this->isTitleRequired() ) {
-			if ( !$user->isAllowed( $this->getPermissionKey() ) ) {
+			if ( !$pm->userHasRight( $user, $this->getPermissionKey() ) ) {
 				throw new \MWException( 'permission denied' );
 			}
 			return;
@@ -132,7 +135,7 @@ abstract class Module {
 		if ( $this->mustRequiredTitleExist() && !$title->exists() ) {
 			throw new \MWException( 'title must exist' );
 		}
-		if ( !$title->userCan( $this->getPermissionKey(), $user ) ) {
+		if ( !$pm->userCan( $this->getPermissionKey(), $user, $title ) ) {
 			throw new \MWException( 'permission denied' );
 		}
 	}

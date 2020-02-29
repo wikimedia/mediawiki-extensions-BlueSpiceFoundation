@@ -675,9 +675,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		$titleParamResolver = $this->utilityFactory->getTitleParamsResolver( (array)$taskData );
 		$titlesToTest = $titleParamResolver->resolve();
 		$permissionsToTest = $this->getTaskPermissions( $task );
+		$pm = \MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
 		foreach ( $titlesToTest as $title ) {
 			foreach ( $permissionsToTest as $permission ) {
-				if ( !$title->userCan( $permission, $this->getUser() ) ) {
+				if ( !$pm->userCan( $permission, $this->getUser(), $title ) ) {
 					$this->dieWithPermissionError();
 				}
 			}

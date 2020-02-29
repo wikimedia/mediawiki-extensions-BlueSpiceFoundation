@@ -68,9 +68,10 @@ class BSTestPermissions extends BSMaintenance {
 			"--------------------------------------------------------------------------------"
 		);
 		$permission = $this->getOption( 'permission' );
-		$result = FormatJson::encode(
-			$this->testTitle->userCan( $permission, $this->testUser )
-		);
+		$result = \MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan( $permission, $this->testUser, $this->testTitle );
+		$result = FormatJson::encode( $result );
 
 		$this->output( "Result: $result" );
 	}

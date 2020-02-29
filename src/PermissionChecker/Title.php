@@ -3,6 +3,7 @@
 namespace BlueSpice\PermissionChecker;
 
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use User;
 
 class Title implements \BlueSpice\IPermissionChecker {
@@ -15,9 +16,10 @@ class Title implements \BlueSpice\IPermissionChecker {
 	 * @return bool
 	 */
 	public function userCan( User $user, $permission, IContextSource $context = null ) {
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 		if ( !$context->getTitle() ) {
-			return $user->isAllowed( $permission );
+			return $pm->userHasRight( $user, $permission );
 		}
-		return $context->getTitle()->userCan( $permission, $user );
+		return $pm->userCan( $permission, $user, $context->getTitle() );
 	}
 }

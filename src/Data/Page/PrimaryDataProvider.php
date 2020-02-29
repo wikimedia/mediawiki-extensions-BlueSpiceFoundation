@@ -95,7 +95,9 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 		if ( $this->isSystemUser( $this->context->getUser() ) ) {
 			return true;
 		}
-		return $title->userCan( 'read', $this->context->getUser() );
+		return \MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan( 'read', $this->context->getUser(), $title );
 	}
 
 	/**

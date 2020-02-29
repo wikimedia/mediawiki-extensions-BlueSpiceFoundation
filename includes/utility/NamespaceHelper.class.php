@@ -267,10 +267,12 @@ class BsNamespaceHelper {
 		}
 
 		$oDummyTitle = Title::makeTitle( $iID, 'Dummy' );
-		if ( $oDummyTitle->userCan( $sPermission ) ) {
-			return true;
-		} else {
-			return false;
-		}
+		return \MediaWiki\MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan(
+				$sPermission,
+				\RequestContext::getMain()->getUser(),
+				$oDummyTitle
+			);
 	}
 }
