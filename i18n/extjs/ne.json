@@ -7,7 +7,9 @@
 		]
 	},
 	"bs-extjs-copy": "कपि",
+	"bs-extjs-actions-column-header": "कार्यहरू",
 	"bs-extjs-label-page": "पृष्ठ",
+	"bs-extjs-filters": "छनाेटहरू",
 	"bs-extjs-filter-bool-yes": "हो",
 	"bs-extjs-filter-bool-no": "होइन"
 }
