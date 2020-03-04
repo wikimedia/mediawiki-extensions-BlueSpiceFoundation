@@ -9,6 +9,7 @@ use RuntimeException;
 use Message;
 use MessageLocalizer;
 use RequestContext;
+use ResourceLoaderContext;
 
 class TemplateParser extends \TemplateParser implements ITemplateParser, MessageLocalizer {
 
