@@ -7,6 +7,7 @@ namespace BlueSpice;
 use Message;
 use MessageLocalizer;
 use RequestContext;
+use ResourceLoaderContext;
 use RuntimeException;
 
 class TemplateParser extends \TemplateParser implements ITemplateParser, MessageLocalizer {
