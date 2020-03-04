@@ -78,9 +78,10 @@ class TemplateHelper {
 		$extPath = $extensions[$extName]['extPath'];
 		$tplDirParts = [
 			$GLOBALS['wgExtensionDirectory'],
-			$extPath,
+			ltrim( $extPath, '/' ),
 			static::TEMPLATE_PATH
 		];
+
 		return $tplDirParts;
 	}
 }
