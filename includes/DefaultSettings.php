@@ -361,10 +361,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"type" => 'global',
 		"roles" => [ 'admin', 'maintenanceadmin' ]
 	],
-	"passwordreset" => [
-		"type" => 'global',
-		"roles" => [ 'accountmanager', 'admin', 'maintenanceadmin' ]
-	],
 	"patrol" => [
 		"type" => 'namespace',
 		"roles" => [ 'maintenanceadmin' ]
