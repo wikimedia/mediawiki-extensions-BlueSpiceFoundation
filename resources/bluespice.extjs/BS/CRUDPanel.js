@@ -28,9 +28,12 @@ Ext.define( 'BS.CRUDPanel', {
 
 	tbarHeight: 32,
 
-	constructor: function() {
+	constructor: function( config ) {
 		//Custom Settings
 		this.currentData = {};
+		if( config.renderTo && Ext.isString( config.renderTo ) ) {
+			config.id = config.id || config.renderTo + '-crud';
+		}
 		this.callParent(arguments);
 	},
 
@@ -135,5 +138,9 @@ Ext.define( 'BS.CRUDPanel', {
 		} else {
 			return null;
 		}
+	},
+
+	makeId: function( part ) {
+		return this.getId() + '-' + part;
 	}
 });
