@@ -23,7 +23,7 @@ class FileLinksHelper extends InternalLinksHelper {
 		if ( !$title ) {
 			return $title;
 		}
-		if ( $title->getNamespace() !== NS_FILE ) {
+		if ( $title->getNamespace() !== NS_FILE && $title->getNamespace() !== NS_MEDIA ) {
 			return null;
 		}
 		return $title;
@@ -39,7 +39,7 @@ class FileLinksHelper extends InternalLinksHelper {
 	 */
 	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true,
 		$separator = "\n" ) {
-		if ( $target->getNamespace() !== NS_FILE ) {
+		if ( $target->getNamespace() !== NS_FILE && $target->getNamespace() !== NS_MEDIA ) {
 			return;
 		}
 		parent::addTarget( $target, $text, $addDuplicates, false, $separator );
@@ -51,7 +51,7 @@ class FileLinksHelper extends InternalLinksHelper {
 	 * @param bool $removeAllOccurrences
 	 */
 	protected function removeTarget( \Title $target, $removeAllOccurrences ) {
-		if ( $target->getNamespace() !== NS_FILE ) {
+		if ( $target->getNamespace() !== NS_FILE && $target->getNamespace() !== NS_MEDIA ) {
 			return;
 		}
 		parent::removeTarget( $target, $removeAllOccurrences );
