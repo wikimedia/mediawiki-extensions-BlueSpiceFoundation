@@ -57,7 +57,7 @@ class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	 * @return InterlanguageLinksHelper
 	 */
 	protected function getLanguageLinksHelper( $wikiText ) {
-		return $this->getServices()->getBSUtilityFactory()
+		return $this->getServices()->getService( 'BSUtilityFactory' )
 			->getWikiTextLinksHelper( $wikiText )->getLanguageLinksHelper();
 	}
 

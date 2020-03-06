@@ -26,7 +26,7 @@ class AddDeferredNotifications extends \BlueSpice\Hook\MakeGlobalVariablesScript
 	 * @return \BlueSpice\IDeferredNotification[]
 	 */
 	private function getDeferredNotifications() {
-		$deferredNotificationsStack = $this->getServices()->getBSDeferredNotificationStack();
+		$deferredNotificationsStack = $this->getServices()->getService( 'BSDeferredNotificationStack' );
 		return $deferredNotificationsStack->getDeferredNotifications();
 	}
 }

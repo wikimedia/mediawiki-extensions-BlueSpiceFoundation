@@ -117,7 +117,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		$this->oTasksSpec = new BSTasksApiSpec( $this->aTasks );
-		$this->utilityFactory = $this->getServices()->getBSUtilityFactory();
+		$this->utilityFactory = $this->getServices()->getService( 'BSUtilityFactory' );
 		parent::__construct( $mainModule, $moduleName, $modulePrefix );
 	}
 

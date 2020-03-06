@@ -49,7 +49,7 @@ class NullNotification implements INotification {
 	 */
 	public function getUser() {
 		return \BlueSpice\Services::getInstance()
-			->getBSUtilityFactory()->getMaintenanceUser()->getUser();
+			->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();
 	}
 
 	/**

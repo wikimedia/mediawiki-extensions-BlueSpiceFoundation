@@ -46,7 +46,7 @@ class PagePropHelper {
 	 * @return \BlueSpice\TargetCacheHandler
 	 */
 	protected function getCache() {
-		return $this->services->getBSTargetCacheTitle()->getHandler(
+		return $this->services->getService( 'BSTargetCacheTitle' )->getHandler(
 			'pageprops',
 			new Target( $this->title )
 		);

@@ -70,7 +70,7 @@ class TemplateHelper {
 				static::TEMPLATE_PATH
 			];
 		}
-		$registry = $this->services->getBSExtensionRegistry();
+		$registry = $this->services->getService( 'BSExtensionRegistry' );
 		$extensions = $registry->getExtensionDefinitions();
 		if ( !isset( $extensions[$extName] ) ) {
 			throw new \BsException( "Unknown Extension $extName" );

@@ -21,7 +21,7 @@ class Mustache extends \BlueSpice\Template {
 		TemplateHelper $templateHelper = null,
 		ITemplateParser $templateParser = null ) {
 		if ( !$templateHelper ) {
-			$templateHelper = $services->getBSUtilityFactory()->getTemplateHelper();
+			$templateHelper = $services->getService( 'BSUtilityFactory' )->getTemplateHelper();
 		}
 		if ( !$templateParser ) {
 			$templateParser = new \BlueSpice\TemplateParser(

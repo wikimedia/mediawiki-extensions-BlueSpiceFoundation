@@ -385,7 +385,7 @@ class BsCore {
 	 * and links to his userpage. In future versions it should also have a
 	 * little menu with his mail adress, and other profile information.
 	 * @deprecated since version 3.0.0 - Use
-	 * \BlueSpice\Services::getInstance()->getBSRendererFactory() and create
+	 * \BlueSpice\Services::getInstance()->getService( 'BSRendererFactory' ) and create
 	 * an instance of the 'userimage' renderer.
 	 * ->get( 'userimage', new \BlueSpice\Renderer\Params( [...] )
 	 * @param User $oUser The requested MediaWiki User object

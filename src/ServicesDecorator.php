@@ -46,12 +46,19 @@ use TitleParser;
 use VirtualRESTServiceClient;
 use MediaWiki\Interwiki\InterwikiLookup;
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.2.0 - use \MediaWiki\MediaWikiSerices
+ */
 class ServicesDecorator extends ServiceContainer {
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.2.0 - use \MediaWiki\MediaWikiSerices::getInstance
 	 * @return ServicesDecorator
 	 */
 	public static function getInstance() {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return new static();
 	}
 

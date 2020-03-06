@@ -67,12 +67,12 @@ class Foundation {
 	}
 
 	protected function initializeNotifications() {
-		$notifications = $this->services->getBSNotificationManager();
+		$notifications = $this->services->getService( 'BSNotificationManager' );
 		$notifications->init();
 	}
 
 	protected function initializeExtensions() {
-		$this->services->getBSExtensionFactory()->getExtensions();
+		$this->services->getService( 'BSExtensionFactory' )->getExtensions();
 	}
 
 	protected function overwriteGlobals() {

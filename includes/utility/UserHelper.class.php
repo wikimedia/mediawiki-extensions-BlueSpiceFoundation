@@ -1,7 +1,7 @@
 <?php
 
 /**
- * DEPRECATED - use \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+ * DEPRECATED - use \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
  * ->getUserHelper()
  */
 class BsUserHelper {
@@ -45,13 +45,13 @@ class BsUserHelper {
 	/**
 	 * Returns the displayed name for the given user
 	 * @deprecated since version 3.0.0 - Use \BlueSpice\Services::getInstance()
-	 * ->getBSUtilityFactory()->getUserHelper()->getDisplayName() instead
+	 * ->getService( 'BSUtilityFactory' )->getUserHelper()->getDisplayName() instead
 	 * @param User $oUser
 	 * @return mixed username, else false
 	 */
 	public static function getUserDisplayName( $oUser = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+		return \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $oUser )->getDisplayName();
 	}
 

@@ -91,7 +91,7 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 		];
 
 		$dfdUrlBuilder = Services::getInstance()
-			->getBSDynamicFileDispatcherUrlBuilder();
+			->getService( 'BSDynamicFileDispatcherUrlBuilder' );
 		return $dfdUrlBuilder->build( new DFDParams( $params ) );
 	}
 

@@ -91,7 +91,7 @@ class SetCategories extends WikiPageTask {
 	 * @return CategoryLinksHelper
 	 */
 	protected function getCategoryLinksHelper( $wikiText ) {
-		return $this->getServices()->getBSUtilityFactory()
+		return $this->getServices()->getService( 'BSUtilityFactory' )
 			->getWikiTextLinksHelper( $wikiText )->getCategoryLinksHelper();
 	}
 

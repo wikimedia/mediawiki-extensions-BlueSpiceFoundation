@@ -281,7 +281,7 @@ class BsConfig {
 	 */
 	public static function loadSettings() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
 		$sKey = $cacheHelper->getCacheKey( 'BlueSpice', 'BsConfig', 'settings' );
 		$aData = $cacheHelper->get( $sKey );
 
@@ -317,7 +317,7 @@ class BsConfig {
 	 */
 	public static function saveSettings() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
 		$dbw = wfGetDB( DB_MASTER );
 
 		if ( !$dbw->tableExists( 'bs_settings' ) ) {
