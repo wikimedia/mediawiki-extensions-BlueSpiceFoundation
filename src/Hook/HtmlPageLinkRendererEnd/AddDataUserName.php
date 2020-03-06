@@ -40,7 +40,7 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		$text = \HtmlArmor::getHtml( $this->text );
 		if ( $user->getName() === $text ) {
 			$this->text = new \HtmlArmor(
-				$this->getServices()->getBSUtilityFactory()->getUserHelper(
+				$this->getServices()->getService( 'BSUtilityFactory' )->getUserHelper(
 					$user
 				)->getDisplayName()
 			);

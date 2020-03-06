@@ -107,7 +107,7 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 		IPermissionChecker $permissionChecker = null ) {
 		$actionLogger = new NullLogger();
 		$logger = LoggerFactory::getInstance( static::class );
-		$notifier = $services->getBSNotificationManager()->getNotifier();
+		$notifier = $services->getService( 'BSNotificationManager' )->getNotifier();
 		if ( !$permissionChecker ) {
 			$permissionChecker = new NullPermissionChecker();
 		}

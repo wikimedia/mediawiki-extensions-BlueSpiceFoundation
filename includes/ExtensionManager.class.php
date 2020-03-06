@@ -25,7 +25,7 @@ class BsExtensionManager {
 	 */
 	public static function getRegisteredExtensions() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$registry = Services::getInstance()->getBSExtensionRegistry();
+		$registry = Services::getInstance()->getService( 'BSExtensionRegistry' );
 		return $registry->getExtensionDefinitions();
 	}
 
@@ -36,7 +36,7 @@ class BsExtensionManager {
 	 */
 	public static function getRunningExtensions() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$factory = Services::getInstance()->getBSExtensionFactory();
+		$factory = Services::getInstance()->getService( 'BSExtensionFactory' );
 		return $factory->getExtensions();
 	}
 
@@ -50,7 +50,7 @@ class BsExtensionManager {
 	 */
 	public static function getExtension( $name ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$factory = Services::getInstance()->getBSExtensionFactory();
+		$factory = Services::getInstance()->getService( 'BSExtensionFactory' );
 		$extension = $factory->getExtension( $name );
 		if ( !$extension ) {
 			// Backwards compatibility: extensions will have a BlueSice prefix in
@@ -68,7 +68,7 @@ class BsExtensionManager {
 	 */
 	public static function getExtensionNames() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$registry = Services::getInstance()->getBSExtensionRegistry();
+		$registry = Services::getInstance()->getService( 'BSExtensionRegistry' );
 		return $registry->getNames();
 	}
 
@@ -80,7 +80,7 @@ class BsExtensionManager {
 	 */
 	public static function getExtensionInformation() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$factory = Services::getInstance()->getBSExtensionFactory();
+		$factory = Services::getInstance()->getService( 'BSExtensionFactory' );
 		return $factory->getExtensionInformation();
 	}
 }

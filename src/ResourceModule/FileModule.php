@@ -62,7 +62,7 @@ class FileModule extends ResourceLoaderFileModule {
 	 * @return TemplateFactory
 	 */
 	protected function getTemplateFactory() {
-		return Services::getInstance()->getBSTemplateFactory();
+		return Services::getInstance()->getService( 'BSTemplateFactory' );
 	}
 
 	/**

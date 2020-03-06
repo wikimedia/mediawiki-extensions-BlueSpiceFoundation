@@ -15,7 +15,7 @@ class InvalidateTargetCacheTitle extends \BlueSpice\Hook\PageContentSaveComplete
 	}
 
 	protected function doProcess() {
-		$this->getServices()->getBSTargetCacheTitle()->invalidateAll(
+		$this->getServices()->getService( 'BSTargetCacheTitle' )->invalidateAll(
 			new Target( $this->wikipage->getTitle() )
 		);
 		return true;

@@ -66,7 +66,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		$this->args['imagesrc'] = $this->getUser()->getName();
 		$this->args['username'] = $this->getUser()->getName();
 
-		$userHelper = Services::getInstance()->getBSUtilityFactory()
+		$userHelper = Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $this->getUser() );
 
 		$this->args['imagetitle'] = $userHelper->getDisplayName();
@@ -105,7 +105,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		];
 
 		$dfdUrlBuilder = Services::getInstance()
-			->getBSDynamicFileDispatcherUrlBuilder();
+			->getService( 'BSDynamicFileDispatcherUrlBuilder' );
 		return $dfdUrlBuilder->build( new DFDParams( $params ) );
 	}
 

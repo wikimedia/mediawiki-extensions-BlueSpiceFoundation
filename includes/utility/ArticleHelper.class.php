@@ -54,7 +54,7 @@ class BsArticleHelper {
 
 		$iTalkPageId = $oTalkPage->getArticleID();
 
-		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
 		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',
@@ -87,14 +87,14 @@ class BsArticleHelper {
 	/**
 	 * DEPRECATED
 	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
-	 * ->getBSUtilityFactory()->getPagePropHelper( \Title )->getPageProp instead
+	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( \Title )->getPageProp instead
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
 	 * @return string|null
 	 */
 	public function getPageProp( $sPropName, $bDoLoad = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$helper = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+		$helper = \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProp( $sPropName );
 	}
@@ -116,13 +116,13 @@ class BsArticleHelper {
 	/**
 	 * DEPRECATED
 	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
-	 * ->getBSUtilityFactory()->getPagePropHelper( \Title )->getPageProps instead
+	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( \Title )->getPageProps instead
 	 * @param type $bDoLoad
 	 * @return array
 	 */
 	public function getPageProps( $bDoLoad = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$helper = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
+		$helper = \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProps();
 	}
@@ -146,7 +146,7 @@ class BsArticleHelper {
 			return true;
 		}
 
-		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
 		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',

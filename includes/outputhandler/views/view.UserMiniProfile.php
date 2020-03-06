@@ -41,7 +41,7 @@ class ViewUserMiniProfile extends ViewBaseElement {
 			UserProfileImage::HEIGHT => (int)$this->mOptions['height']
 		] );
 
-		$dfdUrlBuilder = Services::getInstance()->getBSDynamicFileDispatcherUrlBuilder();
+		$dfdUrlBuilder = Services::getInstance()->getService( 'BSDynamicFileDispatcherUrlBuilder' );
 		$url = $dfdUrlBuilder->build( new Params( $params ) );
 
 		$aOut = [];

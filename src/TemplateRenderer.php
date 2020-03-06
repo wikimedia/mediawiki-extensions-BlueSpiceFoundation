@@ -96,10 +96,10 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 			$linkRenderer = $services->getLinkRenderer();
 		}
 		if ( !$cacheHelper ) {
-			$cacheHelper = $services->getBSUtilityFactory()->getCacheHelper();
+			$cacheHelper = $services->getService( 'BSUtilityFactory' )->getCacheHelper();
 		}
 		if ( !$templateFactory ) {
-			$templateFactory = $services->getBSTemplateFactory();
+			$templateFactory = $services->getService( 'BSTemplateFactory' );
 		}
 
 		return new static(
@@ -253,7 +253,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 */
 	protected function getCacheHelper() {
 		if ( !$this->cacheHelper ) {
-			$this->cacheHelper = Services::getInstance()->getBSUtilityFactory()
+			$this->cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )
 				->getCacheHelper();
 			// Deprecated since 3.1! All sub classes should be registered with a factory
 			// callback and inject CacheHelper
@@ -268,7 +268,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 */
 	protected function getTemplateFactory() {
 		if ( !$this->templateFactory ) {
-			$this->templateFactory = Services::getInstance()->getBSTemplateFactory();
+			$this->templateFactory = Services::getInstance()->getService( 'BSTemplateFactory' );
 			// Deprecated since 3.1! All sub classes should be registered with a factory
 			// callback and inject TemplateFactory
 			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );

@@ -27,7 +27,7 @@ $wgTitle = Title::makeTitle(
 $fileDispatcher = null;
 try {
 	$dfdFactory = \BlueSpice\Services::getInstance()
-		->getBSDynamicFileDispatcherFactory();
+		->getService( 'BSDynamicFileDispatcherFactory' );
 	$request = \RequestContext::getMain()->getRequest();
 	$dfd = $dfdFactory->newFromParams(
 		new \BlueSpice\DynamicFileDispatcher\RequestParams( [], $request ),

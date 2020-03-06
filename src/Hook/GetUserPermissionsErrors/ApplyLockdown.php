@@ -27,7 +27,7 @@ class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 	 * @return Lockdown
 	 */
 	protected function getLockdown() {
-		return $this->getServices()->getBSPermissionLockdownFactory()
+		return $this->getServices()->getService( 'BSPermissionLockdownFactory' )
 			->newFromTitleAndUserRelation( $this->title, $this->user );
 	}
 

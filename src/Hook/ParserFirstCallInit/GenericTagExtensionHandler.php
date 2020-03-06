@@ -9,7 +9,7 @@ namespace BlueSpice\Hook\ParserFirstCallInit;
 class GenericTagExtensionHandler extends \BlueSpice\Hook\ParserFirstCallInit {
 
 	protected function doProcess() {
-		$factory = $this->getServices()->getBSExtensionFactory();
+		$factory = $this->getServices()->getService( 'BSExtensionFactory' );
 		\BsGenericTagExtensionHandler::setupHandlers(
 			$factory->getExtensions(),
 			$this->parser

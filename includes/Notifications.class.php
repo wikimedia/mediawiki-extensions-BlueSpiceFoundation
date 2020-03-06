@@ -55,7 +55,7 @@ abstract class BSNotifications {
 			return;
 		}
 
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
@@ -92,7 +92,7 @@ abstract class BSNotifications {
 		$aUserGroups = null,
 		$aActiveDefaultUserOptions = null
 	) {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
@@ -141,7 +141,7 @@ abstract class BSNotifications {
 		$sType = $aValues['type'];
 		unset( $aValues['type'] );
 
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
@@ -182,7 +182,7 @@ abstract class BSNotifications {
 		$oTitle = null,
 		$aExtraParams = null
 	) {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$echoNotifier = $notificationsManager->getNotifier();
 
