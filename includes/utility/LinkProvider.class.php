@@ -6,7 +6,7 @@
  * from various sources.
  * Hint: https://www.mediawiki.org/wiki/Help:Links
  * @deprecated since version 3.0.1 - Use \BlueSpice\Services::getInstance()
- * ->getBSUtilityFactory()->getWikiTextLinksHelper and LinkRenderer service
+ * ->getService( 'BSUtilityFactory' )->getWikiTextLinksHelper and LinkRenderer service
  * instead
  * @package BlueSpice_AdapterMW
  * @subpackage Utility
@@ -47,7 +47,7 @@ class BsLinkProvider {
 		$aAdditionalAttributes = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$sUserDisplayName = \BlueSpice\Services::getInstance()
-			->getBSUtilityFactory()->getUserHelper( $oUser )->getDisplayName();
+			->getService( 'BSUtilityFactory' )->getUserHelper( $oUser )->getDisplayName();
 
 		$sLabel = ( empty( $sLabel ) ) ? $sUserDisplayName : $sLabel;
 		$sTitleArrtibute = ( empty( $sTitle ) ) ? 'title="' . $sLabel . '" ' : 'title="' . $sTitle . '" ';
@@ -72,7 +72,7 @@ class BsLinkProvider {
 	 * Creates a WikiText link to the provided Title. This is a wrapper function for
 	 * makeWikiLinkForTitleString.
 	 * @deprecated since version 3.0.1 - Use \BlueSpice\Services::getInstance()
-	 * ->getBSUtilityFactory()->getWikiTextLinksHelper instead
+	 * ->getService( 'BSUtilityFactory' )->getWikiTextLinksHelper instead
 	 * @param Title $oTitle The MediaWiki Title object a wikilink should be created for.
 	 * @param String $sLabel If the link should have a alternative name instead of the
 	 * title name, this parameter can contain it. I.e. $sLabel = 'Giant spider in Mordor'
@@ -82,7 +82,7 @@ class BsLinkProvider {
 	 */
 	public static function makeWikiLinkForTitle( Title $oTitle, $sLabel = '', $sJumpMark = '' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$util = \BlueSpice\Services::getInstance()->getBSUtilityFactory();
+		$util = \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' );
 		$linkHelper = $util->getWikiTextLinksHelper( '' )
 			->getInternalLinksHelper()->addTargets( [
 			$sLabel => $oTitle
@@ -93,7 +93,7 @@ class BsLinkProvider {
 	/**
 	 * Creates a WikiText link to the provided Title.
 	 * @deprecated since version 3.0.1 - Use \BlueSpice\Services::getInstance()
-	 * ->getBSUtilityFactory()->getWikiTextLinksHelper instead
+	 * ->getService( 'BSUtilityFactory' )->getWikiTextLinksHelper instead
 	 * @param Title $sTitle The title string a wikilink should be created for.
 	 * @param String $sNamespace The namespace text string for the wikilink title.
 	 * @param String $sLabel If the link should have a alternative name instead of the
@@ -121,7 +121,7 @@ class BsLinkProvider {
 	 * and escapes it if the Title is from NS_CATEGORY or NS_FILE to aviod
 	 * parsing problems.
 	 * @deprecated since version 3.0.1 - Use \BlueSpice\Services::getInstance()
-	 * ->getBSUtilityFactory()->getWikiTextLinksHelper instead
+	 * ->getService( 'BSUtilityFactory' )->getWikiTextLinksHelper instead
 	 * @param Title $oTitle The MediaWiki Title object to link to.
 	 * @param string $sDescription The description part of the link.
 	 * @return string The WikiText link

@@ -90,7 +90,7 @@ class BSTemplateHelper {
 	 *         )
 	 *     );
 	 * @endcode
-	 * @deprecated since version 3.1 - use Services->getBSTemplateFactory()->get( $name )
+	 * @deprecated since version 3.1 - use Services->getService( 'BSTemplateFactory' )->get( $name )
 	 * ->process() instead
 	 * @param string $sTplName The name of the template
 	 * @param mixed $args
@@ -101,7 +101,7 @@ class BSTemplateHelper {
 	public static function process( $sTplName, array $args = [], array $scopes = [],
 		$bForceRecompile = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$template = Services::getInstance()->getBSTemplateFactory()->get( $sTplName );
+		$template = Services::getInstance()->getService( 'BSTemplateFactory' )->get( $sTplName );
 		return $template->process( $args, $scopes );
 	}
 
@@ -126,7 +126,7 @@ class BSTemplateHelper {
 		}
 		foreach ( $aExtensions as $sExtName => $aConfig ) {
 			try {
-				$aTplDir = Services::getInstance()->getBSUtilityFactory()
+				$aTplDir = Services::getInstance()->getService( 'BSUtilityFactory' )
 					->getTemplateHelper()->makeFullExtTemplatePathFromExtName(
 					$sExtName,
 					$aConfig

@@ -200,7 +200,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 */
 	public function getCacheKey( $sSubKey = 'default' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
 		return $cacheHelper->getCacheKey(
 			'BlueSpice',
 			$this->getName(),

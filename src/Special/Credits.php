@@ -100,7 +100,7 @@ class Credits extends \BlueSpice\SpecialPage {
 	 * @return array
 	 */
 	protected function getTranslatorsList() {
-		$cacheHelper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
+		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
 		$key = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'Credits',

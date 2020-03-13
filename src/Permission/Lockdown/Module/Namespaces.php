@@ -50,7 +50,7 @@ class Namespaces extends Module {
 	public static function getInstance( Config $config, IContextSource $context,
 		Services $services, RoleManager $manager = null ) {
 		if ( !$manager ) {
-			$manager = $services->getBSRoleManager();
+			$manager = $services->getService( 'BSRoleManager' );
 		}
 		return new static( $config, $context, $services, $manager );
 	}

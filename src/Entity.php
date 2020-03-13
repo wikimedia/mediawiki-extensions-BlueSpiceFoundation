@@ -328,7 +328,7 @@ abstract class Entity implements JsonSerializable {
 		if ( !$context ) {
 			$context = RequestContext::getMain();
 		}
-		return Services::getInstance()->getBSRendererFactory()->get(
+		return Services::getInstance()->getService( 'BSRendererFactory' )->get(
 			$this->getConfig()->get( 'Renderer' ),
 			$this->makeRendererParams( [ Renderer::PARAM_CONTEXT => $context ] )
 		);
