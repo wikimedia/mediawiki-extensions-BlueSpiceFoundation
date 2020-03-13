@@ -137,7 +137,8 @@
 				"GroupManager": "BlueSpice\\DynamicSettings\\NullSettings::factory",
 				"NamespaceManager": "BlueSpice\\DynamicSettings\\NullSettings::factory",
 				"PermissionManager": "BlueSpice\\DynamicSettings\\NullSettings::factory"
-			}
+			},
+			"JSConfigVars": {}
 		}
 	},
 	"ExtensionFunctions": [
@@ -166,7 +167,8 @@
 		"bs-category-treestore": "BSApiCategoryTreeStore",
 		"bs-watchlist-store": "BlueSpice\\Api\\Store\\Watchlist",
 		"bs-recentchanges-store": "BlueSpice\\Api\\Store\\RecentChanges",
-		"bs-task": "\\BlueSpice\\Api\\Task"
+		"bs-task": "\\BlueSpice\\Api\\Task",
+		"bs-js-var-config": "\\BlueSpice\\Api\\JSConfigVarsApi"
 	},
 	"GroupPermissions": {
 		"*": {
@@ -203,7 +205,8 @@
 				"bluespice/bluespice.treepanel.js",
 				"bluespice/bluespice.alerts.js",
 				"bluespice/bluespice.loadIndicator.js",
-				"bluespice/bluespice.deferredNotifications.js"
+				"bluespice/bluespice.deferredNotifications.js",
+				"bluespice/bluespice.config.js"
 			],
 			"messages": [
 				"bs-years-duration",
