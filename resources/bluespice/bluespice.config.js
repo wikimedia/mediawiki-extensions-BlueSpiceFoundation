@@ -1,0 +1,193 @@
+( function ( mw, bs, $, undefined ) {
+	/**
+	 * BlueSpice client-side config
+	 *
+	 * See doc/bs.config.md
+	 *
+	 * @param {Object} base Default configs
+	 * @param {boolean} [strict=false] Do not try to infer variable names
+	 */
+	var BlueSpiceConfig = function( base, strict ) {
+		this.strict = strict || false;
+		this.base = base || {};
+		this.vars = {};
+		this.api = new mw.Api();
+
+		this.initialized = false;
+	};
+
+	/**
+	 * Get the value of locally stored variable
+	 *
+	 * @param {string} name
+	 * @returns {*}
+	 */
+	BlueSpiceConfig.prototype.get = function( name ) {
+		if ( !this.initialized ) {
+			this.init();
+		}
+
+		name = this.normalizeName( name );
+		return this.vars.hasOwnProperty( name ) ?
+			this.vars[name] :
+			null;
+	};
+
+	/**
+	 * Load BS vars from main config to this config
+	 */
+	BlueSpiceConfig.prototype.init = function() {
+		var parsedName;
+
+		for ( var name in this.base ) {
+			if ( !this.base.hasOwnProperty( name ) ) {
+				continue;
+			}
+			parsedName = this.parseName( name );
+			if ( !parsedName ) {
+				continue;
+			}
+			this.vars[parsedName] = this.base[name];
+		}
+
+		this.initialized = true;
+	};
+
+	/**
+	 * Get the value of remote variable(s)
+	 *
+	 * @param {string|Array} name
+	 * @param {boolean} [forceRemote=false] If false, will return local value, if present
+	 * @param {Object} [context={}] Optional context for retrieving the variable
+	 * @returns {Promise}
+	 */
+	BlueSpiceConfig.prototype.getDeferred = function( name, forceRemote, context ) {
+		forceRemote = forceRemote || false;
+		context = context || {};
+
+		var dfd = $.Deferred(),
+			normalized = [], i = 0,
+			final = {}, missing = [];
+
+		if ( Array.isArray( name ) ) {
+			for ( i = 0; i < name.length; i++ ) {
+				normalized.push( this.normalizeName( name[i] ) );
+			}
+		} else {
+			normalized.push( this.normalizeName( name ) );
+		}
+
+		if ( !forceRemote ) {
+			final = this.doGatherLocal( normalized );
+		}
+
+		missing = this.getMissing( normalized, final );
+		if ( missing.length === 0 ) {
+			this.doResolve( dfd, final );
+			return dfd.promise();
+		}
+
+		bs.api.config.get( missing, context )
+			.done( function( value ) {
+				final = $.extend( final, value );
+				this.vars = $.extend( this.vars, final );
+				this.doResolve( dfd, final );
+			}.bind( this ) ).fail( function( error ) {
+			dfd.reject( error );
+		} );
+
+		return dfd.promise();
+	};
+
+	/**
+	 * Check if variable is present in config
+	 *
+	 * @param {string} name
+	 * @param {boolean} [checkRemote=false] Checks remote variables. If true returns a promise
+	 * @returns {(boolean|Promise)}
+	 */
+	BlueSpiceConfig.prototype.has = function( name, checkRemote ) {
+		checkRemote = checkRemote || false;
+		name = this.normalizeName( name );
+
+		var existsLocally = this.vars.hasOwnProperty( name );
+		if ( !checkRemote ) {
+			return existsLocally;
+		}
+
+		return bs.api.config.has( name );
+	};
+
+	/**
+	 * Try to infer correct name from the given name
+	 * This will recognize common name prefixes and strip them
+	 *
+	 * @param {string} name
+	 * @returns {string} Parsed name, or name as-is, if config is in strict mode or name cannot be parsed
+	 */
+	BlueSpiceConfig.prototype.normalizeName = function( name ) {
+		if ( this.strict ) {
+			return name;
+		}
+		return this.parseName( name ) || name;
+	};
+
+	/**
+	 * Get normalized name of a variable
+	 *
+	 * @param {string} name
+	 * @returns {(string|null)}
+	 */
+	BlueSpiceConfig.prototype.parseName = function( name ) {
+		var prefix,
+			varName = null;
+
+		prefix = name.substring( 0, 3 );
+		if ( prefix === 'bsg' ) {
+			varName = name.substring( 3 );
+		} else if ( prefix.substring( 0, 2 ).toLowerCase() === 'bs' ) {
+			varName = name.substring( 2 );
+		}
+
+		return varName;
+	};
+
+	BlueSpiceConfig.prototype.doGatherLocal = function( normalized ) {
+		var result = {}, i = 0, name = '';
+		if ( !this.initialized ) {
+			this.init();
+		}
+		for ( i; i < normalized.length; i++ ) {
+			name = normalized[i];
+			if ( this.has( name ) ) {
+				result[name] = this.get( name );
+			}
+		}
+
+		return result;
+	};
+
+	BlueSpiceConfig.prototype.getMissing = function( normalized, final ) {
+		var missing = [], i = 0;
+		for ( i; i < normalized.length; i++ ) {
+			if ( final.hasOwnProperty( normalized[i] ) ) {
+				continue;
+			}
+			missing.push( normalized[i] );
+		}
+
+		return missing;
+	};
+
+	BlueSpiceConfig.prototype.doResolve = function( dfd, final ) {
+		var objectKeys = Object.keys( final );
+		if ( objectKeys.length === 1 ) {
+			var firstObjectKey = objectKeys[0];
+			dfd.resolve( final[firstObjectKey] );
+			return;
+		}
+		dfd.resolve(final);
+	};
+
+	bs.config = new BlueSpiceConfig( mw.config.values );
+}( mediaWiki, blueSpice, jQuery ) );

@@ -67,5 +67,10 @@
 	"apihelp-bs-watchlist-store-summary": "Lists all watchlist entries. Allows sorting, filtering and pagination. Implements store parameters.",
 	"apihelp-bs-recentchanges-store-summary": "Lists all recent changes. Allows sorting, filtering and pagination. Implements store parameters.",
 	"apihelp-bs-task-summary": "Provides the API endpoint for executing registered tasks",
-	"apihelp-bs-task-description": "Provides the API endpoint for executing registered tasks"
+	"apihelp-bs-task-description": "Provides the API endpoint for executing registered tasks",
+	"apihelp-bs-js-var-config-summary": "Provides an API endpoint for retrieving client-side configuration variables",
+	"apihelp-bs-js-var-config-param-name": "Name of the configuration variable to retrieve",
+	"apihelp-bs-js-var-config-param-func": "Configuration function to execute: has|get",
+	"apihelp-bs-js-var-config-param-context": "JSON encoded object with context of the call",
+	"apihelp-bs-js-var-config-param-format": "Format of the result"
 }
