@@ -53,6 +53,7 @@ Ext.define('BS.form.field.ItemList', {
 			anchor: '100%',
 			displayField: this.inputDisplayField,
 			minChars: this.minChars,
+			id: this.id + "-combobox",
 			listConfig: {
 				getInnerTpl: function() {
 					return '{["<span class=\'bs-icon-"+values.' + me.typeField + '+" bs-typeicon\'></span>"+values.' + me.inputDisplayField + ']}';
