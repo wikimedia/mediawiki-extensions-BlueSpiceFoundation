@@ -29,6 +29,7 @@
 	"bs-two-units-ago": "$1 ja $2 sitten",
 	"bs-one-unit-ago": "$1 sitten",
 	"bs-now": "nyt",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, herra $2|Hei, rouva $2|Hei $2}}.",
 	"bs-email-footer": "Tämä viesti on luotu automaattisesti sivulta $1. Älä vastaa tähän viestiin.",
 	"bs-userpagesettings-legend": "Käyttäjäasetukset",
 	"bs-userpreferences-link-text": "Lisää käyttäjäasetuksia",
