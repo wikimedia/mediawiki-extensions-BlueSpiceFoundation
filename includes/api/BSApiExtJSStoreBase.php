@@ -552,18 +552,19 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 			self::PROP_SPEC_SORTABLE, false
 		);
 		$aParams = [];
+		$valuesOf = [];
 		for ( $i = 0; $i < $iCount; $i++ ) {
 			$sProperty = $aSort[$i]->property;
 			if ( in_array( $sProperty, $aUnsortableProps ) ) {
 				continue;
 			}
 			$sDirection = strtoupper( $aSort[$i]->direction );
-			$a{$sProperty} = [];
+			$valuesOf[$sProperty] = [];
 			foreach ( $aProcessedData as $iKey => $oDataSet ) {
-				$a{$sProperty}[$iKey] = $this->getSortValue( $oDataSet, $sProperty );
+				$a[$sProperty][$iKey] = $this->getSortValue( $oDataSet, $sProperty );
 			}
 
-			$aParams[] = $a{$sProperty};
+			$aParams[] = $a[$sProperty];
 			if ( $sDirection === 'ASC' ) {
 				$aParams[] = SORT_ASC;
 			} else {
