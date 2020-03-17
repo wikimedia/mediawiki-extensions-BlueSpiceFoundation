@@ -27,21 +27,21 @@ class Sorter {
 	 * @return \BlueSpice\Data\Record[]
 	 */
 	public function sort( $dataSets, $unsortableProps = [] ) {
-		$numberOfSorts = count( $this->sorts );
 		$sortParams = [];
+		$valuesOf = [];
 		foreach ( $this->sorts as $sort ) {
 			$property = $sort->getProperty();
 			if ( in_array( $property, $unsortableProps ) ) {
 				continue;
 			}
 
-			$valuesOf{$property} = [];
+			$valuesOf[$property] = [];
 			foreach ( $dataSets as $idx => $dataSet ) {
-				$valuesOf{$property}[$idx] =
+				$valuesOf[$property][$idx] =
 					$this->getSortValue( $dataSet, $property );
 			}
 
-			$sortParams[] = $valuesOf{$property};
+			$sortParams[] = $valuesOf[$property];
 			$sortParams[] = $this->getSortDirection( $sort );
 			$sortParams[] = $this->getSortFlags( $property );
 		}
