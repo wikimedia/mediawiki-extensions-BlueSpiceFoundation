@@ -7,5 +7,6 @@
 		]
 	},
 	"bs-userbar_loginswitch_logout": "ออกจากระบบ",
-	"bs-userbar_loginswitch_login": "เข้าสู่ระบบ"
+	"bs-userbar_loginswitch_login": "เข้าสู่ระบบ",
+	"bs-graphicallist-action-close": "ปิด"
 }
