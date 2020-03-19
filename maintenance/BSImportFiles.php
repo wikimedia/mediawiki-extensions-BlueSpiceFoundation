@@ -30,7 +30,7 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 	/**
 	 * @return array
 	 */
-	protected function getFileList() {
+	public function getFileList() {
 		$aFiles = parent::getFileList();
 		$aFilteredFiles = [];
 		foreach ( $aFiles as $sFilePath => $oFile ) {
@@ -47,7 +47,7 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 	 * @param SplFileInfo $oFile
 	 * @return bool
 	 */
-	protected function processFile( $oFile ) {
+	public function processFile( $oFile ) {
 		$sRelPath = str_replace(
 			$this->sBasePath,
 			'',
