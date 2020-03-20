@@ -37,6 +37,7 @@
 			"ExtendedSiteToolRegistry": {},
 			"AdminToolRegistry": {},
 			"PageInfoElementRegistry": {},
+			"PageHeaderBeforeContentRegistry": {},
 			"TagRegistry": {},
 			"PermissionRegistry": {},
 			"RoleRegistry": {
