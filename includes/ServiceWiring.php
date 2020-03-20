@@ -212,5 +212,15 @@ return [
 	'BSDeferredNotificationStack' => function ( MediaWikiServices $services ) {
 		$request = \RequestContext::getMain()->getRequest();
 		return new DeferredNotificationStack( $request );
-	}
+	},
+
+	'BSPageHeaderBeforeContentFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+				'BlueSpiceFoundationPageHeaderBeforeContentRegistry'
+			);
+		$context = \RequestContext::getMain();
+		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
+
+		return new \BlueSpice\PageHeaderBeforeContentFactory( $registry, $context, $config );
+	},
 ];
