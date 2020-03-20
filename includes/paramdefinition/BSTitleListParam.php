@@ -37,7 +37,10 @@ class BSTitleListParam extends \ParamProcessor\ParamDefinition {
 		$this->validator = new BSTitleValidator();
 	}
 
-	public function isList() {
+	/**
+	 * @return bool
+	 */
+	public function isList() : bool {
 		return true;
 	}
 }
