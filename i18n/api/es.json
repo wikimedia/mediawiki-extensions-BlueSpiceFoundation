@@ -49,6 +49,7 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "No hay categorías que quitar",
 	"apihelp-bs-category-treestore-description": "Enumera las subcategorías de una categoría concreta",
 	"apihelp-bs-category-treestore-summary": "Enumera las subcategorías de una categoría específica",
+	"bs-api-task-taskdata-help": "[$1 Esquema], [$2 ejemplos de parámetros]",
 	"apihelp-bs-task-param-schema": "Mostrar el esquema JSON de los parámetros de la tarea",
 	"apihelp-bs-task-param-examples": "Mostrar ejemplos de parámetros de tareas",
 	"bs-api-task-taskData-page-id": "El identificador de una página existente del wiki",

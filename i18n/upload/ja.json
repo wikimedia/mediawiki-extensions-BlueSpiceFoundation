@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otokoume"
+			"Otokoume",
+			"Aefgh39622"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "ファイルをアップロード",
 	"bs-upload-uploadbuttontext": "参照",
 	"bs-upload-uploadfilefieldlabel": "ファイル名",
+	"bs-upload-uploadfileemptytext": "新しいファイルを挿入...",
 	"bs-upload-uploaddestfilelabel": "登録するファイル名",
 	"bs-upload-allowedfiletypesare": "次の拡張子のファイルがアップロードできます:",
 	"bs-upload-license": "ライセンス",
