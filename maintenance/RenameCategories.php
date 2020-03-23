@@ -429,6 +429,8 @@ $res = $dbw->select(
 	[ 'order by' => 'page_title' ]
 );
 echo $dbw->numRows( $res ) . " articles in category namespace\n";
+
+$user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
 foreach ( $res as $row ) {
 	$oldtitle = Title::newFromId( $row->page_id );
 	$oldtitletext = $oldtitle->getText();
@@ -472,8 +474,18 @@ foreach ( $res as $row ) {
 			*/
 			echo "Deleting $oldtitletext : ";
 			$error = '';
-			$delstat = $oldarticle->doDeleteArticle( $summary, $noRC, null, null, $error, true );
-			if ( $delstat ) {
+			$delstat = $oldarticle->getPage()->doDeleteArticleReal(
+				$summary,
+				$user,
+				$noRC,
+				null,
+				$error,
+				null,
+				[],
+				'delete',
+				true
+			);
+			if ( $delstat->isOk() ) {
 				# doesn't work
 				echo "successful\n";
 			} else {
