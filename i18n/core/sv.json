@@ -7,7 +7,8 @@
 			"Lokal Profil",
 			"Warrakkk",
 			"Jopparn",
-			"Mjälten"
+			"Mjälten",
+			"Technic2"
 		]
 	},
 	"bluespicefoundation-desc": "Få MediaWiki för företag redo",
@@ -79,6 +80,7 @@
 	"bs-tag-input-desc": "Värdet för elementets innehåll",
 	"bs-parser-error-invalid-namespace": "Ogiltig namnrymd: $1",
 	"bs-parser-error-invalid-title": "Ogiltig titel: $1.",
+	"bs-validator-error-namespace-does-not-exist": "Namnrymd finns inte: $1",
 	"bs-validator-error-namespace-on-blacklist": "Namnrymd är inte tillåten: $1",
 	"bs-validator-error-title-does-not-exist": "Sidan finns inte: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Sida inte tillåten: $1",
@@ -95,5 +97,6 @@
 	"right-wikiadmin": "Används på många BlueSpices-tillägg för potentiellt farliga administrativa uppgifter som att hantera användare, behörigheter, global konfiguration",
 	"bs-notifications-agent-anon": "anonym användare",
 	"protect-level-editor": "Tillåt endast mallredigerare och administratörer",
-	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?"
+	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?",
+	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp"
 }

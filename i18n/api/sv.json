@@ -3,7 +3,8 @@
 		"authors": [
 			"WikiPhoenix",
 			"Bengtsson96",
-			"Mjälten"
+			"Mjälten",
+			"Technic2"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
@@ -32,12 +33,14 @@
 	"apihelp-bs-wikisubpage-treestore-param-node": "Prefixtiteln för wikisidan",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lista över alternativ",
 	"apihelp-bs-upload-license-store-description": "Listar alla tillgängliga licenser för en filuppladdning",
+	"apihelp-bs-upload-license-store-summary": "Listar alla tillgängliga licenser för en filuppladdning",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du har inte tillåtelse att läsa sidan \"$1\".",
 	"bs-wikipage-tasks-error-nothingtoremove": "Det finns inga kategorier att ta bort",
 	"apihelp-bs-category-treestore-description": "Listar alla underkategorier för en specifik kategori",
 	"apihelp-bs-category-treestore-summary": "Listar alla underkategorier för en specifik kategori",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parameterexempel]",
 	"apihelp-bs-task-param-examples": "Visa exempel med task parameters",
+	"bs-api-task-taskData-page-id": "ID-t av en existerande wikisida",
 	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn.",
 	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar."
