@@ -18,7 +18,8 @@ Ext.define( 'BS.CRUDGridPanel', {
 	//Custom
 	pageSize: 20,
 
-	constructor: function() {
+	constructor: function( config ) {
+		config = config || {};
 		this.colMainConf = {
 			columns: [],
 			actions: [] //Custom; Used for ActionColumn
