@@ -29,6 +29,7 @@ Ext.define( 'BS.CRUDPanel', {
 	tbarHeight: 32,
 
 	constructor: function( config ) {
+		config = config || {};
 		//Custom Settings
 		this.currentData = {};
 		if( config.renderTo && Ext.isString( config.renderTo ) ) {
