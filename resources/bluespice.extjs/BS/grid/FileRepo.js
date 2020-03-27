@@ -6,7 +6,6 @@ Ext.define( 'BS.grid.FileRepo', {
 	],
 	cls: 'bs-filerepo-grid',
 	pageSize : 50,
-	minHeight: 300,
 
 	//Custom settings
 	uploaderCfg: null,
