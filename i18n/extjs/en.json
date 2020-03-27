@@ -28,6 +28,7 @@
 	"bs-extjs-label-namespace": "Namespace",
 	"bs-extjs-label-page": "Page",
 	"bs-extjs-label-directsearch": "Search",
+	"bs-extjs-label-specialpage": "Specialpage",
 	"bs-extjs-titlecombo-newpagehint": "Page does not exist!",
 	"bs-extjs-upload": "Upload",
 	"bs-extjs-browse": "Browse",
