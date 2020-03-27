@@ -68,12 +68,12 @@ abstract class ParserGetVariableValueSwitch extends Hook {
 	 *
 	 * @param Parser $parser
 	 * @param array &$variableCache
-	 * @param string &$magicWordId
+	 * @param string $magicWordId
 	 * @param string &$ret
 	 * @param PPFrame $frame
 	 * @return bool
 	 */
-	public static function callback( $parser, &$variableCache, &$magicWordId, &$ret, $frame ) {
+	public static function callback( $parser, &$variableCache, $magicWordId, &$ret, $frame ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -93,17 +93,17 @@ abstract class ParserGetVariableValueSwitch extends Hook {
 	 * @param Config $config
 	 * @param Parser $parser
 	 * @param array &$variableCache
-	 * @param string &$magicWordId
+	 * @param string $magicWordId
 	 * @param string &$ret
 	 * @param PPFrame $frame
 	 */
-	public function __construct( $context, $config, $parser, &$variableCache, &$magicWordId,
+	public function __construct( $context, $config, $parser, &$variableCache, $magicWordId,
 		&$ret, $frame ) {
 		parent::__construct( $context, $config );
 
 		$this->parser = $parser;
 		$this->variableCache =& $variableCache;
-		$this->magicWordId =& $magicWordId;
+		$this->magicWordId = $magicWordId;
 		$this->ret =& $ret;
 		$this->frame = $frame;
 	}
