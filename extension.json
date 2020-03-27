@@ -253,6 +253,7 @@
 				"bs-extjs-label-namespace",
 				"bs-extjs-label-page",
 				"bs-extjs-label-directsearch",
+				"bs-extjs-label-specialpage",
 				"bs-extjs-titlecombo-newpagehint",
 				"bs-extjs-confirmNavigationTitle",
 				"bs-extjs-confirmNavigationText",
