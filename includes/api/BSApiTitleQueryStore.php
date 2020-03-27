@@ -2,7 +2,6 @@
 
 // api.php?action=bs-titlequery-store&format=jsonfm&options={%22namespaces%22:[-1,0,2,4,6,8,10,12,14,3000],%20%22returnQuery%22:true}&query=Date
 
-use MediaWiki\MediaWikiServices;
 
 class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
@@ -61,9 +60,9 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		// Step 1: Collect namespaces
 		$aNamespaces = $wgContLang->getNamespaces();
 		$aNsCondition = [];
-		if ( in_array( 0, $aOptions['namespaces'] ) ) {
+		if ( in_array( NS_MAIN, $aOptions['namespaces'] ) ) {
 			// if main space is allowed, hand it over directly to the query
-			$aNsCondition[] = 0;
+			$aNsCondition[] = NS_MAIN;
 		}
 		asort( $aNamespaces );
 		foreach ( $aNamespaces as $iNsId => $sNamespaceText ) {
@@ -105,7 +104,6 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 		// Step 2: Find pages
 		$oQueryTitle = Title::newFromText( $sQuery );
-
 		if ( $oQueryTitle instanceof Title === false ) {
 			return $aData;
 		}
@@ -129,7 +127,8 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		$sOp = $dbr->anyString();
 		$aLike = $aNormalLike = [ '', $sOp ];
 		$aParams = explode( ' ', str_replace( '/', ' ', $oQueryTitle->getText() ) );
-		$oSearchEngine = MediaWikiServices::getInstance()->getSearchEngineFactory()->create();
+		$searchEngineClass = SearchEngineFactory::getSearchEngineClass( $dbr );
+		$oSearchEngine = new $searchEngineClass( $dbr );
 		foreach ( $aParams as $sParam ) {
 			$aLike[] = $sParam;
 			$aLike[] = $sOp;
@@ -144,10 +143,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 		$aConditions['page_namespace'] = $aNsCondition;
 		if ( $oQueryTitle->getNamespace() !== NS_MAIN || strpos( $sNormQuery, ':' ) === 0 ) {
-			$aConditions['page_namespace'] = $oQueryTitle->getNamespace();
+			$aConditions['page_namespace'] = [ $oQueryTitle->getNamespace() ];
 		}
 		if ( $oQueryTitle->getNamespace() === NS_MEDIA ) {
-			$aConditions['page_namespace'] = NS_FILE;
+			$aConditions['page_namespace'] = [ NS_FILE ];
 		}
 
 		$res = $dbr->select(
@@ -189,16 +188,20 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			}
 
 			$sPrefixedText = $oTitle->getPrefixedText();
-
 			$pagetype = 'wikipage';
 
 			if ( $sPrefixedText === ucfirst( $sQuery ) || $sPrefixedText === $sQuery ) {
 				$pagetype = 'directsearch';
 			}
 
+			$pageId = $oTitle->getArticleId();
+			if ( $oTitle->getNamespace() === NS_MEDIA ) {
+				$pageId = Title::makeTitle( NS_FILE, $oTitle->getDBkey() )->getArticleID();
+			}
+
 			$aData[] = (object)( [
 				'type' => $pagetype,
-				'page_id' => $oTitle->getArticleId(),
+				'page_id' => $pageId,
 				'page_namespace' => $oTitle->getNamespace(),
 				'page_title' => $oTitle->getText(),
 				'prefixedText' => $sPrefixedText,
@@ -220,6 +223,10 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		if ( !in_array( NS_SPECIAL, $aOptions['namespaces'] ) ) {
 			return $aData;
 		}
+		if ( !in_array( NS_SPECIAL, $aConditions['page_namespace'] ) ) {
+			return $aData;
+		}
+
 		$aSpecialPages = SpecialPageFactory::getNames();
 		$aSPDataSets = [];
 		$sSpecialNmspPrefix = $this->getLanguage()->getNsText( NS_SPECIAL );
