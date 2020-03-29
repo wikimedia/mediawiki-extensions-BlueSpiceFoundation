@@ -29,6 +29,7 @@
  */
 
 use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
@@ -176,11 +177,11 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		// First query: Get all files and their pages
 		$aReturn = [];
 		$aUserNames = [];
+		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		foreach ( $res as $oRow ) {
 			try {
 				$title = Title::makeTitle( NS_FILE, $oRow->img_name );
-				$oImg = RepoGroup::singleton()->getLocalRepo()
-					->newFile( $title );
+				$oImg = $localRepo->newFile( $title );
 			} catch ( Exception $ex ) {
 				continue;
 			}
@@ -345,12 +346,13 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	 */
 	protected function addSecondaryFields( $aTrimmedData ) {
 		$linkRenderer = Services::getInstance()->getLinkRenderer();
+		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		foreach ( $aTrimmedData as $oDataSet ) {
 			$oFilePage = Title::makeTitle( NS_FILE, $oDataSet->page_title );
 			$oDataSet->page_link = $linkRenderer->makeLink( $oFilePage );
 			$oDataSet->page_prefixed_text = $oFilePage->getPrefixedText();
 
-			$oImg = RepoGroup::singleton()->getLocalRepo()->newFile( $oFilePage );
+			$oImg = $localRepo->newFile( $oFilePage );
 
 			// TODO: use 'thumb.php'?
 			// TODO: Make thumb size a parameter

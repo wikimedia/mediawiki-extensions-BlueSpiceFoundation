@@ -2,6 +2,8 @@
 
 require_once 'BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class BSExtractFiles extends BSMaintenance {
 
 	/**
@@ -90,7 +92,7 @@ class BSExtractFiles extends BSMaintenance {
 	 * @param \Title $title
 	 */
 	private function addFileToExtract( $title ) {
-		$file = \RepoGroup::singleton()->getLocalRepo()->newFile( $title );
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo()->newFile( $title );
 		$fileName = $title->getDBkey();
 		if ( !isset( $this->sourceImages[$fileName] ) ) {
 			$fileName = ucfirst( $fileName );

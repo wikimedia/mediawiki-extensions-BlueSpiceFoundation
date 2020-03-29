@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/BSBatchFileProcessorBase.php';
 
+use MediaWiki\MediaWikiServices;
+
 class BSImportFiles extends BSBatchFileProcessorBase {
 
 	protected $sBasePath = '';
@@ -65,7 +67,7 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 		$aParts = explode( '_', $sTitle );
 
 		$oTargetTitle = Title::makeTitle( NS_FILE, $sTitle );
-		$oRepo = RepoGroup::singleton()->getLocalRepo();
+		$oRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 
 		Hooks::run( 'BSImportFilesMakeTitle', [ $this, &$oTargetTitle, &$oRepo, $aParts, $sRoot ] );
 		$this->output( "Using target title {$oTargetTitle->getPrefixedDBkey()}" );

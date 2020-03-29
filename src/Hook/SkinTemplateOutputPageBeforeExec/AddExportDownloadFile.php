@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook\SkinTemplateOutputPageBeforeExec;
 
 use BlueSpice\SkinData;
+use MediaWiki\MediaWikiServices;
 
 class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBeforeExec {
 
@@ -11,7 +12,8 @@ class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBefore
 			return true;
 		}
 
-		$file = wfFindFile( $this->skin->getTitle() );
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo()
+			->newFile( $this->skin->getTitle() );
 		if ( !$file ) {
 			return true;
 		}
@@ -24,7 +26,8 @@ class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBefore
 	}
 
 	protected function doProcess() {
-		$file = wfFindFile( $this->skin->getTitle() );
+		$file = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo()
+			->newFile( $this->skin->getTitle() );
 		$this->mergeSkinDataArray( SkinData::EXPORT_MENU, [
 			60 => [
 				'id' => 'bs-em-filedownload',

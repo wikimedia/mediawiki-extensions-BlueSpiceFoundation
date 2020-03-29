@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class BsFileSystemHelper {
 
 	/**
@@ -117,7 +119,7 @@ class BsFileSystemHelper {
 			);
 		}
 
-		$repo = \RepoGroup::singleton()->getRepoByName( $sSubDirName );
+		$repo = MediaWikiServices::getInstance()->getRepoGroup()->getRepoByName( $sSubDirName );
 
 		// This is not usable! Used for invalidating cache.
 		$repo->quickImport(
@@ -198,7 +200,7 @@ class BsFileSystemHelper {
 	 * @return bool|\File
 	 */
 	public static function getFileFromRepoName( $sFileName, $sRepoName ) {
-		$oFileRepo = RepoGroup::singleton()->getRepoByName( $sRepoName );
+		$oFileRepo = MediaWikiServices::getInstance()->getRepoGroup()->getRepoByName( $sRepoName );
 		if ( !$oFileRepo instanceof FileRepo ) {
 			return false;
 		}
@@ -808,7 +810,8 @@ class BsFileSystemHelper {
 			unlink( $sFilename );
 		}
 
-		$oRepoFile = RepoGroup::singleton()->getLocalRepo()->newFile( $sTargetFileName );
+		$oRepoFile = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo()
+			->newFile( $sTargetFileName );
 		if ( $status->isGood() ) {
 			if ( !$oRepoFile ) {
 				return Status::newGood();
