@@ -15,17 +15,17 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 
 	/**
 	 * @param string|null $templateDir
-	 * @param bool $forceRecompile
+	 * @param \BagOStuff|null $cache Unused, caching is always disabled
 	 */
-	public function __construct( $templateDir = null, $forceRecompile = false ) {
+	public function __construct( $templateDir = null, $cache = null ) {
 		// remove trailing slashes
 		if ( !empty( $templateDir ) ) {
 			$templateDir = rtrim( $templateDir, '/' );
 		}
-		// always recompile, because this compiler simply does not work - at least
+		// always recompile by using empty cache, because this compiler simply does not work - at least
 		// with template system
-		$forceRecompile = true;
-		parent::__construct( $templateDir, $forceRecompile );
+		$cache = new \EmptyBagOStuff();
+		parent::__construct( $templateDir, $cache );
 	}
 
 	/**
