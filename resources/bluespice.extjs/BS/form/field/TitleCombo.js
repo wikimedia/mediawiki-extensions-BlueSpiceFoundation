@@ -20,8 +20,11 @@ Ext.define('BS.form.field.TitleCombo', {
 						if( name === 'namespace' ) {
 							return mw.message('bs-extjs-label-namespace').plain();
 						}
-						if( name === 'wikipage' || name === 'specialpage' ) {
+						if( name === 'wikipage' ) {
 							return mw.message('bs-extjs-label-page').plain();
+						}
+						if( name === 'specialpage' ) {
+							return mw.message('bs-extjs-label-specialpage').plain();
 						}
 						if( name === 'directsearch' ) {
 							return mw.message('bs-extjs-label-directsearch').plain();
