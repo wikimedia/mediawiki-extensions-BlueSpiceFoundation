@@ -102,5 +102,6 @@
 	"bs-lockdown-groups-permissionerror": "La acción «$1» no está disponible por {{PLURAL:$2|el motivo siguiente|los motivos siguientes}}: $3",
 	"action-wikiadmin": "utilizado en muchas extensiones de BlueSpice para tareas administrativas potencialmente peligrosas como la gestión de usuarios, permisos, configuración global",
 	"protect-level-editor": "Solo editores y administradores",
-	"bs-ping-on-init-desc": "Debería enviarse una solicitud de ping inmediatamente después de cargar la página"
+	"bs-ping-on-init-desc": "Debería enviarse una solicitud de ping inmediatamente después de cargar la página",
+	"bs-bluespice-mediawiki": "MediaWiki BlueSpice"
 }

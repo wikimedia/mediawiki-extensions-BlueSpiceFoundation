@@ -72,5 +72,6 @@
 	"right-wikiadmin": "Käytetään monissa BlueSpice-laajennuksissa mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista, varten",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
-	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät"
+	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, herra $2|Hei, rouva $2|Hei $2}}."
 }

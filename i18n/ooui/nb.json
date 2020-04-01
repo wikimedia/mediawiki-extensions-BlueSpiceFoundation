@@ -11,5 +11,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Legg til",
 	"bs-ooui-key-value-input-widget-add-form-label": "Legg til ny oppføring",
 	"bs-ooui-key-value-input-widget-error-message": "Alle påkrevde felt må være satt!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Ingen verdier satt!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Ingen verdier satt!",
+	"bs-ooui-btn-dismiss-alert-title": "Lukk"
 }

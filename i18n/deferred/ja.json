@@ -3,7 +3,8 @@
 		"authors": [
 			"Otokoume",
 			"Shirayuki",
-			"Aefgh39622"
+			"Aefgh39622",
+			"Suchichi02"
 		]
 	},
 	"bs-deferred-action-status-done": "完了。",
@@ -11,8 +12,15 @@
 	"bs-deferred-batch-actions": "操作",
 	"bs-deferred-batch-description": "説明",
 	"bs-deferred-batch-status": "状態",
-	"bs-deferred-action-apiremovecategories-description": "「$1」からカテゴリを除去。",
+	"bs-deferred-action-apiremovecategories-description": "「$1」からカテゴリを除去します。",
 	"bs-deferred-action-apimovepage-description": "「$1」を「$2」に移動します。",
-	"bs-deferred-action-apideletepage-description": "「$1」を削除。",
-	"bs-deferred-batch-progress-desc": "進捗"
+	"bs-deferred-action-apideletepage-description": "「$1」を削除します。",
+	"bs-deferred-batch-progress-desc": "進捗",
+	"bs-deferred-action-status-pending": "保留中です。",
+	"bs-deferred-action-status-running": "実行中...",
+	"bs-deferred-action-apicopypage-description": "「$1」を「$2」にコピーします。",
+	"bs-deferred-action-apieditpage-description": "「$1」を編集します。",
+	"bs-deferred-batch-title": "バッチ処理",
+	"bs-deferred-action-apiaddcategories-description": "カテゴリを「$1」に追加します。",
+	"bs-deferred-action-apisetcategories-description": "「$1」にカテゴリを設定します。"
 }

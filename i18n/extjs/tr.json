@@ -80,5 +80,6 @@
 	"bs-extjs-flyout-tab-grid-label": "Ayrıntılar",
 	"bs-extjs-flyout-tab-grid-title": "Ayrıntılar görünümüne geç",
 	"bs-extjs-flyout-add-title": "Yeni bir öğe eklemek için buraya tıklayın",
-	"bs-extjs-flyout-add-label": "Öğe ekle"
+	"bs-extjs-flyout-add-label": "Öğe ekle",
+	"bs-extjs-label-specialpage": "Özelsayfa"
 }

@@ -80,5 +80,6 @@
 	"bs-extjs-flyout-tab-thumbs-title": "Passa alla vista miniature",
 	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio",
 	"bs-extjs-label-directsearch": "Cerca",
-	"bs-extjs-titlecombo-newpagehint": "La pagina non esiste!"
+	"bs-extjs-titlecombo-newpagehint": "La pagina non esiste!",
+	"bs-extjs-label-specialpage": "Pagina speciale"
 }

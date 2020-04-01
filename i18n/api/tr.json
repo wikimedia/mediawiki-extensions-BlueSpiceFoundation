@@ -63,7 +63,7 @@
 	"bs-api-task-taskdata-help": "[$1 Şema], [$2 parametre örnekleri]",
 	"apihelp-bs-task-param-schema": "Görev parametreleri için JSON şemasını göster",
 	"apihelp-bs-task-param-examples": "Görev parametreleri örneklerini göster",
-	"bs-api-task-taskData-page-id": "Mevcut bir wiki sayfasının kimliği",
+	"bs-api-task-taskData-page-id": "Mevcut bir viki sayfasının kimliği",
 	"bs-api-task-taskData-page-title": "Bir viki sayfasının geçerli bir başlığı",
 	"bs-api-task-wikipagetasks-taskData-categories": "Dizelerin dizisi. Değerlerin geçerli kategori adları olması gerekir.",
 	"apihelp-bs-watchlist-store-summary": "Tüm izleme listesi girişlerini listeler. Sıralama, filtreleme ve sayfalamaya izin verir. Mağaza parametrelerini uygular.",

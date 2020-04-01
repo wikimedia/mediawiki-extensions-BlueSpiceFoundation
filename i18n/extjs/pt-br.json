@@ -81,5 +81,6 @@
 	"bs-extjs-flyout-tab-grid-label": "Detalhes",
 	"bs-extjs-flyout-tab-grid-title": "Troque para ver os detalhes",
 	"bs-extjs-flyout-add-title": "Clique aqui para adicionar um novo item",
-	"bs-extjs-flyout-add-label": "Adicionar item"
+	"bs-extjs-flyout-add-label": "Adicionar item",
+	"bs-extjs-label-specialpage": "Página especial"
 }

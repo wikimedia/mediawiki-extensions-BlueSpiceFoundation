@@ -54,5 +54,7 @@
 	"apihelp-bs-wikipage-tasks-summary": "Proporciona operaciones comunes para páginas wiki",
 	"apihelp-bs-store-param-sort": "Cadena JSON con información de clasificación; se deserializa a <code>matriz de objetos</code> que contienen el nombre y la dirección del campo para cada opción de clasificación",
 	"apihelp-bs-store-param-group": "Cadena JSON con información de agrupamiento; se deserializa a <code>matriz de objetos</code> que contienen el nombre y la dirección del campo para cada opción de agrupamiento",
-	"apihelp-bs-store-param-filter": "Cadena JSON con información de filtro; se deserializa a <code>matriz de objetos</code> que contienen nombre de campo, tipo de filtro y valor de filtro para cada opción de filtrado"
+	"apihelp-bs-store-param-filter": "Cadena JSON con información de filtro; se deserializa a <code>matriz de objetos</code> que contienen nombre de campo, tipo de filtro y valor de filtro para cada opción de filtrado",
+	"bs-api-task-taskdata-help": "[$1 Esquema], [$2 ejemplos de parámetros]",
+	"apihelp-bs-recentchanges-store-summary": "Enumera todos los cambios recientes. Permite ordenarlos, filtrarlos y paginarlos. Implementa parámetros de almacenamiento."
 }

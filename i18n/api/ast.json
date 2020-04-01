@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"Fitoschido"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Llista de tolos ficheros del sirvidor de ficheros. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
@@ -24,5 +25,6 @@
 	"apihelp-bs-store-param-group": "Cadena JSON con información d'agrupamientu; deserialízase a <code>matriz d'oxetos</code> que contien el nome del campu y la dirección pa cada opción d'agrupamientu",
 	"apihelp-bs-store-param-filter": "Cadena JSON con información de filtru; deserialízase a <code>matriz d'oxetos</code> que contien el nome del campu, el tipu de filtru, ya'l valor del filtru pa cada opción de filtráu",
 	"apihelp-bs-store-param-page": "Permite'l cálculu nel llau del sirvidor del principiu/llende",
-	"apihelp-bs-store-param-limit": "Númberu de resultaos a devolver"
+	"apihelp-bs-store-param-limit": "Númberu de resultaos a devolver",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Llista d'opciones"
 }

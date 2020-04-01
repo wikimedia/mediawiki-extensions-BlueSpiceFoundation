@@ -99,6 +99,6 @@
 	"bs-lockdown-groups-permissionerror": "L'azione \"$1\" non è disponibile per {{PLURAL:$2|la seguente ragione|le seguenti ragioni}}: $3",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"protect-level-editor": "Consentito solo per gli editori e gli amministratori",
+	"protect-level-editor": "Consentito solo agli editori e amministratori",
 	"bs-ping-on-init-desc": "La richiesta di ping dovrebbe essere richiesta subito dopo il caricamento della pagina"
 }

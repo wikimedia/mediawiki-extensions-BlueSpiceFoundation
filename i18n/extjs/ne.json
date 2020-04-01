@@ -2,10 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"बिप्लब आनन्द",
-			"जनक राज भट्ट"
+			"जनक राज भट्ट",
+			"हिमाल सुबेदी"
 		]
 	},
 	"bs-extjs-copy": "कपि",
 	"bs-extjs-filter-bool-yes": "हो",
-	"bs-extjs-filter-bool-no": "होइन"
+	"bs-extjs-filter-bool-no": "होइन",
+	"bs-extjs-actions-column-header": "कार्यहरू",
+	"bs-extjs-label-page": "पृष्ठ",
+	"bs-extjs-filters": "छनाेटहरू"
 }

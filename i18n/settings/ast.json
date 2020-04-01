@@ -14,5 +14,9 @@
 	"bs-setting-path-communication": "Comunicación",
 	"bs-setting-path-administration": "Alministración",
 	"bs-setting-path-qualityassurance": "Control de calidá",
-	"bs-setting-path-export": "Esportar"
+	"bs-setting-path-export": "Esportar",
+	"bs-setting-path-search": "Busques y Navegación",
+	"bs-setting-path-skinning": "Aspeutos",
+	"bs-setting-path-customizing": "Personalización",
+	"bs-setting-path-contentstructuring": "Estructura de conteníos"
 }

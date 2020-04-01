@@ -7,7 +7,8 @@
 			"Lokal Profil",
 			"Warrakkk",
 			"Jopparn",
-			"Mjälten"
+			"Mjälten",
+			"Technic2"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -95,5 +96,7 @@
 	"bs-tag-input-desc": "Värdet för elementets innehåll",
 	"bs-exttype-bluespice": "BlueSpice-utvidgningar",
 	"protect-level-editor": "Tillåt endast mallredigerare och administratörer",
-	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?"
+	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?",
+	"bs-validator-error-namespace-does-not-exist": "Namnrymd finns inte: $1",
+	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp"
 }

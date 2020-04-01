@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Technic2"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Lägg till ny...",
@@ -10,5 +11,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Lägg till",
 	"bs-ooui-key-value-input-widget-add-form-label": "Lägg till nytt element",
 	"bs-ooui-key-value-input-widget-error-message": "Alla nödvändiga fält måste fyllas i!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Inga värden fylldes i!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Inga värden fylldes i!",
+	"bs-ooui-btn-dismiss-alert-title": "Avfärda"
 }

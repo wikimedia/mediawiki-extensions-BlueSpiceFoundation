@@ -11,5 +11,6 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Yeni girdi ekle",
 	"bs-ooui-key-value-input-widget-error-message": "Tüm gerekli alanlar doldurulmalıdır!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Hiç değer girilmedi!",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Yeni ekle..."
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Yeni ekle...",
+	"bs-ooui-btn-dismiss-alert-title": "Kapat"
 }

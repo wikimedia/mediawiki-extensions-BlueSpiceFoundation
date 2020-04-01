@@ -3,7 +3,8 @@
 		"authors": [
 			"WikiPhoenix",
 			"Bengtsson96",
-			"Mjälten"
+			"Mjälten",
+			"Technic2"
 		]
 	},
 	"apihelp-bs-user-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
@@ -40,5 +41,7 @@
 	"bs-wikipage-tasks-error-page-not-valid": "Den angivna sidan är inte giltig.",
 	"apihelp-bs-task-param-examples": "Visa exempel med task parameters",
 	"apihelp-bs-filebackend-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
-	"apihelp-bs-store-param-page": "Gör det möjlig att räkna ut start/limit på vaktmästarsidan"
+	"apihelp-bs-store-param-page": "Gör det möjlig att räkna ut start/limit på vaktmästarsidan",
+	"apihelp-bs-upload-license-store-summary": "Listar alla tillgängliga licenser för en filuppladdning",
+	"bs-api-task-taskData-page-id": "ID-t av en existerande wikisida"
 }
