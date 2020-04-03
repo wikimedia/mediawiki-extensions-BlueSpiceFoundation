@@ -4,5 +4,9 @@
 			"Kareyac"
 		]
 	},
+	"bs-deferred-action-status-done": "Արված է",
+	"bs-deferred-batch-actions": "Գործողություններ",
+	"bs-deferred-batch-description": "Նկարագրություն",
+	"bs-deferred-batch-status": "Կարգավիճակ",
 	"bs-deferred-action-apimovepage-description": "Տեղափոխել \"$1\" դեպի \"$2\"."
 }

@@ -4,6 +4,21 @@
 			"Kareyac"
 		]
 	},
+	"bs-extjs-ok": "Լավ",
+	"bs-extjs-cancel": "Չեղարկել",
+	"bs-extjs-yes": "Այո",
+	"bs-extjs-no": "Ոչ",
+	"bs-extjs-save": "Հիշել",
+	"bs-extjs-delete": "Ջնջել",
+	"bs-extjs-add": "Ավելացնել",
+	"bs-extjs-remove": "Հեռացնել",
+	"bs-extjs-edit": "Խմբագրել",
+	"bs-extjs-copy": "Պատճենել",
+	"bs-extjs-error": "Սխալ",
+	"bs-extjs-confirm": "Հաստատել",
+	"bs-extjs-loading": "Բեռնվում է…",
+	"bs-extjs-actions-column-header": "Գործողություններ",
+	"bs-extjs-warning": "Զգուշացում",
 	"bs-extjs-label-specialpage": "Հատուկ էջ",
 	"bs-extjs-categorytree-title": "Կատեգորիաներ"
 }
