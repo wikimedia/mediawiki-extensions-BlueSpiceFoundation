@@ -14,11 +14,11 @@ class HTMLIntFieldOverride extends HTMLIntField {
 			return $p;
 		}
 
-		if ( isset( $this->options['range_min'] ) && $value < $this->options['range_min'] ) {
+		if ( isset( $this->mOptions['range_min'] ) && $value < $this->mOptions['range_min'] ) {
 			return $this->msg( 'htmlform-int-outofrange' )->parseAsBlock();
 		}
 
-		if ( isset( $this->options['range_max'] ) && $value > $this->options['range_max'] ) {
+		if ( isset( $this->mOptions['range_max'] ) && $value > $this->mOptions['range_max'] ) {
 			return $this->msg( 'htmlform-int-outofrange' )->parseAsBlock();
 		}
 
@@ -32,7 +32,8 @@ class HTMLIntFieldOverride extends HTMLIntField {
 	 */
 	public function getInputOOUI( $value ) {
 		$attr = [
-			'value' => $value
+			'value' => $value,
+			'id' => $this->mParams['id'],
 		];
 		if ( isset( $this->mParams['min'] ) ) {
 			$attr['min'] = $this->mParams['min'];
