@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\MediaWikiServices;
 
 abstract class SpecialPage extends \SpecialPage {
 
@@ -81,7 +82,8 @@ abstract class SpecialPage extends \SpecialPage {
 		$key = 'SpecialPage:reauth:' . $this->getName();
 		$request = $this->getRequest();
 
-		$securityStatus = AuthManager::singleton()->securitySensitiveOperationStatus( $level );
+		$securityStatus = MediaWikiServices::getInstance()->getAuthManager()
+			->securitySensitiveOperationStatus( $level );
 		if ( $securityStatus === AuthManager::SEC_OK ) {
 			$uniqueId = $request->getVal( 'postUniqueId' );
 			if ( $uniqueId ) {
