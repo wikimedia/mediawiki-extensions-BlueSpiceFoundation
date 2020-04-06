@@ -39,6 +39,7 @@
 	"bs-extjs-label-namespace": "이름공간",
 	"bs-extjs-label-page": "문서",
 	"bs-extjs-label-directsearch": "검색",
+	"bs-extjs-label-specialpage": "특수문서",
 	"bs-extjs-titlecombo-newpagehint": "문서가 존재하지 않습니다!",
 	"bs-extjs-upload": "올리기",
 	"bs-extjs-browse": "찾아보기",

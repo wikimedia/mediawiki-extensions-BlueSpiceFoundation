@@ -5,6 +5,7 @@
 			"FarsiNevis"
 		]
 	},
+	"apihelp-bs-store-param-limit": "تعداد نتایج برای نمایش",
 	"apihelp-bs-task-param-format": "قالب نتیجه",
 	"bs-wikipage-tasks-setcategories-edit-summary": "رده‌ها تغییر یافتند.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "شما مجاز به ویرایش صفحهٔ «$1» نیستید.",

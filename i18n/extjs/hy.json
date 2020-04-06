@@ -19,6 +19,20 @@
 	"bs-extjs-loading": "Բեռնվում է…",
 	"bs-extjs-actions-column-header": "Գործողություններ",
 	"bs-extjs-warning": "Զգուշացում",
+	"bs-extjs-close": "Փակել",
+	"bs-extjs-label-user": "Մասնակից",
+	"bs-extjs-label-namespace": "Անվանատարածք",
+	"bs-extjs-label-page": "Էջ",
+	"bs-extjs-label-directsearch": "Որոնել",
 	"bs-extjs-label-specialpage": "Հատուկ էջ",
-	"bs-extjs-categorytree-title": "Կատեգորիաներ"
+	"bs-extjs-titlecombo-newpagehint": "Էջը գոյություն չունի",
+	"bs-extjs-allns": "(բոլոր)",
+	"bs-extjs-mainns": "(Հիմնական)",
+	"bs-extjs-filter-bool-yes": "այո",
+	"bs-extjs-filter-bool-no": "ոչ",
+	"bs-extjs-title-warning": "Զգուշացում",
+	"bs-extjs-categorytree-title": "Կատեգորիաներ",
+	"bs-extjs-pageexport-list-format-link-label": "Հղում",
+	"bs-extjs-tools-trigger-text": "Գործիքներ",
+	"bs-extjs-flyout-tab-grid-label": "Մանրամասներ"
 }
