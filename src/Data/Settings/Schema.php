@@ -5,8 +5,11 @@ namespace BlueSpice\Data\Settings;
 use BlueSpice\Data\FieldType;
 
 class Schema extends \BlueSpice\Data\Schema {
-	public function __construct() {
-		parent::__construct( [
+	/**
+	 * @param array|null $input
+	 */
+	public function __construct( $input = [] ) {
+		parent::__construct( array_merge( [
 			Record::NAME => [
 				self::FILTERABLE => true,
 				self::SORTABLE => true,
@@ -17,6 +20,6 @@ class Schema extends \BlueSpice\Data\Schema {
 				self::SORTABLE => false,
 				self::TYPE => FieldType::MIXED
 			],
-		] );
+		], $input ) );
 	}
 }

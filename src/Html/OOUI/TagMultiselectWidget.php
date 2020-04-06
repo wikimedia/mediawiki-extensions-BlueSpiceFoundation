@@ -5,6 +5,7 @@ namespace BlueSpice\Html\OOUI;
 use OOUI\GroupElement;
 use OOUI\IconElement;
 use OOUI\IndicatorElement;
+use OOUI\Tag;
 use OOUI\Widget;
 
 class TagMultiselectWidget extends Widget {
@@ -12,20 +13,32 @@ class TagMultiselectWidget extends Widget {
 	use IndicatorElement;
 	use GroupElement;
 
+	/** @var Tag */
 	protected $handle;
+	/** @var Tag */
 	protected $input;
+	/** @var Tag */
 	protected $contentCnt;
 
 	// Attributes
+	/** @var bool */
 	protected $hasInput = false;
-	protected $allowArbitrary;
-	protected $inputPosition;
-	protected $allowEditTags;
-	protected $allowDuplicates;
-	protected $allowedValues;
-	protected $allowDisplayInvalidTypes;
-	protected $selected;
-	protected $placeholder;
+	/** @var bool */
+	protected $allowArbitrary = false;
+	/** @var string */
+	protected $inputPosition = 'inline';
+	/** @var bool */
+	protected $allowEditTags = false;
+	/** @var bool */
+	protected $allowDuplicates = false;
+	/** @var array */
+	protected $allowedValues = [];
+	/** @var bool */
+	protected $allowDisplayInvalidTags = false;
+	/** @var array */
+	protected $selected = [];
+	/** @var string */
+	protected $placeholder = '';
 
 	/**
 	 *
@@ -52,19 +65,19 @@ class TagMultiselectWidget extends Widget {
 		$this->addClasses( [ "oo-ui-tagMultiselectWidget", "oo-ui-tagMultiselectWidget-inlined" ] );
 
 		$this->group->addClasses( [ "oo-ui-tagMultiselectWidget-group" ] );
-		$this->contentCnt = new \OOUI\Tag();
+		$this->contentCnt = new Tag();
 		$this->contentCnt->addClasses( [ 'oo-ui-tagMultiselectWidget-content' ] );
 		$this->contentCnt->appendContent( $this->group );
 
-		$this->handle = new \OOUI\Tag();
+		$this->handle = new Tag();
 		$this->handle->addClasses( [ 'oo-ui-tagMultiselectWidget-handle' ] );
 		$this->handle->appendContent( $this->indicator, $this->icon );
 
 		if ( $this->hasInput ) {
-			if ( isset( $config[ 'inputWidget' ] ) && $config[ 'inputWidget' ] instanceof \OOUI\Tag ) {
+			if ( isset( $config[ 'inputWidget' ] ) && $config[ 'inputWidget' ] instanceof Tag ) {
 				$this->input = $config[ 'inputWidget' ];
 			} else {
-				$this->input = new \OOUI\Tag( 'input' );
+				$this->input = new Tag( 'input' );
 				$this->input->addClasses( [ "oo-ui-tagMultiselectWidget-input" ] );
 				if ( isset( $config[ 'placeholder' ] ) ) {
 					$this->input->setAttributes( [ 'placeholder' => $config[ 'placeholder' ] ] );
@@ -113,7 +126,7 @@ class TagMultiselectWidget extends Widget {
 	 * @return bool
 	 */
 	protected function addTag( $data, $label = '' ) {
-		if ( $this->isAllowedData( $data ) || $this->allowDisplayInvalidTypes ) {
+		if ( $this->isAllowedData( $data ) || $this->allowDisplayInvalidTags ) {
 			$newItemWidget = $this->createTagItemWidget( $data, $label );
 			$this->addItems( [ $newItemWidget ] );
 			return true;
@@ -183,7 +196,6 @@ class TagMultiselectWidget extends Widget {
 		$this->allowArbitrary = isset( $config['allowArbitrary'] )
 			? (bool)$config['allowArbitrary']
 			: false;
-		$this->inputPosition = 'inline';
 		if ( isset( $config['inputPosition'] )
 			&& in_array( $config['inputPosition'], $this->allowedInputPositions ) ) {
 			$this->inputPosition = $config['inputPosition'];
@@ -205,7 +217,7 @@ class TagMultiselectWidget extends Widget {
 			: [];
 		// Setting placeholder on infuse will trigger "change" event of input,
 		// which will trigger filtering, which will ultimately hide the menu,
-		// making it positioning imposible. This is OOUI/browser bug.
+		// making it positioning impossible. This is OOUI/browser bug.
 		// $this->placeholder = isset( $config['placeholder'] ) ? $config['placeholder'] : '';
 
 		$this->registerConfigCallback( function ( &$config ) {
