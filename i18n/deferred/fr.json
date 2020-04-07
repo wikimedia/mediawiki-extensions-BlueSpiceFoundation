@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"TomT0m",
-			"Wladek92",
 			"Gomoko",
-			"The RedBurn"
+			"Macofe",
+			"The RedBurn",
+			"TomT0m",
+			"Wladek92"
 		]
 	},
 	"bs-deferred-action-status-pending": "En attente.",

@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-extjs-portal-config": "Konfiguriši portret:",
 	"bs-extjs-portal-title": "Naslov portleta",
 	"bs-extjs-portal-height": "Visina",

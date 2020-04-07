@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"apihelp-bs-wikipage-tasks-description": "Pruža važne operacije za stranice na vikiju",
 	"apihelp-bs-wikipage-tasks-summary": "Pruža važne operacije za stranice na vikiju",
 	"apihelp-bs-store-param-limit": "Broj rezultata za vraćanje",

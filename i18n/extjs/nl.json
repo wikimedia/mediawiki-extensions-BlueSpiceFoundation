@@ -1,18 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"SPQRobin",
-			"Southparkfan",
-			"Niknetniko",
-			"Sjoerddebruin",
-			"Siebrand",
 			"Jeleniccz",
-			"Mainframe98",
-			"Patio",
+			"Klaas van Buiten",
 			"KlaasZ4usV",
-			"Xbaked potatox",
+			"Mainframe98",
+			"Niknetniko",
+			"Patio",
 			"Rots61",
-			"Klaas van Buiten"
+			"SPQRobin",
+			"Siebrand",
+			"Sjoerddebruin",
+			"Southparkfan",
+			"Xbaked potatox"
 		]
 	},
 	"bs-extjs-ok": "OK",

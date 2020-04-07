@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stephan Muggli <muggli@hallowelt.biz>",
-			"Shirayuki"
+			"Shirayuki",
+			"Stephan Muggli <muggli@hallowelt.biz>"
 		]
 	},
 	"bs-installer-title": "Headline of installer\n*$1 is the version of MediaWiki which will be installed\n*$2 is the version of BlueSpice which will be installed"

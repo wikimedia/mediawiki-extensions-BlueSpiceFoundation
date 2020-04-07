@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
 			"Fitoschido",
-			"Javiersanp"
+			"Javiersanp",
+			"Macofe"
 		]
 	},
 	"bs-deferred-action-status-pending": "Pendiente.",

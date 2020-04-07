@@ -1,16 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"SPQRobin",
-			"Southparkfan",
-			"Siebrand",
-			"Niknetniko",
-			"Mar(c)",
-			"Ribert",
-			"McDutchie",
-			"Sjoerddebruin",
 			"Esketti",
-			"Mainframe98"
+			"Mainframe98",
+			"Mar(c)",
+			"McDutchie",
+			"Niknetniko",
+			"Ribert",
+			"SPQRobin",
+			"Siebrand",
+			"Sjoerddebruin",
+			"Southparkfan"
 		]
 	},
 	"bluespicefoundation-desc": "Maakt MediaWiki geschikt voor bedrijven",

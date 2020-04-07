@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Wikitoni",
-			"Tizven"
+			"Tizven",
+			"Wikitoni"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Elenca tutti i file dal backend. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",

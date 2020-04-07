@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kuailong",
 			"Liuxinyu970226",
-			"Zhangjintao",
-			"Kuailong"
+			"Zhangjintao"
 		]
 	},
 	"bs-validator-email-validation-approved": "此电子邮件地址已成功验证。",

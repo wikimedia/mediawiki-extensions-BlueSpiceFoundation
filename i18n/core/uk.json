@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"AS",
 			"Andriykopanytsia",
 			"Base",
-			"Ата",
-			"Piramidion",
-			"AS",
-			"Vlad5250",
 			"Dicto23456",
-			"Movses"
+			"Movses",
+			"Piramidion",
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"bluespicefoundation-desc": "Готує MediaWiki до корпоративних потреб",

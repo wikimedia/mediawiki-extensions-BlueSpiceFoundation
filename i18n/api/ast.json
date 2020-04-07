@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu",
-			"Fitoschido"
+			"Fitoschido",
+			"Xuacu"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Llista de tolos ficheros del sirvidor de ficheros. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",

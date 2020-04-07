@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel <vogel@hallowelt.biz>",
-			"Metalhead64",
+			"Hwboehm",
 			"Kghbln",
-			"Hwboehm"
+			"Metalhead64",
+			"Robert Vogel <vogel@hallowelt.biz>"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Listet alle gespeicherten Dateien auf. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert „ExtJS-Store“-Parameter.",

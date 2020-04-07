@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Otokoume",
 			"2nd-player",
-			"Suyama",
+			"Aefgh39622",
+			"Otokoume",
 			"Reiwa period",
-			"Aefgh39622"
+			"Suyama"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "ファイルバックエンドからすべてのファイルを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",

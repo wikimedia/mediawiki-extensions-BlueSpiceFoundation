@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eneelk",
 			"Gomoko",
-			"Zarisi",
-			"Verdy p",
 			"Thibaut120094",
-			"Eneelk"
+			"Verdy p",
+			"Zarisi"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Ajouter un nouveau...",

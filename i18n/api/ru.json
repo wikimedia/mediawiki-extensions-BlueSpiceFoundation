@@ -1,18 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Краснорядцева Елена",
-			"Redredsonia",
+			"Alexandr Efremov",
 			"Alexey zakharenkov",
+			"DmitTrix",
 			"Facenapalm",
 			"Happy13241",
-			"Vlad5250",
-			"Alexandr Efremov",
-			"Romanko Mikhail",
-			"DmitTrix",
-			"Movses",
 			"INS Pirat",
-			"Radmir Far"
+			"Movses",
+			"Radmir Far",
+			"Redredsonia",
+			"Romanko Mikhail",
+			"Vlad5250",
+			"Краснорядцева Елена"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",

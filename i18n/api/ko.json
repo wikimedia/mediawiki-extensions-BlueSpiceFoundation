@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ellif",
 			"SeoJeongHo",
 			"Ykhwong",
-			"아라",
-			"Ellif"
+			"아라"
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "파일 백엔드로부터 모든 파일을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",

@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"YoViajo",
-			"Macofe",
-			"Idontknow",
 			"Fitoschido",
+			"Idontknow",
 			"Josecurioso",
-			"Nancystodd"
+			"Macofe",
+			"Nancystodd",
+			"YoViajo"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Enumera todos los archivos del archivo de fondo. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",

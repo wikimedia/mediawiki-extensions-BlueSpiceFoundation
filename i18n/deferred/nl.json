@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"Siebrand",
 			"Esketti",
-			"Mainframe98"
+			"Macofe",
+			"Mainframe98",
+			"Siebrand"
 		]
 	},
 	"bs-deferred-action-status-pending": "In behandeling.",
