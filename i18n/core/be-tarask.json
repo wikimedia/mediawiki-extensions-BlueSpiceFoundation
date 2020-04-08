@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nerogaf",
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"bs-ns_main": "(Старонкі)",
@@ -17,6 +18,10 @@
 	"bs-userpreferences-link-text": "Дадатковыя налады ўдзельніка",
 	"bs-viewtagerrorlist-legend": "$1 — памылка",
 	"bs-permissionerror": "Памылка дазволу!",
+	"bs-filesystemhelper-folder-already-exists": "Каталёг <code>$1</code> ужо існуе.",
+	"bs-filesystemhelper-folder-copy-error": "Каталёг <code>$1</code> нельга перайменаваць.",
+	"bs-filesystemhelper-folder-not-exists": "Каталёг <code>$1</code> не існуе.",
+	"bs-filesystemhelper-folder-rename-error": "Каталёг <code>$1</code> нельга перайменаваць у <code>$2</code>.",
 	"bs-navigation-instructions": "Інструкцыі",
 	"bs-navigation-support": "Падтрымка",
 	"bs-navigation-contact": "Сувязь",

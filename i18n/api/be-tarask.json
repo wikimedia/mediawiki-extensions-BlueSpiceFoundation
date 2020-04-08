@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
-	"apihelp-bs-wikisubpage-treestore-param-options": "Сьпіс парамэтраў"
+	"apihelp-bs-wikisubpage-treestore-param-options": "Сьпіс парамэтраў",
+	"apihelp-bs-watchlist-store-summary": "Пералічвае ўсе запісы сьпісу назіраньня. Дазваляе сартаваньне, фільтраваньне і падзел на старонкі. Рэалізуе парамэтры захаваньня.",
+	"apihelp-bs-recentchanges-store-summary": "Пералічвае ўсе апошнія зьмены. Дазваляе сартаваньне, фільтраваньне і падзел на старонкі. Рэалізуе парамэтры захаваньня."
 }
