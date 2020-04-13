@@ -4,5 +4,7 @@
 			"Kareyac"
 		]
 	},
-	"bs-setting-path-editor": "Խմբագիր"
+	"bs-setting-path-system": "Հհամակարգ",
+	"bs-setting-path-editor": "Խմբագիր",
+	"bs-setting-path-administration": "Կառավարում"
 }

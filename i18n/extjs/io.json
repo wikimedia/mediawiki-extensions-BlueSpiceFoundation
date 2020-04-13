@@ -6,5 +6,6 @@
 	},
 	"bs-extjs-ok": "O.K.",
 	"bs-extjs-cancel": "Anular",
+	"bs-extjs-delete": "Efacar",
 	"bs-extjs-label-namespace": "'Namespace'"
 }

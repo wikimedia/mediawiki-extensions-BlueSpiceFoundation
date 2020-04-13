@@ -28,10 +28,12 @@
 	"bs-extjs-titlecombo-newpagehint": "Էջը գոյություն չունի",
 	"bs-extjs-allns": "(բոլոր)",
 	"bs-extjs-mainns": "(Հիմնական)",
+	"bs-extjs-filters": "Զտիչներ",
 	"bs-extjs-filter-bool-yes": "այո",
 	"bs-extjs-filter-bool-no": "ոչ",
 	"bs-extjs-title-warning": "Զգուշացում",
 	"bs-extjs-categorytree-title": "Կատեգորիաներ",
+	"bs-extjs-filter-date-filter": "Զտիչ",
 	"bs-extjs-pageexport-list-format-link-label": "Հղում",
 	"bs-extjs-tools-trigger-text": "Գործիքներ",
 	"bs-extjs-flyout-tab-grid-label": "Մանրամասներ"
