@@ -132,6 +132,14 @@
 				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder",
 				"ExtJSGeneric":  "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
 			}
+		},
+		"BlueSpicePrivacy": {
+			"CookieConsentNativeMWCookies": {
+				"notificationFlag": {
+					"group": "necessary",
+					"addPrefix": true
+				}
+			}
 		}
 	},
 	"ExtensionFunctions": [
