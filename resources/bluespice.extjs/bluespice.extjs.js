@@ -20,9 +20,7 @@
 	Ext.QuickTips.init();
 
 	//Allows to have stateful ExtJS components
-	Ext.state.Manager.setProvider(new Ext.state.CookieProvider({
-		expires: new Date(new Date().getTime() + (1000 * 60 * 60 * 24 * 30))
-	}));
+	Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());
 
 	Ext.override(Ext.data.proxy.Server, {
 		buildRequest: function(){
