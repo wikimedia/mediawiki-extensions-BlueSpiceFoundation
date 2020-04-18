@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook BeforeParserFetchTemplateAndtitle
+ * Hook handler base class for MediaWiki hook BeforeParserFetchTemplateAndTitle
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ use IContextSource;
 use Parser;
 use Title;
 
-abstract class BeforeParserFetchTemplateAndtitle extends Hook {
+abstract class BeforeParserFetchTemplateAndTitle extends Hook {
 
 	/**
 	 *

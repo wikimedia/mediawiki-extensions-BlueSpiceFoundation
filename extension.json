@@ -621,8 +621,8 @@
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
 		"SiteNoticeAfter": "BlueSpice\\Hook\\SiteNoticeAfter\\AddAlerts::callback",
-		"BeforeParserFetchTemplateAndtitle": [
-			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndtitle\\CheckTransclusionPermissions::callback"
+		"BeforeParserFetchTemplateAndTitle": [
+			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndTitle\\CheckTransclusionPermissions::callback"
 		]
 
 	},

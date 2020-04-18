@@ -1,10 +1,10 @@
 <?php
 
-namespace BlueSpice\Hook\BeforeParserFetchTemplateAndtitle;
+namespace BlueSpice\Hook\BeforeParserFetchTemplateAndTitle;
 
-use BlueSpice\Hook\BeforeParserFetchTemplateAndtitle;
+use BlueSpice\Hook\BeforeParserFetchTemplateAndTitle;
 
-class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndtitle {
+class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndTitle {
 
 	/**
 	 * Check if user can read the page that is being transcluded
