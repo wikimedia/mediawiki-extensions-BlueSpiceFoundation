@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Gorkaazk",
+			"Joseba",
 			"Subi"
 		]
 	},
@@ -39,5 +40,10 @@
 	"bs-filesystemhelper-save-base64-error": "Ezin izan da fitxategia gorde.",
 	"bs-filesystemhelper-upload-base64-error": "Ezin izan da fitxategia igo.",
 	"bs-navigation-instructions": "Jarraibideak",
-	"bs-imagepage-download-text": "Jaitsi"
+	"bs-imagepage-download-text": "Jaitsi",
+	"bs-parser-error-invalid-title": "Izenburu baliogabea: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Orrialde baimendugabea: $1",
+	"bs-parser-error-invalid-category-title": "Orrialdea ez da baliozko kategoria bat: $1",
+	"bs-export-menu-print-text": "Inprimatu",
+	"bs-notifications-agent-anon": "Erabiltzaile anonimoa"
 }
