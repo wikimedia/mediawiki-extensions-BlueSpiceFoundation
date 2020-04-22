@@ -39,7 +39,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 				'iArticleID' => $oTitle->getArticleID(),
 				'iNamespace' => NS_MAIN,
 				'sTitle' => $oTitle->getPrefixedText(),
-				'iRevision' => $oWikiPage->getRevision()->getID(),
+				'iRevision' => $oWikiPage->getRevisionRecord()->getID(),
 				'BsPingData' => [
 					[
 						'sRef' => 'DummyRef',
