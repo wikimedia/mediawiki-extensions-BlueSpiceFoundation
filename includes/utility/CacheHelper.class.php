@@ -76,7 +76,7 @@ class BsCacheHelper {
 			$bReturn = true;
 			foreach ( $mKey as $key ) {
 				if ( !$helper->invalidate( $key ) ) {
-					wfDebugLog( 'BsMemcached', 'NO INVALIDATION FOR KEY: ' . $key );
+					wfDebugLog( 'bluespice', 'NO INVALIDATION FOR KEY: ' . $key );
 					$bReturn = false;
 				}
 			}
