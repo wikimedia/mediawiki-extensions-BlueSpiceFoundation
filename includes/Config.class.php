@@ -286,10 +286,10 @@ class BsConfig {
 		$aData = $cacheHelper->get( $sKey );
 
 		if ( $aData !== false ) {
-			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching settings from cache' );
+			wfDebugLog( 'bluespice', __CLASS__ . ': Fetching settings from cache' );
 			$aRows = $aData;
 		} else {
-			wfDebugLog( 'BsMemcached', __CLASS__ . ': Fetching settings from DB' );
+			wfDebugLog( 'bluespice', __CLASS__ . ': Fetching settings from DB' );
 			$dbr = wfGetDB( DB_REPLICA );
 			# query the settings from bs_settings
 			$aRows = [];

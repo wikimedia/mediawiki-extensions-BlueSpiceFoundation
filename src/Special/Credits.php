@@ -110,12 +110,12 @@ class Credits extends \BlueSpice\SpecialPage {
 
 		if ( $translators !== false ) {
 			wfDebugLog(
-				'BsMemcached',
+				'bluespice',
 				__CLASS__ . ': Fetching translators from cache'
 			);
 		} else {
 			wfDebugLog(
-				'BsMemcached',
+				'bluespice',
 				__CLASS__ . ': Fetching translators from DB'
 			);
 			$translators = $this->generateTranslatorsList();
