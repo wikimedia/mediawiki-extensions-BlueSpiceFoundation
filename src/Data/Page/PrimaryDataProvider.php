@@ -35,7 +35,7 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	 * @param \stdClass $row
 	 * @return null
 	 */
-	protected function appendRowToData( $row ) {
+	protected function appendRowToData( \stdClass $row ) {
 		$title = Title::newFromRow( $row );
 		if ( !$title || !$this->userCanRead( $title ) ) {
 			return;
