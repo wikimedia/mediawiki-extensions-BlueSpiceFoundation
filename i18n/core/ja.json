@@ -96,8 +96,8 @@
 	"bs-graphicallist-action-preview": "プレビュー",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険な管理タスクのために、多くの BlueSpice 拡張機能で使用されています",
-	"right-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険な管理タスクのために、多くの BlueSpice 拡張機能で使用されています",
+	"action-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクの使用 (BlueSpice 拡張機能群)",
+	"right-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクを使用 (BlueSpice 拡張機能群)",
 	"bs-notifications-agent-anon": "匿名ユーザー",
 	"protect-level-editor": "編集者と管理者のみを許可する",
 	"bs-ping-on-init-desc": "ページの読み込み直後に ping リクエストを送信するかどうか"
