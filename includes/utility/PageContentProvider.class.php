@@ -323,8 +323,7 @@ class BsPageContentProvider {
 			);
 		}
 
-		$tidy = MWTidy::singleton();
-		return $tidy->tidy( $sHTML );
+		return MWTidy::tidy( $sHTML );
 	}
 
 	/**
