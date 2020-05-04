@@ -141,7 +141,13 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			__METHOD__
 		);
 
+		$sortedRes = [];
 		foreach ( $res as $row ) {
+			$sortedRes[$row->page_title] = $row;
+		}
+		ksort( $sortedRes, SORT_NATURAL );
+
+		foreach ( $sortedRes as $row ) {
 			$this->addDataSet( $aDataSets, $row, $oParent );
 		}
 
