@@ -5,6 +5,8 @@
 			"Saederup92"
 		]
 	},
+	"bs-extjs-ok": "OK",
+	"bs-extjs-cancel": "Annullér",
 	"bs-extjs-yes": "Ja",
 	"bs-extjs-no": "Nej",
 	"bs-extjs-save": "Gem",
@@ -27,11 +29,14 @@
 	"bs-extjs-label-namespace": "Navnerum",
 	"bs-extjs-label-page": "Side",
 	"bs-extjs-label-directsearch": "Søg",
+	"bs-extjs-label-specialpage": "Spesialside",
 	"bs-extjs-titlecombo-newpagehint": "Siden findes ikke!",
 	"bs-extjs-upload": "Overfør",
 	"bs-extjs-browse": "Gennemse",
 	"bs-extjs-uploading": "Overfører...",
 	"bs-extjs-confirmNavigationTitle": "Følg link",
+	"bs-extjs-allns": "(alle)",
+	"bs-extjs-mainns": "(Hoved)",
 	"bs-extjs-filter-equals": "er lig",
 	"bs-extjs-filter-equals-not": "er ikke lig",
 	"bs-extjs-filter-contains": "indeholder",

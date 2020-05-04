@@ -30,6 +30,7 @@
 	"bs-parser-error-invalid-title": "Ugyldig titel: $1",
 	"bs-validator-error-namespace-does-not-exist": "Navnerummet findes ikke: $1",
 	"bs-validator-error-title-does-not-exist": "Siden findes ikke: $1",
+	"bs-export-menu-print-text": "Udskriv",
 	"bs-graphicallist-action-close": "Luk",
 	"bs-graphicallist-action-list": "Liste",
 	"bs-graphicallist-action-preview": "Forhåndsvisning",
