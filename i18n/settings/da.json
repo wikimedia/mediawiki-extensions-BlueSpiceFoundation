@@ -9,5 +9,6 @@
 	"bs-setting-path-package": "Pakke",
 	"bs-setting-path-system": "System",
 	"bs-setting-path-dataanalysis": "Dataanalyse",
-	"bs-setting-path-administration": "Administration"
+	"bs-setting-path-administration": "Administration",
+	"bs-setting-path-export": "Eksportér"
 }
