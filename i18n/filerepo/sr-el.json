@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-filerepo-labelupload": "Otpremi",
 	"bs-filerepo-labelfilter": "Filter",
 	"bs-filerepo-headerfilename": "Naziv datoteke",

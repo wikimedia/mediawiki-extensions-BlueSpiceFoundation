@@ -1,19 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xiaomingyan",
-			"Liuxinyu970226",
-			"Zhangjintao",
+			"A Chinese Wikipedian",
+			"A Retired User",
+			"Fengchao",
 			"Hudafu",
 			"Kuailong",
-			"Fengchao",
-			"御坂美琴",
+			"Liuxinyu970226",
+			"VulpesVulpes825",
+			"Xiaomingyan",
 			"Yfdyh000",
-			"A Chinese Wikipedian",
-			"佛壁灯",
+			"Zhangjintao",
 			"予弦",
-			"A Retired User",
-			"VulpesVulpes825"
+			"佛壁灯",
+			"御坂美琴"
 		]
 	},
 	"bluespicefoundation-desc": "使MediaWiki准备好企业化",
@@ -105,5 +105,7 @@
 	"bs-lockdown-groups-permissionerror": "操作“$1”由于下列{{PLURAL:$2|原因}}不可用：$3",
 	"action-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。",
 	"protect-level-editor": "只允许编辑者和管理员",
-	"bs-ping-on-init-desc": "在页面载入后是否立即发送ping请求"
+	"bs-ping-on-init-desc": "在页面载入后是否立即发送ping请求",
+	"right-editor": "当身份系统被激活时，将被授予 \"编辑器 \"身份的所有权限，用于编辑器限制中受保护页面。",
+	"action-editor": "当身份系统被激活时，将被授予 \"编辑器 \"身份的所有权限，用于编辑器限制中受保护页面"
 }

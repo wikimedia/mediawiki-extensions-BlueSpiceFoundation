@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-validator-email-validation-approved": "Imejl adresa je uspešno potvrđena.",
 	"bs-validator-email-validation-not-approved": "Imejl adresa ne može biti potvrđena.",
 	"bs-validator-url-validation-approved": "Link je uspešno potvrđen.",

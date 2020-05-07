@@ -1,18 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"관인생략",
-			"Keysuck",
-			"아라",
-			"Namoroka",
-			"Miri-Nae",
-			"Hwangjy9",
-			"SeoJeongHo",
-			"Ykhwong",
-			"Ellif",
-			"In2acous",
 			"Comjun04",
-			"Son77391"
+			"Ellif",
+			"Hwangjy9",
+			"In2acous",
+			"Keysuck",
+			"Miri-Nae",
+			"Namoroka",
+			"SeoJeongHo",
+			"Son77391",
+			"Ykhwong",
+			"관인생략",
+			"아라"
 		]
 	},
 	"bs-extjs-ok": "확인",
@@ -88,5 +88,6 @@
 	"bs-extjs-filter-starts-with": "starts with",
 	"bs-extjs-filter-ends-with": "ends with",
 	"bs-extjs-filter-greater-than": "greater than",
-	"bs-extjs-filter-less-than": "less than"
+	"bs-extjs-filter-less-than": "less than",
+	"bs-extjs-label-specialpage": "특수문서"
 }

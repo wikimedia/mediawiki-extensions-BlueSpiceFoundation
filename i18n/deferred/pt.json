@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hamilton Abreu",
 			"Macofe",
-			"Vitorvicentevalente",
-			"Hamilton Abreu"
+			"Vitorvicentevalente"
 		]
 	},
 	"bs-deferred-action-status-pending": "Pendente.",

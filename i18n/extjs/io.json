@@ -6,5 +6,8 @@
 	},
 	"bs-extjs-ok": "O.K.",
 	"bs-extjs-cancel": "Anular",
-	"bs-extjs-label-namespace": "'Namespace'"
+	"bs-extjs-label-namespace": "'Namespace'",
+	"bs-extjs-delete": "Efacar",
+	"bs-extjs-upload": "Kargar",
+	"bs-extjs-uploading": "Karganta..."
 }

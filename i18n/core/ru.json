@@ -1,17 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras",
 			"Agilight",
-			"Kaganer",
-			"Mailman",
-			"Mouse21",
-			"Meshkov.a",
-			"Shaleych",
-			"Vlad5250",
+			"Carn ru",
+			"Dicto23456",
 			"Diralik",
 			"DmitTrix",
-			"Dicto23456"
+			"Kaganer",
+			"Mailman",
+			"Meshkov.a",
+			"Mouse21",
+			"Okras",
+			"Shaleych",
+			"Vlad5250"
 		]
 	},
 	"bluespicefoundation-desc": "Делает MediaWiki готовой для предприятия",
@@ -102,5 +103,6 @@
 	"bs-notifications-agent-anon": "анонимный участник",
 	"bs-lockdown-groups-permissionerror": "Действие \"$1\" невозможно выполнить по {{PLURAL:$2|следующей причине|следующим причинам}}: $3",
 	"action-wikiadmin": "используется во многих расширениях BlueSpice для потенциально опасных административных задач, таких как управление пользователями, разрешениями и глобальная конфигурация",
-	"protect-level-editor": "Разрешено только редакторам и администраторам"
+	"protect-level-editor": "Разрешено только редакторам и администраторам",
+	"bs-ping-on-init-desc": "Должен ли ping запрос отправляться сразу после загрузки страницы"
 }

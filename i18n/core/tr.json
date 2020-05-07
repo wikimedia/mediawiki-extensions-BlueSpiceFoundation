@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sayginer",
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"Sayginer"
 		]
 	},
 	"bs-userbar_loginswitch_logout": "Oturumu kapat",
@@ -90,8 +90,8 @@
 	"bs-graphicallist-action-preview": "Önizleme",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "birçok BlueSpice uzantısında, kullanıcıları yönetme, izinler, genel yapılandırma gibi potansiyel tehlikeli idari görevler için kullanılır",
-	"right-wikiadmin": "Birçok BlueSpice uzantısında, kullanıcıları yönetme, izinler, genel yapılandırma gibi potansiyel tehlikeli idari görevler için kullanılır",
+	"action-wikiadmin": "kullanıcıları, izinleri, genel yapılandırmayı (BlueSpice uzantıları) yönetmek gibi potansiyel tehlikeli yönetim görevlerini kullanın",
+	"right-wikiadmin": "Kullanıcıları, izinleri, genel yapılandırmayı (BlueSpice uzantıları) yönetmek gibi potansiyel tehlikeli yönetim görevlerini kullanın",
 	"bs-notifications-agent-anon": "anonim kullanıcı",
 	"protect-level-editor": "Yalnızca editörlere ve yöneticilere izin ver",
 	"bs-ping-on-init-desc": "Sayfa yüklendikten hemen sonra ping isteği gönderilmelidir.",

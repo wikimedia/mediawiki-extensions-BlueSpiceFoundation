@@ -6,8 +6,14 @@
 	},
 	"bs-userbar_loginswitch_logout": "ብመንነት ውጻእ",
 	"bs-userbar_loginswitch_login": "ብመንነት እተው",
-	"bs-imagepage-download-text": "አውርድ",
+	"bs-imagepage-download-text": "ኣውርድ",
 	"bs-export-menu-print-text": "ሕተም",
 	"bs-graphicallist-action-close": "ዕጸው",
-	"bs-graphicallist-action-preview": "ኣቐደሚ ትርኢት"
+	"bs-graphicallist-action-preview": "ኣቐደሚ ትርኢት",
+	"bs-ns_main": "(ገጻት)",
+	"bs-tab_navigation": "መዳህሰስ",
+	"bs-extended-search-textfield-defaultvalue": "ምድላይ...",
+	"bs-now": "ሕጂ",
+	"bs-from-something": "(ካብ $1)",
+	"bs-graphicallist-action-list": "ዝርዝር"
 }

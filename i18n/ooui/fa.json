@@ -11,5 +11,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "افزودن",
 	"bs-ooui-key-value-input-widget-add-form-label": "افزودن ورودی تازه",
 	"bs-ooui-key-value-input-widget-error-message": "همهٔ مقدارهای لازم باید وارد شوند!",
-	"bs-ooui-key-value-input-widget-no-values-label": "مقداری داده نشده است!"
+	"bs-ooui-key-value-input-widget-no-values-label": "مقداری داده نشده است!",
+	"bs-ooui-btn-dismiss-alert-title": "بگذریم"
 }

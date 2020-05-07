@@ -33,5 +33,20 @@
 	"bs-graphicallist-action-list": "Liste",
 	"bs-graphicallist-action-preview": "Forhåndsvisning",
 	"bs-notifications-agent-anon": "anonym bruger",
-	"bs-filesystemhelper-save-base64-error": "Filen kunne ikke gemmes."
+	"bs-filesystemhelper-save-base64-error": "Filen kunne ikke gemmes.",
+	"bs-no-information-available": "Ingen informationer tilgængelige",
+	"bs-userpagesettings-legend": "Brugerindstillinger",
+	"bs-userpreferences-link-text": "Flere brugerindstillinger",
+	"bs-exception-view-stacktrace-toggle-show-text": "Vis fejldetaljer",
+	"bs-exception-view-stacktrace-toggle-hide-text": "Skjul fejldetaljer",
+	"bs-viewtagerrorlist-legend": "$1 - Fejl",
+	"bs-filesystemhelper-file-not-exists": "Filen <code>$1</code> findes ikke.",
+	"bs-filesystemhelper-file-already-exists": "Filen <code>$1</code> findes allerede.",
+	"bs-filesystemhelper-file-delete-error": "Filen <code>$1</code> kunne ikke slettes.",
+	"bs-filesystemhelper-folder-already-exists": "Mappen <code>$1</code> findes allerede.",
+	"bs-filesystemhelper-folder-not-exists": "Mappen <code>$1</code> findes ikke.",
+	"bs-filesystemhelper-upload-unsupported-type": "Filtypen understøttes ikke.",
+	"bs-imagepage-download-text": "Hent",
+	"bs-parser-error-invalid-category-title": "Siden er ikke i en gyldig kategori: $1",
+	"bs-export-menu-print-text": "Udskriv"
 }

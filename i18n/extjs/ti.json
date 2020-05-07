@@ -12,12 +12,12 @@
 	"bs-extjs-delete": "ሰረዘ",
 	"bs-extjs-add": "ወስኽ",
 	"bs-extjs-remove": "ኣልግስ",
-	"bs-extjs-edit": "የዐርይ",
+	"bs-extjs-edit": "ኣተዓራረየ",
 	"bs-extjs-copy": "ቅዳሕ",
 	"bs-extjs-hint": "ኣመት",
 	"bs-extjs-error": "ጌጋ",
 	"bs-extjs-confirm": "ኣረጋገጸ",
-	"bs-extjs-loading": "ጽዕነት...",
+	"bs-extjs-loading": "ይጽዕን ኣሎ...",
 	"bs-extjs-warning": "መጠንቀቕታ",
 	"bs-extjs-reset": "ከምብሓዱሽ ጀምር",
 	"bs-extjs-close": "ዕጸው",
@@ -29,7 +29,8 @@
 	"bs-extjs-filter-bool-no": "ኣይፋል",
 	"bs-extjs-title-success": "ዓወት",
 	"bs-extjs-title-warning": "መጠንቀቕታ",
-	"bs-extjs-categorytree-title": "ምድቦት",
+	"bs-extjs-categorytree-title": "መደባት",
 	"bs-extjs-tools-trigger-text": "መሳርሒታት",
-	"bs-extjs-flyout-tab-grid-label": "ዝርዝሪት"
+	"bs-extjs-flyout-tab-grid-label": "ዝርዝሪት",
+	"bs-extjs-browse": "ዳህስስ"
 }

@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-deferred-action-status-pending": "Na čekanju.",
 	"bs-deferred-action-status-running": "Izvršava se…",
 	"bs-deferred-action-status-done": "Gotovo.",

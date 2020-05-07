@@ -90,8 +90,8 @@
 	"bs-parser-error-invalid-category-title": "'A pàgene non g'è 'na categorije valide: $1",
 	"bs-exttype-bluespice": "Estenziune de BlueSpice",
 	"bs-export-menu-print-title": "Fà 'ndrucà 'a versione stambabbele d'a pàgene",
-	"action-wikiadmin": "ausate jndr'à 'nu sbuènne de estenziune BlueSpice pe attivitate amminsitrative potenzialmende pericolose cumme 'a gestione de le utinde, permesse, configurazione globbale",
-	"right-wikiadmin": "Ausate jndr'à 'nu sbuènne de estenziune BlueSpice pe attivitate amminsitrative potenzialmende pericolose cumme 'a gestione de le utinde, permesse, configurazione globbale",
+	"action-wikiadmin": "ausate pe attivitate amminsitrative potenzialmende pericolose cumme 'a gestione de le utinde, permesse, configurazione globbale (estenziune de BlueSpice)",
+	"right-wikiadmin": "Ausate pe attivitate amminsitrative potenzialmende pericolose cumme 'a gestione de le utinde, permesse, configurazione globbale (estenziune de BlueSpice)",
 	"protect-level-editor": "Consendite sulamende a le cangiature e le amministrature",
 	"bs-ping-on-init-desc": "Avessà mannà 'na richieste subbete dope le carecaminde d'a pàgene"
 }

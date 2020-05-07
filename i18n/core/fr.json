@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"Benjozork",
+			"Derugon",
 			"Gomoko",
 			"Macofe",
-			"Benjozork",
-			"Wladek92",
-			"Urhixidur",
 			"Pols12",
 			"Thibaut120094",
+			"Urhixidur",
 			"Verdy p",
-			"Derugon"
+			"Wladek92"
 		]
 	},
 	"bluespicefoundation-desc": "Rend MediaWiki prêt pour l’entreprise",
@@ -96,10 +96,10 @@
 	"bs-graphicallist-action-preview": "Aperçu",
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Utilisé dans de nombreux modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d'accès, de la configuration globale",
+	"right-wikiadmin": "Utilise des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d'accès, de la configuration globale (extensions BlueSpice)",
 	"bs-notifications-agent-anon": "utilisateur anonyme",
 	"bs-lockdown-groups-permissionerror": "L'action « $1 » n’est pas disponible pour {{PLURAL:$2|la raison suivante|les raisons suivantes}} : $3",
-	"action-wikiadmin": "utilisé dans de nombreux modules externes BlueSpice pour des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d’accès, de la configuration globale",
+	"action-wikiadmin": "utilise des tâches administratives potentiellement dangereuses, comme la gestion des utilisateurs, des droits d’accès, de la configuration globale (extensions BlueSpice)",
 	"protect-level-editor": "Autoriser seulement les éditeurs et les administrateurs",
 	"bs-ping-on-init-desc": "Indique si une requête ping devrait être envoyée immédiatement après le chargement de la page",
 	"right-editor": "Bénéficiez de toutes les autorisations du rôle « éditeur » pour les pages protégées concernant la restriction de l'éditeur lorsque le système de rôles est activé",

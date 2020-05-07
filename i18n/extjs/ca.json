@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ssola",
 			"Edustus",
-			"Macofe",
 			"F3RaN",
-			"Fitoschido"
+			"Fitoschido",
+			"Macofe",
+			"Ssola"
 		]
 	},
 	"bs-extjs-no": "No",
@@ -27,5 +27,6 @@
 	"bs-extjs-pageexport-error-invalid-title": "El nom de la llista no és vàlid",
 	"bs-extjs-tools-trigger-text": "Eines",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniatures",
-	"bs-extjs-flyout-tab-grid-label": "Detalls"
+	"bs-extjs-flyout-tab-grid-label": "Detalls",
+	"bs-extjs-label-specialpage": "Pàgina especial"
 }

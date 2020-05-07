@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion",
 			"Alex Khimich",
-			"Ата",
-			"Vlad5250"
+			"Piramidion",
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Перелічує всі файли з файлового backend'у. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",

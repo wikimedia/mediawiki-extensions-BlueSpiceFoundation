@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xiaomingyan",
-			"Liuxinyu970226",
 			"Kuailong",
+			"Liuxinyu970226",
+			"VulpesVulpes825",
+			"Xiaomingyan",
 			"夢蝶葬花"
 		]
 	},
@@ -80,5 +81,6 @@
 	"bs-extjs-flyout-tab-grid-label": "详情",
 	"bs-extjs-flyout-tab-grid-title": "切换为详情视图",
 	"bs-extjs-flyout-add-title": "点此添加新的项目",
-	"bs-extjs-flyout-add-label": "添加项目"
+	"bs-extjs-flyout-add-label": "添加项目",
+	"bs-extjs-label-specialpage": "特殊页面"
 }

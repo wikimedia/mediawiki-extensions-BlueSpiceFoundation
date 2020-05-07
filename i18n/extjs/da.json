@@ -53,5 +53,10 @@
 	"bs-extjs-pageexport-overwrite-label": "Overskriv",
 	"bs-extjs-tools-trigger-text": "Værktøjer",
 	"bs-extjs-flyout-tab-grid-label": "Detaljer",
-	"bs-extjs-pageexport-error-invalid-title": "Navnet på listen er ugyldigt"
+	"bs-extjs-pageexport-error-invalid-title": "Navnet på listen er ugyldigt",
+	"bs-extjs-ok": "OK",
+	"bs-extjs-cancel": "Annullér",
+	"bs-extjs-label-specialpage": "Spesialside",
+	"bs-extjs-allns": "(alle)",
+	"bs-extjs-mainns": "(Hoved)"
 }

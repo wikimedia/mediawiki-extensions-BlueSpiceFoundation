@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patrick Star",
+			"Meerrahtar",
 			"Okras",
-			"Vlad5250",
-			"Romanko Mikhail"
+			"Patrick Star",
+			"Romanko Mikhail",
+			"Vlad5250"
 		]
 	},
 	"bs-setting-path-feature": "Функция",
@@ -17,5 +18,6 @@
 	"bs-setting-path-personalisation": "Персонализация",
 	"bs-setting-path-communication": "Связь",
 	"bs-setting-path-administration": "Администрирование",
-	"bs-setting-path-export": "Экспорт"
+	"bs-setting-path-export": "Экспорт",
+	"bs-setting-path-skinning": "Оформление"
 }

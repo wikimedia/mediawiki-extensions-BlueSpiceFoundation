@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"2nd-player",
+			"Aefgh39622",
+			"Otokoume",
+			"Reiwa period",
 			"Shirayuki",
 			"Sujiniku",
-			"2nd-player",
-			"Otokoume",
 			"Suyama",
-			"神樂坂秀吉",
-			"Reiwa period",
-			"Aefgh39622"
+			"神樂坂秀吉"
 		]
 	},
 	"bs-ns_main": "(ページ)",
@@ -62,8 +62,8 @@
 	"bs-pref-deleteduserimage": "削除された利用者のアバター:",
 	"bs-graphicallist-action-close": "閉じる",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "ユーザー、アクセス許可、グローバル構成などの潜在的な危険な管理タスクのために、多くの BlueSpice 拡張機能で使用されています",
-	"action-wikiadmin": "ユーザー、アクセス許可、グローバル構成などの潜在的な危険な管理タスクのために、多くの BlueSpice 拡張機能で使用されています",
+	"right-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクを使用 (BlueSpice 拡張機能群)",
+	"action-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクの使用 (BlueSpice 拡張機能群)",
 	"bs-extended-search-textfield-tooltip": "wiki内を検索",
 	"bs-tab_navigation": "ナビゲーション",
 	"bs-userpreferences-link-title": "個人ユーザー設定を表示する",

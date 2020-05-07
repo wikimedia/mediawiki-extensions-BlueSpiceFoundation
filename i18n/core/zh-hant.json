@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"A2093064",
 			"Cwlin0416",
-			"S8321414",
+			"Kly",
 			"LNDDYL",
 			"Liuxinyu970226",
-			"Kly",
+			"S8321414",
 			"Sanmosa",
-			"A2093064",
 			"Xiplus"
 		]
 	},
@@ -95,10 +95,10 @@
 	"bs-graphicallist-action-preview": "預覽",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
+	"right-wikiadmin": "使用有潛在風險的管理任務，例如像是管理使用者、權限、全域設置（BlueSpice 擴充功能）",
 	"bs-notifications-agent-anon": "匿名使用者",
 	"bs-lockdown-groups-permissionerror": "出於以下{{PLURAL:$2|原因}}「$1」操作無效：$3",
-	"action-wikiadmin": "使用在許多有潛在風險管理任務的 BlueSpice 擴充功能，例如像是管理使用者、權限、全域設置",
+	"action-wikiadmin": "使用有潛在風險的管理任務，例如像是管理使用者、權限、全域設置（BlueSpice 擴充功能）",
 	"protect-level-editor": "只允許編輯者和管理員",
 	"bs-ping-on-init-desc": "在頁面載入後是否應立刻發送 ping 請求",
 	"right-editor": "當身份系統啟動時，向受編輯者限制的保護頁面授予所有「編輯者」身份權限",

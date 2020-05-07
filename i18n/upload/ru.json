@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250",
-			"Romanko Mikhail",
 			"DmitTrix",
-			"Movses"
+			"Movses",
+			"Romanko Mikhail",
+			"Vlad5250"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Загрузка",

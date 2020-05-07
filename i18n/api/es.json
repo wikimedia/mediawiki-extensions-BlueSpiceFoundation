@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"YoViajo",
-			"Macofe",
-			"Idontknow",
 			"Fitoschido",
+			"Idontknow",
 			"Josecurioso",
-			"Nancystodd"
+			"Macofe",
+			"Nancystodd",
+			"YoViajo"
 		]
 	},
 	"apihelp-bs-wikipage-tasks-description": "Proporciona operaciones comunes para páginas wiki",

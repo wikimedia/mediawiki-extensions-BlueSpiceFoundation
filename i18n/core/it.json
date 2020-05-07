@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16",
-			"PeppeAeco",
 			"Baffo",
-			"Macofe",
-			"LACLARETTA",
+			"Beta16",
+			"Dansita",
 			"Gianfranco",
-			"Tizven",
-			"Dansita"
+			"LACLARETTA",
+			"Macofe",
+			"PeppeAeco",
+			"Tizven"
 		]
 	},
 	"bs-ns_main": "(Pagine)",
@@ -90,8 +90,8 @@
 	"bs-export-menu-print-title": "Mostra la versione stampabile della pagina",
 	"bs-graphicallist-action-close": "Chiudi",
 	"bs-graphicallist-action-list": "Elenco",
-	"right-wikiadmin": "Utilizzato in molte estensioni BlueSpice per potenziali attività amministrative pericolose come la gestione di utenti, permessi, configurazione globale",
-	"action-wikiadmin": "utilizzato in molte estensioni BlueSpice per attività amministrative potenzialmente pericolose come la gestione di utenti, permessi, configurazione globale",
+	"right-wikiadmin": "Usa attività amministrative potenzialmente pericolose come la gestione di utenti, permessi, configurazione globale (estensioni BlueSpice)",
+	"action-wikiadmin": "usare attività amministrative potenzialmente pericolose come la gestione di utenti, permessi, configurazione globale (estensioni BlueSpice)",
 	"bs-parser-error-invalid-category-title": "La pagina non è una categoria valida: $1",
 	"bs-graphicallist-action-preview": "Anteprima",
 	"bs-notifications-agent-anon": "utente anonimo",

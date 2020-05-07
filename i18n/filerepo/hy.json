@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"bs-filerepo-labelfilter": "Զտիչ",
+	"bs-filerepo-headerfilename": "Նիշքի անվանում",
+	"bs-filerepo-headerfilesize": "Չափ",
+	"bs-filerepo-headerpagecategories": "Կատեգորիաներ",
+	"bs-filerepo-headerfilewidth": "Լայնք",
+	"bs-filerepo-headerfileheight": "Բարձրություն",
+	"bs-filerepo-headerfileusertext": "Մասնակից",
+	"bs-filerepo-yes": "Այո",
+	"bs-filerepo-no": "Ոչ"
+}

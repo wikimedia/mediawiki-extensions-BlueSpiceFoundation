@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"bs-ns_main": "(Էջեր)",
+	"bs-ns_all": "(բոլոր)",
+	"bs-tab_navigation": "Նավարկություն",
+	"bs-userbar_loginswitch_logout": "Դուրս գալ",
+	"bs-userbar_loginswitch_login": "Մուտք գործել",
+	"bs-extended-search-textfield-defaultvalue": "Որոնել ...",
+	"bs-years-duration": "{{PLURAL:$1|$1 տարի|$1 տարիներ}}",
+	"bs-months-duration": "{{PLURAL:$1|$1 ամիս|$1 ամիսներ}}",
+	"bs-weeks-duration": "{{PLURAL:$1|$1 շաբաթ|$1 շաբաթներ}}",
+	"bs-days-duration": "{{PLURAL:$1|մեկ օր|$1 օր}}",
+	"bs-hours-duration": "{{PLURAL:$1|մեկ ժամ|$1 ժամ}}",
+	"bs-mins-duration": "{{PLURAL:$1|մեկ րոպե|$1 րոպե}}",
+	"bs-now": "հենց հիմա",
+	"bs-viewtagerrorlist-legend": "$1 — Սխալ",
+	"bs-imagepage-download-text": "Ներբեռնել",
+	"bs-ns": "Անվանատարածք",
+	"bs-from-something": "($1-ից)",
+	"bs-export-menu-print-text": "Տպել",
+	"bs-graphicallist-action-close": "Փակել",
+	"bs-graphicallist-action-list": "Ցանկ",
+	"bs-graphicallist-action-preview": "Նախադիտում"
+}

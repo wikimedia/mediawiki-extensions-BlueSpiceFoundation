@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Joseba",
 			"Mikel Ibaiba"
 		]
 	},
-	"apihelp-bs-wikisubpage-treestore-param-options": "Aukeren zerrenda"
+	"apihelp-bs-wikisubpage-treestore-param-options": "Aukeren zerrenda",
+	"apihelp-bs-task-param-format": "Emaitzaren formatua",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Ez zaude baimendua \"$1\" orrialdea editatzeko",
+	"bs-wikipage-tasks-setcategories-success": "Kategoriak arrakastaz ezarri dira"
 }

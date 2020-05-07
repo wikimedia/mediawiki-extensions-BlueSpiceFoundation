@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-extjs-portal-config": "Portlet konfigurieren:",
 	"bs-extjs-portal-title": "Portlettitel",
 	"bs-extjs-portal-height": "Höhe",

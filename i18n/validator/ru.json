@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras",
 			"Kaganer",
-			"Mouse21"
+			"Mouse21",
+			"Okras"
 		]
 	},
 	"bs-validator-email-validation-approved": "Адрес электронной почты был успешно проверен.",

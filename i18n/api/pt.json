@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente",
-			"Hamilton Abreu",
+			"Athena in Wonderland",
 			"Fúlvio",
-			"Athena in Wonderland"
+			"Hamilton Abreu",
+			"Vitorvicentevalente"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",

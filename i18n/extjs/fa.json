@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615",
-			"Alirezaaa",
-			"Arash.pt",
 			"Alifakoor",
+			"Alirezaaa",
 			"Amirsara",
-			"FarsiNevis"
+			"Arash.pt",
+			"FarsiNevis",
+			"Reza1615"
 		]
 	},
 	"bs-extjs-ok": "تأیید",
@@ -73,5 +73,9 @@
 	"bs-extjs-pageexport-general-error": "خطا در برون‌بری",
 	"bs-extjs-pageexport-success": "برون‌بری موفق",
 	"bs-extjs-pageexport-error-invalid-title": "نام فهرست، نامعتبر است",
-	"bs-extjs-export-search-summary-text": "تولید شده به‌وسیلهٔ PageExport"
+	"bs-extjs-export-search-summary-text": "تولید شده به‌وسیلهٔ PageExport",
+	"bs-extjs-label-specialpage": "ویژه‌صفحه",
+	"bs-extjs-pageexport-pagecollection-prefix": "مجموعهٔ صفحه‌ها",
+	"bs-pagecollection-prefix": "مجموعهٔ صفحه‌ها",
+	"bs-extjs-pageexport-success-text": "مجموعهٔ صفحه‌ها برون‌ریزی شد به $1"
 }
