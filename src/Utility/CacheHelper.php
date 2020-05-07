@@ -75,7 +75,7 @@ class CacheHelper {
 	public function invalidate( $key ) {
 		$res = $this->getCache()->delete( $key );
 		if ( !$res ) {
-			wfDebugLog( 'BsMemcached', "NO INVALIDATION FOR KEY: $key" );
+			wfDebugLog( 'bluespice', "NO INVALIDATION FOR KEY: $key" );
 		}
 		return $res;
 	}
