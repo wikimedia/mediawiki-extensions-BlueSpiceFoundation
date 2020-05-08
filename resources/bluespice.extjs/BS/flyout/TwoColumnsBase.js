@@ -75,7 +75,7 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 	makeCenterOnePanel: function( items ) {
 		return {
 			region: 'west',
-			scrollable: true,
+			scrollable: 'y',
 			width: '40%',
 			bodyPadding: 5,
 			cls: 'panel-center-one',
@@ -86,7 +86,7 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 	makeCenterTwoPanel: function( items ) {
 		return {
 			region: 'center',
-			scrollable: true,
+			scrollable: 'y',
 			bodyPadding: 5,
 			cls: 'panel-center-two',
 			items: items
