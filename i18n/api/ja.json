@@ -5,6 +5,7 @@
 			"Aefgh39622",
 			"Otokoume",
 			"Reiwa period",
+			"Shirayuki",
 			"Suyama"
 		]
 	},
@@ -36,8 +37,8 @@
 	"bs-wikipage-tasks-setcategories-success": "カテゴリを設定しました。",
 	"apihelp-bs-wikipage-store-description": "すべてのウィキページを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store引数を実装します。",
 	"apihelp-bs-wikipage-store-summary": "すべてのウィキページを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store引数を実装します。",
-	"apihelp-bs-wikisubpage-treestore-description": "特定のウィキページのサブページを一覧表示します",
-	"apihelp-bs-wikisubpage-treestore-summary": "特定のウィキページのサブページを一覧表示します",
+	"apihelp-bs-wikisubpage-treestore-description": "特定のウィキページの下位ページを列挙します",
+	"apihelp-bs-wikisubpage-treestore-summary": "特定のウィキページの下位ページを列挙します",
 	"apihelp-bs-wikisubpage-treestore-param-node": "ウィキページの接頭辞付きのタイトル",
 	"apihelp-bs-wikisubpage-treestore-param-options": "オプションの一覧",
 	"apihelp-bs-upload-license-store-description": "ファイルアップロードで利用可能なすべてのライセンスを一覧表示します",
