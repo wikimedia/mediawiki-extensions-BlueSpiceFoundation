@@ -31,6 +31,7 @@
 	"bs-extjs-reset": "Label for reset button used in dialogues, alerts and prompts.\n{{Identical|Reset}}",
 	"bs-extjs-close": "Label for close button used in dialogues, alerts and prompts.\n{{Identical|Close}}",
 	"bs-extjs-label-user": "Label for combo boxes that select users.\n{{Identical|User}}",
+	"bs-extjs-label-group": "Label for combo boxes that select groups.\n{{Identical|Group}}",
 	"bs-extjs-label-namespace": "Label for combo boxes that select namespaces.\n{{Identical|Namespace}}",
 	"bs-extjs-label-page": "Label for combo boxes that select pages.\n{{Identical|Page}}",
 	"bs-extjs-label-directsearch": "Label for combo boxes that select pages.\n{{Identical|Search}}",
