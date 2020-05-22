@@ -250,6 +250,7 @@
 				"bs-extjs-reset",
 				"bs-extjs-close",
 				"bs-extjs-label-user",
+				"bs-extjs-label-group",
 				"bs-extjs-label-namespace",
 				"bs-extjs-label-page",
 				"bs-extjs-label-directsearch",
