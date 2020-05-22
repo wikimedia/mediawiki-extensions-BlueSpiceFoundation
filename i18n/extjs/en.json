@@ -25,6 +25,7 @@
 	"bs-extjs-reset": "Reset",
 	"bs-extjs-close": "Close",
 	"bs-extjs-label-user": "User",
+	"bs-extjs-label-group": "Group",
 	"bs-extjs-label-namespace": "Namespace",
 	"bs-extjs-label-page": "Page",
 	"bs-extjs-label-directsearch": "Search",
