@@ -33,6 +33,7 @@
 	"bs-extjs-reset": "重設",
 	"bs-extjs-close": "關閉",
 	"bs-extjs-label-user": "使用者",
+	"bs-extjs-label-group": "群組",
 	"bs-extjs-label-namespace": "命名空間",
 	"bs-extjs-label-page": "頁面",
 	"bs-extjs-label-directsearch": "搜尋",

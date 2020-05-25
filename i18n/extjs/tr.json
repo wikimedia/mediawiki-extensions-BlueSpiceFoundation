@@ -28,6 +28,7 @@
 	"bs-extjs-reset": "Sıfırla",
 	"bs-extjs-close": "Kapat",
 	"bs-extjs-label-user": "Kullanıcı",
+	"bs-extjs-label-group": "Grup",
 	"bs-extjs-label-namespace": "Ad alanı",
 	"bs-extjs-label-page": "Sayfa",
 	"bs-extjs-label-directsearch": "Ara",

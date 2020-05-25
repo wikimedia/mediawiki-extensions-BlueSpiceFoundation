@@ -31,6 +31,7 @@
 	"bs-extjs-reset": "Reimposta",
 	"bs-extjs-close": "Chiudi",
 	"bs-extjs-label-user": "Utente",
+	"bs-extjs-label-group": "Gruppo",
 	"bs-extjs-label-namespace": "Namespace",
 	"bs-extjs-label-page": "Pagina",
 	"bs-extjs-label-directsearch": "Cerca",

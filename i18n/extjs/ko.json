@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Codenstory",
 			"Comjun04",
 			"Ellif",
 			"Hwangjy9",
@@ -36,6 +37,7 @@
 	"bs-extjs-reset": "초기화",
 	"bs-extjs-close": "닫기",
 	"bs-extjs-label-user": "사용자",
+	"bs-extjs-label-group": "그룹",
 	"bs-extjs-label-namespace": "이름공간",
 	"bs-extjs-label-page": "문서",
 	"bs-extjs-label-directsearch": "검색",

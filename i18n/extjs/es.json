@@ -6,6 +6,7 @@
 			"Frammm",
 			"Joaquin1001",
 			"Macofe",
+			"MarcoAurelio",
 			"Mynor Archila"
 		]
 	},
@@ -30,6 +31,7 @@
 	"bs-extjs-reset": "Restablecer",
 	"bs-extjs-close": "Cerrar",
 	"bs-extjs-label-user": "Usuario",
+	"bs-extjs-label-group": "Grupo",
 	"bs-extjs-label-namespace": "Espacio de nombres",
 	"bs-extjs-label-page": "Página",
 	"bs-extjs-label-directsearch": "Buscar",
