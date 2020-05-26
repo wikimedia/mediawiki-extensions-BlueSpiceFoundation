@@ -29,6 +29,7 @@
 	"bs-extjs-reset": "Reiniciar",
 	"bs-extjs-close": "Fechar",
 	"bs-extjs-label-user": "Usuário",
+	"bs-extjs-label-group": "Grupo",
 	"bs-extjs-label-namespace": "Espaço nominal",
 	"bs-extjs-label-page": "Página",
 	"bs-extjs-label-directsearch": "Pesquisar",
