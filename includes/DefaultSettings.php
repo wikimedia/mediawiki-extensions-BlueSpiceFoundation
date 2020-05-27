@@ -162,6 +162,14 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"type" => 'namespace',
 		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'reviewer' ]
 	],
+	"deletelogentry" => [
+		"type"  => 'global',
+		"roles" => [ 'admin' ]
+	],
+	"deleterevision" => [
+		"type"  => 'global',
+		"roles" => [ 'admin' ]
+	],
 	"edit" => [
 		"type" => 'namespace',
 		"preventLockout" => '1',
