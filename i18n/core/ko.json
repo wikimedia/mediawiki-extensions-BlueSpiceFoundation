@@ -42,6 +42,7 @@
 	"bs-readonly": "데이터베이스가 잠겨 있어서 문서를 편집할 수 없습니다. 데이터베이스 관리가 끝난 후에는 정상으로 돌아올 것입니다. 관리자가 데이터베이스를 잠글 때 남긴 메시지는 다음과 같습니다: $1",
 	"bs-imageofotheruser": "다른 사용자에게 그림을 올릴 수 없습니다.",
 	"bs-permissionerror": "권한 오류!",
+	"bs-lockdown-groups-permissionerror": "\"$1\" 동작은 다음의 {{PLURAL:$2|이유}}로 사용할 수 있습니다: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code>은(는) 올바른 디렉터리가 아닙니다.",
 	"bs-filesystemhelper-file-not-exists": "<code>$1</code> 파일이 존재하지 않습니다.",
 	"bs-filesystemhelper-file-copy-error": "<code>$1</code> 파일을 복사할 수 없습니다.",
