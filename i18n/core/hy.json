@@ -16,6 +16,8 @@
 	"bs-days-duration": "{{PLURAL:$1|մեկ օր|$1 օր}}",
 	"bs-hours-duration": "{{PLURAL:$1|մեկ ժամ|$1 ժամ}}",
 	"bs-mins-duration": "{{PLURAL:$1|մեկ րոպե|$1 րոպե}}",
+	"bs-two-units-ago": "$1 և $2 առաջ",
+	"bs-one-unit-ago": "$1 առաջ",
 	"bs-now": "հենց հիմա",
 	"bs-viewtagerrorlist-legend": "$1 — Սխալ",
 	"bs-imagepage-download-text": "Ներբեռնել",
@@ -24,5 +26,6 @@
 	"bs-export-menu-print-text": "Տպել",
 	"bs-graphicallist-action-close": "Փակել",
 	"bs-graphicallist-action-list": "Ցանկ",
-	"bs-graphicallist-action-preview": "Նախադիտում"
+	"bs-graphicallist-action-preview": "Նախադիտում",
+	"bs-notifications-agent-anon": "անանուն մասնակից"
 }

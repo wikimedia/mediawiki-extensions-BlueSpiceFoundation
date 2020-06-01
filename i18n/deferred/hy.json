@@ -5,6 +5,8 @@
 		]
 	},
 	"bs-deferred-action-status-done": "Արված է",
+	"bs-deferred-action-apieditpage-description": "Խմբագրել \"$1\"։",
+	"bs-deferred-batch-progress-desc": "Առաջընթաց",
 	"bs-deferred-batch-actions": "Գործողություններ",
 	"bs-deferred-batch-description": "Նկարագրություն",
 	"bs-deferred-batch-status": "Կարգավիճակ",

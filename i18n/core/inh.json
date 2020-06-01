@@ -8,5 +8,6 @@
 	"bs-userbar_loginswitch_login": "Чудовла",
 	"bs-extended-search-textfield-defaultvalue": "Лахар...",
 	"bs-days-duration": "{{PLURAL:$1|цхьа ди|$1 ди}}",
+	"bs-email-greeting-receiver": "Моаршал да хьога, {{GENDER:$1|лоархIаме $1|$1}}.",
 	"bs-ns": "ЦӀерий моттиг"
 }
