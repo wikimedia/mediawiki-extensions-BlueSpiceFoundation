@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BlueSpice\Permission\Lockdown\Module\Groups;
 
 use User;

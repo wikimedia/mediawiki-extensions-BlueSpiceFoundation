@@ -257,7 +257,7 @@ class BsNamespaceHelper {
 
 	/**
 	 * Checks if a user has a given permission on a given namepsace
-	 * @param Integer $iID namespace
+	 * @param int $iID namespace
 	 * @param String $sPermission permission
 	 * @return bool returns true if user is allowed , otherwise false
 	 */

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BlueSpice;
 
 class Foundation {
@@ -46,7 +45,7 @@ class Foundation {
 	}
 
 	private function __construct() {
- }
+	}
 
 	protected function initialize() {
 		// earliest possible position to use the services and config

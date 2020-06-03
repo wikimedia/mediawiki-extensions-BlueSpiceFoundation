@@ -191,7 +191,6 @@ $replace_with   = $newcatspatterns;
 // $move_from = '|^NZ/(.*)$|';
 // $move_to = 'NZ:$1';
 
-
 // ---- End options
 
 // Check valid user

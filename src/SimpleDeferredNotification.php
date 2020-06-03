@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BlueSpice;
 
 use MWException;

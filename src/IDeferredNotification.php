@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BlueSpice;
 
 interface IDeferredNotification {

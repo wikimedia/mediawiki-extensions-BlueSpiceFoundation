@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BlueSpice\TargetCache;
 
 class Title extends \BlueSpice\TargetCache {
