@@ -326,7 +326,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		// Pattern for Category tags
 		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
 		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
-		$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):(.*?)\]\]#si";
+		$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):(.*?)(\|(.*?)|)\]\]#si";
 		$matches = [];
 		$matchCount = preg_match_all( $sPattern, $sText, $matches, PREG_PATTERN_ORDER );
 
