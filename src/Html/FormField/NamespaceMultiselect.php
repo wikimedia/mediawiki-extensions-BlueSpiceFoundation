@@ -67,7 +67,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 		$language = $this->mParent->getLanguage();
 
 		$allNamespaces = $language->getNamespaceIds();
-		foreach ( $allNamespaces as $lcName => $namespaceId ) {;
+		foreach ( $allNamespaces as $lcName => $namespaceId ) {
 			// Create 'BS.model.Namespace' compatible datasets
 			// TODO: Add serverside models that are synchron with the JS models
 

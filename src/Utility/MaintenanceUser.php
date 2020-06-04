@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BlueSpice\Utility;
 
 class MaintenanceUser {

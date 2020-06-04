@@ -1,6 +1,5 @@
 <?php
 
-
 // TODO MRG20100724: Ist das ok beim Hosting (index.php ist hier symlinked)
 /* Lilu:
  * Bei Symlinks wird es Probleme geben, da __FILE__ den absoluten Pfad inkl. aufgelöster
@@ -12,7 +11,7 @@
 if ( !defined( 'WIKI_FARMING' ) ) {
 	if ( !defined( 'BSROOTDIR' ) ) {
 		define( 'BSROOTDIR', dirname( __DIR__ ) );
- }
+	}
 	if ( !defined( 'BSCONFIGDIR' ) ) {
 		define( 'BSCONFIGDIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'config' );
 	}
@@ -44,7 +43,7 @@ if ( !defined( 'WIKI_FARMING' ) ) {
 	}
 	if ( !defined( 'BS_DATA_PATH' ) ) {
 		define( 'BS_DATA_PATH', $sTMPUploadPath . '/bluespice' );
- }
+	}
 }
 
 if ( !defined( 'BS_NS_OFFSET' ) ) {

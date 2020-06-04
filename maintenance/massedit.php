@@ -88,9 +88,7 @@ $replace_with   = 'Template:';
 // $move_from = '|^NZ/(.*)$|';
 // $move_to   = 'NZ:$1';
 
-
 ########################## Nothing to do past this point ############################
-
 
 // Check valid user
 $wgUser = User::newFromName( $userName );

@@ -33,7 +33,7 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 * @deprecated since version 3.0.0 - Use constructor instead
 	 */
 	protected function initExt() {
- }
+	}
 
 	/**
 	 * Save a reference to current adapter instance.

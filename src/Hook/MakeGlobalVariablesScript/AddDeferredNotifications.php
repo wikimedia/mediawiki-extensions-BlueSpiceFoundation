@@ -1,6 +1,5 @@
 <?php
 
-
 namespace BlueSpice\Hook\MakeGlobalVariablesScript;
 
 class AddDeferredNotifications extends \BlueSpice\Hook\MakeGlobalVariablesScript {

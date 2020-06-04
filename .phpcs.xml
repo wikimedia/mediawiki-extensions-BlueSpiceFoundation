@@ -7,6 +7,7 @@
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
 		<exclude name="MediaWiki.NamingConventions.PrefixedGlobalFunctions.wfPrefix" />
+		<exclude name="PEAR.Functions.ValidDefaultValue.NotAtEnd" />
 		<exclude name="PSR12.Properties.ConstantVisibility.NotFound" />
 	</rule>
 	<file>.</file>
