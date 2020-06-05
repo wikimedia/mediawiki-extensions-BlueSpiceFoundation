@@ -61,7 +61,6 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	 * @return array
 	 */
 	protected function makeResultRow( $row ) {
-		$oUserPageTitle = Title::makeTitle( NS_USER, $row->user_name );
 		return [
 			'user_id' => (int)$row->user_id,
 			'user_name' => $row->user_name,
@@ -70,16 +69,27 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 			'user_editcount' => (int)$row->user_editcount,
 			'groups' => isset( $this->aGroups[$row->user_id] ) ? $this->aGroups[$row->user_id] : [],
 			'enabled' => isset( $this->aBlocks[$row->user_id] ) ? false : true,
-			'page_link' => $this->oLinkRenderer->makeLink(
-				$oUserPageTitle,
-				// The whitespace is to aviod automatic rewrite to user_real_name by BSF
-				$row->user_name . ' '
-			),
-
 			// legacy fields
 			'display_name' => $row->user_real_name == null ? $row->user_name : $row->user_real_name,
-			'page_prefixed_text' => $oUserPageTitle->getPrefixedText()
 		];
+	}
+
+	/**
+	 *
+	 * @param array $aTrimmedData
+	 * @return array
+	 */
+	protected function addSecondaryFields( $aTrimmedData ) {
+		foreach ( $aTrimmedData as &$dataSet ) {
+			$oUserPageTitle = Title::makeTitle( NS_USER, $dataSet->user_name );
+			$dataSet->page_link = $this->oLinkRenderer->makeLink(
+				$oUserPageTitle,
+				// The whitespace is to aviod automatic rewrite to user_real_name by BSF
+				$dataSet->user_name . ' '
+			);
+			$dataSet->page_prefixed_text = $oUserPageTitle->getPrefixedText();
+		}
+		return $aTrimmedData;
 	}
 
 	/**
