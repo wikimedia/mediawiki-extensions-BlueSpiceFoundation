@@ -56,5 +56,11 @@
 	"apihelp-bs-store-param-group": "Cadena JSON con información de agrupamiento; se deserializa a <code>matriz de objetos</code> que contienen el nombre y la dirección del campo para cada opción de agrupamiento",
 	"apihelp-bs-store-param-filter": "Cadena JSON con información de filtro; se deserializa a <code>matriz de objetos</code> que contienen nombre de campo, tipo de filtro y valor de filtro para cada opción de filtrado",
 	"bs-api-task-taskdata-help": "[$1 Esquema], [$2 ejemplos de parámetros]",
-	"apihelp-bs-recentchanges-store-summary": "Enumera todos los cambios recientes. Permite ordenarlos, filtrarlos y paginarlos. Implementa parámetros de almacenamiento."
+	"apihelp-bs-recentchanges-store-summary": "Enumera todos los cambios recientes. Permite ordenarlos, filtrarlos y paginarlos. Implementa parámetros de almacenamiento.",
+	"apihelp-bs-store-param-dc": "Indicador <code>Disable cache</code> (desactivar antememoria)",
+	"apihelp-bs-store-param-format": "El formato de la salida (JSON o JSON con formato únicamente)",
+	"apihelp-bs-store-param-options": "Opciones arbitrarias para configurar el formato de almacenamiento de una cadena JSON",
+	"apihelp-bs-store-param-context": "Objeto codificado como cadena JSON con datos de contexto para el almacén",
+	"apihelp-bs-task-param-taskdata": "Objeto codificado como cadena JSON con datos arbitrarios para la tarea",
+	"apihelp-bs-task-param-context": "Objeto codificado como cadena JSON con datos de contexto para la tarea"
 }

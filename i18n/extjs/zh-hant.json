@@ -86,5 +86,6 @@
 	"bs-extjs-flyout-tab-grid-title": "切換至詳細資料檢視",
 	"bs-extjs-flyout-add-title": "點此來添加新的項目",
 	"bs-extjs-flyout-add-label": "添加項目",
-	"bs-extjs-label-specialpage": "特殊頁面"
+	"bs-extjs-label-specialpage": "特殊頁面",
+	"bs-extjs-label-group": "群組"
 }

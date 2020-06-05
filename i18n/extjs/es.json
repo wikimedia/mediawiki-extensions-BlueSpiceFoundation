@@ -6,6 +6,7 @@
 			"Frammm",
 			"Joaquin1001",
 			"Macofe",
+			"MarcoAurelio",
 			"Mynor Archila"
 		]
 	},
@@ -83,5 +84,6 @@
 	"bs-extjs-flyout-tab-grid-title": "Cambiar a la vista de detalles",
 	"bs-extjs-flyout-add-title": "Pulsa aquí para añadir un elemento nuevo",
 	"bs-extjs-flyout-add-label": "Añadir elemento",
-	"bs-extjs-label-specialpage": "Página especial"
+	"bs-extjs-label-specialpage": "Página especial",
+	"bs-extjs-label-group": "Grupo"
 }

@@ -13,6 +13,7 @@
 			"Zhangjintao",
 			"予弦",
 			"佛壁灯",
+			"列维劳德",
 			"御坂美琴"
 		]
 	},
@@ -100,12 +101,14 @@
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。",
+	"right-wikiadmin": "用于进行诸如管理用户、权限及全局配置的潜在危险任务。（BlueSpice 扩展）",
 	"bs-notifications-agent-anon": "匿名用户",
 	"bs-lockdown-groups-permissionerror": "操作“$1”由于下列{{PLURAL:$2|原因}}不可用：$3",
-	"action-wikiadmin": "用于许多 BlueSpice 扩展中以进行诸如管理用户、权限及全局配置的潜在危险任务。",
+	"action-wikiadmin": "用于进行诸如管理用户、权限及全局配置的潜在危险任务。（BlueSpice 扩展）",
 	"protect-level-editor": "只允许编辑者和管理员",
 	"bs-ping-on-init-desc": "在页面载入后是否立即发送ping请求",
 	"right-editor": "当身份系统被激活时，将被授予 \"编辑器 \"身份的所有权限，用于编辑器限制中受保护页面。",
-	"action-editor": "当身份系统被激活时，将被授予 \"编辑器 \"身份的所有权限，用于编辑器限制中受保护页面"
+	"action-editor": "当身份系统被激活时，将被授予 \"编辑器 \"身份的所有权限，用于编辑器限制中受保护页面",
+	"bs-pref-fileextensions-help": "可以上传到维基的文件类型。有些类型（例如：html、js、php、cgi、exe）出于安全考虑是不允许的，即使它们已经被添加到这里。",
+	"bs-pref-imageextensions-help": "可以上传到维基的图片文件类型。可以的网络格式：gif、png、jpg、jpeg。其他图片格式：tiff、bmp"
 }

@@ -80,5 +80,6 @@
 	"bs-extjs-flyout-tab-grid-title": "التبديل إلى عرض التفاصيل",
 	"bs-extjs-flyout-add-title": "انقر هنا لإضافة عنصر جديد",
 	"bs-extjs-flyout-add-label": "إضافة عنصر",
-	"bs-extjs-label-specialpage": "صفحة خاصة"
+	"bs-extjs-label-specialpage": "صفحة خاصة",
+	"bs-extjs-label-group": "مجموعة"
 }

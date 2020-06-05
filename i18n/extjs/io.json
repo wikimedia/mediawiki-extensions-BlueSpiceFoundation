@@ -9,5 +9,6 @@
 	"bs-extjs-label-namespace": "'Namespace'",
 	"bs-extjs-delete": "Efacar",
 	"bs-extjs-upload": "Kargar",
-	"bs-extjs-uploading": "Karganta..."
+	"bs-extjs-uploading": "Karganta...",
+	"bs-extjs-label-group": "Grupo"
 }

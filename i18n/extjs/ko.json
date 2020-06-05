@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Codenstory",
 			"Comjun04",
 			"Ellif",
 			"Hwangjy9",
@@ -89,5 +90,6 @@
 	"bs-extjs-filter-ends-with": "ends with",
 	"bs-extjs-filter-greater-than": "greater than",
 	"bs-extjs-filter-less-than": "less than",
-	"bs-extjs-label-specialpage": "특수문서"
+	"bs-extjs-label-specialpage": "특수문서",
+	"bs-extjs-label-group": "그룹"
 }

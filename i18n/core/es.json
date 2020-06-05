@@ -10,6 +10,7 @@
 			"Jelou",
 			"Macofe",
 			"Nancystodd",
+			"Ncr",
 			"ProtoplasmaKid",
 			"Tiberius1701"
 		]
@@ -97,10 +98,10 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Previsualizar",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
+	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas de alto nivel, como administrar usuarios, permisos, configuración global",
 	"bs-notifications-agent-anon": "usuario anónimo",
 	"bs-lockdown-groups-permissionerror": "La acción «$1» no está disponible por {{PLURAL:$2|el motivo siguiente|los motivos siguientes}}: $3",
-	"action-wikiadmin": "utilizado en muchas extensiones de BlueSpice para tareas administrativas potencialmente peligrosas como la gestión de usuarios, permisos, configuración global",
+	"action-wikiadmin": "utilizado en muchas extensiones de BlueSpice para tareas administrativas potencialmente peligrosas como la gestión de usuarios, permisos, configuración global, etcétera...",
 	"protect-level-editor": "Solo editores y administradores",
 	"bs-ping-on-init-desc": "Debería enviarse una solicitud de ping inmediatamente después de cargar la página",
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice"

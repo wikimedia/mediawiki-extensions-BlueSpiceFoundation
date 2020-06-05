@@ -85,5 +85,6 @@
 	"bs-extjs-flyout-tab-grid-title": "Basculer vers l’affichage détaillé",
 	"bs-extjs-flyout-add-title": "Cliquer ici pour ajouter un nouvel élément",
 	"bs-extjs-flyout-add-label": "Ajouter un élément",
-	"bs-extjs-label-specialpage": "Specialpage"
+	"bs-extjs-label-specialpage": "Specialpage",
+	"bs-extjs-label-group": "Groupe"
 }

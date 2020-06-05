@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dovud",
 			"ToJack"
 		]
 	},
-	"bs-extjs-categorytree-title": "Гурӯҳҳо"
+	"bs-extjs-categorytree-title": "Гурӯҳҳо",
+	"bs-extjs-label-group": "Гурӯҳ"
 }
