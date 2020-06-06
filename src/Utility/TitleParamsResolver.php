@@ -2,6 +2,9 @@
 
 namespace BlueSpice\Utility;
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Revision\RevisionRecord;
 use Title;
 
 /**
@@ -51,12 +54,23 @@ class TitleParamsResolver {
 
 	/**
 	 *
+	 * @var RevisionLookup
+	 */
+	protected $revisionLookup = null;
+
+	/**
+	 *
 	 * @param array $params
 	 * @param Title[] $default
+	 * @param RevisionLookup|null $revisionLookup
 	 */
-	public function __construct( $params, $default = [] ) {
+	public function __construct( $params, $default = [], $revisionLookup = null ) {
 		$this->params = $params;
 		$this->default = $default;
+		$this->revisionLookup = $revisionLookup;
+		if ( $this->revisionLookup === null ) {
+			$this->revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+		}
 	}
 
 	/**
@@ -177,9 +191,9 @@ class TitleParamsResolver {
 		}
 
 		foreach ( $revisionIds as $revId ) {
-			$revision = \Revision::newFromId( $revId );
-			if ( $revision instanceof \Revision ) {
-				$title = $revision->getTitle();
+			$revision = $this->revisionLookup->getRevisionById( $revId );
+			if ( $revision instanceof RevisionRecord ) {
+				$title = Title::newFromLinkTarget( $revision->getPageAsLinkTarget() );
 				if ( $title instanceof Title ) {
 					$this->titles[$title->getPrefixedDBkey()] = $title;
 				}
