@@ -7,6 +7,8 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Revision\RevisionRecord;
 
 class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
@@ -24,6 +26,12 @@ class BsPageContentProvider {
 	public    $bEncapsulateContent       = true;
 
 	public static $oInstance             = null;
+
+	/**
+	 *
+	 * @var RevisionLookup
+	 */
+	protected $revisionLookup = null;
 
 	protected function getTemplate() {
 		if( $this->sTemplate !== false ) {
@@ -79,15 +87,29 @@ class BsPageContentProvider {
 	}
 
 	/**
+	 *
+	 * @param RevisionLookup $revisionLookup
+	 */
+	public function __construct( $revisionLookup = null ) {
+		$this->revisionLookup = $revisionLookup;
+		if ( $this->revisionLookup === null ) {
+			$this->revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+		}
+	}
+
+	/**
 	 * Returns content form a given Title
-	 * @param Title $oTitle Title Obejct
+	 * @param Title $oTitle Title object
+	 * @param int $iAudience One of the `RevisionRecord::FOR_*` values
+	 * @param User $oUser
+	 * @param bool $bHTML
 	 * @return String Content
 	 */
-	public function getContentFromTitle( Title $oTitle, $iAudience = Revision::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
+	public function getContentFromTitle( Title $oTitle, $iAudience = RevisionRecord::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
 		if ( !$oTitle->exists() ) {
 			return '';
 		}
-		$oRevision = Revision::newFromTitle( $oTitle );
+		$oRevision = $this->revisionLookup->getRevisionByTitle( $oTitle );
 		if ( is_null( $oRevision ) ) {
 			return '';
 		}
@@ -97,27 +119,34 @@ class BsPageContentProvider {
 
 	/**
 	 * Returns content form a given Revision ID
-	 * @param Title $oTitle Title Obejct
+	 * @param int $iRevId Revision ID
+	 * @param int $iAudience One of the `RevisionRecord::FOR_*` values
+	 * @param User $oUser
+	 * @param bool $bHTML
 	 * @return String Content
 	 */
-	public function getContentFromID( $iRevId, $iAudience = Revision::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
+	public function getContentFromID( $iRevId, $iAudience = RevisionRecord::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
 		if ( !is_int( $iRevId ) ) {
 			return '';
 		}
-		$oRevision = Revision::newFromId( $iRevId );
+		$oRevision = $this->revisionLookup->getRevisionById( $iRevId );
 
 		return $this->getContentFromRevision( $oRevision, $iAudience, $oUser, $bHTML );
 	}
 
 	/**
 	 * Gets content form a given Revision object
-	 * @param Title $oTitle Title Obejct
+	 * @param RevisionRecord $oRevision
+	 * @param int $iAudience One of the `RevisionRecord::FOR_*` values
+	 * @param User $oUser
+	 * @param bool $bHTML
 	 * @return String Content
 	 */
-	public function getContentFromRevision( Revision $oRevision, $iAudience = Revision::FOR_PUBLIC,
+	public function getContentFromRevision( $oRevision, $iAudience = RevisionRecord::FOR_PUBLIC,
 			User $oUser = null, $bHTML = false ) {
+		$title = Title::newFromLinkTarget( $oRevision->getPageAsLinkTarget() );
 		if ( $bHTML ) {
-			$sContent = $oRevision->getContent( $iAudience, $oUser )->getParserOutput( $oRevision->getTitle() )->getText();
+			$sContent = $oRevision->getContent( $iAudience, $oUser )->getParserOutput( $title )->getText();
 		} else {
 			$sContent = $oRevision->getContent( $iAudience, $oUser )->getNativeData();
 
@@ -127,7 +156,7 @@ class BsPageContentProvider {
 			$oParser->Options( $this->getParserOptions() ); //TODO: needed? below
 			$sContent = $oParser->preprocess(
 				$sContent,
-				$oRevision->getTitle(),
+				$title,
 				$this->getParserOptions()
 			);
 		}
@@ -357,9 +386,8 @@ class BsPageContentProvider {
 			$aParams
 		);
 
-		$oRevision = Revision::newFromTitle($oTitle, $aParams['oldid']);
+		$oRevision = $this->revisionLookup->getRevisionByTitle( $oTitle, $aParams['oldid'] );
 
-		//TODO PW (16.01.2013): Use $this->mAdapter->getTitleFromRedirectRecurse($oTitle);
 		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
 			$oTitle = ContentHandler::makeContent(
 				$this->getContentFromRevision($oRevision),
@@ -367,7 +395,7 @@ class BsPageContentProvider {
 				CONTENT_MODEL_WIKITEXT
 			)->getRedirectTarget();
 			//TODO: This migth bypass FlaggedRevs! Test and fix if necessary!
-			$oRevision = Revision::newFromTitle($oTitle);
+			$oRevision = $this->revisionLookup->getRevisionByTitle( $oTitle );
 		}
 		if (is_null($oRevision)) {
 			return '';

@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
+
 class BSExtendedApiContext {
 
 	/**
@@ -10,7 +13,7 @@ class BSExtendedApiContext {
 
 	/**
 	 *
-	 * @var Revision
+	 * @var RevisionRecord
 	 */
 	protected $oRevision = null;
 
@@ -73,10 +76,12 @@ class BSExtendedApiContext {
 			);
 		}
 
+		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+
 		// TODO: Fallback if any of those is empty!
 		$aParams = [
 			'title'        => $oTitle,
-			'revision'     => Revision::newFromId( $aRequestParams['wgRevisionId'] ),
+			'revision'     => $revisionLookup->getRevisionById( $aRequestParams['wgRevisionId'] ),
 			'specialpage'  => \MediaWiki\MediaWikiServices::getInstance()
 				->getSpecialPageFactory()
 				->getPage( $aRequestParams['wgCanonicalSpecialPageName'] ),
@@ -117,7 +122,7 @@ class BSExtendedApiContext {
 	 * Attention: This reflects the RevisionId that the client sees, _not_ the
 	 * one that is the _latest_ to the context Title. It may be a old revision
 	 * though.
-	 * @return Revision
+	 * @return RevisionRecord
 	 */
 	public function getRevision() {
 		return $this->oRevision;
