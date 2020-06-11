@@ -4,6 +4,7 @@
 			"Athena in Wonderland",
 			"Fúlvio",
 			"Hamilton Abreu",
+			"Mansil alfalb",
 			"Vitorvicentevalente"
 		]
 	},
@@ -31,6 +32,7 @@
 	"bs-extjs-label-namespace": "Domínio",
 	"bs-extjs-label-page": "Página",
 	"bs-extjs-label-directsearch": "Pesquisar",
+	"bs-extjs-label-specialpage": "Página especial",
 	"bs-extjs-titlecombo-newpagehint": "A página não existe!",
 	"bs-extjs-upload": "Carregar",
 	"bs-extjs-browse": "Procurar",

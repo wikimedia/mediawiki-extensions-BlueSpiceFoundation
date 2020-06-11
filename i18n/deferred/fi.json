@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
+			"Muovipullo",
 			"Pyscowicz"
 		]
 	},
+	"bs-deferred-action-status-pending": "Avoin.",
 	"bs-deferred-action-status-done": "Valmis.",
 	"bs-deferred-action-status-error": "Epäonnistui.",
 	"bs-deferred-action-apieditpage-description": "Muokkaa \"$1\"",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Cxz",
+			"Muovipullo",
 			"Pyscowicz",
 			"Silvonen",
 			"Stryn"
@@ -27,6 +28,7 @@
 	"bs-extjs-saving": "tallennetaan...",
 	"bs-extjs-close": "Sulje",
 	"bs-extjs-label-user": "Käyttäjä",
+	"bs-extjs-label-group": "Ryhmä",
 	"bs-extjs-label-namespace": "Nimiavaruus",
 	"bs-extjs-label-page": "Sivu",
 	"bs-extjs-label-directsearch": "Haku",
