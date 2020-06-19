@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"Rail"
+			"Rail",
+			"WaldiSt"
 		]
 	},
 	"bs-filerepo-labelupload": "Prześlij",
@@ -21,5 +22,5 @@
 	"bs-filerepo-headerfilethumbnail": "Miniatura",
 	"bs-filerepo-yes": "Tak",
 	"bs-filerepo-no": "Nie",
-	"bs-filerepo-pagesize": "Rozmiar strony"
+	"bs-filerepo-pagesize": "Wpisy na stronie"
 }

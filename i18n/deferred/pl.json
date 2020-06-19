@@ -1,14 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"WaldiSt"
 		]
 	},
 	"bs-deferred-action-status-pending": "Oczekujące.",
 	"bs-deferred-action-status-running": "Działanie...",
 	"bs-deferred-action-status-done": "Gotowe.",
+	"bs-deferred-action-status-error": "Nie udało się.",
 	"bs-deferred-action-apicopypage-description": "Kopiowanie „$1” do „$2”.",
 	"bs-deferred-action-apieditpage-description": "Edycja „$1”.",
+	"bs-deferred-batch-title": "Przetwarzanie wsadowe",
 	"bs-deferred-batch-progress-desc": "Postęp",
 	"bs-deferred-batch-actions": "Operacje",
 	"bs-deferred-batch-description": "Opis",

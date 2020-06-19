@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"WaldiSt"
 		]
 	},
 	"bs-setting-path-extension": "Rozszerzenie",
+	"bs-setting-path-package": "Pakiet",
 	"bs-setting-path-system": "System",
 	"bs-setting-path-dataanalysis": "Analiza danych",
 	"bs-setting-path-editor": "Edytor",

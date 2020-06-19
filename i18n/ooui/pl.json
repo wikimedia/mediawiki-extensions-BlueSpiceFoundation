@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"WaldiSt"
 		]
 	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Dodaj nowy...",
 	"bs-ooui-key-value-input-widget-key-label": "Klucz",
 	"bs-ooui-key-value-input-widget-value-label": "Wartość",
 	"bs-ooui-key-value-input-widget-add-button-label": "Dodaj",
