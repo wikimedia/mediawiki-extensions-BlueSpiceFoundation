@@ -1,6 +1,7 @@
 <?php
 
 use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class BsNamespaceHelper {
 
@@ -122,22 +123,34 @@ class BsNamespaceHelper {
 	 * @return array List of namespace names
 	 */
 	public static function getNamespaceNamesAndAliases( $iNamespaceId ) {
-		global $wgNamespaceAliases, $wgCanonicalNamespaceNames;
-		$aAliases = [];
+		global $wgCanonicalNamespaceNames;
+		$names = [];
 
 		// get canonical name
-		$aAliases[] = $wgCanonicalNamespaceNames[$iNamespaceId];
+		$names[] = $wgCanonicalNamespaceNames[$iNamespaceId];
+		// return localized namespace aliases
+		return array_merge( self::getNamespaceAliases( $iNamespaceId ), $names );
+	}
+
+	/**
+	 * Returns all possible aliases for a given namespace, including localized forms.
+	 * @param int $iNamespaceId number of namespace index
+	 * @return array List of namespace aliases
+	 */
+	public static function getNamespaceAliases( $iNamespaceId ) {
+		global $wgNamespaceAliases;
+		$aAliases = [];
+
 		// get localized namespace name
 		$aAliases[] = self::getNamespaceName( $iNamespaceId );
 		// get canonical aliases (used for image/file namespace)
 		$aAliases = array_merge( array_keys( $wgNamespaceAliases, $iNamespaceId ), $aAliases );
 		// get localized aliases
-		$aTmpAliases = Services::getInstance()->getContentLanguage()
+		$aTmpAliases = MediaWikiServices::getInstance()->getContentLanguage()
 			->getNamespaceAliases();
 		if ( $aTmpAliases ) {
 			$aAliases = array_merge( array_keys( $aTmpAliases, $iNamespaceId ), $aAliases );
 		}
-
 		return $aAliases;
 	}
 
@@ -267,7 +280,7 @@ class BsNamespaceHelper {
 		}
 
 		$oDummyTitle = Title::makeTitle( $iID, 'Dummy' );
-		return \MediaWiki\MediaWikiServices::getInstance()
+		return MediaWikiServices::getInstance()
 			->getPermissionManager()
 			->userCan(
 				$sPermission,
