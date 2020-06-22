@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Druesenfieber",
 			"Metalhead64",
 			"Stephan Muggli <muggli@hallowelt.biz>",
 			"Umherirrender"
@@ -27,6 +28,7 @@
 	"bs-extjs-reset": "Zurücksetzen",
 	"bs-extjs-close": "Schließen",
 	"bs-extjs-label-user": "Benutzer",
+	"bs-extjs-label-group": "Gruppe",
 	"bs-extjs-label-namespace": "Namensraum",
 	"bs-extjs-label-page": "Seite",
 	"bs-extjs-label-directsearch": "Suchen",
