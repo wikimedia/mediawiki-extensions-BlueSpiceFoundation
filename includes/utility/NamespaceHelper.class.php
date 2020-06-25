@@ -118,11 +118,24 @@ class BsNamespaceHelper {
 	 * @return array List of namespace names
 	 */
 	public static function getNamespaceNamesAndAliases( $iNamespaceId ) {
-		global $wgContLang, $wgNamespaceAliases, $wgCanonicalNamespaceNames;
-		$aAliases = [];
+		global $wgCanonicalNamespaceNames;
+		$names = [];
 
 		// get canonical name
-		$aAliases[] = $wgCanonicalNamespaceNames[$iNamespaceId];
+		$names[] = $wgCanonicalNamespaceNames[$iNamespaceId];
+		// return localized namespace aliases
+		return array_merge( self::getNamespaceAliases( $iNamespaceId ), $names );
+	}
+
+	/**
+	 * Returns all possible aliases for a given namespace, including localized forms.
+	 * @param int $iNamespaceId number of namespace index
+	 * @return array List of namespace aliases
+	 */
+	public static function getNamespaceAliases( $iNamespaceId ) {
+		global $wgContLang, $wgNamespaceAliases;
+		$aAliases = [];
+
 		// get localized namespace name
 		$aAliases[] = self::getNamespaceName( $iNamespaceId );
 		// get canonical aliases (used for image/file namespace)
@@ -132,7 +145,6 @@ class BsNamespaceHelper {
 		if ( $aTmpAliases ) {
 			$aAliases = array_merge( array_keys( $aTmpAliases, $iNamespaceId ), $aAliases );
 		}
-
 		return $aAliases;
 	}
 
