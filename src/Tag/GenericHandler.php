@@ -198,7 +198,7 @@ class GenericHandler {
 		if ( $this->tag->needsParseArgs() ) {
 			foreach ( $this->processedArgs as &$processedArg ) {
 				$processedArg =
-					$this->parser->recursiveTagParse( $processedArg );
+					$this->parser->recursiveTagParse( $processedArg, $this->frame );
 			}
 		}
 
