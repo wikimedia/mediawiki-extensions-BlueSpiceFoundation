@@ -25,7 +25,7 @@
 	"bs-one-unit-ago": "vör $1",
 	"bs-now": "jäz",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Leeven $2|Leev $2|Leeven Metmaacher $2|Leev Frou $2|Leev $2|}},",
-	"bs-email-footer": "Heh di Meddeijlong kütt automattesch {{GRAMMAR:Genitive vom|{{ucfirst:{{$1}}}}}}. Bes esu johd un donn nit drobb antwoote.",
+	"bs-email-footer": "Heh di Meddeijlong kütt automattesch {{GRAMMAR:Genitive vom|{{ucfirst:$1}}}}. Bes esu johd un donn nit drobb antwoote.",
 	"bs-userpagesettings-legend": "Enschtällonge för der Metmaacher",
 	"bs-userpreferences-link-text": "Mih Enschtällonge för der Metmaacher",
 	"bs-userpreferences-link-title": "Donn Ding päsöhnlesche Enschtällonge aanzeije",
