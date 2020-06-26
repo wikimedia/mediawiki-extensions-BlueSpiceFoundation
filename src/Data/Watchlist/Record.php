@@ -12,4 +12,5 @@ class Record extends \BlueSpice\Data\Record {
 	const NOTIFICATIONTIMESTAMP = 'notificationtimestamp';
 	const HAS_UNREAD_CHANGES = 'has_unread_changes';
 	const IS_TALK_PAGE = 'is_talk_page';
+	const UNREAD_CHANGES_DIFF_REVID = 'unread_changes_diff_revid';
 }

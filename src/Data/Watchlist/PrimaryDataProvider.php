@@ -131,7 +131,8 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::PAGE_LINK => '-',
 			Record::NOTIFICATIONTIMESTAMP => $row->wl_notificationtimestamp,
 			Record::HAS_UNREAD_CHANGES => $row->wl_notificationtimestamp !== null,
-			Record::IS_TALK_PAGE => $title->isTalkPage()
+			Record::IS_TALK_PAGE => $title->isTalkPage(),
+			Record::UNREAD_CHANGES_DIFF_REVID => -1
 		] );
 	}
 
