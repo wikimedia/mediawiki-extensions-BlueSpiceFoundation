@@ -59,6 +59,11 @@ class Schema extends \BlueSpice\Data\Schema {
 				self::SORTABLE => true,
 				self::TYPE => FieldType::BOOLEAN
 			],
+			Record::UNREAD_CHANGES_DIFF_REVID => [
+				self::FILTERABLE => false,
+				self::SORTABLE => false,
+				self::TYPE => FieldType::INT
+			]
 		] );
 	}
 }
