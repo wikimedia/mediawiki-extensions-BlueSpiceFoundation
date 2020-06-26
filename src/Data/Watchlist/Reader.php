@@ -52,7 +52,8 @@ class Reader extends DatabaseReader {
 	 */
 	protected function makeSecondaryDataProvider() {
 		return new SecondaryDataProvider(
-			Services::getInstance()->getLinkRenderer()
+			Services::getInstance()->getLinkRenderer(),
+			$this->context
 		);
 	}
 
