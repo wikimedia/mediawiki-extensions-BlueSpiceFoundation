@@ -30,6 +30,7 @@
 	"bs-extjs-reset": "リセット",
 	"bs-extjs-close": "閉じる",
 	"bs-extjs-label-user": "利用者",
+	"bs-extjs-label-group": "グループ",
 	"bs-extjs-label-namespace": "名前空間",
 	"bs-extjs-label-page": "ページ",
 	"bs-extjs-label-directsearch": "検索",
