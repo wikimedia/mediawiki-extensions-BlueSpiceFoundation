@@ -68,6 +68,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 		var gridConf = Ext.applyIf( this.gpMainConf, gridDefaultConf );
 		this.grdMain = new Ext.grid.GridPanel( gridConf );
 		this.grdMain.on( 'select', this.onGrdMainRowClick, this );
+		this.grdMain.on( 'selectionchange', this.onGrdMainSelectionChange, this );
 
 		return this.grdMain;
 	},
@@ -195,21 +196,29 @@ Ext.define( 'BS.CRUDGridPanel', {
 		});
 	},
 
-	onGrdMainRowClick: function( oSender, iRowIndex, oEvent ) {
-		if( this.btnEdit ) {
-			this.btnEdit.enable();
+	onGrdMainSelectionChange: function( sender, records, opts ) {
+		if ( records && records.length > 0 ) {
+			if( this.btnEdit ) {
+				this.btnEdit.enable();
+			}
+			if( this.btnRemove ) {
+				this.btnRemove.enable();
+			}
+		} else {
+			if( this.btnEdit ) {
+				this.btnEdit.disable();
+			}
+			if( this.btnRemove ) {
+				this.btnRemove.disable();
+			}
 		}
-		if( this.btnRemove ) {
-			this.btnRemove.enable();
-		}
-
-		var selectedRecords = this.grdMain.getSelectionModel().getSelection();
-		if( selectedRecords.length > 1 ) {
+		if( records && records.length > 1 ) {
 			if( this.btnEdit ) {
 				this.btnEdit.disable();
 			}
 		}
 	},
+	onGrdMainRowClick: function( oSender, iRowIndex, oEvent ) {},
 	onStrMainLoadBase: function() {
 		if( !this.grdMain ) {
 			return;
