@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Druesenfieber",
 			"Metalhead64",
 			"Stephan Muggli <muggli@hallowelt.biz>",
 			"Umherirrender"
@@ -80,5 +81,6 @@
 	"bs-extjs-flyout-tab-grid-label": "Details",
 	"bs-extjs-flyout-tab-grid-title": "Zur Detailansicht wechseln",
 	"bs-extjs-flyout-add-title": "Hier klicken, um ein neues Element anzulegen.",
-	"bs-extjs-flyout-add-label": "Element hinzufügen"
+	"bs-extjs-flyout-add-label": "Element hinzufügen",
+	"bs-extjs-label-group": "Gruppe"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Cxz",
+			"Muovipullo",
 			"Pyscowicz",
 			"Silvonen",
 			"Stryn"
@@ -55,5 +56,6 @@
 	"bs-extjs-flyout-add-title": "Napsauta tästä lisätäksesi uuden kohteen",
 	"bs-extjs-flyout-add-label": "Lisää kohde",
 	"bs-extjs-filter-contains": "sisältää",
-	"bs-extjs-filter-contains-not": "ei sisällä"
+	"bs-extjs-filter-contains-not": "ei sisällä",
+	"bs-extjs-label-group": "Ryhmä"
 }

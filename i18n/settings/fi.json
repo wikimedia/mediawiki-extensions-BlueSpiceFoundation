@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Muovipullo",
 			"Pyscowicz"
 		]
 	},
 	"bs-setting-path-system": "Järjestelmä",
-	"bs-setting-path-export": "Vie"
+	"bs-setting-path-export": "Vie",
+	"bs-setting-path-feature": "Ominaisuus"
 }

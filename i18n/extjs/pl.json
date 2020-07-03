@@ -3,7 +3,8 @@
 		"authors": [
 			"Alan ffm",
 			"Chrumps",
-			"Vengir"
+			"Vengir",
+			"WaldiSt"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -20,7 +21,7 @@
 	"bs-extjs-error": "Błąd",
 	"bs-extjs-confirm": "Potwierdź",
 	"bs-extjs-loading": "Pobieranie...",
-	"bs-extjs-pageSize": "Rozmiar strony",
+	"bs-extjs-pageSize": "Wpisy na stronie",
 	"bs-extjs-actions-column-header": "Operacje",
 	"bs-extjs-warning": "Ostrzeżenie",
 	"bs-extjs-saving": "zapisywanie...",
@@ -70,5 +71,10 @@
 	"bs-extjs-flyout-tab-grid-label": "Szczegóły",
 	"bs-extjs-flyout-tab-grid-title": "Przełącz na widok szczegółów",
 	"bs-extjs-flyout-add-title": "Kliknij tutaj, aby dodać nowy element",
-	"bs-extjs-flyout-add-label": "Dodaj element"
+	"bs-extjs-flyout-add-label": "Dodaj element",
+	"bs-extjs-label-group": "Grupy",
+	"bs-extjs-label-directsearch": "Szukaj",
+	"bs-extjs-label-specialpage": "Strona specjalna",
+	"bs-extjs-mainns": "(Główna)",
+	"bs-extjs-title-success": "Powodzenie"
 }

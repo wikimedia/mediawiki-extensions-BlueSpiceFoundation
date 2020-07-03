@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patriot Kur"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Ləğv karde",
+	"bs-extjs-yes": "Ha",
+	"bs-extjs-no": "Ne",
+	"bs-extjs-edit": "Dəqiş karde",
+	"bs-extjs-allns": "(həmə)",
+	"bs-extjs-mainns": "(Əsos)",
+	"bs-extjs-filter-bool-yes": "ha",
+	"bs-extjs-filter-bool-no": "ne",
+	"bs-extjs-title-success": "Ovand",
+	"bs-extjs-tools-trigger-text": "Diləqon"
+}

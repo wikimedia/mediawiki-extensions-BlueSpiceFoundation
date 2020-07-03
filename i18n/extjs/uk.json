@@ -82,5 +82,6 @@
 	"bs-extjs-flyout-tab-grid-title": "Перемкнутися на перегляд подробиць",
 	"bs-extjs-flyout-add-title": "Клацніть тут, щоб додати новий елемент",
 	"bs-extjs-flyout-add-label": "Додати елемент",
-	"bs-extjs-label-specialpage": "Спеціальна сторінка"
+	"bs-extjs-label-specialpage": "Спеціальна сторінка",
+	"bs-extjs-label-group": "Група"
 }

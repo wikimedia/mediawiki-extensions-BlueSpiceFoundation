@@ -58,5 +58,8 @@
 	"bs-extjs-cancel": "Annullér",
 	"bs-extjs-label-specialpage": "Spesialside",
 	"bs-extjs-allns": "(alle)",
-	"bs-extjs-mainns": "(Hoved)"
+	"bs-extjs-mainns": "(Hoved)",
+	"bs-extjs-label-group": "Gruppe",
+	"bs-extjs-pageexport-list-name-label": "Listenavn",
+	"bs-extjs-pageexport-list-format-label": "Listeformat"
 }

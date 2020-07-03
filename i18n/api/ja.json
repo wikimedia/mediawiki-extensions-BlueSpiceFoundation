@@ -48,5 +48,9 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "削除するカテゴリはありません",
 	"apihelp-bs-category-treestore-description": "特定のカテゴリのサブカテゴリを一覧表示します",
 	"apihelp-bs-category-treestore-summary": "特定のカテゴリのサブカテゴリを一覧表示します",
-	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル"
+	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル",
+	"apihelp-bs-store-param-dc": "<code>Disable cache</code> フラグ",
+	"apihelp-bs-store-param-format": "出力の形式 (JSONまたはフォーマット済みJSONのみ)",
+	"apihelp-bs-task-param-taskdata": "タスクの任意のデータを含むJSON文字列エンコードオブジェクト",
+	"apihelp-bs-task-param-context": "タスクのコンテキストデータを含むJSON文字列エンコードオブジェクト"
 }
