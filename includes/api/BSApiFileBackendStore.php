@@ -176,11 +176,14 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		// First query: Get all files and their pages
 		$aReturn = [];
 		$aUserNames = [];
+		$now = MWTimestamp::now();
+		$adjustedNow = $this->getLanguage()->userAdjust( $now );
+		$timezoneDifference = $now - $adjustedNow;
+
 		foreach ( $res as $oRow ) {
 			try {
-				$title = Title::makeTitle( NS_FILE, $oRow->img_name );
 				$oImg = RepoGroup::singleton()->getLocalRepo()
-					->newFile( $title );
+					->newFileFromRow( $oRow );
 			} catch ( Exception $ex ) {
 				continue;
 			}
@@ -205,7 +208,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				'file_user_display_text' => $oImg->getUser( 'text' ),
 				'file_user_link' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_extension' => $oImg->getExtension(),
-				'file_timestamp' => $this->getLanguage()->userAdjust( $oImg->getTimestamp() ),
+				'file_timestamp' => (string)( $oImg->getTimestamp() - $timezoneDifference ),
 				'file_mediatype' => $oImg->getMediaType(),
 				'file_description' => $oImg->getDescription(),
 				'file_display_text' => str_replace( '_', ' ', $oImg->getName() ),
@@ -228,7 +231,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 				// issue. As the resulting data is the same we just use the raw
 				// form here.
 				'page_is_new' => (bool)$oRow->page_is_new,
-				'page_touched' => $this->getLanguage()->userAdjust( $oRow->page_touched )
+				'page_touched' => (string)( $oRow->page_touched - $timezoneDifference )
 			];
 		}
 
