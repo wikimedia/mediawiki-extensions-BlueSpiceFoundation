@@ -71,4 +71,40 @@ abstract class OutputPageBeforeHTML extends Hook {
 		$this->out =& $out;
 		$this->text =& $text;
 	}
+
+	/**
+	 *
+	 * @param string $fieldName
+	 * @param array $item
+	 */
+	protected function mergeSkinDataArray( $fieldName, $item ) {
+		$propertyValue = $this->out->getProperty( $fieldName );
+		if ( !is_array( $propertyValue ) ) {
+			$propertyValue = [];
+		}
+		if ( !isset( $propertyValue[$fieldName] ) ) {
+			$propertyValue[$fieldName] = [];
+		}
+
+		$propertyValue = array_merge( $propertyValue, $item );
+		$this->out->setProperty( $fieldName, $propertyValue );
+	}
+
+	/**
+	 *
+	 * @param string $fieldName
+	 * @param array $item
+	 */
+	protected function appendSkinDataArray( $fieldName, $item ) {
+		$propertyValue = $this->out->getProperty( $fieldName );
+		if ( !is_array( $propertyValue ) ) {
+			$propertyValue = [];
+		}
+		if ( !isset( $propertyValue[$fieldName] ) ) {
+			$propertyValue[$fieldName] = [];
+		}
+
+		$propertyValue[] = $item;
+		$this->out->setProperty( $fieldName, $propertyValue );
+	}
 }
