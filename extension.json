@@ -598,9 +598,9 @@
 			"BlueSpice\\Hook\\ParserFirstCallInit\\AddTags::callback"
 		],
 		"ExtensionTypes": "\\BlueSpice\\Hook\\ExtensionTypes\\AddBlueSpice::callback",
-		"PageContentSaveComplete": [
-			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateArticleHelper::callback",
-			"\\BlueSpice\\Hook\\PageContentSaveComplete\\InvalidateTargetCacheTitle::callback"
+		"PageSaveComplete": [
+			"\\BlueSpice\\Hook\\PageSaveComplete\\InvalidateArticleHelper::callback",
+			"\\BlueSpice\\Hook\\PageSaveComplete\\InvalidateTargetCacheTitle::callback"
 		],
 		"ArticleDeleteComplete": "\\BlueSpice\\Hook\\ArticleDeleteComplete\\InvalidateTargetCacheTitle::callback",
 		"TitleMoveComplete": "\\BlueSpice\\Hook\\TitleMoveComplete\\InvalidateTargetCacheTitle::callback",

@@ -1,13 +1,14 @@
 <?php
 
-namespace BlueSpice\Hook\PageContentSaveComplete;
+namespace BlueSpice\Hook\PageSaveComplete;
 
+use BlueSpice\Hook\PageSaveComplete;
 use BlueSpice\TargetCache\Title\Target;
 
-class InvalidateTargetCacheTitle extends \BlueSpice\Hook\PageContentSaveComplete {
+class InvalidateTargetCacheTitle extends PageSaveComplete {
 
 	protected function skipProcessing() {
-		if ( !$this->wikipage->getTitle()->exists() ) {
+		if ( !$this->wikiPage->getTitle()->exists() ) {
 			return true;
 		}
 
@@ -16,7 +17,7 @@ class InvalidateTargetCacheTitle extends \BlueSpice\Hook\PageContentSaveComplete
 
 	protected function doProcess() {
 		$this->getServices()->getService( 'BSTargetCacheTitle' )->invalidateAll(
-			new Target( $this->wikipage->getTitle() )
+			new Target( $this->wikiPage->getTitle() )
 		);
 		return true;
 	}
