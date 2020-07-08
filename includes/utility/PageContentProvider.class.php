@@ -236,6 +236,7 @@ class BsPageContentProvider {
 
 		$this->overrideGlobals( $oTitle, $context );
 
+		$actionName = Action::getActionName( $context );
 		$sHTML = '';
 		$sError = '';
 		try {
@@ -243,13 +244,26 @@ class BsPageContentProvider {
 				case NS_FILE:
 					$oImagePage = ImagePage::newFromTitle( $oTitle, $context );
 					// Parse to OutputPage
-					$oImagePage->view();
+					$action = Action::factory( $actionName , $oImagePage, $context );
+					if ( $action instanceof Action ) {
+						$action->show();
+					}
+					else {
+						$oImagePage->view();
+					}
+
 					break;
 
 				case NS_CATEGORY:
 					$oCategoryPage = CategoryPage::newFromTitle( $oTitle, $context );
 					// Parse to OutputPage
-					$oCategoryPage->view();
+					$action = Action::factory( $actionName , $oCategoryPage, $context );
+					if ( $action instanceof Action ) {
+						$action->show();
+					}
+					else {
+						$oCategoryPage->view();
+					}
 					break;
 
 				case NS_SPECIAL:
@@ -264,7 +278,13 @@ class BsPageContentProvider {
 
 				default:
 					$oArticle = Article::newFromTitle( $oTitle, $context );
-					$oArticle->view();
+					$action = Action::factory( $actionName , $oArticle, $context );
+					if ( $action instanceof Action ) {
+						$action->show();
+					}
+					else {
+						$oArticle->view();
+					}
 					break;
 			}
 		}
