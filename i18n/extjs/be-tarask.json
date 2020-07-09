@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Nerogaf",
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"bs-extjs-ok": "Добра",
@@ -36,5 +37,20 @@
 	"bs-extjs-mainns": "(Асноўная)",
 	"bs-extjs-filters": "Фільтры",
 	"bs-extjs-filter-bool-yes": "так",
-	"bs-extjs-filter-bool-no": "не"
+	"bs-extjs-filter-bool-no": "не",
+	"bs-extjs-categorytree-title": "Катэгорыі",
+	"bs-extjs-filter-date-after": "Пасьля",
+	"bs-extjs-filter-date-before": "Перад",
+	"bs-extjs-filter-date-on": "На",
+	"bs-extjs-filter-date-filter": "Фільтар",
+	"bs-extjs-pageexport-dialog-title": "Экспартаваць старонкі",
+	"bs-extjs-pageexport-list-name-label": "Назва сьпісу",
+	"bs-extjs-pageexport-list-format-label": "Фармат сьпісу",
+	"bs-extjs-pageexport-list-format-plain-label": "Просты тэкст",
+	"bs-extjs-pageexport-list-format-link-label": "Спасылка",
+	"bs-extjs-pageexport-overwrite-label": "Перазапісаць",
+	"bs-extjs-pageexport-general-error": "Памылка экспарту",
+	"bs-extjs-pageexport-pagecollection-prefix": "Зборка старонак",
+	"bs-pagecollection-prefix": "Зборка старонак",
+	"bs-extjs-pageexport-success": "Экспарт пасьпяховы"
 }
