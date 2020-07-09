@@ -194,14 +194,21 @@ class BaseNotification implements \BlueSpice\INotification {
 	 */
 	protected function addAffectedUsers( $users ) {
 		foreach ( $users as $user ) {
-			if ( $user instanceof \User ) {
-				$this->audience[] = $user->getId();
+			if ( is_int( $user ) ) {
+				$user = \User::newFromId( $user );
+			}
+			if ( !$user instanceof \User ) {
 				continue;
 			}
-
-			if ( is_int( $user ) ) {
-				$this->audience[] = $user;
+			if ( $user->isBlocked() ) {
+				continue;
 			}
+			if ( $this->title instanceof \Title && !$this->title->userCan( 'read', $user ) ) {
+				continue;
+			} elseif ( !$user->isAllowed( 'read' ) ) {
+				continue;
+			}
+			$this->audience[] = $user->getId();
 		}
 	}
 
