@@ -2,6 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\MediaWikiServices;
+
 class BaseNotification implements \BlueSpice\INotification {
 	/**
 	 *
@@ -193,15 +195,23 @@ class BaseNotification implements \BlueSpice\INotification {
 	 * @param array $users
 	 */
 	protected function addAffectedUsers( $users ) {
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 		foreach ( $users as $user ) {
-			if ( $user instanceof \User ) {
-				$this->audience[] = $user->getId();
+			if ( is_int( $user ) ) {
+				$user = \User::newFromId( $user );
+			}
+			if ( !$user instanceof \User ) {
 				continue;
 			}
-
-			if ( is_int( $user ) ) {
-				$this->audience[] = $user;
+			if ( $user->isBlocked() ) {
+				continue;
 			}
+			if ( $this->title instanceof \Title && !$pm->userCan( 'read', $user, $this->title ) ) {
+				continue;
+			} elseif ( !$pm->userHasRight( $user, 'read' ) ) {
+				continue;
+			}
+			$this->audience[] = $user->getId();
 		}
 	}
 
