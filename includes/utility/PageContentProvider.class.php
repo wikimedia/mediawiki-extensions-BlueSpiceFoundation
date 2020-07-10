@@ -146,9 +146,9 @@ class BsPageContentProvider {
 			User $oUser = null, $bHTML = false ) {
 		$title = Title::newFromLinkTarget( $oRevision->getPageAsLinkTarget() );
 		if ( $bHTML ) {
-			$sContent = $oRevision->getContent( $iAudience, $oUser )->getParserOutput( $title )->getText();
+			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getParserOutput( $title )->getText();
 		} else {
-			$sContent = $oRevision->getContent( $iAudience, $oUser )->getNativeData();
+			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getNativeData();
 
 			//FIX for #HW20130072210000028
 			//Manually expand templates to allow bookshelf tags via template
