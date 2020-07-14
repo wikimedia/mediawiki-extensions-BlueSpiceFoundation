@@ -150,15 +150,17 @@ class BsPageContentProvider {
 		} else {
 			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getNativeData();
 
-			//FIX for #HW20130072210000028
-			//Manually expand templates to allow bookshelf tags via template
-			$oParser = MediaWikiServices::getInstance()->getParserFactory()->create();
-			$oParser->Options( $this->getParserOptions() ); //TODO: needed? below
-			$sContent = $oParser->preprocess(
-				$sContent,
-				$title,
-				$this->getParserOptions()
+			$context = new DerivativeContext( RequestContext::getMain() );
+			$this->overrideGlobals( $oRevision->getTitle(), $context );
+			global $wgParser;
+			// FIX for #HW20130072210000028
+			// Manually expand templates to allow bookshelf tags via template
+			$sContent = $wgParser->preprocess(
+					$sContent,
+					$oRevision->getTitle(),
+					$wgParser->getOptions()
 			);
+			$this->restoreGlobals();
 		}
 		return $sContent;
 	}
