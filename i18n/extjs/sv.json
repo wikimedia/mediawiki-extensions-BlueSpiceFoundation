@@ -5,6 +5,7 @@
 			"Josve05a",
 			"Lokal Profil",
 			"Mjälten",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -33,6 +34,7 @@
 	"bs-extjs-label-namespace": "Namnrymd",
 	"bs-extjs-label-page": "Sida",
 	"bs-extjs-label-directsearch": "Sök",
+	"bs-extjs-label-specialpage": "Specialsida",
 	"bs-extjs-titlecombo-newpagehint": "Sidan finns inte!",
 	"bs-extjs-upload": "Ladda upp",
 	"bs-extjs-browse": "Bläddra",
