@@ -40,6 +40,7 @@
 	"bs-imagepage-download-text": "Hent",
 	"bs-ns": "Navnerum",
 	"bs-from-something": "(fra $1)",
+	"bs-pref-fileextensions": "Tilladte filendelser:",
 	"bs-parser-error-invalid-namespace": "Ugyldigt navnerum: $1",
 	"bs-parser-error-invalid-title": "Ugyldig titel: $1",
 	"bs-validator-error-namespace-does-not-exist": "Navnerummet findes ikke: $1",
