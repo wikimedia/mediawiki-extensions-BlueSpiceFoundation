@@ -587,7 +587,8 @@
 		],
 		"LoadExtensionSchemaUpdates": [
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
-			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
+			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback",
+			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceConfigFilesMigrationMaintenanceScript::callback"
 		],
 		"SkinTemplateOutputPageBeforeExec": [
 			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddAdminTools::callback",
@@ -950,7 +951,8 @@
 		"BSTemplateHelper": "includes/TemplateHelper.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
-		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
+		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php",
+		"BSMigrateConfigFiles": "maintenance/BSMigrateConfigFiles.php"
 	},
 	"JobClasses": {
 		"runRunJobsTriggerHandlerRunner": "BlueSpice\\RunJobsTriggerHandler\\Job\\RunRunJobsTriggerHandlerRunner"
