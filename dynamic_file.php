@@ -9,11 +9,6 @@ define( 'BS_DYNAMIC_FILE', true );
 
 require __DIR__ . '/includes/WebStart.php';
 
-// URL safety checks
-if ( !$wgRequest->checkUrlExtension() ) {
-	return;
-}
-
 // Set a dummy $wgTitle, because $wgTitle == null breaks various things
 // In a perfect world this wouldn't be necessary
 $wgTitle = Title::makeTitle(
