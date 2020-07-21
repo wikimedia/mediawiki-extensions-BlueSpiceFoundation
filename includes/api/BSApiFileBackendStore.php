@@ -30,6 +30,7 @@
 
 use BlueSpice\Services;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
@@ -278,7 +279,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	/**
 	 *
 	 * @param string $sQuery
-	 * @return \stdClass
+	 * @return IResultWrapper
 	 */
 	protected function fetchCaseInsensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_REPLICA );
@@ -313,7 +314,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	/**
 	 *
 	 * @param string $sQuery
-	 * @return \stdClass
+	 * @return IResultWrapper
 	 */
 	protected function fetchCaseSensitive( $sQuery ) {
 		$oDbr = wfGetDB( DB_REPLICA );
