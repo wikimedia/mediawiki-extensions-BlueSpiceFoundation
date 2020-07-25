@@ -1,11 +1,12 @@
 <?php
 
-namespace BlueSpice\Hook\SkinTemplateOutputPageBeforeExec;
+namespace BlueSpice\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 
+use BlueSpice\Calumma\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 use BlueSpice\SkinData;
 use MediaWiki\MediaWikiServices;
 
-class AddExportDownloadFile extends \BlueSpice\Hook\SkinTemplateOutputPageBeforeExec {
+class AddExportDownloadFile extends ChameleonSkinTemplateOutputPageBeforeExec {
 
 	protected function skipProcessing() {
 		if ( $this->skin->getTitle()->getNamespace() != NS_FILE ) {
