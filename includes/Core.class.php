@@ -362,7 +362,8 @@ class BsCore {
 		// TODO MRG28072010: isAllowed prüft nicht gegen die Artikel. D.H. die Rechte sind
 		// nicht per Namespace überprüfbar
 		$oUser = self::loadCurrentUser();
-		if ( $oUser->isAllowed( $sPermission ) ) {
+		$pm = \MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
+		if ( $pm->userHasRight( $oUser, $sPermission ) ) {
 			return true;
 		}
 		if ( !$bSilent ) {
