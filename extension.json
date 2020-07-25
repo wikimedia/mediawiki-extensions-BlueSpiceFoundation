@@ -83,31 +83,7 @@
 				"bs-readonly-warning": "\\BlueSpice\\AlertProvider\\ReadOnlyWarning::factory",
 				"bs-testsystem-warning": "\\BlueSpice\\AlertProvider\\TestsystemWarning::factory"
 			},
-			"LessVarsRegistry": {
-				"bs-color-primary": "#3e5389",
-				"bs-color-secondary": "#ffae00",
-				"bs-color-tertiary": "#b73a3a",
-				"bs-color-neutral": "#929292",
-				"bs-color-neutral2": "#ABABAB",
-				"bs-color-neutral3": "#C4C4C4",
-				"bs-color-neutral4": "#787878",
-				"bs-color-secondary-information": "darken( @bs-color-neutral, 17.3% )",
-				"bs-color-progressive": "#347bff",
-				"bs-color-constructive": "#00af89",
-				"bs-color-contructive": "@bs-color-constructive",
-				"bs-color-destructive": "#d11d13",
-				"bs-color-success": "#dff0d8",
-				"bs-color-warning": "#fcf8e3",
-				"bs-color-error": "#f2dede",
-				"bs-color-info": "#d9edf7",
-				"bs-background-neutral": "#FFFFFF",
-				"bs-background-primary": "none",
-				"bs-loading-indicator-color": "#ffae00",
-				"bs-color-link": "#0060DF",
-				"bs-color-link-hover": "#006EFF",
-				"bs-color-link-new": "#B73A3A",
-				"bs-color-link-new-hover": "#E92121"
-			},
+			"LessVarsRegistry": {},
 			"TargetCacheRegistry": {
 				"title": "\\BlueSpice\\TargetCache\\Title"
 			},
