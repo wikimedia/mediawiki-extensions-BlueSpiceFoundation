@@ -590,9 +590,9 @@
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceConfigFilesMigrationMaintenanceScript::callback"
 		],
-		"SkinTemplateOutputPageBeforeExec": [
-			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddAdminTools::callback",
-			"\\BlueSpice\\Hook\\SkinTemplateOutputPageBeforeExec\\AddExportDownloadFile::callback"
+		"ChameleonSkinTemplateOutputPageBeforeExec": [
+			"\\BlueSpice\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddAdminTools::callback",
+			"\\BlueSpice\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddExportDownloadFile::callback"
 		],
 		"ParserFirstCallInit": [
 			"\\BlueSpice\\Hook\\ParserFirstCallInit\\GenericTagExtensionHandler::callback",

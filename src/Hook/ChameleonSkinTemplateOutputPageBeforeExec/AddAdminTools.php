@@ -1,11 +1,11 @@
 <?php
 
-namespace BlueSpice\Hook\SkinTemplateOutputPageBeforeExec;
+namespace BlueSpice\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 
-use BlueSpice\Hook\SkinTemplateOutputPageBeforeExec;
+use BlueSpice\Calumma\Hook\ChameleonSkinTemplateOutputPageBeforeExec;
 use BlueSpice\SkinData;
 
-class AddAdminTools extends SkinTemplateOutputPageBeforeExec {
+class AddAdminTools extends ChameleonSkinTemplateOutputPageBeforeExec {
 	protected function doProcess() {
 		$registry = $this->getServices()->getService( 'BSAdminToolFactory' );
 		$adminTools = $registry->getAll();
