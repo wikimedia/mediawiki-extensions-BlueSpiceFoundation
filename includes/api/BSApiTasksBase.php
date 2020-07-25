@@ -428,7 +428,11 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		// lookup permission for given task
 		foreach ( $taskPermissions as $sPermission ) {
 			// check if user have needed permission
-			if ( $this->getUser()->isAllowed( $sPermission ) ) {
+			$isAllowed = $this->getServices()->getPermissionManager()->userHasRight(
+				$this->getUser(),
+				$sPermission
+			);
+			if ( $isAllowed ) {
 				continue;
 			}
 			// TODO: Reflect permission in error message

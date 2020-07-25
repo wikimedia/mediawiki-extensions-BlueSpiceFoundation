@@ -206,7 +206,11 @@ abstract class Api extends ApiBase {
 			return;
 		}
 		if ( !$title ) {
-			if ( !$user->isAllowed( $permission ) ) {
+			$isAllowed = $this->getServices()->getPermissionManager()->userHasRight(
+				$user,
+				$permission
+			);
+			if ( !$isAllowed ) {
 				$status->fatal(
 					[ 'apierror-permissiondenied', $this->msg( "action-$permission" ) ]
 				);

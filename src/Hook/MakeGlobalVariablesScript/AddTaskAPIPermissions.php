@@ -12,7 +12,11 @@ class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 		if ( $this->getContext()->getUser()->isAnon() ) {
 			return true;
 		}
-		if ( !$this->getContext()->getUser()->isAllowed( 'read' ) ) {
+		$isAllowed = $this->getServices()->getPermissionManager()->userHasRight(
+			$this->getContext()->getUser(),
+			'read'
+		);
+		if ( !$isAllowed ) {
 			return true;
 		}
 		if ( $this->getConfig()->get( 'ReadOnly' ) ) {
