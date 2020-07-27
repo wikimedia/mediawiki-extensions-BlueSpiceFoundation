@@ -4,6 +4,7 @@
 			"Saederup92"
 		]
 	},
+	"bs-deferred-action-status-pending": "Afventer.",
 	"bs-deferred-action-status-done": "Udført.",
 	"bs-deferred-action-apicopypage-description": "Kopier \"$1\" til \"$2\".",
 	"bs-deferred-action-apieditpage-description": "Rediger \"$1\".",
