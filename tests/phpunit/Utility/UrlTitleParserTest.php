@@ -11,7 +11,8 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	protected function setUp() {
 		parent::setUp();
 		$this->setMwGlobals( 'wgServer', 'http://tollerserver.de' );
-		$this->setMwGlobals( 'wgScriptPath', '/' );
+		$this->setMwGlobals( 'wgScriptPath', '/w' );
+		$this->setMwGlobals( 'wgArticlePath', '/wiki/$1' );
 	}
 
 	/**
@@ -61,28 +62,32 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 				'http://tollerserver.de/Some_title?a=b',
 				'Some title'
 			],
-			'subpage-without-index' => [
-				'http://tollerserver.de/Some_title/some/Sub',
+			'subpage-with-script-path' => [
+				'http://tollerserver.de/w/index.php?title=Some_title/some/Sub',
 				'Some title/some/Sub'
 			],
 			'prefixed-with-index' => [
 				'http://tollerserver.de/index.php?title=Prefix%3ASome_title',
 				'Prefix:Some title'
 			],
-			'prefixed-without-index' => [
-				'http://tollerserver.de/Prefix%3ASome_title',
+			'prefixed-with-index-and-script-path' => [
+				'http://tollerserver.de/w/index.php?title=Prefix%3ASome_title',
+				'Prefix:Some title'
+			],
+			'prefixed-with-article-path' => [
+				'http://tollerserver.de/wiki/Prefix%3ASome_title',
 				'Prefix:Some title'
 			],
 			'normal-with-umlauts' => [
-				'http://tollerserver.de/S%C3%B6me_title',
+				'http://tollerserver.de/w/index.php/S%C3%B6me_title',
 				'Söme title'
 			],
 			'subpage-with-umlauts' => [
-				'http://tollerserver.de/Hallo/S%C3%B6me_title',
+				'http://tollerserver.de/wiki/Hallo/S%C3%B6me_title',
 				'Hallo/Söme title'
 			],
 			'subpage-with-query' => [
-				'http://tollerserver.de/Hallo/S%C3%B6me_title?debug=true&weil_so_schoen_is=nochwas',
+				'http://tollerserver.de/wiki/Hallo/S%C3%B6me_title?debug=true&weil_so_schoen_is=nochwas',
 				'Hallo/Söme title'
 			],
 			'non-existing-namespace' => [
