@@ -57,20 +57,18 @@ class BsPageContentProvider {
 
 	/**
 	 * Lazy instantiation of ParserOptions
+	 * @param IContextSource|null $context
 	 * @return ParserOptions
 	 */
-	protected function getParserOptions() {
-		if ( $this->oParserOptions !== null ) {
-			return $this->oParserOptions;
+	protected function getParserOptions( IContextSource $context = null ) {
+		if ( !$context ) {
+			$context = new DerivativeContext( RequestContext::getMain() );
 		}
+		$parseroptions = ParserOptions::newFromContext( $context );
+		//$parseroptions->setTidy( true );
+		$parseroptions->setRemoveComments( true );
 
-		//Default ParserOptions
-		$this->oParserOptions = ParserOptions::newFromUser(
-			RequestContext::getmain()->getUser()
-		);
-		$this->oParserOptions->setRemoveComments( true );
-
-		return $this->oParserOptions;
+		return $parseroptions;
 	}
 
 	/**
@@ -150,16 +148,16 @@ class BsPageContentProvider {
 			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getNativeData();
 
 			$context = new DerivativeContext( RequestContext::getMain() );
-			$this->overrideGlobals( $title, $context );
-			global $wgParser;
+			$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
+			$parser->setOptions( $this->getParserOptions( $context ) );
+
 			// FIX for #HW20130072210000028
 			// Manually expand templates to allow bookshelf tags via template
-			$sContent = $wgParser->preprocess(
+			$sContent = $parser->preprocess(
 					$sContent,
 					$title,
-					$wgParser->getOptions()
+					$parser->getOptions()
 			);
-			$this->restoreGlobals();
 		}
 		return $sContent;
 	}
