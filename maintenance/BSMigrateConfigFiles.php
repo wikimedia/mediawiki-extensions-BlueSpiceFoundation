@@ -6,7 +6,8 @@ use MediaWiki\MediaWikiServices;
 
 class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 
-	private $pattern = '#\$(wg[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)#is';
+	private $pattern = '#\$([wg|bsg][a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)#is';
+	private $removeLinePattern = '#(global .*?\;[\n|\r\n]?)#m';
 	private $replacement = '$GLOBALS[\'$1\']';
 
 	/**
@@ -47,11 +48,22 @@ class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 				continue;
 			}
 			$this->output( "replacing..." );
-			$count = 0;
+			$count = $removeCount = 0;
+			$newContent = preg_replace(
+				$this->removeLinePattern,
+				'',
+				$content,
+				-1,
+				$removeCount
+			);
+			if ( empty( $newContent ) ) {
+				$this->output( "FAILED!\n" );
+				continue;
+			}
 			$newContent = preg_replace(
 				$this->pattern,
 				$this->replacement,
-				$content,
+				$newContent,
 				-1,
 				$count
 			);
@@ -59,6 +71,7 @@ class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 				$this->output( "FAILED!\n" );
 				continue;
 			}
+			$count = $count + $removeCount;
 			if ( $count < 1 ) {
 				$this->output( "$count SKIP\n" );
 				continue;
