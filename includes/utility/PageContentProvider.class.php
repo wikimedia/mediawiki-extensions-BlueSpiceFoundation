@@ -151,13 +151,13 @@ class BsPageContentProvider {
 			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getNativeData();
 
 			$context = new DerivativeContext( RequestContext::getMain() );
-			$this->overrideGlobals( $oRevision->getTitle(), $context );
+			$this->overrideGlobals( $title, $context );
 			global $wgParser;
 			// FIX for #HW20130072210000028
 			// Manually expand templates to allow bookshelf tags via template
 			$sContent = $wgParser->preprocess(
 					$sContent,
-					$oRevision->getTitle(),
+					$title,
 					$wgParser->getOptions()
 			);
 			$this->restoreGlobals();
