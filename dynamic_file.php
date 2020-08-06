@@ -25,23 +25,19 @@ $wgTitle = Title::makeTitle(
 // In a perfect world this wouldn't be necessary either.
 \RequestContext::getMain()->setTitle( $wgTitle );
 $fileDispatcher = null;
-try {
-	$dfdFactory = \MediaWiki\MediaWikiServices::getInstance()->getService(
-		'BSDynamicFileDispatcherFactory'
-	);
-	$request = \RequestContext::getMain()->getRequest();
-	$dfd = $dfdFactory->newFromParams(
-		new \BlueSpice\DynamicFileDispatcher\RequestParams( [], $request ),
-		\RequestContext::getMain(),
-		true
-	);
+$dfdFactory = \MediaWiki\MediaWikiServices::getInstance()->getService(
+	'BSDynamicFileDispatcherFactory'
+);
+$request = \RequestContext::getMain()->getRequest();
+$dfd = $dfdFactory->newFromParams(
+	new \BlueSpice\DynamicFileDispatcher\RequestParams( [], $request ),
+	\RequestContext::getMain(),
+	true
+);
 
-	$dfd->getFile()->setHeaders(
-		\RequestContext::getMain()->getRequest()->response()
-	);
-} catch ( Exception $e ) {
-	echo $e;
-}
+$dfd->getFile()->setHeaders(
+	\RequestContext::getMain()->getRequest()->response()
+);
 
 $mediawiki = new MediaWiki();
 $mediawiki->doPostOutputShutdown( 'fast' );

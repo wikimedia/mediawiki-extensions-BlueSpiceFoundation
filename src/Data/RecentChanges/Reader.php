@@ -5,6 +5,7 @@ namespace BlueSpice\Data\RecentChanges;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\DatabaseReader;
 use MWNamespace;
+use Title;
 
 class Reader extends DatabaseReader {
 
@@ -14,9 +15,11 @@ class Reader extends DatabaseReader {
 	 * @return PrimaryDataProvider
 	 */
 	protected function makePrimaryDataProvider( $params ) {
+		$contentNamespaceIds = $this->getContentNamespaceIds();
+		$namespaceWhitelist = $this->filterNamespacesByReadPermission( $contentNamespaceIds );
 		return new PrimaryDataProvider(
 			$this->db,
-			$this->getContentNamespaceIds()
+			$namespaceWhitelist
 		);
 	}
 
@@ -54,6 +57,25 @@ class Reader extends DatabaseReader {
 		}
 
 		return $contentNamespaceIds;
+	}
+
+	/**
+	 *
+	 * @param array $nsIds
+	 * @return array
+	 */
+	private function filterNamespacesByReadPermission( $nsIds ) {
+		$filteredNamespaceIds = [];
+		$user = $this->context->getUser();
+		foreach ( $nsIds  as $nsId ) {
+			$dummyTitle = Title::makeTitle( $nsId, 'Dummy' );
+			// In `REL1_35` replace this with `PermissionManager` call
+			$userCanRead = $dummyTitle->userCan( 'read', $user );
+			if ( $userCanRead ) {
+				$filteredNamespaceIds[] = $nsId;
+			}
+		}
+		return $filteredNamespaceIds;
 	}
 
 }
