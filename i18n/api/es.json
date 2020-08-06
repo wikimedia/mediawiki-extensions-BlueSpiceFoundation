@@ -62,5 +62,7 @@
 	"apihelp-bs-store-param-options": "Opciones arbitrarias para configurar el formato de almacenamiento de una cadena JSON",
 	"apihelp-bs-store-param-context": "Objeto codificado como cadena JSON con datos de contexto para el almacén",
 	"apihelp-bs-task-param-taskdata": "Objeto codificado como cadena JSON con datos arbitrarios para la tarea",
-	"apihelp-bs-task-param-context": "Objeto codificado como cadena JSON con datos de contexto para la tarea"
+	"apihelp-bs-task-param-context": "Objeto codificado como cadena JSON con datos de contexto para la tarea",
+	"apihelp-bs-group-store-description": "Enumera todos los grupos con la excepción de $wgImplicitGroups. Permite el ordenamiento, el filtrado y la paginación. Implementa parámetros de ExtJS Store.",
+	"apihelp-bs-store-param-page": "Permite el cálculo de inicio/límite del lado servidor"
 }

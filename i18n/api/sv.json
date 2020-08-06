@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ainali",
 			"Bengtsson96",
 			"Mjälten",
 			"Technic2",
@@ -17,7 +18,7 @@
 	"apihelp-bs-wikipage-tasks-description": "Tillhandahåller vanliga åtgärder för WikiPages",
 	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
 	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
-	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera mellanlager</code>",
+	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera cache</code>",
 	"apihelp-bs-store-param-format": "Formatet för utmatningen (endast JSON eller formaterad JSON)",
 	"apihelp-bs-task-param-format": "Format för resultatet",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",

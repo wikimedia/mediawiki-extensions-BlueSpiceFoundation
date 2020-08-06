@@ -71,7 +71,7 @@
 	"bs-pref-anonuserimage": "Avatar anonimnog korisnika:",
 	"bs-pref-deleteduserimage": "Izbrisani korisnički avatar:",
 	"bs-pref-bspinginterval": "Interval pinga (u sekundama):",
-	"bs-pref-testmode": "Aktiviraj probni režim",
+	"bs-pref-testmode": "Uključi probni režim",
 	"bs-tag-input-desc": "Vrednost sadržaja elementa",
 	"bs-tag-param-desc": "Vrednost atributa elementa „$1”",
 	"bs-parser-error-invalid-namespace": "Nevažeći imenski prostor: $1",
@@ -85,10 +85,14 @@
 	"bs-export-menu-print-text": "Štampaj",
 	"bs-export-menu-print-title": "Prikazuje verziju stranice za štampanje",
 	"bs-graphicallist-action-close": "Zatvorite",
-	"bs-graphicallist-action-list": "Lista",
+	"bs-graphicallist-action-list": "Spisak",
 	"bs-graphicallist-action-preview": "Pregled",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"right-wikiadmin": "Koristi se u mnogim dodacima BlueSpice-a za potencijalne opasne administrativne zadatke poput upravljanja korisnicima, dozvolama, globalnom konfiguracijom",
-	"bs-notifications-agent-anon": "anoniman korisnik"
+	"bs-notifications-agent-anon": "anoniman korisnik",
+	"bs-lockdown-groups-permissionerror": "Akcija \"$1\" nije dostupna iz {{PLURAL:$2|navedenog razloga|navedenih razloga}}: $3",
+	"action-wikiadmin": "korišćeno u mnogim BlueSpice dodacima za potencijalne opasne administratorske zadatke poput upravljanja korisnicima, dozvolama i globalnom konfiguracijom",
+	"protect-level-editor": "Dozvoljeno samo urednicima i administratorima",
+	"bs-ping-on-init-desc": "Trebalo bi da pošalje ping zahtev odmah nakon učitavanja stranice"
 }

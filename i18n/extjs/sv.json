@@ -5,6 +5,7 @@
 			"Josve05a",
 			"Lokal Profil",
 			"Mjälten",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -82,5 +83,6 @@
 	"bs-extjs-flyout-tab-grid-title": "Byt till detaljvisning",
 	"bs-extjs-flyout-add-title": "Klick här för att tillfoga ett nytt element",
 	"bs-extjs-tools-trigger-title": "Klick här för att öppna verktygsmenyn",
-	"bs-extjs-label-group": "Grupp"
+	"bs-extjs-label-group": "Grupp",
+	"bs-extjs-label-specialpage": "Specialsida"
 }

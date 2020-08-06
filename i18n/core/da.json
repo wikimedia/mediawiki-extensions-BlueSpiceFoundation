@@ -48,5 +48,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Filtypen understøttes ikke.",
 	"bs-imagepage-download-text": "Hent",
 	"bs-parser-error-invalid-category-title": "Siden er ikke i en gyldig kategori: $1",
-	"bs-export-menu-print-text": "Udskriv"
+	"bs-export-menu-print-text": "Udskriv",
+	"bs-extended-search-textfield-defaultvalue": "Søg...",
+	"bs-pref-fileextensions": "Tilladte filendelser:"
 }

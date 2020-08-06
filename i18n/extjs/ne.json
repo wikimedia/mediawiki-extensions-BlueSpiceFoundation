@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"जनक राज भट्ट",
+			"पर्वत सुबेदी",
 			"बिप्लब आनन्द",
 			"हिमाल सुबेदी"
 		]
@@ -11,5 +12,6 @@
 	"bs-extjs-filter-bool-no": "होइन",
 	"bs-extjs-actions-column-header": "कार्यहरू",
 	"bs-extjs-label-page": "पृष्ठ",
-	"bs-extjs-filters": "छनाेटहरू"
+	"bs-extjs-filters": "छनाेटहरू",
+	"bs-extjs-edit": "सम्पादन"
 }

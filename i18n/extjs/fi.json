@@ -57,5 +57,6 @@
 	"bs-extjs-flyout-add-label": "Lisää kohde",
 	"bs-extjs-filter-contains": "sisältää",
 	"bs-extjs-filter-contains-not": "ei sisällä",
-	"bs-extjs-label-group": "Ryhmä"
+	"bs-extjs-label-group": "Ryhmä",
+	"bs-extjs-confirmNavigationTitle": "Seuraa linkkiä"
 }

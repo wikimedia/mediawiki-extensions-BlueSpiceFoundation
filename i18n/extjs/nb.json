@@ -79,5 +79,6 @@
 	"bs-extjs-flyout-tab-grid-title": "Bytt til detaljvisning",
 	"bs-extjs-flyout-add-title": "Klikk her for å legge til et nytt element",
 	"bs-extjs-flyout-add-label": "Legg til element",
-	"bs-extjs-label-specialpage": "Spesialside"
+	"bs-extjs-label-specialpage": "Spesialside",
+	"bs-extjs-label-group": "Gruppe"
 }
