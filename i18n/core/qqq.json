@@ -108,5 +108,6 @@
 	"right-editor": "{{doc-right|editor}}",
 	"action-editor": "{{doc-action|editor}}",
 	"bs-pref-fileextensions-help": "Description for config variable \"FileExtensions\"",
-	"bs-pref-imageextensions-help": "Description for config variable \"ImageExtensions\""
+	"bs-pref-imageextensions-help": "Description for config variable \"ImageExtensions\"",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Error message in manager interfaces in case a file could not be written not the filesystem. \n\nParameters:\n* $1 - name of the file"
 }

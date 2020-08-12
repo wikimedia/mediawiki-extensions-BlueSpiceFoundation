@@ -131,6 +131,12 @@
 			"LoadPlaceholders":  {
 				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder",
 				"ExtJSGeneric":  "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
+			},
+			"DynamicSettingsRegistry": {
+				"@note": "Can not be overridden using `$bsgExtensionAttributeRegistryOverrides`",
+				"GroupManager": "BlueSpice\\DynamicSettings\\NullSettings::factory",
+				"NamespaceManager": "BlueSpice\\DynamicSettings\\NullSettings::factory",
+				"PermissionManager": "BlueSpice\\DynamicSettings\\NullSettings::factory"
 			}
 		},
 		"BlueSpicePrivacy": {
@@ -567,7 +573,6 @@
 	},
 	"Hooks": {
 		"SetupAfterCache": [
-			"\\BlueSpice\\Hook\\SetupAfterCache\\AddConfigFiles::callback",
 			"\\BlueSpice\\Hook\\SetupAfterCache\\AddParamDefinitions::callback"
 		],
 		"SoftwareInfo": "BlueSpice\\Hook\\SoftwareInfo\\AddBlueSpice::callback",
@@ -647,9 +652,6 @@
 					"[https://www.hallowelt.com Hallo Welt! GmbH]"
 				]
 			}
-		},
-		"ConfigFiles": {
-			"value": []
 		},
 		"DefaultUserImage": {
 			"value": "resources/bluespice/images/bs-user-default-image.png",
