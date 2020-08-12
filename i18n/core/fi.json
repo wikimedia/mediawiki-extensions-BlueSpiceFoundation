@@ -70,6 +70,8 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Sivu ei ole sallittu: $1",
 	"bs-export-menu-print-text": "Tulosta",
 	"bs-graphicallist-action-close": "Sulje",
+	"bs-graphicallist-action-list": "Luettelo",
+	"bs-graphicallist-action-preview": "Esikatsele",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
 	"right-wikiadmin": "Käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
