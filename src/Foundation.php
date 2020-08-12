@@ -24,6 +24,9 @@ class Foundation {
 		require_once dirname( __DIR__ ) . "/includes/DefaultSettings.php";
 		require_once dirname( __DIR__ ) . "/includes/GlobalFunctions.php";
 
+		$dynamicSettingsManager = DynamicSettingsManager::factory();
+		$dynamicSettingsManager->applyAll( $GLOBALS );
+
 		// currently there is no other way
 		\HTMLForm::$typeMappings['staticimage'] = 'HTMLStaticImageFieldOverride';
 		\HTMLForm::$typeMappings['link'] = 'HTMLInfoFieldOverride';
