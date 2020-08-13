@@ -476,7 +476,7 @@ class BsPageContentProvider {
 			= RequestContext::getMain()->getOutput();
 
 		$wgParser = MediaWikiServices::getInstance()->getParserFactory()->create();
-		$wgParser->Options( $this->getParserOptions() );
+		$wgParser->setOptions( $this->getParserOptions() );
 
 		$wgOut = new OutputPage( $context );
 
