@@ -68,7 +68,6 @@ class BsPageContentProvider {
 		$this->oParserOptions = ParserOptions::newFromUser(
 			RequestContext::getmain()->getUser()
 		);
-		$this->oParserOptions->setTidy( true );
 		$this->oParserOptions->setRemoveComments( true );
 
 		return $this->oParserOptions;
