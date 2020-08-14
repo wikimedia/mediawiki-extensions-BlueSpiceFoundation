@@ -12,7 +12,7 @@
 	"bs-extjs-delete": "ሰርዝ",
 	"bs-extjs-add": "ወስኽ",
 	"bs-extjs-remove": "ኣልግስ",
-	"bs-extjs-edit": "ኣተዓራረየ",
+	"bs-extjs-edit": "ኣመዓራርይ",
 	"bs-extjs-copy": "ቅዳሕ",
 	"bs-extjs-hint": "ኣመት",
 	"bs-extjs-error": "ጌጋ",
@@ -31,6 +31,7 @@
 	"bs-extjs-title-success": "ዓወት",
 	"bs-extjs-title-warning": "መጠንቀቕታ",
 	"bs-extjs-categorytree-title": "መደባት",
+	"bs-extjs-pageexport-list-format-link-label": "መጋጠሚ",
 	"bs-extjs-tools-trigger-text": "መሳርሒታት",
 	"bs-extjs-flyout-tab-grid-label": "ዝርዝሪት"
 }
