@@ -57,11 +57,13 @@ class Foundation {
 
 		// Set defaults
 		$lessVars->setVar( 'primary-bg', '#3e5389' );
-		$lessVars->setVar( 'secondary-bg', '#ffae00' );
+		$lessVars->setVar( 'primary-fg', '#ffffff' );
+		$lessVars->setVar( 'secondary-bg', '#ffffff' );
+		$lessVars->setVar( 'secondary-fg', '#666666' );
 		$lessVars->setVar( 'neutral-bg', '#929292' );
-
+		$lessVars->setVar( 'neutral-fg', '#666666' );
 		$lessVars->setVar( 'bs-color-primary', '@primary-bg' );
-		$lessVars->setVar( 'bs-color-secondary', '@secondary-bg' );
+		$lessVars->setVar( 'bs-color-secondary', '#ffae00' );
 		$lessVars->setVar( 'bs-color-tertiary', '#b73a3a' );
 		$lessVars->setVar( 'bs-color-neutral', '@neutral-bg' );
 		$lessVars->setVar( 'bs-color-neutral2', '#ABABAB' );
