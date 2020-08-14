@@ -820,8 +820,10 @@
 	"ConfigRegistry": {
 		"bsg": "BlueSpice\\Config::newInstance"
 	},
+	"TestAutoloadNamespaces": {
+		"BlueSpice\\Tests\\": "tests/phpunit/"
+	},
 	"AutoloadNamespaces": {
-		"BlueSpice\\Tests\\": "tests/phpunit/",
 		"BlueSpice\\": "src/"
 	},
 	"AutoloadClasses": {
