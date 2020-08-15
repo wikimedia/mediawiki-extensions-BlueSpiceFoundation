@@ -183,6 +183,11 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		$timezoneDifference = $now - $adjustedNow;
 		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		foreach ( $res as $oRow ) {
+			// Add fields required for schema migration. See `\CommentStore::getCommentInternal`
+			$oRow->img_cid = $oRow->img_description_id;
+			$oRow->img_description_text = $oRow->comment_text;
+			$oRow->img_description_data = $oRow->comment_data;
+
 			try {
 				$oImg = $localRepo->newFileFromRow( $oRow );
 			} catch ( Exception $ex ) {
@@ -288,8 +293,9 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			'page_namespace' => NS_FILE,
 			'page_title = img_name',
 			// Needed for case insensitive quering; Maybe
-			'page_id = si_page'
 			// implement 'query' as a implicit filter on 'img_name' field?
+			'page_id = si_page',
+			'img_description_id = comment_id'
 		];
 
 		if ( !empty( $sQuery ) ) {
@@ -302,7 +308,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		}
 
 		$res = $oDbr->select(
-			[ 'image', 'page', 'searchindex' ],
+			[ 'image', 'page', 'searchindex', 'comment' ],
 			'*',
 			$aContidions,
 			__METHOD__
@@ -322,6 +328,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		$aContidions = [
 			'page_namespace' => NS_FILE,
 			'page_title = img_name',
+			'img_description_id = comment_id'
 		];
 
 		if ( !empty( $sQuery ) ) {
@@ -333,7 +340,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		}
 
 		$res = $oDbr->select(
-			[ 'image', 'page' ],
+			[ 'image', 'page', 'comment' ],
 			'*',
 			$aContidions,
 			__METHOD__
