@@ -2,7 +2,6 @@
 
 namespace BlueSpice;
 
-use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\LessVars;
 
 class Foundation {
@@ -48,14 +47,12 @@ class Foundation {
 				$foundation->initialize();
 			}
 		);
-
-		static::setLessVars();
 	}
 
 	/**
 	 * Set less variables
 	 */
-	protected static function setLessVars() {
+	protected function setLessVars() {
 		$lessVars = LessVars::getInstance();
 
 		// Set defaults
@@ -98,8 +95,7 @@ class Foundation {
 		}
 
 		// Override with values from config - legacy
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
-		foreach ( $config->get( 'LessVars' ) as $key => $value ) {
+		foreach ( $this->config->get( 'LessVars' ) as $key => $value ) {
 			$lessVars->setVar( $key, $value );
 		}
 	}
@@ -117,6 +113,7 @@ class Foundation {
 		$this->initializeExtensions();
 		$this->overwriteGlobals();
 		$this->initializeRoleSystem();
+		$this->setLessVars();
 	}
 
 	protected function initializeLegacyConfig() {
