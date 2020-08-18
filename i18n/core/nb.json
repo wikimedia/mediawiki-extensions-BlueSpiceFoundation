@@ -98,5 +98,6 @@
 	"right-editor": "Få alle tillatelser fra rollen «bidragsyter» for beskyttede sider når rollesystemet aktiveres",
 	"action-editor": "Få alle tillatelser fra rollen «bidragsyter» for beskyttede sider når rollesystemet aktiveres",
 	"bs-pref-fileextensions-help": "Filtyper som kan lastes opp til wikien. Noen typer (f.eks. html, js, php, cgi, exe) er av sikkerhetsårsaker ikke tillatt selv om de skulle være lagt til her.",
-	"bs-pref-imageextensions-help": "Bildefiltyper som kan lastes opp til wikien. Mulige nettformater: gif, png, jpg, jpeg. Andre bildeformater: tiff, bmp"
+	"bs-pref-imageextensions-help": "Bildefiltyper som kan lastes opp til wikien. Mulige nettformater: gif, png, jpg, jpeg. Andre bildeformater: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurasjonsfila $1 kunne ikke skrives!"
 }
