@@ -33,8 +33,8 @@ class DynamicSettingsManager {
 			// at `manifest.callback` time
 			[]
 		);
-		$dynamicSettingsManager = new DynamicSettingsManager( $registry );
-		return $dynamicSettingsManager;
+
+		return new DynamicSettingsManager( $registry );
 	}
 
 	/**

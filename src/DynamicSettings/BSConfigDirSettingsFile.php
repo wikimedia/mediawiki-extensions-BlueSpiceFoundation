@@ -18,6 +18,10 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 	 */
 	protected function doApply( &$globals ) {
 		$path = $this->getPathname();
+		if ( !file_exists( $path ) ) {
+			$this->logger->critical( "File $path does not exist or is not readable" );
+			return;
+		}
 		include $path;
 	}
 
