@@ -41,8 +41,12 @@ abstract class DynamicSettingsBase implements IDynamicSettings {
 	 * @inheritDoc
 	 */
 	public function apply( &$globals ) {
-		$this->logger->debug( "Applying settings from " . get_class( $this ) );
-		$this->doApply( $globals );
+		if ( $this->shouldApply() ) {
+			$this->logger->debug( "Applying settings from " . get_class( $this ) );
+			$this->doApply( $globals );
+		} else {
+			$this->logger->debug( "Skipped applying settings from " . get_class( $this ) );
+		}
 	}
 
 	/**
@@ -51,6 +55,13 @@ abstract class DynamicSettingsBase implements IDynamicSettings {
 	 * @return void
 	 */
 	abstract protected function doApply( &$globals );
+
+	/**
+	 * @return bool
+	 */
+	protected function shouldApply() {
+		return true;
+	}
 
 	/**
 	 * @inheritDoc
