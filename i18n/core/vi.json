@@ -3,10 +3,12 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Dinhxuanduyet",
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Nguyễn Mạnh An"
 		]
 	},
 	"bs-email-greeting-receiver": "{{GENDER:$1|Xin chào ông $2|Xinh chào bà $2|Xin chào $2}},",
 	"bs-imagepage-download-text": "Tải về",
-	"bs-ns": "Không gian tên"
+	"bs-ns": "Không gian tên",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Không thể ghi tệp cấu hình $1!"
 }
