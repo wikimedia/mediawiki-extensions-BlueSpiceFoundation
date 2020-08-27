@@ -44,9 +44,7 @@ class BSTitleParser extends \ValueParsers\StringValueParser {
 		$oTitle = Title::newFromText( $value );
 
 		if ( $oTitle instanceof Title === false ) {
-			throw new \ValueParsers\ParseException(
-				wfMessage( 'bs-parser-error-invalid-title', $value )->plain()
-			);
+			return null;
 		}
 
 		return $oTitle;
