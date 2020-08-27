@@ -39,6 +39,12 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 
 	/**
 	 *
+	 * @var bool
+	 */
+	protected $isAllowedEmpty = false;
+
+	/**
+	 *
 	 * @param array $aNamespaceBlacklist
 	 */
 	public function setNamespaceBlacklist( $aNamespaceBlacklist ) {
@@ -47,9 +53,26 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 
 	/**
 	 *
+	 * @param bool $isAllowedEmpty
+	 */
+	public function setIsAllowedEmpty( $isAllowedEmpty = true ) {
+		$this->isAllowedEmpty = $isAllowedEmpty;
+	}
+
+	/**
+	 *
 	 * @param Title $oTitle
 	 */
 	public function doValidation( $oTitle ) {
+		if ( !$oTitle ) {
+			if ( $this->isAllowedEmpty ) {
+				return;
+			}
+			$this->addErrorMessage(
+				wfMessage( 'bs-validator-invalid-string' )->plain()
+			);
+			return;
+		}
 		if ( $this->hasToExist && !$oTitle->exists() ) {
 			$this->addErrorMessage(
 				wfMessage(
@@ -78,6 +101,9 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 
 		if ( isset( $options['namespaceblacklist'] ) ) {
 			$this->setNamespaceBlacklist( $options['namespaceblacklist'] );
+		}
+		if ( isset( $options['isallowedempty'] ) ) {
+			$this->setIsAllowedEmpty( $options['isallowedempty'] ? true : false );
 		}
 	}
 }
