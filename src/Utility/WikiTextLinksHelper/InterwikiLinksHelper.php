@@ -2,22 +2,22 @@
 
 namespace BlueSpice\Utility\WikiTextLinksHelper;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class InterwikiLinksHelper extends InternalLinksHelper {
 
 	/**
 	 *
-	 * @var Services
+	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
 	/**
 	 *
 	 * @param string &$wikitext
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 */
-	public function __construct( &$wikitext, Services $services ) {
+	public function __construct( &$wikitext, MediaWikiServices $services ) {
 		parent::__construct( $wikitext );
 		$this->services = $services;
 	}

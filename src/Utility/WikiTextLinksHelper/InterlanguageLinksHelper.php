@@ -2,7 +2,25 @@
 
 namespace BlueSpice\Utility\WikiTextLinksHelper;
 
+use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\MediaWikiServices;
+
 class InterlanguageLinksHelper extends InterwikiLinksHelper {
+
+	/**
+	 *
+	 * @var LanguageNameUtils
+	 */
+	private $langNameUtils = null;
+
+	/**
+	 *
+	 * @inheritDoc
+	 */
+	public function __construct( &$wikitext, MediaWikiServices $services ) {
+		parent::__construct( $wikitext, $services );
+		$this->langNameUtils = $services->getLanguageNameUtils();
+	}
 
 	/**
 	 *
@@ -13,6 +31,7 @@ class InterlanguageLinksHelper extends InterwikiLinksHelper {
 		if ( !parent::isValidInterwikiLink( $title ) ) {
 			return false;
 		}
-		return \Language::isValidCode( $title->getInterwiki() );
+
+		return $this->langNameUtils->isKnownLanguageTag( $title->getInterwiki() );
 	}
 }
