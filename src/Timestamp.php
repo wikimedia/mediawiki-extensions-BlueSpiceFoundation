@@ -12,9 +12,14 @@ class Timestamp extends MWTimestamp {
 	 *
 	 * @param Timestamp|null $relativeTo
 	 * @param User|null $user
+	 * @param int $numberOfDisplayedUnits optional default 2 If 2 the output
+	 * will be something like "1 year and 2 months ago". If 1, the output
+	 * will be something like "1 year ago"
 	 * @return string
 	 */
-	public function getAgeString( Timestamp $relativeTo = null, User $user = null ) {
+	public function getAgeString(
+		Timestamp $relativeTo = null, User $user = null, $numberOfDisplayedUnits = 2
+	) {
 		if ( !$relativeTo ) {
 			$relativeTo = new static;
 		}
@@ -26,7 +31,7 @@ class Timestamp extends MWTimestamp {
 		$offsetThis = $this->offsetForUser( $user );
 		$offsetRel = $relativeTo->offsetForUser( $user );
 
-		$ts = $this->getAgeStringInternal( $this, $relativeTo, $user );
+		$ts = $this->getAgeStringInternal( $this, $relativeTo, $user, $numberOfDisplayedUnits );
 
 		$this->timestamp->sub( $offsetThis );
 		$relativeTo->timestamp->sub( $offsetRel );
@@ -39,11 +44,12 @@ class Timestamp extends MWTimestamp {
 	 * @param Timestamp $ts
 	 * @param Timestamp $relativeTo
 	 * @param User $user
+	 * @param int $numberOfDisplayedUnits
 	 * @param string $ageString
 	 * @return string
 	 */
 	protected function getAgeStringInternal(
-		Timestamp $ts, Timestamp $relativeTo, User $user, $ageString = ''
+		Timestamp $ts, Timestamp $relativeTo, User $user, $numberOfDisplayedUnits, $ageString = ''
 	) {
 		$diff = $ts->diff( $relativeTo );
 		$params = [];
@@ -81,7 +87,12 @@ class Timestamp extends MWTimestamp {
 			return $ageString;
 		}
 
-		$ageMsgKey = $paramCount > 1 ? 'bs-two-units-ago' : 'bs-one-unit-ago';
+		// Fallback to displaying only one unit if number of displayed
+		// units is not covered by the code.
+		$ageMsgKey = 'bs-one-unit-ago';
+		if ( $numberOfDisplayedUnits == 2 ) {
+			$ageMsgKey = $paramCount > 1 ? 'bs-two-units-ago' : 'bs-one-unit-ago';
+		}
 
 		$ageString .= \Message::newFromKey( $ageMsgKey )
 			->params( $params )
@@ -106,5 +117,4 @@ class Timestamp extends MWTimestamp {
 			's' => 'bs-secs-duration',
 		];
 	}
-
 }
