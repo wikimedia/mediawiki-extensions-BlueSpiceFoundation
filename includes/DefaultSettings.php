@@ -472,7 +472,8 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 			"editor",
 			"maintenanceadmin",
 			"reviewer",
-			"structuremanager"
+			"structuremanager",
+			"reader"
 		]
 	],
 	"editor" => [
