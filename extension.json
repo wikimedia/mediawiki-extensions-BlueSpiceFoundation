@@ -850,7 +850,6 @@
 		"BSTreeRenderer": "includes/tree/BSTreeRenderer.php",
 		"BSDebug": "includes/Debug.php",
 		"BsException": "includes/Exception.class.php",
-		"BsExtensionManager": "includes/ExtensionManager.class.php",
 		"BsGenericTagExtensionHandler": "includes/GenericTagExtensionHandler.php",
 		"BSTitleListParam": "includes/paramdefinition/BSTitleListParam.php",
 		"BSCategoryListParam": "includes/paramdefinition/BSCategoryListParam.php",
