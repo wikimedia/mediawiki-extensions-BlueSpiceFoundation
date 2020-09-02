@@ -340,30 +340,6 @@ class BsCore {
 	}
 
 	/**
-	 * DEPRECATED!
-	 * Register a callback for a MagicWord
-	 * @deprecated since version 3.0.0 - Use proper Hook registration instead
-	 * @param string $sMagicWord The MagicWord in upper case and without
-	 * surrounding double underscores. OR: if $callback == null this may be a
-	 * lower case identifier that gets written to the page_props table by the
-	 * parser.
-	 * @param callable $aCallback or null to use MediaWiki page_props mechanism
-	 */
-	public function registerBehaviorSwitch( $sMagicWord, $aCallback = null ) {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if ( is_callable( $aCallback ) ) {
-			return;
-		} else {
-			global $wgHooks;
-			$wgHooks['GetDoubleUnderscoreIDs'][] = function ( &$ids ) use ( $sMagicWord ) {
-				if ( !in_array( $sMagicWord, $ids ) ) {
-					$ids[] = $sMagicWord;
-				}
-			};
-		}
-	}
-
-	/**
 	 * DEPRECATED
 	 * Returns the filesystempath to the webroot directory in which MediaWiki is installed.
 	 * @deprecated since version 3.1.0 - This looks partialy broken, when
