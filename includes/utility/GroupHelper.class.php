@@ -84,63 +84,6 @@ class BsGroupHelper {
 	}
 
 	/**
-	 * DEPRECATED!
-	 * @deprecated since version 3.0.2 - Do not assign groups temporarily, as
-	 * this is broken
-	 * @param User $oUser
-	 * @param String $sGroupName
-	 * @return boolean
-	 */
-	public static function addTempGroupToUser( $oUser, $sGroupName ) {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		if ( in_array( $sGroupName, $oUser->getEffectiveGroups() ) ) {
-			return true;
-		}
-		$oUser->addGroup( $sGroupName, wfTimestamp( TS_MW, time() + 60 ) );
-
-		return true;
-	}
-
-	/**
-	 * DEPRECATED!
-	 * @deprecated since version 3.0.2 - Do not assign permissions temporarily,
-	 * as this is broken
-	 * @param String $sGroupName
-	 * @param Array $aPermissions
-	 * @param Array $aNamespaces
-	 */
-	public static function addPermissionsToGroup( $sGroupName, $aPermissions, $aNamespaces = [] ) {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		global $wgGroupPermissions;
-
-		$aNamespaces = array_diff(
-			$aNamespaces,
-			[ NS_MEDIA, NS_SPECIAL ]
-		);
-
-		foreach ( $aPermissions as $sPermission ) {
-			$wgGroupPermissions[$sGroupName][$sPermission] = true;
-
-			// Check if Lockdown is in use
-			if ( empty( $aNamespaces ) || !isset( $GLOBALS['wgNamespacePermissionLockdown'] ) ) {
-				continue;
-			}
-			foreach ( $aNamespaces as $iNs ) {
-				if ( isset( $GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission] ) ) {
-					if ( in_array(
-						$sGroupName,
-						$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission]
-					) ) {
-						continue;
-					}
-				}
-				$GLOBALS['wgNamespacePermissionLockdown'][$iNs][$sPermission][]
-					= $sGroupName;
-			}
-		}
-	}
-
-	/**
 	 * Returns an array of User being in one or all groups given
 	 * @param mixed $aGroups
 	 * @return array Array of User objects
