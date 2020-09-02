@@ -68,12 +68,6 @@ class BsCore {
 	protected static $oLocalParserOptions = false;
 
 	/**
-	 * Simple caching mechanism for UserMiniProfiles
-	 * @var array
-	 */
-	protected static $aUserMiniProfiles = [];
-
-	/**
 	 * DEPRECATED
 	 * Used to access the singleton BlueSpice object.
 	 * @deprecated since version 3.1.0 - BsCore will be removed
@@ -343,44 +337,6 @@ class BsCore {
 			return ( self::$prUrlIsEncoded ? self::$prRequestUri : urlencode( self::$prRequestUri ) );
 		}
 		return ( self::$prUrlIsEncoded ? urldecode( self::$prRequestUri ) : self::$prRequestUri );
-	}
-
-	/**
-	 * Creates a miniprofile for a user. It consists if the useres profile image
-	 * and links to his userpage. In future versions it should also have a
-	 * little menu with his mail adress, and other profile information.
-	 * @deprecated since version 3.0.0 - Use
-	 * \BlueSpice\Services::getInstance()->getService( 'BSRendererFactory' ) and create
-	 * an instance of the 'userimage' renderer.
-	 * ->get( 'userimage', new \BlueSpice\Renderer\Params( [...] )
-	 * @param User $oUser The requested MediaWiki User object
-	 * @param array $aParams The settings array for the mini profile view object
-	 * @return ViewUserMiniProfile A view with the users mini profile
-	 */
-	public function getUserMiniProfile( $oUser, $aParams = [] ) {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$sParamsHash = md5( serialize( $aParams ) );
-		$sViewHash = $oUser->getName() . $sParamsHash;
-
-		if ( isset( self::$aUserMiniProfiles[$sViewHash] ) ) {
-			return self::$aUserMiniProfiles[$sViewHash];
-		}
-
-		$oUserMiniProfileView = new ViewUserMiniProfile();
-		$oUserMiniProfileView->setOptions( $aParams );
-		$oUserMiniProfileView->setOption( 'user', $oUser );
-
-		Hooks::run( 'BSCoreGetUserMiniProfileBeforeInit', [
-			&$oUserMiniProfileView,
-			&$oUser,
-			&$aParams
-		] );
-
-		$oUserMiniProfileView->init();
-
-		self::$aUserMiniProfiles[$sViewHash] = $oUserMiniProfileView;
-
-		return $oUserMiniProfileView;
 	}
 
 	/**
