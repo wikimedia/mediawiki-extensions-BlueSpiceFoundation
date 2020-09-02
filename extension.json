@@ -849,7 +849,6 @@
 		"BSSkinSidebarTreeNavigation": "includes/skins/BSSkinSidebarTreeNavigation.php",
 		"BSTreeNode": "includes/tree/BSTreeNode.php",
 		"BSTreeRenderer": "includes/tree/BSTreeRenderer.php",
-		"BsConfig": "includes/Config.class.php",
 		"BSDebug": "includes/Debug.php",
 		"BsException": "includes/Exception.class.php",
 		"BsExtensionManager": "includes/ExtensionManager.class.php",

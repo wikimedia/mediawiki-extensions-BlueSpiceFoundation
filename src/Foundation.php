@@ -108,18 +108,11 @@ class Foundation {
 		$this->services = Services::getInstance();
 		$this->config = $this->services->getConfigFactory()->makeConfig( 'bsg' );
 
-		$this->initializeLegacyConfig();
 		$this->initializeNotifications();
 		$this->initializeExtensions();
 		$this->overwriteGlobals();
 		$this->initializeRoleSystem();
 		$this->setLessVars();
-	}
-
-	protected function initializeLegacyConfig() {
-		if ( !defined( 'DO_MAINTENANCE' ) ) {
-			\BsConfig::loadSettings();
-		}
 	}
 
 	protected function initializeNotifications() {
