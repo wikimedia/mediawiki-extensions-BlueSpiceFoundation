@@ -922,7 +922,6 @@
 		"ViewTagElement": "includes/outputhandler/views/view.TagElement.php",
 		"ViewTagError": "includes/outputhandler/views/view.TagError.php",
 		"ViewTagErrorList": "includes/outputhandler/views/view.TagErrorList.php",
-		"ViewUserMiniProfile": "includes/outputhandler/views/view.UserMiniProfile.php",
 		"ViewWidget": "includes/outputhandler/views/view.Widget.php",
 		"SpecialWikiAdmin": "includes/specials/SpecialWikiAdmin.class.php",
 		"BsPARAM": "includes/common/BsPARAM.php",
