@@ -1,5 +1,8 @@
 <?php
 // Last review MRG (21.09.10 13:08)
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * DEPRECATED!
  * This class provides functions to generate multiple types of links (WikiText or HTML anchors)
@@ -46,7 +49,7 @@ class BsLinkProvider {
 		$bRelative = true, $aAdditionalQueryString = [], $aClasses = [], $aStyles = [],
 		$aAdditionalAttributes = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$sUserDisplayName = \BlueSpice\Services::getInstance()
+		$sUserDisplayName = MediaWikiServices::getInstance()
 			->getService( 'BSUtilityFactory' )->getUserHelper( $oUser )->getDisplayName();
 
 		$sLabel = ( empty( $sLabel ) ) ? $sUserDisplayName : $sLabel;
@@ -82,7 +85,7 @@ class BsLinkProvider {
 	 */
 	public static function makeWikiLinkForTitle( Title $oTitle, $sLabel = '', $sJumpMark = '' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$util = \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' );
+		$util = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' );
 		$linkHelper = $util->getWikiTextLinksHelper( '' )
 			->getInternalLinksHelper()->addTargets( [
 			$sLabel => $oTitle

@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class AddDataUserNameTest extends \MediaWikiTestCase {
 	protected $testUserName = 'wiki Sysöp';
@@ -19,7 +19,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = Services::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$title = \Title::newMainPage();
 		$isKnown = true;
 		$html = new \HtmlArmor( '' );
@@ -59,7 +59,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = Services::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( $title->getText() );
@@ -103,7 +103,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = Services::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( 'Some link text' );
@@ -142,7 +142,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = Services::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$title = \Title::makeTitle( NS_MAIN, 'Not a user page' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( 'Some link text' );

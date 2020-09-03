@@ -11,7 +11,7 @@
  */
 // Last Review: MRG20100813
 use BlueSpice\Extension;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @deprecated since version 3.0.0
@@ -25,7 +25,7 @@ class BsExtensionManager {
 	 */
 	public static function getRegisteredExtensions() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$registry = Services::getInstance()->getService( 'BSExtensionRegistry' );
+		$registry = MediaWikiServices::getInstance()->getService( 'BSExtensionRegistry' );
 		return $registry->getExtensionDefinitions();
 	}
 
@@ -36,7 +36,7 @@ class BsExtensionManager {
 	 */
 	public static function getRunningExtensions() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$factory = Services::getInstance()->getService( 'BSExtensionFactory' );
+		$factory = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
 		return $factory->getExtensions();
 	}
 
@@ -50,7 +50,7 @@ class BsExtensionManager {
 	 */
 	public static function getExtension( $name ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$factory = Services::getInstance()->getService( 'BSExtensionFactory' );
+		$factory = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
 		$extension = $factory->getExtension( $name );
 		if ( !$extension ) {
 			// Backwards compatibility: extensions will have a BlueSice prefix in
@@ -68,7 +68,7 @@ class BsExtensionManager {
 	 */
 	public static function getExtensionNames() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$registry = Services::getInstance()->getService( 'BSExtensionRegistry' );
+		$registry = MediaWikiServices::getInstance()->getService( 'BSExtensionRegistry' );
 		return $registry->getNames();
 	}
 
@@ -80,7 +80,7 @@ class BsExtensionManager {
 	 */
 	public static function getExtensionInformation() {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$factory = Services::getInstance()->getService( 'BSExtensionFactory' );
+		$factory = MediaWikiServices::getInstance()->getService( 'BSExtensionFactory' );
 		return $factory->getExtensionInformation();
 	}
 }

@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Categories;
 
 use BlueSpice\Data\DatabaseReader;
 use BlueSpice\Data\ReaderParams;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class Reader extends DatabaseReader {
 
@@ -25,7 +25,7 @@ class Reader extends DatabaseReader {
 	 */
 	protected function makeSecondaryDataProvider() {
 		return new SecondaryDataProvider(
-			Services::getInstance()->getLinkRenderer(),
+			MediaWikiServices::getInstance()->getLinkRenderer(),
 			$this->context
 		);
 	}

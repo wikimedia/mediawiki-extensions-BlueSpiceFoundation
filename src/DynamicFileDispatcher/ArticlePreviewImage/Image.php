@@ -3,7 +3,7 @@
 namespace BlueSpice\DynamicFileDispatcher\ArticlePreviewImage;
 
 use BlueSpice\DynamicFileDispatcher\Module;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Storage\RevisionRecord;
 
 class Image extends \BlueSpice\DynamicFileDispatcher\File {
@@ -31,7 +31,7 @@ class Image extends \BlueSpice\DynamicFileDispatcher\File {
 		$this->title = $title;
 		$this->revision = $revision;
 		if ( !$this->revision ) {
-			$store = Services::getInstance()->getRevisionStore();
+			$store = MediaWikiServices::getInstance()->getRevisionStore();
 			$this->revision = $store->getRevisionByTitle( $title );
 		}
 	}

@@ -28,7 +28,6 @@
  * @filesource
  */
 
-use BlueSpice\Services;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -355,7 +354,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	 * @return array
 	 */
 	protected function addSecondaryFields( $aTrimmedData ) {
-		$linkRenderer = Services::getInstance()->getLinkRenderer();
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		foreach ( $aTrimmedData as $oDataSet ) {
 			$oFilePage = Title::makeTitle( NS_FILE, $oDataSet->page_title );

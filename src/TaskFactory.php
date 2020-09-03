@@ -28,6 +28,7 @@
 namespace BlueSpice;
 
 use Config;
+use MediaWiki\MediaWikiServices;
 use MWException;
 
 class TaskFactory {
@@ -69,7 +70,7 @@ class TaskFactory {
 		if ( !$callback ) {
 			throw new MWException( "No registered task for given '$key'!" );
 		}
-		$instance = $callback( Services::getInstance(), $context, $permissionChecker );
+		$instance = $callback( MediaWikiServices::getInstance(), $context, $permissionChecker );
 		return $instance;
 	}
 }

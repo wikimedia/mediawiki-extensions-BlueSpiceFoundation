@@ -24,7 +24,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @package BlueSpiceFoundation
@@ -43,7 +43,7 @@ class BSTemplateHelper {
 	 */
 	protected static function makeTemplateNameFromPath( $sExtName, $sFullPath ) {
 		$sFullPath = BsFileSystemHelper::normalizePath( $sFullPath );
-		$registry = Services::getInstance()->getService(
+		$registry = MediaWikiServices::getInstance()->getService(
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
@@ -101,7 +101,8 @@ class BSTemplateHelper {
 	public static function process( $sTplName, array $args = [], array $scopes = [],
 		$bForceRecompile = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$template = Services::getInstance()->getService( 'BSTemplateFactory' )->get( $sTplName );
+		$template = MediaWikiServices::getInstance()->getService( 'BSTemplateFactory' )
+			->get( $sTplName );
 		return $template->process( $args, $scopes );
 	}
 
@@ -114,7 +115,7 @@ class BSTemplateHelper {
 	 */
 	public static function getAllTemplates( $aReturn = [] ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$registry = Services::getInstance()->getService(
+		$registry = MediaWikiServices::getInstance()->getService(
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
@@ -126,7 +127,7 @@ class BSTemplateHelper {
 		}
 		foreach ( $aExtensions as $sExtName => $aConfig ) {
 			try {
-				$aTplDir = Services::getInstance()->getService( 'BSUtilityFactory' )
+				$aTplDir = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 					->getTemplateHelper()->makeFullExtTemplatePathFromExtName(
 					$sExtName,
 					$aConfig

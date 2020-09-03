@@ -27,6 +27,8 @@
  */
 namespace BlueSpice;
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * UtilityFactory class for BlueSpice
  * @package BlueSpiceFoundation
@@ -35,14 +37,14 @@ class UtilityFactory {
 
 	/**
 	 *
-	 * @var Services
+	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
 	/**
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 */
-	public function __construct( Services $services ) {
+	public function __construct( MediaWikiServices $services ) {
 		$this->services = $services;
 	}
 

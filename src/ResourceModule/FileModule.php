@@ -25,8 +25,8 @@
  */
 namespace BlueSpice\ResourceModule;
 
-use BlueSpice\Services;
 use BlueSpice\TemplateFactory;
+use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\ResourceLoader\LessVars;
 
 class FileModule extends LessVars {
@@ -62,6 +62,6 @@ class FileModule extends LessVars {
 	 * @return TemplateFactory
 	 */
 	protected function getTemplateFactory() {
-		return Services::getInstance()->getService( 'BSTemplateFactory' );
+		return MediaWikiServices::getInstance()->getService( 'BSTemplateFactory' );
 	}
 }

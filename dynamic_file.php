@@ -20,7 +20,7 @@ $wgTitle = Title::makeTitle(
 // In a perfect world this wouldn't be necessary either.
 \RequestContext::getMain()->setTitle( $wgTitle );
 $fileDispatcher = null;
-$dfdFactory = \BlueSpice\Services::getInstance()
+$dfdFactory = \MediaWiki\MediaWikiServices::getInstance()
 	->getService( 'BSDynamicFileDispatcherFactory' );
 $request = \RequestContext::getMain()->getRequest();
 $dfd = $dfdFactory->newFromParams(

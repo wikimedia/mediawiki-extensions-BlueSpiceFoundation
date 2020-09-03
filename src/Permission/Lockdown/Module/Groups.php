@@ -6,9 +6,9 @@ use BlueSpice\ExtensionAttributeBasedRegistry;
 use BlueSpice\Permission\Lockdown\IModule;
 use BlueSpice\Permission\Lockdown\Module;
 use BlueSpice\Permission\Lockdown\Module\Groups\ISubModule;
-use BlueSpice\Services;
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use Message;
 use Title;
 use User;
@@ -65,11 +65,11 @@ class Groups extends Module {
 	 *
 	 * @param Config $config
 	 * @param IContextSource $context
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param ExtensionAttributeBasedRegistry $registry
 	 */
 	protected function __construct( Config $config, IContextSource $context,
-		Services $services, ExtensionAttributeBasedRegistry $registry ) {
+		MediaWikiServices $services, ExtensionAttributeBasedRegistry $registry ) {
 		parent::__construct( $config, $context, $services );
 		$this->registry = $registry;
 	}
@@ -83,7 +83,7 @@ class Groups extends Module {
 	 * @return IModule
 	 */
 	public static function getInstance( Config $config,
-		IContextSource $context, Services $services,
+		IContextSource $context, MediaWikiServices $services,
 		ExtensionAttributeBasedRegistry $registry = null ) {
 		if ( !$registry ) {
 			$registry = new ExtensionAttributeBasedRegistry(
@@ -189,7 +189,7 @@ class Groups extends Module {
 	 * @return string[]
 	 */
 	protected function getAppliedGroups( Title $title, User $user, $action, array $groups = [] ) {
-		$roleManager = Services::getInstance()->getService( 'BSRoleManager' );
+		$roleManager = MediaWikiServices::getInstance()->getService( 'BSRoleManager' );
 		$roleManager instanceof \BlueSpice\Permission\Role\Manager;
 
 		foreach ( $this->getUserGroups( $user ) as $group ) {

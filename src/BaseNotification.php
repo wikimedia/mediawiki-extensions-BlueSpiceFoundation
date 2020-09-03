@@ -240,7 +240,7 @@ class BaseNotification implements \BlueSpice\INotification {
 		if ( $user->isAnon() ) {
 			return wfMessage( 'bs-notifications-agent-anon' )->plain();
 		}
-		return \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $user )->getDisplayName();
 	}
 }

@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use BlueSpice\Utility\TemplateHelper;
+use MediaWiki\MediaWikiServices;
 
 abstract class Template implements ITemplate {
 	/**
@@ -38,13 +39,13 @@ abstract class Template implements ITemplate {
 
 	/**
 	 *
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param string $alias
 	 * @param TemplateHelper|null $templateHelper
 	 * @param ITemplateParser|null $templateParser
 	 * @return Template
 	 */
-	abstract public static function factory( Services $services, $alias,
+	abstract public static function factory( MediaWikiServices $services, $alias,
 		TemplateHelper $templateHelper = null,
 		ITemplateParser $templateParser = null );
 

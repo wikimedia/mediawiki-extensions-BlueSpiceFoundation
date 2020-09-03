@@ -5,6 +5,7 @@ namespace BlueSpice;
 use BlueSpice\Renderer\Params;
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 
 class RendererFactory implements IServiceProvider {
 
@@ -67,10 +68,10 @@ class RendererFactory implements IServiceProvider {
 
 	/**
 	 *
-	 * @return Services
+	 * @return MediaWikiServices
 	 */
 	public function getServices() {
-		return Services::getInstance();
+		return MediaWikiServices::getInstance();
 	}
 
 }

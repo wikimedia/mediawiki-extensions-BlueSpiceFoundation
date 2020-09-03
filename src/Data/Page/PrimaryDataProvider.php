@@ -4,9 +4,9 @@ namespace BlueSpice\Data\Page;
 
 use BlueSpice\Data\PrimaryDatabaseDataProvider;
 use BlueSpice\Data\ReaderParams;
-use BlueSpice\Services;
 use Hooks;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use Title;
 use User;
 use Wikimedia\Rdbms\IDatabase;
@@ -95,7 +95,7 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 		if ( $this->isSystemUser( $this->context->getUser() ) ) {
 			return true;
 		}
-		return \MediaWiki\MediaWikiServices::getInstance()
+		return MediaWikiServices::getInstance()
 			->getPermissionManager()
 			->userCan( 'read', $this->context->getUser(), $title );
 	}
@@ -106,7 +106,7 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	 * @return bool
 	 */
 	protected function isSystemUser( User $user ) {
-		return Services::getInstance()->getService( 'BSUtilityFactory' )
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->isMaintenanceUser( $user );
 	}
 }

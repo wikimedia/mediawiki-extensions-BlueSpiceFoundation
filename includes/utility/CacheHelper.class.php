@@ -1,6 +1,6 @@
 <?php
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * This class contains methods working with mediawiki's cache .
@@ -19,7 +19,8 @@ class BsCacheHelper {
 	 * @return BagOStuff
 	 */
 	public static function getCache() {
-		return Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper()
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getCacheHelper()
 			->getCache();
 	}
 
@@ -32,7 +33,8 @@ class BsCacheHelper {
 	 * @return string
 	 */
 	public static function getCacheKey() {
-		$helper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
+		$helper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getCacheHelper();
 		$args = func_get_args();
 		return call_user_func_array( [ $helper, 'getCacheKey' ], $args );
 	}
@@ -45,7 +47,7 @@ class BsCacheHelper {
 	 * @return mixed
 	 */
 	public static function get( $sKey ) {
-		return Services::getInstance()->getService( 'BSUtilityFactory' )
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getCacheHelper()->get( $sKey );
 	}
 
@@ -59,7 +61,7 @@ class BsCacheHelper {
 	 * @return bool
 	 */
 	public static function set( $sKey, $mData, $iExpiryTime = 0 ) {
-		return Services::getInstance()->getService( 'BSUtilityFactory' )
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getCacheHelper()->set( $sKey, $mData, $iExpiryTime );
 	}
 
@@ -71,7 +73,7 @@ class BsCacheHelper {
 	 * @return boolean | true if key is deleted false if at least one key failed to invalidate
 	 */
 	public static function invalidateCache( $mKey ) {
-		$helper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
+		$helper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
 		if ( is_array( $mKey ) ) {
 			$bReturn = true;
 			foreach ( $mKey as $key ) {

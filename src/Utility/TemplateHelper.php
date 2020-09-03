@@ -1,7 +1,7 @@
 <?php
 namespace BlueSpice\Utility;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class TemplateHelper {
 
@@ -10,12 +10,12 @@ class TemplateHelper {
 
 	/**
 	 *
-	 * @var Services
+	 * @var MediaWikiServices
 	 */
 	protected $services;
 
 	/**
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 */
 	public function __construct( $services ) {
 		$this->services = $services;

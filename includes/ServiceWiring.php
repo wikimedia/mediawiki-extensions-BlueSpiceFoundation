@@ -158,7 +158,7 @@ return [
 
 	'BSUtilityFactory' => function ( MediaWikiServices $services ) {
 		return new \BlueSpice\UtilityFactory(
-			\BlueSpice\Services::getInstance()
+			$services
 		);
 	},
 

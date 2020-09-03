@@ -55,8 +55,8 @@
  * limit:25
  */
 
-use BlueSpice\Services;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 
 abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
@@ -95,7 +95,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	protected $oLinkRenderer = null;
 
 	public function execute() {
-		$this->oLinkRenderer = Services::getInstance()->getLinkRenderer();
+		$this->oLinkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 
 		$sQuery = $this->getParameter( 'query' );
 		$aData = $this->makeData( $sQuery );

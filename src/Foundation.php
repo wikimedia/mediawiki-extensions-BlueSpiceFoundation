@@ -2,6 +2,7 @@
 
 namespace BlueSpice;
 
+use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\LessVars;
 
 class Foundation {
@@ -14,7 +15,7 @@ class Foundation {
 
 	/**
 	 *
-	 * @var Services
+	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
@@ -105,7 +106,7 @@ class Foundation {
 
 	protected function initialize() {
 		// earliest possible position to use the services and config
-		$this->services = Services::getInstance();
+		$this->services = MediaWikiServices::getInstance();
 		$this->config = $this->services->getConfigFactory()->makeConfig( 'bsg' );
 
 		$this->initializeNotifications();
