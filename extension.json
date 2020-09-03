@@ -860,7 +860,6 @@
 		"BSNamespaceListParam": "includes/paramdefinition/BSNamespaceListParam.php",
 		"BSNamespaceParser": "includes/parser/BSNamespaceParser.php",
 		"BSNamespaceValidator": "includes/validator/BSNamespaceValidator.php",
-		"BSNotifications": "includes/Notifications.class.php",
 		"BSStandardAPIResponse": "includes/api/BSStandardAPIResponse.php",
 		"BSExtendedApiContext": "includes/api/BSExtendedApiContext.php",
 		"BSApiFormatJson": "includes/api/BSApiFormatJson.php",
