@@ -3,7 +3,8 @@
 		"authors": [
 			"Aefgh39622",
 			"Ans",
-			"Horus"
+			"Horus",
+			"Just Sayori"
 		]
 	},
 	"bs-ns_main": "(หน้า)",
@@ -24,6 +25,7 @@
 	"bs-exception-view-heading": "เกิดข้อผิดพลาดขึ้น",
 	"bs-navigation-instructions": "คำแนะนำ",
 	"bs-navigation-contact": "ติดต่อ",
+	"bs-imagepage-download-text": "ดาวน์โหลด",
 	"bs-ns": "เนมสเปซ",
 	"bs-from-something": "(จาก $1)",
 	"bs-parser-error-invalid-namespace": "เนมสเปซไม่ถูกต้อง: $1",
