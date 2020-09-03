@@ -843,7 +843,6 @@
 		"BsValidatorMwGroupnamePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwGroupnamePlugin.class.php",
 		"BsValidatorMwNamespacePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwNamespacePlugin.class.php",
 		"BsValidatorMwUsernamePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwUsernamePlugin.class.php",
-		"BsSpecialPage": "includes/SpecialPage.class.php",
 		"BSSkinTreeNavigation": "includes/skins/BSSkinTreeNavigation.php",
 		"BSSkinSidebarTreeParser": "includes/skins/BSSkinSidebarTreeParser.php",
 		"BSSkinSidebarTreeNavigation": "includes/skins/BSSkinSidebarTreeNavigation.php",
