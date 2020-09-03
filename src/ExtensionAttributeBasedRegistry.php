@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use ExtensionRegistry;
+use MediaWiki\MediaWikiServices;
 
 class ExtensionAttributeBasedRegistry implements IRegistry {
 
@@ -44,7 +45,7 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 		}
 
 		if ( $this->overrides === null ) {
-			$services = Services::getInstance();
+			$services = MediaWikiServices::getInstance();
 			$config = $services->getConfigFactory()->makeConfig( 'bsg' );
 			$configOverrides = $config->get( 'ExtensionAttributeRegistryOverrides' );
 

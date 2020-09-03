@@ -2,7 +2,7 @@
 
 namespace BlueSpice\DynamicFileDispatcher;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 abstract class AbstractStaticFile extends File {
 
@@ -10,7 +10,7 @@ abstract class AbstractStaticFile extends File {
 	 * @return string
 	 */
 	public function getMimeType() {
-		$mimeAnalyzer = Services::getInstance()->getMimeAnalyzer();
+		$mimeAnalyzer = MediaWikiServices::getInstance()->getMimeAnalyzer();
 		return $mimeAnalyzer->guessMimeType( $this->getAbsolutePath() );
 	}
 

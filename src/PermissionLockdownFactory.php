@@ -5,6 +5,7 @@ namespace BlueSpice;
 use BlueSpice\Permission\Lockdown;
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use Status;
 use Title;
@@ -84,7 +85,7 @@ class PermissionLockdownFactory {
 			$modules[] = call_user_func_array( $this->registry->getValue( $key ), [
 				$this->config,
 				$this->context,
-				Services::getInstance(),
+				MediaWikiServices::getInstance(),
 			] );
 		}
 		return $modules;
@@ -138,7 +139,7 @@ class PermissionLockdownFactory {
 		if ( !$user ) {
 			$user = $this->context->getUser();
 		}
-		$result = Services::getInstance()->getPermissionManager()->userCan(
+		$result = MediaWikiServices::getInstance()->getPermissionManager()->userCan(
 			$action,
 			$user,
 			$title,

@@ -3,21 +3,21 @@
 namespace BlueSpice\Template;
 
 use BlueSpice\ITemplateParser;
-use BlueSpice\Services;
 use BlueSpice\Utility\TemplateHelper;
+use MediaWiki\MediaWikiServices;
 
 class Mustache extends \BlueSpice\Template {
 	const FILE_EXTENTION = 'mustache';
 
 	/**
 	 *
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param string $alias
 	 * @param TemplateHelper|null $templateHelper
 	 * @param TemplateParser|null $templateParser
 	 * @return Template
 	 */
-	public static function factory( Services $services, $alias,
+	public static function factory( MediaWikiServices $services, $alias,
 		TemplateHelper $templateHelper = null,
 		ITemplateParser $templateParser = null ) {
 		if ( !$templateHelper ) {

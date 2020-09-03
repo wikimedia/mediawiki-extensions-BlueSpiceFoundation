@@ -25,7 +25,7 @@
  *
  */
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 
@@ -118,7 +118,7 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		if ( !$oTitle ) {
 			return false;
 		}
-		return \MediaWiki\MediaWikiServices::getInstance()
+		return MediaWikiServices::getInstance()
 			->getPermissionManager()
 			->userCan( 'read', $this->getUser(), $oTitle )
 				? parent::makeDataSet( $row )
@@ -131,7 +131,7 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	 * @return array
 	 */
 	protected function addSecondaryFields( $aTrimmedData ) {
-		$oLinkRenderer = Services::getInstance()->getLinkRenderer();
+		$oLinkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		foreach ( $aTrimmedData as &$oDataSet ) {
 			$oTitle = Title::makeTitle(
 				$oDataSet->page_namespace,

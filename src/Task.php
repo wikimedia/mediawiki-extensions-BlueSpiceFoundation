@@ -28,6 +28,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
 use Psr\Log\LoggerInterface;
@@ -38,7 +39,7 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 
 	/**
 	 *
-	 * @var Services
+	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
@@ -79,14 +80,14 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	protected $params = [];
 
 	/**
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param Context $context
 	 * @param LoggerInterface $logger
 	 * @param ActionLogger $actionLogger
 	 * @param Notifier $notifier
 	 * @param IPermissionChecker $permissionChecker
 	 */
-	protected function __construct( Services $services, Context $context,
+	protected function __construct( MediaWikiServices $services, Context $context,
 		LoggerInterface $logger, ActionLogger $actionLogger, INotifier $notifier,
 		IPermissionChecker $permissionChecker ) {
 		$this->services = $services;
@@ -98,12 +99,12 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	}
 
 	/**
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param Context $context
 	 * @param IPermissionChecker|null $permissionChecker
 	 * @return ITask
 	 */
-	public static function factory( Services $services, Context $context,
+	public static function factory( MediaWikiServices $services, Context $context,
 		IPermissionChecker $permissionChecker = null ) {
 		$actionLogger = new NullLogger();
 		$logger = LoggerFactory::getInstance( static::class );

@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use Config;
+use MediaWiki\MediaWikiServices;
 use Skin;
 use User;
 use Wikimedia\Rdbms\IDatabase;
@@ -46,7 +47,7 @@ abstract class AlertProviderBase implements IAlertProvider {
 	 * @return IAlertProvider
 	 */
 	public static function factory( $skin ) {
-		$services = Services::getInstance();
+		$services = MediaWikiServices::getInstance();
 
 		$loadBalancer = $services->getDBLoadBalancer();
 		$config = $services->getConfigFactory()->makeConfig( 'bsg' );

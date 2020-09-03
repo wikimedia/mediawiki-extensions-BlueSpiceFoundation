@@ -4,9 +4,9 @@ namespace BlueSpice\Data\Watchlist;
 
 use BlueSpice\Data\DatabaseReader;
 use BlueSpice\Data\ReaderParams;
-use BlueSpice\Services;
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use MWNamespace;
 use Wikimedia\Rdbms\LoadBalancer;
 
@@ -52,7 +52,7 @@ class Reader extends DatabaseReader {
 	 */
 	protected function makeSecondaryDataProvider() {
 		return new SecondaryDataProvider(
-			Services::getInstance()->getLinkRenderer(),
+			MediaWikiServices::getInstance()->getLinkRenderer(),
 			$this->context
 		);
 	}

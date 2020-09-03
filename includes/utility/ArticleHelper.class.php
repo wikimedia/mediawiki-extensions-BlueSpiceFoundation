@@ -1,6 +1,6 @@
 <?php
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * This class provides functions for common tasks while working with MediaWiki
@@ -54,7 +54,8 @@ class BsArticleHelper {
 
 		$iTalkPageId = $oTalkPage->getArticleID();
 
-		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
+		$cacheHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getCacheHelper();
 		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',
@@ -94,7 +95,7 @@ class BsArticleHelper {
 	 */
 	public function getPageProp( $sPropName, $bDoLoad = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$helper = \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
+		$helper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProp( $sPropName );
 	}
@@ -122,7 +123,7 @@ class BsArticleHelper {
 	 */
 	public function getPageProps( $bDoLoad = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$helper = \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
+		$helper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProps();
 	}
@@ -146,7 +147,8 @@ class BsArticleHelper {
 			return true;
 		}
 
-		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
+		$cacheHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getCacheHelper();
 		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',

@@ -7,6 +7,7 @@ use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
 use ConfigException;
 use JobQueueGroup;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 class RunJobsTriggerRunner {
 
@@ -171,7 +172,7 @@ class RunJobsTriggerRunner {
 	 * @throws ConfigException
 	 */
 	public static function run() {
-		$services = \BlueSpice\Services::getInstance();
+		$services = MediaWikiServices::getInstance();
 
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationRunJobsTriggerHandlerRegistry'

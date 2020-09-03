@@ -2,7 +2,7 @@
 
 namespace BlueSpice\DynamicFileDispatcher;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class ArticlePreviewImage extends Module {
 	const TITLETEXT = 'titletext';
@@ -50,7 +50,7 @@ class ArticlePreviewImage extends Module {
 			);
 		}
 		if ( !empty( $this->params[static::REVISION] ) ) {
-			$store = Services::getInstance()->getRevisionStore();
+			$store = MediaWikiServices::getInstance()->getRevisionStore();
 			$revision = $store->getRevisionById(
 				$this->params[static::REVISION]
 			);
@@ -68,7 +68,7 @@ class ArticlePreviewImage extends Module {
 	public function getFile() {
 		$revision = null;
 		if ( $this->params[static::REVISION] > 0 ) {
-			$store = Services::getInstance()->getRevisionStore();
+			$store = MediaWikiServices::getInstance()->getRevisionStore();
 			$revision = $store->getRevisionById(
 				$this->params[static::REVISION]
 			);

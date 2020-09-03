@@ -2,7 +2,7 @@
 
 use BlueSpice\Extension;
 use BlueSpice\ITagExtensionDefinitionProvider;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * @deprecated since version 3.0.0 - Use \BlueSpice\Extension instead
@@ -200,7 +200,8 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 	 */
 	public function getCacheKey( $sSubKey = 'default' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )->getCacheHelper();
+		$cacheHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getCacheHelper();
 		return $cacheHelper->getCacheKey(
 			'BlueSpice',
 			$this->getName(),

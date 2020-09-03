@@ -146,10 +146,10 @@ abstract class Api extends ApiBase {
 
 	/**
 	 *
-	 * @return Services
+	 * @return MediaWikiServices
 	 */
 	protected function getServices() {
-		return Services::getInstance();
+		return MediaWikiServices::getInstance();
 	}
 
 	/**

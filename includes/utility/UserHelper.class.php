@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * DEPRECATED - use \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
  * ->getUserHelper()
@@ -51,7 +53,7 @@ class BsUserHelper {
 	 */
 	public static function getUserDisplayName( $oUser = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return \BlueSpice\Services::getInstance()->getService( 'BSUtilityFactory' )
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $oUser )->getDisplayName();
 	}
 

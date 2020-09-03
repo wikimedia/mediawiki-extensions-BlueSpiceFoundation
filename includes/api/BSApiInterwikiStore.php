@@ -26,7 +26,7 @@
  * Example request parameters of an ExtJS store
  */
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class BSApiInterwikiStore extends BSApiExtJSStoreBase {
 	/**
@@ -37,7 +37,7 @@ class BSApiInterwikiStore extends BSApiExtJSStoreBase {
 	 * will be done by the base class
 	 */
 	protected function makeData( $sQuery = '' ) {
-		$aInterwikiData = Services::getInstance()
+		$aInterwikiData = MediaWikiServices::getInstance()
 			->getInterwikiLookup()->getAllPrefixes();
 
 		$aData = [];

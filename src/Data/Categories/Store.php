@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Categories;
 
 use BlueSpice\Data\IStore;
 use BlueSpice\Data\NoWriterException;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class Store implements IStore {
 
@@ -27,7 +27,10 @@ class Store implements IStore {
 	 * @return Reader
 	 */
 	public function getReader() {
-		return new Reader( Services::getInstance()->getDBLoadBalancer(), $this->context );
+		return new Reader(
+			MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			$this->context
+		);
 	}
 
 	/**

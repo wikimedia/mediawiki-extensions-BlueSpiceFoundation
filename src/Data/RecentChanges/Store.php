@@ -3,7 +3,7 @@
 namespace BlueSpice\Data\RecentChanges;
 
 use BlueSpice\Data\NoWriterException;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class Store implements \BlueSpice\Data\IStore {
 
@@ -27,7 +27,7 @@ class Store implements \BlueSpice\Data\IStore {
 	 */
 	public function getReader() {
 		return new Reader(
-			Services::getInstance()->getDBLoadBalancer(),
+			MediaWikiServices::getInstance()->getDBLoadBalancer(),
 			$this->context
 		);
 	}

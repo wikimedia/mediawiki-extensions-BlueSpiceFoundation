@@ -26,6 +26,7 @@
  */
 namespace BlueSpice;
 
+use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
 
@@ -88,10 +89,10 @@ abstract class Hook implements MessageLocalizer, IServiceProvider {
 
 	/**
 	 *
-	 * @return Services
+	 * @return MediaWikiServices
 	 */
 	public function getServices() {
-		return Services::getInstance();
+		return MediaWikiServices::getInstance();
 	}
 
 	/**

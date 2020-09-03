@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Html\FormField;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class PermissionMultiSelect extends \HTMLMultiSelectEx {
 
@@ -28,7 +28,7 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 	}
 
 	protected function loadPermissions() {
-		$services = Services::getInstance();
+		$services = MediaWikiServices::getInstance();
 		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
 		$this->permissions = $config->get( 'PermissionConfigDefault' );
 	}
