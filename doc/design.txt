@@ -34,5 +34,3 @@ In "resouces/bluespice.extjs/BS" you can find additional reusable components.
 ==TODO==
 * Refactor the "outputhandler/views" files.
 ** Or better: replace usage of these with config arrays and "Html" class
-* Redesign "BsConfig" mechanism
-** Maybe rely on MediaWiki "SiteConfig"

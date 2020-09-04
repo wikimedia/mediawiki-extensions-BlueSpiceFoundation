@@ -12,7 +12,6 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 		$this->overwriteGlobals();
 		$this->addModules();
 		$this->addJSConfigVars();
-		$this->addLegacyJSConfigVars();
 		return true;
 	}
 
@@ -69,33 +68,6 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	protected function addLegacyJSConfigVarNames( $configs ) {
 		foreach ( $configs as $name => $config ) {
 			$this->out->addJsConfigVars( "bs$name", $config );
-		}
-	}
-
-	/**
-	 * DEPRECATED!
-	 * @deprecated since version 3.0.0 - \BsConfig is not used anymore
-	 */
-	protected function addLegacyJSConfigVars() {
-		$scriptSettings = \BsConfig::getScriptSettings();
-		\Hooks::run( 'BsFoundationBeforeMakeGlobalVariablesScript', [
-			$this->out->getUser(),
-			&$scriptSettings
-		] );
-
-		foreach ( $scriptSettings as $setting ) {
-			$value = $setting->getValue();
-			if ( $setting->getOptions() & \BsConfig::TYPE_JSON ) {
-				$value = json_decode( $value );
-			}
-			// All settings are outputed like this: setting bsVisualEditorUse = true
-			// VisualEditor = $setting->getExtension()
-			// Use = $setting->getName()
-			// true = $sValue
-			$this->out->addJsConfigVars(
-				"bs{$setting->getExtension()}{$setting->getName()}",
-				$value
-			);
 		}
 	}
 
