@@ -1,0 +1,3 @@
+<?php
+
+$GLOBALS['bsgTestSetting'] = 'Test';

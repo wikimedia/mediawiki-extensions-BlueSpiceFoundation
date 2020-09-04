@@ -14,6 +14,29 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 	protected $data = '';
 
 	/**
+	 *
+	 * @var string
+	 */
+	protected $configPath = '';
+
+	/**
+	 * @inheritDoc
+	 */
+	public static function factory( $logger ) {
+		return new static( $logger, BSCONFIGDIR );
+	}
+
+	/**
+	 *
+	 * @param LoggerInterface $logger
+	 * @param string $configPath
+	 */
+	public function __construct( $logger, $configPath ) {
+		$this->logger = $logger;
+		$this->configPath = $configPath;
+	}
+
+	/**
 	 * @inheritDoc
 	 */
 	protected function doApply( &$globals ) {
@@ -52,6 +75,9 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 
 		// remove old backup files if max number exceeded
 		$configFiles = scandir( dirname( $configFile ) . "/", SCANDIR_SORT_ASCENDING );
+		if ( $configFiles === false ) {
+			$configFiles = [];
+		}
 		$backupFiles = array_filter(
 			$configFiles,
 			function ( $elem ) use ( $backupFilenamePrefix ) {
@@ -105,6 +131,7 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 	 */
 	protected function doPersist() {
 		$status = Status::newGood();
+		$this->ensureConfigDirectory();
 		$this->backupExistingSettings();
 		$res = file_put_contents( $this->getPathname(), $this->data );
 		if ( $res === false ) {
@@ -126,6 +153,12 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 	 * @return string
 	 */
 	private function getPathname() {
-		return BSCONFIGDIR . '/' . $this->getFilename();
+		return $this->configPath . '/' . $this->getFilename();
+	}
+
+	private function ensureConfigDirectory() {
+		if ( !file_exists( $this->configPath ) ) {
+			wfMkdirParents( $this->configPath );
+		}
 	}
 }
