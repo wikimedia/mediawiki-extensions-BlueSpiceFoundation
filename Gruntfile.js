@@ -9,7 +9,7 @@ module.exports = function ( grunt ) {
 				extensions: [ '.js', '.json' ],
 				cache: true
 			},
-			target: [
+			src: [
 				'**/*.{js,json}',
 				'!node_modules/**',
 				'!vendor/**',
