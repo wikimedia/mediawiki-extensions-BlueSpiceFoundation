@@ -346,43 +346,6 @@ class BsCore {
 	}
 
 	/**
-	 * TODO MRG (09.12.10 11:21): Habe silent im Standard auf true gesetzt. Echo ist ohnehin nicht gut.
-	 *
-	 * @deprecated since version 3.0.0 - use \Title->userCan() or
-	 * \User->isAllowed()
-	 * @param string $sPermission
-	 * @param string $sI18NInstanceKey
-	 * @param string $sI18NMessageKey
-	 * @param bool $bSilent
-	 * @return bool
-	 */
-	public static function checkAccessAdmission( $sPermission = 'read',
-		$sI18NInstanceKey = 'BlueSpice', $sI18NMessageKey = 'not_allowed', $bSilent = true ) {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		// TODO MRG28072010: isAllowed prüft nicht gegen die Artikel. D.H. die Rechte sind
-		// nicht per Namespace überprüfbar
-		$oUser = self::loadCurrentUser();
-		$pm = \MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
-		if ( $pm->userHasRight( $oUser, $sPermission ) ) {
-			return true;
-		}
-		if ( !$bSilent ) {
-			echo wfMessage( 'bs-' . $sI18NMessageKey )->plain();
-		}
-
-		return false;
-	}
-
-	/**
-	 * @deprecated since version 3.0.0 - this probably only in use by the core
-	 * it self - anyway, get your own user ;)
-	 * @return \User
-	 */
-	public static function loadCurrentUser() {
-		return \RequestContext::getMain()->getUser();
-	}
-
-	/**
 	 * Creates a miniprofile for a user. It consists if the useres profile image
 	 * and links to his userpage. In future versions it should also have a
 	 * little menu with his mail adress, and other profile information.
