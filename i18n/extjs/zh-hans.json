@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Great Brightstar",
 			"Kuailong",
 			"Liuxinyu970226",
 			"VulpesVulpes825",
@@ -77,7 +78,7 @@
 	"bs-extjs-combo-box-default-placeholder": "输入以过滤...",
 	"bs-extjs-tools-trigger-title": "点此打开工具菜单",
 	"bs-extjs-tools-trigger-text": "工具",
-	"bs-extjs-flyout-tab-thumbs-label": "缩略图",
+	"bs-extjs-flyout-tab-thumbs-label": "缩&#8288;略&#8288;图",
 	"bs-extjs-flyout-tab-thumbs-title": "切换为缩略图视图",
 	"bs-extjs-flyout-tab-grid-label": "详情",
 	"bs-extjs-flyout-tab-grid-title": "切换为详情视图",

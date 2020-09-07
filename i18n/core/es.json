@@ -109,5 +109,6 @@
 	"right-editor": "Se le concederán todos los permisos del rol \"editor\" para las páginas protegidas en la restricción del editor cuando el sistema de roles esté activado",
 	"action-editor": "Ser concedido todos los permisos del editor \"de función\" para los páginas protegidas en restricción de editor cuándo el sistema de función está activado",
 	"bs-pref-fileextensions-help": "Los tipos del los archivos que puede ser cargado al wiki. Algunos tipos (p. ej., html, js, php, cgi, exe) no es permitido para razones de seguridad incluso si han sido añadidos aquí.",
-	"bs-pref-imageextensions-help": "Los tipos del archivos que puede ser añadidos al wiki. Formatos del web posibles: gif, png, jpg, jpeg. Otros formatos del archivos: tiff, bmp"
+	"bs-pref-imageextensions-help": "Los tipos del archivos que puede ser añadidos al wiki. Formatos del web posibles: gif, png, jpg, jpeg. Otros formatos del archivos: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "No se pudo guardar el archivo de configuración $1."
 }

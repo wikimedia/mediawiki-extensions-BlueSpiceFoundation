@@ -73,5 +73,7 @@
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
 	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, herra $2|Hei, rouva $2|Hei $2}}."
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, herra $2|Hei, rouva $2|Hei $2}}.",
+	"bs-graphicallist-action-list": "Luettelo",
+	"bs-graphicallist-action-preview": "Esikatsele"
 }

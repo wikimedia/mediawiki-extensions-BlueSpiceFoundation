@@ -3,7 +3,8 @@
 		"authors": [
 			"Aefgh39622",
 			"Ans",
-			"Horus"
+			"Horus",
+			"Just Sayori"
 		]
 	},
 	"bs-userbar_loginswitch_logout": "ออกจากระบบ",
@@ -34,5 +35,6 @@
 	"bs-validator-error-title-namespace-on-blacklist": "ไม่อนุญาตให้ใช้หน้านี้: $1",
 	"bs-graphicallist-action-close": "ปิด",
 	"bs-graphicallist-action-list": "รายการ",
-	"bs-graphicallist-action-preview": "แสดงตัวอย่าง"
+	"bs-graphicallist-action-preview": "แสดงตัวอย่าง",
+	"bs-imagepage-download-text": "ดาวน์โหลด"
 }

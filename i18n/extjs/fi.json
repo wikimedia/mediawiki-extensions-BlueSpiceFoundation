@@ -58,5 +58,6 @@
 	"bs-extjs-filter-contains": "sisältää",
 	"bs-extjs-filter-contains-not": "ei sisällä",
 	"bs-extjs-label-group": "Ryhmä",
-	"bs-extjs-confirmNavigationTitle": "Seuraa linkkiä"
+	"bs-extjs-confirmNavigationTitle": "Seuraa linkkiä",
+	"bs-extjs-mainns": "(Päänimiavaruus)"
 }
