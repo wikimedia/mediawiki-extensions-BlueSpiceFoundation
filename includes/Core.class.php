@@ -340,46 +340,6 @@ class BsCore {
 	}
 
 	/**
-	 * Registers a permission with the MediaWiki Framework.
-	 * object for proper internationalisation of your permission. If not already set,
-	 * every permission is granted automatically to the user group 'sysop'. You can
-	 * specify additional groups through the third parameter.
-	 *
-	 * @deprecated since version 3.0 - use BSPermissionRegistry instead
-	 *
-	 * @param String $sPermissionName I.e. 'myextension-dosomething'
-	 * @param Array $aUserGroups User groups that get preinitialized with the new
-	 * pemission. I.e. array( 'user', 'bureaucrats' )
-	 * @param Array $aConfig set configs for permissions i.e. array('type'=>'global').
-	 * The default here is ('type' = 'namespace')
-	 * @return void
-	 */
-	public function registerPermission( $sPermissionName, $aUserGroups = [], $aConfig = [] ) {
-		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
-		global $wgGroupPermissions, $wgAvailableRights, $bsgPermissionConfig;
-
-		$aUserGroups = array_merge( [
-			'sysop'
-		], $aUserGroups );
-		if ( !isset( $bsgPermissionConfig[$sPermissionName] ) ) {
-			if ( isset( $aConfig ) ) {
-				$bsgPermissionConfig[$sPermissionName] = $aConfig;
-			} else {
-				$bsgPermissionConfig[$sPermissionName] = [ 'type' => 'namespace' ];
-			}
-		}
-		foreach ( $aUserGroups as $sGroup ) {
-			if ( !isset( $wgGroupPermissions[$sGroup][$sPermissionName] ) ) {
-				$wgGroupPermissions[$sGroup][$sPermissionName] = true;
-			}
-		}
-		$wgAvailableRights[] = $sPermissionName;
-
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return true;
-	}
-
-	/**
 	 * DEPRECATED!
 	 * Register a callback for a MagicWord
 	 * @deprecated since version 3.0.0 - Use proper Hook registration instead
