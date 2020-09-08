@@ -6,6 +6,8 @@
 
 	/**
 	 * ExtensionManager object
+	 *
+	 * @param paths
 	 */
 	function ExtensionManager( paths ) {
 		/* Private Members */
@@ -18,4 +20,4 @@
 	bs.em = bs.extensionManager;
 	bs.em.paths.set( mw.config.get( 'bsExtensionManagerAssetsPaths' ) );
 
-}(  mediaWiki, blueSpice, jQuery ) );
+}( mediaWiki, blueSpice, jQuery ) );

@@ -2,9 +2,9 @@
 
 	function _push( message, options ) {
 		options = options || {};
-		var notifyInfo = localStorage.getItem( 'notify-info' );
-		var notifyArray = [];
-		if( notifyInfo !== null ){
+		var notifyInfo = localStorage.getItem( 'notify-info' ),
+			notifyArray = [];
+		if ( notifyInfo !== null ) {
 			notifyArray = JSON.parse( notifyInfo );
 		}
 
@@ -12,20 +12,18 @@
 		localStorage.setItem( 'notify-info', JSON.stringify( notifyArray ) );
 	}
 
-
-	function _outputDeferredNotifications( ) {
-		var notifyInfo = localStorage.getItem( 'notify-info' );
-		var serverSideNotifications = mw.config.get( 'bsgDeferredNotifications', [] );
-
-		var notifyArray = [];
-		if( notifyInfo !== null ){
+	function _outputDeferredNotifications() {
+		var notifyInfo = localStorage.getItem( 'notify-info' ),
+			serverSideNotifications = mw.config.get( 'bsgDeferredNotifications', [] ),
+			notifyArray = [];
+		if ( notifyInfo !== null ) {
 			notifyArray = JSON.parse( notifyInfo );
 		}
 
 		notifyArray = notifyArray.concat( serverSideNotifications );
 
 		for ( var i = 0; i < notifyArray.length; i++ ) {
-			mw.notify( notifyArray[i][0], notifyArray[i][1] );
+			mw.notify( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
 		}
 
 		localStorage.removeItem( 'notify-info' );

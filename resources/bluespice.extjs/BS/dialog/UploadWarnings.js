@@ -9,27 +9,27 @@ Ext.define( 'BS.dialog.UploadWarnings', {
 
 	apiUpload: {},
 
-	afterInitComponent: function() {
+	afterInitComponent: function () {
 		this.items = [];
 		this.addIntro();
 		this.addWarnings();
 		this.addOutro();
 
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
-	addIntro: function() {
-		this.items.push({
+	addIntro: function () {
+		this.items.push( {
 			cls: 'intro',
 			html: mw.message( 'bs-upload-uploadwarningdialog-intro' ).plain()
-		});
+		} );
 	},
 
-	addOutro: function() {
-		this.items.push({
+	addOutro: function () {
+		this.items.push( {
 			cls: 'outro',
 			html: mw.message( 'bs-upload-uploadwarningdialog-outro' ).plain()
-		});
+		} );
 	},
 
 	/**
@@ -45,16 +45,17 @@ Ext.define( 'BS.dialog.UploadWarnings', {
 	 *   "filekey":"14tu4hqpqdhs.1765v2.1.jpg",
 	 *   "sessionkey":"14tu4hqpqdhs.1765v2.1.jpg"
 	 * }
-	 * @returns {undefined}
+	 *
+	 * @return {undefined}
 	 */
-	addWarnings: function() {
+	addWarnings: function () {
 		for ( var warning in this.apiUpload.warnings ) {
-			var warnVal = this.apiUpload.warnings[warning];
-			if( warning === 'exists' ) {
+			var warnVal = this.apiUpload.warnings[ warning ];
+			if ( warning === 'exists' ) {
 				this.addExistsWarning( warnVal );
 				continue;
 			}
-			if( warning === 'duplicate' ) {
+			if ( warning === 'duplicate' ) {
 				this.addDuplicateWarning( warnVal );
 				continue;
 			}
@@ -63,65 +64,65 @@ Ext.define( 'BS.dialog.UploadWarnings', {
 		}
 	},
 
-	addExistsWarning: function( fileName ) {
-		this.items.push({
+	addExistsWarning: function ( fileName ) {
+		this.items.push( {
 			cls: 'warning',
 			html: mw.message( 'bs-upload-uploadwarningdialog-warning-exists', fileName ).plain()
-		});
+		} );
 	},
 
-	addDuplicateWarning: function( dups ) {
+	addDuplicateWarning: function ( dups ) {
 		this.dupPanel = new Ext.Panel( {
 			cls: 'warning',
-			items:[{
-				html: mw.message('bs-upload-uploadwarningdialog-warning-duplicate', dups.length ).text()
-			}]
-		});
+			items: [ {
+				html: mw.message( 'bs-upload-uploadwarningdialog-warning-duplicate', dups.length ).text()
+			} ]
+		} );
 
 		this.items.push( this.dupPanel );
 		this.fetchDuplicates( dups );
 	},
 
-	addUnknownWarning: function( warning ) {
-		this.items.push({
+	addUnknownWarning: function ( warning ) {
+		this.items.push( {
 			cls: 'warning',
 			html: mw.message( 'bs-upload-uploadwarningdialog-warning-unknown', warning ).plain()
-		});
+		} );
 	},
 
-	fetchDuplicates: function( dups ) {
-		var api = new mw.Api();
-		var me = this;
-		var params = {
-			action: 'query',
-			titles: 'File:' + dups.join( '|File:' ),
-			prop: 'imageinfo',
-			iiprop: 'url',
-			iiurlwidth: 64,
-			indexpageids: ''
-		};
+	fetchDuplicates: function ( dups ) {
+		var api = new mw.Api(),
+		 me = this,
+		 params = {
+				action: 'query',
+				titles: 'File:' + dups.join( '|File:' ),
+				prop: 'imageinfo',
+				iiprop: 'url',
+				iiurlwidth: 64,
+				indexpageids: ''
+			},
 
-		var item = '<a href="{0}" data-bs-title="{1}" target="_blank"><img alt="{1}" src="{2}" width="64" class="thumbimage">{1}</a>';
+		 item = '<a href="{0}" data-bs-title="{1}" target="_blank"><img alt="{1}" src="{2}" width="64" class="thumbimage">{1}</a>';
 
 		api.get( params ).done( function ( response ) {
 			var $container = $( '<div>' );
-			for( var i in response.query.pages ) {
-				if( i < 0 ) {
+			for ( var i in response.query.pages ) {
+				if ( i < 0 ) {
 					continue;
 				}
 				var $item = $( '<div>' );
 				$container.append( $item );
 
-				var href = response.query.pages[i].imageinfo[0].descriptionurl;
-				var src = response.query.pages[i].imageinfo[0].thumburl;
-				var title = response.query.pages[i].title;
+				var href = response.query.pages[ i ].imageinfo[ 0 ].descriptionurl,
+				 src = response.query.pages[ i ].imageinfo[ 0 ].thumburl,
+				 title = response.query.pages[ i ].title;
 
 				$item.append( item.format( href, title, src ) );
 			}
 			me.dupPanel.add( {
 				autoScroll: true,
 				html: $container.html()
-			});
-		});
+			} );
+		} );
 	}
-});
+} );

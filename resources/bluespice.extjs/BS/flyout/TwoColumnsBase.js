@@ -19,7 +19,7 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 	},
 	cls: 'bs-flyout-two-columns',
 
-	initComponent: function() {
+	initComponent: function () {
 		this.items = [];
 
 		this.addTopPanel();
@@ -29,14 +29,14 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 		return this.callParent( arguments );
 	},
 
-	addTopPanel: function() {
+	addTopPanel: function () {
 		var items = this.makeTopPanelItems();
-		if( items.length > 0 ) {
+		if ( items.length > 0 ) {
 			this.items.push( this.makeTopPanel( items ) );
 		}
 	},
 
-	makeTopPanel: function( items ) {
+	makeTopPanel: function ( items ) {
 		return {
 			region: 'north',
 			cls: 'panel-top',
@@ -44,14 +44,14 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 		};
 	},
 
-	addBottomPanel: function() {
+	addBottomPanel: function () {
 		var items = this.makeBottomPanelItems();
-		if( items.length > 0 ) {
+		if ( items.length > 0 ) {
 			this.items.push( this.makeBottomPanel( items ) );
 		}
 	},
 
-	makeBottomPanel: function( items ) {
+	makeBottomPanel: function ( items ) {
 		return {
 			region: 'south',
 			cls: 'panel-bottom',
@@ -59,20 +59,20 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 		};
 	},
 
-	addCenterPanels: function() {
-		var centerOneItems = this.makeCenterOneItems();
-		var centerTwoItems = this.makeCenterTwoItems();
+	addCenterPanels: function () {
+		var centerOneItems = this.makeCenterOneItems(),
+			centerTwoItems = this.makeCenterTwoItems();
 
-		if( centerOneItems.length > 0 ) {
+		if ( centerOneItems.length > 0 ) {
 			this.items.push( this.makeCenterOnePanel( centerOneItems ) );
 		}
 
-		if( centerTwoItems.length > 0 ) {
+		if ( centerTwoItems.length > 0 ) {
 			this.items.push( this.makeCenterTwoPanel( centerTwoItems ) );
 		}
 	},
 
-	makeCenterOnePanel: function( items ) {
+	makeCenterOnePanel: function ( items ) {
 		return {
 			region: 'west',
 			scrollable: 'y',
@@ -83,7 +83,7 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 		};
 	},
 
-	makeCenterTwoPanel: function( items ) {
+	makeCenterTwoPanel: function ( items ) {
 		return {
 			region: 'center',
 			scrollable: 'y',
@@ -93,11 +93,11 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 		};
 	},
 
-	makeTopPanelItems: function() {
+	makeTopPanelItems: function () {
 		return [];
 	},
 
-	makeBottomPanelItems: function() {
+	makeBottomPanelItems: function () {
 		return [];
 	},
 
@@ -106,9 +106,10 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 	 * and "Right". This is to maybe add RTL support in future.
 	 *
 	 * Should be overwritten by subclass
-	 * @returns {Array}
+	 *
+	 * @return {Array}
 	 */
-	makeCenterOneItems: function() {
+	makeCenterOneItems: function () {
 		return [];
 	/* DEMO
 		return [ {
@@ -154,9 +155,10 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 
 	/**
 	 * Should be overwritten by subclass
-	 * @returns {Array}
+	 *
+	 * @return {Array}
 	 */
-	makeCenterTwoItems: function() {
+	makeCenterTwoItems: function () {
 		return [];
 	/* DEMO
 		return [ {
@@ -233,4 +235,4 @@ Ext.define( 'BS.flyout.TwoColumnsBase', {
 		} ];
 	*/
 	}
-});
+} );

@@ -1,45 +1,43 @@
-(function( mw, $, d, undefined ) {
-	$(d).on( 'click', '.bs-treenodeitem', function( e ) {
-		var $parentAnchor = $(e.target).parentsUntil( '.bs-treenodeitem', 'a' );
-		if( e.target.nodeName.toUpperCase() === 'A' || $parentAnchor.length !== 0 ) {
-			return; //Don't prevent clicks on anchor elements
+( function ( mw, $, d, undefined ) {
+	$( d ).on( 'click', '.bs-treenodeitem', function ( e ) {
+		var $parentAnchor = $( e.target ).parentsUntil( '.bs-treenodeitem', 'a' );
+		if ( e.target.nodeName.toUpperCase() === 'A' || $parentAnchor.length !== 0 ) {
+			return; // Don't prevent clicks on anchor elements
 		}
-		if( $(this).hasClass( 'leaf' ) || !$(this).hasClass( 'expandable' ) ) {
+		if ( $( this ).hasClass( 'leaf' ) || !$( this ).hasClass( 'expandable' ) ) {
 			return;
 		}
-		$(this).toggleClass( 'collapsed' );
-		_updatePathCookie( $(this) );
+		$( this ).toggleClass( 'collapsed' );
+		_updatePathCookie( $( this ) );
 		e.preventDefault();
 		return false;
-	});
+	} );
 
 	/**
 	 *
 	 * @param {jQuery} $node
-	 * @returns {undefined}
+	 * @return {undefined}
 	 */
 	function _updatePathCookie( $node ) {
-		var $root = $node.parents( '.bs-tree-root' ).first();
+		var $root = $node.parents( '.bs-tree-root' ).first(),
+			// A visible leaf is any .bs-treenodeitem that as a parent with no
+			// '.collaped' and is either self '.collapsed' or has no <ul>
+			$visibleLeafs = $root.find( '.bs-treenodeitem' ).filter( function () {
+				var $treeNode = $( this );
+				if ( $treeNode.parents( 'li' ).hasClass( 'collapsed' ) ) {
+					return false;
+				}
 
-		//A visible leaf is any .bs-treenodeitem that as a parent with no
-		//'.collaped' and is either self '.collapsed' or has no <ul>
-		var $visibleLeafs = $root.find( '.bs-treenodeitem' ).filter( function() {
-			var $treeNode = $(this);
-			if( $treeNode.parents( 'li' ).hasClass( 'collapsed' ) ) {
+				if ( $treeNode.hasClass( 'collapsed' ) || $treeNode.hasClass( 'leaf' ) ) {
+					return true;
+				}
+
 				return false;
-			}
-
-			if( $treeNode.hasClass( 'collapsed' ) || $treeNode.hasClass( 'leaf' ) ) {
-				return true;
-			}
-
-			return false;
-		});
-
-		var paths = [];
-		$visibleLeafs.each( function() {
-			paths.push( $(this).data( 'bs-nodedata' ).path );
-		});
+			} ),
+			paths = [];
+		$visibleLeafs.each( function () {
+			paths.push( $( this ).data( 'bs-nodedata' ).path );
+		} );
 
 		$.cookie(
 			mw.config.get( 'wgCookiePrefix' ) + $root.attr( 'id' ),
@@ -49,4 +47,4 @@
 			}
 		);
 	}
-})( mediaWiki, jQuery, document );
+}( mediaWiki, jQuery, document ) );

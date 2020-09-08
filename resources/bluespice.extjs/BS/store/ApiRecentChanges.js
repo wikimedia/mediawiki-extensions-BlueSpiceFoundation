@@ -1,4 +1,4 @@
-Ext.define('BS.store.ApiRecentChanges', {
+Ext.define( 'BS.store.ApiRecentChanges', {
 	extend: 'BS.store.BSApi',
 	apiAction: 'bs-recentchanges-store',
 	fields: [
@@ -19,6 +19,6 @@ Ext.define('BS.store.ApiRecentChanges', {
 		'cur_id',
 		'last_oldid',
 		'this_oldid',
-		'exists',
+		'exists'
 	]
-});
+} );

@@ -57,6 +57,7 @@
 		"no-prototype-builtins": "warn",
 		"mediawiki/msg-doc": "warn",
 		"new-cap": "warn",
-		"semi-style": "warn"
+		"semi-style": "warn",
+		"no-shadow": "warn"
 	}
 }

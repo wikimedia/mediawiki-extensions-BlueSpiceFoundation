@@ -3,13 +3,13 @@
  * files. The information is a combination of the page and the file table
  */
 
-Ext.define('BS.model.File', {
+Ext.define( 'BS.model.File', {
 	extend: 'Ext.data.Model',
 
 	idProperty: 'file_name',
 
 	fields: [
-		//Those are values we can gather from the MediaWiki 'page' table.
+		// Those are values we can gather from the MediaWiki 'page' table.
 		{ name: 'page_id', type: 'int', defaultValue: 0 },
 		{ name: 'page_title', type: 'string', defaultValue: '' },
 		{ name: 'page_prefixed_text', type: 'string', defaultValue: '' },
@@ -18,40 +18,40 @@ Ext.define('BS.model.File', {
 		{ name: 'page_is_redirect', type: 'bool', defaultValue: false },
 		{ name: 'page_is_new', type: 'bool', defaultValue: true },
 		{ name: 'page_touched', type: 'date', defaultValue: '19700101000000', dateFormat: 'YmdHis' },
-		{ name: 'page_link', type: 'string', defaultValue: '', convert: function( value, record ) {
-			//This is not being calculated on the serverside for performance reasons
+		{ name: 'page_link', type: 'string', defaultValue: '', convert: function ( value, record ) {
+			// This is not being calculated on the serverside for performance reasons
 			var title = new mw.Title( record.get( 'page_prefixed_text' ) );
 			return mw.html.element(
 				'a',
 				{
-					'href': title.getUrl(),
-					'target': '_blank',
+					href: title.getUrl(),
+					target: '_blank',
 					'data-bs-title': title.getPrefixedText(),
 					'data-bs-filename': record.get( 'file_name' ),
 					'data-bs-fileurl': record.get( 'file_url' )
 				},
 				record.get( 'file_display_text' )
 			);
-		}},
-		//Here come custom fields that are calculated on the server side
+		} },
+		// Here come custom fields that are calculated on the server side
 		{ name: 'page_categories', type: 'auto', defaultValue: [] },
-		{ name: 'page_categories_links', type: 'auto', defaultValue: [], convert: function( value, record ) {
-			//This is not being calculated on the serverside for performance reasons
-			var categories = record.get( 'page_categories' );
-			var categoryLinks = [];
-			for( var i = 0; i < categories.length; i++ ) {
-				var category = categories[i];
-				var title = new mw.Title( category, bs.ns.NS_CATEGORY );
-				var icon = mw.html.element( 'span', { 'class' : 'bs-icon-tag' }, '' );
-				var link = mw.html.element(
-					'a',
-					{
-						'href': title.getUrl(),
-						'target': '_blank',
-						'data-bs-title': title.getPrefixedText()
-					},
-					title.getNameText()
-				);
+		{ name: 'page_categories_links', type: 'auto', defaultValue: [], convert: function ( value, record ) {
+			// This is not being calculated on the serverside for performance reasons
+			var categories = record.get( 'page_categories' ),
+			 categoryLinks = [];
+			for ( var i = 0; i < categories.length; i++ ) {
+				var category = categories[ i ],
+					title = new mw.Title( category, bs.ns.NS_CATEGORY ),
+					icon = mw.html.element( 'span', { class: 'bs-icon-tag' }, '' ),
+					link = mw.html.element(
+						'a',
+						{
+							href: title.getUrl(),
+							target: '_blank',
+							'data-bs-title': title.getPrefixedText()
+						},
+						title.getNameText()
+					);
 
 				categoryLinks.push(
 					mw.html.element( 'span', {}, new mw.html.Raw( icon + link ) )
@@ -59,9 +59,9 @@ Ext.define('BS.model.File', {
 			}
 
 			return categoryLinks;
-		}},
+		} },
 
-		//Those are values we can gather from the MediaWiki 'image' table.
+		// Those are values we can gather from the MediaWiki 'image' table.
 		{ name: 'file_url', type: 'string', defaultValue: '' },
 		{ name: 'file_name', type: 'string' },
 		{ name: 'file_size', type: 'int', defaultValue: 0 },
@@ -77,26 +77,26 @@ Ext.define('BS.model.File', {
 		{ name: 'file_description', type: 'string', defaultValue: '' },
 		{ name: 'file_thumbnail_url', type: 'string', defaultValue: '' },
 
-		//Here come custom fields that are calculated on the server side
-		{ name: 'file_display_text', type: 'string', defaultValue: '' }, //TODO: Maybe fallback to 'file_name'
+		// Here come custom fields that are calculated on the server side
+		{ name: 'file_display_text', type: 'string', defaultValue: '' }, // TODO: Maybe fallback to 'file_name'
 		{ name: 'file_user_display_text', type: 'string', defaultValue: '' },
-		{ name: 'file_user_link', type: 'string', defaultValue: '', convert: function( value, record ) {
-			//This is not being calculated on the serverside for performance reasons
-			var title = new mw.Title( record.get( 'file_user_text' ), bs.ns.NS_USER );
-			var icon = mw.html.element( 'span', { 'class' : 'bs-icon-user' }, '' );
-			var link = mw.html.element(
-				'a',
-				{
-					'href': title.getUrl(),
-					'target': '_blank',
-					'data-bs-title': title.getPrefixedText(),
-					'data-bs-username': record.get( 'file_user_text' )
-				},
-				record.get( 'file_user_display_text' )
-			);
+		{ name: 'file_user_link', type: 'string', defaultValue: '', convert: function ( value, record ) {
+			// This is not being calculated on the serverside for performance reasons
+			var title = new mw.Title( record.get( 'file_user_text' ), bs.ns.NS_USER ),
+				icon = mw.html.element( 'span', { class: 'bs-icon-user' }, '' ),
+				link = mw.html.element(
+					'a',
+					{
+						href: title.getUrl(),
+						target: '_blank',
+						'data-bs-title': title.getPrefixedText(),
+						'data-bs-username': record.get( 'file_user_text' )
+					},
+					record.get( 'file_user_display_text' )
+				);
 			return mw.html.element( 'span', {}, new mw.html.Raw( icon + link ), '' );
-		}}
+		} }
 	]
 
-	//TODO: Implement getter
-});
+	// TODO: Implement getter
+} );

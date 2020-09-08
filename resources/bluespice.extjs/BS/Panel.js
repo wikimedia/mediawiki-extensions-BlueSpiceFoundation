@@ -4,15 +4,15 @@ Ext.define( 'BS.Panel', {
 	fieldDefaults: {
 		labelAlign: 'right'
 	},
-	bodyPadding:5,
+	bodyPadding: 5,
 
-	constructor: function() {
-		//Custom Settings
+	constructor: function () {
+		// Custom Settings
 		this.currentData = {};
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
-	initComponent: function() {
+	initComponent: function () {
 
 		this.items = this.makeItems();
 
@@ -21,19 +21,19 @@ Ext.define( 'BS.Panel', {
 		this.callParent( arguments );
 	},
 
-	afterInitComponent: function() {
+	afterInitComponent: function () {
 
 	},
 
-	getData: function(){
+	getData: function () {
 		return this.currentData;
 	},
 
-	setData: function( obj ){
+	setData: function ( obj ) {
 		this.currentData = obj;
 	},
 
-	makeItems: function() {
+	makeItems: function () {
 		return [];
 	}
-});
+} );

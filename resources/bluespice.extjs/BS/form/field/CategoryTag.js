@@ -1,5 +1,5 @@
 Ext.define( 'BS.form.field.CategoryTag', {
-	extend:'Ext.form.field.Tag',
+	extend: 'Ext.form.field.Tag',
 	requires: [ 'BS.model.Category', 'BS.tree.Categories' ],
 	displayField: 'text',
 	valueField: 'text',
@@ -10,26 +10,26 @@ Ext.define( 'BS.form.field.CategoryTag', {
 	filterPickList: true,
 	forceSelection: false,
 	createNewOnEnter: true,
-	emptyText: mw.message('bs-extjs-categoryboxselect-emptytext').plain(),
+	emptyText: mw.message( 'bs-extjs-categoryboxselect-emptytext' ).plain(),
 	delimiter: '|',
 
 	deferredSetValueConf: false,
 	showTreeTrigger: true,
 
-	constructor: function( cfg ) {
-		this.callParent( [cfg] );
+	constructor: function ( cfg ) {
+		this.callParent( [ cfg ] );
 
-		if( this.showTreeTrigger ) {
+		if ( this.showTreeTrigger ) {
 			var triggers = this.getTriggers();
-			triggers.showTree = new Ext.form.trigger.Trigger({
-				cls : Ext.baseCSSPrefix + 'form-search-trigger bs-form-tree-trigger',
+			triggers.showTree = new Ext.form.trigger.Trigger( {
+				cls: Ext.baseCSSPrefix + 'form-search-trigger bs-form-tree-trigger',
 				handler: this.showTree
-			});
+			} );
 			this.setTriggers( triggers );
 		}
 	},
 
-	initComponent: function() {
+	initComponent: function () {
 		this.store = Ext.create( 'Ext.data.JsonStore', {
 			proxy: {
 				type: 'ajax',
@@ -44,35 +44,35 @@ Ext.define( 'BS.form.field.CategoryTag', {
 				}
 			},
 			model: 'BS.model.Category'
-		});
+		} );
 		this.store.load();
 
 		this.store.on( 'load', this.onStoreLoad, this );
 
-		this.callParent(arguments);
-	},
-	onStoreLoad: function( store, records, successful, eOpts ) {
-		//this.setValue( "0, 1" );
-//		if( this.deferredSetValueConf ) {
-//			this.deferredSetValueConf.callback.apply(
-//				this, [this.deferredSetValueConf.value]
-//			);
-//			this.deferredSetValueConf = false;
-//		}
-	},
-	addValue: function( value ) {
 		this.callParent( arguments );
 	},
-	setValue: function( value ) {
-//		if( this.store.isLoading() ) {
-//			this.deferSetValue( this.setValue, value );
-//			return;
-//		}
+	onStoreLoad: function ( store, records, successful, eOpts ) {
+		// this.setValue( "0, 1" );
+		//		if( this.deferredSetValueConf ) {
+		//			this.deferredSetValueConf.callback.apply(
+		//				this, [this.deferredSetValueConf.value]
+		//			);
+		//			this.deferredSetValueConf = false;
+		//		}
+	},
+	addValue: function ( value ) {
 		this.callParent( arguments );
 	},
-	setValueByNames: function( names ) {
+	setValue: function ( value ) {
+		//		if( this.store.isLoading() ) {
+		//			this.deferSetValue( this.setValue, value );
+		//			return;
+		//		}
+		this.callParent( arguments );
+	},
+	setValueByNames: function ( names ) {
 		this.setValue( names );
-		/*if( this.store.isLoading() ) {
+		/* if( this.store.isLoading() ) {
 			this.deferSetValue( this.setValueByNames, names );
 			return;
 		}
@@ -83,29 +83,29 @@ Ext.define( 'BS.form.field.CategoryTag', {
 			indexes.push( record.get( 'cat_id' ) );
 		}, this );
 
-		this.setValue( indexes.join(',') + "" );*/
+		this.setValue( indexes.join(',') + "" ); */
 	},
-	deferSetValue: function( callback, value ) {
+	deferSetValue: function ( callback, value ) {
 		this.deferredSetValueConf = {
 			callback: callback,
 			value: value
 		};
 	},
 
-	onTrigger2Click : function( event ){
-		//lazy loading, as this trigger is optional
+	onTrigger2Click: function ( event ) {
+		// lazy loading, as this trigger is optional
 		Ext.require( 'BS.tree.Categories', this.showTree, this );
 	},
 
 	wdTree: null,
-	showTree: function() {
-		if( !this.wdTree ) {
-			var categoryTree =  new BS.tree.Categories();
+	showTree: function () {
+		if ( !this.wdTree ) {
+			var categoryTree = new BS.tree.Categories();
 			categoryTree.on( 'itemclick', this.onTreeItemClick, this );
 
-			this.wdTree = new Ext.Window({
+			this.wdTree = new Ext.Window( {
 				modal: true,
-				title: mw.message('bs-extjs-categorytree-title').plain(),
+				title: mw.message( 'bs-extjs-categorytree-title' ).plain(),
 				x: this.getX() + this.getWidth() + 10,
 				y: this.getY() + 50,
 				closeAction: 'hide',
@@ -115,7 +115,7 @@ Ext.define( 'BS.form.field.CategoryTag', {
 				items: [
 					categoryTree
 				]
-			});
+			} );
 
 			this.wireUpWithContainerWindow();
 		}
@@ -123,18 +123,17 @@ Ext.define( 'BS.form.field.CategoryTag', {
 		this.wdTree.show();
 	},
 
-	onTreeItemClick: function( tree, record, item, index, e, eOpts ) {
+	onTreeItemClick: function ( tree, record, item, index, e, eOpts ) {
 		if ( mw.config.get( 'BSInsertCategoryWithParents' ) ) {
 			this.addValuesFromRecord( record );
-		}
-		else {
+		} else {
 			this.addValue( [ record.data.text ] );
 		}
 	},
 
 	addValuesFromRecord: function ( record ) {
-		//parentNode is null if there is no parent, internalId "src" is the root of the categories
-		if ( record.parentNode && record.parentNode.internalId !== "src" ) {
+		// parentNode is null if there is no parent, internalId "src" is the root of the categories
+		if ( record.parentNode && record.parentNode.internalId !== 'src' ) {
 			this.addValuesFromRecord( record.parentNode );
 		}
 		this.addValue( [ record.data.text ] );
@@ -145,14 +144,14 @@ Ext.define( 'BS.form.field.CategoryTag', {
 	 * window when the parent window closes. As the CategoryBoxSelect is not necessarily in a window we need some
 	 * checks here
 	 */
-	wireUpWithContainerWindow: function() {
+	wireUpWithContainerWindow: function () {
 		var parentWindow = this.up( 'window' );
-		if( !parentWindow ) {
+		if ( !parentWindow ) {
 			return;
 		}
 
-		parentWindow.on( 'close', function() {
+		parentWindow.on( 'close', function () {
 			this.wdTree.close();
 		}, this );
 	}
-});
+} );

@@ -1,9 +1,9 @@
-Ext.define('BS.portal.ChartPortlet', {
+Ext.define( 'BS.portal.ChartPortlet', {
 	extend: 'BS.portal.Portlet',
 	layout: 'fit',
 	height: 300,
 
-	initComponent: function(){
+	initComponent: function () {
 		this.beforeInitCompontent();
 		this.ctMainConfig = this.ctMainConfig || this.makeDummyConfig();
 
@@ -15,46 +15,46 @@ Ext.define('BS.portal.ChartPortlet', {
 			store: this.makeStore(),
 			axes: this.makeAxes(),
 			series: this.makeSeries()
-		});
+		} );
 
 		this.items = [
 			this.ctMain
 		];
 
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
-	makeStore: function() {
+	makeStore: function () {
 		return this.ctMainConfig.store;
 	},
-	makeAxes: function() {
+	makeAxes: function () {
 		return this.ctMainConfig.axes;
 
 	},
-	makeSeries: function() {
+	makeSeries: function () {
 		return this.ctMainConfig.series;
 	},
 
-	makeDummyConfig: function() {
+	makeDummyConfig: function () {
 		return {
-			store: Ext.create('Ext.data.JsonStore', {
-				fields: ['name', 'sp500', 'djia'],
-				data: (function(){
-					var data = [{ name: 0, djia: 10000, sp500: 1100 }], i;
-					for (i = 1; i < 50; i++) {
-						data.push({
+			store: Ext.create( 'Ext.data.JsonStore', {
+				fields: [ 'name', 'sp500', 'djia' ],
+				data: ( function () {
+					var data = [ { name: 0, djia: 10000, sp500: 1100 } ], i;
+					for ( i = 1; i < 50; i++ ) {
+						data.push( {
 							name: i,
-							sp500: data[i - 1].sp500 + ((Math.floor(Math.random() * 2) % 2) ? -1 : 1) * Math.floor(Math.random() * 7),
-							djia: data[i - 1].djia + ((Math.floor(Math.random() * 2) % 2) ? -1 : 1) * Math.floor(Math.random() * 7)
-						});
+							sp500: data[ i - 1 ].sp500 + ( ( Math.floor( Math.random() * 2 ) % 2 ) ? -1 : 1 ) * Math.floor( Math.random() * 7 ),
+							djia: data[ i - 1 ].djia + ( ( Math.floor( Math.random() * 2 ) % 2 ) ? -1 : 1 ) * Math.floor( Math.random() * 7 )
+						} );
 					}
 					return data;
-				})()
-			}),
-			axes: [{
+				}() )
+			} ),
+			axes: [ {
 				type: 'numeric',
 				position: 'left',
-				fields: ['djia'],
+				fields: [ 'djia' ],
 				title: 'Dow Jones Average',
 				label: {
 					font: '11px Arial'
@@ -63,13 +63,13 @@ Ext.define('BS.portal.ChartPortlet', {
 				type: 'numeric',
 				position: 'right',
 				grid: false,
-				fields: ['sp500'],
+				fields: [ 'sp500' ],
 				title: 'S&P 500',
 				label: {
-						font: '11px Arial'
-					}
-			}],
-			series: [{
+					font: '11px Arial'
+				}
+			} ],
+			series: [ {
 				type: 'line',
 				lineWidth: 1,
 				showMarkers: false,
@@ -94,7 +94,7 @@ Ext.define('BS.portal.ChartPortlet', {
 					 stroke: 'rgb(17, 95, 166)'
 
 				}
-			}]
+			} ]
 		};
 	}
-});
+} );

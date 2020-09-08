@@ -1,4 +1,4 @@
-Ext.define('BS.form.SimpleSelectBox', {
+Ext.define( 'BS.form.SimpleSelectBox', {
 	extend: 'Ext.form.field.ComboBox',
 	queryMode: 'local',
 	triggerAction: 'all',
@@ -7,14 +7,14 @@ Ext.define('BS.form.SimpleSelectBox', {
 	allowBlank: false,
 	forceSelection: true,
 
-	//Custom settings
+	// Custom settings
 	bsData: {},
 
-	initComponent: function() {
-		this.store = Ext.create('Ext.data.JsonStore', {
+	initComponent: function () {
+		this.store = Ext.create( 'Ext.data.JsonStore', {
 			fields: [ this.displayField, this.valueField ],
 			data: this.bsData
-		});
-		this.callParent(arguments);
+		} );
+		this.callParent( arguments );
 	}
-});
+} );

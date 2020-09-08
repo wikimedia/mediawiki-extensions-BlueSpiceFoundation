@@ -7,7 +7,7 @@ Ext.define( 'BS.tree.WikiSubPages', {
 	treeRootPath: '',
 	renderLinks: false,
 
-	initComponent: function() {
+	initComponent: function () {
 		this.store = new Ext.data.TreeStore( {
 			proxy: {
 				type: 'ajax',
@@ -22,18 +22,18 @@ Ext.define( 'BS.tree.WikiSubPages', {
 				id: this.treeRootPath,
 				expanded: true
 			},
-			folderSort: true/*,
-			model: 'BS.model.Title'*/
-		});
+			folderSort: true/* ,
+			model: 'BS.model.Title' */
+		} );
 
-		if( this.renderLinks ) {
-			this.columns = [{
+		if ( this.renderLinks ) {
+			this.columns = [ {
 				xtype: 'treecolumn',
 				flex: 1,
 				dataIndex: 'page_link'
-			}];
+			} ];
 		}
 
 		this.callParent( arguments );
 	}
-});
+} );

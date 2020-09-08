@@ -17,6 +17,7 @@ module.exports = function ( grunt ) {
 				'!resources/extjs/**'
 			]
 		},
+		// eslint-disable-next-line es/no-object-assign
 		banana: Object.assign(
 			conf.MessagesDirs,
 			{

@@ -3,7 +3,7 @@
  * one can link to. This includes SpecialPages.
  */
 
-Ext.define('BS.model.Title', {
+Ext.define( 'BS.model.Title', {
 	extend: 'Ext.data.Model',
 
 	/**
@@ -16,37 +16,37 @@ Ext.define('BS.model.Title', {
 	idProperty: 'prefixedText',
 
 	fields: [
-		//Those are values we can gather from the MediaWiki 'page' table.
-		//Not every Title is managed in this table!
+		// Those are values we can gather from the MediaWiki 'page' table.
+		// Not every Title is managed in this table!
 		{ name: 'page_id', type: 'int', defaultValue: 0 },
 		{ name: 'page_namespace', type: 'int', defaultValue: -99 },
 		{ name: 'page_title', type: 'string', defaultValue: '' },
 
-		//Here come custom fields that are necessary for the usage within ExtJS
-		{ name: 'prefixedText', type: 'string' }, //TODO:  Maybe calculate from page_namespace and page_title?
-		                                          //http://docs.sencha.com/extjs/4.2.2/#!/api/Ext.data.Field
+		// Here come custom fields that are necessary for the usage within ExtJS
+		{ name: 'prefixedText', type: 'string' }, // TODO:  Maybe calculate from page_namespace and page_title?
+		                                          // http://docs.sencha.com/extjs/4.2.2/#!/api/Ext.data.Field
 		{ name: 'displayText', type: 'string' },
-		{ name: 'type', type: 'string' }, //'wikipage', 'specialpage'(, 'interwiki'?)
-		{ name: 'page_link', type: 'string' } //An anchor HTML fragment with all kinds of meta-data
+		{ name: 'type', type: 'string' }, // 'wikipage', 'specialpage'(, 'interwiki'?)
+		{ name: 'page_link', type: 'string' } // An anchor HTML fragment with all kinds of meta-data
 	],
 
-	getPrefixedText: function() {
+	getPrefixedText: function () {
 		return this.get( 'prefixedText' );
 	},
 
-	getLocalUrl: function() {
+	getLocalUrl: function () {
 		return mw.util.getUrl( this.getPrefixedText() );
 	},
 
-	exists: function() {
-		return this.get('page_id') > 0;
+	exists: function () {
+		return this.get( 'page_id' ) > 0;
 	},
 
-	getNamespace: function() {
+	getNamespace: function () {
 		return this.get( 'page_namespace' );
 	},
 
-	getNsText: function() {
+	getNsText: function () {
 		return bs.util.getNamespaceText( this.getNamespace() );
 	}
-});
+} );

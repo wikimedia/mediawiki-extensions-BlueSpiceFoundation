@@ -18,27 +18,27 @@ Ext.define( 'BS.Window', {
 	/*
 		mixins: {
 		mediaWiki: 'BS.mixins.MediaWiki'
-	},*/
+	}, */
 	width: 450,
 	minHeight: 120,
 	closeAction: 'hide',
 	layout: 'form',
 	title: '',
 
-	bodyPadding:5,
+	bodyPadding: 5,
 
-	constructor: function(config) {
+	constructor: function ( config ) {
 		var cfg = config || {};
 		this.fieldDefaults = cfg.fieldDefaults || {
 			labelAlign: 'right'
 		};
 
-		//Custom Settings
+		// Custom Settings
 		this.currentData = {};
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
-	initComponent: function() {
+	initComponent: function () {
 		this.items = this.makeItems();
 		this.dockedItems = this.makeDockedItems();
 
@@ -46,7 +46,7 @@ Ext.define( 'BS.Window', {
 
 		this.callParent( arguments );
 	},
-	afterInitComponent: function() {
+	afterInitComponent: function () {
 
 	},
 	show: function () {
@@ -54,10 +54,10 @@ Ext.define( 'BS.Window', {
 		this.callParent( arguments );
 
 		// (re)set position
-		if( !this.original_x ){
+		if ( !this.original_x ) {
 			this.original_x = this.getX();
 		}
-		if( !this.original_y ){
+		if ( !this.original_y ) {
 			this.original_y = this.getY();
 		}
 		this.setPosition( this.original_x, this.original_y, false );
@@ -68,35 +68,35 @@ Ext.define( 'BS.Window', {
 			this.close();
 		}
 	},
-	onBtnCancelClick: function() {
+	onBtnCancelClick: function () {
 		this.resetData();
 		this.fireEvent( 'cancel', this );
 		this.close();
 	},
-	showLoadMask: function() {
+	showLoadMask: function () {
 		this.getEl().mask(
-			mw.message('bs-extjs-loading').plain()/*,
-			'x-mask-loading'*/
+			mw.message( 'bs-extjs-loading' ).plain()/* ,
+			'x-mask-loading' */
 		);
 	},
-	hideLoadMask: function() {
+	hideLoadMask: function () {
 		this.getEl().unmask();
 	},
-	//TODO: Examine Ext.Class config mechanism
-	//HINT: http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.Class-cfg-config
-	getData: function(){
+	// TODO: Examine Ext.Class config mechanism
+	// HINT: http://docs.sencha.com/extjs/4.2.1/#!/api/Ext.Class-cfg-config
+	getData: function () {
 		return this.currentData;
 	},
-	setData: function( obj ){
+	setData: function ( obj ) {
 		this.currentData = obj;
 	},
-	resetData: function() {
+	resetData: function () {
 	},
-	setTitle: function( title ){
+	setTitle: function ( title ) {
 		this.title = title;
 		this.callParent( arguments );
 	},
-	makeId: function( part ) {
+	makeId: function ( part ) {
 		return this.getId() + '-' + part;
 	},
 
@@ -106,25 +106,25 @@ Ext.define( 'BS.Window', {
 		getInstance: function( key ) {
 
 		}
-	}*/
+	} */
 
-	makeItems: function() {
+	makeItems: function () {
 		return [];
 	},
 
-	makeButtons: function() {
+	makeButtons: function () {
 		this.btnOK = Ext.create( 'Ext.Button', {
-			text: mw.message('bs-extjs-ok').plain(),
-			id: this.getId()+'-btn-ok',
+			text: mw.message( 'bs-extjs-ok' ).plain(),
+			id: this.getId() + '-btn-ok',
 			cls: 'bs-extjs-btn-ok'
-		});
+		} );
 		this.btnOK.on( 'click', this.onBtnOKClick, this );
 
 		this.btnCancel = Ext.create( 'Ext.Button', {
-			text: mw.message('bs-extjs-cancel').plain(),
-			id: this.getId()+'-btn-cancel',
+			text: mw.message( 'bs-extjs-cancel' ).plain(),
+			id: this.getId() + '-btn-cancel',
 			cls: 'bs-extjs-btn-cancel'
-		});
+		} );
 		this.btnCancel.on( 'click', this.onBtnCancelClick, this );
 
 		return [
@@ -134,16 +134,16 @@ Ext.define( 'BS.Window', {
 		];
 	},
 
-	makeDockedItems: function() {
+	makeDockedItems: function () {
 		return [
-			new Ext.toolbar.Toolbar({
+			new Ext.toolbar.Toolbar( {
 				dock: 'bottom',
 				ui: 'footer',
 				defaults: {
 					minWidth: this.minButtonWidth
 				},
 				items: this.makeButtons()
-			})
+			} )
 		];
 	}
-});
+} );

@@ -1,6 +1,6 @@
-( function ( mw, bs, $, d,undefined ) {
+( function ( mw, bs, $, d, undefined ) {
 	// DOM ready
-	$( function() {
+	$( function () {
 		var $cnt, config, callback, observer, i;
 
 		$cnt = $( '.extjs-load-placeholder-cnt' );
@@ -21,14 +21,14 @@
 		config = {
 			childList: true
 		};
-		callback = function( mutationList, observer ) {
+		callback = function ( mutationList, observer ) {
 			for ( i = 0; i < mutationList.length; i++ ) {
-				if ( mutationList[i].type === 'childList' ) {
+				if ( mutationList[ i ].type === 'childList' ) {
 					$cnt.find( '.placeholder-loader' ).remove();
 				}
 			}
 		};
 		observer = new MutationObserver( callback );
-		observer.observe( $cnt[0], config );
+		observer.observe( $cnt[ 0 ], config );
 	} );
 }( mediaWiki, blueSpice, jQuery, document ) );

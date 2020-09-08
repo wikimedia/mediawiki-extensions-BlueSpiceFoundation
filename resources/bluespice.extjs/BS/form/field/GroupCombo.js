@@ -8,15 +8,14 @@ Ext.define( 'BS.form.field.GroupCombo', {
 	forceSelection: true,
 	queryMode: 'local',
 	fieldLabel: mw.message( 'bs-extjs-label-group' ).plain(),
-	emptyText: mw.message( "bs-extjs-combo-box-default-placeholder" ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
 
-	initComponent: function() {
+	initComponent: function () {
 		this.store = this.makeStore();
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
-	makeStore: function() {
+	makeStore: function () {
 		return new BS.store.ApiGroup();
-	},
-});
-
+	}
+} );
