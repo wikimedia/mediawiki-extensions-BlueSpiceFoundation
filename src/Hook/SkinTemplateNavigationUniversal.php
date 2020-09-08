@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook SkinTemplateNavigation
+ * Hook handler base class for MediaWiki hook SkinTemplateNavigation::Universal
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,25 +18,24 @@
  * This file is part of BlueSpice MediaWiki
  * For further information visit https://bluespice.com
  *
- * @author     Robert Vogel <vogel@hallowelt.com>
+ * @author     Patric Wirth
  * @package    BlueSpiceFoundation
- * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2020 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use SkinTemplate;
 
-/**
- * DEPRECATED
- * @deprecated since version 3.3 - use SkinTemplateNavigationUniversal instead
- */
-abstract class SkinTemplateNavigation extends Hook {
+abstract class SkinTemplateNavigationUniversal extends Hook {
 
 	/**
 	 *
-	 * @var \SkinTemplate
+	 * @var SkinTemplate
 	 */
 	protected $sktemplate = null;
 
@@ -48,11 +47,11 @@ abstract class SkinTemplateNavigation extends Hook {
 
 	/**
 	 *
-	 * @param \SkinTemplate &$sktemplate
+	 * @param SkinTemplate $sktemplate
 	 * @param array &$links
 	 * @return bool
 	 */
-	public static function callback( &$sktemplate, &$links ) {
+	public static function callback( $sktemplate, &$links ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -65,12 +64,12 @@ abstract class SkinTemplateNavigation extends Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
-	 * @param \Config $config
-	 * @param \SkinTemplate &$sktemplate
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param SkinTemplate $sktemplate
 	 * @param array &$links
 	 */
-	public function __construct( $context, $config, &$sktemplate, &$links ) {
+	public function __construct( $context, $config, $sktemplate, &$links ) {
 		parent::__construct( $context, $config );
 
 		$this->sktemplate = $sktemplate;
