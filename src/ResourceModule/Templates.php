@@ -25,8 +25,8 @@
  */
 namespace BlueSpice\ResourceModule;
 
-use BlueSpice\Services;
 use BlueSpice\TemplateFactory;
+use MediaWiki\MediaWikiServices;
 use ResourceLoaderFileModule;
 
 class Templates extends ResourceLoaderFileModule {
@@ -62,6 +62,6 @@ class Templates extends ResourceLoaderFileModule {
 	 * @return TemplateFactory
 	 */
 	protected function getTemplateFactory() {
-		return Services::getInstance()->getService( 'BSTemplateFactory' );
+		return MediaWikiServices::getInstance()->getService( 'BSTemplateFactory' );
 	}
 }

@@ -33,6 +33,7 @@ use Exception;
 use Hooks;
 use IContextSource;
 use JsonSerializable;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use RequestContext;
 use Status;
@@ -167,7 +168,7 @@ abstract class Entity implements JsonSerializable {
 	public static function newFromFactory( \stdClass $data, EntityConfig $config,
 		IStore $store, EntityFactory $entityFactory = null ) {
 		if ( !$entityFactory ) {
-			$entityFactory = Services::getInstance()->getService(
+			$entityFactory = MediaWikiServices::getInstance()->getService(
 				'BSEntityFactory'
 			);
 		}
@@ -328,7 +329,7 @@ abstract class Entity implements JsonSerializable {
 		if ( !$context ) {
 			$context = RequestContext::getMain();
 		}
-		return Services::getInstance()->getService( 'BSRendererFactory' )->get(
+		return MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
 			$this->getConfig()->get( 'Renderer' ),
 			$this->makeRendererParams( [ Renderer::PARAM_CONTEXT => $context ] )
 		);

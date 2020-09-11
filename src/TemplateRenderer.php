@@ -31,6 +31,7 @@ use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\MediaWikiServices;
 
 abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 
@@ -71,7 +72,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	/**
 	 *
 	 * @param string $name
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @param Config $config
 	 * @param Params $params
 	 * @param IContextSource|null $context
@@ -80,8 +81,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @param TemplateFactory|null $templateFactory
 	 * @return Renderer
 	 */
-	public static function factory( $name, Services $services, Config $config, Params $params,
-		IContextSource $context = null, LinkRenderer $linkRenderer = null,
+	public static function factory( $name, MediaWikiServices $services, Config $config,
+		Params $params, IContextSource $context = null, LinkRenderer $linkRenderer = null,
 		CacheHelper $cacheHelper = null, TemplateFactory $templateFactory = null ) {
 		if ( !$context ) {
 			$context = $params->get(
@@ -253,8 +254,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 */
 	protected function getCacheHelper() {
 		if ( !$this->cacheHelper ) {
-			$this->cacheHelper = Services::getInstance()->getService( 'BSUtilityFactory' )
-				->getCacheHelper();
+			$this->cacheHelper = MediaWikiServices::getInstance()
+				->getService( 'BSUtilityFactory' )->getCacheHelper();
 			// Deprecated since 3.1! All sub classes should be registered with a factory
 			// callback and inject CacheHelper
 			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
@@ -268,7 +269,9 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 */
 	protected function getTemplateFactory() {
 		if ( !$this->templateFactory ) {
-			$this->templateFactory = Services::getInstance()->getService( 'BSTemplateFactory' );
+			$this->templateFactory = MediaWikiServices::getInstance()->getService(
+				'BSTemplateFactory'
+			);
 			// Deprecated since 3.1! All sub classes should be registered with a factory
 			// callback and inject TemplateFactory
 			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );

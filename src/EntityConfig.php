@@ -31,6 +31,7 @@ use BlueSpice\Data\Entity\Schema;
 use BlueSpice\Data\FieldType;
 use Config;
 use JsonSerializable;
+use MediaWiki\MediaWikiServices;
 
 /**
  * EntityConfig class for BlueSpice
@@ -89,7 +90,7 @@ abstract class EntityConfig implements JsonSerializable, Config {
 		if ( $this->config ) {
 			return $this->config;
 		}
-		$this->config = Services::getInstance()
+		$this->config = MediaWikiServices::getInstance()
 			->getConfigFactory()->makeConfig( 'bsg' );
 		return $this->config;
 	}

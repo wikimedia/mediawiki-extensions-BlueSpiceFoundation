@@ -3,9 +3,9 @@
 namespace BlueSpice\Permission\Lockdown;
 
 use BlueSpice\IServiceProvider;
-use BlueSpice\Services;
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
 use User;
@@ -26,7 +26,7 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 
 	/**
 	 *
-	 * @var Services
+	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
@@ -40,9 +40,10 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 	 *
 	 * @param Config $config
 	 * @param IContextSource $context
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 */
-	protected function __construct( Config $config, IContextSource $context, Services $services ) {
+	protected function __construct( Config $config, IContextSource $context,
+		MediaWikiServices $services ) {
 		$this->config = $config;
 		$this->context = $context;
 		$this->services = $services;
@@ -52,16 +53,17 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 	 *
 	 * @param Config $config
 	 * @param IContextSource $context
-	 * @param Services $services
+	 * @param MediaWikiServices $services
 	 * @return Module
 	 */
-	public static function getInstance( Config $config, IContextSource $context, Services $services ) {
+	public static function getInstance( Config $config, IContextSource $context,
+		MediaWikiServices $services ) {
 		return new static( $config, $context, $services );
 	}
 
 	/**
 	 *
-	 * @return Services
+	 * @return MediaWikiServices
 	 */
 	public function getServices() {
 		return $this->services;

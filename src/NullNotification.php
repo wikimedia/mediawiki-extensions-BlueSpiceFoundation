@@ -2,6 +2,7 @@
 
 namespace BlueSpice;
 
+use MediaWiki\MediaWikiServices;
 use User;
 
 /**
@@ -48,7 +49,7 @@ class NullNotification implements INotification {
 	 * @return User
 	 */
 	public function getUser() {
-		return \BlueSpice\Services::getInstance()
+		return MediaWikiServices::getInstance()
 			->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();
 	}
 

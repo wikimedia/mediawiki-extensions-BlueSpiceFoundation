@@ -3,7 +3,7 @@ namespace BlueSpice\Permission\Role;
 
 use BlueSpice\Permission\IRole;
 use BlueSpice\Permission\PermissionRegistry;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Base class for Roles
@@ -77,7 +77,7 @@ abstract class Role implements IRole {
 	 * @return IRole
 	 */
 	public static function newFromNameAndPermissions( $name, $permissions = [] ) {
-		$roleFactory = Services::getInstance()->getService( 'BSRoleFactory' );
+		$roleFactory = MediaWikiServices::getInstance()->getService( 'BSRoleFactory' );
 		$role = $roleFactory->makeRole( $name );
 		foreach ( $permissions as $permission ) {
 			$role->addPermission( $permission );

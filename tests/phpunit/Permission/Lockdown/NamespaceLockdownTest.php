@@ -3,7 +3,6 @@
 namespace BlueSpice\Tests\Permission\Lockdown;
 
 use BlueSpice\Permission\Lockdown\Module\Namespaces;
-use BlueSpice\Services;
 use MediaWiki\MediaWikiServices;
 use MediaWikiTestCase;
 use Title;
@@ -82,8 +81,8 @@ class NamespaceLockdownTest extends MediaWikiTestCase {
 	}
 
 	protected function setModule() {
-		/** @var Services $services */
-		$services = Services::getInstance();
+		/** @var MediaWikiServices $services */
+		$services = MediaWikiServices::getInstance();
 		$this->module = Namespaces::getInstance(
 			$services->getConfigFactory()->makeConfig( 'bsg' ),
 			\RequestContext::getMain(),

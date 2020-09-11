@@ -2,12 +2,13 @@
 namespace BlueSpice\Utility;
 
 use BlueSpice\TargetCache\Title\Target;
+use MediaWiki\MediaWikiServices;
 
 class PagePropHelper {
 
 	/**
 	 *
-	 * @var \BlueSpice\Services
+	 * @var MediaWikiServices
 	 */
 	protected $services;
 
@@ -18,7 +19,7 @@ class PagePropHelper {
 	protected $title = null;
 
 	/**
-	 * @param \BlueSpice\Services $services
+	 * @param MediaWikiServices $services
 	 * @param Title $title
 	 */
 	public function __construct( $services, \Title $title ) {

@@ -2,12 +2,12 @@
 
 namespace BlueSpice\Utility;
 
-use BlueSpice\Services;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\FileLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper;
 use BlueSpice\Utility\WikiTextLinksHelper\InterwikiLinksHelper;
+use MediaWiki\MediaWikiServices;
 
 class WikiTextLinksHelper {
 
@@ -77,7 +77,7 @@ class WikiTextLinksHelper {
 		}
 		$this->interwikiLinks = new InterwikiLinksHelper(
 			$this->wikitext,
-			Services::getInstance()
+			MediaWikiServices::getInstance()
 		);
 		return $this->interwikiLinks;
 	}
@@ -92,7 +92,7 @@ class WikiTextLinksHelper {
 		}
 		$this->interlanguageLinks = new InterlanguageLinksHelper(
 			$this->wikitext,
-			Services::getInstance()
+			MediaWikiServices::getInstance()
 		);
 		return $this->interlanguageLinks;
 	}

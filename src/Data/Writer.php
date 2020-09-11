@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 abstract class Writer implements IWriter {
 
@@ -31,7 +31,7 @@ abstract class Writer implements IWriter {
 
 		$this->config = $config;
 		if ( $this->config === null ) {
-			$this->config = Services::getInstance()->getMainConfig();
+			$this->config = MediaWikiServices::getInstance()->getMainConfig();
 		}
 	}
 

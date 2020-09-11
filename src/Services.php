@@ -2,11 +2,13 @@
 
 namespace BlueSpice;
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * DEPRECATED!
  * @deprecated since version 3.2.0 - use \MediaWiki\MediaWikiSerices
  */
-class Services extends ServicesDecorator {
+class Services extends MediaWikiServices {
 
 	/**
 	 * DEPRECATED!

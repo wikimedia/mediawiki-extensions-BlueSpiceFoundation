@@ -1,6 +1,5 @@
 <?php
 
-use BlueSpice\Services;
 use MediaWiki\MediaWikiServices;
 
 class BsNamespaceHelper {
@@ -112,7 +111,7 @@ class BsNamespaceHelper {
 			}
 		}
 
-		return Services::getInstance()->getContentLanguage()->getNsText(
+		return MediaWikiServices::getInstance()->getContentLanguage()->getNsText(
 			$iNamespaceId
 		);
 	}
@@ -164,7 +163,7 @@ class BsNamespaceHelper {
 			return $vNamespace;
 		}
 
-		return Services::getInstance()->getContentLanguage()->getNsIndex( $vNamespace );
+		return MediaWikiServices::getInstance()->getContentLanguage()->getNsIndex( $vNamespace );
 	}
 
 	/**
@@ -191,7 +190,7 @@ class BsNamespaceHelper {
 				__CLASS__ . ":" . __METHOD__ . ' - expects comma separated string'
 			);
 		}
-		$contLang = Services::getInstance()->getContentLanguage();
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		$sCSV = trim( $sCSV );
 		// make namespaces case insensitive
 		$sCSV = mb_strtolower( $sCSV );
@@ -256,7 +255,7 @@ class BsNamespaceHelper {
 	public static function getNamespacesForSelectOptions( $aExcludeIds = [] ) {
 		$aNamespaces = [];
 
-		$contLang = Services::getInstance()->getContentLanguage();
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		foreach ( $contLang->getNamespaces() as $sNamespace ) {
 			$iNsIndex = $contLang->getNsIndex( $sNamespace );
 			if ( in_array( $iNsIndex, $aExcludeIds ) ) {
