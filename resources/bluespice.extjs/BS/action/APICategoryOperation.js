@@ -5,7 +5,7 @@ Ext.define( 'BS.action.APICategoryOperation', {
 	pageId: -1,
 	task: '',
 
-	execute: function(){
+	execute: function () {
 		var dfd = $.Deferred();
 		this.actionStatus = BS.action.Base.STATUS_RUNNING;
 
@@ -23,13 +23,13 @@ Ext.define( 'BS.action.APICategoryOperation', {
 		return dfd.promise();
 	},
 
-	doCategoryOperation: function( dfd, taskData ){
+	doCategoryOperation: function ( dfd, taskData ) {
 		var me = this;
 
 		if ( taskData.categories.length > 0 ) {
 			taskData.categories = taskData.categories.join( '|' );
 		} else {
-			delete( taskData.categories );
+			delete ( taskData.categories );
 		}
 
 		bs.api.tasks.exec(
@@ -40,21 +40,21 @@ Ext.define( 'BS.action.APICategoryOperation', {
 				useService: true,
 				context: this.getContextObject( taskData )
 			}
-		).fail(function( response ){
+		).fail( function ( response ) {
 			me.actionStatus = BS.action.Base.STATUS_ERROR;
-			dfd.reject( me, taskData, response);
-		})
-			.done(function( response ) {
-				if( !response.success ){
+			dfd.reject( me, taskData, response );
+		} )
+			.done( function ( response ) {
+				if ( !response.success ) {
 					me.actionStatus = BS.action.Base.STATUS_ERROR;
 					dfd.reject( me, taskData, response );
 				}
 				me.actionStatus = BS.action.Base.STATUS_DONE;
 				dfd.resolve( me );
-			});
+			} );
 	},
 
-	getContextObject: function( set ){
+	getContextObject: function ( set ) {
 		var title, context = {
 			wgAction: 'edit',
 			wgCanonicalSpecialPageName: false,
@@ -78,9 +78,7 @@ Ext.define( 'BS.action.APICategoryOperation', {
 		return context;
 	},
 
-	getDescription: function() {
+	getDescription: function () {
 		// STUB
 	}
-});
-
-
+} );

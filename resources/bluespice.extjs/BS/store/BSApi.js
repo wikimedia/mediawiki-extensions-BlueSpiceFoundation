@@ -1,12 +1,12 @@
-Ext.define('BS.store.BSApi', {
+Ext.define( 'BS.store.BSApi', {
 	extend: 'Ext.data.JsonStore',
 	apiAction: null,
 
-	constructor: function( cfg ) {
-		cfg = Ext.merge({
+	constructor: function ( cfg ) {
+		cfg = Ext.merge( {
 			proxy: {
 				type: 'ajax',
-				url: mw.util.wikiScript('api'),
+				url: mw.util.wikiScript( 'api' ),
 				extraParams: {
 					format: 'json',
 					context: JSON.stringify( bs.util.getCAIContext() )
@@ -17,27 +17,28 @@ Ext.define('BS.store.BSApi', {
 					idProperty: 'id',
 					totalProperty: 'total'
 				},
-				timeout: 30 * 60 * 1000 //30 minutes
+				timeout: 30 * 60 * 1000 // 30 minutes
 			},
 			autoLoad: true,
 			remoteSort: true,
 			remoteFilter: true
-		}, cfg);
+		}, cfg );
 		cfg.proxy.extraParams.action = cfg.apiAction || this.apiAction;
-		this.callParent([cfg]);
+		this.callParent( [ cfg ] );
 		this.on( 'load', this.checkForEmptyPage, this );
 	},
 
 	/**
 	 * Checks whether the current page is empty and loads previous one if
 	 * possible
-	 * @param BS.store.BSApi sender
-	 * @param Ext.data.Model[] records
-	 * @param Boolean successful
-	 * @param Object eOpts
-	 * @returns void
+	 *
+	 * @param {BS.store.BSApi} sender
+	 * @param {Ext.data.Model[]} records
+	 * @param {boolean} successful
+	 * @param {object} eOpts
+	 * @return void
 	 */
-	checkForEmptyPage: function( sender, records, successful, eOpts ) {
+	checkForEmptyPage: function ( sender, records, successful, eOpts ) {
 		/**
 		 * ExtJS Grid/PagingToolbar: a user is on the last page of results
 		 * (bigger than "1") and deletes all entries from it.
@@ -49,8 +50,8 @@ Ext.define('BS.store.BSApi', {
 		 * Therefore we check for these circumstances and select a previous
 		 * page if possible
 		 */
-		if( records && records.length === 0 && sender.getTotalCount() !== 0 && sender.currentPage !== 1 ) {
+		if ( records && records.length === 0 && sender.getTotalCount() !== 0 && sender.currentPage !== 1 ) {
 			sender.loadPage( sender.currentPage - 1 );
 		}
 	}
-});
+} );

@@ -12,33 +12,33 @@ Ext.define( 'BS.dialog.Upload', {
 	/* Component specific */
 	uploadPanelCfg: {},
 
-	afterInitComponent: function() {
+	afterInitComponent: function () {
 		this.upMain = new BS.panel.Upload( $.extend(
-		this.uploadPanelCfg,
-		{
-			id: this.getId()+'-upload-panel',
-			allowedFileExtensions: this.allowedFileExtensions
-		} ) );
+			this.uploadPanelCfg,
+			{
+				id: this.getId() + '-upload-panel',
+				allowedFileExtensions: this.allowedFileExtensions
+			} ) );
 		this.upMain.on( 'upload-complete', this.onUpMainUploadComplete, this );
 
 		this.items = [
 			this.upMain
 		];
 
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
-	onBtnOKClick: function() {
+	onBtnOKClick: function () {
 		this.upMain.uploadFile();
 	},
 
-	onUpMainUploadComplete: function( panel, upload ){
+	onUpMainUploadComplete: function ( panel, upload ) {
 		this.fireEvent( 'ok', this, upload );
 		this.close();
 	},
 
-	resetData: function(){
+	resetData: function () {
 		this.upMain.getForm().reset();
-		this.callParent(arguments);
+		this.callParent( arguments );
 	}
-});
+} );

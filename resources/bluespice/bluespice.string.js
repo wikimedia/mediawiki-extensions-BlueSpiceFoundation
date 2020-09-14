@@ -1,7 +1,7 @@
-//String functions
+// String functions
 String.prototype.ellipse = function ( maxLength ) {
 	if ( this.length > maxLength ) {
-		return this.substr( 0, maxLength-3 ) + '...';
+		return this.substr( 0, maxLength - 3 ) + '...';
 	}
 	return this;
 };
@@ -17,13 +17,13 @@ String.prototype.endsWith = function ( endString ) {
 
 String.prototype.format = function () {
 	var args = arguments;
-	return this.replace(/{(\d+)}/g, function(match, number) {
-		return typeof args[ number ] !== 'undefined' ? args[number] : match;
-	});
+	return this.replace( /{(\d+)}/g, function ( match, number ) {
+		return typeof args[ number ] !== 'undefined' ? args[ number ] : match;
+	} );
 };
 
-//from http://locutus.io/php/strings/ucfirst/
-String.prototype.ucFirst = function() {
+// from http://locutus.io/php/strings/ucfirst/
+String.prototype.ucFirst = function () {
 	//  discuss at: http://locutus.io/php/ucfirst/
 	// original by: Kevin van Zonneveld (http://kvz.io)
 	// bugfixed by: Onno Marsman (https://twitter.com/onnomarsman)
@@ -34,13 +34,12 @@ String.prototype.ucFirst = function() {
 	return f + this.substr( 1 );
 };
 
-//hint: http://stackoverflow.com/questions/3629183/why-doesnt-indexof-work-on-an-array-ie8/3629211#3629211
+// hint: http://stackoverflow.com/questions/3629183/why-doesnt-indexof-work-on-an-array-ie8/3629211#3629211
 if ( !Array.prototype.indexOf ) {
-	Array.prototype.indexOf = function( elt /*, from*/ )
-	{
-		var len = this.length >>> 0;
+	Array.prototype.indexOf = function ( elt /* , from */ ) {
+		var len = this.length >>> 0,
 
-		var from = Number( arguments[ 1 ] ) || 0;
+		 from = Number( arguments[ 1 ] ) || 0;
 		from = ( from < 0 ) ? Math.ceil( from ) : Math.floor( from );
 		if ( from < 0 ) {
 			from += len;
@@ -48,7 +47,7 @@ if ( !Array.prototype.indexOf ) {
 
 		for ( ; from < len; from++ ) {
 			if ( from in this &&
-					this[from] === elt ) {
+					this[ from ] === elt ) {
 				return from;
 			}
 		}

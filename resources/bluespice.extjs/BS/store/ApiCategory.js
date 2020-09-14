@@ -1,4 +1,4 @@
-Ext.define('BS.store.ApiCategory', {
+Ext.define( 'BS.store.ApiCategory', {
 	extend: 'BS.store.BSApi',
 	apiAction: 'bs-category-store',
 	fields: [
@@ -10,4 +10,4 @@ Ext.define('BS.store.ApiCategory', {
 		'cat_files',
 		'prefixed_text'
 	]
-});
+} );

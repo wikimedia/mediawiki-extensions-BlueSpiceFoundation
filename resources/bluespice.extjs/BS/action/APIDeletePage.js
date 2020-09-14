@@ -1,7 +1,7 @@
 Ext.define( 'BS.action.APIDeletePage', {
 	extend: 'BS.action.Base',
 
-	//Custom config
+	// Custom config
 	pageTitle: '',
 
 	execute: function () {
@@ -14,30 +14,29 @@ Ext.define( 'BS.action.APIDeletePage', {
 	},
 
 	doAPIDelete: function ( dfd ) {
-		var me = this;
-
-		var deletePageAPI = new mw.Api();
+		var me = this,
+			deletePageAPI = new mw.Api();
 		deletePageAPI.postWithToken( 'csrf', {
-			'action': 'delete',
-			'title': me.pageTitle
-		})
-		.fail( function ( code, errResp ) {
-			me.actionStatus = BS.action.Base.STATUS_ERROR;
-			dfd.reject( me, errResp );
-		})
-		.done( function ( resp, jqXHR ) {
-			if ( resp.delete.title === undefined ) {
+			action: 'delete',
+			title: me.pageTitle
+		} )
+			.fail( function ( code, errResp ) {
 				me.actionStatus = BS.action.Base.STATUS_ERROR;
-				dfd.reject( me, resp );
-				return;
-			}
+				dfd.reject( me, errResp );
+			} )
+			.done( function ( resp, jqXHR ) {
+				if ( resp.delete.title === undefined ) {
+					me.actionStatus = BS.action.Base.STATUS_ERROR;
+					dfd.reject( me, resp );
+					return;
+				}
 
-			me.actionStatus = BS.action.Base.STATUS_DONE;
-			dfd.resolve( me );
-		});
+				me.actionStatus = BS.action.Base.STATUS_DONE;
+				dfd.resolve( me );
+			} );
 	},
 
 	getDescription: function () {
 		return mw.message( 'bs-deferred-action-apideletepage-description', this.pageTitle ).parse();
 	}
-});
+} );

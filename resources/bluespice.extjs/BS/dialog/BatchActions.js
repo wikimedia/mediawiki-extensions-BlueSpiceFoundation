@@ -4,11 +4,11 @@ Ext.define( 'BS.dialog.BatchActions', {
 
 	width: 600,
 	autoHeight: true,
-	title: mw.message('bs-deferred-batch-title').plain(),
+	title: mw.message( 'bs-deferred-batch-title' ).plain(),
 	closable: false,
 	currentData: null,
 
-	makeItems: function() {
+	makeItems: function () {
 		this.pnlBatchActions = new BS.panel.BatchActions();
 		this.pnlBatchActions.on( 'processcomplete', this.onProcessComplete, this );
 
@@ -17,36 +17,35 @@ Ext.define( 'BS.dialog.BatchActions', {
 		];
 	},
 
-	makeButtons: function() {
+	makeButtons: function () {
 		var buttons = this.callParent( arguments );
 		this.btnCancel.hide();
 		return buttons;
 	},
 
-	setData: function( data ) {
+	setData: function ( data ) {
 		this.currentData = data;
 		this.pnlBatchActions.setData( data );
 	},
 
-	getData: function() {
+	getData: function () {
 		return this.currentData;
 	},
 
-	onBtnOKClick: function() {
-		if( this.pnlBatchActions.isProcessComplete() ) {
+	onBtnOKClick: function () {
+		if ( this.pnlBatchActions.isProcessComplete() ) {
 			this.callParent( arguments );
-		}
-		else {
+		} else {
 			this.startProcessing();
 		}
 	},
 
-	onProcessComplete: function() {
+	onProcessComplete: function () {
 		this.btnOK.enable();
 	},
 
-	startProcessing: function() {
+	startProcessing: function () {
 		this.btnOK.disable();
 		this.pnlBatchActions.startProcessing();
 	}
-});
+} );

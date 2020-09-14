@@ -1,4 +1,3 @@
-
 bs = bs || {};
 bs.ui = bs.ui || {};
 bs.ui.mixin = bs.ui.mixin || {};

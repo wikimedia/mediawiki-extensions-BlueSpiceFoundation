@@ -1,4 +1,4 @@
-Ext.define('BS.model.User', {
+Ext.define( 'BS.model.User', {
 	extend: 'Ext.data.Model',
 
 	fields: [
@@ -9,8 +9,8 @@ Ext.define('BS.model.User', {
 		{ name: 'user_editcount', type: 'int' },
 		{ name: 'groups', type: 'auto', defaultValue: [] },
 
-		//legacy fields
+		// legacy fields
 		{ name: 'display_name', type: 'string' },
 		{ name: 'page_prefixed_text', type: 'string' }
 	]
-});
+} );

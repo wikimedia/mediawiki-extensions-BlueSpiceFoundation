@@ -6,19 +6,20 @@
 
 	/**
 	 * e.g. bs.api.tasks.execSilent(...).done(...);
-	 * @param string module
-	 * @param string taskname
-	 * @param object data
-	 * @param object cfg
-	 * @returns jQuery.Promise
+	 *
+	 * @param {string} module
+	 * @param {string} task
+	 * @param {object} data
+	 * @param {object} cfg
+	 * @return {jQuery.Promise}
 	 */
 	function _execTaskSilent( module, task, data, cfg ) {
 		cfg = cfg || {};
 		cfg = $.extend( {
-			success: function( response, module, task, $dfd, cfg ) {
+			success: function ( response, module, task, $dfd, cfg ) {
 				$dfd.resolve( response );
 			},
-			failure: function( response, module, task, $dfd, cfg ) {
+			failure: function ( response, module, task, $dfd, cfg ) {
 				$dfd.resolve( response );
 			},
 			loadingIndicator: false
@@ -28,16 +29,17 @@
 	}
 	/**
 	 * e.g. bs.api.tasks.exec(
-			'wikipage',
-			'setCategories',
-			{ categories: [ 'C1', 'C2' ] }
-		)
-		.done(...);
-	 * @param string module
-	 * @param string taskname
-	 * @param object data
-	 * @param object cfg - set { useService: true } to use new task service
-	 * @returns jQuery.Promise
+	 * 'wikipage',
+	 * 'setCategories',
+	 * { categories: [ 'C1', 'C2' ] }
+	 * )
+	 * .done(...);
+	 *
+	 * @param {string} module
+	 * @param {string} task
+	 * @param {object} data
+	 * @param {object} cfg - set { useService: true } to use new task service
+	 * @return {jQuery.Promise}
 	 */
 	function _execTask( module, task, data, cfg ) {
 		cfg = cfg || {};
@@ -55,53 +57,54 @@
 		}
 
 		var api = new mw.Api();
-		api.postWithToken(cfg.token, {
+		api.postWithToken( cfg.token, {
 			action: cfg.useService ? 'bs-task' : 'bs-' + module + '-tasks',
 			task: task,
-			taskData: JSON.stringify(data),
+			taskData: JSON.stringify( data ),
 			context: JSON.stringify(
 				$.extend(
 					_getContext(),
 					cfg.context
 				)
 			)
-		})
-			.done(function (response) {
+		} )
+			.done( function ( response ) {
 				if ( cfg.loadingIndicator ) {
 					bs.loadIndicator.popPending();
 				}
-				if (response.success === true) {
-					cfg.success(response, module, task, $dfd, cfg);
+				if ( response.success === true ) {
+					cfg.success( response, module, task, $dfd, cfg );
 				} else {
-					cfg.failure(response, module, task, $dfd, cfg);
+					cfg.failure( response, module, task, $dfd, cfg );
 				}
-			})
-			.fail(function (code, result) { //Server error like FATAL
+			} )
+			.fail( function ( code, result ) { // Server error like FATAL
 				if ( cfg.loadingIndicator ) {
 					bs.loadIndicator.popPending();
 				}
-				if (result.exception) {
+				if ( result.exception ) {
 					result = {
 						success: false,
 						message: result.exception,
-						errors: [{
+						errors: [ {
 							message: code
-						}]
+						} ]
 					};
 				}
-				cfg.failure(result, module, task, $dfd, cfg);
-			});
+				cfg.failure( result, module, task, $dfd, cfg );
+			} );
 		return $dfd.promise();
 	}
 
 	/**
 	 * e.g. bs.api.store.getData(
-			'groups'
-		)
-		.done(...);
-	 * @param string module
-	 * @param object cfg
-	 * @returns jQuery.Promise
+	 * 'groups'
+	 * )
+	 * .done(...);
+	 *
+	 * @param {string} module
+	 * @param {object} cfg
+	 * @return {jQuery.Promise}
 	 */
 	function _getStoreData( module, cfg ) {
 		cfg = cfg || {};
@@ -118,26 +121,26 @@
 
 		var api = new mw.Api();
 		api.postWithToken( cfg.token, {
-			action: 'bs-'+ module +'-store',
+			action: 'bs-' + module + '-store',
 			context: JSON.stringify(
-				$.extend (
+				$.extend(
 					_getContext(),
 					cfg.context
 				)
 			)
-		})
-		.done(function( response ){
-			if ( cfg.loadingIndicator ) {
-				bs.loadIndicator.popPending();
-			}
-			$dfd.resolve( response );
-		})
-		.fail( function( code, errResp ) { //Server error like FATAL
-			if ( cfg.loadingIndicator ) {
-				bs.loadIndicator.popPending();
-			}
-			$dfd.resolve( errResp );
-		});
+		} )
+			.done( function ( response ) {
+				if ( cfg.loadingIndicator ) {
+					bs.loadIndicator.popPending();
+				}
+				$dfd.resolve( response );
+			} )
+			.fail( function ( code, errResp ) { // Server error like FATAL
+				if ( cfg.loadingIndicator ) {
+					bs.loadIndicator.popPending();
+				}
+				$dfd.resolve( errResp );
+			} );
 		return $dfd.promise();
 	}
 
@@ -145,8 +148,7 @@
 		if ( response.message.length ) {
 			mw.notify( response.message, { title: mw.msg( 'bs-extjs-title-success' ) } );
 			$dfd.resolve( response );
-		}
-		else {
+		} else {
 			$dfd.resolve( response );
 		}
 	}
@@ -155,24 +157,24 @@
 		var message = response.message || '';
 		if ( response.errors && response.errors.length > 0 ) {
 			for ( var i in response.errors ) {
-				if ( typeof( response.errors[i].html ) === 'string' ) {
-					message = message + '<br />' + response.errors[i].html;
+				if ( typeof ( response.errors[ i ].html ) === 'string' ) {
+					message = message + '<br />' + response.errors[ i ].html;
 					continue;
 				}
-				if ( typeof( response.errors[i].plaintext ) === 'string' ) {
-					message = message + "\n" + response.errors[i].plaintext;
+				if ( typeof ( response.errors[ i ].plaintext ) === 'string' ) {
+					message = message + '\n' + response.errors[ i ].plaintext;
 					continue;
 				}
-				if ( typeof( response.errors[i].wiki ) === 'string' ) {
-					message = message + "\n*" + response.errors[i].wiki;
+				if ( typeof ( response.errors[ i ].wiki ) === 'string' ) {
+					message = message + '\n*' + response.errors[ i ].wiki;
 					continue;
 				}
-				if ( typeof( response.errors[i].message ) === 'string' ) {
-					message = message + '<br />' + response.errors[i].message;
+				if ( typeof ( response.errors[ i ].message ) === 'string' ) {
+					message = message + '<br />' + response.errors[ i ].message;
 					continue;
 				}
-				if ( typeof( response.errors[i].code ) === 'string' ) {
-					message = message + '<br />' + response.errors[i].code;
+				if ( typeof ( response.errors[ i ].code ) === 'string' ) {
+					message = message + '<br />' + response.errors[ i ].code;
 					continue;
 				}
 			}
@@ -185,13 +187,12 @@
 					text: message
 				},
 				{
-					ok: function() {
+					ok: function () {
 						$dfd.reject( response );
 					}
 				}
 			);
-		}
-		else {
+		} else {
 			$dfd.reject( response );
 		}
 	}
@@ -205,7 +206,7 @@
 		}, additionalParams );
 
 		return _makeUrl(
-			'bs-'+ module +'-tasks',
+			'bs-' + module + '-tasks',
 			params,
 			true
 		);
@@ -213,34 +214,34 @@
 
 	function _makeUrl( action, params, sendContext ) {
 		var baseParams = {
-			'action': action
+			action: action
 		};
 
 		if ( sendContext ) {
 			baseParams.context = JSON.stringify( _getContext() );
 		}
 
-		var script = mw.util.wikiScript( 'api' );
-		var callParams = params || {};
+		var script = mw.util.wikiScript( 'api' ),
+			callParams = params || {};
 
-		return script + "?" + $.param(
+		return script + '?' + $.param(
 			$.extend( baseParams, callParams )
 		);
 	}
 
 	function _getContext() {
-		//HINT: https://www.mediawiki.org/wiki/Manual:Interface/JavaScript
-		//Sync with serverside implementation of 'BSExtendedApiContext::newFromRequest'
+		// HINT: https://www.mediawiki.org/wiki/Manual:Interface/JavaScript
+		// Sync with serverside implementation of 'BSExtendedApiContext::newFromRequest'
 		return {
 			wgAction: mw.config.get( 'wgAction' ),
 			wgArticleId: mw.config.get( 'wgArticleId' ),
 			wgCanonicalNamespace: mw.config.get( 'wgCanonicalNamespace' ),
 			wgCanonicalSpecialPageName: mw.config.get( 'wgCanonicalSpecialPageName' ),
 			wgRevisionId: mw.config.get( 'wgRevisionId' ),
-			//wgIsArticle: mw.config.get('wgIsArticle'),
+			// wgIsArticle: mw.config.get('wgIsArticle'),
 			wgNamespaceNumber: mw.config.get( 'wgNamespaceNumber' ),
 			wgPageName: mw.config.get( 'wgPageName' ),
-			wgRedirectedFrom: mw.config.get( 'wgRedirectedFrom' ), //maybe null
+			wgRedirectedFrom: mw.config.get( 'wgRedirectedFrom' ), // maybe null
 			wgRelevantPageName: mw.config.get( 'wgRelevantPageName' ),
 			wgTitle: mw.config.get( 'wgTitle' )
 		};

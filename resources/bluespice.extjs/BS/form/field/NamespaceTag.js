@@ -8,18 +8,18 @@ Ext.define( 'BS.form.field.NamespaceTag', {
 	triggerAction: 'all',
 	multiSelect: true,
 	collapseOnSelect: true,
-	fieldLabel: mw.message('bs-extjs-label-namespace').plain(),
-	emptyText: mw.message( "bs-extjs-combo-box-default-placeholder" ).plain(),
+	fieldLabel: mw.message( 'bs-extjs-label-namespace' ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
 	delimiter: ', ',
-	//Custom Settings
+	// Custom Settings
 	includeAll: false,
 	excludeIds: [],
 
-	initComponent: function() {
-		this.store = bs.extjs.newLocalNamespacesStore({
+	initComponent: function () {
+		this.store = bs.extjs.newLocalNamespacesStore( {
 			includeAll: this.includeAll,
 			excludeIds: this.excludeIds
-		});
-		this.callParent(arguments);
+		} );
+		this.callParent( arguments );
 	}
-});
+} );

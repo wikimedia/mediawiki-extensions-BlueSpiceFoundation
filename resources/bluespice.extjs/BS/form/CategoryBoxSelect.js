@@ -1,3 +1,3 @@
 Ext.define( 'BS.form.CategoryBoxSelect', {
-	extend:'BS.form.field.CategoryTag',
-});
+	extend: 'BS.form.field.CategoryTag'
+} );

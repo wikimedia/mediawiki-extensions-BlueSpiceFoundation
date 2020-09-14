@@ -1,4 +1,4 @@
-Ext.define('BS.store.ApiGroup', {
+Ext.define( 'BS.store.ApiGroup', {
 	extend: 'BS.store.BSApi',
 	apiAction: 'bs-group-store',
 	fields: [
@@ -6,4 +6,4 @@ Ext.define('BS.store.ApiGroup', {
 		'additional_group',
 		'displayname'
 	]
-});
+} );

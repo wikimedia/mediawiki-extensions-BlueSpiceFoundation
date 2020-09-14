@@ -1,4 +1,4 @@
-Ext.define('BS.store.ApiUser', {
+Ext.define( 'BS.store.ApiUser', {
 	extend: 'BS.store.BSApi',
 	apiAction: 'bs-user-store',
 	fields: [
@@ -12,4 +12,4 @@ Ext.define('BS.store.ApiUser', {
 		'display_name',
 		'page_prefixed_text'
 	]
-});
+} );

@@ -7,17 +7,17 @@ Ext.define( 'BS.action.Base', {
 		STATUS_DONE: 2
 	},
 
-	actionStatus: 0, //BS.action.Base.STATUS_PENDING
+	actionStatus: 0, // BS.action.Base.STATUS_PENDING
 
 	/**
 	 *
-	 * @returns jQuery.Promise
+	 * @return jQuery.Promise
 	 */
-	execute: function() {
+	execute: function () {
 
 	},
 
-	getDescription: function() {
+	getDescription: function () {
 		return Ext.getClassName( this );
 	},
 
@@ -25,30 +25,30 @@ Ext.define( 'BS.action.Base', {
 		var errors = [];
 		if ( this.actionErrors ) {
 			this.actionErrors.forEach( function ( msg ) {
-				errors.push( { message: msg['*'] } );
+				errors.push( { message: msg[ '*' ] } );
 			} );
 		}
 		return errors;
 
 	},
 
-	getStatus: function() {
+	getStatus: function () {
 		return this.actionStatus;
 	},
 
-	getStatusText: function() {
-		var status = this.getStatus();
-		var message = '';
-		if( status === BS.action.Base.STATUS_PENDING ) {
-			message = mw.message('bs-deferred-action-status-pending').plain();
-		} else if( status === BS.action.Base.STATUS_RUNNING ) {
-			message = mw.message('bs-deferred-action-status-running').plain();
-		} else if( status === BS.action.Base.STATUS_DONE ) {
-			message = mw.message('bs-deferred-action-status-done').plain();
-		} else if( status === BS.action.Base.STATUS_ERROR ) {
-			message = mw.message('bs-deferred-action-status-error').plain();
+	getStatusText: function () {
+		var status = this.getStatus(),
+		 message = '';
+		if ( status === BS.action.Base.STATUS_PENDING ) {
+			message = mw.message( 'bs-deferred-action-status-pending' ).plain();
+		} else if ( status === BS.action.Base.STATUS_RUNNING ) {
+			message = mw.message( 'bs-deferred-action-status-running' ).plain();
+		} else if ( status === BS.action.Base.STATUS_DONE ) {
+			message = mw.message( 'bs-deferred-action-status-done' ).plain();
+		} else if ( status === BS.action.Base.STATUS_ERROR ) {
+			message = mw.message( 'bs-deferred-action-status-error' ).plain();
 		}
 
 		return message;
 	}
-});
+} );

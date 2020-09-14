@@ -5,8 +5,8 @@ Ext.define( 'BS.tree.Categories', {
 	rootVisible: false,
 	displayField: 'text',
 
-	initComponent: function() {
-		this.store = new Ext.data.TreeStore({
+	initComponent: function () {
+		this.store = new Ext.data.TreeStore( {
 			proxy: {
 				type: 'ajax',
 				url: bs.api.makeUrl( 'bs-category-treestore' )
@@ -18,8 +18,8 @@ Ext.define( 'BS.tree.Categories', {
 				expanded: true
 			},
 			model: 'BS.model.Category'
-		});
+		} );
 
 		this.callParent( arguments );
 	}
-});
+} );

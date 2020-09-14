@@ -7,14 +7,14 @@ Ext.define( 'BS.form.CategoryCombo', {
 	allowBlank: false,
 	forceSelection: true,
 	queryMode: 'local',
-	emptyText: mw.message( "bs-extjs-combo-box-default-placeholder" ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
 
-	initComponent: function() {
+	initComponent: function () {
 		this.store = this.makeStore();
-		this.callParent(arguments);
+		this.callParent( arguments );
 	},
 
-	makeStore: function() {
+	makeStore: function () {
 		var store = Ext.create( 'Ext.data.JsonStore', {
 			proxy: {
 				type: 'ajax',
@@ -29,10 +29,9 @@ Ext.define( 'BS.form.CategoryCombo', {
 				}
 			},
 			model: 'BS.model.Category'
-		});
+		} );
 		store.load();
 
 		return store;
-	},
-});
-
+	}
+} );

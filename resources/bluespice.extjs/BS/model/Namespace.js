@@ -1,4 +1,4 @@
-Ext.define('BS.model.Namespace', {
+Ext.define( 'BS.model.Namespace', {
 	extend: 'Ext.data.Model',
 
 	fields: [
@@ -17,27 +17,27 @@ Ext.define('BS.model.Namespace', {
 			root: 'namespaces',
 			idProperty: 'namespaceId'
 		}
-	},*/
-	
-	getNamespaceContentModel: function() {
-		return this.get('namespaceContentModel');
-	},
-	
-	isNonincludable: function(){
-		return this.get('isNonincludable');
+	}, */
+
+	getNamespaceContentModel: function () {
+		return this.get( 'namespaceContentModel' );
 	},
 
-	isSubject: function() {
+	isNonincludable: function () {
+		return this.get( 'isNonincludable' );
+	},
+
+	isSubject: function () {
 		return !this.isTalk();
 	},
-	
+
 	/**
 	 * Is the current namespace a talk namespace?
 	 *
 	 * @return bool
 	 */
-	isTalk: function() {
-		//TODO: replace 0 with somethin similar to NS_MAIN
-		return this.get('namespaceId') > 0 && this.get('namespaceId') % 2;
+	isTalk: function () {
+		// TODO: replace 0 with somethin similar to NS_MAIN
+		return this.get( 'namespaceId' ) > 0 && this.get( 'namespaceId' ) % 2;
 	}
-});
+} );

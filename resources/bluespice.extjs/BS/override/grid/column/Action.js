@@ -4,14 +4,14 @@
 Ext.define( 'BS.override.grid.column.Action', {
 	override: 'Ext.grid.column.Action',
 	// overridden to implement
-	defaultRenderer: function( v, cellValues, record, rowIdx, colIdx, store, view ) {
+	defaultRenderer: function ( v, cellValues, record, rowIdx, colIdx, store, view ) {
 		var me = this,
 			prefix = Ext.baseCSSPrefix,
 			scope = me.origScope || me,
 			items = me.items,
 			len = items.length,
 			i = 0,
-			item, ret, disabled, tooltip,glyph, glyphParts, glyphFontFamily;
+			item, ret, disabled, tooltip, glyph, glyphParts, glyphFontFamily;
 
 		// Allow a configured renderer to create initial value (And set the other values in the "metadata" argument!)
 		// Assign a new variable here, since if we modify "v" it will also modify the arguments collection, meaning
@@ -20,7 +20,7 @@ Ext.define( 'BS.override.grid.column.Action', {
 
 		cellValues.tdCls += ' ' + Ext.baseCSSPrefix + 'action-col-cell';
 		for ( ; i < len; i++ ) {
-			item = items[i];
+			item = items[ i ];
 
 			disabled = item.disabled || ( item.isDisabled ? item.isDisabled.call( item.scope || scope, view, rowIdx, colIdx, item, record ) : false );
 			tooltip = disabled ? null : ( item.tooltip || ( item.getTip ? item.getTip.apply( item.scope || scope, arguments ) : null ) );
@@ -34,20 +34,20 @@ Ext.define( 'BS.override.grid.column.Action', {
 			if ( !item.hasActionConfiguration ) {
 				// Apply our documented default to all items
 				item.stopSelection = me.stopSelection;
-				item.disable = Ext.Function.bind( me.disableAction, me, [i], 0 );
-				item.enable = Ext.Function.bind( me.enableAction, me, [i], 0 );
+				item.disable = Ext.Function.bind( me.disableAction, me, [ i ], 0 );
+				item.enable = Ext.Function.bind( me.enableAction, me, [ i ], 0 );
 				item.hasActionConfiguration = true;
 			}
 			if ( glyph ) {
 				if ( typeof glyph === 'string' ) {
 					glyphParts = glyph.split( '@' );
-					glyph = '&#' + glyphParts[0] + ';';
-					glyphFontFamily = glyphParts[1];
+					glyph = '&#' + glyphParts[ 0 ] + ';';
+					glyphFontFamily = glyphParts[ 1 ];
 				} else {
 					glyphFontFamily = Ext._glyphFontFamily;
 				}
 				if ( typeof glyph === 'number' ) {
-					glyph = '&#'+glyph+';';
+					glyph = '&#' + glyph + ';';
 				}
 				if ( typeof glyph === 'boolean' ) {
 					glyph = '';
@@ -56,7 +56,7 @@ Ext.define( 'BS.override.grid.column.Action', {
 				ret += '<span role="button" title="' + ( item.altText || me.altText ) + '" class="' + prefix + 'action-col-icon ' + prefix + 'action-col-glyph ' + prefix + 'action-col-' + String( i ) + ' ' + ( disabled ? prefix + 'item-disabled' : ' ' ) +
 					' ' + ( Ext.isFunction( item.getClass ) ? item.getClass.apply( item.scope || scope, arguments ) : ( item.iconCls || me.iconCls || '' ) ) + '"' +
 					' style="font-family:' + glyphFontFamily + '"' +
-					( tooltip ? ' data-qtip="' + tooltip + '"' : '' ) + '>' +  glyph + '</span>';
+					( tooltip ? ' data-qtip="' + tooltip + '"' : '' ) + '>' + glyph + '</span>';
 			} else {
 				ret += '<img role="button" alt="' + ( item.altText || me.altText ) + '" src="' + ( item.icon || Ext.BLANK_IMAGE_URL ) +
 					'" class="' + me.actionIconCls + ' ' + prefix + 'action-col-' + String( i ) + ' ' + ( disabled ? prefix + 'item-disabled' : ' ' ) +
@@ -66,4 +66,4 @@ Ext.define( 'BS.override.grid.column.Action', {
 		}
 		return ret;
 	}
-});
+} );
