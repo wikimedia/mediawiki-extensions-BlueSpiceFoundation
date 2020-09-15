@@ -197,10 +197,10 @@ class BaseNotification implements \BlueSpice\INotification {
 	protected function addAffectedUsers( $users ) {
 		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 		foreach ( $users as $user ) {
-			if ( is_int( $user ) ) {
-				$user = \User::newFromId( $user );
+			if ( is_numeric( $user ) ) {
+				$user = \User::newFromId( intval( $user ) );
 			}
-			if ( !$user instanceof \User ) {
+			if ( !( $user instanceof \User ) ) {
 				continue;
 			}
 			if ( $user->isBlocked() ) {
