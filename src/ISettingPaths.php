@@ -21,6 +21,7 @@ interface ISettingPaths {
 
 	const PACKAGE_FREE = 'BlueSpice Free';
 	const PACKAGE_PRO = 'BlueSpice Pro';
+	const PACKAGE_CLOUD = 'BlueSpice Cloud';
 	const PACKAGE_CUSTOMIZING = 'customizing';
 
 	const EXTENSION_FOUNDATION = 'BlueSpiceFoundation';
