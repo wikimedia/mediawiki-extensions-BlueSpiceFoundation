@@ -5,8 +5,10 @@
 namespace BlueSpice;
 
 use FileContentsHasher;
+use LightnCandy\LightnCandy;
 use Message;
 use MessageLocalizer;
+use ObjectCache;
 use RequestContext;
 use ResourceLoaderContext;
 use RuntimeException;
@@ -22,9 +24,11 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 		if ( !empty( $templateDir ) ) {
 			$templateDir = rtrim( $templateDir, '/' );
 		}
-		// always recompile by using empty cache, because this compiler simply does not work - at least
-		// with template system
-		$cache = new \EmptyBagOStuff();
+		$this->cache = $cache ?: ObjectCache::getLocalServerInstance( CACHE_ANYTHING );
+
+		// Do not add more flags here without discussion.
+		// If you do add more flags, be sure to update unit tests as well.
+		$this->compileFlags = LightnCandy::FLAG_ERROR_EXCEPTION | LightnCandy::FLAG_MUSTACHELOOKUP;
 		parent::__construct( $templateDir, $cache );
 	}
 
