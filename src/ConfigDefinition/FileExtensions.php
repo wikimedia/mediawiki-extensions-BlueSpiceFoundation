@@ -2,7 +2,7 @@
 
 namespace BlueSpice\ConfigDefinition;
 
-class FileExtensions extends ArraySetting {
+class FileExtensions extends ArraySetting implements IOverwriteGlobal {
 
 	/**
 	 *
@@ -35,4 +35,13 @@ class FileExtensions extends ArraySetting {
 	public function getHelpMessageKey() {
 		return 'bs-pref-fileextensions-help';
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getGlobalName() {
+		return "wg{$this->getName()}";
+	}
+
 }
