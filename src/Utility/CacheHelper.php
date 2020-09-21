@@ -17,6 +17,12 @@ class CacheHelper {
 
 	/**
 	 *
+	 * @var array
+	 */
+	protected $store = [];
+
+	/**
+	 *
 	 * @param \Config $config
 	 */
 	public function __construct( \Config $config ) {
@@ -53,7 +59,11 @@ class CacheHelper {
 	 * @return mixed
 	 */
 	public function get( $key ) {
-		return $this->getCache()->get( $key );
+		if ( isset( $this->store[$key] ) ) {
+			return $this->store[$key];
+		}
+		$this->store[$key] = $this->getCache()->get( $key );
+		return $this->store[$key];
 	}
 
 	/**
@@ -64,6 +74,9 @@ class CacheHelper {
 	 * @return bool
 	 */
 	public function set( $key, $data, $expiryTime = 0 ) {
+		if ( isset( $this->store[$key] ) ) {
+			unset( $this->store[$key] );
+		}
 		return $this->getCache()->set( $key, $data, $expiryTime );
 	}
 
@@ -76,6 +89,9 @@ class CacheHelper {
 		$res = $this->getCache()->delete( $key );
 		if ( !$res ) {
 			wfDebugLog( 'bluespice', "NO INVALIDATION FOR KEY: $key" );
+		}
+		if ( isset( $this->store[$key] ) ) {
+			unset( $this->store[$key] );
 		}
 		return $res;
 	}
