@@ -2,6 +2,7 @@
 
 namespace BlueSpice;
 
+use BlueSpice\ConfigDefinition\IOverwriteGlobal;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\LessVars;
 
@@ -126,12 +127,18 @@ class Foundation {
 	}
 
 	protected function overwriteGlobals() {
-		global $wgFileExtensions;
-		$wgFileExtensions = array_merge(
-			$this->config->get( 'FileExtensions' ),
+		$cfgDfn = $this->services->getService( 'BSConfigDefinitionFactory' );
+		foreach ( $cfgDfn->getRegisteredDefinitions() as $name ) {
+			$instance = $cfgDfn->factory( $name );
+			if ( !$instance instanceof IOverwriteGlobal ) {
+				continue;
+			}
+			$GLOBALS[$instance->getGlobalName()] = $instance->getValue();
+		}
+		$GLOBALS['wgFileExtensions'] = array_values( array_unique( array_merge(
+			$GLOBALS['wgFileExtensions'],
 			$this->config->get( 'ImageExtensions' )
-		);
-		$wgFileExtensions = array_values( array_unique( $wgFileExtensions ) );
+		) ) );
 	}
 
 	protected function initializeRoleSystem() {
