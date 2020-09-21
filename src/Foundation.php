@@ -3,6 +3,8 @@
 
 namespace BlueSpice;
 
+use BlueSpice\ConfigDefinition\IOverwriteGlobal;
+
 class Foundation {
 
 	/**
@@ -79,12 +81,18 @@ class Foundation {
 	}
 
 	protected function overwriteGlobals() {
-		global $wgFileExtensions;
-		$wgFileExtensions = array_merge(
-			$this->config->get( 'FileExtensions' ),
+		$cfgDfn = $this->services->getService( 'BSConfigDefinitionFactory' );
+		foreach ( $cfgDfn->getRegisteredDefinitions() as $name ) {
+			$instance = $cfgDfn->factory( $name );
+			if ( !$instance instanceof IOverwriteGlobal ) {
+				continue;
+			}
+			$GLOBALS[$instance->getGlobalName()] = $instance->getValue();
+		}
+		$GLOBALS['wgFileExtensions'] = array_values( array_unique( array_merge(
+			$GLOBALS['wgFileExtensions'],
 			$this->config->get( 'ImageExtensions' )
-		);
-		$wgFileExtensions = array_values( array_unique( $wgFileExtensions ) );
+		) ) );
 	}
 
 	protected function initializeRoleSystem() {
