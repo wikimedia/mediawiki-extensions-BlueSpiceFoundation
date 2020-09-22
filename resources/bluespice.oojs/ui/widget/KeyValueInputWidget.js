@@ -17,7 +17,7 @@
 		this.$element.addClass( 'bs-ooui-widget-keyValueInputWidget' );
 
 		this.addedWidgets = [];
-		if( cfg.value ) {
+		if( cfg.value && !$.isEmptyObject( cfg.value ) ) {
 			this.setValue( cfg.value );
 		} else {
 			this.setNoValueMessage();
@@ -36,8 +36,9 @@
 	bs.ui.widget.KeyValueInputWidget.prototype.setNoValueMessage = function() {
 		this.$valueContainer.append(
 			new OO.ui.LabelWidget( {
-				label: mw.message( "bs-ooui-key-value-input-widget-no-values-label" ).plain()
-			} ).$element.addClass( 'bs-ooui-keyValueInputWidget-no-value-label' )
+				label: mw.message( "bs-ooui-key-value-input-widget-no-values-label" ).plain(),
+				classes: [ 'bs-ooui-keyValueInputWidget-no-value-label' ]
+			} ).$element
 		);
 	};
 
@@ -79,9 +80,10 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.addEntry = function( layouts, deleteWidgetElement ) {
-		this.$valueContainer.append( layouts );
+		var $blockWrapper = $( '<div>' ).addClass( 'instance-block' );
+		this.$valueContainer.append( $blockWrapper.append( layouts ) );
 		if( deleteWidgetElement ) {
-			this.$valueContainer.append( deleteWidgetElement );
+			$blockWrapper.append( deleteWidgetElement );
 		}
 		this.$valueContainer.append( this.$separator.clone() );
 	};
@@ -95,34 +97,23 @@
 		return deleteButton;
 	};
 
-	bs.ui.widget.KeyValueInputWidget.prototype.getLayouts = function( cfg ) {
-		var keyInput = new OO.ui.TextInputWidget( {
-			value: cfg.keyValue,
-			readOnly: cfg.keyReadOnly,
-			required: !cfg.keyReadOnly
-		} );
-		keyInput.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-key-input' );
+	bs.ui.widget.KeyValueInputWidget.prototype.getLayouts = function( cfg, form ) {
+		form = form || {};
+		var layouts = form.layouts || this.getForm( cfg ).layouts,
+			layoutElements = [];
 
-		var valueInput = new OO.ui.TextInputWidget( {
-			value: cfg.valueValue,
-			required: cfg.valueRequired
-		} );
-		valueInput.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-value-input' );
-
-		var layoutCfg = {};
-		if( cfg.align ) {
-			layoutCfg.align = cfg.align;
+		for ( var i = 0; i < layouts.length; i++ ) {
+			layoutElements.push( layouts[i].$element );
 		}
 
-		var keyLayout = new OO.ui.FieldLayout( keyInput, layoutCfg );
-		if( cfg.keyLabel ) {
-			keyLayout.setLabel( cfg.keyLabel );
-		}
+		return layoutElements;
+	};
 
-		var valueLayout = new OO.ui.FieldLayout( valueInput, layoutCfg );
-		if( cfg.valueLabel ) {
-			valueLayout.setLabel( cfg.valueLabel );
-		}
+	bs.ui.widget.KeyValueInputWidget.prototype.getForm = function( cfg ) {
+		var keyInput = this.getKeyInput( cfg ),
+			valueInput = this.getValueInput( cfg ),
+			keyLayout = this.getKeyLayout( keyInput, cfg ),
+			valueLayout = this.getValueLayout( valueInput, cfg );
 
 		if( cfg.addToWidgets ) {
 			this.addedWidgets.push( {
@@ -136,7 +127,45 @@
 			}, this.onDeleteClick.bind( this ) );
 		}
 
-		return [ keyLayout.$element, valueLayout.$element ];
+		return {
+			inputs:  { key: keyInput, value: valueInput },
+			layouts: [ keyLayout, valueLayout ]
+		};
+	};
+
+	bs.ui.widget.KeyValueInputWidget.prototype.getKeyLayout = function( keyInput, cfg ) {
+		return new OO.ui.FieldLayout( keyInput, {
+			align: cfg.align || 'left',
+			label: cfg.keyLabel || ''
+		} );
+	};
+
+	bs.ui.widget.KeyValueInputWidget.prototype.getValueLayout = function( valueInput, cfg ) {
+		return new OO.ui.FieldLayout( valueInput, {
+			align: cfg.align || 'left',
+			label: cfg.valueLabel || ''
+		} );
+	};
+
+	bs.ui.widget.KeyValueInputWidget.prototype.getKeyInput = function( cfg ) {
+		var keyInput = new OO.ui.TextInputWidget( {
+			value: cfg.keyValue,
+			readOnly: cfg.keyReadOnly,
+			required: !cfg.keyReadOnly
+		} );
+		keyInput.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-key-input' );
+
+		return keyInput;
+	};
+
+	bs.ui.widget.KeyValueInputWidget.prototype.getValueInput = function( cfg ) {
+		var valueInput = new OO.ui.TextInputWidget( {
+			value: cfg.valueValue,
+			required: cfg.valueRequired
+		} );
+		valueInput.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-value-input' );
+
+		return valueInput;
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.addNewValueForm = function() {
@@ -148,7 +177,7 @@
 			} ).$element );
 		}
 
-		var layouts = this.getLayouts( {
+		this.addForm = this.getForm( {
 			keyClass: 'bs-ooui-widget-keyValueInputWidget-key-input',
 			valueClass: 'bs-ooui-widget-keyValueInputWidget-value-input',
 			keyLabel: this.keyLabel,
@@ -159,14 +188,9 @@
 			addToWidgets: false
 		} );
 
-		this.addButton = new OO.ui.ButtonWidget( {
-			framed: false,
-			icon: 'check',
-			flags: [
-				'progressive'
-			],
-			title: mw.message( 'bs-ooui-key-value-input-widget-add-button-label' ).plain()
-		} );
+		var layouts = this.getLayouts( {}, this.addForm );
+
+		this.addButton = this.getAddButtonWidget();
 		this.addButton.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-add-btn' );
 		this.addButton.on( 'click', this.onAddClick.bind( this ) );
 
@@ -174,12 +198,25 @@
 		this.$element.append( this.$addContainer );
 	};
 
-	bs.ui.widget.KeyValueInputWidget.prototype.onAddClick = function( e ) {
-		var $keyInput = this.$addContainer.find( '.bs-ooui-widget-keyValueInputWidget-key-input' ).find( 'input' );
-		var $valueInput = this.$addContainer.find( '.bs-ooui-widget-keyValueInputWidget-value-input' ).find( 'input' );
+	bs.ui.widget.KeyValueInputWidget.prototype.getAddButtonWidget = function() {
+		return new OO.ui.ButtonWidget( {
+			framed: false,
+			icon: 'check',
+			flags: [
+				'progressive'
+			],
+			title: mw.message( 'bs-ooui-key-value-input-widget-add-button-label' ).plain()
+		} );
+	};
 
-		var keyValue = $keyInput.val();
-		var valueValue = $valueInput.val();
+	bs.ui.widget.KeyValueInputWidget.prototype.onAddClick = function( e ) {
+		if ( !this.addForm ) {
+			return;
+		}
+
+		var keyValue = this.addForm.inputs.key.getValue();
+		var valueValue = this.addForm.inputs.value.getValue();
+		this.resetAddForm();
 
 		if( this.validate( keyValue, valueValue ) === false ) {
 			return;
@@ -197,14 +234,14 @@
 		var layouts = this.getLayouts( layoutCfg );
 
 		this.addEntry( layouts, deleteButton.$element );
-		this.resetInputs();
+		this.$element.find( '.bs-ooui-keyValueInputWidget-no-value-label' ).remove();
 
 		this.emit( 'change', this );
 	};
 
-	bs.ui.widget.KeyValueInputWidget.prototype.resetInputs = function() {
-		this.$addContainer.find( '.bs-ooui-widget-keyValueInputWidget-key-input' ).find( 'input' ).val( '' );
-		this.$addContainer.find( '.bs-ooui-widget-keyValueInputWidget-value-input' ).find( 'input' ).val( '' );
+	bs.ui.widget.KeyValueInputWidget.prototype.resetAddForm = function() {
+		this.addForm.inputs.key.setValue( '' );
+		this.addForm.inputs.value.setValue( '' );
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getValue = function() {
