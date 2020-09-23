@@ -141,6 +141,54 @@
 		return $dfd.promise();
 	}
 
+	function _configGet( values, context ) {
+		context = context || {};
+
+		if ( !Array.isArray( values ) ) {
+			values = [ values ];
+		}
+		return _configRemote(
+			values.join( '|' ),
+			'get',
+			context
+		);
+	}
+
+	function _configHas( value ) {
+		return _configRemote(
+			value,
+			'has'
+		);
+	}
+
+	function _configRemote( value, func, context ) {
+		var api = new mw.Api(),
+			dfd = $.Deferred();
+
+		api.get( {
+			action: 'bs-js-var-config',
+			func: func,
+			name: value,
+			context: JSON.stringify(
+				$.extend (
+					_getContext(),
+					context
+				)
+			)
+		} ).done( function ( response ) {
+			if ( response.success && response.hasOwnProperty( 'payload' ) ) {
+				dfd.resolve( response.payload );
+				return;
+			}
+			var error = response.hasOwnProperty( 'error' ) ? response.error : '';
+			dfd.reject( error );
+		} ).fail( function( error ) {
+			dfd.reject( error );
+		} );
+
+		return dfd.promise();
+	}
+
 	function _msgSuccess( response, module, task, $dfd, cfg ) {
 		if ( response.message.length ) {
 			mw.notify( response.message, { title: mw.msg( 'bs-extjs-title-success' ) } );
@@ -254,6 +302,10 @@
 		},
 		store: {
 			getData: _getStoreData
+		},
+		config: {
+			get: _configGet,
+			has: _configHas
 		},
 		makeUrl: _makeUrl
 	};
