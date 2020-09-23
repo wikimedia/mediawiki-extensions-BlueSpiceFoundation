@@ -69,5 +69,10 @@
 	"apihelp-bs-watchlist-store-summary": "{{doc-apihelp-summary|bs-watchlist-store}}",
 	"apihelp-bs-recentchanges-store-summary": "{{doc-apihelp-summary|bs-recentchanges-store}}",
 	"apihelp-bs-task-summary": "{{doc-apihelp-summary|bs-task}}",
-	"apihelp-bs-task-description": "{{doc-apihelp-description|bs-task}}"
+	"apihelp-bs-task-description": "{{doc-apihelp-description|bs-task}}",
+	"apihelp-bs-js-var-config-summary": "{{doc-apihelp-summary|bs-js-var-config}}",
+	"apihelp-bs-js-var-config-param-name": "{{doc-apihelp-param|bs-js-var-config|name}}",
+	"apihelp-bs-js-var-config-param-func": "{{doc-apihelp-param|bs-js-var-config|func}}",
+	"apihelp-bs-js-var-config-param-context": "{{doc-apihelp-param|bs-js-var-config|context}}",
+	"apihelp-bs-js-var-config-param-format": "{{doc-apihelp-param|bs-js-var-config|format}}"
 }
