@@ -41,7 +41,9 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 	 */
 	protected function doApply( &$globals ) {
 		$path = $this->getPathname();
-		include $path;
+		if ( file_exists( $path ) ) {
+			include $path;
+		}
 	}
 
 	/**
@@ -140,7 +142,10 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 	 * @inheritDoc
 	 */
 	public function fetch() {
-		$this->data = file_get_contents( $this->getPathname() );
+		$pathname = $this->getPathname();
+		if ( file_exists( $pathname ) ) {
+			$this->data = file_get_contents( $pathname );
+		}
 		return parent::fetch();
 	}
 
