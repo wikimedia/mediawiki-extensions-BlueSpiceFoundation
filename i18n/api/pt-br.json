@@ -68,5 +68,9 @@
 	"apihelp-bs-watchlist-store-summary": "Lista todas as entradas da lista de páginas vigiadas. Permite ordenar, filtrar e paginar. Implementa os parâmetros store.",
 	"apihelp-bs-recentchanges-store-summary": "Lista todas as mudanças recentes. Permite ordenar, filtrar e paginar. Implementa os parâmetros store.",
 	"apihelp-bs-task-summary": "Fornece o terminal da API para executar tarefas registradas",
-	"apihelp-bs-task-description": "Fornece o terminal da API para executar tarefas registradas"
+	"apihelp-bs-task-description": "Fornece o terminal da API para executar tarefas registradas",
+	"apihelp-bs-js-var-config-summary": "Fornece um endpoint de API para recuperar variáveis de configuração do lado do cliente",
+	"apihelp-bs-js-var-config-param-name": "Nome da variável de configuração a ser recuperada",
+	"apihelp-bs-js-var-config-param-context": "Objeto codificado em JSON com contexto da chamada",
+	"apihelp-bs-js-var-config-param-format": "Formato do resultado"
 }
