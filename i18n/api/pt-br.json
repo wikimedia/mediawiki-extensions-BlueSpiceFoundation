@@ -71,6 +71,7 @@
 	"apihelp-bs-task-description": "Fornece o terminal da API para executar tarefas registradas",
 	"apihelp-bs-js-var-config-summary": "Fornece um endpoint de API para recuperar variáveis de configuração do lado do cliente",
 	"apihelp-bs-js-var-config-param-name": "Nome da variável de configuração a ser recuperada",
+	"apihelp-bs-js-var-config-param-func": "Função de configuração para executar: has|get",
 	"apihelp-bs-js-var-config-param-context": "Objeto codificado em JSON com contexto da chamada",
 	"apihelp-bs-js-var-config-param-format": "Formato do resultado"
 }
