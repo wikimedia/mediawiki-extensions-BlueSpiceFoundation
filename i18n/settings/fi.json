@@ -7,5 +7,6 @@
 	},
 	"bs-setting-path-system": "Järjestelmä",
 	"bs-setting-path-export": "Vie",
-	"bs-setting-path-feature": "Ominaisuus"
+	"bs-setting-path-feature": "Ominaisuus",
+	"bs-setting-path-editor": "Muokkain"
 }

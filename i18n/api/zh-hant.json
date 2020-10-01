@@ -69,5 +69,10 @@
 	"apihelp-bs-watchlist-store-summary": "列出所有監視清單項目。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
 	"apihelp-bs-recentchanges-store-summary": "列出所有最近更改。允許排序、篩選，以及分頁。執行所儲存的變數。",
 	"apihelp-bs-task-summary": "提供用於執行註冊任務的 API 端點",
-	"apihelp-bs-task-description": "提供用於執行註冊任務的 API 端點"
+	"apihelp-bs-task-description": "提供用於執行註冊任務的 API 端點",
+	"apihelp-bs-js-var-config-summary": "提供用於檢索客戶端配置變數的 API 端點",
+	"apihelp-bs-js-var-config-param-name": "所要檢索的配置變數名稱",
+	"apihelp-bs-js-var-config-param-func": "要執行的配置函式：has|get",
+	"apihelp-bs-js-var-config-param-context": "帶有調用上下文的 JSON 編碼物件",
+	"apihelp-bs-js-var-config-param-format": "結果格式"
 }

@@ -18,5 +18,6 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "Et gëtt keng Kategorie fir ewechzehuelen.",
 	"apihelp-bs-category-treestore-description": "Weist d'Ënnerkategorie vun enger spezifescher Kategorie",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 Beispiller vu Parameteren]",
-	"bs-api-task-taskData-page-title": "E valabelen Titel vun enger Wikisäit"
+	"bs-api-task-taskData-page-title": "E valabelen Titel vun enger Wikisäit",
+	"apihelp-bs-js-var-config-param-format": "Format vum Resultat"
 }

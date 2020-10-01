@@ -53,5 +53,6 @@
 	"apihelp-bs-category-treestore-param-node": "Un percorso di categorie separate da slash",
 	"bs-api-task-taskData-page-id": "L'ID di una pagina wiki esistente",
 	"bs-api-task-taskData-page-title": "Un titolo valido di una pagina wiki",
-	"apihelp-bs-wikisubpage-treestore-param-node": "Il titolo con prefisso della pagina wiki"
+	"apihelp-bs-wikisubpage-treestore-param-node": "Il titolo con prefisso della pagina wiki",
+	"apihelp-bs-js-var-config-param-format": "Formato del risultato"
 }
