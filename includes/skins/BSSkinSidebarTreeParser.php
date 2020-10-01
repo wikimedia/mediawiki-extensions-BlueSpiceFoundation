@@ -42,7 +42,7 @@ class BSSkinSidebarTreeParser {
 	public function parse() {
 		$html = $this->parseWikiText();
 		$dom = new DOMDocument();
-		$dom->loadHTML( "<html><body>$html</body></html>" );
+		$dom->loadHTML( "<?xml encoding=\"utf-8\" ?><html><body>$html</body></html>" );
 
 		$root = new BSTreeNode( $this->rootNodeId, null, new HashConfig( [
 			BSTreeNode::CONFIG_TEXT => $this->rootNodeId
