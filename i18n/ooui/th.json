@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patsagorn Y."
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "เพิ่มใหม่...",
+	"bs-ooui-key-value-input-widget-key-label": "คีย์",
+	"bs-ooui-key-value-input-widget-value-label": "ค่า",
+	"bs-ooui-key-value-input-widget-add-button-label": "เพิ่ม",
+	"bs-ooui-key-value-input-widget-add-form-label": "เพิ่มตัวเลือกใหม่",
+	"bs-ooui-key-value-input-widget-error-message": "กรุณากรอกทุกช่องที่จำเป็น!",
+	"bs-ooui-key-value-input-widget-no-values-label": "ไม่พบค่า!",
+	"bs-ooui-btn-dismiss-alert-title": "ปิด"
+}

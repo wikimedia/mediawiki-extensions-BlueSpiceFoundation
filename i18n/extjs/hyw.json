@@ -9,5 +9,6 @@
 	"bs-extjs-yes": "Այո",
 	"bs-extjs-save": "Պահել",
 	"bs-extjs-error": "Սխալ",
-	"bs-extjs-actions-column-header": "Գործողութիւններ"
+	"bs-extjs-actions-column-header": "Գործողութիւններ",
+	"bs-extjs-filter-bool-yes": "այո"
 }
