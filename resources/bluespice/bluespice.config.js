@@ -37,17 +37,17 @@
 	 * Load BS vars from main config to this config
 	 */
 	BlueSpiceConfig.prototype.init = function() {
-		var parsedName;
+		var parsedName, base = $.extend( {}, this.base );
 
-		for ( var name in this.base ) {
-			if ( !this.base.hasOwnProperty( name ) ) {
+		for ( var name in base ) {
+			if ( !base.hasOwnProperty( name ) ) {
 				continue;
 			}
 			parsedName = this.parseName( name );
 			if ( !parsedName ) {
 				continue;
 			}
-			this.vars[parsedName] = this.base[name];
+			this.vars[parsedName] = base[name];
 		}
 
 		this.initialized = true;
@@ -67,7 +67,7 @@
 
 		var dfd = $.Deferred(),
 			normalized = [], i = 0,
-			final = {}, missing = [];
+			finalValues = {}, missing = [];
 
 		if ( Array.isArray( name ) ) {
 			for ( i = 0; i < name.length; i++ ) {
@@ -78,20 +78,20 @@
 		}
 
 		if ( !forceRemote ) {
-			final = this.doGatherLocal( normalized );
+			finalValues = this.doGatherLocal( normalized );
 		}
 
-		missing = this.getMissing( normalized, final );
+		missing = this.getMissing( normalized, finalValues );
 		if ( missing.length === 0 ) {
-			this.doResolve( dfd, final );
+			this.doResolve( dfd, finalValues );
 			return dfd.promise();
 		}
 
 		bs.api.config.get( missing, context )
 			.done( function( value ) {
-				final = $.extend( final, value );
-				this.vars = $.extend( this.vars, final );
-				this.doResolve( dfd, final );
+				finalValues = $.extend( finalValues, value );
+				this.vars = $.extend( this.vars, finalValues );
+				this.doResolve( dfd, finalValues );
 			}.bind( this ) ).fail( function( error ) {
 			dfd.reject( error );
 		} );
