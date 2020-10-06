@@ -123,7 +123,16 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 			'label-message' => $this->getLabelMessageKey(),
 			'parent' => new \HTMLFormEx( [] ),
 			'help-message' => $this->getHelpMessageKey(),
+			'disabled' => $this->isDisabled(),
 		];
+	}
+
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function isDisabled() {
+		return $this->config->getOverrides()->has( $this->getName() );
 	}
 
 	protected function makeID() {
