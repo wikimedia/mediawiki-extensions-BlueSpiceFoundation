@@ -1,13 +1,12 @@
 <?php
 
 use BlueSpice\Extension;
-use BlueSpice\ITagExtensionDefinitionProvider;
 use MediaWiki\MediaWikiServices;
 
 /**
  * @deprecated since version 3.0.0 - Use \BlueSpice\Extension instead
  */
-abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitionProvider {
+abstract class BsExtensionMW extends Extension {
 
 	protected $mExtensionKey = null;
 	protected $mExtensionFile = null;
@@ -207,13 +206,5 @@ abstract class BsExtensionMW extends Extension implements ITagExtensionDefinitio
 			$this->getName(),
 			$sSubKey
 		);
-	}
-
-	/**
-	 * Returns an array of tag extension definitions
-	 * @return array
-	 */
-	public function makeTagExtensionDefinitions() {
-		return [];
 	}
 }
