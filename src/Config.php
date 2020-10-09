@@ -15,11 +15,18 @@ class Config extends \MultiConfig {
 
 	/**
 	 *
+	 * @var \HashConfig
+	 */
+	protected $overrides = null;
+
+	/**
+	 *
 	 */
 	public function __construct() {
 		$this->databaseConfig = $this->makeDatabaseConfig();
+		$this->overrides = new \GlobalVarConfig( 'bsgOverride' );
 		parent::__construct( [
-			new \GlobalVarConfig( 'bsgOverride' ),
+			$this->overrides,
 			&$this->databaseConfig,
 			new \GlobalVarConfig( 'bsg' ),
 			new \GlobalVarConfig( 'wg' ),
@@ -73,6 +80,14 @@ class Config extends \MultiConfig {
 			new Context( \RequestContext::getMain(), $this ),
 			Services::getInstance()->getDBLoadBalancer()
 		);
+	}
+
+	/**
+	 *
+	 * @return \HashConfig
+	 */
+	public function getOverrides() {
+		return $this->overrides;
 	}
 
 }
