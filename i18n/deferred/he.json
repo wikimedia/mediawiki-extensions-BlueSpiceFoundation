@@ -3,7 +3,8 @@
 		"authors": [
 			"Erelon",
 			"LaG roiL",
-			"Steeve815"
+			"Steeve815",
+			"YaronSh"
 		]
 	},
 	"bs-deferred-action-status-pending": "ממתין.",
@@ -12,6 +13,7 @@
 	"bs-deferred-action-status-error": "כשל.",
 	"bs-deferred-action-apicopypage-description": "העתקת \"$1\" ל-\"$2\".",
 	"bs-deferred-action-apieditpage-description": "עריכת \"$1\"",
+	"bs-deferred-batch-title": "עיבוד מרוכז",
 	"bs-deferred-batch-progress-desc": "התקדמות",
 	"bs-deferred-batch-actions": "פעולות",
 	"bs-deferred-batch-description": "תיאור",
