@@ -579,7 +579,6 @@
 			"\\BlueSpice\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddExportDownloadFile::callback"
 		],
 		"ParserFirstCallInit": [
-			"\\BlueSpice\\Hook\\ParserFirstCallInit\\GenericTagExtensionHandler::callback",
 			"BlueSpice\\Hook\\ParserFirstCallInit\\AddTags::callback"
 		],
 		"ExtensionTypes": "\\BlueSpice\\Hook\\ExtensionTypes\\AddBlueSpice::callback",
@@ -852,7 +851,6 @@
 		"BSTreeNode": "includes/tree/BSTreeNode.php",
 		"BSTreeRenderer": "includes/tree/BSTreeRenderer.php",
 		"BsException": "includes/Exception.class.php",
-		"BsGenericTagExtensionHandler": "includes/GenericTagExtensionHandler.php",
 		"BSTitleListParam": "includes/paramdefinition/BSTitleListParam.php",
 		"BSCategoryListParam": "includes/paramdefinition/BSCategoryListParam.php",
 		"BSTitleParser": "includes/parser/BSTitleParser.php",
