@@ -3,6 +3,12 @@
 class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	/**
 	 *
+	 * @var string[]
+	 */
+	protected $trackingCategories = null;
+
+	/**
+	 *
 	 * @param string $sQuery
 	 * @return array
 	 */
@@ -80,6 +86,7 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 				$oCategory = new stdClass();
 				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
 				$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
+				$oCategory->tracking = $this->isTrackingCategory( $oTmpCat );
 				$oCategory->id = 'src/' . str_replace( '/', '+', $oCategory->text );
 				$aResult[] = $oCategory;
 			}
@@ -115,6 +122,7 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 				$oCategory = new stdClass();
 				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
 				$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
+				$oCategory->tracking = false;
 				$oCategory->id = $sNode . '/' . str_replace( '/', '+', $oCategory->text );
 				$aResult[] = $oCategory;
 			}
@@ -152,5 +160,37 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-category-treestore-param-node',
 			]
 		];
+	}
+
+	/**
+	 *
+	 * @param Category $category
+	 * @return bool
+	 */
+	protected function isTrackingCategory( Category $category ) {
+		foreach ( $this->getTrackingCategories() as $trackingCatArray ) {
+			if ( !isset( $trackingCatArray['cats'] ) ) {
+				continue;
+			}
+			foreach ( $trackingCatArray['cats'] as $title ) {
+				if ( $category->getTitle()->equals( $title ) ) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
+	 *
+	 * @return string[]
+	 */
+	protected function getTrackingCategories() {
+		if ( $this->trackingCategories !== null ) {
+			return $this->trackingCategories;
+		}
+		$trackingCategories = new TrackingCategories( $this->getConfig() );
+		$this->trackingCategories = $trackingCategories->getTrackingCategories();
+		return $this->trackingCategories;
 	}
 }
