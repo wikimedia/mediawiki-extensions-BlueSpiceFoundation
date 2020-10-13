@@ -2,7 +2,7 @@
 
 require_once 'BSMaintenance.php';
 
-use MediaWiki\MediaWikiServices;
+use BlueSpice\DynamicSettingsManager;
 
 class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 
@@ -14,40 +14,27 @@ class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 	 *
 	 * @return bool
 	 */
-	protected function noDataToMigrate() {
-		return !$this->getConfig()->has( 'ConfigFiles' )
-			|| empty( $this->getConfig()->get( 'ConfigFiles' ) );
-	}
-
-	/**
-	 * @return Config
-	 */
-	public function getConfig() {
-		return MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
-	}
-
-	/**
-	 *
-	 * @return bool
-	 */
 	protected function doDBUpdates() {
-		if ( $this->noDataToMigrate() ) {
+		$manager = DynamicSettingsManager::factory();
+		try {
+			$fileKeys = $manager->getAllKeys();
+		} catch ( Exception $ex ) {
+			$this->output( $ex->getMessage() . PHP_EOL );
+			return false;
+		}
+		if ( empty( $fileKeys ) ) {
 			$this->output( "{$this->getUpdateKey()}: No data to migrate" );
 			return true;
 		}
 		$this->output( "{$this->getUpdateKey()}: Migrate config files\n" );
-		foreach ( $this->getConfig()->get( 'ConfigFiles' ) as $key => $filename ) {
-			$this->output( " * $filename\n   => " );
-			if ( !file_exists( $filename ) ) {
-				$this->output( "does not exist\n" );
+		foreach ( $fileKeys as $key ) {
+			$content = $manager->fetch( $key );
+			if ( !$content ) {
+				$this->output( "Content for $key is empty. Skipping" . PHP_EOL );
 				continue;
 			}
-			$content = file_get_contents( $filename );
-			if ( empty( $content ) ) {
-				$this->output( "empty\n" );
-				continue;
-			}
-			$this->output( "replacing..." );
+
+			$this->output( "Converting $key..." );
 			$count = $removeCount = 0;
 			$newContent = preg_replace(
 				$this->removeLinePattern,
@@ -56,10 +43,6 @@ class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 				-1,
 				$removeCount
 			);
-			if ( empty( $newContent ) ) {
-				$this->output( "FAILED!\n" );
-				continue;
-			}
 			$newContent = preg_replace(
 				$this->pattern,
 				$this->replacement,
@@ -68,31 +51,23 @@ class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 				$count
 			);
 			if ( empty( $newContent ) ) {
-				$this->output( "FAILED!\n" );
+				$this->output( "FAILED!" . PHP_EOL );
 				continue;
 			}
-			$count = $count + $removeCount;
+			$count += $removeCount;
 			if ( $count < 1 ) {
-				$this->output( "$count SKIP\n" );
+				$this->output( "Nothing to replace, skipping" . PHP_EOL );
 				continue;
 			}
-			$this->output( "$count backup..." );
-			$res = file_put_contents(
-				"$filename.MigrateConfigFiles.backup.php",
-				$content
-			);
-			if ( !$res ) {
-				$this->output( "FAILED!\n" );
-				continue;
+
+			$status = $manager->persist( $key, $newContent );
+			if ( $status->isOK() ) {
+				$this->output( 'done' . PHP_EOL );
+			} else {
+				$this->output( "FAILED!" . PHP_EOL );
 			}
-			$this->output( " saving..." );
-			$res = file_put_contents( $filename, $newContent );
-			if ( !$res ) {
-				$this->output( "FAILED!\n" );
-				continue;
-			}
-			$this->output( "OK\n" );
 		}
+
 		return true;
 	}
 
@@ -103,5 +78,7 @@ class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 	protected function getUpdateKey() {
 		return 'bs_configfiles-migration';
 	}
-
 }
+
+$maintClass = 'BSMigrateConfigFiles';
+require_once RUN_MAINTENANCE_IF_MAIN;
