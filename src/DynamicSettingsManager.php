@@ -13,13 +13,16 @@ class DynamicSettingsManager {
 	 *
 	 * @var ExtensionAttributeBasedRegistry
 	 */
-	private $providerRegistry = null;
+	private $providerRegistry;
 
 	/**
 	 *
 	 * @var LoggerInterface
 	 */
-	private $logger = null;
+	private $logger;
+
+	/** @var IDynamicSettings[]|null */
+	private $instances = null;
 
 	/**
 	 *
@@ -33,8 +36,8 @@ class DynamicSettingsManager {
 			// at `manifest.callback` time
 			[]
 		);
-		$dynamicSettingsManager = new DynamicSettingsManager( $registry );
-		return $dynamicSettingsManager;
+
+		return new DynamicSettingsManager( $registry );
 	}
 
 	/**
@@ -64,33 +67,42 @@ class DynamicSettingsManager {
 	}
 
 	/**
+	 * @return string[]
+	 * @throws Exception
+	 */
+	public function getAllKeys() {
+		return array_keys( $this->getAllInstances() );
+	}
+
+	/**
 	 *
 	 * @return IDynamicSettings[]
 	 */
 	private function getAllInstances() {
-		$instances = [];
-		$factoryCallbacks = $this->providerRegistry->getAllValues();
-		foreach ( $factoryCallbacks as $factoryKey => $factoryCallback ) {
-			// Filter out `@note`
-			// TODO: Maybe add such a feature to `ExtensionAttributeBasedRegistry` directly
-			if ( strpos( $factoryKey, '@' ) === 0 ) {
-				continue;
-			}
-			if ( !is_callable( $factoryCallback ) ) {
-				throw new Exception( "Factory of `$factoryKey` not callable!" );
-			}
-			/** @var IDynamicSettings */
-			$settings = call_user_func_array( $factoryCallback, [ $this->logger ] );
-			if ( $settings instanceof IDynamicSettings === false ) {
-				throw new Exception(
-					"Factory of `$factoryKey` did not return an `IDynamicSettings` object!"
-				);
-			}
+		if ( $this->instances === null ) {
+			$factoryCallbacks = $this->providerRegistry->getAllValues();
+			foreach ( $factoryCallbacks as $factoryKey => $factoryCallback ) {
+				// Filter out `@note`
+				// TODO: Maybe add such a feature to `ExtensionAttributeBasedRegistry` directly
+				if ( strpos( $factoryKey, '@' ) === 0 ) {
+					continue;
+				}
+				if ( !is_callable( $factoryCallback ) ) {
+					throw new Exception( "Factory of `$factoryKey` not callable!" );
+				}
+				/** @var IDynamicSettings */
+				$settings = call_user_func_array( $factoryCallback, [ $this->logger ] );
+				if ( $settings instanceof IDynamicSettings === false ) {
+					throw new Exception(
+						"Factory of `$factoryKey` did not return an `IDynamicSettings` object!"
+					);
+				}
 
-			$instances[$factoryKey] = $settings;
+				$this->instances[$factoryKey] = $settings;
+			}
 		}
 
-		return $instances;
+		return $this->instances;
 	}
 
 	/**
