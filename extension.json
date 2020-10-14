@@ -900,7 +900,6 @@
 		"BsFormatConverter": "includes/utility/FormatConverter.class.php",
 		"BsFileSystemHelper": "includes/utility/FileSystemHelper.class.php",
 		"BsGroupHelper": "includes/utility/GroupHelper.class.php",
-		"BsUserHelper": "includes/utility/UserHelper.class.php",
 		"BsNamespaceHelper": "includes/utility/NamespaceHelper.class.php",
 		"BsPageContentProvider": "includes/utility/PageContentProvider.class.php",
 		"BsStringHelper": "includes/utility/StringHelper.class.php",
