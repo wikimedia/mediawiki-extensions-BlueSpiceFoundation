@@ -55,10 +55,10 @@ abstract class GetFullURL extends Hook {
 	 *
 	 * @param Title $title
 	 * @param string &$url
-	 * @param string &$query
+	 * @param string $query
 	 * @return bool
 	 */
-	public static function callback( $title, &$url, &$query ) {
+	public static function callback( $title, &$url, $query ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -76,13 +76,13 @@ abstract class GetFullURL extends Hook {
 	 * @param Config $config
 	 * @param Title $title
 	 * @param string &$url
-	 * @param string &$query
+	 * @param string $query
 	 */
-	public function __construct( $context, $config, $title, &$url, &$query ) {
+	public function __construct( $context, $config, $title, &$url, $query ) {
 		parent::__construct( $context, $config );
 
 		$this->title = $title;
 		$this->url = &$url;
-		$this->query = &$query;
+		$this->query = $query;
 	}
 }
