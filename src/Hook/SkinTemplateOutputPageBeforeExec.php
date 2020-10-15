@@ -28,6 +28,11 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.3 - The hook was deprecated in MW 1.35. Use
+ * BlueSpice\Calumma\Hook\ChameleonSkinTemplateOutputPageBeforeExec instead
+ */
 abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 
 	/**
@@ -60,7 +65,9 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 	}
 
 	/**
-	 *
+	 * DEPRECATED!
+	 * @deprecated since version 3.3 - The hook was deprecated in MW 1.35. Use
+	 * BlueSpice\Calumma\Hook\ChameleonSkinTemplateOutputPageBeforeExec instead
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \SkinTemplate &$skin
@@ -68,6 +75,7 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 	 */
 	public function __construct( $context, $config, &$skin, &$template ) {
 		parent::__construct( $context, $config );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
 		$this->skin = $skin;
 		$this->template = &$template;
