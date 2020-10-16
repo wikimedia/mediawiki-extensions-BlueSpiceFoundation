@@ -12,6 +12,7 @@ Ext.define( 'BS.portal.Portlet', {
 	closable: true,
 	collapsible: true,
 	animCollapse: true,
+	modules: [],
 	draggable: {
 		moveOnDrag: false
 	},
@@ -53,6 +54,7 @@ Ext.define( 'BS.portal.Portlet', {
 		}
 		this.pcConfig.show();
 	},
+
 	// Subclasses may add further config data to feed their child components
 	getPortletConfig: function () {
 		// There is no method like Panel::getTitle()!
@@ -64,8 +66,13 @@ Ext.define( 'BS.portal.Portlet', {
 			collapsed: this.getCollapsed()
 		};
 	},
-	// Subclasses can use this to refresh their content!
-	setPortletConfig: function ( oConfig ) {
+
+	getPortletModules: function() {
+		return this.modules;
+	},
+
+	//Subclasses can use this to refresh their content!
+	setPortletConfig: function( oConfig ) {
 		this.setTitle( oConfig.title );
 		this.setHeight( oConfig.height );
 		this.portletItemCount = oConfig.portletItemCount;
