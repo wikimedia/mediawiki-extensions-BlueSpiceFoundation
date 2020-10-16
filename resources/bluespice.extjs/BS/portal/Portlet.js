@@ -12,6 +12,7 @@ Ext.define('BS.portal.Portlet', {
 	closable: true,
 	collapsible: true,
 	animCollapse: true,
+	modules: [],
 	draggable: {
 		moveOnDrag: false
 	},
@@ -64,6 +65,10 @@ Ext.define('BS.portal.Portlet', {
 			collapsed: this.getCollapsed()
 		};
 	},
+	getPortletModules: function() {
+		return this.modules;
+	},
+
 	//Subclasses can use this to refresh their content!
 	setPortletConfig: function( oConfig ) {
 		this.setTitle( oConfig.title );
