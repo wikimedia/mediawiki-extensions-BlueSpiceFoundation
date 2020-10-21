@@ -6,6 +6,9 @@
 	},
 	"bs-extjs-yes": "ⵢⴰⵀ",
 	"bs-extjs-no": "ⵓⵀⵓ",
+	"bs-extjs-delete": "ⴽⴽⵙ",
+	"bs-extjs-remove": "ⵙⵉⵜⵜⵢ",
+	"bs-extjs-edit": "ⵙⵏⴼⵍ",
 	"bs-extjs-filter-bool-yes": "ⵢⴰⵀ",
 	"bs-extjs-filter-bool-no": "ⵓⵀⵓ"
 }
