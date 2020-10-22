@@ -25,7 +25,11 @@ abstract class Content extends \BlueSpice\Data\Entity\Reader {
 			return null;
 		}
 
-		$text = WikiPage::factory( $title )->getContent()->getNativeData();
+		$content = WikiPage::factory( $title )->getContent();
+		if ( !$content ) {
+			return null;
+		}
+		$text = $content->getNativeData();
 
 		$content = new EntityContent( $text );
 		$data = (object)$content->getData()->getValue();
