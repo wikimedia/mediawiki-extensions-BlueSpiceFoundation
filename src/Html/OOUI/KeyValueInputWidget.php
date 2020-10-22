@@ -2,6 +2,12 @@
 
 namespace BlueSpice\Html\OOUI;
 
+use OOUI\ButtonWidget;
+use OOUI\Exception;
+use OOUI\FieldLayout;
+use OOUI\Tag;
+use OOUI\TextInputWidget;
+
 class KeyValueInputWidget extends \OOUI\Widget {
 	// Properties
 	protected $keyLabel;
@@ -53,15 +59,15 @@ class KeyValueInputWidget extends \OOUI\Widget {
 			? (bool)$config['allowAdditions']
 			: false;
 
-		$this->separator = new \OOUI\Tag();
-		$this->separator->addClasses( [ 'bs-ooui-keyValueInputWidget-separator' ] );
+		$this->separator = new Tag();
+		$this->separator->addClasses( [ "bs-ooui-{$this->getWidgetId()}-separator" ] );
 
 		parent::__construct( $config );
 
-		$this->valueContainer = new \OOUI\Tag();
-		$this->valueContainer->addClasses( [ 'bs-ooui-keyValueInputWidget-value-container' ] );
+		$this->valueContainer = new Tag();
+		$this->valueContainer->addClasses( [ "bs-ooui-{$this->getWidgetId()}-value-container" ] );
 
-		$this->addClasses( [ 'bs-ooui-widget-keyValueInputWidget' ] );
+		$this->addClasses( [ "bs-ooui-widget-{$this->getWidgetId()}" ] );
 		if ( !empty( $this->value ) ) {
 			$this->setValue( $config['value'] );
 		} else {
@@ -78,7 +84,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 		$label = new \OOUI\LabelWidget( [
 			'label' => wfMessage( 'bs-ooui-key-value-input-widget-no-values-label' )->plain()
 		] );
-		$label->addClasses( [ "bs-ooui-keyValueInputWidget-no-value-label" ] );
+		$label->addClasses( [ "bs-ooui-{$this->getWidgetId()}-no-value-label" ] );
 		$this->valueContainer->appendContent( $label );
 	}
 
@@ -92,6 +98,13 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	}
 
 	/**
+	 * @return string
+	 */
+	protected function getWidgetId() {
+		return 'keyValueInputWidget';
+	}
+
+	/**
 	 *
 	 * @param array $values
 	 * @return KeyValueInputWidget
@@ -99,38 +112,28 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	public function setValue( $values ) {
 		$first = true;
 		foreach ( $values as $key => $value ) {
-			$keyInput = new \OOUI\TextInputWidget( [
-				'value' => $key
-			] );
+			$keyInput = $this->getKeyInput( $key );
 			if ( $this->keyReadOnly ) {
 				$keyInput->setReadOnly( true );
 			}
 
-			$valueInput = new \OOUI\TextInputWidget( [
-				'value' => $value
-			] );
+			$valueInput = $this->getValueInput( $value );
 
 			$showLabels = $first || !$this->labelsOnlyOnFirst;
-			$layoutAttr = [];
-			if ( $showLabels ) {
-				$layoutAttr = [
-					'align' => 'top'
-				];
+			$keyLayout = $this->getKeyLayout( $keyInput );
+			if ( !$showLabels ) {
+				$keyLayout->setLabel( '' );
 			}
-			$keyLayout = new \OOUI\FieldLayout( $keyInput, $layoutAttr );
-			if ( $showLabels ) {
-				$keyLayout->setLabel( $this->keyLabel );
-			}
-			$valueLayout = new \OOUI\FieldLayout( $valueInput, $layoutAttr );
-			if ( $showLabels ) {
-				$valueLayout->setLabel( $this->valueLabel );
+			$valueLayout = $this->getValueLayout( $valueInput );
+			if ( !$showLabels ) {
+				$valueLayout->setLabel( '' );
 			}
 
-			$deleteButton = new \OOUI\ButtonWidget( [
+			$deleteButton = new ButtonWidget( [
 					'framed' => false,
 					'indicator' => 'clear'
 			] );
-			$deleteButton->addClasses( [ 'bs-ooui-widget-keyValueInputWidget-remove-btn' ] );
+			$deleteButton->addClasses( [ "bs-ooui-widget-{$this->getWidgetId()}-remove-btn" ] );
 
 			$this->valueContainer->appendContent(
 				$keyLayout,
@@ -141,13 +144,17 @@ class KeyValueInputWidget extends \OOUI\Widget {
 
 			$first = false;
 		}
+
 		return $this;
 	}
 
+	/**
+	 * Add form for adding a new item
+	 */
 	protected function addNewValueForm() {
-		$this->addContainer = new \OOUI\Tag();
+		$this->addContainer = new Tag();
 		$this->addContainer->addClasses( [
-			'bs-ooui-widget-keyValueInputWidget-add-container'
+			"bs-ooui-widget-{$this->getWidgetId()}-add-container"
 		] );
 
 		if ( $this->addNewFormLabel !== '' ) {
@@ -155,22 +162,65 @@ class KeyValueInputWidget extends \OOUI\Widget {
 				'label' => $this->addNewFormLabel
 			] ) );
 		}
-		$keyInput = new \OOUI\TextInputWidget( [
-			'required' => true
-		] );
+		$this->addContainer->appendContent(
+			$this->getKeyLayout( $this->getKeyInput() ),
+			$this->getValueLayout( $this->getValueInput() ),
+			$this->getAddButton()
+		);
+		$this->appendContent( $this->addContainer );
+	}
 
-		$valueInput = new \OOUI\TextInputWidget();
-		if ( $this->valueRequired ) {
-			$valueInput->setRequired( true );
-		}
-
-		$keyLayout = new \OOUI\FieldLayout( $keyInput, [ 'align' => 'top' ] );
-		$keyLayout->setLabel( $this->keyLabel );
-
-		$valueLayout = new \OOUI\FieldLayout( $valueInput, [ 'align' => 'top' ] );
+	/**
+	 * @param string $input
+	 * @return FieldLayout
+	 * @throws Exception
+	 */
+	protected function getValueLayout( $input ) {
+		$valueLayout = new FieldLayout( $input, [ 'align' => 'top' ] );
 		$valueLayout->setLabel( $this->valueLabel );
 
-		$addButton = new \OOUI\ButtonWidget( [
+		return $valueLayout;
+	}
+
+	/**
+	 * @param string $input
+	 * @return FieldLayout
+	 * @throws Exception
+	 */
+	protected function getKeyLayout( $input ) {
+		$keyLayout = new FieldLayout( $input, [ 'align' => 'top' ] );
+		$keyLayout->setLabel( $this->keyLabel );
+
+		return $keyLayout;
+	}
+
+	/**
+	 * @param string|null $keyValue
+	 * @return TextInputWidget
+	 */
+	protected function getKeyInput( $keyValue = null ) {
+		return new TextInputWidget( [
+			'required' => true,
+			'value' => $keyValue ?? ''
+		] );
+	}
+
+	/**
+	 * @param mixed|null $value
+	 * @return TextInputWidget
+	 */
+	protected function getValueInput( $value = null ) {
+		return new TextInputWidget( [
+			'value' => $value ?? '',
+			'required' => $this->valueRequired
+		] );
+	}
+
+	/**
+	 * @return ButtonWidget
+	 */
+	protected function getAddButton() {
+		$addButton = new ButtonWidget( [
 			'framed' => false,
 			'title' => wfMessage( 'bs-ooui-key-value-input-widget-add-button-label' )->plain(),
 			'icon' => 'check',
@@ -178,10 +228,9 @@ class KeyValueInputWidget extends \OOUI\Widget {
 				'progressive'
 			]
 		] );
-		$addButton->addClasses( [ 'bs-ooui-widget-keyValueInputWidget-add-btn' ] );
+		$addButton->addClasses( [ "bs-ooui-widget-{$this->getWidgetId()}-add-btn" ] );
 
-		$this->addContainer->appendContent( $keyLayout, $valueLayout, $addButton );
-		$this->appendContent( $this->addContainer );
+		return $addButton;
 	}
 
 	/**

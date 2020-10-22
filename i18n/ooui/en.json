@@ -11,5 +11,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Add new entry",
 	"bs-ooui-key-value-input-widget-error-message": "All required fields must be set!",
 	"bs-ooui-key-value-input-widget-no-values-label": "No values set!",
-	"bs-ooui-btn-dismiss-alert-title": "Dismiss"
+	"bs-ooui-btn-dismiss-alert-title": "Dismiss",
+	"bs-ooui-key-value-input-widget-section-label": "Section",
+	"bs-ooui-key-value-input-widget-add-section-label": "Add new section"
 }
