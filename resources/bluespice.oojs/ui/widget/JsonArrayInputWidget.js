@@ -23,11 +23,11 @@
 			try {
 				return JSON.parse( val );
 			} catch ( e ) {
-				return {};
+				return '';
 			}
 		}
 
-		return {};
+		return '';
 	};
 
 	bs.ui.widget.JsonArrayInputWidget.prototype.setValue = function( val ) {

@@ -140,6 +140,42 @@
 		} );
 	};
 
+	bs.ui.widget.KeyValueInputWidget.prototype.getValidity = function() {
+		var toCheck = [],
+			dfd = $.Deferred();
+
+		for ( var i = 0; i < this.addedWidgets.length; i++ ) {
+			if ( typeof this.addedWidgets[i].keyWidget.getValidity === 'function' ) {
+				toCheck.push( this.addedWidgets[i].keyWidget );
+			}
+			if ( typeof this.addedWidgets[i].valueWidget.getValidity === 'function' ) {
+				toCheck.push( this.addedWidgets[i].valueWidget );
+			}
+		}
+
+		this.doCheckValidity( toCheck, dfd );
+
+		return dfd.promise();
+	};
+
+	bs.ui.widget.KeyValueInputWidget.prototype.setValidityFlag = function( valid ) {
+		// NOOP since flags will be set already by internal validation
+	};
+
+	bs.ui.widget.KeyValueInputWidget.prototype.doCheckValidity = function( inputs, dfd ) {
+		if ( inputs.length === 0 ) {
+			return dfd.resolve();
+		}
+
+		var current = inputs.shift();
+		current.getValidity().done( function() {
+			this.doCheckValidity( inputs, dfd );
+		}.bind( this ) ).fail( function() {
+			current.setValidityFlag( false );
+			dfd.reject();
+		} );
+	};
+
 	bs.ui.widget.KeyValueInputWidget.prototype.getValueLayout = function( valueInput, cfg ) {
 		return new OO.ui.FieldLayout( valueInput, {
 			align: cfg.align || 'left',
@@ -151,7 +187,8 @@
 		var keyInput = new OO.ui.TextInputWidget( {
 			value: cfg.keyValue,
 			readOnly: cfg.keyReadOnly,
-			required: !cfg.keyReadOnly
+			required: !cfg.keyReadOnly,
+			validity: !cfg.keyReadOnly ? 'non-empty' : false
 		} );
 		keyInput.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-key-input' );
 
@@ -161,7 +198,8 @@
 	bs.ui.widget.KeyValueInputWidget.prototype.getValueInput = function( cfg ) {
 		var valueInput = new OO.ui.TextInputWidget( {
 			value: cfg.valueValue,
-			required: cfg.valueRequired
+			required: cfg.valueRequired,
+			validity: cfg.valueRequired ? 'non-empty' : false
 		} );
 		valueInput.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-value-input' );
 
@@ -213,81 +251,72 @@
 		if ( !this.addForm ) {
 			return;
 		}
-
 		var keyValue = this.addForm.inputs.key.getValue();
 		var valueValue = this.addForm.inputs.value.getValue();
-		this.resetAddForm();
 
-		if( this.validate( keyValue, valueValue ) === false ) {
-			return;
+		this.validateAddNewForm().done( function() {
+			valueValue = valueValue || keyValue;
+
+			var deleteButton = this.getDeleteButtonWidget();
+
+			var layoutCfg = $.extend( {
+				keyValue: keyValue,
+				valueValue: valueValue,
+				deleteWidget: deleteButton
+			}, this.getDefaultLayoutConfig() );
+			var layouts = this.getLayouts( layoutCfg );
+
+			this.addEntry( layouts, deleteButton.$element );
+			this.$element.find( '.bs-ooui-keyValueInputWidget-no-value-label' ).remove();
+
+			this.emit( 'change', this );
+			this.resetAddForm();
+		}.bind( this ) );
+	};
+
+	bs.ui.widget.KeyValueInputWidget.prototype.validateAddNewForm = function() {
+		var dfd = $.Deferred(),
+			toCheck = [];
+
+		if ( typeof this.addForm.inputs.key.getValidity === 'function' ) {
+			toCheck.push( this.addForm.inputs.key );
 		}
+		if ( typeof this.addForm.inputs.value.getValidity === 'function' ) {
+			toCheck.push( this.addForm.inputs.value );
+		}
+		this.doCheckValidity( toCheck, dfd );
 
-		valueValue = valueValue || keyValue;
-
-		var deleteButton = this.getDeleteButtonWidget();
-
-		var layoutCfg = $.extend( {
-			keyValue: keyValue,
-			valueValue: valueValue,
-			deleteWidget: deleteButton
-		}, this.getDefaultLayoutConfig() );
-		var layouts = this.getLayouts( layoutCfg );
-
-		this.addEntry( layouts, deleteButton.$element );
-		this.$element.find( '.bs-ooui-keyValueInputWidget-no-value-label' ).remove();
-
-		this.emit( 'change', this );
+		return dfd.promise();
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.resetAddForm = function() {
 		this.addForm.inputs.key.setValue( '' );
 		this.addForm.inputs.value.setValue( '' );
+
+		if ( typeof this.addForm.inputs.key.setValidityFlag === 'function' ) {
+			this.addForm.inputs.key.setValidityFlag( true );
+		}
+		if ( typeof this.addForm.inputs.value.setValidityFlag === 'function' ) {
+			this.addForm.inputs.value.setValidityFlag( true );
+		}
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getValue = function() {
 		var value = {};
 		for( var idx in this.addedWidgets ) {
+			if ( !this.addedWidgets.hasOwnProperty( idx ) ) {
+				continue;
+			}
 			var keyWidget = this.addedWidgets[idx].keyWidget;
 			var valueWidget = this.addedWidgets[idx].valueWidget;
 			var keyValue = keyWidget.getValue();
-
 			var valueValue = valueWidget.getValue();
-
-			if( this.validate( keyValue, valueValue ) === false ) {
-				continue;
-			}
 
 			valueValue = valueValue || keyValue;
 			value[keyValue] = valueValue;
 		}
 
 		return value;
-	};
-
-	bs.ui.widget.KeyValueInputWidget.prototype.validate = function( keyValue, valueValue ) {
-		if( keyValue === '' || ( this.valueRequired && valueValue === '') ) {
-			this.makeErrorMessage();
-			return false;
-		}
-		return true;
-	};
-
-	bs.ui.widget.KeyValueInputWidget.prototype.makeErrorMessage = function( message ) {
-		message = message || mw.message( "bs-ooui-key-value-input-widget-error-message" ).plain();
-
-		if( this.$errorBox ) {
-			return;
-		}
-
-		this.$errorBox = $( '<div>' ).addClass( 'bs-ooui-keyValueInputWidget-error-box' );
-		this.$errorBox.append( new OO.ui.IconWidget( {
-			icon: 'alert',
-			flags: [ 'warning' ]
-		} ).$element );
-		this.$errorBox.append( new OO.ui.LabelWidget( {
-			label: message,
-		} ).$element );
-		this.$addContainer.append( this.$errorBox );
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.onDeleteClick = function( e ) {

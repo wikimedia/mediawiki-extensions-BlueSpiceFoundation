@@ -50,6 +50,52 @@
 		return this.layouts;
 	};
 
+	bs.ui.widget.ObjectInputWidget.prototype.getValidity = function() {
+		var toCheck = [],
+			dfd = $.Deferred();
+
+		for ( var key in this.widgets ) {
+			if ( !this.widgets.hasOwnProperty( key ) ) {
+				continue;
+			}
+			if ( typeof this.widgets[key].getValidity === 'function' ) {
+				toCheck.push( this.widgets[key] );
+			}
+		}
+
+		this.doCheckValidity( toCheck, dfd );
+
+		return dfd.promise();
+	};
+
+	bs.ui.widget.ObjectInputWidget.prototype.doCheckValidity = function( inputs, dfd ) {
+		if ( inputs.length === 0 ) {
+			return dfd.resolve();
+		}
+		var current = inputs.shift();
+		current.getValidity().done( function() {
+			this.doCheckValidity( inputs, dfd );
+		}.bind( this ) ).fail( function() {
+			current.setValidityFlag( false );
+			dfd.reject();
+		} );
+	};
+
+	bs.ui.widget.ObjectInputWidget.prototype.setValidityFlag = function( valid ) {
+		if ( !valid ) {
+			// Will be handled by internal validation
+			return;
+		}
+		for ( var key in this.widgets ) {
+			if ( !this.widgets.hasOwnProperty( key ) ) {
+				continue;
+			}
+			if ( typeof this.widgets[key].setValidityFlag === 'function' ) {
+				this.widgets[key].setValidityFlag( true );
+			}
+		}
+	};
+
 	bs.ui.widget.ObjectInputWidget.prototype.setValue = function( value ) {
 		if ( !value ) {
 			value = '';
