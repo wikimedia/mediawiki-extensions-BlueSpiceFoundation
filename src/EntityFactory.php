@@ -308,7 +308,11 @@ class EntityFactory {
 			return false;
 		}
 
-		$text = WikiPage::factory( $title )->getContent()->getNativeData();
+		$content = WikiPage::factory( $title )->getContent();
+		if ( !$content ) {
+			return false;
+		}
+		$text = $content->getNativeData();
 		$content = new EntityContent( $text );
 		$data = (object)$content->getData()->getValue();
 
