@@ -6,7 +6,8 @@
 			"Guycn2",
 			"Ronel1",
 			"Steeve815",
-			"YaronSh"
+			"YaronSh",
+			"ישראל קלר"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -34,6 +35,7 @@
 	"bs-extjs-label-namespace": "מרחב שם",
 	"bs-extjs-label-page": "דף",
 	"bs-extjs-label-directsearch": "חיפוש",
+	"bs-extjs-label-specialpage": "דף מיוחד",
 	"bs-extjs-titlecombo-newpagehint": "העמוד לא קיים!",
 	"bs-extjs-upload": "העלאה",
 	"bs-extjs-browse": "עיון",
@@ -69,6 +71,7 @@
 	"bs-extjs-pageexport-overwrite-label": "שכתוב",
 	"bs-extjs-pageexport-general-error": "שגיאת ייצוא",
 	"bs-extjs-pageexport-pagecollection-prefix": "אוסף דפים",
+	"bs-pagecollection-prefix": "אוסף דפים",
 	"bs-extjs-pageexport-success": "הייצוא בוצע בהצלחה",
 	"bs-extjs-pageexport-error-invalid-title": "שם הרשימה אינו תקין",
 	"bs-extjs-combo-box-default-placeholder": "הסוג לסינון...",

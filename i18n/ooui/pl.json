@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Rail",
 			"WaldiSt"
 		]
 	},
@@ -11,5 +12,7 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Dodaj",
 	"bs-ooui-key-value-input-widget-add-form-label": "Dodaj nowy wpis",
 	"bs-ooui-key-value-input-widget-error-message": "Wszystkie wymagane pola muszą być ustawione!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Brak ustawionych wartości!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Brak ustawionych wartości!",
+	"bs-ooui-key-value-input-widget-section-label": "Sekcja",
+	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nową sekcję"
 }
