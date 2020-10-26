@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Just Sayori"
+		]
+	},
+	"bs-filerepo-headerfilewidth": "ความกว้าง",
+	"bs-filerepo-headerfileheight": "ความสูง",
+	"bs-filerepo-headerfilemimetype": "ชนิด MIME",
+	"bs-filerepo-headerfileusertext": "ผู้ใช้",
+	"bs-filerepo-headerfileextension": "ส่วนขยาย",
+	"bs-filerepo-headerfiletimestamp": "อัปโหลดแล้ว",
+	"bs-filerepo-headerfilemediatype": "ชนิดสื่อ",
+	"bs-filerepo-headerfiledescription": "คำอธิบาย",
+	"bs-filerepo-headerfilethumbnail": "รูปย่อ"
+}

@@ -11,5 +11,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "새 항목 추가",
 	"bs-ooui-key-value-input-widget-error-message": "모든 필수 칸은 반드시 설정해야 합니다!",
 	"bs-ooui-key-value-input-widget-no-values-label": "설정된 값이 없습니다!",
-	"bs-ooui-btn-dismiss-alert-title": "숨기기"
+	"bs-ooui-btn-dismiss-alert-title": "숨기기",
+	"bs-ooui-key-value-input-widget-section-label": "문단",
+	"bs-ooui-key-value-input-widget-add-section-label": "새 문단 추가"
 }

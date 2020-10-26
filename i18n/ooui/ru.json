@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Alexander Yukal",
+			"Megakott",
 			"Shaleych",
 			"Vlad5250"
 		]
@@ -13,5 +14,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Добавить новую запись",
 	"bs-ooui-key-value-input-widget-error-message": "Необходимо заполнить все необходимые поля!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значений!",
-	"bs-ooui-btn-dismiss-alert-title": "Отклонить"
+	"bs-ooui-btn-dismiss-alert-title": "Отклонить",
+	"bs-ooui-key-value-input-widget-section-label": "Раздел",
+	"bs-ooui-key-value-input-widget-add-section-label": "Добавить новый раздел"
 }
