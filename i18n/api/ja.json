@@ -5,6 +5,7 @@
 			"Aefgh39622",
 			"Otokoume",
 			"Reiwa period",
+			"Rrock9312",
 			"Shirayuki",
 			"Suyama"
 		]
@@ -17,6 +18,7 @@
 	"apihelp-bs-category-store-summary": "すべてのカテゴリを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store引数を実装します。",
 	"apihelp-bs-adminuser-store-description": "データベースからすべての利用者を追加のセンシティブデータとともに一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
 	"apihelp-bs-adminuser-store-summary": "データベースからすべての利用者を追加のセンシティブデータとともに一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
+	"apihelp-bs-group-store-description": "$wgImplicitGroups を除くすべてのグループを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
 	"apihelp-bs-group-store-summary": "$wgImplicitGroupsを除くすべてのグループを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
 	"apihelp-bs-interwiki-store-description": "すべてのインターウィキリンクを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store引数を実装します。",
 	"apihelp-bs-interwiki-store-summary": "すべてのインターウィキリンクを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store引数を実装します。",
