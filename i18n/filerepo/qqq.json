@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dejan Savuljesku",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"MuratTheTurkish"
 		]
 	},
 	"bs-filerepo-labelupload": "Label for upload button\n{{Identical|Upload}}",
@@ -21,5 +22,5 @@
 	"bs-filerepo-headerfilethumbnail": "Table header for thumbnail column\n{{Identical|Thumbnail}}",
 	"bs-filerepo-yes": "Label for table cell that holds a boolean true\n{{Identical|Yes}}",
 	"bs-filerepo-no": "Label for table cell that holds a boolean false\n{{Identical|No}}",
-	"bs-filerepo-pagesize": "Label for the input box that changes the number of entries displayed per page in a filerepo grid.\n{{Identical|Entries per page}}"
+	"bs-filerepo-pagesize": "Label for the input box that changes the number of entries displayed per page in a filerepo grid."
 }

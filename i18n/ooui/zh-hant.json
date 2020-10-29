@@ -11,5 +11,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "添加新項目",
 	"bs-ooui-key-value-input-widget-error-message": "需設定所有必要欄位！",
 	"bs-ooui-key-value-input-widget-no-values-label": "值沒有設定！",
-	"bs-ooui-btn-dismiss-alert-title": "去除"
+	"bs-ooui-btn-dismiss-alert-title": "去除",
+	"bs-ooui-key-value-input-widget-section-label": "段落",
+	"bs-ooui-key-value-input-widget-add-section-label": "添加新的段落"
 }

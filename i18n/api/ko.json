@@ -37,5 +37,6 @@
 	"bs-api-task-taskData-page-title": "위키 페이지의 유효한 제목입니다",
 	"bs-api-task-wikipagetasks-taskData-categories": "문자열의 배열입니다. 값은 유효한 분류 이름이어야 합니다.",
 	"apihelp-bs-watchlist-store-summary": "모든 주시문서 목록 항목을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. 스토어 변수를 구현합니다.",
-	"apihelp-bs-recentchanges-store-summary": "최근의 모든 변경사항을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. 스토어 변수를 구현합니다."
+	"apihelp-bs-recentchanges-store-summary": "최근의 모든 변경사항을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. 스토어 변수를 구현합니다.",
+	"apihelp-bs-js-var-config-param-format": "결과 형식"
 }

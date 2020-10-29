@@ -1,6 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ameisenigel",
+			"Elliot",
 			"Hwboehm",
 			"Inkowik",
 			"Metalhead64",
@@ -93,10 +95,11 @@
 	"bs-graphicallist-action-preview": "Vorschau",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "BlueSpice-Administrationsseiten anzuzeigen",
-	"right-wikiadmin": "In vielen BlueSpice-Erweiterungen verwendet für potentiell gefährliche administrative Aufgaben wie die Verwaltung von Benutzern, Berechtigungen oder der globalen Konfiguration.",
+	"action-wikiadmin": "verwendet für potentiell gefährliche administrative Aufgaben wie die Verwaltung von Benutzern, Berechtigungen oder der globalen Konfiguration (BlueSpice-Erweiterung)",
+	"right-wikiadmin": "Verwendet für potentiell gefährliche administrative Aufgaben wie die Verwaltung von Benutzern, Berechtigungen oder der globalen Konfiguration. (BlueSpice-Erweiterung)",
 	"bs-notifications-agent-anon": "anonymer Benutzer",
 	"protect-level-editor": "Nur Redakteuren und Administratoren erlauben",
-	"bs-pref-fileextensions-help": "Dateitypen, die für das Hochladen in das Wiki freigegeben sind.  Einige Typen (z.B. html, js, php, cgi, exe) sind aus Sicherheitsgründen nicht erlaubt, auch wenn sie hier aufgelistet werden.",
-	"bs-pref-imageextensions-help": "Bilddateiformate, die für das Hochladen freigegeben sind. Mögliche Webformate: gif, png, jpg, jpeg. Weitere Bildformate: tiff, bmp"
+	"bs-pref-fileextensions-help": "Dateitypen, die für das Hochladen in das Wiki freigegeben sind. Einige Typen (z.B. html, js, php, cgi, exe) sind aus Sicherheitsgründen nicht erlaubt, auch wenn sie hier aufgelistet werden.",
+	"bs-pref-imageextensions-help": "Bilddateiformate, die für das Hochladen freigegeben sind. Mögliche Webformate: gif, png, jpg, jpeg. Weitere Bildformate: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfiguration Datei $1 konnte nicht geschrieben werden!"
 }

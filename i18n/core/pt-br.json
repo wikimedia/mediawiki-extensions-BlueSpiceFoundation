@@ -99,5 +99,6 @@
 	"right-editor": "Ser concedidas todas as permissões do papel \"editor\" para páginas protegidas na restrição do editor quando o sistema de papéis estiver ativado",
 	"action-editor": "conceder todas as permissões da função \"editor\" para páginas protegidas na restrição do editor quando o sistema de funções estiver ativado",
 	"bs-pref-fileextensions-help": "Tipos de arquivos que podem ser carregados na wiki. Alguns tipos (por exemplo, html, js, php, cgi, exe) não são permitidos por razões de segurança, mesmo que tenham sido adicionados aqui.",
-	"bs-pref-imageextensions-help": "Tipos de arquivos de imagem que podem ser carregados no wiki. Formatos possíveis da web: gif, png, jpg, jpeg. Outros formatos de imagem: tiff, bmp"
+	"bs-pref-imageextensions-help": "Tipos de arquivos de imagem que podem ser carregados no wiki. Formatos possíveis da web: gif, png, jpg, jpeg. Outros formatos de imagem: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Não foi possível gravar o arquivo de configuração $1!"
 }

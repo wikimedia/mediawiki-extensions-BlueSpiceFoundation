@@ -73,5 +73,7 @@
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
 	"right-wikiadmin": "Käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
-	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät"
+	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
+	"bs-graphicallist-action-list": "Luettelo",
+	"bs-graphicallist-action-preview": "Esikatsele"
 }

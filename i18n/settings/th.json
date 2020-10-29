@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"bs-setting-path-feature": "คุณลักษณะ",
+	"bs-setting-path-extension": "ส่วนขยาย",
+	"bs-setting-path-package": "แพกเกจ",
+	"bs-setting-path-system": "ระบบ",
+	"bs-setting-path-dataanalysis": "การวินิจฉัยข้อมูล",
+	"bs-setting-path-communication": "การสื่อสาร",
+	"bs-setting-path-administration": "การดูแลระบบ",
+	"bs-setting-path-export": "การส่งออก"
+}

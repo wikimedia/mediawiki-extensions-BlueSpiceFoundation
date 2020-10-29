@@ -12,5 +12,7 @@
 	"bs-upload-categories": "Kategorier",
 	"bs-upload-error": "Fejl",
 	"bs-upload-descfilelabel": "Beskrivelse",
-	"bs-upload-details": "Detaljer"
+	"bs-upload-details": "Detaljer",
+	"bs-upload-allowedfiletypesare": "Gyldige filtyper er:",
+	"bs-upload-uploadignorewarningslabel": "Ignorer mine advarsler"
 }

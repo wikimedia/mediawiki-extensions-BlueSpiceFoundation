@@ -71,5 +71,10 @@
 	"apihelp-bs-watchlist-store-summary": "Liste toutes les entrées des listes de suivi. Permet le tri, le filtrage et la mise en forme. Implémente les paramètres store.",
 	"apihelp-bs-recentchanges-store-summary": "Affiche l’ensemble des modifications récentes. Permet de trier, de filtrer et de mettre en forme. Implémente la sauvegarde des paramètres.",
 	"apihelp-bs-task-summary": "Fournit le point de terminaison de l’API pour l’exécution de tâches enregistrées",
-	"apihelp-bs-task-description": "Fournit le point de terminaison de l’API pour l’exécution de tâches enregistrées"
+	"apihelp-bs-task-description": "Fournit le point de terminaison de l’API pour l’exécution de tâches enregistrées",
+	"apihelp-bs-js-var-config-summary": "Fournit un point d’accès à l’API pour récupérer des variables de configuration côté client",
+	"apihelp-bs-js-var-config-param-name": "Nom de la variable de configuration à récupérer",
+	"apihelp-bs-js-var-config-param-func": "Fonction de configuration à exécuter : has|get",
+	"apihelp-bs-js-var-config-param-context": "Objet encodé JSON avec le contexte de l'appel",
+	"apihelp-bs-js-var-config-param-format": "Format du résultat"
 }

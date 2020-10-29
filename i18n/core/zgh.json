@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Hakim1bal",
 			"ⵕⴰⵊⵉ"
 		]
 	},
-	"bs-graphicallist-action-close": "ⵇⵇⵏ"
+	"bs-graphicallist-action-close": "ⵇⵇⵏ",
+	"bs-extended-search-textfield-defaultvalue": "ⴰⵔⵣⵣⵓ..."
 }

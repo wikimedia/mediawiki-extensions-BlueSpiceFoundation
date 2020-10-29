@@ -6,7 +6,8 @@
 			"Guycn2",
 			"Ronel1",
 			"Steeve815",
-			"YaronSh"
+			"YaronSh",
+			"ישראל קלר"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -78,5 +79,8 @@
 	"bs-extjs-flyout-tab-grid-label": "פרטים",
 	"bs-extjs-flyout-tab-grid-title": "החלפה לתצוגה מפורטת",
 	"bs-extjs-flyout-add-title": "יש ללחוץ כאן כדי להוסיף פריט חדש",
-	"bs-extjs-flyout-add-label": "הוספת פריט"
+	"bs-extjs-flyout-add-label": "הוספת פריט",
+	"bs-extjs-label-group": "קבוצה",
+	"bs-extjs-label-specialpage": "דף מיוחד",
+	"bs-pagecollection-prefix": "אוסף דפים"
 }

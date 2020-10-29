@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"1917 Ekim Devrimi",
 			"Mirzali"
 		]
 	},
@@ -15,5 +16,10 @@
 	"bs-filerepo-headerfiledescription": "Şınasnayış",
 	"bs-filerepo-headerfilethumbnail": "Resımo qıckek",
 	"bs-filerepo-yes": "Eya",
-	"bs-filerepo-no": "Nê"
+	"bs-filerepo-no": "Nê",
+	"bs-filerepo-headerfilesize": "Ebat",
+	"bs-filerepo-headerfilemimetype": "Tewrê MIME",
+	"bs-filerepo-headerfileextension": "Dergiye",
+	"bs-filerepo-headerfilemediatype": "Tewrê medya",
+	"bs-filerepo-pagesize": "Verê herf pela amarê kewtışi"
 }

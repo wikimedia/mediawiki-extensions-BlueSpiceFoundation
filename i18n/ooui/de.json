@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Killarnee",
+			"Laurinm",
 			"Metalhead64"
 		]
 	},
@@ -12,5 +13,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Neuen Eintrag hinzufügen",
 	"bs-ooui-key-value-input-widget-error-message": "Es müssen alle erforderlichen Felder festgelegt werden!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Keine Werte festgelegt!",
-	"bs-ooui-btn-dismiss-alert-title": "Schließen"
+	"bs-ooui-btn-dismiss-alert-title": "Schließen",
+	"bs-ooui-key-value-input-widget-section-label": "Abschnitt",
+	"bs-ooui-key-value-input-widget-add-section-label": "Neuen Abschnitt hinzufügen"
 }

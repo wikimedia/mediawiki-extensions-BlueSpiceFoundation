@@ -10,5 +10,7 @@
 	"bs-extjs-label-group": "Grupo",
 	"bs-extjs-label-namespace": "'Namespace'",
 	"bs-extjs-upload": "Kargar",
-	"bs-extjs-uploading": "Karganta..."
+	"bs-extjs-uploading": "Karganta...",
+	"bs-extjs-edit": "Redaktar",
+	"bs-extjs-confirm": "Konfirmez"
 }

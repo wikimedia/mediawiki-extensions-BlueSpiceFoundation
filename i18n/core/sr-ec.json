@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BadDog",
+			"Kizule",
 			"Milicevic01",
 			"Obsuser",
 			"Zoranzoki21"
@@ -34,7 +35,7 @@
 	"bs-userpreferences-link-title": "Прикажи лична корисничка подешавања",
 	"bs-exception-view-heading": "Дошло је до грешке",
 	"bs-exception-view-text": "Приликом обраде вашег захтева дошло је до следеће грешке:",
-	"bs-exception-view-admin-hint": "Контактирајте свог администратора система.",
+	"bs-exception-view-admin-hint": "Обратите се администратору система.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Прикажи детаље грешке",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Сакриј детаље грешке",
 	"bs-viewtagerrorlist-legend": "$1 — Грешка",
@@ -74,7 +75,7 @@
 	"bs-pref-anonuserimage": "Аватар анонимног корисника:",
 	"bs-pref-deleteduserimage": "Избрисани кориснички аватар:",
 	"bs-pref-bspinginterval": "Интервал пинга (у секундама):",
-	"bs-pref-testmode": "Активирај пробни режим",
+	"bs-pref-testmode": "Укључи пробни режим",
 	"bs-tag-input-desc": "Вредност садржаја елемента",
 	"bs-tag-param-desc": "Вредност атрибута елемента „$1”",
 	"bs-parser-error-invalid-namespace": "Неважећи именски простор: $1",

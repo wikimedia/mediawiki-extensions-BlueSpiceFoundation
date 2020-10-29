@@ -5,5 +5,12 @@
 		]
 	},
 	"bs-extjs-cancel": "Չեղարկել",
-	"bs-extjs-yes": "Այո"
+	"bs-extjs-yes": "Այո",
+	"bs-extjs-ok": "Լաւ",
+	"bs-extjs-save": "Պահել",
+	"bs-extjs-edit": "Խմբագրել",
+	"bs-extjs-error": "Սխալ",
+	"bs-extjs-actions-column-header": "Գործողութիւններ",
+	"bs-extjs-label-namespace": "Անուանատարածք",
+	"bs-extjs-filter-bool-yes": "այո"
 }

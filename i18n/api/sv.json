@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ainali",
 			"Bengtsson96",
 			"Mjälten",
 			"Technic2",
@@ -19,7 +20,7 @@
 	"apihelp-bs-store-param-page": "Gör det möjlig att räkna ut start/limit på vaktmästarsidan",
 	"apihelp-bs-store-param-limit": "Antal resultat att returnera",
 	"apihelp-bs-store-param-callback": "Namnet på en metod i klientkoden som ska anropas i svaret (JSONP)",
-	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera mellanlager</code>",
+	"apihelp-bs-store-param-dc": "Flaggan <code>Inaktivera cache</code>",
 	"apihelp-bs-store-param-format": "Formatet för utmatningen (endast JSON eller formaterad JSON)",
 	"apihelp-bs-task-param-task": "Uppgiften som bör utföras",
 	"apihelp-bs-task-param-taskdata": "JSON-sträng-kodat objekt med godtycklig data för uppgiften",

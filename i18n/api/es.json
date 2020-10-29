@@ -62,5 +62,8 @@
 	"bs-api-task-taskData-page-title": "Un título válido de una página wiki",
 	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de cadenas. Los valores deben ser nombres de categorías válidos.",
 	"apihelp-bs-watchlist-store-summary": "Enumera todas las entradas de la lista de seguimiento. Permite su ordenamiento y filtrado y consultarlas mediante paginación. Implementa parámetros de almacenamiento.",
-	"apihelp-bs-recentchanges-store-summary": "Enumera todos los cambios recientes. Permite ordenarlos, filtrarlos y paginarlos. Implementa parámetros de almacenamiento."
+	"apihelp-bs-recentchanges-store-summary": "Enumera todos los cambios recientes. Permite ordenarlos, filtrarlos y paginarlos. Implementa parámetros de almacenamiento.",
+	"apihelp-bs-group-store-description": "Enumera todos los grupos con la excepción de $wgImplicitGroups. Permite el ordenamiento, el filtrado y la paginación. Implementa parámetros de ExtJS Store.",
+	"apihelp-bs-store-param-page": "Permite el cálculo de inicio/límite del lado servidor",
+	"apihelp-bs-category-treestore-param-node": "Una ruta de categorías separadas por una barra"
 }
