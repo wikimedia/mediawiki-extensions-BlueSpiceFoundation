@@ -524,7 +524,7 @@ class BsPageContentProvider {
 		$sPatternQuotedArticleTitle = preg_quote( str_replace( ' ', '_', $oTitle->getPrefixedText() ) );
 
 		foreach ( $aMatches[2] as $sAnchorName ) {
-			$sUniqueAnchorName = md5( $oTitle->getPrefixedText() . $sAnchorName . $aParams['oldid'] . $aParams['entropy'] );
+			$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
 
 			$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
 			// In TOC
