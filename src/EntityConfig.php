@@ -246,10 +246,13 @@ abstract class EntityConfig implements JsonSerializable, Config {
 			],
 		];
 
-		\Hooks::run( 'BSEntityConfigAttributeDefinitions', [
-			$this,
-			&$attributeDefinitions,
-		] );
+		MediaWikiServices::getInstance()->getHookContainer()->run(
+			'BSEntityConfigAttributeDefinitions',
+			[
+				$this,
+				&$attributeDefinitions,
+			]
+		);
 
 		return $attributeDefinitions;
 	}

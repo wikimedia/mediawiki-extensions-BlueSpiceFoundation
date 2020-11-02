@@ -167,7 +167,15 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 				$oResult->message = wfMessage( 'bs-readonly', $wgReadOnly )->plain();
 			} else {
 				$oTaskData = $this->getParameter( 'taskData' );
-				Hooks::run( 'BSApiTasksBaseBeforeExecuteTask', [ $this, $sTask, &$oTaskData , &$aParams ] );
+				$this->getServices()->getHookContainer()->run(
+					'BSApiTasksBaseBeforeExecuteTask',
+					[
+						$this,
+						$sTask,
+						&$oTaskData,
+						&$aParams
+					]
+				);
 				$this->checkTaskPermissionsAgainstTaskDataTitles( $sTask, $oTaskData );
 
 				$oResult = $this->validateTaskData( $sTask, $oTaskData );
@@ -191,7 +199,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 					}
 				}
 
-				Hooks::run( 'BSApiTasksBaseAfterExecuteTask', [
+				$this->getServices()->getHookContainer()->run( 'BSApiTasksBaseAfterExecuteTask', [
 					$this,
 					$sTask,
 					&$oResult,

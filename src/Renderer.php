@@ -28,7 +28,6 @@ namespace BlueSpice;
 
 use BlueSpice\Renderer\Params;
 use Config;
-use Hooks;
 use Html;
 use HtmlArmor;
 use IContextSource;
@@ -187,11 +186,14 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 		if ( $this->args[static::PARAM_ID] ) {
 			$attrbs[static::PARAM_ID] = $this->args[static::PARAM_ID];
 		}
-		Hooks::run( 'BSFoundationRendererMakeTagAttribs', [
-			$this,
-			$this->args,
-			&$attrbs
-		] );
+		MediaWikiServices::getInstance()->getHookContainer()->run(
+			'BSFoundationRendererMakeTagAttribs',
+			[
+				$this,
+				$this->args,
+				&$attrbs
+			]
+		);
 		return $attrbs;
 	}
 

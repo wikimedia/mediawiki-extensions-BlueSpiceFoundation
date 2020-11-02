@@ -71,7 +71,7 @@ abstract class Store extends Api {
 	 * @param \BlueSpice\Data\Schema|null $schema An array of meta data items
 	 */
 	protected function returnData( $resultSet, $schema = null ) {
-		\Hooks::run( 'BSApiStoreBaseBeforeReturnData', [
+		$this->getServices()->getHookContainer()->run( 'BSApiStoreBaseBeforeReturnData', [
 			$this,
 			&$resultSet,
 			&$schema

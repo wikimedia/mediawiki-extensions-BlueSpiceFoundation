@@ -4,7 +4,6 @@ namespace BlueSpice\Data\Page;
 
 use BlueSpice\Data\PrimaryDatabaseDataProvider;
 use BlueSpice\Data\ReaderParams;
-use Hooks;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use Title;
@@ -42,11 +41,14 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 		}
 
 		$record = $this->getRecordFromTitle( $title );
-		Hooks::run( 'BSPageStoreDataProviderBeforeAppendRow', [
-			$this,
-			$record,
-			$title,
-		] );
+		MediaWikiServices::getInstance()->getHookContainer()->run(
+			'BSPageStoreDataProviderBeforeAppendRow',
+			[
+				$this,
+				$record,
+				$title,
+			]
+		);
 		if ( $record ) {
 			$this->data[] = $record;
 		}
