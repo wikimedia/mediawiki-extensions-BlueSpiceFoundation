@@ -28,6 +28,7 @@
 namespace BlueSpice;
 
 use Config;
+use MediaWiki\MediaWikiServices;
 
 /**
  * EntityConfigFactory class for BlueSpice
@@ -79,7 +80,9 @@ class EntityConfigFactory {
 
 		// Deprecated: This hook should not be used anymore - Use the bluespice
 		// global config mechanism instead
-		\Hooks::run( 'BSEntityConfigDefaults', [ &$defaults ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityConfigDefaults', [
+			&$defaults
+		] );
 		foreach ( $this->entityRegistry->getAllKeys() as $key ) {
 			$callable = $this->entityRegistry->getValue( $key );
 			if ( !is_callable( $callable ) ) {

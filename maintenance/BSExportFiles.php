@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/../../BlueSpiceFoundation/maintenance/BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class BSExportFiles extends BSMaintenance {
 
 	protected $sBasePath = '';
@@ -65,7 +67,15 @@ class BSExportFiles extends BSMaintenance {
 				'latest' => true
 			] )->getPath();
 
-			Hooks::run( 'BSExportFilesBeforeSave', [ $this, &$oFile, &$sDestPath, &$sSourcePath ] );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSExportFilesBeforeSave',
+				[
+					$this,
+					&$oFile,
+					&$sDestPath,
+					&$sSourcePath
+				]
+			);
 
 			$this->output( "Exporting '$sInternalFileName to '$sDestPath' ..." );
 

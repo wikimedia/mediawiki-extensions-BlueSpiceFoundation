@@ -129,7 +129,11 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	 * @param array $aMetaData An array of meta data items
 	 */
 	public function returnData( $aData, $aMetaData = [] ) {
-		Hooks::run( 'BSApiExtJSStoreBaseBeforeReturnData', [ $this, &$aData, &$aMetaData ] );
+		$this->getServices()->getHookContainer()->run( 'BSApiExtJSStoreBaseBeforeReturnData', [
+			$this,
+			&$aData,
+			&$aMetaData
+		] );
 		$result = $this->getResult();
 		$result->setIndexedTagName( $aData, $this->root );
 		$result->addValue( null, $this->root, $aData );
@@ -250,7 +254,14 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	 * @return array
 	 */
 	public function postProcessData( $aData ) {
-		if ( !Hooks::run( 'BSApiExtJSStoreBaseBeforePostProcessData', [ $this, &$aData ] ) ) {
+		$res = $this->getServices()->getHookContainer()->run(
+			'BSApiExtJSStoreBaseBeforePostProcessData',
+			[
+				$this,
+				&$aData
+			]
+		);
+		if ( !$res ) {
 			return $aData;
 		}
 
@@ -258,7 +269,10 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
 		// First, apply filter
 		$aProcessedData = array_filter( $aData, [ $this, 'filterCallback' ] );
-		Hooks::run( 'BSApiExtJSStoreBaseAfterFilterData', [ $this, &$aProcessedData ] );
+		$this->getServices()->getHookContainer()->run( 'BSApiExtJSStoreBaseAfterFilterData', [
+			$this,
+			&$aProcessedData
+		] );
 
 		// Next, apply sort
 		// usort($aProcessedData, array( $this, 'sortCallback') ); <-- had some performance issues
