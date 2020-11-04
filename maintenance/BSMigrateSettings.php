@@ -2,6 +2,7 @@
 
 require_once 'BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\DBQueryError;
 
 class BSMigrateSettings extends LoggedUpdateMaintenance {
@@ -45,13 +46,16 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 			$newName = $this->makeNewName( $oldName );
 			$newValue = $this->convertValue( $oldValue );
 			$skip = false;
-			Hooks::run( 'BSMigrateSettingsFromDeviatingNames', [
-				$oldName,
-				&$newName,
-				$oldValue,
-				&$newValue,
-				&$skip,
-			] );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSMigrateSettingsFromDeviatingNames',
+				[
+					$oldName,
+					&$newName,
+					$oldValue,
+					&$newValue,
+					&$skip,
+				]
+			);
 			if ( $skip === true ) {
 				$this->output( "$oldName skipped\n" );
 				continue;
@@ -135,11 +139,14 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		$dbValues = [];
 		foreach ( $this->newData as $newName => $newValue ) {
 			$set = false;
-			Hooks::run( 'BSMigrateSettingsSetNewSettings', [
-				$newName,
-				$newValue,
-				&$set
-			] );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSMigrateSettingsSetNewSettings',
+				[
+					$newName,
+					$newValue,
+					&$set
+				]
+			);
 			if ( !$set ) {
 				// If no other extension did the settings, set it to the db
 				$dbValues[] = [
@@ -151,7 +158,12 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 
 		try {
 			$this->getDB( DB_MASTER )->insert( 'bs_settings3', $dbValues );
-			Hooks::run( 'BSMigrateSettingsSaveNewSettings', [ $this->newData ] );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSMigrateSettingsSaveNewSettings',
+				[
+					$this->newData
+				]
+			);
 		} catch ( DBQueryError $ex ) {
 			$this->output( "bs_settings -> bs_settings3: {$ex->getMessage()}" );
 		}

@@ -7,6 +7,8 @@
 
 require_once 'BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class DeployJavaWebApps extends BSMaintenance {
 
 	public function __construct() {
@@ -37,7 +39,12 @@ class DeployJavaWebApps extends BSMaintenance {
 
 		$aReport = [];
 
-		Hooks::run( 'BSDeployJavaWebApps', [ $this, $sRealTarget, $sBaseURL, &$aReport ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSDeployJavaWebApps', [
+			$this,
+			$sRealTarget,
+			$sBaseURL,
+			&$aReport
+		] );
 
 		$this->output( 'Deployment done.' );
 		$this->output( implode( "\n", $aReport ) );

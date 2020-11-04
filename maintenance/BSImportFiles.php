@@ -69,7 +69,13 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 		$oTargetTitle = Title::makeTitle( NS_FILE, $sTitle );
 		$oRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 
-		Hooks::run( 'BSImportFilesMakeTitle', [ $this, &$oTargetTitle, &$oRepo, $aParts, $sRoot ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSImportFilesMakeTitle', [
+			$this,
+			&$oTargetTitle,
+			&$oRepo,
+			$aParts,
+			$sRoot
+		] );
 		$this->output( "Using target title {$oTargetTitle->getPrefixedDBkey()}" );
 
 		$oRepoFile = $oRepo->newFile( $oTargetTitle );

@@ -30,7 +30,6 @@ use BlueSpice\Data\Entity\IStore;
 use BlueSpice\Renderer\Entity as Renderer;
 use BlueSpice\Renderer\Params;
 use Exception;
-use Hooks;
 use IContextSource;
 use JsonSerializable;
 use MediaWiki\MediaWikiServices;
@@ -215,7 +214,11 @@ abstract class Entity implements JsonSerializable {
 
 		$this->setUnsavedChanges( false );
 
-		Hooks::run( 'BSEntitySaveComplete', [ $this, $status, $user ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntitySaveComplete', [
+			$this,
+			$status,
+			$user
+		] );
 		$this->invalidateCache();
 		return $status;
 	}
@@ -228,7 +231,11 @@ abstract class Entity implements JsonSerializable {
 	public function delete( User $user = null ) {
 		$status = Status::newGood();
 
-		Hooks::run( 'BSEntityDelete', [ $this, $status, $user ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityDelete', [
+			$this,
+			$status,
+			$user
+		] );
 		if ( !$status->isOK() ) {
 			return $status;
 		}
@@ -241,7 +248,11 @@ abstract class Entity implements JsonSerializable {
 			return Status::newFatal( $e->getMessage() );
 		}
 
-		Hooks::run( 'BSEntityDeleteComplete', [ $this, $status, $user ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityDeleteComplete', [
+			$this,
+			$status,
+			$user
+		] );
 		if ( !$status->isOK() ) {
 			return $status;
 		}
@@ -258,7 +269,11 @@ abstract class Entity implements JsonSerializable {
 	public function undelete( User $user = null ) {
 		$status = Status::newGood();
 
-		Hooks::run( 'BSEntityUndelete', [ $this, $status, $user ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityUndelete', [
+			$this,
+			$status,
+			$user
+		] );
 		if ( !$status->isOK() ) {
 			return $status;
 		}
@@ -271,7 +286,11 @@ abstract class Entity implements JsonSerializable {
 			return Status::newFatal( $e->getMessage() );
 		}
 
-		Hooks::run( 'BSEntityUndeleteComplete', [ $this, $status, $user ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityUndeleteComplete', [
+			$this,
+			$status,
+			$user
+		] );
 		if ( !$status->isOK() ) {
 			return $status;
 		}
@@ -303,7 +322,7 @@ abstract class Entity implements JsonSerializable {
 				),
 			]
 		);
-		Hooks::run( 'BSEntityGetFullData', [
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityGetFullData', [
 			$this,
 			&$data
 		] );
@@ -388,7 +407,7 @@ abstract class Entity implements JsonSerializable {
 			$this->set( static::ATTR_OWNER_ID, $data->{static::ATTR_OWNER_ID} );
 		}
 
-		Hooks::run( 'BSEntitySetValuesByObject', [
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntitySetValuesByObject', [
 			$this,
 			$data
 		] );
@@ -411,7 +430,9 @@ abstract class Entity implements JsonSerializable {
 	 * @return Entity
 	 */
 	public function invalidateCache() {
-		Hooks::run( 'BSEntityInvalidate', [ $this ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityInvalidate', [
+			$this
+		] );
 		return $this;
 	}
 }

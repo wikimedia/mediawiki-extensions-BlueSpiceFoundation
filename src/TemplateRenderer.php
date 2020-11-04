@@ -161,12 +161,15 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 			if ( is_callable( [ $this, $method ] ) ) {
 				$renderedVal = $this->$method( $val );
 			}
-			\Hooks::run( 'BSTemplateRendererGetRenderedArgs', [
-				$this,
-				$name,
-				$val,
-				&$renderedVal,
-			] );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BSTemplateRendererGetRenderedArgs',
+				[
+					$this,
+					$name,
+					$val,
+					&$renderedVal,
+				]
+			);
 			$args[ $name ] = $renderedVal;
 		}
 		return $args;

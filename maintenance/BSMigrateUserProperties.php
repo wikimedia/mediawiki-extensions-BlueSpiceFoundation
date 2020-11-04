@@ -2,6 +2,8 @@
 
 require_once 'BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 
 	protected $oldData = [];
@@ -62,10 +64,13 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 	 */
 	protected function fromDeviatingNames( $oldName ) {
 		$newName = false;
-		\Hooks::run( 'BSMigrateUserPropertiesFromDeviatingNames', [
-			$oldName,
-			&$newName
-		] );
+		MediaWikiServices::getInstance()->getHookContainer()->run(
+			'BSMigrateUserPropertiesFromDeviatingNames',
+			[
+				$oldName,
+				&$newName
+			]
+		);
 		return $newName;
 	}
 

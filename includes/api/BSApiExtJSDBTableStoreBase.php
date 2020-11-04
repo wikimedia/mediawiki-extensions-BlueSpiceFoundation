@@ -44,7 +44,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 		$this->aOptions  = $this->makeOptions( $sQuery, $aFilter );
 		$this->aJoinOptions = $this->makeJoinOptions( $sQuery, $aFilter );
 
-		Hooks::run( 'BSApiExtJSDBTableStoreBeforeQuery', [
+		$this->getServices()->getHookContainer()->run( 'BSApiExtJSDBTableStoreBeforeQuery', [
 			$this,
 			$sQuery,
 			$aFilter,
@@ -78,7 +78,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 			$aData[] = $oData;
 		}
 
-		Hooks::run( 'BSApiExtJSDBTableStoreAfterQuery', [
+		$this->getServices()->getHookContainer()->run( 'BSApiExtJSDBTableStoreAfterQuery', [
 			$this,
 			$sQuery,
 			$aFilter,
