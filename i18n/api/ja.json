@@ -5,6 +5,7 @@
 			"Aefgh39622",
 			"Otokoume",
 			"Reiwa period",
+			"Rrock9312",
 			"Shirayuki",
 			"Suyama"
 		]
@@ -52,5 +53,6 @@
 	"apihelp-bs-store-param-dc": "<code>Disable cache</code> フラグ",
 	"apihelp-bs-store-param-format": "出力の形式 (JSONまたはフォーマット済みJSONのみ)",
 	"apihelp-bs-task-param-taskdata": "タスクの任意のデータを含むJSON文字列エンコードオブジェクト",
-	"apihelp-bs-task-param-context": "タスクのコンテキストデータを含むJSON文字列エンコードオブジェクト"
+	"apihelp-bs-task-param-context": "タスクのコンテキストデータを含むJSON文字列エンコードオブジェクト",
+	"apihelp-bs-group-store-description": "$wgImplicitGroups を除くすべてのグループを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。"
 }

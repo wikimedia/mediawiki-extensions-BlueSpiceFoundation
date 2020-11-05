@@ -61,5 +61,6 @@
 	"bs-extjs-mainns": "(Hoved)",
 	"bs-extjs-label-group": "Gruppe",
 	"bs-extjs-pageexport-list-name-label": "Listenavn",
-	"bs-extjs-pageexport-list-format-label": "Listeformat"
+	"bs-extjs-pageexport-list-format-label": "Listeformat",
+	"bs-extjs-pageexport-list-format-plain-label": "Ren tekst"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"YaronSh"
+			"YaronSh",
+			"ישראל קלר"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "הוספת חדש…",
@@ -11,5 +12,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "הוספת רשומה חדשה",
 	"bs-ooui-key-value-input-widget-error-message": "יש להגדיר את כל השדות הנדרשים!",
 	"bs-ooui-key-value-input-widget-no-values-label": "לא הוגדרו ערכים!",
-	"bs-ooui-btn-dismiss-alert-title": "התעלמות"
+	"bs-ooui-btn-dismiss-alert-title": "התעלמות",
+	"bs-ooui-key-value-input-widget-section-label": "קטע",
+	"bs-ooui-key-value-input-widget-add-section-label": "הוסף קטע חדש"
 }

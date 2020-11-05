@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Just Sayori"
+		]
+	},
+	"bs-extjs-ok": "ตกลง",
+	"bs-extjs-cancel": "ยกเลิก",
+	"bs-extjs-yes": "ใช่",
+	"bs-extjs-no": "ไม่",
+	"bs-extjs-save": "บันทึก",
+	"bs-extjs-delete": "ลบ",
+	"bs-extjs-add": "เพิ่ม",
+	"bs-extjs-remove": "นำออก",
+	"bs-extjs-edit": "แก้ไข",
+	"bs-extjs-copy": "คัดลอก",
+	"bs-extjs-loading": "กำลังโหลด...",
+	"bs-extjs-close": "ปิด",
+	"bs-extjs-label-user": "ผู้ใช้",
+	"bs-extjs-label-group": "กลุ่ม",
+	"bs-extjs-label-namespace": "เนมสเปซ",
+	"bs-extjs-label-page": "หน้า",
+	"bs-extjs-allns": "(ทั้งหมด)",
+	"bs-extjs-mainns": "(หลัก)",
+	"bs-extjs-filters": "ตัวกรอง",
+	"bs-extjs-filter-contains": "มี",
+	"bs-extjs-filter-greater-than": "มากกว่า",
+	"bs-extjs-filter-less-than": "น้อยกว่า",
+	"bs-extjs-filter-date-after": "หลัง",
+	"bs-extjs-filter-date-before": "ก่อน"
+}

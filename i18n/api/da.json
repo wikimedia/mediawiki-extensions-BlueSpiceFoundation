@@ -9,5 +9,6 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har ikke tilladelse til at redigere siden «$1».",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Liste over indstillinger",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du har ikke tilladelse til at læse siden «$1».",
-	"apihelp-bs-store-param-limit": "Antal resultater som skal returneres"
+	"apihelp-bs-store-param-limit": "Antal resultater som skal returneres",
+	"bs-wikipage-tasks-error-nothingtoremove": "Der er ingen kategorier at fjerne"
 }

@@ -11,5 +11,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Adicionar nova entrada",
 	"bs-ooui-key-value-input-widget-error-message": "Todos os campos obrigatórios devem ser definidos!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Nenhum valor definido!",
-	"bs-ooui-btn-dismiss-alert-title": "Ignorar"
+	"bs-ooui-btn-dismiss-alert-title": "Ignorar",
+	"bs-ooui-key-value-input-widget-section-label": "Seção",
+	"bs-ooui-key-value-input-widget-add-section-label": "Adicionar nova seção"
 }

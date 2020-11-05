@@ -4,6 +4,7 @@
 			"Hwboehm",
 			"Kghbln",
 			"Metalhead64",
+			"Mglaser",
 			"Robert Vogel <vogel@hallowelt.biz>"
 		]
 	},
@@ -70,5 +71,10 @@
 	"apihelp-bs-watchlist-store-summary": "Listet alle Beobachtungslisteneinträge auf. Erlaubt die Sortierung, Filterung und Nummerierung. Implementiert Speicherparameter.",
 	"apihelp-bs-recentchanges-store-summary": "Listet alle Letzten Änderungen auf. Erlaubt die Sortierung, Filterung und seitenweise Anzeige. Implementiert „Store“-Parameter.",
 	"apihelp-bs-task-summary": "Stellt den API-Endpunkt zur Ausführung registrierter Aufgaben bereit",
-	"apihelp-bs-task-description": "Stellt den API-Endpunkt zur Ausführung registrierter Aufgaben bereit"
+	"apihelp-bs-task-description": "Stellt den API-Endpunkt zur Ausführung registrierter Aufgaben bereit",
+	"apihelp-bs-js-var-config-summary": "Stellt einen API Endpunkt zur Verfügung, über den man clientseitige Konfigurationsvariablen abfragen kann",
+	"apihelp-bs-js-var-config-param-name": "Name der Konfigurationsvariable, die abgefragt werden soll",
+	"apihelp-bs-js-var-config-param-func": "Funktion der Konfiguration, die ausgeführt werden soll: has|get",
+	"apihelp-bs-js-var-config-param-context": "JSON-kodiertes Objekt mit dem Kontext des Aufrufs",
+	"apihelp-bs-js-var-config-param-format": "Das Format des Ergebnisses"
 }

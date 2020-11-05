@@ -105,5 +105,6 @@
 	"bs-parser-error-invalid-category-title": "הדף אינו קטגוריה חוקית: $1",
 	"protect-level-editor": "לאפשר רק לעורכים ומנהלים",
 	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מיד לאחר טעינת העמוד",
-	"bs-pref-imageextensions-help": "סוגי קבצי תמונות שאותם ניתן להעלות לוויקי. פורמטים אפשריים באינטרנט: gif, png, jpg, jpeg. פורמטים אחרים של תמונות: tiff, bmp."
+	"bs-pref-imageextensions-help": "סוגי קבצי תמונות שאותם ניתן להעלות לוויקי. פורמטים אפשריים באינטרנט: gif, png, jpg, jpeg. פורמטים אחרים של תמונות: tiff, bmp.",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "לא ניתן לכתוב את קובץ ההגדרות $1!"
 }

@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"StanProg"
 		]
 	},
 	"bs-upload-license": "Лиценз",
 	"bs-upload-error": "Грешка",
 	"bs-upload-descfilelabel": "Описание",
-	"bs-upload-uploaddialogtitle": "Качване на файл"
+	"bs-upload-uploaddialogtitle": "Качване на файл",
+	"bs-upload-categories": "Категории"
 }

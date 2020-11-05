@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"StanProg",
 			"Лорд Бъмбъри"
 		]
 	},
 	"bs-deferred-action-status-done": "Готово.",
 	"bs-deferred-batch-description": "Описание",
-	"bs-deferred-action-apideletepage-description": "Изтриване на „$1“."
+	"bs-deferred-action-apideletepage-description": "Изтриване на „$1“.",
+	"bs-deferred-batch-actions": "Действия"
 }

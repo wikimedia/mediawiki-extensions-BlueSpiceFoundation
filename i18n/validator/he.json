@@ -2,11 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Steeve815"
+			"Steeve815",
+			"YaronSh"
 		]
 	},
 	"bs-validator-invalid-string": "מחרוזת לא תקינה",
 	"bs-validator-invalid-coordinate": "קואורדינטה לא תקינה",
 	"bs-validator-missing-required": "הפרמטר הזה נדרש",
-	"bs-validator-invalid-boolean": "ערך בוליאני לא תקין"
+	"bs-validator-invalid-boolean": "ערך בוליאני לא תקין",
+	"bs-validator-value-not-recognized": "לא ניתן לעבד את הערך",
+	"bs-validator-invalid-parameter": "זה משתנה אסור"
 }

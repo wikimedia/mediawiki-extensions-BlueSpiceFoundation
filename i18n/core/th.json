@@ -36,5 +36,9 @@
 	"bs-graphicallist-action-close": "ปิด",
 	"bs-graphicallist-action-list": "รายการ",
 	"bs-graphicallist-action-preview": "แสดงตัวอย่าง",
-	"bs-imagepage-download-text": "ดาวน์โหลด"
+	"bs-imagepage-download-text": "ดาวน์โหลด",
+	"bs-extended-search-textfield-defaultvalue": "ค้นหา...",
+	"bs-exception-view-admin-hint": "โปรดติดต่อผู้ดูแลระบบ",
+	"bs-exception-view-stacktrace-toggle-show-text": "แสดงรายละเอียดข้อผิดพลาด",
+	"bs-exception-view-stacktrace-toggle-hide-text": "ซ่อนรายละเอียดข้อผิดพลาด"
 }
