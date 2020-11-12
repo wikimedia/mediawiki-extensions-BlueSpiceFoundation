@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AYZ04",
 			"Liuxinyu970226",
 			"佛壁灯"
 		]
@@ -68,5 +69,7 @@
 	"apihelp-bs-watchlist-store-summary": "列举所有监视列表项。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-recentchanges-store-summary": "列举所有最近更改。允许排序、过滤和标页数。执行存储参数。",
 	"apihelp-bs-task-summary": "为执行已注册任务的 API 终点",
-	"apihelp-bs-task-description": "为执行已注册任务的 API 终点"
+	"apihelp-bs-task-description": "为执行已注册任务的 API 终点",
+	"apihelp-bs-js-var-config-param-func": "要执行的配置命令：有|取得",
+	"apihelp-bs-js-var-config-param-format": "结果的格式"
 }
