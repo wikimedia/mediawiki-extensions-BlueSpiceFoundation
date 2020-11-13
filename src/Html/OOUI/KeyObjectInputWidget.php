@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Html\OOUI;
 
+use FormatJson;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
@@ -35,6 +36,11 @@ class KeyObjectInputWidget extends KeyValueInputWidget {
 		foreach ( $this->objectConfiguration as $key => $conf ) {
 			$widget = $this->getWidgetForConf( $conf['type'], $conf['widget'] ?? [] );
 			if ( is_array( $value ) && isset( $value[$key] ) ) {
+				if ( $conf['type'] === 'json' ) {
+					$value[$key] = is_string( $value[$key] )
+						? $value[$key]
+						: FormatJson::encode( $value );
+				}
 				$widget->setValue( $value[$key] );
 			}
 			$fieldLayout = new FieldLayout( $widget, [ 'align' => 'top' ] );
