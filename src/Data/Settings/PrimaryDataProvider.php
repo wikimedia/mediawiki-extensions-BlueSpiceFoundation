@@ -3,6 +3,7 @@
 namespace BlueSpice\Data\Settings;
 
 use \BlueSpice\Data\IPrimaryDataProvider;
+use FormatJson;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
@@ -54,7 +55,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	protected function appendRowToData( $row ) {
 		$this->data[] = new Record( (object)[
 			Record::NAME => $row->s_name,
-			Record::VALUE => \FormatJson::decode( $row->s_value )
+			Record::VALUE => FormatJson::decode( $row->s_value, true )
 		] );
 	}
 }
