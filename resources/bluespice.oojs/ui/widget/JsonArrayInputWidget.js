@@ -19,15 +19,17 @@
 
 	bs.ui.widget.JsonArrayInputWidget.prototype.getValue = function() {
 		var val = this.widget.getValue();
-		if ( val ) {
-			try {
-				return JSON.parse( val );
-			} catch ( e ) {
-				return '';
-			}
+		if ( !val ) {
+			val = {};
+			return val;
+		}
+		try {
+			val = JSON.parse( val );
+		} catch ( e ) {
+			val = {};
 		}
 
-		return '';
+		return val;
 	};
 
 	bs.ui.widget.JsonArrayInputWidget.prototype.setValue = function( val ) {
