@@ -7,6 +7,7 @@
 			"Macofe",
 			"PeppeAeco",
 			"Selven",
+			"TheRukk",
 			"Tizven"
 		]
 	},
@@ -70,6 +71,7 @@
 	"bs-extjs-pageexport-list-format-link-label": "Collegamento",
 	"bs-extjs-pageexport-overwrite-label": "Sovrascrivi",
 	"bs-extjs-pageexport-general-error": "Errore esportazione",
+	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine",
 	"bs-extjs-pageexport-success": "Esportazione corretta",
 	"bs-extjs-pageexport-required-text": "Il nome dell'elenco non può essere vuoto o almeno una pagina deve essere selezionata",
 	"bs-extjs-export-search-summary-text": "Generato da PageExport",

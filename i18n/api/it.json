@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"TheRukk",
 			"Tizven",
 			"Wikitoni"
 		]
@@ -12,6 +13,7 @@
 	"apihelp-bs-user-store-summary": "Elenca tutti gli utenti del database. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-category-store-description": "Elenca tutte le categorie. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-category-store-summary": "Elenca tutte le categorie. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
+	"apihelp-bs-adminuser-store-description": "Elenca tutti gli utenti del database con dati sensibili aggiuntivi. Permette l'ordinamento, il filtraggio e l'impaginazione. Implementa i parametri ExtJS Store.",
 	"apihelp-bs-adminuser-store-summary": "Elenca tutti gli utenti del database con dati sensibili aggiuntivi. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-group-store-description": "Elenca tutti i gruppi ad eccezione di wgImplicitGroups. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Elenca tutti i gruppi ad eccezione di wgImplicitGroups. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
@@ -52,7 +54,10 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "Non ci sono categorie da rimuovere",
 	"apihelp-bs-category-treestore-summary": "Elenca le sottocategorie di una specifica categoria",
 	"apihelp-bs-category-treestore-param-node": "Un percorso di categorie separate da slash",
+	"apihelp-bs-task-param-schema": "Mostra lo schema JSON per i parametri dell'attività.",
+	"apihelp-bs-task-param-examples": "Mostra esempi per i parametri dell'attività.",
 	"bs-api-task-taskData-page-id": "L'ID di una pagina wiki esistente",
 	"bs-api-task-taskData-page-title": "Un titolo valido di una pagina wiki",
+	"bs-api-task-wikipagetasks-taskData-categories": "Vettore di stringhe. I valori devono essere nomi validi di categorie.",
 	"apihelp-bs-js-var-config-param-format": "Formato del risultato"
 }
