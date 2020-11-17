@@ -58,7 +58,6 @@ class EntityFactory {
 	 * @param ExtensionAttributeBasedRegistry $entityRegistry
 	 * @param EntityConfigFactory $configFactory
 	 * @param Config $config
-	 * @return Entity | null
 	 */
 	public function __construct( ExtensionAttributeBasedRegistry $entityRegistry,
 		EntityConfigFactory $configFactory, Config $config ) {
@@ -95,7 +94,7 @@ class EntityFactory {
 	/**
 	 * Get ContentEntity by EntityContent Object, wrapper for newFromObject
 	 * @param EntityContent $sContent
-	 * @return Entity | null
+	 * @return Entity|null
 	 */
 	public function newFromContent( EntityContent $sContent ) {
 		$aContent = $sContent->getJsonData();
@@ -108,8 +107,8 @@ class EntityFactory {
 
 	/**
 	 * Get Entity by Json Object
-	 * @param Object|null $object
-	 * @return Entity | null
+	 * @param stdClass|null $object
+	 * @return Entity|null
 	 */
 	public function newFromObject( \stdClass $object = null ) {
 		if ( !$object ) {
@@ -143,7 +142,7 @@ class EntityFactory {
 	 * @param mixed $id
 	 * @param string|int $type - int namespace is used for legecy content entities
 	 * @param bool $reload
-	 * @return Entity | null
+	 * @return Entity|null
 	 */
 	public function newFromID( $id, $type, $reload = false ) {
 		if ( empty( $id ) ) {
@@ -229,7 +228,7 @@ class EntityFactory {
 	 * Main method for getting a ContentEntity from a Title
 	 * @param Title|null $title
 	 * @param bool $reload
-	 * @return Entity | null
+	 * @return Entity|null
 	 */
 	public function newFromSourceTitle( Title $title = null, $reload = false ) {
 		if ( !$title ) {

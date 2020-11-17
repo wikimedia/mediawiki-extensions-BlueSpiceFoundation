@@ -14,7 +14,6 @@ class ConfigDefinitionFactory {
 
 	/**
 	 * @param \Config $config
-	 * @return Entity | null
 	 */
 	public function __construct( $config ) {
 		$this->config = $config;
@@ -23,7 +22,7 @@ class ConfigDefinitionFactory {
 	/**
 	 *
 	 * @param string $name
-	 * @return ConfigDefinition | false
+	 * @return ConfigDefinition|false
 	 */
 	public function factory( $name ) {
 		if ( empty( $name ) || !$this->config->has( $name ) ) {

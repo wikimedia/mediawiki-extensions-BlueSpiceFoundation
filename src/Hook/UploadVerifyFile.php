@@ -44,7 +44,7 @@ abstract class UploadVerifyFile extends Hook {
 
 	/**
 	 *
-	 * @var true | array
+	 * @var true|array
 	 */
 	protected $error = null;
 
@@ -52,7 +52,7 @@ abstract class UploadVerifyFile extends Hook {
 	 *
 	 * @param \UploadBase $upload
 	 * @param string $mime
-	 * @param true | array &$error
+	 * @param true|array &$error
 	 * @return bool
 	 */
 	public static function callback( $upload, $mime, &$error ) {
@@ -73,7 +73,7 @@ abstract class UploadVerifyFile extends Hook {
 	 * @param \Config $config
 	 * @param \UploadBase &$upload
 	 * @param string $mime
-	 * @param true | array &$error
+	 * @param true|array &$error
 	 */
 	public function __construct( $context, $config, &$upload, $mime, &$error ) {
 		parent::__construct( $context, $config );

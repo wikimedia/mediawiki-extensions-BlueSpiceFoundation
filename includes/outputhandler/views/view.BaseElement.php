@@ -234,9 +234,9 @@ class ViewBaseElement {
 	 * Adds an child element to this element.
 	 * As parameter "item" a string with the element type or an element instance
 	 * can be given. The parameter "key" is optional and for future use.
-	 * @param String/Object $item
+	 * @param ViewBaseElement $item
 	 * @param String $key
-	 * @return Object Returns the added item
+	 * @return ViewBaseElement Returns the added item
 	 */
 	public function addItem( $item, $key = false ) {
 		if ( !( $item instanceof ViewBaseElement ) ) {

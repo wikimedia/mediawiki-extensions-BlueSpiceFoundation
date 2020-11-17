@@ -68,7 +68,7 @@ class BsCacheHelper {
 	 * @deprecated since version 3.1.0 - Use Services::getInstance()
 	 * ->getBSUtilityFactory()->getCacheHelper() instead
 	 * @param mixed $mKey
-	 * @return boolean | true if key is deleted false if at least one key failed to invalidate
+	 * @return bool true if key is deleted, false if at least one key failed to invalidate
 	 */
 	public static function invalidateCache( $mKey ) {
 		$helper = Services::getInstance()->getBSUtilityFactory()->getCacheHelper();
