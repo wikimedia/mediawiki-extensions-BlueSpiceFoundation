@@ -116,7 +116,7 @@ abstract class Reader implements IReader {
 	}
 
 	/**
-	 * @return ISecondaryDataProvider | null to skip
+	 * @return ISecondaryDataProvider|null to skip
 	 */
 	abstract protected function makeSecondaryDataProvider();
 }

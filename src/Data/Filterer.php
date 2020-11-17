@@ -34,7 +34,7 @@ class Filterer {
 
 	/**
 	 *
-	 * @param object $dataSet
+	 * @param \stdClass $dataSet
 	 * @return bool
 	 */
 	protected function matchFilter( $dataSet ) {
