@@ -50,7 +50,7 @@ class ExtensionFactory {
 	/**
 	 * @param \BlueSpice\ExtensionRegistry $extensionRegistry
 	 * @param \Config $config
-	 * @return Extension | null
+	 * @return Extension|null
 	 */
 	public function __construct( $extensionRegistry, $config ) {
 		$this->extensionRegistry = $extensionRegistry;
@@ -138,7 +138,7 @@ class ExtensionFactory {
 	 * Returns an instance of the requested BlueSpice extension or null, when
 	 * not found
 	 * @param string $name
-	 * @return Extension | null
+	 * @return Extension|null
 	 */
 	public function getExtension( $name ) {
 		$extensions = $this->getExtensions();

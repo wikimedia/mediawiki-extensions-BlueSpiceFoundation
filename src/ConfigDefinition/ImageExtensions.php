@@ -30,7 +30,7 @@ class ImageExtensions extends ArraySetting {
 
 	/**
 	 *
-	 * @return string | null
+	 * @return string|null
 	 */
 	public function getHelpMessageKey() {
 		return 'bs-pref-imageextensions-help';

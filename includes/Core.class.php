@@ -58,12 +58,12 @@ class BsCore {
 	protected static $prUrlIsEncoded = false;
 	/**
 	 * Local Parser
-	 * @var object
+	 * @var Parser
 	 */
 	protected static $oLocalParser = false;
 	/**
 	 * Local Parser
-	 * @var object
+	 * @var ParserOptions
 	 */
 	protected static $oLocalParserOptions = false;
 

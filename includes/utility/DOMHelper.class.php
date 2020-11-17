@@ -11,7 +11,7 @@ class BsDOMHelper {
 	 * Finds the previous DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
 	 * @param array $aElementNames
-	 * @return DOMElement | null
+	 * @return DOMElement|null
 	 */
 	public static function getPreviousDOMElementSibling( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {
@@ -29,7 +29,7 @@ class BsDOMHelper {
 	 * Finds the next DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
 	 * @param array $aElementNames
-	 * @return DOMElement | null
+	 * @return DOMElement|null
 	 */
 	public static function getNextDOMElementSibling( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {
@@ -47,7 +47,7 @@ class BsDOMHelper {
 	 * Finds the previous DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
 	 * @param array $aElementNames
-	 * @return DOMElement | null
+	 * @return DOMElement|null
 	 */
 	public static function getParentDOMElement( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {
@@ -65,7 +65,7 @@ class BsDOMHelper {
 	 * Finds the previous DOMElement starting from $oNode in the DOM tree
 	 * @param DOMNode $oNode
 	 * @param array $aElementNames
-	 * @return DOMElement | null
+	 * @return DOMElement|null
 	 */
 	public static function getFirstDOMElementChild( $oNode, $aElementNames = [] ) {
 		if ( $oNode instanceof DOMNode == false ) {

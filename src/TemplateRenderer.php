@@ -55,7 +55,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @param Params $params
 	 * @param LinkRenderer|null $linkRenderer
 	 * @param IContextSource|null $context
-	 * @param string $name | ''
+	 * @param string $name
 	 * @param CacheHelper|null $cacheHelper
 	 * @param TemplateFactory|null $templateFactory
 	 */

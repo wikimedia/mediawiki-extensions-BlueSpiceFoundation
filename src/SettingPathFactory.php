@@ -29,7 +29,7 @@ class SettingPathFactory implements ISettingPaths {
 	/**
 	 *
 	 * @param string $key
-	 * @return string | false
+	 * @return string|false
 	 */
 	public function getMessageKey( $key ) {
 		return $this->registry->getValue(
