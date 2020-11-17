@@ -45,7 +45,7 @@ abstract class HtmlPageLinkRendererBegin extends Hook {
 
 	/**
 	 *
-	 * @var string | \HtmlArmor
+	 * @var string|\HtmlArmor
 	 */
 	protected $text = null;
 
@@ -72,7 +72,7 @@ abstract class HtmlPageLinkRendererBegin extends Hook {
 	 * to add more functionality to the UI.
 	 * @param LinkRenderer $linkRenderer
 	 * @param LinkTarget $target
-	 * @param string | \HtmlArmor &$text
+	 * @param string|\HtmlArmor &$text
 	 * @param array &$extraAttribs
 	 * @param string &$query
 	 * @param string &$ret
@@ -100,7 +100,7 @@ abstract class HtmlPageLinkRendererBegin extends Hook {
 	 * @param \Config $config
 	 * @param LinkRenderer $linkRenderer
 	 * @param LinkTarget $target
-	 * @param string | \HtmlArmor &$text
+	 * @param string|\HtmlArmor &$text
 	 * @param array &$extraAttribs
 	 * @param string &$query
 	 * @param string &$ret

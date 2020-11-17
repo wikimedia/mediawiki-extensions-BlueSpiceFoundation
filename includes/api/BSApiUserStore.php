@@ -132,7 +132,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 * @param object $aDataSet
+	 * @param \stdClass $aDataSet
 	 * @return bool
 	 */
 	public function filterCallback( $aDataSet ) {

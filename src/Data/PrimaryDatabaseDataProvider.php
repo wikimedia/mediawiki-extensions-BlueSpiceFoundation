@@ -43,7 +43,7 @@ abstract class PrimaryDatabaseDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @return string | string[]
+	 * @return string|string[]
 	 */
 	protected function getFields() {
 		return '*';

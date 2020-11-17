@@ -52,7 +52,7 @@ abstract class HtmlPageLinkRendererEnd extends Hook {
 
 	/**
 	 *
-	 * @var string | \HtmlArmor
+	 * @var string|\HtmlArmor
 	 */
 	protected $text = null;
 
@@ -74,7 +74,7 @@ abstract class HtmlPageLinkRendererEnd extends Hook {
 	 * @param LinkRenderer $linkRenderer
 	 * @param LinkTarget $target
 	 * @param bool $isKnown
-	 * @param string | \HtmlArmor &$text
+	 * @param string|\HtmlArmor &$text
 	 * @param array &$attribs
 	 * @param string &$ret
 	 * @return bool Always true to keep hook running
@@ -102,7 +102,7 @@ abstract class HtmlPageLinkRendererEnd extends Hook {
 	 * @param LinkRenderer $linkRenderer
 	 * @param LinkTarget $target
 	 * @param bool $isKnown
-	 * @param string | \HtmlArmor &$text
+	 * @param string|\HtmlArmor &$text
 	 * @param array &$attribs
 	 * @param string &$ret
 	 */

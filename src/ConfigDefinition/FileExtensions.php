@@ -30,7 +30,7 @@ class FileExtensions extends ArraySetting implements IOverwriteGlobal {
 
 	/**
 	 *
-	 * @return string | null
+	 * @return string|null
 	 */
 	public function getHelpMessageKey() {
 		return 'bs-pref-fileextensions-help';

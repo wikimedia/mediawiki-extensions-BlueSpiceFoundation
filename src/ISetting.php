@@ -35,7 +35,7 @@ interface ISetting {
 
 	/**
 	 *
-	 * @return string, the message key for the help message | null
+	 * @return string|null, the message key for the help message
 	 */
 	public function getHelpMessageKey();
 

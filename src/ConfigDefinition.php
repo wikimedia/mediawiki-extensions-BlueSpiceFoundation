@@ -108,7 +108,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 
 	/**
 	 *
-	 * @return string | null
+	 * @return string|null
 	 */
 	public function getHelpMessageKey() {
 		return null;
