@@ -44,7 +44,7 @@ abstract class BsAdapterAjaxPingResult extends Hook {
 
 	/**
 	 * ID of the Article, in which context the ping was sent
-	 * @var integer
+	 * @var int
 	 */
 	protected $articleId = null;
 
@@ -56,13 +56,13 @@ abstract class BsAdapterAjaxPingResult extends Hook {
 
 	/**
 	 * Namespace index of the Article, in which context the ping was sent
-	 * @var integer
+	 * @var int
 	 */
 	protected $namespaceIndex = null;
 
 	/**
 	 * ID of the revision of the Article, in which context the ping was sent
-	 * @var integer
+	 * @var int
 	 */
 	protected $revisionId = null;
 

@@ -62,7 +62,7 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $bUnsavedChanges = true;
 
@@ -380,7 +380,7 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Sets the current Entity to an unsaved changes mode, refreshes cache
-	 * @param String $bStatus
+	 * @param string $bStatus
 	 * @return Entity
 	 */
 	public function setUnsavedChanges( $bStatus = true ) {

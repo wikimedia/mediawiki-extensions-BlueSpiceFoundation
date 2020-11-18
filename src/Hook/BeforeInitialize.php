@@ -40,7 +40,7 @@ abstract class BeforeInitialize extends Hook {
 	/**
 	 * Should be unused and always null
 	 *
-	 * @var \Article|null;
+	 * @var \Article|null
 	 */
 	protected $article;
 

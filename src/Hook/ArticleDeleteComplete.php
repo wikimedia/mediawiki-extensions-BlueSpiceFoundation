@@ -50,7 +50,7 @@ abstract class ArticleDeleteComplete extends Hook {
 
 	/**
 	 *
-	 * @var integer
+	 * @var int
 	 */
 	protected $id = null;
 

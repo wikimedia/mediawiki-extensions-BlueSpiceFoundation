@@ -28,13 +28,13 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $isLeaf = false;
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $expanded = false;
 

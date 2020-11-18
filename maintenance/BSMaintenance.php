@@ -54,8 +54,8 @@ abstract class BSMaintenance extends Maintenance {
 
 	/**
 	 * Adds a line to the output buffer and persists it if the script gets terminated
-	 * @param String $out
-	 * @param Int $die
+	 * @param string $out
+	 * @param int $die
 	 */
 	protected function appendOutputBuffer( $out, $die ) {
 		$this->aOutputBuffer[] = $out;

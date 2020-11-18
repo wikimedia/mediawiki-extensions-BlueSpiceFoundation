@@ -41,7 +41,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	protected $rev;
 
 	/**
-	 * @var integer
+	 * @var int
 	 */
 	protected $baseID;
 

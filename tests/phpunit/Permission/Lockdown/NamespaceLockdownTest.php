@@ -14,7 +14,7 @@ use User;
 class NamespaceLockdownTest extends MediaWikiTestCase {
 	/** @var Namespaces */
 	protected $module;
-	/** @var User $user */
+	/** @var User */
 	protected $user;
 
 	protected function setUp() : void {

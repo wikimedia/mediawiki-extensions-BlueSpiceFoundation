@@ -45,7 +45,7 @@ abstract class BSMigrateSettingsSetNewSettings extends Hook {
 
 	/**
 	 * Whether the hook handler set the value for this setting
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $set = false;
 

@@ -37,13 +37,13 @@ class BaseNotification implements \BlueSpice\INotification {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $immediateEmail = false;
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $useJobQueue = true;
 

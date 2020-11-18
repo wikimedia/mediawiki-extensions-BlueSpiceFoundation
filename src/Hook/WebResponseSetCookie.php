@@ -44,7 +44,7 @@ abstract class WebResponseSetCookie extends Hook {
 
 	/**
 	 *
-	 * @var integer
+	 * @var int
 	 */
 	protected $expire = -1;
 

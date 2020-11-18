@@ -59,7 +59,7 @@ abstract class Filter {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $applied = false;
 

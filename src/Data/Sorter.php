@@ -8,7 +8,7 @@ class Sorter {
 
 	/**
 	 *
-	 * @var Sort[];
+	 * @var Sort[]
 	 */
 	protected $sorts = null;
 

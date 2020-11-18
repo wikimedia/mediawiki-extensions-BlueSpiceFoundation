@@ -169,7 +169,7 @@ class BsNamespaceHelper {
 	/**
 	 *
 	 * @param array $aNamespaces Array of namespaces i.e. array( 3, 5, 'SomeNamespace', 4 )
-	 * @return Array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
+	 * @return array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */
 	public static function getNamespaceIdsFromAmbiguousArray( $aNamespaces ) {
@@ -270,7 +270,7 @@ class BsNamespaceHelper {
 	/**
 	 * Checks if a user has a given permission on a given namepsace
 	 * @param int $iID namespace
-	 * @param String $sPermission permission
+	 * @param string $sPermission permission
 	 * @return bool returns true if user is allowed , otherwise false
 	 */
 	public static function checkNamespacePermission( $iID, $sPermission ) {

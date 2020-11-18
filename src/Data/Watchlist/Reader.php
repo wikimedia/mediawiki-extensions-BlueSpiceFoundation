@@ -14,7 +14,7 @@ class Reader extends DatabaseReader {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $filterForContextUser = false;
 

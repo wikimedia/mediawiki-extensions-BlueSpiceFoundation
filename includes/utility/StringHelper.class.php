@@ -14,9 +14,9 @@ class BsStringHelper {
 
 	/**
 	 * Reduces the length of a string in a smart way.
-	 * @param String $sString The string that as to be shortened. I.e. 'The quick brown fox
+	 * @param string $sString The string that as to be shortened. I.e. 'The quick brown fox
 	 * jumps over the lazy dog'
-	 * @param Array $aOptions Contains configuration options for the shorten logic. I. e.
+	 * @param array $aOptions Contains configuration options for the shorten logic. I. e.
 	 * <code>
 	 *                array(
 	 *                   'max-length'          => 20,
@@ -33,7 +33,7 @@ class BsStringHelper {
 	 * <code>['end'|'middle'|'start']</code>. Default is <code>'end'</code>
 	 * <code>ellipsis-characters</code>: Which characters should be used as placeholders?
 	 * Default is <code>'...'</code>
-	 * @return String Depending on additional parameters something like:
+	 * @return string Depending on additional parameters something like:
 	 *     'The quick...'
 	 *     'The quick br...' (<code>'ignore-word-borders' => true</code>)
 	 *     'The ... dog' (<code>'position' => 'middle'</code>)
@@ -196,7 +196,7 @@ class BsStringHelper {
 		switch ( $sOp ) {
 			case self::FILTER_STARTSWITH:
 				return $sNeedle === '' ||
-					strrpos( $sHaystack, $sNeedle, - strlen( $sHaystack ) ) !== false;
+					strrpos( $sHaystack, $sNeedle, -strlen( $sHaystack ) ) !== false;
 			case self::FILTER_ENDSWITH:
 				$needleLen = strlen( $sNeedle );
 				if ( $needleLen < 1 ) {

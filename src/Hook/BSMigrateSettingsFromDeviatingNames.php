@@ -57,7 +57,7 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 
 	/**
 	 * Skip migration of the current setting
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $skip = null;
 

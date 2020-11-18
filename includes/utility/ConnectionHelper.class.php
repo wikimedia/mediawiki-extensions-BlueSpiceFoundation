@@ -42,8 +42,8 @@ class BsConnectionHelper {
 
 	/**
 	 *
-	 * @param String $sUrl
-	 * @param Float $fTimeout
+	 * @param string $sUrl
+	 * @param float $fTimeout
 	 * @return bool
 	 */
 	public static function testUrlForTimeout( $sUrl, $fTimeout = 3.0 ) {

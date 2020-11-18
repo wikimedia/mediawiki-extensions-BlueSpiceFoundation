@@ -15,7 +15,7 @@ class Store implements \BlueSpice\Data\IStore {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $filterForContextUser = false;
 

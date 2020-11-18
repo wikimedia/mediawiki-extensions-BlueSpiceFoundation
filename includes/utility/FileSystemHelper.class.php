@@ -195,8 +195,8 @@ class BsFileSystemHelper {
 
 	/**
 	 * Get a file object from a repo by the name of the repo
-	 * @param String $sFileName
-	 * @param String $sRepoName
+	 * @param string $sFileName
+	 * @param string $sRepoName
 	 * @return bool|\File
 	 */
 	public static function getFileFromRepoName( $sFileName, $sRepoName ) {
@@ -213,8 +213,8 @@ class BsFileSystemHelper {
 
 	/**
 	 * Get the content of a file in data directory
-	 * @param String $sFileName
-	 * @param String $sDir
+	 * @param string $sFileName
+	 * @param string $sDir
 	 * @return Status (->getValue() for the file's content).
 	 */
 	public static function getFileContent( $sFileName, $sDir ) {
@@ -233,8 +233,8 @@ class BsFileSystemHelper {
 
 	/**
 	 * Get the content of a file in cache directory
-	 * @param String $sFileName
-	 * @param String $sDir
+	 * @param string $sFileName
+	 * @param string $sDir
 	 * @return Status (->getValue() for the file's content).
 	 */
 	public static function getCacheFileContent( $sFileName, $sDir ) {
@@ -377,8 +377,8 @@ class BsFileSystemHelper {
 
 	/**
 	 * Rename a folder
-	 * @param String $sSource
-	 * @param String $sDestination
+	 * @param string $sSource
+	 * @param string $sDestination
 	 * @param bool $bOverwrite
 	 * @return Status good on success, otherwise fatal with message
 	 */
@@ -417,8 +417,8 @@ class BsFileSystemHelper {
 
 	/**
 	 * Deletes a file
-	 * @param String $sFile
-	 * @param String $sDir
+	 * @param string $sFile
+	 * @param string $sDir
 	 * @return Status good on success, otherwise fatal with message
 	 */
 	public static function deleteFile( $sFile, $sDir ) {

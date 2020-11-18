@@ -54,7 +54,7 @@ abstract class UserCan extends Hook {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $result = false;
 

@@ -33,7 +33,7 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $hasToExist = false;
 

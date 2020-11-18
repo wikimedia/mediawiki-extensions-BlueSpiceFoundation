@@ -40,7 +40,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	/**
 	 *
-	 * @var \Wikimedia\Rdbms\IDatabase;
+	 * @var \Wikimedia\Rdbms\IDatabase
 	 */
 	protected $mMasterDB = null;
 
@@ -460,8 +460,8 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * Check user permisson on each task and return boolean array like "taskName" => true/false
 	 * This can be used to show / hide ui elements
 	 *
-	 * @param Array $oTaskData can be empty, default param for task
-	 * @return Array Elements of $oTasks with boolean attributes for grant / deny on each task
+	 * @param array $oTaskData can be empty, default param for task
+	 * @return array Elements of $oTasks with boolean attributes for grant / deny on each task
 	 * provided by called api-class
 	 */
 	public function task_getUserTaskPermissions( $oTaskData ) {

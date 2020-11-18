@@ -56,13 +56,13 @@ abstract class PageContentInsertComplete extends Hook {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $isMinor = false;
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $isWatch = false;
 

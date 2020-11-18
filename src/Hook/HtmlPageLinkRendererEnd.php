@@ -46,7 +46,7 @@ abstract class HtmlPageLinkRendererEnd extends Hook {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $isKnown = null;
 

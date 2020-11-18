@@ -90,7 +90,7 @@ class ViewBaseElement {
 	 * Set up the element type (HTML-Tag) for this element.
 	 * The AutoElement is used to enclose the datasets if no template is defined
 	 * or the whole element, if AutoWrapping is not configured or just enabled.
-	 * @param String $elm typically an HTML-Tag
+	 * @param string $elm typically an HTML-Tag
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
 	public function setAutoElement( $elm = 'div' ) {
@@ -103,7 +103,7 @@ class ViewBaseElement {
 	 * a string with html code to wrap arround this element.
 	 * An autowrap string have to contain an placeholder ###CONTENT###.
 	 * If the option is true, the AutoElement is used to wrap the element.
-	 * @param Mixed $wrap a string or a boolean value
+	 * @param mixed $wrap a string or a boolean value
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
 	public function setAutoWrap( $wrap ) {
@@ -113,7 +113,7 @@ class ViewBaseElement {
 
 	/**
 	 * Set the id of the element
-	 * @param String $id The id should be unique for this http request because it´s
+	 * @param string $id The id should be unique for this http request because it´s
 	 * used as html element id.
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
@@ -124,7 +124,7 @@ class ViewBaseElement {
 
 	/**
 	 * Returns the id of this element.
-	 * @return Mixed
+	 * @return mixed
 	 */
 	public function getId() {
 		return $this->_mId;
@@ -132,7 +132,7 @@ class ViewBaseElement {
 
 	/**
 	 * Set a string as template for this element.
-	 * @param String $template
+	 * @param string $template
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 */
 	public function setTemplate( $template ) {
@@ -142,7 +142,7 @@ class ViewBaseElement {
 
 	/**
 	 * Set the content of given file as template for this element.
-	 * @param String $path the absolute path to the template file
+	 * @param string $path the absolute path to the template file
 	 * @return ViewBaseElement Returns an reference to itself to enable method chaining.
 	 * @throws Exception
 	 */
@@ -161,7 +161,7 @@ class ViewBaseElement {
 
 	/**
 	 * Returns the template content of this element.
-	 * @return String
+	 * @return string
 	 */
 	public function getTemplate() {
 		return $this->_mTemplate;
@@ -237,7 +237,7 @@ class ViewBaseElement {
 	 * As parameter "item" a string with the element type or an element instance
 	 * can be given. The parameter "key" is optional and for future use.
 	 * @param ViewBaseElement $item
-	 * @param String $key
+	 * @param string $key
 	 * @return ViewBaseElement Returns the added item
 	 */
 	public function addItem( $item, $key = false ) {
@@ -268,7 +268,7 @@ class ViewBaseElement {
 	 * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
 	 * \BlueSpice\TemplateRenderer instead
 	 * @param array|false $params
-	 * @return String Returns the output of this element.
+	 * @return string Returns the output of this element.
 	 */
 	public function execute( $params = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );

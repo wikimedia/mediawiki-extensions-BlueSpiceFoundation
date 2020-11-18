@@ -17,7 +17,7 @@ class Template {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $renderFormatted = true;
 
