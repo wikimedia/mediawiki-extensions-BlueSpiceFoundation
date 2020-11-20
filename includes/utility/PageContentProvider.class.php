@@ -340,7 +340,7 @@ class BsPageContentProvider {
 				$this->getTemplate(),
 				$this->getWrapperAttributes( $oTitle ),
 				'bs-ue-jumpmark-' .
-				md5( $oTitle->getPrefixedText() . $aParams['oldid'] ),
+				md5( $oTitle->getPrefixedText() ),
 				empty( $sTitle ) ? $oTitle->getPrefixedText() : $sTitle,
 				$sHTML
 			);
@@ -514,38 +514,56 @@ class BsPageContentProvider {
 	private function makeInternalAnchorNamesUnique( &$sHTML, $oTitle, $aParams ) {
 		$aMatches = [];
 		// TODO RBV (19.07.12 09:29): Use DOM!
-		// TODO RBV (09.09.11 11:48): What if there is no TOC?
 		// Finds all TOC links
-		preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber">)|si', $sHTML, $aMatches );
+		$tocStatus = preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber">)|si', $sHTML, $aMatches );
 
 		$aPatterns     = [];
 		$aReplacements = [];
 
-		$sPatternQuotedArticleTitle = preg_quote( str_replace( ' ', '_', $oTitle->getPrefixedText() ) );
+		$sPatternQuotedArticleTitle = preg_quote(str_replace(' ', '_', $oTitle->getPrefixedText()));
 
-		foreach ( $aMatches[2] as $sAnchorName ) {
-			$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
+		if ( $tocStatus > 0 ) {
+			//toc is available in $sHtml
+			foreach ( $aMatches[2] as $sAnchorName ) {
+				$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
 
-			$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
-			// In TOC
-			$aPatterns[]     = '|<a href="#' . $sPatternQuotedAnchorName . '"><span class="tocnumber">|si';
-			$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"><span class="tocnumber">';
+				$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
+				// In TOC
+				$aPatterns[]     = '|<a href="#' . $sPatternQuotedAnchorName . '"><span class="tocnumber">|si';
+				$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"><span class="tocnumber">';
 
-			// Every single headline
-			$aPatterns[]     = '|<a name="' . $sPatternQuotedAnchorName . '" id="' . $sPatternQuotedAnchorName . '"></a>|si';
-			$aReplacements[] = '<a name="' . $sUniqueAnchorName . '" id="' . $sUniqueAnchorName . '"></a>';
+				// Every single headline
+				$aPatterns[]     = '|<a name="' . $sPatternQuotedAnchorName . '" id="' . $sPatternQuotedAnchorName . '"></a>|si';
+				$aReplacements[] = '<a name="' . $sUniqueAnchorName . '" id="' . $sUniqueAnchorName . '"></a>';
 
-			// In text
-			// TODO: What about index.php?title=abc links?
-			$aPatterns[]     = '|<a href="(/index\.php/' . $sPatternQuotedArticleTitle . ')?#' . $sPatternQuotedAnchorName . '"|si';
-			$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"';
+				// In text
+				// TODO: What about index.php?title=abc links?
+				$aPatterns[]     = '|<a href="(/index\.php/' . $sPatternQuotedArticleTitle . ')?#' . $sPatternQuotedAnchorName . '"|si';
+				$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"';
 
-			// Every single headline new
-			$aPatterns[]     = '|<span class="mw-headline" id="' . $sPatternQuotedAnchorName . '"|si';
-			$aReplacements[] = '<span class="mw-headline" id="' . $sUniqueAnchorName . '"';
+				// Every single headline new
+				$aPatterns[]     = '|<span class="mw-headline" id="' . $sPatternQuotedAnchorName . '"|si';
+				$aReplacements[] = '<span class="mw-headline" id="' . $sUniqueAnchorName . '"';
+			}
+
+			$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
 		}
+		else {
+			//toc is not available in $sHtml
+			$headlineStatus = preg_match_all('|(<span class="mw-headline")(.*?>)(.*?)</span>|si', $sHTML, $aMatches );
 
-		$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
+			if ( $headlineStatus > 0 ) {
+				foreach ( $aMatches[3] as $sAnchorName ) {
+					$sDefaultAnchorName = preg_quote( str_replace( ' ', '_', $sAnchorName ) );
+					$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sDefaultAnchorName );
+
+					$aPatterns[]     = '|<span class="mw-headline" id="' . $sDefaultAnchorName . '">' . $sAnchorName . '</span>|si';
+					$aReplacements[] = '<span class="mw-headline" id="' . $sUniqueAnchorName . '">' . $sAnchorName . '</span>';
+				}
+
+				$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
+			}
+		}
 	}
 	// </editor-fold>
 }
