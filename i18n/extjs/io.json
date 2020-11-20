@@ -12,5 +12,6 @@
 	"bs-extjs-label-group": "Grupo",
 	"bs-extjs-label-namespace": "'Namespace'",
 	"bs-extjs-upload": "Kargar",
-	"bs-extjs-uploading": "Karganta..."
+	"bs-extjs-uploading": "Karganta...",
+	"bs-extjs-filter-greater-than": "plu granda kam"
 }
