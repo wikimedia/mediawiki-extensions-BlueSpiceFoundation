@@ -59,8 +59,9 @@ abstract class Store extends Api {
 	 */
 	public function execute() {
 		$dataStore = $this->makeDataStore();
-		$result = $dataStore->getReader()->read( $this->getReaderParams() );
-		$schema = $dataStore->getReader()->getSchema();
+		$reader = $dataStore->getReader();
+		$result = $reader->read( $this->getReaderParams() );
+		$schema = $reader->getSchema();
 		$this->returnData( $result, $schema );
 	}
 
