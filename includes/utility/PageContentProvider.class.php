@@ -9,6 +9,10 @@
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
+use RemexHtml\DOM\DOMBuilder;
+use RemexHtml\Tokenizer\Tokenizer;
+use RemexHtml\TreeBuilder\Dispatcher;
+use RemexHtml\TreeBuilder\TreeBuilder;
 
 class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
@@ -169,8 +173,6 @@ class BsPageContentProvider {
 	 * @return DOMDocument The Articles HTML output, wrapped in a '<div class="bs-page-content">' and with the title and the "bodyContent" in a DOMDocument.
 	 */
 	public function getDOMDocumentContentFor( $oTitle, $aParams = array() ) {
-		$oDOMDoc = new DOMDocument();
-
 		$bOldValueOfEncapsulateContent = $this->bEncapsulateContent;
 		$this->bEncapsulateContent = true;
 
@@ -187,7 +189,13 @@ class BsPageContentProvider {
 
 		$this->bEncapsulateContent = $bOldValueOfEncapsulateContent;
 
-		$oDOMDoc->loadHTML( '<?xml encoding="utf-8" ?>' . $sHtmlContent );
+		$domBuilder = new DOMBuilder();
+		$treeBuilder = new TreeBuilder( $domBuilder );
+		$dispatcher = new Dispatcher( $treeBuilder );
+		$tokenizer = new Tokenizer( $dispatcher, $sHtmlContent );
+		$tokenizer->execute();
+		/** @var DOMDocument */
+		$oDOMDoc = $domBuilder->getFragment();
 
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
 		foreach( $oPreTags as $oPreTag ) {
