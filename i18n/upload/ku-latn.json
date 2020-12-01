@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Balyozxane",
 			"Ghybu"
 		]
 	},
-	"bs-upload-error": "Çewtî"
+	"bs-upload-error": "Çewtî",
+	"bs-upload-descfilelabel": "Danasîn"
 }
