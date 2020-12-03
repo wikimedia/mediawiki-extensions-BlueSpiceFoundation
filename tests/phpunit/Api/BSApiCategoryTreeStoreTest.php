@@ -47,7 +47,8 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 		] );
 
 		$oDbw->insert( 'categorylinks', [
-			'cl_to' => "Dummy test"
+			'cl_to' => "Dummy test",
+			'cl_timestamp' => $oDbw->timestamp()
 		] );
 
 		$this->insertPage( "Dummy test 2", "Text Dummy test 2", NS_CATEGORY );
