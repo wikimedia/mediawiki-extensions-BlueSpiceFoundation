@@ -108,6 +108,8 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 			if ( !$archive->isGood() ) {
 				$this->error( "failed. (" . $archive->getWikiText() . ")" );
 			}
+			$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+				->getMaintenanceUser()->getUser();
 		}
 
 		$commentText = SpecialUpload::getInitialPageText( $commentText, '' );
@@ -115,7 +117,7 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 
 		if ( $this->hasOption( 'dry' ) ) {
 			$this->output( "done." );
-		} elseif ( $oRepoFile->recordUpload2( $archive->value, $summary, $commentText, $props, false ) ) {
+		} elseif ( $oRepoFile->recordUpload3( $archive->value, $summary, $commentText, $user, $props ) ) {
 			$this->output( "done." );
 		}
 
