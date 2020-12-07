@@ -8,6 +8,7 @@
 			"LACLARETTA",
 			"Macofe",
 			"PeppeAeco",
+			"TheRukk",
 			"Tizven"
 		]
 	},
@@ -100,5 +101,6 @@
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"protect-level-editor": "Consentito solo agli editori e amministratori",
-	"bs-ping-on-init-desc": "La richiesta di ping dovrebbe essere richiesta subito dopo il caricamento della pagina"
+	"bs-ping-on-init-desc": "La richiesta di ping dovrebbe essere richiesta subito dopo il caricamento della pagina",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Impossibile scrivere sul file di configurazione $1."
 }

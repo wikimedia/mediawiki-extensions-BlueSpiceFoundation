@@ -3,7 +3,8 @@
 		"authors": [
 			"Beta16",
 			"Dansita",
-			"Gianfranco"
+			"Gianfranco",
+			"TheRukk"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Carica un file",
@@ -25,5 +26,6 @@
 	"bs-upload-uploadwarningdialog-warning-exists": "Un file con nome \"$1\" esiste già",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|C'è un duplicato|Ci sono duplicati}} di questo file",
 	"bs-upload-uploadwarningdialog-title": "Caricamento file: Avvisi",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Avviso sconosciuto con codice \"$1\""
+	"bs-upload-uploadwarningdialog-warning-unknown": "Avviso sconosciuto con codice \"$1\"",
+	"bs-upload-uploadwarningdialog-intro": "Sono stati registrati questi avvisi durante il caricamento del file"
 }

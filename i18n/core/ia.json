@@ -70,7 +70,7 @@
 	"bs-pref-deleteduserimage": "Avatar pro usator delite:",
 	"bs-pref-bspinginterval": "Intervallo de ping (in secundas):",
 	"bs-pref-testmode": "Activar le modo de test",
-	"right-wikiadmin": "Usate in multe extensiones BlueSpice pro operationes administrative que pote esser periculose, como le gestion de usatores, permissiones, configuration global",
-	"action-wikiadmin": "usate in multe extensiones BlueSpice pro operationes administrative que pote esser periculose, como le gestion de usatores, permissiones, configuration global",
+	"right-wikiadmin": "Exequer operationes administrative que pote esser periculose, como le gestion de usatores, permissiones, configuration global (extensiones BlueSpice)",
+	"action-wikiadmin": "exequer operationes administrative que pote esser periculose, como le gestion de usatores, permissiones, configuration global (extensiones BlueSpice)",
 	"protect-level-editor": "Permitter solmente redactores e aministratores"
 }

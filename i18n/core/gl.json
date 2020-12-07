@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Banjo",
 			"Elisardojm",
 			"Fitoschido",
@@ -90,7 +91,7 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Úsase en moitas extensións de BlueSpice para posibles tarefas administrativas perigrosas, como administrar usuarios, permisos, configuración global",
-	"action-wikiadmin": "mostrar páxinas de administración de BlueSpice",
+	"right-wikiadmin": "Usar tarefas administrativas potencialmente perigosas como xestión de usuarios, permisos, configuración global (extensións BlueSpice)",
+	"action-wikiadmin": "usar tarefas administrativas potencialmente perigosas como xestión de usuarios, permisos, configuración global (extensións BlueSpice)",
 	"bs-notifications-agent-anon": "usuario anónimo"
 }

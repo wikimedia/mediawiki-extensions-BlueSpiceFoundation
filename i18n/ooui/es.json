@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jelou",
-			"Joanmp17"
+			"Joanmp17",
+			"Rapunzel"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Añade...",
@@ -12,5 +13,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Añade nueva entrada",
 	"bs-ooui-key-value-input-widget-error-message": "¡Todos los campos requeridos deben estar definidos!",
 	"bs-ooui-key-value-input-widget-no-values-label": "¡Sin valores establecidos!",
-	"bs-ooui-btn-dismiss-alert-title": "Descartar"
+	"bs-ooui-btn-dismiss-alert-title": "Descartar",
+	"bs-ooui-key-value-input-widget-section-label": "Sección",
+	"bs-ooui-key-value-input-widget-add-section-label": "Añadir sección nueva"
 }

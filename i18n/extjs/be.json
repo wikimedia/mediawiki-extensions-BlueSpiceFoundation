@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Artsiom91"
+			"Artsiom91",
+			"Kareyac"
 		]
 	},
 	"bs-extjs-pageSize": "Памер старонкі",
-	"bs-extjs-close": "Закрыць"
+	"bs-extjs-close": "Закрыць",
+	"bs-extjs-add": "Дадаць"
 }

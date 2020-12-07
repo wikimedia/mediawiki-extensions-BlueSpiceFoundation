@@ -7,6 +7,7 @@
 			"Macofe",
 			"PeppeAeco",
 			"Selven",
+			"TheRukk",
 			"Tizven"
 		]
 	},
@@ -82,5 +83,6 @@
 	"bs-extjs-label-directsearch": "Cerca",
 	"bs-extjs-titlecombo-newpagehint": "La pagina non esiste!",
 	"bs-extjs-label-specialpage": "Pagina speciale",
-	"bs-extjs-label-group": "Gruppo"
+	"bs-extjs-label-group": "Gruppo",
+	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine"
 }
