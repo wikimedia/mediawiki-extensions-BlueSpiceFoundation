@@ -59,7 +59,7 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 	 *
 	 * @param string $key
 	 * @param string $default
-	 * @return string
+	 * @return string|callable
 	 */
 	public function getValue( $key, $default = '' ) {
 		$registry = $this->getRegistryArray();
@@ -71,7 +71,7 @@ class ExtensionAttributeBasedRegistry implements IRegistry {
 			$value = end( $value );
 		}
 
-		return (string)$value;
+		return $value;
 	}
 
 	/**
