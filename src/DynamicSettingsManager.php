@@ -29,12 +29,17 @@ class DynamicSettingsManager {
 	 * @return DynamicSettingsManager
 	 */
 	public static function factory() {
+		if ( !isset( $GLOBALS['BSDynamicSettingsPreOverrides'] ) ) {
+			$GLOBALS['BSDynamicSettingsPreOverrides'] = [];
+		}
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationDynamicSettingsRegistry',
 			null,
 			// `$bsgExtensionAttributeRegistryOverrides` must not be accessed
-			// at `manifest.callback` time
-			[]
+			// at `manifest.callback` time. So we use a maybe predefined config
+			// that was set before wfLoadExtension( 'BlueSpiceFoundation' ) was
+			// added. This variable will later not be available in \Config
+			$GLOBALS['BSDynamicSettingsPreOverrides']
 		);
 
 		return new DynamicSettingsManager( $registry );
