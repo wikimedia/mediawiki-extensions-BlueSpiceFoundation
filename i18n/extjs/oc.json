@@ -41,5 +41,6 @@
 	"bs-extjs-filter-ends-with": "s'acaba amb",
 	"bs-extjs-title-success": "Capitat",
 	"bs-extjs-title-warning": "Avertiment",
-	"bs-extjs-pageexport-dialog-title": "Exportar de paginas"
+	"bs-extjs-pageexport-dialog-title": "Exportar de paginas",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturas"
 }
