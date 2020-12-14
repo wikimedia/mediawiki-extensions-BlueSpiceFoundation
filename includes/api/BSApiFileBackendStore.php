@@ -297,11 +297,12 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			'img_description_id = comment_id'
 		];
 
+		$normalQuery = str_replace( ' ', '_', $sQuery );
 		if ( !empty( $sQuery ) ) {
 			$aContidions[] = "si_title " . $oDbr->buildLike(
 				$oDbr->anyString(),
 				// make case insensitive!
-				strtolower( $sQuery ),
+				strtolower( $normalQuery ),
 				$oDbr->anyString()
 			);
 		}
