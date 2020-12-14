@@ -292,11 +292,12 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			// implement 'query' as a implicit filter on 'img_name' field?
 		];
 
+		$normalQuery = str_replace( ' ', '_', $sQuery );
 		if ( !empty( $sQuery ) ) {
 			$aContidions[] = "si_title " . $oDbr->buildLike(
 				$oDbr->anyString(),
 				// make case insensitive!
-				strtolower( $sQuery ),
+				strtolower( $normalQuery ),
 				$oDbr->anyString()
 			);
 		}
