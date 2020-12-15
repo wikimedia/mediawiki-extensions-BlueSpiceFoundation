@@ -14,6 +14,7 @@
 	"bs-no-information-available": "کوئی جانکاری دستیاب نئیں",
 	"bs-years-duration": "{{PLURAL:$1|ورہ|$1 ورے}}",
 	"bs-months-duration": "{{PLURAL:$1|مہینہ|$1 مہینے}}",
+	"bs-weeks-duration": "{{PLURAL:$1|اک ہفتہ|$1 ہفتے}}",
 	"bs-days-duration": "{{PLURAL:$1|اک دن|$1 دناں}}",
 	"bs-navigation-instructions": "ہدایات",
 	"bs-navigation-support": "حمایت",
