@@ -1,5 +1,8 @@
 <?php
 
+use BlueSpice\Renderer\Params;
+use MediaWiki\MediaWikiServices;
+
 class BSApiUserStore extends BSApiExtJSStoreBase {
 
 	/**
@@ -88,8 +91,30 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 				$dataSet->user_name . ' '
 			);
 			$dataSet->page_prefixed_text = $oUserPageTitle->getPrefixedText();
+
+			$dataSet->user_image = $this->getUserImage( $dataSet->user_name );
 		}
 		return $aTrimmedData;
+	}
+
+	/**
+	 * @param sting $userName
+	 * @return string
+	 */
+	protected function getUserImage( $userName ) {
+		$factory = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' );
+		$thumbParams = [ 'width' => '32', 'height' => '32' ];
+
+		$user = User::newFromName( $userName );
+		if ( $user instanceof User === false ) {
+			return '';
+		}
+
+		$image = $factory->get( 'userimage', new Params( [
+				'user' => $user
+			] + $thumbParams ) );
+
+		return $image->render();
 	}
 
 	/**
