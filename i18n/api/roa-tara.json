@@ -68,6 +68,9 @@
 	"apihelp-bs-recentchanges-store-summary": "Elenghe tutte le urteme cangiaminde. Face fà l'ordinamende, 'u filtre e 'a pagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-task-summary": "Dèje 'u punde de fine de l'API pe langià le attivitate reggistrate",
 	"apihelp-bs-task-description": "Dèje 'u punde de fine de l'API pe langià le attivitate reggistrate",
+	"apihelp-bs-js-var-config-summary": "Dèje 'nu punde de arrive de le API pe acchià le variabbele de configurazione late-client",
 	"apihelp-bs-js-var-config-param-name": "Nome d'a variabbele de configurazione da pigghià",
+	"apihelp-bs-js-var-config-param-func": "Funzioen de configurazione da eseguì: has|get",
+	"apihelp-bs-js-var-config-param-context": "Ogeette JSON codifecate cu 'u condeste d'a chiamate",
 	"apihelp-bs-js-var-config-param-format": "'U formate d'u resultate"
 }

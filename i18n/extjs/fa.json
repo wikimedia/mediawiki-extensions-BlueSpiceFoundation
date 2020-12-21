@@ -6,6 +6,7 @@
 			"Amirsara",
 			"Arash.pt",
 			"FarsiNevis",
+			"Jeeputer",
 			"Reza1615"
 		]
 	},
@@ -30,6 +31,7 @@
 	"bs-extjs-reset": "از نو",
 	"bs-extjs-close": "بستن",
 	"bs-extjs-label-user": "کاربر",
+	"bs-extjs-label-group": "گروه",
 	"bs-extjs-label-namespace": "فضای نام",
 	"bs-extjs-label-page": "صفحه",
 	"bs-extjs-label-directsearch": "جستجو",
@@ -72,10 +74,16 @@
 	"bs-pagecollection-prefix": "مجموعهٔ صفحه‌ها",
 	"bs-extjs-pageexport-success": "برون‌بری موفق",
 	"bs-extjs-pageexport-success-text": "مجموعهٔ صفحه‌ها برون‌ریزی شد به $1",
+	"bs-extjs-pageexport-required-text": "نام فهرست نمی‌تواند خالی بماند و دست کم یک صفحه باید انتخاب شود",
 	"bs-extjs-export-search-summary-text": "تولید شده به‌وسیلهٔ PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "نام فهرست، نامعتبر است",
+	"bs-extjs-combo-box-default-placeholder": "برای پالایش، بنویسید...",
+	"bs-extjs-tools-trigger-title": "برای باز کردن منوی ابزارها کلیک کنید.",
 	"bs-extjs-tools-trigger-text": "ابزارها",
 	"bs-extjs-flyout-tab-thumbs-label": "بندانگشتی",
+	"bs-extjs-flyout-tab-thumbs-title": "تغییر به نمای بندانگشتی",
 	"bs-extjs-flyout-tab-grid-label": "جزئیات",
+	"bs-extjs-flyout-tab-grid-title": "تغییر به نمای جزئیات",
+	"bs-extjs-flyout-add-title": "برای افزودن آیتم جدید کلیک کنید",
 	"bs-extjs-flyout-add-label": "افزودن آیتم"
 }

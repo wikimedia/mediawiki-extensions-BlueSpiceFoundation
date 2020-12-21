@@ -6,6 +6,7 @@
 			"Ebraminio",
 			"FarsiNevis",
 			"Huji",
+			"Jeeputer",
 			"Reza1615",
 			"Rtemis"
 		]
@@ -43,6 +44,7 @@
 	"bs-readonly": "پایگاه‌های داده هم‌اکنون برای ورودی‌های تازه و دیگر تغییرها، احتمالاً برای نگهداری روزانه از پایگاه‌های داده قفل شده‌است که پس از آن دوباره به حالت عادی برخواهد گشت. مدیری که پایگاه‌های داده را قفل کرده‌است این توضیح را ارائه کرده‌است: $1",
 	"bs-imageofotheruser": "شما مجاز به بارگذاری تصویر برای کاربری دیگر نیستید.",
 	"bs-permissionerror": "خطای سطح دسترسی",
+	"bs-lockdown-groups-permissionerror": "عمل $1 به {{PLURAL:$2|دلیل|دلایل}} زیر امکان‌پذیر نیست: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> شاخه‌ای معتبر نیست.",
 	"bs-filesystemhelper-has-path-traversal": "پیمایش مسیر تشخیص داده شد!",
 	"bs-filesystemhelper-file-not-exists": "این پرونده <code>$1</code> وجود ندارد.",
@@ -91,5 +93,10 @@
 	"bs-graphicallist-action-preview": "پیش‌نمایش",
 	"bs-bluespice-mediawiki": "مدیاویکی «چاشنی آبی»",
 	"bs-bluespice": "چاشنی آبی",
-	"bs-notifications-agent-anon": "کاربر ناشناس"
+	"bs-notifications-agent-anon": "کاربر ناشناس",
+	"protect-level-editor": "تنها ویرایشگران و مدیران",
+	"bs-ping-on-init-desc": "ارسال بی‌درنگ درخواست پینگ پس از بارگذاری صفحه",
+	"bs-pref-fileextensions-help": "نوع پرونده‌هایی که می‌توان در این ویکی بارگذاری کرد. برخی انواع (مثلاً html، js، php، cgi، exe) به‌دلایل امنیتی مجاز نیستند. حتی اگر به اینجا اضافه شده‌باشند.",
+	"bs-pref-imageextensions-help": "نوع پرونده‌های تصویری که می‌توان در این ویکی بارگذاری کرد. فرمت‌های وب ممکن: gif، png، jpg، jpeg. s سایر فرمت‌های تصویری: tiff، bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "ناتوان در نوشتن پروندهٔ پیکربندی $1!"
 }

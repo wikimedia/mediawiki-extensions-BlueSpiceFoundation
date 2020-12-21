@@ -3,6 +3,7 @@
 		"authors": [
 			"Amirsara",
 			"FarsiNevis",
+			"Jeeputer",
 			"Reza1615"
 		]
 	},
@@ -10,6 +11,7 @@
 	"bs-deferred-action-status-running": "در حال اجرا...",
 	"bs-deferred-action-status-done": "انجام شد.",
 	"bs-deferred-action-status-error": "ناموفق بود.",
+	"bs-deferred-action-apicopypage-description": "کپی‌کردن «$1» به «$2»",
 	"bs-deferred-action-apieditpage-description": "ویرایش «$1».",
 	"bs-deferred-batch-progress-desc": "پیشرفت",
 	"bs-deferred-batch-actions": "عملکردها",
