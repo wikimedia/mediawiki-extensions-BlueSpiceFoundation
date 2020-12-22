@@ -16,6 +16,7 @@
 	"bs-months-duration": "{{PLURAL:$1|مہینہ|$1 مہینے}}",
 	"bs-weeks-duration": "{{PLURAL:$1|اک ہفتہ|$1 ہفتے}}",
 	"bs-days-duration": "{{PLURAL:$1|اک دن|$1 دناں}}",
+	"bs-secs-duration": "$1 {{PLURAL:$1|سکنٹ}}",
 	"bs-navigation-instructions": "ہدایات",
 	"bs-navigation-support": "حمایت",
 	"bs-navigation-contact": "رابطہ",
