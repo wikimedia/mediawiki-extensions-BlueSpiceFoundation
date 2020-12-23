@@ -29,6 +29,14 @@ class ApplySearchableNamespacesLockdown extends \BlueSpice\Hook\SearchableNamesp
 			if ( isset( $this->namespaceRolesLockdown[ $nsId ] ) == false ) {
 				continue;
 			}
+			$lockedRoles = array_intersect(
+				$permissionRoles,
+				$this->namespaceRolesLockdown[ $nsId ]
+			);
+			if ( empty( $lockedRoles ) ) {
+				// Lockdown does not apply to any role that has this permission
+				continue;
+			}
 			$isAllowed = false;
 			foreach ( $this->namespaceRolesLockdown[ $nsId ] as $roleName => $groups ) {
 				if ( in_array( $roleName, $permissionRoles ) == false ) {
