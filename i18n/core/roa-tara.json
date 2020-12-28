@@ -93,5 +93,6 @@
 	"right-wikiadmin": "Ausate pe attivitate amminsitrative potenzialmende pericolose cumme 'a gestione de le utinde, permesse, configurazione globbale (estenziune de BlueSpice)",
 	"bs-notifications-agent-anon": "utende anonime",
 	"protect-level-editor": "Consendite sulamende a le cangiature e le amministrature",
-	"bs-ping-on-init-desc": "Avessà mannà 'na richieste subbete dope le carecaminde d'a pàgene"
+	"bs-ping-on-init-desc": "Avessà mannà 'na richieste subbete dope le carecaminde d'a pàgene",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "'U file de configurazione $1 non ge pò essere scritte!"
 }
