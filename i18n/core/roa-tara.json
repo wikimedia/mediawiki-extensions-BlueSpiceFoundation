@@ -94,5 +94,9 @@
 	"bs-notifications-agent-anon": "utende anonime",
 	"protect-level-editor": "Consendite sulamende a le cangiature e le amministrature",
 	"bs-ping-on-init-desc": "Avessà mannà 'na richieste subbete dope le carecaminde d'a pàgene",
+	"right-editor": "Pigghià tutte le autorizzazziune da 'u ruole \"editor\" pe le pàggene prutette jndr'à restrizione de l'editor quanne 'u sisteme de le ruole jè attive",
+	"action-editor": "pigghià tutte le autorizzazziune da 'u ruole \"editor\" pe le pàggene prutette jndr'à restrizione de l'editor quanne 'u sisteme de le ruole jè attive",
+	"bs-pref-fileextensions-help": "Le tipe de fail ca ponne essere carecate jndr'à uicchi. Certe tipe (p.e. html, js, php, cgi, exe) non ge sò permesse pe mutive de securezze pure ce lore onne state aggiunde aqquà.",
+	"bs-pref-imageextensions-help": "Le tipe de le immaggine de fail ca ponne essere carecate jndr'à uicchi. Le possibbele formate web: gif, png, jpg, jpeg. Otre formate de immaggine: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "'U file de configurazione $1 non ge pò essere scritte!"
 }
