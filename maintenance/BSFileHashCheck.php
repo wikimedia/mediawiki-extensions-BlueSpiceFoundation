@@ -26,9 +26,9 @@ class BSFileHashCheck extends BSMaintenance {
 		$sDir = $this->getOption( 'dir' );
 		$sHashes = $this->getOption( 'hashes' );
 
-		if ( 'check' === $sMode ) {
+		if ( $sMode === 'check' ) {
 			$this->checkDirectoryContents( $sHashes, $sDir );
-		} elseif ( 'create' === $sMode ) {
+		} elseif ( $sMode === 'create' ) {
 			$this->createHashFile( $sHashes, $sDir );
 		}
 	}

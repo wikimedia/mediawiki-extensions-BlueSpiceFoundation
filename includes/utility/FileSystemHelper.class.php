@@ -174,7 +174,7 @@ class BsFileSystemHelper {
 		$rDir = opendir( $sSource );
 		wfMkdirParents( $sDestination );
 		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
-		while ( false !== ( $sFileName = readdir( $rDir ) ) ) {
+		while ( ( $sFileName = readdir( $rDir ) ) !== false ) {
 			if ( ( $sFileName != '.' ) && ( $sFileName != '..' ) ) {
 				if ( is_dir( "$sSource/$sFileName" ) ) {
 					self::copyRecursive(

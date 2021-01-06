@@ -140,7 +140,7 @@ class BsStringHelper {
 			return false;
 		}
 		$data = trim( $data );
-		if ( 'N;' == $data ) {
+		if ( $data == 'N;' ) {
 			return true;
 		}
 		if ( !preg_match( '/^([adObis]):/', $data, $badions ) ) {
