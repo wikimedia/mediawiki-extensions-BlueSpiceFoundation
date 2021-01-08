@@ -278,7 +278,7 @@ class BsCore {
 			self::$oLocalParser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		}
 		if ( !self::$oLocalParserOptions ) {
-			self::$oLocalParserOptions = new ParserOptions();
+			self::$oLocalParserOptions = ParserOptions::newFromAnon();
 		}
 
 		if ( $numberheadings === false ) {
