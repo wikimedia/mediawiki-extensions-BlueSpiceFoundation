@@ -80,5 +80,8 @@
 	"apihelp-bs-categorylinks-store-param-page-id": "{{doc-apihelp-param|bs-categorylinks-store|page_id}}",
 	"apihelp-bs-templatelinks-store-description": "{{doc-apihelp-description|bs-templatelinks-store}}",
 	"apihelp-bs-templatelinks-store-summary": "{{doc-apihelp-summary|bs-templatelinks-store}}",
-	"apihelp-bs-templatelinks-store-param-page-id": "{{doc-apihelp-param|bs-templatelinks-store|page_id}}"
+	"apihelp-bs-templatelinks-store-param-page-id": "{{doc-apihelp-param|bs-templatelinks-store|page_id}}",
+	"apihelp-bs-linker-summary": "{{doc-apihelp-summary|bs-linker}}",
+	"apihelp-bs-linker-description": "{{doc-apihelp-description|bs-linker}}",
+	"apihelp-bs-linker-param-linkdescs": "{{doc-apihelp-param|bs-linker|linkdescs}}"
 }
