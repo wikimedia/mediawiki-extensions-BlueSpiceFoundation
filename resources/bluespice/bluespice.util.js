@@ -272,6 +272,91 @@
 		};
 	}
 
+	function _linker() {
+
+		/**
+		 * Example:
+		 *
+		 * linkDescs = {
+		 *  'page1': { 'target': mw.Title.newFromText( 'Some page' ) },
+		 *  'page2': { 'target': 'Some other page', 'text': 'Some label' },
+		 *  'page3': { 'target': 'Some page 2', 'attribs': { 'class': 'pill' } },
+		 *  'page4': { 'target': 'Some page 3', 'query': { 'action': 'history' }  },
+		 *  'page5': { 'target': 'Invalid|Title' }
+		 * };
+		 * @param object linkDescs
+		 * @return {Promise}
+		 */
+		this.makeLinks = function( linkDescs ) {
+			var serializeableLinkDescs = {},
+				dfd = new $.Deferred(),
+				api = new mw.Api();
+
+			$.each( linkDescs, function( id, linkDesc ) {
+				var targetText = linkDesc.target || '';
+
+				// Convert {mw.Title} object
+				if ( targetText.getPrefixedDb ) {
+					targetText = targetText.getPrefixedDb();
+				}
+
+				if( targetText === '' ) {
+					return;
+				}
+
+				var serializeableLinkDesc = {
+					target: targetText,
+					text: linkDesc.text || null,
+					attribs: linkDesc.attribs || {},
+					query: linkDesc.query || {}
+				};
+
+				serializeableLinkDescs[id] = serializeableLinkDesc;
+			} );
+
+			api.get( {
+				'action': 'bs-linker',
+				'linkdescs': JSON.stringify( serializeableLinkDescs )
+			} )
+			.done( function( result ) {
+				dfd.resolve( result.links );
+			} )
+			.fail( dfd.reject );
+
+			return dfd.promise();
+		};
+
+		/**
+		 *
+		 * @param {mw.Title}|string target
+		 * @param string text
+		 * @param object attribs
+		 * @param object query
+		 * @return {Promise}
+		 */
+		this.makeLink = function( target, text, attribs, query ) {
+			var dfd = new $.Deferred();
+			this.makeLinks( {
+				'singlelink': {
+					'target': target,
+					'text': text,
+					'attribs': attribs,
+					'query': query
+				}
+			} )
+			.done( function( links ) {
+				if ( links.singlelink ) {
+					dfd.resolve( links.singlelink );
+				}
+				else {
+					dfd.reject();
+				}
+			} );
+
+			return dfd.promise();
+		};
+	}
+
 	function _timestampToAgeString( unixTimestamp ) {
 		//This is a js version of "adapter/Utility/FormatConverter.class.php" -> timestampToAgeString
 		//TODO: use PLURAL (probably wont work in mw 1.17)
@@ -671,7 +756,8 @@
 		convertDateToMWTimestamp: _convertDateToMWTimestamp,
 		convertMWTimestampToISO: _convertMWTimestampToISO,
 		convertISOToMWTimestamp: _convertISOToMWTimestamp,
-		convertMWTimestampToDate: _convertMWTimestampToDate
+		convertMWTimestampToDate: _convertMWTimestampToDate,
+		linker: new _linker()
 	};
 
 	//This allows us to have a confirm dialog be displayed
