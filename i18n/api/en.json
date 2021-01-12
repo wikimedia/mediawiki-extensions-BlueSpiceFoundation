@@ -72,5 +72,11 @@
 	"apihelp-bs-js-var-config-param-name": "Name of the configuration variable to retrieve",
 	"apihelp-bs-js-var-config-param-func": "Configuration function to execute: has|get",
 	"apihelp-bs-js-var-config-param-context": "JSON encoded object with context of the call",
-	"apihelp-bs-js-var-config-param-format": "Format of the result"
+	"apihelp-bs-js-var-config-param-format": "Format of the result",
+	"apihelp-bs-categorylinks-store-description": "Lists all categories of a page inclusive link to the category page and marker for explicite and implicit categories.",
+	"apihelp-bs-categorylinks-store-summary": "Lists all categories of a page inclusive link to the category page and marker for explicite and implicit categories.",
+	"apihelp-bs-categorylinks-store-param-page-id": "The page id of the page",
+	"apihelp-bs-templatelinks-store-description": "Lists all templates of a page inclusive link to the template.",
+	"apihelp-bs-templatelinks-store-summary": "Lists all templates of a page inclusive link to the template.",
+	"apihelp-bs-templatelinks-store-param-page-id": "The page id of the page"
 }

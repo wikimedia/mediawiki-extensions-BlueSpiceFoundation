@@ -74,5 +74,11 @@
 	"apihelp-bs-js-var-config-param-name": "{{doc-apihelp-param|bs-js-var-config|name}}",
 	"apihelp-bs-js-var-config-param-func": "{{doc-apihelp-param|bs-js-var-config|func}}",
 	"apihelp-bs-js-var-config-param-context": "{{doc-apihelp-param|bs-js-var-config|context}}",
-	"apihelp-bs-js-var-config-param-format": "{{doc-apihelp-param|bs-js-var-config|format}}"
+	"apihelp-bs-js-var-config-param-format": "{{doc-apihelp-param|bs-js-var-config|format}}",
+	"apihelp-bs-categorylinks-store-description": "{{doc-apihelp-description|bs-categorylinks-store}}",
+	"apihelp-bs-categorylinks-store-summary": "{{doc-apihelp-summary|bs-categorylinks-store}}",
+	"apihelp-bs-categorylinks-store-param-page-id": "{{doc-apihelp-param|bs-categorylinks-store|page_id}}",
+	"apihelp-bs-templatelinks-store-description": "{{doc-apihelp-description|bs-templatelinks-store}}",
+	"apihelp-bs-templatelinks-store-summary": "{{doc-apihelp-summary|bs-templatelinks-store}}",
+	"apihelp-bs-templatelinks-store-param-page-id": "{{doc-apihelp-param|bs-templatelinks-store|page_id}}"
 }
