@@ -168,7 +168,9 @@
 		"bs-watchlist-store": "BlueSpice\\Api\\Store\\Watchlist",
 		"bs-recentchanges-store": "BlueSpice\\Api\\Store\\RecentChanges",
 		"bs-task": "\\BlueSpice\\Api\\Task",
-		"bs-js-var-config": "\\BlueSpice\\Api\\JSConfigVarsApi"
+		"bs-js-var-config": "\\BlueSpice\\Api\\JSConfigVarsApi",
+		"bs-templatelinks-store": "\\BlueSpice\\Api\\Store\\Templatelinks",
+		"bs-categorylinks-store": "\\BlueSpice\\Api\\Store\\Categorylinks"
 	},
 	"GroupPermissions": {
 		"*": {
