@@ -334,6 +334,7 @@
 			"dependencies": [
 				"mediawiki.api",
 				"oojs-ui",
+				"mediawiki.widgets.UserInputWidget",
 				"ext.bluespice"
 			],
 			"messages": [
