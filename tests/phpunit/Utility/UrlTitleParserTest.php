@@ -16,8 +16,6 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @param $url
-	 * @param $expectation
 	 * @dataProvider provideFromUrlWithTitleData
 	 * @covers \BlueSpice\Utility\UrlTitleParser::parseTitle
 	 */
@@ -32,8 +30,6 @@ class UrlTitleParserTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @param $url
-	 * @param $exception
 	 * @dataProvider provideFromUrlWithExceptionData
 	 * @covers \BlueSpice\Utility\UrlTitleParser::parseTitle
 	 */

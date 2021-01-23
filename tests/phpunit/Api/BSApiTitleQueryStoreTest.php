@@ -91,7 +91,7 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	/**
 	 * @group Broken
 	 * @param array $filters
-	 * @param integer $expectedTotal
+	 * @param int $expectedTotal
 	 * @covers \BSApiTitleQueryStore::makeData
 	 */
 	public function testMultipleFilter( $filters, $expectedTotal ) {

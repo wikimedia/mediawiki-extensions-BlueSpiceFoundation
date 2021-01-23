@@ -71,9 +71,10 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	 * @param array $aData
 	 * @param int $iArticleId
 	 * @param string $sTitle
-	 * @param integer $iNamespace
-	 * @param integer $iRevision
-	 * @param array $aSingleResult
+	 * @param int $iNamespace
+	 * @param int $iRevision
+	 * @param array &$aSingleResult
+	 * @return bool
 	 */
 	public static function onBsAdapterAjaxPingResult( $sRef, $aData, $iArticleId, $sTitle,
 		$iNamespace, $iRevision, &$aSingleResult ) {
