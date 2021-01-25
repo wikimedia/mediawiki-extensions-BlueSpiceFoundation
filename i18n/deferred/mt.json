@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"ToniSant"
+		]
+	},
+	"bs-deferred-action-apiaddcategories-description": "Żid kategoriji lil '$1':",
+	"bs-deferred-action-apisetcategories-description": "Daħħal kategoriji fuq '$1'"
+}

@@ -6,5 +6,6 @@
 	},
 	"bs-filerepo-labelupload": "اُتے چاڑھو",
 	"bs-filerepo-headerfilename": "فائل دا ناں",
-	"bs-filerepo-headerfiletimestamp": "اپلوڈز"
+	"bs-filerepo-headerfiletimestamp": "اپلوڈز",
+	"bs-filerepo-headerfiledescription": "تفصیل"
 }
