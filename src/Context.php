@@ -3,6 +3,7 @@ namespace BlueSpice;
 
 use Config;
 use IContextSource;
+use MediaWiki\Permissions\Authority;
 
 class Context implements IContextSource {
 
@@ -117,6 +118,13 @@ class Context implements IContextSource {
 	 */
 	public function msg( $key, ...$params ) {
 		return $this->context->msg( $key, ...$params );
+	}
+
+	/**
+	 * @return Authority
+	 */
+	public function getAuthority(): Authority {
+		return $this->context->getAuthority();
 	}
 
 }
