@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook SkinTemplateOutputPageBeforeExec
+ * Hook handler base class for chameleon hook ChameleonSkinTemplateOutputPageBeforeExec
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,40 +20,38 @@
  *
  * @author     Patric Wirth
  * @package    BlueSpiceFoundation
- * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
+ * @copyright  Copyright (C) 2020 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
  * @filesource
  */
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
+use QuickTemplate;
+use SkinTemplate;
 
-/**
- * DEPRECATED!
- * @deprecated since version 3.3 - The hook was deprecated in MW 1.35. Use
- * BlueSpice\Hook\ChameleonSkinTemplateOutputPageBeforeExec instead
- */
-abstract class SkinTemplateOutputPageBeforeExec extends Hook {
-
+abstract class ChameleonSkinTemplateOutputPageBeforeExec extends Hook {
 	/**
 	 *
-	 * @var \SkinTemplate
+	 * @var SkinTemplate
 	 */
 	protected $skin = null;
 
 	/**
 	 *
-	 * @var \QuickTemplate
+	 * @var QuickTemplate
 	 */
 	protected $template = null;
 
 	/**
 	 *
-	 * @param \SkinTemplate &$skin
-	 * @param \QuickTemplate &$template
+	 * @param SkinTemplate $skin
+	 * @param QuickTemplate $template
 	 * @return bool
 	 */
-	public static function callback( &$skin, &$template ) {
+	public static function callback( $skin, $template ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -65,20 +63,17 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 	}
 
 	/**
-	 * DEPRECATED!
-	 * @deprecated since version 3.3 - The hook was deprecated in MW 1.35. Use
-	 * BlueSpice\Hook\ChameleonSkinTemplateOutputPageBeforeExec instead
-	 * @param \IContextSource $context
-	 * @param \Config $config
-	 * @param \SkinTemplate &$skin
-	 * @param \QuickTemplate &$template
+	 *
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param SkinTemplate $skin
+	 * @param QuickTemplate $template
 	 */
-	public function __construct( $context, $config, &$skin, &$template ) {
+	public function __construct( $context, $config, $skin, $template ) {
 		parent::__construct( $context, $config );
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 
 		$this->skin = $skin;
-		$this->template = &$template;
+		$this->template = $template;
 	}
 
 	/**
@@ -91,7 +86,10 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 			$this->template->data[$fieldName] = [];
 		}
 
-		$this->template->data[$fieldName] = array_merge( $this->template->data[$fieldName], $item );
+		$this->template->data[$fieldName] = array_merge(
+			$this->template->data[$fieldName],
+			$item
+		);
 	}
 
 	/**
@@ -106,5 +104,4 @@ abstract class SkinTemplateOutputPageBeforeExec extends Hook {
 
 		$this->template->data[$fieldName][] = $item;
 	}
-
 }
