@@ -4,6 +4,10 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 
+/**
+ * DEPRECATED!
+ * @deprecated since version 3.3 - use \BlueSpice\Hook\PageMoveComplete instead
+ */
 abstract class TitleMoveComplete extends Hook {
 	/**
 	 *
