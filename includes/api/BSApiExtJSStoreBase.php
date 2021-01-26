@@ -603,7 +603,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	 * @return int see http://php.net/manual/en/array.constants.php for details
 	 */
 	protected function getSortFlags( $sProperty ) {
-		return SORT_NATURAL;
+		return SORT_NATURAL | SORT_FLAG_CASE;
 	}
 
 	/**

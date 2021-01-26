@@ -63,7 +63,7 @@ class Sorter {
 	 * @return int see http://php.net/manual/en/array.constants.php for details
 	 */
 	protected function getSortFlags( $property ) {
-		return SORT_NATURAL;
+		return SORT_NATURAL | SORT_FLAG_CASE;
 	}
 
 	/**
