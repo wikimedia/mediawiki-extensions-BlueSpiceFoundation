@@ -595,7 +595,7 @@
 			"\\BlueSpice\\Hook\\PageSaveComplete\\InvalidateTargetCacheTitle::callback"
 		],
 		"ArticleDeleteComplete": "\\BlueSpice\\Hook\\ArticleDeleteComplete\\InvalidateTargetCacheTitle::callback",
-		"TitleMoveComplete": "\\BlueSpice\\Hook\\TitleMoveComplete\\InvalidateTargetCacheTitle::callback",
+		"PageMoveComplete": "\\BlueSpice\\Hook\\PageMoveComplete\\InvalidateTargetCacheTitle::callback",
 		"ResourceLoaderGetConfigVars": [
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddVersion::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",
