@@ -71,6 +71,7 @@
 	"apihelp-bs-recentchanges-store-summary": "列举所有最近更改。允许排序、过滤和标页数。执行存储参数。",
 	"apihelp-bs-task-summary": "为执行已注册任务的 API 终点",
 	"apihelp-bs-task-description": "为执行已注册任务的 API 终点",
+	"apihelp-bs-js-var-config-summary": "提供一个API端点，用于检索客户端配置变量。",
 	"apihelp-bs-js-var-config-param-name": "待检索的配置变量的名称",
 	"apihelp-bs-js-var-config-param-func": "要执行的配置命令：有|取得",
 	"apihelp-bs-js-var-config-param-context": "包含调用上下文的JSON编码对象",
