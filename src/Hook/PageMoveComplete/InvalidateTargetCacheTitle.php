@@ -1,17 +1,19 @@
 <?php
 
-namespace BlueSpice\Hook\TitleMoveComplete;
+namespace BlueSpice\Hook\PageMoveComplete;
 
+use BlueSpice\Hook\PageMoveComplete;
 use BlueSpice\TargetCache\Title\Target;
+use Title;
 
-class InvalidateTargetCacheTitle extends \BlueSpice\Hook\TitleMoveComplete {
+class InvalidateTargetCacheTitle extends PageMoveComplete {
 
 	protected function doProcess() {
 		$this->getServices()->getService( 'BSTargetCacheTitle' )->invalidateAll(
-			new Target( $this->title )
+			new Target( Title::newFromLinkTarget( $this->old ) )
 		);
 		$this->getServices()->getService( 'BSTargetCacheTitle' )->invalidateAll(
-			new Target( $this->newTitle )
+			new Target( Title::newFromLinkTarget( $this->new ) )
 		);
 		return true;
 	}
