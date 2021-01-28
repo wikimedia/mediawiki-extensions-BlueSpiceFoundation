@@ -221,6 +221,7 @@
 				"bs-now"
 			],
 			"dependencies": [
+				"mediawiki.cookie",
 				"mediawiki.api"
 			]
 		},
