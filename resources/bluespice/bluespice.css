@@ -30,11 +30,50 @@
 	cursor: pointer;
 }
 
-.bs-tooltip {
-	display:none;
+.bs-tooltip.top .tooltip-arrow {
+	/* override bootstrap styles*/
+	border-top-color: #E1E1E1 !important;
+}
+.bs-tooltip.right .tooltip-arrow {
+	/* override bootstrap styles*/
+	border-right-color: #E1E1E1 !important;
+}
+.bs-tooltip.bottom .tooltip-arrow {
+	/* override bootstrap styles*/
+	border-bottom-color: #E1E1E1 !important;
+}
+.bs-tooltip.left .tooltip-arrow {
+	/* override bootstrap styles*/
+	border-left-color: #E1E1E1 !important;
+}
+.bs-tooltip .tooltip-inner {
+	/* override bootstrap styles*/
+	background-color: #FFFFFF;
+	color: #000000;
+	font-size: 0.8rem;
+	font-weight: bold;
+	border: none;
+	border-bottom: none;
+	border-radius: 0 0 3px 3px;
+}
+.bs-tooltip .tooltip-body {
+	background-color: #FFFFFF;
+	border: 1px solid #E1E1E1;
+	border-top: none;
+	border-radius: 0 0 3px 3px;
+}
+.bs-tooltip .tooltip-body > ul {
+	list-style: none;
+	margin: 0 !important;
+	padding: 0 8px !important;
+}
+.bs-tooltip .tooltip-body > ul * {
+	color: #000000 !important;
+	font-size: 1em !important;
+	text-align: center;
 }
 
-.bs-tooltip-body > ul {
+.bs-tooltip .bs-tooltip-body > ul {
 	list-style: none;
 	margin: 0;
 }
