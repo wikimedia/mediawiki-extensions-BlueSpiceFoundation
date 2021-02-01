@@ -5,7 +5,7 @@ namespace BlueSpice\Data\Templatelinks;
 use BlueSpice\Data\Filter;
 use BlueSpice\Data\FilterFinder;
 use BlueSpice\Data\IPrimaryDataProvider;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 use Title;
 use User;
 
@@ -121,7 +121,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 * @return bool
 	 */
 	protected function isSystemUser( $user ) {
-		return Services::getInstance()->getBSUtilityFactory()
+		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->isMaintenanceUser( $user );
 	}
 
