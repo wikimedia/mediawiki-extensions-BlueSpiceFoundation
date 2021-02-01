@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jakub Fabijan",
 			"Mirin",
 			"Robin van der Vliet",
 			"Yekrats",
@@ -28,6 +29,7 @@
 	"bs-extjs-reset": "Restarigi",
 	"bs-extjs-close": "Fermi",
 	"bs-extjs-label-user": "Uzanto",
+	"bs-extjs-label-group": "Grupo",
 	"bs-extjs-label-namespace": "Nomspaco",
 	"bs-extjs-label-page": "Paĝo",
 	"bs-extjs-label-directsearch": "Serĉi",
