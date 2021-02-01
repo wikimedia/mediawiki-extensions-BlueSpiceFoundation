@@ -59,5 +59,6 @@
 	"bs-api-task-taskData-page-id": "L'ID di una pagina wiki esistente",
 	"bs-api-task-taskData-page-title": "Un titolo valido di una pagina wiki",
 	"bs-api-task-wikipagetasks-taskData-categories": "Vettore di stringhe. I valori devono essere nomi validi di categorie.",
-	"apihelp-bs-js-var-config-param-format": "Formato del risultato"
+	"apihelp-bs-js-var-config-param-format": "Formato del risultato",
+	"apihelp-bs-templatelinks-store-param-page-id": "L'ID pagina della pagina"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jakub Fabijan",
 			"Mirin"
 		]
 	},
@@ -12,5 +13,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ne valida kategorio|Ne validaj kategorioj}}: $1",
 	"apihelp-bs-wikisubpage-treestore-param-node": "La kunprefiksa titolo de la vikipaĝo",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Listo de opcioj",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Vi ne rajtas legi paĝon '$1'.",
 	"bs-api-task-taskData-page-title": "Valida titolo de vikia paĝo"
 }
