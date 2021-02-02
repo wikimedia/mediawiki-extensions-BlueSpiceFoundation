@@ -72,6 +72,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$distinctUserIds = [];
 		$distinctNamespaceIds = [];
 		foreach ( $res as $row ) {
+			$user = User::newFromId( (int)$row->wl_user );
+			// leftover data from deleted users
+			if ( !$user || $user->isAnon() ) {
+				continue;
+			}
 			$distinctUserIds[(int)$row->wl_user] = true;
 			$distinctNamespaceIds[(int)$row->wl_namespace] = true;
 			$this->appendRowToData( $row );
