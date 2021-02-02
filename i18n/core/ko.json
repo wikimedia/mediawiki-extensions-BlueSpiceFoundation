@@ -52,6 +52,7 @@
 	"bs-filesystemhelper-folder-already-exists": "<code>$1</code> 폴더가 이미 존재합니다.",
 	"bs-filesystemhelper-folder-copy-error": "<code>$1</code> 폴더의 이름을 바꿀 수 없습니다.",
 	"bs-filesystemhelper-folder-not-exists": "<code>$1</code> 폴더가 존재하지 않습니다.",
+	"bs-filesystemhelper-folder-rename-error": "<code>$1</code> 폴더의 이름을 <code>$2</code>(으)로 변경하지 못했습니다.",
 	"bs-filesystemhelper-upload-err-code": "파일을 올릴 수 없습니다: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "파일에 필요한 확장자가 없습니다: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "이 파일 형식은 지원되지 않습니다.",

@@ -72,5 +72,11 @@
 	"apihelp-bs-js-var-config-param-name": "Nome d'a variabbele de configurazione da pigghià",
 	"apihelp-bs-js-var-config-param-func": "Funzioen de configurazione da eseguì: has|get",
 	"apihelp-bs-js-var-config-param-context": "Ogeette JSON codifecate cu 'u condeste d'a chiamate",
-	"apihelp-bs-js-var-config-param-format": "'U formate d'u resultate"
+	"apihelp-bs-js-var-config-param-format": "'U formate d'u resultate",
+	"apihelp-bs-categorylinks-store-description": "Elenghe tutte le categorije de 'na pàgene 'nglusive de collegamende a 'a pàgene de categorije e indicatore pe le categorije esplicite e 'mblicite.",
+	"apihelp-bs-categorylinks-store-summary": "Elenghe tutte le categorije de 'na pàgene 'nglusive de collegamende a 'a pàgene de categorije e indicatore pe le categorije esplicite e 'mblicite.",
+	"apihelp-bs-categorylinks-store-param-page-id": "L'ID d'a pàgene",
+	"apihelp-bs-templatelinks-store-description": "Elenghe tutte le template de 'na pàgene 'nglusive de collegamende a 'u template.",
+	"apihelp-bs-templatelinks-store-summary": "Elenghe tutte le template de 'na pàgene 'nglusive de collegamende a 'u template.",
+	"apihelp-bs-templatelinks-store-param-page-id": "L'ID d'a pàgene"
 }
