@@ -154,7 +154,8 @@
 		"bs-task": "\\BlueSpice\\Api\\Task",
 		"bs-js-var-config": "\\BlueSpice\\Api\\JSConfigVarsApi",
 		"bs-templatelinks-store": "\\BlueSpice\\Api\\Store\\Templatelinks",
-		"bs-categorylinks-store": "\\BlueSpice\\Api\\Store\\Categorylinks"
+		"bs-categorylinks-store": "\\BlueSpice\\Api\\Store\\Categorylinks",
+		"bs-linker": "\\BlueSpice\\Api\\Linker"
 	},
 	"GroupPermissions": {
 		"*": {
