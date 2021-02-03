@@ -16,7 +16,7 @@
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewTagElement extends ViewBaseElement {
-	public function  __construct() {
+	public function __construct() {
 		parent::__construct();
 		$this->_mAutoElement = 'p';
 	}

@@ -68,7 +68,7 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	public function testGetTargetMatchCount() {
 		$wikitext = $this->provideWikitextData();
 		$helper = $this->getHelper( $wikitext );
-		$this->assertEquals(
+		$this->assertSame(
 			count( $this->getExpected() ),
 			count( $helper->getTargets() )
 		);

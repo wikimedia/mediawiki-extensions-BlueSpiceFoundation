@@ -25,7 +25,7 @@ class ViewTagError extends ViewBaseElement {
 	 *
 	 * @param string $msg
 	 */
-	public function  __construct( $msg ) {
+	public function __construct( $msg ) {
 		parent::__construct();
 		$this->mLineFeed = '<br />';
 		$this->mErrorMsg = $msg;

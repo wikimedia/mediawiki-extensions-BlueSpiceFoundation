@@ -66,8 +66,8 @@ Ext.define( 'BS.portal.Portlet', {
 		};
 	},
 
-	//Subclasses can use this to refresh their content!
-	setPortletConfig: function( oConfig ) {
+	// Subclasses can use this to refresh their content!
+	setPortletConfig: function ( oConfig ) {
 		this.setTitle( oConfig.title );
 		this.setHeight( oConfig.height );
 		this.portletItemCount = oConfig.portletItemCount;

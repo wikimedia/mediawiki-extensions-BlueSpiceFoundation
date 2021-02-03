@@ -1,4 +1,4 @@
-( function( mw, bs, $, document ) {
+( function ( mw, bs, $, document ) {
 	bs.ui.widget.KeyObjectInputWidget = function ( cfg ) {
 		this.objectConfiguration = cfg.objectConfiguration || {};
 		bs.ui.widget.KeyObjectInputWidget.parent.call( this, cfg );
@@ -8,29 +8,29 @@
 
 	OO.inheritClass( bs.ui.widget.KeyObjectInputWidget, bs.ui.widget.KeyValueInputWidget );
 
-	bs.ui.widget.KeyObjectInputWidget.prototype.getValue = function() {
+	bs.ui.widget.KeyObjectInputWidget.prototype.getValue = function () {
 		var value = {};
-		for( var idx in this.addedWidgets ) {
-			var keyWidget = this.addedWidgets[idx].keyWidget;
-			var valueWidget = this.addedWidgets[idx].valueWidget;
-			var keyValue = keyWidget.getValue();
-			var valueValue = valueWidget.getValue();
+		for ( var idx in this.addedWidgets ) {
+			var keyWidget = this.addedWidgets[ idx ].keyWidget,
+				valueWidget = this.addedWidgets[ idx ].valueWidget,
+				keyValue = keyWidget.getValue(),
+				valueValue = valueWidget.getValue();
 
 			valueValue = valueValue || keyValue;
-			value[keyValue] = valueValue;
+			value[ keyValue ] = valueValue;
 		}
 
 		return value;
 	};
 
-	bs.ui.widget.KeyObjectInputWidget.prototype.getValueLayout = function( valueInput, cfg ) {
+	bs.ui.widget.KeyObjectInputWidget.prototype.getValueLayout = function ( valueInput, cfg ) {
 		return new OO.ui.FieldsetLayout( {
 			items: valueInput.getLayouts(),
 			classes: [ 'keyObjectInputWidget-value-layout' ]
 		} );
 	};
 
-	bs.ui.widget.KeyObjectInputWidget.prototype.getDeleteButtonWidget = function() {
+	bs.ui.widget.KeyObjectInputWidget.prototype.getDeleteButtonWidget = function () {
 		return new OO.ui.ButtonWidget( {
 			framed: false,
 			icon: 'close',
@@ -38,7 +38,7 @@
 		} );
 	};
 
-	bs.ui.widget.KeyObjectInputWidget.prototype.getAddButtonWidget = function() {
+	bs.ui.widget.KeyObjectInputWidget.prototype.getAddButtonWidget = function () {
 		return new OO.ui.ButtonWidget( {
 			framed: false,
 			icon: 'check',
@@ -50,11 +50,11 @@
 		} );
 	};
 
-	bs.ui.widget.KeyObjectInputWidget.prototype.getValueInput = function( cfg ) {
+	bs.ui.widget.KeyObjectInputWidget.prototype.getValueInput = function ( cfg ) {
 		return new bs.ui.widget.ObjectInputWidget( {
 			values: cfg.valueValue,
 			inputs: this.objectConfiguration,
 			classes: [ 'bs-ooui-widget-keyValueInputWidget-value-input' ]
 		} );
 	};
-} )( mediaWiki, blueSpice, jQuery, undefined );
+}( mediaWiki, blueSpice, jQuery, undefined ) );

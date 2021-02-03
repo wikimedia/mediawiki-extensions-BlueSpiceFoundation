@@ -280,21 +280,23 @@
 		 * Example:
 		 *
 		 * linkDescs = {
-		 *  'page1': { 'target': mw.Title.newFromText( 'Some page' ) },
-		 *  'page2': { 'target': 'Some other page', 'text': 'Some label' },
-		 *  'page3': { 'target': 'Some page 2', 'attribs': { 'class': 'pill' } },
-		 *  'page4': { 'target': 'Some page 3', 'query': { 'action': 'history' }  },
-		 *  'page5': { 'target': 'Invalid|Title' }
+		 * 'page1': { 'target': mw.Title.newFromText( 'Some page' ) },
+		 * 'page2': { 'target': 'Some other page', 'text': 'Some label' },
+		 * 'page3': { 'target': 'Some page 2', 'attribs': { 'class': 'pill' } },
+		 * 'page4': { 'target': 'Some page 3', 'query': { 'action': 'history' }  },
+		 * 'page5': { 'target': 'Invalid|Title' }
 		 * };
+		 *
 		 * @param object linkDescs
+		 * @param linkDescs
 		 * @return {Promise}
 		 */
-		this.makeLinks = function( linkDescs ) {
+		this.makeLinks = function ( linkDescs ) {
 			var serializeableLinkDescs = {},
 				dfd = new $.Deferred(),
 				api = new mw.Api();
 
-			$.each( linkDescs, function( id, linkDesc ) {
+			$.each( linkDescs, function ( id, linkDesc ) {
 				var targetText = linkDesc.target || '';
 
 				// Convert {mw.Title} object
@@ -302,7 +304,7 @@
 					targetText = targetText.getPrefixedDb();
 				}
 
-				if( targetText === '' ) {
+				if ( targetText === '' ) {
 					return;
 				}
 
@@ -313,47 +315,45 @@
 					query: linkDesc.query || {}
 				};
 
-				serializeableLinkDescs[id] = serializeableLinkDesc;
+				serializeableLinkDescs[ id ] = serializeableLinkDesc;
 			} );
 
 			api.get( {
-				'action': 'bs-linker',
-				'linkdescs': JSON.stringify( serializeableLinkDescs )
+				action: 'bs-linker',
+				linkdescs: JSON.stringify( serializeableLinkDescs )
 			} )
-			.done( function( result ) {
-				dfd.resolve( result.links );
-			} )
-			.fail( dfd.reject );
+				.done( function ( result ) {
+					dfd.resolve( result.links );
+				} )
+				.fail( dfd.reject );
 
 			return dfd.promise();
 		};
 
 		/**
-		 *
-		 * @param {mw.Title}|string target
-		 * @param string text
-		 * @param object attribs
-		 * @param object query
+		 * @param {mw.Title|string} target
+		 * @param {string} text
+		 * @param {Object} attribs
+		 * @param {Object} query
 		 * @return {Promise}
 		 */
-		this.makeLink = function( target, text, attribs, query ) {
+		this.makeLink = function ( target, text, attribs, query ) {
 			var dfd = new $.Deferred();
 			this.makeLinks( {
-				'singlelink': {
-					'target': target,
-					'text': text,
-					'attribs': attribs,
-					'query': query
+				singlelink: {
+					target: target,
+					text: text,
+					attribs: attribs,
+					query: query
 				}
 			} )
-			.done( function( links ) {
-				if ( links.singlelink ) {
-					dfd.resolve( links.singlelink );
-				}
-				else {
-					dfd.reject();
-				}
-			} );
+				.done( function ( links ) {
+					if ( links.singlelink ) {
+						dfd.resolve( links.singlelink );
+					} else {
+						dfd.reject();
+					}
+				} );
 
 			return dfd.promise();
 		};

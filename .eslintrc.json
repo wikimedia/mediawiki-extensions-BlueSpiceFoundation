@@ -58,6 +58,7 @@
 		"mediawiki/msg-doc": "warn",
 		"new-cap": "warn",
 		"semi-style": "warn",
-		"no-shadow": "warn"
+		"no-shadow": "warn",
+		"compat/compat": "warn"
 	}
 }

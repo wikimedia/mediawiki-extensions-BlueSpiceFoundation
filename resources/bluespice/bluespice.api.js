@@ -9,8 +9,8 @@
 	 *
 	 * @param {string} module
 	 * @param {string} task
-	 * @param {object} data
-	 * @param {object} cfg
+	 * @param {Object} data
+	 * @param {Object} cfg
 	 * @return {jQuery.Promise}
 	 */
 	function _execTaskSilent( module, task, data, cfg ) {
@@ -37,8 +37,8 @@
 	 *
 	 * @param {string} module
 	 * @param {string} task
-	 * @param {object} data
-	 * @param {object} cfg - set { useService: true } to use new task service
+	 * @param {Object} data
+	 * @param {Object} cfg - set { useService: true } to use new task service
 	 * @return {jQuery.Promise}
 	 */
 	function _execTask( module, task, data, cfg ) {
@@ -103,7 +103,7 @@
 	 * .done(...);
 	 *
 	 * @param {string} module
-	 * @param {object} cfg
+	 * @param {Object} cfg
 	 * @return {jQuery.Promise}
 	 */
 	function _getStoreData( module, cfg ) {
@@ -173,7 +173,7 @@
 			func: func,
 			name: value,
 			context: JSON.stringify(
-				$.extend (
+				$.extend(
 					_getContext(),
 					context
 				)
@@ -185,7 +185,7 @@
 			}
 			var error = response.hasOwnProperty( 'error' ) ? response.error : '';
 			dfd.reject( error );
-		} ).fail( function( error ) {
+		} ).fail( function ( error ) {
 			dfd.reject( error );
 		} );
 

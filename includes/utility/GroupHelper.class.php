@@ -105,7 +105,7 @@ class BsGroupHelper {
 			return $aUser;
 		}
 		foreach ( $res as $row ) {
-			$aUser [] = User::newFromId( $row->ug_user );
+			$aUser[] = User::newFromId( $row->ug_user );
 		}
 		return $aUser;
 	}

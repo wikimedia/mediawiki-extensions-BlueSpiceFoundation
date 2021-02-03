@@ -33,8 +33,8 @@ class BSFixturesTest extends BSApiTestCase {
 
 		$groups = $user->getGroups();
 
-		$this->assertTrue( in_array( 'A', $groups ), 'User should be in group A' );
-		$this->assertFalse( in_array( 'B', $groups ), 'User should not be in group B' );
-		$this->assertTrue( in_array( 'C', $groups ), 'User should be in group C' );
+		$this->assertContains( 'A', $groups, 'User should be in group A' );
+		$this->assertNotContains( 'B', $groups, 'User should not be in group B' );
+		$this->assertContains( 'C', $groups, 'User should be in group C' );
 	}
 }
