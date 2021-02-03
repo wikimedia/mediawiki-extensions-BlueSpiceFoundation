@@ -12,7 +12,7 @@ class BSConfigDirSettingsFileTest extends TestCase {
 	 *
 	 * @param string $testConfigDir
 	 * @param string $tmpfile
-	 * @return void
+	 * @return LoggerInterface
 	 */
 	private function makeMock( $testConfigDir, $tmpfile = 'test-settings.php' ) {
 		$loggerMock = $this->createMock( LoggerInterface::class );
