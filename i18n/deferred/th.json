@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622",
+			"Just Sayori"
+		]
+	},
+	"bs-deferred-action-status-done": "เสร็จสิ้น",
+	"bs-deferred-action-status-error": "ล้มเหลว",
+	"bs-deferred-action-apieditpage-description": "แก้ไข \"$1\"",
+	"bs-deferred-batch-actions": "การกระทำ",
+	"bs-deferred-batch-description": "คำอธิบาย",
+	"bs-deferred-batch-status": "สถานะ",
+	"bs-deferred-action-apimovepage-description": "ย้าย \"$1\" ไปยัง \"$2\"",
+	"bs-deferred-action-apideletepage-description": "ลบ \"$1\""
+}

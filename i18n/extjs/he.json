@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Ronel1",
 			"Eladk",
 			"Guycn2",
+			"Ronel1",
+			"Steeve815",
 			"YaronSh",
-			"Steeve815"
+			"ישראל קלר"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -78,5 +79,8 @@
 	"bs-extjs-filter-date-on": "פעיל",
 	"bs-extjs-pageexport-success": "הייצוא בוצע בהצלחה",
 	"bs-extjs-pageexport-error-invalid-title": "שם הרשימה אינו תקין",
-	"bs-extjs-pageexport-pagecollection-prefix": "אוסף דפים"
+	"bs-extjs-pageexport-pagecollection-prefix": "אוסף דפים",
+	"bs-extjs-label-group": "קבוצה",
+	"bs-extjs-label-specialpage": "דף מיוחד",
+	"bs-pagecollection-prefix": "אוסף דפים"
 }

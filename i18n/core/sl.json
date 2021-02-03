@@ -1,10 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Skalcaa",
-			"Dbc334"
+			"Dbc334",
+			"Eleassar",
+			"Skalcaa"
 		]
 	},
-	"right-wikiadmin": "Uporabljeno v mnogih razširitvah BlueSpice za morebitno nevarna administratorska opravila, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami",
-	"action-wikiadmin": "uporabljeno v mnogih razširitvah BlueSpice za morebitno nevarna skrbniška opravila, kot so upravljanje uporabnikov, pravic in globalne konfiguracije"
+	"right-wikiadmin": "Uporaba morebitno nevarnih skrbniških opravil, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami (razširitve BlueSpice)",
+	"action-wikiadmin": "uporabo morebitno nevarnih skrbniških opravil, kot so upravljanje uporabnikov, pravic in globalne konfiguracije (razširitve BlueSpice),",
+	"bs-ns_main": "(Strani)",
+	"bs-userbar_loginswitch_login": "Prijava",
+	"bs-extended-search-textfield-defaultvalue": "Iskanje&nbsp;..."
 }

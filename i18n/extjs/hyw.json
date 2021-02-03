@@ -4,5 +4,13 @@
 			"Kareyac"
 		]
 	},
-	"bs-extjs-cancel": "Չեղարկել"
+	"bs-extjs-cancel": "Չեղարկել",
+	"bs-extjs-ok": "Լաւ",
+	"bs-extjs-yes": "Այո",
+	"bs-extjs-save": "Պահել",
+	"bs-extjs-edit": "Խմբագրել",
+	"bs-extjs-error": "Սխալ",
+	"bs-extjs-actions-column-header": "Գործողութիւններ",
+	"bs-extjs-label-namespace": "Անուանատարածք",
+	"bs-extjs-filter-bool-yes": "այո"
 }

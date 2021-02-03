@@ -60,7 +60,7 @@
 	"apihelp-bs-category-treestore-description": "{{doc-apihelp-description|bs-category-treestore}}",
 	"apihelp-bs-category-treestore-summary": "{{doc-apihelp-summary|bs-category-treestore}}",
 	"apihelp-bs-category-treestore-param-node": "{{doc-apihelp-param|bs-category-treestore|node}}",
-	"bs-api-task-taskdata-help": "Text for API help page that provides a schema definition.\\n\nParameters:\n* $1 - an url to the API endpoint schema\n* $2 - an url to parameter examples",
+	"bs-api-task-taskdata-help": "Text for API help page that provides a schema definition.\n\nParameters:\n* $1 - an url to the API endpoint schema\n* $2 - an url to parameter examples",
 	"apihelp-bs-task-param-schema": "{{doc-apihelp-param|bs-task|schema}}",
 	"apihelp-bs-task-param-examples": "{{doc-apihelp-param|bs-task|examples}}",
 	"bs-api-task-taskData-page-id": "Description of <code>taskData.page_id</code> field",

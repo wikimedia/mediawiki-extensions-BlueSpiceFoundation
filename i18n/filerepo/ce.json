@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-filerepo-headerfilemimetype": "MIME-тайпа",
+	"bs-filerepo-headerfilemediatype": "Медиа тайпа"
+}

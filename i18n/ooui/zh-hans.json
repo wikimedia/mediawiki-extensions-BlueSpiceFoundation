@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"AYZ04",
+			"Liuxinyu970226",
+			"VulpesVulpes825"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "添加新的...",
@@ -10,5 +12,8 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "添加",
 	"bs-ooui-key-value-input-widget-add-form-label": "添加新记录",
 	"bs-ooui-key-value-input-widget-error-message": "所有必填字段必须设置！",
-	"bs-ooui-key-value-input-widget-no-values-label": "未设置值！"
+	"bs-ooui-key-value-input-widget-no-values-label": "未设置值！",
+	"bs-ooui-btn-dismiss-alert-title": "关闭",
+	"bs-ooui-key-value-input-widget-section-label": "章节",
+	"bs-ooui-key-value-input-widget-add-section-label": "新增章节"
 }

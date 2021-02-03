@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joanmp17"
+		]
+	},
+	"bs-ns_main": "(ገጻት)",
+	"bs-tab_navigation": "መዳህሰስ",
+	"bs-userbar_loginswitch_logout": "ብመንነት ውጻእ",
+	"bs-userbar_loginswitch_login": "ብመንነት እተው",
+	"bs-extended-search-textfield-defaultvalue": "ምድላይ...",
+	"bs-now": "ሕጂ",
+	"bs-imagepage-download-text": "ኣውርድ",
+	"bs-from-something": "(ካብ $1)",
+	"bs-export-menu-print-text": "ሕተም",
+	"bs-graphicallist-action-close": "ዕጸው",
+	"bs-graphicallist-action-list": "ዝርዝር",
+	"bs-graphicallist-action-preview": "ኣቐደሚ ትርኢት"
+}

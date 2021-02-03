@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vitorvicentevalente",
-			"Hamilton Abreu",
+			"Athena in Wonderland",
 			"Fúlvio",
-			"Athena in Wonderland"
+			"Hamilton Abreu",
+			"Vitorvicentevalente"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
@@ -70,5 +70,10 @@
 	"apihelp-bs-watchlist-store-summary": "Lista todas as entradas da lista de páginas vigiadas. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-recentchanges-store-summary": "Lista todas as mudanças recentes. Permite ordenar, filtrar e paginar. Implementa os parâmetros store.",
 	"apihelp-bs-task-summary": "Fornece o ponto de terminação da API para execução de tarefas registadas",
-	"apihelp-bs-task-description": "Fornece o ponto de terminação da API para execução de tarefas registadas"
+	"apihelp-bs-task-description": "Fornece o ponto de terminação da API para execução de tarefas registadas",
+	"apihelp-bs-js-var-config-summary": "Fornece um ponto final da API para obter variáveis de configuração no lado do cliente",
+	"apihelp-bs-js-var-config-param-name": "Nome da variável de configuração a ser obtida",
+	"apihelp-bs-js-var-config-param-func": "Função de configuração a executar: has|get",
+	"apihelp-bs-js-var-config-param-context": "Objeto codificado em JSON com o contexto da chamada",
+	"apihelp-bs-js-var-config-param-format": "Formato do resultado"
 }

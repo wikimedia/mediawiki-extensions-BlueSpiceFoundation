@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stryn",
+			"01miki10",
+			"Cxz",
+			"Pxos",
+			"Pyscowicz",
 			"SMAUG",
 			"Silvonen",
-			"01miki10",
-			"Pyscowicz",
-			"Surjection",
-			"Pxos",
-			"Cxz"
+			"Stryn",
+			"Surjection"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -69,8 +69,11 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Sivu ei ole sallittu: $1",
 	"bs-export-menu-print-text": "Tulosta",
 	"bs-graphicallist-action-close": "Sulje",
-	"right-wikiadmin": "Käytetään monissa BlueSpice-laajennuksissa mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista, varten",
+	"right-wikiadmin": "Käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
-	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät"
+	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, herra $2|Hei, rouva $2|Hei $2}}.",
+	"bs-graphicallist-action-list": "Luettelo",
+	"bs-graphicallist-action-preview": "Esikatsele"
 }

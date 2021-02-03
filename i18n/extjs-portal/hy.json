@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"bs-extjs-portal-timespan-week": "Շաբաթ",
+	"bs-extjs-portal-timespan-month": "Ամիս",
+	"bs-extjs-portal-timespan-alltime": "Ամբողջ ընթացքում"
+}

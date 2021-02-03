@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mansil alfalb",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Mansil alfalb"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Adicionar novo...",
@@ -11,5 +11,8 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Adicionar",
 	"bs-ooui-key-value-input-widget-add-form-label": "Adicionar entrada nova",
 	"bs-ooui-key-value-input-widget-error-message": "Todos os campos obrigatórios têm de ser definidos!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Não foi definido nenhum valor!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Não foi definido nenhum valor!",
+	"bs-ooui-btn-dismiss-alert-title": "Ignorar",
+	"bs-ooui-key-value-input-widget-section-label": "Secção",
+	"bs-ooui-key-value-input-widget-add-section-label": "Adicionar secção nova"
 }

@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eneelk",
 			"Gomoko",
-			"Zarisi",
+			"Thibaut120094",
 			"Verdy p",
-			"Thibaut120094"
+			"Zarisi"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Ajouter un nouveau...",
@@ -12,6 +13,9 @@
 	"bs-ooui-key-value-input-widget-value-label": "Valeur",
 	"bs-ooui-key-value-input-widget-add-button-label": "Ajouter",
 	"bs-ooui-key-value-input-widget-add-form-label": "Ajouter une nouvelle entrée",
-	"bs-ooui-key-value-input-widget-error-message": "Tous les champs obligatoires doivent être indiqués !",
-	"bs-ooui-key-value-input-widget-no-values-label": "Aucune valeur indiquée !"
+	"bs-ooui-key-value-input-widget-error-message": "Tous les champs obligatoires doivent être indiqués !",
+	"bs-ooui-key-value-input-widget-no-values-label": "Aucune valeur indiquée !",
+	"bs-ooui-btn-dismiss-alert-title": "Fermer",
+	"bs-ooui-key-value-input-widget-section-label": "Section",
+	"bs-ooui-key-value-input-widget-add-section-label": "Ajouter une nouvelle section"
 }

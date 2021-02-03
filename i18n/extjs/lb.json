@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby",
-			"Les Meloures"
+			"Les Meloures",
+			"Robby"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -19,7 +19,7 @@
 	"bs-extjs-error": "Feeler",
 	"bs-extjs-confirm": "Confirméieren",
 	"bs-extjs-loading": "Lueden...",
-	"bs-extjs-pageSize": "Gréisst vun der Säit",
+	"bs-extjs-pageSize": "Elementer pro Säit",
 	"bs-extjs-actions-column-header": "Aktiounen",
 	"bs-extjs-warning": "Warnung",
 	"bs-extjs-saving": "späicheren...",
@@ -59,5 +59,7 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturbiller",
 	"bs-extjs-flyout-tab-grid-label": "Detailer",
 	"bs-extjs-flyout-tab-grid-title": "Op déi detailléiert Vue wiesselen",
-	"bs-extjs-flyout-add-label": "Element derbäisetzen"
+	"bs-extjs-flyout-add-label": "Element derbäisetzen",
+	"bs-extjs-label-group": "Grupp",
+	"bs-extjs-label-specialpage": "Spezialsäit"
 }

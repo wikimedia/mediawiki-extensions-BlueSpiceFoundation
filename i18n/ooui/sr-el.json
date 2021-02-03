@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Dodajte nov...",
 	"bs-ooui-key-value-input-widget-key-label": "Ključ",
 	"bs-ooui-key-value-input-widget-value-label": "Vrednost",

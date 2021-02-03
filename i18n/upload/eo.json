@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet",
-			"Mirin"
+			"Jakub Fabijan",
+			"Mirin",
+			"Robin van der Vliet"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Alŝuti dosieron",
@@ -20,5 +21,6 @@
 	"bs-upload-uploadignorewarningslabel": "Ignori ĉiajn avertojn",
 	"bs-upload-upload-waitmessage": "Alŝutante...",
 	"bs-upload-error-long": "Eraro okazis dum alŝutado",
-	"bs-upload-uploadwarningdialog-warning-exists": "Dosiero kun nomo \"$1\" jam ekzistas"
+	"bs-upload-uploadwarningdialog-warning-exists": "Dosiero kun nomo \"$1\" jam ekzistas",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Estas {{PLURAL:$1|duoblo|duobloj}} de ĉi tiu dosiero"
 }

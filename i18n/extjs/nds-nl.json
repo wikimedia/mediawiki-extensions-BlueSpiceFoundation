@@ -5,7 +5,7 @@
 		]
 	},
 	"bs-extjs-ok": "Okee",
-	"bs-extjs-cancel": "Aofbreken",
+	"bs-extjs-cancel": "Afbreaken",
 	"bs-extjs-yes": "Ja",
 	"bs-extjs-no": "Nee",
 	"bs-extjs-save": "Opslaon",
@@ -18,7 +18,7 @@
 	"bs-extjs-confirm": "Bevestigen",
 	"bs-extjs-loading": "An t laojen...",
 	"bs-extjs-pageSize": "Papierformaot",
-	"bs-extjs-actions-column-header": "Maotregels",
+	"bs-extjs-actions-column-header": "Måtregels",
 	"bs-extjs-warning": "Waorschuwing",
 	"bs-extjs-label-user": "Gebruker"
 }

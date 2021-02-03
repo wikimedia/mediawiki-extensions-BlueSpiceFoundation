@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"C5st4wr6ch",
-			"Raynasution",
 			"Arifin.wijaya",
+			"C5st4wr6ch",
+			"Diki Ananta",
 			"J Nia30",
-			"Palladin911"
+			"Palladin911",
+			"Raynasution",
+			"Sumbukompor"
 		]
 	},
 	"bs-extjs-ok": "Oke",
@@ -21,7 +23,7 @@
 	"bs-extjs-error": "Kesalahan",
 	"bs-extjs-confirm": "Konfirmasi",
 	"bs-extjs-loading": "Memuat...",
-	"bs-extjs-pageSize": "Ukuran halaman",
+	"bs-extjs-pageSize": "Entri per halaman",
 	"bs-extjs-actions-column-header": "Tindakan",
 	"bs-extjs-warning": "Peringatan",
 	"bs-extjs-saving": "menyimpan...",

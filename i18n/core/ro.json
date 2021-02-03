@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"XXN",
-			"Strainu"
+			"Carcassonne93",
+			"Strainu",
+			"XXN"
 		]
 	},
 	"bs-userbar_loginswitch_logout": "Închide sesiunea",
-	"bs-filesystemhelper-folder-copy-error": "Dosarul <code>$1</code> nu poate fi redenumit."
+	"bs-filesystemhelper-folder-copy-error": "Dosarul <code>$1</code> nu poate fi redenumit.",
+	"bs-ns_main": "(Pagini)",
+	"bs-userbar_loginswitch_login": "Autentificare"
 }

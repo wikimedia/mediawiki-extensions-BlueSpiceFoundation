@@ -6,5 +6,7 @@
 	},
 	"bs-extjs-portal-height": "ఎత్తు",
 	"bs-extjs-portal-timespan-week": "వారం",
-	"bs-extjs-portal-timespan-month": "నెల"
+	"bs-extjs-portal-timespan-month": "నెల",
+	"bs-extjs-portal-count": "పద్దులు",
+	"bs-extjs-portal-timespan": "కాల అవధి"
 }

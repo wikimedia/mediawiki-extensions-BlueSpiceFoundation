@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald",
 			"Eduardo Addad de Oliveira",
+			"Felipe L. Ewald",
 			"Fitoschido"
 		]
 	},
@@ -90,12 +90,15 @@
 	"bs-graphicallist-action-preview": "Pré-visualizar",
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Usado na extensão BlueSpice para tarefas administrativas possivelmente perigosas, como a administração de utilizadores e permissões, e a configuração global",
+	"right-wikiadmin": "Use tarefas administrativas potencialmente perigosas, como gerenciar usuários, permissões, configuração global (extensões do BlueSpice)",
 	"bs-notifications-agent-anon": "usuário anônimo",
 	"bs-lockdown-groups-permissionerror": "A ação \"$1\" não está disponível {{PLURAL:$2|pelo seguinte motivo|pelos seguintes motivos}}: $3",
-	"action-wikiadmin": "usado em muitas extensões do BlueSpice para tarefas administrativas potencialmente perigosas, como gerenciamento de usuários, permissões, configuração global",
+	"action-wikiadmin": "use possíveis tarefas administrativas perigosas, como gerenciamento de usuários, permissões, configuração global (extensões do BlueSpice)",
 	"protect-level-editor": "Permitir apenas editores e administradores",
 	"bs-ping-on-init-desc": "Deve ser enviado um pedido ''ping'' imediatamente após os carregamentos de página",
 	"right-editor": "Ser concedidas todas as permissões do papel \"editor\" para páginas protegidas na restrição do editor quando o sistema de papéis estiver ativado",
-	"action-editor": "conceder todas as permissões da função \"editor\" para páginas protegidas na restrição do editor quando o sistema de funções estiver ativado"
+	"action-editor": "conceder todas as permissões da função \"editor\" para páginas protegidas na restrição do editor quando o sistema de funções estiver ativado",
+	"bs-pref-fileextensions-help": "Tipos de arquivos que podem ser carregados na wiki. Alguns tipos (por exemplo, html, js, php, cgi, exe) não são permitidos por razões de segurança, mesmo que tenham sido adicionados aqui.",
+	"bs-pref-imageextensions-help": "Tipos de arquivos de imagem que podem ser carregados no wiki. Formatos possíveis da web: gif, png, jpg, jpeg. Outros formatos de imagem: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Não foi possível gravar o arquivo de configuração $1!"
 }

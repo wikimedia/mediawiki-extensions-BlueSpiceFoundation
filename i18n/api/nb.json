@@ -67,5 +67,10 @@
 	"apihelp-bs-task-param-examples": "Vis eksempler på oppgaveparametre",
 	"apihelp-bs-recentchanges-store-summary": "Lister opp alle nylige endringer. Tillater sortering, filtrering og sideinndeling. Implementerer Store-parametre.",
 	"apihelp-bs-task-summary": "Tilbyr API-sluttpunktet for å kjøre registrerte oppgaver.",
-	"apihelp-bs-task-description": "Tilbyr API-sluttpunktet for å kjøre registrerte oppgaver."
+	"apihelp-bs-task-description": "Tilbyr API-sluttpunktet for å kjøre registrerte oppgaver.",
+	"apihelp-bs-js-var-config-summary": "Tilbyr et API-endepunkt for å hente konfigurasjonsvariabler fra klientsiden",
+	"apihelp-bs-js-var-config-param-name": "Navn på konfigurasjonsvariabelen som skal hentes",
+	"apihelp-bs-js-var-config-param-func": "Konfigurasjonsfunksjon som skal kjøres: has|get",
+	"apihelp-bs-js-var-config-param-context": "JSON-kodet objekt med oppkallingens kontekst",
+	"apihelp-bs-js-var-config-param-format": "Resultatets format"
 }

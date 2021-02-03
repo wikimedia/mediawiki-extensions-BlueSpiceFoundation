@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu",
 			"Crucifunked",
-			"Fitoschido"
+			"Fitoschido",
+			"Xuacu"
 		]
 	},
 	"bluespicefoundation-desc": "Fai que Mediawiki tea preparáu pa les empreses",
@@ -95,5 +95,9 @@
 	"bs-lockdown-groups-permissionerror": "L'acción «$1» nun ta disponible {{PLURAL:$2|pol motivu siguiente|polos motivos siguientes}}: $3",
 	"action-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
 	"protect-level-editor": "Permitir sólo a los editores y alministradores",
-	"bs-ping-on-init-desc": "Si la solicitú de ping s'unvia darréu tres cargar la páxina"
+	"bs-ping-on-init-desc": "Si la solicitú de ping s'unvia darréu tres cargar la páxina",
+	"right-editor": "Recibir tolos permisos del rol «editor» pa les páxines protexíes na restricción d'editor cuando'l sistema de roles tea activáu",
+	"action-editor": "recibir tolos permisos del rol «editor» pa les páxines protexíes na restricción d'editor cuando'l sistema de roles tea activáu",
+	"bs-pref-fileextensions-help": "Tipos de ficheros que puen xubise a la wiki. Dalgunos tipos (p.ex., html, js, php, cgi, exe) nun se permiten por motivos de seguridá inclusive anque s'añadan equí.",
+	"bs-pref-imageextensions-help": "Tipos de ficheros d'imaxe que puen xubise a la wiki. Formatos web posibles: gif, png, jpg, jpeg. Otros formatos d'imaxe: tiff, bmp"
 }

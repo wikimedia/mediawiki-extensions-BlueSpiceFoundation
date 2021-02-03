@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Athena in Wonderland",
 			"Fúlvio",
-			"Vitorvicentevalente",
 			"Hamilton Abreu",
-			"Athena in Wonderland"
+			"Mansil alfalb",
+			"Vitorvicentevalente"
 		]
 	},
 	"bs-extjs-ok": "Aceitar",
@@ -80,5 +81,7 @@
 	"bs-extjs-flyout-tab-grid-label": "Detalhes",
 	"bs-extjs-flyout-tab-grid-title": "Mudar para a vista de detalhes",
 	"bs-extjs-flyout-add-title": "Clique aqui para adicionar um novo elemento",
-	"bs-extjs-flyout-add-label": "Adicionar elemento"
+	"bs-extjs-flyout-add-label": "Adicionar elemento",
+	"bs-extjs-label-group": "Grupo",
+	"bs-extjs-label-specialpage": "Página especial"
 }

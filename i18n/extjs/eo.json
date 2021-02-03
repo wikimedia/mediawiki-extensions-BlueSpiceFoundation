@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yekrats",
-			"Robin van der Vliet",
+			"Jakub Fabijan",
 			"Mirin",
+			"Robin van der Vliet",
+			"Yekrats",
 			"Zarisi"
 		]
 	},
@@ -74,5 +75,6 @@
 	"bs-extjs-export-search-summary-text": "Produktita de PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Nomo de la listo ne estas valida",
 	"bs-extjs-combo-box-default-placeholder": "Entajpu por filtri...",
-	"bs-extjs-pageexport-overwrite-label": "Anstataŭigi"
+	"bs-extjs-pageexport-overwrite-label": "Anstataŭigi",
+	"bs-extjs-label-group": "Grupo"
 }

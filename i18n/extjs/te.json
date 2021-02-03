@@ -29,5 +29,12 @@
 	"bs-extjs-tools-trigger-text": "పనిముట్లు",
 	"bs-extjs-flyout-tab-grid-label": "వివరాలు",
 	"bs-extjs-title-warning": "హెచ్చరిక",
-	"bs-extjs-categorytree-title": "వర్గాలు"
+	"bs-extjs-categorytree-title": "వర్గాలు",
+	"bs-extjs-copy": "కాపీచేయి",
+	"bs-extjs-hint": "సూచన",
+	"bs-extjs-error": "పొరపాటు",
+	"bs-extjs-confirm": "నిర్ధారించు",
+	"bs-extjs-loading": "వస్తోంది…",
+	"bs-extjs-pageexport-list-format-plain-label": "సాదా పాఠ్యం",
+	"bs-extjs-pageexport-list-format-link-label": "లంకె"
 }

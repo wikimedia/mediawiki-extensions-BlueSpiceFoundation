@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vivaelcelta",
-			"Toliño",
+			"ArenaL5",
+			"Banjo",
 			"Elisardojm",
 			"Fitoschido",
-			"Banjo",
-			"Navhy",
-			"Iváns"
+			"Iváns",
+			"Toliño",
+			"Vivaelcelta"
 		]
 	},
 	"bs-ns_main": "(Páxinas)",
@@ -91,7 +91,7 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Vista previa",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Úsase en moitas extensións de BlueSpice para posibles tarefas administrativas perigrosas, como administrar usuarios, permisos, configuración global",
-	"action-wikiadmin": "mostrar páxinas de administración de BlueSpice",
+	"right-wikiadmin": "Usar tarefas administrativas potencialmente perigosas como xestión de usuarios, permisos, configuración global (extensións BlueSpice)",
+	"action-wikiadmin": "usar tarefas administrativas potencialmente perigosas como xestión de usuarios, permisos, configuración global (extensións BlueSpice)",
 	"bs-notifications-agent-anon": "usuario anónimo"
 }

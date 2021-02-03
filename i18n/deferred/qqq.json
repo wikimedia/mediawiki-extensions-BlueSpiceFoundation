@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel <vogel@hallowelt.biz>",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Robert Vogel <vogel@hallowelt.biz>"
 		]
 	},
 	"bs-deferred-action-status-pending": "Value of a cell in an overview table that tells that a particular action has not started yet\n{{Identical|Pending}}",

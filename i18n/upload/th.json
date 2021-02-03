@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "อัปโหลดไฟล์",
+	"bs-upload-uploadbuttontext": "เรียกดู",
+	"bs-upload-uploadfilefieldlabel": "ชื่อไฟล์",
+	"bs-upload-uploadfileemptytext": "แทรกไฟล์ใหม่...",
+	"bs-upload-uploaddestfilelabel": "ชื่อไฟล์ปลายทาง",
+	"bs-upload-allowedfiletypesare": "ชนิดไฟล์ที่ใช้ได้คือ:",
+	"bs-upload-license": "สัญญาอนุญาต",
+	"bs-upload-uploadwatchthislabel": "เฝ้าดูไฟล์นี้",
+	"bs-upload-uploadignorewarningslabel": "ละเลยคำเตือนทั้งหมด",
+	"bs-upload-categories": "หมวดหมู่",
+	"bs-upload-upload-waitmessage": "กำลังอัปโหลด...",
+	"bs-upload-error": "ข้อผิดพลาด",
+	"bs-upload-descfilelabel": "คำอธิบาย",
+	"bs-upload-error-long": "เกิดข้อผิดพลาดในกระบวนการอัปโหลด",
+	"bs-upload-filetypenotsupported": "ไม่สนับสนุนชนิดไฟล์นี้",
+	"bs-upload-details": "รายละเอียด",
+	"bs-upload-uploadwarningdialog-title": "อัปโหลดไฟล์: คำเตือน"
+}

@@ -89,10 +89,15 @@
 	"bs-graphicallist-action-preview": "Forhåndsvis",
 	"bs-bluespice-mediawiki": "BlueSpice-MediaWiki",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Brukt i mange BlueSpice-utvidelser for potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon",
+	"right-wikiadmin": "Bruke potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon (BlueSpice-utvidelser)",
 	"bs-notifications-agent-anon": "anonym bruker",
-	"action-wikiadmin": "brukes i mange BlueSpice-utvidelser for potensielt farlige administrative oppgaver som brukerbehandling, tillatelser og global konfigurasjon",
+	"action-wikiadmin": "bruke potensielt skadelige administrative oppgaver som behandling av brukere, tillatelser og global konfigurasjon (BlueSpice-utvidelser)",
 	"bs-lockdown-groups-permissionerror": "Handlingen «$1» er ikke tilgjengelig av følgende {{PLURAL:$2|årsak|årsaker}}: $3",
 	"protect-level-editor": "Tillat kun redaktører og administratorer",
-	"bs-ping-on-init-desc": "Skal ping-forespørsler sendes umiddelbart etter sidelasting?"
+	"bs-ping-on-init-desc": "Skal ping-forespørsler sendes umiddelbart etter sidelasting?",
+	"right-editor": "Få alle tillatelser fra rollen «bidragsyter» for beskyttede sider når rollesystemet aktiveres",
+	"action-editor": "Få alle tillatelser fra rollen «bidragsyter» for beskyttede sider når rollesystemet aktiveres",
+	"bs-pref-fileextensions-help": "Filtyper som kan lastes opp til wikien. Noen typer (f.eks. html, js, php, cgi, exe) er av sikkerhetsårsaker ikke tillatt selv om de skulle være lagt til her.",
+	"bs-pref-imageextensions-help": "Bildefiltyper som kan lastes opp til wikien. Mulige nettformater: gif, png, jpg, jpeg. Andre bildeformater: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurasjonsfila $1 kunne ikke skrives!"
 }

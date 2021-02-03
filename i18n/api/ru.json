@@ -1,18 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Краснорядцева Елена",
-			"Redredsonia",
+			"Alexandr Efremov",
 			"Alexey zakharenkov",
+			"DmitTrix",
 			"Facenapalm",
 			"Happy13241",
-			"Vlad5250",
-			"Alexandr Efremov",
-			"Romanko Mikhail",
-			"DmitTrix",
-			"Movses",
 			"INS Pirat",
-			"Radmir Far"
+			"Movses",
+			"Okras",
+			"Radmir Far",
+			"Redredsonia",
+			"Romanko Mikhail",
+			"Vlad5250",
+			"Краснорядцева Елена"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Количество возвращаемых результатов",
@@ -36,5 +37,6 @@
 	"apihelp-bs-recentchanges-store-summary": "Перечисляет все недавние правки. Разрешает сортировку, фильтр и разбиение на страницы. Реализовывает параметры хранения.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Неправильная категория|Неправильные категории}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Категории успешно заданы.",
-	"apihelp-bs-task-param-token": "Для доступа к модулю API нужен токен"
+	"apihelp-bs-task-param-token": "Для доступа к модулю API нужен токен",
+	"apihelp-bs-js-var-config-param-format": "Формат результата"
 }

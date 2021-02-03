@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"WaldiSt"
 		]
 	},
 	"bs-setting-path-extension": "Rozszerzenie",
@@ -12,5 +13,6 @@
 	"bs-setting-path-customizing": "Dostosowywanie",
 	"bs-setting-path-communication": "Komunikacja",
 	"bs-setting-path-administration": "Administracja",
-	"bs-setting-path-export": "Eksport"
+	"bs-setting-path-export": "Eksport",
+	"bs-setting-path-package": "Pakiet"
 }

@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Azouz.anis",
-			"محمد أحمد عبد الفتاح",
-			"ديفيد"
+			"ديفيد",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"bs-extjs-ok": "حسنا",
@@ -79,5 +79,7 @@
 	"bs-extjs-flyout-tab-grid-label": "التفاصيل",
 	"bs-extjs-flyout-tab-grid-title": "التبديل إلى عرض التفاصيل",
 	"bs-extjs-flyout-add-title": "انقر هنا لإضافة عنصر جديد",
-	"bs-extjs-flyout-add-label": "إضافة عنصر"
+	"bs-extjs-flyout-add-label": "إضافة عنصر",
+	"bs-extjs-label-group": "مجموعة",
+	"bs-extjs-label-specialpage": "صفحة خاصة"
 }

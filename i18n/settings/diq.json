@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"1917 Ekim Devrimi"
+		]
+	},
+	"bs-setting-path-feature": "Fonksiyon",
+	"bs-setting-path-extension": "Dergiye",
+	"bs-setting-path-package": "Paket",
+	"bs-setting-path-system": "Sistem",
+	"bs-setting-path-dataanalysis": "Analizê data",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Cıgeyrayış u Doçbıyayış",
+	"bs-setting-path-personalisation": "Personalizasyon",
+	"bs-setting-path-skinning": "Stili",
+	"bs-setting-path-customizing": "Xısusi kerdış",
+	"bs-setting-path-contentstructuring": "Nizamiyê zerreki",
+	"bs-setting-path-communication": "İrtıbat",
+	"bs-setting-path-administration": "İdaretey",
+	"bs-setting-path-qualityassurance": "Teminatê qeliteyi",
+	"bs-setting-path-export": "Teberdayış"
+}

@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Josve05a",
-			"WikiPhoenix",
 			"Jopparn",
+			"Josve05a",
 			"Lokal Profil",
-			"Mjälten"
+			"Mjälten",
+			"Sabelöga",
+			"WikiPhoenix"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -81,5 +82,7 @@
 	"bs-extjs-tools-trigger-title": "Klick här för att öppna verktygsmenyn",
 	"bs-extjs-flyout-tab-thumbs-title": "Byt till miniatyrbildvisning",
 	"bs-extjs-flyout-tab-grid-title": "Byt till detaljvisning",
-	"bs-extjs-flyout-add-title": "Klick här för att tillfoga ett nytt element"
+	"bs-extjs-flyout-add-title": "Klick här för att tillfoga ett nytt element",
+	"bs-extjs-label-group": "Grupp",
+	"bs-extjs-label-specialpage": "Specialsida"
 }

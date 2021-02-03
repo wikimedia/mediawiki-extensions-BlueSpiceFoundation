@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joao Xavier"
+		]
+	},
+	"bs-deferred-action-apieditpage-description": "Redaktar \"$1\".",
+	"bs-deferred-batch-status": "Stando",
+	"bs-deferred-action-apideletepage-description": "Efacar \"$1\"."
+}

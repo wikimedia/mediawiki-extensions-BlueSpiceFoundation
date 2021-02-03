@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Wikitoni",
-			"Tizven"
+			"TheRukk",
+			"Tizven",
+			"Wikitoni"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Elenca tutti i file dal backend. Consente ordinamento, filtraggio e impaginazione. Implementa parametri ExtJS Store.",
@@ -53,5 +54,11 @@
 	"apihelp-bs-category-treestore-param-node": "Un percorso di categorie separate da slash",
 	"bs-api-task-taskData-page-id": "L'ID di una pagina wiki esistente",
 	"bs-api-task-taskData-page-title": "Un titolo valido di una pagina wiki",
-	"apihelp-bs-wikisubpage-treestore-param-node": "Il titolo con prefisso della pagina wiki"
+	"apihelp-bs-wikisubpage-treestore-param-node": "Il titolo con prefisso della pagina wiki",
+	"apihelp-bs-adminuser-store-description": "Elenca tutti gli utenti del database con dati sensibili aggiuntivi. Permette l'ordinamento, il filtraggio e l'impaginazione. Implementa i parametri ExtJS Store.",
+	"apihelp-bs-task-param-schema": "Mostra lo schema JSON per i parametri dell'attività.",
+	"apihelp-bs-task-param-examples": "Mostra esempi per i parametri dell'attività.",
+	"bs-api-task-wikipagetasks-taskData-categories": "Vettore di stringhe. I valori devono essere nomi validi di categorie.",
+	"apihelp-bs-js-var-config-param-format": "Formato del risultato",
+	"apihelp-bs-templatelinks-store-param-page-id": "L'ID pagina della pagina"
 }

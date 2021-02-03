@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robert Vogel <vogel@hallowelt.biz>",
-			"Metalhead64"
+			"Metalhead64",
+			"Robert Vogel <vogel@hallowelt.biz>"
 		]
 	},
 	"bs-deferred-action-status-pending": "Warten.",

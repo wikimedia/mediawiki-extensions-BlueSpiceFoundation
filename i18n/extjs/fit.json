@@ -4,5 +4,7 @@
 			"Pyscowicz"
 		]
 	},
-	"bs-extjs-browse": "Plaavaa"
+	"bs-extjs-browse": "Plaavaa",
+	"bs-extjs-add": "Lissää",
+	"bs-extjs-pageexport-dialog-title": "Eksporteeraa sivuja"
 }

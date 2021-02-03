@@ -1,17 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
+			"Eladk",
+			"Ghsuvr",
+			"Gregra",
+			"Guycn2",
 			"Inkbug",
 			"Matanya",
-			"Gregra",
 			"Ronel1",
-			"Eladk",
-			"ערן",
-			"Guycn2",
-			"YaronSh",
 			"Steeve815",
-			"Ghsuvr",
-			"Amire80"
+			"YaronSh",
+			"דגש חזק",
+			"ערן"
 		]
 	},
 	"bluespicefoundation-desc": "התאמת תוכנת מדיה־ויקי לעסקים",
@@ -65,7 +66,7 @@
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
 	"bs-navigation-contact": "יצירת קשר",
-	"bs-imagepage-download-text": "להורדה",
+	"bs-imagepage-download-text": "הורדה",
 	"bs-ns": "מרחב שם",
 	"bs-from-something": "(מתוך $1)",
 	"bs-pref-fileextensions": "סיומות קבצים מותרות:",
@@ -103,5 +104,7 @@
 	"bs-tag-param-desc": "ערך תכונת האלמנט '$1'",
 	"bs-parser-error-invalid-category-title": "הדף אינו קטגוריה חוקית: $1",
 	"protect-level-editor": "לאפשר רק לעורכים ומנהלים",
-	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מיד לאחר טעינת העמוד"
+	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מיד לאחר טעינת העמוד",
+	"bs-pref-imageextensions-help": "סוגי קבצי תמונות שאותם ניתן להעלות לוויקי. פורמטים אפשריים באינטרנט: gif, png, jpg, jpeg. פורמטים אחרים של תמונות: tiff, bmp.",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "לא ניתן לכתוב את קובץ ההגדרות $1!"
 }

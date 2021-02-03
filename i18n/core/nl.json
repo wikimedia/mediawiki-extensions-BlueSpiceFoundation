@@ -1,16 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"SPQRobin",
-			"Southparkfan",
-			"Siebrand",
-			"Niknetniko",
-			"Mar(c)",
-			"Ribert",
-			"McDutchie",
-			"Sjoerddebruin",
 			"Esketti",
-			"Mainframe98"
+			"Mainframe98",
+			"Mar(c)",
+			"McDutchie",
+			"Niknetniko",
+			"Ribert",
+			"SPQRobin",
+			"Siebrand",
+			"Sjoerddebruin",
+			"Southparkfan"
 		]
 	},
 	"bluespicefoundation-desc": "Maakt MediaWiki geschikt voor bedrijven",
@@ -98,5 +98,6 @@
 	"bs-parser-error-invalid-category-title": "Pagina is geen geldige categorie: $1",
 	"action-wikiadmin": "Toon BlueSpice's beheerpagina's",
 	"bs-tag-param-desc": "Waarde van het elementattribuut '$1'",
-	"protect-level-editor": "Alleen bewerkers en beheerders toestaan"
+	"protect-level-editor": "Alleen bewerkers en beheerders toestaan",
+	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp"
 }

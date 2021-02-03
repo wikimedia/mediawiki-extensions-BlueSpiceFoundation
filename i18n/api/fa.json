@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Jeeputer"
 		]
 	},
 	"apihelp-bs-wikisubpage-treestore-param-options": "فهرست گزینه ها",
@@ -15,5 +16,7 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "هیچ رده‌ای برای حذف نیست.",
 	"bs-api-task-taskData-page-title": "عنوان معتبری مربوط به یک صفحهٔ ویکی",
 	"apihelp-bs-category-treestore-description": "فهرست‌های زیررده‌های یک ردهٔ خاص",
-	"apihelp-bs-category-treestore-summary": "فهرست‌های زیررده‌های یک ردهٔ خاص"
+	"apihelp-bs-category-treestore-summary": "فهرست‌های زیررده‌های یک ردهٔ خاص",
+	"apihelp-bs-store-param-limit": "تعداد نتایج برای نمایش",
+	"apihelp-bs-js-var-config-param-format": "قالب نتیجه"
 }

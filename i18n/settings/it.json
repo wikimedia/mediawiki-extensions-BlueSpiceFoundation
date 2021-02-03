@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Tizven",
-			"Dansita"
+			"Dansita",
+			"TheRukk",
+			"Tizven"
 		]
 	},
 	"bs-setting-path-feature": "Caratteristica",
@@ -18,5 +19,6 @@
 	"bs-setting-path-export": "Esporta",
 	"bs-setting-path-package": "Pacchetto",
 	"bs-setting-path-dataanalysis": "Analisi dati",
-	"bs-setting-path-editor": "Editor"
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-qualityassurance": "Controllo di qualità"
 }

@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Chaduvari",
 			"Kiranmayee",
-			"Veeven",
-			"Chaduvari"
+			"Veeven"
 		]
 	},
 	"bs-ns_main": "(ప్రతులు)",
@@ -33,5 +33,11 @@
 	"bs-from-something": "($1 నుండి)",
 	"bs-graphicallist-action-close": "మూసివేయి",
 	"bs-graphicallist-action-list": "జాబితా",
-	"bs-graphicallist-action-preview": "మునుజూపు"
+	"bs-graphicallist-action-preview": "మునుజూపు",
+	"bs-no-information-available": "సమాచారమేమీ అందుబాటులో లేదు",
+	"bs-userpreferences-link-text": "మరిన్ని వాడుకరి అమరికలు",
+	"bs-exception-view-stacktrace-toggle-show-text": "పొరపాటు వివరాలను చూపించు",
+	"bs-exception-view-stacktrace-toggle-hide-text": "పొరపాటు వివరాలను దాచు",
+	"bs-permissionerror": "అనుమతి లోపం!",
+	"bs-notifications-agent-anon": "అజ్ఞాత వాడుకరి"
 }

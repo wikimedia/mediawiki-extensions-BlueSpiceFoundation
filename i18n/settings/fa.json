@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Jeeputer"
 		]
 	},
 	"bs-setting-path-extension": "افزونه",
@@ -16,5 +17,7 @@
 	"bs-setting-path-contentstructuring": "ساختاربندی محتوا",
 	"bs-setting-path-communication": "ارتباط",
 	"bs-setting-path-administration": "مدیریت",
-	"bs-setting-path-qualityassurance": "تضمین کیفیت"
+	"bs-setting-path-qualityassurance": "تضمین کیفیت",
+	"bs-setting-path-search": "جستجو و گشتن",
+	"bs-setting-path-skinning": "پوسته‌بندی"
 }

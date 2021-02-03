@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Felipe L. Ewald"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os arquivos do backend de arquivos. Permite classificar, filtrar e paginação. Implementa os parâmetros da ExtJS Store.",
@@ -68,5 +68,16 @@
 	"apihelp-bs-watchlist-store-summary": "Lista todas as entradas da lista de páginas vigiadas. Permite ordenar, filtrar e paginar. Implementa os parâmetros store.",
 	"apihelp-bs-recentchanges-store-summary": "Lista todas as mudanças recentes. Permite ordenar, filtrar e paginar. Implementa os parâmetros store.",
 	"apihelp-bs-task-summary": "Fornece o terminal da API para executar tarefas registradas",
-	"apihelp-bs-task-description": "Fornece o terminal da API para executar tarefas registradas"
+	"apihelp-bs-task-description": "Fornece o terminal da API para executar tarefas registradas",
+	"apihelp-bs-js-var-config-summary": "Fornece um endpoint de API para recuperar variáveis de configuração do lado do cliente",
+	"apihelp-bs-js-var-config-param-name": "Nome da variável de configuração a ser recuperada",
+	"apihelp-bs-js-var-config-param-func": "Função de configuração para executar: has|get",
+	"apihelp-bs-js-var-config-param-context": "Objeto codificado em JSON com contexto da chamada",
+	"apihelp-bs-js-var-config-param-format": "Formato do resultado",
+	"apihelp-bs-categorylinks-store-description": "Lista todas as categorias de um link de página inclusive para a página de categoria e marcador para categorias explícitas e implícitas.",
+	"apihelp-bs-categorylinks-store-summary": "Lista todas as categorias de um link de página inclusive para a página de categoria e marcador para categorias explícitas e implícitas.",
+	"apihelp-bs-categorylinks-store-param-page-id": "O id da página da página",
+	"apihelp-bs-templatelinks-store-description": "Lista todas as predefinições de um link de página inclusive para a predefinição.",
+	"apihelp-bs-templatelinks-store-summary": "Lista todos as predefinições de um link de página inclusive para a predefinição.",
+	"apihelp-bs-templatelinks-store-param-page-id": "O id da página da página"
 }

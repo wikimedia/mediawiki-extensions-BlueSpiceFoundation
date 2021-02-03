@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-setting-path-feature": "Mogućnost",
 	"bs-setting-path-extension": "Dodatak",
 	"bs-setting-path-package": "Paket",

@@ -10,5 +10,8 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Aggiunge",
 	"bs-ooui-key-value-input-widget-add-form-label": "Aggiunge 'na vôscia nove",
 	"bs-ooui-key-value-input-widget-error-message": "Tutte le cambe obbligatorie onna essere mise!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Nisciune valore 'mbostate!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Nisciune valore 'mbostate!",
+	"bs-ooui-btn-dismiss-alert-title": "Scitte",
+	"bs-ooui-key-value-input-widget-section-label": "Sezione",
+	"bs-ooui-key-value-input-widget-add-section-label": "Aggiunge 'na seziona nove"
 }

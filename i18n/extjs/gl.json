@@ -1,12 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vivaelcelta",
-			"Toliño",
-			"Elisardojm",
 			"Banjo",
-			"Navhy",
-			"Iváns"
+			"Elisardojm",
+			"Iváns",
+			"Toliño",
+			"Vivaelcelta"
 		]
 	},
 	"bs-extjs-ok": "Aceptar",

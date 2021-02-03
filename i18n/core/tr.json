@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sayginer",
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"MuratTheTurkish",
+			"Sayginer"
 		]
 	},
 	"bs-userbar_loginswitch_logout": "Oturumu kapat",
@@ -90,11 +91,14 @@
 	"bs-graphicallist-action-preview": "Önizleme",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "birçok BlueSpice uzantısında, kullanıcıları yönetme, izinler, genel yapılandırma gibi potansiyel tehlikeli idari görevler için kullanılır",
-	"right-wikiadmin": "Birçok BlueSpice uzantısında, kullanıcıları yönetme, izinler, genel yapılandırma gibi potansiyel tehlikeli idari görevler için kullanılır",
+	"action-wikiadmin": "kullanıcıları, izinleri, genel yapılandırmayı (BlueSpice uzantıları) yönetmek gibi potansiyel tehlikeli yönetim görevlerini kullanın",
+	"right-wikiadmin": "Kullanıcıları, izinleri, genel yapılandırmayı (BlueSpice uzantıları) yönetmek gibi potansiyel tehlikeli yönetim görevlerini kullanın",
 	"bs-notifications-agent-anon": "anonim kullanıcı",
 	"protect-level-editor": "Yalnızca editörlere ve yöneticilere izin ver",
 	"bs-ping-on-init-desc": "Sayfa yüklendikten hemen sonra ping isteği gönderilmelidir.",
 	"right-editor": "Rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alın",
-	"action-editor": "rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alınabilir"
+	"action-editor": "rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alınabilir",
+	"bs-pref-fileextensions-help": "Vikiye yüklenebilecek dosya türleri. Bazı türlere (örn. Html, js, php, cgi, exe), buraya eklenmiş olsalar bile güvenlik nedeniyle izin verilmez.",
+	"bs-pref-imageextensions-help": "Vikiye yüklenebilecek resim dosyası türleri. Olası web formatları: gif, png, jpg, jpeg. Diğer görüntü formatları: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Yapılandırma dosyası $1 yazılamadı!"
 }

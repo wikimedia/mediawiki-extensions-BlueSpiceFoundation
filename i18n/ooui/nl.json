@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Optilete",
-			"Mainframe98"
+			"Mainframe98",
+			"Optilete"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Nieuwe toevoegen...",
 	"bs-ooui-key-value-input-widget-key-label": "Sleutel",
 	"bs-ooui-key-value-input-widget-value-label": "Waarde",
-	"bs-ooui-key-value-input-widget-add-button-label": "Toevoegen"
+	"bs-ooui-key-value-input-widget-add-button-label": "Toevoegen",
+	"bs-ooui-btn-dismiss-alert-title": "Sluiten"
 }

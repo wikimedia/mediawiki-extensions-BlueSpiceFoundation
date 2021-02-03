@@ -1,27 +1,28 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"TomT0m",
-			"Wladek92",
 			"Gomoko",
-			"The RedBurn"
+			"Macofe",
+			"The RedBurn",
+			"TomT0m",
+			"Verdy p",
+			"Wladek92"
 		]
 	},
 	"bs-deferred-action-status-pending": "En attente.",
-	"bs-deferred-action-status-running": "En cours d'exécution...",
+	"bs-deferred-action-status-running": "Exécution en cours...",
 	"bs-deferred-action-status-done": "Terminé.",
 	"bs-deferred-action-status-error": "Échec.",
-	"bs-deferred-action-apicopypage-description": "Copier «$1» vers «$2».",
-	"bs-deferred-action-apieditpage-description": "Modifier « $1 ».",
+	"bs-deferred-action-apicopypage-description": "Copier « $1 » vers « $2 ».",
+	"bs-deferred-action-apieditpage-description": "Modifier « $1 ».",
 	"bs-deferred-batch-title": "Traitement du lot",
-	"bs-deferred-batch-progress-desc": "Progrès",
+	"bs-deferred-batch-progress-desc": "Avancement",
 	"bs-deferred-batch-actions": "Actions",
 	"bs-deferred-batch-description": "Description",
-	"bs-deferred-batch-status": "Statut",
-	"bs-deferred-action-apiaddcategories-description": "Ajouter des catégories à '$1'.",
-	"bs-deferred-action-apiremovecategories-description": "Supprimer des catégories de '$1'.",
-	"bs-deferred-action-apisetcategories-description": "Fixer les catégories sur '$1'.",
-	"bs-deferred-action-apimovepage-description": "Renommer «$1» en «$2» .\n« ALT-SHIFT-S »",
-	"bs-deferred-action-apideletepage-description": "Supprimer « $1 »."
+	"bs-deferred-batch-status": "État",
+	"bs-deferred-action-apiaddcategories-description": "Ajouter des catégories à « $1 ».",
+	"bs-deferred-action-apiremovecategories-description": "Supprimer des catégories de « $1 ».",
+	"bs-deferred-action-apisetcategories-description": "Définir des catégories pour « $1 ».",
+	"bs-deferred-action-apimovepage-description": "Renommer « $1 » en « $2 ».",
+	"bs-deferred-action-apideletepage-description": "Supprimer « $1 »."
 }

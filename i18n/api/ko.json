@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ellif",
 			"SeoJeongHo",
 			"Ykhwong",
-			"아라",
-			"Ellif"
+			"아라"
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "파일 백엔드로부터 모든 파일을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",
@@ -37,5 +37,9 @@
 	"apihelp-bs-wikipage-store-description": "모든 위키 문서를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",
 	"bs-wikipage-tasks-error-nothingtoremove": "제거할 분류가 없습니다",
 	"apihelp-bs-category-treestore-description": "특정 분류의 하위 분류를 나열합니다",
-	"apihelp-bs-upload-license-store-description": "파일 올리기를 위해 사용할 수 있는 모든 라이선스를 나열합니다"
+	"apihelp-bs-upload-license-store-description": "파일 올리기를 위해 사용할 수 있는 모든 라이선스를 나열합니다",
+	"apihelp-bs-store-param-page": "서버측 시작/제한 계산을 허용합니다",
+	"apihelp-bs-js-var-config-param-format": "결과 형식",
+	"apihelp-bs-categorylinks-store-param-page-id": "문서의 문서 ID",
+	"apihelp-bs-templatelinks-store-param-page-id": "문서의 문서 ID"
 }

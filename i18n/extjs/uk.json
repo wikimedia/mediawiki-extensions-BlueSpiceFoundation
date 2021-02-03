@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Максим Підліснюк",
 			"Base",
-			"Ата",
 			"Piramidion",
-			"Vlad5250"
+			"Vlad5250",
+			"Ата",
+			"Максим Підліснюк"
 		]
 	},
 	"bs-extjs-ok": "Гаразд",
@@ -81,5 +81,7 @@
 	"bs-extjs-flyout-tab-grid-label": "Подробиці",
 	"bs-extjs-flyout-tab-grid-title": "Перемкнутися на перегляд подробиць",
 	"bs-extjs-flyout-add-title": "Клацніть тут, щоб додати новий елемент",
-	"bs-extjs-flyout-add-label": "Додати елемент"
+	"bs-extjs-flyout-add-label": "Додати елемент",
+	"bs-extjs-label-group": "Група",
+	"bs-extjs-label-specialpage": "Спеціальна сторінка"
 }

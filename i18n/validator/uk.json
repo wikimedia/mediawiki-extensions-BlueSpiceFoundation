@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Base",
-			"Ата",
-			"Piramidion"
+			"Piramidion",
+			"Ата"
 		]
 	},
 	"bs-validator-email-validation-approved": "Адресу електронної пошти було успішно підтверджено.",

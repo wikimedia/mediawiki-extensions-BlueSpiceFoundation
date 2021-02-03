@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-upload-uploaddialogtitle": "Otpremanje datoteke",
 	"bs-upload-uploadbuttontext": "Pregledaj",
 	"bs-upload-uploadfilefieldlabel": "Ime datoteke",

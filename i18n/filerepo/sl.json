@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pickle12",
-			"Dbc334"
+			"Dbc334",
+			"Eleassar",
+			"Pickle12"
 		]
 	},
 	"bs-filerepo-labelfilter": "Filter",
@@ -16,5 +17,7 @@
 	"bs-filerepo-headerfiletimestamp": "Naloženo",
 	"bs-filerepo-headerfilemediatype": "Vrsta medija",
 	"bs-filerepo-headerfilethumbnail": "Sličica",
-	"bs-filerepo-pagesize": "Vnosov na stran"
+	"bs-filerepo-pagesize": "Vnosov na stran",
+	"bs-filerepo-yes": "Da",
+	"bs-filerepo-no": "Ne"
 }

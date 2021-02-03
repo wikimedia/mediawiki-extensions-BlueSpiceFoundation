@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар",
-			"Исмаил Садуев"
+			"Исмаил Садуев",
+			"Умар"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -13,7 +13,7 @@
 	"bs-extjs-delete": "ДӀаяккха",
 	"bs-extjs-add": "ТӀетоха",
 	"bs-extjs-remove": "ДӀаяккха",
-	"bs-extjs-edit": "Тае",
+	"bs-extjs-edit": "Хийца",
 	"bs-extjs-hint": "Хьехар",
 	"bs-extjs-error": "ГӀалат",
 	"bs-extjs-confirm": "Бакъдан",

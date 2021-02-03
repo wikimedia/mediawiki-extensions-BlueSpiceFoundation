@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Conky77"
+			"Conky77",
+			"Fierodelveneto"
 		]
 	},
-	"bs-exception-view-stacktrace-toggle-hide-text": "Scondi i detai de el erore"
+	"bs-exception-view-stacktrace-toggle-hide-text": "Scondi i detai de el erore",
+	"bs-imagepage-download-text": "Descarga",
+	"bs-ns": "Spasio-nome"
 }

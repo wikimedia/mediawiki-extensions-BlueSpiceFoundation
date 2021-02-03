@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Abbas dhothar"
+		]
+	},
+	"bs-ns_main": "(صفحے)",
+	"bs-ns_all": "(سارے)",
+	"bs-tab_navigation": "پاندھ",
+	"bs-userbar_loginswitch_logout": "باہر آؤ",
+	"bs-userbar_loginswitch_login": "لاگ ان",
+	"bs-extended-search-textfield-defaultvalue": "کھوج...",
+	"bs-extended-search-textfield-tooltip": "وکی وچ لبھو",
+	"bs-no-information-available": "کوئی جانکاری دستیاب نئیں",
+	"bs-years-duration": "{{PLURAL:$1|ورہ|$1 ورے}}",
+	"bs-months-duration": "{{PLURAL:$1|مہینہ|$1 مہینے}}",
+	"bs-weeks-duration": "{{PLURAL:$1|اک ہفتہ|$1 ہفتے}}",
+	"bs-days-duration": "{{PLURAL:$1|اک دن|$1 دناں}}",
+	"bs-secs-duration": "$1 {{PLURAL:$1|سکنٹ}}",
+	"bs-navigation-instructions": "ہدایات",
+	"bs-navigation-support": "حمایت",
+	"bs-navigation-contact": "رابطہ",
+	"bs-imagepage-download-text": "ڈاؤنلوڈ",
+	"bs-ns": "ناں تھاں",
+	"bs-from-something": "(توں $1)",
+	"bs-export-menu-print-text": "چھاپو",
+	"bs-graphicallist-action-close": "بند",
+	"bs-graphicallist-action-list": "لسٹ",
+	"bs-graphicallist-action-preview": "وکھالہ"
+}

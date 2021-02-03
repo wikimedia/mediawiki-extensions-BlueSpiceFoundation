@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"WaldiSt"
 		]
 	},
 	"bs-deferred-action-status-pending": "Oczekujące.",
@@ -14,5 +15,7 @@
 	"bs-deferred-batch-description": "Opis",
 	"bs-deferred-batch-status": "Status",
 	"bs-deferred-action-apiaddcategories-description": "Dodaj kategorie do '$1'.",
-	"bs-deferred-action-apiremovecategories-description": "Usuń kategorie z '$1'."
+	"bs-deferred-action-apiremovecategories-description": "Usuń kategorie z '$1'.",
+	"bs-deferred-action-status-error": "Nie udało się.",
+	"bs-deferred-batch-title": "Przetwarzanie wsadowe"
 }

@@ -47,5 +47,6 @@
 	"bs-filesystemhelper-upload-unsupported-type": "La tipo di arkivo ne esas aceptata.",
 	"bs-filesystemhelper-save-base64-error": "L'arkivo ne povis prezervesar.",
 	"bs-filesystemhelper-upload-base64-error": "Ne povis sendar l'arkivo.",
-	"bs-ns": "'Namespace'"
+	"bs-ns": "'Namespace'",
+	"bs-imagepage-download-text": "Deskargar"
 }

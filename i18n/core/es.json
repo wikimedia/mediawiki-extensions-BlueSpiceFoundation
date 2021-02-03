@@ -1,17 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agusbou2015",
+			"Amitie 10g",
 			"Fitoschido",
 			"Frammm",
-			"Ihojose",
-			"ProtoplasmaKid",
-			"Macofe",
-			"Amitie 10g",
-			"Jelou",
-			"Tiberius1701",
 			"Hasley",
-			"Agusbou2015",
-			"Nancystodd"
+			"Ihojose",
+			"Jelou",
+			"Macofe",
+			"Nancystodd",
+			"Ncr",
+			"ProtoplasmaKid",
+			"Tiberius1701",
+			"Whytheonlyone"
 		]
 	},
 	"bluespicefoundation-desc": "Habilita a MediaWiki para la empresa",
@@ -97,10 +99,16 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Previsualizar",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas peligrosas, como administrar usuarios, permisos, configuración global",
+	"right-wikiadmin": "Se usa en muchas extensiones de BlueSpice para posibles tareas administrativas de alto nivel, como administrar usuarios, permisos, configuración global",
 	"bs-notifications-agent-anon": "usuario anónimo",
 	"bs-lockdown-groups-permissionerror": "La acción «$1» no está disponible por {{PLURAL:$2|el motivo siguiente|los motivos siguientes}}: $3",
-	"action-wikiadmin": "utilizado en muchas extensiones de BlueSpice para tareas administrativas potencialmente peligrosas como la gestión de usuarios, permisos, configuración global",
+	"action-wikiadmin": "utilizado en muchas extensiones de BlueSpice para tareas administrativas potencialmente peligrosas como la gestión de usuarios, permisos, configuración global, etcétera...",
 	"protect-level-editor": "Solo editores y administradores",
-	"bs-ping-on-init-desc": "Debería enviarse una solicitud de ping inmediatamente después de cargar la página"
+	"bs-ping-on-init-desc": "Debería enviarse una solicitud de ping inmediatamente después de cargar la página",
+	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
+	"right-editor": "Se le concederán todos los permisos del rol \"editor\" para las páginas protegidas en la restricción del editor cuando el sistema de roles esté activado",
+	"action-editor": "Ser concedido todos los permisos del editor \"de función\" para los páginas protegidas en restricción de editor cuándo el sistema de función está activado",
+	"bs-pref-fileextensions-help": "Los tipos del los archivos que puede ser cargado al wiki. Algunos tipos (p. ej., html, js, php, cgi, exe) no es permitido para razones de seguridad incluso si han sido añadidos aquí.",
+	"bs-pref-imageextensions-help": "Los tipos del archivos que puede ser añadidos al wiki. Formatos del web posibles: gif, png, jpg, jpeg. Otros formatos del archivos: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "No se pudo guardar el archivo de configuración $1."
 }

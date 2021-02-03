@@ -1,0 +1,38 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joanmp17"
+		]
+	},
+	"bs-extjs-ok": "ሕራይ",
+	"bs-extjs-cancel": "ኣትርፍ",
+	"bs-extjs-yes": "እወ",
+	"bs-extjs-no": "ኣይፋል",
+	"bs-extjs-save": "ኣቐምጥ",
+	"bs-extjs-delete": "ሰርዝ",
+	"bs-extjs-add": "ወስኽ",
+	"bs-extjs-remove": "ኣልግስ",
+	"bs-extjs-edit": "ኣመዓራርይ",
+	"bs-extjs-copy": "ቅዳሕ",
+	"bs-extjs-hint": "ኣመት",
+	"bs-extjs-error": "ጌጋ",
+	"bs-extjs-confirm": "ኣረጋግጽ",
+	"bs-extjs-loading": "ይጽዕን ኣሎ...",
+	"bs-extjs-warning": "መጠንቀቕታ",
+	"bs-extjs-reset": "ከምብሓዱሽ ጀምር",
+	"bs-extjs-close": "ዕጸው",
+	"bs-extjs-label-user": "ተጠቃሚ",
+	"bs-extjs-label-page": "ገጽ",
+	"bs-extjs-label-directsearch": "ምድላይ",
+	"bs-extjs-browse": "ዳህስስ",
+	"bs-extjs-mainns": "(መበገሲ)",
+	"bs-extjs-filter-bool-yes": "እወ",
+	"bs-extjs-filter-bool-no": "ኣይፋል",
+	"bs-extjs-title-success": "ዓወት",
+	"bs-extjs-title-warning": "መጠንቀቕታ",
+	"bs-extjs-categoryboxselect-emptytext": "መደብ ወስኽ",
+	"bs-extjs-categorytree-title": "መደባት",
+	"bs-extjs-pageexport-list-format-link-label": "መጋጠሚ",
+	"bs-extjs-tools-trigger-text": "መሳርሒታት",
+	"bs-extjs-flyout-tab-grid-label": "ዝርዝራት"
+}

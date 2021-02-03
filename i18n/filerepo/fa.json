@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amirsara"
+			"Amirsara",
+			"FarsiNevis"
 		]
 	},
 	"bs-filerepo-labelfilter": "پالایه",
@@ -19,5 +20,6 @@
 	"bs-filerepo-headerfilethumbnail": "بندانگشتی",
 	"bs-filerepo-yes": "بله",
 	"bs-filerepo-no": "خیر",
-	"bs-filerepo-labelupload": "بارگذاری"
+	"bs-filerepo-labelupload": "بارگذاری",
+	"bs-filerepo-pagesize": "تعداد مدخل‌ها در هر صفحه"
 }

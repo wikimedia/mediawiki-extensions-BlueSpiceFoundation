@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Candalua"
+			"Candalua",
+			"Fierodelveneto"
 		]
 	},
-	"bs-extjs-label-directsearch": "Serca"
+	"bs-extjs-label-directsearch": "Serca",
+	"bs-extjs-label-namespace": "Spasio-nome"
 }

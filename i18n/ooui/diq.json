@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"1917 Ekim Devrimi",
 			"Orbot707"
 		]
 	},
@@ -10,5 +11,8 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Dekerê",
 	"bs-ooui-key-value-input-widget-add-form-label": "Dekerdışo newe cı kerê",
 	"bs-ooui-key-value-input-widget-error-message": "Caya pêroyın pır kerê",
-	"bs-ooui-key-value-input-widget-no-values-label": "Qet jû erc nêdebiyayo"
+	"bs-ooui-key-value-input-widget-no-values-label": "Qet jû erc nêdebiyayo",
+	"bs-ooui-btn-dismiss-alert-title": "Bıqefelne",
+	"bs-ooui-key-value-input-widget-section-label": "Lete",
+	"bs-ooui-key-value-input-widget-add-section-label": "Leteyo newe cı kerê"
 }

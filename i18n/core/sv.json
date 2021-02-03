@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Josve05a",
-			"WikiPhoenix",
 			"Fader",
-			"Lokal Profil",
-			"Warrakkk",
 			"Jopparn",
-			"Mjälten"
+			"Josve05a",
+			"Lokal Profil",
+			"Mjälten",
+			"Raltseye",
+			"Technic2",
+			"Warrakkk",
+			"WikiPhoenix"
 		]
 	},
 	"bs-ns_main": "(Sidor)",
@@ -42,7 +44,7 @@
 	"bs-viewtagerrorlist-legend": "$1 - Fel",
 	"bs-readonly": "Databasen är tillfälligt låst för nya inlägg och andra modifieringar, förmodligen på grund av rutinmässigt underhåll, efter vilket den kommer den att återgå till normalläge.\n\nDen administratör som låste den har angivit följande förklaring: $1",
 	"bs-imageofotheruser": "Du får inte ladda upp en bild för en annan användare.",
-	"bs-permissionerror": "Behörighetsfel",
+	"bs-permissionerror": "Behörighetsfel!",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> är inte en giltig katalog.",
 	"bs-filesystemhelper-file-not-exists": "Filen <code>$1</code> existerar inte.",
 	"bs-filesystemhelper-file-copy-error": "Filen <code>$1</code> kunde inte kopieras.",
@@ -95,5 +97,7 @@
 	"bs-tag-input-desc": "Värdet för elementets innehåll",
 	"bs-exttype-bluespice": "BlueSpice-utvidgningar",
 	"protect-level-editor": "Tillåt endast mallredigerare och administratörer",
-	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?"
+	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?",
+	"bs-validator-error-namespace-does-not-exist": "Namnrymd finns inte: $1",
+	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp"
 }

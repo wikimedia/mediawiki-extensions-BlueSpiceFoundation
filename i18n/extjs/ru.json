@@ -1,21 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80",
-			"Okras",
-			"Габдулгани НИШ ХБН",
-			"SuperPuperSteve",
-			"Kareyac",
-			"Alexey zakharenkov",
-			"Facenapalm",
-			"Redredsonia",
-			"Mouse21",
-			"Patrick Star",
-			"Happy13241",
 			"Abiyoyo",
-			"Vlad5250",
 			"Alexandr Efremov",
-			"Romanko Mikhail"
+			"Alexey zakharenkov",
+			"Amire80",
+			"Diman Russkov",
+			"Facenapalm",
+			"Happy13241",
+			"Kareyac",
+			"Mouse21",
+			"Okras",
+			"Patrick Star",
+			"Redredsonia",
+			"Romanko Mikhail",
+			"SuperPuperSteve",
+			"Vlad5250",
+			"Габдулгани НИШ ХБН"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -87,5 +88,7 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Миниатюры",
 	"bs-extjs-flyout-tab-grid-label": "Детали",
 	"bs-extjs-flyout-add-title": "Нажмите сюда, чтобы добавить новую позицию",
-	"bs-extjs-flyout-add-label": "Добавить объект"
+	"bs-extjs-flyout-add-label": "Добавить объект",
+	"bs-extjs-label-group": "Группа",
+	"bs-extjs-label-specialpage": "Служебная страница"
 }

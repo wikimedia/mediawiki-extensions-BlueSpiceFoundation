@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stryn",
+			"Cxz",
+			"Muovipullo",
 			"Pyscowicz",
 			"Silvonen",
-			"Cxz"
+			"Stryn"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -55,5 +56,8 @@
 	"bs-extjs-flyout-add-title": "Napsauta tästä lisätäksesi uuden kohteen",
 	"bs-extjs-flyout-add-label": "Lisää kohde",
 	"bs-extjs-filter-contains": "sisältää",
-	"bs-extjs-filter-contains-not": "ei sisällä"
+	"bs-extjs-filter-contains-not": "ei sisällä",
+	"bs-extjs-label-group": "Ryhmä",
+	"bs-extjs-confirmNavigationTitle": "Seuraa linkkiä",
+	"bs-extjs-mainns": "(Päänimiavaruus)"
 }

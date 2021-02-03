@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622",
+			"Shirayuki"
+		]
+	},
+	"bs-setting-path-feature": "機能",
+	"bs-setting-path-extension": "拡張機能",
+	"bs-setting-path-package": "パッケージ",
+	"bs-setting-path-system": "システム",
+	"bs-setting-path-dataanalysis": "データ分析者",
+	"bs-setting-path-editor": "エディター",
+	"bs-setting-path-search": "検索とナビゲーション",
+	"bs-setting-path-personalisation": "個人用設定",
+	"bs-setting-path-skinning": "外装",
+	"bs-setting-path-customizing": "カスタマイズ",
+	"bs-setting-path-contentstructuring": "コンテンツの構造化",
+	"bs-setting-path-communication": "連絡",
+	"bs-setting-path-administration": "管理",
+	"bs-setting-path-qualityassurance": "品質保証",
+	"bs-setting-path-export": "書き出し"
+}

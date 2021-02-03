@@ -1,15 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Verdy p",
 			"Wladek92"
 		]
 	},
-	"bs-setting-path-feature": "Fonctionalité",
+	"bs-setting-path-feature": "Fonctionnalité",
 	"bs-setting-path-extension": "Extension",
 	"bs-setting-path-package": "Paquetage",
 	"bs-setting-path-system": "Système",
 	"bs-setting-path-dataanalysis": "Analyse de données",
-	"bs-setting-path-editor": "Éditeur",
+	"bs-setting-path-editor": "Rédacteur",
 	"bs-setting-path-search": "Recherche et navigation",
 	"bs-setting-path-personalisation": "Personnalisation",
 	"bs-setting-path-skinning": "Habillage",

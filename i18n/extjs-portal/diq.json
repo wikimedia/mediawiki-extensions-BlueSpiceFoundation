@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kumkumuk",
 			"Marmase",
-			"Mirzali",
-			"Kumkumuk"
+			"Mirzali"
 		]
 	},
 	"bs-extjs-portal-config": "Portleti vıraze:",
@@ -13,5 +13,5 @@
 	"bs-extjs-portal-timespan": "Vizoya wexti",
 	"bs-extjs-portal-timespan-week": "Hefte",
 	"bs-extjs-portal-timespan-month": "Aşme",
-	"bs-extjs-portal-timespan-alltime": "Heme dem"
+	"bs-extjs-portal-timespan-alltime": "Her dem"
 }

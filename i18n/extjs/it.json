@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"PeppeAeco",
+			"Dansita",
 			"LACLARETTA",
 			"Macofe",
+			"PeppeAeco",
 			"Selven",
-			"Tizven",
-			"Dansita"
+			"TheRukk",
+			"Tizven"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -80,5 +81,8 @@
 	"bs-extjs-pageexport-required-text": "Il nome dell'elenco non può essere vuoto o almeno una pagina deve essere selezionata",
 	"bs-extjs-combo-box-default-placeholder": "Digita per filtrare...",
 	"bs-extjs-flyout-tab-thumbs-title": "Passa alla vista miniature",
-	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio"
+	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio",
+	"bs-extjs-label-group": "Gruppo",
+	"bs-extjs-label-specialpage": "Pagina speciale",
+	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine"
 }

@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"specialcredits": "Zasluge za BlueSpice",
 	"bs-credits-programmers": "Programeri",
 	"bs-credits-dnt": "Dizajn i testiranje",

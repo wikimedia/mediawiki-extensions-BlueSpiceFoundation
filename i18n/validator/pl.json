@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Anwar2",
 			"Chrumps",
-			"Anwar2"
+			"WaldiSt"
 		]
 	},
 	"bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany.",
@@ -13,5 +14,6 @@
 	"bs-validator-invalid-parameter": "Ten parametr jest niedozwolony",
 	"bs-validator-missing-required": "Ten parametr jest wymagany",
 	"bs-validator-email-validation-not-approved": "Nie można zweryfikować adresu e-mail.",
-	"bs-validator-url-validation-not-approved": "Nie można zweryfikować adresu URL."
+	"bs-validator-url-validation-not-approved": "Nie można zweryfikować adresu URL.",
+	"bs-validator-set-validation-approved": "$1 został pomyślnie zweryfikowany."
 }
