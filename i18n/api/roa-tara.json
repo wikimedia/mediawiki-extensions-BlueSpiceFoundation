@@ -78,5 +78,8 @@
 	"apihelp-bs-categorylinks-store-param-page-id": "L'ID d'a pàgene",
 	"apihelp-bs-templatelinks-store-description": "Elenghe tutte le template de 'na pàgene 'nglusive de collegamende a 'u template.",
 	"apihelp-bs-templatelinks-store-summary": "Elenghe tutte le template de 'na pàgene 'nglusive de collegamende a 'u template.",
-	"apihelp-bs-templatelinks-store-param-page-id": "L'ID d'a pàgene"
+	"apihelp-bs-templatelinks-store-param-page-id": "L'ID d'a pàgene",
+	"apihelp-bs-linker-summary": "Tuèrne le collegaminde a le pàggene generate da Linker",
+	"apihelp-bs-linker-description": "Tuèrne le collegaminde a le pàggene generate da Linker",
+	"apihelp-bs-linker-param-linkdescs": "'Na matrice JSON associative cu l'elenghe de le pàggne. Ogne vôsce adda tenè 'u titole d'a pàgene cumme 'target'. Facoltativamende pò tenè 'text', 'attribs' e 'query'."
 }
