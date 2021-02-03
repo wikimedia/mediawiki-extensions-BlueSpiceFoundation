@@ -12,7 +12,6 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 
 	/**
 	 * Get fileicons and copy to $IP/resources/assets/file-type-icons
-	 * @return bool allow other hooked methods to be executed. Always true.
 	 */
 	public function execute() {
 		$ip = $this->getConfig()->get( 'IP' );
