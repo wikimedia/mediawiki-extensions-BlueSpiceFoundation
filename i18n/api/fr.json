@@ -84,5 +84,7 @@
 	"apihelp-bs-categorylinks-store-param-page-id": "L'identifiant de la page",
 	"apihelp-bs-templatelinks-store-description": "Répertorie tous les modèles d'un lien inclusif de page vers le modèle.",
 	"apihelp-bs-templatelinks-store-summary": "Répertorie tous les modèles d'un lien inclusif de page vers le modèle.",
-	"apihelp-bs-templatelinks-store-param-page-id": "L'identifiant de la page"
+	"apihelp-bs-templatelinks-store-param-page-id": "L'identifiant de la page",
+	"apihelp-bs-linker-summary": "Renvoie les liens vers les pages générées par Linker",
+	"apihelp-bs-linker-description": "Renvoie les liens vers les pages générées par Linker"
 }

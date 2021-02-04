@@ -79,5 +79,7 @@
 	"apihelp-bs-categorylinks-store-param-page-id": "O id da página da página",
 	"apihelp-bs-templatelinks-store-description": "Lista todas as predefinições de um link de página inclusive para a predefinição.",
 	"apihelp-bs-templatelinks-store-summary": "Lista todos as predefinições de um link de página inclusive para a predefinição.",
-	"apihelp-bs-templatelinks-store-param-page-id": "O id da página da página"
+	"apihelp-bs-templatelinks-store-param-page-id": "O id da página da página",
+	"apihelp-bs-linker-summary": "Retorna links para páginas geradas pelo Linker",
+	"apihelp-bs-linker-description": "Retorna links para páginas geradas pelo Linker"
 }
