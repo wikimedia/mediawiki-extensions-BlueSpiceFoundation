@@ -32,7 +32,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	/**
 	 *
 	 * @param \stdClass $row
-	 * @return null
 	 */
 	protected function appendRowToData( \stdClass $row ) {
 		$title = Title::newFromRow( $row );

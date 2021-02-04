@@ -198,7 +198,6 @@ abstract class Api extends ApiBase {
 	 * @param User $user
 	 * @param type $permission
 	 * @param Title|null $title
-	 * @return null
 	 */
 	protected function checkPermission( Status $status, User $user, $permission,
 		Title $title = null ) {

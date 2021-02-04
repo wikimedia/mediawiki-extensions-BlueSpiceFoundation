@@ -10,7 +10,6 @@ abstract class SpecialPage extends \SpecialPage {
 	/**
 	 * Actually render the page content.
 	 * @param string $sParameter URL parameters to special page.
-	 * @return string Rendered HTML output.
 	 */
 	public function execute( $sParameter ) {
 		$this->setHeaders();
