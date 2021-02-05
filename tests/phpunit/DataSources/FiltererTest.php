@@ -70,7 +70,7 @@ class FiltererTest extends \PHPUnit\Framework\TestCase {
 		$dataSets = $this->makeDataSets();
 		$filteredDataSets = $filterer->filter( $dataSets );
 
-		$this->assertEquals( $expectedCount, count( $filteredDataSets ) );
+		$this->assertCount( $expectedCount, $filteredDataSets );
 	}
 
 	public function provideFilterData() {

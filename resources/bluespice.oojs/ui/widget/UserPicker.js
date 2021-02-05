@@ -1,5 +1,5 @@
-( function( mw, $, bs ) {
-	bs.ui.widget.UserPickerWidget = function( cfg ) {
+( function ( mw, $, bs ) {
+	bs.ui.widget.UserPickerWidget = function ( cfg ) {
 		cfg = cfg || {};
 
 		this.selectedUser = null;
@@ -67,9 +67,9 @@
 
 		for ( i = 0, len = data.length; i < len; i++ ) {
 			user = data[ i ] || {};
-			items.push( new bs.ui.widget.util.UserMenuOptionWidget ( user ) );
+			items.push( new bs.ui.widget.util.UserMenuOptionWidget( user ) );
 		}
 
 		return items;
 	};
-} ) ( mediaWiki, jQuery, blueSpice );
+}( mediaWiki, jQuery, blueSpice ) );

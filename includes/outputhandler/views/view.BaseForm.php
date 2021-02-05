@@ -29,7 +29,7 @@ class ViewBaseForm extends ViewBaseElement {
 	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 	protected $_mValidationUrl = null;
 
-	public function  __construct() {
+	public function __construct() {
 		parent::__construct();
 		$this->_mAutoElement = 'form';
 	}

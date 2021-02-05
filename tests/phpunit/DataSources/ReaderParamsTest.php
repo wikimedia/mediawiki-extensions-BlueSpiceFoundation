@@ -44,7 +44,7 @@ class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 		$this->assertEquals( 50, $params->getLimit() );
 
 		$sort = $params->getSort();
-		$this->assertEquals( 2, count( $sort ) );
+		$this->assertCount( 2, $sort );
 		$firstSort = $sort[0];
 		$this->assertInstanceOf(
 			'\BlueSpice\Data\Sort',  $firstSort
@@ -56,7 +56,7 @@ class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 		);
 
 		$filter = $params->getFilter();
-		$this->assertEquals( 2, count( $filter ) );
+		$this->assertCount( 2, $filter );
 
 		$firstFilter = $filter[0];
 		$this->assertInstanceOf(
@@ -73,6 +73,6 @@ class ReaderParamsTest extends \PHPUnit\Framework\TestCase {
 			$filedNames[] = $filterObject->getField();
 		}
 
-		$this->assertTrue( in_array( 'prop_a', $filedNames ) );
+		$this->assertContains( 'prop_a', $filedNames );
 	}
 }

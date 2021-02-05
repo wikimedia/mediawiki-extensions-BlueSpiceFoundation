@@ -21,7 +21,7 @@ class ViewException extends ViewBaseElement {
 	 *
 	 * @param Exception $oException
 	 */
-	public function  __construct( Exception $oException ) {
+	public function __construct( Exception $oException ) {
 		parent::__construct();
 		$this->oException = $oException;
 	}

@@ -104,9 +104,9 @@
 			"TemplateHanderRegistry": {
 				"mustache": "\\BlueSpice\\Template\\Mustache::factory"
 			},
-			"LoadPlaceholders":  {
+			"LoadPlaceholders": {
 				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder",
-				"ExtJSGeneric":  "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
+				"ExtJSGeneric": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
 			},
 			"DynamicSettingsRegistry": {
 				"@note": "Can not be overridden using `$bsgExtensionAttributeRegistryOverrides`",

@@ -143,6 +143,6 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 
 		sort( $aActualCategories );
 
-		$this->assertFalse( in_array( 'Mouse', $aActualCategories ) );
+		$this->assertNotContains( 'Mouse', $aActualCategories );
 	}
 }

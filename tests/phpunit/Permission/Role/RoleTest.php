@@ -39,12 +39,12 @@ class RoleTest extends MediaWikiTestCase {
 		$role->addPermission( 'edit' );
 		$role->addPermission( 'dummypermission' );
 
-		$this->assertTrue(
-			in_array( 'edit', $role->getPermissions() ),
+		$this->assertContains(
+			'edit', $role->getPermissions(),
 			'Role should have edit permission'
 		);
-		$this->assertTrue(
-			in_array( 'dummypermission', $role->getPermissions() ),
+		$this->assertContains(
+			'dummypermission', $role->getPermissions(),
 			'Role should have dummypermission permission'
 		);
 	}
@@ -55,12 +55,12 @@ class RoleTest extends MediaWikiTestCase {
 		$role->removePermission( 'edit' );
 		$role->removePermission( 'dummypermission' );
 
-		$this->assertFalse(
-			in_array( 'edit', $role->getPermissions() ),
+		$this->assertNotContains(
+			'edit', $role->getPermissions(),
 			'Role should not have edit permission'
 		);
-		$this->assertFalse(
-			in_array( 'dummypermission', $role->getPermissions() ),
+		$this->assertNotContains(
+			'dummypermission', $role->getPermissions(),
 			'Role should not have dummypermission permission'
 		);
 	}

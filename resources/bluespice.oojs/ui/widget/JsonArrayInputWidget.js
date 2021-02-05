@@ -1,4 +1,4 @@
-( function( mw, bs, $, document ) {
+( function ( mw, bs, $, document ) {
 	bs.ui.widget.JsonArrayInputWidget = function ( cfg ) {
 		this.type = cfg.type || 'text';
 		bs.ui.widget.JsonArrayInputWidget.parent.call( this, cfg );
@@ -17,7 +17,7 @@
 
 	OO.inheritClass( bs.ui.widget.JsonArrayInputWidget, OO.ui.InputWidget );
 
-	bs.ui.widget.JsonArrayInputWidget.prototype.getValue = function() {
+	bs.ui.widget.JsonArrayInputWidget.prototype.getValue = function () {
 		var val = this.widget.getValue();
 		if ( !val ) {
 			val = {};
@@ -32,7 +32,7 @@
 		return val;
 	};
 
-	bs.ui.widget.JsonArrayInputWidget.prototype.setValue = function( val ) {
+	bs.ui.widget.JsonArrayInputWidget.prototype.setValue = function ( val ) {
 		if ( !val ) {
 			return;
 		}
@@ -40,5 +40,4 @@
 		this.widget.setValue( JSON.stringify( val ) );
 	};
 
-
-} )( mediaWiki, blueSpice, jQuery, undefined );
+}( mediaWiki, blueSpice, jQuery, undefined ) );

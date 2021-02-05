@@ -35,7 +35,7 @@ Ext.define( 'BS.store.BSApi', {
 	 * @param {BS.store.BSApi} sender
 	 * @param {Ext.data.Model[]} records
 	 * @param {boolean} successful
-	 * @param {object} eOpts
+	 * @param {Object} eOpts
 	 * @return void
 	 */
 	checkForEmptyPage: function ( sender, records, successful, eOpts ) {

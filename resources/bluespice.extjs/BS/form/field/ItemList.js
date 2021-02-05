@@ -82,32 +82,34 @@ Ext.define( 'BS.form.field.ItemList', {
 				} ]
 			} ),
 			grid = new Ext.grid.Panel(
-				Ext.merge( {
-					hideHeaders: true,
-					selModel: {
-						mode: 'MULTI'
+				Ext.merge(
+					{
+						hideHeaders: true,
+						selModel: {
+							mode: 'MULTI'
+						},
+						columns: [
+							{
+								dataIndex: this.typeField,
+								width: 30,
+								renderer: function ( value ) {
+									return mw.html.element( 'span', {
+										class: 'bs-icon-' + value
+									} );
+								}
+							},
+							{
+								dataIndex: this.listDisplayField,
+								flex: 1
+							},
+							deleteCol
+						],
+						width: '100%',
+						store: this.makeItemGridStore()
 					},
-					columns: [
-						{
-							dataIndex: this.typeField,
-							width: 30,
-							renderer: function ( value ) {
-								return mw.html.element( 'span', {
-									class: 'bs-icon-' + value
-								} );
-							}
-						},
-						{
-							dataIndex: this.listDisplayField,
-							flex: 1
-						},
-						deleteCol
-					],
-					width: '100%',
-					store: this.makeItemGridStore()
-				},
-				this.itemGridConfig
-			) );
+					this.itemGridConfig
+				)
+			);
 
 		grid.on( 'cellkeydown', this.checkDelKey, this );
 

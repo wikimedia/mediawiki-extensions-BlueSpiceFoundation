@@ -249,8 +249,7 @@ class EntityFactory {
 			$oInstance->get( Entity::TYPE ) ) ) {
 			return $oInstance;
 		}
-		$this->storedById[$oInstance->get( Entity::TYPE )]
-			[$oInstance->get( Entity::ATTR_ID )] = $oInstance;
+		$this->storedById[$oInstance->get( Entity::TYPE )][$oInstance->get( Entity::ATTR_ID )] = $oInstance;
 		return $oInstance;
 	}
 
@@ -264,8 +263,7 @@ class EntityFactory {
 			$oInstance->get( Entity::TYPE ) ) ) {
 			return $oInstance;
 		}
-		unset( $this->storedById[$oInstance->get( Entity::TYPE )]
-			[$oInstance->get( Entity::ATTR_ID )] );
+		unset( $this->storedById[$oInstance->get( Entity::TYPE )][$oInstance->get( Entity::ATTR_ID )] );
 		return $oInstance;
 	}
 

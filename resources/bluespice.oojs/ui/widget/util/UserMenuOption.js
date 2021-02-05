@@ -1,5 +1,5 @@
-( function( mw, $, bs ) {
-	bs.ui.widget.util.UserMenuOptionWidget = function( user ) {
+( function ( mw, $, bs ) {
+	bs.ui.widget.util.UserMenuOptionWidget = function ( user ) {
 		var config = {};
 
 		config.data = user;
@@ -12,9 +12,9 @@
 		}
 
 		var $nameBox = $( '<div>' ).addClass( 'user-name-cnt' );
-		$nameBox.append($( '<span>' ).addClass( 'user-display' ).text( user.display_name ) );
+		$nameBox.append( $( '<span>' ).addClass( 'user-display' ).text( user.display_name ) );
 		if ( user.display_name !== user.user_name ) {
-			$nameBox.append($( '<span>' ).addClass( 'user-username' ).text( user.user_name) );
+			$nameBox.append( $( '<span>' ).addClass( 'user-username' ).text( user.user_name ) );
 		}
 
 		this.$element.append( $nameBox );
@@ -24,4 +24,4 @@
 
 	OO.inheritClass( bs.ui.widget.util.UserMenuOptionWidget, OO.ui.MenuOptionWidget );
 
-} ) ( mediaWiki, jQuery, blueSpice );
+}( mediaWiki, jQuery, blueSpice ) );
