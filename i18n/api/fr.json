@@ -86,5 +86,6 @@
 	"apihelp-bs-templatelinks-store-summary": "Répertorie tous les modèles d'un lien inclusif de page vers le modèle.",
 	"apihelp-bs-templatelinks-store-param-page-id": "L'identifiant de la page",
 	"apihelp-bs-linker-summary": "Renvoie les liens vers les pages générées par Linker",
-	"apihelp-bs-linker-description": "Renvoie les liens vers les pages générées par Linker"
+	"apihelp-bs-linker-description": "Renvoie les liens vers les pages générées par Linker",
+	"apihelp-bs-linker-param-linkdescs": "Un tableau JSON associatif avec une liste de pages. Chaque entrée doit contenir le titre de la page comme `target`. Elle peut aussi contenir `text`, `attribs` et `query`."
 }

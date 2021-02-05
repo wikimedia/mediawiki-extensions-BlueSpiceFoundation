@@ -3,13 +3,15 @@
 		"authors": [
 			"Nerogaf",
 			"Red Winged Duck",
-			"Renessaince"
+			"Renessaince",
+			"W"
 		]
 	},
 	"bs-ns_main": "(Старонкі)",
 	"bs-ns_all": "(усе)",
 	"bs-userbar_loginswitch_logout": "Выйсьці",
 	"bs-userbar_loginswitch_login": "Увайсьці",
+	"bs-extended-search-tooltip-fulltext": "Поўнатэкставы пошук",
 	"bs-extended-search-textfield-tooltip": "Пошук у вікі",
 	"bs-no-information-available": "Няма даступных зьвестак",
 	"bs-one-unit-ago": "$1 таму",
@@ -22,6 +24,7 @@
 	"bs-filesystemhelper-folder-copy-error": "Каталёг <code>$1</code> нельга перайменаваць.",
 	"bs-filesystemhelper-folder-not-exists": "Каталёг <code>$1</code> не існуе.",
 	"bs-filesystemhelper-folder-rename-error": "Каталёг <code>$1</code> нельга перайменаваць у <code>$2</code>.",
+	"bs-filesystemhelper-upload-unsupported-type": "Гэты від файла не падтрымліваецца.",
 	"bs-navigation-instructions": "Інструкцыі",
 	"bs-navigation-support": "Падтрымка",
 	"bs-navigation-contact": "Сувязь",
@@ -35,5 +38,6 @@
 	"bs-graphicallist-action-list": "Сьпіс",
 	"bs-graphicallist-action-preview": "Перадпрагляд",
 	"bs-bluespice": "BlueSpice",
-	"bs-notifications-agent-anon": "ананімны ўдзельнік"
+	"bs-notifications-agent-anon": "ананімны ўдзельнік",
+	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Red Winged Duck",
-			"Renessaince"
+			"Renessaince",
+			"W"
 		]
 	},
 	"apihelp-bs-category-store-description": "Пералічвае ўсе катэгорыі. Дазваляе сартаваньне, фільтраваньне і падзел на старонкі. Рэалізуе парамэтры ExtJS Store.",
@@ -15,8 +16,12 @@
 	"apihelp-bs-interwiki-store-summary": "Пералічвае ўсе інтэрвікі-спасылкі. Дазваляе сартаваньне, фільтраваньне і падзел на старонкі. Рэалізуе парамэтры ExtJS Store.",
 	"apihelp-bs-titlequery-store-description": "Пералічвае назвы старонак і (неабавязкова) прэфіксы прастораў назваў на ўмовах запыту. Рэалізуе парамэтры ExtJS Store.",
 	"apihelp-bs-titlequery-store-summary": "Пералічвае назвы старонак і (неабавязкова) прэфіксы прастораў назваў на ўмовах запыту. Рэалізуе парамэтры ExtJS Store.",
+	"apihelp-bs-task-param-task": "Заданьне, якое трэба выканаць",
 	"apihelp-bs-task-param-format": "Фармат выніку",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Зьмененыя катэгорыі.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Вам не дазволена правіць старонку «$1».",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Сьпіс парамэтраў",
 	"apihelp-bs-watchlist-store-summary": "Пералічвае ўсе запісы сьпісу назіраньня. Дазваляе сартаваньне, фільтраваньне і падзел на старонкі. Рэалізуе парамэтры захаваньня.",
-	"apihelp-bs-recentchanges-store-summary": "Пералічвае ўсе апошнія зьмены. Дазваляе сартаваньне, фільтраваньне і падзел на старонкі. Рэалізуе парамэтры захаваньня."
+	"apihelp-bs-recentchanges-store-summary": "Пералічвае ўсе апошнія зьмены. Дазваляе сартаваньне, фільтраваньне і падзел на старонкі. Рэалізуе парамэтры захаваньня.",
+	"apihelp-bs-js-var-config-param-format": "Выгляд выніка"
 }
