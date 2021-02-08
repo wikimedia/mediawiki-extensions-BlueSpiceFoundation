@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Aefgh39622",
+			"Buntschann",
 			"Shirayuki"
 		]
 	},
@@ -12,5 +13,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "新しいエントリを追加",
 	"bs-ooui-key-value-input-widget-error-message": "すべての必須フィールドを設定する必要があります!",
 	"bs-ooui-key-value-input-widget-no-values-label": "値が設定されていません!",
-	"bs-ooui-btn-dismiss-alert-title": "閉じる"
+	"bs-ooui-btn-dismiss-alert-title": "閉じる",
+	"bs-ooui-key-value-input-widget-section-label": "節",
+	"bs-ooui-key-value-input-widget-add-section-label": "新しい節を追加"
 }

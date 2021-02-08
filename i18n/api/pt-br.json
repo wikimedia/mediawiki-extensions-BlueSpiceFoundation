@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
+			"Eduardoaddad",
 			"Felipe L. Ewald"
 		]
 	},
@@ -81,5 +82,6 @@
 	"apihelp-bs-templatelinks-store-summary": "Lista todos as predefinições de um link de página inclusive para a predefinição.",
 	"apihelp-bs-templatelinks-store-param-page-id": "O id da página da página",
 	"apihelp-bs-linker-summary": "Retorna links para páginas geradas pelo Linker",
-	"apihelp-bs-linker-description": "Retorna links para páginas geradas pelo Linker"
+	"apihelp-bs-linker-description": "Retorna links para páginas geradas pelo Linker",
+	"apihelp-bs-linker-param-linkdescs": "Uma matriz JSON associativa com uma lista de páginas. Cada entrada deve conter o título da página como `target`. Opcionalmente, pode conter `text`, `attribs` e `query`."
 }
