@@ -338,7 +338,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return array
 	 */
 	protected function getAllowedParams() {
-		return [
+		return parent::getAllowedParams() + [
 			'task' => [
 				ApiBase::PARAM_REQUIRED => true,
 				ApiBase::PARAM_TYPE => $this->oTasksSpec->getTaskNames(),
@@ -366,11 +366,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-examples',
-			],
-			'format' => [
-				ApiBase::PARAM_DFLT => 'json',
-				ApiBase::PARAM_TYPE => [ 'json', 'jsonfm' ],
-				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-format',
 			]
 		];
 	}

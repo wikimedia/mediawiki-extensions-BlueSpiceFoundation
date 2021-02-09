@@ -30,7 +30,7 @@ class Linker extends Api {
 	 * @inheritDoc
 	 */
 	protected function getAllowedParams() {
-		return [
+		return parent::getAllowedParams() + [
 			'linkdescs' => [
 				static::PARAM_REQUIRED => true,
 				static::PARAM_TYPE => 'string',

@@ -97,7 +97,7 @@ abstract class Store extends Api {
 	 * @return array
 	 */
 	public function getAllowedParams() {
-		return [
+		return parent::getAllowedParams() + [
 			'sort' => [
 				static::PARAM_TYPE => 'string',
 				static::PARAM_REQUIRED => false,
@@ -148,11 +148,6 @@ abstract class Store extends Api {
 				static::PARAM_TYPE => 'integer',
 				static::PARAM_REQUIRED => false,
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-dc',
-			],
-			'format' => [
-				static::PARAM_DFLT => 'json',
-				static::PARAM_TYPE => [ 'json', 'jsonfm' ],
-				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-format',
 			],
 			'context' => [
 				static::PARAM_TYPE => 'string',
