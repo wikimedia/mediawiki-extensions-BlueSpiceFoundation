@@ -34,7 +34,7 @@ class JSConfigVarsApi extends Api {
 	 * @inheritDoc
 	 */
 	protected function getAllowedParams() {
-		return [
+		return parent::getAllowedParams() + [
 			'func' => [
 				static::PARAM_REQUIRED => true,
 				static::PARAM_TYPE => 'string',
