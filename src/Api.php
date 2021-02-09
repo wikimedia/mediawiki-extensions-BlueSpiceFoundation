@@ -46,6 +46,8 @@ use WikiPage;
  * @package BlueSpice_Foundation
  */
 abstract class Api extends ApiBase {
+	const PARAM_FORMAT = 'format';
+
 	/**
 	 * Checks access permissions based on a list of titles and permissions. If
 	 * one of it fails the API processing is ended with an appropriate message
@@ -100,11 +102,26 @@ abstract class Api extends ApiBase {
 	}
 
 	/**
+	 * Returns an array of allowed parameters
+	 * @return array
+	 */
+	protected function getAllowedParams() {
+		return [
+			static::PARAM_FORMAT => [
+				static::PARAM_DFLT => 'json',
+				static::PARAM_TYPE => [ 'json', 'jsonfm' ],
+				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-format',
+				static::PARAM_REQUIRED => false,
+			],
+		];
+	}
+
+	/**
 	 * Custom output printer for JSON. See class Json for details
 	 * @return Json
 	 */
 	public function getCustomPrinter() {
-		return new Json( $this->getMain(), $this->getParameter( 'format' ) );
+		return new Json( $this->getMain(), $this->getParameter( static::PARAM_FORMAT ) );
 	}
 
 	/**
