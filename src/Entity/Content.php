@@ -26,6 +26,7 @@
  */
 namespace BlueSpice\Entity;
 
+use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
 use User;
@@ -109,7 +110,10 @@ abstract class Content extends \BlueSpice\Entity {
 		if ( $this->tsCreatedCache ) {
 			return $this->tsCreatedCache;
 		}
-		$this->tsCreatedCache = $this->getTitle()->getEarliestRevTime();
+		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+		$pageIdentity = $this->getTitle()->toPageIdentity();
+		$revisionRecord = $revisionLookup->getFirstRevision( $pageIdentity );
+		$this->tsCreatedCache = $revisionRecord ? $revisionRecord->getTimestamp() : false;
 		return $this->tsCreatedCache;
 	}
 
