@@ -3,6 +3,57 @@ Copyright 2020 by Hallo Welt! GmbH
 https://bluespice.com
 https://hallowelt.com
 
+== BlueSpice 3.2.0 ==
+BlueSpice 3.2.0 is a minor release.
+This is a stable release.
+
+== Notable changes ==
+* New review workflow template manager simplifies work with workflow presets
+* New review workflow step type "groupvote" allows multiple users to cast a vote on a single workflow step
+* New statistics infratructure to collect snapshot data over time
+* New anonymous books
+* New book chapter paging elements
+* Online status markers on user information flyouts
+* Various performance improvements
+
+== All changes ==
+* Categories are not shown on profile pages (#16531)
+* <bs:timeline>: Parameter lockedoptionnames doesn't work (#17310)
+* Preference "skip dialog on discussion creation" setting has no effect (#17414)
+* Positioning of whoisonline popup is too far away from the pop-up link (#17471)
+* Linked articles are not clickable (#17752)
+* VisualDiff compares wrong way (#19100)
+* Pages are not automatically set to be "read" for the last editor (#20110)
+* The page Special:SocialTags doesn't provide useful pre-filtered info (#20226)
+* Provide online markers for Social Profiles (#20266)
+* Reminder - usability issues (#21178)
+* SearchCenter: Did you mean "Word1 AND Word2" (#21684)
+* Internal error after saving a page (#21690)
+* Cannot save blog post (#21724)
+* Fix issues with PageAssignment I18N (#21752)
+* New features for SMW result format "bs-grid" (#21796)
+* Activating the Approval feature in the namespace Book causes the namespace to disappear (#21910)
+* VisualEditor: Pasting from Word produces html/xml code (#22082)
+* Shared settings config not operational (#22097)
+* Advanced book chapter navigation (#22129)
+* Error Multimediaviewer (#22130)
+* Namespace "Book" is not translated (#22175)
+* Search term with space not found in ExtendedFilelist (#22192)
+* Wikiexplorer column "Assignments" has formatting issue (#22208)
+* SocialEntities returned as search results in title search (#22233)
+* Own book in bookmaker redirects to wrong page (#22247)
+* Discussion topic cannot be created (#22284)
+* Make sorting in grids natural by default (#22315)
+* Adding a template page makes the "empty page" button ("start with an empty page") unusable (#22327)
+* Search - indexing imported pages (#22529)
+* Prepare ExtendedStatistics for release (#22573)
+* Mediawiki server configuration issue (#22594)
+* ArticleInfo flyout - use store api to reduce load (#22605)
+* SearchCenter fails due to broken filter config (#22654)
+* Timline option lockedfilternames ignored by de-/select all buttons (#22812)
+* Double booktitle in navigation (#22826)
+* Various I18N issues (T144165, T151595, T151597, T151598, T151599, T151600)
+
 == BlueSpice 3.1.13 ==
 BlueSpice 3.1.13 is a patch release.
 This is a stable release.
@@ -374,7 +425,7 @@ This is a stable release.
 * Calumma: Mobile menu: add close button
 * Calumma: Mobile: show scroll bar to thumb images if image size is larger then display width
 * Calumma: New layout for page header with more information and actions
-* Calumma: Pagination toolbar on “Recent changes” has no bottom padding
+* Calumma: Pagination toolbar on "Recent changes” has no bottom padding
 * Calumma: Positioning of the notifications badge
 * Calumma: Prevent hidden list bullets after floatleft items (images)
 * Calumma: Real fullscreen mode
