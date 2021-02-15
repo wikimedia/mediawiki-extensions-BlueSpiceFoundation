@@ -78,6 +78,12 @@
 	"apihelp-bs-js-var-config-param-func": "Funktion der Konfiguration, die ausgeführt werden soll: has|get",
 	"apihelp-bs-js-var-config-param-context": "JSON-kodiertes Objekt mit dem Kontext des Aufrufs",
 	"apihelp-bs-js-var-config-param-format": "Das Format des Ergebnisses",
+	"apihelp-bs-categorylinks-store-description": "Listet alle Kategorien einer Seite inklusive eines Links zur Kategorienseite und einer Markierung für explizite und implizite Kategorien.",
+	"apihelp-bs-categorylinks-store-summary": "Listet alle Kategorien einer Seite inklusive eines Links zur Kategorienseite und einer Markierung für explizite und implizite Kategorien.",
+	"apihelp-bs-categorylinks-store-param-page-id": "Die ID der Seite",
+	"apihelp-bs-templatelinks-store-description": "Listet alle Vorlagen einer Seite inklusive eines Links zur Vorlage.",
+	"apihelp-bs-templatelinks-store-summary": "Listet alle Vorlagen einer Seite inklusive eines Links zur Vorlage.",
+	"apihelp-bs-templatelinks-store-param-page-id": "Die ID der Seite",
 	"apihelp-bs-linker-summary": "Gibt Links zu Seiten zurück, die von Linker erzeugt wurden",
 	"apihelp-bs-linker-description": "Gibt Links zu Seiten zurück, die von Linker erzeugt wurden",
 	"apihelp-bs-linker-param-linkdescs": "Ein assoziatives JSON-Array mit einer Liste von Seiten. Jeder Eintrag muss den Titel der Seite als `target` enthalten. Optional kann er `text`, `attribs` und `query` enthalten."

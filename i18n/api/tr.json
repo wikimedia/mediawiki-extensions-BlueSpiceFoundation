@@ -78,5 +78,8 @@
 	"apihelp-bs-js-var-config-param-context": "Çağrının bağlamına sahip JSON kodlu nesne",
 	"apihelp-bs-js-var-config-param-format": "Sonucun biçimi",
 	"apihelp-bs-categorylinks-store-param-page-id": "Sayfanın sayfa id'si",
-	"apihelp-bs-templatelinks-store-param-page-id": "Sayfanın sayfa id'si"
+	"apihelp-bs-templatelinks-store-param-page-id": "Sayfanın sayfa id'si",
+	"apihelp-bs-linker-summary": "Linker tarafından üretilen sayfalara olan bağlantıları getirir",
+	"apihelp-bs-linker-description": "Linker tarafından üretilen sayfalara olan bağlantıları getirir",
+	"apihelp-bs-linker-param-linkdescs": "Bir sayfa listesiyle ilişkili bir JSON dizisi. Her girdi sayfa başlığını `hedef` olarak içermelidir. İsteğe bağlı olarak `metin`, `öznitelikler` ve `sorgu` içerebilir."
 }
