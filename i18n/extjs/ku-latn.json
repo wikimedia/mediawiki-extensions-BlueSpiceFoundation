@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bikarhêner",
 			"George Animal"
 		]
 	},
@@ -17,7 +18,7 @@
 	"bs-extjs-error": "Çewtî",
 	"bs-extjs-confirm": "Pesend bike",
 	"bs-extjs-loading": "Tê barkirin...",
-	"bs-extjs-pageSize": "Mezinahiya rûpelê",
+	"bs-extjs-pageSize": "Hejmara elementan ji her rûpelekî re",
 	"bs-extjs-actions-column-header": "Çalakî",
 	"bs-extjs-warning": "Hişyarî",
 	"bs-extjs-saving": "tê tomarkirin...",

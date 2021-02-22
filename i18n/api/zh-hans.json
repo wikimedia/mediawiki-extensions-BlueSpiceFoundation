@@ -5,7 +5,8 @@
 			"Lakejason0",
 			"Liuxinyu970226",
 			"Yining Chen",
-			"佛壁灯"
+			"佛壁灯",
+			"沈澄心"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "列举来自文件后端的所有文件。允许排序、过滤和分页。执行ExtJS存储的参数。",
@@ -77,5 +78,6 @@
 	"apihelp-bs-js-var-config-param-func": "要执行的配置命令：有|取得",
 	"apihelp-bs-js-var-config-param-context": "包含调用上下文的JSON编码对象",
 	"apihelp-bs-js-var-config-param-format": "结果的格式",
-	"apihelp-bs-categorylinks-store-param-page-id": "页面的pageid"
+	"apihelp-bs-categorylinks-store-param-page-id": "页面的pageid",
+	"apihelp-bs-templatelinks-store-param-page-id": "页面的pageid"
 }
