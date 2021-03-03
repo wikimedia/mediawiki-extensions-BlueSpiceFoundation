@@ -8,7 +8,7 @@ use MediaWikiTestCase;
 
 /** @covers \BlueSpice\Permission\Role\Role */
 class RoleTest extends MediaWikiTestCase {
-	public static function setUpBeforeClass() : void {
+	public static function setUpBeforeClass() {
 		parent::setUpBeforeClass();
 		$GLOBALS['bsgPermissionConfig']['read'] = [ 'roles' => [ 'dummy', 'admin' ] ];
 	}
