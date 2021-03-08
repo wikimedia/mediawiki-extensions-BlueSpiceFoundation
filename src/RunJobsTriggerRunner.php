@@ -5,6 +5,7 @@ namespace BlueSpice;
 use BlueSpice\RunJobsTriggerHandler\Job\RunRunJobsTriggerHandlerRunner;
 use BlueSpice\RunJobsTriggerHandler\JSONFileBasedRunConditionChecker;
 use ConfigException;
+use DateTime;
 use JobQueueGroup;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -73,6 +74,7 @@ class RunJobsTriggerRunner {
 	}
 
 	public function execute() {
+		$this->logger->info( "Start processing at " . date( 'Y-m-d H:i:s' ) );
 		$factoryKeys = $this->registry->getAllKeys();
 		foreach ( $factoryKeys as $regKey ) {
 			$factoryCallback = $this->registry->getValue( $regKey );
@@ -86,8 +88,9 @@ class RunJobsTriggerRunner {
 			);
 
 			$this->checkHandlerInterface( $regKey );
-
 			if ( $this->shouldRunCurrentHandler( $regKey ) ) {
+				$this->logger->info( "Running handler for '$regKey'" );
+				$start = new DateTime();
 				try {
 					$this->runCurrentHandler( $regKey );
 				} catch ( \Exception $ex ) {
@@ -96,10 +99,14 @@ class RunJobsTriggerRunner {
 					$message .= $ex->getTraceAsString();
 					$this->logger->critical( $message );
 				}
+				$end = new DateTime();
+				$handlerRunTime = $end->diff( $start );
+				$formattedHandlerRunTime = $handlerRunTime->format( '%Im %Ss' );
+				$this->logger->info( "Time: $formattedHandlerRunTime" );
 			} else {
 				$this->logger->info(
-					"Skipped run of hanlder for '$regKey' due to"
-					. "run-condition-check"
+					"Skipped run of handler for '$regKey' due to"
+					. " run-condition-check"
 				);
 			}
 		}
