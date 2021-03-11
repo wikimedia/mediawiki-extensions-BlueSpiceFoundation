@@ -72,5 +72,13 @@
 	"apihelp-bs-js-var-config-param-name": "Navn på konfigurasjonsvariabelen som skal hentes",
 	"apihelp-bs-js-var-config-param-func": "Konfigurasjonsfunksjon som skal kjøres: has|get",
 	"apihelp-bs-js-var-config-param-context": "JSON-kodet objekt med oppkallingens kontekst",
-	"apihelp-bs-js-var-config-param-format": "Resultatets format"
+	"apihelp-bs-js-var-config-param-format": "Resultatets format",
+	"apihelp-bs-categorylinks-store-description": "Lister opp alle kategorier på en side, inkludert lenke til kategorisiden og markører for eksplisitte og implisitte kategorier.",
+	"apihelp-bs-categorylinks-store-summary": "Lister opp alle kategorier på en side, inkludert lenke til kategorisiden og markører for eksplisitte og implisitte kategorier.",
+	"apihelp-bs-categorylinks-store-param-page-id": "Sidens ID",
+	"apihelp-bs-templatelinks-store-description": "Lister opp alle maler på en side, inklusivt lenker til malen.",
+	"apihelp-bs-templatelinks-store-summary": "Lister opp alle maler på en siden, inklusivt lenker til malen.",
+	"apihelp-bs-templatelinks-store-param-page-id": "Sidens ID",
+	"apihelp-bs-linker-summary": "Returnerer lenker til sider generert av Linker",
+	"apihelp-bs-linker-description": "Returnerer lenker til sider generert av Linker"
 }
