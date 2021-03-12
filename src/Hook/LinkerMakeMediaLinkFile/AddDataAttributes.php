@@ -17,6 +17,7 @@ class AddDataAttributes extends \BlueSpice\Hook\LinkerMakeMediaLinkFile {
 
 	protected function doProcess() {
 		$this->attribs['data-bs-title'] = $this->title->getPrefixedText();
+		$this->attribs['class'] .= ' media';
 
 		if ( $this->file instanceof \File ) {
 			$this->attribs['data-bs-filename'] = $this->file->getName();
