@@ -4,6 +4,8 @@
 // Name (z.B. _ ersetzt durch " ").
 // Es ist also zusätzlich ein Mechanismus zur Validierung der Benutzereingabe erforderlich.
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * DEPRECATED!
  * @deprecated since version 3.1 - Use ParamProcessor instead
@@ -31,7 +33,7 @@ class BsValidatorMwUsernamePlugin implements BsValidatorPlugin {
 		// $mwUsername = ucfirst($mwUsername);
 
 		if ( !User::isCreatableName( $mwUsername ) ) {
-			if ( !User::isValidUserName( $mwUsername ) ) {
+			if ( !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $mwUsername ) ) {
 				return new BsValidatorResponse( 3, 'UserManager', 'invalid_uname' );
 			}
 
