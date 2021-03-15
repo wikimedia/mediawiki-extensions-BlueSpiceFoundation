@@ -36,8 +36,10 @@
 	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "אינך רשאי לקרוא את הדף '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "אין קטגוריות להסרה",
+	"apihelp-bs-task-param-examples": "להציג דוגאמות של משתנים למשימה",
 	"bs-api-task-taskData-page-id": "המזהה של דף ויקי קיים",
 	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי",
+	"bs-api-task-wikipagetasks-taskData-categories": "מערך של מחרוזות. הערכים צריכים להיות שמות תקפים של קטגוריות.",
 	"apihelp-bs-recentchanges-store-summary": "רשימה של כל השינויים האחרונים. ניתן למיון, לסינון ולעימוד. נעשה שימוש בפרמטרי אחסון.",
 	"apihelp-bs-task-summary": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
 	"apihelp-bs-task-description": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות"
