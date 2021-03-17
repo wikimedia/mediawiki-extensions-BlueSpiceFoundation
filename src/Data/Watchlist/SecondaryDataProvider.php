@@ -2,9 +2,8 @@
 
 namespace BlueSpice\Data\Watchlist;
 
-use ApiMain;
 use ContextSource;
-use DerivativeRequest;
+use MediaWiki\MediaWikiServices;
 
 class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 
@@ -48,38 +47,15 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		);
 
 		if ( $dataSet->get( Record::HAS_UNREAD_CHANGES ) ) {
-			$this->getUnreadChangesDiffRevidFromNotificationTimestamp( $dataSet );
+			$lookup = MediaWikiServices::getInstance()->getRevisionLookup();
+			$rev = $lookup->getRevisionByTimestamp(
+				$title,
+				$dataSet->get( Record::NOTIFICATIONTIMESTAMP )
+			);
+			if ( $rev ) {
+				$dataSet->set( Record::UNREAD_CHANGES_DIFF_REVID, $rev->getId() );
+			}
 		}
 	}
 
-	/**
-	 *
-	 * @param Record &$dataSet
-	 */
-	private function getUnreadChangesDiffRevidFromNotificationTimestamp( &$dataSet ) {
-		$pageId = $dataSet->get( Record::PAGE_ID );
-		$notificationTimestamp = $dataSet->get( Record::NOTIFICATIONTIMESTAMP );
-
-		// This is not ideal. Unfortunately the MediaWiki object model does not have any functions
-		// for "get closest revision for timestamp". The Action API has such functionality, but
-		// makes direct database access. This is to avoid duplicate code.
-		$params = new DerivativeRequest( $this->context->getRequest(), [
-			'action' => 'query',
-			'prop' => 'revisions',
-			'pageids' => $pageId,
-			'rvstart' => $notificationTimestamp,
-			'rvlimit' => 1,
-			'rvprop' => 'ids'
-		] );
-		$api = new ApiMain( $params );
-		$api->execute();
-		$data = $api->getResult()->getResultData();
-
-		$revId = -1;
-		if ( isset( $data['query']['pages'][$pageId]['revisions'][0]['revid'] ) ) {
-			$revId = $data['query']['pages'][$pageId]['revisions'][0]['revid'];
-		}
-
-		$dataSet->set( Record::UNREAD_CHANGES_DIFF_REVID, $revId );
-	}
 }
