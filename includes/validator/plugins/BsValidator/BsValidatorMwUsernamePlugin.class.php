@@ -32,12 +32,13 @@ class BsValidatorMwUsernamePlugin implements BsValidatorPlugin {
 
 		// $mwUsername = ucfirst($mwUsername);
 
-		if ( !User::isCreatableName( $mwUsername ) ) {
-			if ( !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $mwUsername ) ) {
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		if ( !$userNameUtils->isCreatable( $mwUsername ) ) {
+			if ( !$userNameUtils->isValid( $mwUsername ) ) {
 				return new BsValidatorResponse( 3, 'UserManager', 'invalid_uname' );
 			}
 
-			if ( !User::isUsableName( $mwUsername ) ) {
+			if ( !$userNameUtils->isUsable( $mwUsername ) ) {
 				return new BsValidatorResponse( 4, 'UserManager', 'reserved_uname' );
 			}
 
