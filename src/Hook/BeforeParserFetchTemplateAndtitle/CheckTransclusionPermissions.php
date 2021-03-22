@@ -13,6 +13,12 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndtitle {
 	 */
 	protected function doProcess() {
 		$user = $this->parser->getUser();
+		if ( $this->getConfig()->get( 'CommandLineMode' ) ) {
+			if ( $user->isAnon() ) {
+				$user = $this->getServices()->getService( 'BSUtilityFactory' )
+					->getMaintenanceUser()->getUser();
+			}
+		}
 		if ( !$this->title->userCan( 'read', $user ) ) {
 			$this->skip = true;
 			return false;
