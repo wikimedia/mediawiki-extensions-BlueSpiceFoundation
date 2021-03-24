@@ -45,9 +45,12 @@ class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 			'page_title' => "Dummy",
 			'page_namespace' => 12,
 			'page_restrictions' => '',
-			'page_random' => 0,
 			'page_latest' => 1,
-			'page_len' => 1
+			'page_len' => 1,
+			'page_random' => wfRandom(),
+			'page_touched' => $oDbw->timestamp(),
+			'page_is_redirect' => 0,
+			'page_is_new' => 1,
 		] );
 
 		$oDbw->insert( 'page', [
@@ -56,7 +59,11 @@ class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 			'page_restrictions' => '',
 			'page_random' => 0,
 			'page_latest' => 1,
-			'page_len' => 1
+			'page_len' => 1,
+			'page_random' => wfRandom(),
+			'page_touched' => $oDbw->timestamp(),
+			'page_is_redirect' => 0,
+			'page_is_new' => 1,
 		] );
 
 		$oDbw->insert( 'page', [
@@ -65,7 +72,11 @@ class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 			'page_restrictions' => '',
 			'page_random' => 0,
 			'page_latest' => 1,
-			'page_len' => 1
+			'page_len' => 1,
+			'page_random' => wfRandom(),
+			'page_touched' => $oDbw->timestamp(),
+			'page_is_redirect' => 0,
+			'page_is_new' => 1,
 		] );
 	}
 
