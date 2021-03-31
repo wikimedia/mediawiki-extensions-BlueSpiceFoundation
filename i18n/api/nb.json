@@ -80,5 +80,6 @@
 	"apihelp-bs-templatelinks-store-summary": "Lister opp alle maler på en siden, inklusivt lenker til malen.",
 	"apihelp-bs-templatelinks-store-param-page-id": "Sidens ID",
 	"apihelp-bs-linker-summary": "Returnerer lenker til sider generert av Linker",
-	"apihelp-bs-linker-description": "Returnerer lenker til sider generert av Linker"
+	"apihelp-bs-linker-description": "Returnerer lenker til sider generert av Linker",
+	"apihelp-bs-linker-param-linkdescs": "En assosiativ JSON-tabell med en liste over sider. Hver oppføring må inneholde sidens tittel som «target». Kan også inneholde de valgfrie feltene «text», «attribs» og «query»."
 }
