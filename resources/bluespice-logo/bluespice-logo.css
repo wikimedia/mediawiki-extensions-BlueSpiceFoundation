@@ -16,13 +16,13 @@
 .icon-bluespice-logo-color:before {
 	font-family: 'bluespice-logo' !important;
 	content: "\e901";
-	color: rgb(183, 58, 58);
+	color: #b73a3a;
 }
 .icon-bluespice-logo-color:after {
 	font-family: 'bluespice-logo' !important;
 	content: "\e902";
-	margin: -1.2em;
-	color: rgb(62, 83, 137);
+	margin: -1em;
+	color: #405588;
 }
 .icon-category-tag-outline:before {
 	font-family: 'bluespice-logo' !important;
