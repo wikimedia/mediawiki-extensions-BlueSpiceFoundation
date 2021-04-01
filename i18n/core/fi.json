@@ -3,6 +3,7 @@
 		"authors": [
 			"01miki10",
 			"Cxz",
+			"Mediawikitranslator",
 			"Pxos",
 			"Pyscowicz",
 			"SMAUG",
@@ -75,5 +76,6 @@
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
 	"right-wikiadmin": "Käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
+	"bs-notifications-agent-anon": "anonyymi käyttäjä",
 	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät"
 }

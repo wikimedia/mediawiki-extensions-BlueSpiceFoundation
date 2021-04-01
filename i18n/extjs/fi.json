@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Cxz",
+			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz",
 			"Silvonen",
@@ -26,6 +27,7 @@
 	"bs-extjs-actions-column-header": "Toiminnot",
 	"bs-extjs-warning": "Varoitus",
 	"bs-extjs-saving": "tallennetaan...",
+	"bs-extjs-reset": "Nollaa",
 	"bs-extjs-close": "Sulje",
 	"bs-extjs-label-user": "Käyttäjä",
 	"bs-extjs-label-group": "Ryhmä",
@@ -47,6 +49,7 @@
 	"bs-extjs-categorytree-title": "Luokat",
 	"bs-extjs-filter-date-after": "Jälkeen",
 	"bs-extjs-filter-date-before": "Ennen",
+	"bs-extjs-pageexport-dialog-title": "Vie sivuja",
 	"bs-extjs-pageexport-list-format-link-label": "Linkki",
 	"bs-extjs-pageexport-overwrite-label": "Ylikirjoita",
 	"bs-extjs-pageexport-general-error": "Vientivirhe",
