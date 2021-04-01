@@ -55,6 +55,50 @@ class CategoryLinksHelper extends InternalLinksHelper {
 		if ( $target->getNamespace() !== NS_CATEGORY ) {
 			return;
 		}
+
+		/**
+		 * Semantic queries like "{{#ask:[[Category:ABC]]}}" are replaced when removing
+		 * category from page.
+		 * So to preserve them they are masked with "###$id###" and saved in this array.
+		 * These queries are restored to original view when adding category to page.
+		 * Index 0 => original query
+		 * Index 1 => masked query
+		 */
+		$replacedQueries = [];
+
+		foreach ( $this->getTargets() as $match => $title ) {
+			if ( !$target->equals( $title ) ) {
+				continue;
+			}
+
+			// Mask semantic queries to prevent them from changing
+			$this->wikitext = preg_replace_callback(
+				"#\{\{\#.*:\s*" . preg_quote( $match, '/' ) . "}}#i",
+				function ( $matches ) use( &$replacedQueries ) {
+					$id = count( $replacedQueries );
+					$replacement = "###$id###";
+
+					$replacedQueries[] = [ $matches[0], $replacement ];
+
+					return $replacement;
+				},
+				$this->wikitext
+			);
+
+			break;
+		}
+
 		parent::removeTarget( $target, $removeAllOccurrences );
+
+		// Replace semantic queries masks back with original queries
+		$maskedQueryPattern = "\#\#\#([0-9]+)\#\#\#";
+
+		$this->wikitext = preg_replace_callback(
+			"#" . $maskedQueryPattern . "#",
+			function ( $matches ) use( $replacedQueries ) {
+				return $replacedQueries[$matches[1]][0];
+			},
+			$this->wikitext
+		);
 	}
 }
