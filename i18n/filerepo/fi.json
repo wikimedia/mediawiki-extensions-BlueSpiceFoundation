@@ -13,6 +13,7 @@
 	"bs-filerepo-headerfilewidth": "Leveys",
 	"bs-filerepo-headerfileheight": "Korkeus",
 	"bs-filerepo-headerfileusertext": "Käyttäjä",
+	"bs-filerepo-headerfileextension": "Laajennus",
 	"bs-filerepo-headerfiletimestamp": "Tallennettu",
 	"bs-filerepo-headerfilemediatype": "Median tyyppi",
 	"bs-filerepo-headerfiledescription": "Kuvaus",

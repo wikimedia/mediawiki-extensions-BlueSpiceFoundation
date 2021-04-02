@@ -41,6 +41,7 @@
 	"bs-exception-view-stacktrace-toggle-show-text": "Näytä virhetiedot",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Piilota virhetiedot",
 	"bs-viewtagerrorlist-legend": "$1 - Virhe",
+	"bs-permissionerror": "Käyttöoikeusvirhe!",
 	"bs-filesystemhelper-file-not-exists": "Tiedostoa <code>$1</code> ei ole.",
 	"bs-filesystemhelper-file-copy-error": "Tiedostoa <code>$1</code> ei voitu kopioida.",
 	"bs-filesystemhelper-file-already-exists": "Tiedosto <code>$1</code> on jo olemassa.",
