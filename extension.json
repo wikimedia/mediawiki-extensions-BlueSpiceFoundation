@@ -918,7 +918,6 @@
 		"BsTagFinder": "includes/utility/TagFinder.class.php",
 		"ViewBaseElement": "includes/outputhandler/views/view.BaseElement.php",
 		"ViewBaseForm": "includes/outputhandler/views/view.BaseForm.php",
-		"ViewException": "includes/outputhandler/views/view.Exception.php",
 		"ViewFormElement": "includes/outputhandler/views/view.FormElement.php",
 		"ViewFormElementButton": "includes/outputhandler/views/view.FormElementButton.php",
 		"ViewFormElementFieldset": "includes/outputhandler/views/view.FormElementFieldset.php",
