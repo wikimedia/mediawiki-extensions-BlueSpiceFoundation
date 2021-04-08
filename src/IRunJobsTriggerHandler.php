@@ -2,15 +2,11 @@
 
 namespace BlueSpice;
 
-interface IRunJobsTriggerHandler {
+use MWStake\MediaWiki\Component\RunJobsTrigger\IHandler;
 
-	/**
-	 * @return  \Status
-	 */
-	public function run();
+/**
+ * @deprecated since 3.2.2, use MWStake\MediaWiki\Component\RunJobsTrigger\IHandler directly instead
+ */
+interface IRunJobsTriggerHandler extends IHandler {
 
-	/**
-	 * @return RunJobsTriggerHandler\Interval
-	 */
-	public function getInterval();
 }
