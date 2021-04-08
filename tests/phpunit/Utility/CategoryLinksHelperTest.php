@@ -22,6 +22,9 @@ class CategoryLinksHelperTest extends TestCase {
 		$origWikitext = "
 {{#ask:[[Category:ABC]]}}
 {{#ask2:  [[Category:ABC]]}}
+{{#ask3: [[Category:ABC]]
+|format=broadtable
+}}
 
 [[Category:ABC]]";
 		$helper = new CategoryLinksHelper( $origWikitext );
@@ -34,12 +37,15 @@ class CategoryLinksHelperTest extends TestCase {
 
 		$expectedWikitext = "
 {{#ask:[[Category:ABC]]}}
-{{#ask2:[[Category:ABC]]}}
+{{#ask2:  [[Category:ABC]]}}
+{{#ask3: [[Category:ABC]]
+|format=broadtable
+}}
 
 [[Category:DEF]]";
 
-		$actualWikitextClean = str_replace( [ "\n", ' ' ], '', $helper->getWikiText() );
-		$expectedWikitextClean = str_replace( [ "\n", ' ' ], '', $expectedWikitext );
+		$actualWikitextClean = str_replace( "\n", '', $helper->getWikiText() );
+		$expectedWikitextClean = str_replace( "\n", '', $expectedWikitext );
 
 		$this->assertEquals( $expectedWikitextClean, $actualWikitextClean );
 	}
