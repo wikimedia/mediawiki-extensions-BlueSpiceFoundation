@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Cxz",
+			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz",
 			"Silvonen",
@@ -59,5 +60,9 @@
 	"bs-extjs-filter-contains-not": "ei sisällä",
 	"bs-extjs-label-group": "Ryhmä",
 	"bs-extjs-confirmNavigationTitle": "Seuraa linkkiä",
-	"bs-extjs-mainns": "(Päänimiavaruus)"
+	"bs-extjs-mainns": "(Päänimiavaruus)",
+	"bs-extjs-reset": "Nollaa",
+	"bs-extjs-filters": "Suodattimet",
+	"bs-extjs-filter-less-than": "vähemmän kuin",
+	"bs-extjs-pageexport-dialog-title": "Vie sivuja"
 }

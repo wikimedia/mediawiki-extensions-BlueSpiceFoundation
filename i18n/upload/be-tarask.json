@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"W"
+		]
+	},
+	"bs-upload-uploadfilefieldlabel": "Назва файла",
+	"bs-upload-uploadfileemptytext": "Уставіць новы файл...",
+	"bs-upload-categories": "Катэгорыі",
+	"bs-upload-error": "Памылка",
+	"bs-upload-descfilelabel": "Апісаньне",
+	"bs-upload-details": "Падрабязнасьці"
+}

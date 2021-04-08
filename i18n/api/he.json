@@ -40,5 +40,7 @@
 	"apihelp-bs-adminuser-store-summary": "מציג את כל המשתמשים ממסד הנתונים עם מידע רגיש נוסף. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
 	"apihelp-bs-group-store-summary": "מציג את כל הקבוצות חוץ מ-$wgImplicitGroups. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
 	"apihelp-bs-interwiki-store-description": "מציג את כל קישורי הויקי הפנימיים. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
-	"apihelp-bs-interwiki-store-summary": "מציג את כל קישורי הויקי הפנימיים. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS."
+	"apihelp-bs-interwiki-store-summary": "מציג את כל קישורי הויקי הפנימיים. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
+	"apihelp-bs-task-param-examples": "להציג דוגאמות של משתנים למשימה",
+	"bs-api-task-wikipagetasks-taskData-categories": "מערך של מחרוזות. הערכים צריכים להיות שמות תקפים של קטגוריות."
 }

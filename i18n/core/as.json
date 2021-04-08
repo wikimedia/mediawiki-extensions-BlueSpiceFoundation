@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bishnu Saikia"
+			"Bishnu Saikia",
+			"Simbu123"
 		]
 	},
-	"bs-weeks-duration": "{{PLURAL:$1|$1 সপ্তাহ}}"
+	"bs-weeks-duration": "{{PLURAL:$1|$1 সপ্তাহ}}",
+	"bs-imagepage-download-text": "ডাউনল'ড কৰক"
 }

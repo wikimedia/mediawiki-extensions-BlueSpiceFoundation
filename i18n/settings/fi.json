@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz"
 		]
@@ -8,5 +9,6 @@
 	"bs-setting-path-system": "Järjestelmä",
 	"bs-setting-path-export": "Vie",
 	"bs-setting-path-feature": "Ominaisuus",
-	"bs-setting-path-editor": "Muokkain"
+	"bs-setting-path-editor": "Muokkain",
+	"bs-setting-path-package": "Paketti"
 }

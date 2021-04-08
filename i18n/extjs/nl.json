@@ -81,5 +81,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Paginaverzameling",
 	"bs-pagecollection-prefix": "Paginaverzameling",
 	"bs-extjs-pageexport-success": "Export succesvol",
-	"bs-extjs-pageexport-success-text": "Paginaverzameling geëxporteerd naar $1"
+	"bs-extjs-pageexport-success-text": "Paginaverzameling geëxporteerd naar $1",
+	"bs-extjs-label-group": "Groep"
 }

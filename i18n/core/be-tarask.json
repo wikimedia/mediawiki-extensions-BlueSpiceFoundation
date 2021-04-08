@@ -3,7 +3,8 @@
 		"authors": [
 			"Nerogaf",
 			"Red Winged Duck",
-			"Renessaince"
+			"Renessaince",
+			"W"
 		]
 	},
 	"bs-ns_main": "(Старонкі)",
@@ -35,5 +36,9 @@
 	"bs-filesystemhelper-folder-already-exists": "Каталёг <code>$1</code> ужо існуе.",
 	"bs-filesystemhelper-folder-copy-error": "Каталёг <code>$1</code> нельга перайменаваць.",
 	"bs-filesystemhelper-folder-not-exists": "Каталёг <code>$1</code> не існуе.",
-	"bs-filesystemhelper-folder-rename-error": "Каталёг <code>$1</code> нельга перайменаваць у <code>$2</code>."
+	"bs-filesystemhelper-folder-rename-error": "Каталёг <code>$1</code> нельга перайменаваць у <code>$2</code>.",
+	"bs-extended-search-tooltip-fulltext": "Поўнатэкставы пошук",
+	"bs-extended-search-textfield-defaultvalue": "Шукаць…",
+	"bs-filesystemhelper-upload-unsupported-type": "Гэты від файла не падтрымліваецца.",
+	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)"
 }

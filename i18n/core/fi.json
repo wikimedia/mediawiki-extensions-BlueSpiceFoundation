@@ -3,6 +3,7 @@
 		"authors": [
 			"01miki10",
 			"Cxz",
+			"Mediawikitranslator",
 			"Pxos",
 			"Pyscowicz",
 			"SMAUG",
@@ -75,5 +76,7 @@
 	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, herra $2|Hei, rouva $2|Hei $2}}.",
 	"bs-graphicallist-action-list": "Luettelo",
-	"bs-graphicallist-action-preview": "Esikatsele"
+	"bs-graphicallist-action-preview": "Esikatsele",
+	"bs-permissionerror": "Käyttöoikeusvirhe!",
+	"bs-notifications-agent-anon": "anonyymi käyttäjä"
 }

@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"W"
+		]
+	},
+	"bs-filerepo-headerfilesize": "Памер",
+	"bs-filerepo-headerpagecategories": "Катэгорыі",
+	"bs-filerepo-headerfilewidth": "Шырыня",
+	"bs-filerepo-headerfileheight": "Вышыня",
+	"bs-filerepo-headerfiledescription": "Апісаньне",
+	"bs-filerepo-yes": "Так",
+	"bs-filerepo-no": "Не"
+}

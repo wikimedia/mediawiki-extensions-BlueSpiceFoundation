@@ -79,10 +79,13 @@
 	"apihelp-bs-js-var-config-param-func": "Fonction de configuration à exécuter : has|get",
 	"apihelp-bs-js-var-config-param-context": "Objet encodé JSON avec le contexte de l’appel",
 	"apihelp-bs-js-var-config-param-format": "Format du résultat",
-	"apihelp-bs-categorylinks-store-description": "Répertorie toutes les catégories d'un lien inclusif de page vers la page de catégorie et le marqueur pour les catégories explicites et implicites.",
+	"apihelp-bs-categorylinks-store-description": "Répertorie toutes les catégories d’un lien inclusif de page vers la page de catégorie et le marqueur pour les catégories explicites et implicites.",
 	"apihelp-bs-categorylinks-store-summary": "Répertorie toutes les catégories d'un lien inclusif de page vers la page de catégorie et le marqueur pour les catégories explicites et implicites.",
-	"apihelp-bs-categorylinks-store-param-page-id": "L'identifiant de la page",
-	"apihelp-bs-templatelinks-store-description": "Répertorie tous les modèles d'un lien inclusif de page vers le modèle.",
-	"apihelp-bs-templatelinks-store-summary": "Répertorie tous les modèles d'un lien inclusif de page vers le modèle.",
-	"apihelp-bs-templatelinks-store-param-page-id": "L'identifiant de la page"
+	"apihelp-bs-categorylinks-store-param-page-id": "L’identifiant de la page",
+	"apihelp-bs-templatelinks-store-description": "Répertorie tous les modèles d’un lien inclusif de page vers le modèle.",
+	"apihelp-bs-templatelinks-store-summary": "Répertorie tous les modèles d’un lien inclusif de page vers le modèle.",
+	"apihelp-bs-templatelinks-store-param-page-id": "L’identifiant de la page",
+	"apihelp-bs-linker-summary": "Renvoie les liens vers les pages générées par Linker",
+	"apihelp-bs-linker-description": "Renvoie les liens vers les pages générées par Linker",
+	"apihelp-bs-linker-param-linkdescs": "Un tableau JSON associatif avec une liste de pages. Chaque entrée doit contenir le titre de la page comme `target`. Elle peut aussi contenir `text`, `attribs` et `query`."
 }

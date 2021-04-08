@@ -19,5 +19,6 @@
 	"bs-filerepo-headerfilethumbnail": "Sličica",
 	"bs-filerepo-pagesize": "Vnosov na stran",
 	"bs-filerepo-yes": "Da",
-	"bs-filerepo-no": "Ne"
+	"bs-filerepo-no": "Ne",
+	"bs-filerepo-headerfiledescription": "Opis"
 }

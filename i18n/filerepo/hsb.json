@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"J budissin"
+		]
+	},
+	"bs-filerepo-labelupload": "Nahrać",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilename": "Datajowe mjeno",
+	"bs-filerepo-headerfilesize": "Wulkosć",
+	"bs-filerepo-headerpagecategories": "Kategorije",
+	"bs-filerepo-headerfilewidth": "Šěrokosć",
+	"bs-filerepo-headerfileheight": "Wysokosć",
+	"bs-filerepo-headerfilemimetype": "MIME-typ",
+	"bs-filerepo-headerfileusertext": "Wužiwar",
+	"bs-filerepo-headerfileextension": "Rozšěrjenje",
+	"bs-filerepo-headerfiletimestamp": "Nahraty",
+	"bs-filerepo-headerfilemediatype": "Medijowy typ",
+	"bs-filerepo-headerfiledescription": "Wopis",
+	"bs-filerepo-headerfilethumbnail": "Přehlad",
+	"bs-filerepo-yes": "Haj",
+	"bs-filerepo-no": "Ně",
+	"bs-filerepo-pagesize": "Zapiski na stronu"
+}

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mediawikitranslator",
 			"Pyscowicz"
 		]
 	},
@@ -16,5 +17,7 @@
 	"bs-filerepo-yes": "Kyllä",
 	"bs-filerepo-no": "Ei",
 	"bs-filerepo-labelupload": "Tallenna",
-	"bs-filerepo-headerfiletimestamp": "Tallennettu"
+	"bs-filerepo-headerfiletimestamp": "Tallennettu",
+	"bs-filerepo-labelfilter": "Suodatin",
+	"bs-filerepo-headerfileextension": "Laajennus"
 }
