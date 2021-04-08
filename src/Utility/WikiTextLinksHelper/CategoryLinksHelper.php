@@ -73,7 +73,7 @@ class CategoryLinksHelper extends InternalLinksHelper {
 
 			// Mask semantic queries to prevent them from changing
 			$this->wikitext = preg_replace_callback(
-				"#\{\{\#.*:\s*" . preg_quote( $match, '/' ) . "}}#i",
+				"#\{\{\#.*:\s*" . preg_quote( $match, '/' ) . ".*?}}#is",
 				function ( $matches ) use( &$replacedQueries ) {
 					$id = count( $replacedQueries );
 					$replacement = "###$id###";
