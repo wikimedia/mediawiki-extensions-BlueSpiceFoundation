@@ -18,7 +18,7 @@ class CategoryLinksHelperTest extends TestCase {
 	 *
 	 * @covers \BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::removeTarget()
 	 */
-	public function testRemoveCategorySimpleCase() {
+	public function testRemoveCategory() {
 		$origWikitext = "
 {{#ask:[[Category:ABC]]}}
 {{#ask2:  [[Category:ABC]]}}
@@ -48,5 +48,32 @@ class CategoryLinksHelperTest extends TestCase {
 		$expectedWikitextClean = str_replace( "\n", '', $expectedWikitext );
 
 		$this->assertEquals( $expectedWikitextClean, $actualWikitextClean );
+	}
+
+	/**
+	 * Tests correct getting of explicit categories from wikitext.
+	 *
+	 * @covers \BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper::getExplicitCategories()
+	 */
+	public function testGetExplicitCategories() {
+		$wikitext = "
+{{#ask:[[Category:ABC1]]}}
+{{#ask2:  [[Category:ABC2]]}}
+{{#ask3: [[Category:ABC3]]
+|format=broadtable
+}}
+
+[[Category:ABC4]]
+[[Category:ABC5]]";
+
+		$helper = new CategoryLinksHelper( $wikitext );
+		$actualCategories = $helper->getExplicitCategories();
+
+		$expectedCategories = [
+			'count' => 2,
+			'categoryList' => [ 'ABC4', 'ABC5' ]
+		];
+
+		$this->assertEquals( $expectedCategories, $actualCategories );
 	}
 }
