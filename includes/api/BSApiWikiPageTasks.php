@@ -26,6 +26,7 @@
  */
 
 use BlueSpice\Api\Task;
+use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 
 /**
  * Provides common tasks that can be performed on a WikiPage
@@ -296,23 +297,23 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 */
 	protected function task_getExplicitCategories( $oTaskData, $aParams ) {
 		$oResponse = $this->makeStandardReturn();
-		$oTitle = $oTitle = $this->getTitleFromTaskData( $oTaskData );
+		$title = $this->getTitleFromTaskData( $oTaskData );
 
-		if ( !$oTitle->userCan( 'read' ) ) {
+		if ( !$title->userCan( 'read' ) ) {
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-page-read-not-allowed',
-				$oTitle->getPrefixedText()
+				$title->getPrefixedText()
 			)->plain();
 			return $oResponse;
 		}
 
 		// get page and content
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oWikiPage = WikiPage::factory( $title );
 		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$oContent = $oWikiPage->getContent();
-			$sText = '';
+			$wikitext = '';
 			if ( $oContent instanceof Content ) {
-				$sText = $oContent->getNativeData();
+				$wikitext = $oContent->getNativeData();
 			}
 
 		} else {
@@ -320,26 +321,13 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			return $oResponse;
 		}
 
-		// Pattern for Category tags
-		$sCanonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
-		$sLocalNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
-		$sPattern = "#\[\[($sLocalNSName|$sCanonicalNSName):(.*?)(\|(.*?)|)\]\]#si";
-		$matches = [];
-		$matchCount = preg_match_all( $sPattern, $sText, $matches, PREG_PATTERN_ORDER );
+		$categoryLinksHelper = new CategoryLinksHelper( $wikitext );
 
-		$aCategories = [];
-		// normalize
-		foreach ( $matches[2] as $match ) {
-			$oCategoryTitle = Title::newFromText( $match, NS_CATEGORY );
-			if ( $oCategoryTitle instanceof Title === false ) {
-				continue;
-			}
-			array_push( $aCategories, $oCategoryTitle->getText() );
-		}
+		$categories = $categoryLinksHelper->getExplicitCategories();
 
 		$oResponse->success = true;
-		$oResponse->payload = $aCategories;
-		$oResponse->payload_count = $matchCount;
+		$oResponse->payload = $categories['categoryList'];
+		$oResponse->payload_count = $categories['count'];
 
 		return $oResponse;
 	}
