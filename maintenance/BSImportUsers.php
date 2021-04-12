@@ -2,6 +2,8 @@
 
 require_once 'BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
 		$this->addOption( 'src', 'The path to the source file', true, true );
@@ -25,6 +27,8 @@ class BSImportUsers extends BSMaintenance {
 		$oDOM = new DOMDocument();
 		$oDOM->load( $this->getOption( 'src' ) );
 		$oDOM->recover = true;
+
+		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
 
 		$oUserNodes = $oDOM->getElementsByTagName( 'user' );
 		foreach ( $oUserNodes as $oUserNode ) {
@@ -56,7 +60,8 @@ class BSImportUsers extends BSMaintenance {
 
 			$oProperties = $oUserNode->getElementsByTagName( 'property' );
 			foreach ( $oProperties as $oProperty ) {
-				$oUser->setOption(
+				$userOptionsManager->setOption(
+					$oUser,
 					$oProperty->getAttribute( 'name' ),
 					$oProperty->getAttribute( 'value' )
 				);
