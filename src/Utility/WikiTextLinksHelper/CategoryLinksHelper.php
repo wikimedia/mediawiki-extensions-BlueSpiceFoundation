@@ -90,11 +90,7 @@ class CategoryLinksHelper extends InternalLinksHelper {
 	/**
 	 * Gets all explicit categories, which exist in {@link CategoryLinksHelper::$wikitext}.
 	 *
-	 * @return array Array with page categories in such format:
-	 * <dl>
-	 * 	<dd>'count' => Pages amount</dd>
-	 * 	<dd>'categoryList' => List of categories as array</dd>
-	 * </dl>
+	 * @return string[] List of explicit category titles
 	 */
 	public function getExplicitCategories(): array {
 		// Mask parser functions with category parameters to exclude them from search results
@@ -105,7 +101,7 @@ class CategoryLinksHelper extends InternalLinksHelper {
 		$localNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		$pattern = "#\[\[($localNSName|$canonicalNSName):(.*?)(\|(.*?)|)\]\]#si";
 		$matches = [];
-		$matchCount = preg_match_all( $pattern, $this->wikitext, $matches, PREG_PATTERN_ORDER );
+		preg_match_all( $pattern, $this->wikitext, $matches, PREG_PATTERN_ORDER );
 
 		$categories = [];
 		// normalize
@@ -117,10 +113,7 @@ class CategoryLinksHelper extends InternalLinksHelper {
 			array_push( $categories, $categoryTitle->getText() );
 		}
 
-		return [
-			'count' => $matchCount,
-			'categoryList' => $categories
-		];
+		return $categories;
 	}
 
 	/**
