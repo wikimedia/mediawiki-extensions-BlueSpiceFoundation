@@ -69,10 +69,7 @@ class CategoryLinksHelperTest extends TestCase {
 		$helper = new CategoryLinksHelper( $wikitext );
 		$actualCategories = $helper->getExplicitCategories();
 
-		$expectedCategories = [
-			'count' => 2,
-			'categoryList' => [ 'ABC4', 'ABC5' ]
-		];
+		$expectedCategories = [ 'ABC4', 'ABC5' ];
 
 		$this->assertEquals( $expectedCategories, $actualCategories );
 	}

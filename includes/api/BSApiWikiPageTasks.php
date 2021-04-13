@@ -323,11 +323,11 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 		$categoryLinksHelper = new CategoryLinksHelper( $wikitext );
 
-		$categories = $categoryLinksHelper->getExplicitCategories();
+		$categoriesList = $categoryLinksHelper->getExplicitCategories();
 
 		$oResponse->success = true;
-		$oResponse->payload = $categories['categoryList'];
-		$oResponse->payload_count = $categories['count'];
+		$oResponse->payload = $categoriesList;
+		$oResponse->payload_count = count( $categoriesList );
 
 		return $oResponse;
 	}
