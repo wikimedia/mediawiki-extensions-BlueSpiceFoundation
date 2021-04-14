@@ -7,6 +7,7 @@
 			"Lokal Profil",
 			"Mjälten",
 			"Raltseye",
+			"Sabelöga",
 			"Technic2",
 			"Warrakkk",
 			"WikiPhoenix"
@@ -22,7 +23,7 @@
 	"bs-extended-search-textfield-defaultvalue": "Söker...",
 	"bs-extended-search-textfield-tooltip": "Sök wiki",
 	"bs-no-information-available": "Ingen information tillgänglig",
-	"bs-years-duration": "{{PLURAL:$1|et år|$1 år}}",
+	"bs-years-duration": "{{PLURAL:$1|ett år|$1 år}}",
 	"bs-months-duration": "{{PLURAL:$1|$1 månad|$1 månader}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1 vecka|$1 veckor}}",
 	"bs-days-duration": "{{PLURAL:$1|en dag|$1 dagar}}",
@@ -46,6 +47,7 @@
 	"bs-readonly": "Databasen är tillfälligt låst för nya inlägg och andra modifieringar, förmodligen på grund av rutinmässigt underhåll, efter vilket den kommer den att återgå till normalläge.\n\nDen administratör som låste den har angivit följande förklaring: $1",
 	"bs-imageofotheruser": "Du får inte ladda upp en bild för en annan användare.",
 	"bs-permissionerror": "Behörighetsfel!",
+	"bs-lockdown-groups-permissionerror": "Åtgärden \"$1\" är inte tillgänglig av följande {{PLURAL:$2|orsak|orsaker}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> är inte en giltig katalog.",
 	"bs-filesystemhelper-file-not-exists": "Filen <code>$1</code> existerar inte.",
 	"bs-filesystemhelper-file-copy-error": "Filen <code>$1</code> kunde inte kopieras.",
@@ -79,6 +81,7 @@
 	"bs-pref-bspinginterval": "Ping-intervall (i sekunder):",
 	"bs-pref-testmode": "Aktivera testläge",
 	"bs-tag-input-desc": "Värdet för elementets innehåll",
+	"bs-tag-param-desc": "Värde för elementattribut \"$1\"",
 	"bs-parser-error-invalid-namespace": "Ogiltig namnrymd: $1",
 	"bs-parser-error-invalid-title": "Ogiltig titel: $1.",
 	"bs-validator-error-namespace-does-not-exist": "Namnrymd finns inte: $1",
@@ -94,10 +97,11 @@
 	"bs-graphicallist-action-preview": "Förhandsgranska",
 	"bs-bluespice-mediawiki": "BlueSpice-Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "Visa BlueSpices administrationssidor",
-	"right-wikiadmin": "Används på många BlueSpices-tillägg för potentiellt farliga administrativa uppgifter som att hantera användare, behörigheter, global konfiguration",
+	"action-wikiadmin": "använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfigurering (BlueSpice tillägg)",
+	"right-wikiadmin": "Använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfiguration (BlueSpice tillägg)",
 	"bs-notifications-agent-anon": "anonym användare",
 	"protect-level-editor": "Tillåt endast mallredigerare och administratörer",
 	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?",
-	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp"
+	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!"
 }

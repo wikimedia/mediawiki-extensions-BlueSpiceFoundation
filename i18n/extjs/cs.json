@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Georg101",
 			"Ilimanaq29",
 			"Matěj Suchánek"
 		]
 	},
+	"bs-extjs-ok": "OK",
 	"bs-extjs-pageexport-dialog-title": "Exportovat stránky",
 	"bs-extjs-pageexport-list-name-label": "Název seznamu",
 	"bs-extjs-pageexport-list-format-label": "Formát seznamu",
