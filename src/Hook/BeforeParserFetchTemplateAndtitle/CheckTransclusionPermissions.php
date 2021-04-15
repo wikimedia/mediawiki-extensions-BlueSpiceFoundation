@@ -3,6 +3,8 @@
 namespace BlueSpice\Hook\BeforeParserFetchTemplateAndtitle;
 
 use BlueSpice\Hook\BeforeParserFetchTemplateAndtitle;
+use RequestContext;
+use User;
 
 class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndtitle {
 
@@ -13,12 +15,16 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndtitle {
 	 */
 	protected function doProcess() {
 		$user = $this->parser->getUser();
+		if ( !$user instanceof User || !$user->isRegistered() ) {
+			$user = RequestContext::getMain()->getUser();
+		}
 		if ( $this->getConfig()->get( 'CommandLineMode' ) ) {
 			if ( $user->isAnon() ) {
 				$user = $this->getServices()->getService( 'BSUtilityFactory' )
 					->getMaintenanceUser()->getUser();
 			}
 		}
+
 		if ( !$this->title->userCan( 'read', $user ) ) {
 			$this->skip = true;
 			return false;
