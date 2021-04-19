@@ -6,7 +6,7 @@ use BlueSpice\DynamicSettingsManager;
 
 class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 
-	private $pattern = '#\$([wg|bsg][a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)#is';
+	private $pattern = '#\$((wg|bsg)([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*))#is';
 	private $removeLinePattern = '#(global .*?\;[\n|\r\n]?)#m';
 	private $replacement = '$GLOBALS[\'$1\']';
 
