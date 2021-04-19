@@ -13,10 +13,18 @@ class ConfigDefinitionFactory {
 	protected $config = null;
 
 	/**
-	 * @param \Config $config
+	 *
+	 * @var ExtensionAttributeBasedRegistry
 	 */
-	public function __construct( $config ) {
+	protected $registry = null;
+
+	/**
+	 * @param \Config $config
+	 * @param ExtensionAttributeBasedRegistry $registry
+	 */
+	public function __construct( $config, ExtensionAttributeBasedRegistry $registry ) {
 		$this->config = $config;
+		$this->registry = $registry;
 	}
 
 	/**
@@ -55,21 +63,43 @@ class ConfigDefinitionFactory {
 	 * @return array
 	 */
 	protected function getConfigDefinitions() {
-		if ( $this->configDefinitions ) {
+		if ( $this->configDefinitions !== null ) {
 			return $this->configDefinitions;
 		}
 		$this->configDefinitions = [];
+		foreach ( $this->registry->getAllKeys() as $key ) {
+			$this->configDefinitions[$key] = $this->registry->getValue( $key );
+		}
+		$this->configDefinitions = array_merge(
+			$this->configDefinitions,
+			$this->getLegacyConfigDefinitionRegistry()
+		);
+		return $this->configDefinitions;
+	}
+
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 3.2.2 - Use 'BlueSpiceFoundationConfigDefinitionRegistry'
+	 * ExtensionAttributeBasedRegistry instead
+	 * @return array
+	 */
+	private function getLegacyConfigDefinitionRegistry() {
+		$return = [];
 		// TODO: This need to be changed in the future, using globals is not
 		// cool! You may implement \BlueSpice\ExtensionManager ;)
 		foreach ( $GLOBALS['bsgExtensions'] as $extName => $extDefinition ) {
 			if ( empty( $extDefinition['configDefinitions'] ) ) {
 				continue;
 			}
-			$this->configDefinitions = array_merge(
-				$this->configDefinitions,
+			$return = array_merge(
+				$return,
 				$extDefinition['configDefinitions']
 			);
 		}
-		return $this->configDefinitions;
+		if ( !empty( $return ) ) {
+			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		}
+		return $return;
 	}
+
 }
