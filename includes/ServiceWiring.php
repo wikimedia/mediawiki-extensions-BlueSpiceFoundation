@@ -21,8 +21,12 @@ return [
 	},
 
 	'BSConfigDefinitionFactory' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationConfigDefinitionRegistry'
+		);
 		return new \BlueSpice\ConfigDefinitionFactory(
-			$services->getConfigFactory()->makeConfig( 'bsg' )
+			$services->getConfigFactory()->makeConfig( 'bsg' ),
+			$registry
 		);
 	},
 
