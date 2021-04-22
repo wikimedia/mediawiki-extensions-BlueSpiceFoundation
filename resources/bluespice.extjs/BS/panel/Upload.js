@@ -145,30 +145,8 @@ Ext.define( 'BS.panel.Upload', {
 		// Remove path info
 		value = value.replace( /^.*?([^\\\/:]*?\.[a-z0-9]+)$/img, '$1' );
 		value = this.defaultFileNamePrefix + value;
-		value = value.replace( /\s/g, '_' );
-		if ( mw.config.get( 'bsIsWindows' ) ) {
-			// replace non-ASCII
-			var matcher = /[öäüÖÄÜáàâéèêúùûóòôÁÀÂÉÈÊÚÙÛÓÒÔß]/g,
-				dictionary = {
-					ä: 'ae', ö: 'oe', ü: 'ue',
-					Ä: 'Ae', Ö: 'Oe', Ü: 'Ue',
-					á: 'a', à: 'a', â: 'a',
-					é: 'e', è: 'e', ê: 'e',
-					ú: 'u', ù: 'u', û: 'u',
-					ó: 'o', ò: 'o', ô: 'o',
-					Á: 'A', À: 'A', Â: 'A',
-					É: 'E', È: 'E', Ê: 'E',
-					Ú: 'U', Ù: 'U', Û: 'U',
-					Ó: 'O', Ò: 'O', Ô: 'O',
-					ß: 'ss'
-				},
-				translator = function ( match ) {
-					return dictionary[ match ] || match;
-				};
+		value = value.replace( /\s/g, "_" );
 
-			value = value.replace( matcher, translator );
-			value = value.replace( /[^\u0000-\u007F]/gmi, '' ); // Replace remaining Non-ASCII
-		}
 		// apply value without 'C:\fakepath\' to file field as well
 		field.setRawValue( value );
 
