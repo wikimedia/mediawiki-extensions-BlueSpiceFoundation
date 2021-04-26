@@ -2,21 +2,8 @@
 
 namespace BlueSpice\RunJobsTriggerHandler\Interval;
 
-use BlueSpice\RunJobsTriggerHandler\Interval;
+use MWStake\MediaWiki\Component\RunJobsTrigger\Interval\OnceEveryHour as IntervalOnceEveryHour;
 
-class OnceEveryHour implements Interval {
+class OnceEveryHour extends IntervalOnceEveryHour {
 
-	/**
-	 *
-	 * @param \DateTime $currentRunTimestamp
-	 * @param array $options
-	 * @return \DateTime
-	 */
-	public function getNextTimestamp( $currentRunTimestamp, $options ) {
-		$nextTS = clone $currentRunTimestamp;
-		$nextTS->modify( '+1 hour' );
-		$nextTS->setTime( $nextTS->format( 'H' ), 0, 0 );
-
-		return $nextTS;
-	}
 }
