@@ -109,6 +109,16 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	/**
+	 * Checks user for permissions to access specified page.
+	 *
+	 * @param Title $title Specified page to check permissions for.
+	 * @return bool <tt>true</tt> if user have access to page, <tt>false</tt> otherwise
+	 */
+	protected function checkDatasetPermission( Title $title ) {
+		return $title->userCan( 'read', $this->getUser() );
+	}
+
+	/**
 	 *
 	 * @param \stdClass $row
 	 * @return bool
@@ -118,7 +128,8 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 		if ( !$oTitle ) {
 			return false;
 		}
-		return $oTitle->userCan( 'read', $this->getUser() )
+
+		return $this->checkDatasetPermission( $oTitle )
 			? parent::makeDataSet( $row )
 			: false;
 	}
