@@ -1,31 +1,21 @@
 ( function ( mw, bs, $, undefined ) {
 
-	/* N-glton-pattern */
-	var alerts = {},
-		confirms = {},
-		prompts = {};
-
-	function _prepareSimpleDialogWindowCfg( idPrefix, cfg ) {
-		cfg = cfg || {};
-		return Ext.applyIf( cfg, {
-			id: idPrefix,
-			idPrefix: idPrefix,
-			title: 'SimpleDialog',
-			text: 'SimpleDialog Text'
-		} );
-	}
-
-	function _prepareSimpleDialogCallbackCfg( cfg ) {
-		cfg = cfg || {};
-		return Ext.applyIf( cfg, {
-			ok: function () {},
-			cancel: function () {},
-			scope: this
-		} );
+	function _prepareSimpleDialogConfig( idPrefix, dialogConfig, actionCallback ) {
+		cfg = dialogConfig || {};
+		cfg.id = idPrefix;
+		cfg.idPrefix = idPrefix;
+		cfg.callback = actionCallback || {};
+		if ( !cfg.callback.hasOwnProperty( 'ok' ) ) {
+			cfg.callback.ok = function() {};
+		}
+		if ( !cfg.callback.hasOwnProperty( 'cancel' ) ) {
+			cfg.callback.cancel = function() {};
+		}
+		return cfg;
 	}
 
 	/**
-	 * Shows an ExtJS 4 alert window to the user
+	 * Shows an OOJS alert window to the user
 	 *
 	 * @param {string} idPrefix A {String} that allowes to identify the dialogs controls
 	 * @param {Object} windowCfg Allowes parameters "title" and "text" with type {String}
@@ -33,70 +23,68 @@
 	 * @return {BS.AlertDialog} The BS.AlertDialog instance
 	 */
 	function _alert( idPrefix, windowCfg, callbackCfg ) {
-		if ( alerts[ idPrefix ] ) {
-			return alerts[ idPrefix ];
-		}
-
 		if ( !windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-hint';
 		}
 
-		windowCfg = _prepareSimpleDialogWindowCfg( idPrefix, windowCfg );
-		callbackCfg = _prepareSimpleDialogCallbackCfg( callbackCfg );
+		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
-		var alertWindow = Ext.create( 'BS.AlertDialog', windowCfg );
-		alertWindow.on( 'close', function () {
-			alerts[ idPrefix ] = undefined;
-		}, this );
-		alertWindow.on( 'ok', callbackCfg.ok, callbackCfg.scope );
-		alertWindow.show();
+		var dfd = new $.Deferred();
+		mw.loader.using( 'ext.bluespice.oojs' ).done( function() {
+			var windowManager = new OO.ui.WindowManager();
 
-		alerts[ idPrefix ] = alertWindow;
-		return alertWindow;
+			var dialog = new bs.ui.dialog.AlertDialog( config );
+			$( document.body ).append( windowManager.$element );
+
+			windowManager.addWindows( [ dialog ] );
+			windowManager.openWindow( dialog );
+
+			dfd.resolve( dialog );
+		});
+
+		return dfd.promise();
 	}
 
 	function _confirm( idPrefix, windowCfg, callbackCfg ) {
-		if ( confirms[ idPrefix ] ) {
-			return confirms[ idPrefix ];
-		}
-
-		if ( !windowCfg.title && !windowCfg.titleMsg ) {
+		if( !windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-confirm';
 		}
 
-		windowCfg = _prepareSimpleDialogWindowCfg( idPrefix, windowCfg );
-		callbackCfg = _prepareSimpleDialogCallbackCfg( callbackCfg );
+		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
-		var confirmWindow = Ext.create( 'BS.ConfirmDialog', windowCfg );
-		confirmWindow.on( 'close', function () {
-			confirms[ idPrefix ] = undefined;
-		}, this );
-		confirmWindow.on( 'ok', callbackCfg.ok, callbackCfg.scope );
-		confirmWindow.on( 'cancel', callbackCfg.cancel, callbackCfg.scope );
-		confirmWindow.show();
+		var dfd = new $.Deferred();
+		mw.loader.using( 'ext.bluespice.oojs' ).done( function() {
+			var windowManager = new OO.ui.WindowManager();
 
-		confirms[ idPrefix ] = confirmWindow;
-		return confirmWindow;
+			var dialog = new bs.ui.dialog.ConfirmDialog( config );
+			$( document.body ).append( windowManager.$element );
+
+			windowManager.addWindows( [ dialog ] );
+			windowManager.openWindow( dialog );
+
+			dfd.resolve( dialog );
+		});
+
+		return dfd.promise();
 	}
 
 	function _prompt( idPrefix, windowCfg, callbackCfg ) {
-		if ( prompts[ idPrefix ] ) {
-			return prompts[ idPrefix ];
-		}
+		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
-		windowCfg = _prepareSimpleDialogWindowCfg( idPrefix, windowCfg );
-		callbackCfg = _prepareSimpleDialogCallbackCfg( callbackCfg );
+		var dfd = new $.Deferred();
+		mw.loader.using( 'ext.bluespice.oojs' ).done( function() {
+			var windowManager = new OO.ui.WindowManager();
 
-		var promptWindow = Ext.create( 'BS.PromptDialog', windowCfg );
-		promptWindow.on( 'close', function () {
-			prompts[ idPrefix ] = undefined;
-		}, this );
-		promptWindow.on( 'ok', callbackCfg.ok, callbackCfg.scope );
-		promptWindow.on( 'cancel', callbackCfg.cancel, callbackCfg.scope );
-		promptWindow.show();
+			var dialog = new bs.ui.dialog.PromptDialog( config );
+			$( document.body ).append( windowManager.$element );
 
-		prompts[ idPrefix ] = promptWindow;
-		return promptWindow;
+			windowManager.addWindows( [ dialog ] );
+			windowManager.openWindow( dialog );
+
+			dfd.resolve( dialog );
+		});
+
+		return dfd.promise();
 	}
 
 	function _confirmNavigation( anchor ) {
