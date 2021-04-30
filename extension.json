@@ -314,7 +314,11 @@
 				"bluespice.oojs/ui/widget/KeyValueInputWidget.js",
 				"bluespice.oojs/ui/widget/JsonArrayInputWidget.js",
 				"bluespice.oojs/ui/widget/ObjectInputWidget.js",
-				"bluespice.oojs/ui/widget/KeyObjectInputWidget.js"
+				"bluespice.oojs/ui/widget/KeyObjectInputWidget.js",
+				"bluespice.oojs/ui/dialog/SimpleMessageDialog.js",
+				"bluespice.oojs/ui/dialog/AlertDialog.js",
+				"bluespice.oojs/ui/dialog/ConfirmDialog.js",
+				"bluespice.oojs/ui/dialog/PromptDialog.js"
 			],
 			"styles": [
 				"bluespice.oojs/bluespice.ui.less"
