@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class BSSkinSidebarTreeParser {
 
 	/**
@@ -144,7 +146,10 @@ class BSSkinSidebarTreeParser {
 		$targetTitle = Title::newFromText( $target );
 		if ( $targetTitle instanceof Title ) {
 			$cfg['targetTitle'] = $targetTitle;
-			$cfg['html'] = Linker::link( $targetTitle, $text );
+			$cfg['html'] = MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
+				$targetTitle,
+				new HtmlArmor( $text )
+			);
 		}
 
 		return new HashConfig( $cfg );
