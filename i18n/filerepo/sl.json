@@ -6,6 +6,7 @@
 			"Pickle12"
 		]
 	},
+	"bs-filerepo-labelupload": "Naloži",
 	"bs-filerepo-labelfilter": "Filter",
 	"bs-filerepo-headerfilename": "Ime datoteke",
 	"bs-filerepo-headerfilesize": "Velikost",
