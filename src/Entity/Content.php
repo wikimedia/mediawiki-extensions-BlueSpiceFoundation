@@ -192,7 +192,7 @@ abstract class Content extends \BlueSpice\Entity {
 		}
 
 		$method = __METHOD__;
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$conds = $this->getTitle()->pageCond();
 
 		$dbTimestamp = $dbw->timestamp( $purgeTime ?: time() );

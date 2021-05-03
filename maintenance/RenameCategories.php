@@ -234,7 +234,7 @@ if ( $token ) {
 	$qry_ns = 'page_namespace ' . $token . ' ("' . implode( '","', $namespace ) . '")';
 }
 
-$dbw =& wfGetDB( DB_MASTER );
+$dbw =& wfGetDB( DB_PRIMARY );
 $res = $dbw->select(
 	'page',
 	'page_title, page_namespace, page_id',
@@ -395,7 +395,7 @@ foreach ( $res as $row ) {
 				$matches++;
 				$inarticlematches += $nmatches;
 			}
-		break;
+			break;
 	}
 
 }
@@ -419,7 +419,7 @@ if ( $mode == "replace" || $mode == "grep" ) {
 echo PHP_EOL;
 
 # now for the category namespace
-$dbw =& wfGetDB( DB_MASTER );
+$dbw =& wfGetDB( DB_PRIMARY );
 $res = $dbw->select(
 	'page',
 	'page_id, page_title',

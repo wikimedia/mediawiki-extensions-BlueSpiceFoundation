@@ -22,7 +22,7 @@ class NamespaceLockdownTest extends MediaWikiTestCase {
 
 		$user = $this->getTestUser()->getUser();
 		// Strip to just "user" group
-		array_map( function ( $group ) use ( $user ) {
+		array_map( static function ( $group ) use ( $user ) {
 			$user->removeGroup( $group );
 		}, $user->getGroups() );
 		$this->user = $user;

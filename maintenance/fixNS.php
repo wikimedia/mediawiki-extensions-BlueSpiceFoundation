@@ -16,7 +16,7 @@ class FixNS extends Maintenance {
 	}
 
 	public function execute() {
-		$dbr = wfGetDB( DB_MASTER );
+		$dbr = wfGetDB( DB_PRIMARY );
 		$res = $dbr->select(
 			"page",
 			[ "page_id", "page_title", "page_namespace" ],

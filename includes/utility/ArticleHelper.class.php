@@ -181,7 +181,7 @@ class BsArticleHelper {
 		foreach ( $aSubpages as $oSubpage ) {
 			$aTitleArray[] = $oSubpage;
 		}
-		usort( $aTitleArray, function ( $a, $b ) {
+		usort( $aTitleArray, static function ( $a, $b ) {
 			return strcmp(
 				strtolower( $a->getFullText() ),
 				strtolower( $b->getFullText() )

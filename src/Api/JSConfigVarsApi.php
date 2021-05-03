@@ -102,7 +102,7 @@ class JSConfigVarsApi extends Api {
 	 */
 	private function parseRequestedVars( $raw ) {
 		$vars = explode( '|', $raw );
-		return array_map( function ( $item ) {
+		return array_map( static function ( $item ) {
 			return trim( $item );
 		}, $vars );
 	}

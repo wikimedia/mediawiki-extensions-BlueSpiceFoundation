@@ -35,7 +35,7 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testGetTargetMatches() {
 		// Inspired by `ExtraParsertest::testParseLinkParameter`
-		$this->setTemporaryHook( 'InterwikiLoadPrefix', function ( $prefix, &$iwData ) {
+		$this->setTemporaryHook( 'InterwikiLoadPrefix', static function ( $prefix, &$iwData ) {
 			if ( $prefix === 'nonexistent' ) {
 				return true;
 			}
@@ -68,9 +68,9 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	public function testGetTargetMatchCount() {
 		$wikitext = $this->provideWikitextData();
 		$helper = $this->getHelper( $wikitext );
-		$this->assertSame(
+		$this->assertCount(
 			count( $this->getExpected() ),
-			count( $helper->getTargets() )
+			$helper->getTargets()
 		);
 	}
 

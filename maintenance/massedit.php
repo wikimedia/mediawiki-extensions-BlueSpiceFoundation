@@ -130,7 +130,7 @@ if ( $token ) {
 	$qry_ns = 'page_namespace ' . $token . ' ("' . implode( '","', $namespace ) . '")';
 }
 
-$dbw =& wfGetDB( DB_MASTER );
+$dbw =& wfGetDB( DB_PRIMARY );
 $res = $dbw->select(
 	'page',
 	'page_title, page_namespace, page_id',

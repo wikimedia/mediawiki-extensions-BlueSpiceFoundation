@@ -41,7 +41,7 @@ abstract class WikiPage extends Task {
 			$response = RequestContext::getMain()->getRequest()->response();
 			DeferredUpdates::addUpdate(
 				new MWCallableUpdate(
-					function () use (
+					static function () use (
 						$cookieName, $response
 					) {
 						$response->clearCookie( $cookieName );

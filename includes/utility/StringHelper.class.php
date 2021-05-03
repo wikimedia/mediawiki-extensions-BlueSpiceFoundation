@@ -147,16 +147,16 @@ class BsStringHelper {
 			return false;
 		}
 		switch ( $badions[1] ) {
-			case 'a' :
-			case 'O' :
-			case 's' :
+			case 'a':
+			case 'O':
+			case 's':
 				if ( preg_match( "/^{$badions[1]}:[0-9]+:.*[;}]\$/s", $data ) ) {
 					return true;
 				}
 				break;
-			case 'b' :
-			case 'i' :
-			case 'd' :
+			case 'b':
+			case 'i':
+			case 'd':
 				if ( preg_match( "/^{$badions[1]}:[0-9.E-]+;\$/", $data ) ) {
 					return true;
 				}

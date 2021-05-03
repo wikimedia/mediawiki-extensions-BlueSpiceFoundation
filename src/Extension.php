@@ -183,7 +183,7 @@ abstract class Extension extends Context implements JsonSerializable {
 		if ( !is_array( $value ) ) {
 			$value = explode( ',', $value );
 		}
-		$value = array_map( function ( $author ) {
+		$value = array_map( static function ( $author ) {
 			return trim( $author );
 		}, $value );
 		$this->$var = $value;

@@ -37,7 +37,7 @@ class WatchlistTest extends \MediaWikiTestCase {
 			[ 2, 0, 'Test B', null ]
 		];
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		foreach ( $dummyDbEntries as $dummyDbEntry ) {
 			$dbw->insert( 'watchlist', [
 				'wl_user' => $dummyDbEntry[0],

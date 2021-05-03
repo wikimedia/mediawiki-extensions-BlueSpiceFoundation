@@ -80,7 +80,7 @@ abstract class BSConfigDirSettingsFile extends DynamicSettingsBase {
 		}
 		$backupFiles = array_filter(
 			$configFiles,
-			function ( $elem ) use ( $backupFilenamePrefix ) {
+			static function ( $elem ) use ( $backupFilenamePrefix ) {
 				return ( strpos( $elem, $backupFilenamePrefix ) !== false ) ? true : false;
 			}
 		);

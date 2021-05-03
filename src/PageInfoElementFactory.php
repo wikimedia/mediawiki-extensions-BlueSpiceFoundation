@@ -56,7 +56,7 @@ class PageInfoElementFactory {
 			$pageInfoElements[$key] = $instance;
 		}
 
-		usort( $pageInfoElements, function ( $a, $b ) {
+		usort( $pageInfoElements, static function ( $a, $b ) {
 			return $a->getPosition() > $b->getPosition();
 		} );
 

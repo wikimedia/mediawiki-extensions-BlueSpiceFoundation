@@ -38,7 +38,7 @@ class FilterFinder {
 	 * @return Filter[]
 	 */
 	public function findAllFiltersByField( $fieldName ) {
-		return array_filter( $this->filters, function ( $e ) use ( $fieldName ) {
+		return array_filter( $this->filters, static function ( $e ) use ( $fieldName ) {
 			return $e->getField() === $fieldName;
 		} );
 	}

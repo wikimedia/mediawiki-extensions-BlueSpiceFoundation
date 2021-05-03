@@ -105,7 +105,7 @@ function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
  * @param array $options
  */
 function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
-	$oDbr = wfGetDB( DB_MASTER );
+	$oDbr = wfGetDB( DB_PRIMARY );
 	$numPages = count( $aPages );
 	for ( $iP = 0; $iP < $numPages; $iP++ ) {
 

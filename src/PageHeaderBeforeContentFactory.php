@@ -56,7 +56,7 @@ class PageHeaderBeforeContentFactory {
 			$elements[$key] = $instance;
 		}
 
-		usort( $elements, function ( $a, $b ) {
+		usort( $elements, static function ( $a, $b ) {
 			return $a->getPosition() > $b->getPosition();
 		} );
 
