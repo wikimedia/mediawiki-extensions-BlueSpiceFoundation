@@ -125,7 +125,7 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 					// this implementation prevents all current testsystems from
 					// experiencing problems when certain new user settings
 					// already exist
-					$this->getDB( DB_MASTER )->update(
+					$this->getDB( DB_PRIMARY )->update(
 						'user_properties',
 						[
 							'up_value' => $value,
@@ -139,7 +139,7 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 					continue;
 				}
 
-				$this->getDB( DB_MASTER )->insert(
+				$this->getDB( DB_PRIMARY )->insert(
 					'user_properties',
 					[
 						'up_property' => $newName,

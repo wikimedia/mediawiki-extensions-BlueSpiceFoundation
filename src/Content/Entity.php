@@ -129,7 +129,7 @@ class Entity extends \JsonContent {
 		if ( $id > 0 ) {
 			return $id;
 		}
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$res = $dbw->selectRow(
 			'page',
 			'page_title',

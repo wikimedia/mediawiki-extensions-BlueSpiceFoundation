@@ -6,21 +6,21 @@ use MediaWiki\MediaWikiServices;
 
 return [
 
-	'BSExtensionRegistry' => function ( MediaWikiServices $services ) {
+	'BSExtensionRegistry' => static function ( MediaWikiServices $services ) {
 		return new \BlueSpice\ExtensionRegistry(
 			\ExtensionRegistry::getInstance(),
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
 
-	'BSExtensionFactory' => function ( MediaWikiServices $services ) {
+	'BSExtensionFactory' => static function ( MediaWikiServices $services ) {
 		return new \BlueSpice\ExtensionFactory(
 			$services->getService( 'BSExtensionRegistry' ),
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
 
-	'BSConfigDefinitionFactory' => function ( MediaWikiServices $services ) {
+	'BSConfigDefinitionFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationConfigDefinitionRegistry'
 		);
@@ -30,20 +30,20 @@ return [
 		);
 	},
 
-	'BSDynamicFileDispatcherFactory' => function ( MediaWikiServices $services ) {
+	'BSDynamicFileDispatcherFactory' => static function ( MediaWikiServices $services ) {
 		return new \BlueSpice\DynamicFileDispatcher\Factory(
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
 
-	'BSDynamicFileDispatcherUrlBuilder' => function ( MediaWikiServices $services ) {
+	'BSDynamicFileDispatcherUrlBuilder' => static function ( MediaWikiServices $services ) {
 		return new \BlueSpice\DynamicFileDispatcher\UrlBuilder(
 			$services->getService( 'BSDynamicFileDispatcherFactory' ),
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
 
-	'BSEntityConfigFactory' => function ( MediaWikiServices $services ) {
+	'BSEntityConfigFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationEntityRegistry'
 		);
@@ -53,7 +53,7 @@ return [
 		);
 	},
 
-	'BSEntityFactory' => function ( MediaWikiServices $services ) {
+	'BSEntityFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationEntityRegistry'
 		);
@@ -64,19 +64,19 @@ return [
 		);
 	},
 
-	'BSAdminToolFactory' => function ( MediaWikiServices $services ) {
+	'BSAdminToolFactory' => static function ( MediaWikiServices $services ) {
 		$attribute = \ExtensionRegistry::getInstance()->getAttribute(
 			'BlueSpiceFoundationAdminToolRegistry'
 		);
 		return new \BlueSpice\AdminToolFactory( $attribute );
 	},
 
-	'BSTagFactory' => function ( MediaWikiServices $services ) {
+	'BSTagFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry( 'BlueSpiceFoundationTagRegistry' );
 		return new \BlueSpice\TagFactory( $registry );
 	},
 
-	'BSRoleFactory' => function ( MediaWikiServices $services ) {
+	'BSRoleFactory' => static function ( MediaWikiServices $services ) {
 		$roles = \ExtensionRegistry::getInstance()->getAttribute(
 			'BlueSpiceFoundationRoleRegistry'
 		);
@@ -86,7 +86,7 @@ return [
 		);
 	},
 
-	'BSRoleManager' => function ( MediaWikiServices $services ) {
+	'BSRoleManager' => static function ( MediaWikiServices $services ) {
 		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoles' );
 		return new \BlueSpice\Permission\RoleManager(
 			$GLOBALS[ 'wgGroupPermissions' ],
@@ -98,14 +98,14 @@ return [
 		);
 	},
 
-	'BSPermissionRegistry' => function ( MediaWikiServices $services ) {
+	'BSPermissionRegistry' => static function ( MediaWikiServices $services ) {
 		return \BlueSpice\Permission\PermissionRegistry::getInstance(
 			$GLOBALS[ 'bsgPermissionConfigDefault' ],
 			$GLOBALS[ 'bsgPermissionConfig' ]
 		);
 	},
 
-	'BSPermissionLockdownFactory' => function ( MediaWikiServices $services ) {
+	'BSPermissionLockdownFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationPermissionLockdownRegistry'
 		);
@@ -116,7 +116,7 @@ return [
 		);
 	},
 
-	'BSRendererFactory' => function ( MediaWikiServices $services ) {
+	'BSRendererFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationRendererRegistry'
 		);
@@ -127,7 +127,7 @@ return [
 		);
 	},
 
-	'BSSkinDataRendererFactory' => function ( MediaWikiServices $services ) {
+	'BSSkinDataRendererFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationSkinDataRendererRegistry'
 		);
@@ -138,7 +138,7 @@ return [
 		);
 	},
 
-	'BSSettingPathFactory' => function ( MediaWikiServices $services ) {
+	'BSSettingPathFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationSettingPathRegistry'
 		);
@@ -149,7 +149,7 @@ return [
 		);
 	},
 
-	'BSTaskFactory' => function ( MediaWikiServices $services ) {
+	'BSTaskFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationTaskRegistry'
 		);
@@ -160,13 +160,13 @@ return [
 		);
 	},
 
-	'BSUtilityFactory' => function ( MediaWikiServices $services ) {
+	'BSUtilityFactory' => static function ( MediaWikiServices $services ) {
 		return new \BlueSpice\UtilityFactory(
 			$services
 		);
 	},
 
-	'BSNotificationManager' => function ( MediaWikiServices $services ) {
+	'BSNotificationManager' => static function ( MediaWikiServices $services ) {
 		$regFuncRegistry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationNotificationRegistrationFunctions'
 		);
@@ -177,7 +177,7 @@ return [
 		);
 	},
 
-	'BSTargetCacheFactory' => function ( MediaWikiServices $services ) {
+	'BSTargetCacheFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationTargetCacheRegistry'
 		);
@@ -189,11 +189,11 @@ return [
 		);
 	},
 
-	'BSTargetCacheTitle' => function ( MediaWikiServices $services ) {
+	'BSTargetCacheTitle' => static function ( MediaWikiServices $services ) {
 		return $services->getService( 'BSTargetCacheFactory' )->get( 'title' );
 	},
 
-	'BSTemplateFactory' => function ( MediaWikiServices $services ) {
+	'BSTemplateFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationTemplateHanderRegistry'
 		);
@@ -203,7 +203,7 @@ return [
 		);
 	},
 
-	'BSPageInfoElementFactory' => function ( MediaWikiServices $services ) {
+	'BSPageInfoElementFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 				'BlueSpiceFoundationPageInfoElementRegistry'
 			);
@@ -213,12 +213,12 @@ return [
 		return new \BlueSpice\PageInfoElementFactory( $registry, $context, $config );
 	},
 
-	'BSDeferredNotificationStack' => function ( MediaWikiServices $services ) {
+	'BSDeferredNotificationStack' => static function ( MediaWikiServices $services ) {
 		$request = \RequestContext::getMain()->getRequest();
 		return new DeferredNotificationStack( $request );
 	},
 
-	'BSPageHeaderBeforeContentFactory' => function ( MediaWikiServices $services ) {
+	'BSPageHeaderBeforeContentFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 				'BlueSpiceFoundationPageHeaderBeforeContentRegistry'
 			);

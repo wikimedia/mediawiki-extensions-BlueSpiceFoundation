@@ -123,7 +123,7 @@ class RoleManager {
 		// All permissions, including 3rd party ones,
 		// which are not included in the registry are removed
 		$this->groupPermissions = array_map(
-			function () {
+			static function () {
 				return [];
 			},
 			$this->groupPermissions

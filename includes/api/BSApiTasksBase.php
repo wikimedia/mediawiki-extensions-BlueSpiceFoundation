@@ -665,7 +665,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 */
 	protected function getDB() {
 		if ( !isset( $this->mMasterDB ) ) {
-			$this->mMasterDB = wfGetDB( DB_MASTER, 'api' );
+			$this->mMasterDB = wfGetDB( DB_PRIMARY, 'api' );
 		}
 
 		return $this->mMasterDB;

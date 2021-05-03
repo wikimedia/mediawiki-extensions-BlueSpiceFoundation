@@ -45,7 +45,7 @@ class Foundation {
 		$foundation = new self;
 		array_unshift(
 			$GLOBALS['wgExtensionFunctions'],
-			function () use( $foundation ) {
+			static function () use( $foundation ) {
 				$foundation->initialize();
 			}
 		);

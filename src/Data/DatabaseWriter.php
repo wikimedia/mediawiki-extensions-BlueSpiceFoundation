@@ -37,7 +37,7 @@ abstract class DatabaseWriter extends Writer {
 		\IContextSource $context = null, \Config $config = null ) {
 		parent::__construct( $context, $config );
 		$this->reader = $reader;
-		$this->db = $loadBalancer->getConnection( DB_MASTER );
+		$this->db = $loadBalancer->getConnection( DB_PRIMARY );
 	}
 
 	/**

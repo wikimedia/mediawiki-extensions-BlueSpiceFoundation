@@ -157,7 +157,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 		}
 
 		try {
-			$this->getDB( DB_MASTER )->insert( 'bs_settings3', $dbValues );
+			$this->getDB( DB_PRIMARY )->insert( 'bs_settings3', $dbValues );
 			MediaWikiServices::getInstance()->getHookContainer()->run(
 				'BSMigrateSettingsSaveNewSettings',
 				[

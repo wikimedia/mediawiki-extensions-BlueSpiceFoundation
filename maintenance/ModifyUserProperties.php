@@ -76,7 +76,7 @@ function modifyPropertiesController( $bDry, $options ) {
  * @param bool $bDry
  */
 function updateUserProperties( $aUserStore, $options, $bDry ) {
-	$oDbw = wfGetDB( DB_MASTER );
+	$oDbw = wfGetDB( DB_PRIMARY );
 
 	$iCounter = count( $aUserStore );
 	for ( $i = 0; $i < $iCounter; $i++ ) {

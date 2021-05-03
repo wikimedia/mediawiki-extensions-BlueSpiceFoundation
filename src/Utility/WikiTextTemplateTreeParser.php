@@ -81,7 +81,7 @@ class WikiTextTemplateTreeParser {
 		$marker = [];
 		preg_replace_callback(
 			"/###T:(.*?):T###/",
-			function ( $matches ) use ( &$marker ) {
+			static function ( $matches ) use ( &$marker ) {
 				$marker[] = $matches[0];
 				return $matches[0];
 			},

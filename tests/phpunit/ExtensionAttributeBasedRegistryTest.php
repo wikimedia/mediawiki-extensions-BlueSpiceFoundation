@@ -200,7 +200,7 @@ class ExtensionAttributeBasedRegistryTest extends TestCase {
 		$mock
 			->expects( $this->any() )
 			->method( 'getAttribute' )
-			->will( $this->returnCallback( function ( $attrName ) use ( $dummyExtensionAttributes ) {
+			->will( $this->returnCallback( static function ( $attrName ) use ( $dummyExtensionAttributes ) {
 				return $dummyExtensionAttributes[ $attrName ];
 			} ) );
 

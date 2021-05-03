@@ -41,7 +41,7 @@ class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	 * @return type
 	 */
 	protected function filterDiffTargets( array $array1, array $array2 ) {
-		return array_filter( $array1, function ( Title $e ) use( $array2 ) {
+		return array_filter( $array1, static function ( Title $e ) use( $array2 ) {
 			foreach ( $array2 as $target ) {
 				if ( $e->equals( $target ) ) {
 					return false;
