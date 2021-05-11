@@ -12,5 +12,6 @@
 	"bs-userbar_loginswitch_login": "Prijava",
 	"bs-extended-search-textfield-defaultvalue": "Iskanje&nbsp;...",
 	"bs-mins-duration": "{{PLURAL:$1|ena minuta|dve minuti|$1 minute|$1 minut}}",
-	"bs-graphicallist-action-list": "Seznam"
+	"bs-graphicallist-action-list": "Seznam",
+	"bs-imagepage-download-text": "Prenesi"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Bugoslav",
+			"MaGa",
 			"Vrhnje"
 		]
 	},
@@ -73,12 +74,12 @@
 	"bs-extjs-export-search-summary-text": "Stvoreno uz pomoć PageExporta",
 	"bs-extjs-pageexport-error-invalid-title": "Ime popisa nije valjano",
 	"bs-extjs-combo-box-default-placeholder": "Tip za filtriranje…",
-	"bs-extjs-tools-trigger-title": "Škljocnite ovdje da biste otvorili izbornik za oruđe",
+	"bs-extjs-tools-trigger-title": "Kliknite ovdje da biste otvorili izbornik za oruđe",
 	"bs-extjs-tools-trigger-text": "Oruđe",
 	"bs-extjs-flyout-tab-thumbs-label": "Minijature",
 	"bs-extjs-flyout-tab-thumbs-title": "Prebacite na pregled minijatura",
 	"bs-extjs-flyout-tab-grid-label": "Pojedinosti",
 	"bs-extjs-flyout-tab-grid-title": "Prebacite na pregled pojedinosti",
-	"bs-extjs-flyout-add-title": "Škljocnite ovdje da biste dodali novu stavku",
+	"bs-extjs-flyout-add-title": "Kliknite ovdje da biste dodali novu stavku",
 	"bs-extjs-flyout-add-label": "Dodaj stavku"
 }

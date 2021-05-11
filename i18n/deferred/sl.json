@@ -4,5 +4,6 @@
 			"Eleassar"
 		]
 	},
-	"bs-deferred-batch-description": "Opis"
+	"bs-deferred-batch-description": "Opis",
+	"bs-deferred-batch-status": "Stanje"
 }

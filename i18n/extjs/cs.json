@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Georg101",
 			"Ilimanaq29",
 			"Matěj Suchánek"
 		]
@@ -18,5 +19,6 @@
 	"bs-extjs-pageexport-success-text": "Sbírka stránek přemístěna na $1",
 	"bs-extjs-pageexport-required-text": "Seznam nemůže být prázdný a alespoň jedna stránka musí být zvolena",
 	"bs-extjs-export-search-summary-text": "Generováno PageExportem",
-	"bs-extjs-pageexport-error-invalid-title": "Název seznamu je neplatný"
+	"bs-extjs-pageexport-error-invalid-title": "Název seznamu je neplatný",
+	"bs-extjs-ok": "OK"
 }

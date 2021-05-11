@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"محک"
+		]
+	},
+	"bs-filerepo-labelupload": "باربی‌یشتن",
+	"bs-filerepo-labelfilter": "فیلتر",
+	"bs-filerepo-headerfilename": "فایل ِنوم",
+	"bs-filerepo-headerfilesize": "قایده",
+	"bs-filerepo-headerpagecategories": "رج‌ئون",
+	"bs-filerepo-headerfilewidth": "عرض",
+	"bs-filerepo-headerfileheight": "بلندی",
+	"bs-filerepo-headerfilemimetype": "میم ِنوع",
+	"bs-filerepo-headerfileusertext": "کارور",
+	"bs-filerepo-headerfileextension": "جوردماستون",
+	"bs-filerepo-headerfiletimestamp": "باربی‌یشت‌بیی",
+	"bs-filerepo-headerfilemediatype": "مدیایِ نوع",
+	"bs-filerepo-headerfiledescription": "توضیح",
+	"bs-filerepo-headerfilethumbnail": "انگوس گتی",
+	"bs-filerepo-yes": "اره",
+	"bs-filerepo-no": "نا",
+	"bs-filerepo-pagesize": "مدخلون ِتعداد، هر صفحه دله"
+}

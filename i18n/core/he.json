@@ -11,6 +11,7 @@
 			"Ronel1",
 			"Steeve815",
 			"YaronSh",
+			"דגש",
 			"דגש חזק",
 			"ערן"
 		]
@@ -89,13 +90,13 @@
 	"bs-graphicallist-action-preview": "תצוגה מקדימה",
 	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
+	"right-wikiadmin": "שימוש בפעולות ניהול שיכולות להיות מסוכנות כגון ניהול משתמשים, הרשאות, הגדרות גלובליות (הרבחות BlueSpice)",
 	"bs-notifications-agent-anon": "משתמש אלמוני",
 	"bs-lockdown-groups-permissionerror": "הפעולה \"$1\" לא זמינה בגלל {{PLURAL:$2|הסיבה הבאה|הסיבות הבאות}}: $3",
 	"bs-filesystemhelper-folder-rename-error": "לא ניתן לשנות את שם התיקייה <code>$1</code> לשם <code>$2</code>.",
 	"bs-pref-anonuserimage": "אווטאר של משתמש אנונימי:",
 	"bs-pref-deleteduserimage": "אווטאר מחוק של משתמש:",
-	"action-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
+	"action-wikiadmin": "להשתמש בפעולות ניהול שיכולות להיות מסוכנות כגון ניהול משתמשים, הרשאות, הגדרות גלובליות (הרבחות BlueSpice)",
 	"bs-filesystemhelper-has-path-traversal": "נתיב מעבר התגלה!",
 	"bs-filesystemhelper-upload-local-error-stash-file": "לא ניתן היה להעביר את הקובץ למצב ההעלאה.",
 	"bs-pref-miniprofileenforceheight": "כוח הגובה של אווטאר המשתמש",

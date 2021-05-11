@@ -7,6 +7,7 @@
 			"Lokal Profil",
 			"Mjälten",
 			"Raltseye",
+			"Sabelöga",
 			"Technic2",
 			"Warrakkk",
 			"WikiPhoenix"
@@ -21,7 +22,7 @@
 	"bs-extended-search-textfield-defaultvalue": "Söker...",
 	"bs-extended-search-textfield-tooltip": "Sök wiki",
 	"bs-no-information-available": "Ingen information tillgänglig",
-	"bs-years-duration": "{{PLURAL:$1|et år|$1 år}}",
+	"bs-years-duration": "{{PLURAL:$1|ett år|$1 år}}",
 	"bs-months-duration": "{{PLURAL:$1|$1 månad|$1 månader}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1 vecka|$1 veckor}}",
 	"bs-days-duration": "{{PLURAL:$1|en dag|$1 dagar}}",
@@ -83,7 +84,7 @@
 	"bs-export-menu-print-text": "Skriv ut",
 	"bs-export-menu-print-title": "Visar en utskriftsvänlig version av sidan",
 	"bs-bluespice": "BlueSpice",
-	"right-wikiadmin": "Används på många BlueSpices-tillägg för potentiellt farliga administrativa uppgifter som att hantera användare, behörigheter, global konfiguration",
+	"right-wikiadmin": "Använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfiguration (BlueSpice tillägg)",
 	"bs-notifications-agent-anon": "anonym användare",
 	"bs-parser-error-invalid-title": "Ogiltig titel: $1.",
 	"bs-validator-error-namespace-on-blacklist": "Namnrymd är inte tillåten: $1",
@@ -92,12 +93,15 @@
 	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Förhandsgranska",
 	"bs-bluespice-mediawiki": "BlueSpice-Mediawiki",
-	"action-wikiadmin": "Visa BlueSpices administrationssidor",
+	"action-wikiadmin": "använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfigurering (BlueSpice tillägg)",
 	"bluespicefoundation-desc": "Få MediaWiki för företag redo",
 	"bs-tag-input-desc": "Värdet för elementets innehåll",
 	"bs-exttype-bluespice": "BlueSpice-utvidgningar",
 	"protect-level-editor": "Tillåt endast mallredigerare och administratörer",
 	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?",
 	"bs-validator-error-namespace-does-not-exist": "Namnrymd finns inte: $1",
-	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp"
+	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp",
+	"bs-lockdown-groups-permissionerror": "Åtgärden \"$1\" är inte tillgänglig av följande {{PLURAL:$2|orsak|orsaker}}: $3",
+	"bs-tag-param-desc": "Värde för elementattribut \"$1\"",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!"
 }

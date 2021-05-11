@@ -20,5 +20,6 @@
 	"bs-filerepo-pagesize": "Vnosov na stran",
 	"bs-filerepo-yes": "Da",
 	"bs-filerepo-no": "Ne",
-	"bs-filerepo-headerfiledescription": "Opis"
+	"bs-filerepo-headerfiledescription": "Opis",
+	"bs-filerepo-labelupload": "Naloži"
 }
