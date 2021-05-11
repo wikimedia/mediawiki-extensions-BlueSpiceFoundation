@@ -14,6 +14,11 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndTitle {
 	 * @return bool
 	 */
 	protected function doProcess() {
+		if ( defined( 'MW_NO_SESSION' ) ) {
+			// Bail out on no session entry points, since we cannot init user
+			return true;
+		}
+
 		$user = $this->parser->getUser();
 		if ( !$user instanceof User || !$user->isRegistered() ) {
 			$user = RequestContext::getMain()->getUser();
