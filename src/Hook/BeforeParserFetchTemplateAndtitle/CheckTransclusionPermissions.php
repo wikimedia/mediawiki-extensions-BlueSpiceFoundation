@@ -14,7 +14,7 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndtitle {
 	 * @return bool
 	 */
 	protected function doProcess() {
-		if ( defined( MW_NO_SESSION ) ) {
+		if ( defined( 'MW_NO_SESSION' ) ) {
 			// Bail out on no session entry points, since we cannot init user
 			return true;
 		}
