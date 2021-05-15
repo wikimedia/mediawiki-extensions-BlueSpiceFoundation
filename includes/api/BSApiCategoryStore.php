@@ -52,7 +52,7 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 			[ 'cat_id', 'cat_title', 'cat_pages', 'cat_subcats', 'cat_files' ],
 			[ 'cat_title = cl_to' ],
 			__METHOD__,
-			[ 'GROUP BY' => 'cat_title' ]
+			[ 'DISTINCT' ]
 		);
 
 		foreach ( $res as $row ) {
