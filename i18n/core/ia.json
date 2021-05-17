@@ -4,6 +4,7 @@
 			"McDutchie"
 		]
 	},
+	"bluespicefoundation-desc": "Rende MediaWiki preste pro le interprisa",
 	"bs-ns_main": "(Paginas)",
 	"bs-ns_all": "(totes)",
 	"bs-tab_navigation": "Navigation",
@@ -37,6 +38,7 @@
 	"bs-readonly": "Al momento, le base de datos es blocate contra nove entratas e altere modificationes, probabilemente pro mantenentia routinari del base de datos, post le qual illo retornara al normal. Le administrator responsabile dava iste explication: $1",
 	"bs-imageofotheruser": "Tu non es autorisate a incargar un imagine pro un altere usator.",
 	"bs-permissionerror": "Error de permission.",
+	"bs-lockdown-groups-permissionerror": "Le action \"$1\" non es disponibile pro le sequente {{PLURAL:$2|ration|rationes}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> non es un directorio valide.",
 	"bs-filesystemhelper-has-path-traversal": "Transversata de cammino detegite!",
 	"bs-filesystemhelper-file-not-exists": "Le file <code>$1</code> non existe.",
@@ -70,7 +72,26 @@
 	"bs-pref-deleteduserimage": "Avatar pro usator delite:",
 	"bs-pref-bspinginterval": "Intervallo de ping (in secundas):",
 	"bs-pref-testmode": "Activar le modo de test",
+	"bs-tag-input-desc": "Valor del contento del elemento",
+	"bs-tag-param-desc": "Valor del attributo '$1' del elemento",
+	"bs-parser-error-invalid-namespace": "Spatio de nomines non valide: $1",
+	"bs-parser-error-invalid-title": "Titulo invalide: $1",
+	"bs-validator-error-namespace-does-not-exist": "Spatio de nomines non existe: $1",
+	"bs-validator-error-namespace-on-blacklist": "Spatio de nomines non permittite: $1",
+	"bs-validator-error-title-does-not-exist": "Pagina non existe: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Pagina non permittite: $1",
+	"bs-parser-error-invalid-category-title": "Non es un titulo de categoria valide: $1",
+	"bs-exttype-bluespice": "Extensiones BlueSpice",
+	"bs-export-menu-print-text": "Imprimer",
+	"bs-export-menu-print-title": "Monstra un version imprimibile del pagina",
+	"bs-graphicallist-action-close": "Clauder",
+	"bs-graphicallist-action-list": "Lista",
+	"bs-graphicallist-action-preview": "Previsualisation",
+	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
+	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "exequer operationes administrative que pote esser periculose, como le gestion de usatores, permissiones, configuration global (extensiones BlueSpice)",
 	"right-wikiadmin": "Exequer operationes administrative que pote esser periculose, como le gestion de usatores, permissiones, configuration global (extensiones BlueSpice)",
-	"protect-level-editor": "Permitter solmente redactores e aministratores"
+	"bs-notifications-agent-anon": "usatores anonyme",
+	"protect-level-editor": "Permitter solmente redactores e aministratores",
+	"bs-ping-on-init-desc": "Indica si un requesta ping debe esser inviate immediatemente post le cargamento del pagina"
 }
