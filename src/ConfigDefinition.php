@@ -124,6 +124,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 			'parent' => new \HTMLFormEx( [] ),
 			'help-message' => $this->getHelpMessageKey(),
 			'disabled' => $this->isDisabled(),
+			'help-inline' => false
 		];
 	}
 
