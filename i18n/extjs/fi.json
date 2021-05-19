@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Cxz",
+			"Joquliina",
 			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz",
@@ -43,6 +44,7 @@
 	"bs-extjs-filters": "Suodattimet",
 	"bs-extjs-filter-contains": "sisältää",
 	"bs-extjs-filter-contains-not": "ei sisällä",
+	"bs-extjs-filter-greater-than": "suurempi kuin",
 	"bs-extjs-filter-less-than": "vähemmän kuin",
 	"bs-extjs-filter-bool-yes": "kyllä",
 	"bs-extjs-filter-bool-no": "ei",
