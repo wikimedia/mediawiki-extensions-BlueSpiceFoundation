@@ -93,5 +93,10 @@
 	"right-wikiadmin": "Exequer operationes administrative que pote esser periculose, como le gestion de usatores, permissiones, configuration global (extensiones BlueSpice)",
 	"bs-notifications-agent-anon": "usatores anonyme",
 	"protect-level-editor": "Permitter solmente redactores e aministratores",
-	"bs-ping-on-init-desc": "Indica si un requesta ping debe esser inviate immediatemente post le cargamento del pagina"
+	"bs-ping-on-init-desc": "Indica si un requesta ping debe esser inviate immediatemente post le cargamento del pagina",
+	"right-editor": "Beneficiar de tote le permissiones del rolo \"redactor\" pro le paginas protegite in restriction de redactor quando le systema de rolos es activate",
+	"action-editor": "beneficiar de tote le permissiones del rolo \"redactor\" pro le paginas protegite in restriction de redactor quando le systema de rolos es activate",
+	"bs-pref-fileextensions-help": "Le typos de file que pote esser incargate sur le wiki. Alcun typos (p.ex. html, js, php, cgi, exe) es interdicite pro rationes de securitate, mesmo si illos ha essite addite hic.",
+	"bs-pref-imageextensions-help": "Le typos de imagine que pote esser incargate sur le wiki. Formatos web possibile: gif, png, jpg, jpeg. Altere formatos de imagine: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Le file de configuration $1 non poteva esser scribite."
 }

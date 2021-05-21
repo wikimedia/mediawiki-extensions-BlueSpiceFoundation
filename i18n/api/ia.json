@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"apihelp-bs-filebackend-store-description": "Lista tote le files del back-end de files. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-filebackend-store-summary": "Lista tote le files del back-end de files. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-user-store-description": "Lista tote le usatores del base de datos. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-user-store-summary": "Lista tote le usatores del base de datos. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-category-store-description": "Lista tote le categorias. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-category-store-summary": "Lista tote le categorias. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-adminuser-store-description": "Lista tote le usatores del base de datos con datos confidential additional. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-adminuser-store-summary": "Lista tote le usatores del base de datos con datos confidential additional. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-group-store-description": "Lista tote le gruppos salvo $wgImplicitGroups. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-group-store-summary": "Lista tote le gruppos salvo $wgImplicitGroups. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-interwiki-store-description": "Lista tote le ligamines interwiki. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-interwiki-store-summary": "Lista tote le ligamines interwiki. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Lista titulos de paginas e (optionalmente) prefixos de spatio de nomines a base de un termino de consulta. Implementa parametros ExtJS Store.",
+	"apihelp-bs-titlequery-store-summary": "Lista titulos de paginas e (optionalmente) prefixos de spatio de nomines a base de un termino de consulta. Implementa parametros ExtJS Store.",
+	"apihelp-bs-wikipage-tasks-description": "Forni operationes commun pro paginas wiki",
+	"apihelp-bs-wikipage-tasks-summary": "Forni operationes commun pro paginas wiki",
+	"apihelp-bs-store-param-sort": "Catena JSON con information de ordinamento; se deserialisa in un <code>array of objects</code> que tene le nomine de campo e le direction pro cata option de ordinamento",
+	"apihelp-bs-store-param-group": "Catena JSON con information de gruppamento; se deserialisa in un <code>array of objects</code> que tene le nomine de campo e le direction pro cata option de gruppamento",
+	"apihelp-bs-store-param-filter": "Catena JSON con information de filtrage; se deserialisa in un <code>array of objects</code> que tene le nomine de campo, typo de filtro e valor de filtro pro cata option de filtrage",
+	"apihelp-bs-store-param-page": "Permitte que le servitor calcula le initio e le limite",
+	"apihelp-bs-store-param-limit": "Numero de resultatos a restituer",
+	"apihelp-bs-store-param-start": "Le position al qual comenciar le lista de resultatos",
+	"apihelp-bs-store-param-callback": "Le nomine de un methodo in le codice del cliente que debe esser appellate in le responsa (JSONP)",
+	"apihelp-bs-store-param-query": "Simile a <var>filter</var>, ma le valor fornite servi como un filtro solmente pro le campo <var>value</var> de un componente ExtJS",
+	"apihelp-bs-store-param-dc": "Indicator <code>Disable cache</code>"
+}
