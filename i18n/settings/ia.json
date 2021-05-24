@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-setting-path-feature": "Function",
+	"bs-setting-path-extension": "Extension",
+	"bs-setting-path-package": "Pacchetto",
+	"bs-setting-path-system": "Systema",
+	"bs-setting-path-dataanalysis": "Analyse de datos",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Recerca e navigation",
+	"bs-setting-path-personalisation": "Personalisation",
+	"bs-setting-path-skinning": "Apparentias",
+	"bs-setting-path-customizing": "Personalisation",
+	"bs-setting-path-contentstructuring": "Structuration de contento",
+	"bs-setting-path-communication": "Communication",
+	"bs-setting-path-administration": "Administration",
+	"bs-setting-path-qualityassurance": "Controlo de qualitate",
+	"bs-setting-path-export": "Exportation"
+}

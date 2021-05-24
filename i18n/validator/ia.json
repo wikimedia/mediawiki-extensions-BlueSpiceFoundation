@@ -13,5 +13,13 @@
 	"bs-validator-set-validation-approved": "$1 ha essite validate con successo.",
 	"bs-validator-set-validation-not-approved": "Pro $1, solmente {{PLURAL:$3|le sequente valor|un del sequente valores}} es permittite: $2.",
 	"bs-validator-integer-range-validation-too-low": "Le valor fornite es troppo basse. Illo non debe esser inferior a $1.",
-	"bs-validator-integer-range-validation-too-high": "Le valor fornite es troppo alte. Illo non debe esser superior a $1."
+	"bs-validator-integer-range-validation-too-high": "Le valor fornite es troppo alte. Illo non debe esser superior a $1.",
+	"bs-validator-value-not-recognized": "Le valor non pote esser tractate",
+	"bs-validator-invalid-boolean": "Non es un valor boolean valide",
+	"bs-validator-invalid-float": "Non es un numero a comma flottante valide",
+	"bs-validator-invalid-integer": "Non es un numero integre valide",
+	"bs-validator-invalid-string": "Non es un catena valide",
+	"bs-validator-invalid-coordinate": "Non es un coordinata valide",
+	"bs-validator-invalid-parameter": "Iste parametro non es permittite",
+	"bs-validator-missing-required": "Iste parametro es obligatori"
 }

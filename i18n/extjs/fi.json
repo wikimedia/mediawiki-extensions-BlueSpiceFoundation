@@ -48,6 +48,7 @@
 	"bs-extjs-filter-less-than": "vähemmän kuin",
 	"bs-extjs-filter-bool-yes": "kyllä",
 	"bs-extjs-filter-bool-no": "ei",
+	"bs-extjs-title-success": "Onnistui",
 	"bs-extjs-title-warning": "Varoitus",
 	"bs-extjs-categoryboxselect-emptytext": "Lisää luokka",
 	"bs-extjs-categorytree-title": "Luokat",

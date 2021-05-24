@@ -4,6 +4,26 @@
 			"McDutchie"
 		]
 	},
+	"bs-upload-uploaddialogtitle": "Incargar file",
+	"bs-upload-uploadbuttontext": "Percurrer",
+	"bs-upload-uploadfilefieldlabel": "Nomine del file",
+	"bs-upload-uploadfileemptytext": "Insere nove file...",
+	"bs-upload-uploaddestfilelabel": "Nomine del file de destination",
+	"bs-upload-allowedfiletypesare": "Le typos de file valide es:",
+	"bs-upload-license": "Licentia",
+	"bs-upload-uploadwatchthislabel": "Observar iste file",
+	"bs-upload-uploadignorewarningslabel": "Ignorar omne advertimentos",
+	"bs-upload-categories": "Categorias",
 	"bs-upload-upload-waitmessage": "Incargamento in curso...",
-	"bs-upload-uploadwarningdialog-intro": "Le sequente avisos se produceva durante le tentativa de incargar le file"
+	"bs-upload-error": "Error",
+	"bs-upload-descfilelabel": "Description",
+	"bs-upload-error-long": "Error in le processo de incargamento",
+	"bs-upload-filetypenotsupported": "Iste typo de file non es supportate",
+	"bs-upload-details": "Detalios",
+	"bs-upload-uploadwarningdialog-title": "Incargamento de file: Advertimentos",
+	"bs-upload-uploadwarningdialog-intro": "Le sequente avisos se produceva durante le tentativa de incargar le file",
+	"bs-upload-uploadwarningdialog-outro": "Clicca sur \"{{int:bs-extjs-ok}}\" pro ignorar le advertimentos e incargar le file, clicca sur \"{{int:bs-extjs-cancel}}\" pro retornar al formulario de incargamento",
+	"bs-upload-uploadwarningdialog-warning-exists": "Un file con nomine \"$1\" jam existe",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Il ha {{PLURAL:$1|un duplicato|duplicatos}} de iste file",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Error incognite con codice \"$1\""
 }

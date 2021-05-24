@@ -8,6 +8,7 @@
 		]
 	},
 	"bs-setting-path-feature": "Ominaisuus",
+	"bs-setting-path-extension": "Laajennus",
 	"bs-setting-path-package": "Paketti",
 	"bs-setting-path-system": "Järjestelmä",
 	"bs-setting-path-editor": "Muokkain",

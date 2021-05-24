@@ -5,15 +5,20 @@
 		]
 	},
 	"bs-ns_main": "(ገጻት)",
+	"bs-ns_all": "(ኩሎም)",
 	"bs-tab_navigation": "መዳህሰስ",
 	"bs-userbar_loginswitch_logout": "ብመንነት ውጻእ",
 	"bs-userbar_loginswitch_login": "ብመንነት እተው",
-	"bs-extended-search-textfield-defaultvalue": "ምድላይ...",
+	"bs-extended-search-textfield-defaultvalue": "ድለይ...",
+	"bs-extended-search-textfield-tooltip": "ኣብ ዊኪ ድለይ",
+	"bs-two-units-ago": "ቅድሚ $1ን $2ን",
+	"bs-one-unit-ago": "ቅድሚ $1",
 	"bs-now": "ሕጂ",
+	"bs-viewtagerrorlist-legend": "$1 - ጌጋ",
 	"bs-imagepage-download-text": "ኣውርድ",
 	"bs-from-something": "(ካብ $1)",
 	"bs-export-menu-print-text": "ሕተም",
 	"bs-graphicallist-action-close": "ዕጸው",
 	"bs-graphicallist-action-list": "ዝርዝር",
-	"bs-graphicallist-action-preview": "ኣቐደሚ ትርኢት"
+	"bs-graphicallist-action-preview": "ኣቐዳሚ ትርኢት"
 }
