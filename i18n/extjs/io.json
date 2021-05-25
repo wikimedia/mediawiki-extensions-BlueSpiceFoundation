@@ -9,6 +9,7 @@
 	"bs-extjs-delete": "Efacar",
 	"bs-extjs-edit": "Redaktar",
 	"bs-extjs-confirm": "Konfirmez",
+	"bs-extjs-loading": "Karganta...",
 	"bs-extjs-label-group": "Grupo",
 	"bs-extjs-label-namespace": "'Namespace'",
 	"bs-extjs-upload": "Kargar",
