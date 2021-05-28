@@ -139,7 +139,7 @@ class BSSkinSidebarTreeParser {
 
 		// TODO: Implement all this icons stuff!
 		$cfg = [
-			'id' => Sanitizer::escapeId( $parts[0] ),
+			'id' => Sanitizer::escapeIdForAttribute( $parts[0] ),
 			BSTreeNode::CONFIG_TEXT => $text
 		];
 
