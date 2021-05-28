@@ -90,7 +90,7 @@ class BSTreeRenderer {
 	 */
 	protected function doExpandPath( $path, $node ) {
 		$firstElement = array_shift( $path );
-		if ( Sanitizer::escapeId( $node->getId() ) !== $firstElement ) {
+		if ( Sanitizer::escapeIdForAttribute( $node->getId() ) !== $firstElement ) {
 			if ( $firstElement !== '' || $node->isRoot() ) {
 				return;
 			}
@@ -107,7 +107,7 @@ class BSTreeRenderer {
 		$this->html .= Html::openElement(
 			'ul',
 			[
-				'id' => Sanitizer::escapeId( $this->config->get( self::CONFIG_ID ) ),
+				'id' => Sanitizer::escapeIdForAttribute( $this->config->get( self::CONFIG_ID ) ),
 				'class' => 'bs-tree-root'
 			]
 		);

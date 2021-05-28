@@ -57,7 +57,7 @@ class HTMLFormEx extends HTMLForm {
 			'class' => implode( ' ', $classes ),
 		];
 		if ( $sectionName ) {
-			$attribs['id'] = Sanitizer::escapeId( "mw-htmlform-$sectionName" );
+			$attribs['id'] = Sanitizer::escapeIdForAttribute( "mw-htmlform-$sectionName" );
 		}
 
 		$tableHtml = Html::rawElement( 'table', $attribs,
