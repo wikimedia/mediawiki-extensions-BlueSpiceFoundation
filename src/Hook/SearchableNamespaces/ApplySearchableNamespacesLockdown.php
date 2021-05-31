@@ -23,7 +23,9 @@ class ApplySearchableNamespacesLockdown extends \BlueSpice\Hook\SearchableNamesp
 		$permissionObject = $this->permissionRegistry->getPermission( 'read' );
 		$permissionRoles = $permissionObject->getRoles();
 
-		$userGroups = $this->user->getEffectiveGroups();
+		$userGroups = $this->getServices()
+			->getUserGroupManager()
+			->getUserEffectiveGroups( $this->user );
 
 		foreach ( $this->namespaces as $nsId => $nsName ) {
 			if ( isset( $this->namespaceRolesLockdown[ $nsId ] ) == false ) {

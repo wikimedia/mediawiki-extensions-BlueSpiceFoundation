@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Utility;
 
+use MediaWiki\MediaWikiServices;
+
 class MaintenanceUser {
 
 	/**
@@ -93,11 +95,13 @@ class MaintenanceUser {
 		// Error: 1213 Deadlock found when trying to get lock; try restarting transaction (db)
 		$expiry = null;
 
+		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+
 		foreach ( $this->getGroups() as $group ) {
-			if ( in_array( $group, $user->getGroups() ) ) {
+			if ( in_array( $group, $userGroupManager->getUserGroups( $user ) ) ) {
 				continue;
 			}
-			$user->addGroup( $group, $expiry );
+			$userGroupManager->addToUserGroup( $user, $group, $expiry );
 		}
 	}
 

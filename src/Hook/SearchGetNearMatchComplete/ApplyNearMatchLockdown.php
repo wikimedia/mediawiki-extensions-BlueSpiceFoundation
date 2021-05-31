@@ -27,7 +27,9 @@ class ApplyNearMatchLockdown extends \BlueSpice\Hook\SearchGetNearMatchComplete 
 		$permissionObject = $this->permissionRegistry->getPermission( 'read' );
 		$permissionRoles = $permissionObject->getRoles();
 
-		$userGroups = $this->user->getEffectiveGroups();
+		$userGroups = $this->getServices()
+			->getUserGroupManager()
+			->getUserEffectiveGroups( $this->user );
 
 		if ( isset( $this->namespaceRolesLockdown[ $titleNs ] ) === false ) {
 			return true;

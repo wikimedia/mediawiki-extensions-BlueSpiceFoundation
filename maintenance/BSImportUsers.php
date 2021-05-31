@@ -88,7 +88,9 @@ class BSImportUsers extends BSMaintenance {
 
 			$oGroups = $oUserNode->getElementsByTagName( 'group' );
 			foreach ( $oGroups as $oGroup ) {
-				$oUser->addGroup( $oGroup->getAttribute( 'name' ) );
+				MediaWikiServices::getInstance()
+					->getUserGroupManager()
+					->addUserToGroup( $oUser, $oGroup->getAttribute( 'name' ) );
 			}
 
 			if ( $this->getOption( 'createuserpage', false ) ) {

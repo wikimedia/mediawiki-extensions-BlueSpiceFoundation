@@ -21,10 +21,11 @@ class NamespaceLockdownTest extends MediaWikiTestCase {
 		parent::setUp();
 
 		$user = $this->getTestUser()->getUser();
+		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
 		// Strip to just "user" group
 		array_map( static function ( $group ) use ( $user ) {
-			$user->removeGroup( $group );
-		}, $user->getGroups() );
+			$userGroupManager->removeUserFromGroup( $user, $group );
+		}, $userGroupManager->getUserGroups( $user ) );
 		$this->user = $user;
 	}
 
