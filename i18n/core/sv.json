@@ -49,6 +49,7 @@
 	"bs-permissionerror": "Behörighetsfel!",
 	"bs-lockdown-groups-permissionerror": "Åtgärden \"$1\" är inte tillgänglig av följande {{PLURAL:$2|orsak|orsaker}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> är inte en giltig katalog.",
+	"bs-filesystemhelper-has-path-traversal": "Sökvägskorsning upptäcktes!",
 	"bs-filesystemhelper-file-not-exists": "Filen <code>$1</code> existerar inte.",
 	"bs-filesystemhelper-file-copy-error": "Filen <code>$1</code> kunde inte kopieras.",
 	"bs-filesystemhelper-file-already-exists": "Filen <code>$1</code> finns redan.",
