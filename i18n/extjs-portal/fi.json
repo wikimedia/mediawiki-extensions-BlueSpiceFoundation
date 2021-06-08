@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Joquliina",
 			"Pyscowicz"
 		]
 	},
 	"bs-extjs-portal-height": "Korkeus",
 	"bs-extjs-portal-timespan-week": "Viikko",
-	"bs-extjs-portal-timespan-month": "Kuukausi"
+	"bs-extjs-portal-timespan-month": "Kuukausi",
+	"bs-extjs-portal-timespan": "Ajanjakso"
 }

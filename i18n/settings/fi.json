@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Joquliina",
 			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz"
@@ -10,5 +11,8 @@
 	"bs-setting-path-export": "Vie",
 	"bs-setting-path-feature": "Ominaisuus",
 	"bs-setting-path-editor": "Muokkain",
-	"bs-setting-path-package": "Paketti"
+	"bs-setting-path-package": "Paketti",
+	"bs-setting-path-extension": "Laajennus",
+	"bs-setting-path-communication": "Kommunikointi",
+	"bs-setting-path-administration": "Hallinnointi"
 }

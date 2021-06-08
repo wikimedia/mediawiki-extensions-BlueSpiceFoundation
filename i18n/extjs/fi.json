@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Cxz",
+			"Joquliina",
 			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz",
@@ -64,5 +65,7 @@
 	"bs-extjs-reset": "Nollaa",
 	"bs-extjs-filters": "Suodattimet",
 	"bs-extjs-filter-less-than": "vähemmän kuin",
-	"bs-extjs-pageexport-dialog-title": "Vie sivuja"
+	"bs-extjs-pageexport-dialog-title": "Vie sivuja",
+	"bs-extjs-filter-greater-than": "suurempi kuin",
+	"bs-extjs-title-success": "Onnistui"
 }

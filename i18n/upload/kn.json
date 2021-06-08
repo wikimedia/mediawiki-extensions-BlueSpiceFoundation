@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ"
+		]
+	},
+	"bs-upload-uploadfilefieldlabel": "ಕಡತದ ಹೆಸರು",
+	"bs-upload-license": "ಪರವಾನಗಿ",
+	"bs-upload-categories": "ವರ್ಗಗಳು",
+	"bs-upload-error": "ದೋಷ",
+	"bs-upload-descfilelabel": "ವಿವರಣೆ",
+	"bs-upload-details": "ವಿವರಗಳು",
+	"bs-upload-uploadwarningdialog-warning-exists": "\"$1\" ಹೆಸರಿನ ಒಂದು ಕಡತ ಆಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ"
+}

@@ -103,5 +103,6 @@
 	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp",
 	"bs-lockdown-groups-permissionerror": "Åtgärden \"$1\" är inte tillgänglig av följande {{PLURAL:$2|orsak|orsaker}}: $3",
 	"bs-tag-param-desc": "Värde för elementattribut \"$1\"",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!",
+	"bs-filesystemhelper-has-path-traversal": "Sökvägskorsning upptäcktes!"
 }

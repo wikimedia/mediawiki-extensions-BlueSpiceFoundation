@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-filerepo-labelupload": "Incargar",
+	"bs-filerepo-labelfilter": "Filtrar",
+	"bs-filerepo-headerfilename": "Nomine del file",
+	"bs-filerepo-headerfilesize": "Dimension",
+	"bs-filerepo-headerpagecategories": "Categorias",
+	"bs-filerepo-headerfilewidth": "Latitude",
+	"bs-filerepo-headerfileheight": "Altitude",
+	"bs-filerepo-headerfilemimetype": "Typo MIME",
+	"bs-filerepo-headerfileusertext": "Usator",
+	"bs-filerepo-headerfileextension": "Extension",
+	"bs-filerepo-headerfiletimestamp": "Incargate",
+	"bs-filerepo-headerfilemediatype": "Typo de multimedia",
+	"bs-filerepo-headerfiledescription": "Description",
+	"bs-filerepo-headerfilethumbnail": "Miniatura",
+	"bs-filerepo-yes": "Si",
+	"bs-filerepo-no": "No",
+	"bs-filerepo-pagesize": "Entratas per pagina"
+}

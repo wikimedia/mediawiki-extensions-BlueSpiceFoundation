@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"NEHAOUA",
-			"ديفيد"
+			"ديفيد",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "أضف ... جديدا",
@@ -12,5 +13,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "إضافة مدخلة جديدة",
 	"bs-ooui-key-value-input-widget-error-message": "يجب تعيين جميع الحقول المطلوبة!",
 	"bs-ooui-key-value-input-widget-no-values-label": "لا توجد مجموعة قيم!",
-	"bs-ooui-btn-dismiss-alert-title": "رفض"
+	"bs-ooui-btn-dismiss-alert-title": "رفض",
+	"bs-ooui-key-value-input-widget-section-label": "قسم",
+	"bs-ooui-key-value-input-widget-add-section-label": "أضف قسمًا جديدًا"
 }
