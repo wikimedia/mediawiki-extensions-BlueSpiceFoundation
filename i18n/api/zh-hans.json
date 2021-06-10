@@ -4,6 +4,7 @@
 			"AYZ04",
 			"Lakejason0",
 			"Liuxinyu970226",
+			"Shizhao",
 			"Yining Chen",
 			"ZhuofanWu",
 			"佛壁灯",
@@ -79,6 +80,13 @@
 	"apihelp-bs-js-var-config-param-func": "要执行的配置命令：有|取得",
 	"apihelp-bs-js-var-config-param-context": "包含调用上下文的JSON编码对象",
 	"apihelp-bs-js-var-config-param-format": "结果的格式",
+	"apihelp-bs-categorylinks-store-description": "列出页面的所有分类，包括指向分类页面的链接及显式和隐藏类别的标记。",
+	"apihelp-bs-categorylinks-store-summary": "列出页面的所有分类，包括指向分类页面的链接及显式和隐藏分类的标记。",
 	"apihelp-bs-categorylinks-store-param-page-id": "页面的pageid",
-	"apihelp-bs-templatelinks-store-param-page-id": "页面的Page ID"
+	"apihelp-bs-templatelinks-store-description": "列出页面的所有模板，包括指向模板的链接。",
+	"apihelp-bs-templatelinks-store-summary": "列出页面的所有模板，包括指向模板的链接。",
+	"apihelp-bs-templatelinks-store-param-page-id": "页面的Page ID",
+	"apihelp-bs-linker-summary": "返回链接器生成的页面的链接",
+	"apihelp-bs-linker-description": "返回链接器生成的页面的链接",
+	"apihelp-bs-linker-param-linkdescs": "带有页面列表的关联JSON数组。每个项目都必须包含页面标题作为“target”。 可以选择包含“text”、“attribs”和“query”。"
 }
