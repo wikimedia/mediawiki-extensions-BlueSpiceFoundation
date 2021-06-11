@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"bs-extjs-yes": "Sì",
+	"bs-extjs-no": "No",
+	"bs-extjs-save": "Sarva",
+	"bs-extjs-delete": "Cancella",
+	"bs-extjs-edit": "Cancia",
+	"bs-extjs-filter-bool-yes": "sì"
+}
