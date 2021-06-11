@@ -3,6 +3,7 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Hedda",
+			"Joseph",
 			"MuratTheTurkish",
 			"SwornToTranslate29"
 		]
@@ -75,5 +76,14 @@
 	"apihelp-bs-js-var-config-param-name": "Alınacak yapılandırma değişkeninin adı",
 	"apihelp-bs-js-var-config-param-func": "Yürütülecek yapılandırma işlevi: has|get",
 	"apihelp-bs-js-var-config-param-context": "Çağrının bağlamına sahip JSON kodlu nesne",
-	"apihelp-bs-js-var-config-param-format": "Sonucun biçimi"
+	"apihelp-bs-js-var-config-param-format": "Sonucun biçimi",
+	"apihelp-bs-categorylinks-store-description": "Kategori sayfasına, sayfa dahili bağlantı içeren tüm kategorileri listeler, ve açık ve saklı kategorileri işaretler.",
+	"apihelp-bs-categorylinks-store-summary": "Kategori sayfasına, sayfa dahili bağlantı içeren tüm kategorileri listeler, ve açık ve saklı kategorileri işaretler.",
+	"apihelp-bs-categorylinks-store-param-page-id": "Sayfanın sayfa id'si",
+	"apihelp-bs-templatelinks-store-description": "Şablona, sayfa dahili bağlantı içeren tüm şablonları listeler.",
+	"apihelp-bs-templatelinks-store-summary": "Şablona, sayfa dahili bağlantı içeren tüm şablonları listeler.",
+	"apihelp-bs-templatelinks-store-param-page-id": "Sayfanın sayfa id'si",
+	"apihelp-bs-linker-summary": "Linker tarafından üretilen sayfalara olan bağlantıları getirir",
+	"apihelp-bs-linker-description": "Linker tarafından üretilen sayfalara olan bağlantıları getirir",
+	"apihelp-bs-linker-param-linkdescs": "Bir sayfa listesiyle ilişkili bir JSON dizisi. Her girdi sayfa başlığını `hedef` olarak içermelidir. İsteğe bağlı olarak `metin`, `öznitelikler` ve `sorgu` içerebilir."
 }

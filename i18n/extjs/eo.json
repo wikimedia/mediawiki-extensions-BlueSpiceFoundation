@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Jakub Fabijan",
 			"Mirin",
 			"Robin van der Vliet",
 			"Yekrats",
@@ -74,5 +75,6 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturoj",
 	"bs-extjs-flyout-tab-thumbs-title": "Ŝalti vidojn de miniaturoj",
 	"bs-extjs-flyout-tab-grid-label": "Detaloj",
-	"bs-extjs-flyout-add-label": "Aldoni eron"
+	"bs-extjs-flyout-add-label": "Aldoni eron",
+	"bs-extjs-label-group": "Grupo"
 }

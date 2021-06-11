@@ -90,5 +90,9 @@
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-notifications-agent-anon": "익명 사용자",
 	"protect-level-editor": "편집자와 관리자만 허용",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "$1 구성 파일을 쓰지 못했습니다!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "$1 구성 파일을 쓰지 못했습니다!",
+	"bs-filesystemhelper-folder-rename-error": "<code>$1</code> 폴더의 이름을 <code>$2</code>(으)로 변경하지 못했습니다.",
+	"bs-tag-input-desc": "요소 내용의 값",
+	"bs-tag-param-desc": "요소 속성 '$1'의 값",
+	"bs-bluespice": "블루스파이스"
 }

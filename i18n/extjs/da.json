@@ -62,5 +62,7 @@
 	"bs-extjs-pageexport-error-invalid-title": "Navnet på listen er ugyldigt",
 	"bs-extjs-tools-trigger-text": "Værktøjer",
 	"bs-extjs-flyout-tab-grid-label": "Detaljer",
-	"bs-extjs-pageexport-list-format-plain-label": "Ren tekst"
+	"bs-extjs-pageexport-list-format-plain-label": "Ren tekst",
+	"bs-extjs-filters": "Filtre",
+	"bs-extjs-pageexport-pagecollection-prefix": "Sidesamling"
 }

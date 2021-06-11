@@ -2,6 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cxz",
+			"Joquliina",
+			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz",
 			"Silvonen",
@@ -59,5 +61,11 @@
 	"bs-extjs-flyout-add-title": "Napsauta tästä lisätäksesi uuden kohteen",
 	"bs-extjs-flyout-add-label": "Lisää kohde",
 	"bs-extjs-confirmNavigationTitle": "Seuraa linkkiä",
-	"bs-extjs-mainns": "(Päänimiavaruus)"
+	"bs-extjs-mainns": "(Päänimiavaruus)",
+	"bs-extjs-reset": "Nollaa",
+	"bs-extjs-filters": "Suodattimet",
+	"bs-extjs-filter-greater-than": "suurempi kuin",
+	"bs-extjs-filter-less-than": "vähemmän kuin",
+	"bs-extjs-title-success": "Onnistui",
+	"bs-extjs-pageexport-dialog-title": "Vie sivuja"
 }

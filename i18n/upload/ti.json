@@ -4,11 +4,11 @@
 			"Joanmp17"
 		]
 	},
-	"bs-upload-uploaddialogtitle": "ፋይል ጸዓን",
+	"bs-upload-uploaddialogtitle": "ፋይል ጸዓን/ስቐል",
 	"bs-upload-uploadbuttontext": "ዳህስስ",
-	"bs-upload-uploadfilefieldlabel": "ናይ ፋይል ሽም",
+	"bs-upload-uploadfilefieldlabel": "ሽም ፋይል",
 	"bs-upload-categories": "መደባት",
 	"bs-upload-error": "ጌጋ",
 	"bs-upload-descfilelabel": "መግለጺ",
-	"bs-upload-details": "ዝርዝሪት"
+	"bs-upload-details": "ዝርዝራት"
 }

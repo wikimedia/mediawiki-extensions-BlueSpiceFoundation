@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BrennodAloisi",
 			"Cedric31",
 			"McDutchie"
 		]
@@ -57,5 +58,6 @@
 	"bs-pref-anonuserimage": "Avatar d’utilizaire anonim :",
 	"bs-pref-deleteduserimage": "Avatar d’utilizaire suprimit :",
 	"bs-pref-bspinginterval": "Interval de Ping (en segondas) :",
-	"bs-pref-testmode": "Activar lo mòde de tèst"
+	"bs-pref-testmode": "Activar lo mòde de tèst",
+	"bs-graphicallist-action-preview": "Previsualizacion"
 }

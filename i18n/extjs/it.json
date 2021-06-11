@@ -7,6 +7,7 @@
 			"Macofe",
 			"PeppeAeco",
 			"Selven",
+			"TheRukk",
 			"Tizven"
 		]
 	},
@@ -82,5 +83,6 @@
 	"bs-extjs-flyout-tab-grid-label": "Dettagli",
 	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio",
 	"bs-extjs-flyout-add-title": "Clicca qui per aggiungere un nuovo elemento",
-	"bs-extjs-flyout-add-label": "Aggiungi elemento"
+	"bs-extjs-flyout-add-label": "Aggiungi elemento",
+	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine"
 }

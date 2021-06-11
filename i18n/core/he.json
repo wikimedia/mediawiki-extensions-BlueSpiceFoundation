@@ -11,6 +11,7 @@
 			"Ronel1",
 			"Steeve815",
 			"YaronSh",
+			"דגש",
 			"דגש חזק",
 			"ערן"
 		]
@@ -70,7 +71,7 @@
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
 	"bs-navigation-contact": "יצירת קשר",
-	"bs-imagepage-download-text": "להורדה",
+	"bs-imagepage-download-text": "הורדה",
 	"bs-ns": "מרחב שם",
 	"bs-from-something": "(מתוך $1)",
 	"bs-pref-fileextensions": "סיומות קבצים מותרות:",
@@ -100,8 +101,8 @@
 	"bs-graphicallist-action-preview": "תצוגה מקדימה",
 	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
-	"right-wikiadmin": "משומשות בהרחבת BlueSpice עבור משימות ניהול אפשריות קריטיות כגון ניהול משתמשים, הרשאות ותצורה גלובלית",
+	"action-wikiadmin": "להשתמש בפעולות ניהול שיכולות להיות מסוכנות כגון ניהול משתמשים, הרשאות, הגדרות גלובליות (הרבחות BlueSpice)",
+	"right-wikiadmin": "שימוש בפעולות ניהול שיכולות להיות מסוכנות כגון ניהול משתמשים, הרשאות, הגדרות גלובליות (הרבחות BlueSpice)",
 	"bs-notifications-agent-anon": "משתמש אלמוני",
 	"protect-level-editor": "לאפשר רק לעורכים ומנהלים",
 	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מיד לאחר טעינת העמוד",

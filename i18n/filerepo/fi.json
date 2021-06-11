@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mediawikitranslator",
 			"Pyscowicz"
 		]
 	},
@@ -16,5 +17,7 @@
 	"bs-filerepo-headerfiledescription": "Kuvaus",
 	"bs-filerepo-headerfilethumbnail": "Pienoiskuva",
 	"bs-filerepo-yes": "Kyllä",
-	"bs-filerepo-no": "Ei"
+	"bs-filerepo-no": "Ei",
+	"bs-filerepo-labelfilter": "Suodatin",
+	"bs-filerepo-headerfileextension": "Laajennus"
 }

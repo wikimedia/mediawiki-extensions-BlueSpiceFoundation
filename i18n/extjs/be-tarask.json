@@ -3,7 +3,8 @@
 		"authors": [
 			"Nerogaf",
 			"Red Winged Duck",
-			"Renessaince"
+			"Renessaince",
+			"W"
 		]
 	},
 	"bs-extjs-ok": "Добра",
@@ -52,5 +53,13 @@
 	"bs-extjs-pageexport-general-error": "Памылка экспарту",
 	"bs-extjs-pageexport-pagecollection-prefix": "Зборка старонак",
 	"bs-pagecollection-prefix": "Зборка старонак",
-	"bs-extjs-pageexport-success": "Экспарт пасьпяховы"
+	"bs-extjs-pageexport-success": "Экспарт пасьпяховы",
+	"bs-extjs-filter-contains": "зьмяшчае",
+	"bs-extjs-filter-contains-not": "не зьмяшчае",
+	"bs-extjs-filter-starts-with": "пачынаецца з",
+	"bs-extjs-filter-greater-than": "больш чым",
+	"bs-extjs-filter-less-than": "менш чым",
+	"bs-extjs-categoryboxselect-emptytext": "Дадаць катэгорыю",
+	"bs-extjs-tools-trigger-text": "Прылады",
+	"bs-extjs-flyout-tab-grid-label": "Падрабязнасьці"
 }

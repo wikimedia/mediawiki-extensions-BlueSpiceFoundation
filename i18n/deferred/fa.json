@@ -3,6 +3,7 @@
 		"authors": [
 			"Amirsara",
 			"FarsiNevis",
+			"Jeeputer",
 			"Reza1615"
 		]
 	},
@@ -19,5 +20,6 @@
 	"bs-deferred-action-apiremovecategories-description": "حذف رده‌ها از «$1»",
 	"bs-deferred-action-apisetcategories-description": "رده‌های «$1» را تعیین کن.",
 	"bs-deferred-action-apimovepage-description": "انتقال «$1» به «$2»",
-	"bs-deferred-action-apideletepage-description": "حذف «$1»."
+	"bs-deferred-action-apideletepage-description": "حذف «$1».",
+	"bs-deferred-action-apicopypage-description": "کپی‌کردن «$1» به «$2»"
 }

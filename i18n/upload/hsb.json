@@ -1,0 +1,28 @@
+{
+	"@metadata": {
+		"authors": [
+			"J budissin"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Dataju nahrać",
+	"bs-upload-uploadbuttontext": "Přepytować",
+	"bs-upload-uploadfilefieldlabel": "Datajowe mjeno",
+	"bs-upload-uploadfileemptytext": "Dataju wubrać...",
+	"bs-upload-uploaddestfilelabel": "Cilowe mjeno",
+	"bs-upload-allowedfiletypesare": "Płaćiwe typy datajow su:",
+	"bs-upload-license": "Licenca",
+	"bs-upload-uploadwatchthislabel": "Tutu dataju wobkedźbować",
+	"bs-upload-uploadignorewarningslabel": "Wšě warnowanja ignorować",
+	"bs-upload-categories": "Kategorije",
+	"bs-upload-upload-waitmessage": "Nahrawa so...",
+	"bs-upload-error": "Zmylk",
+	"bs-upload-descfilelabel": "Wopis",
+	"bs-upload-error-long": "Zmylk při nahrawanju dataje",
+	"bs-upload-filetypenotsupported": "Datajowy typ so njepodpěruje",
+	"bs-upload-details": "Podrobnosće",
+	"bs-upload-uploadwarningdialog-title": "Dataju nahrać: Warnowanja",
+	"bs-upload-uploadwarningdialog-intro": "Slědowace warnowanja su wustupili při pospyće dataju nahrać.",
+	"bs-upload-uploadwarningdialog-warning-exists": "Dataja z mjenom „$1“ hižo eksistuje",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Je duplikat|Stej duplikataj|Su duplikaty}} tuteje dataje",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Njeznate warnowanje z kodom „$1“"
+}

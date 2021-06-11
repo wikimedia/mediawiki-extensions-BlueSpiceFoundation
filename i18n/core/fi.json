@@ -3,6 +3,7 @@
 		"authors": [
 			"01miki10",
 			"Cxz",
+			"Mediawikitranslator",
 			"Pxos",
 			"Pyscowicz",
 			"SMAUG",
@@ -75,5 +76,7 @@
 	"right-wikiadmin": "Käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
 	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
 	"bs-graphicallist-action-list": "Luettelo",
-	"bs-graphicallist-action-preview": "Esikatsele"
+	"bs-graphicallist-action-preview": "Esikatsele",
+	"bs-permissionerror": "Käyttöoikeusvirhe!",
+	"bs-notifications-agent-anon": "anonyymi käyttäjä"
 }

@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Adder un nove...",
+	"bs-ooui-key-value-input-widget-key-label": "Clave",
+	"bs-ooui-key-value-input-widget-value-label": "Valor",
+	"bs-ooui-key-value-input-widget-add-button-label": "Adder",
+	"bs-ooui-key-value-input-widget-add-form-label": "Adder nove entrata",
+	"bs-ooui-key-value-input-widget-error-message": "Tote le campos obligatori debe esser definite.",
+	"bs-ooui-key-value-input-widget-no-values-label": "Nulle valor definite.",
+	"bs-ooui-btn-dismiss-alert-title": "Clauder",
+	"bs-ooui-key-value-input-widget-section-label": "Section",
+	"bs-ooui-key-value-input-widget-add-section-label": "Adder nove section"
+}

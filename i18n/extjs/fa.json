@@ -6,6 +6,7 @@
 			"Amirsara",
 			"Arash.pt",
 			"FarsiNevis",
+			"Jeeputer",
 			"Reza1615"
 		]
 	},
@@ -77,5 +78,12 @@
 	"bs-extjs-tools-trigger-text": "ابزارها",
 	"bs-extjs-flyout-tab-thumbs-label": "بندانگشتی",
 	"bs-extjs-flyout-tab-grid-label": "جزئیات",
-	"bs-extjs-flyout-add-label": "افزودن آیتم"
+	"bs-extjs-flyout-add-label": "افزودن آیتم",
+	"bs-extjs-label-group": "گروه",
+	"bs-extjs-pageexport-required-text": "نام فهرست نمی‌تواند خالی بماند و دست کم یک صفحه باید انتخاب شود",
+	"bs-extjs-combo-box-default-placeholder": "برای پالایش، بنویسید...",
+	"bs-extjs-tools-trigger-title": "برای باز کردن منوی ابزارها کلیک کنید.",
+	"bs-extjs-flyout-tab-thumbs-title": "تغییر به نمای بندانگشتی",
+	"bs-extjs-flyout-tab-grid-title": "تغییر به نمای جزئیات",
+	"bs-extjs-flyout-add-title": "برای افزودن آیتم جدید کلیک کنید"
 }

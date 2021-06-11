@@ -6,6 +6,7 @@
 			"Ebraminio",
 			"FarsiNevis",
 			"Huji",
+			"Jeeputer",
 			"Reza1615",
 			"Rtemis"
 		]
@@ -91,5 +92,11 @@
 	"bs-graphicallist-action-preview": "پیش‌نمایش",
 	"bs-bluespice-mediawiki": "مدیاویکی «چاشنی آبی»",
 	"bs-bluespice": "چاشنی آبی",
-	"bs-notifications-agent-anon": "کاربر ناشناس"
+	"bs-notifications-agent-anon": "کاربر ناشناس",
+	"bs-lockdown-groups-permissionerror": "عمل $1 به {{PLURAL:$2|دلیل|دلایل}} زیر امکان‌پذیر نیست: $3",
+	"protect-level-editor": "تنها ویرایشگران و مدیران",
+	"bs-ping-on-init-desc": "ارسال بی‌درنگ درخواست پینگ پس از بارگذاری صفحه",
+	"bs-pref-fileextensions-help": "نوع پرونده‌هایی که می‌توان در این ویکی بارگذاری کرد. برخی انواع (مثلاً html، js، php، cgi، exe) به‌دلایل امنیتی مجاز نیستند. حتی اگر به اینجا اضافه شده‌باشند.",
+	"bs-pref-imageextensions-help": "نوع پرونده‌های تصویری که می‌توان در این ویکی بارگذاری کرد. فرمت‌های وب ممکن: gif، png، jpg، jpeg. s سایر فرمت‌های تصویری: tiff، bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "ناتوان در نوشتن پروندهٔ پیکربندی $1!"
 }

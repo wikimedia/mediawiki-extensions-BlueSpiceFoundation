@@ -3,7 +3,8 @@
 		"authors": [
 			"Nerogaf",
 			"Red Winged Duck",
-			"Renessaince"
+			"Renessaince",
+			"W"
 		]
 	},
 	"bs-ns_main": "(Старонкі)",
@@ -35,5 +36,9 @@
 	"bs-graphicallist-action-list": "Сьпіс",
 	"bs-graphicallist-action-preview": "Перадпрагляд",
 	"bs-bluespice": "BlueSpice",
-	"bs-notifications-agent-anon": "ананімны ўдзельнік"
+	"bs-notifications-agent-anon": "ананімны ўдзельнік",
+	"bs-extended-search-tooltip-fulltext": "Поўнатэкставы пошук",
+	"bs-extended-search-textfield-defaultvalue": "Шукаць…",
+	"bs-filesystemhelper-upload-unsupported-type": "Гэты від файла не падтрымліваецца.",
+	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)"
 }

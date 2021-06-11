@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Bishnu Saikia",
-			"Sagsag"
+			"Sagsag",
+			"Simbu123"
 		]
 	},
 	"bs-extjs-confirm": "নিশ্চিত কৰক",
-	"bs-extjs-tools-trigger-text": "সঁজুলি"
+	"bs-extjs-tools-trigger-text": "সঁজুলি",
+	"bs-extjs-label-namespace": "নামস্থান",
+	"bs-extjs-mainns": "(মুখ্য)"
 }

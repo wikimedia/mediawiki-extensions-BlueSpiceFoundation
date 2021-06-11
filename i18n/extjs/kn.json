@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"AVSmalnad77",
+			"VASANTH S.N.",
+			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ"
 		]
 	},
-	"bs-extjs-cancel": "ರದ್ದು ಮಾಡು",
+	"bs-extjs-cancel": "ರದ್ದುಮಾಡಿ",
 	"bs-extjs-yes": "ಹೌದು",
 	"bs-extjs-no": "ಇಲ್ಲ",
 	"bs-extjs-save": "ಉಳಿಸಿ",
@@ -22,7 +24,7 @@
 	"bs-extjs-saving": "ಉಳಿಸಲಾಗುತ್ತಿದೆ....",
 	"bs-extjs-reset": "ಮರುಹೊಂದಿಸು",
 	"bs-extjs-close": "ಮುಚ್ಚಿ",
-	"bs-extjs-label-user": "ಸದಸ್ಯ",
+	"bs-extjs-label-user": "ಬಳಕೆದಾರ",
 	"bs-extjs-upload": "ನಕಲೇರಿಸು",
 	"bs-extjs-browse": "ವಿಹರಿಸಿ",
 	"bs-extjs-uploading": "ನಕಲೇರಿಸಲಾಗುತ್ತಿದೆ...",

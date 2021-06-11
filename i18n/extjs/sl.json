@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
+			"Eleassar",
 			"HairyFotr",
 			"Skalcaa"
 		]
@@ -49,5 +50,6 @@
 	"bs-extjs-title-success": "Uspeh",
 	"bs-extjs-title-warning": "Opozorilo",
 	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorijo",
-	"bs-extjs-pageexport-list-format-link-label": "Povezava"
+	"bs-extjs-pageexport-list-format-link-label": "Povezava",
+	"bs-extjs-filter-date-filter": "Filter"
 }

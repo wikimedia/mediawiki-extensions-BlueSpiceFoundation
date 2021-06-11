@@ -12,5 +12,7 @@
 	"bs-extjs-upload": "Kargar",
 	"bs-extjs-uploading": "Karganta...",
 	"bs-extjs-edit": "Redaktar",
-	"bs-extjs-confirm": "Konfirmez"
+	"bs-extjs-confirm": "Konfirmez",
+	"bs-extjs-loading": "Karganta...",
+	"bs-extjs-filter-greater-than": "plu granda kam"
 }
