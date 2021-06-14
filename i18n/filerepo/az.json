@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"NMW03",
 			"Toghrul Rahimli"
 		]
 	},
+	"bs-filerepo-headerfilemimetype": "MIME tipi",
 	"bs-filerepo-headerfiletimestamp": "Yükləndi"
 }

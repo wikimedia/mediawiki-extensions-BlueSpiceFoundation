@@ -5,6 +5,8 @@
 			"NoiX180"
 		]
 	},
+	"bs-extjs-yes": "Inggih",
 	"bs-extjs-save": "Raksa",
-	"bs-extjs-label-directsearch": "Rereh"
+	"bs-extjs-label-directsearch": "Rereh",
+	"bs-extjs-filter-bool-yes": "inggih"
 }
