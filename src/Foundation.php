@@ -149,6 +149,11 @@ class Foundation {
 			$GLOBALS['mwsgRunJobsTriggerOptions']
 		);
 		$GLOBALS['mwsgRunJobsTriggerRunnerWorkingDir'] = BSDATADIR;
+
+		// Adaptions of `mwstake/mediawiki-component-runjobstrigger`
+		$GLOBALS['mwsgAlertBannersProviderFactories']['legacy-bluespice-extension-attributes'] = [
+			'class' => "\\BlueSpice\\LegacyExtensionAttributesAlertProviderFactory"
+		];
 	}
 
 	protected function initializeRoleSystem() {
