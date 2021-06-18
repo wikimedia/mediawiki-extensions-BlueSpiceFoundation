@@ -2,21 +2,8 @@
 
 namespace BlueSpice;
 
-interface IAlertProvider {
+use MWStake\MediaWiki\Component\AlertBanners\IAlertProvider as AlertBannersIAlertProvider;
 
-	// Keep in sync with `bs.alerts` constants
-	const TYPE_SUCCESS = 'success';
-	const TYPE_INFO = 'info';
-	const TYPE_WARNING = 'warning';
-	const TYPE_DANGER = 'danger';
+interface IAlertProvider extends AlertBannersIAlertProvider {
 
-	/**
-	 * @return string
-	 */
-	public function getHTML();
-
-	/**
-	 * @return string One to the IAlertProvider::TYPE_* constants
-	 */
-	public function getType();
 }
