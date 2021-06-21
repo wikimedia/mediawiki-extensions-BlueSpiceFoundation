@@ -150,10 +150,15 @@ class Foundation {
 		);
 		$GLOBALS['mwsgRunJobsTriggerRunnerWorkingDir'] = BSDATADIR;
 
-		// Adaptions of `mwstake/mediawiki-component-runjobstrigger`
+		// Adaptions of `mwstake/mediawiki-component-alertbanners`
 		$GLOBALS['mwsgAlertBannersProviderFactories']['legacy-bluespice-extension-attributes'] = [
 			'class' => "\\BlueSpice\\LegacyExtensionAttributesAlertProviderFactory"
 		];
+		// Adaptions of `mwstake/mediawiki-component-manifestregistry`
+		$GLOBALS['mwsgManifestRegistryOverrides'] = array_merge(
+			$this->config->get( 'ExtensionAttributeRegistryOverrides' ),
+			$GLOBALS['mwsgManifestRegistryOverrides']
+		);
 	}
 
 	protected function initializeRoleSystem() {
