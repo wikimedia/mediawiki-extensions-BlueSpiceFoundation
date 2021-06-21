@@ -2,18 +2,8 @@
 
 namespace BlueSpice;
 
-interface IRegistry {
+use MWStake\MediaWiki\Component\ManifestRegistry\IRegistry as ManifestRegistryIRegistry;
 
-	/**
-	 *
-	 * @param string $key
-	 * @param string $default
-	 * @return string
-	 */
-	public function getValue( $key, $default = '' );
+interface IRegistry extends ManifestRegistryIRegistry {
 
-	/**
-	 * @return string[]
-	 */
-	public function getAllKeys();
 }
