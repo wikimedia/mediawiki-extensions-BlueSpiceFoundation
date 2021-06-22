@@ -102,6 +102,8 @@
 	"protect-level-editor": "Nur Redakteuren und Administratoren erlauben",
 	"bs-pref-fileextensions-help": "Dateitypen, die für das Hochladen in das Wiki freigegeben sind. Einige Typen (z.B. html, js, php, cgi, exe) sind aus Sicherheitsgründen nicht erlaubt, auch wenn sie hier aufgelistet werden.",
 	"bs-pref-imageextensions-help": "Bilddateiformate, die für das Hochladen freigegeben sind. Mögliche Webformate: gif, png, jpg, jpeg. Weitere Bildformate: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfiguration Datei $1 konnte nicht geschrieben werden!",
 	"bs-ping-on-init-desc": "Soll direkt nach dem Laden der Seite eine Ping-Anfrage gesendet werden",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfiguration Datei $1 konnte nicht geschrieben werden!"
+	"bs-pref-logopath-help": "Das Logo sollte im Ordner /images der Installation gespeichert sein, damit es bei einem Upgrade nicht überschrieben wird.",
+	"bs-pref-faviconpath-help": "Das Favicon sollte im Ordner /w/images Ihrer Installation gespeichert sein. Wenn Sie es im Ordner /w/skins Ihrer BlueSpice-Installation speichern, kann es bei einem Upgrade überschrieben werden. Favicon-Bilder haben die Dateierweiterung .ico."
 }
