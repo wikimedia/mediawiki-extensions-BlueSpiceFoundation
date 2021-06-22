@@ -34,4 +34,12 @@ class Favicon extends StringSetting {
 	public function getVariableName() {
 		return 'wg' . $this->getName();
 	}
+
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-pref-faviconpath-help';
+	}
 }
