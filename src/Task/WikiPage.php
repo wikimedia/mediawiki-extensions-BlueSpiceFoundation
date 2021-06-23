@@ -6,6 +6,7 @@ use BlueSpice\Task;
 use DeferredUpdates;
 use EditPage;
 use Exception;
+use MediaWiki\MediaWikiServices;
 use MWCallableUpdate;
 use MWException;
 use RequestContext;
@@ -83,7 +84,8 @@ abstract class WikiPage extends Task {
 	 * @return \WikiPage
 	 */
 	protected function getWikiPage() {
-		return $this->getContext()->getWikiPage();
+		$services = MediaWikiServices::getInstance();
+		return $services->getWikiPageFactory()->newFromTitle( $this->getContext()->getTitle() );
 	}
 
 	/**

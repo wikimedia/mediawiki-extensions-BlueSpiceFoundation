@@ -3,6 +3,7 @@ namespace BlueSpice;
 
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Session\CsrfTokenSet;
 
@@ -34,7 +35,7 @@ class Context implements IContextSource {
 	 * @inheritDoc
 	 */
 	public function canUseWikiPage() {
-		return $this->context->canUseWikiPage();
+		return $this->context->getTitle()->canExist();
 	}
 
 	/**
@@ -111,7 +112,8 @@ class Context implements IContextSource {
 	 * @inheritDoc
 	 */
 	public function getWikiPage() {
-		return $this->context->getWikiPage();
+		$services = MediaWikiServices::getInstance();
+		return $services->getWikiPageFactory()->newFromTitle( $this->context->getTitle() );
 	}
 
 	/**

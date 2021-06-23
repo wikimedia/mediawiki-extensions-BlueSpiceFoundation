@@ -31,6 +31,7 @@
 
 use BlueSpice\Api\Response\Standard;
 use BlueSpice\UtilityFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Api base class for simple tasks in BlueSpice
@@ -536,7 +537,8 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		if ( $this->getTitle()->getNamespace() < 0 ) {
 			return null;
 		}
-		return parent::getWikiPage();
+		$services = MediaWikiServices::getInstance();
+		return $services->getWikiPageFactory()->newFromTitle( $this->getTitle() );
 	}
 
 	/**
@@ -547,7 +549,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		if ( $this->getWikiPage() === null ) {
 			return false;
 		}
-		return parent::canUseWikiPage();
+		return $this->getTitle()->canExist();
 	}
 
 	/**
