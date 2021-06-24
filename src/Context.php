@@ -4,6 +4,7 @@ namespace BlueSpice;
 use Config;
 use IContextSource;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Session\CsrfTokenSet;
 
 class Context implements IContextSource {
 
@@ -127,4 +128,10 @@ class Context implements IContextSource {
 		return $this->context->getAuthority();
 	}
 
+	/**
+	 * @inheritDoc
+	 */
+	public function getCsrfTokenSet() : CsrfTokenSet {
+		return new CsrfTokenSet( $this->getRequest() );
+	}
 }
