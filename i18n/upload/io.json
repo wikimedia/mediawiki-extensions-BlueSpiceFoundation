@@ -5,6 +5,7 @@
 		]
 	},
 	"bs-upload-uploadfileemptytext": "Inkluzar nova arkivo...",
+	"bs-upload-error": "Eroro",
 	"bs-upload-descfilelabel": "Deskripto",
 	"bs-upload-uploadwarningdialog-intro": "La sequanta mesaji aparis kande vu probis sendar l'arkivo"
 }

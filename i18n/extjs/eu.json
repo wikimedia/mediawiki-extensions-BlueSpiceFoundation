@@ -28,8 +28,10 @@
 	"bs-extjs-reset": "Hasieratu",
 	"bs-extjs-close": "Itxi",
 	"bs-extjs-label-user": "Erabiltzailea",
+	"bs-extjs-label-group": "Taldea",
 	"bs-extjs-label-namespace": "Izen-tartea",
 	"bs-extjs-label-page": "Orrialdea",
+	"bs-extjs-label-directsearch": "Bilatu",
 	"bs-extjs-upload": "Igo",
 	"bs-extjs-browse": "Arakatu",
 	"bs-extjs-uploading": "Igotzen...",
@@ -47,5 +49,10 @@
 	"bs-extjs-categorytree-title": "Kategoriak",
 	"bs-extjs-filter-date-after": "Ondoren",
 	"bs-extjs-filter-date-before": "Lehenago",
-	"bs-extjs-filter-date-filter": "Iragazkia"
+	"bs-extjs-filter-date-filter": "Iragazkia",
+	"bs-extjs-pageexport-list-format-link-label": "Esteka",
+	"bs-extjs-pageexport-overwrite-label": "Gainetik idatzi",
+	"bs-extjs-tools-trigger-text": "Tresnak",
+	"bs-extjs-flyout-tab-thumbs-label": "Iruditxoak",
+	"bs-extjs-flyout-tab-grid-label": "Xehetasunak"
 }

@@ -70,5 +70,7 @@
 	"apihelp-bs-watchlist-store-summary": "Перелічує всі записи у списку спостереження. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри Store.",
 	"apihelp-bs-recentchanges-store-summary": "Перелічує всі останні зміни. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри Store.",
 	"apihelp-bs-task-summary": "Надає кінцеву точку API для виконання реєстрованих завдань",
-	"apihelp-bs-task-description": "Надає кінцеву точку API для виконання реєстрованих завдань"
+	"apihelp-bs-task-description": "Надає кінцеву точку API для виконання реєстрованих завдань",
+	"apihelp-bs-js-var-config-param-name": "Назва змінної конфігурації, яку отримати",
+	"apihelp-bs-js-var-config-param-func": "Функція конфігурації до виконання: has|get"
 }

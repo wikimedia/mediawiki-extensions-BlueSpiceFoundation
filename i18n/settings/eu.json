@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"An13sa"
+		]
+	},
+	"bs-setting-path-extension": "Luzapena",
+	"bs-setting-path-system": "Sistema",
+	"bs-setting-path-dataanalysis": "Datu analisia",
+	"bs-setting-path-editor": "Editorea",
+	"bs-setting-path-communication": "Komunikazioa",
+	"bs-setting-path-administration": "Administrazioa",
+	"bs-setting-path-qualityassurance": "Kalitate kontrola",
+	"bs-setting-path-export": "Esportatu"
+}

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"An13sa",
 			"Gorkaazk",
 			"Joseba",
 			"Subi"
@@ -8,7 +9,10 @@
 	},
 	"bs-ns_main": "(Orrialdeak)",
 	"bs-ns_all": "(denak)",
+	"bs-tab_navigation": "Nabigazioa",
+	"bs-userbar_loginswitch_logout": "Saioa itxi",
 	"bs-userbar_loginswitch_login": "Hasi saioa",
+	"bs-extended-search-textfield-defaultvalue": "Bilatu...",
 	"bs-years-duration": "{{PLURAL:$1|urte bat|$1 urte}}",
 	"bs-months-duration": "{{PLURAL:$1|hilabete bat|$1 hilabete}}",
 	"bs-weeks-duration": "{{PLURAL:$1|aste bat|$1 aste}}",
@@ -40,10 +44,16 @@
 	"bs-filesystemhelper-save-base64-error": "Ezin izan da fitxategia gorde.",
 	"bs-filesystemhelper-upload-base64-error": "Ezin izan da fitxategia igo.",
 	"bs-navigation-instructions": "Jarraibideak",
+	"bs-navigation-support": "Laguntza",
+	"bs-navigation-contact": "Kontaktua",
 	"bs-imagepage-download-text": "Jaitsi",
+	"bs-ns": "Izen-tartea",
 	"bs-parser-error-invalid-title": "Izenburu baliogabea: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Orrialde baimendugabea: $1",
 	"bs-parser-error-invalid-category-title": "Orrialdea ez da baliozko kategoria bat: $1",
 	"bs-export-menu-print-text": "Inprimatu",
+	"bs-graphicallist-action-close": "Itxi",
+	"bs-graphicallist-action-list": "Zerrenda",
+	"bs-graphicallist-action-preview": "Aurreikuspena",
 	"bs-notifications-agent-anon": "Erabiltzaile anonimoa"
 }
