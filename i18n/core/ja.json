@@ -3,6 +3,7 @@
 		"authors": [
 			"2nd-player",
 			"Aefgh39622",
+			"Afaz",
 			"Otokoume",
 			"Reiwa period",
 			"Shirayuki",
@@ -99,7 +100,7 @@
 	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクの使用 (BlueSpice 拡張機能群)",
 	"right-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクを使用 (BlueSpice 拡張機能群)",
-	"bs-notifications-agent-anon": "匿名ユーザー",
+	"bs-notifications-agent-anon": "匿名利用者",
 	"protect-level-editor": "編集者と管理者のみを許可する",
 	"bs-ping-on-init-desc": "ページの読み込み直後に ping リクエストを送信するかどうか"
 }
