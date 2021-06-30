@@ -58,7 +58,10 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 				$status = preg_match_all( $preg_pattern, $text, $matches, PREG_PATTERN_ORDER );
 
 				foreach ( $matches[2] as $match ) {
-					if ( $match === $dataSet->get( Record::CATEGORY_TITLE ) ) {
+					$categoryName = $dataSet->get( Record::CATEGORY_TITLE );
+					$categoryName = ucfirst( str_replace( ' ', '_', $categoryName ) );
+					$match = ucfirst( str_replace( ' ', '_', $match ) );
+					if ( $match === $categoryName ) {
 						$dataSet->set(
 							Record::CATEGORY_IS_EXPLICIT,
 							true
