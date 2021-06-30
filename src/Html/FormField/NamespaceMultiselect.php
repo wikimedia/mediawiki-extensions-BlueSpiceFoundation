@@ -66,11 +66,23 @@ class NamespaceMultiselect extends \HTMLFormField {
 		$availableNamespaces = [];
 		$language = $this->mParent->getLanguage();
 
+		// $language->getNamespaceIds() has namespace name as index.
+		// This will resulte in double or tripple entries for one namespace.
+		// For e.g. namespace id 6 there will be 'File' and 'Images' in the list.
 		$allNamespaces = $language->getNamespaceIds();
+
+		$namespacesInList = [];
 		foreach ( $allNamespaces as $lcName => $namespaceId ) {
+			if ( in_array( $namespaceId, $namespacesInList ) ) {
+				continue;
+			}
+			$namespacesInList = array_merge(
+				$namespacesInList,
+				[ $namespaceId ]
+			);
+
 			// Create 'BS.model.Namespace' compatible datasets
 			// TODO: Add serverside models that are synchron with the JS models
-
 			if ( $namespaceId < 0 && $options[ static::OPTION_HIDE_PSEUDO ] ) {
 				continue;
 			}
