@@ -35,6 +35,7 @@ class Context implements IContextSource {
 	 * @inheritDoc
 	 */
 	public function canUseWikiPage() {
+		wfDeprecated( __METHOD__, '1.37' );
 		return $this->context->getTitle()->canExist();
 	}
 
@@ -112,6 +113,7 @@ class Context implements IContextSource {
 	 * @inheritDoc
 	 */
 	public function getWikiPage() {
+		wfDeprecated( __METHOD__, '1.37' );
 		$services = MediaWikiServices::getInstance();
 		return $services->getWikiPageFactory()->newFromTitle( $this->context->getTitle() );
 	}

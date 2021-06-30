@@ -533,9 +533,12 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 *
 	 * Returns the current WikiPage object or NULL if not in WikiPage context
 	 *
+	 * @deprecated since 1.37, hard deprecated since 1.37
+	 * Use WikiPageFactory::newFromTitle instead
 	 * @return WikiPage|null
 	 */
 	public function getWikiPage() {
+		wfDeprecated( __METHOD__, '1.37' );
 		if ( $this->getTitle()->getNamespace() < 0 ) {
 			return null;
 		}
@@ -544,11 +547,15 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 * @see BSApiTasksBase::getWikiPage
+	 * @deprecated since 1.37, hard deprecated since 1.37
+	 * Use Title::canExist instead
 	 * @return bool
 	 */
 	public function canUseWikiPage() {
-		if ( $this->getWikiPage() === null ) {
+		wfDeprecated( __METHOD__, '1.37' );
+		$services = MediaWikiServices::getInstance();
+		$wikiPage = $services->getWikiPageFactory()->newFromTitle( $this->getTitle() );
+		if ( $wikiPage === null ) {
 			return false;
 		}
 		return $this->getTitle()->canExist();
