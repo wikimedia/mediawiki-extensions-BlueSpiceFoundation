@@ -18,6 +18,7 @@ class BsPageContentProvider {
 
 	protected $oOriginalMainRequestContextTitle = null;
 	protected $oOriginalMainRequestContextOutputPage = null;
+	protected $originalMainRequestContextRequest = null;
 
 	public    $oParserOptions            = null;
 
@@ -254,10 +255,12 @@ class BsPageContentProvider {
 				$wgRequest->getValues() + $aParams,
 				$wgRequest->wasPosted() )
 		);
+
 		$context->setTitle( $oTitle );
 		$context->setSkin( $wgOut->getSkin() );
 		//Prevent "BeforePageDisplay" hook
 		$context->getOutput()->setArticleBodyOnly( true ); //TODO: redundant?
+
 
 		$this->overrideGlobals( $oTitle, $context );
 
@@ -304,7 +307,7 @@ class BsPageContentProvider {
 
 				default:
 					$oArticle = Article::newFromTitle($oTitle, $context);
-					$action = Action::factory( $actionName , $oArticle, $context );
+					$action = Action::factory( $actionName, $oArticle, $context );
 					if ( $action instanceof Action ) {
 						$action->show();
 					}
@@ -470,7 +473,7 @@ class BsPageContentProvider {
 	 * @global Title $wgTitle
 	 * @global WebRequest $wgRequest
 	 * @param Title $oTitle
-	 * @param Context $context
+	 * @param IContextSource $context
 	 */
 	private function overrideGlobals( $oTitle, $context = null ) {
 		global $wgParser, $wgOut, $wgTitle, $wgRequest;
@@ -492,6 +495,7 @@ class BsPageContentProvider {
 			= RequestContext::getMain()->getTitle();
 		$this->oOriginalMainRequestContextOutputPage
 			= RequestContext::getMain()->getOutput();
+		$this->originalMainRequestContextRequest = RequestContext::getMain()->getRequest();
 
 		$wgParser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$wgParser->setOptions( $this->getParserOptions() );
@@ -500,6 +504,7 @@ class BsPageContentProvider {
 
 		if( $context ) {
 			$wgRequest = $context->getRequest();
+			RequestContext::getMain()->setRequest( $context->getRequest() );
 		}
 
 		$wgOut->setArticleBodyOnly( true );
@@ -524,6 +529,10 @@ class BsPageContentProvider {
 		$wgParser  = $this->oOriginalGlobalParser;
 		$wgTitle   = $this->oOriginalGlobalTitle;
 		$wgRequest = $this->oOriginalGlobalRequest;
+
+		RequestContext::getMain()->setRequest(
+			$this->originalMainRequestContextRequest
+		);
 
 		RequestContext::getMain()->setTitle(
 			$this->oOriginalMainRequestContextTitle
