@@ -60,9 +60,12 @@ class Timestamp extends MWTimestamp {
 
 			$value = 0;
 			if ( $key === 'w' && $diff->d > 0 && ( $diff->d / 7 ) >= 1 ) {
-				$value = (int)( $diff->d / 7 );
+				$weeks = (int)( $diff->d / 7 );
+
+				$value = $weeks;
+				$diff->d -= ( $weeks * 7 );
 			} elseif ( $key === 'd' && $diff->d > 0 && ( $diff->d / 7 ) > 1 ) {
-				$value = (int)( $diff->d / 7 );
+				$value = $diff->d % 7;
 			} elseif ( $key !== 'w' ) {
 				$value = $diff->{$key};
 			}
