@@ -5,10 +5,17 @@
 			"F3RaN",
 			"Fitoschido",
 			"Macofe",
-			"Ssola"
+			"Ssola",
+			"Vfc"
 		]
 	},
+	"bs-extjs-ok": "D'acord",
+	"bs-extjs-cancel": "Cancel·la",
+	"bs-extjs-yes": "Sí",
 	"bs-extjs-no": "No",
+	"bs-extjs-save": "Desa",
+	"bs-extjs-delete": "Esborra",
+	"bs-extjs-add": "Afegeix",
 	"bs-extjs-copy": "Còpia",
 	"bs-extjs-label-page": "Pàgina",
 	"bs-extjs-label-specialpage": "Pàgina especial",

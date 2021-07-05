@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vfc"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Afegeix una nova...",
+	"bs-ooui-key-value-input-widget-key-label": "Clau",
+	"bs-ooui-key-value-input-widget-value-label": "Valor",
+	"bs-ooui-key-value-input-widget-add-button-label": "Afegeix",
+	"bs-ooui-key-value-input-widget-add-form-label": "Afegeix una entrada nova",
+	"bs-ooui-key-value-input-widget-error-message": "Cal definir tots els camps obligatoris!",
+	"bs-ooui-key-value-input-widget-no-values-label": "No s' ha establert cap valor!",
+	"bs-ooui-btn-dismiss-alert-title": "Descarta",
+	"bs-ooui-key-value-input-widget-section-label": "Secció",
+	"bs-ooui-key-value-input-widget-add-section-label": "Afegeix una nova secció"
+}

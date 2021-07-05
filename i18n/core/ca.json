@@ -3,7 +3,8 @@
 		"authors": [
 			"Alvaro Vidal-Abarca",
 			"Fitoschido",
-			"Mguix"
+			"Mguix",
+			"Vfc"
 		]
 	},
 	"bs-ns_main": "(Pàgines)",
@@ -22,11 +23,13 @@
 	"bs-hours-duration": "{{PLURAL:$1|una hora|$1 hores}}",
 	"bs-mins-duration": "{{PLURAL:$1|un minut|$1 minuts}}",
 	"bs-secs-duration": "{{PLURAL:$1|un segon|$1 segons}}",
+	"bs-one-unit-ago": "fa $1",
 	"bs-now": "ara",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hola, Sr. $2|Hola, Sra. $2|Hola, $2}},",
 	"bs-email-footer": "Aquest missatge ha estat generat automàticament per $1. No respongueu a aquest missatge.",
 	"bs-userpagesettings-legend": "Paràmetres de l’usuari",
 	"bs-exception-view-heading": "S’ha produït un error",
+	"bs-exception-view-admin-hint": "Posa't en contacte amb qui administri el sistema",
 	"bs-exception-view-stacktrace-toggle-show-text": "Mostra els detalls de l’error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Amaga els detalls de l’error",
 	"bs-lockdown-groups-permissionerror": "L’operació «$1» no està disponible {{PLURAL:$2|pel motiu següent|pels motius següents}}: $3",
@@ -35,6 +38,7 @@
 	"bs-navigation-contact": "Contacte",
 	"bs-imagepage-download-text": "Baixa",
 	"bs-pref-fileextensions": "Extensions de fitxers permesses:",
+	"bs-export-menu-print-text": "Imprimeix",
 	"bs-graphicallist-action-close": "Tanca",
 	"bs-graphicallist-action-list": "Llista",
 	"bs-graphicallist-action-preview": "Previsualitza"

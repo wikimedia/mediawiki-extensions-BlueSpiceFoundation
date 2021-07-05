@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vfc"
+		]
+	},
+	"bs-credits-programmers": "Persones que han programat",
+	"bs-credits-dnt": "Persones que han fet el disseny i les proves",
+	"bs-credits-contributors": "Persones que han contribuït",
+	"bs-credits-translators": "Persones que han traduït",
+	"bs-credits-translation": "Traducció",
+	"bs-credits-th": "Gràcies a totes les persones que han traduït a través de $1 ."
+}

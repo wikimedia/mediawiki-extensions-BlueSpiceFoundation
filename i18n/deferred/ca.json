@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"Macofe"
+			"Macofe",
+			"Vfc"
 		]
 	},
 	"bs-deferred-action-status-pending": "Pendent.",
+	"bs-deferred-action-status-running": "S'està executant...",
 	"bs-deferred-action-status-done": "Fet.",
 	"bs-deferred-action-status-error": "Ha fallat.",
 	"bs-deferred-action-apicopypage-description": "Còpia «$1» a «$2».",
@@ -15,5 +17,7 @@
 	"bs-deferred-batch-actions": "Accions",
 	"bs-deferred-batch-description": "Descripció",
 	"bs-deferred-batch-status": "Estat",
+	"bs-deferred-action-apiaddcategories-description": "Afegiu categories a «$1».",
+	"bs-deferred-action-apiremovecategories-description": "Elimina les categories de «$1».",
 	"bs-deferred-action-apideletepage-description": "Suprimeix «$1»."
 }

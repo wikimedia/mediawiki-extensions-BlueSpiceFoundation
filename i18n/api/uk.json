@@ -75,5 +75,14 @@
 	"apihelp-bs-js-var-config-summary": "Надає кінцеву точку API для отримання змінних конфігурації з боку клієнта",
 	"apihelp-bs-js-var-config-param-name": "Назва змінної конфігурації, яку отримати",
 	"apihelp-bs-js-var-config-param-func": "Функція конфігурації до виконання: has|get",
-	"apihelp-bs-js-var-config-param-format": "Формат результату"
+	"apihelp-bs-js-var-config-param-context": "Зашифрований JSON об'єкт із контекстом виклику",
+	"apihelp-bs-js-var-config-param-format": "Формат результату",
+	"apihelp-bs-categorylinks-store-description": "Перелічує усі категорії сторінки, включаючи посилання на сторінку категорії та маркер для явних та неявних категорій.",
+	"apihelp-bs-categorylinks-store-summary": "перелічує усі категорії сторінки, включаючи посилання на сторінку категорії та маркер для явних та неявних категорій.",
+	"apihelp-bs-categorylinks-store-param-page-id": "ID сторінки",
+	"apihelp-bs-templatelinks-store-description": "Список усіх шаблонів сторінки, що містить посилання на шаблон.",
+	"apihelp-bs-templatelinks-store-summary": "Список усіх шаблонів сторінки, що містить посилання на шаблон.",
+	"apihelp-bs-templatelinks-store-param-page-id": "ID сторінки",
+	"apihelp-bs-linker-summary": "Повертає посилання на сторінки, створені Linker",
+	"apihelp-bs-linker-description": "Повертає посилання на сторінки, створені Linker"
 }
