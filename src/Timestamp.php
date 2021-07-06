@@ -2,6 +2,10 @@
 
 namespace BlueSpice;
 
+use DateInterval;
+use DateTime;
+use DateTimeZone;
+use Exception;
 use MWTimestamp;
 use RequestContext;
 use User;
@@ -119,5 +123,71 @@ class Timestamp extends MWTimestamp {
 			'i' => 'bs-mins-duration',
 			's' => 'bs-secs-duration',
 		];
+	}
+
+	/**
+	 * Force-remove the adjustment of the timestamp depending on the given user's
+	 * preferences.
+	 *
+	 * @param User $user User to take preferences from
+	 * @return DateInterval Offset that was removed from the timestamp
+	 */
+	public function unOffsetForUser( User $user ) {
+		global $wgLocalTZoffset;
+
+		$option = $user->getOption( 'timecorrection' );
+		$data = explode( '|', $option, 3 );
+
+		// First handle the case of an actual timezone being specified.
+		if ( $data[0] == 'ZoneInfo' ) {
+			try {
+				$tz = new DateTimeZone( $data[2] );
+			} catch ( Exception $e ) {
+				$tz = false;
+			}
+
+			if ( $tz ) {
+				$this->timestamp = new DateTime( $this->timestamp->format( 'YmdHis' ), $tz );
+				$this->timestamp->setTimezone( new DateTimeZone( 'UTC' ) );
+				return new DateInterval( 'P0Y' );
+			}
+
+			$data[0] = 'Offset';
+		}
+
+		$diff = 0;
+		// If $option is in fact a pipe-separated value, check the
+		// first value.
+		if ( $data[0] == 'System' ) {
+			// First value is System, so use the system offset.
+			if ( $wgLocalTZoffset !== null ) {
+				$diff = $wgLocalTZoffset;
+			}
+		} elseif ( $data[0] == 'Offset' ) {
+			// First value is Offset, so use the specified offset
+			$diff = (int)$data[1];
+		} else {
+			// $option actually isn't a pipe separated value, but instead
+			// a comma separated value. Isn't MediaWiki fun?
+			$data = explode( ':', $option );
+			if ( count( $data ) >= 2 ) {
+				// Combination hours and minutes.
+				$diff = abs( (int)$data[0] ) * 60 + (int)$data[1];
+				if ( (int)$data[0] < 0 ) {
+					$diff *= -1;
+				}
+			} else {
+				// Just hours.
+				$diff = (int)$data[0] * 60;
+			}
+		}
+
+		$interval = new DateInterval( 'PT' . abs( $diff ) . 'M' );
+		if ( $diff < 1 ) {
+			$interval->invert = 1;
+		}
+
+		$this->timestamp->sub( $interval );
+		return $interval;
 	}
 }
