@@ -206,7 +206,8 @@
 			],
 			"dependencies": [
 				"mediawiki.cookie",
-				"mediawiki.api"
+				"mediawiki.api",
+				"mwstake.component.alertbanners"
 			]
 		},
 		"ext.bluespice.extjs": {
@@ -618,7 +619,6 @@
 		"SearchGetNearMatchComplete": [
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
-		"SiteNoticeAfter": "BlueSpice\\Hook\\SiteNoticeAfter\\AddAlerts::callback",
 		"BeforeParserFetchTemplateAndTitle": [
 			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndTitle\\CheckTransclusionPermissions::callback"
 		]
