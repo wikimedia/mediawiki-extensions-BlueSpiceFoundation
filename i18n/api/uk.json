@@ -84,5 +84,6 @@
 	"apihelp-bs-templatelinks-store-summary": "Список усіх шаблонів сторінки, що містить посилання на шаблон.",
 	"apihelp-bs-templatelinks-store-param-page-id": "ID сторінки",
 	"apihelp-bs-linker-summary": "Повертає посилання на сторінки, створені Linker",
-	"apihelp-bs-linker-description": "Повертає посилання на сторінки, створені Linker"
+	"apihelp-bs-linker-description": "Повертає посилання на сторінки, створені Linker",
+	"apihelp-bs-linker-param-linkdescs": "Асоціативний масив JSON зі списком сторінок. Кожен запис повинен містити заголовок сторінки як \"ціль\". За бажанням може містити \"текст\", \"атрибути\" та \"запит\"."
 }

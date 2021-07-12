@@ -3,6 +3,7 @@
 		"authors": [
 			"Esketti",
 			"Mainframe98",
+			"McDutchie",
 			"Xbaked potatox"
 		]
 	},
@@ -10,10 +11,10 @@
 	"bs-validator-email-validation-not-approved": "Het e-mailadres kon niet worden gevalideerd.",
 	"bs-validator-url-validation-approved": "De URL is succesvol gevalideerd.",
 	"bs-validator-url-validation-not-approved": "De URL kon niet worden gevalideerd.",
-	"bs-validator-arg-count-validation-approved": "Het attribuut \"aantal\" is succesvol gevalideerd.",
+	"bs-validator-arg-count-validation-approved": "Het attribuut \"count\" is met succes gevalideerd.",
 	"bs-validator-arg-count-validation-not-approved": "Het attribuut \"aantal\" kan niet worden gevalideerd.",
 	"bs-validator-set-validation-approved": "$1 is succesvol gevalideerd.",
-	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|de volgende waarde wordt toegestaan voor $1| $1 één van de volgende waarden is toegestaan}}: $2.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Alleen de volgende waarde is toegestaan voor $1|Voor $1 is slechts een van de volgende waarden toegestaan}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "De opgegeven waarde is te laag. Het mag niet minder zijn dan $1.",
 	"bs-validator-integer-range-validation-too-high": "De opgegeven waarde is te hoog. Het mag niet groter zijn dan $1.",
 	"bs-validator-invalid-float": "Geen geldig kommagetal",
