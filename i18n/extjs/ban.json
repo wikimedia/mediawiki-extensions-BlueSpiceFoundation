@@ -6,5 +6,7 @@
 		]
 	},
 	"bs-extjs-save": "Raksa",
-	"bs-extjs-label-directsearch": "Rereh"
+	"bs-extjs-label-directsearch": "Rereh",
+	"bs-extjs-yes": "Inggih",
+	"bs-extjs-filter-bool-yes": "inggih"
 }

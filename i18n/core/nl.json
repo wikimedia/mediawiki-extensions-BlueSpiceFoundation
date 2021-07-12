@@ -92,11 +92,11 @@
 	"bs-graphicallist-action-close": "Sluiten",
 	"bs-graphicallist-action-list": "Lijst",
 	"bs-graphicallist-action-preview": "Voorvertoning",
-	"right-wikiadmin": "Toon BlueSpice's beheerpagina's",
+	"right-wikiadmin": "Het uitvoeren van potentieel gevaarlijke administratieve taken, zoals het beheren van gebruikers, rechten, globale configuratie (BlueSpice-extensies)",
 	"bs-notifications-agent-anon": "anonieme gebruiker",
 	"bs-lockdown-groups-permissionerror": "De handeling \"$1\" is niet beschikbaar vanwege de volgende {{PLURAL:$2|reden|reneden}}: $3",
 	"bs-parser-error-invalid-category-title": "Pagina is geen geldige categorie: $1",
-	"action-wikiadmin": "Toon BlueSpice's beheerpagina's",
+	"action-wikiadmin": "potentieel gevaarlijke administratieve taken uit te voeren, zoals het beheren van gebruikers, rechten, globale configuratie (BlueSpice-extensies)",
 	"bs-tag-param-desc": "Waarde van het elementattribuut '$1'",
 	"protect-level-editor": "Alleen bewerkers en beheerders toestaan",
 	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp"

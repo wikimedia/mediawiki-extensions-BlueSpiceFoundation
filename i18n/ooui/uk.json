@@ -3,7 +3,8 @@
 		"authors": [
 			"Alexander Yukal",
 			"Piramidion",
-			"Vlad5250"
+			"Vlad5250",
+			"Ата"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Додати новий...",
@@ -13,5 +14,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Додати новий запис",
 	"bs-ooui-key-value-input-widget-error-message": "Усі обов'язкові поля слід заповнити!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значень!",
-	"bs-ooui-btn-dismiss-alert-title": "Відхилити"
+	"bs-ooui-btn-dismiss-alert-title": "Відхилити",
+	"bs-ooui-key-value-input-widget-section-label": "Розділ",
+	"bs-ooui-key-value-input-widget-add-section-label": "Додати новий розділ"
 }

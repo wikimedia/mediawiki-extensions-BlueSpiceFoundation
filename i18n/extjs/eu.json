@@ -47,5 +47,12 @@
 	"bs-extjs-categorytree-title": "Kategoriak",
 	"bs-extjs-filter-date-after": "Ondoren",
 	"bs-extjs-filter-date-before": "Lehenago",
-	"bs-extjs-filter-date-filter": "Iragazkia"
+	"bs-extjs-filter-date-filter": "Iragazkia",
+	"bs-extjs-label-group": "Taldea",
+	"bs-extjs-label-directsearch": "Bilatu",
+	"bs-extjs-pageexport-list-format-link-label": "Esteka",
+	"bs-extjs-pageexport-overwrite-label": "Gainetik idatzi",
+	"bs-extjs-tools-trigger-text": "Tresnak",
+	"bs-extjs-flyout-tab-thumbs-label": "Iruditxoak",
+	"bs-extjs-flyout-tab-grid-label": "Xehetasunak"
 }

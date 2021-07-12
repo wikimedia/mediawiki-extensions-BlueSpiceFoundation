@@ -5,7 +5,8 @@
 			"F3RaN",
 			"Fitoschido",
 			"Macofe",
-			"Ssola"
+			"Ssola",
+			"Vfc"
 		]
 	},
 	"bs-extjs-no": "No",
@@ -28,5 +29,11 @@
 	"bs-extjs-tools-trigger-text": "Eines",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniatures",
 	"bs-extjs-flyout-tab-grid-label": "Detalls",
-	"bs-extjs-label-specialpage": "Pàgina especial"
+	"bs-extjs-label-specialpage": "Pàgina especial",
+	"bs-extjs-ok": "D'acord",
+	"bs-extjs-cancel": "Cancel·la",
+	"bs-extjs-yes": "Sí",
+	"bs-extjs-save": "Desa",
+	"bs-extjs-delete": "Esborra",
+	"bs-extjs-add": "Afegeix"
 }
