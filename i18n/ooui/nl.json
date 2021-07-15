@@ -2,12 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
-			"Optilete"
+			"Optilete",
+			"Romaine"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Nieuwe toevoegen...",
 	"bs-ooui-key-value-input-widget-key-label": "Sleutel",
 	"bs-ooui-key-value-input-widget-value-label": "Waarde",
 	"bs-ooui-key-value-input-widget-add-button-label": "Toevoegen",
-	"bs-ooui-btn-dismiss-alert-title": "Sluiten"
+	"bs-ooui-key-value-input-widget-add-form-label": "Nieuw item toevoegen",
+	"bs-ooui-btn-dismiss-alert-title": "Sluiten",
+	"bs-ooui-key-value-input-widget-section-label": "Sectie",
+	"bs-ooui-key-value-input-widget-add-section-label": "Nieuwe sectie toevoegen"
 }

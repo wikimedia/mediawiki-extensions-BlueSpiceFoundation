@@ -4,6 +4,7 @@
 			"Esketti",
 			"Mainframe98",
 			"McDutchie",
+			"Romaine",
 			"Xbaked potatox"
 		]
 	},
@@ -17,8 +18,10 @@
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Alleen de volgende waarde is toegestaan voor $1|Voor $1 is slechts een van de volgende waarden toegestaan}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "De opgegeven waarde is te laag. Het mag niet minder zijn dan $1.",
 	"bs-validator-integer-range-validation-too-high": "De opgegeven waarde is te hoog. Het mag niet groter zijn dan $1.",
+	"bs-validator-invalid-boolean": "Geen geldige boolean",
 	"bs-validator-invalid-float": "Geen geldig kommagetal",
 	"bs-validator-invalid-integer": "Geen geldig geheel getal",
+	"bs-validator-invalid-string": "Geen geldige tekenreeks",
 	"bs-validator-invalid-coordinate": "Geen geldig coördinaat",
 	"bs-validator-invalid-parameter": "Deze parameter is niet toegestaan",
 	"bs-validator-missing-required": "Deze parameter is verplicht"

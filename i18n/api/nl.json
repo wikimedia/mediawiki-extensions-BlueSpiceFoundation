@@ -1,16 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mainframe98"
+			"Mainframe98",
+			"Romaine"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Aantal resultaten om te tonen",
 	"apihelp-bs-task-param-task": "De uit te voeren taak",
+	"apihelp-bs-task-param-format": "Het formaat van het resultaat",
+	"apihelp-bs-task-param-token": "Het token dat nodig is om toegang te krijgen tot de API-module",
 	"bs-wikipage-tasks-error-page-not-valid": "De opgegeven pagina is ongeldig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorieën gewijzigd.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "U hebt geen toestemming om de pagina \"$1\" te bewerken.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Ongeldige {{PLURAL:$2|categorie|categorieën}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Categorieën zijn succesvol ingesteld.",
+	"apihelp-bs-wikisubpage-treestore-param-node": "De van voorvoegsel voorziene titel van de wikipagina",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lijst met opties",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "U hebt geen toestemming om de pagina '$1' te bekijken.",
-	"bs-wikipage-tasks-error-nothingtoremove": "Er zijn geen categorieën om te verwijderen"
+	"bs-wikipage-tasks-error-nothingtoremove": "Er zijn geen categorieën om te verwijderen",
+	"bs-api-task-taskData-page-title": "Een geldige titel van een wikipagina"
 }
