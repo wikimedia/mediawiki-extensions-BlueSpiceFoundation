@@ -35,7 +35,6 @@
 		"no-underscore-dangle": "warn",
 		"indent": "warn",
 		"valid-jsdoc": "warn",
-		"one-var": "warn",
 		"no-unneeded-ternary": "warn",
 		"no-undef": "warn",
 		"no-unused-vars": "warn",
