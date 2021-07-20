@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Jeeputer",
 			"Liuxinyu970226",
 			"Mglaser",
 			"MuratTheTurkish",
+			"Pikne",
 			"Robby",
 			"Shirayuki",
 			"Stephan Muggli <muggli@hallowelt.biz>",
@@ -61,7 +63,7 @@
 	"bs-extjs-categoryboxselect-emptytext": "The placeholder text of an input field that allows the definition of categories",
 	"bs-extjs-categorytree-title": "The title of a panel containing a tree view of the wiki's categories\n{{Identical|Category}}",
 	"bs-extjs-filter-date-after": "Label for a filter option that filters for datasets where date in the field is later than the entered date\n{{Identical|After}}",
-	"bs-extjs-filter-date-before": "Label for a filter option that filters for datasets where date in the field is earlier than the the entered date\n{{Identical|Before}}",
+	"bs-extjs-filter-date-before": "Label for a filter option that filters for datasets where date in the field is earlier than the entered date\n{{Identical|Before}}",
 	"bs-extjs-filter-date-on": "Label for a filter option that filters for datasets where date in the field is the same as the entered date\n{{Identical|On}}",
 	"bs-extjs-filter-date-filter": "Label for a button invoking the filter\n{{Identical|Filter}}",
 	"bs-extjs-pageexport-dialog-title": "Title for the export dialog",

@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vfc"
+		]
+	},
+	"apihelp-bs-wikisubpage-treestore-param-options": "Llista d’opcions",
+	"bs-wikipage-tasks-error-nothingtoremove": "No hi ha categories per eliminar",
+	"bs-api-task-taskData-page-title": "Un títol vàlid d'una pàgina wiki"
+}

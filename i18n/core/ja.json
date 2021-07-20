@@ -3,11 +3,13 @@
 		"authors": [
 			"2nd-player",
 			"Aefgh39622",
+			"Afaz",
 			"Otokoume",
 			"Reiwa period",
 			"Shirayuki",
 			"Sujiniku",
 			"Suyama",
+			"TKsdik8900",
 			"神樂坂秀吉"
 		]
 	},
@@ -19,7 +21,7 @@
 	"bs-userbar_loginswitch_login": "ログイン",
 	"bs-extended-search-tooltip-fulltext": "全文検索",
 	"bs-extended-search-textfield-defaultvalue": "検索...",
-	"bs-extended-search-textfield-tooltip": "wiki内を検索",
+	"bs-extended-search-textfield-tooltip": "ウィキ内を検索",
 	"bs-no-information-available": "利用できる情報はありません",
 	"bs-years-duration": "{{PLURAL:$1|$1年}}",
 	"bs-months-duration": "{{PLURAL:$1|$1か月}}",
@@ -98,7 +100,7 @@
 	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクの使用 (BlueSpice 拡張機能群)",
 	"right-wikiadmin": "利用者、アクセス許可、グローバル構成などの潜在的な危険をともなう管理タスクを使用 (BlueSpice 拡張機能群)",
-	"bs-notifications-agent-anon": "匿名ユーザー",
+	"bs-notifications-agent-anon": "匿名利用者",
 	"protect-level-editor": "編集者と管理者のみを許可する",
 	"bs-ping-on-init-desc": "ページの読み込み直後に ping リクエストを送信するかどうか"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"An13sa",
 			"Gorkaazk",
 			"Joseba",
 			"Subi"
@@ -45,5 +46,14 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Orrialde baimendugabea: $1",
 	"bs-parser-error-invalid-category-title": "Orrialdea ez da baliozko kategoria bat: $1",
 	"bs-export-menu-print-text": "Inprimatu",
-	"bs-notifications-agent-anon": "Erabiltzaile anonimoa"
+	"bs-notifications-agent-anon": "Erabiltzaile anonimoa",
+	"bs-tab_navigation": "Nabigazioa",
+	"bs-userbar_loginswitch_logout": "Saioa itxi",
+	"bs-extended-search-textfield-defaultvalue": "Bilatu...",
+	"bs-navigation-support": "Laguntza",
+	"bs-navigation-contact": "Kontaktua",
+	"bs-ns": "Izen-tartea",
+	"bs-graphicallist-action-close": "Itxi",
+	"bs-graphicallist-action-list": "Zerrenda",
+	"bs-graphicallist-action-preview": "Aurreikuspena"
 }

@@ -14,5 +14,6 @@
 	"bs-extjs-edit": "Redaktar",
 	"bs-extjs-confirm": "Konfirmez",
 	"bs-extjs-loading": "Karganta...",
-	"bs-extjs-filter-greater-than": "plu granda kam"
+	"bs-extjs-filter-greater-than": "plu granda kam",
+	"bs-extjs-error": "Eroro"
 }

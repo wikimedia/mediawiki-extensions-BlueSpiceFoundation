@@ -3,7 +3,8 @@
 		"authors": [
 			"Alvaro Vidal-Abarca",
 			"Fitoschido",
-			"Mguix"
+			"Mguix",
+			"Vfc"
 		]
 	},
 	"bs-ns_main": "(Pàgines)",
@@ -37,5 +38,8 @@
 	"bs-pref-fileextensions": "Extensions de fitxers permesses:",
 	"bs-graphicallist-action-close": "Tanca",
 	"bs-graphicallist-action-list": "Llista",
-	"bs-graphicallist-action-preview": "Previsualitza"
+	"bs-graphicallist-action-preview": "Previsualitza",
+	"bs-one-unit-ago": "fa $1",
+	"bs-exception-view-admin-hint": "Posa't en contacte amb qui administri el sistema",
+	"bs-export-menu-print-text": "Imprimeix"
 }

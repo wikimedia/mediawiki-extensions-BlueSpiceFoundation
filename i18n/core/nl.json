@@ -7,6 +7,7 @@
 			"McDutchie",
 			"Niknetniko",
 			"Ribert",
+			"Romaine",
 			"SPQRobin",
 			"Siebrand",
 			"Sjoerddebruin",
@@ -95,9 +96,12 @@
 	"bs-graphicallist-action-close": "Sluiten",
 	"bs-graphicallist-action-list": "Lijst",
 	"bs-graphicallist-action-preview": "Voorvertoning",
-	"action-wikiadmin": "Toon BlueSpice's beheerpagina's",
-	"right-wikiadmin": "Toon BlueSpice's beheerpagina's",
+	"action-wikiadmin": "potentieel gevaarlijke administratieve taken uit te voeren, zoals het beheren van gebruikers, rechten, globale configuratie (BlueSpice-extensies)",
+	"right-wikiadmin": "Het uitvoeren van potentieel gevaarlijke administratieve taken, zoals het beheren van gebruikers, rechten, globale configuratie (BlueSpice-extensies)",
 	"bs-notifications-agent-anon": "anonieme gebruiker",
 	"protect-level-editor": "Alleen bewerkers en beheerders toestaan",
-	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp"
+	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp",
+	"bs-tag-input-desc": "Waarde van elementinhoud",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-bluespice": "BlueSpice"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
+			"Romaine",
 			"Rots61"
 		]
 	},
@@ -14,5 +15,6 @@
 	"bs-setting-path-personalisation": "Personalizatie",
 	"bs-setting-path-communication": "Communicatie",
 	"bs-setting-path-administration": "Beheer",
-	"bs-setting-path-export": "Exporteren"
+	"bs-setting-path-export": "Exporteren",
+	"bs-setting-path-dataanalysis": "Gegevensanalyse"
 }
