@@ -48,6 +48,7 @@ Ext.define( 'BS.portal.Portlet', {
 	onTlSettingsClick: function ( tool, event, eventOpts ) {
 		if ( !this.pcConfig ) {
 			this.pcConfig = Ext.create( this.portletConfigClass, {
+				title: this.title,
 				portletToConfig: this
 			} );
 		}
