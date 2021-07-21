@@ -621,8 +621,8 @@
 		],
 		"BeforeParserFetchTemplateAndTitle": [
 			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndTitle\\CheckTransclusionPermissions::callback"
-		]
-
+		],
+		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback"
 	},
 	"config_prefix": "bsg",
 	"config": {
