@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agent",
 			"Fitoschido",
 			"Idontknow",
 			"Josecurioso",
@@ -31,6 +32,8 @@
 	"apihelp-bs-store-param-filter": "Cadena JSON con información de filtro; se deserializa a <code>matriz de objetos</code> que contienen nombre de campo, tipo de filtro y valor de filtro para cada opción de filtrado",
 	"apihelp-bs-store-param-page": "Permite el cálculo de inicio/límite del lado servidor",
 	"apihelp-bs-store-param-limit": "Número de resultados a devolver",
+	"apihelp-bs-store-param-start": "El desplazamiento desde el cual comenzar la lista de resultados",
+	"apihelp-bs-store-param-query": "Similar a <var>filter</var>, pero el valor proporcionado sirve como un filtro solo para campo <var>value</var> de un componente ExtJS",
 	"apihelp-bs-store-param-dc": "Indicador <code>Disable cache</code> (desactivar antememoria)",
 	"apihelp-bs-store-param-format": "El formato de la salida (JSON o JSON con formato únicamente)",
 	"apihelp-bs-store-param-options": "Opciones arbitrarias para configurar el formato de almacenamiento de una cadena JSON",
@@ -48,6 +51,8 @@
 	"bs-wikipage-tasks-setcategories-success": "Se establecieron las categorías con éxito.",
 	"apihelp-bs-wikipage-store-description": "Lista todas las páginas del wiki. Permite ordenar, filtrar y paginar. Implementa parámetros de almacenamiento ExtJS.",
 	"apihelp-bs-wikipage-store-summary": "Enumera todas las páginas del wiki. Permite ordenarlas, filtrarlas y paginarlas. Implanta parámetros de la ExtJS Store.",
+	"apihelp-bs-ping-tasks-description": "Tarea ping que proporciona un intercambio continuo de datos",
+	"apihelp-bs-ping-tasks-summary": "Tarea ping que proporciona un intercambio continuo de datos",
 	"apihelp-bs-wikisubpage-treestore-description": "Lista las subpáginas de una página wiki específica",
 	"apihelp-bs-wikisubpage-treestore-summary": "Enumera las subpáginas de una página concreta del wiki",
 	"apihelp-bs-wikisubpage-treestore-param-node": "El título con prefijo de la página wiki",
@@ -67,5 +72,14 @@
 	"bs-api-task-wikipagetasks-taskData-categories": "Matriz de cadenas. Los valores deben ser nombres de categorías válidos.",
 	"apihelp-bs-watchlist-store-summary": "Enumera todas las entradas de la lista de seguimiento. Permite su ordenamiento y filtrado y consultarlas mediante paginación. Implementa parámetros de almacenamiento.",
 	"apihelp-bs-recentchanges-store-summary": "Enumera todos los cambios recientes. Permite ordenarlos, filtrarlos y paginarlos. Implementa parámetros de almacenamiento.",
-	"apihelp-bs-js-var-config-param-format": "Formato del resultado"
+	"apihelp-bs-task-summary": "Proporciona el punto final del API para ejecutar tareas registradas",
+	"apihelp-bs-task-description": "Proporciona el punto final del API para ejecutar tareas registradas",
+	"apihelp-bs-js-var-config-summary": "Proporciona un punto final del API para recuperar variables de configuración del lado del cliente",
+	"apihelp-bs-js-var-config-param-name": "Nombre de la variable de configuración a recuperar",
+	"apihelp-bs-js-var-config-param-func": "Función de configuración a ejecutar: has|get",
+	"apihelp-bs-js-var-config-param-context": "Objeto codificado JSON con el contexto de la llamada",
+	"apihelp-bs-js-var-config-param-format": "Formato del resultado",
+	"apihelp-bs-categorylinks-store-description": "Enumera todas las categorías de un enlace inclusivo de página a una categoría y marcador para las categorías explícitas e implícitas.",
+	"apihelp-bs-categorylinks-store-param-page-id": "El ID de página de una página",
+	"apihelp-bs-templatelinks-store-description": "Lista todas las plantillas de un enlace inclusivo de página a una plantilla."
 }
