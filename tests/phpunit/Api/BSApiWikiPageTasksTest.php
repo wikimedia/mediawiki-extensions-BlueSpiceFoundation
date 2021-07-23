@@ -18,7 +18,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 		return 'bs-wikipage-tasks';
 	}
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 
 		$this->insertPage(

@@ -13,7 +13,7 @@ use MediaWiki\MediaWikiServices;
 class ConfigTest extends \MediaWikiTestCase {
 	protected $tablesUsed = [ 'bs_settings3' ];
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 
 		$GLOBALS['bsgUnitTestSetting']  = 5;

@@ -12,7 +12,7 @@ use MediaWiki\MediaWikiServices;
  */
 class BSFixturesTest extends BSApiTestCase {
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 		new BSPageFixtures( $this );
 		new BSUserFixtures( $this );

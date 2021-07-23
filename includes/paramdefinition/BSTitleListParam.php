@@ -40,7 +40,7 @@ class BSTitleListParam extends \ParamProcessor\ParamDefinition {
 	/**
 	 * @return bool
 	 */
-	public function isList() : bool {
+	public function isList(): bool {
 		return true;
 	}
 }

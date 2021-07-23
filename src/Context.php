@@ -133,7 +133,7 @@ class Context implements IContextSource {
 	/**
 	 * @inheritDoc
 	 */
-	public function getCsrfTokenSet() : CsrfTokenSet {
+	public function getCsrfTokenSet(): CsrfTokenSet {
 		return new CsrfTokenSet( $this->getRequest() );
 	}
 }

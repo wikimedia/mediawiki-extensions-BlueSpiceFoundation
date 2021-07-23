@@ -17,7 +17,7 @@ class NamespaceLockdownTest extends MediaWikiTestCase {
 	/** @var User */
 	protected $user;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$user = $this->getTestUser()->getUser();

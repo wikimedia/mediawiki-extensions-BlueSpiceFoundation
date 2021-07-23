@@ -16,7 +16,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 		return 'bs-ping-tasks';
 	}
 
-	public function setUp() : void {
+	public function setUp(): void {
 		global $wgHooks;
 		parent::setUp();
 

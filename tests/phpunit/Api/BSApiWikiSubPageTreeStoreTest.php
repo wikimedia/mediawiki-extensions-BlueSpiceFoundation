@@ -38,7 +38,7 @@ class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 		];
 	}
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$oDbw = $this->db;
 		$oDbw->insert( 'page', [

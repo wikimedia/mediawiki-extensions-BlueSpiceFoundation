@@ -522,7 +522,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @since 1.34
 	 * @return NamespaceInfo
 	 */
-	public function getNamespaceInfo() : NamespaceInfo {
+	public function getNamespaceInfo(): NamespaceInfo {
 		return $this->getService( 'NamespaceInfo' );
 	}
 
@@ -530,7 +530,7 @@ class ServicesDecorator extends ServiceContainer {
 	 * @since 1.35
 	 * @return SpecialPageFactory
 	 */
-	public function getSpecialPageFactory() : SpecialPageFactory {
+	public function getSpecialPageFactory(): SpecialPageFactory {
 		return $this->getService( 'SpecialPageFactory' );
 	}
 }
