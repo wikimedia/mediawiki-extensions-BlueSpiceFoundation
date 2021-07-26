@@ -4,5 +4,9 @@
 			"Ajeje Brazorf"
 		]
 	},
-	"bs-days-duration": "{{PLURAL:$1|nu jornu|$1 jorna}}"
+	"bs-ns_main": "(Pàggini)",
+	"bs-userbar_loginswitch_logout": "Nesci",
+	"bs-userbar_loginswitch_login": "Trasi",
+	"bs-days-duration": "{{PLURAL:$1|nu jornu|$1 jorna}}",
+	"bs-viewtagerrorlist-legend": "$1 - Erruri"
 }
