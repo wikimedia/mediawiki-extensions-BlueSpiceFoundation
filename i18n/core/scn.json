@@ -7,6 +7,10 @@
 	"bs-ns_main": "(Pàggini)",
 	"bs-userbar_loginswitch_logout": "Nesci",
 	"bs-userbar_loginswitch_login": "Trasi",
+	"bs-months-duration": "{{PLURAL:$1|un misi|$1 misi}}",
+	"bs-weeks-duration": "{{PLURAL:$1|na simana|$1 simani}}",
 	"bs-days-duration": "{{PLURAL:$1|nu jornu|$1 jorna}}",
-	"bs-viewtagerrorlist-legend": "$1 - Erruri"
+	"bs-one-unit-ago": "$1 fa",
+	"bs-viewtagerrorlist-legend": "$1 - Erruri",
+	"bs-imagepage-download-text": "Scàrrica"
 }
