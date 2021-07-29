@@ -163,18 +163,13 @@ Ext.define( 'BS.dialog.PageExport', {
 			var link = $('<a></a>').attr( 'href', me.targetTitle.getUrl() );
 			link.attr( 'title', me.targetTitle.getPrefixedText() );
 			link.html( me.targetTitle.getPrefixedText() );
-
-			//trick to get markup of anchor tag
-			linkHtml = $( '<div>' ).html( link ).html();
+			linkHtml = $( '<div>' ).append( mw.message( 'bs-extjs-pageexport-success-text' , link ).parse() );
 
 			bs.util.alert(
 				'bs-pageexport-alert-success',
 				{
 					titleMsg: 'bs-extjs-pageexport-success',
-					text: mw.message(
-						'bs-extjs-pageexport-success-text',
-						linkHtml
-					).plain()
+					text: linkHtml
 				}
 			);
 			me.close();
