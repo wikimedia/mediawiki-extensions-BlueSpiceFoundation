@@ -159,6 +159,12 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 
 	/**
 	 *
+	 * @var array
+	 */
+	private $currentLevelIds = [];
+
+	/**
+	 *
 	 * @param stdClass[] &$aDataSets
 	 * @param stdClass $row
 	 * @param Title|null $oParent
@@ -193,13 +199,21 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 			return;
 		}
 
-		$oDataSet = new stdClass();
-		$oDataSet->text = $oTitle->getSubpageText();
-		$oDataSet->id = $oTitle->getPrefixedDBkey();
+		$id = $oTitle->getPrefixedDBkey();
 		if ( $oTitle->getNamespace() === NS_MAIN ) {
 			// Rebuild full qualified path
-			$oDataSet->id = ':' . $oDataSet->id;
+			$id = ':' . $id;
 		}
+		if ( in_array( $id, $this->currentLevelIds ) ) {
+			// Prevent duplicate nodes
+			return;
+		}
+
+		$this->currentLevelIds[] = $id;
+
+		$oDataSet = new stdClass();
+		$oDataSet->text = $oTitle->getSubpageText();
+		$oDataSet->id = $id;
 		$oDataSet->page_link = $this->oLinkRenderer->makeLink(
 			$oTitle,
 			$oTitle->getSubpageText()
