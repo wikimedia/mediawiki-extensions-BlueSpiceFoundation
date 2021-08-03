@@ -7,6 +7,7 @@
 			"McDutchie",
 			"Niknetniko",
 			"Ribert",
+			"Romaine",
 			"SPQRobin",
 			"Siebrand",
 			"Sjoerddebruin",
@@ -99,5 +100,8 @@
 	"action-wikiadmin": "potentieel gevaarlijke administratieve taken uit te voeren, zoals het beheren van gebruikers, rechten, globale configuratie (BlueSpice-extensies)",
 	"bs-tag-param-desc": "Waarde van het elementattribuut '$1'",
 	"protect-level-editor": "Alleen bewerkers en beheerders toestaan",
-	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp"
+	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp",
+	"bs-tag-input-desc": "Waarde van elementinhoud",
+	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-bluespice": "BlueSpice"
 }

@@ -4,6 +4,7 @@
 			"Esketti",
 			"Mainframe98",
 			"McDutchie",
+			"Romaine",
 			"Xbaked potatox"
 		]
 	},
@@ -21,5 +22,7 @@
 	"bs-validator-invalid-float": "Geen geldig kommagetal",
 	"bs-validator-invalid-integer": "Geen geldig geheel getal",
 	"bs-validator-invalid-coordinate": "Geen geldig coördinaat",
-	"bs-validator-invalid-parameter": "Deze parameter is niet toegestaan"
+	"bs-validator-invalid-parameter": "Deze parameter is niet toegestaan",
+	"bs-validator-invalid-boolean": "Geen geldige boolean",
+	"bs-validator-invalid-string": "Geen geldige tekenreeks"
 }

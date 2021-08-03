@@ -12,5 +12,8 @@
 	"bs-extjs-actions-column-header": "Azzioni",
 	"bs-extjs-mainns": "(Principali)",
 	"bs-extjs-filter-bool-yes": "sì",
-	"bs-extjs-categorytree-title": "Catigurìi"
+	"bs-extjs-categorytree-title": "Catigurìi",
+	"bs-extjs-cancel": "Annulla",
+	"bs-extjs-error": "Erruri",
+	"bs-extjs-label-user": "Utenti"
 }

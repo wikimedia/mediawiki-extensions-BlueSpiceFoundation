@@ -67,7 +67,7 @@
 	"apihelp-bs-task-param-examples": "Показує приклади параметрів завдання",
 	"bs-api-task-taskData-page-id": "Ідентифікатор наявної вікісторінки",
 	"bs-api-task-taskData-page-title": "Дійсна назва вікісторінки",
-	"bs-api-task-wikipagetasks-taskData-categories": "Масив рядків. Значення мають бути валідними назвами категорій.",
+	"bs-api-task-wikipagetasks-taskData-categories": "Масив рядків. Значення мають бути припустимими назвами категорій.",
 	"apihelp-bs-watchlist-store-summary": "Перелічує всі записи у списку спостереження. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри Store.",
 	"apihelp-bs-recentchanges-store-summary": "Перелічує всі останні зміни. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри Store.",
 	"apihelp-bs-task-summary": "Надає кінцеву точку API для виконання реєстрованих завдань",

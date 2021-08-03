@@ -5,6 +5,7 @@
 			"Okras",
 			"Patrick Star",
 			"Romanko Mikhail",
+			"Thothsum",
 			"Vlad5250"
 		]
 	},
@@ -19,5 +20,8 @@
 	"bs-setting-path-communication": "Связь",
 	"bs-setting-path-administration": "Администрирование",
 	"bs-setting-path-export": "Экспорт",
-	"bs-setting-path-skinning": "Оформление"
+	"bs-setting-path-skinning": "Оформление",
+	"bs-setting-path-customizing": "Настройка",
+	"bs-setting-path-contentstructuring": "Структурирование контента",
+	"bs-setting-path-qualityassurance": "Гарантия качества"
 }

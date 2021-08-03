@@ -48,5 +48,6 @@
 	"bs-filesystemhelper-save-base64-error": "L'arkivo ne povis prezervesar.",
 	"bs-filesystemhelper-upload-base64-error": "Ne povis sendar l'arkivo.",
 	"bs-ns": "'Namespace'",
-	"bs-imagepage-download-text": "Deskargar"
+	"bs-imagepage-download-text": "Deskargar",
+	"bs-graphicallist-action-preview": "Previdar"
 }
