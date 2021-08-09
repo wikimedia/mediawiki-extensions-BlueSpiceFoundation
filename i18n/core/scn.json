@@ -14,5 +14,7 @@
 	"bs-one-unit-ago": "$1 fa",
 	"bs-viewtagerrorlist-legend": "$1 - Erruri",
 	"bs-imagepage-download-text": "Scàrrica",
-	"bs-graphicallist-action-close": "Chiudi"
+	"bs-ns": "Namespace",
+	"bs-graphicallist-action-close": "Chiudi",
+	"bs-graphicallist-action-preview": "Antiprima"
 }
