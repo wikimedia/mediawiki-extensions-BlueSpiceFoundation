@@ -4,7 +4,10 @@
 			"Ajeje Brazorf"
 		]
 	},
+	"bs-filerepo-headerfilename": "Nomu dû file",
 	"bs-filerepo-headerpagecategories": "Catigurìi",
 	"bs-filerepo-headerfileusertext": "Utenti",
-	"bs-filerepo-headerfiledescription": "Discrizzioni"
+	"bs-filerepo-headerfiledescription": "Discrizzioni",
+	"bs-filerepo-yes": "Sì",
+	"bs-filerepo-no": "No"
 }
