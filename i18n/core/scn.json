@@ -13,5 +13,9 @@
 	"bs-mins-duration": "{{PLURAL:$1|un minutu|$1 minuti}}",
 	"bs-one-unit-ago": "$1 fa",
 	"bs-viewtagerrorlist-legend": "$1 - Erruri",
-	"bs-imagepage-download-text": "Scàrrica"
+	"bs-imagepage-download-text": "Scàrrica",
+	"bs-hours-duration": "{{PLURAL:$1|na ura|$1 uri}}",
+	"bs-ns": "Namespace",
+	"bs-graphicallist-action-close": "Chiudi",
+	"bs-graphicallist-action-preview": "Antiprima"
 }

@@ -15,5 +15,8 @@
 	"bs-extjs-categorytree-title": "Catigurìi",
 	"bs-extjs-cancel": "Annulla",
 	"bs-extjs-error": "Erruri",
-	"bs-extjs-label-user": "Utenti"
+	"bs-extjs-label-user": "Utenti",
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-close": "Chiudi",
+	"bs-extjs-label-namespace": "Namespace"
 }
