@@ -154,7 +154,11 @@ class Groups extends Module {
 				);
 			}
 		}
-
+		// if there is no reason at all, we dont need to lock down anything :)
+		// i.e. whenever the user is not in one of the lockdown groups
+		if ( empty( $this->reasons[$action] ) ) {
+			return false;
+		}
 		// only set this to locked down when all of the lockdown groups get locked
 		// as we mimic adding permissions
 		if ( count( $this->reasons[$action] ) === count( $lockGroups ) ) {
