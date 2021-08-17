@@ -3,6 +3,7 @@
 		"authors": [
 			"Aftab1995",
 			"Aftabuzzaman",
+			"Md. Golam Mukit Khan",
 			"আফতাবুজ্জামান"
 		]
 	},
@@ -22,6 +23,7 @@
 	"bs-extjs-saving": "সংরক্ষণ করা হচ্ছে ...",
 	"bs-extjs-close": "বন্ধ",
 	"bs-extjs-label-user": "ব্যবহারকারী",
+	"bs-extjs-label-namespace": "নামস্থান",
 	"bs-extjs-label-directsearch": "অনুসন্ধান",
 	"bs-extjs-titlecombo-newpagehint": "পাতা বিদ্যমান নেই!",
 	"bs-extjs-upload": "আপলোড",
@@ -29,6 +31,9 @@
 	"bs-extjs-uploading": "আপলোড হচ্ছে...",
 	"bs-extjs-allns": "(সকল)",
 	"bs-extjs-mainns": "(প্রধান)",
+	"bs-extjs-filter-bool-yes": "হ্যাঁ",
+	"bs-extjs-filter-bool-no": "না",
+	"bs-extjs-title-success": "সফল",
 	"bs-extjs-categorytree-title": "বিষয়শ্রেণীসমূহ",
 	"bs-extjs-filter-date-after": "এর পর",
 	"bs-extjs-filter-date-before": "এর পূর্বে",
