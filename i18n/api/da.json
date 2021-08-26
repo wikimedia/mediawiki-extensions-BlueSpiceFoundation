@@ -10,5 +10,7 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har ikke tilladelse til at redigere siden «$1».",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Liste over indstillinger",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Du har ikke tilladelse til at læse siden «$1».",
-	"bs-wikipage-tasks-error-nothingtoremove": "Der er ingen kategorier at fjerne"
+	"bs-wikipage-tasks-error-nothingtoremove": "Der er ingen kategorier at fjerne",
+	"bs-api-task-taskData-page-title": "En gyldig titel for en wikiside",
+	"apihelp-bs-categorylinks-store-param-page-id": "Side-ID'et for siden"
 }

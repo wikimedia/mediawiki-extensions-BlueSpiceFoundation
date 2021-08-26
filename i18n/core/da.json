@@ -45,6 +45,7 @@
 	"bs-parser-error-invalid-title": "Ugyldig titel: $1",
 	"bs-validator-error-namespace-does-not-exist": "Navnerummet findes ikke: $1",
 	"bs-validator-error-title-does-not-exist": "Siden findes ikke: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Siden tillades ikke: $1",
 	"bs-parser-error-invalid-category-title": "Siden er ikke i en gyldig kategori: $1",
 	"bs-export-menu-print-text": "Udskriv",
 	"bs-graphicallist-action-close": "Luk",
