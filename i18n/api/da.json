@@ -6,6 +6,7 @@
 	},
 	"apihelp-bs-store-param-limit": "Antal resultater som skal returneres",
 	"apihelp-bs-task-param-format": "Formatet af resultatet",
+	"bs-wikipage-tasks-error-page-not-valid": "Den angivne side er ikke gyldig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ændrede kategorier.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har ikke tilladelse til at redigere siden «$1».",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Liste over indstillinger",
