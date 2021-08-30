@@ -13,10 +13,12 @@
 	"bs-extjs-edit": "Cancia",
 	"bs-extjs-error": "Erruri",
 	"bs-extjs-actions-column-header": "Azzioni",
+	"bs-extjs-warning": "Accura",
 	"bs-extjs-close": "Chiudi",
 	"bs-extjs-label-user": "Utenti",
 	"bs-extjs-label-namespace": "Namespace",
 	"bs-extjs-mainns": "(Principali)",
 	"bs-extjs-filter-bool-yes": "sì",
+	"bs-extjs-title-warning": "Accura",
 	"bs-extjs-categorytree-title": "Catigurìi"
 }
