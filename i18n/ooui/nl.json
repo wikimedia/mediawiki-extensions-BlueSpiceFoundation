@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
+			"McDutchie",
 			"Optilete",
 			"Romaine"
 		]
@@ -11,6 +12,8 @@
 	"bs-ooui-key-value-input-widget-value-label": "Waarde",
 	"bs-ooui-key-value-input-widget-add-button-label": "Toevoegen",
 	"bs-ooui-key-value-input-widget-add-form-label": "Nieuw item toevoegen",
+	"bs-ooui-key-value-input-widget-error-message": "Alle verplichte velden moeten gegeven zijn!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Geen waarden gegeven!",
 	"bs-ooui-btn-dismiss-alert-title": "Sluiten",
 	"bs-ooui-key-value-input-widget-section-label": "Sectie",
 	"bs-ooui-key-value-input-widget-add-section-label": "Nieuwe sectie toevoegen"

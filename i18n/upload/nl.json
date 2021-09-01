@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mainframe98",
+			"McDutchie",
 			"Siebrand"
 		]
 	},
@@ -22,6 +23,8 @@
 	"bs-upload-filetypenotsupported": "Dit bestandstype wordt niet ondersteund.",
 	"bs-upload-details": "Details",
 	"bs-upload-uploadwarningdialog-title": "Bestand uploaden: Waarschuwingen",
+	"bs-upload-uploadwarningdialog-intro": "De volgende waarschuwingen zijn opgetreden tijdens het uploaden van het bestand:",
+	"bs-upload-uploadwarningdialog-outro": "Klik op \"{{int:bs-extjs-ok}}\" om de waarschuwingen te negeren en het bestand te uploaden of klik op \"{{int:bs-extjs-cancel}}\" om terug te keren naar het uploadformulier.",
 	"bs-upload-uploadwarningdialog-warning-exists": "Een bestand met de naam \"$1\" bestaat al",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "Er {{PLURAL:$1|is een duplicaat|zijn duplicaten}} van dit bestand",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Onbekende waarschuwing met code \"$1\""
