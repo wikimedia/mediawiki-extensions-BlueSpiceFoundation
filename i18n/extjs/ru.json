@@ -88,7 +88,9 @@
 	"bs-extjs-pageexport-error-invalid-title": "Недопустимое имя списка.",
 	"bs-extjs-tools-trigger-text": "Инструменты",
 	"bs-extjs-flyout-tab-thumbs-label": "Миниатюры",
+	"bs-extjs-flyout-tab-thumbs-title": "Переключиться на просмотр миниатюр",
 	"bs-extjs-flyout-tab-grid-label": "Детали",
+	"bs-extjs-flyout-tab-grid-title": "Переключиться на детальный просмотр",
 	"bs-extjs-flyout-add-title": "Нажмите сюда, чтобы добавить новую позицию",
 	"bs-extjs-flyout-add-label": "Добавить объект"
 }
