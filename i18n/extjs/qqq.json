@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Hamilton Abreu",
 			"Jeeputer",
 			"Liuxinyu970226",
 			"Mglaser",
@@ -80,7 +81,7 @@
 	"bs-extjs-pageexport-required-text": "Dialog text when required fields are not filled",
 	"bs-extjs-export-search-summary-text": "Text for summary message for page edit on export",
 	"bs-extjs-pageexport-error-invalid-title": "Text for error message when name of the list is not valid for a Title",
-	"bs-extjs-combo-box-default-placeholder": "Default placeholder text for Combo boxes. Indicates that options will be filtered as user types",
+	"bs-extjs-combo-box-default-placeholder": "Default placeholder text for Combo boxes. Indicates that options will be filtered as the user types",
 	"bs-extjs-tools-trigger-title": "Tooltip description for icon button that opens up a menu",
 	"bs-extjs-tools-trigger-text": "Label for icon button that opens up a menu",
 	"bs-extjs-flyout-tab-thumbs-label": "Label for a tab header in a tab view",
