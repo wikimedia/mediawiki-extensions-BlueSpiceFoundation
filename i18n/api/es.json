@@ -9,6 +9,7 @@
 			"Macofe",
 			"Nancystodd",
 			"Rapunzel",
+			"Warming Hearth",
 			"YoViajo"
 		]
 	},
@@ -81,7 +82,10 @@
 	"apihelp-bs-js-var-config-param-context": "Objeto codificado JSON con el contexto de la llamada",
 	"apihelp-bs-js-var-config-param-format": "Formato del resultado",
 	"apihelp-bs-categorylinks-store-description": "Enumera todas las categorías de un enlace inclusivo de página a una categoría y marcador para las categorías explícitas e implícitas.",
+	"apihelp-bs-categorylinks-store-summary": "Enumera todas las categorías de un enlace inclusivo de página a una categoría y marcador para las categorías explícitas e implícitas.",
 	"apihelp-bs-categorylinks-store-param-page-id": "El ID de página de una página",
 	"apihelp-bs-templatelinks-store-description": "Lista todas las plantillas de un enlace inclusivo de página a una plantilla.",
-	"apihelp-bs-templatelinks-store-param-page-id": "El id de página de la página"
+	"apihelp-bs-templatelinks-store-param-page-id": "El id de página de la página",
+	"apihelp-bs-linker-summary": "Muestra links a páginas generadas por Linker",
+	"apihelp-bs-linker-description": "Muestra links a páginas generadas por Linker"
 }
