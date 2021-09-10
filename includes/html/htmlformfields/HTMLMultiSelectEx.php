@@ -46,7 +46,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 				$this->mParams['placeholder'] : $placeholder;
 		$attr['allowDuplicates'] = isset( $this->mParams['allowDuplicates'] ) ?
 			(bool)$this->mParams['allowDuplicates'] : false;
-
 		$attr['allowArbitrary'] = false;
 		if ( isset( $this->mParams['allowedValues'] ) ) {
 			$attr['allowedValues'] = $this->mParams['allowedValues'];
@@ -77,6 +76,18 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		// If options hold just a list of alredy set values, disable it
 		if ( $value == $this->getOptions() ) {
 			$attr['options'] = [];
+		}
+
+		// Remove selected items form options to avoid double entry's
+		// See ERM24998
+		if ( !empty( $attr['selected'] ) ) {
+			$options = [];
+			foreach ( $attr['options'] as $option ) {
+				if ( !in_array( $option['label'], $attr['selected'] ) ) {
+					$options[] = $option;
+				}
+			}
+			$attr['options'] = $options;
 		}
 
 		if ( !empty( $attr[ 'options' ] ) ) {
