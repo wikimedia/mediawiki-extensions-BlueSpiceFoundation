@@ -18,5 +18,7 @@
 	"bs-extjs-label-user": "Utenti",
 	"bs-extjs-ok": "Ok",
 	"bs-extjs-close": "Chiudi",
-	"bs-extjs-label-namespace": "Namespace"
+	"bs-extjs-label-namespace": "Namespace",
+	"bs-extjs-warning": "Accura",
+	"bs-extjs-title-warning": "Accura"
 }

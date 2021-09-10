@@ -90,5 +90,7 @@
 	"bs-extjs-flyout-add-title": "Нажмите сюда, чтобы добавить новую позицию",
 	"bs-extjs-flyout-add-label": "Добавить объект",
 	"bs-extjs-label-group": "Группа",
-	"bs-extjs-label-specialpage": "Служебная страница"
+	"bs-extjs-label-specialpage": "Служебная страница",
+	"bs-extjs-flyout-tab-thumbs-title": "Переключиться на просмотр миниатюр",
+	"bs-extjs-flyout-tab-grid-title": "Переключиться на детальный просмотр"
 }

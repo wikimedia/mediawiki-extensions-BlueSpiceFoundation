@@ -49,5 +49,6 @@
 	"bs-filesystemhelper-upload-base64-error": "Ne povis sendar l'arkivo.",
 	"bs-ns": "'Namespace'",
 	"bs-imagepage-download-text": "Deskargar",
-	"bs-graphicallist-action-preview": "Previdar"
+	"bs-graphicallist-action-preview": "Previdar",
+	"bs-graphicallist-action-close": "Klozez"
 }

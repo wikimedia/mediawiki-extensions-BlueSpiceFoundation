@@ -7,5 +7,6 @@
 	"bs-filerepo-headerfiletimestamp": "Sendita",
 	"bs-filerepo-headerfiledescription": "Deskripto",
 	"bs-filerepo-labelupload": "Kargar",
-	"bs-filerepo-headerfilesize": "Grandeso"
+	"bs-filerepo-headerfilesize": "Grandeso",
+	"bs-filerepo-headerfilethumbnail": "Miniaturo"
 }

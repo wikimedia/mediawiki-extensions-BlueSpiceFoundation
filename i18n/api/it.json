@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"Stefano",
 			"TheRukk",
 			"Tizven",
 			"Wikitoni"
@@ -60,5 +61,9 @@
 	"apihelp-bs-task-param-examples": "Mostra esempi per i parametri dell'attività.",
 	"bs-api-task-wikipagetasks-taskData-categories": "Vettore di stringhe. I valori devono essere nomi validi di categorie.",
 	"apihelp-bs-js-var-config-param-format": "Formato del risultato",
-	"apihelp-bs-templatelinks-store-param-page-id": "L'ID pagina della pagina"
+	"apihelp-bs-templatelinks-store-param-page-id": "L'ID pagina della pagina",
+	"apihelp-bs-category-treestore-description": "Elenca le sottocategorie di una specifica categoria",
+	"apihelp-bs-js-var-config-param-func": "Funzione di configurazione da eseguire: has|get",
+	"apihelp-bs-linker-summary": "Restituisce collegamento alle pagine generate da Linker",
+	"apihelp-bs-linker-description": "Restituisce collegamento alle pagine generate da Linker"
 }

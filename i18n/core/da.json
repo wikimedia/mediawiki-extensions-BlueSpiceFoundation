@@ -50,5 +50,6 @@
 	"bs-imagepage-download-text": "Hent",
 	"bs-pref-fileextensions": "Tilladte filendelser:",
 	"bs-parser-error-invalid-category-title": "Siden er ikke i en gyldig kategori: $1",
-	"bs-export-menu-print-text": "Udskriv"
+	"bs-export-menu-print-text": "Udskriv",
+	"bs-validator-error-title-namespace-on-blacklist": "Siden tillades ikke: $1"
 }
