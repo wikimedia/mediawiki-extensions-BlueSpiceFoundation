@@ -35,6 +35,7 @@
 	"apihelp-bs-store-param-page": "Permite el cálculo de inicio/límite del lado servidor",
 	"apihelp-bs-store-param-limit": "Número de resultados a devolver",
 	"apihelp-bs-store-param-start": "El desplazamiento desde el cual comenzar la lista de resultados",
+	"apihelp-bs-store-param-callback": "Un nombre de método en el código del cliente que se debe llamar en la respuesta (JSONP)",
 	"apihelp-bs-store-param-query": "Similar a <var>filter</var>, pero el valor proporcionado sirve como un filtro solo para campo <var>value</var> de un componente ExtJS",
 	"apihelp-bs-store-param-dc": "Indicador <code>Disable cache</code> (desactivar antememoria)",
 	"apihelp-bs-store-param-format": "El formato de la salida (JSON o JSON con formato únicamente)",
@@ -85,6 +86,7 @@
 	"apihelp-bs-categorylinks-store-summary": "Enumera todas las categorías de un enlace inclusivo de página a una categoría y marcador para las categorías explícitas e implícitas.",
 	"apihelp-bs-categorylinks-store-param-page-id": "El ID de página de una página",
 	"apihelp-bs-templatelinks-store-description": "Lista todas las plantillas de un enlace inclusivo de página a una plantilla.",
+	"apihelp-bs-templatelinks-store-summary": "Enumera todas las plantillas de una página, incluido el enlace a la plantilla.",
 	"apihelp-bs-templatelinks-store-param-page-id": "El id de página de la página",
 	"apihelp-bs-linker-summary": "Muestra links a páginas generadas por Linker",
 	"apihelp-bs-linker-description": "Muestra links a páginas generadas por Linker"
