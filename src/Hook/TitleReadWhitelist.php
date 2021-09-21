@@ -54,12 +54,12 @@ abstract class TitleReadWhitelist extends Hook {
 
 	/**
 	 *
-	 * @param Title &$title
-	 * @param User &$user
+	 * @param Title $title
+	 * @param User $user
 	 * @param bool &$whitelisted
 	 * @return bool
 	 */
-	public static function callback( &$title, &$user, &$whitelisted ) {
+	public static function callback( $title, $user, &$whitelisted ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -75,11 +75,11 @@ abstract class TitleReadWhitelist extends Hook {
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param Title &$title
-	 * @param User &$user
+	 * @param Title $title
+	 * @param User $user
 	 * @param bool &$whitelisted
 	 */
-	public function __construct( $context, $config, &$title, &$user, &$whitelisted ) {
+	public function __construct( $context, $config, $title, $user, &$whitelisted ) {
 		parent::__construct( $context, $config );
 
 		$this->title = $title;
