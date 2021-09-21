@@ -10,6 +10,8 @@
 	"bs-extjs-no": "No",
 	"bs-extjs-save": "Sarva",
 	"bs-extjs-delete": "Cancella",
+	"bs-extjs-add": "Junci",
+	"bs-extjs-remove": "Leva",
 	"bs-extjs-edit": "Cancia",
 	"bs-extjs-error": "Erruri",
 	"bs-extjs-actions-column-header": "Azzioni",
@@ -20,5 +22,6 @@
 	"bs-extjs-mainns": "(Principali)",
 	"bs-extjs-filter-bool-yes": "sì",
 	"bs-extjs-title-warning": "Accura",
-	"bs-extjs-categorytree-title": "Catigurìi"
+	"bs-extjs-categorytree-title": "Catigurìi",
+	"bs-extjs-flyout-tab-grid-label": "Dittagghî"
 }
