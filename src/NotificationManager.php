@@ -35,12 +35,12 @@ class NotificationManager {
 	/**
 	 *
 	 * @param ExtensionAttributeBasedRegistry $regFuncRegistry
-	 * @param \Config $config
+	 * @param INotifier $notifier
 	 */
-	public function __construct( $regFuncRegistry, $config ) {
+	public function __construct( $regFuncRegistry, $notifier ) {
 		$this->notificationRegistry = new NotificationRegistry();
 		$this->registrationFuncRegistry = $regFuncRegistry;
-		$this->config = $config;
+		$this->notifier = $notifier;
 
 		$this->init();
 	}
@@ -49,8 +49,6 @@ class NotificationManager {
 	 * Instantiates all registered notifiers
 	 */
 	public function init() {
-		$notifierClass = $this->config->get( 'NotifierClass' );
-		$this->notifier = new $notifierClass( $this->config );
 		$this->notifier->init();
 
 		$this->runRegisterFunctions();
@@ -119,7 +117,7 @@ class NotificationManager {
 	 *
 	 * @param string $key
 	 * @param array $params
-	 * @param INotificator|null $notifier
+	 * @param INotification|null $notifier
 	 * @return INotification
 	 */
 	public function getNotificationObject( $key, $params, $notifier = null ) {
