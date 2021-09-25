@@ -31,6 +31,14 @@ class Logo extends StringSetting {
 	 *
 	 * @return string
 	 */
+	public function getHelpMessageKey() {
+		return 'bs-pref-logopath-help';
+	}
+
+	/**
+	 *
+	 * @return string
+	 */
 	public function getVariableName() {
 		return 'wg' . $this->getName();
 	}

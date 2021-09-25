@@ -103,5 +103,7 @@
 	"action-editor": "be granted all permissions from the role \"editor\" for protected pages in editor restriction when the role system is activated",
 	"bs-pref-fileextensions-help": "File types that can be uploaded to the wiki. Some types (e.g., html, js, php, cgi, exe) are not permitted for security reasons even if they have been added here.",
 	"bs-pref-imageextensions-help": "Image file types that can be uploaded to the wiki. Possible web formats: gif, png, jpg, jpeg. Other image formats: tiff, bmp",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Configuration file $1 could not be written!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Configuration file $1 could not be written!",
+	"bs-pref-logopath-help": "The logo should be stored in the /w/images folder of your installation. If you store it in the /w/skins folder of your BlueSpice installation, it can be overwritten with an upgrade.",
+	"bs-pref-faviconpath-help": "The favicon should be stored in the /w/images folder of your installation. If you store it in the /w/skins folder of your BlueSpice installation, it could be overwritten with an upgrade. Favicons have the file extension .ico."
 }
