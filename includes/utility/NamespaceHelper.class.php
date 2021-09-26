@@ -26,7 +26,9 @@ class BsNamespaceHelper {
 	 */
 	public static function getMwNamespaceConstants() {
 		if ( self::$namespaceConstants === null ) {
-			$ns = MWNamespace::getCanonicalNamespaces();
+			$ns = MediaWikiServices::getInstance()
+				->getNamespaceInfo()
+				->getCanonicalNamespaces();
 			foreach ( $ns as $id => &$name ) {
 				$name = self::getNamespaceConstName( $id, $name );
 			}

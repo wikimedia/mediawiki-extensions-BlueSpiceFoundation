@@ -25,6 +25,8 @@
  * @filesource
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * BSNamespaceValidator class in BlueSpice
  * @package BlueSpice_Foundation
@@ -65,7 +67,9 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 	 */
 	public function doValidation( $value ) {
 		// TODO: finalize implementation
-		if ( $this->hasToExist && !MWNamespace::exists( $value ) ) {
+		if ( $this->hasToExist &&
+			!MediaWikiServices::getInstance()->getNamespaceInfo->exists( $value )
+		) {
 			$this->addErrorMessage(
 				wfMessage(
 					'bs-validator-error-namespace-does-not-exist',
