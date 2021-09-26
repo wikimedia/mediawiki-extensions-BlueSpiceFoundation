@@ -27,6 +27,7 @@
 
 use BlueSpice\Api\Task;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Provides common tasks that can be performed on a WikiPage
@@ -245,7 +246,9 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$rawContext->wgPageName = $title->getPrefixedText();
 			$rawContext->wgRelevantPageName = $title->getPrefixedText();
 			$rawContext->wgTitle = $title->getText();
-			$rawContext->wgCanonicalNamespace = MWNamespace::getCanonicalName( $title->getNamespace() );
+			$rawContext->wgCanonicalNamespace = MediaWikiServices::getInstance()
+				->getNamespaceInfo()
+				->getCanonicalName( $title->getNamespace() );
 			$rawContext->wgCanonicalSpecialPageName = false;
 		}
 

@@ -3,7 +3,7 @@
 namespace BlueSpice\Utility\WikiTextLinksHelper;
 
 use BsNamespaceHelper;
-use MWNamespace;
+use MediaWiki\MediaWikiServices;
 use Title;
 
 class CategoryLinksHelper extends InternalLinksHelper {
@@ -97,7 +97,9 @@ class CategoryLinksHelper extends InternalLinksHelper {
 		$this->maskParserFunctions();
 
 		// Pattern for Category tags
-		$canonicalNSName = MWNamespace::getCanonicalName( NS_CATEGORY );
+		$canonicalNSName = MediaWikiServices::getInstance()
+			->getNamespaceInfo()
+			->getCanonicalName( NS_CATEGORY );
 		$localNSName = BsNamespaceHelper::getNamespaceName( NS_CATEGORY );
 		$pattern = "#\[\[($localNSName|$canonicalNSName):(.*?)(\|(.*?)|)\]\]#si";
 		$matches = [];

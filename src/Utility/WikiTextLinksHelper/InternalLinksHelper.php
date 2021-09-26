@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Utility\WikiTextLinksHelper;
 
+use MediaWiki\MediaWikiServices;
+
 class InternalLinksHelper {
 
 	/**
@@ -129,9 +131,9 @@ class InternalLinksHelper {
 			if ( $leadingColon && in_array( $target->getNamespace(), [ NS_FILE, NS_CATEGORY ] ) ) {
 				$linkWikiText .= ':';
 			}
-			$linkWikiText .= \MWNamespace::getCanonicalName(
-				$target->getNamespace()
-			);
+			$linkWikiText .= MediaWikiServices::getInstance()
+				->getNamespaceInfo()
+				->getCanonicalName( $target->getNamespace() );
 			$linkWikiText .= ':';
 		}
 		$linkWikiText .= $target->getText();

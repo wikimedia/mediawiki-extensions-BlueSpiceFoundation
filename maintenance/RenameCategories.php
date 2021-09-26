@@ -250,10 +250,11 @@ $wgFlaggedRevsAutoReview = true;
 $matches = 0;
 $inarticlematches = 0;
 
+$namespaceInfo = \MediaWiki\MediaWikiServices::getInstance()->getNamespaceInfo();
 foreach ( $res as $row ) {
 	$row = (array)$row;
 	$cur_title = $row['page_title'];
-	$cur_title_ns = MWNamespace::getCanonicalName( $row['page_namespace'] );
+	$cur_title_ns = $namespaceInfo->getCanonicalName( $row['page_namespace'] );
 	$cur_title_ns = ( $cur_title_ns ) ? "$cur_title_ns:" : "";
 	print "$cur_title_ns$cur_title\n=======================================================\n";
 
