@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Html\FormField;
 
+use MediaWiki\MediaWikiServices;
+
 class NamespaceMultiselect extends \HTMLFormField {
 	const OPTION_HIDE_TALK = 'hide-talk';
 	const OPTION_HIDE_PSEUDO = 'hide-pseudo';
@@ -87,7 +89,8 @@ class NamespaceMultiselect extends \HTMLFormField {
 				continue;
 			}
 
-			if ( \MWNamespace::isTalk( $namespaceId ) && $options[ static::OPTION_HIDE_TALK ] ) {
+			$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+			if ( $namespaceInfo->isTalk( $namespaceId ) && $options[ static::OPTION_HIDE_TALK ] ) {
 				continue;
 			}
 
@@ -103,8 +106,8 @@ class NamespaceMultiselect extends \HTMLFormField {
 			$dataSet = [
 				'namespaceId' => $namespaceId,
 				'namespaceName' => $language->getNsText( $namespaceId ),
-				'isNonincludable' => \MWNamespace::isNonincludable( $namespaceId ),
-				'namespaceContentModel' => \MWNamespace::getNamespaceContentModel( $namespaceId )
+				'isNonincludable' => $namespaceInfo->isNonincludable( $namespaceId ),
+				'namespaceContentModel' => $namespaceInfo->getNamespaceContentModel( $namespaceId )
 			];
 
 			if ( $namespaceId === NS_MAIN ) {

@@ -7,7 +7,6 @@ use BlueSpice\Data\ReaderParams;
 use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
-use MWNamespace;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {
@@ -37,7 +36,9 @@ class Reader extends DatabaseReader {
 	 * @return PrimaryDataProvider
 	 */
 	protected function makePrimaryDataProvider( $params ) {
-		$contentNamespaces = MWNamespace::getContentNamespaces();
+		$contentNamespaces = MediaWikiServices::getInstance()
+			->getNamespaceInfo()
+			->getContentNamespaces();
 		$contextUser = null;
 		if ( $this->filterForContextUser ) {
 			$contextUser = $this->context->getUser();

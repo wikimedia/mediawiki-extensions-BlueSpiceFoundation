@@ -5,7 +5,6 @@ namespace BlueSpice\Data\RecentChanges;
 use BlueSpice\Data\DatabaseReader;
 use BlueSpice\Data\ReaderParams;
 use MediaWiki\MediaWikiServices;
-use MWNamespace;
 use Title;
 
 class Reader extends DatabaseReader {
@@ -52,7 +51,7 @@ class Reader extends DatabaseReader {
 		$contentNamespaceIds = [];
 
 		foreach ( $namespaceIds as $namespaceId ) {
-			if ( MWNamespace::isContent( $namespaceId ) ) {
+			if ( MediaWikiServices::getInstance()->getNamespaceInfo()->isContent( $namespaceId ) ) {
 				$contentNamespaceIds[] = $namespaceId;
 			}
 		}
