@@ -5,6 +5,7 @@
 			"Alexandr Efremov",
 			"Alexey zakharenkov",
 			"Amire80",
+			"DDPAT",
 			"Diman Russkov",
 			"Facenapalm",
 			"Happy13241",
@@ -92,5 +93,6 @@
 	"bs-extjs-label-group": "Группа",
 	"bs-extjs-label-specialpage": "Служебная страница",
 	"bs-extjs-flyout-tab-thumbs-title": "Переключиться на просмотр миниатюр",
-	"bs-extjs-flyout-tab-grid-title": "Переключиться на детальный просмотр"
+	"bs-extjs-flyout-tab-grid-title": "Переключиться на детальный просмотр",
+	"bs-extjs-combo-box-default-placeholder": "Тип фильтра…"
 }

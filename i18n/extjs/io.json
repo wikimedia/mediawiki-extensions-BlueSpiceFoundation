@@ -17,5 +17,6 @@
 	"bs-extjs-loading": "Karganta...",
 	"bs-extjs-error": "Eroro",
 	"bs-extjs-close": "Klozez",
-	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi"
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
+	"bs-extjs-allns": "(omni)"
 }

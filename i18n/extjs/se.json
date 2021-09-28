@@ -5,5 +5,7 @@
 		]
 	},
 	"bs-extjs-pageexport-list-format-link-label": "Liŋka",
-	"bs-extjs-categorytree-title": "Kategoriijat"
+	"bs-extjs-categorytree-title": "Kategoriijat",
+	"bs-extjs-label-namespace": "Nammagomuvuohta",
+	"bs-extjs-allns": "(buot)"
 }
