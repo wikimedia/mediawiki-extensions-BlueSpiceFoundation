@@ -27,6 +27,8 @@
 
 namespace BlueSpice;
 
+use DeferredUpdates;
+use Exception;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Message;
@@ -196,15 +198,23 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	 */
 	protected function runUpdates() {
 		$title = $this->context->getTitle();
-		if ( $title && $title->getNamespace() >= NS_MAIN ) {
-			$wikiPage = WikiPage::factory( $title );
-			$content = $wikiPage->getContent();
-			if ( $content instanceof \Content ) {
-				$updates = $content->getSecondaryDataUpdates( $title );
-				\DataUpdate::runUpdates( $updates );
-			}
+		$status = Status::newGood();
+		if ( !$title || $title->getNamespace() < NS_MAIN ) {
+			return Status::newGood();
 		}
-		return Status::newGood();
+		try {
+			$wikiPage = WikiPage::factory( $title );
+		} catch ( Exception $e ) {
+			return $status;
+		}
+		if ( !$wikiPage ) {
+			return $status;
+		}
+		$wikiPage->doSecondaryDataUpdates( [
+			'recursive' => false,
+			'defer' => DeferredUpdates::POSTSEND,
+		] );
+		return $status;
 	}
 
 	/**

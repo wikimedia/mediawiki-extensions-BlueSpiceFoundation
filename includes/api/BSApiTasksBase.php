@@ -233,18 +233,24 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		if ( $oTitle === null ) {
 			$oTitle = $this->getTitle();
 		}
-		if ( !$this->isWriteMode() && $oTitle->getNamespace() < NS_MAIN ) {
+		if ( !$oTitle || $oTitle->getNamespace() < NS_MAIN ) {
 			return;
 		}
-		$wikipage = WikiPage::factory( $oTitle );
-		$content = $wikipage->getContent();
-		if ( !$content ) {
-		   return;
+		if ( !$this->isWriteMode() ) {
+			return;
 		}
-		$updates = $content->getSecondaryDataUpdates( $oTitle );
-		foreach ( $updates as $update ) {
-			$update->doUpdate();
+		try {
+			$wikiPage = WikiPage::factory( $oTitle );
+		} catch ( Exception $e ) {
+			return;
 		}
+		if ( !$wikiPage ) {
+			return;
+		}
+		$wikiPage->doSecondaryDataUpdates( [
+			'recursive' => false,
+			'defer' => DeferredUpdates::POSTSEND
+		] );
 	}
 
 	/**
