@@ -15,6 +15,8 @@ abstract class Tag implements ITag {
 	}
 
 	/**
+	 * Returning an empty string will result in no container to be created.
+	 * This also means no automatic data attributes will be available.
 	 *
 	 * @return string
 	 */
