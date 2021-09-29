@@ -3,6 +3,7 @@
 namespace BlueSpice\Tag;
 
 use BlueSpice\ParamProcessor\ProcessingErrorMessageTranslator;
+use Html;
 
 class GenericHandler {
 
@@ -88,7 +89,7 @@ class GenericHandler {
 	 */
 	public function handle( $input, array $args, \Parser $parser, \PPFrame $frame ) {
 		$elementName = $this->tag->getContainerElementName();
-		if ( !$this->isValidContainerElementName( $elementName ) ) {
+		if ( !empty( $elementName ) && !$this->isValidContainerElementName( $elementName ) ) {
 			$tagNames = $this->tag->getTagNames();
 			throw new \MWException(
 				"Invalid container element name for tag '{$tagNames[0]}'!"
@@ -128,14 +129,16 @@ class GenericHandler {
 			return $this->makeErrorOutput();
 		}
 
-		$wrappedOutput = \Html::rawElement(
-			$elementName,
-			$this->makeContainerAttributes(),
-			$output
-		);
+		if ( !empty( $elementName ) ) {
+			$output = Html::rawElement(
+				$elementName,
+				$this->makeContainerAttributes(),
+				$output
+			);
+		}
 
 		return [
-			$wrappedOutput,
+			$output,
 			MarkerType::KEY => (string)$this->tag->getMarkerType()
 		];
 	}
