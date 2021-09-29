@@ -35,7 +35,7 @@ class NotificationRegistry implements \BlueSpice\IRegistry {
 	 * Adds new notification
 	 *
 	 * @param string $key
-	 * @param \INotifier $value
+	 * @param INotifier $value
 	 */
 	public function addValue( $key, $value ) {
 		$this->notifications[$key] = $value;

@@ -173,7 +173,7 @@ return [
 
 		return new \BlueSpice\NotificationManager(
 			$regFuncRegistry,
-			$services->getConfigFactory()->makeConfig( 'bsg' )
+			$services->getService( 'MWStakeNotificationsNotifier' )
 		);
 	},
 
