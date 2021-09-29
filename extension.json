@@ -629,9 +629,6 @@
 		"PermissionConfig": {
 			"value": []
 		},
-		"NotifierClass": {
-			"value": "BlueSpice\\NullNotifier"
-		},
 		"BlueSpiceExtInfo": {
 			"value": {
 				"name": "BlueSpice",
