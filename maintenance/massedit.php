@@ -24,6 +24,8 @@ This script is based loosely on maintenance/edit.php of MediaWiki.
 // include MediaWiki's command line tools
 require_once 'BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 $userName    = 'WikiBot';
 $summary     = 'Some meaningful description';
 $minor       = false;
@@ -142,10 +144,12 @@ $res = $dbw->select(
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $hits = 0;
 
+$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+
 foreach ( $res as $row ) {
 	$row = (array)$row;
 	$cur_title    = $row['page_title'];
-	$cur_title_ns = MWNamespace::getCanonicalName( $row['page_namespace'] );
+	$cur_title_ns = $namespaceInfo->getCanonicalName( $row['page_namespace'] );
 	$cur_title_ns = ( $cur_title_ns ) ? "$cur_title_ns:" : "";
 	print "$cur_title_ns$cur_title\n-----------------\n";
 
