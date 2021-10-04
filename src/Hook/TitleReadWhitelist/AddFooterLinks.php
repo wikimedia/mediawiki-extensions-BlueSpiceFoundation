@@ -42,7 +42,11 @@ class AddFooterLinks extends TitleReadWhitelist {
 			if ( $this->msg( $desc )->inContentLanguage()->isDisabled() ) {
 				continue;
 			}
-			$titles[] = Title::newFromText( $this->msg( $page )->inContentLanguage()->text() );
+			$title = Title::newFromText( $this->msg( $page )->inContentLanguage()->text() );
+			if ( !$title ) {
+				continue;
+			}
+			$titles[] = $title;
 		}
 		return $titles;
 	}
