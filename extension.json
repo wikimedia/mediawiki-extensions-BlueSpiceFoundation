@@ -11,7 +11,8 @@
 	"requires": {
 		"MediaWiki": ">= 1.36.0",
 		"extensions": {
-			"ExtJSBase": ">=1.31"
+			"ExtJSBase": ">=1.31",
+			"OOJSPlus": ">=0.2"
 		}
 	},
 	"attributes": {
