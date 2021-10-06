@@ -49,5 +49,20 @@
 	"apihelp-bs-task-param-context": "JSON-строковый кодированный объект с контекстными данными для задачи",
 	"apihelp-bs-ping-tasks-description": "Задача Ping, обеспечивающая непрерывный обмен данными",
 	"apihelp-bs-ping-tasks-summary": "Задача Ping, обеспечивающая непрерывный обмен данными",
-	"apihelp-bs-wikisubpage-treestore-param-node": "Заголовок вики-страницы с префиксом"
+	"apihelp-bs-wikisubpage-treestore-param-node": "Заголовок вики-страницы с префиксом",
+	"apihelp-bs-filebackend-store-description": "Перечисляет все файлы из файлового бэкэнда. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
+	"apihelp-bs-store-param-callback": "Имя метода в клиентском коде, который должен вызываться в ответе (JSONP)",
+	"apihelp-bs-store-param-query": "Подобно <var>filter</var>, но предоставленное значение служит фильтром только для поля <var>value</var> компонента ExtJS",
+	"apihelp-bs-store-param-options": "Произвольные варианты настройки магазина в формате строки JSON",
+	"apihelp-bs-wikisubpage-treestore-description": "Перечисляет подстраницы определенного вики-сайта",
+	"apihelp-bs-wikisubpage-treestore-summary": "Перечисляет подстраницы определенного вики-сайта",
+	"apihelp-bs-upload-license-store-description": "Список всех доступных лицензий для загрузки файла.",
+	"apihelp-bs-upload-license-store-summary": "Список всех доступных лицензий для загрузки файла.",
+	"apihelp-bs-category-treestore-description": "Перечисляет подкатегории определенной категории",
+	"apihelp-bs-category-treestore-summary": "Перечисляет подкатегории определенной категории",
+	"apihelp-bs-category-treestore-param-node": "Путь категорий, разделенных косой чертой",
+	"apihelp-bs-js-var-config-param-name": "Имя переменной конфигурации для получения",
+	"apihelp-bs-js-var-config-param-func": "Выполняемая функция конфигурации: has|get",
+	"apihelp-bs-linker-summary": "Возвращает ссылки на страницы, созданные Linker",
+	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker"
 }

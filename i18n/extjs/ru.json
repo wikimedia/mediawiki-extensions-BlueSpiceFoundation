@@ -94,5 +94,6 @@
 	"bs-extjs-label-specialpage": "Служебная страница",
 	"bs-extjs-flyout-tab-thumbs-title": "Переключиться на просмотр миниатюр",
 	"bs-extjs-flyout-tab-grid-title": "Переключиться на детальный просмотр",
-	"bs-extjs-combo-box-default-placeholder": "Тип фильтра…"
+	"bs-extjs-combo-box-default-placeholder": "Тип фильтра…",
+	"bs-extjs-tools-trigger-title": "Щелкните здесь, чтобы открыть меню инструментов"
 }
