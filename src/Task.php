@@ -31,6 +31,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
+use MWStake\MediaWiki\Component\Notifications\INotifier;
 use Psr\Log\LoggerInterface;
 use Status;
 use WikiPage;
@@ -84,7 +85,7 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	 * @param Context $context
 	 * @param LoggerInterface $logger
 	 * @param ActionLogger $actionLogger
-	 * @param Notifier $notifier
+	 * @param INotifier $notifier
 	 * @param IPermissionChecker $permissionChecker
 	 */
 	protected function __construct( MediaWikiServices $services, Context $context,
