@@ -13,6 +13,7 @@
 	"bs-deferred-action-status-error": "ناموفق بود.",
 	"bs-deferred-action-apicopypage-description": "کپی‌کردن «$1» به «$2»",
 	"bs-deferred-action-apieditpage-description": "ویرایش «$1».",
+	"bs-deferred-batch-title": "پردازش دسته‌جمعی",
 	"bs-deferred-batch-progress-desc": "پیشرفت",
 	"bs-deferred-batch-actions": "عملکردها",
 	"bs-deferred-batch-description": "توضیح",

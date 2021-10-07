@@ -16,6 +16,7 @@
 	"bs-validator-integer-range-validation-too-low": "مقدار ارائه‌شده خیلی کم است. این مقدار نباید کوچک‌تر از $1 باشد.",
 	"bs-validator-integer-range-validation-too-high": "مقدار ارائه‌شده خیلی زیاد است. این مقدار نباید بزرگ‌تر از $1 باشد.",
 	"bs-validator-value-not-recognized": "ناتوان در پردازش مقدار",
+	"bs-validator-invalid-boolean": "بولی معتبر نیست",
 	"bs-validator-invalid-integer": "عدد صحیح معتبری نیست",
 	"bs-validator-invalid-string": "یک رشتهٔ معتبر نیست.",
 	"bs-validator-invalid-coordinate": "مختصات نامعتبر",

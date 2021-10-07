@@ -26,5 +26,6 @@
 	"bs-upload-uploadwarningdialog-intro": "هشدارهای زیر در حین بارگذاری پرونده صادر شد",
 	"bs-upload-uploadwarningdialog-outro": "برای چشم‌پوشی از اخطارها و بارگذاری پرونده روی «{{int:bs-extjs-ok}}» کلیک کنید و برای بازگشت به فرم بارگذاری، روی «{{int:bs-extjs-cancel}}» کلیک کنید.",
 	"bs-upload-uploadwarningdialog-warning-exists": "پرونده‌ای با نام «$1» از قبل وجود دارد",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|یک تکرار دیگر|چند تکرار دیگر}} از این پرونده موجود است",
 	"bs-upload-uploadwarningdialog-warning-unknown": "اخظار ناشناخته با شناسهٔ «$1»"
 }
