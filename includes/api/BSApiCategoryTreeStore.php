@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	/**
 	 *
@@ -189,7 +191,12 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		if ( $this->trackingCategories !== null ) {
 			return $this->trackingCategories;
 		}
-		$trackingCategories = new TrackingCategories( $this->getConfig() );
+		if ( method_exists( MediaWikiServices::class, 'getTrackingCategories' ) ) {
+			// MW 1.38+
+			$trackingCategories = MediaWikiServices::getInstance()->getTrackingCategories();
+		} else {
+			$trackingCategories = new TrackingCategories( $this->getConfig() );
+		}
 		$this->trackingCategories = $trackingCategories->getTrackingCategories();
 		return $this->trackingCategories;
 	}
