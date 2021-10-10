@@ -37,12 +37,13 @@
 		"test": [
 			"parallel-lint . --exclude vendor --exclude node_modules",
 			"minus-x check .",
-			"phpcs -sp"
+			"@phpcs"
 		],
 		"fix": [
 			"minus-x fix .",
 			"phpcbf"
-		]
+		],
+		"phpcs": "phpcs -sp"
 	},
 	"support": {
 		"issues": "https://sourceforge.net/projects/bluespice/support",
