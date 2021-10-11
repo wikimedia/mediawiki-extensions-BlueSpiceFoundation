@@ -10,7 +10,7 @@ use MediaWiki\MediaWikiServices;
  * @group Database
  * @group heavy
  */
-class WatchlistTest extends \MediaWikiTestCase {
+class WatchlistTest extends \MediaWikiIntegrationTestCase {
 
 	protected $tablesUsed = [ 'watchlist', 'user' ];
 

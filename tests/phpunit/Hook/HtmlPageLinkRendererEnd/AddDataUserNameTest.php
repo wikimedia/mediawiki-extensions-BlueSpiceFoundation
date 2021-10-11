@@ -4,7 +4,7 @@ namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
 use MediaWiki\MediaWikiServices;
 
-class AddDataUserNameTest extends \MediaWikiTestCase {
+class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 	protected $testUserName = 'wiki Sysöp';
 
 	/**

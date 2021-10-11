@@ -10,7 +10,7 @@ use BlueSpice\Utility\TitleParamsResolver;
  * @group medium
  * @group Database
  */
-class TitleParamsResolverTest extends \MediaWikiTestCase {
+class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

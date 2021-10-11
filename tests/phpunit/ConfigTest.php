@@ -10,7 +10,7 @@ use MediaWiki\MediaWikiServices;
  * @group BlueSpiceFoundation
  * @group Medium
  */
-class ConfigTest extends \MediaWikiTestCase {
+class ConfigTest extends \MediaWikiIntegrationTestCase {
 	protected $tablesUsed = [ 'bs_settings3' ];
 
 	public function setUp(): void {

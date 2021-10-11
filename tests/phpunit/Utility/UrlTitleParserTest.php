@@ -4,9 +4,9 @@ namespace BlueSpice\Tests\Utility;
 
 use BlueSpice\Utility\UrlTitleParser;
 use MediaWiki\MediaWikiServices;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 
-class UrlTitleParserTest extends MediaWikiTestCase {
+class UrlTitleParserTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

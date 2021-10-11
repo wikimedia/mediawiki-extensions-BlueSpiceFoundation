@@ -7,7 +7,7 @@ use MWException;
 /**
  * @group BlueSpice
  */
-class BSTasksApiSpecTest extends \MediaWikiTestCase {
+class BSTasksApiSpecTest extends \MediaWikiIntegrationTestCase {
 
 	/**
 	 * @covers \BSTasksApiSpec::getTaskNames

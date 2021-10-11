@@ -4,14 +4,14 @@ namespace BlueSpice\Tests\Permission\Lockdown;
 
 use BlueSpice\Permission\Lockdown\Module\Namespaces;
 use MediaWiki\MediaWikiServices;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 use Title;
 use User;
 
 /**
  * @covers \BlueSpice\Permission\Lockdown\Module\Namespaces
  */
-class NamespaceLockdownTest extends MediaWikiTestCase {
+class NamespaceLockdownTest extends MediaWikiIntegrationTestCase {
 	/** @var Namespaces */
 	protected $module;
 	/** @var User */

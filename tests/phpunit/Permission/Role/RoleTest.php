@@ -4,10 +4,10 @@ namespace BlueSpice\Tests\Permission\Role;
 
 use BlueSpice\Permission\PermissionRegistry;
 use BlueSpice\Permission\RoleFactory;
-use MediaWikiTestCase;
+use MediaWikiIntegrationTestCase;
 
 /** @covers \BlueSpice\Permission\Role\Role */
-class RoleTest extends MediaWikiTestCase {
+class RoleTest extends MediaWikiIntegrationTestCase {
 	public static function setUpBeforeClass(): void {
 		parent::setUpBeforeClass();
 		$GLOBALS['bsgPermissionConfig']['read'] = [ 'roles' => [ 'dummy', 'admin' ] ];
