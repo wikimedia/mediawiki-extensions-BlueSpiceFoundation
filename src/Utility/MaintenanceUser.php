@@ -101,7 +101,7 @@ class MaintenanceUser {
 			if ( in_array( $group, $userGroupManager->getUserGroups( $user ) ) ) {
 				continue;
 			}
-			$userGroupManager->addToUserGroup( $user, $group, $expiry );
+			$userGroupManager->addUserToGroup( $user, $group, $expiry );
 		}
 	}
 
