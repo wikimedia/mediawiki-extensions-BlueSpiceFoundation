@@ -9,15 +9,9 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 	 */
 	protected function doProcess() {
 		$this->addModuleStyles();
-		$this->overwriteGlobals();
 		$this->addModules();
 		$this->addJSConfigVars();
 		return true;
-	}
-
-	protected function overwriteGlobals() {
-		$GLOBALS['wgFavicon'] = $this->getConfig()->get( 'Favicon' );
-		$GLOBALS['wgLogo'] = $this->getConfig()->get( 'Logo' );
 	}
 
 	protected function addModuleStyles() {
