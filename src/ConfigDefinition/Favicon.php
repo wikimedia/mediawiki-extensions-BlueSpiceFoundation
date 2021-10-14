@@ -2,7 +2,7 @@
 
 namespace BlueSpice\ConfigDefinition;
 
-class Favicon extends StringSetting {
+class Favicon extends StringSetting implements IOverwriteGlobal {
 
 	/**
 	 *
@@ -41,5 +41,14 @@ class Favicon extends StringSetting {
 	 */
 	public function getHelpMessageKey() {
 		return 'bs-pref-faviconpath-help';
+	}
+
+	/**
+	 * Global name to override it
+	 *
+	 * @return string
+	 */
+	public function getGlobalName() {
+		return 'wgFavicon';
 	}
 }
