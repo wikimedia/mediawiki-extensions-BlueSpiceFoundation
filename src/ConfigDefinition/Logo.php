@@ -2,7 +2,7 @@
 
 namespace BlueSpice\ConfigDefinition;
 
-class Logo extends StringSetting {
+class Logo extends StringSetting implements IOverwriteGlobal {
 
 	/**
 	 *
@@ -41,5 +41,14 @@ class Logo extends StringSetting {
 	 */
 	public function getVariableName() {
 		return 'wg' . $this->getName();
+	}
+
+	/**
+	 * Global name to override it
+	 *
+	 * @return string
+	 */
+	public function getGlobalName() {
+		return 'wgLogo';
 	}
 }
