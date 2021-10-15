@@ -10,8 +10,8 @@ namespace BlueSpice\Permission;
  * where it is registered as "BSRoleManager"
  */
 class RoleManager {
-	const ROLE_GRANT = true;
-	const ROLE_DENY = false;
+	public const ROLE_GRANT = true;
+	public const ROLE_DENY = false;
 
 	/**
 	 * Which roles are assigned to which groups

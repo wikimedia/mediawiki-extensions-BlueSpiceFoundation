@@ -5,10 +5,10 @@ namespace BlueSpice\Html\FormField;
 use MediaWiki\MediaWikiServices;
 
 class NamespaceMultiselect extends \HTMLFormField {
-	const OPTION_HIDE_TALK = 'hide-talk';
-	const OPTION_HIDE_PSEUDO = 'hide-pseudo';
-	const OPTION_ONLY_CUSTOM = 'only-custom-namespaces';
-	const OPTION_BLACKLIST = 'namespace-blacklist';
+	public const OPTION_HIDE_TALK = 'hide-talk';
+	public const OPTION_HIDE_PSEUDO = 'hide-pseudo';
+	public const OPTION_ONLY_CUSTOM = 'only-custom-namespaces';
+	public const OPTION_BLACKLIST = 'namespace-blacklist';
 
 	/**
 	 *

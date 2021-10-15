@@ -10,9 +10,9 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 
 class GroupImage extends \BlueSpice\TemplateRenderer {
-	const PARAM_WIDTH = 'width';
-	const PARAM_HEIGHT = 'height';
-	const PARAM_GROUP = 'group';
+	public const PARAM_WIDTH = 'width';
+	public const PARAM_HEIGHT = 'height';
+	public const PARAM_GROUP = 'group';
 
 	/**
 	 *

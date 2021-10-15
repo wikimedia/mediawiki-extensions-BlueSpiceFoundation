@@ -165,14 +165,14 @@ class BsStringHelper {
 		return false;
 	}
 
-	const FILTER_STARTSWITH = 'sw';
-	const FILTER_ENDSWITH = 'ew';
-	const FILTER_CONTAINS = 'ct';
-	const FILTER_CONTAINSNOT = 'nct';
-	const FILTER_EQUALS = 'eq';
-	const FILTER_EQUALSNOT = 'neq';
+	public const FILTER_STARTSWITH = 'sw';
+	public const FILTER_ENDSWITH = 'ew';
+	public const FILTER_CONTAINS = 'ct';
+	public const FILTER_CONTAINSNOT = 'nct';
+	public const FILTER_EQUALS = 'eq';
+	public const FILTER_EQUALSNOT = 'neq';
 
-	const FILTER_LIKE = 'like';
+	public const FILTER_LIKE = 'like';
 
 	/**
 	 * HINT: http://stackoverflow.com/a/10473026

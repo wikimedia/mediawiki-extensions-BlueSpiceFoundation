@@ -3,41 +3,41 @@
 namespace BlueSpice\Data;
 
 abstract class Filter {
-	const COMPARISON_EQUALS = 'eq';
-	const COMPARISON_NOT_EQUALS = 'neq';
+	public const COMPARISON_EQUALS = 'eq';
+	public const COMPARISON_NOT_EQUALS = 'neq';
 
 	/**
 	 * Prior in extjs 4. Default in all existing filters in BlueSpice
 	 */
-	const COMPARISON_CONTAINS = 'ct';
+	public const COMPARISON_CONTAINS = 'ct';
 
 	/**
 	 * Since extjs 6. Will be transformed into 'ct'
 	 */
-	const COMPARISON_LIKE = 'like';
+	public const COMPARISON_LIKE = 'like';
 
 	/**
 	 * Prior in extjs 4. Default in all existing filters in BlueSpice
 	 */
-	const KEY_FIELD = 'field';
+	public const KEY_FIELD = 'field';
 
 	/**
 	 * Since extjs 6. Will be transformed into 'field'
 	 */
-	const KEY_PROPERTY = 'property';
+	public const KEY_PROPERTY = 'property';
 
 	/**
 	 * Prior in extjs 4. Default in all existing filters in BlueSpice
 	 */
-	const KEY_COMPARISON = 'comparison';
+	public const KEY_COMPARISON = 'comparison';
 
 	/**
 	 * Since extjs 6. Will be transformed into 'comparison'
 	 */
-	const KEY_OPERATOR = 'operator';
+	public const KEY_OPERATOR = 'operator';
 
-	const KEY_TYPE = 'type';
-	const KEY_VALUE = 'value';
+	public const KEY_TYPE = 'type';
+	public const KEY_VALUE = 'value';
 
 	/**
 	 *

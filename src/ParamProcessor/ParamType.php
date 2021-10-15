@@ -4,15 +4,15 @@ namespace BlueSpice\ParamProcessor;
 
 class ParamType {
 	/* ParamProcessor library */
-	const BOOLEAN = 'boolean';
-	const FLOAT = 'float';
-	const INTEGER = 'integer';
-	const STRING = 'string';
-	const COORDINATE = 'coordinate';
-	const DIMENSION = 'dimension';
+	public const BOOLEAN = 'boolean';
+	public const FLOAT = 'float';
+	public const INTEGER = 'integer';
+	public const STRING = 'string';
+	public const COORDINATE = 'coordinate';
+	public const DIMENSION = 'dimension';
 
 	/* BlueSpice */
-	const TITLE_LIST = 'titlelist';
-	const NAMESPACE_LIST = 'namespacelist';
-	const CATEGORY_LIST = 'categorylist';
+	public const TITLE_LIST = 'titlelist';
+	public const NAMESPACE_LIST = 'namespacelist';
+	public const CATEGORY_LIST = 'categorylist';
 }

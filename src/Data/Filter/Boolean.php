@@ -5,7 +5,7 @@ namespace BlueSpice\Data\Filter;
 use BlueSpice\Data\Filter;
 
 class Boolean extends Filter {
-const COMPARISON_EQUALS_BOOL = '==';
+	public const COMPARISON_EQUALS_BOOL = '==';
 
 	/**
 	 * Performs filtering based on given filter of type bool on a dataset

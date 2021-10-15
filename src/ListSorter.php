@@ -4,8 +4,8 @@ namespace BlueSpice;
 
 class ListSorter {
 
-	const ASC = 'ASC';
-	const DESC = 'DESC';
+	public const ASC = 'ASC';
+	public const DESC = 'DESC';
 
 	/**
 	 *

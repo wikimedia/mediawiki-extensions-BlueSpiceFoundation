@@ -7,7 +7,7 @@ use Message;
 
 class GroupMultiSelect extends \HTMLMultiSelectEx {
 
-	const PARAM_BLACKLIST = 'blacklist';
+	public const PARAM_BLACKLIST = 'blacklist';
 
 	protected $groups;
 

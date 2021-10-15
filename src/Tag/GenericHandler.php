@@ -7,9 +7,9 @@ use Html;
 
 class GenericHandler {
 
-	const TAG_DIV = 'div';
-	const TAG_SPAN = 'span';
-	const TAG_BUTTON = 'button';
+	public const TAG_DIV = 'div';
+	public const TAG_SPAN = 'span';
+	public const TAG_BUTTON = 'button';
 
 	/**
 	 *

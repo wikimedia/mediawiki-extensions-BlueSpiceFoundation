@@ -2,8 +2,8 @@
 
 class BSTreeRenderer {
 
-	const CONFIG_ID = 'id';
-	const CONFIG_ROOT_VISIBLE = 'rootVisible';
+	public const CONFIG_ID = 'id';
+	public const CONFIG_ROOT_VISIBLE = 'rootVisible';
 
 	/**
 	 *

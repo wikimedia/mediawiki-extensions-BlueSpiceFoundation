@@ -7,7 +7,7 @@ use BlueSpice\Utility\TemplateHelper;
 use MediaWiki\MediaWikiServices;
 
 class Mustache extends \BlueSpice\Template {
-	const FILE_EXTENTION = 'mustache';
+	public const FILE_EXTENTION = 'mustache';
 
 	/**
 	 *

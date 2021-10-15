@@ -60,9 +60,9 @@ use MediaWiki\MediaWikiServices;
 
 abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
-	const SECONDARY_FIELD_PLACEHOLDER = '<added as secondary field>';
-	const PROP_SPEC_FILTERABLE = 'filterable';
-	const PROP_SPEC_SORTABLE = 'sortable';
+	public const SECONDARY_FIELD_PLACEHOLDER = '<added as secondary field>';
+	public const PROP_SPEC_FILTERABLE = 'filterable';
+	public const PROP_SPEC_SORTABLE = 'sortable';
 
 	/**
 	 * Automatically set within 'postProcessData' method

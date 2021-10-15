@@ -5,10 +5,10 @@ namespace BlueSpice\DynamicFileDispatcher;
 use MediaWiki\MediaWikiServices;
 
 class ArticlePreviewImage extends Module {
-	const TITLETEXT = 'titletext';
-	const REVISION = 'revid';
-	const WIDTH = 'width';
-	const HEIGHT = 'height';
+	public const TITLETEXT = 'titletext';
+	public const REVISION = 'revid';
+	public const WIDTH = 'width';
+	public const HEIGHT = 'height';
 
 	/**
 	 *

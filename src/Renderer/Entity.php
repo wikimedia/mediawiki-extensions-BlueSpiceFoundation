@@ -9,7 +9,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MWException;
 
 class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
-	const PARAM_ENTITY = 'entity';
+	public const PARAM_ENTITY = 'entity';
 
 	/**
 	 *

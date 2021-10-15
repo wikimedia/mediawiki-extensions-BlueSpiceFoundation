@@ -3,13 +3,13 @@
 namespace BlueSpice\Data;
 
 class ReaderParams {
-	const LIMIT_INFINITE = -1;
+	public const LIMIT_INFINITE = -1;
 
-	const PARAM_LIMIT = 'limit';
-	const PARAM_QUERY = 'query';
-	const PARAM_START = 'start';
-	const PARAM_SORT = 'sort';
-	const PARAM_FILTER = 'filter';
+	public const PARAM_LIMIT = 'limit';
+	public const PARAM_QUERY = 'query';
+	public const PARAM_START = 'start';
+	public const PARAM_SORT = 'sort';
+	public const PARAM_FILTER = 'filter';
 
 	/**
 	 * For pre filtering

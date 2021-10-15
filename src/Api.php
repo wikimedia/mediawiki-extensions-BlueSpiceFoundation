@@ -46,7 +46,7 @@ use WikiPage;
  * @package BlueSpice_Foundation
  */
 abstract class Api extends ApiBase {
-	const PARAM_FORMAT = 'format';
+	public const PARAM_FORMAT = 'format';
 
 	/**
 	 * Checks access permissions based on a list of titles and permissions. If

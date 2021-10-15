@@ -6,10 +6,10 @@ use BlueSpice\DynamicFileDispatcher\UserProfileImage\AnonImage;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage\DefaultImage;
 
 class UserProfileImage extends Module {
-	const MODULE_NAME = 'userprofileimage';
-	const USERNAME = 'username';
-	const WIDTH = 'width';
-	const HEIGHT = 'height';
+	public const MODULE_NAME = 'userprofileimage';
+	public const USERNAME = 'username';
+	public const WIDTH = 'width';
+	public const HEIGHT = 'height';
 
 	/**
 	 *

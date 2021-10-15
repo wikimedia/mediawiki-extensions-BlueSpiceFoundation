@@ -43,7 +43,7 @@ class BsPARAMOPTION {
 	 * fails.
 	 * @deprecated since version 3.1
 	 */
-	const DEFAULT_ON_ERROR = 524288;
+	public const DEFAULT_ON_ERROR = 524288;
 
 	/**
 	 * DEPRECATED!
@@ -52,5 +52,5 @@ class BsPARAMOPTION {
 	 * fails.
 	 * @deprecated since version 3.1
 	 */
-	const CLEANUP_STRING = 1048576;
+	public const CLEANUP_STRING = 1048576;
 }

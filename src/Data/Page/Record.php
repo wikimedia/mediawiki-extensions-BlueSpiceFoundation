@@ -3,13 +3,13 @@
 namespace BlueSpice\Data\Page;
 
 class Record extends \BlueSpice\Data\Record {
-	const ID = 'page_id';
-	const NS = 'page_namespace';
-	const TITLE = 'page_title';
-	const IS_REDIRECT = 'page_is_redirect';
-	const IS_NEW = 'page_is_new';
-	const ID_NEW = self::IS_NEW;
-	const TOUCHED = 'page_touched';
-	const LATEST = 'page_latest';
-	const CONTENT_MODEL = 'page_content_model';
+	public const ID = 'page_id';
+	public const NS = 'page_namespace';
+	public const TITLE = 'page_title';
+	public const IS_REDIRECT = 'page_is_redirect';
+	public const IS_NEW = 'page_is_new';
+	public const ID_NEW = self::IS_NEW;
+	public const TOUCHED = 'page_touched';
+	public const LATEST = 'page_latest';
+	public const CONTENT_MODEL = 'page_content_model';
 }

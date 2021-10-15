@@ -3,9 +3,9 @@
 namespace BlueSpice\Data;
 
 class Schema extends \ArrayObject {
-	const FILTERABLE = 'filterable';
-	const SORTABLE = 'sortable';
-	const TYPE = 'type';
+	public const FILTERABLE = 'filterable';
+	public const SORTABLE = 'sortable';
+	public const TYPE = 'type';
 
 	/**
 	 *

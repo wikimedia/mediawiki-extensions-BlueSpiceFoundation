@@ -7,8 +7,8 @@ use BlueSpice\JSConfigVarRegistry;
 use MWException;
 
 class JSConfigVarsApi extends Api {
-	const FUNC_GET = 'get';
-	const FUNC_HAS = 'has';
+	public const FUNC_GET = 'get';
+	public const FUNC_HAS = 'has';
 
 	/** @var string|null */
 	protected $func = null;

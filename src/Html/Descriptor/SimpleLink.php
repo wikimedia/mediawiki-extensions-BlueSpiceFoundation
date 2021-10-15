@@ -7,13 +7,13 @@ use RawMessage;
 
 class SimpleLink implements ILink {
 
-	const CSSCLASSES = 'css-classes';
-	const DATAATTRIBUTES = 'data-attributes';
-	const HTMLID = 'html-id';
-	const ICON = 'icon';
-	const LABEL = 'label';
-	const TOOLTIP = 'tooltip';
-	const HREF = 'href';
+	public const CSSCLASSES = 'css-classes';
+	public const DATAATTRIBUTES = 'data-attributes';
+	public const HTMLID = 'html-id';
+	public const ICON = 'icon';
+	public const LABEL = 'label';
+	public const TOOLTIP = 'tooltip';
+	public const HREF = 'href';
 
 	protected $data = [];
 
