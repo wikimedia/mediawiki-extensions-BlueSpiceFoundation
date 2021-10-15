@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier"
 		]
 	},
@@ -18,5 +19,6 @@
 	"bs-extjs-error": "Eroro",
 	"bs-extjs-close": "Klozez",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
-	"bs-extjs-allns": "(omni)"
+	"bs-extjs-allns": "(omni)",
+	"bs-extjs-label-user": "Uzero"
 }

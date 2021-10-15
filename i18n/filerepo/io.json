@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier"
 		]
 	},
@@ -9,5 +10,6 @@
 	"bs-filerepo-labelupload": "Kargar",
 	"bs-filerepo-headerfilesize": "Grandeso",
 	"bs-filerepo-headerfilethumbnail": "Miniaturo",
-	"bs-filerepo-headerfileextension": "Formato di arkivo"
+	"bs-filerepo-headerfileextension": "Formato di arkivo",
+	"bs-filerepo-headerfileusertext": "Uzero"
 }
