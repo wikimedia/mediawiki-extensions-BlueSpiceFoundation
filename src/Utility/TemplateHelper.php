@@ -5,8 +5,8 @@ use MediaWiki\MediaWikiServices;
 
 class TemplateHelper {
 
-	const SEPARATOR = '.';
-	const TEMPLATE_PATH = 'resources/templates';
+	public const SEPARATOR = '.';
+	public const TEMPLATE_PATH = 'resources/templates';
 
 	/**
 	 *

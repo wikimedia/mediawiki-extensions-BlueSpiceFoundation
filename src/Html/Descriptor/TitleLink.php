@@ -6,10 +6,10 @@ use RawMessage;
 
 class TitleLink extends LinkBase {
 
-	const CONFIG_LABELTYPE = 'TitleLink_LabelType';
+	public const CONFIG_LABELTYPE = 'TitleLink_LabelType';
 
-	const LABEL_BASENAME = 'basename';
-	const LABEL_UNPREFIXED = 'unprefixed';
+	public const LABEL_BASENAME = 'basename';
+	public const LABEL_UNPREFIXED = 'unprefixed';
 
 	/**
 	 *

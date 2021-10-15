@@ -10,11 +10,11 @@ namespace BlueSpice\Api\Response;
  * TODO: do a clean implemenation with gettes and setters
  */
 class Standard {
-	const ERRORS = 'errors';
-	const SUCCESS = 'success';
-	const MESSAGE = 'message';
-	const PAYLOAD = 'payload';
-	const PAYLOAD_COUNT = 'payload_count';
+	public const ERRORS = 'errors';
+	public const SUCCESS = 'success';
+	public const MESSAGE = 'message';
+	public const PAYLOAD = 'payload';
+	public const PAYLOAD_COUNT = 'payload_count';
 
 	public $errors = [];
 	public $success = false;

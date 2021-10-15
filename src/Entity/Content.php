@@ -32,7 +32,7 @@ use Title;
 use User;
 
 abstract class Content extends \BlueSpice\Entity {
-	const NS = -1;
+	public const NS = -1;
 
 	/**
 	 *

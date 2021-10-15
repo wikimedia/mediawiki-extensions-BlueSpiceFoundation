@@ -8,7 +8,7 @@ use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 
 class SimpleList extends \BlueSpice\Renderer {
-	const PARAM_ITEMS = 'items';
+	public const PARAM_ITEMS = 'items';
 
 	/**
 	 *

@@ -9,12 +9,12 @@ use BsStringHelper;
  * Class name "String" is reserved
  */
 class StringValue extends Filter {
-	const COMPARISON_STARTS_WITH = 'sw';
-	const COMPARISON_ENDS_WITH = 'ew';
-	const COMPARISON_CONTAINS = 'ct';
-	const COMPARISON_NOT_CONTAINS = 'nct';
+	public const COMPARISON_STARTS_WITH = 'sw';
+	public const COMPARISON_ENDS_WITH = 'ew';
+	public const COMPARISON_CONTAINS = 'ct';
+	public const COMPARISON_NOT_CONTAINS = 'nct';
 
-	const COMPARISON_LIKE = 'like';
+	public const COMPARISON_LIKE = 'like';
 
 	/**
 	 * Performs string filtering based on given filter of type string on a

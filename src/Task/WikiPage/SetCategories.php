@@ -11,7 +11,7 @@ use Status;
 use Title;
 
 class SetCategories extends WikiPageTask {
-	const PARAM_CATEGORIES = 'categories';
+	public const PARAM_CATEGORIES = 'categories';
 
 	/**
 	 * @return Status

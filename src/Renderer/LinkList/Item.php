@@ -10,7 +10,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 
 class Item extends \BlueSpice\Renderer\SimpleList\Item {
-	const PARAM_TARGET = 'target';
+	public const PARAM_TARGET = 'target';
 
 	/**
 	 * Constructor

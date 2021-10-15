@@ -12,9 +12,9 @@ use RequestContext;
 use User;
 
 class UserImage extends \BlueSpice\TemplateRenderer {
-	const PARAM_WIDTH = 'width';
-	const PARAM_HEIGHT = 'height';
-	const PARAM_USER = 'user';
+	public const PARAM_WIDTH = 'width';
+	public const PARAM_HEIGHT = 'height';
+	public const PARAM_USER = 'user';
 
 	/**
 	 *

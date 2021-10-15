@@ -37,12 +37,12 @@ use Message;
 use MessageLocalizer;
 
 abstract class Renderer implements IRenderer, MessageLocalizer {
-	const PARAM_CONTEXT = 'context';
+	public const PARAM_CONTEXT = 'context';
 
-	const PARAM_ID = 'id';
-	const PARAM_CLASS = 'class';
-	const PARAM_TAG = 'tag';
-	const PARAM_CONTENT = 'content';
+	public const PARAM_ID = 'id';
+	public const PARAM_CLASS = 'class';
+	public const PARAM_TAG = 'tag';
+	public const PARAM_CONTENT = 'content';
 
 	/**
 	 * Name of the Renderer

@@ -6,12 +6,12 @@ use IContextSource;
 use Message;
 
 interface IPageInfoElement {
-	const TYPE_TEXT = 'text';
-	const TYPE_LINK = 'link';
-	const TYPE_MENU = 'menu';
+	public const TYPE_TEXT = 'text';
+	public const TYPE_LINK = 'link';
+	public const TYPE_MENU = 'menu';
 
-	const ITEMCLASS_PRO = 'pro';
-	const ITEMCLASS_CONTRA = 'contra';
+	public const ITEMCLASS_PRO = 'pro';
+	public const ITEMCLASS_CONTRA = 'contra';
 
 	/**
 	 *

@@ -2,11 +2,11 @@
 
 class BSTreeNode {
 
-	const CONFIG_TEXT = 'text';
-	const CONFIG_CHILDNODES = 'childNodes';
-	const CONFIG_IS_LEAF = 'isLeaf';
-	const CONFIG_EXPANDED = 'expanded';
-	const CONFIG_EXPANDABLE = 'expandable';
+	public const CONFIG_TEXT = 'text';
+	public const CONFIG_CHILDNODES = 'childNodes';
+	public const CONFIG_IS_LEAF = 'isLeaf';
+	public const CONFIG_EXPANDED = 'expanded';
+	public const CONFIG_EXPANDABLE = 'expandable';
 
 	/**
 	 *
