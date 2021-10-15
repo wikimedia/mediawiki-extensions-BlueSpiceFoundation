@@ -5,9 +5,9 @@ namespace BlueSpice\Data\Filter;
 use BlueSpice\Data\Filter;
 
 class ListValue extends Filter {
-	const COMPARISON_IN = 'in';
-	const COMPARISON_CONTAINS = 'ct';
-	const COMPARISON_NOT_CONTAINS = 'nct';
+	public const COMPARISON_IN = 'in';
+	public const COMPARISON_CONTAINS = 'ct';
+	public const COMPARISON_NOT_CONTAINS = 'nct';
 
 	/**
 	 *

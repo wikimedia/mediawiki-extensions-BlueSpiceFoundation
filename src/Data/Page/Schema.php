@@ -5,7 +5,7 @@ namespace BlueSpice\Data\Page;
 use BlueSpice\Data\FieldType;
 
 class Schema extends \BlueSpice\Data\Schema {
-	const TABLE_NAME = 'page';
+	public const TABLE_NAME = 'page';
 
 	public function __construct() {
 		parent::__construct( [

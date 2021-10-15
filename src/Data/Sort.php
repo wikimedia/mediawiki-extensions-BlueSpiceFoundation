@@ -4,11 +4,11 @@ namespace BlueSpice\Data;
 
 class Sort {
 
-	const KEY_PROPERTY = 'property';
-	const KEY_DIRECTION = 'direction';
+	public const KEY_PROPERTY = 'property';
+	public const KEY_DIRECTION = 'direction';
 
-	const ASCENDING = 'ASC';
-	const DESCENDING = 'DESC';
+	public const ASCENDING = 'ASC';
+	public const DESCENDING = 'DESC';
 
 	protected $property = '';
 

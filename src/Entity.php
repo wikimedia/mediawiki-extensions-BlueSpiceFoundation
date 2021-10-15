@@ -39,14 +39,14 @@ use Status;
 use User;
 
 abstract class Entity implements JsonSerializable {
-	const TYPE = '';
+	public const TYPE = '';
 
-	const ATTR_TYPE = 'type';
-	const ATTR_ID = 'id';
-	const ATTR_OWNER_ID = 'ownerid';
-	const ATTR_ARCHIVED = 'archived';
-	const ATTR_TIMESTAMP_CREATED = 'timestampcreated';
-	const ATTR_TIMESTAMP_TOUCHED = 'timestamptouched';
+	public const ATTR_TYPE = 'type';
+	public const ATTR_ID = 'id';
+	public const ATTR_OWNER_ID = 'ownerid';
+	public const ATTR_ARCHIVED = 'archived';
+	public const ATTR_TIMESTAMP_CREATED = 'timestampcreated';
+	public const ATTR_TIMESTAMP_TOUCHED = 'timestamptouched';
 
 	/**
 	 *

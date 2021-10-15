@@ -3,14 +3,14 @@
 namespace BlueSpice\DynamicFileDispatcher;
 
 class Params {
-	const MODULE = 'module';
+	public const MODULE = 'module';
 
-	const PARAM_TYPE = 'type';
-	const PARAM_DEFAULT = 'default';
+	public const PARAM_TYPE = 'type';
+	public const PARAM_DEFAULT = 'default';
 
-	const TYPE_STRING = 'string';
-	const TYPE_BOOL = 'boolean';
-	const TYPE_INT = 'integer';
+	public const TYPE_STRING = 'string';
+	public const TYPE_BOOL = 'boolean';
+	public const TYPE_INT = 'integer';
 
 	/**
 	 *

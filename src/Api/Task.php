@@ -13,12 +13,12 @@ use FormatJson;
 use Status;
 
 class Task extends Api {
-	const PARAM_TASK = 'task';
-	const PARAM_TASK_DATA = 'taskData';
-	const PARAM_CONTEXT = 'context';
-	const PARAM_SCHEMA = 'schema';
-	const PARAM_EXAMPLES = 'examples';
-	const PARAM_FORMAT = 'format';
+	public const PARAM_TASK = 'task';
+	public const PARAM_TASK_DATA = 'taskData';
+	public const PARAM_CONTEXT = 'context';
+	public const PARAM_SCHEMA = 'schema';
+	public const PARAM_EXAMPLES = 'examples';
+	public const PARAM_FORMAT = 'format';
 
 	public function execute() {
 		$status = Status::newGood();

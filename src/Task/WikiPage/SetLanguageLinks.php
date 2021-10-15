@@ -8,7 +8,7 @@ use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
 use Title;
 
 class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
-	const PARAM_LANGUAGE_LINKS = 'languagelinks';
+	public const PARAM_LANGUAGE_LINKS = 'languagelinks';
 
 	/**
 	 * @return Status

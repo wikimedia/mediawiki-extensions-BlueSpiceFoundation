@@ -9,12 +9,12 @@ namespace BlueSpice;
  */
 class ActionLogger {
 
-	const OPT_PERFORMER = 'performer';
-	const OPT_TARGET = 'target';
-	const OPT_TIMESTAMP = 'timestamp';
-	const OPT_RELATIONS = 'relations';
-	const OPT_COMMENT = 'comment';
-	const OPT_DELETED = 'deleted';
+	public const OPT_PERFORMER = 'performer';
+	public const OPT_TARGET = 'target';
+	public const OPT_TIMESTAMP = 'timestamp';
+	public const OPT_RELATIONS = 'relations';
+	public const OPT_COMMENT = 'comment';
+	public const OPT_DELETED = 'deleted';
 
 	/**
 	 *

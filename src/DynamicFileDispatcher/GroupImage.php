@@ -5,10 +5,10 @@ namespace BlueSpice\DynamicFileDispatcher;
 use BlueSpice\DynamicFileDispatcher\GroupImage\DefaultImage;
 
 class GroupImage extends Module {
-	const MODULE_NAME = 'groupimage';
-	const GROUP = 'group';
-	const WIDTH = 'width';
-	const HEIGHT = 'height';
+	public const MODULE_NAME = 'groupimage';
+	public const GROUP = 'group';
+	public const WIDTH = 'width';
+	public const HEIGHT = 'height';
 
 	/**
 	 *

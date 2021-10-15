@@ -8,8 +8,8 @@ use BlueSpice\ExtensionAttributeBasedRegistry;
 use MediaWiki\MediaWikiServices;
 
 class Schema extends \BlueSpice\Data\Schema {
-	const STORABLE = 'storeable';
-	const INDEXABLE = 'indexable';
+	public const STORABLE = 'storeable';
+	public const INDEXABLE = 'indexable';
 
 	/**
 	 *

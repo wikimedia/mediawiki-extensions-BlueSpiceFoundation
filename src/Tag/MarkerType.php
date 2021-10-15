@@ -18,5 +18,5 @@ namespace BlueSpice\Tag;
  *     private variables.**
  */
 class MarkerType {
-	const KEY = 'markerType';
+	public const KEY = 'markerType';
 }
