@@ -7,6 +7,7 @@ class BSTreeNode {
 	public const CONFIG_IS_LEAF = 'isLeaf';
 	public const CONFIG_EXPANDED = 'expanded';
 	public const CONFIG_EXPANDABLE = 'expandable';
+	public const CONFIG_ACTIVE = 'active';
 
 	/**
 	 *
@@ -37,6 +38,12 @@ class BSTreeNode {
 	 * @var bool
 	 */
 	protected $expanded = false;
+
+	/**
+	 *
+	 * @var boolean
+	 */
+	protected $active = false;
 
 	/**
 	 *
@@ -73,6 +80,7 @@ class BSTreeNode {
 				self::CONFIG_IS_LEAF => false,
 				self::CONFIG_EXPANDED => false,
 				self::CONFIG_EXPANDABLE => true,
+				self::CONFIG_ACTIVE	=> false
 			] )
 		] );
 
@@ -83,6 +91,7 @@ class BSTreeNode {
 		$this->childNodes = $config->get( self::CONFIG_CHILDNODES );
 		$this->isLeaf = $config->get( self::CONFIG_IS_LEAF );
 		$this->expanded = $config->get( self::CONFIG_EXPANDED );
+		$this->active = $config->get( self::CONFIG_ACTIVE );
 	}
 
 	/**
@@ -147,6 +156,22 @@ class BSTreeNode {
 	 */
 	public function isExpanded() {
 		return $this->expanded;
+	}
+
+	/**
+	 *
+	 * @return bool
+	 */
+	public function isActive() {
+		return $this->active;
+	}
+
+	/**
+	 *
+	 * @param bool $value
+	 */
+	public function setActive( $value ) {
+		$this->active = $value;
 	}
 
 	/**
