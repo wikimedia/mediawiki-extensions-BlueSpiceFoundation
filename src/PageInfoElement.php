@@ -4,108 +4,45 @@ namespace BlueSpice;
 
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
+use PageHeader\PageInfo;
 
-abstract class PageInfoElement implements IPageInfoElement, MessageLocalizer {
-
-	/**
-	 *
-	 * @var IContextSource
-	 */
-	protected $context = null;
-
-	/**
-	 *
-	 * @var Config
-	 */
-	protected $config = null;
+/**
+ * DEPRECATED
+ * @deprecated since version 4.1 - use \PageHeader\PageInfo instead
+ */
+abstract class PageInfoElement extends PageInfo implements IPageInfoElement, MessageLocalizer {
 
 	/**
-	 *
+	 * @deprecated since version 4.1 - extend PageHeader\PageInfo instead
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @return IPageInfoElement
+	 * @return IPageHeader
 	 */
 	public static function factory( IContextSource $context, Config $config ) {
-		return new static( $context, $config );
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		$bsConfig = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+		return new static(
+			new Context( $context, $bsConfig ),
+			$bsConfig
+		);
 	}
 
 	/**
-	 *
-	 * @param IContextSource $context
-	 * @param Config $config
-	 */
-	public function __construct( IContextSource $context, Config $config ) {
-		$this->context = $context;
-		$this->config = $config;
-	}
-
-	/**
-	 *
-	 * @return string
-	 */
-	public function getUrl() {
-		return '';
-	}
-
-	/**
-	 *
-	 * @return int
-	 */
-	public function getPosition() {
-		return 100;
-	}
-
-	/**
-	 *
-	 * @return string
-	 */
-	public function getType() {
-		return IPageInfoElement::TYPE_TEXT;
-	}
-
-	/**
-	 *
-	 * @return string
-	 */
-	public function getHtmlClass() {
-		return '';
-	}
-
-	/**
-	 *
-	 * @return string
-	 */
-	public function getHtmlId() {
-		return '';
-	}
-
-	/**
-	 * @return array with html attributes data-*
-	 */
-	public function getHtmlDataAttribs() {
-		return [];
-	}
-
-	/**
-	 *
-	 * @return string
-	 */
-	public function getMenu() {
-		return '';
-	}
-
-	/**
+	 * DEPRECATED
 	 * Get a Message object with context set
 	 * Parameters are the same as wfMessage()
 	 *
+	 * @deprecated since version 4.1 - use $this->context->msg instead
 	 * @param string|string[]|MessageSpecifier $key Message key, or array of keys,
 	 *   or a MessageSpecifier.
 	 * @param mixed ...$params
 	 * @return Message
 	 */
 	public function msg( $key, ...$params ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		return $this->context->msg( $key, ...$params );
 	}
 }
