@@ -333,7 +333,8 @@ class RoleManager {
 		foreach ( $this->roles as $roleName => $roleObject ) {
 			$rolesAndPermissions[] = [
 				'role' => $roleName,
-				'permissions' => $roleObject->getPermissions()
+				'permissions' => $roleObject->getPermissions(),
+				'privilegeLevel' => $roleObject->getPrivilegeLevel()
 			];
 		}
 		return $rolesAndPermissions;
