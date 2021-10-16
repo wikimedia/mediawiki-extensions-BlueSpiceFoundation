@@ -18,4 +18,11 @@ class Author extends Role {
 	public function getRequiredPermissions() {
 		return [ 'read', 'edit' ];
 	}
+
+	/**
+	 * @return int
+	 */
+	public function getPrivilegeLevel() {
+		return 40;
+	}
 }

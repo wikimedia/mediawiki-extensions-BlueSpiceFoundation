@@ -18,4 +18,11 @@ class Reviewer extends Role {
 	public function getRequiredPermissions() {
 		return [ 'read' ];
 	}
+
+	/**
+	 * @return int
+	 */
+	public function getPrivilegeLevel() {
+		return 60;
+	}
 }

@@ -141,4 +141,13 @@ abstract class Role implements IRole {
 			}
 		}
 	}
+
+	/**
+	 * Returns the privilege level of the Role
+	 *
+	 * @return int
+	 */
+	public function getPrivilegeLevel() {
+		return 50;
+	}
 }
