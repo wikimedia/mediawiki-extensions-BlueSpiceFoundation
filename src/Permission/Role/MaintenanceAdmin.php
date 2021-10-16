@@ -2,27 +2,27 @@
 
 namespace BlueSpice\Permission\Role;
 
-class Editor extends Role {
+class MaintenanceAdmin extends Role {
 	/**
 	 * Returns the name of the Role
 	 *
 	 * @return string
 	 */
 	public function getName() {
-		return "editor";
+		return "maintenanceadmin";
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getRequiredPermissions() {
-		return [ 'read', 'edit' ];
+		return [ 'read' ];
 	}
 
 	/**
 	 * @return int
 	 */
 	public function getPrivilegeLevel() {
-		return 50;
+		return 110;
 	}
 }

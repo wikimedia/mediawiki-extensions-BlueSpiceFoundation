@@ -47,7 +47,13 @@
 				"reader": "\\BlueSpice\\Permission\\Role\\Reader::factory",
 				"author": "\\BlueSpice\\Permission\\Role\\Author::factory",
 				"reviewer": "\\BlueSpice\\Permission\\Role\\Reviewer::factory",
-				"accountmanager": "\\BlueSpice\\Permission\\Role\\AccountManager::factory"
+				"accountmanager": "\\BlueSpice\\Permission\\Role\\AccountManager::factory",
+				"structuremanager": "\\BlueSpice\\Permission\\Role\\StructureManager::factory",
+				"maintenanceadmin": "\\BlueSpice\\Permission\\Role\\MaintenanceAdmin::factory",
+				"commenter": "\\BlueSpice\\Permission\\Role\\Commenter::factory",
+				"accountselfcreate": "\\BlueSpice\\Permission\\Role\\AccountSelfCreate::factory",
+				"autocreateaccount": "\\BlueSpice\\Permission\\Role\\AutoCreateAccount::factory",
+				"bot": "\\BlueSpice\\Permission\\Role\\Bot::factory"
 			},
 			"RendererRegistry": {
 				"list": "\\BlueSpice\\Renderer\\SimpleList::factory",

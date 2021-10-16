@@ -36,4 +36,10 @@ interface IRole {
 	 * @return string[]
 	 */
 	public function getRequiredPermissions();
+
+	/**
+	 * Returns a relative index of priviledge. Higher numbers are more priviledged
+	 * @return int
+	 */
+	public function getPrivilegeLevel();
 }
