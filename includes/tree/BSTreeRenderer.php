@@ -173,7 +173,8 @@ class BSTreeRenderer {
 			'bs-tree-level-' . $level,
 			$node->isExpanded() ? '' : 'collapsed',
 			$node->isExpandable() ? 'expandable' : '',
-			$node->hasChildNodes() ? '' : 'leaf'
+			$node->hasChildNodes() ? '' : 'leaf',
+			$node->isActive() ? 'active' : ''
 		];
 
 		return implode( ' ', $classes );
