@@ -41,7 +41,7 @@ class BSTreeNode {
 
 	/**
 	 *
-	 * @var boolean
+	 * @var bool
 	 */
 	protected $active = false;
 
