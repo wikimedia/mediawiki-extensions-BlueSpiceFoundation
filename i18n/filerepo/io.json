@@ -11,5 +11,7 @@
 	"bs-filerepo-headerfileextension": "Formato di arkivo",
 	"bs-filerepo-headerfiletimestamp": "Sendita",
 	"bs-filerepo-headerfiledescription": "Deskripto",
-	"bs-filerepo-headerfilethumbnail": "Miniaturo"
+	"bs-filerepo-headerfilethumbnail": "Miniaturo",
+	"bs-filerepo-yes": "Yes",
+	"bs-filerepo-no": "No"
 }

@@ -77,6 +77,7 @@
 	"bs-graphicallist-action-close": "Zamknij",
 	"bs-graphicallist-action-preview": "Podgląd",
 	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
+	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "anonimowy użytkownik",
 	"protect-level-editor": "Dozwolone tylko dla redaktorów i administratorów"
 }

@@ -7,6 +7,8 @@
 	},
 	"bs-extjs-ok": "O.K.",
 	"bs-extjs-cancel": "Anular",
+	"bs-extjs-yes": "Yes",
+	"bs-extjs-no": "No",
 	"bs-extjs-delete": "Efacar",
 	"bs-extjs-edit": "Redaktar",
 	"bs-extjs-error": "Eroro",
@@ -20,5 +22,6 @@
 	"bs-extjs-uploading": "Karganta...",
 	"bs-extjs-allns": "(omni)",
 	"bs-extjs-filter-greater-than": "plu granda kam",
+	"bs-extjs-filter-bool-yes": "yes",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi"
 }
