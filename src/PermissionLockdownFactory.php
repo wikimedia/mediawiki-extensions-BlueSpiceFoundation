@@ -129,7 +129,7 @@ class PermissionLockdownFactory {
 	 * @param string $rigor One of PermissionManager::RIGOR_ constants
 	 *   - RIGOR_QUICK  : does cheap permission checks from replica DBs (usable for GUI creation)
 	 *   - RIGOR_FULL   : does cheap and expensive checks possibly from a replica DB
-	 *   - RIGOR_SECURE : does cheap and expensive checks, using the master as needed
+	 *   - RIGOR_SECURE : does cheap and expensive checks, using the primary as needed
 	 *
 	 * @return Status
 	 */

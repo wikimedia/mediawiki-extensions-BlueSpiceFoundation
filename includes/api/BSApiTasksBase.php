@@ -43,7 +43,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 *
 	 * @var \Wikimedia\Rdbms\IDatabase
 	 */
-	protected $mMasterDB = null;
+	protected $mPrimaryDB = null;
 
 	/**
 	 * This is the default log the API writes to. It needs to be registered
@@ -662,15 +662,15 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 * Gets a default master DB connection object
+	 * Gets a default primary DB connection object
 	 * @return IDatabase
 	 */
 	protected function getDB() {
-		if ( !isset( $this->mMasterDB ) ) {
-			$this->mMasterDB = wfGetDB( DB_PRIMARY, 'api' );
+		if ( !isset( $this->mPrimaryDB ) ) {
+			$this->mPrimaryDB = wfGetDB( DB_PRIMARY, 'api' );
 		}
 
-		return $this->mMasterDB;
+		return $this->mPrimaryDB;
 	}
 
 	protected function dieWithPermissionError() {
