@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/BSMaintenance.php';
+
 class BSExportUsers extends BSMaintenance {
 	public function execute() {
 		$oDOM = new DOMDocument();
@@ -62,7 +64,6 @@ class BSExportUsers extends BSMaintenance {
 
 		$this->output( $oDOM->saveXML() );
 	}
-
 }
 
 $maintClass = 'BSExportUsers';
