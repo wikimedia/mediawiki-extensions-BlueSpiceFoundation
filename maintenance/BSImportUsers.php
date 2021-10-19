@@ -1,6 +1,6 @@
 <?php
 
-require_once 'BSMaintenance.php';
+require_once __DIR__ . '/BSMaintenance.php';
 
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
