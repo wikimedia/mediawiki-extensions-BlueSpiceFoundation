@@ -1,6 +1,6 @@
 <?php
 
-require_once 'BSMaintenance.php';
+require_once __DIR__ . '/BSMaintenance.php';
 
 use MediaWiki\MediaWikiServices;
 
