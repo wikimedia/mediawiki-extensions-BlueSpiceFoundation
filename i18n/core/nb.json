@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abuluntu",
 			"Jon Harald Søby",
 			"Kingu"
 		]
@@ -99,5 +100,7 @@
 	"action-editor": "Få alle tillatelser fra rollen «bidragsyter» for beskyttede sider når rollesystemet aktiveres",
 	"bs-pref-fileextensions-help": "Filtyper som kan lastes opp til wikien. Noen typer (f.eks. html, js, php, cgi, exe) er av sikkerhetsårsaker ikke tillatt selv om de skulle være lagt til her.",
 	"bs-pref-imageextensions-help": "Bildefiltyper som kan lastes opp til wikien. Mulige nettformater: gif, png, jpg, jpeg. Andre bildeformater: tiff, bmp",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurasjonsfila $1 kunne ikke skrives!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurasjonsfila $1 kunne ikke skrives!",
+	"bs-pref-logopath-help": "Logoen bør lagres i mappen /w/images som tilhører din installasjon. Hvis den lagres i mappen /w/skins, kan den komme til å overskrives under oppdatering.",
+	"bs-pref-faviconpath-help": "Favorittikonet bør lagres i mappen /w/images som tilhører din BlueSpice-installasjon. Hvis den lagres i mappen /w/skins, kan den komme til å overskrives under oppdatering. Favorittikoner har filutvidelsen .ico."
 }

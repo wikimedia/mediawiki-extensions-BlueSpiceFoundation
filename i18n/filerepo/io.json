@@ -11,5 +11,7 @@
 	"bs-filerepo-headerfilesize": "Grandeso",
 	"bs-filerepo-headerfilethumbnail": "Miniaturo",
 	"bs-filerepo-headerfileextension": "Formato di arkivo",
-	"bs-filerepo-headerfileusertext": "Uzero"
+	"bs-filerepo-headerfileusertext": "Uzero",
+	"bs-filerepo-yes": "Yes",
+	"bs-filerepo-no": "No"
 }

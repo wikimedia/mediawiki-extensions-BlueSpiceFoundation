@@ -20,5 +20,8 @@
 	"bs-extjs-close": "Klozez",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
 	"bs-extjs-allns": "(omni)",
-	"bs-extjs-label-user": "Uzero"
+	"bs-extjs-label-user": "Uzero",
+	"bs-extjs-yes": "Yes",
+	"bs-extjs-no": "No",
+	"bs-extjs-filter-bool-yes": "yes"
 }

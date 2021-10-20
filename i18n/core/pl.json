@@ -78,5 +78,6 @@
 	"bs-graphicallist-action-preview": "Podgląd",
 	"protect-level-editor": "Dozwolone tylko dla redaktorów i administratorów",
 	"bs-validator-error-namespace-on-blacklist": "Przestrzeń nazw nie jest dozwolona: $1",
-	"bs-validator-error-title-namespace-on-blacklist": "Strona nie jest dozwolona: $1"
+	"bs-validator-error-title-namespace-on-blacklist": "Strona nie jest dozwolona: $1",
+	"bs-bluespice": "BlueSpice"
 }
