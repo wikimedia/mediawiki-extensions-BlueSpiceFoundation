@@ -5,6 +5,7 @@
 			"Alexandr Efremov",
 			"Alexey zakharenkov",
 			"Amire80",
+			"DDPAT",
 			"Diman Russkov",
 			"Facenapalm",
 			"Happy13241",
@@ -90,5 +91,9 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Миниатюры",
 	"bs-extjs-flyout-tab-grid-label": "Детали",
 	"bs-extjs-flyout-add-title": "Нажмите сюда, чтобы добавить новую позицию",
-	"bs-extjs-flyout-add-label": "Добавить объект"
+	"bs-extjs-flyout-add-label": "Добавить объект",
+	"bs-extjs-combo-box-default-placeholder": "Тип фильтра…",
+	"bs-extjs-tools-trigger-title": "Щелкните здесь, чтобы открыть меню инструментов",
+	"bs-extjs-flyout-tab-thumbs-title": "Переключиться на просмотр миниатюр",
+	"bs-extjs-flyout-tab-grid-title": "Переключиться на детальный просмотр"
 }

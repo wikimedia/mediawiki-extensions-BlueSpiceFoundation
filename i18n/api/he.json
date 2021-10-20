@@ -42,5 +42,9 @@
 	"apihelp-bs-task-summary": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
 	"apihelp-bs-task-description": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
 	"apihelp-bs-task-param-examples": "להציג דוגאמות של משתנים למשימה",
-	"bs-api-task-wikipagetasks-taskData-categories": "מערך של מחרוזות. הערכים צריכים להיות שמות תקפים של קטגוריות."
+	"bs-api-task-wikipagetasks-taskData-categories": "מערך של מחרוזות. הערכים צריכים להיות שמות תקפים של קטגוריות.",
+	"apihelp-bs-store-param-start": "ההיסט ממנו להתחיל את רשימת התוצאות",
+	"apihelp-bs-store-param-callback": "שם שיטה בקוד הלקוח שאמורה להיקרא בתגובה (JSONP)",
+	"apihelp-bs-store-param-format": "תסדיר הפלט (רק JSON או JSON מסודר)",
+	"apihelp-bs-store-param-options": "אפשרויות שרירותיות להגדרת האחסון בתסדיר של מחרוזת JSON"
 }

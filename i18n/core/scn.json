@@ -13,5 +13,9 @@
 	"bs-weeks-duration": "{{PLURAL:$1|na simana|$1 simani}}",
 	"bs-mins-duration": "{{PLURAL:$1|un minutu|$1 minuti}}",
 	"bs-one-unit-ago": "$1 fa",
-	"bs-imagepage-download-text": "Scàrrica"
+	"bs-imagepage-download-text": "Scàrrica",
+	"bs-hours-duration": "{{PLURAL:$1|na ura|$1 uri}}",
+	"bs-ns": "Namespace",
+	"bs-graphicallist-action-close": "Chiudi",
+	"bs-graphicallist-action-preview": "Antiprima"
 }

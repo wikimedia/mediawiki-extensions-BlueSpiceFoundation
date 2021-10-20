@@ -4,5 +4,8 @@
 			"Yupik"
 		]
 	},
-	"bs-extjs-pageexport-list-format-link-label": "Liŋka"
+	"bs-extjs-pageexport-list-format-link-label": "Liŋka",
+	"bs-extjs-label-namespace": "Nammagomuvuohta",
+	"bs-extjs-allns": "(buot)",
+	"bs-extjs-categorytree-title": "Kategoriijat"
 }

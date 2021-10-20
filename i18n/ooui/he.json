@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"YaronSh",
 			"ישראל קלר"
 		]
@@ -14,5 +15,5 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "לא הוגדרו ערכים!",
 	"bs-ooui-btn-dismiss-alert-title": "התעלמות",
 	"bs-ooui-key-value-input-widget-section-label": "קטע",
-	"bs-ooui-key-value-input-widget-add-section-label": "הוסף קטע חדש"
+	"bs-ooui-key-value-input-widget-add-section-label": "הוספת פרק חדש"
 }

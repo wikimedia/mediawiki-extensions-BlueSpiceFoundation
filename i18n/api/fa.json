@@ -18,5 +18,13 @@
 	"apihelp-bs-category-treestore-description": "فهرست‌های زیررده‌های یک ردهٔ خاص",
 	"apihelp-bs-category-treestore-summary": "فهرست‌های زیررده‌های یک ردهٔ خاص",
 	"bs-api-task-taskData-page-title": "عنوان معتبری مربوط به یک صفحهٔ ویکی",
-	"apihelp-bs-js-var-config-param-format": "قالب نتیجه"
+	"apihelp-bs-js-var-config-param-format": "قالب نتیجه",
+	"bs-wikipage-tasks-error-page-not-valid": "صفحهٔ مشخص‌شده معتبر نیست.",
+	"apihelp-bs-wikisubpage-treestore-description": "زیرصفحه‌های یک ویکی‌صفحهٔ مشخص را فهرست می‌کند",
+	"apihelp-bs-wikisubpage-treestore-summary": "زیرصفحه‌های یک ویکی‌صفحهٔ مشخص را فهرست می‌کند",
+	"apihelp-bs-wikisubpage-treestore-param-node": "عنوان ویکی‌صفحهٔ مورد نظر با پیشوند",
+	"apihelp-bs-upload-license-store-description": "تمام مجوزهای در دسترس برای بارگذاری یک پرونده را فهرست می‌کند",
+	"apihelp-bs-upload-license-store-summary": "تمام مجوزهای در دسترس برای بارگذاری یک پرونده را فهرست می‌کند",
+	"bs-api-task-wikipagetasks-taskData-categories": "آرایه‌ای از رشته‌ها. مقدارها باید برابر با نام معتبر رده‌ها باشند.",
+	"apihelp-bs-templatelinks-store-param-page-id": "شناسهٔ صفحه"
 }

@@ -5,5 +5,9 @@
 		]
 	},
 	"bs-filerepo-headerpagecategories": "Catigurìi",
-	"bs-filerepo-headerfileusertext": "Utenti"
+	"bs-filerepo-headerfileusertext": "Utenti",
+	"bs-filerepo-headerfilename": "Nomu dû file",
+	"bs-filerepo-headerfiledescription": "Discrizzioni",
+	"bs-filerepo-yes": "Sì",
+	"bs-filerepo-no": "No"
 }

@@ -15,5 +15,14 @@
 	"bs-extjs-categorytree-title": "Catigurìi",
 	"bs-extjs-cancel": "Annulla",
 	"bs-extjs-error": "Erruri",
-	"bs-extjs-label-user": "Utenti"
+	"bs-extjs-label-user": "Utenti",
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-add": "Junci",
+	"bs-extjs-remove": "Leva",
+	"bs-extjs-warning": "Accura",
+	"bs-extjs-close": "Chiudi",
+	"bs-extjs-label-namespace": "Namespace",
+	"bs-extjs-label-page": "Pàggina",
+	"bs-extjs-title-warning": "Accura",
+	"bs-extjs-flyout-tab-grid-label": "Dittagghî"
 }
