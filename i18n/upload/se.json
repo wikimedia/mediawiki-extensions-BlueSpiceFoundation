@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yupik"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Lasit fiilla",
+	"bs-upload-uploadbuttontext": "Bláđe",
+	"bs-upload-uploadfilefieldlabel": "Fiilanamma",
+	"bs-upload-license": "Liseansa",
+	"bs-upload-uploadwatchthislabel": "Čuovo dán fiilla",
+	"bs-upload-categories": "Kategoriijat",
+	"bs-upload-error": "Feaila",
+	"bs-upload-descfilelabel": "Govvádus"
+}

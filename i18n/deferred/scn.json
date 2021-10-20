@@ -6,5 +6,7 @@
 	},
 	"bs-deferred-batch-actions": "Azzioni",
 	"bs-deferred-batch-status": "Statu",
-	"bs-deferred-action-apideletepage-description": "Cancella \"$1\"."
+	"bs-deferred-action-apideletepage-description": "Cancella \"$1\".",
+	"bs-deferred-action-status-done": "Fattu.",
+	"bs-deferred-batch-description": "Discrizzioni"
 }

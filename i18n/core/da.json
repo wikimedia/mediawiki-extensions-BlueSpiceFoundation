@@ -50,5 +50,6 @@
 	"bs-graphicallist-action-preview": "Forhåndsvisning",
 	"bs-notifications-agent-anon": "anonym bruger",
 	"bs-extended-search-textfield-defaultvalue": "Søg...",
-	"bs-pref-fileextensions": "Tilladte filendelser:"
+	"bs-pref-fileextensions": "Tilladte filendelser:",
+	"bs-validator-error-title-namespace-on-blacklist": "Siden tillades ikke: $1"
 }

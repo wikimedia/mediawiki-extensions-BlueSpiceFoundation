@@ -5,5 +5,9 @@
 		]
 	},
 	"bs-upload-categories": "Catigurìi",
-	"bs-upload-error": "Erruri"
+	"bs-upload-error": "Erruri",
+	"bs-upload-uploadfilefieldlabel": "Nomu dû file",
+	"bs-upload-license": "Licenza",
+	"bs-upload-descfilelabel": "Discrizzioni",
+	"bs-upload-details": "Dittagghî"
 }

@@ -74,5 +74,14 @@
 	"apihelp-bs-js-var-config-param-name": "所要檢索的配置變數名稱",
 	"apihelp-bs-js-var-config-param-func": "要執行的配置函式：has|get",
 	"apihelp-bs-js-var-config-param-context": "帶有調用上下文的 JSON 編碼物件",
-	"apihelp-bs-js-var-config-param-format": "結果格式"
+	"apihelp-bs-js-var-config-param-format": "結果格式",
+	"apihelp-bs-categorylinks-store-description": "列出頁面的所有分類，包含至此分類頁面的連結以及顯式與隱式分類的標記。",
+	"apihelp-bs-categorylinks-store-summary": "列出頁面的所有分類，包含至此分類頁面的連結以及顯式與隱式分類的標記。",
+	"apihelp-bs-categorylinks-store-param-page-id": "頁面的頁面 ID",
+	"apihelp-bs-templatelinks-store-description": "列出頁面的所有模板，包含至此模板的連結。",
+	"apihelp-bs-templatelinks-store-summary": "列出頁面的所有模板，包含至此模板的連結。",
+	"apihelp-bs-templatelinks-store-param-page-id": "頁面的頁面 ID",
+	"apihelp-bs-linker-summary": "回傳透過連結器產生的頁面連結",
+	"apihelp-bs-linker-description": "回傳透過連結器產生的頁面連結",
+	"apihelp-bs-linker-param-linkdescs": "帶有頁面清單的關聯 JSON 陣列。各項要包含作為頁面標題的「target」。可選用包含「text」、「attribs」與「query」。"
 }

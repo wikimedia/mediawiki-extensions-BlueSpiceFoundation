@@ -11,5 +11,6 @@
 	"bs-validator-invalid-coordinate": "קואורדינטה לא תקינה",
 	"bs-validator-missing-required": "הפרמטר הזה נדרש",
 	"bs-validator-value-not-recognized": "לא ניתן לעבד את הערך",
-	"bs-validator-invalid-parameter": "זה משתנה אסור"
+	"bs-validator-invalid-parameter": "זה משתנה אסור",
+	"bs-validator-url-validation-approved": "הכתובת אומתה בהצלחה."
 }

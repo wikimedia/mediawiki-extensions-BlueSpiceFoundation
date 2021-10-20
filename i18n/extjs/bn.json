@@ -3,6 +3,7 @@
 		"authors": [
 			"Aftab1995",
 			"Aftabuzzaman",
+			"Md. Golam Mukit Khan",
 			"আফতাবুজ্জামান"
 		]
 	},
@@ -38,5 +39,9 @@
 	"bs-extjs-pageexport-success": "রপ্তানি সফল",
 	"bs-extjs-tools-trigger-text": "সরঞ্জাম",
 	"bs-extjs-flyout-tab-thumbs-label": "সংক্ষেপচিত্র",
-	"bs-extjs-flyout-tab-grid-label": "বিস্তারিত"
+	"bs-extjs-flyout-tab-grid-label": "বিস্তারিত",
+	"bs-extjs-label-namespace": "নামস্থান",
+	"bs-extjs-filter-bool-yes": "হ্যাঁ",
+	"bs-extjs-filter-bool-no": "না",
+	"bs-extjs-title-success": "সফল"
 }
