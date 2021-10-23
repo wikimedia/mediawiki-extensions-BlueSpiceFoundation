@@ -40,7 +40,7 @@ class LimitOffsetTrimmerTest extends \PHPUnit\Framework\TestCase {
 		$trimmedData = $trimmer->trim( $this->testDataSets );
 
 		$this->assertEquals( count( $trimmedData ), 5 );
-		$this->assertEquals( $trimmedData[0], 'Five' );
+		$this->assertEquals( 'Five', $trimmedData[0] );
 	}
 
 	/**
@@ -51,6 +51,6 @@ class LimitOffsetTrimmerTest extends \PHPUnit\Framework\TestCase {
 		$trimmedData = $trimmer->trim( $this->testDataSets );
 
 		$this->assertEquals( count( $trimmedData ), 4 );
-		$this->assertEquals( $trimmedData[0], 'Ten' );
+		$this->assertEquals( 'Ten', $trimmedData[0] );
 	}
 }

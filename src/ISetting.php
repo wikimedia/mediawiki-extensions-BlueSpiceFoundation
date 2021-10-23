@@ -29,19 +29,19 @@ interface ISetting {
 
 	/**
 	 *
-	 * @return string, the message key for the label
+	 * @return string the message key for the label
 	 */
 	public function getLabelMessageKey();
 
 	/**
 	 *
-	 * @return string|null, the message key for the help message
+	 * @return string|null the message key for the help message
 	 */
 	public function getHelpMessageKey();
 
 	/**
 	 *
-	 * @return bool, is the config currently defined as hidden
+	 * @return bool is the config currently defined as hidden
 	 */
 	public function isHidden();
 }

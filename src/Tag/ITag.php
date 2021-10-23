@@ -25,17 +25,17 @@ interface ITag {
 	public function getContainerElementName();
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function needsDisabledParserCache();
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function needsParsedInput();
 
 	/**
-	 * @return boolean
+	 * @return bool
 	 */
 	public function needsParseArgs();
 
