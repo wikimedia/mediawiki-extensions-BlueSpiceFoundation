@@ -460,6 +460,9 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 		if ( empty( $aFieldValues ) ) {
 			return false;
 		}
+		if ( !is_array( $aFieldValues ) ) {
+			$aFieldValues = [ $aFieldValues ];
+		}
 		$aFilterValues = $oFilter->value;
 		$aTemp = array_intersect( $aFieldValues, $aFilterValues );
 		if ( empty( $aTemp ) ) {
