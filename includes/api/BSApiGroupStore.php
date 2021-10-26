@@ -25,6 +25,8 @@
  *
  * Example request parameters of an ExtJS store
  */
+use MediaWiki\MediaWikiServices;
+
 class BSApiGroupStore extends BSApiExtJSStoreBase {
 
 	/**
@@ -38,14 +40,12 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 	 * @return array - List of of groups
 	 */
 	protected function makeData( $sQuery = '' ) {
-		global $wgAdditionalGroups, $wgImplicitGroups;
 		$this->sLcQuery = strtolower( $sQuery );
 
 		$aData = [];
-		foreach ( BsGroupHelper::getAvailableGroups() as $sGroup ) {
-			if ( in_array( $sGroup, $wgImplicitGroups ) ) {
-				continue;
-			}
+		$groupHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getGroupHelper();
+		$explicitGroups = $groupHelper->getAvailableGroups( [ 'filter' => [ 'explicit' ] ] );
+		foreach ( $explicitGroups as $sGroup ) {
 			$sDisplayName = $sGroup;
 			$oMsg = wfMessage( "group-$sGroup" );
 			if ( $oMsg->exists() ) {
@@ -58,7 +58,8 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 
 			$aData[] = (object)[
 				'group_name' => $sGroup,
-				'additional_group' => isset( $wgAdditionalGroups[$sGroup] ),
+				'additional_group' => ( $groupHelper->getGroupType( $sGroup ) == 'custom' ),
+				'group_type' => $groupHelper->getGroupType( $sGroup ),
 				'displayname' => $sDisplayName,
 			];
 		}
