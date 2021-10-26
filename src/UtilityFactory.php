@@ -120,4 +120,17 @@ class UtilityFactory {
 	public function getTemplateHelper() {
 		return new \BlueSpice\Utility\TemplateHelper( $this->services );
 	}
+
+	/**
+	 * @return \BlueSpice\Utility\GroupHelper
+	 */
+	public function getGroupHelper() {
+		$groupManager = $this->services->getUserGroupManager();
+		$config = $this->services->getMainConfig();
+		$additionalGroups = $config->get( 'AdditionalGroups' );
+		$groupTypes = $config->get( 'GroupTypes' );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+
+		return new \BlueSpice\Utility\GroupHelper( $groupManager, $additionalGroups, $groupTypes, $dbr );
+	}
 }
