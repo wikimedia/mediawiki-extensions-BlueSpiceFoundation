@@ -1,10 +1,24 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
+/**
+ * DEPRECATED!
+ * @deprecated since version 4.1 - use Services->getService( 'BSUtilityFactory' )
+ * ->getGroupHelper() instead
+ */
 class BsGroupHelper {
 
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 4.1 - there will be no replacement
+	 * @var string
+	 */
 	protected static $sLockModeGroup = 'lockmode';
 
 	/**
+	 * DEPRECATED!
+	 * @deprecated since version 4.1 - there will be no replacement
 	 * Public getter for lockmode group. This is needed by some extensions.
 	 * @return string
 	 */
@@ -12,52 +26,35 @@ class BsGroupHelper {
 		return self::$sLockModeGroup;
 	}
 
+	/**
+	 * DEPRECATED!
+	 * @deprecated since version 4.1 - there will be no replacement
+	 * @var string
+	 */
 	protected static $aGroups = [];
 
 	/**
-	 *
+	 * DEPRECATED!
+	 * @deprecated since version 4.1 - use Services->getService( 'BSUtilityFactory' )->getGroupHelper()
+	 * ->getAvailableGroups() instead
 	 * @param array $aConf
 	 * @return array
 	 */
 	public static function getAvailableGroups( $aConf = [] ) {
-		$aBlacklist = [];
-
-		if ( isset( $aConf['blacklist'] ) ) {
-			if ( !is_array( $aConf['blacklist'] ) ) {
-				$aConf['blacklist'] = (array)$aConf['blacklist'];
-			}
-			$aBlacklist = $aConf['blacklist'];
-		}
-
-		$aBlacklist[] = self::$sLockModeGroup;
-
-		$bDoReload = false;
-		if ( isset( $aConf['reload'] ) ) {
-			$bDoReload = $aConf['reload'];
-		}
-		if ( empty( self::$aGroups ) ) {
-			$bDoReload = true;
-		}
-
-		if ( $bDoReload ) {
-			self::$aGroups = array_merge(
-				User::getImplicitGroups(),
-				User::getAllGroups()
-			);
-			self::$aGroups = array_diff( self::$aGroups, $aBlacklist );
-			natsort( self::$aGroups );
-		}
-
-		return self::$aGroups;
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		$groupHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getGroupHelper();
+		return $groupHelper->getAvailableGroups( $aConf );
 	}
 
 	/**
-	 *
+	 * DEPRECATED!
+	 * @deprecated since version 4.1 - there will be no replacement
 	 * @param string $sRight
 	 * @param array $aConf
 	 * @return array
 	 */
 	public static function getGroupsByRight( $sRight, $aConf = [] ) {
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		global $wgGroupPermissions;
 		$aBlacklist = [];
 
@@ -85,29 +82,16 @@ class BsGroupHelper {
 
 	/**
 	 * Returns an array of User being in one or all groups given
+	 * DEPRECATED!
+	 * @deprecated since version 4.1 - use Services->getService( 'BSUtilityFactory' )->getGroupHelper()
+	 * ->getUserInGroups() instead
 	 * @param mixed $aGroups
 	 * @return array Array of User objects
 	 */
 	public static function getUserInGroups( $aGroups ) {
-		$dbr = wfGetDB( DB_REPLICA );
-		if ( !is_array( $aGroups ) ) {
-			$aGroups = [ $aGroups ];
-		}
-		$aUser = [];
-		$res = $dbr->select(
-			'user_groups',
-			[ 'ug_user' ],
-			[ 'ug_group' => $aGroups ],
-			__METHOD__,
-			[ 'DISTINCT' ]
-			);
-		if ( !$res ) {
-			return $aUser;
-		}
-		foreach ( $res as $row ) {
-			$aUser [] = User::newFromId( $row->ug_user );
-		}
-		return $aUser;
+		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		$groupHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getGroupHelper();
+		return $groupHelper->getUserInGroups( $aGroups );
 	}
 
 }
