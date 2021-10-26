@@ -58,8 +58,22 @@ if ( !isset( $GLOBALS[ 'bsgGroupRoles' ] ) ) {
 
 $GLOBALS[ 'bsgGroupRoles' ] = array_merge( [
 	'bureaucrat' => [ 'accountmanager' => true ],
-	'sysop' => [ 'admin' => true ],
-	'user' => [ 'editor' => true ]
+	'sysop' => [
+		'reader' => true,
+		'editor' => true,
+		'reviewer' => true,
+		'admin' => true
+	],
+	'user' => [ 'editor' => true ],
+	'editor' => [
+		'reader' => true,
+		'editor' => true
+	],
+	'reviewer' => [
+		'reader' => true,
+		'editor' => true,
+		'reviewer' => true
+	]
 ], $GLOBALS['bsgGroupRoles'] );
 
 // If "reader" is not explicitly set to "*"
