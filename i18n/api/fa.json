@@ -7,6 +7,7 @@
 		]
 	},
 	"apihelp-bs-store-param-limit": "تعداد نتایج برای نمایش",
+	"apihelp-bs-store-param-format": "فرمت خروجی (فقط جی‌سان یا جی‌سان قالب‌بندی‌شده)",
 	"apihelp-bs-task-param-format": "قالب نتیجه",
 	"bs-wikipage-tasks-error-page-not-valid": "صفحهٔ مشخص‌شده معتبر نیست.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "رده‌ها تغییر یافتند.",
@@ -23,8 +24,10 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "هیچ رده‌ای برای حذف نیست.",
 	"apihelp-bs-category-treestore-description": "فهرست‌های زیررده‌های یک ردهٔ خاص",
 	"apihelp-bs-category-treestore-summary": "فهرست‌های زیررده‌های یک ردهٔ خاص",
+	"bs-api-task-taskData-page-id": "شناسهٔ یک ویکی‌صفحهٔ از پیش موجود",
 	"bs-api-task-taskData-page-title": "عنوان معتبری مربوط به یک صفحهٔ ویکی",
 	"bs-api-task-wikipagetasks-taskData-categories": "آرایه‌ای از رشته‌ها. مقدارها باید برابر با نام معتبر رده‌ها باشند.",
 	"apihelp-bs-js-var-config-param-format": "قالب نتیجه",
+	"apihelp-bs-categorylinks-store-param-page-id": "شناسهٔ صفحه",
 	"apihelp-bs-templatelinks-store-param-page-id": "شناسهٔ صفحه"
 }

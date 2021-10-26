@@ -4,5 +4,6 @@
 			"Ajeje Brazorf"
 		]
 	},
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Catigurìa nun vàlidda|Catigurìi nun vàliddi}}: $1",
 	"apihelp-bs-templatelinks-store-param-page-id": "L'ID dâ pàggina"
 }

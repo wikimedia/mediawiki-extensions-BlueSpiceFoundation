@@ -5,8 +5,10 @@
 		]
 	},
 	"bs-deferred-action-status-done": "Fattu.",
+	"bs-deferred-action-apieditpage-description": "Cancia \"$1\".",
 	"bs-deferred-batch-actions": "Azzioni",
 	"bs-deferred-batch-description": "Discrizzioni",
 	"bs-deferred-batch-status": "Statu",
+	"bs-deferred-action-apiaddcategories-description": "Agghuinci catigurìi a '$1'.",
 	"bs-deferred-action-apideletepage-description": "Cancella \"$1\"."
 }
