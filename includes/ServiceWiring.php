@@ -237,4 +237,11 @@ return [
 
 		return new \BlueSpice\PageHeaderBeforeContentFactory( $registry, $context, $config );
 	},
+
+	'BSSecondaryDataUpdater' => function ( MediaWikiServices $services ) {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceFoundationSecondaryDataUpdateRegistry'
+		);
+		return new \BlueSpice\SecondaryDataUpdater( $registry );
+	},
 ];
