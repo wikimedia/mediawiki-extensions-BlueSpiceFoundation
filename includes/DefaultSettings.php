@@ -50,6 +50,29 @@ if ( !isset( $GLOBALS['wgFooterIcons']['poweredby']['bluespice'] ) ) {
  */
 $GLOBALS[ 'bsgTestSystem' ] = false;
 
+/*
+ * Used by BlueSpiceGroupManager to flag custom groups
+ * Do not fill this array elsewhere, otherwise GroupManager will get
+ * confused!
+ */
+if ( !isset( $GLOBALS[ 'wgAdditionalGroups' ] ) ) {
+	$GLOBALS['wgAdditionalGroups'] = [];
+}
+
+/*
+ * Used to filter groups according to types.
+ * Possible types are
+ * * implicit: Groups that are assigned by the system, such as * and user
+ * * core-minimal: MediaWiki groups that are needed for a proper rights setup
+ * * core-extended: MediaWiki groups that should not be used with BlueSpice
+ * * extension-minimal: Groups by extensions that are needed for a proper rights setup
+ * * extension-extended: Groups by exensions that should not be used
+ * * custom: Groups that are set up by the customer locally
+ */
+if ( !isset( $GLOBALS[ 'wgGroupTypes' ] ) ) {
+	$GLOBALS['wgGroupTypes'] = [];
+}
+
 $GLOBALS[ 'bsgEnableRoleSystem' ] = false;
 
 if ( !isset( $GLOBALS[ 'bsgGroupRoles' ] ) ) {
