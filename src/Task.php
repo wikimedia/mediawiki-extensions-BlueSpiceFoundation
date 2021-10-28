@@ -27,12 +27,14 @@
 
 namespace BlueSpice;
 
-use Status;
-use MessageLocalizer;
-use Message;
-use WikiPage;
-use Psr\Log\LoggerInterface;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
+use Message;
+use MessageLocalizer;
+use MWStake\MediaWiki\Component\Notifications\INotifier;
+use Psr\Log\LoggerInterface;
+use Status;
+use WikiPage;
 
 abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 
@@ -193,16 +195,11 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 	 * @return Status
 	 */
 	protected function runUpdates() {
-		$title = $this->context->getTitle();
-		if ( $title && $title->getNamespace() >= NS_MAIN ) {
-			$wikiPage = WikiPage::factory( $title );
-			$content = $wikiPage->getContent();
-			if ( $content instanceof \Content ) {
-				$updates = $content->getSecondaryDataUpdates( $title );
-				\DataUpdate::runUpdates( $updates );
-			}
+		if ( !$this->context->getTitle() ) {
+			return Status::newGood();
 		}
-		return Status::newGood();
+		$dataUpdater = $this->getServices()->getService( 'BSSecondaryDataUpdater' );
+		return $dataUpdater->run( $this->context->getTitle() );
 	}
 
 	/**

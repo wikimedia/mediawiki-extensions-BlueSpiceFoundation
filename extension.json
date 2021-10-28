@@ -138,7 +138,8 @@
 				"NamespaceManager": "BlueSpice\\DynamicSettings\\NullSettings::factory",
 				"PermissionManager": "BlueSpice\\DynamicSettings\\NullSettings::factory"
 			},
-			"JSConfigVars": {}
+			"JSConfigVars": {},
+			"SecondaryDataUpdateRegistry": {}
 		},
 		"BlueSpicePrivacy": {
 			"CookieConsentNativeMWCookies": {
