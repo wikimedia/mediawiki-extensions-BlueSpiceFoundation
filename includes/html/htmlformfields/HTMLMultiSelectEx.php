@@ -73,21 +73,15 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		$attr = $this->getOOUIAttributes();
 		$attr['selected'] = $value;
 
-		// If options hold just a list of alredy set values, disable it
+		// If options hold just a list of already set values, disable it
 		if ( $value == $this->getOptions() ) {
 			$attr['options'] = [];
 		}
 
 		// Remove selected items form options to avoid double entry's
 		// See ERM24998
-		if ( !empty( $attr['selected'] ) ) {
-			$options = [];
-			foreach ( $attr['options'] as $option ) {
-				if ( !in_array( $option['label'], $attr['selected'] ) ) {
-					$options[] = $option;
-				}
-			}
-			$attr['options'] = $options;
+		if ( !empty( $attr['selected'] ) && !empty( $attr['options'] ) ) {
+			$attr['options'] = $this->deduplicateOptions( $attr['options' ] );
 		}
 
 		if ( !empty( $attr[ 'options' ] ) ) {
@@ -100,6 +94,18 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		}
 
 		return $widget;
+	}
+
+	private function deduplicateOptions( $options ) {
+		$deduplicated = [];
+		$keysUsed = [];
+		foreach ( $options as $option ) {
+			if ( !in_array( $option['data'], $keysUsed ) ) {
+				$deduplicated[] = $option;
+			}
+		}
+
+		return $deduplicated;
 	}
 
 	/**
