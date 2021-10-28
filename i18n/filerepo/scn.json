@@ -9,5 +9,7 @@
 	"bs-filerepo-headerfilename": "Nomu dû file",
 	"bs-filerepo-headerfiledescription": "Discrizzioni",
 	"bs-filerepo-yes": "Sì",
-	"bs-filerepo-no": "No"
+	"bs-filerepo-no": "No",
+	"bs-filerepo-labelupload": "Càrrica",
+	"bs-filerepo-labelfilter": "Filtru"
 }

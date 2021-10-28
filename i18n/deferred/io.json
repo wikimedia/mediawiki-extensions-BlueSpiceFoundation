@@ -7,5 +7,6 @@
 	"bs-deferred-action-apieditpage-description": "Redaktar \"$1\".",
 	"bs-deferred-batch-status": "Stando",
 	"bs-deferred-action-apideletepage-description": "Efacar \"$1\".",
-	"bs-deferred-action-status-done": "Facita."
+	"bs-deferred-action-status-done": "Facita.",
+	"bs-deferred-batch-description": "Deskriptado"
 }

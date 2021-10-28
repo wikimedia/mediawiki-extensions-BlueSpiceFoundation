@@ -9,5 +9,10 @@
 	"bs-upload-uploadfilefieldlabel": "Nomu dû file",
 	"bs-upload-descfilelabel": "Discrizzioni",
 	"bs-upload-details": "Dittagghî",
-	"bs-upload-license": "Licenza"
+	"bs-upload-license": "Licenza",
+	"bs-upload-uploaddialogtitle": "Càrrica nu file",
+	"bs-upload-uploadfileemptytext": "Nzirisci lu novu file...",
+	"bs-upload-uploaddestfilelabel": "Nomu dû file di distinazzioni",
+	"bs-upload-uploadwatchthislabel": "Talìa stu file",
+	"bs-upload-uploadwarningdialog-warning-exists": "Nu file cû nomu \"$1\" esisti già"
 }

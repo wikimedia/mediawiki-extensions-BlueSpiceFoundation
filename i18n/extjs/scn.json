@@ -21,8 +21,15 @@
 	"bs-extjs-label-namespace": "Namespace",
 	"bs-extjs-warning": "Accura",
 	"bs-extjs-title-warning": "Accura",
-	"bs-extjs-add": "Junci",
+	"bs-extjs-add": "Agghiunci",
 	"bs-extjs-remove": "Leva",
 	"bs-extjs-flyout-tab-grid-label": "Dittagghî",
-	"bs-extjs-label-page": "Pàggina"
+	"bs-extjs-label-page": "Pàggina",
+	"bs-extjs-confirm": "Cunferma",
+	"bs-extjs-label-group": "Gruppu",
+	"bs-extjs-label-specialpage": "Pàggina spiciali",
+	"bs-extjs-titlecombo-newpagehint": "La pàggina nun esisti!",
+	"bs-extjs-allns": "(tutti)",
+	"bs-extjs-filter-bool-no": "no",
+	"bs-extjs-tools-trigger-text": "Strummenta"
 }

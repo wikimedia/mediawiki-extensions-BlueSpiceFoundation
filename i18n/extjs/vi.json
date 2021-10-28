@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ioe2015",
 			"Minh Nguyen",
 			"Nhatminh01"
 		]
@@ -31,5 +32,6 @@
 	"bs-extjs-uploading": "Đang tải lên…",
 	"bs-extjs-confirmNavigationTitle": "Mở liên kết",
 	"bs-extjs-confirmNavigationText": "Bạn có chắc chắn muốn mở liên kết này? Tất cả các thiết lập động như bộ lọc hoặc sắp xếp trên trang hiện tại sẽ bị mất.",
-	"bs-extjs-allns": "(tất cả)"
+	"bs-extjs-allns": "(tất cả)",
+	"bs-extjs-tools-trigger-title": "Nháy vào đây để mở bảng chọn công cụ"
 }
