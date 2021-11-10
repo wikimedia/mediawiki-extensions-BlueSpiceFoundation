@@ -123,16 +123,25 @@ class BSTreeRenderer {
 	 * @param int $level
 	 */
 	protected function renderNodeItem( $node, $level ) {
+		$attibs = [
+			'class' => $this->makeNodeItemClass( $node, $level ),
+			'data-bs-nodedata' => $this->makeNodeItemData( $node )
+		];
+		if ( $node->isExpandable() && $node->hasChildNodes() ) {
+			$attibs = array_merge( $attibs, [ 'aria-haspopup' => 'true' ] );
+		}
+		if ( $node->isExpanded() ) {
+			$attibs = array_merge( $attibs, [ 'aria-expanded' => 'true' ] );
+		}
+
 		$this->html .= Html::openElement(
 			'li',
-			[
-				'class' => $this->makeNodeItemClass( $node, $level ),
-				'data-bs-nodedata' => $this->makeNodeItemData( $node )
-			]
+			$attibs
 		);
+		$this->html .= Html::openElement( 'div' );
 		$this->html .= Html::element( 'span', [ 'class' => 'bs-icon' ] );
-
 		$this->renderNode( $node );
+		$this->html .= Html::closeElement( 'div' );
 		if ( $node->hasChildNodes() ) {
 			$this->html .= Html::openElement( 'ul' );
 			$this->renderNodeItems( $node->getChildNodes(), $level + 1 );
@@ -171,9 +180,6 @@ class BSTreeRenderer {
 		$classes = [
 			'bs-treenodeitem',
 			'bs-tree-level-' . $level,
-			$node->isExpanded() ? '' : 'collapsed',
-			$node->isExpandable() ? 'expandable' : '',
-			$node->hasChildNodes() ? '' : 'leaf',
 			$node->isActive() ? 'active' : ''
 		];
 

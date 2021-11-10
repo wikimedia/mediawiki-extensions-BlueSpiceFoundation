@@ -4,10 +4,14 @@
 		if ( e.target.nodeName.toUpperCase() === 'A' || $parentAnchor.length !== 0 ) {
 			return; // Don't prevent clicks on anchor elements
 		}
-		if ( $( this ).hasClass( 'leaf' ) || !$( this ).hasClass( 'expandable' ) ) {
+		if ( $( this ).hasClass( 'leaf' ) || $(this).attr( 'aria-haspopup' ) !== 'true' ) {
 			return;
 		}
-		$( this ).toggleClass( 'collapsed' );
+		if ( $( this ).attr( 'aria-expanded' ) === 'true' ) {
+			$( this ).removeAttr( 'aria-expanded' );
+		} else {
+			$( this ).attr( 'aria-expanded', 'true' );
+		}
 		_updatePathCookie( $( this ) );
 		e.preventDefault();
 		return false;
