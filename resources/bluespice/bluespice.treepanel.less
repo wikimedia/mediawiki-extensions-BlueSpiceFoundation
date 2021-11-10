@@ -1,32 +1,33 @@
 .bs-treenodeitem {
-	&.expandable {
-		cursor: pointer;
-	}
+	cursor: default;
 
-	.bs-icon{
+	& > div > .bs-icon:before {
 		margin-right: 0.2em;
-
-		&:before {
-			font-family: 'fontawesome';
-			content: "\f13a";
-		}
+		font-family: 'fontawesome';
+		content: "\f192";
 	}
 
-	&.collapsed {
-		.bs-icon:before {
-			content: "\f138";
+	&[aria-haspopup="true"] {
+		cursor: pointer;
+
+		& > div > .bs-icon{
+			&:before {
+				content: "\f138";
+			}
 		}
 
 		& > ul {
 			display: none;
 		}
-	}
 
-	&.leaf {
-		cursor:default;
+		&[aria-expanded="true"]{
+			& > div > .bs-icon:before {
+				content: "\f13a";
+			}
 
-		.bs-icon:before {
-			content: "\f192";
+			& > ul {
+				display: block;
+			}
 		}
 	}
 }
