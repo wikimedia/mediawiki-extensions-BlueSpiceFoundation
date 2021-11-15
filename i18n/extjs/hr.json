@@ -3,6 +3,7 @@
 		"authors": [
 			"Bugoslav",
 			"MaGa",
+			"Ponor",
 			"Vrhnje"
 		]
 	},
@@ -19,7 +20,7 @@
 	"bs-extjs-edit": "Uredi",
 	"bs-extjs-copy": "Kopiraj",
 	"bs-extjs-hint": "Sugestija",
-	"bs-extjs-error": "Grješka",
+	"bs-extjs-error": "Pogreška",
 	"bs-extjs-confirm": "Potvrda",
 	"bs-extjs-loading": "Učitavanje...",
 	"bs-extjs-pageSize": "Stavke po stranici",
@@ -65,7 +66,7 @@
 	"bs-extjs-pageexport-list-format-plain-label": "Običan tekst",
 	"bs-extjs-pageexport-list-format-link-label": "Poveznica",
 	"bs-extjs-pageexport-overwrite-label": "Prepisati preko postojećega sadržaja",
-	"bs-extjs-pageexport-general-error": "Grješka pri izvozu",
+	"bs-extjs-pageexport-general-error": "Pogreška pri izvozu",
 	"bs-extjs-pageexport-pagecollection-prefix": "Zbirka stranica",
 	"bs-pagecollection-prefix": "Zbirka stranica",
 	"bs-extjs-pageexport-success": "Izvoz je uspješno izvršen",

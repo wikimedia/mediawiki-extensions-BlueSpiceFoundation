@@ -3,6 +3,7 @@
 		"authors": [
 			"Agusbou2015",
 			"Amitie 10g",
+			"Danniel07",
 			"Fitoschido",
 			"Frammm",
 			"Hasley",
@@ -111,5 +112,7 @@
 	"action-editor": "Ser concedido todos los permisos del editor \"de función\" para los páginas protegidas en restricción de editor cuándo el sistema de función está activado",
 	"bs-pref-fileextensions-help": "Los tipos del los archivos que puede ser cargado al wiki. Algunos tipos (p. ej., html, js, php, cgi, exe) no es permitido para razones de seguridad incluso si han sido añadidos aquí.",
 	"bs-pref-imageextensions-help": "Los tipos del archivos que puede ser añadidos al wiki. Formatos del web posibles: gif, png, jpg, jpeg. Otros formatos del archivos: tiff, bmp",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "No se pudo guardar el archivo de configuración $1."
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "No se pudo guardar el archivo de configuración $1.",
+	"bs-pref-logopath-help": "Merkið ætti að vera geymt í /w/images möppunni í uppsetningunni þinni. Ef þú geymir það í /w/skins möppunni í BlueSpice uppsetningunni þinni er hægt að skrifa yfir það með uppfærslu.",
+	"bs-pref-faviconpath-help": "Favicon ætti að vera geymt í /w/images möppunni í uppsetningunni þinni. Ef þú geymir það í /w/skins möppunni í BlueSpice uppsetningunni þinni gæti það verið skrifað yfir með uppfærslu. Favicons hafa skráarendingu .ico."
 }
