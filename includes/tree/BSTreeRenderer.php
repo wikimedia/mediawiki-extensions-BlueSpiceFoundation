@@ -179,8 +179,7 @@ class BSTreeRenderer {
 	protected function makeNodeItemClass( $node, $level ) {
 		$classes = [
 			'bs-treenodeitem',
-			'bs-tree-level-' . $level,
-			$node->isActive() ? 'active' : ''
+			'bs-tree-level-' . $level
 		];
 
 		return implode( ' ', $classes );
