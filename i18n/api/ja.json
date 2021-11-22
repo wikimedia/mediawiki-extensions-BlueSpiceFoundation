@@ -4,6 +4,7 @@
 			"2nd-player",
 			"Aefgh39622",
 			"Otokoume",
+			"RYOUMA1117",
 			"Reiwa period",
 			"Rrock9312",
 			"Shirayuki",
@@ -54,5 +55,6 @@
 	"apihelp-bs-category-treestore-description": "特定のカテゴリのサブカテゴリを一覧表示します",
 	"apihelp-bs-category-treestore-summary": "特定のカテゴリのサブカテゴリを一覧表示します",
 	"bs-api-task-taskData-page-id": "存在するウィキページのID",
-	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル"
+	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル",
+	"apihelp-bs-js-var-config-param-format": "結果形式"
 }
