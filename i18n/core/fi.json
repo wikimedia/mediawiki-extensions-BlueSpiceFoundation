@@ -9,7 +9,8 @@
 			"SMAUG",
 			"Silvonen",
 			"Stryn",
-			"Surjection"
+			"Surjection",
+			"Veikk0.ma"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -61,6 +62,7 @@
 	"bs-ns": "Nimiavaruus",
 	"bs-from-something": "(kohteesta $1)",
 	"bs-pref-fileextensions": "Sallitut tiedostopäätteet:",
+	"bs-pref-imageextensions": "Sallitut kuvatiedostopäätteet:",
 	"bs-pref-logopath": "Logon sijainti:",
 	"bs-pref-faviconpath": "Faviconin sijainti:",
 	"bs-pref-testmode": "Aktivoi testitila",
@@ -78,5 +80,6 @@
 	"action-wikiadmin": "näytä BlueSpice hallintosivut",
 	"right-wikiadmin": "Käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
 	"bs-notifications-agent-anon": "anonyymi käyttäjä",
-	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät"
+	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
+	"bs-pref-imageextensions-help": "Kuvatiedostotyypit joita tähän wikiin saa tallentaa. Mahdollisia web-kuvatiedostotyyppejä: gif, png, jpg, jpeg. Muita kuvatiedostotyyppejä: tiff, bmp"
 }
