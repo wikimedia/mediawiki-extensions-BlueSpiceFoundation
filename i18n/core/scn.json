@@ -33,7 +33,7 @@
 	"bs-navigation-support": "Supportu",
 	"bs-navigation-contact": "Cuntatti",
 	"bs-parser-error-invalid-namespace": "Namespace nun vàliddu: $1",
-	"bs-parser-error-invalid-title": "Tîtulu nun vàliddu: $1",
+	"bs-parser-error-invalid-title": "Tìtulu nun vàliddu: $1",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "utenti anònimu"
