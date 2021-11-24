@@ -28,13 +28,10 @@
 namespace BlueSpice;
 
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
-use MWStake\MediaWiki\Component\Notifications\INotifier;
 use Psr\Log\LoggerInterface;
 use Status;
-use WikiPage;
 
 abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 
