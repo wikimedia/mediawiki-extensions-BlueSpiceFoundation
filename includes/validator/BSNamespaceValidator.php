@@ -68,7 +68,7 @@ class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
 	public function doValidation( $value ) {
 		// TODO: finalize implementation
 		if ( $this->hasToExist &&
-			!MediaWikiServices::getInstance()->getNamespaceInfo->exists( $value )
+			!MediaWikiServices::getInstance()->getNamespaceInfo()->exists( $value )
 		) {
 			$this->addErrorMessage(
 				wfMessage(
