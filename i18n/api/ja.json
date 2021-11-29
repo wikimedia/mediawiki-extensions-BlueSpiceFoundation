@@ -8,7 +8,8 @@
 			"Reiwa period",
 			"Rrock9312",
 			"Shirayuki",
-			"Suyama"
+			"Suyama",
+			"カッパ鳥"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "ファイルバックエンドからすべてのファイルを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
@@ -56,5 +57,7 @@
 	"apihelp-bs-category-treestore-summary": "特定のカテゴリのサブカテゴリを一覧表示します",
 	"bs-api-task-taskData-page-id": "存在するウィキページのID",
 	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル",
-	"apihelp-bs-js-var-config-param-format": "結果形式"
+	"bs-api-task-wikipagetasks-taskData-categories": "文字列の配列。値は有効なカテゴリー名である必要があります。",
+	"apihelp-bs-js-var-config-param-format": "結果形式",
+	"apihelp-bs-categorylinks-store-param-page-id": "このページのページID"
 }

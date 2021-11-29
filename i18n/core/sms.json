@@ -6,9 +6,11 @@
 	},
 	"bs-ns_main": "(Seeid)",
 	"bs-ns_all": "(puk)",
+	"bs-tab_navigation": "Vaʹlljõk",
 	"bs-userbar_loginswitch_logout": "Ǩeeʹrjtõõđ åålǥas",
 	"bs-userbar_loginswitch_login": "Ǩeeʹrjtõõđ sizz",
 	"bs-extended-search-textfield-defaultvalue": "Ooʒʒ...",
+	"bs-days-duration": "{{PLURAL:$1|õhtt peiʹvv|$1 peeiʹv|$1 peiʹvved}}",
 	"bs-viewtagerrorlist-legend": "$1 - Vââʹǩǩ",
 	"bs-imagepage-download-text": "Laadd"
 }
