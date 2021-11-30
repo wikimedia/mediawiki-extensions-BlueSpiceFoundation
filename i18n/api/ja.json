@@ -4,10 +4,12 @@
 			"2nd-player",
 			"Aefgh39622",
 			"Otokoume",
+			"RYOUMA1117",
 			"Reiwa period",
 			"Rrock9312",
 			"Shirayuki",
-			"Suyama"
+			"Suyama",
+			"カッパ鳥"
 		]
 	},
 	"apihelp-bs-user-store-description": "データベースからすべての利用者を一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
@@ -54,5 +56,8 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "削除するカテゴリはありません",
 	"apihelp-bs-category-treestore-description": "特定のカテゴリのサブカテゴリを一覧表示します",
 	"apihelp-bs-category-treestore-summary": "特定のカテゴリのサブカテゴリを一覧表示します",
-	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル"
+	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル",
+	"bs-api-task-wikipagetasks-taskData-categories": "文字列の配列。値は有効なカテゴリー名である必要があります。",
+	"apihelp-bs-js-var-config-param-format": "結果形式",
+	"apihelp-bs-categorylinks-store-param-page-id": "このページのページID"
 }

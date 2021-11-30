@@ -10,5 +10,7 @@
 	"bs-ns_all": "(puk)",
 	"bs-ns_main": "(Seeid)",
 	"bs-userbar_loginswitch_login": "Ǩeeʹrjtõõđ sizz",
-	"bs-extended-search-textfield-defaultvalue": "Ooʒʒ..."
+	"bs-extended-search-textfield-defaultvalue": "Ooʒʒ...",
+	"bs-tab_navigation": "Vaʹlljõk",
+	"bs-days-duration": "{{PLURAL:$1|õhtt peiʹvv|$1 peeiʹv|$1 peiʹvved}}"
 }

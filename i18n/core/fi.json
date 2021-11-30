@@ -9,7 +9,8 @@
 			"SMAUG",
 			"Silvonen",
 			"Stryn",
-			"Surjection"
+			"Surjection",
+			"Veikk0.ma"
 		]
 	},
 	"bs-ns_main": "(Sivut)",
@@ -78,5 +79,7 @@
 	"bs-graphicallist-action-list": "Luettelo",
 	"bs-graphicallist-action-preview": "Esikatsele",
 	"bs-permissionerror": "Käyttöoikeusvirhe!",
-	"bs-notifications-agent-anon": "anonyymi käyttäjä"
+	"bs-notifications-agent-anon": "anonyymi käyttäjä",
+	"bs-pref-imageextensions": "Sallitut kuvatiedostopäätteet:",
+	"bs-pref-imageextensions-help": "Kuvatiedostotyypit joita tähän wikiin saa tallentaa. Mahdollisia web-kuvatiedostotyyppejä: gif, png, jpg, jpeg. Muita kuvatiedostotyyppejä: tiff, bmp"
 }
