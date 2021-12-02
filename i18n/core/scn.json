@@ -32,6 +32,7 @@
 	"bs-ns": "Namespace",
 	"bs-parser-error-invalid-namespace": "Namespace nun vàliddu: $1",
 	"bs-parser-error-invalid-title": "Tìtulu nun vàliddu: $1",
+	"bs-export-menu-print-text": "Stampa",
 	"bs-graphicallist-action-close": "Chiudi",
 	"bs-graphicallist-action-preview": "Antiprima",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
