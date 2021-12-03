@@ -36,5 +36,6 @@
 	"bs-parser-error-invalid-title": "Tìtulu nun vàliddu: $1",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"bs-notifications-agent-anon": "utenti anònimu"
+	"bs-notifications-agent-anon": "utenti anònimu",
+	"bs-export-menu-print-text": "Stampa"
 }
