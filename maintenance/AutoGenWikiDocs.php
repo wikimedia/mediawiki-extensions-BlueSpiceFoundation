@@ -184,7 +184,7 @@ class AutoGenWikiDocs extends BSMaintenance {
 			$content[$key] = $value;
 		}
 
-		$page['title'] = '' . $prefix . '/' . $name;
+		$page['title'] = $name;
 		$page['content'] = implode( "\n", $content );
 
 		$this->pages[] = $this->xmlTemplatePage( $page );
