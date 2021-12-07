@@ -129,6 +129,8 @@ class BSTreeRenderer {
 		];
 		if ( $node->isExpandable() && $node->hasChildNodes() ) {
 			$attibs = array_merge( $attibs, [ 'aria-haspopup' => 'true' ] );
+			$attibs = array_merge( $attibs, [ 'aria-expanded' => 'false' ] );
+			$attibs = array_merge( $attibs, [ 'role' => 'treeitem' ] );
 		}
 		if ( $node->isExpanded() ) {
 			$attibs = array_merge( $attibs, [ 'aria-expanded' => 'true' ] );
