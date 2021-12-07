@@ -1,7 +1,7 @@
 {
 	"name": "BlueSpiceFoundation",
 	"license-name": "GPL-3.0-only",
-	"version": "4.1.0-beta",
+	"version": "4.1.0-RC1",
 	"author": [
 		"[https://www.hallowelt.com Hallo Welt! GmbH]"
 	],
@@ -641,7 +641,7 @@
 		"BlueSpiceExtInfo": {
 			"value": {
 				"name": "BlueSpice",
-				"version": "4.1.0-beta",
+				"version": "4.1.0-RC1",
 				"status": "stable",
 				"package": "BlueSpice Free",
 				"url": "https://bluespice.com",
