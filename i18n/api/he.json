@@ -6,7 +6,8 @@
 			"Guycn2",
 			"MojoMann",
 			"Steeve815",
-			"YaronSh"
+			"YaronSh",
+			"ערן"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
@@ -37,9 +38,15 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "אינכם מורשים לערוך את הדף \"$1\".",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|קטגוריה לא־תקינה|קטגוריות לא־תקינות}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "הקטגוריות הוגדרו בהצלחה.",
+	"apihelp-bs-wikisubpage-treestore-description": "רשימת דפי משנה של דף ויקי מסוים",
+	"apihelp-bs-wikisubpage-treestore-summary": "רשימת דפי משנה של דף ויקי מסוים",
 	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",
+	"apihelp-bs-upload-license-store-description": "רשימת רשיונות זמינים להעלאת קובץ",
+	"apihelp-bs-upload-license-store-summary": "רשימת רשיונות זמינים להעלאת קובץ",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "אינך רשאי לקרוא את הדף '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "אין קטגוריות להסרה",
+	"apihelp-bs-category-treestore-description": "רשימת תת קטגוריות של קטגוריה מסוימת",
+	"apihelp-bs-category-treestore-summary": "רשימת תת קטגוריות של קטגוריה מסוימת",
 	"apihelp-bs-task-param-examples": "להציג דוגאמות של משתנים למשימה",
 	"bs-api-task-taskData-page-id": "המזהה של דף ויקי קיים",
 	"bs-api-task-taskData-page-title": "כותרת תקינה של דף ויקי",
