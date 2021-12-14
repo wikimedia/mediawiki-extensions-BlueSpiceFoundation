@@ -95,18 +95,23 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 		$commentText = $this->getOption( 'comment', '' );
 
 		if ( !$this->hasOption( 'dry' ) ) {
-			$props = FSFile::getPropsFromPath( $oFile->getPathname() );
+			$mwProps = new MWFileProps( MediaWiki\MediaWikiServices::getInstance()->getMimeAnalyzer() );
+			$props = $mwProps->getPropsFromPath( $oFile->getPathname(), true );
 			$flags = 0;
 			$publishOptions = [];
 			$handler = MediaHandler::getHandler( $props['mime'] );
 			if ( $handler ) {
-				$publishOptions['headers'] = $handler->getStreamHeaders( $props['metadata'] );
+				$metadata = \Wikimedia\AtEase\AtEase::quietCall( 'unserialize', $props['metadata'] );
+
+				$publishOptions['headers'] = $handler->getContentHeaders( $metadata );
 			} else {
 				$publishOptions['headers'] = [];
 			}
 			$archive = $oRepoFile->publish( $oFile->getPathname(), $flags, $publishOptions );
 			if ( !$archive->isGood() ) {
-				$this->error( "failed. (" . $archive->getWikiText() . ")" );
+				$this->output( "failed. (" .
+					$archive->getMessage( false, false, 'en' )->text() .
+					")\n" );
 			}
 		}
 
