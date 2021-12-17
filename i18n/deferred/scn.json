@@ -10,5 +10,7 @@
 	"bs-deferred-batch-description": "Discrizzioni",
 	"bs-deferred-batch-status": "Statu",
 	"bs-deferred-action-apiaddcategories-description": "Agghuinci catigurìi a '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Leva catigurìi da '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Mposta catigurìi supra '$1'.",
 	"bs-deferred-action-apideletepage-description": "Cancella \"$1\"."
 }

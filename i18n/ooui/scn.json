@@ -5,8 +5,11 @@
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Agghiunci novu...",
+	"bs-ooui-key-value-input-widget-value-label": "Valuri",
 	"bs-ooui-key-value-input-widget-add-button-label": "Agghiunci",
 	"bs-ooui-key-value-input-widget-add-form-label": "Aggiungi na nova vuci",
+	"bs-ooui-key-value-input-widget-no-values-label": "Nuddu valuri mpustatu!",
+	"bs-ooui-btn-dismiss-alert-title": "Ammuccia",
 	"bs-ooui-key-value-input-widget-section-label": "Sizzioni",
 	"bs-ooui-key-value-input-widget-add-section-label": "Agghiunci nova sizzioni"
 }
