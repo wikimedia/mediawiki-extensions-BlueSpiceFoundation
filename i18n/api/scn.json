@@ -4,6 +4,11 @@
 			"Ajeje Brazorf"
 		]
 	},
-	"apihelp-bs-templatelinks-store-param-page-id": "L'ID dâ pàggina",
-	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Catigurìa nun vàlidda|Catigurìi nun vàliddi}}: $1"
+	"bs-wikipage-tasks-setcategories-edit-summary": "Catigurìi canciati.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Catigurìa nun vàlidda|Catigurìi nun vàliddi}}: $1",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Elencu di opzioni",
+	"bs-wikipage-tasks-error-nothingtoremove": "Nun ci sunnu catigurìi da livari",
+	"bs-api-task-taskData-page-title": "Nu tìtulu vàlidu pi na pàggina wiki",
+	"apihelp-bs-js-var-config-param-format": "Furmatu dû risurtatu",
+	"apihelp-bs-templatelinks-store-param-page-id": "L'ID dâ pàggina"
 }

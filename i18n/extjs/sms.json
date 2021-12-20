@@ -4,13 +4,14 @@
 			"Yupik"
 		]
 	},
-	"bs-extjs-error": "Vââʹǩǩ",
-	"bs-extjs-categorytree-title": "Kategoria",
-	"bs-extjs-pageexport-list-format-link-label": "Liŋkk",
 	"bs-extjs-save": "Ruõkk",
-	"bs-extjs-allns": "(puk)",
-	"bs-extjs-label-user": "Õõʹnni",
 	"bs-extjs-add": "Lââʹzzet",
 	"bs-extjs-remove": "Jaukkâd",
-	"bs-extjs-edit": "Muuʹtt"
+	"bs-extjs-edit": "Muuʹtt",
+	"bs-extjs-error": "Vââʹǩǩ",
+	"bs-extjs-label-user": "Õõʹnni",
+	"bs-extjs-allns": "(puk)",
+	"bs-extjs-categorytree-title": "Kategoria",
+	"bs-extjs-filter-date-filter": "Siʹlle",
+	"bs-extjs-pageexport-list-format-link-label": "Liŋkk"
 }
