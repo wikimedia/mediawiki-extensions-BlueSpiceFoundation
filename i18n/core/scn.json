@@ -22,6 +22,7 @@
 	"bs-now": "ora",
 	"bs-userpagesettings-legend": "Mpustazzioni utenti",
 	"bs-userpreferences-link-text": "Àutri mpustazzioni utenti",
+	"bs-exception-view-admin-hint": "Pi favuri cuntatta lu tò amministraturi sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Ammustra li dittaghî di l'erruri",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Ammuccia li dittagghî di l'erruri",
 	"bs-viewtagerrorlist-legend": "$1 - Erruri",
