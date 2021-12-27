@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Agent",
+			"Agusbou2015",
 			"Fitoschido",
 			"Idontknow",
 			"Ihojose",
@@ -90,5 +91,6 @@
 	"apihelp-bs-templatelinks-store-summary": "Enumera todas las plantillas de una página, incluido el enlace a la plantilla.",
 	"apihelp-bs-templatelinks-store-param-page-id": "El id de página de la página",
 	"apihelp-bs-linker-summary": "Muestra links a páginas generadas por Linker",
-	"apihelp-bs-linker-description": "Muestra links a páginas generadas por Linker"
+	"apihelp-bs-linker-description": "Muestra links a páginas generadas por Linker",
+	"apihelp-bs-linker-param-linkdescs": "Un array JSON asociativo con una lista de páginas. Cada entrada debe contener el título de la página como `target`. Opcionalmente puede contener `text`, `attribs` y `query`."
 }
