@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"bs-email-greeting-receiver": "{{GENDER:$1|გომორძგუა პ-ნ $2|გომორძგუა ო-ნ $2|გომორძგუა $2}},",
+	"bs-userpagesettings-legend": "მახვარებუშ პარამეტრეფი",
+	"bs-userpreferences-link-text": "მახვარებუშ უმოსი პატამეტრი",
+	"bs-userpreferences-link-title": "ქოძირით თქვანი პერსონალური მახვარებუშ პარამეტრეფი",
+	"bs-exception-view-heading": "ჩილათაქ მოხვადჷ",
+	"bs-exception-view-text": "თქვან მოთხირიშ დამუშებაშის გეჸვენჯ ჩილათაქ მოხვადჷ:",
+	"bs-exception-view-admin-hint": "ქორთხინთ, მიკართით თქვან სისტემურ ადმინისტრატორს."
+}
