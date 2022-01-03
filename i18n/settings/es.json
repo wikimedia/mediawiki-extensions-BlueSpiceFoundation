@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
-			"Ryo567"
+			"Ryo567",
+			"Agusbou2015"
 		]
 	},
 	"bs-setting-path-feature": "Característica",
@@ -13,6 +14,7 @@
 	"bs-setting-path-editor": "Editor",
 	"bs-setting-path-search": "Búsquedas y navegación",
 	"bs-setting-path-personalisation": "Personalización",
+	"bs-setting-path-skinning": "Pieles",
 	"bs-setting-path-customizing": "Personalización",
 	"bs-setting-path-contentstructuring": "Estructura de contenidos",
 	"bs-setting-path-communication": "Comunicación",
