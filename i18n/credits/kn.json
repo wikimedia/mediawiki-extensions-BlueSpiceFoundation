@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ"
 		]
 	},
 	"specialcredits": "ಬ್ಲೂ ಸ್ಪೈಸ್ ಮನ್ನಣೆಗಳು",
 	"bs-credits-programmers": "ಕ್ರಮವಿಧಿಕರು",
 	"bs-credits-dnt": "ವಿನ್ಯಾಸ ಮತ್ತು ಪರೀಕ್ಷೆ",
-	"bs-credits-contributors": "ಚಂದಾದಾರರು"
+	"bs-credits-contributors": "ಚಂದಾದಾರರು",
+	"bs-credits-translation": "ಅನುವಾದ"
 }

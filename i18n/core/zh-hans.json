@@ -17,7 +17,8 @@
 			"佛壁灯",
 			"列维劳德",
 			"御坂美琴",
-			"落花有意12138"
+			"落花有意12138",
+			50829
 		]
 	},
 	"bluespicefoundation-desc": "使MediaWiki准备好企业化",
@@ -115,5 +116,6 @@
 	"bs-pref-fileextensions-help": "可以上传到维基的文件类型。有些类型（例如：html、js、php、cgi、exe）出于安全考虑是不允许的，即使它们已经被添加到这里。",
 	"bs-pref-imageextensions-help": "可以上传到维基的图片文件类型。可以的网络格式：gif、png、jpg、jpeg。其他图片格式：tiff、bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "无法书写配置文件$1！",
-	"bs-pref-logopath-help": "标志应当被存储在安装目录下的“/w/images”文件夹中。如果您把它存储在BlueSpice安装目录下的“/w/skins”文件夹下，其可能随着更新而被覆盖。"
+	"bs-pref-logopath-help": "标志应当被存储在安装目录下的“/w/images”文件夹中。如果您把它存储在BlueSpice安装目录下的“/w/skins”文件夹下，其可能随着更新而被覆盖。",
+	"bs-pref-faviconpath-help": "标志应当被存储在安装目录下的“/w/images”文件夹中。如果您把它存储在BlueSpice安装目录下的“/w/skins”文件夹下，其可能随着更新而被覆盖。"
 }
