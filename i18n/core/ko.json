@@ -6,6 +6,7 @@
 			"Keysuck",
 			"Miri-Nae",
 			"Ykhwong",
+			"Yunbj",
 			"관인생략",
 			"아라"
 		]
@@ -45,6 +46,7 @@
 	"bs-permissionerror": "권한 오류!",
 	"bs-lockdown-groups-permissionerror": "\"$1\" 동작은 다음의 {{PLURAL:$2|이유}}로 사용할 수 있습니다: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code>은(는) 올바른 디렉터리가 아닙니다.",
+	"bs-filesystemhelper-has-path-traversal": "경로 탐색이 감지되었습니다!",
 	"bs-filesystemhelper-file-not-exists": "<code>$1</code> 파일이 존재하지 않습니다.",
 	"bs-filesystemhelper-file-copy-error": "<code>$1</code> 파일을 복사할 수 없습니다.",
 	"bs-filesystemhelper-file-already-exists": "<code>$1</code> 파일이 이미 존재합니다.",
@@ -58,6 +60,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "이 파일 형식은 지원되지 않습니다.",
 	"bs-filesystemhelper-save-base64-error": "파일을 저장할 수 없습니다.",
 	"bs-filesystemhelper-upload-base64-error": "파일을 올릴 수 없습니다.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "파일을 업로드 저장소로 이동할 수 없었습니다.",
 	"bs-filesystemhelper-upload-local-error-create": "파일을 위키에서 만들 수 없습니다.",
 	"bs-navigation-instructions": "지침",
 	"bs-navigation-support": "지원",
