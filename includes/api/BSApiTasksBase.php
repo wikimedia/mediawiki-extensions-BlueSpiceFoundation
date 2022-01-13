@@ -414,13 +414,17 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @param string $sTask
 	 * @return mixed bool|null if requested task not in list
 	 * true if allowed
+	 * true if permission list is empty
 	 * false if not found in permission table of current user -> set in permission manager, group based
 	 */
 	public function checkTaskPermission( $sTask ) {
 		$taskPermissions = $this->getTaskPermissions( $sTask );
 
-		if ( empty( $taskPermissions ) ) {
+		if ( $taskPermissions === false ) {
 			return null;
+		}
+		if ( empty( $taskPermissions ) ) {
+			return true;
 		}
 		// lookup permission for given task
 		foreach ( $taskPermissions as $sPermission ) {
@@ -681,11 +685,18 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		}
 	}
 
+	/**
+	 * @param string $task
+	 * @return array|false
+	 */
 	private function getTaskPermissions( $task ) {
 		$taskPermissions = array_merge(
 			$this->getRequiredTaskPermissions(),
 			$this->getGlobalRequiredTaskPermissions()
 		);
+		if ( !isset( $taskPermissions[$task] ) ) {
+			return false;
+		}
 
 		return $taskPermissions[$task];
 	}
