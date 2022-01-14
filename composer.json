@@ -27,7 +27,8 @@
 		"mwstake/mediawiki-component-runjobstrigger": "~1.0",
 		"mwstake/mediawiki-component-alertbanners": "~1.0",
 		"mwstake/mediawiki-component-notifications": "~1.0",
-		"mwstake/mediawiki-component-manifestregistry": "~1.0"
+		"mwstake/mediawiki-component-manifestregistry": "~1.0",
+		"mwstake/mediawiki-component-utils": "~1"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "31.0.0",
