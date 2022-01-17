@@ -21,6 +21,16 @@ class AddFooterLinks extends TitleReadWhitelist {
 	 * @return bool
 	 */
 	protected function skipProcessing() {
+		// We require the Message subsystem to be available for this code.
+		// In rare cases this code gets called pre-maturely. E.g. `onBeforeInitialize`
+		// by "Extension:PluggableAuth".
+		// We can safely bail out in such cases.
+		//
+		// `$wgFullyInitialised` has no default in `$IP/includes/DefaultSettings.php`
+		// It only gets defined in `$IP/includes/Setup.php`
+		if ( !$this->getConfig()->has( 'FullyInitialised' ) ) {
+			return true;
+		}
 		foreach ( $this->getFooterTitles() as $title ) {
 			if ( $title->equals( $this->title ) ) {
 				return false;
