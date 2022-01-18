@@ -7,6 +7,836 @@
 These are release notes from older releases. For curent release see
 BLUESPICE-RELEASE-NOTES
 
+== BlueSpice 3.2.0 ==
+BlueSpice 3.2.0 is a minor release.
+This is a stable release.
+
+== Notable changes ==
+* New review workflow template manager simplifies work with workflow presets
+* New review workflow step type "groupvote" allows multiple users to cast a vote on a single workflow step
+* New statistics infratructure to collect snapshot data over time
+* New anonymous books
+* New book chapter paging elements
+* Online status markers on user information flyouts
+* Various performance improvements
+
+== All changes ==
+* Categories are not shown on profile pages (#16531)
+* <bs:timeline>: Parameter lockedoptionnames doesn't work (#17310)
+* Preference "skip dialog on discussion creation" setting has no effect (#17414)
+* Positioning of whoisonline popup is too far away from the pop-up link (#17471)
+* Linked articles are not clickable (#17752)
+* VisualDiff compares wrong way (#19100)
+* Pages are not automatically set to be "read" for the last editor (#20110)
+* The page Special:SocialTags doesn't provide useful pre-filtered info (#20226)
+* Provide online markers for Social Profiles (#20266)
+* Reminder - usability issues (#21178)
+* SearchCenter: Did you mean "Word1 AND Word2" (#21684)
+* Internal error after saving a page (#21690)
+* Cannot save blog post (#21724)
+* Fix issues with PageAssignment I18N (#21752)
+* New features for SMW result format "bs-grid" (#21796)
+* Activating the Approval feature in the namespace Book causes the namespace to disappear (#21910)
+* VisualEditor: Pasting from Word produces html/xml code (#22082)
+* Shared settings config not operational (#22097)
+* Advanced book chapter navigation (#22129)
+* Error Multimediaviewer (#22130)
+* Namespace "Book" is not translated (#22175)
+* Search term with space not found in ExtendedFilelist (#22192)
+* Wikiexplorer column "Assignments" has formatting issue (#22208)
+* SocialEntities returned as search results in title search (#22233)
+* Own book in bookmaker redirects to wrong page (#22247)
+* Discussion topic cannot be created (#22284)
+* Make sorting in grids natural by default (#22315)
+* Adding a template page makes the "empty page" button ("start with an empty page") unusable (#22327)
+* Search - indexing imported pages (#22529)
+* Prepare ExtendedStatistics for release (#22573)
+* Mediawiki server configuration issue (#22594)
+* ArticleInfo flyout - use store api to reduce load (#22605)
+* SearchCenter fails due to broken filter config (#22654)
+* Timline option lockedfilternames ignored by de-/select all buttons (#22812)
+* Double booktitle in navigation (#22826)
+* Various I18N issues (T144165, T151595, T151597, T151598, T151599, T151600)
+
+== BlueSpice 3.1.13 ==
+BlueSpice 3.1.13 is a patch release.
+This is a stable release.
+
+=== Fixes ===
+* "Outdated" watermark on expired pages is not centered and too big (#17446)
+* Unsaved changes apear on next edit even if user explicitly canceled editing (#20345)
+* TagSearch category parameter does not work if category has spaces in name (#20667)
+* E-Mails: Bitte Ansprache mit Klarnamen (#21542)
+* Issues with "global" ToC in PDF (#21725)
+* VisualEditor - Issues when page has question mark in title (#21837)
+* Social entities are indexed by search engines (#21844)
+* Some columns not visible when exporting to XLSX fomat (#21866)
+* Add checkbox to exclude duplicate pages from RSS feeds (#21932)
+* Add address of mailto links to pdf only if it is not equal with label (#22014)
+* Recognize dates in search terms (#22048)
+* WebDAV does not work with files that have spaces in names (#22069)
+* Add link to page in notification digest mails (#22092)
+
+== BlueSpice 3.1.3 ==
+BlueSpice 3.1.3 is a patch release.
+This is a stable release.
+
+===Fixes===
+* Error when trying to save redirect pages in VisualEditor (#12766)
+* NamespaceManager does not allow adding multiple namespaces without reloading the page (#13736)
+* Editing talk namespaces in Namespace manager destroys the following namespace (#13862)
+* Meaningless options for sorting offered in SearchCenter options (#14411)
+* Timeout too short for certain API calls in WikiExplorer (#14917)
+* All chapters of a book are shown on the same level in PDF table of contents (#15412)
+* Rating cannot be enabled in namespaces (#15947)
+* Create new page from full text search with a namespace filter set ignores the namespace (#16258)
+* TagCloud cannot be used with InsertMagic in VisualEditor (#16861)
+* Page assignments manager shows no entries (#16911)
+* SocialEntity entries show up in standard logs and managers (#17073)
+* Content in tables gets different font sizes (#17132)
+* BlueSpiceAvatars ignores upload directory setting (#17151)
+* Duplicate page function is only available in main and talk namespace (#17349)
+* Unexpected update of links in duplicated books (#17390)
+* In Bookshelf, the OK button in the meta data dialog is always disabled (#17560)
+* Cannot read protect main namespace (#17644)
+* PDF-Export does not handle stylings from Extension:TemplateStyles (#17697)
+* PDF export fails when "external" Interwiki link exists on page (#17720)
+* Add CLI script for management (#17737)
+* Cannot specify  per-page PDF export templates using bs:ueparams tag (#17738)
+* Watchlist dialog shows enties from other users (#17741)
+* Cookie consent cookie are deleted after some time (#17748)
+* Label for the notification preferences are not clear (#17753)
+* Name of the talk namespace is not updated when namespace name changes (#17813)
+* Allowing browsing for file from "insert file link" dialog in VisualEditor is confusing (#17849)
+* VisualEditor sometimes stuck while loading (#17869)
+* Lists are not formatted correctly (#17874)
+* Exception when exporting Talk pages to PDF (#17914)
+* JavaScript errors while using ConfigManager (#17936)
+* No filters in extended file list (#18042)
+* Page cannot be saved after editing (#18088)
+* Table styles cannot be applied (#18104)
+* Additional table functionality in VisualEditor (#18105)
+* Articles in first draft are visible to anonymous users (#18109)
+* Double encoded UTF-8 characters in PDF export (#18130)
+* Fix common typos in code (T201491)
+
+== BlueSpice 3.1.2 ===
+BlueSpice 3.1.2 is a patch release.
+This is a stable release.
+
+===Fixes===
+* Help links in VisualEditor are confusing (#13163)
+* VisualEditor autosave dialog shows up even when there are no unsaved changes (#13364)
+* Book manager: mass add via categories cuts off after 25 articles (#14299)
+* New page creation in IE behaves strange (#15495)
+* Embed file button in VisualEditor points to detail page instead (#16711)
+* VisualEditor: Media: links are transformed to point to a special page (#16886)
+* Broken link to Reminder management in Reminder flyout (#16934)
+* Changing text color via VisualEditor inspector fails in wiki text mode (#17035)
+* VisualEditor breaks Media links with umlauts (#17085)
+* Misalignment of lists containing blank lines (#17126)
+* Database error after login (#17136)
+* Remote authentication is not working without autocreateaccount permission (#17186)
+* RSS-Feeder produces fatal error in "Follow own" option (#17200)
+* Talk pages can be created for non existing subject pages, but lead to fatal errors (#17209)
+* Auto-generated avatar not working when using `img_auth.php` (#17221)
+* CustomMenu registry not working properly (#17222)
+* BlueSpiceSmartlist: toplist tag broken (#17233)
+* Expiry form elements ignore permissions (#17439)
+* Refine boost of recently modified pages (#17472)
+* Migrate social discussions to standard talk page (#17473)
+* Table header in pdf is not replicated on every page (#17474)
+* Issues with display of old blog articles in Safari (#17475)
+* Flaky PHPUnit failures on PHP 7.1 for BlueSpiceNamespaceManager (T218525)
+* Avatar with img_auth.php (SF495)
+
+== BlueSpice 3.1.1 ===
+BlueSpice 3.1.1 is a patch release.
+This is a stable release.
+
+===Fixes===
+* FlaggedRevsConnector: align colors for highlighting draft in version history (#5683)
+* Fix links to documentation (#13552)
+* Privacy: Change avatar after anonymisation (#14216)
+* SocialEntities show up in watched pages (#14681)
+* Indexing huge PDFs fails (#15725)
+* Ping request should start immediately on page-load (#16467)
+* Namespace select box in Special:CategoryTree is overlapped by header (#16534)
+* Privacy policy links should link to project namespace (#16594)
+* VisualEditor table inspector UI is broken in BlueSpice free (#16612)
+* AND OR operators must work in search term (#16613)
+* Wrong link for "Add attachment" (#16629)
+* Table formatting is lost on change between edit modes (#16639)
+* HideTitle should also hide FlaggedRevs information (#16738)
+* Use ssl to link to bluespice.com everywhere in the software (#16789)
+* Width is ignored in menu select widgets (#16790)
+* Subitems in header menu are displayed all the time (#16808)
+* BlueSpiceInsertLink missing message (#16872)
+* ExtendedStatistics special pages ignores permission statistic-viewspecialpage (#16951)
+* Add attachments button out of line (#16993)
+* Remove dependency to PHP Tidy extension (#16997)
+* Smartlist fatal error in mode whatlinkshere when no target given (#17008)
+* Privacy: fix gender in anonymisation log (#17015)
+* Update repo file on WebDAV update (#17069)
+* Add article button is displayed in mobile view when left sidebar is open (#17077)
+* Fix mobile navigation-main height and user button icon (#17078)
+* BlueSpiceAvatars needs 'editToken' replaced with 'csrfToken' (T233546)
+* BlueSpiceExtendedStatistics needs 'editToken' replaced with 'csrfToken' (T233547)
+* BlueSpiceFoundation needs 'editToken' replaced with 'csrfToken' (T233548)
+* Checkup code passing $this by reference with a temporary variable (T234118)
+
+== BlueSpice 3.1 ==
+BlueSpice 3.1 is a minor release.
+This is a stable release.
+
+===Notable Changes===
+* Completely redesigned title section
+** Focus on convenience: See and modify relevant page information at a glance
+** Category handling: Categories are now shown in the title section and can be edited
+** Quality management: State of a page is displayed and can be changed
+** Page neighborhood: Subpages and related pages are shown in a breadcrumb navigation and can be easily be explored
+* UX improvements
+** UX audit: Many improvements in iconography, labeling and navigation
+** Page load masks: Indicator for system activity to create a smoother experience
+** Fullscreen mode: Switch the wiki to full screen for more space
+** Accessibility audit: Many improvements regarding accessibility for screenreaders
+* Search
+** Better scoring: Several tunings to provide a more natural search result order. E.g. base names have preference over subpages
+** Flexible autocomplete: It is now possible to use multiple infixes. E.g. search for "blue 3" results in BlueSpice 3.0
+** Similar pages: Pages with similar terms can be found in the page information flyout
+* VisualEditor
+** Table formatting: Change the width and height of cells and apply various stylings
+** Text colors: Add colors to words and table backgrounds
+** File handling: It is now easier to link to files and upload files directly to namespaces
+** Convenience: Less clicks in file and save dialogs
+* Performance boost
+** Complete performance audit: This leads to a significantly faster page load
+** Support for nginx: This results in a major performance boost
+* Timeline
+** Integrated discussion page: Both classical wiki text and threaded discussions are stored on one page.
+** One step creation: Attachment and discussion sections can now be created in one click
+
+===BlueSpice Foundation===
+* Foundation: Add "BSExtractFiles"
+* Foundation: Add APIAfterExecute hook handler class
+* Foundation: Add Bosnian alias and cleanup *.alias.php files
+* Foundation: Add GroupList config multi select
+* Foundation: Add `autocreateaccount` to role `reader`
+* Foundation: Add additional icons
+* Foundation: Add bs-background-neutral and bs-background-transparent LessVars
+* Foundation: Add custom menu skin data
+* Foundation: Add detection for when articlepreviewcapture is not handled by default handler
+* Foundation: Add generic permissions check for "Task API"
+* Foundation: Add isHidden as a possible state of of ConfigDefinition
+* Foundation: Add missing action- messages
+* Foundation: Add multistring filter support
+* Foundation: Add new category icon to BlueSpice font and fix bs icon logo class
+* Foundation: Add new generalized cache-subsystem
+* Foundation: Add new hooks for settings migration process
+* Foundation: Add new input type `BS.form.field.NamespaceTag`
+* Foundation: Add new semantically named color variable
+* Foundation: Add permission requirements to roles
+* Foundation: Add progressive button styling for ExtJS
+* Foundation: Add script to create wikitext xml
+* Foundation: Add simple cache for entity timestamps to reduce queries
+* Foundation: Add sort key constants
+* Foundation: Add support for multiple filters per field for primary database providers
+* Foundation: Add textColor icon
+* Foundation: ArticlePreview will return default image if page is removed. Also, title of removed page will be red
+* Foundation: Atomic File Put contents
+* Foundation: CategoryTag: Fix issue with not scrollable and not resizable tree dialog
+* Foundation: Change protection rights assignments to correspond with MW defaults
+* Foundation: Disable paging on treestore
+* Foundation: Do not grant every permission to sysop, only if not previously assigned
+* Foundation: Extend MWTimestamp instead of static functions to get "age string"
+* Foundation: Fix "mw.Api is not a constructor" error
+* Foundation: Fix "unknown parameter" error on API calls to ExtJS stores
+* Foundation: Fix badly stretched user images again
+* Foundation: Fix broken history links provided by recent changes store
+* Foundation: Fix default limit on existing table entries check when using writer in stores
+* Foundation: Fix duplicate warning dialog opened twice
+* Foundation: Fix mustache template support for skins in TemplateHelper
+* Foundation: Fix translator list and warning in credits specialpage
+* Foundation: Fix user store groups filter
+* Foundation: Fix validation of group multi select form field
+* Foundation: Global loading indicator
+* Foundation: Improve error message from batch upload
+* Foundation: Improve WikiTextLinksHelper
+* Foundation: Improve menu item labels for recent changes
+* Foundation: Limit results of watchlist store to content namespaces
+* Foundation: List allowed groups on locked down namespace
+* Foundation: Loading indicators for managers
+* Foundation: Make LessVars overwriteable
+* Foundation: Make RunJobsTriggerHander intervals configurable
+* Foundation: Make sure category titles are valid before using them
+* Foundation: Modular lockdown
+* Foundation: Move favicon setting to section `Skinning`
+* Foundation: Namespace lockdown blocking false negatives
+* Foundation: New .less variables for link colors
+* Foundation: New task api and task interfaces
+* Foundation: New version of installcheck
+* Foundation: No write mode on read modules
+* Foundation: Remove reader role from anon users
+* Foundation: Remove support for other db types
+* Foundation: UserCombo: Do the sorting remotely
+
+===BlueSpice Free===
+* ArticleInfo: Add reload link
+* Authors: Disregard non-existing users
+* Authors: Remove config AuthorLimit, as it was never in use in BlueSpice 3
+* Avatars: Add possibility to edit user image in preferences + various fixes
+* Avatars: Fix Avatars path
+* Avatars: Implement missing tag handler for profileimage tag
+* Avatars: Quickfix image errors when SSO
+* Checklist: Add missing action- messages
+* Checklist: UI fixes
+* ConfigManager: Check for hidden ConfigDefinitions and remove them from the records
+* ConfigManager: Fix save button color when button is active in manager
+* ContextMenu: Expansion of Contextmenu
+* ContextMenu: Move modus preference to rendering section in preferences
+* CustomMenu: Add link target to external links
+* Dashboards: Fix dashboard on logo link user option
+* EchoConnector: Send daily/weekly digest using RunJobsTriggerHandler
+* EchoConnector: Add notification whenever someone creates her-/himself an account
+* EchoConnector: Fix exception when deleted users would get echo notifications
+* ExtendedSearch: Add "more like this" functionality + file usage
+* ExtendedSearch: Add ability to receive returnto param and display returnto link
+* ExtendedSearch: Add config option to specify port of the ElasticSearch host
+* ExtendedSearch: Add debug log when query run fail
+* ExtendedSearch: Add excludes for external file index
+* ExtendedSearch: Add screenreader compatibility for searchbox
+* ExtendedSearch: Add sort by modification time for media dialog
+* ExtendedSearch: Allow two-line results in autocomplete
+* ExtendedSearch: Boost results based on how recent they are
+* ExtendedSearch: Fix autocomplete ranking + fix secondary results
+* ExtendedSearch: Fix error when no sorting is set in search store
+* ExtendedSearch: Fix export dialog
+* ExtendedSearch: Fix filter option filtering
+* ExtendedSearch: Improve search scoring
+* ExtendedSearch: Integrate TagSearch
+* ExtendedSearch: Push to possible external indexes
+* ExtendedSearch: Use display title in result only if it's set
+* ExtendedSearch: WikiFarm integration
+* ExtendedStatistics: Use LoadPlaceholders
+* GroupManager: Add load indicator for all actions in group manager grid
+* HideTitle: Add option to hide the page title to VisualEditor
+* InsertCategory: Add screenreader compatibility for PageHeader
+* InsertCategory: Enable inline editing of categories in new title section
+* InsertFile: Add cancel button to VisualEditor advanced search
+* InsertLink: Add file-link
+* InsertLink: Move user preferences to config variable
+* InsertLink: VisualEditor - insert links to local filesystem
+* InsertMagic: Add Icon to Insertmagic in VisualEditor
+* InterWikiLinks: Fix interwiki links can not be edited
+* NamespaceManager: Add link to namespace articles in NamespaceManager
+* NamespaceManager: Fix namespace manager jumps back to initial settings when opcache is enabled
+* PageAccess: Use new modular lockdown
+* PageAssignments: Add "reader" role to default roles for "pageassignable"
+* PageAssignments: Fix assignee remove action shown when user has no permission to do so
+* PageAssignments: Fix assignments when a user is assigned that was deleted
+* PageAssignments: Fix permission checking when editing assignments
+* PageAssignments: Make assigned users notified on changes to talk page
+* PageAssignments: Make target configurable
+* PageAssignments: New mechanism for SemanticExtraSpecialProperties
+* PageAssignments: Re-implement grant permissions when assigned
+* PageAssignments: Set permission ConfigDefinition to hidden
+* PageTemplates: Allow a page template to be used on multiple namespaces
+* PageTemplates: Use LoadPlaceholders
+* PagesVisited: Show link title without "" for shortened link text
+* PagesVisited: Use limit to reduce query time
+* PermissionManager: Adapt to changes in role system
+* PermissionManager: Do not add NS_TEMPLATE in $wgNonincludableNamespaces
+* PermissionManager: Implement dependent roles
+* PermissionManager: Make treepanel for groups adjustable in width
+* PermissionManager: Script to compare permissions
+* Privacy: Add cookie consent settings link in the footer as well
+* QrCode: Collapse QRCode panel in sitetools-main navigation by default
+* RSSFeeder: Fix broken RSS feed when no specific protocol configured
+* Readers: Use JobQueue to insert readers
+* SaferEdit: Remove user preferences
+* SaferEdit: Remove saferEdit ping on namespaces lower than 0
+* SmartList: Remove Legacy Functionality
+* SmartList: Remove unnecessary cache invalidation
+* UEModuleDOCX: Testing and fixing all errors and warnings
+* UEModulePDF: Hide PDF export on SpecialPages
+* UEModulePDF: Introduce new permission `uemodulepdf-export`
+* UEModulePDF: Remove background-color from toc to make it not blend over watermarks
+* UEModulePDF: Remove default 'table-layout:fixed' from tables.css
+* UniversalExport: Add pdfpagebreak tag to InsertMagic and VisualEditor
+* UniversalExport: Send X-Robots-Tag header on export
+* UserManager: Add registration date column to UserManager
+* UserManager: Enabled filter for activated users
+* WatchList: Add watchlist window
+* WatchList: Remove permission check for watchlist items in UserSidebar
+* WhoIsOnline: Move deletion of old WhoIsOnline data to RunJobsTriggerHander
+* WhoIsOnline: Remove user preferences
+* WhoIsOnline: Set deletion rate to once a day and keep data for 24 hours
+
+===BlueSpice Distribution===
+* DistributionConnector: Add check for existence of the duplicator specialpage
+* DistributionConnector: Give more space to radio-buttons in Quiz
+* DistributionConnector: HitCounters SemanticExtraProperty implementation
+* DistributionConnector: Show 'duplicate' link only to user who is allowed to duplicate a page
+
+===BlueSpice Skin===
+* Calumma: Activate profile switch in associated links by default
+* Calumma: Add "associated links" panel
+* Calumma: Add "root page sibling" to associated links
+* Calumma: Add VersionPager
+* Calumma: Add associated links
+* Calumma: Add a styleclass for full width tables
+* Calumma: Add edit button for mobile view
+* Calumma: Add edit link to component CustomMenu
+* Calumma: Add favicon
+* Calumma: Add new colors for alert boxes
+* Calumma: Add screenreader compatibility for logo
+* Calumma: Add screenreader compatibility to search
+* Calumma: Add text clipping when it does not fit in the block
+* Calumma: Add tooltip for navigation toggler
+* Calumma: Add triggers for category edit tool
+* Calumma: Add warning if user is viewing an old page version
+* Calumma: Adjust lines and margins
+* Calumma: BlueSpiceCustomMenu Component
+* Calumma: Change color of "Log in" link
+* Calumma: Change right navigation icon
+* Calumma: Change sitenotice alert colors
+* Calumma: Create new functionality for fullscreen mode
+* Calumma: Create notification for successful login
+* Calumma: Disable edit button if edit actions is not possible
+* Calumma: Discussion/Page links removed if it is an active page
+* Calumma: Enable FeaturedActions if user can edit
+* Calumma: Fix IE style issues
+* Calumma: Fix Scroll to jumpmark
+* Calumma: Fix button text for diff and history link
+* Calumma: Fix for PluggableAuth AutoLogin
+* Calumma: Fix for VisualEditor line spacing
+* Calumma: Fix issue with broken styles on browser zoom
+* Calumma: Fix position and style of mobile featured action buttons
+* Calumma: Fix position of close icon for left navigation in mobile view
+* Calumma: Fouc fix
+* Calumma: Hide featured actions if logged out user can not read
+* Calumma: Hide header menu if logged out user can not read
+* Calumma: Hide mobile login button for not logged in user with read permission
+* Calumma: Hide page header elements in VisualEditor edit mode
+* Calumma: Hide search form if logged out user can not read
+* Calumma: Hide sidebars if user is not allowed to read
+* Calumma: History & Diff links should open page in the same tab
+* Calumma: Improve mobile accessibility for navigation-main and sitetools-main on scroll
+* Calumma: Improve print stylings
+* Calumma: Integrate loadIndicators in flyouts
+* Calumma: Make default MediaWiki search work
+* Calumma: Make flyout loading-indicator less obtrusive
+* Calumma: Mobile menu: add close button
+* Calumma: Mobile: show scroll bar to thumb images if image size is larger then display width
+* Calumma: New layout for page header with more information and actions
+* Calumma: Pagination toolbar on "Recent changes” has no bottom padding
+* Calumma: Positioning of the notifications badge
+* Calumma: Prevent hidden list bullets after floatleft items (images)
+* Calumma: Real fullscreen mode
+* Calumma: Rearrange footer icons and footer places
+* Calumma: Rearrange language links in header
+* Calumma: Reduce CSS output
+* Calumma: Rename sitetools panels 'Edit' and 'Views' and collapse panel 'Views'
+* Calumma: SEO for Export: No Follow
+
+===BlueSpice Pro===
+* ArticlePreviewCapture: Patch for linux and windows
+* Bookshelf: Do not show action if no permission
+* BookshelfUI: Clear page values after insertion
+* BookshelfUI: Expand Api limit for inserted pages
+* BookshelfUI: Use LoadPlaceholder
+* CategoryManager: AddCategory fix
+* DrawioConnector: Fix inspector, rename "name" attribute and fix preview
+* DrawioConnector: Use tag for drawio instead of magic word
+* Expiry: Add expired alert
+* Expiry: Use LoadPlaceholders
+* FlaggedRevsConnector: Add QMOverview page to Admintools
+* FlaggedRevsConnector: Add Semantic Extra Special Properties descriptions
+* FlaggedRevsConnector: Block read only in view mode
+* FlaggedRevsConnector: Improve stable/draft switch
+* FlaggedRevsConnector: Increased value of pristine-key in FlaggedRevsTags from 0 to 2
+* FlaggedRevsConnector: List filter on revision state
+* FlaggedRevsConnector: New mechanism for SemanticExtraSpecialProperties
+* FlaggedRevsConnector: New page header
+* FlaggedRevsConnector: Remove autoreview rights from reviewer role
+* FlaggedRevsConnector: Show approval comment in page history
+* NSFileRepoConnector: Add namespace selector to VisualEditor upload dialog
+* NSFileRepoConnector: Preselect namespace in `Advanced Settings` tab
+* Reminder: Move user preferences to better location
+* Reminder: Use LoadPlaceholders
+* Review: Add more caching and better logic to significant reduce queries
+* Review: Better logic to disable editing when user has no permissions
+* Review: New mechanism for SemanticExtraSpecialProperties
+* Review: Set default value for type if nothing is set
+* Review: Use LoadPlaceholders
+* Review: Use new modular lockdown
+* ReviewExtended: Add review type to history
+* ReviewExtended: Fix time offset
+* SMWConnector: New mechanism for SemanticExtraSpecialProperties
+* SMWConnector: Restore Visual Editor in page forms and enable VisualEditor in free text field
+* SMWConnector: Save memory and clear-up afterwards
+* Social: Activate mediaViewer attachments on special pages and outside of the content
+* Social: Add default icon for unknown file in attachments
+* Social: Add warn on leave for all modified entities to prevent data loss
+* Social: Allow entity actions be rendered when entry does not exist
+* Social: Hide entity action button when there is no action available
+* SocialProfile: Force profile not change to edit mode when it does not exist
+* UEModulePDFRecursive: Export link added to the sidebar
+* UEModulePDFSubpages: Show PDF export only on content pages
+* VisualEditorConnector: Add table inspectors
+* VisualEditorConnector: Add color palette
+* VisualEditorConnector: Add config definitions
+* VisualEditorConnector: Backport change label functionality
+* VisualEditorConnector: Do not use VisualEditor on PageTemplates when VisualEditor is not enabled
+* VisualEditorConnector: Enable Pasting of Text with embedded Links
+* VisualEditorConnector: Enabled getting categories from page even in source mode
+* VisualEditorConnector: Handle MediaLinks
+* VisualEditorConnector: Implement color picker
+* VisualEditorConnector: Improve text style popup
+* VisualEditorConnector: Links to files
+* VisualEditorConnector: Make saving process more user-friendly
+* VisualEditorConnector: Prevent cell editing in TableSelection mode in IE11
+* VisualEditorConnector: Table handling
+* WikiExplorer: Fix not working filter category and namespace filter
+
+===BlueSpice Pro Distribution===
+* SemanticMediaWiki: Upgrade to SMW3.0.1
+
+== BlueSpice 3.0.1 ==
+BlueSpice 3.0.1 is a patch release.
+This is a stable release.
+
+===Notable Changes===
+* VisualEditor: Switch between source mode and visual mode is now possible without saving
+* Privacy Center and Admin: Allows users and site maintainers to manage their personalized data
+* CustomizableMenu: Adds a top menu to the site
+* Flagged Revisions: New overview list for revision status of pages
+* Calumma: Display of menus and featured actions depends on rights, not on logged in status
+* Calumma: Added a backlink from discussion page to content page
+
+===BlueSpice Foundation===
+Foundation: Add `autocreateaccount` right to role `reader`
+Foundation: Add base class for hook BSApiStoreBaseBeforeReturnData
+Foundation: Add Bosnian alias and cleanup *.alias.php files
+Foundation: Add custom menu skin data
+Foundation: Add detection for when articlepreviewcapture is not handled by default handler
+Foundation: Add progressive button styling for ExtJS
+Foundation: Do not grant every permission to sysop, only if not previously assigned
+Foundation: Exclude modification on link attributes for all mw tests
+Foundation: Extend permission configs rather that overwriting
+Foundation: Fix "unknown parameter" error on API calls to ExtJS stores
+Foundation: Fix msg key after #470326
+Foundation: Fix Role::removePermission
+Foundation: Fix badly stretched user images again
+Foundation: Fix keyValueInputWidget deletion bug
+Foundation: Fix line sizes to pass tests
+Foundation: Fix list filtering for ExtJS
+Foundation: Fix missing i18n key
+Foundation: Improve WikiTextLinksHelper
+Foundation: List allowed groups on locked down namespace
+Foundation: Make LessVars overwriteable. ERM:13150
+Foundation: Move BsCacheHelper to UtilityFactory and remove the invalidations
+Foundation: Put prefixed page title in data-bs-title
+Foundation: Refactor namespace lockdown logic
+Foundation: Remove BsCategoryHelper as it last usage was in version BS2.23
+Foundation: Remove old attribute limitation. Only storable fields will be saved anyway
+Foundation: Remove support for other db types. ERM:10576
+Foundation: Remove targets from ResourceLoader modules
+Foundation: Remove unused common constants that have been used for extension registration in BS1*
+Foundation: Remove usage of BsLinkProvider and mark it as deprecated
+Foundation: Remove usage of deprecated BsSpecialPage
+Foundation: Skip adding data attributes in unit test context to pass tests
+Foundation: Update doc for service InterWikiLinkLookup in ServiceDecorator
+
+===BlueSpice Free===
+About: Remove usage of deprecated BsSpecialPage
+Authors: Disregard non-existing users
+Authors: Fix fatal if invalid usernames in list
+Authors: Require MediaWiki 1.29 in extension.json for manifest_version 2
+Avatars: Apply MediaWiki coding conventions
+Avatars: Fix Avatars path
+Checklist: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+Checklist: Remove hook handler for VisualEditorConfig
+Checklist: Remove targets from ResourceLoader modules
+Checklist: Use new hook handler system for BeforePageDisplay
+ConfigManager: Harmonize naming of special page title
+ConfigManager: Remove usage of deprecated BsSpecialPage
+ContextMenu: Add hook handler base classes
+ContextMenu: Require MediaWiki 1.29 in extension.json for manifest_version 2
+CountThings: Quick typo fix
+CountThings: Replace usage of deprecated BsExtensionMW
+CustomMenu: New extension to provide an additional menu bar
+Dashboards: Remove unused old method for AjaxDispatcher
+Dashboards: Remove usage of deprecated BsSpecialPage
+Dashboards: Upgrade to BS3
+Dashboards: Use new hook class system for SchemaUpdate hook handler
+DistributionConnector: Add check for existence of the duplicator specialpage. ERM:12836
+EchoConnector: Require MediaWiki 1.29 in extension.json for manifest_version 2
+ExtendedSearch: Add priority to LookupModifiers
+ExtendedSearch: Add sort by modification time for Media dialog
+ExtendedSearch: Allow additional LookupModifiers to be added by extensions
+ExtendedSearch: Evaluate skip_namespaces on index updates as well
+ExtendedSearch: Fix autocomplete result click handler
+ExtendedSearch: Fix indexing to searchindex table
+ExtendedSearch: Fix layouting issue with searchbar
+ExtendedSearch: Make sure index name is lowercased
+ExtendedSearch: Manual cherry-pick gerrit: 477504
+ExtendedSearch: Quick-fix all icon paths when there is a script path set
+ExtendedSearch: Refactor of results panel
+ExtendedSearch: Require MediaWiki 1.29 in extension.json for manifest_version 2
+ExtendedSearch: Update privacy handler
+ExtendedSearch: Use new hook handler system for BeforePageDisplay
+ExtendedSearch: WikiFarm integration
+ExtendedStatistics: Fix db prefix on query
+ExtendedStatistics: Fix duplicate class definition
+ExtendedStatistics: Remove BSExtendedSearchAdminButtons hook handler
+ExtendedStatistics: Remove support for other db types. ERM:10576
+ExtendedStatistics: Remove usage of deprecated BsSpecialPage
+ExtendedStatistics: Use new hook class system for BeforePageDisplay hook handler
+ExtendedStatistics: Use new hook handler system for BeforePageDisplay
+GroupManager: Remove usage of deprecated BsSpecialPage
+HideTitle: Remove targets from ResourceLoader modules
+HideTitle: Replace usage of deprecated BsExtensionMW
+InsertCategory: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertCategory: Remove hook handler for VisualEditorConfig
+InsertCategory: Remove targets from ResourceLoader modules
+InsertCategory: Upgrade to BS3
+InsertFile: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertFile: Remove hook handler for VisualEditorConfig
+InsertFile: Remove old unused paging procedures
+InsertFile: Remove targets from ResourceLoader modules
+InsertFile: Upgrade to BS3
+InsertLink: Add file-link
+InsertLink: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertLink: Remove hook handler for VisualEditorConfig
+InsertLink: Remove targets from ResourceLoader modules
+InsertMagic: Add icon to Insertmagic in VE
+InsertMagic: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertMagic: Remove hook handler for VisualEditorConfig
+InsertMagic: Remove targets from ResourceLoader modules
+InsertMagic: Upgrade to BS3
+InterWikiLinks: Mark BSApiTasksInterWikiLinksManagerTest as broken
+InterWikiLinks: Remove usage of deprecated BsSpecialPage
+InterWikiLinks: Use new hook class system for BeforePageDisplay hook handler
+NamespaceCSS: Remove usage of deprecated BsSpecialPage
+NamespaceManager: Handler for BSPrivacy
+NamespaceManager: Hide talk NSs + assign aliases
+NamespaceManager: Re-add missing sql field patch files, that got removed
+NamespaceManager: Remove support for other db types. ERM:10576
+NamespaceManager: Remove usage of deprecated BsSpecialPage
+NamespaceManager: Require MediaWiki 1.29 in extension.json for manifest_version 2
+NamespaceManager: Upgrade BSPrivacy handler
+NamespaceManager: Use new hook class system for SchemaUpdate hook handler
+PageAccess: Remove usage of deprecated BsSpecialPage
+PageAssignments: Handler for BSPrivacy
+PageAssignments: Make assigned users notified on changes to talk page
+PageAssignments: Quick Fix remove cause of warnings
+PageAssignments: Remove targets from ResourceLoader modules
+PageAssignments: Remove usage of deprecated BsSpecialPage
+PageAssignments: Remove usage of deprecated BsUserHelper
+PageAssignments: Update privacy handler
+PageAssignments: Use new hook class system for SchemaUpdate hook handler
+PageTemplates: Remove support for other db types. ERM:10576
+PageTemplates: Remove unused class PageTemplatesAdmin
+PageTemplates: Remove usage of deprecated BsSpecialPage
+PageTemplates: Use new hook class system for SchemaUpdate hook handler
+PagesVisited: Remove support for other db types. ERM:10576
+PagesVisited: Replace BsLinkProvider with WikitextLinkHelper service
+PagesVisited: Require MediaWiki 1.29 in extension.json for manifest_version 2
+PermissionManager: Fix button styling
+PermissionManager: Fix custom group icon
+PermissionManager: Script to compare permissions
+Privacy: New extension to match GDPR requirements
+QrCode: Add CI scripts
+QrCode: Fix css class scanQrCode padding
+RSSFeeder: Fix a typo
+RSSFeeder: Remove usage of deprecated BsSpecialPage
+RSSFeeder: Use new hook handler system for BeforePageDisplay
+Readers: Handler for BSPrivacy
+Readers: Remove bs_aftercontent readers, as is not supported by 3.0.0 skin
+Readers: Remove usage of deprecated BsSpecialPage
+Readers: Require MediaWiki 1.29 in extension.json for manifest_version 2
+Readers: Update privacy handler
+Readers: Use new hook class system for SchemaUpdate hook handler
+Readers: Use new hook handler system for BeforePageDisplay and SkinTemplateNavigation
+SaferEdit: Handler for BSPrivacy
+SaferEdit: Remove saferEdit ping on namespaces lower than 0
+SaferEdit: Remove support for other db types. ERM:10576
+SaferEdit: Update privacy handler
+SaferEdit: Use new hook class system for SchemaUpdate hook handler
+SmartList: Remove targets from ResourceLoader modules
+SmartList: Use linkRenderer service instead of BsLinkProvider
+SmartList: Use new hook handler system for BeforePageDisplay
+UEModulePDF: Add Hook hander base class for hook BSUEModulePDFcollectMetaData
+UEModulePDF: Hide PDF export on SpecialPages
+UniversalExport: Remove usage of deprecated BsSpecialPage
+UniversalExport: Use new hook handler system for BeforePageDisplay
+UsageTracker: Remove usage of deprecated BsSpecialPage
+UserManager: Add registration date column to UserManager. ERM:12999
+UserManager: Mark ApiTasksUserManagerTest as broken
+UserManager: Remove unused empty file
+UserManager: Remove usage of deprecated BsSpecialPage
+UserSidebar: Move from gitlab to gerrit, as this is included in BS free
+WatchList: Replace BsLinkProvider with WikitextLinkHelper service
+WatchList: Require MediaWiki 1.29 in extension.json for manifest_version 2
+WhoIsOnline: Remove support for other db types. ERM:10576
+WhoIsOnline: Require MediaWiki 1.29 in extension.json for manifest_version 2
+WhoIsOnline: Use new hook handler system and drop support for other db types in schema update
+
+===BlueSpice Distribution===
+VisualEditorConnector: Add composer test entry point
+VisualEditorConnector: Add integration into BlueSpiceSimpleFarmer
+VisualEditorConnector: Add parseWikitextFragment to standalone BlueSpiceTarget, as
+VisualEditorConnector: Add proxy API module for Parsoid communication
+VisualEditorConnector: Do not use VE on PageTemplates when VE is not enabled
+VisualEditorConnector: Fix VisualEditor cancel button appearance
+VisualEditorConnector: Fix VisualEditor editing when oldid present
+VisualEditorConnector: Fix constructor parameter for RestbaseMock
+VisualEditorConnector: Fix extension.json and remove random icon path from other extension to pass tests
+VisualEditorConnector: Hide quality management tab when VE is active
+VisualEditorConnector: Override behavior of MediaDialog
+VisualEditorConnector: Reload page after saving is done
+VisualEditorConnector: Require MediaWiki 1.31 in extension.json for AutoloadNamespaces
+VisualEditorConnector: Update dynamic parsoid config for SimpleFarmer
+
+===BlueSpice Skin===
+Calumma: Add tooltip for navigation toggler. ERM:13150
+Calumma: BlueSpiceCustomMenu Component. ERM:13134
+Calumma: CustomMenu header: modify height and color
+Calumma: Fix 'view' page tool is always skipped. ERM: 13004
+Calumma: Fix CustomMenuHeader collapse state
+Calumma: Fix Hidden VE with CustomMenu/Header on scroll
+Calumma: Fix JS type error when the anchor for jumpmark has no attribute href
+Calumma: Fix OOjs primary button colors + show QM tab only in view mode
+Calumma: Fix Scroll to jumpmark
+Calumma: Fix badly stretched user images again
+Calumma: Fix for PluggableAuth AutoLogin
+Calumma: Fix for VE line spacing
+Calumma: Fix scroll-to-jumpmark for data-fragments
+Calumma: Make default MW search work
+Calumma: Modify LinkListGroup.mustache to fix alignment (pull-right chevron)
+Calumma: Pre-select grid view tab only in RecentChanges, whenever
+Calumma: Refactor stylesheets to avoid multiple loading
+Calumma: Remove content styling for ordered list elements
+Calumma: Remove not-logged-in state
+
+===BlueSpice Pro===
+ArticlePreviewCapture: Add PhantomJS Options
+CategoryManager: Remove usage of deprecated BsSpecialPage
+ExtendedFilelist: Add missing BlueSpice extension registry
+ExtendedFilelist: Remove usage of deprecated BsSpecialPage
+InsertTemplate: Remove hook handler for BSExtendedEditBarBeforeEditToolbar
+InsertTemplate: Remove hook handler for VisualEditorConfig
+InsertTemplate: Upgrade to BS3
+MultiUpload: Remove targets from ResourceLoader modules
+MultiUpload: Use new hook handler system for BeforePageDisplay
+SMWConnector: Change Source registration method for ES
+SMWConnector: Require MediaWiki 1.29 in extension.json for manifest_version 2
+
+== BlueSpice 3.0.0 ==
+BlueSpice 3.0.0 is a major release.
+This is a stable release.
+
+=== Notable changes ===
+==== New features ====
+* Social: an activity, communication and interaction layer
+* Extended Search: based on ElasticSearch and completely new interface
+* Responsive skin "Calumma": supports mobile view and touch interaction
+* Graphical list: new interface element for better usability
+* MediaWiki VisualEditor: native support for wikitext
+* Role-based permissions: simplifies rights configuration
+* ArticlePreviewImages: see the content of an article in various lists
+* Authentication stack: LDAP and SAML authentication
+
+==== Other significant changes ====
+* Architecture: All extensions have their own repository
+* Architecture: Compatibility with MediaWiki 1.31 LTS
+* Architecture: Dialogs and grids now use ExtJS 6
+* Architecture: License is now GPL-3.0-only
+* Architecture: Reworked configuration system
+* Architecture: Reworked notification system
+* Architecture: Complete use of new MediaWiki auth manager
+* ArticleInfo: Uses new flyout for quick interaction
+* Bookmaker: Books with preview images and covers
+* Calumma: Breadcrumbs show the page context
+* Calumma: Facilitate sidebar customisation with "Edit sidebar" links
+* Calumma: Global actions and right sidebar make relevant functionality quickly accessible
+* Calumma: Intelligent navigation bars only open when needed
+* Calumma: New page dialog to create a new namespaced page or subpage
+* Calumma: Quality assessment navigation shows page status at a glance
+* Calumma: Subpage dialog to find and navigate to subpages
+* Calumma: Visual recent changes show preview images of recently changed pages
+* CategoryCheck: Integration in VisualEditor
+* Checklist: Inspector for VisualEditor
+* Checklist: Improved logging of checklist changes
+* ConfigManager: Search for configuration options and visual overhaul
+* CountThings: Inspector for VisualEditor
+* Expiry: Use new flyout for quick interaction
+* ExtendedSearch: Improved facets
+* ExtendedSearch: Individual boosts of search results
+* ExtendedSearch: Search for semantic properties
+* ExtendedStatistics: Improved workflow
+* ExtJS Base: ExtJS for all MediaWiki extensions
+* FilterableTables: Turn almost any table into a filterable one
+* FlaggedRevsConnector: Use new flyout for quick interaction
+* InsertCategory: Use flyout widget
+* InsertMagic: VisualEditor integration
+* MediaWiki extension: CodeEditor for easy editing of script and code fragments
+* MediaWiki extension: Lingo for glossary function
+* MediaWiki extension: Popups for quick page preview
+* MediaWiki extension: TwoColConflict for edit conflict resolution
+* MediaWiki extension: SemanticScributo for scripting Semantic MediaWiki
+* Multiupload: Provide a dropzone element for quick uploads
+* Multiupload: Upload several files at once
+* NamespaceCSS: New manager for namespace specific CSS files
+* NamespaceManager: Add more options and visual overhaul
+* PageAssignments: Use new flyout for quick interaction
+* PermissionManager: Role-based system
+* PermissionManager: Searchable overview of included rights
+* PermissionManager: Improved logging of permission changes
+* QrCode: QR code to open the page on a mobile device
+* Reminder: Use new flyout for quick interaction
+* Smartlist: Inspector for VisualEditor
+* SMWConnector: Inject security trimming into ask queries
+* Social: Attachments for articles
+* Social: Discussions at the end of an article
+* Social: Resolved state for discussions to track open issues
+* Social: Blog feature for central information
+* Social: User profile with customizable fields
+* Social: Central list of activities
+* TagSearch: Inspector for VisualEditor
+* UserInfo: Quick info about a user in a hovercard
+* VisualEditor: Inspectors for BlueSpice tags
+* VisualEditor: Create filterable and exportable tables
+* VisualEditor: Improved image search
+* VisualEditorConnector: Provide framework for tool plugins and interaction with tags
+* VisualEditorConnector: Provide widget for use in extension form elements
+* WebDAV: Major rewrite and stabilisation
+* WikiExplorer: Improve filters for category and dates
+
+==== Removed extensions ====
+* Blog: Replaced by Timeline blog
+* RatedComments: Replaced by Timeline discussions
+* Shoutbox: Replaced by Timeline discussions
+* TopBarMenuCustomizer: Contact Hallo Welt! if needed
+* ExtensionInfo: All information goes to Special:Version now
+* FormattingHelp: No longer needed in VisualEditor
+* PasteImage: Directly supported by VisualEditor
+* FlexiSkin: Skin is configurable on the server side
+* BlueSpicePreferences: Replaced by ConfigManager
+
+=== Compatibility ===
+* MediaWiki 1.31 LTS
+* Operating System: Microsoft Windows Server 2012 or Linux (common distributions)
+* Web server: Apache 2+, IIS 8+
+* PHP 7.0+
+* MySQL 5.6+ or MariaDB 10+
+* Apache Tomcat 8+ (for UEModulePDF, VisualDiff and LaTexRenderer)
+* ElasticSearch 6+
+* Java 8+
+* NodeJS 6+
+* Chrome, Firefox, Internet Eplorer 11, Edge
+
 == BlueSpice 2.27.3 ==
 BlueSpice 2.27.3 is a patch release.
 This is a stable release.
