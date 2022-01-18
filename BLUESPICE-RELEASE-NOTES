@@ -100,6 +100,9 @@ It is the first public release of the BlueSpice 4 major line.
 * BlueSpicePermissionManager: Disable "Custom" permission preset for FREE (#25948)
 ** "Custom" permission preset is only availabe in BlueSpice pro
 
+=== Further changes ===
+A detailed list of changes can be found at https://en.wiki.bluespice.com/wiki/BlueSpice_4.1
+
 === Compatibility ===
 * Operating system: Microsoft Windows Server >= 2016 or Linux (common distributions)
 * Webserver: Apache 2.4.x, IIS >= 10 ''or'' nginx 1.x (''nginx'' ''not possible in WikiFarm'')
