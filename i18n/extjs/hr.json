@@ -47,7 +47,7 @@
 	"bs-extjs-filter-contains": "sadržava",
 	"bs-extjs-filter-contains-not": "ne sadržava",
 	"bs-extjs-filter-starts-with": "počinje s/sa",
-	"bs-extjs-filter-ends-with": "završava se s/sa",
+	"bs-extjs-filter-ends-with": "završava znakovima",
 	"bs-extjs-filter-greater-than": "veće od",
 	"bs-extjs-filter-less-than": "manje od",
 	"bs-extjs-filter-bool-yes": "da",
