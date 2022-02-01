@@ -183,10 +183,10 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 		foreach ( $res as $oRow ) {
 			// Add fake fields to avoid warnings in '\CommentStore::getCommentInternal'
-			if ( !isset( $oRow->img_description_text ) {
+			if ( !isset( $oRow->img_description_text ) ) {
 				$oRow->img_description_text = '';
 			}
-			if ( !isset( $oRow->img_description_data ) {
+			if ( !isset( $oRow->img_description_data ) ) {
 				$oRow->img_description_data = null;
 			}
 
