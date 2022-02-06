@@ -38,9 +38,7 @@
 			for ( var i = 0; i < protocols.length; i++ ) {
 				if ( me.properties.target.indexOf( protocols[ i ] ) === 0 ) {
 					me.properties.protocol = protocols[ i ];
-					me.properties.target = me.properties.target.substring(
-						protocols[ i ].length
-					);
+					me.properties.target = me.properties.target.slice( protocols[ i ].length );
 					break;
 				}
 			}
@@ -145,7 +143,7 @@
 				}
 
 				if ( part.endsWith( 'px' ) ) { // Dependency bluespice.string.js
-					var unsuffixedValue = part.substr( 0, part.length - 2 ); // "100x100px" --> "100x100"
+					var unsuffixedValue = part.slice( 0, Math.max( 0, part.length - 2 ) ); // "100x100px" --> "100x100"
 					me.properties.sizewidth = unsuffixedValue;
 					var dimensions = unsuffixedValue.split( 'x' ); // "100x100"
 					if ( dimensions.length === 2 ) {

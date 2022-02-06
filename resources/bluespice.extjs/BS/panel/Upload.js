@@ -145,7 +145,7 @@ Ext.define( 'BS.panel.Upload', {
 		// Remove path info
 		value = value.replace( /^.*?([^\\\/:]*?\.[a-z0-9]+)$/img, '$1' );
 		value = this.defaultFileNamePrefix + value;
-		value = value.replace( /\s/g, "_" );
+		value = value.replace( /\s/g, '_' );
 
 		// apply value without 'C:\fakepath\' to file field as well
 		field.setRawValue( value );

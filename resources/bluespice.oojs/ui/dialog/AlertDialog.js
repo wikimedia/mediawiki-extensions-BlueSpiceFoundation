@@ -1,4 +1,4 @@
-bs.ui.dialog.AlertDialog = function( config ) {
+bs.ui.dialog.AlertDialog = function ( config ) {
 	bs.ui.dialog.AlertDialog.super.call( this, config );
 
 	this.name = config.name || 'AlertDialog';

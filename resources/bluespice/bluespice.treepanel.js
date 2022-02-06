@@ -4,7 +4,7 @@
 		if ( e.target.nodeName.toUpperCase() === 'A' || $parentAnchor.length !== 0 ) {
 			return; // Don't prevent clicks on anchor elements
 		}
-		if ( $( this ).hasClass( 'leaf' ) || $(this).attr( 'aria-haspopup' ) !== 'true' ) {
+		if ( $( this ).hasClass( 'leaf' ) || $( this ).attr( 'aria-haspopup' ) !== 'true' ) {
 			return;
 		}
 		if ( $( this ).attr( 'aria-expanded' ) === 'true' ) {

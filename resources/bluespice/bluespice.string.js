@@ -1,7 +1,7 @@
 // String functions
 String.prototype.ellipse = function ( maxLength ) {
 	if ( this.length > maxLength ) {
-		return this.substr( 0, maxLength - 3 ) + '...';
+		return this.slice( 0, Math.max( 0, maxLength - 3 ) ) + '...';
 	}
 	return this;
 };
@@ -31,7 +31,7 @@ String.prototype.ucFirst = function () {
 	//   example 1: ucfirst('kevin van zonneveld')
 	//   returns 1: 'Kevin van zonneveld'
 	var f = this.charAt( 0 ).toUpperCase();
-	return f + this.substr( 1 );
+	return f + this.slice( 1 );
 };
 
 // hint: http://stackoverflow.com/questions/3629183/why-doesnt-indexof-work-on-an-array-ie8/3629211#3629211

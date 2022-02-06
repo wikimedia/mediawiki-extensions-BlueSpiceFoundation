@@ -1,4 +1,4 @@
-bs.ui.dialog.SimpleMessageDialog = function( config ) {
+bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	var params = {};
 
 	if ( config.hasOwnProperty( 'name' ) ) {
@@ -52,7 +52,7 @@ bs.ui.dialog.SimpleMessageDialog = function( config ) {
 		this.callback.scope = {};
 	}
 
-	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionAccept = function() {
+	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionAccept = function () {
 		var params = {
 			action: 'ok',
 			label: mw.message( 'ooui-dialog-message-accept' ).plain()
@@ -84,10 +84,10 @@ bs.ui.dialog.SimpleMessageDialog.prototype.initialize = function () {
 };
 
 bs.ui.dialog.SimpleMessageDialog.prototype.getActionProcess = function ( action ) {
-	if ( ( action === 'ok' ) &&  this.callback.hasOwnProperty( 'ok' ) ) {
+	if ( ( action === 'ok' ) && this.callback.hasOwnProperty( 'ok' ) ) {
 		this.callback.ok.call( this.callback.scope );
 	}
-	if ( ( action === 'cancel' )  &&  this.callback.hasOwnProperty( 'cancel' ) ) {
+	if ( ( action === 'cancel' ) && this.callback.hasOwnProperty( 'cancel' ) ) {
 		this.callback.cancel.call( this.callback.scope );
 	}
 	return bs.ui.dialog.SimpleMessageDialog.super.prototype.getActionProcess.call( this, action );
