@@ -33,11 +33,11 @@ bs.ui.dialog.SimpleMessageDialog = function( config ) {
 	}
 
 	if ( config.hasOwnProperty( 'textMsg' ) ) {
-		var htmlSnippet = new OO.ui.HtmlSnippet( mw.message( config.textMsg ).plain() );
-		bs.ui.dialog.SimpleMessageDialog.static.message = htmlSnippet;
+		bs.ui.dialog.SimpleMessageDialog.static.message
+			= new OO.ui.HtmlSnippet( mw.message( config.textMsg ).plain() );
 	} else if ( config.hasOwnProperty( 'text' ) ) {
-		var htmlSnippet = new OO.ui.HtmlSnippet( config.text );
-		bs.ui.dialog.SimpleMessageDialog.static.message = htmlSnippet;
+		bs.ui.dialog.SimpleMessageDialog.static.message
+			= new OO.ui.HtmlSnippet( config.text );
 	}
 
 	if ( config.hasOwnProperty( 'callback' ) ) {
