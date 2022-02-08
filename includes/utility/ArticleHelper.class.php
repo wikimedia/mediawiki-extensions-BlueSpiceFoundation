@@ -77,7 +77,7 @@ class BsArticleHelper {
 				[ 'rev_page' => $iTalkPageId ],
 				__METHOD__
 			);
-			$iCount = $dbr->numRows( $res );
+			$iCount = $res->numRows();
 
 			$cacheHelper->set( $sKey, [ 'iCount' => $iCount ] );
 		}

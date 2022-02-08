@@ -39,7 +39,7 @@ class BSExportUsers extends BSMaintenance {
 			);
 
 			$res2 = $dbr->select( 'user_groups', '*', [ 'ug_user' => $row->user_id ] );
-			if ( $dbr->numRows( $res2 ) > 0 ) {
+			if ( $res2->numRows() > 0 ) {
 				$oGroupsNode = $oDOM->createElement( 'groups' );
 				$oUserNode->appendChild( $oGroupsNode );
 				foreach ( $res2 as $row2 ) {
@@ -50,7 +50,7 @@ class BSExportUsers extends BSMaintenance {
 			}
 
 			$res3 = $dbr->select( 'user_properties', '*', [ 'up_user' => $row->user_id ] );
-			if ( $dbr->numRows( $res3 ) > 0 ) {
+			if ( $res3->numRows() > 0 ) {
 				$oPropertiesNode = $oDOM->createElement( 'properties' );
 				$oUserNode->appendChild( $oPropertiesNode );
 				foreach ( $res3 as $row3 ) {

@@ -428,7 +428,7 @@ $res = $dbw->select(
 	'Database::select',
 	[ 'order by' => 'page_title' ]
 );
-echo $dbw->numRows( $res ) . " articles in category namespace\n";
+echo $res->numRows() . " articles in category namespace\n";
 
 $user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
 foreach ( $res as $row ) {
