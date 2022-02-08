@@ -572,6 +572,11 @@
 		"CreditsAlias": "languages/BlueSpice.Credits.alias.php",
 		"WikiAdminAlias": "languages/BlueSpice.WikiAdmin.alias.php"
 	},
+	"HookHandlers": {
+		"mediawikiservices": {
+			"class": "\\BlueSpice\\HookHandler\\MediaWikiServices"
+		}
+	},
 	"Hooks": {
 		"SetupAfterCache": [
 			"\\BlueSpice\\Hook\\SetupAfterCache\\AddParamDefinitions::callback"
@@ -631,7 +636,8 @@
 		"BeforeParserFetchTemplateAndTitle": [
 			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndTitle\\CheckTransclusionPermissions::callback"
 		],
-		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback"
+		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
+		"MediaWikiServices": "mediawikiservices"
 	},
 	"config_prefix": "bsg",
 	"config": {
@@ -838,6 +844,13 @@
 			"descriptionmsg": "bs-ping-on-init-desc",
 			"public": true,
 			"value": false
+		},
+		"HttpRequestDefaultOptions": {
+			"description": [
+				"Default connection options for all HTTP requests made via HttpRequestFactory"
+			],
+			"public": false,
+			"value": []
 		}
 	},
 	"ConfigRegistry": {
