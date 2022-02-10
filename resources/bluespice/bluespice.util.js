@@ -6,10 +6,10 @@
 		cfg.idPrefix = idPrefix;
 		cfg.callback = actionCallback || {};
 		if ( !cfg.callback.hasOwnProperty( 'ok' ) ) {
-			cfg.callback.ok = function() {};
+			cfg.callback.ok = function () {};
 		}
 		if ( !cfg.callback.hasOwnProperty( 'cancel' ) ) {
-			cfg.callback.cancel = function() {};
+			cfg.callback.cancel = function () {};
 		}
 		return cfg;
 	}
@@ -30,7 +30,7 @@
 		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
 		var dfd = new $.Deferred();
-		mw.loader.using( 'ext.bluespice.oojs' ).done( function() {
+		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
 			var windowManager = new OO.ui.WindowManager();
 
 			var dialog = new bs.ui.dialog.AlertDialog( config );
@@ -40,20 +40,20 @@
 			windowManager.openWindow( dialog );
 
 			dfd.resolve( dialog );
-		});
+		} );
 
 		return dfd.promise();
 	}
 
 	function _confirm( idPrefix, windowCfg, callbackCfg ) {
-		if( !windowCfg.title && !windowCfg.titleMsg ) {
+		if ( !windowCfg.title && !windowCfg.titleMsg ) {
 			windowCfg.titleMsg = 'bs-extjs-confirm';
 		}
 
 		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
 		var dfd = new $.Deferred();
-		mw.loader.using( 'ext.bluespice.oojs' ).done( function() {
+		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
 			var windowManager = new OO.ui.WindowManager();
 
 			var dialog = new bs.ui.dialog.ConfirmDialog( config );
@@ -63,7 +63,7 @@
 			windowManager.openWindow( dialog );
 
 			dfd.resolve( dialog );
-		});
+		} );
 
 		return dfd.promise();
 	}
@@ -72,7 +72,7 @@
 		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
 		var dfd = new $.Deferred();
-		mw.loader.using( 'ext.bluespice.oojs' ).done( function() {
+		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
 			var windowManager = new OO.ui.WindowManager();
 
 			var dialog = new bs.ui.dialog.PromptDialog( config );
@@ -82,7 +82,7 @@
 			windowManager.openWindow( dialog );
 
 			dfd.resolve( dialog );
-		});
+		} );
 
 		return dfd.promise();
 	}
@@ -215,7 +215,7 @@
 
 				_selectedText = _textbox.value.substring( _startPos, endPos );
 				tempText = _textbox.value;
-				_textbox.value = _textbox.value.substring( 0, _startPos ) +
+				_textbox.value = _textbox.value.slice( 0, Math.max( 0, _startPos ) ) +
 					'bs_selection' +
 					_textbox.value.substring( endPos, _textbox.value.length );
 
@@ -359,7 +359,7 @@
 			sMins = '',
 			sSecs = '',
 			sTsPast = unixTimestamp,
-			sTsNow = Math.round( ( new Date() ).getTime() / 1000 ),
+			sTsNow = Math.round( Date.now() / 1000 ),
 			iDuration = sTsNow - sTsPast,
 			iYears = Math.floor( iDuration / ( 60 * 60 * 24 * 365 ) );
 		iDuration %= 60 * 60 * 24 * 365;
@@ -529,7 +529,7 @@
 		for ( var property in obj ) {
 			newProperty = property;
 			if ( property.startsWith( 'data-bs-' ) !== false ) {
-				newProperty = property.substr( 8, property.length );
+				newProperty = property.slice( 8, 8 + property.length );
 			}
 			data[ newProperty ] = obj[ property ];
 		}
@@ -587,7 +587,7 @@
 		if ( loc.search === '' ) {
 			return oKeyValuePairs;
 		}
-		var sParams = loc.search.substr( 1 ),
+		var sParams = loc.search.slice( 1 ),
 			aParams = sParams.split( '&' );
 
 		for ( var i = 0; i < aParams.length; i++ ) {
@@ -626,7 +626,7 @@
 	 * @param {Object} oSrc The ExtJS MulitSelect field
 	 */
 	function _addEntryToMultiSelect( oSrc ) {
-		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring( 2 ),
+		var sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 ),
 			sTitle = oSrc.getAttribute( 'title' ),
 			sMessage = oSrc.getAttribute( 'msg' );
 		Ext.Msg.prompt( sTitle, sMessage, function ( btn, text ) {
@@ -657,7 +657,7 @@
 	 * @param {Object} oSrc The ExtJS MulitSelect field
 	 */
 	function _deleteEntryFromMultiSelect( oSrc ) {
-		var sFieldName = oSrc.getAttribute( 'targetfield' ).substring( 2 ),
+		var sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 ),
 			elSel = document.getElementById( 'mw-input-' + sFieldName );
 		if ( elSel === null ) {
 			elSel = document.getElementById( 'mw-input-' + 'wp' + sFieldName );

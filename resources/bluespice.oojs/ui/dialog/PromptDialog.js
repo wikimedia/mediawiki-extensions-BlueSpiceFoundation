@@ -1,4 +1,4 @@
-bs.ui.dialog.PromptDialog = function( config ) {
+bs.ui.dialog.PromptDialog = function ( config ) {
 	bs.ui.dialog.PromptDialog.super.call( this, config );
 
 	this.name = config.name || 'PromptDialog';
@@ -23,15 +23,15 @@ bs.ui.dialog.PromptDialog.prototype.initialize = function () {
 };
 
 bs.ui.dialog.PromptDialog.prototype.getActionProcess = function ( action ) {
-	if ( ( action === 'ok' ) &&  this.callback.hasOwnProperty( 'ok' ) ) {
+	if ( ( action === 'ok' ) && this.callback.hasOwnProperty( 'ok' ) ) {
 		this.callback.ok.call(
 			this.callback.scope,
 			{
-				'value': this.textInput.getValue()
+				value: this.textInput.getValue()
 			}
 		);
 	}
-	if ( ( action === 'cancel' )  &&  this.callback.hasOwnProperty( 'cancel' ) ) {
+	if ( ( action === 'cancel' ) && this.callback.hasOwnProperty( 'cancel' ) ) {
 		this.callback.cancel.call( this.callback.scope );
 	}
 	return bs.ui.dialog.SimpleMessageDialog.super.prototype.getActionProcess.call( this, action );

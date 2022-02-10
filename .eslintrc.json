@@ -57,6 +57,8 @@
 		"new-cap": "warn",
 		"semi-style": "warn",
 		"no-shadow": "warn",
-		"compat/compat": "warn"
+		"compat/compat": "warn",
+		"block-scoped-var": "warn",
+		"unicorn/prefer-string-slice": "warn"
 	}
 }

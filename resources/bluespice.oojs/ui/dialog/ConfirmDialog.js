@@ -1,4 +1,4 @@
-bs.ui.dialog.ConfirmDialog = function( config ) {
+bs.ui.dialog.ConfirmDialog = function ( config ) {
 	bs.ui.dialog.ConfirmDialog.super.call( this, config );
 
 	this.name = config.name || 'ConfirmDialog';

@@ -163,7 +163,7 @@ Ext.define( 'BS.dialog.PageExport', {
 			var link = $( '<a></a>' ).attr( 'href', me.targetTitle.getUrl() );
 			link.attr( 'title', me.targetTitle.getPrefixedText() );
 			link.html( me.targetTitle.getPrefixedText() );
-			linkHtml = $( '<div>' ).append( mw.message( 'bs-extjs-pageexport-success-text' , link ).parse() );
+			linkHtml = $( '<div>' ).append( mw.message( 'bs-extjs-pageexport-success-text', link ).parse() );
 
 			bs.util.alert(
 				'bs-pageexport-alert-success',

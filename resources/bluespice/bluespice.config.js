@@ -142,11 +142,11 @@
 		var prefix,
 			varName = null;
 
-		prefix = name.substring( 0, 3 );
+		prefix = name.slice( 0, 3 );
 		if ( prefix === 'bsg' ) {
-			varName = name.substring( 3 );
-		} else if ( prefix.substring( 0, 2 ).toLowerCase() === 'bs' ) {
-			varName = name.substring( 2 );
+			varName = name.slice( 3 );
+		} else if ( prefix.slice( 0, 2 ).toLowerCase() === 'bs' ) {
+			varName = name.slice( 2 );
 		}
 
 		return varName;
