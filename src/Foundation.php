@@ -168,7 +168,7 @@ class Foundation {
 			return;
 		}
 		$roleManager = $this->services->getService( 'BSRoleManager' );
-		$roleManager->applyRoles();
+		$roleManager->enableRoleSystem();
 	}
 
 }
