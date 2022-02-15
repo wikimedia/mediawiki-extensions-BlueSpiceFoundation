@@ -244,6 +244,7 @@ class RoleManager {
 	 */
 	public function enableRoleSystem() {
 		$this->roleSystemEnabled = true;
+		$this->applyRoles();
 	}
 
 	/**
