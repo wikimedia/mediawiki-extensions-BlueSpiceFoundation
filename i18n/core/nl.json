@@ -5,6 +5,7 @@
 			"Mainframe98",
 			"Mar(c)",
 			"McDutchie",
+			"Nickthijssen1994",
 			"Niknetniko",
 			"Ribert",
 			"Romaine",
@@ -108,5 +109,7 @@
 	"action-editor": "alle machtigingen te krijgen van de rol \"editor\" voor beveiligde pagina's in redacteurbeperking wanneer het rollensysteem is geactiveerd",
 	"bs-pref-fileextensions-help": "Typen bestanden die kunnen worden geüpload naar de wiki. Sommige typen (bv. html, js, php, cgi, exe) zijn om veiligheidsredenen niet toegestaan, ook niet als ze hier zijn toegevoegd.",
 	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Het configuratiebestand $1 kon niet worden geschreven."
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Het configuratiebestand $1 kon niet worden geschreven.",
+	"bs-pref-logopath-help": "Het logo moet worden geplaatst in de map /w/images van uw installatie. Als u deze plaatst in de map /w/skins van uw BlueSpice installatie, kan deze mogelijk worden overschreven bij een upgrade.",
+	"bs-pref-faviconpath-help": "De favicon moet worden geplaatst in de map /w/images van uw installatie. Als u deze plaatst in de map /w/skins van uw BlueSpice installatie, kan deze mogelijk worden overschreven bij een upgrade. Favicons hebben de bestandsextensie .ico."
 }
