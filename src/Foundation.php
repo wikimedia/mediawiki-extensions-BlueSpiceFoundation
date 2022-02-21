@@ -25,8 +25,6 @@ class Foundation {
 		require_once dirname( __DIR__ ) . "/includes/DefaultSettings.php";
 		require_once dirname( __DIR__ ) . "/includes/GlobalFunctions.php";
 
-		\mwsInitComponents();
-
 		$dynamicSettingsManager = DynamicSettingsManager::factory();
 		$dynamicSettingsManager->applyAll( $GLOBALS );
 
