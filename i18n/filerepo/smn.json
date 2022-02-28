@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Seipinne"
 		]
 	},
 	"bs-filerepo-headerfilename": "Tiätuvuárkkánommâ",
-	"bs-filerepo-headerpagecategories": "Luokah"
+	"bs-filerepo-headerpagecategories": "Luokah",
+	"bs-filerepo-headerfileusertext": "Kevttee"
 }

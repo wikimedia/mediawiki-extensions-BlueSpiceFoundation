@@ -1,14 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yupik"
+			"Yupik",
+			"Seipinne"
 		]
 	},
+	"bs-extjs-save": "Vuorkkii",
+	"bs-extjs-add": "Lasseet",
+	"bs-extjs-close": "Toopâ",
+	"bs-extjs-label-user": "Kevttee",
+	"bs-extjs-label-namespace": "Nommâkomovuotâ",
+	"bs-extjs-label-page": "Sijđo",
+	"bs-extjs-label-directsearch": "Uuccâm",
+	"bs-extjs-allns": "(puoh)",
 	"bs-extjs-mainns": "(Uáivikomovuotâ)",
 	"bs-extjs-categorytree-title": "Luokah",
-	"bs-extjs-pageexport-list-format-link-label": "Liŋkkâ",
-	"bs-extjs-label-namespace": "Nommâkomovuotâ",
-	"bs-extjs-allns": "(puoh)",
-	"bs-extjs-save": "Vuorkkii",
-	"bs-extjs-add": "Lasseet"
+	"bs-extjs-pageexport-list-format-link-label": "Liŋkkâ"
 }
