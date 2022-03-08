@@ -3,6 +3,7 @@
 		"authors": [
 			"Cxz",
 			"Joquliina",
+			"Markus Mikkonen",
 			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz",
@@ -55,6 +56,7 @@
 	"bs-extjs-filter-date-after": "Jälkeen",
 	"bs-extjs-filter-date-before": "Ennen",
 	"bs-extjs-pageexport-dialog-title": "Vie sivuja",
+	"bs-extjs-pageexport-list-format-plain-label": "Pelkkä teksti",
 	"bs-extjs-pageexport-list-format-link-label": "Linkki",
 	"bs-extjs-pageexport-overwrite-label": "Ylikirjoita",
 	"bs-extjs-pageexport-general-error": "Vientivirhe",
