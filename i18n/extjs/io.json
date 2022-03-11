@@ -23,5 +23,7 @@
 	"bs-extjs-label-user": "Uzero",
 	"bs-extjs-yes": "Yes",
 	"bs-extjs-no": "No",
-	"bs-extjs-filter-bool-yes": "yes"
+	"bs-extjs-filter-bool-yes": "yes",
+	"bs-extjs-add": "Adjuntez",
+	"bs-extjs-categorytree-title": "Kategorii"
 }

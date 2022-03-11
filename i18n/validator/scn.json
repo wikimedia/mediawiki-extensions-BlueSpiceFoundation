@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"bs-validator-invalid-boolean": "Nun n booleanu vàlidu",
+	"bs-validator-invalid-string": "Nun na stringa vàlida"
+}

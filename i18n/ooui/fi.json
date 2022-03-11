@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Markus Mikkonen",
 			"Pyscowicz"
 		]
 	},
@@ -8,5 +9,8 @@
 	"bs-ooui-key-value-input-widget-key-label": "Avain",
 	"bs-ooui-key-value-input-widget-value-label": "Arvo",
 	"bs-ooui-key-value-input-widget-add-button-label": "Lisää",
-	"bs-ooui-key-value-input-widget-add-form-label": "Lisää uusi merkintä"
+	"bs-ooui-key-value-input-widget-add-form-label": "Lisää uusi merkintä",
+	"bs-ooui-btn-dismiss-alert-title": "Hylkää",
+	"bs-ooui-key-value-input-widget-section-label": "Osio",
+	"bs-ooui-key-value-input-widget-add-section-label": "Lisää uusi osio"
 }

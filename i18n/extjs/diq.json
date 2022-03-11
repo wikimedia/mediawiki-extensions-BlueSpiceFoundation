@@ -42,5 +42,9 @@
 	"bs-extjs-label-directsearch": "Cı geyre",
 	"bs-extjs-filter-bool-no": "nê",
 	"bs-extjs-pageexport-list-format-link-label": "Gıre",
-	"bs-extjs-tools-trigger-text": "Haceti"
+	"bs-extjs-tools-trigger-text": "Haceti",
+	"bs-extjs-label-group": "Grube",
+	"bs-extjs-label-specialpage": "Pela xısusiye",
+	"bs-extjs-titlecombo-newpagehint": "Pele çıniya!",
+	"bs-extjs-pageexport-list-name-label": "Nameyê liste"
 }

@@ -31,5 +31,20 @@
 	"bs-extjs-titlecombo-newpagehint": "La pàggina nun esisti!",
 	"bs-extjs-allns": "(tutti)",
 	"bs-extjs-filter-bool-no": "no",
-	"bs-extjs-tools-trigger-text": "Strummenta"
+	"bs-extjs-tools-trigger-text": "Strummenta",
+	"bs-extjs-upload": "Càrrica",
+	"bs-extjs-filter-equals": "è aguali a",
+	"bs-extjs-filter-equals-not": "nun è aguali a",
+	"bs-extjs-filter-contains": "cunteni",
+	"bs-extjs-filter-contains-not": "nun cunteni",
+	"bs-extjs-filter-starts-with": "ncigna cu",
+	"bs-extjs-categoryboxselect-emptytext": "Agghiunci na catigurìa",
+	"bs-extjs-filter-date-before": "Avanti",
+	"bs-extjs-filter-date-on": "Lu",
+	"bs-extjs-filter-date-filter": "Filtru",
+	"bs-extjs-pageexport-list-name-label": "Nomu di l'elencu",
+	"bs-extjs-pageexport-list-format-label": "Furmatu di l'elencu",
+	"bs-extjs-pageexport-list-format-plain-label": "Testu nurmali",
+	"bs-extjs-pageexport-list-format-link-label": "Culligamentu",
+	"bs-extjs-pageexport-error-invalid-title": "Lu nomu di l'elencu nun è vàlidu"
 }

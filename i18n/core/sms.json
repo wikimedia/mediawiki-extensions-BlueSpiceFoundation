@@ -12,5 +12,6 @@
 	"bs-userbar_loginswitch_login": "Ǩeeʹrjtõõđ sizz",
 	"bs-extended-search-textfield-defaultvalue": "Ooʒʒ...",
 	"bs-tab_navigation": "Vaʹlljõk",
-	"bs-days-duration": "{{PLURAL:$1|õhtt peiʹvv|$1 peeiʹv|$1 peiʹvved}}"
+	"bs-days-duration": "{{PLURAL:$1|õhtt peiʹvv|$1 peeiʹv|$1 peiʹvved}}",
+	"bs-graphicallist-action-preview": "Ǩičč õõudǩiõʹtte"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Markus Mikkonen",
 			"Mediawikitranslator",
 			"Pyscowicz"
 		]
@@ -19,5 +20,6 @@
 	"bs-filerepo-labelupload": "Tallenna",
 	"bs-filerepo-headerfiletimestamp": "Tallennettu",
 	"bs-filerepo-labelfilter": "Suodatin",
-	"bs-filerepo-headerfileextension": "Laajennus"
+	"bs-filerepo-headerfileextension": "Laajennus",
+	"bs-filerepo-headerfilemimetype": "MIME-tyyppi"
 }

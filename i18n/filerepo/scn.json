@@ -11,5 +11,8 @@
 	"bs-filerepo-yes": "Sì",
 	"bs-filerepo-no": "No",
 	"bs-filerepo-labelupload": "Càrrica",
-	"bs-filerepo-labelfilter": "Filtru"
+	"bs-filerepo-labelfilter": "Filtru",
+	"bs-filerepo-headerfilemimetype": "Tipu MIME",
+	"bs-filerepo-headerfileextension": "Estinzioni",
+	"bs-filerepo-headerfiletimestamp": "Carricatu"
 }

@@ -1,11 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Yupik"
 		]
 	},
 	"bs-imagepage-download-text": "Luođii",
 	"bs-ns_all": "(puoh)",
 	"bs-ns": "Nommâkomovuotâ",
-	"bs-extended-search-textfield-defaultvalue": "Uusâ..."
+	"bs-extended-search-textfield-defaultvalue": "Uusâ...",
+	"bs-ns_main": "(Siijđoh)",
+	"bs-months-duration": "{{PLURAL:$1|ohtâ mánuppaje|$1 mánuppaijeed}}",
+	"bs-days-duration": "{{PLURAL:$1|ohtâ peivi|$1 peivid}}",
+	"bs-graphicallist-action-close": "Toopâ"
 }

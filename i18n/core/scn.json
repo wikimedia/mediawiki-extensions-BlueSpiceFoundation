@@ -36,5 +36,17 @@
 	"bs-parser-error-invalid-title": "Tìtulu nun vàliddu: $1",
 	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
 	"bs-bluespice": "BlueSpice",
-	"bs-notifications-agent-anon": "utenti anònimu"
+	"bs-notifications-agent-anon": "utenti anònimu",
+	"bs-no-information-available": "Nudda nfurmazzioni dispunìbbili",
+	"bs-now": "ora",
+	"bs-exception-view-admin-hint": "Pi favuri cuntatta lu tò amministraturi sistema.",
+	"bs-filesystemhelper-upload-err-code": "Lu file nun pò èssiri càrricatu: $1",
+	"bs-filesystemhelper-save-base64-error": "Lu file nun pò èssiri sarvatu",
+	"bs-filesystemhelper-upload-base64-error": "Lu file nun pò èssiri càrricatu.",
+	"bs-filesystemhelper-upload-local-error-create": "Lu file nun pò èssiri criatu ntû wiki.",
+	"bs-validator-error-namespace-does-not-exist": "Lu namespace nun esisti: $1",
+	"bs-validator-error-title-does-not-exist": "La pàggina nun esisti: $1",
+	"bs-parser-error-invalid-category-title": "La pàggina nun è na catigurìa vàlida: $1",
+	"bs-export-menu-print-text": "Stampa",
+	"bs-graphicallist-action-list": "Elencu"
 }

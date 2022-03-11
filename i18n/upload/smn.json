@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Yupik"
 		]
 	},
 	"bs-upload-uploadfilefieldlabel": "Tiätuvuárkkánommâ",
 	"bs-upload-categories": "Luokah",
-	"bs-upload-license": "Liiseens"
+	"bs-upload-license": "Liiseens",
+	"bs-upload-uploaddialogtitle": "Vuorkkii tiätuvuárhá",
+	"bs-upload-error": "Feilâ"
 }

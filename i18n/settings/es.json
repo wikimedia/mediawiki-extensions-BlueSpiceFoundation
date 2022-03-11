@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agusbou2015",
 			"Fitoschido",
 			"Ryo567"
 		]
@@ -18,5 +19,6 @@
 	"bs-setting-path-administration": "Administración",
 	"bs-setting-path-qualityassurance": "Control de calidad",
 	"bs-setting-path-export": "Exportación",
-	"bs-setting-path-feature": "Característica"
+	"bs-setting-path-feature": "Característica",
+	"bs-setting-path-skinning": "Pieles"
 }

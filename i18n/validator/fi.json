@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Markus Mikkonen"
+		]
+	},
+	"bs-validator-invalid-boolean": "Ei kelvollinen totuusarvo",
+	"bs-validator-invalid-float": "Ei kelvollinen liukuluku",
+	"bs-validator-invalid-integer": "Ei kelvollinen kokonaisluku",
+	"bs-validator-invalid-string": "Ei kelvollinen merkkijono"
+}

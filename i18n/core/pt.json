@@ -103,5 +103,7 @@
 	"action-editor": "receber todas as permissões da função \"editor\" para páginas protegidas durante a restrição de editor quando o sistema de funções está ativado",
 	"bs-pref-fileextensions-help": "Tipos de ficheiros que podem ser carregados na wiki. Alguns tipos (por exemplo, html, js, php, cgi, exe) não são permitidos por razões de segurança, mesmo que tenham sido adicionados aqui.",
 	"bs-pref-imageextensions-help": "Tipos de ficheiros de imagem que podem ser carregados na wiki. Formatos possíveis da internet: gif, png, jpg, jpeg. Outros formatos de imagem: tiff, bmp",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Não foi possível gravar o ficheiro de configuração $1!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Não foi possível gravar o ficheiro de configuração $1!",
+	"bs-pref-logopath-help": "O logótipo deve ser armazenado na pasta /w/images da sua instalação do BlueSpice. Se o armazenar na pasta /w/skins ele poderá ser sobrescrito durante uma atualização.",
+	"bs-pref-faviconpath-help": "O favicon deve ser armazenado na pasta /w/images da sua instalação do BlueSpice. Se o armazenar na pasta /w/skins ele poderá ser sobrescrito durante uma atualização. Favicons têm a extensão de ficheiro .ico."
 }

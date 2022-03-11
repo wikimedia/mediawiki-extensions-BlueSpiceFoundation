@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Akapochtli"
+			"Akapochtli",
+			"Languaeditor"
 		]
 	},
-	"bs-extended-search-textfield-defaultvalue": "Tlatemoliztli..."
+	"bs-extended-search-textfield-defaultvalue": "Xiktemo..."
 }

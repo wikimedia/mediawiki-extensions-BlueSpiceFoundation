@@ -8,6 +8,7 @@
 			"Facenapalm",
 			"Happy13241",
 			"INS Pirat",
+			"Ice bulldog",
 			"Movses",
 			"Okras",
 			"Radmir Far",
@@ -76,5 +77,6 @@
 	"apihelp-bs-js-var-config-summary": "Предоставляет конечную точку API для получения переменных конфигурации на стороне клиента",
 	"apihelp-bs-js-var-config-param-context": "Объект в кодировке JSON с контекстом вызова",
 	"apihelp-bs-categorylinks-store-description": "Перечисляет все категории страницы, включая ссылку на страницу категории и маркер для явных и неявных категорий.",
-	"apihelp-bs-categorylinks-store-summary": "Перечисляет все категории страницы, включая ссылку на страницу категории и маркер для явных и неявных категорий."
+	"apihelp-bs-categorylinks-store-summary": "Перечисляет все категории страницы, включая ссылку на страницу категории и маркер для явных и неявных категорий.",
+	"apihelp-bs-templatelinks-store-param-page-id": "Идентификатор страницы"
 }
