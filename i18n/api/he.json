@@ -7,7 +7,8 @@
 			"MojoMann",
 			"Steeve815",
 			"YaronSh",
-			"ערן"
+			"ערן",
+			"שוקו מוקה"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "מציג את כל הקבצים שהועלו. מאפשר סידור, סינון ועימוד. מיישם פרמטרים של חנות ExtJS.",
@@ -53,5 +54,6 @@
 	"apihelp-bs-upload-license-store-description": "רשימת רשיונות זמינים להעלאת קובץ",
 	"apihelp-bs-upload-license-store-summary": "רשימת רשיונות זמינים להעלאת קובץ",
 	"apihelp-bs-category-treestore-description": "רשימת תת קטגוריות של קטגוריה מסוימת",
-	"apihelp-bs-category-treestore-summary": "רשימת תת קטגוריות של קטגוריה מסוימת"
+	"apihelp-bs-category-treestore-summary": "רשימת תת קטגוריות של קטגוריה מסוימת",
+	"apihelp-bs-js-var-config-param-format": "הפורמט של התוצאה"
 }

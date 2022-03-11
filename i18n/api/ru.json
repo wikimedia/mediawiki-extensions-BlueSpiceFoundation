@@ -8,6 +8,7 @@
 			"Facenapalm",
 			"Happy13241",
 			"INS Pirat",
+			"Ice bulldog",
 			"Movses",
 			"Okras",
 			"Radmir Far",
@@ -76,5 +77,6 @@
 	"apihelp-bs-categorylinks-store-description": "Перечисляет все категории страницы, включая ссылку на страницу категории и маркер для явных и неявных категорий.",
 	"apihelp-bs-categorylinks-store-summary": "Перечисляет все категории страницы, включая ссылку на страницу категории и маркер для явных и неявных категорий.",
 	"apihelp-bs-linker-summary": "Возвращает ссылки на страницы, созданные Linker",
-	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker"
+	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker",
+	"apihelp-bs-templatelinks-store-param-page-id": "Идентификатор страницы"
 }

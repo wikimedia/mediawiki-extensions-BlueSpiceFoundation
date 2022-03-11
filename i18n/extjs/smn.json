@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Yupik"
 		]
 	},
@@ -10,5 +11,12 @@
 	"bs-extjs-label-namespace": "Nommâkomovuotâ",
 	"bs-extjs-allns": "(puoh)",
 	"bs-extjs-save": "Vuorkkii",
-	"bs-extjs-add": "Lasseet"
+	"bs-extjs-add": "Lasseet",
+	"bs-extjs-error": "Feilâ",
+	"bs-extjs-close": "Toopâ",
+	"bs-extjs-label-user": "Kevttee",
+	"bs-extjs-label-page": "Sijđo",
+	"bs-extjs-label-directsearch": "Uuccâm",
+	"bs-extjs-upload": "Vuorkkii",
+	"bs-extjs-filters": "Silleeh"
 }

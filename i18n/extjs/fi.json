@@ -3,6 +3,7 @@
 		"authors": [
 			"Cxz",
 			"Joquliina",
+			"Markus Mikkonen",
 			"Mediawikitranslator",
 			"Muovipullo",
 			"Pyscowicz",
@@ -67,5 +68,6 @@
 	"bs-extjs-filter-greater-than": "suurempi kuin",
 	"bs-extjs-filter-less-than": "vähemmän kuin",
 	"bs-extjs-title-success": "Onnistui",
-	"bs-extjs-pageexport-dialog-title": "Vie sivuja"
+	"bs-extjs-pageexport-dialog-title": "Vie sivuja",
+	"bs-extjs-pageexport-list-format-plain-label": "Pelkkä teksti"
 }

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
+			"Beginneruser",
 			"FarsiNevis",
 			"Jeeputer",
 			"Reza1615"
@@ -14,7 +15,7 @@
 	"bs-deferred-action-apieditpage-description": "ویرایش «$1».",
 	"bs-deferred-batch-progress-desc": "پیشرفت",
 	"bs-deferred-batch-actions": "عملکردها",
-	"bs-deferred-batch-description": "توضیح",
+	"bs-deferred-batch-description": "توضیحات",
 	"bs-deferred-batch-status": "وضعیت",
 	"bs-deferred-action-apiaddcategories-description": "افزودن رده‌ها به «$1»",
 	"bs-deferred-action-apiremovecategories-description": "حذف رده‌ها از «$1»",
