@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
+			"Beginneruser",
 			"FarsiNevis",
 			"Jeeputer"
 		]
@@ -20,5 +21,5 @@
 	"bs-setting-path-communication": "ارتباط",
 	"bs-setting-path-administration": "مدیریت",
 	"bs-setting-path-qualityassurance": "تضمین کیفیت",
-	"bs-setting-path-export": "برون‌ریزی"
+	"bs-setting-path-export": "برون‌بری"
 }
