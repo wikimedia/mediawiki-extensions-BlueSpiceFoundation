@@ -9,6 +9,7 @@
 			"Rrock9312",
 			"Shirayuki",
 			"Suyama",
+			"Yamagata Yusuke",
 			"カッパ鳥"
 		]
 	},
@@ -59,5 +60,6 @@
 	"bs-api-task-taskData-page-title": "ウィキページの有効なタイトル",
 	"bs-api-task-wikipagetasks-taskData-categories": "文字列の配列。値は有効なカテゴリー名である必要があります。",
 	"apihelp-bs-js-var-config-param-format": "結果形式",
-	"apihelp-bs-categorylinks-store-param-page-id": "このページのページID"
+	"apihelp-bs-categorylinks-store-param-page-id": "このページのページID",
+	"apihelp-bs-templatelinks-store-param-page-id": "このページのページID"
 }

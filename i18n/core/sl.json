@@ -7,6 +7,7 @@
 		]
 	},
 	"bs-ns_main": "(Strani)",
+	"bs-ns_all": "(vse)",
 	"bs-userbar_loginswitch_login": "Prijava",
 	"bs-extended-search-textfield-defaultvalue": "Iskanje&nbsp;...",
 	"bs-mins-duration": "{{PLURAL:$1|ena minuta|dve minuti|$1 minute|$1 minut}}",
