@@ -4,6 +4,7 @@
 			"Yupik"
 		]
 	},
+	"bs-deferred-action-status-error": "Ij oʹnnstam.",
 	"bs-deferred-action-apieditpage-description": "Muuʹtt \"$1\".",
-	"bs-deferred-action-status-error": "Ij oʹnnstam."
+	"bs-deferred-action-apideletepage-description": "Jaukkâd \"$1\"."
 }
