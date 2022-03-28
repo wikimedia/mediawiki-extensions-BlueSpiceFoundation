@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
+			"Beginneruser",
 			"FarsiNevis",
 			"Jeeputer"
 		]
@@ -13,7 +14,7 @@
 	"bs-upload-uploaddestfilelabel": "نام پروندهٔ مقصد",
 	"bs-upload-allowedfiletypesare": "انواع معتبر پرونده عبارت‌اند از:",
 	"bs-upload-license": "مجوز",
-	"bs-upload-uploadwatchthislabel": "پی‌گیری این پرونده",
+	"bs-upload-uploadwatchthislabel": "پیگیری این پرونده",
 	"bs-upload-uploadignorewarningslabel": "چشم‌پوشی از همهٔ هشدارها",
 	"bs-upload-categories": "رده‌ها",
 	"bs-upload-upload-waitmessage": "بارگذاری در حال پیشرفت است...",
