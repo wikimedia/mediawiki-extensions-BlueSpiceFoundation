@@ -8,6 +8,7 @@
  */
 
 use UtfNormal\Validator;
+use Wikimedia\AtEase\AtEase;
 
 class BsTagFinder {
 
@@ -35,7 +36,7 @@ class BsTagFinder {
 	 * );
 	 */
 	public static function find( &$sText, $aTagnames ) {
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$aResult = [];
 
 		$sXML = '<?xml encoding="UTF-8">'
@@ -72,7 +73,7 @@ class BsTagFinder {
 				}
 			}
 		}
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 		return $aResult;
 	}
 }
