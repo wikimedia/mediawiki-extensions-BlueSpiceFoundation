@@ -3,7 +3,8 @@
 		"authors": [
 			"Amirsara",
 			"FarsiNevis",
-			"Jeeputer"
+			"Jeeputer",
+			"Beginneruser"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "بارگذاری پرونده",
@@ -13,19 +14,19 @@
 	"bs-upload-uploaddestfilelabel": "نام پروندهٔ مقصد",
 	"bs-upload-allowedfiletypesare": "انواع معتبر پرونده عبارت‌اند از:",
 	"bs-upload-license": "مجوز",
-	"bs-upload-uploadwatchthislabel": "پی‌گیری این پرونده",
+	"bs-upload-uploadwatchthislabel": "پیگیری این پرونده",
 	"bs-upload-uploadignorewarningslabel": "چشم‌پوشی از همهٔ هشدارها",
 	"bs-upload-categories": "رده‌ها",
 	"bs-upload-upload-waitmessage": "بارگذاری در حال پیشرفت است...",
 	"bs-upload-error": "خطا",
+	"bs-upload-descfilelabel": "توضیحات",
 	"bs-upload-error-long": "خطا در فرایند بارگذاری",
 	"bs-upload-filetypenotsupported": "این نوع پرونده پشتیبانی نمی‌شود",
 	"bs-upload-details": "جزئیات",
 	"bs-upload-uploadwarningdialog-title": "بارگذاری پرونده: هشدارها",
 	"bs-upload-uploadwarningdialog-intro": "هشدارهای زیر در حین بارگذاری پرونده صادر شد",
-	"bs-upload-uploadwarningdialog-warning-exists": "پرونده‌ای با نام «$1» از قبل وجود دارد",
-	"bs-upload-descfilelabel": "توضیحات",
 	"bs-upload-uploadwarningdialog-outro": "برای چشم‌پوشی از اخطارها و بارگذاری پرونده روی «{{int:bs-extjs-ok}}» کلیک کنید و برای بازگشت به فرم بارگذاری، روی «{{int:bs-extjs-cancel}}» کلیک کنید.",
-	"bs-upload-uploadwarningdialog-warning-unknown": "اخظار ناشناخته با شناسهٔ «$1»",
-	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|یک تکرار دیگر|چند تکرار دیگر}} از این پرونده موجود است"
+	"bs-upload-uploadwarningdialog-warning-exists": "پرونده‌ای با نام «$1» از قبل وجود دارد",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|یک تکرار دیگر|چند تکرار دیگر}} از این پرونده موجود است",
+	"bs-upload-uploadwarningdialog-warning-unknown": "اخظار ناشناخته با شناسهٔ «$1»"
 }
