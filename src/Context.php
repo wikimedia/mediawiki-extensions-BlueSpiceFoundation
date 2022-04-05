@@ -119,6 +119,13 @@ class Context implements IContextSource {
 	/**
 	 * @inheritDoc
 	 */
+	public function getActionName(): string {
+		return $this->context->getActionName();
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function msg( $key, ...$params ) {
 		return $this->context->msg( $key, ...$params );
 	}
