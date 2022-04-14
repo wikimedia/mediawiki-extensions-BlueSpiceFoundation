@@ -1,13 +1,49 @@
 <?xml version="1.0"?>
 <ruleset>
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
+		<exclude name="Generic.ControlStructures.DisallowYodaConditions.Found" />
 		<exclude name="Generic.PHP.NoSilencedErrors.Discouraged" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPrivate" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.MissingReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NoParamType" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NotPunctuationReturnType" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortBoolReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.NotShortIntParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.ParamPassByReference" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.TypeTypeHintParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.TypeTypeHintReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveArrayParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveArrayReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveFloatParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveIntParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveMixedParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveMixedReturn" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveStringParam" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.UppercasePrimitiveStringReturn" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationProtected" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPublic" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.NotPunctuationVarType" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.NotShortBoolVar" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.NotShortIntVar" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.WrongStyle" />
+		<exclude name="MediaWiki.Commenting.RedundantVarName.Found" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName" />
-		<exclude name="MediaWiki.NamingConventions.PrefixedGlobalFunctions.wfPrefix" />
+		<exclude name="MediaWiki.NamingConventions.PrefixedGlobalFunctions.allowedPrefix" />
+		<exclude name="MediaWiki.PHPUnit.AssertCount.NotUsed" />
+		<exclude name="MediaWiki.PHPUnit.AssertionOrder.WrongOrder" />
+		<exclude name="MediaWiki.PHPUnit.SpecificAssertions.assertContains" />
+		<exclude name="MediaWiki.PHPUnit.SpecificAssertions.assertNotContains" />
+		<exclude name="MediaWiki.Usage.ExtendClassUsage.FunctionVarUsage" />
+		<exclude name="MediaWiki.Usage.StaticClosure.StaticClosure" />
+		<exclude name="MediaWiki.WhiteSpace.UnaryMinusSpacing.SpaceFound" />
+		<exclude name="MediaWiki.WhiteSpace.WhiteSpaceBeforeFunction.ExtraWhiteSpaceFound" />
 		<exclude name="PEAR.Functions.ValidDefaultValue.NotAtEnd" />
+		<exclude name="PSR12.Functions.ReturnTypeDeclaration.SpaceBeforeColon" />
+		<exclude name="PSR2.ControlStructures.SwitchDeclaration.BreakIndent" />
+		<exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php"/>
