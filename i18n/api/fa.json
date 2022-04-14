@@ -3,11 +3,13 @@
 		"authors": [
 			"Amirsara",
 			"FarsiNevis",
-			"Jeeputer"
+			"Jeeputer",
+			"LordProfo"
 		]
 	},
 	"apihelp-bs-store-param-limit": "تعداد نتایج برای نمایش",
 	"apihelp-bs-store-param-format": "فرمت خروجی (فقط جی‌سان یا جی‌سان قالب‌بندی‌شده)",
+	"apihelp-bs-task-param-task": "وظیفه‌ای که باید اجرا شود",
 	"apihelp-bs-task-param-format": "قالب نتیجه",
 	"bs-wikipage-tasks-error-page-not-valid": "صفحهٔ مشخص‌شده معتبر نیست.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "رده‌ها تغییر یافتند.",
