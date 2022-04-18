@@ -6,6 +6,7 @@
 	},
 	"bs-ns_main": "(صفحا)",
 	"bs-ns_all": "(سڀ)",
+	"bs-weeks-duration": "{{PLURAL:$1|ھڪ ھفتو|$1 ھفتا}}",
 	"bs-navigation-contact": "رابطو",
 	"bs-ns": "نانءُپولار",
 	"bs-graphicallist-action-list": "فھرست"
