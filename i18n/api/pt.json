@@ -75,5 +75,14 @@
 	"apihelp-bs-js-var-config-param-name": "Nome da variável de configuração a ser obtida",
 	"apihelp-bs-js-var-config-param-func": "Função de configuração a executar: has|get",
 	"apihelp-bs-js-var-config-param-context": "Objeto codificado em JSON com o contexto da chamada",
-	"apihelp-bs-js-var-config-param-format": "Formato do resultado"
+	"apihelp-bs-js-var-config-param-format": "Formato do resultado",
+	"apihelp-bs-categorylinks-store-description": "Lista todas as categorias de uma página, incluindo uma hiperligação para a página da categoria e um marcador para categorias implícitas e explícitas.",
+	"apihelp-bs-categorylinks-store-summary": "Lista todas as categorias de uma página, incluindo uma hiperligação para a página da categoria e um marcador para categorias implícitas e explícitas.",
+	"apihelp-bs-categorylinks-store-param-page-id": "O identificador da página",
+	"apihelp-bs-templatelinks-store-description": "Lista todas as predefinições de uma página, incluindo uma hiperligação para a predefinição.",
+	"apihelp-bs-templatelinks-store-summary": "Lista todas as predefinições de uma página, incluindo uma hiperligação para a predefinição.",
+	"apihelp-bs-templatelinks-store-param-page-id": "O identificador da página",
+	"apihelp-bs-linker-summary": "Devolve hiperligações para páginas geradas pelo Linker",
+	"apihelp-bs-linker-description": "Devolve hiperligações para páginas geradas pelo Linker",
+	"apihelp-bs-linker-param-linkdescs": "Uma matriz JSON associativa com uma lista de páginas. Cada entrada tem de conter o título da página como `target` (alvo). Opcionalmente, pode conter `text` (texto), `attribs` (atributos) e `query` (consulta)."
 }
