@@ -14,5 +14,8 @@
 	"bs-extjs-allns": "(puk)",
 	"bs-extjs-categorytree-title": "Kategoria",
 	"bs-extjs-filter-date-filter": "Siʹlle",
-	"bs-extjs-pageexport-list-format-link-label": "Liŋkk"
+	"bs-extjs-pageexport-list-format-link-label": "Liŋkk",
+	"bs-extjs-delete": "Jaukkâd",
+	"bs-extjs-pageexport-pagecollection-prefix": "Seiddnorldõk",
+	"bs-pagecollection-prefix": "Seiddnorldõk"
 }

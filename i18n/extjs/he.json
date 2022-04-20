@@ -3,6 +3,7 @@
 		"authors": [
 			"Amire80",
 			"Eladk",
+			"Ex-Diktator",
 			"Guycn2",
 			"Ronel1",
 			"Steeve815",
@@ -82,5 +83,6 @@
 	"bs-extjs-flyout-add-label": "הוספת פריט",
 	"bs-extjs-label-group": "קבוצה",
 	"bs-extjs-label-specialpage": "דף מיוחד",
-	"bs-pagecollection-prefix": "אוסף דפים"
+	"bs-pagecollection-prefix": "אוסף דפים",
+	"bs-extjs-pageexport-success-text": "אוסף הדפים יוצא ל{{GRAMMAR:תחילית|$1}}"
 }

@@ -8,5 +8,6 @@
 	"bs-ns_all": "(سڀ)",
 	"bs-navigation-contact": "رابطو",
 	"bs-ns": "نانءُپولار",
-	"bs-graphicallist-action-list": "فھرست"
+	"bs-graphicallist-action-list": "فھرست",
+	"bs-weeks-duration": "{{PLURAL:$1|ھڪ ھفتو|$1 ھفتا}}"
 }

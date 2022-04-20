@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"ToniSant"
+		]
+	},
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Kategorija invalida|Kategoriji invalidi}}: $1",
+	"apihelp-bs-category-treestore-description": "Elenka s-sottokategoriji ta' kategorija speċifika"
+}

@@ -4,5 +4,6 @@
 			"ToniSant"
 		]
 	},
-	"bs-extjs-categorytree-title": "Kategoriji"
+	"bs-extjs-categorytree-title": "Kategoriji",
+	"bs-extjs-categoryboxselect-emptytext": "Żid kategorija"
 }
