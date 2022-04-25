@@ -7,7 +7,8 @@
 			"Ronel1",
 			"Steeve815",
 			"YaronSh",
-			"ישראל קלר"
+			"ישראל קלר",
+			"Ex-Diktator"
 		]
 	},
 	"bs-extjs-ok": "אישור",
@@ -73,6 +74,7 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "אוסף דפים",
 	"bs-pagecollection-prefix": "אוסף דפים",
 	"bs-extjs-pageexport-success": "הייצוא בוצע בהצלחה",
+	"bs-extjs-pageexport-success-text": "אוסף הדפים יוצא ל{{GRAMMAR:תחילית|$1}}",
 	"bs-extjs-pageexport-error-invalid-title": "שם הרשימה אינו תקין",
 	"bs-extjs-combo-box-default-placeholder": "הסוג לסינון...",
 	"bs-extjs-tools-trigger-title": "יש ללחוץ כאן כדי לפתוח את תפריט הכלים",
