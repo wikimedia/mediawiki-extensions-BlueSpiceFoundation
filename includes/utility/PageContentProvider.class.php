@@ -226,7 +226,7 @@ class BsPageContentProvider {
 				$wgRequest,
 				// $_REQUEST + i.e. oldid
 				// TODO: Check if all params are necessary
-				$wgRequest->getValues() + $aParams,
+				array_merge( $wgRequest->getValues(), $aParams ),
 				$wgRequest->wasPosted() )
 		);
 
