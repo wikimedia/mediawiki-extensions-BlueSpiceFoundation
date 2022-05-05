@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"GpieroMW",
 			"Stefano",
 			"TheRukk",
 			"Tizven",
@@ -56,6 +57,7 @@
 	"apihelp-bs-category-treestore-description": "Elenca le sottocategorie di una specifica categoria",
 	"apihelp-bs-category-treestore-summary": "Elenca le sottocategorie di una specifica categoria",
 	"apihelp-bs-category-treestore-param-node": "Un percorso di categorie separate da slash",
+	"bs-api-task-taskdata-help": "[$1 Schema], [$2 esempi di parametri]",
 	"apihelp-bs-task-param-schema": "Mostra lo schema JSON per i parametri dell'attività.",
 	"apihelp-bs-task-param-examples": "Mostra esempi per i parametri dell'attività.",
 	"bs-api-task-taskData-page-id": "L'ID di una pagina wiki esistente",
