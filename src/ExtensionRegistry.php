@@ -106,7 +106,7 @@ class ExtensionRegistry {
 		$allThings = $this->extensionRegistry->getAllThings();
 
 		// Some BlueSpice extensions have been registered wrong in the past.
-		// The the extension name used as key in bsgExtensions must be equal with
+		// The extension name used as key in bsgExtensions must be equal with
 		// the extensions name in the "name" attribute of the extension.json!
 		if ( !isset( $allThings[$name] ) ) {
 			throw new \BsException(
