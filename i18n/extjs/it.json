@@ -8,7 +8,8 @@
 			"PeppeAeco",
 			"Selven",
 			"TheRukk",
-			"Tizven"
+			"Tizven",
+			"GpieroMW"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -71,7 +72,10 @@
 	"bs-extjs-pageexport-list-format-link-label": "Collegamento",
 	"bs-extjs-pageexport-overwrite-label": "Sovrascrivi",
 	"bs-extjs-pageexport-general-error": "Errore esportazione",
+	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine",
+	"bs-pagecollection-prefix": "Raccolta di pagine",
 	"bs-extjs-pageexport-success": "Esportazione corretta",
+	"bs-extjs-pageexport-success-text": "Raccolta di pagine esportata in $1",
 	"bs-extjs-pageexport-required-text": "Il nome dell'elenco non può essere vuoto o almeno una pagina deve essere selezionata",
 	"bs-extjs-export-search-summary-text": "Generato da PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Il nome dell'elenco non è valido",
@@ -83,6 +87,5 @@
 	"bs-extjs-flyout-tab-grid-label": "Dettagli",
 	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio",
 	"bs-extjs-flyout-add-title": "Clicca qui per aggiungere un nuovo elemento",
-	"bs-extjs-flyout-add-label": "Aggiungi elemento",
-	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine"
+	"bs-extjs-flyout-add-label": "Aggiungi elemento"
 }
