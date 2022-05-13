@@ -3,6 +3,7 @@
 		"authors": [
 			"Alan ffm",
 			"Chrumps",
+			"Msz2001",
 			"Pio387",
 			"Rzuwig",
 			"Vlad5250"
@@ -28,7 +29,7 @@
 	"bs-one-unit-ago": "$1 temu",
 	"bs-now": "teraz",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Witam Panie $2|Witam Pani $2|Witam $2}},",
-	"bs-email-footer": "Ten komunikat został wygenerowany automatycznie. Prosimy nie odpowiadać na ten e-mail.",
+	"bs-email-footer": "Ten komunikat został wygenerowany automatycznie przez {{GRAMMAR:B.lp|$1}}. Prosimy nie odpowiadać na ten e-mail.",
 	"bs-userpagesettings-legend": "Ustawienia użytkownika",
 	"bs-userpreferences-link-text": "Dodatkowe ustawienia użytkownika",
 	"bs-userpreferences-link-title": "Wyświetlanie ustawień osobistych użytkownika",
