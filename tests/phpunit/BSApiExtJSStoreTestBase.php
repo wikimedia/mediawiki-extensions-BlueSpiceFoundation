@@ -56,9 +56,9 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 					);
 					break;
 				case 'list':
-					$this->assertTrue(
+					$this->assertIsArray(
 
-						is_array( $value ),
+						$value,
 						"Value of field '$schemaFieldName' is not a list"
 					);
 					break;
