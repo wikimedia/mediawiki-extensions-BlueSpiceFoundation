@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ex-Diktator",
 			"YaronSh"
 		]
 	},
@@ -14,6 +15,7 @@
 	"bs-setting-path-personalisation": "התאמה אישית",
 	"bs-setting-path-skinning": "עיצוב",
 	"bs-setting-path-customizing": "התאמה אישית",
+	"bs-setting-path-contentstructuring": "מתן מבנה לתוכן",
 	"bs-setting-path-communication": "תקשורת",
 	"bs-setting-path-administration": "ניהול",
 	"bs-setting-path-qualityassurance": "אבטחת איכות",
