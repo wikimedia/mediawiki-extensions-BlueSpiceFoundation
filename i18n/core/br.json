@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Fohanno",
+			"Huñvreüs",
 			"Y-M D"
 		]
 	},
@@ -24,8 +25,8 @@
 	"bs-two-units-ago": "$1 ha $2 zo",
 	"bs-one-unit-ago": "$1 zo",
 	"bs-now": "bremañ",
-	"bs-email-greeting-receiver": "Demat {{GENDER:$1|Ao. $1|It. $1|$1}},",
-	"bs-email-footer": "Savet e oa bet ur gemennadenn-mañ ent emgefre. Na respontit ket d'ar postel-mañ, mar plij.",
+	"bs-email-greeting-receiver": "Demat {{GENDER:$1|Ao. $2|It. $2|$2}},",
+	"bs-email-footer": "Savet eo bet ar gemennadenn-mañ ent emgefre gant $1. Na respontit ket d'ar postel-mañ, mar plij.",
 	"bs-userpagesettings-legend": "Arventennoù implijer",
 	"bs-userpreferences-link-text": "Arventennoù implijer ouzhpenn",
 	"bs-userpreferences-link-title": "Diskwel hoc'h arventennoù implijer personel",
