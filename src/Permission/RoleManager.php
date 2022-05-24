@@ -120,6 +120,21 @@ class RoleManager {
 	}
 
 	protected function resetGroupPermissions() {
+		// TODO: This is a temporary solution - find a proper one
+		// We should somehow deal with all permissions that are not covered
+		// by our $bsgPermissionConfig, maybe keep them all as "independent"
+		$independent = $this->getIndependentPermissions();
+		$independentAssignments = [];
+		foreach ( $this->groupPermissions as $group => $permissions ) {
+			foreach ( $permissions as $permission => $granted ) {
+				if ( in_array( $permission, $independent ) ) {
+					if ( !isset( $independentAssignments[$group] ) ) {
+						$independentAssignments[$group] = [];
+					}
+					$independentAssignments[$group][$permission] = $granted;
+				}
+			}
+		}
 		// All permissions, including 3rd party ones,
 		// which are not included in the registry are removed
 		$this->groupPermissions = array_map(
@@ -128,6 +143,8 @@ class RoleManager {
 			},
 			$this->groupPermissions
 		);
+
+		$this->groupPermissions = array_merge( $this->groupPermissions, $independentAssignments );
 	}
 
 	/**
@@ -377,5 +394,22 @@ class RoleManager {
 			return true;
 		}
 		return false;
+	}
+
+	/**
+	 * Get the list of permissions that are not covered by the role system,
+	 * but still should be applied.
+	 * These permissions will keep their original assignments in $wgGroupPermissions,
+	 * as it was before applying the role system
+	 *
+	 * TODO: this mechanism will change, so for now hardcoded
+	 *
+	 * @return array
+	 */
+	private function getIndependentPermissions(): array {
+		return [
+			'autocreateaccount',
+			'editmyprivateinfo'
+		];
 	}
 }
