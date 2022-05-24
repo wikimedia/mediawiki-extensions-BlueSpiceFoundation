@@ -8,30 +8,20 @@ class BSExtractPageTitles extends BSMaintenance {
 	 *
 	 * @var string[]
 	 */
-	private $errors = [];
-
-	/**
-	 *
-	 * @var string[]
-	 */
 	private $titles = [];
-
-	/**
-	 *
-	 * @var string
-	 */
-	private $destPath = '';
 
 	public function __construct() {
 		$this->addOption( 'srcxml', 'The path to the source file', true, true );
+		$this->addOption( 'dest', 'The path to the destination file', true, true );
 
 		parent::__construct();
 	}
 
 	public function execute() {
 		$srcXmlPath = $this->getOption( 'srcxml' );
+		$destPath = $this->getOption( 'dest' );
 
-		$this->output( "Processing $srcXmlPath\n" );
+		$this->output( "Processing $srcXmlPath\n\n" );
 
 		$dom = new DOMDocument();
 		$dom->load( $srcXmlPath );
@@ -42,15 +32,24 @@ class BSExtractPageTitles extends BSMaintenance {
 			$titleEl = $pageEl->getElementsByTagName( 'title' )->item( 0 );
 			$title = $titleEl->nodeValue;
 			$this->output( "Found '$title'" );
-			$this->titles[] = Title::newFromText( $title )->getPrefixedDBkey();
+			$titleObj = Title::newFromText( $title );
+			$preFixedTitle = $titleObj->getPrefixedDBkey();
+
+			// We add an explicit "empty prefix" for the main namespace, to ease further
+			// processing, as this script is likely to be used as a base for `ModifyExportXML`
+			if ( $titleObj->getNamespace() === NS_MAIN ) {
+				$preFixedTitle = ':' . $preFixedTitle;
+			}
+
+			$this->titles[] = $preFixedTitle;
 
 		}
 		$noOfTitles = count( $this->titles );
 		natsort( $this->titles );
 
-		file_put_contents( $this->destPath . '/pages.txt', implode( "\n", $this->titles ) );
+		file_put_contents( $destPath, implode( "\n", $this->titles ) );
 
-		$this->output( "Found '$noOfTitles' titles!" );
+		$this->output( "\nTotal of '$noOfTitles' titles found!" );
 	}
 }
 
