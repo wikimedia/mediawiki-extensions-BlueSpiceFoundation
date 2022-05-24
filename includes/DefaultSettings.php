@@ -116,6 +116,10 @@ if ( !isset( $GLOBALS[ 'bsgNamespaceRolesLockdown' ] ) ) {
 	$GLOBALS['bsgNamespaceRolesLockdown'] = [];
 }
 
+// Hardcoded permissions, not part of role system
+$GLOBALS['wgGroupPermissions']['*']['autocreateaccount'] = true;
+$GLOBALS['wgGroupPermissions']['*']['editmyprivateinfo'] = true;
+
 $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	"apihighlimits" => [
 		"type" => 'global',
@@ -137,10 +141,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 			'reviewer',
 			'structuremanager'
 		]
-	],
-	"autocreateaccount" => [
-		"type" => 'global',
-		"roles" => [ 'reader', 'autocreateaccount' ]
 	],
 	"autopatrol" => [
 		"type" => 'global',
@@ -233,21 +233,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
 	],
 	"editmyoptions" => [
-		"type" => 'global',
-		"roles" => [
-			'accountmanager',
-			'admin',
-			'author',
-			'bot',
-			'commenter',
-			'editor',
-			'maintenanceadmin',
-			'reader',
-			'reviewer',
-			'structuremanager'
-		]
-	],
-	"editmyprivateinfo" => [
 		"type" => 'global',
 		"roles" => [
 			'accountmanager',
