@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Ex-Diktator",
 			"YaronSh"
 		]
@@ -19,5 +20,5 @@
 	"bs-setting-path-communication": "תקשורת",
 	"bs-setting-path-administration": "ניהול",
 	"bs-setting-path-qualityassurance": "אבטחת איכות",
-	"bs-setting-path-export": "ייצוא"
+	"bs-setting-path-export": "יצוא"
 }
