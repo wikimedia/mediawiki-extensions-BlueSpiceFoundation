@@ -2,57 +2,63 @@
 
 require_once 'BSMaintenance.php';
 
-class ModifyExportXML extends Maintenance {
+class ModifyExportXML extends BSMaintenance {
 
 	public function __construct() {
 		parent::__construct();
 
 		$this->addOption( 'input', 'The file to read from', true, true );
 		$this->addOption( 'output', 'The file to write to', true, true );
-		$this->addOption( 'newnamespacetext', 'The namespace text to prepend', true, true );
-		$this->addOption( 'oldnamespacetext', 'The old namespace text', false, true );
+		$this->addOption(
+				'newtitlemap',
+			'A file with page titles to be used. MUST MATCH `newtitlemap` BY LINE NUMBER',
+			true,
+				true
+		);
+		$this->addOption(
+			'oldtitlemap',
+			'A file with page titles to be replaced. MUST MATCH `newtitlemap` BY LINE NUMBER',
+			true,
+			true
+		);
+
 		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
 	protected $aTitles = [];
 
+	/** @var array */
+	private $titleMap = [];
+
 	public function execute() {
 		$sInputFilePath    = $this->getOption( 'input' );
 		$sOutputFilePath   = $this->getOption( 'output' );
-		$sNamespaceText    = $this->getOption( 'newnamespacetext' );
-		$sOldNamespaceText = $this->getOption( 'oldnamespacetext' );
-		$sOldNamespaceText = strtoupper( $sOldNamespaceText );
+		$this->initTitleMap();
 
 		$oDOMDoc = new DOMDocument( '1.0', 'UTF-8' );
 		$oDOMDoc->load( $sInputFilePath );
 
-		echo "\n" . 'Removing <siteinfo> tag(s)...' . "\n";
+		$this->output( 'Removing <siteinfo> tag(s)...' );
 		$oSiteInfoElements = $oDOMDoc->getElementsByTagName( "siteinfo" );
 		foreach ( $oSiteInfoElements as $oSiteInfoElement ) {
 			$oSiteInfoElement->parentNode->removeChild( $oSiteInfoElement );
-			echo 'done.' . "\n";
+			$this->output( '... done.' );
 		}
 
-		echo "\n" . 'Modifying titles...' . "\n";
+		$this->output( 'Modifying titles...' );
 		$oTitleElements = $oDOMDoc->getElementsByTagName( "title" );
 		foreach ( $oTitleElements as $oTitleElement ) {
-			// HINT: http://www.php.net/manual/de/class.domnode.php#95545
-			$sOldTitle = trim( $oTitleElement->textContent );
-			$sNewTitle = $sOldTitle;
-			$aTitleParts = explode( ":", $sOldTitle, 2 );
-			$aPotentialNamespaceText = strtoupper( trim( $aTitleParts[0] ) );
-			if ( $aPotentialNamespaceText == $sOldNamespaceText ) {
-				$sNewTitle = $sNamespaceText . ':' . $aTitleParts[1];
-			} else {
-				$sNewTitle = $sNamespaceText . ':' . $sOldTitle;
+			$oldTitle = trim( $oTitleElement->nodeValue );
+			$oldTitle = str_replace( ' ', '_', $oldTitle );
+			if ( isset( $this->titleMap[$oldTitle] ) ) {
+				$newTitle = $this->titleMap[$oldTitle];
+				$oTitleElement->removeChild( $oTitleElement->firstChild );
+				$oTitleElement->appendChild( $oDOMDoc->createTextNode( $newTitle ) );
+				$this->output( "'$oldTitle' -->'$newTitle'" );
 			}
-			$this->aTitles[$sOldTitle] = $sNewTitle;
-			$oTitleElement->removeChild( $oTitleElement->firstChild );
-			$oTitleElement->appendChild( $oDOMDoc->createTextNode( $sNewTitle ) );
-			echo '"' . $sOldTitle . '" --> "' . $sNewTitle . '"' . "\n";
 		}
 
-		echo "\n" . 'Modifying revision texts...' . "\n";
+		$this->output( 'Modifying revision texts...' );
 		$oRevisionTextElements = $oDOMDoc->getElementsByTagName( "text" );
 		foreach ( $oRevisionTextElements as $oRevisionTextElement ) {
 			$sText = trim( $oRevisionTextElement->textContent );
@@ -61,8 +67,8 @@ class ModifyExportXML extends Maintenance {
 					->getElementsByTagName( 'id' )->item( 0 )->textContent;
 				$sArticleName = $oRevisionTextElement->parentNode->parentNode
 					->getElementsByTagName( 'title' )->item( 0 )->textContent;
-				echo '<text> element in Revision id=' . $iRevisionId
-					. ' (Article "' . $sArticleName . '") contains no text.' . "\n";
+				$this->output( '<text> element in Revision id=' . $iRevisionId
+				. ' (Page "' . $sArticleName . '") contains no text.' );
 				continue;
 			}
 			$sText = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sText );
@@ -70,7 +76,7 @@ class ModifyExportXML extends Maintenance {
 			$oRevisionTextElement->appendChild( $oDOMDoc->createTextNode( $sText ) );
 		}
 
-		echo "\n" . 'Modifying comments...' . "\n";
+		$this->output( 'Modifying comments...' );
 		$oRevisionCommentElements = $oDOMDoc->getElementsByTagName( "comment" );
 		foreach ( $oRevisionCommentElements as $oRevisionCommentElement ) {
 			$sComment = trim( $oRevisionCommentElement->textContent );
@@ -79,8 +85,8 @@ class ModifyExportXML extends Maintenance {
 					->getElementsByTagName( 'id' )->item( 0 )->textContent;
 				$sArticleName = $oRevisionTextElement->parentNode->parentNode
 					->getElementsByTagName( 'title' )->item( 0 )->textContent;
-				echo '<comment> element in Revision id=' . $iRevisionId
-					. ' (Article "' . $sArticleName . '") contains no text.' . "\n";
+				$this->output( '<comment> element in Revision id=' . $iRevisionId
+					. ' (Page "' . $sArticleName . '") contains no text.' );
 				continue;
 			}
 			$sComment = preg_replace_callback( '#\[\[(.*?)\]\]#si', [ $this, 'modifyWikiLink' ], $sComment );
@@ -89,34 +95,59 @@ class ModifyExportXML extends Maintenance {
 		}
 
 		$vWrittenBytes = $oDOMDoc->save( $sOutputFilePath );
-		// Alternative to prevent DOMDocument from rewriting all unicode chars as entities.
-		// But: seems to be unnecessary, due to the MediaWiki import.
-		// $sXML = $oDOMDoc->saveXML();
-		// $vWrittenBytes = file_put_contents( $sOutputFilePath, html_entity_decode( $sXML ) );
 
 		if ( $vWrittenBytes === false ) {
-			echo 'An error occurred. Output file could not be saved.' . "\n";
+			$this->output( 'An error occurred. Output file could not be saved.' );
 		} else {
-			echo "Success. $vWrittenBytes Bytes have been written to \" $sOutputFilePath \".\n";
+			$this->output( "Success. $vWrittenBytes Bytes have been written to '$sOutputFilePath'" );
 		}
 	}
 
 	private function modifyWikiLink( $aMatches ) {
 		$aLinkParts = explode( '|', $aMatches[1], 2 );
 		$sLinkPart  = trim( $aLinkParts[0] );
-		if ( !isset( $this->aTitles[$sLinkPart] ) ) {
-			echo 'Skipping "' . $aMatches[0] . '". Key "' . $sLinkPart . '" was not found.' . "\n";
+
+		$oldTitle = str_replace( ' ', '_', $sLinkPart );
+		if ( !isset( $this->titleMap[$oldTitle] ) ) {
+			$this->output( 'Skipping "' . $aMatches[0] . '". Key "' . $sLinkPart . '" was not found.' );
 			// Only modify links that have changed.
 			return $aMatches[0];
 		}
-		$sNewWikiLink = '[[' . $this->aTitles[ $sLinkPart ];
+		$sNewWikiLink = '[[' . $this->titleMap[ $oldTitle ];
 		if ( isset( $aLinkParts[1] ) ) {
 			// Add optional description text
 			$sNewWikiLink .= '|' . $aLinkParts[1];
 		}
 		$sNewWikiLink .= ']]';
-		echo '"' . $aMatches[0] . '" --> "' . $sNewWikiLink . '"' . "\n";
+		$this->output( '"' . $aMatches[0] . '" --> "' . $sNewWikiLink . '"' );
 		return $sNewWikiLink;
+	}
+
+	private function initTitleMap() {
+		$newTitleMapContent = file_get_contents( $this->getOption( 'newtitlemap' ) );
+		$oldTitleMapContent = file_get_contents( $this->getOption( 'oldtitlemap' ) );
+
+		$newTitleMapLines = explode( "\n", $newTitleMapContent );
+		$oldTitleMapLines = explode( "\n", $oldTitleMapContent );
+
+		if ( count( $newTitleMapLines ) !== count( $oldTitleMapLines ) ) {
+			throw new Exception( "Maps must have same number of lines!" );
+		}
+
+		for ( $i = 0; $i < count( $oldTitleMapLines ); $i++ ) {
+			$newTitle = trim( $newTitleMapLines[$i] );
+			$oldTitle = trim( $oldTitleMapLines[$i] );
+
+			// Normalize
+			$newTitle = str_replace( ' ', '_', $newTitle );
+			$oldTitle = str_replace( ' ', '_', $oldTitle );
+
+			if ( isset( $this->titleMap[$oldTitle] ) ) {
+				throw new Exception( "A title must not occur twice in the map: $oldTitle" );
+			}
+
+			$this->titleMap[$oldTitle] = $newTitle;
+		}
 	}
 }
 
