@@ -15,7 +15,8 @@
 			"Romanko Mikhail",
 			"Vlad5250",
 			"Краснорядцева Елена",
-			"Ice bulldog"
+			"Ice bulldog",
+			"WindEwriX"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Перечисляет все файлы из файлового бэкэнда. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
@@ -76,6 +77,7 @@
 	"apihelp-bs-js-var-config-param-format": "Формат результата",
 	"apihelp-bs-categorylinks-store-description": "Перечисляет все категории страницы, включая ссылку на страницу категории и маркер для явных и неявных категорий.",
 	"apihelp-bs-categorylinks-store-summary": "Перечисляет все категории страницы, включая ссылку на страницу категории и маркер для явных и неявных категорий.",
+	"apihelp-bs-categorylinks-store-param-page-id": "Идентификатор страницы",
 	"apihelp-bs-templatelinks-store-param-page-id": "Идентификатор страницы",
 	"apihelp-bs-linker-summary": "Возвращает ссылки на страницы, созданные Linker",
 	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker"
