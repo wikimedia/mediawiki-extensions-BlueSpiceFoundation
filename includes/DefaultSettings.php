@@ -445,7 +445,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"undelete" => [
 		"type" => 'namespace',
-		"roles" => [ 'admin', 'editor', 'maintenanceadmin', 'structuremanager' ]
+		"roles" => [ 'admin', 'maintenanceadmin', 'structuremanager' ]
 	],
 	"unwatchedpages" => [
 		"type" => 'global',
