@@ -4,6 +4,7 @@
 			"Beta16",
 			"Dansita",
 			"Gianfranco",
+			"GpieroMW",
 			"TheRukk"
 		]
 	},
@@ -27,5 +28,6 @@
 	"bs-upload-uploadwarningdialog-warning-exists": "Un file con nome \"$1\" esiste già",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|C'è un duplicato|Ci sono duplicati}} di questo file",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Avviso sconosciuto con codice \"$1\"",
-	"bs-upload-uploadwarningdialog-intro": "Sono stati registrati questi avvisi durante il caricamento del file"
+	"bs-upload-uploadwarningdialog-intro": "Sono stati registrati questi avvisi durante il caricamento del file",
+	"bs-upload-uploadwarningdialog-outro": "Premi \"{{int:bs-extjs-ok}}\" per ignorare gli avvisi e caricare il file, upload file, premi \"{{int:bs-extjs-cancel}}\" per tornare al modulo di caricamento"
 }

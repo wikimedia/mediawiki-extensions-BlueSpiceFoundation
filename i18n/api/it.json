@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"GpieroMW",
 			"Stefano",
 			"TheRukk",
 			"Tizven",
@@ -65,5 +66,6 @@
 	"apihelp-bs-category-treestore-description": "Elenca le sottocategorie di una specifica categoria",
 	"apihelp-bs-js-var-config-param-func": "Funzione di configurazione da eseguire: has|get",
 	"apihelp-bs-linker-summary": "Restituisce collegamento alle pagine generate da Linker",
-	"apihelp-bs-linker-description": "Restituisce collegamento alle pagine generate da Linker"
+	"apihelp-bs-linker-description": "Restituisce collegamento alle pagine generate da Linker",
+	"bs-api-task-taskdata-help": "[$1 Schema], [$2 esempi di parametri]"
 }

@@ -3,6 +3,7 @@
 		"authors": [
 			"Beta16",
 			"Dansita",
+			"GpieroMW",
 			"LACLARETTA",
 			"Macofe",
 			"PeppeAeco",
@@ -84,5 +85,7 @@
 	"bs-extjs-flyout-tab-grid-title": "Passa alla vista dettaglio",
 	"bs-extjs-flyout-add-title": "Clicca qui per aggiungere un nuovo elemento",
 	"bs-extjs-flyout-add-label": "Aggiungi elemento",
-	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine"
+	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine",
+	"bs-pagecollection-prefix": "Raccolta di pagine",
+	"bs-extjs-pageexport-success-text": "Raccolta di pagine esportata in $1"
 }

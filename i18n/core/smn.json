@@ -15,5 +15,6 @@
 	"bs-graphicallist-action-close": "Toopâ",
 	"bs-userbar_loginswitch_logout": "Čáládât olgos",
 	"bs-userbar_loginswitch_login": "Čáládât siisâ",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, hiärrá $2|Hei, rovvá $2|Hei $2}}."
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, hiärrá $2|Hei, rovvá $2|Hei $2}}.",
+	"bs-viewtagerrorlist-legend": "$1 - Feilâ"
 }
