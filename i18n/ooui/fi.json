@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pyscowicz",
-			"Markus Mikkonen"
+			"Markus Mikkonen",
+			"Pyscowicz"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Lisää uusi...",

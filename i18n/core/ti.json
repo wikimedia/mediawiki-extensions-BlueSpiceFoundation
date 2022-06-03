@@ -20,5 +20,12 @@
 	"bs-export-menu-print-text": "ሕተም",
 	"bs-graphicallist-action-close": "ዕጸው",
 	"bs-graphicallist-action-list": "ዝርዝር",
-	"bs-graphicallist-action-preview": "ቅድመ ትርኢት"
+	"bs-graphicallist-action-preview": "ቅድመ ትርኢት",
+	"bs-years-duration": "{{PLURAL:$1|ሓደ ዓመት|$1 ዓመታት}}",
+	"bs-months-duration": "{{PLURAL:$1|ሓደ ወርሒ|$1 ኣዋርሕ}}",
+	"bs-weeks-duration": "{{PLURAL:$1|ሓደ ሰሙን|$1 ሰሙናት}}",
+	"bs-days-duration": "{{PLURAL:$1|ሓደ መዓልቲ|$1 መዓልታት}}",
+	"bs-hours-duration": "{{PLURAL:$1|ሓደ ሰዓት|$1 ሰዓታት}}",
+	"bs-mins-duration": "{{PLURAL:$1|ሓንቲ ደቒቕ|$1 ደቓይቕ}}",
+	"bs-secs-duration": "{{PLURAL:$1|ሓደ ካልኢት|$1 ካልኢታት}}"
 }

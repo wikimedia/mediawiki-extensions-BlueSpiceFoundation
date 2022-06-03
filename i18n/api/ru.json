@@ -6,17 +6,18 @@
 			"DDPAT",
 			"DmitTrix",
 			"Facenapalm",
+			"Gulka.nik",
 			"Happy13241",
 			"INS Pirat",
+			"Ice bulldog",
 			"Movses",
 			"Okras",
 			"Radmir Far",
 			"Redredsonia",
 			"Romanko Mikhail",
 			"Vlad5250",
-			"Краснорядцева Елена",
-			"Ice bulldog",
-			"WindEwriX"
+			"WindEwriX",
+			"Краснорядцева Елена"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Перечисляет все файлы из файлового бэкэнда. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
@@ -80,5 +81,11 @@
 	"apihelp-bs-categorylinks-store-param-page-id": "Идентификатор страницы",
 	"apihelp-bs-templatelinks-store-param-page-id": "Идентификатор страницы",
 	"apihelp-bs-linker-summary": "Возвращает ссылки на страницы, созданные Linker",
-	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker"
+	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker",
+	"apihelp-bs-filebackend-store-summary": "Перечисляет все файлы из файлового бэкэнда. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
+	"apihelp-bs-user-store-description": "Перечисляет всех пользователей из базы данных. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
+	"apihelp-bs-user-store-summary": "Перечисляет всех пользователей из базы данных. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
+	"apihelp-bs-category-store-description": "Перечисляет все категории. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
+	"apihelp-bs-category-store-summary": "Перечисляет все категории. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
+	"apihelp-bs-adminuser-store-description": "Перечисляет всех пользователей из базы данных с дополнительными конфиденциальными данными. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS."
 }

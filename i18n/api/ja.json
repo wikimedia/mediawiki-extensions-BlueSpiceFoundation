@@ -9,8 +9,8 @@
 			"Rrock9312",
 			"Shirayuki",
 			"Suyama",
-			"カッパ鳥",
-			"Yamagata Yusuke"
+			"Yamagata Yusuke",
+			"カッパ鳥"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "ファイルバックエンドからすべてのファイルを一覧表示します。並び替え、フィルタおよびページ区切りができます。ExtJS Store 引数を実装します。",
