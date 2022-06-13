@@ -9,12 +9,14 @@
 	"bs-extjs-cancel": "Anular",
 	"bs-extjs-yes": "Yes",
 	"bs-extjs-no": "No",
+	"bs-extjs-save": "Konservez",
 	"bs-extjs-delete": "Efacar",
 	"bs-extjs-add": "Adjuntez",
 	"bs-extjs-edit": "Redaktar",
 	"bs-extjs-error": "Eroro",
 	"bs-extjs-confirm": "Konfirmez",
 	"bs-extjs-loading": "Karganta...",
+	"bs-extjs-reset": "Restaurez",
 	"bs-extjs-close": "Klozez",
 	"bs-extjs-label-user": "Uzero",
 	"bs-extjs-label-group": "Grupo",
@@ -25,5 +27,6 @@
 	"bs-extjs-filter-greater-than": "plu granda kam",
 	"bs-extjs-filter-bool-yes": "yes",
 	"bs-extjs-categorytree-title": "Kategorii",
+	"bs-extjs-pageexport-list-format-link-label": "Ligilo",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi"
 }
