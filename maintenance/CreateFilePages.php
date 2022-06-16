@@ -71,5 +71,5 @@ class CreateFilePages extends Maintenance {
 	}
 }
 
-$maintClass = 'CreateFilePages';
+$maintClass = CreateFilePages::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

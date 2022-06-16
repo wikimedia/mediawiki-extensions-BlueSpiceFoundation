@@ -133,5 +133,5 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 	}
 }
 
-$maintClass = 'BSImportFiles';
+$maintClass = BSImportFiles::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

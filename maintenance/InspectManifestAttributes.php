@@ -23,5 +23,5 @@ class InspectManifestAttributes extends BSMaintenance {
 	}
 }
 
-$maintClass = 'InspectManifestAttributes';
+$maintClass = InspectManifestAttributes::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

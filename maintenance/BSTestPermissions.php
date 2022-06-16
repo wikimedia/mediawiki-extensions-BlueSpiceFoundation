@@ -78,5 +78,5 @@ class BSTestPermissions extends BSMaintenance {
 
 }
 
-$maintClass = 'BSTestPermissions';
+$maintClass = BSTestPermissions::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

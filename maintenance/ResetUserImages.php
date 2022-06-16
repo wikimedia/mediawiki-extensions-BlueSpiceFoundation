@@ -39,5 +39,5 @@ class ResetUserImages extends Maintenance {
 	}
 }
 
-$maintClass = "ResetUserImages";
+$maintClass = ResetUserImages::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

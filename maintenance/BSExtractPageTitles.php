@@ -53,5 +53,5 @@ class BSExtractPageTitles extends BSMaintenance {
 	}
 }
 
-$maintClass = 'BSExtractPageTitles';
+$maintClass = BSExtractPageTitles::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

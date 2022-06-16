@@ -110,5 +110,5 @@ class ConfirmUserEMail extends Maintenance {
 
 }
 
-$maintClass = 'ConfirmUserEMail';
+$maintClass = ConfirmUserEMail::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
