@@ -78,5 +78,5 @@ class TestMail extends BSMaintenance {
 	}
 }
 
-$maintClass = 'TestMail';
+$maintClass = TestMail::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

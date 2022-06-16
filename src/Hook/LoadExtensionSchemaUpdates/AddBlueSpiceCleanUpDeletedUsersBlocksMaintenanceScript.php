@@ -10,9 +10,7 @@ class AddBlueSpiceCleanUpDeletedUsersBlocksMaintenanceScript extends LoadExtensi
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$this->updater->addPostDatabaseUpdateMaintenance(
-			'BSCleanUpDeletedUsersBlocks'
-		);
+		$this->updater->addPostDatabaseUpdateMaintenance( \BSCleanUpDeletedUsersBlocks::class );
 		return true;
 	}
 

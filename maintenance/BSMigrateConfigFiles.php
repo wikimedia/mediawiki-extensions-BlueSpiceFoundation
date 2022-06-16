@@ -80,5 +80,5 @@ class BSMigrateConfigFiles extends LoggedUpdateMaintenance {
 	}
 }
 
-$maintClass = 'BSMigrateConfigFiles';
+$maintClass = BSMigrateConfigFiles::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -10,9 +10,7 @@ class AddBlueSpiceUserPropertiesMigrationMaintenanceScript extends LoadExtension
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$this->updater->addPostDatabaseUpdateMaintenance(
-			'BSMigrateUserProperties'
-		);
+		$this->updater->addPostDatabaseUpdateMaintenance( \BSMigrateUserProperties::class );
 		return true;
 	}
 
