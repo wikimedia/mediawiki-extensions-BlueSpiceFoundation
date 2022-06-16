@@ -157,5 +157,5 @@ class BSRemoteAPIBase extends BSMaintenance {
 	}
 }
 
-$maintClass = 'BSRemoteAPIBase';
+$maintClass = BSRemoteAPIBase::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

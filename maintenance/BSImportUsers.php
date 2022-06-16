@@ -141,5 +141,5 @@ class BSImportUsers extends BSMaintenance {
 
 }
 
-$maintClass = 'BSImportUsers';
+$maintClass = BSImportUsers::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

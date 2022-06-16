@@ -66,5 +66,5 @@ class BSExportUsers extends BSMaintenance {
 	}
 }
 
-$maintClass = 'BSExportUsers';
+$maintClass = BSExportUsers::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

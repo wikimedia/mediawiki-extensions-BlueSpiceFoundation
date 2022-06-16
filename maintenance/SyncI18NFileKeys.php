@@ -39,5 +39,5 @@ class SyncI18NFileKeys extends BSMaintenance {
 	}
 }
 
-$maintClass = "SyncI18NFileKeys";
+$maintClass = SyncI18NFileKeys::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

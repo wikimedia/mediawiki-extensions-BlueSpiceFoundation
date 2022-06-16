@@ -116,5 +116,5 @@ class BSFileHashCheck extends BSMaintenance {
 
 }
 
-$maintClass = 'BSFileHashCheck';
+$maintClass = BSFileHashCheck::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

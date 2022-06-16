@@ -70,6 +70,5 @@ class AddFileiconsToMediaWiki extends BSMaintenance {
 
 }
 
-$maintClass = 'AddFileiconsToMediaWiki';
-
+$maintClass = AddFileiconsToMediaWiki::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

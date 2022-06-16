@@ -78,5 +78,5 @@ class FixActorMigration extends Maintenance {
 	}
 }
 
-$maintClass = 'FixActorMigration';
+$maintClass = FixActorMigration::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -123,5 +123,5 @@ class PrepareActorMigration extends Maintenance {
 	}
 }
 
-$maintClass = 'PrepareActorMigration';
+$maintClass = PrepareActorMigration::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

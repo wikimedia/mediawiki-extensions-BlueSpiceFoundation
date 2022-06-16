@@ -151,5 +151,5 @@ class ModifyExportXML extends BSMaintenance {
 	}
 }
 
-$maintClass = 'ModifyExportXML';
+$maintClass = ModifyExportXML::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

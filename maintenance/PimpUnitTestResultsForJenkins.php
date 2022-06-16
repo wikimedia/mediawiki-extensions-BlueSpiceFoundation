@@ -58,5 +58,5 @@ class BSPimpUnitTestResultsForJenkins extends BSMaintenance {
 	}
 }
 
-$maintClass = 'BSPimpUnitTestResultsForJenkins';
+$maintClass = BSPimpUnitTestResultsForJenkins::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
