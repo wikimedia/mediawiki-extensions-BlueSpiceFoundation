@@ -8,7 +8,8 @@
 			"Patric Wirth",
 			"Robby",
 			"Shirayuki",
-			"Umherirrender"
+			"Umherirrender",
+			"Verdy p"
 		]
 	},
 	"bluespicefoundation-desc": "{{desc|name=BlueSpiceFoundation|url=https://www.mediawiki.org/wiki/BlueSpice}}",
@@ -98,8 +99,8 @@
 	"bs-graphicallist-action-close": "Tooltip for the button to close graphicalList view\n{{Identical|Close}}",
 	"bs-graphicallist-action-list": "Tooltip for the button to show the graphicalList content as list\n{{Identical|List}}",
 	"bs-graphicallist-action-preview": "Tooltip for the button to show the graphicalList content as preview\n{{Identical|Preview}}",
-	"bs-bluespice-mediawiki": "Name of the BlueSpice Mediawiki distribution\n{{Identical|BlueSpice MediaWiki}}",
-	"bs-bluespice": "Name of the BlueSpice Mediawiki distribution (short)\n{{Identical|BlueSpice}}",
+	"bs-bluespice-mediawiki": "Name of the BlueSpice MediaWiki distribution\n{{Identical|BlueSpice MediaWiki}}",
+	"bs-bluespice": "Name of the BlueSpice MediaWiki distribution (short)\n{{Identical|BlueSpice}}",
 	"prefs-bluespice": "{{notranslate}}\nUsed in [[Special:Preferences]], tab \"BlueSpice\"\n\nRefers to {{msg-mw|Bs-bluespice}}",
 	"action-wikiadmin": "Special permission used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration etc...\nShould only be given to the \"sysop\" group.\n{{doc-action|wikiadmin}}",
 	"right-wikiadmin": "Special permission used in many BlueSpice extension for potential dangerous administrative tasks such managing users, permissions, global configuration, etc.\n\nShould only be given to the \"sysop\" group.\n\n{{doc-right|wikiadmin}}",
