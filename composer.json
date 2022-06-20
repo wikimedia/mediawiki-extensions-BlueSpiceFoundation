@@ -21,7 +21,7 @@
 	"require": {
 		"ext-curl": "*",
 		"ext-gd": "*",
-		"param-processor/param-processor": "1.10.*",
+		"param-processor/param-processor": "1.12.*",
 		"composer/installers": "~1.0",
 		"mwstake/mediawiki-component-commonuserinterface": "~3",
 		"mwstake/mediawiki-component-runjobstrigger": "~2",
