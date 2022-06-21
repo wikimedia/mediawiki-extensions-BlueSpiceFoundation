@@ -40,44 +40,9 @@ class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$oDbw = $this->db;
-		$oDbw->insert( 'page', [
-			'page_title' => "Dummy",
-			'page_namespace' => 12,
-			'page_restrictions' => '',
-			'page_latest' => 1,
-			'page_len' => 1,
-			'page_random' => wfRandom(),
-			'page_touched' => $oDbw->timestamp(),
-			'page_is_redirect' => 0,
-			'page_is_new' => 1,
-		] );
-
-		$oDbw->insert( 'page', [
-			'page_title' => "Dummy/First",
-			'page_namespace' => 12,
-			'page_restrictions' => '',
-			'page_random' => 0,
-			'page_latest' => 1,
-			'page_len' => 1,
-			'page_random' => wfRandom(),
-			'page_touched' => $oDbw->timestamp(),
-			'page_is_redirect' => 0,
-			'page_is_new' => 1,
-		] );
-
-		$oDbw->insert( 'page', [
-			'page_title' => "Dummy/Second",
-			'page_namespace' => 12,
-			'page_restrictions' => '',
-			'page_random' => 0,
-			'page_latest' => 1,
-			'page_len' => 1,
-			'page_random' => wfRandom(),
-			'page_touched' => $oDbw->timestamp(),
-			'page_is_redirect' => 0,
-			'page_is_new' => 1,
-		] );
+		$this->insertPage( 'Help:Dummy' );
+		$this->insertPage( 'Help:Dummy/First' );
+		$this->insertPage( 'Help:Dummy/Second' );
 	}
 
 	protected function createStoreFixtureData() {
