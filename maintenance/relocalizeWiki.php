@@ -239,6 +239,5 @@ class RelocalizeWiki extends Maintenance {
 	}
 }
 
-$maintClass = 'RelocalizeWiki';
-
+$maintClass = RelocalizeWiki::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

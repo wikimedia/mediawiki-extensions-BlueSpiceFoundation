@@ -135,5 +135,5 @@ class BSExtractFiles extends BSMaintenance {
 
 }
 
-$maintClass = 'BSExtractFiles';
+$maintClass = BSExtractFiles::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

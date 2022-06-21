@@ -10,9 +10,7 @@ class AddBlueSpiceConfigFilesMigrationMaintenanceScript extends LoadExtensionSch
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$this->updater->addPostDatabaseUpdateMaintenance(
-			'BSMigrateConfigFiles'
-		);
+		$this->updater->addPostDatabaseUpdateMaintenance( \BSMigrateConfigFiles::class );
 		return true;
 	}
 

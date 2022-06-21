@@ -53,5 +53,5 @@ class DeployJavaWebApps extends BSMaintenance {
 	}
 }
 
-$maintClass = 'DeployJavaWebApps';
+$maintClass = DeployJavaWebApps::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

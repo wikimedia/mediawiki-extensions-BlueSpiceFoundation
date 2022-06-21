@@ -70,5 +70,5 @@ class FixNS extends Maintenance {
 	}
 }
 
-$maintClass = "FixNS";
+$maintClass = FixNS::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
