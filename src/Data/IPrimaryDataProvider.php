@@ -2,13 +2,8 @@
 
 namespace BlueSpice\Data;
 
-interface IPrimaryDataProvider {
-
-	/**
-	 *
-	 * @param ReaderParams $params Having it here allows us to prefilter and
-	 * tweak performance
-	 * @return Record[]
-	 */
-	public function makeData( $params );
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+interface IPrimaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider {
 }

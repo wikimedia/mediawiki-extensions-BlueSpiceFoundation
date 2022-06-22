@@ -2,12 +2,12 @@
 
 namespace BlueSpice\Data\Entity;
 
-use BlueSpice\Data\FieldType;
 use BlueSpice\EntityConfig;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
 
-class Schema extends \BlueSpice\Data\Schema {
+class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
 	public const STORABLE = 'storeable';
 	public const INDEXABLE = 'indexable';
 

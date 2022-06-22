@@ -2,12 +2,8 @@
 
 namespace BlueSpice\Data;
 
-interface ISecondaryDataProvider {
-
-	/**
-	 *
-	 * @param \BlueSpice\Data\Record[] $dataSets
-	 * @return \BlueSpice\Data\Record[]
-	 */
-	public function extend( $dataSets );
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+interface ISecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\ISecondaryDataProvider {
 }

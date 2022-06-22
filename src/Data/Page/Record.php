@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Page;
 
-class Record extends \BlueSpice\Data\Record {
+class Record extends \MWStake\MediaWiki\Component\DataStore\Record {
 	public const ID = 'page_id';
 	public const NS = 'page_namespace';
 	public const TITLE = 'page_title';

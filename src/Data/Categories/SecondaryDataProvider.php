@@ -2,10 +2,9 @@
 
 namespace BlueSpice\Data\Categories;
 
-use BlueSpice\Data\SecondaryDataProvider as SecondaryDataProviderBase;
 use Title;
 
-class SecondaryDataProvider extends SecondaryDataProviderBase {
+class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
 
 	/**
 	 *
