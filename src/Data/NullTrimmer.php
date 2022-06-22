@@ -2,14 +2,8 @@
 
 namespace BlueSpice\Data;
 
-class NullTrimmer implements ITrimmer {
-
-	/**
-	 *
-	 * @param \BlueSpice\Data\Record[] $dataSets
-	 * @return \BlueSpice\Data\Record[]
-	 */
-	public function trim( $dataSets ) {
-		return $dataSets;
-	}
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+class NullTrimmer extends \MWStake\MediaWiki\Component\DataStore\NullTrimmer {
 }

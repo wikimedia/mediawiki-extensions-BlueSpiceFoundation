@@ -2,12 +2,8 @@
 
  namespace BlueSpice\Data;
 
- interface ITrimmer {
-
-	 /**
-	  *
-	  * @param \BlueSpice\Data\Record[] $dataSets
-	  * @return \BlueSpice\Data\Record[]
-	  */
-	 public function trim( $dataSets );
+ /**
+  * @deprecated since 4.2. Use mediawiki-component-datastore
+  */
+ interface ITrimmer extends \MWStake\MediaWiki\Component\DataStore\ITrimmer {
  }

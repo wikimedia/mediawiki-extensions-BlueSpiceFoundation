@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Categories;
 
-use BlueSpice\Data\Record as RecordBase;
+use MWStake\MediaWiki\Component\DataStore\Record as RecordBase;
 
 class Record extends RecordBase {
 	public const CAT_ID = 'cat_id';

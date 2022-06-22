@@ -2,14 +2,13 @@
 
 namespace BlueSpice\Data\Entity;
 
-use BlueSpice\Data\IWriter as IBaseWriter;
-use BlueSpice\Data\RecordSet;
 use BlueSpice\Entity;
 use Exception;
 use IContextSource;
+use MWStake\MediaWiki\Component\DataStore\RecordSet;
 use Status;
 
-abstract class Writer implements IWriter, IBaseWriter {
+abstract class Writer implements IWriter, \MWStake\MediaWiki\Component\DataStore\IWriter {
 
 	/**
 	 *

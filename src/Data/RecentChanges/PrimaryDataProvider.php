@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
-use BlueSpice\Data\IPrimaryDataProvider;
+use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 

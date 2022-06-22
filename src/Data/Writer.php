@@ -2,52 +2,8 @@
 
 namespace BlueSpice\Data;
 
-use MediaWiki\MediaWikiServices;
-
-abstract class Writer implements IWriter {
-
-	/**
-	 *
-	 * @var \IContextSource
-	 */
-	protected $context = null;
-
-	/**
-	 *
-	 * @var \Config
-	 */
-	protected $config = null;
-
-	/**
-	 *
-	 * @param \IContextSource|null $context
-	 * @param \Config|null $config
-	 */
-	public function __construct( \IContextSource $context = null, \Config $config = null ) {
-		$this->context = $context;
-		if ( $this->context === null ) {
-			$this->context = \RequestContext::getMain();
-		}
-
-		$this->config = $config;
-		if ( $this->config === null ) {
-			$this->config = MediaWikiServices::getInstance()->getMainConfig();
-		}
-	}
-
-	/**
-	 *
-	 * @return \User
-	 */
-	protected function getUser() {
-		return $this->context->getUser();
-	}
-
-	/**
-	 *
-	 * @return \Title
-	 */
-	protected function getTitle() {
-		return $this->context->getTitle();
-	}
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+abstract class Writer extends \MWStake\MediaWiki\Component\DataStore\Writer {
 }

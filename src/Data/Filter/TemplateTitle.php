@@ -2,12 +2,8 @@
 
 namespace BlueSpice\Data\Filter;
 
-class TemplateTitle extends Title {
-	/**
-	 *
-	 * @return int
-	 */
-	protected function getDefaultTitleNamespace() {
-		return NS_TEMPLATE;
-	}
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+class TemplateTitle extends \MWStake\MediaWiki\Component\DataStore\Filter\TemplateTitle {
 }

@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Data\Settings;
 
-use BlueSpice\Data\IPrimaryDataProvider;
 use FormatJson;
+use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
