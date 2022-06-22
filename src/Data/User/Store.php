@@ -2,10 +2,11 @@
 
 namespace BlueSpice\Data\User;
 
-use BlueSpice\Data\NoWriterException;
+use MWStake\MediaWiki\Component\DataStore\IStore;
+use MWStake\MediaWiki\Component\DataStore\NoWriterException;
 use Wikimedia\Rdbms\LoadBalancer;
 
-class Store implements \BlueSpice\Data\IStore {
+class Store implements IStore {
 
 	/**
 	 *

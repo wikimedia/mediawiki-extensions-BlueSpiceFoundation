@@ -2,15 +2,8 @@
 
 namespace BlueSpice\Data;
 
-interface IStore {
-
-	/**
-	 * @return IWriter
-	 */
-	public function getWriter();
-
-	/**
-	 * @return IReader
-	 */
-	public function getReader();
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+interface IStore extends \MWStake\MediaWiki\Component\DataStore\IStore {
 }

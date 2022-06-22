@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
-use BlueSpice\Data\FieldType;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
 
-class Schema extends \BlueSpice\Data\Schema {
+class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
 	public function __construct() {
 		parent::__construct( [
 			Record::USER_NAME => [

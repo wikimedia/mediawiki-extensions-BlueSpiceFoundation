@@ -2,27 +2,8 @@
 
 namespace BlueSpice\Data;
 
-class RecordConverter {
-
-	/**
-	 *
-	 * @var Record[]
-	 */
-	protected $records = [];
-
-	/**
-	 *
-	 * @param Record[] $records
-	 */
-	public function __construct( $records ) {
-		$this->records = $records;
-	}
-
-	public function convertToRawData() {
-		$rawData = [];
-		foreach ( $this->records as $record ) {
-			$rawData[] = $record->getData();
-		}
-		return $rawData;
-	}
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+class RecordConverter extends \MWStake\MediaWiki\Component\DataStore\RecordConverter {
 }
