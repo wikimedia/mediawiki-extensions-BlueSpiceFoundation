@@ -286,12 +286,12 @@ class GenericHandler {
 	protected function addResourceLoaderModules() {
 		$modules = $this->tag->getResourceLoaderModules();
 		foreach ( $modules as $moduleName ) {
-			$this->parser->getOutput()->addModules( $moduleName );
+			$this->parser->getOutput()->addModules( [ $moduleName ] );
 		}
 
 		$moduleStyles = $this->tag->getResourceLoaderModuleStyles();
 		foreach ( $moduleStyles as $moduleStyleName ) {
-			$this->parser->getOutput()->addModuleStyles( $moduleStyleName );
+			$this->parser->getOutput()->addModuleStyles( [ $moduleStyleName ] );
 		}
 	}
 
