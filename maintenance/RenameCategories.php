@@ -251,6 +251,7 @@ $matches = 0;
 $inarticlematches = 0;
 
 $namespaceInfo = \MediaWiki\MediaWikiServices::getInstance()->getNamespaceInfo();
+$wikiPageFactory = \MediaWiki\MediaWikiServices::getInstance()->getWikiPageFactory();
 foreach ( $res as $row ) {
 	$row = (array)$row;
 	$cur_title = $row['page_title'];
@@ -287,7 +288,7 @@ foreach ( $res as $row ) {
 	}
 
 	// Fetch text
-	$wikipage = WikiPage::factory( $title );
+	$wikipage = $wikiPageFactory->newFromTitle( $title );
 	$text = ContentHandler::getContentText( $wikipage->getContent() );
 	if ( $text == '' ) {
 		echo 'empty!';
@@ -437,7 +438,7 @@ foreach ( $res as $row ) {
 	$oldarticle = new Article( $oldtitle );
 	// Article::fetchContent() is deprecated.
 	// Replaced by WikiPage::getContent()::getNativeData()
-	$oldwikipage = WikiPage::factory( $oldtitle );
+	$oldwikipage = $wikiPageFactory->newFromTitle( $oldtitle );
 	$oldarticlecontent = ContentHandler::getContentText( $oldwikipage->getContent() );
 	$newtitletext = preg_replace( $oldtitlepatterns, $newtitlepatterns, $oldtitletext, -1, $repcount );
 	echo "$oldtitle" . PHP_EOL . "=========================" . PHP_EOL;

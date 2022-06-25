@@ -29,7 +29,8 @@ class BSApiUploadLicenseStoreTest extends BSApiExtJSStoreTestBase {
 
 	protected function createStoreFixtureData() {
 		/*$oLicensesTitle = \Title::makeTitle( NS_MEDIAWIKI, 'Licenses' );
-		$oWikiPage = \WikiPage::factory( $oLicensesTitle );
+		$oWikiPage = \MediaWiki\MediaWikiServices::getInstance()->getWikiPageFactory()
+			->newFromTitle( $oLicensesTitle );
 
 		$sLicenses = "* Dummy | Dummy license\n* Dummy2 | Dummy2 license";
 		$oUser = \User::newFromName( 'UTSysop' );

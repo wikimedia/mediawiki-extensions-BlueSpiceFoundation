@@ -145,6 +145,7 @@ $wgGroupPermissions['*']['suppressredirect'] = true;
 $hits = 0;
 
 $namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 
 foreach ( $res as $row ) {
 	$row = (array)$row;
@@ -182,7 +183,7 @@ foreach ( $res as $row ) {
 	}
 
 	// Fetch text
-	$wikipage = WikiPage::factory( $title );
+	$wikipage = $wikiPageFactory->newFromTitle( $title );
 	$text = ContentHandler::getContentText( $wikipage->getContent() );
 	if ( $text == '' ) {
 		echo 'empty!';

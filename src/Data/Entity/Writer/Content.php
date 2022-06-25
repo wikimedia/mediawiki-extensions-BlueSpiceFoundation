@@ -6,8 +6,8 @@ use BlueSpice\Data\Entity\Writer;
 use BlueSpice\Entity;
 use Exception;
 use FormatJson;
+use MediaWiki\MediaWikiServices;
 use Status;
-use WikiPage;
 
 abstract class Content extends Writer {
 	/**
@@ -32,7 +32,7 @@ abstract class Content extends Writer {
 			return Status::newFatal( 'No ID generated' );
 		}
 		$entity->set( Entity::ATTR_ID, $data['id'] );
-		$wikiPage = WikiPage::factory( $entity->getTitle() );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $entity->getTitle() );
 		try {
 			$status = $wikiPage->doEditContent(
 				new $contentClass( FormatJson::encode( $data ) ),

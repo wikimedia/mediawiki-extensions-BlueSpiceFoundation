@@ -817,7 +817,7 @@ class BsFileSystemHelper {
 				return Status::newGood();
 			}
 
-			$oPage = WikiPage::factory( $oRepoFile->getTitle() );
+			$oPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $oRepoFile->getTitle() );
 			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
 
 			return Status::newGood( $oRepoFile->getUrl(), true );

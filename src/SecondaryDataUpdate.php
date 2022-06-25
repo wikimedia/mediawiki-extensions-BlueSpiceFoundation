@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 use Content;
 use Exception;
+use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
 use WikiPage;
@@ -22,7 +23,7 @@ abstract class SecondaryDataUpdate implements ISecondaryDataUpdate {
 	 */
 	public function run( Title $title ) {
 		try {
-			$wikiPage = WikiPage::factory( $title );
+			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 			$content = $wikiPage->getContent();
 			if ( !$content ) {
 				return Status::newFatal( 'WikiPage does not have a content' );

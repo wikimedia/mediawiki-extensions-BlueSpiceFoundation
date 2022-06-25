@@ -133,7 +133,8 @@ class BsArticleHelper {
 	 * @return Title - returns redirect target title or null
 	 */
 	public function getTitleFromRedirectRecurse() {
-		$oWikiPage = WikiPage::newFromID( $this->oTitle->getArticleID() );
+		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()
+			->newFromID( $this->oTitle->getArticleID() );
 		if ( !$oWikiPage ) {
 			return null;
 		}

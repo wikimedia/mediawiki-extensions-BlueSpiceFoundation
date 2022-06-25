@@ -4,8 +4,8 @@ namespace BlueSpice\Data\Entity\Reader;
 
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\EntityConfig;
+use MediaWiki\MediaWikiServices;
 use Title;
-use WikiPage;
 
 abstract class Content extends \BlueSpice\Data\Entity\Reader {
 	/**
@@ -25,7 +25,7 @@ abstract class Content extends \BlueSpice\Data\Entity\Reader {
 			return null;
 		}
 
-		$content = WikiPage::factory( $title )->getContent();
+		$content = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->getContent();
 		if ( !$content ) {
 			return null;
 		}

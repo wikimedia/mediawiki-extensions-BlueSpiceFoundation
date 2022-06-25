@@ -6,7 +6,6 @@ use BsNamespaceHelper;
 use Content;
 use MediaWiki\MediaWikiServices;
 use Title;
-use WikiPage;
 
 class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 
@@ -43,7 +42,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		);
 
 		$title = Title::newFromID( $dataSet->get( Record::PAGE_ID ) );
-		$wikiPage = WikiPage::factory( $title );
+		$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 
 		if ( $wikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$wikiPageContent = $wikiPage->getContent();

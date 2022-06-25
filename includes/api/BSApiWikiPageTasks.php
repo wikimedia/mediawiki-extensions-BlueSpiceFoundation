@@ -314,7 +314,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		}
 
 		// get page and content
-		$oWikiPage = WikiPage::factory( $title );
+		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
 			$oContent = $oWikiPage->getContent();
 			$wikitext = '';
@@ -464,7 +464,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$oResponse = $this->makeStandardReturn();
 
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );
-		$oWikiPage = WikiPage::factory( $oTitle );
+		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $oTitle );
 		$oContent = $oWikiPage->getContent();
 		if ( $oContent instanceof WikitextContent === false ) {
 			$oResponse->message =

@@ -31,7 +31,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	 */
 	public function testPing() {
 		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
-		$oWikiPage = \WikiPage::factory( $oTitle );
+		$oWikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $oTitle );
 
 		$oResponse = $this->executeTask(
 			'ping',

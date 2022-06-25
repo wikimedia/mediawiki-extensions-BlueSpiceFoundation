@@ -2,6 +2,8 @@
 require_once 'BSMaintenance.php';
 echo "Relocalize Wiki...\n";
 
+use MediaWiki\MediaWikiServices;
+
 class RelocalizeWiki extends Maintenance {
 	public $bDryRun = false;
 	public $aFromNs = [];
@@ -80,11 +82,12 @@ class RelocalizeWiki extends Maintenance {
 			$aArticleIds[] = $row->page_id;
 		}
 
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $aArticleIds as $iArticleId ) {
 			$this->bEdited = false;
 			// Article::fetchContent() is deprecated.
 			// Replaced by WikiPage::getContent()::getNativeData()
-			$oWikiPage = WikiPage::newFromID( $iArticleId );
+			$oWikiPage = $wikiPageFactory->newFromID( $iArticleId );
 			$sArticleContent = ContentHandler::getContentText( $oWikiPage->getContent() );
 			ob_start();
 			$this->sOutput = '';

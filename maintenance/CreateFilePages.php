@@ -2,6 +2,8 @@
 
 require_once dirname( dirname( dirname( __DIR__ ) ) ) . "/maintenance/Maintenance.php";
 
+use MediaWiki\MediaWikiServices;
+
 class CreateFilePages extends Maintenance {
 
 	/**
@@ -44,6 +46,7 @@ class CreateFilePages extends Maintenance {
 			return;
 		}
 
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $res as $row ) {
 			$this->output( $row->img_name . PHP_EOL );
 
@@ -52,7 +55,7 @@ class CreateFilePages extends Maintenance {
 			}
 
 			$title = Title::makeTitle( NS_FILE, $row->img_name );
-			$wikipage = WikiPage::factory( $title );
+			$wikipage = $wikiPageFactory->newFromTitle( $title );
 
 			$text = '-';
 			$comment = 'Restore file description page';

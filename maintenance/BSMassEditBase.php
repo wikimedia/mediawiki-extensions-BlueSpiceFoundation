@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class BSMassEditBase extends BSMaintenance {
 	protected $aFileMap = [];
 	protected $aPageNameMap = [];
@@ -25,12 +27,13 @@ class BSMassEditBase extends BSMaintenance {
 		$aTitles = $this->getTitleList();
 		$this->iTitleCount = count( $aTitles );
 
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $aTitles as $sTitle => $oTitle ) {
 			if ( $oTitle instanceof Title === false ) {
 				$this->error( "Invalid Title '$sTitle'!" );
 				continue;
 			}
-			$oWikiPage = WikiPage::factory( $oTitle );
+			$oWikiPage = $wikiPageFactory->newFromTitle( $oTitle );
 			$this->output( "\nModifying '{$oTitle->getPrefixedText()}'..." );
 			$oNewContent = $this->modifyContent( $oWikiPage->getContent(), $oWikiPage );
 			if ( $oNewContent instanceof Content === false ) {

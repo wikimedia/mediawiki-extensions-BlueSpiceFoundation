@@ -3,9 +3,9 @@
 namespace BlueSpice;
 
 use DeferredUpdates;
+use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
-use WikiPage;
 
 class SecondaryDataUpdater {
 	/**
@@ -62,7 +62,7 @@ class SecondaryDataUpdater {
 			$status->merge( $instanceStatus );
 		}
 		try {
-			$wikiPage = WikiPage::factory( $title );
+			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 			$content = $wikiPage->getContent();
 			if ( !$content ) {
 				$status->warning( 'WikiPage does not have a content' );

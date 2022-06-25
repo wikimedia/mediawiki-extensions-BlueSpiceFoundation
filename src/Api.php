@@ -39,7 +39,6 @@ use RequestContext;
 use Status;
 use Title;
 use User;
-use WikiPage;
 
 /**
  * Api base class in BlueSpice
@@ -193,7 +192,7 @@ abstract class Api extends ApiBase {
 		if ( $extendedContext->getTitle()->getNamespace() > -1 ) {
 			// Page does not have to exist, but it must be in a "real" NS
 			$context->setWikiPage(
-				WikiPage::factory( $context->getTitle() )
+				$this->getServices()->getWikiPageFactory()->newFromTitle( $context->getTitle() )
 			);
 		}
 

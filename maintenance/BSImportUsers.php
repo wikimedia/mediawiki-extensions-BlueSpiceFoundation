@@ -29,6 +29,7 @@ class BSImportUsers extends BSMaintenance {
 		$oDOM->recover = true;
 
 		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 
 		$oUserNodes = $oDOM->getElementsByTagName( 'user' );
 		foreach ( $oUserNodes as $oUserNode ) {
@@ -107,7 +108,7 @@ class BSImportUsers extends BSMaintenance {
 					$oUser->getUserPage()
 				);
 
-				$oWikiPage = WikiPage::factory( $oUser->getUserPage() );
+				$oWikiPage = $wikiPageFactory->newFromTitle( $oUser->getUserPage() );
 				$oEditStatus = $oWikiPage->doEditContent( $oContent, __CLASS__ );
 				if ( $oEditStatus->isOK() ) {
 					$this->output(

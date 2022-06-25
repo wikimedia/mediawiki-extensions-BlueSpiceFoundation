@@ -29,8 +29,8 @@ namespace BlueSpice;
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\IStore;
 use Config;
+use MediaWiki\MediaWikiServices;
 use Title;
-use WikiPage;
 
 class EntityFactory {
 	protected $storedById = [];
@@ -305,7 +305,7 @@ class EntityFactory {
 			return false;
 		}
 
-		$content = WikiPage::factory( $title )->getContent();
+		$content = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title )->getContent();
 		if ( !$content ) {
 			return false;
 		}
