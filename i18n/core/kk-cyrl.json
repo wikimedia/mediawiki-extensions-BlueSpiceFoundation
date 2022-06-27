@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Arystanbek",
-			"Габдулгани НИШ ХБН"
+			"Габдулгани НИШ ХБН",
+			"U.ayaao.p"
 		]
 	},
 	"bs-ns_main": "Беттер",
@@ -21,5 +22,6 @@
 	"bs-filesystemhelper-file-copy-error": "Бұл файлдың <code>$1</code> көшірмесін алуға болмайды",
 	"bs-filesystemhelper-upload-err-code": "Файл жүктелмеді:$1",
 	"bs-filesystemhelper-upload-base64-error": "Файл жүктеле алмайды",
-	"bs-filesystemhelper-upload-local-error-create": "Бұл файл  уики-де жасалынбайды"
+	"bs-filesystemhelper-upload-local-error-create": "Бұл файл  уики-де жасалынбайды",
+	"bs-navigation-contact": "Байланыс"
 }

@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nhatminh01"
+			"Nhatminh01",
+			"Minh Nguyen"
 		]
 	},
-	"bs-upload-upload-waitmessage": "Đang tải..."
+	"bs-upload-upload-waitmessage": "Đang tải lên…"
 }
