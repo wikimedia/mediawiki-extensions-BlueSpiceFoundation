@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
-			"Kareyac"
+			"Kareyac",
+			"No Sleep till Krupki"
 		]
 	},
-	"bs-extjs-pageSize": "Памер старонкі",
-	"bs-extjs-close": "Закрыць",
-	"bs-extjs-add": "Дадаць"
+	"bs-extjs-add": "Дадаць",
+	"bs-extjs-pageSize": "Запісаў на старонку",
+	"bs-extjs-close": "Закрыць"
 }

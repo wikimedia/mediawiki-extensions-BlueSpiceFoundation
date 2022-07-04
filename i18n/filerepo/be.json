@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Artsiom91"
+			"Artsiom91",
+			"No Sleep till Krupki"
 		]
 	},
-	"bs-filerepo-pagesize": "Памер старонкі"
+	"bs-filerepo-pagesize": "Запісаў на старонку"
 }
