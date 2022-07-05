@@ -42,6 +42,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 			),
 			'IsWindows' => wfIsWindows(),
 			'ArticlePreviewCaptureNotDefault' => $this->getArticlePreviewCaptureNotDefault(),
+			'PageCollectionPrefix' => wfMessage( 'bs-pagecollection-prefix' )->inContentLanguage()->plain()
 		];
 
 		if ( $this->getConfig()->get( 'TestSystem' ) ) {
