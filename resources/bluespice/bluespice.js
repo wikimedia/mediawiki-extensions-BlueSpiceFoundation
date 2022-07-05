@@ -57,3 +57,8 @@ var bs = ( function ( mw, $, undefined ) {
 
 // Attach to window and globally alias
 window.bs = window.blueSpice = bs;
+
+mw.hook( 'importOffice.collectionPrefix' ).add( function ( params ) {
+	var text = mw.config.get( 'bsgPageCollectionPrefix' );
+	params.prefix = text;
+} );
