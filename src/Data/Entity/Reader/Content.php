@@ -3,11 +3,12 @@
 namespace BlueSpice\Data\Entity\Reader;
 
 use BlueSpice\Content\Entity as EntityContent;
+use BlueSpice\Data\Entity\Reader;
 use BlueSpice\EntityConfig;
 use Title;
 use WikiPage;
 
-abstract class Content extends \BlueSpice\Data\Entity\Reader {
+abstract class Content extends Reader {
 	/**
 	 *
 	 * @param mixed $id
