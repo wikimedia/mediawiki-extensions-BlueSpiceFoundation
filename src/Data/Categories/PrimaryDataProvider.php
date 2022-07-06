@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Data\Categories;
 
-use BlueSpice\Data\IPrimaryDataProvider;
-use BlueSpice\Data\ReaderParams;
+use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use stdClass;
 use Title;
 use Wikimedia\Rdbms\IDatabase;

@@ -2,10 +2,9 @@
 
 namespace BlueSpice\Data\Categories;
 
-use BlueSpice\Data\FieldType;
-use BlueSpice\Data\Schema as SchemaBase;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
 
-class Schema extends SchemaBase {
+class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
 	public function __construct() {
 		parent::__construct( [
 			Record::CAT_ID => [

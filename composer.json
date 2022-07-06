@@ -28,7 +28,8 @@
 		"mwstake/mediawiki-component-alertbanners": "~2",
 		"mwstake/mediawiki-component-notifications": "~2",
 		"mwstake/mediawiki-component-manifestregistry": "~2",
-		"mwstake/mediawiki-component-utils": "~2"
+		"mwstake/mediawiki-component-utils": "~2",
+		"mwstake/mediawiki-component-datastore": "~1"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "39.0.0",

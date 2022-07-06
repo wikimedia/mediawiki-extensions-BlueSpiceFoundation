@@ -2,15 +2,8 @@
 
 namespace BlueSpice\Data;
 
-class NullSorter extends Sorter {
-
-	/**
-	 *
-	 * @param Record[] $dataSets
-	 * @param array $unsortableProps
-	 * @return Record[]
-	 */
-	public function sort( $dataSets, $unsortableProps = [] ) {
-		return $dataSets;
-	}
+/**
+ * @deprecated since 4.2. Use mediawiki-component-datastore
+ */
+class NullSorter extends \MWStake\MediaWiki\Component\DataStore\NullSorter {
 }

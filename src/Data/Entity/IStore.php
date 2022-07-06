@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Entity;
 
 use IContextSource;
 
-interface IStore extends \BlueSpice\Data\IStore {
+interface IStore extends \MWStake\MediaWiki\Component\DataStore\IStore {
 	/**
 	 * @param IContextSource|null $context
 	 * @return Writer
