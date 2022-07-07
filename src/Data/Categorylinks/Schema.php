@@ -2,9 +2,7 @@
 
 namespace BlueSpice\Data\Categorylinks;
 
-use MWStake\MediaWiki\Component\DataStore\FieldType;
-
-class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
+class Schema extends \BlueSpice\Data\Schema {
 	public function __construct() {
 		parent::__construct( [
 			Record::CATEGORY_TITLE => [

@@ -2,9 +2,7 @@
 
 namespace BlueSpice\Data\Categorylinks;
 
-use MWStake\MediaWiki\Component\DataStore\Record as RecordBase;
-
-class Record extends RecordBase {
+class Record extends \BlueSpice\Data\Record {
 	public const CATEGORY_TITLE = 'category_title';
 	public const CATEGORY_LINK = 'category_link';
 	public const CATEGORY_IS_EXPLICIT = 'category_is_explicit';
