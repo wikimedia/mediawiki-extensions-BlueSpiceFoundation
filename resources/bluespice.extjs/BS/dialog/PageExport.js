@@ -177,7 +177,7 @@ Ext.define( 'BS.dialog.PageExport', {
 	},
 
 	setTargetTitle: function () {
-		var text = mw.message( this.prefixMessageKey ).plain();
+		var text = mw.config.get( 'bsgPageCollectionPrefix' );
 		text += '/';
 		text += this.data.name;
 		this.targetTitle = mw.Title.newFromText( text, this.namespaceKey );
