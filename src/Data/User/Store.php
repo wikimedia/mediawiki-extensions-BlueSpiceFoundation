@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Data\User;
 
-use MWStake\MediaWiki\Component\DataStore\IStore;
-use MWStake\MediaWiki\Component\DataStore\NoWriterException;
+use BlueSpice\Data\IStore;
+use BlueSpice\Data\NoWriterException;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Store implements IStore {

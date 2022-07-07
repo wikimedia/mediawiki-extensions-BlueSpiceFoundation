@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Settings;
 
-use MWStake\MediaWiki\Component\DataStore\IStore;
+use BlueSpice\Data\IStore;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Store implements IStore {

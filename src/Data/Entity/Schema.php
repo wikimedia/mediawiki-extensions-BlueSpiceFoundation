@@ -7,7 +7,7 @@ use BlueSpice\ExtensionAttributeBasedRegistry;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\FieldType;
 
-class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
+class Schema extends \BlueSpice\Data\Schema {
 	public const STORABLE = 'storeable';
 	public const INDEXABLE = 'indexable';
 

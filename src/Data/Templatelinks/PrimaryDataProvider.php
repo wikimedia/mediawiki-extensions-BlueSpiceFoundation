@@ -2,11 +2,12 @@
 
 namespace BlueSpice\Data\Templatelinks;
 
+use BlueSpice\Data\Filter;
+use BlueSpice\Data\FilterFinder;
+use BlueSpice\Data\IPrimaryDataProvider;
+use BlueSpice\Data\ReaderParams;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
-use MWStake\MediaWiki\Component\DataStore\Filter;
-use MWStake\MediaWiki\Component\DataStore\FilterFinder;
-use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 use Title;
 use User;
 
@@ -42,7 +43,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @param ReaderParams $params
 	 * @return Record[]
 	 */
 	public function makeData( $params ) {

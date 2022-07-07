@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Data\Categorylinks;
 
+use BlueSpice\Data\DatabaseReader;
 use BlueSpice\SMWConnector\Data\TreeAsk\ReaderParams;
 use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
-use MWStake\MediaWiki\Component\DataStore\DatabaseReader;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {
