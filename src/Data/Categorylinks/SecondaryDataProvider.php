@@ -7,7 +7,7 @@ use Content;
 use MediaWiki\MediaWikiServices;
 use Title;
 
-class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
+class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 
 	/**
 	 *

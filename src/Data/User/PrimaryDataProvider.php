@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Data\User;
 
-use MWStake\MediaWiki\Component\DataStore\Filter;
-use MWStake\MediaWiki\Component\DataStore\Filter\Numeric;
-use MWStake\MediaWiki\Component\DataStore\Filter\StringValue;
-use MWStake\MediaWiki\Component\DataStore\FilterFinder;
-use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
+use BlueSpice\Data\Filter;
+use BlueSpice\Data\Filter\Numeric;
+use BlueSpice\Data\Filter\StringValue;
+use BlueSpice\Data\FilterFinder;
+use BlueSpice\Data\IPrimaryDataProvider;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 

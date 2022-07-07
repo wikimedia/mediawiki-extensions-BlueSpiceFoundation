@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Templatelinks;
 
 use Title;
 
-class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
+class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 
 	/**
 	 *

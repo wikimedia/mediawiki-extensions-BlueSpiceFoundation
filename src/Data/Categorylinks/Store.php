@@ -2,10 +2,11 @@
 
 namespace BlueSpice\Data\Categorylinks;
 
+use BlueSpice\Data\IStore;
 use BlueSpice\Data\NoWriterException;
 use MediaWiki\MediaWikiServices;
 
-class Store implements \BlueSpice\Data\IStore {
+class Store implements IStore {
 
 	/**
 	 *
