@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Categories;
 
 use MWStake\MediaWiki\Component\DataStore\FieldType;
 
-class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
+class Schema extends \BlueSpice\Data\Schema {
 	public function __construct() {
 		parent::__construct( [
 			Record::CAT_ID => [

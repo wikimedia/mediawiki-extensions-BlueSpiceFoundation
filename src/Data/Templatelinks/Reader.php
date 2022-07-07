@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Data\Templatelinks;
 
+use BlueSpice\Data\DatabaseReader;
+use BlueSpice\Data\ReaderParams;
 use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
-use MWStake\MediaWiki\Component\DataStore\DatabaseReader;
-use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {

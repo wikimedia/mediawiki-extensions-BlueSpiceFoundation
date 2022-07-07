@@ -2,7 +2,8 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
-use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
+use BlueSpice\Data\IPrimaryDataProvider;
+use BlueSpice\SMWConnector\Data\Ask\ReaderParams;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
@@ -36,7 +37,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @param ReaderParams $params
 	 * @return Record[]
 	 */
 	public function makeData( $params ) {
