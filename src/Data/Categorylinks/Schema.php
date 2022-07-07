@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Data\Categorylinks;
 
+use BlueSpice\Data\FieldType;
+
 class Schema extends \BlueSpice\Data\Schema {
 	public function __construct() {
 		parent::__construct( [
