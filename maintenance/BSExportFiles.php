@@ -47,8 +47,9 @@ class BSExportFiles extends BSMaintenance {
 		);
 
 		$aFiles = [];
+		$repoGroup = MediaWikiServices::getInstance()->getRepoGroup();
 		foreach ( $res as $row ) {
-			$oFile = wfFindFile( Title::makeTitle( NS_FILE, $row->il_to ) );
+			$oFile = $repoGroup->findFile( Title::makeTitle( NS_FILE, $row->il_to ) );
 			if ( $oFile instanceof File === false ) {
 				$this->error( "'{$row->il_to}' does not exist!" );
 				continue;
