@@ -2,17 +2,19 @@
 
 namespace BlueSpice\Data\Settings;
 
-use MWStake\MediaWiki\Component\DataStore\DatabaseWriter;
+use BlueSpice\Data\DatabaseWriter;
+use BlueSpice\Data\IReader;
+use BlueSpice\Data\IRecord;
 
 class Writer extends DatabaseWriter {
 
 	/**
 	 *
-	 * @param \BlueSpice\Data\IReader $reader
+	 * @param IReader $reader
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 * @param \IContextSource|null $context
 	 */
-	public function __construct( \BlueSpice\Data\IReader $reader, $loadBalancer,
+	public function __construct( IReader $reader, $loadBalancer,
 		\IContextSource $context = null ) {
 		parent::__construct( $reader, $loadBalancer, $context, $context->getConfig() );
 	}
@@ -27,7 +29,7 @@ class Writer extends DatabaseWriter {
 
 	/**
 	 *
-	 * @param \BlueSpice\Data\IRecord $record
+	 * @param IRecord $record
 	 * @return array
 	 */
 	protected function makeInsertFields( $record ) {
@@ -38,8 +40,8 @@ class Writer extends DatabaseWriter {
 
 	/**
 	 *
-	 * @param \BlueSpice\Data\IRecord $existingRecord
-	 * @param \BlueSpice\Data\IRecord $record
+	 * @param IRecord $existingRecord
+	 * @param IRecord $record
 	 * @return array
 	 */
 	protected function makeUpdateFields( $existingRecord, $record ) {

@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\Page;
 
+use BlueSpice\Data\IStore;
+use BlueSpice\Data\NoWriterException;
 use IContextSource;
-use MWStake\MediaWiki\Component\DataStore\IStore;
-use MWStake\MediaWiki\Component\DataStore\NoWriterException;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Store implements IStore {
