@@ -103,7 +103,7 @@
 	"bs-notifications-agent-anon": "utente anonimo",
 	"protect-level-editor": "Consentito solo agli editori e amministratori",
 	"bs-ping-on-init-desc": "La richiesta di ping dovrebbe essere richiesta subito dopo il caricamento della pagina",
-	"bs-pref-fileextensions-help": "Tipi di file che possono essere caricati sul wiki. Alcuni tipi (ad esempio, html, js, php, cgi, exe) non sono consentiti per motivi di sicurezza anche se sono stati aggiunti qui.",
+	"bs-pref-fileextensions-help": "Tipi di file che possono essere caricati sul wiki. Alcuni tipi (ad esempio: html, js, php, cgi, exe) non sono consentiti per motivi di sicurezza anche se sono stati aggiunti qui.",
 	"bs-pref-imageextensions-help": "Tipi di file immagine che possono essere caricati sul wiki. Possibili formati web: gif, png, jpg, jpeg. Altri formati immagine: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Impossibile scrivere sul file di configurazione $1."
 }
