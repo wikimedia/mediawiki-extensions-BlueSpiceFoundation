@@ -6,7 +6,7 @@
 			"Xuacu"
 		]
 	},
-	"bluespicefoundation-desc": "Fai que Mediawiki tea preparáu pa les empreses",
+	"bluespicefoundation-desc": "Fai que MediaWiki tea preparáu pa les empreses",
 	"bs-ns_main": "(Páxines)",
 	"bs-ns_all": "(toos)",
 	"bs-tab_navigation": "Navegación",
@@ -89,7 +89,7 @@
 	"bs-graphicallist-action-close": "Zarrar",
 	"bs-graphicallist-action-list": "Llista",
 	"bs-graphicallist-action-preview": "Vista previa",
-	"bs-bluespice-mediawiki": "Mediawiki BlueSpice",
+	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
 	"action-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",
 	"right-wikiadmin": "Usáu en munches estensiones de BlueSpice pa posibles xeres alministratives peligroses, como alministrar usuarios, permisos, configuración global",

@@ -9,7 +9,7 @@
 			"WikiPhoenix"
 		]
 	},
-	"apihelp-bs-filebackend-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-filebackend-store-description": "Listar alla filer från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-user-store-description": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-user-store-summary": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-category-store-description": "Listar alla kategorier. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
@@ -45,5 +45,15 @@
 	"bs-api-task-taskData-page-id": "ID-t av en existerande wikisida",
 	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn.",
-	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar."
+	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar.",
+	"apihelp-bs-filebackend-store-summary": "Listar alla filer från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-category-store-summary": "Listar alla kategorier. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-adminuser-store-summary": "Listar alla användare från databasen med ytterligare känslig data. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-group-store-summary": "Listar alla grupper förutom $wgImplicitGroups. Tillåter sortering, filtrering och sidnumrering. Implementerar parametrar för ExtJS Store.",
+	"apihelp-bs-interwiki-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-titlequery-store-summary": "Listar sidtitlar och (valfritt) namnrymdsprefix baserat på en frågeterm. Implementerar ExtJS Store-parametrar.",
+	"apihelp-bs-wikipage-tasks-summary": "Tillhandahåller vanliga åtgärder för WikiPages",
+	"apihelp-bs-store-param-sort": "JSON-sträng med sorteringsinformation; deserialiserar till <code>spann objekt</code> som innehåller fältnamn och riktning för varje sorteringsalternativ",
+	"apihelp-bs-store-param-group": "JSON-sträng med JSON-sträng med grupperingsinformation; deserialiserar till <code>spann objekt</code> som innehåller fältnamn och riktning för varje sorteringsalternativ",
+	"apihelp-bs-store-param-filter": "JSON-sträng med filtreringsinformation; deserialiserar till <code>spann objekt</code> som innehåller fältnamn och riktning för varje sorteringsalternativ"
 }

@@ -91,7 +91,7 @@
 	"bs-graphicallist-action-close": "Close",
 	"bs-graphicallist-action-list": "List",
 	"bs-graphicallist-action-preview": "Preview",
-	"bs-bluespice-mediawiki": "BlueSpice Mediawiki",
+	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"bs-bluespice": "BlueSpice",
 	"prefs-bluespice": "{{int:bs-bluespice}}",
 	"action-wikiadmin": "use potential dangerous administrative tasks such managing users, permissions, global configuration (BlueSpice extensions)",

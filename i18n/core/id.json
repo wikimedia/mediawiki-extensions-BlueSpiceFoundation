@@ -6,6 +6,7 @@
 			"Kenrick95",
 			"Palladin911",
 			"Raynasution",
+			"Robfirstname",
 			"Sumbukompor"
 		]
 	},
@@ -65,5 +66,16 @@
 	"bs-ns": "Ruang nama",
 	"bs-graphicallist-action-close": "Tutup",
 	"bs-graphicallist-action-list": "Daftar",
-	"bs-graphicallist-action-preview": "Pratayang"
+	"bs-graphicallist-action-preview": "Pratayang",
+	"bs-filesystemhelper-folder-rename-error": "Folder <code>$1</code> tidak dapat dinamakan <code>$2</code>.",
+	"bs-from-something": "(dari $1)",
+	"bs-pref-fileextensions": "Jenis berkas yang diizinkan:",
+	"bs-pref-imageextensions": "Jenis gambar yang diizinkan:",
+	"bs-parser-error-invalid-namespace": "Ruang nama tidak sah: $1",
+	"bs-parser-error-invalid-title": "Judul tidak sah: $1",
+	"bs-validator-error-namespace-does-not-exist": "Ruang nama tidak ada: $1",
+	"bs-export-menu-print-text": "Cetak",
+	"bs-bluespice": "BlueSpice",
+	"bs-notifications-agent-anon": "pengguna anonim",
+	"protect-level-editor": "Hanya izinkan editor dan administrator"
 }
