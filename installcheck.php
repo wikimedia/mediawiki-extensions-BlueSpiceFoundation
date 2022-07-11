@@ -26,7 +26,7 @@
  */
 
 // MediaWiki version
-$cfgMWversion = "1.34";
+$cfgMWversion = "1.35";
 
 // PHP version
 $cfgPHPversion['min'] = '7.2';
