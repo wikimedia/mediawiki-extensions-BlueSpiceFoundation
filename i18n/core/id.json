@@ -6,7 +6,8 @@
 			"Kenrick95",
 			"Palladin911",
 			"Raynasution",
-			"Sumbukompor"
+			"Sumbukompor",
+			"Robfirstname"
 		]
 	},
 	"bs-ns_main": "(Halaman)",
@@ -51,6 +52,7 @@
 	"bs-filesystemhelper-folder-already-exists": "Pelipat <code>$1</code> sudah ada.",
 	"bs-filesystemhelper-folder-copy-error": "Pelipat <code>$1</code> tidak dapat diubah namanya.",
 	"bs-filesystemhelper-folder-not-exists": "Pelipat <code>$1</code> tidak ada.",
+	"bs-filesystemhelper-folder-rename-error": "Folder <code>$1</code> tidak dapat dinamakan <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "Berkas tidak dapat diunggah: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Berkas tidak memiliki pengaya yang diperlukan: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Jenis berkas ini tidak didukung.",
@@ -63,7 +65,17 @@
 	"bs-navigation-contact": "Hubungi",
 	"bs-imagepage-download-text": "Unduh",
 	"bs-ns": "Ruang nama",
+	"bs-from-something": "(dari $1)",
+	"bs-pref-fileextensions": "Jenis berkas yang diizinkan:",
+	"bs-pref-imageextensions": "Jenis gambar yang diizinkan:",
+	"bs-parser-error-invalid-namespace": "Ruang nama tidak sah: $1",
+	"bs-parser-error-invalid-title": "Judul tidak sah: $1",
+	"bs-validator-error-namespace-does-not-exist": "Ruang nama tidak ada: $1",
+	"bs-export-menu-print-text": "Cetak",
 	"bs-graphicallist-action-close": "Tutup",
 	"bs-graphicallist-action-list": "Daftar",
-	"bs-graphicallist-action-preview": "Pratayang"
+	"bs-graphicallist-action-preview": "Pratayang",
+	"bs-bluespice": "BlueSpice",
+	"bs-notifications-agent-anon": "pengguna anonim",
+	"protect-level-editor": "Hanya izinkan editor dan administrator"
 }
