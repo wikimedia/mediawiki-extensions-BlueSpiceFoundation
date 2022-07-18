@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"SaldırganSincap"
+			"SaldırganSincap",
+			"ToprakM"
 		]
 	},
 	"bs-setting-path-feature": "Özellik",
@@ -10,7 +11,7 @@
 	"bs-setting-path-package": "Paket",
 	"bs-setting-path-system": "Sistem",
 	"bs-setting-path-dataanalysis": "Veri analizi",
-	"bs-setting-path-editor": "Düzenleyici",
+	"bs-setting-path-editor": "Editör",
 	"bs-setting-path-search": "Arama ve Gezinme",
 	"bs-setting-path-personalisation": "Kişiselleştirme",
 	"bs-setting-path-skinning": "Stiller",
