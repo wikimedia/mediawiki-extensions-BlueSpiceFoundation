@@ -1,10 +1,9 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 
 require_once __DIR__ . '/BSMaintenance.php';
-
-use MediaWiki\MediaWikiServices;
 
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
