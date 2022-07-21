@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+
 require_once dirname( dirname( dirname( __DIR__ ) ) ) . "/maintenance/Maintenance.php";
 
 class CreateFilePages extends Maintenance {
@@ -44,6 +47,8 @@ class CreateFilePages extends Maintenance {
 			return;
 		}
 
+		$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getMaintenanceUser()->getUser();
 		foreach ( $res as $row ) {
 			$this->output( $row->img_name . PHP_EOL );
 
@@ -53,14 +58,18 @@ class CreateFilePages extends Maintenance {
 
 			$title = Title::makeTitle( NS_FILE, $row->img_name );
 			$wikipage = WikiPage::factory( $title );
-
 			$text = '-';
-			$comment = 'Restore file description page';
-
+			$summary = 'Restore file description page';
 			$content = ContentHandler::makeContent( $text, $title );
-			$status = $wikipage->doEditContent( $content, $comment );
-
-			if ( $status->isGood() ) {
+			$updater = $wikipage->newPageUpdater( $user );
+			$updater->setContent( SlotRecord::MAIN, $content );
+			$comment = CommentStoreComment::newUnsavedComment( $summary );
+			try {
+				$updater->saveRevision( $comment );
+			} catch ( Exception $e ) {
+				$this->error( $e->getMessage() );
+			}
+			if ( $updater->wasSuccessful() ) {
 				$this->output( 'Page created successfully...' . PHP_EOL );
 			} else {
 				$this->output( 'Page was not created due to some error!' . PHP_EOL );

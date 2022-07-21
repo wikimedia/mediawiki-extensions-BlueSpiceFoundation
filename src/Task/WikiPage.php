@@ -3,9 +3,11 @@
 namespace BlueSpice\Task;
 
 use BlueSpice\Task;
+use CommentStoreComment;
 use DeferredUpdates;
 use EditPage;
 use Exception;
+use MediaWiki\Revision\SlotRecord;
 use MWCallableUpdate;
 use MWException;
 use RequestContext;
@@ -23,13 +25,17 @@ abstract class WikiPage extends Task {
 	 */
 	protected function saveWikiPage( $wikitext = '' ) {
 		$this->logger->debug( 'saveWikiPage', [ 'wikitext' => $wikitext ] );
-		$status = $this->getWikiPage()->doEditContent(
-			new WikitextContent( $wikitext ),
-			$this->getSaveWikiPageSummary(),
-			0,
-			false,
-			$this->getContext()->getUser()
-		);
+		$user = $this->getContext()->getUser();
+		$content = new WikitextContent( $wikitext );
+		$updater = $this->getWikiPage()->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$comment = CommentStoreComment::newUnsavedComment( $this->getSaveWikiPageSummary() );
+		try {
+			$updater->saveRevision( $comment );
+		} catch ( Exception $e ) {
+			return Status::newFatal( $e->getMessage() );
+		}
+		$status = $updater->getStatus();
 		if ( $status->isGood() ) {
 			$statusValue = $status->getValue();
 			if ( !is_array( $statusValue ) || !isset( $statusValue['revision'] ) ) {
@@ -49,7 +55,6 @@ abstract class WikiPage extends Task {
 					}
 				)
 			);
-
 		}
 		return $status;
 	}

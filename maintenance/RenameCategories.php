@@ -2,6 +2,9 @@
 # error_reporting(-1);
 # ini_set('display_errors', 1);
 # if (PHP_OS == "WINNT") exec("chcp 65001"); # doesn't seem to work - do it manually
+
+use MediaWiki\Revision\SlotRecord;
+
 if ( $argc != 2 ) {
 	exit( "Syntax: {$argv[0]} filename" );
 }
@@ -250,6 +253,7 @@ $wgFlaggedRevsAutoReview = true;
 $matches = 0;
 $inarticlematches = 0;
 
+$user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
 $namespaceInfo = \MediaWiki\MediaWikiServices::getInstance()->getNamespaceInfo();
 foreach ( $res as $row ) {
 	$row = (array)$row;
@@ -349,15 +353,20 @@ foreach ( $res as $row ) {
 		}
 
 		// Actual modification
-		$success = $wikipage->doEditContent(
-			ContentHandler::makeContent( $text, $title ),
-			$summary,
-			( $minor ? EDIT_MINOR : 0 ) |
+		$updater = $wikipage->newPageUpdater( $user );
+		$content = ContentHandler::makeContent( $text, $title );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$comment = CommentStoreComment::newUnsavedComment( $summary );
+		$flags = ( $minor ? EDIT_MINOR : 0 ) |
 			( $bot ? EDIT_FORCE_BOT : 0 ) |
 			( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
-			( $noRC ? EDIT_SUPPRESS_RC : 0 )
-		);
-		if ( $success ) {
+			( $noRC ? EDIT_SUPPRESS_RC : 0 );
+		try {
+			$updater->saveRevision( $comment, $flags );
+		} catch ( Exception $e ) {
+			print $e->getMessage();
+		}
+		if ( $updater->wasSuccessful() ) {
 			print "done\n";
 		} else {
 			print "failed\n";
@@ -430,7 +439,6 @@ $res = $dbw->select(
 );
 echo $dbw->numRows( $res ) . " articles in category namespace\n";
 
-$user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
 foreach ( $res as $row ) {
 	$oldtitle = Title::newFromId( $row->page_id );
 	$oldtitletext = $oldtitle->getText();
@@ -446,15 +454,20 @@ foreach ( $res as $row ) {
 		if ( !$testing ) {
 			$newtitle = Title::newFromText( $newtitletext, NS_CATEGORY );
 			$newarticle = new Article( $newtitle );
-			$savestat = $newarticle->getPage()->doEditContent(
-				ContentHandler::makeContent( $oldarticlecontent, $newtitle ),
-				$summary,
-				( $minor ? EDIT_MINOR : 0 ) |
+			$updater = $wikipage->newPageUpdater( $user );
+			$content = ContentHandler::makeContent( $oldarticlecontent, $newtitle );
+			$updater->setContent( SlotRecord::MAIN, $content );
+			$comment = CommentStoreComment::newUnsavedComment( $summary );
+			$flags = ( $minor ? EDIT_MINOR : 0 ) |
 				( $bot ? EDIT_FORCE_BOT : 0 ) |
 				( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
-				( $noRC ? EDIT_SUPPRESS_RC : 0 )
-			);
-			if ( $savestat->isGood() ) {
+				( $noRC ? EDIT_SUPPRESS_RC : 0 );
+			try {
+				$updater->saveRevision( $comment, $flags );
+			} catch ( Exception $e ) {
+				echo $e->getMessage();
+			}
+			if ( $updater->wasSuccessful() ) {
 				echo "moved successfully\n";
 			} else {
 				echo "failed moving\n";

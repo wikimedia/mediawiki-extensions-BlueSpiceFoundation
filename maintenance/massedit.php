@@ -25,6 +25,7 @@ This script is based loosely on maintenance/edit.php of MediaWiki.
 require_once 'BSMaintenance.php';
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 
 $userName    = 'WikiBot';
 $summary     = 'Some meaningful description';
@@ -144,8 +145,11 @@ $res = $dbw->select(
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $hits = 0;
 
-$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+$services = MediaWikiServices::getInstance();
+$namespaceInfo = $services->getNamespaceInfo();
 
+$user = $services->getService( 'BSUtilityFactory' )
+	->getMaintenanceUser()->getUser();
 foreach ( $res as $row ) {
 	$row = (array)$row;
 	$cur_title    = $row['page_title'];
@@ -243,15 +247,20 @@ foreach ( $res as $row ) {
 		}
 
 		// Actual modification
-		$success = $wikipage->doEditContent(
-			ContentHandler::makeContent( $text, $title ),
-			$summary,
-			( $minor ? EDIT_MINOR : 0 ) |
+		$updater = $wikipage->newPageUpdater( $user );
+		$content = ContentHandler::makeContent( $text, $title );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$comment = CommentStoreComment::newUnsavedComment( $summary );
+		$flags = ( $minor ? EDIT_MINOR : 0 ) |
 			( $bot ? EDIT_FORCE_BOT : 0 ) |
 			( $autoSummary ? EDIT_AUTOSUMMARY : 0 ) |
-			( $noRC ? EDIT_SUPPRESS_RC : 0 )
-		);
-		if ( $success ) {
+			( $noRC ? EDIT_SUPPRESS_RC : 0 );
+		try {
+			$updater->saveRevision( $comment, $flags );
+		} catch ( Exception $e ) {
+			print $e->getMessage();
+		}
+		if ( $updater->wasSuccessful() ) {
 			print "done\n";
 		} else {
 			print "failed\n";
