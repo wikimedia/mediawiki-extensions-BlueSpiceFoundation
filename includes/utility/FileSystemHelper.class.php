@@ -775,7 +775,7 @@ class BsFileSystemHelper {
 		$sTargetFileName = basename( self::restoreFileName( $sFilename ) );
 
 		if ( $oUploadFile === false ) {
-			return Status::newFailure(
+			return Status::newFatal(
 				wfMessage( 'bs-filesystemhelper-upload-local-error-stash-file' )->plain()
 			);
 		}
