@@ -76,5 +76,6 @@
 	"bs-extjs-flyout-tab-grid-label": "Подробно",
 	"bs-extjs-flyout-tab-grid-title": "Префрли на преглед на подробностите",
 	"bs-extjs-flyout-add-title": "Стиснете тука за да додадете нов предмет",
-	"bs-extjs-flyout-add-label": "Додај предмет"
+	"bs-extjs-flyout-add-label": "Додај предмет",
+	"bs-extjs-label-group": "Група"
 }
