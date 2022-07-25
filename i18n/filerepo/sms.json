@@ -6,6 +6,8 @@
 	},
 	"bs-filerepo-labelfilter": "Siʹllʼjeei",
 	"bs-filerepo-headerfilename": "Teâttõsnõmm",
+	"bs-filerepo-headerfilesize": "Šorradvuõtt",
 	"bs-filerepo-headerpagecategories": "Kategoria",
-	"bs-filerepo-headerfileusertext": "Õõʹnni"
+	"bs-filerepo-headerfileusertext": "Õõʹnni",
+	"bs-filerepo-headerfiledescription": "Deskriptt"
 }
