@@ -31,5 +31,6 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "Нема категории за отстранување",
 	"apihelp-bs-category-treestore-description": "Ги наведува поткатегориите на специфична категорија",
 	"apihelp-bs-category-treestore-summary": "Ги наведува поткатегориите на специфична категорија",
-	"bs-api-task-taskdata-help": "[$1 Шема], [$2 параметарски примери]"
+	"bs-api-task-taskdata-help": "[$1 Шема], [$2 параметарски примери]",
+	"apihelp-bs-js-var-config-param-format": "Формат на исходот"
 }
