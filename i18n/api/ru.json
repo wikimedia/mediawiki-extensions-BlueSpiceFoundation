@@ -3,6 +3,7 @@
 		"authors": [
 			"Alexandr Efremov",
 			"Alexey zakharenkov",
+			"Amire80",
 			"DDPAT",
 			"DmitTrix",
 			"Facenapalm",
@@ -89,5 +90,6 @@
 	"apihelp-bs-categorylinks-store-param-page-id": "Идентификатор страницы",
 	"apihelp-bs-templatelinks-store-param-page-id": "Идентификатор страницы",
 	"apihelp-bs-linker-summary": "Возвращает ссылки на страницы, созданные Linker",
-	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker"
+	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker",
+	"apihelp-bs-group-store-summary": "Список всех групп, кроме $wgImplicitGroups. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры магазина ExtJS."
 }
