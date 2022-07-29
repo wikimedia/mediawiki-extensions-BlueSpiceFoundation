@@ -34,6 +34,11 @@ class BsPageContentProvider {
 	 */
 	protected $revisionLookup = null;
 
+	/**
+	 * @var MediaWikiServices
+	 */
+	private $services = null;
+
 	protected function getTemplate() {
 		if( $this->sTemplate !== false ) {
 			return $this->sTemplate;
@@ -89,9 +94,10 @@ class BsPageContentProvider {
 	 * @param RevisionLookup $revisionLookup
 	 */
 	public function __construct( $revisionLookup = null ) {
+		$this->services = MediaWikiServices::getInstance();
 		$this->revisionLookup = $revisionLookup;
 		if ( $this->revisionLookup === null ) {
-			$this->revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+			$this->revisionLookup = $this->services->getRevisionLookup();
 		}
 	}
 
@@ -143,13 +149,15 @@ class BsPageContentProvider {
 	public function getContentFromRevision( $oRevision, $iAudience = RevisionRecord::FOR_PUBLIC,
 			User $oUser = null, $bHTML = false ) {
 		$title = Title::newFromLinkTarget( $oRevision->getPageAsLinkTarget() );
+		$content = $oRevision->getContent( 'main', $iAudience, $oUser );
 		if ( $bHTML ) {
-			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getParserOutput( $title )->getText();
+			$contentRenderer = $this->services->getContentRenderer();
+			$sContent = $contentRenderer->getParserOutput( $content, $title )->getText();
 		} else {
-			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getNativeData();
+			$sContent = $content->getNativeData();
 
 			$context = new DerivativeContext( RequestContext::getMain() );
-			$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
+			$parser = $this->services->getParserFactory()->create();
 			$parser->setOptions( $this->getParserOptions( $context ) );
 
 			// FIX for #HW20130072210000028
@@ -299,9 +307,7 @@ class BsPageContentProvider {
 					 * are needed by the special page (i.e. All Pages) have to
 					 * be present in $wgRequest / the context
 					 */
-					MediaWikiServices::getInstance()
-						->getSpecialPageFactory()
-						->executePath( $oTitle, $context );
+					$this->services->getSpecialPageFactory()->executePath( $oTitle, $context );
 					$sHTML = $context->getOutput()->getHTML();
 					break;
 
@@ -497,7 +503,7 @@ class BsPageContentProvider {
 			= RequestContext::getMain()->getOutput();
 		$this->originalMainRequestContextRequest = RequestContext::getMain()->getRequest();
 
-		$wgParser = MediaWikiServices::getInstance()->getParserFactory()->create();
+		$wgParser = $this->services->getParserFactory()->create();
 		$wgParser->setOptions( $this->getParserOptions() );
 
 		$wgOut = new OutputPage( $context );
