@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Revision\SlotRecord;
+
 require_once __DIR__ . '/BSMaintenance.php';
 
 use MediaWiki\MediaWikiServices;
@@ -109,7 +111,16 @@ class BSImportUsers extends BSMaintenance {
 				);
 
 				$oWikiPage = $wikiPageFactory->newFromTitle( $oUser->getUserPage() );
-				$oEditStatus = $oWikiPage->doEditContent( $oContent, __CLASS__ );
+				$updater = $oWikiPage->newPageUpdater( $oUser );
+				$updater->setContent( SlotRecord::MAIN, $oContent );
+				$comment = CommentStoreComment::newUnsavedComment( __CLASS__ );
+				try {
+					$updater->saveRevision( $comment );
+				} catch ( Exception $e ) {
+					$this->error( $e->getMessage() );
+				}
+				$oEditStatus = $updater->getStatus();
+
 				if ( $oEditStatus->isOK() ) {
 					$this->output(
 						'Page ' . $oUser->getUserPage()->getPrefixedText() . ' successfully created.'
