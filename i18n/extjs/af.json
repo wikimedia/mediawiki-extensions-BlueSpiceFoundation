@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Oesjaar"
+			"Oesjaar",
+			"Rooiratel"
 		]
 	},
+	"bs-extjs-loading": "Besig om te laai...",
 	"bs-extjs-categoryboxselect-emptytext": "Voeg 'n kategorie by."
 }
