@@ -15,5 +15,13 @@
 	"bs-imagepage-download-text": "Laadd",
 	"bs-export-menu-print-text": "Printtâd",
 	"bs-graphicallist-action-list": "Listt",
-	"bs-graphicallist-action-preview": "Ǩičč õõudǩiõʹtte"
+	"bs-graphicallist-action-preview": "Ǩičč õõudǩiõʹtte",
+	"bs-years-duration": "{{PLURAL:$1|õhtt eeʹǩǩ|$1 eeʹjj|$1 eeʹǩǩed}}",
+	"bs-months-duration": "{{PLURAL:$1|õhtt määnpââʹjj|$1 määnpââʹj|$1 määnpââʹjjed}}",
+	"bs-weeks-duration": "{{PLURAL:$1|õhtt neäʹttel|$1 neäʹttel|$1 neäʹttled}}",
+	"bs-hours-duration": "{{PLURAL:$1|õhtt čiâss|$1 čiâss|$1 čiâssâd}}",
+	"bs-mins-duration": "{{PLURAL:$1|õhtt minutt|$1 minuutt|$1 minuttâd}}",
+	"bs-secs-duration": "{{PLURAL:$1|õhtt sekuntt|$1 sekuunt|$1 sekunttâd}}",
+	"bs-two-units-ago": "$1 da $2 mââiårra",
+	"bs-one-unit-ago": "$1 mââiårra"
 }

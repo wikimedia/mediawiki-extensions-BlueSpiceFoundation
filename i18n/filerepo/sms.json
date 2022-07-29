@@ -10,5 +10,7 @@
 	"bs-filerepo-headerfileusertext": "Õõʹnni",
 	"bs-filerepo-headerfilesize": "Šorradvuõtt",
 	"bs-filerepo-headerfiledescription": "Deskriptt",
-	"bs-filerepo-labelupload": "Ruõkk"
+	"bs-filerepo-labelupload": "Ruõkk",
+	"bs-filerepo-headerfilewidth": "Kobddâdvuõtt",
+	"bs-filerepo-headerfileheight": "Õllâdvuõtt"
 }
