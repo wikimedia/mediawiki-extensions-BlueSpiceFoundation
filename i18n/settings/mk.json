@@ -12,5 +12,8 @@
 	"bs-setting-path-editor": "Уредник",
 	"bs-setting-path-communication": "Комуникација",
 	"bs-setting-path-administration": "Администрација",
-	"bs-setting-path-export": "Извоз"
+	"bs-setting-path-export": "Извоз",
+	"bs-setting-path-personalisation": "Лично прилагодување",
+	"bs-setting-path-customizing": "Приспособување",
+	"bs-setting-path-contentstructuring": "Структурирање на содржината"
 }

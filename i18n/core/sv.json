@@ -101,8 +101,10 @@
 	"action-wikiadmin": "använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfigurering (BlueSpice tillägg)",
 	"right-wikiadmin": "Använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfiguration (BlueSpice tillägg)",
 	"bs-notifications-agent-anon": "anonym användare",
-	"protect-level-editor": "Tillåt endast mallredigerare och administratörer",
+	"protect-level-editor": "Tillåt endast redigerare och administratörer",
 	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?",
 	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!",
+	"right-editor": "Få alla behörigheter från rollen \"redigerare\" för skrivskyddade sidor i redigeringsbegränsningen när rollsystemet aktiverats",
+	"action-editor": "få alla behörigheter från rollen \"redaktör\" för skrivskyddade sidor i redaktörsbegränsningen när systemrollen aktiverats"
 }
