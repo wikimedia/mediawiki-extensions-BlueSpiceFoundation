@@ -10,6 +10,9 @@
 	"bs-setting-path-system": "Систем",
 	"bs-setting-path-dataanalysis": "Анализа на податоци",
 	"bs-setting-path-editor": "Уредник",
+	"bs-setting-path-personalisation": "Лично прилагодување",
+	"bs-setting-path-customizing": "Приспособување",
+	"bs-setting-path-contentstructuring": "Структурирање на содржината",
 	"bs-setting-path-communication": "Комуникација",
 	"bs-setting-path-administration": "Администрација",
 	"bs-setting-path-export": "Извоз"
