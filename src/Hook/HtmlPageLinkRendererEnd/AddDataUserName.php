@@ -2,6 +2,9 @@
 
 namespace BlueSpice\Hook\HtmlPageLinkRendererEnd;
 
+use Html;
+use HtmlArmor;
+
 class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 
 	protected function skipProcessing() {
@@ -37,13 +40,21 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 			return true;
 		}
 
-		$text = \HtmlArmor::getHtml( $this->text );
+		$text = HtmlArmor::getHtml( $this->text );
+		// $text = "<bdi>WikiSysop</bdi>" - we must clean it for comparison
+		$bdiWrapped = strpos( $text, '<bdi>' ) === 0;
+		$text = strip_tags( $text );
 		if ( $user->getName() === $text ) {
-			$this->text = new \HtmlArmor(
+			$this->text =
 				$this->getServices()->getService( 'BSUtilityFactory' )->getUserHelper(
 					$user
-				)->getDisplayName()
-			);
+				)->getDisplayName();
+
+			if ( $bdiWrapped ) {
+				$this->text = new HtmlArmor(
+					Html::element( 'bdi', [], $this->text )
+				);
+			}
 		}
 
 		$this->attribs['data-bs-username'] = $user->getName();
