@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bada Kaji",
 			"जनक राज भट्ट",
 			"पर्वत सुबेदी",
 			"बिप्लब आनन्द",
 			"हिमाल सुबेदी"
 		]
 	},
+	"bs-extjs-add": "थप्नुहोस्",
 	"bs-extjs-edit": "सम्पादन",
 	"bs-extjs-copy": "कपि",
 	"bs-extjs-actions-column-header": "कार्यहरू",
