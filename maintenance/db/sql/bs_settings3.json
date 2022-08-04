@@ -1,0 +1,26 @@
+[
+	{
+		"name": "bs_settings3",
+		"columns": [
+			{
+				"name": "s_name",
+				"type": "string",
+				"options": {
+					"length": 255,
+					"notnull": true
+				}
+			},
+			{
+				"name": "s_value",
+				"type": "blob",
+				"options": {
+					"length": 16777215
+				}
+			}
+		],
+		"indexes": [],
+		"pk": [
+			"s_name"
+		]
+	}
+]
