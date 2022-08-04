@@ -71,5 +71,7 @@
 	"apihelp-bs-linker-description": "Restituisce collegamento alle pagine generate da Linker",
 	"apihelp-bs-titlequery-store-description": "Elenca i titoli delle pagine e (opzionalmente) i prefissi dei namespace in base a un termine della query. Implementa i parametri ExtJS Store.",
 	"apihelp-bs-titlequery-store-summary": "Elenca i titoli delle pagine e (opzionalmente) i prefissi dei namespace in base a un termine della query. Implementa i parametri ExtJS Store.",
-	"apihelp-bs-js-var-config-param-name": "Nome della variabile di configurazione da recuperare"
+	"apihelp-bs-js-var-config-param-name": "Nome della variabile di configurazione da recuperare",
+	"apihelp-bs-watchlist-store-summary": "Elenca tutte le voci degli osservati speciali. Consente l'ordinamento, il filtraggio e l'impaginazione. Implementa i parametri di archiviazione.",
+	"apihelp-bs-recentchanges-store-summary": "Elenca tutte le modifiche recenti. Consente l'ordinamento, il filtraggio e l'impaginazione. Implementa i parametri di archiviazione."
 }
