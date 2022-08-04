@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bada Kaji",
 			"जनक राज भट्ट",
 			"पर्वत सुबेदी",
 			"बिप्लब आनन्द",
@@ -13,5 +14,6 @@
 	"bs-extjs-label-page": "पृष्ठ",
 	"bs-extjs-filters": "छनाेटहरू",
 	"bs-extjs-filter-bool-yes": "हो",
-	"bs-extjs-filter-bool-no": "होइन"
+	"bs-extjs-filter-bool-no": "होइन",
+	"bs-extjs-add": "थप्नुहोस्"
 }
