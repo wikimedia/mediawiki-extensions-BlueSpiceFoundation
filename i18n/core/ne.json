@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bada Kaji",
 			"Drjpoudel",
 			"हिमाल सुबेदी"
 		]
 	},
 	"bs-userbar_loginswitch_logout": "निर्गमन",
 	"bs-imagepage-download-text": "डाउनलोड गरिएकाे",
-	"bs-graphicallist-action-preview": "पूर्वावलोकन"
+	"bs-graphicallist-action-preview": "पूर्वावलोकन",
+	"bs-extended-search-textfield-defaultvalue": "खोज्नुहोस्..."
 }
