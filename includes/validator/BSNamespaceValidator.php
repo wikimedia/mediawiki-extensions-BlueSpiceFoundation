@@ -26,12 +26,13 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use ValueValidators\PackagePrivate\ValueValidatorBase;
 
 /**
  * BSNamespaceValidator class in BlueSpice
  * @package BlueSpice_Foundation
  */
-class BSNamespaceValidator extends \ValueValidators\ValueValidatorObject {
+class BSNamespaceValidator extends ValueValidatorBase {
 
 	/**
 	 *
