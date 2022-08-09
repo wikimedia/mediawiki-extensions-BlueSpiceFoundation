@@ -54,29 +54,6 @@ class Entity extends \JsonContent {
 	}
 
 	/**
-	 * Set the HTML and add the appropriate styles
-	 *
-	 *
-	 * @param \Title $title
-	 * @param int $revId
-	 * @param \ParserOptions $options
-	 * @param bool $generateHtml
-	 * @param \ParserOutput &$output
-	 * @return $output
-	 */
-	protected function fillParserOutput( \Title $title, $revId,
-		\ParserOptions $options, $generateHtml, \ParserOutput &$output
-	) {
-		return parent::fillParserOutput(
-			$title,
-			$revId,
-			$options,
-			$generateHtml,
-			$output
-		);
-	}
-
-	/**
 	 * Constructs an HTML representation of a JSON object.
 	 * @param array $mapping
 	 * @return string HTML
