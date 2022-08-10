@@ -7,5 +7,6 @@
 	"bs-deferred-action-apieditpage-description": "Uredi »$1«.",
 	"bs-deferred-batch-description": "Opis",
 	"bs-deferred-batch-status": "Stanje",
-	"bs-deferred-action-apideletepage-description": "Izbriši »$1«."
+	"bs-deferred-action-apideletepage-description": "Izbriši »$1«.",
+	"bs-deferred-action-status-done": "Končano."
 }
