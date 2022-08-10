@@ -10,9 +10,12 @@ class AddBlueSpice3SettingsAndMigrationMaintenanceScript extends LoadExtensionSc
 	 * @return bool
 	 */
 	protected function doProcess() {
+		$dbType = $this->updater->getDB()->getType();
+		$dir = $this->getExtensionPath();
+
 		$this->updater->addExtensionTable(
 			'bs_settings3',
-			$this->getExtensionPath() . '/maintenance/db/bs_settings3.sql'
+			"$dir/maintenance/db/sql/$dbType/bs_settings3-generated.sql"
 		);
 
 		$this->updater->addPostDatabaseUpdateMaintenance( \BSMigrateSettings::class );
