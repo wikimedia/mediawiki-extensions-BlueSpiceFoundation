@@ -63,11 +63,16 @@ class DynamicSettingsManager {
 	 *
 	 * @param array &$globals Usually $GLOBALS
 	 * @return void
+	 * @deprecated 4.3 - Passing $GLOBALS as reference not supported by PHP 8.1 anymore.
+	 * All implementations of `IDynamicSettings` should access `$GLOBALS` directly.
 	 */
 	public function applyAll( &$globals ) {
 		$instances = $this->getAllInstances();
 		foreach ( $instances as $instance ) {
 			$instance->apply( $globals );
+		}
+		if ( !empty( $globals ) ) {
+			wfDeprecated( __FUNCTION__, '4.3', 'Passed in `$globals` must not be altered anymore!' );
 		}
 	}
 

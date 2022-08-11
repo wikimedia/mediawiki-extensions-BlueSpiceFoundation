@@ -37,7 +37,8 @@ class BSConfigDirSettingsFileTest extends TestCase {
 		$mock = $this->makeMock( $testConfigDir );
 
 		$GLOBALS['bsgTestSetting'] = 'To be overwritten';
-		$mock->apply( $GLOBALS );
+		$locals = [];
+		$mock->apply( $locals );
 
 		$this->assertEquals( 'Test', $GLOBALS['bsgTestSetting'] );
 	}

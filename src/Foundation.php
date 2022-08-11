@@ -28,7 +28,15 @@ class Foundation {
 		\mwsInitComponents();
 
 		$dynamicSettingsManager = DynamicSettingsManager::factory();
-		$dynamicSettingsManager->applyAll( $GLOBALS );
+		$locals = [];
+		$dynamicSettingsManager->applyAll( $locals );
+		foreach ( $locals as $globalKey => $globalVal ) {
+			if ( is_array( $GLOBALS[$globalKey] ) ) {
+				$GLOBALS[$globalKey] = array_merge( $GLOBALS[$globalKey], $locals[$globalKey] );
+			} else {
+				$GLOBALS[$globalKey] = $locals[$globalKey];
+			}
+		}
 
 		// currently there is no other way
 		\HTMLForm::$typeMappings['staticimage'] = 'HTMLStaticImageFieldOverride';
