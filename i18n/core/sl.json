@@ -15,5 +15,7 @@
 	"bs-graphicallist-action-list": "Seznam",
 	"action-wikiadmin": "uporabo morebitno nevarnih skrbniških opravil, kot so upravljanje uporabnikov, pravic in globalne konfiguracije (razširitve BlueSpice),",
 	"right-wikiadmin": "Uporaba morebitno nevarnih skrbniških opravil, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami (razširitve BlueSpice)",
-	"bs-ns": "Imenski prostori"
+	"bs-ns": "Imenski prostori",
+	"bs-userbar_loginswitch_logout": "Odjava",
+	"bs-graphicallist-action-close": "Zapri"
 }
