@@ -155,20 +155,19 @@ class BsPageContentProvider {
 			$sContent = $contentRenderer->getParserOutput( $content, $title )->getText();
 		} else {
 			$sContent = $content->getNativeData();
-
 			$context = new DerivativeContext( RequestContext::getMain() );
 			$parser = $this->services->getParserFactory()->create();
 			$parser->setOptions( $this->getParserOptions( $context ) );
 
 			// FIX for #HW20130072210000028
 			// Manually expand templates to allow bookshelf tags via template
-			$sContent = $parser->preprocess(
-					$sContent,
+			$content = $parser->preprocess(
+					$content,
 					$title,
 					$parser->getOptions()
 			);
 		}
-		return $sContent;
+		return $content;
 	}
 
 	/**
