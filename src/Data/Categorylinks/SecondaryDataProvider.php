@@ -5,6 +5,7 @@ namespace BlueSpice\Data\Categorylinks;
 use BsNamespaceHelper;
 use Content;
 use MediaWiki\MediaWikiServices;
+use TextContent;
 use Title;
 use WikiPage;
 
@@ -49,7 +50,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 			$wikiPageContent = $wikiPage->getContent();
 
 			if ( $wikiPageContent instanceof Content ) {
-				$text = $wikiPageContent->getNativeData();
+				$text = ( $wikiPageContent instanceof TextContent ) ? $wikiPageContent->getText() : '';
 
 				$categoryCanonicalNSName = MediaWikiServices::getInstance()
 					->getNamespaceInfo()
