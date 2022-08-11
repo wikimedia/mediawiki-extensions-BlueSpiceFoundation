@@ -47,6 +47,13 @@ abstract class DynamicSettingsBase implements IDynamicSettings {
 		} else {
 			$this->logger->debug( "Skipped applying settings from " . get_class( $this ) );
 		}
+		if ( !empty( $globals ) ) {
+			wfDeprecated(
+				__FUNCTION__,
+				'4.3',
+				get_class( $this ) . ': Passed in `$globals` must not be altered anymore!'
+			);
+		}
 	}
 
 	/**
