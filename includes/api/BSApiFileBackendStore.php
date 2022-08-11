@@ -196,21 +196,29 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 			// No "user can read" check here, because it may be expensive.
 			// This may be done by hook handlers
 
-			$aUserNames[$oImg->getUser( 'text' )] = '';
+			$uploaderUserId = -1;
+			$uploaderUserName = '';
+			$uploaderUser = $oImg->getUploader();
+			if ( $uploaderUser !== null ) {
+				$uploaderUserId = $uploaderUser->getId();
+				$uploaderUserName = $uploaderUser->getName();
+			}
+
+			$aUserNames[$uploaderUserName] = '';
 
 			$aReturn[ $oRow->page_id ] = (object)[
 				'file_url' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_name' => $oImg->getName(),
 				'file_size' => $oImg->getSize(),
 				'file_bits' => $oImg->getBitDepth(),
-				'file_user' => $oImg->getUser( 'id' ),
+				'file_user' => $uploaderUserId,
 				'file_width' => $oImg->getWidth(),
 				'file_height' => $oImg->getHeight(),
 				# major/minor
 				'file_mimetype' => $oImg->getMimeType(),
-				'file_user_text' => $oImg->getUser( 'text' ),
+				'file_user_text' => $uploaderUserName,
 				// Will be overridden in a separate step
-				'file_user_display_text' => $oImg->getUser( 'text' ),
+				'file_user_display_text' => $uploaderUserName,
 				'file_user_link' => self::SECONDARY_FIELD_PLACEHOLDER,
 				'file_extension' => $oImg->getExtension(),
 				'file_timestamp' => (string)( $oImg->getTimestamp() - $timezoneDifference ),
@@ -390,7 +398,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	/**
 	 *
 	 * @param \stdClass $oFilter
-	 * @param array $aDataSet
+	 * @param \stdClass $aDataSet
 	 * @return array
 	 */
 	public function filterString( $oFilter, $aDataSet ) {
