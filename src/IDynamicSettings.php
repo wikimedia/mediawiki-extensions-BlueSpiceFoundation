@@ -11,6 +11,8 @@ interface IDynamicSettings {
 	 *
 	 * @param array &$globals usually $GLOBALS
 	 * @return void
+	 * @deprecated 4.3 - Passing $GLOBALS as reference not supported by PHP 8.1 anymore.
+	 * All implementations of `IDynamicSettings` should access `$GLOBALS` directly.
 	 */
 	public function apply( &$globals );
 
