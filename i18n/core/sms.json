@@ -23,5 +23,9 @@
 	"bs-mins-duration": "{{PLURAL:$1|õhtt minutt|$1 minuutt|$1 minuttâd}}",
 	"bs-secs-duration": "{{PLURAL:$1|õhtt sekuntt|$1 sekuunt|$1 sekunttâd}}",
 	"bs-two-units-ago": "$1 da $2 mââiårra",
-	"bs-one-unit-ago": "$1 mââiårra"
+	"bs-one-unit-ago": "$1 mââiårra",
+	"bs-filesystemhelper-upload-err-code": "Teâttõõzz ruõkkmõš ij oʹnnstam: $1",
+	"bs-filesystemhelper-save-base64-error": "Teâttõõzz ruõkkmõš ij oʹnnstam.",
+	"bs-filesystemhelper-upload-base64-error": "Teâttõõzz ruõkkmõš ij oʹnnstam.",
+	"bs-navigation-contact": "Vääʹld õhttvuõđ"
 }
