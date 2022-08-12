@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
+	"bs-extjs-cancel": "אַנולירן",
 	"bs-extjs-categoryboxselect-emptytext": "צולייגן צו קאַטעגאריע"
 }
