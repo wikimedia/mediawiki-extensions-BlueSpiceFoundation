@@ -6,5 +6,7 @@
 		]
 	},
 	"bs-extjs-categoryboxselect-emptytext": "צולייגן צו קאַטעגאריע",
-	"bs-extjs-cancel": "אַנולירן"
+	"bs-extjs-cancel": "אַנולירן",
+	"bs-extjs-confirm": "באַשטעטיקן",
+	"bs-extjs-categorytree-title": "קאַטעגאָריעס"
 }
