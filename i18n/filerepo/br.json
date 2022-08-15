@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Huñvreüs"
 		]
 	},
 	"bs-filerepo-labelupload": "Enporzhiañ",
@@ -20,5 +21,5 @@
 	"bs-filerepo-headerfilethumbnail": "Munud",
 	"bs-filerepo-yes": "Ya",
 	"bs-filerepo-no": "Ket",
-	"bs-filerepo-pagesize": "Ment ar bajenn"
+	"bs-filerepo-pagesize": "Enmont dre bajenn"
 }
