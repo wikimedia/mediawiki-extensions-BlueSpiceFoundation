@@ -3,10 +3,12 @@
 		"authors": [
 			"Georg101",
 			"Ilimanaq29",
+			"Kareyac",
 			"Matěj Suchánek"
 		]
 	},
 	"bs-extjs-ok": "OK",
+	"bs-extjs-add": "Přidat",
 	"bs-extjs-pageexport-dialog-title": "Exportovat stránky",
 	"bs-extjs-pageexport-list-name-label": "Název seznamu",
 	"bs-extjs-pageexport-list-format-label": "Formát seznamu",
