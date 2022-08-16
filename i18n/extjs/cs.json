@@ -3,6 +3,7 @@
 		"authors": [
 			"Georg101",
 			"Ilimanaq29",
+			"Kareyac",
 			"Matěj Suchánek"
 		]
 	},
@@ -20,5 +21,6 @@
 	"bs-extjs-pageexport-required-text": "Seznam nemůže být prázdný a alespoň jedna stránka musí být zvolena",
 	"bs-extjs-export-search-summary-text": "Generováno PageExportem",
 	"bs-extjs-pageexport-error-invalid-title": "Název seznamu je neplatný",
-	"bs-extjs-ok": "OK"
+	"bs-extjs-ok": "OK",
+	"bs-extjs-add": "Přidat"
 }
