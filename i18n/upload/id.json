@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"J Nia30"
+			"J Nia30",
+			"Veracious"
 		]
 	},
-	"bs-upload-license": "Lisensi"
+	"bs-upload-license": "Lisensi",
+	"bs-upload-details": "Rincian"
 }
