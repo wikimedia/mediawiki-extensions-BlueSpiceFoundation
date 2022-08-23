@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Revision\RevisionRecord;
 
 abstract class PageContentSave extends Hook {
 
@@ -80,7 +81,7 @@ abstract class PageContentSave extends Hook {
 
 	/**
 	 *
-	 * @var \Revision
+	 * @var RevisionRecord
 	 */
 	protected $revision = null;
 

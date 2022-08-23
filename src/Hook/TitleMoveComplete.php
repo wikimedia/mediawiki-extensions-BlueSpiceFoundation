@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Revision\RevisionRecord;
 
 /**
  * DEPRECATED!
@@ -47,7 +48,7 @@ abstract class TitleMoveComplete extends Hook {
 
 	/**
 	 *
-	 * @var \Revision
+	 * @var RevisionRecord
 	 */
 	protected $revision;
 
@@ -59,7 +60,7 @@ abstract class TitleMoveComplete extends Hook {
 	 * @param int $oldid
 	 * @param int $newid
 	 * @param string $reason
-	 * @param \Revision $revision
+	 * @param RevisionRecord $revision
 	 * @return bool
 	 */
 	public static function callback( &$title, &$newTitle, $user, $oldid, $newid, $reason,
@@ -89,7 +90,7 @@ abstract class TitleMoveComplete extends Hook {
 	 * @param int $oldid
 	 * @param int $newid
 	 * @param string $reason
-	 * @param \Revision $revision
+	 * @param RevisionRecord $revision
 	 */
 	public function __construct( $context, $config, &$title, &$newTitle, $user, $oldid, $newid,
 		$reason, $revision ) {

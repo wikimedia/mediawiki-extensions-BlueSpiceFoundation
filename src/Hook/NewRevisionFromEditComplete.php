@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Revision\RevisionRecord;
 
 abstract class NewRevisionFromEditComplete extends Hook {
 
@@ -36,7 +37,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	protected $wikiPage;
 
 	/**
-	 * @var \Revision
+	 * @var RevisionRecord
 	 */
 	protected $rev;
 
@@ -52,7 +53,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 
 	/**
 	 * @param \WikiPage $wikiPage
-	 * @param \Revision $rev
+	 * @param RevisionRecord $rev
 	 * @param int $baseID
 	 * @param \User $user
 	 * @return bool
@@ -75,7 +76,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \WikiPage $wikiPage
-	 * @param \Revision $rev
+	 * @param RevisionRecord $rev
 	 * @param int $baseID
 	 * @param \User $user
 	 */

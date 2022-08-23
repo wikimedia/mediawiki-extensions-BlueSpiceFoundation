@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Revision\RevisionRecord;
 
 abstract class PageContentInsertComplete extends Hook {
 
@@ -80,7 +81,7 @@ abstract class PageContentInsertComplete extends Hook {
 
 	/**
 	 *
-	 * @var \Revision
+	 * @var RevisionRecord
 	 */
 	protected $revision = null;
 
@@ -106,7 +107,7 @@ abstract class PageContentInsertComplete extends Hook {
 	 * @param bool $isWatch
 	 * @param int $section
 	 * @param int &$flags
-	 * @param \Revision $revision
+	 * @param RevisionRecord $revision
 	 * @param \Status &$status
 	 * @param int $baseRevId
 	 * @return bool
@@ -144,7 +145,7 @@ abstract class PageContentInsertComplete extends Hook {
 	 * @param bool $isWatch
 	 * @param int $section
 	 * @param int &$flags
-	 * @param \Revision $revision
+	 * @param RevisionRecord $revision
 	 * @param \Status &$status
 	 * @param int $baseRevId
 	 */

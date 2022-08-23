@@ -8,11 +8,11 @@ use DeferredUpdates;
 use EditPage;
 use Exception;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MWCallableUpdate;
 use MWException;
 use RequestContext;
-use Revision;
 use Status;
 use TextContent;
 use WikitextContent;
@@ -39,11 +39,11 @@ abstract class WikiPage extends Task {
 		$status = $updater->getStatus();
 		if ( $status->isGood() ) {
 			$statusValue = $status->getValue();
-			if ( !is_array( $statusValue ) || !isset( $statusValue['revision'] ) ) {
+			if ( !is_array( $statusValue ) || !isset( $statusValue['revision-record'] ) ) {
 				return $status;
 			}
-			/** @var Revision $revision */
-			$revision = $status->getValue()['revision'];
+			/** @var RevisionRecord $revision */
+			$revision = $status->getValue()['revision-record'];
 			$cookieName = EditPage::POST_EDIT_COOKIE_KEY_PREFIX . $revision->getId();
 			// Must use main, since $this->getContext() returns different context
 			$response = RequestContext::getMain()->getRequest()->response();
