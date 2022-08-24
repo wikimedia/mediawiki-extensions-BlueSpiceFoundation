@@ -104,7 +104,8 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 		if ( isset( static::$userGroups[$user->getId()] ) ) {
 			return static::$userGroups[$user->getId()];
 		}
-		static::$userGroups[$user->getId()] = $user->getEffectiveGroups( true );
+		$userGroupManager = $this->services->getUserGroupManager();
+		static::$userGroups[$user->getId()] = $userGroupManager->getUserEffectiveGroups( $user, true );
 		return static::$userGroups[$user->getId()];
 	}
 

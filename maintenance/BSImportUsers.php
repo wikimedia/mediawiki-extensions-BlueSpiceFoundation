@@ -86,8 +86,9 @@ class BSImportUsers extends BSMaintenance {
 			}
 
 			$oGroups = $oUserNode->getElementsByTagName( 'group' );
+			$userGroupManager = $services->getUserGroupManager();
 			foreach ( $oGroups as $oGroup ) {
-				$oUser->addGroup( $oGroup->getAttribute( 'name' ) );
+				$userGroupManager->addUserToGroup( $oUser, ( $oGroup->getAttribute( 'name' ) ) );
 			}
 
 			if ( $this->getOption( 'createuserpage', false ) ) {
