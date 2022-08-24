@@ -1,10 +1,9 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 
 require_once __DIR__ . '/BSMaintenance.php';
-
-use MediaWiki\MediaWikiServices;
 
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
@@ -32,6 +31,7 @@ class BSImportUsers extends BSMaintenance {
 
 		$userOptionsManager = MediaWikiServices::getInstance()->getUserOptionsManager();
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
+		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
 
 		$oUserNodes = $oDOM->getElementsByTagName( 'user' );
 		foreach ( $oUserNodes as $oUserNode ) {
@@ -91,9 +91,7 @@ class BSImportUsers extends BSMaintenance {
 
 			$oGroups = $oUserNode->getElementsByTagName( 'group' );
 			foreach ( $oGroups as $oGroup ) {
-				MediaWikiServices::getInstance()
-					->getUserGroupManager()
-					->addUserToGroup( $oUser, $oGroup->getAttribute( 'name' ) );
+				$userGroupManager->addUserToGroup( $oUser, $oGroup->getAttribute( 'name' ) );
 			}
 
 			if ( $this->getOption( 'createuserpage', false ) ) {

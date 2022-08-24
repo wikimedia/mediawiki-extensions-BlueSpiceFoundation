@@ -96,7 +96,6 @@ class MaintenanceUser {
 		$expiry = null;
 
 		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
-
 		foreach ( $this->getGroups() as $group ) {
 			if ( in_array( $group, $userGroupManager->getUserGroups( $user ) ) ) {
 				continue;

@@ -105,8 +105,8 @@ abstract class Module implements IModule, IServiceProvider, MessageLocalizer {
 		if ( isset( static::$userGroups[$user->getId()] ) ) {
 			return static::$userGroups[$user->getId()];
 		}
-		static::$userGroups[$user->getId()] = MediaWikiServices::getInstance()
-			->getUserGroupManager()
+		$userGroupManager = $this->services->getUserGroupManager();
+		static::$userGroups[$user->getId()] = $userGroupManager
 			->getUserEffectiveGroups( $user, UserGroupManager::READ_NORMAL, true );
 		return static::$userGroups[$user->getId()];
 	}
