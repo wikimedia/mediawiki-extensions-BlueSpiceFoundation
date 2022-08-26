@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 require_once __DIR__ . '/BSMaintenance.php';
 
 class BSImportUsers extends BSMaintenance {
@@ -27,6 +29,7 @@ class BSImportUsers extends BSMaintenance {
 		$oDOM->recover = true;
 
 		$oUserNodes = $oDOM->getElementsByTagName( 'user' );
+		$services = MediaWikiServices::getInstance();
 		foreach ( $oUserNodes as $oUserNode ) {
 			$sUserName = $this->getChildNodeValue( $oUserNode, 'name' );
 			$oUser = User::newFromName( $sUserName );
@@ -56,7 +59,8 @@ class BSImportUsers extends BSMaintenance {
 
 			$oProperties = $oUserNode->getElementsByTagName( 'property' );
 			foreach ( $oProperties as $oProperty ) {
-				$oUser->setOption(
+				$services->getUserOptionsManager()->setOption(
+					$oUser,
 					$oProperty->getAttribute( 'name' ),
 					$oProperty->getAttribute( 'value' )
 				);

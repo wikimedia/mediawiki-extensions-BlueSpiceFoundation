@@ -6,6 +6,7 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
+use MediaWiki\MediaWikiServices;
 use MWTimestamp;
 use RequestContext;
 use User;
@@ -57,6 +58,8 @@ class Timestamp extends MWTimestamp {
 	) {
 		$diff = $ts->diff( $relativeTo );
 		$params = [];
+		$userLanguageSetting = MediaWikiServices::getInstance()->getUserOptionsLookup()
+			->getOption( $user, 'language' );
 		foreach ( $this->getAvailableAgeStrings() as $key => $msgKey ) {
 			if ( count( $params ) > 1 ) {
 				break;
@@ -82,14 +85,14 @@ class Timestamp extends MWTimestamp {
 			}
 			$params[] = \Message::newFromKey( $msgKey )
 				->params( $value )
-				->inLanguage( $user->getOption( 'language' ) )
+				->inLanguage( $userLanguageSetting )
 				->text();
 		}
 
 		$paramCount = count( $params );
 		if ( $paramCount === 0 ) {
 			$ageString .= \Message::newFromKey( 'bs-now' )
-				->inLanguage( $user->getOption( 'language' ) )
+				->inLanguage( $userLanguageSetting )
 				->text();
 			return $ageString;
 		}
@@ -103,7 +106,7 @@ class Timestamp extends MWTimestamp {
 
 		$ageString .= \Message::newFromKey( $ageMsgKey )
 			->params( $params )
-			->inLanguage( $user->getOption( 'language' ) )
+			->inLanguage( $userLanguageSetting )
 			->text();
 
 		return $ageString;
@@ -135,7 +138,8 @@ class Timestamp extends MWTimestamp {
 	public function unOffsetForUser( User $user ) {
 		global $wgLocalTZoffset;
 
-		$option = $user->getOption( 'timecorrection' );
+		$option = MediaWikiServices::getInstance()->getUserOptionsLookup()
+			->getOption( $user, 'timecorrection' );
 		$data = explode( '|', $option, 3 );
 
 		// First handle the case of an actual timezone being specified.
