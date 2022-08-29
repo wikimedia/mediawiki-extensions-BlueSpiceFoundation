@@ -52,5 +52,6 @@
 	"bs-extjs-categoryboxselect-emptytext": "Dodaj kategorijo",
 	"bs-extjs-filter-date-filter": "Filter",
 	"bs-extjs-pageexport-list-format-link-label": "Povezava",
-	"bs-extjs-combo-box-default-placeholder": "Vtipkajte za filtriranje"
+	"bs-extjs-combo-box-default-placeholder": "Vtipkajte za filtriranje",
+	"bs-extjs-flyout-tab-grid-label": "Podrobnosti"
 }

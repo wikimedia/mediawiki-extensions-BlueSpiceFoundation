@@ -19,6 +19,7 @@
 	"bs-secs-duration": "{{PLURAL:$1|õhtt sekuntt|$1 sekuunt|$1 sekunttâd}}",
 	"bs-two-units-ago": "$1 da $2 mââiårra",
 	"bs-one-unit-ago": "$1 mââiårra",
+	"bs-exception-view-admin-hint": "Vääʹld õhttvuõđ riâžldõõǥǥ âʹlnnõõʹnnʼja.",
 	"bs-viewtagerrorlist-legend": "$1 - Vââʹǩǩ",
 	"bs-filesystemhelper-upload-err-code": "Teâttõõzz ruõkkmõš ij oʹnnstam: $1",
 	"bs-filesystemhelper-save-base64-error": "Teâttõõzz ruõkkmõš ij oʹnnstam.",
