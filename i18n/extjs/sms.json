@@ -23,5 +23,9 @@
 	"bs-extjs-upload": "Ruõkk",
 	"bs-extjs-flyout-tab-grid-label": "Teâđ",
 	"bs-extjs-categoryboxselect-emptytext": "Lââʹzzet kategoria",
-	"bs-extjs-flyout-tab-thumbs-label": "Snimldõõʹjje"
+	"bs-extjs-flyout-tab-thumbs-label": "Snimldõõʹjje",
+	"bs-extjs-cancel": "Jõõsk",
+	"bs-extjs-warning": "Vaartõs",
+	"bs-extjs-title-warning": "Vaartõs",
+	"bs-extjs-pageexport-list-name-label": "Liist nõmm"
 }

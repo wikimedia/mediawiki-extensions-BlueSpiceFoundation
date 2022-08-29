@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eleassar",
 			"Pickle12"
 		]
 	},
@@ -15,5 +16,6 @@
 	"bs-upload-upload-waitmessage": "Nalaganje poteka ...",
 	"bs-upload-descfilelabel": "Opis",
 	"bs-upload-error-long": "Napaka pri nalaganju",
-	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt"
+	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt",
+	"bs-upload-details": "Podrobnosti"
 }
