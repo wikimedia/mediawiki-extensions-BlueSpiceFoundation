@@ -85,7 +85,7 @@ class BSImportUsers extends BSMaintenance {
 
 			$sUserPassword = $this->getOption( 'defaultpw', '' );
 			if ( !empty( $sUserPassword ) ) {
-				$oUser->setPassword( $sUserPassword );
+				$oUser->changeAuthenticationData( [ 'password' => $sUserPassword ] );
 				$oUser->saveSettings();
 			}
 
