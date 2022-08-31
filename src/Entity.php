@@ -78,6 +78,11 @@ abstract class Entity implements JsonSerializable {
 	protected $store = null;
 
 	/**
+	 * @var MedaiWikiServices
+	 */
+	protected $services = null;
+
+	/**
 	 *
 	 * @param \stdClass $stdClass
 	 * @param EntityConfig $config
@@ -89,6 +94,7 @@ abstract class Entity implements JsonSerializable {
 		$this->entityFactory = $entityFactory;
 		$this->config = $config;
 		$this->store = $store;
+		$this->services = MediaWikiServices::getInstance();
 		if ( !empty( $stdClass->{static::ATTR_ID} ) ) {
 			$this->attributes[static::ATTR_ID] =
 				(int)$stdClass->{static::ATTR_ID};
@@ -127,7 +133,8 @@ abstract class Entity implements JsonSerializable {
 	 * @return User
 	 */
 	public function getOwner() {
-		return User::newFromId( $this->get( static::ATTR_OWNER_ID, 0 ) );
+		return $this->services->getUserFactory()
+			->newFromId( $this->get( static::ATTR_OWNER_ID, 0 ) );
 	}
 
 	/**
@@ -214,7 +221,7 @@ abstract class Entity implements JsonSerializable {
 
 		$this->setUnsavedChanges( false );
 
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntitySaveComplete', [
+		$this->services->getHookContainer()->run( 'BSEntitySaveComplete', [
 			$this,
 			$status,
 			$user
@@ -231,7 +238,7 @@ abstract class Entity implements JsonSerializable {
 	public function delete( User $user = null ) {
 		$status = Status::newGood();
 
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityDelete', [
+		$this->services->getHookContainer()->run( 'BSEntityDelete', [
 			$this,
 			$status,
 			$user
@@ -248,7 +255,7 @@ abstract class Entity implements JsonSerializable {
 			return Status::newFatal( $e->getMessage() );
 		}
 
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityDeleteComplete', [
+		$this->services->getHookContainer()->run( 'BSEntityDeleteComplete', [
 			$this,
 			$status,
 			$user
@@ -269,7 +276,7 @@ abstract class Entity implements JsonSerializable {
 	public function undelete( User $user = null ) {
 		$status = Status::newGood();
 
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityUndelete', [
+		$this->services->getHookContainer()->run( 'BSEntityUndelete', [
 			$this,
 			$status,
 			$user
@@ -286,7 +293,7 @@ abstract class Entity implements JsonSerializable {
 			return Status::newFatal( $e->getMessage() );
 		}
 
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityUndeleteComplete', [
+		$this->services->getHookContainer()->run( 'BSEntityUndeleteComplete', [
 			$this,
 			$status,
 			$user
@@ -322,7 +329,7 @@ abstract class Entity implements JsonSerializable {
 				),
 			]
 		);
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityGetFullData', [
+		$this->services->getHookContainer()->run( 'BSEntityGetFullData', [
 			$this,
 			&$data
 		] );
@@ -348,7 +355,7 @@ abstract class Entity implements JsonSerializable {
 		if ( !$context ) {
 			$context = RequestContext::getMain();
 		}
-		return MediaWikiServices::getInstance()->getService( 'BSRendererFactory' )->get(
+		return $this->services->getService( 'BSRendererFactory' )->get(
 			$this->getConfig()->get( 'Renderer' ),
 			$this->makeRendererParams( [ Renderer::PARAM_CONTEXT => $context ] )
 		);
@@ -407,7 +414,7 @@ abstract class Entity implements JsonSerializable {
 			$this->set( static::ATTR_OWNER_ID, $data->{static::ATTR_OWNER_ID} );
 		}
 
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntitySetValuesByObject', [
+		$this->services->getHookContainer()->run( 'BSEntitySetValuesByObject', [
 			$this,
 			$data
 		] );
@@ -430,9 +437,7 @@ abstract class Entity implements JsonSerializable {
 	 * @return Entity
 	 */
 	public function invalidateCache() {
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityInvalidate', [
-			$this
-		] );
+		$this->services->getHookContainer()->run( 'BSEntityInvalidate', [ $this ] );
 		return $this;
 	}
 }

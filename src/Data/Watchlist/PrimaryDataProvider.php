@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\Watchlist;
 
+use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\Filter;
 use MWStake\MediaWiki\Component\DataStore\FilterFinder;
 use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
@@ -73,8 +74,9 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 		$distinctUserIds = [];
 		$distinctNamespaceIds = [];
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {
-			$user = User::newFromId( (int)$row->wl_user );
+			$user = $userFactory->newFromId( (int)$row->wl_user );
 			// leftover data from deleted users
 			if ( !$user || !$user->isRegistered() ) {
 				continue;

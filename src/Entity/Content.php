@@ -73,7 +73,8 @@ abstract class Content extends \BlueSpice\Entity {
 	 * @return User
 	 */
 	public function getOwner() {
-		return User::newFromId( $this->get( static::ATTR_OWNER_ID, 0 ) );
+		return MediaWikiServices::getInstance()->getUserFactory()
+			->newFromId( $this->get( static::ATTR_OWNER_ID, 0 ) );
 	}
 
 	/**
