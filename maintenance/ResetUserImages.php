@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 require_once __DIR__ . '/Maintenance.php';
 
 class ResetUserImages extends Maintenance {
@@ -13,8 +15,9 @@ class ResetUserImages extends Maintenance {
 	public function execute() {
 		$dbw = wfGetDB( DB_PRIMARY );
 		$res = $dbw->select( 'user', 'user_id' );
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {
-			$oUser = User::newFromId( $row->user_id );
+			$oUser = $userFactory->newFromId( $row->user_id );
 			$sUserImage = $oUser->getName() . '.jpg';
 
 			$dbw->delete(

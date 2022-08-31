@@ -5,6 +5,7 @@ namespace BlueSpice\Data\Watchlist;
 use BlueSpice\Data\Filter;
 use BlueSpice\Data\FilterFinder;
 use BlueSpice\Data\IPrimaryDataProvider;
+use MediaWiki\MediaWikiServices;
 use User;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
@@ -71,8 +72,9 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 		$distinctUserIds = [];
 		$distinctNamespaceIds = [];
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {
-			$user = User::newFromId( (int)$row->wl_user );
+			$user = $userFactory->newFromId( (int)$row->wl_user );
 			// leftover data from deleted users
 			if ( !$user || $user->isAnon() ) {
 				continue;
