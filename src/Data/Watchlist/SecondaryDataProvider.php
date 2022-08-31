@@ -34,7 +34,8 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 	 * @param Record &$dataSet
 	 */
 	protected function doExtend( &$dataSet ) {
-		$user = \User::newFromId( $dataSet->get( Record::USER_ID ) );
+		$services = MediaWikiServices::getInstance();
+		$user = $services->getUserFactory()->newFromId( $dataSet->get( Record::USER_ID ) );
 		$dataSet->set(
 			Record::USER_LINK,
 			$this->linkrenderer->makeLink( $user->getUserPage() )
@@ -47,7 +48,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 		);
 
 		if ( $dataSet->get( Record::HAS_UNREAD_CHANGES ) ) {
-			$lookup = MediaWikiServices::getInstance()->getRevisionLookup();
+			$lookup = $services->getRevisionLookup();
 			$rev = $lookup->getRevisionByTimestamp(
 				$title,
 				$dataSet->get( Record::NOTIFICATIONTIMESTAMP )
