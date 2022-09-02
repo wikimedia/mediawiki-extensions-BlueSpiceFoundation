@@ -30,6 +30,7 @@ use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\IStore;
 use Config;
 use MediaWiki\MediaWikiServices;
+use TextContent;
 use Title;
 
 class EntityFactory {
@@ -37,19 +38,16 @@ class EntityFactory {
 	protected $legacyTypeCache = [];
 
 	/**
-	 *
 	 * @var ExtensionAttributeBasedRegistry
 	 */
 	protected $entityRegistry = null;
 
 	/**
-	 *
 	 * @var EntityConfigFactory
 	 */
 	protected $configFactory = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
@@ -67,7 +65,6 @@ class EntityFactory {
 	}
 
 	/**
-	 *
 	 * @param string $type
 	 * @param \stdClass $data
 	 * @param EntityConfig|null $entityConfig
@@ -93,6 +90,7 @@ class EntityFactory {
 
 	/**
 	 * Get ContentEntity by EntityContent Object, wrapper for newFromObject
+	 *
 	 * @param EntityContent $sContent
 	 * @return Entity|null
 	 */
@@ -107,6 +105,7 @@ class EntityFactory {
 
 	/**
 	 * Get Entity by Json Object
+	 *
 	 * @param stdClass|null $object
 	 * @return Entity|null
 	 */
@@ -139,6 +138,7 @@ class EntityFactory {
 
 	/**
 	 * Get Entity from ID
+	 *
 	 * @param mixed $id
 	 * @param string|int $type - int namespace is used for legecy content entities
 	 * @param bool $reload
@@ -191,7 +191,6 @@ class EntityFactory {
 	}
 
 	/**
-	 *
 	 * @param string $type
 	 * @return EntityConfig
 	 */
@@ -204,7 +203,6 @@ class EntityFactory {
 	}
 
 	/**
-	 *
 	 * @param string $type
 	 * @param EntityConfig|null $entityConfig
 	 * @return IStore|null
@@ -226,6 +224,7 @@ class EntityFactory {
 
 	/**
 	 * Main method for getting a ContentEntity from a Title
+	 *
 	 * @param Title|null $title
 	 * @param bool $reload
 	 * @return Entity|null
@@ -241,6 +240,7 @@ class EntityFactory {
 
 	/**
 	 * Adds a Entity to the cache
+	 *
 	 * @param Entity &$oInstance
 	 * @return Entity
 	 */
@@ -255,6 +255,7 @@ class EntityFactory {
 
 	/**
 	 * Removes a Entity from the cache if it's in
+	 *
 	 * @param Entity &$oInstance
 	 * @return Entity
 	 */
@@ -269,6 +270,7 @@ class EntityFactory {
 
 	/**
 	 * Gets a instance of the Entity from the cache by ID
+	 *
 	 * @param mixed $id
 	 * @param string $type
 	 * @return Entity
@@ -281,7 +283,6 @@ class EntityFactory {
 	}
 
 	/**
-	 *
 	 * @param mixed $id
 	 * @param string $type
 	 * @return bool
@@ -291,7 +292,6 @@ class EntityFactory {
 	}
 
 	/**
-	 *
 	 * @param mixed $id
 	 * @param int $type
 	 * @return string|bool
@@ -309,7 +309,7 @@ class EntityFactory {
 		if ( !$content ) {
 			return false;
 		}
-		$text = $content->getNativeData();
+		$text = ( $content instanceof TextContent ) ? $content->getText() : '';
 		$content = new EntityContent( $text );
 		$data = (object)$content->getData()->getValue();
 
@@ -322,5 +322,4 @@ class EntityFactory {
 		$this->legacyTypeCache[$type][$id] = $data->type;
 		return $data->type;
 	}
-
 }

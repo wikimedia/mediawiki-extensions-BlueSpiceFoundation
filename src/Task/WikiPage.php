@@ -14,6 +14,7 @@ use MWException;
 use RequestContext;
 use Revision;
 use Status;
+use TextContent;
 use WikitextContent;
 
 abstract class WikiPage extends Task {
@@ -65,7 +66,6 @@ abstract class WikiPage extends Task {
 	abstract protected function getSaveWikiPageSummary();
 
 	/**
-	 *
 	 * @return string
 	 * @throws Exception
 	 */
@@ -80,7 +80,7 @@ abstract class WikiPage extends Task {
 				$this->msg( 'bs-wikipage-tasks-error-contentmodel' )->plain()
 			);
 		}
-		$wikitext = $content->getNativeData();
+		$wikitext = ( $content instanceof TextContent ) ? $content->getText() : '';
 		$this->logger->debug( 'fetchWikitext', [ 'wikitext' => $wikitext ] );
 		return $wikitext;
 	}
