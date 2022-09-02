@@ -5,12 +5,13 @@ namespace BlueSpice\Data\Entity\Reader;
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\Reader;
 use BlueSpice\EntityConfig;
+use TextContent;
 use Title;
 use WikiPage;
 
 abstract class Content extends Reader {
+
 	/**
-	 *
 	 * @param mixed $id
 	 * @param EntityConfig $entityConfig
 	 * @return \stdClass|null
@@ -30,7 +31,7 @@ abstract class Content extends Reader {
 		if ( !$content ) {
 			return null;
 		}
-		$text = $content->getNativeData();
+		$text = ( $content instanceof TextContent ) ? $content->getText() : '';
 
 		$content = new EntityContent( $text );
 		$data = (object)$content->getData()->getValue();

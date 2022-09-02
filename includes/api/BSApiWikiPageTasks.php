@@ -200,7 +200,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	];
 
 	/**
-	 *
 	 * @var string[]
 	 */
 	protected $aReadTasks = [
@@ -211,6 +210,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 	/**
 	 * Configures the global permission requirements
+	 *
 	 * @return array
 	 */
 	protected function getRequiredTaskPermissions() {
@@ -225,7 +225,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @param \stdClass $taskData
 	 * @param \stdClass $response
 	 * @param string $task
@@ -293,7 +292,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
 	 * @return \BlueSpice\Api\Response\Standard
@@ -316,11 +314,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		// get page and content
 		$oWikiPage = WikiPage::factory( $title );
 		if ( $oWikiPage->getContentModel() === CONTENT_MODEL_WIKITEXT ) {
-			$oContent = $oWikiPage->getContent();
-			$wikitext = '';
-			if ( $oContent instanceof Content ) {
-				$wikitext = $oContent->getNativeData();
-			}
+			$content = $oWikiPage->getContent();
+			$wikitext = ( $content instanceof TextContent ) ? $content->getText() : '';
 
 		} else {
 			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
@@ -389,7 +384,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @deprecated since version 3.1 - Not in use anymore
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
@@ -410,7 +404,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @param stdClass $oTaskData
 	 * @return Title
 	 * @throws MWException
@@ -440,7 +433,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @param int $pageId
 	 * @return array
 	 */
@@ -455,7 +447,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @param stdClass $oTaskData
 	 * @param array $aParams
 	 * @return \BlueSpice\Api\Response\Standard
@@ -465,16 +456,16 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 
 		$oTitle = $this->getTitleFromTaskData( $oTaskData );
 		$oWikiPage = WikiPage::factory( $oTitle );
-		$oContent = $oWikiPage->getContent();
-		if ( $oContent instanceof WikitextContent === false ) {
+		$content = $oWikiPage->getContent();
+		if ( $content instanceof WikitextContent === false ) {
 			$oResponse->message =
 				wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
 			return $oResponse;
 		}
 
-		$sWikiText = $oContent->getNativeData();
+		$wikiText = ( $content instanceof TextContent ) ? $content->getText() : '';
 		$oTemplateTreeParser =
-			new BlueSpice\Utility\WikiTextTemplateTreeParser( $sWikiText );
+			new BlueSpice\Utility\WikiTextTemplateTreeParser( $wikiText );
 
 		$oResponse->success = true;
 		$oResponse->payload = $oTemplateTreeParser->getArray();

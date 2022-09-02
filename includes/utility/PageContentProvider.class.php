@@ -143,10 +143,11 @@ class BsPageContentProvider {
 	public function getContentFromRevision( $oRevision, $iAudience = RevisionRecord::FOR_PUBLIC,
 			User $oUser = null, $bHTML = false ) {
 		$title = Title::newFromLinkTarget( $oRevision->getPageAsLinkTarget() );
+		$contentObj = $oRevision->getContent( 'main', $iAudience, $oUser );
 		if ( $bHTML ) {
-			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getParserOutput( $title )->getText();
+			$content = $contentObj->getParserOutput( $title )->getText();
 		} else {
-			$sContent = $oRevision->getContent( 'main', $iAudience, $oUser )->getNativeData();
+			$content = ( $contentObj instanceof TextContent ) ? $contentObj->getText() : '';
 
 			$context = new DerivativeContext( RequestContext::getMain() );
 			$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
@@ -154,13 +155,13 @@ class BsPageContentProvider {
 
 			// FIX for #HW20130072210000028
 			// Manually expand templates to allow bookshelf tags via template
-			$sContent = $parser->preprocess(
-					$sContent,
+			$content = $parser->preprocess(
+					$content,
 					$title,
 					$parser->getOptions()
 			);
 		}
-		return $sContent;
+		return $content;
 	}
 
 	/**
