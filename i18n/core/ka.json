@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"David1010"
+			"David1010",
+			"Გიო ოქრო"
 		]
 	},
 	"bs-ns_main": "(გვერდები)",
@@ -11,13 +12,13 @@
 	"bs-userbar_loginswitch_login": "შესვლა",
 	"bs-extended-search-textfield-defaultvalue": "ძიება...",
 	"bs-extended-search-textfield-tooltip": "ვიკის ძიება",
-	"bs-years-duration": "{{PLURAL:$1|ერთი წელი|$1 წელი}}",
-	"bs-months-duration": "{{PLURAL:$1|ერთი თვე|$1 თვე}}",
-	"bs-weeks-duration": "{{PLURAL:$1|ერთი კვირა|$1 კვირა}}",
-	"bs-days-duration": "{{PLURAL:$1|ერთი დღე|$1 დღე}}",
-	"bs-hours-duration": "{{PLURAL:$1|ერთი საათი|$1 საათი}}",
-	"bs-mins-duration": "{{PLURAL:$1|ერთი წუთი|$1 წუთი}}",
-	"bs-secs-duration": "{{PLURAL:$1|ერთი წამი|$1 წამი}}",
+	"bs-years-duration": "{{PLURAL:$1|ერთი წლის|$1 წლის}}",
+	"bs-months-duration": "{{PLURAL:$1|ერთი თვის|$1 თვის}}",
+	"bs-weeks-duration": "{{PLURAL:$1|ერთი კვირის|$1 კვირის}}",
+	"bs-days-duration": "{{PLURAL:$1|ერთი დღის|$1 დღის}}",
+	"bs-hours-duration": "{{PLURAL:$1|ერთი საათის|$1 საათის}}",
+	"bs-mins-duration": "{{PLURAL:$1|ერთი წუთის|$1 წუთის}}",
+	"bs-secs-duration": "{{PLURAL:$1|ერთი წამის|$1 წამის}}",
 	"bs-two-units-ago": "$1 და $2 წინ",
 	"bs-one-unit-ago": "$1 წინ",
 	"bs-now": "ახლა",
