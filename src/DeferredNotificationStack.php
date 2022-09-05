@@ -2,6 +2,7 @@
 namespace BlueSpice;
 
 use MWException;
+use RequestContext;
 
 class DeferredNotificationStack {
 
@@ -23,6 +24,11 @@ class DeferredNotificationStack {
 
 		if ( !empty( $this->request->getCookie( 'notificationFlag' ) ) ) {
 			$this->request->getSession()->set( 'notificationInfo', [] );
+		}
+
+		$context = RequestContext::getMain();
+		$user = $context->getUser();
+		if ( !$user->isLoggedIn() ) {
 			$this->request->response()->clearCookie( 'notificationFlag' );
 		}
 	}
