@@ -80,7 +80,7 @@ abstract class Entity implements JsonSerializable {
 	/**
 	 * @var MedaiWikiServices
 	 */
-	private $services = null;
+	protected $services = null;
 
 	/**
 	 *

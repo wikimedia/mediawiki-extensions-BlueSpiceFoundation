@@ -26,7 +26,6 @@
  */
 namespace BlueSpice\Entity;
 
-use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
 use User;
@@ -73,7 +72,7 @@ abstract class Content extends \BlueSpice\Entity {
 	 * @return User
 	 */
 	public function getOwner() {
-		return MediaWikiServices::getInstance()->getUserFactory()
+		return $this->services->getUserFactory()
 			->newFromId( $this->get( static::ATTR_OWNER_ID, 0 ) );
 	}
 
