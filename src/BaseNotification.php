@@ -196,7 +196,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	 */
 	protected function addAffectedUsers( $users ) {
 		$services = MediaWikiServices::getInstance();
-		$userFactory = $services()->getUserFactory();
+		$userFactory = $services->getUserFactory();
 		$pm = $services->getPermissionManager();
 		foreach ( $users as $user ) {
 			if ( is_numeric( $user ) ) {
