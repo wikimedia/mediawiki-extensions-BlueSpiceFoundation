@@ -1,8 +1,10 @@
 <?php
-require_once 'BSMaintenance.php';
-echo "Relocalize Wiki...\n";
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+
+require_once 'BSMaintenance.php';
+echo "Relocalize Wiki...\n";
 
 class RelocalizeWiki extends Maintenance {
 	public $bDryRun = false;
@@ -83,6 +85,8 @@ class RelocalizeWiki extends Maintenance {
 		}
 
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
+		$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getMaintenanceUser()->getUser();
 		foreach ( $aArticleIds as $iArticleId ) {
 			$this->bEdited = false;
 			// Article::fetchContent() is deprecated.
@@ -150,12 +154,16 @@ class RelocalizeWiki extends Maintenance {
 
 			if ( $this->bEdited ) {
 				if ( !$this->bDryRun ) {
-					$oWikiPage->doEditContent(
-						ContentHandler::makeContent( $sArticleContent, $oWikiPage->getTitle() ),
-						$sArticleContent,
-						'/* Changed Localisation */',
-						EDIT_FORCE_BOT | EDIT_MINOR | EDIT_SUPPRESS_RC
-					);
+					$updater = $oWikiPage->newPageUpdater( $user );
+					$content = ContentHandler::makeContent( $sArticleContent, $oWikiPage->getTitle() );
+					$updater->setContent( SlotRecord::MAIN, $content );
+					$comment = CommentStoreComment::newUnsavedComment( $sArticleContent );
+					$flags = EDIT_FORCE_BOT | EDIT_MINOR | EDIT_SUPPRESS_RC;
+					try {
+						$updater->saveRevision( $comment, $flags );
+					} catch ( Exception $e ) {
+						$this->error( $e->getMessage() );
+					}
 				}
 				$this->sOutput .= "Replacement done.\n\n";
 			} else {

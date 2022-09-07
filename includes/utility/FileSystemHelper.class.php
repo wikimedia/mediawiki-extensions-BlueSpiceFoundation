@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
 
 class BsFileSystemHelper {
 
@@ -818,8 +819,15 @@ class BsFileSystemHelper {
 			}
 
 			$oPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $oRepoFile->getTitle() );
-			$oPage->doEditContent( new WikitextContent( $sPageText ), '' );
-
+			$content = new WikitextContent( $sPageText );
+			$updater = $oPage->newPageUpdater( $user );
+			$updater->setContent( SlotRecord::MAIN, $content );
+			$comment = CommentStoreComment::newUnsavedComment( '' );
+			try {
+				$updater->saveRevision( $comment );
+			} catch ( Exception $e ) {
+				return Status::newFatal( $e->getMessage() );
+			}
 			return Status::newGood( $oRepoFile->getUrl(), true );
 		} else {
 			return Status::newFatal( wfMessage( 'bs-filesystemhelper-upload-local-error-create' ) );
