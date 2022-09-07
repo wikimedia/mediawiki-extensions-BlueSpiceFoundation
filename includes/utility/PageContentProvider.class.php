@@ -452,11 +452,7 @@ class BsPageContentProvider {
 	 * @return Array_of_Title
 	 */
 	public function getRedirectChainRecursiveFrom( Title $oTitle, $aParams = array() ) {
-		return ContentHandler::makeContent(
-			$this->getWikiTextContentFor( $oTitle, $aParams ),
-			null,
-			CONTENT_MODEL_WIKITEXT
-		)->getRedirectChain();
+		return [ $this->services->getRedirectLookUp()->getRedirectTarget( $oTitle ) ];
 	}
 
 	/**
