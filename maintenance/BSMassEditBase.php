@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\SlotRecord;
+
 require_once __DIR__ . '/BSMaintenance.php';
 
 class BSMassEditBase extends BSMaintenance {
@@ -25,6 +28,8 @@ class BSMassEditBase extends BSMaintenance {
 		$aTitles = $this->getTitleList();
 		$this->iTitleCount = count( $aTitles );
 
+		$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+			->getMaintenanceUser()->getUser();
 		foreach ( $aTitles as $sTitle => $oTitle ) {
 			if ( $oTitle instanceof Title === false ) {
 				$this->error( "Invalid Title '$sTitle'!" );
@@ -41,11 +46,16 @@ class BSMassEditBase extends BSMaintenance {
 			if ( $this->isDryMode() ) {
 				continue;
 			}
-
-			$oStatus = $oWikiPage->doEditContent(
-				$oNewContent,
-				$this->getEditSummay( $oWikiPage )
-			);
+			$updater = $oWikiPage->newPageUpdater( $user );
+			$updater->setContent( SlotRecord::MAIN, $oNewContent );
+			$summary = $this->getEditSummay( $oWikiPage );
+			$comment = CommentStoreComment::newUnsavedComment( $summary );
+			try {
+				$updater->saveRevision( $comment );
+			} catch ( Exception $e ) {
+				$this->error( $e->getMessage() );
+			}
+			$oStatus = $updater->getStatus();
 			if ( !$oStatus->isOK() ) {
 				$this->error(
 					"--> Content of page {$oTitle->getPrefixedText()} could not be modified: "

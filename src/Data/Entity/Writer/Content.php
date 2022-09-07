@@ -4,8 +4,10 @@ namespace BlueSpice\Data\Entity\Writer;
 
 use BlueSpice\Data\Entity\Writer;
 use BlueSpice\Entity;
+use CommentStoreComment;
 use Exception;
 use FormatJson;
+use MediaWiki\Revision\SlotRecord;
 use Status;
 use WikiPage;
 
@@ -33,19 +35,17 @@ abstract class Content extends Writer {
 		}
 		$entity->set( Entity::ATTR_ID, $data['id'] );
 		$wikiPage = WikiPage::factory( $entity->getTitle() );
+		$user = $this->context->getUser();
+		$content = new $contentClass( FormatJson::encode( $data ) );
+		$updater = $wikiPage->newPageUpdater( $user );
+		$updater->setContent( SlotRecord::MAIN, $content );
+		$comment = CommentStoreComment::newUnsavedComment( '' );
 		try {
-			$status = $wikiPage->doEditContent(
-				new $contentClass( FormatJson::encode( $data ) ),
-				"",
-				0,
-				0,
-				$this->context->getUser(),
-				null
-			);
+			$updater->saveRevision( $comment );
 		} catch ( Exception $e ) {
 			// Something probalby breaks json
 			return Status::newFatal( $e->getMessage() );
 		}
-		return $status;
+		return $updater->getStatus();
 	}
 }
