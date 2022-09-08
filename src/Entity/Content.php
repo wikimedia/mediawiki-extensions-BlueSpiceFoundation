@@ -182,7 +182,7 @@ abstract class Content extends \BlueSpice\Entity {
 	 * @return bool True if the update succeeded
 	 */
 	protected function invalidateTitleCache( $purgeTime = null ) {
-		if ( MediaWikiServices::getInstance()->getReadOnlyMode()->isReadOnly() ) {
+		if ( $this->services->getReadOnlyMode()->isReadOnly() ) {
 			return false;
 		}
 
