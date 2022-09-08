@@ -149,12 +149,12 @@ class BsPageContentProvider {
 	public function getContentFromRevision( $oRevision, $iAudience = RevisionRecord::FOR_PUBLIC,
 			User $oUser = null, $bHTML = false ) {
 		$title = Title::newFromLinkTarget( $oRevision->getPageAsLinkTarget() );
-		$content = $oRevision->getContent( 'main', $iAudience, $oUser );
+		$contentObj = $oRevision->getContent( 'main', $iAudience, $oUser );
 		if ( $bHTML ) {
-			$contentRenderer = $this->services->getContentRenderer();
-			$sContent = $contentRenderer->getParserOutput( $content, $title )->getText();
+			$content = $this->services->getContentRenderer()
+				->getParserOutput( $contentObj, $title )->getText();
 		} else {
-			$sContent = $content->getNativeData();
+			$content = ( $contentObj instanceof TextContent ) ? $contentObj->getText() : '';
 			$context = new DerivativeContext( RequestContext::getMain() );
 			$parser = $this->services->getParserFactory()->create();
 			$parser->setOptions( $this->getParserOptions( $context ) );
