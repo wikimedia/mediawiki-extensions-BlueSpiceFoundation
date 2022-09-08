@@ -110,7 +110,7 @@ abstract class Content extends \BlueSpice\Entity {
 		if ( $this->tsCreatedCache ) {
 			return $this->tsCreatedCache;
 		}
-		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
+		$revisionLookup = $this->services->getRevisionLookup();
 		$pageIdentity = $this->getTitle()->toPageIdentity();
 		$revisionRecord = $revisionLookup->getFirstRevision( $pageIdentity );
 		$this->tsCreatedCache = $revisionRecord ? $revisionRecord->getTimestamp() : false;
