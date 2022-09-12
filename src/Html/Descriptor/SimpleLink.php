@@ -32,7 +32,7 @@ class SimpleLink implements ILink {
 
 	/**
 	 *
-	 * @return string
+	 * @return string[]
 	 */
 	public function getCSSClasses() {
 		return $this->getFromData( static::CSSCLASSES, [] );
@@ -40,7 +40,7 @@ class SimpleLink implements ILink {
 
 	/**
 	 *
-	 * @return string
+	 * @return array
 	 */
 	public function getDataAttributes() {
 		return $this->getFromData( static::DATAATTRIBUTES, [] );

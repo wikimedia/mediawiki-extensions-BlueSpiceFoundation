@@ -148,8 +148,8 @@ abstract class SpecialPage extends \SpecialPage {
 			return false;
 		}
 
-		$titleMessage = wfMessage( 'specialpage-securitylevel-not-allowed-title' );
-		$errorMessage = wfMessage( 'specialpage-securitylevel-not-allowed' );
+		$titleMessage = $this->msg( 'specialpage-securitylevel-not-allowed-title' );
+		$errorMessage = $this->msg( 'specialpage-securitylevel-not-allowed' );
 		throw new \ErrorPageError( $titleMessage, $errorMessage );
 	}
 }
