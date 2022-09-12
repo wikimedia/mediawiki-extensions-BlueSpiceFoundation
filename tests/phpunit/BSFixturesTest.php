@@ -29,7 +29,7 @@ class BSFixturesTest extends BSApiTestCase {
 	 */
 	public function testUserFixtures() {
 		$user = \User::newFromName( 'Paul' );
-		$this->assertFalse( $user->isAnon(), "User should be known" );
+		$this->assertTrue( $user->isRegistered(), "User should be known" );
 
 		$groups = $user->getGroups();
 

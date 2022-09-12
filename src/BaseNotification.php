@@ -239,7 +239,7 @@ class BaseNotification implements \BlueSpice\INotification {
 		if ( $user === null ) {
 			$user = $this->agent;
 		}
-		if ( $user->isAnon() ) {
+		if ( !$user->isRegistered() ) {
 			return wfMessage( 'bs-notifications-agent-anon' )->plain();
 		}
 		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )

@@ -42,7 +42,7 @@ class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
 
 		$user = MediaWikiServices::getInstance()->getUserFactory()
 			->newFromID( $rawData->tmp_user );
-		if ( !$user->isAnon() ) {
+		if ( $user->isRegistered() ) {
 			$rawData->user_link =
 				$this->linkrenderer->makeLink( $user->getUserPage() );
 		}

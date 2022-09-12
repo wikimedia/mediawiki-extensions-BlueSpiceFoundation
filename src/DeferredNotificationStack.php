@@ -28,7 +28,7 @@ class DeferredNotificationStack {
 
 		$context = RequestContext::getMain();
 		$user = $context->getUser();
-		if ( !$user->isLoggedIn() ) {
+		if ( !$user->isRegistered() ) {
 			$this->request->response()->clearCookie( 'notificationFlag' );
 		}
 	}
