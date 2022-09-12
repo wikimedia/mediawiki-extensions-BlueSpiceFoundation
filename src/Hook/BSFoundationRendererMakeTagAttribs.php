@@ -55,7 +55,7 @@ abstract class BSFoundationRendererMakeTagAttribs extends Hook {
 	 * @param \BlueSpice\Renderer $renderer
 	 * @param array $args
 	 * @param array &$attribs
-	 * @return type
+	 * @return mixed
 	 */
 	public static function callback( $renderer, $args, &$attribs ) {
 		$className = static::class;

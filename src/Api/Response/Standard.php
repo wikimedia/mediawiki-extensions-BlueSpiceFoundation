@@ -20,6 +20,7 @@ class Standard {
 	public $success = false;
 
 	// Custom fields
+	/** @var string */
 	public $message = '';
 	public $payload = [];
 	public $payload_count = 0;

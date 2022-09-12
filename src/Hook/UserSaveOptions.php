@@ -46,7 +46,7 @@ abstract class UserSaveOptions extends Hook {
 	 *
 	 * @param \User $user
 	 * @param array &$options
-	 * @return type
+	 * @return mixed
 	 */
 	public static function callback( $user, &$options ) {
 		$className = static::class;
