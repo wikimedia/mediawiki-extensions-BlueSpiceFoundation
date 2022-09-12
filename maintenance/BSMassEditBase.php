@@ -167,8 +167,8 @@ class BSMassEditBase extends BSMaintenance {
 	 * Default callback for replacements based on
 	 * 'getTextModificationRegexPatterns'
 	 * Should probably be overwritten by subclass
-	 * @param type $aMatches
-	 * @return type
+	 * @param string[] $aMatches
+	 * @return string
 	 */
 	public function textModificationCallback( $aMatches ) {
 		// Just a dummy: returns unmodified

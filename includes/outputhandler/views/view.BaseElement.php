@@ -392,7 +392,7 @@ class ViewBaseElement {
 	 * @param string $content
 	 * @return string
 	 */
-	protected function renderLink( $options = [], $content ) {
+	protected function renderLink( $options, $content ) {
 		$glue = '';
 		$href = isset( $options['href'] )
 			? $options['href']

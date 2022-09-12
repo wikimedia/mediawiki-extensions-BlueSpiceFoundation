@@ -72,7 +72,7 @@ class SetCategories extends WikiPageTask {
 	 *
 	 * @param Title[] $array1
 	 * @param Title[] $array2
-	 * @return type
+	 * @return Title[]
 	 */
 	protected function filterDiffTargets( array $array1, array $array2 ) {
 		return array_filter( $array1, static function ( Title $e ) use( $array2 ) {
