@@ -7,6 +7,28 @@ use MediaWiki\MediaWikiServices;
 
 abstract class SpecialPage extends \SpecialPage {
 
+	/** @var MediaWikiServices */
+	protected $services = null;
+
+	/**
+	 * @param string $name Name of the special page, as seen in links and URLs
+	 * @param string $restriction User right required, e.g. "block" or "delete"
+	 * @param bool $listed Whether the page is listed in Special:Specialpages
+	 * @param callable|bool $function Unused
+	 * @param string $file Unused
+	 * @param bool $includable Whether the page can be included in normal pages
+	 */
+	public function __construct(
+		$name = '', $restriction = '', $listed = true,
+		$function = false, $file = '', $includable = false
+	) {
+		parent::__construct(
+			$name, $restriction, $listed,
+			$function, $file, $includable
+		);
+		$this->services = MediaWikiServices::getInstance();
+	}
+
 	/**
 	 * Actually render the page content.
 	 * @param string $sParameter URL parameters to special page.
@@ -35,7 +57,7 @@ abstract class SpecialPage extends \SpecialPage {
 	 * @since 1.24
 	 */
 	public function getConfig() {
-		return MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+		return $this->services->getConfigFactory()->makeConfig( 'bsg' );
 	}
 
 	/**
@@ -81,7 +103,7 @@ abstract class SpecialPage extends \SpecialPage {
 		$key = 'SpecialPage:reauth:' . $this->getName();
 		$request = $this->getRequest();
 
-		$securityStatus = MediaWikiServices::getInstance()->getAuthManager()
+		$securityStatus = $this->services->getAuthManager()
 			->securitySensitiveOperationStatus( $level );
 		if ( $securityStatus === AuthManager::SEC_OK ) {
 			$uniqueId = $request->getVal( 'postUniqueId' );
