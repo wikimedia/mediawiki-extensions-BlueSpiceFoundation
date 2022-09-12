@@ -39,7 +39,7 @@ class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\Secon
 		$rawData->page_link = $this->linkrenderer->makeLink( $title );
 
 		$user = \User::newFromID( $rawData->tmp_user );
-		if ( !$user->isAnon() ) {
+		if ( $user->isRegistered() ) {
 			$rawData->user_link =
 				$this->linkrenderer->makeLink( $user->getUserPage() );
 		}

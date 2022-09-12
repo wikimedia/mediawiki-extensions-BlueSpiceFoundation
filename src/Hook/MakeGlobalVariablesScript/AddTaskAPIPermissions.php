@@ -9,7 +9,7 @@ namespace BlueSpice\Hook\MakeGlobalVariablesScript;
 class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 
 	protected function skipProcessing() {
-		if ( $this->getContext()->getUser()->isAnon() ) {
+		if ( !$this->getContext()->getUser()->isRegistered() ) {
 			return true;
 		}
 		$isAllowed = $this->getServices()->getPermissionManager()->userHasRight(

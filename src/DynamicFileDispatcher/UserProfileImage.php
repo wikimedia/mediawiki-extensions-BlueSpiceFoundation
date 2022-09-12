@@ -58,7 +58,7 @@ class UserProfileImage extends Module {
 	 */
 	public function getFile() {
 		$this->user = \User::newFromName( $this->params[static::USERNAME] );
-		if ( !$this->user || $this->user->isAnon() ) {
+		if ( !$this->user || !$this->user->isRegistered() ) {
 			return new AnonImage( $this );
 		}
 		return new DefaultImage( $this );

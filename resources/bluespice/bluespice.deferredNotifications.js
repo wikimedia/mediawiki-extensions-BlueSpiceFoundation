@@ -36,7 +36,7 @@
 
 		// Used setTimeout() because mw.cookie.set needs sometime to set the cookie.
 		setTimeout( function() {
-			var cookieSet = localStorage.getItem( 'notificationFlagCookieSet' )
+			var cookieSet = localStorage.getItem( 'notificationFlagCookieSet' );
 			if( cookieSet != 1 ) {
 				mw.cookie.set( 'notificationFlag',1 );
 			}
