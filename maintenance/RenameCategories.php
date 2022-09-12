@@ -199,7 +199,7 @@ if ( !$wgUser ) {
 	hw_error( "Invalid username" );
 }
 
-if ( $wgUser->isAnon() ) {
+if ( !$wgUser->isRegistered() ) {
 	$wgUser->addToDatabase();
 }
 
