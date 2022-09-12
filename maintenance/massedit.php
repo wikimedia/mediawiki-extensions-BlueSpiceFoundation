@@ -99,7 +99,7 @@ if ( !$wgUser ) {
 	error( "Invalid username" );
 }
 
-if ( $wgUser->isAnon() ) {
+if ( !$wgUser->isRegistered() ) {
 	$wgUser->addToDatabase();
 }
 

@@ -76,7 +76,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		foreach ( $res as $row ) {
 			$user = $userFactory->newFromId( (int)$row->wl_user );
 			// leftover data from deleted users
-			if ( !$user || $user->isAnon() ) {
+			if ( !$user || !$user->isRegistered() ) {
 				continue;
 			}
 			$distinctUserIds[(int)$row->wl_user] = true;

@@ -107,7 +107,7 @@ abstract class Hook implements MessageLocalizer, IServiceProvider {
 
 	public function process() {
 		if ( $this->skipProcessingForAnon() ) {
-			if ( $this->getContext()->getUser()->isAnon() ) {
+			if ( !$this->getContext()->getUser()->isRegistered() ) {
 				return true;
 			}
 		}
