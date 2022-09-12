@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Mskf1383"
 		]
 	},
 	"bs-filerepo-labelupload": "بارگذاری",
 	"bs-filerepo-labelfilter": "پالایه",
-	"bs-filerepo-headerfilename": "نام فايل",
+	"bs-filerepo-headerfilename": "نام پرونده",
 	"bs-filerepo-headerfilesize": "اندازه",
 	"bs-filerepo-headerpagecategories": "رده‌ها",
 	"bs-filerepo-headerfilewidth": "عرض",
