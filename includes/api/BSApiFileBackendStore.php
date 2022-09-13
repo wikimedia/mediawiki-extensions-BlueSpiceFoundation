@@ -28,7 +28,6 @@
  * @filesource
  */
 
-use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class BSApiFileBackendStore extends BSApiExtJSStoreBase {
@@ -180,7 +179,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		$now = MWTimestamp::now();
 		$adjustedNow = $this->getLanguage()->userAdjust( $now );
 		$timezoneDifference = $now - $adjustedNow;
-		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
+		$localRepo = $this->services->getRepoGroup()->getLocalRepo();
 		foreach ( $res as $oRow ) {
 			// Add fields required for schema migration. See `\CommentStore::getCommentInternal`
 			$oRow->img_cid = $oRow->img_description_id;
@@ -363,8 +362,8 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	 * @return array
 	 */
 	protected function addSecondaryFields( $aTrimmedData ) {
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
+		$linkRenderer = $this->services->getLinkRenderer();
+		$localRepo = $this->services->getRepoGroup()->getLocalRepo();
 		foreach ( $aTrimmedData as $oDataSet ) {
 			$oFilePage = Title::makeTitle( NS_FILE, $oDataSet->page_title );
 			$oDataSet->page_link = $linkRenderer->makeLink( $oFilePage );

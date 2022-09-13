@@ -116,10 +116,10 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 */
 	public function __construct( \ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
+		parent::__construct( $mainModule, $moduleName, $modulePrefix );
 		$this->aTasks = array_merge( $this->aTasks,  $this->aGlobalTasks );
 		$this->oTasksSpec = new BSTasksApiSpec( $this->aTasks );
-		$this->utilityFactory = $this->getServices()->getService( 'BSUtilityFactory' );
-		parent::__construct( $mainModule, $moduleName, $modulePrefix );
+		$this->utilityFactory = $this->services->getService( 'BSUtilityFactory' );
 	}
 
 	/**
@@ -170,7 +170,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 					MediaWikiServices::getInstance()->getReadOnlyMode()->getReason() )->plain();
 			} else {
 				$oTaskData = $this->getParameter( 'taskData' );
-				$this->getServices()->getHookContainer()->run(
+				$this->services->getHookContainer()->run(
 					'BSApiTasksBaseBeforeExecuteTask',
 					[
 						$this,
@@ -202,7 +202,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 					}
 				}
 
-				$this->getServices()->getHookContainer()->run( 'BSApiTasksBaseAfterExecuteTask', [
+				$this->services->getHookContainer()->run( 'BSApiTasksBaseAfterExecuteTask', [
 					$this,
 					$sTask,
 					&$oResult,
@@ -241,7 +241,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		if ( !$this->isWriteMode() ) {
 			return;
 		}
-		$dataUpdater = $this->getServices()->getService( 'BSSecondaryDataUpdater' );
+		$dataUpdater = $this->services->getService( 'BSSecondaryDataUpdater' );
 		$dataUpdater->run( $oTitle );
 	}
 
@@ -440,7 +440,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		// lookup permission for given task
 		foreach ( $taskPermissions as $sPermission ) {
 			// check if user have needed permission
-			$isAllowed = $this->getServices()->getPermissionManager()->userHasRight(
+			$isAllowed = $this->services->getPermissionManager()->userHasRight(
 				$this->getUser(),
 				$sPermission
 			);
@@ -699,7 +699,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		$titleParamResolver = $this->utilityFactory->getTitleParamsResolver( (array)$taskData );
 		$titlesToTest = $titleParamResolver->resolve();
 		$permissionsToTest = $this->getTaskPermissions( $task );
-		$pm = \MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
+		$pm = $this->services->getPermissionManager();
 		foreach ( $titlesToTest as $title ) {
 			foreach ( $permissionsToTest as $permission ) {
 				if ( !$pm->userCan( $permission, $this->getUser(), $title ) ) {

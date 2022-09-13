@@ -1,7 +1,6 @@
 <?php
 
 use BlueSpice\Renderer\Params;
-use MediaWiki\MediaWikiServices;
 
 class BSApiUserStore extends BSApiExtJSStoreBase {
 
@@ -102,7 +101,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 	 * @return string
 	 */
 	protected function getUserImage( $userName ) {
-		$factory = MediaWikiServices::getInstance()->getService( 'BSRendererFactory' );
+		$factory = $this->services->getService( 'BSRendererFactory' );
 		$thumbParams = [ 'width' => '32', 'height' => '32' ];
 
 		$user = User::newFromName( $userName );

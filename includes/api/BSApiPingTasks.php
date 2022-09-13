@@ -161,7 +161,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 				"message" => '',
 			];
 			// if hook returns false - overall success is false
-			$oResponse->success = $this->getServices()->getHookContainer()->run(
+			$oResponse->success = $this->services->getHookContainer()->run(
 				'BsAdapterAjaxPingResult',
 				[
 					$aSinglePing['sRef'],

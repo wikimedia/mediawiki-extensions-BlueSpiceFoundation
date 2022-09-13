@@ -31,7 +31,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			'type' => 'wikipage'
 		];
 
-		$contLang = $this->getServices()->getContentLanguage();
+		$contLang = $this->services->getContentLanguage();
 		if ( empty( $aOptions['namespaces'] ) ) {
 			// Search in all namespaces by default
 			$aOptions['namespaces'] = $contLang->getNamespaceIds();
@@ -63,7 +63,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			$aNsCondition[] = NS_MAIN;
 		}
 		asort( $aNamespaces );
-		$pm = \MediaWiki\MediaWikiServices::getInstance()->getPermissionManager();
+		$pm = $this->services->getPermissionManager();
 		foreach ( $aNamespaces as $iNsId => $sNamespaceText ) {
 			if ( empty( $sNamespaceText ) ) {
 				continue;
@@ -127,7 +127,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 		$aLike = $aNormalLike = [ '', $sOp ];
 		$aParams = explode( ' ', str_replace( '/', ' ', $oQueryTitle->getText() ) );
 		$searchEngineClass = SearchEngineFactory::getSearchEngineClass( $dbr );
-		$oSearchEngine = new $searchEngineClass( $this->getServices()->getDBLoadBalancer() );
+		$oSearchEngine = new $searchEngineClass( $this->services->getDBLoadBalancer() );
 		foreach ( $aParams as $sParam ) {
 			$aLike[] = $sParam;
 			$aLike[] = $sOp;
@@ -226,7 +226,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			return $aData;
 		}
 
-		$specialpageFactory = $this->getServices()->getSpecialPageFactory();
+		$specialpageFactory = $this->services->getSpecialPageFactory();
 		$aSpecialPages = $specialpageFactory->getNames();
 		$aSPDataSets = [];
 		$sSpecialNmspPrefix = $this->getLanguage()->getNsText( NS_SPECIAL );
