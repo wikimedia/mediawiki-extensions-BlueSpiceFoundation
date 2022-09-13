@@ -161,7 +161,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 			if ( is_callable( [ $this, $method ] ) ) {
 				$renderedVal = $this->$method( $val );
 			}
-			MediaWikiServices::getInstance()->getHookContainer()->run(
+			$this->services->getHookContainer()->run(
 				'BSTemplateRendererGetRenderedArgs',
 				[
 					$this,
@@ -257,8 +257,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 */
 	protected function getCacheHelper() {
 		if ( !$this->cacheHelper ) {
-			$this->cacheHelper = MediaWikiServices::getInstance()
-				->getService( 'BSUtilityFactory' )->getCacheHelper();
+			$this->cacheHelper = $this->services->getService( 'BSUtilityFactory' )
+				->getCacheHelper();
 			// Deprecated since 3.1! All sub classes should be registered with a factory
 			// callback and inject CacheHelper
 			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
@@ -272,9 +272,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 */
 	protected function getTemplateFactory() {
 		if ( !$this->templateFactory ) {
-			$this->templateFactory = MediaWikiServices::getInstance()->getService(
-				'BSTemplateFactory'
-			);
+			$this->templateFactory = $this->services->getService( 'BSTemplateFactory' );
 			// Deprecated since 3.1! All sub classes should be registered with a factory
 			// callback and inject TemplateFactory
 			wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );

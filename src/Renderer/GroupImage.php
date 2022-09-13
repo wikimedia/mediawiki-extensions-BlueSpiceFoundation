@@ -7,7 +7,6 @@ use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 
 class GroupImage extends \BlueSpice\TemplateRenderer {
 	public const PARAM_WIDTH = 'width';
@@ -90,8 +89,7 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 			DFDGroupImage::HEIGHT => $this->args[static::PARAM_HEIGHT]
 		];
 
-		$dfdUrlBuilder = MediaWikiServices::getInstance()
-			->getService( 'BSDynamicFileDispatcherUrlBuilder' );
+		$dfdUrlBuilder = $this->services->getService( 'BSDynamicFileDispatcherUrlBuilder' );
 		return $dfdUrlBuilder->build( new DFDParams( $params ) );
 	}
 
