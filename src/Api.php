@@ -29,6 +29,7 @@
 namespace BlueSpice;
 
 use ApiBase;
+use ApiMain;
 use ApiMessage;
 use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Api\Format\Json;
@@ -46,6 +47,20 @@ use User;
  */
 abstract class Api extends ApiBase {
 	public const PARAM_FORMAT = 'format';
+
+	/** @var MediaWikiServices */
+	protected $services = null;
+
+	/**
+	 * @stable to call
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName Name of this module
+	 * @param string $modulePrefix Prefix to use for parameter names
+	 */
+	public function __construct( ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
+		parent::__construct( $mainModule, $moduleName, $modulePrefix );
+		$this->services = MediaWikiServices::getInstance();
+	}
 
 	/**
 	 * Checks access permissions based on a list of titles and permissions. If
@@ -136,7 +151,7 @@ abstract class Api extends ApiBase {
 		if ( $errorLangCode === 'uselang' ) {
 			$errorLang = $this->getLanguage();
 		} elseif ( $errorLangCode === 'content' ) {
-			$errorLang = $this->getServices()->getContentLanguage();
+			$errorLang = $this->services->getContentLanguage();
 		} else {
 			$errorLangCode = RequestContext::sanitizeLangCode( $errorLangCode );
 			$errorLang = Language::factory( $errorLangCode );
@@ -157,7 +172,7 @@ abstract class Api extends ApiBase {
 	 * @return Config
 	 */
 	public function getConfig() {
-		return $this->getServices()->getConfigFactory()->makeConfig( 'bsg' );
+		return $this->services->getConfigFactory()->makeConfig( 'bsg' );
 	}
 
 	/**
@@ -165,7 +180,7 @@ abstract class Api extends ApiBase {
 	 * @return MediaWikiServices
 	 */
 	protected function getServices() {
-		return MediaWikiServices::getInstance();
+		return $this->services;
 	}
 
 	/**
@@ -221,7 +236,7 @@ abstract class Api extends ApiBase {
 			return;
 		}
 		if ( !$title ) {
-			$isAllowed = $this->getServices()->getPermissionManager()->userHasRight(
+			$isAllowed = $this->services->getPermissionManager()->userHasRight(
 				$user,
 				$permission
 			);
@@ -233,7 +248,7 @@ abstract class Api extends ApiBase {
 			return;
 		}
 
-		$errors = MediaWikiServices::getInstance()->getPermissionManager()
+		$errors = $this->services->getPermissionManager()
 			->getPermissionErrors( $permission, $user, $title );
 		foreach ( $errors as $error ) {
 			$status->fatal(
