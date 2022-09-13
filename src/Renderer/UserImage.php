@@ -7,7 +7,6 @@ use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 use RequestContext;
 use User;
 
@@ -66,7 +65,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 		$this->args['imagesrc'] = $this->getUser()->getName();
 		$this->args['username'] = $this->getUser()->getName();
 
-		$userHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$userHelper = $this->services->getService( 'BSUtilityFactory' )
 			->getUserHelper( $this->getUser() );
 
 		$this->args['imagetitle'] = $userHelper->getDisplayName();
@@ -104,8 +103,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 			UserProfileImage::HEIGHT => (int)$this->args[static::PARAM_HEIGHT] * 1.4,
 		];
 
-		$dfdUrlBuilder = MediaWikiServices::getInstance()
-			->getService( 'BSDynamicFileDispatcherUrlBuilder' );
+		$dfdUrlBuilder = $this->services->getService( 'BSDynamicFileDispatcherUrlBuilder' );
 		return $dfdUrlBuilder->build( new DFDParams( $params ) );
 	}
 
