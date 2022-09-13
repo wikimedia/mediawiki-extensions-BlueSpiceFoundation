@@ -26,8 +26,6 @@
  * Example request parameters of an ExtJS store
  */
 
-use MediaWiki\MediaWikiServices;
-
 class BSApiInterwikiStore extends BSApiExtJSStoreBase {
 	/**
 	 * @param string $sQuery Potential query provided by ExtJS component.
@@ -37,8 +35,7 @@ class BSApiInterwikiStore extends BSApiExtJSStoreBase {
 	 * will be done by the base class
 	 */
 	protected function makeData( $sQuery = '' ) {
-		$aInterwikiData = MediaWikiServices::getInstance()
-			->getInterwikiLookup()->getAllPrefixes();
+		$aInterwikiData = $this->services->getInterwikiLookup()->getAllPrefixes();
 
 		$aData = [];
 		foreach ( $aInterwikiData as $a ) {

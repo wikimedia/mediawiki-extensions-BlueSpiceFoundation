@@ -56,7 +56,6 @@
  */
 
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 
 abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
@@ -95,7 +94,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	protected $oLinkRenderer = null;
 
 	public function execute() {
-		$this->oLinkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$this->oLinkRenderer = $this->services->getLinkRenderer();
 
 		$sQuery = $this->getParameter( 'query' );
 		$aData = $this->makeData( $sQuery );
@@ -129,7 +128,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	 * @param array $aMetaData An array of meta data items
 	 */
 	public function returnData( $aData, $aMetaData = [] ) {
-		$this->getServices()->getHookContainer()->run( 'BSApiExtJSStoreBaseBeforeReturnData', [
+		$this->services->getHookContainer()->run( 'BSApiExtJSStoreBaseBeforeReturnData', [
 			$this,
 			&$aData,
 			&$aMetaData
@@ -254,7 +253,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	 * @return array
 	 */
 	public function postProcessData( $aData ) {
-		$res = $this->getServices()->getHookContainer()->run(
+		$res = $this->services->getHookContainer()->run(
 			'BSApiExtJSStoreBaseBeforePostProcessData',
 			[
 				$this,
@@ -269,7 +268,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
 		// First, apply filter
 		$aProcessedData = array_filter( $aData, [ $this, 'filterCallback' ] );
-		$this->getServices()->getHookContainer()->run( 'BSApiExtJSStoreBaseAfterFilterData', [
+		$this->services->getHookContainer()->run( 'BSApiExtJSStoreBaseAfterFilterData', [
 			$this,
 			&$aProcessedData
 		] );

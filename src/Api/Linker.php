@@ -45,7 +45,7 @@ class Linker extends Api {
 	}
 
 	private function renderLinks() {
-		$linkRenderer = $this->getServices()->getLinkRenderer();
+		$linkRenderer = $this->services->getLinkRenderer();
 
 		foreach ( $this->linkDescs as $id => $linkDesc ) {
 			// Compare `LinkRenderer::makeLink` signature
