@@ -74,6 +74,9 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	 */
 	protected $args = [];
 
+	/** @var MediaWikiServices */
+	protected $services = null;
+
 	/**
 	 * Constructor
 	 * @param Config $config
@@ -106,6 +109,7 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 			static::PARAM_CONTENT,
 			''
 		);
+		$this->services = MediaWikiServices::getInstance();
 	}
 
 	/**
@@ -186,7 +190,7 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 		if ( $this->args[static::PARAM_ID] ) {
 			$attrbs[static::PARAM_ID] = $this->args[static::PARAM_ID];
 		}
-		MediaWikiServices::getInstance()->getHookContainer()->run(
+		$this->services->getHookContainer()->run(
 			'BSFoundationRendererMakeTagAttribs',
 			[
 				$this,
