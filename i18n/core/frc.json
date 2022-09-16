@@ -1,0 +1,6 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"bs-email-greeting-receiver": "Bonjour {{GENDER:$1|M.|Mme|}} $2,"
+}

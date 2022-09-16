@@ -33,7 +33,7 @@
 	"bs-two-units-ago": "il y a $1 et $2",
 	"bs-one-unit-ago": "il y a $1",
 	"bs-now": "maintenant",
-	"bs-email-greeting-receiver": "Bonjour {{GENDER:$1|M. $2|Mme $2|$2}},",
+	"bs-email-greeting-receiver": "Bonjour {{GENDER:$1|M.|Mme|}} $2,",
 	"bs-email-footer": "Ce message a été généré automatiquement par $1. Veuillez ne pas répondre à ce courriel.",
 	"bs-userpagesettings-legend": "Paramètres utilisateur",
 	"bs-userpreferences-link-text": "Paramètres utilisateurs avancés",
