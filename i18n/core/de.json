@@ -31,7 +31,7 @@
 	"bs-two-units-ago": "vor $1 und $2",
 	"bs-one-unit-ago": "vor $1",
 	"bs-now": "jetzt",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hallo Herr $2|Hallo Frau $2|Hallo $2}},",
+	"bs-email-greeting-receiver": "Hallo {{GENDER:$1|Herr|Frau|}} $2,",
 	"bs-email-footer": "Dies ist eine automatisch generierte E-Mail aus $1. Bitte antworte nicht auf diese E-Mail.",
 	"bs-userpagesettings-legend": "Benutzereinstellungen",
 	"bs-userpreferences-link-text": "Weitere Benutzereinstellungen",

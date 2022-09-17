@@ -27,7 +27,7 @@
 	"bs-two-units-ago": "$1 ومنذ $2",
 	"bs-one-unit-ago": "قبل $1",
 	"bs-now": "الآن",
-	"bs-email-greeting-receiver": "{{GENDER:$1|مرحبا سيد $2|مرحبا سيدة $2|مرحبا $2}}،",
+	"bs-email-greeting-receiver": "مرحبا {{GENDER:$1|سيد|سيدة|}} $2،",
 	"bs-email-footer": "تم إنشاء هذه الرسالة تلقائيًا بوساطة $1، رجاءً لا ترد على هذا البريد الإلكتروني.",
 	"bs-userpagesettings-legend": "إعدادات المستخدم",
 	"bs-userpreferences-link-text": "المزيد من إعدادات المستخدم",
