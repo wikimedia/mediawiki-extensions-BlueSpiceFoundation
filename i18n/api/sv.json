@@ -3,6 +3,7 @@
 		"authors": [
 			"Ainali",
 			"Bengtsson96",
+			"JohanahoJ",
 			"Mjälten",
 			"Sabelöga",
 			"Technic2",
@@ -55,5 +56,6 @@
 	"apihelp-bs-wikipage-tasks-summary": "Tillhandahåller vanliga åtgärder för WikiPages",
 	"apihelp-bs-store-param-sort": "JSON-sträng med sorteringsinformation; deserialiserar till <code>spann objekt</code> som innehåller fältnamn och riktning för varje sorteringsalternativ",
 	"apihelp-bs-store-param-group": "JSON-sträng med JSON-sträng med grupperingsinformation; deserialiserar till <code>spann objekt</code> som innehåller fältnamn och riktning för varje sorteringsalternativ",
-	"apihelp-bs-store-param-filter": "JSON-sträng med filtreringsinformation; deserialiserar till <code>spann objekt</code> som innehåller fältnamn och riktning för varje sorteringsalternativ"
+	"apihelp-bs-store-param-filter": "JSON-sträng med filtreringsinformation; deserialiserar till <code>spann objekt</code> som innehåller fältnamn och riktning för varje sorteringsalternativ",
+	"bs-wikipage-tasks-error-contentmodel": "Uppgiften kunde inte utföras med innehållsmodellen för den angivna sidan."
 }
