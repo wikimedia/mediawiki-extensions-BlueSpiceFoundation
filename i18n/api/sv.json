@@ -3,6 +3,7 @@
 		"authors": [
 			"Ainali",
 			"Bengtsson96",
+			"JohanahoJ",
 			"Mjälten",
 			"Sabelöga",
 			"Technic2",
@@ -55,5 +56,6 @@
 	"bs-api-task-taskData-page-id": "ID-t av en existerande wikisida",
 	"bs-api-task-taskData-page-title": "En giltig titel för en wikisida",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array med strängar. Värden måste vara giltiga kategorinamn.",
-	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar."
+	"apihelp-bs-watchlist-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar store-parametrar.",
+	"bs-wikipage-tasks-error-contentmodel": "Uppgiften kunde inte utföras med innehållsmodellen för den angivna sidan."
 }
