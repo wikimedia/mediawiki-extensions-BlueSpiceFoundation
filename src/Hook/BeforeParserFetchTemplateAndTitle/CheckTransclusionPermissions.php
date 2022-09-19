@@ -24,7 +24,7 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndTitle {
 			$user = RequestContext::getMain()->getUser();
 		}
 		if ( $this->getConfig()->get( 'CommandLineMode' ) ) {
-			if ( $user->isAnon() ) {
+			if ( !$user->isRegistered() ) {
 				$user = $this->getServices()->getService( 'BSUtilityFactory' )
 					->getMaintenanceUser()->getUser();
 			}

@@ -426,7 +426,7 @@ abstract class Entity implements JsonSerializable {
 	 * @return bool
 	 */
 	public function userIsOwner( User $user ) {
-		if ( $user->isAnon() || $this->get( static::ATTR_OWNER_ID, 0 ) < 1 ) {
+		if ( !$user->isRegistered() || $this->get( static::ATTR_OWNER_ID, 0 ) < 1 ) {
 			return false;
 		}
 		return $user->getId() == $this->get( static::ATTR_OWNER_ID, 0 );
