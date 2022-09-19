@@ -3,6 +3,7 @@
 		"authors": [
 			"Ainali",
 			"Bengtsson96",
+			"JohanahoJ",
 			"Mjälten",
 			"Sabelöga",
 			"Technic2",
@@ -36,6 +37,7 @@
 	"apihelp-bs-task-param-task": "Uppgiften som bör utföras",
 	"apihelp-bs-task-param-taskdata": "JSON-sträng-kodat objekt med godtycklig data för uppgiften",
 	"apihelp-bs-task-param-format": "Format för resultatet",
+	"bs-wikipage-tasks-error-contentmodel": "Uppgiften kunde inte utföras med innehållsmodellen för den angivna sidan.",
 	"bs-wikipage-tasks-error-page-not-valid": "Den angivna sidan är inte giltig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Ändrade kategorier.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Du har inte tillåtelse att redigera sidan \"$1\".",
