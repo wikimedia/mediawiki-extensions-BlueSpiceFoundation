@@ -31,7 +31,7 @@ class BSFixturesTest extends BSApiTestCase {
 		$user = \User::newFromName( 'Paul' );
 		$this->assertTrue( $user->isRegistered(), "User should be known" );
 
-		$groups = $user->getGroups();
+		$groups = $services->getUserGroupManager()->getUserGroups( $user );
 
 		$this->assertTrue( in_array( 'A', $groups ), 'User should be in group A' );
 		$this->assertFalse( in_array( 'B', $groups ), 'User should not be in group B' );
