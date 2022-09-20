@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Tests;
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @group medium
  * @group Database
@@ -28,7 +30,8 @@ class BSFixturesTest extends BSApiTestCase {
 	 * @covers \User::newFromName
 	 */
 	public function testUserFixtures() {
-		$user = \User::newFromName( 'Paul' );
+		$services = MediaWikiServices::getInstance();
+		$user = $services->getUserFactory()->newFromName( 'Paul' );
 		$this->assertTrue( $user->isRegistered(), "User should be known" );
 
 		$groups = $user->getGroups();

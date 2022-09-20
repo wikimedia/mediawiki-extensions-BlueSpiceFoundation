@@ -46,7 +46,8 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 	 */
 	public function testProcessUserPageWithRename() {
 		define( 'BS_ADD_DATA_USER_NAME_TEST', true );
-		$testuser = \User::newFromName( $this->testUserName );
+		$services = MediaWikiServices::getInstance();
+		$testuser = $services->getUserFactory()->newFromName( $this->testUserName );
 		$testuser->addToDatabase();
 		$testuser->setRealName( 'Sysöp, W. Iki' );
 		$testuser->saveSettings();
@@ -59,7 +60,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = $services->getLinkRenderer();
 		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( $title->getText() );
@@ -90,7 +91,8 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::process
 	 */
 	public function testProcessUserPageWithOutRename() {
-		$testuser = \User::newFromName( $this->testUserName );
+		$services = MediaWikiServices::getInstance();
+		$testuser = $services->getUserFactory()->newFromName( $this->testUserName );
 		$testuser->addToDatabase();
 		$testuser->setRealName( 'Sysöp, W. Iki' );
 		$testuser->saveSettings();
@@ -103,7 +105,7 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = $services->getLinkRenderer();
 		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( 'Some link text' );

@@ -3,6 +3,7 @@
 # ini_set('display_errors', 1);
 # if (PHP_OS == "WINNT") exec("chcp 65001"); # doesn't seem to work - do it manually
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 
 if ( $argc != 2 ) {
@@ -197,7 +198,8 @@ $replace_with   = $newcatspatterns;
 // ---- End options
 
 // Check valid user
-$wgUser = User::newFromName( $userName );
+$services = MediaWikiServices::getInstance();
+$wgUser = $services->getUserFactory()->newFromName( $userName );
 if ( !$wgUser ) {
 	hw_error( "Invalid username" );
 }
@@ -254,7 +256,7 @@ $matches = 0;
 $inarticlematches = 0;
 
 $user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
-$namespaceInfo = \MediaWiki\MediaWikiServices::getInstance()->getNamespaceInfo();
+$namespaceInfo = $services->getNamespaceInfo();
 foreach ( $res as $row ) {
 	$row = (array)$row;
 	$cur_title = $row['page_title'];

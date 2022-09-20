@@ -108,7 +108,7 @@ class BSApiUserStore extends BSApiExtJSStoreBase {
 		$factory = $this->services->getService( 'BSRendererFactory' );
 		$thumbParams = [ 'width' => '32', 'height' => '32' ];
 
-		$user = User::newFromName( $userName );
+		$user = $this->services->getUserFactory()->newFromName( $userName );
 		if ( $user instanceof User === false ) {
 			return '';
 		}

@@ -5,6 +5,8 @@
  * @author Robert Vogel <vogel@hallowelt.com>
  */
 
+use MediaWiki\MediaWikiServices;
+
 // HINT: https://www.mediawiki.org/wiki/Manual:Writing_maintenance_scripts
 require_once 'BSMaintenance.php';
 
@@ -39,7 +41,8 @@ class TestMail extends BSMaintenance {
 		$sText      = $this->getOption( 'text', $this->defaultText );
 
 		// We asume that the given recipient is a user name
-		$oRecipient = User::newFromName( $sRecipient );
+		$oRecipient = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromName( $sRecipient );
 		$oRecipientAddress = null;
 
 		// The user does not exist in DB

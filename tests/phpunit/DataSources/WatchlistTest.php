@@ -47,7 +47,8 @@ class WatchlistTest extends \MediaWikiTestCase {
 			] );
 		}
 
-		$user = \User::newFromName( 'UTWatchlist' );
+		$user = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromName( 'UTWatchlist' );
 		if ( $user->getId() == 0 ) {
 			$user->addToDatabase();
 			\TestUser::setPasswordForUser( $user, 'UTWatchlist' );
