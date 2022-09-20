@@ -2,6 +2,9 @@
 # error_reporting(-1);
 # ini_set('display_errors', 1);
 # if (PHP_OS == "WINNT") exec("chcp 65001"); # doesn't seem to work - do it manually
+
+use MediaWiki\MediaWikiServices;
+
 if ( $argc != 2 ) {
 	exit( "Syntax: {$argv[0]} filename" );
 }
@@ -194,7 +197,8 @@ $replace_with   = $newcatspatterns;
 // ---- End options
 
 // Check valid user
-$wgUser = User::newFromName( $userName );
+$services = MediaWikiServices::getInstance();
+$wgUser = $services->getUserFactory()->newFromName( $userName );
 if ( !$wgUser ) {
 	hw_error( "Invalid username" );
 }
@@ -250,8 +254,9 @@ $wgFlaggedRevsAutoReview = true;
 $matches = 0;
 $inarticlematches = 0;
 
-$namespaceInfo = \MediaWiki\MediaWikiServices::getInstance()->getNamespaceInfo();
-$wikiPageFactory = \MediaWiki\MediaWikiServices::getInstance()->getWikiPageFactory();
+$user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
+$namespaceInfo = $services->getNamespaceInfo();
+$wikiPageFactory = $services->getWikiPageFactory();
 foreach ( $res as $row ) {
 	$row = (array)$row;
 	$cur_title = $row['page_title'];
