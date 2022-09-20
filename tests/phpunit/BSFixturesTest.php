@@ -34,10 +34,7 @@ class BSFixturesTest extends BSApiTestCase {
 		$user = $services->getUserFactory()->newFromName( 'Paul' );
 		$this->assertTrue( $user->isRegistered(), "User should be known" );
 
-		$groups = MediaWikiServices::getInstance()
-			->getUserGroupManager()
-			->getUserGroups( $user );
-
+		$groups = $services->getUserGroupManager()->getUserGroups( $user );
 		$this->assertContains( 'A', $groups, 'User should be in group A' );
 		$this->assertNotContains( 'B', $groups, 'User should not be in group B' );
 		$this->assertContains( 'C', $groups, 'User should be in group C' );
