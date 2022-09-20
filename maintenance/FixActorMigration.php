@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
 
 require_once 'BSMaintenance.php';
@@ -39,7 +40,8 @@ class FixActorMigration extends Maintenance {
 	}
 
 	private function setActorId() {
-		$user = User::newFromName( $this->unknownUserName );
+		$user = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromName( $this->unknownUserName );
 		$this->actorId = $user->getActorId();
 	}
 

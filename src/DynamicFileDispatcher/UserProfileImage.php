@@ -4,6 +4,7 @@ namespace BlueSpice\DynamicFileDispatcher;
 
 use BlueSpice\DynamicFileDispatcher\UserProfileImage\AnonImage;
 use BlueSpice\DynamicFileDispatcher\UserProfileImage\DefaultImage;
+use MediaWiki\MediaWikiServices;
 
 class UserProfileImage extends Module {
 	public const MODULE_NAME = 'userprofileimage';
@@ -57,7 +58,8 @@ class UserProfileImage extends Module {
 	 * @return File
 	 */
 	public function getFile() {
-		$this->user = \User::newFromName( $this->params[static::USERNAME] );
+		$this->user = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromName( $this->params[static::USERNAME] );
 		if ( !$this->user || !$this->user->isRegistered() ) {
 			return new AnonImage( $this );
 		}
