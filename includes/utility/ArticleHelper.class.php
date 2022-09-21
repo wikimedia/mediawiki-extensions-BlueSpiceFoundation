@@ -151,13 +151,16 @@ class BsArticleHelper {
 			return true;
 		}
 
-		$cacheHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$services = MediaWikiServices::getInstance();
+		$cacheHelper = $services->getService( 'BSUtilityFactory' )
 			->getCacheHelper();
+		$talkPageTarget = $services->getNamespaceInfo()->getTalkPage( $this->oTitle );
+		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
 		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',
 			'getDiscussionAmount',
-			$this->oTitle->getTalkPage()->getArticleID()
+			$talkPage->getArticleID()
 		);
 
 		$cacheHelper->invalidate( $sKey );
