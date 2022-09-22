@@ -33,7 +33,7 @@
 	"bs-two-units-ago": "$1 і  $2  тому",
 	"bs-one-unit-ago": "$1 тому",
 	"bs-now": "зараз",
-	"bs-email-greeting-receiver": "Привіт, {{GENDER:$1|шановний $2|шановна $2|$2}}.",
+	"bs-email-greeting-receiver": "Привіт, {{GENDER:$1|шановний|шановна|}} $2,",
 	"bs-email-footer": "Це повідомлення було згенеровано автоматично сайтом $1. Не відповідайте на цей лист.",
 	"bs-userpagesettings-legend": "Налаштування користувача",
 	"bs-userpreferences-link-text": "Додаткові налаштування користувача",
