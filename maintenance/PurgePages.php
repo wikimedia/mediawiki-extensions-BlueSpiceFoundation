@@ -9,18 +9,21 @@
 
 require_once __DIR__ . '/../../../maintenance/Maintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class PurgePages extends Maintenance {
 	public function execute() {
 		$dbr = $this->getDB( DB_REPLICA );
 		$res = $dbr->select( 'page', '*' );
 		$titles = [];
+		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $res as $row ) {
 			$title = Title::newFromRow( $row );
 			$titles[$title->getPrefixedDBkey()] = $title;
 		}
 		ksort( $titles );
 		foreach ( $titles as $title ) {
-			$wikipage = WikiPage::factory( $title );
+			$wikipage = $wikiPageFactory->newFromTitle( $title );
 
 			// Mimic "action=purge" in the webbrowser
 			$success = $wikipage->doPurge();
