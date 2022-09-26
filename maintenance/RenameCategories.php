@@ -437,6 +437,7 @@ $res = $dbw->select(
 echo $res->numRows() . " articles in category namespace\n";
 
 $user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
+$deletePageFactory = $services->getDeletePageFactory();
 foreach ( $res as $row ) {
 	$oldtitle = Title::newFromId( $row->page_id );
 	$oldtitletext = $oldtitle->getText();
@@ -479,19 +480,9 @@ foreach ( $res as $row ) {
 			else echo "failed\n";
 			*/
 			echo "Deleting $oldtitletext : ";
-			$error = '';
-			$delstat = $oldarticle->getPage()->doDeleteArticleReal(
-				$summary,
-				$user,
-				$noRC,
-				null,
-				$error,
-				null,
-				[],
-				'delete',
-				true
-			);
-			if ( $delstat->isOk() ) {
+			$deletePage = $deletePageFactory->newDeletePage( $oldarticle->getPage(), $user );
+			$deleteStatus = $deletePage->deleteIfAllowed( $summary );
+			if ( $deleteStatus->isOk() ) {
 				# doesn't work
 				echo "successful\n";
 			} else {
