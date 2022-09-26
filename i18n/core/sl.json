@@ -17,6 +17,8 @@
 	"bs-hours-duration": "{{PLURAL:$1|ena ura|$1 uri|$1 ure|$1 ur}}",
 	"bs-mins-duration": "{{PLURAL:$1|ena minuta|dve minuti|$1 minute|$1 minut}}",
 	"bs-secs-duration": "{{PLURAL:$1|ena sekunda|$1 sekundi|$1 sekunde|$1 sekund}}",
+	"bs-viewtagerrorlist-legend": "$1 – napaka",
+	"bs-navigation-contact": "Stik",
 	"bs-imagepage-download-text": "Prenesi",
 	"bs-ns": "Imenski prostori",
 	"bs-graphicallist-action-close": "Zapri",
