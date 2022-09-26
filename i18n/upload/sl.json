@@ -17,5 +17,6 @@
 	"bs-upload-descfilelabel": "Opis",
 	"bs-upload-error-long": "Napaka pri nalaganju",
 	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt",
-	"bs-upload-details": "Podrobnosti"
+	"bs-upload-details": "Podrobnosti",
+	"bs-upload-error": "Napaka"
 }
