@@ -3,6 +3,7 @@ namespace BlueSpice;
 
 use Config;
 use IContextSource;
+use MediaWiki\MediaWikiServices;
 
 class Context implements IContextSource {
 
@@ -18,6 +19,9 @@ class Context implements IContextSource {
 	 */
 	protected $config = null;
 
+	/** @var MediaWikiServices */
+	protected $services = null;
+
 	/**
 	 *
 	 * @param IContextSource $context
@@ -26,6 +30,7 @@ class Context implements IContextSource {
 	public function __construct( IContextSource $context, Config $config ) {
 		$this->context = $context;
 		$this->config = $config;
+		$this->services = MediaWikiServices::getInstance();
 	}
 
 	/**
