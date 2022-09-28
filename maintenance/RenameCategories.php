@@ -295,7 +295,8 @@ foreach ( $res as $row ) {
 
 	// Fetch text
 	$wikipage = $wikiPageFactory->newFromTitle( $title );
-	$text = ContentHandler::getContentText( $wikipage->getContent() );
+	$content = $wikipage->getContent();
+	$text = ( $content instanceof TextContent ) ? $content->getText() : '';
 	if ( $text == '' ) {
 		echo 'empty!';
 	}
@@ -447,10 +448,9 @@ foreach ( $res as $row ) {
 	$oldtitle = Title::newFromId( $row->page_id );
 	$oldtitletext = $oldtitle->getText();
 	$oldarticle = new Article( $oldtitle );
-	// Article::fetchContent() is deprecated.
-	// Replaced by WikiPage::getContent()::getNativeData()
 	$oldwikipage = $wikiPageFactory->newFromTitle( $oldtitle );
-	$oldarticlecontent = ContentHandler::getContentText( $oldwikipage->getContent() );
+	$content = $oldwikipage->getContent();
+	$oldarticlecontent = ( $content instanceof TextContent ) ? $content->getText() : '';
 	$newtitletext = preg_replace( $oldtitlepatterns, $newtitlepatterns, $oldtitletext, -1, $repcount );
 	echo "$oldtitle" . PHP_EOL . "=========================" . PHP_EOL;
 	if ( $repcount > 0 ) {

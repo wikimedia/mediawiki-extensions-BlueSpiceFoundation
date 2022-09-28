@@ -101,13 +101,10 @@ class BSMassEditBase extends BSMaintenance {
 	 * Can be overwritten by subclass if other content model than WikiText should be processed
 	 * @param Content $oContent
 	 * @param WikiPage $oWikiPage
-	 * @return Content
+	 * @return Content|null
 	 */
 	protected function modifyContent( $oContent, $oWikiPage ) {
-		$sTextContent = '';
-		if ( $oContent instanceof Content ) {
-			$sTextContent = $oContent->getContentHandler()->getContentText( $oContent );
-		}
+		$sTextContent = ( $oContent instanceof TextContent ) ? $oContent->getText() : '';
 
 		$sNewTextContent = $this->modifyTextContent(
 			$sTextContent,
