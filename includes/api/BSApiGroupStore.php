@@ -25,7 +25,6 @@
  *
  * Example request parameters of an ExtJS store
  */
-use MediaWiki\MediaWikiServices;
 
 class BSApiGroupStore extends BSApiExtJSStoreBase {
 
@@ -43,7 +42,7 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 		$this->sLcQuery = strtolower( $sQuery );
 
 		$aData = [];
-		$groupHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getGroupHelper();
+		$groupHelper = $this->services->getService( 'BSUtilityFactory' )->getGroupHelper();
 		$explicitGroups = $groupHelper->getAvailableGroups( [ 'filter' => [ 'explicit' ] ] );
 		foreach ( $explicitGroups as $sGroup ) {
 			$sDisplayName = $sGroup;

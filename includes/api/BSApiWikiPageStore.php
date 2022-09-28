@@ -25,8 +25,6 @@
  *
  */
 
-use MediaWiki\MediaWikiServices;
-
 class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 
 	/**
@@ -115,8 +113,7 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	 * @return bool <tt>true</tt> if user have access to page, <tt>false</tt> otherwise
 	 */
 	protected function checkDatasetPermission( Title $title ) {
-		return MediaWikiServices::getInstance()
-			->getPermissionManager()
+		return $this->services->getPermissionManager()
 			->userCan( 'read', $this->getUser(), $title );
 	}
 
@@ -142,7 +139,7 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	 * @return array
 	 */
 	protected function addSecondaryFields( $aTrimmedData ) {
-		$oLinkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$oLinkRenderer = $this->services->getLinkRenderer();
 		foreach ( $aTrimmedData as &$oDataSet ) {
 			$oTitle = Title::makeTitle(
 				$oDataSet->page_namespace,

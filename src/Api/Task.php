@@ -177,7 +177,7 @@ class Task extends Api {
 	 * @return ITask
 	 */
 	protected function getTask( $taskName ) {
-		return $this->getServices()->getService( 'BSTaskFactory' )->get(
+		return $this->services->getService( 'BSTaskFactory' )->get(
 			$taskName,
 			$this->getContext(),
 			$this->makePermissionChecker()
