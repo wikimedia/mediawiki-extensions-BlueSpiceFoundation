@@ -2,8 +2,6 @@
 
 namespace BlueSpice\Special;
 
-use MediaWiki\MediaWikiServices;
-
 class Credits extends \BlueSpice\SpecialPage {
 
 	private $aTranslators = [];
@@ -100,7 +98,7 @@ class Credits extends \BlueSpice\SpecialPage {
 	 * @return array
 	 */
 	protected function getTranslatorsList() {
-		$cacheHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$cacheHelper = $this->services->getService( 'BSUtilityFactory' )
 			->getCacheHelper();
 		$key = $cacheHelper->getCacheKey(
 			'BlueSpice',
