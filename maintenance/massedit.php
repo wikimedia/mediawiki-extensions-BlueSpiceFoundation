@@ -188,7 +188,8 @@ foreach ( $res as $row ) {
 
 	// Fetch text
 	$wikipage = $wikiPageFactory->newFromTitle( $title );
-	$text = ContentHandler::getContentText( $wikipage->getContent() );
+	$content = $wikipage->getContent();
+	$text = ( $content instanceof TextContent ) ? $content->getText() : '';
 	if ( $text == '' ) {
 		echo 'empty!';
 	}
