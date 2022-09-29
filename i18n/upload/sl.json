@@ -14,6 +14,7 @@
 	"bs-upload-license": "Licenca",
 	"bs-upload-categories": "Kategorije",
 	"bs-upload-upload-waitmessage": "Nalaganje poteka ...",
+	"bs-upload-error": "Napaka",
 	"bs-upload-descfilelabel": "Opis",
 	"bs-upload-error-long": "Napaka pri nalaganju",
 	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt",
