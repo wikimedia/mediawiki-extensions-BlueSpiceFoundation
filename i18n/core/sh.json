@@ -42,5 +42,18 @@
 	"bs-graphicallist-action-close": "Zatvori",
 	"bs-graphicallist-action-list": "Spisak",
 	"bs-graphicallist-action-preview": "Pregled",
-	"bs-notifications-agent-anon": "anoniman korisnik"
+	"bs-notifications-agent-anon": "anoniman korisnik",
+	"bluespicefoundation-desc": "Omogućava spremnost MediaWikija za preduzeće",
+	"bs-tab_navigation": "Navigacija",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Zdravo, gospodine $2|Zdravo, gospođo $2|Zdravo, $2}},",
+	"bs-email-footer": "Ovu poruku je automatski generisao/la $1. Ne odgovarajte na ovaj imejl.",
+	"bs-exception-view-admin-hint": "Kontaktirajte svog administratora sistema.",
+	"bs-permissionerror": "Greška u dozvoli!",
+	"bs-lockdown-groups-permissionerror": "Radnja \"$1\" nije dostupna iz {{PLURAL:$2|sljedećeg razloga|sljedećih razloga}}: $3",
+	"bs-filesystemhelper-no-directory": "Direktorij <code>$1</code> nije važeći.",
+	"bs-filesystemhelper-has-path-traversal": "Otkrivena prelazna putanja.",
+	"bs-filesystemhelper-file-not-exists": "Datoteka <code>$1</code> ne postoji.",
+	"bs-filesystemhelper-file-copy-error": "Datoteka <code>$1</code> ne može biti kopirana.",
+	"bs-filesystemhelper-file-already-exists": "Datoteka <code>$1</code> već postoji.",
+	"bs-filesystemhelper-file-delete-error": "Datoteka <code>$1</code> ne može da se izbriše."
 }
