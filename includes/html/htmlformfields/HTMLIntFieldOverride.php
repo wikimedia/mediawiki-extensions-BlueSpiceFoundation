@@ -1,5 +1,7 @@
 <?php
 
+use OOUI\NumberInputWidget;
+
 class HTMLIntFieldOverride extends HTMLIntField {
 	/**
 	 *
@@ -28,7 +30,7 @@ class HTMLIntFieldOverride extends HTMLIntField {
 	/**
 	 *
 	 * @param int $value
-	 * @return \BlueSpice\Html\OOUI\NumberInputWidget
+	 * @return NumberInputWidget
 	 */
 	public function getInputOOUI( $value ) {
 		$attr = [
@@ -52,9 +54,6 @@ class HTMLIntFieldOverride extends HTMLIntField {
 		if ( isset( $this->mParams['showButtons'] ) ) {
 			$attr['showButtons'] = $this->mParams['showButtons'];
 		}
-		$attr['isInteger'] = true;
-		// Compatibility layer - replace with \OOUI\NumberInputWidget
-		// when MW core requires oojs/oojs-ui at least v0.27.0
-		return new \BlueSpice\Html\OOUI\NumberInputWidget( $attr );
+		return new NumberInputWidget( $attr );
 	}
 }
