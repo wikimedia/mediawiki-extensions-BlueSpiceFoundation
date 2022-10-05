@@ -42,10 +42,10 @@ class ListSorter {
 		}
 
 		if ( $this->direction === static::ASC ) {
-			return $posA > $posB;
+			return $posA <=> $posB;
 		}
 
-		return $posA < $posB;
+		return $posB <=> $posA;
 	}
 
 }
