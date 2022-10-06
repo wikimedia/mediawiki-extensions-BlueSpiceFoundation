@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
-			"Pickle12"
+			"Pickle12",
+			"Eleassar"
 		]
 	},
+	"apihelp-bs-store-param-format": "Oblika izhoda (samo JSON ali oblikovani JSON)",
 	"apihelp-bs-upload-license-store-description": "Seznam dovoljenj za nalaganje datoteke"
 }

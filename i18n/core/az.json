@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wertuose"
+			"Wertuose",
+			"Toghrul Rahimli"
 		]
 	},
-	"bs-days-duration": "{{PLURAL:$1|1 gün|$1 gün}}"
+	"bs-days-duration": "{{PLURAL:$1|1 gün|$1 gün}}",
+	"bs-imagepage-download-text": "Yüklə"
 }
