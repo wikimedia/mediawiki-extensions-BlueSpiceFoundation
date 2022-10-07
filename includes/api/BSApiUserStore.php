@@ -2,6 +2,10 @@
 
 use BlueSpice\Renderer\Params;
 
+/**
+ * @deprecated since 4.2.2 - use CommonWebAPIs REST api instead
+ * /mws/v1/user-query-store
+ */
 class BSApiUserStore extends BSApiExtJSStoreBase {
 
 	/**
