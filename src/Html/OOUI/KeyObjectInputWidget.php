@@ -7,6 +7,7 @@ use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\InputWidget;
+use OOUI\NumberInputWidget;
 use OOUI\TextInputWidget;
 
 class KeyObjectInputWidget extends KeyValueInputWidget {
