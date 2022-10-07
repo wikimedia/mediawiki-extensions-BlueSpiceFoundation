@@ -118,8 +118,7 @@ class Context implements IContextSource {
 	 */
 	public function getWikiPage() {
 		wfDeprecated( __METHOD__, '1.37' );
-		$services = MediaWikiServices::getInstance();
-		return $services->getWikiPageFactory()->newFromTitle( $this->context->getTitle() );
+		return $this->services->getWikiPageFactory()->newFromTitle( $this->context->getTitle() );
 	}
 
 	/**
