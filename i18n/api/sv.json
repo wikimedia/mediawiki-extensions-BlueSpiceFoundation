@@ -3,11 +3,11 @@
 		"authors": [
 			"Ainali",
 			"Bengtsson96",
+			"JohanahoJ",
 			"Mjälten",
 			"Sabelöga",
 			"Technic2",
-			"WikiPhoenix",
-			"JohanahoJ"
+			"WikiPhoenix"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Listar alla filer från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",

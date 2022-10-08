@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
-			"Pickle12",
-			"Eleassar"
+			"Eleassar",
+			"Pickle12"
 		]
 	},
 	"apihelp-bs-store-param-format": "Oblika izhoda (samo JSON ali oblikovani JSON)",
