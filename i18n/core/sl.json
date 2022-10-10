@@ -24,5 +24,9 @@
 	"bs-graphicallist-action-close": "Zapri",
 	"bs-graphicallist-action-list": "Seznam",
 	"action-wikiadmin": "uporabo morebitno nevarnih skrbniških opravil, kot so upravljanje uporabnikov, pravic in globalne konfiguracije (razširitve BlueSpice),",
-	"right-wikiadmin": "Uporaba morebitno nevarnih skrbniških opravil, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami (razširitve BlueSpice)"
+	"right-wikiadmin": "Uporaba morebitno nevarnih skrbniških opravil, kot so upravljanje z uporabniki, dovoljenji, globalnimi nastavitvami (razširitve BlueSpice)",
+	"bs-pref-logopath": "Pot logotipa:",
+	"bs-graphicallist-action-preview": "Predogled",
+	"bs-bluespice": "BlueSpice",
+	"bs-notifications-agent-anon": "anonimni uporabnik"
 }
