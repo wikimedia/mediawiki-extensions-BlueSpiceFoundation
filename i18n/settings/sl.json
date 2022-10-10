@@ -4,5 +4,10 @@
 			"Eleassar"
 		]
 	},
-	"bs-setting-path-export": "Izvoz"
+	"bs-setting-path-export": "Izvoz",
+	"bs-setting-path-system": "Sistem",
+	"bs-setting-path-dataanalysis": "Analiza podatkov",
+	"bs-setting-path-editor": "Urejevalec",
+	"bs-setting-path-search": "Iskanje in navigacija",
+	"bs-setting-path-personalisation": "Personalizacija"
 }
