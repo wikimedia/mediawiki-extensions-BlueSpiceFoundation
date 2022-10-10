@@ -24,5 +24,9 @@
 	"bs-days-duration": "{{PLURAL:$1|en dan|$1 dneva|$1 dnevi|$1 dnevov}}",
 	"bs-secs-duration": "{{PLURAL:$1|ena sekunda|$1 sekundi|$1 sekunde|$1 sekund}}",
 	"bs-viewtagerrorlist-legend": "$1 – napaka",
-	"bs-navigation-contact": "Stik"
+	"bs-navigation-contact": "Stik",
+	"bs-pref-logopath": "Pot logotipa:",
+	"bs-graphicallist-action-preview": "Predogled",
+	"bs-bluespice": "BlueSpice",
+	"bs-notifications-agent-anon": "anonimni uporabnik"
 }

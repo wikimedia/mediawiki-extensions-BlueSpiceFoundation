@@ -9,5 +9,7 @@
 	"bs-deferred-batch-status": "Stanje",
 	"bs-deferred-action-apideletepage-description": "Izbriši »$1«.",
 	"bs-deferred-action-status-done": "Končano.",
-	"bs-deferred-batch-actions": "Dejanja"
+	"bs-deferred-batch-actions": "Dejanja",
+	"bs-deferred-action-status-pending": "V teku.",
+	"bs-deferred-batch-progress-desc": "Napredek"
 }
