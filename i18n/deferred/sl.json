@@ -4,8 +4,10 @@
 			"Eleassar"
 		]
 	},
+	"bs-deferred-action-status-pending": "V teku.",
 	"bs-deferred-action-status-done": "Končano.",
 	"bs-deferred-action-apieditpage-description": "Uredi »$1«.",
+	"bs-deferred-batch-progress-desc": "Napredek",
 	"bs-deferred-batch-actions": "Dejanja",
 	"bs-deferred-batch-description": "Opis",
 	"bs-deferred-batch-status": "Stanje",
