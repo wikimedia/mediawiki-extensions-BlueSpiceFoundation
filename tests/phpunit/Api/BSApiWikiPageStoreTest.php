@@ -11,6 +11,7 @@ use BlueSpice\Tests\BSPageFixturesProvider;
  * @group api
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @covers \BSApiWikiPageStore
  */
 class BSApiWikiPageStoreTest extends BSApiExtJSStoreTestBase {
 

@@ -12,6 +12,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @group api
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @covers \BSApiGroupStore
  */
 class BSApiGroupStoreTest extends BSApiExtJSStoreTestBase {
 
