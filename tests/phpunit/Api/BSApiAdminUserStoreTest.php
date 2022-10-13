@@ -11,6 +11,7 @@ use BlueSpice\Tests\BSUserFixtures;
  * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @covers \BSApiAdminUserStore
  */
 class BSApiAdminUserStoreTest extends BSApiExtJSStoreTestBase {
 

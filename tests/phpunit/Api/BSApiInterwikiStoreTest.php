@@ -13,6 +13,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  * @group Daniel
+ * @covers \BSApiInterwikiStore
  */
 class BSApiInterwikiStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 3;

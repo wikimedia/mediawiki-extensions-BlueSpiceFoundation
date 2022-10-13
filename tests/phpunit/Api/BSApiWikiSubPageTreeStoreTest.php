@@ -10,6 +10,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @covers \BSApiWikiSubPageTreeStore
  */
 class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 2;

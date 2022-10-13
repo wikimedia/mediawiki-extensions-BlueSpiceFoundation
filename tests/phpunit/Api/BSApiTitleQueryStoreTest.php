@@ -11,6 +11,7 @@ use BlueSpice\Tests\BSPageFixturesProvider;
  * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @covers \BSApiTitleQueryStore
  *
  * Class BSApiTitleQueryStoreTest
  */

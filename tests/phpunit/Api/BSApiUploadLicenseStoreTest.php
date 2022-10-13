@@ -9,6 +9,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @group api
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @covers \BSApiUploadLicenseStore
  */
 class BSApiUploadLicenseStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 1;
