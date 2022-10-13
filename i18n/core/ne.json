@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Bada Kaji",
+			"CAPTAIN MEDUSA",
 			"Drjpoudel",
 			"बडा काजी",
 			"हिमाल सुबेदी"
 		]
 	},
-	"bs-userbar_loginswitch_logout": "निर्गमन",
+	"bs-userbar_loginswitch_logout": "निर्गमन गर्नुहोस्",
 	"bs-extended-search-textfield-defaultvalue": "खोज्नुहोस्...",
 	"bs-imagepage-download-text": "डाउनलोड गरिएकाे",
 	"bs-graphicallist-action-list": "सूची",
