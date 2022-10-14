@@ -16,6 +16,7 @@
 			"Radmir Far",
 			"Redredsonia",
 			"Romanko Mikhail",
+			"UniCollab",
 			"Vlad5250",
 			"WindEwriX",
 			"Краснорядцева Елена"
@@ -91,5 +92,11 @@
 	"apihelp-bs-templatelinks-store-param-page-id": "Идентификатор страницы",
 	"apihelp-bs-linker-summary": "Возвращает ссылки на страницы, созданные Linker",
 	"apihelp-bs-linker-description": "Возвращает ссылки на страницы, созданные Linker",
-	"apihelp-bs-group-store-summary": "Список всех групп, кроме $wgImplicitGroups. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры магазина ExtJS."
+	"apihelp-bs-group-store-summary": "Список всех групп, кроме $wgImplicitGroups. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры магазина ExtJS.",
+	"apihelp-bs-interwiki-store-description": "Перечисляет все интервики-ссылки. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры ExtJS Store.",
+	"apihelp-bs-interwiki-store-summary": "Перечисляет все интервики-ссылки. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры ExtJS Store.",
+	"apihelp-bs-titlequery-store-description": "Перечисляет заголовки страниц и (необязательно) префиксы пространств имен в зависимости от запроса. Реализует параметры ExtJS Store.",
+	"apihelp-bs-titlequery-store-summary": "Перечисляет заголовки страниц и (необязательно) префиксы пространств имен в зависимости от запроса. Реализует параметры ExtJS Store.",
+	"apihelp-bs-templatelinks-store-description": "Перечисляет все шаблоны страницы, включая ссылку на шаблон.",
+	"apihelp-bs-templatelinks-store-summary": "Перечисляет все шаблоны страницы, включая ссылку на шаблон."
 }
