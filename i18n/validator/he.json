@@ -12,5 +12,7 @@
 	"bs-validator-missing-required": "הפרמטר הזה נדרש",
 	"bs-validator-value-not-recognized": "לא ניתן לעבד את הערך",
 	"bs-validator-invalid-parameter": "זה משתנה אסור",
-	"bs-validator-url-validation-approved": "הכתובת אומתה בהצלחה."
+	"bs-validator-url-validation-approved": "הכתובת אומתה בהצלחה.",
+	"bs-validator-invalid-float": "לא מספר נקודה צפה תקין",
+	"bs-validator-invalid-integer": "לא מספר שלם תקין"
 }
