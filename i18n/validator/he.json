@@ -9,6 +9,8 @@
 	"bs-validator-url-validation-approved": "הכתובת אומתה בהצלחה.",
 	"bs-validator-value-not-recognized": "לא ניתן לעבד את הערך",
 	"bs-validator-invalid-boolean": "ערך בוליאני לא תקין",
+	"bs-validator-invalid-float": "לא מספר נקודה צפה תקין",
+	"bs-validator-invalid-integer": "לא מספר שלם תקין",
 	"bs-validator-invalid-string": "מחרוזת לא תקינה",
 	"bs-validator-invalid-coordinate": "קואורדינטה לא תקינה",
 	"bs-validator-invalid-parameter": "זה משתנה אסור",
