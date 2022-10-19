@@ -11,5 +11,6 @@
 	"bs-deferred-action-status-done": "Končano.",
 	"bs-deferred-batch-actions": "Dejanja",
 	"bs-deferred-action-status-pending": "V teku.",
-	"bs-deferred-batch-progress-desc": "Napredek"
+	"bs-deferred-batch-progress-desc": "Napredek",
+	"bs-deferred-action-status-error": "Ni uspelo."
 }
