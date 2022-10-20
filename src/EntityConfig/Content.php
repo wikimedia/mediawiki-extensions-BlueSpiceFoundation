@@ -3,9 +3,9 @@
 namespace BlueSpice\EntityConfig;
 
 use BlueSpice\Data\Entity\Schema;
-use BlueSpice\Data\FieldType;
 use BlueSpice\Entity\Content as ContentEntity;
 use BlueSpice\EntityConfig;
+use MWStake\MediaWiki\Component\DataStore\FieldType;
 
 abstract class Content extends EntityConfig {
 

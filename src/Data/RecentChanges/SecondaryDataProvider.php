@@ -4,7 +4,7 @@ namespace BlueSpice\Data\RecentChanges;
 
 use MediaWiki\MediaWikiServices;
 
-class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
+class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
 
 	/**
 	 *

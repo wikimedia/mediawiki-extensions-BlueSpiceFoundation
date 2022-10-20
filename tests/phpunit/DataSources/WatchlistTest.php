@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\DataSources;
 
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 
 /**
  * @group BlueSpice
@@ -78,7 +79,7 @@ class WatchlistTest extends \MediaWikiTestCase {
 	 */
 	public function testUnfilteredFetching() {
 		$watchlist = $this->makeInstance();
-		$resultSet = $watchlist->read( new \BlueSpice\Data\ReaderParams() );
+		$resultSet = $watchlist->read( new ReaderParams() );
 
 		$records = $resultSet->getRecords();
 		$total = $resultSet->getTotal();

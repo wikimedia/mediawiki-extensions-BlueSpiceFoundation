@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\Page;
 
-use BlueSpice\Data\DatabaseReader;
-use BlueSpice\Data\ReaderParams;
 use IContextSource;
+use MWStake\MediaWiki\Component\DataStore\DatabaseReader;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {
