@@ -3,8 +3,11 @@
 namespace BlueSpice\Api;
 
 use BlueSpice\Api;
-use BlueSpice\Data\ReaderParams;
-use BlueSpice\Data\RecordConverter;
+use MWStake\MediaWiki\Component\DataStore\IStore;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
+use MWStake\MediaWiki\Component\DataStore\RecordConverter;
+use MWStake\MediaWiki\Component\DataStore\ResultSet;
+use MWStake\MediaWiki\Component\DataStore\Schema;
 
 /**
  * Example request parameters of an ExtJS store
@@ -67,9 +70,9 @@ abstract class Store extends Api {
 
 	/**
 	 * Creates a proper output format based on the class's properties
-	 * @param \BlueSpice\Data\ResultSet $resultSet Holds the records as an
+	 * @param ResultSet $resultSet Holds the records as an
 	 * array of plain old data objects
-	 * @param \BlueSpice\Data\Schema|null $schema An array of meta data items
+	 * @param Schema|null $schema An array of meta data items
 	 */
 	protected function returnData( $resultSet, $schema = null ) {
 		$this->getServices()->getHookContainer()->run( 'BSApiStoreBaseBeforeReturnData', [
@@ -191,7 +194,7 @@ abstract class Store extends Api {
 	}
 
 	/**
-	 * @return \BlueSpice\Data\IStore
+	 * @return IStore
 	 */
 	abstract protected function makeDataStore();
 

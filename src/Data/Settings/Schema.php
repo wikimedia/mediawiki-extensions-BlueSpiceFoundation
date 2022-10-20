@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Settings;
 
 use MWStake\MediaWiki\Component\DataStore\FieldType;
 
-class Schema extends \BlueSpice\Data\Schema {
+class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
 	/**
 	 * @param array|null $input
 	 */

@@ -2,14 +2,15 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
-use BlueSpice\Data\IPrimaryDataProvider;
-use BlueSpice\Data\ReaderParams;
+use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
+use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @var \BlueSpice\Data\Record
+	 * @var DataStoreRecord
 	 */
 	protected $data = [];
 

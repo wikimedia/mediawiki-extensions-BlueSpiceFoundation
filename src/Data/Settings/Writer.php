@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\Settings;
 
-use BlueSpice\Data\DatabaseWriter;
-use BlueSpice\Data\IReader;
-use BlueSpice\Data\IRecord;
+use MWStake\MediaWiki\Component\DataStore\DatabaseWriter;
+use MWStake\MediaWiki\Component\DataStore\IReader;
+use MWStake\MediaWiki\Component\DataStore\IRecord;
 
 class Writer extends DatabaseWriter {
 

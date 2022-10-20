@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Watchlist;
 
-class Record extends \BlueSpice\Data\Record {
+class Record extends \MWStake\MediaWiki\Component\DataStore\Record {
 	public const USER_ID = 'user_id';
 	public const USER_DISPLAY_NAME = 'user_display_name';
 	public const USER_LINK = 'user_link';

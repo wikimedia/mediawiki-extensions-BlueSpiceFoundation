@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Categories;
 
-class Record extends \BlueSpice\Data\Record {
+class Record extends \MWStake\MediaWiki\Component\DataStore\Record {
 	public const CAT_ID = 'cat_id';
 	public const CAT_TITLE = 'cat_title';
 	public const CAT_PAGES = 'cat_pages';
