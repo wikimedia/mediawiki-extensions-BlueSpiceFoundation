@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Templatelinks;
 
 use MWStake\MediaWiki\Component\DataStore\FieldType;
 
-class Schema extends \BlueSpice\Data\Schema {
+class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
 	public function __construct() {
 		parent::__construct( [
 			Record::TEMPLATE_TITLE => [

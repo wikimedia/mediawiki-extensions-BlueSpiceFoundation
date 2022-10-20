@@ -5,7 +5,7 @@ namespace BlueSpice\Data\Watchlist;
 use ContextSource;
 use MediaWiki\MediaWikiServices;
 
-class SecondaryDataProvider extends \BlueSpice\Data\SecondaryDataProvider {
+class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
 
 	/**
 	 *
