@@ -3,6 +3,7 @@
 		"authors": [
 			"Alan ffm",
 			"Chrumps",
+			"Pefect",
 			"Vengir",
 			"WaldiSt"
 		]
@@ -76,5 +77,6 @@
 	"bs-extjs-flyout-tab-grid-label": "Szczegóły",
 	"bs-extjs-flyout-tab-grid-title": "Przełącz na widok szczegółów",
 	"bs-extjs-flyout-add-title": "Kliknij tutaj, aby dodać nowy element",
-	"bs-extjs-flyout-add-label": "Dodaj element"
+	"bs-extjs-flyout-add-label": "Dodaj element",
+	"bs-extjs-pageexport-overwrite-label": "Nadpisz"
 }
