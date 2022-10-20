@@ -3,6 +3,8 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MWStake\MediaWiki\Component\DataStore\ResultSet;
+use MWStake\MediaWiki\Component\DataStore\Schema;
 
 abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	/**
@@ -10,18 +12,18 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	 */
 	protected $store;
 	/**
-	 * @var \BlueSpice\Data\ResultSet
+	 * @var ResultSet
 	 */
 	protected $resultSet;
 	/**
-	 * @var \BlueSpice\Data\Schema
+	 * @var Schema
 	 */
 	protected $schema;
 
 	/**
 	 * @param \BlueSpice\Api\Store $store
-	 * @param \BlueSpice\Data\ResultSet &$resultSet
-	 * @param \BlueSpice\Data\Schema &$schema
+	 * @param ResultSet &$resultSet
+	 * @param Schema &$schema
 	 * @return bool
 	 */
 	public static function callback( $store, &$resultSet, &$schema ) {
@@ -41,8 +43,8 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \BlueSpice\Api\Store $store
-	 * @param \BlueSpice\Data\ResultSet &$resultSet
-	 * @param \BlueSpice\Data\Schema &$schema
+	 * @param ResultSet &$resultSet
+	 * @param Schema &$schema
 	 */
 	public function __construct( $context, $config, $store, &$resultSet, &$schema ) {
 		parent::__construct( $context, $config );

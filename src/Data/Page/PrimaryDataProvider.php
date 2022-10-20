@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Data\Page;
 
-use BlueSpice\Data\PrimaryDatabaseDataProvider;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\PrimaryDatabaseDataProvider;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams as DataStoreReaderParams;
 use Title;
 use User;

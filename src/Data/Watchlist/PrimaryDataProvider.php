@@ -2,17 +2,19 @@
 
 namespace BlueSpice\Data\Watchlist;
 
-use BlueSpice\Data\Filter;
-use BlueSpice\Data\FilterFinder;
-use BlueSpice\Data\IPrimaryDataProvider;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\DataStore\Filter;
+use MWStake\MediaWiki\Component\DataStore\FilterFinder;
+use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
+use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;
 use User;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @var \BlueSpice\Data\Record
+	 * @var DataStoreRecord
 	 */
 	protected $data = [];
 
@@ -60,7 +62,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
 	 *
-	 * @param \BlueSpice\Data\ReaderParams $params
+	 * @param ReaderParams $params
 	 * @return Record[]
 	 */
 	public function makeData( $params ) {
