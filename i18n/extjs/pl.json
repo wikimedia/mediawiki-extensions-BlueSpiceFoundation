@@ -3,6 +3,7 @@
 		"authors": [
 			"Alan ffm",
 			"Chrumps",
+			"Pefect",
 			"Vengir",
 			"WaldiSt"
 		]
@@ -64,6 +65,7 @@
 	"bs-extjs-pageexport-list-format-label": "Format listy",
 	"bs-extjs-pageexport-list-format-plain-label": "Zwykły tekst",
 	"bs-extjs-pageexport-list-format-link-label": "Link",
+	"bs-extjs-pageexport-overwrite-label": "Nadpisz",
 	"bs-extjs-pageexport-general-error": "Błąd eksportu",
 	"bs-extjs-pageexport-pagecollection-prefix": "Zbiór stron",
 	"bs-extjs-pageexport-success": "Eksport zakończony powodzeniem",

@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"बडा काजी",
 			"हिमाल सुबेदी"
 		]
 	},
-	"bs-ooui-btn-dismiss-alert-title": "रद्द"
+	"bs-ooui-field-tagmultiselect-input-placeholder": "नयाँ थप्नुहोस्...",
+	"bs-ooui-btn-dismiss-alert-title": "रद्द",
+	"bs-ooui-key-value-input-widget-section-label": "खण्ड",
+	"bs-ooui-key-value-input-widget-add-section-label": "नयाँ खण्ड थप्नुहोस्"
 }
