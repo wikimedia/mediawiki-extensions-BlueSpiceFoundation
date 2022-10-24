@@ -2,6 +2,8 @@
 
 // api.php?action=bs-titlequery-store&format=jsonfm&options={%22namespaces%22:[-1,0,2,4,6,8,10,12,14,3000],%20%22returnQuery%22:true}&query=Date
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 
 	/**
@@ -286,9 +288,9 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 	public function getAllowedParams() {
 		$aParams = parent::getAllowedParams();
 		$aParams['options'] = [
-			ApiBase::PARAM_TYPE => 'string',
-			ApiBase::PARAM_REQUIRED => false,
-			ApiBase::PARAM_DFLT => '{}',
+			ParamValidator::PARAM_TYPE => 'string',
+			ParamValidator::PARAM_REQUIRED => false,
+			ParamValidator::PARAM_DEFAULT => '{}',
 			ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-options',
 		];
 		return $aParams;
