@@ -88,5 +88,17 @@
 	"right-wikiadmin": "Upotreba potencijalno opasnih administrativnih zadataka poput upravljanja korisnicima, dozvolama i globalnom konfiguracijom (proširenja za BlueSpice)",
 	"protect-level-editor": "Dopusti samo uređivačima i administratorima",
 	"right-editor": "Daje sva dopuštenja od uloge \"uređivač\" za zaštićene stranice u ograničenju uređivača kada je sustav uloga aktiviran",
-	"action-editor": "daje sva dopuštenja od uloge \"uređivač\" za zaštićene stranice u ograničenju uređivača kada je sustav uloga aktiviran"
+	"action-editor": "daje sva dopuštenja od uloge \"uređivač\" za zaštićene stranice u ograničenju uređivača kada je sustav uloga aktiviran",
+	"bs-validator-error-namespace-does-not-exist": "Imenski prostor ne postoji: $1",
+	"bs-validator-error-namespace-on-blacklist": "Imenski prostor nije dozvoljen: $1",
+	"bs-validator-error-title-does-not-exist": "Stranica ne postoji: $1",
+	"bs-validator-error-title-namespace-on-blacklist": "Stranica nije dozvoljena: $1",
+	"bs-parser-error-invalid-category-title": "Stranica nije važeća kategorija: $1",
+	"bs-exttype-bluespice": "Dodaci BlueSpice-a",
+	"bs-ping-on-init-desc": "Trebalo bi da pošalje ping zahtjev odmah nakon učitavanja stranice",
+	"bs-pref-fileextensions-help": "Vrste datoteka koje se mogu otpremiti na wiki. Neke vrste (npr. html, js, php, cgi, exe) nisu dopuštene iz sigurnosnih razloga čak i ako su ovdje dodane.",
+	"bs-pref-imageextensions-help": "Vrste slikovnih datoteka koje se mogu otpremiti na wiki. Mogući web formati: gif, png, jpg, jpeg. Ostali formati slika: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfiguracijsku datoteku $1 nije moguće napisati!",
+	"bs-pref-logopath-help": "Logo treba biti pohranjen u direktoriju /w/images vaše instalacije. Ako ga pohranite u direktoriju /w/skins vaše BlueSpice instalacije, možete ga prebrisati nadogradnjom.",
+	"bs-pref-faviconpath-help": "Favikon treba biti pohranjen u direktoriju /w/images vaše instalacije. Ako ga pohranite u direktoriju /w/skins vaše BlueSpice instalacije, možete ga prebrisati nadogradnjom. Favikoni imaju datotečni nastavak .ico."
 }

@@ -14,5 +14,7 @@
 	"bs-filerepo-headerfileextension": "Udvidelse",
 	"bs-filerepo-headerfiledescription": "Beskrivelse",
 	"bs-filerepo-yes": "Ja",
-	"bs-filerepo-no": "Nej"
+	"bs-filerepo-no": "Nej",
+	"bs-filerepo-labelfilter": "Filter",
+	"bs-filerepo-headerfilemediatype": "Medietype"
 }
