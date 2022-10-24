@@ -11,6 +11,7 @@ use BlueSpice\ParamProcessor\Processor;
 use Exception;
 use FormatJson;
 use Status;
+use stdClass;
 
 class Task extends Api {
 	public const PARAM_TASK = 'task';
