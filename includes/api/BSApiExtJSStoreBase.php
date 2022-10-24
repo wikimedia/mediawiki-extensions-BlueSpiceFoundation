@@ -56,6 +56,7 @@
  */
 
 use MediaWiki\Linker\LinkRenderer;
+use Wikimedia\ParamValidator\ParamValidator;
 
 abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 
@@ -149,66 +150,66 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	public function getAllowedParams() {
 		return [
 			'sort' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '[]',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-sort',
 			],
 			'group' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '[]',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-group',
 			],
 			'filter' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '[]',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '[]',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-filter',
 			],
 			'page' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 0,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => 0,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-page',
 			],
 			'limit' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 25,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => 25,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-limit',
 			],
 			'start' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => 0,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => 0,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-start',
 			],
 
 			'callback' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-callback',
 			],
 
 			'query' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-query',
 			],
 			'_dc' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-dc',
 			],
 			'format' => [
-				ApiBase::PARAM_DFLT => 'json',
-				ApiBase::PARAM_TYPE => [ 'json', 'jsonfm' ],
+				ParamValidator::PARAM_DEFAULT => 'json',
+				ParamValidator::PARAM_TYPE => [ 'json', 'jsonfm' ],
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-format',
 			],
 			'context' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-context',
 			]
 		];
