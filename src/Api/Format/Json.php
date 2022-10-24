@@ -27,8 +27,8 @@
 
 namespace BlueSpice\Api\Format;
 
-use ApiBase;
 use ApiFormatJson;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Api json formal class in BlueSpice
@@ -53,7 +53,7 @@ class Json extends ApiFormatJson {
 			 * implementations)
 			 * Changing the 'formatversion' to 2, disables this behavior
 			 */
-			$params['formatversion'][ApiBase::PARAM_DFLT] = '2';
+			$params['formatversion'][ParamValidator::PARAM_DEFAULT] = '2';
 		}
 
 		return $params;
