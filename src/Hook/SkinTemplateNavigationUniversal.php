@@ -31,6 +31,9 @@ use Config;
 use IContextSource;
 use SkinTemplate;
 
+/**
+ * @deprecated since REL1_39. Use SkinTemplateNavigation__UniversalHook
+ */
 abstract class SkinTemplateNavigationUniversal extends Hook {
 
 	/**

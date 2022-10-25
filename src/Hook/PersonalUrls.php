@@ -30,6 +30,9 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 
+/**
+ * @deprecated since REL1_39. Use SkinTemplateNavigation__UniversalHook
+ */
 abstract class PersonalUrls extends Hook {
 
 	/**
