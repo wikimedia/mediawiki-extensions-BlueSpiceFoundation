@@ -22,5 +22,7 @@
 	"bs-extjs-filters": "Silleeh",
 	"bs-extjs-title-warning": "Váruttâs",
 	"bs-extjs-categorytree-title": "Luokah",
-	"bs-extjs-pageexport-list-format-link-label": "Liŋkkâ"
+	"bs-extjs-pageexport-list-format-link-label": "Liŋkkâ",
+	"bs-extjs-delete": "Siho",
+	"bs-extjs-remove": "Siho"
 }
