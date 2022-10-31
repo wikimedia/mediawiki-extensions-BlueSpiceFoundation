@@ -55,6 +55,7 @@
 	"bs-extjs-filter-date-on": "Dne",
 	"bs-extjs-filter-date-filter": "Filter",
 	"bs-extjs-pageexport-list-format-link-label": "Povezava",
+	"bs-extjs-pageexport-overwrite-label": "Prepiši",
 	"bs-extjs-combo-box-default-placeholder": "Vtipkajte za filtriranje",
 	"bs-extjs-flyout-tab-grid-label": "Podrobnosti"
 }

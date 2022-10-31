@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abbas dhothar"
+			"Abbas dhothar",
+			"Bgo eiu"
 		]
 	},
-	"bs-filerepo-labelupload": "اُتے چاڑھو",
+	"bs-filerepo-labelupload": "چڑھاو",
 	"bs-filerepo-headerfilename": "فائل دا ناں",
 	"bs-filerepo-headerfiletimestamp": "اپلوڈز",
 	"bs-filerepo-headerfiledescription": "تفصیل"
