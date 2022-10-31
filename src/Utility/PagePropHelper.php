@@ -4,6 +4,9 @@ namespace BlueSpice\Utility;
 use BlueSpice\TargetCache\Title\Target;
 use MediaWiki\MediaWikiServices;
 
+/**
+ * @deprecated since 4.3 Use MediaWiki core `\PageProps` instead
+ */
 class PagePropHelper {
 
 	/**
@@ -32,8 +35,10 @@ class PagePropHelper {
 	 * @param string $name
 	 * @param mixed|null $default
 	 * @return string|$default
+	 * @deprecated since 4.3 Use MediaWiki core `\PageProps` instead
 	 */
 	public function getPageProp( $name, $default = null ) {
+		wfDeprecated( __METHOD__, '4.3' );
 		$props = $this->getPageProps();
 		if ( !isset( $props[$name] ) ) {
 			return $default;
@@ -56,8 +61,10 @@ class PagePropHelper {
 	/**
 	 *
 	 * @return array
+	 * @deprecated since 4.3 Use MediaWiki core `\PageProps` instead
 	 */
 	public function getPageProps() {
+		wfDeprecated( __METHOD__, '4.3' );
 		if ( !$this->title->exists() ) {
 			return [];
 		}
