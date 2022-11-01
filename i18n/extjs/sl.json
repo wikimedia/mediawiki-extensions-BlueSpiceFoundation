@@ -56,5 +56,6 @@
 	"bs-extjs-combo-box-default-placeholder": "Vtipkajte za filtriranje",
 	"bs-extjs-flyout-tab-grid-label": "Podrobnosti",
 	"bs-extjs-label-group": "Skupina",
-	"bs-extjs-filter-date-on": "Dne"
+	"bs-extjs-filter-date-on": "Dne",
+	"bs-extjs-pageexport-overwrite-label": "Prepiši"
 }
