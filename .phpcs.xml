@@ -46,6 +46,7 @@
 		<exclude name="PSR2.ControlStructures.SwitchDeclaration.SpaceBeforeColonCASE" />
 	</rule>
 	<file>.</file>
+	<exclude-pattern type="relative">tests/phpunit/Installer/data/*</exclude-pattern>
 	<arg name="extensions" value="php"/>
 	<arg name="encoding" value="UTF-8"/>
 </ruleset>
