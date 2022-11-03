@@ -60,7 +60,7 @@ class AutoExtensionHandler {
 	 *
 	 * @return array
 	 */
-	public function getExtensions() : array {
+	public function getExtensions(): array {
 		$this->findFiles();
 		$this->processFiles();
 
@@ -124,7 +124,7 @@ class AutoExtensionHandler {
 	 * @param string $fileContent
 	 * @return array
 	 */
-	private function processFileContent( $fileContent ) : array {
+	private function processFileContent( $fileContent ): array {
 		$extensions = [];
 
 		$lines = explode( "\n", $fileContent );
