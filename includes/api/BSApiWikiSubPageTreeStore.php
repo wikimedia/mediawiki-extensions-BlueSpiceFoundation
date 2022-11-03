@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	protected $root = 'children';
 
@@ -32,14 +34,14 @@ class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'node' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-wikisubpage-treestore-param-node',
 			],
 			'options' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '{}',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '{}',
+				ParamValidator::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-wikisubpage-treestore-param-options',
 			]
 		];
