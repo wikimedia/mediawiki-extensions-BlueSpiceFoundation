@@ -31,6 +31,7 @@
 
 use BlueSpice\Api\Response\Standard;
 use BlueSpice\UtilityFactory;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Api base class for simple tasks in BlueSpice
@@ -344,31 +345,31 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	protected function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'task' => [
-				ApiBase::PARAM_REQUIRED => true,
-				ApiBase::PARAM_TYPE => $this->oTasksSpec->getTaskNames(),
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => $this->oTasksSpec->getTaskNames(),
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-task',
 				ApiBase::PARAM_HELP_MSG_PER_VALUE => $this->makeTaskHelpMessages()
 			],
 			'taskData' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '{}',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '{}',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-taskdata',
 			],
 			'context' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
-				ApiBase::PARAM_DFLT => '{}',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '{}',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-context',
 			],
 			'schema' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-schema',
 			],
 			'examples' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-task-param-examples',
 			]
 		];

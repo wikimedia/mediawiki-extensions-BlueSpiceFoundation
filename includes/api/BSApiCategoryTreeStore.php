@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	/**
 	 *
@@ -155,8 +157,8 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'node' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_DEFAULT => '',
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-category-treestore-param-node',
 			]
 		];

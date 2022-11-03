@@ -28,6 +28,7 @@
  * @filesource
  */
 
+use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class BSApiFileBackendStore extends BSApiExtJSStoreBase {
@@ -422,7 +423,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	public function getAllowedParams() {
 		$aParams = parent::getAllowedParams();
 
-		$aParams['sort'][ApiBase::PARAM_DFLT] = FormatJson::encode( [
+		$aParams['sort'][ParamValidator::PARAM_DEFAULT] = FormatJson::encode( [
 			[
 				'property' => 'file_timestamp',
 				'direction' => 'DESC'
