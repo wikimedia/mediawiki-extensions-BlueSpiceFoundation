@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"bs-upload-license": "Արտոնագիր",
@@ -9,5 +10,5 @@
 	"bs-upload-error": "Սխալ",
 	"bs-upload-descfilelabel": "Նկարագրություն",
 	"bs-upload-details": "Մանրամասներ",
-	"bs-upload-uploaddialogtitle": "Բեռնել նիշք"
+	"bs-upload-uploaddialogtitle": "Վերբեռնում"
 }

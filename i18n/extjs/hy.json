@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"bs-extjs-ok": "Լավ",
@@ -38,5 +39,6 @@
 	"bs-extjs-pageexport-list-format-link-label": "Հղում",
 	"bs-extjs-tools-trigger-text": "Գործիքներ",
 	"bs-extjs-flyout-tab-grid-label": "Մանրամասներ",
-	"bs-extjs-reset": "Վերակայել"
+	"bs-extjs-reset": "Վերակայել",
+	"bs-extjs-upload": "Վերբեռնել"
 }
