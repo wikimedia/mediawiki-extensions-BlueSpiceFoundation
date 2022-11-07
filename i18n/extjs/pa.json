@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bgo eiu",
 			"ਪ੍ਰਚਾਰਕ"
 		]
 	},
 	"bs-extjs-filter-bool-yes": "ਹਾਂ",
-	"bs-extjs-filter-bool-no": "ਨਹੀਂ"
+	"bs-extjs-filter-bool-no": "ਨਹੀਂ",
+	"bs-extjs-categorytree-title": "ਸ਼੍ਰੇਣੀਆਂ"
 }
