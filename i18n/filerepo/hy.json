@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
+	"bs-filerepo-labelupload": "Վերբեռնել",
 	"bs-filerepo-labelfilter": "Զտիչ",
 	"bs-filerepo-headerfilename": "Նիշքի անվանում",
 	"bs-filerepo-headerfilesize": "Չափ",

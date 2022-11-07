@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"bs-extjs-ok": "Լավ",
@@ -28,6 +29,7 @@
 	"bs-extjs-label-directsearch": "Որոնել",
 	"bs-extjs-label-specialpage": "Հատուկ էջ",
 	"bs-extjs-titlecombo-newpagehint": "Էջը գոյություն չունի",
+	"bs-extjs-upload": "Վերբեռնել",
 	"bs-extjs-allns": "(բոլոր)",
 	"bs-extjs-mainns": "(Հիմնական)",
 	"bs-extjs-filters": "Զտիչներ",
