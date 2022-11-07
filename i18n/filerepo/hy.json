@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"bs-filerepo-labelfilter": "Զտիչ",
@@ -12,5 +13,6 @@
 	"bs-filerepo-headerfileheight": "Բարձրություն",
 	"bs-filerepo-headerfileusertext": "Մասնակից",
 	"bs-filerepo-yes": "Այո",
-	"bs-filerepo-no": "Ոչ"
+	"bs-filerepo-no": "Ոչ",
+	"bs-filerepo-labelupload": "Վերբեռնել"
 }
