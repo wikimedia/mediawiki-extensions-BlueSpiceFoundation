@@ -201,21 +201,26 @@ Ext.define( 'BS.CRUDGridPanel', {
 		if ( records && records.length > 0 ) {
 			if ( this.btnEdit ) {
 				this.btnEdit.enable();
+				this.btnEdit.setTabIndex( 0 );
 			}
 			if ( this.btnRemove ) {
 				this.btnRemove.enable();
+				this.btnRemove.setTabIndex( 0 );
 			}
 		} else {
 			if ( this.btnEdit ) {
 				this.btnEdit.disable();
+				this.btnEdit.setTabIndex( -1 );
 			}
 			if ( this.btnRemove ) {
 				this.btnRemove.disable();
+				this.btnRemove.setTabIndex( -1 );
 			}
 		}
 		if ( records && records.length > 1 ) {
 			if ( this.btnEdit ) {
 				this.btnEdit.disable();
+				this.btnEdit.setTabIndex( -1 );
 			}
 		}
 	},
@@ -226,6 +231,7 @@ Ext.define( 'BS.CRUDGridPanel', {
 		}
 		// All selections have to be deselected otherwise double editing of the same row won't work
 		this.grdMain.getSelectionModel().deselectAll();
+		this.btnAdd.setTabIndex( 0 );
 	},
 
 	onActionEditClick: function ( view, rowIndex, colIndex, item, e, record, row ) {
