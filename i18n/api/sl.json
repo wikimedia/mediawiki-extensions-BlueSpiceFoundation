@@ -7,5 +7,6 @@
 		]
 	},
 	"apihelp-bs-store-param-format": "Oblika izhoda (samo JSON ali oblikovani JSON)",
-	"apihelp-bs-upload-license-store-description": "Seznam dovoljenj za nalaganje datoteke"
+	"apihelp-bs-upload-license-store-description": "Seznam dovoljenj za nalaganje datoteke",
+	"apihelp-bs-templatelinks-store-summary": "Navede vse predloge strani, vključno s povezavo na predlogo."
 }

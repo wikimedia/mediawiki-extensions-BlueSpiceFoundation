@@ -29,5 +29,7 @@
 	"bs-graphicallist-action-preview": "Predogled",
 	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "anonimni uporabnik",
-	"bs-navigation-support": "Podpora"
+	"bs-navigation-support": "Podpora",
+	"bs-validator-error-namespace-does-not-exist": "Imenski prostor ne obstaja: $1",
+	"bs-validator-error-title-does-not-exist": "Stran ne obstaja: $1"
 }
