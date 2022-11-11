@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Anakmalaysia",
 			"Tofeiku"
 		]
 	},
@@ -12,6 +13,7 @@
 	"bs-imagepage-download-text": "Muat turun",
 	"bs-ns": "Ruang nama",
 	"bs-from-something": "(dari $1)",
+	"bs-pref-defaultuserimage": "Avatar pengguna lalai:",
 	"bs-parser-error-invalid-namespace": "Ruang nama tidak sah: $1",
 	"bs-parser-error-invalid-title": "Tajuk tidak sah: $1",
 	"bs-validator-error-namespace-does-not-exist": "Ruang nama tidak wujud: $1",

@@ -23,6 +23,8 @@
 	"bs-imagepage-download-text": "Prenesi",
 	"bs-ns": "Imenski prostori",
 	"bs-pref-logopath": "Pot logotipa:",
+	"bs-validator-error-namespace-does-not-exist": "Imenski prostor ne obstaja: $1",
+	"bs-validator-error-title-does-not-exist": "Stran ne obstaja: $1",
 	"bs-graphicallist-action-close": "Zapri",
 	"bs-graphicallist-action-list": "Seznam",
 	"bs-graphicallist-action-preview": "Predogled",
