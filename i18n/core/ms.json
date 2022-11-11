@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Anakmalaysia",
 			"Tofeiku"
 		]
 	},
@@ -20,5 +21,6 @@
 	"bs-validator-error-title-namespace-on-blacklist": "Laman tidak dibenarkan: $1",
 	"bs-export-menu-print-text": "Cetak",
 	"bs-graphicallist-action-close": "Tutup",
-	"bs-graphicallist-action-list": "Senarai"
+	"bs-graphicallist-action-list": "Senarai",
+	"bs-pref-defaultuserimage": "Avatar pengguna lalai:"
 }
