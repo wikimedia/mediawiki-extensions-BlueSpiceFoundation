@@ -597,10 +597,9 @@ class BsPageContentProvider {
 			if ( $headlineStatus > 0 ) {
 				foreach ( $aMatches[3] as $sAnchorName ) {
 					$sDefaultAnchorName = preg_quote( str_replace( ' ', '_', $sAnchorName ) );
-					$sAnchorName = preg_quote( $sAnchorName );
 					$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sDefaultAnchorName );
 
-					$aPatterns[]     = '|<span class="mw-headline" id="' . $sDefaultAnchorName . '">' . $sAnchorName . '</span>|si';
+					$aPatterns[]     = '|<span class="mw-headline" id="' . $sDefaultAnchorName . '">' . preg_quote( $sAnchorName ) . '</span>|si';
 					$aReplacements[] = '<span class="mw-headline" id="' . $sUniqueAnchorName . '">' . $sAnchorName . '</span>';
 				}
 
