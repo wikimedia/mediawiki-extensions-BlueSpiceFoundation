@@ -186,8 +186,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 				if ( empty( $oResult->errors ) && empty( $oResult->message ) ) {
 					try {
 						$oResult = $this->$sMethod( $oTaskData, $aParams );
-					}
-					catch ( Exception $e ) {
+					} catch ( Exception $e ) {
 						$oResult->success = false;
 						$oResult->message = $e->getMessage();
 						$mCode = method_exists( $e, 'getCodeString' ) ? $e->getCodeString() : $e->getCode();

@@ -27,7 +27,6 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-
 use Skin;
 
 abstract class SiteNoticeAfter extends Hook {
