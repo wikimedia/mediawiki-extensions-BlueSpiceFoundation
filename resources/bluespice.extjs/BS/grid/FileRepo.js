@@ -344,7 +344,8 @@ Ext.define( 'BS.grid.FileRepo', {
 	makeUploader: function ( cfg ) {
 		this.btnUpload = new Ext.Button( {
 			iconCls: 'bs-icon-upload',
-			tooltip: mw.message( 'bs-filerepo-labelupload' ).plain()
+			tooltip: mw.message( 'bs-filerepo-labelupload' ).plain(),
+			ariaLabel: mw.message( 'bs-filerepo-labelupload' ).plain()
 		} );
 
 		this.btnUpload.on( 'click', this.btnUploadClick, this );

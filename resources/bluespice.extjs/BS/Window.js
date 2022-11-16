@@ -116,6 +116,7 @@ Ext.define( 'BS.Window', {
 		this.btnOK = Ext.create( 'Ext.Button', {
 			text: mw.message( 'bs-extjs-ok' ).plain(),
 			id: this.getId() + '-btn-ok',
+			ariaLabel: mw.message('bs-extjs-ok').plain(),
 			cls: 'bs-extjs-btn-ok'
 		} );
 		this.btnOK.on( 'click', this.onBtnOKClick, this );
@@ -123,6 +124,7 @@ Ext.define( 'BS.Window', {
 		this.btnCancel = Ext.create( 'Ext.Button', {
 			text: mw.message( 'bs-extjs-cancel' ).plain(),
 			id: this.getId() + '-btn-cancel',
+			ariaLabel: mw.message('bs-extjs-cancel').plain(),
 			cls: 'bs-extjs-btn-cancel'
 		} );
 		this.btnCancel.on( 'click', this.onBtnCancelClick, this );

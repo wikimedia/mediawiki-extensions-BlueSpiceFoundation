@@ -21,6 +21,7 @@ Ext.define( 'BS.form.UploadPanel', {
 		this.btnReset = Ext.create( 'Ext.button.Button', {
 			id: 'bs-extjs-uploadCombo-' + this.uploadFormName + '-reset-btn',
 			text: mw.message( 'bs-extjs-reset' ).plain(),
+			ariaLabel: mw.message('bs-extjs-reset').plain(),
 			handler: this.onBtnResetClick,
 			flex: 0.5,
 			scope: this
@@ -28,6 +29,7 @@ Ext.define( 'BS.form.UploadPanel', {
 		this.btnUpload = Ext.create( 'Ext.button.Button', {
 			id: 'bs-extjs-uploadCombo-' + this.uploadFormName + '-upload-btn',
 			text: mw.message( 'bs-extjs-upload' ).plain(),
+			ariaLabel: mw.message('bs-extjs-upload').plain(),
 			handler: this.onBtnUploadClick,
 			flex: 0.5,
 			scope: this
