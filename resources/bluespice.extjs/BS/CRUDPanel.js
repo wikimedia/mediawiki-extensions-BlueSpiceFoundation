@@ -68,6 +68,7 @@ Ext.define( 'BS.CRUDPanel', {
 				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-btn_add.png',
 				iconCls: 'btn'+this.tbarHeight,
 				tooltip: mw.message('bs-extjs-add').plain(),
+				ariaLabel: mw.message('bs-extjs-add').plain(),
 				height: 50,
 				width: 52
 			});
@@ -81,6 +82,7 @@ Ext.define( 'BS.CRUDPanel', {
 				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-btn_config.png',
 				iconCls: 'btn'+this.tbarHeight,
 				tooltip: mw.message('bs-extjs-edit').plain(),
+				ariaLabel: mw.message('bs-extjs-edit').plain(),
 				height: 50,
 				width: 52,
 				disabled: true
@@ -95,6 +97,7 @@ Ext.define( 'BS.CRUDPanel', {
 				icon: mw.config.get( 'wgScriptPath') + '/extensions/BlueSpiceFoundation/resources/bluespice/images/bs-btn_delete.png',
 				iconCls: 'btn'+this.tbarHeight,
 				tooltip: mw.message('bs-extjs-remove').plain(),
+				ariaLabel: mw.message('bs-extjs-remove').plain(),
 				height: 50,
 				width: 52,
 				disabled: true
