@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"bs-ns_main": "(Էջեր)",
@@ -10,9 +11,9 @@
 	"bs-userbar_loginswitch_logout": "Դուրս գալ",
 	"bs-userbar_loginswitch_login": "Մուտք գործել",
 	"bs-extended-search-textfield-defaultvalue": "Որոնել ...",
-	"bs-years-duration": "{{PLURAL:$1|$1 տարի|$1 տարիներ}}",
-	"bs-months-duration": "{{PLURAL:$1|$1 ամիս|$1 ամիսներ}}",
-	"bs-weeks-duration": "{{PLURAL:$1|$1 շաբաթ|$1 շաբաթներ}}",
+	"bs-years-duration": "{{PLURAL:$1|մեկ տարի|$1 տարի}}",
+	"bs-months-duration": "{{PLURAL:$1|մեկ ամիս|$1 ամիս}}",
+	"bs-weeks-duration": "{{PLURAL:$1|մեկ շաբաթ|$1 շաբաթ}}",
 	"bs-days-duration": "{{PLURAL:$1|մեկ օր|$1 օր}}",
 	"bs-hours-duration": "{{PLURAL:$1|մեկ ժամ|$1 ժամ}}",
 	"bs-mins-duration": "{{PLURAL:$1|մեկ րոպե|$1 րոպե}}",
