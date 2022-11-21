@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Balyozxane",
 			"George Animal",
 			"Ghybu",
 			"Kur"
@@ -13,5 +14,6 @@
 	"bs-parser-error-invalid-title": "Sernavê nederbasdar:$1",
 	"bs-validator-error-title-does-not-exist": "Rûpel tune ye: $1",
 	"bs-graphicallist-action-close": "Bigre",
-	"bs-bluespice-mediawiki": "BlueSpice MediaWiki"
+	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
+	"bs-now": "niha"
 }
