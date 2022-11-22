@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Balyozxane",
 			"Bikarhêner",
 			"George Animal"
 		]
@@ -13,7 +14,7 @@
 	"bs-extjs-delete": "Jê bibe",
 	"bs-extjs-add": "Lê zêde bike",
 	"bs-extjs-remove": "Jê bibe",
-	"bs-extjs-edit": "Biguherîne",
+	"bs-extjs-edit": "Biguhêre",
 	"bs-extjs-copy": "Kopî bike",
 	"bs-extjs-error": "Çewtî",
 	"bs-extjs-confirm": "Pesend bike",
