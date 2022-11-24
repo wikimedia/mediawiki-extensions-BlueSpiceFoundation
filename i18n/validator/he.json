@@ -6,7 +6,10 @@
 			"YaronSh"
 		]
 	},
+	"bs-validator-email-validation-approved": "כתובת הדוא\"ל אומתה בהצלחה.",
+	"bs-validator-email-validation-not-approved": "לא היה אפשר לאמת את כתובת הדוא\"ל.",
 	"bs-validator-url-validation-approved": "הכתובת אומתה בהצלחה.",
+	"bs-validator-url-validation-not-approved": "לא היה אפשר לאמת את כתובת ה־URL.",
 	"bs-validator-value-not-recognized": "לא ניתן לעבד את הערך",
 	"bs-validator-invalid-boolean": "ערך בוליאני לא תקין",
 	"bs-validator-invalid-float": "לא מספר נקודה צפה תקין",

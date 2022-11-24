@@ -4,8 +4,11 @@
 			"Yupik"
 		]
 	},
+	"bs-extjs-save": "Vurke",
 	"bs-extjs-label-namespace": "Nammagomuvuohta",
 	"bs-extjs-allns": "(buot)",
+	"bs-extjs-filters": "Sillit",
 	"bs-extjs-categorytree-title": "Kategoriijat",
+	"bs-extjs-filter-date-filter": "Sille",
 	"bs-extjs-pageexport-list-format-link-label": "Liŋka"
 }
