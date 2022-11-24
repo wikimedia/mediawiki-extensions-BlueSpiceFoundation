@@ -53,9 +53,9 @@ class SimpleLinkTest extends TestCase {
 			]
 		] );
 
-		$this->assertEmpty( $link->getHtmlId() );
-		$this->assertEmpty( $link->getCSSClasses() );
-		$this->assertEmpty( $link->getIcon() );
+		$this->assertSame( '', $link->getHtmlId() );
+		$this->assertSame( [], $link->getCSSClasses() );
+		$this->assertSame( '', $link->getIcon() );
 		$this->assertEquals( 'Some label', $link->getLabel() );
 		$this->assertEquals( 'Some tooltip', $link->getTooltip() );
 		$this->assertEquals( 'https://bluespice.com', $link->getHref() );
