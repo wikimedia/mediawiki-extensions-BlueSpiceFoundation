@@ -14,5 +14,8 @@
 	"bs-validator-invalid-parameter": "זה משתנה אסור",
 	"bs-validator-missing-required": "הפרמטר הזה נדרש",
 	"bs-validator-invalid-float": "לא מספר נקודה צפה תקין",
-	"bs-validator-invalid-integer": "לא מספר שלם תקין"
+	"bs-validator-invalid-integer": "לא מספר שלם תקין",
+	"bs-validator-email-validation-approved": "כתובת הדוא\"ל אומתה בהצלחה.",
+	"bs-validator-email-validation-not-approved": "לא היה אפשר לאמת את כתובת הדוא\"ל.",
+	"bs-validator-url-validation-not-approved": "לא היה אפשר לאמת את כתובת ה־URL."
 }
