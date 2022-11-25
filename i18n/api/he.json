@@ -58,5 +58,6 @@
 	"apihelp-bs-task-description": "מספק את נקודת הקצה של ה־API להפעלת משימות רשומות",
 	"apihelp-bs-js-var-config-param-format": "הפורמט של התוצאה",
 	"apihelp-bs-wikisubpage-treestore-param-node": "הכותרת של דף הוויקי עם תחילית",
-	"apihelp-bs-templatelinks-store-param-page-id": "מזהה הדף של הדף"
+	"apihelp-bs-templatelinks-store-param-page-id": "מזהה הדף של הדף",
+	"apihelp-bs-categorylinks-store-param-page-id": "מזהה הדף של הדף"
 }
