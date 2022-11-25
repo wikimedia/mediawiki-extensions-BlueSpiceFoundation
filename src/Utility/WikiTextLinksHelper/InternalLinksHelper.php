@@ -25,6 +25,7 @@ class InternalLinksHelper {
 	 * @return array
 	 */
 	protected function parse() {
+		$replaced = $this->maskParserFunctions();
 		$pattern = $this->getPattern();
 		$matches = [];
 		$matchCount = preg_match_all(
@@ -46,7 +47,64 @@ class InternalLinksHelper {
 			}
 			$links[$fullMatch] = $title;
 		}
+		$this->unmaskParserFunctions( $replaced );
 		return $links;
+	}
+
+	/**
+	 * Parser functions like "{{#ask:[[Category:ABC]]}}" will be recognized as internal links
+	 * So to preserve them they are masked with "###$id###" and saved in this array.
+	 * These queries are restored to original view when adding category to page.
+	 *
+	 * @return array Array with information about what was replaced and replacement that was used.
+	 * Has next structure:
+	 * <dl>
+	 *   <dt>Index 0</dt><dd>Original parser function</dd>
+	 *   <dt>Index 1</dt><dd>Parser function replacement.
+	 * 		Used as a key to return it to original view</dd>
+	 * </dl>
+	 * @see CategoryLinksHelper::unmaskParserFunctions()
+	 */
+	public function maskParserFunctions(): array {
+		$replacedQueries = [];
+		// Mask semantic queries to prevent them from changing
+		$this->wikitext = preg_replace_callback(
+			"#\{\{[^}]+\}\}#is",
+			function ( $matches ) use( &$replacedQueries ) {
+				$id = count( $replacedQueries );
+				$replacement = "###$id###";
+
+				$replacedQueries[] = [ $matches[0], $replacement ];
+
+				return $replacement;
+			},
+			$this->wikitext
+		);
+
+		return $replacedQueries;
+	}
+
+	/**
+	 * Restores parser functions to original view after masking them.
+	 * Must be used after {@link CategoryLinksHelper::maskParserFunctions()}.
+	 *
+	 * @param array $replacedQueries Array with information about replacements done.
+	 * 	Got from {@link CategoryLinksHelper::maskParserFunctions()}
+	 */
+	public function unmaskParserFunctions( array $replacedQueries ) {
+		if ( empty( $replacedQueries ) ) {
+			return;
+		}
+		// Replace semantic queries masks back with original queries
+		$maskedQueryPattern = "\#\#\#([0-9]+)\#\#\#";
+
+		$this->wikitext = preg_replace_callback(
+			"#" . $maskedQueryPattern . "#",
+			function ( $matches ) use( $replacedQueries ) {
+				return $replacedQueries[$matches[1]][0];
+			},
+			$this->wikitext
+		);
 	}
 
 	/**
@@ -151,12 +209,14 @@ class InternalLinksHelper {
 	 * @return InternalLinksHelper
 	 */
 	public function removeTargets( $links, $removeAllOccurrences = false ) {
+		$replaced = $this->maskParserFunctions();
 		foreach ( $links as $linkText => $target ) {
 			if ( !$target instanceof \Title ) {
 				continue;
 			}
 			$this->removeTarget( $target, $removeAllOccurrences );
 		}
+		$this->unmaskParserFunctions( $replaced );
 		return $this;
 	}
 
