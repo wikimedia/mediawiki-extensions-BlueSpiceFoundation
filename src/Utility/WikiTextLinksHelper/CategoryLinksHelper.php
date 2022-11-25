@@ -51,50 +51,13 @@ class CategoryLinksHelper extends InternalLinksHelper {
 	}
 
 	/**
-	 * Parser functions like "{{#ask:[[Category:ABC]]}}" are replaced when removing
-	 * category from page.
-	 * So to preserve them they are masked with "###$id###" and saved in this array.
-	 * These queries are restored to original view when adding category to page.
-	 *
-	 * @return array Array with information about what was replaced and replacement that was used.
-	 * Has next structure:
-	 * <dl>
-	 *   <dt>Index 0</dt><dd>Original parser function</dd>
-	 *   <dt>Index 1</dt><dd>Parser function replacement.
-	 * 		Used as a key to return it to original view</dd>
-	 * </dl>
-	 * @see CategoryLinksHelper::unmaskParserFunctions()
-	 */
-	public function maskParserFunctions(): array {
-		$replacedQueries = [];
-
-		foreach ( $this->getTargets() as $match => $title ) {
-			// Mask semantic queries to prevent them from changing
-			$this->wikitext = preg_replace_callback(
-				"#\{\{\#.*?:.*?" . preg_quote( $match, '/' ) . ".*?}}#is",
-				static function ( $matches ) use( &$replacedQueries ) {
-					$id = count( $replacedQueries );
-					$replacement = "###$id###";
-
-					$replacedQueries[] = [ $matches[0], $replacement ];
-
-					return $replacement;
-				},
-				$this->wikitext
-			);
-		}
-
-		return $replacedQueries;
-	}
-
-	/**
 	 * Gets all explicit categories, which exist in {@link CategoryLinksHelper::$wikitext}.
 	 *
 	 * @return string[] List of explicit category titles
 	 */
 	public function getExplicitCategories(): array {
 		// Mask parser functions with category parameters to exclude them from search results
-		$this->maskParserFunctions();
+		$replaced = $this->maskParserFunctions();
 
 		// Pattern for Category tags
 		$canonicalNSName = MediaWikiServices::getInstance()
@@ -115,27 +78,8 @@ class CategoryLinksHelper extends InternalLinksHelper {
 			array_push( $categories, $categoryTitle->getText() );
 		}
 
+		$this->unmaskParserFunctions( $replaced );
 		return $categories;
-	}
-
-	/**
-	 * Restores parser functions to original view after masking them.
-	 * Must be used after {@link CategoryLinksHelper::maskParserFunctions()}.
-	 *
-	 * @param array $replacedQueries Array with information about replacements done.
-	 * 	Got from {@link CategoryLinksHelper::maskParserFunctions()}
-	 */
-	public function unmaskParserFunctions( array $replacedQueries ) {
-		// Replace semantic queries masks back with original queries
-		$maskedQueryPattern = "\#\#\#([0-9]+)\#\#\#";
-
-		$this->wikitext = preg_replace_callback(
-			"#" . $maskedQueryPattern . "#",
-			static function ( $matches ) use( $replacedQueries ) {
-				return $replacedQueries[$matches[1]][0];
-			},
-			$this->wikitext
-		);
 	}
 
 	/**
@@ -148,10 +92,6 @@ class CategoryLinksHelper extends InternalLinksHelper {
 			return;
 		}
 
-		$replacedQueries = $this->maskParserFunctions();
-
 		parent::removeTarget( $target, $removeAllOccurrences );
-
-		$this->unmaskParserFunctions( $replacedQueries );
 	}
 }
