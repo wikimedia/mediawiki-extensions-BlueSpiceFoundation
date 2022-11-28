@@ -8,6 +8,8 @@
 	"bs-filerepo-labelupload": "Kargar",
 	"bs-filerepo-headerfilesize": "Grandeso",
 	"bs-filerepo-headerpagecategories": "Kategorii",
+	"bs-filerepo-headerfilewidth": "Larjeso",
+	"bs-filerepo-headerfileheight": "Altajo",
 	"bs-filerepo-headerfileusertext": "Uzero",
 	"bs-filerepo-headerfileextension": "Formato di arkivo",
 	"bs-filerepo-headerfiletimestamp": "Sendita",

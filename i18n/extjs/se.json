@@ -5,6 +5,8 @@
 		]
 	},
 	"bs-extjs-save": "Vurke",
+	"bs-extjs-delete": "Sihko",
+	"bs-extjs-error": "Meattáhus",
 	"bs-extjs-label-namespace": "Nammagomuvuohta",
 	"bs-extjs-allns": "(buot)",
 	"bs-extjs-filters": "Sillit",
