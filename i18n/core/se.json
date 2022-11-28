@@ -7,5 +7,7 @@
 	"bs-ns_all": "(buot)",
 	"bs-ns": "Nammagomuvuohta",
 	"bs-extended-search-textfield-defaultvalue": "Oza...",
-	"bs-userbar_loginswitch_logout": "Čálit olggos"
+	"bs-userbar_loginswitch_logout": "Čálit olggos",
+	"bs-userbar_loginswitch_login": "Čálit sisa",
+	"bs-viewtagerrorlist-legend": "$1 - Meattáhus"
 }

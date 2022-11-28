@@ -14,5 +14,7 @@
 	"bs-filerepo-headerfiledescription": "Deskripto",
 	"bs-filerepo-headerfilethumbnail": "Miniaturo",
 	"bs-filerepo-yes": "Yes",
-	"bs-filerepo-no": "No"
+	"bs-filerepo-no": "No",
+	"bs-filerepo-headerfilewidth": "Larjeso",
+	"bs-filerepo-headerfileheight": "Altajo"
 }

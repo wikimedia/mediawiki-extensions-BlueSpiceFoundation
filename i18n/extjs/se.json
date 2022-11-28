@@ -10,5 +10,7 @@
 	"bs-extjs-categorytree-title": "Kategoriijat",
 	"bs-extjs-save": "Vurke",
 	"bs-extjs-filters": "Sillit",
-	"bs-extjs-filter-date-filter": "Sille"
+	"bs-extjs-filter-date-filter": "Sille",
+	"bs-extjs-delete": "Sihko",
+	"bs-extjs-error": "Meattáhus"
 }
