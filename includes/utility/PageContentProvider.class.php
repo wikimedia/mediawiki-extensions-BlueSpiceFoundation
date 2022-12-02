@@ -153,6 +153,7 @@ class BsPageContentProvider {
 			$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
 			$parser->setOptions( $this->getParserOptions( $context ) );
 
+			$this->overrideGlobals( $title, $context );
 			// FIX for #HW20130072210000028
 			// Manually expand templates to allow bookshelf tags via template
 			$content = $parser->preprocess(
@@ -160,6 +161,7 @@ class BsPageContentProvider {
 					$title,
 					$parser->getOptions()
 			);
+			$this->restoreGlobals();
 		}
 		return $content;
 	}
@@ -500,6 +502,12 @@ class BsPageContentProvider {
 
 		$wgParser = MediaWikiServices::getInstance()->getParserFactory()->create();
 		$wgParser->setOptions( $this->getParserOptions() );
+		$globalParser = MediaWikiServices::getInstance()->getParser();
+		$globalParser->setOptions( $wgParser->getOptions() );
+		$globalParser->setTitle( $wgParser->getTitle() );
+		if ( $globalParser->getOutput() === null ) {
+			$globalParser->resetOutput();
+		}
 
 		$wgOut = new OutputPage( $context );
 
@@ -530,6 +538,10 @@ class BsPageContentProvider {
 		$wgParser  = $this->oOriginalGlobalParser;
 		$wgTitle   = $this->oOriginalGlobalTitle;
 		$wgRequest = $this->oOriginalGlobalRequest;
+
+		$globalParser = MediaWikiServices::getInstance()->getParser();
+		$globalParser->setOptions( $wgParser->getOptions() );
+		$globalParser->setTitle( $wgParser->getTitle() );
 
 		RequestContext::getMain()->setRequest(
 			$this->originalMainRequestContextRequest
