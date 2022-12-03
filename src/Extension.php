@@ -43,7 +43,7 @@ abstract class Extension extends Context implements JsonSerializable {
 		'version' => ''
 	];
 
-	public function jsonSerialize() {
+	public function jsonSerialize(): array {
 		return $this->getInfo();
 	}
 

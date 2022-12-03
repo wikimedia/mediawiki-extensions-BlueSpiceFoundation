@@ -397,9 +397,9 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Returns a json serializeable stdClass
-	 * @return stdClass
+	 * @return \stdClass
 	 */
-	public function jsonSerialize() {
+	public function jsonSerialize(): \stdClass {
 		return (object)$this->getFullData();
 	}
 
