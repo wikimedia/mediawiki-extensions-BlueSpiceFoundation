@@ -109,5 +109,9 @@ Ext.define( 'BS.form.UserCombo', {
 			callback: callback,
 			value: value
 		};
+	},
+
+	checkValueOnChange: function() {
+		// NO-OP
 	}
 });
