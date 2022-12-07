@@ -4,7 +4,8 @@
 			"An13sa",
 			"Gorkaazk",
 			"Joseba",
-			"Subi"
+			"Subi",
+			"Xabier Armendaritz"
 		]
 	},
 	"bs-ns_main": "(Orrialdeak)",
@@ -46,7 +47,7 @@
 	"bs-navigation-instructions": "Jarraibideak",
 	"bs-navigation-support": "Laguntza",
 	"bs-navigation-contact": "Kontaktua",
-	"bs-imagepage-download-text": "Jaitsi",
+	"bs-imagepage-download-text": "Deskargatu",
 	"bs-ns": "Izen-tartea",
 	"bs-parser-error-invalid-title": "Izenburu baliogabea: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Orrialde baimendugabea: $1",
