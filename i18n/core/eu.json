@@ -4,7 +4,8 @@
 			"An13sa",
 			"Gorkaazk",
 			"Joseba",
-			"Subi"
+			"Subi",
+			"Xabier Armendaritz"
 		]
 	},
 	"bs-ns_main": "(Orrialdeak)",
@@ -41,7 +42,7 @@
 	"bs-filesystemhelper-save-base64-error": "Ezin izan da fitxategia gorde.",
 	"bs-filesystemhelper-upload-base64-error": "Ezin izan da fitxategia igo.",
 	"bs-navigation-instructions": "Jarraibideak",
-	"bs-imagepage-download-text": "Jaitsi",
+	"bs-imagepage-download-text": "Deskargatu",
 	"bs-parser-error-invalid-title": "Izenburu baliogabea: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Orrialde baimendugabea: $1",
 	"bs-parser-error-invalid-category-title": "Orrialdea ez da baliozko kategoria bat: $1",
