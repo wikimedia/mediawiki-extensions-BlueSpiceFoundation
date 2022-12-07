@@ -230,7 +230,9 @@ Ext.define( 'BS.CRUDGridPanel', {
 		}
 		// All selections have to be deselected otherwise double editing of the same row won't work
 		this.grdMain.getSelectionModel().deselectAll();
-		this.btnAdd.setTabIndex( 0 );
+		if ( this.btnAdd ) {
+			this.btnAdd.setTabIndex( 0 );
+		}
 	},
 
 	onActionEditClick:function( view, rowIndex, colIndex, item, e, record, row ) {
