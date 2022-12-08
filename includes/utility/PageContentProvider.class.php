@@ -535,10 +535,11 @@ class BsPageContentProvider {
 		$wgTitle   = $this->oOriginalGlobalTitle;
 		$wgRequest = $this->oOriginalGlobalRequest;
 
-		$globalParser = MediaWikiServices::getInstance()->getParser();
-		$globalParser->setOptions( $wgParser->getOptions() );
-		$globalParser->setTitle( $wgParser->getTitle() );
-
+		if ( $wgParser ) {
+			$globalParser = MediaWikiServices::getInstance()->getParser();
+			$globalParser->setOptions( $wgParser->getOptions() );
+			$globalParser->setPage( $wgParser->getTitle() );
+		}
 		RequestContext::getMain()->setRequest(
 			$this->originalMainRequestContextRequest
 		);
