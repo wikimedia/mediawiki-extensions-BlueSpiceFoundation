@@ -127,9 +127,9 @@ abstract class EntityConfig implements JsonSerializable, Config {
 
 	/**
 	 * Returns a json serializable object
-	 * @return stdClass
+	 * @return \stdClass
 	 */
-	public function jsonSerialize() {
+	public function jsonSerialize(): \stdClass {
 		$aConfig = [];
 		foreach ( get_class_methods( $this->getConfig() ) as $sMethod ) {
 			if ( strpos( $sMethod, 'get_' ) !== 0 ) {
