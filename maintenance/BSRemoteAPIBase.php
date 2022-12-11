@@ -2,6 +2,8 @@
 
 require_once __DIR__ . '/BSMaintenance.php';
 
+use MediaWiki\MediaWikiServices;
+
 class BSRemoteAPIBase extends BSMaintenance {
 
 	public function __construct() {
@@ -77,8 +79,8 @@ class BSRemoteAPIBase extends BSMaintenance {
 			$options['postData']['lgtoken'] = $this->token;
 		}
 
-		Http::$httpEngine = 'curl';
-		$req = MWHttpRequest::factory( $this->apiUrl, $options );
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
+			->create( $this->apiUrl, $options );
 
 		if ( $this->cookieJar !== null ) {
 			$req->setCookieJar( $this->cookieJar );
@@ -117,8 +119,8 @@ class BSRemoteAPIBase extends BSMaintenance {
 			'postData' => $aOptions
 		];
 
-		Http::$httpEngine = 'curl';
-		$request = MWHttpRequest::factory( $this->apiUrl, $options );
+		$request = MediaWikiServices::getInstance()->getHttpRequestFactory()
+			->create( $this->apiUrl, $options );
 		$request->setCookieJar( $this->cookieJar );
 
 		return $request;
@@ -136,8 +138,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 			'type' => 'csrf',
 		];
 
-		Http::$httpEngine = 'curl';
-		$req = MWHttpRequest::factory(
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()->create(
 			wfAppendQuery( $this->apiUrl, $query )
 		);
 		$req->setCookieJar( $this->cookieJar );
