@@ -3,7 +3,8 @@
 		"authors": [
 			"1233thehongkonger",
 			"Kly",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"捍粵者"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "上傳檔案",
@@ -16,7 +17,7 @@
 	"bs-upload-uploadwatchthislabel": "監視此檔案",
 	"bs-upload-uploadignorewarningslabel": "忽略所有警告",
 	"bs-upload-categories": "分類",
-	"bs-upload-upload-waitmessage": "進行上傳 ...",
+	"bs-upload-upload-waitmessage": "正在上傳…",
 	"bs-upload-error": "錯誤",
 	"bs-upload-descfilelabel": "描述",
 	"bs-upload-error-long": "上傳過程中發生錯誤",
