@@ -3,7 +3,8 @@
 		"authors": [
 			"Cwlin0416",
 			"Kly",
-			"LNDDYL"
+			"LNDDYL",
+			"捍粵者"
 		]
 	},
 	"bs-validator-email-validation-approved": "電子郵件地址已驗證成功。",
@@ -16,7 +17,7 @@
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|僅讓$1允許以下的值|對於$1僅有以下的值是允許的}}：$2。",
 	"bs-validator-integer-range-validation-too-low": "提供的值太低，不可小於 $1。",
 	"bs-validator-integer-range-validation-too-high": "提供的值太高，不可大於 $1。",
-	"bs-validator-value-not-recognized": "值無法被處理",
+	"bs-validator-value-not-recognized": "無法處理此值",
 	"bs-validator-invalid-boolean": "不是有效的布林值",
 	"bs-validator-invalid-float": "不是有效的浮點數",
 	"bs-validator-invalid-integer": "不是有效的整數",
