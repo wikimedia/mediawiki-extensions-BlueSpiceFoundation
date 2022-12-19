@@ -12,5 +12,6 @@
 	"bs-extjs-filters": "Sillit",
 	"bs-extjs-filter-date-filter": "Sille",
 	"bs-extjs-delete": "Sihko",
-	"bs-extjs-error": "Meattáhus"
+	"bs-extjs-error": "Meattáhus",
+	"bs-extjs-flyout-tab-thumbs-label": "Govažat"
 }
