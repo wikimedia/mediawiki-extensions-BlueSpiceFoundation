@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Afalau"
+		]
+	},
+	"bs-userbar_loginswitch_logout": "Allgofnodi",
+	"bs-userbar_loginswitch_login": "Mewngofnodi",
+	"bs-extended-search-textfield-defaultvalue": "Chwilio...",
+	"bs-extended-search-textfield-tooltip": "Chwilio wiki",
+	"bs-no-information-available": "Dim gwybodaeth ar gael",
+	"bs-viewtagerrorlist-legend": "$1 - Gwall",
+	"bs-ns": "Parth",
+	"bs-bluespice": "BlueSpice"
+}
