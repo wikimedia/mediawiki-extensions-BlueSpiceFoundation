@@ -8,7 +8,8 @@
 			"Liuxinyu970226",
 			"S8321414",
 			"Sanmosa",
-			"Xiplus"
+			"Xiplus",
+			"捍粵者"
 		]
 	},
 	"bluespicefoundation-desc": "讓 MediaWiki 企業化就緒",
@@ -22,7 +23,7 @@
 	"bs-extended-search-textfield-tooltip": "搜尋 wiki",
 	"bs-no-information-available": "無可用資訊。",
 	"bs-years-duration": "{{PLURAL:$1|一年|$1 年}}",
-	"bs-months-duration": "{{PLURAL:$1|一個月|$1 個月}}",
+	"bs-months-duration": "$1個月",
 	"bs-weeks-duration": "{{PLURAL:$1|一週|$1 週}}",
 	"bs-days-duration": "{{PLURAL:$1|一天|$1 天}}",
 	"bs-hours-duration": "{{PLURAL:$1|一小時|$1 小時}}",
@@ -86,7 +87,7 @@
 	"bs-validator-error-namespace-does-not-exist": "命名空間不存在：$1",
 	"bs-validator-error-namespace-on-blacklist": "命名空間不被允許：$1",
 	"bs-validator-error-title-does-not-exist": "頁面不存在：$1",
-	"bs-validator-error-title-namespace-on-blacklist": "頁面不被允許：$1",
+	"bs-validator-error-title-namespace-on-blacklist": "頁面不允許：$1",
 	"bs-parser-error-invalid-category-title": "不是有效分類的頁面：$1",
 	"bs-exttype-bluespice": "BlueSpice 擴充",
 	"bs-export-menu-print-text": "列印",
