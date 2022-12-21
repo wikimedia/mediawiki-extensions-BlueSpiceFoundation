@@ -93,7 +93,8 @@ $replace_with   = 'Template:';
 ########################## Nothing to do past this point ############################
 
 // Check valid user
-$wgUser = User::newFromName( $userName );
+$services = MediaWikiServices::getInstance();
+$wgUser = $services->getUserFactory()->newFromName( $userName );
 if ( !$wgUser ) {
 	error( "Invalid username" );
 }
@@ -144,8 +145,8 @@ $res = $dbw->select(
 $wgGroupPermissions['*']['suppressredirect'] = true;
 $hits = 0;
 
-$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
-$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
+$namespaceInfo = $services->getNamespaceInfo();
+$wikiPageFactory = $services->getWikiPageFactory();
 
 foreach ( $res as $row ) {
 	$row = (array)$row;

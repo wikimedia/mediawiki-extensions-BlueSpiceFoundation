@@ -4,8 +4,12 @@
 			"Yupik"
 		]
 	},
+	"bs-filerepo-labelfilter": "Silli",
 	"bs-filerepo-headerfilename": "Fiilanamma",
 	"bs-filerepo-headerpagecategories": "Kategoriijat",
+<<<<<<< HEAD
 	"bs-filerepo-labelfilter": "Silli",
+=======
+>>>>>>> a48a2fa3c8c671502d0e9420346959d58cc48cb8
 	"bs-filerepo-headerfilethumbnail": "Govaš"
 }
