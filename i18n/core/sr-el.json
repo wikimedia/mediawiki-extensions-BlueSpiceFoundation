@@ -32,7 +32,7 @@
 	"bs-userpreferences-link-title": "Prikaži lična korisnička podešavanja",
 	"bs-exception-view-heading": "Došlo je do greške",
 	"bs-exception-view-text": "Prilikom obrade vašeg zahteva došlo je do sledeće greške:",
-	"bs-exception-view-admin-hint": "Kontaktirajte svog administratora sistema.",
+	"bs-exception-view-admin-hint": "Obratite se administratoru sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Prikaži detalje greške",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Sakrij detalje greške",
 	"bs-viewtagerrorlist-legend": "$1 — Greška",
