@@ -32,7 +32,8 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 	}
 
 	protected function doProcess() {
-		$user = \User::newFromName( $this->target->getText() );
+		$services = $this->getServices();
+		$user = $services->getUserFactory()->newFromName( $this->target->getText() );
 
 		if ( !$user ) {
 			// in rare cases $this->target->getText() returns '127.0.0.1' which
@@ -45,10 +46,9 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		$bdiWrapped = strpos( $text, '<bdi>' ) === 0;
 		$text = strip_tags( $text );
 		if ( $user->getName() === $text ) {
-			$this->text =
-				$this->getServices()->getService( 'BSUtilityFactory' )->getUserHelper(
-					$user
-				)->getDisplayName();
+			$this->text = $services->getService( 'BSUtilityFactory' )
+				->getUserHelper( $user )
+				->getDisplayName();
 
 			if ( $bdiWrapped ) {
 				$this->text = new HtmlArmor(

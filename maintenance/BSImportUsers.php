@@ -31,9 +31,11 @@ class BSImportUsers extends BSMaintenance {
 
 		$oUserNodes = $oDOM->getElementsByTagName( 'user' );
 		$services = MediaWikiServices::getInstance();
+		$userFactory = $services->getUserFactory();
+		$userOptionsManager = $services->getUserOptionsManager();
 		foreach ( $oUserNodes as $oUserNode ) {
 			$sUserName = $this->getChildNodeValue( $oUserNode, 'name' );
-			$oUser = User::newFromName( $sUserName );
+			$oUser = $userFactory->newFromName( $sUserName );
 			if ( $oUser instanceof User === false ) {
 				$this->output( $sUserName . ' is not a valid username' );
 				continue;
@@ -60,7 +62,7 @@ class BSImportUsers extends BSMaintenance {
 
 			$oProperties = $oUserNode->getElementsByTagName( 'property' );
 			foreach ( $oProperties as $oProperty ) {
-				$services->getUserOptionsManager()->setOption(
+				$userOptionsManager->setOption(
 					$oUser,
 					$oProperty->getAttribute( 'name' ),
 					$oProperty->getAttribute( 'value' )

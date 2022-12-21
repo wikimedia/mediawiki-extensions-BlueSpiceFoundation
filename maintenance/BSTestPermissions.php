@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 require_once 'BSMaintenance.php';
 
 class BSTestPermissions extends BSMaintenance {
@@ -33,7 +35,8 @@ class BSTestPermissions extends BSMaintenance {
 
 	protected function makeUser() {
 		$userName = $this->getOption( 'username' );
-		$this->testUser = User::newFromName( $userName );
+		$this->testUser = MediaWikiServices::getInstance()->getUserFactory()
+			->newFromName( $userName );
 		if ( $this->testUser instanceof User === false ) {
 			throw new Exception( "Could not create valid user from '$userName'" );
 		}
@@ -68,8 +71,7 @@ class BSTestPermissions extends BSMaintenance {
 			"--------------------------------------------------------------------------------"
 		);
 		$permission = $this->getOption( 'permission' );
-		$result = \MediaWiki\MediaWikiServices::getInstance()
-			->getPermissionManager()
+		$result = MediaWikiServices::getInstance()->getPermissionManager()
 			->userCan( $permission, $this->testUser, $this->testTitle );
 		$result = FormatJson::encode( $result );
 
