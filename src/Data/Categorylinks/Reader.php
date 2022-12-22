@@ -3,7 +3,7 @@
 namespace BlueSpice\Data\Categorylinks;
 
 use BlueSpice\Data\DatabaseReader;
-use BlueSpice\SMWConnector\Data\TreeAsk\ReaderParams;
+use BlueSpice\Data\ReaderParams;
 use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
