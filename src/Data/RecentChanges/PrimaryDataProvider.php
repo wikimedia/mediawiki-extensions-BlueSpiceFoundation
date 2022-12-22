@@ -3,7 +3,7 @@
 namespace BlueSpice\Data\RecentChanges;
 
 use BlueSpice\Data\IPrimaryDataProvider;
-use BlueSpice\SMWConnector\Data\Ask\ReaderParams;
+use BlueSpice\Data\ReaderParams;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
