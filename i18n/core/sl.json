@@ -32,5 +32,6 @@
 	"bs-navigation-support": "Podpora",
 	"bs-validator-error-namespace-does-not-exist": "Imenski prostor ne obstaja: $1",
 	"bs-validator-error-title-does-not-exist": "Stran ne obstaja: $1",
-	"bs-now": "zdaj"
+	"bs-now": "zdaj",
+	"bs-pref-bspinginterval": "Interval pinganja (v sekundah):"
 }
