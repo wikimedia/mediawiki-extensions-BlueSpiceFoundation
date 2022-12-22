@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Special;
 
+use FormatJson;
 use MediaWiki\MediaWikiServices;
 
 class Credits extends \BlueSpice\SpecialPage {
@@ -164,6 +165,9 @@ class Credits extends \BlueSpice\SpecialPage {
 			$filepath = \BsFileSystemHelper::normalizePath(
 				$fileinfo->getPathname()
 			);
+			if ( $filepath === null ) {
+				continue;
+			}
 			if ( strpos( $filepath, '/i18n/' ) === false ) {
 				continue;
 			}
@@ -171,9 +175,14 @@ class Credits extends \BlueSpice\SpecialPage {
 				continue;
 			}
 
-			$content = \FormatJson::decode( file_get_contents(
+			$content = FormatJson::decode( file_get_contents(
 				$fileinfo->getPathname()
-			) );
+			), true );
+
+			if ( !is_array( $content ) ) {
+				continue;
+			}
+
 			$this->readInTranslatorsFile( $content, $translators );
 		}
 	}
