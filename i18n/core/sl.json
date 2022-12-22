@@ -24,6 +24,7 @@
 	"bs-imagepage-download-text": "Prenesi",
 	"bs-ns": "Imenski prostori",
 	"bs-pref-logopath": "Pot logotipa:",
+	"bs-pref-bspinginterval": "Interval pinganja (v sekundah):",
 	"bs-validator-error-namespace-does-not-exist": "Imenski prostor ne obstaja: $1",
 	"bs-validator-error-title-does-not-exist": "Stran ne obstaja: $1",
 	"bs-graphicallist-action-close": "Zapri",
