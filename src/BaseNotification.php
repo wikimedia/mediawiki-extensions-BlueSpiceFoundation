@@ -205,7 +205,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 			if ( !( $user instanceof \User ) ) {
 				continue;
 			}
-			if ( $user->isBlocked() ) {
+			if ( $user->getBlock() ) {
 				continue;
 			}
 			if ( $this->title instanceof \Title && !$pm->userCan( 'read', $user, $this->title ) ) {
