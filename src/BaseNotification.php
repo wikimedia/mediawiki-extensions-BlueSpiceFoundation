@@ -4,7 +4,7 @@ namespace BlueSpice;
 
 use MediaWiki\MediaWikiServices;
 
-class BaseNotification implements \BlueSpice\INotification {
+class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INotification {
 	/**
 	 *
 	 * @var string
