@@ -176,6 +176,7 @@ abstract class Api extends ApiBase {
 	}
 
 	/**
+	 * @deprecated since 4.2, use $this->services instead
 	 *
 	 * @return MediaWikiServices
 	 */
