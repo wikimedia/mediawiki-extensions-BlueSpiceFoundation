@@ -37,5 +37,6 @@
 	"bs-userpagesettings-legend": "Uporabniške nastavitve",
 	"bs-userpreferences-link-text": "Več uporabniških nastavitev",
 	"bs-exception-view-heading": "Prišlo je do neznane napake",
-	"bs-exception-view-text": "Pri obdelavi vašega zahtevka je prišlo do naslednje napake:"
+	"bs-exception-view-text": "Pri obdelavi vašega zahtevka je prišlo do naslednje napake:",
+	"bs-permissionerror": "Napaka dovoljenja!"
 }

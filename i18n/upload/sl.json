@@ -18,5 +18,7 @@
 	"bs-upload-error-long": "Napaka pri nalaganju",
 	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt",
 	"bs-upload-details": "Podrobnosti",
-	"bs-upload-error": "Napaka"
+	"bs-upload-error": "Napaka",
+	"bs-upload-uploadwatchthislabel": "Opazuj to datoteko",
+	"bs-upload-uploadignorewarningslabel": "Prezri vsa opozorila"
 }
