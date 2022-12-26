@@ -5,5 +5,8 @@
 		]
 	},
 	"bs-ooui-key-value-input-widget-section-label": "Razdelek",
-	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nov razdelek"
+	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nov razdelek",
+	"bs-ooui-key-value-input-widget-key-label": "Ključ",
+	"bs-ooui-key-value-input-widget-value-label": "Vrednost",
+	"bs-ooui-key-value-input-widget-add-button-label": "Dodaj"
 }

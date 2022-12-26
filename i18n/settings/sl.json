@@ -9,5 +9,8 @@
 	"bs-setting-path-dataanalysis": "Analiza podatkov",
 	"bs-setting-path-editor": "Urejevalec",
 	"bs-setting-path-search": "Iskanje in navigacija",
-	"bs-setting-path-personalisation": "Personalizacija"
+	"bs-setting-path-personalisation": "Personalizacija",
+	"bs-setting-path-feature": "Možnost",
+	"bs-setting-path-extension": "Razširitev",
+	"bs-setting-path-package": "Paket"
 }

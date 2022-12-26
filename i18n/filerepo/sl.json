@@ -21,5 +21,6 @@
 	"bs-filerepo-labelupload": "Naloži",
 	"bs-filerepo-headerfiledescription": "Opis",
 	"bs-filerepo-yes": "Da",
-	"bs-filerepo-no": "Ne"
+	"bs-filerepo-no": "Ne",
+	"bs-filerepo-headerfilemimetype": "Vrsta MIME"
 }
