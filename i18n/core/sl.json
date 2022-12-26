@@ -23,6 +23,7 @@
 	"bs-exception-view-heading": "Prišlo je do neznane napake",
 	"bs-exception-view-text": "Pri obdelavi vašega zahtevka je prišlo do naslednje napake:",
 	"bs-viewtagerrorlist-legend": "$1 – napaka",
+	"bs-permissionerror": "Napaka dovoljenja!",
 	"bs-navigation-support": "Podpora",
 	"bs-navigation-contact": "Stik",
 	"bs-imagepage-download-text": "Prenesi",

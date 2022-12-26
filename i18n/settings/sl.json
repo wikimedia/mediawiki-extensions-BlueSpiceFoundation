@@ -4,6 +4,9 @@
 			"Eleassar"
 		]
 	},
+	"bs-setting-path-feature": "Možnost",
+	"bs-setting-path-extension": "Razširitev",
+	"bs-setting-path-package": "Paket",
 	"bs-setting-path-system": "Sistem",
 	"bs-setting-path-dataanalysis": "Analiza podatkov",
 	"bs-setting-path-editor": "Urejevalec",

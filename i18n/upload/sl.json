@@ -12,6 +12,8 @@
 	"bs-upload-uploaddestfilelabel": "Ime ciljne datoteke",
 	"bs-upload-allowedfiletypesare": "Podprte vrste datotek:",
 	"bs-upload-license": "Licenca",
+	"bs-upload-uploadwatchthislabel": "Opazuj to datoteko",
+	"bs-upload-uploadignorewarningslabel": "Prezri vsa opozorila",
 	"bs-upload-categories": "Kategorije",
 	"bs-upload-upload-waitmessage": "Nalaganje poteka ...",
 	"bs-upload-error": "Napaka",

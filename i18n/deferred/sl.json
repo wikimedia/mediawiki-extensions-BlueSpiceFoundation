@@ -5,12 +5,19 @@
 		]
 	},
 	"bs-deferred-action-status-pending": "V teku.",
+	"bs-deferred-action-status-running": "Teče ...",
 	"bs-deferred-action-status-done": "Končano.",
 	"bs-deferred-action-status-error": "Ni uspelo.",
+	"bs-deferred-action-apicopypage-description": "Kopiraj iz »$1« v »$2«.",
 	"bs-deferred-action-apieditpage-description": "Uredi »$1«.",
+	"bs-deferred-batch-title": "Paketna obdelava",
 	"bs-deferred-batch-progress-desc": "Napredek",
 	"bs-deferred-batch-actions": "Dejanja",
 	"bs-deferred-batch-description": "Opis",
 	"bs-deferred-batch-status": "Stanje",
+	"bs-deferred-action-apiaddcategories-description": "Dodajte »$1« kategorije.",
+	"bs-deferred-action-apiremovecategories-description": "Odstranite kategorije iz »$1«.",
+	"bs-deferred-action-apisetcategories-description": "Nastavite kategorije na »$1«.",
+	"bs-deferred-action-apimovepage-description": "Prestavite »$1« na »$2«.",
 	"bs-deferred-action-apideletepage-description": "Izbriši »$1«."
 }

@@ -13,6 +13,7 @@
 	"bs-filerepo-headerpagecategories": "Kategorije",
 	"bs-filerepo-headerfilewidth": "Širina",
 	"bs-filerepo-headerfileheight": "Višina",
+	"bs-filerepo-headerfilemimetype": "Vrsta MIME",
 	"bs-filerepo-headerfileusertext": "Uporabnik",
 	"bs-filerepo-headerfileextension": "Dodatek",
 	"bs-filerepo-headerfiletimestamp": "Naloženo",
