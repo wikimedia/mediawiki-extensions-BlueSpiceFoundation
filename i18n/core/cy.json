@@ -4,7 +4,6 @@
 			"Afalau"
 		]
 	},
-<<<<<<< HEAD
 	"bs-userbar_loginswitch_logout": "Allgofnodi",
 	"bs-userbar_loginswitch_login": "Mewngofnodi",
 	"bs-extended-search-textfield-defaultvalue": "Chwilio...",
@@ -13,7 +12,4 @@
 	"bs-viewtagerrorlist-legend": "$1 - Gwall",
 	"bs-ns": "Parth",
 	"bs-bluespice": "BlueSpice"
-=======
-	"bs-userbar_loginswitch_logout": "Allgofnodi"
->>>>>>> a48a2fa3c8c671502d0e9420346959d58cc48cb8
 }

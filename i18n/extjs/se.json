@@ -6,18 +6,13 @@
 	},
 	"bs-extjs-save": "Vurke",
 	"bs-extjs-delete": "Sihko",
+	"bs-extjs-remove": "Sihko",
 	"bs-extjs-error": "Meattáhus",
 	"bs-extjs-label-namespace": "Nammagomuvuohta",
 	"bs-extjs-allns": "(buot)",
 	"bs-extjs-filters": "Sillit",
 	"bs-extjs-categorytree-title": "Kategoriijat",
 	"bs-extjs-filter-date-filter": "Sille",
-<<<<<<< HEAD
-	"bs-extjs-delete": "Sihko",
-	"bs-extjs-error": "Meattáhus",
-	"bs-extjs-remove": "Sihko",
-=======
 	"bs-extjs-pageexport-list-format-link-label": "Liŋka",
->>>>>>> a48a2fa3c8c671502d0e9420346959d58cc48cb8
 	"bs-extjs-flyout-tab-thumbs-label": "Govažat"
 }

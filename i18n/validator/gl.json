@@ -2,13 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Elisardojm",
-<<<<<<< HEAD
 			"Toliño",
 			"Vivaelcelta"
-=======
-			"Vivaelcelta",
-			"Toliño"
->>>>>>> a48a2fa3c8c671502d0e9420346959d58cc48cb8
 		]
 	},
 	"bs-validator-email-validation-approved": "O enderezo de correo electrónico validouse correctamente.",
