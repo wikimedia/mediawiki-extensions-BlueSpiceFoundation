@@ -20,5 +20,11 @@
 	"bs-upload-descfilelabel": "Opis",
 	"bs-upload-error-long": "Napaka pri nalaganju",
 	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt",
-	"bs-upload-details": "Podrobnosti"
+	"bs-upload-details": "Podrobnosti",
+	"bs-upload-uploadwarningdialog-title": "Naloži datoteko: Opozorila",
+	"bs-upload-uploadwarningdialog-intro": "Pri poskusu nalaganja datoteke so se pojavila naslednja opozorila",
+	"bs-upload-uploadwarningdialog-outro": "Kliknite »{{int:bs-extjs-ok}}«, da prezrete opozorila in naložite datoteko; kliknite »{{int:bs-extjs-cancel}}«, da se vrnete na obrazec za nalaganje",
+	"bs-upload-uploadwarningdialog-warning-exists": "Datoteka z imenom »$1« že obstaja",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Obstaja dvojnik|Obstajata dvojnika|Obstajajo dvojniki}} te datoteke",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Neznano opozorilo s kodo »$1«"
 }

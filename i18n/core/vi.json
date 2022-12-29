@@ -4,8 +4,8 @@
 			"BaRaN6161 TURK",
 			"Dinhxuanduyet",
 			"Minh Nguyen",
-			"Nguyễn Mạnh An",
-			"Nguyenphutrong2"
+			"Nguyenphutrong2",
+			"Nguyễn Mạnh An"
 		]
 	},
 	"bs-email-greeting-receiver": "{{GENDER:$1|Xin chào ông $2|Xinh chào bà $2|Xin chào $2}},",
