@@ -34,7 +34,6 @@ use ApiMessage;
 use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Api\Format\Json;
 use BSExtendedApiContext;
-use Language;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
 use Status;
@@ -154,7 +153,7 @@ abstract class Api extends ApiBase {
 			$errorLang = $this->services->getContentLanguage();
 		} else {
 			$errorLangCode = RequestContext::sanitizeLangCode( $errorLangCode );
-			$errorLang = Language::factory( $errorLangCode );
+			$errorLang = $this->services->getLanguageFactory()->getLanguage( $errorLangCode );
 		}
 
 		return new ErrorFormatter(
