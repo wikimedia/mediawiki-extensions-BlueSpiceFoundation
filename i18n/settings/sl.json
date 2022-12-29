@@ -12,5 +12,11 @@
 	"bs-setting-path-personalisation": "Personalizacija",
 	"bs-setting-path-feature": "Možnost",
 	"bs-setting-path-extension": "Razširitev",
-	"bs-setting-path-package": "Paket"
+	"bs-setting-path-package": "Paket",
+	"bs-setting-path-skinning": "Preobleke",
+	"bs-setting-path-customizing": "Prilagajanje",
+	"bs-setting-path-contentstructuring": "Strukturiranje vsebine",
+	"bs-setting-path-communication": "Komunikacija",
+	"bs-setting-path-administration": "Administracija",
+	"bs-setting-path-qualityassurance": "Zagotavljanje kakovosti"
 }
