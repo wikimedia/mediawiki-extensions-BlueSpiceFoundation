@@ -12,7 +12,15 @@
 	"bs-validator-arg-count-validation-approved": "Atribut \"count\" (števec) je uspešno potrjen.",
 	"bs-validator-arg-count-validation-not-approved": "Atributa \"count\" (števec) ni bilo mogoče potrditi.",
 	"bs-validator-set-validation-approved": "$1 je bil uspešno potrjen.",
-	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Samo sledeča vrednost je dovoljena za $1|Za $1 je dovoljena samo ena izmed sledečih vrednosti}}: $2.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Za $1 je dovoljena samo naslednja vrednost|Za $1 je dovoljena samo ena od naslednjih vrednosti}}: $2.",
 	"bs-validator-integer-range-validation-too-low": "Podana vrednost je prenizka. Biti mora večja ali enaka $1.",
-	"bs-validator-integer-range-validation-too-high": "Podana vrednost je previsoka. Biti mora manjša ali enaka $1."
+	"bs-validator-integer-range-validation-too-high": "Podana vrednost je previsoka. Biti mora manjša ali enaka $1.",
+	"bs-validator-value-not-recognized": "Vrednosti ni bilo mogoče obdelati",
+	"bs-validator-invalid-boolean": "Ni veljavna booleanska vrednost",
+	"bs-validator-invalid-float": "Ni veljavna plavajoča vrednost",
+	"bs-validator-invalid-integer": "Ni veljavno celo število",
+	"bs-validator-invalid-string": "Ni veljaven niz",
+	"bs-validator-invalid-coordinate": "Ni vekjavna koordinata",
+	"bs-validator-invalid-parameter": "Ta parameter ni dovoljen",
+	"bs-validator-missing-required": "Ta parameter je obvezen"
 }

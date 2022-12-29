@@ -8,5 +8,10 @@
 	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nov razdelek",
 	"bs-ooui-key-value-input-widget-key-label": "Ključ",
 	"bs-ooui-key-value-input-widget-value-label": "Vrednost",
-	"bs-ooui-key-value-input-widget-add-button-label": "Dodaj"
+	"bs-ooui-key-value-input-widget-add-button-label": "Dodaj",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Dodaj novo ...",
+	"bs-ooui-key-value-input-widget-add-form-label": "Dodaj nov vnos",
+	"bs-ooui-key-value-input-widget-error-message": "Nastavljena morajo biti vsa zahtevana polja!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Vrednosti niso nastavljene!",
+	"bs-ooui-btn-dismiss-alert-title": "Opusti"
 }
