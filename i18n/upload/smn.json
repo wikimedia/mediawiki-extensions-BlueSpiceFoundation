@@ -11,5 +11,6 @@
 	"bs-upload-uploadwatchthislabel": "Tarkkuu taam tiätuvuárhá",
 	"bs-upload-categories": "Luokah",
 	"bs-upload-error": "Feilâ",
-	"bs-upload-descfilelabel": "Kuvvim"
+	"bs-upload-descfilelabel": "Kuvvim",
+	"bs-upload-uploadfileemptytext": "Lasseet uđđâ tiätuvuárhá..."
 }

@@ -11,5 +11,6 @@
 	"bs-upload-uploadwatchthislabel": "Čuovo dán fiilla",
 	"bs-upload-categories": "Kategoriijat",
 	"bs-upload-error": "Meattáhus",
-	"bs-upload-descfilelabel": "Govvádus"
+	"bs-upload-descfilelabel": "Govvádus",
+	"bs-upload-uploadfileemptytext": "Lasit ođđa fiilla..."
 }

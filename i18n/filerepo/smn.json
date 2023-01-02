@@ -10,5 +10,6 @@
 	"bs-filerepo-headerpagecategories": "Luokah",
 	"bs-filerepo-headerfileusertext": "Kevttee",
 	"bs-filerepo-headerfilethumbnail": "Miniatyyrkove",
-	"bs-filerepo-headerfiledescription": "Kuvvim"
+	"bs-filerepo-headerfiledescription": "Kuvvim",
+	"bs-filerepo-headerfilesize": "Stuárudâh"
 }
