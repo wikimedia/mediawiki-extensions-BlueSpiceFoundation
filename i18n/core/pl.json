@@ -6,6 +6,7 @@
 			"Msz2001",
 			"Pio387",
 			"Rzuwig",
+			"Superjurek",
 			"Vlad5250"
 		]
 	},
@@ -80,5 +81,8 @@
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "anonimowy użytkownik",
-	"protect-level-editor": "Dozwolone tylko dla redaktorów i administratorów"
+	"protect-level-editor": "Dozwolone tylko dla redaktorów i administratorów",
+	"bs-pref-defaultuserimage": "Domyślny awatar użytkownika:",
+	"bs-pref-anonuserimage": "Awatar anonimowego użytkownika:",
+	"bs-graphicallist-action-list": "Lista"
 }

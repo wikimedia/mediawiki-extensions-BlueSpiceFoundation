@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"InternerowyGołąb"
+			"InternerowyGołąb",
+			"Superjurek"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Liczba zwracanych wyników",
@@ -16,5 +17,6 @@
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lista opcji",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Nie masz uprawnień do czytania strony '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Brak kategorii do usunięcia",
-	"bs-api-task-taskData-page-title": "Prawidłowy tytuł strony wiki"
+	"bs-api-task-taskData-page-title": "Prawidłowy tytuł strony wiki",
+	"bs-wikipage-tasks-setcategories-success": "Kategorie zostały pomyślnie ustawione."
 }
