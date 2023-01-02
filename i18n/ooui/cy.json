@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Afalau"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Ychwanegu newydd...",
+	"bs-ooui-key-value-input-widget-key-label": "Allwedd",
+	"bs-ooui-key-value-input-widget-value-label": "Gwerth",
+	"bs-ooui-key-value-input-widget-add-button-label": "Ychwanegu",
+	"bs-ooui-key-value-input-widget-add-form-label": "Ychwanegu cofnod newydd",
+	"bs-ooui-key-value-input-widget-error-message": "Rhaid gosod pob maes sy'n ofynnol!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Dim gwerthoedd wedi'u gosod!",
+	"bs-ooui-btn-dismiss-alert-title": "Cau",
+	"bs-ooui-key-value-input-widget-section-label": "Adran",
+	"bs-ooui-key-value-input-widget-add-section-label": "Ychwanegu adran newydd"
+}

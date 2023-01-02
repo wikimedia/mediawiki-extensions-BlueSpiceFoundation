@@ -6,6 +6,7 @@
 			"Msz2001",
 			"Pio387",
 			"Rzuwig",
+			"Superjurek",
 			"Vlad5250"
 		]
 	},
@@ -65,6 +66,8 @@
 	"bs-pref-imageextensions": "Dozwolone rozszerzenia obrazów:",
 	"bs-pref-logopath": "Ścieżka do logo:",
 	"bs-pref-faviconpath": "Ścieżka ikony ulubionych:",
+	"bs-pref-defaultuserimage": "Domyślny awatar użytkownika:",
+	"bs-pref-anonuserimage": "Awatar anonimowego użytkownika:",
 	"bs-pref-testmode": "Uaktywnij tryb testowy",
 	"bs-parser-error-invalid-namespace": "Nieprawidłowa przestrzeń nazw: $1",
 	"bs-parser-error-invalid-title": "Niepoprawny tytuł: $1",
@@ -76,6 +79,7 @@
 	"bs-exttype-bluespice": "Rozszerzenia BlueSpice",
 	"bs-export-menu-print-text": "Drukuj",
 	"bs-graphicallist-action-close": "Zamknij",
+	"bs-graphicallist-action-list": "Lista",
 	"bs-graphicallist-action-preview": "Podgląd",
 	"bs-bluespice-mediawiki": "MediaWiki BlueSpice",
 	"bs-bluespice": "BlueSpice",

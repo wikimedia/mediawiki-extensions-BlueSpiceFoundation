@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Superjurek",
 			"WaldiSt"
 		]
 	},
@@ -10,6 +11,7 @@
 	"bs-setting-path-system": "System",
 	"bs-setting-path-dataanalysis": "Analiza danych",
 	"bs-setting-path-editor": "Edytor",
+	"bs-setting-path-search": "Wyszukiwanie i nawigacja",
 	"bs-setting-path-personalisation": "Personalizacja",
 	"bs-setting-path-customizing": "Dostosowywanie",
 	"bs-setting-path-communication": "Komunikacja",
