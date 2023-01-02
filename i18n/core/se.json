@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
@@ -9,5 +10,7 @@
 	"bs-ns": "Nammagomuvuohta",
 	"bs-userbar_loginswitch_logout": "Čálit olggos",
 	"bs-userbar_loginswitch_login": "Čálit sisa",
-	"bs-viewtagerrorlist-legend": "$1 - Meattáhus"
+	"bs-viewtagerrorlist-legend": "$1 - Meattáhus",
+	"bs-extended-search-textfield-tooltip": "Oza wikis",
+	"bs-navigation-contact": "Váldde oktavuođa"
 }

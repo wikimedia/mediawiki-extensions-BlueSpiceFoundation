@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Superjurek",
 			"WaldiSt"
 		]
 	},
@@ -14,5 +15,6 @@
 	"bs-setting-path-customizing": "Dostosowywanie",
 	"bs-setting-path-communication": "Komunikacja",
 	"bs-setting-path-administration": "Administracja",
-	"bs-setting-path-export": "Eksport"
+	"bs-setting-path-export": "Eksport",
+	"bs-setting-path-search": "Wyszukiwanie i nawigacja"
 }
