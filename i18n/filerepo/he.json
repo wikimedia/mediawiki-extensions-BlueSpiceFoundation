@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Or",
 			"YaronSh"
 		]
@@ -21,5 +22,5 @@
 	"bs-filerepo-headerfilethumbnail": "תמונה ממוזערת",
 	"bs-filerepo-yes": "כן",
 	"bs-filerepo-no": "לא",
-	"bs-filerepo-pagesize": "רשומות בעמוד"
+	"bs-filerepo-pagesize": "רשומות בדף"
 }
