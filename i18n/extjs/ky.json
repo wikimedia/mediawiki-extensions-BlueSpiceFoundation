@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bosogo",
 			"Janatkg"
 		]
 	},
-	"bs-extjs-categoryboxselect-emptytext": "Категория кошуу"
+	"bs-extjs-categoryboxselect-emptytext": "Категория кошуу",
+	"bs-extjs-flyout-tab-grid-label": "Чоо-жайы"
 }
