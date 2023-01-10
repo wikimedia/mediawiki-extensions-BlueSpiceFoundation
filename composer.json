@@ -52,5 +52,10 @@
 	"support": {
 		"issues": "https://sourceforge.net/projects/bluespice/support",
 		"wiki": "https://help.bluespice.com"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }
