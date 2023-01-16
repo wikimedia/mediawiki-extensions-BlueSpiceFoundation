@@ -12,6 +12,6 @@
 	"bs-imagepage-download-text": "Tải về",
 	"bs-ns": "Không gian tên",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Không thể ghi tập tin cấu hình $1!",
-	"action-wikiadmin": "sử dụng các tác vụ quản trị nguy hiểm tiềm ẩn, chẳng hạn như quản lý người dùng, quyền, cấu hình chung (tiện ích mở rộng BlueSpice)",
-	"right-wikiadmin": "Sử dụng các tác vụ quản trị nguy hiểm tiềm ẩn, chẳng hạn như quản lý người dùng, quyền, cấu hình chung (tiện ích mở rộng BlueSpice)"
+	"action-wikiadmin": "sử dụng các tác vụ bảo quản nguy hiểm tiềm ẩn, chẳng hạn như quản lý người dùng, quyền, cấu hình chung (phần mở rộng BlueSpice)",
+	"right-wikiadmin": "Sử dụng các tác vụ bảo quản nguy hiểm tiềm ẩn, chẳng hạn như quản lý người dùng, quyền, cấu hình chung (phần mở rộng BlueSpice)"
 }
