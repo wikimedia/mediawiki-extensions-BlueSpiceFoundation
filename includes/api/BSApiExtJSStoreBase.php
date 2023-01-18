@@ -228,7 +228,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
 		if ( in_array( $paramName, [ 'sort', 'group', 'filter', 'context' ] ) ) {
-			$value = FormatJson::decode( $value );
+			$value = $value ? FormatJson::decode( $value ) : null;
 			if ( empty( $value ) ) {
 				return [];
 			}

@@ -114,7 +114,8 @@ class BSApiCategoryStore extends BSApiExtJSStoreBase {
 	 * @return bool
 	 */
 	protected function filterCategoriesCallback( $categoryData ) {
-		$query = trim( $this->getParameter( 'query' ) );
+		$query = $this->getParameter( 'query' );
+		$query = $query ? trim( $query ) : null;
 		if ( empty( $query ) || !is_string( $query ) ) {
 			return true;
 		}
