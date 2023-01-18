@@ -19,7 +19,7 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 			'returnQuery' => false
 		];
 
-		$sNormQuery = strtolower( $sQuery );
+		$sNormQuery = $sQuery ? strtolower( $sQuery ) : '';
 		$sNormQuery = str_replace( '_', ' ', $sNormQuery );
 
 		// See JS BS.model.Title
