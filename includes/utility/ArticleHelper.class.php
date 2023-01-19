@@ -130,15 +130,18 @@ class BsArticleHelper {
 
 	/**
 	 * Returns redirect target title or null if there is no redirect
-	 * @return Title - returns redirect target title or null
+	 * @return Title|null - returns redirect target title or null
 	 */
 	public function getTitleFromRedirectRecurse() {
-		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()
+		$services = MediaWikiServices::getInstance();
+		$oWikiPage = $services->getWikiPageFactory()
 			->newFromID( $this->oTitle->getArticleID() );
 		if ( !$oWikiPage ) {
 			return null;
 		}
-		return $oWikiPage->getRedirectTarget();
+		$redirTarget = $services->getRedirectLookup()->getRedirectTarget( $oWikiPage );
+
+		return Title::castFromLinkTarget( $redirTarget );
 	}
 
 	public function invalidate() {
