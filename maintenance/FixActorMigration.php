@@ -35,8 +35,8 @@ class FixActorMigration extends Maintenance {
 		$this->fetchAllTempActorRevs();
 		$this->fetchAllRevisions();
 		$this->missingTempActorRevIds = array_diff( $this->revisionIds, $this->actorTempRevIds );
-		$this->outputUnknown();
 		$this->fixData();
+		$this->output( "\nDone\n" );
 	}
 
 	private function setActorId() {
@@ -67,15 +67,55 @@ class FixActorMigration extends Maintenance {
 
 	private function outputUnknown() {
 		$missingTempActorRevIdsList = implode( ', ', $this->missingTempActorRevIds );
-		$this->output( "Rev ids to be fixed: $missingTempActorRevIdsList\n" );
+		$this->output( "Rev ids to be fixed: $missingTempActorRevIdsList" );
 	}
 
 	private function fixData() {
+		$this->output( "Fixing revision_actor_temp" );
+		if ( count( $this->missingTempActorRevIds ) === 0 ) {
+			$this->output( " - no bad entries found" );
+		} else {
+			$this->output( " - " . count( $this->missingTempActorRevIds ) . " bad entries found" );
+			$this->outputUnknown();
+		}
 		foreach ( $this->missingTempActorRevIds as $revId ) {
 			$data = $this->revisionData[$revId];
 			$this->output( "." );
 
 			$this->db->insert( 'revision_actor_temp', $data, __METHOD__ );
+		}
+
+		$this->fixAdditonalTables();
+	}
+
+	private $tablesToFix = [
+		'archive' => 'ar_actor',
+		'ipblocks' => 'ipb_by_actor',
+		'image' => 'img_actor',
+		'oldimage' => 'oi_actor',
+		'filearchive' => 'fa_actor',
+		'recentchanges' => 'rc_actor',
+		'logging' => 'log_actor',
+	];
+
+	private function fixAdditonalTables() {
+		foreach ( $this->tablesToFix as $tableName => $foreignKeyName ) {
+			$this->output( "\nFixing $tableName" );
+			$numberOfBadRows = $this->db->selectRowCount(
+				$tableName,
+				'*',
+				[ $foreignKeyName => 0 ]
+			);
+			if ( $numberOfBadRows === 0 ) {
+				$this->output( " - no bad entries found" );
+				continue;
+			}
+			$this->db->update(
+				$tableName,
+				[ $foreignKeyName => $this->actorId ],
+				[ $foreignKeyName => 0 ]
+			);
+			$this->output( " - $numberOfBadRows bad entries fixed" );
 		}
 	}
 }
