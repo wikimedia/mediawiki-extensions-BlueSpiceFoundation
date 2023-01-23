@@ -79,9 +79,9 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		}
 
 		// Remove selected items form options to avoid double entry's
-		// See ERM24998
+		// See ERM24998, ERM30577
 		if ( !empty( $attr['selected'] ) && !empty( $attr['options'] ) ) {
-			$attr['options'] = $this->deduplicateOptions( $attr['options' ] );
+			$attr['options'] = $this->deduplicateOptions( $attr['selected'], $attr['options' ] );
 		}
 
 		if ( !empty( $attr[ 'options' ] ) ) {
@@ -96,11 +96,16 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $widget;
 	}
 
-	private function deduplicateOptions( $options ) {
+	/**
+	 * @param array $selected
+	 * @param array $options
+	 *
+	 * @return array
+	 */
+	private function deduplicateOptions( array $selected, array $options ) {
 		$deduplicated = [];
-		$keysUsed = [];
 		foreach ( $options as $option ) {
-			if ( !in_array( $option['data'], $keysUsed ) ) {
+			if ( !in_array( $option['data'], $selected ) ) {
 				$deduplicated[] = $option;
 			}
 		}
