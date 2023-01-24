@@ -3,6 +3,7 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"Captantrips",
+			"Rapsar",
 			"Sayginer",
 			"Vito Genovese"
 		]
@@ -15,7 +16,7 @@
 	"bs-extjs-delete": "Sil",
 	"bs-extjs-add": "Ekle",
 	"bs-extjs-remove": "Kaldır",
-	"bs-extjs-edit": "Düzenle",
+	"bs-extjs-edit": "Değiştir",
 	"bs-extjs-copy": "Kopyala",
 	"bs-extjs-hint": "İpucu",
 	"bs-extjs-error": "Hata",
