@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"0PAWN0",
 			"Amirsara",
 			"FarsiNevis",
 			"Jeeputer",
@@ -32,5 +33,6 @@
 	"bs-api-task-wikipagetasks-taskData-categories": "آرایه‌ای از رشته‌ها. مقدارها باید برابر با نام معتبر رده‌ها باشند.",
 	"apihelp-bs-js-var-config-param-format": "قالب نتیجه",
 	"apihelp-bs-categorylinks-store-param-page-id": "شناسهٔ صفحه",
-	"apihelp-bs-templatelinks-store-param-page-id": "شناسهٔ صفحه"
+	"apihelp-bs-templatelinks-store-param-page-id": "شناسهٔ صفحه",
+	"apihelp-bs-store-param-dc": "پرچم <code>Disable cache</code>"
 }

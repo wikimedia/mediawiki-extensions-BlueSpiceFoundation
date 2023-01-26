@@ -13,6 +13,6 @@
 	"bs-ooui-key-value-input-widget-error-message": "Сите задолжителни полиња мора да се поставени!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Нема зададено вредности!",
 	"bs-ooui-btn-dismiss-alert-title": "Тргни",
-	"bs-ooui-key-value-input-widget-section-label": "Поднаслов",
-	"bs-ooui-key-value-input-widget-add-section-label": "Додај нов поднаслов"
+	"bs-ooui-key-value-input-widget-section-label": "Оддел",
+	"bs-ooui-key-value-input-widget-add-section-label": "Додај нов оддел"
 }
