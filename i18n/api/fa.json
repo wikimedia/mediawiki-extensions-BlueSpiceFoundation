@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"0PAWN0",
 			"Amirsara",
 			"FarsiNevis",
 			"Jeeputer",
@@ -32,5 +33,6 @@
 	"apihelp-bs-js-var-config-param-format": "قالب نتیجه",
 	"apihelp-bs-categorylinks-store-param-page-id": "شناسهٔ صفحه",
 	"apihelp-bs-templatelinks-store-param-page-id": "شناسهٔ صفحه",
-	"apihelp-bs-task-param-examples": "نمایش نمونه‌های پارامترهای وظیقه"
+	"apihelp-bs-task-param-examples": "نمایش نمونه‌های پارامترهای وظیقه",
+	"apihelp-bs-store-param-dc": "پرچم <code>Disable cache</code>"
 }
