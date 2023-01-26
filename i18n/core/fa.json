@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"0PAWN0",
 			"Alirezaaa",
 			"Amirsara",
 			"Beginneruser",
@@ -79,6 +80,8 @@
 	"bs-pref-deleteduserimage": "نماد کاربر پاک‌شده:",
 	"bs-pref-bspinginterval": "بازه پینگ (به ثانیه):",
 	"bs-pref-testmode": "فعال کردن حالت آزمایش",
+	"bs-tag-input-desc": "ارزش محتوای عنصر",
+	"bs-tag-param-desc": "مقدار ویژگی عنصر '$1'",
 	"bs-parser-error-invalid-namespace": "فضای نام نامعتبر: $1",
 	"bs-parser-error-invalid-title": "عنوان نامعتبر: $1",
 	"bs-validator-error-namespace-does-not-exist": "فضای نام وجود ندارد: $1",
