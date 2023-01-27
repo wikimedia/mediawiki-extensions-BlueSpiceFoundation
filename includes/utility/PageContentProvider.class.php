@@ -156,8 +156,10 @@ class BsPageContentProvider {
 		} else {
 			$content = ( $contentObj instanceof TextContent ) ? $contentObj->getText() : '';
 			$context = new DerivativeContext( RequestContext::getMain() );
+			$parser = MediaWikiServices::getInstance()->getParserFactory()->create();
+			$parser->setOptions( $this->getParserOptions( $context ) );
+
 			$this->overrideGlobals( $title, $context );
-			$parser = MediaWikiServices::getInstance()->getParser();
 			// FIX for #HW20130072210000028
 			// Manually expand templates to allow bookshelf tags via template
 			$content = $parser->preprocess(
