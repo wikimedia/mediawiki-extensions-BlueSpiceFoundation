@@ -480,7 +480,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	/**
 	 * Returns an array of tasks and their required permissions
 	 * array('taskname' => array('read', 'edit'))
-	 * @return type
+	 * @return string[][]
 	 */
 	protected function getRequiredTaskPermissions() {
 		return [];

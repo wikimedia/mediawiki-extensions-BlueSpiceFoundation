@@ -13,6 +13,7 @@
 class BsValidatorResponse {
 
 	// TODO MRG20100816: Kurzer Kommentar, was der Zweck der Variablen ist.
+	/** @var int */
 	protected $mErrorcode;
 	protected $mI18NInstanceName;
 	protected $mI18NMessageKey;

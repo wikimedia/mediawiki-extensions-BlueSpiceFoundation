@@ -46,7 +46,7 @@ abstract class UserGetRights extends Hook {
 	 *
 	 * @param \User $user
 	 * @param array &$rights
-	 * @return type
+	 * @return mixed
 	 */
 	public static function callback( $user, &$rights ) {
 		$className = static::class;

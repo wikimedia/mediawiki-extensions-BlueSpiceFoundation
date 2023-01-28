@@ -9,7 +9,6 @@ use OOUI\Tag;
 use OOUI\TextInputWidget;
 
 class KeyValueInputWidget extends \OOUI\Widget {
-	// Properties
 	protected $keyLabel;
 	protected $valueLabel;
 	protected $addNewFormLabel;

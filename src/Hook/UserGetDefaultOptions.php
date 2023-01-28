@@ -39,7 +39,7 @@ abstract class UserGetDefaultOptions extends Hook {
 	/**
 	 *
 	 * @param array &$defaultOptions
-	 * @return type
+	 * @return mixed
 	 */
 	public static function callback( &$defaultOptions ) {
 		$className = static::class;
