@@ -33,6 +33,14 @@ use JsonSerializable;
 
 abstract class Extension extends Context implements JsonSerializable {
 
+	protected $extPath;
+	protected $author;
+	protected $package;
+	protected $status;
+	protected $name;
+	protected $url;
+	protected $version;
+
 	protected $allowedInfoKeys = [
 		'extPath' => '',
 		'author' => [],
