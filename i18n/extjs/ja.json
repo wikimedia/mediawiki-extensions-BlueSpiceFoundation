@@ -6,7 +6,8 @@
 			"Otokoume",
 			"Shirayuki",
 			"Suyama",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"背番号4のエース"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -72,6 +73,7 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "ページコレクション",
 	"bs-pagecollection-prefix": "ページコレクション",
 	"bs-extjs-pageexport-success": "エクスポート成功",
+	"bs-extjs-pageexport-success-text": "$1にエクスポートされたページコレクション",
 	"bs-extjs-pageexport-required-text": "リスト名を空にすることはできません。1 つ以上のページを選択する必要があります。",
 	"bs-extjs-export-search-summary-text": "PageExport によって生成",
 	"bs-extjs-pageexport-error-invalid-title": "リストの名前が無効です",
