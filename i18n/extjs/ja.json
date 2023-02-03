@@ -6,7 +6,8 @@
 			"Otokoume",
 			"Shirayuki",
 			"Suyama",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"背番号4のエース"
 		]
 	},
 	"bs-extjs-ok": "OK",
@@ -83,5 +84,6 @@
 	"bs-extjs-flyout-tab-grid-label": "詳細",
 	"bs-extjs-flyout-tab-grid-title": "詳細表示に切り替え",
 	"bs-extjs-flyout-add-title": "新しい項目を追加するには、ここをクリックしてください",
-	"bs-extjs-flyout-add-label": "項目を追加"
+	"bs-extjs-flyout-add-label": "項目を追加",
+	"bs-extjs-pageexport-success-text": "$1にエクスポートされたページコレクション"
 }
