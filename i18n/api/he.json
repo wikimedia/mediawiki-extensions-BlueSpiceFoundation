@@ -32,7 +32,7 @@
 	"apihelp-bs-store-param-group": "מחרוזת JSON עם מידע על הקבצה; ביטול הסדרה ל־<code>array of objects</code> שמחזיקים את שם השדה והכיוון עבור כל אפשרות הקבצה",
 	"apihelp-bs-store-param-filter": "מחרוזת JSON עם מידע על סינון; ביטול הסדרה ל־<code>array of objects</code> שמחזיקים את שם השדה, סוג המסנן, וערך המסנן עבור כל אפשרות סינון",
 	"apihelp-bs-store-param-page": "מאפשר חישוב התחלה/גבול מצד שרת",
-	"apihelp-bs-store-param-limit": "מספר התוצאות להשיב",
+	"apihelp-bs-store-param-limit": "מספר התוצאות להחזרה",
 	"apihelp-bs-store-param-start": "ההיסט ממנו להתחיל את רשימת התוצאות",
 	"apihelp-bs-store-param-callback": "שם שיטה בקוד הלקוח שאמורה להיקרא בתגובה (JSONP)",
 	"apihelp-bs-store-param-query": "דומה ל־<var>filter</var>, אבל הערך שמסופק משמש כמסנן רק עבור שדה <var>value</var> של רכיב ExtJS",
