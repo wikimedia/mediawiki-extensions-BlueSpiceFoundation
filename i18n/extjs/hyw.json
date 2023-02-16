@@ -12,5 +12,6 @@
 	"bs-extjs-error": "Սխալ",
 	"bs-extjs-actions-column-header": "Գործողութիւններ",
 	"bs-extjs-label-namespace": "Անուանատարածք",
-	"bs-extjs-filter-bool-yes": "այո"
+	"bs-extjs-filter-bool-yes": "այո",
+	"bs-extjs-add": "Աւելցնել"
 }
