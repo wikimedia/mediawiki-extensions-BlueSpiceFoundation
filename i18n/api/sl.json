@@ -22,9 +22,9 @@
 	"apihelp-bs-titlequery-store-summary": "Na podlagi izraza poizvedbe navede naslove strani in (izbirno) predpone imenskega prostora. Uvede parametre ExtJS Store.",
 	"apihelp-bs-wikipage-tasks-description": "Zagotavlja običajne operacije za WikiPages",
 	"apihelp-bs-wikipage-tasks-summary": "Zagotavlja običajne operacije za WikiPages",
-	"apihelp-bs-store-param-sort": "Niz JSON z informacijami o razvrščanju; deserializira v <code>array of objects</code> , ki vsebujejo ime polja in smer za vsako možnost razvrščanja",
-	"apihelp-bs-store-param-group": "Niz JSON z informacijami o združevanju; deserializira v <code>array of objects</code>, ki vsebuje ime polja in smer za vsako možnost združevanja",
-	"apihelp-bs-store-param-filter": "Niz JSON z informacijami o filtru; deserializira v <code>array of objects</code>, ki vsebuje ime polja, vrsto filtra in vrednost filtra za vsako možnost filtriranja",
+	"apihelp-bs-store-param-sort": "JSON-niz z informacijami o razvrščanju; deserializira v <code>array of objects</code> (matriko objektov), ki vsebujejo ime matrike in smer za vsako možnost razvrstitve",
+	"apihelp-bs-store-param-group": "JSON-niz z informacijami o združevanju; deserializira v <code>array of objects</code> (matriko objektov), ki vsebuje ime matrike in smer za vsako možnost združevanja",
+	"apihelp-bs-store-param-filter": "JSON-niz z informacijami o filtriranju; deserializira v <code>array of objects</code>, ki vsebuje ime matrike, vrsto filtra in vrednost filtra za vsako možnost filtriranja",
 	"apihelp-bs-store-param-page": "Omogoča izračun začetka/omejitve na strani strežnika",
 	"apihelp-bs-store-param-limit": "Število zadetkov za vrnitev",
 	"apihelp-bs-store-param-start": "Odmik za začetek seznama zadetkov",
@@ -65,7 +65,7 @@
 	"apihelp-bs-task-param-examples": "Pokaže zglede parametrov naloge",
 	"bs-api-task-taskData-page-id": "ID obstoječe vikistrani",
 	"bs-api-task-taskData-page-title": "Veljaven naslov vikistrani",
-	"bs-api-task-wikipagetasks-taskData-categories": "Polje nizov. Vrednosti morajo imeti veljavno ime kategorije.",
+	"bs-api-task-wikipagetasks-taskData-categories": "Matrika nizov. Vrednosti morajo biti veljavna imena kategorij.",
 	"apihelp-bs-watchlist-store-summary": "Navede vse vnose na spisku nadzorov. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre shranjevanja.",
 	"apihelp-bs-recentchanges-store-summary": "Navede vse nedavne spremembe. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre shranjevanja.",
 	"apihelp-bs-task-summary": "Zagotavlja končno točko API-ja za izvajanje zabeleženih nalog",
@@ -83,5 +83,5 @@
 	"apihelp-bs-templatelinks-store-param-page-id": "ID strani",
 	"apihelp-bs-linker-summary": "Vrne povezave do strani, ki jih je ustvaril Linker",
 	"apihelp-bs-linker-description": "Vrne povezave do strani, ki jih je ustvaril Linker",
-	"apihelp-bs-linker-param-linkdescs": "Asociativno polje JSON s seznamom strani. Vsak vnos mora vsebovati naslov strani kot »target«. Izbirno lahko vsebuje »text«, »attribs« in »query«."
+	"apihelp-bs-linker-param-linkdescs": "Asociativna JSON-matrika s seznamom strani. Vsak vnos mora vsebovati naslov strani kot »target«. Izbirno lahko vsebuje »text«, »attribs« in »query«."
 }
