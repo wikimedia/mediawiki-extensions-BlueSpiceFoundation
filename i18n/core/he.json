@@ -68,7 +68,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "סוג קובץ זה אינו נתמך.",
 	"bs-filesystemhelper-save-base64-error": "לא ניתן היה לשמור את הקובץ.",
 	"bs-filesystemhelper-upload-base64-error": "לא ניתן היה להעלות את הקובץ.",
-	"bs-filesystemhelper-upload-local-error-stash-file": "לא ניתן היה להעביר את הקובץ למצב ההעלאה.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "לא ניתן היה להעביר את הקובץ למאגר ההעלאות.",
 	"bs-filesystemhelper-upload-local-error-create": "לא הייתה אפשרות ליצור את הקובץ בוויקי.",
 	"bs-navigation-instructions": "הוראות",
 	"bs-navigation-support": "תמיכה",
