@@ -192,12 +192,7 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		if ( $this->trackingCategories !== null ) {
 			return $this->trackingCategories;
 		}
-		if ( method_exists( MediaWikiServices::class, 'getTrackingCategories' ) ) {
-			// MW 1.38+
-			$trackingCategories = MediaWikiServices::getInstance()->getTrackingCategories();
-		} else {
-			$trackingCategories = new TrackingCategories( $this->getConfig() );
-		}
+		$trackingCategories = MediaWikiServices::getInstance()->getTrackingCategories();
 		$this->trackingCategories = $trackingCategories->getTrackingCategories();
 		return $this->trackingCategories;
 	}
