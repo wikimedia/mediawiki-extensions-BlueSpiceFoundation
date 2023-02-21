@@ -90,8 +90,8 @@
 	"bs-graphicallist-action-preview": "Pregled",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "korišćeno u mnogim BlueSpice dodacima za potencijalne opasne administratorske zadatke poput upravljanja korisnicima, dozvolama i globalnom konfiguracijom",
-	"right-wikiadmin": "Koristi se u mnogim dodacima BlueSpice-a za potencijalne opasne administrativne zadatke poput upravljanja korisnicima, dozvolama, globalnom konfiguracijom",
+	"action-wikiadmin": "koristite potencijalno opasne administrativnie radnje kao što je upravljanje korisnicima, dozvolama, globalnim podešavanjima (BlueSpice proširenje)",
+	"right-wikiadmin": "korišćenje potencijalno opasnih administrativnih radnji kao što je upravljanje korisnicima, dozvolama, globalnim podešavanjima (BlueSpice proširenje)",
 	"bs-notifications-agent-anon": "anoniman korisnik",
 	"protect-level-editor": "Dozvoljeno samo urednicima i administratorima",
 	"bs-ping-on-init-desc": "Trebalo bi da pošalje ping zahtev odmah nakon učitavanja stranice"
