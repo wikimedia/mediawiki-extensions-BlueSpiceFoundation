@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
+	"bs-extjs-cancel": "Šluhtte",
 	"bs-extjs-save": "Vurke",
 	"bs-extjs-delete": "Sihko",
 	"bs-extjs-remove": "Sihko",
