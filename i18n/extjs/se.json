@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
@@ -14,5 +15,6 @@
 	"bs-extjs-delete": "Sihko",
 	"bs-extjs-error": "Meattáhus",
 	"bs-extjs-flyout-tab-thumbs-label": "Govažat",
-	"bs-extjs-remove": "Sihko"
+	"bs-extjs-remove": "Sihko",
+	"bs-extjs-cancel": "Šluhtte"
 }
