@@ -3,12 +3,14 @@
 		"authors": [
 			"Joquliina",
 			"Nike",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Silvonen"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Palautettavien tuloksien määrä",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Muutettiin luokkia.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Sinulla ei ole oikeutta muokata sivua ”$1”.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Virheellinen luokka|Virheelliset luokat}}: $1",
-	"apihelp-bs-wikisubpage-treestore-param-options": "Luettelo asetuksista"
+	"apihelp-bs-wikisubpage-treestore-param-options": "Luettelo asetuksista",
+	"apihelp-bs-task-param-format": "Tuloksen muoto"
 }

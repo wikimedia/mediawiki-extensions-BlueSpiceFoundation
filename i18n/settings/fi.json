@@ -4,7 +4,8 @@
 			"Joquliina",
 			"Mediawikitranslator",
 			"Muovipullo",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Silvonen"
 		]
 	},
 	"bs-setting-path-feature": "Ominaisuus",
@@ -14,5 +15,6 @@
 	"bs-setting-path-editor": "Muokkain",
 	"bs-setting-path-communication": "Kommunikointi",
 	"bs-setting-path-administration": "Hallinnointi",
-	"bs-setting-path-export": "Vie"
+	"bs-setting-path-export": "Vie",
+	"bs-setting-path-qualityassurance": "Laadunvarmistus"
 }
