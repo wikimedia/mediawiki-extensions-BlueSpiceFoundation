@@ -49,7 +49,7 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Vous n’avez pas le droit de modifier la page « $1 ».",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Catégorie non valide|Catégories non valides}} : $1",
 	"bs-wikipage-tasks-setcategories-success": "Les catégories ont été définies avec succès.",
-	"apihelp-bs-wikipage-store-description": "Liste toutes les pages Wiki. Autorise le tri, le fltrage et la mise en forme. Implémente les paramètres de ExtJS Store.",
+	"apihelp-bs-wikipage-store-description": "Liste toutes les pages Wiki. Autorise le tri, le filtrage et la pagination. Met en œuvre les paramètres de ExtJS Store.",
 	"apihelp-bs-wikipage-store-summary": "Liste toutes les pages du wiki. Permet le tri, le filtrage et la pagination. Met en œuvre les paramètres de ''ExtJS Store''.",
 	"apihelp-bs-ping-tasks-description": "Tâche de ping qui fournit un échange continuel de données",
 	"apihelp-bs-ping-tasks-summary": "Tâche de ping qui réalise un échange continu de données",
