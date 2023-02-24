@@ -90,6 +90,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 			$widget = new \BlueSpice\Html\OOUI\MenuTagMultiselectWidget( $attr );
 		} else {
 			// Display only current values and input
+			$attr['allowedValues'] = $value;
 			$widget = new \BlueSpice\Html\OOUI\TagMultiselectWidget( $attr );
 		}
 
