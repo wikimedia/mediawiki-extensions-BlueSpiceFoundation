@@ -7,6 +7,11 @@ use MediaWiki\MediaWikiServices;
 use Status;
 use Title;
 
+/**
+ * @deprecated since 4.3 - use native MediaWiki functionality instead:
+ * * To trigger updates `WikiPage::doSecondaryDataUpdates`
+ * * to react to updates, hook RevisionDataUpdates
+ */
 class SecondaryDataUpdater {
 	/**
 	 * @var ExtensionAttributeBasedRegistry
