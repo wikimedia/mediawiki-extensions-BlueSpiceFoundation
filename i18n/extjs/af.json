@@ -6,5 +6,7 @@
 		]
 	},
 	"bs-extjs-categoryboxselect-emptytext": "Voeg 'n kategorie by.",
-	"bs-extjs-loading": "Besig om te laai..."
+	"bs-extjs-loading": "Besig om te laai...",
+	"bs-extjs-edit": "Wysig",
+	"bs-extjs-actions-column-header": "Aksies"
 }
