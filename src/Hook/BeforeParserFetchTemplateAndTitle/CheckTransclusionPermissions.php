@@ -3,8 +3,8 @@
 namespace BlueSpice\Hook\BeforeParserFetchTemplateAndTitle;
 
 use BlueSpice\Hook\BeforeParserFetchTemplateAndTitle;
+use MediaWiki\User\UserIdentity;
 use RequestContext;
-use User;
 
 class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndTitle {
 
@@ -19,8 +19,8 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndTitle {
 			return true;
 		}
 
-		$user = $this->parser->getUser();
-		if ( !$user instanceof User || !$user->isRegistered() ) {
+		$user = $this->parser->getUserIdentity();
+		if ( !$user instanceof UserIdentity || !$user->isRegistered() ) {
 			$user = RequestContext::getMain()->getUser();
 		}
 		if ( $this->getConfig()->get( 'CommandLineMode' ) ) {
