@@ -239,6 +239,11 @@ return [
 	},
 
 	'BSSecondaryDataUpdater' => static function ( MediaWikiServices $services ) {
+		/**
+		 * DEPRECATED
+		 * @deprecated since version 4.3 - use native mediawiki functionality
+		 */
+		wfDebugLog( 'bluespice-deprecations', 'BSSecondaryDataUpdater', 'private' );
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationSecondaryDataUpdateRegistry'
 		);
