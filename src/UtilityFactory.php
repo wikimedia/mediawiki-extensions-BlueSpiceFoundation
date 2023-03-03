@@ -109,8 +109,10 @@ class UtilityFactory {
 	/**
 	 * @param \Title $title
 	 * @return \BlueSpice\Utility\PagePropHelper
+	 * @deprecated since 4.3 Use MediaWiki core `\PageProps` instead
 	 */
 	public function getPagePropHelper( \Title $title ) {
+		wfDeprecated( __METHOD__, '4.3' );
 		return new \BlueSpice\Utility\PagePropHelper( $this->services, $title );
 	}
 
