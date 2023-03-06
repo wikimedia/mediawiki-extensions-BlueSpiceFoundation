@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eldarado",
 			"Toghrul Rahimli",
 			"Wertuose"
 		]
 	},
 	"bs-days-duration": "{{PLURAL:$1|1 gün|$1 gün}}",
-	"bs-imagepage-download-text": "Yüklə"
+	"bs-imagepage-download-text": "Yüklə",
+	"bs-navigation-contact": "Əlaqə"
 }
