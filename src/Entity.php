@@ -78,7 +78,7 @@ abstract class Entity implements JsonSerializable {
 	protected $store = null;
 
 	/**
-	 * @var MedaiWikiServices
+	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
