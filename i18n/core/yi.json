@@ -7,5 +7,7 @@
 	},
 	"bs-exception-view-heading": "א גרײַז האט פאסירט",
 	"bs-ns_main": "(בלעטער)",
-	"bs-extended-search-textfield-defaultvalue": "זוכן..."
+	"bs-extended-search-textfield-defaultvalue": "זוכן...",
+	"bs-ns_all": "(אַלע)",
+	"bs-months-duration": "{{PLURAL:$1|1 מאָנאַט|$1 מאָנאַטן}}"
 }
