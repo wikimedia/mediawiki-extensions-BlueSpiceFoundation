@@ -115,7 +115,8 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		if ( $this->isSystemUser( $this->context->getUser() ) ) {
 			return true;
 		}
-		return $title->userCan( 'read', $this->context->getUser() );
+		return MediaWikiServices::getInstance()->getPermissionManager()
+			->userCan( 'read', $this->context->getUser(), $title );
 	}
 
 	/**
