@@ -5,8 +5,12 @@
 			"פוילישער"
 		]
 	},
+	"bs-extjs-ok": "יאָ",
 	"bs-extjs-cancel": "אַנולירן",
+	"bs-extjs-no": "ניין",
+	"bs-extjs-error": "פֿעלער",
 	"bs-extjs-confirm": "באַשטעטיקן",
+	"bs-extjs-label-namespace": "נאָמענטייל",
 	"bs-extjs-allns": "(אַלע)",
 	"bs-extjs-categoryboxselect-emptytext": "צולייגן צו קאַטעגאריע",
 	"bs-extjs-categorytree-title": "קאַטעגאָריעס",
