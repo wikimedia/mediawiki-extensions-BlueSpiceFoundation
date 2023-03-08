@@ -10,5 +10,9 @@
 	"bs-extjs-categoryboxselect-emptytext": "צולייגן צו קאַטעגאריע",
 	"bs-extjs-categorytree-title": "קאַטעגאָריעס",
 	"bs-extjs-allns": "(אַלע)",
-	"bs-extjs-pageexport-list-format-link-label": "לינק"
+	"bs-extjs-pageexport-list-format-link-label": "לינק",
+	"bs-extjs-ok": "יאָ",
+	"bs-extjs-no": "ניין",
+	"bs-extjs-error": "פֿעלער",
+	"bs-extjs-label-namespace": "נאָמענטייל"
 }
