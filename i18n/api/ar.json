@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"AA800",
 			"Meno25",
 			"Moud hosny",
 			"ديفيد"
@@ -69,5 +70,6 @@
 	"apihelp-bs-watchlist-store-summary": "يسرد كافة  إدخالات قائمة المراقبة، يتيح الفرز وترقيم الصفحات، ينفذ وسائط مخزن.",
 	"apihelp-bs-recentchanges-store-summary": "يسرد كل التغييرات الحديثة، يتيح الفرز وترقيم الصفحات، ينفذ وسائط مخزن.",
 	"apihelp-bs-task-summary": "يوفر نقطة نهاية API لتنفيذ المهام المسجلة",
-	"apihelp-bs-task-description": "يوفر نقطة نهاية API لتنفيذ المهام المسجلة"
+	"apihelp-bs-task-description": "يوفر نقطة نهاية API لتنفيذ المهام المسجلة",
+	"apihelp-bs-categorylinks-store-param-page-id": "معرف الصفحة الخاص بالصفحة"
 }
