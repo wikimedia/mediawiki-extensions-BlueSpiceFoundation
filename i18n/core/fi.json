@@ -77,9 +77,13 @@
 	"bs-graphicallist-action-list": "Luettelo",
 	"bs-graphicallist-action-preview": "Esikatsele",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
-	"action-wikiadmin": "näytä BlueSpice hallintosivut",
+	"action-wikiadmin": "käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
 	"right-wikiadmin": "Käyttää mahdollisesti vaarallisia ylläpitotoimenpiteitä, kuten käyttäjien, käyttöoikeuksien sekä julkisen määrittelyjen muokkaamista (BlueSpice-lajennukset)",
 	"bs-notifications-agent-anon": "anonyymi käyttäjä",
 	"protect-level-editor": "Salli vain seulojat ja ylläpitäjät",
-	"bs-pref-imageextensions-help": "Kuvatiedostotyypit joita tähän wikiin saa tallentaa. Mahdollisia web-kuvatiedostotyyppejä: gif, png, jpg, jpeg. Muita kuvatiedostotyyppejä: tiff, bmp"
+	"bs-pref-imageextensions-help": "Kuvatiedostotyypit joita tähän wikiin saa tallentaa. Mahdollisia web-kuvatiedostotyyppejä: gif, png, jpg, jpeg. Muita kuvatiedostotyyppejä: tiff, bmp",
+	"bs-pref-defaultuserimage": "Käyttäjän oletusavatar:",
+	"bs-pref-miniprofileenforceheight": "Pakota käyttäjän avatarin korkeus",
+	"bs-pref-anonuserimage": "Anonyymin käyttäjän avatar:",
+	"bs-parser-error-invalid-category-title": "Sivu ei ole kelvollinen luokka: $1"
 }
