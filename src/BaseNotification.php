@@ -224,7 +224,8 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	 * @param array $groups
 	 */
 	protected function addAffectedGroups( $groups ) {
-		$users = \BsGroupHelper::getUserInGroups( $groups );
+		$users = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getGroupHelper()
+			->getUserInGroups( $groups );
 		$this->addAffectedUsers( $users );
 	}
 
