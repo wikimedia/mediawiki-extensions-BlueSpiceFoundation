@@ -223,16 +223,6 @@ class Services extends MediaWikiServices {
 	/**
 	 * DEPRECATED!
 	 * @deprecated since version 3.2.0 - use ->getService( 'ServiceName' )
-	 * @return PageInfoElementFactory
-	 */
-	public function getBSPageInfoElementFactory() {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		return $this->getService( 'BSPageInfoElementFactory' );
-	}
-
-	/**
-	 * DEPRECATED!
-	 * @deprecated since version 3.2.0 - use ->getService( 'ServiceName' )
 	 * @return DeferredNotificationStack
 	 */
 	public function getBSDeferredNotificationStack() {

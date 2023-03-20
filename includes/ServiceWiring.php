@@ -203,26 +203,6 @@ return [
 		);
 	},
 
-	'BSPageInfoElementFactory' => static function ( MediaWikiServices $services ) {
-		/**
-		 * DEPRECATED
-		 * @deprecated since version 4.1 - use service "PageInfoFactory" from
-		 * extension "PageHeader" instead
-		 */
-		wfDebugLog( 'bluespice-deprecations', 'BSPageInfoElementFactory', 'private' );
-		if ( !\ExtensionRegistry::getInstance()->isLoaded( 'PageHeader' ) ) {
-			throw new Exception(
-				'Extension "PageHeader" must be installed or stop using deprecated stuff'
-			);
-		}
-		$registry = $services->getService( 'MWStakeManifestRegistryFactory' )
-			->get( 'PageHeaderPageInfoRegistry' );
-		return new \BlueSpice\PageInfoElementFactory(
-			$registry,
-			$services->getMainConfig()
-		);
-	},
-
 	'BSDeferredNotificationStack' => static function ( MediaWikiServices $services ) {
 		$request = \RequestContext::getMain()->getRequest();
 		return new DeferredNotificationStack( $request );
