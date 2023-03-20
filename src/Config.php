@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 use BlueSpice\Data\Settings\Record;
 use BlueSpice\Data\Settings\Store;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 
 class Config extends \MultiConfig {
 
@@ -58,8 +59,8 @@ class Config extends \MultiConfig {
 		$hash = [];
 		$store = $this->getStore();
 		$resultSet = $store->getReader()->read(
-			new Data\ReaderParams( [
-				'limit' => Data\ReaderParams::LIMIT_INFINITE
+			new ReaderParams( [
+				'limit' => ReaderParams::LIMIT_INFINITE
 			] )
 		);
 
