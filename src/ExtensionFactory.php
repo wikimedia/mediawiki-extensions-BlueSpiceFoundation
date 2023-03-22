@@ -87,33 +87,7 @@ class ExtensionFactory {
 			$this->config
 		);
 
-		$this->legacyFactory( $name, $this->extensions[$name] );
 		return $this->extensions[$name];
-	}
-
-	/**
-	 *
-	 * @param string $name
-	 * @param \BsExtensionMW $extension
-	 * @return void
-	 */
-	protected function legacyFactory( $name, $extension ) {
-		if ( !$extension instanceof \BsExtensionMW ) {
-			return;
-		}
-
-		$core = \BsCore::getInstance();
-		// this is for extensions using the old mechanism and may have their
-		// own __constructor
-		$extension->setConfig( $this->config );
-		$extension->setContext(
-			\RequestContext::getMain()
-		);
-		$extension->setCore( $core );
-		$extension->setup(
-			$name,
-			$this->extensionRegistry->getExtensionDefinitionByName( $name )
-		);
 	}
 
 	/**
