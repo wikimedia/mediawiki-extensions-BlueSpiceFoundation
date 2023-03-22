@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"EdoAug",
 			"Jon Harald Søby",
 			"Kingu",
 			"McDutchie"
@@ -73,7 +74,7 @@
 	"bs-extjs-pageexport-required-text": "Listenavn kan ikke være tomt, og minst éi side må være valgt",
 	"bs-extjs-export-search-summary-text": "Generert av sideeksport",
 	"bs-extjs-pageexport-error-invalid-title": "Navnet på lista er ugyldig",
-	"bs-extjs-combo-box-default-placeholder": "Skriv for å filtrere…",
+	"bs-extjs-combo-box-default-placeholder": "Skriv for å filtrere …",
 	"bs-extjs-tools-trigger-title": "Klikk her for å åpne verktøymenyen",
 	"bs-extjs-tools-trigger-text": "Verktøy",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniatyrbilder",
