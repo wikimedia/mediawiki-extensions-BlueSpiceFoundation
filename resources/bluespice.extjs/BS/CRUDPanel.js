@@ -20,7 +20,7 @@ Ext.define( 'BS.CRUDPanel', {
 	cls: 'bs-crud-panel',
 
 	operationPermissions: {
-		create: true, // should be connected to mw.config.get('bsTaskAPIPermissions').extension_xyz.task1 = boolean in derived class
+		create: true, // should be connected to mw.config.get('bsgTaskAPIPermissions').extension_xyz.task1 = boolean in derived class
 		update: true, // ...
 		delete: true // ...
 	},
