@@ -78,9 +78,10 @@ class EntityConfigFactory {
 		$this->entityConfigs = [];
 		$defaults = [];
 
+		$services = MediaWikiServices::getInstance();
 		// Deprecated: This hook should not be used anymore - Use the bluespice
 		// global config mechanism instead
-		MediaWikiServices::getInstance()->getHookContainer()->run( 'BSEntityConfigDefaults', [
+		$services->getHookContainer()->run( 'BSEntityConfigDefaults', [
 			&$defaults
 		] );
 		foreach ( $this->entityRegistry->getAllKeys() as $key ) {
@@ -99,7 +100,7 @@ class EntityConfigFactory {
 			$instance = call_user_func_array( $callable, [
 				$this->config,
 				$key,
-				Services::getInstance()
+				$services
 			] );
 			if ( !$instance ) {
 				continue;

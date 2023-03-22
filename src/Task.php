@@ -35,7 +35,7 @@ use MWStake\MediaWiki\Component\Notifications\INotifier;
 use Psr\Log\LoggerInterface;
 use Status;
 
-abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
+abstract class Task implements ITask, MessageLocalizer {
 
 	/**
 	 *
@@ -203,7 +203,7 @@ abstract class Task implements ITask, IServiceProvider, MessageLocalizer {
 
 	/**
 	 *
-	 * @return Services
+	 * @return MediaWikiServices
 	 */
 	public function getServices() {
 		return $this->services;

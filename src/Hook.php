@@ -30,7 +30,7 @@ use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
 
-abstract class Hook implements MessageLocalizer, IServiceProvider {
+abstract class Hook implements MessageLocalizer {
 
 	/**
 	 *
