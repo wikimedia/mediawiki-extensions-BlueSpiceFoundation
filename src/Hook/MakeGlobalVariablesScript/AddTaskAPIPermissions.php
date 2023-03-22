@@ -28,7 +28,7 @@ class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 	/**
 	 * Add js vars with users task permissions if data given from some
 	 * apitaskbase class
-	 * format: "bsTaskAPIPermissions":{
+	 * format: "bsgTaskAPIPermissions":{
 	 * "interwikilinks":{ //trimmed class name without "bsapitasks" and "manager"
 	 * "editInterWikiLink":true, //aTasks with results from checkTaskPermission()
 	 * "removeInterWikiLink":true //...
@@ -60,8 +60,6 @@ class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 		}
 
 		$this->vars['bsgTaskAPIPermissions'] = (object)$taskPermissions;
-		// backward compatibility
-		$this->vars['bsTaskAPIPermissions'] = (object)$taskPermissions;
 		return true;
 	}
 
