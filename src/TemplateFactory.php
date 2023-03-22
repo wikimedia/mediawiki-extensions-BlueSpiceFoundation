@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 use BlueSpice\Utility\TemplateHelper;
 use Exception;
+use MediaWiki\MediaWikiServices;
 
 class TemplateFactory {
 
@@ -62,7 +63,7 @@ class TemplateFactory {
 		}
 
 		$this->intances[$name] = call_user_func_array( $callback, [
-			Services::getInstance(),
+			MediaWikiServices::getInstance(),
 			$name
 		] );
 
