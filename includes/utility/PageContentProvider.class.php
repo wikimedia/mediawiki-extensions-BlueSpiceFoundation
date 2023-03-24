@@ -508,7 +508,7 @@ class BsPageContentProvider {
 		$wgParser->setOptions( $this->getParserOptions() );
 		$globalParser = MediaWikiServices::getInstance()->getParser();
 		$globalParser->setOptions( $wgParser->getOptions() );
-		$globalParser->setTitle( $wgParser->getTitle() );
+		$globalParser->setPage( $wgParser->getPage() );
 		if ( $globalParser->getOutput() === null ) {
 			$globalParser->resetOutput();
 		}
