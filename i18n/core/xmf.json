@@ -10,5 +10,8 @@
 	"bs-userpreferences-link-title": "ქოძირით თქვანი პერსონალური მახვარებუშ პარამეტრეფი",
 	"bs-exception-view-heading": "ჩილათაქ მოხვადჷ",
 	"bs-exception-view-text": "თქვან მოთხირიშ დამუშებაშის გეჸვენჯ ჩილათაქ მოხვადჷ:",
-	"bs-exception-view-admin-hint": "ქორთხინთ, მიკართით თქვან სისტემურ ადმინისტრატორს."
+	"bs-exception-view-admin-hint": "ქორთხინთ, მიკართით თქვან სისტემურ ადმინისტრატორს.",
+	"bs-ns_main": "(ხასჷლეფი)",
+	"bs-filesystemhelper-upload-local-error-create": "ათე ვიკის ფაილიშ გოჭყაფა ვაშილებე.",
+	"bs-validator-error-title-does-not-exist": "ხასჷლა ვა რე: $1"
 }
