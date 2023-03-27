@@ -1,9 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Narazeni",
 			"Silovan"
 		]
 	},
+	"bs-extjs-label-page": "ხასჷლა",
+	"bs-extjs-titlecombo-newpagehint": "ხასჷლა ვა რე!",
 	"bs-extjs-filter-bool-yes": "ქო",
-	"bs-extjs-filter-bool-no": "ვარი"
+	"bs-extjs-filter-bool-no": "ვარი",
+	"bs-extjs-title-success": "წუმოძინელო",
+	"bs-extjs-pageexport-success": "წუმოძინელი ექსპორტი"
 }
