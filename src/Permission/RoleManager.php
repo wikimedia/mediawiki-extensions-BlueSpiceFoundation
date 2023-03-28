@@ -276,7 +276,7 @@ class RoleManager {
 	/**
 	 * Returns Role object based on name
 	 *
-	 * @param IRole $role
+	 * @param string $role
 	 * @return IRole|null
 	 */
 	public function getRole( $role ) {
