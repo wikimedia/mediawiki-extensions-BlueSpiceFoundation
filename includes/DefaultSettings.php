@@ -117,8 +117,12 @@ if ( !isset( $GLOBALS[ 'bsgNamespaceRolesLockdown' ] ) ) {
 }
 
 // Hardcoded permissions, not part of role system
+// Required for external authentication providers like LDAP, SAML, OIDC
 $GLOBALS['wgGroupPermissions']['*']['autocreateaccount'] = true;
+// Required for "reset password" functionality
 $GLOBALS['wgGroupPermissions']['*']['editmyprivateinfo'] = true;
+// Required for API logins, e.g. by bots
+$GLOBALS['wgGroupPermissions']['*']['writeapi'] = true;
 
 $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	"apihighlimits" => [
@@ -493,22 +497,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"type" => 'global',
 		"preventLockout" => '1',
 		"roles" => [ 'admin', 'maintenanceadmin' ]
-	],
-	"writeapi" => [
-		"type" => 'global',
-		"roles" => [
-			"accountmanager",
-			"accountselfcreate",
-			"admin",
-			"author",
-			"bot",
-			"commenter",
-			"editor",
-			"maintenanceadmin",
-			"reviewer",
-			"structuremanager",
-			"reader"
-		]
 	],
 	"editor" => [
 		"type" => 'global',
