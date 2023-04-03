@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Api;
 
 use BlueSpice\Tests\BSApiTasksTestBase;
+use Hooks;
 
 /**
  * @group medium
@@ -22,8 +23,8 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 
 		$this->insertPage( 'Test page', 'Dummy text' );
 
-		$wgHooks['BsAdapterAjaxPingResult'] = [];
-		$wgHooks['BsAdapterAjaxPingResult'][] = [ $this, 'onBsAdapterAjaxPingResult' ];
+		Hooks::clear( 'BsAdapterAjaxPingResult' );
+		Hooks::register( 'BsAdapterAjaxPingResult', [ $this, 'onBsAdapterAjaxPingResult' ] );
 	}
 
 	/**
