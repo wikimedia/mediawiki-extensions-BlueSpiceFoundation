@@ -13,5 +13,7 @@
 	"bs-exception-view-admin-hint": "ქორთხინთ, მიკართით თქვან სისტემურ ადმინისტრატორს.",
 	"bs-ns_main": "(ხასჷლეფი)",
 	"bs-filesystemhelper-upload-local-error-create": "ათე ვიკის ფაილიშ გოჭყაფა ვაშილებე.",
-	"bs-validator-error-title-does-not-exist": "ხასჷლა ვა რე: $1"
+	"bs-validator-error-title-does-not-exist": "ხასჷლა ვა რე: $1",
+	"bs-now": "ასე",
+	"bs-export-menu-print-text": "ბეშტუა"
 }
