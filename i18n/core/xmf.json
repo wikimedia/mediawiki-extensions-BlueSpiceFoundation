@@ -5,6 +5,7 @@
 		]
 	},
 	"bs-ns_main": "(ხასჷლეფი)",
+	"bs-now": "ასე",
 	"bs-email-greeting-receiver": "{{GENDER:$1|გომორძგუა პ-ნ $2|გომორძგუა ო-ნ $2|გომორძგუა $2}},",
 	"bs-userpagesettings-legend": "მახვარებუშ პარამეტრეფი",
 	"bs-userpreferences-link-text": "მახვარებუშ უმოსი პატამეტრი",
@@ -13,5 +14,6 @@
 	"bs-exception-view-text": "თქვან მოთხირიშ დამუშებაშის გეჸვენჯ ჩილათაქ მოხვადჷ:",
 	"bs-exception-view-admin-hint": "ქორთხინთ, მიკართით თქვან სისტემურ ადმინისტრატორს.",
 	"bs-filesystemhelper-upload-local-error-create": "ათე ვიკის ფაილიშ გოჭყაფა ვაშილებე.",
-	"bs-validator-error-title-does-not-exist": "ხასჷლა ვა რე: $1"
+	"bs-validator-error-title-does-not-exist": "ხასჷლა ვა რე: $1",
+	"bs-export-menu-print-text": "ბეშტუა"
 }
