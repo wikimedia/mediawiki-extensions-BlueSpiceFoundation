@@ -18,7 +18,6 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	}
 
 	public function setUp(): void {
-		global $wgHooks;
 		parent::setUp();
 
 		$this->insertPage( 'Test page', 'Dummy text' );
