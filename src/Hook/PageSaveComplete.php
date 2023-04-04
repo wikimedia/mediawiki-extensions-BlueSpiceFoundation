@@ -27,8 +27,10 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionStoreRecord;
 use MediaWiki\Storage\EditResult;
+use MediaWiki\User\UserIdentity;
 use User;
 use WikiPage;
 
@@ -73,15 +75,17 @@ abstract class PageSaveComplete extends Hook {
 	/**
 	 *
 	 * @param WikiPage $wikiPage
-	 * @param User $user
+	 * @param UserIdentity $userIdentity
 	 * @param string $summary
 	 * @param int $flags
 	 * @param RevisionStoreRecord $revisionRecord
 	 * @param EditResult $editResult
 	 * @return bool
 	 */
-	public static function callback( WikiPage $wikiPage, User $user, string $summary, int $flags,
+	public static function callback( WikiPage $wikiPage, UserIdentity $userIdentity, string $summary, int $flags,
 		RevisionStoreRecord $revisionRecord, EditResult $editResult ) {
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		$user = $userFactory->newFromUserIdentity( $userIdentity );
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
