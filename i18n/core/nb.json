@@ -91,7 +91,7 @@
 	"bs-graphicallist-action-preview": "Forhåndsvis",
 	"bs-bluespice-mediawiki": "BlueSpice-MediaWiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "bruke potensielt skadelige administrative oppgaver som behandling av brukere, tillatelser og global konfigurasjon (BlueSpice-utvidelser)",
+	"action-wikiadmin": "bruke potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon (BlueSpice-utvidelser)",
 	"right-wikiadmin": "Bruke potensielt skadelige administrative oppgaver, som behandling av brukere, tillatelser og global konfigurasjon (BlueSpice-utvidelser)",
 	"bs-notifications-agent-anon": "anonym bruker",
 	"protect-level-editor": "Tillat kun registrerte brukere og administratorer",
