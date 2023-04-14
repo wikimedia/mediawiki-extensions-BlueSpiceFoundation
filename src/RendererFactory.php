@@ -7,7 +7,7 @@ use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 
-class RendererFactory implements IServiceProvider {
+class RendererFactory {
 
 	/**
 	 *
