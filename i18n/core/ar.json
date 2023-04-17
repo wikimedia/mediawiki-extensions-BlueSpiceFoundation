@@ -37,7 +37,6 @@
 	"bs-exception-view-admin-hint": "من فضلك تواصل مع إداري نظامك.",
 	"bs-exception-view-stacktrace-toggle-show-text": "إظهار تفاصيل الخطأ",
 	"bs-exception-view-stacktrace-toggle-hide-text": "إخفاء تفاصيل الخطأ",
-	"bs-viewtagerrorlist-legend": "$1 - خطأ",
 	"bs-readonly": "قاعدة البيانات مقفلة حاليا للإدخالات الجديدة والتعديلات الأخرى، ربما لصيانة قاعدة البيانات الروتينية، وبعد ذلك سوف تعود إلى طبيعتها، قدم الإداري الذي قام بقفلها هذا التفسير: $1",
 	"bs-imageofotheruser": "غير مسموح لك برفع صورة لمستخدم آخر.",
 	"bs-permissionerror": "خطأ في الصلاحية!",

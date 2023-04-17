@@ -39,7 +39,6 @@
 	"bs-exception-view-admin-hint": "Skontaktuj się z administratorem systemu.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Pokaż szczegóły błędu",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Ukryj szczegóły błędu",
-	"bs-viewtagerrorlist-legend": "$1 - Błąd",
 	"bs-permissionerror": "Błąd uprawnień!",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> nie jest prawidłowym katalogiem.",
 	"bs-filesystemhelper-has-path-traversal": "Wykryto pominięcie ścieżki!",

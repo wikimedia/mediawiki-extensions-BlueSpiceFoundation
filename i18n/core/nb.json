@@ -36,7 +36,6 @@
 	"bs-exception-view-admin-hint": "Vennligst kontakt systemadministratoren din.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Vis feildetaljer",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Skjul feildetaljer",
-	"bs-viewtagerrorlist-legend": "$1 – feil",
 	"bs-readonly": "Databasen er for tiden låst for nye oppslag og andre endringer, trolig på grunn av rutinemessig vedlikehold. Administratoren som låste den ga følgende forklaring: $1",
 	"bs-imageofotheruser": "Du har ikke tillatelse til å laste opp et bilde for en annen bruker.",
 	"bs-permissionerror": "Rettighetsfeil!",

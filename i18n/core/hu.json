@@ -22,7 +22,6 @@
 	"bs-exception-view-text": "A kérés feldolgozása során a következő hiba történt:",
 	"bs-exception-view-admin-hint": "Kérjük, fordulj a rendszergazdához.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Hiba részleteinek megjelenítése",
-	"bs-viewtagerrorlist-legend": "$1 - Hiba",
 	"bs-readonly": "Az adatbázis karbantartás miatt jelenleg le van zárva; nemsokára minden a régi lesz. A lezáró adminisztrátor indoklása: $1",
 	"bs-imageofotheruser": "Nem tölthetsz fel képet más felhasználónak.",
 	"bs-permissionerror": "Engedélyezési hiba!",

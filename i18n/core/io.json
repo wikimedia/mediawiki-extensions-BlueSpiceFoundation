@@ -35,7 +35,6 @@
 	"bs-exception-view-admin-hint": "Voluntez kontaktar l'administrero di vua sistemo.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Montrar detali dil eroro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Celar detali dil eroro",
-	"bs-viewtagerrorlist-legend": "$1 - Eroro",
 	"bs-readonly": "La datumaro nuntempe esas klozata por nova modifiki, probable por facar manteni rutinala. Pos la manteni, ol retrovenos a la normala stando.\n\nL'administranto di la sistemo qua klozis la datumaro explikis to: $1",
 	"bs-imageofotheruser": "Vu ne povas sendar ula imajo de altra uzero.",
 	"bs-permissionerror": "Eroro pri permiso!",

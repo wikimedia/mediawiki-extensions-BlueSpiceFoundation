@@ -25,7 +25,6 @@
 	"bs-email-greeting-receiver": "{{GENDER:$1|မင်္ဂလာပါ ကို $2|မင်္ဂလာပါ မ|မင်္ဂလာပါ}}",
 	"bs-userpagesettings-legend": "အသုံးပြုသူအပြင်အဆင်များ",
 	"bs-exception-view-heading": "အမှားတစ်ခု ဖြစ်ခဲ့သည်",
-	"bs-viewtagerrorlist-legend": "$1 - အမှား",
 	"bs-permissionerror": "ခွင့်ပြုချက်အမှား!",
 	"bs-navigation-instructions": "လမ်းညွှန်ချက်များ",
 	"bs-navigation-support": "ထောက်ပံ့မှု",

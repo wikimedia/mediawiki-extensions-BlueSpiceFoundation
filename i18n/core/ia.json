@@ -34,7 +34,6 @@
 	"bs-exception-view-admin-hint": "Per favor, contacta tu administrator de systema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Monstrar le detalios del error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Celar le detalios del error",
-	"bs-viewtagerrorlist-legend": "$1 - Error",
 	"bs-readonly": "Al momento, le base de datos es blocate contra nove entratas e altere modificationes, probabilemente pro mantenentia routinari del base de datos, post le qual illo retornara al normal. Le administrator responsabile dava iste explication: $1",
 	"bs-imageofotheruser": "Tu non es autorisate a incargar un imagine pro un altere usator.",
 	"bs-permissionerror": "Error de permission.",

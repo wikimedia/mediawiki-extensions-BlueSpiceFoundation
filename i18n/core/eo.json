@@ -32,7 +32,6 @@
 	"bs-exception-view-heading": "Eraro okazis",
 	"bs-exception-view-stacktrace-toggle-show-text": "Montri detalojn de eraro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Kaŝi detalojn de eraro",
-	"bs-viewtagerrorlist-legend": "$1 - Eraro",
 	"bs-permissionerror": "Eraro pri permeso!",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> ne estas valida dosierujo.",
 	"bs-filesystemhelper-file-not-exists": "La dosiero <code>$1</code> ne ekzistas.",

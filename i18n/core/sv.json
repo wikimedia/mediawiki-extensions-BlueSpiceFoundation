@@ -43,7 +43,6 @@
 	"bs-exception-view-admin-hint": "Vänligen kontakta din systemadministratör.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Visa felinformation",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Visa felinformation",
-	"bs-viewtagerrorlist-legend": "$1 - Fel",
 	"bs-readonly": "Databasen är tillfälligt låst för nya inlägg och andra modifieringar, förmodligen på grund av rutinmässigt underhåll, efter vilket den kommer den att återgå till normalläge.\n\nDen administratör som låste den har angivit följande förklaring: $1",
 	"bs-imageofotheruser": "Du får inte ladda upp en bild för en annan användare.",
 	"bs-permissionerror": "Behörighetsfel!",

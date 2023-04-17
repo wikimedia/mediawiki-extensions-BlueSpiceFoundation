@@ -48,7 +48,6 @@
 	"bs-exception-view-admin-hint": "נא לפנות אל מנהל המערכת.",
 	"bs-exception-view-stacktrace-toggle-show-text": "הצגת פרטי השגיאה",
 	"bs-exception-view-stacktrace-toggle-hide-text": "הסתרת פרטי השגיאה",
-	"bs-viewtagerrorlist-legend": "$1-שגיאה",
 	"bs-readonly": "בסיס הנתונים נעול כרגע להוספת ערכים חדשים ושינויים אחרים, כנראה לצורך תחזוקה שוטפת, שלאחריה יחזור האתר לפעולתו הרגילה. מנהל המערכת שנעל את בסיס הנתונים סיפק את ההסבר הבא: $1",
 	"bs-imageofotheruser": "אינך מורשה להעלות תמונה עבור משתמש אחר",
 	"bs-permissionerror": "שגיאה בהרשאות!",

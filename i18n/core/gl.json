@@ -39,7 +39,6 @@
 	"bs-exception-view-admin-hint": "Por favor, póñase en contacto co administrador do sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Amosar os detalles do erro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Agochar os detalles do erro",
-	"bs-viewtagerrorlist-legend": "$1 - Erro",
 	"bs-readonly": "Nestes intres a base de datos está pechada a novas entradas e outras modificacións, probablemente debido a procesos de mantemento, tras os que volverá á normalidade. O administrador que a pechou deu esta explicación: $1",
 	"bs-imageofotheruser": "Non ten os permisos necesarios para subir unha imaxe por outro usuario.",
 	"bs-permissionerror": "Erro de permisos!",

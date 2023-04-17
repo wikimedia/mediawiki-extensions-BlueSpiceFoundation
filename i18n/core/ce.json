@@ -29,7 +29,6 @@
 	"bs-exception-view-heading": "ГӀалат даьлла",
 	"bs-exception-view-stacktrace-toggle-show-text": "Гайта гӀалатах лаьцна",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Къайладаккха гӀалатах лаьцнарг",
-	"bs-viewtagerrorlist-legend": "$1 — ГӀалат",
 	"bs-permissionerror": "ТӀекхачаре бакъона гӀалат!",
 	"bs-filesystemhelper-file-copy-error": "Файлан <code>$1</code> копиян цатарло.",
 	"bs-filesystemhelper-upload-err-code": "Файл чуйаккха йиш йац: $1",

@@ -35,7 +35,6 @@
 	"bs-exception-view-admin-hint": "Kit e darempred gant merour ho reizhiad, mar plij.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Diskouez munudoù ar fazi",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Kuzhat munudoù ar fazi",
-	"bs-viewtagerrorlist-legend": "$1 - Fazi",
 	"bs-imageofotheruser": "N'oc'h ket aotreet da ezporzhiañ ur skeudenn evit un implijer all.",
 	"bs-permissionerror": "Fazi aotre !",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> n'eo ket ur c'havlec'h reizh.",

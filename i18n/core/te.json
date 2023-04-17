@@ -27,7 +27,6 @@
 	"bs-userpreferences-link-text": "మరిన్ని వాడుకరి అమరికలు",
 	"bs-exception-view-stacktrace-toggle-show-text": "పొరపాటు వివరాలను చూపించు",
 	"bs-exception-view-stacktrace-toggle-hide-text": "పొరపాటు వివరాలను దాచు",
-	"bs-viewtagerrorlist-legend": "$1 - తప్పు",
 	"bs-readonly": "డేటాబేసు ప్రస్తుతం లాకు చేయబడింది. మార్పులు, చేర్పులు ప్రస్తుతం చెయ్యలేరు. మామూలుగా జరిగే నిర్వహణ కొరకు ఇది జరిగి ఉండవచ్చు; అది పూర్తి కాగానే తిరిగి మామూలుగా పనిచేస్తుంది.\n\nదీనిని లాకు చేసిన నిర్వాహకుడు ఇలా తెలియజేస్తున్నాడు: $1",
 	"bs-permissionerror": "అనుమతి లోపం!",
 	"bs-navigation-instructions": "సూచనలు",

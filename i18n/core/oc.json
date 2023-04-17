@@ -31,7 +31,6 @@
 	"bs-exception-view-heading": "Una error s'es produita",
 	"bs-exception-view-stacktrace-toggle-show-text": "Afichar los detalhs de l’error",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Amagar los detalhs de l’error",
-	"bs-viewtagerrorlist-legend": "$1 - Error",
 	"bs-permissionerror": "Error de dreit !",
 	"bs-filesystemhelper-has-path-traversal": "Traversada de camin detectada !",
 	"bs-filesystemhelper-file-not-exists": "Lo fichièr <code>$1</code> existís pas.",

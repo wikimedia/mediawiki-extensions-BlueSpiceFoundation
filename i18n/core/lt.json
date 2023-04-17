@@ -34,7 +34,6 @@
 	"bs-exception-view-admin-hint": "Prašome susisiekti su jūsų sistemos administratoriumi.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Rodyti klaidos informaciją",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Paslėpti klaidos informaciją",
-	"bs-viewtagerrorlist-legend": "$1 - Klaida",
 	"bs-readonly": "Duomenų bazė šiuo metu yra užrakinta naujiems įrašams ar kitiems keitimams, tikriausiai duomenų bazės techninei profilaktikai, po kurios viskas vėl veiks kaip įprasta. Užrakinusiojo sistemos administratoriaus pateiktas paaiškinimas: $1",
 	"bs-imageofotheruser": "Jūs negalite įkelti paveikslėlį kitam vartotojui.",
 	"bs-permissionerror": "Leidimo klaida!",

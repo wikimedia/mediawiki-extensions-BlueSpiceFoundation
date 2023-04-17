@@ -14,7 +14,6 @@
 	"bs-months-duration": "{{PLURAL:$1|ohtâ mánuppaje|$1 mánuppaijeed}}",
 	"bs-days-duration": "{{PLURAL:$1|ohtâ peivi|$1 peeivi|$1 peeivi|$1 peivid}}",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, hiärrá $2|Hei, rovvá $2|Hei $2}}.",
-	"bs-viewtagerrorlist-legend": "$1 - Feilâ",
 	"bs-navigation-contact": "Vääldi ohtâvuođâ",
 	"bs-imagepage-download-text": "Luođii",
 	"bs-ns": "Nommâkomovuotâ",

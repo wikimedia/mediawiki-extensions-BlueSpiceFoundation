@@ -27,7 +27,6 @@
 	"bs-exception-view-heading": "Der opstod en fejl",
 	"bs-exception-view-stacktrace-toggle-show-text": "Vis fejldetaljer",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Skjul fejldetaljer",
-	"bs-viewtagerrorlist-legend": "$1 - Fejl",
 	"bs-filesystemhelper-file-not-exists": "Filen <code>$1</code> findes ikke.",
 	"bs-filesystemhelper-file-already-exists": "Filen <code>$1</code> findes allerede.",
 	"bs-filesystemhelper-file-delete-error": "Filen <code>$1</code> kunne ikke slettes.",

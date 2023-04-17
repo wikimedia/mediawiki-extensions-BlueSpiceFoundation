@@ -43,7 +43,6 @@
 	"bs-exception-view-admin-hint": "Bitte kontaktiere Deinen Administrator.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Fehlerdetails anzeigen",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Fehlerdetails verbergen",
-	"bs-viewtagerrorlist-legend": "$1 - Fehler",
 	"bs-readonly": "Die Datenbank ist vorübergehend für Neueinträge und Änderungen gesperrt. Bitte versuche es später noch einmal. Grund der Sperrung: $1.",
 	"bs-imageofotheruser": "Du bist nicht berechtigt ein Bild für einen anderen Benutzer hochzuladen.",
 	"bs-permissionerror": "Berechtigungsfehler!",

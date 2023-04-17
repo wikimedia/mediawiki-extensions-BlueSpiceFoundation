@@ -14,6 +14,5 @@
 	"bs-no-information-available": "Informacije nisu dostupne",
 	"bs-years-duration": "{{PLURAL:$1|jedna godina|$1 godina}}",
 	"bs-one-unit-ago": "prije $1",
-	"bs-now": "sada",
-	"bs-viewtagerrorlist-legend": "$1 - Greška"
+	"bs-now": "sada"
 }

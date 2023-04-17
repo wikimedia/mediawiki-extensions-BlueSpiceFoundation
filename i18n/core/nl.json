@@ -45,7 +45,6 @@
 	"bs-exception-view-admin-hint": "Neem contact op met uw systeembeheerder.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Foutdetails weergeven",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Foutdetails verbergen",
-	"bs-viewtagerrorlist-legend": "$1 - fout",
 	"bs-readonly": "De database is op het moment geblokkeerd voor nieuwe gegevens en andere bewerkingen, waarschijnlijk voor regulier databaseonderhoud. Na afronding wordt de functionaliteit hersteld. De beheerder heeft de volgende reden opgegeven: $1",
 	"bs-imageofotheruser": "Het is u niet toegestaan om een afbeelding te uploaden voor een andere gebruiker.",
 	"bs-permissionerror": "Fouten in rechten!",

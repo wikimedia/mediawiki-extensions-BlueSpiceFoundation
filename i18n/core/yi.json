@@ -16,7 +16,6 @@
 	"bs-mins-duration": "{{PLURAL:$1|איין מינוט|$1 מינוטן}}",
 	"bs-secs-duration": "{{PLURAL:$1|איין סעקונדע|$1 סעקונדעס}}",
 	"bs-exception-view-heading": "א גרײַז האט פאסירט",
-	"bs-viewtagerrorlist-legend": "$1 - פֿעלער",
 	"bs-ns": "נאָמענטייל",
 	"bs-export-menu-print-text": "דרוקן"
 }

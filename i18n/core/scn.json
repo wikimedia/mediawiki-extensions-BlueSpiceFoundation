@@ -25,7 +25,6 @@
 	"bs-exception-view-admin-hint": "Pi favuri cuntatta lu tò amministraturi sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Ammustra li dittaghî di l'erruri",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Ammuccia li dittagghî di l'erruri",
-	"bs-viewtagerrorlist-legend": "$1 - Erruri",
 	"bs-filesystemhelper-file-not-exists": "Lu file <code>$1</code> nun esisti.",
 	"bs-filesystemhelper-file-already-exists": "Lu file <code>$1</code> esisti già.",
 	"bs-filesystemhelper-file-delete-error": "Lu file <code>$1</code> nun pò essiri cancillatu.",
