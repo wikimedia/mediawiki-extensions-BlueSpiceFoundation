@@ -85,5 +85,6 @@
 	"bs-pref-defaultuserimage": "Käyttäjän oletusavatar:",
 	"bs-pref-miniprofileenforceheight": "Pakota käyttäjän avatarin korkeus",
 	"bs-pref-anonuserimage": "Anonyymin käyttäjän avatar:",
-	"bs-parser-error-invalid-category-title": "Sivu ei ole kelvollinen luokka: $1"
+	"bs-parser-error-invalid-category-title": "Sivu ei ole kelvollinen luokka: $1",
+	"bs-export-menu-print-title": "Näyttää sivun tulostettavan version"
 }
