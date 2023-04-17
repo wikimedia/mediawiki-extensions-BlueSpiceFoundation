@@ -69,5 +69,8 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Pienoiskuvat",
 	"bs-extjs-flyout-tab-grid-label": "Tiedot",
 	"bs-extjs-flyout-add-title": "Napsauta tästä lisätäksesi uuden kohteen",
-	"bs-extjs-flyout-add-label": "Lisää kohde"
+	"bs-extjs-flyout-add-label": "Lisää kohde",
+	"bs-extjs-label-specialpage": "Toimintosivu",
+	"bs-extjs-pageexport-list-name-label": "Listan nimi",
+	"bs-extjs-pageexport-list-format-label": "Listan muoto"
 }
