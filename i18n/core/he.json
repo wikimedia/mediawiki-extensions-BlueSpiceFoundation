@@ -53,7 +53,7 @@
 	"bs-imageofotheruser": "אינך מורשה להעלות תמונה עבור משתמש אחר",
 	"bs-permissionerror": "שגיאה בהרשאות!",
 	"bs-lockdown-groups-permissionerror": "הפעולה \"$1\" לא זמינה בגלל {{PLURAL:$2|הסיבה הבאה|הסיבות הבאות}}: $3",
-	"bs-filesystemhelper-no-directory": "<code>$1</code> היא לא תיקיה חוקית.",
+	"bs-filesystemhelper-no-directory": "<code>$1</code> היא לא תיקייה תקינה.",
 	"bs-filesystemhelper-has-path-traversal": "נתיב מעבר התגלה!",
 	"bs-filesystemhelper-file-not-exists": "הקובץ <code>$1</code> אינו קיים.",
 	"bs-filesystemhelper-file-copy-error": "לא הייתה אפשרות להעתיק את הקובץ <code>$1</code>.",
