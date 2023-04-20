@@ -39,6 +39,9 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 	 * @return array - List of of groups
 	 */
 	protected function makeData( $sQuery = '' ) {
+		if ( $sQuery === null ) {
+			$sQuery = '';
+		}
 		$this->sLcQuery = strtolower( $sQuery );
 
 		$aData = [];
