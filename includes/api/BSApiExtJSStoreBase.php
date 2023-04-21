@@ -176,7 +176,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 			'limit' => [
 				ParamValidator::PARAM_TYPE => 'integer',
 				ParamValidator::PARAM_REQUIRED => false,
-				ParamValidator::PARAM_DEFAULT => 25,
+				ParamValidator::PARAM_DEFAULT => 250,
 				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-store-param-limit',
 			],
 			'start' => [
