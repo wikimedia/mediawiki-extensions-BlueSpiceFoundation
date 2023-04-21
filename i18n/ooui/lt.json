@@ -5,5 +5,14 @@
 			"Nokeoo"
 		]
 	},
-	"bs-ooui-btn-dismiss-alert-title": "Paslėpti"
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Pridėti naują...",
+	"bs-ooui-key-value-input-widget-key-label": "Raktas",
+	"bs-ooui-key-value-input-widget-value-label": "Reikšmė",
+	"bs-ooui-key-value-input-widget-add-button-label": "Pridėti",
+	"bs-ooui-key-value-input-widget-add-form-label": "Pridėti naują įrašą",
+	"bs-ooui-key-value-input-widget-error-message": "Visi privalomi laukai turi būti nustatyti!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Nenustatyta jokių reikšmių!",
+	"bs-ooui-btn-dismiss-alert-title": "Paslėpti",
+	"bs-ooui-key-value-input-widget-section-label": "Skyrius",
+	"bs-ooui-key-value-input-widget-add-section-label": "Pridėti naują skyrių"
 }
