@@ -14,5 +14,10 @@
 	"bs-validator-set-validation-approved": "$1 buvo sėkmingai patvirtintas.",
 	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Tis ši reikšmė yra galima $1|Tik šios reikšmės yra galimos $1}}: $2",
 	"bs-validator-integer-range-validation-too-low": "Pateikta reikšmė yra per maža. Ji turėtų būti nemažesnė nei $1.",
-	"bs-validator-integer-range-validation-too-high": "Pateikta reikšmė yra per aukšta. Ji turėtų būti nedidesnė nei $1."
+	"bs-validator-integer-range-validation-too-high": "Pateikta reikšmė yra per aukšta. Ji turėtų būti nedidesnė nei $1.",
+	"bs-validator-value-not-recognized": "Reikšmės apdoroti nepavyko",
+	"bs-validator-invalid-integer": "Netinkamas sveikasis skaičius",
+	"bs-validator-invalid-coordinate": "Netinkama koordinatė",
+	"bs-validator-invalid-parameter": "Šis parametras neleidžiamas",
+	"bs-validator-missing-required": "Šis parametras yra būtinas"
 }
