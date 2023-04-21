@@ -30,5 +30,9 @@
 	"apihelp-bs-task-param-examples": "Rodyti užduoties parametrų pavyzdžius",
 	"bs-api-task-taskData-page-id": "Ekzistuojančio wiki puslapio identifikacinis kodas",
 	"bs-api-task-taskData-page-title": "Galiojanti wiki puslapio antraštė",
-	"bs-api-task-wikipagetasks-taskData-categories": "Eilučių rinkinys. Reikšmes turi būti galiojantys ketegorijų pavadinimai."
+	"bs-api-task-wikipagetasks-taskData-categories": "Eilučių rinkinys. Reikšmes turi būti galiojantys ketegorijų pavadinimai.",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Pasirinkimų sąrašas",
+	"apihelp-bs-js-var-config-param-format": "Rezultato formatas",
+	"apihelp-bs-categorylinks-store-param-page-id": "Puslapio ID",
+	"apihelp-bs-templatelinks-store-param-page-id": "Puslapio ID"
 }
