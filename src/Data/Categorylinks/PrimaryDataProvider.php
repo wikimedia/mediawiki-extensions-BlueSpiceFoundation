@@ -25,6 +25,9 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	protected $db = null;
 
+	/** @var IContextSource */
+	protected $context = null;
+
 	/**
 	 *
 	 * @var int

@@ -14,6 +14,9 @@ class Store implements IStore {
 	 */
 	protected $context = null;
 
+	/** @var LoadBalancer */
+	protected $loadBalancer = null;
+
 	/**
 	 *
 	 * @param \IContextSource $context
