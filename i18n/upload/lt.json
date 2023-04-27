@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Nokeoo"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Įkelti failą",
@@ -19,5 +20,11 @@
 	"bs-upload-descfilelabel": "Aprašymas",
 	"bs-upload-error-long": "Klaida įkėlimo procese",
 	"bs-upload-filetypenotsupported": "Failo tipas nepalaikomas",
-	"bs-upload-details": "Informacija"
+	"bs-upload-details": "Informacija",
+	"bs-upload-uploadwarningdialog-title": "Įkelti failą: Įspėjimai",
+	"bs-upload-uploadwarningdialog-intro": "Bandant įkelti failą įvyko šie įspėjimai",
+	"bs-upload-uploadwarningdialog-outro": "Spustelėkite „{{int:bs-extjs-ok}}“, kad nepaisytumėte įspėjimų ir įkeltumėte failą, spustelėkite „{{int:bs-extjs-cancel}}“, kad grįžtumėte į įkėlimo formą",
+	"bs-upload-uploadwarningdialog-warning-exists": "Failas pavadinimu „$1“ jau egzistuoja",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Yra šio failo dublikatas|Yra šio failo dublikatai}}",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Nežinomas įspėjimas su kodu „$1“"
 }

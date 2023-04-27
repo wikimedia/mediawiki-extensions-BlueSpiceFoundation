@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eitvys200",
-			"Zygimantus"
+			"Zygimantus",
+			"Nokeoo"
 		]
 	},
 	"bs-ns_main": "(Puslapiai)",
@@ -10,6 +11,7 @@
 	"bs-tab_navigation": "Navigacija",
 	"bs-userbar_loginswitch_logout": "Atsijungti",
 	"bs-userbar_loginswitch_login": "Prisijungti",
+	"bs-extended-search-tooltip-fulltext": "Pilno teksto paieška",
 	"bs-extended-search-textfield-defaultvalue": "Ieškoti...",
 	"bs-extended-search-textfield-tooltip": "Ieškoti viki",
 	"bs-no-information-available": "Nėra informacijos",
@@ -37,6 +39,7 @@
 	"bs-readonly": "Duomenų bazė šiuo metu yra užrakinta naujiems įrašams ar kitiems keitimams, tikriausiai duomenų bazės techninei profilaktikai, po kurios viskas vėl veiks kaip įprasta. Užrakinusiojo sistemos administratoriaus pateiktas paaiškinimas: $1",
 	"bs-imageofotheruser": "Jūs negalite įkelti paveikslėlį kitam vartotojui.",
 	"bs-permissionerror": "Leidimo klaida!",
+	"bs-lockdown-groups-permissionerror": "Veiksmas „$1“ negalimas dėl {{PLURAL:$2|šios priežasties|šių priežasčių}}: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> nėra leistinas katalogas.",
 	"bs-filesystemhelper-has-path-traversal": "Aptikta kelio klaida!",
 	"bs-filesystemhelper-file-not-exists": "Failas <code>$1</code> neegzistuoja.",
@@ -75,9 +78,21 @@
 	"bs-parser-error-invalid-title": "Neleistinas pavadinimas: $1",
 	"bs-validator-error-title-does-not-exist": "Puslapis neegzistuoja: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Puslapis neleistinas: $1",
+	"bs-parser-error-invalid-category-title": "Puslapis nėra tinkama kategorija: $1",
 	"bs-exttype-bluespice": "BlueSpice plėtiniai",
 	"bs-export-menu-print-text": "Spausdinti",
 	"bs-export-menu-print-title": "Rodo šio puslapio versiją spausdinimui",
-	"action-wikiadmin": "rodyti BlueSpice administracijos puslapius",
-	"right-wikiadmin": "Rodyti BlueSpice administracijos puslapius"
+	"bs-graphicallist-action-close": "Uždaryti",
+	"bs-graphicallist-action-list": "Sąrašas",
+	"bs-graphicallist-action-preview": "Peržiūra",
+	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
+	"bs-bluespice": "BlueSpice",
+	"action-wikiadmin": "naudoti galimai pavojingas administracines užduotis, pvz., tvarkyti naudotojus, leidimus, visuotinę konfigūraciją (BlueSpice plėtiniai)",
+	"right-wikiadmin": "Naudoti galimai pavojingas administracines užduotis, pvz., tvarkyti naudotojus, leidimus, visuotinę konfigūraciją (BlueSpice plėtiniai)",
+	"bs-notifications-agent-anon": "anoniminis naudotojas",
+	"protect-level-editor": "Leisti tik redaktorius ir administratorius",
+	"bs-pref-imageextensions-help": "Paveikslėlio failo tipas įkėlimui į vikį. Galimi žiniatinklio formatai: gif, png, jpg, jpeg. Kiti paveikslėlių formatai: tiff, bmp",
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Nepavyko įrašyti konfigūracijos failo $1!",
+	"bs-pref-logopath-help": "Logotipas turėtų būti saugomas jūsų diegimo aplanke /w/images. Jei saugote jį BlueSpice diegimo aplanke /w/skins, jis gali būti perrašytas atnaujinus.",
+	"bs-pref-faviconpath-help": "Favicon turėtų būti saugomas jūsų diegimo aplanke /w/images. Jei laikysite jį BlueSpice diegimo aplanke /w/skins, jis gali būti perrašytas atnaujinus. Favicons turi failo plėtinį .ico."
 }

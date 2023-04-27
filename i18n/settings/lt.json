@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"bs-setting-path-feature": "Funkcija",
+	"bs-setting-path-extension": "Plėtinys",
+	"bs-setting-path-package": "Paketas",
+	"bs-setting-path-system": "Sistema",
+	"bs-setting-path-dataanalysis": "Duomenų analizė",
+	"bs-setting-path-editor": "Redaktorius",
+	"bs-setting-path-search": "Paieška ir navigacija",
+	"bs-setting-path-personalisation": "Personalizavimas",
+	"bs-setting-path-customizing": "Tinkinimas",
+	"bs-setting-path-contentstructuring": "Turinio struktūrizavimas",
+	"bs-setting-path-communication": "Komunikacija",
+	"bs-setting-path-administration": "Administracija",
+	"bs-setting-path-qualityassurance": "Kokybės užtikrinimas",
+	"bs-setting-path-export": "Eksportas"
+}

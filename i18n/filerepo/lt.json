@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Nokeoo"
 		]
 	},
 	"bs-filerepo-labelupload": "Įkelti",
@@ -20,5 +21,5 @@
 	"bs-filerepo-headerfilethumbnail": "Miniatiūra",
 	"bs-filerepo-yes": "Taip",
 	"bs-filerepo-no": "Ne",
-	"bs-filerepo-pagesize": "Puslapio dydis"
+	"bs-filerepo-pagesize": "Įrašai viename puslapyje"
 }
