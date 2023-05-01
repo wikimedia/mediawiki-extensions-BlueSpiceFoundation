@@ -94,5 +94,8 @@
 	"bs-pref-imageextensions-help": "Paveikslėlio failo tipas įkėlimui į vikį. Galimi žiniatinklio formatai: gif, png, jpg, jpeg. Kiti paveikslėlių formatai: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Nepavyko įrašyti konfigūracijos failo $1!",
 	"bs-pref-logopath-help": "Logotipas turėtų būti saugomas jūsų diegimo aplanke /w/images. Jei saugote jį BlueSpice diegimo aplanke /w/skins, jis gali būti perrašytas atnaujinus.",
-	"bs-pref-faviconpath-help": "Favicon turėtų būti saugomas jūsų diegimo aplanke /w/images. Jei laikysite jį BlueSpice diegimo aplanke /w/skins, jis gali būti perrašytas atnaujinus. Favicons turi failo plėtinį .ico."
+	"bs-pref-faviconpath-help": "Favicon turėtų būti saugomas jūsų diegimo aplanke /w/images. Jei laikysite jį BlueSpice diegimo aplanke /w/skins, jis gali būti perrašytas atnaujinus. Favicons turi failo plėtinį .ico.",
+	"bs-parser-error-invalid-namespace": "Negalima vardų sritis: $1",
+	"bs-validator-error-namespace-does-not-exist": "Vardų sritis neegzistuoja: $1",
+	"bs-validator-error-namespace-on-blacklist": "Vardų sritimas neleidžiama: $1"
 }
