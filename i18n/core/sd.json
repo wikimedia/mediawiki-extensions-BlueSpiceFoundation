@@ -9,5 +9,6 @@
 	"bs-weeks-duration": "{{PLURAL:$1|ھڪ ھفتو|$1 ھفتا}}",
 	"bs-navigation-contact": "رابطو",
 	"bs-ns": "نانءُپولار",
-	"bs-graphicallist-action-list": "فھرست"
+	"bs-graphicallist-action-list": "فھرست",
+	"bs-email-greeting-receiver": "{{GENDER:$1|سلام محترم $2|سلام محترمہ $2|سلام $2}}،"
 }
