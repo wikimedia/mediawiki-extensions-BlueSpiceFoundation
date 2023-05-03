@@ -45,8 +45,8 @@
 
 		mw.cookie.set(
 			$root.attr( 'id' ),
-			JSON.stringify( paths ),{
-			expires: 14
-		} );
+			JSON.stringify( paths ), {
+				expires: 14
+			} );
 	}
 }( mediaWiki, jQuery, document ) );

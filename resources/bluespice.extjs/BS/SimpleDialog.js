@@ -28,14 +28,14 @@ Ext.define( 'BS.SimpleDialog', {
 
 		this.btnOK = Ext.create( 'Ext.Button', {
 			text: mw.message( 'bs-extjs-ok' ).plain(),
-			ariaLabel: mw.message('bs-extjs-ok').plain(),
+			ariaLabel: mw.message( 'bs-extjs-ok' ).plain(),
 			id: this.idPrefix + '-btn-ok'
 		} );
 		this.btnOK.on( 'click', this.btnOKClicked, this );
 
 		this.btnCancel = Ext.create( 'Ext.Button', {
 			text: mw.message( 'bs-extjs-cancel' ).plain(),
-			ariaLabel: mw.message('bs-extjs-cancel').plain(),
+			ariaLabel: mw.message( 'bs-extjs-cancel' ).plain(),
 			id: this.idPrefix + '-btn-cancel'
 		} );
 		this.btnCancel.on( 'click', this.btnCancelClicked, this );

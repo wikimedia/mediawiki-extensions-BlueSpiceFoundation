@@ -111,7 +111,7 @@ Ext.define( 'BS.form.UserCombo', {
 		};
 	},
 
-	checkValueOnChange: function() {
+	checkValueOnChange: function () {
 		// NO-OP
 	}
 } );

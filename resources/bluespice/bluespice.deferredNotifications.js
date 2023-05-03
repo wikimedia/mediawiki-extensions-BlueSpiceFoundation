@@ -28,19 +28,19 @@
 
 		localStorage.removeItem( 'notify-info' );
 
-		$( "#wpLoginAttempt" ).click( function() {
+		$( '#wpLoginAttempt' ).click( function () {
 			localStorage.removeItem( 'notificationFlagCookieSet' );
-		});
+		} );
 
 		// Used setTimeout() because mw.cookie.set needs sometime to set the cookie.
-		setTimeout( function() {
+		setTimeout( function () {
 			var cookieSet = localStorage.getItem( 'notificationFlagCookieSet' );
-			if( cookieSet != 1 ) {
-				mw.cookie.set( 'notificationFlag',1 );
+			if ( cookieSet != 1 ) {
+				mw.cookie.set( 'notificationFlag', 1 );
 			}
 			var cookieValue = mw.cookie.get( 'notificationFlag' );
-			if( cookieValue === 1) {
-				localStorage.setItem( 'notificationFlagCookieSet',1 );
+			if ( cookieValue === 1 ) {
+				localStorage.setItem( 'notificationFlagCookieSet', 1 );
 			}
 		}, 100 );
 	}
