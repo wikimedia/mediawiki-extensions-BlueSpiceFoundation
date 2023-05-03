@@ -8,5 +8,9 @@ class AddBlueSpice extends \BlueSpice\Hook\ExtensionTypes {
 		$this->extTypes['bluespice'] = \Message::newFromKey(
 			"bs-exttype-bluespice"
 		)->plain();
+
+		$this->extTypes['bluespice-assets'] = \Message::newFromKey(
+			"bs-exttype-bluespice-assets"
+		)->plain();
 	}
 }
