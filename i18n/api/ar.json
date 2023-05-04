@@ -4,7 +4,8 @@
 			"AA800",
 			"Meno25",
 			"Moud hosny",
-			"ديفيد"
+			"ديفيد",
+			"Alshamiri1"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "يسرد جميع الملفات من النهاية الخلفية للملف، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
@@ -71,5 +72,14 @@
 	"apihelp-bs-recentchanges-store-summary": "يسرد كل التغييرات الحديثة، يتيح الفرز وترقيم الصفحات، ينفذ وسائط مخزن.",
 	"apihelp-bs-task-summary": "يوفر نقطة نهاية API لتنفيذ المهام المسجلة",
 	"apihelp-bs-task-description": "يوفر نقطة نهاية API لتنفيذ المهام المسجلة",
-	"apihelp-bs-categorylinks-store-param-page-id": "معرف الصفحة الخاص بالصفحة"
+	"apihelp-bs-js-var-config-summary": "يوفر نقطة نهاية API لاسترداد متغيرات التكوين من جانب العميل",
+	"apihelp-bs-js-var-config-param-name": "اسم متغير التكوين المراد استرداده",
+	"apihelp-bs-js-var-config-param-func": "وظيفة التكوين المراد تنفيذها: has | get",
+	"apihelp-bs-js-var-config-param-context": "كائن JSON المشفر مع سياق الاستدعاء",
+	"apihelp-bs-js-var-config-param-format": "شكل النتيجة",
+	"apihelp-bs-categorylinks-store-param-page-id": "معرف الصفحة الخاص بالصفحة",
+	"apihelp-bs-templatelinks-store-param-page-id": "معرف الصفحة الخاص بالصفحة",
+	"apihelp-bs-linker-summary": "إرجاع الروابط إلى الصفحات التي تم إنشاؤها بواسطة رابط",
+	"apihelp-bs-linker-description": "إرجاع الروابط إلى الصفحات التي تم إنشاؤها بواسطة رابط",
+	"apihelp-bs-linker-param-linkdescs": "مصفوفة ترابطية JSON مع قائمة بالصفحات. يجب أن يحتوي كل إدخال على عنوان الصفحة كـ \"الهدف\". يمكن أن يحتوي بشكل اختياري على \"نص\" و \"سمات\" و \"طلب بحث\"."
 }
