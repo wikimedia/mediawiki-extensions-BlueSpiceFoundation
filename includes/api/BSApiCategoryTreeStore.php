@@ -1,11 +1,16 @@
 <?php
 
 class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
+
 	/**
-	 *
 	 * @var string[]
 	 */
 	protected $trackingCategories = null;
+
+	/**
+	 * @var IDatabase
+	 */
+	private $dbr;
 
 	/**
 	 *
@@ -14,120 +19,134 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	 */
 	protected function makeData( $sQuery = '' ) {
 		$sNode = $this->getParameter( 'node' );
-		$aResult = [];
-		$dbr = $this->getDB();
+		$this->dbr = $this->getDB();
 
 		if ( $sNode === 'src' ) {
-			$aCategories = [];
-			$aSubCategories = [];
-
-			$resSubcats = $dbr->select(
-				[ 'page', 'categorylinks' ],
-				[ 'page_title AS cat_title' ],
-				[ 'page_namespace' => NS_CATEGORY ],
-				__METHOD__,
-				[ 'ORDER BY page_title' ],
-				[ 'categorylinks' =>
-					[
-						'INNER JOIN', 'page_id = cl_from'
-					]
-				]
-			);
-
-			foreach ( $resSubcats as $row ) {
-				$sCatTitle = preg_replace( '/\'/', "\'", $row->cat_title );
-				$aSubCategories[] = $sCatTitle;
-			}
-
-			$aTables = [ 'page' ];
-			$aFields = [ '*' ];
-			$aConditions = [ 'page_namespace' => NS_CATEGORY ];
-			$sMethod = __METHOD__;
-			$aOptions = [ '' ];
-			$aJoinConds = [];
-
-			$aConditions[] = 'page_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')';
-
-			$resPageTable = $dbr->select(
-				$aTables,
-				$aFields,
-				$aConditions,
-				$sMethod,
-				$aOptions,
-				$aJoinConds
-			);
-
-			foreach ( $resPageTable as $row ) {
-				$aCategories[] = $row->page_title;
-			}
-
-			$resCategoryTable = $dbr->select(
-				[ 'category', 'categorylinks' ],
-				'cat_title',
-				[
-					'cat_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')',
-					'cat_title = cl_to'
-				],
-				__METHOD__,
-				[ 'GROUP BY cat_title' ]
-			);
-
-			foreach ( $resCategoryTable as $row ) {
-				$aCategories[] = $row->cat_title;
-			}
-
-			$aCategories = array_unique( $aCategories );
-			asort( $aCategories );
-
-			foreach ( $aCategories as $sCategory ) {
-				$oTmpCat = Category::newFromName( $sCategory );
-				if ( $oTmpCat instanceof Category ) {
-				}
-				$oCategory = new stdClass();
-				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
-				$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
-				$oCategory->tracking = $this->isTrackingCategory( $oTmpCat );
-				$oCategory->id = 'src/' . str_replace( '/', '+', $oCategory->text );
-				$aResult[] = $oCategory;
-			}
+			return $this->getRootCategories();
 		} else {
-			$aNodes = explode( '/', $sNode );
-			$sCatTitle = str_replace( '+', '/', str_replace( ' ', '_', array_pop( $aNodes ) ) );
+			return $this->getSubCategoriesFromPath( $sNode );
+		}
+	}
 
-			$aTables = [ 'page', 'categorylinks' ];
-			$aFields = [ 'page_title' ];
-			$aConditions = [ 'cl_to' => $sCatTitle, 'page_namespace' => NS_CATEGORY ];
-			$sMethod = __METHOD__;
-			$aOptions = [ '' ];
-			$aJoinConds = [ 'categorylinks' => [ 'INNER JOIN', 'page_id=cl_from' ] ];
+	/**
+	 * Creates a list of subcategories for the specified node.
+	 *
+	 * @param string $sNode source node
+	 * @return array
+	 */
+	private function getSubCategoriesFromPath( $sNode ) {
+		$aNodes = explode( '/', $sNode );
+		$sCatTitle = str_replace( '+', '/', str_replace( ' ', '_', array_pop( $aNodes ) ) );
 
-			$resSubCategories = $dbr->select(
-				$aTables,
-				$aFields,
-				$aConditions,
-				$sMethod,
-				$aOptions,
-				$aJoinConds
-			);
+		$resSubCategories = $this->dbr->select(
+			[ 'page', 'categorylinks' ],
+			[ 'page_title' ],
+			[ 'cl_to' => $sCatTitle, 'page_namespace' => NS_CATEGORY ],
+			__METHOD__,
+			[ '' ],
+			[ 'categorylinks' =>
+				[
+					'INNER JOIN', 'page_id = cl_from'
+				]
+			]
+		);
 
-			$aSubCategories = [];
+		$aSubCategories = [];
 
-			foreach ( $resSubCategories as $row ) {
-				$aSubCategories[] = $row->page_title;
-			}
-			asort( $aSubCategories );
+		foreach ( $resSubCategories as $row ) {
+			$aSubCategories[] = $row->page_title;
+		}
+		asort( $aSubCategories );
 
-			foreach ( $aSubCategories as $sCategory ) {
-				$oTmpCat = Category::newFromName( $sCategory );
-				$oCategory = new stdClass();
-				$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
-				$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
-				$oCategory->tracking = false;
-				$oCategory->id = $sNode . '/' . str_replace( '/', '+', $oCategory->text );
-				$aResult[] = $oCategory;
-			}
+		return $this->parseResult( $aSubCategories, $sNode );
+	}
+
+	/**
+	 * Creates a list of categories for the source(src/) node.
+	 *
+	 * @return array
+	 */
+	private function getRootCategories() {
+		$aSubCategories = [];
+		$aCategories = [];
+
+		$resSubCategories = $this->dbr->select(
+			[ 'page', 'categorylinks' ],
+			[ 'page_title AS cat_title' ],
+			[ 'page_namespace' => NS_CATEGORY ],
+			__METHOD__,
+			[ '' ],
+			[ 'categorylinks' =>
+				[
+					'INNER JOIN', 'page_id = cl_from'
+				]
+			]
+		);
+
+		foreach ( $resSubCategories as $row ) {
+			$sCatTitle = preg_replace( '/\'/', "\'", $row->cat_title );
+			$aSubCategories[] = $sCatTitle;
 		}
 
+		$resPageTable = $this->dbr->select(
+			[ 'page' ],
+			[ '*' ],
+			[ 'page_namespace' => NS_CATEGORY, 'page_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')' ],
+			__METHOD__,
+			[ '' ],
+			[]
+		);
+
+		foreach ( $resPageTable as $row ) {
+			$aCategories[] = $row->page_title;
+		}
+
+		$resCategoryTable = $this->dbr->select(
+			[ 'category', 'categorylinks' ],
+			'cat_title',
+			[
+				'cat_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')',
+				'cat_title = cl_to'
+			],
+			__METHOD__,
+			[ 'GROUP BY cat_title' ]
+		);
+
+		foreach ( $resCategoryTable as $row ) {
+			$aCategories[] = $row->cat_title;
+		}
+
+		$aCategories = array_unique( $aCategories );
+		asort( $aCategories );
+		return $this->parseResult( $aCategories, "src" );
+	}
+
+	/**
+	 * Parse the array of categories into a acceptable format for sending.
+	 * For each category with subcategories, create an items array
+	 *
+	 * Warning: $oCategory->items calls $this->getSubCategoriesFromPath() function
+	 * which can loop the request!
+	 *
+	 * @param array $categoriesArray
+	 * @param string $sNode
+	 * @return array
+	 */
+	public function parseResult( $categoriesArray, $sNode = 'src' ) {
+		$aResult = [];
+		foreach ( $categoriesArray as $sCategory ) {
+			$oTmpCat = Category::newFromName( $sCategory );
+			$oCategory = new stdClass();
+			$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
+			$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
+			$oCategory->tracking = $this->isTrackingCategory( $oTmpCat );
+			$oCategory->id = $sNode . '/' . str_replace( '/', '+', $oCategory->text );
+			$oCategory->items =
+				( $oTmpCat->getSubcatCount() > 0 )
+				? $this->getSubCategoriesFromPath( $oCategory->id )
+				: [];
+			$aResult[] = $oCategory;
+		}
 		return $aResult;
 	}
 
