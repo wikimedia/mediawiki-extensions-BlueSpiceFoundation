@@ -103,5 +103,6 @@
 	"bs-pref-imageextensions-help": "Vrste slikovnih datotek, ki jih je mogoče naložiti v viki. Možni spletni formati: gif, png, jpg, jpeg. Drugi formati slik: tiff, bmp.",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfiguracijske datoteke $1 ni bilo mogoče zapisati!",
 	"bs-pref-logopath-help": "Logotip mora biti shranjen v mapi /w/images vaše namestitve. Če ga shranite v mapo /w/skins vaše namestitve BlueSpice, ga lahko prepiše nadgradnja.",
-	"bs-pref-faviconpath-help": "Zaznamka mora biti shranjena v mapi /w/images vaše namestitve. Če jo shranite v mapo /w/skins vaše namestitve BlueSpice, ga lahko prepiše nadgradnja. Zaznamke imajo pripono datoteke .ico."
+	"bs-pref-faviconpath-help": "Zaznamka mora biti shranjena v mapi /w/images vaše namestitve. Če jo shranite v mapo /w/skins vaše namestitve BlueSpice, ga lahko prepiše nadgradnja. Zaznamke imajo pripono datoteke .ico.",
+	"bs-exttype-bluespice-assets": "Sredstva BlueSpice"
 }
