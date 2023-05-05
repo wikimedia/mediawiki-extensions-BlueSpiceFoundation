@@ -100,5 +100,6 @@
 	"bs-pref-imageextensions-help": "Le typos de imagine que pote esser incargate sur le wiki. Formatos web possibile: gif, png, jpg, jpeg. Altere formatos de imagine: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Le file de configuration $1 non poteva esser scribite.",
 	"bs-pref-logopath-help": "Le logotypo debe esser immagazinate in le directorio /w/images de tu installation. Si tu lo immagazina in le directorio /w/skins de tu installation BlueSpice, illo pote esser superscribite durante un actualisation.",
-	"bs-pref-faviconpath-help": "Le imagine favicon debe esser immagazinate in le directorio /w/images de tu installation. Si tu lo immagazina in le directorio /w/skins de tu installation BlueSpice, illo pote esser superscribite durante un actualisation. Imagines favicon ha le extension de nomine de file .ico."
+	"bs-pref-faviconpath-help": "Le imagine favicon debe esser immagazinate in le directorio /w/images de tu installation. Si tu lo immagazina in le directorio /w/skins de tu installation BlueSpice, illo pote esser superscribite durante un actualisation. Imagines favicon ha le extension de nomine de file .ico.",
+	"bs-exttype-bluespice-assets": "Activos BlueSpice"
 }
