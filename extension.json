@@ -574,6 +574,9 @@
 	"HookHandlers": {
 		"mediawikiservices": {
 			"class": "\\BlueSpice\\HookHandler\\MediaWikiServices"
+		},
+		"bs-ue-module-pdf-integration": {
+				"class": "\\BlueSpice\\HookHandler\\PDFExportHandler"
 		}
 	},
 	"Hooks": {
@@ -636,7 +639,8 @@
 			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndTitle\\CheckTransclusionPermissions::callback"
 		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
-		"MediaWikiServices": "mediawikiservices"
+		"MediaWikiServices": "mediawikiservices",
+		"BSUEModulePDFBeforeAddingContent": "bs-ue-module-pdf-integration"
 	},
 	"config_prefix": "bsg",
 	"config": {
