@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Alshamiri1",
 			"Meno25",
 			"Sonic N800",
 			"ديفيد",
@@ -102,5 +103,6 @@
 	"bs-pref-imageextensions-help": "أنواع ملفات الصور التي يمكن تحميلها على موقع wiki. تنسيقات الويب الممكنة: gif، png، jpg، jpeg. تنسيقات الصور الأخرى: tiff ، bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "تعذر كتابة ملف التكوين $1 !",
 	"bs-pref-logopath-help": "يجب تخزين الشعار في مجلد / w / images في التثبيت. إذا قمت بتخزينه في مجلد / w / skins الخاص بتثبيت BlueSpice ، فيمكن الكتابة فوقه بترقية.",
-	"bs-pref-faviconpath-help": "يجب تخزين الرمز المفضل في مجلد / w / images في التثبيت. إذا قمت بتخزينه في مجلد / w / skins الخاص بتثبيت BlueSpice ، فيمكن الكتابة فوقه بترقية. الأيقونات لها امتداد الملف .ico."
+	"bs-pref-faviconpath-help": "يجب تخزين الرمز المفضل في مجلد / w / images في التثبيت. إذا قمت بتخزينه في مجلد / w / skins الخاص بتثبيت BlueSpice ، فيمكن الكتابة فوقه بترقية. الأيقونات لها امتداد الملف .ico.",
+	"bs-exttype-bluespice-assets": "أصول BlueSpice"
 }
