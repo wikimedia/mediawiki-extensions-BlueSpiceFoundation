@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "fontawesome";
+    src: url("fontawesome.ttf") !important;
+    font-weight: normal;
+    font-style: oblique;
+    -fs-pdf-font-embed: embed;
+    -fs-pdf-font-encoding: Identity-H;
+}
