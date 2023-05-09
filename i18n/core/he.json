@@ -113,5 +113,6 @@
 	"bs-pref-imageextensions-help": "סוגי קובצי תמונות שניתן להעלות לוויקי. תסדירי וב אפשריים: gif־, png־, jpg‏, jpeg. תסדירי תמונות אחרים: tiff‏, bmp.",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "לא ניתן לכתוב את קובץ ההגדרות $1!",
 	"bs-pref-logopath-help": "יש לאחסן את הסמליל בתיקיית <span dir=\"ltr\">/w/images</span> של ההתקנה שלך. אם הסמליל יאוחסן בתיקיית <span dir=\"ltr\">/w/skins</span> תיקיית ההתקנה שלך עבור BlueSpice הוא עלול להידרס בשדרוג עתידי.",
-	"bs-pref-faviconpath-help": "יש לאחסן את ה־favicon בתיקיית <span dir=\"ltr\">/w/images</span> של ההתקנה שלך. אם הוא יאוחסן בתיקיית <span dir=\"ltr\">/w/skins</span> של תיקיית ההתקנה שלך עבור BlueSpice הוא עלול להידרס בשדרוג עתידי. favicon־ים הם בעלי סיומת קובץ .ico."
+	"bs-pref-faviconpath-help": "יש לאחסן את ה־favicon בתיקיית <span dir=\"ltr\">/w/images</span> של ההתקנה שלך. אם הוא יאוחסן בתיקיית <span dir=\"ltr\">/w/skins</span> של תיקיית ההתקנה שלך עבור BlueSpice הוא עלול להידרס בשדרוג עתידי. favicon־ים הם בעלי סיומת קובץ .ico.",
+	"bs-exttype-bluespice-assets": "נכסי BlueSpice"
 }
