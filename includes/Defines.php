@@ -12,8 +12,9 @@ if ( !defined( 'WIKI_FARMING' ) ) {
 	if ( !defined( 'BSROOTDIR' ) ) {
 		define( 'BSROOTDIR', dirname( __DIR__ ) );
 	}
-	if ( !defined( 'BSCONFIGDIR' ) ) {
-		define( 'BSCONFIGDIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'config' );
+	if ( !defined( 'BS_LEGACY_CONFIGDIR' ) ) {
+		// Needed for migration
+		define( 'BS_LEGACY_CONFIGDIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'config' );
 	}
 	if ( !defined( 'BSDATADIR' ) ) {
 		// Present
