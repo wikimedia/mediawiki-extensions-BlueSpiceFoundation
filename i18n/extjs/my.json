@@ -43,5 +43,8 @@
 	"bs-extjs-tools-trigger-text": "ကိရိယာများ",
 	"bs-extjs-flyout-tab-thumbs-label": "နမူနာပုံငယ်များ",
 	"bs-extjs-flyout-tab-thumbs-title": "နမူနာပုံငယ်မြင်ကွင်းသို့ပြောင်းမည်",
-	"bs-extjs-flyout-tab-grid-label": "အသေးစိတ်များ"
+	"bs-extjs-flyout-tab-grid-label": "အသေးစိတ်များ",
+	"bs-extjs-label-group": "အုပ်စု",
+	"bs-extjs-label-specialpage": "အထူးစာမျက်နှာ",
+	"bs-extjs-pageexport-list-format-link-label": "လင့်ခ်"
 }
