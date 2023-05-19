@@ -32,8 +32,12 @@
 	"bs-imagepage-download-text": "ဒေါင်းလုဒ်",
 	"bs-ns": "အမည်ညွှန်း",
 	"bs-from-something": "($1 ထံမှ)",
+	"bs-validator-error-title-does-not-exist": "စာမျက်နှာ မရှိပါ - $1",
+	"bs-validator-error-title-namespace-on-blacklist": "စာမျက်နှာကို ခွင့်မပြုပါ- $1",
 	"bs-export-menu-print-text": "ပရင့်ထုတ်",
 	"bs-graphicallist-action-close": "ပိတ်ရန်",
 	"bs-graphicallist-action-list": "စာရင်း",
-	"bs-graphicallist-action-preview": "ကြိုတင်အစမ်းကြည့်ရှုရန်"
+	"bs-graphicallist-action-preview": "ကြိုတင်အစမ်းကြည့်ရှုရန်",
+	"bs-notifications-agent-anon": "အမည်မသိ အသုံးပြုသူ",
+	"protect-level-editor": "တည်းဖြတ်သူများနှင့် စီမံခန့်ခွဲသူများကိုသာ ခွင့်ပြုပါ"
 }
