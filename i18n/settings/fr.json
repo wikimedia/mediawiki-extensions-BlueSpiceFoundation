@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Thibaut120094"
 		]
 	},
 	"bs-setting-path-feature": "Fonctionnalité",
 	"bs-setting-path-extension": "Extension",
-	"bs-setting-path-package": "Paquetage",
+	"bs-setting-path-package": "Paquet",
 	"bs-setting-path-system": "Système",
 	"bs-setting-path-dataanalysis": "Analyse de données",
 	"bs-setting-path-editor": "Rédacteur",
