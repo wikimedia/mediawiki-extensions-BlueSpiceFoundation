@@ -150,6 +150,9 @@ class BsPageContentProvider {
 			User $oUser = null, $bHTML = false ) {
 		$title = Title::newFromLinkTarget( $oRevision->getPageAsLinkTarget() );
 		$contentObj = $oRevision->getContent( 'main', $iAudience, $oUser );
+		if ( !( $contentObj instanceof TextContent ) ) {
+			return '';
+		}
 		if ( $bHTML ) {
 			$content = $this->services->getContentRenderer()
 				->getParserOutput( $contentObj, $title )->getText();
@@ -162,11 +165,16 @@ class BsPageContentProvider {
 			$this->overrideGlobals( $title, $context );
 			// FIX for #HW20130072210000028
 			// Manually expand templates to allow bookshelf tags via template
-			$content = $parser->preprocess(
+			try {
+				$content = $parser->preprocess(
 					$content,
 					$title,
-					$parser->getOptions()
-			);
+					$this->getParserOptions( $context )
+				);
+			} catch ( Error $ex ) {
+				$this->restoreGlobals();
+				return $contentObj->getText();
+			}
 			$this->restoreGlobals();
 		}
 		return $content;
