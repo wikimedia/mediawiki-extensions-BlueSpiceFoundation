@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Csega",
+			"Krisztina",
 			"Misibacsi",
 			"Wolf Rex"
 		]
@@ -14,27 +15,30 @@
 	"bs-extended-search-textfield-defaultvalue": "Keresés...",
 	"bs-extended-search-textfield-tooltip": "Keresés a wikin",
 	"bs-now": "most",
-	"bs-email-footer": "Ez egy automatikus üzenet. Kérjük, ne válaszolj rá.",
+	"bs-email-footer": "Ezt egy $1 által generált automatikus üzenetet. Kérem ne válaszoljon erre az e-mailre.",
 	"bs-userpagesettings-legend": "Felhasználói beállítások",
 	"bs-userpreferences-link-text": "További felhasználói beállítások",
 	"bs-userpreferences-link-title": "Személyes felhasználói beállítások megjelenítése",
 	"bs-exception-view-heading": "Hiba történt",
 	"bs-exception-view-text": "A kérés feldolgozása során a következő hiba történt:",
-	"bs-exception-view-admin-hint": "Kérjük, fordulj a rendszergazdához.",
+	"bs-exception-view-admin-hint": "Kérjük, forduljon a rendszergazdához.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Hiba részleteinek megjelenítése",
 	"bs-viewtagerrorlist-legend": "$1 - Hiba",
-	"bs-readonly": "Az adatbázis karbantartás miatt jelenleg le van zárva; nemsokára minden a régi lesz. A lezáró adminisztrátor indoklása: $1",
+	"bs-readonly": "Az adatbázisa ideiglenesen zárolt (valószínűleg adatbázis-karbantartás miatt). A zárolás időtartama alatt új adat létrehozása vagy módosítása nem lehetséges. Az a rendszer-adminisztrátor, aki zárolta az adatbázist, az alábbi indoklást adta: $1",
 	"bs-imageofotheruser": "Nem tölthetsz fel képet más felhasználónak.",
-	"bs-permissionerror": "Engedélyezési hiba!",
+	"bs-permissionerror": "Jogosultsági hiba!",
 	"bs-filesystemhelper-no-directory": "A(z) <code>$1</code> érvénytelen könyvtár.",
 	"bs-filesystemhelper-upload-unsupported-type": "Ez a fájltípus nem támogatott.",
 	"bs-filesystemhelper-save-base64-error": "A fájl mentése nem sikerült.",
 	"bs-filesystemhelper-upload-base64-error": "Nem sikerült a fájl feltöltése.",
 	"bs-navigation-support": "Támogatás",
-	"bs-navigation-contact": "Kapcsolatfelvétel",
+	"bs-navigation-contact": "Kapcsolat",
 	"bs-imagepage-download-text": "Letöltés",
 	"bs-ns": "Névtér",
 	"bs-from-something": "(innen: $1)",
 	"bs-pref-logopath": "Logó útvonala:",
-	"bs-pref-defaultuserimage": "Alapértelmezett avatar:"
+	"bs-pref-defaultuserimage": "Alapértelmezett avatar:",
+	"bluespicefoundation-desc": "Felkészíti a MediaWiki vállalatot",
+	"bs-extended-search-tooltip-fulltext": "Teljes szöveges keresés",
+	"bs-no-information-available": "Nincs elérhető információ"
 }

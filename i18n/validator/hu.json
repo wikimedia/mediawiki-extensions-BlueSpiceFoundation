@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-validator-email-validation-approved": "Az e-mail cím megerősítése sikeres.",
+	"bs-validator-invalid-parameter": "Ez a paraméter nem engedélyezett",
+	"bs-validator-missing-required": "Ez a paraméter kötelező"
+}
