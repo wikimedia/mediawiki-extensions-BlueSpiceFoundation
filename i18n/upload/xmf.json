@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"bs-upload-uploadfilefieldlabel": "ფაილიშ ჯოხო",
+	"bs-upload-uploadfileemptytext": "ახალ ფაილიშ ინოხუნაფა...",
+	"bs-upload-license": "ლიცენზია",
+	"bs-upload-uploadignorewarningslabel": "არძონერ ხვილაფაშ იგნორირაფა",
+	"bs-upload-categories": "კატეგორიეფი",
+	"bs-upload-upload-waitmessage": "ეხარგუა ჯგირო მეურს...",
+	"bs-upload-error": "ჩილათა",
+	"bs-upload-descfilelabel": "ეჭარუა",
+	"bs-upload-error-long": "ჩილათა ეხარგუაშ პროცესის",
+	"bs-upload-uploadwarningdialog-title": "ფაილიშ ეხარგუა: ხვილაფეფი",
+	"bs-upload-uploadwarningdialog-warning-exists": "ფაილი ჯოხოთ „$1\" უკვე რე"
+}
