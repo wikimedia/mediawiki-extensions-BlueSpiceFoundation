@@ -949,7 +949,6 @@
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
 		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php",
-		"BSMigrateConfigFiles": "maintenance/BSMigrateConfigFiles.php",
 		"BSCleanUpDeletedUsersBlocks": "maintenance/BSCleanUpDeletedUsersBlocks.php"
 	},
 	"manifest_version": 2,
