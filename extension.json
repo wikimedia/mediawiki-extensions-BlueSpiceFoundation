@@ -115,12 +115,6 @@
 				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder",
 				"ExtJSGeneric": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
 			},
-			"DynamicSettingsRegistry": {
-				"@note": "Can not be overridden using `$bsgExtensionAttributeRegistryOverrides`",
-				"GroupManager": "BlueSpice\\DynamicSettings\\NullSettings::factory",
-				"NamespaceManager": "BlueSpice\\DynamicSettings\\NullSettings::factory",
-				"PermissionManager": "BlueSpice\\DynamicSettings\\NullSettings::factory"
-			},
 			"JSConfigVars": {},
 			"SecondaryDataUpdateRegistry": {}
 		},
@@ -601,7 +595,6 @@
 		"LoadExtensionSchemaUpdates": [
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback",
-			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceConfigFilesMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceCleanUpDeletedUsersBlocksMaintenanceScript::callback"
 		],
 		"ChameleonSkinTemplateOutputPageBeforeExec": [
