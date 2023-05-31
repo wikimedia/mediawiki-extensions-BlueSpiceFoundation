@@ -4,6 +4,7 @@
 			"2nd-player",
 			"Aefgh39622",
 			"Afaz",
+			"Anonymoususer12321",
 			"Otokoume",
 			"Reiwa period",
 			"Shirayuki",
@@ -110,5 +111,6 @@
 	"bs-pref-imageextensions-help": "wiki にアップロードできる画像ファイルの種類。可能な Web 形式: gif、png、jpg、jpeg。その他の画像形式: tiff、bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "構成ファイル$1を書き込めませんでした!",
 	"bs-pref-logopath-help": "ロゴは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。",
-	"bs-pref-faviconpath-help": "ファビコンは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。ファビコンのファイル拡張子は .ico です。"
+	"bs-pref-faviconpath-help": "ファビコンは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。ファビコンのファイル拡張子は .ico です。",
+	"bs-exttype-bluespice-assets": "BlueSpiceアセット"
 }
