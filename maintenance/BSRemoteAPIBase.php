@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 require_once __DIR__ . '/BSMaintenance.php';
 
 class BSRemoteAPIBase extends BSMaintenance {
@@ -21,7 +23,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 		);
 		$this->addOption(
 			'p',
-			'The users password for API login. If not provided as argument you will be promted for it',
+			'The users password for API login. If not provided as argument you will be prompted for it',
 			false,
 			true
 		);
@@ -31,7 +33,6 @@ class BSRemoteAPIBase extends BSMaintenance {
 	protected $username = '';
 	protected $password = '';
 	protected $config = '';
-	protected $configArray = null;
 	protected $cookieJar = null;
 	protected $token = null;
 	protected $edittoken = null;
@@ -76,16 +77,12 @@ class BSRemoteAPIBase extends BSMaintenance {
 		if ( $this->token !== null ) {
 			$options['postData']['lgtoken'] = $this->token;
 		}
-
-		Http::$httpEngine = 'curl';
-		$req = MWHttpRequest::factory( $this->apiUrl, $options );
-
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()->create( $this->apiUrl, $options );
 		if ( $this->cookieJar !== null ) {
 			$req->setCookieJar( $this->cookieJar );
 		}
 
 		$status = $req->execute();
-
 		if ( $status->isOK() ) {
 			$response = FormatJson::decode( $req->getContent() );
 
@@ -117,8 +114,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 			'postData' => $aOptions
 		];
 
-		Http::$httpEngine = 'curl';
-		$request = MWHttpRequest::factory( $this->apiUrl, $options );
+		$request = MediaWikiServices::getInstance()->getHttpRequestFactory()->create( $this->apiUrl, $options );
 		$request->setCookieJar( $this->cookieJar );
 
 		return $request;
@@ -136,8 +132,7 @@ class BSRemoteAPIBase extends BSMaintenance {
 			'type' => 'csrf',
 		];
 
-		Http::$httpEngine = 'curl';
-		$req = MWHttpRequest::factory(
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()->create(
 			wfAppendQuery( $this->apiUrl, $query )
 		);
 		$req->setCookieJar( $this->cookieJar );
