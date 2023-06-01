@@ -4,6 +4,7 @@
 			"Csega",
 			"Krisztina",
 			"Misibacsi",
+			"Tacsipacsi",
 			"Wolf Rex"
 		]
 	},
@@ -15,13 +16,13 @@
 	"bs-extended-search-textfield-defaultvalue": "Keresés...",
 	"bs-extended-search-textfield-tooltip": "Keresés a wikin",
 	"bs-now": "most",
-	"bs-email-footer": "Ezt egy $1 által generált automatikus üzenetet. Kérem ne válaszoljon erre az e-mailre.",
+	"bs-email-footer": "Ez egy automatikus üzenet. Kérjük, ne válaszolj rá.",
 	"bs-userpagesettings-legend": "Felhasználói beállítások",
 	"bs-userpreferences-link-text": "További felhasználói beállítások",
 	"bs-userpreferences-link-title": "Személyes felhasználói beállítások megjelenítése",
 	"bs-exception-view-heading": "Hiba történt",
 	"bs-exception-view-text": "A kérés feldolgozása során a következő hiba történt:",
-	"bs-exception-view-admin-hint": "Kérjük, forduljon a rendszergazdához.",
+	"bs-exception-view-admin-hint": "Kérjük, fordulj a rendszergazdához.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Hiba részleteinek megjelenítése",
 	"bs-viewtagerrorlist-legend": "$1 - Hiba",
 	"bs-readonly": "Az adatbázisa ideiglenesen zárolt (valószínűleg adatbázis-karbantartás miatt). A zárolás időtartama alatt új adat létrehozása vagy módosítása nem lehetséges. Az a rendszer-adminisztrátor, aki zárolta az adatbázist, az alábbi indoklást adta: $1",
