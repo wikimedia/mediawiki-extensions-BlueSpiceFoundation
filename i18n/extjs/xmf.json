@@ -5,10 +5,15 @@
 			"Narazeni"
 		]
 	},
+	"bs-extjs-ok": "ჯგირი",
+	"bs-extjs-cancel": "გოუქვაფა",
 	"bs-extjs-label-page": "ხასჷლა",
 	"bs-extjs-titlecombo-newpagehint": "ხასჷლა ვა რე!",
 	"bs-extjs-filter-bool-yes": "ქო",
 	"bs-extjs-filter-bool-no": "ვარი",
 	"bs-extjs-title-success": "წუმოძინელო",
-	"bs-extjs-pageexport-success": "წუმოძინელი ექსპორტი"
+	"bs-extjs-categoryboxselect-emptytext": "კატეგორიაშ გეძინა",
+	"bs-extjs-categorytree-title": "კატეგორიეფი",
+	"bs-extjs-pageexport-success": "წუმოძინელი ექსპორტი",
+	"bs-extjs-tools-trigger-text": "ხეჭკუდეფი"
 }

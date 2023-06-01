@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-filerepo-labelupload": "Feltöltés",
+	"bs-filerepo-labelfilter": "Szűrő",
+	"bs-filerepo-headerfilename": "Fájlnév",
+	"bs-filerepo-headerfilesize": "Méret",
+	"bs-filerepo-headerpagecategories": "Kategóriák",
+	"bs-filerepo-headerfilewidth": "Szélesség",
+	"bs-filerepo-headerfileheight": "Magasság",
+	"bs-filerepo-headerfilemimetype": "MIME-típus",
+	"bs-filerepo-headerfileusertext": "Felhasználó",
+	"bs-filerepo-headerfileextension": "Kiterjesztés",
+	"bs-filerepo-headerfiletimestamp": "Feltöltve",
+	"bs-filerepo-headerfilemediatype": "Médiatípus",
+	"bs-filerepo-headerfiledescription": "Leírás",
+	"bs-filerepo-headerfilethumbnail": "Bélyegkép",
+	"bs-filerepo-yes": "Igen",
+	"bs-filerepo-no": "Nem",
+	"bs-filerepo-pagesize": "Bejegyzések oldalanként"
+}
