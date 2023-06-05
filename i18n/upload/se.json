@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
-	"bs-upload-uploaddialogtitle": "Lasit fiilla",
+	"bs-upload-uploaddialogtitle": "Vurke fiilla",
 	"bs-upload-uploadbuttontext": "Bláđe",
 	"bs-upload-uploadfilefieldlabel": "Fiilanamma",
 	"bs-upload-license": "Liseansa",
