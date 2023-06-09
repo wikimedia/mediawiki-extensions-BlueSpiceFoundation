@@ -69,7 +69,7 @@
 	"bs-filesystemhelper-folder-rename-error": "Mape <code>$1</code> ni bilo mogoče preimenovati v <code>$2</code>.",
 	"bs-filesystemhelper-upload-err-code": "Datoteke ni bilo mogoče naložiti: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Datoteka nima zahtevane pripone: $1.",
-	"bs-filesystemhelper-upload-unsupported-type": "Ta tip datoteke ni podprt.",
+	"bs-filesystemhelper-upload-unsupported-type": "Ta vrsta datotek ni podprta.",
 	"bs-filesystemhelper-save-base64-error": "Datoteke ni bilo mogoče shraniti.",
 	"bs-filesystemhelper-upload-base64-error": "Datoteke ni bilo mogoče naložiti.",
 	"bs-filesystemhelper-upload-local-error-stash-file": "Datoteke ni bilo mogoče premakniti v zalogo za nalaganje.",
