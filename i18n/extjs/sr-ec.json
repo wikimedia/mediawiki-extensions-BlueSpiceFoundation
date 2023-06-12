@@ -67,7 +67,7 @@
 	"bs-extjs-pageexport-general-error": "Грешка при извозу",
 	"bs-extjs-pageexport-pagecollection-prefix": "Збирка страница",
 	"bs-pagecollection-prefix": "Збирка страница",
-	"bs-extjs-pageexport-success": "Извоз је успешно урађен",
+	"bs-extjs-pageexport-success": "Успешан извоз",
 	"bs-extjs-pageexport-success-text": "Збирка страница је извезена у „$1”",
 	"bs-extjs-pageexport-required-text": "Списак страница не може бити празан и најмање једна страница мора бити означена",
 	"bs-extjs-export-search-summary-text": "Генерисао PageExport",
