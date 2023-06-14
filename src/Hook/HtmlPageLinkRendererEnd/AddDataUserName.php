@@ -44,7 +44,7 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		// $text = "<bdi>WikiSysop</bdi>" - we must clean it for comparison
 		$bdiWrapped = strpos( $text, '<bdi>' ) === 0;
 		$text = strip_tags( $text );
-		if ( $user->getName() === $text ) {
+		if ( $user->getName() === $text && $this->getConfig()->get( 'UseRealNameForUserLinks' ) ) {
 			$this->text =
 				$this->getServices()->getService( 'BSUtilityFactory' )->getUserHelper(
 					$user
