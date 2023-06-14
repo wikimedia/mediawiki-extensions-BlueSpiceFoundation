@@ -847,6 +847,11 @@
 			],
 			"public": false,
 			"value": []
+		},
+		"UseRealNameForUserLinks": {
+			"description": "Replace the user name with the real name in user links",
+			"public": true,
+			"value": true
 		}
 	},
 	"ConfigRegistry": {
