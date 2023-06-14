@@ -59,6 +59,14 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		$config = $this->getMockBuilder( '\HashConfig' )
 			->disableOriginalConstructor()
 			->getMock();
+		$config->method( 'get' )->willReturnCallback( static function ( $key ) {
+			switch ( $key ) {
+				case 'UseRealNameForUserLinks':
+					return true;
+				default:
+					return null;
+			}
+		} );
 
 		$linkRenderer = $services->getLinkRenderer();
 		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
@@ -104,6 +112,14 @@ class AddDataUserNameTest extends \MediaWikiTestCase {
 		$config = $this->getMockBuilder( '\HashConfig' )
 			->disableOriginalConstructor()
 			->getMock();
+		$config->method( 'get' )->willReturnCallback( static function ( $key ) {
+			switch ( $key ) {
+				case 'UseRealNameForUserLinks':
+					return false;
+				default:
+					return null;
+			}
+		} );
 
 		$linkRenderer = $services->getLinkRenderer();
 		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
