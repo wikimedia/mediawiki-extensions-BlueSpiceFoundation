@@ -19,7 +19,7 @@
 	"bs-upload-error": "Napaka",
 	"bs-upload-descfilelabel": "Opis",
 	"bs-upload-error-long": "Napaka pri nalaganju",
-	"bs-upload-filetypenotsupported": "Ta tip datoteke ni podprt",
+	"bs-upload-filetypenotsupported": "Ta vrsta datotek ni podprta",
 	"bs-upload-details": "Podrobnosti",
 	"bs-upload-uploadwarningdialog-title": "Naloži datoteko: Opozorila",
 	"bs-upload-uploadwarningdialog-intro": "Pri poskusu nalaganja datoteke so se pojavila naslednja opozorila",
