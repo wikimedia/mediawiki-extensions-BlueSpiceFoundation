@@ -6,5 +6,10 @@
 		]
 	},
 	"bs-extjs-categoryboxselect-emptytext": "Категория кошуу",
-	"bs-extjs-flyout-tab-grid-label": "Чоо-жайы"
+	"bs-extjs-flyout-tab-grid-label": "Чоо-жайы",
+	"bs-extjs-cancel": "Жокко чыгаруу",
+	"bs-extjs-yes": "Ооба",
+	"bs-extjs-no": "Жок",
+	"bs-extjs-filter-bool-yes": "ооба",
+	"bs-extjs-pageexport-list-format-link-label": "Шилтеме"
 }
