@@ -5,6 +5,5 @@
 		]
 	},
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Kategorija invalida|Kategoriji invalidi}}: $1",
-	"apihelp-bs-category-treestore-description": "Elenka s-sottokategoriji ta' kategorija speċifika",
 	"apihelp-bs-category-treestore-summary": "Lista ta' sotto-kategoriji f'kategoriija speċifika"
 }

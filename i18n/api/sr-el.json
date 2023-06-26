@@ -2,7 +2,6 @@
 	"@metadata": {
 		"authors": []
 	},
-	"apihelp-bs-wikipage-tasks-description": "Pruža važne operacije za stranice na vikiju",
 	"apihelp-bs-wikipage-tasks-summary": "Pruža važne operacije za stranice na vikiju",
 	"apihelp-bs-store-param-limit": "Broj rezultata za vraćanje",
 	"apihelp-bs-task-param-task": "Zadatak koji bi trebao biti pokrenut",
@@ -14,15 +13,12 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nemate dozvolu da uređujete stranicu „$1”.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Nevažeća|Nevažeće}} {{PLURAL:$2|kategorija|kategorije}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategorije su uspešno postavljene.",
-	"apihelp-bs-wikisubpage-treestore-description": "Izlistava spisak specifične vikistranice",
 	"apihelp-bs-wikisubpage-treestore-summary": "Izlistava spisak specifične viki stranice",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Prefiksiran naziv vikistranice",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Spisak opcija",
-	"apihelp-bs-upload-license-store-description": "Izlistava spisak svih dostupnih licenci za otpremanje datoteka",
 	"apihelp-bs-upload-license-store-summary": "Izlistava spisak svih dostupnih licenci za otpremanje datoteka",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Nije vam dozvoljeno da čitate stranicu „$1”.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Nema kategorija za uklanjanje.",
-	"apihelp-bs-category-treestore-description": "Izlistava podkategorije specifične kategorije",
 	"apihelp-bs-category-treestore-summary": "Izlistava podkategorije specifične kategorije",
 	"apihelp-bs-category-treestore-param-node": "Putanja kategorija razdvojene kosom crtom",
 	"bs-api-task-taskdata-help": "[$1 Šema], [$2 primeri parametara]",

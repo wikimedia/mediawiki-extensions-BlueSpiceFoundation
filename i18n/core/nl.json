@@ -110,5 +110,6 @@
 	"bs-pref-imageextensions-help": "Afbeeldingstypes die naar de wiki kunnen worden geupload. Mogelijke webformaten: gif, png, jpg, jpeg. Andere afbeeldingsformaten: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Het configuratiebestand $1 kon niet worden geschreven.",
 	"bs-pref-logopath-help": "Het logo moet worden geplaatst in de map /w/images van uw installatie. Als u deze plaatst in de map /w/skins van uw BlueSpice installatie, kan deze mogelijk worden overschreven bij een upgrade.",
-	"bs-pref-faviconpath-help": "De favicon moet worden geplaatst in de map /w/images van uw installatie. Als u deze plaatst in de map /w/skins van uw BlueSpice installatie, kan deze mogelijk worden overschreven bij een upgrade. Favicons hebben de bestandsextensie .ico."
+	"bs-pref-faviconpath-help": "De favicon moet worden geplaatst in de map /w/images van uw installatie. Als u deze plaatst in de map /w/skins van uw BlueSpice installatie, kan deze mogelijk worden overschreven bij een upgrade. Favicons hebben de bestandsextensie .ico.",
+	"bs-exttype-bluespice-assets": "BlueSpice-activa"
 }

@@ -6,10 +6,6 @@
 			"Nuodas"
 		]
 	},
-	"apihelp-bs-user-store-description": "Nurodo visus vartotojus iš duomenų bazės. Leidžia rūšiuoti, filtruoti ir numeruoti. Įterpia ExtJS Store parametrus.",
-	"apihelp-bs-category-store-description": "Nurodo visas kategorijas. Leidžia rūšiuoti, filtruoti ir numeruoti. Įterpia ExtJS Store parametrus.",
-	"apihelp-bs-adminuser-store-description": "Nurodo visus vartotojus iš duomenų bazės su papildomais jautriais duomenimis. Leidžia rūšiuoti, filtruoti ir numeruoti. Įterpia ExtJS Store parametrus.",
-	"apihelp-bs-group-store-description": "Nurodo visas grupes, išskyrus $wgImplicitGroups. Leidžia rūšiuoti, filtruoti ir numeruoti. Įterpia ExtJS Store parametrus.",
 	"apihelp-bs-store-param-limit": "Gražinamų rezultatų skaičius",
 	"apihelp-bs-store-param-format": "Produkto formatas (tik JSON arba formatuotas JSON)",
 	"apihelp-bs-task-param-task": "Užduotis, kuri turėtų būti vykdoma",
@@ -21,10 +17,7 @@
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Jūs negalite redaguoti puslapio „$1“.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Negalima kategorija|Negalimos kategorijos}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategorijos buvo sėkmingai nustatytos.",
-	"apihelp-bs-wikipage-store-description": "Nurodo visus viki puslapius. Leidžia rūšiuoti, filtruoti ir numeruoti. Įterpia ExtJS Store parametrus.",
-	"apihelp-bs-ping-tasks-description": "Pink užduotis, kuri pateikia nenutrūkstamus duomenų mainus",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Pasirinkimų sąrašas",
-	"apihelp-bs-upload-license-store-description": "Pateikia visas galimas licencijas failo įkėlimui",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Jūs negalite skaityti puslapio '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Nėra kategorijų šalinimui",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parametrų pavyzdžiai]",
