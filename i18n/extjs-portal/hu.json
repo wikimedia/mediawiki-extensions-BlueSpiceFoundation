@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Krisztina",
 			"Wolf Rex"
 		]
 	},
@@ -9,5 +10,7 @@
 	"bs-extjs-portal-timespan": "Idővonal",
 	"bs-extjs-portal-timespan-week": "Hét",
 	"bs-extjs-portal-timespan-month": "Hónap",
-	"bs-extjs-portal-timespan-alltime": "Összes szerkesztés"
+	"bs-extjs-portal-timespan-alltime": "Mindig",
+	"bs-extjs-portal-config": "Portlet konfigurálása:",
+	"bs-extjs-portal-title": "Portlet címe"
 }

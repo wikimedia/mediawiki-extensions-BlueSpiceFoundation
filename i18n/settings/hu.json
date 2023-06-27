@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-setting-path-feature": "Funkció",
+	"bs-setting-path-extension": "Kiterjesztés",
+	"bs-setting-path-package": "Csomag",
+	"bs-setting-path-system": "Rendszer",
+	"bs-setting-path-dataanalysis": "Adatelemzés",
+	"bs-setting-path-editor": "Szerkesztő",
+	"bs-setting-path-search": "Keresés és navigáció",
+	"bs-setting-path-personalisation": "Személyre szabás",
+	"bs-setting-path-skinning": "Felületek",
+	"bs-setting-path-customizing": "Testreszabás",
+	"bs-setting-path-contentstructuring": "Tartalom struktúrálása",
+	"bs-setting-path-communication": "Kommunikáció",
+	"bs-setting-path-administration": "Adminisztráció",
+	"bs-setting-path-qualityassurance": "Minőségbiztosítás",
+	"bs-setting-path-export": "Exportálás"
+}

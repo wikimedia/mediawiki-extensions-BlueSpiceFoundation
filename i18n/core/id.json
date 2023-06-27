@@ -8,7 +8,8 @@
 			"Palladin911",
 			"Raynasution",
 			"Robfirstname",
-			"Sumbukompor"
+			"Sumbukompor",
+			"Veracious"
 		]
 	},
 	"bs-ns_main": "(Halaman)",
@@ -80,5 +81,8 @@
 	"action-wikiadmin": "menggunakan tugas administratif yang berpotensi berbahaya, seperti mengelola pengguna, izin, konfigurasi global (ekstensi BlueSpice)",
 	"right-wikiadmin": "Gunakan tugas administratif yang berpotensi berbahaya, seperti mengelola pengguna, izin, konfigurasi global (ekstensi BlueSpice)",
 	"bs-notifications-agent-anon": "pengguna anonim",
-	"protect-level-editor": "Hanya izinkan editor dan administrator"
+	"protect-level-editor": "Hanya izinkan editor dan administrator",
+	"bluespicefoundation-desc": "Menyiapkan kegiatan MediaWiki",
+	"bs-pref-anonuserimage": "Avatar pengguna anonim:",
+	"bs-pref-deleteduserimage": "Avatar pengguna yang dihapus:"
 }
