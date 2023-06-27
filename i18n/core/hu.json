@@ -16,7 +16,7 @@
 	"bs-extended-search-textfield-defaultvalue": "Keresés...",
 	"bs-extended-search-textfield-tooltip": "Keresés a wikin",
 	"bs-now": "most",
-	"bs-email-footer": "Ez egy automatikus üzenet. Kérjük, ne válaszolj rá.",
+	"bs-email-footer": "Ezt az üzenetet automatikusan generálta $1 . Kérjük ne válaszolj erre az e-mailre.",
 	"bs-userpagesettings-legend": "Felhasználói beállítások",
 	"bs-userpreferences-link-text": "További felhasználói beállítások",
 	"bs-userpreferences-link-title": "Személyes felhasználói beállítások megjelenítése",
@@ -33,7 +33,7 @@
 	"bs-filesystemhelper-save-base64-error": "A fájl mentése nem sikerült.",
 	"bs-filesystemhelper-upload-base64-error": "Nem sikerült a fájl feltöltése.",
 	"bs-navigation-support": "Támogatás",
-	"bs-navigation-contact": "Kapcsolatfelvétel",
+	"bs-navigation-contact": "Kapcsolat",
 	"bs-imagepage-download-text": "Letöltés",
 	"bs-ns": "Névtér",
 	"bs-from-something": "(innen: $1)",
@@ -81,5 +81,6 @@
 	"bs-navigation-instructions": "Útmutató",
 	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "névtelen felhasználó",
-	"protect-level-editor": "Csak szerkesztőknek és adminisztrátoroknak engedélyezett"
+	"protect-level-editor": "Csak szerkesztőknek és adminisztrátoroknak engedélyezett",
+	"bs-two-units-ago": "$1 és $2 ezelőtt"
 }
