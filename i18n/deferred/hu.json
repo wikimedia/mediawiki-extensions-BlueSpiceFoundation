@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Krisztina",
 			"Wolf Rex"
 		]
 	},
@@ -10,8 +11,14 @@
 	"bs-deferred-action-status-error": "Sikertelen.",
 	"bs-deferred-action-apicopypage-description": "\"$1\" másolása ide: \"$2\"",
 	"bs-deferred-action-apieditpage-description": "\"$1\" szerkesztése.",
+	"bs-deferred-batch-title": "Kötegelt feldolgozás",
 	"bs-deferred-batch-progress-desc": "Folyamat",
 	"bs-deferred-batch-actions": "Műveletek",
 	"bs-deferred-batch-description": "Leírás",
-	"bs-deferred-batch-status": "Állapot"
+	"bs-deferred-batch-status": "Állapot",
+	"bs-deferred-action-apiaddcategories-description": "Kategóriák hozzáadása ehhez:'$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Kategóriák eltávolítása innen:'$1'.",
+	"bs-deferred-action-apisetcategories-description": "Kategóriák beállítása a következőn: '$1'.",
+	"bs-deferred-action-apimovepage-description": "A \"$1\" áthelyezése ide: \"$2\"",
+	"bs-deferred-action-apideletepage-description": "\"$1\" törlése"
 }

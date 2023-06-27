@@ -1,10 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
+			"Krisztina",
 			"Wolf Rex"
 		]
 	},
 	"apihelp-bs-store-param-limit": "Megjelenítendő találatok száma",
+	"apihelp-bs-task-param-format": "Az eredmény formátuma",
+	"bs-wikipage-tasks-error-page-not-valid": "A megadott lap nem érvényes.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Megváltoztatott kategóriák.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheted a/az \"$1\" lapot.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Érvénytelen {{PLURAL:$2|kategória|kategóriák}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Kategóriák sikeresen beállítva."
+	"bs-wikipage-tasks-setcategories-success": "Kategóriák sikeresen beállítva.",
+	"apihelp-bs-wikisubpage-treestore-summary": "Egy adott wikilap allapjait listázza",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Opciók listája",
+	"bs-api-task-taskData-page-id": "Egy meglévő wikilap azonosítója ID",
+	"bs-api-task-taskData-page-title": "Egy wiki lap érvényes címe",
+	"apihelp-bs-js-var-config-param-format": "Az eredmény formátuma",
+	"apihelp-bs-categorylinks-store-param-page-id": "A lap azonosítója ID",
+	"apihelp-bs-templatelinks-store-param-page-id": "A lap azonosítója ID"
 }
