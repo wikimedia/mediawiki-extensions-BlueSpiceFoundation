@@ -16,7 +16,7 @@
 	"bs-extended-search-textfield-defaultvalue": "Keresés...",
 	"bs-extended-search-textfield-tooltip": "Keresés a wikin",
 	"bs-now": "most",
-	"bs-email-footer": "Ezt az üzenetet automatikusan generálta $1 . Kérjük ne válaszolj erre az e-mailre.",
+	"bs-email-footer": "Ezt az üzenetet automatikusan generálta a(z) $1. Kérjük, ne válaszolj rá.",
 	"bs-userpagesettings-legend": "Felhasználói beállítások",
 	"bs-userpreferences-link-text": "További felhasználói beállítások",
 	"bs-userpreferences-link-title": "Személyes felhasználói beállítások megjelenítése",
