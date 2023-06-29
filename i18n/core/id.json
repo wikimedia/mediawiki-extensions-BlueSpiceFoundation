@@ -8,9 +8,11 @@
 			"Palladin911",
 			"Raynasution",
 			"Robfirstname",
-			"Sumbukompor"
+			"Sumbukompor",
+			"Veracious"
 		]
 	},
+	"bluespicefoundation-desc": "Menyiapkan kegiatan MediaWiki",
 	"bs-ns_main": "(Halaman)",
 	"bs-ns_all": "(semua)",
 	"bs-tab_navigation": "Navigasi",
@@ -69,6 +71,8 @@
 	"bs-from-something": "(dari $1)",
 	"bs-pref-fileextensions": "Jenis berkas yang diizinkan:",
 	"bs-pref-imageextensions": "Jenis gambar yang diizinkan:",
+	"bs-pref-anonuserimage": "Avatar pengguna anonim:",
+	"bs-pref-deleteduserimage": "Avatar pengguna yang dihapus:",
 	"bs-parser-error-invalid-namespace": "Ruang nama tidak sah: $1",
 	"bs-parser-error-invalid-title": "Judul tidak sah: $1",
 	"bs-validator-error-namespace-does-not-exist": "Ruang nama tidak ada: $1",
