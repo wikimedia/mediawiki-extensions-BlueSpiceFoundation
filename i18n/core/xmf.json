@@ -31,7 +31,7 @@
 	"bs-secs-duration": "{{PLURAL:$1|ართ წამიშ|$1 წამიშ}}",
 	"bs-two-units-ago": "$1 დო $2 კინოხ",
 	"bs-one-unit-ago": "$1 კინოხ",
-	"bs-email-footer": "ათე გინაფა გენერირაფილი რე ავტომატურო $1-შით, ქორათხინთ ვაუგათ ათე ელექტრონულ ნაჭარას.",
+	"bs-email-footer": "ათე გინაფა გენერირაფილი რე ავტომატურო $1-შით, ქორთხინთ ვაუგათ ათე ელექტრონულ ნაჭარას.",
 	"bs-exception-view-stacktrace-toggle-show-text": "ჩილათაშ დეტალეფიშ ძირაფა",
 	"bs-exception-view-stacktrace-toggle-hide-text": "ჩილათაშ დეტალეფიშ ტყობინაფა",
 	"bs-filesystemhelper-file-not-exists": "ფაილი <code>$1</code> ვა რე.",
