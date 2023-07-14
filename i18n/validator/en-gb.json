@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piano1forte2"
+		]
+	},
+	"bs-validator-arg-count-validation-approved": "The attribute 'count' has been successfully validated.",
+	"bs-validator-arg-count-validation-not-approved": "The attribute 'count' could not be validated."
+}
