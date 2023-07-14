@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piano1forte2"
+		]
+	},
+	"bs-deferred-action-apicopypage-description": "Copy '$1' to '$2'.",
+	"bs-deferred-action-apieditpage-description": "Edit '$1'.",
+	"bs-deferred-action-apimovepage-description": "Move '$1' to '$2'.",
+	"bs-deferred-action-apideletepage-description": "Delete '$1'."
+}
