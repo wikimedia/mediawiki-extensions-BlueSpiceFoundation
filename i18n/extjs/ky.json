@@ -12,5 +12,9 @@
 	"bs-extjs-no": "Жок",
 	"bs-extjs-filter-bool-yes": "ооба",
 	"bs-extjs-pageexport-list-format-link-label": "Шилтеме",
-	"bs-extjs-uploading": "Жүктөлүүдө..."
+	"bs-extjs-uploading": "Жүктөлүүдө...",
+	"bs-extjs-save": "Сактоо",
+	"bs-extjs-add": "Кошуу",
+	"bs-extjs-saving": "сакталууда...",
+	"bs-extjs-upload": "Жүктөө"
 }
