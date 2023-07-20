@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Lifeway"
 		]
 	},
-	"bs-extjs-label-user": "Пайдаланыше"
+	"bs-extjs-save": "Аралаш",
+	"bs-extjs-label-user": "Ушнышо"
 }
