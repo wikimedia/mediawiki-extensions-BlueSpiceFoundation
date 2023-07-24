@@ -16,5 +16,8 @@
 	"bs-extjs-save": "Сактоо",
 	"bs-extjs-add": "Кошуу",
 	"bs-extjs-saving": "сакталууда...",
-	"bs-extjs-upload": "Жүктөө"
+	"bs-extjs-upload": "Жүктөө",
+	"bs-extjs-confirm": "Ырастоо",
+	"bs-extjs-loading": "Жүктөлүүдө...",
+	"bs-extjs-close": "Жабуу"
 }
