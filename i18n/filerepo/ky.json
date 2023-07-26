@@ -6,6 +6,7 @@
 	},
 	"bs-filerepo-labelupload": "Жүктөө",
 	"bs-filerepo-headerfiletimestamp": "Жүктөлдү",
+	"bs-filerepo-headerfiledescription": "Сыпаттама",
 	"bs-filerepo-yes": "Ооба",
 	"bs-filerepo-no": "Жок"
 }
