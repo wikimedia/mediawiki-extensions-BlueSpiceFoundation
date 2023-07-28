@@ -8,5 +8,6 @@
 	"bs-filerepo-no": "Жок",
 	"bs-filerepo-headerfiletimestamp": "Жүктөлдү",
 	"bs-filerepo-labelupload": "Жүктөө",
-	"bs-filerepo-headerfiledescription": "Сыпаттама"
+	"bs-filerepo-headerfiledescription": "Сыпаттама",
+	"bs-filerepo-labelfilter": "Чыпка"
 }
