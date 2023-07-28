@@ -19,5 +19,7 @@
 	"bs-extjs-upload": "Жүктөө",
 	"bs-extjs-confirm": "Ырастоо",
 	"bs-extjs-loading": "Жүктөлүүдө...",
-	"bs-extjs-close": "Жабуу"
+	"bs-extjs-close": "Жабуу",
+	"bs-extjs-filters": "Чыпкалар",
+	"bs-extjs-filter-date-filter": "Чыпка"
 }
