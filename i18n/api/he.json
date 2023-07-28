@@ -32,7 +32,7 @@
 	"apihelp-bs-store-param-format": "תסדיר הפלט (רק JSON או JSON מסודר)",
 	"apihelp-bs-store-param-options": "אפשרויות שרירותיות להגדרת האחסון בתסדיר של מחרוזת JSON",
 	"apihelp-bs-store-param-context": "מחרוזת JSON מקודדת עם נתוני הקשר בשביל האחסון",
-	"apihelp-bs-task-param-task": "המשימה שאמורה לפעול",
+	"apihelp-bs-task-param-task": "המשימה שאמורה להתבצע",
 	"apihelp-bs-task-param-taskdata": "מחרוזת JSON מקודדת עם נתונים שרירותיים עבור המשימה",
 	"apihelp-bs-task-param-context": "מחרוזת JSON מקודדת עם נתוני הקשר בשביל משימה",
 	"apihelp-bs-task-param-format": "תסדיר התוצאה.",

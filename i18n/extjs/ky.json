@@ -16,8 +16,10 @@
 	"bs-extjs-close": "Жабуу",
 	"bs-extjs-upload": "Жүктөө",
 	"bs-extjs-uploading": "Жүктөлүүдө...",
+	"bs-extjs-filters": "Чыпкалар",
 	"bs-extjs-filter-bool-yes": "ооба",
 	"bs-extjs-categoryboxselect-emptytext": "Категория кошуу",
+	"bs-extjs-filter-date-filter": "Чыпка",
 	"bs-extjs-pageexport-list-format-link-label": "Шилтеме",
 	"bs-extjs-flyout-tab-grid-label": "Чоо-жайы"
 }
