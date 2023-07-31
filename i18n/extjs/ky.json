@@ -21,5 +21,6 @@
 	"bs-extjs-loading": "Жүктөлүүдө...",
 	"bs-extjs-close": "Жабуу",
 	"bs-extjs-filters": "Чыпкалар",
-	"bs-extjs-filter-date-filter": "Чыпка"
+	"bs-extjs-filter-date-filter": "Чыпка",
+	"bs-extjs-ok": "Макул"
 }
