@@ -10,5 +10,6 @@
 	"bs-userbar_loginswitch_login": "Кирүү",
 	"bs-graphicallist-action-close": "Жабуу",
 	"bs-export-menu-print-text": "Басып чыгаруу",
-	"bs-graphicallist-action-list": "Тизме"
+	"bs-graphicallist-action-list": "Тизме",
+	"bs-days-duration": "{{PLURAL:$1|бир күн|$1 күн}}"
 }
