@@ -4,7 +4,7 @@ Ext.define( 'BS.portal.ChartPortlet', {
 	height: 300,
 
 	initComponent: function () {
-		this.beforeInitCompontent();
+		this.beforeInitComponent();
 		this.ctMainConfig = this.ctMainConfig || this.makeDummyConfig();
 
 		this.ctMain = new Ext.chart.CartesianChart( {
