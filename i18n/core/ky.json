@@ -14,5 +14,6 @@
 	"bs-days-duration": "{{PLURAL:$1|бир күн|$1 күн}}",
 	"bs-years-duration": "{{PLURAL:$1|бир жыл|$1 жыл}}",
 	"bs-months-duration": "{{PLURAL:$1|бир ай|$1 ай}}",
-	"bs-weeks-duration": "{{PLURAL:$1|бир апта|$1 апта}}"
+	"bs-weeks-duration": "{{PLURAL:$1|бир апта|$1 апта}}",
+	"bs-navigation-instructions": "Нускамалар"
 }
