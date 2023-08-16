@@ -3,6 +3,7 @@
 		"authors": [
 			"Sagan",
 			"Азат Хәлилов",
+			"З. ӘЙЛЕ",
 			"Рустам Нурыев"
 		]
 	},
@@ -20,7 +21,7 @@
 	"bs-extjs-error": "Хата",
 	"bs-extjs-confirm": "Раҫларға",
 	"bs-extjs-loading": "Тейәү...",
-	"bs-extjs-pageSize": "Бит ҙурлығы",
+	"bs-extjs-pageSize": "Бит яҙмаларын үҙгәртеү билдәһе",
 	"bs-extjs-actions-column-header": "Ғәмәлдәр",
 	"bs-extjs-warning": "Иғтибар",
 	"bs-extjs-saving": "Һаҡлана",
