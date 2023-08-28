@@ -76,7 +76,7 @@
 	"bluespicefoundation-desc": "Rende MediaWiki preste pro le interprisa",
 	"bs-lockdown-groups-permissionerror": "Le action \"$1\" non es disponibile pro le sequente {{PLURAL:$2|ration|rationes}}: $3",
 	"bs-tag-input-desc": "Valor del contento del elemento",
-	"bs-tag-param-desc": "Valor del attributo '$1' del elemento",
+	"bs-tag-param-desc": "Valor del attributo ‘$1’ del elemento",
 	"bs-parser-error-invalid-namespace": "Spatio de nomines non valide: $1",
 	"bs-parser-error-invalid-title": "Titulo invalide: $1",
 	"bs-validator-error-namespace-does-not-exist": "Spatio de nomines non existe: $1",
