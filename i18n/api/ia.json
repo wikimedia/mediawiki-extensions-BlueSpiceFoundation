@@ -41,7 +41,7 @@
 	"apihelp-bs-wikisubpage-treestore-param-node": "Le titulo con prefixo del pagina wiki",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lista de optiones",
 	"apihelp-bs-upload-license-store-summary": "Lista tote le licentias disponibile pro le incargamento de un file",
-	"bs-wikipage-tasks-error-page-read-not-allowed": "Tu non ha le permission de leger le pagina \"$1\".",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Tu non ha le permission de leger le pagina ‘$1’.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Il non ha categorias a remover",
 	"apihelp-bs-category-treestore-summary": "Lista le subcategorias de un categoria specific",
 	"apihelp-bs-category-treestore-param-node": "Un cammino de categorias separate per barras oblique",

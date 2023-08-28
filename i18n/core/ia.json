@@ -72,7 +72,7 @@
 	"bs-pref-bspinginterval": "Intervallo de ping (in secundas):",
 	"bs-pref-testmode": "Activar le modo de test",
 	"bs-tag-input-desc": "Valor del contento del elemento",
-	"bs-tag-param-desc": "Valor del attributo '$1' del elemento",
+	"bs-tag-param-desc": "Valor del attributo ‘$1’ del elemento",
 	"bs-parser-error-invalid-namespace": "Spatio de nomines non valide: $1",
 	"bs-parser-error-invalid-title": "Titulo invalide: $1",
 	"bs-validator-error-namespace-does-not-exist": "Spatio de nomines non existe: $1",
