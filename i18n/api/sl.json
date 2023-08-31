@@ -38,7 +38,7 @@
 	"apihelp-bs-task-param-taskdata": "Objekt, kodiran z nizom JSON, s poljubnimi podatki za nalogo",
 	"apihelp-bs-task-param-context": "Objekt, kodiran z nizom JSON, s kontekstnimi podatki za nalogo",
 	"apihelp-bs-task-param-format": "Oblika rezultata",
-	"apihelp-bs-task-param-token": "Žeton, potreben za dostop do modula API",
+	"apihelp-bs-task-param-token": "Žeton, potreben za dostop do API-modula",
 	"bs-wikipage-tasks-error-contentmodel": "Z vsebinskim modelom podane strani ni bilo mogoče izvesti naloge.",
 	"bs-wikipage-tasks-error-page-not-valid": "Podana stran ni veljavna.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Spremenjene kategorije.",
