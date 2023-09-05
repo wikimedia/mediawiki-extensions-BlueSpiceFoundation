@@ -22,7 +22,7 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 			return true;
 		}
 		$title = \Title::newFromLinkTarget( $this->target );
-		if ( !$title ) {
+		if ( !$title || !$title->canExist() ) {
 			return true;
 		}
 		if ( $title->isSubpage() ) {

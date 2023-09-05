@@ -82,8 +82,13 @@ Ext.define( 'BS.model.File', {
 		{ name: 'file_user_display_text', type: 'string', defaultValue: '' },
 		{ name: 'file_user_link', type: 'string', defaultValue: '', convert: function ( value, record ) {
 			// This is not being calculated on the serverside for performance reasons
-			var title = new mw.Title( record.get( 'file_user_text' ), bs.ns.NS_USER ),
-				icon = mw.html.element( 'span', { class: 'bs-icon-user' }, '' ),
+			try {
+				var title = new mw.Title( record.get( 'file_user_text' ), bs.ns.NS_USER );
+			} catch ( error ) {
+				return record.get( 'file_user_text' );
+			}
+
+			var icon = mw.html.element( 'span', { class: 'bs-icon-user' }, '' ),
 				link = mw.html.element(
 					'a',
 					{
