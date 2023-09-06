@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Subir un ficheiro",
@@ -24,5 +25,6 @@
 	"bs-upload-uploadwarningdialog-intro": "Xurdiron os seguintes avisos ó tratar de cargar o ficheiro",
 	"bs-upload-uploadwarningdialog-warning-exists": "Xa existe un ficheiro co nome \"$1\"",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Existe un duplicado|Existen varios duplicados}} deste ficheiro",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso descoñecido con código \"$1\""
+	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso descoñecido con código \"$1\"",
+	"bs-upload-uploadwarningdialog-outro": "Preme \"{{int:bs-extjs-ok}}\" para ignorar as advertencias e subir o ficheiro ou preme \"{{int:bs-extjs-cancel}}\" para volver ao formulario de carga"
 }
