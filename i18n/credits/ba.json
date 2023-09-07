@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sagan",
-			"Азат Хәлилов"
+			"Азат Хәлилов",
+			"З. ӘЙЛЕ"
 		]
 	},
 	"specialcredits": "BlueSpice эшләүселәр",
@@ -11,5 +12,5 @@
 	"bs-credits-contributors": "Авторҙар",
 	"bs-credits-translators": "Тәржемәселәр",
 	"bs-credits-translation": "Тәржемә",
-	"bs-credits-th": "Барлыҡ тәржемәсәләргә рәхмәт $1"
+	"bs-credits-th": "Барлыҡ $1 тәржемәселәренә рәхмәт."
 }

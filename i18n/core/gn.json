@@ -4,5 +4,7 @@
 			"P. S. F. Freitas"
 		]
 	},
-	"bs-days-duration": "{{PLURAL:$1|peteĩ ára|$1 ára}}"
+	"bs-days-duration": "{{PLURAL:$1|peteĩ ára|$1 ára}}",
+	"bs-navigation-contact": "Orejuhutahápe",
+	"bs-export-menu-print-text": "Emonguatia"
 }
