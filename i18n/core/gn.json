@@ -6,5 +6,6 @@
 	},
 	"bs-days-duration": "{{PLURAL:$1|peteĩ ára|$1 ára}}",
 	"bs-navigation-contact": "Orejuhutahápe",
-	"bs-export-menu-print-text": "Emonguatia"
+	"bs-export-menu-print-text": "Emonguatia",
+	"bs-filesystemhelper-upload-unsupported-type": "Ndaikatúi ojehupi marandurenda koichagua."
 }
