@@ -40,6 +40,9 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	private function getSubCategoriesFromPath( $sNode ) {
 		$aNodes = explode( '/', $sNode );
 		$sCatTitle = str_replace( '+', '/', str_replace( ' ', '_', array_pop( $aNodes ) ) );
+		if ( $this->detectRecursion( $aNodes ) ) {
+			return [];
+		}
 
 		$resSubCategories = $this->dbr->select(
 			[ 'page', 'categorylinks' ],
@@ -214,5 +217,17 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		$trackingCategories = MediaWikiServices::getInstance()->getTrackingCategories();
 		$this->trackingCategories = $trackingCategories->getTrackingCategories();
 		return $this->trackingCategories;
+	}
+
+	/**
+	 * @param array $nodes
+	 *
+	 * @return bool
+	 */
+	private function detectRecursion( array $nodes ) {
+		$first = array_pop( $nodes );
+		$second = array_pop( $nodes );
+
+		return $first === $second;
 	}
 }
