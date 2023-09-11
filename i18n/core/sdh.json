@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"TerranBoy"
+		]
+	},
+	"bs-ns_main": "(پەڕەیل)",
+	"bs-ns_all": "(گشت)",
+	"bs-tab_navigation": "ڕێنیشاندەری",
+	"bs-extended-search-textfield-defaultvalue": "مینەکردن..",
+	"bs-extended-search-textfield-tooltip": "مینەکردن لە ویکی",
+	"bs-now": "ئیسە",
+	"bs-userpagesettings-legend": "ڕیکخستنەگان وەکاربەر",
+	"bs-userpreferences-link-text": "ڕیکخستنەگان فێشتر وەکاربەر",
+	"bs-exception-view-heading": "هەڵەێگ ڕۊ دا",
+	"bs-filesystemhelper-save-base64-error": "ئەی پەڕگەیە نیەتۊەنێد زەخیرە بکریەێد.",
+	"bs-filesystemhelper-upload-base64-error": "ئەی پەڕگەیە نیەتۊەنێد باربکریەێد.",
+	"bs-export-menu-print-text": "چاپ",
+	"bs-graphicallist-action-close": "بەسان",
+	"bs-graphicallist-action-list": "پێرست",
+	"bs-graphicallist-action-preview": "پێشدیین"
+}
