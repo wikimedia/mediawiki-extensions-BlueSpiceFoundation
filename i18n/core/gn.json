@@ -7,5 +7,7 @@
 	"bs-days-duration": "{{PLURAL:$1|peteĩ ára|$1 ára}}",
 	"bs-navigation-contact": "Orejuhutahápe",
 	"bs-export-menu-print-text": "Emonguatia",
-	"bs-filesystemhelper-upload-unsupported-type": "Ndaikatúi ojehupi marandurenda koichagua."
+	"bs-filesystemhelper-upload-unsupported-type": "Ndaikatúi ojehupi marandurenda koichagua.",
+	"bs-filesystemhelper-upload-err-code": "Ndaikatúi ojehupi ko marandurenda: $1",
+	"bs-filesystemhelper-upload-base64-error": "Ndaikatúi ojehupi ko marandurenda."
 }
