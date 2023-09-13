@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"André Costa (WMSE)",
 			"Fader",
 			"Jopparn",
 			"Josve05a",
@@ -95,8 +96,8 @@
 	"bs-graphicallist-action-preview": "Förhandsgranska",
 	"bs-bluespice-mediawiki": "BlueSpice-MediaWiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfigurering (BlueSpice tillägg)",
-	"right-wikiadmin": "Använd potentiellt farliga administrativa uppgifter som att hantera användare, rättigheter, global konfiguration (BlueSpice tillägg)",
+	"action-wikiadmin": "använd potentiellt farliga administrativa uppgifter, som att hantera användare, rättigheter, global konfigurering (BlueSpice tillägg)",
+	"right-wikiadmin": "Använd potentiellt farliga administrativa uppgifter, som att hantera användare, rättigheter, global konfiguration (BlueSpice tillägg)",
 	"bs-notifications-agent-anon": "anonym användare",
 	"protect-level-editor": "Tillåt endast redigerare och administratörer",
 	"bs-ping-on-init-desc": "Ska ping-förfrågan skickas omedelbart efter sidladdning?",
