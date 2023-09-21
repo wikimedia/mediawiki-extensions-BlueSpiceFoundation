@@ -64,7 +64,7 @@
 	"apihelp-bs-js-var-config-param-format": "Formato do resultado",
 	"apihelp-bs-categorylinks-store-summary": "Lista todas as categorias de uma página, incluindo um link para a página da categoria e um marcador para categorias explícitas e implícitas.",
 	"apihelp-bs-categorylinks-store-param-page-id": "O id da página da página",
-	"apihelp-bs-templatelinks-store-summary": "Lista todos as predefinições de um link de página inclusive para a predefinição.",
+	"apihelp-bs-templatelinks-store-summary": "Lista todos as predefinições de um link de página, inclusive para a predefinição.",
 	"apihelp-bs-templatelinks-store-param-page-id": "O id da página da página",
 	"apihelp-bs-linker-summary": "Retorna links para páginas geradas pelo Linker",
 	"apihelp-bs-linker-param-linkdescs": "Uma matriz JSON associativa com uma lista de páginas. Cada entrada deve conter o título da página como `target`. Opcionalmente, pode conter `text`, `attribs` e `query`."

@@ -103,5 +103,6 @@
 	"bs-pref-imageextensions-help": "Tipos de arquivos de imagem que podem ser carregados no wiki. Formatos possíveis da web: gif, png, jpg, jpeg. Outros formatos de imagem: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Não foi possível gravar o arquivo de configuração $1!",
 	"bs-pref-logopath-help": "O logotipo deve ser armazenado na pasta /w/images de sua instalação. Se você armazená-lo na pasta /w/skins de sua instalação do BlueSpice, ele poderá ser substituído por uma atualização.",
-	"bs-pref-faviconpath-help": "O favicon deve ser armazenado na pasta /w/images de sua instalação. Se você armazená-lo na pasta /w/skins de sua instalação do BlueSpice, ele poderá ser substituído por uma atualização. Os favicons têm a extensão de arquivo .ico."
+	"bs-pref-faviconpath-help": "O favicon deve ser armazenado na pasta /w/images de sua instalação. Se você armazená-lo na pasta /w/skins de sua instalação do BlueSpice, ele poderá ser substituído por uma atualização. Os favicons têm a extensão de arquivo .ico.",
+	"bs-exttype-bluespice-assets": "Ativos BlueSpice"
 }
