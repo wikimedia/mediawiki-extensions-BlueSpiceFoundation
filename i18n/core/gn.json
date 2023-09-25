@@ -9,5 +9,6 @@
 	"bs-export-menu-print-text": "Emonguatia",
 	"bs-filesystemhelper-upload-unsupported-type": "Ndaikatúi ojehupi marandurenda koichagua.",
 	"bs-filesystemhelper-upload-err-code": "Ndaikatúi ojehupi ko marandurenda: $1",
-	"bs-filesystemhelper-upload-base64-error": "Ndaikatúi ojehupi ko marandurenda."
+	"bs-filesystemhelper-upload-base64-error": "Ndaikatúi ojehupi ko marandurenda.",
+	"bs-pref-fileextensions": "Umi marandurenda jepysokue ojehejáva:"
 }
