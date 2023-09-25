@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iváns"
+			"Iváns",
+			"Xosecalvo"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Engadir novo...",
@@ -10,5 +11,7 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Engadir",
 	"bs-ooui-key-value-input-widget-add-form-label": "Engadir nova entrada",
 	"bs-ooui-key-value-input-widget-error-message": "Tódolos campos requiridos teñen que ficar cheos!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Non hai valores estabelecidos!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Non hai valores estabelecidos!",
+	"bs-ooui-key-value-input-widget-section-label": "Sección",
+	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova sección"
 }
