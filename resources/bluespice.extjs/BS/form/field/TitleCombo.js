@@ -38,16 +38,11 @@ Ext.define( 'BS.form.field.TitleCombo', {
 		columns: [ {
 			dataIndex: 'displayText',
 			renderer: function ( value, meta, record ) {
-				if ( record.get( 'type' ) === 'namespace' ) {
-					return value;
-				}
-				if ( record.get( 'type' ) === 'specialpage' ) {
-					return value;
-				}
+				var valueWTitle = '<span title="' + Ext.String.htmlEncode(value) + '">' + value + '</span>';
 				if ( record.get( 'page_id' ) === 0 ) {
-					return value + ' <sup><span class="new-page-hint">' + mw.message( 'bs-extjs-titlecombo-newpagehint' ).plain() + '</span></sup>';
+					return valueWTitle + ' <sup><span class="new-page-hint">' + mw.message( 'bs-extjs-titlecombo-newpagehint' ).plain() + '</span></sup>';
 				}
-				return value;
+				return valueWTitle;
 			},
 			flex: 1
 		} ],
