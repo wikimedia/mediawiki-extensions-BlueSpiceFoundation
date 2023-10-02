@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-setting-path-feature": "Функци",
+	"bs-setting-path-extension": "Шордар",
+	"bs-setting-path-package": "Пакет",
+	"bs-setting-path-system": "Система",
+	"bs-setting-path-dataanalysis": "Хаамийн анализ",
+	"bs-setting-path-editor": "Редактор",
+	"bs-setting-path-search": "Лахар а, Навигаци а",
+	"bs-setting-path-skinning": "Кечйар",
+	"bs-setting-path-customizing": "Нисдаран гӀирс",
+	"bs-setting-path-contentstructuring": "Контентан cтруктурайар",
+	"bs-setting-path-communication": "ЗӀе",
+	"bs-setting-path-administration": "Администраци",
+	"bs-setting-path-qualityassurance": "Дикаллин гаранти",
+	"bs-setting-path-export": "Экспорт"
+}

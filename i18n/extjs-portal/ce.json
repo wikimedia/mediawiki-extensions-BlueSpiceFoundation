@@ -4,8 +4,12 @@
 			"Умар"
 		]
 	},
+	"bs-extjs-portal-config": "Портлет нисйар:",
 	"bs-extjs-portal-title": "Портлетан корта",
 	"bs-extjs-portal-height": "Локхалла",
 	"bs-extjs-portal-count": "ДӀайаздарш",
-	"bs-extjs-portal-timespan-month": "Бутт"
+	"bs-extjs-portal-timespan": "Хенан йукъ",
+	"bs-extjs-portal-timespan-week": "КӀира",
+	"bs-extjs-portal-timespan-month": "Бутт",
+	"bs-extjs-portal-timespan-alltime": "Йерриге хенахь"
 }

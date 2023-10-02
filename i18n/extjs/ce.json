@@ -61,9 +61,14 @@
 	"bs-extjs-pageexport-list-name-label": "МогӀаман цӀе",
 	"bs-extjs-pageexport-list-format-label": "МогӀаман формат",
 	"bs-extjs-pageexport-list-format-link-label": "Хьажорг",
+	"bs-extjs-pageexport-overwrite-label": "Йухайазйе",
+	"bs-extjs-pageexport-general-error": "Экспорт гӀалат",
+	"bs-extjs-pageexport-pagecollection-prefix": "АгӀонаш гулйар",
 	"bs-pagecollection-prefix": "АгӀонийн коллекци",
+	"bs-extjs-pageexport-success": "Кхиамца экспорт",
 	"bs-extjs-combo-box-default-placeholder": "Литтаран тайпа…",
 	"bs-extjs-tools-trigger-text": "ГӀирсаш",
+	"bs-extjs-flyout-tab-thumbs-label": "Миниатюраш",
 	"bs-extjs-flyout-tab-grid-label": "Мадарра",
 	"bs-extjs-flyout-add-label": "ТӀетоха объект"
 }
