@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Чуйаккхар",
+	"bs-upload-uploadbuttontext": "Хьажар",
+	"bs-upload-uploadfilefieldlabel": "Файлан цӀе",
+	"bs-upload-uploadfileemptytext": "Йилла керла файл…",
+	"bs-upload-license": "Лицензи",
+	"bs-upload-categories": "Категореш",
+	"bs-upload-upload-waitmessage": "ДӀадоьдуш ду чуйаккхар...",
+	"bs-upload-error": "ГӀалат",
+	"bs-upload-descfilelabel": "Цуьнах лаьцна",
+	"bs-upload-details": "Мадарра",
+	"bs-upload-uploadwarningdialog-title": "Файл чуйаккхар: ДӀахьедар"
+}
