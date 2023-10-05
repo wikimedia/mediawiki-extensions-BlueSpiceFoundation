@@ -7,5 +7,9 @@
 	"bs-validator-email-validation-approved": "Электронан поштан адрес кхиамца теллина.",
 	"bs-validator-url-validation-approved": "URL-адрес кхиамца теллина.",
 	"bs-validator-set-validation-approved": "$1 кхиамца теллина.",
-	"bs-validator-set-validation-not-approved": "Цу $1 {{PLURAL:$3|магийна хӀара маьӀнаш|магийна хӀокхарах цхьа маьӀна}}: $2."
+	"bs-validator-set-validation-not-approved": "Цу $1 {{PLURAL:$3|магийна хӀара маьӀнаш|магийна хӀокхарах цхьа маьӀна}}: $2.",
+	"bs-validator-invalid-string": "Нийса боцу могӀа",
+	"bs-validator-invalid-coordinate": "Нийса доцу координаташ",
+	"bs-validator-invalid-parameter": "ХӀара параметр магийна йац",
+	"bs-validator-missing-required": "ХӀара хила йеза параметр йу"
 }

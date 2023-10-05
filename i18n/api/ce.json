@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"bs-wikipage-tasks-setcategories-edit-summary": "Хийцамаш бина категореш.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Хьуна магийна дац \"$1\" агӀо тайан.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Нийса йоцу категори|Нийса йоцу категореш}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Категореш кхиамца чуйихкина.",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Опцийн могӀам",
+	"apihelp-bs-js-var-config-param-format": "Хиламан формат",
+	"apihelp-bs-categorylinks-store-param-page-id": "АгӀонан идентификатор",
+	"apihelp-bs-templatelinks-store-param-page-id": "АгӀонан идентификатор"
+}

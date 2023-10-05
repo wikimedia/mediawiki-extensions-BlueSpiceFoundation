@@ -4,6 +4,21 @@
 			"Умар"
 		]
 	},
+	"bs-filerepo-labelupload": "Чуйаккхар",
+	"bs-filerepo-labelfilter": "Луьттург",
+	"bs-filerepo-headerfilename": "Файлан цӀе",
+	"bs-filerepo-headerfilesize": "Барам",
+	"bs-filerepo-headerpagecategories": "Категореш",
+	"bs-filerepo-headerfilewidth": "Шоралла",
+	"bs-filerepo-headerfileheight": "Локхалла",
 	"bs-filerepo-headerfilemimetype": "MIME-тайпа",
-	"bs-filerepo-headerfilemediatype": "Медиа тайпа"
+	"bs-filerepo-headerfileusertext": "Декъашхо",
+	"bs-filerepo-headerfileextension": "Шордар",
+	"bs-filerepo-headerfiletimestamp": "Чуйаьккхина",
+	"bs-filerepo-headerfilemediatype": "Медиа тайпа",
+	"bs-filerepo-headerfiledescription": "Цуьнах лаьцна",
+	"bs-filerepo-headerfilethumbnail": "Миниатюра",
+	"bs-filerepo-yes": "ХӀаъ",
+	"bs-filerepo-no": "ХӀан-хӀа",
+	"bs-filerepo-pagesize": "АгӀонгахь дӀайаздарш"
 }
