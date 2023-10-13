@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Mro",
 			"Superjurek",
 			"WaldiSt"
 		]
 	},
+	"bs-setting-path-feature": "Cecha",
 	"bs-setting-path-extension": "Rozszerzenie",
 	"bs-setting-path-package": "Pakiet",
 	"bs-setting-path-system": "System",
@@ -13,8 +15,11 @@
 	"bs-setting-path-editor": "Edytor",
 	"bs-setting-path-search": "Wyszukiwanie i nawigacja",
 	"bs-setting-path-personalisation": "Personalizacja",
+	"bs-setting-path-skinning": "Skinning",
 	"bs-setting-path-customizing": "Dostosowywanie",
+	"bs-setting-path-contentstructuring": "Strukturzyacja treści",
 	"bs-setting-path-communication": "Komunikacja",
 	"bs-setting-path-administration": "Administracja",
+	"bs-setting-path-qualityassurance": "Kontrola jakości",
 	"bs-setting-path-export": "Eksport"
 }
