@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Mro",
 			"Superjurek",
 			"WaldiSt"
 		]
@@ -16,5 +17,9 @@
 	"bs-setting-path-communication": "Komunikacja",
 	"bs-setting-path-administration": "Administracja",
 	"bs-setting-path-export": "Eksport",
-	"bs-setting-path-search": "Wyszukiwanie i nawigacja"
+	"bs-setting-path-search": "Wyszukiwanie i nawigacja",
+	"bs-setting-path-feature": "Cecha",
+	"bs-setting-path-skinning": "Skinning",
+	"bs-setting-path-contentstructuring": "Strukturzyacja treści",
+	"bs-setting-path-qualityassurance": "Kontrola jakości"
 }

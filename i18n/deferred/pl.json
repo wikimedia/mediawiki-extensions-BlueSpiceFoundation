@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Mro",
 			"WaldiSt"
 		]
 	},
@@ -17,5 +18,8 @@
 	"bs-deferred-batch-description": "Opis",
 	"bs-deferred-batch-status": "Status",
 	"bs-deferred-action-apiaddcategories-description": "Dodaj kategorie do '$1'.",
-	"bs-deferred-action-apiremovecategories-description": "Usuń kategorie z '$1'."
+	"bs-deferred-action-apiremovecategories-description": "Usuń kategorie z '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Dodaj kategorie do '$1'.",
+	"bs-deferred-action-apimovepage-description": "Przenieś \"$1\" do \"$2\".",
+	"bs-deferred-action-apideletepage-description": "Usuń \"$1\"."
 }
