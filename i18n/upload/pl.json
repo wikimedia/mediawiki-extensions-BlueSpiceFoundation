@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Mro"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Prześlij plik",
@@ -22,5 +23,8 @@
 	"bs-upload-details": "Szczegóły",
 	"bs-upload-uploadwarningdialog-title": "Przesyłanie pliku: Ostrzeżenia",
 	"bs-upload-uploadwarningdialog-warning-exists": "Plik o nazwie „$1” już istnieje",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Nieznane ostrzeżenie o kodzie „$1”"
+	"bs-upload-uploadwarningdialog-warning-unknown": "Nieznane ostrzeżenie o kodzie „$1”",
+	"bs-upload-uploadwarningdialog-intro": "Następujące ostrzeżenia wystąpiły podczas próby przesyłania pliku",
+	"bs-upload-uploadwarningdialog-outro": "Kliknij \"{{int:bs-extjs-ok}}\" aby zignorować ostrzeżenia i przesłać plik, kliknij \"{{ int:bs- extjs-cancel}}\" aby wrócić do formularza przesyłania",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Istnieje(-ą) {{PLURAL:$1| duplikat|dyplikaty}} tego pliku"
 }
