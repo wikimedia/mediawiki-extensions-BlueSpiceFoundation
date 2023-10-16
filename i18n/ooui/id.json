@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"J Nia30"
+			"J Nia30",
+			"Stevannus rua"
 		]
 	},
-	"bs-ooui-key-value-input-widget-key-label": "Kunci"
+	"bs-ooui-key-value-input-widget-key-label": "Kunci",
+	"bs-ooui-key-value-input-widget-add-button-label": "Tambah"
 }

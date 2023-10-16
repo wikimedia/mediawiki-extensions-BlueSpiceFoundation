@@ -3,6 +3,7 @@
 		"authors": [
 			"Anwar2",
 			"Chrumps",
+			"Mro",
 			"WaldiSt"
 		]
 	},
@@ -15,5 +16,11 @@
 	"bs-validator-invalid-string": "Niepoprawny ciąg",
 	"bs-validator-invalid-coordinate": "Nieprawidłowa współrzędna",
 	"bs-validator-invalid-parameter": "Ten parametr jest niedozwolony",
-	"bs-validator-missing-required": "Ten parametr jest wymagany"
+	"bs-validator-missing-required": "Ten parametr jest wymagany",
+	"bs-validator-url-validation-approved": "Adres URL został pomyślnie zweryfikowany.",
+	"bs-validator-arg-count-validation-approved": "Atrybut \"count\" został pomyślnie zweryfikowany.",
+	"bs-validator-arg-count-validation-not-approved": "Nie udało sie pomyślnie zweryfikować atrybutu \"count\".",
+	"bs-validator-integer-range-validation-too-low": "Podana wartość jest za niska. Nie powinna być mniejsza niż $1.",
+	"bs-validator-integer-range-validation-too-high": "Podana wartość jest za wysoka. Nie powinna być większa niż $1.",
+	"bs-validator-value-not-recognized": "Nie można przetworzyć wartości"
 }
