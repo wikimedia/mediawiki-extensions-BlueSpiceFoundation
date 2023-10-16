@@ -3,13 +3,20 @@
 		"authors": [
 			"Anwar2",
 			"Chrumps",
+			"Mro",
 			"WaldiSt"
 		]
 	},
 	"bs-validator-email-validation-approved": "Adres e-mail został pomyślnie zweryfikowany.",
 	"bs-validator-email-validation-not-approved": "Nie można zweryfikować adresu e-mail.",
+	"bs-validator-url-validation-approved": "Adres URL został pomyślnie zweryfikowany.",
 	"bs-validator-url-validation-not-approved": "Nie można zweryfikować adresu URL.",
+	"bs-validator-arg-count-validation-approved": "Atrybut \"count\" został pomyślnie zweryfikowany.",
+	"bs-validator-arg-count-validation-not-approved": "Nie udało sie pomyślnie zweryfikować atrybutu \"count\".",
 	"bs-validator-set-validation-approved": "$1 został pomyślnie zweryfikowany.",
+	"bs-validator-integer-range-validation-too-low": "Podana wartość jest za niska. Nie powinna być mniejsza niż $1.",
+	"bs-validator-integer-range-validation-too-high": "Podana wartość jest za wysoka. Nie powinna być większa niż $1.",
+	"bs-validator-value-not-recognized": "Nie można przetworzyć wartości",
 	"bs-validator-invalid-boolean": "Niepoprawna wartość logiczna",
 	"bs-validator-invalid-integer": "Niepoprawna liczba całkowita",
 	"bs-validator-invalid-string": "Niepoprawny ciąg",
