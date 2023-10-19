@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nicolas Eynaud"
+		]
+	},
+	"bs-deferred-batch-actions": "Accions",
+	"bs-deferred-batch-description": "Descripcion",
+	"bs-deferred-batch-status": "Estatut",
+	"bs-deferred-action-apiaddcategories-description": "Apondre de categorias a '$1'",
+	"bs-deferred-action-apiremovecategories-description": "Suprimir de categorias de '$1'",
+	"bs-deferred-action-apisetcategories-description": "Definir de categorias per '$1'",
+	"bs-deferred-action-apimovepage-description": "Desplaçar \"$1\" vèrs \"$2\"",
+	"bs-deferred-action-apideletepage-description": "Suprimir \"$1\""
+}
