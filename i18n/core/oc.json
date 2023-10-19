@@ -3,7 +3,8 @@
 		"authors": [
 			"BrennodAloisi",
 			"Cedric31",
-			"McDutchie"
+			"McDutchie",
+			"Nicolas Eynaud"
 		]
 	},
 	"bs-ns_main": "(Paginas)",
@@ -42,6 +43,7 @@
 	"bs-filesystemhelper-folder-not-exists": "Lo repertòri <code>$1</code> existís pas.",
 	"bs-filesystemhelper-upload-unsupported-type": "Aqueste tipe de fichièr es pas pres en carga.",
 	"bs-filesystemhelper-save-base64-error": "Lo fichièr a pas pogut èsser enregistrat.",
+	"bs-filesystemhelper-upload-base64-error": "Aquest fichièr pòu pas èsser telecargat.",
 	"bs-navigation-instructions": "Instruccions",
 	"bs-navigation-support": "Sosten",
 	"bs-navigation-contact": "Contacte",
@@ -58,5 +60,12 @@
 	"bs-pref-deleteduserimage": "Avatar d’utilizaire suprimit :",
 	"bs-pref-bspinginterval": "Interval de Ping (en segondas) :",
 	"bs-pref-testmode": "Activar lo mòde de tèst",
-	"bs-graphicallist-action-preview": "Previsualizacion"
+	"bs-export-menu-print-text": "Estampar",
+	"bs-graphicallist-action-close": "Sarrar",
+	"bs-graphicallist-action-list": "Lista",
+	"bs-graphicallist-action-preview": "Previsualizacion",
+	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
+	"bs-bluespice": "BlueSpice",
+	"bs-notifications-agent-anon": "Utilizaire anonim",
+	"protect-level-editor": "Autorizar solament leis editors e leis administrators"
 }

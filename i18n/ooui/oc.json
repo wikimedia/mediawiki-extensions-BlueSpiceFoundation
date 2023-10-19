@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nicolas Eynaud"
+		]
+	},
+	"bs-ooui-key-value-input-widget-key-label": "Clau",
+	"bs-ooui-key-value-input-widget-value-label": "Valor",
+	"bs-ooui-key-value-input-widget-add-button-label": "Apondre",
+	"bs-ooui-key-value-input-widget-add-form-label": "Apondre una intrada novèla",
+	"bs-ooui-key-value-input-widget-section-label": "Seccion"
+}
