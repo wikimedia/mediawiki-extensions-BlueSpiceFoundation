@@ -13,4 +13,7 @@ class Record extends \MWStake\MediaWiki\Component\DataStore\Record {
 	public const HAS_UNREAD_CHANGES = 'has_unread_changes';
 	public const IS_TALK_PAGE = 'is_talk_page';
 	public const UNREAD_CHANGES_DIFF_REVID = 'unread_changes_diff_revid';
+	public const PAGE_NAMESPACE_TEXT = 'page_namespace_text';
+	public const PAGE_NAMESPACE = 'page_namespace';
+
 }
