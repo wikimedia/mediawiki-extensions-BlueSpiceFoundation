@@ -3,6 +3,7 @@
 namespace BlueSpice\Data\Watchlist;
 
 use MediaWiki\MediaWikiServices;
+use Message;
 use MWStake\MediaWiki\Component\DataStore\Filter;
 use MWStake\MediaWiki\Component\DataStore\FilterFinder;
 use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
@@ -141,7 +142,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			Record::NOTIFICATIONTIMESTAMP => $row->wl_notificationtimestamp,
 			Record::HAS_UNREAD_CHANGES => $row->wl_notificationtimestamp !== null,
 			Record::IS_TALK_PAGE => $title->isTalkPage(),
-			Record::UNREAD_CHANGES_DIFF_REVID => -1
+			Record::UNREAD_CHANGES_DIFF_REVID => -1,
+			Record::PAGE_NAMESPACE => $title->getNamespace(),
+			Record::PAGE_NAMESPACE_TEXT => $title->getNamespace() === NS_MAIN ?
+				Message::newFromKey( 'bs-ns_main' )->text() : $title->getNsText(),
 		] );
 	}
 
