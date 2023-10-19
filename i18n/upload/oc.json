@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nicolas Eynaud"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Telecargar un fichier",
+	"bs-upload-uploadfilefieldlabel": "Nom dau fichier",
+	"bs-upload-license": "Licéncia",
+	"bs-upload-uploadwatchthislabel": "Seguir aqueste fichier",
+	"bs-upload-uploadignorewarningslabel": "Ignorar leis avertiments",
+	"bs-upload-categories": "Categorias",
+	"bs-upload-upload-waitmessage": "Telecargament en cors...",
+	"bs-upload-error": "Error",
+	"bs-upload-descfilelabel": "Descripcion",
+	"bs-upload-error-long": "Error dins lo procès de telecargament",
+	"bs-upload-details": "Detalhs",
+	"bs-upload-uploadwarningdialog-title": "Telecargament de fichier : avertiments"
+}
