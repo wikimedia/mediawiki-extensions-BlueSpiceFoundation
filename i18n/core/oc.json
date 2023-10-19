@@ -3,7 +3,8 @@
 		"authors": [
 			"BrennodAloisi",
 			"Cedric31",
-			"McDutchie"
+			"McDutchie",
+			"Nicolas Eynaud"
 		]
 	},
 	"bs-ns_main": "(Paginas)",
@@ -59,5 +60,13 @@
 	"bs-pref-deleteduserimage": "Avatar d’utilizaire suprimit :",
 	"bs-pref-bspinginterval": "Interval de Ping (en segondas) :",
 	"bs-pref-testmode": "Activar lo mòde de tèst",
-	"bs-graphicallist-action-preview": "Previsualizacion"
+	"bs-graphicallist-action-preview": "Previsualizacion",
+	"bs-filesystemhelper-upload-base64-error": "Aquest fichièr pòu pas èsser telecargat.",
+	"bs-export-menu-print-text": "Estampar",
+	"bs-graphicallist-action-close": "Sarrar",
+	"bs-graphicallist-action-list": "Lista",
+	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
+	"bs-bluespice": "BlueSpice",
+	"bs-notifications-agent-anon": "Utilizaire anonim",
+	"protect-level-editor": "Autorizar solament leis editors e leis administrators"
 }

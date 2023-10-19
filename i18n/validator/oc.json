@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nicolas Eynaud"
+		]
+	},
+	"bs-validator-invalid-coordinate": "Pas una coordenada valida",
+	"bs-validator-invalid-parameter": "Aquest paramètre es pas autorizat",
+	"bs-validator-missing-required": "Aquest paramètre es requist"
+}
