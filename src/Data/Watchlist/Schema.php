@@ -63,7 +63,17 @@ class Schema extends \MWStake\MediaWiki\Component\DataStore\Schema {
 				self::FILTERABLE => false,
 				self::SORTABLE => false,
 				self::TYPE => FieldType::INT
-			]
+			],
+			Record::PAGE_NAMESPACE => [
+				self::FILTERABLE => true,
+				self::SORTABLE => true,
+				self::TYPE => FieldType::INT
+			],
+			Record::PAGE_NAMESPACE_TEXT => [
+				self::FILTERABLE => false,
+				self::SORTABLE => false,
+				self::TYPE => FieldType::STRING
+			],
 		] );
 	}
 }
