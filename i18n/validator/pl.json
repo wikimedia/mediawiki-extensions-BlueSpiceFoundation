@@ -22,5 +22,7 @@
 	"bs-validator-arg-count-validation-not-approved": "Nie udało sie pomyślnie zweryfikować atrybutu \"count\".",
 	"bs-validator-integer-range-validation-too-low": "Podana wartość jest za niska. Nie powinna być mniejsza niż $1.",
 	"bs-validator-integer-range-validation-too-high": "Podana wartość jest za wysoka. Nie powinna być większa niż $1.",
-	"bs-validator-value-not-recognized": "Nie można przetworzyć wartości"
+	"bs-validator-value-not-recognized": "Nie można przetworzyć wartości",
+	"bs-validator-set-validation-not-approved": "W przypadku $1 jedynie {{PLURAL:$3|następująca wartość|następujące wartości}}{{PLURAL:$3|jest dozwolona| są dozwolone}}: $2.",
+	"bs-validator-invalid-float": "Nieprawidłowa liczba zmiennoprzecinkowa"
 }
