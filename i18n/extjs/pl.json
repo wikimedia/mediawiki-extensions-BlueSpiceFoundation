@@ -3,6 +3,7 @@
 		"authors": [
 			"Alan ffm",
 			"Chrumps",
+			"Mro",
 			"Pefect",
 			"Vengir",
 			"WaldiSt"
@@ -78,5 +79,10 @@
 	"bs-extjs-flyout-tab-grid-title": "Przełącz na widok szczegółów",
 	"bs-extjs-flyout-add-title": "Kliknij tutaj, aby dodać nowy element",
 	"bs-extjs-flyout-add-label": "Dodaj element",
-	"bs-extjs-pageexport-overwrite-label": "Nadpisz"
+	"bs-extjs-pageexport-overwrite-label": "Nadpisz",
+	"bs-extjs-filter-date-on": "Dnia",
+	"bs-pagecollection-prefix": "Zbiór stron",
+	"bs-extjs-pageexport-success-text": "Zbiór stron wyeksportowany do $1",
+	"bs-extjs-combo-box-default-placeholder": "Wpisz, aby filtrować...",
+	"bs-extjs-tools-trigger-title": "Kliknij tutaj, aby otworzyć menu narzędzi"
 }

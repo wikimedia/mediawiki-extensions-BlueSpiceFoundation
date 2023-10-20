@@ -1,11 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Mro"
 		]
 	},
 	"bs-extjs-portal-height": "Wysokość",
 	"bs-extjs-portal-timespan": "Przedział czasowy",
 	"bs-extjs-portal-timespan-week": "Tydzień",
-	"bs-extjs-portal-timespan-month": "Miesiąc"
+	"bs-extjs-portal-timespan-month": "Miesiąc",
+	"bs-extjs-portal-config": "Konfiguracja portelu:",
+	"bs-extjs-portal-title": "Tytuł portletu",
+	"bs-extjs-portal-count": "Liczba",
+	"bs-extjs-portal-timespan-alltime": "Nieograniczony"
 }
