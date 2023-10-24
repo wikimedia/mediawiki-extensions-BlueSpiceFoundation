@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"bs-extjs-ok": "Aceutar",
-	"bs-extjs-cancel": "Encaboxar",
+	"bs-extjs-cancel": "Zarrar",
 	"bs-extjs-yes": "Sí",
 	"bs-extjs-no": "Non",
 	"bs-extjs-save": "Guardar",
@@ -40,8 +41,8 @@
 	"bs-extjs-filters": "Peñeres",
 	"bs-extjs-filter-equals": "ye igual a",
 	"bs-extjs-filter-equals-not": "nun ye igual a",
-	"bs-extjs-filter-contains": "contien",
-	"bs-extjs-filter-contains-not": "nun contien",
+	"bs-extjs-filter-contains": "contién",
+	"bs-extjs-filter-contains-not": "nun contién",
 	"bs-extjs-filter-starts-with": "principia por",
 	"bs-extjs-filter-ends-with": "acaba por",
 	"bs-extjs-filter-greater-than": "mayor que",
