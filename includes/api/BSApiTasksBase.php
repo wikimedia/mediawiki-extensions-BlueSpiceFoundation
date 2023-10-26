@@ -683,11 +683,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	protected function dieWithPermissionError() {
-		if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-			$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
-		} else {
-			$this->dieUsageMsg( 'badaccess-groups' );
-		}
+		$this->dieWithError( 'apierror-permissiondenied-generic', 'permissiondenied' );
 	}
 
 	/**
