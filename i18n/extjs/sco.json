@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"CiphriusKane",
 			"John Reid",
 			"MJL"
 		]
@@ -10,7 +11,7 @@
 	"bs-extjs-yes": "Aye",
 	"bs-extjs-no": "Nae",
 	"bs-extjs-save": "Hain",
-	"bs-extjs-delete": "Delyte",
+	"bs-extjs-delete": "Delete",
 	"bs-extjs-add": "Eik",
 	"bs-extjs-remove": "Remuiv",
 	"bs-extjs-edit": "Eedit",
