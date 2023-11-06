@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"CiphriusKane",
 			"John Reid"
 		]
 	},
@@ -41,7 +42,7 @@
 	"bs-filesystemhelper-file-not-exists": "The file <code>$1</code> disna exeest.",
 	"bs-filesystemhelper-file-copy-error": "The file <code>$1</code> coud na be copied.",
 	"bs-filesystemhelper-file-already-exists": "The file <code>$1</code> awreadie exeests.",
-	"bs-filesystemhelper-file-delete-error": "The file <code>$1</code> coudna be delytit.",
+	"bs-filesystemhelper-file-delete-error": "The file <code>$1</code> coudnae be deletit.",
 	"bs-filesystemhelper-folder-already-exists": "The fauder <code>$1</code> awreadie exeests.",
 	"bs-filesystemhelper-folder-copy-error": "The fauder <code>$1</code> coudna be renamed.",
 	"bs-filesystemhelper-folder-not-exists": "The fauder <code>$1</code> disna exeest.",
