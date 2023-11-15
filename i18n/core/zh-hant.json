@@ -8,6 +8,7 @@
 			"Liuxinyu970226",
 			"S8321414",
 			"Sanmosa",
+			"Winston Sung",
 			"Xiplus",
 			"捍粵者"
 		]
@@ -107,5 +108,6 @@
 	"bs-pref-imageextensions-help": "可以上傳到 wiki 的圖片檔案類型。可行的網路格式：gif、png、jpg、jpeg。其它的圖片格式：tiff、bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "無法寫入設置檔案 $1！",
 	"bs-pref-logopath-help": "標誌應存放在您安裝位置的 /w/images 資料夾裡。如果您是存放在您所安裝 BlueSpice 的 /w/skins 資料夾下，在升級時會被覆寫。",
-	"bs-pref-faviconpath-help": "Favicon 應存放在您安裝位置的 /w/images 資料夾裡。如果您是存放在您所安裝 BlueSpice 的 /w/skins 資料夾下，在升級時會被覆寫。另外 Favicons 的副檔名是 .ico。"
+	"bs-pref-faviconpath-help": "Favicon 應存放在您安裝位置的 /w/images 資料夾裡。如果您是存放在您所安裝 BlueSpice 的 /w/skins 資料夾下，在升級時會被覆寫。另外 Favicons 的副檔名是 .ico。",
+	"bs-exttype-bluespice-assets": "BlueSpice資產"
 }
