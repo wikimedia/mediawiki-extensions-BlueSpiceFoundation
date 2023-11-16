@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BadDog",
+			"Kizule",
 			"Milicevic01"
 		]
 	},
@@ -13,5 +14,6 @@
 	"bs-ooui-key-value-input-widget-error-message": "Сва неопходна поља морају да буду попуњена.",
 	"bs-ooui-key-value-input-widget-no-values-label": "Нема постављених вредности.",
 	"bs-ooui-btn-dismiss-alert-title": "Одбаци",
-	"bs-ooui-key-value-input-widget-section-label": "Одељак"
+	"bs-ooui-key-value-input-widget-section-label": "Одељак",
+	"bs-ooui-key-value-input-widget-add-section-label": "Додај нови одељак"
 }
