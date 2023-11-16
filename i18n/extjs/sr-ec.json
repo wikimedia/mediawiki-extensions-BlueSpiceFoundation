@@ -3,6 +3,7 @@
 		"authors": [
 			"Acamicamacaraca",
 			"BadDog",
+			"Kizule",
 			"Milicevic01",
 			"Obsuser"
 		]
@@ -28,9 +29,11 @@
 	"bs-extjs-reset": "Ресетуј",
 	"bs-extjs-close": "Затвори",
 	"bs-extjs-label-user": "Корисник",
+	"bs-extjs-label-group": "Група",
 	"bs-extjs-label-namespace": "Именски простор",
 	"bs-extjs-label-page": "Страница",
 	"bs-extjs-label-directsearch": "Претражи",
+	"bs-extjs-label-specialpage": "Посебна страница",
 	"bs-extjs-titlecombo-newpagehint": "Страница не постоји.",
 	"bs-extjs-upload": "Отпреми",
 	"bs-extjs-browse": "Прегледај",
