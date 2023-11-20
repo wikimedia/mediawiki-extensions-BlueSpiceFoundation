@@ -12,7 +12,7 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Promenjene kategorije.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nemate dozvolu da uređujete stranicu „$1”.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Nevažeća|Nevažeće}} {{PLURAL:$2|kategorija|kategorije}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Kategorije su uspešno postavljene.",
+	"bs-wikipage-tasks-setcategories-success": "Kategorije su postavljene.",
 	"apihelp-bs-wikisubpage-treestore-summary": "Izlistava spisak specifične viki stranice",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Prefiksiran naziv vikistranice",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Spisak opcija",
