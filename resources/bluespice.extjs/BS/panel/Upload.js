@@ -25,7 +25,7 @@ Ext.define( 'BS.panel.Upload', {
 			buttonText: mw.message( 'bs-upload-uploadbuttontext' ).plain(),
 			id: this.getId() + '-file',
 			name: 'file',
-			emptyText: mw.message( 'bs-upload-uploadfileemptytext' ).plain(),
+			emptyText: mw.message( 'bs-upload-uploadfileemptytext' ).escaped(),
 			validator: this.validateFile,
 			validateOnChange: true,
 			clearOnSubmit: false,

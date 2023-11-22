@@ -10,7 +10,7 @@ Ext.define( 'BS.form.field.CategoryTag', {
 	filterPickList: true,
 	forceSelection: false,
 	createNewOnEnter: true,
-	emptyText: mw.message( 'bs-extjs-categoryboxselect-emptytext' ).plain(),
+	emptyText: mw.message( 'bs-extjs-categoryboxselect-emptytext' ).escaped(),
 	delimiter: '|',
 
 	deferredSetValueConf: false,

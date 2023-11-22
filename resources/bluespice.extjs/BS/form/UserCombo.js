@@ -14,7 +14,7 @@ Ext.define( 'BS.form.UserCombo', {
 	store: null,
 	extraParams: {},
 	storeFilters: [],
-	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).escaped(),
 
 	deferredSetValueConf: false,
 
