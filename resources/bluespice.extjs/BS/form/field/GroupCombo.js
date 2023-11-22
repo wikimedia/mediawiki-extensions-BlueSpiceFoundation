@@ -8,7 +8,7 @@ Ext.define( 'BS.form.field.GroupCombo', {
 	forceSelection: true,
 	queryMode: 'local',
 	fieldLabel: mw.message( 'bs-extjs-label-group' ).plain(),
-	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).escaped(),
 
 	initComponent: function () {
 		this.store = this.makeStore();
