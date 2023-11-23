@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BrennodAloisi",
-			"Cedric31"
+			"Cedric31",
+			"Nicolas Eynaud"
 		]
 	},
 	"bs-extjs-ok": "D'acòrdi",
@@ -18,7 +19,7 @@
 	"bs-extjs-error": "Error",
 	"bs-extjs-confirm": "Confirmar",
 	"bs-extjs-loading": "Cargament en cors...",
-	"bs-extjs-pageSize": "Talha de la pagina",
+	"bs-extjs-pageSize": "Intradas per pagina",
 	"bs-extjs-actions-column-header": "Accions",
 	"bs-extjs-warning": "Avertiment",
 	"bs-extjs-saving": "enregistrament en cors…",
@@ -42,5 +43,34 @@
 	"bs-extjs-title-success": "Capitat",
 	"bs-extjs-title-warning": "Avertiment",
 	"bs-extjs-pageexport-dialog-title": "Exportar de paginas",
-	"bs-extjs-flyout-tab-thumbs-label": "Miniaturas"
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturas",
+	"bs-extjs-copy": "Copiar",
+	"bs-extjs-label-group": "Grop",
+	"bs-extjs-label-directsearch": "Cèrca",
+	"bs-extjs-label-specialpage": "Pagina especiala",
+	"bs-extjs-titlecombo-newpagehint": "La pagina existís pas !",
+	"bs-extjs-mainns": "(Principau)",
+	"bs-extjs-filter-greater-than": "Superior a",
+	"bs-extjs-filter-less-than": "Inferior a",
+	"bs-extjs-filter-bool-yes": "òc",
+	"bs-extjs-filter-bool-no": "non",
+	"bs-extjs-categoryboxselect-emptytext": "Apondre una categoria",
+	"bs-extjs-categorytree-title": "Categorias",
+	"bs-extjs-filter-date-after": "Après",
+	"bs-extjs-filter-date-before": "Avans",
+	"bs-extjs-filter-date-on": "Sus",
+	"bs-extjs-filter-date-filter": "Filtre",
+	"bs-extjs-pageexport-list-name-label": "Nom de la lista",
+	"bs-extjs-pageexport-list-format-label": "Format de la lista",
+	"bs-extjs-pageexport-list-format-plain-label": "Tèxte brut",
+	"bs-extjs-pageexport-list-format-link-label": "Liame",
+	"bs-extjs-pageexport-overwrite-label": "Escrachar",
+	"bs-extjs-pageexport-general-error": "Error d'exportacion",
+	"bs-extjs-pageexport-pagecollection-prefix": "Colleccion de paginas",
+	"bs-pagecollection-prefix": "Colleccion de paginas",
+	"bs-extjs-pageexport-success": "Export capitat",
+	"bs-extjs-pageexport-success-text": "Colleccion de paginas exportada vèrs $1",
+	"bs-extjs-export-search-summary-text": "Generat per PageExport",
+	"bs-extjs-pageexport-error-invalid-title": "Lo nom de la lista es invalid",
+	"bs-extjs-tools-trigger-text": "Otís"
 }

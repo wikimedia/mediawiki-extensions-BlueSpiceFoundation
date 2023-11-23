@@ -6,5 +6,23 @@
 		]
 	},
 	"bs-extjs-categoryboxselect-emptytext": "Категория кошуу",
-	"bs-extjs-flyout-tab-grid-label": "Чоо-жайы"
+	"bs-extjs-flyout-tab-grid-label": "Чоо-жайы",
+	"bs-extjs-ok": "Макул",
+	"bs-extjs-cancel": "Жокко чыгаруу",
+	"bs-extjs-yes": "Ооба",
+	"bs-extjs-no": "Жок",
+	"bs-extjs-save": "Сактоо",
+	"bs-extjs-add": "Кошуу",
+	"bs-extjs-edit": "Түзөтүү",
+	"bs-extjs-copy": "Көчүрүү",
+	"bs-extjs-confirm": "Ырастоо",
+	"bs-extjs-loading": "Жүктөлүүдө...",
+	"bs-extjs-saving": "сакталууда...",
+	"bs-extjs-close": "Жабуу",
+	"bs-extjs-upload": "Жүктөө",
+	"bs-extjs-uploading": "Жүктөлүүдө...",
+	"bs-extjs-filters": "Чыпкалар",
+	"bs-extjs-filter-bool-yes": "ооба",
+	"bs-extjs-filter-date-filter": "Чыпка",
+	"bs-extjs-pageexport-list-format-link-label": "Шилтеме"
 }

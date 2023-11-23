@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"bs-wikipage-tasks-error-categories-not-valid": "ხილათერი {{PLURAL:$2|კატეგორია|კატეგორიეფი}}: $1",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "თქვა ვაიღჷნა ალობა წეკითხათ ხასჷლა „$1“."
+}

@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-validator-email-validation-approved": "Az e-mail cím megerősítése sikeres.",
+	"bs-validator-email-validation-not-approved": "Az e-mail cím nem hitelesíthető.",
+	"bs-validator-url-validation-approved": "Az URL hitelesítése sikeresen megtörtént.",
+	"bs-validator-url-validation-not-approved": "Az URL nem hitelesíthető.",
+	"bs-validator-arg-count-validation-approved": "A \"számlálás\" attribútum sikeresen hitelesítve.",
+	"bs-validator-arg-count-validation-not-approved": "A \"számlálás\" attribútum nem hitelesíthető.",
+	"bs-validator-set-validation-approved": "$1 sikeresen hitelesítve.",
+	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|Csak az alábbi érték engedélyezett erre $1|$1 esetében csak az alábbi értékek engedélyezettek}}: $2.",
+	"bs-validator-integer-range-validation-too-low": "A megadott érték túl alacsony. Nem lehet kisebb, mint $1.",
+	"bs-validator-integer-range-validation-too-high": "A megadott érték túl magas. Nem lehet nagyobb, mint $1.",
+	"bs-validator-value-not-recognized": "Az értéket nem sikerült feldolgozni",
+	"bs-validator-invalid-boolean": "Nem érvényes logikai érték",
+	"bs-validator-invalid-float": "Nem érvényes lebegőpontos szám",
+	"bs-validator-invalid-integer": "Nem érvényes egész szám",
+	"bs-validator-invalid-string": "Nem érvényes karakterlánc",
+	"bs-validator-invalid-coordinate": "Nem érvényes koordináta",
+	"bs-validator-invalid-parameter": "Ez a paraméter nem engedélyezett",
+	"bs-validator-missing-required": "Ez a paraméter kötelező"
+}

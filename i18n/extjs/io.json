@@ -32,5 +32,6 @@
 	"bs-extjs-filter-date-after": "Pose",
 	"bs-extjs-filter-date-before": "Ante",
 	"bs-extjs-pageexport-list-format-link-label": "Ligilo",
-	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi"
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
+	"bs-extjs-saving": "konservanta..."
 }

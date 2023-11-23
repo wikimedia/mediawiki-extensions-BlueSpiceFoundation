@@ -4,6 +4,7 @@
 			"2nd-player",
 			"Aefgh39622",
 			"Afaz",
+			"Anonymoususer12321",
 			"Otokoume",
 			"Reiwa period",
 			"Shirayuki",
@@ -38,7 +39,7 @@
 	"bs-email-footer": "このメッセージは$1によって自動的に生成されました。このメールには返信なさらないようお願いします。",
 	"bs-userpagesettings-legend": "利用者設定",
 	"bs-userpreferences-link-text": "その他の利用者設定",
-	"bs-userpreferences-link-title": "個人ユーザー設定を表示する",
+	"bs-userpreferences-link-title": "利用者の個人設定を表示する",
 	"bs-exception-view-heading": "エラーが発生しました",
 	"bs-exception-view-text": "リクエストを処理する際に以下のエラーが発生しました:",
 	"bs-exception-view-admin-hint": "システム管理者にお問い合わせください。",
@@ -48,7 +49,7 @@
 	"bs-readonly": "データベースは現在、新しいページの追加や編集を受け付けない「ロック状態」になっています。これはおそらくデータベースの定期メンテナンスのためで、メンテナンス終了後は正常な状態に復帰します。\n\nデータベースをロックしたシステム管理者による説明は以下の通りです: $1",
 	"bs-imageofotheruser": "別の利用者の画像をアップロードすることはできません。",
 	"bs-permissionerror": "権限エラー!",
-	"bs-lockdown-groups-permissionerror": "アクション「$1」が次の{{PLURAL:$2|理由}}で使用できません: $3",
+	"bs-lockdown-groups-permissionerror": "操作「$1」は以下の{{PLURAL:$2|理由}}で利用できません: $3",
 	"bs-filesystemhelper-no-directory": "<code>$1</code> は有効なディレクトリではありません。",
 	"bs-filesystemhelper-has-path-traversal": "ディレクトリ トラバーサルを検出しました!",
 	"bs-filesystemhelper-file-not-exists": "ファイル <code>$1</code> は存在しません。",
@@ -77,7 +78,7 @@
 	"bs-pref-logopath": "ロゴパス:",
 	"bs-pref-faviconpath": "favicon のパス:",
 	"bs-pref-defaultuserimage": "利用者の既定のアバター:",
-	"bs-pref-miniprofileenforceheight": "ユーザーアバターの高さを強制する",
+	"bs-pref-miniprofileenforceheight": "利用者アバターの高さを強制する",
 	"bs-pref-anonuserimage": "匿名利用者のアバター:",
 	"bs-pref-deleteduserimage": "削除された利用者のアバター:",
 	"bs-pref-bspinginterval": "Ping 間隔 (秒):",
@@ -110,5 +111,6 @@
 	"bs-pref-imageextensions-help": "wiki にアップロードできる画像ファイルの種類。可能な Web 形式: gif、png、jpg、jpeg。その他の画像形式: tiff、bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "構成ファイル$1を書き込めませんでした!",
 	"bs-pref-logopath-help": "ロゴは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。",
-	"bs-pref-faviconpath-help": "ファビコンは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。ファビコンのファイル拡張子は .ico です。"
+	"bs-pref-faviconpath-help": "ファビコンは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。ファビコンのファイル拡張子は .ico です。",
+	"bs-exttype-bluespice-assets": "BlueSpiceアセット"
 }

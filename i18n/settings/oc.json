@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nicolas Eynaud"
+		]
+	},
+	"bs-setting-path-extension": "Extension",
+	"bs-setting-path-dataanalysis": "Analisi de donadas",
+	"bs-setting-path-editor": "Editor",
+	"bs-setting-path-search": "Cèrca e navegacion",
+	"bs-setting-path-personalisation": "Personalizacion",
+	"bs-setting-path-communication": "Comunicacion",
+	"bs-setting-path-administration": "Administracion",
+	"bs-setting-path-qualityassurance": "Assegurança qualitat"
+}

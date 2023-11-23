@@ -33,7 +33,7 @@
 	"apihelp-bs-store-param-dc": "דגל <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "תסדיר הפלט (רק JSON או JSON מסודר)",
 	"apihelp-bs-store-param-options": "אפשרויות שרירותיות להגדרת האחסון בתסדיר של מחרוזת JSON",
-	"apihelp-bs-task-param-task": "המשימה שאמורה לפעול",
+	"apihelp-bs-task-param-task": "המשימה שאמורה להתבצע",
 	"apihelp-bs-task-param-format": "תסדיר התוצאה.",
 	"bs-wikipage-tasks-error-page-not-valid": "הדף שצוין אינו תקין.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "קטגוריות ששונו.",

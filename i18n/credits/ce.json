@@ -5,7 +5,9 @@
 		]
 	},
 	"bs-credits-programmers": "Программисташ",
-	"bs-credits-contributors": "Автораш",
+	"bs-credits-contributors": "Авторш",
 	"bs-credits-translators": "Гочдархой",
-	"bs-credits-translation": "Гоч"
+	"bs-credits-translation": "Гоч",
+	"specialcredits": "BlueSpice кхоллархой",
+	"bs-credits-th": "Баркалла массо гочдархошна $1 чуьра."
 }

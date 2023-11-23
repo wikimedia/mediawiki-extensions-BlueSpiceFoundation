@@ -3,6 +3,7 @@
 		"authors": [
 			"Acamicamacaraca",
 			"BadDog",
+			"Kizule",
 			"Milicevic01",
 			"Obsuser"
 		]
@@ -67,7 +68,7 @@
 	"bs-extjs-pageexport-general-error": "Грешка при извозу",
 	"bs-extjs-pageexport-pagecollection-prefix": "Збирка страница",
 	"bs-pagecollection-prefix": "Збирка страница",
-	"bs-extjs-pageexport-success": "Извоз је успешно урађен",
+	"bs-extjs-pageexport-success": "Успешан извоз",
 	"bs-extjs-pageexport-success-text": "Збирка страница је извезена у „$1”",
 	"bs-extjs-pageexport-required-text": "Списак страница не може бити празан и најмање једна страница мора бити означена",
 	"bs-extjs-export-search-summary-text": "Генерисао PageExport",
@@ -80,5 +81,7 @@
 	"bs-extjs-flyout-tab-grid-label": "Детаљи",
 	"bs-extjs-flyout-tab-grid-title": "Пребаците на преглед детаља",
 	"bs-extjs-flyout-add-title": "Кликните овде да бисте додали нову ставку",
-	"bs-extjs-flyout-add-label": "Додај ставку"
+	"bs-extjs-flyout-add-label": "Додај ставку",
+	"bs-extjs-label-group": "Група",
+	"bs-extjs-label-specialpage": "Посебна страница"
 }

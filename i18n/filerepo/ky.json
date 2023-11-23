@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bosogo"
+		]
+	},
+	"bs-filerepo-labelupload": "Жүктөө",
+	"bs-filerepo-labelfilter": "Чыпка",
+	"bs-filerepo-headerfiletimestamp": "Жүктөлдү",
+	"bs-filerepo-headerfiledescription": "Сыпаттама",
+	"bs-filerepo-yes": "Ооба",
+	"bs-filerepo-no": "Жок"
+}

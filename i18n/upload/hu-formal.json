@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-upload-uploadwarningdialog-outro": "Kattintson a „{{int:bs-extjs-ok}}” gombra a figyelmeztetések figyelmen kívül hagyásához és a fájl feltöltéséhez, kattintson a „{{int:bs-extjs-cancel}}” gombra a feltöltési űrlaphoz való visszatéréshez."
+}

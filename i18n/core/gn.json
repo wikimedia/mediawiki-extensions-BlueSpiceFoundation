@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"P. S. F. Freitas"
+		]
+	},
+	"bs-days-duration": "{{PLURAL:$1|peteĩ ára|$1 ára}}",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Maitei karai $2|Maitei kuñakarai $2|Maitei $2}},",
+	"bs-filesystemhelper-upload-err-code": "Ndaikatúi ojehupi ko marandurenda: $1",
+	"bs-filesystemhelper-upload-unsupported-type": "Ndaikatúi ojehupi marandurenda koichagua.",
+	"bs-filesystemhelper-upload-base64-error": "Ndaikatúi ojehupi ko marandurenda.",
+	"bs-navigation-contact": "Orejuhutahápe",
+	"bs-pref-fileextensions": "Umi marandurenda jepysokue ojehejáva:",
+	"bs-export-menu-print-text": "Emonguatia"
+}

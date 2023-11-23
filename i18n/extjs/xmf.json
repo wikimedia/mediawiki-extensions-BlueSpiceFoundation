@@ -10,5 +10,10 @@
 	"bs-extjs-label-page": "ხასჷლა",
 	"bs-extjs-titlecombo-newpagehint": "ხასჷლა ვა რე!",
 	"bs-extjs-title-success": "წუმოძინელო",
-	"bs-extjs-pageexport-success": "წუმოძინელი ექსპორტი"
+	"bs-extjs-pageexport-success": "წუმოძინელი ექსპორტი",
+	"bs-extjs-ok": "ჯგირი",
+	"bs-extjs-cancel": "გოუქვაფა",
+	"bs-extjs-categoryboxselect-emptytext": "კატეგორიაშ გეძინა",
+	"bs-extjs-categorytree-title": "კატეგორიეფი",
+	"bs-extjs-tools-trigger-text": "ხეჭკუდეფი"
 }

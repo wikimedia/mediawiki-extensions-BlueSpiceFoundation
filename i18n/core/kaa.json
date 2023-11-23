@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajiniyaz Nurniyazov"
+		]
+	},
+	"bs-years-duration": "{{PLURAL:$1|bir jıl|$1 jıl}}",
+	"bs-months-duration": "{{PLURAL:$1|bir ay|$1 ay}}",
+	"bs-weeks-duration": "{{PLURAL:$1|bir hápte|$1 hápte}}",
+	"bs-days-duration": "{{PLURAL:$1|bir kún|$1 kún}}",
+	"bs-hours-duration": "{{PLURAL:$1|bir saat|$1 saat}}",
+	"bs-mins-duration": "{{PLURAL:$1|bir minut|$1 minut}}",
+	"bs-secs-duration": "{{PLURAL:$1|bir sekund|$1 sekund}}",
+	"bs-two-units-ago": "$1 $2 burın",
+	"bs-one-unit-ago": "$1 burın"
+}

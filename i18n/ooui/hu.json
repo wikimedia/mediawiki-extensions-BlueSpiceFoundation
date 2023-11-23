@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Krisztina"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Új hozzáadása...",
+	"bs-ooui-key-value-input-widget-key-label": "Kulcs",
+	"bs-ooui-key-value-input-widget-value-label": "Érték",
+	"bs-ooui-key-value-input-widget-add-button-label": "Hozzáadás",
+	"bs-ooui-key-value-input-widget-add-form-label": "Új bejegyzés hozzáadása",
+	"bs-ooui-key-value-input-widget-error-message": "Minden kötelező mezőt be kell állítani!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Nincsenek beállítva értékek!",
+	"bs-ooui-btn-dismiss-alert-title": "Elutasítás",
+	"bs-ooui-key-value-input-widget-section-label": "Szakasz",
+	"bs-ooui-key-value-input-widget-add-section-label": "Új szakasz hozzáadása"
+}

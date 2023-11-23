@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"P. S. F. Freitas"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Ehupi marandurenda",
+	"bs-upload-uploadwatchthislabel": "Eñangareko ko marandurendáre",
+	"bs-upload-upload-waitmessage": "Ojehupi hína...",
+	"bs-upload-descfilelabel": "Mombe'uanga",
+	"bs-upload-error-long": "Ojejavy pe mba'ejupi jave",
+	"bs-upload-uploadwarningdialog-title": "Marandurenda mba'ejupi: Marandu",
+	"bs-upload-uploadwarningdialog-intro": "Ko'ã marandu oiko oñeha'ãvo ojehupi pe marandurenda"
+}

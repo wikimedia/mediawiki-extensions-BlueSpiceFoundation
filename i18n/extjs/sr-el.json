@@ -64,7 +64,7 @@
 	"bs-extjs-pageexport-general-error": "Greška pri izvozu",
 	"bs-extjs-pageexport-pagecollection-prefix": "Zbirka stranica",
 	"bs-pagecollection-prefix": "Zbirka stranica",
-	"bs-extjs-pageexport-success": "Izvoz je uspešno urađen",
+	"bs-extjs-pageexport-success": "Uspešan izvoz",
 	"bs-extjs-pageexport-success-text": "Zbirka stranica je izvezena u „$1”",
 	"bs-extjs-pageexport-required-text": "Spisak stranica ne može biti prazan i najmanje jedna stranica mora biti označena",
 	"bs-extjs-export-search-summary-text": "Generisao PageExport",
@@ -77,5 +77,7 @@
 	"bs-extjs-flyout-tab-grid-label": "Detalji",
 	"bs-extjs-flyout-tab-grid-title": "Prebacite na pregled detalja",
 	"bs-extjs-flyout-add-title": "Kliknite ovde da biste dodali novu stavku",
-	"bs-extjs-flyout-add-label": "Dodaj stavku"
+	"bs-extjs-flyout-add-label": "Dodaj stavku",
+	"bs-extjs-label-group": "Grupa",
+	"bs-extjs-label-specialpage": "Posebna stranica"
 }
