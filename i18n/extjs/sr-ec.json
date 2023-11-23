@@ -3,6 +3,7 @@
 		"authors": [
 			"Acamicamacaraca",
 			"BadDog",
+			"Kizule",
 			"Milicevic01",
 			"Obsuser"
 		]
@@ -80,5 +81,7 @@
 	"bs-extjs-flyout-tab-grid-label": "Детаљи",
 	"bs-extjs-flyout-tab-grid-title": "Пребаците на преглед детаља",
 	"bs-extjs-flyout-add-title": "Кликните овде да бисте додали нову ставку",
-	"bs-extjs-flyout-add-label": "Додај ставку"
+	"bs-extjs-flyout-add-label": "Додај ставку",
+	"bs-extjs-label-group": "Група",
+	"bs-extjs-label-specialpage": "Посебна страница"
 }
