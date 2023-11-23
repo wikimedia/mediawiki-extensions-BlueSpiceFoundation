@@ -23,7 +23,7 @@
 	"bs-extjs-edit": "Sunting",
 	"bs-extjs-copy": "Salin",
 	"bs-extjs-hint": "Petunjuk",
-	"bs-extjs-error": "Kesalahan",
+	"bs-extjs-error": "Galat",
 	"bs-extjs-confirm": "Konfirmasi",
 	"bs-extjs-loading": "Memuat...",
 	"bs-extjs-pageSize": "Entri per halaman",
@@ -56,5 +56,14 @@
 	"bs-extjs-flyout-tab-grid-label": "Rincian",
 	"bs-extjs-label-namespace": "Ruang nama",
 	"bs-extjs-label-page": "Halaman",
-	"bs-extjs-mainns": "(Utama)"
+	"bs-extjs-mainns": "(Utama)",
+	"bs-extjs-label-directsearch": "Cari",
+	"bs-extjs-filter-date-after": "Setelah",
+	"bs-extjs-filter-date-before": "Sebelum",
+	"bs-extjs-filter-date-on": "Nyala",
+	"bs-extjs-filter-date-filter": "Penyaring",
+	"bs-extjs-pageexport-dialog-title": "Ekspor halaman",
+	"bs-extjs-pageexport-list-format-plain-label": "Teks polos",
+	"bs-extjs-pageexport-general-error": "Kesalahan mengekspor",
+	"bs-extjs-pageexport-success": "Ekspor berhasil"
 }
