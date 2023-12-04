@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Алия"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "Файл ацалх",
+	"bs-upload-uploadfilefieldlabel": "Файлын нерн",
+	"bs-upload-uploadfileemptytext": "Шин файл орулх...",
+	"bs-upload-license": "Лиценз",
+	"bs-upload-uploadwatchthislabel": "Эн файлыг кинх",
+	"bs-upload-categories": "Әңгллмүд",
+	"bs-upload-upload-waitmessage": "Ацалгдҗана...",
+	"bs-upload-error": "Эндү",
+	"bs-upload-descfilelabel": "Тәәлвр",
+	"bs-upload-error-long": "Ацалхд эндү һарла",
+	"bs-upload-filetypenotsupported": "Эн файлын төрлнь демҗгдхш",
+	"bs-upload-details": "Делгрңгү медәлл",
+	"bs-upload-uploadwarningdialog-warning-exists": "\"$1\" нертә файл негнт бәәнә"
+}
