@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Алия"
+		]
+	},
+	"bs-validator-email-validation-approved": "Цәкм хәәрцгин хайгнь амҗлтта шалһгдла.",
+	"bs-validator-email-validation-not-approved": "Цәкм хәәрцгин хайгиг шалһҗ чадсн уга.",
+	"bs-validator-url-validation-approved": "URL-хайгнь амҗлтта шалһгдла.",
+	"bs-validator-url-validation-not-approved": "URL-хайгиг шалһх болмҗ уга.",
+	"bs-validator-set-validation-approved": "$1-нь амҗлтта шалһгдла.",
+	"bs-validator-invalid-string": "Күчн уга мөр",
+	"bs-validator-invalid-parameter": "Эн параметриг зөвшәрхш",
+	"bs-validator-missing-required": "Эн параметрнь шаардлһта"
+}

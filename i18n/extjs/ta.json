@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"ElangoRamanujam",
+			"Fahimrazick",
 			"Kalyanasundar"
 		]
 	},
 	"bs-extjs-ok": "சரி",
-	"bs-extjs-cancel": "இரத்து செய்க",
+	"bs-extjs-cancel": "கைவிடு",
 	"bs-extjs-yes": "ஆம்",
 	"bs-extjs-no": "இல்லை",
 	"bs-extjs-save": "சேமிக்கவும்",
