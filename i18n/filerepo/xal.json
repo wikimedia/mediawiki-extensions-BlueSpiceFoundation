@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Алия"
+		]
+	},
+	"bs-filerepo-labelupload": "Ацаллт",
+	"bs-filerepo-labelfilter": "Шүүлтүр",
+	"bs-filerepo-headerfilename": "Файлын нерн",
+	"bs-filerepo-headerfilesize": "Кемҗән",
+	"bs-filerepo-headerpagecategories": "Әңгллмүд",
+	"bs-filerepo-headerfilewidth": "Өргн",
+	"bs-filerepo-headerfileheight": "Өндр",
+	"bs-filerepo-headerfilemimetype": "MIME төрл",
+	"bs-filerepo-headerfileusertext": "Кергләч",
+	"bs-filerepo-headerfileextension": "Өргдкл",
+	"bs-filerepo-headerfilemediatype": "Медиафайлын төрл",
+	"bs-filerepo-headerfiledescription": "Тәәлвр",
+	"bs-filerepo-headerfilethumbnail": "Бичкн зург",
+	"bs-filerepo-yes": "Тиим",
+	"bs-filerepo-no": "Уга"
+}
