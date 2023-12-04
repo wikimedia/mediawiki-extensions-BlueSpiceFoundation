@@ -82,7 +82,7 @@
 	"apihelp-bs-categorylinks-store-summary": "перелічує усі категорії сторінки, включаючи посилання на сторінку категорії та маркер для явних та неявних категорій.",
 	"apihelp-bs-categorylinks-store-param-page-id": "ID сторінки",
 	"apihelp-bs-templatelinks-store-description": "Список усіх шаблонів сторінки, що містить посилання на шаблон.",
-	"apihelp-bs-templatelinks-store-summary": "Список усіх шаблонів сторінки, що містить посилання на шаблон.",
+	"apihelp-bs-templatelinks-store-summary": "Список усіх шаблонів сторінки, включно з посиланням на шаблон.",
 	"apihelp-bs-templatelinks-store-param-page-id": "ID сторінки",
 	"apihelp-bs-linker-summary": "Повертає посилання на сторінки, створені Linker",
 	"apihelp-bs-linker-description": "Повертає посилання на сторінки, створені Linker",
