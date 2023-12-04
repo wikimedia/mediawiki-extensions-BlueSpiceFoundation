@@ -21,7 +21,8 @@
 			"列维劳德",
 			"御坂美琴",
 			"落花有意12138",
-			50829
+			50829,
+			"阿南之人"
 		]
 	},
 	"bluespicefoundation-desc": "使MediaWiki准备好企业化",
@@ -109,8 +110,8 @@
 	"bs-graphicallist-action-preview": "预览",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "用于进行诸如管理用户、权限及全局配置的潜在危险任务。（BlueSpice 扩展）",
-	"right-wikiadmin": "用于进行诸如管理用户、权限及全局配置的潜在危险任务。（BlueSpice 扩展）",
+	"action-wikiadmin": "用于进行诸如管理用户、权限及全域配置的潜在危险任务。（BlueSpice 扩展）",
+	"right-wikiadmin": "用于进行诸如管理用户、权限及全域配置的潜在危险任务。（BlueSpice 扩展）",
 	"bs-notifications-agent-anon": "匿名用户",
 	"protect-level-editor": "仅允许编辑者和管理员",
 	"bs-ping-on-init-desc": "在页面加载后是否立即发送ping请求",
