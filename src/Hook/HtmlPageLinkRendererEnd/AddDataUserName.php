@@ -40,24 +40,13 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 			// results in 'false' in User::newFromName
 			return true;
 		}
-		$this->attribs['data-bs-username'] = $user->getName();
-
-		if ( !$this->getConfig()->get( 'UseRealNameForUserLinks' ) ) {
-			return true;
-		}
 
 		$text = HtmlArmor::getHtml( $this->text );
 		// $text = "<bdi>WikiSysop</bdi>" - we must clean it for comparison
 		$bdiWrapped = strpos( $text, '<bdi>' ) === 0;
 		$text = strip_tags( $text );
 
-		// $text = "User:WikiSysop"
-		$textTitle = $services->getTitleFactory()->newFromText( $text, NS_USER );
-		if ( $textTitle !== null ) {
-			$text = $textTitle->getText();
-		}
-
-		if ( $user->getName() === $text ) {
+		if ( $user->getName() === $text && $this->getConfig()->get( 'UseRealNameForUserLinks' ) ) {
 			$this->text =
 				$this->getServices()->getService( 'BSUtilityFactory' )->getUserHelper(
 					$user
@@ -70,6 +59,7 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 			}
 		}
 
+		$this->attribs['data-bs-username'] = $user->getName();
 		return true;
 	}
 }
