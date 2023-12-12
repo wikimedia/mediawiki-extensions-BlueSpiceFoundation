@@ -6,7 +6,7 @@ Ext.define( 'BS.form.field.TitleCombo', {
 	// instance if input is less then 4 chars
 	minChars: 1,
 	triggerAction: 'last',
-	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).escaped(),
 
 	gridConfig: {
 		border: true,

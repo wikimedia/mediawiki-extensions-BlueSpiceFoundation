@@ -19,7 +19,7 @@ Ext.define( 'BS.form.field.ItemList', {
 	itemGridConfig: null,
 	minChars: 4,
 	typeField: 'type',
-	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).escaped(),
 
 	initComponent: function () {
 		this.items = this.makeItems();
