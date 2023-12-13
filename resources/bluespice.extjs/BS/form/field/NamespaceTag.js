@@ -9,7 +9,7 @@ Ext.define( 'BS.form.field.NamespaceTag', {
 	multiSelect: true,
 	collapseOnSelect: true,
 	fieldLabel: mw.message( 'bs-extjs-label-namespace' ).plain(),
-	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).escaped(),
 	delimiter: ', ',
 	// Custom Settings
 	includeAll: false,

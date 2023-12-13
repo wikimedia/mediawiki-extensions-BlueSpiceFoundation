@@ -7,7 +7,7 @@ Ext.define( 'BS.form.CategoryCombo', {
 	allowBlank: false,
 	forceSelection: true,
 	queryMode: 'local',
-	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).plain(),
+	emptyText: mw.message( 'bs-extjs-combo-box-default-placeholder' ).escaped(),
 
 	initComponent: function () {
 		this.store = this.makeStore();
