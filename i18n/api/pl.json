@@ -14,9 +14,10 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Zmienione kategorie.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nie masz uprawnień do edytowania strony „$1”.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Nieprawidłowa kategoria|Nieprawidłowe kategorie}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Kategorie zostały pomyślnie ustawione.",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lista opcji",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Nie masz uprawnień do czytania strony '$1'.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Brak kategorii do usunięcia",
 	"bs-api-task-taskData-page-title": "Prawidłowy tytuł strony wiki",
-	"bs-wikipage-tasks-setcategories-success": "Kategorie zostały pomyślnie ustawione."
+	"apihelp-bs-js-var-config-param-format": "Format wyniku"
 }
