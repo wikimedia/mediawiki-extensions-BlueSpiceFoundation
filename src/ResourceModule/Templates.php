@@ -27,7 +27,7 @@ namespace BlueSpice\ResourceModule;
 
 use BlueSpice\TemplateFactory;
 use MediaWiki\MediaWikiServices;
-use ResourceLoaderFileModule;
+use MediaWiki\ResourceLoader\FileModule as ResourceLoaderFileModule;
 
 class Templates extends ResourceLoaderFileModule {
 

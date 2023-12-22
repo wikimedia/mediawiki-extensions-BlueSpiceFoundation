@@ -6,11 +6,11 @@ namespace BlueSpice;
 
 use FileContentsHasher;
 use LightnCandy\LightnCandy;
+use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use Message;
 use MessageLocalizer;
 use ObjectCache;
 use RequestContext;
-use ResourceLoaderContext;
 use RuntimeException;
 
 class TemplateParser extends \TemplateParser implements ITemplateParser, MessageLocalizer {
