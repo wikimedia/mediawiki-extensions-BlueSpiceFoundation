@@ -351,8 +351,8 @@ Ext.define( 'BS.grid.FileRepo', {
 		this.btnUpload.on( 'click', this.btnUploadClick, this );
 
 		this.dlgUpload = new BS.dialog.Upload( {
-			allowedFileExtensions: mw.config.get( 'bsFileExtensions' ).concat(
-				mw.config.get( 'bsImageExtensions' )
+			allowedFileExtensions: mw.config.get( 'bsgFileExtensions' ).concat(
+				mw.config.get( 'bsgImageExtensions' )
 			),
 			uploadPanelCfg: cfg
 		} );

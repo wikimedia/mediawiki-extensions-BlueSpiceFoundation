@@ -199,7 +199,7 @@ Ext.define( 'BS.panel.Upload', {
 			return true;
 		}
 
-		var allowedSize = mw.config.get( 'bsMaxUploadSize' );
+		var allowedSize = mw.config.get( 'bsgMaxUploadSize' );
 		if ( allowedSize === null ) {
 			return true;
 		}
