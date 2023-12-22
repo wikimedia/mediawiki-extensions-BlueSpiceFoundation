@@ -40,8 +40,6 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 			'ImageExtensions' => $this->lcNormalizeArray(
 				$this->getConfig()->get( 'ImageExtensions' )
 			),
-			'IsWindows' => wfIsWindows(),
-			'ArticlePreviewCaptureNotDefault' => $this->getArticlePreviewCaptureNotDefault(),
 			'PageCollectionPrefix' => wfMessage( 'bs-pagecollection-prefix' )->inContentLanguage()->plain()
 		];
 
@@ -51,18 +49,6 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 
 		foreach ( $configs as $name => $config ) {
 			$this->out->addJsConfigVars( "bsg$name", $config );
-		}
-
-		$this->addLegacyJSConfigVarNames( $configs );
-	}
-
-	/**
-	 * Old var names "bs<Config>" are still heavily in use
-	 * @param array $configs
-	 */
-	protected function addLegacyJSConfigVarNames( $configs ) {
-		foreach ( $configs as $name => $config ) {
-			$this->out->addJsConfigVars( "bs$name", $config );
 		}
 	}
 
@@ -80,26 +66,5 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 		return array_values(
 			array_unique( $normalized )
 		);
-	}
-
-	/**
-	 *
-	 * @return bool
-	 */
-	protected function getArticlePreviewCaptureNotDefault() {
-		$extRegistry = \ExtensionRegistry::getInstance();
-		$modules = $extRegistry->getAttribute(
-			'BlueSpiceFoundationDynamicFileRegistry'
-		);
-		$articlePreviewCaptureNotDefault = false;
-		foreach ( $modules as $key => $module ) {
-			if ( $key !== "articlepreviewimage" ) {
-				continue;
-			}
-
-			$articlePreviewCaptureNotDefault
-				= $module !== "\\BlueSpice\\DynamicFileDispatcher\\ArticlePreviewImage";
-		}
-		return $articlePreviewCaptureNotDefault;
 	}
 }
