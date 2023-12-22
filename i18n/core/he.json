@@ -88,7 +88,7 @@
 	"bs-pref-bspinginterval": "מרווח פינג (בשניות):",
 	"bs-pref-testmode": "הפעלת מצב בדיקה",
 	"bs-tag-input-desc": "ערך תוכן האלמנט",
-	"bs-tag-param-desc": "ערך מאפיין האלמנט \"$1\"",
+	"bs-tag-param-desc": "ערך תכונת הרכיב \"$1\"",
 	"bs-parser-error-invalid-namespace": "מרחב שם בלתי־תקין: $1",
 	"bs-parser-error-invalid-title": "כותרת בלתי־תקינה: $1",
 	"bs-validator-error-namespace-does-not-exist": "מרחב שם לא קיים: $1",
