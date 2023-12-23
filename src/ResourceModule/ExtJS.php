@@ -2,16 +2,16 @@
 
 namespace BlueSpice\ResourceModule;
 
+use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MWStake\MediaWiki\Component\CommonUserInterface\ResourceLoader\LessVars;
 
 class ExtJS extends LessVars {
 
 	/**
-	 *
-	 * @param \ResourceLoaderContext|null $context
+	 * @param ResourceLoaderContext|null $context
 	 * @return array
 	 */
-	public function getDependencies( \ResourceLoaderContext $context = null ) {
+	public function getDependencies( ResourceLoaderContext $context = null ) {
 		$dependencies = [
 			'mediawiki.Title',
 			'ext.bluespice'
