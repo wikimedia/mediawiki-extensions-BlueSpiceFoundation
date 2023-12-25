@@ -3,7 +3,8 @@
 		"authors": [
 			"Aftabuzzaman",
 			"Ziyaurr",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"Aishik Rehman"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "ফাইল আপলোড করুন",
@@ -14,7 +15,7 @@
 	"bs-upload-allowedfiletypesare": "বৈধ ফাইলের ধরনগুলি হলো:",
 	"bs-upload-license": "লাইসেন্স",
 	"bs-upload-uploadwatchthislabel": "এই ফাইলটি নজরে রাখুন",
-	"bs-upload-uploadignorewarningslabel": "যে কোন সতর্কীকরণ উপেক্ষা করুন",
+	"bs-upload-uploadignorewarningslabel": "যে কোনো সতর্কীকরণ উপেক্ষা করুন",
 	"bs-upload-categories": "বিষয়শ্রেণীসমূহ",
 	"bs-upload-upload-waitmessage": "আপলোড করা হচ্ছে...",
 	"bs-upload-error": "ত্রুটি",

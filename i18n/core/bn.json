@@ -3,13 +3,14 @@
 		"authors": [
 			"Aftab1995",
 			"Aftabuzzaman",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"Aishik Rehman"
 		]
 	},
 	"bs-userbar_loginswitch_logout": "প্রস্থান",
 	"bs-userbar_loginswitch_login": "প্রবেশ",
 	"bs-extended-search-textfield-defaultvalue": "অনুসন্ধান...",
-	"bs-no-information-available": "কোন তথ্য উপলব্ধ নেই",
+	"bs-no-information-available": "কোনো তথ্য উপলব্ধ নেই",
 	"bs-years-duration": "{{PLURAL:$1|এক বছর|$1 বছর}}",
 	"bs-months-duration": "{{PLURAL:$1|এক মাস|$1 মাস}}",
 	"bs-weeks-duration": "{{PLURAL:$1|এক সপ্তাহ|$1 সপ্তাহ}}",
