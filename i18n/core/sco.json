@@ -18,7 +18,7 @@
 	"bs-months-duration": "{{PLURAL:$1|yin month|$1 months}}",
 	"bs-weeks-duration": "{{PLURAL:$1|yin week|$1 weeks}}",
 	"bs-days-duration": "{{PLURAL:$1|yin day|$1 days}}",
-	"bs-hours-duration": "{{PLURAL:$1|yin hoor|$1 hoors}}",
+	"bs-hours-duration": "{{PLURAL:$1|ae oor|$1 oor}}",
 	"bs-mins-duration": "{{PLURAL:$1|yin minute|$1 minutes}}",
 	"bs-secs-duration": "{{PLURAL:$1|yin seicont|$1 seiconts}}",
 	"bs-two-units-ago": "$1 n $2 syne",
