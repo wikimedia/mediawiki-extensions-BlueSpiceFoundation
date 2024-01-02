@@ -11,6 +11,7 @@
 			"Macofe",
 			"Nancystodd",
 			"Rapunzel",
+			"Rodney Araujo",
 			"Warming Hearth",
 			"YoViajo"
 		]
@@ -70,9 +71,9 @@
 	"apihelp-bs-js-var-config-param-func": "Función de configuración a ejecutar: has|get",
 	"apihelp-bs-js-var-config-param-context": "Objeto codificado JSON con el contexto de la llamada",
 	"apihelp-bs-js-var-config-param-format": "Formato del resultado",
-	"apihelp-bs-categorylinks-store-summary": "Enumera todas las categorías de un enlace inclusivo de página a una categoría y marcador para las categorías explícitas e implícitas.",
+	"apihelp-bs-categorylinks-store-summary": "Enumera todas las categorías de un enlace, incluyendo de página a una categoría y un marcador para las categorías explícitas e implícitas.",
 	"apihelp-bs-categorylinks-store-param-page-id": "El ID de página de una página",
-	"apihelp-bs-templatelinks-store-summary": "Enumera todas las plantillas de una página, incluido el enlace a la plantilla.",
+	"apihelp-bs-templatelinks-store-summary": "Enumera todas las plantillas de una página, incuyendo el enlace a la plantilla.",
 	"apihelp-bs-templatelinks-store-param-page-id": "El id de página de la página",
 	"apihelp-bs-linker-summary": "Muestra links a páginas generadas por Linker",
 	"apihelp-bs-linker-param-linkdescs": "Un array JSON asociativo con una lista de páginas. Cada entrada debe contener el título de la página como `target`. Opcionalmente puede contener `text`, `attribs` y `query`."
