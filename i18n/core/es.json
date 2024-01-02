@@ -16,6 +16,7 @@
 			"Nancystodd",
 			"Ncr",
 			"ProtoplasmaKid",
+			"Rodney Araujo",
 			"Tiberius1701",
 			"Whytheonlyone"
 		]
@@ -111,10 +112,11 @@
 	"protect-level-editor": "Solo editores y administradores",
 	"bs-ping-on-init-desc": "Debería enviarse una solicitud de ping inmediatamente después de cargar la página",
 	"right-editor": "Se le concederán todos los permisos del rol \"editor\" para las páginas protegidas en la restricción del editor cuando el sistema de roles esté activado",
-	"action-editor": "Ser concedido todos los permisos del editor \"de función\" para los páginas protegidas en restricción de editor cuándo el sistema de función está activado",
+	"action-editor": "Se le otorgarán todos los permisos del rol \"editor\" para las páginas protegidas en la restricción del editor cuando el sistema de roles esté activado",
 	"bs-pref-fileextensions-help": "Tipos de ficheros que se pueden subir a la wiki. No se permite por razones de seguridad algunos tipos (como html, js, php, cgi o exe)",
-	"bs-pref-imageextensions-help": "Los tipos del archivos que puede ser añadidos al wiki. Formatos del web posibles: gif, png, jpg, jpeg. Otros formatos del archivos: tiff, bmp",
+	"bs-pref-imageextensions-help": "Tipos de archivos de imagen que se pueden subir en la wiki. Posibles formatos web: gif, png, jpg, jpeg. Otros formatos de imagen: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "No se pudo guardar el archivo de configuración $1.",
 	"bs-pref-logopath-help": "Merkið ætti að vera geymt í /w/images möppunni í uppsetningunni þinni. Ef þú geymir það í /w/skins möppunni í BlueSpice uppsetningunni þinni er hægt að skrifa yfir það með uppfærslu.",
-	"bs-pref-faviconpath-help": "Favicon ætti að vera geymt í /w/images möppunni í uppsetningunni þinni. Ef þú geymir það í /w/skins möppunni í BlueSpice uppsetningunni þinni gæti það verið skrifað yfir með uppfærslu. Favicons hafa skráarendingu .ico."
+	"bs-pref-faviconpath-help": "Favicon ætti að vera geymt í /w/images möppunni í uppsetningunni þinni. Ef þú geymir það í /w/skins möppunni í BlueSpice uppsetningunni þinni gæti það verið skrifað yfir með uppfærslu. Favicons hafa skráarendingu .ico.",
+	"bs-exttype-bluespice-assets": "Activos de BlueSpice"
 }
