@@ -24,7 +24,7 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 		if ( !empty( $templateDir ) ) {
 			$templateDir = rtrim( $templateDir, '/' );
 		}
-		$this->cache = $cache ?: ObjectCache::getLocalServerInstance( CACHE_ANYTHING );
+		$cache = $cache ?: ObjectCache::getLocalServerInstance( CACHE_ANYTHING );
 
 		// Do not add more flags here without discussion.
 		// If you do add more flags, be sure to update unit tests as well.
