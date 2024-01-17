@@ -40,7 +40,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 		$firstRow = (object)$response[ $this->getResultsNodeName() ][0];
 		$schema = $this->getStoreSchema();
 		foreach ( $schema as $schemaFieldName => $config ) {
-			$this->assertObjectHasAttribute(
+			$this->assertObjectHasProperty(
 				$schemaFieldName,
 				$firstRow,
 				"Dataset misses field '$schemaFieldName'' from schema definition!"
