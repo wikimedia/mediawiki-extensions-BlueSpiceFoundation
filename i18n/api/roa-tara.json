@@ -59,9 +59,9 @@
 	"apihelp-bs-js-var-config-param-func": "Funzioen de configurazione da eseguì: has|get",
 	"apihelp-bs-js-var-config-param-context": "Ogeette JSON codifecate cu 'u condeste d'a chiamate",
 	"apihelp-bs-js-var-config-param-format": "'U formate d'u resultate",
-	"apihelp-bs-categorylinks-store-summary": "Elenghe tutte le categorije de 'na pàgene 'nglusive de collegamende a 'a pàgene de categorije e indicatore pe le categorije esplicite e 'mblicite.",
+	"apihelp-bs-categorylinks-store-summary": "Elenghe tutte le categorije de 'na pàgene, ca n'nglude 'nu collegamende a' pàgene de categorije e 'nu indicatore pe le categorije esplicite e 'mblicite.",
 	"apihelp-bs-categorylinks-store-param-page-id": "L'ID d'a pàgene",
-	"apihelp-bs-templatelinks-store-summary": "Elenghe tutte le template de 'na pàgene 'nglusive de collegamende a 'u template.",
+	"apihelp-bs-templatelinks-store-summary": "Elenghe tutte le template de 'na pàgene ca 'ngludene 'nu collegamende a 'u template.",
 	"apihelp-bs-templatelinks-store-param-page-id": "L'ID d'a pàgene",
 	"apihelp-bs-linker-summary": "Tuèrne le collegaminde a le pàggene generate da Linker",
 	"apihelp-bs-linker-param-linkdescs": "'Na matrice JSON associative cu l'elenghe de le pàggne. Ogne vôsce adda tenè 'u titole d'a pàgene cumme 'target'. Facoltativamende pò tenè 'text', 'attribs' e 'query'."
