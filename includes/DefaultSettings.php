@@ -96,6 +96,9 @@ $GLOBALS[ 'bsgGroupRoles' ] = array_merge( [
 		'reader' => true,
 		'editor' => true,
 		'reviewer' => true
+	],
+	'bot' => [
+		'bot' => true
 	]
 ], $GLOBALS['bsgGroupRoles'] );
 
