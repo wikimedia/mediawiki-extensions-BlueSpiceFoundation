@@ -133,6 +133,12 @@ class Foundation {
 				continue;
 			}
 			$GLOBALS[$instance->getGlobalName()] = $instance->getValue();
+
+			// Since there is a global array wgLogos with different sizes
+			// and ConfigDefinitior does not handle arrays we have to do this ugly fix
+			if ( $instance->getGlobalName() === 'wgLogo' ) {
+				$GLOBALS['wgLogos']['1x'] = $instance->getValue();
+			}
 		}
 		$GLOBALS['wgFileExtensions'] = array_values( array_unique( array_merge(
 			$GLOBALS['wgFileExtensions'],
