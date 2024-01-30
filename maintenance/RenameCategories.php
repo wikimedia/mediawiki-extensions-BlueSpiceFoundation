@@ -491,9 +491,8 @@ foreach ( $res as $row ) {
 			*/
 			echo "Deleting $oldtitletext : ";
 			$deletePage = $deletePageFactory->newDeletePage( $oldarticle->getPage(), $user );
-			$deleteStatus = $deletePage->deleteIfAllowed( $summary );
+			$deleteStatus = $deletePage->setSuppress( $noRC )->deleteIfAllowed( $summary );
 			if ( $deleteStatus->isOk() ) {
-				# doesn't work
 				echo "successful\n";
 			} else {
 				echo "failed\n";
