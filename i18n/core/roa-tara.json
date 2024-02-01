@@ -88,8 +88,8 @@
 	"bs-graphicallist-action-preview": "Andeprime",
 	"bs-bluespice-mediawiki": "BlueSpice Mediauicchi",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "ausate pe attivitate amminsitrative potenzialmende pericolose cumme 'a gestione de le utinde, permesse, configurazione globbale (estenziune de BlueSpice)",
-	"right-wikiadmin": "Ausate pe attivitate amminsitrative potenzialmende pericolose cumme 'a gestione de le utinde, permesse, configurazione globbale (estenziune de BlueSpice)",
+	"action-wikiadmin": "ausate pe attivitate amminsitrative potenzialmende pericolose, cumme 'a gestione de le utinde, permesse, configurazione globbale (estenziune de BlueSpice)",
+	"right-wikiadmin": "Ausate pe attivitate amminsitrative potenzialmende pericolose, cumme 'a gestione de le utinde, permesse, configurazione globbale (estenziune de BlueSpice)",
 	"bs-notifications-agent-anon": "utende anonime",
 	"protect-level-editor": "Consendite sulamende a le cangiature e le amministrature",
 	"bs-ping-on-init-desc": "Avessà mannà 'na richieste subbete dope le carecaminde d'a pàgene",
@@ -99,5 +99,6 @@
 	"bs-pref-imageextensions-help": "Le tipe de le immaggine de fail ca ponne essere carecate jndr'à uicchi. Le possibbele formate web: gif, png, jpg, jpeg. Otre formate de immaggine: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "'U file de configurazione $1 non ge pò essere scritte!",
 	"bs-pref-logopath-help": "'U logo avessa essere reggistrate jndr'à cartelle /w/images de l'installaziona toje. Ce tu reggistre jndr'à cartelle /w/skins de l'installazione de BlueSpice tune, pò essere sovrascritte cu 'n'aggiornamende.",
-	"bs-pref-faviconpath-help": "L'icone preferite avessa essere reggistrate jndr'à cartelle /w/images de l'installaziona toje. Ce tu reggistre jndr'à cartelle /w/skins de l'installazione de BlueSpice tune, pò essere sovrascritte cu 'n'aggiornamende. L'icone preferite onne cumme estenzione d'u file .ico."
+	"bs-pref-faviconpath-help": "L'icone preferite avessa essere reggistrate jndr'à cartelle /w/images de l'installaziona toje. Ce tu reggistre jndr'à cartelle /w/skins de l'installazione de BlueSpice tune, pò essere sovrascritte cu 'n'aggiornamende. L'icone preferite onne cumme estenzione d'u file .ico.",
+	"bs-exttype-bluespice-assets": "Bene de BlueSpice"
 }
