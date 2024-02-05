@@ -7,6 +7,8 @@ require_once __DIR__ . '/BSMaintenance.php';
 
 class BSImportUsers extends BSMaintenance {
 	public function __construct() {
+		parent::__construct();
+
 		$this->addOption( 'src', 'The path to the source file', true, true );
 		$this->addOption(
 			'defaultpw',
@@ -20,8 +22,6 @@ class BSImportUsers extends BSMaintenance {
 			false,
 			false
 		);
-
-		parent::__construct();
 	}
 
 	public function execute() {

@@ -4,6 +4,8 @@ require_once 'BSMaintenance.php';
 
 class BSFileHashCheck extends BSMaintenance {
 	public function __construct() {
+		parent::__construct();
+
 		$this->addOption( 'dir', 'The path to the directory to process', true, true );
 		$this->addOption(
 			'hashes',
@@ -17,8 +19,6 @@ class BSFileHashCheck extends BSMaintenance {
 			false,
 			false
 		);
-
-		parent::__construct();
 	}
 
 	public function execute() {

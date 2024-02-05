@@ -31,11 +31,11 @@ class BSExtractFiles extends BSMaintenance {
 	private $destPath = '';
 
 	public function __construct() {
+		parent::__construct();
+
 		$this->addOption( 'srcxml', 'The path to the source file', true, true );
 		$this->addOption( 'srcimages', 'The path to the source images directory', true, true );
 		$this->addOption( 'dest', 'The folder to copy the files to', true, true );
-
-		parent::__construct();
 	}
 
 	public function execute() {
