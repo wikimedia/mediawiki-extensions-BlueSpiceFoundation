@@ -11,10 +11,10 @@ class BSExtractPageTitles extends BSMaintenance {
 	private $titles = [];
 
 	public function __construct() {
+		parent::__construct();
+
 		$this->addOption( 'srcxml', 'The path to the source file', true, true );
 		$this->addOption( 'dest', 'The path to the destination file', true, true );
-
-		parent::__construct();
 	}
 
 	public function execute() {
