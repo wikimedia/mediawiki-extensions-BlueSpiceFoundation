@@ -63,7 +63,7 @@
 	"bs-filesystemhelper-save-base64-error": "檔案無法儲存。",
 	"bs-filesystemhelper-upload-base64-error": "檔案無法上傳。",
 	"bs-filesystemhelper-upload-local-error-stash-file": "檔案無法移動至上傳儲藏庫。",
-	"bs-filesystemhelper-upload-local-error-create": "檔案無法在 Wiki 中建立。",
+	"bs-filesystemhelper-upload-local-error-create": "無法在 wiki 中建立檔案。",
 	"bs-navigation-instructions": "操作說明",
 	"bs-navigation-support": "技術支援",
 	"bs-navigation-contact": "聯絡我們",
