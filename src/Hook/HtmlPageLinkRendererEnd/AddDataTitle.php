@@ -9,7 +9,7 @@ class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		// may fail, as it checks for the equality of the complete parserd html
 		// string, we modify here. We use our own test to verify that this code
 		// works
-		if ( defined( 'MW_PHPUNIT_TEST' ) && !defined( 'BS_ADD_DATA_TITLE_TEST' ) ) {
+		if ( defined( 'MW_QUIBBLE_CI' ) && !defined( 'BS_ADD_DATA_TITLE_TEST' ) ) {
 			return true;
 		}
 		if ( $this->target->isExternal() ) {
