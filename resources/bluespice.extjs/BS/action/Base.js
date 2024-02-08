@@ -10,7 +10,6 @@ Ext.define( 'BS.action.Base', {
 	actionStatus: 0, // BS.action.Base.STATUS_PENDING
 
 	/**
-	 *
 	 * @return jQuery.Promise
 	 */
 	execute: function () {

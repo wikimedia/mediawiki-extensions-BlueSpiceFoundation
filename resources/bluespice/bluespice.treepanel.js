@@ -18,7 +18,6 @@
 	} );
 
 	/**
-	 *
 	 * @param {jQuery} $node
 	 * @return {undefined}
 	 */

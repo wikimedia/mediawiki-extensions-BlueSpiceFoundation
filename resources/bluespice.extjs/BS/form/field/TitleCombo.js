@@ -38,7 +38,7 @@ Ext.define( 'BS.form.field.TitleCombo', {
 		columns: [ {
 			dataIndex: 'displayText',
 			renderer: function ( value, meta, record ) {
-				var valueWTitle = '<span title="' + Ext.String.htmlEncode(value) + '">' + value + '</span>';
+				var valueWTitle = '<span title="' + Ext.String.htmlEncode( value ) + '">' + value + '</span>';
 				if ( record.get( 'page_id' ) === 0 ) {
 					return valueWTitle + ' <sup><span class="new-page-hint">' + mw.message( 'bs-extjs-titlecombo-newpagehint' ).plain() + '</span></sup>';
 				}

@@ -23,7 +23,6 @@ OO.inheritClass(
 );
 
 /**
- *
  * @inheritdoc
  */
 bs.ui.widget.StoreApiBoundComboBoxInput.prototype.getLookupRequest = function () {

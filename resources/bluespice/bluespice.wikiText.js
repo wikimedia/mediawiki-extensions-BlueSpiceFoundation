@@ -285,7 +285,9 @@
 				}
 
 				if ( value === null || value === false ||
-					value === '' || typeof value === 'undefined' ) { continue; }
+					value === '' || typeof value === 'undefined' ) {
+					continue;
+				}
 
 				if ( property === 'sizewidth' || property === 'sizeheight' ) {
 					var size = '';

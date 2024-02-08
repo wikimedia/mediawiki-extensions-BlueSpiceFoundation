@@ -27,7 +27,6 @@ OO.inheritClass( bs.ui.widget.StoreComboBoxInput, OO.ui.ComboBoxInputWidget );
 OO.mixinClass( bs.ui.widget.StoreComboBoxInput, OO.ui.mixin.LookupElement );
 
 /**
- *
  * @inheritdoc
  */
 bs.ui.widget.StoreComboBoxInput.prototype.getLookupRequest = function () {
@@ -54,7 +53,6 @@ bs.ui.widget.StoreComboBoxInput.prototype.getLookupRequest = function () {
 };
 
 /**
- *
  * @inheritdoc
  */
 bs.ui.widget.StoreComboBoxInput.prototype.getLookupMenuOptionsFromData = function ( data ) {
@@ -71,7 +69,6 @@ bs.ui.widget.StoreComboBoxInput.prototype.getLookupMenuOptionsFromData = functio
 };
 
 /**
- *
  * @inheritdoc
  */
 bs.ui.widget.StoreComboBoxInput.prototype.getLookupCacheDataFromResponse = function ( response ) {
@@ -79,7 +76,6 @@ bs.ui.widget.StoreComboBoxInput.prototype.getLookupCacheDataFromResponse = funct
 };
 
 /**
- *
  * @inheritdoc
  */
 bs.ui.widget.StoreComboBoxInput.prototype.setValue = function ( value ) {
@@ -99,7 +95,6 @@ bs.ui.widget.StoreComboBoxInput.prototype.setValue = function ( value ) {
 };
 
 /**
- *
  * @inheritdoc
  */
 bs.ui.widget.StoreComboBoxInput.prototype.cleanUpValue = function ( value ) {
@@ -110,7 +105,6 @@ bs.ui.widget.StoreComboBoxInput.prototype.cleanUpValue = function ( value ) {
 };
 
 /**
- *
  * @inheritdoc
  */
 bs.ui.widget.StoreComboBoxInput.prototype.findSelectedItem = function () {
