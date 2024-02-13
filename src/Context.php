@@ -67,6 +67,13 @@ class Context implements IContextSource {
 	/**
 	 * @inheritDoc
 	 */
+	public function getLanguageCode() {
+		return $this->context->getLanguageCode();
+	}
+
+	/**
+	 * @inheritDoc
+	 */
 	public function getOutput() {
 		return $this->context->getOutput();
 	}
