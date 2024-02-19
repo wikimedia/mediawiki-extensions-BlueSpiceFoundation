@@ -51,7 +51,7 @@
 	"bs-email-greeting-receiver": "{{GENDER:$1|Pozdravljeni, gospod $2 |Pozdravljeni, gospa $2 |Pozdravljeni, $2}}",
 	"bs-email-footer": "To sporočilo je samodejno ustvaril projekt $1. Prosim, ne odgovarjajte na to e-pošto.",
 	"bs-userpreferences-link-title": "Prikaz osebnih uporabniških nastavitev",
-	"bs-exception-view-admin-hint": "Obrnite se na administratorja sistema.",
+	"bs-exception-view-admin-hint": "Obrnite se na sistemskega administratorja.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Pokaži podrobnosti o napaki",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Skrij podrobnosti o napaki",
 	"bs-readonly": "Podatkovna zbirka je za urejanja in druge spremembe začasno zaklenjena, najverjetneje zaradi rutinskega vzdrževanja zbirke, po katerem bo spet v normalnem stanju.\n\nAdministrator, ki jo je zaklenil, je podal naslednjo razlago: $1",
