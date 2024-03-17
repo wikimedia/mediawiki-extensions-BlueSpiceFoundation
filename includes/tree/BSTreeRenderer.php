@@ -168,7 +168,7 @@ class BSTreeRenderer {
 	 */
 	public function renderNode( $node ) {
 		$this->html .= Html::openElement( 'span', [ 'class' => 'bs-treenode-value' ] );
-		$this->html .= $node->get( 'html',  $node->getText() );
+		$this->html .= $node->get( 'html', $node->getText() );
 		$this->html .= Html::closeElement( 'span' );
 	}
 

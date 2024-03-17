@@ -18,7 +18,7 @@ if ( !defined( 'WIKI_FARMING' ) ) {
 	}
 	if ( !defined( 'BSDATADIR' ) ) {
 		// Present
-		define( 'BSDATADIR',   BSROOTDIR . DIRECTORY_SEPARATOR . 'data' );
+		define( 'BSDATADIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'data' );
 	}
 
 	// New constants
@@ -36,7 +36,7 @@ if ( !defined( 'WIKI_FARMING' ) ) {
 
 	if ( !defined( 'BS_DATA_DIR' ) ) {
 		// Future
-		define( 'BS_DATA_DIR',  $sTMPUploadDir . DIRECTORY_SEPARATOR . 'bluespice' );
+		define( 'BS_DATA_DIR', $sTMPUploadDir . DIRECTORY_SEPARATOR . 'bluespice' );
 	}
 	if ( !defined( 'BS_CACHE_DIR' ) ) {
 		// $wgCacheDirectory?

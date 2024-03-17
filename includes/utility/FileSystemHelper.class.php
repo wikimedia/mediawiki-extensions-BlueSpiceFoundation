@@ -568,7 +568,7 @@ class BsFileSystemHelper {
 			return Status::newFatal( wfMessage( "bs-filesystemhelper-has-path-traversal" ) );
 		}
 		$sUploadPath = $oWebRequestUpload->getTempName();
-		list( $iWidth, $iHeight, $iType ) = getimagesize( $sUploadPath );
+		[ $iWidth, $iHeight, $iType ] = getimagesize( $sUploadPath );
 		switch ( $iType ) {
 			case IMAGETYPE_GIF:
 				$rImage = imagecreatefromgif( $sUploadPath );

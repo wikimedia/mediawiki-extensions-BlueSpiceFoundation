@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class AutoExtensionHandlerTest extends TestCase {
 
 	/**
-	 * @covers AutoExtensionHandler::getAutoExtensionData
+	 * @covers \BlueSpice\Installer\AutoExtensionHandler::getAutoExtensionData
 	 * @return void
 	 */
 	public function testGetAutoExtensionData() {

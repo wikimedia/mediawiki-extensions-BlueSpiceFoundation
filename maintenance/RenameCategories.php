@@ -323,7 +323,7 @@ foreach ( $res as $row ) {
 	}
 
 	// this part is for text modification only (append, prefix, delete, replace)
-	if ( in_array( $mode, [ 'append','prefix','delete','replace' ] ) ) {
+	if ( in_array( $mode, [ 'append', 'prefix', 'delete', 'replace' ] ) ) {
 		# Modify the text
 		$old_text = $text;
 

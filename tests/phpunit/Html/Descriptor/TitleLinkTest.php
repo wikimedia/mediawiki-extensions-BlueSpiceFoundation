@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 class TitleLinkTest extends TestCase {
 
 	/**
-	 * @covers TitleLink::__construct
+	 * @covers \BlueSpice\Html\Descriptor\TitleLink::__construct
 	 */
 	public function testConstructor() {
 		$context = $this->createMock( '\IContextSource' );
@@ -21,7 +21,7 @@ class TitleLinkTest extends TestCase {
 	}
 
 	/**
-	 * @covers TitleLink::getCSSClasses
+	 * @covers \BlueSpice\Html\Descriptor\TitleLink::getCSSClasses
 	 */
 	public function testExistingTitle() {
 		$context = $this->createMock( '\IContextSource' );
@@ -37,7 +37,7 @@ class TitleLinkTest extends TestCase {
 	}
 
 	/**
-	 * @covers TitleLink::getCSSClasses
+	 * @covers \BlueSpice\Html\Descriptor\TitleLink::getCSSClasses
 	 */
 	public function testNotExistingTitle() {
 		$context = $this->createMock( '\IContextSource' );

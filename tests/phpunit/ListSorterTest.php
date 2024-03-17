@@ -10,7 +10,7 @@ use stdClass;
 class ListSorterTest extends TestCase {
 
 	/**
-	 * @covers ListSorter::__construct
+	 * @covers \BlueSpice\ListSorter::__construct
 	 */
 	public function testContructor() {
 		$sorter = new ListSorter();
@@ -19,7 +19,7 @@ class ListSorterTest extends TestCase {
 	}
 
 	/**
-	 * @covers ListSorter::sort
+	 * @covers \BlueSpice\ListSorter::sort
 	 */
 	public function testSortDefault() {
 		$sorter = new ListSorter();
@@ -34,7 +34,7 @@ class ListSorterTest extends TestCase {
 	}
 
 	/**
-	 * @covers ListSorter::sort
+	 * @covers \BlueSpice\ListSorter::sort
 	 */
 	public function testSortASC() {
 		$sorter = new ListSorter();
@@ -49,7 +49,7 @@ class ListSorterTest extends TestCase {
 	}
 
 	/**
-	 * @covers ListSorter::sort
+	 * @covers \BlueSpice\ListSorter::sort
 	 */
 	public function testSortDESC() {
 		$sorter = new ListSorter();

@@ -71,7 +71,7 @@ function getUser( $sGivenUser ) {
 	$oDbr = wfGetDB( DB_REPLICA );
 	$rRes = $oDbr->select(
 		'user',
-		[ 'user_id','user_name' ],
+		[ 'user_id', 'user_name' ],
 		$condition
 	);
 

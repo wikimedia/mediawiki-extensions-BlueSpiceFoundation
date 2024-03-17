@@ -46,16 +46,16 @@ class WikiTextTemplateTreeParserTest extends \PHPUnit\Framework\TestCase {
 Some arbitrary text
 HERE
 				,
-[
-	[
+		[
+		[
 		'name' => 'TemplateX',
 		'params' => [
 			'typist' => 'User:WikiSysop',
 			'topic' => 'Some topic',
 			'date' => '2018-05-11'
 		]
-	],
-	[
+		],
+		[
 		'name' => 'TemplateX/Item',
 		'params' => [
 			'date' => '2018/05/11',
@@ -73,8 +73,8 @@ HERE
 				]
 			]
 		]
-	],
-	[
+		],
+		[
 		'name' => 'TemplateX/Item',
 		'params' => [
 			'date' => '2017/03/30',
@@ -112,7 +112,7 @@ HERE
 				]
 			]
 		]
-	]
+		]
 ]
 			]
 		];

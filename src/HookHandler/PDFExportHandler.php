@@ -68,7 +68,7 @@ class PDFExportHandler {
 	 */
 	private function addTemlateResourceLinkNodes( string $href, DOMElement $parent ) {
 		/** @var DOMElement */
-		$linkNode = $this->createLinkNode( $parent->ownerDocument,  $href );
+		$linkNode = $this->createLinkNode( $parent->ownerDocument, $href );
 		$parent->appendChild( $linkNode );
 	}
 

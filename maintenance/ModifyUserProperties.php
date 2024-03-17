@@ -84,7 +84,7 @@ function updateUserProperties( $aUserStore, $options, $bDry ) {
 			if ( !$bDry ) {
 				$oDbw->replace(
 					'user_properties',
-					[ 'up_user' , 'up_property' ],
+					[ 'up_user', 'up_property' ],
 					[
 						'up_user' => $aUserStore[$i]['id'],
 						'up_property' => $options['property'],
@@ -164,7 +164,7 @@ function getMPCUser( $sGivenUser ) {
 	$oDbr = wfGetDB( DB_REPLICA );
 	$rRes = $oDbr->select(
 		'user',
-		[ 'user_id','user_name' ],
+		[ 'user_id', 'user_name' ],
 		$condition
 	);
 

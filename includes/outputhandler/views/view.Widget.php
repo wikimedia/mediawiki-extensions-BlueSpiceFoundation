@@ -70,9 +70,9 @@ class ViewWidget extends ViewBaseElement {
 		}
 		if ( empty( $this->_mBody ) ) {
 			if ( $this->hasItems() ) {
-			foreach ( $this->_mItems as $oViewItem ) {
-				$this->_mBody .= $oViewItem->execute();
-			}
+				foreach ( $this->_mItems as $oViewItem ) {
+					$this->_mBody .= $oViewItem->execute();
+				}
 			} else {
 				$this->_mBody = '<ul><li><em>'
 					. wfMessage( 'bs-no-information-available' )->plain()

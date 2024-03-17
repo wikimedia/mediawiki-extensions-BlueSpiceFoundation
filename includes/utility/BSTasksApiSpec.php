@@ -93,7 +93,7 @@ class BSTasksApiSpec {
 			} else {
 				// Maybe there is a generic description available
 				// 'page_id' => 'bs-api-task-taskData-page-id'
-				$oMsgDefault = wfMessage( 'bs-api-task-taskData-' . str_replace( '_', '-',  $sParamName ) );
+				$oMsgDefault = wfMessage( 'bs-api-task-taskData-' . str_replace( '_', '-', $sParamName ) );
 				if ( $oMsgDefault->exists() ) {
 					$aProps[$sParamName]['description'] = $oMsgDefault->plain();
 				}

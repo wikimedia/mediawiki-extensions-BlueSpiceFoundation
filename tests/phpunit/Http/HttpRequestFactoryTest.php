@@ -26,26 +26,26 @@ class HttpRequestFactoryTest extends TestCase {
 		$mockFactory = $this->createMock( MWHttpRequestFactory::class );
 		$mockFactory->expects( $this->atLeastOnce() )->method( 'canMakeRequests' );
 		$mockFactory->expects( $this->atLeastOnce() )->method( 'create' )->with(
-			$this->equalTo( 'https://www.bluespice.com' ),
-			$this->equalTo( $defaultOptions )
+			'https://www.bluespice.com',
+			$defaultOptions
 		);
 		$mockFactory->expects( $this->atLeastOnce() )->method( 'createMultiClient' )->with( $this->equalTo( [
 			'sslVerifyHost' => false,
 			'sslVerifyCert' => false
 		] ) );
 		$mockFactory->expects( $this->atLeastOnce() )->method( 'get' )->with(
-			$this->equalTo( 'https://www.bluespice.com' ),
-			$this->equalTo( $defaultOptions )
+			'https://www.bluespice.com',
+			$defaultOptions
 		);
 		$mockFactory->expects( $this->atLeastOnce() )->method( 'getUserAgent' );
 		$mockFactory->expects( $this->atLeastOnce() )->method( 'post' )->with(
-			$this->equalTo( 'https://www.bluespice.com' ),
-			$this->equalTo( $defaultOptions )
+			'https://www.bluespice.com',
+			$defaultOptions
 		);
 		$mockFactory->expects( $this->atLeastOnce() )->method( 'request' )->with(
-			$this->equalTo( 'PUT' ),
-			$this->equalTo( 'https://www.bluespice.com' ),
-			$this->equalTo( $defaultOptions )
+			'PUT',
+			'https://www.bluespice.com',
+			$defaultOptions
 		);
 
 		$decoratorFactory = new HttpRequestFactory( $mockFactory, $defaultOptions );

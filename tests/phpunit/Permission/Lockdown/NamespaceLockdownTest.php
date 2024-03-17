@@ -33,7 +33,7 @@ class NamespaceLockdownTest extends MediaWikiIntegrationTestCase {
 		return [
 			[ Title::newMainPage(), true ],
 			[ Title::makeTitle( NS_CATEGORY, 'Dummy' ), true ],
-			[ Title::makeTitle( NS_HELP, 'Dummy' ),true ],
+			[ Title::makeTitle( NS_HELP, 'Dummy' ), true ],
 			[ Title::makeTitle( NS_SPECIAL, 'Dummy' ), false ],
 		];
 	}
