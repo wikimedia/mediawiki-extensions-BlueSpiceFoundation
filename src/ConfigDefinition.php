@@ -93,7 +93,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_SYSTEM . '/' . static::EXTENSION_FOUNDATION,
-			static::MAIN_PATH_EXTENSION . '/' . static::EXTENSION_FOUNDATION . '/' . static::FEATURE_SYSTEM ,
+			static::MAIN_PATH_EXTENSION . '/' . static::EXTENSION_FOUNDATION . '/' . static::FEATURE_SYSTEM,
 			static::MAIN_PATH_PACKAGE . '/' . static::PACKAGE_FREE . '/' . static::EXTENSION_FOUNDATION,
 		];
 	}

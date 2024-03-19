@@ -25,7 +25,7 @@ abstract class SpecialPage extends \SpecialPage {
 		parent::__construct(
 			$name, $restriction, $listed,
 			$function, $file, $includable
-	);
+		);
 		$this->services = MediaWikiServices::getInstance();
 	}
 

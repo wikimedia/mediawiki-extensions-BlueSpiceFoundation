@@ -50,8 +50,8 @@ class BSFileHashCheck extends BSMaintenance {
 	 */
 	public function getFilePath( $oFileInfo, $sDir ) {
 		$sPathName = $oFileInfo->getPathname();
-		$sPathName = str_replace( [ '\\\\','\\' ], '/', $sPathName );
-		$sDir = str_replace( [ '\\\\','\\' ], '/', $sDir );
+		$sPathName = str_replace( [ '\\\\', '\\' ], '/', $sPathName );
+		$sDir = str_replace( [ '\\\\', '\\' ], '/', $sDir );
 		$sPathName = preg_replace( '#^' . preg_quote( $sDir ) . '#', '', $sPathName );
 
 		return trim( $sPathName, '/' );

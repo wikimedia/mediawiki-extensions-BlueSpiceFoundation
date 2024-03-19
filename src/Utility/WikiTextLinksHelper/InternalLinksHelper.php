@@ -36,7 +36,7 @@ class InternalLinksHelper {
 		);
 		$links = [];
 		foreach ( $matches as $match ) {
-			list( $fullMatch, $leadingColon, $titleText ) = $match;
+			[ $fullMatch, $leadingColon, $titleText ] = $match;
 			$title = $this->makeTitleFromMatch(
 				$fullMatch,
 				$leadingColon,
