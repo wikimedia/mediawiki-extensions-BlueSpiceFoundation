@@ -225,9 +225,13 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	 * @return bool
 	 */
 	private function detectRecursion( array $nodes ) {
-		$first = array_pop( $nodes );
-		$second = array_pop( $nodes );
-
-		return $first === $second;
+		$processed = [];
+		foreach ( $nodes as $node ) {
+			if ( in_array( $node, $processed ) ) {
+				return true;
+			}
+			$processed[] = $node;
+		}
+		return false;
 	}
 }
