@@ -89,7 +89,8 @@ class Context implements IContextSource {
 	 * @inheritDoc
 	 */
 	public function getStats() {
-		return $this->context->getStats();
+		wfDeprecated( __METHOD__, '1.27' );
+		return $this->services->getStatsdDataFactory();
 	}
 
 	/**
