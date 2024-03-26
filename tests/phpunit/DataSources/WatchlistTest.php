@@ -38,7 +38,8 @@ class WatchlistTest extends \MediaWikiIntegrationTestCase {
 			[ 2, 0, 'Test B', null ]
 		];
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$services = MediaWikiServices::getInstance();
+		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		foreach ( $dummyDbEntries as $dummyDbEntry ) {
 			$dbw->insert( 'watchlist', [
 				'wl_user' => $dummyDbEntry[0],
@@ -48,8 +49,7 @@ class WatchlistTest extends \MediaWikiIntegrationTestCase {
 			] );
 		}
 
-		$user = MediaWikiServices::getInstance()->getUserFactory()
-			->newFromName( 'UTWatchlist' );
+		$user = $services->getUserFactory()->newFromName( 'UTWatchlist' );
 		if ( $user->getId() == 0 ) {
 			$user->addToDatabase();
 			\TestUser::setPasswordForUser( $user, 'UTWatchlist' );
