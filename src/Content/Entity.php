@@ -2,6 +2,7 @@
 namespace BlueSpice\Content;
 
 use BlueSpice\Entity as EntityBase;
+use MediaWiki\MediaWikiServices;
 
 class Entity extends \JsonContent {
 
@@ -110,8 +111,9 @@ class Entity extends \JsonContent {
 		if ( $id > 0 ) {
 			return $id;
 		}
-		$dbw = wfGetDB( DB_PRIMARY );
-		$res = $dbw->selectRow(
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()
+			->getConnection( DB_REPLICA );
+		$res = $dbr->selectRow(
 			'page',
 			'page_title',
 			[ 'page_namespace' => $entity::NS ],

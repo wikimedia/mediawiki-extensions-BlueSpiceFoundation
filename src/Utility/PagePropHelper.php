@@ -88,7 +88,7 @@ class PagePropHelper {
 	private function loadPageProps() {
 		$pageProps = [];
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'page_props',
 			[ 'pp_propname', 'pp_value' ],

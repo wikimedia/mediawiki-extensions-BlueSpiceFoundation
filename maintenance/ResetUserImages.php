@@ -13,7 +13,7 @@ class ResetUserImages extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->getDB( DB_PRIMARY );
 		$res = $dbw->select( 'user', 'user_id' );
 		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {

@@ -193,8 +193,7 @@ abstract class Content extends \BlueSpice\Entity {
 			return true;
 		}
 
-		$method = __METHOD__;
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		$conds = $this->getTitle()->pageCond();
 
 		$dbTimestamp = $dbw->timestamp( $purgeTime ?: time() );
@@ -203,7 +202,7 @@ abstract class Content extends \BlueSpice\Entity {
 			'page',
 			[ 'page_touched' => $dbTimestamp ],
 			$conds + [ 'page_touched < ' . $dbw->addQuotes( $dbTimestamp ) ],
-			$method
+			__METHOD__
 		);
 
 		return true;

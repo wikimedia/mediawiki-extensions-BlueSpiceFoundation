@@ -16,12 +16,12 @@ class FixNS extends Maintenance {
 	}
 
 	public function execute() {
-		$dbr = wfGetDB( DB_PRIMARY );
-		$res = $dbr->select(
+		$dbw = $this->getDB( DB_PRIMARY );
+		$res = $dbw->select(
 			"page",
 			[ "page_id", "page_title", "page_namespace" ],
 			"page_namespace = 0",
-			"page_namespace " . $dbr->buildLike( "%:%", $dbr->anyString() )
+			"page_namespace " . $dbw->buildLike( "%:%", $dbw->anyString() )
 		);
 
 		if ( $res != null ) {
@@ -39,7 +39,7 @@ class FixNS extends Maintenance {
 					$this->output( "Adding " . $pageTitle . " to the namespace " . $pageNS . ". \n" );
 					foreach ( $arrNS as $nsKey => $nsData ) {
 						if ( $nsData == $pageNS ) {
-							$dbr->update(
+							$dbw->update(
 								"page",
 								[
 									"page_title = '" . $pageName . "'",

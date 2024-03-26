@@ -15,6 +15,9 @@ class BsArticleHelper {
 
 	protected static $aInstances = [];
 
+	/** @var MediaWikiServices */
+	protected $services;
+
 	/**
 	 * Protected constructor. Instances can be obtained through the factory
 	 * method of this class
@@ -22,6 +25,7 @@ class BsArticleHelper {
 	 */
 	protected function __construct( $oTitle ) {
 		$this->oTitle = $oTitle;
+		$this->services = MediaWikiServices::getInstance();
 	}
 
 	/**
@@ -54,7 +58,7 @@ class BsArticleHelper {
 
 		$iTalkPageId = $oTalkPage->getArticleID();
 
-		$cacheHelper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$cacheHelper = $this->services->getService( 'BSUtilityFactory' )
 			->getCacheHelper();
 		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
@@ -69,7 +73,7 @@ class BsArticleHelper {
 			$iCount = $aData['iCount'];
 		} else {
 			wfDebugLog( 'bluespice', __CLASS__ . ': Fetching discussion amounts from DB' );
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 			// a new revision (rev_id) is also created on page move. So use rev_text_id
 			$res = $dbr->select(
 				'revision',
@@ -95,7 +99,7 @@ class BsArticleHelper {
 	 */
 	public function getPageProp( $sPropName, $bDoLoad = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$helper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$helper = $this->services->getService( 'BSUtilityFactory' )
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProp( $sPropName );
 	}
@@ -123,7 +127,7 @@ class BsArticleHelper {
 	 */
 	public function getPageProps( $bDoLoad = false ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$helper = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
+		$helper = $this->services->getService( 'BSUtilityFactory' )
 			->getPagePropHelper( $this->oTitle );
 		return $helper->getPageProps();
 	}
@@ -133,13 +137,12 @@ class BsArticleHelper {
 	 * @return Title|null - returns redirect target title or null
 	 */
 	public function getTitleFromRedirectRecurse() {
-		$services = MediaWikiServices::getInstance();
-		$oWikiPage = $services->getWikiPageFactory()
+		$oWikiPage = $this->services->getWikiPageFactory()
 			->newFromID( $this->oTitle->getArticleID() );
 		if ( !$oWikiPage ) {
 			return null;
 		}
-		$redirTarget = $services->getRedirectLookup()->getRedirectTarget( $oWikiPage );
+		$redirTarget = $this->services->getRedirectLookup()->getRedirectTarget( $oWikiPage );
 
 		return Title::castFromLinkTarget( $redirTarget );
 	}
@@ -151,9 +154,9 @@ class BsArticleHelper {
 			return true;
 		}
 
+		// $this->services fails CI
 		$services = MediaWikiServices::getInstance();
-		$cacheHelper = $services->getService( 'BSUtilityFactory' )
-			->getCacheHelper();
+		$cacheHelper = $services->getService( 'BSUtilityFactory' )->getCacheHelper();
 		$talkPageTarget = $services->getNamespaceInfo()->getTalkPage( $this->oTitle );
 		$talkPage = Title::newFromLinkTarget( $talkPageTarget );
 		$sKey = $cacheHelper->getCacheKey(
