@@ -69,8 +69,8 @@ class RelocalizeWiki extends Maintenance {
 	}
 
 	public function relocalizeWiki() {
-		$oDbw = wfGetDB( DB_PRIMARY );
-		$oRes = $oDbw->select(
+		$dbr = $this->getDB( DB_REPLICA );
+		$oRes = $dbr->select(
 				[ 'page' ],
 
 				'page_id',

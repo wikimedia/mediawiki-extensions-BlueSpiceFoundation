@@ -8,6 +8,8 @@
  * @license GPL-3.0-only
  */
 
+use MediaWiki\MediaWikiServices;
+
 // TODO: check if namespace (newns) exists
 // TODO: write log
 // TODO: add some logic
@@ -80,11 +82,12 @@ function NSRecoveryController( $bDry, $options ) {
  * @return array
  */
 function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
-	$oDbr = wfGetDB( DB_REPLICA );
+	$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()
+		->getConnection( DB_REPLICA );
 
 	$sTable = 'bs_namespacemanager_backup_' . $sTable;
 
-	$rRes = $oDbr->select( $sTable, '*', $aConditions );
+	$rRes = $dbr->select( $sTable, '*', $aConditions );
 	if ( empty( $rRes ) ) {
 		return [];
 	}
@@ -105,7 +108,8 @@ function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
  * @param array $options
  */
 function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
-	$oDbr = wfGetDB( DB_PRIMARY );
+	$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()
+		->getConnection( DB_PRIMARY );
 	$numPages = count( $aPages );
 	for ( $iP = 0; $iP < $numPages; $iP++ ) {
 
@@ -123,8 +127,8 @@ function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
 		for ( $iR = 0; $iR < $numRevisions; $iR++ ) {
 			echo 'Revision';
 			if ( !$bDry && $options['execute'] ) {
-				$oDbr->insert( 'text', $aTexts[$iP][$iR][0] );
-				$oDbr->insert( 'revision', $aRevisions[$iP][$iR] );
+				$dbw->insert( 'text', $aTexts[$iP][$iR][0] );
+				$dbw->insert( 'revision', $aRevisions[$iP][$iR] );
 				// var_dump($aRevisions[$iP][$iR]);
 			}
 
@@ -133,7 +137,7 @@ function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
 			$aPages[$iP]['page_namespace'] = $options['newns'];
 		}
 		if ( !$bDry && $options['execute'] ) {
-			// $rRes = $oDbr->insert( 'page', $aPages[$iP]);
+			// $rRes = $dbw->insert( 'page', $aPages[$iP]);
 		}
 		// if($rRes ){
 			echo $aPages[$iP]['page_title'] . " recovered\n";

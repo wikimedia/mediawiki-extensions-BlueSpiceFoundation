@@ -134,8 +134,8 @@ if ( $token ) {
 	$qry_ns = 'page_namespace ' . $token . ' ("' . implode( '","', $namespace ) . '")';
 }
 
-$dbw =& wfGetDB( DB_PRIMARY );
-$res = $dbw->select(
+$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+$res = $dbr->select(
 	'page',
 	'page_title, page_namespace, page_id',
 	$qry_ns,

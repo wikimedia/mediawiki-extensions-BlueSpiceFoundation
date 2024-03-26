@@ -249,10 +249,10 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		}
 
 		// Second query: Get all categories of each file page
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$aPageIds = array_keys( $aReturn );
 		if ( !empty( $aPageIds ) ) {
-			$oDbr = wfGetDB( DB_REPLICA );
-			$oCatRes = $oDbr->select(
+			$oCatRes = $dbr->select(
 				'categorylinks',
 				[ 'cl_from', 'cl_to' ],
 				[ 'cl_from' => $aPageIds ],
@@ -266,8 +266,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		// Third query (for performance reasons we can not provide the full
 		// link to the user page here): get user_real_name
 		if ( !empty( $aUserNames ) ) {
-			$oDbr = wfGetDB( DB_REPLICA );
-			$oUserRes = $oDbr->select(
+			$oUserRes = $dbr->select(
 				'user',
 				[ 'user_name', 'user_real_name' ],
 				[ 'user_name' => array_keys( $aUserNames ) ],
@@ -294,7 +293,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	 * @return IResultWrapper
 	 */
 	protected function fetchCaseInsensitive( $sQuery ) {
-		$oDbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$aContidions = [
 			'page_namespace' => NS_FILE,
@@ -307,15 +306,15 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 
 		$normalQuery = str_replace( ' ', '_', $sQuery );
 		if ( !empty( $sQuery ) ) {
-			$aContidions[] = "si_title " . $oDbr->buildLike(
-				$oDbr->anyString(),
+			$aContidions[] = "si_title " . $dbr->buildLike(
+				$dbr->anyString(),
 				// make case insensitive!
 				strtolower( $normalQuery ),
-				$oDbr->anyString()
+				$dbr->anyString()
 			);
 		}
 
-		$res = $oDbr->select(
+		$res = $dbr->select(
 			[ 'image', 'page', 'searchindex', 'comment' ],
 			'*',
 			$aContidions,
@@ -331,7 +330,7 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 	 * @return IResultWrapper
 	 */
 	protected function fetchCaseSensitive( $sQuery ) {
-		$oDbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		$aContidions = [
 			'page_namespace' => NS_FILE,
@@ -340,14 +339,14 @@ class BSApiFileBackendStore extends BSApiExtJSStoreBase {
 		];
 
 		if ( !empty( $sQuery ) ) {
-			$aContidions[] = "img_name " . $oDbr->buildLike(
-				$oDbr->anyString(),
+			$aContidions[] = "img_name " . $dbr->buildLike(
+				$dbr->anyString(),
 				str_replace( ' ', '_', $sQuery ),
-				$oDbr->anyString()
+				$dbr->anyString()
 			);
 		}
 
-		$res = $oDbr->select(
+		$res = $dbr->select(
 			[ 'image', 'page', 'comment' ],
 			'*',
 			$aContidions,

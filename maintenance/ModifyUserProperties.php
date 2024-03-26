@@ -8,6 +8,8 @@
  * @license GPL-3.0-only
  */
 
+use MediaWiki\MediaWikiServices;
+
 // PW:
 // TODO: use serialize
 // TODO: support MW < 1.17.0
@@ -76,13 +78,14 @@ function modifyPropertiesController( $bDry, $options ) {
  * @param bool $bDry
  */
 function updateUserProperties( $aUserStore, $options, $bDry ) {
-	$oDbw = wfGetDB( DB_PRIMARY );
+	$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()
+		->getConnection( DB_PRIMARY );
 
 	$iCounter = count( $aUserStore );
 	for ( $i = 0; $i < $iCounter; $i++ ) {
 		if ( $aUserStore[$i]['value'] != "null" && $aUserStore[$i]['value'] != $options['setvalue'] ) {
 			if ( !$bDry ) {
-				$oDbw->replace(
+				$dbw->replace(
 					'user_properties',
 					[ 'up_user', 'up_property' ],
 					[
@@ -119,7 +122,8 @@ function displayMPCResult( $aUserStore ) {
  * @return array
  */
 function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
-	$oDbr = wfGetDB( DB_REPLICA );
+	$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()
+		->getConnection( DB_REPLICA );
 
 	$iCounter = count( $aUserStore );
 	for ( $i = 0; $i < $iCounter; $i++ ) {
@@ -132,7 +136,7 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 			$conditions[] = "up_value = '" . $filtervalue . "'";
 		}
 
-		$rRes = $oDbr->selectRow( 'user_properties',
+		$rRes = $dbr->selectRow( 'user_properties',
 			'up_value',
 			$conditions
 		);
@@ -161,8 +165,9 @@ function getMPCUser( $sGivenUser ) {
 		}
 	}
 
-	$oDbr = wfGetDB( DB_REPLICA );
-	$rRes = $oDbr->select(
+	$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()
+		->getConnection( DB_REPLICA );
+	$rRes = $dbr->select(
 		'user',
 		[ 'user_id', 'user_name' ],
 		$condition
