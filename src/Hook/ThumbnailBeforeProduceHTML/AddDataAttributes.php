@@ -9,7 +9,7 @@ class AddDataAttributes extends \BlueSpice\Hook\ThumbnailBeforeProduceHTML {
 		// may fail, as it checks for the equality of the complete parserd html
 		// string, we modify here. TODO: Make own test, that verifies that this
 		// code works
-		if ( defined( 'MW_PHPUNIT_TEST' ) ) {
+		if ( defined( 'MW_PHPUNIT_TEST' ) || defined( 'MW_QUIBBLE_CI' ) ) {
 			return true;
 		}
 		return false;
