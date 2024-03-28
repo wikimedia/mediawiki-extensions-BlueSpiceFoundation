@@ -558,17 +558,18 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 			'path' => wfScript( 'api' )
 		];
 
+		$urlUtils = $this->services->getUrlUtils();
 		foreach ( $this->oTasksSpec->getTaskNames() as $sTaskName ) {
 			$aMessages[$sTaskName] = [
 				'bs-api-task-taskdata-help',
-				wfExpandUrl( wfAssembleUrl( $aUrlParams + [
+				$urlUtils->expand( $urlUtils->assemble( $aUrlParams + [
 					'query' => wfArrayToCgi( [
 						'action' => $this->getModuleName(),
 						'task' => $sTaskName,
 						'schema' => 1
 					] )
 				] ) ),
-				wfExpandUrl( wfAssembleUrl( $aUrlParams + [
+				$urlUtils->expand( $urlUtils->assemble( $aUrlParams + [
 					'query' => wfArrayToCgi( [
 						'action' => $this->getModuleName(),
 						'task' => $sTaskName,
