@@ -74,13 +74,4 @@ abstract class BSMaintenance extends Maintenance {
 			file_put_contents( $sOutputFile, implode( "\n", $this->aOutputBuffer ) );
 		}
 	}
-
-	/**
-	 * This is not nice, but it is the last method called in doMaintenance.php
-	 */
-	public function globals() {
-		parent::globals();
-		$this->writeOutputBuffer();
-	}
-
 }
