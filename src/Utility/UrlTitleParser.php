@@ -4,6 +4,7 @@ namespace BlueSpice\Utility;
 
 use Config;
 use ConfigException;
+use MediaWiki\MediaWikiServices;
 use MWException;
 use Title;
 
@@ -64,7 +65,8 @@ class UrlTitleParser {
 		$scriptPath = $this->config->get( 'ScriptPath' );
 		$articlePath = $this->config->get( 'ArticlePath' );
 
-		$parsedUrl = wfParseUrl( $this->url );
+		$urlUtils = MediaWikiServices::getInstance()->getUrlUtils();
+		$parsedUrl = $urlUtils->parse( $this->url );
 		if ( !isset( $parsedUrl['path'] ) ) {
 			return '';
 		}
