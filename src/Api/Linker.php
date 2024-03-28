@@ -5,6 +5,7 @@ namespace BlueSpice\Api;
 use BlueSpice\Api;
 use FormatJson;
 use Title;
+use Wikimedia\ParamValidator\ParamValidator;
 
 class Linker extends Api {
 	/**
@@ -32,8 +33,8 @@ class Linker extends Api {
 	protected function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'linkdescs' => [
-				static::PARAM_REQUIRED => true,
-				static::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
 				static::PARAM_HELP_MSG => 'apihelp-bs-linker-param-linkdescs',
 			]
 		];

@@ -5,6 +5,7 @@ namespace BlueSpice\Api;
 use BlueSpice\Api;
 use BlueSpice\JSConfigVarRegistry;
 use MWException;
+use Wikimedia\ParamValidator\ParamValidator;
 
 class JSConfigVarsApi extends Api {
 	public const FUNC_GET = 'get';
@@ -36,25 +37,25 @@ class JSConfigVarsApi extends Api {
 	protected function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'func' => [
-				static::PARAM_REQUIRED => true,
-				static::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
 				static::PARAM_HELP_MSG => 'apihelp-bs-js-var-config-param-func',
 			],
 			'name' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 				static::PARAM_HELP_MSG => 'apihelp-bs-js-var-config-param-name',
 			],
 			'context' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '',
 				static::PARAM_HELP_MSG => 'apihelp-bs-js-var-config-param-context',
 			],
 			'format' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '',
 				static::PARAM_HELP_MSG => 'apihelp-bs-js-var-config-param-format',
 			],
 		];
