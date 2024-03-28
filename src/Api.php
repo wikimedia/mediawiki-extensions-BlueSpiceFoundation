@@ -40,6 +40,7 @@ use RequestContext;
 use Status;
 use Title;
 use User;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Api base class in BlueSpice
@@ -122,10 +123,10 @@ abstract class Api extends ApiBase {
 	protected function getAllowedParams() {
 		return [
 			static::PARAM_FORMAT => [
-				static::PARAM_DFLT => 'json',
-				static::PARAM_TYPE => [ 'json', 'jsonfm' ],
+				ParamValidator::PARAM_DEFAULT => 'json',
+				ParamValidator::PARAM_TYPE => [ 'json', 'jsonfm' ],
 				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-format',
-				static::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_REQUIRED => false,
 			],
 		];
 	}

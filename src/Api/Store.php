@@ -8,6 +8,7 @@ use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use MWStake\MediaWiki\Component\DataStore\RecordConverter;
 use MWStake\MediaWiki\Component\DataStore\ResultSet;
 use MWStake\MediaWiki\Component\DataStore\Schema;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Example request parameters of an ExtJS store
@@ -102,60 +103,60 @@ abstract class Store extends Api {
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + [
 			'sort' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '[]',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '[]',
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-sort',
 			],
 			'group' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '[]',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '[]',
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-group',
 			],
 			'filter' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '[]',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '[]',
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-filter',
 			],
 			'page' => [
-				static::PARAM_TYPE => 'integer',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => 0,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => 0,
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-page',
 			],
 			'limit' => [
-				static::PARAM_TYPE => 'integer',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => 25,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => 25,
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-limit',
 			],
 			'start' => [
-				static::PARAM_TYPE => 'integer',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => 0,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => 0,
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-start',
 			],
 			'callback' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-callback',
 			],
 			'query' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-query',
 			],
 			'_dc' => [
-				static::PARAM_TYPE => 'integer',
-				static::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => false,
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-dc',
 			],
 			'context' => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '{}',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '{}',
 				static::PARAM_HELP_MSG => 'apihelp-bs-store-param-context',
 			],
 		];

@@ -12,6 +12,7 @@ use Exception;
 use FormatJson;
 use Status;
 use stdClass;
+use Wikimedia\ParamValidator\ParamValidator;
 
 class Task extends Api {
 	public const PARAM_TASK = 'task';
@@ -114,35 +115,35 @@ class Task extends Api {
 	protected function getAllowedParams() {
 		return [
 			static::PARAM_TASK => [
-				static::PARAM_REQUIRED => true,
-				static::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
 				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-task',
 			],
 			static::PARAM_TASK_DATA => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '{}',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '{}',
 				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-taskdata',
 			],
 			static::PARAM_CONTEXT => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
-				static::PARAM_DFLT => '{}',
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_DEFAULT => '{}',
 				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-context',
 			],
 			static::PARAM_SCHEMA => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-schema',
 			],
 			static::PARAM_EXAMPLES => [
-				static::PARAM_TYPE => 'string',
-				static::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-examples',
 			],
 			static::PARAM_FORMAT => [
-				static::PARAM_DFLT => 'json',
-				static::PARAM_TYPE => [ 'json', 'jsonfm' ],
+				ParamValidator::PARAM_DEFAULT => 'json',
+				ParamValidator::PARAM_TYPE => [ 'json', 'jsonfm' ],
 				static::PARAM_HELP_MSG => 'apihelp-bs-task-param-format',
 			]
 		];
