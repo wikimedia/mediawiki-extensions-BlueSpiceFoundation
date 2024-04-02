@@ -52,7 +52,8 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	protected function appendRowToData( $row ) {
 		$category = \Category::newFromRow( $row );
-		if ( !$category->getTitle() instanceof Title ) {
+		$title = Title::castFromPageReference( $category->getPage() );
+		if ( !$title instanceof Title ) {
 			return;
 		}
 
