@@ -390,7 +390,7 @@ class BsPageContentProvider {
 			);
 		}
 
-		return MWTidy::tidy( $sHTML );
+		return $this->services->getTidy()->tidy( $sHTML );
 	}
 
 	/**
