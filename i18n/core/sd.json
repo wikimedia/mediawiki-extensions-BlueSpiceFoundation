@@ -7,8 +7,11 @@
 	"bs-ns_main": "(صفحا)",
 	"bs-ns_all": "(سڀ)",
 	"bs-weeks-duration": "{{PLURAL:$1|ھڪ ھفتو|$1 ھفتا}}",
+	"bs-mins-duration": "{{PLURAL:$1|ھڪ منٽ|$1 منٽ}}",
+	"bs-one-unit-ago": "$1 اڳ",
+	"bs-email-greeting-receiver": "{{GENDER:$1|سلام محترم $2|سلام محترمہ $2|سلام $2}}،",
 	"bs-navigation-contact": "رابطو",
 	"bs-ns": "نانءُپولار",
 	"bs-graphicallist-action-list": "فھرست",
-	"bs-email-greeting-receiver": "{{GENDER:$1|سلام محترم $2|سلام محترمہ $2|سلام $2}}،"
+	"bs-graphicallist-action-preview": "پيش-نگاھ"
 }
