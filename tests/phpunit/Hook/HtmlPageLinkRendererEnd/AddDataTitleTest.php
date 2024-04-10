@@ -44,7 +44,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle::process
 	 */
 	public function testProcess() {
-		define( 'BS_ADD_DATA_TITLE_TEST', true );
+		$GLOBALS[ 'BS_ADD_DATA_TITLE_TEST' ] = true;
 		$context = $this->getMockBuilder( '\RequestContext' )
 			->disableOriginalConstructor()
 			->getMock();
@@ -71,6 +71,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 			$ret
 		);
 		$instance->process();
+		unset( $GLOBALS[ 'BS_ADD_DATA_TITLE_TEST' ] );
 
 		$this->assertArrayHasKey( 'data-bs-title', $attribs );
 		$this->assertEquals( $title->getPrefixedDBkey(), $attribs['data-bs-title'] );
