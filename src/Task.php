@@ -31,7 +31,6 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
-use MWStake\MediaWiki\Component\Notifications\INotifier;
 use Psr\Log\LoggerInterface;
 use Status;
 
@@ -63,12 +62,6 @@ abstract class Task implements ITask, MessageLocalizer {
 
 	/**
 	 *
-	 * @var INotifier
-	 */
-	protected $notifier = null;
-
-	/**
-	 *
 	 * @var IPermissionChecker
 	 */
 	protected $permissionChecker = null;
@@ -84,16 +77,15 @@ abstract class Task implements ITask, MessageLocalizer {
 	 * @param Context $context
 	 * @param LoggerInterface $logger
 	 * @param ActionLogger $actionLogger
-	 * @param INotifier $notifier
 	 * @param IPermissionChecker $permissionChecker
 	 */
-	protected function __construct( MediaWikiServices $services, Context $context,
-		LoggerInterface $logger, ActionLogger $actionLogger, INotifier $notifier,
-		IPermissionChecker $permissionChecker ) {
+	protected function __construct(
+		MediaWikiServices $services, Context $context,
+		LoggerInterface $logger, ActionLogger $actionLogger, IPermissionChecker $permissionChecker
+	) {
 		$this->services = $services;
 		$this->context = $context;
 		$this->actionLogger = $actionLogger;
-		$this->notifier = $notifier;
 		$this->logger = $logger;
 		$this->permissionChecker = $permissionChecker;
 	}
@@ -108,7 +100,6 @@ abstract class Task implements ITask, MessageLocalizer {
 		IPermissionChecker $permissionChecker = null ) {
 		$actionLogger = new NullLogger();
 		$logger = LoggerFactory::getInstance( static::class );
-		$notifier = $services->getService( 'BSNotificationManager' )->getNotifier();
 		if ( !$permissionChecker ) {
 			$permissionChecker = new NullPermissionChecker();
 		}
@@ -117,7 +108,6 @@ abstract class Task implements ITask, MessageLocalizer {
 			$context,
 			$logger,
 			$actionLogger,
-			$notifier,
 			$permissionChecker
 		);
 	}
