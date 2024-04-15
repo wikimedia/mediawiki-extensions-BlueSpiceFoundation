@@ -3,7 +3,6 @@
 namespace BlueSpice\RunJobsTriggerHandler;
 
 use BlueSpice\ExtensionAttributeBasedRegistry;
-use BlueSpice\INotifier;
 use Config;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\RunJobsTrigger\HandlerFactory\Base;
@@ -24,19 +23,12 @@ class LegacyExtensionAttributesFactory extends Base {
 	protected $loadBalancer = null;
 
 	/**
-	 * @var INotifier
-	 */
-	protected $notifier = null;
-
-	/**
 	 * @param Config|null $config
 	 * @param LoadBalancer|null $loadBalancer
-	 * @param INotifier|null $notifier
 	 */
-	public function __construct( $config = null, $loadBalancer = null, $notifier = null ) {
+	public function __construct( $config = null, $loadBalancer = null ) {
 		$this->config = $config;
 		$this->loadBalancer = $loadBalancer;
-		$this->notifier = $notifier;
 
 		$services = MediaWikiServices::getInstance();
 		if ( $this->config === null ) {
@@ -44,9 +36,6 @@ class LegacyExtensionAttributesFactory extends Base {
 		}
 		if ( $this->loadBalancer === null ) {
 			$this->loadBalancer = $services->getDBLoadBalancer();
-		}
-		if ( $this->notifier === null ) {
-			$this->notifier = $services->getService( 'BSNotificationManager' )->getNotifier();
 		}
 	}
 
@@ -65,8 +54,7 @@ class LegacyExtensionAttributesFactory extends Base {
 				$factoryCallback,
 				[
 					$this->config,
-					$this->loadBalancer,
-					$this->notifier
+					$this->loadBalancer
 				]
 			);
 
