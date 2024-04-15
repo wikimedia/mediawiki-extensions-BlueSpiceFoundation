@@ -166,17 +166,6 @@ return [
 		);
 	},
 
-	'BSNotificationManager' => static function ( MediaWikiServices $services ) {
-		$regFuncRegistry = new \BlueSpice\ExtensionAttributeBasedRegistry(
-			'BlueSpiceFoundationNotificationRegistrationFunctions'
-		);
-
-		return new \BlueSpice\NotificationManager(
-			$regFuncRegistry,
-			$services->getService( 'MWStakeNotificationsNotifier' )
-		);
-	},
-
 	'BSTargetCacheFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new \BlueSpice\ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationTargetCacheRegistry'
