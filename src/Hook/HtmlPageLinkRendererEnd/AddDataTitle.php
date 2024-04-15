@@ -10,8 +10,8 @@ class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		// string, we modify here. We use our own test to verify that this code
 		// works
 		if (
-			( defined( 'MW_PHPUNIT_TEST' ) && !defined( 'BS_ADD_DATA_TITLE_TEST' ) ) ||
-			( defined( 'MW_QUIBBLE_CI' ) && !defined( 'BS_ADD_DATA_TITLE_TEST' ) )
+			( defined( 'MW_PHPUNIT_TEST' ) && !isset( $GLOBALS[ 'BS_ADD_DATA_TITLE_TEST' ] ) ) ||
+			( defined( 'MW_QUIBBLE_CI' ) && !isset( $GLOBALS[ 'BS_ADD_DATA_TITLE_TEST' ] ) )
 		) {
 			return true;
 		}
