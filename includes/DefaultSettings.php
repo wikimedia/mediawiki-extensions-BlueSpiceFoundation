@@ -167,7 +167,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"bot" => [
 		"type" => 'global',
-		"roles" => [ 'bot', 'maintenanceadmin' ]
+		"roles" => [ 'bot' ]
 	],
 	"browsearchive" => [
 		"type" => 'global',
