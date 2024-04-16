@@ -597,10 +597,6 @@
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback",
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceCleanUpDeletedUsersBlocksMaintenanceScript::callback"
 		],
-		"ChameleonSkinTemplateOutputPageBeforeExec": [
-			"\\BlueSpice\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddAdminTools::callback",
-			"\\BlueSpice\\Hook\\ChameleonSkinTemplateOutputPageBeforeExec\\AddExportDownloadFile::callback"
-		],
 		"ParserFirstCallInit": [
 			"BlueSpice\\Hook\\ParserFirstCallInit\\AddTags::callback"
 		],
@@ -878,9 +874,6 @@
 		"BsValidatorMwGroupnamePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwGroupnamePlugin.class.php",
 		"BsValidatorMwNamespacePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwNamespacePlugin.class.php",
 		"BsValidatorMwUsernamePlugin": "includes/validator/plugins/BsValidator/BsValidatorMwUsernamePlugin.class.php",
-		"BSSkinTreeNavigation": "includes/skins/BSSkinTreeNavigation.php",
-		"BSSkinSidebarTreeParser": "includes/skins/BSSkinSidebarTreeParser.php",
-		"BSSkinSidebarTreeNavigation": "includes/skins/BSSkinSidebarTreeNavigation.php",
 		"BSTreeNode": "includes/tree/BSTreeNode.php",
 		"BSTreeRenderer": "includes/tree/BSTreeRenderer.php",
 		"BsException": "includes/Exception.class.php",
