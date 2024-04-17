@@ -196,7 +196,7 @@ class BsPageContentProvider {
 
 		// To avoid strange errors... should never happen.
 		if ( !mb_check_encoding( $sHtmlContent, 'utf8' ) ) {
-			$sHtmlContent = utf8_encode( $sHtmlContent );
+			$sHtmlContent = mb_convert_encoding( $sHtmlContent, 'UTF-8', 'ISO-8859-1' );
 			wfDebug(
 				'BsPageContentProvider::getDOMDocumentContentFor: Content of '
 				.'Title "'.$oTitle->getPrefixedText().'" was not UTF8 encoded.'
