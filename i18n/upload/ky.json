@@ -4,7 +4,8 @@
 			"Bosogo"
 		]
 	},
-	"bs-upload-details": "Чоо-жайы",
+	"bs-upload-license": "Лицензия",
+	"bs-upload-error": "Ката",
 	"bs-upload-descfilelabel": "Сыпаттама",
-	"bs-upload-error": "Ката"
+	"bs-upload-details": "Чоо-жайы"
 }

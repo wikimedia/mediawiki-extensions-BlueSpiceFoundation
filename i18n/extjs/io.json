@@ -18,6 +18,8 @@
 	"bs-extjs-error": "Eroro",
 	"bs-extjs-confirm": "Konfirmez",
 	"bs-extjs-loading": "Karganta...",
+	"bs-extjs-actions-column-header": "Agadi",
+	"bs-extjs-saving": "konservanta...",
 	"bs-extjs-reset": "Restaurez",
 	"bs-extjs-close": "Klozez",
 	"bs-extjs-label-user": "Uzero",
@@ -31,8 +33,7 @@
 	"bs-extjs-categorytree-title": "Kategorii",
 	"bs-extjs-filter-date-after": "Pose",
 	"bs-extjs-filter-date-before": "Ante",
+	"bs-extjs-filter-date-on": "Serchez",
 	"bs-extjs-pageexport-list-format-link-label": "Ligilo",
-	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
-	"bs-extjs-saving": "konservanta...",
-	"bs-extjs-filter-date-on": "Serchez"
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi"
 }
