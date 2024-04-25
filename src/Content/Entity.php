@@ -43,18 +43,6 @@ class Entity extends \JsonContent {
 	}
 
 	/**
-	 * Beautifies JSON prior to save.
-	 *
-	 * @param \Title $title Title
-	 * @param \User $user User
-	 * @param ParserOptions $popts
-	 * @return JsonContent
-	 */
-	public function preSaveTransform( \Title $title, \User $user, \ParserOptions $popts ) {
-		return new static( $this->beautifyJSON() );
-	}
-
-	/**
 	 * Constructs an HTML representation of a JSON object.
 	 *
 	 * @param array $mapping
