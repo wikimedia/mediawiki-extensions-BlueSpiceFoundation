@@ -10,7 +10,16 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 	protected static $configName = 'bsg';
 
 	protected function doProcess() {
-		$extInfo = $this->getConfig()->get( 'BlueSpiceExtInfo' );
+		$version = '';
+		$versionFile = $GLOBALS['IP'] . '/BLUESPICE-VERSION';
+		if ( file_exists( $versionFile ) ) {
+			$versionFileContent = file_get_contents( $versionFile );
+			$version = ' ' . Sanitizer::stripAllTags( $versionFileContent );
+		}
+
+		if ( empty( $version ) ) {
+			return true;
+		}
 
 		$buildInfo = '';
 		$buildInfoFile = $GLOBALS['IP'] . '/BUILDINFO';
@@ -19,9 +28,18 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 			$buildInfo = ' (build:' . Sanitizer::stripAllTags( $buildInfoFileContent ) . ')';
 		}
 
+		$edition = '';
+		$editionFile = $GLOBALS['IP'] . '/BLUESPICE-EDITION';
+		if ( file_exists( $editionFile ) ) {
+			$editionFileContent = file_get_contents( $editionFile );
+			$edition = ' ' . Sanitizer::stripAllTags( $editionFileContent );
+		}
+
+		$name = "BlueSpice$edition";
+
 		$link = SpecialPage::getTitleFor( 'SpecialCredits' )->getFullURL();
-		$this->softwareInfo["[https://bluespice.com {$extInfo['name']}] ([$link Credits])"]
-			= $extInfo['version'] . $buildInfo;
+		$this->softwareInfo["[https://bluespice.com $name] ([$link Credits])"]
+			= $version . $buildInfo;
 		return true;
 	}
 }
