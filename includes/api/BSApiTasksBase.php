@@ -516,52 +516,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 * MediaWiki initializes all calls to 'api.php' with a Title of 'API'.
-	 * By setting the Title object that is provided by our own context
-	 * source (the client, e.g. in 'bluespice.api.js/_getContext') we
-	 * allow the subclasses of BSApiTaskBase to access '$this->getTitle()'
-	 * and retrieve the correct one (e.g "Main_page").
-	 * When the context contains a real WikiPage (Article, CategoryPage,
-	 * ImagePage, ...), we can also provide the subclass with the correct
-	 * object by letting it access '$this->getWikiPage()'.
-	 * When there is no valid WikiPage object (e.g. when the context is set
-	 * to a SpecialPage) we should make '$this->getWikiPage()' return NULL.
-	 * Unfortunately the 'DerivativeContext' used by 'ApiMain' does not
-	 * allow this so using '$this->getContext()->setWikiPage( null )' would
-	 * crash.
-	 * Therefore we just override the relevant methods and do our own checks.
-	 *
-	 * Returns the current WikiPage object or NULL if not in WikiPage context
-	 *
-	 * @deprecated since 1.37, hard deprecated since 1.37
-	 * Use WikiPageFactory::newFromTitle instead
-	 * @return WikiPage|null
-	 */
-	public function getWikiPage() {
-		wfDeprecated( __METHOD__, '1.37' );
-		if ( $this->getTitle()->getNamespace() < 0 ) {
-			return null;
-		}
-		$services = MediaWikiServices::getInstance();
-		return $services->getWikiPageFactory()->newFromTitle( $this->getTitle() );
-	}
-
-	/**
-	 * @deprecated since 1.37, hard deprecated since 1.37
-	 * Use Title::canExist instead
-	 * @return bool
-	 */
-	public function canUseWikiPage() {
-		wfDeprecated( __METHOD__, '1.37' );
-		$services = MediaWikiServices::getInstance();
-		$wikiPage = $services->getWikiPageFactory()->newFromTitle( $this->getTitle() );
-		if ( $wikiPage === null ) {
-			return false;
-		}
-		return $this->getTitle()->canExist();
-	}
-
-	/**
 	 * Set to false for all read modules
 	 *
 	 * @return bool
