@@ -34,5 +34,6 @@
 	"bs-extjs-pageexport-list-format-link-label": "Ligilo",
 	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
 	"bs-extjs-saving": "konservanta...",
-	"bs-extjs-filter-date-on": "Serchez"
+	"bs-extjs-filter-date-on": "Serchez",
+	"bs-extjs-actions-column-header": "Agadi"
 }

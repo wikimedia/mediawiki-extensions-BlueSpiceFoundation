@@ -8,5 +8,6 @@
 	"bs-deferred-action-apieditpage-description": "Redaktar \"$1\".",
 	"bs-deferred-batch-description": "Deskriptado",
 	"bs-deferred-batch-status": "Stando",
-	"bs-deferred-action-apideletepage-description": "Efacar \"$1\"."
+	"bs-deferred-action-apideletepage-description": "Efacar \"$1\".",
+	"bs-deferred-batch-actions": "Agadi"
 }

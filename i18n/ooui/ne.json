@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"बडा काजी",
-			"हिमाल सुबेदी"
+			"\u092c\u0921\u093e \u0915\u093e\u091c\u0940",
+			"\u0939\u093f\u092e\u093e\u0932 \u0938\u0941\u092c\u0947\u0926\u0940"
 		]
 	},
-	"bs-ooui-btn-dismiss-alert-title": "रद्द",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "नयाँ थप्नुहोस्...",
-	"bs-ooui-key-value-input-widget-section-label": "खण्ड",
-	"bs-ooui-key-value-input-widget-add-section-label": "नयाँ खण्ड थप्नुहोस्"
+	"bs-ooui-btn-dismiss-alert-title": "\u0930\u0926\u094d\u0926",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "\u0928\u092f\u093e\u0901 \u0925\u092a\u094d\u0928\u0941\u0939\u094b\u0938\u094d...",
+	"bs-ooui-key-value-input-widget-section-label": "\u0916\u0923\u094d\u0921",
+	"bs-ooui-key-value-input-widget-add-section-label": "\u0928\u092f\u093e\u0901 \u0916\u0923\u094d\u0921 \u0925\u092a\u094d\u0928\u0941\u0939\u094b\u0938\u094d"
 }

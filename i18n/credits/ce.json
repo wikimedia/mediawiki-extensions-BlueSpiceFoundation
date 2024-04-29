@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"\u0423\u043c\u0430\u0440"
 		]
 	},
-	"bs-credits-programmers": "Программисташ",
-	"bs-credits-contributors": "Авторш",
-	"bs-credits-translators": "Гочдархой",
-	"bs-credits-translation": "Гоч",
-	"specialcredits": "BlueSpice кхоллархой",
-	"bs-credits-th": "Баркалла массо гочдархошна $1 чуьра."
+	"bs-credits-programmers": "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442\u0430\u0448",
+	"bs-credits-contributors": "\u0410\u0432\u0442\u043e\u0440\u0448",
+	"bs-credits-translators": "\u0413\u043e\u0447\u0434\u0430\u0440\u0445\u043e\u0439",
+	"bs-credits-translation": "\u0413\u043e\u0447",
+	"specialcredits": "BlueSpice \u043a\u0445\u043e\u043b\u043b\u0430\u0440\u0445\u043e\u0439",
+	"bs-credits-th": "\u0411\u0430\u0440\u043a\u0430\u043b\u043b\u0430 \u043c\u0430\u0441\u0441\u043e \u0433\u043e\u0447\u0434\u0430\u0440\u0445\u043e\u0448\u043d\u0430 $1 \u0447\u0443\u044c\u0440\u0430."
 }

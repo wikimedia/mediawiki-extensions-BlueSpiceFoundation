@@ -5,18 +5,18 @@
 			"Wolf Rex"
 		]
 	},
-	"apihelp-bs-store-param-limit": "Megjelenítendő találatok száma",
-	"bs-wikipage-tasks-error-categories-not-valid": "Érvénytelen {{PLURAL:$2|kategória|kategóriák}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Kategóriák sikeresen beállítva.",
-	"apihelp-bs-task-param-format": "Az eredmény formátuma",
-	"bs-wikipage-tasks-error-page-not-valid": "A megadott lap nem érvényes.",
-	"bs-wikipage-tasks-setcategories-edit-summary": "Megváltoztatott kategóriák.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheted a/az \"$1\" lapot.",
-	"apihelp-bs-wikisubpage-treestore-summary": "Egy adott wikilap allapjait listázza",
-	"apihelp-bs-wikisubpage-treestore-param-options": "Opciók listája",
-	"bs-api-task-taskData-page-id": "Egy meglévő wikilap azonosítója ID",
-	"bs-api-task-taskData-page-title": "Egy wiki lap érvényes címe",
-	"apihelp-bs-js-var-config-param-format": "Az eredmény formátuma",
-	"apihelp-bs-categorylinks-store-param-page-id": "A lap azonosítója ID",
-	"apihelp-bs-templatelinks-store-param-page-id": "A lap azonosítója ID"
+	"apihelp-bs-store-param-limit": "Megjelen\u00edtend\u0151 tal\u00e1latok sz\u00e1ma",
+	"bs-wikipage-tasks-error-categories-not-valid": "\u00c9rv\u00e9nytelen {{PLURAL:$2|kateg\u00f3ria|kateg\u00f3ri\u00e1k}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Kateg\u00f3ri\u00e1k sikeresen be\u00e1ll\u00edtva.",
+	"apihelp-bs-task-param-format": "Az eredm\u00e9ny form\u00e1tuma",
+	"bs-wikipage-tasks-error-page-not-valid": "A megadott lap nem \u00e9rv\u00e9nyes.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Megv\u00e1ltoztatott kateg\u00f3ri\u00e1k.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheted a\/az \"$1\" lapot.",
+	"apihelp-bs-wikisubpage-treestore-summary": "Egy adott wikilap allapjait list\u00e1zza",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Opci\u00f3k list\u00e1ja",
+	"bs-api-task-taskData-page-id": "Egy megl\u00e9v\u0151 wikilap azonos\u00edt\u00f3ja ID",
+	"bs-api-task-taskData-page-title": "Egy wiki lap \u00e9rv\u00e9nyes c\u00edme",
+	"apihelp-bs-js-var-config-param-format": "Az eredm\u00e9ny form\u00e1tuma",
+	"apihelp-bs-categorylinks-store-param-page-id": "A lap azonos\u00edt\u00f3ja ID",
+	"apihelp-bs-templatelinks-store-param-page-id": "A lap azonos\u00edt\u00f3ja ID"
 }

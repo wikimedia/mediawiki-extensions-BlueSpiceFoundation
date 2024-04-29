@@ -2,22 +2,22 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
-			"InternerowyGołąb",
+			"InternerowyGo\u0142\u0105b",
 			"Superjurek"
 		]
 	},
-	"apihelp-bs-store-param-limit": "Liczba zwracanych wyników",
-	"apihelp-bs-store-param-format": "Format danych wyjściowych (tylko JSON lub sformatowany JSON)",
-	"apihelp-bs-task-param-task": "Zadanie, które powinno zostać wykonane",
-	"apihelp-bs-task-param-format": "Format danych wyjściowych",
+	"apihelp-bs-store-param-limit": "Liczba zwracanych wynik\u00f3w",
+	"apihelp-bs-store-param-format": "Format danych wyj\u015bciowych (tylko JSON lub sformatowany JSON)",
+	"apihelp-bs-task-param-task": "Zadanie, kt\u00f3re powinno zosta\u0107 wykonane",
+	"apihelp-bs-task-param-format": "Format danych wyj\u015bciowych",
 	"bs-wikipage-tasks-error-page-not-valid": "Podana strona nie jest poprawna.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Zmienione kategorie.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nie masz uprawnień do edytowania strony „$1”.",
-	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Nieprawidłowa kategoria|Nieprawidłowe kategorie}}: $1",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nie masz uprawnie\u0144 do edytowania strony \u201e$1\u201d.",
+	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Nieprawid\u0142owa kategoria|Nieprawid\u0142owe kategorie}}: $1",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lista opcji",
-	"bs-wikipage-tasks-error-page-read-not-allowed": "Nie masz uprawnień do czytania strony '$1'.",
-	"bs-wikipage-tasks-error-nothingtoremove": "Brak kategorii do usunięcia",
-	"bs-api-task-taskData-page-title": "Prawidłowy tytuł strony wiki",
-	"bs-wikipage-tasks-setcategories-success": "Kategorie zostały pomyślnie ustawione.",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Nie masz uprawnie\u0144 do czytania strony '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Brak kategorii do usuni\u0119cia",
+	"bs-api-task-taskData-page-title": "Prawid\u0142owy tytu\u0142 strony wiki",
+	"bs-wikipage-tasks-setcategories-success": "Kategorie zosta\u0142y pomy\u015blnie ustawione.",
 	"apihelp-bs-js-var-config-param-format": "Format wyniku"
 }

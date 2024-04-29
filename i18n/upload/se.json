@@ -1,17 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kimberli Mäkäräinen (WMNO)",
+			"Kimberli M\u00e4k\u00e4r\u00e4inen (WMNO)",
 			"Yupik"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Vurke fiilla",
-	"bs-upload-uploadbuttontext": "Bláđe",
+	"bs-upload-uploadbuttontext": "Bl\u00e1\u0111e",
 	"bs-upload-uploadfilefieldlabel": "Fiilanamma",
 	"bs-upload-license": "Liseansa",
-	"bs-upload-uploadwatchthislabel": "Čuovo dán fiilla",
+	"bs-upload-uploadwatchthislabel": "\u010cuovo d\u00e1n fiilla",
 	"bs-upload-categories": "Kategoriijat",
-	"bs-upload-error": "Meattáhus",
-	"bs-upload-descfilelabel": "Govvádus",
-	"bs-upload-uploadfileemptytext": "Lasit ođđa fiilla..."
+	"bs-upload-error": "Meatt\u00e1hus",
+	"bs-upload-descfilelabel": "Govv\u00e1dus",
+	"bs-upload-uploadfileemptytext": "Lasit o\u0111\u0111a fiilla..."
 }

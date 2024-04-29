@@ -1,22 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
-			"Умар"
+			"\u0423\u043c\u0430\u0440"
 		]
 	},
-	"bs-deferred-batch-actions": "Ардамаш",
-	"bs-deferred-action-status-pending": "Хьежар.",
-	"bs-deferred-action-status-running": "Кхочушдеш ду…",
-	"bs-deferred-action-status-done": "Кийчча йу.",
-	"bs-deferred-action-status-error": "Чуйаккхаран гӀалат.",
-	"bs-deferred-action-apicopypage-description": "Копийе «$1» «$2» чу.",
-	"bs-deferred-action-apieditpage-description": "Хийца «$1».",
-	"bs-deferred-batch-title": "Пакетан кечйар",
-	"bs-deferred-batch-progress-desc": "Прогресс",
-	"bs-deferred-batch-description": "Цуьнах лаьцна",
-	"bs-deferred-batch-status": "Статус",
-	"bs-deferred-action-apiaddcategories-description": "ТӀетоха категори '$1'.",
-	"bs-deferred-action-apiremovecategories-description": "ДӀайаккха категори '$1' чуьра.",
-	"bs-deferred-action-apisetcategories-description": "ДӀахӀоттайе категори '$1' чу.",
-	"bs-deferred-action-apideletepage-description": "«$1» дӀайаккхар."
+	"bs-deferred-batch-actions": "\u0410\u0440\u0434\u0430\u043c\u0430\u0448",
+	"bs-deferred-action-status-pending": "\u0425\u044c\u0435\u0436\u0430\u0440.",
+	"bs-deferred-action-status-running": "\u041a\u0445\u043e\u0447\u0443\u0448\u0434\u0435\u0448 \u0434\u0443\u2026",
+	"bs-deferred-action-status-done": "\u041a\u0438\u0439\u0447\u0447\u0430 \u0439\u0443.",
+	"bs-deferred-action-status-error": "\u0427\u0443\u0439\u0430\u043a\u043a\u0445\u0430\u0440\u0430\u043d \u0433\u04c0\u0430\u043b\u0430\u0442.",
+	"bs-deferred-action-apicopypage-description": "\u041a\u043e\u043f\u0438\u0439\u0435 \u00ab$1\u00bb \u00ab$2\u00bb \u0447\u0443.",
+	"bs-deferred-action-apieditpage-description": "\u0425\u0438\u0439\u0446\u0430 \u00ab$1\u00bb.",
+	"bs-deferred-batch-title": "\u041f\u0430\u043a\u0435\u0442\u0430\u043d \u043a\u0435\u0447\u0439\u0430\u0440",
+	"bs-deferred-batch-progress-desc": "\u041f\u0440\u043e\u0433\u0440\u0435\u0441\u0441",
+	"bs-deferred-batch-description": "\u0426\u0443\u044c\u043d\u0430\u0445 \u043b\u0430\u044c\u0446\u043d\u0430",
+	"bs-deferred-batch-status": "\u0421\u0442\u0430\u0442\u0443\u0441",
+	"bs-deferred-action-apiaddcategories-description": "\u0422\u04c0\u0435\u0442\u043e\u0445\u0430 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438 '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "\u0414\u04c0\u0430\u0439\u0430\u043a\u043a\u0445\u0430 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438 '$1' \u0447\u0443\u044c\u0440\u0430.",
+	"bs-deferred-action-apisetcategories-description": "\u0414\u04c0\u0430\u0445\u04c0\u043e\u0442\u0442\u0430\u0439\u0435 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438 '$1' \u0447\u0443.",
+	"bs-deferred-action-apideletepage-description": "\u00ab$1\u00bb \u0434\u04c0\u0430\u0439\u0430\u043a\u043a\u0445\u0430\u0440."
 }

@@ -5,12 +5,12 @@
 			"Wolf Rex"
 		]
 	},
-	"bs-extjs-portal-height": "Magasság",
-	"bs-extjs-portal-count": "Bejegyzések",
-	"bs-extjs-portal-timespan": "Idővonal",
-	"bs-extjs-portal-timespan-week": "Hét",
-	"bs-extjs-portal-timespan-month": "Hónap",
+	"bs-extjs-portal-height": "Magass\u00e1g",
+	"bs-extjs-portal-count": "Bejegyz\u00e9sek",
+	"bs-extjs-portal-timespan": "Id\u0151vonal",
+	"bs-extjs-portal-timespan-week": "H\u00e9t",
+	"bs-extjs-portal-timespan-month": "H\u00f3nap",
 	"bs-extjs-portal-timespan-alltime": "Mindig",
-	"bs-extjs-portal-config": "Portlet konfigurálása:",
-	"bs-extjs-portal-title": "Portlet címe"
+	"bs-extjs-portal-config": "Portlet konfigur\u00e1l\u00e1sa:",
+	"bs-extjs-portal-title": "Portlet c\u00edme"
 }

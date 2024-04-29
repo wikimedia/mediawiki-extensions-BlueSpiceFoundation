@@ -4,7 +4,8 @@
 			"Bosogo"
 		]
 	},
-	"bs-upload-details": "Чоо-жайы",
-	"bs-upload-descfilelabel": "Сыпаттама",
-	"bs-upload-error": "Ката"
+	"bs-upload-details": "\u0427\u043e\u043e-\u0436\u0430\u0439\u044b",
+	"bs-upload-descfilelabel": "\u0421\u044b\u043f\u0430\u0442\u0442\u0430\u043c\u0430",
+	"bs-upload-error": "\u041a\u0430\u0442\u0430",
+	"bs-upload-license": "\u041b\u0438\u0446\u0435\u043d\u0437\u0438\u044f"
 }
