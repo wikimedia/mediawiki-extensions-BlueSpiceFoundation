@@ -2,21 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"Pacha Tchernof",
-			"פוילישער"
+			"\u05e4\u05d5\u05d9\u05dc\u05d9\u05e9\u05e2\u05e8"
 		]
 	},
-	"bs-ns_main": "(בלעטער)",
-	"bs-extended-search-textfield-defaultvalue": "זוכן...",
-	"bs-exception-view-heading": "א גרײַז האט פאסירט",
-	"bs-ns_all": "(אַלע)",
-	"bs-months-duration": "{{PLURAL:$1|1 מאָנאַט|$1 מאָנאַטן}}",
-	"bs-years-duration": "{{PLURAL:$1|איין יאָר|$1 יאָרן}}",
-	"bs-weeks-duration": "{{PLURAL:$1|איין וואָך|$1 וואָכן‎}}",
-	"bs-days-duration": "{{PLURAL:$1|איין טאָג|$1 טעג}}",
-	"bs-hours-duration": "{{PLURAL:$1|איין שעה|$1 שעהן}}",
-	"bs-mins-duration": "{{PLURAL:$1|איין מינוט|$1 מינוטן}}",
-	"bs-secs-duration": "{{PLURAL:$1|איין סעקונדע|$1 סעקונדעס}}",
-	"bs-viewtagerrorlist-legend": "$1 - פֿעלער",
-	"bs-ns": "נאָמענטייל",
-	"bs-export-menu-print-text": "דרוקן"
+	"bs-ns_main": "(\u05d1\u05dc\u05e2\u05d8\u05e2\u05e8)",
+	"bs-extended-search-textfield-defaultvalue": "\u05d6\u05d5\u05db\u05df...",
+	"bs-exception-view-heading": "\u05d0 \u05d2\u05e8\u05f2\u05b7\u05d6 \u05d4\u05d0\u05d8 \u05e4\u05d0\u05e1\u05d9\u05e8\u05d8",
+	"bs-ns_all": "(\u05d0\u05b7\u05dc\u05e2)",
+	"bs-months-duration": "{{PLURAL:$1|1 \u05de\u05d0\u05b8\u05e0\u05d0\u05b7\u05d8|$1 \u05de\u05d0\u05b8\u05e0\u05d0\u05b7\u05d8\u05df}}",
+	"bs-years-duration": "{{PLURAL:$1|\u05d0\u05d9\u05d9\u05df \u05d9\u05d0\u05b8\u05e8|$1 \u05d9\u05d0\u05b8\u05e8\u05df}}",
+	"bs-weeks-duration": "{{PLURAL:$1|\u05d0\u05d9\u05d9\u05df \u05d5\u05d5\u05d0\u05b8\u05da|$1 \u05d5\u05d5\u05d0\u05b8\u05db\u05df\u200e}}",
+	"bs-days-duration": "{{PLURAL:$1|\u05d0\u05d9\u05d9\u05df \u05d8\u05d0\u05b8\u05d2|$1 \u05d8\u05e2\u05d2}}",
+	"bs-hours-duration": "{{PLURAL:$1|\u05d0\u05d9\u05d9\u05df \u05e9\u05e2\u05d4|$1 \u05e9\u05e2\u05d4\u05df}}",
+	"bs-mins-duration": "{{PLURAL:$1|\u05d0\u05d9\u05d9\u05df \u05de\u05d9\u05e0\u05d5\u05d8|$1 \u05de\u05d9\u05e0\u05d5\u05d8\u05df}}",
+	"bs-secs-duration": "{{PLURAL:$1|\u05d0\u05d9\u05d9\u05df \u05e1\u05e2\u05e7\u05d5\u05e0\u05d3\u05e2|$1 \u05e1\u05e2\u05e7\u05d5\u05e0\u05d3\u05e2\u05e1}}",
+	"bs-viewtagerrorlist-legend": "$1 - \u05e4\u05bf\u05e2\u05dc\u05e2\u05e8",
+	"bs-ns": "\u05e0\u05d0\u05b8\u05de\u05e2\u05e0\u05d8\u05d9\u05d9\u05dc",
+	"bs-export-menu-print-text": "\u05d3\u05e8\u05d5\u05e7\u05df"
 }

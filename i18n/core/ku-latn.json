@@ -7,12 +7,12 @@
 			"Kur"
 		]
 	},
-	"bs-ns_main": "(Rûpel)",
+	"bs-ns_main": "(R\u00fbpel)",
 	"bs-userbar_loginswitch_logout": "Derkeve",
-	"bs-userbar_loginswitch_login": "Têkeve",
-	"bs-viewtagerrorlist-legend": "$1 - Çewtî",
-	"bs-parser-error-invalid-title": "Sernavê nederbasdar:$1",
-	"bs-validator-error-title-does-not-exist": "Rûpel tune ye: $1",
+	"bs-userbar_loginswitch_login": "T\u00eakeve",
+	"bs-viewtagerrorlist-legend": "$1 - \u00c7ewt\u00ee",
+	"bs-parser-error-invalid-title": "Sernav\u00ea nederbasdar:$1",
+	"bs-validator-error-title-does-not-exist": "R\u00fbpel tune ye: $1",
 	"bs-graphicallist-action-close": "Bigre",
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"bs-now": "niha"

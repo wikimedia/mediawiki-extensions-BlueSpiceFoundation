@@ -8,7 +8,7 @@
 	"bs-filerepo-headerfilethumbnail": "Miniatura",
 	"bs-filerepo-labelupload": "Telecargar",
 	"bs-filerepo-labelfilter": "Filtre",
-	"bs-filerepo-headerfilename": "Nom dau fichièr",
+	"bs-filerepo-headerfilename": "Nom dau fichi\u00e8r",
 	"bs-filerepo-headerfilesize": "Talha",
 	"bs-filerepo-headerpagecategories": "Categorias",
 	"bs-filerepo-headerfilewidth": "Largor",
@@ -16,9 +16,9 @@
 	"bs-filerepo-headerfileusertext": "Utilizaire",
 	"bs-filerepo-headerfileextension": "Extension",
 	"bs-filerepo-headerfiletimestamp": "Telecargat",
-	"bs-filerepo-headerfilemediatype": "Tipe de mèdia",
+	"bs-filerepo-headerfilemediatype": "Tipe de m\u00e8dia",
 	"bs-filerepo-headerfiledescription": "Descripcion",
-	"bs-filerepo-yes": "Òc",
+	"bs-filerepo-yes": "\u00d2c",
 	"bs-filerepo-no": "Non",
 	"bs-filerepo-pagesize": "Intradas per pagina"
 }

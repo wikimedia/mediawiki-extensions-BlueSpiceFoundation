@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iváns",
-			"Toliño",
+			"Iv\u00e1ns",
+			"Toli\u00f1o",
 			"Xosecalvo"
 		]
 	},
@@ -11,9 +11,9 @@
 	"bs-ooui-key-value-input-widget-value-label": "Valor",
 	"bs-ooui-key-value-input-widget-add-button-label": "Engadir",
 	"bs-ooui-key-value-input-widget-add-form-label": "Engadir nova entrada",
-	"bs-ooui-key-value-input-widget-error-message": "Cómpre encher tódolos campos obrigatorios!",
+	"bs-ooui-key-value-input-widget-error-message": "C\u00f3mpre encher t\u00f3dolos campos obrigatorios!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Non hai valores establecidos!",
-	"bs-ooui-key-value-input-widget-section-label": "Sección",
-	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova sección",
+	"bs-ooui-key-value-input-widget-section-label": "Secci\u00f3n",
+	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova secci\u00f3n",
 	"bs-ooui-btn-dismiss-alert-title": "Descartar"
 }

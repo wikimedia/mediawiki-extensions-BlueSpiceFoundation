@@ -13,7 +13,7 @@
 	"bs-weeks-duration": "{{PLURAL:$1|ien wike|$1 wike}}",
 	"bs-days-duration": "{{PLURAL:$1|ien dei|$1 dagen}}",
 	"bs-hours-duration": "{{PLURAL:$1|ien oere|$1 oeren}}",
-	"bs-mins-duration": "{{PLURAL:$1|ien minút|$1 minuten}}",
+	"bs-mins-duration": "{{PLURAL:$1|ien min\u00fat|$1 minuten}}",
 	"bs-secs-duration": "{{PLURAL:$1|ien sekonde|$1 sekonden}}",
 	"bs-two-units-ago": "$1 en $2 lyn",
 	"bs-one-unit-ago": "$1 lyn",

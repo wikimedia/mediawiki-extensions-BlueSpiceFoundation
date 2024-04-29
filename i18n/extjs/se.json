@@ -1,24 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kimberli Mäkäräinen (WMNO)",
+			"Kimberli M\u00e4k\u00e4r\u00e4inen (WMNO)",
 			"Yupik"
 		]
 	},
 	"bs-extjs-save": "Vurke",
 	"bs-extjs-delete": "Sihko",
 	"bs-extjs-remove": "Sihko",
-	"bs-extjs-error": "Meattáhus",
+	"bs-extjs-error": "Meatt\u00e1hus",
 	"bs-extjs-label-namespace": "Nammagomuvuohta",
 	"bs-extjs-allns": "(buot)",
 	"bs-extjs-filters": "Sillit",
 	"bs-extjs-categorytree-title": "Kategoriijat",
 	"bs-extjs-filter-date-filter": "Sille",
-	"bs-extjs-pageexport-list-format-link-label": "Liŋka",
-	"bs-extjs-flyout-tab-thumbs-label": "Govažat",
+	"bs-extjs-pageexport-list-format-link-label": "Li\u014bka",
+	"bs-extjs-flyout-tab-thumbs-label": "Gova\u017eat",
 	"bs-extjs-cancel": "Gaskkalduhte",
 	"bs-extjs-label-user": "Geavaheaddji",
 	"bs-extjs-close": "Gidde",
-	"bs-extjs-browse": "Bláđe",
-	"bs-extjs-copy": "Máŋge"
+	"bs-extjs-browse": "Bl\u00e1\u0111e",
+	"bs-extjs-copy": "M\u00e1\u014bge"
 }

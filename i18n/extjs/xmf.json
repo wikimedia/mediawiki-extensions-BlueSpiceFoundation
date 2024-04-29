@@ -5,15 +5,15 @@
 			"Silovan"
 		]
 	},
-	"bs-extjs-filter-bool-yes": "ქო",
-	"bs-extjs-filter-bool-no": "ვარი",
-	"bs-extjs-label-page": "ხასჷლა",
-	"bs-extjs-titlecombo-newpagehint": "ხასჷლა ვა რე!",
-	"bs-extjs-title-success": "წუმოძინელო",
-	"bs-extjs-pageexport-success": "წუმოძინელი ექსპორტი",
-	"bs-extjs-ok": "ჯგირი",
-	"bs-extjs-cancel": "გოუქვაფა",
-	"bs-extjs-categoryboxselect-emptytext": "კატეგორიაშ გეძინა",
-	"bs-extjs-categorytree-title": "კატეგორიეფი",
-	"bs-extjs-tools-trigger-text": "ხეჭკუდეფი"
+	"bs-extjs-filter-bool-yes": "\u10e5\u10dd",
+	"bs-extjs-filter-bool-no": "\u10d5\u10d0\u10e0\u10d8",
+	"bs-extjs-label-page": "\u10ee\u10d0\u10e1\u10f7\u10da\u10d0",
+	"bs-extjs-titlecombo-newpagehint": "\u10ee\u10d0\u10e1\u10f7\u10da\u10d0 \u10d5\u10d0 \u10e0\u10d4!",
+	"bs-extjs-title-success": "\u10ec\u10e3\u10db\u10dd\u10eb\u10d8\u10dc\u10d4\u10da\u10dd",
+	"bs-extjs-pageexport-success": "\u10ec\u10e3\u10db\u10dd\u10eb\u10d8\u10dc\u10d4\u10da\u10d8 \u10d4\u10e5\u10e1\u10de\u10dd\u10e0\u10e2\u10d8",
+	"bs-extjs-ok": "\u10ef\u10d2\u10d8\u10e0\u10d8",
+	"bs-extjs-cancel": "\u10d2\u10dd\u10e3\u10e5\u10d5\u10d0\u10e4\u10d0",
+	"bs-extjs-categoryboxselect-emptytext": "\u10d9\u10d0\u10e2\u10d4\u10d2\u10dd\u10e0\u10d8\u10d0\u10e8 \u10d2\u10d4\u10eb\u10d8\u10dc\u10d0",
+	"bs-extjs-categorytree-title": "\u10d9\u10d0\u10e2\u10d4\u10d2\u10dd\u10e0\u10d8\u10d4\u10e4\u10d8",
+	"bs-extjs-tools-trigger-text": "\u10ee\u10d4\u10ed\u10d9\u10e3\u10d3\u10d4\u10e4\u10d8"
 }

@@ -4,6 +4,6 @@
 			"V.narsikar"
 		]
 	},
-	"apihelp-bs-wikisubpage-treestore-description": "एखाद्या विशिष्ट विकिपानाच्या उपपानांची यादी करते",
-	"apihelp-bs-wikisubpage-treestore-param-node": "विकिपानाचे उपसर्ग असलेले शीर्षक"
+	"apihelp-bs-wikisubpage-treestore-description": "\u090f\u0916\u093e\u0926\u094d\u092f\u093e \u0935\u093f\u0936\u093f\u0937\u094d\u091f \u0935\u093f\u0915\u093f\u092a\u093e\u0928\u093e\u091a\u094d\u092f\u093e \u0909\u092a\u092a\u093e\u0928\u093e\u0902\u091a\u0940 \u092f\u093e\u0926\u0940 \u0915\u0930\u0924\u0947",
+	"apihelp-bs-wikisubpage-treestore-param-node": "\u0935\u093f\u0915\u093f\u092a\u093e\u0928\u093e\u091a\u0947 \u0909\u092a\u0938\u0930\u094d\u0917 \u0905\u0938\u0932\u0947\u0932\u0947 \u0936\u0940\u0930\u094d\u0937\u0915"
 }

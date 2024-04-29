@@ -4,12 +4,12 @@
 			"P. S. F. Freitas"
 		]
 	},
-	"bs-days-duration": "{{PLURAL:$1|peteĩ ára|$1 ára}}",
-	"bs-navigation-contact": "Orejuhutahápe",
+	"bs-days-duration": "{{PLURAL:$1|pete\u0129 \u00e1ra|$1 \u00e1ra}}",
+	"bs-navigation-contact": "Orejuhutah\u00e1pe",
 	"bs-export-menu-print-text": "Emonguatia",
-	"bs-filesystemhelper-upload-unsupported-type": "Ndaikatúi ojehupi marandurenda koichagua.",
-	"bs-filesystemhelper-upload-err-code": "Ndaikatúi ojehupi ko marandurenda: $1",
-	"bs-filesystemhelper-upload-base64-error": "Ndaikatúi ojehupi ko marandurenda.",
-	"bs-pref-fileextensions": "Umi marandurenda jepysokue ojehejáva:",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Maitei karai $2|Maitei kuñakarai $2|Maitei $2}},"
+	"bs-filesystemhelper-upload-unsupported-type": "Ndaikat\u00fai ojehupi marandurenda koichagua.",
+	"bs-filesystemhelper-upload-err-code": "Ndaikat\u00fai ojehupi ko marandurenda: $1",
+	"bs-filesystemhelper-upload-base64-error": "Ndaikat\u00fai ojehupi ko marandurenda.",
+	"bs-pref-fileextensions": "Umi marandurenda jepysokue ojehej\u00e1va:",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Maitei karai $2|Maitei ku\u00f1akarai $2|Maitei $2}},"
 }
