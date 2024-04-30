@@ -6,18 +6,18 @@
 			"Nikosgranturismogt"
 		]
 	},
-	"apihelp-bs-wikipage-tasks-description": "\u03a0\u03b1\u03c1\u03ad\u03c7\u03b5\u03b9 \u03c3\u03c5\u03bd\u03b7\u03b8\u03b9\u03c3\u03bc\u03ad\u03bd\u03b5\u03c2 \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03af\u03b5\u03c2 \u03b3\u03b9\u03b1 \u03c4\u03b9\u03c2 WikiPages",
-	"apihelp-bs-wikipage-tasks-summary": "\u03a0\u03b1\u03c1\u03ad\u03c7\u03b5\u03b9 \u03c3\u03c5\u03bd\u03b7\u03b8\u03b9\u03c3\u03bc\u03ad\u03bd\u03b5\u03c2 \u03bb\u03b5\u03b9\u03c4\u03bf\u03c5\u03c1\u03b3\u03af\u03b5\u03c2 \u03b3\u03b9\u03b1 \u03c4\u03b9\u03c2 WikiPages",
-	"apihelp-bs-store-param-limit": "\u0391\u03c1\u03b9\u03b8\u03bc\u03cc\u03c2 \u03b1\u03c0\u03bf\u03c4\u03b5\u03bb\u03b5\u03c3\u03bc\u03ac\u03c4\u03c9\u03bd \u03b3\u03b9\u03b1 \u03b5\u03c0\u03b9\u03c3\u03c4\u03c1\u03bf\u03c6\u03ae",
-	"apihelp-bs-task-param-task": "\u0397 \u03b5\u03c1\u03b3\u03b1\u03c3\u03af\u03b1 \u03c0\u03bf\u03c5 \u03b8\u03b1 \u03b5\u03ba\u03c4\u03b5\u03bb\u03b5\u03c3\u03c4\u03b5\u03af",
-	"apihelp-bs-task-param-format": "\u0397 \u03bc\u03bf\u03c1\u03c6\u03ae \u03c4\u03bf\u03c5 \u03b1\u03c0\u03bf\u03c4\u03b5\u03bb\u03ad\u03c3\u03bc\u03b1\u03c4\u03bf\u03c2",
-	"bs-wikipage-tasks-setcategories-edit-summary": "\u0391\u03bb\u03bb\u03b1\u03b3\u03bc\u03ad\u03bd\u03b5\u03c2 \u03ba\u03b1\u03c4\u03b7\u03b3\u03bf\u03c1\u03af\u03b5\u03c2.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "\u0394\u03b5\u03bd \u03c3\u03b1\u03c2 \u03b5\u03c0\u03b9\u03c4\u03c1\u03ad\u03c0\u03b5\u03c4\u03b1\u03b9 \u03bd\u03b1 \u03b5\u03c0\u03b5\u03be\u03b5\u03c1\u03b3\u03b1\u03c3\u03c4\u03b5\u03af\u03c4\u03b5 \u03c4\u03b7\u03bd \u03c3\u03b5\u03bb\u03af\u03b4\u03b1 \"$1\".",
-	"bs-wikipage-tasks-error-categories-not-valid": "\u0386\u03ba\u03c5\u03c1\u03b5\u03c2 {{PLURAL:$2|\u03ba\u03b1\u03c4\u03b7\u03b3\u03bf\u03c1\u03af\u03b1|\u03ba\u03b1\u03c4\u03b7\u03b3\u03bf\u03c1\u03af\u03b5\u03c2}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "\u039f\u03b9 \u03ba\u03b1\u03c4\u03b7\u03b3\u03bf\u03c1\u03af\u03b5\u03c2 \u03ad\u03c7\u03bf\u03c5\u03bd \u03bf\u03c1\u03b9\u03c3\u03c4\u03b5\u03af \u03b5\u03c0\u03b9\u03c4\u03c5\u03c7\u03ce\u03c2.",
-	"apihelp-bs-wikisubpage-treestore-param-node": "\u039f \u03c0\u03c1\u03bf\u03b8\u03b5\u03bc\u03b1\u03c4\u03bf\u03c0\u03bf\u03b9\u03b7\u03bc\u03ad\u03bd\u03bf\u03c2 \u03c4\u03af\u03c4\u03bb\u03bf\u03c2 \u03c4\u03b7\u03c2 \u03b2\u03b9\u03ba\u03b9\u03c3\u03b5\u03bb\u03af\u03b4\u03b1\u03c2",
-	"apihelp-bs-wikisubpage-treestore-param-options": "\u039a\u03b1\u03c4\u03ac\u03bb\u03bf\u03b3\u03bf\u03c2 \u03b5\u03c0\u03b9\u03bb\u03bf\u03b3\u03ce\u03bd",
-	"bs-wikipage-tasks-error-page-read-not-allowed": "\u0394\u03b5\u03bd \u03c3\u03b1\u03c2 \u03b5\u03c0\u03b9\u03c4\u03c1\u03ad\u03c0\u03b5\u03c4\u03b1\u03b9 \u03bd\u03b1 \u03b4\u03b9\u03b1\u03b2\u03ac\u03c3\u03b5\u03c4\u03b5 \u03c4\u03b7\u03bd \u03c3\u03b5\u03bb\u03af\u03b4\u03b1 '$1'.",
-	"bs-wikipage-tasks-error-nothingtoremove": "\u0394\u03b5\u03bd \u03c5\u03c0\u03ac\u03c1\u03c7\u03bf\u03c5\u03bd \u03ba\u03b1\u03c4\u03b7\u03b3\u03bf\u03c1\u03af\u03b5\u03c2 \u03b3\u03b9\u03b1 \u03b1\u03c6\u03b1\u03af\u03c1\u03b5\u03c3\u03b7",
-	"apihelp-bs-task-summary": "\u0394\u03af\u03bd\u03b5\u03b9 \u03c4\u03bf \u03c4\u03b5\u03bb\u03b9\u03ba\u03cc \u03c3\u03b7\u03bc\u03b5\u03af\u03bf \u03c4\u03bf\u03c5 \u0391\u03a1\u0399 \u03b3\u03b9\u03b1 \u03c4\u03b7\u03bd \u03b5\u03ba\u03c4\u03ad\u03bb\u03b5\u03c3\u03b7 \u03ad\u03c1\u03b3\u03c9\u03bd \u03c0\u03bf\u03c5 \u03ae\u03b4\u03b7 \u03ad\u03c7\u03bf\u03c5\u03bd \u03b5\u03b3\u03b3\u03c1\u03b1\u03c6\u03b5\u03af"
+	"apihelp-bs-wikipage-tasks-description": "Παρέχει συνηθισμένες λειτουργίες για τις WikiPages",
+	"apihelp-bs-wikipage-tasks-summary": "Παρέχει συνηθισμένες λειτουργίες για τις WikiPages",
+	"apihelp-bs-store-param-limit": "Αριθμός αποτελεσμάτων για επιστροφή",
+	"apihelp-bs-task-param-task": "Η εργασία που θα εκτελεστεί",
+	"apihelp-bs-task-param-format": "Η μορφή του αποτελέσματος",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Αλλαγμένες κατηγορίες.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Δεν σας επιτρέπεται να επεξεργαστείτε την σελίδα \"$1\".",
+	"bs-wikipage-tasks-error-categories-not-valid": "Άκυρες {{PLURAL:$2|κατηγορία|κατηγορίες}}: $1",
+	"bs-wikipage-tasks-setcategories-success": "Οι κατηγορίες έχουν οριστεί επιτυχώς.",
+	"apihelp-bs-wikisubpage-treestore-param-node": "Ο προθεματοποιημένος τίτλος της βικισελίδας",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Κατάλογος επιλογών",
+	"bs-wikipage-tasks-error-page-read-not-allowed": "Δεν σας επιτρέπεται να διαβάσετε την σελίδα '$1'.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Δεν υπάρχουν κατηγορίες για αφαίρεση",
+	"apihelp-bs-task-summary": "Δίνει το τελικό σημείο του ΑΡΙ για την εκτέλεση έργων που ήδη έχουν εγγραφεί"
 }

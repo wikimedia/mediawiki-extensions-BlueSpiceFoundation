@@ -4,8 +4,8 @@
 			"Bosogo"
 		]
 	},
-	"bs-deferred-batch-description": "\u0421\u044b\u043f\u0430\u0442\u0442\u0430\u043c\u0430",
-	"bs-deferred-action-status-done": "\u0414\u0430\u044f\u0440.",
-	"bs-deferred-action-apieditpage-description": "\u00ab\u200e$1\u00bb \u0442\u04af\u0437\u04e9\u0442\u04af\u04af.",
-	"bs-deferred-batch-actions": "\u0410\u0440\u0430\u043a\u0435\u0442\u0442\u0435\u0440"
+	"bs-deferred-batch-description": "Сыпаттама",
+	"bs-deferred-action-status-done": "Даяр.",
+	"bs-deferred-action-apieditpage-description": "«‎$1» түзөтүү.",
+	"bs-deferred-batch-actions": "Аракеттер"
 }

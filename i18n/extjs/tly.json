@@ -3,20 +3,20 @@
 		"authors": [
 			"Patriot Kor",
 			"Patriot Kur",
-			"\u0413\u0443\u0441\u0435\u0439\u043d"
+			"Гусейн"
 		]
 	},
 	"bs-extjs-ok": "Cok",
-	"bs-extjs-cancel": "L\u0259\u011fv karde",
+	"bs-extjs-cancel": "Ləğv karde",
 	"bs-extjs-yes": "Ha",
 	"bs-extjs-no": "Ne",
-	"bs-extjs-edit": "S\u0259rost byk\u0259",
-	"bs-extjs-label-page": "S\u0259hif\u0259",
-	"bs-extjs-allns": "(h\u0259m\u0259)",
-	"bs-extjs-mainns": "(\u018fsos)",
+	"bs-extjs-edit": "Sərost bykə",
+	"bs-extjs-label-page": "Səhifə",
+	"bs-extjs-allns": "(həmə)",
+	"bs-extjs-mainns": "(Əsos)",
 	"bs-extjs-filter-bool-yes": "ha",
 	"bs-extjs-filter-bool-no": "ne",
 	"bs-extjs-title-success": "Ovand",
-	"bs-extjs-tools-trigger-text": "Dil\u0259qon",
-	"bs-extjs-add": "\u018flov\u0259"
+	"bs-extjs-tools-trigger-text": "Diləqon",
+	"bs-extjs-add": "Əlovə"
 }

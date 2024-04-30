@@ -1,19 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kimberli M\u00e4k\u00e4r\u00e4inen (WMNO)",
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
 	"bs-ns_all": "(buot)",
 	"bs-extended-search-textfield-defaultvalue": "Oza...",
 	"bs-ns": "Nammagomuvuohta",
-	"bs-userbar_loginswitch_logout": "\u010c\u00e1lit olggos",
-	"bs-userbar_loginswitch_login": "\u010c\u00e1lit sisa",
-	"bs-viewtagerrorlist-legend": "$1 - Meatt\u00e1hus",
+	"bs-userbar_loginswitch_logout": "Čálit olggos",
+	"bs-userbar_loginswitch_login": "Čálit sisa",
+	"bs-viewtagerrorlist-legend": "$1 - Meattáhus",
 	"bs-extended-search-textfield-tooltip": "Oza wikis",
-	"bs-navigation-contact": "V\u00e1ldde oktavuo\u0111a",
+	"bs-navigation-contact": "Váldde oktavuođa",
 	"bs-notifications-agent-anon": "anonyma geavaheaddji",
-	"bs-graphicallist-action-preview": "Ovda\u010d\u00e1j\u00e1hus",
+	"bs-graphicallist-action-preview": "Ovdačájáhus",
 	"bs-graphicallist-action-close": "Gidde"
 }

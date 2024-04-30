@@ -5,14 +5,14 @@
 			"Nokeoo"
 		]
 	},
-	"bs-ooui-btn-dismiss-alert-title": "Pasl\u0117pti",
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Prid\u0117ti nauj\u0105...",
+	"bs-ooui-btn-dismiss-alert-title": "Paslėpti",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Pridėti naują...",
 	"bs-ooui-key-value-input-widget-key-label": "Raktas",
-	"bs-ooui-key-value-input-widget-value-label": "Reik\u0161m\u0117",
-	"bs-ooui-key-value-input-widget-add-button-label": "Prid\u0117ti",
-	"bs-ooui-key-value-input-widget-add-form-label": "Prid\u0117ti nauj\u0105 \u012fra\u0161\u0105",
-	"bs-ooui-key-value-input-widget-error-message": "Visi privalomi laukai turi b\u016bti nustatyti!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Nenustatyta joki\u0173 reik\u0161mi\u0173!",
+	"bs-ooui-key-value-input-widget-value-label": "Reikšmė",
+	"bs-ooui-key-value-input-widget-add-button-label": "Pridėti",
+	"bs-ooui-key-value-input-widget-add-form-label": "Pridėti naują įrašą",
+	"bs-ooui-key-value-input-widget-error-message": "Visi privalomi laukai turi būti nustatyti!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Nenustatyta jokių reikšmių!",
 	"bs-ooui-key-value-input-widget-section-label": "Skyrius",
-	"bs-ooui-key-value-input-widget-add-section-label": "Prid\u0117ti nauj\u0105 skyri\u0173"
+	"bs-ooui-key-value-input-widget-add-section-label": "Pridėti naują skyrių"
 }

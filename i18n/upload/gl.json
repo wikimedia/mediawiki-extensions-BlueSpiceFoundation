@@ -2,7 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Elisardojm",
-			"Toli\u00f1o"
+			"Toliño"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Subir un ficheiro",
@@ -10,21 +10,21 @@
 	"bs-upload-uploadfilefieldlabel": "Nome de ficheiro",
 	"bs-upload-uploadfileemptytext": "Inserir ficheiro novo...",
 	"bs-upload-uploaddestfilelabel": "Nome do ficheiro de destino",
-	"bs-upload-allowedfiletypesare": "Tipos de ficheiros v\u00e1lidos:",
+	"bs-upload-allowedfiletypesare": "Tipos de ficheiros válidos:",
 	"bs-upload-license": "Licenza",
 	"bs-upload-uploadwatchthislabel": "Vixiar este ficheiro",
 	"bs-upload-uploadignorewarningslabel": "Ignorar as advertencias",
-	"bs-upload-categories": "Categor\u00edas",
+	"bs-upload-categories": "Categorías",
 	"bs-upload-upload-waitmessage": "Subida en curso...",
 	"bs-upload-error": "Erro",
-	"bs-upload-descfilelabel": "Descrici\u00f3n",
+	"bs-upload-descfilelabel": "Descrición",
 	"bs-upload-error-long": "Erro no proceso de subida",
 	"bs-upload-filetypenotsupported": "Non se admite este tipo de ficheiro",
 	"bs-upload-details": "Detalles",
 	"bs-upload-uploadwarningdialog-title": "Carga de ficheiro: Avisos",
-	"bs-upload-uploadwarningdialog-intro": "Xurdiron os seguintes avisos \u00f3 tratar de cargar o ficheiro",
+	"bs-upload-uploadwarningdialog-intro": "Xurdiron os seguintes avisos ó tratar de cargar o ficheiro",
 	"bs-upload-uploadwarningdialog-warning-exists": "Xa existe un ficheiro co nome \"$1\"",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Existe un duplicado|Existen varios duplicados}} deste ficheiro",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso desco\u00f1ecido con c\u00f3digo \"$1\"",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso descoñecido con código \"$1\"",
 	"bs-upload-uploadwarningdialog-outro": "Preme \"{{int:bs-extjs-ok}}\" para ignorar as advertencias e subir o ficheiro ou preme \"{{int:bs-extjs-cancel}}\" para volver ao formulario de carga"
 }

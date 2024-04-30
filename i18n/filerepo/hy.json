@@ -2,17 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"Kareyac",
-			"\u054d\u0565\u0580\u0563\u0565\u0575 \u054d\u0561\u0586\u0561\u0580\u0575\u0561\u0576"
+			"Սերգեյ Սաֆարյան"
 		]
 	},
-	"bs-filerepo-labelfilter": "\u0536\u057f\u056b\u0579",
-	"bs-filerepo-headerfilename": "\u0546\u056b\u0577\u0584\u056b \u0561\u0576\u057e\u0561\u0576\u0578\u0582\u0574",
-	"bs-filerepo-headerfilesize": "\u0549\u0561\u0583",
-	"bs-filerepo-headerpagecategories": "\u053f\u0561\u057f\u0565\u0563\u0578\u0580\u056b\u0561\u0576\u0565\u0580",
-	"bs-filerepo-headerfilewidth": "\u053c\u0561\u0575\u0576\u0584",
-	"bs-filerepo-headerfileheight": "\u0532\u0561\u0580\u0571\u0580\u0578\u0582\u0569\u0575\u0578\u0582\u0576",
-	"bs-filerepo-headerfileusertext": "\u0544\u0561\u057d\u0576\u0561\u056f\u056b\u0581",
-	"bs-filerepo-yes": "\u0531\u0575\u0578",
-	"bs-filerepo-no": "\u0548\u0579",
-	"bs-filerepo-labelupload": "\u054e\u0565\u0580\u0562\u0565\u057c\u0576\u0565\u056c"
+	"bs-filerepo-labelfilter": "Զտիչ",
+	"bs-filerepo-headerfilename": "Նիշքի անվանում",
+	"bs-filerepo-headerfilesize": "Չափ",
+	"bs-filerepo-headerpagecategories": "Կատեգորիաներ",
+	"bs-filerepo-headerfilewidth": "Լայնք",
+	"bs-filerepo-headerfileheight": "Բարձրություն",
+	"bs-filerepo-headerfileusertext": "Մասնակից",
+	"bs-filerepo-yes": "Այո",
+	"bs-filerepo-no": "Ոչ",
+	"bs-filerepo-labelupload": "Վերբեռնել"
 }

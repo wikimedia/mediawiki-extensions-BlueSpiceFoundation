@@ -6,7 +6,7 @@
 			"Wertuose"
 		]
 	},
-	"bs-days-duration": "{{PLURAL:$1|1 g\u00fcn|$1 g\u00fcn}}",
-	"bs-imagepage-download-text": "Y\u00fckl\u0259",
-	"bs-navigation-contact": "\u018flaq\u0259"
+	"bs-days-duration": "{{PLURAL:$1|1 gün|$1 gün}}",
+	"bs-imagepage-download-text": "Yüklə",
+	"bs-navigation-contact": "Əlaqə"
 }
