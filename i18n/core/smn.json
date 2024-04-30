@@ -5,18 +5,18 @@
 			"Yupik"
 		]
 	},
-	"bs-ns_main": "(Siij\u0111oh)",
+	"bs-ns_main": "(Siijđoh)",
 	"bs-ns_all": "(puoh)",
-	"bs-userbar_loginswitch_logout": "\u010c\u00e1l\u00e1d\u00e2t olgos",
-	"bs-userbar_loginswitch_login": "\u010c\u00e1l\u00e1d\u00e2t siis\u00e2",
-	"bs-extended-search-textfield-defaultvalue": "Uus\u00e2...",
-	"bs-months-duration": "{{PLURAL:$1|oht\u00e2 m\u00e1nuppaje|$1 m\u00e1nuppaijeed}}",
-	"bs-days-duration": "{{PLURAL:$1|oht\u00e2 peivi|$1 peeivi|$1 peeivi|$1 peivid}}",
-	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, hi\u00e4rr\u00e1 $2|Hei, rovv\u00e1 $2|Hei $2}}.",
-	"bs-viewtagerrorlist-legend": "$1 - Feil\u00e2",
-	"bs-imagepage-download-text": "Luo\u0111ii",
-	"bs-ns": "Nomm\u00e2komovuot\u00e2",
-	"bs-graphicallist-action-close": "Toop\u00e2",
-	"bs-extended-search-textfield-tooltip": "Uus\u00e2 wikist",
-	"bs-navigation-contact": "V\u00e4\u00e4ldi oht\u00e2vuo\u0111\u00e2"
+	"bs-userbar_loginswitch_logout": "Čáládât olgos",
+	"bs-userbar_loginswitch_login": "Čáládât siisâ",
+	"bs-extended-search-textfield-defaultvalue": "Uusâ...",
+	"bs-months-duration": "{{PLURAL:$1|ohtâ mánuppaje|$1 mánuppaijeed}}",
+	"bs-days-duration": "{{PLURAL:$1|ohtâ peivi|$1 peeivi|$1 peeivi|$1 peivid}}",
+	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, hiärrá $2|Hei, rovvá $2|Hei $2}}.",
+	"bs-viewtagerrorlist-legend": "$1 - Feilâ",
+	"bs-imagepage-download-text": "Luođii",
+	"bs-ns": "Nommâkomovuotâ",
+	"bs-graphicallist-action-close": "Toopâ",
+	"bs-extended-search-textfield-tooltip": "Uusâ wikist",
+	"bs-navigation-contact": "Vääldi ohtâvuođâ"
 }

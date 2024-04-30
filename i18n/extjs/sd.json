@@ -5,17 +5,17 @@
 			"Tweety"
 		]
 	},
-	"bs-extjs-cancel": "\u0631\u062f",
-	"bs-extjs-save": "\u0633\u0627\u0646\u068d\u064a\u0648",
-	"bs-extjs-confirm": "\u067e\u06aa \u06aa\u0631\u064a\u0648",
-	"bs-extjs-actions-column-header": "\u0639\u0645\u0644",
-	"bs-extjs-close": "\u0628\u0646\u062f \u06aa\u0631\u064a\u0648",
-	"bs-extjs-label-group": "\u06af\u0631\u0648\u06be",
-	"bs-extjs-label-namespace": "\u0646\u0627\u0646\u0621\u064f\u067e\u0648\u0644\u0627\u0631",
-	"bs-extjs-label-page": "\u0635\u0641\u062d\u0648",
-	"bs-extjs-allns": "\u0633\u0680",
-	"bs-extjs-filters": "\u0687\u0627\u06bb\u064a\u0648\u0646",
-	"bs-extjs-pageexport-list-format-plain-label": "\u0633\u0627\u062f\u0648 \u0645\u062a\u0646",
-	"bs-extjs-tools-trigger-text": "\u0627\u0648\u0632\u0627\u0631\u064e",
-	"bs-extjs-ok": "\u067a\u064a\u06aa"
+	"bs-extjs-cancel": "رد",
+	"bs-extjs-save": "سانڍيو",
+	"bs-extjs-confirm": "پڪ ڪريو",
+	"bs-extjs-actions-column-header": "عمل",
+	"bs-extjs-close": "بند ڪريو",
+	"bs-extjs-label-group": "گروھ",
+	"bs-extjs-label-namespace": "نانءُپولار",
+	"bs-extjs-label-page": "صفحو",
+	"bs-extjs-allns": "سڀ",
+	"bs-extjs-filters": "ڇاڻيون",
+	"bs-extjs-pageexport-list-format-plain-label": "سادو متن",
+	"bs-extjs-tools-trigger-text": "اوزارَ",
+	"bs-extjs-ok": "ٺيڪ"
 }

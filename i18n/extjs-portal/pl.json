@@ -5,12 +5,12 @@
 			"Mro"
 		]
 	},
-	"bs-extjs-portal-height": "Wysoko\u015b\u0107",
-	"bs-extjs-portal-timespan": "Przedzia\u0142 czasowy",
-	"bs-extjs-portal-timespan-week": "Tydzie\u0144",
-	"bs-extjs-portal-timespan-month": "Miesi\u0105c",
+	"bs-extjs-portal-height": "Wysokość",
+	"bs-extjs-portal-timespan": "Przedział czasowy",
+	"bs-extjs-portal-timespan-week": "Tydzień",
+	"bs-extjs-portal-timespan-month": "Miesiąc",
 	"bs-extjs-portal-config": "Konfiguracja portelu:",
-	"bs-extjs-portal-title": "Tytu\u0142 portletu",
+	"bs-extjs-portal-title": "Tytuł portletu",
 	"bs-extjs-portal-count": "Liczba",
 	"bs-extjs-portal-timespan-alltime": "Nieograniczony"
 }

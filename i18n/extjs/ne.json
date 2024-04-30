@@ -2,20 +2,20 @@
 	"@metadata": {
 		"authors": [
 			"Bada Kaji",
-			"\u091c\u0928\u0915 \u0930\u093e\u091c \u092d\u091f\u094d\u091f",
-			"\u092a\u0930\u094d\u0935\u0924 \u0938\u0941\u092c\u0947\u0926\u0940",
-			"\u092c\u0921\u093e \u0915\u093e\u091c\u0940",
-			"\u092c\u093f\u092a\u094d\u0932\u092c \u0906\u0928\u0928\u094d\u0926",
-			"\u0939\u093f\u092e\u093e\u0932 \u0938\u0941\u092c\u0947\u0926\u0940"
+			"जनक राज भट्ट",
+			"पर्वत सुबेदी",
+			"बडा काजी",
+			"बिप्लब आनन्द",
+			"हिमाल सुबेदी"
 		]
 	},
-	"bs-extjs-add": "\u0925\u092a\u094d\u0928\u0941\u0939\u094b\u0938\u094d",
-	"bs-extjs-edit": "\u0938\u092e\u094d\u092a\u093e\u0926\u0928",
-	"bs-extjs-copy": "\u0915\u092a\u093f",
-	"bs-extjs-actions-column-header": "\u0915\u093e\u0930\u094d\u092f\u0939\u0930\u0942",
-	"bs-extjs-label-page": "\u092a\u0943\u0937\u094d\u0920",
-	"bs-extjs-filters": "\u091b\u0928\u093e\u0947\u091f\u0939\u0930\u0942",
-	"bs-extjs-filter-bool-yes": "\u0939\u094b",
-	"bs-extjs-filter-bool-no": "\u0939\u094b\u0907\u0928",
-	"bs-extjs-delete": "\u092e\u0947\u091f\u094d\u0928\u0947"
+	"bs-extjs-add": "थप्नुहोस्",
+	"bs-extjs-edit": "सम्पादन",
+	"bs-extjs-copy": "कपि",
+	"bs-extjs-actions-column-header": "कार्यहरू",
+	"bs-extjs-label-page": "पृष्ठ",
+	"bs-extjs-filters": "छनाेटहरू",
+	"bs-extjs-filter-bool-yes": "हो",
+	"bs-extjs-filter-bool-no": "होइन",
+	"bs-extjs-delete": "मेट्ने"
 }

@@ -9,11 +9,11 @@
 	"bs-tab_navigation": "Navigacija",
 	"bs-userbar_loginswitch_logout": "Odjava",
 	"bs-userbar_loginswitch_login": "Prijavi me",
-	"bs-extended-search-textfield-defaultvalue": "Tra\u017eite...",
-	"bs-extended-search-textfield-tooltip": "Tra\u017eite wiki",
+	"bs-extended-search-textfield-defaultvalue": "Tražite...",
+	"bs-extended-search-textfield-tooltip": "Tražite wiki",
 	"bs-no-information-available": "Informacije nisu dostupne",
 	"bs-years-duration": "{{PLURAL:$1|jedna godina|$1 godina}}",
 	"bs-one-unit-ago": "prije $1",
 	"bs-now": "sada",
-	"bs-viewtagerrorlist-legend": "$1 - Gre\u0161ka"
+	"bs-viewtagerrorlist-legend": "$1 - Greška"
 }

@@ -1,24 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"\u0423\u043c\u0430\u0440"
+			"Умар"
 		]
 	},
-	"bs-filerepo-headerfilemimetype": "MIME-\u0442\u0430\u0439\u043f\u0430",
-	"bs-filerepo-headerfilemediatype": "\u041c\u0435\u0434\u0438\u0430 \u0442\u0430\u0439\u043f\u0430",
-	"bs-filerepo-labelupload": "\u0427\u0443\u0439\u0430\u043a\u043a\u0445\u0430\u0440",
-	"bs-filerepo-labelfilter": "\u041b\u0443\u044c\u0442\u0442\u0443\u0440\u0433",
-	"bs-filerepo-headerfilename": "\u0424\u0430\u0439\u043b\u0430\u043d \u0446\u04c0\u0435",
-	"bs-filerepo-headerfilesize": "\u0411\u0430\u0440\u0430\u043c",
-	"bs-filerepo-headerpagecategories": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0435\u0448",
-	"bs-filerepo-headerfilewidth": "\u0428\u043e\u0440\u0430\u043b\u043b\u0430",
-	"bs-filerepo-headerfileheight": "\u041b\u043e\u043a\u0445\u0430\u043b\u043b\u0430",
-	"bs-filerepo-headerfileusertext": "\u0414\u0435\u043a\u044a\u0430\u0448\u0445\u043e",
-	"bs-filerepo-headerfileextension": "\u0428\u043e\u0440\u0434\u0430\u0440",
-	"bs-filerepo-headerfiletimestamp": "\u0427\u0443\u0439\u0430\u044c\u043a\u043a\u0445\u0438\u043d\u0430",
-	"bs-filerepo-headerfiledescription": "\u0426\u0443\u044c\u043d\u0430\u0445 \u043b\u0430\u044c\u0446\u043d\u0430",
-	"bs-filerepo-headerfilethumbnail": "\u041c\u0438\u043d\u0438\u0430\u0442\u044e\u0440\u0430",
-	"bs-filerepo-yes": "\u0425\u04c0\u0430\u044a",
-	"bs-filerepo-no": "\u0425\u04c0\u0430\u043d-\u0445\u04c0\u0430",
-	"bs-filerepo-pagesize": "\u0410\u0433\u04c0\u043e\u043d\u0433\u0430\u0445\u044c \u0434\u04c0\u0430\u0439\u0430\u0437\u0434\u0430\u0440\u0448"
+	"bs-filerepo-headerfilemimetype": "MIME-тайпа",
+	"bs-filerepo-headerfilemediatype": "Медиа тайпа",
+	"bs-filerepo-labelupload": "Чуйаккхар",
+	"bs-filerepo-labelfilter": "Луьттург",
+	"bs-filerepo-headerfilename": "Файлан цӀе",
+	"bs-filerepo-headerfilesize": "Барам",
+	"bs-filerepo-headerpagecategories": "Категореш",
+	"bs-filerepo-headerfilewidth": "Шоралла",
+	"bs-filerepo-headerfileheight": "Локхалла",
+	"bs-filerepo-headerfileusertext": "Декъашхо",
+	"bs-filerepo-headerfileextension": "Шордар",
+	"bs-filerepo-headerfiletimestamp": "Чуйаьккхина",
+	"bs-filerepo-headerfiledescription": "Цуьнах лаьцна",
+	"bs-filerepo-headerfilethumbnail": "Миниатюра",
+	"bs-filerepo-yes": "ХӀаъ",
+	"bs-filerepo-no": "ХӀан-хӀа",
+	"bs-filerepo-pagesize": "АгӀонгахь дӀайаздарш"
 }

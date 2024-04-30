@@ -2,18 +2,18 @@
 	"@metadata": {
 		"authors": [
 			"Pacha Tchernof",
-			"\u05e4\u05d5\u05d9\u05dc\u05d9\u05e9\u05e2\u05e8"
+			"פוילישער"
 		]
 	},
-	"bs-extjs-cancel": "\u05d0\u05b7\u05e0\u05d5\u05dc\u05d9\u05e8\u05df",
-	"bs-extjs-confirm": "\u05d1\u05d0\u05b7\u05e9\u05d8\u05e2\u05d8\u05d9\u05e7\u05df",
-	"bs-extjs-categoryboxselect-emptytext": "\u05e6\u05d5\u05dc\u05d9\u05d9\u05d2\u05df \u05e6\u05d5 \u05e7\u05d0\u05b7\u05d8\u05e2\u05d2\u05d0\u05e8\u05d9\u05e2",
-	"bs-extjs-categorytree-title": "\u05e7\u05d0\u05b7\u05d8\u05e2\u05d2\u05d0\u05b8\u05e8\u05d9\u05e2\u05e1",
-	"bs-extjs-allns": "(\u05d0\u05b7\u05dc\u05e2)",
-	"bs-extjs-pageexport-list-format-link-label": "\u05dc\u05d9\u05e0\u05e7",
-	"bs-extjs-ok": "\u05d9\u05d0\u05b8",
-	"bs-extjs-no": "\u05e0\u05d9\u05d9\u05df",
-	"bs-extjs-error": "\u05e4\u05bf\u05e2\u05dc\u05e2\u05e8",
-	"bs-extjs-label-namespace": "\u05e0\u05d0\u05b8\u05de\u05e2\u05e0\u05d8\u05d9\u05d9\u05dc",
-	"bs-extjs-label-page": "\u05d1\u05dc\u05d0\u05b7\u05d8"
+	"bs-extjs-cancel": "אַנולירן",
+	"bs-extjs-confirm": "באַשטעטיקן",
+	"bs-extjs-categoryboxselect-emptytext": "צולייגן צו קאַטעגאריע",
+	"bs-extjs-categorytree-title": "קאַטעגאָריעס",
+	"bs-extjs-allns": "(אַלע)",
+	"bs-extjs-pageexport-list-format-link-label": "לינק",
+	"bs-extjs-ok": "יאָ",
+	"bs-extjs-no": "ניין",
+	"bs-extjs-error": "פֿעלער",
+	"bs-extjs-label-namespace": "נאָמענטייל",
+	"bs-extjs-label-page": "בלאַט"
 }
