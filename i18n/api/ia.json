@@ -44,7 +44,7 @@
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Tu non ha le permission de leger le pagina ‘$1’.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Il non ha categorias a remover",
 	"apihelp-bs-category-treestore-summary": "Lista le subcategorias de un categoria specific",
-	"apihelp-bs-category-treestore-param-node": "Un cammino de categorias separate per barras oblique",
+	"apihelp-bs-category-treestore-param-node": "Un percurso de categorias separate per barras oblique",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 exemplos de parametros]",
 	"apihelp-bs-task-param-schema": "Monstrar le schema JSON pro le parametros del carga",
 	"apihelp-bs-task-param-examples": "Monstrar exemplos de parametros de carga",
