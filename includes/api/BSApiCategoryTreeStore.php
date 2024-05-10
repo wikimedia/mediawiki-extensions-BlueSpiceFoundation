@@ -198,7 +198,8 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 				continue;
 			}
 			foreach ( $trackingCatArray['cats'] as $title ) {
-				if ( $category->getTitle()->equals( $title ) ) {
+				$categoryTitle = Title::castFromPageReference( $category->getPage() );
+				if ( $categoryTitle->equals( $title ) ) {
 					return true;
 				}
 			}
