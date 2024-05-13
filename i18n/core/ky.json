@@ -12,7 +12,6 @@
 	"bs-weeks-duration": "{{PLURAL:$1|бир апта|$1 апта}}",
 	"bs-days-duration": "{{PLURAL:$1|бир күн|$1 күн}}",
 	"bs-navigation-instructions": "Нускамалар",
-	"bs-imagepage-download-text": "Жүктөп алуу",
 	"bs-export-menu-print-text": "Басып чыгаруу",
 	"bs-graphicallist-action-close": "Жабуу",
 	"bs-graphicallist-action-list": "Тизме"

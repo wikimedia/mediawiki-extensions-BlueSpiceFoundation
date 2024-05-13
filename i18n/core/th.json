@@ -29,7 +29,6 @@
 	"bs-exception-view-stacktrace-toggle-hide-text": "ซ่อนรายละเอียดข้อผิดพลาด",
 	"bs-navigation-instructions": "คำแนะนำ",
 	"bs-navigation-contact": "ติดต่อ",
-	"bs-imagepage-download-text": "ดาวน์โหลด",
 	"bs-ns": "เนมสเปซ",
 	"bs-from-something": "(จาก $1)",
 	"bs-parser-error-invalid-namespace": "เนมสเปซไม่ถูกต้อง: $1",
