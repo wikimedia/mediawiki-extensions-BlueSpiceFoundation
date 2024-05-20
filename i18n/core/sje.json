@@ -4,5 +4,8 @@
 			"Olve Utne"
 		]
 	},
-	"bs-userbar_loginswitch_logout": "Luggi ulgus"
+	"bs-userbar_loginswitch_logout": "Luggi ulgus",
+	"bs-userpagesettings-legend": "Adnejhiebadime",
+	"bs-userpreferences-link-text": "Ienap adnejhiebadime",
+	"bs-userpreferences-link-title": "Vuosedä ietj adnejhiebadimijt"
 }
