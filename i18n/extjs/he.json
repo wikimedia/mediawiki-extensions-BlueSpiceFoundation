@@ -56,7 +56,7 @@
 	"bs-extjs-filter-less-than": "קטן מ־",
 	"bs-extjs-filter-bool-yes": "כן",
 	"bs-extjs-filter-bool-no": "לא",
-	"bs-extjs-title-success": "הצלחה",
+	"bs-extjs-title-success": "זה עבד",
 	"bs-extjs-title-warning": "אזהרה",
 	"bs-extjs-categoryboxselect-emptytext": "הוספת קטגוריה",
 	"bs-extjs-categorytree-title": "קטגוריות",
@@ -75,6 +75,8 @@
 	"bs-pagecollection-prefix": "אוסף דפים",
 	"bs-extjs-pageexport-success": "היצוא בוצע בהצלחה",
 	"bs-extjs-pageexport-success-text": "אוסף הדפים יוצא ל{{GRAMMAR:תחילית|$1}}",
+	"bs-extjs-pageexport-required-text": "שם הרשימה לא יכול להיות ריק ויש לבחור לפחות דף אחד",
+	"bs-extjs-export-search-summary-text": "נוצר על־ידי PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "שם הרשימה אינו תקין",
 	"bs-extjs-combo-box-default-placeholder": "הסוג לסינון...",
 	"bs-extjs-tools-trigger-title": "יש ללחוץ כאן כדי לפתוח את תפריט הכלים",
@@ -84,7 +86,5 @@
 	"bs-extjs-flyout-tab-grid-label": "פרטים",
 	"bs-extjs-flyout-tab-grid-title": "החלפה לתצוגה מפורטת",
 	"bs-extjs-flyout-add-title": "יש ללחוץ כאן כדי להוסיף פריט חדש",
-	"bs-extjs-flyout-add-label": "הוספת פריט",
-	"bs-extjs-pageexport-required-text": "שם הרשימה לא יכול להיות ריק ויש לבחור לפחות דף אחד",
-	"bs-extjs-export-search-summary-text": "נוצר על־ידי PageExport"
+	"bs-extjs-flyout-add-label": "הוספת פריט"
 }
