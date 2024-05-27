@@ -109,16 +109,10 @@ class Foundation {
 		$this->services = MediaWikiServices::getInstance();
 		$this->config = $this->services->getConfigFactory()->makeConfig( 'bsg' );
 
-		$this->initializeNotifications();
 		$this->initializeExtensions();
 		$this->overwriteGlobals();
 		$this->initializeRoleSystem();
 		$this->setLessVars();
-	}
-
-	protected function initializeNotifications() {
-		$notifications = $this->services->getService( 'BSNotificationManager' );
-		$notifications->init();
 	}
 
 	protected function initializeExtensions() {

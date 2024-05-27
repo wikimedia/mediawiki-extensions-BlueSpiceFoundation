@@ -85,7 +85,6 @@
 				"export": "bs-setting-path-export"
 			},
 			"RunJobsTriggerHandlerRegistry": {},
-			"NotificationRegistrationFunctions": [],
 			"AlertProviderRegistry": {
 				"bs-readonly-warning": "\\BlueSpice\\AlertProvider\\ReadOnlyWarning::factory",
 				"bs-testsystem-warning": "\\BlueSpice\\AlertProvider\\TestsystemWarning::factory"
