@@ -154,10 +154,14 @@ class RoleManager {
 	 * @return array
 	 */
 	public function getGroupRoles( $group = '' ) {
-		if ( $group && isset( $this->groupRoles[ $group ] ) ) {
+		if ( !$group ) {
+			return $this->groupRoles;
+		}
+		if ( isset( $this->groupRoles[ $group ] ) ) {
 			return [ $group => $this->groupRoles[ $group ] ];
 		}
-		return $this->groupRoles;
+
+		return [];
 	}
 
 	/**
