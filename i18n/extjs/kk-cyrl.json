@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Arystanbek",
-			"Габдулгани НИШ ХБН"
+			"Габдулгани НИШ ХБН",
+			"Casserium"
 		]
 	},
 	"bs-extjs-yes": "Иә",
-	"bs-extjs-delete": "алыстату",
+	"bs-extjs-delete": "Жою",
 	"bs-extjs-hint": "тұспал",
 	"bs-extjs-confirm": "құптау",
 	"bs-extjs-loading": "Күте тұр...",
