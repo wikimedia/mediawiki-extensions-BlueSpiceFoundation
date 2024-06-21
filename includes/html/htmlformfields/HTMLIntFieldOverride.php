@@ -4,9 +4,21 @@ use OOUI\NumberInputWidget;
 
 class HTMLIntFieldOverride extends HTMLIntField {
 	/**
+	 * Gets the non namespaced class name
+	 *
+	 * @since 1.36
+	 *
+	 * @return string
+	 */
+	protected function getClassName() {
+		return "HTMLIntField";
+	}
+
+	/**
 	 *
 	 * @param int $value
 	 * @param array $alldata
+	 *
 	 * @return bool
 	 */
 	public function validate( $value, $alldata ) {
@@ -28,32 +40,72 @@ class HTMLIntFieldOverride extends HTMLIntField {
 	}
 
 	/**
+	 * Override from OOUI\Widget\HTMLTextField
 	 *
 	 * @param int $value
+	 *
 	 * @return NumberInputWidget
 	 */
 	public function getInputOOUI( $value ) {
-		$attr = [
-			'value' => $value
+		if ( !$this->isPersistent() ) {
+			$value = '';
+		}
+
+		$attribs = $this->getTooltipAndAccessKeyOOUI();
+
+		if ( $this->mClass !== '' ) {
+			$attribs['classes'] = [ $this->mClass ];
+		}
+		if ( $this->mPlaceholder !== '' ) {
+			$attribs['placeholder'] = $this->mPlaceholder;
+		}
+
+		# @todo Enforce pattern, step, required, readonly on the server side as
+		# well
+		$allowedParams = [
+			'type',
+			'min',
+			'max',
+			'step',
+			'title',
+			'maxlength',
+			'tabindex',
+			'disabled',
+			'required',
+			'autofocus',
+			'readonly',
+			'autocomplete',
+			// Only used in OOUI mode:
+			'autosize',
+			'flags',
+			'indicator',
 		];
-		if ( isset( $this->mParams['id'] ) ) {
-			$attr['id'] = $this->mParams['id'];
+
+		/**
+		 * ERM36985
+		 *
+		 * Alter parent method by adding pageStep and showButtons to allowedParams
+		 */
+		$allowedParams[] = 'pageStep';
+		$allowedParams[] = 'showButtons';
+
+		$attribs += OOUI\Element::configFromHtmlAttributes(
+			$this->getAttributes( $allowedParams )
+		);
+
+		$type = $this->getType( $attribs );
+		if ( isset( $attribs['step'] ) && $attribs['step'] === 'any' ) {
+			$attribs['step'] = null;
 		}
-		if ( isset( $this->mParams['min'] ) ) {
-			$attr['min'] = $this->mParams['min'];
-		}
-		if ( isset( $this->mParams['max'] ) ) {
-			$attr['max'] = $this->mParams['max'];
-		}
-		if ( isset( $this->mParams['step'] ) ) {
-			$attr['step'] = $this->mParams['step'];
-		}
-		if ( isset( $this->mParams['pageStep'] ) ) {
-			$attr['pageStep'] = $this->mParams['pageStep'];
-		}
-		if ( isset( $this->mParams['showButtons'] ) ) {
-			$attr['showButtons'] = $this->mParams['showButtons'];
-		}
-		return new NumberInputWidget( $attr );
+
+		return $this->getInputWidget(
+			[
+				'id' => $this->mID,
+				'name' => $this->mName,
+				'value' => $value,
+				'type' => $type,
+				'dir' => $this->mDir,
+			] + $attribs
+		);
 	}
 }
