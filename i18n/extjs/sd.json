@@ -5,6 +5,7 @@
 			"Tweety"
 		]
 	},
+	"bs-extjs-ok": "ٺيڪ",
 	"bs-extjs-cancel": "رد",
 	"bs-extjs-save": "سانڍيو",
 	"bs-extjs-confirm": "پڪ ڪريو",
@@ -15,7 +16,7 @@
 	"bs-extjs-label-page": "صفحو",
 	"bs-extjs-allns": "سڀ",
 	"bs-extjs-filters": "ڇاڻيون",
+	"bs-extjs-categorytree-title": "زمرا",
 	"bs-extjs-pageexport-list-format-plain-label": "سادو متن",
-	"bs-extjs-tools-trigger-text": "اوزارَ",
-	"bs-extjs-ok": "ٺيڪ"
+	"bs-extjs-tools-trigger-text": "اوزارَ"
 }
