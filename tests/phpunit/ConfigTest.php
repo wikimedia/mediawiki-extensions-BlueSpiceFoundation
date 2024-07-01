@@ -22,7 +22,7 @@ class ConfigTest extends \MediaWikiIntegrationTestCase {
 
 	public function addDBData() {
 		parent::addDBData();
-		$this->getDb()->insert( 'bs_settings3', [
+		$this->db->insert( 'bs_settings3', [
 			's_name' => 'UnitTestSetting',
 			// JSON formatted
 			's_value' => '"9"'
