@@ -635,19 +635,6 @@
 		"PermissionConfig": {
 			"value": []
 		},
-		"BlueSpiceExtInfo": {
-			"value": {
-				"name": "BlueSpice",
-				"version": "4.5.0-alpha",
-				"status": "stable",
-				"package": "BlueSpice Free",
-				"url": "https://bluespice.com",
-				"desc": "Makes MediaWiki enterprise ready.",
-				"author": [
-					"[https://www.hallowelt.com Hallo Welt! GmbH]"
-				]
-			}
-		},
 		"DefaultUserImage": {
 			"value": "resources/bluespice/images/bs-user-default-image.png",
 			"path": true
