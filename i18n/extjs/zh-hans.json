@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Great Brightstar",
+			"Huajing",
 			"Kuailong",
 			"LittlePaw365",
 			"Liuxinyu970226",
@@ -23,11 +24,11 @@
 	"bs-extjs-remove": "移除",
 	"bs-extjs-edit": "编辑",
 	"bs-extjs-copy": "复制",
-	"bs-extjs-hint": "暗示",
+	"bs-extjs-hint": "提示",
 	"bs-extjs-error": "错误",
 	"bs-extjs-confirm": "确认",
 	"bs-extjs-loading": "加载中...",
-	"bs-extjs-pageSize": "页均编辑",
+	"bs-extjs-pageSize": "每页显示条目数量",
 	"bs-extjs-actions-column-header": "操作",
 	"bs-extjs-warning": "警告",
 	"bs-extjs-saving": "正在保存...",
