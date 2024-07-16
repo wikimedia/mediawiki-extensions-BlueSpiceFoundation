@@ -571,6 +571,11 @@
 		},
 		"bs-ue-module-pdf-integration": {
 				"class": "\\BlueSpice\\HookHandler\\PDFExportHandler"
+		},
+		"common-user-interface": {
+			"class": "\\BlueSpice\\HookHandler\\CommonUserInterface",
+			"@note": "For some reason this service is not available at time of initalization",
+			"@services": [ "ConfigFactory " ]
 		}
 	},
 	"Hooks": {
@@ -629,7 +634,8 @@
 		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
 		"MediaWikiServices": "mediawikiservices",
-		"BSUEModulePDFBeforeAddingContent": "bs-ue-module-pdf-integration"
+		"BSUEModulePDFBeforeAddingContent": "bs-ue-module-pdf-integration",
+		"MWStakeCommonUILessVarsInit": "common-user-interface"
 	},
 	"config_prefix": "bsg",
 	"config": {
