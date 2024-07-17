@@ -3,6 +3,7 @@
 		"authors": [
 			"AYZ04",
 			"Lakejason0",
+			"LittlePaw365",
 			"Liuxinyu970226",
 			"Shizhao",
 			"Xiplus",
@@ -25,7 +26,7 @@
 	"apihelp-bs-interwiki-store-description": "列举所有跨wiki链接。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-interwiki-store-summary": "列举所有跨wiki链接。允许排序、过滤和分页。执行ExtJS存储的参数。",
 	"apihelp-bs-titlequery-store-description": "基于查询关键字列举页面标题和（可选）命名空间前缀。执行ExtJS存储的参数。",
-	"apihelp-bs-titlequery-store-summary": "基于查询关键字列举页面标题和（可选）命名空间前缀。执行ExtJS存储的参数。",
+	"apihelp-bs-titlequery-store-summary": "根据查询词列出页面标题和命名空间前缀（可选）。执行ExtJS Store参数。",
 	"apihelp-bs-wikipage-tasks-description": "为WikiPages提供常用操作",
 	"apihelp-bs-wikipage-tasks-summary": "为WikiPages提供常用操作",
 	"apihelp-bs-store-param-sort": "带排序信息的JSON字符串；反序列化至<code>array of objects</code>，其为每个排序选项保留字段名称和方向",
