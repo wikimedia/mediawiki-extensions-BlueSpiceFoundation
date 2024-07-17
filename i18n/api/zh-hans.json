@@ -3,14 +3,14 @@
 		"authors": [
 			"AYZ04",
 			"Lakejason0",
+			"LittlePaw365",
 			"Liuxinyu970226",
 			"Shizhao",
 			"Xiplus",
 			"Yining Chen",
 			"ZhuofanWu",
 			"佛壁灯",
-			"沈澄心",
-			"LittlePaw365"
+			"沈澄心"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "列举来自文件后端的所有文件。允许排序、过滤和分页。执行ExtJS存储的参数。",
