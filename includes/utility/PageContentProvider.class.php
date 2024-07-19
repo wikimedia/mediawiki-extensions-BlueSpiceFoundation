@@ -574,7 +574,8 @@ class BsPageContentProvider {
 		$aMatches = array();
 		// TODO RBV (19.07.12 09:29): Use DOM!
 		// Finds all TOC links
-		$tocStatus = preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber">)|si', $sHTML, $aMatches );
+		$tocStatus = preg_match_all( '|(<li class="toclevel-\d+.*?"><a href="#)(.*?)("><span class="tocnumber\s.*?">)|si', $sHTML, $aMatches );
+
 
 		$aPatterns     = array();
 		$aReplacements = array();
@@ -585,6 +586,8 @@ class BsPageContentProvider {
 			//toc is available in $sHtml
 			foreach ( $aMatches[2] as $sAnchorName ) {
 				$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
+
+				$this->anchorIdMap[$sAnchorName] = $sUniqueAnchorName;
 
 				$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
 				// In TOC
