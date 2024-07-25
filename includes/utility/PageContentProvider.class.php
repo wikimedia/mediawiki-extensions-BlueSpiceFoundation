@@ -39,6 +39,11 @@ class BsPageContentProvider {
 	 */
 	private $services = null;
 
+	/**
+	 * @var array
+	 */
+	private static $contents = [];
+
 	protected function getTemplate() {
 		if( $this->sTemplate !== false ) {
 			return $this->sTemplate;
@@ -110,15 +115,24 @@ class BsPageContentProvider {
 	 * @return String Content
 	 */
 	public function getContentFromTitle( Title $oTitle, $iAudience = RevisionRecord::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
+		$cacheKey = md5( $oTitle->getPrefixedDBkey() . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
+		if ( isset( static::$contents[$cacheKey] ) ) {
+			return static::$contents[$cacheKey];
+		}
 		if ( !$oTitle->exists() ) {
+			static::$contents[$cacheKey] = '';
 			return '';
 		}
 		$oRevision = $this->revisionLookup->getRevisionByTitle( $oTitle );
 		if ( is_null( $oRevision ) ) {
+			static::$contents[$cacheKey] = '';
 			return '';
 		}
 
-		return $this->getContentFromRevision( $oRevision, $iAudience, $oUser, $bHTML );
+		$content = $this->getContentFromRevision( $oRevision, $iAudience, $oUser, $bHTML );
+		static::$contents[$cacheKey] = $content;
+
+		return $content;
 	}
 
 	/**
@@ -130,12 +144,19 @@ class BsPageContentProvider {
 	 * @return String Content
 	 */
 	public function getContentFromID( $iRevId, $iAudience = RevisionRecord::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
+		$cacheKey = md5( $iRevId . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
+		if ( isset( static::$contents[$cacheKey] ) ) {
+			return static::$contents[$cacheKey];
+		}
 		if ( !is_int( $iRevId ) ) {
+			static::$contents[$cacheKey] = '';
 			return '';
 		}
 		$oRevision = $this->revisionLookup->getRevisionById( $iRevId );
 
-		return $this->getContentFromRevision( $oRevision, $iAudience, $oUser, $bHTML );
+		$content = $this->getContentFromRevision( $oRevision, $iAudience, $oUser, $bHTML );
+		static::$contents[$cacheKey] = $content;
+		return $content;
 	}
 
 	/**
@@ -148,9 +169,15 @@ class BsPageContentProvider {
 	 */
 	public function getContentFromRevision( $oRevision, $iAudience = RevisionRecord::FOR_PUBLIC,
 			User $oUser = null, $bHTML = false ) {
+		$cacheKey = md5( $oTitle->getPrefixedText() . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
+		if ( isset( self::$contents[$cacheKey] ) ) {
+			return self::$contents[$cacheKey];
+		}
+
 		$title = Title::newFromLinkTarget( $oRevision->getPageAsLinkTarget() );
 		$contentObj = $oRevision->getContent( 'main', $iAudience, $oUser );
 		if ( !( $contentObj instanceof TextContent ) ) {
+			self::$contents[$cacheKey] = '';
 			return '';
 		}
 		if ( $bHTML ) {
@@ -173,10 +200,11 @@ class BsPageContentProvider {
 				);
 			} catch ( Error $ex ) {
 				$this->restoreGlobals();
-				return $contentObj->getText();
+				$content = $contentObj->getText();
 			}
 			$this->restoreGlobals();
 		}
+		static::$contents[$cacheKey] = $content;
 		return $content;
 	}
 
@@ -254,6 +282,10 @@ class BsPageContentProvider {
 			),
 			$aParams
 		);
+		$cacheKey = md5( $oTitle->getPrefixedDBkey() . FormatJson::encode( $aParams ) );
+		if ( isset( self::$contents[$cacheKey] ) ) {
+			return self::$contents[$cacheKey];
+		}
 
 		$oRedirectTarget = null;
 		if( $oTitle->isRedirect() && $aParams['follow-redirects'] === true ){
@@ -390,7 +422,9 @@ class BsPageContentProvider {
 			);
 		}
 
-		return $this->services->getTidy()->tidy( $sHTML );
+		$content = $this->services->getTidy()->tidy( $sHTML );
+		static::$contents[$cacheKey] = $content;
+		return $content;
 	}
 
 	/**
@@ -409,8 +443,14 @@ class BsPageContentProvider {
 	 * @return String WikiText of the desired Article
 	 */
 	public function getWikiTextContentFor( Title $oTitle, $aParams = array() ) {
+		$cacheKey = md5( $oTitle->getPrefixedDBkey() . FormatJson::encode( $aParams ) );
+		if ( isset( self::$contents[$cacheKey] ) ) {
+			return self::$contents[$cacheKey];
+		}
 		//TODO: Dispatch for different types [SpecialPage?, CategoryPage?, ImagePage? --> What WikiText could be received?]
-		return $this->getWikiTextContentForArticle( $oTitle, $aParams );
+		$content = $this->getWikiTextContentForArticle( $oTitle, $aParams );
+		self::$contents[$cacheKey] = $content;
+		return $content;
 	}
 
 	private function getWikiTextContentForArticle( Title $oTitle, $aParams = array() ) {
