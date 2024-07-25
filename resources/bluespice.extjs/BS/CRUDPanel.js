@@ -53,10 +53,22 @@ Ext.define( 'BS.CRUDPanel', {
 	},
 
 	makeTbar: function () {
-		return new Ext.Toolbar( {
+		var tbar = new Ext.Toolbar( {
 			cls: 'bs-crud-panel-toolbar',
 			items: this.makeTbarItems()
 		} );
+
+		// Make sure that the tabGuard elements are not focusable, WCAG
+		tbar.on('afterrender', function() {
+			if ( tbar.tabGuardBeforeEl ) {
+				tbar.tabGuardBeforeEl.set( { tabIndex: -1 } );
+			}
+
+			if ( tbar.tabGuardAfterEl ) {
+				tbar.tabGuardAfterEl.set( { tabIndex: -1 } );
+			}
+		} );
+		return tbar;
 	},
 
 	makeTbarItems: function () {
