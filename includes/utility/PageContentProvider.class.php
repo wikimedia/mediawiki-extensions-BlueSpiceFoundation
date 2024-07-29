@@ -169,7 +169,7 @@ class BsPageContentProvider {
 	 */
 	public function getContentFromRevision( $oRevision, $iAudience = RevisionRecord::FOR_PUBLIC,
 			User $oUser = null, $bHTML = false ) {
-		$cacheKey = md5( $oTitle->getPrefixedText() . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
+		$cacheKey = md5( $oRevision->getId() . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
 		if ( isset( self::$contents[$cacheKey] ) ) {
 			return self::$contents[$cacheKey];
 		}
