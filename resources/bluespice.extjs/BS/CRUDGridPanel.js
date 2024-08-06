@@ -256,5 +256,22 @@ Ext.define( 'BS.CRUDGridPanel', {
 
 	onBtnRemoveClick: function ( oButton, oEvent ) {
 		this.callParent( arguments );
+	},
+
+	afterInitComponent: function() {
+		// Make sure that the tabGuard elements are not focusable, WCAG
+		this.grdMain.on( 'afterrender', function() {
+			if ( this.grdMain.headerCt.tabGuardBeforeEl ) {
+				this.grdMain.headerCt.tabGuardBeforeEl.set( { tabIndex: -1 } );
+			}
+
+			if ( this.grdMain.headerCt.tabGuardAfterEl ) {
+				this.grdMain.headerCt.tabGuardAfterEl.set( { tabIndex: -1 } );
+			}
+
+			if ( this.grdMain.el ) {
+				this.grdMain.el.set( { tabIndex: -1 } );
+			}
+		}.bind( this ) );
 	}
 } );
