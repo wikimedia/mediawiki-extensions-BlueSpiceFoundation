@@ -9,7 +9,6 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
-use MediaWiki\Deferred\MWCallableUpdate;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -47,14 +46,10 @@ abstract class WikiPage extends Task {
 			$cookieName = EditPage::POST_EDIT_COOKIE_KEY_PREFIX . $revision->getId();
 			// Must use main, since $this->getContext() returns different context
 			$response = RequestContext::getMain()->getRequest()->response();
-			DeferredUpdates::addUpdate(
-				new MWCallableUpdate(
-					static function () use (
-						$cookieName, $response
-					) {
-						$response->clearCookie( $cookieName );
-					}
-				)
+			DeferredUpdates::addCallableUpdate(
+				static function () use ( $cookieName, $response ) {
+					$response->clearCookie( $cookieName );
+				}
 			);
 		}
 		return $status;
