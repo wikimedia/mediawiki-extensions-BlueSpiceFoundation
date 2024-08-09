@@ -9,6 +9,10 @@
 ul.x-menu-list {
 	margin: 0;
 }
+
+.bs-extjs-btn:focus .x-btn-button {
+	outline: 2px solid !important;
+}
 #content ol {
 	list-style: decimal !important;
 }
