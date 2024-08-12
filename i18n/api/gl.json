@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
@@ -36,7 +37,7 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoría non valida|Categorías non válidas}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Establecéronse as categorías con éxito.",
 	"apihelp-bs-wikipage-store-summary": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS.",
-	"apihelp-bs-ping-tasks-summary": "Tarefa de <i>ping</i> que proporciona un intercambio contínuo de datos",
+	"apihelp-bs-ping-tasks-summary": "Tarefa de <i>ping</i> que proporciona un intercambio continuo de datos",
 	"apihelp-bs-wikisubpage-treestore-summary": "Lista as subpáxinas dunha wikipáxina específica",
 	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lista de opcións",
