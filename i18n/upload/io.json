@@ -4,10 +4,11 @@
 			"Joao Xavier"
 		]
 	},
+	"bs-upload-uploadfilefieldlabel": "Arkivo-nomo",
 	"bs-upload-uploadfileemptytext": "Inkluzar nova arkivo...",
+	"bs-upload-license": "Licenco",
 	"bs-upload-categories": "Kategorii",
 	"bs-upload-error": "Eroro",
 	"bs-upload-descfilelabel": "Deskripto",
-	"bs-upload-uploadwarningdialog-intro": "La sequanta mesaji aparis kande vu probis sendar l'arkivo",
-	"bs-upload-license": "Licenco"
+	"bs-upload-uploadwarningdialog-intro": "La sequanta mesaji aparis kande vu probis sendar l'arkivo"
 }

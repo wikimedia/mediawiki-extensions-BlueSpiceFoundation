@@ -6,15 +6,16 @@
 		]
 	},
 	"bs-filerepo-labelupload": "Kargar",
+	"bs-filerepo-headerfilename": "Arkivo-nomo",
 	"bs-filerepo-headerfilesize": "Grandeso",
 	"bs-filerepo-headerpagecategories": "Kategorii",
+	"bs-filerepo-headerfilewidth": "Larjeso",
+	"bs-filerepo-headerfileheight": "Altajo",
 	"bs-filerepo-headerfileusertext": "Uzero",
 	"bs-filerepo-headerfileextension": "Formato di arkivo",
 	"bs-filerepo-headerfiletimestamp": "Sendita",
 	"bs-filerepo-headerfiledescription": "Deskripto",
 	"bs-filerepo-headerfilethumbnail": "Miniaturo",
 	"bs-filerepo-yes": "Yes",
-	"bs-filerepo-no": "No",
-	"bs-filerepo-headerfilewidth": "Larjeso",
-	"bs-filerepo-headerfileheight": "Altajo"
+	"bs-filerepo-no": "No"
 }
