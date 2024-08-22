@@ -31,6 +31,8 @@
  * @filesource
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * DEPRECATED
  * The BsCore
@@ -166,9 +168,10 @@ class BsCore {
 		}
 		if ( $options & BsPARAMTYPE::SQL_STRING ) {
 			if ( is_string( $handover ) ) {
-				$oDb = wfGetDB( DB_REPLICA );
+				$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()
+					->getConnection( DB_REPLICA );
 				// Use database specific escape methods
-				$handover = $oDb->strencode( $handover );
+				$handover = $dbr->strencode( $handover );
 
 				return $handover;
 			}

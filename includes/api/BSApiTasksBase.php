@@ -632,7 +632,8 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 */
 	protected function getDB() {
 		if ( !isset( $this->mPrimaryDB ) ) {
-			$this->mPrimaryDB = wfGetDB( DB_PRIMARY, 'api' );
+			$this->mPrimaryDB = $this->services->getDBLoadBalancer()
+				->getConnection( DB_PRIMARY, 'api' );
 		}
 
 		return $this->mPrimaryDB;

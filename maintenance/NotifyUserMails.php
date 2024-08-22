@@ -8,6 +8,8 @@
  * @license GPL-3.0-only
  */
 
+use MediaWiki\MediaWikiServices;
+
 // PW:
 // TODO: use serialize
 // TODO: support MW < 1.17.0
@@ -68,8 +70,9 @@ function getUser( $sGivenUser ) {
 		}
 	}
 
-	$oDbr = wfGetDB( DB_REPLICA );
-	$rRes = $oDbr->select(
+	$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()
+		->getConnection( DB_REPLICA );
+	$rRes = $dbr->select(
 		'user',
 		[ 'user_id','user_name' ],
 		$condition
@@ -94,18 +97,19 @@ function getUser( $sGivenUser ) {
  * @param bool $bDry
  */
 function NotifyUser( $aUserStore, $options, $bDry ) {
-	$oDbw = wfGetDB( DB_PRIMARY );
+	$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()
+		->getConnection( DB_PRIMARY );
 
 	$iCounter = count( $aUserStore );
 	for ( $i = 0; $i < $iCounter; $i++ ) {
 		if ( !$bDry ) {
 
-			$oDbw->update( [ 'user' ],
+			$dbw->update( [ 'user' ],
 						[ 'user_email_authenticated' => wfTimestamp() ],
 						[ 'user_id' => $aUserStore['id'] ]
 					);
 			/*
-			$oDbw->replace(
+			$dbw->replace(
 					'user',
 					array( 'up_user' , 'up_property' ),
 					array(

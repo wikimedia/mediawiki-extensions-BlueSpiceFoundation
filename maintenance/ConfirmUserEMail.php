@@ -50,8 +50,8 @@ class ConfirmUserEMail extends Maintenance {
 			}
 		}
 
-		$oDbr = wfGetDB( DB_REPLICA );
-		$rRes = $oDbr->select(
+		$dbr = $this->getDB( DB_REPLICA );
+		$rRes = $dbr->select(
 			'user',
 			[ 'user_id','user_name','user_email','user_email_authenticated' ],
 			$condition
@@ -76,7 +76,7 @@ class ConfirmUserEMail extends Maintenance {
 	}
 
 	private function confirmUser( $aUserStore, $bExecute = false, $bForce = false ) {
-		$oDbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->getDB( DB_PRIMARY );
 
 		$iCounter = count( $aUserStore );
 		for ( $i = 0; $i < $iCounter; $i++ ) {
@@ -88,7 +88,7 @@ class ConfirmUserEMail extends Maintenance {
 			}
 			if ( empty( $aUserStore[$i]['setvalue'] ) ) {
 				if ( $bExecute ) {
-					$oDbw->update( 'user',
+					$dbw->update( 'user',
 						[ 'user_email_authenticated' => date( 'YmdHis' ) ],
 						[ 'user_id' => $aUserStore[$i]['id'] ]
 					);
