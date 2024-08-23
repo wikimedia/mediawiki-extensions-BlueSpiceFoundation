@@ -135,17 +135,6 @@ class ExtensionRegistry {
 			$definition['package'] = "default";
 		}
 
-		$extInfo = $this->config->get( 'BlueSpiceExtInfo' );
-		$definition['status'] = str_replace(
-			'default',
-			$extInfo['status'],
-			$definition['status']
-		);
-		$definition['package'] = str_replace(
-			'default',
-			$extInfo['package'],
-			$definition['package']
-		);
 		return $definition;
 	}
 

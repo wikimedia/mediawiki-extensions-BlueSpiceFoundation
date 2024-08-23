@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 use BlueSpice\Hook\ResourceLoaderGetConfigVars;
+use Sanitizer;
 
 class AddVersion extends ResourceLoaderGetConfigVars {
 
@@ -23,7 +24,12 @@ class AddVersion extends ResourceLoaderGetConfigVars {
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {
-		$extInfo = $this->getConfig()->get( 'BlueSpiceExtInfo' );
-		return [ 'bsgVersion' => $extInfo["version"] ];
+		$version = '';
+		$versionFile = $GLOBALS['IP'] . '/BLUESPICE-VERSION';
+		if ( file_exists( $versionFile ) ) {
+			$versionFileContent = file_get_contents( $versionFile );
+			$version = ' ' . Sanitizer::stripAllTags( $versionFileContent );
+		}
+		return [ 'bsgVersion' => $version ];
 	}
 }
