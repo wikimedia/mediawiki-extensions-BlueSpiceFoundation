@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ezagren"
+		]
+	},
+	"bs-years-duration": "{{PLURAL:$1|satahun|$1 tahun}}",
+	"bs-months-duration": "{{PLURAL:$1|sabulan|$1 bulan}}",
+	"bs-weeks-duration": "{{PLURAL:$1|saminggu|$1 minggu}}",
+	"bs-days-duration": "{{PLURAL:$1|sahari|$1 hari}}",
+	"bs-hours-duration": "{{PLURAL:$1|sajam|$1 jam}}",
+	"bs-mins-duration": "{{PLURAL:$1|samanit|$1 manit}}",
+	"bs-secs-duration": "{{PLURAL:$1|sadatik|$1 datik}}",
+	"bs-one-unit-ago": "$1 nang halam"
+}
