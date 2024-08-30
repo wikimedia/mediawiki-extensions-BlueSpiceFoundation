@@ -410,6 +410,7 @@ class BsPageContentProvider {
 		}
 
 		$this->makeInternalAnchorNamesUnique( $sHTML, $oTitle, $aParams );
+		$this->convertSelfReferencingLinks( $sHTML, $oTitle );
 
 		if( $this->bEncapsulateContent ) {
 			$sHTML = sprintf(
@@ -660,4 +661,48 @@ class BsPageContentProvider {
 		}
 	}
 	//</editor-fold>
+
+	/**
+	 * @param string $sHTML
+	 * @param Title $oTitle
+	 * @return void
+	 */
+	private function convertSelfReferencingLinks( string &$sHTML, Title $oTitle ) {
+		// This method converts section links referencing to the page we are exporting
+		// eg. Assuming $oTitle->getPrefixedText() = 'MyPage', match link [[MyPage#SomeSection|...]]
+
+		$prefixed = $oTitle->getPrefixedDBkey();
+		// Find all links that have `data-bs-title` = $prefixed
+		// and get their hrefs
+		$matches = [];
+		preg_match_all(
+			'/<a[^>]+data-bs-title="' . preg_quote( $prefixed ) . '[^>]*>/',
+			$sHTML,
+			$matches
+		);
+
+		foreach ( $matches[0] as $match ) {
+			// Get the href attribute
+			$hrefs = [];
+			preg_match_all(
+				'/href="([^"]+)"/',
+				$match,
+				$hrefs
+			);
+
+			foreach ( $hrefs[1] as $href ) {
+				// If $href has a hash, replace whole anchor with <a href="#hash">
+				$hash = strpos( $href, '#' );
+				if ( $hash !== false ) {
+					$hash = substr( $href, $hash );
+					$sHTML = str_replace(
+						$match,
+						'<a href="' . $hash . '">',
+						$sHTML
+					);
+				}
+			}
+		}
+	}
+
 }
