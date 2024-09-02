@@ -599,8 +599,7 @@
 		],
 		"LoadExtensionSchemaUpdates": [
 			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpice3SettingsAndMigrationMaintenanceScript::callback",
-			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback",
-			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceCleanUpDeletedUsersBlocksMaintenanceScript::callback"
+			"BlueSpice\\Hook\\LoadExtensionSchemaUpdates\\AddBlueSpiceUserPropertiesMigrationMaintenanceScript::callback"
 		],
 		"ParserFirstCallInit": [
 			"BlueSpice\\Hook\\ParserFirstCallInit\\AddTags::callback"
@@ -939,8 +938,7 @@
 		"BSTemplateHelper": "includes/TemplateHelper.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
-		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php",
-		"BSCleanUpDeletedUsersBlocks": "maintenance/BSCleanUpDeletedUsersBlocks.php"
+		"BSMigrateUserProperties": "maintenance/BSMigrateUserProperties.php"
 	},
 	"manifest_version": 2,
 	"load_composer_autoloader": true,

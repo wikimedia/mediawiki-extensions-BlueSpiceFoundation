@@ -90,6 +90,8 @@ class FixActorMigration extends Maintenance {
 
 	private $tablesToFix = [
 		'archive' => 'ar_actor',
+		// This script is meant for use in legacy version 1.35 only,
+		// therefore the reference to the `ipblocks` table can remain
 		'ipblocks' => 'ipb_by_actor',
 		'image' => 'img_actor',
 		'oldimage' => 'oi_actor',

@@ -10,6 +10,8 @@ class PrepareActorMigration2 extends Maintenance {
 	private $tablesToFix = [
 		'revision' => [ 'rev_user', 'rev_user_text' ],
 		'archive' => [ 'ar_user', 'ar_user_text' ],
+		// This script is meant for use in legacy version 1.35 only,
+		// therefore the reference to the `ipblocks` table can remain
 		'ipblocks' => [ 'ipb_by', 'ipb_by_text' ],
 		'image' => [ 'img_user', 'img_user_text' ],
 		'oldimage' => [ 'oi_user', 'oi_user_text' ],
