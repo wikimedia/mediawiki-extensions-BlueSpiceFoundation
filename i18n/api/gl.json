@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paxinar. Proporciona os parámetros ExtJS Store.",
@@ -46,7 +47,7 @@
 	"apihelp-bs-wikipage-store-description": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS.",
 	"apihelp-bs-wikipage-store-summary": "Lista todas as páxinas da wiki. Permite ordenar, filtrar e paxinar. Proporciona parámetros de almacenamento ExtJS.",
 	"apihelp-bs-ping-tasks-description": "Tarefa de <i>ping</i> que proporciona un intercambio contínuo de datos",
-	"apihelp-bs-ping-tasks-summary": "Tarefa de <i>ping</i> que proporciona un intercambio contínuo de datos",
+	"apihelp-bs-ping-tasks-summary": "Tarefa de <i>ping</i> que proporciona un intercambio continuo de datos",
 	"apihelp-bs-wikisubpage-treestore-description": "Lista as subpáxinas dunha wikipáxina específica",
 	"apihelp-bs-wikisubpage-treestore-summary": "Lista as subpáxinas dunha wikipáxina específica",
 	"apihelp-bs-wikisubpage-treestore-param-node": "O título prefixado da páxina wiki",

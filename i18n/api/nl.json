@@ -4,7 +4,8 @@
 			"HanV",
 			"Mainframe98",
 			"McDutchie",
-			"Romaine"
+			"Romaine",
+			"Siebrand"
 		]
 	},
 	"apihelp-bs-filebackend-store-description": "Geeft een overzicht van alle bestanden uit de backend. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
@@ -27,7 +28,7 @@
 	"apihelp-bs-store-param-group": "JSON-string met groepeerinformatie; deserialiseert zich in een <code>array of objects</code> die veldnaam en richting bevatten voor elke groepeeroptie",
 	"apihelp-bs-store-param-filter": "JSON-string met filterinformatie; deserialiseert zich in een <code>array of objects</code> die veldnaam, filtertype en filterwaarde bevatten voor elke filteroptie",
 	"apihelp-bs-store-param-page": "Maakt op de server de berekening van start/limiet mogelijk",
-	"apihelp-bs-store-param-limit": "Aantal resultaten om te tonen",
+	"apihelp-bs-store-param-limit": "Aantal resultaten om weer te geven",
 	"apihelp-bs-store-param-start": "De positie waarop de resultatenlijst moet beginnen",
 	"apihelp-bs-store-param-callback": "De naam van een methode in de cliëntcode die in het antwoord (JSONP) moet worden aangeroepen",
 	"apihelp-bs-store-param-query": "Vergelijkbaar met <var>filter</var>, maar de opgegeven waarde dient alleen als filter voor het veld <var>value</var> van een ExtJS-component",
@@ -62,8 +63,8 @@
 	"apihelp-bs-category-treestore-summary": "Geeft de subcategorieën van een specifieke categorie weer",
 	"apihelp-bs-category-treestore-param-node": "Een pad met categorieën gescheiden door een schuine streep",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parametervoorbeelden]",
-	"apihelp-bs-task-param-schema": "Het JSON-schema voor de taakparameters tonen",
-	"apihelp-bs-task-param-examples": "Voorbeelden van taakparameters tonen",
+	"apihelp-bs-task-param-schema": "Het JSON-schema voor de taakparameters weergeven",
+	"apihelp-bs-task-param-examples": "Voorbeelden van taakparameters weergeven",
 	"bs-api-task-taskData-page-id": "De ID van een bestaande wikipagina",
 	"bs-api-task-taskData-page-title": "Een geldige titel van een wikipagina",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array van tekenreeksen. Waarden moeten geldige categorienamen zijn.",
