@@ -410,7 +410,6 @@ class BsPageContentProvider {
 		}
 
 		$this->makeInternalAnchorNamesUnique( $sHTML, $oTitle, $aParams );
-		$this->convertSelfReferencingLinks( $sHTML, $oTitle );
 
 		if( $this->bEncapsulateContent ) {
 			$sHTML = sprintf(
@@ -603,7 +602,13 @@ class BsPageContentProvider {
 		$this->oOriginalGlobalTitle= null;
 	}
 
-	private function makeInternalAnchorNamesUnique( &$sHTML, $oTitle, $aParams ) {
+	/**
+	 * @param string &$sHTML
+	 * @param Title $oTitle
+	 * @param array $aParams
+	 * @return void
+	 */
+	private function makeInternalAnchorNamesUnique( string &$sHTML, Title $oTitle, array $aParams ) {
 		$aMatches = array();
 		// TODO RBV (19.07.12 09:29): Use DOM!
 		// Finds all TOC links
@@ -614,95 +619,66 @@ class BsPageContentProvider {
 		$aReplacements = array();
 
 		$sPatternQuotedArticleTitle = preg_quote(str_replace(' ', '_', $oTitle->getPrefixedText()));
+		$sPatternQuotedArticleTitleLocalURL = preg_quote( $oTitle->getLocalURL() );
+		// For some reason the / in the subpage name has to be escaped
+		$sPatternQuotedArticleTitleLocalURL = str_replace(
+			str_replace( ' ', '_', $oTitle->getPrefixedText() ),
+			str_replace( '/', '\/', $sPatternQuotedArticleTitle ),
+			$sPatternQuotedArticleTitleLocalURL
+		);
 
 		if ( $tocStatus > 0 ) {
 			//toc is available in $sHtml
 			foreach ( $aMatches[2] as $sAnchorName ) {
 				$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
+				$sPatternQuotedAnchorName = preg_quote( $sAnchorName );
 
-				$this->anchorIdMap[$sAnchorName] = $sUniqueAnchorName;
-
-				$sPatternQuotedAnchorName = preg_quote( $sAnchorName, '|' );
 				// In TOC
 				$aPatterns[]     = '|<a href="#' . $sPatternQuotedAnchorName . '"><span class="tocnumber">|si';
 				$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"><span class="tocnumber">';
 
-				// Every single headline
-				$aPatterns[]     = '|<a name="' . $sPatternQuotedAnchorName . '" id="' . $sPatternQuotedAnchorName . '"></a>|si';
-				$aReplacements[] = '<a name="' . $sUniqueAnchorName . '" id="' . $sUniqueAnchorName . '"></a>';
-
-				// In text
-				// TODO: What about index.php?title=abc links?
-				$aPatterns[]     = '|<a href="(/index\.php/' . $sPatternQuotedArticleTitle . ')?#' . $sPatternQuotedAnchorName . '"|si';
-				$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"';
-
-				// Every single headline new
-				$aPatterns[]     = '|<span class="mw-headline" id="' . $sPatternQuotedAnchorName . '"|si';
-				$aReplacements[] = '<span class="mw-headline" id="' . $sUniqueAnchorName . '"';
+				$this->internalAnchorPatterns( $aPatterns, $aReplacements, $sUniqueAnchorName, $sPatternQuotedAnchorName, $sPatternQuotedArticleTitleLocalURL );
 			}
 
 			$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
 		}
 		else {
 			//toc is not available in $sHtml
-			$headlineStatus = preg_match_all('|(<span class="mw-headline")(.*?>)(.*?)</span>|si', $sHTML, $aMatches );
+			$headlineStatus = preg_match_all('|(<span class="mw-headline".*?id="(.*?)".*?>)|si', $sHTML, $aMatches );
 
 			if ( $headlineStatus > 0 ) {
-				foreach ( $aMatches[3] as $sAnchorName ) {
-					$sDefaultAnchorName = preg_quote( str_replace( ' ', '_', $sAnchorName ) );
-					$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sDefaultAnchorName );
+				foreach ( $aMatches[2] as $sAnchorName ) {
+					$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
+					$sPatternQuotedAnchorName = preg_quote( $sAnchorName );
 
-					$aPatterns[]     = '|<span class="mw-headline" id="' . $sDefaultAnchorName . '">' . preg_quote( $sAnchorName ) . '</span>|si';
-					$aReplacements[] = '<span class="mw-headline" id="' . $sUniqueAnchorName . '">' . $sAnchorName . '</span>';
+					$this->internalAnchorPatterns( $aPatterns, $aReplacements, $sUniqueAnchorName, $sPatternQuotedAnchorName, $sPatternQuotedArticleTitleLocalURL );
 				}
 
 				$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
 			}
 		}
 	}
-	//</editor-fold>
 
 	/**
-	 * @param string $sHTML
-	 * @param Title $oTitle
+	 * @param array $pattern
+	 * @param array $replacements
+	 * @param string $uniqueAnchorName
+	 * @param string $patternQuotedAnchorName
+	 * @param string $patternQuotedArticleTitleLocalURL
 	 * @return void
 	 */
-	private function convertSelfReferencingLinks( string &$sHTML, Title $oTitle ) {
-		// This method converts section links referencing to the page we are exporting
-		// eg. Assuming $oTitle->getPrefixedText() = 'MyPage', match link [[MyPage#SomeSection|...]]
+	private function internalAnchorPatterns(
+		array &$pattern, array &$replacements, string $uniqueAnchorName, string $patternQuotedAnchorName, string $patternQuotedArticleTitleLocalURL
+	) {
+		// Every single headline
+		$pattern[]     = '|<a name="' . $patternQuotedAnchorName . '" id="' . $patternQuotedAnchorName . '"></a>|si';
+		$replacements[] = '<a name="' . $uniqueAnchorName . '" id="' . $uniqueAnchorName . '"></a>';
+		// Every single headline new
+		$pattern[]     = '|<span class="mw-headline" id="' . $patternQuotedAnchorName . '"|si';
+		$replacements[] = '<span class="mw-headline" id="' . $uniqueAnchorName . '"';
 
-		$prefixed = $oTitle->getPrefixedDBkey();
-		// Find all links that have `data-bs-title` = $prefixed
-		// and get their hrefs
-		$matches = [];
-		preg_match_all(
-			'/<a[^>]+data-bs-title="' . preg_quote( $prefixed ) . '[^>]*>/',
-			$sHTML,
-			$matches
-		);
-
-		foreach ( $matches[0] as $match ) {
-			// Get the href attribute
-			$hrefs = [];
-			preg_match_all(
-				'/href="([^"]+)"/',
-				$match,
-				$hrefs
-			);
-
-			foreach ( $hrefs[1] as $href ) {
-				// If $href has a hash, replace whole anchor with <a href="#hash">
-				$hash = strpos( $href, '#' );
-				if ( $hash !== false ) {
-					$hash = substr( $href, $hash );
-					$sHTML = str_replace(
-						$match,
-						'<a href="' . $hash . '">',
-						$sHTML
-					);
-				}
-			}
-		}
+		// In text
+		$pattern[]     = '|<a href="(' . $patternQuotedArticleTitleLocalURL . ')?#' . $patternQuotedAnchorName . '"|si';
+		$replacements[] = '<a href="#' . $uniqueAnchorName . '"';
 	}
-
 }
