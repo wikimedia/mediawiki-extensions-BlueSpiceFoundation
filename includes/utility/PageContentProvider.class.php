@@ -640,12 +640,18 @@ class BsPageContentProvider {
 			foreach ( $aMatches[2] as $sAnchorName ) {
 				$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
 				$sPatternQuotedAnchorName = preg_quote( $sAnchorName );
+				$sUrlEncodedAnchorName = urlencode( $sAnchorName );
+				$sUrlEncodedAnchorName = str_replace( '%', '.',  $sUrlEncodedAnchorName );
+				$sPatternQuotedUrlAnchorName = preg_quote( $sUrlEncodedAnchorName );
 
 				// In TOC
 				$aPatterns[]     = '|<a href="#' . $sPatternQuotedAnchorName . '"><span class="tocnumber">|si';
 				$aReplacements[] = '<a href="#' . $sUniqueAnchorName . '"><span class="tocnumber">';
 
-				$this->internalAnchorPatterns( $aPatterns, $aReplacements, $sUniqueAnchorName, $sPatternQuotedAnchorName, $sPatternQuotedArticleTitleLocalURL );
+				$this->internalAnchorPatterns(
+					$aPatterns, $aReplacements, $sUniqueAnchorName, $sPatternQuotedAnchorName,
+					$sPatternQuotedUrlAnchorName, $sPatternQuotedArticleTitleLocalURL
+				);
 			}
 
 			$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
@@ -658,8 +664,14 @@ class BsPageContentProvider {
 				foreach ( $aMatches[2] as $sAnchorName ) {
 					$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
 					$sPatternQuotedAnchorName = preg_quote( $sAnchorName );
+					$sUrlEncodedAnchorName = urlencode( $sAnchorName );
+					$sUrlEncodedAnchorName = str_replace( '%', '.',  $sUrlEncodedAnchorName );
+					$sPatternQuotedUrlAnchorName = preg_quote( $sUrlEncodedAnchorName );
 
-					$this->internalAnchorPatterns( $aPatterns, $aReplacements, $sUniqueAnchorName, $sPatternQuotedAnchorName, $sPatternQuotedArticleTitleLocalURL );
+					$this->internalAnchorPatterns(
+						$aPatterns, $aReplacements, $sUniqueAnchorName, $sPatternQuotedAnchorName,
+						$sPatternQuotedUrlAnchorName, $sPatternQuotedArticleTitleLocalURL
+					);
 				}
 
 				$sHTML = preg_replace( $aPatterns, $aReplacements, $sHTML );
@@ -672,11 +684,13 @@ class BsPageContentProvider {
 	 * @param array $replacements
 	 * @param string $uniqueAnchorName
 	 * @param string $patternQuotedAnchorName
+	 * @param string $patternQuotedUrlAnchorName
 	 * @param string $patternQuotedArticleTitleLocalURL
 	 * @return void
 	 */
 	private function internalAnchorPatterns(
-		array &$pattern, array &$replacements, string $uniqueAnchorName, string $patternQuotedAnchorName, string $patternQuotedArticleTitleLocalURL
+		array &$pattern, array &$replacements, string $uniqueAnchorName,
+		string $patternQuotedAnchorName, string $patternQuotedUrlAnchorName, string $patternQuotedArticleTitleLocalURL
 	) {
 		// Every single headline
 		$pattern[]     = '|<a name="' . $patternQuotedAnchorName . '" id="' . $patternQuotedAnchorName . '"></a>|si';
@@ -684,9 +698,14 @@ class BsPageContentProvider {
 		// Every single headline new
 		$pattern[]     = '|<span class="mw-headline" id="' . $patternQuotedAnchorName . '"|si';
 		$replacements[] = '<span class="mw-headline" id="' . $uniqueAnchorName . '"';
+		// Every single jumpmark before headline
+		$pattern[]     = '|<span id="' . $patternQuotedUrlAnchorName . '"|si';
+		$replacements[] = '<span id="' . $uniqueAnchorName . '"';
 
 		// In text
 		$pattern[]     = '|<a href="(' . $patternQuotedArticleTitleLocalURL . ')?#' . $patternQuotedAnchorName . '"|si';
+		$replacements[] = '<a href="#' . $uniqueAnchorName . '"';
+		$pattern[]     = '|<a href="(' . $patternQuotedArticleTitleLocalURL . ')?#' . $patternQuotedUrlAnchorName . '"|si';
 		$replacements[] = '<a href="#' . $uniqueAnchorName . '"';
 	}
 }
