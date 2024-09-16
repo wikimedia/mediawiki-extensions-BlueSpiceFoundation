@@ -633,7 +633,7 @@ class BsPageContentProvider {
 				$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
 				$sPatternQuotedAnchorName = preg_quote( $sAnchorName );
 				$sUrlEncodedAnchorName = urlencode( $sAnchorName );
-				$sUrlEncodedAnchorName = Sanitizer::escapeIdForAttribute( $sUrlEncodedAnchorName );
+				$sUrlEncodedAnchorName = str_replace( '%', '.',  $sUrlEncodedAnchorName );
 				$sPatternQuotedUrlAnchorName = preg_quote( $sUrlEncodedAnchorName );
 
 				// In TOC
@@ -657,7 +657,7 @@ class BsPageContentProvider {
 					$sUniqueAnchorName = md5( $oTitle->getPrefixedText() ) . '-' .  md5( $sAnchorName );
 					$sPatternQuotedAnchorName = preg_quote( $sAnchorName );
 					$sUrlEncodedAnchorName = urlencode( $sAnchorName );
-					$sUrlEncodedAnchorName = Sanitizer::escapeIdForAttribute( $sUrlEncodedAnchorName );
+					$sUrlEncodedAnchorName = str_replace( '%', '.',  $sUrlEncodedAnchorName );
 					$sPatternQuotedUrlAnchorName = preg_quote( $sUrlEncodedAnchorName );
 
 					$this->internalAnchorPatterns(
