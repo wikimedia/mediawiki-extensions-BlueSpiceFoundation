@@ -10,6 +10,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @group api
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @group Database
  * @covers \BSApiFileBackendStore
  */
 class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {

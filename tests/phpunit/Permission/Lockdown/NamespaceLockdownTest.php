@@ -10,6 +10,7 @@ use User;
 
 /**
  * @covers \BlueSpice\Permission\Lockdown\Module\Namespaces
+ * @group Database
  */
 class NamespaceLockdownTest extends MediaWikiIntegrationTestCase {
 	/** @var Namespaces */
