@@ -11,7 +11,7 @@ class HTMLIntFieldOverride extends HTMLIntField {
 	 * @return string
 	 */
 	protected function getClassName() {
-		return "HTMLIntField";
+		return HTMLIntField::class;
 	}
 
 	/**
