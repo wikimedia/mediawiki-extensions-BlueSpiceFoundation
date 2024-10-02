@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Bgo eiu",
+			"Cabal",
 			"ਪ੍ਰਚਾਰਕ"
 		]
 	},
 	"bs-extjs-filter-bool-yes": "ਹਾਂ",
 	"bs-extjs-filter-bool-no": "ਨਹੀਂ",
-	"bs-extjs-categorytree-title": "ਸ਼੍ਰੇਣੀਆਂ"
+	"bs-extjs-categorytree-title": "ਸ਼੍ਰੇਣੀਆਂ",
+	"bs-extjs-label-user": "ਵਰਤੋਂਕਾਰ",
+	"bs-extjs-mainns": "(ਮੁੱਢਲਾ)"
 }
