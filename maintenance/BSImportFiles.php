@@ -101,7 +101,11 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 			$publishOptions = [];
 			$handler = MediaHandler::getHandler( $props['mime'] );
 			if ( $handler ) {
-				$metadata = \Wikimedia\AtEase\AtEase::quietCall( 'unserialize', $props['metadata'] );
+				if ( is_array( $props['metadata'] ) ) {
+					$metadata = $props['metadata'];
+				} else {
+					$metadata = \Wikimedia\AtEase\AtEase::quietCall( 'unserialize', $props['metadata'] );
+				}
 
 				$publishOptions['headers'] = $handler->getContentHeaders( $metadata );
 			} else {
