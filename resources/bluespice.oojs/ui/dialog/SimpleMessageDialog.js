@@ -84,11 +84,20 @@ bs.ui.dialog.SimpleMessageDialog.prototype.initialize = function () {
 };
 
 bs.ui.dialog.SimpleMessageDialog.prototype.getActionProcess = function ( action ) {
-	if ( ( action === 'ok' ) && this.callback.hasOwnProperty( 'ok' ) ) {
-		this.callback.ok.call( this.callback.scope );
-	}
-	if ( ( action === 'cancel' ) && this.callback.hasOwnProperty( 'cancel' ) ) {
-		this.callback.cancel.call( this.callback.scope );
-	}
-	return bs.ui.dialog.SimpleMessageDialog.super.prototype.getActionProcess.call( this, action );
+	return new OO.ui.Process( () => {
+		if ( ( action === 'ok' ) && this.callback.hasOwnProperty( 'ok' ) ) {
+			this.callback.ok.call( this.callback.scope );
+			// We postpone closing of the dialog to give assistive tools, like screen readers
+			// a chance to read potential ARIA live-area updates, before reading other changes
+			// (e.g grid reloads) This is a hacky, but the regular UX is not influenced too
+			// much, so it is an acceptable trade off.
+			setTimeout( () => {
+				this.close();
+			}, 500 );
+		}
+		if ( ( action === 'cancel' ) && this.callback.hasOwnProperty( 'cancel' ) ) {
+			this.callback.cancel.call( this.callback.scope );
+			this.close();
+		}
+	} );
 };
