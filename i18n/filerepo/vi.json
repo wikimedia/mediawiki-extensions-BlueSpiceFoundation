@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"SongNgu.xyz"
+		]
+	},
+	"bs-filerepo-labelupload": "Tải lên",
+	"bs-filerepo-labelfilter": "Bộ lọc",
+	"bs-filerepo-headerfilename": "Tên tập tin",
+	"bs-filerepo-headerfilesize": "Kích cỡ",
+	"bs-filerepo-headerpagecategories": "Thể loại",
+	"bs-filerepo-headerfilewidth": "Chiều ngang",
+	"bs-filerepo-headerfileheight": "Chiều cao",
+	"bs-filerepo-headerfilemimetype": "Kiểu MIME",
+	"bs-filerepo-headerfileusertext": "Người dùng",
+	"bs-filerepo-headerfileextension": "Phần mở rộng",
+	"bs-filerepo-headerfiletimestamp": "Tải lên vào",
+	"bs-filerepo-headerfilemediatype": "Kiểu phương tiện",
+	"bs-filerepo-headerfiledescription": "Miêu tả",
+	"bs-filerepo-headerfilethumbnail": "Hình nhỏ",
+	"bs-filerepo-yes": "Có",
+	"bs-filerepo-no": "Không",
+	"bs-filerepo-pagesize": "Số mục trên mỗi trang"
+}

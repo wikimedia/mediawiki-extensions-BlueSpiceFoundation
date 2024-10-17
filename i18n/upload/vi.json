@@ -2,8 +2,30 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
-			"Nhatminh01"
+			"Nhatminh01",
+			"SongNgu.xyz"
 		]
 	},
-	"bs-upload-upload-waitmessage": "Đang tải lên…"
+	"bs-upload-uploaddialogtitle": "Tải tập tin lên",
+	"bs-upload-uploadbuttontext": "Duyệt",
+	"bs-upload-uploadfilefieldlabel": "Tên tập tin",
+	"bs-upload-uploadfileemptytext": "Chèn tập tin mới...",
+	"bs-upload-uploaddestfilelabel": "Tên tập tin đích:",
+	"bs-upload-allowedfiletypesare": "Các loại tập tin hợp lệ là:",
+	"bs-upload-license": "Giấy phép",
+	"bs-upload-uploadwatchthislabel": "Theo dõi tập tin này",
+	"bs-upload-uploadignorewarningslabel": "Bỏ qua cảnh báo",
+	"bs-upload-categories": "Thể loại",
+	"bs-upload-upload-waitmessage": "Đang tải lên…",
+	"bs-upload-error": "Lỗi",
+	"bs-upload-descfilelabel": "Miêu tả",
+	"bs-upload-error-long": "Lỗi trong quá trình tải lên",
+	"bs-upload-filetypenotsupported": "Kiểu tập tin không được hỗ trợ",
+	"bs-upload-details": "Chi tiết",
+	"bs-upload-uploadwarningdialog-title": "Tải lên tập tin: Cảnh báo",
+	"bs-upload-uploadwarningdialog-intro": "Các cảnh báo sau đây đã xảy ra khi cố gắng tải tập tin lên",
+	"bs-upload-uploadwarningdialog-outro": "Nhấp vào \"{{int:bs-extjs-ok}}\" để bỏ qua cảnh báo và tải tập tin lên, nhấp vào \"{{int:bs-extjs-cancel}}\" để quay lại biểu mẫu tải lên",
+	"bs-upload-uploadwarningdialog-warning-exists": "Một tập tin có tên \"$1\" đã tồn tại",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "Có {{PLURAL:$1|một bản sao|nhiều bản sao}} của tập tin này",
+	"bs-upload-uploadwarningdialog-warning-unknown": "Cảnh báo không xác định với mã \"$1\""
 }
