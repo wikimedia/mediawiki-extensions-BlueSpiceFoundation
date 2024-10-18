@@ -3,6 +3,7 @@
 		"authors": [
 			"Bgo eiu",
 			"Cabal",
+			"Kuldeepburjbhalaike",
 			"ਪ੍ਰਚਾਰਕ"
 		]
 	},
@@ -10,5 +11,6 @@
 	"bs-extjs-filter-bool-no": "ਨਹੀਂ",
 	"bs-extjs-categorytree-title": "ਸ਼੍ਰੇਣੀਆਂ",
 	"bs-extjs-label-user": "ਵਰਤੋਂਕਾਰ",
-	"bs-extjs-mainns": "(ਮੁੱਢਲਾ)"
+	"bs-extjs-mainns": "(ਮੁੱਖ)",
+	"bs-extjs-pageexport-list-format-link-label": "ਕੜੀ"
 }
