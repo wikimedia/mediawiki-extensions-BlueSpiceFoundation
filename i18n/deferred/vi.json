@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"SongNgu.xyz"
+		]
+	},
+	"bs-deferred-action-status-pending": "Đang chờ.",
+	"bs-deferred-action-status-running": "Đang chạy...",
+	"bs-deferred-action-status-done": "Xong.",
+	"bs-deferred-action-status-error": "Thất bại.",
+	"bs-deferred-action-apicopypage-description": "Sao chép \"$1\" tới \"$2\".",
+	"bs-deferred-action-apieditpage-description": "Sửa đổi “$1”.",
+	"bs-deferred-batch-title": "Xử lý hàng loạt",
+	"bs-deferred-batch-progress-desc": "Tiến triển",
+	"bs-deferred-batch-actions": "Tác vụ",
+	"bs-deferred-batch-description": "Miêu tả",
+	"bs-deferred-batch-status": "Trạng thái",
+	"bs-deferred-action-apiaddcategories-description": "Thêm các thể loại vào '$1'.",
+	"bs-deferred-action-apiremovecategories-description": "Xóa các thể loại khỏi '$1'.",
+	"bs-deferred-action-apisetcategories-description": "Đặt các thể loại tại '$1'.",
+	"bs-deferred-action-apimovepage-description": "Di chuyển “$1” đến “$2”.",
+	"bs-deferred-action-apideletepage-description": "Xóa “$1”."
+}
