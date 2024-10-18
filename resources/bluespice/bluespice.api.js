@@ -194,7 +194,11 @@
 
 	function _msgSuccess( response, module, task, $dfd, cfg ) {
 		if ( response.message.length ) {
-			mw.notify( response.message, { title: mw.msg( 'bs-extjs-title-success' ) } );
+			// Delay notification to ensure it is properly announced by screen readers
+			// The confirmation dialog may prevent announcement, so a short delay resolves this
+			setTimeout( () => {
+				mw.notify( response.message, { title: mw.msg( 'bs-extjs-title-success' ) } );
+			}, 500 );
 			$dfd.resolve( response );
 		} else {
 			$dfd.resolve( response );
