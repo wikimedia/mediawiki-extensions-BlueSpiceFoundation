@@ -10,28 +10,42 @@ BSPing = {
 			return;
 		}
 
-		BSPing.ping();
+		document.addEventListener( 'visibilitychange', function () {
+			if ( BSPing.isTabActive() ) {
+				this.isInit = !!mw.config.get( 'bsgPingOnInit' );
+				BSPing.ping();
+			} else {
+				clearTimeout( BSPing.timeout );
+			}
+		} );
+
+		if ( this.isTabActive() ) {
+			BSPing.ping();
+		}
+
 	},
 	ping: function () {
-		var aListenersToGo = BSPing.calculateInterval();
-		if ( aListenersToGo.length < 1 ) {
-			if ( this.isInit ) {
-				$( function () {
-					this.ping();
-				}.bind( this ) );
-				this.isInit = false;
+		if ( this.isInit ) {
+			$( function () {
+				this.doPing( BSPing.getDueListeners() );
+			}.bind( this ) );
+			this.isInit = false;
+		} else {
+			var aListenersToGo = BSPing.getDueListeners();
+			if ( aListenersToGo.length > 0 ) {
+				BSPing.doPing( aListenersToGo );
 			} else {
 				BSPing.timeout = setTimeout( BSPing.ping, BSPing.interval );
 			}
-			return;
 		}
-
+	},
+	doPing: function ( listeners ) {
 		// do this or getJSON will auto call given callbacks (would make BSPing totally freak out)
 		var BsPingData = [];
-		for ( var i = 0; i < aListenersToGo.length; i++ ) {
+		for ( var i = 0; i < listeners.length; i++ ) {
 			BsPingData.push( {
-				sRef: aListenersToGo[ i ].sRef,
-				aData: aListenersToGo[ i ].aData
+				sRef: listeners[ i ].sRef,
+				aData: listeners[ i ].aData
 			} );
 		}
 		bs.api.tasks.execSilent( 'ping', 'ping', {
@@ -40,7 +54,10 @@ BSPing = {
 			iNamespace: mw.config.get( 'wgNamespaceNumber' ),
 			iRevision: mw.config.get( 'wgCurRevisionId' ),
 			BsPingData: BsPingData
-		} ).done( BSPing.pingCallback( aListenersToGo ) );
+		} ).done( BSPing.pingCallback( listeners ) );
+	},
+	isTabActive: function () {
+		return !document.hidden;
 	},
 	registerListener: function ( sRef, iInterval, aData, callback ) {
 		if ( typeof sRef === 'undefined' ) {
@@ -56,13 +73,12 @@ BSPing = {
 		BSPing.aListeners.push( o );
 		return true;
 	},
-	calculateInterval: function () {
+	getDueListeners: function () {
 		var aReturn = [];
 		if ( BSPing.aListeners.length < 1 ) {
 			return aReturn;
 		}
 		var currTMPListeners = [];
-
 		for ( var i = 0; i < BSPing.aListeners.length; i++ ) {
 			BSPing.aListeners[ i ].iInterval = ( BSPing.aListeners[ i ].iInterval - BSPing.interval );
 			if ( !this.isInit && BSPing.aListeners[ i ].iInterval > 0 ) {
