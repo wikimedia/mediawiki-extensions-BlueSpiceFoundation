@@ -14,6 +14,7 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 	public const PARAM_WIDTH = 'width';
 	public const PARAM_HEIGHT = 'height';
 	public const PARAM_USER = 'user';
+	public const PARAM_IMAGE_ALT = 'imagealt';
 
 	/**
 	 *
@@ -69,7 +70,11 @@ class UserImage extends \BlueSpice\TemplateRenderer {
 			->getUserHelper( $this->getUser() );
 
 		$this->args['imagetitle'] = $userHelper->getDisplayName();
-		$this->args['imagealt'] = $userHelper->getDisplayName();
+
+		$this->args[static::PARAM_IMAGE_ALT] = $params->get(
+			static::PARAM_IMAGE_ALT,
+			''
+		);
 		$this->args['anchorhref']
 			= $this->getUser()->getUserPage()->getLocalURL();
 	}
