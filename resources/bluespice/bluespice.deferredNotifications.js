@@ -38,8 +38,7 @@
 		// Iterate and display notifications only if they haven't been shown before
 		for ( var i = 0; i < notifyArray.length; i++ ) {
 			var notificationId = _getNotificationId( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
-			// eslint-disable-next-line es-x/no-array-prototype-includes, es-x/no-string-prototype-includes
-			if ( !shownArray.includes( notificationId ) ) {
+			if ( shownArray.indexOf( notificationId ) === -1 ) {
 				mw.notify( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
 				shownArray.push( notificationId ); // Mark this notification as shown
 			}
