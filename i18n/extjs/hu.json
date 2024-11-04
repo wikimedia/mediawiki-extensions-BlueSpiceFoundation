@@ -5,8 +5,6 @@
 			"Krisztina"
 		]
 	},
-	"bs-extjs-label-namespace": "Névtér",
-	"bs-extjs-label-page": "Lap",
 	"bs-extjs-ok": "Rendben",
 	"bs-extjs-cancel": "Mégse",
 	"bs-extjs-yes": "Igen",
@@ -28,6 +26,8 @@
 	"bs-extjs-close": "Bezárás",
 	"bs-extjs-label-user": "Felhasználó",
 	"bs-extjs-label-group": "Csoport",
+	"bs-extjs-label-namespace": "Névtér",
+	"bs-extjs-label-page": "Lap",
 	"bs-extjs-label-directsearch": "Keresés",
 	"bs-extjs-titlecombo-newpagehint": "A lap nem létezik!",
 	"bs-extjs-upload": "Feltöltés",

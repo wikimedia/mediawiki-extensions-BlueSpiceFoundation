@@ -12,6 +12,7 @@
 			"Veracious"
 		]
 	},
+	"bluespicefoundation-desc": "Menyiapkan kegiatan MediaWiki",
 	"bs-ns_main": "(Halaman)",
 	"bs-ns_all": "(semua)",
 	"bs-tab_navigation": "Navigasi",
@@ -41,7 +42,6 @@
 	"bs-exception-view-admin-hint": "Silakan hubungi administrator sistem Anda.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Tampilkan rincian kesalahan",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Sembunyikan rincian kesalahan",
-	"bs-viewtagerrorlist-legend": "$1 - Kesalahan",
 	"bs-readonly": "Basis data sedang dikunci untuk entri baru dan modifikasi lainnya, mungkin untuk pemeliharaan database rutin, setelah itu akan kembali normal. Administrator yang terkunci itu menawarkan penjelasan ini: $1",
 	"bs-imageofotheruser": "Anda tidak diizinkan untuk mengunggah gambar untuk pengguna lain.",
 	"bs-permissionerror": "Kesalahan izin!",
@@ -65,11 +65,12 @@
 	"bs-navigation-instructions": "Petunjuk",
 	"bs-navigation-support": "Dukungan",
 	"bs-navigation-contact": "Hubungi",
-	"bs-imagepage-download-text": "Unduh",
 	"bs-ns": "Ruang nama",
 	"bs-from-something": "(dari $1)",
 	"bs-pref-fileextensions": "Jenis berkas yang diizinkan:",
 	"bs-pref-imageextensions": "Jenis gambar yang diizinkan:",
+	"bs-pref-anonuserimage": "Avatar pengguna anonim:",
+	"bs-pref-deleteduserimage": "Avatar pengguna yang dihapus:",
 	"bs-parser-error-invalid-namespace": "Ruang nama tidak sah: $1",
 	"bs-parser-error-invalid-title": "Judul tidak sah: $1",
 	"bs-validator-error-namespace-does-not-exist": "Ruang nama tidak ada: $1",
@@ -81,8 +82,5 @@
 	"action-wikiadmin": "menggunakan tugas administratif yang berpotensi berbahaya, seperti mengelola pengguna, izin, konfigurasi global (ekstensi BlueSpice)",
 	"right-wikiadmin": "Gunakan tugas administratif yang berpotensi berbahaya, seperti mengelola pengguna, izin, konfigurasi global (ekstensi BlueSpice)",
 	"bs-notifications-agent-anon": "pengguna anonim",
-	"protect-level-editor": "Hanya izinkan editor dan administrator",
-	"bluespicefoundation-desc": "Menyiapkan kegiatan MediaWiki",
-	"bs-pref-anonuserimage": "Avatar pengguna anonim:",
-	"bs-pref-deleteduserimage": "Avatar pengguna yang dihapus:"
+	"protect-level-editor": "Hanya izinkan editor dan administrator"
 }

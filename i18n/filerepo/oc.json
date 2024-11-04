@@ -5,7 +5,6 @@
 			"Nicolas Eynaud"
 		]
 	},
-	"bs-filerepo-headerfilethumbnail": "Miniatura",
 	"bs-filerepo-labelupload": "Telecargar",
 	"bs-filerepo-labelfilter": "Filtre",
 	"bs-filerepo-headerfilename": "Nom dau fichièr",
@@ -18,6 +17,7 @@
 	"bs-filerepo-headerfiletimestamp": "Telecargat",
 	"bs-filerepo-headerfilemediatype": "Tipe de mèdia",
 	"bs-filerepo-headerfiledescription": "Descripcion",
+	"bs-filerepo-headerfilethumbnail": "Miniatura",
 	"bs-filerepo-yes": "Òc",
 	"bs-filerepo-no": "Non",
 	"bs-filerepo-pagesize": "Intradas per pagina"

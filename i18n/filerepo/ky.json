@@ -4,10 +4,10 @@
 			"Bosogo"
 		]
 	},
-	"bs-filerepo-yes": "Ооба",
-	"bs-filerepo-no": "Жок",
-	"bs-filerepo-headerfiletimestamp": "Жүктөлдү",
 	"bs-filerepo-labelupload": "Жүктөө",
+	"bs-filerepo-labelfilter": "Чыпка",
+	"bs-filerepo-headerfiletimestamp": "Жүктөлдү",
 	"bs-filerepo-headerfiledescription": "Сыпаттама",
-	"bs-filerepo-labelfilter": "Чыпка"
+	"bs-filerepo-yes": "Ооба",
+	"bs-filerepo-no": "Жок"
 }

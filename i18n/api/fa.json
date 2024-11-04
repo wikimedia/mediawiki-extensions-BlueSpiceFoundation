@@ -9,6 +9,7 @@
 		]
 	},
 	"apihelp-bs-store-param-limit": "تعداد نتایج برای نمایش",
+	"apihelp-bs-store-param-dc": "پرچم <code>Disable cache</code>",
 	"apihelp-bs-store-param-format": "فرمت خروجی (فقط جی‌سان یا جی‌سان قالب‌بندی‌شده)",
 	"apihelp-bs-task-param-task": "وظیفه‌ای که باید اجرا شود",
 	"apihelp-bs-task-param-format": "قالب نتیجه",
@@ -33,6 +34,5 @@
 	"bs-api-task-wikipagetasks-taskData-categories": "آرایه‌ای از رشته‌ها. مقدارها باید برابر با نام معتبر رده‌ها باشند.",
 	"apihelp-bs-js-var-config-param-format": "قالب نتیجه",
 	"apihelp-bs-categorylinks-store-param-page-id": "شناسهٔ صفحه",
-	"apihelp-bs-templatelinks-store-param-page-id": "شناسهٔ صفحه",
-	"apihelp-bs-store-param-dc": "پرچم <code>Disable cache</code>"
+	"apihelp-bs-templatelinks-store-param-page-id": "شناسهٔ صفحه"
 }

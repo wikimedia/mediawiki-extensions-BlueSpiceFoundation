@@ -5,8 +5,5 @@
 			"Piano1forte2"
 		]
 	},
-	"bs-upload-license": "Licence",
-	"bs-upload-uploadwarningdialog-outro": "Click '{{int:bs-extjs-ok}}' to ignore warnings and upload file, click '{{int:bs-extjs-cancel}}' to return to the upload form",
-	"bs-upload-uploadwarningdialog-warning-exists": "A file with name '$1' already exists",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Unknown warning with code '$1'"
+	"bs-upload-license": "Licence"
 }

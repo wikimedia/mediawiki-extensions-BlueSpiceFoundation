@@ -36,6 +36,7 @@
 	"bs-extjs-label-namespace": "Nimiavaruus",
 	"bs-extjs-label-page": "Sivu",
 	"bs-extjs-label-directsearch": "Haku",
+	"bs-extjs-label-specialpage": "Toimintosivu",
 	"bs-extjs-titlecombo-newpagehint": "Sivua ei ole olemassa!",
 	"bs-extjs-upload": "Tallenna",
 	"bs-extjs-browse": "Selaa",
@@ -56,6 +57,8 @@
 	"bs-extjs-filter-date-after": "Jälkeen",
 	"bs-extjs-filter-date-before": "Ennen",
 	"bs-extjs-pageexport-dialog-title": "Vie sivuja",
+	"bs-extjs-pageexport-list-name-label": "Listan nimi",
+	"bs-extjs-pageexport-list-format-label": "Listan muoto",
 	"bs-extjs-pageexport-list-format-plain-label": "Pelkkä teksti",
 	"bs-extjs-pageexport-list-format-link-label": "Linkki",
 	"bs-extjs-pageexport-overwrite-label": "Ylikirjoita",
@@ -69,8 +72,5 @@
 	"bs-extjs-flyout-tab-thumbs-label": "Pienoiskuvat",
 	"bs-extjs-flyout-tab-grid-label": "Tiedot",
 	"bs-extjs-flyout-add-title": "Napsauta tästä lisätäksesi uuden kohteen",
-	"bs-extjs-flyout-add-label": "Lisää kohde",
-	"bs-extjs-label-specialpage": "Toimintosivu",
-	"bs-extjs-pageexport-list-name-label": "Listan nimi",
-	"bs-extjs-pageexport-list-format-label": "Listan muoto"
+	"bs-extjs-flyout-add-label": "Lisää kohde"
 }

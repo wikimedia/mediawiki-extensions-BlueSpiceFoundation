@@ -8,7 +8,10 @@
 	"bs-extjs-ok": "Ok",
 	"bs-extjs-cancel": "Jooskâ",
 	"bs-extjs-save": "Vuorkkii",
+	"bs-extjs-delete": "Siho",
 	"bs-extjs-add": "Lasseet",
+	"bs-extjs-remove": "Siho",
+	"bs-extjs-copy": "Kopijist",
 	"bs-extjs-error": "Feilâ",
 	"bs-extjs-warning": "Váruttâs",
 	"bs-extjs-close": "Toopâ",
@@ -17,15 +20,12 @@
 	"bs-extjs-label-page": "Sijđo",
 	"bs-extjs-label-directsearch": "Uuccâm",
 	"bs-extjs-upload": "Vuorkkii",
+	"bs-extjs-browse": "Laađâ",
 	"bs-extjs-allns": "(puoh)",
 	"bs-extjs-mainns": "(Uáivikomovuotâ)",
 	"bs-extjs-filters": "Silleeh",
 	"bs-extjs-title-warning": "Váruttâs",
 	"bs-extjs-categorytree-title": "Luokah",
-	"bs-extjs-pageexport-list-format-link-label": "Liŋkkâ",
-	"bs-extjs-delete": "Siho",
-	"bs-extjs-remove": "Siho",
 	"bs-extjs-filter-date-filter": "Sillii",
-	"bs-extjs-copy": "Kopijist",
-	"bs-extjs-browse": "Laađâ"
+	"bs-extjs-pageexport-list-format-link-label": "Liŋkkâ"
 }

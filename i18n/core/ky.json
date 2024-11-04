@@ -4,16 +4,15 @@
 			"Bosogo"
 		]
 	},
-	"bs-extended-search-textfield-defaultvalue": "Издөө...",
 	"bs-ns_main": "(Барактар)",
-	"bs-imagepage-download-text": "Жүктөп алуу",
 	"bs-userbar_loginswitch_login": "Кирүү",
-	"bs-graphicallist-action-close": "Жабуу",
-	"bs-export-menu-print-text": "Басып чыгаруу",
-	"bs-graphicallist-action-list": "Тизме",
-	"bs-days-duration": "{{PLURAL:$1|бир күн|$1 күн}}",
+	"bs-extended-search-textfield-defaultvalue": "Издөө...",
 	"bs-years-duration": "{{PLURAL:$1|бир жыл|$1 жыл}}",
 	"bs-months-duration": "{{PLURAL:$1|бир ай|$1 ай}}",
 	"bs-weeks-duration": "{{PLURAL:$1|бир апта|$1 апта}}",
-	"bs-navigation-instructions": "Нускамалар"
+	"bs-days-duration": "{{PLURAL:$1|бир күн|$1 күн}}",
+	"bs-navigation-instructions": "Нускамалар",
+	"bs-export-menu-print-text": "Басып чыгаруу",
+	"bs-graphicallist-action-close": "Жабуу",
+	"bs-graphicallist-action-list": "Тизме"
 }

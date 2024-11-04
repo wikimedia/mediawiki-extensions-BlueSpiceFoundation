@@ -19,6 +19,7 @@
 	"bs-extjs-label-page": "Seidd",
 	"bs-extjs-label-directsearch": "Ooccmõš",
 	"bs-extjs-upload": "Ruõkk",
+	"bs-extjs-browse": "Ǩiõčč",
 	"bs-extjs-allns": "(puk)",
 	"bs-extjs-filters": "Siʹllʼjeei",
 	"bs-extjs-title-warning": "Vaartõs",
@@ -30,6 +31,5 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Seiddnorldõk",
 	"bs-pagecollection-prefix": "Seiddnorldõk",
 	"bs-extjs-flyout-tab-thumbs-label": "Snimldõõʹjje",
-	"bs-extjs-flyout-tab-grid-label": "Teâđ",
-	"bs-extjs-browse": "Ǩiõčč"
+	"bs-extjs-flyout-tab-grid-label": "Teâđ"
 }

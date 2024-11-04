@@ -10,13 +10,11 @@
 	"bs-userbar_loginswitch_logout": "Čáládât olgos",
 	"bs-userbar_loginswitch_login": "Čáládât siisâ",
 	"bs-extended-search-textfield-defaultvalue": "Uusâ...",
+	"bs-extended-search-textfield-tooltip": "Uusâ wikist",
 	"bs-months-duration": "{{PLURAL:$1|ohtâ mánuppaje|$1 mánuppaijeed}}",
 	"bs-days-duration": "{{PLURAL:$1|ohtâ peivi|$1 peeivi|$1 peeivi|$1 peivid}}",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Hei, hiärrá $2|Hei, rovvá $2|Hei $2}}.",
-	"bs-viewtagerrorlist-legend": "$1 - Feilâ",
-	"bs-imagepage-download-text": "Luođii",
+	"bs-navigation-contact": "Vääldi ohtâvuođâ",
 	"bs-ns": "Nommâkomovuotâ",
-	"bs-graphicallist-action-close": "Toopâ",
-	"bs-extended-search-textfield-tooltip": "Uusâ wikist",
-	"bs-navigation-contact": "Vääldi ohtâvuođâ"
+	"bs-graphicallist-action-close": "Toopâ"
 }

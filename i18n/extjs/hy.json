@@ -29,6 +29,7 @@
 	"bs-extjs-label-directsearch": "Որոնել",
 	"bs-extjs-label-specialpage": "Հատուկ էջ",
 	"bs-extjs-titlecombo-newpagehint": "Էջը գոյություն չունի",
+	"bs-extjs-upload": "Վերբեռնել",
 	"bs-extjs-allns": "(բոլոր)",
 	"bs-extjs-mainns": "(Հիմնական)",
 	"bs-extjs-filters": "Զտիչներ",
@@ -39,6 +40,5 @@
 	"bs-extjs-filter-date-filter": "Զտիչ",
 	"bs-extjs-pageexport-list-format-link-label": "Հղում",
 	"bs-extjs-tools-trigger-text": "Գործիքներ",
-	"bs-extjs-flyout-tab-grid-label": "Մանրամասներ",
-	"bs-extjs-upload": "Վերբեռնել"
+	"bs-extjs-flyout-tab-grid-label": "Մանրամասներ"
 }

@@ -5,6 +5,7 @@
 		]
 	},
 	"bs-upload-uploaddialogtitle": "Ruõkk teâttõõzz",
+	"bs-upload-uploadbuttontext": "Ǩiõčč",
 	"bs-upload-uploadfilefieldlabel": "Teâttõsnõmm",
 	"bs-upload-uploadfileemptytext": "Lââʹzzet ođđ teâttõõzz...",
 	"bs-upload-license": "Liseʹnss",
@@ -13,6 +14,5 @@
 	"bs-upload-categories": "Kategoria",
 	"bs-upload-error": "Vââʹǩǩ",
 	"bs-upload-descfilelabel": "Deskriptt",
-	"bs-upload-details": "Teâđ",
-	"bs-upload-uploadbuttontext": "Ǩiõčč"
+	"bs-upload-details": "Teâđ"
 }

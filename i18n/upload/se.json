@@ -8,10 +8,10 @@
 	"bs-upload-uploaddialogtitle": "Vurke fiilla",
 	"bs-upload-uploadbuttontext": "Bláđe",
 	"bs-upload-uploadfilefieldlabel": "Fiilanamma",
+	"bs-upload-uploadfileemptytext": "Lasit ođđa fiilla...",
 	"bs-upload-license": "Liseansa",
 	"bs-upload-uploadwatchthislabel": "Čuovo dán fiilla",
 	"bs-upload-categories": "Kategoriijat",
 	"bs-upload-error": "Meattáhus",
-	"bs-upload-descfilelabel": "Govvádus",
-	"bs-upload-uploadfileemptytext": "Lasit ođđa fiilla..."
+	"bs-upload-descfilelabel": "Govvádus"
 }

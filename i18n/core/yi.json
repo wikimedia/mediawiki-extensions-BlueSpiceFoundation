@@ -6,17 +6,16 @@
 		]
 	},
 	"bs-ns_main": "(בלעטער)",
-	"bs-extended-search-textfield-defaultvalue": "זוכן...",
-	"bs-exception-view-heading": "א גרײַז האט פאסירט",
 	"bs-ns_all": "(אַלע)",
-	"bs-months-duration": "{{PLURAL:$1|1 מאָנאַט|$1 מאָנאַטן}}",
+	"bs-extended-search-textfield-defaultvalue": "זוכן...",
 	"bs-years-duration": "{{PLURAL:$1|איין יאָר|$1 יאָרן}}",
+	"bs-months-duration": "{{PLURAL:$1|1 מאָנאַט|$1 מאָנאַטן}}",
 	"bs-weeks-duration": "{{PLURAL:$1|איין וואָך|$1 וואָכן‎}}",
 	"bs-days-duration": "{{PLURAL:$1|איין טאָג|$1 טעג}}",
 	"bs-hours-duration": "{{PLURAL:$1|איין שעה|$1 שעהן}}",
 	"bs-mins-duration": "{{PLURAL:$1|איין מינוט|$1 מינוטן}}",
 	"bs-secs-duration": "{{PLURAL:$1|איין סעקונדע|$1 סעקונדעס}}",
-	"bs-viewtagerrorlist-legend": "$1 - פֿעלער",
+	"bs-exception-view-heading": "א גרײַז האט פאסירט",
 	"bs-ns": "נאָמענטייל",
 	"bs-export-menu-print-text": "דרוקן"
 }

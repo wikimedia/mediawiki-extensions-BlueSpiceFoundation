@@ -35,7 +35,6 @@
 	"bs-exception-view-admin-hint": "Voluntez kontaktar l'administrero di vua sistemo.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Montrar detali dil eroro",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Celar detali dil eroro",
-	"bs-viewtagerrorlist-legend": "$1 - Eroro",
 	"bs-readonly": "La datumaro nuntempe esas klozata por nova modifiki, probable por facar manteni rutinala. Pos la manteni, ol retrovenos a la normala stando.\n\nL'administranto di la sistemo qua klozis la datumaro explikis to: $1",
 	"bs-imageofotheruser": "Vu ne povas sendar ula imajo de altra uzero.",
 	"bs-permissionerror": "Eroro pri permiso!",
@@ -49,11 +48,10 @@
 	"bs-filesystemhelper-save-base64-error": "L'arkivo ne povis prezervesar.",
 	"bs-filesystemhelper-upload-base64-error": "Ne povis sendar l'arkivo.",
 	"bs-navigation-support": "Suporto",
-	"bs-imagepage-download-text": "Deskargar",
+	"bs-navigation-contact": "Kontakto",
 	"bs-ns": "'Namespace'",
 	"bs-graphicallist-action-close": "Klozez",
-	"bs-graphicallist-action-preview": "Previdar",
-	"right-editor": "Grantar omna permisi por la \"redaktero\" koncerne pagini protektita, kande la sistemo di organizo di laboro komencos funcionar",
 	"bs-graphicallist-action-list": "Listez",
-	"bs-navigation-contact": "Kontakto"
+	"bs-graphicallist-action-preview": "Previdar",
+	"right-editor": "Grantar omna permisi por la \"redaktero\" koncerne pagini protektita, kande la sistemo di organizo di laboro komencos funcionar"
 }

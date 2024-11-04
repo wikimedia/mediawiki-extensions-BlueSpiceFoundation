@@ -10,10 +10,9 @@
 	"bs-ns_main": "(Rûpel)",
 	"bs-userbar_loginswitch_logout": "Derkeve",
 	"bs-userbar_loginswitch_login": "Têkeve",
-	"bs-viewtagerrorlist-legend": "$1 - Çewtî",
+	"bs-now": "niha",
 	"bs-parser-error-invalid-title": "Sernavê nederbasdar:$1",
 	"bs-validator-error-title-does-not-exist": "Rûpel tune ye: $1",
 	"bs-graphicallist-action-close": "Bigre",
-	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
-	"bs-now": "niha"
+	"bs-bluespice-mediawiki": "BlueSpice MediaWiki"
 }

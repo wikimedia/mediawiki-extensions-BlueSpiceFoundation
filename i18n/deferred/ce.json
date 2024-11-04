@@ -4,7 +4,6 @@
 			"Умар"
 		]
 	},
-	"bs-deferred-batch-actions": "Ардамаш",
 	"bs-deferred-action-status-pending": "Хьежар.",
 	"bs-deferred-action-status-running": "Кхочушдеш ду…",
 	"bs-deferred-action-status-done": "Кийчча йу.",
@@ -13,6 +12,7 @@
 	"bs-deferred-action-apieditpage-description": "Хийца «$1».",
 	"bs-deferred-batch-title": "Пакетан кечйар",
 	"bs-deferred-batch-progress-desc": "Прогресс",
+	"bs-deferred-batch-actions": "Ардамаш",
 	"bs-deferred-batch-description": "Цуьнах лаьцна",
 	"bs-deferred-batch-status": "Статус",
 	"bs-deferred-action-apiaddcategories-description": "ТӀетоха категори '$1'.",
