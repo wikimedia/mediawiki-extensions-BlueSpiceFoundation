@@ -65,7 +65,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Dit bestandstype wordt niet ondersteund.",
 	"bs-filesystemhelper-save-base64-error": "Het bestand kon niet worden opgeslagen.",
 	"bs-filesystemhelper-upload-base64-error": "Het bestand kon niet worden geüpload.",
-	"bs-filesystemhelper-upload-local-error-stash-file": "Het bestand kon niet worden verplaatst naar de upload-stash.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "Het bestand kon niet naar de opgeborgen uploads worden verplaatst.",
 	"bs-filesystemhelper-upload-local-error-create": "Het bestand kon niet worden aangemaakt in de wiki.",
 	"bs-navigation-instructions": "Instructies",
 	"bs-navigation-support": "Ondersteuning",
