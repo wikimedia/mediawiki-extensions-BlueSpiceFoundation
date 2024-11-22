@@ -4,6 +4,7 @@ namespace BlueSpice\Permission\Role;
 use BlueSpice\Permission\IRole;
 use BlueSpice\Permission\PermissionRegistry;
 use MediaWiki\MediaWikiServices;
+use Message;
 
 /**
  * Base class for Roles
@@ -149,5 +150,12 @@ abstract class Role implements IRole {
 	 */
 	public function getPrivilegeLevel() {
 		return 50;
+	}
+
+	/**
+	 * @return Message
+	 */
+	public function getLabel(): Message {
+		return Message::newFromKey( 'bs-permission-role-' . $this->getName() );
 	}
 }

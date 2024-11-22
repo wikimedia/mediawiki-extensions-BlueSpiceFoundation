@@ -355,6 +355,8 @@ class RoleManager {
 		foreach ( $this->roles as $roleName => $roleObject ) {
 			$rolesAndPermissions[] = [
 				'role' => $roleName,
+				'label' => $roleObject->getLabel()->exists() ? $roleObject->getLabel()->text() : $roleName,
+				'labelExists' => $roleObject->getLabel()->exists(),
 				'permissions' => $roleObject->getPermissions(),
 				'privilegeLevel' => $roleObject->getPrivilegeLevel()
 			];

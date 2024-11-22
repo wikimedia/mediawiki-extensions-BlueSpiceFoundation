@@ -1,6 +1,8 @@
 <?php
 namespace BlueSpice\Permission;
 
+use Message;
+
 interface IRole {
 	/**
 	 * @param PermissionRegistry $permissionRegistry
@@ -42,4 +44,9 @@ interface IRole {
 	 * @return int
 	 */
 	public function getPrivilegeLevel();
+
+	/**
+	 * @return Message
+	 */
+	public function getLabel(): Message;
 }
