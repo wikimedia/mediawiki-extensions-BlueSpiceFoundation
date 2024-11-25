@@ -58,7 +58,7 @@
 	"bs-filesystemhelper-folder-already-exists": "De map <code>$1</code> bestaat al.",
 	"bs-filesystemhelper-folder-copy-error": "De map <code>$1</code> kon niet hernoemd worden.",
 	"bs-filesystemhelper-folder-not-exists": "De map <code>$1</code> bestaat niet.",
-	"bs-filesystemhelper-folder-rename-error": "De map <code>$1</code> kan niet naar <code>$2</code> hernoemd worden.",
+	"bs-filesystemhelper-folder-rename-error": "De map <code>$1</code> kan niet tot <code>$2</code> hernoemd worden.",
 	"bs-filesystemhelper-upload-err-code": "Het bestand kon niet worden geüpload: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Het bestand heeft niet de vereiste extensie: $1 .",
 	"bs-filesystemhelper-upload-unsupported-type": "Dit bestandstype wordt niet ondersteund.",
