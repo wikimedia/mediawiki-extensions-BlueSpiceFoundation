@@ -3,8 +3,10 @@
 namespace BlueSpice\Tests\Utility\WikiTextLinksHelper;
 
 use BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper;
+use MediaWiki\Interwiki\ClassicInterwikiLookup;
+use MediaWiki\MainConfigNames;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use Title;
 
 class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 
@@ -34,26 +36,35 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	 * @covers BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
 	 */
 	public function testGetTargetMatches() {
-		// Inspired by `ExtraParsertest::testParseLinkParameter`
-		$this->setTemporaryHook( 'InterwikiLoadPrefix', static function ( $prefix, &$iwData ) {
-			if ( $prefix === 'nonexistent' ) {
-				return true;
-			}
-
-			$iwData = [
-				'iw_url' => 'http://doesnt.matter.org/$1',
+		// Inspired by `ExtraParserTest::testParseLinkParameter`
+		static $testInterwikis = [
+			[
+				'iw_prefix' => 'local',
+				'iw_url' => 'http://doesnt.matter.invalid/$1',
 				'iw_api' => '',
 				'iw_wikiid' => '',
 				'iw_local' => 0
-			];
-
-			$languagePrefixes = [ 'en', 'de' ];
-			if ( in_array( $prefix, $languagePrefixes ) ) {
-				$iwData['iw_local'] = 1;
-			}
-
-			return true;
-		} );
+			],
+			[
+				'iw_prefix' => 'de',
+				'iw_url' => 'http://doesnt.matter.invalid/$1',
+				'iw_api' => '',
+				'iw_wikiid' => '',
+				'iw_local' => 1
+			],
+			[
+				'iw_prefix' => 'en',
+				'iw_url' => 'http://doesnt.matter.invalid/$1',
+				'iw_api' => '',
+				'iw_wikiid' => '',
+				'iw_local' => 1
+			]
+		];
+		$this->overrideConfigValue(
+			MainConfigNames::InterwikiCache,
+			ClassicInterwikiLookup::buildCdbHash( $testInterwikis )
+		);
+		Title::clearCaches();
 
 		$wikitext = $this->provideWikitextData();
 		$helper = $this->getHelper( $wikitext );
