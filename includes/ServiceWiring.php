@@ -30,19 +30,6 @@ return [
 		);
 	},
 
-	'BSDynamicFileDispatcherFactory' => static function ( MediaWikiServices $services ) {
-		return new \BlueSpice\DynamicFileDispatcher\Factory(
-			$services->getConfigFactory()->makeConfig( 'bsg' )
-		);
-	},
-
-	'BSDynamicFileDispatcherUrlBuilder' => static function ( MediaWikiServices $services ) {
-		return new \BlueSpice\DynamicFileDispatcher\UrlBuilder(
-			$services->getService( 'BSDynamicFileDispatcherFactory' ),
-			$services->getConfigFactory()->makeConfig( 'bsg' )
-		);
-	},
-
 	'BSEntityConfigFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationEntityRegistry'

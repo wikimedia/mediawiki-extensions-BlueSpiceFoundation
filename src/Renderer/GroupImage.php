@@ -1,8 +1,6 @@
 <?php
 namespace BlueSpice\Renderer;
 
-use BlueSpice\DynamicFileDispatcher\GroupImage as DFDGroupImage;
-use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
 use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
@@ -82,15 +80,14 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	 * @return string
 	 */
 	protected function render_imagesrc( $val ) {
-		$params = [
-			DFDParams::MODULE => DFDGroupImage::MODULE_NAME,
-			DFDGroupImage::GROUP => $val,
-			DFDGroupImage::WIDTH => $this->args[static::PARAM_WIDTH],
-			DFDGroupImage::HEIGHT => $this->args[static::PARAM_HEIGHT]
-		];
-
-		$dfdUrlBuilder = $this->services->getService( 'BSDynamicFileDispatcherUrlBuilder' );
-		return $dfdUrlBuilder->build( new DFDParams( $params ) );
+		return $this->services->getService( 'MWStake.DynamicFileDispatcher.Factory' )->getUrl(
+			'groupimage',
+			[
+				'group' => $val,
+				'width' => (int)$this->args[static::PARAM_WIDTH],
+				'height' => (int)$this->args[static::PARAM_HEIGHT],
+			]
+		);
 	}
 
 	/**

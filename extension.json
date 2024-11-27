@@ -28,11 +28,6 @@
 				"ImageExtensions": "\\BlueSpice\\ConfigDefinition\\ImageExtensions::getInstance",
 				"Favicon": "\\BlueSpice\\ConfigDefinition\\Favicon::getInstance"
 			},
-			"DynamicFileRegistry": {
-				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage",
-				"groupimage": "\\BlueSpice\\DynamicFileDispatcher\\GroupImage",
-				"articlepreviewimage": "\\BlueSpice\\DynamicFileDispatcher\\ArticlePreviewImage"
-			},
 			"EntityRegistry": {},
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
@@ -294,13 +289,7 @@
 				"bs-extjs-pageexport-error-invalid-title",
 				"bs-extjs-combo-box-default-placeholder",
 				"bs-extjs-tools-trigger-title",
-				"bs-extjs-tools-trigger-text",
-				"bs-extjs-flyout-tab-thumbs-label",
-				"bs-extjs-flyout-tab-thumbs-title",
-				"bs-extjs-flyout-tab-grid-label",
-				"bs-extjs-flyout-tab-grid-title",
-				"bs-extjs-flyout-add-title",
-				"bs-extjs-flyout-add-label"
+				"bs-extjs-tools-trigger-text"
 			],
 			"group": "bsextjs"
 		},
@@ -640,18 +629,6 @@
 	"config": {
 		"PermissionConfig": {
 			"value": []
-		},
-		"DefaultUserImage": {
-			"value": "resources/bluespice/images/bs-user-default-image.png",
-			"path": true
-		},
-		"DefaultAnonImage": {
-			"value": "resources/bluespice/images/bs-user-anon-image.png",
-			"path": true
-		},
-		"DefaultGroupImage": {
-			"value": "resources/bluespice/images/bs-group-default-image.png",
-			"path": true
 		},
 		"UIPermissionBlacklist": {
 			"value": [
