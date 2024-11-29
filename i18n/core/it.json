@@ -107,5 +107,7 @@
 	"bs-pref-imageextensions-help": "Tipi di file immagine che possono essere caricati sul wiki. Possibili formati web: gif, png, jpg, jpeg. Altri formati immagine: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Impossibile scrivere sul file di configurazione $1.",
 	"bs-pref-logopath-help": "Il logo deve essere memorizzato nella cartella /w/images dell'installazione. Se viene memorizzato nella cartella /w/skins dell'installazione di BlueSpice, può essere sovrascritto con un aggiornamento.",
-	"bs-pref-faviconpath-help": "La favicon deve essere memorizzata nella cartella /w/images della propria installazione. Se viene memorizzata nella cartella /w/skins dell'installazione di BlueSpice, potrebbe essere sovrascritta con un aggiornamento. Le favicon hanno estensione .ico."
+	"bs-pref-faviconpath-help": "La favicon deve essere memorizzata nella cartella /w/images della propria installazione. Se viene memorizzata nella cartella /w/skins dell'installazione di BlueSpice, potrebbe essere sovrascritta con un aggiornamento. Le favicon hanno estensione .ico.",
+	"bs-permission-role-reader": "Lettore",
+	"bs-permission-role-admin": "Amministratore"
 }
