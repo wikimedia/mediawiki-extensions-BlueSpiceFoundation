@@ -68,8 +68,5 @@
 	"bs-extjs-pageexport-general-error": "Erro de exportación",
 	"bs-extjs-pageexport-pagecollection-prefix": "Colección de páxinas",
 	"bs-pagecollection-prefix": "Colección de páxinas",
-	"bs-extjs-tools-trigger-text": "Ferramentas",
-	"bs-extjs-flyout-tab-thumbs-label": "Miniaturas",
-	"bs-extjs-flyout-tab-grid-label": "Detalles",
-	"bs-extjs-flyout-add-label": "Engadir elemento"
+	"bs-extjs-tools-trigger-text": "Ferramentas"
 }

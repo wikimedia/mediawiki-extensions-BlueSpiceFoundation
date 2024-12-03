@@ -72,9 +72,5 @@
 	"bs-extjs-export-search-summary-text": "Produktita de PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Nomo de la listo ne estas valida",
 	"bs-extjs-combo-box-default-placeholder": "Entajpu por filtri...",
-	"bs-extjs-tools-trigger-text": "Iloj",
-	"bs-extjs-flyout-tab-thumbs-label": "Miniaturoj",
-	"bs-extjs-flyout-tab-thumbs-title": "Ŝalti vidojn de miniaturoj",
-	"bs-extjs-flyout-tab-grid-label": "Detaloj",
-	"bs-extjs-flyout-add-label": "Aldoni eron"
+	"bs-extjs-tools-trigger-text": "Iloj"
 }

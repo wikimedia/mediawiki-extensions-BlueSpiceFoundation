@@ -64,6 +64,5 @@
 	"bs-extjs-pageexport-list-format-plain-label": "Teks polos",
 	"bs-extjs-pageexport-list-format-link-label": "Pranala",
 	"bs-extjs-pageexport-general-error": "Kesalahan mengekspor",
-	"bs-extjs-pageexport-success": "Ekspor berhasil",
-	"bs-extjs-flyout-tab-grid-label": "Rincian"
+	"bs-extjs-pageexport-success": "Ekspor berhasil"
 }

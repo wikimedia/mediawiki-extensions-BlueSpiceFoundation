@@ -67,8 +67,5 @@
 	"bs-pagecollection-prefix": "АгӀонийн коллекци",
 	"bs-extjs-pageexport-success": "Кхиамца экспорт",
 	"bs-extjs-combo-box-default-placeholder": "Фильтран тайпа…",
-	"bs-extjs-tools-trigger-text": "ГӀирсаш",
-	"bs-extjs-flyout-tab-thumbs-label": "Миниатюраш",
-	"bs-extjs-flyout-tab-grid-label": "Мадарра",
-	"bs-extjs-flyout-add-label": "ТӀетоха объект"
+	"bs-extjs-tools-trigger-text": "ГӀирсаш"
 }

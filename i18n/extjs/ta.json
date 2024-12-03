@@ -35,7 +35,5 @@
 	"bs-extjs-filter-contains": "உள்ளடக்கியது",
 	"bs-extjs-filter-contains-not": "உட்கொள்ளவில்லை",
 	"bs-extjs-filter-starts-with": "அத்துடன் ஆரம்பம் ,தொடக்கம்",
-	"bs-extjs-filter-ends-with": "முடிவடைகிறது ,(அத்துடன் ,இத்துடன் ) முடிகிறது",
-	"bs-extjs-flyout-tab-thumbs-title": "சிறுபடக் காட்சிக்கு மாற்று",
-	"bs-extjs-flyout-tab-grid-title": "விபரக் காட்சிக்கு மாற்று"
+	"bs-extjs-filter-ends-with": "முடிவடைகிறது ,(அத்துடன் ,இத்துடன் ) முடிகிறது"
 }

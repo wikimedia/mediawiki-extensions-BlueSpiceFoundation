@@ -68,9 +68,5 @@
 	"bs-extjs-pageexport-success": "Vienti onnistui",
 	"bs-extjs-pageexport-error-invalid-title": "Luettelon nimi on virheellinen",
 	"bs-extjs-combo-box-default-placeholder": "Kirjoita suodattaaksesi...",
-	"bs-extjs-tools-trigger-text": "Työkalut",
-	"bs-extjs-flyout-tab-thumbs-label": "Pienoiskuvat",
-	"bs-extjs-flyout-tab-grid-label": "Tiedot",
-	"bs-extjs-flyout-add-title": "Napsauta tästä lisätäksesi uuden kohteen",
-	"bs-extjs-flyout-add-label": "Lisää kohde"
+	"bs-extjs-tools-trigger-text": "Työkalut"
 }
