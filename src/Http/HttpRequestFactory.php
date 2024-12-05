@@ -90,4 +90,11 @@ class HttpRequestFactory extends MWHttpRequestFactory {
 		$options = $this->amendOptions( $options );
 		return $this->decoratedFactory->createMultiClient( $options );
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function createGuzzleClient( array $config = [] ): \GuzzleHttp\Client {
+		return $this->decoratedFactory->createGuzzleClient( $config );
+	}
 }
