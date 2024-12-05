@@ -576,6 +576,12 @@
 			"class": "\\BlueSpice\\HookHandler\\CommonUserInterface",
 			"@note": "For some reason this service is not available at time of initalization",
 			"@services": [ "ConfigFactory " ]
+		},
+		"addUserImage": {
+			"class": "\\BlueSpice\\HookHandler\\AddUserImageToUserStore",
+			"services": [
+				"UserFactory", "BSRendererFactory"
+			]
 		}
 	},
 	"Hooks": {
@@ -635,7 +641,8 @@
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
 		"MediaWikiServices": "mediawikiservices",
 		"BSUEModulePDFBeforeAddingContent": "bs-ue-module-pdf-integration",
-		"MWStakeCommonUILessVarsInit": "common-user-interface"
+		"MWStakeCommonUILessVarsInit": "common-user-interface",
+		"MWStakeCommonWebAPIsQueryStoreResult": "addUserImage"
 	},
 	"config_prefix": "bsg",
 	"config": {
