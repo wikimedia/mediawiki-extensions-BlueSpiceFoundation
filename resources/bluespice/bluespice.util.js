@@ -47,7 +47,7 @@
 
 	function _confirm( idPrefix, windowCfg, callbackCfg ) {
 		if ( !windowCfg.title && !windowCfg.titleMsg ) {
-			windowCfg.titleMsg = 'bs-extjs-confirm';
+			windowCfg.titleMsg = 'confirm';
 		}
 
 		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );

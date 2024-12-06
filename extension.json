@@ -203,7 +203,8 @@
 				"bs-secs-duration",
 				"bs-two-units-ago",
 				"bs-one-unit-ago",
-				"bs-now"
+				"bs-now",
+				"confirm"
 			],
 			"dependencies": [
 				"mediawiki.cookie",
