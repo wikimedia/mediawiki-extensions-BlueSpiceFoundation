@@ -45,7 +45,7 @@ class AddUserImageToUserStore implements MWStakeCommonWebAPIsQueryStoreResultHoo
 					'user' => $user
 				] + $thumbParams ) );
 
-			$record->set( 'user_image',  $image->render() );
+			$record->set( 'user_image', $image->render() );
 		}
 
 		$result = new ResultSet( $data, $result->getTotal() );
