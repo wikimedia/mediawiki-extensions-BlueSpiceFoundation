@@ -31,7 +31,7 @@ class CheckTransclusionPermissions extends BeforeParserFetchTemplateAndTitle {
 		}
 
 		$mwPermissionManager = $this->getServices()->getPermissionManager();
-		if ( $mwPermissionManager->userCan( 'read', $user, $this->title ) ) {
+		if ( !$mwPermissionManager->userCan( 'read', $user, $this->title ) ) {
 			$this->skip = true;
 			return false;
 		}
