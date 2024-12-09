@@ -571,6 +571,12 @@
 			"services": [
 				"UserFactory", "BSRendererFactory"
 			]
+		},
+		"permissonLockdown": {
+			"class": "\\BlueSpice\\HookHandler\\PermissionLockdown",
+			"services": [
+				"MainConfig", "PermissionManager", "BSUtilityFactory"
+			]
 		}
 	},
 	"Hooks": {
@@ -623,8 +629,8 @@
 		"SearchGetNearMatchComplete": [
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
-		"BeforeParserFetchTemplateAndTitle": [
-			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndTitle\\CheckTransclusionPermissions::callback"
+		"BeforeParserFetchTemplateRevisionRecord": [
+			"permissonLockdown"
 		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
 		"MediaWikiServices": "mediawikiservices",
