@@ -134,7 +134,6 @@
 		"WikiAdmin": "SpecialWikiAdmin"
 	},
 	"APIModules": {
-		"bs-filebackend-store": "BSApiFileBackendStore",
 		"bs-user-store": "BSApiUserStore",
 		"bs-category-store": "BSApiCategoryStore",
 		"bs-adminuser-store": "BSApiAdminUserStore",
@@ -901,7 +900,6 @@
 		"BSApiTasksBase": "includes/api/BSApiTasksBase.php",
 		"BSApiExtJSStoreBase": "includes/api/BSApiExtJSStoreBase.php",
 		"BSApiExtJSDBTableStoreBase": "includes/api/BSApiExtJSDBTableStoreBase.php",
-		"BSApiFileBackendStore": "includes/api/BSApiFileBackendStore.php",
 		"BSApiUserStore": "includes/api/BSApiUserStore.php",
 		"BSApiCategoryStore": "includes/api/BSApiCategoryStore.php",
 		"BSApiAdminUserStore": "includes/api/BSApiAdminUserStore.php",
