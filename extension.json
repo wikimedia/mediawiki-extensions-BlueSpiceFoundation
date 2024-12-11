@@ -571,6 +571,12 @@
 		},
 		"bs-ue-module-pdf-integration": {
 				"class": "\\BlueSpice\\HookHandler\\PDFExportHandler"
+		},
+		"permissonLockdown": {
+			"class": "\\BlueSpice\\HookHandler\\PermissionLockdown",
+			"services": [
+				"MainConfig", "PermissionManager", "TitleFactory", "RevisionLookup", "BSUtilityFactory"
+			]
 		}
 	},
 	"Hooks": {
@@ -624,8 +630,11 @@
 		"SearchGetNearMatchComplete": [
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
-		"BeforeParserFetchTemplateAndtitle": [
-			"BlueSpice\\Hook\\BeforeParserFetchTemplateAndTitle\\CheckTransclusionPermissions::callback"
+		"BeforeParserFetchTemplateRevisionRecord": [
+			"permissonLockdown"
+		],
+		"ApiBeforeMain": [
+			"permissonLockdown"
 		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
 		"MediaWikiServices": "mediawikiservices",
