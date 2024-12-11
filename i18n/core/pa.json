@@ -5,5 +5,7 @@
 		]
 	},
 	"bs-userbar_loginswitch_logout": "ਬਾਹਰ ਆਉ",
-	"bs-userbar_loginswitch_login": "ਦਾਖ਼ਲ ਹੋਵੋ"
+	"bs-userbar_loginswitch_login": "ਦਾਖ਼ਲ ਹੋਵੋ",
+	"bs-permission-role-editor": "ਸੋਧਕ",
+	"bs-permission-role-admin": "ਪ੍ਰਬੰਧਕ"
 }
