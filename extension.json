@@ -575,7 +575,7 @@
 		"permissonLockdown": {
 			"class": "\\BlueSpice\\HookHandler\\PermissionLockdown",
 			"services": [
-				"MainConfig", "PermissionManager", "BSUtilityFactory"
+				"MainConfig", "PermissionManager", "TitleFactory", "RevisionLookup", "BSUtilityFactory"
 			]
 		}
 	},
@@ -630,6 +630,9 @@
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
 		"BeforeParserFetchTemplateRevisionRecord": [
+			"permissonLockdown"
+		],
+		"ApiBeforeMain": [
 			"permissonLockdown"
 		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
