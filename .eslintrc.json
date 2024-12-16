@@ -36,6 +36,10 @@
 		"no-jquery/variable-pattern": "warn",
 		"no-jquery/no-each-util": "warn",
 		"no-jquery/no-in-array": "warn",
-		"max-len": "off"
+		"max-len": "off",
+		"es-x/no-async-functions": "off"
+	},
+	"parserOptions": {
+		"ecmaVersion": 8
 	}
 }
