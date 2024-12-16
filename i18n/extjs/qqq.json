@@ -78,7 +78,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Prefix for naming page collections created by exporting search results",
 	"bs-pagecollection-prefix": "Prefix for naming page collections created by exporting search results",
 	"bs-extjs-pageexport-success": "Dialog title when export was sucessful",
-	"bs-extjs-pageexport-success-text": "Content of dialog when export was sucessful",
 	"bs-extjs-pageexport-required-text": "Dialog text when required fields are not filled",
 	"bs-extjs-export-search-summary-text": "Text for summary message for page edit on export",
 	"bs-extjs-pageexport-error-invalid-title": "Text for error message when name of the list is not valid for a Title",
