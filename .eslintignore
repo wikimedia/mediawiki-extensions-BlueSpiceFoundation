@@ -1,0 +1,4 @@
+/vendor/
+
+# extjs to be removed
+/resources/bluespice.extjs/**

@@ -1,7 +1,7 @@
 // Changes the dom so that the Testsystem is marked
 ( function ( mw, $, bs, d, undefined ) {
 	$( function () {
-		var bsgTestSystem = mw.config.get( 'bsgTestSystem' ),
+		const bsgTestSystem = mw.config.get( 'bsgTestSystem' ),
 			visualElement = $(
 				'<div class="bs-testsystem"><div><h3>' +
 			bsgTestSystem.text +
@@ -14,9 +14,9 @@
 			'text-align': 'center'
 		} );
 
-		var navSection = $( '#bs-nav-sections' );
+		const navSection = $( '#bs-nav-sections' );
 		if ( navSection.length > 0 ) {
-			var navSectionTop = parseInt( navSection.css( 'top' ).replace( /px/g, '' ) ) + 80 + 'px';
+			const navSectionTop = parseInt( navSection.css( 'top' ).replace( /px/g, '' ) ) + 80 + 'px';
 			navSection.css( { top: navSectionTop } );
 		}
 

@@ -7,7 +7,7 @@
 	 * @param {Object} base Default configs
 	 * @param {boolean} [strict=false] Do not try to infer variable names
 	 */
-	var BlueSpiceConfig = function ( base, strict ) {
+	const BlueSpiceConfig = function ( base, strict ) {
 		this.strict = strict || false;
 		this.base = base || {};
 		this.vars = {};
@@ -37,9 +37,10 @@
 	 * Load BS vars from main config to this config
 	 */
 	BlueSpiceConfig.prototype.init = function () {
-		var parsedName, base = $.extend( {}, this.base );
+		let parsedName;
+		const base = $.extend( {}, this.base );
 
-		for ( var name in base ) {
+		for ( const name in base ) {
 			if ( !base.hasOwnProperty( name ) ) {
 				continue;
 			}
@@ -65,9 +66,11 @@
 		forceRemote = forceRemote || false;
 		context = context || {};
 
-		var dfd = $.Deferred(),
-			normalized = [], i = 0,
-			finalValues = {}, missing = [];
+		const dfd = $.Deferred(),
+			normalized = [];
+		let i = 0,
+			finalValues = {},
+			missing = [];
 
 		if ( Array.isArray( name ) ) {
 			for ( i = 0; i < name.length; i++ ) {
@@ -110,7 +113,7 @@
 		checkRemote = checkRemote || false;
 		name = this.normalizeName( name );
 
-		var existsLocally = this.vars.hasOwnProperty( name );
+		const existsLocally = this.vars.hasOwnProperty( name );
 		if ( !checkRemote ) {
 			return existsLocally;
 		}
@@ -139,10 +142,8 @@
 	 * @return {(string|null)}
 	 */
 	BlueSpiceConfig.prototype.parseName = function ( name ) {
-		var prefix,
-			varName = null;
-
-		prefix = name.slice( 0, 3 );
+		const prefix = name.slice( 0, 3 );
+		let varName = null;
 		if ( prefix === 'bsg' ) {
 			varName = name.slice( 3 );
 		} else if ( prefix.slice( 0, 2 ).toLowerCase() === 'bs' ) {
@@ -153,7 +154,9 @@
 	};
 
 	BlueSpiceConfig.prototype.doGatherLocal = function ( normalized ) {
-		var result = {}, i = 0, name = '';
+		const result = {};
+		let i = 0,
+			name = '';
 		if ( !this.initialized ) {
 			this.init();
 		}
@@ -168,7 +171,8 @@
 	};
 
 	BlueSpiceConfig.prototype.getMissing = function ( normalized, final ) {
-		var missing = [], i = 0;
+		const missing = [];
+		let i = 0;
 		for ( i; i < normalized.length; i++ ) {
 			if ( final.hasOwnProperty( normalized[ i ] ) ) {
 				continue;
@@ -180,9 +184,9 @@
 	};
 
 	BlueSpiceConfig.prototype.doResolve = function ( dfd, final ) {
-		var objectKeys = Object.keys( final );
+		const objectKeys = Object.keys( final );
 		if ( objectKeys.length === 1 ) {
-			var firstObjectKey = objectKeys[ 0 ];
+			const firstObjectKey = objectKeys[ 0 ];
 			dfd.resolve( final[ firstObjectKey ] );
 			return;
 		}

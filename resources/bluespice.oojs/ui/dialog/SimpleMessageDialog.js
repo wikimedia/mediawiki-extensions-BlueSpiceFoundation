@@ -1,5 +1,5 @@
 bs.ui.dialog.SimpleMessageDialog = function ( config ) {
-	var params = {};
+	const params = {};
 
 	if ( config.hasOwnProperty( 'name' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.name = this.name;
@@ -53,7 +53,7 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	}
 
 	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionAccept = function () {
-		var params = {
+		const params = {
 			action: 'ok',
 			label: mw.message( 'ooui-dialog-message-accept' ).plain()
 		};
@@ -64,7 +64,7 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	};
 
 	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionReject = function () {
-		var params = {
+		const params = {
 			action: 'cancel',
 			label: mw.message( 'ooui-dialog-message-reject' ).plain()
 		};

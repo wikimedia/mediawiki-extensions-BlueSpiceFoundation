@@ -9,12 +9,12 @@
 	OO.inheritClass( bs.ui.widget.KeyObjectInputWidget, bs.ui.widget.KeyValueInputWidget );
 
 	bs.ui.widget.KeyObjectInputWidget.prototype.getValue = function () {
-		var value = {};
-		for ( var idx in this.addedWidgets ) {
-			var keyWidget = this.addedWidgets[ idx ].keyWidget,
+		const value = {};
+		for ( const idx in this.addedWidgets ) {
+			const keyWidget = this.addedWidgets[ idx ].keyWidget,
 				valueWidget = this.addedWidgets[ idx ].valueWidget,
-				keyValue = keyWidget.getValue(),
-				valueValue = valueWidget.getValue();
+				keyValue = keyWidget.getValue();
+			let valueValue = valueWidget.getValue();
 
 			valueValue = valueValue || keyValue;
 			value[ keyValue ] = valueValue;

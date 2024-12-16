@@ -26,14 +26,14 @@ OO.inheritClass(
  * @inheritdoc
  */
 bs.ui.widget.StoreApiBoundComboBoxInput.prototype.getLookupRequest = function () {
-	var value = this.getValue(),
+	const value = this.getValue(),
 		deferred = $.Deferred();
 
 	if ( value === '' ) {
 		deferred.resolve( [] );
 	}
 
-	var api = new mw.Api();
+	const api = new mw.Api();
 	api.get( {
 		action: this.apiAction,
 		query: value

@@ -7,8 +7,8 @@
 
 	function _push( message, options ) {
 		options = options || {};
-		var notifyInfo = localStorage.getItem( 'notify-info' ),
-			notifyArray = [];
+		const notifyInfo = localStorage.getItem( 'notify-info' );
+		let notifyArray = [];
 		if ( notifyInfo !== null ) {
 			notifyArray = JSON.parse( notifyInfo );
 		}
@@ -18,11 +18,11 @@
 	}
 
 	function _outputDeferredNotifications() {
-		var notifyInfo = localStorage.getItem( 'notify-info' ),
-			serverSideNotifications = mw.config.get( 'bsgDeferredNotifications', [] ),
-			notifyArray = [],
-			shownNotifications = localStorage.getItem( 'shown-notifications' ),
-			shownArray = [];
+		const notifyInfo = localStorage.getItem( 'notify-info' );
+		const serverSideNotifications = mw.config.get( 'bsgDeferredNotifications', [] );
+		let notifyArray = [];
+		const shownNotifications = localStorage.getItem( 'shown-notifications' );
+		let shownArray = [];
 
 		// Load the already shown notifications
 		if ( shownNotifications !== null ) {
@@ -36,8 +36,8 @@
 		notifyArray = notifyArray.concat( serverSideNotifications );
 
 		// Iterate and display notifications only if they haven't been shown before
-		for ( var i = 0; i < notifyArray.length; i++ ) {
-			var notificationId = _getNotificationId( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
+		for ( let i = 0; i < notifyArray.length; i++ ) {
+			const notificationId = _getNotificationId( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
 			if ( shownArray.indexOf( notificationId ) === -1 ) {
 				mw.notify( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
 				shownArray.push( notificationId ); // Mark this notification as shown
@@ -51,17 +51,17 @@
 		localStorage.removeItem( 'notify-info' );
 
 		// Manage notification flag cookie
-		$( '#wpLoginAttempt' ).click( function () {
+		$( '#wpLoginAttempt' ).on( 'click', function () {
 			localStorage.removeItem( 'notificationFlagCookieSet' );
 		} );
 
 		// Used setTimeout() because mw.cookie.set needs sometime to set the cookie.
 		setTimeout( function () {
-			var cookieSet = localStorage.getItem( 'notificationFlagCookieSet' );
+			const cookieSet = localStorage.getItem( 'notificationFlagCookieSet' );
 			if ( cookieSet != 1 ) {
 				mw.cookie.set( 'notificationFlag', 1 );
 			}
-			var cookieValue = mw.cookie.get( 'notificationFlag' );
+			const cookieValue = mw.cookie.get( 'notificationFlag' );
 			if ( cookieValue === 1 ) {
 				localStorage.setItem( 'notificationFlagCookieSet', 1 );
 			}

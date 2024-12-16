@@ -3,7 +3,7 @@
 	bs.wikiText = {};
 
 	bs.wikiText.ExternalLink = function ( cfg ) {
-		var me = this;
+		const me = this;
 
 		this.properties = {
 			displayText: '',
@@ -20,14 +20,14 @@
 			wikiText = wikiText.replace( /(^.*?\[|\].*?$|\r\n|\r|\n)/gm, '' );
 			// wikiText = wikiText.substring(2, wikiText.length -2 ); //trim "[[" and "]]"
 
-			var parts = wikiText.split( ' ' );
+			const parts = wikiText.split( ' ' );
 			me.properties.target = parts[ 0 ];
 			if ( parts.length > 1 ) {
 				parts.shift();
 				me.properties.displayText = parts.join( ' ' );
 			}
 
-			var protocols = [
+			const protocols = [
 				'http://',
 				'https://',
 				'mailto:',
@@ -35,7 +35,7 @@
 				'//'
 			];
 
-			for ( var i = 0; i < protocols.length; i++ ) {
+			for ( let i = 0; i < protocols.length; i++ ) {
 				if ( me.properties.target.indexOf( protocols[ i ] ) === 0 ) {
 					me.properties.protocol = protocols[ i ];
 					me.properties.target = me.properties.target.slice( protocols[ i ].length );
@@ -75,7 +75,7 @@
 	// HINT: http://www.bolinfest.com/javascript/inheritance.php
 	// HINT: http://ejohn.org/blog/simple-javascript-inheritance/
 	bs.wikiText.Link = function ( cfg ) {
-		var me = this,
+		const me = this,
 
 			// HINT: https://www.mediawiki.org/wiki/Help:Images#Syntax
 			// Format: border|frameless|frame|thumb
@@ -86,17 +86,17 @@
 			// Other specific options: alt={alternative text} & page={number} & class={html class}
 			// Caption: only if thumb|frame
 
-		 wikiLinkFlags = [
+			wikiLinkFlags = [
 				'border', 'frameless', 'frame', 'thumb', // Format
 				'upright', // Resizing
 				'left', ' right', 'center', 'none'// , //Horizontal alignment
 			// 'baseline', 'sub', 'super', 'top', 'text-top', 'middle', 'bottom', 'text-bottom' //Vertical alignment (UNSUPPORTED)
 			],
-		 wikiLinkProperties = [
+			wikiLinkProperties = [
 				'alt', 'link', 'nolink'
 			],
 
-		 additionalProperties = [
+			additionalProperties = [
 				'escaped', 'title', 'prefixedTitle', 'nsText', 'nsId', 'thumbsize',
 				/* 'align', */ 'displayText'/* , 'caption', 'sizewidth', 'sizeheight' */
 			// 'displayText' and 'caption' are somehow the same.
@@ -132,20 +132,20 @@
 			// Trim left and right everything (including linebreaks) that is not a starting or ending link code
 			wikiText = wikiText.replace( /(^.*?\[\[|\]\].*?$|\r\n|\r|\n)/gm, '' );
 
-			var parts = wikiText.split( '|' );
+			const parts = wikiText.split( '|' );
 			parseTitle( parts[ 0 ] ); // First token is prefixed title
 
 			// Process the rest
-			for ( var i = 1; i < parts.length; i++ ) {
-				var part = parts[ i ];
+			for ( let i = 1; i < parts.length; i++ ) {
+				const part = parts[ i ];
 				if ( part === '' ) {
 					continue;
 				}
 
 				if ( part.endsWith( 'px' ) ) { // Dependency bluespice.string.js
-					var unsuffixedValue = part.slice( 0, Math.max( 0, part.length - 2 ) ); // "100x100px" --> "100x100"
+					const unsuffixedValue = part.slice( 0, Math.max( 0, part.length - 2 ) ); // "100x100px" --> "100x100"
 					me.properties.sizewidth = unsuffixedValue;
-					var dimensions = unsuffixedValue.split( 'x' ); // "100x100"
+					const dimensions = unsuffixedValue.split( 'x' ); // "100x100"
 					if ( dimensions.length === 2 ) {
 						me.properties.sizewidth = dimensions[ 0 ] === '' ? false : dimensions[ 0 ]; // "x100"
 						me.properties.sizeheight = dimensions[ 1 ];
@@ -192,14 +192,14 @@
 					continue;
 				}
 
-				var kvpair = part.split( '=' );
+				const kvpair = part.split( '=' );
 				if ( kvpair.length === 1 ) {
 					me.properties.displayText = part;
 					me.properties.caption = part; // hopefully
 					continue;
 				}
 
-				var key = kvpair[ 0 ], value = kvpair[ 1 ];
+				const key = kvpair[ 0 ], value = kvpair[ 1 ];
 
 				if ( $.inArray( key, [ 'link', 'verweis' ] ) !== -1 ) {
 					if ( value === '' ) {
@@ -230,12 +230,12 @@
 
 			me.properties.title = title;
 
-			var titleParts = title.split( ':' );
+			const titleParts = title.split( ':' );
 			if ( titleParts.length > 1 ) {
 				me.properties.nsText = titleParts.shift();
 				me.properties.title = titleParts.join( ':' );
 
-				var namespaceIds = mw.config.get( 'wgNamespaceIds' );
+				const namespaceIds = mw.config.get( 'wgNamespaceIds' );
 				me.properties.nsId = namespaceIds[ me.properties.nsText.toLocaleLowerCase() ];
 			}
 		}
@@ -251,8 +251,8 @@
 
 		this.toString = function () {
 			// Build wikitext
-			var wikiText = [],
-				prefix = '';
+			const wikiText = [];
+			let prefix = '';
 
 			if ( this.properties.escaped ) {
 				prefix += ':';
@@ -261,7 +261,7 @@
 				prefix += this.properties.nsText + ':';
 			}
 			wikiText.push( prefix + this.properties.title );
-			for ( var property in this.properties ) {
+			for ( const property in this.properties ) {
 				if ( $.inArray( property, additionalProperties ) !== -1 ) {
 					continue; // Filter non-wikitext data
 				}
@@ -269,7 +269,7 @@
 					continue; // Not yet used. Instead 'align' is set.
 				}
 
-				var value = this.properties[ property ];
+				const value = this.properties[ property ];
 				if ( property === 'noLink' && value === true ) {
 					wikiText.push( 'link=' );
 					continue;
@@ -290,7 +290,7 @@
 				}
 
 				if ( property === 'sizewidth' || property === 'sizeheight' ) {
-					var size = '';
+					let size = '';
 					if ( this.properties.sizewidth && this.properties.sizewidth !== 'false' ) {
 						size = this.properties.sizewidth;
 					}
@@ -450,7 +450,7 @@
 	};
 
 	bs.wikiText.Template = function ( cfg, title ) {
-		var me = this;
+		const me = this;
 
 		this.params = {};
 		this.title = '';
@@ -461,10 +461,10 @@
 			// wikiText = wikiText.substring(2, wikiText.length -2 );
 
 			// TODO: What about linebreaks?
-			var parts = wikiText.split( '|' );
+			const parts = wikiText.split( '|' );
 			this.title = parts[ 0 ];
 
-			for ( var i = 1; i < parts.length; i++ ) {
+			for ( let i = 1; i < parts.length; i++ ) {
 				// TODO: implement
 			}
 		}
@@ -478,11 +478,11 @@
 
 		this.toString = function () {
 			// Build wikitext
-			var wikiText = [];
+			const wikiText = [];
 			wikiText.push( this.title );
 
-			for ( var param in this.params ) {
-				var keyValuePair = param + '=';
+			for ( const param in this.params ) {
+				let keyValuePair = param + '=';
 				// TODO: handle nested "bs.wikiText.Template" objects
 				keyValuePair += this.params[ param ];
 				wikiText.push( keyValuePair );

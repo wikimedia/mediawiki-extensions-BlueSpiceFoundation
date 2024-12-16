@@ -3,7 +3,7 @@
 	// We only want the code to run (and therefore the resources to be loaded)
 	// when a user actually hovers an appropriate element!
 	$( d ).on( 'mouseover', '.bs-tooltip-link', function () {
-		var conf = {
+		const conf = {
 				target: this,
 				title: $( this ).data( 'bs-tt-title' ) || '&#160;',
 				html: $( this ).data( 'bs-tt-html' ) || '',
