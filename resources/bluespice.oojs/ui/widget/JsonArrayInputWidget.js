@@ -18,7 +18,7 @@
 	OO.inheritClass( bs.ui.widget.JsonArrayInputWidget, OO.ui.InputWidget );
 
 	bs.ui.widget.JsonArrayInputWidget.prototype.getValue = function () {
-		var val = this.widget.getValue();
+		let val = this.widget.getValue();
 		if ( !val ) {
 			val = {};
 			return val;

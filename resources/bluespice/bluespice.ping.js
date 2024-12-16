@@ -31,7 +31,7 @@ BSPing = {
 			}.bind( this ) );
 			this.isInit = false;
 		} else {
-			var aListenersToGo = BSPing.getDueListeners();
+			const aListenersToGo = BSPing.getDueListeners();
 			if ( aListenersToGo.length > 0 ) {
 				BSPing.doPing( aListenersToGo );
 			} else {
@@ -41,8 +41,8 @@ BSPing = {
 	},
 	doPing: function ( listeners ) {
 		// do this or getJSON will auto call given callbacks (would make BSPing totally freak out)
-		var BsPingData = [];
-		for ( var i = 0; i < listeners.length; i++ ) {
+		const BsPingData = [];
+		for ( let i = 0; i < listeners.length; i++ ) {
 			BsPingData.push( {
 				sRef: listeners[ i ].sRef,
 				aData: listeners[ i ].aData
@@ -64,7 +64,7 @@ BSPing = {
 			return false;
 		}
 
-		var o = {
+		const o = {
 			sRef: sRef,
 			iInterval: ( typeof iInterval === 'undefined' ? 10000 : iInterval ),
 			aData: ( typeof aData === 'undefined' ? [] : aData ),
@@ -74,12 +74,12 @@ BSPing = {
 		return true;
 	},
 	getDueListeners: function () {
-		var aReturn = [];
+		const aReturn = [];
 		if ( BSPing.aListeners.length < 1 ) {
 			return aReturn;
 		}
-		var currTMPListeners = [];
-		for ( var i = 0; i < BSPing.aListeners.length; i++ ) {
+		const currTMPListeners = [];
+		for ( let i = 0; i < BSPing.aListeners.length; i++ ) {
 			BSPing.aListeners[ i ].iInterval = ( BSPing.aListeners[ i ].iInterval - BSPing.interval );
 			if ( !this.isInit && BSPing.aListeners[ i ].iInterval > 0 ) {
 				currTMPListeners.push( BSPing.aListeners[ i ] );
@@ -98,9 +98,9 @@ BSPing = {
 				return;
 			}
 
-			for ( var i = 0; i < aListenersToGo.length; i++ ) {
+			for ( let i = 0; i < aListenersToGo.length; i++ ) {
 				if ( aListenersToGo[ i ].callback !== false && typeof ( aListenersToGo[ i ].callback ) === 'function' ) {
-					var skip = false;
+					const skip = false;
 					$( document ).trigger( 'BSPingBeforeSingleCallback', [
 						this,
 						aListenersToGo[ i ].callback,

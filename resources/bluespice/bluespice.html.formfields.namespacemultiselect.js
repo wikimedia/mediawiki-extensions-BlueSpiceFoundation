@@ -2,7 +2,7 @@ mw.loader.using( 'ext.bluespice.extjs' ).done( function () {
 	Ext.require( 'BS.model.Namespace', function () {
 		$( '.bs-html-formfield-namespacemultiselect' ).each( function () {
 			// TODO: Implement dedicated ExtJS component or OOJS UI widget
-			var $assocField = $( this ).next( 'input.bs-html-formfield-hidden' ),
+			const $assocField = $( this ).next( 'input.bs-html-formfield-hidden' ),
 				storeData = $( this ).data( 'bs-store-data' ),
 				currentNamespaceIds = $assocField.val().split( '|' ),
 				field = new Ext.form.field.Tag( {

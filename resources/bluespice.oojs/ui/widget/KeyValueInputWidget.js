@@ -43,9 +43,9 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.setValue = function ( values ) {
-		var first = true;
-		for ( var key in values ) {
-			var value = values[ key ],
+		let first = true;
+		for ( const key in values ) {
+			const value = values[ key ],
 				cfg = $.extend( {
 					keyValue: key,
 					valueValue: value
@@ -56,7 +56,7 @@
 				cfg.align = 'top';
 			}
 
-			var deleteButton = this.getDeleteButtonWidget();
+			const deleteButton = this.getDeleteButtonWidget();
 			cfg.deleteWidget = deleteButton;
 
 			this.addEntry( this.getLayouts( cfg ), deleteButton.$element );
@@ -65,7 +65,7 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getDefaultLayoutConfig = function () {
-		var cfg = {
+		const cfg = {
 			keyReadOnly: this.keyReadOnly,
 			addToWidgets: true,
 			valueRequired: this.valueRequired
@@ -79,7 +79,7 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.addEntry = function ( layouts, deleteWidgetElement ) {
-		var $blockWrapper = $( '<div>' ).addClass( 'instance-block' );
+		const $blockWrapper = $( '<div>' ).addClass( 'instance-block' );
 		this.$valueContainer.append( $blockWrapper.append( layouts ) );
 		if ( deleteWidgetElement ) {
 			$blockWrapper.append( deleteWidgetElement );
@@ -88,7 +88,7 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getDeleteButtonWidget = function () {
-		var deleteButton = new OO.ui.ButtonWidget( {
+		const deleteButton = new OO.ui.ButtonWidget( {
 			framed: false,
 			indicator: 'clear'
 		} );
@@ -98,10 +98,10 @@
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getLayouts = function ( cfg, form ) {
 		form = form || {};
-		var layouts = form.layouts || this.getForm( cfg ).layouts,
+		const layouts = form.layouts || this.getForm( cfg ).layouts,
 			layoutElements = [];
 
-		for ( var i = 0; i < layouts.length; i++ ) {
+		for ( let i = 0; i < layouts.length; i++ ) {
 			layoutElements.push( layouts[ i ].$element );
 		}
 
@@ -109,7 +109,7 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getForm = function ( cfg ) {
-		var keyInput = this.getKeyInput( cfg ),
+		const keyInput = this.getKeyInput( cfg ),
 			valueInput = this.getValueInput( cfg ),
 			keyLayout = this.getKeyLayout( keyInput, cfg ),
 			valueLayout = this.getValueLayout( valueInput, cfg );
@@ -140,10 +140,10 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getValidity = function () {
-		var toCheck = [],
+		const toCheck = [],
 			dfd = $.Deferred();
 
-		for ( var i = 0; i < this.addedWidgets.length; i++ ) {
+		for ( let i = 0; i < this.addedWidgets.length; i++ ) {
 			if ( typeof this.addedWidgets[ i ].keyWidget.getValidity === 'function' ) {
 				toCheck.push( this.addedWidgets[ i ].keyWidget );
 			}
@@ -166,7 +166,7 @@
 			return dfd.resolve();
 		}
 
-		var current = inputs.shift();
+		const current = inputs.shift();
 		current.getValidity().done( function () {
 			this.doCheckValidity( inputs, dfd );
 		}.bind( this ) ).fail( function () {
@@ -183,7 +183,7 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getKeyInput = function ( cfg ) {
-		var keyInput = new OO.ui.TextInputWidget( {
+		const keyInput = new OO.ui.TextInputWidget( {
 			value: cfg.keyValue,
 			readOnly: cfg.keyReadOnly,
 			required: !cfg.keyReadOnly,
@@ -195,7 +195,7 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getValueInput = function ( cfg ) {
-		var valueInput = new OO.ui.TextInputWidget( {
+		const valueInput = new OO.ui.TextInputWidget( {
 			value: cfg.valueValue,
 			required: cfg.valueRequired,
 			validity: cfg.valueRequired ? 'non-empty' : false
@@ -225,7 +225,7 @@
 			addToWidgets: false
 		} );
 
-		var layouts = this.getLayouts( {}, this.addForm );
+		const layouts = this.getLayouts( {}, this.addForm );
 
 		this.addButton = this.getAddButtonWidget();
 		this.addButton.$element.addClass( 'bs-ooui-widget-keyValueInputWidget-add-btn' );
@@ -250,13 +250,13 @@
 		if ( !this.addForm ) {
 			return;
 		}
-		var keyValue = this.addForm.inputs.key.getValue(),
-			valueValue = this.addForm.inputs.value.getValue();
+		const keyValue = this.addForm.inputs.key.getValue();
+		let valueValue = this.addForm.inputs.value.getValue();
 
 		this.validateAddNewForm().done( function () {
 			valueValue = valueValue || keyValue;
 
-			var deleteButton = this.getDeleteButtonWidget(),
+			const deleteButton = this.getDeleteButtonWidget(),
 				layoutCfg = $.extend( {
 					keyValue: keyValue,
 					valueValue: valueValue,
@@ -273,7 +273,7 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.validateAddNewForm = function () {
-		var dfd = $.Deferred(),
+		const dfd = $.Deferred(),
 			toCheck = [];
 
 		if ( typeof this.addForm.inputs.key.getValidity === 'function' ) {
@@ -300,15 +300,15 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.getValue = function () {
-		var value = {};
-		for ( var idx in this.addedWidgets ) {
+		const value = {};
+		for ( const idx in this.addedWidgets ) {
 			if ( !this.addedWidgets.hasOwnProperty( idx ) ) {
 				continue;
 			}
-			var keyWidget = this.addedWidgets[ idx ].keyWidget,
+			const keyWidget = this.addedWidgets[ idx ].keyWidget,
 				valueWidget = this.addedWidgets[ idx ].valueWidget,
-				keyValue = keyWidget.getValue(),
-				valueValue = valueWidget.getValue();
+				keyValue = keyWidget.getValue();
+			let valueValue = valueWidget.getValue();
 
 			valueValue = valueValue || keyValue;
 			value[ keyValue ] = valueValue;
@@ -320,7 +320,7 @@
 	bs.ui.widget.KeyValueInputWidget.prototype.onDeleteClick = function ( e ) {
 		e.data.deleteWidget.$element.remove();
 		this.removeFromAddedWidgets( e.data.keyWidget );
-		var currentValue = this.getValue();
+		const currentValue = this.getValue();
 		this.addedWidgets = [];
 		this.$valueContainer.html( '' );
 
@@ -333,8 +333,8 @@
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.removeFromAddedWidgets = function ( keyWidget ) {
-		for ( var idx in this.addedWidgets ) {
-			var widgets = this.addedWidgets[ idx ];
+		for ( const idx in this.addedWidgets ) {
+			const widgets = this.addedWidgets[ idx ];
 			if ( widgets.keyWidget.$element.is( keyWidget.$element ) ) {
 				this.addedWidgets.splice( idx, 1 );
 				return true;

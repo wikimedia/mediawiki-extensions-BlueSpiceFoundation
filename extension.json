@@ -570,7 +570,7 @@
 			"class": "\\BlueSpice\\HookHandler\\MediaWikiServices"
 		},
 		"bs-ue-module-pdf-integration": {
-				"class": "\\BlueSpice\\HookHandler\\PDFExportHandler"
+			"class": "\\BlueSpice\\HookHandler\\PDFExportHandler"
 		},
 		"common-user-interface": {
 			"class": "\\BlueSpice\\HookHandler\\CommonUserInterface",

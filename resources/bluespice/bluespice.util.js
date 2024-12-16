@@ -27,13 +27,13 @@
 			windowCfg.titleMsg = 'bs-extjs-hint';
 		}
 
-		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
+		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
-		var dfd = new $.Deferred();
+		const dfd = new $.Deferred();
 		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
-			var windowManager = new OO.ui.WindowManager();
+			const windowManager = new OO.ui.WindowManager();
 
-			var dialog = new bs.ui.dialog.AlertDialog( config );
+			const dialog = new bs.ui.dialog.AlertDialog( config );
 			$( document.body ).append( windowManager.$element );
 
 			windowManager.addWindows( [ dialog ] );
@@ -50,13 +50,13 @@
 			windowCfg.titleMsg = 'bs-extjs-confirm';
 		}
 
-		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
+		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
-		var dfd = new $.Deferred();
+		const dfd = new $.Deferred();
 		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
-			var windowManager = new OO.ui.WindowManager();
+			const windowManager = new OO.ui.WindowManager();
 
-			var dialog = new bs.ui.dialog.ConfirmDialog( config );
+			const dialog = new bs.ui.dialog.ConfirmDialog( config );
 			$( document.body ).append( windowManager.$element );
 
 			windowManager.addWindows( [ dialog ] );
@@ -69,13 +69,13 @@
 	}
 
 	function _prompt( idPrefix, windowCfg, callbackCfg ) {
-		var config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
+		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
-		var dfd = new $.Deferred();
+		const dfd = new $.Deferred();
 		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
-			var windowManager = new OO.ui.WindowManager();
+			const windowManager = new OO.ui.WindowManager();
 
-			var dialog = new bs.ui.dialog.PromptDialog( config );
+			const dialog = new bs.ui.dialog.PromptDialog( config );
 			$( document.body ).append( windowManager.$element );
 
 			windowManager.addWindows( [ dialog ] );
@@ -106,11 +106,11 @@
 		if ( typeof ( params ) === 'undefined' ) {
 			params = {};
 		}
-		var obj = {};
+		let obj = {};
 		if ( typeof ( params ) === 'object' ) {
 			obj = params;
 		} else {
-			var i;
+			let i;
 			for ( i in params ) {
 				obj[ i ] = params[ i ];
 			}
@@ -119,13 +119,13 @@
 		obj.mod = extension;
 		obj.rf = method;
 
-		var querystring = $.param( obj ), script = mw.util.wikiScript();
+		const querystring = $.param( obj ), script = mw.util.wikiScript();
 
 		return [ script, querystring ].join( '?' );
 	}
 
 	function _getAjaxDispatcherUrl( rs, rsargs, sendCAIContext ) {
-		var script = mw.util.wikiScript(),
+		const script = mw.util.wikiScript(),
 			params = {
 				action: 'ajax',
 				rs: rs
@@ -133,7 +133,7 @@
 		if ( rsargs ) {
 			params.rsargs = rsargs;
 		}
-		var querystring = $.param( params );
+		let querystring = $.param( params );
 
 		if ( sendCAIContext ) {
 			// TODO: Maybe send JSON stringified as single param?
@@ -166,12 +166,12 @@
 	}
 
 	function _getNamespaceText( nsId ) {
-		var formattedNamespaces = mw.config.get( 'wgFormattedNamespaces' );
+		const formattedNamespaces = mw.config.get( 'wgFormattedNamespaces' );
 		return formattedNamespaces[ nsId ];
 	}
 
 	function _selection() {
-		var _textbox,
+		let _textbox,
 			_selectedText = false,
 			_origText,
 			_startPos;
@@ -188,7 +188,7 @@
 				return _selectedText;
 			}
 
-			var tempText, range, endPos;
+			let tempText, range, endPos;
 
 			_textbox = document.getElementById( 'wpTextbox1' );
 			_textbox.focus();
@@ -227,7 +227,7 @@
 		};
 
 		this.restore = function ( text, mode ) {
-			var tempText, pos, range;
+			let tempText, pos, range;
 
 			_textbox.focus();
 
@@ -280,12 +280,12 @@
 		 * @return {Promise}
 		 */
 		this.makeLinks = function ( linkDescs ) {
-			var serializeableLinkDescs = {},
+			const serializeableLinkDescs = {},
 				dfd = new $.Deferred(),
 				api = new mw.Api();
 
 			$.each( linkDescs, function ( id, linkDesc ) {
-				var targetText = linkDesc.target || '';
+				let targetText = linkDesc.target || '';
 
 				// Convert {mw.Title} object
 				if ( targetText.getPrefixedDb ) {
@@ -296,7 +296,7 @@
 					return;
 				}
 
-				var serializeableLinkDesc = {
+				const serializeableLinkDesc = {
 					target: targetText,
 					text: linkDesc.text || null,
 					attribs: linkDesc.attribs || {},
@@ -326,7 +326,7 @@
 		 * @return {Promise}
 		 */
 		this.makeLink = function ( target, text, attribs, query ) {
-			var dfd = new $.Deferred();
+			const dfd = new $.Deferred();
 			this.makeLinks( {
 				singlelink: {
 					target: target,
@@ -350,28 +350,28 @@
 	function _timestampToAgeString( unixTimestamp ) {
 		// This is a js version of "adapter/Utility/FormatConverter.class.php" -> timestampToAgeString
 		// TODO: use PLURAL (probably wont work in mw 1.17)
-		var sDateTimeOut = '',
+		let sDateTimeOut = '',
 			sYears = '',
 			sMonths = '',
 			sWeeks = '',
 			sDays = '',
 			sHrs = '',
 			sMins = '',
-			sSecs = '',
-			sTsPast = unixTimestamp,
-			sTsNow = Math.round( Date.now() / 1000 ),
-			iDuration = sTsNow - sTsPast,
-			iYears = Math.floor( iDuration / ( 60 * 60 * 24 * 365 ) );
+			sSecs = '';
+		const sTsPast = unixTimestamp;
+		const sTsNow = Math.round( Date.now() / 1000 );
+		let iDuration = sTsNow - sTsPast;
+		const iYears = Math.floor( iDuration / ( 60 * 60 * 24 * 365 ) );
 		iDuration %= 60 * 60 * 24 * 365;
-		var iMonths = Math.floor( iDuration / ( 60 * 60 * 24 * 30.5 ) );
+		const iMonths = Math.floor( iDuration / ( 60 * 60 * 24 * 30.5 ) );
 		iDuration %= 60 * 60 * 24 * 30.5;
-		var iWeeks = Math.floor( iDuration / ( 60 * 60 * 24 * 7 ) );
+		const iWeeks = Math.floor( iDuration / ( 60 * 60 * 24 * 7 ) );
 		iDuration %= 60 * 60 * 24 * 7;
-		var iDays = Math.floor( iDuration / ( 60 * 60 * 24 ) );
+		const iDays = Math.floor( iDuration / ( 60 * 60 * 24 ) );
 		iDuration %= 60 * 60 * 24;
-		var iHrs = Math.floor( iDuration / ( 60 * 60 ) );
+		const iHrs = Math.floor( iDuration / ( 60 * 60 ) );
 		iDuration %= 60 * 60;
-		var iMins = Math.floor( iDuration / 60 ),
+		const iMins = Math.floor( iDuration / 60 ),
 			iSecs = iDuration % 60;
 
 		if ( iYears > 0 ) {
@@ -419,28 +419,28 @@
 
 	function _convertDateToMWTimestamp( date ) {
 		// welcome to handling timestamps in js
-		var curr_year = date.getFullYear(),
-			curr_month = date.getMonth() + 1;
+		const curr_year = date.getFullYear();
+		let curr_month = date.getMonth() + 1;
 		if ( curr_month < 10 ) {
 			curr_month = '0' + curr_month;
 		}
-		var curr_date = date.getDate();
+		let curr_date = date.getDate();
 		if ( curr_date < 10 ) {
 			curr_date = '0' + curr_date;
 		}
-		var curr_hour = date.getHours();
+		let curr_hour = date.getHours();
 		if ( curr_hour < 10 ) {
 			curr_hour = '0' + curr_hour;
 		}
-		var curr_min = date.getMinutes();
+		let curr_min = date.getMinutes();
 		if ( curr_min < 10 ) {
 			curr_min = '0' + curr_min;
 		}
-		var curr_sec = date.getSeconds();
+		let curr_sec = date.getSeconds();
 		if ( curr_sec < 10 ) {
 			curr_sec = '0' + curr_sec;
 		}
-		var newtimestamp =
+		const newtimestamp =
 			curr_year.toString() +
 			curr_month.toString() +
 			curr_date.toString() +
@@ -469,7 +469,7 @@
 
 	function _convertMWTimestampToDate( ts ) {
 		// ts = YYYYMMDDHHMMSS
-		var tsSplit = ts.match( /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/ ),
+		const tsSplit = ts.match( /^(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})$/ ),
 			year = parseInt( tsSplit[ 1 ] ),
 			month = parseInt( tsSplit[ 2 ] ),
 			day = parseInt( tsSplit[ 3 ] ),
@@ -490,7 +490,7 @@
 	 * @return {Void}
 	 */
 	function _toggleMessage( url, title, width, height ) {
-		var win = Ext.create( 'Ext.Window', {
+		const win = Ext.create( 'Ext.Window', {
 			id: 'winToggleMsg',
 			autoLoad: url,
 			width: width,
@@ -509,8 +509,8 @@
 	 * @return {Object}
 	 */
 	function _makeDataAttributeObject( obj ) {
-		var data = {};
-		for ( var property in obj ) {
+		const data = {};
+		for ( const property in obj ) {
 			data[ 'data-bs-' + property ] = obj[ property ];
 		}
 		return data;
@@ -525,8 +525,9 @@
 	 * @return {Object}
 	 */
 	function _unprefixDataAttributeObject( obj ) {
-		var data = {}, newProperty = '';
-		for ( var property in obj ) {
+		const data = {};
+		let newProperty = '';
+		for ( const property in obj ) {
 			newProperty = property;
 			if ( property.startsWith( 'data-bs-' ) !== false ) {
 				newProperty = property.slice( 8, 8 + property.length );
@@ -543,15 +544,16 @@
 	 * @return {Object}
 	 */
 	function _makeAttributeObject( node ) {
-		var data = {}, attribute;
-		for ( var i = 0; i < node.attributes.length; i++ ) {
+		const data = {};
+		let attribute;
+		for ( let i = 0; i < node.attributes.length; i++ ) {
 			attribute = node.attributes[ i ].name;
 			data[ attribute ] = node.attributes[ i ].value;
 		}
 		return data;
 	}
 
-	var _tempAnchor = null;
+	let _tempAnchor = null;
 
 	/**
 	 * Gets all GET parameters from an url.
@@ -583,15 +585,15 @@
 
 	// TODO RBV (31.07.12 15:11): Check for full browser compatibility as the location-Object has no official standard.
 	function __getUrlParams( loc ) {
-		var oKeyValuePairs = {};
+		const oKeyValuePairs = {};
 		if ( loc.search === '' ) {
 			return oKeyValuePairs;
 		}
-		var sParams = loc.search.slice( 1 ),
+		const sParams = loc.search.slice( 1 ),
 			aParams = sParams.split( '&' );
 
-		for ( var i = 0; i < aParams.length; i++ ) {
-			var aKeyValuePair = aParams[ i ].split( '=' ),
+		for ( let i = 0; i < aParams.length; i++ ) {
+			const aKeyValuePair = aParams[ i ].split( '=' ),
 				key = decodeURIComponent( aKeyValuePair[ 0 ] ),
 				value = decodeURIComponent( aKeyValuePair[ 1 ] ); // With "?param1=val1&param2" oKeyValuePairs['param2'] will be "undefined". That's okay, but can be discussed.
 			oKeyValuePairs[ key ] = value;
@@ -608,9 +610,9 @@
 	 * @return {string} The parameters value or the default value if parameter not set.
 	 */
 	function _getUrlParam( sParamName, sDefaultValue, url ) {
-		var sValue = sDefaultValue || '',
-			oParams = _getUrlParams( url ),
-			key;
+		let sValue = sDefaultValue || '';
+		const oParams = _getUrlParams( url );
+		let key;
 
 		for ( key in oParams ) {
 			if ( key === sParamName ) {
@@ -626,12 +628,12 @@
 	 * @param {Object} oSrc The ExtJS MulitSelect field
 	 */
 	function _addEntryToMultiSelect( oSrc ) {
-		var sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 ),
+		const sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 ),
 			sTitle = oSrc.getAttribute( 'title' ),
 			sMessage = oSrc.getAttribute( 'msg' );
 		Ext.Msg.prompt( sTitle, sMessage, function ( btn, text ) {
 			if ( btn == 'ok' ) {
-				var oSelect = document.getElementById( 'mw-input-' + sFieldName );
+				let oSelect = document.getElementById( 'mw-input-' + sFieldName );
 				if ( !oSelect ) {
 					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
 				}
@@ -657,12 +659,12 @@
 	 * @param {Object} oSrc The ExtJS MulitSelect field
 	 */
 	function _deleteEntryFromMultiSelect( oSrc ) {
-		var sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 ),
-			elSel = document.getElementById( 'mw-input-' + sFieldName );
+		const sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 );
+		let elSel = document.getElementById( 'mw-input-' + sFieldName );
 		if ( elSel === null ) {
 			elSel = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
 		}
-		var i;
+		let i;
 		for ( i = elSel.length - 1; i >= 0; i-- ) {
 			if ( elSel.options[ i ].selected ) {
 				elSel.remove( i );
@@ -671,16 +673,16 @@
 	}
 
 	function _wikiGetlink( params, str ) {
-		var pageName = str || mw.config.get( 'wgPageName' );
+		const pageName = str || mw.config.get( 'wgPageName' );
 		params = params || {};
 		params.title = pageName;
 
-		var url = mw.util.wikiScript() + '?' + $.param( params );
+		const url = mw.util.wikiScript() + '?' + $.param( params );
 		return url;
 	}
 
 	function _auditCssSelectors() {
-		var links = [], rules = [], unmatched = [], selectors = { total: 0, matched: 0 };
+		const links = [], rules = [], unmatched = [], selectors = { total: 0, matched: 0 };
 
 		$.each( document.getElementsByTagName( 'link' ), function ( index, link ) {
 			if ( link.sheet !== null ) {
@@ -720,9 +722,9 @@
 	 * @return {undefined}
 	 */
 	function _registerNamespace( subNamespace, baseNamespace ) {
-		var baseNS = baseNamespace || window,
-			parts = subNamespace.split( '.' ),
-			firstPart = parts[ 0 ];
+		let baseNS = baseNamespace || window;
+		const parts = subNamespace.split( '.' );
+		const firstPart = parts[ 0 ];
 		baseNS[ firstPart ] = baseNS[ firstPart ] || {};
 		baseNS = baseNS[ parts[ 0 ] ];
 		parts.shift(); // Remove first element
@@ -744,16 +746,16 @@
 	 * @return mixed
 	 */
 	function _runCallback( callback, args, scope ) {
-		var parts = callback.split( '.' ),
-			func = window[ parts[ 0 ] ];
-		for ( var i = 1; i < parts.length; i++ ) {
+		const parts = callback.split( '.' );
+		let func = window[ parts[ 0 ] ];
+		for ( let i = 1; i < parts.length; i++ ) {
 			func = func[ parts[ i ] ];
 		}
 
 		return func.apply( scope || null, args );
 	}
 
-	var util = {
+	const util = {
 		getNamespaceText: _getNamespaceText,
 		getRemoteHandlerUrl: _getRemoteHandlerUrl,
 		getAjaxDispatcherUrl: _getAjaxDispatcherUrl,

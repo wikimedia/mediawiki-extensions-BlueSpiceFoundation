@@ -1,6 +1,6 @@
 ( function ( mw, $, d, undefined ) {
 	$( d ).on( 'click', '.bs-treenodeitem', function ( e ) {
-		var $parentAnchor = $( e.target ).parentsUntil( '.bs-treenodeitem', 'a' );
+		const $parentAnchor = $( e.target ).parentsUntil( '.bs-treenodeitem', 'a' );
 		if ( e.target.nodeName.toUpperCase() === 'A' || $parentAnchor.length !== 0 ) {
 			return; // Don't prevent clicks on anchor elements
 		}
@@ -22,11 +22,11 @@
 	 * @return {undefined}
 	 */
 	function _updatePathCookie( $node ) {
-		var $root = $node.parents( '.bs-tree-root' ).first(),
+		const $root = $node.parents( '.bs-tree-root' ).first(),
 			// A visible leaf is any .bs-treenodeitem that as a parent with no
 			// '.collaped' and is either self '.collapsed' or has no <ul>
 			$visibleLeafs = $root.find( '.bs-treenodeitem' ).filter( function () {
-				var $treeNode = $( this );
+				const $treeNode = $( this );
 				if ( $treeNode.parents( 'li' ).hasClass( 'collapsed' ) ) {
 					return false;
 				}

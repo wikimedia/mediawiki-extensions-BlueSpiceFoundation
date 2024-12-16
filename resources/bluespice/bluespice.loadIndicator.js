@@ -46,7 +46,7 @@
 	};
 
 	bs.LoadIndicator.prototype.setLoading = function ( show ) {
-		var hideTime;
+		let hideTime;
 		if ( show ) {
 			clearTimeout( this.hideTimer );
 			this.hideTimer = null;

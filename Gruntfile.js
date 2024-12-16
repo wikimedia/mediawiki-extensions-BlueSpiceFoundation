@@ -12,8 +12,7 @@ module.exports = function ( grunt ) {
 				'**/*.{js,json}',
 				'!node_modules/**',
 				'!vendor/**',
-				'!resources/bluespice.extjs/Ext.ux/**',
-				'!resources/extjs/**'
+				'!resources/bluespice.extjs/**' // extjs to be removed
 			]
 		},
 		// eslint-disable-next-line es-x/no-object-assign

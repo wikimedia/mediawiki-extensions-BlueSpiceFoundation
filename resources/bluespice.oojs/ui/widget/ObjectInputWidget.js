@@ -14,11 +14,11 @@
 
 	bs.ui.widget.ObjectInputWidget.prototype.createInputs = function () {
 
-		for ( var key in this.inputs ) {
+		for ( const key in this.inputs ) {
 			if ( !this.inputs.hasOwnProperty( key ) ) {
 				continue;
 			}
-			var input = this.inputs[ key ];
+			const input = this.inputs[ key ];
 			switch ( input.type ) {
 				case 'text':
 					this.widgets[ key ] = new OO.ui.TextInputWidget( input.widget || {} );
@@ -51,10 +51,10 @@
 	};
 
 	bs.ui.widget.ObjectInputWidget.prototype.getValidity = function () {
-		var toCheck = [],
+		const toCheck = [],
 			dfd = $.Deferred();
 
-		for ( var key in this.widgets ) {
+		for ( const key in this.widgets ) {
 			if ( !this.widgets.hasOwnProperty( key ) ) {
 				continue;
 			}
@@ -72,7 +72,7 @@
 		if ( inputs.length === 0 ) {
 			return dfd.resolve();
 		}
-		var current = inputs.shift();
+		const current = inputs.shift();
 		current.getValidity().done( function () {
 			this.doCheckValidity( inputs, dfd );
 		}.bind( this ) ).fail( function () {
@@ -86,7 +86,7 @@
 			// Will be handled by internal validation
 			return;
 		}
-		for ( var key in this.widgets ) {
+		for ( const key in this.widgets ) {
 			if ( !this.widgets.hasOwnProperty( key ) ) {
 				continue;
 			}
@@ -100,7 +100,7 @@
 		if ( !value ) {
 			value = '';
 		}
-		for ( var key in this.widgets ) {
+		for ( const key in this.widgets ) {
 			if ( !this.widgets.hasOwnProperty( key ) ) {
 				continue;
 			}
@@ -134,12 +134,12 @@
 	};
 
 	bs.ui.widget.ObjectInputWidget.prototype.getValue = function () {
-		var value = {};
-		for ( var key in this.widgets ) {
+		const value = {};
+		for ( const key in this.widgets ) {
 			if ( !this.widgets.hasOwnProperty( key ) ) {
 				continue;
 			}
-			var widgetValue = this.getWidgetValue( this.widgets[ key ] );
+			const widgetValue = this.getWidgetValue( this.widgets[ key ] );
 			if ( widgetValue ) {
 				value[ key ] = widgetValue;
 			}

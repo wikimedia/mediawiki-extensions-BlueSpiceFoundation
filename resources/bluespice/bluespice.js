@@ -4,7 +4,7 @@
 
 var bs = ( function ( mw, $, undefined ) {
 
-	var bs = {
+	const bs = {
 		// TODO: maybe own file "bluespice.ns.js"?
 			ns: {
 				filter: {
@@ -15,9 +15,9 @@ var bs = ( function ( mw, $, undefined ) {
 			}
 		},
 		namespaceIds = mw.config.get( 'wgNamespaceIds' );
-	for ( var lcNamespaceName in namespaceIds ) {
-		var namespaceId = namespaceIds[ lcNamespaceName ],
-			ucNamespaceName = lcNamespaceName.toUpperCase();
+	for ( const lcNamespaceName in namespaceIds ) {
+		const namespaceId = namespaceIds[ lcNamespaceName ];
+		let ucNamespaceName = lcNamespaceName.toUpperCase();
 		if ( namespaceId === 0 ) {
 			ucNamespaceName = 'MAIN';
 		}
@@ -38,10 +38,10 @@ var bs = ( function ( mw, $, undefined ) {
 	}
 
 	bs.ns.filter.allBut = function ( excludeIds ) {
-		var namespaceIds = mw.config.get( 'wgNamespaceIds' ),
+		const namespaceIds = mw.config.get( 'wgNamespaceIds' ),
 			includeIds = [];
-		for ( var lcNamespaceName in namespaceIds ) {
-			var namespaceId = namespaceIds[ lcNamespaceName ];
+		for ( const lcNamespaceName in namespaceIds ) {
+			const namespaceId = namespaceIds[ lcNamespaceName ];
 			if ( excludeIds.indexOf( namespaceId ) !== -1 ) {
 				continue;
 			}
@@ -58,6 +58,6 @@ var bs = ( function ( mw, $, undefined ) {
 window.bs = window.blueSpice = bs;
 
 mw.hook( 'importOffice.collectionPrefix' ).add( function ( params ) {
-	var text = mw.config.get( 'bsgPageCollectionPrefix' );
+	const text = mw.config.get( 'bsgPageCollectionPrefix' );
 	params.prefix = text;
 } );
