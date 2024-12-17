@@ -417,9 +417,7 @@ class RoleManager {
 			// Required for external authentication providers like LDAP, SAML, OIDC
 			'autocreateaccount',
 			// Required for "reset password" functionality
-			'editmyprivateinfo',
-			// Required for API logins, e.g. by bots
-			'writeapi',
+			'editmyprivateinfo'
 		];
 	}
 }
