@@ -3,12 +3,13 @@
 namespace BlueSpice\Tests\Utility\WikiTextLinksHelper;
 
 use BlueSpice\Utility\WikiTextLinksHelper\InterwikiLinksHelper;
-use MediaWiki\MediaWikiServices;
 
+/**
+ * @group Database
+ */
 class InterwikiLinksHelperTest extends InternalLinksHelperTest {
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getExpected() {
@@ -16,11 +17,10 @@ class InterwikiLinksHelperTest extends InternalLinksHelperTest {
 	}
 
 	/**
-	 *
 	 * @param string $wikitext
 	 * @return InterwikiLinksHelper
 	 */
 	protected function getHelper( $wikitext ) {
-		return new InterwikiLinksHelper( $wikitext, MediaWikiServices::getInstance() );
+		return new InterwikiLinksHelper( $wikitext, $this->getServiceContainer() );
 	}
 }
