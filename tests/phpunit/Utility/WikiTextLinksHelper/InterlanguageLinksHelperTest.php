@@ -3,12 +3,13 @@
 namespace BlueSpice\Tests\Utility\WikiTextLinksHelper;
 
 use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
-use MediaWiki\MediaWikiServices;
 
+/**
+ * @group Database
+ */
 class InterlanguageLinksHelperTest extends InterwikiLinksHelperTest {
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getExpected() {
@@ -16,11 +17,10 @@ class InterlanguageLinksHelperTest extends InterwikiLinksHelperTest {
 	}
 
 	/**
-	 *
 	 * @param string $wikitext
 	 * @return InterlanguageLinksHelper
 	 */
 	protected function getHelper( $wikitext ) {
-		return new InterlanguageLinksHelper( $wikitext, MediaWikiServices::getInstance() );
+		return new InterlanguageLinksHelper( $wikitext, $this->getServiceContainer() );
 	}
 }

@@ -8,36 +8,25 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
 
+/**
+ * @group Database
+ */
 class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 
 	/**
-	 *
-	 * @return array
+	 * @inheritDoc
 	 */
-	protected function getExpected() {
-		return $this->provideInternalLinks()
-			+ $this->provideInterwikiLinks()
-			+ $this->provideFileLinks()
-			+ $this->provideInterlanguageLinks()
-			+ $this->provideInterwikiLinksBroken()
-			+ $this->provideCategoryLinks();
+	public function setUp(): void {
+		Title::clearCaches();
+
+		$this->overrideConfigValue(
+			MainConfigNames::InterwikiCache,
+			ClassicInterwikiLookup::buildCdbHash( $this->getTestInterwikis() )
+		);
 	}
 
-	/**
-	 *
-	 * @param string $wikitext
-	 * @return InternalLinksHelper
-	 */
-	protected function getHelper( $wikitext ) {
-		return new InternalLinksHelper( $wikitext );
-	}
-
-	/**
-	 * @covers BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
-	 */
-	public function testGetTargetMatches() {
-		// Inspired by `ExtraParserTest::testParseLinkParameter`
-		static $testInterwikis = [
+	protected function getTestInterwikis() {
+		return [
 			[
 				'iw_prefix' => 'local',
 				'iw_url' => 'http://doesnt.matter.invalid/$1',
@@ -58,14 +47,55 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 				'iw_api' => '',
 				'iw_wikiid' => '',
 				'iw_local' => 1
+			],
+			[
+				'iw_prefix' => 'mw',
+				'iw_url' => 'http://doesnt.matter.invalid/$1',
+				'iw_api' => '',
+				'iw_wikiid' => '',
+				'iw_local' => 0
+			],
+			[
+				'iw_prefix' => 'wiktionary',
+				'iw_url' => 'http://doesnt.matter.invalid/$1',
+				'iw_api' => '',
+				'iw_wikiid' => '',
+				'iw_local' => 0
+			],
+			[
+				'iw_prefix' => 'wikipedia',
+				'iw_url' => 'http://doesnt.matter.invalid/$1',
+				'iw_api' => '',
+				'iw_wikiid' => '',
+				'iw_local' => 0
 			]
 		];
-		$this->overrideConfigValue(
-			MainConfigNames::InterwikiCache,
-			ClassicInterwikiLookup::buildCdbHash( $testInterwikis )
-		);
-		Title::clearCaches();
+	}
 
+	/**
+	 * @return array
+	 */
+	protected function getExpected() {
+		return $this->provideInternalLinks()
+			+ $this->provideInterwikiLinks()
+			+ $this->provideFileLinks()
+			+ $this->provideInterlanguageLinks()
+			+ $this->provideInterwikiLinksBroken()
+			+ $this->provideCategoryLinks();
+	}
+
+	/**
+	 * @param string $wikitext
+	 * @return InternalLinksHelper
+	 */
+	protected function getHelper( $wikitext ) {
+		return new InternalLinksHelper( $wikitext );
+	}
+
+	/**
+	 * @covers BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
+	 */
+	public function testGetTargetMatches() {
 		$wikitext = $this->provideWikitextData();
 		$helper = $this->getHelper( $wikitext );
 		foreach ( $this->getExpected() as $key => $title ) {
@@ -102,7 +132,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function provideInternalLinks() {
@@ -114,7 +143,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function provideFileLinks() {
@@ -125,7 +153,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function provideInterwikiLinks() {
@@ -139,7 +166,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function provideInterwikiLinksBroken() {
@@ -149,7 +175,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function provideInterlanguageLinks() {
@@ -160,7 +185,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function provideExternalLinks() {
@@ -171,7 +195,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function provideCategoryLinks() {
@@ -183,7 +206,6 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function provideWikitextData() {
