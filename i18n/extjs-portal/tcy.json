@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"ChiK"
 		]
 	},
 	"bs-extjs-portal-height": "ಎತ್ತರೊ",
 	"bs-extjs-portal-timespan-week": "ವಾರೋ",
-	"bs-extjs-portal-timespan-month": "ತಿಂಗೊಳು"
+	"bs-extjs-portal-timespan-month": "ತಿಂಗೊಲು"
 }
