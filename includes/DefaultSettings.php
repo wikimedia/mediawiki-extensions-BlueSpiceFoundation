@@ -119,12 +119,6 @@ if ( !isset( $GLOBALS[ 'bsgNamespaceRolesLockdown' ] ) ) {
 	$GLOBALS['bsgNamespaceRolesLockdown'] = [];
 }
 
-// Hardcoded permissions, not part of role system
-// Required for external authentication providers like LDAP, SAML, OIDC
-$GLOBALS['wgGroupPermissions']['*']['autocreateaccount'] = true;
-// Required for "reset password" functionality
-$GLOBALS['wgGroupPermissions']['*']['editmyprivateinfo'] = true;
-
 $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	"apihighlimits" => [
 		"type" => 'global',
@@ -504,10 +498,6 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 		"roles" => [ "editor", "maintenanceadmin", "admin" ]
 	]
 ];
-
-// Introduce new semiprotected restriction level - editor is a permission in this case
-$GLOBALS['wgSemiprotectedRestrictionLevels'] = [ 'editor' ];
-$GLOBALS['wgRestrictionLevels'] = [ '', 'editor', 'sysop' ];
 
 /**
  * Allows extensions to distinguish between normal content NS, that can be
