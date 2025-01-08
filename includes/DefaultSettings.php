@@ -124,8 +124,6 @@ if ( !isset( $GLOBALS[ 'bsgNamespaceRolesLockdown' ] ) ) {
 $GLOBALS['wgGroupPermissions']['*']['autocreateaccount'] = true;
 // Required for "reset password" functionality
 $GLOBALS['wgGroupPermissions']['*']['editmyprivateinfo'] = true;
-// Required for API logins, e.g. by bots
-$GLOBALS['wgGroupPermissions']['*']['writeapi'] = true;
 
 $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	"apihighlimits" => [
