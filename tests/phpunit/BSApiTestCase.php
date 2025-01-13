@@ -2,9 +2,10 @@
 
 namespace BlueSpice\Tests;
 
+use MediaWiki\Tests\Api\ApiTestCase;
 use User;
 
-class BSApiTestCase extends \ApiTestCase {
+class BSApiTestCase extends ApiTestCase {
 
 	/**
 	 *
