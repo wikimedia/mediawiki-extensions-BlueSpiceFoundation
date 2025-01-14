@@ -13,16 +13,16 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	 * @return bool
 	 */
 	public function validate( $value, $alldata ) {
-		$p = parent::validate( $value, $alldata );
-		if ( $p !== true ) {
-			return $p;
-		}
-
 		if ( !is_array( $value ) ) {
 			return false;
 		}
-
-		return true;
+		$options = $this->getOptions();
+		if ( array_keys( $options ) !== range( 0, count( $options ) - 1 ) ) {
+			// associative array
+			$options = array_keys( $options );
+			return empty( array_diff( $value, $options ) );
+		}
+		return parent::validate( $value, $alldata );
 	}
 
 	/**
@@ -71,7 +71,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		$this->mParent->getOutput()->addModules( 'oojs-ui-widgets' );
 
 		$attr = $this->getOOUIAttributes();
-		$attr['selected'] = $value;
+		$attr['selected'] = $this->convertValueForWidget( $value );
 
 		// If options hold just a list of already set values, disable it
 		if ( $value == $this->getOptions() ) {
@@ -125,19 +125,14 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 			return [];
 		}
 
-		$isAssoc = !isset( $options[0] );
+		$isAssoc = array_keys( $options ) !== range( 0, count( $options ) - 1 );
 		$oouiOptions = [];
 		foreach ( $options as $data => $label ) {
-			$oouiOption = [
-				'data' => $data,
+			$oouiOptions[] = [
+				'data' => $isAssoc ? $data : $label,
 				'label' => $label,
 				'icon' => ''
 			];
-
-			if ( $isAssoc == false ) {
-				$oouiOption['data'] = $label;
-			}
-			$oouiOptions[] = $oouiOption;
 		}
 
 		return $oouiOptions;
@@ -230,5 +225,24 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	protected function needsLabel() {
 		return true;
 	}
+
+	/**
+	 * @param array $value
+	 * @return array
+	 */
+	private function convertValueForWidget( array $value ) {
+		// OO.ui.MenuTagMultiselectWidget expects an array of objects with 'data' and 'label' keys
+		// If option is listed in the options array, label from the option will be used, and this one
+		// set here will be ignored
+		$converted = [];
+		foreach ( $value as $val ) {
+			$converted[] = [
+				'data' => $val,
+				'label' => (string)$val
+			];
+		}
+		return $converted;
+	}
+
 
 }
