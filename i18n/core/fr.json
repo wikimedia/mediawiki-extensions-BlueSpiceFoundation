@@ -6,6 +6,7 @@
 			"DreZhsh",
 			"Gomoko",
 			"Macofe",
+			"Mahabarata",
 			"Pols12",
 			"Thibaut120094",
 			"Urhixidur",
@@ -110,5 +111,9 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Le fichier de configuration $1 n’a pas pu être écrit !",
 	"bs-pref-logopath-help": "Le logo doit être stocké dans le dossier /w/images de votre installation. Si vous le stockez dans le dossier /w/skins de votre installation BlueSpice, il peut être écrasé lors d’une mise à jour.",
 	"bs-pref-faviconpath-help": "L’icône de favori doit être stockée dans le dossier /w/images de votre installation. Si vous la stockez dans le dossier /w/skins de votre installation BlueSpice, elle pourrait être écrasée lors d'une mise à jour. Les icônes de favori ont une extension de fichier « .ico ».",
-	"bs-exttype-bluespice-assets": "Actifs de BlueSpice"
+	"bs-exttype-bluespice-assets": "Actifs de BlueSpice",
+	"bs-permission-role-reader": "Lecteur",
+	"bs-permission-role-editor": "Rédacteur",
+	"bs-permission-role-reviewer": "Relecteur",
+	"bs-permission-role-admin": "Administrateur"
 }

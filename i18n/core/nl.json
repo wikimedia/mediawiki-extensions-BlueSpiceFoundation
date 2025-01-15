@@ -59,7 +59,7 @@
 	"bs-filesystemhelper-folder-already-exists": "De map <code>$1</code> bestaat al.",
 	"bs-filesystemhelper-folder-copy-error": "De map <code>$1</code> kon niet hernoemd worden.",
 	"bs-filesystemhelper-folder-not-exists": "De map <code>$1</code> bestaat niet.",
-	"bs-filesystemhelper-folder-rename-error": "De map <code>$1</code> kan niet naar <code>$2</code> hernoemd worden.",
+	"bs-filesystemhelper-folder-rename-error": "De map <code>$1</code> kan niet tot <code>$2</code> hernoemd worden.",
 	"bs-filesystemhelper-upload-err-code": "Het bestand kon niet worden geüpload: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "Het bestand heeft niet de vereiste extensie: $1 .",
 	"bs-filesystemhelper-upload-unsupported-type": "Dit bestandstype wordt niet ondersteund.",
@@ -112,5 +112,9 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Het configuratiebestand $1 kon niet worden geschreven.",
 	"bs-pref-logopath-help": "Het logo moet worden geplaatst in de map /w/images van uw installatie. Als u deze plaatst in de map /w/skins van uw BlueSpice installatie, kan deze mogelijk worden overschreven bij een upgrade.",
 	"bs-pref-faviconpath-help": "De favicon moet worden geplaatst in de map /w/images van uw installatie. Als u deze plaatst in de map /w/skins van uw BlueSpice installatie, kan deze mogelijk worden overschreven bij een upgrade. Favicons hebben de bestandsextensie .ico.",
-	"bs-exttype-bluespice-assets": "BlueSpice-activa"
+	"bs-exttype-bluespice-assets": "BlueSpice-activa",
+	"bs-permission-role-reader": "Lezer",
+	"bs-permission-role-editor": "Bewerker",
+	"bs-permission-role-reviewer": "Controleur",
+	"bs-permission-role-admin": "Beheerder"
 }

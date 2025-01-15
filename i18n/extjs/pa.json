@@ -12,5 +12,7 @@
 	"bs-extjs-categorytree-title": "ਸ਼੍ਰੇਣੀਆਂ",
 	"bs-extjs-label-user": "ਵਰਤੋਂਕਾਰ",
 	"bs-extjs-mainns": "(ਮੁੱਖ)",
-	"bs-extjs-pageexport-list-format-link-label": "ਕੜੀ"
+	"bs-extjs-pageexport-list-format-link-label": "ਕੜੀ",
+	"bs-extjs-label-directsearch": "ਖੋਜੋ",
+	"bs-extjs-categoryboxselect-emptytext": "ਸ਼੍ਰੇਣੀ ਜੋੜੋ"
 }

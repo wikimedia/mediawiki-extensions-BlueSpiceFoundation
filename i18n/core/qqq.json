@@ -113,5 +113,9 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Error message in manager interfaces in case a file could not be written not the filesystem. \n\nParameters:\n* $1 - name of the file",
 	"bs-pref-logopath-help": "Description for config variable \"Logo\"",
 	"bs-pref-faviconpath-help": "Description for config variable \"Favicon\"",
-	"bs-exttype-bluespice-assets": "This is the name of the assets group on [[Special:Version]]."
+	"bs-exttype-bluespice-assets": "This is the name of the assets group on [[Special:Version]].",
+	"bs-permission-role-reader": "Permission role name",
+	"bs-permission-role-editor": "Permission role name",
+	"bs-permission-role-reviewer": "Permission role name",
+	"bs-permission-role-admin": "Permission role name"
 }

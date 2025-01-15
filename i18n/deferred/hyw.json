@@ -4,5 +4,6 @@
 			"Kareyac"
 		]
 	},
-	"bs-deferred-batch-actions": "Գործողութիւններ"
+	"bs-deferred-batch-actions": "Գործողութիւններ",
+	"bs-deferred-action-status-done": "Եղած է"
 }

@@ -3,6 +3,7 @@
 		"authors": [
 			"Azouz.anis",
 			"Ideophagous",
+			"Meno25",
 			"ديفيد",
 			"محمد أحمد عبد الفتاح"
 		]
@@ -64,7 +65,7 @@
 	"bs-extjs-pageexport-list-name-label": "اسم القائمة",
 	"bs-extjs-pageexport-list-format-label": "شكل القائمة",
 	"bs-extjs-pageexport-list-format-plain-label": "نص عادي",
-	"bs-extjs-pageexport-list-format-link-label": "رابط",
+	"bs-extjs-pageexport-list-format-link-label": "وصلة",
 	"bs-extjs-pageexport-overwrite-label": "اعادة الكتابة",
 	"bs-extjs-pageexport-general-error": "خطأ في التصدير",
 	"bs-extjs-pageexport-pagecollection-prefix": "صفحة المجموعة",
