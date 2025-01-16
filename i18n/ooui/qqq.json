@@ -16,5 +16,12 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Message text showing when no values are set in KeyValueInputWidget",
 	"bs-ooui-btn-dismiss-alert-title": "Title text for the button to dismiss the site notice alert",
 	"bs-ooui-key-value-input-widget-section-label": "Label for input field holding the section key in MultiKeyValueInputWidget",
-	"bs-ooui-key-value-input-widget-add-section-label": "Label for add new entry section in MultiKeyValueInputWidget"
+	"bs-ooui-key-value-input-widget-add-section-label": "Label for add new entry section in MultiKeyValueInputWidget",
+	"bs-ui-generic-save": "Generic save button text{{Identical|Save}}",
+	"bs-ui-generic-cancel": "Generic cancel button text{{Identical|Cancel}}",
+	"bs-ui-generic-yes": "Generic yes button text{{Identical|Yes}}",
+	"bs-ui-generic-no": "Generic no button text{{Identical|No}}",
+	"bs-exportpages-dialog-title": "Title for the export pages dialog",
+	"bs-exportpages-success-text": "Success message for the export pages dialog\n$1 - page target prefixed db key\n$2 - page title",
+	"bs-ui-generic-close": "Generic close button text{{Identical|Close}}"
 }
