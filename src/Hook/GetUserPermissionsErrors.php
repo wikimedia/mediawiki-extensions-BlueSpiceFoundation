@@ -29,6 +29,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 abstract class GetUserPermissionsErrors extends Hook {
 	/**
@@ -38,7 +39,7 @@ abstract class GetUserPermissionsErrors extends Hook {
 	protected $title = null;
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
@@ -57,7 +58,7 @@ abstract class GetUserPermissionsErrors extends Hook {
 	/**
 	 *
 	 * @param Title $title
-	 * @param \User $user
+	 * @param User $user
 	 * @param string $action
 	 * @param array &$result
 	 * @return bool
@@ -79,7 +80,7 @@ abstract class GetUserPermissionsErrors extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param Title $title
-	 * @param \User $user
+	 * @param User $user
 	 * @param string $action
 	 * @param array &$result
 	 */

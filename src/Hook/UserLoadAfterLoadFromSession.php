@@ -29,7 +29,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use Config;
 use IContextSource;
-use User;
+use MediaWiki\User\User;
 
 /**
  * Called to authenticate users on external/environmental means; occurs after session

@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 
 abstract class NewRevisionFromEditComplete extends Hook {
 
@@ -47,7 +48,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	protected $baseID;
 
 	/**
-	 * @var \User
+	 * @var User
 	 */
 	protected $user;
 
@@ -55,7 +56,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	 * @param \WikiPage $wikiPage
 	 * @param RevisionRecord $rev
 	 * @param int $baseID
-	 * @param \User $user
+	 * @param User $user
 	 * @return bool
 	 */
 	public static function callback( $wikiPage, $rev, $baseID, $user ) {
@@ -78,7 +79,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	 * @param \WikiPage $wikiPage
 	 * @param RevisionRecord $rev
 	 * @param int $baseID
-	 * @param \User $user
+	 * @param User $user
 	 */
 	public function __construct( $context, $config, $wikiPage, $rev, $baseID, $user ) {
 		parent::__construct( $context, $config );

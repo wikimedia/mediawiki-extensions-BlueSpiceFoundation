@@ -33,10 +33,10 @@ use Exception;
 use IContextSource;
 use JsonSerializable;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\User;
 use MWException;
 use RequestContext;
 use Status;
-use User;
 
 abstract class Entity implements JsonSerializable {
 	public const TYPE = '';

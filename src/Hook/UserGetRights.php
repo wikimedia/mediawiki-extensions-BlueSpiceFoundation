@@ -27,12 +27,13 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\User\User;
 
 abstract class UserGetRights extends Hook {
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
@@ -44,7 +45,7 @@ abstract class UserGetRights extends Hook {
 
 	/**
 	 *
-	 * @param \User $user
+	 * @param User $user
 	 * @param array &$rights
 	 * @return mixed
 	 */
@@ -63,7 +64,7 @@ abstract class UserGetRights extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \User $user
+	 * @param User $user
 	 * @param array &$rights
 	 */
 	public function __construct( $context, $config, $user, &$rights ) {

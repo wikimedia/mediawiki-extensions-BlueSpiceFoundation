@@ -5,8 +5,8 @@ namespace BlueSpice\Permission;
 use BlueSpice\Permission\Lockdown\IModule;
 use Config;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Status;
-use User;
 
 class Lockdown {
 	/**

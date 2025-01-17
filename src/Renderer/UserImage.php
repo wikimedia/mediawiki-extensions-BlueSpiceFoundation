@@ -5,8 +5,8 @@ use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\User\User;
 use RequestContext;
-use User;
 
 class UserImage extends \BlueSpice\TemplateRenderer {
 	public const PARAM_WIDTH = 'width';

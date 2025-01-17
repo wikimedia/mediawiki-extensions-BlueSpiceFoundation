@@ -30,7 +30,7 @@ use BlueSpice\Hook;
 use Config;
 use IContextSource;
 use MediaWiki\Title\Title;
-use User;
+use MediaWiki\User\User;
 
 abstract class UserCan extends Hook {
 

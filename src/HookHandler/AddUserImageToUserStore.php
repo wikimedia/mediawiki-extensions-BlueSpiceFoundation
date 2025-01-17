@@ -4,11 +4,11 @@ namespace BlueSpice\HookHandler;
 
 use BlueSpice\Renderer\Params;
 use BlueSpice\RendererFactory;
+use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Hook\MWStakeCommonWebAPIsQueryStoreResultHook;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Rest\UserQueryStore;
 use MWStake\MediaWiki\Component\DataStore\ResultSet;
-use User;
 
 class AddUserImageToUserStore implements MWStakeCommonWebAPIsQueryStoreResultHook {
 	/** @var UserFactory */

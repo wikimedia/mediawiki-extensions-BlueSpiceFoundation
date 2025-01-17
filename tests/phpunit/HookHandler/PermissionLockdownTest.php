@@ -12,9 +12,9 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 use PHPUnit\Framework\TestCase;
 use TitleFactory;
-use User;
 use WebRequest;
 
 class PermissionLockdownTest extends TestCase {

@@ -10,6 +10,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;

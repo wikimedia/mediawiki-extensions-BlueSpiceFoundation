@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Permission\Lockdown\Module\Groups;
 
-use User;
+use MediaWiki\User\User;
 
 interface ISubModule extends \BlueSpice\Permission\Lockdown\IModule {
 	/**

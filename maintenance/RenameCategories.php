@@ -6,6 +6,7 @@
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 if ( $argc != 2 ) {
 	exit( "Syntax: {$argv[0]} filename" );

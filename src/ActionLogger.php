@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 /**
  * See https://www.mediawiki.org/wiki/Manual:Logging_to_Special:Log
@@ -26,7 +27,7 @@ class ActionLogger {
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $performer = null;
 
@@ -39,7 +40,7 @@ class ActionLogger {
 	/**
 	 *
 	 * @param string $type
-	 * @param \User $performer
+	 * @param User $performer
 	 * @param Title $target
 	 */
 	public function __construct( $type, $performer, $target ) {

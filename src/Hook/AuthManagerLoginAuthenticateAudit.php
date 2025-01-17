@@ -29,7 +29,7 @@ use BlueSpice\Hook;
 use Config;
 use IContextSource;
 use MediaWiki\Auth\AuthenticationResponse;
-use User;
+use MediaWiki\User\User;
 
 abstract class AuthManagerLoginAuthenticateAudit extends Hook {
 

@@ -3,7 +3,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Title\Title;
-use User;
+use MediaWiki\User\User;
 
 class NullLogger extends ActionLogger {
 

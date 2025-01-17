@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 
 abstract class PageContentSave extends Hook {
 
@@ -39,7 +40,7 @@ abstract class PageContentSave extends Hook {
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
@@ -100,7 +101,7 @@ abstract class PageContentSave extends Hook {
 	/**
 	 *
 	 * @param \WikiPage &$wikipage
-	 * @param \User &$user
+	 * @param User &$user
 	 * @param \Content &$content
 	 * @param string &$summary
 	 * @param bool $isMinor
@@ -134,7 +135,7 @@ abstract class PageContentSave extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \WikiPage &$wikipage
-	 * @param \User &$user
+	 * @param User &$user
 	 * @param \Content &$content
 	 * @param string &$summary
 	 * @param bool $isMinor

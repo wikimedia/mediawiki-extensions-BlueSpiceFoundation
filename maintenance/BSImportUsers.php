@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\User;
 
 require_once __DIR__ . '/BSMaintenance.php';
 

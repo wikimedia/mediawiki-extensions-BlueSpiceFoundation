@@ -29,6 +29,7 @@ namespace BlueSpice;
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 /**
  * UtilityFactory class for BlueSpice
@@ -71,7 +72,7 @@ class UtilityFactory {
 	}
 
 	/**
-	 * @param \User|null $user
+	 * @param User|null $user
 	 * @return \BlueSpice\Utility\UserHelper
 	 */
 	public function getUserHelper( $user = null ) {

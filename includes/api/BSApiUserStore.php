@@ -2,6 +2,7 @@
 
 use BlueSpice\Renderer\Params;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 /**
  * @deprecated since 4.2.2 - use CommonWebAPIs REST api instead

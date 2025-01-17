@@ -4,7 +4,7 @@ namespace BlueSpice\PermissionChecker;
 
 use IContextSource;
 use MediaWiki\MediaWikiServices;
-use User;
+use MediaWiki\User\User;
 
 class Title implements \BlueSpice\IPermissionChecker {
 
