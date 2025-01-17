@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Api;
 
 use BlueSpice\Tests\BSApiTasksTestBase;
+use MediaWiki\Title\Title;
 
 /**
  * @group medium
@@ -32,7 +33,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	 * @covers \BSApiPingTasks::task_ping
 	 */
 	public function testPing() {
-		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
+		$oTitle = Title::makeTitle( NS_MAIN, 'Test page' );
 		$oWikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $oTitle );
 
 		$oResponse = $this->executeTask(
@@ -80,7 +81,7 @@ class BSApiPingTasksTest extends BSApiTasksTestBase {
 	 */
 	public static function onBsAdapterAjaxPingResult( $sRef, $aData, $iArticleId, $sTitle,
 		$iNamespace, $iRevision, &$aSingleResult ) {
-		$oTitle = \Title::makeTitle( NS_MAIN, 'Test page' );
+		$oTitle = Title::makeTitle( NS_MAIN, 'Test page' );
 
 		if ( $iArticleId != $oTitle->getArticleID() ) {
 			return false;

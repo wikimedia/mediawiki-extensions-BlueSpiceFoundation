@@ -2,7 +2,7 @@
 
 namespace BlueSpice\TargetCache\Title;
 
-use Title;
+use MediaWiki\Title\Title;
 
 class Target implements \BlueSpice\TargetCache\ITarget {
 

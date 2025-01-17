@@ -26,6 +26,7 @@ require_once 'BSMaintenance.php';
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Title\Title;
 
 $userName    = 'WikiBot';
 $summary     = 'Some meaningful description';

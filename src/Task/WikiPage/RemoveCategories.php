@@ -3,7 +3,7 @@
 namespace BlueSpice\Task\WikiPage;
 
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
-use Title;
+use MediaWiki\Title\Title;
 
 class RemoveCategories extends SetCategories {
 

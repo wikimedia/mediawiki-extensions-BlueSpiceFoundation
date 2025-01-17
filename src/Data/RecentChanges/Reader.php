@@ -3,9 +3,9 @@
 namespace BlueSpice\Data\RecentChanges;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MWStake\MediaWiki\Component\DataStore\DatabaseReader;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
-use Title;
 
 class Reader extends DatabaseReader {
 

@@ -4,6 +4,7 @@ namespace BlueSpice\Tests\Html\Descriptor;
 
 use BlueSpice\Html\Descriptor\ILink;
 use BlueSpice\Html\Descriptor\TitleLink;
+use MediaWiki\Title\Title;
 use PHPUnit\Framework\TestCase;
 
 class TitleLinkTest extends TestCase {
@@ -27,7 +28,7 @@ class TitleLinkTest extends TestCase {
 		$context = $this->createMock( '\IContextSource' );
 		$config = $this->createMock( '\Config' );
 
-		$title = $this->createMock( '\Title' );
+		$title = $this->createMock( Title::class );
 		$title->method( 'exists' )->willReturn( true );
 		$title->method( 'isExternal' )->willReturn( false );
 
@@ -43,7 +44,7 @@ class TitleLinkTest extends TestCase {
 		$context = $this->createMock( '\IContextSource' );
 		$config = $this->createMock( '\Config' );
 
-		$title = $this->createMock( '\Title' );
+		$title = $this->createMock( Title::class );
 		$title->method( 'exists' )->willReturn( false );
 		$title->method( 'isExternal' )->willReturn( false );
 

@@ -25,6 +25,8 @@
  * @filesource
  */
 
+use MediaWiki\Title\Title;
+
 /**
  * BSTitleValidator class in BlueSpice
  * @package BlueSpice_Foundation

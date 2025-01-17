@@ -5,7 +5,7 @@ namespace BlueSpice\Utility;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * A lot of MediaWiki (Web)APIs accept a title context information (e.g.

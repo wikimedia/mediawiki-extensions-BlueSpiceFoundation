@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Api;
 
 use BlueSpice\Tests\BSApiTasksTestBase;
+use MediaWiki\Title\Title;
 
 /**
  * @group Broken
@@ -32,13 +33,13 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	 * @covers \BSApiWikiPageTasks::task_addCategories
 	 */
 	public function testAddCategoriesSucceeds() {
-		$oTitle = \Title::newFromText( 'Category Test' );
+		$oTitle = Title::newFromText( 'Category Test' );
 		$aTestCategories = [
-			'CatA' => \Title::newFromText( 'CatA', NS_CATEGORY )->getText(),
-			'cAT_B' => \Title::newFromText( 'cAT_B', NS_CATEGORY )->getText(),
-			'CAT C' => \Title::newFromText( 'CAT C', NS_CATEGORY )->getText(),
-			'cat____d' => \Title::newFromText( 'cat____d', NS_CATEGORY )->getText(),
-			'CAT   f  g' => \Title::newFromText( 'CAT   f  g', NS_CATEGORY )->getText()
+			'CatA' => Title::newFromText( 'CatA', NS_CATEGORY )->getText(),
+			'cAT_B' => Title::newFromText( 'cAT_B', NS_CATEGORY )->getText(),
+			'CAT C' => Title::newFromText( 'CAT C', NS_CATEGORY )->getText(),
+			'cat____d' => Title::newFromText( 'cat____d', NS_CATEGORY )->getText(),
+			'CAT   f  g' => Title::newFromText( 'CAT   f  g', NS_CATEGORY )->getText()
 		];
 
 		$response = $this->executeTask(
@@ -77,9 +78,9 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	 * @covers \BSApiWikiPageTasks::task_setCategories
 	 */
 	public function testSetCategoriesSucceeds() {
-		$oTitle = \Title::newFromText( 'Category Test' );
+		$oTitle = Title::newFromText( 'Category Test' );
 		$aTestCategories = [
-			'Cat' => \Title::newFromText( 'Cat', NS_CATEGORY )->getText(),
+			'Cat' => Title::newFromText( 'Cat', NS_CATEGORY )->getText(),
 		];
 
 		$response = $this->executeTask(
@@ -119,7 +120,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	 * @covers \BSApiWikiPageTasks::task_removeCategories
 	 */
 	public function testRemoveCategoriesSucceeds() {
-		$oTitle = \Title::newFromText( 'Category Test' );
+		$oTitle = Title::newFromText( 'Category Test' );
 
 		$response = $this->executeTask(
 			'removeCategories',

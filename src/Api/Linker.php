@@ -4,7 +4,7 @@ namespace BlueSpice\Api;
 
 use BlueSpice\Api;
 use FormatJson;
-use Title;
+use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class Linker extends Api {

@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../../BlueSpiceFoundation/maintenance/BSMaintenance.php';
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class BSExportFiles extends BSMaintenance {
 

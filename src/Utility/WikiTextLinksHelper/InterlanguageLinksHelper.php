@@ -4,6 +4,7 @@ namespace BlueSpice\Utility\WikiTextLinksHelper;
 
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class InterlanguageLinksHelper extends InterwikiLinksHelper {
 
@@ -24,10 +25,10 @@ class InterlanguageLinksHelper extends InterwikiLinksHelper {
 
 	/**
 	 *
-	 * @param \Title|null $title
+	 * @param Title|null $title
 	 * @return bool
 	 */
-	protected function isValidInterwikiLink( \Title $title = null ) {
+	protected function isValidInterwikiLink( Title $title = null ) {
 		if ( !parent::isValidInterwikiLink( $title ) ) {
 			return false;
 		}

@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * @group Database
@@ -23,7 +24,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->getMock();
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		$title = \Title::newMainPage();
+		$title = Title::newMainPage();
 		$isKnown = true;
 		$html = new \HtmlArmor( '' );
 		$attribs = [];
@@ -72,7 +73,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 		} );
 
 		$linkRenderer = $services->getLinkRenderer();
-		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
+		$title = Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( $title->getText() );
 		$attribs = [];
@@ -125,7 +126,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 		} );
 
 		$linkRenderer = $services->getLinkRenderer();
-		$title = \Title::makeTitle( NS_USER, 'Wiki Sysöp' );
+		$title = Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( 'Some link text' );
 		$attribs = [];
@@ -164,7 +165,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->getMock();
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		$title = \Title::makeTitle( NS_MAIN, 'Not a user page' );
+		$title = Title::makeTitle( NS_MAIN, 'Not a user page' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( 'Some link text' );
 		$attribs = [];

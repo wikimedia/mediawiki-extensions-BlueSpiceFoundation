@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Utility;
 
 use BlueSpice\Utility\TitleParamsResolver;
+use MediaWiki\Title\Title;
 
 /**
  * @group BlueSpice
@@ -24,7 +25,7 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 	 *
 	 * @param array $params
 	 * @param string $expectedPrefixedText
-	 * @param \Title[] $defaultTitles
+	 * @param Title[] $defaultTitles
 	 * @param string $message
 	 * @dataProvider provideMediaWikiApiTitleOrPageIdData
 	 * @covers \BlueSpice\Utility\TitleParamsResolver::resolve
@@ -35,12 +36,12 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 		$resolvedTitles = $resolver->resolve();
 		$resolvedTitle = $resolvedTitles[0];
 
-		$this->assertTrue( $resolvedTitle instanceof \Title );
+		$this->assertTrue( $resolvedTitle instanceof Title );
 		$this->assertEquals( $expectedPrefixedText, $resolvedTitle->getPrefixedText(), $message );
 	}
 
 	public function provideMediaWikiApiTitleOrPageIdData() {
-		$mainPage = \Title::newMainPage();
+		$mainPage = Title::newMainPage();
 		$mainPageTitleText = $mainPage->getPrefixedText();
 		/**
 		 * HINT: For all "page_id" and "revision_id" related test we need to
@@ -120,7 +121,7 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 			$resolvedTitle = $resolvedTitles[$i];
 			$expectedPrefixedText = $expectedPrefixedTexts[$i];
 
-			$this->assertTrue( $resolvedTitle instanceof \Title );
+			$this->assertTrue( $resolvedTitle instanceof Title );
 			$this->assertEquals( $expectedPrefixedText, $resolvedTitle->getPrefixedText(), $message );
 		}
 	}

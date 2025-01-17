@@ -56,6 +56,7 @@
  */
 
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {

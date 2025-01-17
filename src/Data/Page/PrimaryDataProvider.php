@@ -4,9 +4,9 @@ namespace BlueSpice\Data\Page;
 
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MWStake\MediaWiki\Component\DataStore\PrimaryDatabaseDataProvider;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams as DataStoreReaderParams;
-use Title;
 use User;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -150,7 +150,7 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	 * @param Title $title
 	 * @return bool
 	 */
-	protected function userCanRead( \Title $title ) {
+	protected function userCanRead( Title $title ) {
 		if ( $this->isSystemUser ) {
 			return true;
 		}

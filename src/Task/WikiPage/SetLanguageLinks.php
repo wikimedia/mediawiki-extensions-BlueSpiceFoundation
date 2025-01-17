@@ -5,7 +5,7 @@ namespace BlueSpice\Task\WikiPage;
 use BlueSpice\ParamProcessor\ParamDefinition;
 use BlueSpice\ParamProcessor\ParamType;
 use BlueSpice\Utility\WikiTextLinksHelper\InterlanguageLinksHelper;
-use Title;
+use MediaWiki\Title\Title;
 
 class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	public const PARAM_LANGUAGE_LINKS = 'languagelinks';

@@ -3,6 +3,7 @@
 namespace BlueSpice\Utility\WikiTextLinksHelper;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class InterwikiLinksHelper extends InternalLinksHelper {
 
@@ -24,10 +25,10 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title|null $title
+	 * @param Title|null $title
 	 * @return bool
 	 */
-	protected function isValidInterwikiLink( \Title $title = null ) {
+	protected function isValidInterwikiLink( Title $title = null ) {
 		return !empty( $title->getInterwiki() );
 	}
 
@@ -36,7 +37,7 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	 * @param string $fullMatch
 	 * @param string $leadingColon
 	 * @param string $titleText
-	 * @return \Title|null
+	 * @return Title|null
 	 */
 	protected function makeTitleFromMatch( $fullMatch, $leadingColon, $titleText ) {
 		if ( !empty( $leadingColon ) ) {
@@ -56,13 +57,13 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title $target
+	 * @param Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
 	 * @param bool $leadingColon
 	 * @param string $separator
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true,
+	protected function addTarget( Title $target, $text, $addDuplicates, $leadingColon = true,
 		$separator = "\n" ) {
 		if ( !$this->isValidInterwikiLink( $target ) ) {
 			return;
@@ -86,10 +87,10 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title $target
+	 * @param Title $target
 	 * @param bool $removeAllOccurrences
 	 */
-	protected function removeTarget( \Title $target, $removeAllOccurrences ) {
+	protected function removeTarget( Title $target, $removeAllOccurrences ) {
 		if ( !$this->isValidInterwikiLink( $target ) ) {
 			return;
 		}

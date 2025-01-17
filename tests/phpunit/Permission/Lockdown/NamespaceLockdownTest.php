@@ -4,8 +4,8 @@ namespace BlueSpice\Tests\Permission\Lockdown;
 
 use BlueSpice\Permission\Lockdown\Module\Namespaces;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
-use Title;
 use User;
 
 /**

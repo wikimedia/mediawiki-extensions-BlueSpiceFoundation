@@ -28,6 +28,7 @@
 namespace BlueSpice;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * UtilityFactory class for BlueSpice
@@ -51,7 +52,7 @@ class UtilityFactory {
 	/**
 	 *
 	 * @param array $params
-	 * @param \Title[] $default
+	 * @param Title[] $default
 	 * @return \BlueSpice\Utility\TitleParamsResolver
 	 */
 	public function getTitleParamsResolver( $params, $default = [] ) {
@@ -107,11 +108,11 @@ class UtilityFactory {
 	}
 
 	/**
-	 * @param \Title $title
+	 * @param Title $title
 	 * @return \BlueSpice\Utility\PagePropHelper
 	 * @deprecated since 4.3 Use MediaWiki core `\PageProps` instead
 	 */
-	public function getPagePropHelper( \Title $title ) {
+	public function getPagePropHelper( Title $title ) {
 		wfDeprecated( __METHOD__, '4.3' );
 		return new \BlueSpice\Utility\PagePropHelper( $this->services, $title );
 	}

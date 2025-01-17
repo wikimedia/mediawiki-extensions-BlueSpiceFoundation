@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Hook\HtmlPageLinkRendererEnd;
 
+use MediaWiki\Title\Title;
+
 class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 
 	protected function skipProcessing() {
@@ -28,7 +30,7 @@ class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 	protected function doProcess() {
 		// We add the original title to a link. This may be the same content as
 		// "title" attribute, but it doesn't have to. I.e. in red links
-		$title = \Title::newFromLinkTarget( $this->target );
+		$title = Title::newFromLinkTarget( $this->target );
 		if ( !$title->exists() && !$title->canExist() ) {
 			// Invalid title
 			return true;

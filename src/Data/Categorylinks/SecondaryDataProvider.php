@@ -5,8 +5,8 @@ namespace BlueSpice\Data\Categorylinks;
 use BsNamespaceHelper;
 use Content;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use TextContent;
-use Title;
 
 class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
 

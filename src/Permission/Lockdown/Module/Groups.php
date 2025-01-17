@@ -9,8 +9,8 @@ use BlueSpice\Permission\Lockdown\Module\Groups\ISubModule;
 use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Message;
-use Title;
 use User;
 
 class Groups extends Module {

@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Title\Title;
+
 require_once 'BSMaintenance.php';
 
 class BSExtractPageTitles extends BSMaintenance {

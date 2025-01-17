@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 
@@ -19,7 +20,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 			->getMock();
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		$title = \Title::newMainPage();
+		$title = Title::newMainPage();
 		$isKnown = true;
 		$html = new \HtmlArmor( '' );
 		$attribs = [];
@@ -54,7 +55,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 			->getMock();
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		$title = \Title::newMainPage();
+		$title = Title::newMainPage();
 		$html = new \HtmlArmor( '' );
 		$isKnown = true;
 		$attribs = [];
