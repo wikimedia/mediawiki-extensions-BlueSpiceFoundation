@@ -75,7 +75,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Raccolta di pagine",
 	"bs-pagecollection-prefix": "Raccolta di pagine",
 	"bs-extjs-pageexport-success": "Esportazione corretta",
-	"bs-extjs-pageexport-success-text": "Raccolta di pagine esportata in $1",
 	"bs-extjs-pageexport-required-text": "Il nome dell'elenco non può essere vuoto o almeno una pagina deve essere selezionata",
 	"bs-extjs-export-search-summary-text": "Generato da PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Il nome dell'elenco non è valido",

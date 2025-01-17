@@ -79,7 +79,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Paginaverzameling",
 	"bs-pagecollection-prefix": "Paginaverzameling",
 	"bs-extjs-pageexport-success": "Export succesvol",
-	"bs-extjs-pageexport-success-text": "Paginaverzameling geëxporteerd naar $1",
 	"bs-extjs-pageexport-required-text": "De lijstnaam mag niet leeg zijn en er moet ten minste één pagina geselecteerd zijn.",
 	"bs-extjs-export-search-summary-text": "Gegenereerd door PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Ongeldige lijstnaam",

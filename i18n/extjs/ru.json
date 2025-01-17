@@ -85,7 +85,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Сбор страниц",
 	"bs-pagecollection-prefix": "Коллекция страниц",
 	"bs-extjs-pageexport-success": "Успешный экспорт",
-	"bs-extjs-pageexport-success-text": "Сбор страниц экспортируется в $1",
 	"bs-extjs-pageexport-required-text": "Имя списка не может быть пустым и должно быть выбрано хотя бы одна страница",
 	"bs-extjs-export-search-summary-text": "Создано PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Недопустимое имя списка.",

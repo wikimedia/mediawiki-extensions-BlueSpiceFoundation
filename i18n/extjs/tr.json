@@ -71,7 +71,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Sayfa koleksiyonu",
 	"bs-pagecollection-prefix": "Sayfa koleksiyonu",
 	"bs-extjs-pageexport-success": "Aktarım başarılı",
-	"bs-extjs-pageexport-success-text": "Sayfa koleksiyonu $1 aktarıldı",
 	"bs-extjs-pageexport-required-text": "Liste adı boş olamaz ve en az bir sayfa seçilmelidir",
 	"bs-extjs-export-search-summary-text": "PageExport tarafından üretildi",
 	"bs-extjs-pageexport-error-invalid-title": "Listenin adı geçersiz",

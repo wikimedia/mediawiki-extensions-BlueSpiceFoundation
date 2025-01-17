@@ -69,7 +69,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Puslapių kolekcija",
 	"bs-pagecollection-prefix": "Puslapių kolekcija",
 	"bs-extjs-pageexport-success": "Eksportavimas pavyko",
-	"bs-extjs-pageexport-success-text": "Puslapių kolekcija eksportuota į $1",
 	"bs-extjs-pageexport-required-text": "Sąrašo pavadinimas negali būti tuščias ir bent vienas puslapis turi būti pasirinktas",
 	"bs-extjs-export-search-summary-text": "Sugeneravo PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Sąrašo pavadinimas negalimas",

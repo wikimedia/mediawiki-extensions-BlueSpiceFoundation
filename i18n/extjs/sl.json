@@ -70,7 +70,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Zbiranje podatkov",
 	"bs-pagecollection-prefix": "Zbiranje podatkov",
 	"bs-extjs-pageexport-success": "Izvoz uspel",
-	"bs-extjs-pageexport-success-text": "Zbirka strani je izvožena v $1",
 	"bs-extjs-pageexport-required-text": "Ime seznama ne sme biti prazno in izbrana mora biti vsaj ena stran",
 	"bs-extjs-export-search-summary-text": "Ustvaril PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Ime seznama je neveljavno",

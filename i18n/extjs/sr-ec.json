@@ -71,7 +71,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Збирка страница",
 	"bs-pagecollection-prefix": "Збирка страница",
 	"bs-extjs-pageexport-success": "Успешан извоз",
-	"bs-extjs-pageexport-success-text": "Збирка страница је извезена у „$1”",
 	"bs-extjs-pageexport-required-text": "Списак страница не може бити празан и најмање једна страница мора бити означена",
 	"bs-extjs-export-search-summary-text": "Генерисао PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Име списка је неважеће",

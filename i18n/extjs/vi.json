@@ -70,7 +70,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Bộ sưu tập trang",
 	"bs-pagecollection-prefix": "Bộ sưu tập trang",
 	"bs-extjs-pageexport-success": "Xuất thành công",
-	"bs-extjs-pageexport-success-text": "Bộ sưu tập trang được xuất sang $1",
 	"bs-extjs-pageexport-required-text": "Tên danh sách không được để trống và phải chọn ít nhất một trang",
 	"bs-extjs-export-search-summary-text": "Được tạo bởi PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Tên danh sách không hợp lệ",

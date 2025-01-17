@@ -71,7 +71,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Збірка сторінок",
 	"bs-pagecollection-prefix": "Збірка сторінок",
 	"bs-extjs-pageexport-success": "Експорт завершився успішно",
-	"bs-extjs-pageexport-success-text": "Збірку сторінок експортовано до $1",
 	"bs-extjs-pageexport-required-text": "Назва списку не може бути порожня, і має бути вибрано хоча б одну сторінку",
 	"bs-extjs-export-search-summary-text": "Згенеровано через PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Недійсна назва списку",
