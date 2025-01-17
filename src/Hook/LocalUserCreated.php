@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Hook;
 
-use User;
+use MediaWiki\User\User;
 
 abstract class LocalUserCreated extends \BlueSpice\Hook {
 	/**

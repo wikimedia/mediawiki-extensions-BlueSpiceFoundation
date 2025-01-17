@@ -28,7 +28,7 @@ class BSFixturesTest extends BSApiTestCase {
 	}
 
 	/**
-	 * @covers \User::newFromName
+	 * @covers User::newFromName
 	 */
 	public function testUserFixtures() {
 		$services = MediaWikiServices::getInstance();

@@ -7,9 +7,9 @@ use DateTime;
 use DateTimeZone;
 use Exception;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\User;
 use MWTimestamp;
 use RequestContext;
-use User;
 
 class Timestamp extends MWTimestamp {
 

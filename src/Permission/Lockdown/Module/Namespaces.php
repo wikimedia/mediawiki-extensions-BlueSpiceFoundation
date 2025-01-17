@@ -9,8 +9,8 @@ use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Message;
-use User;
 
 class Namespaces extends Module {
 

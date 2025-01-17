@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Entity;
 use BlueSpice\Hook;
+use MediaWiki\User\User;
 
 abstract class BSEntitySaveComplete extends Hook {
 	/**
@@ -44,7 +45,7 @@ abstract class BSEntitySaveComplete extends Hook {
 
 	/**
 	 * User who performed this action
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
@@ -53,7 +54,7 @@ abstract class BSEntitySaveComplete extends Hook {
 	 * successful.
 	 * @param Entity $entity
 	 * @param \Status $status
-	 * @param \User $user
+	 * @param User $user
 	 * @return bool
 	 */
 	public static function callback( $entity, $status, $user ) {
@@ -73,7 +74,7 @@ abstract class BSEntitySaveComplete extends Hook {
 	 * @param \Config $config
 	 * @param Entity $entity
 	 * @param \Status $status
-	 * @param \User $user
+	 * @param User $user
 	 */
 	public function __construct( $context, $config, $entity, $status, $user ) {
 		parent::__construct( $context, $config );

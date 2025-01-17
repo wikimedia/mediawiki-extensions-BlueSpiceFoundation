@@ -2,21 +2,23 @@
 
 namespace BlueSpice\Utility;
 
+use MediaWiki\User\User;
+
 class UserHelper {
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
 	/**
 	 *
-	 * @param \User|null $user
+	 * @param User|null $user
 	 * @return UserHelper
 	 * @throws \MWException
 	 */
-	public function __construct( \User $user = null ) {
+	public function __construct( User $user = null ) {
 		$this->user = $user;
 		if ( $this->user ) {
 			return;

@@ -3,7 +3,7 @@
 namespace BlueSpice;
 
 use IContextSource;
-use User;
+use MediaWiki\User\User;
 
 interface IPermissionChecker {
 

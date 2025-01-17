@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\User;
 
 abstract class PageContentInsertComplete extends Hook {
 
@@ -39,7 +40,7 @@ abstract class PageContentInsertComplete extends Hook {
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user = null;
 
@@ -100,7 +101,7 @@ abstract class PageContentInsertComplete extends Hook {
 	/**
 	 *
 	 * @param \WikiPage &$wikipage
-	 * @param \User &$user
+	 * @param User &$user
 	 * @param \Content $content
 	 * @param string $summary
 	 * @param bool $isMinor
@@ -138,7 +139,7 @@ abstract class PageContentInsertComplete extends Hook {
 	 * @param \IContextSource $context
 	 * @param \Config $config
 	 * @param \WikiPage &$wikipage
-	 * @param \User &$user
+	 * @param User &$user
 	 * @param \Content $content
 	 * @param string $summary
 	 * @param bool $isMinor

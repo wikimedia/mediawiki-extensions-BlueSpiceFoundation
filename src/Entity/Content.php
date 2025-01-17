@@ -27,8 +27,8 @@
 namespace BlueSpice\Entity;
 
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Status;
-use User;
 
 abstract class Content extends \BlueSpice\Entity {
 	public const NS = -1;

@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INotification {
 	/**
@@ -20,7 +21,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $agent;
 
@@ -57,11 +58,11 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	/**
 	 *
 	 * @param string $key
-	 * @param \User $agent
+	 * @param User $agent
 	 * @param Title|null $title
 	 * @param array $extraParams
 	 */
-	public function __construct( $key, \User $agent, $title = null, $extraParams = [] ) {
+	public function __construct( $key, User $agent, $title = null, $extraParams = [] ) {
 		$this->key = $key;
 		$this->setAgent( $agent );
 		if ( $title instanceof Title ) {
@@ -75,9 +76,9 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 
 	/**
 	 *
-	 * @param \User $user
+	 * @param User $user
 	 */
-	protected function setAgent( \User $user ) {
+	protected function setAgent( User $user ) {
 		$this->agent = $user;
 	}
 
@@ -183,14 +184,14 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 
 	/**
 	 *
-	 * @return \User
+	 * @return User
 	 */
 	public function getUser() {
 		return $this->agent;
 	}
 
 	/**
-	 * Adds array of \User object of user IDs
+	 * Adds array of User object of user IDs
 	 * to list of users to receive this notification
 	 *
 	 * @param array $users
@@ -203,7 +204,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 			if ( is_numeric( $user ) ) {
 				$user = $userFactory->newFromId( intval( $user ) );
 			}
-			if ( !( $user instanceof \User ) ) {
+			if ( !( $user instanceof User ) ) {
 				continue;
 			}
 			if ( $user->getBlock() ) {
@@ -234,7 +235,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	 * Returns real name of the user (defaults to agent),
 	 * if available, otherwise username.
 	 *
-	 * @param \User|null $user
+	 * @param User|null $user
 	 * @return string
 	 */
 	protected function getUserRealName( $user = null ) {

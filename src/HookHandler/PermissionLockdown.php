@@ -12,7 +12,7 @@ use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\TitleFactory;
-use User;
+use MediaWiki\User\User;
 
 class PermissionLockdown implements ApiBeforeMainHook, BeforeParserFetchTemplateRevisionRecordHook {
 
