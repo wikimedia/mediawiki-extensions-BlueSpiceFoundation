@@ -28,11 +28,12 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Title\Title;
 
 abstract class GetUserPermissionsErrors extends Hook {
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title = null;
 	/**
@@ -55,7 +56,7 @@ abstract class GetUserPermissionsErrors extends Hook {
 
 	/**
 	 *
-	 * @param \Title $title
+	 * @param Title $title
 	 * @param \User $user
 	 * @param string $action
 	 * @param array &$result
@@ -77,7 +78,7 @@ abstract class GetUserPermissionsErrors extends Hook {
 	/**
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \Title $title
+	 * @param Title $title
 	 * @param \User $user
 	 * @param string $action
 	 * @param array &$result

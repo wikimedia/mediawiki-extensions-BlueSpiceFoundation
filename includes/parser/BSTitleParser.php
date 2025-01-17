@@ -25,6 +25,8 @@
  * @filesource
  */
 
+use MediaWiki\Title\Title;
+
 /**
  * BSTitleParser class in BlueSpice
  * This is a very simmilar implementation to ParamProcessor\TitleParser from

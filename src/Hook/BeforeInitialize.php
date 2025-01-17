@@ -29,11 +29,12 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Title\Title;
 
 abstract class BeforeInitialize extends Hook {
 
 	/**
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title;
 
@@ -65,7 +66,7 @@ abstract class BeforeInitialize extends Hook {
 	protected $mediaWiki;
 
 	/**
-	 * @param \Title &$title
+	 * @param Title &$title
 	 * @param \Article|null &$article
 	 * @param \OutputPage &$output
 	 * @param \User &$user
@@ -91,7 +92,7 @@ abstract class BeforeInitialize extends Hook {
 	/**
 	 * @param \ContextSource $context
 	 * @param \Config $config
-	 * @param \Title &$title
+	 * @param Title &$title
 	 * @param \Article|null &$article
 	 * @param \OutputPage &$output
 	 * @param \User &$user

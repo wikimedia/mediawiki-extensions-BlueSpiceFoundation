@@ -31,8 +31,8 @@ use BlueSpice\Hook;
 use Config;
 use Content;
 use IContextSource;
+use MediaWiki\Title\Title;
 use ParserOutput;
-use Title;
 
 abstract class SecondaryDataUpdates extends Hook {
 

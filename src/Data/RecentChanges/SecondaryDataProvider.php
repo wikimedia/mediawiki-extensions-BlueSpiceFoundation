@@ -3,6 +3,7 @@
 namespace BlueSpice\Data\RecentChanges;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
 
@@ -34,8 +35,8 @@ class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\Secon
 	protected function doExtend( &$dataSet ) {
 		$rawData = $dataSet->getData();
 
-		$title = \Title::newFromText( $rawData->page_prefixedtext );
-		if ( $title instanceof \Title === false ) {
+		$title = Title::newFromText( $rawData->page_prefixedtext );
+		if ( $title instanceof Title === false ) {
 			return;
 		}
 		$rawData->page_link = $this->linkrenderer->makeLink( $title );

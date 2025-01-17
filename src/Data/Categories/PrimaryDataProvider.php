@@ -2,10 +2,10 @@
 
 namespace BlueSpice\Data\Categories;
 
+use MediaWiki\Title\Title;
 use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use stdClass;
-use Title;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 

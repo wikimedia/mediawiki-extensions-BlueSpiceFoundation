@@ -32,6 +32,7 @@
 use BlueSpice\Api\Response\Standard;
 use BlueSpice\UtilityFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

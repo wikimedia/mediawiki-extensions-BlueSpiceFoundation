@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INotification {
 	/**
@@ -13,7 +14,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 
 	/**
 	 *
-	 * @var \Title|null
+	 * @var Title|null
 	 */
 	protected $title = null;
 
@@ -57,13 +58,13 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	 *
 	 * @param string $key
 	 * @param \User $agent
-	 * @param \Title|null $title
+	 * @param Title|null $title
 	 * @param array $extraParams
 	 */
 	public function __construct( $key, \User $agent, $title = null, $extraParams = [] ) {
 		$this->key = $key;
 		$this->setAgent( $agent );
-		if ( $title instanceof \Title ) {
+		if ( $title instanceof Title ) {
 			$this->setTitle( $title );
 		}
 
@@ -82,9 +83,9 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 
 	/**
 	 *
-	 * @param \Title $title
+	 * @param Title $title
 	 */
-	protected function setTitle( \Title $title ) {
+	protected function setTitle( Title $title ) {
 		$this->title = $title;
 	}
 
@@ -174,7 +175,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 
 	/**
 	 *
-	 * @return \Title|null
+	 * @return Title|null
 	 */
 	public function getTitle() {
 		return $this->title;
@@ -208,7 +209,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 			if ( $user->getBlock() ) {
 				continue;
 			}
-			if ( $this->title instanceof \Title && !$pm->userCan( 'read', $user, $this->title ) ) {
+			if ( $this->title instanceof Title && !$pm->userCan( 'read', $user, $this->title ) ) {
 				continue;
 			} elseif ( !$pm->userHasRight( $user, 'read' ) ) {
 				continue;

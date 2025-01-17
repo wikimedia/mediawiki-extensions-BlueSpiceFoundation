@@ -29,7 +29,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use Config;
 use IContextSource;
-use Title;
+use MediaWiki\Title\Title;
 
 abstract class GetFullURL extends Hook {
 

@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * @group medium
@@ -19,10 +20,10 @@ class BSFixturesTest extends BSApiTestCase {
 	}
 
 	/**
-	 * @covers \Title::newFromText
+	 * @covers Title::newFromText
 	 */
 	public function testPageFixtures() {
-		$title = \Title::newFromText( 'Template:Hello World' );
+		$title = Title::newFromText( 'Template:Hello World' );
 		$this->assertTrue( $title->exists(), 'Title should be known' );
 	}
 

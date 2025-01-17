@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\RecentChanges;
 
+use MediaWiki\Title\Title;
 use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;
@@ -70,7 +71,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 * @param \stdClass $row
 	 */
 	protected function appendRowToData( $row ) {
-		$title = \Title::makeTitle( $row->rc_namespace, $row->rc_title );
+		$title = Title::makeTitle( $row->rc_namespace, $row->rc_title );
 
 		$this->data[] = new Record( (object)[
 			Record::USER_NAME => $row->rc_user_text,

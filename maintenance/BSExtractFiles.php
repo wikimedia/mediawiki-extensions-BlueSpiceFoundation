@@ -3,6 +3,7 @@
 require_once 'BSMaintenance.php';
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class BSExtractFiles extends BSMaintenance {
 
@@ -63,8 +64,8 @@ class BSExtractFiles extends BSMaintenance {
 				preg_replace_callback( '#\[\[(.*?)\]\]#si', function ( $matches ) {
 					$parts = explode( '|', $matches[1] );
 					$targetTitleText = $parts[0];
-					$targetTitle = \Title::newFromText( $targetTitleText );
-					if ( $targetTitle instanceof \Title === false ) {
+					$targetTitle = Title::newFromText( $targetTitleText );
+					if ( $targetTitle instanceof Title === false ) {
 						$this->errors[] = "No title for '{$matches[0]}]'!";
 						return $matches[0];
 					}
@@ -89,7 +90,7 @@ class BSExtractFiles extends BSMaintenance {
 
 	/**
 	 *
-	 * @param \Title $title
+	 * @param Title $title
 	 */
 	private function addFileToExtract( $title ) {
 		$file = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo()->newFile( $title );
@@ -123,7 +124,7 @@ class BSExtractFiles extends BSMaintenance {
 				continue;
 			}
 			$basename = $file->getBasename();
-			$title = \Title::makeTitle( NS_FILE, $basename );
+			$title = Title::makeTitle( NS_FILE, $basename );
 			$wikiFileName = $title->getDBkey();
 
 			if ( isset( $this->sourceImages[$wikiFileName] ) ) {

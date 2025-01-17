@@ -6,8 +6,8 @@ use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\Reader;
 use BlueSpice\EntityConfig;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use TextContent;
-use Title;
 
 abstract class Content extends Reader {
 

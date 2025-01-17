@@ -5,8 +5,8 @@ namespace BlueSpice;
 use Content;
 use Exception;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Status;
-use Title;
 use WikiPage;
 
 abstract class SecondaryDataUpdate implements ISecondaryDataUpdate {

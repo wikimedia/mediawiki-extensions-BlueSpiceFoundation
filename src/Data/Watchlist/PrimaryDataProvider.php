@@ -3,6 +3,7 @@
 namespace BlueSpice\Data\Watchlist;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use Message;
 use MWStake\MediaWiki\Component\DataStore\Filter;
 use MWStake\MediaWiki\Component\DataStore\FilterFinder;
@@ -126,7 +127,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 * @param \stdClass $row
 	 */
 	protected function appendRowToData( $row ) {
-		$title = \Title::makeTitle( $row->wl_namespace, $row->wl_title );
+		$title = Title::makeTitle( $row->wl_namespace, $row->wl_title );
 		if ( !$title->isValid() ) {
 			return;
 		}
@@ -184,7 +185,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 
 		$pageIds = [];
 		foreach ( $res as $row ) {
-			$title = \Title::makeTitle( $row->page_namespace, $row->page_title );
+			$title = Title::makeTitle( $row->page_namespace, $row->page_title );
 			$pageIds[$title->getPrefixedText()] = $row->page_id;
 		}
 

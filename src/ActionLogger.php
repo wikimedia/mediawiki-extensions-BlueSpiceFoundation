@@ -2,6 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Title\Title;
+
 /**
  * See https://www.mediawiki.org/wiki/Manual:Logging_to_Special:Log
  * and https://github.com/wikimedia/mediawiki-extensions-BlueSpiceFoundation/blob/05e031ffb070251a0a52ef52bcef92a81adb1593/includes/api/BSApiTasksBase.php#L212
@@ -30,7 +32,7 @@ class ActionLogger {
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $target = null;
 
@@ -38,7 +40,7 @@ class ActionLogger {
 	 *
 	 * @param string $type
 	 * @param \User $performer
-	 * @param \Title $target
+	 * @param Title $target
 	 */
 	public function __construct( $type, $performer, $target ) {
 		$this->type = $type;

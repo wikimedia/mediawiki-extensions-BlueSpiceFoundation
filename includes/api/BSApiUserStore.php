@@ -1,6 +1,7 @@
 <?php
 
 use BlueSpice\Renderer\Params;
+use MediaWiki\Title\Title;
 
 /**
  * @deprecated since 4.2.2 - use CommonWebAPIs REST api instead

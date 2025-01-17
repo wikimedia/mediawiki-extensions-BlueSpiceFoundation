@@ -3,6 +3,7 @@ namespace BlueSpice\Utility;
 
 use BlueSpice\TargetCache\Title\Target;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * @deprecated since 4.3 Use MediaWiki core `\PageProps` instead
@@ -17,7 +18,7 @@ class PagePropHelper {
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title = null;
 
@@ -25,7 +26,7 @@ class PagePropHelper {
 	 * @param MediaWikiServices $services
 	 * @param Title $title
 	 */
-	public function __construct( $services, \Title $title ) {
+	public function __construct( $services, Title $title ) {
 		$this->title = $title;
 		$this->services = $services;
 	}

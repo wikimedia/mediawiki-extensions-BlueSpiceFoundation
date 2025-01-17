@@ -3,7 +3,7 @@
 namespace BlueSpice\Hook\TitleReadWhitelist;
 
 use BlueSpice\Hook\TitleReadWhitelist;
-use Title;
+use MediaWiki\Title\Title;
 
 class AddFooterLinks extends TitleReadWhitelist {
 

@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Utility\WikiTextLinksHelper;
 
+use MediaWiki\Title\Title;
+
 class FileLinksHelper extends InternalLinksHelper {
 
 	/**
@@ -9,7 +11,7 @@ class FileLinksHelper extends InternalLinksHelper {
 	 * @param string $fullMatch
 	 * @param string $leadingColon
 	 * @param string $titleText
-	 * @return \Title|null
+	 * @return Title|null
 	 */
 	protected function makeTitleFromMatch( $fullMatch, $leadingColon, $titleText ) {
 		if ( !empty( $leadingColon ) ) {
@@ -31,13 +33,13 @@ class FileLinksHelper extends InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title $target
+	 * @param Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
 	 * @param bool $leadingColon
 	 * @param string $separator
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true,
+	protected function addTarget( Title $target, $text, $addDuplicates, $leadingColon = true,
 		$separator = "\n" ) {
 		if ( $target->getNamespace() !== NS_FILE && $target->getNamespace() !== NS_MEDIA ) {
 			return;
@@ -47,10 +49,10 @@ class FileLinksHelper extends InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title $target
+	 * @param Title $target
 	 * @param bool $removeAllOccurrences
 	 */
-	protected function removeTarget( \Title $target, $removeAllOccurrences ) {
+	protected function removeTarget( Title $target, $removeAllOccurrences ) {
 		if ( $target->getNamespace() !== NS_FILE && $target->getNamespace() !== NS_MEDIA ) {
 			return;
 		}

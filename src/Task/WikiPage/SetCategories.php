@@ -6,9 +6,9 @@ use BlueSpice\ParamProcessor\ParamDefinition;
 use BlueSpice\ParamProcessor\ParamType;
 use BlueSpice\Task\WikiPage as WikiPageTask;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
+use MediaWiki\Title\Title;
 use MWException;
 use Status;
-use Title;
 
 class SetCategories extends WikiPageTask {
 	public const PARAM_CATEGORIES = 'categories';

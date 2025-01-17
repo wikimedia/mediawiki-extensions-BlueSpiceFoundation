@@ -4,7 +4,7 @@ namespace BlueSpice\Hook\PageMoveComplete;
 
 use BlueSpice\Hook\PageMoveComplete;
 use BlueSpice\TargetCache\Title\Target;
-use Title;
+use MediaWiki\Title\Title;
 
 class InvalidateTargetCacheTitle extends PageMoveComplete {
 

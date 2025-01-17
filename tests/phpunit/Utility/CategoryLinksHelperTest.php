@@ -3,8 +3,8 @@
 namespace BlueSpice\Tests\Utility;
 
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
+use MediaWiki\Title\Title;
 use PHPUnit\Framework\TestCase;
-use Title;
 
 class CategoryLinksHelperTest extends TestCase {
 

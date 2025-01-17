@@ -4,6 +4,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 
 /**
  * DEPRECATED!
@@ -12,13 +13,13 @@ use MediaWiki\Revision\RevisionRecord;
 abstract class TitleMoveComplete extends Hook {
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title;
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $newTitle;
 
@@ -54,8 +55,8 @@ abstract class TitleMoveComplete extends Hook {
 
 	/**
 	 *
-	 * @param \Title &$title
-	 * @param \Title &$newTitle
+	 * @param Title &$title
+	 * @param Title &$newTitle
 	 * @param \User $user
 	 * @param int $oldid
 	 * @param int $newid
@@ -84,8 +85,8 @@ abstract class TitleMoveComplete extends Hook {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \Title &$title
-	 * @param \Title &$newTitle
+	 * @param Title &$title
+	 * @param Title &$newTitle
 	 * @param \User $user
 	 * @param int $oldid
 	 * @param int $newid

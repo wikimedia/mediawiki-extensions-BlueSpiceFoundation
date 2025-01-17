@@ -4,6 +4,7 @@ namespace BlueSpice\Data\Watchlist;
 
 use ContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
 
@@ -41,7 +42,7 @@ class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\Secon
 			$this->linkrenderer->makeLink( $user->getUserPage() )
 		);
 
-		$title = \Title::newFromText( $dataSet->get( Record::PAGE_PREFIXED_TEXT ) );
+		$title = Title::newFromText( $dataSet->get( Record::PAGE_PREFIXED_TEXT ) );
 		$dataSet->set(
 			Record::PAGE_LINK,
 			$this->linkrenderer->makeLink( $title )

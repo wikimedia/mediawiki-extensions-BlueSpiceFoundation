@@ -31,7 +31,7 @@ use BlueSpice\Data\Page\Record;
 use BlueSpice\Hook;
 use Config;
 use IContextSource;
-use Title;
+use MediaWiki\Title\Title;
 
 abstract class BSPageStoreDataProviderBeforeAppendRow extends Hook {
 	/**

@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Html\Descriptor;
 
+use MediaWiki\Title\Title;
 use RawMessage;
 
 class TitleLink extends LinkBase {
@@ -13,7 +14,7 @@ class TitleLink extends LinkBase {
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title = null;
 
@@ -21,7 +22,7 @@ class TitleLink extends LinkBase {
 	 *
 	 * @param \IContextSource $context
 	 * @param \Config $config
-	 * @param \Title|null $title
+	 * @param Title|null $title
 	 */
 	public function __construct( $context, $config, $title = null ) {
 		parent::__construct( $context, $config );

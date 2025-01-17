@@ -10,6 +10,7 @@
 require_once __DIR__ . '/../../../maintenance/Maintenance.php';
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class PurgePages extends Maintenance {
 	public function execute() {

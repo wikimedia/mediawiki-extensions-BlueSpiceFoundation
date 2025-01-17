@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Tests;
 
+use MediaWiki\Title\Title;
+
 /**
  *
  * Class BSApiExtJSStoreTestBase
@@ -85,13 +87,13 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 					break;
 				case 'title':
 					$this->assertNotNull(
-						\Title::newFromText( $value ),
+						Title::newFromText( $value ),
 						"Value of field '$schemaFieldName' is not a valid title"
 					);
 					break;
 				case 'templatetitle':
 					$this->assertNotNull(
-						\Title::newFromText( $value, NS_TEMPLATE ),
+						Title::newFromText( $value, NS_TEMPLATE ),
 						"Value of field '$schemaFieldName' is not a valid template title"
 					);
 					break;

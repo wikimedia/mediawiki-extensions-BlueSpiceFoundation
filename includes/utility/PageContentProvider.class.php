@@ -9,6 +9,7 @@
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 
 class BsPageContentProvider {
 	protected $oOriginalGlobalOutputPage = null;
@@ -428,7 +429,7 @@ class BsPageContentProvider {
 	}
 
 	/**
-	 * @param \Title $oTitle
+	 * @param Title $oTitle
 	 * @return string
 	 */
 	protected function getWrapperAttributes( $oTitle ) {

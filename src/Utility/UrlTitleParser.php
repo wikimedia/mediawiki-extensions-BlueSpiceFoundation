@@ -5,8 +5,8 @@ namespace BlueSpice\Utility;
 use Config;
 use ConfigException;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MWException;
-use Title;
 
 class UrlTitleParser {
 	/** @var Config */

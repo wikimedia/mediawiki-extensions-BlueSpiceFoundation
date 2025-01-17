@@ -7,8 +7,8 @@ use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Title\Title;
 use Status;
-use Title;
 use User;
 
 class PermissionLockdownFactory {

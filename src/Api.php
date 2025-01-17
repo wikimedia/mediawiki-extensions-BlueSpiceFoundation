@@ -35,9 +35,9 @@ use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Api\Format\Json;
 use BSExtendedApiContext;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use RequestContext;
 use Status;
-use Title;
 use User;
 use Wikimedia\ParamValidator\ParamValidator;
 

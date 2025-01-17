@@ -3,6 +3,7 @@
 namespace BlueSpice\Utility\WikiTextLinksHelper;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 class InternalLinksHelper {
 
@@ -120,10 +121,10 @@ class InternalLinksHelper {
 	 * @param string $fullMatch
 	 * @param string $leadingColon
 	 * @param string $titleText
-	 * @return \Title|null
+	 * @return Title|null
 	 */
 	protected function makeTitleFromMatch( $fullMatch, $leadingColon, $titleText ) {
-		return \Title::newFromText( $titleText );
+		return Title::newFromText( $titleText );
 	}
 
 	/**
@@ -144,10 +145,10 @@ class InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title $target
+	 * @param Title $target
 	 * @param bool $removeAllOccurrences
 	 */
-	protected function removeTarget( \Title $target, $removeAllOccurrences ) {
+	protected function removeTarget( Title $target, $removeAllOccurrences ) {
 		foreach ( $this->getTargets() as $match => $title ) {
 			if ( !$target->equals( $title ) ) {
 				continue;
@@ -164,13 +165,13 @@ class InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title $target
+	 * @param Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
 	 * @param bool $leadingColon
 	 * @param string $separator
 	 */
-	protected function addTarget( \Title $target, $text, $addDuplicates, $leadingColon = true,
+	protected function addTarget( Title $target, $text, $addDuplicates, $leadingColon = true,
 		$separator = "\n" ) {
 		if ( !$addDuplicates ) {
 			foreach ( $this->getTargets() as $match => $title ) {
@@ -204,14 +205,14 @@ class InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title[] $links
+	 * @param Title[] $links
 	 * @param bool|false $removeAllOccurrences
 	 * @return InternalLinksHelper
 	 */
 	public function removeTargets( $links, $removeAllOccurrences = false ) {
 		$replaced = $this->maskParserFunctions();
 		foreach ( $links as $linkText => $target ) {
-			if ( !$target instanceof \Title ) {
+			if ( !$target instanceof Title ) {
 				continue;
 			}
 			$this->removeTarget( $target, $removeAllOccurrences );
@@ -222,14 +223,14 @@ class InternalLinksHelper {
 
 	/**
 	 *
-	 * @param \Title[] $links
+	 * @param Title[] $links
 	 * @param bool|true $addDuplicates
 	 * @param string $separator
 	 * @return InternalLinksHelper
 	 */
 	public function addTargets( $links, $addDuplicates = true, $separator = "\n" ) {
 		foreach ( $links as $linkText => $target ) {
-			if ( !$target instanceof \Title ) {
+			if ( !$target instanceof Title ) {
 				continue;
 			}
 			if ( empty( $linkText ) || is_numeric( $linkText ) ) {

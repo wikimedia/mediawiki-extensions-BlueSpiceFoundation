@@ -29,6 +29,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Title\Title;
 
 /**
  * @deprecated since REL1_39. Use SkinTemplateNavigation__UniversalHook
@@ -43,7 +44,7 @@ abstract class PersonalUrls extends Hook {
 
 	/**
 	 *
-	 * @var \Title
+	 * @var Title
 	 */
 	protected $title = null;
 

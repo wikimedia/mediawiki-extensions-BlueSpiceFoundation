@@ -30,8 +30,8 @@ use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\IStore;
 use Config;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use TextContent;
-use Title;
 
 class EntityFactory {
 	protected $storedById = [];

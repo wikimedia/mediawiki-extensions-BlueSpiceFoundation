@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 
 /**
  * This class provides functions for common tasks while working with MediaWiki
@@ -92,7 +93,7 @@ class BsArticleHelper {
 	/**
 	 * DEPRECATED
 	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
-	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( \Title )->getPageProp instead
+	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( Title )->getPageProp instead
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
 	 * @return string|null
@@ -121,7 +122,7 @@ class BsArticleHelper {
 	/**
 	 * DEPRECATED
 	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
-	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( \Title )->getPageProps instead
+	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( Title )->getPageProps instead
 	 * @param type $bDoLoad
 	 * @return array
 	 */
@@ -172,11 +173,11 @@ class BsArticleHelper {
 	/**
 	 * Retuns subpages of a given title alphabetical sorted by fullArticleText
 	 *
-	 * @param \Title $oTitle
+	 * @param Title $oTitle
 	 * @param int $iLimit
 	 * @return array
 	 */
-	public static function getSubpagesSortedForTitle( \Title $oTitle, $iLimit = -1 ) {
+	public static function getSubpagesSortedForTitle( Title $oTitle, $iLimit = -1 ) {
 		return self::getInstance( $oTitle )->getSubpagesSorted( $iLimit );
 	}
 

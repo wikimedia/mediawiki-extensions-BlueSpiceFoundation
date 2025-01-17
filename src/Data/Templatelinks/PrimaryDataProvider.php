@@ -4,12 +4,12 @@ namespace BlueSpice\Data\Templatelinks;
 
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use MWStake\MediaWiki\Component\DataStore\Filter;
 use MWStake\MediaWiki\Component\DataStore\FilterFinder;
 use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;
-use Title;
 use User;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {

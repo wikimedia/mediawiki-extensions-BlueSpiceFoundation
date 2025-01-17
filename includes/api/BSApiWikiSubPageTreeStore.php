@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class BSApiWikiSubPageTreeStore extends BSApiExtJSStoreBase {

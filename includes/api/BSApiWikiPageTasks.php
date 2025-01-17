@@ -27,6 +27,7 @@
 
 use BlueSpice\Api\Task;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
+use MediaWiki\Title\Title;
 
 /**
  * Provides common tasks that can be performed on a WikiPage
