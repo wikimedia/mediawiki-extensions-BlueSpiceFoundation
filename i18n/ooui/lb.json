@@ -1,11 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-ooui-key-value-input-widget-key-label": "Schlëssel",
 	"bs-ooui-key-value-input-widget-value-label": "Wäert",
 	"bs-ooui-key-value-input-widget-no-values-label": "Keng Wäerter festgeluecht!",
-	"bs-ooui-btn-dismiss-alert-title": "Verwerfen"
+	"bs-ooui-btn-dismiss-alert-title": "Verwerfen",
+	"bs-ui-generic-save": "Späicheren",
+	"bs-ui-generic-cancel": "Ofbriechen",
+	"bs-ui-generic-yes": "Jo",
+	"bs-ui-generic-no": "Neen",
+	"bs-ui-generic-close": "Zoumaachen"
 }

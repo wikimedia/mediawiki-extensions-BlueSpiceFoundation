@@ -4,5 +4,10 @@
 			"Saraiki"
 		]
 	},
-	"bs-ooui-key-value-input-widget-value-label": "قدر"
+	"bs-ooui-key-value-input-widget-value-label": "قدر",
+	"bs-ui-generic-save": "بچاؤ",
+	"bs-ui-generic-cancel": "منسوخ",
+	"bs-ui-generic-yes": "جیا",
+	"bs-ui-generic-no": "کو",
+	"bs-ui-generic-close": "بند کرو"
 }
