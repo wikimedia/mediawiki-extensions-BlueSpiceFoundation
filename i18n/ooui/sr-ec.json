@@ -15,5 +15,10 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Нема постављених вредности.",
 	"bs-ooui-btn-dismiss-alert-title": "Одбаци",
 	"bs-ooui-key-value-input-widget-section-label": "Одељак",
-	"bs-ooui-key-value-input-widget-add-section-label": "Додај нови одељак"
+	"bs-ooui-key-value-input-widget-add-section-label": "Додај нови одељак",
+	"bs-ui-generic-save": "Сачувај",
+	"bs-ui-generic-cancel": "Откажи",
+	"bs-ui-generic-yes": "Да",
+	"bs-ui-generic-no": "Не",
+	"bs-ui-generic-close": "Затвори"
 }

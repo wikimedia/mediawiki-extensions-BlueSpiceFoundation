@@ -10,5 +10,6 @@
 	"bs-upload-descfilelabel": "Deskripto",
 	"bs-upload-uploadwarningdialog-intro": "La sequanta mesaji aparis kande vu probis sendar l'arkivo",
 	"bs-upload-license": "Licenco",
-	"bs-upload-uploadfilefieldlabel": "Arkivo-nomo"
+	"bs-upload-uploadfilefieldlabel": "Arkivo-nomo",
+	"bs-upload-details": "Detali"
 }

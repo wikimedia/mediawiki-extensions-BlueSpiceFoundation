@@ -15,5 +15,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "مقداری داده نشده است!",
 	"bs-ooui-btn-dismiss-alert-title": "بگذریم",
 	"bs-ooui-key-value-input-widget-section-label": "بخش",
-	"bs-ooui-key-value-input-widget-add-section-label": "افزودن بخش جدید"
+	"bs-ooui-key-value-input-widget-add-section-label": "افزودن بخش جدید",
+	"bs-ui-generic-cancel": "لغو"
 }
