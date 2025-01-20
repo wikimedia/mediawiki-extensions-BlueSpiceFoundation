@@ -13,7 +13,7 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Engadir nova entrada",
 	"bs-ooui-key-value-input-widget-error-message": "Cómpre encher tódolos campos obrigatorios!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Non hai valores establecidos!",
+	"bs-ooui-btn-dismiss-alert-title": "Descartar",
 	"bs-ooui-key-value-input-widget-section-label": "Sección",
-	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova sección",
-	"bs-ooui-btn-dismiss-alert-title": "Descartar"
+	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova sección"
 }
