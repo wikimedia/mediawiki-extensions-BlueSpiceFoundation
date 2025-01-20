@@ -35,5 +35,6 @@
 	"bs-extjs-filter-date-before": "Ante",
 	"bs-extjs-filter-date-on": "Serchez",
 	"bs-extjs-pageexport-list-format-link-label": "Ligilo",
-	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi"
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
+	"bs-extjs-flyout-tab-grid-label": "Detali"
 }
