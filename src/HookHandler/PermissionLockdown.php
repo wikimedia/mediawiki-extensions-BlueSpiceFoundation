@@ -107,7 +107,13 @@ class PermissionLockdown implements ApiBeforeMainHook, BeforeParserFetchTemplate
 			$paramMap = [];
 			foreach ( $titleParamValues as $titleParamValue ) {
 				$titleParamTitle = $this->titleFactory->newFromText( $titleParamValue );
+				if ( !$titleParamTitle ) {
+					continue;
+				}
 				$paramMap[$titleParamValue] = $titleParamTitle;
+			}
+			if ( empty( $paramMap ) ) {
+				continue;
 			}
 			$filteredParamValue = $this->filterParamValue( $paramMap, $user );
 			$request->setVal( $param, $filteredParamValue );
@@ -123,7 +129,13 @@ class PermissionLockdown implements ApiBeforeMainHook, BeforeParserFetchTemplate
 			$paramMap = [];
 			foreach ( $pageIDParamValues as $pageIDParamValue ) {
 				$pageIDParamTitle = $this->titleFactory->newFromID( $pageIDParamValue );
+				if ( !$pageIDParamTitle ) {
+					continue;
+				}
 				$paramMap[$pageIDParamValue] = $pageIDParamTitle;
+			}
+			if ( empty( $paramMap ) ) {
+				continue;
 			}
 			$filteredParamValue = $this->filterParamValue( $paramMap, $user );
 			$request->setVal( $param, $filteredParamValue );
@@ -146,8 +158,10 @@ class PermissionLockdown implements ApiBeforeMainHook, BeforeParserFetchTemplate
 				}
 				$paramMap[$revisionIDParamValue] = $revisionIDParamTitle;
 			}
-			$filteredParamValue = $this->filterParamValue( $paramMap, $user );
-			$request->setVal( $param, $filteredParamValue );
+			if ( !empty( $paramMap ) ) {
+				$filteredParamValue = $this->filterParamValue( $paramMap, $user );
+				$request->setVal( $param, $filteredParamValue );
+			}
 		}
 	}
 
