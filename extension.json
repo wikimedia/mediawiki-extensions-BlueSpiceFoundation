@@ -198,7 +198,8 @@
 				"bs-two-units-ago",
 				"bs-one-unit-ago",
 				"bs-now",
-				"confirm"
+				"confirm",
+				"bs-extjs-title-success"
 			],
 			"dependencies": [
 				"mediawiki.cookie",
