@@ -1,7 +1,7 @@
 {
 	"name": "BlueSpiceFoundation",
 	"license-name": "GPL-3.0-only",
-	"version": "4.5.0-alpha",
+	"version": "5.0.0-alpha",
 	"author": [
 		"[https://www.hallowelt.com Hallo Welt! GmbH]"
 	],
@@ -9,10 +9,9 @@
 	"descriptionmsg": "bluespicefoundation-desc",
 	"type": "bluespice",
 	"requires": {
-		"MediaWiki": ">= 1.39.0",
+		"MediaWiki": ">= 1.43.0",
 		"extensions": {
-			"ExtJSBase": ">= 3.0.0",
-			"OOJSPlus": ">= 2.0.0"
+			"OOJSPlus": ">= 3.0.0"
 		}
 	},
 	"attributes": {
