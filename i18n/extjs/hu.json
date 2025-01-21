@@ -65,7 +65,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Lapgyűjtemény",
 	"bs-pagecollection-prefix": "Lapgyűjtemény",
 	"bs-extjs-pageexport-success": "Sikeres export",
-	"bs-extjs-pageexport-success-text": "Lapgyűjtemény exportálva ide: $1",
 	"bs-extjs-pageexport-required-text": "A lista neve nem lehet üres és legalább egy lapot ki kell választani",
 	"bs-extjs-pageexport-error-invalid-title": "A lista neve érvénytelen",
 	"bs-extjs-tools-trigger-title": "Kattints ide az eszközök menü megnyitásához",

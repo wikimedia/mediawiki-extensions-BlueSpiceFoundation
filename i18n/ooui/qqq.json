@@ -4,7 +4,8 @@
 			"Beta16",
 			"Dejan Savuljesku",
 			"Raymond",
-			"Robby"
+			"Robby",
+			"Amire80"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Placeholder for input field of OOUI TagMultiselectWidget",
@@ -22,6 +23,6 @@
 	"bs-ui-generic-yes": "Generic yes button text{{Identical|Yes}}",
 	"bs-ui-generic-no": "Generic no button text{{Identical|No}}",
 	"bs-exportpages-dialog-title": "Title for the export pages dialog",
-	"bs-exportpages-success-text": "Success message for the export pages dialog\n$1 - page target prefixed db key\n$2 - page title",
+	"bs-exportpages-success-text": "Success message for the export pages dialog\n* $1 - page target prefixed db key\n* $2 - page title",
 	"bs-ui-generic-close": "Generic close button text{{Identical|Close}}"
 }

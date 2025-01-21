@@ -68,7 +68,6 @@
 	"bs-extjs-pageexport-pagecollection-prefix": "Colleccion de paginas",
 	"bs-pagecollection-prefix": "Colleccion de paginas",
 	"bs-extjs-pageexport-success": "Export capitat",
-	"bs-extjs-pageexport-success-text": "Colleccion de paginas exportada vèrs $1",
 	"bs-extjs-export-search-summary-text": "Generat per PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "Lo nom de la lista es invalid",
 	"bs-extjs-tools-trigger-text": "Otís"
