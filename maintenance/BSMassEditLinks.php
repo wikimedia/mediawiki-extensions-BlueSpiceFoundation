@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\TitleFactory;
 
 require_once __DIR__ . '/BSMassEditBase.php';
 
