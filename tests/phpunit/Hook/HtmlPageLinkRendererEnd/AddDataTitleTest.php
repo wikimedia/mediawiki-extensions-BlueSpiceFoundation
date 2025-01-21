@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
@@ -11,7 +12,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle::__construct
 	 */
 	public function testCanConstruct() {
-		$context = $this->getMockBuilder( '\RequestContext' )
+		$context = $this->getMockBuilder( RequestContext::class )
 			->disableOriginalConstructor()
 			->getMock();
 
@@ -46,7 +47,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 	 */
 	public function testProcess() {
 		$GLOBALS[ 'BS_ADD_DATA_TITLE_TEST' ] = true;
-		$context = $this->getMockBuilder( '\RequestContext' )
+		$context = $this->getMockBuilder( RequestContext::class )
 			->disableOriginalConstructor()
 			->getMock();
 

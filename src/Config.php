@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 use BlueSpice\Data\Settings\Record;
 use BlueSpice\Data\Settings\Store;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 
@@ -79,7 +80,7 @@ class Config extends \MultiConfig {
 	 */
 	protected function getStore() {
 		return new Store(
-			new Context( \RequestContext::getMain(), $this ),
+			new Context( RequestContext::getMain(), $this ),
 			MediaWikiServices::getInstance()->getDBLoadBalancer()
 		);
 	}

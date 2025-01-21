@@ -31,6 +31,7 @@ use Config;
 use Html;
 use HtmlArmor;
 use IContextSource;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use Message;
@@ -130,7 +131,7 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 				false
 			);
 			if ( !$context instanceof IContextSource ) {
-				$context = \RequestContext::getMain();
+				$context = RequestContext::getMain();
 			}
 		}
 		if ( !$linkRenderer ) {

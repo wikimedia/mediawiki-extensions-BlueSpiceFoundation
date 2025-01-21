@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 
 abstract class SpecialPage extends \SpecialPage {

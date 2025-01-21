@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Context\RequestContext;
+
 /**
  * Description of HTMLMultiSelectEx
  *
@@ -144,7 +146,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	 * @return string
 	 */
 	public function getInputHTML( $value ) {
-		\RequestContext::getMain()->getOutput()->addModules(
+		RequestContext::getMain()->getOutput()->addModules(
 			'ext.bluespice.html.formfields.multiselect'
 		);
 

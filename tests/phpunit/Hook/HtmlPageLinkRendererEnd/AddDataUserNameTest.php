@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
@@ -15,7 +16,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::__construct
 	 */
 	public function testCanConstruct() {
-		$context = $this->getMockBuilder( '\RequestContext' )
+		$context = $this->getMockBuilder( RequestContext::class )
 			->disableOriginalConstructor()
 			->getMock();
 
@@ -56,7 +57,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 		$testuser->setRealName( 'Sysöp, W. Iki' );
 		$testuser->saveSettings();
 
-		$context = $this->getMockBuilder( '\RequestContext' )
+		$context = $this->getMockBuilder( RequestContext::class )
 			->disableOriginalConstructor()
 			->getMock();
 
@@ -109,7 +110,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 		$testuser->setRealName( 'Sysöp, W. Iki' );
 		$testuser->saveSettings();
 
-		$context = $this->getMockBuilder( '\RequestContext' )
+		$context = $this->getMockBuilder( RequestContext::class )
 			->disableOriginalConstructor()
 			->getMock();
 
@@ -156,7 +157,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::process
 	 */
 	public function testProcessNoProcess() {
-		$context = $this->getMockBuilder( '\RequestContext' )
+		$context = $this->getMockBuilder( RequestContext::class )
 			->disableOriginalConstructor()
 			->getMock();
 

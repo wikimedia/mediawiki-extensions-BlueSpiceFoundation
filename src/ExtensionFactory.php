@@ -26,6 +26,8 @@
  */
 namespace BlueSpice;
 
+use MediaWiki\Context\RequestContext;
+
 class ExtensionFactory {
 	/**
 	 *
@@ -83,7 +85,7 @@ class ExtensionFactory {
 
 		$this->extensions[$name] = new $class(
 			$definition,
-			\RequestContext::getMain(),
+			RequestContext::getMain(),
 			$this->config
 		);
 

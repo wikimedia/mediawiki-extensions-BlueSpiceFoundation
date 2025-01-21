@@ -32,10 +32,10 @@ use BlueSpice\Renderer\Params;
 use Exception;
 use IContextSource;
 use JsonSerializable;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
 use MWException;
-use RequestContext;
 use Status;
 
 abstract class Entity implements JsonSerializable {

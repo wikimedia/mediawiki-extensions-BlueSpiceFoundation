@@ -2,6 +2,7 @@
 
 use BlueSpice\DeferredNotificationStack;
 use BlueSpice\ExtensionAttributeBasedRegistry;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 
 return [
@@ -99,7 +100,7 @@ return [
 		return new \BlueSpice\PermissionLockdownFactory(
 			$registry,
 			$services->getConfigFactory()->makeConfig( 'bsg' ),
-			\RequestContext::getMain()
+			RequestContext::getMain()
 		);
 	},
 
@@ -180,7 +181,7 @@ return [
 	},
 
 	'BSDeferredNotificationStack' => static function ( MediaWikiServices $services ) {
-		$request = \RequestContext::getMain()->getRequest();
+		$request = RequestContext::getMain()->getRequest();
 		return new DeferredNotificationStack( $request );
 	},
 
@@ -188,7 +189,7 @@ return [
 		$registry = new ExtensionAttributeBasedRegistry(
 				'BlueSpiceFoundationPageHeaderBeforeContentRegistry'
 			);
-		$context = \RequestContext::getMain();
+		$context = RequestContext::getMain();
 		$config = $services->getConfigFactory()->makeConfig( 'bsg' );
 
 		return new \BlueSpice\PageHeaderBeforeContentFactory( $registry, $context, $config );

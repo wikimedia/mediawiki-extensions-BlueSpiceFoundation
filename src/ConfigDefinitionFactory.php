@@ -2,6 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Context\RequestContext;
+
 class ConfigDefinitionFactory {
 
 	protected $configDefinitions = null;
@@ -44,7 +46,7 @@ class ConfigDefinitionFactory {
 			return false;
 		}
 		return call_user_func_array( $definitions[$name], [
-			\RequestContext::getMain(),
+			RequestContext::getMain(),
 			$this->config,
 			$name,
 		] );
