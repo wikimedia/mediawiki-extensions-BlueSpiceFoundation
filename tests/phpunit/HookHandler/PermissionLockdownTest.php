@@ -10,12 +10,12 @@ use HashConfig;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\User;
 use PHPUnit\Framework\TestCase;
 use TitleFactory;
-use WebRequest;
 
 class PermissionLockdownTest extends TestCase {
 	/**
