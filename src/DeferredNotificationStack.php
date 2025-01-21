@@ -1,8 +1,8 @@
 <?php
 namespace BlueSpice;
 
+use MediaWiki\Context\RequestContext;
 use MWException;
-use RequestContext;
 
 class DeferredNotificationStack {
 

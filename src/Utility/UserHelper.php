@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Utility;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\User\User;
 
 class UserHelper {
@@ -23,7 +24,7 @@ class UserHelper {
 		if ( $this->user ) {
 			return;
 		}
-		$this->user = \RequestContext::getMain()->getUser();
+		$this->user = RequestContext::getMain()->getUser();
 		if ( !$this->user ) {
 			throw new \MWException( 'User is required for UserHelper' );
 		}

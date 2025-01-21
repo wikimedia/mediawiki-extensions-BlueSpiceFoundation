@@ -30,6 +30,7 @@ use BlueSpice\Renderer\Params;
 use BlueSpice\Utility\CacheHelper;
 use Config;
 use IContextSource;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 
@@ -90,7 +91,7 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 				false
 			);
 			if ( !$context instanceof IContextSource ) {
-				$context = \RequestContext::getMain();
+				$context = RequestContext::getMain();
 			}
 		}
 		if ( !$linkRenderer ) {

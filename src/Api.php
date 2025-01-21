@@ -34,10 +34,10 @@ use ApiMessage;
 use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Api\Format\Json;
 use BSExtendedApiContext;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use RequestContext;
 use Status;
 use Wikimedia\ParamValidator\ParamValidator;
 

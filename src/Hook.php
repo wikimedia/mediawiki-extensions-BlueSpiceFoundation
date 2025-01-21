@@ -26,6 +26,7 @@
  */
 namespace BlueSpice;
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use Message;
 use MessageLocalizer;
@@ -62,7 +63,7 @@ abstract class Hook implements MessageLocalizer {
 	 */
 	protected function getContext() {
 		if ( $this->context instanceof \IContextSource === false ) {
-			$this->context = \RequestContext::getMain();
+			$this->context = RequestContext::getMain();
 		}
 		return $this->context;
 	}

@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Context\RequestContext;
 use MWStake\MediaWiki\Component\AlertBanners\AlertProviderFactory\Base;
-use RequestContext;
 
 class LegacyExtensionAttributesAlertProviderFactory extends Base {
 

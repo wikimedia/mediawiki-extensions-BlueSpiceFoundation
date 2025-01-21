@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Permission\Lockdown;
 
 use BlueSpice\Permission\Lockdown\Module\Namespaces;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -87,7 +88,7 @@ class NamespaceLockdownTest extends MediaWikiIntegrationTestCase {
 		$services = MediaWikiServices::getInstance();
 		$this->module = Namespaces::getInstance(
 			$services->getConfigFactory()->makeConfig( 'bsg' ),
-			\RequestContext::getMain(),
+			RequestContext::getMain(),
 			$services,
 			$services->getService( 'BSRoleManager' )
 		);

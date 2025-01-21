@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
@@ -286,7 +287,7 @@ class BsNamespaceHelper {
 			->getPermissionManager()
 			->userCan(
 				$sPermission,
-				\RequestContext::getMain()->getUser(),
+				RequestContext::getMain()->getUser(),
 				$oDummyTitle
 			);
 	}

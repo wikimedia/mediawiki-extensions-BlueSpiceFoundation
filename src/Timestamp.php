@@ -6,10 +6,10 @@ use DateInterval;
 use DateTime;
 use DateTimeZone;
 use Exception;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
 use MWTimestamp;
-use RequestContext;
 
 class Timestamp extends MWTimestamp {
 
