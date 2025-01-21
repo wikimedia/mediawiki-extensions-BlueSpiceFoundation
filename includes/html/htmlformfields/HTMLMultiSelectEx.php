@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Request\WebRequest;
 
 /**
  * Description of HTMLMultiSelectEx
@@ -190,7 +191,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 
 	/**
 	 *
-	 * @param \WebRequest $request
+	 * @param WebRequest $request
 	 * @return array
 	 */
 	public function loadDataFromRequest( $request ) {
