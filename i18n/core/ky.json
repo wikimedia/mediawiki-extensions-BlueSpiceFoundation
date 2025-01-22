@@ -16,5 +16,6 @@
 	"bs-months-duration": "{{PLURAL:$1|бир ай|$1 ай}}",
 	"bs-weeks-duration": "{{PLURAL:$1|бир апта|$1 апта}}",
 	"bs-navigation-instructions": "Нускамалар",
-	"bs-userbar_loginswitch_logout": "Чыгуу"
+	"bs-userbar_loginswitch_logout": "Чыгуу",
+	"bs-mins-duration": "{{PLURAL:$1|бир мүнөт|$1 мүнөт}}"
 }
