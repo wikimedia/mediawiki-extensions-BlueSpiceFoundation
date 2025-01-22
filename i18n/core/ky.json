@@ -15,5 +15,6 @@
 	"bs-export-menu-print-text": "Басып чыгаруу",
 	"bs-graphicallist-action-close": "Жабуу",
 	"bs-graphicallist-action-list": "Тизме",
-	"bs-userbar_loginswitch_logout": "Чыгуу"
+	"bs-userbar_loginswitch_logout": "Чыгуу",
+	"bs-mins-duration": "{{PLURAL:$1|бир мүнөт|$1 мүнөт}}"
 }
