@@ -2,6 +2,7 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Message\Message;
 use MWException;
 
 class SimpleDeferredNotification implements IDeferredNotification {
@@ -12,7 +13,7 @@ class SimpleDeferredNotification implements IDeferredNotification {
 
 	/**
 	 * Must be an array with the following keys:
-	 * - 'message': a \Message object
+	 * - 'message': a Message object
 	 * - 'options': an array of options compatible to
 	 * https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/mw.notification-property-defaults
 	 * @param array $notificationInfo
@@ -30,7 +31,7 @@ class SimpleDeferredNotification implements IDeferredNotification {
 
 	/**
 	 *
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getMessage() {
 		return $this->message;

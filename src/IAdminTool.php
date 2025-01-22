@@ -2,6 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Message\Message;
+
 interface IAdminTool {
 
 	/**
@@ -10,12 +12,12 @@ interface IAdminTool {
 	public function getURL();
 
 	/**
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getDescription();
 
 	/**
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getName();
 

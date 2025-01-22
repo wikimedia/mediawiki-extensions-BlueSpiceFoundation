@@ -8,9 +8,9 @@ use BlueSpice\Permission\RoleManager;
 use Config;
 use IContextSource;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use Message;
 
 class Namespaces extends Module {
 

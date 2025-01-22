@@ -2,9 +2,11 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Message\Message;
+
 interface IDeferredNotification {
 	/**
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getMessage();
 

@@ -1,7 +1,7 @@
 <?php
 namespace BlueSpice\Permission;
 
-use Message;
+use MediaWiki\Message\Message;
 
 interface IRole {
 	/**

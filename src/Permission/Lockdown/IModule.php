@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Permission\Lockdown;
 
+use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use Message;
 
 interface IModule {
 

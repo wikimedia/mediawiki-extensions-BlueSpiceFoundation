@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Html\Descriptor;
 
+use MediaWiki\Message\Message;
+
 interface ILink {
 
 	/**
@@ -10,7 +12,7 @@ interface ILink {
 	public function getHtmlId();
 
 	/**
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getLabel();
 
@@ -20,7 +22,7 @@ interface ILink {
 	public function getHref();
 
 	/**
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getTooltip();
 

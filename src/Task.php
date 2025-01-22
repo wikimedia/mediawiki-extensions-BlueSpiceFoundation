@@ -29,7 +29,7 @@ namespace BlueSpice;
 
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use Message;
+use MediaWiki\Message\Message;
 use MessageLocalizer;
 use Psr\Log\LoggerInterface;
 use Status;

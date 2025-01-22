@@ -6,8 +6,8 @@ use Config;
 use IContextSource;
 use IDBAccessObject;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Message\Message;
 use MediaWiki\User\User;
-use Message;
 use MessageLocalizer;
 
 abstract class Module implements IModule, MessageLocalizer {

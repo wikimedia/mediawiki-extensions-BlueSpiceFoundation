@@ -3,7 +3,7 @@
 namespace BlueSpice\Html\FormField;
 
 use BsGroupHelper;
-use Message;
+use MediaWiki\Message\Message;
 
 class GroupMultiSelect extends \HTMLMultiSelectEx {
 
