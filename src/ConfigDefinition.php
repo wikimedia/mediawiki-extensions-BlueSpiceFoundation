@@ -2,7 +2,7 @@
 
 namespace BlueSpice;
 
-use Message;
+use MediaWiki\Message\Message;
 use MessageLocalizer;
 
 abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocalizer {

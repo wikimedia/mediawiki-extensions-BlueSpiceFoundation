@@ -4,6 +4,7 @@ namespace BlueSpice\ConfigDefinition;
 
 use BlueSpice\Html\FormField\GroupMultiSelect;
 use HTMLForm;
+use MediaWiki\Message\Message;
 
 abstract class GroupList extends \BlueSpice\ConfigDefinition {
 
@@ -17,7 +18,7 @@ abstract class GroupList extends \BlueSpice\ConfigDefinition {
 			'fieldname' => $this->getName(),
 			'id' => $this->makeID(),
 			'name' => $this->name,
-			'label' => \Message::newFromKey( $this->getLabelMessageKey() ),
+			'label' => Message::newFromKey( $this->getLabelMessageKey() ),
 			GroupMultiSelect::PARAM_BLACKLIST => $this->getBlacklist()
 		] );
 	}

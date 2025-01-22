@@ -34,7 +34,7 @@ use IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
-use Message;
+use MediaWiki\Message\Message;
 use MessageLocalizer;
 
 abstract class Renderer implements IRenderer, MessageLocalizer {

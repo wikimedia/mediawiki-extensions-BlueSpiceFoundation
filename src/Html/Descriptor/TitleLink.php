@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Html\Descriptor;
 
+use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
 use RawMessage;
 
@@ -35,7 +36,7 @@ class TitleLink extends LinkBase {
 
 	/**
 	 *
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getLabel() {
 		$label = $this->title->getPrefixedText();
@@ -54,7 +55,7 @@ class TitleLink extends LinkBase {
 
 	/**
 	 *
-	 * @return \Message
+	 * @return Message
 	 */
 	public function getTooltip() {
 		return new RawMessage( $this->title->getPrefixedText() );

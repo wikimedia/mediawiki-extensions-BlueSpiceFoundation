@@ -4,7 +4,7 @@ namespace BlueSpice\Permission\Role;
 use BlueSpice\Permission\IRole;
 use BlueSpice\Permission\PermissionRegistry;
 use MediaWiki\MediaWikiServices;
-use Message;
+use MediaWiki\Message\Message;
 
 /**
  * Base class for Roles
