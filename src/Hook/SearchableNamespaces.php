@@ -28,6 +28,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class SearchableNamespaces extends Hook {
 
@@ -55,7 +56,7 @@ abstract class SearchableNamespaces extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param array &$namespaces
 	 */
 	public function __construct( $context, $config, &$namespaces ) {

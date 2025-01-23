@@ -3,7 +3,7 @@
 namespace BlueSpice\Permission;
 
 use BlueSpice\Permission\Lockdown\IModule;
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use Status;

@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class UserGetDefaultOptions extends Hook {
 
@@ -54,7 +55,7 @@ abstract class UserGetDefaultOptions extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param array &$defaultOptions
 	 */
 	public function __construct( $context, $config, &$defaultOptions ) {

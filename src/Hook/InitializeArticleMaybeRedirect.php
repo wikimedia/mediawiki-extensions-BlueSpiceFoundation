@@ -27,8 +27,8 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
 use WikiPage;

@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\User;
 
@@ -75,7 +76,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \WikiPage $wikiPage
 	 * @param RevisionRecord $rev
 	 * @param int $baseID

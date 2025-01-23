@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use BlueSpice\Utility\CacheHelper;
+use MediaWiki\Config\Config;
 
 class TargetCacheFactory {
 
@@ -14,7 +15,7 @@ class TargetCacheFactory {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 
@@ -33,10 +34,10 @@ class TargetCacheFactory {
 	/**
 	 *
 	 * @param IRegistry $registry
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param CacheHelper $cacheHelper
 	 */
-	public function __construct( $registry, \Config $config, CacheHelper $cacheHelper ) {
+	public function __construct( $registry, Config $config, CacheHelper $cacheHelper ) {
 		$this->registry = $registry;
 		$this->config = $config;
 		$this->cacheHelper = $cacheHelper;

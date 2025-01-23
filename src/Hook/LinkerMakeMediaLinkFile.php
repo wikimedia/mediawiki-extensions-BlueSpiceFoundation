@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 use MediaWiki\Title\Title;
 
 abstract class LinkerMakeMediaLinkFile extends Hook {
@@ -86,7 +87,7 @@ abstract class LinkerMakeMediaLinkFile extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param Title $title
 	 * @param \File $file
 	 * @param string &$html

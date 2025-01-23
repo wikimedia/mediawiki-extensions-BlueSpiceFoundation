@@ -4,12 +4,13 @@ namespace BlueSpice;
 
 use BlueSpice\TargetCacheHandler\ITarget;
 use BlueSpice\Utility\CacheHelper;
+use MediaWiki\Config\Config;
 
 abstract class TargetCache implements ITargetCache {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 
@@ -40,10 +41,10 @@ abstract class TargetCache implements ITargetCache {
 	/**
 	 *
 	 * @param string $type
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param CacheHelper $cacheHelper
 	 */
-	public function __construct( $type, \Config $config, CacheHelper $cacheHelper ) {
+	public function __construct( $type, Config $config, CacheHelper $cacheHelper ) {
 		$this->type = $type;
 		$this->config = $config;
 		$this->cacheHelper = $cacheHelper;

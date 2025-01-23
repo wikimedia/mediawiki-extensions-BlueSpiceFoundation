@@ -1,6 +1,8 @@
 <?php
 namespace BlueSpice\Utility;
 
+use MediaWiki\Config\Config;
+
 class CacheHelper {
 
 	/**
@@ -11,7 +13,7 @@ class CacheHelper {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 
@@ -23,9 +25,9 @@ class CacheHelper {
 
 	/**
 	 *
-	 * @param \Config $config
+	 * @param Config $config
 	 */
-	public function __construct( \Config $config ) {
+	public function __construct( Config $config ) {
 		$this->config = $config;
 		$this->cache = \ObjectCache::getInstance(
 			$this->config->get( 'MainCacheType' )

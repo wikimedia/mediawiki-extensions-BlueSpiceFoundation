@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Utility;
 
-use Config;
 use ConfigException;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MWException;

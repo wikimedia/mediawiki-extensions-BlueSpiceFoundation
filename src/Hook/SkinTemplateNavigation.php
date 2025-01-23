@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 /**
  * DEPRECATED
@@ -66,7 +67,7 @@ abstract class SkinTemplateNavigation extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \SkinTemplate &$sktemplate
 	 * @param array &$links
 	 */

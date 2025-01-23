@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class WebResponseSetCookie extends Hook {
 
@@ -76,7 +77,7 @@ abstract class WebResponseSetCookie extends Hook {
 
 	/**
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param string &$name
 	 * @param string &$value
 	 * @param int &$expire

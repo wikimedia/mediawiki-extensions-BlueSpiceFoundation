@@ -2,9 +2,9 @@
 namespace BlueSpice\Renderer;
 
 use BlueSpice\Utility\CacheHelper;
-use Config;
 use FormatJson;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Linker\LinkRenderer;
 use MWException;
 

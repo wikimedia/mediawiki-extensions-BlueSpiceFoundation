@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Entity;
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class BSEntityGetFullData extends Hook {
 	/**
@@ -62,7 +63,7 @@ abstract class BSEntityGetFullData extends Hook {
 
 	/**
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param Entity $entity
 	 * @param array &$data
 	 */

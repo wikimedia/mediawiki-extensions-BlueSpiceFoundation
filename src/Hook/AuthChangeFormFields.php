@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class AuthChangeFormFields extends Hook {
 
@@ -78,7 +79,7 @@ abstract class AuthChangeFormFields extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param array $requests
 	 * @param array $fieldInfo
 	 * @param array &$formDescriptor

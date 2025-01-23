@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Config\Config;
+
 class BSTreeNode {
 
 	public const CONFIG_TEXT = 'text';

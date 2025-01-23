@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 use MediaWiki\User\User;
 
 abstract class FileDeleteComplete extends Hook {
@@ -82,7 +83,7 @@ abstract class FileDeleteComplete extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \File $file
 	 * @param string $oldimage
 	 * @param \WikiPage $wikipage

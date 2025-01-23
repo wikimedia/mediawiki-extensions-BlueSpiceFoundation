@@ -28,9 +28,9 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use Config;
 use Content;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Title\Title;
 use ParserOutput;
 

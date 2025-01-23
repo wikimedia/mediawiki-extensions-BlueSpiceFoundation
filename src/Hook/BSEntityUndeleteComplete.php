@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Entity;
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 use MediaWiki\User\User;
 
 abstract class BSEntityUndeleteComplete extends Hook {
@@ -70,7 +71,7 @@ abstract class BSEntityUndeleteComplete extends Hook {
 
 	/**
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param Entity $entity
 	 * @param \Status $status
 	 * @param User $user

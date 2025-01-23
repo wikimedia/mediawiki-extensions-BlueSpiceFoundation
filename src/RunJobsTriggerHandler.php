@@ -2,6 +2,7 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\RunJobsTrigger\Handler;
 
@@ -11,7 +12,7 @@ abstract class RunJobsTriggerHandler extends Handler {
 	protected $services = null;
 
 	/**
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 * @return IRunJobsTriggerHandler
 	 */
@@ -22,7 +23,7 @@ abstract class RunJobsTriggerHandler extends Handler {
 
 	/**
 	 *
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 */
 	public function __construct( $config, $loadBalancer ) {
