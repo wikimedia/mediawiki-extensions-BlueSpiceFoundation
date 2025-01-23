@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 

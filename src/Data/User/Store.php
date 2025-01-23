@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\User;
 
+use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\IStore;
 use MWStake\MediaWiki\Component\DataStore\NoWriterException;
 use Wikimedia\Rdbms\LoadBalancer;
@@ -10,7 +11,7 @@ class Store implements IStore {
 
 	/**
 	 *
-	 * @var \IContextSource
+	 * @var IContextSource
 	 */
 	protected $context = null;
 
@@ -19,7 +20,7 @@ class Store implements IStore {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param LoadBalancer $loadBalancer
 	 */
 	public function __construct( $context, $loadBalancer ) {

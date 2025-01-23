@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class UploadVerifyFile extends Hook {
 
@@ -70,7 +71,7 @@ abstract class UploadVerifyFile extends Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \UploadBase &$upload
 	 * @param string $mime

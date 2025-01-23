@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\User;
 
+use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\DatabaseReader;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Wikimedia\Rdbms\LoadBalancer;
@@ -10,9 +11,9 @@ class Reader extends DatabaseReader {
 	/**
 	 *
 	 * @param LoadBalancer $loadBalancer
-	 * @param \IContextSource|null $context
+	 * @param IContextSource|null $context
 	 */
-	public function __construct( $loadBalancer, \IContextSource $context = null ) {
+	public function __construct( $loadBalancer, IContextSource $context = null ) {
 		parent::__construct( $loadBalancer, $context, $context->getConfig() );
 	}
 

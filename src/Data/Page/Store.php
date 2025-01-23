@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Page;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\IStore;
 use MWStake\MediaWiki\Component\DataStore\NoWriterException;
 use Wikimedia\Rdbms\LoadBalancer;

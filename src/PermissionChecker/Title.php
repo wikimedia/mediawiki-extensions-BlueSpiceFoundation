@@ -2,7 +2,7 @@
 
 namespace BlueSpice\PermissionChecker;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
 

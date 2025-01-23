@@ -4,6 +4,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class EditPageGetCheckboxesDefinition extends Hook {
 
@@ -38,7 +39,7 @@ abstract class EditPageGetCheckboxesDefinition extends Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \EditPage $editPage
 	 * @param array &$checkboxes

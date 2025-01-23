@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Categorylinks;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

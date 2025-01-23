@@ -29,6 +29,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 
@@ -87,7 +88,7 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 	}
 
 	/**
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string $oldName
 	 * @param string &$newName

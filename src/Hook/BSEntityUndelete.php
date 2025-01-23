@@ -29,6 +29,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Entity;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\User\User;
 
 abstract class BSEntityUndelete extends Hook {
@@ -71,7 +72,7 @@ abstract class BSEntityUndelete extends Hook {
 	}
 
 	/**
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Entity $entity
 	 * @param \Status $status

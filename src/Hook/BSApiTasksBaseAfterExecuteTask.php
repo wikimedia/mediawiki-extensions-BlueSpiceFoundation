@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class BSApiTasksBaseAfterExecuteTask extends Hook {
 	/**
@@ -84,7 +85,7 @@ abstract class BSApiTasksBaseAfterExecuteTask extends Hook {
 	}
 
 	/**
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \BSApiTasksBase $taskApi
 	 * @param string $taskKey

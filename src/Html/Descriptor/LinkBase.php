@@ -3,12 +3,13 @@
 namespace BlueSpice\Html\Descriptor;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class LinkBase implements ILink {
 
 	/**
 	 *
-	 * @var \IContextSource
+	 * @var IContextSource
 	 */
 	protected $context = null;
 
@@ -20,7 +21,7 @@ abstract class LinkBase implements ILink {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 */
 	public function __construct( $context, $config ) {

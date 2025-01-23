@@ -27,9 +27,9 @@
 namespace BlueSpice;
 
 use ConfigException;
-use IContextSource;
 use JsonSerializable;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class Extension extends Context implements JsonSerializable {
 

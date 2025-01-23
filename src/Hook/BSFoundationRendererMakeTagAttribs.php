@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class BSFoundationRendererMakeTagAttribs extends Hook {
 
@@ -71,7 +72,7 @@ abstract class BSFoundationRendererMakeTagAttribs extends Hook {
 	}
 
 	/**
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \BlueSpice\Renderer $renderer
 	 * @param array $args

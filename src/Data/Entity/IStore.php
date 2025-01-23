@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Entity;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 
 interface IStore extends \MWStake\MediaWiki\Component\DataStore\IStore {
 	/**

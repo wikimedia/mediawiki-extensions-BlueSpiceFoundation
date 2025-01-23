@@ -4,6 +4,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\ResultSet;
 use MWStake\MediaWiki\Component\DataStore\Schema;
 
@@ -41,7 +42,7 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \BlueSpice\Api\Store $store
 	 * @param ResultSet &$resultSet

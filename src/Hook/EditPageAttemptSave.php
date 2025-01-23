@@ -28,8 +28,8 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use EditPage;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class EditPageAttemptSave extends Hook {
 

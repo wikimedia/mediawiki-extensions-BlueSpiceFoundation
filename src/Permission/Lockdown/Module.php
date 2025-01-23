@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Permission\Lockdown;
 
-use IContextSource;
 use IDBAccessObject;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
