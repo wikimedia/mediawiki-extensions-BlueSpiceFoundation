@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\Categories;
 
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Title\Title;
 
 class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
@@ -13,14 +14,14 @@ class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\Secon
 	protected $linkrenderer = null;
 
 	/**
-	 * @var \IContextSource
+	 * @var IContextSource
 	 */
 	protected $context;
 
 	/**
 	 *
 	 * @param \MediaWiki\Linker\LinkRenderer $linkrenderer
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 */
 	public function __construct( $linkrenderer, $context ) {
 		$this->linkrenderer = $linkrenderer;

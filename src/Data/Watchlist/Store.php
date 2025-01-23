@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\Watchlist;
 
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\IStore;
 use MWStake\MediaWiki\Component\DataStore\NoWriterException;
@@ -10,7 +11,7 @@ class Store implements IStore {
 
 	/**
 	 *
-	 * @var \IContextSource
+	 * @var IContextSource
 	 */
 	protected $context = null;
 
@@ -22,7 +23,7 @@ class Store implements IStore {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param bool $filterForContextUser
 	 */
 	public function __construct( $context, $filterForContextUser = false ) {

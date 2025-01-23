@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class BeforePageDisplay extends Hook {
 
@@ -62,7 +63,7 @@ abstract class BeforePageDisplay extends Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \OutputPage &$out
 	 * @param \Skin &$skin

@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class MessageCacheGet extends Hook {
 
@@ -53,7 +54,7 @@ abstract class MessageCacheGet extends Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string &$lckey
 	 */

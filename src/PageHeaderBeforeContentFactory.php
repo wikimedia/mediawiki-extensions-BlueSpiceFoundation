@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MWException;
 
 class PageHeaderBeforeContentFactory {

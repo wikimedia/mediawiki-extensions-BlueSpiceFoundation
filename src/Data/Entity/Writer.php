@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Entity;
 
 use BlueSpice\Entity;
 use Exception;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\RecordSet;
 use Status;
 

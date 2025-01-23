@@ -30,8 +30,8 @@ namespace BlueSpice\Hook;
 
 use ApiBase;
 use BlueSpice\Hook;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class APIAfterExecute extends Hook {
 

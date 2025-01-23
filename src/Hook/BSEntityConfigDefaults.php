@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 /**
  * @deprecated since version 3.0.0 - Use the bluespice global config mechanism
@@ -61,7 +62,7 @@ abstract class BSEntityConfigDefaults extends Hook {
 	}
 
 	/**
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$defaultSettings
 	 */

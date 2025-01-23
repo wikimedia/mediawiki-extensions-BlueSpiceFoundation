@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Page;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

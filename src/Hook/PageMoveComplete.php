@@ -3,8 +3,8 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\UserIdentity;

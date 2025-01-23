@@ -3,8 +3,8 @@
 namespace BlueSpice\Renderer\SimpleList;
 
 use BlueSpice\Renderer\Params;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 
 class Item extends \BlueSpice\Renderer {

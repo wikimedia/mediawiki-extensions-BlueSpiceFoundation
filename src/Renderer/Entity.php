@@ -3,8 +3,8 @@ namespace BlueSpice\Renderer;
 
 use BlueSpice\Utility\CacheHelper;
 use FormatJson;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use MWException;
 
@@ -43,7 +43,7 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 		);
 		if ( !$this->context instanceof IContextSource ) {
 			throw new MWException(
-				'"\IContextSource" must be given by ' . static::PARAM_CONTEXT . ' param'
+				'"IContextSource" must be given by ' . static::PARAM_CONTEXT . ' param'
 			);
 		}
 		$this->entity = $params->get(

@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class JSConfigVariable implements IJSConfigVariable {
 	/** @var IContextSource */

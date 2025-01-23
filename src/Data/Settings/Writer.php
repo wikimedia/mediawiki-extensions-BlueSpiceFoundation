@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Data\Settings;
 
+use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\DatabaseWriter;
 use MWStake\MediaWiki\Component\DataStore\IReader;
 use MWStake\MediaWiki\Component\DataStore\IRecord;
@@ -12,10 +13,10 @@ class Writer extends DatabaseWriter {
 	 *
 	 * @param IReader $reader
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
-	 * @param \IContextSource|null $context
+	 * @param IContextSource|null $context
 	 */
 	public function __construct( IReader $reader, $loadBalancer,
-		\IContextSource $context = null ) {
+		IContextSource $context = null ) {
 		parent::__construct( $reader, $loadBalancer, $context, $context->getConfig() );
 	}
 

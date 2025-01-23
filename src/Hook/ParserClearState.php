@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use Parser;
 
 abstract class ParserClearState extends Hook {
@@ -55,7 +56,7 @@ abstract class ParserClearState extends Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Parser &$parser
 	 */

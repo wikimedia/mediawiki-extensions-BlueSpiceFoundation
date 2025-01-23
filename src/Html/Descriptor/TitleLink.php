@@ -3,6 +3,7 @@
 namespace BlueSpice\Html\Descriptor;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
 use RawMessage;
@@ -22,7 +23,7 @@ class TitleLink extends LinkBase {
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title|null $title
 	 */

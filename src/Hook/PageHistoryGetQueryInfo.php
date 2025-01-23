@@ -30,8 +30,8 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use HistoryPager;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class PageHistoryGetQueryInfo extends Hook {
 

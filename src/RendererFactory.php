@@ -3,8 +3,8 @@
 namespace BlueSpice;
 
 use BlueSpice\Renderer\Params;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 
 class RendererFactory {

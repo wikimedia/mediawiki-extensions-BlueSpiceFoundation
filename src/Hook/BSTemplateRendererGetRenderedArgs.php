@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\TemplateRenderer;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 
 abstract class BSTemplateRendererGetRenderedArgs extends \BlueSpice\Hook {
 	/**
@@ -78,7 +79,7 @@ abstract class BSTemplateRendererGetRenderedArgs extends \BlueSpice\Hook {
 	}
 
 	/**
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param TemplateRenderer $renderer
 	 * @param string $name

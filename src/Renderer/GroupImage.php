@@ -4,8 +4,8 @@ namespace BlueSpice\Renderer;
 use BlueSpice\DynamicFileDispatcher\GroupImage as DFDGroupImage;
 use BlueSpice\DynamicFileDispatcher\Params as DFDParams;
 use BlueSpice\Utility\CacheHelper;
-use IContextSource;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 
 class GroupImage extends \BlueSpice\TemplateRenderer {

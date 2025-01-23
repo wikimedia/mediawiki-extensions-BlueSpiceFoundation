@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Message\Message;
 use MessageLocalizer;
 
@@ -10,7 +11,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 
 	/**
 	 *
-	 * @var \IContextSource
+	 * @var IContextSource
 	 */
 	protected $context = null;
 
@@ -28,7 +29,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string $name
 	 */
@@ -40,7 +41,7 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 
 	/**
 	 *
-	 * @param \IContextSource $context
+	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string $name
 	 * @return ConfigDefinition
