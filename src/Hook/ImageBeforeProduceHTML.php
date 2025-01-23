@@ -27,10 +27,10 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use Config;
 use DummyLinker;
 use File;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Title\Title;
 use Parser;
 

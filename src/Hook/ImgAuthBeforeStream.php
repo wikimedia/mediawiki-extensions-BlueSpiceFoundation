@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class ImgAuthBeforeStream extends Hook {
 

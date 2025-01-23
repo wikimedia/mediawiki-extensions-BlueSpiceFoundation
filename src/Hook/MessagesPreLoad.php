@@ -29,6 +29,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class MessagesPreLoad extends Hook {
 
@@ -72,7 +73,7 @@ abstract class MessagesPreLoad extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param string $title
 	 * @param string &$message
 	 * @param string $code

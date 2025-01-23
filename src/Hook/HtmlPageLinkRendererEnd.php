@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 
@@ -98,7 +99,7 @@ abstract class HtmlPageLinkRendererEnd extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param LinkRenderer $linkRenderer
 	 * @param LinkTarget $target
 	 * @param bool $isKnown

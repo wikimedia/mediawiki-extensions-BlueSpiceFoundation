@@ -3,8 +3,8 @@
 namespace BlueSpice;
 
 use BlueSpice\Permission\Lockdown;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Title\Title;

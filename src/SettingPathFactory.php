@@ -2,6 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Config\Config;
+
 class SettingPathFactory implements ISettingPaths {
 
 	/**
@@ -12,14 +14,14 @@ class SettingPathFactory implements ISettingPaths {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
 	 *
 	 * @param IRegistry $registry
-	 * @param \Config $config
+	 * @param Config $config
 	 */
 	public function __construct( $registry, $config ) {
 		$this->registry = $registry;

@@ -28,6 +28,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class BSMigrateSettingsSetNewSettings extends Hook {
 
@@ -73,7 +74,7 @@ abstract class BSMigrateSettingsSetNewSettings extends Hook {
 
 	/**
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param string $newName
 	 * @param string $newValue
 	 * @param bool &$set

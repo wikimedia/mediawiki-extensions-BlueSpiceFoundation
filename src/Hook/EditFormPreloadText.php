@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 use MediaWiki\Title\Title;
 
 abstract class EditFormPreloadText extends Hook {
@@ -63,7 +64,7 @@ abstract class EditFormPreloadText extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param string &$text
 	 * @param Title &$title
 	 */

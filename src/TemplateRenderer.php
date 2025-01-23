@@ -28,8 +28,8 @@ namespace BlueSpice;
 
 use BlueSpice\Renderer\Params;
 use BlueSpice\Utility\CacheHelper;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;

@@ -27,9 +27,9 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use Config;
 use IContextSource;
 use MailAddress;
+use MediaWiki\Config\Config;
 
 abstract class UserMailerTransformMessage extends Hook {
 

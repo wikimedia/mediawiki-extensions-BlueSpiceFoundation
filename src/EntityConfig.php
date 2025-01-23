@@ -28,8 +28,8 @@
 namespace BlueSpice;
 
 use BlueSpice\Data\Entity\Schema;
-use Config;
 use JsonSerializable;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\FieldType;
 

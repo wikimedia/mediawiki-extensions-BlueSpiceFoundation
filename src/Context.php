@@ -1,8 +1,8 @@
 <?php
 namespace BlueSpice;
 
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Session\CsrfTokenSet;

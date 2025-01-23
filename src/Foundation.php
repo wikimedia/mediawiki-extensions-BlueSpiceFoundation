@@ -3,13 +3,14 @@
 namespace BlueSpice;
 
 use BlueSpice\ConfigDefinition\IOverwriteGlobal;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 
 class Foundation {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 

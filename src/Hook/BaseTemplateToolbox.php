@@ -29,6 +29,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class BaseTemplateToolbox extends Hook {
 
@@ -64,7 +65,7 @@ abstract class BaseTemplateToolbox extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \BaseTemplate $baseTemplate
 	 * @param array &$toolbox
 	 */

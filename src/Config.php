@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 use BlueSpice\Data\Settings\Record;
 use BlueSpice\Data\Settings\Store;
+use MediaWiki\Config\Config as MediaWikiConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
@@ -38,7 +39,7 @@ class Config extends \MultiConfig {
 
 	/**
 	 * Factory method used by \ConfigFactory
-	 * @return \Config
+	 * @return MediaWikiConfig
 	 */
 	public static function newInstance() {
 		return new self();

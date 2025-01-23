@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class ChangeTagsListActive extends Hook {
 
@@ -54,7 +55,7 @@ abstract class ChangeTagsListActive extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param array &$tags
 	 */
 	public function __construct( $context, $config, &$tags ) {

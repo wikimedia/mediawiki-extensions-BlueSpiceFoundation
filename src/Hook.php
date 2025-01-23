@@ -26,6 +26,7 @@
  */
 namespace BlueSpice;
 
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
@@ -41,7 +42,7 @@ abstract class Hook implements MessageLocalizer {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	private $config = null;
 
@@ -50,7 +51,7 @@ abstract class Hook implements MessageLocalizer {
 	 * perform a lazy loading out of performance reasons. But for the sake of
 	 * testablity we keep the DI here
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 */
 	public function __construct( $context, $config ) {
 		$this->context = $context;
@@ -76,10 +77,10 @@ abstract class Hook implements MessageLocalizer {
 
 	/**
 	 *
-	 * @return \Config
+	 * @return Config
 	 */
 	protected function getConfig() {
-		if ( $this->config instanceof \Config === false ) {
+		if ( $this->config instanceof Config === false ) {
 			$this->config = $this->getServices()->getConfigFactory()->makeConfig(
 				static::$configName
 			);

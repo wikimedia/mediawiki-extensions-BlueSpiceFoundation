@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class SkinBuildSidebar extends Hook {
 
@@ -62,7 +63,7 @@ abstract class SkinBuildSidebar extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \Skin $skin
 	 * @param array &$bar
 	 */

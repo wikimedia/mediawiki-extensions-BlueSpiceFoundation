@@ -28,6 +28,8 @@
 // TODO MRG20100816: Changelog
 
 // TODO MRG20100816: Kommentare
+
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -66,7 +68,7 @@ class ViewBaseElement {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 

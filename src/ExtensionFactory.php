@@ -26,6 +26,7 @@
  */
 namespace BlueSpice;
 
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 
 class ExtensionFactory {
@@ -45,13 +46,13 @@ class ExtensionFactory {
 
 	/**
 	 *
-	 * @var \Config
+	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
 	 * @param \BlueSpice\ExtensionRegistry $extensionRegistry
-	 * @param \Config $config
+	 * @param Config $config
 	 * @return Extension|null
 	 */
 	public function __construct( $extensionRegistry, $config ) {

@@ -3,6 +3,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 
@@ -54,7 +55,7 @@ abstract class SpecialPage extends \SpecialPage {
 
 	/**
 	 * Shortcut to get main config object
-	 * @return \Config
+	 * @return Config
 	 * @since 1.24
 	 */
 	public function getConfig() {

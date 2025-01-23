@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class ParserFirstCallInit extends Hook {
 
@@ -54,7 +55,7 @@ abstract class ParserFirstCallInit extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \Parser &$parser
 	 */
 	public function __construct( $context, $config, &$parser ) {

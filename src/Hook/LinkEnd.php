@@ -27,6 +27,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 use MediaWiki\Title\Title;
 
 abstract class LinkEnd extends Hook {
@@ -97,7 +98,7 @@ abstract class LinkEnd extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \DummyLinker $dummy
 	 * @param Title $target
 	 * @param array $options

@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Config\Config;
+
 class BSTreeRenderer {
 
 	public const CONFIG_ID = 'id';

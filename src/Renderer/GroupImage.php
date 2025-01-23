@@ -2,8 +2,8 @@
 namespace BlueSpice\Renderer;
 
 use BlueSpice\Utility\CacheHelper;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Linker\LinkRenderer;
 
 class GroupImage extends \BlueSpice\TemplateRenderer {

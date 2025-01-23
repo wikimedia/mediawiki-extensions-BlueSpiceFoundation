@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class PageHistoryLineEnding extends Hook {
 
@@ -39,7 +40,7 @@ abstract class PageHistoryLineEnding extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \HistoryPager $history
 	 * @param \stdClass &$row
 	 * @param string &$s

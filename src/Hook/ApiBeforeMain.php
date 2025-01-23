@@ -29,6 +29,7 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
+use MediaWiki\Config\Config;
 
 abstract class ApiBeforeMain extends Hook {
 
@@ -56,7 +57,7 @@ abstract class ApiBeforeMain extends Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \Config $config
+	 * @param Config $config
 	 * @param \ApiMain &$main
 	 */
 	public function __construct( $context, $config, &$main ) {

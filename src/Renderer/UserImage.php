@@ -2,8 +2,8 @@
 namespace BlueSpice\Renderer;
 
 use BlueSpice\Utility\CacheHelper;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\User\User;

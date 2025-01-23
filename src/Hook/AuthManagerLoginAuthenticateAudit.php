@@ -26,9 +26,9 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use Config;
 use IContextSource;
 use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\Config\Config;
 use MediaWiki\User\User;
 
 abstract class AuthManagerLoginAuthenticateAudit extends Hook {

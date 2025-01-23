@@ -3,9 +3,9 @@
 namespace BlueSpice\Renderer\LinkList;
 
 use BlueSpice\Renderer\Params;
-use Config;
 use HtmlArmor;
 use IContextSource;
+use MediaWiki\Config\Config;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
 

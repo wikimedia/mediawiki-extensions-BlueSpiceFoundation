@@ -28,8 +28,8 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use ChangesListSpecialPage;
-use Config;
 use IContextSource;
+use MediaWiki\Config\Config;
 
 abstract class ChangesListSpecialPageStructuredFilters extends Hook {
 

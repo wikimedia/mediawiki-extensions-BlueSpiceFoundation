@@ -3,7 +3,7 @@
 namespace BlueSpice\RunJobsTriggerHandler;
 
 use BlueSpice\ExtensionAttributeBasedRegistry;
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\RunJobsTrigger\HandlerFactory\Base;
 use Wikimedia\Rdbms\LoadBalancer;

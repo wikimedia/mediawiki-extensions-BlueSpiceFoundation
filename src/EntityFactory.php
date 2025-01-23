@@ -28,7 +28,7 @@ namespace BlueSpice;
 
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\IStore;
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use TextContent;
