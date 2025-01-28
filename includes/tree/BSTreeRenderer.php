@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\Config;
+use MediaWiki\Html\Html;
 
 class BSTreeRenderer {
 

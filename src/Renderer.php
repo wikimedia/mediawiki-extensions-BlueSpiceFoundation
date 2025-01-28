@@ -27,11 +27,11 @@
 namespace BlueSpice;
 
 use BlueSpice\Renderer\Params;
-use Html;
 use HtmlArmor;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;

@@ -3,6 +3,7 @@
 namespace BlueSpice\Special;
 
 use FormatJson;
+use MediaWiki\Html\Html;
 
 class Credits extends \BlueSpice\SpecialPage {
 
@@ -25,39 +26,39 @@ class Credits extends \BlueSpice\SpecialPage {
 			$this->msg( 'bs-credits-dnt' )->plain(),
 			$this->msg( 'bs-credits-contributors' )->plain()
 		] );
-		$html .= \Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
+		$html .= Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
 		$configNames = [
 			'CreditsProgrammers',
 			'CreditsDesignAndTesting',
 			'CreditsContributors'
 		];
 		foreach ( $configNames as $cfgName ) {
-			$html .= \Html::openElement( 'td' );
+			$html .= Html::openElement( 'td' );
 			$html .= $this->renderNameList(
 				$this->getConfig()->get( $cfgName )
 			);
-			$html .= \Html::closeElement( 'td' );
+			$html .= Html::closeElement( 'td' );
 		}
-		$html .= \Html::closeElement( 'tr' );
-		$html .= \Html::closeElement( 'table' );
+		$html .= Html::closeElement( 'tr' );
+		$html .= Html::closeElement( 'table' );
 
 		$html .= $this->renderOpenTable( [
 			$this->msg( 'bs-credits-translators' )->plain(),
 			$this->msg( 'bs-credits-translation' )->plain(),
 		] );
-		$html .= \Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
-		$html .= \Html::openElement( 'td' );
+		$html .= Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
+		$html .= Html::openElement( 'td' );
 		$html .= $this->renderNameList(
 			$this->getTranslatorsList()
 		);
-		$html .= \Html::closeElement( 'td' );
-		$html .= \Html::openElement( 'td' );
+		$html .= Html::closeElement( 'td' );
+		$html .= Html::openElement( 'td' );
 		$html .= $this->renderNameList(
 			$this->getConfig()->get( 'CreditsTranslation' )
 		);
-		$html .= \Html::closeElement( 'td' );
-		$html .= \Html::closeElement( 'tr' );
-		$html .= \Html::closeElement( 'table' );
+		$html .= Html::closeElement( 'td' );
+		$html .= Html::closeElement( 'tr' );
+		$html .= Html::closeElement( 'table' );
 		$this->getOutput()->addHTML( $html );
 	}
 
@@ -68,15 +69,15 @@ class Credits extends \BlueSpice\SpecialPage {
 	 * @return string
 	 */
 	protected function renderOpenTable( $headElements, $html = '' ) {
-		$html .= \Html::openElement( 'table', [
+		$html .= Html::openElement( 'table', [
 			'class' => 'wikitable',
 			'style' => 'width:100%',
 		] );
-		$html .= \Html::openElement( 'tr' );
+		$html .= Html::openElement( 'tr' );
 		foreach ( $headElements as $content ) {
-			$html .= \Html::element( 'th', [], $content );
+			$html .= Html::element( 'th', [], $content );
 		}
-		$html .= \Html::closeElement( 'tr' );
+		$html .= Html::closeElement( 'tr' );
 		return $html;
 	}
 
@@ -87,11 +88,11 @@ class Credits extends \BlueSpice\SpecialPage {
 	 * @return string
 	 */
 	protected function renderNameList( $list, $hmtl = '' ) {
-		$hmtl .= \Html::openElement( 'ul' );
+		$hmtl .= Html::openElement( 'ul' );
 		foreach ( $list as $entry ) {
-			$hmtl .= \Html::element( 'li', [], $entry );
+			$hmtl .= Html::element( 'li', [], $entry );
 		}
-		$hmtl .= \Html::closeElement( 'ul' );
+		$hmtl .= Html::closeElement( 'ul' );
 		return $hmtl;
 	}
 

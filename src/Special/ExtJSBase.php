@@ -4,7 +4,7 @@ namespace BlueSpice\Special;
 
 use BlueSpice\LoadPlaceholderRegistry;
 use BlueSpice\SpecialPage;
-use Html;
+use MediaWiki\Html\Html;
 
 abstract class ExtJSBase extends SpecialPage {
 

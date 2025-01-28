@@ -3,7 +3,7 @@
 namespace BlueSpice\Hook\BeforePageDisplay;
 
 use BlueSpice\Hook\BeforePageDisplay;
-use Html;
+use MediaWiki\Html\Html;
 
 class AddLoadingIndicator extends BeforePageDisplay {
 
