@@ -3,6 +3,7 @@
 namespace BlueSpice\Api\Task;
 
 use BlueSpice\Api\Response\Standard;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Status\Status;
 
 class StatusConverter {
@@ -15,13 +16,13 @@ class StatusConverter {
 
 	/**
 	 *
-	 * @var \ApiBase
+	 * @var ApiBase
 	 */
 	protected $api = null;
 
 	/**
 	 *
-	 * @param \ApiBase $api
+	 * @param ApiBase $api
 	 * @param Status $status
 	 */
 	public function __construct( $api, $status ) {
