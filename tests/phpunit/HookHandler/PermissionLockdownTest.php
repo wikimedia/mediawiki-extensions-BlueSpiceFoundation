@@ -7,12 +7,13 @@ use BlueSpice\Utility\MaintenanceUser;
 use BlueSpice\UtilityFactory;
 use HashConfig;
 use MediaWiki\Api\ApiBase;
-use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Parser;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 use PHPUnit\Framework\TestCase;
@@ -64,12 +65,20 @@ class PermissionLockdownTest extends TestCase {
 		);
 
 		$contextTitle = null;
-		$title = $this->createMock( LinkTarget::class );
+		$title = $this->createMock( Title::class );
 		$skip = false;
 		$revRecord = null;
 
 		$handler->onBeforeParserFetchTemplateRevisionRecord( $contextTitle, $title, $skip, $revRecord );
 
+		$options = [];
+		$descQuery = '';
+		$handler->onBeforeParserFetchFileAndTitle(
+			$this->createMock( Parser::class ),
+			$title, $options, $descQuery
+		);
+
+		$this->assertEquals( $expectedSkip ? [ 'broken' => true ] : [], $options );
 		$this->assertEquals( $expectedSkip, $skip );
 	}
 
