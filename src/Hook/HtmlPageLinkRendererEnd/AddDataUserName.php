@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Hook\HtmlPageLinkRendererEnd;
 
-use Html;
 use HtmlArmor;
+use MediaWiki\Html\Html;
 use MediaWiki\Title\Title;
 
 class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {

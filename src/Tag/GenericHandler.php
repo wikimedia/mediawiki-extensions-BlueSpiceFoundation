@@ -3,7 +3,7 @@
 namespace BlueSpice\Tag;
 
 use BlueSpice\ParamProcessor\ProcessingErrorMessageTranslator;
-use Html;
+use MediaWiki\Html\Html;
 
 class GenericHandler {
 
@@ -265,7 +265,7 @@ class GenericHandler {
 		foreach ( $this->errors as $errorKey => $errorMessage ) {
 			$translatedMessage = $translator->translate( $errorMessage );
 			$label = $this->makeErrorLabel( $errorKey );
-			$out[] = \Html::element(
+			$out[] = Html::element(
 				'div',
 				[ 'class' => 'bs-error bs-tag' ],
 				$label . $translatedMessage

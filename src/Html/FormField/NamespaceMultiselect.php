@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Html\FormField;
 
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 
 class NamespaceMultiselect extends \HTMLFormField {
@@ -18,7 +19,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 	public function getInputHTML( $value ) {
 		$this->mParent->getOutput()->addModules( 'ext.bluespice.html.formfields' );
 
-		$container = \Html::element(
+		$container = Html::element(
 			'div',
 			[
 				'class' => $this->getClassString(),
@@ -26,7 +27,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 			]
 		);
 
-		$assocField = \Html::input(
+		$assocField = Html::input(
 			$this->mName,
 			$value,
 			'text',
