@@ -37,9 +37,9 @@ use BSExtendedApiContext;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use Status;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

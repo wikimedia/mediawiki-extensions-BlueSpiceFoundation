@@ -10,7 +10,7 @@ use BlueSpice\ParamProcessor\Options;
 use BlueSpice\ParamProcessor\Processor;
 use Exception;
 use FormatJson;
-use Status;
+use MediaWiki\Status\Status;
 use stdClass;
 use Wikimedia\ParamValidator\ParamValidator;
 

@@ -30,9 +30,9 @@ namespace BlueSpice;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
+use MediaWiki\Status\Status;
 use MessageLocalizer;
 use Psr\Log\LoggerInterface;
-use Status;
 
 abstract class Task implements ITask, MessageLocalizer {
 

@@ -30,6 +30,7 @@ use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 
 abstract class PageContentSave extends Hook {
@@ -90,7 +91,7 @@ abstract class PageContentSave extends Hook {
 
 	/**
 	 *
-	 * @var \Status
+	 * @var Status
 	 */
 	protected $status = null;
 
@@ -110,7 +111,7 @@ abstract class PageContentSave extends Hook {
 	 * @param bool $isWatch
 	 * @param int $section
 	 * @param int &$flags
-	 * @param \Status &$status
+	 * @param Status &$status
 	 * @return bool
 	 */
 	public static function callback( &$wikipage, &$user, &$content, &$summary, $isMinor, $isWatch,
@@ -144,7 +145,7 @@ abstract class PageContentSave extends Hook {
 	 * @param bool $isWatch
 	 * @param int $section
 	 * @param int &$flags
-	 * @param \Status &$status
+	 * @param Status &$status
 	 */
 	public function __construct( $context, $config, &$wikipage, &$user, &$content, &$summary, $isMinor,
 		$isWatch, $section, &$flags, &$status ) {

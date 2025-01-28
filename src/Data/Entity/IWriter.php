@@ -9,7 +9,7 @@
 namespace BlueSpice\Data\Entity;
 
 use BlueSpice\Entity;
-use Status;
+use MediaWiki\Status\Status;
 
 interface IWriter {
 	/**

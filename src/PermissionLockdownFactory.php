@@ -7,9 +7,9 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use Status;
 
 class PermissionLockdownFactory {
 
