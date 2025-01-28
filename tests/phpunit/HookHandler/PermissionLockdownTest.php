@@ -2,11 +2,11 @@
 
 namespace BlueSpice\Tests\HookHandler;
 
-use ApiBase;
 use BlueSpice\HookHandler\PermissionLockdown;
 use BlueSpice\Utility\MaintenanceUser;
 use BlueSpice\UtilityFactory;
 use HashConfig;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;

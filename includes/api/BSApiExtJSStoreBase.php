@@ -55,6 +55,7 @@
  * limit:25
  */
 
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
