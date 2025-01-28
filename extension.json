@@ -590,7 +590,7 @@
 				"UserFactory", "BSRendererFactory"
 			]
 		},
-		"permissonLockdown": {
+		"permissionLockdown": {
 			"class": "\\BlueSpice\\HookHandler\\PermissionLockdown",
 			"services": [
 				"MainConfig", "PermissionManager", "TitleFactory", "RevisionLookup", "BSUtilityFactory"
@@ -648,10 +648,11 @@
 			"BlueSpice\\Hook\\SearchGetNearMatchComplete\\ApplyNearMatchLockdown::callback"
 		],
 		"BeforeParserFetchTemplateRevisionRecord": [
-			"permissonLockdown"
+			"permissionLockdown"
 		],
+		"BeforeParserFetchFileAndTitle": "permissionLockdown",
 		"ApiBeforeMain": [
-			"permissonLockdown"
+			"permissionLockdown"
 		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
 		"MediaWikiServices": "mediawikiservices",

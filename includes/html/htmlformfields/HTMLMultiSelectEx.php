@@ -247,5 +247,4 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		return $converted;
 	}
 
-
 }

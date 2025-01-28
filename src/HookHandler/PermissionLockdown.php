@@ -6,6 +6,7 @@ use BlueSpice\UtilityFactory;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Hook\ApiBeforeMainHook;
+use MediaWiki\Hook\BeforeParserFetchFileAndTitleHook;
 use MediaWiki\Hook\BeforeParserFetchTemplateRevisionRecordHook;
 use MediaWiki\Linker\LinkTarget;
 use MediaWiki\Permissions\PermissionManager;
@@ -14,7 +15,11 @@ use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 
-class PermissionLockdown implements ApiBeforeMainHook, BeforeParserFetchTemplateRevisionRecordHook {
+class PermissionLockdown implements
+	ApiBeforeMainHook,
+	BeforeParserFetchTemplateRevisionRecordHook,
+	BeforeParserFetchFileAndTitleHook
+{
 
 	/** @var Config */
 	private $config = null;
@@ -72,21 +77,45 @@ class PermissionLockdown implements ApiBeforeMainHook, BeforeParserFetchTemplate
 		?LinkTarget $contextTitle, LinkTarget $title,
 		bool &$skip, ?RevisionRecord &$revRecord
 	) {
+		$user = $this->getRelevantUser();
+		if ( !$user ) {
+			return;
+		}
+		if ( !$this->permissionManager->userCan( 'read', $user, $title ) ) {
+			$skip = true;
+		}
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onBeforeParserFetchFileAndTitle( $parser, $nt, &$options, &$descQuery ) {
+		$user = $this->getRelevantUser();
+		if ( !$user ) {
+			return;
+		}
+		if ( !$this->permissionManager->userCan( 'read', $user, $nt ) ) {
+			$options['broken'] = true;
+		}
+	}
+
+	/**
+	 * @return User|null
+	 * @throws \MWException
+	 */
+	private function getRelevantUser(): ?User {
 		if ( $this->noSessionContext ) {
 			// Bail out on no session entry points, since we cannot init user
-			return true;
+			return null;
 		}
 
 		$user = $this->requestContext->getUser();
 		if ( $this->config->get( 'CommandLineMode' ) ) {
 			if ( !$user->isRegistered() ) {
-				$user = $this->utilityFactory->getMaintenanceUser()->getUser();
+				return $this->utilityFactory->getMaintenanceUser()->getUser();
 			}
 		}
-
-		if ( !$this->permissionManager->userCan( 'read', $user, $title ) ) {
-			$skip = true;
-		}
+		return $user;
 	}
 
 	/**

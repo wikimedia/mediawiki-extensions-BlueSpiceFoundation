@@ -20,7 +20,7 @@ class BSFixturesTest extends BSApiTestCase {
 	}
 
 	/**
-	 * @covers Title::newFromText
+	 * @covers \MediaWiki\Title\Title::newFromText
 	 */
 	public function testPageFixtures() {
 		$title = Title::newFromText( 'Template:Hello World' );
