@@ -27,6 +27,7 @@
 
 use BlueSpice\Api\Task;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Title\Title;
 
 /**
@@ -255,7 +256,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			[ Task::PARAM_CONTEXT => \FormatJson::encode( $rawContext ) ],
 			[ 'action' => 'bs-task', Task::PARAM_TASK => $task ]
 		) );
-		$api = new \ApiMain( $req, true );
+		$api = new ApiMain( $req, true );
 		$api->execute();
 		foreach ( [ 'message', 'errors', 'payload', 'payload_count', 'success' ] as $path ) {
 			if ( isset( $api->getResult()->getResultData()[$path] ) ) {

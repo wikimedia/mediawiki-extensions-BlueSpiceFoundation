@@ -59,7 +59,7 @@ abstract class Store extends Api {
 	protected $metaData = 'metadata';
 
 	/**
-	 * Main method called by \ApiMain
+	 * Main method called by ApiMain
 	 */
 	public function execute() {
 		$dataStore = $this->makeDataStore();

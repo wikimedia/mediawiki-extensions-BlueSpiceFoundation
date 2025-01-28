@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Hook\MakeGlobalVariablesScript;
 
+use MediaWiki\Api\ApiMain;
+
 /**
  * provide task permission data for current user to be used in js ui elements,
  * eg show / hide elements get all registered api modules
@@ -49,7 +51,7 @@ class AddTaskAPIPermissions extends \BlueSpice\Hook\MakeGlobalVariablesScript {
 			if ( !is_subclass_of( $module, \BSApiTasksBase::class ) ) {
 				continue;
 			}
-			$api = new $module( new \ApiMain( $context ), $name );
+			$api = new $module( new ApiMain( $context ), $name );
 			$taskRequest = $api->task_getUserTaskPermissions( (object)[] );
 			$key = preg_replace(
 				[ '/^bs-/', '/-tasks$/', '/-/' ],

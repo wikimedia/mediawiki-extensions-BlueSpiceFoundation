@@ -32,6 +32,7 @@
 use BlueSpice\Api\Response\Standard;
 use BlueSpice\UtilityFactory;
 use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -117,7 +118,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * the TaskRegistry in extension.json to be able to call your task in the new
 	 * generic task api BlueSpice\Api\Task with 'bs-task'
 	 */
-	public function __construct( \ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
+	public function __construct( ApiMain $mainModule, $moduleName, $modulePrefix = '' ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		parent::__construct( $mainModule, $moduleName, $modulePrefix );
 		$this->aTasks = array_merge( $this->aTasks, $this->aGlobalTasks );
