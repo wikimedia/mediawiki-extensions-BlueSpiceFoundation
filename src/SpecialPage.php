@@ -7,8 +7,9 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\SpecialPage as MediaWikiSpecialPage;
 
-abstract class SpecialPage extends \SpecialPage {
+abstract class SpecialPage extends MediaWikiSpecialPage {
 
 	/** @var MediaWikiServices */
 	protected $services = null;

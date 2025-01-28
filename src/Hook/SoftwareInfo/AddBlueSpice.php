@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Hook\SoftwareInfo;
 
+use MediaWiki\SpecialPage\SpecialPage;
 use Sanitizer;
-use SpecialPage;
 
 class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 

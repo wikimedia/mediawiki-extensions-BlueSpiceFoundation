@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\SpecialPage\SpecialPage;
 
 require_once 'BSMaintenance.php';
 echo "Relocalize Wiki...\n";
