@@ -30,6 +30,7 @@ use BlueSpice\Entity;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 
 abstract class BSEntityUndeleteComplete extends Hook {
@@ -41,7 +42,7 @@ abstract class BSEntityUndeleteComplete extends Hook {
 
 	/**
 	 *
-	 * @var \Status
+	 * @var Status
 	 */
 	protected $status = null;
 
@@ -54,7 +55,7 @@ abstract class BSEntityUndeleteComplete extends Hook {
 	/**
 	 * Located in \BlueSpice\Entity::undelete. After the entity was restored.
 	 * @param Entity $entity
-	 * @param \Status $status
+	 * @param Status $status
 	 * @param User $user
 	 * @return bool
 	 */
@@ -74,7 +75,7 @@ abstract class BSEntityUndeleteComplete extends Hook {
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Entity $entity
-	 * @param \Status $status
+	 * @param Status $status
 	 * @param User $user
 	 */
 	public function __construct( $context, $config, $entity, $status, $user ) {

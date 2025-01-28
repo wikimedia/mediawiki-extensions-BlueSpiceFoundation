@@ -34,9 +34,9 @@ use JsonSerializable;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MWException;
-use Status;
 
 abstract class Entity implements JsonSerializable {
 	public const TYPE = '';

@@ -2,7 +2,7 @@
 
 namespace BlueSpice;
 
-use Status;
+use MediaWiki\Status\Status;
 
 interface ITask extends IParamProvider {
 

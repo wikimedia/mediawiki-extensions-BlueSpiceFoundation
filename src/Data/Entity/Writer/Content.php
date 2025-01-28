@@ -9,7 +9,7 @@ use Exception;
 use FormatJson;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use Status;
+use MediaWiki\Status\Status;
 
 abstract class Content extends Writer {
 	/**
