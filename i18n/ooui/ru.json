@@ -4,7 +4,8 @@
 			"Alexander Yukal",
 			"Megakott",
 			"Shaleych",
-			"Vlad5250"
+			"Vlad5250",
+			"Kareyac"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Добавить новый...",
@@ -16,5 +17,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значений!",
 	"bs-ooui-btn-dismiss-alert-title": "Отклонить",
 	"bs-ooui-key-value-input-widget-section-label": "Раздел",
-	"bs-ooui-key-value-input-widget-add-section-label": "Добавить новый раздел"
+	"bs-ooui-key-value-input-widget-add-section-label": "Добавить новый раздел",
+	"bs-ui-generic-save": "Сохранить"
 }

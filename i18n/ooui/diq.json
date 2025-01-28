@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"1917 Ekim Devrimi",
-			"Orbot707"
+			"Orbot707",
+			"Mirzali"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Newe dekere...",
@@ -14,5 +15,9 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Qet jû erc nêdebiyayo",
 	"bs-ooui-btn-dismiss-alert-title": "Bıqefelne",
 	"bs-ooui-key-value-input-widget-section-label": "Lete",
-	"bs-ooui-key-value-input-widget-add-section-label": "Leteyo newe cı kerê"
+	"bs-ooui-key-value-input-widget-add-section-label": "Leteyo newe cı kerê",
+	"bs-ui-generic-cancel": "Bıtexelne",
+	"bs-ui-generic-yes": "Eya",
+	"bs-ui-generic-no": "Nê",
+	"bs-ui-generic-close": "Kip ke"
 }
