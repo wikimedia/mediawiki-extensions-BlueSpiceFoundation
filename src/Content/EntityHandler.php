@@ -1,7 +1,7 @@
 <?php
 namespace BlueSpice\Content;
 
-use Content;
+use MediaWiki\Content\Content;
 use MediaWiki\Content\JsonContentHandler;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Parser\ParserOutput;
