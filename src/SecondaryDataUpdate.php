@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
-use Content;
 use Exception;
+use MediaWiki\Content\Content;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;

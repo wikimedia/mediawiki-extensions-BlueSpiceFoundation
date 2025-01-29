@@ -28,6 +28,7 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
+use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Status\Status;
@@ -49,7 +50,7 @@ abstract class PageContentSave extends Hook {
 
 	/**
 	 *
-	 * @var \Content
+	 * @var Content
 	 */
 	protected $content = null;
 
@@ -105,7 +106,7 @@ abstract class PageContentSave extends Hook {
 	 *
 	 * @param \WikiPage &$wikipage
 	 * @param User &$user
-	 * @param \Content &$content
+	 * @param Content &$content
 	 * @param string &$summary
 	 * @param bool $isMinor
 	 * @param bool $isWatch
@@ -139,7 +140,7 @@ abstract class PageContentSave extends Hook {
 	 * @param Config $config
 	 * @param \WikiPage &$wikipage
 	 * @param User &$user
-	 * @param \Content &$content
+	 * @param Content &$content
 	 * @param string &$summary
 	 * @param bool $isMinor
 	 * @param bool $isWatch

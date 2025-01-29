@@ -28,8 +28,8 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use Content;
 use MediaWiki\Config\Config;
+use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Title\Title;

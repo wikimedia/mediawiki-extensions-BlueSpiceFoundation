@@ -3,7 +3,7 @@
 namespace BlueSpice\Data\Categorylinks;
 
 use BsNamespaceHelper;
-use Content;
+use MediaWiki\Content\Content;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use TextContent;
