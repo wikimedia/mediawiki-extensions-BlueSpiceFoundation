@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Special;
 
-use FormatJson;
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
 
 class Credits extends \BlueSpice\SpecialPage {
 

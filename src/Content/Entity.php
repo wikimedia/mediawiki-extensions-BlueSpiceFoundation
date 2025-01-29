@@ -2,6 +2,7 @@
 namespace BlueSpice\Content;
 
 use BlueSpice\Entity as EntityBase;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 
 class Entity extends \JsonContent {
@@ -20,7 +21,7 @@ class Entity extends \JsonContent {
 	 * @return array
 	 */
 	public function getJsonData() {
-		return \FormatJson::decode( $this->getText(), true );
+		return FormatJson::decode( $this->getText(), true );
 	}
 
 	/**
@@ -36,11 +37,11 @@ class Entity extends \JsonContent {
 	 * @return bool|null|string
 	 */
 	public function beautifyJSON() {
-		$decoded = \FormatJson::decode( $this->getText(), true );
+		$decoded = FormatJson::decode( $this->getText(), true );
 		if ( !is_array( $decoded ) ) {
 			return null;
 		}
-		return \FormatJson::encode( $decoded, true );
+		return FormatJson::encode( $decoded, true );
 	}
 
 	/**
@@ -75,7 +76,7 @@ class Entity extends \JsonContent {
 			if ( is_string( $val ) ) {
 				$val = '"' . $val . '"';
 			} else {
-				$val = \FormatJson::encode( $val );
+				$val = FormatJson::encode( $val );
 			}
 
 			$td = \Xml::elementClean( 'td', [ 'class' => 'value' ], $val );

@@ -6,7 +6,7 @@ use BlueSpice\Data\Entity\Writer;
 use BlueSpice\Entity;
 use CommentStoreComment;
 use Exception;
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;

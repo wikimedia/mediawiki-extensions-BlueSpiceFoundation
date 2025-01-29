@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Json\FormatJson;
+
 require_once 'BSMaintenance.php';
 
 class BSFileHashCheck extends BSMaintenance {

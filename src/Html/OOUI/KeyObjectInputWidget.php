@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Html\OOUI;
 
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 use OOUI\CheckboxInputWidget;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;

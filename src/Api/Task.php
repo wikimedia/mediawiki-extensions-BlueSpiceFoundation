@@ -9,7 +9,7 @@ use BlueSpice\ITask;
 use BlueSpice\ParamProcessor\Options;
 use BlueSpice\ParamProcessor\Processor;
 use Exception;
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Status\Status;
 use stdClass;
 use Wikimedia\ParamValidator\ParamValidator;

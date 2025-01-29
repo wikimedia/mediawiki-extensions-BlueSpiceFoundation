@@ -107,7 +107,7 @@ class BsArticleHelper {
 
 	/**
 	 * DEPRECATED
-	 * @deprecated since version 3.1 - Use \FormatJson::decode in your code
+	 * @deprecated since version 3.1 - Use FormatJson::decode in your code
 	 * @param string $sPropName
 	 * @param bool $bDoLoad
 	 * @return sdtClass|bool|null See PHP documentation for json_decode()

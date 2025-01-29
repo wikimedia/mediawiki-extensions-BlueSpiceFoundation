@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Tests;
 
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
 
 /**
@@ -194,7 +195,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	public function testSingleFilter( $type, $comparison, $field, $value, $expectedTotal ) {
 		$aParams = [
 			'action' => $this->getModuleName(),
-			'filter' => \FormatJson::encode( [
+			'filter' => FormatJson::encode( [
 				[
 					'type' => $type,
 					'comparison' => $comparison,
@@ -230,7 +231,7 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	public function testMultipleFilter( $filters, $expectedTotal ) {
 		$aParams = [
 			'action' => $this->getModuleName(),
-			'filter' => \FormatJson::encode( $filters )
+			'filter' => FormatJson::encode( $filters )
 		];
 		if ( $this->sQuery ) {
 			$aParams['query'] = $this->sQuery;

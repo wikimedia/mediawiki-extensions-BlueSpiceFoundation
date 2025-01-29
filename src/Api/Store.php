@@ -3,6 +3,7 @@
 namespace BlueSpice\Api;
 
 use BlueSpice\Api;
+use MediaWiki\Json\FormatJson;
 use MWStake\MediaWiki\Component\DataStore\IStore;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use MWStake\MediaWiki\Component\DataStore\RecordConverter;
@@ -175,7 +176,7 @@ abstract class Store extends Api {
 		$value = parent::getParameterFromSettings( $paramName, $paramSettings, $parseLimit );
 		// Unfortunately there is no way to register custom types for parameters
 		if ( in_array( $paramName, [ 'sort', 'group', 'filter', 'context' ] ) ) {
-			$value = \FormatJson::decode( $value );
+			$value = FormatJson::decode( $value );
 			if ( empty( $value ) ) {
 				return [];
 			}

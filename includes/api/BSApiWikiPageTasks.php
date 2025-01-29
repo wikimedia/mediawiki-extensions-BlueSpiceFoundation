@@ -28,6 +28,7 @@
 use BlueSpice\Api\Task;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 use MediaWiki\Api\ApiMain;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
 
 /**
@@ -252,8 +253,8 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		}
 
 		$req = new FauxRequest( array_merge(
-			[ Task::PARAM_TASK_DATA => \FormatJson::encode( $taskData ) ],
-			[ Task::PARAM_CONTEXT => \FormatJson::encode( $rawContext ) ],
+			[ Task::PARAM_TASK_DATA => FormatJson::encode( $taskData ) ],
+			[ Task::PARAM_CONTEXT => FormatJson::encode( $rawContext ) ],
 			[ 'action' => 'bs-task', Task::PARAM_TASK => $task ]
 		) );
 		$api = new ApiMain( $req, true );

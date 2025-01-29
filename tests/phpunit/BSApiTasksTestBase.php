@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Tests;
 
+use MediaWiki\Json\FormatJson;
+
 abstract class BSApiTasksTestBase extends BSApiTestCase {
 
 	/**
@@ -19,7 +21,7 @@ abstract class BSApiTasksTestBase extends BSApiTestCase {
 		$results = $this->doApiRequestWithToken( [
 			'action' => $this->getModuleName(),
 			'task' => $taskName,
-			'taskData' => \FormatJson::encode( $taskData )
+			'taskData' => FormatJson::encode( $taskData )
 		] );
 
 		return (object)$results[0];
