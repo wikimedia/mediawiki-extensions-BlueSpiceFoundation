@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/BSMaintenance.php';
 
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 
 class BSRemoteAPIBase extends BSMaintenance {

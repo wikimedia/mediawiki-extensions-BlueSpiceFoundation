@@ -3,6 +3,7 @@
 namespace BlueSpice\Html\FormField;
 
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 
 class NamespaceMultiselect extends \HTMLFormField {
@@ -118,7 +119,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 			$availableNamespaces[] = $dataSet;
 		}
 
-		return \FormatJson::encode( $availableNamespaces );
+		return FormatJson::encode( $availableNamespaces );
 	}
 
 	/**

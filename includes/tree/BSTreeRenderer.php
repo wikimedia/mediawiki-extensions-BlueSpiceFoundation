@@ -2,6 +2,7 @@
 
 use MediaWiki\Config\Config;
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
 
 class BSTreeRenderer {
 

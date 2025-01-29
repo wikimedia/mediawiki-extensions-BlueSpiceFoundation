@@ -3,6 +3,7 @@
 namespace BlueSpice\Data\Settings;
 
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Json\FormatJson;
 use MWStake\MediaWiki\Component\DataStore\DatabaseWriter;
 use MWStake\MediaWiki\Component\DataStore\IReader;
 use MWStake\MediaWiki\Component\DataStore\IRecord;
@@ -35,7 +36,7 @@ class Writer extends DatabaseWriter {
 	 */
 	protected function makeInsertFields( $record ) {
 		$fields = parent::makeInsertFields( $record );
-		$fields[Record::VALUE] = \FormatJson::encode( $fields[Record::VALUE] );
+		$fields[Record::VALUE] = FormatJson::encode( $fields[Record::VALUE] );
 		return $fields;
 	}
 
@@ -47,7 +48,7 @@ class Writer extends DatabaseWriter {
 	 */
 	protected function makeUpdateFields( $existingRecord, $record ) {
 		$fields = parent::makeUpdateFields( $existingRecord, $record );
-		$fields[Record::VALUE] = \FormatJson::encode( $fields[Record::VALUE] );
+		$fields[Record::VALUE] = FormatJson::encode( $fields[Record::VALUE] );
 		return $fields;
 	}
 

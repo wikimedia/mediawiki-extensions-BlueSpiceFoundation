@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Json\FormatJson;
+
 /**
  * This class serves as a backend for the license store of the InsertFile
  * extension

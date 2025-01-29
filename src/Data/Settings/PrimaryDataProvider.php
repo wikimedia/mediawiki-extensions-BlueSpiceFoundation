@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Data\Settings;
 
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;

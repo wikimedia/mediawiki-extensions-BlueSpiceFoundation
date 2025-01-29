@@ -3,7 +3,7 @@
 namespace BlueSpice\Api;
 
 use BlueSpice\Api;
-use FormatJson;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
 

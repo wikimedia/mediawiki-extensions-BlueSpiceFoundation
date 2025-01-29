@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Json\FormatJson;
+
 require_once __DIR__ . '/BSMaintenance.php';
 
 class SyncI18NFileKeys extends BSMaintenance {

@@ -4,6 +4,7 @@ namespace BlueSpice\Tests\Api;
 
 use BlueSpice\Tests\BSApiExtJSStoreTestBase;
 use BlueSpice\Tests\BSPageFixturesProvider;
+use MediaWiki\Json\FormatJson;
 
 /**
  * @group medium
@@ -55,7 +56,7 @@ class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 
 	protected function makeRequestParams() {
 		$aParams = parent::makeRequestParams();
-		$aParams['options'] = \FormatJson::encode( [
+		$aParams['options'] = FormatJson::encode( [
 			'namespaces' => [ NS_MAIN, NS_TEMPLATE ]
 		] );
 
