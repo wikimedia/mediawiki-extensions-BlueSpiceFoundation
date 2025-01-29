@@ -7,6 +7,7 @@ use CommentStoreComment;
 use DeferredUpdates;
 use EditPage;
 use Exception;
+use MediaWiki\Content\TextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -14,7 +15,6 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MWCallableUpdate;
 use MWException;
-use TextContent;
 use WikitextContent;
 
 abstract class WikiPage extends Task {

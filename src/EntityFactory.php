@@ -29,9 +29,9 @@ namespace BlueSpice;
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\IStore;
 use MediaWiki\Config\Config;
+use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use TextContent;
 
 class EntityFactory {
 	protected $storedById = [];

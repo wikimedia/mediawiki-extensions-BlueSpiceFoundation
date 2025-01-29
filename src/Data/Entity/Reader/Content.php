@@ -5,9 +5,9 @@ namespace BlueSpice\Data\Entity\Reader;
 use BlueSpice\Content\Entity as EntityContent;
 use BlueSpice\Data\Entity\Reader;
 use BlueSpice\EntityConfig;
+use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use TextContent;
 
 abstract class Content extends Reader {
 
