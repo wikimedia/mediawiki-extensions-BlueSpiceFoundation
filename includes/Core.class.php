@@ -32,6 +32,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Title\Title;
 
 /**
