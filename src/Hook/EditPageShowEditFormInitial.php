@@ -30,7 +30,7 @@ use BlueSpice\Hook;
 use EditPage;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
-use OutputPage;
+use MediaWiki\Output\OutputPage;
 
 abstract class EditPageShowEditFormInitial extends Hook {
 
