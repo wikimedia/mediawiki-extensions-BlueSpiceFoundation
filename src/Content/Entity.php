@@ -2,10 +2,11 @@
 namespace BlueSpice\Content;
 
 use BlueSpice\Entity as EntityBase;
+use MediaWiki\Content\JsonContent;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 
-class Entity extends \JsonContent {
+class Entity extends JsonContent {
 
 	/**
 	 * @param string $text
