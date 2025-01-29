@@ -28,12 +28,12 @@
 
 namespace BlueSpice;
 
-use ApiMessage;
 use BlueSpice\Api\ErrorFormatter;
 use BlueSpice\Api\Format\Json;
 use BSExtendedApiContext;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiMessage;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
