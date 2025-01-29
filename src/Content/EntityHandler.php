@@ -4,7 +4,7 @@ namespace BlueSpice\Content;
 use Content;
 use MediaWiki\Content\JsonContentHandler;
 use MediaWiki\Content\Renderer\ContentParseParams;
-use ParserOutput;
+use MediaWiki\Parser\ParserOutput;
 
 abstract class EntityHandler extends JsonContentHandler {
 
