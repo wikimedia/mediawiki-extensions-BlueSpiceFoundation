@@ -68,5 +68,11 @@
 	"bs-extjs-pageexport-required-text": "A lista neve nem lehet üres és legalább egy lapot ki kell választani",
 	"bs-extjs-pageexport-error-invalid-title": "A lista neve érvénytelen",
 	"bs-extjs-tools-trigger-title": "Kattints ide az eszközök menü megnyitásához",
-	"bs-extjs-tools-trigger-text": "Eszközök"
+	"bs-extjs-tools-trigger-text": "Eszközök",
+	"bs-extjs-flyout-tab-thumbs-label": "Bélyegképek",
+	"bs-extjs-flyout-tab-thumbs-title": "Váltás bélyegkép nézetre",
+	"bs-extjs-flyout-tab-grid-label": "Részletek",
+	"bs-extjs-flyout-tab-grid-title": "Váltás a részletes nézetre",
+	"bs-extjs-flyout-add-title": "Kattints ide az új elem hozzáadásához",
+	"bs-extjs-flyout-add-label": "Elem hozzáadása"
 }

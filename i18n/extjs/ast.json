@@ -72,5 +72,11 @@
 	"bs-extjs-pageexport-error-invalid-title": "El nome de la llista nun ye válidu",
 	"bs-extjs-combo-box-default-placeholder": "Escribe pa filtrar...",
 	"bs-extjs-tools-trigger-title": "Pulsia equí p'abrir el menú de ferramientes",
-	"bs-extjs-tools-trigger-text": "Ferramientes"
+	"bs-extjs-tools-trigger-text": "Ferramientes",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniatures",
+	"bs-extjs-flyout-tab-thumbs-title": "Cambiar a la vista de miniatures",
+	"bs-extjs-flyout-tab-grid-label": "Detalles",
+	"bs-extjs-flyout-tab-grid-title": "Cambiar a la vista de detalles",
+	"bs-extjs-flyout-add-title": "Pulsia equí p'añadir un nuevu elementu",
+	"bs-extjs-flyout-add-label": "Añadir un elementu"
 }

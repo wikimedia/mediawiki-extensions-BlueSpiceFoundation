@@ -43,5 +43,8 @@
 	"bs-extjs-categoryboxselect-emptytext": "پۆلێک زیاد بکە",
 	"bs-extjs-pageexport-list-format-plain-label": "دەقی ساکار",
 	"bs-extjs-pageexport-list-format-link-label": "بەستەر",
-	"bs-extjs-tools-trigger-text": "ئامرازەکان"
+	"bs-extjs-tools-trigger-text": "ئامرازەکان",
+	"bs-extjs-flyout-tab-grid-label": "وردەکارییەکان",
+	"bs-extjs-flyout-add-title": "کرتە لێرە بکە تا بەندێکی نوێ زیاد بکەیت",
+	"bs-extjs-flyout-add-label": "بەند زیاد بکە"
 }

@@ -43,5 +43,8 @@
 	"bs-extjs-filter-date-filter": "စိစစ်မှု",
 	"bs-extjs-pageexport-list-format-link-label": "လင့်ခ်",
 	"bs-extjs-pageexport-overwrite-label": "ထပ်ပိုးရေးသားရန်",
-	"bs-extjs-tools-trigger-text": "ကိရိယာများ"
+	"bs-extjs-tools-trigger-text": "ကိရိယာများ",
+	"bs-extjs-flyout-tab-thumbs-label": "နမူနာပုံငယ်များ",
+	"bs-extjs-flyout-tab-thumbs-title": "နမူနာပုံငယ်မြင်ကွင်းသို့ပြောင်းမည်",
+	"bs-extjs-flyout-tab-grid-label": "အသေးစိတ်များ"
 }

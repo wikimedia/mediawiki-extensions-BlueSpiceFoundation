@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Beta16",
 			"Dejan Savuljesku",
 			"Raymond",
-			"Robby",
-			"Amire80"
+			"Robby"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Placeholder for input field of OOUI TagMultiselectWidget",

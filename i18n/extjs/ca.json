@@ -32,5 +32,7 @@
 	"bs-extjs-pageexport-success": "L’exportació ha estat exitosa",
 	"bs-extjs-export-search-summary-text": "Generat pel PageExport",
 	"bs-extjs-pageexport-error-invalid-title": "El nom de la llista no és vàlid",
-	"bs-extjs-tools-trigger-text": "Eines"
+	"bs-extjs-tools-trigger-text": "Eines",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniatures",
+	"bs-extjs-flyout-tab-grid-label": "Detalls"
 }
