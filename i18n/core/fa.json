@@ -39,7 +39,7 @@
 	"bs-userpreferences-link-text": "بیشتر تنظیمات کاربر",
 	"bs-userpreferences-link-title": "نمایش تنظیمات شخصی کاربر",
 	"bs-exception-view-heading": "خطایی رخ داد",
-	"bs-exception-view-text": "متاسفانه خطایی رخ داده است:",
+	"bs-exception-view-text": "متأسفانه خطایی رخ داده است:",
 	"bs-exception-view-admin-hint": "با مدیریت سامانۀ خودتان تماس بگیرید.",
 	"bs-exception-view-stacktrace-toggle-show-text": "نمایش جزئیات خطا",
 	"bs-exception-view-stacktrace-toggle-hide-text": "پنهان کردن جزئیات خطا",
