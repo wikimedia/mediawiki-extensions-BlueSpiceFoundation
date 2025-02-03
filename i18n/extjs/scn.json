@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeje Brazorf"
+			"Ajeje Brazorf",
+			"GianAntonucci"
 		]
 	},
 	"bs-extjs-ok": "Ok",
@@ -29,8 +30,8 @@
 	"bs-extjs-mainns": "(Principali)",
 	"bs-extjs-filter-equals": "è aguali a",
 	"bs-extjs-filter-equals-not": "nun è aguali a",
-	"bs-extjs-filter-contains": "cunteni",
-	"bs-extjs-filter-contains-not": "nun cunteni",
+	"bs-extjs-filter-contains": "àvi",
+	"bs-extjs-filter-contains-not": "nun àvi",
 	"bs-extjs-filter-starts-with": "ncigna cu",
 	"bs-extjs-filter-bool-yes": "sì",
 	"bs-extjs-filter-bool-no": "no",
@@ -40,11 +41,11 @@
 	"bs-extjs-filter-date-before": "Avanti",
 	"bs-extjs-filter-date-on": "Lu",
 	"bs-extjs-filter-date-filter": "Filtru",
-	"bs-extjs-pageexport-list-name-label": "Nomu di l'elencu",
-	"bs-extjs-pageexport-list-format-label": "Furmatu di l'elencu",
+	"bs-extjs-pageexport-list-name-label": "Nomu dâ lista",
+	"bs-extjs-pageexport-list-format-label": "Furmatu dâ lista",
 	"bs-extjs-pageexport-list-format-plain-label": "Testu nurmali",
 	"bs-extjs-pageexport-list-format-link-label": "Culligamentu",
-	"bs-extjs-pageexport-error-invalid-title": "Lu nomu di l'elencu nun è vàlidu",
+	"bs-extjs-pageexport-error-invalid-title": "Lu nomu dâ lista nun è vàlitu",
 	"bs-extjs-tools-trigger-text": "Strummenta",
 	"bs-extjs-flyout-tab-grid-label": "Dittagghî"
 }

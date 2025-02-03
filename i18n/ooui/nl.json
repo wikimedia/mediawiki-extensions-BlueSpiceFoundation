@@ -16,5 +16,12 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Geen waarden gegeven!",
 	"bs-ooui-btn-dismiss-alert-title": "Sluiten",
 	"bs-ooui-key-value-input-widget-section-label": "Sectie",
-	"bs-ooui-key-value-input-widget-add-section-label": "Nieuwe sectie toevoegen"
+	"bs-ooui-key-value-input-widget-add-section-label": "Nieuwe sectie toevoegen",
+	"bs-ui-generic-save": "Opslaan",
+	"bs-ui-generic-cancel": "Annuleren",
+	"bs-ui-generic-yes": "Ja",
+	"bs-ui-generic-no": "Nee",
+	"bs-exportpages-dialog-title": "Pagina’s exporteren naar een verzameling",
+	"bs-exportpages-success-text": "Pagina’s geëxporteerd naar [[$1|$2]]",
+	"bs-ui-generic-close": "Sluiten"
 }
