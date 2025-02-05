@@ -118,6 +118,18 @@
 					"addPrefix": true
 				}
 			}
+		},
+		"PDFCreator": {
+			"StylesheetsProvider": {
+				"BlueSpiceFoundationIconFontsStyles": {
+					"class": "BlueSpice\\Integration\\PDFCreator\\StylesheetsProvider\\IconFontsStyles"
+				}
+			},
+			"PreProcessors": {
+				"BlueSpiceFoundationIconFonts": {
+					"class": "BlueSpice\\Integration\\PDFCreator\\PreProcessors\\IconFonts"
+				}
+			}
 		}
 	},
 	"ServiceWiringFiles": [
@@ -576,9 +588,6 @@
 		"mediawikiservices": {
 			"class": "\\BlueSpice\\HookHandler\\MediaWikiServices"
 		},
-		"bs-ue-module-pdf-integration": {
-			"class": "\\BlueSpice\\HookHandler\\PDFExportHandler"
-		},
 		"common-user-interface": {
 			"class": "\\BlueSpice\\HookHandler\\CommonUserInterface",
 			"@note": "For some reason this service is not available at time of initalization",
@@ -655,7 +664,6 @@
 		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
 		"MediaWikiServices": "mediawikiservices",
-		"BSUEModulePDFBeforeAddingContent": "bs-ue-module-pdf-integration",
 		"MWStakeCommonUILessVarsInit": "common-user-interface",
 		"MWStakeCommonWebAPIsQueryStoreResult": "addUserImage"
 	},
