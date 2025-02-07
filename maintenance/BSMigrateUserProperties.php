@@ -3,6 +3,7 @@
 require_once 'BSMaintenance.php';
 
 use MediaWiki\Json\FormatJson;
+use MediaWiki\Maintenance\LoggedUpdateMaintenance;
 use MediaWiki\MediaWikiServices;
 
 class BSMigrateUserProperties extends LoggedUpdateMaintenance {
