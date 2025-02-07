@@ -269,7 +269,7 @@ class BsCore {
 	/**
 	 * DEPRECATED
 	 * Parses WikiText into HTML
-	 * @deprecated since version 3.1.0 - use \Parser->recursiveTagParseFully
+	 * @deprecated since version 3.1.0 - use Parser->recursiveTagParseFully
 	 * when available or do a DerivativeRequest with action parse
 	 * @param string $sText WikiText
 	 * @param Title $oTitle

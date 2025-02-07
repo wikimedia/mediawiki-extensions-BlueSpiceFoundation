@@ -5,7 +5,7 @@ namespace BlueSpice\Tag;
 /**
  * The MarkerType defines the \StripState of the string data returned by a tag extension
  *
- * From documentaion in class \Parser:
+ * From documentaion in class Parser:
  *     [Tag]Hooks may return extended information by returning an array, of which the
  *     first numbered element (index 0) must be the return string, and all other
  *     entries are extracted into local variables within an internal function

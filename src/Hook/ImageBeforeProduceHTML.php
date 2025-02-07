@@ -31,8 +31,8 @@ use DummyLinker;
 use File;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
-use Parser;
 
 abstract class ImageBeforeProduceHTML extends Hook {
 

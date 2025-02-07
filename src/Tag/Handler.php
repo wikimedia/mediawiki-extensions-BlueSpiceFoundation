@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Tag;
 
+use MediaWiki\Parser\Parser;
+
 abstract class Handler implements IHandler {
 
 	/**
@@ -18,7 +20,7 @@ abstract class Handler implements IHandler {
 
 	/**
 	 *
-	 * @var \Parser
+	 * @var Parser
 	 */
 	protected $parser = null;
 
@@ -32,10 +34,10 @@ abstract class Handler implements IHandler {
 	 *
 	 * @param string $processedInput
 	 * @param array $processedArgs
-	 * @param \Parser $parser
+	 * @param Parser $parser
 	 * @param \PPFrame $frame
 	 */
-	public function __construct( $processedInput, array $processedArgs, \Parser $parser,
+	public function __construct( $processedInput, array $processedArgs, Parser $parser,
 		\PPFrame $frame ) {
 		$this->processedInput = $processedInput;
 		$this->processedArgs = $processedArgs;
