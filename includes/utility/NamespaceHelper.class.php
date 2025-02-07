@@ -46,7 +46,7 @@ class BsNamespaceHelper {
 	 * @param string|null $name
 	 * @return string
 	 */
-	public static function getNamespaceConstName( $iNS, $name = null ) {
+	public static function getNamespaceConstName( $iNS, $name = null, ?bool $ignoreExisting = false ) {
 		// find existing NS_ definitions
 		$aNSConstants = [];
 		foreach ( get_defined_constants() as $key => $value ) {
@@ -63,7 +63,7 @@ class BsNamespaceHelper {
 		$aNSConstants = array_flip( $aNSConstants );
 
 		// Use existing constant name if possible
-		if ( isset( $aNSConstants[$iNS] ) ) {
+		if ( isset( $aNSConstants[$iNS] ) && !$ignoreExisting ) {
 			$sConstName = $aNSConstants[$iNS];
 		} elseif ( is_string( $name ) && preg_match( "/^[a-zA-Z0-9_]{3,}$/", $name ) ) {
 			// If compatible, use namespace name as const name
