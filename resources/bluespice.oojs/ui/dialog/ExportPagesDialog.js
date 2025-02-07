@@ -7,7 +7,7 @@
  */
 bs.ui.dialog.ExportPagesDialog = function ( cfg ) {
 	cfg = cfg || {};
-	cfg.size = 'large';
+	cfg.size = 'medium';
 	bs.ui.dialog.ExportPagesDialog.parent.call( this, cfg );
 
 	this.pages = cfg.pages || [];
@@ -89,6 +89,7 @@ bs.ui.dialog.ExportPagesDialog.prototype.initialize = function () {
 		multiSelect: true,
 		multiSelectSelectedByDefault: true,
 		noHeader: true,
+		classes: [ 'bs-exportpages-grid' ],
 		columns: {
 			dbkey: {
 				valueParser: function ( value, row ) {
