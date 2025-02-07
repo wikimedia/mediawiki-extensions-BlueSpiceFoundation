@@ -4,9 +4,9 @@ namespace BlueSpice\Html\Descriptor;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\Message\Message;
 use MediaWiki\Title\Title;
-use RawMessage;
 
 class TitleLink extends LinkBase {
 

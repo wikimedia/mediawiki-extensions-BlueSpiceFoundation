@@ -3,8 +3,8 @@
 namespace BlueSpice\Html\Descriptor;
 
 use Exception;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\Message\Message;
-use RawMessage;
 
 class SimpleLink implements ILink {
 
