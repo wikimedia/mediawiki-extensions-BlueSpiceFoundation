@@ -30,7 +30,7 @@ use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Parser\Parser;
-use PPFrame;
+use MediaWiki\Parser\PPFrame;
 
 abstract class ParserGetVariableValueSwitch extends Hook {
 

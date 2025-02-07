@@ -5,6 +5,7 @@ namespace BlueSpice\Tag;
 use BlueSpice\ParamProcessor\ProcessingErrorMessageTranslator;
 use MediaWiki\Html\Html;
 use MediaWiki\Parser\Parser;
+use MediaWiki\Parser\PPFrame;
 
 class GenericHandler {
 
@@ -68,7 +69,7 @@ class GenericHandler {
 
 	/**
 	 *
-	 * @var \PPFrame
+	 * @var PPFrame
 	 */
 	protected $frame = null;
 
@@ -85,11 +86,11 @@ class GenericHandler {
 	 * @param string $input
 	 * @param array $args
 	 * @param Parser $parser
-	 * @param \PPFrame $frame
+	 * @param PPFrame $frame
 	 * @return array
 	 * @throws \MWException
 	 */
-	public function handle( $input, array $args, Parser $parser, \PPFrame $frame ) {
+	public function handle( $input, array $args, Parser $parser, PPFrame $frame ) {
 		$elementName = $this->tag->getContainerElementName();
 		if ( !empty( $elementName ) && !$this->isValidContainerElementName( $elementName ) ) {
 			$tagNames = $this->tag->getTagNames();
