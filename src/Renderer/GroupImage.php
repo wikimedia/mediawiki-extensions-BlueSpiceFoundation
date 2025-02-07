@@ -4,6 +4,7 @@ namespace BlueSpice\Renderer;
 use BlueSpice\Utility\CacheHelper;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Language\RawMessage;
 use MediaWiki\Linker\LinkRenderer;
 
 class GroupImage extends \BlueSpice\TemplateRenderer {
@@ -49,7 +50,7 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 
 		$message = $this->msg( 'group-' . $this->group );
 		if ( !$message->exists() ) {
-			$message = new \RawMessage( $this->group );
+			$message = new RawMessage( $this->group );
 		}
 
 		$this->args['groupname'] = $this->group;
