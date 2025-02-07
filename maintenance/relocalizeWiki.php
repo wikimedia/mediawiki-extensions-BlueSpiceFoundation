@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;

@@ -3,10 +3,10 @@
 namespace BlueSpice\Task;
 
 use BlueSpice\Task;
-use CommentStoreComment;
 use DeferredUpdates;
 use EditPage;
 use Exception;
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
