@@ -24,6 +24,7 @@ This script is based loosely on maintenance/edit.php of MediaWiki.
 // include MediaWiki's command line tools
 require_once 'BSMaintenance.php';
 
+use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
