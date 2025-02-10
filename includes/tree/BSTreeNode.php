@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\Config;
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Config\MultiConfig;
 
 class BSTreeNode {

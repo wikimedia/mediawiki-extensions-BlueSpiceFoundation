@@ -6,6 +6,7 @@ use BlueSpice\Data\Settings\Record;
 use BlueSpice\Data\Settings\Store;
 use MediaWiki\Config\Config as MediaWikiConfig;
 use MediaWiki\Config\GlobalVarConfig;
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Config\MultiConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
@@ -15,13 +16,13 @@ class Config extends MultiConfig {
 
 	/**
 	 *
-	 * @var \HashConfig
+	 * @var HashConfig
 	 */
 	protected $databaseConfig = null;
 
 	/**
 	 *
-	 * @var \HashConfig
+	 * @var HashConfig
 	 */
 	protected $overrides = null;
 
@@ -58,7 +59,7 @@ class Config extends MultiConfig {
 
 	/**
 	 *
-	 * @return \HashConfig
+	 * @return HashConfig
 	 */
 	protected function makeDatabaseConfig() {
 		$hash = [];
@@ -74,7 +75,7 @@ class Config extends MultiConfig {
 			$hash[ $name ] = $record->get( Record::VALUE );
 		}
 
-		return new \HashConfig( $hash );
+		return new HashConfig( $hash );
 	}
 
 	/**
@@ -90,7 +91,7 @@ class Config extends MultiConfig {
 
 	/**
 	 *
-	 * @return \HashConfig
+	 * @return HashConfig
 	 */
 	public function getOverrides() {
 		return $this->overrides;
