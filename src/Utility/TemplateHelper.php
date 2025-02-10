@@ -2,6 +2,7 @@
 namespace BlueSpice\Utility;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 
 class TemplateHelper {
 
@@ -37,7 +38,7 @@ class TemplateHelper {
 			);
 		} else {
 			$config = [];
-			foreach ( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+			foreach ( ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
 				if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
 					continue;
 				}

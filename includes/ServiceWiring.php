@@ -4,12 +4,13 @@ use BlueSpice\DeferredNotificationStack;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 
 return [
 
 	'BSExtensionRegistry' => static function ( MediaWikiServices $services ) {
 		return new \BlueSpice\ExtensionRegistry(
-			\ExtensionRegistry::getInstance(),
+			ExtensionRegistry::getInstance(),
 			$services->getConfigFactory()->makeConfig( 'bsg' )
 		);
 	},
@@ -66,7 +67,7 @@ return [
 	},
 
 	'BSAdminToolFactory' => static function ( MediaWikiServices $services ) {
-		$attribute = \ExtensionRegistry::getInstance()->getAttribute(
+		$attribute = ExtensionRegistry::getInstance()->getAttribute(
 			'BlueSpiceFoundationAdminToolRegistry'
 		);
 		return new \BlueSpice\AdminToolFactory( $attribute );
@@ -78,7 +79,7 @@ return [
 	},
 
 	'BSRoleFactory' => static function ( MediaWikiServices $services ) {
-		$roles = \ExtensionRegistry::getInstance()->getAttribute(
+		$roles = ExtensionRegistry::getInstance()->getAttribute(
 			'BlueSpiceFoundationRoleRegistry'
 		);
 		return new \BlueSpice\Permission\RoleFactory(
@@ -88,7 +89,7 @@ return [
 	},
 
 	'BSRoleManager' => static function ( MediaWikiServices $services ) {
-		$roles = \ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoles' );
+		$roles = ExtensionRegistry::getInstance()->getAttribute( 'BlueSpiceFoundationRoles' );
 		return new \BlueSpice\Permission\RoleManager(
 			$GLOBALS[ 'wgGroupPermissions' ],
 			$GLOBALS[ 'bsgGroupRoles' ],

@@ -25,6 +25,7 @@
  * @filesource
  */
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Registration\ExtensionRegistry;
 
 /**
  * @package BlueSpiceFoundation
@@ -47,7 +48,7 @@ class BSTemplateHelper {
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
-		foreach ( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+		foreach ( ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
 			if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
 				continue;
 			}
@@ -119,7 +120,7 @@ class BSTemplateHelper {
 			'BSExtensionRegistry'
 		);
 		$aExtensions = $registry->getExtensionDefinitions();
-		foreach ( \ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
+		foreach ( ExtensionRegistry::getInstance()->getAllThings() as $thing ) {
 			if ( !isset( $thing['type'] ) || $thing['type'] !== 'skin' ) {
 				continue;
 			}
