@@ -5,6 +5,7 @@ use BlueSpice\Entity as EntityBase;
 use MediaWiki\Content\JsonContent;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Xml\Xml;
 
 class Entity extends JsonContent {
 
@@ -57,8 +58,8 @@ class Entity extends JsonContent {
 		foreach ( $mapping as $key => $val ) {
 			$rows[] = $this->objectRow( $key, $val );
 		}
-		return \Xml::tags( 'table', [ 'class' => 'mw-json' ],
-			\Xml::tags( 'tbody', [], implode( "\n", $rows ) )
+		return Xml::tags( 'table', [ 'class' => 'mw-json' ],
+			Xml::tags( 'tbody', [], implode( "\n", $rows ) )
 		);
 	}
 
@@ -70,9 +71,9 @@ class Entity extends JsonContent {
 	 * @return string HTML.
 	 */
 	protected function objectRow( $key, $val ) {
-		$th = \Xml::elementClean( 'th', [], $key );
+		$th = Xml::elementClean( 'th', [], $key );
 		if ( is_array( $val ) ) {
-			$td = \Xml::tags( 'td', [], self::objectTable( $val ) );
+			$td = Xml::tags( 'td', [], self::objectTable( $val ) );
 		} else {
 			if ( is_string( $val ) ) {
 				$val = '"' . $val . '"';
@@ -80,10 +81,10 @@ class Entity extends JsonContent {
 				$val = FormatJson::encode( $val );
 			}
 
-			$td = \Xml::elementClean( 'td', [ 'class' => 'value' ], $val );
+			$td = Xml::elementClean( 'td', [ 'class' => 'value' ], $val );
 		}
 
-		return \Xml::tags( 'tr', [], $th . $td );
+		return Xml::tags( 'tr', [], $th . $td );
 	}
 
 	/**

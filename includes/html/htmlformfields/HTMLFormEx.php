@@ -2,6 +2,7 @@
 
 use MediaWiki\Html\Html;
 use MediaWiki\Parser\Sanitizer;
+use MediaWiki\Xml\Xml;
 
 /**
  * Description of HTMLFormEx

@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Html\Html;
+use MediaWiki\Xml\Xml;
 
 class XmlMultiSelect extends XmlSelect {
 
