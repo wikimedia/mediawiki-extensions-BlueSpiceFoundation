@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Api\ApiBase;
+use MediaWiki\Category\Category;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
