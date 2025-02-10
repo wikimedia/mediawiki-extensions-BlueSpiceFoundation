@@ -3,10 +3,11 @@
 namespace BlueSpice\Html\FormField;
 
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLFormField;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 
-class NamespaceMultiselect extends \HTMLFormField {
+class NamespaceMultiselect extends HTMLFormField {
 	public const OPTION_HIDE_TALK = 'hide-talk';
 	public const OPTION_HIDE_PSEUDO = 'hide-pseudo';
 	public const OPTION_ONLY_CUSTOM = 'only-custom-namespaces';
