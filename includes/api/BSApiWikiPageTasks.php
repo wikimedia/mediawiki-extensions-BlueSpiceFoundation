@@ -30,6 +30,7 @@ use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Json\FormatJson;
+use MediaWiki\Request\FauxRequest;
 use MediaWiki\Title\Title;
 
 /**
