@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
@@ -20,7 +21,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$config = $this->getMockBuilder( '\HashConfig' )
+		$config = $this->getMockBuilder( HashConfig::class )
 			->disableOriginalConstructor()
 			->getMock();
 
@@ -61,7 +62,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$config = $this->getMockBuilder( '\HashConfig' )
+		$config = $this->getMockBuilder( HashConfig::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$config->method( 'get' )->willReturnCallback( static function ( $key ) {
@@ -114,7 +115,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$config = $this->getMockBuilder( '\HashConfig' )
+		$config = $this->getMockBuilder( HashConfig::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$config->method( 'get' )->willReturnCallback( static function ( $key ) {
@@ -161,7 +162,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$config = $this->getMockBuilder( '\HashConfig' )
+		$config = $this->getMockBuilder( HashConfig::class )
 			->disableOriginalConstructor()
 			->getMock();
 
