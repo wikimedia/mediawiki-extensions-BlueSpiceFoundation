@@ -10,11 +10,10 @@ class Mustache extends \BlueSpice\Template {
 	public const FILE_EXTENTION = 'mustache';
 
 	/**
-	 *
 	 * @param MediaWikiServices $services
 	 * @param string $alias
 	 * @param TemplateHelper|null $templateHelper
-	 * @param TemplateParser|null $templateParser
+	 * @param ITemplateParser|null $templateParser
 	 * @return Template
 	 */
 	public static function factory( MediaWikiServices $services, $alias,
