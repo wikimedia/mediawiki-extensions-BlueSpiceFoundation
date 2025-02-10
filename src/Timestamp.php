@@ -10,7 +10,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
-use MWTimestamp;
+use MediaWiki\Utils\MWTimestamp;
 
 class Timestamp extends MWTimestamp {
 
