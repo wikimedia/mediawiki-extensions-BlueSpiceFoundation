@@ -6,11 +6,12 @@ use BlueSpice\Data\Settings\Record;
 use BlueSpice\Data\Settings\Store;
 use MediaWiki\Config\Config as MediaWikiConfig;
 use MediaWiki\Config\GlobalVarConfig;
+use MediaWiki\Config\MultiConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 
-class Config extends \MultiConfig {
+class Config extends MultiConfig {
 
 	/**
 	 *
