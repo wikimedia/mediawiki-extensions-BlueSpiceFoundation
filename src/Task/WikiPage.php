@@ -8,6 +8,7 @@ use EditPage;
 use Exception;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\TextContent;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
@@ -15,7 +16,6 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MWCallableUpdate;
 use MWException;
-use WikitextContent;
 
 abstract class WikiPage extends Task {
 
