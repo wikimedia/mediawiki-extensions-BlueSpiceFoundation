@@ -3,7 +3,7 @@
 namespace BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 use BlueSpice\Hook\ResourceLoaderGetConfigVars;
-use Sanitizer;
+use MediaWiki\Parser\Sanitizer;
 
 class AddVersion extends ResourceLoaderGetConfigVars {
 

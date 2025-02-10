@@ -5,6 +5,7 @@ use MediaWiki\Config\HashConfig;
 use MediaWiki\Config\MultiConfig;
 use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
+use MediaWiki\Parser\Sanitizer;
 
 class BSTreeRenderer {
 
