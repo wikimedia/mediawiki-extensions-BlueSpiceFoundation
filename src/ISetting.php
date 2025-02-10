@@ -2,6 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\HTMLForm\HTMLFormField;
+
 interface ISetting {
 
 	/**
@@ -22,7 +24,7 @@ interface ISetting {
 
 	/**
 	 *
-	 * @return \HTMLFormField A ready to use HTML-form-field-descriptor, with
+	 * @return HTMLFormField A ready to use HTML-form-field-descriptor, with
 	 * default, labels, descriptions, ...
 	 */
 	public function getHtmlFormField();
