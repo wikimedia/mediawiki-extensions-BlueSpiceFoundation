@@ -33,6 +33,7 @@ use BlueSpice\Api\Response\Standard;
 use BlueSpice\UtilityFactory;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
