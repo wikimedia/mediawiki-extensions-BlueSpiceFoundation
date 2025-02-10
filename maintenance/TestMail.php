@@ -6,6 +6,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Sanitizer;
 
 // HINT: https://www.mediawiki.org/wiki/Manual:Writing_maintenance_scripts
 require_once 'BSMaintenance.php';

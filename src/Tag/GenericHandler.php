@@ -6,6 +6,7 @@ use BlueSpice\ParamProcessor\ProcessingErrorMessageTranslator;
 use MediaWiki\Html\Html;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\PPFrame;
+use MediaWiki\Parser\Sanitizer;
 
 class GenericHandler {
 
@@ -152,7 +153,7 @@ class GenericHandler {
 	protected function makeContainerAttributes() {
 		$cssClasses = [ 'bs-tag' ];
 		foreach ( $this->tag->getTagNames() as $tagName ) {
-			$cssClasses[] = \Sanitizer::escapeClass( "bs-tag-$tagName" );
+			$cssClasses[] = Sanitizer::escapeClass( "bs-tag-$tagName" );
 		}
 
 		$attribs = [
