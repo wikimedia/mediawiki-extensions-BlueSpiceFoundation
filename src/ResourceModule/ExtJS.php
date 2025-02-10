@@ -2,6 +2,7 @@
 
 namespace BlueSpice\ResourceModule;
 
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MWStake\MediaWiki\Component\CommonUserInterface\ResourceLoader\LessVars;
 
@@ -21,7 +22,7 @@ class ExtJS extends LessVars {
 		 * This is very bad, but as long as https://gerrit.wikimedia.org/r/c/389412/
 		 * is not merged CI will crash by an unresolved dependency
 		 */
-		if ( \ExtensionRegistry::getInstance()->isLoaded( 'ExtJSBase' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'ExtJSBase' ) ) {
 			$dependencies[] = 'ext.extjsbase.MWExt';
 		}
 

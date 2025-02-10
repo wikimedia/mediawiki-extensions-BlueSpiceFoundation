@@ -28,6 +28,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Registration\ExtensionRegistry as MediaWikiExtensionRegistry;
 
 /**
  * ExtensionRegistry class for BlueSpice
@@ -38,7 +39,7 @@ class ExtensionRegistry {
 
 	/**
 	 *
-	 * @var \ExtensionRegistry
+	 * @var MediaWikiExtensionRegistry
 	 */
 	protected $extensionRegistry = null;
 
@@ -50,7 +51,7 @@ class ExtensionRegistry {
 
 	/**
 	 *
-	 * @param \ExtensionRegistry $extensionRegistry
+	 * @param MediaWikiExtensionRegistry $extensionRegistry
 	 * @param Config $config
 	 */
 	public function __construct( $extensionRegistry, $config ) {

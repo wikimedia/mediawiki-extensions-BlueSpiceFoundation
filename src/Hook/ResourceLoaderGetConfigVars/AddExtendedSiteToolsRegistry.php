@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 use BlueSpice\Hook\ResourceLoaderGetConfigVars;
+use MediaWiki\Registration\ExtensionRegistry;
 
 class AddExtendedSiteToolsRegistry extends ResourceLoaderGetConfigVars {
 
@@ -23,7 +24,7 @@ class AddExtendedSiteToolsRegistry extends ResourceLoaderGetConfigVars {
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {
-		$registry = \ExtensionRegistry::getInstance();
+		$registry = ExtensionRegistry::getInstance();
 		$extendedSiteToolsRegistry = $registry->getAttribute(
 			'BlueSpiceFoundationExtendedSiteToolsRegistry'
 		);

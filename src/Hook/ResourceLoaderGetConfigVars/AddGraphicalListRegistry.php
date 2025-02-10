@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 use BlueSpice\Hook\ResourceLoaderGetConfigVars;
+use MediaWiki\Registration\ExtensionRegistry;
 
 class AddGraphicalListRegistry extends ResourceLoaderGetConfigVars {
 
@@ -23,7 +24,7 @@ class AddGraphicalListRegistry extends ResourceLoaderGetConfigVars {
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {
-		$registry = \ExtensionRegistry::getInstance();
+		$registry = ExtensionRegistry::getInstance();
 		$graphicalListRegistry = $registry->getAttribute( 'BlueSpiceFoundationGraphicalListRegistry' );
 		return [ 'bsGraphicalListRegistry' => $graphicalListRegistry ];
 	}
