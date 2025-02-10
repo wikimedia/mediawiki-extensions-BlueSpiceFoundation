@@ -27,7 +27,7 @@
 
 namespace BlueSpice\Api\Format;
 
-use ApiFormatJson;
+use MediaWiki\Api\ApiFormatJson;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
