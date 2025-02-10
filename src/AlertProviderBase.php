@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Config\MultiConfig;
 use MediaWiki\MediaWikiServices;
-use MultiConfig;
 use MWStake\MediaWiki\Component\AlertBanners\AlertProviderBase as AlertBannersAlertProviderBase;
 
 abstract class AlertProviderBase extends AlertBannersAlertProviderBase {
