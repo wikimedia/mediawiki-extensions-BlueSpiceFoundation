@@ -3,12 +3,12 @@
 namespace BlueSpice\Task;
 
 use BlueSpice\Task;
-use DeferredUpdates;
 use Exception;
 use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\EditPage\EditPage;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
