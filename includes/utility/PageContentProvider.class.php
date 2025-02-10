@@ -6,6 +6,7 @@
  * @subpackage Utility
  */
 
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;

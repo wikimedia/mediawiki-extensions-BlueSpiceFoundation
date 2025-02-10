@@ -35,7 +35,7 @@ class BSApiUploadLicenseStoreTest extends BSApiExtJSStoreTestBase {
 
 		$sLicenses = "* Dummy | Dummy license\n* Dummy2 | Dummy2 license";
 		$oUser = User::newFromName( 'UTSysop' );
-		$oContent = \ContentHandler::makeContent( $sLicenses, $oLicensesTitle );
+		$oContent = ContentHandler::makeContent( $sLicenses, $oLicensesTitle );
 		$oWikiPage->doEditContent( $oContent, '', 0, false, $oUser );*/
 
 		return 1;

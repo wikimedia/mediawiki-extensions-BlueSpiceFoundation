@@ -25,6 +25,7 @@ This script is based loosely on maintenance/edit.php of MediaWiki.
 require_once 'BSMaintenance.php';
 
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;

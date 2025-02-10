@@ -4,6 +4,7 @@
 # if (PHP_OS == "WINNT") exec("chcp 65001"); # doesn't seem to work - do it manually
 
 use MediaWiki\CommentStore\CommentStoreComment;
+use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
