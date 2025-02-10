@@ -7,13 +7,14 @@ namespace BlueSpice;
 use FileContentsHasher;
 use LightnCandy\LightnCandy;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Html\TemplateParser as MediaWikiTemplateParser;
 use MediaWiki\Message\Message;
 use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MessageLocalizer;
 use ObjectCache;
 use RuntimeException;
 
-class TemplateParser extends \TemplateParser implements ITemplateParser, MessageLocalizer {
+class TemplateParser extends MediaWikiTemplateParser implements ITemplateParser, MessageLocalizer {
 
 	/**
 	 * @param string|null $templateDir
