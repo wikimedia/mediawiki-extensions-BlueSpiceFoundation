@@ -5,6 +5,7 @@ namespace BlueSpice;
 use BlueSpice\Data\Settings\Record;
 use BlueSpice\Data\Settings\Store;
 use MediaWiki\Config\Config as MediaWikiConfig;
+use MediaWiki\Config\GlobalVarConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
@@ -28,12 +29,12 @@ class Config extends \MultiConfig {
 	 */
 	public function __construct() {
 		$this->databaseConfig = $this->makeDatabaseConfig();
-		$this->overrides = new \GlobalVarConfig( 'bsgOverride' );
+		$this->overrides = new GlobalVarConfig( 'bsgOverride' );
 		parent::__construct( [
 			$this->overrides,
 			&$this->databaseConfig,
-			new \GlobalVarConfig( 'bsg' ),
-			new \GlobalVarConfig( 'wg' ),
+			new GlobalVarConfig( 'bsg' ),
+			new GlobalVarConfig( 'wg' ),
 		] );
 	}
 

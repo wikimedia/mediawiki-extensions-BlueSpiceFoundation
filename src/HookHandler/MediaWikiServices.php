@@ -3,7 +3,7 @@
 namespace BlueSpice\HookHandler;
 
 use BlueSpice\Http\HttpRequestFactory;
-use GlobalVarConfig;
+use MediaWiki\Config\GlobalVarConfig;
 use MediaWiki\Hook\MediaWikiServicesHook;
 use MediaWiki\MediaWikiServices as MWMediaWikiServices;
 
