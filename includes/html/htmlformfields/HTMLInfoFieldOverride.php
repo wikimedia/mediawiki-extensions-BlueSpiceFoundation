@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Xml\Xml;
+
 class HTMLInfoFieldOverride extends HTMLInfoField {
 
 	/**
