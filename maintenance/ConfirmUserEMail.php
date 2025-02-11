@@ -8,6 +8,8 @@
  * @license GPL-3.0-only
  */
 
+use MediaWiki\Maintenance\Maintenance;
+
 require_once 'BSMaintenance.php';
 
 class ConfirmUserEMail extends Maintenance {
