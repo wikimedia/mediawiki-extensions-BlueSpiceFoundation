@@ -38,6 +38,7 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Rdbms\DBError;
 
 /**
  * Api base class for simple tasks in BlueSpice
