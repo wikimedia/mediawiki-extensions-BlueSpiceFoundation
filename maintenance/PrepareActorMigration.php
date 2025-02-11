@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Maintenance\Maintenance;
 use Wikimedia\Rdbms\IDatabase;
 
 require_once 'BSMaintenance.php';
