@@ -13,12 +13,13 @@ use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MessageLocalizer;
 use ObjectCache;
 use RuntimeException;
+use Wikimedia\ObjectCache\BagOStuff;
 
 class TemplateParser extends MediaWikiTemplateParser implements ITemplateParser, MessageLocalizer {
 
 	/**
 	 * @param string|null $templateDir
-	 * @param \BagOStuff|null $cache Unused, caching is always disabled
+	 * @param BagOStuff|null $cache Unused, caching is always disabled
 	 */
 	public function __construct( $templateDir = null, $cache = null ) {
 		// remove trailing slashes

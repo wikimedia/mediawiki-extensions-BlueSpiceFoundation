@@ -2,12 +2,13 @@
 namespace BlueSpice\Utility;
 
 use MediaWiki\Config\Config;
+use Wikimedia\ObjectCache\BagOStuff;
 
 class CacheHelper {
 
 	/**
 	 *
-	 * @var \BagOStuff
+	 * @var BagOStuff
 	 */
 	protected $cache = null;
 
@@ -36,7 +37,7 @@ class CacheHelper {
 
 	/**
 	 * gets cache which is set in $wgMainCacheType
-	 * @return \BagOStuff
+	 * @return BagOStuff
 	 */
 	public function getCache() {
 		return $this->cache;
