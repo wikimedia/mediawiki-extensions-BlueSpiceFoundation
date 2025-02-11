@@ -8,43 +8,35 @@
  * Dies sollte sich ohne Probleme umsetzen lassen, da BlueSpice ja so designed ist, dass der
  * Core in einem separaten Verzeichnis liegen kann.
  */
-if ( !defined( 'WIKI_FARMING' ) ) {
-	if ( !defined( 'BSROOTDIR' ) ) {
-		define( 'BSROOTDIR', dirname( __DIR__ ) );
-	}
-	if ( !defined( 'BS_LEGACY_CONFIGDIR' ) ) {
-		// Needed for migration
-		define( 'BS_LEGACY_CONFIGDIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'config' );
-	}
-	if ( !defined( 'BSDATADIR' ) ) {
-		// Present
-		define( 'BSDATADIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'data' );
-	}
+if ( !defined( 'BSROOTDIR' ) ) {
+	define( 'BSROOTDIR', dirname( __DIR__ ) );
+}
+if ( !defined( 'BS_LEGACY_CONFIGDIR' ) ) {
+	// Needed for migration
+	define( 'BS_LEGACY_CONFIGDIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'config' );
+}
+if ( !defined( 'BSDATADIR' ) ) {
+	// Present
+	define( 'BSDATADIR', BSROOTDIR . DIRECTORY_SEPARATOR . 'data' );
+}
 
-	// New constants
-	$sTMPUploadDir = empty( $GLOBALS['wgUploadDirectory'] )
-		? $GLOBALS['IP'] . DIRECTORY_SEPARATOR . 'images'
-		: $GLOBALS['wgUploadDirectory'];
-
+$sTMPUploadDir = empty( $GLOBALS['wgUploadDirectory'] )
+	? $GLOBALS['IP'] . DIRECTORY_SEPARATOR . 'images'
+	: $GLOBALS['wgUploadDirectory'];
+if ( !defined( 'BS_DATA_DIR' ) ) {
+	define( 'BS_DATA_DIR', $sTMPUploadDir . DIRECTORY_SEPARATOR . 'bluespice' );
+}
+if ( !defined( 'BS_CACHE_DIR' ) ) {
 	$sTMPCacheDir = empty( $GLOBALS['wgFileCacheDirectory'] )
 		? $sTMPUploadDir . DIRECTORY_SEPARATOR . 'cache'
 		: $GLOBALS['wgFileCacheDirectory'];
-
+	define( 'BS_CACHE_DIR', $sTMPCacheDir . DIRECTORY_SEPARATOR . 'bluespice' );
+}
+if ( !defined( 'BS_DATA_PATH' ) ) {
 	$sTMPUploadPath = empty( $GLOBALS['wgUploadPath'] )
 		? $GLOBALS['wgScriptPath'] . "/images"
 		: $GLOBALS['wgUploadPath'];
-
-	if ( !defined( 'BS_DATA_DIR' ) ) {
-		// Future
-		define( 'BS_DATA_DIR', $sTMPUploadDir . DIRECTORY_SEPARATOR . 'bluespice' );
-	}
-	if ( !defined( 'BS_CACHE_DIR' ) ) {
-		// $wgCacheDirectory?
-		define( 'BS_CACHE_DIR', $sTMPCacheDir . DIRECTORY_SEPARATOR . 'bluespice' );
-	}
-	if ( !defined( 'BS_DATA_PATH' ) ) {
-		define( 'BS_DATA_PATH', $sTMPUploadPath . '/bluespice' );
-	}
+	define( 'BS_DATA_PATH', $sTMPUploadPath . '/bluespice' );
 }
 
 if ( !defined( 'BS_NS_OFFSET' ) ) {
