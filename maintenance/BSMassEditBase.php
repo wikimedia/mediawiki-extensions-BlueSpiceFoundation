@@ -6,6 +6,7 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use Wikimedia\Diff\Diff;
 
 require_once __DIR__ . '/BSMaintenance.php';
 
