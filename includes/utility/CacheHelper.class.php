@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * This class contains methods working with mediawiki's cache .
