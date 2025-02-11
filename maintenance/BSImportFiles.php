@@ -3,6 +3,7 @@
 require_once __DIR__ . '/BSBatchFileProcessorBase.php';
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Specials\SpecialUpload;
 use MediaWiki\Title\Title;
 
 class BSImportFiles extends BSBatchFileProcessorBase {
