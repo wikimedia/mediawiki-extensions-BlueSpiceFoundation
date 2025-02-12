@@ -3,6 +3,7 @@
 		"authors": [
 			"Georg101",
 			"Ilimanaq29",
+			"Jrobicek",
 			"Kareyac",
 			"Matěj Suchánek"
 		]
@@ -21,5 +22,18 @@
 	"bs-extjs-pageexport-success": "Přemístění úspěšné",
 	"bs-extjs-pageexport-required-text": "Seznam nemůže být prázdný a alespoň jedna stránka musí být zvolena",
 	"bs-extjs-export-search-summary-text": "Generováno PageExportem",
-	"bs-extjs-pageexport-error-invalid-title": "Název seznamu je neplatný"
+	"bs-extjs-pageexport-error-invalid-title": "Název seznamu je neplatný",
+	"bs-extjs-cancel": "Storno",
+	"bs-extjs-yes": "Ano",
+	"bs-extjs-no": "Ne",
+	"bs-extjs-save": "Uložit",
+	"bs-extjs-delete": "Smazat",
+	"bs-extjs-remove": "Odstranit",
+	"bs-extjs-edit": "Upravit",
+	"bs-extjs-copy": "Kopírovat",
+	"bs-extjs-error": "Chyba",
+	"bs-extjs-confirm": "Potvrdit",
+	"bs-extjs-loading": "Načítá se…",
+	"bs-extjs-label-user": "Uživatel",
+	"bs-extjs-label-group": "Skupina"
 }
