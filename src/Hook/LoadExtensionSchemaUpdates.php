@@ -29,18 +29,19 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Installer\DatabaseUpdater;
 
 abstract class LoadExtensionSchemaUpdates extends Hook {
 
 	/**
 	 *
-	 * @var \DatabaseUpdater
+	 * @var DatabaseUpdater
 	 */
 	protected $updater = null;
 
 	/**
 	 *
-	 * @param \DatabaseUpdater $updater
+	 * @param DatabaseUpdater $updater
 	 * @return bool
 	 */
 	public static function callback( $updater ) {
@@ -57,7 +58,7 @@ abstract class LoadExtensionSchemaUpdates extends Hook {
 	 *
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param \DatabaseUpdater $updater
+	 * @param DatabaseUpdater $updater
 	 */
 	public function __construct( $context, $config, $updater ) {
 		parent::__construct( $context, $config );
