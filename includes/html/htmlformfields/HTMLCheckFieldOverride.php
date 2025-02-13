@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\HTMLForm\Field\HTMLCheckField;
 use MediaWiki\Xml\Xml;
 
 class HTMLCheckFieldOverride extends HTMLCheckField {
