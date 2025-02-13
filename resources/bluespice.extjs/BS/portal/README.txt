@@ -1,1 +1,0 @@
-Adapted from "extjs-4.2.1\examples\portal\classes"
