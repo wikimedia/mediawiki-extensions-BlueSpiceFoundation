@@ -2,13 +2,6 @@ Third Party Licenses
 ====================
 This is an overview of all the 3rd party licenses used in BlueSpiceFoundation.
 
-Software
---------
-
-| Software | Author | Version | License |
-|:--------|:-------|:--------|:-------|
-| [ExtJS](https://www.sencha.com/products/extjs/) |Sencha, Inc. | 4.2 | [GPL 3.0](https://www.gnu.org/licenses/gpl-3.0.txt) |
-
 Images
 ------
 

@@ -521,31 +521,6 @@ $GLOBALS['bsgExtensions'] = [];
  */
 $GLOBALS['bsgTemplates'] = [];
 
-/*
- * ExtJSThemes
- */
-$GLOBALS["bsgExtJSThemes"] = [
-	"white" => [
-		'bs-extjs-theme-primary-text-color' => 'black',
-		'bs-extjs-theme-secondary-text-color' => 'black',
-		'bs-extjs-theme-primary-background-color' => 'white',
-		'bs-extjs-theme-secondary-background-color' => 'white',
-		'bs-extjs-theme-toolbar-footer-background' => 'white',
-		'bs-extjs-theme-btn-small-border' => '1px solid @bs-color-neutral4',
-		'bs-extjs-theme-tab-active-background' => '@bs-color-neutral4',
-		'bs-extjs-theme-tab-active-text' => 'white',
-		'bs-extjs-theme-tab-active-strip' => '@bs-color-neutral4',
-		'bs-extjs-theme-panel-border' => '5px solid @bs-color-neutral4',
-		'bs-extjs-theme-panel-header-horizontal-border' => '1px solid @bs-color-neutral4',
-		'bs-extjs-theme-panel-header-vertical-border' => '1px solid @bs-color-neutral4',
-		'bs-extjs-theme-btn-toolbar-noicon-border' => '1px solid black',
-		'bs-extjs-theme-tool-img-image' => 'url( "/extensions/BlueSpiceFoundation/resources/'
-			. 'bluespice.extjs/bluespice-theme/images/tools/tool-sprites-dark.png" )',
-		'bs-extjs-theme-btn-split-right-image' => 'url( "/extensions/BlueSpiceFoundation/resources/'
-			. 'bluespice.extjs/bluespice-theme/images/button/default-toolbar-small-s-arrow.png" )',
-	]
-];
-
 $GLOBALS['bsgUserMiniProfileParams'] = [ 'width' => 40, 'height' => 40 ];
 $GLOBALS['bsgMiniProfileEnforceHeight'] = true;
 $GLOBALS['bsgPingInterval'] = 10;

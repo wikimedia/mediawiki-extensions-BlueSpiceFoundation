@@ -104,10 +104,6 @@
 			"TemplateHanderRegistry": {
 				"mustache": "\\BlueSpice\\Template\\Mustache::factory"
 			},
-			"LoadPlaceholders": {
-				"CRUDGrid": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder",
-				"ExtJSGeneric": "extensions/BlueSpiceFoundation/resources/templates/loadPlaceholder"
-			},
 			"JSConfigVars": {},
 			"SecondaryDataUpdateRegistry": {}
 		},
@@ -210,87 +206,13 @@
 				"bs-one-unit-ago",
 				"bs-now",
 				"confirm",
-				"bs-extjs-title-success"
+				"bs-title-success"
 			],
 			"dependencies": [
 				"mediawiki.cookie",
 				"mediawiki.api",
 				"mwstake.component.alertbanners"
 			]
-		},
-		"ext.bluespice.extjs": {
-			"class": "BlueSpice\\ResourceModule\\ExtJS",
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"scripts": [
-				"bluespice.extjs/bluespice.extjs.js",
-				"bluespice.extjs/bluespice.extjs.loadPlaceholder.js",
-				"bluespice.extjs/BS/override/grid/column/Action.js",
-				"bluespice.extjs/BS/override/button/Button.js"
-			],
-			"styles": [
-				"bluespice.extjs/bluespice.extjs.fixes.css",
-				"bluespice.extjs/bluespice.extjs.overrides.less"
-			],
-			"messages": [
-				"bs-extjs-ok",
-				"bs-extjs-cancel",
-				"bs-extjs-yes",
-				"bs-extjs-no",
-				"bs-extjs-save",
-				"bs-extjs-delete",
-				"bs-extjs-edit",
-				"bs-extjs-add",
-				"bs-extjs-remove",
-				"bs-extjs-copy",
-				"bs-extjs-hint",
-				"bs-extjs-error",
-				"bs-extjs-confirm",
-				"bs-extjs-loading",
-				"bs-extjs-pageSize",
-				"bs-extjs-actions-column-header",
-				"bs-extjs-saving",
-				"bs-extjs-warning",
-				"bs-extjs-reset",
-				"bs-extjs-close",
-				"bs-extjs-label-user",
-				"bs-extjs-label-group",
-				"bs-extjs-label-namespace",
-				"bs-extjs-label-page",
-				"bs-extjs-label-directsearch",
-				"bs-extjs-label-specialpage",
-				"bs-extjs-titlecombo-newpagehint",
-				"bs-extjs-confirmNavigationTitle",
-				"bs-extjs-confirmNavigationText",
-				"bs-extjs-allns",
-				"bs-extjs-mainns",
-				"bs-extjs-upload",
-				"bs-extjs-browse",
-				"bs-extjs-uploading",
-				"bs-extjs-filters",
-				"bs-extjs-filter-equals",
-				"bs-extjs-filter-equals-not",
-				"bs-extjs-filter-contains",
-				"bs-extjs-filter-contains-not",
-				"bs-extjs-filter-starts-with",
-				"bs-extjs-filter-ends-with",
-				"bs-extjs-filter-greater-than",
-				"bs-extjs-filter-less-than",
-				"bs-extjs-title-success",
-				"bs-extjs-title-warning",
-				"bs-extjs-filter-bool-yes",
-				"bs-extjs-filter-bool-no",
-				"bs-extjs-categoryboxselect-emptytext",
-				"bs-extjs-categorytree-title",
-				"bs-extjs-filter-date-after",
-				"bs-extjs-filter-date-before",
-				"bs-extjs-filter-date-on",
-				"bs-extjs-filter-date-filter",
-				"bs-extjs-combo-box-default-placeholder",
-				"bs-extjs-tools-trigger-title",
-				"bs-extjs-tools-trigger-text"
-			],
-			"group": "bsextjs"
 		},
 		"ext.bluespice.oojs": {
 			"localBasePath": "resources",
@@ -361,63 +283,6 @@
 				"ext.oOJSPlus.data"
 			]
 		},
-		"ext.bluespice.upload": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"styles": [
-				"bluespice.extjs/bluespice.extjs.upload.css"
-			],
-			"messages": [
-				"bs-upload-uploaddialogtitle",
-				"bs-upload-uploadbuttontext",
-				"bs-upload-uploadfilefieldlabel",
-				"bs-upload-uploadfileemptytext",
-				"bs-upload-uploaddestfilelabel",
-				"bs-upload-allowedfiletypesare",
-				"bs-upload-license",
-				"bs-upload-uploadwatchthislabel",
-				"bs-upload-uploadignorewarningslabel",
-				"bs-upload-categories",
-				"bs-upload-upload-waitmessage",
-				"bs-upload-error",
-				"bs-upload-descfilelabel",
-				"bs-upload-error-long",
-				"bs-upload-filetypenotsupported",
-				"bs-upload-details",
-				"bs-upload-uploadwarningdialog-title",
-				"bs-upload-uploadwarningdialog-intro",
-				"bs-upload-uploadwarningdialog-outro",
-				"bs-upload-uploadwarningdialog-warning-exists",
-				"bs-upload-uploadwarningdialog-warning-duplicate",
-				"bs-upload-uploadwarningdialog-warning-unknown"
-			],
-			"dependencies": [
-				"mediawiki.api"
-			]
-		},
-		"ext.bluespice.extjs.filerepo": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"messages": [
-				"bs-filerepo-labelupload",
-				"bs-filerepo-labelfilter",
-				"bs-filerepo-headerfilename",
-				"bs-filerepo-headerfilesize",
-				"bs-filerepo-headerpagecategories",
-				"bs-filerepo-headerfilewidth",
-				"bs-filerepo-headerfileheight",
-				"bs-filerepo-headerfilemimetype",
-				"bs-filerepo-headerfileusertext",
-				"bs-filerepo-headerfileextension",
-				"bs-filerepo-headerfiletimestamp",
-				"bs-filerepo-headerfilemediatype",
-				"bs-filerepo-headerfiledescription",
-				"bs-filerepo-headerfilethumbnail",
-				"bs-filerepo-yes",
-				"bs-filerepo-no",
-				"bs-filerepo-pagesize"
-			]
-		},
 		"ext.bluespice.styles": {
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
@@ -430,65 +295,6 @@
 				"bluespice/bluespice.loadPlaceholder.less"
 			],
 			"class": "\\BlueSpice\\ResourceModule\\LessVars"
-		},
-		"ext.bluespice.flags.styles": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"styles": [
-				"famfamfam/flags.css"
-			]
-		},
-		"ext.bluespice.extjs.BS.portal": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"dependencies": [
-				"ext.bluespice.extjs"
-			],
-			"messages": [
-				"bs-extjs-portal-config",
-				"bs-extjs-portal-title",
-				"bs-extjs-portal-height",
-				"bs-extjs-portal-count",
-				"bs-extjs-portal-timespan",
-				"bs-extjs-portal-timespan-week",
-				"bs-extjs-portal-timespan-month",
-				"bs-extjs-portal-timespan-alltime"
-			]
-		},
-		"ext.bluespice.extjs.BS.deferred": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"dependencies": [
-				"ext.bluespice.extjs"
-			],
-			"messages": [
-				"bs-deferred-action-status-pending",
-				"bs-deferred-action-status-running",
-				"bs-deferred-action-status-done",
-				"bs-deferred-action-status-error",
-				"bs-deferred-action-apicopypage-description",
-				"bs-deferred-action-apieditpage-description",
-				"bs-deferred-batch-title",
-				"bs-deferred-batch-progress-desc",
-				"bs-deferred-batch-actions",
-				"bs-deferred-batch-description",
-				"bs-deferred-batch-status",
-				"bs-deferred-action-apiaddcategories-description",
-				"bs-deferred-action-apisetcategories-description",
-				"bs-deferred-action-apiremovecategories-description",
-				"bs-deferred-action-apimovepage-description",
-				"bs-deferred-action-apideletepage-description"
-			]
-		},
-		"ext.bluespice.extjs.BS.portal.css": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"styles": [
-				"bluespice.extjs/bluespice.extjs.BS.portal.css"
-			],
-			"dependencies": [
-				"ext.bluespice.extjs"
-			]
 		},
 		"ext.bluespice.html.formfields.sortable": {
 			"localBasePath": "resources",
@@ -548,15 +354,6 @@
 		],
 		"BlueSpiceDiagnostics": [
 			"i18n/diagnostics"
-		],
-		"BlueSpice.ExtJS": [
-			"i18n/extjs"
-		],
-		"BlueSpice.ExtJS.Portal": [
-			"i18n/extjs-portal"
-		],
-		"BlueSpice.Deferred": [
-			"i18n/deferred"
 		],
 		"BlueSpice.Validator": [
 			"i18n/validator"

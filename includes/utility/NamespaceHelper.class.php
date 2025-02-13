@@ -44,6 +44,7 @@ class BsNamespaceHelper {
 	/**
 	 * @param int $iNS
 	 * @param string|null $name
+	 * @param bool|null $ignoreExisting
 	 * @return string
 	 */
 	public static function getNamespaceConstName( $iNS, $name = null, ?bool $ignoreExisting = false ) {

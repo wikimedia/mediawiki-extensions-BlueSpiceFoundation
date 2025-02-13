@@ -197,7 +197,7 @@
 			// Delay notification to ensure it is properly announced by screen readers
 			// The confirmation dialog may prevent announcement, so a short delay resolves this
 			setTimeout( () => {
-				mw.notify( response.message, { title: mw.msg( 'bs-extjs-title-success' ) } );
+				mw.notify( response.message, { title: mw.msg( 'bs-title-success' ) } );
 			}, 500 );
 			$dfd.resolve( response );
 		} else {
