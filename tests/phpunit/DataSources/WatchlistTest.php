@@ -13,8 +13,6 @@ use MWStake\MediaWiki\Component\DataStore\ReaderParams;
  */
 class WatchlistTest extends \MediaWikiIntegrationTestCase {
 
-	protected $tablesUsed = [ 'watchlist', 'user' ];
-
 	public function addDBData() {
 		$this->insertPage( 'Test A' );
 		$this->insertPage( 'Talk:Test A' );
