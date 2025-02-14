@@ -11,8 +11,6 @@ use MediaWiki\MediaWikiServices;
  * @group Medium
  */
 class ConfigTest extends \MediaWikiIntegrationTestCase {
-	protected $tablesUsed = [ 'bs_settings3' ];
-
 	public function setUp(): void {
 		parent::setUp();
 

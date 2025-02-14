@@ -16,7 +16,6 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  */
 class BSApiCategoryStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 2;
-	protected $tablesUsed = [ 'category', 'categorylinks', 'page' ];
 
 	protected function getStoreSchema() {
 		return [

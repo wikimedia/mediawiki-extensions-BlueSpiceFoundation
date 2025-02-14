@@ -15,7 +15,6 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->tablesUsed += [ 'page', 'revision', 'text' ];
 
 		$this->insertPage( 'TitleParamsResolverTest' );
 		$this->insertPage( 'Help:TitleParamsResolverTest' );
