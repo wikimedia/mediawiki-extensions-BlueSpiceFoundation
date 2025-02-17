@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"VASANTH S.N."
+		]
+	},
+	"bs-extjs-cancel": "ವಜಾ ಮಲ್ಪುಲೆ",
+	"bs-extjs-yes": "ಅಂದ್",
+	"bs-extjs-no": "ಅತ್ತ್",
+	"bs-extjs-save": "ಒರಿಪಾಲೆ",
+	"bs-extjs-delete": "ಮಾಜಾಲೆ",
+	"bs-extjs-add": "ಸೇರಾಲೆ",
+	"bs-extjs-remove": "ದೆಪ್ಪುಲೆ",
+	"bs-extjs-edit": "ಸಂಪೊಲಿಪುಲೆ",
+	"bs-extjs-copy": "ನಕಲ್ ಮಲ್ಪುಲೆ",
+	"bs-extjs-hint": "ಸೂಚನೆ",
+	"bs-extjs-error": "ದೋಷ",
+	"bs-extjs-confirm": "ಗಟ್ಟಿಮಲ್ಪುಲೆ",
+	"bs-extjs-loading": "ದಿಂಜಾವೊಂದುಂಡು......",
+	"bs-extjs-pageSize": "ಪುಟತೊ ಗಾತ್ರ",
+	"bs-extjs-actions-column-header": "ಕ್ರಿಯೆಕ್ಕುಲು",
+	"bs-extjs-warning": "ಎಚ್ಚರಿಕೆ",
+	"bs-extjs-saving": "ಓರಿಪಾವೊಂತುಂಡು...",
+	"bs-extjs-reset": "ಪಿರ ಸರಿಮಾನ್ಪಿ",
+	"bs-extjs-close": "ಮುಚ್ಚಿಲೆ",
+	"bs-extjs-label-user": "ಬಳಕೆದಾರೆರ್",
+	"bs-extjs-label-namespace": "ಪುದರ್‍ದ ವರ್ಗೊಲು",
+	"bs-extjs-label-page": "ಪುಟೊ",
+	"bs-extjs-upload": "ಅಪ್ಲೊಡ್",
+	"bs-extjs-browse": "ಕಣ್ಣಾಡಿಸಾಲೆ",
+	"bs-extjs-uploading": "ದಿಂಜಾವೊಂದುಂಡು......",
+	"bs-extjs-confirmNavigationTitle": "ಕೊಂಡಿನ್ ಅನುಸರಿಸಾಲೆ",
+	"bs-extjs-allns": "(ಮಾತಾ)",
+	"bs-extjs-filters": "ಅರಿಪೆಲು",
+	"bs-extjs-filter-less-than": "ಇಂದೆಡ್ದ್ ಕಡಮೆ",
+	"bs-extjs-filter-bool-yes": "ಅಂದ್",
+	"bs-extjs-filter-bool-no": "ಅತ್ತ್",
+	"bs-extjs-title-warning": "ಎಚ್ಚರಿಕೆ"
+}

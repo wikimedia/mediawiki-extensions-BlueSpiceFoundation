@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saraiki"
+		]
+	},
+	"bs-extjs-pageSize": "اندراجات فی ورقہ",
+	"bs-extjs-label-directsearch": "ڳولو",
+	"bs-extjs-titlecombo-newpagehint": "ورقہ دا وجود کائنی!",
+	"bs-extjs-pageexport-list-name-label": "فہرست ناں",
+	"bs-extjs-pageexport-list-format-plain-label": "سادہ متن",
+	"bs-extjs-pageexport-list-format-link-label": "ربط",
+	"bs-extjs-flyout-tab-thumbs-label": "تھمب نیل",
+	"bs-extjs-flyout-tab-grid-label": "تفصیلاں"
+}

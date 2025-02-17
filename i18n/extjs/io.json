@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"JSantos",
+			"Joao Xavier"
+		]
+	},
+	"bs-extjs-ok": "O.K.",
+	"bs-extjs-cancel": "Anular",
+	"bs-extjs-yes": "Yes",
+	"bs-extjs-no": "No",
+	"bs-extjs-save": "Konservez",
+	"bs-extjs-delete": "Efacar",
+	"bs-extjs-add": "Adjuntez",
+	"bs-extjs-remove": "Removar",
+	"bs-extjs-edit": "Redaktar",
+	"bs-extjs-copy": "Kopiar",
+	"bs-extjs-error": "Eroro",
+	"bs-extjs-confirm": "Konfirmez",
+	"bs-extjs-loading": "Karganta...",
+	"bs-extjs-actions-column-header": "Agadi",
+	"bs-extjs-saving": "konservanta...",
+	"bs-extjs-reset": "Restaurez",
+	"bs-extjs-close": "Klozez",
+	"bs-extjs-label-user": "Uzero",
+	"bs-extjs-label-group": "Grupo",
+	"bs-extjs-label-namespace": "'Namespace'",
+	"bs-extjs-upload": "Kargar",
+	"bs-extjs-uploading": "Karganta...",
+	"bs-extjs-allns": "(omni)",
+	"bs-extjs-filter-greater-than": "plu granda kam",
+	"bs-extjs-filter-bool-yes": "yes",
+	"bs-extjs-categorytree-title": "Kategorii",
+	"bs-extjs-filter-date-after": "Pose",
+	"bs-extjs-filter-date-before": "Ante",
+	"bs-extjs-filter-date-on": "Serchez",
+	"bs-extjs-pageexport-list-format-link-label": "Ligilo",
+	"bs-extjs-flyout-tab-thumbs-label": "Miniaturi",
+	"bs-extjs-flyout-tab-grid-label": "Detali"
+}

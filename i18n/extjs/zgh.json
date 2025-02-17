@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hakim1bal"
+		]
+	},
+	"bs-extjs-yes": "ⵢⴰⵀ",
+	"bs-extjs-no": "ⵓⵀⵓ",
+	"bs-extjs-delete": "ⴽⴽⵙ",
+	"bs-extjs-add": "ⵔⵏⵓ",
+	"bs-extjs-remove": "ⵙⵉⵜⵜⵢ",
+	"bs-extjs-edit": "ⵙⵏⴼⵍ",
+	"bs-extjs-label-user": "ⴰⵏⵙⵙⵎⵔⵙ",
+	"bs-extjs-label-directsearch": "ⵔⵣⵓ",
+	"bs-extjs-filter-bool-yes": "ⵢⴰⵀ",
+	"bs-extjs-filter-bool-no": "ⵓⵀⵓ"
+}

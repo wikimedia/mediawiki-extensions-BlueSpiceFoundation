@@ -13,5 +13,12 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Nulle valor definite.",
 	"bs-ooui-btn-dismiss-alert-title": "Clauder",
 	"bs-ooui-key-value-input-widget-section-label": "Section",
-	"bs-ooui-key-value-input-widget-add-section-label": "Adder nove section"
+	"bs-ooui-key-value-input-widget-add-section-label": "Adder nove section",
+	"bs-ui-generic-save": "Salveguardar",
+	"bs-ui-generic-cancel": "Cancellar",
+	"bs-ui-generic-yes": "Si",
+	"bs-ui-generic-no": "No",
+	"bs-exportpages-dialog-title": "Exportar paginas a un collection",
+	"bs-exportpages-success-text": "Paginas exportate a [[$1|$2]]",
+	"bs-ui-generic-close": "Clauder"
 }

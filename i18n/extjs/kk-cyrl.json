@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arystanbek",
+			"Casserium",
+			"Габдулгани НИШ ХБН"
+		]
+	},
+	"bs-extjs-yes": "Иә",
+	"bs-extjs-delete": "Жою",
+	"bs-extjs-hint": "тұспал",
+	"bs-extjs-confirm": "құптау",
+	"bs-extjs-loading": "Күте тұр...",
+	"bs-extjs-pageSize": "бөлім өлшемі",
+	"bs-extjs-actions-column-header": "Әрекеттер",
+	"bs-extjs-saving": "сақталуда...",
+	"bs-extjs-close": "жабу",
+	"bs-extjs-label-user": "Қатысушы",
+	"bs-extjs-allns": "бәрі"
+}

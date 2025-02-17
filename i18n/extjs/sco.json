@@ -1,0 +1,36 @@
+{
+	"@metadata": {
+		"authors": [
+			"CiphriusKane",
+			"John Reid",
+			"MJL"
+		]
+	},
+	"bs-extjs-ok": "Ok",
+	"bs-extjs-cancel": "Cancel",
+	"bs-extjs-yes": "Aye",
+	"bs-extjs-no": "Nae",
+	"bs-extjs-save": "Hain",
+	"bs-extjs-delete": "Delete",
+	"bs-extjs-add": "Eik",
+	"bs-extjs-remove": "Remuiv",
+	"bs-extjs-edit": "Eedit",
+	"bs-extjs-hint": "Hint",
+	"bs-extjs-error": "Mistak",
+	"bs-extjs-confirm": "Confirm",
+	"bs-extjs-loading": "Laidin...",
+	"bs-extjs-pageSize": "Page size",
+	"bs-extjs-actions-column-header": "Aictions",
+	"bs-extjs-warning": "Warnisment",
+	"bs-extjs-saving": "hainin...",
+	"bs-extjs-reset": "Reset",
+	"bs-extjs-close": "Close",
+	"bs-extjs-label-user": "Uiser",
+	"bs-extjs-upload": "Uplaid",
+	"bs-extjs-browse": "Brouse",
+	"bs-extjs-uploading": "Uplaidin...",
+	"bs-extjs-confirmNavigationTitle": "Follae the airtin",
+	"bs-extjs-confirmNavigationText": "Dae ye reallie want tae follae this airtin? Aw o the dynameec settins like filterin or sortin oan the nou page will be loast.",
+	"bs-extjs-allns": "(aw)",
+	"bs-extjs-filter-bool-yes": "aye"
+}

@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mehtab ahmed",
+			"Tweety"
+		]
+	},
+	"bs-extjs-ok": "ٺيڪ",
+	"bs-extjs-cancel": "رد",
+	"bs-extjs-save": "سانڍيو",
+	"bs-extjs-confirm": "پڪ ڪريو",
+	"bs-extjs-actions-column-header": "عمل",
+	"bs-extjs-close": "بند ڪريو",
+	"bs-extjs-label-group": "گروھ",
+	"bs-extjs-label-namespace": "نانءُپولار",
+	"bs-extjs-label-page": "صفحو",
+	"bs-extjs-allns": "سڀ",
+	"bs-extjs-filters": "ڇاڻيون",
+	"bs-extjs-categorytree-title": "زمرا",
+	"bs-extjs-pageexport-list-format-plain-label": "سادو متن",
+	"bs-extjs-tools-trigger-text": "اوزارَ"
+}

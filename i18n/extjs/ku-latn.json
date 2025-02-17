@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Balyozxane",
+			"Bikarhêner",
+			"George Animal"
+		]
+	},
+	"bs-extjs-ok": "Baş e",
+	"bs-extjs-cancel": "Betal bike",
+	"bs-extjs-yes": "Erê",
+	"bs-extjs-no": "Na",
+	"bs-extjs-save": "Tomar bike",
+	"bs-extjs-delete": "Jê bibe",
+	"bs-extjs-add": "Lê zêde bike",
+	"bs-extjs-remove": "Jê bibe",
+	"bs-extjs-edit": "Biguhêre",
+	"bs-extjs-copy": "Kopî bike",
+	"bs-extjs-error": "Çewtî",
+	"bs-extjs-confirm": "Pesend bike",
+	"bs-extjs-loading": "Tê barkirin...",
+	"bs-extjs-pageSize": "Hejmara elementan ji her rûpelekî re",
+	"bs-extjs-actions-column-header": "Çalakî",
+	"bs-extjs-warning": "Hişyarî",
+	"bs-extjs-saving": "tê tomarkirin...",
+	"bs-extjs-close": "Bigre",
+	"bs-extjs-label-user": "Bikarhêner",
+	"bs-extjs-label-page": "Rûpel",
+	"bs-extjs-upload": "Bar bike",
+	"bs-extjs-browse": "Bigere",
+	"bs-extjs-uploading": "Tê barkirin...",
+	"bs-extjs-allns": "(hemû)",
+	"bs-extjs-filters": "Parzûn",
+	"bs-extjs-filter-starts-with": "dest pê dike bi",
+	"bs-extjs-filter-ends-with": "bi dawî dibe bi",
+	"bs-extjs-filter-greater-than": "mezintir ji",
+	"bs-extjs-filter-bool-yes": "erê",
+	"bs-extjs-filter-bool-no": "na",
+	"bs-extjs-title-warning": "Hişyarî"
+}

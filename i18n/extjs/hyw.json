@@ -1,0 +1,30 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"bs-extjs-ok": "Լաւ",
+	"bs-extjs-cancel": "Չեղարկել",
+	"bs-extjs-yes": "Այո",
+	"bs-extjs-no": "Ոչ",
+	"bs-extjs-save": "Յիշել",
+	"bs-extjs-delete": "Ջնջել",
+	"bs-extjs-add": "Աւելցնել",
+	"bs-extjs-remove": "Հեռացնել",
+	"bs-extjs-edit": "Խմբագրել",
+	"bs-extjs-copy": "Պատճէնել",
+	"bs-extjs-error": "Սխալ",
+	"bs-extjs-confirm": "Հաստատել",
+	"bs-extjs-actions-column-header": "Գործողութիւններ",
+	"bs-extjs-close": "Գոցել",
+	"bs-extjs-label-group": "Խումբ",
+	"bs-extjs-label-namespace": "Անուանատարածք",
+	"bs-extjs-label-page": "Էջ",
+	"bs-extjs-label-directsearch": "Որոնել",
+	"bs-extjs-filter-bool-yes": "այո",
+	"bs-extjs-filter-bool-no": "ոչ",
+	"bs-extjs-title-success": "Յաջող",
+	"bs-extjs-categorytree-title": "Ստորոգութիւններ",
+	"bs-extjs-tools-trigger-text": "Գործիքներ"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Uchup19"
+		]
+	},
+	"bs-extjs-ok": "Oké",
+	"bs-extjs-cancel": "Bolay",
+	"bs-extjs-yes": "Nya",
+	"bs-extjs-filter-bool-yes": "nya"
+}

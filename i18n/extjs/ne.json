@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bada Kaji",
+			"जनक राज भट्ट",
+			"पर्वत सुबेदी",
+			"बडा काजी",
+			"बिप्लब आनन्द",
+			"हिमाल सुबेदी"
+		]
+	},
+	"bs-extjs-cancel": "रद्द गर्नुहोस्",
+	"bs-extjs-delete": "मेट्ने",
+	"bs-extjs-add": "थप्नुहोस्",
+	"bs-extjs-edit": "सम्पादन",
+	"bs-extjs-copy": "कपि",
+	"bs-extjs-actions-column-header": "कार्यहरू",
+	"bs-extjs-label-page": "पृष्ठ",
+	"bs-extjs-filters": "छनाेटहरू",
+	"bs-extjs-filter-bool-yes": "हो",
+	"bs-extjs-filter-bool-no": "होइन"
+}

@@ -1,0 +1,40 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kiranmayee",
+			"Veeven"
+		]
+	},
+	"bs-extjs-ok": "సరే",
+	"bs-extjs-cancel": "రద్దుచేయి",
+	"bs-extjs-yes": "అవును",
+	"bs-extjs-no": "కాదు",
+	"bs-extjs-save": "భద్రపరుచు",
+	"bs-extjs-delete": "తొలగించు",
+	"bs-extjs-add": "చేర్చు",
+	"bs-extjs-remove": "తీసివెయ్యి",
+	"bs-extjs-copy": "కాపీచేయి",
+	"bs-extjs-hint": "సూచన",
+	"bs-extjs-error": "పొరపాటు",
+	"bs-extjs-confirm": "నిర్ధారించు",
+	"bs-extjs-loading": "వస్తోంది…",
+	"bs-extjs-actions-column-header": "చర్యలు",
+	"bs-extjs-warning": "హెచ్చరిక",
+	"bs-extjs-close": "మూసివేయి",
+	"bs-extjs-label-user": "వాడుకరి",
+	"bs-extjs-label-namespace": "పేరుబరి",
+	"bs-extjs-label-page": "పేజీ",
+	"bs-extjs-filters": "వడపోతలు",
+	"bs-extjs-filter-equals": "సమానమయిన",
+	"bs-extjs-filter-equals-not": "సరి సమానమవ్వని",
+	"bs-extjs-filter-contains": "కలిగిన",
+	"bs-extjs-filter-contains-not": "కలిగి వుండదు",
+	"bs-extjs-filter-starts-with": "తో మొదలయ్యిన",
+	"bs-extjs-filter-ends-with": "తో ముగుస్తుంది",
+	"bs-extjs-title-warning": "హెచ్చరిక",
+	"bs-extjs-categorytree-title": "వర్గాలు",
+	"bs-extjs-pageexport-list-format-plain-label": "సాదా పాఠ్యం",
+	"bs-extjs-pageexport-list-format-link-label": "లంకె",
+	"bs-extjs-tools-trigger-text": "పనిముట్లు",
+	"bs-extjs-flyout-tab-grid-label": "వివరాలు"
+}

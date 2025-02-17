@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bgo eiu",
+			"Cabal",
+			"Kuldeepburjbhalaike",
+			"ਪ੍ਰਚਾਰਕ"
+		]
+	},
+	"bs-extjs-label-user": "ਵਰਤੋਂਕਾਰ",
+	"bs-extjs-label-directsearch": "ਖੋਜੋ",
+	"bs-extjs-mainns": "(ਮੁੱਖ)",
+	"bs-extjs-filter-bool-yes": "ਹਾਂ",
+	"bs-extjs-filter-bool-no": "ਨਹੀਂ",
+	"bs-extjs-categoryboxselect-emptytext": "ਸ਼੍ਰੇਣੀ ਜੋੜੋ",
+	"bs-extjs-categorytree-title": "ਸ਼੍ਰੇਣੀਆਂ",
+	"bs-extjs-pageexport-list-format-link-label": "ਕੜੀ"
+}
