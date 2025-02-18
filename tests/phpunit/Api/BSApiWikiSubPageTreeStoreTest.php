@@ -14,7 +14,6 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  */
 class BSApiWikiSubPageTreeStoreTest extends BSApiExtJSStoreTestBase {
 	protected $iFixtureTotal = 2;
-	protected $tablesUsed = [ 'page' ];
 
 	protected function getStoreSchema() {
 		return [
