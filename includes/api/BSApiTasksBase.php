@@ -623,10 +623,16 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 		return parent::getCustomPrinter();
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function isTaskDataSchemaCall() {
 		return $this->getRequest()->getVal( 'schema', null ) !== null;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function isTaskDataExamplesCall() {
 		return $this->getRequest()->getVal( 'examples', null ) !== null;
 	}
