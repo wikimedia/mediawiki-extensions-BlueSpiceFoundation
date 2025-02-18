@@ -235,7 +235,7 @@
 			bs.util.alert(
 				module + '-' + task + '-fail',
 				{
-					titleMsg: 'bs-extjs-title-warning',
+					titleMsg: 'bs-title-warning',
 					text: message
 				},
 				{
