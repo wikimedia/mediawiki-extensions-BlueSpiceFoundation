@@ -211,7 +211,8 @@
 				"bs-one-unit-ago",
 				"bs-now",
 				"confirm",
-				"bs-title-success"
+				"bs-title-success",
+				"bs-title-warning"
 			],
 			"dependencies": [
 				"mediawiki.cookie",
