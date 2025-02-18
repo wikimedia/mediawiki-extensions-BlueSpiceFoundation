@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Исмаил Садуев",
 			"Умар"
 		]
 	},
@@ -8,7 +9,7 @@
 	"bs-ns_all": "(массо)",
 	"bs-tab_navigation": "Навигаци",
 	"bs-userbar_loginswitch_logout": "Болх дӀаберзор",
-	"bs-userbar_loginswitch_login": "ЧугӀо",
+	"bs-userbar_loginswitch_login": "Чувала",
 	"bs-extended-search-tooltip-fulltext": "Дуьззина йозанца лахар",
 	"bs-extended-search-textfield-defaultvalue": "Лахар…",
 	"bs-extended-search-textfield-tooltip": "Википедин чохь лахар",
