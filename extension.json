@@ -27,11 +27,6 @@
 				"ImageExtensions": "\\BlueSpice\\ConfigDefinition\\ImageExtensions::getInstance",
 				"Favicon": "\\BlueSpice\\ConfigDefinition\\Favicon::getInstance"
 			},
-			"DynamicFileRegistry": {
-				"userprofileimage": "\\BlueSpice\\DynamicFileDispatcher\\UserProfileImage",
-				"groupimage": "\\BlueSpice\\DynamicFileDispatcher\\GroupImage",
-				"articlepreviewimage": "\\BlueSpice\\DynamicFileDispatcher\\ArticlePreviewImage"
-			},
 			"EntityRegistry": {},
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
@@ -220,164 +215,6 @@
 				"mwstake.component.alertbanners"
 			]
 		},
-<<<<<<< HEAD   (fdba4b Update DatabaseUpdater namespace)
-		"ext.bluespice.extjs": {
-			"class": "BlueSpice\\ResourceModule\\ExtJS",
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"scripts": [
-				"bluespice.extjs/bluespice.extjs.js",
-				"bluespice.extjs/bluespice.extjs.loadPlaceholder.js",
-				"bluespice.extjs/BS/override/grid/column/Action.js",
-				"bluespice.extjs/BS/override/button/Button.js"
-			],
-			"styles": [
-				"bluespice.extjs/bluespice.extjs.fixes.css",
-				"bluespice.extjs/bluespice.extjs.overrides.less"
-			],
-			"messages": [
-				"bs-extjs-ok",
-				"bs-extjs-cancel",
-				"bs-extjs-yes",
-				"bs-extjs-no",
-				"bs-extjs-save",
-				"bs-extjs-delete",
-				"bs-extjs-edit",
-				"bs-extjs-add",
-				"bs-extjs-remove",
-				"bs-extjs-copy",
-				"bs-extjs-hint",
-				"bs-extjs-error",
-				"bs-extjs-confirm",
-				"bs-extjs-loading",
-				"bs-extjs-pageSize",
-				"bs-extjs-actions-column-header",
-				"bs-extjs-saving",
-				"bs-extjs-warning",
-				"bs-extjs-reset",
-				"bs-extjs-close",
-				"bs-extjs-label-user",
-				"bs-extjs-label-group",
-				"bs-extjs-label-namespace",
-				"bs-extjs-label-page",
-				"bs-extjs-label-directsearch",
-				"bs-extjs-label-specialpage",
-				"bs-extjs-titlecombo-newpagehint",
-				"bs-extjs-confirmNavigationTitle",
-				"bs-extjs-confirmNavigationText",
-				"bs-extjs-allns",
-				"bs-extjs-mainns",
-				"bs-extjs-upload",
-				"bs-extjs-browse",
-				"bs-extjs-uploading",
-				"bs-extjs-filters",
-				"bs-extjs-filter-equals",
-				"bs-extjs-filter-equals-not",
-				"bs-extjs-filter-contains",
-				"bs-extjs-filter-contains-not",
-				"bs-extjs-filter-starts-with",
-				"bs-extjs-filter-ends-with",
-				"bs-extjs-filter-greater-than",
-				"bs-extjs-filter-less-than",
-				"bs-extjs-title-success",
-				"bs-extjs-title-warning",
-				"bs-extjs-filter-bool-yes",
-				"bs-extjs-filter-bool-no",
-				"bs-extjs-categoryboxselect-emptytext",
-				"bs-extjs-categorytree-title",
-				"bs-extjs-filter-date-after",
-				"bs-extjs-filter-date-before",
-				"bs-extjs-filter-date-on",
-				"bs-extjs-filter-date-filter",
-				"bs-extjs-combo-box-default-placeholder",
-				"bs-extjs-tools-trigger-title",
-				"bs-extjs-tools-trigger-text",
-				"bs-extjs-flyout-tab-thumbs-label",
-				"bs-extjs-flyout-tab-thumbs-title",
-				"bs-extjs-flyout-tab-grid-label",
-				"bs-extjs-flyout-tab-grid-title",
-				"bs-extjs-flyout-add-title",
-				"bs-extjs-flyout-add-label"
-			],
-			"group": "bsextjs"
-		},
-||||||| BASE
-		"ext.bluespice.extjs": {
-			"class": "BlueSpice\\ResourceModule\\ExtJS",
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
-			"scripts": [
-				"bluespice.extjs/bluespice.extjs.js",
-				"bluespice.extjs/bluespice.extjs.loadPlaceholder.js",
-				"bluespice.extjs/BS/override/grid/column/Action.js",
-				"bluespice.extjs/BS/override/button/Button.js"
-			],
-			"styles": [
-				"bluespice.extjs/bluespice.extjs.fixes.css",
-				"bluespice.extjs/bluespice.extjs.overrides.less"
-			],
-			"messages": [
-				"bs-extjs-ok",
-				"bs-extjs-cancel",
-				"bs-extjs-yes",
-				"bs-extjs-no",
-				"bs-extjs-save",
-				"bs-extjs-delete",
-				"bs-extjs-edit",
-				"bs-extjs-add",
-				"bs-extjs-remove",
-				"bs-extjs-copy",
-				"bs-extjs-hint",
-				"bs-extjs-error",
-				"bs-extjs-confirm",
-				"bs-extjs-loading",
-				"bs-extjs-pageSize",
-				"bs-extjs-actions-column-header",
-				"bs-extjs-saving",
-				"bs-extjs-warning",
-				"bs-extjs-reset",
-				"bs-extjs-close",
-				"bs-extjs-label-user",
-				"bs-extjs-label-group",
-				"bs-extjs-label-namespace",
-				"bs-extjs-label-page",
-				"bs-extjs-label-directsearch",
-				"bs-extjs-label-specialpage",
-				"bs-extjs-titlecombo-newpagehint",
-				"bs-extjs-confirmNavigationTitle",
-				"bs-extjs-confirmNavigationText",
-				"bs-extjs-allns",
-				"bs-extjs-mainns",
-				"bs-extjs-upload",
-				"bs-extjs-browse",
-				"bs-extjs-uploading",
-				"bs-extjs-filters",
-				"bs-extjs-filter-equals",
-				"bs-extjs-filter-equals-not",
-				"bs-extjs-filter-contains",
-				"bs-extjs-filter-contains-not",
-				"bs-extjs-filter-starts-with",
-				"bs-extjs-filter-ends-with",
-				"bs-extjs-filter-greater-than",
-				"bs-extjs-filter-less-than",
-				"bs-extjs-title-success",
-				"bs-extjs-title-warning",
-				"bs-extjs-filter-bool-yes",
-				"bs-extjs-filter-bool-no",
-				"bs-extjs-categoryboxselect-emptytext",
-				"bs-extjs-categorytree-title",
-				"bs-extjs-filter-date-after",
-				"bs-extjs-filter-date-before",
-				"bs-extjs-filter-date-on",
-				"bs-extjs-filter-date-filter",
-				"bs-extjs-combo-box-default-placeholder",
-				"bs-extjs-tools-trigger-title",
-				"bs-extjs-tools-trigger-text"
-			],
-			"group": "bsextjs"
-		},
-=======
->>>>>>> CHANGE (949379 Remove ExtJS)
 		"ext.bluespice.oojs": {
 			"localBasePath": "resources",
 			"remoteExtPath": "BlueSpiceFoundation/resources",
@@ -633,18 +470,6 @@
 	"config": {
 		"PermissionConfig": {
 			"value": []
-		},
-		"DefaultUserImage": {
-			"value": "resources/bluespice/images/bs-user-default-image.png",
-			"path": true
-		},
-		"DefaultAnonImage": {
-			"value": "resources/bluespice/images/bs-user-anon-image.png",
-			"path": true
-		},
-		"DefaultGroupImage": {
-			"value": "resources/bluespice/images/bs-group-default-image.png",
-			"path": true
 		},
 		"UIPermissionBlacklist": {
 			"value": [

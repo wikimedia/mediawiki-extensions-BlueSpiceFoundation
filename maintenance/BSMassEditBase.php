@@ -99,6 +99,9 @@ class BSMassEditBase extends BSMaintenance {
 		return $aTitles;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function isDryMode() {
 		return (bool)$this->getOption( 'dry', false );
 	}
