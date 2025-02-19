@@ -25,7 +25,10 @@ class BSApiTestCase extends ApiTestCase {
 		parent::setUp();
 
 		if ( static::$userFixtures instanceof BSUserFixtures ) {
-			self::$users += static::$userFixtures->makeTestUsers();
+			$users = static::$userFixtures->makeTestUsers();
+			foreach ( $users as $idx => $user ) {
+				self::$users->offsetSet( $idx, $user );
+			}
 		}
 	}
 
