@@ -54,8 +54,13 @@ class GroupHelperTest extends TestCase {
 		$groupManager->method( 'listAllGroups' )->willReturn( $allGroups );
 
 		$dbr = $this->createMock( \Wikimedia\Rdbms\IDatabase::class );
+		$userFactory = $this->createMock( \MediaWiki\User\UserFactory::class );
+		$user = $this->createMock( \MediaWiki\User\User::class );
+		$userFactory->method( 'newFromRow' )->willReturn( $user );
+		$user->method( 'getBlock' )->willReturn( null );
+		$user->method( 'isSystemUser' )->willReturn( false );
 
-		$groupHelper = new GroupHelper( $groupManager, $additionalGroups, $groupTypes, $dbr );
+		$groupHelper = new GroupHelper( $groupManager, $additionalGroups, $groupTypes, $dbr, $userFactory );
 		$availableGroups = $groupHelper->getAvailableGroups( $filter );
 
 		$this->assertEquals( $exprectedAvailableGroups, $availableGroups );
