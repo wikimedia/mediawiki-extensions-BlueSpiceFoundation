@@ -41,7 +41,10 @@ class BSApiInterwikiStore extends BSApiExtJSStoreBase {
 		foreach ( $aInterwikiData as $a ) {
 			$aData[] = (object)$a;
 		}
-
+		$this->services->getHookContainer()->run( 'BSApiInterwikiStoreMakeData', [
+			$this,
+			&$aData
+		] );
 		return $aData;
 	}
 }
