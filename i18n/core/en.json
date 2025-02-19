@@ -109,5 +109,6 @@
 	"bs-permission-role-editor": "Editor",
 	"bs-permission-role-reviewer": "Reviewer",
 	"bs-permission-role-admin": "Administrator",
-	"bs-title-warning": "Warning"
+	"bs-title-warning": "Warning",
+	"bs-title-success": "Success"
 }

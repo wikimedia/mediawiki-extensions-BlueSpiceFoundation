@@ -110,5 +110,6 @@
 	"bs-pref-logopath-help": "Das Logo sollte im Ordner /images der Installation gespeichert sein, damit es bei einem Upgrade nicht überschrieben wird.",
 	"bs-pref-faviconpath-help": "Das Favicon sollte im Ordner /w/images Ihrer Installation gespeichert sein. Wenn Sie es im Ordner /w/skins Ihrer BlueSpice-Installation speichern, kann es bei einem Upgrade überschrieben werden. Favicon-Bilder haben die Dateierweiterung .ico.",
 	"bs-exttype-bluespice-assets": "BlueSpice-Assets",
-	"bs-title-warning": "Warnung"
+	"bs-title-warning": "Warnung",
+	"bs-title-success": "Erfolg"
 }
