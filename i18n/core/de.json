@@ -111,5 +111,7 @@
 	"bs-pref-faviconpath-help": "Das Favicon sollte im Ordner /w/images Ihrer Installation gespeichert sein. Wenn Sie es im Ordner /w/skins Ihrer BlueSpice-Installation speichern, kann es bei einem Upgrade überschrieben werden. Favicon-Bilder haben die Dateierweiterung .ico.",
 	"right-editor": "Gewährt alle Berechtigungen der Rolle \"editor\" für geschützte Seiten in der Bearbeiter-Einschränkung, wenn das Rollensystem aktiviert ist",
 	"action-editor": "Gewährt alle Berechtigungen der Rolle \"editor\" für geschützte Seiten in der Bearbeiter-Einschränkung, wenn das Rollensystem aktiviert ist",
-	"bs-exttype-bluespice-assets": "BlueSpice-Assets"
+	"bs-exttype-bluespice-assets": "BlueSpice-Assets",
+	"bs-title-warning": "Warnung",
+	"bs-title-success": "Erfolg"
 }
