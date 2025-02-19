@@ -135,6 +135,8 @@ class UtilityFactory {
 		$groupTypes = $config->get( 'GroupTypes' );
 		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
-		return new \BlueSpice\Utility\GroupHelper( $groupManager, $additionalGroups, $groupTypes, $dbr );
+		return new \BlueSpice\Utility\GroupHelper(
+			$groupManager, $additionalGroups, $groupTypes, $dbr, $this->services->getUserFactory()
+		);
 	}
 }
