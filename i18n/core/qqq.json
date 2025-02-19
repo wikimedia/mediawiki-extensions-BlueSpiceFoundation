@@ -118,5 +118,6 @@
 	"bs-permission-role-editor": "Permission role name",
 	"bs-permission-role-reviewer": "Permission role name",
 	"bs-permission-role-admin": "Permission role name",
-	"bs-title-warning": "Title for warning prompts.\n{{Identical|Warning}}"
+	"bs-title-warning": "Title for warning prompts.\n{{Identical|Warning}}",
+	"bs-title-success": "Title for success prompts\n{{Identical|Success}}"
 }
