@@ -120,11 +120,6 @@
 				"BlueSpiceFoundationIconFontsStyles": {
 					"class": "BlueSpice\\Integration\\PDFCreator\\StylesheetsProvider\\IconFontsStyles"
 				}
-			},
-			"PreProcessors": {
-				"BlueSpiceFoundationIconFonts": {
-					"class": "BlueSpice\\Integration\\PDFCreator\\PreProcessors\\IconFonts"
-				}
 			}
 		}
 	},

@@ -16,6 +16,9 @@ class IconFontsStyles implements IStylesheetsProvider {
 		$dir = dirname( __DIR__, 4 );
 
 		return [
+			'entypo.ttf' => "$dir/resources/entypo/entypo.ttf",
+			'fontawesome.ttf' => "$dir/resources/fontawesome/fontawesome.ttf",
+			'icomoon.ttf' => "$dir/resources/icomoon/icomoon.ttf",
 			'entypo.css' => "$dir/resources/entypo/entypo.css",
 			'entypo-fonts.css' => "$dir/resources/entypo/entypo-pdf-integration.css",
 			'fontawesome.css' => "$dir/resources/fontawesome/fontawesome.css",
