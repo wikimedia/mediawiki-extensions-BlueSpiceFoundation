@@ -108,5 +108,7 @@
 	"bs-permission-role-reader": "قارئ",
 	"bs-permission-role-editor": "محرر",
 	"bs-permission-role-reviewer": "مراجع",
-	"bs-permission-role-admin": "إداري"
+	"bs-permission-role-admin": "إداري",
+	"bs-title-warning": "تحذير",
+	"bs-title-success": "نجاح"
 }
