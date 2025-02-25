@@ -42,17 +42,10 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 	public function provideMediaWikiApiTitleOrPageIdData() {
 		$mainPage = Title::newMainPage();
 		$mainPageTitleText = $mainPage->getPrefixedText();
-		/**
-		 * HINT: For all "page_id" and "revision_id" related test we need to
-		 * rely on MediaWiki's build in "UTPage", because we can not determine
-		 * the "page_id"/"revision_id" of a page that we create in "setUp" as
-		 * they depend on the CI environment. Unfortunately PHPUnit runs the
-		 * provider methods before "setUp" so we also can not use the id
-		 * returned by "$this-insertPage".
-		 */
+
 		return [ [
 			[ 'pageid' => 1 ],
-			'UTPage',
+			'TitleParamsResolverTest',
 			null,
 			'Should resolve from "pageid"'
 		], [
@@ -92,12 +85,12 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 			'With invalid "page", should fallback to "default"'
 		], [
 			[ 'revid' => 1 ],
-			'UTPage',
+			'TitleParamsResolverTest',
 			null,
 			'Should resolve from "revid"'
 		], [
 			[ 'oldid' => 1 ],
-			'UTPage',
+			'TitleParamsResolverTest',
 			null,
 			'Should resolve from "oldid"'
 		] ];
@@ -127,16 +120,16 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 
 	public function provideMediaWikiApiTitlesOrPageIdsData() {
 		return [ [
-			[ 'pageids' => '1|2' ],
-			[ 'UTPage', 'TitleParamsResolverTest' ],
+			[ 'pageids' => '2' ],
+			[ 'Help:TitleParamsResolverTest' ],
 			'Should resolve from "pageids"'
 		], [
 			[ 'pageids' => '2|-1' ],
-			[ 'TitleParamsResolverTest' ],
+			[ 'Help:TitleParamsResolverTest' ],
 			'Should resolve from "pageids" with invalid pageid'
 		], [
-			[ 'titles' => 'UTPage|Help:TitleParamsResolverTest' ],
-			[ 'UTPage', 'Help:TitleParamsResolverTest' ],
+			[ 'titles' => 'TitleParamsResolverTest|Help:TitleParamsResolverTest' ],
+			[ 'TitleParamsResolverTest', 'Help:TitleParamsResolverTest' ],
 			'Should resolve from "titles"'
 		], ];
 	}
