@@ -196,7 +196,7 @@ $GLOBALS[ 'bsgPermissionConfigDefault' ] = [
 	],
 	"deletedtext" => [
 		"type" => 'namespace',
-		"roles" => [ 'admin', 'author', 'editor', 'maintenanceadmin', 'reviewer' ]
+		"roles" => [ 'admin', 'author', 'maintenanceadmin', 'reviewer' ]
 	],
 	"deletelogentry" => [
 		"type"  => 'global',
