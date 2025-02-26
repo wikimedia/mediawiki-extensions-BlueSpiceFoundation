@@ -15,5 +15,12 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Keine Werte festgelegt!",
 	"bs-ooui-btn-dismiss-alert-title": "Schließen",
 	"bs-ooui-key-value-input-widget-section-label": "Abschnitt",
-	"bs-ooui-key-value-input-widget-add-section-label": "Neuen Abschnitt hinzufügen"
+	"bs-ooui-key-value-input-widget-add-section-label": "Neuen Abschnitt hinzufügen",
+	"bs-pageexport-list-name-label": "Listenname",
+	"bs-pageexport-list-format-label": "Listenformat",
+	"bs-pageexport-list-format-plain-label": "Klartext",
+	"bs-pageexport-list-format-link-label": "Link",
+	"bs-pageexport-overwrite-label": "Überschreiben",
+	"bs-export-search-summary-text": "Erzeugt von PageExport",
+	"bs-pagecollection-prefix": "Seitensammlung"
 }

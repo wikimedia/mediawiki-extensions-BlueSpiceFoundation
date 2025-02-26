@@ -51,11 +51,11 @@ bs.ui.dialog.ExportPagesDialog.prototype.initialize = function () {
 		options: [
 			{
 				data: 'plain',
-				label: mw.msg( 'bs-extjs-pageexport-list-format-plain-label' )
+				label: mw.msg( 'bs-pageexport-list-format-plain-label' )
 			},
 			{
 				data: 'links',
-				label: mw.msg( 'bs-extjs-pageexport-list-format-link-label' )
+				label: mw.msg( 'bs-pageexport-list-format-link-label' )
 			}
 		]
 	} );
@@ -66,15 +66,15 @@ bs.ui.dialog.ExportPagesDialog.prototype.initialize = function () {
 	this.panel.$element.append( new OO.ui.FieldsetLayout( {
 		items: [
 			new OO.ui.FieldLayout( this.nameInput, {
-				label: mw.message( 'bs-extjs-pageexport-list-name-label' ).text(),
+				label: mw.message( 'bs-pageexport-list-name-label' ).text(),
 				align: 'left'
 			} ),
 			new OO.ui.FieldLayout( this.typeSelector, {
-				label: mw.message( 'bs-extjs-pageexport-list-format-label' ).text(),
+				label: mw.message( 'bs-pageexport-list-format-label' ).text(),
 				align: 'left'
 			} ),
 			new OO.ui.FieldLayout( this.overwriteCheck, {
-				label: mw.message( 'bs-extjs-pageexport-overwrite-label' ).text(),
+				label: mw.message( 'bs-pageexport-overwrite-label' ).text(),
 				align: 'left'
 			} )
 		]
@@ -239,7 +239,7 @@ bs.ui.dialog.ExportPagesDialog.prototype.savePage = async function ( targetTitle
 	new mw.Api().postWithToken( 'csrf', {
 		action: 'edit',
 		title: targetTitle.getPrefixedText(),
-		summary: mw.message( 'bs-extjs-export-search-summary-text' ).plain(),
+		summary: mw.message( 'bs-export-search-summary-text' ).plain(),
 		text: formatted
 	} ).done( function ( response ) {
 		dfd.resolve( response );
