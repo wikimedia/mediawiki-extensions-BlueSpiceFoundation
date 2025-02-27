@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Banjo",
 			"Iváns",
 			"Toliño",
 			"Xosecalvo"
@@ -15,5 +16,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Non hai valores establecidos!",
 	"bs-ooui-btn-dismiss-alert-title": "Descartar",
 	"bs-ooui-key-value-input-widget-section-label": "Sección",
-	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova sección"
+	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova sección",
+	"bs-pagecollection-prefix": "Colección de páxinas"
 }

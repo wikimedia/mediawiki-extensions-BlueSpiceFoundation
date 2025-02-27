@@ -13,5 +13,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "值沒有設定！",
 	"bs-ooui-btn-dismiss-alert-title": "去除",
 	"bs-ooui-key-value-input-widget-section-label": "段落",
-	"bs-ooui-key-value-input-widget-add-section-label": "添加新的段落"
+	"bs-ooui-key-value-input-widget-add-section-label": "添加新的段落",
+	"bs-pagecollection-prefix": "頁面收藏"
 }

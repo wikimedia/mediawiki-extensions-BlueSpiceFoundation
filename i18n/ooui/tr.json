@@ -15,5 +15,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Hiç değer girilmedi!",
 	"bs-ooui-btn-dismiss-alert-title": "Kapat",
 	"bs-ooui-key-value-input-widget-section-label": "Bölüm",
-	"bs-ooui-key-value-input-widget-add-section-label": "Yeni bölüm ekle"
+	"bs-ooui-key-value-input-widget-add-section-label": "Yeni bölüm ekle",
+	"bs-pagecollection-prefix": "Sayfa koleksiyonu"
 }

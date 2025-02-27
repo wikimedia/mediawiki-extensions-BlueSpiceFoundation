@@ -22,5 +22,6 @@
 	"bs-ui-generic-no": "לא",
 	"bs-exportpages-dialog-title": "יצוא דפים לאוסף",
 	"bs-exportpages-success-text": "דפים יוצאו אל [[$1|$2]]",
-	"bs-ui-generic-close": "סגירה"
+	"bs-ui-generic-close": "סגירה",
+	"bs-pagecollection-prefix": "אוסף דפים"
 }

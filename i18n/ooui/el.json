@@ -13,5 +13,6 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Προσθήκη νέας καταχώρησης",
 	"bs-ooui-key-value-input-widget-error-message": "Όλα τα απαιτούμενα πεδία πρέπει να συμπληρωθούν!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Δεν ορίστηκαν τιμές!",
-	"bs-ooui-btn-dismiss-alert-title": "Απόρριψη"
+	"bs-ooui-btn-dismiss-alert-title": "Απόρριψη",
+	"bs-pagecollection-prefix": "Συλλογή σελίδας"
 }

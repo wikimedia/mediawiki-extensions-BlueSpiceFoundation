@@ -20,5 +20,6 @@
 	"bs-ui-generic-cancel": "Откажи",
 	"bs-ui-generic-yes": "Да",
 	"bs-ui-generic-no": "Не",
-	"bs-ui-generic-close": "Затвори"
+	"bs-ui-generic-close": "Затвори",
+	"bs-pagecollection-prefix": "Збирка страница"
 }

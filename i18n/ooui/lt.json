@@ -14,5 +14,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Nenustatyta jokių reikšmių!",
 	"bs-ooui-btn-dismiss-alert-title": "Paslėpti",
 	"bs-ooui-key-value-input-widget-section-label": "Skyrius",
-	"bs-ooui-key-value-input-widget-add-section-label": "Pridėti naują skyrių"
+	"bs-ooui-key-value-input-widget-add-section-label": "Pridėti naują skyrių",
+	"bs-pagecollection-prefix": "Puslapių kolekcija"
 }

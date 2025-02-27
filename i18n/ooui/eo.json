@@ -10,5 +10,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Aldoni",
 	"bs-ooui-key-value-input-widget-add-form-label": "Aldoni novan eron",
 	"bs-ooui-key-value-input-widget-error-message": "Ĉiuj postulataj kampoj devas esti provizitaj!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Neniu valoro estis provizita!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Neniu valoro estis provizita!",
+	"bs-pagecollection-prefix": "Paĝokolekto"
 }

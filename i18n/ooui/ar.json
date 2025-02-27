@@ -23,5 +23,6 @@
 	"bs-ui-generic-no": "لا",
 	"bs-exportpages-dialog-title": "تصدير الصفحات إلى مجموعة",
 	"bs-exportpages-success-text": "الصفحات التي تم تصديرها إلى [[$1|$2]]",
-	"bs-ui-generic-close": "إغلاق"
+	"bs-ui-generic-close": "إغلاق",
+	"bs-pagecollection-prefix": "مجموعة الصفحة"
 }

@@ -14,5 +14,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Não foi definido nenhum valor!",
 	"bs-ooui-btn-dismiss-alert-title": "Ignorar",
 	"bs-ooui-key-value-input-widget-section-label": "Secção",
-	"bs-ooui-key-value-input-widget-add-section-label": "Adicionar secção nova"
+	"bs-ooui-key-value-input-widget-add-section-label": "Adicionar secção nova",
+	"bs-pagecollection-prefix": "Conjunto de páginas"
 }
