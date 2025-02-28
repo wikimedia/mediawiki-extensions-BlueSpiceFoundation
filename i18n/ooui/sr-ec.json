@@ -21,5 +21,8 @@
 	"bs-ui-generic-yes": "Да",
 	"bs-ui-generic-no": "Не",
 	"bs-ui-generic-close": "Затвори",
+	"bs-pageexport-list-format-plain-label": "Чист текст",
+	"bs-pageexport-list-format-link-label": "Веза",
+	"bs-pageexport-overwrite-label": "Пресними",
 	"bs-pagecollection-prefix": "Збирка страница"
 }
