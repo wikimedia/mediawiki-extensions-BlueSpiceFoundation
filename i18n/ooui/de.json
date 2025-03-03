@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Killarnee",
 			"Laurinm",
 			"Metalhead64"
@@ -16,6 +17,13 @@
 	"bs-ooui-btn-dismiss-alert-title": "Schließen",
 	"bs-ooui-key-value-input-widget-section-label": "Abschnitt",
 	"bs-ooui-key-value-input-widget-add-section-label": "Neuen Abschnitt hinzufügen",
+	"bs-ui-generic-save": "Speichern",
+	"bs-ui-generic-cancel": "Abbrechen",
+	"bs-ui-generic-yes": "Ja",
+	"bs-ui-generic-no": "Nein",
+	"bs-exportpages-dialog-title": "Seiten in eine Sammlung exportieren",
+	"bs-exportpages-success-text": "Nach [[$1|$2]] exportierte Seiten",
+	"bs-ui-generic-close": "Schließen",
 	"bs-pageexport-list-name-label": "Listenname",
 	"bs-pageexport-list-format-label": "Listenformat",
 	"bs-pageexport-list-format-plain-label": "Klartext",
