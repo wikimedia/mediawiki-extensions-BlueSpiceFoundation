@@ -20,5 +20,6 @@
 	"bs-ui-generic-no": "No",
 	"bs-exportpages-dialog-title": "Exportar paginas a un collection",
 	"bs-exportpages-success-text": "Paginas exportate a [[$1|$2]]",
-	"bs-ui-generic-close": "Clauder"
+	"bs-ui-generic-close": "Clauder",
+	"bs-pagecollection-prefix": "Collection de paginas"
 }

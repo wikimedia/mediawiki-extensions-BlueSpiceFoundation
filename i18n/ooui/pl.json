@@ -4,7 +4,8 @@
 			"Chrumps",
 			"Pefect",
 			"Rail",
-			"WaldiSt"
+			"WaldiSt",
+			"Mro"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Dodaj nowy...",
@@ -16,5 +17,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Brak ustawionych wartości!",
 	"bs-ooui-btn-dismiss-alert-title": "Odrzuć",
 	"bs-ooui-key-value-input-widget-section-label": "Sekcja",
-	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nową sekcję"
+	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nową sekcję",
+	"bs-pagecollection-prefix": "Zbiór stron"
 }

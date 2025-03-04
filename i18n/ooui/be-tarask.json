@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Дадаць новы…",
@@ -10,5 +11,6 @@
 	"bs-ooui-key-value-input-widget-add-button-label": "Дадаць",
 	"bs-ooui-key-value-input-widget-add-form-label": "Дадаць новы запіс",
 	"bs-ooui-key-value-input-widget-error-message": "Мусяць быць пазначаныя ўсе запатрабаваныя палі!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Значэньні не зададзеныя!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Значэньні не зададзеныя!",
+	"bs-pagecollection-prefix": "Зборка старонак"
 }

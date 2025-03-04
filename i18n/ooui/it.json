@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Joetaras"
+			"Joetaras",
+			"GpieroMW"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Aggiungi nuovo...",
@@ -14,5 +15,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Nessun valore impostato!",
 	"bs-ooui-btn-dismiss-alert-title": "Nascondi",
 	"bs-ooui-key-value-input-widget-section-label": "Sezione",
-	"bs-ooui-key-value-input-widget-add-section-label": "Aggiungi nuova sezione"
+	"bs-ooui-key-value-input-widget-add-section-label": "Aggiungi nuova sezione",
+	"bs-pagecollection-prefix": "Raccolta di pagine"
 }

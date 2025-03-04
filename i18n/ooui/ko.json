@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"In2acous"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "새로 추가...",
@@ -18,5 +19,9 @@
 	"bs-ui-generic-cancel": "취소",
 	"bs-ui-generic-yes": "예",
 	"bs-ui-generic-no": "아니요",
-	"bs-ui-generic-close": "닫기"
+	"bs-ui-generic-close": "닫기",
+	"bs-pageexport-list-format-plain-label": "일반 텍스트",
+	"bs-pageexport-list-format-link-label": "링크",
+	"bs-pageexport-overwrite-label": "덮어쓰기",
+	"bs-pagecollection-prefix": "문서 모음집"
 }

@@ -11,5 +11,6 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Añadir una entrada nueva",
 	"bs-ooui-key-value-input-widget-error-message": "Tien de dase valores a tolos campos riquíos",
 	"bs-ooui-key-value-input-widget-no-values-label": "Nun se dió nengún valor.",
-	"bs-ooui-btn-dismiss-alert-title": "Descartar"
+	"bs-ooui-btn-dismiss-alert-title": "Descartar",
+	"bs-pagecollection-prefix": "Colección de páxines"
 }

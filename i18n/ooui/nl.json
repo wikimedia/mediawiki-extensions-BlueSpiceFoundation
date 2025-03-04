@@ -4,7 +4,8 @@
 			"Mainframe98",
 			"McDutchie",
 			"Optilete",
-			"Romaine"
+			"Romaine",
+			"Niknetniko"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Nieuwe toevoegen...",
@@ -23,5 +24,6 @@
 	"bs-ui-generic-no": "Nee",
 	"bs-exportpages-dialog-title": "Pagina’s exporteren naar een verzameling",
 	"bs-exportpages-success-text": "Pagina’s geëxporteerd naar [[$1|$2]]",
-	"bs-ui-generic-close": "Sluiten"
+	"bs-ui-generic-close": "Sluiten",
+	"bs-pagecollection-prefix": "Paginaverzameling"
 }

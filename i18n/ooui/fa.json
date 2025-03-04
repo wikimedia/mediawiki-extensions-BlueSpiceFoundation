@@ -16,5 +16,6 @@
 	"bs-ooui-btn-dismiss-alert-title": "بگذریم",
 	"bs-ooui-key-value-input-widget-section-label": "بخش",
 	"bs-ooui-key-value-input-widget-add-section-label": "افزودن بخش جدید",
-	"bs-ui-generic-cancel": "لغو"
+	"bs-ui-generic-cancel": "لغو",
+	"bs-pagecollection-prefix": "مجموعهٔ صفحه‌ها"
 }

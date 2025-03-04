@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jrobicek"
+			"Jrobicek",
+			"Ilimanaq29"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Přidat nový...",
@@ -10,5 +11,6 @@
 	"bs-ui-generic-save": "Uložit",
 	"bs-ui-generic-cancel": "Storno",
 	"bs-ui-generic-yes": "Ano",
-	"bs-ui-generic-no": "Ne"
+	"bs-ui-generic-no": "Ne",
+	"bs-pagecollection-prefix": "Sbírka stránek"
 }

@@ -13,5 +13,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Nincsenek beállítva értékek!",
 	"bs-ooui-btn-dismiss-alert-title": "Elutasítás",
 	"bs-ooui-key-value-input-widget-section-label": "Szakasz",
-	"bs-ooui-key-value-input-widget-add-section-label": "Új szakasz hozzáadása"
+	"bs-ooui-key-value-input-widget-add-section-label": "Új szakasz hozzáadása",
+	"bs-pagecollection-prefix": "Lapgyűjtemény"
 }

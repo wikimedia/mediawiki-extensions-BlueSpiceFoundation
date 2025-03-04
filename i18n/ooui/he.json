@@ -22,5 +22,12 @@
 	"bs-ui-generic-no": "לא",
 	"bs-exportpages-dialog-title": "יצוא דפים לאוסף",
 	"bs-exportpages-success-text": "דפים יוצאו אל [[$1|$2]]",
-	"bs-ui-generic-close": "סגירה"
+	"bs-ui-generic-close": "סגירה",
+	"bs-pageexport-list-name-label": "שם הרשימה",
+	"bs-pageexport-list-format-label": "תסדיר הרשימה",
+	"bs-pageexport-list-format-plain-label": "טקסט רגיל",
+	"bs-pageexport-list-format-link-label": "קישור",
+	"bs-pageexport-overwrite-label": "דריסה",
+	"bs-export-search-summary-text": "נוצר על־ידי PageExport",
+	"bs-pagecollection-prefix": "אוסף דפים"
 }

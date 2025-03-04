@@ -13,5 +13,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Vrednosti niso nastavljene!",
 	"bs-ooui-btn-dismiss-alert-title": "Opusti",
 	"bs-ooui-key-value-input-widget-section-label": "Razdelek",
-	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nov razdelek"
+	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nov razdelek",
+	"bs-pagecollection-prefix": "Zbiranje podatkov"
 }

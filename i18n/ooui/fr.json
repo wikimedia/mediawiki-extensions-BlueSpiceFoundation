@@ -25,5 +25,6 @@
 	"bs-ui-generic-no": "Non",
 	"bs-exportpages-dialog-title": "Exporter des pages vers une collection",
 	"bs-exportpages-success-text": "Pages exportées vers [[$1|$2]]",
-	"bs-ui-generic-close": "Fermer"
+	"bs-ui-generic-close": "Fermer",
+	"bs-pagecollection-prefix": "Collection de pages"
 }

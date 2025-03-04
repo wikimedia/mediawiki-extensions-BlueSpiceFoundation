@@ -4,5 +4,10 @@
 			"Cabal"
 		]
 	},
-	"bs-ooui-key-value-input-widget-section-label": "ਭਾਗ"
+	"bs-ooui-key-value-input-widget-section-label": "ਭਾਗ",
+	"bs-pageexport-list-name-label": "ਸੂਚੀ ਦਾ ਨਾਮ",
+	"bs-pageexport-list-format-label": "ਸੂਚੀ ਤਰਤੀਬ",
+	"bs-pageexport-list-format-plain-label": "ਆਮ ਲਿਖਤ",
+	"bs-pageexport-list-format-link-label": "ਕੜੀ",
+	"bs-pageexport-overwrite-label": "ਉੱਤੇ ਹੀ ਲਿਖੋ"
 }
