@@ -3,6 +3,7 @@
 		"authors": [
 			"Eneelk",
 			"Gomoko",
+			"JLTRY",
 			"Thibaut120094",
 			"Verdy p",
 			"Wladek92",
@@ -26,5 +27,11 @@
 	"bs-exportpages-dialog-title": "Exporter des pages vers une collection",
 	"bs-exportpages-success-text": "Pages exportées vers [[$1|$2]]",
 	"bs-ui-generic-close": "Fermer",
+	"bs-pageexport-list-name-label": "Nom de la liste",
+	"bs-pageexport-list-format-label": "Format de la liste",
+	"bs-pageexport-list-format-plain-label": "Texte brut",
+	"bs-pageexport-list-format-link-label": "Lien",
+	"bs-pageexport-overwrite-label": "Écraser",
+	"bs-export-search-summary-text": "Généré par PageExport",
 	"bs-pagecollection-prefix": "Collection de pages"
 }
