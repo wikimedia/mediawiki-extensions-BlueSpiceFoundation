@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BHARATHESHA ALASANDEMAJALU",
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"Mahaveer Indra"
 		]
 	},
 	"bs-ns_main": "(ಪುಟೊಕುಲು)",
@@ -22,5 +23,6 @@
 	"bs-navigation-contact": "ಸಂಪರ್ಕ",
 	"bs-ns": "ಪುದರ್‍ದ ವರ್ಗೊಲು",
 	"bs-validator-error-title-does-not-exist": "ಇಂಚಿತ್ತಿನ ಪುಟೋ ಇಜ್ಜಿ:$1",
-	"bs-export-menu-print-text": "ಅಚ್ಚ್ ಮಲ್ಪುಲೆ"
+	"bs-export-menu-print-text": "ಅಚ್ಚ್ ಮಲ್ಪುಲೆ",
+	"bs-title-warning": "ಜಾಗ್ರತೆ"
 }
