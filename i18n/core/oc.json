@@ -3,6 +3,7 @@
 		"authors": [
 			"BrennodAloisi",
 			"Cedric31",
+			"Lhanars",
 			"McDutchie",
 			"Nicolas Eynaud"
 		]
@@ -62,7 +63,7 @@
 	"bs-parser-error-invalid-title": "Títol incorrècte : $1",
 	"bs-validator-error-namespace-does-not-exist": "Lo domeni de noms existís pas : $1",
 	"bs-validator-error-namespace-on-blacklist": "Lo domeni de noms es pas autorizat : $1",
-	"bs-validator-error-title-does-not-exist": "La pagina existís pas : $1",
+	"bs-validator-error-title-does-not-exist": "La pagina non existís pas: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Pagina non autorizada : $1",
 	"bs-parser-error-invalid-category-title": "La pagina es pas una categoria valida : $1",
 	"bs-exttype-bluespice": "Extensions BlusSpice",
