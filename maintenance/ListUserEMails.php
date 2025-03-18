@@ -44,11 +44,14 @@ class ListUserEmails extends BSMaintenance {
 
 	private function getUserData() {
 		$dbr = $this->getDB( DB_REPLICA );
-		$rRes = $dbr->select( 'user',
+		$rRes = $dbr->select(
+			'user',
 			[
 				'user_email',
 				'user_email_authenticated'
-			]
+			],
+			'',
+			__METHOD__
 		);
 
 		if ( !$rRes ) {

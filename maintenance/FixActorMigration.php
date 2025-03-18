@@ -47,14 +47,24 @@ class FixActorMigration extends Maintenance {
 	}
 
 	private function fetchAllTempActorRevs() {
-		$res = $this->db->select( 'revision_actor_temp', 'revactor_rev' );
+		$res = $this->db->select(
+			'revision_actor_temp',
+			'revactor_rev',
+			'',
+			__METHOD__
+		);
 		foreach ( $res as $row ) {
 			$this->actorTempRevIds[] = (int)$row->revactor_rev;
 		}
 	}
 
 	private function fetchAllRevisions() {
-		$res = $this->db->select( 'revision', [ 'rev_id', 'rev_page', 'rev_timestamp' ] );
+		$res = $this->db->select(
+			'revision',
+			[ 'rev_id', 'rev_page', 'rev_timestamp' ],
+			'',
+			__METHOD__
+		);
 		foreach ( $res as $row ) {
 			$this->revisionIds[] = (int)$row->rev_id;
 			$this->revisionData[(int)$row->rev_id] = [

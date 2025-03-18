@@ -17,7 +17,12 @@ use MediaWiki\User\User;
 class PurgePages extends Maintenance {
 	public function execute() {
 		$dbr = $this->getDB( DB_REPLICA );
-		$res = $dbr->select( 'page', '*' );
+		$res = $dbr->select(
+			'page',
+			'*',
+			'',
+			__METHOD__
+		);
 		$titles = [];
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
 		foreach ( $res as $row ) {

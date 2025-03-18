@@ -15,7 +15,12 @@ class ResetUserImages extends Maintenance {
 
 	public function execute() {
 		$dbw = $this->getDB( DB_PRIMARY );
-		$res = $dbw->select( 'user', 'user_id' );
+		$res = $dbw->select(
+			'user',
+			'user_id',
+			'',
+			__METHOD__
+		);
 		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {
 			$oUser = $userFactory->newFromId( $row->user_id );

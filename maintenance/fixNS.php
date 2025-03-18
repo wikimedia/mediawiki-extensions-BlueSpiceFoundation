@@ -22,8 +22,11 @@ class FixNS extends Maintenance {
 		$res = $dbw->select(
 			"page",
 			[ "page_id", "page_title", "page_namespace" ],
-			"page_namespace = 0",
-			"page_namespace " . $dbw->buildLike( "%:%", $dbw->anyString() )
+			[
+				"page_namespace = 0",
+				"page_namespace " . $dbw->buildLike( "%:%", $dbw->anyString() )
+			],
+			__METHOD__
 		);
 
 		if ( $res != null ) {

@@ -65,7 +65,9 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 				'page_id',
 				'page_is_new',
 				'page_touched'
-			]
+			],
+			'',
+			__METHOD__
 		);
 
 		foreach ( $res as $row ) {

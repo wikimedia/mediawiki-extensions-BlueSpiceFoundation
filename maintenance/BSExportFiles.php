@@ -44,7 +44,8 @@ class BSExportFiles extends BSMaintenance {
 			'il_to',
 			[
 				'il_from' => array_keys( $aPageIds )
-			]
+			],
+			__METHOD__
 		);
 
 		$aFiles = [];

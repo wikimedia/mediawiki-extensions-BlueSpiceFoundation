@@ -90,7 +90,12 @@ class BSMassEditBase extends BSMaintenance {
 		$dbr = $this->getDB( DB_REPLICA );
 		$aTitles = [];
 
-		$res = $dbr->select( 'page', '*' );
+		$res = $dbr->select(
+			'page',
+			'*',
+			'',
+			__METHOD__
+		);
 		foreach ( $res as $row ) {
 			$oTitle = Title::newFromRow( $row );
 			$aTitles[ $oTitle->getPrefixedDBkey() ] = $oTitle;
