@@ -11,7 +11,8 @@
 			"Thibaut120094",
 			"Urhixidur",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"JLTRY"
 		]
 	},
 	"bluespicefoundation-desc": "Rend MediaWiki prêt pour l’entreprise",
@@ -113,5 +114,7 @@
 	"bs-permission-role-reader": "Lecteur",
 	"bs-permission-role-editor": "Rédacteur",
 	"bs-permission-role-reviewer": "Relecteur",
-	"bs-permission-role-admin": "Administrateur"
+	"bs-permission-role-admin": "Administrateur",
+	"bs-title-warning": "Avertissement",
+	"bs-title-success": "Succès"
 }
