@@ -75,7 +75,8 @@ function getUser( $sGivenUser ) {
 	$rRes = $dbr->select(
 		'user',
 		[ 'user_id', 'user_name' ],
-		$condition
+		$condition,
+		__METHOD__
 	);
 
 	if ( !$rRes ) {

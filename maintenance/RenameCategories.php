@@ -249,7 +249,7 @@ $res = $dbr->select(
 	'page',
 	'page_title, page_namespace, page_id',
 	$qry_ns,
-	'Database::select',
+	__METHOD__,
 	[ 'order by' => 'page_title' ]
 );
 
@@ -442,7 +442,7 @@ $res = $dbr->select(
 	'page',
 	'page_id, page_title',
 	[ 'page_namespace' => NS_CATEGORY ],
-	'Database::select',
+	__METHOD__,
 	[ 'order by' => 'page_title' ]
 );
 echo $res->numRows() . " articles in category namespace\n";

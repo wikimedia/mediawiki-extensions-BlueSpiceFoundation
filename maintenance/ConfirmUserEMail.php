@@ -56,7 +56,8 @@ class ConfirmUserEMail extends Maintenance {
 		$rRes = $dbr->select(
 			'user',
 			[ 'user_id', 'user_name', 'user_email', 'user_email_authenticated' ],
-			$condition
+			$condition,
+			__METHOD__
 		);
 
 		if ( !$rRes ) {

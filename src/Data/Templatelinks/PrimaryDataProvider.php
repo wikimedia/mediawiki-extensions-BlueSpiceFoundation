@@ -61,7 +61,8 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$res = $this->db->select(
 			'templatelinks',
 			'*',
-			$filterConds
+			$filterConds,
+			__METHOD__
 		);
 
 		foreach ( $res as $row ) {

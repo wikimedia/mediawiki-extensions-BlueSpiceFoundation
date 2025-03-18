@@ -60,7 +60,8 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		$res = $this->db->select(
 			'categorylinks',
 			'*',
-			$filterConds
+			$filterConds,
+			__METHOD__
 		);
 
 		foreach ( $res as $row ) {

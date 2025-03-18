@@ -87,7 +87,12 @@ function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
 
 	$sTable = 'bs_namespacemanager_backup_' . $sTable;
 
-	$rRes = $dbr->select( $sTable, '*', $aConditions );
+	$rRes = $dbr->select(
+		$sTable,
+		'*',
+		$aConditions,
+		__METHOD__
+	);
 	if ( empty( $rRes ) ) {
 		return [];
 	}

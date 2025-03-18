@@ -24,7 +24,12 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	protected $oldData = [];
 
 	protected function readOldData() {
-		$res = $this->getDB( DB_REPLICA )->select( 'bs_settings', '*' );
+		$res = $this->getDB( DB_REPLICA )->select(
+			'bs_settings',
+			'*',
+			'',
+			__METHOD__
+		);
 		foreach ( $res as $row ) {
 			$this->oldData[$row->key] = $row->value;
 		}
