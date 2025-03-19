@@ -92,7 +92,8 @@ function updateUserProperties( $aUserStore, $options, $bDry ) {
 						'up_user' => $aUserStore[$i]['id'],
 						'up_property' => $options['property'],
 						'up_value' => $options['setvalue']
-					]
+					],
+					__METHOD__
 				);
 			}
 			$aUserStore[$i]['setvalue'] = $options['setvalue'];
