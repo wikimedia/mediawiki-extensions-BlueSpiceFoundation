@@ -43,30 +43,42 @@ class BSApiInterwikiStoreTest extends BSApiExtJSStoreTestBase {
 
 	protected function createStoreFixtureData() {
 		$oDbw = $this->db;
-		$oDbw->insert( 'interwiki', [
-			'iw_prefix' => "Dummy",
-			'iw_url' => "http://wiki.dummy.org/$1",
-			'iw_api' => '',
-			'iw_wikiid' => '',
-			'iw_local' => "1"
-		] );
+		$oDbw->insert(
+			'interwiki',
+			[
+				'iw_prefix' => "Dummy",
+				'iw_url' => "http://wiki.dummy.org/$1",
+				'iw_api' => '',
+				'iw_wikiid' => '',
+				'iw_local' => "1"
+			],
+			__METHOD__
+		);
 
-		$oDbw->insert( 'interwiki', [
-			'iw_prefix' => "Demo",
-			'iw_url' => "http://wiki.demo.org/$1",
-			'iw_api' => "http://wiki.demo.org/api.php",
-			'iw_wikiid' => '',
-			'iw_local' => '0'
-		] );
+		$oDbw->insert(
+			'interwiki',
+			[
+				'iw_prefix' => "Demo",
+				'iw_url' => "http://wiki.demo.org/$1",
+				'iw_api' => "http://wiki.demo.org/api.php",
+				'iw_wikiid' => '',
+				'iw_local' => '0'
+			],
+			__METHOD__
+		);
 
-		$oDbw->insert( 'interwiki', [
-			'iw_prefix' => "Sample",
-			'iw_url' => "http://wiki.sample.org/$1",
-			'iw_api' => '',
-			'iw_wikiid' => '',
-			'iw_trans' => "1",
-			'iw_local' => "1"
-		] );
+		$oDbw->insert(
+			'interwiki',
+			[
+				'iw_prefix' => "Sample",
+				'iw_url' => "http://wiki.sample.org/$1",
+				'iw_api' => '',
+				'iw_wikiid' => '',
+				'iw_trans' => "1",
+				'iw_local' => "1"
+			],
+			__METHOD__
+		);
 		return 3;
 	}
 

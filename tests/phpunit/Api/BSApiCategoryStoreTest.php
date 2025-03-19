@@ -46,22 +46,34 @@ class BSApiCategoryStoreTest extends BSApiExtJSStoreTestBase {
 	protected function setUp(): void {
 		parent::setUp();
 		$oDbw = $this->db;
-		$oDbw->insert( 'category', [
-			'cat_title' => "Dummy test",
-			'cat_pages' => 3,
-			'cat_files' => 1
-		] );
+		$oDbw->insert(
+			'category',
+			[
+				'cat_title' => "Dummy test",
+				'cat_pages' => 3,
+				'cat_files' => 1
+			],
+			__METHOD__
+		);
 
-		$oDbw->insert( 'category', [
-			'cat_title' => "Dummy test 2",
-			'cat_pages' => 2,
-			'cat_files' => 3
-		] );
+		$oDbw->insert(
+			'category',
+			[
+				'cat_title' => "Dummy test 2",
+				'cat_pages' => 2,
+				'cat_files' => 3
+			],
+			__METHOD__
+		);
 
-		$oDbw->insert( 'categorylinks', [
-			'cl_to' => "Dummy test",
-			'cl_timestamp' => $oDbw->timestamp()
-		] );
+		$oDbw->insert(
+			'categorylinks',
+			[
+				'cl_to' => "Dummy test",
+				'cl_timestamp' => $oDbw->timestamp()
+			],
+			__METHOD__
+		);
 
 		$this->insertPage( "Dummy test 2", "Text Dummy test 2", NS_CATEGORY );
 	}
