@@ -127,7 +127,8 @@ class FixActorMigration extends Maintenance {
 			$this->db->update(
 				$tableName,
 				[ $foreignKeyName => $this->actorId ],
-				[ $foreignKeyName => 0 ]
+				[ $foreignKeyName => 0 ],
+				__METHOD__
 			);
 			$this->output( " - $numberOfBadRows bad entries fixed" );
 		}
