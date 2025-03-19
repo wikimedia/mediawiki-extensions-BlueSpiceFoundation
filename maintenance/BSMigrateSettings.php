@@ -14,7 +14,7 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	 * @return bool
 	 */
 	protected function noDataToMigrate() {
-		return $this->getDB( DB_REPLICA )->tableExists( 'bs_settings' ) === false;
+		return $this->getDB( DB_REPLICA )->tableExists( 'bs_settings', __METHOD__ ) === false;
 	}
 
 	/**
