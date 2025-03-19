@@ -20,11 +20,15 @@ class ConfigTest extends \MediaWikiIntegrationTestCase {
 
 	public function addDBData() {
 		parent::addDBData();
-		$this->db->insert( 'bs_settings3', [
-			's_name' => 'UnitTestSetting',
-			// JSON formatted
-			's_value' => '"9"'
-		] );
+		$this->db->insert(
+			'bs_settings3',
+			[
+				's_name' => 'UnitTestSetting',
+				// JSON formatted
+				's_value' => '"9"'
+			],
+			__METHOD__
+		);
 		$config = new \BlueSpice\Config(
 			MediaWikiServices::getInstance()->getDBLoadBalancer()
 		);

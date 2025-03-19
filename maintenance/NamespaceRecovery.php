@@ -132,9 +132,16 @@ function setDataFromNSBackup( $aPages, $aRevisions, $aTexts, $bDry, $options ) {
 		for ( $iR = 0; $iR < $numRevisions; $iR++ ) {
 			echo 'Revision';
 			if ( !$bDry && $options['execute'] ) {
-				$dbw->insert( 'text', $aTexts[$iP][$iR][0] );
-				$dbw->insert( 'revision', $aRevisions[$iP][$iR] );
-				// var_dump($aRevisions[$iP][$iR]);
+				$dbw->insert(
+					'text',
+					$aTexts[$iP][$iR][0],
+					__METHOD__
+				);
+				$dbw->insert(
+					'revision',
+					$aRevisions[$iP][$iR],
+					__METHOD__
+				);
 			}
 
 		}

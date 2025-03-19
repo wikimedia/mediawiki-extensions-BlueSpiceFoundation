@@ -39,12 +39,16 @@ class WatchlistTest extends \MediaWikiIntegrationTestCase {
 		$services = MediaWikiServices::getInstance();
 		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		foreach ( $dummyDbEntries as $dummyDbEntry ) {
-			$dbw->insert( 'watchlist', [
-				'wl_user' => $dummyDbEntry[0],
-				'wl_namespace' => $dummyDbEntry[1],
-				'wl_title' => $dummyDbEntry[2],
-				'wl_notificationtimestamp' => $dummyDbEntry[3],
-			] );
+			$dbw->insert(
+				'watchlist',
+				[
+					'wl_user' => $dummyDbEntry[0],
+					'wl_namespace' => $dummyDbEntry[1],
+					'wl_title' => $dummyDbEntry[2],
+					'wl_notificationtimestamp' => $dummyDbEntry[3],
+				],
+				__METHOD__
+			);
 		}
 
 		$user = $services->getUserFactory()->newFromName( 'UTWatchlist' );
