@@ -105,10 +105,12 @@ function NotifyUser( $aUserStore, $options, $bDry ) {
 	for ( $i = 0; $i < $iCounter; $i++ ) {
 		if ( !$bDry ) {
 
-			$dbw->update( [ 'user' ],
-						[ 'user_email_authenticated' => wfTimestamp() ],
-						[ 'user_id' => $aUserStore['id'] ]
-					);
+			$dbw->update(
+				'user',
+				[ 'user_email_authenticated' => wfTimestamp() ],
+				[ 'user_id' => $aUserStore['id'] ],
+				__METHOD__
+			);
 			/*
 			$dbw->replace(
 					'user',

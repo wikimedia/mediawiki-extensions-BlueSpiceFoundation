@@ -91,9 +91,11 @@ class ConfirmUserEMail extends Maintenance {
 			}
 			if ( empty( $aUserStore[$i]['setvalue'] ) ) {
 				if ( $bExecute ) {
-					$dbw->update( 'user',
+					$dbw->update(
+						'user',
 						[ 'user_email_authenticated' => date( 'YmdHis' ) ],
-						[ 'user_id' => $aUserStore[$i]['id'] ]
+						[ 'user_id' => $aUserStore[$i]['id'] ],
+						__METHOD__
 					);
 				}
 				$aUserStore[$i]['setvalue'] = ' => confirmed';

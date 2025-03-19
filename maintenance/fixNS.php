@@ -54,7 +54,8 @@ class FixNS extends Maintenance {
 									"page_title = '" . $nsData . ":" . $pageName . "'",
 									"page_id = " . $pageId,
 									"page_namespace = 0"
-								]
+								],
+								__METHOD__
 							);
 							$done = true;
 						}

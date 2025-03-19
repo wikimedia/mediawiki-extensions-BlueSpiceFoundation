@@ -129,12 +129,14 @@ class PrepareActorMigration extends Maintenance {
 			$this->db->update(
 				$tableName,
 				[ $userIdField => $this->unknownUserId ],
-				[ $userIdField => $this->orphanedUserIds ]
+				[ $userIdField => $this->orphanedUserIds ],
+				__METHOD__
 			);
 			$this->db->update(
 				$tableName,
 				[ $userNameField => $this->unknownUserName ],
-				[ $userNameField => $this->orphanedUserNames ]
+				[ $userNameField => $this->orphanedUserNames ],
+				__METHOD__
 			);
 		}
 	}
