@@ -136,9 +136,11 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 			$conditions[] = "up_value = '" . $filtervalue . "'";
 		}
 
-		$rRes = $dbr->selectRow( 'user_properties',
+		$rRes = $dbr->selectRow(
+			'user_properties',
 			'up_value',
-			$conditions
+			$conditions,
+			__METHOD__
 		);
 
 		if ( !$rRes && $filtervalue ) {
