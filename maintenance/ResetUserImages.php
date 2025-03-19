@@ -31,7 +31,8 @@ class ResetUserImages extends Maintenance {
 				[
 					'up_user' => $oUser->getId(),
 					'up_property' => 'MW::UserImage'
-				]
+				],
+				__METHOD__
 			);
 			$dbw->insert(
 				'user_properties',
