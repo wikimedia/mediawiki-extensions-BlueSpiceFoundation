@@ -117,7 +117,8 @@ class FixActorMigration extends Maintenance {
 			$numberOfBadRows = $this->db->selectRowCount(
 				$tableName,
 				'*',
-				[ $foreignKeyName => 0 ]
+				[ $foreignKeyName => 0 ],
+				__METHOD__
 			);
 			if ( $numberOfBadRows === 0 ) {
 				$this->output( " - no bad entries found" );
