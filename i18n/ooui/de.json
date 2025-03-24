@@ -3,7 +3,8 @@
 		"authors": [
 			"Killarnee",
 			"Laurinm",
-			"Metalhead64"
+			"Metalhead64",
+			"Justman10000"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Neu hinzufügen …",
@@ -15,5 +16,12 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Keine Werte festgelegt!",
 	"bs-ooui-btn-dismiss-alert-title": "Schließen",
 	"bs-ooui-key-value-input-widget-section-label": "Abschnitt",
-	"bs-ooui-key-value-input-widget-add-section-label": "Neuen Abschnitt hinzufügen"
+	"bs-ooui-key-value-input-widget-add-section-label": "Neuen Abschnitt hinzufügen",
+	"bs-ui-generic-save": "Speichern",
+	"bs-ui-generic-cancel": "Abbrechen",
+	"bs-ui-generic-yes": "Ja",
+	"bs-ui-generic-no": "Nein",
+	"bs-exportpages-dialog-title": "Seiten in eine Sammlung exportieren",
+	"bs-exportpages-success-text": "Nach [[$1|$2]] exportierte Seiten",
+	"bs-ui-generic-close": "Schließen"
 }

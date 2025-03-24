@@ -114,5 +114,7 @@
 	"bs-permission-role-reader": "Lezer",
 	"bs-permission-role-editor": "Bewerker",
 	"bs-permission-role-reviewer": "Controleur",
-	"bs-permission-role-admin": "Beheerder"
+	"bs-permission-role-admin": "Beheerder",
+	"bs-title-warning": "Waarschuwing",
+	"bs-title-success": "Geslaagd"
 }
