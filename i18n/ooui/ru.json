@@ -2,11 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Alexander Yukal",
+			"Alexandr Efremov",
 			"Kareyac",
 			"Megakott",
 			"Shaleych",
-			"Vlad5250",
-			"Alexandr Efremov"
+			"Vlad5250"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Добавить новый...",

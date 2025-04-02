@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Killarnee",
 			"Laurinm",
-			"Metalhead64",
-			"Justman10000"
+			"Metalhead64"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Neu hinzufügen …",
