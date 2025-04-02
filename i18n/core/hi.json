@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"Nitin1485",
-			"Sfic",
-			"Abijeet Patro"
+			"Sfic"
 		]
 	},
 	"bs-parser-error-invalid-namespace": "अमान्य नामस्थान: $1",

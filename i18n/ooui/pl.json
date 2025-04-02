@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Mro",
 			"Pefect",
 			"Rail",
-			"WaldiSt",
-			"Mro"
+			"WaldiSt"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Dodaj nowy...",

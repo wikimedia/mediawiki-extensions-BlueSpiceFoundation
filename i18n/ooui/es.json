@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fitoschido",
 			"Jelou",
 			"Joanmp17",
-			"Rapunzel",
-			"Fitoschido"
+			"Rapunzel"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Añade...",
