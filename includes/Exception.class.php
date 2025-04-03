@@ -45,7 +45,7 @@ class BsException extends Exception {
 	 * @param Exception|null $oPreviousException For use in a chain of try-catch blocks.
 	 */
 	public function __construct( $sMessage = '', $iCode = 0,
-		Exception $oPreviousException = null ) {
+		?Exception $oPreviousException = null ) {
 		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
 		$this->sMessage = $sMessage;
 

@@ -24,7 +24,7 @@ class Timestamp extends MWTimestamp {
 	 * @return string
 	 */
 	public function getAgeString(
-		Timestamp $relativeTo = null, User $user = null, $numberOfDisplayedUnits = 2
+		?Timestamp $relativeTo = null, ?User $user = null, $numberOfDisplayedUnits = 2
 	) {
 		if ( !$relativeTo ) {
 			$relativeTo = new static;

@@ -17,7 +17,7 @@ class Writer extends DatabaseWriter {
 	 * @param IContextSource|null $context
 	 */
 	public function __construct( IReader $reader, $loadBalancer,
-		IContextSource $context = null ) {
+		?IContextSource $context = null ) {
 		parent::__construct( $reader, $loadBalancer, $context, $context->getConfig() );
 	}
 

@@ -133,7 +133,7 @@ class PermissionLockdownFactory {
 	 *
 	 * @return Status
 	 */
-	public function userCan( Title $title, $action = 'read', User $user = null,
+	public function userCan( Title $title, $action = 'read', ?User $user = null,
 		$rigor = PermissionManager::RIGOR_SECURE ) {
 		$status = Status::newGood();
 		if ( !$user ) {

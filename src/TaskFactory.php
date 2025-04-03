@@ -62,7 +62,7 @@ class TaskFactory {
 	 * @param IPermissionChecker|null $permissionChecker
 	 * @return ITask
 	 */
-	public function get( $key, Context $context, IPermissionChecker $permissionChecker = null ) {
+	public function get( $key, Context $context, ?IPermissionChecker $permissionChecker = null ) {
 		$callback = $this->registry->getValue(
 			$key,
 			false
