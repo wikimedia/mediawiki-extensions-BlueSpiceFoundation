@@ -19,7 +19,7 @@ class UserHelper {
 	 * @return UserHelper
 	 * @throws \MWException
 	 */
-	public function __construct( User $user = null ) {
+	public function __construct( ?User $user = null ) {
 		$this->user = $user;
 		if ( $this->user ) {
 			return;

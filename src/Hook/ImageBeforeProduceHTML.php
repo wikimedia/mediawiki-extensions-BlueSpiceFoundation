@@ -111,7 +111,7 @@ abstract class ImageBeforeProduceHTML extends Hook {
 	 * @return bool Always true to keep hook running
 	 */
 	public static function callback( DummyLinker &$linker, Title &$title, &$file,
-		array &$frameParams, array &$handlerParams, &$time, &$result, Parser $parser = null,
+		array &$frameParams, array &$handlerParams, &$time, &$result, ?Parser $parser = null,
 		&$query = '', &$widthOption = null ) {
 		$className = static::class;
 		$hookHandler = new $className(
@@ -147,7 +147,7 @@ abstract class ImageBeforeProduceHTML extends Hook {
 	 * @param int|null &$widthOption
 	 */
 	public function __construct( $context, $config, DummyLinker &$linker, Title &$title, &$file,
-		array &$frameParams, array &$handlerParams, &$time, &$result, Parser $parser = null,
+		array &$frameParams, array &$handlerParams, &$time, &$result, ?Parser $parser = null,
 		&$query = '', &$widthOption = null ) {
 		parent::__construct( $context, $config );
 

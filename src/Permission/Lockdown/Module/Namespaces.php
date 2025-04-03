@@ -48,7 +48,7 @@ class Namespaces extends Module {
 	 * @return IModule
 	 */
 	public static function getInstance( Config $config, IContextSource $context,
-		MediaWikiServices $services, RoleManager $manager = null ) {
+		MediaWikiServices $services, ?RoleManager $manager = null ) {
 		if ( !$manager ) {
 			$manager = $services->getService( 'BSRoleManager' );
 		}

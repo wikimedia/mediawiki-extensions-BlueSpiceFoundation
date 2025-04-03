@@ -122,7 +122,7 @@ abstract class Content extends \BlueSpice\Entity {
 	 * @param array $aOptions
 	 * @return Status
 	 */
-	public function save( User $oUser = null, $aOptions = [] ) {
+	public function save( ?User $oUser = null, $aOptions = [] ) {
 		$oTitle = $this->getTitle();
 		if ( $oTitle === null ) {
 			return Status::newFatal( 'Related Title error' );

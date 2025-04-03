@@ -97,7 +97,7 @@ abstract class Task implements ITask, MessageLocalizer {
 	 * @return ITask
 	 */
 	public static function factory( MediaWikiServices $services, Context $context,
-		IPermissionChecker $permissionChecker = null ) {
+		?IPermissionChecker $permissionChecker = null ) {
 		$actionLogger = new NullLogger();
 		$logger = LoggerFactory::getInstance( static::class );
 		if ( !$permissionChecker ) {
@@ -125,7 +125,7 @@ abstract class Task implements ITask, MessageLocalizer {
 	 * @param Status|null $status
 	 * @return Status
 	 */
-	public function execute( array $params = [], Status $status = null ) {
+	public function execute( array $params = [], ?Status $status = null ) {
 		if ( !$status ) {
 			$status = Status::newGood();
 		} elseif ( !$status->isGood() ) {

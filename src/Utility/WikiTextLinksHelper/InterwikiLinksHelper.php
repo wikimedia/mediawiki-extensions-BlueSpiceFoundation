@@ -28,7 +28,7 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	 * @param Title|null $title
 	 * @return bool
 	 */
-	protected function isValidInterwikiLink( Title $title = null ) {
+	protected function isValidInterwikiLink( ?Title $title = null ) {
 		return !empty( $title->getInterwiki() );
 	}
 

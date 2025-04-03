@@ -24,8 +24,8 @@ class Reader extends DatabaseReader {
 	 * @param Config|null $config
 	 * @param bool $filterForContextUser
 	 */
-	public function __construct( $loadBalancer, IContextSource $context = null,
-			Config $config = null, $filterForContextUser = false ) {
+	public function __construct( $loadBalancer, ?IContextSource $context = null,
+			?Config $config = null, $filterForContextUser = false ) {
 		parent::__construct( $loadBalancer, $context, $config );
 	}
 
