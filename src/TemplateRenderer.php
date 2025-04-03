@@ -61,9 +61,9 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @param TemplateFactory|null $templateFactory
 	 */
 	protected function __construct( Config $config, Params $params,
-		LinkRenderer $linkRenderer = null, IContextSource $context = null,
-		$name = '', CacheHelper $cacheHelper = null,
-		TemplateFactory $templateFactory = null ) {
+		?LinkRenderer $linkRenderer = null, ?IContextSource $context = null,
+		$name = '', ?CacheHelper $cacheHelper = null,
+		?TemplateFactory $templateFactory = null ) {
 		parent::__construct( $config, $params, $linkRenderer, $context, $name );
 
 		$this->cacheHelper = $cacheHelper;
@@ -83,8 +83,8 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	 * @return Renderer
 	 */
 	public static function factory( $name, MediaWikiServices $services, Config $config,
-		Params $params, IContextSource $context = null, LinkRenderer $linkRenderer = null,
-		CacheHelper $cacheHelper = null, TemplateFactory $templateFactory = null ) {
+		Params $params, ?IContextSource $context = null, ?LinkRenderer $linkRenderer = null,
+		?CacheHelper $cacheHelper = null, ?TemplateFactory $templateFactory = null ) {
 		if ( !$context ) {
 			$context = $params->get(
 				static::PARAM_CONTEXT,

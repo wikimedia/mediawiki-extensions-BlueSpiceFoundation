@@ -21,7 +21,7 @@ class Item extends \BlueSpice\Renderer\SimpleList\Item {
 	 * @param string $name
 	 */
 	protected function __construct( Config $config, Params $params,
-		LinkRenderer $linkRenderer = null, IContextSource $context = null,
+		?LinkRenderer $linkRenderer = null, ?IContextSource $context = null,
 		$name = '' ) {
 		parent::__construct( $config, $params, $linkRenderer, $context, $name );
 		$this->args[static::PARAM_TARGET] = $params->get(

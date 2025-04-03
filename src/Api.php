@@ -233,7 +233,7 @@ abstract class Api extends ApiBase {
 	 * @param Title|null $title
 	 */
 	protected function checkPermission( Status $status, User $user, $permission,
-		Title $title = null ) {
+		?Title $title = null ) {
 		if ( !$status->isOK() ) {
 			return;
 		}

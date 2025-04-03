@@ -84,7 +84,7 @@ class Groups extends Module {
 	 */
 	public static function getInstance( Config $config,
 		IContextSource $context, MediaWikiServices $services,
-		ExtensionAttributeBasedRegistry $registry = null ) {
+		?ExtensionAttributeBasedRegistry $registry = null ) {
 		if ( !$registry ) {
 			$registry = new ExtensionAttributeBasedRegistry(
 				'BlueSpiceFoundationPermissionLockdownGroupModuleRegistry'

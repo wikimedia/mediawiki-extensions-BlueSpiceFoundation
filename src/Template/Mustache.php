@@ -17,8 +17,8 @@ class Mustache extends \BlueSpice\Template {
 	 * @return Template
 	 */
 	public static function factory( MediaWikiServices $services, $alias,
-		TemplateHelper $templateHelper = null,
-		ITemplateParser $templateParser = null ) {
+		?TemplateHelper $templateHelper = null,
+		?ITemplateParser $templateParser = null ) {
 		if ( !$templateHelper ) {
 			$templateHelper = $services->getService( 'BSUtilityFactory' )->getTemplateHelper();
 		}

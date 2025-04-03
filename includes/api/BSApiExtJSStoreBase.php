@@ -693,7 +693,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	 */
 	private function canBeCastedToString( $mValue ) {
 		if ( !is_array( $mValue ) &&
-			( !is_object( $mValue ) && settype( $mValue, 'string' ) !== false ) ||
+			( !is_object( $mValue ) && settype( $mValue, 'string' ) !== false ) || // phpcs:ignore Generic.CodeAnalysis.RequireExplicitBooleanOperatorPrecedence.MissingParentheses, Generic.Files.LineLength.TooLong
 			( is_object( $mValue ) && method_exists( $mValue, '__toString' ) ) ) {
 			return true;
 		} else {

@@ -46,8 +46,8 @@ abstract class Template implements ITemplate {
 	 * @return Template
 	 */
 	abstract public static function factory( MediaWikiServices $services, $alias,
-		TemplateHelper $templateHelper = null,
-		ITemplateParser $templateParser = null );
+		?TemplateHelper $templateHelper = null,
+		?ITemplateParser $templateParser = null );
 
 	/**
 	 *

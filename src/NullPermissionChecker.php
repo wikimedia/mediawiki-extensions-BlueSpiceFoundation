@@ -14,7 +14,7 @@ class NullPermissionChecker implements IPermissionChecker {
 	 * @param IContextSource|null $context
 	 * @return bool
 	 */
-	public function userCan( User $user, $permission, IContextSource $context = null ) {
+	public function userCan( User $user, $permission, ?IContextSource $context = null ) {
 		return true;
 	}
 

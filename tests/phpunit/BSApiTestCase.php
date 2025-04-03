@@ -42,7 +42,7 @@ class BSApiTestCase extends ApiTestCase {
 	 * @return array
 	 */
 	public function insertPage( $pageName, $text = 'Sample page for unit test.',
-		$namespace = null, User $user = null ) {
+		$namespace = null, ?User $user = null ) {
 		return parent::insertPage( $pageName, $text, $namespace, $user );
 	}
 }

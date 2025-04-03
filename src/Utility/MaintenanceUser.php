@@ -35,7 +35,7 @@ class MaintenanceUser {
 	 * @param User|null $user
 	 * @return bool
 	 */
-	public function isMaintenanceUser( User $user = null ) {
+	public function isMaintenanceUser( ?User $user = null ) {
 		if ( !$user ) {
 			return false;
 		}

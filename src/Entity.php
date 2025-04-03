@@ -172,7 +172,7 @@ abstract class Entity implements JsonSerializable {
 	 * @return \static
 	 */
 	public static function newFromFactory( \stdClass $data, EntityConfig $config,
-		IStore $store, EntityFactory $entityFactory = null ) {
+		IStore $store, ?EntityFactory $entityFactory = null ) {
 		if ( !$entityFactory ) {
 			$entityFactory = MediaWikiServices::getInstance()->getService(
 				'BSEntityFactory'
@@ -195,7 +195,7 @@ abstract class Entity implements JsonSerializable {
 	 * @param array $aOptions
 	 * @return Status
 	 */
-	public function save( User $user = null, $aOptions = [] ) {
+	public function save( ?User $user = null, $aOptions = [] ) {
 		if ( !$user instanceof User ) {
 			return Status::newFatal( 'No User' );
 		}
@@ -235,7 +235,7 @@ abstract class Entity implements JsonSerializable {
 	 * @param User|null $user
 	 * @return Status
 	 */
-	public function delete( User $user = null ) {
+	public function delete( ?User $user = null ) {
 		$status = Status::newGood();
 
 		$this->services->getHookContainer()->run( 'BSEntityDelete', [
@@ -273,7 +273,7 @@ abstract class Entity implements JsonSerializable {
 	 * @param User|null $user
 	 * @return Status
 	 */
-	public function undelete( User $user = null ) {
+	public function undelete( ?User $user = null ) {
 		$status = Status::newGood();
 
 		$this->services->getHookContainer()->run( 'BSEntityUndelete', [
@@ -351,7 +351,7 @@ abstract class Entity implements JsonSerializable {
 	 * @param IContextSource|null $context
 	 * @return Renderer
 	 */
-	public function getRenderer( IContextSource $context = null ) {
+	public function getRenderer( ?IContextSource $context = null ) {
 		if ( !$context ) {
 			$context = RequestContext::getMain();
 		}
