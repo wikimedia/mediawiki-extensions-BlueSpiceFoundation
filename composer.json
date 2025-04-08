@@ -26,7 +26,7 @@
 		"mwstake/mediawiki-component-commonuserinterface": "~5",
 		"mwstake/mediawiki-component-runjobstrigger": "~2",
 		"mwstake/mediawiki-component-alertbanners": "~2",
-		"mwstake/mediawiki-component-manifestregistry": "~2",
+		"mwstake/mediawiki-component-manifestregistry": "~3",
 		"mwstake/mediawiki-component-utils": "~3",
 		"mwstake/mediawiki-component-datastore": "~1",
 		"mwstake/mediawiki-component-dynamicfiledispatcher": "~1.0"
