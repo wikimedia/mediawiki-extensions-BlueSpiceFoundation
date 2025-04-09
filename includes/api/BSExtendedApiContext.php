@@ -2,51 +2,24 @@
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Json\FormatJson;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\WebRequest;
-use MediaWiki\Revision\RevisionRecord;
-use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 
 class BSExtendedApiContext {
 
-	/**
-	 *
-	 * @var Title
-	 */
-	protected $oTitle = null;
+	/** @var Title */
+	private $title;
+
+	/** @var array */
+	private $rawContextData = [];
 
 	/**
-	 *
-	 * @var RevisionRecord
-	 */
-	protected $oRevision = null;
-
-	/**
-	 *
-	 * @var SpecialPage
-	 */
-	protected $oSpecialPage = null;
-
-	/**
-	 *
-	 * @var Title
-	 */
-	protected $oRelevantPage = null;
-
-	/**
-	 *
-	 * @var array
-	 */
-	protected $aRawContextData = [];
-
-	/**
-	 * @param WebRequest|null $oRequest
+	 * @param WebRequest|null $request
 	 * @return BSExtendedApiContext
 	 */
-	public static function newFromRequest( $oRequest = null ) {
-		if ( $oRequest === null ) {
-			$oRequest = RequestContext::getMain()->getRequest();
+	public static function newFromRequest( $request = null ) {
+		if ( !$request ) {
+			$request = RequestContext::getMain()->getRequest();
 		}
 
 		/*
@@ -54,7 +27,7 @@ class BSExtendedApiContext {
 		 * 'bluespice.api.js'
 		 * This is to meet standard MediaWiki behavior
 		 */
-		$aDefaultParams = [
+		$defaultParams = [
 			'wgAction' => 'view',
 			'wgArticleId' => -1,
 			'wgCanonicalNamespace' => false,
@@ -67,42 +40,32 @@ class BSExtendedApiContext {
 			'wgTitle' => 'API'
 		];
 
-		$aRequestParams = FormatJson::decode(
-			$oRequest->getVal( 'context', '{}' ),
+		$requestParams = FormatJson::decode(
+			$request->getVal( 'context', '{}' ),
 			true
-		) + $aDefaultParams;
+		) + $defaultParams;
 
-		$oTitle = Title::newFromID( $aRequestParams['wgArticleId'] );
+		$title = Title::newFromID( $requestParams['wgArticleId'] );
 		// e.g. on a SpecialPage
-		if ( $oTitle instanceof Title === false ) {
-			$oTitle = Title::makeTitle(
-				$aRequestParams['wgNamespaceNumber'],
-				$aRequestParams['wgTitle']
+		if ( !$title ) {
+			$title = Title::makeTitle(
+				$requestParams['wgNamespaceNumber'],
+				$requestParams['wgTitle']
 			);
 		}
 
-		$revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
-
 		// TODO: Fallback if any of those is empty!
-		$aParams = [
-			'title'        => $oTitle,
-			'revision'     => $revisionLookup->getRevisionById( $aRequestParams['wgRevisionId'] ),
-			'specialpage'  => \MediaWiki\MediaWikiServices::getInstance()
-				->getSpecialPageFactory()
-				->getPage( $aRequestParams['wgCanonicalSpecialPageName'] ),
-			'relevantpage' => Title::newFromText( $aRequestParams['wgRelevantPageName'] ),
-			'rawdata' => $aRequestParams
+		$params = [
+			'title' => $title,
+			'rawdata' => $requestParams
 		];
 
-		return new self( $aParams );
+		return new self( $params );
 	}
 
-	private function __construct( $aParams ) {
-		$this->oTitle        = $aParams['title'];
-		$this->oRevision     = $aParams['revision'];
-		$this->oSpecialPage  = $aParams['specialpage'];
-		$this->oRelevantPage = $aParams['relevantpage'];
-		$this->aRawContextData = $aParams['rawdata'];
+	private function __construct( $params ) {
+		$this->title = $params['title'];
+		$this->rawContextData = $params['rawdata'];
 	}
 
 	/**
@@ -110,36 +73,7 @@ class BSExtendedApiContext {
 	 * @return Title
 	 */
 	public function getTitle() {
-		return $this->oTitle;
-	}
-
-	/**
-	 * Whether the context Title is a SpecialPage
-	 * @return bool
-	 */
-	public function isSpecialPage() {
-		return $this->oTitle->isSpecialPage();
-	}
-
-	/**
-	 * If call comes from a WikiPage, this returns a Revision object, otherwise
-	 * NULL.
-	 * Attention: This reflects the RevisionId that the client sees, _not_ the
-	 * one that is the _latest_ to the context Title. It may be a old revision
-	 * though.
-	 * @return RevisionRecord
-	 */
-	public function getRevision() {
-		return $this->oRevision;
-	}
-
-	/**
-	 * If call comes from SpecialPage, this returns a SpecialPage object,
-	 * otherwise NULL
-	 * @return SpecialPage
-	 */
-	public function getSpecialPage() {
-		return $this->oSpecialPage;
+		return $this->title;
 	}
 
 	/**
@@ -147,7 +81,7 @@ class BSExtendedApiContext {
 	 * @return array
 	 */
 	public function getRawContextData() {
-		return $this->aRawContextData;
+		return $this->rawContextData;
 	}
 
 }
