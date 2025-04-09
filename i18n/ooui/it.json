@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
-			"Joetaras"
+			"Joetaras",
+			"GpieroMW"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Aggiungi nuovo...",
