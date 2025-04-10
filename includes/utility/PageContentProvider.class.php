@@ -233,7 +233,10 @@ class BsPageContentProvider {
 
 		$this->bEncapsulateContent = $bOldValueOfEncapsulateContent;
 
+		libxml_use_internal_errors(true);
 		$oDOMDoc->loadHTML( '<?xml encoding="utf-8" ?>' . $sHtmlContent );
+		libxml_clear_errors();
+		libxml_use_internal_errors(false);
 
 		$oPreTags = $oDOMDoc->getElementsByTagName( 'pre' );
 		foreach( $oPreTags as $oPreTag ) {
