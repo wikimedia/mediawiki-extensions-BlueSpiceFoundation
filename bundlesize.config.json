@@ -1,0 +1,10 @@
+[
+	{
+		"resourceModule": "ext.bluespice.styles",
+		"maxSize": "3.5 kB"
+	},
+	{
+		"resourceModule": "ext.bluespice.compat.vector.styles",
+		"maxSize": "0.2 kB"
+	}
+]
