@@ -6,5 +6,9 @@
 	{
 		"resourceModule": "ext.bluespice.compat.vector.styles",
 		"maxSize": "0.2 kB"
+	},
+	{
+		"resourceModule": "ext.bluespice",
+		"maxSize": "10.7 kB"
 	}
 ]
