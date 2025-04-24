@@ -20,5 +20,12 @@
 	"bs-ui-generic-no": "No",
 	"bs-exportpages-dialog-title": "Exportar paginas a un collection",
 	"bs-exportpages-success-text": "Paginas exportate a [[$1|$2]]",
-	"bs-ui-generic-close": "Clauder"
+	"bs-ui-generic-close": "Clauder",
+	"bs-pageexport-list-name-label": "Nomine del lista",
+	"bs-pageexport-list-format-label": "Formato del lista",
+	"bs-pageexport-list-format-plain-label": "Texto simple",
+	"bs-pageexport-list-format-link-label": "Ligamine",
+	"bs-pageexport-overwrite-label": "Superscriber",
+	"bs-export-search-summary-text": "Generate per PageExport",
+	"bs-pagecollection-prefix": "Collection de paginas"
 }

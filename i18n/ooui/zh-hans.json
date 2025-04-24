@@ -15,5 +15,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "未设置值！",
 	"bs-ooui-btn-dismiss-alert-title": "关闭",
 	"bs-ooui-key-value-input-widget-section-label": "章节",
-	"bs-ooui-key-value-input-widget-add-section-label": "新增章节"
+	"bs-ooui-key-value-input-widget-add-section-label": "新增章节",
+	"bs-pagecollection-prefix": "页面收藏"
 }

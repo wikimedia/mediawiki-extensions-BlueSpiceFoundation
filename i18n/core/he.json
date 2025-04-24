@@ -120,5 +120,7 @@
 	"bs-permission-role-reader": "קורא",
 	"bs-permission-role-editor": "עורך",
 	"bs-permission-role-reviewer": "סוקר",
-	"bs-permission-role-admin": "מפעיל"
+	"bs-permission-role-admin": "מפעיל",
+	"bs-title-warning": "אזהרה",
+	"bs-title-success": "זה עבד"
 }

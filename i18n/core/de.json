@@ -5,13 +5,15 @@
 			"CyberOne25",
 			"DraconicDark",
 			"Elliot",
+			"GünniBusch",
 			"Hwboehm",
 			"Inkowik",
 			"Metalhead64",
 			"Mglaser",
 			"Mschlindwein",
 			"Pittigrilli",
-			"Umherirrender"
+			"Umherirrender",
+			"Vhoesl"
 		]
 	},
 	"bluespicefoundation-desc": "Macht MediaWiki bereit für Unternehmen",
@@ -113,5 +115,9 @@
 	"action-editor": "Gewährt alle Berechtigungen der Rolle \"editor\" für geschützte Seiten in der Bearbeiter-Einschränkung, wenn das Rollensystem aktiviert ist",
 	"bs-exttype-bluespice-assets": "BlueSpice-Assets",
 	"bs-title-warning": "Warnung",
-	"bs-title-success": "Erfolg"
+	"bs-title-success": "Erfolg",
+	"bs-permission-role-reader": "Leser",
+	"bs-permission-role-editor": "Bearbeiter",
+	"bs-permission-role-reviewer": "Prüfer",
+	"bs-permission-role-admin": "Administrator"
 }

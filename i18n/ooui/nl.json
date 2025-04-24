@@ -3,6 +3,7 @@
 		"authors": [
 			"Mainframe98",
 			"McDutchie",
+			"Niknetniko",
 			"Optilete",
 			"Romaine"
 		]
@@ -23,5 +24,12 @@
 	"bs-ui-generic-no": "Nee",
 	"bs-exportpages-dialog-title": "Pagina’s exporteren naar een verzameling",
 	"bs-exportpages-success-text": "Pagina’s geëxporteerd naar [[$1|$2]]",
-	"bs-ui-generic-close": "Sluiten"
+	"bs-ui-generic-close": "Sluiten",
+	"bs-pageexport-list-name-label": "Lijstnaam",
+	"bs-pageexport-list-format-label": "Lijstindeling",
+	"bs-pageexport-list-format-plain-label": "Tekst zonder opmaak",
+	"bs-pageexport-list-format-link-label": "Koppeling",
+	"bs-pageexport-overwrite-label": "Overschrijven",
+	"bs-export-search-summary-text": "Gegenereerd door PageExport",
+	"bs-pagecollection-prefix": "Paginaverzameling"
 }

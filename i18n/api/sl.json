@@ -67,7 +67,7 @@
 	"bs-api-task-taskData-page-id": "ID obstoječe vikistrani",
 	"bs-api-task-taskData-page-title": "Veljaven naslov vikistrani",
 	"bs-api-task-wikipagetasks-taskData-categories": "Matrika nizov. Vrednosti morajo biti veljavna imena kategorij.",
-	"apihelp-bs-watchlist-store-summary": "Navede vse vnose na spisku nadzorov. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre shranjevanja.",
+	"apihelp-bs-watchlist-store-summary": "Navede vse vnose na nadzornem seznamu. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre shranjevanja.",
 	"apihelp-bs-recentchanges-store-summary": "Navede vse nedavne spremembe. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre shranjevanja.",
 	"apihelp-bs-task-summary": "Zagotavlja končno točko API-ja za izvajanje zabeleženih nalog",
 	"apihelp-bs-task-description": "Zagotavlja končno točko API-ja za izvajanje zabeleženih nalog",

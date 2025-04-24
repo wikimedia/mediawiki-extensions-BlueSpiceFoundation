@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeje Brazorf"
+			"Ajeje Brazorf",
+			"GianAntonucci"
 		]
 	},
 	"bs-ns_main": "(Pàggini)",
@@ -17,8 +18,8 @@
 	"bs-hours-duration": "{{PLURAL:$1|na ura|$1 uri}}",
 	"bs-mins-duration": "{{PLURAL:$1|un minutu|$1 minuti}}",
 	"bs-secs-duration": "{{PLURAL:$1|nu sicunnu|$1 sicunni}}",
-	"bs-two-units-ago": "$1 e $2 fa",
-	"bs-one-unit-ago": "$1 fa",
+	"bs-two-units-ago": "$1 e $2 arrè",
+	"bs-one-unit-ago": "$1 arrè",
 	"bs-now": "ora",
 	"bs-userpagesettings-legend": "Mpustazzioni utenti",
 	"bs-userpreferences-link-text": "Àutri mpustazzioni utenti",

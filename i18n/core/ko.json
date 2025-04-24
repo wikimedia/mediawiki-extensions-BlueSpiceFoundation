@@ -101,5 +101,7 @@
 	"bs-permission-role-reader": "독자",
 	"bs-permission-role-editor": "편집자",
 	"bs-permission-role-reviewer": "검토자",
-	"bs-permission-role-admin": "관리자"
+	"bs-permission-role-admin": "관리자",
+	"bs-title-warning": "경고",
+	"bs-title-success": "성공"
 }

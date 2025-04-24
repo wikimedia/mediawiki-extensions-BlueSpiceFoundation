@@ -19,7 +19,8 @@
 			"Okras",
 			"Pacha Tchernof",
 			"Shaleych",
-			"Vlad5250"
+			"Vlad5250",
+			"Yurina Tatiana"
 		]
 	},
 	"bluespicefoundation-desc": "Делает MediaWiki готовой для предприятия",
@@ -119,5 +120,7 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Не удалось записать файл конфигурации $1!",
 	"bs-pref-logopath-help": "Логотип должен храниться в папке /w/images вашей установки. Если вы сохраните его в папке /w/skins вашей установки BlueSpice, его можно перезаписать при обновлении.",
 	"bs-pref-faviconpath-help": "Favicon должен храниться в папке /w/images вашей установки. Если вы сохраните его в папке /w/skins вашей установки BlueSpice, он может быть перезаписан при обновлении. Favicon имеет расширение файла .ico.",
-	"bs-permission-role-admin": "Администратор"
+	"bs-permission-role-admin": "Администратор",
+	"bs-title-warning": "Предупреждение",
+	"bs-title-success": "Успешно"
 }

@@ -5,6 +5,7 @@
 			"Derugon",
 			"DreZhsh",
 			"Gomoko",
+			"JLTRY",
 			"Macofe",
 			"Mahabarata",
 			"Pols12",
@@ -115,5 +116,7 @@
 	"bs-permission-role-reader": "Lecteur",
 	"bs-permission-role-editor": "Rédacteur",
 	"bs-permission-role-reviewer": "Relecteur",
-	"bs-permission-role-admin": "Administrateur"
+	"bs-permission-role-admin": "Administrateur",
+	"bs-title-warning": "Avertissement",
+	"bs-title-success": "Succès"
 }

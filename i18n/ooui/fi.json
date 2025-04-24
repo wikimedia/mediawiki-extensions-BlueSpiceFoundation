@@ -12,5 +12,6 @@
 	"bs-ooui-key-value-input-widget-add-form-label": "Lisää uusi merkintä",
 	"bs-ooui-btn-dismiss-alert-title": "Hylkää",
 	"bs-ooui-key-value-input-widget-section-label": "Osio",
-	"bs-ooui-key-value-input-widget-add-section-label": "Lisää uusi osio"
+	"bs-ooui-key-value-input-widget-add-section-label": "Lisää uusi osio",
+	"bs-pagecollection-prefix": "\nSivukokoelma"
 }

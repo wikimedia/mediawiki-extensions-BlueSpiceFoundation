@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Chrumps",
+			"Mro",
 			"Pefect",
 			"Rail",
 			"WaldiSt"
@@ -16,5 +17,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Brak ustawionych wartości!",
 	"bs-ooui-key-value-input-widget-section-label": "Sekcja",
 	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nową sekcję",
-	"bs-ooui-btn-dismiss-alert-title": "Odrzuć"
+	"bs-ooui-btn-dismiss-alert-title": "Odrzuć",
+	"bs-pagecollection-prefix": "Zbiór stron"
 }

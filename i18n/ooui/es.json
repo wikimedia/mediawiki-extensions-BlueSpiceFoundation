@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fitoschido",
 			"Jelou",
 			"Joanmp17",
 			"Rapunzel"
@@ -15,5 +16,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "¡Sin valores establecidos!",
 	"bs-ooui-btn-dismiss-alert-title": "Descartar",
 	"bs-ooui-key-value-input-widget-section-label": "Sección",
-	"bs-ooui-key-value-input-widget-add-section-label": "Añadir sección nueva"
+	"bs-ooui-key-value-input-widget-add-section-label": "Añadir sección nueva",
+	"bs-pagecollection-prefix": "Colección de páginas"
 }

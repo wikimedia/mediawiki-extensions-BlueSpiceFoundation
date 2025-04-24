@@ -105,5 +105,7 @@
 	"bs-permission-role-reader": "Lector",
 	"bs-permission-role-editor": "Redactor",
 	"bs-permission-role-reviewer": "Revisor",
-	"bs-permission-role-admin": "Administrator"
+	"bs-permission-role-admin": "Administrator",
+	"bs-title-warning": "Advertimento",
+	"bs-title-success": "Successo"
 }

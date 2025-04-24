@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Alexander Yukal",
+			"Alexandr Efremov",
 			"Kareyac",
 			"Megakott",
 			"Shaleych",
@@ -18,5 +19,8 @@
 	"bs-ooui-btn-dismiss-alert-title": "Отклонить",
 	"bs-ooui-key-value-input-widget-section-label": "Раздел",
 	"bs-ooui-key-value-input-widget-add-section-label": "Добавить новый раздел",
-	"bs-ui-generic-save": "Сохранить"
+	"bs-ui-generic-save": "Сохранить",
+	"bs-pageexport-list-name-label": "Название списка",
+	"bs-pageexport-overwrite-label": "Перезаписать",
+	"bs-pagecollection-prefix": "Коллекция страниц"
 }

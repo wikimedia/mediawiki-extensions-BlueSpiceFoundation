@@ -23,5 +23,12 @@
 	"bs-ui-generic-no": "لا",
 	"bs-exportpages-dialog-title": "تصدير الصفحات إلى مجموعة",
 	"bs-exportpages-success-text": "الصفحات التي تم تصديرها إلى [[$1|$2]]",
-	"bs-ui-generic-close": "إغلاق"
+	"bs-ui-generic-close": "إغلاق",
+	"bs-pageexport-list-name-label": "اسم القائمة",
+	"bs-pageexport-list-format-label": "تنسيق القائمة",
+	"bs-pageexport-list-format-plain-label": "نص عادي",
+	"bs-pageexport-list-format-link-label": "وصلة",
+	"bs-pageexport-overwrite-label": "الكتابة فوق",
+	"bs-export-search-summary-text": "تم إنشاؤه بواسطة PageExport",
+	"bs-pagecollection-prefix": "مجموعة الصفحة"
 }

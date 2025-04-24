@@ -9,5 +9,6 @@
 	"bs-filerepo-headerfiletimestamp": "Жүктөлдү",
 	"bs-filerepo-labelupload": "Жүктөө",
 	"bs-filerepo-headerfiledescription": "Сыпаттама",
-	"bs-filerepo-labelfilter": "Чыпка"
+	"bs-filerepo-labelfilter": "Чыпка",
+	"bs-filerepo-headerfileusertext": "Колдонуучу"
 }

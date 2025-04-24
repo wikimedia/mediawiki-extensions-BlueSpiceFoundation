@@ -13,5 +13,6 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Không có giá trị nào được thiết lập!",
 	"bs-ooui-btn-dismiss-alert-title": "Bỏ qua",
 	"bs-ooui-key-value-input-widget-section-label": "Đề mục",
-	"bs-ooui-key-value-input-widget-add-section-label": "Thêm đề mục mới"
+	"bs-ooui-key-value-input-widget-add-section-label": "Thêm đề mục mới",
+	"bs-pagecollection-prefix": "Bộ sưu tập trang"
 }
