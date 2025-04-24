@@ -56,7 +56,7 @@
 	"bs-filesystemhelper-upload-unsupported-type": "Ta vrsta datotek ni podprta.",
 	"bs-filesystemhelper-save-base64-error": "Datoteke ni bilo mogoče shraniti.",
 	"bs-filesystemhelper-upload-base64-error": "Datoteke ni bilo mogoče naložiti.",
-	"bs-filesystemhelper-upload-local-error-stash-file": "Datoteke ni bilo mogoče premakniti v zalogo za nalaganje.",
+	"bs-filesystemhelper-upload-local-error-stash-file": "Datoteke ni bilo mogoče premakniti v shrambo za nalaganje.",
 	"bs-filesystemhelper-upload-local-error-create": "Datoteke ni bilo mogoče ustvariti v vikiju.",
 	"bs-navigation-instructions": "Navodila",
 	"bs-navigation-support": "Podpora",
