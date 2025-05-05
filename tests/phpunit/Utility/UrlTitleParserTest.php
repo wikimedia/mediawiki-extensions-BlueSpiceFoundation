@@ -3,6 +3,7 @@
 namespace BlueSpice\Tests\Utility;
 
 use BlueSpice\Utility\UrlTitleParser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWikiIntegrationTestCase;
 
@@ -10,9 +11,11 @@ class UrlTitleParserTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$this->setMwGlobals( 'wgServer', 'http://tollerserver.de' );
-		$this->setMwGlobals( 'wgScriptPath', '/w' );
-		$this->setMwGlobals( 'wgArticlePath', '/wiki/$1' );
+		$this->overrideConfigValues( [
+			MainConfigNames::Server => 'http://tollerserver.de',
+			MainConfigNames::ScriptPath => '/w',
+			MainConfigNames::ArticlePath => '/wiki/$1',
+		] );
 	}
 
 	/**
