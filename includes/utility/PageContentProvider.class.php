@@ -559,6 +559,7 @@ class BsPageContentProvider {
 
 		$wgParser = $this->services->getParserFactory()->create();
 		$wgParser->setOptions( $this->getParserOptions() );
+		$wgParser->setPage( $oTitle );
 		$globalParser = MediaWikiServices::getInstance()->getParser();
 		$globalParser->setOptions( $wgParser->getOptions() );
 		$globalParser->setPage( $wgParser->getPage() );
