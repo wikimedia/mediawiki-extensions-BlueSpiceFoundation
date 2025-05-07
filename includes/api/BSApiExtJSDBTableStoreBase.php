@@ -26,6 +26,18 @@
  * Example request parameters of an ExtJS store
  */
 abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
+
+	/** @var array */
+	protected $aTables = [];
+	/** @var array */
+	protected $aFields = [];
+	/** @var array */
+	protected $aConditions = [];
+	/** @var array */
+	protected $aOptions = [];
+	/** @var array */
+	protected $aJoinOptions = [];
+
 	/**
 	 * @param string $sQuery Potential query provided by ExtJS component.
 	 * This is some kind of preliminary filtering. Subclass has to decide if
