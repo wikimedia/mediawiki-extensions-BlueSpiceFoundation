@@ -5,7 +5,7 @@
 		]
 	},
 	"bs-ns_main": "(Барактар)",
-	"bs-userbar_loginswitch_logout": "Чыгуу",
+	"bs-userbar_loginswitch_logout": "Аккаунттан чыгуу",
 	"bs-userbar_loginswitch_login": "Кирүү",
 	"bs-extended-search-textfield-defaultvalue": "Издөө...",
 	"bs-years-duration": "{{PLURAL:$1|бир жыл|$1 жыл}}",
