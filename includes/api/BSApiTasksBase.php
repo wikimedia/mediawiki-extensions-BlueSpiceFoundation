@@ -95,12 +95,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	protected $aReadTasks = [];
 
 	/**
-	 * Holds the context of the API call.
-	 * @var BSExtendedApiContext
-	 */
-	protected $oExtendedContext = null;
-
-	/**
 	 *
 	 * @var BSTasksApiSpec
 	 */
