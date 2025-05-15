@@ -105,13 +105,7 @@
 				"mustache": "\\BlueSpice\\Template\\Mustache::factory"
 			},
 			"JSConfigVars": {},
-			"SecondaryDataUpdateRegistry": {},
-			"StatusCheckProvider": {
-				"bs-foundation-memcached": {
-					"class": "\\BlueSpice\\StatusCheck\\MemcachedStatusCheckProvider",
-					"services": [ "ObjectCacheFactory" ]
-				}
-			}
+			"SecondaryDataUpdateRegistry": {}
 		},
 		"BlueSpicePrivacy": {
 			"CookieConsentNativeMWCookies": {
