@@ -16,10 +16,6 @@ abstract class Writer implements IWriter, \MWStake\MediaWiki\Component\DataStore
 	 */
 	protected $context = null;
 
-	/**
-	 *
-	 * @param IContextSource $context
-	 */
 	public function __construct( IContextSource $context ) {
 		$this->context = $context;
 	}

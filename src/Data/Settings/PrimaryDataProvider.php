@@ -50,10 +50,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $this->data;
 	}
 
-	/**
-	 *
-	 * @param \stdClass $row
-	 */
 	protected function appendRowToData( \stdClass $row ) {
 		$this->data[] = new Record( (object)[
 			Record::NAME => $row->s_name,

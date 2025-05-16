@@ -35,10 +35,6 @@ abstract class Role implements IRole {
 		return new static( $permissionRegistry );
 	}
 
-	/**
-	 *
-	 * @param PermissionRegistry $permissionRegistry
-	 */
 	protected function __construct( PermissionRegistry $permissionRegistry ) {
 		$this->permissionRegistry = $permissionRegistry;
 		$this->loadPermissionsFromRegistry();

@@ -13,8 +13,6 @@ use MediaWiki\Json\FormatJson;
  * @group BlueSpice
  * @group BlueSpiceFoundation
  * @covers \BSApiTitleQueryStore
- *
- * Class BSApiTitleQueryStoreTest
  */
 class BSApiTitleQueryStoreTest extends BSApiExtJSStoreTestBase {
 	protected function getStoreSchema() {

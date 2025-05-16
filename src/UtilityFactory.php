@@ -43,9 +43,6 @@ class UtilityFactory {
 	 */
 	protected $services = null;
 
-	/**
-	 * @param MediaWikiServices $services
-	 */
 	public function __construct( MediaWikiServices $services ) {
 		$this->services = $services;
 	}

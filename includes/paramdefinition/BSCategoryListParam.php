@@ -10,9 +10,6 @@ class BSCategoryListParam extends \ParamProcessor\ParamDefinition {
 		$this->validator = new BSTitleValidator();
 	}
 
-	/**
-	 * @return bool
-	 */
 	public function isList(): bool {
 		return true;
 	}

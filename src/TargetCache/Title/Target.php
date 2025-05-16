@@ -12,10 +12,6 @@ class Target implements \BlueSpice\TargetCache\ITarget {
 	 */
 	protected $title = null;
 
-	/**
-	 *
-	 * @param Title $title
-	 */
 	public function __construct( Title $title ) {
 		$this->title = $title;
 	}

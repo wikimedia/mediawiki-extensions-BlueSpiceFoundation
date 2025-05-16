@@ -397,15 +397,11 @@ abstract class Entity implements JsonSerializable {
 
 	/**
 	 * Returns a json serializeable stdClass
-	 * @return \stdClass
 	 */
 	public function jsonSerialize(): \stdClass {
 		return (object)$this->getFullData();
 	}
 
-	/**
-	 * @param \stdClass $data
-	 */
 	public function setValuesByObject( \stdClass $data ) {
 		if ( !empty( $data->{static::ATTR_ARCHIVED} ) ) {
 			$this->set( static::ATTR_ARCHIVED, $data->{static::ATTR_ARCHIVED} );

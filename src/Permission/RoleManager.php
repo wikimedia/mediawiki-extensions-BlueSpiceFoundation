@@ -409,8 +409,6 @@ class RoleManager {
 	 * as it was before applying the role system
 	 *
 	 * TODO: this mechanism will change, so for now hardcoded
-	 *
-	 * @return array
 	 */
 	private function getIndependentPermissions(): array {
 		return [

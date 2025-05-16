@@ -85,10 +85,6 @@ class Entity extends \BlueSpice\TemplateRenderer implements \JsonSerializable {
 		return $this->entity;
 	}
 
-	/**
-	 *
-	 * @return array
-	 */
 	public function jsonSerialize(): array {
 		return $this->args;
 	}

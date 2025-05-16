@@ -24,10 +24,6 @@ class CacheHelper {
 	 */
 	protected $store = [];
 
-	/**
-	 *
-	 * @param Config $config
-	 */
 	public function __construct( Config $config ) {
 		$this->config = $config;
 		$this->cache = \ObjectCache::getInstance(

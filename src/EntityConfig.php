@@ -127,7 +127,6 @@ abstract class EntityConfig implements JsonSerializable, Config {
 
 	/**
 	 * Returns a json serializable object
-	 * @return \stdClass
 	 */
 	public function jsonSerialize(): \stdClass {
 		$aConfig = [];

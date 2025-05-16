@@ -26,11 +26,6 @@ class TemplateFactory {
 	 */
 	protected $intances = [];
 
-	/**
-	 *
-	 * @param ExtensionAttributeBasedRegistry $registry
-	 * @param TemplateHelper $templateHelper
-	 */
 	public function __construct( ExtensionAttributeBasedRegistry $registry,
 		TemplateHelper $templateHelper ) {
 		$this->registry = $registry;

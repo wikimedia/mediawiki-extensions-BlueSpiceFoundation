@@ -94,10 +94,6 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 		}
 	}
 
-	/**
-	 *
-	 * @param array $options
-	 */
 	public function setOptions( array $options ) {
 		parent::setOptions( $options );
 

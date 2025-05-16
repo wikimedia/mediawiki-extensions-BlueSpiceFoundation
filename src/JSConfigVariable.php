@@ -20,10 +20,6 @@ abstract class JSConfigVariable implements IJSConfigVariable {
 		return new static ( $context, $config );
 	}
 
-	/**
-	 * @param IContextSource $context
-	 * @param Config $config
-	 */
 	public function __construct( IContextSource $context, Config $config ) {
 		$this->context = $context;
 		$this->config = $config;

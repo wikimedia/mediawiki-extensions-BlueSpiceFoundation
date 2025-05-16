@@ -53,10 +53,6 @@ class EntityConfigFactory {
 	 */
 	protected $entityRegistry = null;
 
-	/**
-	 * @param ExtensionAttributeBasedRegistry $entityRegistry
-	 * @param Config $config
-	 */
 	public function __construct( ExtensionAttributeBasedRegistry $entityRegistry,
 		Config $config ) {
 		$this->entityRegistry = $entityRegistry;

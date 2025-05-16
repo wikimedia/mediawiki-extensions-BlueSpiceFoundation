@@ -24,11 +24,6 @@ class Context implements IContextSource {
 	/** @var MediaWikiServices */
 	protected $services = null;
 
-	/**
-	 *
-	 * @param IContextSource $context
-	 * @param Config $config
-	 */
 	public function __construct( IContextSource $context, Config $config ) {
 		$this->context = $context;
 		$this->config = $config;
@@ -143,9 +138,6 @@ class Context implements IContextSource {
 		return $this->context->msg( $key, ...$params );
 	}
 
-	/**
-	 * @return Authority
-	 */
 	public function getAuthority(): Authority {
 		return $this->context->getAuthority();
 	}

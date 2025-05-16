@@ -57,8 +57,6 @@ class AutoExtensionHandler {
 
 	/**
 	 * Process path and get activated extensions
-	 *
-	 * @return array
 	 */
 	public function getExtensions(): array {
 		$this->findFiles();

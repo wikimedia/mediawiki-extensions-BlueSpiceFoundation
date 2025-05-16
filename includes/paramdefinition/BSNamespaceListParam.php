@@ -37,9 +37,6 @@ class BSNamespaceListParam extends \ParamProcessor\ParamDefinition {
 		$this->validator = new BSNamespaceValidator();
 	}
 
-	/**
-	 * @return bool
-	 */
 	public function isList(): bool {
 		return true;
 	}
