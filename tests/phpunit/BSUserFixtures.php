@@ -14,9 +14,7 @@ class BSUserFixtures {
 	 * @param BSFixturesProvider|null $provider
 	 */
 	public function __construct( $testcase, $provider = null ) {
-		if ( $provider === null ) {
-			$provider = new BSUserFixturesProvider();
-		}
+		$provider ??= new BSUserFixturesProvider();
 
 		// Register at testcase so 'makeTestUsers' can be called in each and
 		// every run of "setUp"

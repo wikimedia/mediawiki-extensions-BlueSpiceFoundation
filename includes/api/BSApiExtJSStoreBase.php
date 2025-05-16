@@ -465,10 +465,7 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 		}
 		$aFilterValues = $oFilter->value;
 		$aTemp = array_intersect( $aFieldValues, $aFilterValues );
-		if ( empty( $aTemp ) ) {
-			return false;
-		}
-		return true;
+		return !empty( $aTemp );
 	}
 
 	/**
