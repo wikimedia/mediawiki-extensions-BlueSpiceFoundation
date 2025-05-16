@@ -41,5 +41,6 @@
 	"apihelp-bs-recentchanges-store-summary": "최근의 모든 변경사항을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. 스토어 변수를 구현합니다.",
 	"apihelp-bs-js-var-config-param-format": "결과 형식",
 	"apihelp-bs-categorylinks-store-param-page-id": "문서의 문서 ID",
-	"apihelp-bs-templatelinks-store-param-page-id": "문서의 문서 ID"
+	"apihelp-bs-templatelinks-store-param-page-id": "문서의 문서 ID",
+	"apihelp-bs-adminuser-store-summary": "추가 민감한 데이터를 가진 데이터베이스로부터 모든 사용자를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다."
 }
