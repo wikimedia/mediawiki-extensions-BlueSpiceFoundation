@@ -9,6 +9,10 @@ use MediaWiki\Title\Title;
  * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
+ * @covers \BlueSpice\Tests\BSPageFixtures
+ * @covers \BlueSpice\Tests\BSPageFixturesProvider
+ * @covers \BlueSpice\Tests\BSUserFixtures
+ * @covers \BlueSpice\Tests\BSUserFixturesProvider
  */
 class BSFixturesTest extends BSApiTestCase {
 
@@ -18,17 +22,11 @@ class BSFixturesTest extends BSApiTestCase {
 		new BSUserFixtures( $this );
 	}
 
-	/**
-	 * @covers \MediaWiki\Title\Title::newFromText
-	 */
 	public function testPageFixtures() {
 		$title = Title::newFromText( 'Template:Hello World' );
 		$this->assertTrue( $title->exists(), 'Title should be known' );
 	}
 
-	/**
-	 * @covers User::newFromName
-	 */
 	public function testUserFixtures() {
 		$services = $this->getServiceContainer();
 		$user = $services->getUserFactory()->newFromName( 'Paul' );

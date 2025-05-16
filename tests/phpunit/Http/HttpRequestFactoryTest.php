@@ -9,13 +9,13 @@ use PHPUnit\Framework\TestCase;
 class HttpRequestFactoryTest extends TestCase {
 
 	/**
-	 * @covers BlueSpice\Http\HttpRequestFactory::canMakeRequests
-	 * @covers BlueSpice\Http\HttpRequestFactory::create
-	 * @covers BlueSpice\Http\HttpRequestFactory::createMultiClient
-	 * @covers BlueSpice\Http\HttpRequestFactory::get
-	 * @covers BlueSpice\Http\HttpRequestFactory::getUserAgent
-	 * @covers BlueSpice\Http\HttpRequestFactory::post
-	 * @covers BlueSpice\Http\HttpRequestFactory::request
+	 * @covers \BlueSpice\Http\HttpRequestFactory::canMakeRequests
+	 * @covers \BlueSpice\Http\HttpRequestFactory::create
+	 * @covers \BlueSpice\Http\HttpRequestFactory::createMultiClient
+	 * @covers \BlueSpice\Http\HttpRequestFactory::get
+	 * @covers \BlueSpice\Http\HttpRequestFactory::getUserAgent
+	 * @covers \BlueSpice\Http\HttpRequestFactory::post
+	 * @covers \BlueSpice\Http\HttpRequestFactory::request
 	 * @return void
 	 */
 	public function testDefaultOptions() {

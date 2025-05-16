@@ -93,7 +93,7 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
+	 * @covers \BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
 	 */
 	public function testGetTargetMatches() {
 		$wikitext = $this->provideWikitextData();
@@ -104,7 +104,7 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
+	 * @covers \BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
 	 */
 	public function testGetTargetMatchCount() {
 		$wikitext = $this->provideWikitextData();
@@ -116,7 +116,7 @@ class InternalLinksHelperTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
+	 * @covers \BlueSpice\Utility\WikiTextLinksHelper\InternalLinksHelper::getTargets
 	 */
 	public function testGetTargets() {
 		$wikitext = $this->provideWikitextData();
