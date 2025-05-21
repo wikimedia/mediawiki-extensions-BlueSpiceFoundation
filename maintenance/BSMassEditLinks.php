@@ -55,9 +55,6 @@ class BSMassEditLinks extends BSMassEditBase {
 		parent::execute();
 	}
 
-	/**
-	 * @return bool
-	 */
 	private function loadMapFile(): bool {
 		$filename = $this->getOption( 'mapfile' );
 		if ( !$filename ) {

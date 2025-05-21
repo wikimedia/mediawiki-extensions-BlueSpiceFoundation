@@ -45,9 +45,6 @@ class CheckDuplicateImages extends BSMaintenance {
 		return $imageNames;
 	}
 
-	/**
-	 * @return array
-	 */
 	public function getDeletedImages(): array {
 		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
 		global $IP, $wgScriptPath, $wgResourceBasePath;

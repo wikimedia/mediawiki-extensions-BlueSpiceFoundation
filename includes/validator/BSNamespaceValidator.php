@@ -89,10 +89,6 @@ class BSNamespaceValidator extends ValueValidatorBase {
 		}
 	}
 
-	/**
-	 *
-	 * @param array $options
-	 */
 	public function setOptions( array $options ) {
 		parent::setOptions( $options );
 

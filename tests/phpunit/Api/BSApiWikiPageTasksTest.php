@@ -12,8 +12,6 @@ use MediaWiki\Title\Title;
  * @group Database
  * @group BlueSpice
  * @group BlueSpiceFoundation
- *
- * Class BSApiWikiPageTasksTest
  */
 class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 	protected function getModuleName() {

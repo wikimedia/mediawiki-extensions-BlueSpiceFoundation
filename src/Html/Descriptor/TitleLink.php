@@ -84,8 +84,6 @@ class TitleLink extends LinkBase {
 	 * - BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataTitle
 	 * - BlueSpice\Hook\LinkerMakeMediaLinkFile\AddDataAttributes
 	 * - BlueSpice\Hook\ThumbnailBeforeProduceHTML\AddDataAttributes
-	 *
-	 * @return array
 	 */
 	public function getDataAttributes(): array {
 		$data = parent::getDataAttributes();

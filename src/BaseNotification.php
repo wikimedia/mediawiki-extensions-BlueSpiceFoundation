@@ -74,18 +74,10 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 		}
 	}
 
-	/**
-	 *
-	 * @param User $user
-	 */
 	protected function setAgent( User $user ) {
 		$this->agent = $user;
 	}
 
-	/**
-	 *
-	 * @param Title $title
-	 */
 	protected function setTitle( Title $title ) {
 		$this->title = $title;
 	}

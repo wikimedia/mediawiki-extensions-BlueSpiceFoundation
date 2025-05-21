@@ -87,10 +87,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 		return parent::makeData( $params );
 	}
 
-	/**
-	 *
-	 * @param \stdClass $row
-	 */
 	protected function appendRowToData( \stdClass $row ) {
 		$title = Title::newFromRow( $row );
 		if ( !$title || !$this->userCanRead( $title ) ) {

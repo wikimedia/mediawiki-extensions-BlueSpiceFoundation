@@ -33,9 +33,6 @@ class DeferredNotificationStack {
 		}
 	}
 
-	/**
-	 * @param IDeferredNotification $notification
-	 */
 	public function push( IDeferredNotification $notification ) {
 		$notifications = $this->request->getSession()->get( 'notificationInfo', [] );
 		$notifications[] = $notification;
