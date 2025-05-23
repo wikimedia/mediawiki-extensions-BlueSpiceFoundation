@@ -8,6 +8,9 @@ use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\PPFrame;
 use MediaWiki\Parser\Sanitizer;
 
+/**
+ * @deprecated Use mediawiki-component-generictaghandler instead
+ */
 class GenericHandler {
 
 	public const TAG_DIV = 'div';

@@ -16,6 +16,9 @@ namespace BlueSpice\Tag;
  *     array their results are placed in. **Use great caution if attempting
  *     this interface, as it is not documented and injudicious use could smash
  *     private variables.**
+ *
+ * @deprecated Use mediawiki-component-generictaghandler instead
+ *
  */
 class MarkerType {
 	public const KEY = 'markerType';

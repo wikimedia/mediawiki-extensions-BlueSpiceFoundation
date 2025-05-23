@@ -2,6 +2,9 @@
 
 namespace BlueSpice\Tag;
 
+/**
+ * @deprecated Use mediawiki-component-generictaghandler instead
+ */
 interface IHandler {
 
 	/**

@@ -4,6 +4,9 @@ namespace BlueSpice\Tag;
 
 use BlueSpice\Tag\MarkerType\General;
 
+/**
+ * @deprecated Use mediawiki-component-generictaghandler instead
+ */
 abstract class Tag implements ITag {
 
 	/**
