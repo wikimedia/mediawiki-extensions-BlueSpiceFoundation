@@ -5,6 +5,9 @@ namespace BlueSpice\Tag;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\PPFrame;
 
+/**
+ * @deprecated Use mediawiki-component-generictaghandler instead
+ */
 abstract class Handler implements IHandler {
 
 	/**
