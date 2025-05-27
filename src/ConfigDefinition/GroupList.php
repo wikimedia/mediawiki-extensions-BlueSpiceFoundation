@@ -3,6 +3,7 @@
 namespace BlueSpice\ConfigDefinition;
 
 use BlueSpice\Html\FormField\GroupMultiSelect;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
 
@@ -14,7 +15,7 @@ abstract class GroupList extends \BlueSpice\ConfigDefinition {
 	 */
 	public function getHtmlFormField() {
 		return new GroupMultiSelect( [
-			'parent' => new HTMLForm( [] ),
+			'parent' => new HTMLForm( [], RequestContext::getMain() ),
 			'fieldname' => $this->getName(),
 			'id' => $this->makeID(),
 			'name' => $this->name,
