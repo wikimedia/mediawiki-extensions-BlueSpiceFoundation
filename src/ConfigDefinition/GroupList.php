@@ -3,7 +3,7 @@
 namespace BlueSpice\ConfigDefinition;
 
 use BlueSpice\Html\FormField\GroupMultiSelect;
-use HTMLForm;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Message\Message;
 
 abstract class GroupList extends \BlueSpice\ConfigDefinition {
