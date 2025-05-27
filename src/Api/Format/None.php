@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Api\Format;
 
-use ApiFormatBase;
+use MediaWiki\Api\ApiFormatBase;
 
 /**
  * API formatter which is used for situations, when something really custom should be outputted.
