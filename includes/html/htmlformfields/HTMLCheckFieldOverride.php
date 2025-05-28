@@ -1,7 +1,7 @@
 <?php
 
+use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\Field\HTMLCheckField;
-use MediaWiki\Xml\Xml;
 
 class HTMLCheckFieldOverride extends HTMLCheckField {
 
@@ -21,7 +21,7 @@ class HTMLCheckFieldOverride extends HTMLCheckField {
 			$attr['disabled'] = 'disabled';
 		}
 
-		return Xml::check( $this->mName, $value, $attr );
+		return Html::check( $this->mName, $value, $attr );
 	}
 
 	/**
