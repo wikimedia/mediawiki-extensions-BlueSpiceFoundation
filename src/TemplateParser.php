@@ -8,10 +8,10 @@ use FileContentsHasher;
 use LightnCandy\LightnCandy;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\TemplateParser as MediaWikiTemplateParser;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MessageLocalizer;
-use ObjectCache;
 use RuntimeException;
 use Wikimedia\ObjectCache\BagOStuff;
 
@@ -26,7 +26,8 @@ class TemplateParser extends MediaWikiTemplateParser implements ITemplateParser,
 		if ( !empty( $templateDir ) ) {
 			$templateDir = rtrim( $templateDir, '/' );
 		}
-		$cache = $cache ?: ObjectCache::getLocalServerInstance( CACHE_ANYTHING );
+		$cache = $cache ?:
+			MediaWikiServices::getInstance()->getObjectCacheFactory()->getLocalServerInstance( CACHE_ANYTHING );
 
 		// Do not add more flags here without discussion.
 		// If you do add more flags, be sure to update unit tests as well.
