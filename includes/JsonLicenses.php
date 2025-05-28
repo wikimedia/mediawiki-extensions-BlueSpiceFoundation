@@ -29,7 +29,7 @@ class JsonLicenses extends Licenses {
 	 */
 	public function getJsonOutput() {
 		$this->json[] = $this->outputJsonOption( wfMessage( 'nolicense' )->text(), '' );
-		$this->makeJson( $this->getLicenses() );
+		$this->makeJson( $this->getLines() );
 		return json_encode( [ 'items' => $this->json ] );
 	}
 
