@@ -2,6 +2,7 @@
 
 use MediaWiki\Html\Html;
 use MediaWiki\Xml\Xml;
+use MediaWiki\Xml\XmlSelect;
 
 class XmlMultiSelect extends XmlSelect {
 
