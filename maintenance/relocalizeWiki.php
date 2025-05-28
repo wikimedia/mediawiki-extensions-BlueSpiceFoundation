@@ -4,9 +4,7 @@ use MediaWiki\CommentStore\CommentStoreComment;
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Maintenance\Maintenance;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
-use MediaWiki\SpecialPage\SpecialPage;
 
 require_once 'BSMaintenance.php';
 echo "Relocalize Wiki...\n";
@@ -38,7 +36,7 @@ class RelocalizeWiki extends Maintenance {
 		$this->output( "\nLooking for namespace indexes...\n" );
 		$aFromNs = $this->getNamespaceIndexes( $sOldLang );
 		$this->aFromNs = $aFromNs;
-		$oLang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $sOldLang );
+		$oLang = $this->getServiceContainer()->getLanguageFactory()->getLanguage( $sOldLang );
 		$this->aSpecialFrom = $oLang->getSpecialPageAliases();
 
 		$aToNs = $this->getNamespaceIndexes( $sNewLang );
@@ -60,7 +58,7 @@ class RelocalizeWiki extends Maintenance {
 
 		$aReturn = [];
 
-		$oLang = MediaWikiServices::getInstance()->getLanguageFactory()->getLanguage( $sLanguageCode );
+		$oLang = $this->getServiceContainer()->getLanguageFactory()->getLanguage( $sLanguageCode );
 
 		// get index from NS_FILE e.g. File:
 		$aReturn['ns'] = $oLang->getNamespaces();
@@ -89,9 +87,9 @@ class RelocalizeWiki extends Maintenance {
 			$aArticleIds[] = $row->page_id;
 		}
 
-		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
-		$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
-			->getMaintenanceUser()->getUser();
+		$services = $this->getServiceContainer();
+		$wikiPageFactory = $services->getWikiPageFactory();
+		$user = $services->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();
 		foreach ( $aArticleIds as $iArticleId ) {
 			$this->bEdited = false;
 			$oWikiPage = $wikiPageFactory->newFromID( $iArticleId );
@@ -235,7 +233,7 @@ class RelocalizeWiki extends Maintenance {
 			}
 		}
 
-		$oSpecialPage = SpecialPage::getPage( $sReplacement );
+		$oSpecialPage = $this->getServiceContainer()->getSpecialPageFactory()->getPage( $sReplacement );
 
 		if ( !is_object( $oSpecialPage ) ) {
 			return $input[0];
