@@ -27,6 +27,7 @@
  */
 namespace BlueSpice;
 
+use BlueSpice\Utility\CacheHelper;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -97,11 +98,12 @@ class UtilityFactory {
 	}
 
 	/**
-	 * @return \BlueSpice\Utility\CacheHelper
+	 * @return CacheHelper
 	 */
 	public function getCacheHelper() {
-		return new \BlueSpice\Utility\CacheHelper(
-			$this->services->getConfigFactory()->makeConfig( 'bsg' )
+		return new CacheHelper(
+			$this->services->getConfigFactory()->makeConfig( 'bsg' ),
+			$this->services->getObjectCacheFactory()->getLocalClusterInstance()
 		);
 	}
 

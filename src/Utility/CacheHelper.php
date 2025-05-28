@@ -24,11 +24,13 @@ class CacheHelper {
 	 */
 	protected $store = [];
 
-	public function __construct( Config $config ) {
+	/**
+	 * @param Config $config
+	 * @param BagOStuff $cache
+	 */
+	public function __construct( Config $config, BagOStuff $cache ) {
 		$this->config = $config;
-		$this->cache = \ObjectCache::getInstance(
-			$this->config->get( 'MainCacheType' )
-		);
+		$this->cache = $cache;
 	}
 
 	/**
