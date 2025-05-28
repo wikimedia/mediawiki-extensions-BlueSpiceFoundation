@@ -35,7 +35,11 @@ class XmlMultiSelect extends XmlSelect {
 				$contents = self::formatOptions( $value, $default );
 				$data .= Html::rawElement( 'optgroup', [ 'label' => $label ], $contents ) . "\n";
 			} else {
-				$data .= Xml::option( $label, $value, ( array_search( $value, $default ) !== false ) ) . "\n";
+				$attribs = [ 'value' => $value ];
+				if ( array_search( $value, $default ) !== false ) {
+					$attribs['selected'] = 'selected';
+				}
+				$data .= Html::element( 'option', $attribs, $label ) . "\n";
 			}
 		}
 
