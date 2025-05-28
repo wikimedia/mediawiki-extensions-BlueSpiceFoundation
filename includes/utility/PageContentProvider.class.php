@@ -517,16 +517,6 @@ class BsPageContentProvider {
 		return [ $this->services->getRedirectLookUp()->getRedirectTarget( $oTitle ) ];
 	}
 
-	/**
-	 *
-	 * @param Title $oTitle
-	 * @param Array $aParams
-	 * @return Title
-	 */
-	public function getRedirectTargetFrom( Title $oTitle, $aParams = array() ) {
-		return Title::newFromRedirect( $this->getWikiTextContentFor( $oTitle, $aParams ) );
-	}
-
 	//<editor-fold desc="Save, override and restore OutputPage and Parser" defaultstate="collapsed">
 	/**
 	 * Overrides global variables
