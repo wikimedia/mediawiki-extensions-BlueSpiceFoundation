@@ -1,6 +1,6 @@
 <?php
 /**
- * Hook handler base class for MediaWiki hook MagicWordwgVariableIDs
+ * Hook handler base class for MediaWiki hook GetMagicVariableIDs
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 
-abstract class MagicWordwgVariableIDs extends Hook {
+abstract class GetMagicVariableIDs extends Hook {
 
 	/**
 	 *
