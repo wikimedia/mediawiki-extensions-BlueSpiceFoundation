@@ -20,5 +20,12 @@
 	"bs-ui-generic-no": "Nem",
 	"bs-exportpages-dialog-title": "Oldalak exportálása gyűjteménybe",
 	"bs-exportpages-success-text": "Lapok ide exportálva: [[ $1 | $2 ]]",
+	"bs-ui-generic-close": "Bezárás",
+	"bs-pageexport-list-name-label": "Lista név",
+	"bs-pageexport-list-format-label": "Lista formátum",
+	"bs-pageexport-list-format-plain-label": "Sima szöveg",
+	"bs-pageexport-list-format-link-label": "Hivatkozás",
+	"bs-pageexport-overwrite-label": "Felülír",
+	"bs-export-search-summary-text": "PageExport által generálva",
 	"bs-pagecollection-prefix": "Lapgyűjtemény"
 }
