@@ -1,13 +1,11 @@
 <?php
+
+use ParamProcessor\ParamDefinition;
+use ParamProcessor\ParameterTypes;
+use ParamProcessor\Processor;
+
 /**
  * This class contains helpful methods for processing strings.
- *
- * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
- * @author Robert Vogel
- *
- * $LastChangedDate: 2013-06-12 15:58:22 +0200 (Mi, 12 Jun 2013) $
- * $LastChangedBy: rvogel $
- * $Rev: 9700 $
  */
 class BsStringHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
@@ -15,7 +13,7 @@ class BsStringHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotM
 	 * Reduces the length of a string in a smart way.
 	 * @param string $sString The string that as to be shortened. I.e. 'The quick brown fox
 	 * jumps over the lazy dog'
-	 * @param array $aOptions Contains configuration options for the shorten logic. I. e.
+	 * @param array $options Contains configuration options for the shorten logic. I. e.
 	 * <code>
 	 *                array(
 	 *                   'max-length'          => 20,
@@ -38,31 +36,46 @@ class BsStringHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotM
 	 *     'The ... dog' (<code>'position' => 'middle'</code>)
 	 *     '... lazy dog' (<code>'position' => 'start'</code>)
 	 */
-	public static function shorten( $sString, $aOptions ) {
-		$iMaxLength = BsCore::sanitizeArrayEntry(
-			$aOptions,
+	public static function shorten( $sString, $options ) {
+		foreach ( $options as $key => $value ) {
+			if ( is_scalar( $value ) ) {
+				$options[$key] = (string)$value;
+			}
+		}
+
+		$paramDefinitions = [];
+		$paramDefinitions['max-length'] = new ParamDefinition(
+			ParameterTypes::INTEGER,
 			'max-length',
-			15,
-			BsPARAMTYPE::INT
+			15
 		);
-		$bIgnoreWordBorders = BsCore::sanitizeArrayEntry(
-			$aOptions,
+		$paramDefinitions['ignore-word-borders'] = new ParamDefinition(
+			ParameterTypes::BOOLEAN,
 			'ignore-word-borders',
-			true,
-			BsPARAMTYPE::BOOL
+			true
 		);
-		$sPosition = BsCore::sanitizeArrayEntry(
-			$aOptions,
+		$paramDefinitions['position'] = new ParamDefinition(
+			ParameterTypes::STRING,
 			'position',
-			'end',
-			BsPARAMTYPE::STRING
+			'end'
 		);
-		$sEllipsisCharaters = BsCore::sanitizeArrayEntry(
-			$aOptions,
+		$paramDefinitions['ellipsis-characters'] = new ParamDefinition(
+			ParameterTypes::STRING,
 			'ellipsis-characters',
-			'...',
-			BsPARAMTYPE::STRING
+			'...'
 		);
+
+		$processor = Processor::newDefault();
+		$processor->setParameters( $options );
+		$processor->setParameterDefinitions( $paramDefinitions );
+
+		$processingResult = $processor->processParameters();
+		$processedParams = $processingResult->getParameterArray();
+
+		$iMaxLength = $processedParams['max-length'];
+		$bIgnoreWordBorders = $processedParams['ignore-word-borders'];
+		$sPosition = $processedParams['position'];
+		$sEllipsisCharaters = $processedParams['ellipsis-characters'];
 
 		if ( $iMaxLength <= 0 ) {
 			return $sString;
