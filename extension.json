@@ -739,7 +739,6 @@
 		"BlueSpice\\": "src/"
 	},
 	"AutoloadClasses": {
-		"BsCore": "includes/Core.class.php",
 		"BSTreeNode": "includes/tree/BSTreeNode.php",
 		"BSTreeRenderer": "includes/tree/BSTreeRenderer.php",
 		"BsException": "includes/Exception.class.php",
@@ -785,9 +784,6 @@
 		"BsTagFinder": "includes/utility/TagFinder.class.php",
 		"ViewBaseElement": "includes/outputhandler/views/view.BaseElement.php",
 		"SpecialWikiAdmin": "includes/specials/SpecialWikiAdmin.class.php",
-		"BsPARAM": "includes/common/BsPARAM.php",
-		"BsPARAMTYPE": "includes/common/BsPARAMTYPE.php",
-		"BsPARAMOPTION": "includes/common/BsPARAMOPTION.php",
 		"BSTemplateHelper": "includes/TemplateHelper.php",
 		"BSTasksApiSpec": "includes/utility/BSTasksApiSpec.php",
 		"BSMigrateSettings": "maintenance/BSMigrateSettings.php",
