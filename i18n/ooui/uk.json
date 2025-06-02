@@ -16,5 +16,9 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Не задано значень!",
 	"bs-ooui-btn-dismiss-alert-title": "Відхилити",
 	"bs-ooui-key-value-input-widget-section-label": "Розділ",
-	"bs-ooui-key-value-input-widget-add-section-label": "Додати новий розділ"
+	"bs-ooui-key-value-input-widget-add-section-label": "Додати новий розділ",
+	"bs-ui-generic-save": "Зберегти",
+	"bs-ui-generic-cancel": "Скасувати",
+	"bs-ui-generic-yes": "Так",
+	"bs-ui-generic-no": "Ні"
 }
