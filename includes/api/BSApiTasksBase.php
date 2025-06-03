@@ -29,6 +29,7 @@
  * @filesource
  */
 
+use BlueSpice\Api\Format\Json;
 use BlueSpice\Api\Response\Standard;
 use BlueSpice\UtilityFactory;
 use MediaWiki\Api\ApiBase;
@@ -607,11 +608,11 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 * @return \BSApiFormatJson
+	 * @return Json
 	 */
 	public function getCustomPrinter() {
 		if ( $this->isTaskDataSchemaCall() || $this->isTaskDataExamplesCall() ) {
-			return new BSApiFormatJson( $this->getMain(), 'jsonfm' );
+			return new Json( $this->getMain(), 'jsonfm' );
 		}
 
 		return parent::getCustomPrinter();
