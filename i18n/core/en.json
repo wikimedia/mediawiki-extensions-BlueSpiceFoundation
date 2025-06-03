@@ -13,7 +13,6 @@
 	"bs-extended-search-tooltip-fulltext": "Fulltext search",
 	"bs-extended-search-textfield-defaultvalue": "Search...",
 	"bs-extended-search-textfield-tooltip": "Search wiki",
-	"bs-no-information-available": "No information available",
 	"bs-years-duration": "{{PLURAL:$1|one year|$1 years}}",
 	"bs-months-duration": "{{PLURAL:$1|one month|$1 months}}",
 	"bs-weeks-duration": "{{PLURAL:$1|one week|$1 weeks}}",

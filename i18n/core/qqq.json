@@ -22,7 +22,6 @@
 	"bs-extended-search-tooltip-fulltext": "Tooltip shown on mouse over the button at the corner of the search field on every page when in fulltext mode",
 	"bs-extended-search-textfield-defaultvalue": "Default text of the search field shown on every page.\n{{Identical|Search}}",
 	"bs-extended-search-textfield-tooltip": "Tootip shown on mouse over the search field on every page",
-	"bs-no-information-available": "Default text shown in widgets when there is no content",
 	"bs-years-duration": "Text for more than one year in a duration. Used in {{msg-mw|bs-one-unit-ago}} and {{msg-mw|bs-two-units-ago}}.\n\nParameters:\n* $1 - a positive number\n{{Identical|Year}}",
 	"bs-months-duration": "Text for more than one month in a duration. Used in {{msg-mw|bs-one-unit-ago}} and {{msg-mw|bs-two-units-ago}}.\n\nParameters:\n* $1 - a positive number\n{{Identical|Month}}",
 	"bs-weeks-duration": "Text for more than one week in a duration. Used in {{msg-mw|bs-one-unit-ago}} and {{msg-mw|bs-two-units-ago}}.\n\nParameters:\n* $1 - a positive number\n{{Identical|Week}}",
