@@ -111,7 +111,7 @@ class PermissionLockdownFactory {
 	 * @return string
 	 */
 	protected function getCacheKey( Title $title, User $user ) {
-		return "{$title->getArticleID()}-{$user->getId()}";
+		return "{$title->getNamespace()}-{$title->getDBkey()}-{$user->getId()}";
 	}
 
 	/**
