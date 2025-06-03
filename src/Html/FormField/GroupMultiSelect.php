@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Html\FormField;
 
-use BsGroupHelper;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 
 class GroupMultiSelect extends \HTMLMultiSelectEx {
@@ -33,7 +33,8 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 	 * @param array $params
 	 */
 	protected function loadGroups( $params ) {
-		$this->groups = BsGroupHelper::getAvailableGroups( $params );
+		$this->groups = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getGroupHelper()
+			->getAvailableGroups( $params );
 	}
 
 	/**
