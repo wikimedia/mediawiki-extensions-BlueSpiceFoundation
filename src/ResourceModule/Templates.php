@@ -28,13 +28,14 @@ namespace BlueSpice\ResourceModule;
 use BlueSpice\TemplateFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\ResourceLoader\FileModule as ResourceLoaderFileModule;
+use RuntimeException;
 
 class Templates extends ResourceLoaderFileModule {
 
 	/**
 	 * Takes named templates by the module and returns an array mapping.
 	 * @return array Templates mapping template alias to content
-	 * @throws MWException
+	 * @throws RuntimeException
 	 */
 	public function getTemplates() {
 		$templates = [];
@@ -51,7 +52,7 @@ class Templates extends ResourceLoaderFileModule {
 			} else {
 				$msg = __METHOD__ . ": template file not found: \"$localPath\"";
 				wfDebugLog( 'resourceloader', $msg );
-				throw new \MWException( $msg );
+				throw new RuntimeException( $msg );
 			}
 		}
 		return $templates;

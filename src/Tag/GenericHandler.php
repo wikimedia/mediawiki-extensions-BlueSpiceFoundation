@@ -3,6 +3,7 @@
 namespace BlueSpice\Tag;
 
 use BlueSpice\ParamProcessor\ProcessingErrorMessageTranslator;
+use LogicException;
 use MediaWiki\Html\Html;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Parser\PPFrame;
@@ -92,13 +93,13 @@ class GenericHandler {
 	 * @param Parser $parser
 	 * @param PPFrame $frame
 	 * @return array
-	 * @throws \MWException
+	 * @throws LogicException
 	 */
 	public function handle( $input, array $args, Parser $parser, PPFrame $frame ) {
 		$elementName = $this->tag->getContainerElementName();
 		if ( !empty( $elementName ) && !$this->isValidContainerElementName( $elementName ) ) {
 			$tagNames = $this->tag->getTagNames();
-			throw new \MWException(
+			throw new LogicException(
 				"Invalid container element name for tag '{$tagNames[0]}'!"
 			);
 		}

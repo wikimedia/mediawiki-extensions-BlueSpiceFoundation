@@ -101,7 +101,6 @@ class PermissionLockdown implements
 
 	/**
 	 * @return User|null
-	 * @throws \MWException
 	 */
 	private function getRelevantUser(): ?User {
 		if ( $this->noSessionContext ) {

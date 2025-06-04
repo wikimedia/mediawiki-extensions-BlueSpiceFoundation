@@ -3,10 +3,9 @@
 namespace BlueSpice\Utility;
 
 use MediaWiki\Config\Config;
-use MediaWiki\Config\ConfigException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
-use MWException;
+use RuntimeException;
 
 class UrlTitleParser {
 	/** @var Config */
@@ -32,7 +31,7 @@ class UrlTitleParser {
 	 * Parses the title.
 	 *
 	 * @return Title
-	 * @throws MWException|ConfigException No valid title
+	 * @throws RuntimeException No valid title
 	 */
 	public function parseTitle() {
 		$titleText = trim( $this->getRawTitle(), '/' );
@@ -42,7 +41,7 @@ class UrlTitleParser {
 			if ( $this->failSilently ) {
 				return null;
 			}
-			throw new MWException( "Did not find suitable title in '$decodedTitleText'" );
+			throw new RuntimeException( "Did not find suitable title in '$decodedTitleText'" );
 		}
 
 		$title = Title::newFromText( $decodedTitleText );
@@ -50,7 +49,7 @@ class UrlTitleParser {
 			if ( $this->failSilently ) {
 				return null;
 			}
-			throw new MWException( "Could not create title from '$decodedTitleText'" );
+			throw new RuntimeException( "Could not create title from '$decodedTitleText'" );
 		}
 
 		return $title;
@@ -59,7 +58,6 @@ class UrlTitleParser {
 	/**
 	 * Get raw title name from the URL
 	 * @return string
-	 * @throws ConfigException
 	 */
 	private function getRawTitle() {
 		$scriptPath = $this->config->get( 'ScriptPath' );
