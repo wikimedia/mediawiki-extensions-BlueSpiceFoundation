@@ -4,7 +4,7 @@ namespace BlueSpice\Api;
 
 use BlueSpice\Api;
 use BlueSpice\JSConfigVarRegistry;
-use MWException;
+use LogicException;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class JSConfigVarsApi extends Api {
@@ -26,7 +26,7 @@ class JSConfigVarsApi extends Api {
 			$this->readInParams();
 			$value = $this->retrieveValues();
 			$this->returnResult( $value );
-		} catch ( MWException $ex ) {
+		} catch ( LogicException $ex ) {
 			$this->dieWithError( $ex->getMessage() );
 		}
 	}
@@ -62,12 +62,12 @@ class JSConfigVarsApi extends Api {
 	}
 
 	/**
-	 * @throws MWException
+	 * @throws LogicException
 	 */
 	private function readInParams() {
 		$this->func = trim( strtolower( $this->getParameter( 'func' ) ) );
 		if ( !in_array( $this->func, [ static::FUNC_GET, static::FUNC_HAS ] ) ) {
-			throw new MWException( "Function '{$this->func}' is not allowed!" );
+			throw new LogicException( "Function '{$this->func}' is not allowed!" );
 		}
 		$this->requestedVars = $this->parseRequestedVars(
 			$this->getParameter( 'name' )
@@ -76,7 +76,6 @@ class JSConfigVarsApi extends Api {
 
 	/**
 	 * @return array|mixed|null
-	 * @throws MWException
 	 */
 	private function retrieveValues() {
 		$registry = JSConfigVarRegistry::factory( $this->getContext() );
@@ -112,7 +111,6 @@ class JSConfigVarsApi extends Api {
 	 * @param string $key
 	 * @param JSConfigVarRegistry $registry
 	 * @return mixed
-	 * @throws MWException
 	 */
 	private function getSingle( $key, $registry ) {
 		if ( $this->func === static::FUNC_HAS ) {
@@ -128,7 +126,6 @@ class JSConfigVarsApi extends Api {
 	/**
 	 * @param JSConfigVarRegistry $registry
 	 * @return array
-	 * @throws MWException
 	 */
 	private function getValues( $registry ) {
 		$values = [];

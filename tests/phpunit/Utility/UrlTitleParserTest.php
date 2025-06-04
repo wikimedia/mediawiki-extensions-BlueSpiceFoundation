@@ -48,10 +48,10 @@ class UrlTitleParserTest extends MediaWikiIntegrationTestCase {
 	public function provideFromUrlWithExceptionData() {
 		return [
 			'normal-path-with-ending-slash' => [
-				'http://tollerserver.de/', 'MWException'
+				'http://tollerserver.de/', 'RuntimeException'
 			],
 			'normal-path-without-ending-slash' => [
-				'http://tollerserver.de', 'MWException'
+				'http://tollerserver.de', 'RuntimeException'
 			]
 		];
 	}

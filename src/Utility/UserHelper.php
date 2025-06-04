@@ -2,6 +2,7 @@
 
 namespace BlueSpice\Utility;
 
+use LogicException;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\User\User;
 
@@ -17,7 +18,7 @@ class UserHelper {
 	 *
 	 * @param User|null $user
 	 * @return UserHelper
-	 * @throws \MWException
+	 * @throws LogicException
 	 */
 	public function __construct( ?User $user = null ) {
 		$this->user = $user;
@@ -26,7 +27,7 @@ class UserHelper {
 		}
 		$this->user = RequestContext::getMain()->getUser();
 		if ( !$this->user ) {
-			throw new \MWException( 'User is required for UserHelper' );
+			throw new LogicException( 'User is required for UserHelper' );
 		}
 	}
 

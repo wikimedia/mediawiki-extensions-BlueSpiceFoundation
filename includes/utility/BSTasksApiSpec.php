@@ -43,6 +43,9 @@ class BSTasksApiSpec {
 		return isset( $aTaskSpec['params'] ) ? $aTaskSpec['params'] : [];
 	}
 
+	/**
+	 * @throws LogicException
+	 */
 	protected function extractTaskNames() {
 		foreach ( $this->aInitialConfig as $mKey => $mValue ) {
 			if ( is_string( $mKey ) && is_array( $mValue ) ) {
@@ -50,7 +53,7 @@ class BSTasksApiSpec {
 			} elseif ( is_int( $mKey ) && is_string( $mValue ) ) {
 				$this->aTaskNames[] = $mValue;
 			} else {
-				throw new MWException( 'Unsupported TaskAPI spec format!' );
+				throw new LogicException( 'Unsupported TaskAPI spec format!' );
 			}
 		}
 	}

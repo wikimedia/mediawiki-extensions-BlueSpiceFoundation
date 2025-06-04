@@ -2,8 +2,8 @@
 
 namespace BlueSpice;
 
+use InvalidArgumentException;
 use MediaWiki\Message\Message;
-use MWException;
 
 class SimpleDeferredNotification implements IDeferredNotification {
 
@@ -17,10 +17,11 @@ class SimpleDeferredNotification implements IDeferredNotification {
 	 * - 'options': an array of options compatible to
 	 * https://doc.wikimedia.org/mediawiki-core/master/js/#!/api/mw.notification-property-defaults
 	 * @param array $notificationInfo
+	 * @throws InvalidArgumentException
 	 */
 	public function __construct( $notificationInfo ) {
 		if ( !isset( $notificationInfo['message'] ) ) {
-			throw new MWException( "Key 'message' must be set!" );
+			throw new InvalidArgumentException( "Key 'message' must be set!" );
 		}
 
 		$this->message = $notificationInfo['message'];

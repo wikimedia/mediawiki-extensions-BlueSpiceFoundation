@@ -5,6 +5,7 @@ namespace BlueSpice\Utility;
 use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
+use RuntimeException;
 
 class MaintenanceUser {
 
@@ -42,6 +43,7 @@ class MaintenanceUser {
 	 * @param int $expireInSeconds - Expire the users groups after the next
 	 * x seconds. min 10 seconds
 	 * @return User
+	 * @throws RuntimeException
 	 */
 	public function getUser( $expireInSeconds = 10 ) {
 		$user = User::newSystemUser(
@@ -49,7 +51,7 @@ class MaintenanceUser {
 			$this->getOptions()
 		);
 		if ( !$user ) {
-			throw new \MWException(
+			throw new RuntimeException(
 				"Maintenace user '{$this->getUserName()}' could not be created"
 			);
 		}

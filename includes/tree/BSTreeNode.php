@@ -201,23 +201,25 @@ class BSTreeNode {
 
 	/**
 	 * @return void
+	 * @throws LogicException
 	 */
 	public function expand() {
 		if ( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
 			$this->expanded = true;
 		} else {
-			throw new MWException( "Node {$this->getPath()} can not be expanded!" );
+			throw new LogicException( "Node {$this->getPath()} can not be expanded!" );
 		}
 	}
 
 	/**
 	 * @return void
+	 * @throws LogicException
 	 */
 	public function collapse() {
 		if ( $this->get( self::CONFIG_EXPANDABLE, true ) ) {
 			$this->expanded = false;
 		} else {
-			throw new MWException( "Node {$this->getPath()} can not be collapsed!" );
+			throw new LogicException( "Node {$this->getPath()} can not be collapsed!" );
 		}
 	}
 

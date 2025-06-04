@@ -2,9 +2,9 @@
 
 namespace BlueSpice;
 
+use LogicException;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\MediaWikiServices;
-use MWException;
 
 class JSConfigVarRegistry extends ExtensionAttributeBasedRegistry {
 
@@ -41,13 +41,14 @@ class JSConfigVarRegistry extends ExtensionAttributeBasedRegistry {
 	 * @param string $key
 	 * @param mixed $default
 	 * @return mixed
+	 * @throws LogicException
 	 */
 	public function getValue( $key, $default = '' ) {
 		$value = parent::getValue( $key, null );
 		$instance = $this->createFromCallback( $value, $this->context );
 
 		if ( !$instance instanceof IJSConfigVariable ) {
-			throw new MWException(
+			throw new LogicException(
 				get_class( $instance ) . " must return an instance of " . IJSConfigVariable::class
 			);
 		}

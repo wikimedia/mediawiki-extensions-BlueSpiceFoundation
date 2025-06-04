@@ -175,7 +175,6 @@ class BsNamespaceHelper {
 	 *
 	 * @param array $aNamespaces Array of namespaces i.e. array( 3, 5, 'SomeNamespace', 4 )
 	 * @return array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
-	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
 	 */
 	public static function getNamespaceIdsFromAmbiguousArray( $aNamespaces ) {
 		return self::getNamespaceIdsFromAmbiguousCSVString( implode( ',', $aNamespaces ) );
@@ -188,10 +187,11 @@ class BsNamespaceHelper {
 	 * result in an array of all available namespaces.
 	 * @return array Array of integer Namespaces, i.e. array( 4, 14, 100, 7 );
 	 * @throws BsInvalidNamespaceException In case a invalid namespace is given
+	 * @throws InvalidArgumentException
 	 */
 	public static function getNamespaceIdsFromAmbiguousCSVString( $sCSV = '' ) {
 		if ( !isset( $sCSV ) || !is_string( $sCSV ) ) {
-			throw new \MWException(
+			throw new InvalidArgumentException(
 				__CLASS__ . ":" . __METHOD__ . ' - expects comma separated string'
 			);
 		}

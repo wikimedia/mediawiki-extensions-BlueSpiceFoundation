@@ -494,7 +494,6 @@ class BsFileSystemHelper {
 	 * @param string $sFileName
 	 * @param string $sRequiredExtension
 	 * @return Status
-	 * @throws MWException
 	 */
 	public static function uploadFile( $sName, $sDir, $sFileName = '', $sRequiredExtension = '' ) {
 		$oWebRequest = new WebRequest();

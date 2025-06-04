@@ -27,9 +27,9 @@
 
 namespace BlueSpice;
 
+use LogicException;
 use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
-use MWException;
 
 class TaskFactory {
 
@@ -61,6 +61,7 @@ class TaskFactory {
 	 * @param Context $context
 	 * @param IPermissionChecker|null $permissionChecker
 	 * @return ITask
+	 * @throws LogicException
 	 */
 	public function get( $key, Context $context, ?IPermissionChecker $permissionChecker = null ) {
 		$callback = $this->registry->getValue(
@@ -68,7 +69,7 @@ class TaskFactory {
 			false
 		);
 		if ( !$callback ) {
-			throw new MWException( "No registered task for given '$key'!" );
+			throw new LogicException( "No registered task for given '$key'!" );
 		}
 		$instance = $callback( MediaWikiServices::getInstance(), $context, $permissionChecker );
 		return $instance;

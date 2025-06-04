@@ -2,9 +2,10 @@
 
 namespace BlueSpice;
 
+use InvalidArgumentException;
+use LogicException;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
-use MWException;
 
 class PageHeaderBeforeContentFactory {
 
@@ -68,7 +69,7 @@ class PageHeaderBeforeContentFactory {
 	 * @param string $key
 	 * @param IContextSource|null $context
 	 * @return IPageHeaderBeforeContent
-	 * @throws MWException
+	 * @throws LogicException
 	 */
 	public function get( $key, ?IContextSource $context = null ) {
 		if ( !$context ) {
@@ -79,7 +80,7 @@ class PageHeaderBeforeContentFactory {
 		}
 		$callback = $this->registry->getValue( $key );
 		if ( !is_callable( $callback ) ) {
-			throw new MWException(
+			throw new LogicException(
 				"Callback for element '$key' not callable"
 			);
 		}
@@ -88,7 +89,7 @@ class PageHeaderBeforeContentFactory {
 			[ $this->context, $this->config ]
 		);
 		if ( $instance instanceof IPageHeaderBeforeContent === false ) {
-			throw new MWException(
+			throw new LogicException(
 				"Class for info element '$key' does not extend IPageHeaderBeforeContent"
 			);
 		}
@@ -101,10 +102,11 @@ class PageHeaderBeforeContentFactory {
 	 * @param type $key
 	 * @param IContextSource $context
 	 * @return string
+	 * @throws InvalidArgumentException
 	 */
 	private function instanceKey( $key, IContextSource $context ) {
 		if ( !$context->getTitle() ) {
-			throw new MWException(
+			throw new InvalidArgumentException(
 				"No Title to create instance key for IPageHeaderBeforeContent '$key'"
 			);
 		}
