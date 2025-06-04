@@ -157,29 +157,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 				]
 			]
 		],
-		'getDiscussionCount' => [
-			'examples' => [
-				[
-					'page_id' => 3234
-				],
-				[
-					'page_title' => 'SomeNamespace:Some page title'
-				]
-			],
-			// 'readonly' => true, //TODO migrate "$this->aReadTasks"
-			'params' => [
-				'page_id' => [
-					'type' => 'integer',
-					'required' => true,
-					'alternative_to' => [ 'page_title' ]
-				],
-				'page_title' => [
-					'type' => 'string',
-					'required' => true,
-					'alternative_to' => [ 'page_id' ]
-				]
-			]
-		],
 		'getTemplateTree' => [
 			'examples' => [
 				[
@@ -208,7 +185,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	 * @var string[]
 	 */
 	protected $aReadTasks = [
-		'getDiscussionCount',
 		'getExplicitCategories',
 		'getTemplateTree'
 	];
@@ -224,7 +200,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			'getExplicitCategories' => [ 'read' ],
 			'addCategories' => [ 'edit' ],
 			'removeCategories' => [ 'edit' ],
-			'getDiscussionCount' => [ 'read' ],
 			'getTemplateTree' => [ 'read' ]
 		];
 	}
@@ -384,26 +359,6 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse,
 			'wikipage-removecategories'
 		);
-	}
-
-	/**
-	 * @deprecated since version 3.1 - Not in use anymore
-	 * @param stdClass $oTaskData
-	 * @param array $aParams
-	 * @return \BlueSpice\Api\Response\Standard
-	 */
-	protected function task_getDiscussionCount( $oTaskData, $aParams ) {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$oResponse = $this->makeStandardReturn();
-
-		$iCount = BsArticleHelper::getInstance(
-			$this->getTitleFromTaskData( $oTaskData )
-		)->getDiscussionAmount();
-
-		$oResponse->success = true;
-		$oResponse->payload = $iCount;
-
-		return $oResponse;
 	}
 
 	/**
