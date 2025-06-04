@@ -44,53 +44,6 @@ class BsArticleHelper {
 	}
 
 	/**
-	 * DEPRECADED
-	 * Fetches the number of edits in the discussion page of the given Title.
-	 * @deprecated since version 3.1 - Not in use anymore
-	 * @return int The number of edits of the talk page
-	 */
-	public function getDiscussionAmount() {
-		wfDebugLog( 'bluespice-deprecations', __METHOD__, 'private' );
-		$oTalkPage = $this->oTitle->getTalkPageIfDefined();
-
-		if ( !$oTalkPage ) {
-			return 0;
-		}
-
-		$iTalkPageId = $oTalkPage->getArticleID();
-
-		$cacheHelper = $this->services->getService( 'BSUtilityFactory' )
-			->getCacheHelper();
-		$sKey = $cacheHelper->getCacheKey(
-			'BlueSpice',
-			'ArticleHelper',
-			'getDiscussionAmount',
-			$iTalkPageId
-		);
-		$aData = $cacheHelper->get( $sKey );
-
-		if ( $aData !== false ) {
-			wfDebugLog( 'bluespice', __CLASS__ . ': Fetching discussion amounts from cache' );
-			$iCount = $aData['iCount'];
-		} else {
-			wfDebugLog( 'bluespice', __CLASS__ . ': Fetching discussion amounts from DB' );
-			$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
-			// a new revision (rev_id) is also created on page move. So use rev_text_id
-			$res = $dbr->select(
-				'revision',
-				'DISTINCT rev_text_id',
-				[ 'rev_page' => $iTalkPageId ],
-				__METHOD__
-			);
-			$iCount = $res->numRows();
-
-			$cacheHelper->set( $sKey, [ 'iCount' => $iCount ] );
-		}
-
-		return $iCount;
-	}
-
-	/**
 	 * DEPRECATED
 	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
 	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( Title )->getPageProp instead
@@ -163,7 +116,6 @@ class BsArticleHelper {
 		$sKey = $cacheHelper->getCacheKey(
 			'BlueSpice',
 			'ArticleHelper',
-			'getDiscussionAmount',
 			$talkPage->getArticleID()
 		);
 
