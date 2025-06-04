@@ -8,14 +8,12 @@ use BlueSpice\Task\WikiPage as WikiPageTask;
 use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use MWException;
 
 class SetCategories extends WikiPageTask {
 	public const PARAM_CATEGORIES = 'categories';
 
 	/**
 	 * @return Status
-	 * @throws MWException
 	 */
 	protected function doExecute() {
 		$status = Status::newGood();

@@ -14,14 +14,13 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
-use MWException;
+use RuntimeException;
 
 abstract class WikiPage extends Task {
 
 	/**
 	 * @param string $wikitext
 	 * @return Status
-	 * @throws MWException
 	 */
 	protected function saveWikiPage( $wikitext = '' ) {
 		$this->logger->debug( 'saveWikiPage', [ 'wikitext' => $wikitext ] );
@@ -62,7 +61,7 @@ abstract class WikiPage extends Task {
 
 	/**
 	 * @return string
-	 * @throws Exception
+	 * @throws RuntimeException
 	 */
 	protected function fetchCurrentRevisionWikiText() {
 		if ( $this->getWikiPage()->getTitle()->exists() === false ) {
@@ -71,7 +70,7 @@ abstract class WikiPage extends Task {
 
 		$content = $this->getWikiPage()->getContent();
 		if ( $content instanceof WikitextContent === false ) {
-			throw new Exception(
+			throw new RuntimeException(
 				$this->msg( 'bs-wikipage-tasks-error-contentmodel' )->text()
 			);
 		}

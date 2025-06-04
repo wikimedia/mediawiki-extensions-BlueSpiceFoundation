@@ -28,13 +28,14 @@ namespace BlueSpice\ResourceModule;
 use BlueSpice\TemplateFactory;
 use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\CommonUserInterface\ResourceLoader\LessVars;
+use RuntimeException;
 
 class FileModule extends LessVars {
 
 	/**
 	 * Takes named templates by the module and returns an array mapping.
 	 * @return array Templates mapping template alias to content
-	 * @throws MWException
+	 * @throws RuntimeException
 	 */
 	public function getTemplates() {
 		$templates = [];
@@ -51,7 +52,7 @@ class FileModule extends LessVars {
 			} else {
 				$msg = __METHOD__ . ": template file not found: \"$localPath\"";
 				wfDebugLog( 'resourceloader', $msg );
-				throw new \MWException( $msg );
+				throw new RuntimeException( $msg );
 			}
 		}
 		return $templates;

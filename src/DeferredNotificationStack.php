@@ -2,7 +2,7 @@
 namespace BlueSpice;
 
 use MediaWiki\Context\RequestContext;
-use MWException;
+use RuntimeException;
 
 class DeferredNotificationStack {
 
@@ -14,12 +14,13 @@ class DeferredNotificationStack {
 	/**
 	 * DeferredNotificationStack constructor.
 	 * @param \Webrequest $request
+	 * @throws RuntimeException
 	 */
 	public function __construct( $request ) {
 		$this->request = $request;
 
 		if ( defined( 'MW_NO_SESSION' ) ) {
-			throw new MWException( "No session available" );
+			throw new RuntimeException( "No session available" );
 		}
 
 		if ( !empty( $this->request->getCookie( 'notificationFlag' ) ) ) {

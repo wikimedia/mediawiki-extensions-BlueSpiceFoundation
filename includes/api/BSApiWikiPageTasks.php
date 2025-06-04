@@ -409,7 +409,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 	/**
 	 * @param stdClass $oTaskData
 	 * @return Title
-	 * @throws MWException
+	 * @throws LogicException
 	 * @todo Maybe have this logic in "parent::getTitle" altogether
 	 */
 	protected function getTitleFromTaskData( $oTaskData ) {
@@ -427,7 +427,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		// Actually this should never happen as $this->getTitle() will at least
 		// return title "Special:BadTitle"
 		if ( $oTitle instanceof Title === false ) {
-			throw new MWException(
+			throw new LogicException(
 				wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->text()
 			);
 		}

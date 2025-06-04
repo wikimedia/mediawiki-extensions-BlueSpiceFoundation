@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests;
 
-use MWException;
+use LogicException;
 
 /**
  * @group BlueSpice
@@ -39,7 +39,7 @@ class BSTasksApiSpecTest extends \MediaWikiIntegrationTestCase {
 	 * @covers \BSTasksApiSpec::__construct
 	 */
 	public function testUnsupportedTaskSpecException1() {
-		$this->expectException( MWException::class );
+		$this->expectException( LogicException::class );
 		new \BSTasksApiSpec( [
 			'is a string' => 'is not an array'
 		] );
@@ -49,7 +49,7 @@ class BSTasksApiSpecTest extends \MediaWikiIntegrationTestCase {
 	 * @covers \BSTasksApiSpec::__construct
 	 */
 	public function testUnsupportedTaskSpecException2() {
-		$this->expectException( MWException::class );
+		$this->expectException( LogicException::class );
 		new \BSTasksApiSpec( [
 			0 => [ 'key is int, but value is not array' ]
 		] );
