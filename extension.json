@@ -27,7 +27,6 @@
 				"ImageExtensions": "\\BlueSpice\\ConfigDefinition\\ImageExtensions::getInstance",
 				"Favicon": "\\BlueSpice\\ConfigDefinition\\Favicon::getInstance"
 			},
-			"EntityRegistry": {},
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
 			"PageInfoElementRegistry": {},
@@ -52,8 +51,7 @@
 				"list": "\\BlueSpice\\Renderer\\SimpleList::factory",
 				"linklist": "\\BlueSpice\\Renderer\\LinkList::factory",
 				"userimage": "\\BlueSpice\\Renderer\\UserImage::factory",
-				"groupimage": "\\BlueSpice\\Renderer\\GroupImage::factory",
-				"entity": "\\BlueSpice\\Renderer\\Entity::factory"
+				"groupimage": "\\BlueSpice\\Renderer\\GroupImage::factory"
 			},
 			"SkinDataRendererRegistry": {
 				"bs_navigation_site": "\\BlueSpice\\Renderer\\TreeNavigation",

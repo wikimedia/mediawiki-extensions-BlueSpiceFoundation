@@ -31,7 +31,6 @@ return [
 			$registry
 		);
 	},
-
 	'BSEntityConfigFactory' => static function ( MediaWikiServices $services ) {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceFoundationEntityRegistry'
