@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Krisztina",
+			"Tacsipacsi",
 			"Wolf Rex"
 		]
 	},
@@ -15,7 +16,7 @@
 	"apihelp-bs-task-param-format": "Az eredmény formátuma",
 	"bs-wikipage-tasks-error-page-not-valid": "A megadott lap nem érvényes.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Megváltoztatott kategóriák.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheted a/az \"$1\" lapot.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheted a(z) „$1” lapot.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Érvénytelen {{PLURAL:$2|kategória|kategóriák}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategóriák sikeresen beállítva.",
 	"apihelp-bs-wikisubpage-treestore-summary": "Egy adott wikilap allapjait listázza",

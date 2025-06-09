@@ -41,7 +41,7 @@
 	"bs-readonly": "Az adatbázisa ideiglenesen zárolt (valószínűleg adatbázis-karbantartás miatt). A zárolás időtartama alatt új adat létrehozása vagy módosítása nem lehetséges. Az a rendszer-adminisztrátor, aki zárolta az adatbázist, az alábbi indoklást adta: $1",
 	"bs-imageofotheruser": "Nem tölthetsz fel képet más felhasználónak.",
 	"bs-permissionerror": "Jogosultsági hiba!",
-	"bs-lockdown-groups-permissionerror": "A \"$1\" nem elérhető az alábbi miatt:\n {{PLURAL:$2|ok|okok}}: $3",
+	"bs-lockdown-groups-permissionerror": "A(z) „$1” művelet nem érhető el az alábbi {{PLURAL:$2|ok|okok}} miatt: $3",
 	"bs-filesystemhelper-no-directory": "A(z) <code>$1</code> érvénytelen könyvtár.",
 	"bs-filesystemhelper-file-not-exists": "A <code>$1</code> fájl nem létezik.",
 	"bs-filesystemhelper-file-copy-error": "A <code>$1</code> fájl nem másolható.",
