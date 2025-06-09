@@ -19,5 +19,6 @@
 	"bs-ui-generic-yes": "Igen",
 	"bs-ui-generic-no": "Nem",
 	"bs-exportpages-dialog-title": "Oldalak exportálása gyűjteménybe",
-	"bs-exportpages-success-text": "Lapok ide exportálva: [[ $1 | $2 ]]"
+	"bs-exportpages-success-text": "Lapok ide exportálva: [[ $1 | $2 ]]",
+	"bs-ui-generic-close": "Bezárás"
 }
