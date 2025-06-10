@@ -5,9 +5,11 @@
 			"Dinhxuanduyet",
 			"Minh Nguyen",
 			"Nguyenphutrong2",
-			"Nguyễn Mạnh An"
+			"Nguyễn Mạnh An",
+			"Chaiwan2009"
 		]
 	},
+	"bs-mins-duration": "{{PLURAL:$1| một phút| $1 phút}}",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Xin chào ông $2|Xinh chào bà $2|Xin chào $2}},",
 	"bs-ns": "Không gian tên",
 	"action-wikiadmin": "sử dụng các tác vụ bảo quản nguy hiểm tiềm ẩn, chẳng hạn như quản lý người dùng, quyền, cấu hình chung (phần mở rộng BlueSpice)",
