@@ -23,6 +23,7 @@
 	"apihelp-bs-wikisubpage-treestore-param-options": "Opciók listája",
 	"bs-wikipage-tasks-error-nothingtoremove": "Nincsenek eltávolítható kategóriák",
 	"apihelp-bs-category-treestore-summary": "Felsorolja egy adott kategória alkategóriáit",
+	"apihelp-bs-task-param-examples": "Példákat jelenít meg a feladatparaméterekre",
 	"bs-api-task-taskData-page-id": "Egy meglévő wikilap azonosítója ID",
 	"bs-api-task-taskData-page-title": "Egy wiki lap érvényes címe",
 	"apihelp-bs-js-var-config-param-format": "Az eredmény formátuma",
