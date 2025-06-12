@@ -2,8 +2,8 @@
 
 namespace BlueSpice\Html\OOUI;
 
+use InvalidArgumentException;
 use OOUI\ButtonWidget;
-use OOUI\Exception;
 use OOUI\FieldLayout;
 use OOUI\Tag;
 use OOUI\TextInputWidget;
@@ -172,7 +172,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	/**
 	 * @param string $input
 	 * @return FieldLayout
-	 * @throws Exception
+	 * @throws InvalidArgumentException
 	 */
 	protected function getValueLayout( $input ) {
 		$valueLayout = new FieldLayout( $input, [ 'align' => 'top' ] );
@@ -184,7 +184,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	/**
 	 * @param string $input
 	 * @return FieldLayout
-	 * @throws Exception
+	 * @throws InvalidArgumentException
 	 */
 	protected function getKeyLayout( $input ) {
 		$keyLayout = new FieldLayout( $input, [ 'align' => 'top' ] );
