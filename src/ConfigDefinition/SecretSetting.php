@@ -43,6 +43,10 @@ abstract class SecretSetting extends StringSetting {
 	 */
 	public function padToLength( string $totalLen ): string {
 		$length = strlen( static::SECRET_VALUE );
-		return str_repeat( '*', $totalLen - $length );
+		$times = $totalLen - $length;
+		if ( $times < 0 ) {
+			return '';
+		}
+		return str_repeat( '*', $times );
 	}
 }
