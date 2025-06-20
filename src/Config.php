@@ -37,6 +37,7 @@ class Config extends MultiConfig {
 			&$this->databaseConfig,
 			new GlobalVarConfig( 'bsg' ),
 			new GlobalVarConfig( 'wg' ),
+			new GlobalVarConfig( 'mwsg' )
 		] );
 	}
 
