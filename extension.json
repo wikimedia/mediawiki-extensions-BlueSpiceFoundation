@@ -814,8 +814,6 @@
 		"HTMLMultiSelectPlusAdd": "includes/html/htmlformfields/HTMLMultiSelectPlusAdd.php",
 		"HTMLMultiSelectSortList": "includes/html/htmlformfields/HTMLMultiSelectSortList.php",
 		"BsArticleHelper": "includes/utility/ArticleHelper.class.php",
-		"BsCacheHelper": "includes/utility/CacheHelper.class.php",
-		"BsConnectionHelper": "includes/utility/ConnectionHelper.class.php",
 		"BsDOMHelper": "includes/utility/DOMHelper.class.php",
 		"BsFormatConverter": "includes/utility/FormatConverter.class.php",
 		"BsFileSystemHelper": "includes/utility/FileSystemHelper.class.php",
