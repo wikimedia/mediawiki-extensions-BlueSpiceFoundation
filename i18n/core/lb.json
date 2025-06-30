@@ -68,7 +68,7 @@
 	"bs-validator-error-namespace-on-blacklist": "Nummraum net erlaabt: $1",
 	"bs-validator-error-title-does-not-exist": "Säit gëtt et net: $1",
 	"bs-validator-error-title-namespace-on-blacklist": "Säit net erlaabt: $1",
-	"bs-parser-error-invalid-category-title": "Säit ass keng valabel Kategorie: $1",
+	"bs-parser-error-invalid-category-title": "D'Säit ass keng gülteg Kategorie: $1",
 	"bs-exttype-bluespice": "BlueSpice-Erweiderungen",
 	"bs-export-menu-print-text": "Drécken",
 	"bs-export-menu-print-title": "Weist d'Drockversioun vun der Säit",
