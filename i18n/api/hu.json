@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Krisztina",
-			"Wolf Rex",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Wolf Rex"
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "Felsorolja az összes fájlt a fájlkezelőből. Lehetővé teszi a rendezést, szűrést és lapozást. ExtJS Store paramétereket valósít meg.",
