@@ -17,5 +17,9 @@
 	"bs-ooui-btn-dismiss-alert-title": "Відхилити",
 	"bs-ooui-key-value-input-widget-section-label": "Розділ",
 	"bs-ooui-key-value-input-widget-add-section-label": "Додати новий розділ",
-	"bs-pagecollection-prefix": "Збірка сторінок"
+	"bs-pagecollection-prefix": "Збірка сторінок",
+	"bs-ui-generic-save": "Зберегти",
+	"bs-ui-generic-cancel": "Скасувати",
+	"bs-ui-generic-yes": "Так",
+	"bs-ui-generic-no": "Ні"
 }

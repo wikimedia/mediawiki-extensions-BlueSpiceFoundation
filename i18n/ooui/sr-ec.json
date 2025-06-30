@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"BadDog",
 			"Kizule",
-			"Milicevic01",
-			"Aca"
+			"Milicevic01"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Додајте нов...",

@@ -14,5 +14,18 @@
 	"bs-ooui-btn-dismiss-alert-title": "Elutasítás",
 	"bs-ooui-key-value-input-widget-section-label": "Szakasz",
 	"bs-ooui-key-value-input-widget-add-section-label": "Új szakasz hozzáadása",
-	"bs-pagecollection-prefix": "Lapgyűjtemény"
+	"bs-pagecollection-prefix": "Lapgyűjtemény",
+	"bs-ui-generic-save": "Mentés",
+	"bs-ui-generic-cancel": "Mégse",
+	"bs-ui-generic-yes": "Igen",
+	"bs-ui-generic-no": "Nem",
+	"bs-exportpages-dialog-title": "Oldalak exportálása gyűjteménybe",
+	"bs-exportpages-success-text": "Lapok ide exportálva: [[ $1 | $2 ]]",
+	"bs-ui-generic-close": "Bezárás",
+	"bs-pageexport-list-name-label": "Lista név",
+	"bs-pageexport-list-format-label": "Lista formátum",
+	"bs-pageexport-list-format-plain-label": "Sima szöveg",
+	"bs-pageexport-list-format-link-label": "Hivatkozás",
+	"bs-pageexport-overwrite-label": "Felülír",
+	"bs-export-search-summary-text": "PageExport által generálva"
 }

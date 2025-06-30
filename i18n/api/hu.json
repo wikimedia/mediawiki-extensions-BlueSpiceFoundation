@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Krisztina",
+			"Tacsipacsi",
 			"Wolf Rex"
 		]
 	},
@@ -9,7 +10,7 @@
 	"apihelp-bs-task-param-format": "Az eredmény formátuma",
 	"bs-wikipage-tasks-error-page-not-valid": "A megadott lap nem érvényes.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Megváltoztatott kategóriák.",
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheted a/az \"$1\" lapot.",
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheted a(z) „$1” lapot.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Érvénytelen {{PLURAL:$2|kategória|kategóriák}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategóriák sikeresen beállítva.",
 	"apihelp-bs-wikisubpage-treestore-summary": "Egy adott wikilap allapjait listázza",
@@ -18,5 +19,14 @@
 	"bs-api-task-taskData-page-title": "Egy wiki lap érvényes címe",
 	"apihelp-bs-js-var-config-param-format": "Az eredmény formátuma",
 	"apihelp-bs-categorylinks-store-param-page-id": "A lap azonosítója ID",
-	"apihelp-bs-templatelinks-store-param-page-id": "A lap azonosítója ID"
+	"apihelp-bs-templatelinks-store-param-page-id": "A lap azonosítója ID",
+	"apihelp-bs-filebackend-store-summary": "Felsorolja az összes fájlt a fájlkezelőből. Lehetővé teszi a rendezést, szűrést és lapozást. ExtJS Store paramétereket valósít meg.",
+	"apihelp-bs-user-store-summary": "Felsorolja az adatbázis összes felhasználóját. Lehetővé teszi a rendezést, szűrést és lapozást. ExtJS Store paramétereket valósít meg.",
+	"apihelp-bs-category-store-summary": "Felsorolja az összes kategóriát. Lehetővé teszi a rendezést, szűrést és lapozást. ExtJS Store paramétereket valósít meg.",
+	"apihelp-bs-adminuser-store-summary": "Felsorolja az adatbázis összes felhasználóját további érzékeny adatokkal. Lehetővé teszi a rendezést, szűrést és lapozást. ExtJS Store paramétereket valósít meg.",
+	"apihelp-bs-group-store-summary": "Felsorolja az összes csoportot a $wgImplicitGroups kivételével. Lehetővé teszi a rendezést, szűrést és lapozást. ExtJS Store paramétereket valósít meg.",
+	"apihelp-bs-interwiki-store-summary": "Felsorolja az összes wikiközi hivatkozást. Lehetővé teszi a rendezést, szűrést és lapozást. ExtJS Store paramétereket implementál.",
+	"bs-wikipage-tasks-error-nothingtoremove": "Nincsenek eltávolítható kategóriák",
+	"apihelp-bs-category-treestore-summary": "Felsorolja egy adott kategória alkategóriáit",
+	"apihelp-bs-task-param-examples": "Példákat jelenít meg a feladatparaméterekre"
 }

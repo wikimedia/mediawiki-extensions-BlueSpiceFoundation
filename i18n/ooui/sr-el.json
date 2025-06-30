@@ -12,5 +12,13 @@
 	"bs-ooui-btn-dismiss-alert-title": "Odbaci",
 	"bs-ooui-key-value-input-widget-section-label": "Odeljak",
 	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj novi odeljak",
-	"bs-pagecollection-prefix": "Zbirka stranica"
+	"bs-pagecollection-prefix": "Zbirka stranica",
+	"bs-ui-generic-save": "Sačuvaj",
+	"bs-ui-generic-cancel": "Otkaži",
+	"bs-ui-generic-yes": "Da",
+	"bs-ui-generic-no": "Ne",
+	"bs-ui-generic-close": "Zatvori",
+	"bs-pageexport-list-format-plain-label": "Čist tekst",
+	"bs-pageexport-list-format-link-label": "Veza",
+	"bs-pageexport-overwrite-label": "Presnimi"
 }

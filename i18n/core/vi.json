@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
+			"Chaiwan2009",
 			"Dinhxuanduyet",
 			"Minh Nguyen",
 			"Nguyenphutrong2",
@@ -12,5 +13,6 @@
 	"bs-ns": "Không gian tên",
 	"action-wikiadmin": "sử dụng các tác vụ bảo quản nguy hiểm tiềm ẩn, chẳng hạn như quản lý người dùng, quyền, cấu hình chung (phần mở rộng BlueSpice)",
 	"right-wikiadmin": "Sử dụng các tác vụ bảo quản nguy hiểm tiềm ẩn, chẳng hạn như quản lý người dùng, quyền, cấu hình chung (phần mở rộng BlueSpice)",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Không thể ghi tập tin cấu hình $1!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Không thể ghi tập tin cấu hình $1!",
+	"bs-mins-duration": "{{PLURAL:$1| một phút| $1 phút}}"
 }

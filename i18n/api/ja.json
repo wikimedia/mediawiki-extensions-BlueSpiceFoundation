@@ -14,7 +14,7 @@
 			"背番号4のエース"
 		]
 	},
-	"apihelp-bs-filebackend-store-summary": "ファイルバックエンドからすべてのファイルを一覧表示します。並べ替え、フィルタおよびページ区切りができます。ExtJS Store パラメーターを実装します。",
+	"apihelp-bs-filebackend-store-summary": "ファイルバックエンドからすべてのファイルを一覧表示します。並べ替え、フィルターおよびページ区切りができます。ExtJS Store パラメーターを実装します。",
 	"apihelp-bs-user-store-summary": "データベースからすべての利用者を一覧表示します。並べ替え、フィルターおよびページ区切りができます。ExtJS Store パラメーターを実装します。",
 	"apihelp-bs-category-store-summary": "すべてのカテゴリを一覧表示します。並べ替え、フィルターおよびページ区切りができます。ExtJS Store パラメーターを実装します。",
 	"apihelp-bs-adminuser-store-summary": "データベースからすべての利用者を追加のセンシティブデータとともに一覧表示します。並べ替え、フィルターおよびページ区切りができます。ExtJS Store パラメーターを実装します。",
