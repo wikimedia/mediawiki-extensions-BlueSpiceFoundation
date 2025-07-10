@@ -11,5 +11,7 @@
 	"apihelp-bs-wikisubpage-treestore-param-options": "Опцийн могӀам",
 	"apihelp-bs-js-var-config-param-format": "Хиламан формат",
 	"apihelp-bs-categorylinks-store-param-page-id": "АгӀонан идентификатор",
-	"apihelp-bs-templatelinks-store-param-page-id": "АгӀонан идентификатор"
+	"apihelp-bs-templatelinks-store-param-page-id": "АгӀонан идентификатор",
+	"apihelp-bs-task-param-format": "ЖамӀан формат",
+	"bs-api-task-taskData-page-title": "ТӀеэца йиш йолу вики-агӀонан цӀе"
 }
