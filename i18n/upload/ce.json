@@ -18,5 +18,6 @@
 	"bs-upload-uploaddestfilelabel": "ТӀаьххьара файлан цӀе",
 	"bs-upload-allowedfiletypesare": "Мегаш йолу файлан тайпанаш:",
 	"bs-upload-uploadwatchthislabel": "Латайе хӀара файл тергаме могӀам йукъахь",
-	"bs-upload-uploadignorewarningslabel": "ДӀахьедар тергал ца дан"
+	"bs-upload-uploadignorewarningslabel": "ДӀахьедар тергал ца дан",
+	"bs-upload-filetypenotsupported": "Файлан хӀара тайпа лелаш дац."
 }
