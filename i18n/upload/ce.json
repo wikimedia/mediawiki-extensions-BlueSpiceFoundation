@@ -17,6 +17,7 @@
 	"bs-upload-upload-waitmessage": "ДӀадоьдуш ду чуйаккхар...",
 	"bs-upload-error": "ГӀалат",
 	"bs-upload-descfilelabel": "Цуьнах лаьцна",
+	"bs-upload-filetypenotsupported": "Файлан хӀара тайпа лелаш дац.",
 	"bs-upload-details": "Мадарра",
 	"bs-upload-uploadwarningdialog-title": "Файл чуйаккхар: ДӀахьедар"
 }
