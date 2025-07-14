@@ -14,7 +14,7 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 		$versionFile = $GLOBALS['IP'] . '/BLUESPICE-VERSION';
 		if ( file_exists( $versionFile ) ) {
 			$versionFileContent = file_get_contents( $versionFile );
-			$version = ' ' . Sanitizer::stripAllTags( $versionFileContent );
+			$version = Sanitizer::stripAllTags( $versionFileContent );
 		}
 
 		if ( empty( $version ) ) {
