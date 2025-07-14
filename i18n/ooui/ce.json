@@ -22,5 +22,7 @@
 	"bs-pageexport-list-format-label": "МогӀаман формат",
 	"bs-pageexport-list-format-plain-label": "Цхьалхе текст",
 	"bs-pageexport-list-format-link-label": "Хьажорг",
-	"bs-pageexport-overwrite-label": "Йухайазйе"
+	"bs-pageexport-overwrite-label": "Йухайазйе",
+	"bs-ooui-key-value-input-widget-error-message": "Йерриге а оьшуш долу меттигаш дӀайазйан йеза!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Цхьа а маьӀна билгалдаьккхина дац!"
 }
