@@ -4,18 +4,18 @@
 			"Умар"
 		]
 	},
+	"apihelp-bs-store-param-limit": "Йухадерзочу жамӀийн дукхалла.",
+	"apihelp-bs-task-param-format": "ЖамӀан формат",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Хийцамаш бина категореш.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Хьуна магийна дац \"$1\" агӀо тайан.",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Нийса йоцу категори|Нийса йоцу категореш}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Категореш кхиамца чуйихкина.",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Опцийн могӀам",
+	"bs-api-task-taskData-page-id": "ХӀинца йолу вики агӀонан ID",
+	"bs-api-task-taskData-page-title": "ТӀеэца йиш йолу вики-агӀонан цӀе",
+	"bs-api-task-wikipagetasks-taskData-categories": "МогӀанийн массив. МаьӀна категорийн цӀерашца догӀуш хила деза.",
+	"apihelp-bs-watchlist-store-summary": "Дерриге а тергаман тептаран дӀайаздарш гойту. ДӀасакъасто а, фильтраци йан а, агӀонаш хийца а бакъо ло. Туьканан параметраш кхочушйо.",
 	"apihelp-bs-js-var-config-param-format": "Хиламан формат",
 	"apihelp-bs-categorylinks-store-param-page-id": "АгӀонан идентификатор",
-	"apihelp-bs-templatelinks-store-param-page-id": "АгӀонан идентификатор",
-	"apihelp-bs-task-param-format": "ЖамӀан формат",
-	"bs-api-task-taskData-page-title": "ТӀеэца йиш йолу вики-агӀонан цӀе",
-	"apihelp-bs-store-param-limit": "Йухадерзочу жамӀийн дукхалла.",
-	"bs-api-task-taskData-page-id": "ХӀинца йолу вики агӀонан ID",
-	"bs-api-task-wikipagetasks-taskData-categories": "МогӀанийн массив. МаьӀна категорийн цӀерашца догӀуш хила деза.",
-	"apihelp-bs-watchlist-store-summary": "Дерриге а тергаман тептаран дӀайаздарш гойту. ДӀасакъасто а, фильтраци йан а, агӀонаш хийца а бакъо ло. Туьканан параметраш кхочушйо."
+	"apihelp-bs-templatelinks-store-param-page-id": "АгӀонан идентификатор"
 }
