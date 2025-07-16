@@ -62,5 +62,11 @@
 	"bs-bluespice-mediawiki": "BlueSpice MediaWiki",
 	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "Аноним декъашхой",
-	"protect-level-editor": "Редакторшна а, администраторшна бен магийна дац"
+	"protect-level-editor": "Редакторшна а, администраторшна бен магийна дац",
+	"bs-permission-role-reader": "Корта",
+	"bs-permission-role-editor": "Редактор",
+	"bs-permission-role-reviewer": "Рецензент",
+	"bs-permission-role-admin": "Администратор",
+	"bs-title-warning": "ДӀахьедар",
+	"bs-title-success": "Кхиамца"
 }
