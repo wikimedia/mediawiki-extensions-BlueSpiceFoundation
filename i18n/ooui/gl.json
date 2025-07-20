@@ -7,15 +7,28 @@
 			"Xosecalvo"
 		]
 	},
-	"bs-ooui-field-tagmultiselect-input-placeholder": "Engadir novo...",
-	"bs-ooui-key-value-input-widget-key-label": "Chave",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Engadir...",
+	"bs-ooui-key-value-input-widget-key-label": "Clave",
 	"bs-ooui-key-value-input-widget-value-label": "Valor",
 	"bs-ooui-key-value-input-widget-add-button-label": "Engadir",
-	"bs-ooui-key-value-input-widget-add-form-label": "Engadir nova entrada",
+	"bs-ooui-key-value-input-widget-add-form-label": "Engadir unha nova entrada",
 	"bs-ooui-key-value-input-widget-error-message": "Cómpre encher tódolos campos obrigatorios!",
 	"bs-ooui-key-value-input-widget-no-values-label": "Non hai valores establecidos!",
 	"bs-ooui-btn-dismiss-alert-title": "Descartar",
 	"bs-ooui-key-value-input-widget-section-label": "Sección",
-	"bs-ooui-key-value-input-widget-add-section-label": "Engadir nova sección",
-	"bs-pagecollection-prefix": "Colección de páxinas"
+	"bs-ooui-key-value-input-widget-add-section-label": "Engadir unha nova sección",
+	"bs-pagecollection-prefix": "Colección de páxinas",
+	"bs-ui-generic-save": "Gardar",
+	"bs-ui-generic-cancel": "Cancelar",
+	"bs-ui-generic-yes": "Si",
+	"bs-ui-generic-no": "Non",
+	"bs-exportpages-dialog-title": "Exportar as páxinas a unha colección",
+	"bs-exportpages-success-text": "As páxinas exportáronse a «[[$1|$2]]»",
+	"bs-ui-generic-close": "Pechar",
+	"bs-pageexport-list-name-label": "Nome da lista",
+	"bs-pageexport-list-format-label": "Formato da lista",
+	"bs-pageexport-list-format-plain-label": "Texto simple",
+	"bs-pageexport-list-format-link-label": "Ligazón",
+	"bs-pageexport-overwrite-label": "Sobrescribir",
+	"bs-export-search-summary-text": "Xerado por PageExport"
 }
