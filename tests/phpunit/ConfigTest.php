@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests;
 
-use MediaWiki\MediaWikiServices;
+use MediaWikiIntegrationTestCase;
 
 /**
  * @group Database
@@ -10,7 +10,7 @@ use MediaWiki\MediaWikiServices;
  * @group BlueSpiceFoundation
  * @group Medium
  */
-class ConfigTest extends \MediaWikiIntegrationTestCase {
+class ConfigTest extends MediaWikiIntegrationTestCase {
 	public function setUp(): void {
 		parent::setUp();
 
@@ -30,7 +30,7 @@ class ConfigTest extends \MediaWikiIntegrationTestCase {
 			__METHOD__
 		);
 		$config = new \BlueSpice\Config(
-			MediaWikiServices::getInstance()->getDBLoadBalancer()
+			$this->getServiceContainer()->getDBLoadBalancer()
 		);
 		$config->invalidateCache();
 	}
@@ -39,7 +39,7 @@ class ConfigTest extends \MediaWikiIntegrationTestCase {
 	 * @covers \BlueSpice\Config::__construct
 	 */
 	public function testFactoryReturn() {
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+		$config = $this->getServiceContainer()->getConfigFactory()->makeConfig( 'bsg' );
 
 		$this->assertInstanceOf(
 			// Can be discussed whether just \Config is sufficient to test
@@ -54,7 +54,7 @@ class ConfigTest extends \MediaWikiIntegrationTestCase {
 	 */
 	public function testDatabasePreval() {
 		$config = new \BlueSpice\Config(
-			MediaWikiServices::getInstance()->getDBLoadBalancer()
+			$this->getServiceContainer()->getDBLoadBalancer()
 		);
 		$this->assertEquals(
 			9,
@@ -68,7 +68,7 @@ class ConfigTest extends \MediaWikiIntegrationTestCase {
 	 */
 	public function testGlobalVarDefaulting() {
 		$config = new \BlueSpice\Config(
-			MediaWikiServices::getInstance()->getDBLoadBalancer()
+			$this->getServiceContainer()->getDBLoadBalancer()
 		);
 
 		$this->assertArrayEquals(
