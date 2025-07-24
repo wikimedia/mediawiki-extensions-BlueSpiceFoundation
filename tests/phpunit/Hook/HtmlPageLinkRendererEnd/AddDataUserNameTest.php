@@ -4,13 +4,13 @@ namespace BlueSpice\Tests\Hook\HtmlPageLinkRendererEnd;
 
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWikiIntegrationTestCase;
 
 /**
  * @group Database
  */
-class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
+class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 	protected $testUserName = 'wiki Sysöp';
 
 	/**
@@ -25,7 +25,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = $this->getServiceContainer()->getLinkRenderer();
 		$title = Title::newMainPage();
 		$isKnown = true;
 		$html = new \HtmlArmor( '' );
@@ -52,7 +52,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 	 */
 	public function testProcessUserPageWithRename() {
 		define( 'BS_ADD_DATA_USER_NAME_TEST', true );
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$testuser = $services->getUserFactory()->newFromName( $this->testUserName );
 		$testuser->addToDatabase();
 		$testuser->setRealName( 'Sysöp, W. Iki' );
@@ -105,7 +105,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 	 * @covers \BlueSpice\Hook\HtmlPageLinkRendererEnd\AddDataUserName::process
 	 */
 	public function testProcessUserPageWithOutRename() {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$testuser = $services->getUserFactory()->newFromName( $this->testUserName );
 		$testuser->addToDatabase();
 		$testuser->setRealName( 'Sysöp, W. Iki' );
@@ -166,7 +166,7 @@ class AddDataUserNameTest extends \MediaWikiIntegrationTestCase {
 			->disableOriginalConstructor()
 			->getMock();
 
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$linkRenderer = $this->getServiceContainer()->getLinkRenderer();
 		$title = Title::makeTitle( NS_MAIN, 'Not a user page' );
 		$isKnown = true;
 		$html = $newHtml = new \HtmlArmor( 'Some link text' );

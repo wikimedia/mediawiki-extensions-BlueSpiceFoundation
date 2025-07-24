@@ -2,7 +2,7 @@
 
 namespace BlueSpice\Tests\DataSources;
 
-use MediaWiki\MediaWikiServices;
+use MediaWikiIntegrationTestCase;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 
 /**
@@ -11,7 +11,7 @@ use MWStake\MediaWiki\Component\DataStore\ReaderParams;
  * @group Database
  * @group heavy
  */
-class WatchlistTest extends \MediaWikiIntegrationTestCase {
+class WatchlistTest extends MediaWikiIntegrationTestCase {
 
 	public function addDBData() {
 		$this->insertPage( 'Test A' );
@@ -36,7 +36,7 @@ class WatchlistTest extends \MediaWikiIntegrationTestCase {
 			[ 2, 0, 'Test B', null ]
 		];
 
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 		foreach ( $dummyDbEntries as $dummyDbEntry ) {
 			$dbw->insert(
@@ -96,7 +96,7 @@ class WatchlistTest extends \MediaWikiIntegrationTestCase {
 	 */
 	protected function makeInstance() {
 		return new \BlueSpice\Data\Watchlist\Reader(
-			MediaWikiServices::getInstance()->getDBLoadBalancer()
+			$this->getServiceContainer()->getDBLoadBalancer()
 		);
 	}
 }

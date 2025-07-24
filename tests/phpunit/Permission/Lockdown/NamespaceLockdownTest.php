@@ -4,7 +4,6 @@ namespace BlueSpice\Tests\Permission\Lockdown;
 
 use BlueSpice\Permission\Lockdown\Module\Namespaces;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWikiIntegrationTestCase;
@@ -37,7 +36,7 @@ class NamespaceLockdownTest extends MediaWikiIntegrationTestCase {
 	public function testLocking( Title $title, $shouldApply ) {
 		$this->setModule();
 		$this->setMwGlobals( 'bsgNamespaceRolesLockdown', [] );
-		$mwPermissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$mwPermissionManager = $this->getServiceContainer()->getPermissionManager();
 
 		$appliedNotSet = $this->module->applies( $title, $this->user );
 		$this->setMwGlobals( 'bsgNamespaceRolesLockdown', [
@@ -77,8 +76,7 @@ class NamespaceLockdownTest extends MediaWikiIntegrationTestCase {
 	}
 
 	protected function setModule() {
-		/** @var MediaWikiServices $services */
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$this->module = Namespaces::getInstance(
 			$services->getConfigFactory()->makeConfig( 'bsg' ),
 			RequestContext::getMain(),
