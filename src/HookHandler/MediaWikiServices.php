@@ -10,11 +10,14 @@ use MediaWiki\MediaWikiServices as MWMediaWikiServices;
 class MediaWikiServices implements MediaWikiServicesHook {
 
 	/**
-	 *
 	 * @param MWMediaWikiServices $services
 	 * @return bool
 	 */
 	public function onMediaWikiServices( $services ) {
+		if ( defined( 'MW_QUIBBLE_CI' ) ) {
+			return;
+		}
+
 		$services->addServiceManipulator(
 			'HttpRequestFactory',
 			static function ( $originalFactory ) {
