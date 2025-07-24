@@ -97,7 +97,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			"Setting categories failed where it should have succeeded"
 		);
 
-		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $oTitle );
+		$oWikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
 		foreach ( $aCategoryTitles as $oCategoryTitle ) {
@@ -136,7 +136,7 @@ class BSApiWikiPageTasksTest extends BSApiTasksTestBase {
 			"Removing categories failed where it should have succeeded"
 		);
 
-		$oWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $oTitle );
+		$oWikiPage = $this->getServiceContainer()->getWikiPageFactory()->newFromTitle( $oTitle );
 		$aCategoryTitles = $oWikiPage->getCategories();
 		$aActualCategories = [];
 		foreach ( $aCategoryTitles as $oCategoryTitle ) {
