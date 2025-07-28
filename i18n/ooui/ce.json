@@ -12,5 +12,17 @@
 	"bs-ooui-btn-dismiss-alert-title": "Йухадаккха",
 	"bs-ooui-key-value-input-widget-section-label": "Дакъа",
 	"bs-ooui-key-value-input-widget-add-section-label": "ТӀетоха керла дакъа",
-	"bs-pagecollection-prefix": "АгӀонийн коллекци"
+	"bs-pagecollection-prefix": "АгӀонийн коллекци",
+	"bs-ooui-key-value-input-widget-error-message": "Йерриге а оьшуш долу меттигаш дӀайазйан йеза!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Цхьа а маьӀна билгалдаьккхина дац!",
+	"bs-ui-generic-save": "Ӏалашйан",
+	"bs-ui-generic-cancel": "Йухайаккхар",
+	"bs-ui-generic-yes": "ХӀаъ",
+	"bs-ui-generic-no": "ХӀан-хӀа",
+	"bs-ui-generic-close": "ДӀачӀагӀа",
+	"bs-pageexport-list-name-label": "МогӀаман цӀе",
+	"bs-pageexport-list-format-label": "МогӀаман формат",
+	"bs-pageexport-list-format-plain-label": "Цхьалхе текст",
+	"bs-pageexport-list-format-link-label": "Хьажорг",
+	"bs-pageexport-overwrite-label": "Йухайазйе"
 }
