@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Minh Nguyen",
+			"Nvdtn19",
 			"SongNgu.xyz"
 		]
 	},
@@ -9,7 +10,7 @@
 	"bs-credits-programmers": "Lập trình viên",
 	"bs-credits-dnt": "Thiết kế và thử nghiệm",
 	"bs-credits-contributors": "Người đóng góp",
-	"bs-credits-translators": "Dịch giả",
+	"bs-credits-translators": "Biên dịch viên",
 	"bs-credits-translation": "Bản dịch",
-	"bs-credits-th": "Cảm ơn tất cả các dịch giả từ $1."
+	"bs-credits-th": "Cảm ơn tất cả các biên dịch viên từ $1."
 }
