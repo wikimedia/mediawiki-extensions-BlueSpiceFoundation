@@ -773,7 +773,6 @@
 		"HTMLStaticImageFieldOverride": "includes/html/htmlformfields/HTMLStaticImageFieldOverride.php",
 		"HTMLCheckFieldOverride": "includes/html/htmlformfields/HTMLCheckFieldOverride.php",
 		"HTMLMultiSelectEx": "includes/html/htmlformfields/HTMLMultiSelectEx.php",
-		"XmlMultiSelect": "includes/html/htmlformfields/XmlMultiSelect.php",
 		"HTMLMultiSelectPlusAdd": "includes/html/htmlformfields/HTMLMultiSelectPlusAdd.php",
 		"HTMLMultiSelectSortList": "includes/html/htmlformfields/HTMLMultiSelectSortList.php",
 		"BsArticleHelper": "includes/utility/ArticleHelper.class.php",
