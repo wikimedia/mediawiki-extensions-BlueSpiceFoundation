@@ -36,7 +36,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "Invalid {{PLURAL:$2|category|categories}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Categories have successfully been set.",
 	"apihelp-bs-wikipage-store-summary": "Lists all wiki pages. Allows sorting, filtering and pagination. Implements ExtJS Store parameters.",
-	"apihelp-bs-ping-tasks-summary": "Ping task that provides continuous exchange of data",
 	"apihelp-bs-wikisubpage-treestore-summary": "Lists the subpages of a specific wikipage",
 	"apihelp-bs-wikisubpage-treestore-param-node": "The prefixed title of the wikipage",
 	"apihelp-bs-wikisubpage-treestore-param-options": "List of options",

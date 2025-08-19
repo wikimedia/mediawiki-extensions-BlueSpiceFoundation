@@ -39,7 +39,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "An error message that tells if the category names in $1 are invalid.\n\nParameters:\n* $1 - a comma-separated list of provided invalid category names\n* $2 - a positive number for the plural rule",
 	"bs-wikipage-tasks-setcategories-success": "A success message that indicated that the categories have successfully been set",
 	"apihelp-bs-wikipage-store-summary": "{{doc-apihelp-summary|bs-wikipage-store}}",
-	"apihelp-bs-ping-tasks-summary": "{{doc-apihelp-summary|bs-ping-tasks}}",
 	"apihelp-bs-wikisubpage-treestore-summary": "{{doc-apihelp-summary|bs-wikisubpage-treestore}}",
 	"apihelp-bs-wikisubpage-treestore-param-node": "{{doc-apihelp-param|bs-wikisubpage-treestore|node}}",
 	"apihelp-bs-wikisubpage-treestore-param-options": "{{doc-apihelp-param|bs-wikisubpage-treestore|options}}",

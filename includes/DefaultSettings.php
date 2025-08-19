@@ -523,7 +523,6 @@ $GLOBALS['bsgTemplates'] = [];
 
 $GLOBALS['bsgUserMiniProfileParams'] = [ 'width' => 40, 'height' => 40 ];
 $GLOBALS['bsgMiniProfileEnforceHeight'] = true;
-$GLOBALS['bsgPingInterval'] = 10;
 
 /**
  * ATTENTION: Not to confuse with 'bsgTestSystem'.

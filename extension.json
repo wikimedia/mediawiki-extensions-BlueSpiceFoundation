@@ -140,7 +140,6 @@
 		"bs-wikipage-store": "BSApiWikiPageStore",
 		"bs-wikisubpage-treestore": "BSApiWikiSubPageTreeStore",
 		"bs-titlequery-store": "BSApiTitleQueryStore",
-		"bs-ping-tasks": "BSApiPingTasks",
 		"bs-upload-license-store": "BSApiUploadLicenseStore",
 		"bs-category-treestore": "BSApiCategoryTreeStore",
 		"bs-watchlist-store": "BlueSpice\\Api\\Store\\Watchlist",
@@ -180,7 +179,6 @@
 				"bluespice/bluespice.wikiText.js",
 				"bluespice/bluespice.string.js",
 				"bluespice/bluespice.xhr.js",
-				"bluespice/bluespice.ping.js",
 				"bluespice/bluespice.tooltip.js",
 				"bluespice/bluespice.api.js",
 				"bluespice/bluespice.treepanel.js",
@@ -436,8 +434,7 @@
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddGraphicalListRegistry::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddExtendedSiteToolsRegistry::callback",
-			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback",
-			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddPingVars::callback"
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback"
 		],
 		"getUserPermissionsErrors": [
 			"\\BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyLockdown::callback"
@@ -728,11 +725,6 @@
 			],
 			"value": {}
 		},
-		"PingOnInit": {
-			"descriptionmsg": "bs-ping-on-init-desc",
-			"public": true,
-			"value": false
-		},
 		"HttpRequestDefaultOptions": {
 			"description": [
 				"Default connection options for all HTTP requests made via HttpRequestFactory"
@@ -800,7 +792,6 @@
 		"BSApiWikiSubPageTreeStore": "includes/api/BSApiWikiSubPageTreeStore.php",
 		"BSApiTitleQueryStore": "includes/api/BSApiTitleQueryStore.php",
 		"BSApiCategoryTreeStore": "includes/api/BSApiCategoryTreeStore.php",
-		"BSApiPingTasks": "includes/api/BSApiPingTasks.php",
 		"BsInvalidNamespaceException": "includes/exception/InvalidNamespaceException.class.php",
 		"BSInvalidParamException": "includes/exception/BSInvalidParamException.php",
 		"HTMLFormEx": "includes/html/htmlformfields/HTMLFormEx.php",
