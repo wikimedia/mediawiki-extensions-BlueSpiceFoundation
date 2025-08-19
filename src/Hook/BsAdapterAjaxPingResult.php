@@ -22,6 +22,7 @@
  * @package    BlueSpiceFoundation
  * @copyright  Copyright (C) 2017 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
+ * @deprecated since 5.2
  * @filesource
  */
 namespace BlueSpice\Hook;

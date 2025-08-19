@@ -25,9 +25,7 @@
  */
 
 /**
- * TODO: Works for now but needs refactoring soon!
- * Provides the ping task.
- * @package BlueSpice_Foundation
+ * @deprecated since 5.2 - functionality removed
  */
 class BSApiPingTasks extends BSApiTasksBase {
 	/**
@@ -36,47 +34,8 @@ class BSApiPingTasks extends BSApiTasksBase {
 	 */
 	protected $aTasks = [
 		'ping' => [
-			'examples' => [
-				[
-					'iArticleID' => 543,
-					'iNamespace' => 10,
-					'sTitle' => 'Some page',
-					'iRevision' => 324,
-					'BsPingData' => [
-						[
-							'sRef' => 'Reference',
-							'aData' => []
-						]
-					]
-				]
-			],
-			'params' => [
-				'iArticleID' => [
-					'desc' => 'A valid page id',
-					'type' => 'integer',
-					'required' => false
-				],
-				'iNamespace' => [
-					'desc' => 'A valid namespace id',
-					'type' => 'integer',
-					'required' => false
-				],
-				'sTitle' => [
-					'desc' => 'A valid page title',
-					'type' => 'string',
-					'required' => false
-				],
-				'iRevision' => [
-					'desc' => 'A valid revision id',
-					'type' => 'integer',
-					'required' => false
-				],
-				'BsPingData' => [
-					'desc' => 'Array of objects that contain the actual ping data packages',
-					'type' => 'array',
-					'required' => true
-				],
-			]
+			'examples' => [],
+			'params' => [],
 		]
 	];
 
@@ -91,9 +50,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 	 * @return array
 	 */
 	protected function getRequiredTaskPermissions() {
-		return [
-			'ping' => [ 'read' ]
-		];
+		return [];
 	}
 
 	/**
@@ -103,79 +60,8 @@ class BSApiPingTasks extends BSApiTasksBase {
 	 */
 	protected function task_ping( $oTaskData ) {
 		$oResponse = $this->makeStandardReturn();
-
-		// TODO: Params need very hard param processing!
-		$iArticleId = isset( $oTaskData->iArticleID )
-			? (int)$oTaskData->iArticleID
-			: 0;
-		$iNamespace = isset( $oTaskData->iNamespace )
-			? (int)$oTaskData->iNamespace
-			: 0;
-		$sTitle = isset( $oTaskData->sTitle )
-			? (string)$oTaskData->sTitle
-			: '';
-		$iRevision = isset( $oTaskData->iRevision )
-			? (int)$oTaskData->iRevision
-			: 0;
-		$aBSPingData = isset( $oTaskData->BsPingData )
-			? (array)$oTaskData->BsPingData
-			: [];
-
 		$oResponse->success = true;
 		$oResponse->payload = [];
-		if ( empty( $aBSPingData ) ) {
-			return $oResponse;
-		}
-
-		foreach ( $aBSPingData as $oSinglePing ) {
-			if ( !$oResponse->success ) {
-				break;
-			}
-			if ( empty( $oSinglePing ) || empty( $oSinglePing->sRef ) ) {
-				continue;
-			}
-
-			// Workaround: Each hook handler expect an array
-			$aSinglePing = (array)$oSinglePing;
-			if ( !isset( $aSinglePing['aData'] ) ) {
-				$aSinglePing['aData'] = [];
-			} else {
-				// TODO: Each data set needs very hard param processing too!
-				$aSinglePing['aData'] = (array)$aSinglePing['aData'];
-			}
-			// Workaround: Each hook handler expect an array not an object
-			foreach ( $aSinglePing['aData'] as $iKey => $oData ) {
-				if ( empty( $oData ) ) {
-					$aSinglePing['aData'][$iKey] = [];
-					continue;
-				}
-				if ( !$oData instanceof stdClass ) {
-					continue;
-				}
-				$aSinglePing['aData'][$iKey] = (array)$oData;
-			}
-
-			$aSingleResult = [
-				"success" => false,
-				"errors" => [],
-				"message" => '',
-			];
-			// if hook returns false - overall success is false
-			$oResponse->success = $this->services->getHookContainer()->run(
-				'BsAdapterAjaxPingResult',
-				[
-					$aSinglePing['sRef'],
-					$aSinglePing['aData'],
-					$iArticleId,
-					$sTitle,
-					$iNamespace,
-					$iRevision,
-					&$aSingleResult
-				]
-			);
-			$oResponse->payload[$aSinglePing['sRef']] = $aSingleResult;
-		}
-
 		return $oResponse;
 	}
 }

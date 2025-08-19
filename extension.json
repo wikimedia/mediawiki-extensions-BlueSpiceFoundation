@@ -436,8 +436,7 @@
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddBSGConfig::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddGraphicalListRegistry::callback",
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddExtendedSiteToolsRegistry::callback",
-			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback",
-			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddPingVars::callback"
+			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback"
 		],
 		"getUserPermissionsErrors": [
 			"\\BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyLockdown::callback"
@@ -727,11 +726,6 @@
 				"`remove`: Contains a indexed array of keys that should be removed from the original value of the attribute. Will not be evaluated if `set` is defined."
 			],
 			"value": {}
-		},
-		"PingOnInit": {
-			"descriptionmsg": "bs-ping-on-init-desc",
-			"public": true,
-			"value": false
 		},
 		"HttpRequestDefaultOptions": {
 			"description": [
