@@ -8,7 +8,7 @@
 	"bs-upload-uploaddialogtitle": "Subir un ficheiro",
 	"bs-upload-uploadbuttontext": "Navegar",
 	"bs-upload-uploadfilefieldlabel": "Nome de ficheiro",
-	"bs-upload-uploadfileemptytext": "Inserir ficheiro novo...",
+	"bs-upload-uploadfileemptytext": "Inserir un ficheiro novo...",
 	"bs-upload-uploaddestfilelabel": "Nome do ficheiro de destino",
 	"bs-upload-allowedfiletypesare": "Tipos de ficheiros válidos:",
 	"bs-upload-license": "Licenza",
@@ -21,10 +21,10 @@
 	"bs-upload-error-long": "Erro no proceso de subida",
 	"bs-upload-filetypenotsupported": "Non se admite este tipo de ficheiro",
 	"bs-upload-details": "Detalles",
-	"bs-upload-uploadwarningdialog-title": "Carga de ficheiro: Avisos",
-	"bs-upload-uploadwarningdialog-intro": "Xurdiron os seguintes avisos ó tratar de cargar o ficheiro",
-	"bs-upload-uploadwarningdialog-outro": "Preme \"{{int:bs-extjs-ok}}\" para ignorar as advertencias e subir o ficheiro ou preme \"{{int:bs-extjs-cancel}}\" para volver ao formulario de carga",
-	"bs-upload-uploadwarningdialog-warning-exists": "Xa existe un ficheiro co nome \"$1\"",
+	"bs-upload-uploadwarningdialog-title": "Subida de ficheiro: Advertencias",
+	"bs-upload-uploadwarningdialog-intro": "Producíronse as seguintes advertencias ó intentar subir o ficheiro",
+	"bs-upload-uploadwarningdialog-outro": "Preme en «{{int:bs-extjs-ok}}» para ignorar as advertencias e subir o ficheiro ou preme en «{{int:bs-extjs-cancel}}» para volver ao formulario de subida",
+	"bs-upload-uploadwarningdialog-warning-exists": "Xa existe un ficheiro co nome «$1»",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Existe un duplicado|Existen varios duplicados}} deste ficheiro",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso descoñecido con código \"$1\""
+	"bs-upload-uploadwarningdialog-warning-unknown": "Advertencia descoñecida con código «$1»"
 }
