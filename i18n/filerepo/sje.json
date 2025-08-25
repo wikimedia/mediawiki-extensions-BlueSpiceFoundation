@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Olve Utne"
+			"Olve Utne",
+			"Yupik"
 		]
 	},
+	"bs-filerepo-headerfilesize": "Sturrudak",
 	"bs-filerepo-headerfiledescription": "Gåvådibme",
 	"bs-filerepo-headerfilethumbnail": "Unnagåvåtj"
 }
