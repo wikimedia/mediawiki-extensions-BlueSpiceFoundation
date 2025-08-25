@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
-	"diagnostics": "Diagnósticos do sistema"
+	"diagnostics": "Diagnóstico do sistema"
 }
