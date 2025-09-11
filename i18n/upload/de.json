@@ -25,7 +25,7 @@
 	"bs-upload-details": "Details",
 	"bs-upload-uploadwarningdialog-title": "Datei hochladen: Warnungen",
 	"bs-upload-uploadwarningdialog-intro": "Die folgenden Warnungen sind aufgetreten beim Versuch, die Datei hochzuladen.",
-	"bs-upload-uploadwarningdialog-outro": "Klicke auf „{{int:bs-extjs-ok}}“, um die Warnungen zu ignorieren und die Datei hochzuladen oder auf „{{int:bs-extjs-cancel}}“, um zum Hochladeformular zurückzukehren.",
+	"bs-upload-uploadwarningdialog-outro": "{{#FORMAL:Klicke|Klicken Sie}} auf „{{int:bs-extjs-ok}}“, um die Warnungen zu ignorieren und die Datei hochzuladen oder auf „{{int:bs-extjs-cancel}}“, um zum Hochladeformular zurückzukehren.",
 	"bs-upload-uploadwarningdialog-warning-exists": "Eine Datei mit dem Namen „$1“ ist bereits vorhanden",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "Es existieren {{PLURAL:$1|ein Duplikat|Duplikate}} für diese Datei",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Unbekannte Warnung mit dem Code „$1“"
