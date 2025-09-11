@@ -58,7 +58,8 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 			'categorylinks',
 			[
 				'cl_to' => "Dummy test",
-				'cl_timestamp' => $oDbw->timestamp()
+				'cl_timestamp' => $oDbw->timestamp(),
+				'cl_target_id' => 1
 			],
 			__METHOD__
 		);

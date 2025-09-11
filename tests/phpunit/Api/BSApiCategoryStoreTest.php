@@ -5,8 +5,6 @@ namespace BlueSpice\Tests\Api;
 use BlueSpice\Tests\BSApiExtJSStoreTestBase;
 
 /**
- * The base fixture has changed since MW 1.27. Therefore the test is marked
- * broken until BlueSpice updates its compatibility.
  * @group medium
  * @group api
  * @group Database
@@ -70,7 +68,8 @@ class BSApiCategoryStoreTest extends BSApiExtJSStoreTestBase {
 			'categorylinks',
 			[
 				'cl_to' => "Dummy test",
-				'cl_timestamp' => $oDbw->timestamp()
+				'cl_timestamp' => $oDbw->timestamp(),
+				'cl_target_id' => 1,
 			],
 			__METHOD__
 		);
