@@ -9,6 +9,8 @@
 	},
 	{
 		"resourceModule": "ext.bluespice",
-		"maxSize": "10.7 kB"
+		"maxSize": "10.7 kB",
+		"@note": "Ignore mwstake.component.alertbanners, https://phabricator.wikimedia.org/T395698#11172901",
+		"ignoreDependencies": true
 	}
 ]
