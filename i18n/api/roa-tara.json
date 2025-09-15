@@ -36,7 +36,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categorije}} invalide: $1",
 	"bs-wikipage-tasks-setcategories-success": "Le categorije onne state 'mbostate correttamende.",
 	"apihelp-bs-wikipage-store-summary": "Elenghe tutte le pàggene de uicchi. Face fà l'ordinamende, 'u filtre e 'a pagginazzione. 'Mblemende parametre ExtJS Store.",
-	"apihelp-bs-ping-tasks-summary": "Attivitate de ping ca dèje 'nu scambie condinue de date",
 	"apihelp-bs-wikisubpage-treestore-summary": "Elenghe le sottopàggene de 'na certa pàgene de uicchi",
 	"apihelp-bs-wikisubpage-treestore-param-node": "'U titole prefissate d'a pàgene de uicchi",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Elenghe de le opziune",

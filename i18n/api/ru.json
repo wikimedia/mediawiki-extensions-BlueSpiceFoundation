@@ -54,7 +54,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Неправильная категория|Неправильные категории}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Категории успешно заданы.",
 	"apihelp-bs-wikipage-store-summary": "Список всех вики-страниц. Позволяет сортировать, фильтровать и разбивать на страницы. Реализует параметры хранилища ExtJS.",
-	"apihelp-bs-ping-tasks-summary": "Задача Ping, обеспечивающая непрерывный обмен данными",
 	"apihelp-bs-wikisubpage-treestore-summary": "Перечисляет подстраницы определенного вики-сайта",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Заголовок вики-страницы с префиксом",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Список опций",

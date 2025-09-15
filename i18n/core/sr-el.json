@@ -69,7 +69,6 @@
 	"bs-pref-miniprofileenforceheight": "Prisili visinu korisničkog avatara",
 	"bs-pref-anonuserimage": "Avatar anonimnog korisnika:",
 	"bs-pref-deleteduserimage": "Izbrisani korisnički avatar:",
-	"bs-pref-bspinginterval": "Interval pinga (u sekundama):",
 	"bs-pref-testmode": "Uključi probni režim",
 	"bs-tag-input-desc": "Vrednost sadržaja elementa",
 	"bs-tag-param-desc": "Vrednost atributa elementa „$1”",
@@ -92,7 +91,6 @@
 	"right-wikiadmin": "korišćenje potencijalno opasnih administrativnih radnji kao što je upravljanje korisnicima, dozvolama, globalnim podešavanjima (BlueSpice proširenje)",
 	"bs-notifications-agent-anon": "anoniman korisnik",
 	"protect-level-editor": "Dozvoljeno samo urednicima i administratorima",
-	"bs-ping-on-init-desc": "Trebalo bi da pošalje ping zahtev odmah nakon učitavanja stranice",
 	"bs-permission-role-admin": "Administrator",
 	"bs-title-warning": "Upozorenje",
 	"bs-title-success": "Uspešno"

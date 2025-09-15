@@ -44,7 +44,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|קטגוריה לא־תקינה|קטגוריות לא־תקינות}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "הקטגוריות הוגדרו בהצלחה.",
 	"apihelp-bs-wikipage-store-summary": "רושמת את כל דפי הוויקי. מאפשרת מיון, סינון, וחלוקה לדפים. מיישמת פרמטרים של שרת ExtJS.",
-	"apihelp-bs-ping-tasks-summary": "משימת פינג המספקת חילופי נתונים מתמשכים",
 	"apihelp-bs-wikisubpage-treestore-summary": "רשימת דפי משנה של דף ויקי מסוים",
 	"apihelp-bs-wikisubpage-treestore-param-node": "הכותרת של דף הוויקי עם תחילית",
 	"apihelp-bs-wikisubpage-treestore-param-options": "רשימת אפשרויות",

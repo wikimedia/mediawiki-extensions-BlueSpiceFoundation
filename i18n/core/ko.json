@@ -74,7 +74,6 @@
 	"bs-pref-miniprofileenforceheight": "사용자 아바타의 높이 강제 설정",
 	"bs-pref-anonuserimage": "익명 사용자 아바타:",
 	"bs-pref-deleteduserimage": "삭제된 사용자 아바타:",
-	"bs-pref-bspinginterval": "핑 간격 (초):",
 	"bs-pref-testmode": "테스트 모드 활성화",
 	"bs-tag-input-desc": "요소 내용의 값",
 	"bs-tag-param-desc": "요소 속성 '$1'의 값",

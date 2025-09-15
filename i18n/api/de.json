@@ -43,7 +43,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "Die {{PLURAL:$2|Kategorie|Kategorien}} sind nicht vorhanden: $1",
 	"bs-wikipage-tasks-setcategories-success": "Die Kategorien wurden hinzugefügt.",
 	"apihelp-bs-wikipage-store-summary": "Listet alle Wikiseiten auf. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert „ExtJS-Store“-Parameter.",
-	"apihelp-bs-ping-tasks-summary": "Ping-Aufgabe, die den kontinuierlichen Austausch von Daten ermöglicht.",
 	"apihelp-bs-wikisubpage-treestore-summary": "Listet die Unterseiten einer bestimmten Wikiseite auf",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Der Titel der Seite einschließlich Namensraumpräfix",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Liste der Optionen",

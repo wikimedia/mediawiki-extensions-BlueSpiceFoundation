@@ -40,7 +40,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|تصنيف غير صالح|تصنيفات غير صالحة}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "تم تعيين التصنيفات بنجاح.",
 	"apihelp-bs-wikipage-store-summary": "يسرد جميع صفحات الويكي، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
-	"apihelp-bs-ping-tasks-summary": "مهمة Ping التي توفر تبادلا مستمرا للبيانات",
 	"apihelp-bs-wikisubpage-treestore-summary": "يسرد الصفحات الفرعية لصفحة ويكي محددة",
 	"apihelp-bs-wikisubpage-treestore-param-node": "بادئة عنوان صفحة wiki",
 	"apihelp-bs-wikisubpage-treestore-param-options": "قائمة الخيارات",

@@ -40,7 +40,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "Geçersiz {{PLURAL:$2|kategori|kategori}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategoriler başarıyla ayarlandı.",
 	"apihelp-bs-wikipage-store-summary": "Tüm viki sayfalarını listeler. Sıralama, filtreleme ve sayfa numaralandırmaya izin verir. ExtJS Mağazası parametrelerini uygular.",
-	"apihelp-bs-ping-tasks-summary": "Sürekli veri değişimi sağlayan ping görevi",
 	"apihelp-bs-wikisubpage-treestore-summary": "Belirli bir viki sayfasının alt sayfalarını listeler",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Viki sayfasının ön ek halindeki başlığı",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Seçeneklerin listesi",

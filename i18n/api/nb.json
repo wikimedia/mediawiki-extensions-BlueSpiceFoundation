@@ -37,7 +37,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Ugyldig kategori|Ugyldige kategorier}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategorier har blitt satt.",
 	"apihelp-bs-wikipage-store-summary": "Lister opp alle wikisider. Tillater sortering, filtrering og sideinndeling. Implementerer ExtJS Store-parametre.",
-	"apihelp-bs-ping-tasks-summary": "Ping-oppgave som tilbyr kontinuerlig utveksling av data",
 	"apihelp-bs-wikisubpage-treestore-summary": "Lister opp undersidene til en gitt wikiside",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Tittelen til wikisiden med prefiks",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Liste over alternativer",

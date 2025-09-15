@@ -46,7 +46,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "無効な{{PLURAL:$2|カテゴリ}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "カテゴリを設定しました。",
 	"apihelp-bs-wikipage-store-summary": "すべてのウィキページを一覧表示します。並べ替え、フィルターおよびページ区切りができます。ExtJS Store パラメーターを実装します。",
-	"apihelp-bs-ping-tasks-summary": "継続的なデータ交換を提供するPingタスク",
 	"apihelp-bs-wikisubpage-treestore-summary": "特定のウィキページの下位ページを列挙します",
 	"apihelp-bs-wikisubpage-treestore-param-node": "ウィキページの接頭辞付きのタイトル",
 	"apihelp-bs-wikisubpage-treestore-param-options": "オプションの一覧",

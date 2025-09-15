@@ -77,7 +77,6 @@
 	"bs-pref-miniprofileenforceheight": "مجبورکردن ارتفاع نماد کاربر",
 	"bs-pref-anonuserimage": "نماد کاربر ناشناس:",
 	"bs-pref-deleteduserimage": "نماد کاربر پاک‌شده:",
-	"bs-pref-bspinginterval": "بازه پینگ (به ثانیه):",
 	"bs-pref-testmode": "فعال کردن حالت آزمایش",
 	"bs-tag-input-desc": "ارزش محتوای عنصر",
 	"bs-tag-param-desc": "مقدار ویژگی عنصر '$1'",
@@ -98,7 +97,6 @@
 	"bs-bluespice": "چاشنی آبی",
 	"bs-notifications-agent-anon": "کاربر ناشناس",
 	"protect-level-editor": "تنها ویرایشگران و مدیران",
-	"bs-ping-on-init-desc": "ارسال بی‌درنگ درخواست پینگ پس از بارگذاری صفحه",
 	"bs-pref-fileextensions-help": "نوع پرونده‌هایی که می‌توان در این ویکی بارگذاری کرد. برخی انواع (مثلاً html، js، php، cgi، exe) به‌دلایل امنیتی مجاز نیستند. حتی اگر به اینجا اضافه شده باشند.",
 	"bs-pref-imageextensions-help": "نوع پرونده‌های تصویری که می‌توان در این ویکی بارگذاری کرد. فرمت‌های وب ممکن: gif، png، jpg، jpeg. s سایر فرمت‌های تصویری: tiff، bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "ناتوان در نوشتن پروندهٔ پیکربندی $1!"

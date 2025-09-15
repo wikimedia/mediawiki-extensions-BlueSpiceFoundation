@@ -38,7 +38,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Neveljavna kategorija|Neveljavni kategoriji|Neveljavne kategorije}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Kategorije so bile uspešno nastavljene.",
 	"apihelp-bs-wikipage-store-summary": "Navede vse vikistrani. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre ExtJS Store.",
-	"apihelp-bs-ping-tasks-summary": "Naloga pinga, ki zagotavlja neprekinjeno izmenjavo podatkov",
 	"apihelp-bs-wikisubpage-treestore-summary": "Navede podstrani določene vikistrani",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Naslov vikistrani s predpono",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Seznam možnosti",

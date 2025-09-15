@@ -39,7 +39,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "無效{{PLURAL:$2|分類|分類}}：$1",
 	"bs-wikipage-tasks-setcategories-success": "分類已成功設定。",
 	"apihelp-bs-wikipage-store-summary": "列出所有 wiki 頁面。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
-	"apihelp-bs-ping-tasks-summary": "偵測提供持續交換資料的任務",
 	"apihelp-bs-wikisubpage-treestore-summary": "列出指定 wiki 頁面的子頁面",
 	"apihelp-bs-wikisubpage-treestore-param-node": "wiki 頁面的字首標題",
 	"apihelp-bs-wikisubpage-treestore-param-options": "選項列表",

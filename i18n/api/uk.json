@@ -41,7 +41,6 @@
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Недійсна категорія|Недійсні категорії}}: $1",
 	"bs-wikipage-tasks-setcategories-success": "Категорії успішно встановлено.",
 	"apihelp-bs-wikipage-store-summary": "Перелічує всі сторінки у вікі. Дає можливість сортування, фільтрування та пагінації. Реалізовує параметри ExtJS Store.",
-	"apihelp-bs-ping-tasks-summary": "Пінгувати завдання, що забезпечує безперервний обмін даними",
 	"apihelp-bs-wikisubpage-treestore-summary": "Перелічує підсторінки конкретної вікісторінки",
 	"apihelp-bs-wikisubpage-treestore-param-node": "Назва вікісторінки із префіксом",
 	"apihelp-bs-wikisubpage-treestore-param-options": "Список опцій",

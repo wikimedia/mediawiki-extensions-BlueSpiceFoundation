@@ -69,7 +69,6 @@
 	"bs-pref-miniprofileenforceheight": "Privalomas vartotojo avataro aukštis",
 	"bs-pref-anonuserimage": "Vartotojo anonimo avataras:",
 	"bs-pref-deleteduserimage": "Ištrinto vartotojo avataras:",
-	"bs-pref-bspinginterval": "Ping intervalas (sekundėmis):",
 	"bs-pref-testmode": "Įjungti bandymo režimą",
 	"bs-tag-input-desc": "Elemento turinio reikšmė",
 	"bs-tag-param-desc": "Elemento atributo '$1' reikšmė",
