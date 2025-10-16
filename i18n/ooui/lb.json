@@ -18,5 +18,11 @@
 	"bs-pageexport-list-format-label": "Format vun der Lëscht",
 	"bs-pageexport-list-format-link-label": "Link",
 	"bs-pageexport-overwrite-label": "Iwwerschreiwen",
-	"bs-export-search-summary-text": "Generéiert vu PageExport"
+	"bs-export-search-summary-text": "Generéiert vu PageExport",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Nei derbäisetzen...",
+	"bs-ooui-key-value-input-widget-add-button-label": "Derbäisetzen",
+	"bs-ooui-key-value-input-widget-add-form-label": "Neien Antrag derbäisetzen",
+	"bs-ooui-key-value-input-widget-section-label": "Abschnitt",
+	"bs-ooui-key-value-input-widget-add-section-label": "Neien Abschnitt derbäisetzen",
+	"bs-pagecollection-prefix": "Säitesammlung"
 }
