@@ -103,10 +103,16 @@
 	"bs-ping-on-init-desc": "在頁面載入後是否應立刻發送 ping 請求",
 	"right-editor": "當身份系統啟動時，向受編輯者限制的保護頁面授予所有「編輯者」身份權限",
 	"action-editor": "當身份系統啟動時，向受編輯者限制的保護頁面授予所有「編輯者」身份權限",
-	"bs-pref-fileextensions-help": "檔案類型可以上傳到 wiki。某些類型（例如：html、js、php、cgi、exe）出於資安因素而不被允許，即使已在此添加了它們。",
+	"bs-pref-fileextensions-help": "檔案類型可以上傳到 wiki。某些類型（例如：html、js、php、cgi、exe）出於資安因素而不被允許，即使已在此添加了它們",
 	"bs-pref-imageextensions-help": "可以上傳到 wiki 的圖片檔案類型。可行的網路格式：gif、png、jpg、jpeg。其它的圖片格式：tiff、bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "無法寫入設置檔案 $1！",
-	"bs-pref-logopath-help": "標誌應存放在您安裝位置的 /w/images 資料夾裡。如果您是存放在您所安裝 BlueSpice 的 /w/skins 資料夾下，在升級時會被覆寫。",
-	"bs-pref-faviconpath-help": "Favicon 應存放在您安裝位置的 /w/images 資料夾裡。如果您是存放在您所安裝 BlueSpice 的 /w/skins 資料夾下，在升級時會被覆寫。另外 Favicons 的副檔名是 .ico。",
-	"bs-exttype-bluespice-assets": "BlueSpice資產"
+	"bs-pref-logopath-help": "標誌應存放在您安裝位置的 /w/images 資料夾裡。如果您是存放在您所安裝 BlueSpice 的 /w/skins 資料夾下，在升級時會被覆寫",
+	"bs-pref-faviconpath-help": "Favicon 應存放在您安裝位置的 /w/images 資料夾裡。如果您是存放在您所安裝 BlueSpice 的 /w/skins 資料夾下，在升級時會被覆寫。另外 Favicons 的副檔名是 .ico",
+	"bs-exttype-bluespice-assets": "BlueSpice資產",
+	"bs-permission-role-reader": "讀者",
+	"bs-permission-role-editor": "編輯者",
+	"bs-permission-role-reviewer": "審查者",
+	"bs-permission-role-admin": "管理員",
+	"bs-title-warning": "警告",
+	"bs-title-success": "成功"
 }

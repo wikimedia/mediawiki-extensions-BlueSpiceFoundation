@@ -14,5 +14,18 @@
 	"bs-ooui-btn-dismiss-alert-title": "去除",
 	"bs-ooui-key-value-input-widget-section-label": "段落",
 	"bs-ooui-key-value-input-widget-add-section-label": "添加新的段落",
-	"bs-pagecollection-prefix": "頁面收藏"
+	"bs-pagecollection-prefix": "頁面收藏",
+	"bs-ui-generic-save": "儲存",
+	"bs-ui-generic-cancel": "取消",
+	"bs-ui-generic-yes": "是",
+	"bs-ui-generic-no": "否",
+	"bs-exportpages-dialog-title": "匯出頁面到收藏",
+	"bs-exportpages-success-text": "頁面匯出到[[$1|$2]]",
+	"bs-ui-generic-close": "關閉",
+	"bs-pageexport-list-name-label": "清單名稱",
+	"bs-pageexport-list-format-label": "清單格式",
+	"bs-pageexport-list-format-plain-label": "純文字",
+	"bs-pageexport-list-format-link-label": "連結",
+	"bs-pageexport-overwrite-label": "覆寫",
+	"bs-export-search-summary-text": "透過頁面匯出所產生"
 }
