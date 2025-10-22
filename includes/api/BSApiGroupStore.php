@@ -51,7 +51,7 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 			$sDisplayName = $sGroup;
 			$oMsg = wfMessage( "group-$sGroup" );
 			if ( $oMsg->exists() ) {
-				$sDisplayName = $oMsg->plain() . " ($sGroup)";
+				$sDisplayName = $oMsg->text() . " ($sGroup)";
 			}
 
 			if ( !$this->queryApplies( $sGroup, $sDisplayName ) ) {

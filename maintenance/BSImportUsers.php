@@ -82,7 +82,7 @@ class BSImportUsers extends BSMaintenance {
 			} else {
 				$this->error(
 					$oUser->getName() . ' could not be added to database. Message '
-					. $oStatus->getMessage()->plain()
+					. $oStatus->getMessage()->text()
 				);
 				continue;
 			}
@@ -131,7 +131,7 @@ class BSImportUsers extends BSMaintenance {
 					$this->error(
 						'Page ' . $oUser->getUserPage()->getPrefixedText()
 						. ' could not be created. Message: '
-						. $oEditStatus->getMessage()->plain()
+						. $oEditStatus->getMessage()->text()
 					);
 				}
 			}
