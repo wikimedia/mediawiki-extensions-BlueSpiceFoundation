@@ -168,7 +168,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 				&& !in_array( $sTask, $this->aReadTasks )
 			) {
 				$oResult->message = wfMessage( 'bs-readonly',
-					MediaWikiServices::getInstance()->getReadOnlyMode()->getReason() )->plain();
+					MediaWikiServices::getInstance()->getReadOnlyMode()->getReason() )->text();
 			} else {
 				$oTaskData = $this->getParameter( 'taskData' );
 				$this->services->getHookContainer()->run(

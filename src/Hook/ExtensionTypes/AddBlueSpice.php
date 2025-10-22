@@ -9,10 +9,10 @@ class AddBlueSpice extends \BlueSpice\Hook\ExtensionTypes {
 	protected function doProcess() {
 		$this->extTypes['bluespice'] = Message::newFromKey(
 			"bs-exttype-bluespice"
-		)->plain();
+		)->text();
 
 		$this->extTypes['bluespice-assets'] = Message::newFromKey(
 			"bs-exttype-bluespice-assets"
-		)->plain();
+		)->text();
 	}
 }

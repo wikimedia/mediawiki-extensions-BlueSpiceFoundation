@@ -72,7 +72,7 @@ abstract class WikiPage extends Task {
 		$content = $this->getWikiPage()->getContent();
 		if ( $content instanceof WikitextContent === false ) {
 			throw new Exception(
-				$this->msg( 'bs-wikipage-tasks-error-contentmodel' )->plain()
+				$this->msg( 'bs-wikipage-tasks-error-contentmodel' )->text()
 			);
 		}
 		$wikitext = ( $content instanceof TextContent ) ? $content->getText() : '';

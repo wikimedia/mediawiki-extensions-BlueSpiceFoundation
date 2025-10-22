@@ -782,7 +782,7 @@ class BsFileSystemHelper {
 
 		if ( $oUploadFile === false ) {
 			return Status::newFatal(
-				wfMessage( 'bs-filesystemhelper-upload-local-error-stash-file' )->plain()
+				wfMessage( 'bs-filesystemhelper-upload-local-error-stash-file' )->text()
 			);
 		}
 

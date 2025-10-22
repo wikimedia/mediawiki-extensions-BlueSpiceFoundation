@@ -88,32 +88,32 @@ class BsFormatConverter {
 
 		if ( $iYears > 0 ) {
 			$sDateTimeOut = $sMonths
-				? wfMessage( 'bs-two-units-ago', $sYears, $sMonths )->plain()
-				: wfMessage( 'bs-one-unit-ago', $sYears )->plain();
+				? wfMessage( 'bs-two-units-ago', $sYears, $sMonths )->text()
+				: wfMessage( 'bs-one-unit-ago', $sYears )->text();
 		} elseif ( $iMonths > 0 ) {
 			$sDateTimeOut = $sWeeks
-				? wfMessage( 'bs-two-units-ago', $sMonths, $sWeeks )->plain()
-				: wfMessage( 'bs-one-unit-ago', $sMonths )->plain();
+				? wfMessage( 'bs-two-units-ago', $sMonths, $sWeeks )->text()
+				: wfMessage( 'bs-one-unit-ago', $sMonths )->text();
 		} elseif ( $iWeeks > 0 ) {
 			$sDateTimeOut = $sDays
-				? wfMessage( 'bs-two-units-ago', $sWeeks, $sDays )->plain()
-				: wfMessage( 'bs-one-unit-ago', $sWeeks )->plain();
+				? wfMessage( 'bs-two-units-ago', $sWeeks, $sDays )->text()
+				: wfMessage( 'bs-one-unit-ago', $sWeeks )->text();
 		} elseif ( $iDays > 0 ) {
 			$sDateTimeOut = $sHrs
-				? wfMessage( 'bs-two-units-ago', $sDays, $sHrs )->plain()
-				: wfMessage( 'bs-one-unit-ago', $sDays )->plain();
+				? wfMessage( 'bs-two-units-ago', $sDays, $sHrs )->text()
+				: wfMessage( 'bs-one-unit-ago', $sDays )->text();
 		} elseif ( $iHrs > 0 ) {
 			$sDateTimeOut = $sMins
-				? wfMessage( 'bs-two-units-ago', $sHrs, $sMins )->plain()
-				: wfMessage( 'bs-one-unit-ago', $sHrs )->plain();
+				? wfMessage( 'bs-two-units-ago', $sHrs, $sMins )->text()
+				: wfMessage( 'bs-one-unit-ago', $sHrs )->text();
 		} elseif ( $iMins > 0 ) {
 			$sDateTimeOut = $sSecs
-				? wfMessage( 'bs-two-units-ago', $sMins, $sSecs )->plain()
-				: wfMessage( 'bs-one-unit-ago', $sMins )->plain();
+				? wfMessage( 'bs-two-units-ago', $sMins, $sSecs )->text()
+				: wfMessage( 'bs-one-unit-ago', $sMins )->text();
 		} elseif ( $iSecs > 0 ) {
-			$sDateTimeOut = wfMessage( 'bs-one-unit-ago', $sSecs )->plain();
+			$sDateTimeOut = wfMessage( 'bs-one-unit-ago', $sSecs )->text();
 		} elseif ( $iSecs == 0 ) {
-			$sDateTimeOut = wfMessage( 'bs-now' )->plain();
+			$sDateTimeOut = wfMessage( 'bs-now' )->text();
 		}
 
 		return $sDateTimeOut;

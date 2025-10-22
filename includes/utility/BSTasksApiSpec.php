@@ -63,7 +63,7 @@ class BSTasksApiSpec {
 	public function getSchema( $sTaskName ) {
 		return [
 			'task' => [
-				'description' => wfMessage( 'apihelp-bs-task-param-task' )->plain(),
+				'description' => wfMessage( 'apihelp-bs-task-param-task' )->text(),
 				'type' => 'string'
 			],
 			'taskData' => [
@@ -89,13 +89,13 @@ class BSTasksApiSpec {
 			if ( !empty( $sDesc ) ) {
 				// Explicitly set?
 				$oMsg = wfMessage( $sDesc );
-				$aProps[$sParamName]['description'] = $oMsg->exists() ? $oMsg->plain() : $sDesc;
+				$aProps[$sParamName]['description'] = $oMsg->exists() ? $oMsg->text() : $sDesc;
 			} else {
 				// Maybe there is a generic description available
 				// 'page_id' => 'bs-api-task-taskData-page-id'
 				$oMsgDefault = wfMessage( 'bs-api-task-taskData-' . str_replace( '_', '-', $sParamName ) );
 				if ( $oMsgDefault->exists() ) {
-					$aProps[$sParamName]['description'] = $oMsgDefault->plain();
+					$aProps[$sParamName]['description'] = $oMsgDefault->text();
 				}
 			}
 

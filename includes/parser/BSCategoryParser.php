@@ -15,14 +15,14 @@ class BSCategoryParser extends \ValueParsers\StringValueParser {
 			$title = Title::newFromText( $value );
 			if ( $title instanceof Title === false || $title->getNamespace() !== NS_CATEGORY ) {
 				throw new \ValueParsers\ParseException(
-					wfMessage( 'bs-parser-error-invalid-category-title', $value )->plain()
+					wfMessage( 'bs-parser-error-invalid-category-title', $value )->text()
 				);
 			}
 		} else {
 			$title = Title::newFromText( $value, NS_CATEGORY );
 			if ( $title instanceof Title === false ) {
 				throw new \ValueParsers\ParseException(
-					wfMessage( 'bs-parser-error-invalid-title', $value )->plain()
+					wfMessage( 'bs-parser-error-invalid-title', $value )->text()
 				);
 			}
 		}

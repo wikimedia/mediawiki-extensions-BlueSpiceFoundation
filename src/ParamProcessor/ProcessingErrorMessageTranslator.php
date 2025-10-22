@@ -42,7 +42,7 @@ class ProcessingErrorMessageTranslator {
 	public function translate( $message ) {
 		foreach ( $this->messagePatterns as $pattern => $i18nKey ) {
 			if ( preg_match( $pattern, $message ) !== 0 ) {
-				return wfMessage( $i18nKey )->plain();
+				return wfMessage( $i18nKey )->text();
 			}
 		}
 		return $message;
