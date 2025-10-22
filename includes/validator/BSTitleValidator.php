@@ -71,7 +71,7 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 				return;
 			}
 			$this->addErrorMessage(
-				wfMessage( 'bs-validator-invalid-string' )->plain()
+				wfMessage( 'bs-validator-invalid-string' )->text()
 			);
 			return;
 		}
@@ -80,7 +80,7 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 				wfMessage(
 					'bs-validator-error-title-does-not-exist',
 					$oTitle->getPrefixedText()
-				)->plain()
+				)->text()
 			);
 		}
 
@@ -89,7 +89,7 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 				wfMessage(
 					'bs-validator-error-title-namespace-on-blacklist',
 					$oTitle->getPrefixedText()
-				)->plain()
+				)->text()
 			);
 		}
 	}

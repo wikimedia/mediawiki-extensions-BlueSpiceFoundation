@@ -109,10 +109,10 @@ class BsNamespaceHelper {
 		// TODO SW(05.01.12 15:21): Profiling
 		if ( $bReturnNamesForMainAndAll ) {
 			if ( $iNamespaceId == 0 ) {
-				return wfMessage( 'bs-ns_main' )->plain();
+				return wfMessage( 'bs-ns_main' )->text();
 			}
 			if ( $iNamespaceId == -99 ) {
-				return wfMessage( 'bs-ns_all' )->plain();
+				return wfMessage( 'bs-ns_all' )->text();
 			}
 		}
 
@@ -220,7 +220,7 @@ class BsNamespaceHelper {
 					$aValidNamespaceIntIndexes[] = $vAmbiguousNS;
 				}
 			} else {
-				if ( $vAmbiguousNS == wfMessage( 'bs-ns_main' )->plain()
+				if ( $vAmbiguousNS == wfMessage( 'bs-ns_main' )->text()
 					|| strcmp( $vAmbiguousNS, "main" ) === 0 ) {
 					$iNamespaceIdFromText = 0;
 				} elseif ( $vAmbiguousNS == '' ) {

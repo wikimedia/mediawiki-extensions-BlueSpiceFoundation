@@ -40,7 +40,7 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 			'ImageExtensions' => $this->lcNormalizeArray(
 				$this->getConfig()->get( 'ImageExtensions' )
 			),
-			'PageCollectionPrefix' => wfMessage( 'bs-pagecollection-prefix' )->inContentLanguage()->plain()
+			'PageCollectionPrefix' => wfMessage( 'bs-pagecollection-prefix' )->inContentLanguage()->text()
 		];
 
 		if ( $this->getConfig()->get( 'TestSystem' ) ) {

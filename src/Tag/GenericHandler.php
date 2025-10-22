@@ -182,7 +182,7 @@ class GenericHandler {
 		}
 		$paramName = $paramDefinition->getName();
 		$paramDefinition->setMessage(
-			wfMessage( 'bs-tag-input-desc' )->plain()
+			wfMessage( 'bs-tag-input-desc' )->text()
 		);
 
 		$options = new \ParamProcessor\Options();
@@ -222,7 +222,7 @@ class GenericHandler {
 				wfMessage(
 					'bs-tag-param-desc',
 					$paramDefinition->getName()
-				)->plain()
+				)->text()
 			);
 			$options = new \ParamProcessor\Options();
 			$options->setName( 'arg-' . $paramDefinition->getName() );

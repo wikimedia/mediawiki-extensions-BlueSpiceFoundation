@@ -75,7 +75,7 @@ class ViewWidget extends ViewBaseElement {
 				}
 			} else {
 				$this->_mBody = '<ul><li><em>'
-					. wfMessage( 'bs-no-information-available' )->plain()
+					. wfMessage( 'bs-no-information-available' )->text()
 					. '</em></li></ul>';
 			}
 		}

@@ -10,7 +10,7 @@ class AddDeferredNotifications extends \BlueSpice\Hook\MakeGlobalVariablesScript
 		$stack = [];
 		foreach ( $deferredNotifications as $deferredNotification ) {
 			$stack[] = [
-				$deferredNotification->getMessage()->plain(),
+				$deferredNotification->getMessage()->text(),
 				$deferredNotification->getOptions()
 			];
 		}

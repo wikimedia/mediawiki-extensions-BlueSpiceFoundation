@@ -310,7 +310,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$oResponse->message = wfMessage(
 				'bs-wikipage-tasks-error-page-read-not-allowed',
 				$title->getPrefixedText()
-			)->plain();
+			)->text();
 			return $oResponse;
 		}
 
@@ -321,7 +321,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 			$wikitext = ( $content instanceof TextContent ) ? $content->getText() : '';
 
 		} else {
-			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
+			$oResponse->message = wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->text();
 			return $oResponse;
 		}
 
@@ -428,7 +428,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		// return title "Special:BadTitle"
 		if ( $oTitle instanceof Title === false ) {
 			throw new MWException(
-				wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->plain()
+				wfMessage( 'bs-wikipage-tasks-error-page-not-valid' )->text()
 			);
 		}
 
@@ -462,7 +462,7 @@ class BSApiWikiPageTasks extends BSApiTasksBase {
 		$content = $oWikiPage->getContent();
 		if ( $content instanceof WikitextContent === false ) {
 			$oResponse->message =
-				wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->plain();
+				wfMessage( 'bs-wikipage-tasks-error-contentmodel' )->text();
 			return $oResponse;
 		}
 

@@ -42,7 +42,7 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 		foreach ( $this->permissions as $permKey => $permVal ) {
 			if ( empty( $type ) || ( $permVal['type'] === $type ) ) {
 				$name = wfMessage( 'right-' . $permKey )->exists() ?
-					wfMessage( 'right-' . $permKey )->plain() :
+					wfMessage( 'right-' . $permKey )->text() :
 					$permKey;
 				$this->options[$permKey] = $name;
 			}

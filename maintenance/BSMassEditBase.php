@@ -66,7 +66,7 @@ class BSMassEditBase extends BSMaintenance {
 			if ( !$oStatus->isOK() ) {
 				$this->error(
 					"--> Content of page {$oTitle->getPrefixedText()} could not be modified: "
-					. "{$oStatus->getMessage()->plain()}"
+					. "{$oStatus->getMessage()->text()}"
 				);
 				$this->iFailureTitleCount++;
 			} else {

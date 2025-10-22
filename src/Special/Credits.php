@@ -22,9 +22,9 @@ class Credits extends \BlueSpice\SpecialPage {
 
 		$html = '';
 		$html .= $this->renderOpenTable( [
-			$this->msg( 'bs-credits-programmers' )->plain(),
-			$this->msg( 'bs-credits-dnt' )->plain(),
-			$this->msg( 'bs-credits-contributors' )->plain()
+			$this->msg( 'bs-credits-programmers' )->text(),
+			$this->msg( 'bs-credits-dnt' )->text(),
+			$this->msg( 'bs-credits-contributors' )->text()
 		] );
 		$html .= Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
 		$configNames = [
@@ -43,8 +43,8 @@ class Credits extends \BlueSpice\SpecialPage {
 		$html .= Html::closeElement( 'table' );
 
 		$html .= $this->renderOpenTable( [
-			$this->msg( 'bs-credits-translators' )->plain(),
-			$this->msg( 'bs-credits-translation' )->plain(),
+			$this->msg( 'bs-credits-translators' )->text(),
+			$this->msg( 'bs-credits-translation' )->text(),
 		] );
 		$html .= Html::openElement( 'tr', [ 'style' => 'vertical-align: top;' ] );
 		$html .= Html::openElement( 'td' );

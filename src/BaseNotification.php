@@ -243,7 +243,7 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 			$user = $this->agent;
 		}
 		if ( !$user->isRegistered() ) {
-			return wfMessage( 'bs-notifications-agent-anon' )->plain();
+			return wfMessage( 'bs-notifications-agent-anon' )->text();
 		}
 		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $user )->getDisplayName();

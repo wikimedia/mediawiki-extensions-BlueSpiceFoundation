@@ -44,7 +44,7 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 		$attr['options'] = $this->getOptionsOOUI();
 		$attr['inputPosition'] = isset( $this->mParams['inputPosition'] ) ?
 			$this->mParams['inputPosition'] : 'inline';
-		$placeholder = wfMessage( 'bs-ooui-field-tagmultiselect-input-placeholder' )->plain();
+		$placeholder = wfMessage( 'bs-ooui-field-tagmultiselect-input-placeholder' )->text();
 		$attr['placeholder'] = isset( $this->mParams['placeholder'] ) ?
 				$this->mParams['placeholder'] : $placeholder;
 		$attr['allowDuplicates'] = isset( $this->mParams['allowDuplicates'] ) ?
