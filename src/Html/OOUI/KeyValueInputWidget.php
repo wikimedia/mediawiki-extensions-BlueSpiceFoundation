@@ -40,15 +40,15 @@ class KeyValueInputWidget extends \OOUI\Widget {
 
 		$this->keyLabel = isset( $config['keyLabel'] )
 			? $config['keyLabel']
-			: wfMessage( 'bs-ooui-key-value-input-widget-key-label' )->plain();
+			: wfMessage( 'bs-ooui-key-value-input-widget-key-label' )->text();
 
 		$this->valueLabel = isset( $config['valueLabel'] )
 			? $config['valueLabel']
-			: wfMessage( 'bs-ooui-key-value-input-widget-value-label' )->plain();
+			: wfMessage( 'bs-ooui-key-value-input-widget-value-label' )->text();
 
 		$this->addNewFormLabel = isset( $config['addNewFormLabel'] )
 			? $config['addNewFormLabel']
-			: wfMessage( 'bs-ooui-key-value-input-widget-add-form-label' )->plain();
+			: wfMessage( 'bs-ooui-key-value-input-widget-add-form-label' )->text();
 
 		$this->keyReadOnly = isset( $config['keyReadOnly'] )
 			? (bool)$config['keyReadOnly']
@@ -81,7 +81,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 
 	protected function setNoValueMessage() {
 		$label = new \OOUI\LabelWidget( [
-			'label' => wfMessage( 'bs-ooui-key-value-input-widget-no-values-label' )->plain()
+			'label' => wfMessage( 'bs-ooui-key-value-input-widget-no-values-label' )->text()
 		] );
 		$label->addClasses( [ "bs-ooui-{$this->getWidgetId()}-no-value-label" ] );
 		$this->valueContainer->appendContent( $label );
@@ -221,7 +221,7 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	protected function getAddButton() {
 		$addButton = new ButtonWidget( [
 			'framed' => false,
-			'title' => wfMessage( 'bs-ooui-key-value-input-widget-add-button-label' )->plain(),
+			'title' => wfMessage( 'bs-ooui-key-value-input-widget-add-button-label' )->text(),
 			'icon' => 'check',
 			'flags' => [
 				'progressive'

@@ -111,7 +111,7 @@ class NamespaceMultiselect extends \HTMLFormField {
 			];
 
 			if ( $namespaceId === NS_MAIN ) {
-				$dataSet['namespaceName'] = wfMessage( 'bs-ns_main' )->plain();
+				$dataSet['namespaceName'] = wfMessage( 'bs-ns_main' )->text();
 			}
 
 			$availableNamespaces[] = $dataSet;

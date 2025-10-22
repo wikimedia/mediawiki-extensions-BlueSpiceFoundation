@@ -44,7 +44,7 @@ class BSNamespaceParser extends \ValueParsers\StringValueParser {
 		$iNSId = BsNamespaceHelper::getNamespaceIndex( $value );
 		if ( $iNSId === false ) {
 			throw new \ValueParsers\ParseException(
-				wfMessage( 'bs-parser-error-invalid-namespace', $value )->plain()
+				wfMessage( 'bs-parser-error-invalid-namespace', $value )->text()
 			);
 		}
 

@@ -56,7 +56,7 @@ class Task extends Api {
 				$this->msg(
 					'apihelp-bs-task-param-taskdata',
 					$paramDefinition->getName()
-				)->plain()
+				)->text()
 			);
 			$options = $this->getParamProcessorOptions();
 			$options->setName( 'arg-' . $paramDefinition->getName() );

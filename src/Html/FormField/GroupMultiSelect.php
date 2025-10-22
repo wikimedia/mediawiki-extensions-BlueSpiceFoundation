@@ -45,7 +45,7 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 		foreach ( $this->groups as $group ) {
 			$msg = $this->msg( "group-$group" );
 			$this->options[$group] = $msg->exists()
-				? "{$msg->plain()} ($group)"
+				? "{$msg->text()} ($group)"
 				: $group;
 		}
 	}

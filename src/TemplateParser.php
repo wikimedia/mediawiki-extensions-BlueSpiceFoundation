@@ -106,7 +106,7 @@ class TemplateParser extends \TemplateParser implements ITemplateParser, Message
 		}
 		$helpers['_'] = function ( $msg ) {
 			$msgKey = array_shift( $msg );
-			return $this->msg( $msgKey, ...$msg )->plain();
+			return $this->msg( $msgKey, ...$msg )->text();
 		};
 		$helpers['__'] = function ( $msg ) {
 			$msgKey = array_shift( $msg );

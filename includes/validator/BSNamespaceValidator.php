@@ -75,7 +75,7 @@ class BSNamespaceValidator extends ValueValidatorBase {
 				wfMessage(
 					'bs-validator-error-namespace-does-not-exist',
 					$value
-				)->plain()
+				)->text()
 			);
 		}
 
@@ -84,7 +84,7 @@ class BSNamespaceValidator extends ValueValidatorBase {
 				wfMessage(
 					'bs-validator-error-namespace-on-blacklist',
 					$value
-				)->plain()
+				)->text()
 			);
 		}
 	}

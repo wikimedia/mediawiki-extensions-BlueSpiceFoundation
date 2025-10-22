@@ -16,7 +16,7 @@ abstract class PermissionsList extends \BlueSpice\ConfigDefinition {
 			'fieldname' => $this->getName(),
 			'id' => $this->makeID(),
 			'name' => $this->name,
-			'label' => wfMessage( $this->getLabelMessageKey() )->plain(),
+			'label' => wfMessage( $this->getLabelMessageKey() )->text(),
 			'type' => $this->getPermissionType()
 		] );
 	}

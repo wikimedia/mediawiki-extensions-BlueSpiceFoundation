@@ -22,7 +22,7 @@ class HTMLFormEx extends HTMLForm {
 		$map = [];
 		foreach ( $fields as $key => $value ) {
 			$sKey = $this->mMessagePrefix . '-' . strtolower( $key );
-			$map[$key] = $this->msg( $sKey )->plain();
+			$map[$key] = $this->msg( $sKey )->text();
 		}
 
 		asort( $map );
