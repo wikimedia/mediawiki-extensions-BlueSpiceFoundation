@@ -30,7 +30,6 @@
 			"EntityRegistry": {},
 			"GraphicalListRegistry": {},
 			"ExtendedSiteToolRegistry": {},
-			"AdminToolRegistry": {},
 			"PageInfoElementRegistry": {},
 			"PageHeaderBeforeContentRegistry": {},
 			"TagRegistry": {},
