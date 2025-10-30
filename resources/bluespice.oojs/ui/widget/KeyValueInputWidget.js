@@ -6,9 +6,9 @@
 
 		this.labelOnlyOnFirst = cfg.labelOnlyOnFirst || true;
 		this.valueRequired = cfg.valueRequired || false;
-		this.keyLabel = cfg.keyLabel || mw.message( 'bs-ooui-key-value-input-widget-key-label' ).plain();
-		this.valueLabel = cfg.valueLabel || mw.message( 'bs-ooui-key-value-input-widget-value-label' ).plain();
-		this.addNewFormLabel = cfg.addNewFormLabel || mw.message( 'bs-ooui-key-value-input-widget-add-form-label' ).plain();
+		this.keyLabel = cfg.keyLabel || mw.message( 'bs-ooui-key-value-input-widget-key-label' ).text();
+		this.valueLabel = cfg.valueLabel || mw.message( 'bs-ooui-key-value-input-widget-value-label' ).text();
+		this.addNewFormLabel = cfg.addNewFormLabel || mw.message( 'bs-ooui-key-value-input-widget-add-form-label' ).text();
 		this.keyReadOnly = cfg.keyReadOnly || false;
 		this.allowAdditions = cfg.allowAdditions || false;
 		this.$separator = $( '<div>' ).addClass( 'bs-ooui-keyValueInputWidget-separator' );
@@ -36,7 +36,7 @@
 	bs.ui.widget.KeyValueInputWidget.prototype.setNoValueMessage = function () {
 		this.$valueContainer.append(
 			new OO.ui.LabelWidget( {
-				label: mw.message( 'bs-ooui-key-value-input-widget-no-values-label' ).plain(),
+				label: mw.message( 'bs-ooui-key-value-input-widget-no-values-label' ).text(),
 				classes: [ 'bs-ooui-keyValueInputWidget-no-value-label' ]
 			} ).$element
 		);
@@ -242,7 +242,7 @@
 			flags: [
 				'progressive'
 			],
-			title: mw.message( 'bs-ooui-key-value-input-widget-add-button-label' ).plain()
+			title: mw.message( 'bs-ooui-key-value-input-widget-add-button-label' ).text()
 		} );
 	};
 
