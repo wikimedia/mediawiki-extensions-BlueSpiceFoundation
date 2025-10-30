@@ -239,7 +239,7 @@ bs.ui.dialog.ExportPagesDialog.prototype.savePage = async function ( targetTitle
 	new mw.Api().postWithToken( 'csrf', {
 		action: 'edit',
 		title: targetTitle.getPrefixedText(),
-		summary: mw.message( 'bs-export-search-summary-text' ).plain(),
+		summary: mw.message( 'bs-export-search-summary-text' ).text(),
 		text: formatted
 	} ).done( function ( response ) {
 		dfd.resolve( response );

@@ -45,7 +45,7 @@
 			flags: [
 				'progressive'
 			],
-			label: mw.message( 'bs-ooui-key-value-input-widget-add-button-label' ).plain(),
+			label: mw.message( 'bs-ooui-key-value-input-widget-add-button-label' ).text(),
 			classes: [ 'keyObjectInputWidget-addbutton' ]
 		} );
 	};
