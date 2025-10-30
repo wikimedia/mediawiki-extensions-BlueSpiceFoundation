@@ -27,14 +27,14 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	}
 
 	if ( config.hasOwnProperty( 'titleMsg' ) ) {
-		bs.ui.dialog.SimpleMessageDialog.static.title = mw.message( config.titleMsg ).plain();
+		bs.ui.dialog.SimpleMessageDialog.static.title = mw.message( config.titleMsg ).text();
 	} else if ( config.hasOwnProperty( 'title' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.title = config.title;
 	}
 
 	if ( config.hasOwnProperty( 'textMsg' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.message =
-			new OO.ui.HtmlSnippet( mw.message( config.textMsg ).plain() );
+			new OO.ui.HtmlSnippet( mw.message( config.textMsg ).text() );
 	} else if ( config.hasOwnProperty( 'text' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.message =
 			new OO.ui.HtmlSnippet( config.text );
@@ -55,7 +55,7 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionAccept = function () {
 		const params = {
 			action: 'ok',
-			label: mw.message( 'ooui-dialog-message-accept' ).plain()
+			label: mw.message( 'ooui-dialog-message-accept' ).text()
 		};
 		if ( this.hasOwnProperty( 'id' ) ) {
 			params.id = this.idPrefix + '-btn-ok';
@@ -66,7 +66,7 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionReject = function () {
 		const params = {
 			action: 'cancel',
-			label: mw.message( 'ooui-dialog-message-reject' ).plain()
+			label: mw.message( 'ooui-dialog-message-reject' ).text()
 		};
 		if ( this.hasOwnProperty( 'id' ) ) {
 			params.id = this.idPrefix + '-btn-cancel';
