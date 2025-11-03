@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
+			"Mansil alfalb",
 			"Vitorvicentevalente"
 		]
 	},
-	"bs-upload-uploaddialogtitle": "Carregar ficheiro",
-	"bs-upload-uploadbuttontext": "Procurar",
+	"bs-upload-uploaddialogtitle": "Enviar ficheiro",
+	"bs-upload-uploadbuttontext": "Explorar",
 	"bs-upload-uploadfilefieldlabel": "Nome do ficheiro",
 	"bs-upload-uploadfileemptytext": "Inserir novo ficheiro...",
 	"bs-upload-uploaddestfilelabel": "Nome do ficheiro de destino",
@@ -18,12 +19,12 @@
 	"bs-upload-upload-waitmessage": "Carregamento em progresso ...",
 	"bs-upload-error": "Erro",
 	"bs-upload-descfilelabel": "Descrição",
-	"bs-upload-error-long": "Erro no processo de carregamento",
+	"bs-upload-error-long": "Erro no processo de envio",
 	"bs-upload-filetypenotsupported": "O tipo de ficheiro não é suportado.",
 	"bs-upload-details": "Detalhes",
-	"bs-upload-uploadwarningdialog-title": "Carregar ficheiro: Avisos",
-	"bs-upload-uploadwarningdialog-intro": "Surgiram os seguintes avisos ao tentar carregar o ficheiro",
-	"bs-upload-uploadwarningdialog-outro": "Clique \"{{int:bs-extjs-ok}}\" para ignorar os avisos e carregar o ficheiro, clique \"{{int:bs-extjs-cancel}}\" para voltar ao formulário de carregamento",
+	"bs-upload-uploadwarningdialog-title": "Enviar ficheiro: Avisos",
+	"bs-upload-uploadwarningdialog-intro": "Ocorreram os seguintes avisos enquanto tentava enviar o ficheiro",
+	"bs-upload-uploadwarningdialog-outro": "Clique \"{{int:bs-extjs-ok}}\" para ignorar os avisos e enviar o ficheiro, clique \"{{int:bs-extjs-cancel}}\" para voltar ao formulário de envio",
 	"bs-upload-uploadwarningdialog-warning-exists": "Já existe um ficheiro com o nome \"$1\"",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Existe um duplicado|Existem duplicados}} deste ficheiro",
 	"bs-upload-uploadwarningdialog-warning-unknown": "Aviso desconhecido com o código \"$1\""
