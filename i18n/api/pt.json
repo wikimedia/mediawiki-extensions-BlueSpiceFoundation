@@ -4,6 +4,7 @@
 			"Athena in Wonderland",
 			"Fúlvio",
 			"Hamilton Abreu",
+			"Mansil alfalb",
 			"Vitorvicentevalente"
 		]
 	},
@@ -23,7 +24,7 @@
 	"apihelp-bs-store-param-start": "Posição a partir da qual começar a lista de resultados",
 	"apihelp-bs-store-param-callback": "O nome de um método no código do cliente que deve ser chamado na resposta (JSONP)",
 	"apihelp-bs-store-param-query": "Semelhante a <var>filter</var>, mas o valor fornecido serve de filtro apenas para o campo <var>value</var> de um componente ExtJS",
-	"apihelp-bs-store-param-dc": "Elemento <code>Disable cache</code>",
+	"apihelp-bs-store-param-dc": "Sinalizador de <code>Desativar cache</code>",
 	"apihelp-bs-store-param-format": "O formato do resultado (só JSON, ou JSON formatado)",
 	"apihelp-bs-store-param-options": "Opções arbitrárias para configurar o armazenamento em formato de texto JSON",
 	"apihelp-bs-store-param-context": "Objeto codificado em texto JSON com dados de contexto para o armazenamento",
@@ -34,10 +35,10 @@
 	"apihelp-bs-task-param-token": "A chave necessária para aceder ao módulo da API",
 	"bs-wikipage-tasks-error-contentmodel": "Não foi possível realizar a tarefa com o modelo de conteúdo da página fornecida.",
 	"bs-wikipage-tasks-error-page-not-valid": "A página fornecida não é válida.",
-	"bs-wikipage-tasks-setcategories-edit-summary": "Alteração de categorias.",
+	"bs-wikipage-tasks-setcategories-edit-summary": "Categorias alteradas.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "Não tem permissão para editar a página \"$1\".",
 	"bs-wikipage-tasks-error-categories-not-valid": "{{PLURAL:$2|Categoria inválida|Categorias inválidas}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "As categorias foram enviadas.",
+	"bs-wikipage-tasks-setcategories-success": "As categorias foram definidas com sucesso.",
 	"apihelp-bs-wikipage-store-summary": "Lista todas as páginas da wiki. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-ping-tasks-summary": "Tarefa de <i>ping</i> que permite a troca contínua de dados",
 	"apihelp-bs-wikisubpage-treestore-summary": "Lista as subpáginas de uma página wiki específica",
@@ -65,7 +66,7 @@
 	"apihelp-bs-categorylinks-store-summary": "Lista todas as categorias de uma página, incluindo uma hiperligação para a página da categoria e um marcador para categorias implícitas e explícitas.",
 	"apihelp-bs-categorylinks-store-param-page-id": "O identificador da página",
 	"apihelp-bs-templatelinks-store-summary": "Lista todas as predefinições de uma página, incluindo uma hiperligação para a predefinição.",
-	"apihelp-bs-templatelinks-store-param-page-id": "O identificador da página",
-	"apihelp-bs-linker-summary": "Devolve hiperligações para páginas geradas pelo Linker",
+	"apihelp-bs-templatelinks-store-param-page-id": "O identificador de página da página",
+	"apihelp-bs-linker-summary": "Devolve hiperligações para as páginas geradas pelo Linker",
 	"apihelp-bs-linker-param-linkdescs": "Uma matriz JSON associativa com uma lista de páginas. Cada entrada tem de conter o título da página como `target` (alvo). Opcionalmente, pode conter `text` (texto), `attribs` (atributos) e `query` (consulta)."
 }
