@@ -12,5 +12,7 @@
 	"bs-filerepo-labelfilter": "Чыпка",
 	"bs-filerepo-headerfileusertext": "Колдонуучу",
 	"bs-filerepo-headerpagecategories": "Категориялар",
-	"bs-filerepo-headerfileextension": "Кеңейтме"
+	"bs-filerepo-headerfileextension": "Кеңейтме",
+	"bs-filerepo-headerfilewidth": "Туурасы",
+	"bs-filerepo-headerfileheight": "Бийиктиги"
 }
