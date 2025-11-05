@@ -62,6 +62,8 @@ class Foundation {
 		$this->initializeExtensions();
 		$this->overwriteGlobals();
 		$this->initializeRoleSystem();
+
+		$this->services->getHookContainer()->run( 'BlueSpiceFoundationAfterInitialize' );
 	}
 
 	protected function initializeExtensions() {
