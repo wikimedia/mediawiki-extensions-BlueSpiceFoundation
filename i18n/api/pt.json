@@ -4,8 +4,8 @@
 			"Athena in Wonderland",
 			"Fúlvio",
 			"Hamilton Abreu",
-			"Vitorvicentevalente",
-			"Mansil alfalb"
+			"Mansil alfalb",
+			"Vitorvicentevalente"
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
