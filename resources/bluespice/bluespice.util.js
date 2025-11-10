@@ -24,7 +24,7 @@
 	 */
 	function _alert( idPrefix, windowCfg, callbackCfg ) {
 		if ( !windowCfg.title && !windowCfg.titleMsg ) {
-			windowCfg.titleMsg = 'bs-extjs-hint';
+			windowCfg.titleMsg = 'bs-util-alert-title';
 		}
 
 		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
