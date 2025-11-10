@@ -26,7 +26,7 @@
 	"apihelp-bs-store-param-format": "O formato da saída (só JSON ou JSON formatado)",
 	"apihelp-bs-store-param-options": "Opcións arbitrarias para configurar o almacenamento na forma dunha cadea JSON",
 	"apihelp-bs-store-param-context": "Obxecto codificado como unha cadea JSON con datos de contexto para o almacenamento",
-	"apihelp-bs-task-param-task": "A tarefa que vai executar",
+	"apihelp-bs-task-param-task": "A tarefa que se vai executar",
 	"apihelp-bs-task-param-taskdata": "Obxecto codificado como unha cadea JSON con datos arbitrarios para a tarefa",
 	"apihelp-bs-task-param-context": "Obxecto codificado como unha cadea JSON con datos de contexto para a tarefa",
 	"apihelp-bs-task-param-format": "O formato do resultado",
