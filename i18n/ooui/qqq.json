@@ -31,5 +31,6 @@
 	"bs-pageexport-list-format-link-label": "Label text indicating link format for export list",
 	"bs-pageexport-overwrite-label": "Label text for overwrite checkbox",
 	"bs-export-search-summary-text": "Text for summary message for page edit on export",
-	"bs-pagecollection-prefix": "Prefix for naming page collections created by exporting search results"
+	"bs-pagecollection-prefix": "Prefix for naming page collections created by exporting search results",
+	"bs-util-alert-title": "Title text of alert dialog"
 }
