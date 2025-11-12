@@ -4,7 +4,9 @@
 			"Bosogo"
 		]
 	},
+	"bs-upload-uploadfilefieldlabel": "Файлдын аталышы",
 	"bs-upload-license": "Лицензия",
+	"bs-upload-categories": "Категориялар",
 	"bs-upload-error": "Ката",
 	"bs-upload-descfilelabel": "Сыпаттама",
 	"bs-upload-details": "Чоо-жайы"

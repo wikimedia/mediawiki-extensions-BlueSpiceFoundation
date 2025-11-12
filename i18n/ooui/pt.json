@@ -14,5 +14,12 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Não foi definido nenhum valor!",
 	"bs-ooui-btn-dismiss-alert-title": "Ignorar",
 	"bs-ooui-key-value-input-widget-section-label": "Secção",
-	"bs-ooui-key-value-input-widget-add-section-label": "Adicionar secção nova"
+	"bs-ooui-key-value-input-widget-add-section-label": "Adicionar secção nova",
+	"bs-ui-generic-save": "Guardar",
+	"bs-ui-generic-cancel": "Cancelar",
+	"bs-ui-generic-yes": "Sim",
+	"bs-ui-generic-no": "Não",
+	"bs-exportpages-dialog-title": "Exportar páginas para uma coleção",
+	"bs-exportpages-success-text": "Páginas exportadas para [[$1|$2]]",
+	"bs-ui-generic-close": "Fechar"
 }
