@@ -3,6 +3,7 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"MuratTheTurkish",
+			"SaldırganSincap",
 			"Sayginer",
 			"ToprakM",
 			"Victor Trevor"
@@ -98,9 +99,9 @@
 	"bs-ping-on-init-desc": "Sayfa yüklendikten hemen sonra ping isteği gönderilmelidir.",
 	"right-editor": "Rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"editör\" rolünden tüm izinler alın",
 	"action-editor": "rol sistemi etkinleştirildiğinde korumalı sayfalar için düzenleyici kısıtlamasında \"düzenleyici\" rolünden tüm izinler alınabilir",
-	"bs-pref-fileextensions-help": "Vikiye yüklenebilecek dosya türleri. Bazı türlere (örn. Html, js, php, cgi, exe), buraya eklenmiş olsalar bile güvenlik nedeniyle izin verilmez.",
+	"bs-pref-fileextensions-help": "Vikiye yüklenebilecek dosya türleri. Bazı türlere (örn. html, js, php, cgi, exe), buraya eklenmiş olsalar bile güvenlik nedeniyle izin verilmez",
 	"bs-pref-imageextensions-help": "Vikiye yüklenebilecek resim dosyası türleri. Olası web formatları: gif, png, jpg, jpeg. Diğer görüntü formatları: tiff, bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Yapılandırma dosyası $1 yazılamadı!",
-	"bs-pref-logopath-help": "Logo, kurulumunuzda w/images klasöründe saklanmalıdır. Eğer BlueSpice kurulumuyla w/skins klasöründe saklanıyorsa gelecek güncellemeler logoyu sıfırlayabilir.",
-	"bs-pref-faviconpath-help": "Favicon, kurulumunuzda w/images klasöründe saklanmalıdır. Eğer BlueSpice kurulumuyla w/skins klasöründe saklanıyorsa gelecek güncellemeler faviconu sıfırlayabilir. Favicon .ico dosya uzantısına sahiptir."
+	"bs-pref-logopath-help": "Logo, kurulumunuzda w/images klasöründe saklanmalıdır. Eğer BlueSpice kurulumuyla w/skins klasöründe saklanıyorsa gelecek güncellemeler logoyu sıfırlayabilir",
+	"bs-pref-faviconpath-help": "Favicon, kurulumunuzda w/images klasöründe saklanmalıdır. Eğer BlueSpice kurulumuyla w/skins klasöründe saklanıyorsa gelecek güncellemeler faviconu sıfırlayabilir. Favicon .ico dosya uzantısına sahiptir"
 }
