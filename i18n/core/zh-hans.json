@@ -12,6 +12,7 @@
 			"Hudafu",
 			"Kuailong",
 			"Liuxinyu970226",
+			"Peterxy12",
 			"SolidBlock",
 			"Stang",
 			"VulpesVulpes825",
@@ -122,5 +123,11 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "无法书写配置文件$1！",
 	"bs-pref-logopath-help": "标志应当被存储在安装目录下的“/w/images”文件夹中。如果您把它存储在BlueSpice安装目录下的“/w/skins”文件夹下，其可能随着更新而被覆盖",
 	"bs-pref-faviconpath-help": "Favicon应当被存储在安装目录下的“/w/images”文件夹中。如果您把它存储在BlueSpice安装目录下的“/w/skins”文件夹下，其可能随着更新而被覆盖。Favicon的文件扩展名为.ico",
-	"bs-exttype-bluespice-assets": "BlueSpice资产"
+	"bs-exttype-bluespice-assets": "BlueSpice资产",
+	"bs-permission-role-reader": "读者",
+	"bs-permission-role-editor": "编辑者",
+	"bs-permission-role-reviewer": "审核者",
+	"bs-permission-role-admin": "管理员",
+	"bs-title-warning": "警告",
+	"bs-title-success": "成功"
 }
