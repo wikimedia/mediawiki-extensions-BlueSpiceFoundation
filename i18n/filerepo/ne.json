@@ -1,8 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"पर्वत सुबेदी"
+			"पर्वत सुबेदी",
+			"बडा काजी"
 		]
 	},
-	"bs-filerepo-headerfiledescription": "विवरण"
+	"bs-filerepo-headerfiledescription": "विवरण",
+	"bs-filerepo-labelupload": "उर्ध्वभरण गर्नुहोस्",
+	"bs-filerepo-labelfilter": "छनाेट",
+	"bs-filerepo-headerfilename": "फाइल नाम",
+	"bs-filerepo-headerfilesize": "आकार",
+	"bs-filerepo-headerpagecategories": "श्रेणीहरू",
+	"bs-filerepo-headerfilewidth": "चौडाइ",
+	"bs-filerepo-headerfileheight": "उचाइ",
+	"bs-filerepo-headerfilemimetype": "एमआइएमई प्रकार",
+	"bs-filerepo-headerfileusertext": "प्रयोगकर्ता",
+	"bs-filerepo-headerfileextension": "एक्सटेन्सन",
+	"bs-filerepo-headerfiletimestamp": "उर्ध्वभरण भयो",
+	"bs-filerepo-headerfilemediatype": "मिडिया प्रकार",
+	"bs-filerepo-headerfilethumbnail": "छोटो चित्र",
+	"bs-filerepo-yes": "हो",
+	"bs-filerepo-no": "होइन",
+	"bs-filerepo-pagesize": "प्रति पृष्ठ प्रविष्टिहरू"
 }
