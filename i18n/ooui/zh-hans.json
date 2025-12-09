@@ -3,6 +3,7 @@
 		"authors": [
 			"AYZ04",
 			"Liuxinyu970226",
+			"Peterxy12",
 			"VulpesVulpes825"
 		]
 	},
@@ -16,5 +17,18 @@
 	"bs-ooui-btn-dismiss-alert-title": "关闭",
 	"bs-ooui-key-value-input-widget-section-label": "章节",
 	"bs-ooui-key-value-input-widget-add-section-label": "新增章节",
-	"bs-pagecollection-prefix": "页面收藏"
+	"bs-pagecollection-prefix": "页面收藏",
+	"bs-ui-generic-save": "保存",
+	"bs-ui-generic-cancel": "取消",
+	"bs-ui-generic-yes": "是",
+	"bs-ui-generic-no": "否",
+	"bs-exportpages-dialog-title": "导出页面到收藏",
+	"bs-exportpages-success-text": "页面被导出到[[$1|$2]]",
+	"bs-ui-generic-close": "关闭",
+	"bs-pageexport-list-name-label": "清单名称",
+	"bs-pageexport-list-format-label": "清单格式",
+	"bs-pageexport-list-format-plain-label": "纯文本",
+	"bs-pageexport-list-format-link-label": "链接",
+	"bs-pageexport-overwrite-label": "覆盖",
+	"bs-export-search-summary-text": "生成自页面导出"
 }
