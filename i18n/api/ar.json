@@ -4,6 +4,7 @@
 			"AA800",
 			"Alshamiri1",
 			"Meno25",
+			"Mohammed Qays",
 			"Moud hosny",
 			"ديفيد"
 		]
@@ -42,7 +43,7 @@
 	"apihelp-bs-wikipage-store-summary": "يسرد جميع صفحات الويكي، يتيح الفرز والتصفية وترقيم الصفحات، ينفذ وسائط مخزن ExtJS.",
 	"apihelp-bs-ping-tasks-summary": "مهمة Ping التي توفر تبادلا مستمرا للبيانات",
 	"apihelp-bs-wikisubpage-treestore-summary": "يسرد الصفحات الفرعية لصفحة ويكي محددة",
-	"apihelp-bs-wikisubpage-treestore-param-node": "بادئة عنوان صفحة wiki",
+	"apihelp-bs-wikisubpage-treestore-param-node": "بادئة عنوان صفحة ويكي",
 	"apihelp-bs-wikisubpage-treestore-param-options": "قائمة الخيارات",
 	"apihelp-bs-upload-license-store-summary": "يسرد جميع التراخيص المتاحة لرفع ملف",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "لا يُسمَح لك بقراءة الصفحة \"$1\".",
