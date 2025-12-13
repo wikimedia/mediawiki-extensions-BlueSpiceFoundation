@@ -4,6 +4,7 @@
 			"AA800",
 			"Alshamiri1",
 			"Meno25",
+			"Mohammed Qays",
 			"Moud hosny",
 			"ديفيد"
 		]
@@ -53,7 +54,7 @@
 	"apihelp-bs-ping-tasks-summary": "مهمة Ping التي توفر تبادلا مستمرا للبيانات",
 	"apihelp-bs-wikisubpage-treestore-description": "قوائم بالمواقع الفرعية في صفحة wiki محددة",
 	"apihelp-bs-wikisubpage-treestore-summary": "يسرد الصفحات الفرعية لصفحة ويكي محددة",
-	"apihelp-bs-wikisubpage-treestore-param-node": "بادئة عنوان صفحة wiki",
+	"apihelp-bs-wikisubpage-treestore-param-node": "بادئة عنوان صفحة ويكي",
 	"apihelp-bs-wikisubpage-treestore-param-options": "قائمة الخيارات",
 	"apihelp-bs-upload-license-store-description": "يسرد جميع التراخيص المتاحة لرفع ملف",
 	"apihelp-bs-upload-license-store-summary": "يسرد جميع التراخيص المتاحة لرفع ملف",
