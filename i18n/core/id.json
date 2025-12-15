@@ -9,7 +9,8 @@
 			"Raynasution",
 			"Robfirstname",
 			"Sumbukompor",
-			"Veracious"
+			"Veracious",
+			"Penyuwangi"
 		]
 	},
 	"bluespicefoundation-desc": "Menyiapkan kegiatan MediaWiki",
@@ -82,5 +83,5 @@
 	"action-wikiadmin": "menggunakan tugas administratif yang berpotensi berbahaya, seperti mengelola pengguna, izin, konfigurasi global (ekstensi BlueSpice)",
 	"right-wikiadmin": "Gunakan tugas administratif yang berpotensi berbahaya, seperti mengelola pengguna, izin, konfigurasi global (ekstensi BlueSpice)",
 	"bs-notifications-agent-anon": "pengguna anonim",
-	"protect-level-editor": "Hanya izinkan editor dan administrator"
+	"protect-level-editor": "Hanya izinkan penyunting dan pengurus"
 }
