@@ -8,15 +8,13 @@
 			"हिमाल सुबेदी"
 		]
 	},
-	"bs-userbar_loginswitch_logout": "निर्गमन गर्नुहोस्",
-	"bs-extended-search-textfield-defaultvalue": "खोज्नुहोस्...",
-	"bs-graphicallist-action-list": "सूची",
-	"bs-graphicallist-action-preview": "पूर्वावलोकन",
 	"bs-ns_main": "(पृष्ठहरू)",
 	"bs-ns_all": "(सबै)",
 	"bs-tab_navigation": "अन्वेषण",
+	"bs-userbar_loginswitch_logout": "निर्गमन गर्नुहोस्",
 	"bs-userbar_loginswitch_login": "प्रवेश गर्नुहोस्",
 	"bs-extended-search-tooltip-fulltext": "पूर्णपाठ खोजी",
+	"bs-extended-search-textfield-defaultvalue": "खोज्नुहोस्...",
 	"bs-extended-search-textfield-tooltip": "विकि खोज्नुहोस्",
 	"bs-no-information-available": "कुनै पनि जानकारी उपलब्ध छैन",
 	"bs-years-duration": "{{PLURAL:$1| एक वर्ष| $1 वर्ष}}",
@@ -33,5 +31,7 @@
 	"bs-email-footer": "यो सन्देश $1 द्वारा स्वचालित रूपमा उत्पन्न गरिएको हो। कृपया यो इमेलको जवाफ नदिनुहोस्।",
 	"bs-userpagesettings-legend": "प्रयोगकर्ता अभिरुचिहरू",
 	"bs-userpreferences-link-text": "थप प्रयोगकर्ता अभिरुचिहरू",
-	"bs-exception-view-heading": "एउटा त्रुटि भएको छ!"
+	"bs-exception-view-heading": "एउटा त्रुटि भएको छ!",
+	"bs-graphicallist-action-list": "सूची",
+	"bs-graphicallist-action-preview": "पूर्वावलोकन"
 }
