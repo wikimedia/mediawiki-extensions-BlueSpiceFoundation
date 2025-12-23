@@ -37,6 +37,9 @@ class PermissionLockdownFactory {
 	 */
 	protected $instances = [];
 
+	/** @var null */
+	private $modules = null;
+
 	/**
 	 *
 	 * @param ExtensionAttributeBasedRegistry $registry
@@ -57,11 +60,11 @@ class PermissionLockdownFactory {
 	 * @return Lockdown
 	 */
 	public function newFromTitleAndUserRelation( Title $title, User $user ) {
-		$instance = $this->getLockownFromCache( $title, $user );
-		if ( $instance ) {
-			return $instance;
+		$cacheKey = $this->getCacheKey( $title, $user );
+		if ( !isset( $this->instances[$cacheKey] ) ) {
+			$this->instances[$cacheKey] = $this->newLockdown( $title, $user );
 		}
-		return $this->newLockdown( $title, $user );
+		return $this->instances[$cacheKey];
 	}
 
 	/**
@@ -71,37 +74,24 @@ class PermissionLockdownFactory {
 	 * @return Lockdown
 	 */
 	protected function newLockdown( Title $title, User $user ) {
-		return new Lockdown( $this->config, $title, $user, $this->getModules( $user ) );
+		if ( $this->modules === null ) {
+			$this->setModules();
+		}
+		return new Lockdown( $this->config, $title, $user, $this->modules );
 	}
 
 	/**
 	 *
-	 * @param User $user
-	 * @param Module[] $modules
-	 * @return Module[]
 	 */
-	protected function getModules( User $user, array $modules = [] ) {
+	protected function setModules() {
+		$this->modules = [];
 		foreach ( $this->registry->getAllKeys() as $key ) {
-			$modules[] = call_user_func_array( $this->registry->getValue( $key ), [
+			$this->modules[] = call_user_func_array( $this->registry->getValue( $key ), [
 				$this->config,
 				$this->context,
 				MediaWikiServices::getInstance(),
 			] );
 		}
-		return $modules;
-	}
-
-	/**
-	 *
-	 * @param Title $title
-	 * @param User $user
-	 * @return Lockdown|false
-	 */
-	protected function getLockownFromCache( Title $title, User $user ) {
-		if ( isset( $this->instances[$this->getCacheKey( $title, $user )] ) ) {
-			return $this->instances[$this->getCacheKey( $title, $user )];
-		}
-		return false;
 	}
 
 	/**

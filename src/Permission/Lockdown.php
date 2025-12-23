@@ -74,10 +74,13 @@ class Lockdown {
 	 * @return Status
 	 */
 	public function getLockState( $action = 'read' ) {
-		if ( $action !== 'read' && !$this->getLockState()->isOK() ) {
+		if ( $action !== 'read' ) {
+			$readLockState = $this->getLockState();
 			// always check read first. If this fails there should not be another
 			// permission applied
-			return $this->getLockState();
+			if ( !$readLockState->isOK() ) {
+				return $readLockState;
+			}
 		}
 
 		if ( isset( $this->lockStates[$action] ) ) {
@@ -92,7 +95,6 @@ class Lockdown {
 		if ( $this->title->isUserConfigPage() ) {
 			return $this->lockStates[$action];
 		}
-
 		foreach ( $this->getAppliedModules() as $module ) {
 			// as soon as any of the applied modules locks down the given action
 			// for given user and title relation, permission is denied and we can

@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook\GetUserPermissionsErrors;
 
 use BlueSpice\Permission\Lockdown;
+use MediaWiki\Message\Message;
 
 class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 
@@ -17,7 +18,21 @@ class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 	 * @return bool
 	 */
 	protected function doProcess() {
-		$this->result = $this->getLockdown()->getLockState( $this->action )->getMessage();
+		$res = $this->getLockdown()->getLockState( $this->action );
+
+		if ( !$res->isOK() ) {
+			if ( is_string( $this->result ) ) {
+				if ( empty( $this->result ) ) {
+					$this->result = [];
+				} else {
+					$this->result = [ $this->result ];
+				}
+			}
+			$errors = $res->getMessages( 'error' );
+			foreach ( $errors as $error ) {
+				$this->result[] = Message::newFromSpecifier( $error )->text();
+			}
+		}
 
 		return false;
 	}
