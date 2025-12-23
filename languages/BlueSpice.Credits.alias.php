@@ -102,12 +102,17 @@ $specialPageAliases['vi'] = [
 	'SpecialCredits' => [ 'Ghi_công' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'SpecialCredits' => [ 'Credits' ],
+];
+
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'SpecialCredits' => [ '制作组' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'SpecialCredits' => [ '製作群' ],
 ];
