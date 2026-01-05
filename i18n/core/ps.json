@@ -4,7 +4,8 @@
 			"Af420",
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amjad Khan",
-			"Baloch Khan"
+			"Baloch Khan",
+			"شاه زمان پټان"
 		]
 	},
 	"bs-ns_all": "(ټول)",
@@ -13,7 +14,7 @@
 	"bs-months-duration": "{{PLURAL:$1|يوه مياشت|$1 مياشتې}}",
 	"bs-weeks-duration": "{{PLURAL:$1|يوه اونۍ|$1 اونۍ}}",
 	"bs-days-duration": "{{PLURAL:$1|يوه ورځ|$1 ورځې}}",
-	"bs-hours-duration": "{{PLURAL:$1|يو ساعت|$1 ساعته}}",
+	"bs-hours-duration": "{{PLURAL:$1|يو گړۍ|$1 گړۍ}}",
 	"bs-mins-duration": "{{PLURAL:$1|يوه دقيقه|$1 دقیقي}}",
 	"bs-secs-duration": "{{PLURAL:$1|يوه ثانيه|$1 ثانيې}}",
 	"bs-two-units-ago": "$1 او $2 ترمخه",
