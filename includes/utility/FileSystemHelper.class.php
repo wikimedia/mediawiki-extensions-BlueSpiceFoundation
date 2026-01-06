@@ -603,7 +603,6 @@ class BsFileSystemHelper {
 		imagefilledrectangle( $rNewImage, 0, 0, $iNewWidth, $iNewHeight, $iTransparent );
 		imagecopyresampled( $rNewImage, $rImage, 0, 0, 0, 0, $iNewWidth, $iNewHeight, $iWidth, $iHeight );
 		imagepng( $rNewImage, $sTmpName );
-		imagedestroy( $rNewImage );
 
 		# move_uploaded_file($oWebRequestUpload->getTempName(), $sTmpName);
 		return Status::newGood( $oWebRequestUpload->getName() );
