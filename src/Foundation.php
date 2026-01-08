@@ -90,16 +90,6 @@ class Foundation {
 			$this->config->get( 'ImageExtensions' )
 		) ) );
 
-		// Adaptions of `mwstake/mediawiki-component-runjobstrigger`
-		$GLOBALS['mwsgRunJobsTriggerHandlerFactories']['legacy-bluespice-extension-attributes'] = [
-			'class' => "\\BlueSpice\\RunJobsTriggerHandler\\LegacyExtensionAttributesFactory"
-		];
-		$GLOBALS['mwsgRunJobsTriggerOptions'] = wfArrayPlus2d(
-			$this->config->get( 'RunJobsTriggerHandlerOptions' ),
-			$GLOBALS['mwsgRunJobsTriggerOptions']
-		);
-		$GLOBALS['mwsgRunJobsTriggerRunnerWorkingDir'] = BSDATADIR;
-
 		// Adaptions of `mwstake/mediawiki-component-alertbanners`
 		$GLOBALS['mwsgAlertBannersProviderFactories']['legacy-bluespice-extension-attributes'] = [
 			'class' => "\\BlueSpice\\LegacyExtensionAttributesAlertProviderFactory"
