@@ -77,7 +77,6 @@
 				"qualityassurance": "bs-setting-path-qualityassurance",
 				"export": "bs-setting-path-export"
 			},
-			"RunJobsTriggerHandlerRegistry": {},
 			"AlertProviderRegistry": {
 				"bs-readonly-warning": "\\BlueSpice\\AlertProvider\\ReadOnlyWarning::factory",
 				"bs-testsystem-warning": "\\BlueSpice\\AlertProvider\\TestsystemWarning::factory"
@@ -476,14 +475,6 @@
 		},
 		"MaintenanceUserName": {
 			"value": "BSMaintenance"
-		},
-		"RunJobsTriggerHandlerOptions": {
-			"value": {
-				"*": {
-					"basetime": [ 1, 0, 0 ],
-					"once-a-week-day": "sunday"
-				}
-			}
 		},
 		"CreditsProgrammers": {
 			"value": [
