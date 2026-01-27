@@ -5,12 +5,10 @@
 		]
 	},
 	"bs-ns_main": "(ਸਫ਼ੇ)",
-	"bs-userbar_loginswitch_logout": "ਬਾਹਰ ਆਉ",
-	"bs-userbar_loginswitch_login": "ਦਾਖ਼ਲ ਹੋਵੋ",
-	"bs-permission-role-editor": "ਸੋਧਕ",
-	"bs-permission-role-admin": "ਪ੍ਰਬੰਧਕ",
 	"bs-ns_all": "(ਸਾਰੇ)",
 	"bs-tab_navigation": "ਆਵਾਜਾਵੀ",
+	"bs-userbar_loginswitch_logout": "ਬਾਹਰ ਆਉ",
+	"bs-userbar_loginswitch_login": "ਦਾਖ਼ਲ ਹੋਵੋ",
 	"bs-extended-search-textfield-defaultvalue": "ਲੱਭੋ...",
 	"bs-extended-search-textfield-tooltip": "ਵਿਕੀ ਖੋਜੋ",
 	"bs-now": "ਹੁਣ",
@@ -30,6 +28,8 @@
 	"bs-graphicallist-action-close": "ਬੰਦ ਕਰੋ",
 	"bs-graphicallist-action-list": "ਸੂਚੀ",
 	"bs-graphicallist-action-preview": "ਝਾਤ",
+	"bs-permission-role-editor": "ਸੋਧਕ",
 	"bs-permission-role-reviewer": "ਪਾਰਖੂ",
+	"bs-permission-role-admin": "ਪ੍ਰਬੰਧਕ",
 	"bs-title-success": "ਕਾਮਯਾਬੀ ਮਿਲੀ!"
 }
