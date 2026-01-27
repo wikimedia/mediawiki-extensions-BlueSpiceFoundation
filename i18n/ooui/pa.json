@@ -9,5 +9,15 @@
 	"bs-pageexport-list-format-label": "ਸੂਚੀ ਤਰਤੀਬ",
 	"bs-pageexport-list-format-plain-label": "ਆਮ ਲਿਖਤ",
 	"bs-pageexport-list-format-link-label": "ਕੜੀ",
-	"bs-pageexport-overwrite-label": "ਉੱਤੇ ਹੀ ਲਿਖੋ"
+	"bs-pageexport-overwrite-label": "ਉੱਤੇ ਹੀ ਲਿਖੋ",
+	"bs-ooui-key-value-input-widget-key-label": "ਚਾੱਬੀ",
+	"bs-ooui-key-value-input-widget-value-label": "ਮੁੱਲ",
+	"bs-ooui-key-value-input-widget-add-button-label": "ਜੋੜੋ",
+	"bs-ooui-btn-dismiss-alert-title": "ਖ਼ਾਰਜ ਕਰੋ",
+	"bs-ooui-key-value-input-widget-add-section-label": "ਨਵਾਂ ਭਾਗ ਸ਼ਾਮਲ ਕਰੋ",
+	"bs-ui-generic-save": "ਸਾਂਭੋ",
+	"bs-ui-generic-cancel": "ਰੱਦ ਕਰੋ",
+	"bs-ui-generic-yes": "ਹਾਂ",
+	"bs-ui-generic-no": "ਨਹੀਂ",
+	"bs-ui-generic-close": "ਬੰਦ ਕਰੋ"
 }
