@@ -4,6 +4,7 @@
 			"Nerogaf",
 			"Red Winged Duck",
 			"Renessaince",
+			"Ucukor",
 			"W"
 		]
 	},
@@ -38,5 +39,6 @@
 	"bs-graphicallist-action-preview": "Перадпрагляд",
 	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "ананімны ўдзельнік",
-	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)"
+	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)",
+	"bs-permission-role-reviewer": "Рэцэнзэнт"
 }
