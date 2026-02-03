@@ -9,7 +9,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "{{doc-apihelp-summary|bs-filebackend-store}}",
 	"apihelp-bs-user-store-summary": "{{doc-apihelp-summary|bs-user-store}}",
-	"apihelp-bs-category-store-summary": "{{doc-apihelp-summary|bs-category-store}}",
 	"apihelp-bs-adminuser-store-summary": "{{doc-apihelp-summary|bs-adminuser-store}}",
 	"apihelp-bs-group-store-summary": "{{doc-apihelp-summary|bs-group-store}}",
 	"apihelp-bs-interwiki-store-summary": "{{doc-apihelp-summary|bs-interwiki-store}}",

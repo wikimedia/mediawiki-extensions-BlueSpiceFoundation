@@ -65,15 +65,23 @@ class DetectCategoryRecursion extends BSMaintenance {
 	private function getSubCategoriesFromDB( string $last ): array {
 		$dbr = $this->getDB( DB_REPLICA );
 		$resSubCategories = $dbr->select(
-			[ 'page', 'categorylinks' ],
+			[ 'page', 'categorylinks', 'linktarget' ],
 			[ 'page_title' ],
-			[ 'cl_to' => $last, 'page_namespace' => NS_CATEGORY ],
+			[
+				'lt_title' => $last,
+				'page_namespace' => NS_CATEGORY
+			],
 			__METHOD__,
-			[ '' ],
-			[ 'categorylinks' =>
-				[
-					'INNER JOIN', 'page_id = cl_from'
-				]
+			[],
+			[
+				'categorylinks' => [
+					'INNER JOIN',
+					'page_id = cl_from',
+				],
+				'linktarget' => [
+					'INNER JOIN',
+					'cl_target_id = lt_id',
+				],
 			]
 		);
 
@@ -81,6 +89,7 @@ class DetectCategoryRecursion extends BSMaintenance {
 		foreach ( $resSubCategories as $row ) {
 			$subcategories[] = $row->page_title;
 		}
+
 		asort( $subcategories );
 
 		return $subcategories;

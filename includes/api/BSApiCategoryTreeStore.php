@@ -5,6 +5,7 @@ use MediaWiki\Category\Category;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Rdbms\IDatabase;
 
 class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 
@@ -37,37 +38,49 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	/**
 	 * Creates a list of subcategories for the specified node.
 	 *
-	 * @param string $sNode source node
+	 * @param string $node source node
 	 * @return array
 	 */
-	private function getSubCategoriesFromPath( $sNode ) {
-		$aNodes = explode( '/', $sNode );
-		$sCatTitle = str_replace( '+', '/', str_replace( ' ', '_', array_pop( $aNodes ) ) );
-		if ( $this->detectRecursion( $aNodes ) ) {
+	private function getSubCategoriesFromPath( $node ) {
+		$nodes = explode( '/', $node );
+		$catTitle = str_replace( '+', '/', str_replace( ' ', '_', array_pop( $nodes ) ) );
+
+		if ( $this->detectRecursion( $nodes ) ) {
 			return [];
 		}
 
+		// Subcategories always have a page
 		$resSubCategories = $this->dbr->select(
-			[ 'page', 'categorylinks' ],
-			[ 'page_title' ],
-			[ 'cl_to' => $sCatTitle, 'page_namespace' => NS_CATEGORY ],
+			[ 'page', 'categorylinks', 'linktarget' ],
+			'page_title',
+			[
+				'lt_title' => $catTitle,
+				'page_namespace' => NS_CATEGORY,
+				'cl_type' => 'subcat'
+			],
 			__METHOD__,
-			[ '' ],
-			[ 'categorylinks' =>
-				[
-					'INNER JOIN', 'page_id = cl_from'
-				]
+			[],
+			[
+				'categorylinks' => [
+					'INNER JOIN',
+					'page_id = cl_from',
+				],
+				'linktarget' => [
+					'INNER JOIN',
+					'cl_target_id = lt_id',
+				],
 			]
 		);
 
-		$aSubCategories = [];
+		$dubCategories = [];
 
 		foreach ( $resSubCategories as $row ) {
-			$aSubCategories[] = $row->page_title;
+			$dubCategories[] = $row->page_title;
 		}
-		asort( $aSubCategories );
 
-		return $this->parseResult( $aSubCategories, $sNode );
+		asort( $dubCategories );
+
+		return $this->parseResult( $dubCategories, $node );
 	}
 
 	/**
@@ -76,15 +89,15 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	 * @return array
 	 */
 	private function getRootCategories() {
-		$aSubCategories = [];
-		$aCategories = [];
+		$subCategories = [];
+		$categories = [];
 
 		$resSubCategories = $this->dbr->select(
 			[ 'page', 'categorylinks' ],
 			[ 'page_title AS cat_title' ],
 			[ 'page_namespace' => NS_CATEGORY ],
 			__METHOD__,
-			[ '' ],
+			[],
 			[ 'categorylinks' =>
 				[
 					'INNER JOIN', 'page_id = cl_from'
@@ -93,41 +106,43 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 		);
 
 		foreach ( $resSubCategories as $row ) {
-			$sCatTitle = preg_replace( '/\'/', "\'", $row->cat_title );
-			$aSubCategories[] = $sCatTitle;
+			$catTitle = preg_replace( '/\'/', "\'", $row->cat_title );
+			$subCategories[] = $catTitle;
 		}
 
 		$resPageTable = $this->dbr->select(
 			[ 'page' ],
-			[ '*' ],
-			[ 'page_namespace' => NS_CATEGORY, 'page_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')' ],
-			__METHOD__,
-			[ '' ],
-			[]
+			'*',
+			[
+				'page_namespace' => NS_CATEGORY,
+				'page_title NOT IN (\'' . implode( '\', \'', $subCategories ) . '\')'
+			],
+			__METHOD__
 		);
 
 		foreach ( $resPageTable as $row ) {
-			$aCategories[] = $row->page_title;
+			$categories[] = $row->page_title;
 		}
 
+		// Some root categories exist without a page
 		$resCategoryTable = $this->dbr->select(
 			[ 'category', 'categorylinks' ],
 			'cat_title',
 			[
-				'cat_title NOT IN (\'' . implode( '\', \'', $aSubCategories ) . '\')',
-				'cat_title = cl_to'
+				'cat_title NOT IN (\'' . implode( '\', \'', $subCategories ) . '\')'
 			],
 			__METHOD__,
 			[ 'GROUP BY cat_title' ]
 		);
 
 		foreach ( $resCategoryTable as $row ) {
-			$aCategories[] = $row->cat_title;
+			$categories[] = $row->cat_title;
 		}
 
-		$aCategories = array_unique( $aCategories );
-		asort( $aCategories );
-		return $this->parseResult( $aCategories, "src" );
+		$categories = array_unique( $categories );
+		asort( $categories );
+
+		return $this->parseResult( $categories, "src" );
 	}
 
 	/**

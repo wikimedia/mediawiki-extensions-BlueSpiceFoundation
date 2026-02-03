@@ -5,8 +5,6 @@ namespace BlueSpice\Tests\Api;
 use BlueSpice\Tests\BSApiExtJSStoreTestBase;
 
 /**
- * The base fixture has changed since MW 1.27. Therefore the test is marked
- * broken until BlueSpice updates its compatibility.
  * @group medium
  * @group api
  * @group Database
@@ -15,7 +13,8 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @covers \BSApiCategoryTreeStore
  */
 class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
-	protected $iFixtureTotal = 2;
+
+	protected $iFixtureTotal = 1;
 
 	protected function getStoreSchema() {
 		return [
@@ -33,42 +32,55 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$oDbw = $this->db;
-		$oDbw->insert(
+		$dbw = $this->getDb( DB_PRIMARY );
+
+		// Parent category with no page
+		$dbw->insert(
 			'category',
 			[
-				'cat_title' => "Dummy test",
-				'cat_pages' => 3,
-				'cat_files' => 1
+				'cat_id' => 1,
+				'cat_title' => 'CategoryParent',
+				'cat_pages' => 1,
+				'cat_subcats' => 1,
+				'cat_files' => 0
 			],
 			__METHOD__
 		);
 
-		$oDbw->insert(
-			'category',
+		// Subcategory with page
+		$subCategoryPage = $this->insertPage(
+			"CategorySub",
+			"Text CategorySub",
+			NS_CATEGORY
+		);
+		$subCategoryPageId = $subCategoryPage['id'];
+
+		$lt_id = 1;
+		$dbw->insert(
+			'linktarget',
 			[
-				'cat_title' => "Dummy test 2",
-				'cat_pages' => 2,
-				'cat_files' => 3
+				'lt_id' => $lt_id,
+				'lt_namespace' => NS_CATEGORY,
+				'lt_title' => 'CategoryParent'
 			],
 			__METHOD__
 		);
 
-		$oDbw->insert(
+		// Link subcategory to parent category
+		$dbw->insert(
 			'categorylinks',
 			[
-				'cl_to' => "Dummy test",
-				'cl_timestamp' => $oDbw->timestamp(),
-				'cl_target_id' => 1
+				'cl_from' => $subCategoryPageId,
+				'cl_target_id' => $lt_id,
+				'cl_timestamp' => $dbw->timestamp(),
+				'cl_type' => 'subcat'
 			],
 			__METHOD__
 		);
-
-		$this->insertPage( "Dummy test 2", "Text Dummy test 2", NS_CATEGORY );
 	}
 
 	protected function createStoreFixtureData() {
-		return 2;
+		return 1;
 	}
 
 	protected function getModuleName() {
@@ -77,7 +89,13 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 
 	public function provideSingleFilterData() {
 		return [
-			'Filter by id' => [ 'string', 'ct', 'id', 'src/', 2 ]
+			'Filter by id' => [
+				'string',
+				'ct',
+				'id',
+				'src/CategoryParent',
+				1
+			]
 		];
 	}
 
@@ -95,7 +113,7 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 						'type' => 'string',
 						'comparison' => 'eq',
 						'field' => 'text',
-						'value' => 'Dummy test 2'
+						'value' => 'CategorySub'
 					]
 				],
 				1
@@ -105,7 +123,7 @@ class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 
 	protected function getAdditionalParams() {
 		return [
-			'node' => 'src'
+			'node' => 'src/CategoryParent'
 		];
 	}
 }

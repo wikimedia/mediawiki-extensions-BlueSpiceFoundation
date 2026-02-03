@@ -45,7 +45,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param ReaderParams $params
 	 * @return Record[]
 	 */
@@ -58,10 +57,17 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		}
 
 		$res = $this->db->select(
-			'categorylinks',
-			'*',
+			[ 'categorylinks', 'linktarget' ],
+			[ 'categorylinks.*', 'lt_title' ],
 			$filterConds,
-			__METHOD__
+			__METHOD__,
+			[],
+			[
+				'linktarget' => [
+					'INNER JOIN',
+					'cl_target_id = lt_id',
+				],
+			]
 		);
 
 		foreach ( $res as $row ) {
@@ -92,11 +98,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param \stdClass $row
 	 */
 	protected function appendRowToData( $row ) {
-		$title = Title::makeTitle( NS_CATEGORY, $row->cl_to );
+		$title = Title::makeTitle( NS_CATEGORY, $row->lt_title );
 		if ( !$title->isValid() ) {
 			return;
 		}
