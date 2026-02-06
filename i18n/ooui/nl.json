@@ -5,7 +5,8 @@
 			"McDutchie",
 			"Niknetniko",
 			"Optilete",
-			"Romaine"
+			"Romaine",
+			"Siebrand"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Nieuwe toevoegen...",
@@ -31,5 +32,6 @@
 	"bs-pageexport-list-format-link-label": "Koppeling",
 	"bs-pageexport-overwrite-label": "Overschrijven",
 	"bs-export-search-summary-text": "Gegenereerd door PageExport",
-	"bs-pagecollection-prefix": "Paginaverzameling"
+	"bs-pagecollection-prefix": "Paginaverzameling",
+	"bs-util-alert-title": "Tip"
 }
