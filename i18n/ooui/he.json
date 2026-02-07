@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Neriah",
 			"YaronSh",
 			"ישראל קלר"
 		]
@@ -29,5 +30,6 @@
 	"bs-pageexport-list-format-link-label": "קישור",
 	"bs-pageexport-overwrite-label": "דריסה",
 	"bs-export-search-summary-text": "נוצר על־ידי PageExport",
-	"bs-pagecollection-prefix": "אוסף דפים"
+	"bs-pagecollection-prefix": "אוסף דפים",
+	"bs-util-alert-title": "רמז"
 }
