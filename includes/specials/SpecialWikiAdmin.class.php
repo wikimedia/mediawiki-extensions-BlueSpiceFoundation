@@ -15,7 +15,11 @@
 class SpecialWikiAdmin extends \BlueSpice\SpecialPage {
 
 	public function __construct() {
-		parent::__construct( 'WikiAdmin', '', false );
+		parent::__construct( 'WikiAdmin' );
+	}
+
+	public function isListed(): bool {
+		return false;
 	}
 
 	/**

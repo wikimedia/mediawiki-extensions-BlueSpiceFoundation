@@ -18,18 +18,17 @@ abstract class SpecialPage extends MediaWikiSpecialPage {
 	 * @param string $name Name of the special page, as seen in links and URLs
 	 * @param string $restriction User right required, e.g. "block" or "delete"
 	 * @param bool $listed Whether the page is listed in Special:Specialpages
-	 * @param callable|bool $function Unused
-	 * @param string $file Unused
+	 *  Deprecated since 1.46, override the method isListed() instead.
+	 * @param callable|bool $function Unused. Deprecated since 1.46.
+	 * @param string $file Unused. Deprecated since 1.46.
 	 * @param bool $includable Whether the page can be included in normal pages
+	 *  Deprecated since 1.46, override the method isIncludable() instead.
 	 */
 	public function __construct(
 		$name = '', $restriction = '', $listed = true,
 		$function = false, $file = '', $includable = false
 	) {
-		parent::__construct(
-			$name, $restriction, $listed,
-			$function, $file, $includable
-		);
+		parent::__construct( ...func_get_args() );
 		$this->services = MediaWikiServices::getInstance();
 	}
 
