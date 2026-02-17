@@ -31,6 +31,5 @@
 	"bs-pageexport-list-format-link-label": "链接",
 	"bs-pageexport-overwrite-label": "覆盖",
 	"bs-export-search-summary-text": "生成自页面导出",
-	"bs-pagecollection-prefix": "页面收藏",
-	"bs-util-alert-title": "提示"
+	"bs-pagecollection-prefix": "页面收藏"
 }
