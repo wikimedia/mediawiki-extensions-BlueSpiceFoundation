@@ -7,5 +7,7 @@
 	"bs-upload-license": "Лицензия",
 	"bs-upload-error": "Ката",
 	"bs-upload-descfilelabel": "Сыпаттама",
-	"bs-upload-details": "Чоо-жайы"
+	"bs-upload-details": "Чоо-жайы",
+	"bs-upload-uploadfilefieldlabel": "Файлдын аталышы",
+	"bs-upload-categories": "Категориялар"
 }

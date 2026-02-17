@@ -9,6 +9,7 @@
 			"Mjälten",
 			"Raltseye",
 			"Sabelöga",
+			"Stefan2255",
 			"Technic2",
 			"Warrakkk",
 			"WikiPhoenix"
@@ -103,5 +104,15 @@
 	"right-editor": "Få alla behörigheter från rollen \"redigerare\" för skrivskyddade sidor i redigeringsbegränsningen när rollsystemet aktiverats",
 	"action-editor": "få alla behörigheter från rollen \"redaktör\" för skrivskyddade sidor i redaktörsbegränsningen när systemrollen aktiverats",
 	"bs-pref-imageextensions-help": "Bildfiltyper som kan laddas upp till wikin. Möjliga webbformat: gif, png, jpg, jpeg. Andra bildformat: tiff, bmp",
-	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!"
+	"bs-dynamic-settings-error-config-file-could-not-be-written": "Konfigurationsfil $1 kunde inte skrivas!",
+	"bs-pref-fileextensions-help": "Filtyper som kan laddas upp till wikin. Vissa typer (t.ex. html, js, php, cgi, exe) är inte tillåtna av säkerhetsskäl även om de har lagts till här.",
+	"bs-pref-logopath-help": "Logotypen ska lagras i mappen /w/images i din installation. Om du lagrar den i mappen /w/skins i din BlueSpice-installation kan den skrivas över med en uppgradering.",
+	"bs-pref-faviconpath-help": "Faviconen ska lagras i mappen /w/images i din installation. Om du lagrar den i mappen /w/skins i din BlueSpice-installation kan den skrivas över vid en uppgradering. Faviconer har filändelsen .ico.",
+	"bs-exttype-bluespice-assets": "BlueSpice-tillgångar",
+	"bs-permission-role-reader": "Läsare",
+	"bs-permission-role-editor": "Redigerare",
+	"bs-permission-role-reviewer": "Granskare",
+	"bs-permission-role-admin": "Administratör",
+	"bs-title-warning": "Varning",
+	"bs-title-success": "Lyckades"
 }
