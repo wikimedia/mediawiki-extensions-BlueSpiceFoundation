@@ -12,7 +12,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Listar alla filer från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-user-store-summary": "Listar alla användare från databasen. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
-	"apihelp-bs-category-store-summary": "Listar alla kategorier. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-adminuser-store-summary": "Listar alla användare från databasen med ytterligare känslig data. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",
 	"apihelp-bs-group-store-summary": "Listar alla grupper förutom $wgImplicitGroups. Tillåter sortering, filtrering och sidnumrering. Implementerar parametrar för ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Listar alla interwikilänkar. Tillåter sortering, filtrering och sidnumrering. Implementerar ExtJS Store-parametrar.",

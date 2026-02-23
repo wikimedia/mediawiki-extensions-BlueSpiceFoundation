@@ -9,7 +9,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "列出來自檔案後端的所有檔案。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
 	"apihelp-bs-user-store-summary": "列出來自資料庫的所有使用者。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
-	"apihelp-bs-category-store-summary": "列出所有分類。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
 	"apihelp-bs-adminuser-store-summary": "列出來自資料庫且帶有額外敏感資料的所有使用者。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
 	"apihelp-bs-group-store-summary": "列出除了 $wgImplicitGroups 以外的所有群組。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",
 	"apihelp-bs-interwiki-store-summary": "列出所有跨 wiki 連結。允許排序、篩選，以及分頁。執行 ExtJS 所儲存的變數。",

@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Seipinne"
+			"Seipinne",
+			"Yupik"
 		]
 	},
-	"bs-ooui-key-value-input-widget-add-button-label": "Lasseet"
+	"bs-ooui-key-value-input-widget-add-button-label": "Lasseet",
+	"bs-ui-generic-save": "Vuorkkii"
 }

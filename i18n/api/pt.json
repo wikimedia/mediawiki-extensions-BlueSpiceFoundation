@@ -10,7 +10,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Lista todos os ficheiros do servidor de ficheiros. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-user-store-summary": "Lista todos os utilizadores da base de dados. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
-	"apihelp-bs-category-store-summary": "Lista todas as categorias. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-adminuser-store-summary": "Lista todos os utilizadores da base de dados com dados confidenciais adicionais. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Lista todos os grupos exceto $wgImplicitGroups. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Lista todas as hiperligações interwikis. Permite ordenar, filtrar e paginar. Implementa os parâmetros ExtJS Store.",

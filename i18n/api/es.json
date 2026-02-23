@@ -18,7 +18,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Enumera todos los archivos del archivo de fondo. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
 	"apihelp-bs-user-store-summary": "Enumera todos los usuarios de la base de datos. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
-	"apihelp-bs-category-store-summary": "Enumera todas las categorías. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
 	"apihelp-bs-adminuser-store-summary": "Enumera todos los usuarios de la base de datos con datos confidenciales adicionales. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
 	"apihelp-bs-group-store-summary": "Enumera todos los grupos excepto $wgImplicitGroups. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",
 	"apihelp-bs-interwiki-store-summary": "Enumera todos los enlaces interwiki. Permite ordenar, filtrar y paginar. Implementa los parámetros de almacenamiento de ExtJS.",

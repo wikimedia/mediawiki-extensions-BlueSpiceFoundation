@@ -8,7 +8,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Llista de tolos ficheros del sirvidor de ficheros. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
 	"apihelp-bs-user-store-summary": "Llista de tolos usuarios de la base de datos. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
-	"apihelp-bs-category-store-summary": "Llista de toles categoríes. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
 	"apihelp-bs-adminuser-store-summary": "Llista de tolos usuarios de la base de datos incluyendo datos sensibles. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Llista de tolos grupos, sacante $wgImplicitGroups. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Llista de tolos enllaces interwiki. Permite ordenar, filtriar y paxinar. Proporciona los parámetros ExtJS Store.",

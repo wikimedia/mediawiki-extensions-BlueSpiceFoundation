@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Markus Mikkonen",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Yupik"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Lisää uusi...",
@@ -13,5 +14,6 @@
 	"bs-ooui-btn-dismiss-alert-title": "Hylkää",
 	"bs-ooui-key-value-input-widget-section-label": "Osio",
 	"bs-ooui-key-value-input-widget-add-section-label": "Lisää uusi osio",
+	"bs-ui-generic-save": "Tallenna",
 	"bs-pagecollection-prefix": "\nSivukokoelma"
 }

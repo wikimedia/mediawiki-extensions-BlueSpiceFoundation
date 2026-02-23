@@ -4,7 +4,6 @@
 			"Vlad5250"
 		]
 	},
-	"apihelp-bs-category-store-summary": "Ги наведува сите категории. Овозможува подредување, филтрирање и страничење. Применува параметри за ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Ги наведува сите групи освен $wgImplicitGroups. Овозможува подредување, филтрирање и страничење. Применува параметри за ExtJS Store.",
 	"apihelp-bs-store-param-limit": "Број на ставки во исходот од барањето",
 	"apihelp-bs-store-param-dc": "Ознака <code>Disable cache</code>",

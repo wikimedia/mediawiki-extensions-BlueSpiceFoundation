@@ -6,7 +6,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Elenghe tutte le file da 'u backend. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-user-store-summary": "Elenghe tutte le utinde d'u database. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
-	"apihelp-bs-category-store-summary": "Elenghe tutte le categorije. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-adminuser-store-summary": "Elenghe tutte le utinde d'u database cu date sensibbile in aggiunde. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Elenghe tutte le gruppe tranne $wgImplicitGroups. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Elenghe tutte le collegaminde 'mbrà uicchi. Face fà l'ordinamende, 'u filtre e l'imbagginazzione. 'Mblemende parametre ExtJS Store.",

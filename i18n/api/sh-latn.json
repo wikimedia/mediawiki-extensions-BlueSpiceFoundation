@@ -6,7 +6,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Popisuje sve datoteke iz pozadine datoteke. Omogućuje sortiranje, filtriranje i označavanje stranica. Implementira parametre ExtJS Store.",
 	"apihelp-bs-user-store-summary": "Popisuje sve korisnike iz baze podataka. Omogućuje sortiranje, filtriranje i označavanje stranica. Implementira parametre ExtJS Store.",
-	"apihelp-bs-category-store-summary": "Popisuje sve kategorije. Omogućuje sortiranje, filtriranje i označavanje stranica. Implementira parametre ExtJS Store.",
 	"apihelp-bs-adminuser-store-summary": "Popisuje sve korisnike iz baze podataka s dodatnim osjetljivim podacima. Omogućuje sortiranje, filtriranje i označavanje stranica. Implementira parametre ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Popisuje sve grupe izuzev $wgImplicitGroups. Omogućuje sortiranje, filtriranje i označavanje stranica. Implementira parametre ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Popisuje sve međuwiki linkove. Omogućuje sortiranje, filtriranje i označavanje stranica. Implementira parametre ExtJS Store.",

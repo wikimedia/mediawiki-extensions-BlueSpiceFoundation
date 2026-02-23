@@ -9,5 +9,6 @@
 	"bs-ui-generic-cancel": "منسوخ",
 	"bs-ui-generic-yes": "جیا",
 	"bs-ui-generic-no": "کو",
-	"bs-ui-generic-close": "بند کرو"
+	"bs-ui-generic-close": "بند کرو",
+	"bs-util-alert-title": "اشارہ"
 }

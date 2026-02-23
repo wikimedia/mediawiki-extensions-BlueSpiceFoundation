@@ -8,7 +8,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Navede vse predloge datotečnega zaledja. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre ExtJS Store.",
 	"apihelp-bs-user-store-summary": "Navede vse predloge datotečne zbirke. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre ExtJS Store.",
-	"apihelp-bs-category-store-summary": "Navede vse kategorije. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre ExtJS Store.",
 	"apihelp-bs-adminuser-store-summary": "Navede vse uporabnike iz podatkovne zbirke z dodatnimi občutljivimi podatki. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Navede vse skupine razen $wgImplicitGroup. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Navede vse interviki povezave. Omogoča razvrščanje, filtriranje in paginacijo. Uvede parametre ExtJS Store.",

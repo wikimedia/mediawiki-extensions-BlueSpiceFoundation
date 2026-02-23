@@ -7,7 +7,6 @@
 	},
 	"apihelp-bs-filebackend-store-summary": "Lister opp alle filer fra filbakstykket. Tillater sortering, filtrering og sideinndeling. Implementerer ExtJS Store-parametre.",
 	"apihelp-bs-user-store-summary": "Lister opp alle brukere fra databasen. Tillater sortering, filtrering og sideinndeling. Implementerer ExtJS Store-parametre.",
-	"apihelp-bs-category-store-summary": "Lister opp alle kategorier. Tillater sortering, filtrering og sideinndeling. Implementerer ExtJS Store-parametre.",
 	"apihelp-bs-adminuser-store-summary": "Lister opp alle brukere fra databasen med sensitive data i tillegg. Tillater sortering, filtrering og sideinndeling. Implementerer ExtJS Store-parametre.",
 	"apihelp-bs-group-store-summary": "Lister opp alle grupper utenom $wgImplicitGroups. Tillater sortering, filtrering og sideinndeling. Implementerer ExtJS Store-parametre.",
 	"apihelp-bs-interwiki-store-summary": "Lister opp alle interwikilenker. Tillater sortering, filtrering og sideinndeling. Implementerer ExtJS Store-parametre.",
