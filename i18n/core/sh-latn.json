@@ -35,7 +35,7 @@
 	"bs-exception-view-admin-hint": "Kontaktirajte svog administratora sistema.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Prikaži poejdinosti greške",
 	"bs-exception-view-stacktrace-toggle-hide-text": "Sakrij pojedinosti greške",
-	"bs-readonly": "Baza je trenutno zaključana za nove članke i ostale izmjene, najvjerovatnije kao rutinska provjera, posle čega će biti vraćena u uobičajeno stanje. Sistemski administrator koji ju je zaključao je ponudio sljedno objašnjenje: $1",
+	"bs-readonly": "Baza podataka trenutno je zaključana za nove stranice i ostale izmjene, najvjerovatnije zbog rutinskog održavanja, posle čega će biti vraćena u uobičajeno stanje. Aministrator koji ju je zaključao pružio je sljedeće objašnjenje: $1",
 	"bs-imageofotheruser": "Nije vam dozvoljeno da opremate slike u ime drugog korisnika.",
 	"bs-permissionerror": "Greška u dozvoli!",
 	"bs-lockdown-groups-permissionerror": "Radnja \"$1\" nije dostupna iz {{PLURAL:$2|sljedećeg razloga|sljedećih razloga}}: $3",
