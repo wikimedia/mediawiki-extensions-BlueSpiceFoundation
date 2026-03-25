@@ -11,5 +11,8 @@
 	"bs-validator-invalid-string": "Нийса боцу могӀа",
 	"bs-validator-invalid-coordinate": "Нийса доцу координаташ",
 	"bs-validator-invalid-parameter": "ХӀара параметр магийна йац",
-	"bs-validator-missing-required": "ХӀара хила йеза параметр йу"
+	"bs-validator-missing-required": "ХӀара хила йеза параметр йу",
+	"bs-validator-value-not-recognized": "МаьӀна кечдан аьтто бац",
+	"bs-validator-invalid-boolean": "Нийса йоцу логика",
+	"bs-validator-invalid-float": "Нийса доцу лелар"
 }

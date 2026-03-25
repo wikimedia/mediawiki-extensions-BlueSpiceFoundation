@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"bs-setting-path-feature": "Característica",
@@ -16,5 +17,8 @@
 	"bs-setting-path-communication": "Comunicación",
 	"bs-setting-path-administration": "Administración",
 	"bs-setting-path-qualityassurance": "Control de calidade",
-	"bs-setting-path-export": "Exportar"
+	"bs-setting-path-export": "Exportación",
+	"bs-setting-path-search": "Busca e navegación",
+	"bs-setting-path-skinning": "Aparencia",
+	"bs-setting-path-contentstructuring": "Estruturación do contido"
 }

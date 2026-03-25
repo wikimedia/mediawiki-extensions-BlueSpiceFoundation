@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ilimanaq29",
+			"Jrobicek"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Přidat nový...",
+	"bs-ooui-key-value-input-widget-key-label": "Klíč",
+	"bs-ooui-key-value-input-widget-value-label": "Hodnota",
+	"bs-ooui-key-value-input-widget-add-button-label": "Přidat",
+	"bs-ooui-key-value-input-widget-add-form-label": "Přidat nový záznam",
+	"bs-ooui-key-value-input-widget-section-label": "Sekce",
+	"bs-ooui-key-value-input-widget-add-section-label": "Přidat novou sekci",
+	"bs-ui-generic-save": "Uložit",
+	"bs-ui-generic-cancel": "Storno",
+	"bs-ui-generic-yes": "Ano",
+	"bs-ui-generic-no": "Ne",
+	"bs-pagecollection-prefix": "Sbírka stránek"
+}

@@ -4,6 +4,7 @@
 			"Nerogaf",
 			"Red Winged Duck",
 			"Renessaince",
+			"Ucukor",
 			"W"
 		]
 	},
@@ -25,7 +26,7 @@
 	"bs-filesystemhelper-folder-rename-error": "Каталёг <code>$1</code> нельга перайменаваць у <code>$2</code>.",
 	"bs-navigation-instructions": "Інструкцыі",
 	"bs-navigation-support": "Падтрымка",
-	"bs-navigation-contact": "Сувязь",
+	"bs-navigation-contact": "Кантакт",
 	"bs-imagepage-download-text": "Спампаваць",
 	"bs-ns": "Прастора назваў",
 	"bs-from-something": "(з $1)",
@@ -40,5 +41,7 @@
 	"bs-extended-search-tooltip-fulltext": "Поўнатэкставы пошук",
 	"bs-extended-search-textfield-defaultvalue": "Шукаць…",
 	"bs-filesystemhelper-upload-unsupported-type": "Гэты від файла не падтрымліваецца.",
-	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)"
+	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)",
+	"bs-tab_navigation": "Навіґацыя",
+	"bs-permission-role-reviewer": "Рэцэнзэнт"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-filerepo-labelupload": "Eroplueden",
@@ -19,6 +20,6 @@
 	"bs-filerepo-headerfiledescription": "Beschreiwung",
 	"bs-filerepo-headerfilethumbnail": "Miniaturbild",
 	"bs-filerepo-yes": "Jo",
-	"bs-filerepo-no": "Neen",
+	"bs-filerepo-no": "Nee",
 	"bs-filerepo-pagesize": "Elementer pro Säit"
 }

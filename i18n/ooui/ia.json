@@ -13,5 +13,20 @@
 	"bs-ooui-key-value-input-widget-no-values-label": "Nulle valor definite.",
 	"bs-ooui-btn-dismiss-alert-title": "Clauder",
 	"bs-ooui-key-value-input-widget-section-label": "Section",
-	"bs-ooui-key-value-input-widget-add-section-label": "Adder nove section"
+	"bs-ooui-key-value-input-widget-add-section-label": "Adder nove section",
+	"bs-ui-generic-save": "Salveguardar",
+	"bs-ui-generic-cancel": "Cancellar",
+	"bs-ui-generic-yes": "Si",
+	"bs-ui-generic-no": "No",
+	"bs-exportpages-dialog-title": "Exportar paginas a un collection",
+	"bs-exportpages-success-text": "Paginas exportate a [[$1|$2]]",
+	"bs-ui-generic-close": "Clauder",
+	"bs-pageexport-list-name-label": "Nomine del lista",
+	"bs-pageexport-list-format-label": "Formato del lista",
+	"bs-pageexport-list-format-plain-label": "Texto simple",
+	"bs-pageexport-list-format-link-label": "Ligamine",
+	"bs-pageexport-overwrite-label": "Superscriber",
+	"bs-export-search-summary-text": "Generate per PageExport",
+	"bs-pagecollection-prefix": "Collection de paginas",
+	"bs-util-alert-title": "Consilio"
 }

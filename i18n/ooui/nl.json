@@ -3,8 +3,10 @@
 		"authors": [
 			"Mainframe98",
 			"McDutchie",
+			"Niknetniko",
 			"Optilete",
-			"Romaine"
+			"Romaine",
+			"Siebrand"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Nieuwe toevoegen...",
@@ -16,5 +18,20 @@
 	"bs-ooui-key-value-input-widget-section-label": "Sectie",
 	"bs-ooui-key-value-input-widget-add-section-label": "Nieuwe sectie toevoegen",
 	"bs-ooui-key-value-input-widget-error-message": "Alle verplichte velden moeten gegeven zijn!",
-	"bs-ooui-key-value-input-widget-no-values-label": "Geen waarden gegeven!"
+	"bs-ooui-key-value-input-widget-no-values-label": "Geen waarden gegeven!",
+	"bs-ui-generic-save": "Opslaan",
+	"bs-ui-generic-cancel": "Annuleren",
+	"bs-ui-generic-yes": "Ja",
+	"bs-ui-generic-no": "Nee",
+	"bs-exportpages-dialog-title": "Pagina’s exporteren naar een verzameling",
+	"bs-exportpages-success-text": "Pagina’s geëxporteerd naar [[$1|$2]]",
+	"bs-ui-generic-close": "Sluiten",
+	"bs-pageexport-list-name-label": "Lijstnaam",
+	"bs-pageexport-list-format-label": "Lijstindeling",
+	"bs-pageexport-list-format-plain-label": "Tekst zonder opmaak",
+	"bs-pageexport-list-format-link-label": "Koppeling",
+	"bs-pageexport-overwrite-label": "Overschrijven",
+	"bs-export-search-summary-text": "Gegenereerd door PageExport",
+	"bs-pagecollection-prefix": "Paginaverzameling",
+	"bs-util-alert-title": "Tip"
 }

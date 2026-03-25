@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
+			"Mansil alfalb",
 			"Vitorvicentevalente"
 		]
 	},
-	"bs-filerepo-labelupload": "Carregar",
+	"bs-filerepo-labelupload": "Enviar",
 	"bs-filerepo-labelfilter": "Filtro",
 	"bs-filerepo-headerfilename": "Nome do ficheiro",
 	"bs-filerepo-headerfilesize": "Tamanho",
@@ -15,7 +16,7 @@
 	"bs-filerepo-headerfilemimetype": "Tipo MIME",
 	"bs-filerepo-headerfileusertext": "Utilizador",
 	"bs-filerepo-headerfileextension": "Extensão",
-	"bs-filerepo-headerfiletimestamp": "Carregado",
+	"bs-filerepo-headerfiletimestamp": "Enviado",
 	"bs-filerepo-headerfilemediatype": "Tipo de multimédia",
 	"bs-filerepo-headerfiledescription": "Descrição",
 	"bs-filerepo-headerfilethumbnail": "Miniatura",

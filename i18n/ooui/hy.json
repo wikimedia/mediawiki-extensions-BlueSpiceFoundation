@@ -5,5 +5,7 @@
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Ավելացնել նոր...",
-	"bs-ooui-key-value-input-widget-add-button-label": "Ավելացնել"
+	"bs-ooui-key-value-input-widget-add-button-label": "Ավելացնել",
+	"bs-pageexport-list-name-label": "Ցանկի անվանում",
+	"bs-pageexport-list-format-link-label": "Հղում"
 }

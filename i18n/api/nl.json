@@ -4,10 +4,11 @@
 			"HanV",
 			"Mainframe98",
 			"McDutchie",
-			"Romaine"
+			"Romaine",
+			"Siebrand"
 		]
 	},
-	"apihelp-bs-store-param-limit": "Aantal resultaten om te tonen",
+	"apihelp-bs-store-param-limit": "Aantal resultaten om weer te geven",
 	"apihelp-bs-task-param-task": "De uit te voeren taak",
 	"bs-wikipage-tasks-error-page-not-valid": "De opgegeven pagina is ongeldig.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorieën gewijzigd.",
@@ -63,8 +64,8 @@
 	"apihelp-bs-category-treestore-summary": "Geeft de subcategorieën van een specifieke categorie weer",
 	"apihelp-bs-category-treestore-param-node": "Een pad met categorieën gescheiden door een schuine streep",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 parametervoorbeelden]",
-	"apihelp-bs-task-param-schema": "Het JSON-schema voor de taakparameters tonen",
-	"apihelp-bs-task-param-examples": "Voorbeelden van taakparameters tonen",
+	"apihelp-bs-task-param-schema": "Het JSON-schema voor de taakparameters weergeven",
+	"apihelp-bs-task-param-examples": "Voorbeelden van taakparameters weergeven",
 	"bs-api-task-taskData-page-id": "De ID van een bestaande wikipagina",
 	"bs-api-task-wikipagetasks-taskData-categories": "Array van tekenreeksen. Waarden moeten geldige categorienamen zijn.",
 	"apihelp-bs-watchlist-store-summary": "Geeft een overzicht van alle volglijstvermeldingen. Maakt sorteren, filteren en pagineren mogelijk. Implementeert opslagparameters.",

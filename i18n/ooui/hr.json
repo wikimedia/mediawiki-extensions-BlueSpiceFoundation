@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bugoslav",
 			"Neptune, the Mystic"
 		]
 	},
-	"bs-ooui-btn-dismiss-alert-title": "Zanemari"
+	"bs-ooui-btn-dismiss-alert-title": "Zanemari",
+	"bs-pagecollection-prefix": "Zbirka stranica"
 }

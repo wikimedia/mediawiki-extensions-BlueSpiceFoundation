@@ -16,5 +16,6 @@
 	"bs-filerepo-yes": "Yes",
 	"bs-filerepo-no": "No",
 	"bs-filerepo-headerfilewidth": "Larjeso",
-	"bs-filerepo-headerfileheight": "Altajo"
+	"bs-filerepo-headerfileheight": "Altajo",
+	"bs-filerepo-headerfilename": "Arkivo-nomo"
 }

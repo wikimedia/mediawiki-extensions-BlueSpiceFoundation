@@ -1,11 +1,28 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-ooui-key-value-input-widget-key-label": "Schlëssel",
 	"bs-ooui-key-value-input-widget-value-label": "Wäert",
 	"bs-ooui-key-value-input-widget-no-values-label": "Keng Wäerter festgeluecht!",
-	"bs-ooui-btn-dismiss-alert-title": "Verwerfen"
+	"bs-ooui-btn-dismiss-alert-title": "Verwerfen",
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Nei derbäisetzen...",
+	"bs-ooui-key-value-input-widget-add-button-label": "Derbäisetzen",
+	"bs-ooui-key-value-input-widget-add-form-label": "Neien Antrag derbäisetzen",
+	"bs-ooui-key-value-input-widget-section-label": "Abschnitt",
+	"bs-ooui-key-value-input-widget-add-section-label": "Neien Abschnitt derbäisetzen",
+	"bs-ui-generic-save": "Späicheren",
+	"bs-ui-generic-cancel": "Ofbriechen",
+	"bs-ui-generic-yes": "Jo",
+	"bs-ui-generic-no": "Nee",
+	"bs-ui-generic-close": "Zoumaachen",
+	"bs-pageexport-list-name-label": "Numm vun der Lëscht",
+	"bs-pageexport-list-format-label": "Format vun der Lëscht",
+	"bs-pageexport-list-format-link-label": "Link",
+	"bs-pageexport-overwrite-label": "Iwwerschreiwen",
+	"bs-export-search-summary-text": "Generéiert vu PageExport",
+	"bs-pagecollection-prefix": "Säitesammlung"
 }

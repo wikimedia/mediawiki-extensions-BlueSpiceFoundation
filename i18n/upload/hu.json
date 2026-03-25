@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Krisztina",
+			"Tacsipacsi",
 			"Wolf Rex"
 		]
 	},
@@ -24,7 +25,7 @@
 	"bs-upload-uploadwarningdialog-title": "Fájl feltöltése: Figyelmeztetések",
 	"bs-upload-uploadwarningdialog-intro": "A következő figyelmeztetések történtek a fájl feltöltése közben",
 	"bs-upload-uploadwarningdialog-outro": "Kattints a „{{int:bs-extjs-ok}}” gombra a figyelmeztetések figyelmen kívül hagyásához és a fájl feltöltéséhez, kattints a „{{int:bs-extjs-cancel}}” gombra a feltöltési űrlaphoz való visszatéréshez.",
-	"bs-upload-uploadwarningdialog-warning-exists": "\"$1\" nevű fájl már létezik",
+	"bs-upload-uploadwarningdialog-warning-exists": "„$1” nevű fájl már létezik",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "{{PLURAL:$1|Ennek a fájlnak|ezeknek a fájloknak}} létezik duplikációja",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Ismeretlen figyelmeztetés \"$1\" kóddal"
+	"bs-upload-uploadwarningdialog-warning-unknown": "Ismeretlen figyelmeztetés „$1” kóddal"
 }

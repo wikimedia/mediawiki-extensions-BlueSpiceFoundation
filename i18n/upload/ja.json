@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Aefgh39622",
-			"Otokoume"
+			"Otokoume",
+			"Shirayuki"
 		]
 	},
 	"bs-upload-uploaddialogtitle": "ファイルをアップロード",
@@ -24,7 +25,7 @@
 	"bs-upload-uploadwarningdialog-title": "ファイルのアップロード: 警告",
 	"bs-upload-uploadwarningdialog-intro": "ファイルのアップロード中に以下の問題が発生しました",
 	"bs-upload-uploadwarningdialog-outro": "「{{int:bs-extjs-ok}}」をクリックすると警告を無視してファイルをアップロードし、「{{int:bs-extjs-cancel}}」をクリックするとアップロードフォームへ戻ります",
-	"bs-upload-uploadwarningdialog-warning-exists": "「$1」という名前のファイルはすでに存在します",
+	"bs-upload-uploadwarningdialog-warning-exists": "「$1」という名前のファイルは既に存在します",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "このファイルには{{PLURAL:$1|重複|複数の重複}}があります",
 	"bs-upload-uploadwarningdialog-warning-unknown": "コード「$1」の不明なエラー"
 }

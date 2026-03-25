@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Krisztina"
+			"Krisztina",
+			"Tacsipacsi"
 		]
 	},
-	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheti a/az \"$1\" lapot."
+	"bs-wikipage-tasks-error-page-edit-not-allowed": "Nem szerkesztheti a(z) „$1” lapot."
 }

@@ -3,7 +3,8 @@
 		"authors": [
 			"Athena in Wonderland",
 			"Fúlvio",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Mansil alfalb"
 		]
 	},
 	"bs-validator-email-validation-approved": "O endereço de correio eletrónico foi validado.",
@@ -21,7 +22,7 @@
 	"bs-validator-invalid-float": "Vírgula flutuante inválida",
 	"bs-validator-invalid-integer": "Número inteiro inválido",
 	"bs-validator-invalid-string": "Texto inválido",
-	"bs-validator-invalid-coordinate": "Coordenadas inválidas",
+	"bs-validator-invalid-coordinate": "Não é uma coordenada válida",
 	"bs-validator-invalid-parameter": "Este parâmetro não é permitido",
 	"bs-validator-missing-required": "Este parâmetro é obrigatório"
 }

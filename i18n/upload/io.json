@@ -8,5 +8,8 @@
 	"bs-upload-descfilelabel": "Deskripto",
 	"bs-upload-uploadwarningdialog-intro": "La sequanta mesaji aparis kande vu probis sendar l'arkivo",
 	"bs-upload-error": "Eroro",
-	"bs-upload-categories": "Kategorii"
+	"bs-upload-categories": "Kategorii",
+	"bs-upload-uploadfilefieldlabel": "Arkivo-nomo",
+	"bs-upload-license": "Licenco",
+	"bs-upload-details": "Detali"
 }

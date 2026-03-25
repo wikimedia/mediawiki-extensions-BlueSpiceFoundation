@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"SongNgu.xyz"
+		]
+	},
+	"bs-setting-path-feature": "Tính năng",
+	"bs-setting-path-extension": "Phần mở rộng",
+	"bs-setting-path-package": "Gói",
+	"bs-setting-path-system": "Hệ thống",
+	"bs-setting-path-dataanalysis": "Đánh giá dữ liệu",
+	"bs-setting-path-editor": "Trình soạn",
+	"bs-setting-path-search": "Tìm kiếm và Điều hướng",
+	"bs-setting-path-personalisation": "Cá nhân hóa",
+	"bs-setting-path-skinning": "Giao diện",
+	"bs-setting-path-customizing": "Tùy chỉnh",
+	"bs-setting-path-contentstructuring": "Cấu trúc nội dung",
+	"bs-setting-path-communication": "Giao tiếp",
+	"bs-setting-path-administration": "Quản trị",
+	"bs-setting-path-qualityassurance": "Đảm bảo chất lượng",
+	"bs-setting-path-export": "Xuất"
+}

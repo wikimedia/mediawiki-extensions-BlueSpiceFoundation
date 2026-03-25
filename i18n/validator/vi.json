@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"SongNgu.xyz"
 		]
 	},
 	"bs-validator-email-validation-approved": "Đã xác nhận địa chỉ thư điện tử thành công.",
@@ -13,5 +14,13 @@
 	"bs-validator-set-validation-approved": "Đã xác nhận $1 thành công.",
 	"bs-validator-set-validation-not-approved": "Chỉ cho phép {{PLURAL:$3|giá trị|các giá trị}} sau cho $1: $2.",
 	"bs-validator-integer-range-validation-too-low": "Đã cung cấp giá trị quá thấp. Nó phải ít nhất $1.",
-	"bs-validator-integer-range-validation-too-high": "Đã cung cấp giá trị quá cao. Nó phải ít hơn $1."
+	"bs-validator-integer-range-validation-too-high": "Đã cung cấp giá trị quá cao. Nó phải ít hơn $1.",
+	"bs-validator-value-not-recognized": "Giá trị không thể được xử lý",
+	"bs-validator-invalid-boolean": "Không phải là boolean hợp lệ",
+	"bs-validator-invalid-float": "Không phải là một số float hợp lệ",
+	"bs-validator-invalid-integer": "Không phải là số nguyên hợp lệ",
+	"bs-validator-invalid-string": "Không phải là một chuỗi hợp lệ",
+	"bs-validator-invalid-coordinate": "Không phải là tọa độ hợp lệ",
+	"bs-validator-invalid-parameter": "Tham số này không được phép",
+	"bs-validator-missing-required": "Tham số này là bắt buộc"
 }

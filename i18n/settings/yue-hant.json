@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"JeffreyKim",
+			"Yueman"
+		]
+	},
+	"bs-setting-path-feature": "精選",
+	"bs-setting-path-extension": "延伸",
+	"bs-setting-path-package": "包裹",
+	"bs-setting-path-system": "系統",
+	"bs-setting-path-dataanalysis": "數據分析",
+	"bs-setting-path-editor": "編輯",
+	"bs-setting-path-search": "搵緊同埋導航",
+	"bs-setting-path-personalisation": "個人化",
+	"bs-setting-path-skinning": "外觀",
+	"bs-setting-path-customizing": "定制緊",
+	"bs-setting-path-contentstructuring": "內容結構緊",
+	"bs-setting-path-communication": "通訊",
+	"bs-setting-path-administration": "行政",
+	"bs-setting-path-qualityassurance": "品質保證",
+	"bs-setting-path-export": "匯出"
+}

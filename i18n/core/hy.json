@@ -28,5 +28,6 @@
 	"bs-graphicallist-action-close": "Փակել",
 	"bs-graphicallist-action-list": "Ցանկ",
 	"bs-graphicallist-action-preview": "Նախադիտում",
-	"bs-notifications-agent-anon": "անանուն մասնակից"
+	"bs-notifications-agent-anon": "անանուն մասնակից",
+	"bs-permission-role-admin": "Ադմինիստրատոր"
 }

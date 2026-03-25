@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"SongNgu.xyz"
+		]
+	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "Thêm mới...",
+	"bs-ooui-key-value-input-widget-key-label": "Khóa",
+	"bs-ooui-key-value-input-widget-value-label": "Giá trị",
+	"bs-ooui-key-value-input-widget-add-button-label": "Thêm",
+	"bs-ooui-key-value-input-widget-add-form-label": "Thêm mục nhập mới",
+	"bs-ooui-key-value-input-widget-error-message": "Phải điền đầy đủ các trường bắt buộc!",
+	"bs-ooui-key-value-input-widget-no-values-label": "Không có giá trị nào được thiết lập!",
+	"bs-ooui-btn-dismiss-alert-title": "Bỏ qua",
+	"bs-ooui-key-value-input-widget-section-label": "Đề mục",
+	"bs-ooui-key-value-input-widget-add-section-label": "Thêm đề mục mới",
+	"bs-pagecollection-prefix": "Bộ sưu tập trang"
+}

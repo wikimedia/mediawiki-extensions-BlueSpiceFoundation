@@ -25,5 +25,6 @@
 	"bs-upload-uploadwarningdialog-outro": "Стиснете на „{{int:bs-extjs-ok}}” за да ги занемарите предупредувањата и ја подигнете податотеката, стиснете на „{{int:bs-extjs-cancel}}” за да се вратите на образецот за подигање",
 	"bs-upload-uploadwarningdialog-warning-exists": "Податотека со име „$1“ веќе постои",
 	"bs-upload-uploadwarningdialog-warning-duplicate": "Има {{PLURAL:$1|дупликат|дупликати}} на оваа податотека",
-	"bs-upload-uploadwarningdialog-warning-unknown": "Непознато предупредување со код \"$1\""
+	"bs-upload-uploadwarningdialog-warning-unknown": "Непознато предупредување со код \"$1\"",
+	"bs-upload-uploadwarningdialog-intro": "Се појавија следниве предупредувања при обидот да се подигне податотеката"
 }

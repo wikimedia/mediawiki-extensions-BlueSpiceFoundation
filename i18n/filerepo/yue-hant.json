@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Yueman"
 		]
 	},
-	"bs-filerepo-headerfilesize": "嘥士"
+	"bs-filerepo-headerfilesize": "嘥士",
+	"bs-filerepo-headerfiledescription": "描述",
+	"bs-filerepo-headerfilethumbnail": "縮圖",
+	"bs-filerepo-yes": "係"
 }

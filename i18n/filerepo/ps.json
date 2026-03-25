@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"bs-filerepo-labelupload": "راپورته‌کول",
+	"bs-filerepo-labelfilter": "چاڼگر",
+	"bs-filerepo-headerfilename": "دوتنې‌نوم",
+	"bs-filerepo-headerfilesize": "کچه",
+	"bs-filerepo-headerpagecategories": "وېشنيزې",
+	"bs-filerepo-headerfilewidth": "پراخوالی",
+	"bs-filerepo-headerfileheight": "لوړوالی",
+	"bs-filerepo-headerfilemimetype": "ميمې بڼه",
+	"bs-filerepo-headerfileusertext": "کارن",
+	"bs-filerepo-headerfileextension": "شاتاړی",
+	"bs-filerepo-headerfiletimestamp": "راپورته شو",
+	"bs-filerepo-headerfilemediatype": "رسنۍ ډول",
+	"bs-filerepo-headerfiledescription": "څرگنداوی",
+	"bs-filerepo-headerfilethumbnail": "بټنوک",
+	"bs-filerepo-yes": "هو",
+	"bs-filerepo-no": "نه",
+	"bs-filerepo-pagesize": "په هر مخ کې ننوتنې"
+}

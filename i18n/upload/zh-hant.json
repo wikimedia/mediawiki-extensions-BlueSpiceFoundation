@@ -4,6 +4,7 @@
 			"1233thehongkonger",
 			"Kly",
 			"Liuxinyu970226",
+			"Winston Sung",
 			"捍粵者"
 		]
 	},
@@ -22,7 +23,7 @@
 	"bs-upload-descfilelabel": "描述",
 	"bs-upload-error-long": "上傳過程中發生錯誤",
 	"bs-upload-filetypenotsupported": "不支援此檔案類型",
-	"bs-upload-details": "詳細資料",
+	"bs-upload-details": "詳細資訊",
 	"bs-upload-uploadwarningdialog-title": "上傳檔案：警告",
 	"bs-upload-uploadwarningdialog-intro": "在嘗試上傳檔案時發生以下警告",
 	"bs-upload-uploadwarningdialog-outro": "點擊「{{int:bs-extjs-ok}}」來忽略警告並上傳檔案，點擊「{{int:bs-extjs-cancel}}」來返回上傳表單",

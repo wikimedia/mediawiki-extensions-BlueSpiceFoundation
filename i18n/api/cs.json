@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jrobicek"
+		]
+	},
+	"bs-wikipage-tasks-setcategories-edit-summary": "Změněné kategorie.",
+	"bs-wikipage-tasks-setcategories-success": "Kategorie byly úspěšně nastaveny.",
+	"apihelp-bs-wikisubpage-treestore-param-options": "Seznam možností",
+	"bs-wikipage-tasks-error-nothingtoremove": "Nejsou žádné kategorie k odstranění"
+}
