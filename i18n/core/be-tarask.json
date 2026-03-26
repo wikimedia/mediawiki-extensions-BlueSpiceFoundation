@@ -42,5 +42,6 @@
 	"bs-bluespice": "BlueSpice",
 	"bs-notifications-agent-anon": "ананімны ўдзельнік",
 	"protect-level-editor": "Дазволіць толькі рэдактарам(-кам) і адміністратарам(-кам)",
-	"bs-permission-role-reviewer": "Рэцэнзэнт"
+	"bs-permission-role-reviewer": "Рэцэнзэнт",
+	"bs-tab_navigation": "Навіґацыя"
 }
