@@ -143,20 +143,59 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	 */
 	public function parseResult( $categoriesArray, $sNode = 'src' ) {
 		$aResult = [];
+		$existingCategoryPages = $this->getExistingCategoryPages( $categoriesArray );
+
 		foreach ( $categoriesArray as $sCategory ) {
 			$oTmpCat = Category::newFromName( $sCategory );
 			$oCategory = new stdClass();
+			$subcatCount = $oTmpCat->getSubcatCount();
+
 			$oCategory->text = str_replace( '_', ' ', $oTmpCat->getName() );
-			$oCategory->leaf = ( $oTmpCat->getSubcatCount() > 0 ) ? false : true;
+			$oCategory->leaf = ( $subcatCount > 0 ) ? false : true;
+			$oCategory->exists = isset( $existingCategoryPages[$sCategory] );
 			$oCategory->tracking = $this->isTrackingCategory( $oTmpCat );
 			$oCategory->id = $sNode . '/' . str_replace( '/', '+', $oCategory->text );
 			$oCategory->items =
-				( $oTmpCat->getSubcatCount() > 0 )
-				? $this->getSubCategoriesFromPath( $oCategory->id )
-				: [];
+				( $subcatCount > 0 )
+					? $this->getSubCategoriesFromPath( $oCategory->id )
+					: [];
 			$aResult[] = $oCategory;
 		}
 		return $aResult;
+	}
+
+	/**
+	 * Returns the existing category pages from the page table.
+	 *
+	 * @param array $categoryNames
+	 * @return array
+	 */
+	private function getExistingCategoryPages( array $categoryNames ) {
+		$categoryNames = array_values( array_unique( $categoryNames ) );
+		if ( !$categoryNames ) {
+			return [];
+		}
+
+		if ( !$this->dbr ) {
+			$this->dbr = $this->getDB();
+		}
+
+		$res = $this->dbr->select(
+			[ 'page' ],
+			[ 'page_title' ],
+			[
+				'page_namespace' => NS_CATEGORY,
+				'page_title' => $categoryNames
+			],
+			__METHOD__
+		);
+
+		$existingCategoryPages = [];
+		foreach ( $res as $row ) {
+			$existingCategoryPages[$row->page_title] = true;
+		}
+
+		return $existingCategoryPages;
 	}
 
 	/**
@@ -182,12 +221,12 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	 */
 	public function getAllowedParams() {
 		return parent::getAllowedParams() + [
-			'node' => [
-				ParamValidator::PARAM_TYPE => 'string',
-				ParamValidator::PARAM_DEFAULT => '',
-				ApiBase::PARAM_HELP_MSG => 'apihelp-bs-category-treestore-param-node',
-			]
-		];
+				'node' => [
+					ParamValidator::PARAM_TYPE => 'string',
+					ParamValidator::PARAM_DEFAULT => '',
+					ApiBase::PARAM_HELP_MSG => 'apihelp-bs-category-treestore-param-node',
+				]
+			];
 	}
 
 	/**
