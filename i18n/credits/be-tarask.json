@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Ucukor"
 		]
 	},
 	"specialcredits": "Стваральнікі BlueSpice",
 	"bs-credits-programmers": "Праграмісты",
 	"bs-credits-dnt": "Праектаваньне і тэставаньне",
 	"bs-credits-contributors": "Аўтары",
-	"bs-credits-translators": "Перакладчыкі",
+	"bs-credits-translators": "Перакладнік",
 	"bs-credits-translation": "Пераклад",
-	"bs-credits-th": "Дзякуй усім перакладчыкам з $1."
+	"bs-credits-th": "Дзякуй усім перакладнікам з $1."
 }

@@ -27,5 +27,6 @@
 	"bs-pageexport-list-format-plain-label": "純文字",
 	"bs-pageexport-list-format-link-label": "連結",
 	"bs-pageexport-overwrite-label": "覆寫",
-	"bs-export-search-summary-text": "透過頁面匯出所產生"
+	"bs-export-search-summary-text": "透過頁面匯出所產生",
+	"bs-util-alert-title": "提示"
 }
