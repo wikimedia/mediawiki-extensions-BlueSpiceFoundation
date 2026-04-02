@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung",
-			"Aca"
+			"Aca",
+			"Winston Sung"
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "Popisuje sve datoteke iz pozadine datoteke. Omogućuje sortiranje, filtriranje i označavanje stranica. Implementira parametre ExtJS Store.",

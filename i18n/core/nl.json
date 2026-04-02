@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Elphie",
 			"Esketti",
 			"Mainframe98",
 			"Mar(c)",
@@ -12,8 +13,7 @@
 			"SPQRobin",
 			"Siebrand",
 			"Sjoerddebruin",
-			"Southparkfan",
-			"Elphie"
+			"Southparkfan"
 		]
 	},
 	"bluespicefoundation-desc": "Maakt MediaWiki geschikt voor bedrijven",
