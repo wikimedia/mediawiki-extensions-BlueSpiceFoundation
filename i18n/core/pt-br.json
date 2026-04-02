@@ -101,5 +101,11 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Não foi possível gravar o arquivo de configuração $1!",
 	"bs-pref-logopath-help": "O logotipo deve ser armazenado na pasta /w/images de sua instalação. Se você armazená-lo na pasta /w/skins de sua instalação do BlueSpice, ele poderá ser substituído por uma atualização.",
 	"bs-pref-faviconpath-help": "O favicon deve ser armazenado na pasta /w/images de sua instalação. Se você armazená-lo na pasta /w/skins de sua instalação do BlueSpice, ele poderá ser substituído por uma atualização. Os favicons têm a extensão de arquivo .ico.",
-	"bs-exttype-bluespice-assets": "Ativos BlueSpice"
+	"bs-exttype-bluespice-assets": "Ativos BlueSpice",
+	"bs-permission-role-reader": "Leitor",
+	"bs-permission-role-editor": "Editor",
+	"bs-permission-role-reviewer": "Revisor",
+	"bs-permission-role-admin": "Administrador",
+	"bs-title-warning": "Aviso",
+	"bs-title-success": "Sucesso"
 }
