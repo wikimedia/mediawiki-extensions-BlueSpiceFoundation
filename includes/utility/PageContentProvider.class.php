@@ -84,7 +84,7 @@ class BsPageContentProvider {
 	 * @param IContextSource|null $context
 	 * @return ParserOptions
 	 */
-	protected function getParserOptions( IContextSource $context = null ) {
+	protected function getParserOptions( ?IContextSource $context = null ) {
 		if ( !$context ) {
 			$context = new DerivativeContext( RequestContext::getMain() );
 		}
