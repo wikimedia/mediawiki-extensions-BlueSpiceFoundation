@@ -566,9 +566,7 @@ class BsPageContentProvider {
 		$globalParser = MediaWikiServices::getInstance()->getParser();
 		$globalParser->setOptions( $wgParser->getOptions() );
 		$globalParser->setPage( $wgParser->getPage() );
-		if ( $globalParser->getOutput() === null ) {
-			$globalParser->resetOutput();
-		}
+		$globalParser->resetOutput();
 
 		$wgOut = new OutputPage( $context );
 
