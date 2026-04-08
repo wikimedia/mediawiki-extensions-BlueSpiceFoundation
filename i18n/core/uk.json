@@ -9,6 +9,7 @@
 			"Ice bulldog",
 			"Movses",
 			"Piramidion",
+			"Repakr",
 			"Vlad5250",
 			"Ата"
 		]
@@ -106,5 +107,11 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Не вдалося записати файл конфігурації $1!",
 	"bs-pref-logopath-help": "Логотип повинен зберігатися у папці /w/images вашої установки. Якщо ви зберігаєте його у папці /w/skins вашої установки BlueSpice, його можна перезаписати оновленням",
 	"bs-pref-faviconpath-help": "Фавікон повинен зберігатися у папці /w/images вашої установки. Якщо ви збережете його у папці /w/skins вашої установки BlueSpice, його можна буде перезаписати оновленням. Фаворити мають розширення .ico",
-	"bs-exttype-bluespice-assets": "Активи BlueSpice"
+	"bs-exttype-bluespice-assets": "Активи BlueSpice",
+	"bs-permission-role-reader": "Читач",
+	"bs-permission-role-editor": "Редактор",
+	"bs-permission-role-reviewer": "Рецензент",
+	"bs-permission-role-admin": "Адміністратор",
+	"bs-title-warning": "Попередження",
+	"bs-title-success": "Успіх"
 }

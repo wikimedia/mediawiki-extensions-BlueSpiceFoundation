@@ -3,6 +3,7 @@
 		"authors": [
 			"Alexander Yukal",
 			"Piramidion",
+			"Repakr",
 			"Vlad5250",
 			"Ата"
 		]
@@ -21,5 +22,13 @@
 	"bs-ui-generic-cancel": "Скасувати",
 	"bs-ui-generic-yes": "Так",
 	"bs-ui-generic-no": "Ні",
-	"bs-pagecollection-prefix": "Збірка сторінок"
+	"bs-ui-generic-close": "Закрити",
+	"bs-pageexport-list-name-label": "Назва списку",
+	"bs-pageexport-list-format-label": "Формат списку",
+	"bs-pageexport-list-format-plain-label": "Простий текст",
+	"bs-pageexport-list-format-link-label": "Посилання",
+	"bs-pageexport-overwrite-label": "Перезаписати",
+	"bs-export-search-summary-text": "Згенеровано через PageExport",
+	"bs-pagecollection-prefix": "Збірка сторінок",
+	"bs-util-alert-title": "Підказка"
 }
