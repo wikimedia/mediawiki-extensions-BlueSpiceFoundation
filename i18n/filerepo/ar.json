@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Meno25",
 			"ديفيد"
 		]
 	},
 	"bs-filerepo-labelupload": "رفع",
-	"bs-filerepo-labelfilter": "فلترة",
+	"bs-filerepo-labelfilter": "مرشح",
 	"bs-filerepo-headerfilename": "اسم الملف",
 	"bs-filerepo-headerfilesize": "الحجم",
 	"bs-filerepo-headerpagecategories": "التصنيفات",
