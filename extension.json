@@ -167,6 +167,11 @@
 		"wikiadmin",
 		"editor"
 	],
+	"GrantPermissions": {
+		"editprotected": {
+			"wikiadmin": true
+		}
+	},
 	"ResourceModules": {
 		"ext.bluespice": {
 			"localBasePath": "resources",
