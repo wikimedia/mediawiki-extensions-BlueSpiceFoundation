@@ -30,5 +30,7 @@
 	"bs-pageexport-list-format-link-label": "Посилання",
 	"bs-pageexport-overwrite-label": "Перезаписати",
 	"bs-export-search-summary-text": "Згенеровано через PageExport",
-	"bs-util-alert-title": "Підказка"
+	"bs-util-alert-title": "Підказка",
+	"bs-exportpages-dialog-title": "Експорт сторінок до колекції",
+	"bs-exportpages-success-text": "Сторінки експортовано до [[$1|$2]]"
 }
