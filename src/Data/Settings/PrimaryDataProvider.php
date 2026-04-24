@@ -5,47 +5,60 @@ namespace BlueSpice\Data\Settings;
 use MediaWiki\Json\FormatJson;
 use MWStake\MediaWiki\Component\DataStore\IPrimaryDataProvider;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
-use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;
+use WANObjectCache;
+use Wikimedia\Rdbms\IDatabase;
 
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
-	 *
-	 * @var DataStoreRecord[]
+	 * @var array
 	 */
 	protected $data = [];
 
 	/**
-	 *
-	 * @var \Wikimedia\Rdbms\IDatabase
+	 * @var IDatabase
 	 */
-	protected $db = null;
+	private $db;
 
 	/**
-	 *
-	 * @param \Wikimedia\Rdbms\IDatabase $db
+	 * @var WANObjectCache
 	 */
-	public function __construct( $db ) {
+	private $cache;
+
+	/**
+	 * @param IDatabase $db
+	 * @param WANObjectCache|null $cache
+	 */
+	public function __construct( IDatabase $db, ?WANObjectCache $cache = null ) {
 		$this->db = $db;
+		$this->cache = $cache;
+		if ( !$this->cache ) {
+			$this->cache = \MediaWiki\MediaWikiServices::getInstance()->getMainWANObjectCache();
+		}
 	}
 
 	/**
-	 *
 	 * @param ReaderParams $params
 	 * @return Record[]
 	 */
 	public function makeData( $params ) {
-		$this->data = [];
-		// workaround for the upgrade process. The new settings cannot be
-		// accessed before they are migrated
-		if ( !$this->db->tableExists( 'bs_settings3', __METHOD__ ) ) {
-			return $this->data;
-		}
-
-		$res = $this->db->select( 'bs_settings3', '*', '', __METHOD__ );
-		foreach ( $res as $row ) {
-			$this->appendRowToData( $row );
-		}
+		$key = $this->cache->makeKey( 'BlueSpiceFoundation', 'bs_settings3' );
+		$db = $this->db;
+		$this->data = $this->cache->getWithSetCallback(
+			$key,
+			$this->cache::TTL_DAY,
+			static function () use ( $db ) {
+				$data = [];
+				$res = $db->select( 'bs_settings3', '*', '', __CLASS__ );
+				foreach ( $res as $row ) {
+					$data[] = new Record( (object)[
+						Record::NAME => $row->s_name,
+						Record::VALUE => FormatJson::decode( $row->s_value, true )
+					] );
+				}
+				return $data;
+			}
+		);
 
 		return $this->data;
 	}
