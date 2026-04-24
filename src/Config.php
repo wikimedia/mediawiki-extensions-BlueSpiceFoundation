@@ -86,7 +86,8 @@ class Config extends MultiConfig {
 	protected function getStore() {
 		return new Store(
 			new Context( RequestContext::getMain(), $this ),
-			MediaWikiServices::getInstance()->getDBLoadBalancer()
+			MediaWikiServices::getInstance()->getDBLoadBalancer(),
+			MediaWikiServices::getInstance()->getMainWANObjectCache()
 		);
 	}
 
