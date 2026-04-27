@@ -22,7 +22,10 @@ module.exports = function ( grunt ) {
 			all: [
 				'**/*.{css,less}',
 				'!node_modules/**',
-				'!vendor/**'
+				'!vendor/**',
+				'!resources/entypo/**',
+				'!resources/fontawesome/**',
+				'!resources/icomoon/**'
 			]
 		},
 		banana: Object.assign(

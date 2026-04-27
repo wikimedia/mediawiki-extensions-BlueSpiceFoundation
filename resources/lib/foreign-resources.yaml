@@ -1,0 +1,27 @@
+entypo:
+  license: CC-BY-SA-4.0
+  homepage: http://www.entypo.com
+  authors: Daniel Bruce
+  version: 3
+  type: doc-only
+
+fontawesome:
+  license: OFL-1.1
+  homepage: https://fontawesome.com/v4/
+  authors: Dave Gandy
+  version: 4.7.0
+  type: doc-only
+
+icomoon:
+  license: GPL-3.0-only
+  homepage: https://icomoon.io/#icons-icomoon
+  authors: Keyamoon
+  version: 1.0
+  type: doc-only
+
+ms-office-2013-logos:
+  license: LicenseRef-PublicDomain
+  homepage: https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logos_lineup.svg
+  authors: Microsoft
+  version: 2013
+  type: doc-only
