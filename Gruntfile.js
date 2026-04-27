@@ -23,7 +23,9 @@ module.exports = function ( grunt ) {
 				'**/*.{css,less}',
 				'!node_modules/**',
 				'!vendor/**',
-				'!resources/bluespice.extjs/**' // extjs to be removed
+				'!resources/entypo/**',
+				'!resources/fontawesome/**',
+				'!resources/icomoon/**'
 			]
 		},
 		banana: Object.assign(
