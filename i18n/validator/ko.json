@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Keysuck",
+			"Tensama0415",
 			"Ykhwong",
 			"아라"
 		]
@@ -22,6 +23,6 @@
 	"bs-validator-invalid-integer": "유효한 정수가 아닙니다",
 	"bs-validator-invalid-string": "유효한 문자열이 아닙니다",
 	"bs-validator-invalid-coordinate": "유효한 좌표가 아닙니다",
-	"bs-validator-invalid-parameter": "이 변수는 허용되지 않습니다",
-	"bs-validator-missing-required": "이 변수는 필수입니다"
+	"bs-validator-invalid-parameter": "이 매개변수는 허용되지 않습니다",
+	"bs-validator-missing-required": "이 매개변수는 필수입니다"
 }
