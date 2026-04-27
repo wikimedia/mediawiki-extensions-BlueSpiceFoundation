@@ -7,21 +7,16 @@ Images
 
 | Image | Author | Version | License |
 |:--------|:-------|:--------|:-------|
-| [Ajaxload](http://www.ajaxload.info/) | Yannick Croissant | - | [WTFPL 2](http://www.wtfpl.net/about/) |
 | [Entypo](http://www.entypo.com/faq.php) | Daniel Bruce | 3 | [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
-| [Famfamfam Silk Icon set 1.3](http://www.famfamfam.com/lab/icons/silk/) | Mark James | 1.3 | [CC-BY 3.0](https://creativecommons.org/licenses/by/3.0/) |
-| [Famfamfam Flag Icons](http://www.famfamfam.com/lab/icons/flags/) | Mark James | - | Public Domain |
-| [Function Icons](http://www.wefunction.com) | Liam McKay | - | Free for commercial use (Include link to package) |
-| [PC 100 Icon Pack](http://pc.de/) | PC.de | - | [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
-| [Microsoft Office 2013 logos lineup](https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logos_lineup.svg) | Microsoft | 17:43, 21 January 2017 | Public Domain |
+| [Microsoft Office 2013 logos lineup](https://commons.wikimedia.org/wiki/File:Microsoft_Office_2013_logos_lineup.svg) | Microsoft | 2013 | Public Domain |
 
 Fonts
 -----
 
 | Font | Author | Version | License |
 |:--------|:-------|:--------|:-------|
-| [FontAwesome](http://fontawesome.io) | Dave Gandy | 3.0 | [SIL 1.1](http://fontawesome.io/license) |
-| [IcoMoon](https://icomoon.io/#icons-icomoon) | Keyamoon | - | [GPL-3.0-only](https://www.gnu.org/licenses/gpl-3.0.txt) |
+| [FontAwesome](https://fontawesome.com/v4/) | Dave Gandy | 4.7.0 | [OFL-1.1](https://fontawesome.com/v4/license/) |
+| [IcoMoon](https://icomoon.io/#icons-icomoon) | Keyamoon | 1.0 | [GPL-3.0-only](https://www.gnu.org/licenses/gpl-3.0.txt) |
 
 PHP libraries
 -------------

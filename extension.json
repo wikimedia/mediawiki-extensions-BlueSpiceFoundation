@@ -171,8 +171,6 @@
 	},
 	"ResourceModules": {
 		"ext.bluespice": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice/bluespice.js",
 				"bluespice/bluespice.extensionManager.js",
@@ -212,8 +210,6 @@
 			]
 		},
 		"ext.bluespice.oojs": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice.oojs/bluespice.ui.js",
 				"bluespice.oojs/ui/widget/StoreComboBoxInput.js",
@@ -255,8 +251,6 @@
 			]
 		},
 		"ext.bluespice.oojs.exportDialog": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice.oojs/ui/dialog/ExportPagesDialog.js"
 			],
@@ -280,8 +274,6 @@
 			]
 		},
 		"ext.bluespice.styles": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"styles": [
 				"bluespice/bluespice.css",
 				"bluespice/bluespice.icons.css",
@@ -293,8 +285,6 @@
 			"class": "\\BlueSpice\\ResourceModule\\LessVars"
 		},
 		"ext.bluespice.html.formfields.sortable": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice/bluespice.html.formfields.sortable.js"
 			],
@@ -306,8 +296,6 @@
 			]
 		},
 		"ext.bluespice.html.formfields": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice/bluespice.html.formfields.namespacemultiselect.js"
 			],
@@ -319,8 +307,6 @@
 			]
 		},
 		"ext.bluespice.html.formfields.multiselect": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": [
 				"bluespice/bluespice.html.formfields.multiselect.js"
 			],
@@ -329,18 +315,19 @@
 			]
 		},
 		"ext.bluespice.compat.vector.styles": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"styles": [
 				"bluespice.compat/bluespice.compat.vector.fixes.css"
 			]
 		},
 		"ext.bluespice.testsystem": {
-			"localBasePath": "resources",
-			"remoteExtPath": "BlueSpiceFoundation/resources",
 			"scripts": "bluespice/bluespice.testsystem.js"
 		}
 	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "BlueSpiceFoundation/resources"
+	},
+	"ForeignResourcesDir": "resources/lib",
 	"MessagesDirs": {
 		"BlueSpice": [
 			"i18n/core"
