@@ -32,6 +32,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MessageLocalizer;
+use Profiler;
 
 abstract class Hook implements MessageLocalizer {
 
@@ -125,7 +126,7 @@ abstract class Hook implements MessageLocalizer {
 			return true;
 		}
 
-		\Profiler::instance()->scopedProfileIn( "Hook " . __METHOD__ );
+		$scope = Profiler::instance()->scopedProfileIn( "Hook " . __METHOD__ );
 		$result = $this->doProcess();
 		return $result;
 	}
