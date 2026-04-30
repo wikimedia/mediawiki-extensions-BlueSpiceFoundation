@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"In2acous",
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
@@ -23,5 +24,11 @@
 	"bs-pageexport-list-format-plain-label": "일반 텍스트",
 	"bs-pageexport-list-format-link-label": "링크",
 	"bs-pageexport-overwrite-label": "덮어쓰기",
-	"bs-pagecollection-prefix": "문서 모음집"
+	"bs-pagecollection-prefix": "문서 모음집",
+	"bs-exportpages-dialog-title": "문서를 컬렉션으로 내보내기",
+	"bs-exportpages-success-text": "문서 [[$1|$2]](으)로 내보내짐",
+	"bs-pageexport-list-name-label": "목록 이름",
+	"bs-pageexport-list-format-label": "목록 형식",
+	"bs-export-search-summary-text": "PageExport를 통해 생성됨",
+	"bs-util-alert-title": "힌트"
 }
