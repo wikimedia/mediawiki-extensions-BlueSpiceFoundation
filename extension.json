@@ -413,7 +413,6 @@
 		"LinkerMakeMediaLinkFile": "\\BlueSpice\\Hook\\LinkerMakeMediaLinkFile\\AddDataAttributes::callback",
 		"ThumbnailBeforeProduceHTML": "\\BlueSpice\\Hook\\ThumbnailBeforeProduceHTML\\AddDataAttributes::callback",
 		"MakeGlobalVariablesScript": [
-			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddTaskAPIPermissions::callback",
 			"\\BlueSpice\\Hook\\MakeGlobalVariablesScript\\AddDeferredNotifications::callback"
 		],
 		"LoadExtensionSchemaUpdates": [
