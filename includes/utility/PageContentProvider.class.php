@@ -156,7 +156,7 @@ class BsPageContentProvider {
 	 * @param bool $bHTML
 	 * @return String Content
 	 */
-	public function getContentFromID( $iRevId, $iAudience = RevisionRecord::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
+	public function getContentFromID( $iRevId, $iAudience = RevisionRecord::FOR_PUBLIC, ?User $oUser = null, $bHTML = false ) {
 		$cacheKey = md5( $iRevId . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
 		if ( isset( static::$contents[$cacheKey] ) ) {
 			return static::$contents[$cacheKey];
