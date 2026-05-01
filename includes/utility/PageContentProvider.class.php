@@ -123,7 +123,7 @@ class BsPageContentProvider {
 	 * Returns content form a given Title
 	 * @param Title $oTitle Title object
 	 * @param int $iAudience One of the `RevisionRecord::FOR_*` values
-	 * @param User $oUser
+	 * @param User|null $oUser
 	 * @param bool $bHTML
 	 * @return String Content
 	 */
@@ -152,7 +152,7 @@ class BsPageContentProvider {
 	 * Returns content form a given Revision ID
 	 * @param int $iRevId Revision ID
 	 * @param int $iAudience One of the `RevisionRecord::FOR_*` values
-	 * @param User $oUser
+	 * @param User|null $oUser
 	 * @param bool $bHTML
 	 * @return String Content
 	 */
@@ -176,12 +176,12 @@ class BsPageContentProvider {
 	 * Gets content form a given Revision object
 	 * @param RevisionRecord $oRevision
 	 * @param int $iAudience One of the `RevisionRecord::FOR_*` values
-	 * @param User $oUser
+	 * @param User|null $oUser
 	 * @param bool $bHTML
 	 * @return String Content
 	 */
 	public function getContentFromRevision( $oRevision, $iAudience = RevisionRecord::FOR_PUBLIC,
-			User $oUser = null, $bHTML = false ) {
+			?User $oUser = null, $bHTML = false ) {
 		$cacheKey = md5( $oRevision->getId() . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
 		if ( isset( self::$contents[$cacheKey] ) ) {
 			return self::$contents[$cacheKey];
