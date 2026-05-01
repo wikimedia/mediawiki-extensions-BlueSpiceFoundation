@@ -127,7 +127,7 @@ class BsPageContentProvider {
 	 * @param bool $bHTML
 	 * @return String Content
 	 */
-	public function getContentFromTitle( Title $oTitle, $iAudience = RevisionRecord::FOR_PUBLIC, User $oUser = null, $bHTML = false ) {
+	public function getContentFromTitle( Title $oTitle, $iAudience = RevisionRecord::FOR_PUBLIC, ?User $oUser = null, $bHTML = false ) {
 		$cacheKey = md5( $oTitle->getPrefixedDBkey() . $iAudience . $bHTML . ( $oUser ? $oUser->getId() : '' ) );
 		if ( isset( static::$contents[$cacheKey] ) ) {
 			return static::$contents[$cacheKey];
