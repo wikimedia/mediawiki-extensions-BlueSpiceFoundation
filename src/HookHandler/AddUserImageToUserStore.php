@@ -8,7 +8,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Hook\MWStakeCommonWebAPIsQueryStoreResultHook;
 use MWStake\MediaWiki\Component\CommonWebAPIs\Rest\UserQueryStore;
-use MWStake\MediaWiki\Component\DataStore\ResultSet;
 
 class AddUserImageToUserStore implements MWStakeCommonWebAPIsQueryStoreResultHook {
 	/** @var UserFactory */
@@ -33,7 +32,7 @@ class AddUserImageToUserStore implements MWStakeCommonWebAPIsQueryStoreResultHoo
 			return;
 		}
 		$data = $result->getRecords();
-		foreach ( $data as $record ) {
+		foreach ( $data as &$record ) {
 			$thumbParams = [ 'width' => '32', 'height' => '32' ];
 
 			$user = $this->userFactory->newFromId( $record->get( 'user_id' ) );
@@ -47,7 +46,5 @@ class AddUserImageToUserStore implements MWStakeCommonWebAPIsQueryStoreResultHoo
 
 			$record->set( 'user_image', $image->render() );
 		}
-
-		$result = new ResultSet( $data, $result->getTotal() );
 	}
 }
