@@ -29,7 +29,7 @@
 		"mwstake/mediawiki-component-manifestregistry": "~3",
 		"mwstake/mediawiki-component-utils": "~3",
 		"mwstake/mediawiki-component-datastore": "~2",
-		"mwstake/mediawiki-component-dynamicfiledispatcher": "~1.0"
+		"mwstake/mediawiki-component-dynamicfiledispatcher": "~2.0"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "45.0.0",
