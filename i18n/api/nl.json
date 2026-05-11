@@ -33,7 +33,7 @@
 	"apihelp-bs-task-param-format": "Het formaat van het resultaat",
 	"apihelp-bs-task-param-token": "Het token dat nodig is om toegang te krijgen tot de API-module",
 	"bs-wikipage-tasks-error-contentmodel": "De taak kan niet worden uitgevoerd met het inhoudsmodel van de opgegeven pagina.",
-	"bs-wikipage-tasks-error-page-not-valid": "De opgegeven pagina is ongeldig.",
+	"bs-wikipage-tasks-error-page-not-valid": "De opgegeven pagina is onjuist.",
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorieën gewijzigd.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "U hebt geen toestemming om de pagina \"$1\" te bewerken.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Ongeldige {{PLURAL:$2|categorie|categorieën}}: $1",
