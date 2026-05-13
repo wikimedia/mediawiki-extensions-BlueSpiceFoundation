@@ -43,5 +43,11 @@
 	"apihelp-bs-recentchanges-store-summary": "최근의 모든 변경사항을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. 스토어 매개변수를 구현합니다.",
 	"apihelp-bs-js-var-config-param-format": "결과 형식",
 	"apihelp-bs-categorylinks-store-param-page-id": "문서의 문서 ID",
-	"apihelp-bs-templatelinks-store-param-page-id": "문서의 문서 ID"
+	"apihelp-bs-templatelinks-store-param-page-id": "문서의 문서 ID",
+	"apihelp-bs-group-store-summary": "$wgImplicitGroups을 제외한 모든 그룹을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 변수를 구현합니다.",
+	"apihelp-bs-titlequery-store-summary": "쿼리 용어에 기반해 문서 제목과 (선택적으로) 이름공간 접수사를 나열합니다. ExtJS Store 변수를 구현합니다.",
+	"apihelp-bs-task-param-taskdata": "작업을 위한 임의의 데이터를 가진 JSON 문자열 코딩된 객체",
+	"apihelp-bs-task-param-context": "작업을 위한 컨텍스트 데이터를 가진 JSON 문자열 코딩된 객체",
+	"apihelp-bs-task-param-schema": "작업 매개변수를 위한 JSON 스키마의 예제를 표시",
+	"apihelp-bs-task-param-examples": "작업 매개변수의 예제를 표시"
 }
