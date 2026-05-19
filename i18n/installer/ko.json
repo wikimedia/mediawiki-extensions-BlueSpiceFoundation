@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hwangjy9"
+			"Hwangjy9",
+			"Tensama0415"
 		]
 	},
-	"bs-installer-title": "미디어위키 $1와(과) BlueSpice $2 설치"
+	"bs-installer-title": "미디어위키 $1와(과) 블루스파이스 $2 설치"
 }

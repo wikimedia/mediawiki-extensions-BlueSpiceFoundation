@@ -3,6 +3,7 @@
 		"authors": [
 			"Agam Riyandana",
 			"Arifin.wijaya",
+			"Bayahiu",
 			"Diki Ananta",
 			"Kenrick95",
 			"Palladin911",
@@ -31,7 +32,7 @@
 	"bs-mins-duration": "{{PLURAL:$1|satu menit|$1 menit}}",
 	"bs-secs-duration": "{{PLURAL:$1|satu detik|$1 detik}}",
 	"bs-two-units-ago": "$1 dan $2 yang lalu",
-	"bs-one-unit-ago": "$1 yang lalu",
+	"bs-one-unit-ago": "$1 lalu",
 	"bs-now": "sekarang",
 	"bs-email-greeting-receiver": "{{GENDER:$1|Halo Tuan $2|Halo Nyonya $2|Halo $2}},",
 	"bs-email-footer": "Pesan ini dihasilkan secara otomatis oleh $1. Harap jangan balas surel ini.",
