@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ucukor",
 			"W"
 		]
 	},
+	"bs-filerepo-labelfilter": "Фільтар",
 	"bs-filerepo-headerfilesize": "Памер",
 	"bs-filerepo-headerpagecategories": "Катэгорыі",
 	"bs-filerepo-headerfilewidth": "Шырыня",
