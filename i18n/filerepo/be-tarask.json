@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ucukor",
 			"W"
 		]
 	},
@@ -10,5 +11,6 @@
 	"bs-filerepo-headerfileheight": "Вышыня",
 	"bs-filerepo-headerfiledescription": "Апісаньне",
 	"bs-filerepo-yes": "Так",
-	"bs-filerepo-no": "Не"
+	"bs-filerepo-no": "Не",
+	"bs-filerepo-labelfilter": "Фільтар"
 }
