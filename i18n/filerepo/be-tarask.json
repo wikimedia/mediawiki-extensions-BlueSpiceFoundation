@@ -5,12 +5,12 @@
 			"W"
 		]
 	},
+	"bs-filerepo-labelfilter": "Фільтар",
 	"bs-filerepo-headerfilesize": "Памер",
 	"bs-filerepo-headerpagecategories": "Катэгорыі",
 	"bs-filerepo-headerfilewidth": "Шырыня",
 	"bs-filerepo-headerfileheight": "Вышыня",
 	"bs-filerepo-headerfiledescription": "Апісаньне",
 	"bs-filerepo-yes": "Так",
-	"bs-filerepo-no": "Не",
-	"bs-filerepo-labelfilter": "Фільтар"
+	"bs-filerepo-no": "Не"
 }
