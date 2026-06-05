@@ -18,12 +18,12 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	/**
 	 * @var IDatabase
 	 */
-	private $db;
+	protected $db;
 
 	/**
 	 * @var WANObjectCache
 	 */
-	private $cache;
+	protected $cache;
 
 	/**
 	 * @param IDatabase $db
