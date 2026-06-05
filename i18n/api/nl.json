@@ -37,7 +37,7 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorieën gewijzigd.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "U hebt geen toestemming om de pagina \"$1\" te bewerken.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Ongeldige {{PLURAL:$2|categorie|categorieën}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Categorieën zijn succesvol ingesteld.",
+	"bs-wikipage-tasks-setcategories-success": "Categorieën zijn ingesteld.",
 	"apihelp-bs-wikipage-store-summary": "Geeft een overzicht van alle wiki-pagina's. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
 	"apihelp-bs-wikisubpage-treestore-summary": "Geeft de subpagina's van een specifieke wikipagina weer",
 	"apihelp-bs-wikisubpage-treestore-param-node": "De van voorvoegsel voorziene titel van de wikipagina",
