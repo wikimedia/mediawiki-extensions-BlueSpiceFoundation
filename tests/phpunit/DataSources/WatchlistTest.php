@@ -37,7 +37,7 @@ class WatchlistTest extends MediaWikiIntegrationTestCase {
 		];
 
 		$services = $this->getServiceContainer();
-		$dbw = $services->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $services->getConnectionProvider()->getPrimaryDatabase();
 		foreach ( $dummyDbEntries as $dummyDbEntry ) {
 			$dbw->insert(
 				'watchlist',
