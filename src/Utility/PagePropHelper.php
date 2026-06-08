@@ -89,7 +89,7 @@ class PagePropHelper {
 	private function loadPageProps() {
 		$pageProps = [];
 
-		$dbr = $this->services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->services->getConnectionProvider()->getReplicaDatabase();
 		$res = $dbr->select(
 			'page_props',
 			[ 'pp_propname', 'pp_value' ],

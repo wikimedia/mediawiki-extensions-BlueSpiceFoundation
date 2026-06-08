@@ -138,7 +138,7 @@ if ( $token ) {
 	$qry_ns = 'page_namespace ' . $token . ' ("' . implode( '","', $namespace ) . '")';
 }
 
-$dbr = $services->getDBLoadBalancer()->getConnection( DB_REPLICA );
+$dbr = $services->getConnectionProvider()->getReplicaDatabase();
 $res = $dbr->select(
 	'page',
 	'page_title, page_namespace, page_id',
