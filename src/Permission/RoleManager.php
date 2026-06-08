@@ -56,7 +56,6 @@ class RoleManager {
 	protected $roles = [];
 
 	/**
-	 * Manager constructor.
 	 * @param array &$groupPermission
 	 * @param array &$roleGroups
 	 * @param bool &$roleSystemEnabled

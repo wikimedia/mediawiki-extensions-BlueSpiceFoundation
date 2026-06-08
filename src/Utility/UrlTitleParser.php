@@ -16,7 +16,6 @@ class UrlTitleParser {
 	protected $failSilently;
 
 	/**
-	 * TitleParse constructor.
 	 * @param string $url
 	 * @param Config $config
 	 * @param bool|null $failSilently If false, will trow error on invalid titles

@@ -75,7 +75,6 @@ abstract class SecondaryDataUpdates extends Hook {
 	}
 
 	/**
-	 * SecondaryDataUpdates constructor.
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title $title

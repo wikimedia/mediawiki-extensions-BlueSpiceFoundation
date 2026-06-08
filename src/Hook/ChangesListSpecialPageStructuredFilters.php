@@ -51,7 +51,6 @@ abstract class ChangesListSpecialPageStructuredFilters extends Hook {
 	}
 
 	/**
-	 * AddSocialEntityFilter constructor.
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param ChangesListSpecialPage $specialPage

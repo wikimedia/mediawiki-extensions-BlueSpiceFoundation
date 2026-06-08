@@ -12,7 +12,6 @@ class DeferredNotificationStack {
 	private $request = null;
 
 	/**
-	 * DeferredNotificationStack constructor.
 	 * @param \Webrequest $request
 	 * @throws RuntimeException
 	 */

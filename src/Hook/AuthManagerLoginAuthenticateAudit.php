@@ -70,7 +70,6 @@ abstract class AuthManagerLoginAuthenticateAudit extends Hook {
 	}
 
 	/**
-	 * AuthManagerLoginAuthenticateAudit constructor.
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param AuthenticationResponse $response
