@@ -20,7 +20,6 @@
 	"bs-userbar_loginswitch_login": "Kirjaudu sisään",
 	"bs-extended-search-textfield-defaultvalue": "Etsi...",
 	"bs-extended-search-textfield-tooltip": "Etsi wikistä",
-	"bs-no-information-available": "Ei tietoa saatavilla",
 	"bs-years-duration": "{{PLURAL:$1|yksi vuosi|$1 vuotta}}",
 	"bs-months-duration": "{{PLURAL:$1|yksi kuukausi|$1 kuukautta}}",
 	"bs-weeks-duration": "{{PLURAL:$1|yksi viikko|$1 viikkoa}}",

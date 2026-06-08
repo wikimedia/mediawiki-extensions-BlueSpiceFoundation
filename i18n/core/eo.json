@@ -15,7 +15,6 @@
 	"bs-extended-search-tooltip-fulltext": "Plenteksta serĉado",
 	"bs-extended-search-textfield-defaultvalue": "Serĉi...",
 	"bs-extended-search-textfield-tooltip": "Serĉi vikion",
-	"bs-no-information-available": "Neniu informo havebla",
 	"bs-years-duration": "{{PLURAL:$1|unu jaron|$1 jarojn}}",
 	"bs-months-duration": "{{PLURAL:$1|unu monaton|$1 monatojn}}",
 	"bs-weeks-duration": "{{PLURAL:$1|unu semajnon|$1 semajnojn}}",

@@ -13,7 +13,6 @@
 	"bs-extended-search-tooltip-fulltext": "Recerca in texto integral",
 	"bs-extended-search-textfield-defaultvalue": "Cercar...",
 	"bs-extended-search-textfield-tooltip": "Cercar in le wiki",
-	"bs-no-information-available": "Nulle information disponibile",
 	"bs-years-duration": "{{PLURAL:$1|un anno|$1 annos}}",
 	"bs-months-duration": "{{PLURAL:$1|un mense|$1 menses}}",
 	"bs-weeks-duration": "{{PLURAL:$1|un septimana|$1 septimanas}}",

@@ -25,7 +25,6 @@
 	"bs-extended-search-tooltip-fulltext": "Volltextsuche",
 	"bs-extended-search-textfield-defaultvalue": "Suche …",
 	"bs-extended-search-textfield-tooltip": "Wiki durchsuchen",
-	"bs-no-information-available": "Keine Informationen verfügbar",
 	"bs-years-duration": "{{PLURAL:$1|einem Jahr|$1 Jahren}}",
 	"bs-months-duration": "{{PLURAL:$1|einem Monat|$1 Monaten}}",
 	"bs-weeks-duration": "{{PLURAL:$1|einer Woche|$1 Wochen}}",

@@ -16,7 +16,6 @@
 	"bs-extended-search-tooltip-fulltext": "Iskanje po celotnem besedilu",
 	"bs-extended-search-textfield-defaultvalue": "Iskanje&nbsp;...",
 	"bs-extended-search-textfield-tooltip": "Preišči viki",
-	"bs-no-information-available": "Podatki niso na voljo",
 	"bs-years-duration": "{{PLURAL:$1|eno leto|$1 leti|$1 leta|$1 let}}",
 	"bs-months-duration": "{{PLURAL:$1|en mesec|$1 meseca|$1 meseci|$1 mesecev}}",
 	"bs-weeks-duration": "{{PLURAL:$1|teden|$1 tedni}}",

@@ -13,7 +13,6 @@
 	"bs-userbar_loginswitch_login": "Aloggen",
 	"bs-extended-search-textfield-defaultvalue": "Sichen...",
 	"bs-extended-search-textfield-tooltip": "An der Wiki sichen",
-	"bs-no-information-available": "Keng Informatioun disponibel",
 	"bs-years-duration": "{{PLURAL:$1|ee Joer|$1 Joer}}",
 	"bs-months-duration": "{{PLURAL:$1|ee Mount|$1 Méint}}",
 	"bs-weeks-duration": "{{PLURAL:$1|eng Woch|$1 Wochen}}",

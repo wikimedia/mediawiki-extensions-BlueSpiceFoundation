@@ -6,16 +6,6 @@
 			"Shirayuki"
 		]
 	},
-	"bs-validator-email-validation-approved": "メール アドレスが正常に検証されました。",
-	"bs-validator-email-validation-not-approved": "メール アドレスを検証できませんでした。",
-	"bs-validator-url-validation-approved": "URL を検証しました。",
-	"bs-validator-url-validation-not-approved": "URL を検証できませんでした。",
-	"bs-validator-arg-count-validation-approved": "「count」属性を検証しました。",
-	"bs-validator-arg-count-validation-not-approved": "「count」属性を検証できませんでした。",
-	"bs-validator-set-validation-approved": "$1 を検証しました。",
-	"bs-validator-set-validation-not-approved": "{{PLURAL:$3|$1 に対して許可される値は次の値だけです|$1 では次の値のうち 1 つだけが許可されます}}: $2.",
-	"bs-validator-integer-range-validation-too-low": "指定した値は小さすぎます。$1 以上の値にしてください。",
-	"bs-validator-integer-range-validation-too-high": "指定した値は大きすぎます。$1 以下の値にしてください。",
 	"bs-validator-value-not-recognized": "値を処理できませんでした",
 	"bs-validator-invalid-boolean": "有効なブール値ではありません",
 	"bs-validator-invalid-float": "有効な浮動小数点数ではありません",

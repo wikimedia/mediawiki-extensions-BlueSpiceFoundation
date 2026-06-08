@@ -16,7 +16,6 @@
 	"bs-extended-search-tooltip-fulltext": "पूर्णपाठ खोजी",
 	"bs-extended-search-textfield-defaultvalue": "खोज्नुहोस्...",
 	"bs-extended-search-textfield-tooltip": "विकि खोज्नुहोस्",
-	"bs-no-information-available": "कुनै पनि जानकारी उपलब्ध छैन",
 	"bs-years-duration": "{{PLURAL:$1| एक वर्ष| $1 वर्ष}}",
 	"bs-months-duration": "{{PLURAL:$1|एक महिना| $1 महिना}}",
 	"bs-weeks-duration": "{{PLURAL:$1|एक हप्ता|$1 हप्ता}}",

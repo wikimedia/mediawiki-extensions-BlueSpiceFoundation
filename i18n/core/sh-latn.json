@@ -14,7 +14,6 @@
 	"bs-extended-search-tooltip-fulltext": "Pretražite ceo tekst",
 	"bs-extended-search-textfield-defaultvalue": "Pretraga...",
 	"bs-extended-search-textfield-tooltip": "Pretražite wiki",
-	"bs-no-information-available": "Nema informacija na raspolaganju",
 	"bs-years-duration": "{{PLURAL:$1|jedne godine|$1 godine|$1 godina}}",
 	"bs-months-duration": "{{PLURAL:$1|jednog meseca|$1 meseca|$1 meseci}}",
 	"bs-weeks-duration": "{{PLURAL:$1|jedne nedelje|$1 nedelje|$1 nedelja}}",

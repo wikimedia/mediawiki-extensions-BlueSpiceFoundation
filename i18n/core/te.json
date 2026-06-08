@@ -12,7 +12,6 @@
 	"bs-userbar_loginswitch_logout": "నిష్క్రమించు",
 	"bs-userbar_loginswitch_login": "ప్రవేశించండి",
 	"bs-extended-search-textfield-defaultvalue": "వెతుకుతున్నాం...",
-	"bs-no-information-available": "సమాచారమేమీ అందుబాటులో లేదు",
 	"bs-years-duration": "{{PLURAL:$1|ఒక సంవత్సరం|$1 సంవత్సరాల}}",
 	"bs-months-duration": "{{PLURAL:$1|ఒక నెల|$1 నెలల}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1 వారం|$1 వారాలు}}",

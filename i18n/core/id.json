@@ -23,7 +23,6 @@
 	"bs-extended-search-tooltip-fulltext": "Pencarian seluruh teks",
 	"bs-extended-search-textfield-defaultvalue": "Cari...",
 	"bs-extended-search-textfield-tooltip": "Cari wiki",
-	"bs-no-information-available": "Tiada informasi tersedia",
 	"bs-years-duration": "{{PLURAL:$1|satu tahun|$1 tahun}}",
 	"bs-months-duration": "{{PLURAL:$1|satu bulan|$1 bulan}}",
 	"bs-weeks-duration": "{{PLURAL:$1|satu minggu|$1 minggu}}",

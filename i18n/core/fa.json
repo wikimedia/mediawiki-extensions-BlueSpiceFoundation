@@ -22,7 +22,6 @@
 	"bs-extended-search-tooltip-fulltext": "جستجوی متن کامل",
 	"bs-extended-search-textfield-defaultvalue": "جستجو...",
 	"bs-extended-search-textfield-tooltip": "جستجوی ویکی",
-	"bs-no-information-available": "اطلاعاتی موجود نیست",
 	"bs-years-duration": "{{PLURAL:$1|یک سال|$1 سال}}",
 	"bs-months-duration": "{{PLURAL:$1|یک ماه|$1 ماه‌}}",
 	"bs-weeks-duration": "{{PLURAL:$1|یک هفته|$1 هفته}}",

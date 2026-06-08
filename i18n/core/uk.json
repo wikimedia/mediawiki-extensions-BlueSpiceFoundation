@@ -23,7 +23,6 @@
 	"bs-extended-search-tooltip-fulltext": "Повнотекстовий пошук",
 	"bs-extended-search-textfield-defaultvalue": "Пошук...",
 	"bs-extended-search-textfield-tooltip": "Пошук у вікі",
-	"bs-no-information-available": "Інформація відсутня",
 	"bs-years-duration": "{{PLURAL:$1|$1 рік|$1 років|$1 роки}}",
 	"bs-months-duration": "{{PLURAL:$1|$1 місяць|$1 місяців|$1 місяці}}",
 	"bs-weeks-duration": "{{PLURAL:$1|1 тиждень|$1 тижнів|$1 тижні}}",

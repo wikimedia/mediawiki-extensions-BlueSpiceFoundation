@@ -10,7 +10,6 @@
 	"bs-userbar_loginswitch_login": "მიშულა",
 	"bs-extended-search-textfield-defaultvalue": "გორუა...",
 	"bs-extended-search-textfield-tooltip": "ვიკის გორუა",
-	"bs-no-information-available": "ინფორმაცია ვა რე ხემიოლუს",
 	"bs-years-duration": "{{PLURAL:$1|ართი წანაშ|$1 წანაშ}}",
 	"bs-months-duration": "{{PLURAL:$1|ართ თუთაშ|$1 თუთაშ}}",
 	"bs-weeks-duration": "{{PLURAL: $1|ართ მარაშ|$1 მარაშ}}",

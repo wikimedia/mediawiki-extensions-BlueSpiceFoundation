@@ -17,7 +17,6 @@
 	"bs-extended-search-tooltip-fulltext": "Teljes szöveges keresés",
 	"bs-extended-search-textfield-defaultvalue": "Keresés...",
 	"bs-extended-search-textfield-tooltip": "Keresés a wikin",
-	"bs-no-information-available": "Nincs elérhető információ",
 	"bs-years-duration": "{{PLURAL:$1|egy év|$1 év}}",
 	"bs-months-duration": "{{PLURAL:$1|egy hónap|$1 hónap}}",
 	"bs-weeks-duration": "{{PLURAL:$1|egy hét|$1 hét}}",

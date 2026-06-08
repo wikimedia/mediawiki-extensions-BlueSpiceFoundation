@@ -25,7 +25,6 @@
 	"bs-extended-search-tooltip-fulltext": "全文検索",
 	"bs-extended-search-textfield-defaultvalue": "検索...",
 	"bs-extended-search-textfield-tooltip": "ウィキ内を検索",
-	"bs-no-information-available": "利用できる情報はありません",
 	"bs-years-duration": "{{PLURAL:$1|$1年}}",
 	"bs-months-duration": "{{PLURAL:$1|$1か月}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1週間}}",

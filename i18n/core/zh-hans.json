@@ -38,7 +38,6 @@
 	"bs-extended-search-tooltip-fulltext": "全文搜索",
 	"bs-extended-search-textfield-defaultvalue": "搜索...",
 	"bs-extended-search-textfield-tooltip": "搜索wiki",
-	"bs-no-information-available": "没有可用的信息",
 	"bs-years-duration": "{{PLURAL:$1|$1年}}",
 	"bs-months-duration": "{{PLURAL:$1|$1个月}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1周}}",

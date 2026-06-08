@@ -12,7 +12,6 @@
 	"bs-userbar_loginswitch_login": "புகுபதிகை",
 	"bs-extended-search-textfield-defaultvalue": "தேடு...",
 	"bs-extended-search-textfield-tooltip": "விக்கியில் தேடு",
-	"bs-no-information-available": "தகவல் ஏதும் கிடைக்கவில்லை",
 	"bs-years-duration": "{{PLURAL:$1|ஒரு வருடம்|$1 வருடங்கள்}}",
 	"bs-hours-duration": "{{PLURAL:$1|ஒரு மணி|$1 மணிகள்}}",
 	"bs-mins-duration": "{{PLURAL:$1|ஒரு நிமிடம்|$1 நிமிடங்கள்}}",

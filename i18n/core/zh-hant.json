@@ -22,7 +22,6 @@
 	"bs-extended-search-tooltip-fulltext": "全文搜尋",
 	"bs-extended-search-textfield-defaultvalue": "搜尋...",
 	"bs-extended-search-textfield-tooltip": "搜尋 wiki",
-	"bs-no-information-available": "無可用資訊。",
 	"bs-years-duration": "{{PLURAL:$1|一年|$1 年}}",
 	"bs-months-duration": "{{PLURAL:$1|1|$1}} 個月",
 	"bs-weeks-duration": "{{PLURAL:$1|一週|$1 週}}",
