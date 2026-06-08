@@ -3,6 +3,7 @@
 namespace BlueSpice\Hook\ResourceLoaderGetConfigVars;
 
 use BlueSpice\Hook\ResourceLoaderGetConfigVars;
+use MediaWiki\MainConfigNames;
 
 class AddAssetsPaths extends ResourceLoaderGetConfigVars {
 
@@ -23,7 +24,7 @@ class AddAssetsPaths extends ResourceLoaderGetConfigVars {
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {
-		$extensionAssetsPath = $this->getConfig()->get( 'ExtensionAssetsPath' );
+		$extensionAssetsPath = $this->getConfig()->get( MainConfigNames::ExtensionAssetsPath );
 		$registry = $this->getServices()->getService(
 			'BSExtensionRegistry'
 		);

@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Hook\BeforePageDisplay;
 
+use MediaWiki\MainConfigNames;
+
 class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 
 	/**
@@ -29,13 +31,13 @@ class AddResources extends \BlueSpice\Hook\BeforePageDisplay {
 
 	protected function addJSConfigVars() {
 		$configs = [
-			'MaxUploadSize' => [
+			MainConfigNames::MaxUploadSize => [
 				'php' => 1024 * 1024 * (int)ini_get( 'upload_max_filesize' ),
-				'mediawiki' => $this->getConfig()->get( 'MaxUploadSize' ),
+				'mediawiki' => $this->getConfig()->get( MainConfigNames::MaxUploadSize ),
 			],
-			'EnableUploads' => $this->getConfig()->get( 'EnableUploads' ),
-			'FileExtensions' => $this->lcNormalizeArray(
-				$this->getConfig()->get( 'FileExtensions' )
+			MainConfigNames::EnableUploads => $this->getConfig()->get( MainConfigNames::EnableUploads ),
+			MainConfigNames::FileExtensions => $this->lcNormalizeArray(
+				$this->getConfig()->get( MainConfigNames::FileExtensions )
 			),
 			'ImageExtensions' => $this->lcNormalizeArray(
 				$this->getConfig()->get( 'ImageExtensions' )
