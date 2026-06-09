@@ -46,4 +46,12 @@ class Reader extends DatabaseReader {
 	public function getSchema() {
 		return new Schema();
 	}
+
+	/**
+	 * @inheritDoc
+	 */
+	protected function cacheResults( string $hash, array $dataSets ): void {
+		// Intentionally do nothing. We cache in a different way in
+		// PrimaryDataProvider, to ease cache invalidation
+	}
 }
