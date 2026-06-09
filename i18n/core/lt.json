@@ -14,7 +14,6 @@
 	"bs-extended-search-tooltip-fulltext": "Pilno teksto paieška",
 	"bs-extended-search-textfield-defaultvalue": "Ieškoti...",
 	"bs-extended-search-textfield-tooltip": "Ieškoti viki",
-	"bs-no-information-available": "Nėra informacijos",
 	"bs-years-duration": "{{PLURAL:$1|vieneri metai|$1 metai}}",
 	"bs-months-duration": "{{PLURAL:$1|vienas mėnuo|$1 mėnesiai}}",
 	"bs-weeks-duration": "{{PLURAL:$1|viena savaitė|$1 savaitės}}",

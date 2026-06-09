@@ -14,7 +14,6 @@
 	"bs-extended-search-tooltip-fulltext": "Serchar kompleta texto",
 	"bs-extended-search-textfield-defaultvalue": "Serchez...",
 	"bs-extended-search-textfield-tooltip": "Serchar wiki",
-	"bs-no-information-available": "Nula informo disponebla",
 	"bs-years-duration": "{{PLURAL:$1|$1 yaro|$1 yari}}",
 	"bs-months-duration": "{{PLURAL:$1|$1 monato|$1 monati}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1 semano|$1 semani}}",

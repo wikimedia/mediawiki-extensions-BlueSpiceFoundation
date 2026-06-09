@@ -18,7 +18,6 @@
 	"bs-extended-search-tooltip-fulltext": "Tam metin arama",
 	"bs-extended-search-textfield-defaultvalue": "Ara...",
 	"bs-extended-search-textfield-tooltip": "Viki ara",
-	"bs-no-information-available": "Bilgi bulunmamaktadır",
 	"bs-years-duration": "{{PLURAL:$1|bir yıl|$1 yıl}}",
 	"bs-months-duration": "{{PLURAL:$1|bir ay|$1 ay}}",
 	"bs-weeks-duration": "{{PLURAL:$1|bir hafta|$1 hafta}}",

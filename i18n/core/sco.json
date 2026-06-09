@@ -13,7 +13,6 @@
 	"bs-extended-search-tooltip-fulltext": "Fultex rake",
 	"bs-extended-search-textfield-defaultvalue": "Rake...",
 	"bs-extended-search-textfield-tooltip": "Rake the wiki",
-	"bs-no-information-available": "Nae information available",
 	"bs-years-duration": "{{PLURAL:$1|yin year|$1 years}}",
 	"bs-months-duration": "{{PLURAL:$1|yin month|$1 months}}",
 	"bs-weeks-duration": "{{PLURAL:$1|yin week|$1 weeks}}",

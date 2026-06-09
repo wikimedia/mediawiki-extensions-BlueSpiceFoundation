@@ -11,7 +11,6 @@
 	"bs-userbar_loginswitch_logout": "Log af",
 	"bs-userbar_loginswitch_login": "Log på",
 	"bs-extended-search-textfield-defaultvalue": "Søg...",
-	"bs-no-information-available": "Ingen informationer tilgængelige",
 	"bs-years-duration": "{{PLURAL:$1|et år|$1 år}}",
 	"bs-months-duration": "{{PLURAL:$1|en måned|$1 måneder}}",
 	"bs-weeks-duration": "{{PLURAL:$1|en uge|$1 uger}}",

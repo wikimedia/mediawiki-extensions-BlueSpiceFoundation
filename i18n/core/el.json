@@ -15,7 +15,6 @@
 	"bs-extended-search-tooltip-fulltext": "Αναζήτηση πλήρους κειμένου",
 	"bs-extended-search-textfield-defaultvalue": "Αναζήτηση...",
 	"bs-extended-search-textfield-tooltip": "Αναζήτηση στο βίκι",
-	"bs-no-information-available": "Δεν υπάρχουν διαθέσιμες πληροφορίες",
 	"bs-years-duration": "{{PLURAL:$1|ένα έτος|$1 έτη}}",
 	"bs-months-duration": "{{PLURAL:$1|ένας μήνας|$1 μήνες}}",
 	"bs-weeks-duration": "{{PLURAL:$1|μία εβδομάδα|$1 εβδομάδες}}",

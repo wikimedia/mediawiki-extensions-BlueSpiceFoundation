@@ -19,7 +19,6 @@
 	"bs-extended-search-tooltip-fulltext": "Procura de texto completo",
 	"bs-extended-search-textfield-defaultvalue": "Procurar...",
 	"bs-extended-search-textfield-tooltip": "Procurar no wiki",
-	"bs-no-information-available": "Non hai información dispoñible",
 	"bs-years-duration": "{{PLURAL:$1|un ano|$1 anos}}",
 	"bs-months-duration": "{{PLURAL:$1|un mes|$1 meses}}",
 	"bs-weeks-duration": "{{PLURAL:$1|unha semana|$1 semanas}}",

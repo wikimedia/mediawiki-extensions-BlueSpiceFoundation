@@ -11,7 +11,6 @@
 	"bs-userbar_loginswitch_login": "Prijavi me",
 	"bs-extended-search-textfield-defaultvalue": "Tražite...",
 	"bs-extended-search-textfield-tooltip": "Tražite wiki",
-	"bs-no-information-available": "Informacije nisu dostupne",
 	"bs-years-duration": "{{PLURAL:$1|jedna godina|$1 godina}}",
 	"bs-one-unit-ago": "prije $1",
 	"bs-now": "sada"

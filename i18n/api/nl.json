@@ -9,9 +9,7 @@
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "Geeft een overzicht van alle bestanden uit de backend. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
-	"apihelp-bs-user-store-summary": "Geeft een overzicht van alle gebruikers uit de database. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
 	"apihelp-bs-category-store-summary": "Geeft een overzicht van alle categorieën. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
-	"apihelp-bs-adminuser-store-summary": "Geeft een overzicht van alle gebruikers uit de database met aanvullende gevoelige gegevens. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
 	"apihelp-bs-group-store-summary": "Geeft een overzicht van alle groepen behalve $wgImplicitGroups. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
 	"apihelp-bs-interwiki-store-summary": "Geeft een overzicht van alle interwiki-koppelingen. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
 	"apihelp-bs-titlequery-store-summary": "Geeft paginatitels en (optioneel) naamruimtevoorvoegsels weer op basis van een zoekterm. Implementeert ExtJS Store-parameters.",
@@ -38,7 +36,7 @@
 	"bs-wikipage-tasks-setcategories-edit-summary": "Categorieën gewijzigd.",
 	"bs-wikipage-tasks-error-page-edit-not-allowed": "U hebt geen toestemming om de pagina \"$1\" te bewerken.",
 	"bs-wikipage-tasks-error-categories-not-valid": "Ongeldige {{PLURAL:$2|categorie|categorieën}}: $1",
-	"bs-wikipage-tasks-setcategories-success": "Categorieën zijn succesvol ingesteld.",
+	"bs-wikipage-tasks-setcategories-success": "Categorieën zijn ingesteld.",
 	"apihelp-bs-wikipage-store-summary": "Geeft een overzicht van alle wiki-pagina's. Maakt sorteren, filteren en pagineren mogelijk. Implementeert ExtJS Store-parameters.",
 	"apihelp-bs-ping-tasks-summary": "Ping-taak die zorgt voor voortdurende uitwisseling van gegevens",
 	"apihelp-bs-wikisubpage-treestore-summary": "Geeft de subpagina's van een specifieke wikipagina weer",

@@ -25,7 +25,8 @@
 			"列维劳德",
 			"御坂美琴",
 			"落花有意12138",
-			"阿南之人"
+			"阿南之人",
+			"Peterxy"
 		]
 	},
 	"bluespicefoundation-desc": "使MediaWiki准备好企业化",
@@ -37,7 +38,6 @@
 	"bs-extended-search-tooltip-fulltext": "全文搜索",
 	"bs-extended-search-textfield-defaultvalue": "搜索...",
 	"bs-extended-search-textfield-tooltip": "搜索wiki",
-	"bs-no-information-available": "没有可用的信息",
 	"bs-years-duration": "{{PLURAL:$1|$1年}}",
 	"bs-months-duration": "{{PLURAL:$1|$1个月}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1周}}",

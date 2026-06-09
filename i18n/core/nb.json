@@ -16,7 +16,6 @@
 	"bs-extended-search-tooltip-fulltext": "Fulltekstsøk",
 	"bs-extended-search-textfield-defaultvalue": "Søk …",
 	"bs-extended-search-textfield-tooltip": "Søk i wikien",
-	"bs-no-information-available": "Ingen informasjon tilgjengelig",
 	"bs-years-duration": "{{PLURAL:$1|ett|$1}} år",
 	"bs-months-duration": "{{PLURAL:$1|én måned|$1 måneder}}",
 	"bs-weeks-duration": "{{PLURAL:$1|éi uke|$1 uker}}",

@@ -24,7 +24,6 @@
 	"bs-extended-search-tooltip-fulltext": "Fulltextsökning",
 	"bs-extended-search-textfield-defaultvalue": "Söker...",
 	"bs-extended-search-textfield-tooltip": "Sök wiki",
-	"bs-no-information-available": "Ingen information tillgänglig",
 	"bs-years-duration": "{{PLURAL:$1|ett år|$1 år}}",
 	"bs-months-duration": "{{PLURAL:$1|$1 månad|$1 månader}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1 vecka|$1 veckor}}",

@@ -18,7 +18,6 @@
 	"bs-extended-search-tooltip-fulltext": "بحث في النص الكامل",
 	"bs-extended-search-textfield-defaultvalue": "بحث...",
 	"bs-extended-search-textfield-tooltip": "بحث الويكي",
-	"bs-no-information-available": "لا توجد معلومات متاحة",
 	"bs-years-duration": "{{PLURAL:$1|سنة واحدة|$1 سنوات}}",
 	"bs-months-duration": "{{PLURAL:$1||شهر واحد|$1 شهور}}",
 	"bs-weeks-duration": "{{PLURAL:$1|أسبوع واحد|$1 أسابيع}}",

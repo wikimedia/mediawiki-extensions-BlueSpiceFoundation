@@ -4,10 +4,6 @@
 			"Умар"
 		]
 	},
-	"bs-validator-email-validation-approved": "Электронан поштан адрес кхиамца теллина.",
-	"bs-validator-url-validation-approved": "URL-адрес кхиамца теллина.",
-	"bs-validator-set-validation-approved": "$1 кхиамца теллина.",
-	"bs-validator-set-validation-not-approved": "Цу $1 {{PLURAL:$3|магийна хӀара маьӀнаш|магийна хӀокхарах цхьа маьӀна}}: $2.",
 	"bs-validator-value-not-recognized": "МаьӀна кечдан аьтто бац",
 	"bs-validator-invalid-boolean": "Нийса йоцу логика",
 	"bs-validator-invalid-float": "Нийса доцу лелар",

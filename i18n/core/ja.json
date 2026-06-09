@@ -12,7 +12,8 @@
 			"Suyama",
 			"TKsdik8900",
 			"神樂坂秀吉",
-			"背番号4のエース"
+			"背番号4のエース",
+			"Tensama0415"
 		]
 	},
 	"bluespicefoundation-desc": "MediaWikiをエンタープライズ向けに準備します",
@@ -24,7 +25,6 @@
 	"bs-extended-search-tooltip-fulltext": "全文検索",
 	"bs-extended-search-textfield-defaultvalue": "検索...",
 	"bs-extended-search-textfield-tooltip": "ウィキ内を検索",
-	"bs-no-information-available": "利用できる情報はありません",
 	"bs-years-duration": "{{PLURAL:$1|$1年}}",
 	"bs-months-duration": "{{PLURAL:$1|$1か月}}",
 	"bs-weeks-duration": "{{PLURAL:$1|$1週間}}",
@@ -103,10 +103,10 @@
 	"protect-level-editor": "編集者と管理者のみを許可する",
 	"right-editor": "役割システムが有効化されている場合、編集者制限で保護されたページに対して、役割の一つである「編集者」からすべての権限が付与されます。",
 	"action-editor": "役割システムがアクティブ化されている場合、編集者の制限で保護されたページに対して、役割の一つである「編集者」からすべての権限が付与されます",
-	"bs-pref-fileextensions-help": "wikiにアップロードできるファイルの種類。一部のタイプ (例: html、js、php、cgi、exe) は、ここに追加されていますが、セキュリティ上の理由から許可されていません。",
+	"bs-pref-fileextensions-help": "wikiにアップロードできるファイルの種類。一部のタイプ (例: html、js、php、cgi、exe) は、ここに追加されていますが、セキュリティ上の理由から許可されていません",
 	"bs-pref-imageextensions-help": "wiki にアップロードできる画像ファイルの種類。可能な Web 形式: gif、png、jpg、jpeg。その他の画像形式: tiff、bmp",
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "構成ファイル$1を書き込めませんでした!",
-	"bs-pref-logopath-help": "ロゴは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。",
-	"bs-pref-faviconpath-help": "ファビコンは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。ファビコンのファイル拡張子は .ico です。",
+	"bs-pref-logopath-help": "ロゴは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります",
+	"bs-pref-faviconpath-help": "ファビコンは、インストールの /w/images フォルダーに保存する必要があります。 BlueSpice インストールの /w/skins フォルダーに保存すると、アップグレードで上書きされる可能性があります。ファビコンのファイル拡張子は .ico です",
 	"bs-exttype-bluespice-assets": "BlueSpiceアセット"
 }

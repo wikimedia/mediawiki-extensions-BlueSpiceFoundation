@@ -33,7 +33,6 @@
 	"bs-extended-search-tooltip-fulltext": "Полнотекстовый поиск",
 	"bs-extended-search-textfield-defaultvalue": "Поиск…",
 	"bs-extended-search-textfield-tooltip": "Поиск в вики",
-	"bs-no-information-available": "Информация отсутствует",
 	"bs-years-duration": "{{PLURAL:$1|один год|$1 года|$1 лет}}",
 	"bs-months-duration": "{{PLURAL:$1|один месяц|$1 месяца|$1 месяцев}}",
 	"bs-weeks-duration": "{{PLURAL:$1|одну неделю|$1 недели|$1 недель}}",

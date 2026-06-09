@@ -18,7 +18,6 @@
 	"bs-extended-search-tooltip-fulltext": "Претражите цео текст",
 	"bs-extended-search-textfield-defaultvalue": "Претражите…",
 	"bs-extended-search-textfield-tooltip": "Претражите вики",
-	"bs-no-information-available": "Нема доступних информација",
 	"bs-years-duration": "{{PLURAL:$1|једне године|$1 године|$1 година}}",
 	"bs-months-duration": "{{PLURAL:$1|једног месеца|$1 месеца|$1 месеци}}",
 	"bs-weeks-duration": "{{PLURAL:$1|једне недеље|$1 недеље|$1 недеља}}",
