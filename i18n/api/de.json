@@ -12,8 +12,6 @@
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "Listet alle gespeicherten Dateien auf. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert „ExtJS-Store“-Parameter.",
-	"apihelp-bs-user-store-summary": "Listet alle in der Datenbank vorhandenen Benutzer auf. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert „ExtJS-Store“-Parameter.",
-	"apihelp-bs-adminuser-store-summary": "Listet alle in der Datenbank vorhandenen Benutzer mitsamt vertraulicher Daten auf. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert „ExtJS-Store“-Parameter.",
 	"apihelp-bs-group-store-summary": "Listet alle Benutzergruppen, mit Ausnahme der mit Konfigurationsparameter <code>$wgImplicitGroups</code> festgelegten, auf. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert „ExtJS-Store“-Parameter.",
 	"apihelp-bs-interwiki-store-summary": "Listet alle Interwikilinks auf. Erlaubt Sortierung, Filterung und seitenweise Anzeige. Implementiert „ExtJS-Store“-Parameter.",
 	"apihelp-bs-titlequery-store-summary": "Listet Seitentitel und wahlweise Namensraumpräfixe entsprechend einem Abfragebegriff auf. Implementiert „ExtJS-Store“-Parameter.",

@@ -5,8 +5,6 @@
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "Lista tote le files del back-end de files. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
-	"apihelp-bs-user-store-summary": "Lista tote le usatores del base de datos. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
-	"apihelp-bs-adminuser-store-summary": "Lista tote le usatores del base de datos con datos confidential additional. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
 	"apihelp-bs-group-store-summary": "Lista tote le gruppos salvo $wgImplicitGroups. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
 	"apihelp-bs-interwiki-store-summary": "Lista tote le ligamines interwiki. Permitte ordinar, filtrar e paginar. Implementa parametros ExtJS Store.",
 	"apihelp-bs-titlequery-store-summary": "Lista titulos de paginas e (optionalmente) prefixos de spatio de nomines a base de un termino de consulta. Implementa parametros ExtJS Store.",

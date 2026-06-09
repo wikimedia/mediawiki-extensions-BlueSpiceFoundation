@@ -10,8 +10,6 @@
 		]
 	},
 	"apihelp-bs-filebackend-store-summary": "파일 백엔드로부터 모든 파일을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 매개변수를 구현합니다.",
-	"apihelp-bs-user-store-summary": "데이터베이스로부터 모든 사용자를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 매개변수를 구현합니다.",
-	"apihelp-bs-adminuser-store-summary": "추가 민감한 데이터를 가진 데이터베이스로부터 모든 사용자를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 매개변수를 구현합니다.",
 	"apihelp-bs-group-store-summary": "$wgImplicitGroups을 제외한 모든 그룹을 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 매개변수를 구현합니다.",
 	"apihelp-bs-interwiki-store-summary": "모든 인터위키 링크를 나열합니다. 정렬, 필터링, 쪽 번호 매기기를 허용합니다. ExtJS Store 매개변수를 구현합니다.",
 	"apihelp-bs-titlequery-store-summary": "쿼리 용어에 기반해 문서 제목과 (선택적으로) 이름공간 접수사를 나열합니다. ExtJS Store 매개변수를 구현합니다.",
