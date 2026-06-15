@@ -1,16 +1,20 @@
 [
 	{
 		"resourceModule": "ext.bluespice.styles",
-		"maxSize": "3.5 kB"
+		"maxSize": "4 kB"
 	},
 	{
 		"resourceModule": "ext.bluespice.compat.vector.styles",
-		"maxSize": "0.2 kB"
+		"maxSize": "2 kB"
 	},
 	{
 		"resourceModule": "ext.bluespice",
-		"maxSize": "10.7 kB",
+		"maxSize": "12 kB",
 		"@note": "Ignore mwstake.component.alertbanners, https://phabricator.wikimedia.org/T395698#11172901",
 		"ignoreDependencies": true
+	},
+	{
+		"resourceModule": "ext.bluespice.oojs",
+		"maxSize": "10 kB"
 	}
 ]
