@@ -271,7 +271,8 @@
 				"bs-ui-generic-cancel",
 				"bs-ui-generic-close",
 				"bs-exportpages-dialog-title",
-				"bs-exportpages-success-text"
+				"bs-exportpages-success-text",
+				"bs-save-as-collection-dialog-title"
 			],
 			"dependencies": [
 				"oojs-ui",

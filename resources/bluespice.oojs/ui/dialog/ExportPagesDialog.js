@@ -17,7 +17,7 @@ bs.ui.dialog.ExportPagesDialog = function ( cfg ) {
 OO.inheritClass( bs.ui.dialog.ExportPagesDialog, OO.ui.ProcessDialog );
 
 bs.ui.dialog.ExportPagesDialog.static.name = 'BSExportPagesDialog';
-bs.ui.dialog.ExportPagesDialog.static.title = mw.message( 'bs-exportpages-dialog-title' ).text();
+bs.ui.dialog.ExportPagesDialog.static.title = mw.message( 'bs-save-as-collection-dialog-title' ).text();
 bs.ui.dialog.ExportPagesDialog.static.actions = [
 	{
 		action: 'export',
@@ -27,8 +27,8 @@ bs.ui.dialog.ExportPagesDialog.static.actions = [
 	},
 	{
 		action: 'close',
-		flags: [ 'safe' ],
-		label: mw.message( 'bs-ui-generic-close' ).text(),
+		title: mw.message( 'bs-ui-generic-close' ).text(),
+		flags: [ 'safe', 'close' ],
 		modes: [ 'export', 'result' ]
 	}
 ];
@@ -105,6 +105,10 @@ bs.ui.dialog.ExportPagesDialog.prototype.initialize = function () {
 
 	this.$body.append( this.panel.$element );
 	this.getValidity();
+};
+
+bs.ui.dialog.ExportPagesDialog.prototype.getBodyHeight = function () {
+	return Math.min( this.$body[ 0 ].scrollHeight, Math.floor( window.innerHeight * 0.5 ) );
 };
 
 bs.ui.dialog.ExportPagesDialog.prototype.getValidity = async function () {

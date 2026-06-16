@@ -20,6 +20,7 @@
 	"bs-ui-generic-no": "No",
 	"bs-exportpages-dialog-title": "Export pages to a collection",
 	"bs-exportpages-success-text": "Pages exported to [[$1|$2]]",
+	"bs-save-as-collection-dialog-title": "Save as page collection",
 	"bs-ui-generic-close": "Close",
 	"bs-pageexport-list-name-label": "List name",
 	"bs-pageexport-list-format-label": "List format",
