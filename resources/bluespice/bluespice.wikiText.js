@@ -1,4 +1,5 @@
-( function ( mw, bs, $, undefined ) {
+/* eslint-disable no-jquery/no-in-array */
+( function ( mw, bs, $, undefined ) { // eslint-disable-line no-shadow-restricted-names
 
 	bs.wikiText = {};
 
@@ -45,7 +46,7 @@
 		}
 
 		if ( typeof ( cfg ) === 'object' ) {
-			this.properties = $.extend( this.properties, cfg );
+			this.properties = $.extend( this.properties, cfg ); // eslint-disable-line no-jquery/no-extend
 		} else {
 			parsePropertiesFromString( cfg );
 		}
@@ -86,13 +87,13 @@
 			// Other specific options: alt={alternative text} & page={number} & class={html class}
 			// Caption: only if thumb|frame
 
-			wikiLinkFlags = [
+			wikiLinkFlags = [ // eslint-disable-line no-unused-vars
 				'border', 'frameless', 'frame', 'thumb', // Format
 				'upright', // Resizing
 				'left', ' right', 'center', 'none'// , //Horizontal alignment
 			// 'baseline', 'sub', 'super', 'top', 'text-top', 'middle', 'bottom', 'text-bottom' //Vertical alignment (UNSUPPORTED)
 			],
-			wikiLinkProperties = [
+			wikiLinkProperties = [ // eslint-disable-line no-unused-vars
 				'alt', 'link', 'nolink'
 			],
 
@@ -225,7 +226,8 @@
 		function parseTitle( title ) {
 			if ( title.charAt( 0 ) === ':' ) {
 				me.properties.escaped = true;
-				title = title.substring( 1, title.length ); // remove leading ":""
+				// remove leading ":""
+				title = title.substring( 1, title.length ); // eslint-disable-line unicorn/prefer-string-slice
 			}
 
 			me.properties.title = title;
@@ -241,7 +243,7 @@
 		}
 
 		if ( typeof ( cfg ) === 'object' ) {
-			this.properties = $.extend( this.properties, cfg );
+			this.properties = $.extend( this.properties, cfg ); // eslint-disable-line no-jquery/no-extend
 			if ( this.properties.title === '' && this.properties.prefixedTitle !== '' ) {
 				parseTitle( this.properties.prefixedTitle );
 			}
@@ -450,8 +452,6 @@
 	};
 
 	bs.wikiText.Template = function ( cfg, title ) {
-		const me = this;
-
 		this.params = {};
 		this.title = '';
 
@@ -471,7 +471,7 @@
 
 		if ( typeof ( cfg ) === 'object' ) { // "{ with: 'param' }"
 			this.title = title; // "Some Template"
-			this.params = $.extend( this.params, cfg );
+			this.params = $.extend( this.params, cfg ); // eslint-disable-line no-jquery/no-extend
 		} else { // WikiText "{{Some Template|with=param}}"
 			parseParamsFromString( cfg );
 		}
@@ -490,11 +490,11 @@
 			return '{{' + wikiText.join( '|' ) + '}}';
 		};
 		// jQuery-like setter
-		this.set = function ( keyOrCfg, value ) {
+		this.set = function ( keyOrCfg, value ) { // eslint-disable-line no-unused-vars
 			// TODO: implement
 		};
 	};
 
-	bs.wikiText.Tag = function ( cfg, title ) {};
+	bs.wikiText.Tag = function ( cfg, title ) {}; // eslint-disable-line no-unused-vars
 
 }( mediaWiki, blueSpice, jQuery ) );

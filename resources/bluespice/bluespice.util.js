@@ -1,7 +1,8 @@
-( function ( mw, bs, $, undefined ) {
+/* eslint-disable camelcase, no-underscore-dangle */
+( function ( mw, bs, $ ) {
 
 	function _prepareSimpleDialogConfig( idPrefix, dialogConfig, actionCallback ) {
-		cfg = dialogConfig || {};
+		const cfg = dialogConfig || {};
 		cfg.id = idPrefix;
 		cfg.idPrefix = idPrefix;
 		cfg.callback = actionCallback || {};
@@ -30,7 +31,7 @@
 		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
 		const dfd = new $.Deferred();
-		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
+		mw.loader.using( 'ext.bluespice.oojs' ).done( () => {
 			const windowManager = new OO.ui.WindowManager();
 
 			const dialog = new bs.ui.dialog.AlertDialog( config );
@@ -53,7 +54,7 @@
 		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
 		const dfd = new $.Deferred();
-		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
+		mw.loader.using( 'ext.bluespice.oojs' ).done( () => {
 			const windowManager = new OO.ui.WindowManager();
 
 			const dialog = new bs.ui.dialog.ConfirmDialog( config );
@@ -72,7 +73,7 @@
 		const config = _prepareSimpleDialogConfig( idPrefix, windowCfg, callbackCfg );
 
 		const dfd = new $.Deferred();
-		mw.loader.using( 'ext.bluespice.oojs' ).done( function () {
+		mw.loader.using( 'ext.bluespice.oojs' ).done( () => {
 			const windowManager = new OO.ui.WindowManager();
 
 			const dialog = new bs.ui.dialog.PromptDialog( config );
@@ -213,11 +214,11 @@
 				_startPos = _textbox.selectionStart;
 				endPos = _textbox.selectionEnd;
 
-				_selectedText = _textbox.value.substring( _startPos, endPos );
+				_selectedText = _textbox.value.substring( _startPos, endPos ); // eslint-disable-line unicorn/prefer-string-slice
 				tempText = _textbox.value;
 				_textbox.value = _textbox.value.slice( 0, Math.max( 0, _startPos ) ) +
 					'bs_selection' +
-					_textbox.value.substring( endPos, _textbox.value.length );
+					_textbox.value.substring( endPos, _textbox.value.length ); // eslint-disable-line unicorn/prefer-string-slice
 
 				_origText = _textbox.value;
 				_textbox.value = tempText;
@@ -275,8 +276,7 @@
 		 * 'page5': { 'target': 'Invalid|Title' }
 		 * };
 		 *
-		 * @param object linkDescs
-		 * @param linkDescs
+		 * @param {Object} linkDescs
 		 * @return {Promise}
 		 */
 		this.makeLinks = function ( linkDescs ) {
@@ -284,7 +284,7 @@
 				dfd = new $.Deferred(),
 				api = new mw.Api();
 
-			$.each( linkDescs, function ( id, linkDesc ) {
+			$.each( linkDescs, ( id, linkDesc ) => { // eslint-disable-line no-jquery/no-each-util
 				let targetText = linkDesc.target || '';
 
 				// Convert {mw.Title} object
@@ -310,7 +310,7 @@
 				action: 'bs-linker',
 				linkdescs: JSON.stringify( serializeableLinkDescs )
 			} )
-				.done( function ( result ) {
+				.done( ( result ) => {
 					dfd.resolve( result.links );
 				} )
 				.fail( dfd.reject );
@@ -335,7 +335,7 @@
 					query: query
 				}
 			} )
-				.done( function ( links ) {
+				.done( ( links ) => {
 					if ( links.singlelink ) {
 						dfd.resolve( links.singlelink );
 					} else {
@@ -485,11 +485,11 @@
 	 *
 	 * @param {string} url The url providing the content for the window
 	 * @param {string} title The title of the window
-	 * @param {Int} width The width of the window
-	 * @param {Int} height The height of the window
-	 * @return {Void}
+	 * @param {number} width The width of the window
+	 * @param {number} height The height of the window
+	 * @return {undefined}
 	 */
-	function _toggleMessage( url, title, width, height ) {
+	function _toggleMessage( url, title, width, height ) { // eslint-disable-line no-unused-vars
 		const win = Ext.create( 'Ext.Window', {
 			id: 'winToggleMsg',
 			autoLoad: url,
@@ -631,11 +631,11 @@
 		const sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 ),
 			sTitle = oSrc.getAttribute( 'title' ),
 			sMessage = oSrc.getAttribute( 'msg' );
-		Ext.Msg.prompt( sTitle, sMessage, function ( btn, text ) {
-			if ( btn == 'ok' ) {
+		Ext.Msg.prompt( sTitle, sMessage, ( btn, text ) => {
+			if ( btn == 'ok' ) { // eslint-disable-line eqeqeq
 				let oSelect = document.getElementById( 'mw-input-' + sFieldName );
 				if ( !oSelect ) {
-					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
+					oSelect = document.getElementById( 'mw-input-' + 'wp' + sFieldName ); // eslint-disable-line no-useless-concat
 				}
 				if ( !oSelect ) {
 					oSelect = document.getElementsByName(
@@ -662,7 +662,7 @@
 		const sFieldName = oSrc.getAttribute( 'targetfield' ).slice( 2 );
 		let elSel = document.getElementById( 'mw-input-' + sFieldName );
 		if ( elSel === null ) {
-			elSel = document.getElementById( 'mw-input-' + 'wp' + sFieldName );
+			elSel = document.getElementById( 'mw-input-' + 'wp' + sFieldName ); // eslint-disable-line no-useless-concat
 		}
 		let i;
 		for ( i = elSel.length - 1; i >= 0; i-- ) {
@@ -682,16 +682,18 @@
 	}
 
 	function _auditCssSelectors() {
-		const links = [], rules = [], unmatched = [], selectors = { total: 0, matched: 0 };
+		const links = [];
+		const unmatched = [];
+		const selectors = { total: 0, matched: 0 };
 
-		$.each( document.getElementsByTagName( 'link' ), function ( index, link ) {
+		$.each( document.getElementsByTagName( 'link' ), ( index, link ) => { // eslint-disable-line no-jquery/no-each-util
 			if ( link.sheet !== null ) {
 				links.push( link.sheet );
 			}
 		} );
 
-		$.each( links, function ( index, linkSheet ) {
-			$.each( linkSheet.rules, function ( index, rule ) {
+		$.each( links, ( index, linkSheet ) => { // eslint-disable-line no-jquery/no-each-util
+			$.each( linkSheet.rules, ( index, rule ) => { // eslint-disable-line no-jquery/no-each-util, no-shadow
 				selectors.total++;
 				if ( document.querySelector( rule.selectorText ) !== null ) {
 					selectors.matched++;
@@ -701,10 +703,10 @@
 			} );
 		} );
 
-		console.log( selectors.matched + ' / ' + selectors.total + ' = ' + selectors.matched / selectors.total );
+		console.log( selectors.matched + ' / ' + selectors.total + ' = ' + selectors.matched / selectors.total ); // eslint-disable-line no-console
 
-		$.each( unmatched, function ( index, unmatched ) {
-			console.log( unmatched );
+		$.each( unmatched, ( index, unmatched ) => { // eslint-disable-line no-jquery/no-each-util, no-shadow
+			console.log( unmatched ); // eslint-disable-line no-console
 		} );
 	}
 
@@ -715,10 +717,8 @@
 	 * of complex type structures with a single call. I.e. from the components
 	 * sourcefile.
 	 *
-	 * @param string subNamespace
-	 * @param object baseNamespace
-	 * @param subNamespace
-	 * @param baseNamespace
+	 * @param {string} subNamespace
+	 * @param {Object} baseNamespace
 	 * @return {undefined}
 	 */
 	function _registerNamespace( subNamespace, baseNamespace ) {
@@ -734,16 +734,10 @@
 	}
 
 	/**
-	 * @param string callback e.G. "bs.extension.flyout.someKey"
-	 * @param array args
-	 * @param object scope
-	 * @param callback
-	 * @param args
-	 * @param scope
-	 * @param callback
-	 * @param args
-	 * @param scope
-	 * @return mixed
+	 * @param {string} callback e.G. "bs.extension.flyout.someKey"
+	 * @param {Array} args
+	 * @param {Object} scope
+	 * @return {*}
 	 */
 	function _runCallback( callback, args, scope ) {
 		const parts = callback.split( '.' );
@@ -797,10 +791,10 @@
 	} );
 
 	if ( document.selection && document.selection.createRange ) {
-		$( document ).on( 'mouseup', '#wpTextbox1', function () {
+		$( document ).on( 'mouseup', '#wpTextbox1', () => {
 			util.selection.autoSelection = document.selection.createRange();
 		} )
-			.on( 'keyup', '#wpTextbox1', function () {
+			.on( 'keyup', '#wpTextbox1', () => {
 			// IE also creates a selection if you are typing ...
 			// and you will get it as description in InsertLink -> not wanted
 				util.selection.autoSelection = '';

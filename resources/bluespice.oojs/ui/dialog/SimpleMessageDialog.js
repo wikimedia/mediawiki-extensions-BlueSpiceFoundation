@@ -27,14 +27,14 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	}
 
 	if ( config.hasOwnProperty( 'titleMsg' ) ) {
-		bs.ui.dialog.SimpleMessageDialog.static.title = mw.message( config.titleMsg ).text();
+		bs.ui.dialog.SimpleMessageDialog.static.title = mw.message( config.titleMsg ).text(); // eslint-disable-line mediawiki/msg-doc
 	} else if ( config.hasOwnProperty( 'title' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.title = config.title;
 	}
 
 	if ( config.hasOwnProperty( 'textMsg' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.message =
-			new OO.ui.HtmlSnippet( mw.message( config.textMsg ).text() );
+			new OO.ui.HtmlSnippet( mw.message( config.textMsg ).text() ); // eslint-disable-line mediawiki/msg-doc
 	} else if ( config.hasOwnProperty( 'text' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.message =
 			new OO.ui.HtmlSnippet( config.text );
@@ -53,7 +53,7 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	}
 
 	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionAccept = function () {
-		const params = {
+		const params = { // eslint-disable-line no-shadow
 			action: 'ok',
 			label: mw.message( 'ooui-dialog-message-accept' ).text()
 		};
@@ -64,7 +64,7 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	};
 
 	bs.ui.dialog.SimpleMessageDialog.prototype.makeActionReject = function () {
-		const params = {
+		const params = { // eslint-disable-line no-shadow
 			action: 'cancel',
 			label: mw.message( 'ooui-dialog-message-reject' ).text()
 		};
