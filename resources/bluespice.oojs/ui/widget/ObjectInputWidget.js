@@ -1,4 +1,4 @@
-( function ( mw, bs, $, document ) {
+( function ( mw, bs, $ ) {
 	bs.ui.widget.ObjectInputWidget = function ( cfg ) {
 		this.inputs = cfg.inputs || {};
 		this.values = cfg.values || {};
@@ -73,9 +73,9 @@
 			return dfd.resolve();
 		}
 		const current = inputs.shift();
-		current.getValidity().done( function () {
+		current.getValidity().done( () => {
 			this.doCheckValidity( inputs, dfd );
-		}.bind( this ) ).fail( function () {
+		} ).fail( () => {
 			current.setValidityFlag( false );
 			dfd.reject();
 		} );
@@ -104,7 +104,7 @@
 			if ( !this.widgets.hasOwnProperty( key ) ) {
 				continue;
 			}
-			if ( $.type( value ) === 'object' && value.hasOwnProperty( key ) ) {
+			if ( $.type( value ) === 'object' && value.hasOwnProperty( key ) ) { // eslint-disable-line no-jquery/no-type
 				this.setWidgetValue( this.widgets[ key ], value[ key ] );
 			} else {
 				this.setWidgetValue( this.widgets[ key ], '' );
@@ -148,4 +148,4 @@
 		return value;
 	};
 
-}( mediaWiki, blueSpice, jQuery, undefined ) );
+}( mediaWiki, blueSpice, jQuery ) );

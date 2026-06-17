@@ -38,7 +38,7 @@ bs.ui.widget.StoreApiBoundComboBoxInput.prototype.getLookupRequest = function ()
 		action: this.apiAction,
 		query: value
 	} )
-		.done( function ( response, jqXHR ) {
+		.done( ( response ) => {
 			deferred.resolve( response.results );
 		} );
 

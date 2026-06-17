@@ -1,8 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 /*
  * Implementation for bs.api
  */
-
-( function ( mw, bs, $, undefined ) {
+( function ( mw, bs, $ ) {
 
 	/**
 	 * e.g. bs.api.tasks.execSilent(...).done(...);
@@ -15,11 +15,11 @@
 	 */
 	function _execTaskSilent( module, task, data, cfg ) {
 		cfg = cfg || {};
-		cfg = $.extend( {
-			success: function ( response, module, task, $dfd, cfg ) {
+		cfg = Object.assign( {
+			success: function ( response, module, task, $dfd, cfg ) { // eslint-disable-line no-shadow, no-unused-vars
 				$dfd.resolve( response );
 			},
-			failure: function ( response, module, task, $dfd, cfg ) {
+			failure: function ( response, module, task, $dfd, cfg ) { // eslint-disable-line no-shadow, no-unused-vars
 				$dfd.resolve( response );
 			},
 			loadingIndicator: false
@@ -43,7 +43,7 @@
 	 */
 	function _execTask( module, task, data, cfg ) {
 		cfg = cfg || {};
-		cfg = $.extend( {
+		cfg = Object.assign( {
 			token: 'csrf',
 			context: {},
 			success: _msgSuccess,
@@ -62,13 +62,13 @@
 			task: task,
 			taskData: JSON.stringify( data ),
 			context: JSON.stringify(
-				$.extend(
+				$.extend( // eslint-disable-line no-jquery/no-extend
 					_getContext(),
 					cfg.context
 				)
 			)
 		} )
-			.done( function ( response ) {
+			.done( ( response ) => {
 				if ( cfg.loadingIndicator ) {
 					bs.loadIndicator.popPending();
 				}
@@ -78,7 +78,7 @@
 					cfg.failure( response, module, task, $dfd, cfg );
 				}
 			} )
-			.fail( function ( code, result ) { // Server error like FATAL
+			.fail( ( code, result ) => { // Server error like FATAL
 				if ( cfg.loadingIndicator ) {
 					bs.loadIndicator.popPending();
 				}
@@ -108,7 +108,7 @@
 	 */
 	function _getStoreData( module, cfg ) {
 		cfg = cfg || {};
-		cfg = $.extend( {
+		cfg = Object.assign( {
 			token: 'csrf',
 			context: {},
 			loadingIndicator: true
@@ -123,19 +123,19 @@
 		api.postWithToken( cfg.token, {
 			action: 'bs-' + module + '-store',
 			context: JSON.stringify(
-				$.extend(
+				$.extend( // eslint-disable-line no-jquery/no-extend
 					_getContext(),
 					cfg.context
 				)
 			)
 		} )
-			.done( function ( response ) {
+			.done( ( response ) => {
 				if ( cfg.loadingIndicator ) {
 					bs.loadIndicator.popPending();
 				}
 				$dfd.resolve( response );
 			} )
-			.fail( function ( code, errResp ) { // Server error like FATAL
+			.fail( ( code, errResp ) => { // Server error like FATAL
 				if ( cfg.loadingIndicator ) {
 					bs.loadIndicator.popPending();
 				}
@@ -173,26 +173,26 @@
 			func: func,
 			name: value,
 			context: JSON.stringify(
-				$.extend(
+				$.extend( // eslint-disable-line no-jquery/no-extend
 					_getContext(),
 					context
 				)
 			)
-		} ).done( function ( response ) {
+		} ).done( ( response ) => {
 			if ( response.success && response.hasOwnProperty( 'payload' ) ) {
 				dfd.resolve( response.payload );
 				return;
 			}
 			const error = response.hasOwnProperty( 'error' ) ? response.error : '';
 			dfd.reject( error );
-		} ).fail( function ( error ) {
+		} ).fail( ( error ) => {
 			dfd.reject( error );
 		} );
 
 		return dfd.promise();
 	}
 
-	function _msgSuccess( response, module, task, $dfd, cfg ) {
+	function _msgSuccess( response, module, task, $dfd, cfg ) { // eslint-disable-line no-unused-vars
 		if ( response.message.length ) {
 			// Delay notification to ensure it is properly announced by screen readers
 			// The confirmation dialog may prevent announcement, so a short delay resolves this
@@ -205,7 +205,7 @@
 		}
 	}
 
-	function _msgFailure( response, module, task, $dfd, cfg ) {
+	function _msgFailure( response, module, task, $dfd, cfg ) { // eslint-disable-line no-unused-vars
 		let message = response.message || '';
 		if ( response.errors && response.errors.length > 0 ) {
 			for ( const i in response.errors ) {
@@ -251,7 +251,7 @@
 
 	function _makeTaskUrl( module, task, data, additionalParams ) {
 
-		const params = $.extend( {
+		const params = Object.assign( {
 			task: task,
 			taskData: JSON.stringify( data ),
 			token: mw.user.tokens.get( 'csrfToken' )
@@ -277,7 +277,7 @@
 			callParams = params || {};
 
 		return script + '?' + $.param(
-			$.extend( baseParams, callParams )
+			$.extend( baseParams, callParams ) // eslint-disable-line no-jquery/no-extend
 		);
 	}
 

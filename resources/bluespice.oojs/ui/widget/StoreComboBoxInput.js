@@ -112,8 +112,9 @@ bs.ui.widget.StoreComboBoxInput.prototype.findSelectedItem = function () {
 };
 
 /**
- * Returns the data object of the currently selected option or null if
- * noting is selected
+ * Returns the data object of the currently selected option or null if nothing is selected
+ *
+ * @return {Object|null}
  */
 bs.ui.widget.StoreComboBoxInput.prototype.getSelectedValue = function () {
 	if ( this.valueField === '' ) {

@@ -1,45 +1,33 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es6",
+		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
+	"parserOptions": {
+		"sourceType": "commonjs",
+		"ecmaVersion": 2017
+	},
 	"globals": {
 		"blueSpice": "readonly",
-		"bs": "readonly",
+		"bs": "writeable",
 		"BS": "readonly",
+		"BSPing": "writable",
+		"BsXHRResponse": "writable",
+		"BsXHRResponseStatus": "writable",
+		"Ext": "readonly",
 		"jQuery": "readonly",
-		"mediaWiki": "readonly"
+		"mediaWiki": "readonly",
+		"mwstake": "readonly",
+		"OOJSPlus": "readonly"
 	},
 	"rules": {
-		"no-implicit-globals": "warn",
-		"no-console": "warn",
-		"eqeqeq": "warn",
-		"no-useless-concat": "warn",
-		"camelcase": "warn",
-		"no-underscore-dangle": "warn",
-		"no-undef": "warn",
-		"no-unused-vars": "warn",
-		"no-shadow-restricted-names": "warn",
-		"no-extend-native": "warn",
-		"no-bitwise": "warn",
-		"no-global-assign": "warn",
-		"no-redeclare": "warn",
-		"no-prototype-builtins": "warn",
-		"mediawiki/msg-doc": "warn",
-		"no-shadow": "warn",
-		"unicorn/prefer-string-slice": "warn",
-		"no-var": "warn",
-		"no-jquery/no-global-selector": "warn",
-		"no-jquery/no-class-state": "warn",
-		"no-jquery/variable-pattern": "warn",
-		"no-jquery/no-each-util": "warn",
-		"no-jquery/no-in-array": "warn",
 		"max-len": "off",
+		"mediawiki/no-unlabeled-buttonwidget": "off",
+		"no-jquery/no-class-state": "off",
+		"no-jquery/no-global-selector": "off",
+		"no-prototype-builtins": "off",
 		"es-x/no-async-functions": "off"
-	},
-	"parserOptions": {
-		"ecmaVersion": 8
 	}
 }

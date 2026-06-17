@@ -2,12 +2,12 @@
  * Implementation for bs.extensionManager
  */
 
-( function ( mw, bs, $, undefined ) {
+( function ( mw, bs ) {
 
 	/**
 	 * ExtensionManager object
 	 *
-	 * @param paths
+	 * @param {Object} paths
 	 */
 	function ExtensionManager( paths ) {
 		/* Private Members */
@@ -20,4 +20,4 @@
 	bs.em = bs.extensionManager;
 	bs.em.paths.set( mw.config.get( 'bsExtensionManagerAssetsPaths' ) );
 
-}( mediaWiki, blueSpice, jQuery ) );
+}( mediaWiki, blueSpice ) );

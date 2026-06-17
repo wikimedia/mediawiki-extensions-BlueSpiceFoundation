@@ -1,8 +1,8 @@
 // Changes the dom so that the Testsystem is marked
-( function ( mw, $, bs, d, undefined ) {
-	$( function () {
+( function ( mw, $ ) {
+	$( () => {
 		const bsgTestSystem = mw.config.get( 'bsgTestSystem' ),
-			visualElement = $(
+			visualElement = $( // eslint-disable-line no-jquery/variable-pattern
 				'<div class="bs-testsystem"><div><h3>' +
 			bsgTestSystem.text +
 			'</h3><h4 class="icon-warning"></h4></div></div>'
@@ -14,7 +14,7 @@
 			'text-align': 'center'
 		} );
 
-		const navSection = $( '#bs-nav-sections' );
+		const navSection = $( '#bs-nav-sections' ); // eslint-disable-line no-jquery/variable-pattern
 		if ( navSection.length > 0 ) {
 			const navSectionTop = parseInt( navSection.css( 'top' ).replace( /px/g, '' ) ) + 80 + 'px';
 			navSection.css( { top: navSectionTop } );
@@ -22,4 +22,4 @@
 
 		$( '.bs-testsystem' ).children().css( { margin: 'auto 0' } );
 	} );
-}( mediaWiki, jQuery, blueSpice, document ) );
+}( mediaWiki, jQuery ) );

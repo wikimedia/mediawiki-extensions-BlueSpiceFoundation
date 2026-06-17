@@ -1,4 +1,4 @@
-( function ( mw, $, bs, d, undefined ) {
+( function ( mw, $, bs, d ) {
 
 	// We only want the code to run (and therefore the resources to be loaded)
 	// when a user actually hovers an appropriate element!
@@ -21,7 +21,7 @@
 		// the element a new tooltip instance (with all the associated DOM elements)
 		// would be created.
 		if ( !me.bsToolTip ) {
-			mw.loader.using( 'ext.bluespice.extjs' ).done( function () {
+			mw.loader.using( 'ext.bluespice.extjs' ).done( () => {
 				me.bsToolTip = Ext.create( 'Ext.tip.ToolTip', conf );
 				me.bsToolTip.show(); // We need to show the tooltip manually at
 				// the time we create it, because Ext.tip.Tooltip does not
