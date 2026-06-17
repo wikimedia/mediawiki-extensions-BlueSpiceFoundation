@@ -2,20 +2,22 @@
 	width: 116px;
 	text-align: center;
 }
-.bs-actions-filedownload a{
-	/*@embed*/
-	background-image: url("images/download-file_btn.png");
+
+.bs-actions-filedownload a {
+	/* @embed */
+	background-image: url( images/download-file_btn.png );
 	background-repeat: no-repeat;
 	width: 116px !important;
-	color: #FFFFFF !important;
+	color: #fff !important;
 	text-align: center;
 	padding-top: 1px;
 	vertical-align: middle;
 	text-decoration: none;
 }
-.bs-actions-filedownload a:hover{
-	/*@embed*/
-	background-image: url("images/download-file_btn-hover.png");
+
+.bs-actions-filedownload a:hover {
+	/* @embed */
+	background-image: url( images/download-file_btn-hover.png );
 	text-decoration: none;
 }
 
@@ -31,44 +33,51 @@
 }
 
 .bs-tooltip.top .tooltip-arrow {
-	/* override bootstrap styles*/
-	border-top-color: #E1E1E1 !important;
+	/* override bootstrap styles */
+	border-top-color: #e1e1e1 !important;
 }
+
 .bs-tooltip.right .tooltip-arrow {
-	/* override bootstrap styles*/
-	border-right-color: #E1E1E1 !important;
+	/* override bootstrap styles */
+	border-right-color: #e1e1e1 !important;
 }
+
 .bs-tooltip.bottom .tooltip-arrow {
-	/* override bootstrap styles*/
-	border-bottom-color: #E1E1E1 !important;
+	/* override bootstrap styles */
+	border-bottom-color: #e1e1e1 !important;
 }
+
 .bs-tooltip.left .tooltip-arrow {
-	/* override bootstrap styles*/
-	border-left-color: #E1E1E1 !important;
+	/* override bootstrap styles */
+	border-left-color: #e1e1e1 !important;
 }
+
 .bs-tooltip .tooltip-inner {
-	/* override bootstrap styles*/
-	background-color: #FFFFFF;
-	color: #000000;
+	/* override bootstrap styles */
+	background-color: #fff;
+	color: #000;
 	font-size: 0.8rem;
 	font-weight: bold;
-	border: none;
-	border-bottom: none;
+	border: none; /* stylelint-disable-line declaration-property-value-disallowed-list */
+	border-bottom: none; /* stylelint-disable-line declaration-property-value-disallowed-list */
 	border-radius: 0 0 3px 3px;
 }
+
 .bs-tooltip .tooltip-body {
-	background-color: #FFFFFF;
-	border: 1px solid #E1E1E1;
-	border-top: none;
+	background-color: #fff;
+	border: 1px solid #e1e1e1;
+	border-top: none; /* stylelint-disable-line declaration-property-value-disallowed-list */
 	border-radius: 0 0 3px 3px;
 }
+
 .bs-tooltip .tooltip-body > ul {
 	list-style: none;
 	margin: 0 !important;
 	padding: 0 8px !important;
 }
+
 .bs-tooltip .tooltip-body > ul * {
-	color: #000000 !important;
+	color: #000 !important;
 	font-size: 1em !important;
 	text-align: center;
 }
@@ -77,14 +86,15 @@
 	list-style: none;
 	margin: 0;
 }
+
 .btn44 {
-	height:44px!important;
-	width:44px!important;
+	height: 44px !important;
+	width: 44px !important;
 }
 
 .btn32.x-btn-icon-el {
-	height:32px!important;
-	width:32px!important;
+	height: 32px !important;
+	width: 32px !important;
 	background-position: 0 0;
 	background-repeat: repeat;
 }
@@ -99,77 +109,77 @@
 
 .bluebox,
 .box-blue {
-	border:1px solid #6093D2;
-	background-color:#AEC8E8;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #6093d2;
+	background-color: #aec8e8;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .beigebox,
 .box-beige {
-	border:1px solid #000;
-	background-color:#E0B978;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #000;
+	background-color: #e0b978;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .greenbox,
 .box-green {
-	border:1px solid #237E14;
-	background-color:#DEFEBB;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #237e14;
+	background-color: #defebb;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .yellowbox,
 .box-yellow {
-	border:1px solid #DDDD00;
-	background-color:#FFFFAA;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #dd0;
+	background-color: #ffa;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .redbox,
 .box-red {
-	border:1px solid #DD0000;
-	background-color:#FFAAAA;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #d00;
+	background-color: #faa;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .blueborder,
 .border-blue {
-	border:1px solid #AEC8E8;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #aec8e8;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .beigeborder,
 .border-beige {
-	border:1px solid #E0B978;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #e0b978;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .greenborder,
 .border-green {
-	border:1px solid #237E14;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #237e14;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .yellowborder,
 .border-yellow {
-	border:1px solid #DDDD00;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #dd0;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .redborder,
 .border-red {
-	border:1px solid #DD0000;
-	margin:0 0 10px;
-	padding:.3em .6em;
+	border: 1px solid #d00;
+	margin: 0 0 10px;
+	padding: 0.3em 0.6em;
 }
 
 .bs-tab-content {

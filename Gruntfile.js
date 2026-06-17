@@ -1,20 +1,30 @@
-module.exports = function ( grunt ) {
-	grunt.loadNpmTasks( 'grunt-eslint' );
-	grunt.loadNpmTasks( 'grunt-banana-checker' );
+'use strict';
 
-	var conf = grunt.file.readJSON( 'extension.json' );
+module.exports = function ( grunt ) {
+	const conf = grunt.file.readJSON( 'extension.json' );
+
+	grunt.loadNpmTasks( 'grunt-banana-checker' );
+	grunt.loadNpmTasks( 'grunt-eslint' );
+	grunt.loadNpmTasks( 'grunt-stylelint' );
+
 	grunt.initConfig( {
 		eslint: {
 			options: {
+				cache: true,
+				fix: grunt.option( 'fix' )
+			},
+			all: '.'
+		},
+		stylelint: {
+			options: {
 				cache: true
 			},
-			src: [
-				'**/*.{js,json}',
+			all: [
+				'**/*.{css,less}',
 				'!node_modules/**',
 				'!vendor/**'
 			]
 		},
-		// eslint-disable-next-line es-x/no-object-assign
 		banana: Object.assign(
 			conf.MessagesDirs,
 			{
@@ -25,6 +35,6 @@ module.exports = function ( grunt ) {
 		)
 	} );
 
-	grunt.registerTask( 'test', [ 'eslint', 'banana' ] );
+	grunt.registerTask( 'test', [ 'eslint', 'stylelint', 'banana' ] );
 	grunt.registerTask( 'default', 'test' );
 };

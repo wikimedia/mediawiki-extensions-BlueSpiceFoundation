@@ -1,4 +1,4 @@
-( function ( mw, bs, $, document ) {
+( function ( mw, bs ) {
 	bs.ui.widget.JsonArrayInputWidget = function ( cfg ) {
 		this.type = cfg.type || 'text';
 		bs.ui.widget.JsonArrayInputWidget.parent.call( this, cfg );
@@ -40,4 +40,4 @@
 		this.widget.setValue( JSON.stringify( val ) );
 	};
 
-}( mediaWiki, blueSpice, jQuery, undefined ) );
+}( mediaWiki, blueSpice ) );

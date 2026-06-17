@@ -1,11 +1,11 @@
-( function ( mw, bs, $, undefined ) {
+( function ( mw, bs, $ ) {
 
 	// Helper function to get a unique identifier for a notification
-	function _getNotificationId( message, options ) {
+	function _getNotificationId( message, options ) { // eslint-disable-line no-underscore-dangle
 		return JSON.stringify( { message: message, options: options } );
 	}
 
-	function _push( message, options ) {
+	function _push( message, options ) { // eslint-disable-line no-underscore-dangle
 		options = options || {};
 		const notifyInfo = localStorage.getItem( 'notify-info' );
 		let notifyArray = [];
@@ -17,7 +17,7 @@
 		localStorage.setItem( 'notify-info', JSON.stringify( notifyArray ) );
 	}
 
-	function _outputDeferredNotifications() {
+	function _outputDeferredNotifications() { // eslint-disable-line no-underscore-dangle
 		const notifyInfo = localStorage.getItem( 'notify-info' );
 		const serverSideNotifications = mw.config.get( 'bsgDeferredNotifications', [] );
 		let notifyArray = [];
@@ -51,14 +51,14 @@
 		localStorage.removeItem( 'notify-info' );
 
 		// Manage notification flag cookie
-		$( '#wpLoginAttempt' ).on( 'click', function () {
+		$( '#wpLoginAttempt' ).on( 'click', () => {
 			localStorage.removeItem( 'notificationFlagCookieSet' );
 		} );
 
 		// Used setTimeout() because mw.cookie.set needs sometime to set the cookie.
-		setTimeout( function () {
+		setTimeout( () => {
 			const cookieSet = localStorage.getItem( 'notificationFlagCookieSet' );
-			if ( cookieSet != 1 ) {
+			if ( cookieSet != 1 ) { // eslint-disable-line eqeqeq
 				mw.cookie.set( 'notificationFlag', 1 );
 			}
 			const cookieValue = mw.cookie.get( 'notificationFlag' );

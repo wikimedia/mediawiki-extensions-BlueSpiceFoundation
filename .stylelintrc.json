@@ -1,0 +1,13 @@
+{
+	"extends": [
+		"stylelint-config-wikimedia/support-basic",
+		"stylelint-config-wikimedia/mediawiki"
+	],
+	"rules": {
+		"declaration-no-important": null,
+		"font-family-no-missing-generic-family-keyword": null,
+		"no-descending-specificity": null,
+		"no-duplicate-selectors": null,
+		"selector-class-pattern": null
+	}
+}

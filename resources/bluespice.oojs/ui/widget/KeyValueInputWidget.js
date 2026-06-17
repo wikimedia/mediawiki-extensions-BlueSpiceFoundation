@@ -1,4 +1,4 @@
-( function ( mw, bs, $, document ) {
+( function ( mw, bs, $ ) {
 	bs.ui.widget.KeyValueInputWidget = function ( cfg ) {
 		bs.ui.widget.KeyValueInputWidget.parent.call( this, cfg );
 
@@ -46,7 +46,7 @@
 		let first = true;
 		for ( const key in values ) {
 			const value = values[ key ],
-				cfg = $.extend( {
+				cfg = Object.assign( {
 					keyValue: key,
 					valueValue: value
 				}, this.getDefaultLayoutConfig() );
@@ -157,7 +157,7 @@
 		return dfd.promise();
 	};
 
-	bs.ui.widget.KeyValueInputWidget.prototype.setValidityFlag = function ( valid ) {
+	bs.ui.widget.KeyValueInputWidget.prototype.setValidityFlag = function ( valid ) { // eslint-disable-line no-unused-vars
 		// NOOP since flags will be set already by internal validation
 	};
 
@@ -167,9 +167,9 @@
 		}
 
 		const current = inputs.shift();
-		current.getValidity().done( function () {
+		current.getValidity().done( () => {
 			this.doCheckValidity( inputs, dfd );
-		}.bind( this ) ).fail( function () {
+		} ).fail( () => {
 			current.setValidityFlag( false );
 			dfd.reject();
 		} );
@@ -246,18 +246,18 @@
 		} );
 	};
 
-	bs.ui.widget.KeyValueInputWidget.prototype.onAddClick = function ( e ) {
+	bs.ui.widget.KeyValueInputWidget.prototype.onAddClick = function ( e ) { // eslint-disable-line no-unused-vars
 		if ( !this.addForm ) {
 			return;
 		}
 		const keyValue = this.addForm.inputs.key.getValue();
 		let valueValue = this.addForm.inputs.value.getValue();
 
-		this.validateAddNewForm().done( function () {
+		this.validateAddNewForm().done( () => {
 			valueValue = valueValue || keyValue;
 
 			const deleteButton = this.getDeleteButtonWidget(),
-				layoutCfg = $.extend( {
+				layoutCfg = Object.assign( {
 					keyValue: keyValue,
 					valueValue: valueValue,
 					deleteWidget: deleteButton
@@ -269,7 +269,7 @@
 
 			this.emit( 'change', this );
 			this.resetAddForm();
-		}.bind( this ) );
+		} );
 	};
 
 	bs.ui.widget.KeyValueInputWidget.prototype.validateAddNewForm = function () {
@@ -343,4 +343,4 @@
 		return false;
 	};
 
-}( mediaWiki, blueSpice, jQuery, undefined ) );
+}( mediaWiki, blueSpice, jQuery ) );

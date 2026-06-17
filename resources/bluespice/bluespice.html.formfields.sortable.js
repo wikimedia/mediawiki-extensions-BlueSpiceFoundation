@@ -1,5 +1,5 @@
-( function ( mw, bs, $, undefined ) {
-	mw.loader.using( 'jquery.ui' ).done( function () {
+( function ( mw, bs, $ ) {
+	mw.loader.using( 'jquery.ui' ).done( () => {
 		$( '.multiselectsortlist' ).sortable( {
 			update: function () {
 				$( this ).next().children().remove(); // Remove all "option" tags from the hidden "select" element

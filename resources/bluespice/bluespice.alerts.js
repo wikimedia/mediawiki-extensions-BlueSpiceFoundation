@@ -1,4 +1,4 @@
-( function ( mw, $, bs, d, mwstake, undefined ) {
+( function ( mw, $, bs, d, mwstake ) {
 	bs.alerts = {
 		add: mwstake.alerts.add,
 		remove: mwstake.alerts.remove,
@@ -10,7 +10,7 @@
 		TYPE_DANGER: mwstake.alerts.TYPE_DANGER
 	};
 
-	mw.hook( 'mwstake.components.alertbanners.alert.dismiss' ).add( function ( $alert, sender ) {
+	mw.hook( 'mwstake.components.alertbanners.alert.dismiss' ).add( ( $alert, sender ) => {
 		mw.hook( 'bs.alert.dismiss' ).fire( $alert, sender );
 	} );
 }( mediaWiki, jQuery, blueSpice, document, mwstake ) );
