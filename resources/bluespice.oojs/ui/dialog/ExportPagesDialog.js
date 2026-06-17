@@ -132,7 +132,7 @@ bs.ui.dialog.ExportPagesDialog.prototype.getActionProcess = function ( action ) 
 				await this.getValidity();
 				const selected = this.grid.getSelectedRows();
 				const pages = [];
-				selected.forEach( function ( item ) {
+				selected.forEach( ( item ) => {
 					pages.push( item.dbkey );
 				} );
 				if ( pages.length === 0 ) {
@@ -146,7 +146,7 @@ bs.ui.dialog.ExportPagesDialog.prototype.getActionProcess = function ( action ) 
 					} );
 				}
 			} catch ( e ) {
-				console.error( e );
+				console.error( e ); // eslint-disable-line no-console
 				dfd.reject();
 			}
 			return dfd.promise();
@@ -200,9 +200,9 @@ bs.ui.dialog.ExportPagesDialog.prototype.getTargetPageContent = async function (
 		prop: 'revisions',
 		rvprop: 'content',
 		indexpageids: ''
-	} ).fail( function ( code, errResp ) {
+	} ).fail( ( code, errResp ) => {
 		dfd.reject( code, errResp );
-	} ).done( function ( response ) {
+	} ).done( ( response ) => {
 		const pageId = response.query.pageids[ 0 ],
 			pageInfo = response.query.pages[ pageId ];
 		if ( !pageInfo.missing && pageInfo.revisions && pageInfo.revisions[ 0 ] ) {
@@ -241,9 +241,9 @@ bs.ui.dialog.ExportPagesDialog.prototype.savePage = async function ( targetTitle
 		title: targetTitle.getPrefixedText(),
 		summary: mw.message( 'bs-export-search-summary-text' ).text(),
 		text: formatted
-	} ).done( function ( response ) {
+	} ).done( ( response ) => {
 		dfd.resolve( response );
-	} ).fail( function ( code, err ) {
+	} ).fail( ( code, err ) => {
 		dfd.reject( code, err );
 	} );
 

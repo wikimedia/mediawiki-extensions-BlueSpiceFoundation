@@ -1,18 +1,18 @@
 .bs-treenodeitem {
 	cursor: default;
 
-	& > div > .bs-icon:before {
+	& > div > .bs-icon::before {
 		margin-right: 0.2em;
 		font-family: 'fontawesome';
-		content: "\f192";
+		content: '\f192';
 	}
 
-	&[aria-haspopup="true"] {
+	&[ aria-haspopup='true' ] {
 		cursor: pointer;
 
-		& > div > .bs-icon{
-			&:before {
-				content: "\f138";
+		& > div > .bs-icon {
+			&::before {
+				content: '\f138';
 			}
 		}
 
@@ -20,9 +20,9 @@
 			display: none;
 		}
 
-		&[aria-expanded="true"]{
-			& > div > .bs-icon:before {
-				content: "\f13a";
+		&[ aria-expanded='true' ] {
+			& > div > .bs-icon::before {
+				content: '\f13a';
 			}
 
 			& > ul {

@@ -1,4 +1,4 @@
-( function ( mw, bs, $, undefined ) {
+( function ( mw, bs, $ ) {
 	/**
 	 * BlueSpice client-side config
 	 *
@@ -38,7 +38,7 @@
 	 */
 	BlueSpiceConfig.prototype.init = function () {
 		let parsedName;
-		const base = $.extend( {}, this.base );
+		const base = Object.assign( {}, this.base );
 
 		for ( const name in base ) {
 			if ( !base.hasOwnProperty( name ) ) {
@@ -91,11 +91,11 @@
 		}
 
 		bs.api.config.get( missing, context )
-			.done( function ( value ) {
-				finalValues = $.extend( finalValues, value );
-				this.vars = $.extend( this.vars, finalValues );
+			.done( ( value ) => {
+				finalValues = $.extend( finalValues, value ); // eslint-disable-line no-jquery/no-extend
+				this.vars = $.extend( this.vars, finalValues ); // eslint-disable-line no-jquery/no-extend
 				this.doResolve( dfd, finalValues );
-			}.bind( this ) ).fail( function ( error ) {
+			} ).fail( ( error ) => {
 				dfd.reject( error );
 			} );
 

@@ -1,4 +1,4 @@
-( function ( mw, $, d, undefined ) {
+( function ( mw, $, d, undefined ) { // eslint-disable-line no-shadow-restricted-names, no-unused-vars
 	$( d ).on( 'click', '.bs-treenodeitem', function ( e ) {
 		const $parentAnchor = $( e.target ).parentsUntil( '.bs-treenodeitem', 'a' );
 		if ( e.target.nodeName.toUpperCase() === 'A' || $parentAnchor.length !== 0 ) {
@@ -21,7 +21,7 @@
 	 * @param {jQuery} $node
 	 * @return {undefined}
 	 */
-	function _updatePathCookie( $node ) {
+	function _updatePathCookie( $node ) { // eslint-disable-line no-underscore-dangle
 		const $root = $node.parents( '.bs-tree-root' ).first(),
 			// A visible leaf is any .bs-treenodeitem that as a parent with no
 			// '.collaped' and is either self '.collapsed' or has no <ul>

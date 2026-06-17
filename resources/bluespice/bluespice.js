@@ -2,9 +2,9 @@
  * Core BlueSpice JavaScript Library
  */
 
-var bs = ( function ( mw, $, undefined ) {
+const bs = ( function ( mw ) {
 
-	const bs = {
+	const bs = { // eslint-disable-line no-shadow
 		// TODO: maybe own file "bluespice.ns.js"?
 			ns: {
 				filter: {
@@ -38,7 +38,7 @@ var bs = ( function ( mw, $, undefined ) {
 	}
 
 	bs.ns.filter.allBut = function ( excludeIds ) {
-		const namespaceIds = mw.config.get( 'wgNamespaceIds' ),
+		const namespaceIds = mw.config.get( 'wgNamespaceIds' ), // eslint-disable-line no-shadow
 			includeIds = [];
 		for ( const lcNamespaceName in namespaceIds ) {
 			const namespaceId = namespaceIds[ lcNamespaceName ];
@@ -52,12 +52,12 @@ var bs = ( function ( mw, $, undefined ) {
 
 	return bs;
 
-}( mediaWiki, jQuery ) );
+}( mediaWiki ) );
 
 // Attach to window and globally alias
 window.bs = window.blueSpice = bs;
 
-mw.hook( 'importOffice.collectionPrefix' ).add( function ( params ) {
+mw.hook( 'importOffice.collectionPrefix' ).add( ( params ) => {
 	const text = mw.config.get( 'bsgPageCollectionPrefix' );
 	params.prefix = text;
 } );

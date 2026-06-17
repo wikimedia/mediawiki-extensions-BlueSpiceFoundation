@@ -1,4 +1,4 @@
-( function ( mw, $, bs, d, undefined ) {
+( function ( mw, $, bs ) {
 	bs.LoadIndicator = function ( cfg ) {
 		cfg = cfg || {};
 		this.$element = cfg.$element;
@@ -50,10 +50,10 @@
 		if ( show ) {
 			clearTimeout( this.hideTimer );
 			this.hideTimer = null;
-			this.showTimer = setTimeout( function () {
+			this.showTimer = setTimeout( () => {
 				this.loadingStart = Date.now();
 				this.doSetLoading( true );
-			}.bind( this ), this.inTimeout );
+			}, this.inTimeout );
 		} else {
 			clearTimeout( this.showTimer );
 			this.showTimer = null;
@@ -65,9 +65,9 @@
 			if ( this.loadingStart ) {
 				hideTime = this.outTimeout - ( Date.now() - this.loadingStart );
 			}
-			this.hideTimer = setTimeout( function () {
+			this.hideTimer = setTimeout( () => {
 				this.doSetLoading( false );
-			}.bind( this ), hideTime );
+			}, hideTime );
 		}
 	};
 
@@ -87,11 +87,11 @@
 		return this.$element.hasClass( 'loading' );
 	};
 
-	$( function () {
+	$( () => {
 		// Call this on DOMReady, to make sure elements are there
 		bs.loadIndicator = new bs.LoadIndicator( {
 			$element: $( '.loader-indicator.global' )
 		} );
 	} );
 
-}( mediaWiki, jQuery, blueSpice, document ) );
+}( mediaWiki, jQuery, blueSpice ) );

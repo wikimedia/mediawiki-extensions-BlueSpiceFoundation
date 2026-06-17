@@ -1,4 +1,4 @@
-( function ( mw, bs, $, document ) {
+( function ( mw, bs ) {
 	bs.ui.widget.KeyObjectInputWidget = function ( cfg ) {
 		this.objectConfiguration = cfg.objectConfiguration || {};
 		bs.ui.widget.KeyObjectInputWidget.parent.call( this, cfg );
@@ -23,7 +23,7 @@
 		return value;
 	};
 
-	bs.ui.widget.KeyObjectInputWidget.prototype.getValueLayout = function ( valueInput, cfg ) {
+	bs.ui.widget.KeyObjectInputWidget.prototype.getValueLayout = function ( valueInput, cfg ) { // eslint-disable-line no-unused-vars
 		return new OO.ui.FieldsetLayout( {
 			items: valueInput.getLayouts(),
 			classes: [ 'keyObjectInputWidget-value-layout' ]
@@ -57,4 +57,4 @@
 			classes: [ 'bs-ooui-widget-keyValueInputWidget-value-input' ]
 		} );
 	};
-}( mediaWiki, blueSpice, jQuery, undefined ) );
+}( mediaWiki, blueSpice ) );
