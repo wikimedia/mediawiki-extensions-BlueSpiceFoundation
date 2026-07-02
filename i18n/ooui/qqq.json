@@ -32,5 +32,6 @@
 	"bs-pageexport-overwrite-label": "Label text for overwrite checkbox",
 	"bs-export-search-summary-text": "Text for summary message for page edit on export",
 	"bs-pagecollection-prefix": "Prefix for naming page collections created by exporting search results",
-	"bs-util-alert-title": "Title text of alert dialog"
+	"bs-util-alert-title": "Title text of alert dialog",
+	"bs-save-as-collection-dialog-title": "Title for the save as page collection dialog"
 }
