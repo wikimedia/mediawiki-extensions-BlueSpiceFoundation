@@ -17,7 +17,6 @@
 	"bs-ooui-btn-dismiss-alert-title": "Descartar",
 	"bs-ooui-key-value-input-widget-section-label": "Sección",
 	"bs-ooui-key-value-input-widget-add-section-label": "Engadir unha nova sección",
-	"bs-pagecollection-prefix": "Colección de páxinas",
 	"bs-ui-generic-save": "Gardar",
 	"bs-ui-generic-cancel": "Cancelar",
 	"bs-ui-generic-yes": "Si",
@@ -31,5 +30,6 @@
 	"bs-pageexport-list-format-link-label": "Ligazón",
 	"bs-pageexport-overwrite-label": "Sobrescribir",
 	"bs-export-search-summary-text": "Xerado por PageExport",
+	"bs-pagecollection-prefix": "Colección de páxinas",
 	"bs-util-alert-title": "Suxestión"
 }
