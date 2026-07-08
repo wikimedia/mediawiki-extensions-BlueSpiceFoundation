@@ -22,6 +22,7 @@
 	"bs-ui-generic-no": "아니요",
 	"bs-exportpages-dialog-title": "문서를 컬렉션으로 내보내기",
 	"bs-exportpages-success-text": "문서 [[$1|$2]](으)로 내보내짐",
+	"bs-save-as-collection-dialog-title": "문서 컬렉션으로써 저장",
 	"bs-ui-generic-close": "닫기",
 	"bs-pageexport-list-name-label": "목록 이름",
 	"bs-pageexport-list-format-label": "목록 형식",

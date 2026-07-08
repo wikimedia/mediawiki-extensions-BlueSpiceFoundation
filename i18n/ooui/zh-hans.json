@@ -3,6 +3,7 @@
 		"authors": [
 			"AYZ04",
 			"Gsdn",
+			"GuoPC",
 			"Liuxinyu970226",
 			"Peterxy",
 			"Peterxy12",
@@ -25,6 +26,7 @@
 	"bs-ui-generic-no": "否",
 	"bs-exportpages-dialog-title": "导出页面到收藏",
 	"bs-exportpages-success-text": "页面被导出到[[$1|$2]]",
+	"bs-save-as-collection-dialog-title": "另存为页面收藏",
 	"bs-ui-generic-close": "关闭",
 	"bs-pageexport-list-name-label": "清单名称",
 	"bs-pageexport-list-format-label": "清单格式",

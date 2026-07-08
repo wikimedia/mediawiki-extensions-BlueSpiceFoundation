@@ -23,6 +23,7 @@
 	"bs-ui-generic-no": "Non",
 	"bs-exportpages-dialog-title": "Exportar as páxinas a unha colección",
 	"bs-exportpages-success-text": "As páxinas exportáronse a «[[$1|$2]]»",
+	"bs-save-as-collection-dialog-title": "Gardar como colección de páxinas",
 	"bs-ui-generic-close": "Pechar",
 	"bs-pageexport-list-name-label": "Nome da lista",
 	"bs-pageexport-list-format-label": "Formato da lista",
