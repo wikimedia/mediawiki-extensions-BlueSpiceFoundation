@@ -1,7 +1,10 @@
 <?php
 
 class BsInvalidNamespaceException extends BsException {
+
+	/** @var array */
 	private $mListOfInvalidNamespaces = [];
+	/** @var array */
 	private $mListOfValidNamespaces = [];
 
 	/**
