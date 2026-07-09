@@ -74,8 +74,7 @@ class AutoExtensionHandler {
 	private function findFiles() {
 		$dir = dir( $this->path );
 
-		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures.AssignmentInControlStructures
-		while ( ( $entry = $dir->read() ) !== false ) {
+		while ( ( $entry = $dir->read() ) !== false ) { // phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition, Generic.Files.LineLength.TooLong
 			if ( $entry === '.' || $entry === '..' ) {
 				continue;
 			}

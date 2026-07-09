@@ -130,7 +130,7 @@ class BsStringHelper {
 	 * Source: http://stackoverflow.com/questions/1369936/check-to-see-if-a-string-is-serialized
 	 * Verifies if a variable is potentially serialized (stumbled upon this in wordpress)
 	 * -- seems to work
-	 * @param type $data
+	 * @param mixed $data
 	 * @return bool
 	 */
 	public static function isSerialized( $data ) {

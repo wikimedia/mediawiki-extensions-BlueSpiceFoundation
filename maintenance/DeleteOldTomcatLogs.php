@@ -41,8 +41,8 @@ function showHelp() {
  * @param array $options
  */
 function deleteOldTomcatLogs( $bDry, $options ) {
-	if ( $handle = opendir( $options['logdir'] ) ) {
-		while ( ( $file = readdir( $handle ) ) !== false ) {
+	if ( $handle = opendir( $options['logdir'] ) ) { // phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.Found
+		while ( ( $file = readdir( $handle ) ) !== false ) { // phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition, Generic.Files.LineLength.TooLong
 			if ( !empty( $file )
 				&& preg_match( '/.(\d{4})\-(\d{2})\-(\d{2}).log/', $file, $hits )
 				&& $hits
