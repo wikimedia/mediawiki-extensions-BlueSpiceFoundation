@@ -91,7 +91,7 @@ class PageHeaderBeforeContentFactory {
 	}
 
 	/**
-	 * @param type $key
+	 * @param mixed $key
 	 * @param IContextSource $context
 	 * @return string
 	 */

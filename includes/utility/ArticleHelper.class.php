@@ -70,7 +70,7 @@ class BsArticleHelper {
 	 * DEPRECATED
 	 * @deprecated since version 3.1 - Use \BlueSpice\Services::getInstance()
 	 * ->getService( 'BSUtilityFactory' )->getPagePropHelper( Title )->getPageProps instead
-	 * @param type $bDoLoad
+	 * @param mixed $bDoLoad
 	 * @return array
 	 */
 	public function getPageProps( $bDoLoad = false ) {

@@ -90,7 +90,7 @@ class MemcachedTool extends Maintenance {
 			}
 			fwrite( $sock, "stats\r\n" );
 			$stats = '';
-			while ( ( $line = fgets( $sock ) ) !== false ) {
+			while ( ( $line = fgets( $sock ) ) !== false ) { // phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition, Generic.Files.LineLength.TooLong
 				if ( trim( $line ) === 'END' ) {
 					break;
 				}

@@ -7,8 +7,8 @@ use BlueSpice\Utility\WikiTextTemplateTreeParser;
 class WikiTextTemplateTreeParserTest extends \PHPUnit\Framework\TestCase {
 
 	/**
-	 * @param type $wikiText
-	 * @param type $expectedArray
+	 * @param mixed $wikiText
+	 * @param mixed $expectedArray
 	 * @dataProvider provideGetArrayData
 	 * @covers \BlueSpice\Utility\WikiTextTemplateTreeParser::getArray
 	 */
