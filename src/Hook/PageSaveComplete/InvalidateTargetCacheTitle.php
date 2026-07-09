@@ -7,6 +7,9 @@ use BlueSpice\TargetCache\Title\Target;
 
 class InvalidateTargetCacheTitle extends PageSaveComplete {
 
+	/**
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		if ( !$this->wikiPage->getTitle()->exists() ) {
 			return true;
@@ -15,6 +18,9 @@ class InvalidateTargetCacheTitle extends PageSaveComplete {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->getServices()->getService( 'BSTargetCacheTitle' )->invalidateAll(
 			new Target( $this->wikiPage->getTitle() )

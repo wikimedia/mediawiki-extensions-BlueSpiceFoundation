@@ -1,11 +1,5 @@
 <?php
-// Last review MRG (21.09.10 10:42)
-// TODO MRG (21.09.10 10:42): Kommentar fehlt
-/**
- * This class provides functions for different format conversions.
- * @package BlueSpice_Core
- * @subpackage Utility
- */
+
 class BsFormatConverter {
 
 	/**

@@ -7,6 +7,9 @@ use BlueSpice\Tag\GenericHandler;
 
 class AddTags extends ParserFirstCallInit {
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$factory = $this->getServices()->getService( 'BSTagFactory' );
 		$tags = $factory->getAll();

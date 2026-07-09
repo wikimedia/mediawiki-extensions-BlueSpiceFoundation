@@ -8,6 +8,9 @@ use MediaWiki\Title\Title;
 
 class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 
+	/**
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		// this is a bit hacky but without the parser test for extension cite
 		// may fail, as it checks for the equality of the complete parserd html
@@ -32,6 +35,9 @@ class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$services = $this->getServices();
 		$user = $services->getUserFactory()->newFromName( $this->target->getText() );

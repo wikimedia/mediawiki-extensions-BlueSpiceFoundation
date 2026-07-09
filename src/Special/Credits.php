@@ -123,6 +123,9 @@ class Credits extends \BlueSpice\SpecialPage {
 		return $translators;
 	}
 
+	/**
+	 * @return array
+	 */
 	protected function generateTranslatorsList() {
 		$aPaths = [
 			$this->getConfig()->get( 'ExtensionDirectory' ),
