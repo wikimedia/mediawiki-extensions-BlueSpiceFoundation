@@ -43,6 +43,10 @@ class ConfirmUserEMail extends Maintenance {
 		$this->displayResult( $aUserStore );
 	}
 
+	/**
+	 * @param string $sGivenUser
+	 * @return array
+	 */
 	private function getUser( $sGivenUser ) {
 		if ( $sGivenUser != "-1" ) {
 			if ( !ctype_digit( $sGivenUser ) ) {
@@ -78,6 +82,12 @@ class ConfirmUserEMail extends Maintenance {
 		return $aUser;
 	}
 
+	/**
+	 * @param array $aUserStore
+	 * @param bool $bExecute
+	 * @param bool $bForce
+	 * @return array
+	 */
 	private function confirmUser( $aUserStore, $bExecute = false, $bForce = false ) {
 		$dbw = $this->getDB( DB_PRIMARY );
 
@@ -107,6 +117,9 @@ class ConfirmUserEMail extends Maintenance {
 		return $aUserStore;
 	}
 
+	/**
+	 * @param array $aUserStore
+	 */
 	private function displayResult( $aUserStore ) {
 		foreach ( $aUserStore as $aUser ) {
 			$this->output( $aUser["name"] . ": " . $aUser["value"] . $aUser["setvalue"] . "\n" );

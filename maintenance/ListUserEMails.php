@@ -42,6 +42,9 @@ class ListUserEmails extends BSMaintenance {
 		$this->output( implode( $sDelimiter, $aUserMails ) );
 	}
 
+	/**
+	 * @return array
+	 */
 	private function getUserData() {
 		$dbr = $this->getDB( DB_REPLICA );
 		$rRes = $dbr->select(
