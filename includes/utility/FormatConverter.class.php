@@ -1,6 +1,6 @@
 <?php
 
-class BsFormatConverter {
+class BsFormatConverter { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/**
 	 * DEPRECATED

@@ -1,7 +1,7 @@
 <?php
 require_once 'BSMaintenance.php';
 
-class BSPimpUnitTestResultsForJenkins extends BSMaintenance {
+class BSPimpUnitTestResultsForJenkins extends BSMaintenance { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch, Generic.Files.LineLength.TooLong
 	public function __construct() {
 		parent::__construct();
 

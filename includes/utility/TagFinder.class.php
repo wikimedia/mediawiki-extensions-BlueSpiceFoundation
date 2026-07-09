@@ -10,7 +10,7 @@
 use UtfNormal\Validator;
 use Wikimedia\AtEase\AtEase;
 
-class BsTagFinder {
+class BsTagFinder { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/**
 	 * Searches s string for occurence of given tags and returns array of tags with some meta

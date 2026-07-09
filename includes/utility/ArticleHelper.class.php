@@ -3,7 +3,7 @@
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
-class BsArticleHelper {
+class BsArticleHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/** @var Title */
 	protected $oTitle = null;
