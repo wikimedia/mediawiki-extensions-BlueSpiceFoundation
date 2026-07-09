@@ -38,7 +38,7 @@ abstract class SecondaryDataUpdate implements ISecondaryDataUpdate {
 	/**
 	 * @param Title $title
 	 * @param WikiPage $wikiPage
-	 * @param type $content
+	 * @param mixed $content
 	 * @return Status
 	 */
 	abstract protected function doRun( Title $title, WikiPage $wikiPage, Content $content );

@@ -90,8 +90,8 @@ abstract class PageSaveComplete extends Hook {
 	}
 
 	/**
-	 * @param type $context
-	 * @param type $config
+	 * @param mixed $context
+	 * @param mixed $config
 	 * @param WikiPage $wikiPage
 	 * @param UserIdentity $user
 	 * @param string $summary
