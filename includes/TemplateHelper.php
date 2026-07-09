@@ -30,7 +30,7 @@ use MediaWiki\Registration\ExtensionRegistry;
 /**
  * @package BlueSpiceFoundation
  */
-class BSTemplateHelper {
+class BSTemplateHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/** @var string */
 	protected static $sTemplatePath = 'resources/templates';

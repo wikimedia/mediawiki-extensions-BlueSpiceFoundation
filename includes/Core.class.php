@@ -40,7 +40,7 @@ use MediaWiki\Title\Title;
  * The BsCore
  * @deprecated since version 3.1.0 - Fully deprecated now, will be removed soon
  */
-class BsCore {
+class BsCore { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/**
 	 * an array of adapter instances

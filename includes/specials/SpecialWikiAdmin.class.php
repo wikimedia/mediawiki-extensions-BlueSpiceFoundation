@@ -1,6 +1,6 @@
 <?php
 
-class SpecialWikiAdmin extends \BlueSpice\SpecialPage {
+class SpecialWikiAdmin extends \BlueSpice\SpecialPage { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	public function __construct() {
 		parent::__construct( 'WikiAdmin', '', false );
