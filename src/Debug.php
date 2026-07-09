@@ -4,6 +4,7 @@ namespace BlueSpice;
 
 class Debug {
 
+	/** @var bool */
 	public static $logEnabled = true;
 
 	/**

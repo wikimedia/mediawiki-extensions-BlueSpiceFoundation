@@ -16,7 +16,9 @@ class GroupHelperTest extends TestCase {
 	 * @var string[]
 	 */
 	public static $allGroups = [ 'sysop', 'bureaucrat', 'bot', 'editor', 'my-reviewer' ];
+	/** @var array */
 	public static $additionalGroups = [ 'my-reviewer' => [] ];
+	/** @var array */
 	public static $groupTypes = [
 		'*'                => 'implicit',
 		'user'             => 'implicit',

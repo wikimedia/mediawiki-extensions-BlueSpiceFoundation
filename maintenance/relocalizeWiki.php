@@ -10,14 +10,24 @@ require_once 'BSMaintenance.php';
 echo "Relocalize Wiki...\n";
 
 class RelocalizeWiki extends Maintenance {
+
+	/** @var bool */
 	public $bDryRun = false;
+	/** @var array */
 	public $aFromNs = [];
+	/** @var array */
 	public $aToNs = [];
+	/** @var int */
 	public $iCount = 0;
+	/** @var int */
 	public $iPregCount = 0;
+	/** @var bool */
 	public $bEdited = false;
+	/** @var string */
 	public $sOutput = '';
+	/** @var array */
 	public $aNothingReplaced = [];
+	/** @var array */
 	public $aSpecialFrom = [];
 
 	public function __construct() {
