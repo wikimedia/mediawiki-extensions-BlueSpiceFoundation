@@ -77,7 +77,7 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	 * @param string $val
 	 * @return string
 	 */
-	protected function render_imagesrc( $val ) {
+	protected function render_imagesrc( $val ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		return $this->services->getService( 'MWStake.DynamicFileDispatcher.Factory' )->getUrl(
 			'groupimage',
 			[
