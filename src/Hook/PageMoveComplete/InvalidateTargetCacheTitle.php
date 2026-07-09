@@ -8,6 +8,9 @@ use MediaWiki\Title\Title;
 
 class InvalidateTargetCacheTitle extends PageMoveComplete {
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$this->getServices()->getService( 'BSTargetCacheTitle' )->invalidateAll(
 			new Target( Title::newFromLinkTarget( $this->old ) )

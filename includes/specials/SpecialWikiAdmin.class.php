@@ -1,17 +1,5 @@
 <?php
 
-/**
- * Special page for WikiAdmin of BlueSpice (MediaWiki)
- *
- * Part of BlueSpice MediaWiki
- *
- * @author     Daniel Vogel
- * @package    BlueSpiceFoundation
- * @subpackage WikiAdmin
- * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
- * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
- * @filesource
- */
 class SpecialWikiAdmin extends \BlueSpice\SpecialPage {
 
 	public function __construct() {

@@ -64,6 +64,9 @@ class BSRemoteAPIBase extends BSMaintenance {
 		$this->getAPIEditToken();
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function doAPILogin() {
 		$options = [
 			'method' => 'POST',

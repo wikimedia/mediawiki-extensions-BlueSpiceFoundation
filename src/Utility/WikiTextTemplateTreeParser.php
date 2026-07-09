@@ -46,6 +46,9 @@ class WikiTextTemplateTreeParser {
 		return $this->result;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function currentWikiTextContainsLeafTemplates() {
 		return preg_match( "/{{([^{]*?)}}/", $this->currentWikiText )
 			!== 0;

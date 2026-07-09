@@ -6,6 +6,9 @@ use MediaWiki\Title\Title;
 
 class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 
+	/**
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		// this is a bit hacky but without the parser test for extension cite
 		// may fail, as it checks for the equality of the complete parserd html
@@ -27,6 +30,9 @@ class AddDataTitle extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 		return false;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
 		// We add the original title to a link. This may be the same content as
 		// "title" attribute, but it doesn't have to. I.e. in red links

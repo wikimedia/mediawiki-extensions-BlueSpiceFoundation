@@ -1,10 +1,5 @@
 <?php
 // phpcs:ignoreFile
-/**
- * This class provides the rendered content of different kinds of pages, including SpecialPage, CategoryPage, ImagePage and Article.
- * @package BlueSpice_AdapterMW
- * @subpackage Utility
- */
 
 use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;

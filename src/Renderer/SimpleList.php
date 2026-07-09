@@ -30,6 +30,9 @@ class SimpleList extends \BlueSpice\Renderer {
 		}
 	}
 
+	/**
+	 * @return string
+	 */
 	public function render() {
 		$content = '';
 		$content .= $this->getOpenTag();
@@ -38,6 +41,9 @@ class SimpleList extends \BlueSpice\Renderer {
 		return $content;
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function makeTagContent() {
 		$content = '';
 		foreach ( $this->args[static::PARAM_ITEMS] as $item ) {
