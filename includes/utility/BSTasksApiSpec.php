@@ -1,8 +1,11 @@
 <?php
 
 class BSTasksApiSpec {
+
+	/** @var array */
 	protected $aInitialConfig = [];
 
+	/** @var array */
 	protected $aTaskNames = [];
 
 	/**

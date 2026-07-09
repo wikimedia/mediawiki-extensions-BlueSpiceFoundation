@@ -35,6 +35,7 @@ class ExtensionFactory {
 	 */
 	protected $extensions = [];
 
+	/** @var bool */
 	protected $allExtensionsLoaded = false;
 
 	/**

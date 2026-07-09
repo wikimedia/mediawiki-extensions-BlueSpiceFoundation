@@ -3,8 +3,11 @@
 namespace BlueSpice\Html\OOUI;
 
 trait ClippableElement {
+
+	/** @var \OOUI\Element */
 	protected $clippable;
 
+	/** @var \OOUI\Element */
 	protected $clippableContainer;
 
 	/**

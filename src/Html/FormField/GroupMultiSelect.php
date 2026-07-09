@@ -9,6 +9,7 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 
 	public const PARAM_BLACKLIST = 'blacklist';
 
+	/** @var array */
 	protected $groups;
 
 	/**

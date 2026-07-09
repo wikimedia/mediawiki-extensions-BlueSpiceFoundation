@@ -33,6 +33,7 @@
  */
 class BsException extends Exception {
 
+	/** @var string */
 	protected $sMessage = '';
 
 	/**

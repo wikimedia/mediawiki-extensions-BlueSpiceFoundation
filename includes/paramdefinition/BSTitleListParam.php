@@ -30,7 +30,10 @@
  * @package BlueSpice_Foundation
  */
 class BSTitleListParam extends \ParamProcessor\ParamDefinition {
+
+	/** @var string */
 	protected $delimiter = '|';
+	/** @var BSTitleValidator|null */
 	protected $validator = null;
 
 	protected function postConstruct() {

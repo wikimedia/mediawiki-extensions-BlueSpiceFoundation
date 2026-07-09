@@ -3,15 +3,24 @@
 namespace BlueSpice\Html\OOUI;
 
 trait FloatableElement {
+
+	/** @var \OOUI\Element */
 	protected $floatable;
+	/** @var \OOUI\Element */
 	protected $floatableContainer;
+	/** @var \OOUI\Element */
 	protected $floatableWindow;
 
+	/** @var bool */
 	protected $hideWhenOutOfView;
+	/** @var string */
 	protected $verticalPosition;
+	/** @var string */
 	protected $horizontalPosition;
 
+	/** @var array */
 	protected $validVerticalPositions = [ 'below', 'above', 'top', 'bottom', 'center' ];
+	/** @var array */
 	protected $validHorizontalPositions = [ 'before', 'after', 'start', 'end', 'center' ];
 
 	/**

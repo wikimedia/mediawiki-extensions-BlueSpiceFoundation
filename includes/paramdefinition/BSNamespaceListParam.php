@@ -30,7 +30,10 @@
  * @package BlueSpice_Foundation
  */
 class BSNamespaceListParam extends \ParamProcessor\ParamDefinition {
+
+	/** @var string */
 	protected $delimiter = '|';
+	/** @var BSNamespaceValidator|null */
 	protected $validator = null;
 
 	protected function postConstruct() {

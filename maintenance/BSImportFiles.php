@@ -8,6 +8,7 @@ use MediaWiki\Title\Title;
 
 class BSImportFiles extends BSBatchFileProcessorBase {
 
+	/** @var string */
 	protected $sBasePath = '';
 
 	public function __construct() {

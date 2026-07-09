@@ -14,8 +14,11 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @covers \BSApiFileBackendStore
  */
 class BSApiFileBackendStoreTest extends BSApiExtJSStoreTestBase {
+
+	/** @var array */
 	protected $filenames;
 
+	/** @var int */
 	protected $iFixtureTotal = 3;
 
 	protected function setUp(): void {

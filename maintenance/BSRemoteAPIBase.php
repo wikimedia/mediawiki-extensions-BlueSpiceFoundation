@@ -30,13 +30,21 @@ class BSRemoteAPIBase extends BSMaintenance {
 		);
 	}
 
+	/** @var string */
 	protected $apiUrl = '';
+	/** @var string */
 	protected $username = '';
+	/** @var string */
 	protected $password = '';
+	/** @var string */
 	protected $config = '';
+	/** @var array|null */
 	protected $configArray = null;
+	/** @var CookieJar|null */
 	protected $cookieJar = null;
+	/** @var string|null */
 	protected $token = null;
+	/** @var string|null */
 	protected $edittoken = null;
 
 	public function execute() {

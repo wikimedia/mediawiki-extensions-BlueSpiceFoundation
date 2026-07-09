@@ -37,8 +37,9 @@ use MediaWiki\MediaWikiServices;
  * \BlueSpice\TemplateRenderer instead
  */
 class ViewBaseElement {
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected static $_prAutoId = 0;
+
+	/** @var int */
+	protected static $_prAutoId = 0; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 
 	/**
 	 * Return an autoincremented number to use as element id.
@@ -48,22 +49,23 @@ class ViewBaseElement {
 		return ++self::$_prAutoId;
 	}
 
-	// TODO MRG20100816: Bitte kurzen Kommentar zum Zweck der Variablen
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected $_mAutoElement = 'div';
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected $_mData = [];
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected $_mId = null;
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected $_mItems = [];
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected $_mTemplate = '';
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected $_mAutoWrap = false;
-	// phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-	protected $_mPresentDataset = null;
+	/** @var string */
+	protected $_mAutoElement = 'div'; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	/** @var array */
+	protected $_mData = []; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	/** @var string|null */
+	protected $_mId = null; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	/** @var array */
+	protected $_mItems = []; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	/** @var string */
+	protected $_mTemplate = ''; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	/** @var bool */
+	protected $_mAutoWrap = false; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	/** @var mixed */
+	protected $_mPresentDataset = null; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
+	/** @var mixed */
 	protected $mI18N = null;
+	/** @var array */
 	protected $mOptions = [];
 
 	/**

@@ -8,6 +8,7 @@ use MediaWiki\MediaWikiServices;
 
 class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 
+	/** @var array */
 	protected $oldData = [];
 
 	protected function readOldData() {
@@ -28,6 +29,7 @@ class BSMigrateUserProperties extends LoggedUpdateMaintenance {
 		}
 	}
 
+	/** @var array */
 	protected $newData = [];
 
 	protected function convertData() {

@@ -16,6 +16,8 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @covers \BSApiInterwikiStore
  */
 class BSApiInterwikiStoreTest extends BSApiExtJSStoreTestBase {
+
+	/** @var int */
 	protected $iFixtureTotal = 3;
 
 	protected function getStoreSchema() {
