@@ -8,7 +8,6 @@ use MediaWiki\Parser\Sanitizer;
 class AddVersion extends ResourceLoaderGetConfigVars {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {
@@ -20,7 +19,6 @@ class AddVersion extends ResourceLoaderGetConfigVars {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {

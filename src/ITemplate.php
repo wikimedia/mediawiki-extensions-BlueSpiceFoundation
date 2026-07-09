@@ -10,7 +10,6 @@ namespace BlueSpice;
 
 interface ITemplate {
 	/**
-	 *
 	 * @param array $args
 	 * @param array $scopes
 	 * @return string rendered template

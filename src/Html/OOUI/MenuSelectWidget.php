@@ -18,7 +18,6 @@ class MenuSelectWidget extends SelectWidget {
 	protected $visible;
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -81,7 +80,6 @@ class MenuSelectWidget extends SelectWidget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -90,7 +88,6 @@ class MenuSelectWidget extends SelectWidget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

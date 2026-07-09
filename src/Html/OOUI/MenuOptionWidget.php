@@ -12,7 +12,6 @@ class MenuOptionWidget extends Widget {
 	protected $handle = [];
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -31,7 +30,6 @@ class MenuOptionWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param array $config
 	 * @return null
 	 */
@@ -40,7 +38,6 @@ class MenuOptionWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -49,7 +46,6 @@ class MenuOptionWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

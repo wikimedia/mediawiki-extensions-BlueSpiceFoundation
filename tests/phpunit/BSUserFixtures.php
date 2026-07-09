@@ -5,13 +5,11 @@ namespace BlueSpice\Tests;
 class BSUserFixtures {
 
 	/**
-	 *
 	 * @var array[]
 	 */
 	protected $fixtureData = [];
 
 	/**
-	 *
 	 * @param BSApiTestCase $testcase
 	 * @param BSFixturesProvider|null $provider
 	 */
@@ -29,7 +27,6 @@ class BSUserFixtures {
 	}
 
 	/**
-	 *
 	 * @return \TestUser[]
 	 */
 	public function makeTestUsers() {
@@ -47,7 +44,6 @@ class BSUserFixtures {
 	}
 
 	/**
-	 *
 	 * @param string $userName
 	 * @return string
 	 */

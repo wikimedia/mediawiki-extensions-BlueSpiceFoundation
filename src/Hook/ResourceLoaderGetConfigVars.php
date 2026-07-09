@@ -33,13 +33,11 @@ use MediaWiki\Context\IContextSource;
 abstract class ResourceLoaderGetConfigVars extends Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $vars = null;
 
 	/**
-	 *
 	 * @param array &$vars
 	 * @return bool
 	 */
@@ -54,7 +52,6 @@ abstract class ResourceLoaderGetConfigVars extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$vars

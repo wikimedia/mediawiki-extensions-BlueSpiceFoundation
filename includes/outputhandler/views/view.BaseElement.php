@@ -67,7 +67,6 @@ class ViewBaseElement {
 	protected $mOptions = [];
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
@@ -170,7 +169,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @param mixed $value
 	 * @return ViewBaseElement
@@ -197,7 +195,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @return mixed|false
 	 */
@@ -225,7 +222,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @param array $dataSet
 	 * @return ViewBaseElement
 	 */
@@ -305,7 +301,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @param array $dataSet
 	 * @return string
 	 */
@@ -334,7 +329,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @param array $matches
 	 * @return string
 	 */
@@ -365,7 +359,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getAutoElementOpener() {
@@ -378,7 +371,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getAutoElementCloser() {
@@ -389,7 +381,6 @@ class ViewBaseElement {
 	}
 
 	/**
-	 *
 	 * @param array $options
 	 * @param string $content
 	 * @return string

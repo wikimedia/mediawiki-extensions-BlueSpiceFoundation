@@ -6,7 +6,6 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
 
 /**
- *
  * Class BSApiExtJSStoreTestBase
  */
 abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {

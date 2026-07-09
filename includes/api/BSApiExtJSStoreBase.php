@@ -92,7 +92,6 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	protected $metaData = 'metadata';
 
 	/**
-	 *
 	 * @var LinkRenderer
 	 */
 	protected $oLinkRenderer = null;
@@ -147,7 +146,6 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getAllowedParams() {
@@ -320,7 +318,6 @@ abstract class BSApiExtJSStoreBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @param \stdClass $aDataSet
 	 * @return bool
 	 */

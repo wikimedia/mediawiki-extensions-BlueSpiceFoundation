@@ -24,7 +24,6 @@ class JsonLicenses extends Licenses {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJsonOutput() {
@@ -34,7 +33,6 @@ class JsonLicenses extends Licenses {
 	}
 
 	/**
-	 *
 	 * @param string $text
 	 * @param string $value
 	 * @param int $depth
@@ -50,7 +48,6 @@ class JsonLicenses extends Licenses {
 	}
 
 	/**
-	 *
 	 * @param array $tagset
 	 * @param int $depth
 	 */

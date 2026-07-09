@@ -8,7 +8,6 @@ use MediaWiki\Html\Html;
 class AddLoadingIndicator extends BeforePageDisplay {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {

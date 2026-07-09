@@ -48,7 +48,6 @@ use Wikimedia\Rdbms\DBError;
 abstract class BSApiTasksBase extends \BlueSpice\Api {
 
 	/**
-	 *
 	 * @var \Wikimedia\Rdbms\IDatabase
 	 */
 	protected $mPrimaryDB = null;
@@ -96,13 +95,11 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	protected $aReadTasks = [];
 
 	/**
-	 *
 	 * @var BSTasksApiSpec
 	 */
 	protected $oTasksSpec = null;
 
 	/**
-	 *
 	 * @var UtilityFactory
 	 */
 	protected $utilityFactory = null;
@@ -334,7 +331,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @return Title
 	 */
 	protected function makeDefaultLogTarget() {
@@ -422,7 +418,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @param string $sTask
 	 * @return mixed bool|null if requested task not in list
 	 * true if allowed
@@ -550,7 +545,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function makeTaskHelpMessages() {
@@ -584,7 +578,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @param string $sTaskName
 	 */
 	protected function returnTaskDataSchema( $sTaskName ) {
@@ -596,7 +589,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @param string $sTaskName
 	 */
 	protected function returnTaskDataExamples( $sTaskName ) {
@@ -650,7 +642,6 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	}
 
 	/**
-	 *
 	 * @param string $task
 	 * @param stdClass $taskData
 	 */

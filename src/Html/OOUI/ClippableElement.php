@@ -8,7 +8,6 @@ trait ClippableElement {
 	protected $clippableContainer;
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function initializeClippableElement( array $config = [] ) {
@@ -21,7 +20,6 @@ trait ClippableElement {
 	}
 
 	/**
-	 *
 	 * @param \OOUI\Element $clippableContainer
 	 */
 	protected function setClippableContainer( $clippableContainer ) {
@@ -29,7 +27,6 @@ trait ClippableElement {
 	}
 
 	/**
-	 *
 	 * @param \OOUI\Element $clippable
 	 */
 	protected function setClippableElement( $clippable ) {

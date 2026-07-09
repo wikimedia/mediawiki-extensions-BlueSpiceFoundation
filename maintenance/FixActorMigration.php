@@ -17,7 +17,6 @@ class FixActorMigration extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @var IDatabase
 	 */
 	private $db = null;

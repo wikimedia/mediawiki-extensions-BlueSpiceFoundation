@@ -139,7 +139,6 @@ class BSImportUsers extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param DOMElement $oNode
 	 * @param string $sChildNodeName
 	 * @return string

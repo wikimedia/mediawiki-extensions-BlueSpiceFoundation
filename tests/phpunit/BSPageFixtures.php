@@ -5,7 +5,6 @@ namespace BlueSpice\Tests;
 class BSPageFixtures {
 
 	/**
-	 *
 	 * @param BSApiTestCase $testcase
 	 * @param BSFixturesProvider|null $provider
 	 */

@@ -33,25 +33,21 @@ use MediaWiki\Context\IContextSource;
 abstract class WebResponseSetCookie extends Hook {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $name = '';
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $value = '';
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $expire = -1;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $options = [];

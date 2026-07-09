@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 class Logo extends StringSetting implements IOverwriteGlobal {
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getPaths() {
@@ -20,7 +19,6 @@ class Logo extends StringSetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getLabelMessageKey() {
@@ -28,7 +26,6 @@ class Logo extends StringSetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getHelpMessageKey() {
@@ -36,7 +33,6 @@ class Logo extends StringSetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getVariableName() {

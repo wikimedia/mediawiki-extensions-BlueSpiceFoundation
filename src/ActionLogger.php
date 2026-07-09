@@ -20,25 +20,21 @@ class ActionLogger {
 	public const OPT_DELETED = 'deleted';
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $type = '';
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $performer = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $target = null;
 
 	/**
-	 *
 	 * @param string $type
 	 * @param User $performer
 	 * @param Title $target
@@ -50,7 +46,6 @@ class ActionLogger {
 	}
 
 	/**
-	 *
 	 * @param string $action
 	 * @param array $params
 	 * @param array $options
@@ -107,7 +102,6 @@ class ActionLogger {
 	}
 
 	/**
-	 *
 	 * @param string $subtype
 	 * @return \ManualLogEntry
 	 */

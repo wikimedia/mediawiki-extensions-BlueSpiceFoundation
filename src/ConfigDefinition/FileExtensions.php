@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 class FileExtensions extends ArraySetting implements IOverwriteGlobal {
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getLabelMessageKey() {
@@ -13,7 +12,6 @@ class FileExtensions extends ArraySetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isRLConfigVar() {
@@ -21,7 +19,6 @@ class FileExtensions extends ArraySetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return \HTMLMultiSelectPlusAdd
 	 */
 	public function getHtmlFormField() {
@@ -29,7 +26,6 @@ class FileExtensions extends ArraySetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string|null
 	 */
 	public function getHelpMessageKey() {
@@ -37,7 +33,6 @@ class FileExtensions extends ArraySetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getGlobalName() {

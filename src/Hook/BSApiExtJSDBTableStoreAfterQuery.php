@@ -32,55 +32,46 @@ use MediaWiki\Context\IContextSource;
 
 abstract class BSApiExtJSDBTableStoreAfterQuery extends Hook {
 	/**
-	 *
 	 * @var \BSApiExtJSDBTableStoreBase
 	 */
 	protected $store = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $queryString = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $filters = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $tables = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $fields = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $conditions = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $options = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $joinOptions = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $dataItems = null;

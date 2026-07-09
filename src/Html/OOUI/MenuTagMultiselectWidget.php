@@ -11,7 +11,6 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 	protected $menuConfig;
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -65,7 +64,6 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -74,7 +72,6 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {
@@ -82,7 +79,6 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 	}
 
 	/**
-	 *
 	 * @param array $config
 	 * @return \BlueSpice\Html\OOUI\MenuSelectWidget
 	 */
@@ -91,7 +87,6 @@ class MenuTagMultiselectWidget extends TagMultiselectWidget {
 	}
 
 	/**
-	 *
 	 * @param array $options
 	 */
 	public function addOptions( $options ) {

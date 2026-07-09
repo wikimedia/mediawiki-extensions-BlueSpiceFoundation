@@ -10,13 +10,11 @@ class ConfigDefinitionFactory {
 	protected $configDefinitions = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var ExtensionAttributeBasedRegistry
 	 */
 	protected $registry = null;
@@ -31,7 +29,6 @@ class ConfigDefinitionFactory {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @return ConfigDefinition|false
 	 */
@@ -54,7 +51,6 @@ class ConfigDefinitionFactory {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getRegisteredDefinitions() {
@@ -62,7 +58,6 @@ class ConfigDefinitionFactory {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getConfigDefinitions() {

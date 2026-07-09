@@ -37,7 +37,6 @@ function showHelp() {
 }
 
 /**
- *
  * @param bool $bDry
  * @param array $options
  */

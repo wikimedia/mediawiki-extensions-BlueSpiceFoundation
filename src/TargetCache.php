@@ -9,37 +9,31 @@ use MediaWiki\Config\Config;
 abstract class TargetCache implements ITargetCache {
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var CacheHelper
 	 */
 	protected $cacheHelper = null;
 
 	/**
-	 *
 	 * @var ITargetCacheHandler[]
 	 */
 	protected $instances = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $type = '';
 
 	/**
-	 *
 	 * @var \BlueSpice\ExtensionAttributeBasedRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @param string $type
 	 * @param Config $config
 	 * @param CacheHelper $cacheHelper
@@ -51,7 +45,6 @@ abstract class TargetCache implements ITargetCache {
 	}
 
 	/**
-	 *
 	 * @return IRegistry
 	 */
 	protected function getRegistry() {
@@ -65,7 +58,6 @@ abstract class TargetCache implements ITargetCache {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @param ITarget $target
 	 * @return ITargetCacheHandler
@@ -89,7 +81,6 @@ abstract class TargetCache implements ITargetCache {
 	}
 
 	/**
-	 *
 	 * @param ITarget $target
 	 * @param string $action
 	 */

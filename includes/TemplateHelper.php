@@ -36,7 +36,6 @@ class BSTemplateHelper {
 	protected static $sFileExt = '.mustache';
 
 	/**
-	 *
 	 * @param string $sExtName
 	 * @param string $sFullPath
 	 * @return string

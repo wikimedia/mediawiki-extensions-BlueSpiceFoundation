@@ -11,13 +11,11 @@ use MediaWiki\Title\Title;
 class PagePropHelper {
 
 	/**
-	 *
 	 * @var MediaWikiServices
 	 */
 	protected $services;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
@@ -32,7 +30,6 @@ class PagePropHelper {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @param mixed|null $default
 	 * @return string|$default
@@ -49,7 +46,6 @@ class PagePropHelper {
 	}
 
 	/**
-	 *
 	 * @return \BlueSpice\TargetCacheHandler
 	 */
 	protected function getCache() {
@@ -60,7 +56,6 @@ class PagePropHelper {
 	}
 
 	/**
-	 *
 	 * @return array
 	 * @deprecated since 4.3 Use MediaWiki core `\PageProps` instead
 	 */

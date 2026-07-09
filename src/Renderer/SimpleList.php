@@ -11,7 +11,6 @@ class SimpleList extends \BlueSpice\Renderer {
 	public const PARAM_ITEMS = 'items';
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param Params $params
 	 * @param LinkRenderer|null $linkRenderer

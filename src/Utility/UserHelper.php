@@ -9,13 +9,11 @@ use MediaWiki\User\User;
 class UserHelper {
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @param User|null $user
 	 * @return UserHelper
 	 * @throws LogicException
@@ -32,7 +30,6 @@ class UserHelper {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getDisplayName() {

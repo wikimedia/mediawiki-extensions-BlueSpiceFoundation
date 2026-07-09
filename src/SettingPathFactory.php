@@ -7,19 +7,16 @@ use MediaWiki\Config\Config;
 class SettingPathFactory implements ISettingPaths {
 
 	/**
-	 *
 	 * @var IRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @param IRegistry $registry
 	 * @param Config $config
 	 */
@@ -29,7 +26,6 @@ class SettingPathFactory implements ISettingPaths {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @return string|false
 	 */

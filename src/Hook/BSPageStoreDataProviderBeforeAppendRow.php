@@ -35,19 +35,16 @@ use MediaWiki\Title\Title;
 
 abstract class BSPageStoreDataProviderBeforeAppendRow extends Hook {
 	/**
-	 *
 	 * @var PrimaryDataProvider
 	 */
 	protected $dataProvider = null;
 
 	/**
-	 *
 	 * @var Record
 	 */
 	protected $record = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;

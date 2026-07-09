@@ -7,7 +7,6 @@ require_once 'BSMaintenance.php';
 class BSExtractPageTitles extends BSMaintenance {
 
 	/**
-	 *
 	 * @var string[]
 	 */
 	private $titles = [];

@@ -38,13 +38,11 @@ use MediaWiki\User\User;
 abstract class UserLoadAfterLoadFromSession extends Hook {
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @param User $user
 	 * @return bool
 	 */
@@ -59,7 +57,6 @@ abstract class UserLoadAfterLoadFromSession extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param User $user

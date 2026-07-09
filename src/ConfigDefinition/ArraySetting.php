@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 abstract class ArraySetting extends \BlueSpice\ConfigDefinition {
 
 	/**
-	 *
 	 * @return \HTMLMultiSelectEx
 	 */
 	public function getHtmlFormField() {
@@ -13,7 +12,6 @@ abstract class ArraySetting extends \BlueSpice\ConfigDefinition {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function makeFormFieldParams() {
@@ -23,7 +21,6 @@ abstract class ArraySetting extends \BlueSpice\ConfigDefinition {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getOptions() {

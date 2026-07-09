@@ -67,7 +67,6 @@ class SetCategories extends WikiPageTask {
 	}
 
 	/**
-	 *
 	 * @param Title[] $array1
 	 * @param Title[] $array2
 	 * @return Title[]
@@ -84,7 +83,6 @@ class SetCategories extends WikiPageTask {
 	}
 
 	/**
-	 *
 	 * @param string $wikiText
 	 * @return CategoryLinksHelper
 	 */
@@ -94,7 +92,6 @@ class SetCategories extends WikiPageTask {
 	}
 
 	/**
-	 *
 	 * @return ParamDefinition[]
 	 */
 	public function getArgsDefinitions() {
@@ -116,7 +113,6 @@ class SetCategories extends WikiPageTask {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getTaskPermissions() {
@@ -124,7 +120,6 @@ class SetCategories extends WikiPageTask {
 	}
 
 	/**
-	 *
 	 * @param CategoryLinksHelper $helper
 	 * @param Title[] $categoryTitles
 	 * @return Title[]
@@ -137,7 +132,6 @@ class SetCategories extends WikiPageTask {
 	}
 
 	/**
-	 *
 	 * @param CategoryLinksHelper $helper
 	 * @param Title[] $categoryTitles
 	 * @return Title[]
@@ -150,7 +144,6 @@ class SetCategories extends WikiPageTask {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getSaveWikiPageSummary() {

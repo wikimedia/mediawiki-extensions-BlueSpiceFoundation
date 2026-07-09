@@ -34,13 +34,11 @@ use Skin;
 abstract class SiteNoticeAfter extends Hook {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $siteNotice = '';
 
 	/**
-	 *
 	 * @var Skin
 	 */
 	protected $skin = null;
@@ -62,7 +60,6 @@ abstract class SiteNoticeAfter extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string &$siteNotice

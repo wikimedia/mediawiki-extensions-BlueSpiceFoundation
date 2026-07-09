@@ -7,7 +7,6 @@ use BlueSpice\Utility\WikiTextLinksHelper\FileLinksHelper;
 class FileLinksHelperTest extends InternalLinksHelperTest {
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getExpected() {
@@ -15,7 +14,6 @@ class FileLinksHelperTest extends InternalLinksHelperTest {
 	}
 
 	/**
-	 *
 	 * @param string $wikitext
 	 * @return FileLinksHelper
 	 */

@@ -201,7 +201,6 @@ abstract class Store extends Api {
 	abstract protected function makeDataStore();
 
 	/**
-	 *
 	 * @return ReaderParams
 	 */
 	protected function getReaderParams() {

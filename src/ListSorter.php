@@ -8,13 +8,11 @@ class ListSorter {
 	public const DESC = 'DESC';
 
 	/**
-	 *
 	 * @var string
 	 */
 	private $direction = 'ASC';
 
 	/**
-	 *
 	 * @param array $listItems
 	 * @param string $direction
 	 * @return array

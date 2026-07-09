@@ -11,7 +11,6 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 	protected $allowAdditions = true;
 
 	/**
-	 *
 	 * @param mixed|false $value
 	 * @param array $alldata
 	 * @return bool
@@ -25,7 +24,6 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getOOUIAttributes() {
@@ -37,7 +35,6 @@ class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
 	}
 
 	/**
-	 *
 	 * @param mixed|false $value
 	 * @return string
 	 */

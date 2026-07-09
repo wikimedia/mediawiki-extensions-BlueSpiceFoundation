@@ -9,37 +9,31 @@ use MediaWiki\Context\IContextSource;
 abstract class PageHistoryLineEnding extends Hook {
 
 	/**
-	 *
 	 * @var \HistoryPager
 	 */
 	protected $history = null;
 
 	/**
-	 *
 	 * @var \stdClass
 	 */
 	protected $row = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $s = '';
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $classes = [];
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $attribs = [];
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \HistoryPager $history
@@ -59,7 +53,6 @@ abstract class PageHistoryLineEnding extends Hook {
 	}
 
 	/**
-	 *
 	 * @param \HistoryPager $history
 	 * @param \stdClass &$row
 	 * @param string &$s

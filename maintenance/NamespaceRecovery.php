@@ -43,7 +43,6 @@ function showHelp() {
 }
 
 /**
- *
  * @param bool $bDry
  * @param array $options
  */
@@ -75,7 +74,6 @@ function NSRecoveryController( $bDry, $options ) {
 }
 
 /**
- *
  * @param string $sTable
  * @param array $aConditions
  * @param array $aReturn
@@ -105,7 +103,6 @@ function getDataFromNSBackup( $sTable, $aConditions = [], $aReturn = [] ) {
 }
 
 /**
- *
  * @param array $aPages
  * @param array $aRevisions
  * @param array $aTexts

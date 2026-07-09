@@ -6,7 +6,6 @@ class BSTasksApiSpec {
 	protected $aTaskNames = [];
 
 	/**
-	 *
 	 * @param array $aTasks
 	 */
 	public function __construct( $aTasks ) {
@@ -15,7 +14,6 @@ class BSTasksApiSpec {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getTaskNames() {
@@ -23,7 +21,6 @@ class BSTasksApiSpec {
 	}
 
 	/**
-	 *
 	 * @param string $sTaskName
 	 * @return array the spec
 	 */
@@ -34,7 +31,6 @@ class BSTasksApiSpec {
 	}
 
 	/**
-	 *
 	 * @param string $sTaskName
 	 * @return array
 	 */
@@ -59,7 +55,6 @@ class BSTasksApiSpec {
 	}
 
 	/**
-	 *
 	 * @param string $sTaskName
 	 * @return array
 	 */
@@ -77,7 +72,6 @@ class BSTasksApiSpec {
 	}
 
 	/**
-	 *
 	 * @param string $sTaskName
 	 * @return array
 	 */
@@ -117,7 +111,6 @@ class BSTasksApiSpec {
 	}
 
 	/**
-	 *
 	 * @param strnig $sTaskName
 	 * @return array
 	 */

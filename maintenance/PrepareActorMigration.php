@@ -17,7 +17,6 @@ class PrepareActorMigration extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @var IDatabase
 	 */
 	private $db = null;

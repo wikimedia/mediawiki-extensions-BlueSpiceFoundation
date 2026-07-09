@@ -15,20 +15,15 @@ use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 class Config extends MultiConfig {
 
 	/**
-	 *
 	 * @var HashConfig
 	 */
 	protected $databaseConfig = null;
 
 	/**
-	 *
 	 * @var HashConfig
 	 */
 	protected $overrides = null;
 
-	/**
-	 *
-	 */
 	public function __construct() {
 		$this->databaseConfig = $this->makeDatabaseConfig();
 		$this->overrides = new GlobalVarConfig( 'bsgOverride' );
@@ -59,7 +54,6 @@ class Config extends MultiConfig {
 	}
 
 	/**
-	 *
 	 * @return HashConfig
 	 */
 	protected function makeDatabaseConfig() {
@@ -80,7 +74,6 @@ class Config extends MultiConfig {
 	}
 
 	/**
-	 *
 	 * @return Store
 	 */
 	protected function getStore() {
@@ -92,7 +85,6 @@ class Config extends MultiConfig {
 	}
 
 	/**
-	 *
 	 * @return HashConfig
 	 */
 	public function getOverrides() {

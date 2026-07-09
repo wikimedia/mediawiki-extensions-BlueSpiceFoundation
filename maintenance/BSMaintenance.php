@@ -8,7 +8,6 @@ require_once getenv( 'MW_INSTALL_PATH' ) !== false
 
 abstract class BSMaintenance extends Maintenance {
 	/**
-	 *
 	 * @var array
 	 */
 	protected $aOutputBuffer = [];

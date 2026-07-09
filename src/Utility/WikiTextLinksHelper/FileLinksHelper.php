@@ -7,7 +7,6 @@ use MediaWiki\Title\Title;
 class FileLinksHelper extends InternalLinksHelper {
 
 	/**
-	 *
 	 * @param string $fullMatch
 	 * @param string $leadingColon
 	 * @param string $titleText
@@ -32,7 +31,6 @@ class FileLinksHelper extends InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
@@ -48,7 +46,6 @@ class FileLinksHelper extends InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title $target
 	 * @param bool $removeAllOccurrences
 	 */

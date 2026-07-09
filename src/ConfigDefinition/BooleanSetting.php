@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 abstract class BooleanSetting extends \BlueSpice\ConfigDefinition {
 
 	/**
-	 *
 	 * @return \HTMLCheckFieldOverride
 	 */
 	public function getHtmlFormField() {
@@ -13,7 +12,6 @@ abstract class BooleanSetting extends \BlueSpice\ConfigDefinition {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function makeFormFieldParams() {

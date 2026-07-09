@@ -23,7 +23,6 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	protected $addContainer;
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -88,7 +87,6 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	}
 
 	/**
-	 *
 	 * @param array $config
 	 * @return null
 	 */
@@ -104,7 +102,6 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	}
 
 	/**
-	 *
 	 * @param array $values
 	 * @return KeyValueInputWidget
 	 */
@@ -233,7 +230,6 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -264,7 +260,6 @@ class KeyValueInputWidget extends \OOUI\Widget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

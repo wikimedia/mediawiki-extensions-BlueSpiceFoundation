@@ -14,7 +14,6 @@ class NamespaceMultiselect extends HTMLFormField {
 	public const OPTION_BLACKLIST = 'namespace-blacklist';
 
 	/**
-	 *
 	 * @param string $value
 	 * @return string
 	 */
@@ -42,7 +41,6 @@ class NamespaceMultiselect extends HTMLFormField {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getDefaultOptions() {
@@ -55,7 +53,6 @@ class NamespaceMultiselect extends HTMLFormField {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getClassString() {
@@ -63,7 +60,6 @@ class NamespaceMultiselect extends HTMLFormField {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getStoreData() {
@@ -124,7 +120,6 @@ class NamespaceMultiselect extends HTMLFormField {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getOptions() {

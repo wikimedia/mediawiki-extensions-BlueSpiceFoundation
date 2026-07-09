@@ -15,7 +15,6 @@ use MediaWiki\Utils\MWTimestamp;
 class Timestamp extends MWTimestamp {
 
 	/**
-	 *
 	 * @param Timestamp|null $relativeTo
 	 * @param User|null $user
 	 * @param int $numberOfDisplayedUnits optional default 2 If 2 the output
@@ -46,7 +45,6 @@ class Timestamp extends MWTimestamp {
 	}
 
 	/**
-	 *
 	 * @param Timestamp $ts
 	 * @param Timestamp $relativeTo
 	 * @param User $user
@@ -114,7 +112,6 @@ class Timestamp extends MWTimestamp {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getAvailableAgeStrings() {

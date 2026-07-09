@@ -36,37 +36,31 @@ use WikiPage;
 abstract class InitializeArticleMaybeRedirect extends Hook {
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var WebRequest
 	 */
 	protected $request = null;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $ignoreRedirect = null;
 
 	/**
-	 *
 	 * @var Title|string
 	 */
 	protected $target = '';
 
 	/**
-	 *
 	 * @var WikiPage
 	 */
 	protected $article = null;
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param WebRequest $request
 	 * @param bool &$ignoreRedirect
@@ -89,7 +83,6 @@ abstract class InitializeArticleMaybeRedirect extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title $title

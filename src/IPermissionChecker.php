@@ -8,7 +8,6 @@ use MediaWiki\User\User;
 interface IPermissionChecker {
 
 	/**
-	 *
 	 * @param User $user
 	 * @param type $permission
 	 * @param IContextSource|null $context

@@ -34,19 +34,16 @@ use MediaWiki\Title\Title;
 class BSTitleValidator extends \ValueValidators\TitleValidator {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $aNamespaceBlacklist = [];
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $isAllowedEmpty = false;
 
 	/**
-	 *
 	 * @param array $aNamespaceBlacklist
 	 */
 	public function setNamespaceBlacklist( $aNamespaceBlacklist ) {
@@ -54,7 +51,6 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 	}
 
 	/**
-	 *
 	 * @param bool $isAllowedEmpty
 	 */
 	public function setIsAllowedEmpty( $isAllowedEmpty = true ) {
@@ -62,7 +58,6 @@ class BSTitleValidator extends \ValueValidators\TitleValidator {
 	}
 
 	/**
-	 *
 	 * @param Title $oTitle
 	 */
 	public function doValidation( $oTitle ) {

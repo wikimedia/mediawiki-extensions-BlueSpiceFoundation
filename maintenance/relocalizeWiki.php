@@ -46,7 +46,6 @@ class RelocalizeWiki extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @param string $sLanguageCode
 	 * @return array
 	 */
@@ -179,7 +178,6 @@ class RelocalizeWiki extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @param string &$input
 	 * @return string
 	 */
@@ -216,7 +214,6 @@ class RelocalizeWiki extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @param string &$input
 	 * @return string
 	 */

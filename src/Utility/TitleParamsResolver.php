@@ -35,31 +35,26 @@ use MediaWiki\Title\Title;
 class TitleParamsResolver {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $params = [];
 
 	/**
-	 *
 	 * @var Title[]
 	 */
 	protected $titles = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $default = null;
 
 	/**
-	 *
 	 * @var RevisionLookup
 	 */
 	protected $revisionLookup = null;
 
 	/**
-	 *
 	 * @param array $params
 	 * @param Title[] $default
 	 * @param RevisionLookup|null $revisionLookup
@@ -74,7 +69,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @return Title[] all titles that could be found in the provided params
 	 */
 	public function resolve() {
@@ -89,7 +83,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @return Title[]
 	 */
 	protected function getResultOrDefault() {
@@ -100,7 +93,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @param mixed $paramValue
 	 */
@@ -121,7 +113,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @return bool
 	 */
@@ -130,7 +121,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @return bool
 	 */
@@ -139,7 +129,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @param mixed $paramValue
 	 */
@@ -160,7 +149,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @return bool
 	 */
@@ -169,7 +157,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @return bool
 	 */
@@ -178,7 +165,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @param mixed $paramValue
 	 */
@@ -202,7 +188,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @return bool
 	 */
@@ -211,7 +196,6 @@ class TitleParamsResolver {
 	}
 
 	/**
-	 *
 	 * @param string $paramName
 	 * @return bool
 	 */

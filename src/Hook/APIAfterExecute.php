@@ -36,13 +36,11 @@ use MediaWiki\Context\IContextSource;
 abstract class APIAfterExecute extends Hook {
 
 	/**
-	 *
 	 * @var ApiBase
 	 */
 	protected $module = null;
 
 	/**
-	 *
 	 * @param ApiBase &$module
 	 * @return bool
 	 */
@@ -57,7 +55,6 @@ abstract class APIAfterExecute extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param ApiBase &$module

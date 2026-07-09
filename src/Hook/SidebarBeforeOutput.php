@@ -36,7 +36,6 @@ use Skin;
 abstract class SidebarBeforeOutput extends Hook {
 
 	/**
-	 *
 	 * @var Skin
 	 */
 	protected $skin = null;
@@ -48,7 +47,6 @@ abstract class SidebarBeforeOutput extends Hook {
 	protected $sidebar = [];
 
 	/**
-	 *
 	 * @param Skin $skin
 	 * @param array &$sidebar
 	 * @return bool
@@ -65,7 +63,6 @@ abstract class SidebarBeforeOutput extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Skin $skin

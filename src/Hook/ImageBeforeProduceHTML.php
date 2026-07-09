@@ -37,67 +37,56 @@ use MediaWiki\Title\Title;
 abstract class ImageBeforeProduceHTML extends Hook {
 
 	/**
-	 *
 	 * @var DummyLinker
 	 */
 	protected $linker = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var File
 	 */
 	protected $file = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $frameParams = [];
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $handlerParams = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $time = '';
 
 	/**
-	 *
 	 * @var strnig|null
 	 */
 	protected $result = '';
 
 	/**
-	 *
 	 * @var Parser|null
 	 */
 	protected $parser = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $query = '';
 
 	/**
-	 *
 	 * @var int|null
 	 */
 	protected $widthOption = null;
 
 	/**
-	 *
 	 * @param DummyLinker &$linker
 	 * @param Title &$title
 	 * @param File &$file
@@ -132,7 +121,6 @@ abstract class ImageBeforeProduceHTML extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param DummyLinker &$linker

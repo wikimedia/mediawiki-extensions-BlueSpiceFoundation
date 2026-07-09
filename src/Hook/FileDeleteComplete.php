@@ -33,7 +33,6 @@ use MediaWiki\User\User;
 
 abstract class FileDeleteComplete extends Hook {
 	/**
-	 *
 	 * @var \File
 	 */
 	protected $file = null;
@@ -43,23 +42,19 @@ abstract class FileDeleteComplete extends Hook {
 	 */
 	protected $oldimage = null;
 	/**
-	 *
 	 * @var \WikiPage
 	 */
 	protected $wikipage = null;
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 	/**
-	 *
 	 * @var string
 	 */
 	protected $reason = null;
 
 	/**
-	 *
 	 * @param \File $file
 	 * @param string $oldimage
 	 * @param \WikiPage $wikipage
@@ -82,7 +77,6 @@ abstract class FileDeleteComplete extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \File $file

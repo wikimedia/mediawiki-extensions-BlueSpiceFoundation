@@ -10,7 +10,6 @@ use Wikimedia\Rdbms\DBQueryError;
 class BSMigrateSettings extends LoggedUpdateMaintenance {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function noDataToMigrate() {
@@ -18,7 +17,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $oldData = [];
@@ -36,7 +34,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $newData = [];
@@ -74,7 +71,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getSkipSettings() {
@@ -103,7 +99,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @param string $oldName
 	 * @return string
 	 * @throws Exception
@@ -128,7 +123,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @param string $oldName
 	 * @return bool|string
 	 */
@@ -181,7 +175,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @param string $serializedValue
 	 * @return string
 	 */
@@ -192,7 +185,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doDBUpdates() {
@@ -208,7 +200,6 @@ class BSMigrateSettings extends LoggedUpdateMaintenance {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getUpdateKey() {

@@ -14,25 +14,21 @@ use MediaWiki\User\User;
 class PermissionLockdownFactory {
 
 	/**
-	 *
 	 * @var ExtensionAttributeBasedRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @var Lockdown[]
 	 */
 	protected $instances = [];
@@ -41,7 +37,6 @@ class PermissionLockdownFactory {
 	private $modules = null;
 
 	/**
-	 *
 	 * @param ExtensionAttributeBasedRegistry $registry
 	 * @param Config $config
 	 * @param IContextSource $context
@@ -54,7 +49,6 @@ class PermissionLockdownFactory {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @return Lockdown
@@ -68,7 +62,6 @@ class PermissionLockdownFactory {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @return Lockdown
@@ -80,9 +73,6 @@ class PermissionLockdownFactory {
 		return new Lockdown( $this->config, $title, $user, $this->modules );
 	}
 
-	/**
-	 *
-	 */
 	protected function setModules() {
 		$this->modules = [];
 		foreach ( $this->registry->getAllKeys() as $key ) {
@@ -95,7 +85,6 @@ class PermissionLockdownFactory {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @return string

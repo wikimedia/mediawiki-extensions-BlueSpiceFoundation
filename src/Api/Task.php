@@ -42,7 +42,6 @@ class Task extends Api {
 	}
 
 	/**
-	 *
 	 * @param ITask $task
 	 * @param array $processedArgs
 	 * @return Status
@@ -92,7 +91,6 @@ class Task extends Api {
 	}
 
 	/**
-	 *
 	 * @param Options $options
 	 * @return Processor
 	 */
@@ -101,7 +99,6 @@ class Task extends Api {
 	}
 
 	/**
-	 *
 	 * @return Options
 	 */
 	protected function getParamProcessorOptions() {
@@ -187,7 +184,6 @@ class Task extends Api {
 	}
 
 	/**
-	 *
 	 * @return IPermissionChecker
 	 */
 	protected function makePermissionChecker() {

@@ -9,7 +9,6 @@ use BlueSpice\Permission\PermissionRegistry;
 class Generic extends Role {
 
 	/**
-	 *
 	 * @param string $name
 	 * @param PermissionRegistry $permissionRegistry
 	 */

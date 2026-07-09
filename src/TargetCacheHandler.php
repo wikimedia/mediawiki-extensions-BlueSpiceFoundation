@@ -8,37 +8,31 @@ use BlueSpice\Utility\CacheHelper;
 class TargetCacheHandler implements ITargetCacheHandler {
 
 	/**
-	 *
 	 * @var CacheHelper
 	 */
 	protected $cacheHelper = null;
 
 	/**
-	 *
 	 * @var ITarget
 	 */
 	protected $target = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $type = '';
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $targetType = '';
 
 	/**
-	 *
 	 * @var mixed
 	 */
 	protected $data = false;
 
 	/**
-	 *
 	 * @param string $targetType
 	 * @param string $type
 	 * @param CacheHelper $cacheHelper
@@ -65,7 +59,6 @@ class TargetCacheHandler implements ITargetCacheHandler {
 	}
 
 	/**
-	 *
 	 * @return mixed
 	 */
 	public function get() {
@@ -77,7 +70,6 @@ class TargetCacheHandler implements ITargetCacheHandler {
 	}
 
 	/**
-	 *
 	 * @param mixed $data
 	 */
 	public function set( $data ) {
@@ -89,7 +81,6 @@ class TargetCacheHandler implements ITargetCacheHandler {
 	}
 
 	/**
-	 *
 	 * @param string $action
 	 * @return bool
 	 */

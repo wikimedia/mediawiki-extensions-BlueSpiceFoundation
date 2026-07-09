@@ -8,25 +8,21 @@ use MediaWiki\Title\Title;
 class BSExtractFiles extends BSMaintenance {
 
 	/**
-	 *
 	 * @var string[]
 	 */
 	private $errors = [];
 
 	/**
-	 *
 	 * @var array
 	 */
 	private $sourceImages = [];
 
 	/**
-	 *
 	 * @var int
 	 */
 	private $noOfFiles = 0;
 
 	/**
-	 *
 	 * @var string
 	 */
 	private $destPath = '';
@@ -89,7 +85,6 @@ class BSExtractFiles extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 */
 	private function addFileToExtract( $title ) {
