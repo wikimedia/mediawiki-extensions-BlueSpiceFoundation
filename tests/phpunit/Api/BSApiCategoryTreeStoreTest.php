@@ -15,7 +15,7 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
 class BSApiCategoryTreeStoreTest extends BSApiExtJSStoreTestBase {
 
 	/** @var int */
-	protected $iFixtureTotal = 2;
+	protected $iFixtureTotal = 1;
 
 	protected function getStoreSchema() {
 		return [

@@ -279,7 +279,8 @@ abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 	 * @param mixed $value
 	 * @return bool true if the pair was found
 	 */
-	protected function array_findNestedKeyValuePair( $haystack, $key, $value ) {
+	protected function array_findNestedKeyValuePair( $haystack, $key, $value ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
+
 		foreach ( $haystack as $itemKey => $itemValue ) {
 			if ( $itemKey == $key && $itemValue == $value ) {
 				return true;
