@@ -33,14 +33,22 @@ use MediaWiki\Context\IContextSource;
 
 abstract class Extension extends Context implements JsonSerializable {
 
+	/** @var string */
 	protected $extPath;
+	/** @var array */
 	protected $author;
+	/** @var string */
 	protected $package;
+	/** @var string */
 	protected $status;
+	/** @var string */
 	protected $name;
+	/** @var string */
 	protected $url;
+	/** @var string */
 	protected $version;
 
+	/** @var array */
 	protected $allowedInfoKeys = [
 		'extPath' => '',
 		'author' => [],

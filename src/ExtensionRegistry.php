@@ -35,6 +35,8 @@ use MediaWiki\Registration\ExtensionRegistry as MediaWikiExtensionRegistry;
  * @package BlueSpiceFoundation
  */
 class ExtensionRegistry {
+
+	/** @var array|null */
 	protected $extensionDefinitions = null;
 
 	/**

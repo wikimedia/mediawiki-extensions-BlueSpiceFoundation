@@ -6,6 +6,7 @@ use MediaWiki\Title\Title;
 
 class BsNamespaceHelper {
 
+	/** @var array */
 	protected static $namespaceConstants = null;
 
 	/**

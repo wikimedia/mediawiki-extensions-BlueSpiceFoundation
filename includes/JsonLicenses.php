@@ -13,6 +13,7 @@ use MediaWiki\HTMLForm\HTMLForm;
  */
 class JsonLicenses extends Licenses {
 
+	/** @var array */
 	protected $json;
 
 	public function __construct() {

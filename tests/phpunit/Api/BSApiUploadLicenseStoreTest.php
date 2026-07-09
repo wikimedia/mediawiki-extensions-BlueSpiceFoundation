@@ -12,6 +12,8 @@ use BlueSpice\Tests\BSApiExtJSStoreTestBase;
  * @covers \BSApiUploadLicenseStore
  */
 class BSApiUploadLicenseStoreTest extends BSApiExtJSStoreTestBase {
+
+	/** @var int */
 	protected $iFixtureTotal = 1;
 
 	protected function getStoreSchema() {

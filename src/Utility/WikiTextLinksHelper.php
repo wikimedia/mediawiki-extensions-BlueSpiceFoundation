@@ -16,10 +16,15 @@ class WikiTextLinksHelper {
 	 */
 	protected $wikitext = '';
 
+	/** @var CategoryLinksHelper|null */
 	protected $categories = null;
+	/** @var InternalLinksHelper|null */
 	protected $links = null;
+	/** @var FileLinksHelper|null */
 	protected $files = null;
+	/** @var InterwikiLinksHelper|null */
 	protected $interwikiLinks = null;
+	/** @var InterlanguageLinksHelper|null */
 	protected $interlanguageLinks = null;
 
 	/**

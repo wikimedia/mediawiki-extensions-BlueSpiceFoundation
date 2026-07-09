@@ -25,6 +25,7 @@ class ModifyExportXML extends BSMaintenance {
 		$this->requireExtension( 'BlueSpiceFoundation' );
 	}
 
+	/** @var array */
 	protected $aTitles = [];
 
 	/** @var array */

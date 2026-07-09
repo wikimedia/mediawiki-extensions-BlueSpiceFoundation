@@ -18,6 +18,7 @@ class Template {
 	 */
 	protected $renderFormatted = true;
 
+	/** @var array */
 	protected $buffer = [];
 
 	/**
@@ -133,6 +134,7 @@ class Template {
 		}
 	}
 
+	/** @var array */
 	protected $specialWikiTextMarkupFirstChars = [ '*', '#', ':' ];
 
 	/**

@@ -10,7 +10,9 @@ use MediaWiki\Title\Title;
  */
 abstract class BSApiExtJSStoreTestBase extends BSApiTestCase {
 
+	/** @var int */
 	protected $iFixtureTotal = 0;
+	/** @var string */
 	protected $sQuery = '';
 
 	/**
