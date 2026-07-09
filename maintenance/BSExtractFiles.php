@@ -106,6 +106,9 @@ class BSExtractFiles extends BSMaintenance {
 		$this->noOfFiles++;
 	}
 
+	/**
+	 * @param string $srcImagesPath
+	 */
 	private function readInSourceImages( $srcImagesPath ) {
 		$files = new RecursiveIteratorIterator(
 			new RecursiveDirectoryIterator( $srcImagesPath ),
