@@ -172,7 +172,7 @@ abstract class BSApiExtJSDBTableStoreBase extends BSApiExtJSStoreBase {
 
 	/**
 	 * Returns a single data set
-	 * @param type $row
+	 * @param mixed $row
 	 * @return stdClass or null
 	 */
 	public function makeDataSet( $row ) {

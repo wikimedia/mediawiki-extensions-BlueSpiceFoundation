@@ -9,7 +9,7 @@ interface IPermissionChecker {
 
 	/**
 	 * @param User $user
-	 * @param type $permission
+	 * @param mixed $permission
 	 * @param IContextSource|null $context
 	 * @return bool
 	 */
