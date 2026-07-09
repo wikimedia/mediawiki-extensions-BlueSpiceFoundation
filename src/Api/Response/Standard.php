@@ -16,12 +16,16 @@ class Standard {
 	public const PAYLOAD = 'payload';
 	public const PAYLOAD_COUNT = 'payload_count';
 
+	/** @var array */
 	public $errors = [];
+	/** @var bool */
 	public $success = false;
 
 	// Custom fields
 	/** @var string */
 	public $message = '';
+	/** @var array */
 	public $payload = [];
+	/** @var int */
 	public $payload_count = 0;
 }
