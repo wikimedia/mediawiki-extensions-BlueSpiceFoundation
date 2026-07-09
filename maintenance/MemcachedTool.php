@@ -68,6 +68,9 @@ class MemcachedTool extends Maintenance {
 		}
 	}
 
+	/**
+	 * @param Memcached $client
+	 */
 	private function flushNative( $client ): void {
 		foreach ( $client->_servers as $server ) {
 			$sock = $client->sock_to_host( $server );
@@ -81,6 +84,9 @@ class MemcachedTool extends Maintenance {
 		}
 	}
 
+	/**
+	 * @param Memcached $client
+	 */
 	private function statsNative( $client ): void {
 		foreach ( $client->_servers as $server ) {
 			$sock = $client->sock_to_host( $server );

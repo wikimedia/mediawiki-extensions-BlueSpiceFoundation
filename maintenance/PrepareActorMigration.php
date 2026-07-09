@@ -85,6 +85,10 @@ class PrepareActorMigration extends Maintenance {
 
 	private $orphanedUserIds = [];
 
+	/**
+	 * @param string $tableName
+	 * @param string $fieldName
+	 */
 	private function checkUserId( $tableName, $fieldName ) {
 		$res = $this->db->select(
 			$tableName,
@@ -104,6 +108,10 @@ class PrepareActorMigration extends Maintenance {
 
 	private $orphanedUserNames = [];
 
+	/**
+	 * @param string $tableName
+	 * @param string $fieldName
+	 */
 	private function checkUserText( $tableName, $fieldName ) {
 		$res = $this->db->select(
 			$tableName, "DISTINCT ($fieldName) AS username",

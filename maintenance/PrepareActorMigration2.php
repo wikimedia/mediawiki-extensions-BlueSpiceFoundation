@@ -64,6 +64,11 @@ class PrepareActorMigration2 extends Maintenance {
 		}
 	}
 
+	/**
+	 * @param string $table
+	 * @param string $userIDField
+	 * @param string $userNameField
+	 */
 	private function fixTable( $table, $userIDField, $userNameField ) {
 		$this->output( "Replacing user names in $table\n" );
 

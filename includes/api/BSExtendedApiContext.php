@@ -63,6 +63,9 @@ class BSExtendedApiContext {
 		return new self( $params );
 	}
 
+	/**
+	 * @param array $params
+	 */
 	private function __construct( $params ) {
 		$this->title = $params['title'];
 		$this->rawContextData = $params['rawdata'];
