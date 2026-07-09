@@ -185,6 +185,10 @@ abstract class Extension extends Context implements JsonSerializable {
 		return false;
 	}
 
+	/**
+	 * @param mixed $value
+	 * @return bool
+	 */
 	private function setAuthors( $value ) {
 		$var = 'author';
 		if ( !is_array( $value ) ) {
@@ -197,6 +201,9 @@ abstract class Extension extends Context implements JsonSerializable {
 		return true;
 	}
 
+	/**
+	 * @param array $def
+	 */
 	private function initDataFromDefinition( $def ) {
 		foreach ( $this->allowedInfoKeys as $name => $defVal ) {
 			$value = $def;

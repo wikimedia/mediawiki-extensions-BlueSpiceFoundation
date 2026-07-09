@@ -27,6 +27,11 @@ class ListSorter {
 		return $listItems;
 	}
 
+	/**
+	 * @param mixed $itemA
+	 * @param mixed $itemB
+	 * @return int
+	 */
 	private function doSort( $itemA, $itemB ) {
 		$posA = 0;
 		$posB = 0;
