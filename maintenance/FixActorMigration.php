@@ -21,11 +21,17 @@ class FixActorMigration extends Maintenance {
 	 */
 	private $db = null;
 
+	/** @var array */
 	private $actorTempRevIds = [];
+	/** @var array */
 	private $revisionIds = [];
+	/** @var array */
 	private $revisionData = [];
+	/** @var array */
 	private $missingTempActorRevIds = [];
+	/** @var int */
 	private $actorId = -1;
+	/** @var string */
 	private $unknownUserName = '';
 
 	public function execute() {
@@ -98,6 +104,7 @@ class FixActorMigration extends Maintenance {
 		$this->fixAdditonalTables();
 	}
 
+	/** @var array */
 	private $tablesToFix = [
 		'archive' => 'ar_actor',
 		// This script is meant for use in legacy version 1.35 only,

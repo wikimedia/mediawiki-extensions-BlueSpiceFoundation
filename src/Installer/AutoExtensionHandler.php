@@ -36,8 +36,7 @@ class AutoExtensionHandler {
 	 *
 	 * @var string
 	 */
-	// phpcs:ignore Generic.Files.LineLength.TooLong
-	private $requireSetupFileRegex = "#require_once\(*\s*.*?['|\"].*?\/(extensions|skins)\/(.*?)\/(.*?)\.php['|\"]\s*\)*#";
+	private $requireSetupFileRegex = "#require_once\(*\s*.*?['|\"].*?\/(extensions|skins)\/(.*?)\/(.*?)\.php['|\"]\s*\)*#"; // phpcs:ignore Generic.Files.LineLength.TooLong
 
 	/**
 	 * RegEx for SemainicMediaWiki
