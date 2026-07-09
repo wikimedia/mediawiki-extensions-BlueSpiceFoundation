@@ -12,7 +12,6 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 	protected $groups;
 
 	/**
-	 *
 	 * @param array $params
 	 */
 	public function __construct( $params ) {
@@ -29,7 +28,6 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 	}
 
 	/**
-	 *
 	 * @param array $params
 	 */
 	protected function loadGroups( $params ) {
@@ -38,7 +36,6 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 	}
 
 	/**
-	 *
 	 * @param array $params
 	 */
 	protected function makeOptions( $params ) {
@@ -52,7 +49,6 @@ class GroupMultiSelect extends \HTMLMultiSelectEx {
 	}
 
 	/**
-	 *
 	 * @param array $value
 	 * @param array $alldata
 	 * @return Message|true

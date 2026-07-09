@@ -13,7 +13,6 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	public const PARAM_GROUP = 'group';
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $group = '';
@@ -60,7 +59,6 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getGroup() {
@@ -76,7 +74,6 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @param string $val
 	 * @return string
 	 */
@@ -92,7 +89,6 @@ class GroupImage extends \BlueSpice\TemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getCacheKey() {

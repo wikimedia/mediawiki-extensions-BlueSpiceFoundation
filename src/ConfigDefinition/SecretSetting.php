@@ -10,7 +10,6 @@ abstract class SecretSetting extends StringSetting {
 	public const SECRET_VALUE = '##secret##';
 
 	/**
-	 *
 	 * @return HTMLFormField
 	 */
 	public function getHtmlFormField() {

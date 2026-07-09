@@ -35,19 +35,16 @@ use MediaWiki\Parser\ParserOutput;
 abstract class OutputPageParserOutput extends Hook {
 
 	/**
-	 *
 	 * @var OutputPage
 	 */
 	protected $out = null;
 
 	/**
-	 *
 	 * @var ParserOutput
 	 */
 	protected $parserOutput = null;
 
 	/**
-	 *
 	 * @param OutputPage $out
 	 * @param ParserOutput $parserOutput
 	 * @return bool
@@ -64,7 +61,6 @@ abstract class OutputPageParserOutput extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param OutputPage $out

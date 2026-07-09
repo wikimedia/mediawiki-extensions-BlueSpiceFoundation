@@ -47,7 +47,6 @@ abstract class SpecialPage extends MediaWikiSpecialPage {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getGroupName() {

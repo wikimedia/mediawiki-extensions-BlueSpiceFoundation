@@ -8,7 +8,6 @@ use MediaWiki\MainConfigNames;
 class AddAssetsPaths extends ResourceLoaderGetConfigVars {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {
@@ -20,7 +19,6 @@ class AddAssetsPaths extends ResourceLoaderGetConfigVars {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {

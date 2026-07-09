@@ -9,19 +9,16 @@ use MediaWiki\Title\Title;
 class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\SecondaryDataProvider {
 
 	/**
-	 *
 	 * @var \MediaWiki\Linker\LinkRenderer
 	 */
 	protected $linkrenderer = null;
 
 	/**
-	 *
 	 * @var ContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @param \MediaWiki\Linker\LinkRenderer $linkrenderer
 	 * @param ContextSource $context
 	 */
@@ -31,7 +28,6 @@ class SecondaryDataProvider extends \MWStake\MediaWiki\Component\DataStore\Secon
 	}
 
 	/**
-	 *
 	 * @param Record &$dataSet
 	 */
 	protected function doExtend( &$dataSet ) {

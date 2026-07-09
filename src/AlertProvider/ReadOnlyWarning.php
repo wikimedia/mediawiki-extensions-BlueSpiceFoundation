@@ -8,7 +8,6 @@ use BlueSpice\IAlertProvider;
 class ReadOnlyWarning extends AlertProviderBase {
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getHTML() {
@@ -21,7 +20,6 @@ class ReadOnlyWarning extends AlertProviderBase {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getType() {

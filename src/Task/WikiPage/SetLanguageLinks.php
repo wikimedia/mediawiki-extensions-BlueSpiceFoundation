@@ -36,7 +36,6 @@ class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	}
 
 	/**
-	 *
 	 * @param Title[] $array1
 	 * @param Title[] $array2
 	 * @return Title[]
@@ -53,7 +52,6 @@ class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	}
 
 	/**
-	 *
 	 * @param string $wikiText
 	 * @return InterlanguageLinksHelper
 	 */
@@ -63,7 +61,6 @@ class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	}
 
 	/**
-	 *
 	 * @return ParamDefinition[]
 	 */
 	public function getArgsDefinitions() {
@@ -85,7 +82,6 @@ class SetLanguageLinks extends \BlueSpice\Task\WikiPage {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getTaskPermissions() {

@@ -40,7 +40,6 @@ abstract class BSMigrateSettingsSetNewSettings extends Hook {
 	protected $newName = null;
 
 	/**
-	 *
 	 * @var string - json formatted string of a mixed type
 	 */
 	protected $newValue = null;

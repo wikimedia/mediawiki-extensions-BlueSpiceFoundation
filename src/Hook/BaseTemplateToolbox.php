@@ -35,7 +35,6 @@ use MediaWiki\Context\IContextSource;
 abstract class BaseTemplateToolbox extends Hook {
 
 	/**
-	 *
 	 * @var \BaseTemplate
 	 */
 	protected $baseTemplate = null;
@@ -47,7 +46,6 @@ abstract class BaseTemplateToolbox extends Hook {
 	protected $toolbox = [];
 
 	/**
-	 *
 	 * @param \BaseTemplate $baseTemplate
 	 * @param array &$toolbox
 	 * @return bool
@@ -64,7 +62,6 @@ abstract class BaseTemplateToolbox extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \BaseTemplate $baseTemplate

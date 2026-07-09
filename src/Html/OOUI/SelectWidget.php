@@ -9,7 +9,6 @@ class SelectWidget extends Widget {
 	use GroupElement;
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -30,7 +29,6 @@ class SelectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param array $config
 	 * @return null
 	 */
@@ -39,7 +37,6 @@ class SelectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -48,7 +45,6 @@ class SelectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

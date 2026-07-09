@@ -190,7 +190,6 @@ class BSMassEditBase extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param string $sContent
 	 * @param string $sNewContent
 	 */
@@ -209,7 +208,6 @@ class BSMassEditBase extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isVerbose() {

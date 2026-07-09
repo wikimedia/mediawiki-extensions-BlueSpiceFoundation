@@ -46,13 +46,11 @@ abstract class BSMigrateSettingsFromDeviatingNames extends Hook {
 	protected $newName = null;
 
 	/**
-	 *
 	 * @var string - serialized string of a mixed type
 	 */
 	protected $oldValue = null;
 
 	/**
-	 *
 	 * @var string - json formated string of a mixed type
 	 */
 	protected $newValue = null;

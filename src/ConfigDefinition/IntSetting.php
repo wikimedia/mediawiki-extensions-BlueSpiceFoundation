@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 abstract class IntSetting extends \BlueSpice\ConfigDefinition {
 
 	/**
-	 *
 	 * @return \HTMLIntFieldOverride
 	 */
 	public function getHtmlFormField() {
@@ -13,7 +12,6 @@ abstract class IntSetting extends \BlueSpice\ConfigDefinition {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function makeFormFieldParams() {

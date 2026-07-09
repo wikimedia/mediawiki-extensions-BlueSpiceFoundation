@@ -10,19 +10,16 @@ use MWStake\MediaWiki\Component\DataStore\NoWriterException;
 class Store implements IStore {
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $filterForContextUser = false;
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param bool $filterForContextUser
 	 */
@@ -32,7 +29,6 @@ class Store implements IStore {
 	}
 
 	/**
-	 *
 	 * @return Reader
 	 */
 	public function getReader() {
@@ -45,7 +41,6 @@ class Store implements IStore {
 	}
 
 	/**
-	 *
 	 * @throws NoWriterException
 	 */
 	public function getWriter() {

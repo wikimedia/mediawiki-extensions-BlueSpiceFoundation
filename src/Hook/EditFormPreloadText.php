@@ -34,19 +34,16 @@ use MediaWiki\Title\Title;
 abstract class EditFormPreloadText extends Hook {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $text = '';
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @param string &$text
 	 * @param Title &$title
 	 * @return bool
@@ -63,7 +60,6 @@ abstract class EditFormPreloadText extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string &$text

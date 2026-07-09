@@ -32,13 +32,11 @@ use MediaWiki\Context\IContextSource;
 abstract class GetDoubleUnderscoreIDs extends \BlueSpice\Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $doubleUnderscoreIDs = null;
 
 	/**
-	 *
 	 * @param array &$doubleUnderscoreIDs
 	 * @return bool
 	 */
@@ -53,7 +51,6 @@ abstract class GetDoubleUnderscoreIDs extends \BlueSpice\Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$doubleUnderscoreIDs

@@ -28,13 +28,11 @@ class PrepareActorMigration2 extends Maintenance {
 	}
 
 	/**
-	 *
 	 * @var IDatabase
 	 */
 	private $db = null;
 
 	/**
-	 *
 	 * @var \MediaWiki\User\UserNameUtils
 	 */
 	private $userNameUtils = null;

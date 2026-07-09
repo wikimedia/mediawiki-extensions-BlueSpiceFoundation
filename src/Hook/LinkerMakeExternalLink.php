@@ -58,7 +58,6 @@ abstract class LinkerMakeExternalLink extends Hook {
 	protected $linktype = '';
 
 	/**
-	 *
 	 * @param string &$url
 	 * @param string &$text
 	 * @param string &$link
@@ -81,7 +80,6 @@ abstract class LinkerMakeExternalLink extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string &$url

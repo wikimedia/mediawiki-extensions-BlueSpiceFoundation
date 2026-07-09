@@ -8,7 +8,6 @@ use BlueSpice\Hook\ResourceLoaderGetConfigVars;
 class AddBSGConfig extends ResourceLoaderGetConfigVars {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {
@@ -20,7 +19,6 @@ class AddBSGConfig extends ResourceLoaderGetConfigVars {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {

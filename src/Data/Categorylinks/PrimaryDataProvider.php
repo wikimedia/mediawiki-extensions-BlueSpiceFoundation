@@ -14,13 +14,11 @@ use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
-	 *
 	 * @var \MWStake\MediaWiki\Component\DataStore\Record
 	 */
 	protected $data = [];
 
 	/**
-	 *
 	 * @var \Wikimedia\Rdbms\IDatabase
 	 */
 	protected $db = null;
@@ -29,13 +27,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	protected $context = null;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $pageId = -1;
 
 	/**
-	 *
 	 * @param \Wikimedia\Rdbms\IDatabase $db
 	 * @param IContextSource|null $context
 	 */
@@ -78,7 +74,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param Filter[] $preFilters
 	 * @return array
 	 */
@@ -114,7 +109,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -127,7 +121,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param User $user
 	 * @return bool
 	 */

@@ -36,19 +36,16 @@ use MediaWiki\Context\IContextSource;
 abstract class PageHistoryGetQueryInfo extends Hook {
 
 	/**
-	 *
 	 * @var HistoryPager
 	 */
 	protected $pager = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $queryInfo = null;
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param HistoryPager &$pager
@@ -62,7 +59,6 @@ abstract class PageHistoryGetQueryInfo extends Hook {
 	}
 
 	/**
-	 *
 	 * @param HistoryPager &$pager
 	 * @param array &$queryInfo
 	 * @return bool

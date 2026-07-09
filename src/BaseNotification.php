@@ -8,55 +8,46 @@ use MediaWiki\User\User;
 
 class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INotification {
 	/**
-	 *
 	 * @var string
 	 */
 	protected $key;
 
 	/**
-	 *
 	 * @var Title|null
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $agent;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $audience = [];
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $extra = [];
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $immediateEmail = false;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $useJobQueue = true;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $secondaryLinks = [];
 
 	/**
-	 *
 	 * @param string $key
 	 * @param User $agent
 	 * @param Title|null $title
@@ -103,7 +94,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @param bool $value
 	 */
 	protected function setImmediateEmail( $value = true ) {
@@ -121,7 +111,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @param bool $value
 	 */
 	protected function setUseJobQueue( $value = true ) {
@@ -151,7 +140,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getKey() {
@@ -159,7 +147,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getParams() {
@@ -167,7 +154,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @return Title|null
 	 */
 	public function getTitle() {
@@ -175,7 +161,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @return User
 	 */
 	public function getUser() {

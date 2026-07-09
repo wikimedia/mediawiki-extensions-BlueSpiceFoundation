@@ -10,13 +10,11 @@ use MediaWiki\MediaWikiServices;
 class Foundation {
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var MediaWikiServices
 	 */
 	protected $services = null;

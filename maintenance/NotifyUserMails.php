@@ -41,7 +41,6 @@ function showHelp() {
 }
 
 /**
- *
  * @param bool $bDry
  * @param array $options
  * @return void
@@ -57,7 +56,6 @@ function notifyUserMailController( $bDry, $options ) {
 }
 
 /**
- *
  * @param string $sGivenUser
  * @return array
  */
@@ -92,7 +90,6 @@ function getUser( $sGivenUser ) {
 }
 
 /**
- *
  * @param array $aUserStore
  * @param array $options
  * @param bool $bDry
@@ -129,7 +126,6 @@ function NotifyUser( $aUserStore, $options, $bDry ) {
 }
 
 /**
- *
  * @param array $aUserStore
  */
 function displayResult( $aUserStore ) {

@@ -33,19 +33,16 @@ use MediaWiki\Context\IContextSource;
 abstract class SkinBuildSidebar extends Hook {
 
 	/**
-	 *
 	 * @var \Skin
 	 */
 	protected $skin = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $bar = [];
 
 	/**
-	 *
 	 * @param \Skin $skin
 	 * @param array &$bar
 	 * @return bool
@@ -62,7 +59,6 @@ abstract class SkinBuildSidebar extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \Skin $skin

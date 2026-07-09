@@ -7,7 +7,6 @@ use MediaWiki\Title\Title;
 class Target implements \BlueSpice\TargetCache\ITarget {
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;

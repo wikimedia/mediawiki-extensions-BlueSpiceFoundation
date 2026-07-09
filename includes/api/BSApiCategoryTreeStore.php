@@ -20,7 +20,6 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	private $dbr;
 
 	/**
-	 *
 	 * @param string $sQuery
 	 * @return array
 	 */
@@ -214,7 +213,6 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 *
 	 * @param array $aProcessedData
 	 * @return array
 	 */
@@ -231,7 +229,6 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getAllowedParams() {
@@ -245,7 +242,6 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 *
 	 * @param Category $category
 	 * @return bool
 	 */
@@ -265,7 +261,6 @@ class BSApiCategoryTreeStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	protected function getTrackingCategories() {

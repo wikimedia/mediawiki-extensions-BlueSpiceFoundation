@@ -22,8 +22,6 @@ class BSMassEditLinks extends BSMassEditBase {
 	 */
 	private $titleFactory = null;
 
-	/**
-	 */
 	public function __construct() {
 		parent::__construct();
 		$this->addOption(

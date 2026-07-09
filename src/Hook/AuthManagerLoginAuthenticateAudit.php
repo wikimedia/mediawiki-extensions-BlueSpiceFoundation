@@ -34,19 +34,16 @@ use MediaWiki\User\User;
 abstract class AuthManagerLoginAuthenticateAudit extends Hook {
 
 	/**
-	 *
 	 * @var AuthenticationResponse
 	 */
 	protected $response = null;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $username = null;

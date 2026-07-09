@@ -34,19 +34,16 @@ use MediaWiki\User\User;
 abstract class GetPreferences extends Hook {
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $preferences = null;
 
 	/**
-	 *
 	 * @param User $user
 	 * @param array &$preferences
 	 * @return bool
@@ -63,7 +60,6 @@ abstract class GetPreferences extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param User $user

@@ -34,19 +34,16 @@ use MediaWiki\User\User;
 abstract class UserSaveOptions extends Hook {
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $options = [];
 
 	/**
-	 *
 	 * @param User $user
 	 * @param array &$options
 	 * @return mixed
@@ -63,7 +60,6 @@ abstract class UserSaveOptions extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param User $user

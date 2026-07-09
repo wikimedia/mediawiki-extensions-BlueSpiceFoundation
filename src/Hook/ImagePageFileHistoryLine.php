@@ -65,7 +65,6 @@ abstract class ImagePageFileHistoryLine extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param ImageHistoryList $historyList

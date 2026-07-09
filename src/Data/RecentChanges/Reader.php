@@ -10,7 +10,6 @@ use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 class Reader extends DatabaseReader {
 
 	/**
-	 *
 	 * @param ReaderParams $params
 	 * @return PrimaryDataProvider
 	 */
@@ -24,7 +23,6 @@ class Reader extends DatabaseReader {
 	}
 
 	/**
-	 *
 	 * @return SecondaryDataProvider
 	 */
 	protected function makeSecondaryDataProvider() {
@@ -35,7 +33,6 @@ class Reader extends DatabaseReader {
 	}
 
 	/**
-	 *
 	 * @return Schema
 	 */
 	public function getSchema() {
@@ -43,7 +40,6 @@ class Reader extends DatabaseReader {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getContentNamespaceIds() {
@@ -60,7 +56,6 @@ class Reader extends DatabaseReader {
 	}
 
 	/**
-	 *
 	 * @param array $nsIds
 	 * @return array
 	 */

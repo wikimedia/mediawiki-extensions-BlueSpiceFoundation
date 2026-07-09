@@ -99,7 +99,6 @@ class TemplateParser extends MediaWikiTemplateParser implements ITemplateParser,
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getCompileHelpers() {

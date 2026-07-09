@@ -11,49 +11,41 @@ use MediaWiki\User\UserIdentity;
 
 abstract class PageMoveComplete extends Hook {
 	/**
-	 *
 	 * @var LinkTarget
 	 */
 	protected $old;
 
 	/**
-	 *
 	 * @var LinkTarget
 	 */
 	protected $new;
 
 	/**
-	 *
 	 * @var UserIdentity
 	 */
 	protected $userIdentity;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $pageid;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $redirid;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $reason;
 
 	/**
-	 *
 	 * @var RevisionRecord
 	 */
 	protected $revision;
 
 	/**
-	 *
 	 * @param LinkTarget $old
 	 * @param LinkTarget $new
 	 * @param UserIdentity $userIdentity
@@ -81,7 +73,6 @@ abstract class PageMoveComplete extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param LinkTarget $old

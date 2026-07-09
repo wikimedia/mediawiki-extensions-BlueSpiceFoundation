@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 class ImageExtensions extends ArraySetting {
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getLabelMessageKey() {
@@ -13,7 +12,6 @@ class ImageExtensions extends ArraySetting {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isRLConfigVar() {
@@ -21,7 +19,6 @@ class ImageExtensions extends ArraySetting {
 	}
 
 	/**
-	 *
 	 * @return \HTMLMultiSelectPlusAdd
 	 */
 	public function getHtmlFormField() {
@@ -29,7 +26,6 @@ class ImageExtensions extends ArraySetting {
 	}
 
 	/**
-	 *
 	 * @return string|null
 	 */
 	public function getHelpMessageKey() {

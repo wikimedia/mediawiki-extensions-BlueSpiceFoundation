@@ -99,7 +99,6 @@ abstract class Api extends ApiBase {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	protected function getRequiredPermissions() {
@@ -107,7 +106,6 @@ abstract class Api extends ApiBase {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	protected function getExamples() {
@@ -140,7 +138,6 @@ abstract class Api extends ApiBase {
 	}
 
 	/**
-	 *
 	 * @return ErrorFormatter
 	 */
 	public function getErrorFormatter() {
@@ -186,7 +183,6 @@ abstract class Api extends ApiBase {
 	}
 
 	/**
-	 *
 	 * @return Context
 	 */
 	public function getContext() {
@@ -226,7 +222,6 @@ abstract class Api extends ApiBase {
 	}
 
 	/**
-	 *
 	 * @param Status $status
 	 * @param User $user
 	 * @param type $permission

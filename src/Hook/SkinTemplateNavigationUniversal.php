@@ -37,19 +37,16 @@ use SkinTemplate;
 abstract class SkinTemplateNavigationUniversal extends Hook {
 
 	/**
-	 *
 	 * @var SkinTemplate
 	 */
 	protected $sktemplate = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $links = [];
 
 	/**
-	 *
 	 * @param SkinTemplate $sktemplate
 	 * @param array &$links
 	 * @return bool
@@ -66,7 +63,6 @@ abstract class SkinTemplateNavigationUniversal extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param SkinTemplate $sktemplate

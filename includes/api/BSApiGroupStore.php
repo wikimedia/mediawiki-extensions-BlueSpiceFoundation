@@ -29,7 +29,6 @@
 class BSApiGroupStore extends BSApiExtJSStoreBase {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $sLcQuery = '';
@@ -69,7 +68,6 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getRequiredPermissions() {
@@ -79,7 +77,6 @@ class BSApiGroupStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 *
 	 * @param string $sGroup
 	 * @param string $sDisplayName
 	 * @return bool

@@ -37,7 +37,6 @@ use Wikimedia\ParamValidator\ParamValidator;
 class Json extends ApiFormatJson {
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getAllowedParams() {

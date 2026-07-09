@@ -7,7 +7,6 @@ use MediaWiki\Xml\XmlSelect;
 class XmlMultiSelect extends XmlSelect {
 
 	/**
-	 *
 	 * @param string $name
 	 * @param mixed|false $value
 	 */
@@ -18,7 +17,6 @@ class XmlMultiSelect extends XmlSelect {
 	}
 
 	/**
-	 *
 	 * @param array $options
 	 * @param array|false $default
 	 * @return string

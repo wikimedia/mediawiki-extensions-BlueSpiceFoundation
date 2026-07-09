@@ -9,7 +9,6 @@ use MediaWiki\HTMLForm\HTMLForm;
 abstract class PermissionsList extends \BlueSpice\ConfigDefinition {
 
 	/**
-	 *
 	 * @return PermissionMultiSelect
 	 */
 	public function getHtmlFormField() {
@@ -24,7 +23,6 @@ abstract class PermissionsList extends \BlueSpice\ConfigDefinition {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getPermissionType() {

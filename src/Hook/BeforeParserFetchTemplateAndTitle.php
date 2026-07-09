@@ -35,13 +35,11 @@ use MediaWiki\Title\Title;
 abstract class BeforeParserFetchTemplateAndTitle extends Hook {
 
 	/**
-	 *
 	 * @var Parser
 	 */
 	protected $parser = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
@@ -76,7 +74,6 @@ abstract class BeforeParserFetchTemplateAndTitle extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Parser $parser

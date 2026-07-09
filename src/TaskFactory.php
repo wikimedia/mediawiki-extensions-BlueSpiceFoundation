@@ -34,19 +34,16 @@ use MediaWiki\MediaWikiServices;
 class TaskFactory {
 
 	/**
-	 *
 	 * @var IRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @param IRegistry $registry
 	 * @param Config $config
 	 */
@@ -56,7 +53,6 @@ class TaskFactory {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @param Context $context
 	 * @param IPermissionChecker|null $permissionChecker

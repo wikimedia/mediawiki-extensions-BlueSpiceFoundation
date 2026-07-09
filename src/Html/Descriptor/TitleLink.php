@@ -16,13 +16,11 @@ class TitleLink extends LinkBase {
 	public const LABEL_UNPREFIXED = 'unprefixed';
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title|null $title
@@ -37,7 +35,6 @@ class TitleLink extends LinkBase {
 	}
 
 	/**
-	 *
 	 * @return Message
 	 */
 	public function getLabel() {
@@ -56,7 +53,6 @@ class TitleLink extends LinkBase {
 	}
 
 	/**
-	 *
 	 * @return Message
 	 */
 	public function getTooltip() {
@@ -64,7 +60,6 @@ class TitleLink extends LinkBase {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getCSSClasses() {
@@ -98,7 +93,6 @@ class TitleLink extends LinkBase {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getHref() {

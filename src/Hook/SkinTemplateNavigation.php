@@ -37,19 +37,16 @@ use MediaWiki\Context\IContextSource;
 abstract class SkinTemplateNavigation extends Hook {
 
 	/**
-	 *
 	 * @var \SkinTemplate
 	 */
 	protected $sktemplate = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $links = [];
 
 	/**
-	 *
 	 * @param \SkinTemplate &$sktemplate
 	 * @param array &$links
 	 * @return bool
@@ -66,7 +63,6 @@ abstract class SkinTemplateNavigation extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \SkinTemplate &$sktemplate

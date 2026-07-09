@@ -6,7 +6,6 @@ use MediaWiki\HTMLForm\Field\HTMLCheckField;
 class HTMLCheckFieldOverride extends HTMLCheckField {
 
 	/**
-	 *
 	 * @param bool $value
 	 * @return string
 	 */
@@ -25,7 +24,6 @@ class HTMLCheckFieldOverride extends HTMLCheckField {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getLabel() {

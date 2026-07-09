@@ -35,25 +35,21 @@ use Skin;
 abstract class OutputPageBodyAttributes extends Hook {
 
 	/**
-	 *
 	 * @var OutputPage
 	 */
 	protected $out = null;
 
 	/**
-	 *
 	 * @var Skin
 	 */
 	protected $skin = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $bodyAttrs = [];
 
 	/**
-	 *
 	 * @param OutputPage $out
 	 * @param Skin $skin
 	 * @param string &$bodyAttrs
@@ -72,7 +68,6 @@ abstract class OutputPageBodyAttributes extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param OutputPage $out

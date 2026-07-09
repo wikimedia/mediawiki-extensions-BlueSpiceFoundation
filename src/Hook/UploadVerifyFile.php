@@ -33,25 +33,21 @@ use MediaWiki\Context\IContextSource;
 abstract class UploadVerifyFile extends Hook {
 
 	/**
-	 *
 	 * @var \UploadBase
 	 */
 	protected $upload = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $mime = null;
 
 	/**
-	 *
 	 * @var true|array
 	 */
 	protected $error = null;
 
 	/**
-	 *
 	 * @param \UploadBase $upload
 	 * @param string $mime
 	 * @param true|array &$error
@@ -70,7 +66,6 @@ abstract class UploadVerifyFile extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \UploadBase &$upload

@@ -72,7 +72,6 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @return array\RecursiveIteratorIterator
 	 */
 	public function getFileList() {
@@ -104,7 +103,6 @@ abstract class BSBatchFileProcessorBase extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param SplFileInfo $oFile
 	 */
 	abstract public function processFile( $oFile );

@@ -8,7 +8,6 @@ use MediaWiki\User\User;
 class NullLogger extends ActionLogger {
 
 	/**
-	 *
 	 * @param string|null $type
 	 * @param User|null $performer
 	 * @param Title|null $target
@@ -17,7 +16,6 @@ class NullLogger extends ActionLogger {
 	}
 
 	/**
-	 *
 	 * @param string $action
 	 * @param array $params
 	 * @param array $options

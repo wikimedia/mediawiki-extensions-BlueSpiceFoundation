@@ -39,7 +39,6 @@ use MediaWiki\User\User;
 class UtilityFactory {
 
 	/**
-	 *
 	 * @var MediaWikiServices
 	 */
 	protected $services = null;
@@ -49,7 +48,6 @@ class UtilityFactory {
 	}
 
 	/**
-	 *
 	 * @param array $params
 	 * @param Title[] $default
 	 * @return \BlueSpice\Utility\TitleParamsResolver
@@ -78,7 +76,6 @@ class UtilityFactory {
 	}
 
 	/**
-	 *
 	 * @return \BlueSpice\Utility\MaintenanceUser
 	 */
 	public function getMaintenanceUser() {

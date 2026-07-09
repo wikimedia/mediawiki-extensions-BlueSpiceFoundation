@@ -35,19 +35,16 @@ use ValueValidators\PackagePrivate\ValueValidatorBase;
 class BSNamespaceValidator extends ValueValidatorBase {
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $hasToExist = false;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $aBlacklist = [];
 
 	/**
-	 *
 	 * @param bool $hasToExist
 	 */
 	public function setHasToExist( $hasToExist ) {
@@ -55,7 +52,6 @@ class BSNamespaceValidator extends ValueValidatorBase {
 	}
 
 	/**
-	 *
 	 * @param array $aBlacklist
 	 */
 	public function setBlacklist( $aBlacklist ) {
@@ -63,7 +59,6 @@ class BSNamespaceValidator extends ValueValidatorBase {
 	}
 
 	/**
-	 *
 	 * @param mixed $value
 	 */
 	public function doValidation( $value ) {

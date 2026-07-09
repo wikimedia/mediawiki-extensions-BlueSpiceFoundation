@@ -49,7 +49,6 @@ if ( trim( $line ) != 'yes' ) {
 $oldcatspatterns = array_map( 'old_to_regex', $oldcats );
 
 /**
- *
  * @param string $rawcat
  * @return string
  */
@@ -70,7 +69,6 @@ var_dump( $oldcatspatterns );
 $newcatspatterns = array_map( 'new_to_pattern', $newcats );
 
 /**
- *
  * @param string $rawcat
  * @return string
  */
@@ -85,7 +83,6 @@ var_dump( $newcatspatterns );
 $oldtitlepatterns = array_map( 'oldtitle_to_regex', $oldcats );
 
 /**
- *
  * @param string $rawcat
  * @return string
  */
@@ -104,7 +101,6 @@ var_dump( $oldtitlepatterns );
 $newtitlepatterns = array_map( 'newtitle_to_pattern', $newcats );
 
 /**
- *
  * @param string $rawcat
  * @return string
  */
@@ -420,7 +416,6 @@ foreach ( $res as $row ) {
 }
 
 /**
- *
  * @param string $msg
  */
 function hw_error( $msg ) {

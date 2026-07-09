@@ -14,7 +14,6 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	/**
-	 *
 	 * @param string $par
 	 */
 	public function execute( $par ) {
@@ -63,7 +62,6 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	/**
-	 *
 	 * @param array $headElements
 	 * @param string $html
 	 * @return string
@@ -82,7 +80,6 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	/**
-	 *
 	 * @param array $list
 	 * @param string $hmtl
 	 * @return string
@@ -97,7 +94,6 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getTranslatorsList() {
@@ -145,7 +141,6 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	/**
-	 *
 	 * @param string $dir
 	 * @param array &$translators
 	 */
@@ -188,7 +183,6 @@ class Credits extends \BlueSpice\SpecialPage {
 	}
 
 	/**
-	 *
 	 * @param array $content
 	 * @param array &$translators
 	 */

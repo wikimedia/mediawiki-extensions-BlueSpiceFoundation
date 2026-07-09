@@ -12,7 +12,6 @@ use MediaWiki\MediaWikiServices;
 class WikiTextLinksHelper {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $wikitext = '';
@@ -24,7 +23,6 @@ class WikiTextLinksHelper {
 	protected $interlanguageLinks = null;
 
 	/**
-	 *
 	 * @param string &$wikitext
 	 */
 	public function __construct( &$wikitext ) {
@@ -32,7 +30,6 @@ class WikiTextLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return CategoryLinksHelper
 	 */
 	public function getCategoryLinksHelper() {
@@ -44,7 +41,6 @@ class WikiTextLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return InternalLinksHelper
 	 */
 	public function getInternalLinksHelper() {
@@ -56,7 +52,6 @@ class WikiTextLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return FileLinksHelper
 	 */
 	public function getFileLinksHelper() {
@@ -68,7 +63,6 @@ class WikiTextLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return InterwikiLinksHelper
 	 */
 	public function getInterwikiLinksHelper() {
@@ -83,7 +77,6 @@ class WikiTextLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return InterlanguageLinksHelper
 	 */
 	public function getLanguageLinksHelper() {

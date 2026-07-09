@@ -6,28 +6,23 @@ use MediaWiki\Registration\ExtensionRegistry;
 
 class PermissionRegistry {
 	/**
-	 *
 	 * @var PermissionRegistry
 	 */
 	private static $instance;
 	/**
-	 *
 	 * @var array
 	 */
 	protected $permissionConfigDefault;
 	/**
-	 *
 	 * @var array
 	 */
 	protected $permissionConfig = [];
 	/**
-	 *
 	 * @var array
 	 */
 	protected $permissions = [];
 
 	/**
-	 *
 	 * @param array $permissionConfigDefault
 	 * @param array $permissionConfig
 	 */
@@ -88,7 +83,6 @@ class PermissionRegistry {
 	}
 
 	/**
-	 *
 	 * @param array $defaultPermissionConfig
 	 * @param array $permissionConfig
 	 * @return PermissionRegistry

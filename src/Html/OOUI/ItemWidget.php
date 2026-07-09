@@ -5,7 +5,6 @@ namespace BlueSpice\Html\OOUI;
 class ItemWidget extends \OOUI\Widget {
 
 	/**
-	 *
 	 * @param array $config
 	 * @return null
 	 */
@@ -14,7 +13,6 @@ class ItemWidget extends \OOUI\Widget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

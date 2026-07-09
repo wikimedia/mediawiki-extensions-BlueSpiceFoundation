@@ -8,31 +8,26 @@ use MediaWiki\Config\Config;
 class TargetCacheFactory {
 
 	/**
-	 *
 	 * @var IRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var CacheHelper
 	 */
 	protected $cacheHelper = null;
 
 	/**
-	 *
 	 * @var ITargetCache[]
 	 */
 	protected $instances = [];
 
 	/**
-	 *
 	 * @param IRegistry $registry
 	 * @param Config $config
 	 * @param CacheHelper $cacheHelper
@@ -44,7 +39,6 @@ class TargetCacheFactory {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @return TargetCache
 	 */

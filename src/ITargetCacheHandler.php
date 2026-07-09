@@ -10,13 +10,11 @@ interface ITargetCacheHandler {
 	public function get();
 
 	/**
-	 *
 	 * @param mixed $data
 	 */
 	public function set( $data );
 
 	/**
-	 *
 	 * @param string $action
 	 * @return bool
 	 */

@@ -7,7 +7,6 @@ use BlueSpice\Utility\WikiTextLinksHelper\CategoryLinksHelper;
 class CategoryLinksHelperTest extends InternalLinksHelperTest {
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getExpected() {
@@ -15,7 +14,6 @@ class CategoryLinksHelperTest extends InternalLinksHelperTest {
 	}
 
 	/**
-	 *
 	 * @param string $wikitext
 	 * @return CategoryLinksHelper
 	 */

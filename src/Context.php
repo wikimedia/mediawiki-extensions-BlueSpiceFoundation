@@ -10,13 +10,11 @@ use MediaWiki\Session\CsrfTokenSet;
 class Context implements IContextSource {
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;

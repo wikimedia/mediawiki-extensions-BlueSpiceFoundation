@@ -39,13 +39,11 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	protected $isSystemUser = false;
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @param IDatabase $db
 	 * @param Schema $schema
 	 * @param IContextSource $context
@@ -127,7 +125,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getTableNames() {
@@ -135,7 +132,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	}
 
 	/**
-	 *
 	 * @param DataStoreReaderParams $params
 	 * @return array
 	 */
@@ -144,7 +140,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -158,7 +153,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	}
 
 	/**
-	 *
 	 * @param User $user
 	 * @return bool
 	 */

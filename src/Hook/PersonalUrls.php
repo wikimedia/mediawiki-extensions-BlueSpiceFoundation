@@ -45,19 +45,16 @@ abstract class PersonalUrls extends Hook {
 	protected $personal_urls = [];
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var \SkinTemplate
 	 */
 	protected $skin = null;
 
 	/**
-	 *
 	 * @param array &$personal_urls
 	 * @param Title $title
 	 * @param SkinTemplate $skin
@@ -77,7 +74,6 @@ abstract class PersonalUrls extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$personal_urls

@@ -16,37 +16,31 @@ use MediaWiki\User\User;
 class Groups extends Module {
 
 	/**
-	 *
 	 * @var ExtensionAttributeBasedRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @var string[]
 	 */
 	protected $lockdownGroups = null;
 
 	/**
-	 *
 	 * @var ISubModule[]
 	 */
 	protected $subModule = null;
 
 	/**
-	 *
 	 * @var ISubModule[]
 	 */
 	protected $appliedSubModules = null;
 
 	/**
-	 *
 	 * @var Message[]
 	 */
 	protected $reasons = [];
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @return bool
@@ -62,7 +56,6 @@ class Groups extends Module {
 	}
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param MediaWikiServices $services
@@ -75,7 +68,6 @@ class Groups extends Module {
 	}
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param Services $services
@@ -94,7 +86,6 @@ class Groups extends Module {
 	}
 
 	/**
-	 *
 	 * @return ISubModules[]
 	 */
 	protected function getSubModules() {
@@ -113,7 +104,6 @@ class Groups extends Module {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action
@@ -185,7 +175,6 @@ class Groups extends Module {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action
@@ -229,7 +218,6 @@ class Groups extends Module {
 	}
 
 	/**
-	 *
 	 * @param User $user
 	 * @param string[] $groups
 	 * @return string[]

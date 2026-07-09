@@ -33,13 +33,11 @@ use MediaWiki\Context\IContextSource;
 abstract class SpecialPageInitList extends Hook {
 
 	/**
-	 *
 	 * @var array In form of "<canonicalspecialpagename>" => "<fullqualifiedphpclassname>"
 	 */
 	protected $list = [];
 
 	/**
-	 *
 	 * @param array &$list
 	 * @return bool
 	 */
@@ -54,7 +52,6 @@ abstract class SpecialPageInitList extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$list

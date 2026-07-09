@@ -25,7 +25,6 @@ use MediaWiki\Title\Title;
  * @package    Bluespice_Foundation
  * @copyright  Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
  * @license    http://www.gnu.org/copyleft/gpl.html GPL-3.0-only
- *
  */
 
 class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
@@ -66,7 +65,6 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	/**
-	 *
 	 * @param string $sQuery
 	 * @param array $aFilter
 	 * @return array
@@ -78,7 +76,6 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	/**
-	 *
 	 * @param string $sQuery
 	 * @param array $aFilter
 	 * @return array
@@ -92,7 +89,6 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	/**
-	 *
 	 * @param array $aData
 	 * @return array
 	 */
@@ -121,7 +117,6 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	/**
-	 *
 	 * @param \stdClass $row
 	 * @return bool
 	 */
@@ -137,7 +132,6 @@ class BSApiWikiPageStore extends BSApiExtJSDBTableStoreBase {
 	}
 
 	/**
-	 *
 	 * @param array $aTrimmedData
 	 * @return array
 	 */

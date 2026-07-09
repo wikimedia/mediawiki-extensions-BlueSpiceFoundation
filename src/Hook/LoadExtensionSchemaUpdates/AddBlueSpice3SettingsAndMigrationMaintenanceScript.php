@@ -6,7 +6,6 @@ use BlueSpice\Hook\LoadExtensionSchemaUpdates;
 
 class AddBlueSpice3SettingsAndMigrationMaintenanceScript extends LoadExtensionSchemaUpdates {
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {
@@ -23,7 +22,6 @@ class AddBlueSpice3SettingsAndMigrationMaintenanceScript extends LoadExtensionSc
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getExtensionPath() {

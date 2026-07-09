@@ -34,13 +34,11 @@ use MediaWiki\Parser\Parser;
 abstract class ParserClearState extends Hook {
 
 	/**
-	 *
 	 * @var Parser
 	 */
 	protected $parser = null;
 
 	/**
-	 *
 	 * @param Parser &$parser
 	 * @return bool
 	 */
@@ -55,7 +53,6 @@ abstract class ParserClearState extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Parser &$parser

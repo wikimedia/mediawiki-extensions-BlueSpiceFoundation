@@ -52,25 +52,21 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	protected $name = '';
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @var LinkRenderer
 	 */
 	protected $linkRenderer = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $args = [];
@@ -114,7 +110,6 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @param MediaWikiServices $services
 	 * @param Config $config
@@ -152,7 +147,6 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return IContextSource
 	 */
 	public function getContext() {
@@ -160,7 +154,6 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function makeTagContent() {
@@ -169,7 +162,6 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getOpenTag() {
@@ -180,7 +172,6 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function makeTagAttribs() {
@@ -203,7 +194,6 @@ abstract class Renderer implements IRenderer, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getCloseTag() {

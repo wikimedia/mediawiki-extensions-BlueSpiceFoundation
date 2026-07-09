@@ -7,7 +7,6 @@
 class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 
 	/**
-	 *
 	 * @param mixed|false $value
 	 * @return string
 	 */
@@ -35,7 +34,6 @@ class HTMLMultiSelectSortList extends HTMLMultiSelectEx {
 	}
 
 	/**
-	 *
 	 * @param mixed|false $value
 	 * @param array $aOptions
 	 * @return array

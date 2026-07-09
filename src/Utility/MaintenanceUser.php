@@ -10,7 +10,6 @@ use RuntimeException;
 class MaintenanceUser {
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
@@ -20,7 +19,6 @@ class MaintenanceUser {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getUserName() {
@@ -28,7 +26,6 @@ class MaintenanceUser {
 	}
 
 	/**
-	 *
 	 * @param User|null $user
 	 * @return bool
 	 */
@@ -62,7 +59,6 @@ class MaintenanceUser {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getOptions() {
@@ -74,7 +70,6 @@ class MaintenanceUser {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getGroups() {
@@ -82,7 +77,6 @@ class MaintenanceUser {
 	}
 
 	/**
-	 *
 	 * @param User $user
 	 * @param int|null $expiry
 	 */
@@ -105,7 +99,6 @@ class MaintenanceUser {
 	}
 
 	/**
-	 *
 	 * @param int $expireInSeconds
 	 * @return string
 	 */

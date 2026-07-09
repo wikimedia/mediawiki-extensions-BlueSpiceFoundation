@@ -32,7 +32,6 @@
 class BSNamespaceParser extends \ValueParsers\StringValueParser {
 
 	/**
-	 *
 	 * @param string $value
 	 * @return int
 	 */

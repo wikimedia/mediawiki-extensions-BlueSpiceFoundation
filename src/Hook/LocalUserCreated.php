@@ -8,13 +8,11 @@ use MediaWiki\User\User;
 
 abstract class LocalUserCreated extends \BlueSpice\Hook {
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $autocreated = null;
@@ -38,7 +36,6 @@ abstract class LocalUserCreated extends \BlueSpice\Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param User $user

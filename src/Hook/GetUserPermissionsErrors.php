@@ -35,30 +35,25 @@ use MediaWiki\User\User;
 
 abstract class GetUserPermissionsErrors extends Hook {
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $action = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $result = null;
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action

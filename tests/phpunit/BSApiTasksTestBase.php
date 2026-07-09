@@ -12,7 +12,6 @@ abstract class BSApiTasksTestBase extends BSApiTestCase {
 	abstract protected function getModuleName();
 
 	/**
-	 *
 	 * @param string $taskName
 	 * @param \stdClass $taskData
 	 * @return \stdClass

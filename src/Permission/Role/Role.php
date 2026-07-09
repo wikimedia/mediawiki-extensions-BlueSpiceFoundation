@@ -11,13 +11,11 @@ use MediaWiki\Message\Message;
  */
 abstract class Role implements IRole {
 	/**
-	 *
 	 * @var string
 	 */
 	protected $name;
 
 	/**
-	 *
 	 * @var string[]
 	 */
 	protected $permissions = [];

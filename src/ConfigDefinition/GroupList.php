@@ -10,7 +10,6 @@ use MediaWiki\Message\Message;
 abstract class GroupList extends \BlueSpice\ConfigDefinition {
 
 	/**
-	 *
 	 * @return GroupMultiSelect
 	 */
 	public function getHtmlFormField() {
@@ -25,7 +24,6 @@ abstract class GroupList extends \BlueSpice\ConfigDefinition {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getBlacklist() {
