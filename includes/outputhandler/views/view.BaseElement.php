@@ -255,6 +255,9 @@ class ViewBaseElement {
 		return $item;
 	}
 
+	/**
+	 * @return int
+	 */
 	public function hasItems() {
 		return count( $this->_mItems );
 	}

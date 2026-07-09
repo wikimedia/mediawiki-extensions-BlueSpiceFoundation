@@ -39,8 +39,6 @@ use MediaWiki\Title\Title;
  * DEPRECATED
  * The BsCore
  * @deprecated since version 3.1.0 - Fully deprecated now, will be removed soon
- * @package BlueSpice_Core
- * @subpackage Core
  */
 class BsCore {
 

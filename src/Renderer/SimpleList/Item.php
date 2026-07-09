@@ -24,6 +24,9 @@ class Item extends \BlueSpice\Renderer {
 		$this->args[static::PARAM_TAG] = 'li';
 	}
 
+	/**
+	 * @return string
+	 */
 	public function render() {
 		$content = '';
 		$content .= $this->getOpenTag();

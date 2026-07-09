@@ -6,6 +6,9 @@ use BlueSpice\Hook\PageSaveComplete;
 
 class InvalidateArticleHelper extends PageSaveComplete {
 
+	/**
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		if ( !$this->wikiPage->getTitle()->exists() ) {
 			return true;

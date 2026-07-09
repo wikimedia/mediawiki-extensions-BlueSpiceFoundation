@@ -6,6 +6,9 @@ use BlueSpice\Renderer\LinkList\Item;
 
 class LinkList extends SimpleList {
 
+	/**
+	 * @return string
+	 */
 	protected function makeTagContent() {
 		$content = '';
 		foreach ( $this->args[static::PARAM_ITEMS] as $item ) {

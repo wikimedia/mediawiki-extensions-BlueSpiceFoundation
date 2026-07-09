@@ -3,12 +3,6 @@
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
-/**
- * This class provides functions for common tasks while working with MediaWiki
- * Article/Title objects.
- * @package BlueSpice_AdapterMW
- * @subpackage Utility
- */
 class BsArticleHelper {
 
 	protected $oTitle = null;
@@ -101,6 +95,9 @@ class BsArticleHelper {
 		return Title::castFromLinkTarget( $redirTarget );
 	}
 
+	/**
+	 * @return bool|void
+	 */
 	public function invalidate() {
 		$this->bIsLoaded = false;
 

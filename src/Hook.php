@@ -103,6 +103,9 @@ abstract class Hook implements MessageLocalizer {
 		return $this->getContext()->msg( $key, ...$params );
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function process() {
 		if ( $this->skipProcessingForAnon() ) {
 			if ( !$this->getContext()->getUser()->isRegistered() ) {
@@ -125,6 +128,9 @@ abstract class Hook implements MessageLocalizer {
 		return $result;
 	}
 
+	/**
+	 * @return bool
+	 */
 	abstract protected function doProcess();
 
 	/**

@@ -105,6 +105,9 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 		return null;
 	}
 
+	/**
+	 * @return array
+	 */
 	protected function makeFormFieldParams() {
 		return [
 			'name' => $this->getName(),
@@ -125,6 +128,9 @@ abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocal
 		return $this->config->getOverrides()->has( $this->getName() );
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function makeID() {
 		return $this->getVariableName();
 	}
