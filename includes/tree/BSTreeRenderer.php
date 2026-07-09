@@ -48,6 +48,9 @@ class BSTreeRenderer {
 		$this->config = new MultiConfig( $configs );
 	}
 
+	/**
+	 * @return string
+	 */
 	public function render() {
 		$this->clearBuffer();
 		$nodes = $this->root->getChildNodes();

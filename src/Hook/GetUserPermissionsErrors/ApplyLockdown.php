@@ -7,6 +7,9 @@ use MediaWiki\Message\Message;
 
 class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 
+	/**
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		return !$this->getLockdown()->isLockedDown( $this->action );
 	}

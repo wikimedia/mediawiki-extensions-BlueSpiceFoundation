@@ -4,6 +4,9 @@ namespace BlueSpice\Hook\ThumbnailBeforeProduceHTML;
 
 class AddDataAttributes extends \BlueSpice\Hook\ThumbnailBeforeProduceHTML {
 
+	/**
+	 * @return bool
+	 */
 	protected function skipProcessing() {
 		// this is a bit hacky but without the parser test for extension cite
 		// may fail, as it checks for the equality of the complete parserd html

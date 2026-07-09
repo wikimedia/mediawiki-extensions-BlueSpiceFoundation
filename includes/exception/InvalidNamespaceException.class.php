@@ -1,10 +1,4 @@
 <?php
-/**
- * This class is the basetype for Exceptions within the BlueSpice framework.
- *
- * @copyright Copyright (C) 2016 Hallo Welt! GmbH, All rights reserved.
- * @author Robert Vogel
- */
 
 class BsInvalidNamespaceException extends BsException {
 	private $mListOfInvalidNamespaces = [];

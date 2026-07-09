@@ -30,6 +30,9 @@ class Item extends \BlueSpice\Renderer\SimpleList\Item {
 		);
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function makeTagContent() {
 		$content = '';
 		$text = new HtmlArmor( $this->args[static::PARAM_TEXT] );

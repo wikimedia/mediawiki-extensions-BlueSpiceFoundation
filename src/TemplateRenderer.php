@@ -125,6 +125,9 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		return $content;
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function makeTagContent() {
 		$content = $this->getFromCache();
 		if ( $content ) {
@@ -188,6 +191,9 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 		return static::$cache[$cacheKey];
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function hasCacheEntry() {
 		$cacheKey = $this->getCacheKey();
 		if ( !$cacheKey ) {

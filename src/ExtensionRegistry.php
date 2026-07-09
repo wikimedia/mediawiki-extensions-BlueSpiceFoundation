@@ -56,6 +56,9 @@ class ExtensionRegistry {
 		$this->config = $config;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function runRegister() {
 		if ( $this->extensionDefinitions ) {
 			return true;
