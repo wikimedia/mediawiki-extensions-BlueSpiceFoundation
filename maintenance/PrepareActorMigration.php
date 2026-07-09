@@ -21,10 +21,14 @@ class PrepareActorMigration extends Maintenance {
 	 */
 	private $db = null;
 
+	/** @var array */
 	private $userIds = [];
+	/** @var array */
 	private $userNames = [];
 
+	/** @var int */
 	private $unknownUserId = 1;
+	/** @var string */
 	private $unknownUserName = 'WikiSysop';
 
 	public function execute() {
@@ -57,6 +61,7 @@ class PrepareActorMigration extends Maintenance {
 		$this->output( "User names to be replaced: $userNameList\n" );
 	}
 
+	/** @var array */
 	private $tablesToFix = [
 		'revision' => [ 'rev_user', 'rev_user_text' ],
 		'archive' => [ 'ar_user', 'ar_user_text' ],
@@ -83,6 +88,7 @@ class PrepareActorMigration extends Maintenance {
 		sort( $this->orphanedUserNames );
 	}
 
+	/** @var array */
 	private $orphanedUserIds = [];
 
 	/**
@@ -106,6 +112,7 @@ class PrepareActorMigration extends Maintenance {
 		$this->orphanedUserIds = array_merge( $this->orphanedUserIds, $orphanedUserIds );
 	}
 
+	/** @var array */
 	private $orphanedUserNames = [];
 
 	/**

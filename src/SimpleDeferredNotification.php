@@ -7,8 +7,10 @@ use MediaWiki\Message\Message;
 
 class SimpleDeferredNotification implements IDeferredNotification {
 
+	/** @var Message */
 	private $message = null;
 
+	/** @var array */
 	private $options = null;
 
 	/**

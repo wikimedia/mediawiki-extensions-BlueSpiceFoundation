@@ -8,6 +8,7 @@ require_once 'Maintenance.php';
 
 class PrepareActorMigration2 extends Maintenance {
 
+	/** @var array */
 	private $tablesToFix = [
 		'revision' => [ 'rev_user', 'rev_user_text' ],
 		'archive' => [ 'ar_user', 'ar_user_text' ],
@@ -37,7 +38,10 @@ class PrepareActorMigration2 extends Maintenance {
 	 */
 	private $userNameUtils = null;
 
+	/** @var bool */
 	private $dry = true;
+
+	/** @var array */
 	private $userNames = [];
 
 	public function execute() {
