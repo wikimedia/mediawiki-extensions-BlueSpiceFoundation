@@ -58,7 +58,7 @@ class BSApiPingTasks extends BSApiTasksBase {
 	 * @param \stdClass $oTaskData
 	 * @return \BlueSpice\Api\Response\Standard
 	 */
-	protected function task_ping( $oTaskData ) {
+	protected function task_ping( $oTaskData ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		$oResponse = $this->makeStandardReturn();
 		$oResponse->success = true;
 		$oResponse->payload = [];

@@ -10,7 +10,7 @@
 
 require_once 'BSMaintenance.php';
 
-class ListUserEmails extends BSMaintenance {
+class ListUserEmails extends BSMaintenance { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.WrongCase
 
 	public function __construct() {
 		parent::__construct();

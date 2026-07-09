@@ -1,4 +1,6 @@
 <?php
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 /**
  * Provides common tasks that can pe performed on a WikiPage.
  *
