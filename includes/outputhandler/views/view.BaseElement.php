@@ -36,7 +36,7 @@ use MediaWiki\MediaWikiServices;
  * DEPRECATED! You may want to use a \BlueSpice\Renderer or a
  * \BlueSpice\TemplateRenderer instead
  */
-class ViewBaseElement {
+class ViewBaseElement { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/** @var int */
 	protected static $_prAutoId = 0; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore

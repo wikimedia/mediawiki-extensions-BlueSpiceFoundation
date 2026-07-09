@@ -31,7 +31,7 @@
  * DEPRECATED!
  * @deprecated since version 3.1
  */
-class BsException extends Exception {
+class BsException extends Exception { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/** @var string */
 	protected $sMessage = '';

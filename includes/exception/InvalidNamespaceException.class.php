@@ -1,6 +1,6 @@
 <?php
 
-class BsInvalidNamespaceException extends BsException {
+class BsInvalidNamespaceException extends BsException { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/** @var array */
 	private $mListOfInvalidNamespaces = [];
