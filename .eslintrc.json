@@ -28,6 +28,7 @@
 		"no-jquery/no-class-state": "off",
 		"no-jquery/no-global-selector": "off",
 		"no-prototype-builtins": "off",
-		"es-x/no-async-functions": "off"
+		"es-x/no-async-functions": "off",
+		"no-jquery/no-done-fail": "warn"
 	}
 }

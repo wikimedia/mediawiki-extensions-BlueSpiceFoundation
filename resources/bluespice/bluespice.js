@@ -42,7 +42,7 @@ const bs = ( function ( mw ) {
 			includeIds = [];
 		for ( const lcNamespaceName in namespaceIds ) {
 			const namespaceId = namespaceIds[ lcNamespaceName ];
-			if ( excludeIds.indexOf( namespaceId ) !== -1 ) {
+			if ( excludeIds.indexOf( namespaceId ) !== -1 ) { // eslint-disable-line unicorn/prefer-includes
 				continue;
 			}
 			includeIds.push( namespaceId );

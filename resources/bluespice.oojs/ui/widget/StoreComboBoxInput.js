@@ -40,7 +40,7 @@ bs.ui.widget.StoreComboBoxInput.prototype.getLookupRequest = function () {
 		const filteredData = [];
 		for ( let i = 0; i < this.localData.length; i++ ) {
 			const record = this.localData[ i ];
-			if ( this.displayField && record[ this.displayField ].indexOf( value ) !== -1 ) {
+			if ( this.displayField && record[ this.displayField ].indexOf( value ) !== -1 ) { // eslint-disable-line unicorn/prefer-includes
 				filteredData.push( record );
 				continue;
 			}

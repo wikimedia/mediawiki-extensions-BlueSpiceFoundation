@@ -1,3 +1,4 @@
+/* eslint-disable mediawiki/no-storage */
 ( function ( mw, bs, $ ) {
 
 	// Helper function to get a unique identifier for a notification
@@ -38,7 +39,7 @@
 		// Iterate and display notifications only if they haven't been shown before
 		for ( let i = 0; i < notifyArray.length; i++ ) {
 			const notificationId = _getNotificationId( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
-			if ( shownArray.indexOf( notificationId ) === -1 ) {
+			if ( shownArray.indexOf( notificationId ) === -1 ) { // eslint-disable-line unicorn/prefer-includes
 				mw.notify( notifyArray[ i ][ 0 ], notifyArray[ i ][ 1 ] );
 				shownArray.push( notificationId ); // Mark this notification as shown
 			}

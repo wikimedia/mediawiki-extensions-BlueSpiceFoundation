@@ -27,14 +27,14 @@ bs.ui.dialog.SimpleMessageDialog = function ( config ) {
 	}
 
 	if ( config.hasOwnProperty( 'titleMsg' ) ) {
-		bs.ui.dialog.SimpleMessageDialog.static.title = mw.message( config.titleMsg ).text(); // eslint-disable-line mediawiki/msg-doc
+		bs.ui.dialog.SimpleMessageDialog.static.title = mw.message( config.titleMsg ).text();
 	} else if ( config.hasOwnProperty( 'title' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.title = config.title;
 	}
 
 	if ( config.hasOwnProperty( 'textMsg' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.message =
-			new OO.ui.HtmlSnippet( mw.message( config.textMsg ).text() ); // eslint-disable-line mediawiki/msg-doc
+			new OO.ui.HtmlSnippet( mw.message( config.textMsg ).text() );
 	} else if ( config.hasOwnProperty( 'text' ) ) {
 		bs.ui.dialog.SimpleMessageDialog.static.message =
 			new OO.ui.HtmlSnippet( config.text );
