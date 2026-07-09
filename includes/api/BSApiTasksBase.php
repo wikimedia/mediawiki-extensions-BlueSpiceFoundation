@@ -458,7 +458,7 @@ abstract class BSApiTasksBase extends \BlueSpice\Api {
 	 * @return array Elements of $oTasks with boolean attributes for grant / deny on each task
 	 * provided by called api-class
 	 */
-	public function task_getUserTaskPermissions( $oTaskData ) {
+	public function task_getUserTaskPermissions( $oTaskData ) { // phpcs:ignore MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName, Generic.Files.LineLength.TooLong
 		$oResponse = $this->makeStandardReturn();
 
 		$aTaskPermissions = $this->getRequiredTaskPermissions();
