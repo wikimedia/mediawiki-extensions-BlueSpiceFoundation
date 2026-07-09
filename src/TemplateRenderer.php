@@ -36,6 +36,7 @@ use MediaWiki\MediaWikiServices;
 
 abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 
+	/** @var array */
 	protected static $cache = [];
 
 	/**

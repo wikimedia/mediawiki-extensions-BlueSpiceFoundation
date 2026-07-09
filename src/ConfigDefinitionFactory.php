@@ -7,6 +7,7 @@ use MediaWiki\Context\RequestContext;
 
 class ConfigDefinitionFactory {
 
+	/** @var array|null */
 	protected $configDefinitions = null;
 
 	/**

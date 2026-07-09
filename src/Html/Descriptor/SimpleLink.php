@@ -16,6 +16,7 @@ class SimpleLink implements ILink {
 	public const TOOLTIP = 'tooltip';
 	public const HREF = 'href';
 
+	/** @var array */
 	protected $data = [];
 
 	/**

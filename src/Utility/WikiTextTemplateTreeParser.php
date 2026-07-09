@@ -54,6 +54,7 @@ class WikiTextTemplateTreeParser {
 			!== 0;
 	}
 
+	/** @var int */
 	protected $counter = 0;
 
 	protected function findAndReplaceLeafTemplates() {

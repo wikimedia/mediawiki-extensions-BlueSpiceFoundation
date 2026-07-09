@@ -9,17 +9,29 @@ use OOUI\Tag;
 use OOUI\TextInputWidget;
 
 class KeyValueInputWidget extends \OOUI\Widget {
+
+	/** @var string */
 	protected $keyLabel;
+	/** @var string */
 	protected $valueLabel;
+	/** @var string */
 	protected $addNewFormLabel;
+	/** @var bool */
 	protected $keyReadOnly;
+	/** @var bool */
 	protected $allowAdditions;
+	/** @var bool */
 	protected $labelsOnlyOnFirst;
+	/** @var bool */
 	protected $valueRequired;
+	/** @var array */
 	protected $value;
 
+	/** @var Tag */
 	protected $separator;
+	/** @var Tag */
 	protected $valueContainer;
+	/** @var Tag */
 	protected $addContainer;
 
 	/**

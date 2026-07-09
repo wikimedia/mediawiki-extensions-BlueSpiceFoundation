@@ -8,7 +8,9 @@ use OOUI\Widget;
 class MenuOptionWidget extends Widget {
 	use LabelElement;
 
+	/** @var array */
 	protected $options = [];
+	/** @var array */
 	protected $handle = [];
 
 	/**

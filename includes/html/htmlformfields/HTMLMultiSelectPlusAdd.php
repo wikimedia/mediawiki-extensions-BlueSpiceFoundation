@@ -8,6 +8,8 @@ use MediaWiki\Html\Html;
  * @author Sebastian Ulbricht <x_lilu_x@gmx.de>
  */
 class HTMLMultiSelectPlusAdd extends HTMLMultiSelectEx {
+
+	/** @var bool */
 	protected $allowAdditions = true;
 
 	/**

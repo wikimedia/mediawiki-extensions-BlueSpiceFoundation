@@ -7,6 +7,7 @@ use MediaWiki\Title\Title;
 
 class BSExportFiles extends BSMaintenance {
 
+	/** @var string */
 	protected $sBasePath = '';
 
 	public function __construct() {

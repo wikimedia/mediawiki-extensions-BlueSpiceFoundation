@@ -5,9 +5,12 @@ use MediaWiki\Title\Title;
 
 class BsArticleHelper {
 
+	/** @var Title */
 	protected $oTitle = null;
+	/** @var bool */
 	protected $bIsLoaded = false;
 
+	/** @var array */
 	protected static $aInstances = [];
 
 	/** @var MediaWikiServices */
