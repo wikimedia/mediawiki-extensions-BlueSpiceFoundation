@@ -32,5 +32,6 @@
 	"bs-pageexport-overwrite-label": "الكتابة فوق",
 	"bs-export-search-summary-text": "تم إنشاؤه بواسطة PageExport",
 	"bs-pagecollection-prefix": "مجموعة الصفحة",
-	"bs-util-alert-title": "تَلمِيح"
+	"bs-util-alert-title": "تَلمِيح",
+	"bs-save-as-collection-dialog-title": "حفظ كمجموعة صفحات"
 }
