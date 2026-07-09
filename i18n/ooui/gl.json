@@ -31,5 +31,6 @@
 	"bs-pageexport-overwrite-label": "Sobrescribir",
 	"bs-export-search-summary-text": "Xerado por PageExport",
 	"bs-pagecollection-prefix": "Colección de páxinas",
-	"bs-util-alert-title": "Suxestión"
+	"bs-util-alert-title": "Suxestión",
+	"bs-save-as-collection-dialog-title": "Gardar como colección de páxinas"
 }

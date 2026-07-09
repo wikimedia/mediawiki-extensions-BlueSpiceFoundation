@@ -30,5 +30,6 @@
 	"bs-pageexport-overwrite-label": "덮어쓰기",
 	"bs-export-search-summary-text": "PageExport를 통해 생성됨",
 	"bs-pagecollection-prefix": "문서 모음집",
-	"bs-util-alert-title": "힌트"
+	"bs-util-alert-title": "힌트",
+	"bs-save-as-collection-dialog-title": "문서 컬렉션으로써 저장"
 }
