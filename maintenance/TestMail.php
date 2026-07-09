@@ -13,7 +13,9 @@ require_once 'BSMaintenance.php';
 
 class TestMail extends BSMaintenance {
 
+	/** @var string */
 	protected $defaultSubject = '204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur Pflicht werden.';
+	/** @var string */
 	protected $defaultText = ' Quod erat demonstrandum. Seit 1975 fehlen in den meisten Testtexten'
 		. ' die Zahlen, weswegen nach TypoGb. 204 § ab dem Jahr 2034 Zahlen in 86 der Texte zur'
 		. ' Pflicht werden. 

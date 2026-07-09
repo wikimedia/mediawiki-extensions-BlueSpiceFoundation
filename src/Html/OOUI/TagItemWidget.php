@@ -10,9 +10,12 @@ class TagItemWidget extends Widget {
 	use LabelElement;
 	use FlaggedElement;
 
+	/** @var \OOUI\ButtonWidget */
 	protected $closeButton;
 
+	/** @var bool */
 	protected $valid;
+	/** @var bool */
 	protected $fixed;
 
 	/**

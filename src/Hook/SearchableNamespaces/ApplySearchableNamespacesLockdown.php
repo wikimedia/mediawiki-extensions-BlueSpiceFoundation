@@ -2,9 +2,16 @@
 
 namespace BlueSpice\Hook\SearchableNamespaces;
 
+use BlueSpice\Permission\PermissionRegistry;
+use MediaWiki\User\UserIdentity;
+
 class ApplySearchableNamespacesLockdown extends \BlueSpice\Hook\SearchableNamespaces {
+
+	/** @var array|null */
 	protected $namespaceRolesLockdown;
+	/** @var PermissionRegistry */
 	protected $permissionRegistry;
+	/** @var UserIdentity */
 	protected $user;
 
 	/**

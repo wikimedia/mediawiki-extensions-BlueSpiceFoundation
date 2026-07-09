@@ -32,6 +32,7 @@ use MediaWiki\Context\IContextSource;
 
 abstract class SoftwareInfo extends Hook {
 
+	/** @var array */
 	protected $softwareInfo = [];
 
 	/**

@@ -11,6 +11,8 @@ use MediaWikiIntegrationTestCase;
  * @group Database
  */
 class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
+
+	/** @var string */
 	protected $testUserName = 'wiki Sysöp';
 
 	/**

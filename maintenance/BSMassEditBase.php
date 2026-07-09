@@ -12,11 +12,17 @@ use Wikimedia\Diff\UnifiedDiffFormatter;
 require_once __DIR__ . '/BSMaintenance.php';
 
 class BSMassEditBase extends BSMaintenance {
+
+	/** @var array */
 	protected $aFileMap = [];
+	/** @var array */
 	protected $aPageNameMap = [];
 
+	/** @var int */
 	protected $iTitleCount = 0;
+	/** @var int */
 	protected $iModifiedTitleCount = 0;
+	/** @var int */
 	protected $iFailureTitleCount = 0;
 
 	public function __construct() {

@@ -3,11 +3,17 @@
 namespace BlueSpice\Html\OOUI;
 
 class MenuTagMultiselectWidget extends TagMultiselectWidget {
+
+	/** @var array */
 	protected $options = [];
 
+	/** @var MenuTagMultiselectWidget */
 	protected $overlay;
+	/** @var bool */
 	protected $clearInputOnChoose;
+	/** @var MenuSelectWidget */
 	protected $menu;
+	/** @var array */
 	protected $menuConfig;
 
 	/**

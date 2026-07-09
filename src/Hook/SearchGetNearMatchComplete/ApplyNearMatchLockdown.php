@@ -2,9 +2,16 @@
 
 namespace BlueSpice\Hook\SearchGetNearMatchComplete;
 
+use BlueSpice\Permission\PermissionRegistry;
+use MediaWiki\User\UserIdentity;
+
 class ApplyNearMatchLockdown extends \BlueSpice\Hook\SearchGetNearMatchComplete {
+
+	/** @var array|null */
 	protected $namespaceRolesLockdown;
+	/** @var PermissionRegistry */
 	protected $permissionRegistry;
+	/** @var UserIdentity */
 	protected $user;
 
 	/**

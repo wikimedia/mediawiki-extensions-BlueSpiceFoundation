@@ -7,6 +7,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 
 class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 
+	/** @var string */
 	protected static $configName = 'bsg';
 
 	/**

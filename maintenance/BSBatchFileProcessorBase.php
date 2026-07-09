@@ -4,11 +4,17 @@ require_once __DIR__ . '/BSMaintenance.php';
 
 abstract class BSBatchFileProcessorBase extends BSMaintenance {
 
+	/** @var string */
 	protected $sSrc = '';
+	/** @var string */
 	protected $sDest = __DIR__;
+	/** @var mixed */
 	protected $oCurrentFile = null;
+	/** @var array */
 	protected $aFiles = [];
+	/** @var array */
 	protected $aFileExtensionWhitelist = [];
+	/** @var array */
 	protected $aErrors = [];
 
 	public function __construct() {
