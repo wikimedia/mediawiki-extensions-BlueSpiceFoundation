@@ -32,13 +32,11 @@
  */
 class BSInvalidParamException extends Exception {
 	/**
-	 *
 	 * @var \ParamProcessor\ProcessingError[]
 	 */
 	protected $aErrors = [];
 
 	/**
-	 *
 	 * @param \ParamProcessor\ProcessingError[] $aErrors
 	 */
 	public function setErrors( $aErrors ) {
@@ -46,7 +44,6 @@ class BSInvalidParamException extends Exception {
 	}
 
 	/**
-	 *
 	 * @return \ParamProcessor\ProcessingError[]
 	 */
 	public function getErrors() {

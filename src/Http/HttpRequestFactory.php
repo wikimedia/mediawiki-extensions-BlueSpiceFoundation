@@ -7,19 +7,16 @@ use MediaWiki\Http\HttpRequestFactory as MWHttpRequestFactory;
 class HttpRequestFactory extends MWHttpRequestFactory {
 
 	/**
-	 *
 	 * @var MWHttpRequestFactory
 	 */
 	private $decoratedFactory = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	private $defaultOptions = [];
 
 	/**
-	 *
 	 * @param MWHttpRequestFactory $decoratedFactory
 	 * @param array $defaultOptions
 	 */

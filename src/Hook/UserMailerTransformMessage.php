@@ -34,43 +34,36 @@ use MediaWiki\Context\IContextSource;
 abstract class UserMailerTransformMessage extends Hook {
 
 	/**
-	 *
 	 * @var MailAddress[]
 	 */
 	protected $to = null;
 
 	/**
-	 *
 	 * @var MailAddress
 	 */
 	protected $from = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $subject = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $headers = [];
 
 	/**
-	 *
 	 * @var string|array
 	 */
 	protected $body = [];
 
 	/**
-	 *
 	 * @var false|string
 	 */
 	protected $error = [];
 
 	/**
-	 *
 	 * @param MailAddress[] $to
 	 * @param MailAddress $from
 	 * @param string &$subject
@@ -96,7 +89,6 @@ abstract class UserMailerTransformMessage extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param MailAddress[] $to

@@ -35,7 +35,6 @@ class ProcessingErrorMessageTranslator {
 	];
 
 	/**
-	 *
 	 * @param string $message
 	 * @return string
 	 */

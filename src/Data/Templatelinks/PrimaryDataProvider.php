@@ -15,13 +15,11 @@ use MWStake\MediaWiki\Component\DataStore\Record as DataStoreRecord;
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
-	 *
 	 * @var DataStoreRecord
 	 */
 	protected $data = [];
 
 	/**
-	 *
 	 * @var \Wikimedia\Rdbms\IDatabase
 	 */
 	protected $db = null;
@@ -30,13 +28,11 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	protected $context = null;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $pageId = -1;
 
 	/**
-	 *
 	 * @param \Wikimedia\Rdbms\IDatabase $db
 	 * @param IContextSource|null $context
 	 */
@@ -46,7 +42,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param ReaderParams $params
 	 * @return Record[]
 	 */
@@ -73,7 +68,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param Filter[] $preFilters
 	 * @return array
 	 */
@@ -93,7 +87,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param \stdClass $row
 	 */
 	protected function appendRowToData( $row ) {
@@ -111,7 +104,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -124,7 +116,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param User $user
 	 * @return bool
 	 */

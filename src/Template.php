@@ -7,25 +7,21 @@ use MediaWiki\MediaWikiServices;
 
 abstract class Template implements ITemplate {
 	/**
-	 *
 	 * @var string
 	 */
 	protected $alias = null;
 
 	/**
-	 *
 	 * @var TemplateHelper
 	 */
 	protected $templateHelper = null;
 
 	/**
-	 *
 	 * @var ITemplateParser
 	 */
 	protected $templateParser = null;
 
 	/**
-	 *
 	 * @param string $alias
 	 * @param TemplateHelper $templateHelper
 	 * @param ITemplateParser $templateParser
@@ -38,7 +34,6 @@ abstract class Template implements ITemplate {
 	}
 
 	/**
-	 *
 	 * @param MediaWikiServices $services
 	 * @param string $alias
 	 * @param TemplateHelper|null $templateHelper
@@ -50,7 +45,6 @@ abstract class Template implements ITemplate {
 		?ITemplateParser $templateParser = null );
 
 	/**
-	 *
 	 * @param array $args
 	 * @param array $scopes
 	 * @return string Rendered template
@@ -64,7 +58,6 @@ abstract class Template implements ITemplate {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getFilePath() {
@@ -73,7 +66,6 @@ abstract class Template implements ITemplate {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getFileName() {

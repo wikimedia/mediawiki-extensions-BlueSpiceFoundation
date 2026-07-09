@@ -32,7 +32,6 @@ use BlueSpice\Hook;
 abstract class SetupAfterCache extends Hook {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public static function callback() {

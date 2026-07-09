@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 class Favicon extends StringSetting implements IOverwriteGlobal {
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getPaths() {
@@ -20,7 +19,6 @@ class Favicon extends StringSetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getLabelMessageKey() {
@@ -28,7 +26,6 @@ class Favicon extends StringSetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getVariableName() {
@@ -36,7 +33,6 @@ class Favicon extends StringSetting implements IOverwriteGlobal {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getHelpMessageKey() {

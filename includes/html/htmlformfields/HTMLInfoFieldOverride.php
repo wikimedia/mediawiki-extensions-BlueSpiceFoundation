@@ -5,7 +5,6 @@ use MediaWiki\Xml\Xml;
 class HTMLInfoFieldOverride extends HTMLInfoField {
 
 	/**
-	 *
 	 * @param array $value
 	 * @return string
 	 */

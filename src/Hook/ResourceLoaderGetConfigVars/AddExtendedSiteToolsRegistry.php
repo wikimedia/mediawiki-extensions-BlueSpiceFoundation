@@ -8,7 +8,6 @@ use MediaWiki\Registration\ExtensionRegistry;
 class AddExtendedSiteToolsRegistry extends ResourceLoaderGetConfigVars {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {
@@ -20,7 +19,6 @@ class AddExtendedSiteToolsRegistry extends ResourceLoaderGetConfigVars {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getSettingsToExpose() {

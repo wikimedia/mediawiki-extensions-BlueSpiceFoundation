@@ -19,7 +19,6 @@ class SimpleLink implements ILink {
 	protected $data = [];
 
 	/**
-	 *
 	 * @param array $data
 	 */
 	public function __construct( $data ) {
@@ -32,7 +31,6 @@ class SimpleLink implements ILink {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getCSSClasses() {
@@ -40,7 +38,6 @@ class SimpleLink implements ILink {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getDataAttributes() {
@@ -48,7 +45,6 @@ class SimpleLink implements ILink {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getHtmlId() {
@@ -56,7 +52,6 @@ class SimpleLink implements ILink {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getIcon() {
@@ -64,7 +59,6 @@ class SimpleLink implements ILink {
 	}
 
 	/**
-	 *
 	 * @return Message
 	 */
 	public function getLabel() {
@@ -72,7 +66,6 @@ class SimpleLink implements ILink {
 	}
 
 	/**
-	 *
 	 * @return Message
 	 */
 	public function getTooltip() {
@@ -87,7 +80,6 @@ class SimpleLink implements ILink {
 	}
 
 	/**
-	 *
 	 * @param string $fieldName
 	 * @param mixed $default
 	 * @return mixed

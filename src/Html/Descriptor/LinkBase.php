@@ -8,19 +8,16 @@ use MediaWiki\Context\IContextSource;
 abstract class LinkBase implements ILink {
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 */
@@ -30,7 +27,6 @@ abstract class LinkBase implements ILink {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getHtmlId() {
@@ -38,7 +34,6 @@ abstract class LinkBase implements ILink {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getCSSClasses() {
@@ -46,7 +41,6 @@ abstract class LinkBase implements ILink {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getIcon() {
@@ -54,7 +48,6 @@ abstract class LinkBase implements ILink {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getDataAttributes() {
@@ -62,7 +55,6 @@ abstract class LinkBase implements ILink {
 	}
 
 	/**
-	 *
 	 * @param \ContextSource $context
 	 * @param Config $config
 	 * @return ILink[]

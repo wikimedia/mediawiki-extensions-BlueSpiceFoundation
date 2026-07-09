@@ -5,13 +5,11 @@ namespace BlueSpice;
 class TagFactory {
 
 	/**
-	 *
 	 * @var IRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @param IRegistry $registry
 	 */
 	public function __construct( $registry ) {
@@ -19,7 +17,6 @@ class TagFactory {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @return Tag\ITag
 	 */

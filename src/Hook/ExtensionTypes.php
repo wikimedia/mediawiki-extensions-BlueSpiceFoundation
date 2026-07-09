@@ -33,13 +33,11 @@ use MediaWiki\Context\IContextSource;
 abstract class ExtensionTypes extends Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $extTypes = null;
 
 	/**
-	 *
 	 * @param array &$extTypes
 	 * @return bool
 	 */
@@ -54,7 +52,6 @@ abstract class ExtensionTypes extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$extTypes

@@ -19,7 +19,6 @@ class SpecialWikiAdmin extends \BlueSpice\SpecialPage {
 	}
 
 	/**
-	 *
 	 * @param string $par
 	 */
 	public function execute( $par ) {

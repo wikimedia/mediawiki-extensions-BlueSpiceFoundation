@@ -17,7 +17,6 @@ class AddFooterLinks extends TitleReadWhitelist {
 	];
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function skipProcessing() {

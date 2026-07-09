@@ -15,19 +15,16 @@ use MediaWiki\User\User;
 class Namespaces extends Module {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $allowedGroups = [];
 
 	/**
-	 *
 	 * @var Manager
 	 */
 	protected $manager = null;
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param MediaWikiServices $services
@@ -40,7 +37,6 @@ class Namespaces extends Module {
 	}
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param MediaWikiServices $services
@@ -56,7 +52,6 @@ class Namespaces extends Module {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @return bool
@@ -70,7 +65,6 @@ class Namespaces extends Module {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @param string $action
@@ -130,7 +124,6 @@ class Namespaces extends Module {
 	}
 
 	/**
-	 *
 	 * @param string $action
 	 * @return array
 	 */
@@ -146,7 +139,6 @@ class Namespaces extends Module {
 	}
 
 	/**
-	 *
 	 * @return Manager
 	 */
 	protected function getRoleManager() {
@@ -154,7 +146,6 @@ class Namespaces extends Module {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @return bool
 	 */

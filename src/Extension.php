@@ -56,7 +56,6 @@ abstract class Extension extends Context implements JsonSerializable {
 	}
 
 	/**
-	 *
 	 * @param array $definition
 	 * @param IContextSource $context
 	 * @param Config $config

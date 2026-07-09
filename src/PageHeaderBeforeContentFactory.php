@@ -10,31 +10,26 @@ use MediaWiki\Context\IContextSource;
 class PageHeaderBeforeContentFactory {
 
 	/**
-	 *
 	 * @var PageHeaderBeforeContentElement[]
 	 */
 	private $instances = [];
 
 	/**
-	 *
 	 * @var ExtensionAttributeBasedRegistry
 	 */
 	private $registry = null;
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	private $context = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	private $config = null;
 
 	/**
-	 *
 	 * @param ExtensionAttributeBasedRegistry $registry
 	 * @param IContextSource $context
 	 * @param Config $config
@@ -65,7 +60,6 @@ class PageHeaderBeforeContentFactory {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @param IContextSource|null $context
 	 * @return IPageHeaderBeforeContent
@@ -98,7 +92,6 @@ class PageHeaderBeforeContentFactory {
 	}
 
 	/**
-	 *
 	 * @param type $key
 	 * @param IContextSource $context
 	 * @return string

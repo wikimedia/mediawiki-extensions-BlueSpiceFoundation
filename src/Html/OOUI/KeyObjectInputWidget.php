@@ -20,7 +20,6 @@ class KeyObjectInputWidget extends KeyValueInputWidget {
 	protected $objectConfiguration = [];
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -83,7 +82,6 @@ class KeyObjectInputWidget extends KeyValueInputWidget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -93,7 +91,6 @@ class KeyObjectInputWidget extends KeyValueInputWidget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

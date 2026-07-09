@@ -35,43 +35,36 @@ use MediaWiki\User\User;
 abstract class ArticleDeleteComplete extends Hook {
 
 	/**
-	 *
 	 * @var \WikiPage
 	 */
 	protected $wikipage = null;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $reason = null;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $id = null;
 
 	/**
-	 *
 	 * @var Content
 	 */
 	protected $content = null;
 
 	/**
-	 *
 	 * @var \LogEntry
 	 */
 	protected $logEntry = false;
 
 	/**
-	 *
 	 * @param \WikiPage &$wikipage
 	 * @param User &$user
 	 * @param string $reason
@@ -96,7 +89,6 @@ abstract class ArticleDeleteComplete extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \WikiPage &$wikipage

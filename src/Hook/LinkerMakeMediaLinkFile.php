@@ -34,31 +34,26 @@ use MediaWiki\Title\Title;
 abstract class LinkerMakeMediaLinkFile extends Hook {
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var \File
 	 */
 	protected $file = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $html = '';
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $attribs = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $ret = '';
@@ -86,7 +81,6 @@ abstract class LinkerMakeMediaLinkFile extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title $title

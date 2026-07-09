@@ -9,7 +9,6 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 	private $params;
 
 	/**
-	 *
 	 * @param array $params
 	 */
 	public function __construct( $params ) {
@@ -34,7 +33,6 @@ class PermissionMultiSelect extends \HTMLMultiSelectEx {
 	}
 
 	/**
-	 *
 	 * @param string $type
 	 */
 	protected function makeOptions( $type ) {

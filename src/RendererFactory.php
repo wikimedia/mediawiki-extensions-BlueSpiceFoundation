@@ -10,19 +10,16 @@ use MediaWiki\MediaWikiServices;
 class RendererFactory {
 
 	/**
-	 *
 	 * @var IRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @param IRegistry $registry
 	 * @param Config $config
 	 */
@@ -32,7 +29,6 @@ class RendererFactory {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @param Params $params
 	 * @param IContextSource|null $context
@@ -67,7 +63,6 @@ class RendererFactory {
 	}
 
 	/**
-	 *
 	 * @return MediaWikiServices
 	 */
 	public function getServices() {

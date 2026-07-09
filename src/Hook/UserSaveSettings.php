@@ -34,7 +34,6 @@ use MediaWiki\User\User;
 abstract class UserSaveSettings extends Hook {
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
@@ -55,7 +54,6 @@ abstract class UserSaveSettings extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param User $user

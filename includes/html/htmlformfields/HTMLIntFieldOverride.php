@@ -15,7 +15,6 @@ class HTMLIntFieldOverride extends HTMLIntField {
 	}
 
 	/**
-	 *
 	 * @param int $value
 	 * @param array $alldata
 	 *

@@ -10,9 +10,6 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 
 	protected $sBasePath = '';
 
-	/**
-	 *
-	 */
 	public function __construct() {
 		parent::__construct();
 		$this->addOption( 'overwrite', 'Overwrite existing files?' );
@@ -23,9 +20,6 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 		$this->deleteOption( 'dest' );
 	}
 
-	/**
-	 *
-	 */
 	public function execute() {
 		$this->sBasePath = str_replace( '\\', '/', realpath( $this->getOption( 'src' ) ) );
 		parent::execute();
@@ -47,7 +41,6 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 	}
 
 	/**
-	 *
 	 * @param SplFileInfo $oFile
 	 * @return bool
 	 */

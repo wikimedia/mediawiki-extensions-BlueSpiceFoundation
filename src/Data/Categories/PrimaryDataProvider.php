@@ -13,19 +13,16 @@ use Wikimedia\Rdbms\IResultWrapper;
 class PrimaryDataProvider implements IPrimaryDataProvider {
 
 	/**
-	 *
 	 * @var Record[]
 	 */
 	protected $data = [];
 
 	/**
-	 *
 	 * @var IDatabase
 	 */
 	protected $db = null;
 
 	/**
-	 *
 	 * @param IDatabase $db
 	 */
 	public function __construct( $db ) {
@@ -33,7 +30,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param ReaderParams $params
 	 * @return Record[]
 	 */
@@ -48,7 +44,6 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	}
 
 	/**
-	 *
 	 * @param stdClass $row
 	 */
 	protected function appendRowToData( $row ) {

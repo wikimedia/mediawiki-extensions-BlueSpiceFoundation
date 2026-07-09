@@ -5,7 +5,6 @@ namespace BlueSpice\ConfigDefinition;
 abstract class StringSetting extends \BlueSpice\ConfigDefinition {
 
 	/**
-	 *
 	 * @return \HTMLTextFieldOverride
 	 */
 	public function getHtmlFormField() {
@@ -13,7 +12,6 @@ abstract class StringSetting extends \BlueSpice\ConfigDefinition {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function makeFormFieldParams() {

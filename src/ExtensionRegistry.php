@@ -38,19 +38,16 @@ class ExtensionRegistry {
 	protected $extensionDefinitions = null;
 
 	/**
-	 *
 	 * @var MediaWikiExtensionRegistry
 	 */
 	protected $extensionRegistry = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @param MediaWikiExtensionRegistry $extensionRegistry
 	 * @param Config $config
 	 */
@@ -99,7 +96,6 @@ class ExtensionRegistry {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @param array $definition
 	 * @return array

@@ -35,31 +35,26 @@ use MediaWiki\User\User;
 abstract class UserCan extends Hook {
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $action = '';
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $result = false;
 
 	/**
-	 *
 	 * @param Title &$title
 	 * @param User &$user
 	 * @param string $action
@@ -80,7 +75,6 @@ abstract class UserCan extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title &$title

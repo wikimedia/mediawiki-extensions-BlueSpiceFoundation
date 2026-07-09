@@ -33,7 +33,6 @@ use MediaWiki\Context\IContextSource;
 abstract class MessageCacheGet extends Hook {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $lckey = null;
@@ -53,7 +52,6 @@ abstract class MessageCacheGet extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string &$lckey

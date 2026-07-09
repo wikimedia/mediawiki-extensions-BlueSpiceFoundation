@@ -8,7 +8,6 @@ use HTMLTextField;
 class KeyValueField extends HTMLTextField {
 
 	/**
-	 *
 	 * @param string $value
 	 * @return KeyValueInputWidget
 	 */

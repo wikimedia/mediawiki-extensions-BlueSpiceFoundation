@@ -21,7 +21,6 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @param array $params
 	 * @param string $expectedPrefixedText
 	 * @param Title[] $defaultTitles
@@ -97,7 +96,6 @@ class TitleParamsResolverTest extends \MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @param array $params
 	 * @param string[] $expectedPrefixedTexts
 	 * @param string $message

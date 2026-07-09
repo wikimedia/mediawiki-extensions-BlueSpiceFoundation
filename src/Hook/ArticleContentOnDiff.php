@@ -36,19 +36,16 @@ use MediaWiki\Output\OutputPage;
 abstract class ArticleContentOnDiff extends Hook {
 
 	/**
-	 *
 	 * @var \DiffEngine
 	 */
 	protected $diffEngine = null;
 
 	/**
-	 *
 	 * @var OutputPage
 	 */
 	protected $output = null;
 
 	/**
-	 *
 	 * @param \DiffEngine $diffEngine
 	 * @param OutputPage $output
 	 * @return bool
@@ -65,7 +62,6 @@ abstract class ArticleContentOnDiff extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \DiffEngine $diffEngine

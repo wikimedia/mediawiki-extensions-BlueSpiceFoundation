@@ -18,7 +18,6 @@ namespace BlueSpice\Tag;
  *     private variables.**
  *
  * @deprecated Use mediawiki-component-generictaghandler instead
- *
  */
 class MarkerType {
 	public const KEY = 'markerType';

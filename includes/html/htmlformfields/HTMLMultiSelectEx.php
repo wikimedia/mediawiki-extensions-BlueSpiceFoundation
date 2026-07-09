@@ -10,7 +10,6 @@ use MediaWiki\Request\WebRequest;
  */
 class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	/**
-	 *
 	 * @param array $value
 	 * @param array $alldata
 	 * @return bool
@@ -29,7 +28,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getOOUIAttributes() {
@@ -66,7 +64,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @param array $value
 	 * @return \BlueSpice\Html\OOUI\TagMultiselectWidget
 	 */
@@ -118,7 +115,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getOptionsOOUI() {
@@ -142,7 +138,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @param array $value
 	 * @return string
 	 */
@@ -158,7 +153,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @param array $options
 	 * @param array $value
 	 * @param string $class
@@ -190,7 +184,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @param WebRequest $request
 	 * @return array
 	 */
@@ -210,7 +203,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getDefault() {
@@ -222,7 +214,6 @@ class HTMLMultiSelectEx extends HTMLMultiSelectField {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function needsLabel() {

@@ -33,19 +33,16 @@ use MediaWiki\Context\IContextSource;
 abstract class ThumbnailBeforeProduceHTML extends Hook {
 
 	/**
-	 *
 	 * @var \ThumbnailImage
 	 */
 	protected $thumbnail = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $attribs = [];
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $linkAttribs = [];
@@ -69,7 +66,6 @@ abstract class ThumbnailBeforeProduceHTML extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \ThumbnailImage $thumbnail

@@ -91,7 +91,6 @@ class WatchlistTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 *
 	 * @return \BlueSpice\Data\Watchlist\Reader
 	 */
 	protected function makeInstance() {

@@ -45,7 +45,6 @@ function showHelp() {
 }
 
 /**
- *
  * @param bool $bDry
  * @param array $options
  * @return void
@@ -72,7 +71,6 @@ function modifyPropertiesController( $bDry, $options ) {
 }
 
 /**
- *
  * @param array $aUserStore
  * @param array $options
  * @param bool $bDry
@@ -105,7 +103,6 @@ function updateUserProperties( $aUserStore, $options, $bDry ) {
 }
 
 /**
- *
  * @param array $aUserStore
  */
 function displayMPCResult( $aUserStore ) {
@@ -116,7 +113,6 @@ function displayMPCResult( $aUserStore ) {
 }
 
 /**
- *
  * @param array $aUserStore
  * @param string $property
  * @param bool $filtervalue
@@ -155,7 +151,6 @@ function getMPCUserValue( $aUserStore, $property, $filtervalue = false ) {
 }
 
 /**
- *
  * @param string $sGivenUser
  * @return array
  */

@@ -15,7 +15,6 @@ trait FloatableElement {
 	protected $validHorizontalPositions = [ 'before', 'after', 'start', 'end', 'center' ];
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function initializeFloatableElement( array $config = [] ) {
@@ -40,7 +39,6 @@ trait FloatableElement {
 	}
 
 	/**
-	 *
 	 * @param \OOUI\Element $floatableElement
 	 */
 	protected function setFloatableElement( $floatableElement ) {
@@ -53,7 +51,6 @@ trait FloatableElement {
 	}
 
 	/**
-	 *
 	 * @param string $verticalPosition
 	 * @return void
 	 */
@@ -68,7 +65,6 @@ trait FloatableElement {
 	}
 
 	/**
-	 *
 	 * @param string $horizontalPosition
 	 * @return void
 	 */

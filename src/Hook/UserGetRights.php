@@ -34,19 +34,16 @@ use MediaWiki\User\User;
 abstract class UserGetRights extends Hook {
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $rights = [];
 
 	/**
-	 *
 	 * @param User $user
 	 * @param array &$rights
 	 * @return mixed
@@ -63,7 +60,6 @@ abstract class UserGetRights extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param User $user

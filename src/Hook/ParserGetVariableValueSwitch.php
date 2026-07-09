@@ -35,37 +35,31 @@ use MediaWiki\Parser\PPFrame;
 abstract class ParserGetVariableValueSwitch extends Hook {
 
 	/**
-	 *
 	 * @var Parser
 	 */
 	protected $parser = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $variableCache = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $magicWordId = '';
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $ret = '';
 
 	/**
-	 *
 	 * @var PPFrame
 	 */
 	protected $frame = null;
 
 	/**
-	 *
 	 * @param Parser $parser
 	 * @param array &$variableCache
 	 * @param string $magicWordId
@@ -88,7 +82,6 @@ abstract class ParserGetVariableValueSwitch extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Parser $parser

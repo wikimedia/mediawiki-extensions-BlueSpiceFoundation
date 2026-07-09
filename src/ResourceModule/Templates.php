@@ -59,7 +59,6 @@ class Templates extends ResourceLoaderFileModule {
 	}
 
 	/**
-	 *
 	 * @return TemplateFactory
 	 */
 	protected function getTemplateFactory() {

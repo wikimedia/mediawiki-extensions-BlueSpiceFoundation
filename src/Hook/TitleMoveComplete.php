@@ -15,49 +15,41 @@ use MediaWiki\User\User;
  */
 abstract class TitleMoveComplete extends Hook {
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $newTitle;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $oldid;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $newid;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $reason;
 
 	/**
-	 *
 	 * @var RevisionRecord
 	 */
 	protected $revision;
 
 	/**
-	 *
 	 * @param Title &$title
 	 * @param Title &$newTitle
 	 * @param User $user
@@ -85,7 +77,6 @@ abstract class TitleMoveComplete extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title &$title

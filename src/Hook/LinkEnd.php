@@ -34,37 +34,31 @@ use MediaWiki\Title\Title;
 abstract class LinkEnd extends Hook {
 
 	/**
-	 *
 	 * @var \DummyLinker
 	 */
 	protected $dummy = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $target = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $options = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $html = '';
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $attribs = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $ret = '';
@@ -97,7 +91,6 @@ abstract class LinkEnd extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \DummyLinker $dummy

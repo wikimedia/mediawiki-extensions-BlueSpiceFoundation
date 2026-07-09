@@ -34,19 +34,16 @@ use MediaWiki\Output\OutputPage;
 abstract class OutputPageBeforeHTML extends Hook {
 
 	/**
-	 *
 	 * @var OutputPage
 	 */
 	protected $out = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $text = '';
 
 	/**
-	 *
 	 * @param OutputPage &$out
 	 * @param string &$text
 	 * @return bool
@@ -63,7 +60,6 @@ abstract class OutputPageBeforeHTML extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param OutputPage &$out
@@ -76,7 +72,6 @@ abstract class OutputPageBeforeHTML extends Hook {
 	}
 
 	/**
-	 *
 	 * @param string $fieldName
 	 * @param array $item
 	 */
@@ -94,7 +89,6 @@ abstract class OutputPageBeforeHTML extends Hook {
 	}
 
 	/**
-	 *
 	 * @param string $fieldName
 	 * @param array $item
 	 */

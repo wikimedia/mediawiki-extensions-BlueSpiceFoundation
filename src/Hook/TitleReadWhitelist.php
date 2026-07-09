@@ -35,25 +35,21 @@ use MediaWiki\User\User;
 abstract class TitleReadWhitelist extends Hook {
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $whitelisted = false;
 
 	/**
-	 *
 	 * @param Title &$title
 	 * @param User &$user
 	 * @param bool &$whitelisted
@@ -72,7 +68,6 @@ abstract class TitleReadWhitelist extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title &$title
