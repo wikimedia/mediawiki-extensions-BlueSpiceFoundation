@@ -7,6 +7,7 @@ use MediaWiki\Json\FormatJson;
 
 class Credits extends \BlueSpice\SpecialPage {
 
+	/** @var array */
 	private $aTranslators = [];
 
 	public function __construct() {

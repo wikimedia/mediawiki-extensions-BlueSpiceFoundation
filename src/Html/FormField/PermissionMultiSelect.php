@@ -6,6 +6,7 @@ use MediaWiki\MediaWikiServices;
 
 class PermissionMultiSelect extends \HTMLMultiSelectEx {
 
+	/** @var array */
 	private $params;
 
 	/**
