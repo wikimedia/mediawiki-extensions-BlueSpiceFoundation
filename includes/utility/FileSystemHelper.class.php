@@ -9,7 +9,7 @@ use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 
-class BsFileSystemHelper {
+class BsFileSystemHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/**
 	 * Checks if given directory within BS_CACHE_DIR exists and creates it if not

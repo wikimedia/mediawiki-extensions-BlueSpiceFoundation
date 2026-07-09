@@ -1,6 +1,6 @@
 <?php
 
-class BsDOMHelper {
+class BsDOMHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/**
 	 * Finds the previous DOMElement starting from $oNode in the DOM tree

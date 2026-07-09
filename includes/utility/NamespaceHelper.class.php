@@ -4,7 +4,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 
-class BsNamespaceHelper {
+class BsNamespaceHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/** @var array */
 	protected static $namespaceConstants = null;

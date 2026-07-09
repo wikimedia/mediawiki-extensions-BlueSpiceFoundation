@@ -9,7 +9,7 @@
  * $LastChangedBy: rvogel $
  * $Rev: 9700 $
  */
-class BsStringHelper {
+class BsStringHelper { // phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 
 	/**
 	 * Reduces the length of a string in a smart way.
