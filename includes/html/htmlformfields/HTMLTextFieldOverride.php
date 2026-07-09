@@ -3,7 +3,6 @@
 class HTMLTextFieldOverride extends HTMLTextField {
 
 	/**
-	 *
 	 * @param mixed $value
 	 * @param array $alldata
 	 * @return bool

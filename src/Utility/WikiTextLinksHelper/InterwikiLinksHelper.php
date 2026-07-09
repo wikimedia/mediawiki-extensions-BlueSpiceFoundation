@@ -8,13 +8,11 @@ use MediaWiki\Title\Title;
 class InterwikiLinksHelper extends InternalLinksHelper {
 
 	/**
-	 *
 	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
 	/**
-	 *
 	 * @param string &$wikitext
 	 * @param MediaWikiServices $services
 	 */
@@ -24,7 +22,6 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title|null $title
 	 * @return bool
 	 */
@@ -33,7 +30,6 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param string $fullMatch
 	 * @param string $leadingColon
 	 * @param string $titleText
@@ -56,7 +52,6 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
@@ -86,7 +81,6 @@ class InterwikiLinksHelper extends InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title $target
 	 * @param bool $removeAllOccurrences
 	 */

@@ -39,7 +39,6 @@ abstract class UserGetDefaultOptions extends Hook {
 	protected $defaultOptions = [];
 
 	/**
-	 *
 	 * @param array &$defaultOptions
 	 * @return mixed
 	 */
@@ -54,7 +53,6 @@ abstract class UserGetDefaultOptions extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$defaultOptions

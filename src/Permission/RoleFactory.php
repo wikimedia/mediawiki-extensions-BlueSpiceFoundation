@@ -16,7 +16,6 @@ class RoleFactory {
 	protected $permissionRegistry;
 
 	/**
-	 *
 	 * @param array $roleCallbacks
 	 * @param PermissionRegistry $permissionRegistry
 	 */

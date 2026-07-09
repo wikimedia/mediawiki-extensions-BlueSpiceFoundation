@@ -5,13 +5,11 @@ namespace BlueSpice\Renderer;
 class Params {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $params = [];
 
 	/**
-	 *
 	 * @param array $params
 	 */
 	public function __construct( array $params = [] ) {

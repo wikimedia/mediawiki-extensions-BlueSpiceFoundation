@@ -33,13 +33,11 @@ use MediaWiki\Context\IContextSource;
 abstract class UploadComplete extends Hook {
 
 	/**
-	 *
 	 * @var \UploadBase
 	 */
 	protected $upload = null;
 
 	/**
-	 *
 	 * @param \UploadBase &$upload
 	 * @return bool
 	 */
@@ -54,7 +52,6 @@ abstract class UploadComplete extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \UploadBase &$upload

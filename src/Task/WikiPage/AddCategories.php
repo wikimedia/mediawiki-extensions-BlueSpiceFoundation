@@ -8,7 +8,6 @@ use MediaWiki\Title\Title;
 class AddCategories extends SetCategories {
 
 	/**
-	 *
 	 * @param CategoryLinksHelper $helper
 	 * @param Title[] $categoryTitles
 	 * @return Title[]
@@ -18,7 +17,6 @@ class AddCategories extends SetCategories {
 	}
 
 	/**
-	 *
 	 * @param CategoryLinksHelper $helper
 	 * @param Title[] $categoryTitles
 	 * @return Title[]

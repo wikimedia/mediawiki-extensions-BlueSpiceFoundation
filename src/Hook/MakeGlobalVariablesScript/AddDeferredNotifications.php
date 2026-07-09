@@ -21,7 +21,6 @@ class AddDeferredNotifications extends \BlueSpice\Hook\MakeGlobalVariablesScript
 	}
 
 	/**
-	 *
 	 * @return \BlueSpice\IDeferredNotification[]
 	 */
 	private function getDeferredNotifications() {

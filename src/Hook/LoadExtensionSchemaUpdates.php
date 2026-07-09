@@ -34,13 +34,11 @@ use MediaWiki\Installer\DatabaseUpdater;
 abstract class LoadExtensionSchemaUpdates extends Hook {
 
 	/**
-	 *
 	 * @var DatabaseUpdater
 	 */
 	protected $updater = null;
 
 	/**
-	 *
 	 * @param DatabaseUpdater $updater
 	 * @return bool
 	 */
@@ -55,7 +53,6 @@ abstract class LoadExtensionSchemaUpdates extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param DatabaseUpdater $updater

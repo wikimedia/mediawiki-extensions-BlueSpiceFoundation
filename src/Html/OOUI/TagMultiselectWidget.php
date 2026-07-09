@@ -41,13 +41,11 @@ class TagMultiselectWidget extends Widget {
 	protected $placeholder = '';
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $allowedInputPositions = [ 'inline', 'outline', 'none' ];
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -99,7 +97,6 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param mixed $value
 	 * @return TagMultiselectWidget
 	 */
@@ -120,7 +117,6 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param string $data
 	 * @param string $label
 	 * @return bool
@@ -135,7 +131,6 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param string $data
 	 * @param string $label
 	 * @return \BlueSpice\Html\OOUI\TagItemWidget
@@ -146,7 +141,6 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param string $data
 	 * @return bool
 	 */
@@ -163,7 +157,6 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getAllowedValues() {
@@ -171,7 +164,6 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -180,7 +172,6 @@ class TagMultiselectWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

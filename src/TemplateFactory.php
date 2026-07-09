@@ -9,19 +9,16 @@ use MediaWiki\MediaWikiServices;
 class TemplateFactory {
 
 	/**
-	 *
 	 * @var ExtensionAttributeBasedRegistry
 	 */
 	protected $registry = null;
 
 	/**
-	 *
 	 * @var TemplateHelper
 	 */
 	protected $templateHelper = null;
 
 	/**
-	 *
 	 * @var Template[]
 	 */
 	protected $intances = [];
@@ -38,7 +35,6 @@ class TemplateFactory {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @return Template
 	 */

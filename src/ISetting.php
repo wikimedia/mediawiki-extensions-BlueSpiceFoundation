@@ -23,26 +23,22 @@ interface ISetting {
 	public function getPaths();
 
 	/**
-	 *
 	 * @return HTMLFormField A ready to use HTML-form-field-descriptor, with
 	 * default, labels, descriptions, ...
 	 */
 	public function getHtmlFormField();
 
 	/**
-	 *
 	 * @return string the message key for the label
 	 */
 	public function getLabelMessageKey();
 
 	/**
-	 *
 	 * @return string|null the message key for the help message
 	 */
 	public function getHelpMessageKey();
 
 	/**
-	 *
 	 * @return bool is the config currently defined as hidden
 	 */
 	public function isHidden();

@@ -110,7 +110,6 @@ class BSRemoteAPIBase extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param array $aOptions
 	 * @return MWHttpRequest
 	 */
@@ -128,7 +127,6 @@ class BSRemoteAPIBase extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function getAPIEditToken() {

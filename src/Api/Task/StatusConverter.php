@@ -9,19 +9,16 @@ use MediaWiki\Status\Status;
 class StatusConverter {
 
 	/**
-	 *
 	 * @var Status
 	 */
 	protected $status = null;
 
 	/**
-	 *
 	 * @var ApiBase
 	 */
 	protected $api = null;
 
 	/**
-	 *
 	 * @param ApiBase $api
 	 * @param Status $status
 	 */
@@ -30,9 +27,6 @@ class StatusConverter {
 		$this->status = $status;
 	}
 
-	/**
-	 *
-	 */
 	public function convert() {
 		$res = new Standard();
 		if ( !$this->status->isOK() ) {

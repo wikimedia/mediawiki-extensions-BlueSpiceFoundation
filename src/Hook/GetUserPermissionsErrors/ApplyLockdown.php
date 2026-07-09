@@ -23,7 +23,6 @@ class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 	}
 
 	/**
-	 *
 	 * @return Lockdown
 	 */
 	protected function getLockdown() {

@@ -44,7 +44,6 @@ class DeferredNotificationStack {
 	}
 
 	/**
-	 *
 	 * @return IDeferredNotification[]
 	 */
 	public function getDeferredNotifications() {

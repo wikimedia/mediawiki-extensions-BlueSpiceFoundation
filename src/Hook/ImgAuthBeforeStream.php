@@ -32,31 +32,26 @@ use MediaWiki\Config\Config;
 abstract class ImgAuthBeforeStream extends Hook {
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var File
 	 */
 	protected $path = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $name = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $result = null;
 
 	/**
-	 *
 	 * @param Title &$title
 	 * @param string &$path
 	 * @param string &$name
@@ -77,7 +72,6 @@ abstract class ImgAuthBeforeStream extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title &$title

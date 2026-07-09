@@ -13,31 +13,26 @@ use MessageLocalizer;
 abstract class Module implements IModule, MessageLocalizer {
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var IContextSource
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
 	/**
-	 *
 	 * @var string[]
 	 */
 	protected static $userGroups = null;
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param MediaWikiServices $services
@@ -50,7 +45,6 @@ abstract class Module implements IModule, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param IContextSource $context
 	 * @param MediaWikiServices $services
@@ -62,7 +56,6 @@ abstract class Module implements IModule, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return MediaWikiServices
 	 */
 	public function getServices() {
@@ -80,7 +73,6 @@ abstract class Module implements IModule, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return Context
 	 */
 	public function getContext() {
@@ -88,7 +80,6 @@ abstract class Module implements IModule, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return Config
 	 */
 	public function getConfig() {
@@ -96,7 +87,6 @@ abstract class Module implements IModule, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @param User $user
 	 * @return string[]
 	 */

@@ -37,73 +37,61 @@ use MediaWiki\User\User;
 abstract class PageContentSave extends Hook {
 
 	/**
-	 *
 	 * @var \WikiPage
 	 */
 	protected $wikipage = null;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var Content
 	 */
 	protected $content = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $summary = '';
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $isMinor = false;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $isWatch = false;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $section = 0;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $flags = 0;
 
 	/**
-	 *
 	 * @var RevisionRecord
 	 */
 	protected $revision = null;
 
 	/**
-	 *
 	 * @var Status
 	 */
 	protected $status = null;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $baseRevId = 0;
 
 	/**
-	 *
 	 * @param \WikiPage &$wikipage
 	 * @param User &$user
 	 * @param Content &$content
@@ -135,7 +123,6 @@ abstract class PageContentSave extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \WikiPage &$wikipage

@@ -14,61 +14,51 @@ class BSTreeNode {
 	public const CONFIG_ACTIVE = 'active';
 
 	/**
-	 *
 	 * @var int|string
 	 */
 	protected $id = '';
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $text = '';
 
 	/**
-	 *
 	 * @var BSTreeNode[]
 	 */
 	protected $childNodes = [];
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $isLeaf = false;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $expanded = false;
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $active = false;
 
 	/**
-	 *
 	 * @var BSTreeNode
 	 */
 	protected $parentNode = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $data = [];
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @param int|string $id
 	 * @param BSTreeNode|null $parentNode
 	 * @param Config $config
@@ -99,7 +89,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @param string $key
 	 * @param mixed $default
 	 * @return mixed
@@ -113,7 +102,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return \BSTreeNode[]
 	 */
 	public function getChildNodes() {
@@ -121,7 +109,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function hasChildNodes() {
@@ -129,7 +116,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @param BSTreeNode $node
 	 * @return BSTreeNode
 	 */
@@ -139,7 +125,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return mixed int|string
 	 */
 	public function getId() {
@@ -147,7 +132,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getText() {
@@ -155,7 +139,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isExpanded() {
@@ -163,7 +146,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isActive() {
@@ -171,7 +153,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @param bool $value
 	 */
 	public function setActive( $value ) {
@@ -179,7 +160,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getPath() {
@@ -192,7 +172,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isRoot() {
@@ -222,7 +201,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isExpandable() {
@@ -230,7 +208,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isCollapsible() {
@@ -238,7 +215,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function isLeaf() {
@@ -246,7 +222,6 @@ class BSTreeNode {
 	}
 
 	/**
-	 *
 	 * @return BSTreeNode|null
 	 */
 	public function getParentNode() {

@@ -34,25 +34,21 @@ use MediaWiki\Title\Title;
 abstract class GetFullURL extends Hook {
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $url = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $query = '';
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param string &$url
 	 * @param string $query
@@ -71,7 +67,6 @@ abstract class GetFullURL extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Title $title

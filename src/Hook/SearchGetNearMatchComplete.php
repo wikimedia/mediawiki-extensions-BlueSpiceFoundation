@@ -34,19 +34,16 @@ use MediaWiki\Title\Title;
 
 abstract class SearchGetNearMatchComplete extends Hook {
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $term;
 
 	/**
-	 *
 	 * @param string $term
 	 * @param Title &$title
 	 * @return bool
@@ -63,7 +60,6 @@ abstract class SearchGetNearMatchComplete extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string $term

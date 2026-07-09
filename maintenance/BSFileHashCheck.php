@@ -36,7 +36,6 @@ class BSFileHashCheck extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param SplFileInfo $oFileInfo
 	 * @return string The hash
 	 */
@@ -45,7 +44,6 @@ class BSFileHashCheck extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param SplFileInfo $oFileInfo
 	 * @param string $sDir
 	 * @return string The normalized relative filepath
@@ -60,7 +58,6 @@ class BSFileHashCheck extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param string $sHashes
 	 * @param string $sDir
 	 */
@@ -88,7 +85,6 @@ class BSFileHashCheck extends BSMaintenance {
 	}
 
 	/**
-	 *
 	 * @param string $sHashes
 	 * @param string $sDir
 	 */

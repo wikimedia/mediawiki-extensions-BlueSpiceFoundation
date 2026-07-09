@@ -8,31 +8,26 @@ use MediaWiki\Parser\PPFrame;
 abstract class Handler implements IHandler {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $processedInput = '';
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $processedArgs = [];
 
 	/**
-	 *
 	 * @var Parser
 	 */
 	protected $parser = null;
 
 	/**
-	 *
 	 * @var PPFrame
 	 */
 	protected $frame = null;
 
 	/**
-	 *
 	 * @param string $processedInput
 	 * @param array $processedArgs
 	 * @param Parser $parser

@@ -34,19 +34,16 @@ use MediaWiki\Output\OutputPage;
 abstract class BeforePageDisplay extends Hook {
 
 	/**
-	 *
 	 * @var OutputPage
 	 */
 	protected $out = null;
 
 	/**
-	 *
 	 * @var \Skin
 	 */
 	protected $skin = null;
 
 	/**
-	 *
 	 * @param OutputPage &$out
 	 * @param \Skin &$skin
 	 * @return bool
@@ -63,7 +60,6 @@ abstract class BeforePageDisplay extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param OutputPage &$out

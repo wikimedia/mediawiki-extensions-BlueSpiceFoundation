@@ -35,36 +35,30 @@ use MediaWiki\Linker\LinkTarget;
 abstract class HtmlPageLinkRendererBegin extends Hook {
 
 	/**
-	 *
 	 * @var LinkRenderer
 	 */
 	protected $linkRenderer = null;
 	/**
-	 *
 	 * @var LinkTarget
 	 */
 	protected $target = null;
 
 	/**
-	 *
 	 * @var string|\HtmlArmor
 	 */
 	protected $text = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $extraAttribs = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $query = null;
 
 	/**
-	 *
 	 * @var mixed
 	 */
 	protected $ret = null;
@@ -97,7 +91,6 @@ abstract class HtmlPageLinkRendererBegin extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param LinkRenderer $linkRenderer

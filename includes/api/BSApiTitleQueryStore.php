@@ -286,7 +286,6 @@ class BSApiTitleQueryStore extends BSApiExtJSStoreBase {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getAllowedParams() {

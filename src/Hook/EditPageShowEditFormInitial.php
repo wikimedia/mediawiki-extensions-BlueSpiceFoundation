@@ -35,19 +35,16 @@ use MediaWiki\Output\OutputPage;
 abstract class EditPageShowEditFormInitial extends Hook {
 
 	/**
-	 *
 	 * @var EditPage
 	 */
 	protected $editpage = null;
 
 	/**
-	 *
 	 * @var OutputPage
 	 */
 	protected $output = null;
 
 	/**
-	 *
 	 * @param EditPage $editpage
 	 * @param OutputPage $output
 	 * @return bool
@@ -64,7 +61,6 @@ abstract class EditPageShowEditFormInitial extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param EditPage $editpage

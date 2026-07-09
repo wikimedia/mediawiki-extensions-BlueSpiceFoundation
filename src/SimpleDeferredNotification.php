@@ -30,7 +30,6 @@ class SimpleDeferredNotification implements IDeferredNotification {
 	}
 
 	/**
-	 *
 	 * @return Message
 	 */
 	public function getMessage() {
@@ -38,7 +37,6 @@ class SimpleDeferredNotification implements IDeferredNotification {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getOptions() {

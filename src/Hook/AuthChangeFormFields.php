@@ -33,31 +33,26 @@ use MediaWiki\Context\IContextSource;
 abstract class AuthChangeFormFields extends Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $requests = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $fieldInfo = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $formDescriptor = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $action = null;
 
 	/**
-	 *
 	 * @param array $requests
 	 * @param array $fieldInfo
 	 * @param array &$formDescriptor
@@ -78,7 +73,6 @@ abstract class AuthChangeFormFields extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array $requests

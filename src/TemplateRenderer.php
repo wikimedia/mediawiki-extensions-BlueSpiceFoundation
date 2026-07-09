@@ -39,13 +39,11 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	protected static $cache = [];
 
 	/**
-	 *
 	 * @var CacheHelper
 	 */
 	protected $cacheHelper = null;
 
 	/**
-	 *
 	 * @var TemplateFactory
 	 */
 	protected $templateFactory = null;
@@ -71,7 +69,6 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @param MediaWikiServices $services
 	 * @param Config $config
@@ -177,7 +174,6 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @return string|false
 	 */
 	protected function getFromCache() {
@@ -201,7 +197,6 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function getCacheKey() {
@@ -209,7 +204,6 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @return int
 	 */
 	protected function getCacheExpiryTime() {
@@ -218,7 +212,6 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @param string $content
 	 * @return bool
 	 */
@@ -253,7 +246,6 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @return CacheHelper
 	 */
 	protected function getCacheHelper() {
@@ -268,7 +260,6 @@ abstract class TemplateRenderer extends Renderer implements ITemplateRenderer {
 	}
 
 	/**
-	 *
 	 * @return TemplateFactory
 	 */
 	protected function getTemplateFactory() {

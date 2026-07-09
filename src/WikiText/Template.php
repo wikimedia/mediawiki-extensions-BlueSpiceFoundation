@@ -4,19 +4,16 @@ namespace BlueSpice\WikiText;
 
 class Template {
 	/**
-	 *
 	 * @var string
 	 */
 	protected $name = '';
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $params = [];
 
 	/**
-	 *
 	 * @var bool
 	 */
 	protected $renderFormatted = true;
@@ -24,7 +21,6 @@ class Template {
 	protected $buffer = [];
 
 	/**
-	 *
 	 * @param string $name
 	 * @param array $params
 	 */
@@ -34,7 +30,6 @@ class Template {
 	}
 
 	/**
-	 *
 	 * @param int|string $paramNameorIndex
 	 * @param mixed $paramValue
 	 * @return Template
@@ -45,7 +40,6 @@ class Template {
 	}
 
 	/**
-	 *
 	 * @param int|string $paramNameorIndex
 	 * @param mixed $default
 	 * @return mixed
@@ -58,7 +52,6 @@ class Template {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getName() {
@@ -66,7 +59,6 @@ class Template {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @return Template Description
 	 */
@@ -76,7 +68,6 @@ class Template {
 	}
 
 	/**
-	 *
 	 * @param bool $renderFormatted
 	 * @return Template
 	 */
@@ -145,7 +136,6 @@ class Template {
 	protected $specialWikiTextMarkupFirstChars = [ '*', '#', ':' ];
 
 	/**
-	 *
 	 * @param mixed $paramValue
 	 * @param bool $isNamedParameter
 	 */
@@ -163,7 +153,6 @@ class Template {
 	}
 
 	/**
-	 *
 	 * @param mixed $paramValue
 	 * @return string
 	 */

@@ -33,13 +33,11 @@ use MediaWiki\Context\IContextSource;
 abstract class MagicWordwgVariableIDs extends Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $customVariableIds = null;
 
 	/**
-	 *
 	 * @param array &$customVariableIds
 	 * @return bool
 	 */
@@ -54,7 +52,6 @@ abstract class MagicWordwgVariableIDs extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$customVariableIds

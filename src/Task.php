@@ -37,37 +37,31 @@ use Psr\Log\LoggerInterface;
 abstract class Task implements ITask, MessageLocalizer {
 
 	/**
-	 *
 	 * @var MediaWikiServices
 	 */
 	protected $services = null;
 
 	/**
-	 *
 	 * @var Context
 	 */
 	protected $context = null;
 
 	/**
-	 *
 	 * @var ActionLogger
 	 */
 	protected $actionLogger = null;
 
 	/**
-	 *
 	 * @var LoggerInterface
 	 */
 	protected $logger = null;
 
 	/**
-	 *
 	 * @var IPermissionChecker
 	 */
 	protected $permissionChecker = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $params = [];
@@ -113,7 +107,6 @@ abstract class Task implements ITask, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return string[]
 	 */
 	public function getTaskPermissions() {
@@ -158,7 +151,6 @@ abstract class Task implements ITask, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @param mixed|null $default
 	 * @return mixed
@@ -180,7 +172,6 @@ abstract class Task implements ITask, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return Status
 	 */
 	protected function runUpdates() {
@@ -192,7 +183,6 @@ abstract class Task implements ITask, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return MediaWikiServices
 	 */
 	public function getServices() {
@@ -210,7 +200,6 @@ abstract class Task implements ITask, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return Context
 	 */
 	public function getContext() {
@@ -218,7 +207,6 @@ abstract class Task implements ITask, MessageLocalizer {
 	}
 
 	/**
-	 *
 	 * @return Status
 	 */
 	protected function checkTaskPermissions() {

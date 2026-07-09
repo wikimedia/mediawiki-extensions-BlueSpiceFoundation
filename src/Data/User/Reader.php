@@ -9,7 +9,6 @@ use Wikimedia\Rdbms\LoadBalancer;
 
 class Reader extends DatabaseReader {
 	/**
-	 *
 	 * @param LoadBalancer $loadBalancer
 	 * @param IContextSource|null $context
 	 */
@@ -18,7 +17,6 @@ class Reader extends DatabaseReader {
 	}
 
 	/**
-	 *
 	 * @param ReaderParams $params
 	 * @return PrimaryDataProvider
 	 */
@@ -27,7 +25,6 @@ class Reader extends DatabaseReader {
 	}
 
 	/**
-	 *
 	 * @return null
 	 */
 	protected function makeSecondaryDataProvider() {
@@ -35,7 +32,6 @@ class Reader extends DatabaseReader {
 	}
 
 	/**
-	 *
 	 * @return Schema
 	 */
 	public function getSchema() {

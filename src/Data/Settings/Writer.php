@@ -11,7 +11,6 @@ use MWStake\MediaWiki\Component\DataStore\IRecord;
 class Writer extends DatabaseWriter {
 
 	/**
-	 *
 	 * @param IReader $reader
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 * @param IContextSource|null $context
@@ -22,7 +21,6 @@ class Writer extends DatabaseWriter {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getTableName() {
@@ -30,7 +28,6 @@ class Writer extends DatabaseWriter {
 	}
 
 	/**
-	 *
 	 * @param IRecord $record
 	 * @return array
 	 */
@@ -41,7 +38,6 @@ class Writer extends DatabaseWriter {
 	}
 
 	/**
-	 *
 	 * @param IRecord $existingRecord
 	 * @param IRecord $record
 	 * @return array
@@ -61,7 +57,6 @@ class Writer extends DatabaseWriter {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getIdentifierFields() {

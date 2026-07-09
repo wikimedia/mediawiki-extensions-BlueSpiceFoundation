@@ -8,13 +8,11 @@ use MediaWiki\User\User;
 class BSApiTestCase extends ApiTestCase {
 
 	/**
-	 *
 	 * @var BSUserFixtures
 	 */
 	protected static $userFixtures = null;
 
 	/**
-	 *
 	 * @param BSUserFixtures $userFixtures
 	 */
 	public function setUserFixture( $userFixtures ) {

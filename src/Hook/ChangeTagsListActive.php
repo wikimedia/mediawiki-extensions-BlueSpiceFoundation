@@ -33,13 +33,11 @@ use MediaWiki\Context\IContextSource;
 abstract class ChangeTagsListActive extends Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $tags = null;
 
 	/**
-	 *
 	 * @param array &$tags
 	 * @return bool
 	 */
@@ -54,7 +52,6 @@ abstract class ChangeTagsListActive extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$tags

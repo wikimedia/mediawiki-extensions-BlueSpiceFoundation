@@ -11,13 +11,11 @@ require_once 'BSMaintenance.php';
 class BSTestPermissions extends BSMaintenance {
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $testUser = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $testTitle = null;

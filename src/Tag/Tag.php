@@ -7,7 +7,6 @@ use BlueSpice\Tag\MarkerType\General;
 abstract class Tag implements ITag {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function needsDisabledParserCache() {
@@ -25,7 +24,6 @@ abstract class Tag implements ITag {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getResourceLoaderModuleStyles() {
@@ -33,7 +31,6 @@ abstract class Tag implements ITag {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getResourceLoaderModules() {
@@ -41,7 +38,6 @@ abstract class Tag implements ITag {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function needsParsedInput() {
@@ -49,7 +45,6 @@ abstract class Tag implements ITag {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	public function needsParseArgs() {
@@ -57,7 +52,6 @@ abstract class Tag implements ITag {
 	}
 
 	/**
-	 *
 	 * @return MarkerType
 	 */
 	public function getMarkerType() {

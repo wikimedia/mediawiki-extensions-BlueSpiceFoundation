@@ -9,13 +9,11 @@ use MediaWiki\Title\Title;
 class InterlanguageLinksHelper extends InterwikiLinksHelper {
 
 	/**
-	 *
 	 * @var LanguageNameUtils
 	 */
 	private $langNameUtils = null;
 
 	/**
-	 *
 	 * @inheritDoc
 	 */
 	public function __construct( &$wikitext, MediaWikiServices $services ) {
@@ -24,7 +22,6 @@ class InterlanguageLinksHelper extends InterwikiLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title|null $title
 	 * @return bool
 	 */

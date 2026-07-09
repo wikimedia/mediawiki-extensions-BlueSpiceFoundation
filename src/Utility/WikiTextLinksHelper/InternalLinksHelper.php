@@ -8,13 +8,11 @@ use MediaWiki\Title\Title;
 class InternalLinksHelper {
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $wikitext = '';
 
 	/**
-	 *
 	 * @param string &$wikitext
 	 */
 	public function __construct( &$wikitext ) {
@@ -22,7 +20,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function parse() {
@@ -109,7 +106,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getWikitext() {
@@ -117,7 +113,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param string $fullMatch
 	 * @param string $leadingColon
 	 * @param string $titleText
@@ -128,7 +123,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function getPattern() {
@@ -136,7 +130,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getTargets() {
@@ -144,7 +137,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title $target
 	 * @param bool $removeAllOccurrences
 	 */
@@ -164,7 +156,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title $target
 	 * @param string|false $text
 	 * @param bool $addDuplicates
@@ -204,7 +195,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title[] $links
 	 * @param bool|false $removeAllOccurrences
 	 * @return InternalLinksHelper
@@ -222,7 +212,6 @@ class InternalLinksHelper {
 	}
 
 	/**
-	 *
 	 * @param Title[] $links
 	 * @param bool|true $addDuplicates
 	 * @param string $separator

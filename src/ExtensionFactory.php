@@ -31,7 +31,6 @@ use MediaWiki\Context\RequestContext;
 
 class ExtensionFactory {
 	/**
-	 *
 	 * @var Extension[]
 	 */
 	protected $extensions = [];
@@ -39,13 +38,11 @@ class ExtensionFactory {
 	protected $allExtensionsLoaded = false;
 
 	/**
-	 *
 	 * @var \BlueSpice\ExtensionRegistry
 	 */
 	protected $extensionRegistry = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
@@ -61,7 +58,6 @@ class ExtensionFactory {
 	}
 
 	/**
-	 *
 	 * @param string $name
 	 * @param array $definition
 	 * @return Extension

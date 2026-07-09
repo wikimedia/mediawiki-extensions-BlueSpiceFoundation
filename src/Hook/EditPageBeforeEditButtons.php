@@ -34,25 +34,21 @@ use MediaWiki\EditPage\EditPage;
 abstract class EditPageBeforeEditButtons extends Hook {
 
 	/**
-	 *
 	 * @var EditPage
 	 */
 	protected $editpage = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $buttons = null;
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $tabindex = null;
 
 	/**
-	 *
 	 * @param EditPage &$editpage
 	 * @param array &$buttons
 	 * @param int &$tabindex
@@ -71,7 +67,6 @@ abstract class EditPageBeforeEditButtons extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param EditPage &$editpage

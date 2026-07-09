@@ -7,19 +7,16 @@ use Wikimedia\ObjectCache\BagOStuff;
 class CacheHelper {
 
 	/**
-	 *
 	 * @var BagOStuff
 	 */
 	protected $cache = null;
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $store = [];

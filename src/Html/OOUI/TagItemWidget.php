@@ -16,7 +16,6 @@ class TagItemWidget extends Widget {
 	protected $fixed;
 
 	/**
-	 *
 	 * @param array $config
 	 */
 	public function __construct( array $config = [] ) {
@@ -42,7 +41,6 @@ class TagItemWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param array $config
 	 * @return null
 	 */
@@ -51,7 +49,6 @@ class TagItemWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @param array &$config
 	 * @return array
 	 */
@@ -66,7 +63,6 @@ class TagItemWidget extends Widget {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	public function getJavaScriptClassName() {

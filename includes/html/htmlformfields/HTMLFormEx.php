@@ -13,7 +13,6 @@ use MediaWiki\Xml\Xml;
 class HTMLFormEx extends HTMLForm {
 
 	/**
-	 *
 	 * @param array $fields
 	 * @param string $sectionName
 	 * @param string $fieldsetIDPrefix
@@ -73,7 +72,6 @@ class HTMLFormEx extends HTMLForm {
 	}
 
 	/**
-	 *
 	 * @param string|false $legend
 	 * @param string|false $content
 	 * @param array $attribs

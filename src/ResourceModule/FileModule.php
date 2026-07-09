@@ -58,7 +58,6 @@ class FileModule extends LessVars {
 	}
 
 	/**
-	 *
 	 * @return TemplateFactory
 	 */
 	protected function getTemplateFactory() {

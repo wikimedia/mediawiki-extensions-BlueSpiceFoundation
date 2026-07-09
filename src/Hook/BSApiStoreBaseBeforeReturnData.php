@@ -41,7 +41,6 @@ abstract class BSApiStoreBaseBeforeReturnData extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param \BlueSpice\Api\Store $store

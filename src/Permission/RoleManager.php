@@ -50,7 +50,6 @@ class RoleManager {
 	protected $predefinedRoles;
 
 	/**
-	 *
 	 * @var IRole[]
 	 */
 	protected $roles = [];
@@ -307,7 +306,6 @@ class RoleManager {
 	}
 
 	/**
-	 *
 	 * @param IRole $roleObject
 	 */
 	protected function addRole( $roleObject ) {
@@ -315,7 +313,6 @@ class RoleManager {
 	}
 
 	/**
-	 *
 	 * @param string $roleName
 	 * @return bool
 	 */
@@ -327,7 +324,6 @@ class RoleManager {
 	}
 
 	/**
-	 *
 	 * @param string $roleName
 	 */
 	protected function removeRole( $roleName ) {
@@ -347,7 +343,6 @@ class RoleManager {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	public function getRoleNamesAndPermissions() {
@@ -391,7 +386,6 @@ class RoleManager {
 	}
 
 	/**
-	 *
 	 * @param string $roleName
 	 * @return bool
 	 */

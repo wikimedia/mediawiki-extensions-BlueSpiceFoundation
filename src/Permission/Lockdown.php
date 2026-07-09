@@ -10,43 +10,36 @@ use MediaWiki\User\User;
 
 class Lockdown {
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var Title
 	 */
 	protected $title = null;
 
 	/**
-	 *
 	 * @var User
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var IModule[]
 	 */
 	protected $modules = [];
 
 	/**
-	 *
 	 * @var Status[]
 	 */
 	protected $lockStates = [];
 
 	/**
-	 *
 	 * @var IModule[]
 	 */
 	protected $appliedModules = null;
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param Title $title
 	 * @param User $user
@@ -132,7 +125,6 @@ class Lockdown {
 	}
 
 	/**
-	 *
 	 * @return IModules[]
 	 */
 	protected function getModules() {
@@ -140,7 +132,6 @@ class Lockdown {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function isWhitelisted() {

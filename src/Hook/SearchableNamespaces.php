@@ -34,13 +34,11 @@ use MediaWiki\Context\IContextSource;
 abstract class SearchableNamespaces extends Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $namespaces;
 
 	/**
-	 *
 	 * @param array &$namespaces
 	 * @return bool
 	 */
@@ -55,7 +53,6 @@ abstract class SearchableNamespaces extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$namespaces

@@ -10,7 +10,6 @@ class TemplateHelper {
 	public const TEMPLATE_PATH = 'resources/templates';
 
 	/**
-	 *
 	 * @var MediaWikiServices
 	 */
 	protected $services;
@@ -23,7 +22,6 @@ class TemplateHelper {
 	}
 
 	/**
-	 *
 	 * @param string $tplName
 	 * @return string
 	 */
@@ -57,7 +55,6 @@ class TemplateHelper {
 	}
 
 	/**
-	 *
 	 * @param string $extName
 	 * @param array $config
 	 * @return array

@@ -35,43 +35,36 @@ use WikiPage;
 abstract class PageSaveComplete extends Hook {
 
 	/**
-	 *
 	 * @var WikiPage
 	 */
 	protected $wikiPage = null;
 
 	/**
-	 *
 	 * @var UserIdentity
 	 */
 	protected $user = null;
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $summary = '';
 
 	/**
-	 *
 	 * @var int
 	 */
 	protected $flags = 0;
 
 	/**
-	 *
 	 * @var RevisionRecord
 	 */
 	protected $revisionRecord = null;
 
 	/**
-	 *
 	 * @var EditResult
 	 */
 	protected $editResult;
 
 	/**
-	 *
 	 * @param WikiPage $wikiPage
 	 * @param UserIdentity $user
 	 * @param string $summary
@@ -97,7 +90,6 @@ abstract class PageSaveComplete extends Hook {
 	}
 
 	/**
-	 *
 	 * @param type $context
 	 * @param type $config
 	 * @param WikiPage $wikiPage

@@ -15,7 +15,6 @@ class GenericHandler {
 	public const TAG_BUTTON = 'button';
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected function getValidElementNames() {
@@ -27,55 +26,46 @@ class GenericHandler {
 	}
 
 	/**
-	 *
 	 * @var ITag
 	 */
 	protected $tag = null;
 
 	/**
-	 *
 	 * @var error
 	 */
 	protected $errors = [];
 
 	/**
-	 *
 	 * @var string
 	 */
 	protected $input = '';
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $args = [];
 
 	/**
-	 *
 	 * @var Parser
 	 */
 	protected $parser = null;
 
 	/**
-	 *
 	 * @var mixed
 	 */
 	protected $processedInput = '';
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $processedArgs = [];
 
 	/**
-	 *
 	 * @var PPFrame
 	 */
 	protected $frame = null;
 
 	/**
-	 *
 	 * @param ITag $tag
 	 */
 	public function __construct( $tag ) {
@@ -83,7 +73,6 @@ class GenericHandler {
 	}
 
 	/**
-	 *
 	 * @param string $input
 	 * @param array $args
 	 * @param Parser $parser
@@ -251,7 +240,6 @@ class GenericHandler {
 	}
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function hasErrors() {
@@ -259,7 +247,6 @@ class GenericHandler {
 	}
 
 	/**
-	 *
 	 * @return string
 	 */
 	protected function makeErrorOutput() {
@@ -278,7 +265,6 @@ class GenericHandler {
 	}
 
 	/**
-	 *
 	 * @param string $elementName
 	 * @return bool
 	 */
@@ -295,7 +281,6 @@ class GenericHandler {
 	}
 
 	/**
-	 *
 	 * @param \ParamProcessor\ProcessingResult $result
 	 */
 	protected function checkForProcessingErrors( $result ) {
@@ -305,7 +290,6 @@ class GenericHandler {
 	}
 
 	/**
-	 *
 	 * @param string $errorKey
 	 * @return string
 	 */

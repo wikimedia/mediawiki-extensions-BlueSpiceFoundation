@@ -40,7 +40,6 @@ use MediaWiki\Title\Title;
  */
 class BSApiWikiPageTasks extends BSApiTasksBase {
 	/**
-	 *
 	 * @var array
 	 */
 	protected $aTasks = [

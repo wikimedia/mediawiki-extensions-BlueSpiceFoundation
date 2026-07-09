@@ -10,19 +10,16 @@ use MediaWiki\EditPage\EditPage;
 abstract class EditPageGetCheckboxesDefinition extends Hook {
 
 	/**
-	 *
 	 * @var EditPage
 	 */
 	protected $editPage = null;
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $checkboxes = null;
 
 	/**
-	 *
 	 * @param EditPage $editPage
 	 * @param array &$checkboxes
 	 * @return bool
@@ -39,7 +36,6 @@ abstract class EditPageGetCheckboxesDefinition extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param EditPage $editPage

@@ -34,19 +34,16 @@ use MediaWiki\Output\OutputPage;
 abstract class MakeGlobalVariablesScript extends Hook {
 
 	/**
-	 *
 	 * @var array
 	 */
 	protected $vars = [];
 
 	/**
-	 *
 	 * @var OutputPage
 	 */
 	protected $out = null;
 
 	/**
-	 *
 	 * @param array &$vars
 	 * @param OutputPage $out
 	 * @return bool
@@ -63,7 +60,6 @@ abstract class MakeGlobalVariablesScript extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$vars

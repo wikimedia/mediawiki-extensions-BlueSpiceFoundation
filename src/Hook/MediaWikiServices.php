@@ -9,13 +9,11 @@ use MediaWiki\MediaWikiServices as Services;
 
 abstract class MediaWikiServices extends Hook {
 	/**
-	 *
 	 * @var Services
 	 */
 	protected $services;
 
 	/**
-	 *
 	 * @param Services $services
 	 * @return bool
 	 */
@@ -30,7 +28,6 @@ abstract class MediaWikiServices extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param Services $services

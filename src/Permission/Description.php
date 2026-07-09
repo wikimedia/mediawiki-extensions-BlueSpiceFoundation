@@ -3,7 +3,6 @@
 namespace BlueSpice\Permission;
 
 /**
- *
  * This class contains description
  * of a single permission
  */
@@ -16,7 +15,6 @@ class Description implements IDescription {
 	protected $configArray = [];
 
 	/**
-	 *
 	 * @param string $name
 	 * @param array $config
 	 * @return void

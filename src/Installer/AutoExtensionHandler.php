@@ -48,7 +48,6 @@ class AutoExtensionHandler {
 	private $enableSemanticsRegex = "#(enableSemantics)\(\s*['|\"](.*?)['|\"]\s*\)#";
 
 	/**
-	 *
 	 * @param string $installPath
 	 */
 	public function __construct( $installPath ) {

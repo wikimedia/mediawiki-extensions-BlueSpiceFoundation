@@ -680,7 +680,6 @@ class BsFileSystemHelper {
 	];
 
 	/**
-	 *
 	 * @param string $sFileName
 	 * @return string
 	 */
@@ -693,7 +692,6 @@ class BsFileSystemHelper {
 	}
 
 	/**
-	 *
 	 * @param string $sTmpFileName
 	 * @return string
 	 */

@@ -5,7 +5,6 @@ use MediaWiki\Xml\Xml;
 class HTMLStaticImageFieldOverride extends HTMLInfoField {
 
 	/**
-	 *
 	 * @param array $value
 	 * @return string
 	 */

@@ -53,7 +53,6 @@ abstract class MessagesPreLoad extends Hook {
 	protected $code = '';
 
 	/**
-	 *
 	 * @param string $title
 	 * @param string &$message
 	 * @param string $code
@@ -72,7 +71,6 @@ abstract class MessagesPreLoad extends Hook {
 	}
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param string $title
