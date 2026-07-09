@@ -30,5 +30,6 @@
 	"bs-pageexport-list-name-label": "목록 이름",
 	"bs-pageexport-list-format-label": "목록 형식",
 	"bs-export-search-summary-text": "PageExport를 통해 생성됨",
-	"bs-util-alert-title": "힌트"
+	"bs-util-alert-title": "힌트",
+	"bs-save-as-collection-dialog-title": "문서 컬렉션으로써 저장"
 }

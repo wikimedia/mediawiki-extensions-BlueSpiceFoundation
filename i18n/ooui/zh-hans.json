@@ -3,6 +3,7 @@
 		"authors": [
 			"AYZ04",
 			"Gsdn",
+			"GuoPC",
 			"Liuxinyu970226",
 			"Peterxy",
 			"Peterxy12",
@@ -33,5 +34,6 @@
 	"bs-pageexport-list-format-link-label": "链接",
 	"bs-pageexport-overwrite-label": "覆盖",
 	"bs-export-search-summary-text": "生成自页面导出",
-	"bs-util-alert-title": "提示"
+	"bs-util-alert-title": "提示",
+	"bs-save-as-collection-dialog-title": "另存为页面收藏"
 }
