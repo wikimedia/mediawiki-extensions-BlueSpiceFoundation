@@ -33,5 +33,6 @@
 	"bs-pageexport-overwrite-label": "Overschrijven",
 	"bs-export-search-summary-text": "Gegenereerd door PageExport",
 	"bs-pagecollection-prefix": "Paginaverzameling",
-	"bs-util-alert-title": "Tip"
+	"bs-util-alert-title": "Tip",
+	"bs-save-as-collection-dialog-title": "Als paginaverzameling opslaan"
 }
