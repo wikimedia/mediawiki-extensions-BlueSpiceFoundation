@@ -16,10 +16,8 @@
 	"bs-ooui-btn-dismiss-alert-title": "بگذریم",
 	"bs-ooui-key-value-input-widget-section-label": "بخش",
 	"bs-ooui-key-value-input-widget-add-section-label": "افزودن بخش جدید",
-	"bs-ui-generic-cancel": "لغو",
-	"bs-pagecollection-prefix": "مجموعهٔ صفحه‌ها",
-	"bs-util-alert-title": "راهنمایی",
 	"bs-ui-generic-save": "ذخیره",
+	"bs-ui-generic-cancel": "لغو",
 	"bs-ui-generic-yes": "بله",
 	"bs-ui-generic-no": "خیر",
 	"bs-exportpages-dialog-title": "برون‌بری صفحه‌ها به یک مجموعه",
@@ -30,5 +28,7 @@
 	"bs-pageexport-list-format-plain-label": "متن ساده",
 	"bs-pageexport-list-format-link-label": "پیوند",
 	"bs-pageexport-overwrite-label": "بازنویسی",
-	"bs-export-search-summary-text": "تولیدشده با برون‌بری صفحه"
+	"bs-export-search-summary-text": "تولیدشده با برون‌بری صفحه",
+	"bs-pagecollection-prefix": "مجموعهٔ صفحه‌ها",
+	"bs-util-alert-title": "راهنمایی"
 }
