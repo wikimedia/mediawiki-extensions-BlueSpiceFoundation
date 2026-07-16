@@ -397,6 +397,10 @@
 			"services": [
 				"MainConfig", "PermissionManager", "TitleFactory", "RevisionLookup", "BSUtilityFactory"
 			]
+		},
+		"applyLockdown": {
+			"class": "\\BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyLockdown",
+			"services": [ "BSPermissionLockdownFactory" ]
 		}
 	},
 	"Hooks": {
@@ -439,7 +443,7 @@
 			"\\BlueSpice\\Hook\\ResourceLoaderGetConfigVars\\AddAssetsPaths::callback"
 		],
 		"getUserPermissionsErrors": [
-			"\\BlueSpice\\Hook\\GetUserPermissionsErrors\\ApplyLockdown::callback"
+			"applyLockdown"
 		],
 		"SearchableNamespaces": [
 			"BlueSpice\\Hook\\SearchableNamespaces\\ApplySearchableNamespacesLockdown::callback"
