@@ -68,6 +68,9 @@ class NamespaceLockdownTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( 'bsgNamespaceRolesLockdown', [
 			$title->getNamespace() => [ 'reader' => [ 'sysop' ] ]
 		] );
+
+		// Get fresh PermissionManager to bypass internal permission cache
+		$mwPermissionManager = $this->getServiceContainer()->getPermissionManager();
 		$this->assertFalse(
 			$mwPermissionManager->userCan( 'read', $this->user, $title ),
 			'Users in "user" group should not be able to read ' .
