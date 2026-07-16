@@ -3,37 +3,46 @@
 namespace BlueSpice\Hook\GetUserPermissionsErrors;
 
 use BlueSpice\Permission\Lockdown;
+use BlueSpice\PermissionLockdownFactory;
 use MediaWiki\Message\Message;
+use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
+use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
-class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
+class ApplyLockdown implements GetUserPermissionsErrorsHook {
+
+	/** @var PermissionLockdownFactory */
+	private PermissionLockdownFactory $lockdownFactory;
 
 	/**
-	 * @return bool
+	 * @param PermissionLockdownFactory $lockdownFactory
 	 */
-	protected function skipProcessing() {
-		return !$this->getLockdown()->isLockedDown( $this->action );
+	public function __construct( PermissionLockdownFactory $lockdownFactory ) {
+		$this->lockdownFactory = $lockdownFactory;
 	}
 
 	/**
-	 * Checks if requested action belongs to a role
-	 * that is explicitly granted only to some groups
-	 *
-	 * @return bool
+	 * @inheritDoc
 	 */
-	protected function doProcess() {
-		$res = $this->getLockdown()->getLockState( $this->action );
+	public function onGetUserPermissionsErrors( $title, $user, $action, &$result ) {
+		if ( $this->shouldSkip( $title, $user, $action ) ) {
+			return true;
+		}
+
+		$lockdown = $this->getLockdown( $title, $user );
+		$res = $lockdown->getLockState( $action );
 
 		if ( !$res->isOK() ) {
-			if ( is_string( $this->result ) ) {
-				if ( empty( $this->result ) ) {
-					$this->result = [];
+			if ( is_string( $result ) ) {
+				if ( empty( $result ) ) {
+					$result = [];
 				} else {
-					$this->result = [ $this->result ];
+					$result = [ $result ];
 				}
 			}
 			$errors = $res->getMessages( 'error' );
 			foreach ( $errors as $error ) {
-				$this->result[] = Message::newFromSpecifier( $error )->text();
+				$result[] = Message::newFromSpecifier( $error )->text();
 			}
 		}
 
@@ -41,11 +50,27 @@ class ApplyLockdown extends \BlueSpice\Hook\GetUserPermissionsErrors {
 	}
 
 	/**
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @return bool
+	 */
+	private function shouldSkip( Title $title, User $user, string $action ): bool {
+		if ( MW_ENTRY_POINT === 'cli' && $action === 'read' ) {
+			if ( $user->isSystemUser() || $user->getName() === '127.0.0.1' ) {
+				return true;
+			}
+		}
+		return !$this->getLockdown( $title, $user )->isLockedDown( $action );
+	}
+
+	/**
+	 * @param Title $title
+	 * @param User $user
 	 * @return Lockdown
 	 */
-	protected function getLockdown() {
-		return $this->getServices()->getService( 'BSPermissionLockdownFactory' )
-			->newFromTitleAndUserRelation( $this->title, $this->user );
+	private function getLockdown( Title $title, User $user ): Lockdown {
+		return $this->lockdownFactory->newFromTitleAndUserRelation( $title, $user );
 	}
 
 }
