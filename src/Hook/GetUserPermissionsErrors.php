@@ -33,6 +33,9 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 
+/**
+ * @deprecated use includes/Permissions/Hook/GetUserPermissionsErrorsHook.php instead
+ */
 abstract class GetUserPermissionsErrors extends Hook {
 	/**
 	 * @var Title
