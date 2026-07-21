@@ -256,7 +256,7 @@ $wgFlaggedRevsAutoReview = true;
 $matches = 0;
 $inarticlematches = 0;
 
-$user = User::newSystemUser( 'Maintenance script', [ 'steal' => true ] );
+$user = User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 $namespaceInfo = $services->getNamespaceInfo();
 $wikiPageFactory = $services->getWikiPageFactory();
 foreach ( $res as $row ) {
