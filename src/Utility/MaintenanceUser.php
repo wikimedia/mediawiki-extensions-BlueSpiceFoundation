@@ -5,16 +5,17 @@ namespace BlueSpice\Utility;
 use MediaWiki\Config\Config;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\User;
-use RuntimeException;
 
+/**
+ * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
+ */
 class MaintenanceUser {
 
-	/**
-	 * @var Config
-	 */
-	protected $config = null;
+	/** @var Config */
+	protected $config;
 
 	/**
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
 	 * @param Config $config
 	 */
 	public function __construct( Config $config ) {
@@ -22,13 +23,15 @@ class MaintenanceUser {
 	}
 
 	/**
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
 	 * @return string
 	 */
 	public function getUserName() {
-		return $this->config->get( 'MaintenanceUserName' );
+		return User::MAINTENANCE_SCRIPT_USER;
 	}
 
 	/**
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
 	 * @param User|null $user
 	 * @return bool
 	 */
@@ -40,28 +43,16 @@ class MaintenanceUser {
 	}
 
 	/**
-	 * @param int $expireInSeconds - Expire the users groups after the next
-	 * x seconds. min 10 seconds
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
+	 * @param int $expireInSeconds deprecated, not used anymore
 	 * @return User
-	 * @throws RuntimeException
 	 */
 	public function getUser( $expireInSeconds = 10 ) {
-		$user = User::newSystemUser(
-			$this->getUserName(),
-			$this->getOptions()
-		);
-		if ( !$user ) {
-			throw new RuntimeException(
-				"Maintenace user '{$this->getUserName()}' could not be created"
-			);
-		}
-
-		$this->addGroups( $user, $this->getExpiryTS( $expireInSeconds ) );
-
-		return $user;
+		return User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 	}
 
 	/**
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
 	 * @return array
 	 */
 	protected function getOptions() {
@@ -73,6 +64,7 @@ class MaintenanceUser {
 	}
 
 	/**
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
 	 * @return array
 	 */
 	protected function getGroups() {
@@ -80,37 +72,27 @@ class MaintenanceUser {
 	}
 
 	/**
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
 	 * @param User $user
-	 * @param int|null $expiry
+	 * @param int|null $expiry deprecated, not used anymore
 	 */
 	protected function addGroups( User $user, $expiry ) {
-		// removed the group expiry feature for now, because this could end in
-		// deadlocks:
-		// Query: UPDATE `user_groups` SET ug_expiry = '20180813134139'
-		// WHERE ug_user = '16' AND ug_group = 'sysop'
-		// Function: UserGroupMembership::insert
-		// Error: 1213 Deadlock found when trying to get lock; try restarting transaction (db)
-		$expiry = null;
-
 		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
 		foreach ( $this->getGroups() as $group ) {
 			if ( in_array( $group, $userGroupManager->getUserGroups( $user ) ) ) {
 				continue;
 			}
-			$userGroupManager->addUserToGroup( $user, $group, $expiry );
+			$userGroupManager->addUserToGroup( $user, $group );
 		}
 	}
 
 	/**
-	 * @param int $expireInSeconds
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
+	 * @param int $expireInSeconds deprecated, not used anymore
 	 * @return string
 	 */
 	protected function getExpiryTS( $expireInSeconds ) {
-		$expireInSeconds = (int)$expireInSeconds;
-		if ( empty( $expireInSeconds ) || $expireInSeconds < 10 ) {
-			$expireInSeconds = 10;
-		}
-		return ( new \DateTime( '+' . $expireInSeconds . ' seconds' ) )
-			->format( 'YmdHis' );
+		return '';
 	}
+
 }
