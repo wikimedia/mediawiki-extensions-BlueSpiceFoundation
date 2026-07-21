@@ -6,5 +6,6 @@
 		]
 	},
 	"bs-validator-invalid-parameter": "Dëse Parameter ass net erlaabt",
-	"bs-validator-missing-required": "Dëse Parameter ass obligatoresch"
+	"bs-validator-missing-required": "Dëse Parameter ass obligatoresch",
+	"bs-validator-invalid-integer": "Keng gülteg ganz Zuel"
 }
