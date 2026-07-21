@@ -38,7 +38,9 @@ class PurgePages extends Maintenance {
 			$status = $success ? 'DONE' : 'FAILED';
 
 			// Mimic the "view" after calling "action=purge" on the webbrowser
-			$wikipage->doViewUpdates( User::newSystemUser( 'Mediawiki default' ) );
+			$wikipage->doViewUpdates(
+				User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] )
+			);
 
 			$this->output( "{$title->getPrefixedDBKey()} -> $status\n" );
 		}
