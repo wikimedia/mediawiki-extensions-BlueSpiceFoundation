@@ -445,6 +445,9 @@
 		"ApiBeforeMain": [
 			"permissionLockdown"
 		],
+		"APIAfterExecute": [
+			"permissionLockdown"
+		],
 		"TitleReadWhitelist": "\\BlueSpice\\Hook\\TitleReadWhitelist\\AddFooterLinks::callback",
 		"MediaWikiServices": "mediawikiservices",
 		"MWStakeCommonUILessVarsInit": "common-user-interface",
