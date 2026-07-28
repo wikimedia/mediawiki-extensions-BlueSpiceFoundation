@@ -17,5 +17,7 @@
 	"bs-wikipage-tasks-error-nothingtoremove": "Et gëtt keng Kategorie fir ewechzehuelen.",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 Beispiller vu Parameteren]",
 	"bs-api-task-taskData-page-title": "E valabelen Titel vun enger Wikisäit",
-	"apihelp-bs-js-var-config-param-format": "Format vum Resultat"
+	"apihelp-bs-js-var-config-param-format": "Format vum Resultat",
+	"apihelp-bs-categorylinks-store-param-page-id": "D'Säiten-ID vun der Säit",
+	"apihelp-bs-templatelinks-store-param-page-id": "D'Säiten-ID vun der Säit"
 }
