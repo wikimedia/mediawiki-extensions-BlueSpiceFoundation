@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-credits-programmers": "Programmeuren",
 	"bs-credits-dnt": "Design an Testen",
+	"bs-credits-contributors": "Contributeuren",
 	"bs-credits-translators": "Iwwersetzer",
 	"bs-credits-translation": "Iwwersetzung",
 	"bs-credits-th": "Merci un all Iwwersetzer vun \"$1\"."
