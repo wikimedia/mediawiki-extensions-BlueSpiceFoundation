@@ -101,14 +101,37 @@ bs.ui.dialog.ExportPagesDialog.prototype.initialize = function () {
 			}
 		}
 	} );
+	this.grid.connect( this, {
+		datasetChange: 'onContentHeightChange'
+	} );
 	this.panel.$element.append( this.grid.$element );
 
 	this.$body.append( this.panel.$element );
 	this.getValidity();
 };
 
+bs.ui.dialog.ExportPagesDialog.prototype.getReadyProcess = function ( data ) {
+	return bs.ui.dialog.ExportPagesDialog.parent.prototype.getReadyProcess.call( this, data )
+		.next( () => {
+			this.updateSize();
+		} );
+};
+
+/**
+ * Re-measure the content and grow/shrink the dialog accordingly
+ */
+bs.ui.dialog.ExportPagesDialog.prototype.onContentHeightChange = function () {
+	if ( !this.manager ) {
+		return;
+	}
+	this.updateSize();
+};
+
 bs.ui.dialog.ExportPagesDialog.prototype.getBodyHeight = function () {
-	return Math.min( this.$body[ 0 ].scrollHeight, Math.floor( window.innerHeight * 0.5 ) );
+	return Math.min(
+		this.panel.$element[ 0 ].scrollHeight,
+		Math.floor( window.innerHeight * 0.7 )
+	);
 };
 
 bs.ui.dialog.ExportPagesDialog.prototype.getValidity = async function () {
