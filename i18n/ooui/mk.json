@@ -15,5 +15,14 @@
 	"bs-ooui-btn-dismiss-alert-title": "Тргни",
 	"bs-ooui-key-value-input-widget-section-label": "Оддел",
 	"bs-ooui-key-value-input-widget-add-section-label": "Додај нов оддел",
+	"bs-ui-generic-save": "Зачувај",
+	"bs-ui-generic-cancel": "Откажи",
+	"bs-ui-generic-yes": "Да",
+	"bs-ui-generic-no": "Не",
+	"bs-ui-generic-close": "Затвори",
+	"bs-pageexport-list-format-label": "Формат на списокот",
+	"bs-pageexport-list-format-plain-label": "Прост текст",
+	"bs-pageexport-list-format-link-label": "Врска",
+	"bs-pageexport-overwrite-label": "Презапиши",
 	"bs-pagecollection-prefix": "Збирка на страници"
 }
