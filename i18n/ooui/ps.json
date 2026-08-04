@@ -1,9 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
+	"bs-ooui-field-tagmultiselect-input-placeholder": "نوی ورگډول...",
+	"bs-ooui-key-value-input-widget-key-label": "کونجي",
+	"bs-ooui-key-value-input-widget-value-label": "ارزښت",
+	"bs-ooui-key-value-input-widget-add-button-label": "ورگډول",
+	"bs-ooui-key-value-input-widget-add-form-label": "نوې ننوتنه ورگډول",
+	"bs-ooui-key-value-input-widget-no-values-label": "هېڅ ارزښت نه دی ټاکل شوی!",
+	"bs-ooui-btn-dismiss-alert-title": "تړل",
+	"bs-ooui-key-value-input-widget-section-label": "برخه",
+	"bs-ooui-key-value-input-widget-add-section-label": "نوې برخه ورگډول",
+	"bs-ui-generic-save": "خوندي‌کول",
+	"bs-ui-generic-cancel": "ناگارل",
 	"bs-ui-generic-yes": "هو",
-	"bs-ui-generic-no": "نه"
+	"bs-ui-generic-no": "نه",
+	"bs-ui-generic-close": "تړل",
+	"bs-pageexport-list-name-label": "د لړليک نوم",
+	"bs-pageexport-list-format-label": "د لړليک بڼه",
+	"bs-pageexport-list-format-plain-label": "ساده ليک",
+	"bs-pageexport-list-format-link-label": "تړونی",
+	"bs-pageexport-overwrite-label": "دپاسه ليکل",
+	"bs-export-search-summary-text": "مخ‌بهرلېږنې له‌خوا زېږېدلی",
+	"bs-pagecollection-prefix": "مخ راټولونه",
+	"bs-util-alert-title": "اشاره"
 }
