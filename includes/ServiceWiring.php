@@ -188,6 +188,12 @@ return [
 		return new \BlueSpice\PageHeaderBeforeContentFactory( $registry, $context, $config );
 	},
 
+	'BSTrackingCategoryHelper' => static function ( MediaWikiServices $services ) {
+		return new \BlueSpice\Utility\TrackingCategoryHelper(
+			$services->getTrackingCategories()
+		);
+	},
+
 	'BSSecondaryDataUpdater' => static function ( MediaWikiServices $services ) {
 		/**
 		 * DEPRECATED
