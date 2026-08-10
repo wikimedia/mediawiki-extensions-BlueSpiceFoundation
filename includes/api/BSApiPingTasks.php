@@ -29,7 +29,6 @@
  */
 class BSApiPingTasks extends BSApiTasksBase {
 	/**
-	 *
 	 * @var array
 	 */
 	protected $aTasks = [
@@ -40,7 +39,6 @@ class BSApiPingTasks extends BSApiTasksBase {
 	];
 
 	/**
-	 *
 	 * @var string[]
 	 */
 	protected $aReadTasks = [ 'ping' ];
@@ -54,7 +52,6 @@ class BSApiPingTasks extends BSApiTasksBase {
 	}
 
 	/**
-	 *
 	 * @param \stdClass $oTaskData
 	 * @return \BlueSpice\Api\Response\Standard
 	 */
