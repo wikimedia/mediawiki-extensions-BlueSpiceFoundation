@@ -23,7 +23,6 @@ class Context implements IContextSource {
 	protected $services = null;
 
 	/**
-	 *
 	 * @param IContextSource $context
 	 * @param Config $config
 	 */

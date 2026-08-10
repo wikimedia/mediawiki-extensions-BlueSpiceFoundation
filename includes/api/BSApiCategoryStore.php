@@ -30,7 +30,6 @@ use MediaWiki\Title\Title;
 class BSApiCategoryStore extends BSApiExtJSStoreBase {
 
 	/**
-	 *
 	 * @param string $sQuery
 	 * @return array
 	 */
