@@ -19,7 +19,6 @@ class SecondaryDataUpdater {
 	protected $registry = null;
 
 	/**
-	 *
 	 * @param ExtensionAttributeBasedRegistry $registry
 	 */
 	public function __construct( ExtensionAttributeBasedRegistry $registry ) {

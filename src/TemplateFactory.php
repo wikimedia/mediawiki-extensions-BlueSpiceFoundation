@@ -24,7 +24,6 @@ class TemplateFactory {
 	protected $intances = [];
 
 	/**
-	 *
 	 * @param ExtensionAttributeBasedRegistry $registry
 	 * @param TemplateHelper $templateHelper
 	 */

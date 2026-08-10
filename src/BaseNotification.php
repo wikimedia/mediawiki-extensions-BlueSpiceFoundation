@@ -66,7 +66,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @param User $user
 	 */
 	protected function setAgent( User $user ) {
@@ -74,7 +73,6 @@ class BaseNotification implements \MWStake\MediaWiki\Component\Notifications\INo
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 */
 	protected function setTitle( Title $title ) {

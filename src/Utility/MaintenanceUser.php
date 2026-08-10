@@ -15,7 +15,6 @@ class MaintenanceUser {
 	protected $config = null;
 
 	/**
-	 *
 	 * @param Config $config
 	 */
 	public function __construct( Config $config ) {

@@ -34,7 +34,6 @@ abstract class Role implements IRole {
 	}
 
 	/**
-	 *
 	 * @param PermissionRegistry $permissionRegistry
 	 */
 	protected function __construct( PermissionRegistry $permissionRegistry ) {

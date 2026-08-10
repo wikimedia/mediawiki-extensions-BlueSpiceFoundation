@@ -86,7 +86,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	}
 
 	/**
-	 *
 	 * @param \stdClass $row
 	 */
 	protected function appendRowToData( \stdClass $row ) {
