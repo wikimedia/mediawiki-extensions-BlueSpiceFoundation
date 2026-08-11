@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
+	"specialcredits": "د BlueSpice کريدتونه",
+	"bs-credits-programmers": "پروگراموونکي",
+	"bs-credits-dnt": "سکښتۍ او ازمېښت",
 	"bs-credits-contributors": "ونډه وال",
 	"bs-credits-translators": "ژباړونکي",
-	"bs-credits-translation": "ژباړه"
+	"bs-credits-translation": "ژباړه",
+	"bs-credits-th": "د $1 له ټولو ژباړونکو مننه."
 }
