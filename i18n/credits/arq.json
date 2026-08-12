@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bachounda"
+		]
+	},
+	"specialcredits": "اعتمادات BlueSpice",
+	"bs-credits-programmers": "المبرمجين",
+	"bs-credits-dnt": "التصميم والاختبار",
+	"bs-credits-contributors": "المساهمين",
+	"bs-credits-translators": "المترجمين",
+	"bs-credits-translation": "الترجمة",
+	"bs-credits-th": "شكراً لجميع المترجمين من $1."
+}
