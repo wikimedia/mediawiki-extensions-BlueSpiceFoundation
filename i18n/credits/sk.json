@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vegetator"
+			"Vegetator",
+			"Wizzard"
 		]
 	},
-	"bs-credits-translators": "Prekladatelia"
+	"specialcredits": "Poďakovanie BlueSpice",
+	"bs-credits-programmers": "Programátori",
+	"bs-credits-dnt": "Dizajn a testovanie",
+	"bs-credits-contributors": "Prispievatelia",
+	"bs-credits-translators": "Prekladatelia",
+	"bs-credits-translation": "Preklad",
+	"bs-credits-th": "Vďaka všetkým prekladateľom z $1."
 }
