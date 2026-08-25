@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"bs-validator-value-not-recognized": "Hodnotu sa nepodarilo spracovať",
+	"bs-validator-invalid-boolean": "Neplatná logická hodnota",
+	"bs-validator-invalid-float": "Neplatné desatinné číslo",
+	"bs-validator-invalid-integer": "Neplatné celé číslo",
+	"bs-validator-invalid-string": "Neplatný reťazec",
+	"bs-validator-invalid-coordinate": "Neplatná súradnica",
+	"bs-validator-invalid-parameter": "Tento parameter nie je povolený",
+	"bs-validator-missing-required": "Tento parameter je povinný"
+}
