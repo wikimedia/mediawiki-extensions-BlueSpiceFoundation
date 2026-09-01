@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"bs-validator-value-not-recognized": "ارزښت پرمخ نشي وړل کېدای",
+	"bs-validator-invalid-string": "باوري لړۍ نه ده",
+	"bs-validator-invalid-coordinate": "باوري همغږۍ نه ده",
+	"bs-validator-invalid-parameter": "دا ارزښت اجازه نلري",
+	"bs-validator-missing-required": "دا ارزښت اړين دی"
+}
