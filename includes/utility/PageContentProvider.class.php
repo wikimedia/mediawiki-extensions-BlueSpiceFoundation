@@ -190,7 +190,8 @@ class BsPageContentProvider {
 		}
 		if ( $bHTML ) {
 			$content = $this->services->getContentRenderer()
-				->getParserOutput( $contentObj, $title )->getText();
+				->getParserOutput( $contentObj, $title )
+				->getContentHolderText();
 		} else {
 			$content = ( $contentObj instanceof TextContent ) ? $contentObj->getText() : '';
 			$context = new DerivativeContext( RequestContext::getMain() );
