@@ -4,7 +4,8 @@
 			"Justman10000",
 			"Killarnee",
 			"Laurinm",
-			"Metalhead64"
+			"Metalhead64",
+			"Mschlindwein"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Neu hinzufügen …",
@@ -23,6 +24,7 @@
 	"bs-ui-generic-no": "Nein",
 	"bs-exportpages-dialog-title": "Seiten in eine Sammlung exportieren",
 	"bs-exportpages-success-text": "Nach [[$1|$2]] exportierte Seiten",
+	"bs-save-as-collection-dialog-title": "Als Seitensammlung speichern",
 	"bs-ui-generic-close": "Schließen",
 	"bs-pageexport-list-name-label": "Listenname",
 	"bs-pageexport-list-format-label": "Listenformat",
