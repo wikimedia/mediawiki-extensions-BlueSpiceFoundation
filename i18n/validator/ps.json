@@ -5,6 +5,9 @@
 		]
 	},
 	"bs-validator-value-not-recognized": "ارزښت پرمخ نشي وړل کېدای",
+	"bs-validator-invalid-boolean": "يو باوري سم‌ناسم خوښنه نه ده",
+	"bs-validator-invalid-float": "يوه باوري لسيزه نه ده",
+	"bs-validator-invalid-integer": "يو باوري بشپړه شمېره نه ده",
 	"bs-validator-invalid-string": "باوري لړۍ نه ده",
 	"bs-validator-invalid-coordinate": "باوري همغږۍ نه ده",
 	"bs-validator-invalid-parameter": "دا ارزښت اجازه نلري",
