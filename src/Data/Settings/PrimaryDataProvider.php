@@ -71,7 +71,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 					// A difference in the hash means something has changed, hence run the
 					// >getWithSetCallback() callback and recompute the cached value so that
 					// BlueSpice configuration settings reflect what is in the source (DB).
-					return $oldValueHash !== $newValueHash;
+					return $oldValueHash !== $newValueHash ? time() : null;
 				}
 			]
 		);
