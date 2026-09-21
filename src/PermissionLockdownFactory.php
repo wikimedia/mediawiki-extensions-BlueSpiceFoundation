@@ -84,7 +84,6 @@ class PermissionLockdownFactory {
 	}
 
 	/**
-	 *
 	 * @param Title $title
 	 * @param User $user
 	 * @return Lockdown|false

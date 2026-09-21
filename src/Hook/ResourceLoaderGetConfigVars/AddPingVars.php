@@ -7,7 +7,6 @@ use BlueSpice\Hook\ResourceLoaderGetConfigVars;
 class AddPingVars extends ResourceLoaderGetConfigVars {
 
 	/**
-	 *
 	 * @return bool
 	 */
 	protected function doProcess() {

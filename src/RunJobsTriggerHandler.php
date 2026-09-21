@@ -22,7 +22,6 @@ abstract class RunJobsTriggerHandler extends Handler {
 	}
 
 	/**
-	 *
 	 * @param Config $config
 	 * @param \Wikimedia\Rdbms\LoadBalancer $loadBalancer
 	 */
