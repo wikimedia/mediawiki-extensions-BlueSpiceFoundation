@@ -11,13 +11,11 @@ use Wikimedia\Rdbms\LoadBalancer;
 class LegacyExtensionAttributesFactory extends Base {
 
 	/**
-	 *
 	 * @var Config
 	 */
 	protected $config = null;
 
 	/**
-	 *
 	 * @var LoadBalancer
 	 */
 	protected $loadBalancer = null;

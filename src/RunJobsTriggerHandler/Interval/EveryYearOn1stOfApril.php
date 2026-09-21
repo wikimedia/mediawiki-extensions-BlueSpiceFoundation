@@ -7,7 +7,6 @@ use BlueSpice\RunJobsTriggerHandler\Interval;
 class EveryYearOn1stOfApril implements Interval {
 
 	/**
-	 *
 	 * @param \DateTime $currentRunTimestamp
 	 * @param array $options
 	 * @return \DateTime
