@@ -79,6 +79,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $this->data;
 	}
 
+	/**
+	 * @param IDatabase $db
+	 * @return array
+	 */
 	private function buildDataArrayFromDBResults( $db ): array {
 		$data = [];
 
@@ -93,7 +97,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 		return $data;
 	}
 
-	 /**
+	/**
 	 * @param \stdClass $row
 	 */
 	protected function appendRowToData( \stdClass $row ) {
