@@ -379,7 +379,7 @@
 		"permissionLockdown": {
 			"class": "\\BlueSpice\\HookHandler\\PermissionLockdown",
 			"services": [
-				"MainConfig", "PermissionManager", "TitleFactory", "RevisionLookup", "BSUtilityFactory"
+				"MainConfig", "PermissionManager", "TitleFactory", "RevisionLookup"
 			]
 		},
 		"applyLockdown": {
