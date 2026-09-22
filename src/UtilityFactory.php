@@ -79,16 +79,6 @@ class UtilityFactory {
 	}
 
 	/**
-	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
-	 * @return \BlueSpice\Utility\MaintenanceUser
-	 */
-	public function getMaintenanceUser() {
-		return new \BlueSpice\Utility\MaintenanceUser(
-			$this->services->getConfigFactory()->makeConfig( 'bsg' )
-		);
-	}
-
-	/**
 	 * @param string $wikitext
 	 * @return \BlueSpice\Utility\WikiTextLinksHelper
 	 */
