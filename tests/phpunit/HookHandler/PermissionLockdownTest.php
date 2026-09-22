@@ -3,8 +3,6 @@
 namespace BlueSpice\Tests\HookHandler;
 
 use BlueSpice\HookHandler\PermissionLockdown;
-use BlueSpice\Utility\MaintenanceUser;
-use BlueSpice\UtilityFactory;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\MediaWikiServices;
@@ -40,7 +38,7 @@ class PermissionLockdownTest extends TestCase {
 		$permissionManager = $this->createMock( PermissionManager::class );
 		$permissionManager->method( 'userCan' )->willReturnCallback(
 			static function ( $action, $user, $title ) use ( $userCanReturn, $userCanReturnForMaintenanceuser ) {
-				if ( $user->getName() === 'Maintenance' ) {
+				if ( $user->getName() === User::MAINTENANCE_SCRIPT_USER ) {
 					return $userCanReturnForMaintenanceuser;
 				}
 				return $userCanReturn;
@@ -48,19 +46,12 @@ class PermissionLockdownTest extends TestCase {
 
 		$titleFactory = $this->createMock( TitleFactory::class );
 		$revisionLookup = $this->createMock( RevisionLookup::class );
-		$utilityFactory = $this->createMock( UtilityFactory::class );
-		$maintenanceUser = $this->createMock( MaintenanceUser::class );
-		$maintenanceUserUser = $this->createMock( User::class );
-		$maintenanceUserUser->method( 'getName' )->willReturn( 'Maintenance' );
-		$maintenanceUser->method( 'getUser' )->willReturn( $maintenanceUserUser );
-		$utilityFactory->method( 'getMaintenanceUser' )->willReturn( $maintenanceUser );
 
 		$handler = new PermissionLockdown(
 			 $config,
 			 $permissionManager,
 			 $titleFactory,
 			 $revisionLookup,
-			 $utilityFactory,
 			 $noSession
 		);
 
@@ -164,14 +155,12 @@ class PermissionLockdownTest extends TestCase {
 					} );
 				return $revision;
 			} );
-		$utilityFactory = $this->createMock( UtilityFactory::class );
 		$noSession = false;
 		$handler = new PermissionLockdown(
 			$config,
 			$permissionManager,
 			$titleFactory,
 			$revisionLookup,
-			$utilityFactory,
 			$noSession
 		);
 
