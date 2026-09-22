@@ -76,6 +76,7 @@ class UtilityFactory {
 	}
 
 	/**
+	 * @deprecated use User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) instead
 	 * @return \BlueSpice\Utility\MaintenanceUser
 	 */
 	public function getMaintenanceUser() {
