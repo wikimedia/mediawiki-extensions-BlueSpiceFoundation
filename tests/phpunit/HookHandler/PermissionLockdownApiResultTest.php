@@ -3,8 +3,6 @@
 namespace BlueSpice\Tests\HookHandler;
 
 use BlueSpice\HookHandler\PermissionLockdown;
-use BlueSpice\Utility\MaintenanceUser;
-use BlueSpice\UtilityFactory;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiResult;
@@ -255,7 +253,6 @@ class PermissionLockdownApiResultTest extends TestCase {
 			$permissionManager,
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( RevisionLookup::class ),
-			$this->createMock( UtilityFactory::class ),
 			false
 		);
 
@@ -297,14 +294,10 @@ class PermissionLockdownApiResultTest extends TestCase {
 	 * @covers \BlueSpice\HookHandler\PermissionLockdown::onAPIAfterExecute
 	 */
 	public function testUsesMaintenanceUserInCliContext() {
-		$maintenanceUserMock = $this->createMock( User::class );
-		$maintenanceUserMock->method( 'getName' )->willReturn( 'BSMaintenance' );
-		$maintenanceUserMock->method( 'isRegistered' )->willReturn( true );
-
 		$permissionManager = $this->createMock( PermissionManager::class );
 		$permissionManager->method( 'userCan' )->willReturnCallback(
 			static function ( $action, $user, $title ) {
-				if ( $user->getName() === 'BSMaintenance' ) {
+				if ( $user->getName() === User::MAINTENANCE_SCRIPT_USER ) {
 					return true;
 				}
 				return false;
@@ -318,17 +311,11 @@ class PermissionLockdownApiResultTest extends TestCase {
 			}
 		);
 
-		$maintenanceUser = $this->createMock( MaintenanceUser::class );
-		$maintenanceUser->method( 'getUser' )->willReturn( $maintenanceUserMock );
-		$utilityFactory = $this->createMock( UtilityFactory::class );
-		$utilityFactory->method( 'getMaintenanceUser' )->willReturn( $maintenanceUser );
-
 		$handler = new PermissionLockdown(
 			new HashConfig( [ 'CommandLineMode' => true ] ),
 			$permissionManager,
 			$titleFactory,
 			$this->createMock( RevisionLookup::class ),
-			$utilityFactory,
 			false
 		);
 
@@ -360,7 +347,6 @@ class PermissionLockdownApiResultTest extends TestCase {
 			$permissionManager,
 			$this->createMock( TitleFactory::class ),
 			$this->createMock( RevisionLookup::class ),
-			$this->createMock( UtilityFactory::class ),
 			false
 		);
 
@@ -401,14 +387,11 @@ class PermissionLockdownApiResultTest extends TestCase {
 			}
 		);
 
-		$utilityFactory = $this->createMock( UtilityFactory::class );
-
 		return new PermissionLockdown(
 			$config,
 			$permissionManager,
 			$titleFactory,
 			$this->createMock( RevisionLookup::class ),
-			$utilityFactory,
 			false
 		);
 	}

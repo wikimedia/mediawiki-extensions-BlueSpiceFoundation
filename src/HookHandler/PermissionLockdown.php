@@ -2,7 +2,6 @@
 
 namespace BlueSpice\HookHandler;
 
-use BlueSpice\UtilityFactory;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\Api\Hook\APIAfterExecuteHook;
@@ -107,9 +106,6 @@ class PermissionLockdown implements
 	/** @var PermissionManager */
 	private $permissionManager = null;
 
-	/** @var UtilityFactory */
-	private $utilityFactory = null;
-
 	/** @var RequestContext */
 	private $requestContext = null;
 
@@ -121,7 +117,6 @@ class PermissionLockdown implements
 	 * @param PermissionManager $permissionManager
 	 * @param TitleFactory $titleFactory
 	 * @param RevisionLookup $revisionLookup
-	 * @param UtilityFactory $utilityFactory
 	 * @param bool|null $noSession
 	 */
 	public function __construct(
@@ -129,13 +124,12 @@ class PermissionLockdown implements
 		PermissionManager $permissionManager,
 		TitleFactory $titleFactory,
 		RevisionLookup $revisionLookup,
-		UtilityFactory $utilityFactory,
-		$noSession = null ) {
+		$noSession = null
+	) {
 		$this->config = $config;
 		$this->permissionManager = $permissionManager;
 		$this->titleFactory = $titleFactory;
 		$this->revisionLookup = $revisionLookup;
-		$this->utilityFactory = $utilityFactory;
 		$this->requestContext = RequestContext::getMain();
 		if ( $noSession === null ) {
 			$this->noSessionContext = defined( 'MW_NO_SESSION' );
@@ -185,7 +179,7 @@ class PermissionLockdown implements
 		$user = $this->requestContext->getUser();
 		if ( $this->config->get( 'CommandLineMode' ) ) {
 			if ( !$user->isRegistered() ) {
-				return $this->utilityFactory->getMaintenanceUser()->getUser();
+				return User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 			}
 		}
 		return $user;
