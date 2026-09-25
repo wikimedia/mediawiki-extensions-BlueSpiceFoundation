@@ -102,7 +102,8 @@ bs.ui.dialog.ExportPagesDialog.prototype.initialize = function () {
 		}
 	} );
 	this.grid.connect( this, {
-		datasetChange: 'onContentHeightChange'
+		datasetChange: 'onContentHeightChange',
+		rowSelected: 'getValidity'
 	} );
 	this.panel.$element.append( this.grid.$element );
 
@@ -139,7 +140,7 @@ bs.ui.dialog.ExportPagesDialog.prototype.getValidity = async function () {
 	try {
 		await this.nameInput.getValidity();
 		if ( !this.grid.getSelectedRows().length ) {
-			throw new Error();
+			throw new Error( 'Empty selection' );
 		}
 		this.actions.setAbilities( { export: true } );
 		dfd.resolve();
@@ -158,6 +159,9 @@ bs.ui.dialog.ExportPagesDialog.prototype.getActionProcess = function ( action ) 
 			try {
 				await this.getValidity();
 				const selected = this.grid.getSelectedRows();
+				if ( selected.length === 0 ) {
+					throw new Error( 'Empty selection' );
+				}
 				const pages = [];
 				selected.forEach( ( item ) => {
 					pages.push( item.dbkey );
