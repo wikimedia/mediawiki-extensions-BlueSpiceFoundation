@@ -4,7 +4,8 @@
 			"Mainframe98",
 			"McDutchie",
 			"Romaine",
-			"Rots61"
+			"Rots61",
+			"Siebrand"
 		]
 	},
 	"bs-setting-path-feature": "Functie",
@@ -14,7 +15,7 @@
 	"bs-setting-path-dataanalysis": "Gegevensanalyse",
 	"bs-setting-path-editor": "Bewerker",
 	"bs-setting-path-search": "Zoeken en Navigeren",
-	"bs-setting-path-personalisation": "Personalizatie",
+	"bs-setting-path-personalisation": "Personalisatie",
 	"bs-setting-path-skinning": "Vormgeving",
 	"bs-setting-path-customizing": "Aanpassing",
 	"bs-setting-path-contentstructuring": "Inhoudsstructurering",
