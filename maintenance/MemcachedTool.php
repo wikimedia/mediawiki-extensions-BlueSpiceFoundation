@@ -26,7 +26,6 @@ class MemcachedTool extends Maintenance {
 		}
 
 		$ref = new ReflectionProperty( $cache, 'client' );
-		$ref->setAccessible( true );
 		$client = $ref->getValue( $cache );
 
 		if ( extension_loaded( 'memcached' ) && $client instanceof Memcached ) {
