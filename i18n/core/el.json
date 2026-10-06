@@ -3,6 +3,7 @@
 		"authors": [
 			"Geraki",
 			"Indoril",
+			"Jimkats",
 			"NikosLikomitros",
 			"Nikosgranturismogt"
 		]
@@ -30,7 +31,7 @@
 	"bs-userpagesettings-legend": "Ρυθμίσεις χρήστη",
 	"bs-userpreferences-link-text": "Περισσότερες επιλογές χρήστη",
 	"bs-userpreferences-link-title": "Εμφανίσετε τις προσωπικές σας ρυθμίσεις",
-	"bs-exception-view-heading": "Ενα σφάλμα συνέβη",
+	"bs-exception-view-heading": "Παρουσιάστηκε ένα σφάλμα",
 	"bs-exception-view-text": "Κατά την επεξεργασία του ερωτήματός σας παρουσιάστηκε το ακόλουθο σφάλμα:",
 	"bs-exception-view-admin-hint": "Παρακαλούμε επικοινωνήστε με τον διαχειριστή του συστήματος σας.",
 	"bs-exception-view-stacktrace-toggle-show-text": "Εμφάνιση λεπτομερειών σφάλματος",
