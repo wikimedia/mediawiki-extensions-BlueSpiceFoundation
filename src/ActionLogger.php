@@ -2,6 +2,7 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 
@@ -103,9 +104,9 @@ class ActionLogger {
 
 	/**
 	 * @param string $subtype
-	 * @return \ManualLogEntry
+	 * @return ManualLogEntry
 	 */
 	protected function newLogEntry( $subtype ) {
-		return new \ManualLogEntry( $this->type, $subtype );
+		return new ManualLogEntry( $this->type, $subtype );
 	}
 }
