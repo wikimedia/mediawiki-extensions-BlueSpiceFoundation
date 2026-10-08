@@ -5,7 +5,7 @@ namespace BlueSpice\Data\Settings;
 use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\DatabaseReader;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 class Reader extends DatabaseReader {
 

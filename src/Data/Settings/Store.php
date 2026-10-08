@@ -4,7 +4,7 @@ namespace BlueSpice\Data\Settings;
 
 use MediaWiki\Context\IContextSource;
 use MWStake\MediaWiki\Component\DataStore\IStore;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\LoadBalancer;
 
 class Store implements IStore {
