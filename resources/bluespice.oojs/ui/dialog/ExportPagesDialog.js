@@ -89,6 +89,7 @@ bs.ui.dialog.ExportPagesDialog.prototype.initialize = function () {
 		multiSelect: true,
 		multiSelectSelectedByDefault: true,
 		noHeader: true,
+		$overlay: this.$overlay,
 		classes: [ 'bs-exportpages-grid' ],
 		columns: {
 			dbkey: {
