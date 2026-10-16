@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"bs-setting-path-feature": "ځانگړنه",
+	"bs-setting-path-extension": "شاتاړی",
+	"bs-setting-path-package": "کڅوړه",
+	"bs-setting-path-system": "غونډال",
+	"bs-setting-path-dataanalysis": "اومتوک ارزونه",
+	"bs-setting-path-editor": "سمونگر",
+	"bs-setting-path-search": "پلټل او گرځښت",
+	"bs-setting-path-personalisation": "ځانواله‌کول",
+	"bs-setting-path-skinning": "پوستکي‌کول",
+	"bs-setting-path-customizing": "دوديزول",
+	"bs-setting-path-contentstructuring": "منځپانگيزه جوړښت",
+	"bs-setting-path-communication": "اړيکتيا",
+	"bs-setting-path-administration": "پازوالي",
+	"bs-setting-path-qualityassurance": "څنگه‌والي ډاډ",
+	"bs-setting-path-export": "بهرلېږل"
+}

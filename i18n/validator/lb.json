@@ -14,5 +14,6 @@
 	"bs-validator-integer-range-validation-too-high": "De Wäert deen uginn ass ass ze héich. En däerf net méi grouss si wéi $1.",
 	"bs-validator-missing-required": "Dëse Parameter ass obligatoresch",
 	"bs-validator-invalid-parameter": "Dëse Parameter ass net erlaabt",
-	"bs-validator-invalid-integer": "Keng gülteg ganz Zuel"
+	"bs-validator-invalid-integer": "Keng gülteg ganz Zuel",
+	"bs-validator-value-not-recognized": "De Wäert konnt net verschafft ginn"
 }
