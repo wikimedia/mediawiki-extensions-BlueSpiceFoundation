@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bachounda"
+		]
+	},
+	"bs-validator-value-not-recognized": "القيمة ما قدرتش تتعالج",
+	"bs-validator-invalid-boolean": "مش بوليين صحيح",
+	"bs-validator-invalid-float": "مش رقم عشري صحيح",
+	"bs-validator-invalid-integer": "مش عدد صحيح",
+	"bs-validator-invalid-string": "مش سلسلة نصية صحيحة",
+	"bs-validator-invalid-coordinate": "مش إحداثي صحيح",
+	"bs-validator-invalid-parameter": "هاد البارامتر مش مسموح بيه",
+	"bs-validator-missing-required": "هاد البارامتر مطلوب"
+}

@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"bs-upload-uploaddialogtitle": "دوتنه راپورته‌کول",
+	"bs-upload-uploadbuttontext": "سپړل",
+	"bs-upload-uploadfilefieldlabel": "د دوتنې نوم",
+	"bs-upload-uploadfileemptytext": "نوې دوتنه ورټومبل...",
+	"bs-upload-uploaddestfilelabel": "د موخيزې دوتنې نوم",
+	"bs-upload-allowedfiletypesare": "د دوتنو باوري ډولونه دا دي:",
+	"bs-upload-license": "منښتليک",
+	"bs-upload-uploadwatchthislabel": "دا دوتنه څارل",
+	"bs-upload-uploadignorewarningslabel": "هر ډول گواښونه له پامه غورځول",
+	"bs-upload-categories": "وېشنيزې",
+	"bs-upload-upload-waitmessage": "راپورته‌کول دوام لري...",
+	"bs-upload-error": "تېروتنه",
+	"bs-upload-descfilelabel": "څرگنداوی",
+	"bs-upload-error-long": "د راپورته‌‌کولو بهير کې تېروتنه",
+	"bs-upload-filetypenotsupported": "د دوتنې‌ډول نه ملاتړ کېږي",
+	"bs-upload-details": "سپيناوی",
+	"bs-upload-uploadwarningdialog-title": "دوتنه راپورته‌کول: گواښنې",
+	"bs-upload-uploadwarningdialog-intro": "د دوتنې راپورته‌کولو پرمهال لاندې گواښونه رامنځته شوې دي",
+	"bs-upload-uploadwarningdialog-outro": "د گواښونو له پامه غورځولو او دوتنې راپورته کولو لپاره په \"{{int:bs-extjs-ok}}\" کېکاږئ، بېرته د راپورته‌کولو فورمې ته ستنېدلو لپاره \"{{int:bs-extjs-cancel}}\" کېکاږئ",
+	"bs-upload-uploadwarningdialog-warning-exists": "د \"$1\" په نوم يوه دوتنه لادمخه شتون لري",
+	"bs-upload-uploadwarningdialog-warning-duplicate": "د دوې دوتنې {{PLURAL:$1|يو دوه‌گونې دوتنه بله|دوه‌گونې دوتنې نورې}} هم شته",
+	"bs-upload-uploadwarningdialog-warning-unknown": "\"$1\" کوډ سره ناڅرگنده گواښنه"
+}
