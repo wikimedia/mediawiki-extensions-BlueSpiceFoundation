@@ -1,7 +1,7 @@
 <?php
 /**
  *  This class serves as a backend for ExtJS stores. It allows all
- * necessary parameters and provides convenience methods and a standard ouput
+ * necessary parameters and provides convenience methods and a standard output
  * format
  *
  * This program is free software; you can redistribute it and/or modify
