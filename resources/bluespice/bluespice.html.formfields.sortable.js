@@ -1,6 +1,6 @@
 ( function ( mw, bs, $ ) {
 	mw.loader.using( 'jquery.ui' ).done( () => {
-		$( '.multiselectsortlist' ).sortable( {
+		$( '.multiselectsortlist' ).sortable( { // eslint-disable-line no-jquery/no-jquery-ui
 			update: function () {
 				$( this ).next().children().remove(); // Remove all "option" tags from the hidden "select" element
 				$( this ).children().each( function () {
