@@ -34,7 +34,7 @@
 [ class*=' icon-' ] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'icomoon' !important;
-	speak: none;
+	speak: none; /* stylelint-disable-line declaration-property-value-no-unknown */
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
