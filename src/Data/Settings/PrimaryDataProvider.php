@@ -49,16 +49,10 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 			$key,
 			$this->cache::TTL_DAY,
 			function ( $oldValue, &$ttl, array &$setOpts ) use ( $db ) {
-				try {
-					$data = $this->buildDataArrayFromDBResults( $db );
-				} catch ( DBError $e ) {
-					// At the first update run after installation, the table does not yet exist.
-					// As run.php calls Setup.php before running the actual maintenance script
-					// and triggers this current logic, we do not throw error here.
-					wfDebugLog( 'BlueSpiceFoundation', "Error fetching settings: {$e->getMessage()}" );
+				$data = $this->buildDataArrayFromDBResults( $db );
+				if ( empty( $data ) ) {
 					// Don't cache the empty result, maybe the table will be created soon.
 					$ttl = 0;
-					return [];
 				}
 				return $data;
 			},
@@ -85,13 +79,19 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 */
 	private function buildDataArrayFromDBResults( $db ): array {
 		$data = [];
-
-		$res = $db->select( 'bs_settings3', '*', '', __CLASS__ );
-		foreach ( $res as $row ) {
-			$data[] = new Record( (object)[
-				Record::NAME => $row->s_name,
-				Record::VALUE => FormatJson::decode( $row->s_value, true )
-			] );
+		try {
+			$res = $db->select( 'bs_settings3', '*', '', __CLASS__ );
+			foreach ( $res as $row ) {
+				$data[] = new Record( (object)[
+					Record::NAME => $row->s_name,
+					Record::VALUE => FormatJson::decode( $row->s_value, true )
+				] );
+			}
+		} catch ( DBError $e ) {
+			// At the first update run after installation, the table does not yet exist.
+			// As run.php calls Setup.php before running the actual maintenance script
+			// and triggers this current logic, we do not throw error here.
+			wfDebugLog( 'BlueSpiceFoundation', "Error fetching settings: {$e->getMessage()}" );
 		}
 
 		return $data;
