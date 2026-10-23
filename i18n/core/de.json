@@ -101,6 +101,7 @@
 	"right-wikiadmin": "Verwendet für potentiell gefährliche administrative Aufgaben wie die Verwaltung von Benutzern, Berechtigungen oder der globalen Konfiguration (BlueSpice-Erweiterung)",
 	"bs-notifications-agent-anon": "anonymer Benutzer",
 	"protect-level-editor": "Nur Redakteuren und Administratoren erlauben",
+	"restriction-level-editor": "schreibgeschützt (nur Redakteure und Administratoren)",
 	"right-editor": "Gewährt alle Berechtigungen der Rolle \"editor\" für geschützte Seiten in der Bearbeiter-Einschränkung, wenn das Rollensystem aktiviert ist",
 	"action-editor": "Gewährt alle Berechtigungen der Rolle \"editor\" für geschützte Seiten in der Bearbeiter-Einschränkung, wenn das Rollensystem aktiviert ist",
 	"bs-pref-fileextensions-help": "Dateitypen, die für das Hochladen in das Wiki freigegeben sind. Einige Typen (z.B. html, js, php, cgi, exe) sind aus Sicherheitsgründen nicht erlaubt, auch wenn sie hier aufgelistet werden.",
