@@ -103,6 +103,7 @@
 	"right-wikiadmin": "Special permission used in BlueSpice extension for potentially dangerous administrative tasks, such as managing users, permissions, global configuration, etc.\n\nShould only be given to the \"sysop\" group.\n\n{{doc-right|wikiadmin}}",
 	"bs-notifications-agent-anon": "Text used instead of username when user is anonymous",
 	"protect-level-editor": "Used as protect level.\n\nSee example: {{canonicalurl:Main_Page|action=info}}",
+	"restriction-level-editor": "Short description of the \"editor\" page protection level.\n\nCorresponds to this option when protecting a page: {{msg-mw|protect-level-editor}}\n\nUsed e.g. on [[Special:ProtectedTitles]] and [[Special:ProtectedPages]].\n\nSee also:\n* {{msg-mw|restriction-level-sysop}}\n* {{msg-mw|restriction-level-autoconfirmed}}",
 	"right-editor": "{{doc-right|editor}}",
 	"action-editor": "{{doc-action|editor}}",
 	"bs-pref-fileextensions-help": "Description for config variable \"FileExtensions\"",
