@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"apihelp-bs-wikisubpage-treestore-param-options": "د خوښنو لړليک",
+	"apihelp-bs-upload-license-store-summary": "د دوتنې راپورته‌کولو لپاره ټول شته منښتليکونه لړليکوي",
+	"apihelp-bs-js-var-config-param-format": "د پايلې بڼه",
+	"apihelp-bs-categorylinks-store-param-page-id": "د مخ مخ پېژند",
+	"apihelp-bs-templatelinks-store-summary": "کينډۍ ته د تړوني په گډون د مخ ټولې کينډۍ لړليکوي.",
+	"apihelp-bs-templatelinks-store-param-page-id": "د مخ مخ پېژند",
+	"apihelp-bs-linker-summary": "د تړونکي له‌خوا رامنځته شويو مخونو ته تړوني راگرځوي"
+}
