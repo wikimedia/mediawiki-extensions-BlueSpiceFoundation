@@ -29,10 +29,10 @@
 namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
-use ImageHistoryList;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\FileRepo\File\File;
+use MediaWiki\Page\ImageHistoryList;
 
 abstract class ImagePageFileHistoryLine extends Hook {
 	/** @var ImageHistoryList */
