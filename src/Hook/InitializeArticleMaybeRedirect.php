@@ -29,9 +29,9 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
-use WikiPage;
 
 abstract class InitializeArticleMaybeRedirect extends Hook {
 
