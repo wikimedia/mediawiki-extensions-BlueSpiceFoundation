@@ -28,9 +28,9 @@ namespace BlueSpice\Hook;
 
 use BlueSpice\Hook;
 use DummyLinker;
-use File;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\FileRepo\File\File;
 use MediaWiki\Parser\Parser;
 use MediaWiki\Title\Title;
 
