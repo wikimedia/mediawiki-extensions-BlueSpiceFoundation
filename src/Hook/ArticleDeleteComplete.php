@@ -30,12 +30,13 @@ use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\User\User;
 
 abstract class ArticleDeleteComplete extends Hook {
 
 	/**
-	 * @var \WikiPage
+	 * @var WikiPage
 	 */
 	protected $wikipage = null;
 
@@ -65,7 +66,7 @@ abstract class ArticleDeleteComplete extends Hook {
 	protected $logEntry = false;
 
 	/**
-	 * @param \WikiPage &$wikipage
+	 * @param WikiPage &$wikipage
 	 * @param User &$user
 	 * @param string $reason
 	 * @param int $id
@@ -91,7 +92,7 @@ abstract class ArticleDeleteComplete extends Hook {
 	/**
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param \WikiPage &$wikipage
+	 * @param WikiPage &$wikipage
 	 * @param User &$user
 	 * @param string $reason
 	 * @param int $id

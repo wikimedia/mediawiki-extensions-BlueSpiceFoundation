@@ -80,7 +80,7 @@ abstract class WikiPage extends Task {
 	}
 
 	/**
-	 * @return \WikiPage
+	 * @return WikiPage
 	 */
 	protected function getWikiPage() {
 		$services = MediaWikiServices::getInstance();
