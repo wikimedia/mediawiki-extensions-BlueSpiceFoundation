@@ -31,6 +31,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Page\Article;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -45,7 +46,7 @@ abstract class BeforeInitialize extends Hook {
 	/**
 	 * Should be unused and always null
 	 *
-	 * @var \Article|null
+	 * @var Article|null
 	 */
 	protected $article;
 
@@ -71,7 +72,7 @@ abstract class BeforeInitialize extends Hook {
 
 	/**
 	 * @param Title &$title
-	 * @param \Article|null &$article
+	 * @param Article|null &$article
 	 * @param OutputPage &$output
 	 * @param User &$user
 	 * @param WebRequest $request
@@ -97,7 +98,7 @@ abstract class BeforeInitialize extends Hook {
 	 * @param \ContextSource $context
 	 * @param Config $config
 	 * @param Title &$title
-	 * @param \Article|null &$article
+	 * @param Article|null &$article
 	 * @param OutputPage &$output
 	 * @param User &$user
 	 * @param WebRequest $request
