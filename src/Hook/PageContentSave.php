@@ -30,6 +30,7 @@ use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
@@ -37,7 +38,7 @@ use MediaWiki\User\User;
 abstract class PageContentSave extends Hook {
 
 	/**
-	 * @var \WikiPage
+	 * @var WikiPage
 	 */
 	protected $wikipage = null;
 
@@ -92,7 +93,7 @@ abstract class PageContentSave extends Hook {
 	protected $baseRevId = 0;
 
 	/**
-	 * @param \WikiPage &$wikipage
+	 * @param WikiPage &$wikipage
 	 * @param User &$user
 	 * @param Content &$content
 	 * @param string &$summary
@@ -125,7 +126,7 @@ abstract class PageContentSave extends Hook {
 	/**
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param \WikiPage &$wikipage
+	 * @param WikiPage &$wikipage
 	 * @param User &$user
 	 * @param Content &$content
 	 * @param string &$summary

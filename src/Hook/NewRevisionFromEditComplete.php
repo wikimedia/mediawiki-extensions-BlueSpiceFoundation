@@ -29,13 +29,14 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\User;
 
 abstract class NewRevisionFromEditComplete extends Hook {
 
 	/**
-	 * @var \WikiPage
+	 * @var WikiPage
 	 */
 	protected $wikiPage;
 
@@ -55,7 +56,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	protected $user;
 
 	/**
-	 * @param \WikiPage $wikiPage
+	 * @param WikiPage $wikiPage
 	 * @param RevisionRecord $rev
 	 * @param int $baseID
 	 * @param User $user
@@ -77,7 +78,7 @@ abstract class NewRevisionFromEditComplete extends Hook {
 	/**
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param \WikiPage $wikiPage
+	 * @param WikiPage $wikiPage
 	 * @param RevisionRecord $rev
 	 * @param int $baseID
 	 * @param User $user
