@@ -2,6 +2,8 @@
 
 namespace BlueSpice\Hook\LinkerMakeMediaLinkFile;
 
+use MediaWiki\FileRepo\File\File;
+
 class AddDataAttributes extends \BlueSpice\Hook\LinkerMakeMediaLinkFile {
 
 	/**
@@ -22,7 +24,7 @@ class AddDataAttributes extends \BlueSpice\Hook\LinkerMakeMediaLinkFile {
 		$this->attribs['data-bs-title'] = $this->title->getPrefixedText();
 		$this->attribs['class'] .= ' media';
 
-		if ( $this->file instanceof \File ) {
+		if ( $this->file instanceof File ) {
 			$this->attribs['data-bs-filename'] = $this->file->getName();
 			$this->attribs['data-bs-filetimestamp']
 				= $this->file->getTimestamp();
