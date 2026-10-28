@@ -4,8 +4,8 @@ namespace BlueSpice;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Message\Message;
-use MessageLocalizer;
 
 abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocalizer {
 

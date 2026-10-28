@@ -4,10 +4,10 @@ namespace BlueSpice\Permission\Lockdown;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
-use MessageLocalizer;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 abstract class Module implements IModule, MessageLocalizer {
