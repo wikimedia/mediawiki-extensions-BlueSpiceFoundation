@@ -100,7 +100,7 @@ class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $testuser->getName(), $attribs['data-bs-username'] );
 		$this->assertEquals(
 			$testuser->getRealName(),
-			\HtmlArmor::getHtml( $newHtml )
+			HtmlArmor::getHtml( $newHtml )
 		);
 	}
 
@@ -152,8 +152,8 @@ class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 		$this->assertArrayHasKey( 'data-bs-username', $attribs );
 		$this->assertEquals( $testuser->getName(), $attribs['data-bs-username'] );
 		$this->assertEquals(
-			\HtmlArmor::getHtml( $html ),
-			\HtmlArmor::getHtml( $newHtml )
+			HtmlArmor::getHtml( $html ),
+			HtmlArmor::getHtml( $newHtml )
 		);
 	}
 
@@ -190,8 +190,8 @@ class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertArrayNotHasKey( 'data-bs-username', $attribs );
 		$this->assertEquals(
-			\HtmlArmor::getHtml( $html ),
-			\HtmlArmor::getHtml( $newHtml )
+			HtmlArmor::getHtml( $html ),
+			HtmlArmor::getHtml( $newHtml )
 		);
 	}
 }
