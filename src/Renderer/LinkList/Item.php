@@ -3,11 +3,11 @@
 namespace BlueSpice\Renderer\LinkList;
 
 use BlueSpice\Renderer\Params;
-use HtmlArmor;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Linker\LinkTarget;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 class Item extends \BlueSpice\Renderer\SimpleList\Item {
 	public const PARAM_TARGET = 'target';

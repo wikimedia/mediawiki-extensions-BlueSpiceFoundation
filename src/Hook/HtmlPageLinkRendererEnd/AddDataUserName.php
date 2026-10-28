@@ -2,9 +2,9 @@
 
 namespace BlueSpice\Hook\HtmlPageLinkRendererEnd;
 
-use HtmlArmor;
 use MediaWiki\Html\Html;
 use MediaWiki\Title\Title;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 class AddDataUserName extends \BlueSpice\Hook\HtmlPageLinkRendererEnd {
 
