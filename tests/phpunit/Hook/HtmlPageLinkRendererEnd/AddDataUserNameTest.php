@@ -6,6 +6,7 @@ use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Title\Title;
 use MediaWikiIntegrationTestCase;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 /**
  * @group Database
@@ -30,7 +31,7 @@ class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 		$linkRenderer = $this->getServiceContainer()->getLinkRenderer();
 		$title = Title::newMainPage();
 		$isKnown = true;
-		$html = new \HtmlArmor( '' );
+		$html = new HtmlArmor( '' );
 		$attribs = [];
 		$ret = '';
 
@@ -79,7 +80,7 @@ class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 		$linkRenderer = $services->getLinkRenderer();
 		$title = Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
-		$html = $newHtml = new \HtmlArmor( $title->getText() );
+		$html = $newHtml = new HtmlArmor( $title->getText() );
 		$attribs = [];
 		$ret = '';
 
@@ -132,7 +133,7 @@ class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 		$linkRenderer = $services->getLinkRenderer();
 		$title = Title::makeTitle( NS_USER, 'Wiki Sysöp' );
 		$isKnown = true;
-		$html = $newHtml = new \HtmlArmor( 'Some link text' );
+		$html = $newHtml = new HtmlArmor( 'Some link text' );
 		$attribs = [];
 		$ret = '';
 
@@ -171,7 +172,7 @@ class AddDataUserNameTest extends MediaWikiIntegrationTestCase {
 		$linkRenderer = $this->getServiceContainer()->getLinkRenderer();
 		$title = Title::makeTitle( NS_MAIN, 'Not a user page' );
 		$isKnown = true;
-		$html = $newHtml = new \HtmlArmor( 'Some link text' );
+		$html = $newHtml = new HtmlArmor( 'Some link text' );
 		$attribs = [];
 		$ret = '';
 
