@@ -6,6 +6,7 @@ use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 
@@ -24,7 +25,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$title = Title::newMainPage();
 		$isKnown = true;
-		$html = new \HtmlArmor( '' );
+		$html = new HtmlArmor( '' );
 		$attribs = [];
 		$ret = '';
 
@@ -58,7 +59,7 @@ class AddDataTitleTest extends \PHPUnit\Framework\TestCase {
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$title = Title::newMainPage();
-		$html = new \HtmlArmor( '' );
+		$html = new HtmlArmor( '' );
 		$isKnown = true;
 		$attribs = [];
 		$ret = '';
