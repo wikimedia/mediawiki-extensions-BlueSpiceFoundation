@@ -29,9 +29,9 @@ namespace BlueSpice;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
-use MessageLocalizer;
 use Profiler;
 
 abstract class Hook implements MessageLocalizer {

@@ -27,11 +27,11 @@
 
 namespace BlueSpice;
 
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Status\Status;
-use MessageLocalizer;
 use Psr\Log\LoggerInterface;
 
 abstract class Task implements ITask, MessageLocalizer {
