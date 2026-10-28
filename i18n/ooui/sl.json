@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Upwinxp"
 		]
 	},
 	"bs-ooui-field-tagmultiselect-input-placeholder": "Dodaj novo ...",
@@ -14,5 +15,20 @@
 	"bs-ooui-btn-dismiss-alert-title": "Opusti",
 	"bs-ooui-key-value-input-widget-section-label": "Razdelek",
 	"bs-ooui-key-value-input-widget-add-section-label": "Dodaj nov razdelek",
-	"bs-pagecollection-prefix": "Zbiranje podatkov"
+	"bs-ui-generic-save": "Shrani",
+	"bs-ui-generic-cancel": "Prekliči",
+	"bs-ui-generic-yes": "Da",
+	"bs-ui-generic-no": "Ne",
+	"bs-exportpages-dialog-title": "Izvozi strani v zbirko",
+	"bs-exportpages-success-text": "Strani izvožene na [[$1|$2]]",
+	"bs-save-as-collection-dialog-title": "Shrani kot zbirko strani",
+	"bs-ui-generic-close": "Zapri",
+	"bs-pageexport-list-name-label": "Ime seznama",
+	"bs-pageexport-list-format-label": "Oblika seznama",
+	"bs-pageexport-list-format-plain-label": "Golo besedilo",
+	"bs-pageexport-list-format-link-label": "Povezava",
+	"bs-pageexport-overwrite-label": "Prepiši",
+	"bs-export-search-summary-text": "Ustvaril PageExport",
+	"bs-pagecollection-prefix": "Zbirka strani",
+	"bs-util-alert-title": "Namig"
 }
