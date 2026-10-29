@@ -31,7 +31,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
-use Skin;
+use MediaWiki\Skin\Skin;
 
 abstract class SidebarBeforeOutput extends Hook {
 

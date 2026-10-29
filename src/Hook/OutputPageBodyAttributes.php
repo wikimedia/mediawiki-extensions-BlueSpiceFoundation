@@ -30,7 +30,7 @@ use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Output\OutputPage;
-use Skin;
+use MediaWiki\Skin\Skin;
 
 abstract class OutputPageBodyAttributes extends Hook {
 
