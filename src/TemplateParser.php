@@ -13,6 +13,7 @@ use MediaWiki\Message\Message;
 use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
 use MediaWiki\Utils\FileContentsHasher;
 use RuntimeException;
+use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\ObjectCache\BagOStuff;
 
 class TemplateParser extends MediaWikiTemplateParser implements ITemplateParser, MessageLocalizer {

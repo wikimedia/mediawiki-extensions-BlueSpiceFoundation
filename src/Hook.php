@@ -33,6 +33,7 @@ use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Profiler\Profiler;
+use Wikimedia\Message\MessageSpecifier;
 
 abstract class Hook implements MessageLocalizer {
 

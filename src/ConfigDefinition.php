@@ -6,6 +6,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Message\Message;
+use Wikimedia\Message\MessageSpecifier;
 
 abstract class ConfigDefinition implements ISetting, ISettingPaths, MessageLocalizer {
 
