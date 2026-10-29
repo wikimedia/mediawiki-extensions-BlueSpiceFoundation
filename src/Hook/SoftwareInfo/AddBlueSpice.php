@@ -32,11 +32,13 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 			$buildInfo = ' (build:' . Sanitizer::stripAllTags( $buildInfoFileContent ) . ')';
 		}
 
-		$edition = '';
-		$editionFile = $GLOBALS['IP'] . '/BLUESPICE-EDITION';
-		if ( file_exists( $editionFile ) ) {
-			$editionFileContent = file_get_contents( $editionFile );
-			$edition = ' ' . Sanitizer::stripAllTags( $editionFileContent );
+		$edition = $this->getEditionFromEnv();
+		if ( $edition === '' ) {
+			$editionFile = $GLOBALS['IP'] . '/BLUESPICE-EDITION';
+			if ( file_exists( $editionFile ) ) {
+				$editionFileContent = file_get_contents( $editionFile );
+				$edition = ' ' . Sanitizer::stripAllTags( $editionFileContent );
+			}
 		}
 
 		$name = "BlueSpice$edition";
@@ -45,5 +47,30 @@ class AddBlueSpice extends \BlueSpice\Hook\SoftwareInfo {
 		$this->softwareInfo["[https://bluespice.com $name] ([$link Credits])"]
 			= $version . $buildInfo;
 		return true;
+	}
+
+	/**
+	 * Builds " <Product> <Edition>" from the `INTERNAL_PRODUCT` and `INTERNAL_EDITION`
+	 * environment variables. Returns an empty string if neither is set.
+	 *
+	 * @return string
+	 */
+	private function getEditionFromEnv(): string {
+		$parts = [];
+		foreach ( [ 'INTERNAL_PRODUCT', 'INTERNAL_EDITION' ] as $varName ) {
+			$value = getenv( $varName );
+			if ( !is_string( $value ) ) {
+				continue;
+			}
+			$value = trim( Sanitizer::stripAllTags( $value ) );
+			if ( $value === '' ) {
+				continue;
+			}
+			$parts[] = ucfirst( $value );
+		}
+		if ( empty( $parts ) ) {
+			return '';
+		}
+		return ' ' . implode( ' ', $parts );
 	}
 }
