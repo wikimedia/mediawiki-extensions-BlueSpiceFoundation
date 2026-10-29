@@ -33,6 +33,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Status\Status;
 use Psr\Log\LoggerInterface;
+use Wikimedia\Message\MessageSpecifier;
 
 abstract class Task implements ITask, MessageLocalizer {
 

@@ -36,6 +36,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use Wikimedia\HtmlArmor\HtmlArmor;
+use Wikimedia\Message\MessageSpecifier;
 
 abstract class Renderer implements IRenderer, MessageLocalizer {
 	public const PARAM_CONTEXT = 'context';

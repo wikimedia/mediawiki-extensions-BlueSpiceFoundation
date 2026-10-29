@@ -8,6 +8,7 @@ use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
+use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 abstract class Module implements IModule, MessageLocalizer {
