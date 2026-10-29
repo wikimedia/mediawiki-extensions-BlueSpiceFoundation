@@ -24,7 +24,7 @@
 		"param-processor/param-processor": "1.13.*",
 		"composer/installers": "~1.0|~2",
 		"mwstake/mediawiki-component-commonuserinterface": "~9",
-		"mwstake/mediawiki-component-alertbanners": "~3",
+		"mwstake/mediawiki-component-alertbanners": "~4",
 		"mwstake/mediawiki-component-manifestregistry": "~3",
 		"mwstake/mediawiki-component-utils": "~3",
 		"mwstake/mediawiki-component-datastore": "~3",
