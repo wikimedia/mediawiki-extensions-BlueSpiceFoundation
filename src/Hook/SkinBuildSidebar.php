@@ -29,11 +29,12 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Skin\Skin;
 
 abstract class SkinBuildSidebar extends Hook {
 
 	/**
-	 * @var \Skin
+	 * @var Skin
 	 */
 	protected $skin = null;
 
@@ -43,11 +44,11 @@ abstract class SkinBuildSidebar extends Hook {
 	protected $bar = [];
 
 	/**
-	 * @param \Skin $skin
+	 * @param Skin $skin
 	 * @param array &$bar
 	 * @return bool
 	 */
-	public static function callback( \Skin $skin, &$bar ) {
+	public static function callback( Skin $skin, &$bar ) {
 		$className = static::class;
 		$hookHandler = new $className(
 			null,
@@ -61,7 +62,7 @@ abstract class SkinBuildSidebar extends Hook {
 	/**
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param \Skin $skin
+	 * @param Skin $skin
 	 * @param array &$bar
 	 */
 	public function __construct( $context, $config, $skin, &$bar ) {

@@ -30,6 +30,7 @@ use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Skin\Skin;
 
 abstract class BeforePageDisplay extends Hook {
 
@@ -39,13 +40,13 @@ abstract class BeforePageDisplay extends Hook {
 	protected $out = null;
 
 	/**
-	 * @var \Skin
+	 * @var Skin
 	 */
 	protected $skin = null;
 
 	/**
 	 * @param OutputPage &$out
-	 * @param \Skin &$skin
+	 * @param Skin &$skin
 	 * @return bool
 	 */
 	public static function callback( &$out, &$skin ) {
@@ -63,7 +64,7 @@ abstract class BeforePageDisplay extends Hook {
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param OutputPage &$out
-	 * @param \Skin &$skin
+	 * @param Skin &$skin
 	 */
 	public function __construct( $context, $config, &$out, &$skin ) {
 		parent::__construct( $context, $config );
