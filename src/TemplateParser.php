@@ -4,7 +4,6 @@
 
 namespace BlueSpice;
 
-use FileContentsHasher;
 use LightnCandy\LightnCandy;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Html\TemplateParser as MediaWikiTemplateParser;
@@ -12,6 +11,7 @@ use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\ResourceLoader\Context as ResourceLoaderContext;
+use MediaWiki\Utils\FileContentsHasher;
 use RuntimeException;
 use Wikimedia\ObjectCache\BagOStuff;
 
