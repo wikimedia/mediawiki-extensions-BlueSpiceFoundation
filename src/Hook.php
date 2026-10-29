@@ -32,7 +32,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
-use Profiler;
+use MediaWiki\Profiler\Profiler;
 
 abstract class Hook implements MessageLocalizer {
 
