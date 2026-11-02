@@ -29,6 +29,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Skin\SkinTemplate;
 
 /**
  * DEPRECATED
@@ -37,7 +38,7 @@ use MediaWiki\Context\IContextSource;
 abstract class SkinTemplateNavigation extends Hook {
 
 	/**
-	 * @var \SkinTemplate
+	 * @var SkinTemplate
 	 */
 	protected $sktemplate = null;
 
@@ -47,7 +48,7 @@ abstract class SkinTemplateNavigation extends Hook {
 	protected $links = [];
 
 	/**
-	 * @param \SkinTemplate &$sktemplate
+	 * @param SkinTemplate &$sktemplate
 	 * @param array &$links
 	 * @return bool
 	 */
@@ -65,7 +66,7 @@ abstract class SkinTemplateNavigation extends Hook {
 	/**
 	 * @param IContextSource $context
 	 * @param Config $config
-	 * @param \SkinTemplate &$sktemplate
+	 * @param SkinTemplate &$sktemplate
 	 * @param array &$links
 	 */
 	public function __construct( $context, $config, &$sktemplate, &$links ) {

@@ -31,6 +31,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Skin\SkinTemplate;
 use MediaWiki\Title\Title;
 
 /**
@@ -50,7 +51,7 @@ abstract class PersonalUrls extends Hook {
 	protected $title = null;
 
 	/**
-	 * @var \SkinTemplate
+	 * @var SkinTemplate
 	 */
 	protected $skin = null;
 
