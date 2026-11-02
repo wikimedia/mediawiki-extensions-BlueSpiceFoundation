@@ -29,7 +29,7 @@ namespace BlueSpice\Hook;
 use BlueSpice\Hook;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\IContextSource;
-use SkinTemplate;
+use MediaWiki\Skin\SkinTemplate;
 
 /**
  * @deprecated since REL1_39. Use SkinTemplateNavigation__UniversalHook
