@@ -19,5 +19,6 @@
 	"bs-api-task-taskData-page-title": "E valabelen Titel vun enger Wikisäit",
 	"apihelp-bs-js-var-config-param-format": "Format vum Resultat",
 	"apihelp-bs-categorylinks-store-param-page-id": "D'Säiten-ID vun der Säit",
-	"apihelp-bs-templatelinks-store-param-page-id": "D'Säiten-ID vun der Säit"
+	"apihelp-bs-templatelinks-store-param-page-id": "D'Säiten-ID vun der Säit",
+	"apihelp-bs-category-treestore-param-node": "E Pad vu Kategorien, déi mat schife Strécher getrennt sinn"
 }
