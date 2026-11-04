@@ -15,10 +15,10 @@
 	"apihelp-bs-wikisubpage-treestore-param-options": "Lëscht vun den Optiounen",
 	"bs-wikipage-tasks-error-page-read-not-allowed": "Dir däerft d'Säit '$1' net liesen.",
 	"bs-wikipage-tasks-error-nothingtoremove": "Et gëtt keng Kategorie fir ewechzehuelen.",
+	"apihelp-bs-category-treestore-param-node": "E Pad vu Kategorien, déi mat schife Strécher getrennt sinn",
 	"bs-api-task-taskdata-help": "[$1 Schema], [$2 Beispiller vu Parameteren]",
 	"bs-api-task-taskData-page-title": "E valabelen Titel vun enger Wikisäit",
 	"apihelp-bs-js-var-config-param-format": "Format vum Resultat",
 	"apihelp-bs-categorylinks-store-param-page-id": "D'Säiten-ID vun der Säit",
-	"apihelp-bs-templatelinks-store-param-page-id": "D'Säiten-ID vun der Säit",
-	"apihelp-bs-category-treestore-param-node": "E Pad vu Kategorien, déi mat schife Strécher getrennt sinn"
+	"apihelp-bs-templatelinks-store-param-page-id": "D'Säiten-ID vun der Säit"
 }
