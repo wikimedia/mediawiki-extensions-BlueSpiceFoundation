@@ -6,6 +6,7 @@ use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 require_once dirname( dirname( dirname( __DIR__ ) ) ) . "/maintenance/Maintenance.php";
 
@@ -52,8 +53,7 @@ class CreateFilePages extends Maintenance {
 		}
 
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
-		$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
-			->getMaintenanceUser()->getUser();
+		$user = User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 		foreach ( $res as $row ) {
 			$this->output( $row->img_name . PHP_EOL );
 

@@ -30,6 +30,7 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 $userName    = 'WikiBot';
 $summary     = 'Some meaningful description';
@@ -153,8 +154,7 @@ $hits = 0;
 $namespaceInfo = $services->getNamespaceInfo();
 $wikiPageFactory = $services->getWikiPageFactory();
 
-$user = $services->getService( 'BSUtilityFactory' )
-	->getMaintenanceUser()->getUser();
+$user = User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 foreach ( $res as $row ) {
 	$row = (array)$row;
 	$cur_title    = $row['page_title'];
