@@ -5,6 +5,7 @@ use MediaWiki\Content\ContentHandler;
 use MediaWiki\Content\TextContent;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\User\User;
 
 require_once 'BSMaintenance.php';
 echo "Relocalize Wiki...\n";
@@ -98,7 +99,7 @@ class RelocalizeWiki extends Maintenance {
 
 		$services = $this->getServiceContainer();
 		$wikiPageFactory = $services->getWikiPageFactory();
-		$user = $services->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();
+		$user = User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 		foreach ( $aArticleIds as $iArticleId ) {
 			$this->bEdited = false;
 			$oWikiPage = $wikiPageFactory->newFromID( $iArticleId );

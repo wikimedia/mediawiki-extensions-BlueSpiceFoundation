@@ -117,8 +117,7 @@ class PrimaryDataProvider implements IPrimaryDataProvider {
 	 * @param User $user
 	 * @return bool
 	 */
-	protected function isSystemUser( $user ) {
-		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
-			->getMaintenanceUser()->isMaintenanceUser( $user );
+	protected function isSystemUser( User $user ) {
+		return $user->getName() === User::MAINTENANCE_SCRIPT_USER;
 	}
 }

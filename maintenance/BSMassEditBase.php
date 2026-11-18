@@ -6,6 +6,7 @@ use MediaWiki\Content\TextContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRecord;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Wikimedia\Diff\Diff;
 use Wikimedia\Diff\UnifiedDiffFormatter;
 
@@ -41,8 +42,7 @@ class BSMassEditBase extends BSMaintenance {
 		$this->iTitleCount = count( $aTitles );
 
 		$wikiPageFactory = MediaWikiServices::getInstance()->getWikiPageFactory();
-		$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
-			->getMaintenanceUser()->getUser();
+		$user = User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 		foreach ( $aTitles as $sTitle => $oTitle ) {
 			if ( $oTitle instanceof Title === false ) {
 				$this->error( "Invalid Title '$sTitle'!" );
