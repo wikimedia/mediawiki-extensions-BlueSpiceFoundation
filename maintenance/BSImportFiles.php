@@ -5,6 +5,7 @@ require_once __DIR__ . '/BSBatchFileProcessorBase.php';
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Specials\SpecialUpload;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 class BSImportFiles extends BSBatchFileProcessorBase {
 
@@ -113,8 +114,7 @@ class BSImportFiles extends BSBatchFileProcessorBase {
 					$archive->getMessage( false, false, 'en' )->text() .
 					")\n" );
 			}
-			$user = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
-				->getMaintenanceUser()->getUser();
+			$user = User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] );
 		}
 
 		$commentText = SpecialUpload::getInitialPageText( $commentText, '' );

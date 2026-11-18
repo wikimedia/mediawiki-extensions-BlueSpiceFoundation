@@ -157,7 +157,6 @@ class PrimaryDataProvider extends PrimaryDatabaseDataProvider {
 	 * @return bool
 	 */
 	protected function isSystemUser( User $user ) {
-		return MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
-			->getMaintenanceUser()->isMaintenanceUser( $user );
+		return $user->getName() === User::MAINTENANCE_SCRIPT_USER;
 	}
 }
