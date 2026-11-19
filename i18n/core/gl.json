@@ -53,7 +53,7 @@
 	"bs-filesystemhelper-folder-copy-error": "Non se puido renomear o cartafol <code>$1</code>.",
 	"bs-filesystemhelper-folder-not-exists": "O cartafol <code>$1</code> non existe.",
 	"bs-filesystemhelper-folder-rename-error": "O cartafol <code>$1</code> non se puido renomear a <code>$2</code>.",
-	"bs-filesystemhelper-upload-err-code": "Non se puido cargar o ficheiro: $1",
+	"bs-filesystemhelper-upload-err-code": "Non se puido subir o ficheiro: $1",
 	"bs-filesystemhelper-upload-wrong-ext": "O ficheiro non ten a extensión necesaria: $1.",
 	"bs-filesystemhelper-upload-unsupported-type": "Non se admite este tipo de ficheiro.",
 	"bs-filesystemhelper-save-base64-error": "Non se puido gardar o ficheiro.",
