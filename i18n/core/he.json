@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"A100Star",
 			"Amire80",
 			"Eladk",
 			"Ex-Diktator",
@@ -102,8 +103,8 @@
 	"bs-graphicallist-action-preview": "תצוגה מקדימה",
 	"bs-bluespice-mediawiki": "הרחבת BlueSpice למדיה־ויקי",
 	"bs-bluespice": "BlueSpice",
-	"action-wikiadmin": "להשתמש בפעולות ניהול שיכולות להיות מסוכנות, כגון ניהול משתמשים, הרשאות, הגדרות גלובליות (הרחבות BlueSpice)",
-	"right-wikiadmin": "שימוש בפעולות ניהול שיכולות להיות מסוכנות, כגון ניהול משתמשים, הרשאות, הגדרות גלובליות (הרחבות BlueSpice)",
+	"action-wikiadmin": "ביצוע פעולות ניהול, כגון ניהול משתמשים, הגדרת הרשאות ושינוי הגדרות גלובליות (הרחבות BlueSpice)",
+	"right-wikiadmin": "ביצוע פעולות ניהול, כגון ניהול משתמשים, הגדרת הרשאות ושינוי הגדרות גלובליות (הרחבות BlueSpice)",
 	"bs-notifications-agent-anon": "משתמש אלמוני",
 	"protect-level-editor": "לאפשר רק לעורכים ומנהלים",
 	"bs-ping-on-init-desc": "יש לשלוח בקשת פינג מייד לאחר טעינת הדף",
