@@ -117,5 +117,6 @@
 	"bs-permission-role-reviewer": "Prüfer",
 	"bs-permission-role-admin": "Administrator",
 	"bs-title-warning": "Warnung",
-	"bs-title-success": "Erfolg"
+	"bs-title-success": "Erfolg",
+	"restriction-level-editor": "schreibgeschützt (nur Redakteure und Administratoren)"
 }

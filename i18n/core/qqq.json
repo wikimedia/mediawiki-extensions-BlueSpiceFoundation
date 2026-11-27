@@ -118,5 +118,6 @@
 	"bs-permission-role-reviewer": "Permission role name",
 	"bs-permission-role-admin": "Permission role name",
 	"bs-title-warning": "Title for warning prompts.\n{{Identical|Warning}}",
-	"bs-title-success": "Title for success prompts\n{{Identical|Success}}"
+	"bs-title-success": "Title for success prompts\n{{Identical|Success}}",
+	"restriction-level-editor": "Short description of the \"editor\" page protection level.\n\nCorresponds to this option when protecting a page: {{msg-mw|protect-level-editor}}\n\nUsed e.g. on [[Special:ProtectedTitles]] and [[Special:ProtectedPages]].\n\nSee also:\n* {{msg-mw|restriction-level-sysop}}\n* {{msg-mw|restriction-level-autoconfirmed}}"
 }
