@@ -5,6 +5,7 @@
 			"Chrumps",
 			"Mro",
 			"Msz2001",
+			"PanWor",
 			"Pio387",
 			"Rzuwig",
 			"Superjurek",
@@ -103,5 +104,6 @@
 	"bs-dynamic-settings-error-config-file-could-not-be-written": "Nie można zapisać pliku konfiguracyjnego $1 !",
 	"bs-pref-logopath-help": "Logo powinno być przechowywane w folderze /w/images instalacji. Jeśli przechowujesz go w folderze /w/skins instalacji BlueSpice, można on zostać zastąpiony podczas aktualizacją.",
 	"bs-pref-faviconpath-help": "Favicon powinien być przechowywany w folderze /w/images instalacji. Jeśli przechowujesz go w folderze /w/skins instalacji BlueSpice, może on zostać zastąpiony podczas akutualizacji. Favicon ma rozszerzenie pliku .ico.",
-	"bs-exttype-bluespice-assets": "Zasoby BlueSpice"
+	"bs-exttype-bluespice-assets": "Zasoby BlueSpice",
+	"restriction-level-editor": "zabezpieczone na poziomie redaktorów"
 }
